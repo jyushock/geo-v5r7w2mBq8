@@ -23,17 +23,8 @@
 <script>
     const map = new maplibregl.Map({
         container: 'map',
-        style: {
-            version: 8,
-            sources: {
-                'gsi-pale': {
-                    type: 'raster',
-                    tiles: ['https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png'],
-                    tileSize: 256,
-                    attribution: "© 国土地理院"
-                }
-            },
-            layers: [{ id: 'gsi-pale-layer', type: 'raster', source: 'gsi-pale' }]
+        style: 'https://api.maptiler.com/maps/jp-mierune-streets/style.json?key=xEfXwvj7vY8GrgY26k3N',
+        layers: [{ id: 'gsi-pale-layer', type: 'raster', source: 'gsi-pale' }]
         },
         center: [139.76, 35.68],
         zoom: 11
@@ -110,3 +101,4 @@
 </script>
 </body>
 </html>
+
