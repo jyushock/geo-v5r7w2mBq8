@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>100名店マップ 2025</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
+    <script src="data.js"></script>
+    <style>
+        body { margin: 0; padding: 0; font-family: sans-serif; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+        .popup-card { min-width: 180px; padding: 5px; }
+        .btn { display: block; text-align: center; padding: 10px; margin-top: 8px; border-radius: 5px; 
+               text-decoration: none; font-weight: bold; font-size: 13px; color: white; }
+        .btn-tabelog { background: #ff6600; }
+        .btn-nav { background: #4285f4; }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+    const map = new maplibregl.Map({
+        container: 'map',
+        style: {
+            version: 8,
+            sources: { 'osm': { type: 'raster', tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'], tileSize: 256, attribution: '© OSM' } },
+            layers: [{ id: 'osm', type: 'raster', source: 'osm' }]
+        },
+        center: [141.35, 43.06], zoom: 11
+    });
+
+    map.addControl(new maplibregl.GeolocateControl({ positionOptions: { enableHighAccuracy: true }, trackUserLocation: true }));
+
+    map.on('load', () => {
+        // 2. data.js 内の変数 'shopData' を直接使用
+        map.addSource('shops', { type: 'geojson', data: shopData, cluster: true, clusterMaxZoom: 14, clusterRadius: 50 });
+
+        // クラスター表示
+        map.addLayer({
+            id: 'clusters', type: 'circle', source: 'shops', filter: ['has', 'point_count'],
+            paint: { 'circle-color': '#f5a623', 'circle-radius': ['step', ['get', 'point_count'], 20, 100, 30, 750, 40] }
+        });
+        map.addLayer({
+            id: 'cluster-count', type: 'symbol', source: 'shops', filter: ['has', 'point_count'],
+            layout: { 'text-field': '{point_count}', 'text-size': 12 }
+        });
+
+        // 個別ピン表示
+        map.addLayer({
+            id: 'points', type: 'circle', source: 'shops', filter: ['!', ['has', 'point_count']],
+            paint: { 'circle-color': '#ff6600', 'circle-radius': 8, 'circle-stroke-width': 2, 'circle-stroke-color': '#fff' }
+        });
+
+        map.on('click', 'points', (e) => {
+            const p = e.features[0].properties;
+            const c = e.features[0].geometry.coordinates;
+            const navUrl = `https://www.google.com/maps/dir/?api=1&destination=${c[1]},${c[0]}`;
+
+            new maplibregl.Popup()
+                .setLngLat(c)
+                .setHTML(`
+                    <div class="popup-card">
+                        <b>${p.name}</b><br><small>${p.category}</small>
+                        <a href="${p.url}" target="_blank" class="btn btn-tabelog">食べログを見る</a>
+                        <a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く(Googleナビ)</a>
+                    </div>
+                `).addTo(map);
+        });
+    });
+</script>
+</body>
+</html>
