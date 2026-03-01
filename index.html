@@ -20,54 +20,43 @@
 <body>
 <div id="map"></div>
 <script>
-    const map = new maplibregl.Map({
-        container: 'map',
-        style: {
-            version: 8,
-            sources: { 'osm': { type: 'raster', tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'], tileSize: 256, attribution: '© OSM' } },
-            layers: [{ id: 'osm', type: 'raster', source: 'osm' }]
+// --- 既存のコードの下に追加 ---
+
+map.on('load', () => {
+    // 1. 位置情報コントロールの定義（設定を変更）
+    const geolocate = new maplibregl.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: true // 高精度な位置情報を取得
         },
-        center: [141.35, 43.06], zoom: 11
+        trackUserLocation: true, // 自分の移動に合わせて追従
+        showUserLocation: true   // 自分の位置に青い丸を表示
     });
 
-    map.addControl(new maplibregl.GeolocateControl({ positionOptions: { enableHighAccuracy: true }, trackUserLocation: true }));
+    // 地図にコントロールを追加
+    map.addControl(geolocate);
 
-    map.on('load', () => {
-        // 2. data.js 内の変数 'shopData' を直接使用
-        map.addSource('shops', { type: 'geojson', data: shopData, cluster: true, clusterMaxZoom: 14, clusterRadius: 50 });
-
-        // クラスター表示
-        map.addLayer({
-            id: 'clusters', type: 'circle', source: 'shops', filter: ['has', 'point_count'],
-            paint: { 'circle-color': '#f5a623', 'circle-radius': ['step', ['get', 'point_count'], 20, 100, 30, 750, 40] }
-        });
-        map.addLayer({
-            id: 'cluster-count', type: 'symbol', source: 'shops', filter: ['has', 'point_count'],
-            layout: { 'text-field': '{point_count}', 'text-size': 12 }
-        });
-
-        // 個別ピン表示
-        map.addLayer({
-            id: 'points', type: 'circle', source: 'shops', filter: ['!', ['has', 'point_count']],
-            paint: { 'circle-color': '#ff6600', 'circle-radius': 8, 'circle-stroke-width': 2, 'circle-stroke-color': '#fff' }
-        });
-
-        map.on('click', 'points', (e) => {
-            const p = e.features[0].properties;
-            const c = e.features[0].geometry.coordinates;
-            const navUrl = `https://www.google.com/maps/dir/?api=1&destination=${c[1]},${c[0]}`;
-
-            new maplibregl.Popup()
-                .setLngLat(c)
-                .setHTML(`
-                    <div class="popup-card">
-                        <b>${p.name}</b><br><small>${p.category}</small>
-                        <a href="${p.url}" target="_blank" class="btn btn-tabelog">食べログを見る</a>
-                        <a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く(Googleナビ)</a>
-                    </div>
-                `).addTo(map);
+    // 2. 【重要】地図がロードされたら自動的に現在地を取得して移動する
+    geolocate.on('geolocate', (e) => {
+        // 初回のみズームレベルを調整して移動（お好みの数字に）
+        map.flyTo({
+            center: [e.coords.longitude, e.coords.latitude],
+            zoom: 14,
+            essential: true
         });
     });
+
+    // 3. ページを開いてすぐに位置測位を開始する
+    // ブラウザの「位置情報の許可」ダイアログが出ます
+    setTimeout(() => {
+        const btn = document.querySelector('.maplibregl-ctrl-geolocate');
+        if (btn) btn.click();
+    }, 500); // 0.5秒後に自動クリックを実行
+
+    // --- 以下、既存のaddSourceやaddLayerのコード ---
+    map.addSource('shops', { ... });
+    // ...
+});
 </script>
 </body>
+
 </html>
