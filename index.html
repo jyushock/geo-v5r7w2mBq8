@@ -2,24 +2,50 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8" />
-    <title>100名店カスタムマップ</title>
+    <title>100名店＆名城カスタムマップ</title>
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
     <link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
     <script src="data.js"></script>
+    <script src="castle.js"></script>
     <style>
         body { margin: 0; padding: 0; }
         #map { position: absolute; top: 0; bottom: 0; width: 100%; }
         .popup-card { min-width: 200px; padding: 10px; }
         .popup-title { font-weight: bold; font-size: 16px; display: block; margin-bottom: 4px; }
+        .popup-genre { font-size: 12px; color: #666; display: block; margin-bottom: 8px; }
         .btn { display: block; text-align: center; padding: 10px; margin-top: 8px; border-radius: 8px; text-decoration: none; font-weight: bold; color: white; }
         .btn-tabelog { background: #ff6600; }
+        .btn-wiki { background: #333333; }
         .btn-nav { background: #4285f4; }
+
+        /* レイヤー切替メニュー */
+        .menu-ui {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 100;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            font-family: sans-serif;
+            font-size: 14px;
+        }
+        .menu-ui label { display: flex; align-items: center; cursor: pointer; margin-bottom: 5px; }
+        .menu-ui input { margin-right: 8px; }
     </style>
 </head>
 <body>
+
 <div id="map"></div>
+
+<div class="menu-ui">
+    <label><input type="checkbox" id="check-shop" checked> レストラン (100名店)</label>
+    <label><input type="checkbox" id="check-castle" checked> お城 (Wikipedia)</label>
+</div>
+
 <script>
     const map = new maplibregl.Map({
         container: 'map',
@@ -36,50 +62,101 @@
     map.addControl(geolocate);
 
     map.on('load', () => {
-        // iPhone/Android用自動現在地取得
         setTimeout(() => { geolocate.trigger(); }, 1000);
 
-        // 1. 画像の読み込み（SDFオプションを有効化）
-        map.loadImage('tabe.png', (error, image) => { 
-            if (error) throw error;
-            map.addImage('tabe-icon', image, { sdf: true });
-
-            map.addSource('shops', {
-                type: 'geojson',
-                data: shopData,
-                cluster: false
+        // --- 画像の読み込み処理 ---
+        const loadImageAsSDF = (url, id) => {
+            return new Promise((resolve) => {
+                map.loadImage(url, (error, image) => {
+                    if (error) {
+                        console.error(error);
+                        resolve();
+                        return;
+                    }
+                    map.addImage(id, image, { sdf: true });
+                    resolve();
+                });
             });
+        };
 
-            // 2. 背景レイヤー（オレンジの四角/丸 ＋ 白枠）
+        // レストランと城のアイコンを両方ロード（castle.pngは後ほど用意）
+        Promise.all([
+            loadImageAsSDF('tabe.png', 'tabe-icon'),
+            loadImageAsSDF('castle.png', 'castle-icon') 
+        ]).then(() => {
+
+            // --- 1. レストランデータのソースとレイヤー ---
+            map.addSource('shops', { type: 'geojson', data: shopData });
+            
             map.addLayer({
-                id: 'points-bg',
+                id: 'shop-bg',
                 type: 'circle',
                 source: 'shops',
                 paint: {
-                    'circle-color': '#FF9800',       // 背景のオレンジ色
-                    'circle-radius': 12,             // アイコンより一回り大きく
-                    'circle-stroke-width': 1.5,      // 白枠の太さ
-                    'circle-stroke-color': '#FFFFFF' // 白枠
+                    'circle-color': '#FF9800',
+                    'circle-radius': 12,
+                    'circle-stroke-width': 1.5,
+                    'circle-stroke-color': '#FFFFFF'
                 }
             });
 
-            // 3. アイコンレイヤー（元の黒を白に塗り替え）
             map.addLayer({
-                id: 'points-icon',
+                id: 'shop-icon',
                 type: 'symbol',
                 source: 'shops',
                 layout: {
                     'icon-image': 'tabe-icon',
-                    'icon-size': 0.35,               // 64px画像なら半分にしてクッキリ
+                    'icon-size': 0.35,
                     'icon-allow-overlap': true
                 },
+                paint: { 'icon-color': '#FFFFFF' }
+            });
+
+            // --- 2. 城データのソースとレイヤー ---
+            map.addSource('castles', { type: 'geojson', data: castleData });
+
+            map.addLayer({
+                id: 'castle-bg',
+                type: 'circle',
+                source: 'castles',
                 paint: {
-                    'icon-color': '#FFFFFF'          // 画像の黒い部分を白に変更
+                    'circle-color': [
+                        'match',
+                        ['get', 'genre'],
+                        '日本100名城', '#C62828',   // 100名城は濃い赤
+                        '続日本100名城', '#1565C0', // 続は濃い青
+                        '#455A64'                   // その他はグレー
+                    ],
+                    'circle-radius': 12,
+                    'circle-stroke-width': 1.5,
+                    'circle-stroke-color': '#FFFFFF'
                 }
             });
 
-            // クリックイベント
-            map.on('click', 'points-bg', (e) => {
+            map.addLayer({
+                id: 'castle-icon',
+                type: 'symbol',
+                source: 'castles',
+                layout: {
+                    'icon-image': 'castle-icon', // castle.pngがない間は表示されません
+                    'icon-size': 0.35,
+                    'icon-allow-overlap': true
+                },
+                paint: { 'icon-color': '#FFFFFF' }
+            });
+
+            // --- 3. ON/OFF スイッチのロジック ---
+            const toggle = (id, layers) => {
+                document.getElementById(id).addEventListener('change', (e) => {
+                    const val = e.target.checked ? 'visible' : 'none';
+                    layers.forEach(l => map.setLayoutProperty(l, 'visibility', val));
+                });
+            };
+            toggle('check-shop', ['shop-bg', 'shop-icon']);
+            toggle('check-castle', ['castle-bg', 'castle-icon']);
+
+            // --- 4. クリックイベント（レストラン） ---
+            map.on('click', 'shop-bg', (e) => {
                 const p = e.features[0].properties;
                 const c = e.features[0].geometry.coordinates;
                 const navUrl = `https://www.google.com/maps/dir/?api=1&destination=${c[1]},${c[0]}`;
@@ -91,16 +168,36 @@
                             <a href="${p.url}" target="_blank" class="btn btn-tabelog">食べログ</a>
                             <a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く</a>
                         </div>
-                    `)
-                    .addTo(map);
+                    `).addTo(map);
             });
+
+            // --- 5. クリックイベント（城） ---
+            map.on('click', 'castle-bg', (e) => {
+                const p = e.features[0].properties;
+                const c = e.features[0].geometry.coordinates;
+                const wikiUrl = `https://ja.wikipedia.org/wiki/${encodeURIComponent(p.name)}`;
+                const navUrl = `https://www.google.com/maps/dir/?api=1&destination=${c[1]},${c[0]}`;
+                new maplibregl.Popup()
+                    .setLngLat(c)
+                    .setHTML(`
+                        <div class="popup-card">
+                            <span class="popup-title">${p.name}</span>
+                            ${p.genre ? `<span class="popup-genre">${p.genre}</span>` : ''}
+                            <a href="${wikiUrl}" target="_blank" class="btn btn-wiki">Wikipedia</a>
+                            <a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く</a>
+                        </div>
+                    `).addTo(map);
+            });
+
+            // カーソル変更
+            const setCursor = (layer) => {
+                map.on('mouseenter', layer, () => map.getCanvas().style.cursor = 'pointer');
+                map.on('mouseleave', layer, () => map.getCanvas().style.cursor = '');
+            };
+            setCursor('shop-bg');
+            setCursor('castle-bg');
         });
     });
 </script>
 </body>
 </html>
-
-
-
-
-
