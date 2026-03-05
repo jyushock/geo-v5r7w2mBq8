@@ -2,40 +2,71 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8" />
-    <title>100名店＆名城＆道の駅カスタムマップ</title>
+    <title>100名店＆名城＆道の駅＆マンホールカスタムマップ</title>
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
     <link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
+    
     <script src="data.js"></script>
     <script src="castle.js"></script>
     <script src="michi.js"></script>
+    <script src="manhole.js"></script> 
+
     <style>
         body { margin: 0; padding: 0; }
         #map { position: absolute; top: 0; bottom: 0; width: 100%; }
-        .popup-card { min-width: 200px; padding: 10px; }
-        .popup-title { font-weight: bold; font-size: 16px; display: block; margin-bottom: 4px; }
-        .popup-genre { font-size: 12px; color: #666; display: block; margin-bottom: 8px; }
-        .btn { display: block; text-align: center; padding: 10px; margin-top: 8px; border-radius: 8px; text-decoration: none; font-weight: bold; color: white; }
-        .btn-tabelog { background: #ff6600; }
-        .btn-wiki { background: #333333; }
-        .btn-gmap { background: #4285f4; }
-        .btn-nav { background: #34A853; }
+        
+        /* ポップアップの装飾 */
+        .popup-card { min-width: 220px; padding: 5px; font-family: sans-serif; }
+        .popup-title { font-weight: bold; font-size: 16px; display: block; margin-bottom: 2px; color: #333; }
+        .popup-genre { font-size: 11px; color: #888; display: block; margin-bottom: 8px; border-bottom: 1px solid #eee; padding-bottom: 4px; }
+        
+        /* マンホール画像コンテナ */
+        .manhole-img-container { 
+            margin: 8px 0; 
+            text-align: center; 
+            background: #f9f9f9; 
+            border-radius: 8px; 
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+        .manhole-img { width: 100%; max-width: 180px; height: auto; display: block; margin: 0 auto; }
 
+        /* ボタン類 */
+        .btn-container { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+        .btn { 
+            display: block; 
+            text-align: center; 
+            padding: 10px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            color: white; 
+            font-size: 13px;
+            transition: opacity 0.2s;
+        }
+        .btn:hover { opacity: 0.8; }
+        .btn-nav { background: #34A853; }   /* 緑: ナビ */
+        .btn-gmap { background: #4285f4; }  /* 青: GoogleMap */
+        .btn-tabelog { background: #ff6600; } /* 橙: 食べログ */
+        .btn-wiki { background: #333333; }    /* 黒: Wiki */
+
+        /* メニューUI */
         .menu-ui {
             position: absolute;
             top: 10px;
             left: 10px;
             z-index: 100;
-            background: white;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             font-family: sans-serif;
-            font-size: 14px;
+            font-size: 13px;
         }
-        .menu-ui label { display: flex; align-items: center; cursor: pointer; margin-bottom: 5px; }
-        .menu-ui input { margin-right: 8px; }
+        .menu-ui label { display: flex; align-items: center; cursor: pointer; margin-bottom: 8px; }
+        .menu-ui input { margin-right: 10px; width: 16px; height: 16px; }
     </style>
 </head>
 <body>
@@ -43,13 +74,14 @@
 <div id="map"></div>
 
 <div class="menu-ui">
-    <label><input type="checkbox" id="check-shop" checked> レストラン (100名店)</label>
-    <label><input type="checkbox" id="check-castle" checked> お城 (Wikipedia)</label>
-    <label><input type="checkbox" id="check-michi" checked> 道の駅</label>
+    <label><input type="checkbox" id="check-shop" checked> 🍴 レストラン (100名店)</label>
+    <label><input type="checkbox" id="check-castle" checked> 🏯 お城 (名城)</label>
+    <label><input type="checkbox" id="check-michi" checked> 🚗 道の駅</label>
+    <label><input type="checkbox" id="check-manhole" checked> 🕳️ マンホールカード</label>
 </div>
 
 <script>
-    // michi.jsのデータ形式をGeoJSONに変換
+    // 道の駅データをGeoJSONに変換
     const michiGeoJSON = {
         type: 'FeatureCollection',
         features: michiNoEkiData.map(d => ({
@@ -62,8 +94,8 @@
     const map = new maplibregl.Map({
         container: 'map',
         style: 'https://api.maptiler.com/maps/jp-mierune-streets/style.json?key=xEfXwvj7vY8GrgY26k3N',
-        center: [139.76, 35.68],
-        zoom: 11
+        center: [138.0, 37.0],
+        zoom: 5 // 広域で見やすいように少しズームアウトして開始
     });
 
     const geolocate = new maplibregl.GeolocateControl({
@@ -74,6 +106,7 @@
     map.addControl(geolocate);
 
     map.on('load', () => {
+        // 現在地にジャンプ
         setTimeout(() => { geolocate.trigger(); }, 1000);
 
         const loadImageAsSDF = (url, id) => {
@@ -86,50 +119,51 @@
             });
         };
 
+        // アイコンのロード（マンホール用も追加）
         Promise.all([
             loadImageAsSDF('tabe.png', 'tabe-icon'),
             loadImageAsSDF('castle.png', 'castle-icon'),
-            loadImageAsSDF('michi.png', 'michi-icon')
+            loadImageAsSDF('michi.png', 'michi-icon'),
+            loadImageAsSDF('michi.png', 'manhole-icon') 
         ]).then(() => {
 
-            // --- ソースの追加（クラスター設定有効） ---
-            const sources = [
-                { id: 'shops', data: shopData },
-                { id: 'castles', data: castleData },
-                { id: 'michi', data: michiGeoJSON }
+            const configs = [
+                { id: 'shops', data: shopData, color: '#FF9800', icon: 'tabe-icon', type: 'shop' },
+                { id: 'castles', data: castleData, color: '#4285F4', icon: 'castle-icon', type: 'castle' },
+                { id: 'michi', data: michiGeoJSON, color: '#34A853', icon: 'michi-icon', type: 'michi' },
+                { id: 'manholes', data: manholeGeoJSON, color: '#9C27B0', icon: 'manhole-icon', type: 'manhole' }
             ];
 
-            sources.forEach(src => {
-                map.addSource(src.id, {
+            configs.forEach(conf => {
+                // 1. ソース追加（クラスター設定）
+                map.addSource(conf.id, {
                     type: 'geojson',
-                    data: src.data,
+                    data: conf.data,
                     cluster: true,
                     clusterMaxZoom: 13,
                     clusterRadius: 50
                 });
-            });
 
-            // --- レイヤー追加関数（クラスター用と個別用） ---
-            const createLayers = (id, color, iconId, isCastle = false) => {
-                // クラスターの円
+                // 2. レイヤー作成（クラスター・背景・アイコン）
+                // クラスター円
                 map.addLayer({
-                    id: `${id}-cluster`,
+                    id: `${conf.id}-cluster`,
                     type: 'circle',
-                    source: id,
+                    source: conf.id,
                     filter: ['has', 'point_count'],
                     paint: {
-                        'circle-color': color,
+                        'circle-color': conf.color,
                         'circle-radius': 18,
                         'circle-stroke-width': 2,
                         'circle-stroke-color': '#FFFFFF'
                     }
                 });
 
-                // クラスターの数字
+                // クラスター数字
                 map.addLayer({
-                    id: `${id}-cluster-count`,
+                    id: `${conf.id}-cluster-count`,
                     type: 'symbol',
-                    source: id,
+                    source: conf.id,
                     filter: ['has', 'point_count'],
                     layout: {
                         'text-field': '{point_count_abbreviated}',
@@ -139,97 +173,96 @@
                     paint: { 'text-color': '#FFFFFF' }
                 });
 
-                // 個別ピンの背景
+                // 個別ピン背景
                 map.addLayer({
-                    id: `${id}-bg`,
+                    id: `${conf.id}-bg`,
                     type: 'circle',
-                    source: id,
+                    source: conf.id,
                     filter: ['!', ['has', 'point_count']],
                     paint: {
-                        'circle-color': isCastle ? [
+                        'circle-color': conf.id === 'castles' ? [
                             'match', ['get', 'genre'],
                             '日本100名城', '#4285F4',
                             '続日本100名城', '#EA4335',
-                            color
-                        ] : color,
+                            conf.color
+                        ] : conf.color,
                         'circle-radius': 12,
                         'circle-stroke-width': 1.5,
                         'circle-stroke-color': '#FFFFFF'
                     }
                 });
 
-                // 個別ピンのアイコン
+                // 個別アイコン
                 map.addLayer({
-                    id: `${id}-icon`,
+                    id: `${conf.id}-icon`,
                     type: 'symbol',
-                    source: id,
+                    source: conf.id,
                     filter: ['!', ['has', 'point_count']],
-                    layout: { 'icon-image': iconId, 'icon-size': 0.35, 'icon-allow-overlap': true },
+                    layout: { 'icon-image': conf.icon, 'icon-size': 0.35, 'icon-allow-overlap': true },
                     paint: { 'icon-color': '#FFFFFF' }
                 });
-            };
 
-            // レイヤー作成実行
-            createLayers('shops', '#FF9800', 'tabe-icon');
-            createLayers('castles', '#4285F4', 'castle-icon', true);
-            createLayers('michi', '#34A853', 'michi-icon');
-
-            // --- UI制御（ON/OFF） ---
-            const toggle = (checkId, prefix) => {
-                const layers = [`${prefix}-cluster`, `${prefix}-cluster-count`, `${prefix}-bg`, `${prefix}-icon`];
-                document.getElementById(checkId).addEventListener('change', (e) => {
+                // 3. UIトグル設定
+                const checkMap = { 'shops': 'check-shop', 'castles': 'check-castle', 'michi': 'check-michi', 'manholes': 'check-manhole' };
+                document.getElementById(checkMap[conf.id]).addEventListener('change', (e) => {
                     const val = e.target.checked ? 'visible' : 'none';
-                    layers.forEach(l => map.setLayoutProperty(l, 'visibility', val));
+                    [`${conf.id}-cluster`, `${conf.id}-cluster-count`, `${conf.id}-bg`, `${conf.id}-icon`].forEach(l => {
+                        map.setLayoutProperty(l, 'visibility', val);
+                    });
                 });
-            };
-            toggle('check-shop', 'shops');
-            toggle('check-castle', 'castles');
-            toggle('check-michi', 'michi');
 
-            // --- クリックイベント制御 ---
-            const attachEvents = (prefix, type) => {
-                // クラスタークリックでズーム
-                map.on('click', `${prefix}-cluster`, (e) => {
-                    const features = map.queryRenderedFeatures(e.point, { layers: [`${prefix}-cluster`] });
-                    const clusterId = features[0].properties.cluster_id;
-                    map.getSource(prefix).getClusterExpansionZoom(clusterId, (err, zoom) => {
+                // 4. イベント設定
+                // クラスタークリック
+                map.on('click', `${conf.id}-cluster`, (e) => {
+                    const features = map.queryRenderedFeatures(e.point, { layers: [`${conf.id}-cluster`] });
+                    map.getSource(conf.id).getClusterExpansionZoom(features[0].properties.cluster_id, (err, zoom) => {
                         if (err) return;
                         map.easeTo({ center: features[0].geometry.coordinates, zoom: zoom + 1 });
                     });
                 });
 
-                // 個別ピンクリックでポップアップ
-                map.on('click', `${prefix}-bg`, (e) => {
+                // 個別クリック（ポップアップ）
+                map.on('click', `${conf.id}-bg`, (e) => {
                     const p = e.features[0].properties;
                     const c = e.features[0].geometry.coordinates;
+                    
+                    // URL生成
                     const gmapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name)}`;
                     const navUrl = `https://www.google.com/maps/dir/?api=1&destination=${c[1]},${c[0]}`;
                     
                     let extraBtn = "";
-                    if(type === 'shop') extraBtn = `<a href="${p.url}" target="_blank" class="btn btn-tabelog">食べログ</a>`;
-                    if(type === 'castle') extraBtn = `<a href="https://ja.wikipedia.org/wiki/${encodeURIComponent(p.name)}" target="_blank" class="btn btn-wiki">Wikipedia</a>`;
+                    let imgHtml = "";
 
-                    new maplibregl.Popup().setLngLat(c).setHTML(`
+                    if(conf.type === 'shop') extraBtn = `<a href="${p.url}" target="_blank" class="btn btn-tabelog">食べログで詳細</a>`;
+                    if(conf.type === 'castle') extraBtn = `<a href="https://ja.wikipedia.org/wiki/${encodeURIComponent(p.name)}" target="_blank" class="btn btn-wiki">Wikipedia</a>`;
+                    
+                    // マンホール限定: 画像表示
+                    if(conf.type === 'manhole' && p.cardId) {
+                        const imgUrl = `https://ekikaramanhole.whitebeach.org/ext/manholecard/image/getimage.cgi?file=card/${p.cardId}.jpg`;
+                        imgHtml = `<div class="manhole-img-container"><img src="${imgUrl}" class="manhole-img" alt="Card Image"></div>`;
+                    }
+
+                    new maplibregl.Popup({closeButton: false}).setLngLat(c).setHTML(`
                         <div class="popup-card">
                             <span class="popup-title">${p.name}</span>
                             <span class="popup-genre">${p.genre || ""}</span>
-                            <a href="${gmapUrl}" target="_blank" class="btn btn-gmap">GoogleMap</a>
-                            ${extraBtn}
-                            <a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く</a>
+                            ${imgHtml}
+                            <div class="btn-container">
+                                <a href="${navUrl}" target="_blank" class="btn btn-nav">🚗 ここへ行く</a>
+                                <a href="${gmapUrl}" target="_blank" class="btn btn-gmap">GoogleMap周辺検索</a>
+                                ${extraBtn}
+                            </div>
                         </div>
                     `).addTo(map);
                 });
 
                 // カーソル制御
-                map.on('mouseenter', `${prefix}-cluster`, () => map.getCanvas().style.cursor = 'pointer');
-                map.on('mouseleave', `${prefix}-cluster`, () => map.getCanvas().style.cursor = '');
-                map.on('mouseenter', `${prefix}-bg`, () => map.getCanvas().style.cursor = 'pointer');
-                map.on('mouseleave', `${prefix}-bg`, () => map.getCanvas().style.cursor = '');
-            };
-
-            attachEvents('shops', 'shop');
-            attachEvents('castles', 'castle');
-            attachEvents('michi', 'michi');
+                const layers = [`${conf.id}-cluster`, `${conf.id}-bg`];
+                layers.forEach(l => {
+                    map.on('mouseenter', l, () => map.getCanvas().style.cursor = 'pointer');
+                    map.on('mouseleave', l, () => map.getCanvas().style.cursor = '');
+                });
+            });
         });
     });
 </script>
