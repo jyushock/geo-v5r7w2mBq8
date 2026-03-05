@@ -7,33 +7,26 @@
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
     <link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
-    
     <script src="data.js"></script>
     <script src="castle.js"></script>
     <script src="michi.js"></script>
-    <script src="manhole.js"></script> 
-
+    <script src="manhole.js"></script>
     <style>
         body { margin: 0; padding: 0; }
         #map { position: absolute; top: 0; bottom: 0; width: 100%; }
-        
-        /* ポップアップ */
         .popup-card { min-width: 200px; padding: 10px; }
         .popup-title { font-weight: bold; font-size: 16px; display: block; margin-bottom: 4px; }
         .popup-genre { font-size: 12px; color: #666; display: block; margin-bottom: 8px; }
-        
-        /* マンホール画像表示エリア */
-        .manhole-img-container { margin: 8px 0; text-align: center; background: #f9f9f9; border-radius: 8px; border: 1px solid #eee; overflow: hidden; }
-        .manhole-img { width: 100%; max-width: 180px; height: auto; display: block; margin: 0 auto; }
-
-        /* ボタン */
         .btn { display: block; text-align: center; padding: 10px; margin-top: 8px; border-radius: 8px; text-decoration: none; font-weight: bold; color: white; }
         .btn-tabelog { background: #ff6600; }
         .btn-wiki { background: #333333; }
         .btn-gmap { background: #4285f4; }
         .btn-nav { background: #34A853; }
 
-        /* メニューUI（元ソースのスタイル） */
+        /* マンホール画像用 */
+        .manhole-img-container { margin: 8px 0; text-align: center; background: #f9f9f9; border-radius: 8px; border: 1px solid #eee; overflow: hidden; }
+        .manhole-img { width: 100%; max-width: 180px; height: auto; display: block; margin: 0 auto; }
+
         .menu-ui {
             position: absolute;
             top: 10px;
@@ -89,123 +82,154 @@
     map.on('load', () => {
         setTimeout(() => { geolocate.trigger(); }, 1000);
 
-        // 画像ロード関数（レストラン等）
-        const loadImage = (url, id) => {
+        // 画像の読み込み
+        const loadImage = (url, id, isSDF = false) => {
             return new Promise((resolve) => {
                 map.loadImage(url, (error, image) => {
                     if (error) { resolve(); return; }
-                    map.addImage(id, image); 
-                    resolve();
-                });
-            });
-        };
-
-        // SDF画像ロード関数（マンホールのグレー用）
-        const loadImageAsSDF = (url, id) => {
-            return new Promise((resolve) => {
-                map.loadImage(url, (error, image) => {
-                    if (error) { resolve(); return; }
-                    map.addImage(id, image, { sdf: true });
+                    map.addImage(id, image, { sdf: isSDF });
                     resolve();
                 });
             });
         };
 
         Promise.all([
-            loadImage('tabe.png', 'tabe-img'),
-            loadImage('castle.png', 'castle-img'),
-            loadImage('michi.png', 'michi-img'),
-            loadImageAsSDF('michi.png', 'manhole-sdf') 
+            loadImage('tabe.png', 'tabe-icon'),
+            loadImage('castle.png', 'castle-icon'),
+            loadImage('michi.png', 'michi-icon'),
+            loadImage('michi.png', 'manhole-icon', true) // マンホール用だけ色変更可能(SDF)にする
         ]).then(() => {
 
-            const configs = [
-                { id: 'shops', data: shopData, type: 'shop', image: 'tabe-img' },
-                { id: 'castles', data: castleData, type: 'castle', image: 'castle-img' },
-                { id: 'michi', data: michiGeoJSON, type: 'michi', image: 'michi-img' },
-                { id: 'manholes', data: manholeGeoJSON, type: 'manhole', color: '#9E9E9E', icon: 'manhole-sdf' }
+            // --- ソースの追加 ---
+            const sourceConfigs = [
+                { id: 'shops', data: shopData },
+                { id: 'castles', data: castleData },
+                { id: 'michi', data: michiGeoJSON },
+                { id: 'manholes', data: manholeGeoJSON }
             ];
 
-            configs.forEach(conf => {
-                map.addSource(conf.id, {
+            sourceConfigs.forEach(src => {
+                map.addSource(src.id, {
                     type: 'geojson',
-                    data: conf.data,
+                    data: src.data,
                     cluster: true,
                     clusterMaxZoom: 13,
                     clusterRadius: 50
                 });
+            });
 
-                // クラスター
+            // --- レイヤー作成（個別設定） ---
+
+            // 1. レストラン (オレンジ系)
+            createStandardLayers('shops', '#FF9800', 'tabe-icon');
+            // 2. お城 (青系、100名城等で色分け)
+            createStandardLayers('castles', '#4285F4', 'castle-icon', true);
+            // 3. 道の駅 (緑系)
+            createStandardLayers('michi', '#34A853', 'michi-icon');
+            // 4. マンホール (グレー円 + アイコン)
+            createManholeLayers('manholes', '#9E9E9E', 'manhole-icon');
+
+            function createStandardLayers(id, color, iconId, isCastle = false) {
                 map.addLayer({
-                    id: `${conf.id}-cluster`,
+                    id: `${id}-cluster`,
                     type: 'circle',
-                    source: conf.id,
+                    source: id,
                     filter: ['has', 'point_count'],
+                    paint: { 'circle-color': color, 'circle-radius': 18, 'circle-stroke-width': 2, 'circle-stroke-color': '#FFFFFF' }
+                });
+                map.addLayer({
+                    id: `${id}-cluster-count`,
+                    type: 'symbol',
+                    source: id,
+                    filter: ['has', 'point_count'],
+                    layout: { 'text-field': '{point_count_abbreviated}', 'text-size': 12, 'text-font': ['Open Sans Bold'] },
+                    paint: { 'text-color': '#FFFFFF' }
+                });
+                map.addLayer({
+                    id: `${id}-bg`,
+                    type: 'circle',
+                    source: id,
+                    filter: ['!', ['has', 'point_count']],
                     paint: {
-                        'circle-color': conf.color || '#555',
-                        'circle-radius': 18,
-                        'circle-stroke-width': 2,
+                        'circle-color': isCastle ? [
+                            'match', ['get', 'genre'],
+                            '日本100名城', '#4285F4',
+                            '続日本100名城', '#EA4335',
+                            color
+                        ] : color,
+                        'circle-radius': 12,
+                        'circle-stroke-width': 1.5,
                         'circle-stroke-color': '#FFFFFF'
                     }
                 });
-
                 map.addLayer({
-                    id: `${conf.id}-cluster-count`,
+                    id: `${id}-icon`,
                     type: 'symbol',
-                    source: conf.id,
+                    source: id,
+                    filter: ['!', ['has', 'point_count']],
+                    layout: { 'icon-image': iconId, 'icon-size': 0.35, 'icon-allow-overlap': true },
+                    paint: { 'icon-color': '#FFFFFF' }
+                });
+            }
+
+            function createManholeLayers(id, color, iconId) {
+                map.addLayer({
+                    id: `${id}-cluster`,
+                    type: 'circle',
+                    source: id,
                     filter: ['has', 'point_count'],
-                    layout: {
-                        'text-field': '{point_count_abbreviated}',
-                        'text-size': 12,
-                        'text-font': ['Open Sans Bold']
-                    },
+                    paint: { 'circle-color': color, 'circle-radius': 18, 'circle-stroke-width': 2, 'circle-stroke-color': '#FFFFFF' }
+                });
+                map.addLayer({
+                    id: `${id}-cluster-count`,
+                    type: 'symbol',
+                    source: id,
+                    filter: ['has', 'point_count'],
+                    layout: { 'text-field': '{point_count_abbreviated}', 'text-size': 12, 'text-font': ['Open Sans Bold'] },
                     paint: { 'text-color': '#FFFFFF' }
                 });
+                map.addLayer({
+                    id: `${id}-bg`,
+                    type: 'circle',
+                    source: id,
+                    filter: ['!', ['has', 'point_count']],
+                    paint: { 'circle-color': color, 'circle-radius': 12, 'circle-stroke-width': 1.5, 'circle-stroke-color': '#FFFFFF' }
+                });
+                map.addLayer({
+                    id: `${id}-icon`,
+                    type: 'symbol',
+                    source: id,
+                    filter: ['!', ['has', 'point_count']],
+                    layout: { 'icon-image': iconId, 'icon-size': 0.35, 'icon-allow-overlap': true },
+                    paint: { 'icon-color': '#FFFFFF' }
+                });
+            }
 
-                // 個別ピン（分岐処理）
-                if (conf.type === 'manhole') {
-                    // マンホール：グレー円＋白アイコン
-                    map.addLayer({
-                        id: `${conf.id}-bg`,
-                        type: 'circle',
-                        source: conf.id,
-                        filter: ['!', ['has', 'point_count']],
-                        paint: {
-                            'circle-color': conf.color,
-                            'circle-radius': 12,
-                            'circle-stroke-width': 1.5,
-                            'circle-stroke-color': '#FFFFFF'
-                        }
-                    });
-                    map.addLayer({
-                        id: `${conf.id}-icon`,
-                        type: 'symbol',
-                        source: conf.id,
-                        filter: ['!', ['has', 'point_count']],
-                        layout: { 'icon-image': conf.icon, 'icon-size': 0.35, 'icon-allow-overlap': true },
-                        paint: { 'icon-color': '#ffffff' }
-                    });
-                } else {
-                    // レストラン・お城・道の駅：元の画像そのまま
-                    map.addLayer({
-                        id: `${conf.id}-bg`,
-                        type: 'symbol',
-                        source: conf.id,
-                        filter: ['!', ['has', 'point_count']],
-                        layout: { 'icon-image': conf.image, 'icon-size': 0.35, 'icon-allow-overlap': true }
-                    });
-                }
-
-                // UIトグル（元ソースと同じIDを使用）
-                const checkMap = { 'shops': 'check-shop', 'castles': 'check-castle', 'michi': 'check-michi', 'manholes': 'check-manhole' };
-                document.getElementById(checkMap[conf.id]).addEventListener('change', (e) => {
+            // --- UI制御 ---
+            const toggle = (checkId, prefix) => {
+                const layers = [`${prefix}-cluster`, `${prefix}-cluster-count`, `${prefix}-bg`, `${prefix}-icon`];
+                document.getElementById(checkId).addEventListener('change', (e) => {
                     const val = e.target.checked ? 'visible' : 'none';
-                    const layers = [`${conf.id}-cluster`, `${conf.id}-cluster-count`, `${conf.id}-bg`];
-                    if(conf.type === 'manhole') layers.push(`${conf.id}-icon`);
                     layers.forEach(l => map.setLayoutProperty(l, 'visibility', val));
                 });
+            };
+            toggle('check-shop', 'shops');
+            toggle('check-castle', 'castles');
+            toggle('check-michi', 'michi');
+            toggle('check-manhole', 'manholes');
 
-                // クリックイベント
-                map.on('click', `${conf.id}-bg`, (e) => {
+            // --- イベント制御 ---
+            const attachEvents = (prefix, type) => {
+                map.on('click', `${prefix}-cluster`, (e) => {
+                    const features = map.queryRenderedFeatures(e.point, { layers: [`${prefix}-cluster`] });
+                    const clusterId = features[0].properties.cluster_id;
+                    map.getSource(prefix).getClusterExpansionZoom(clusterId, (err, zoom) => {
+                        if (err) return;
+                        map.easeTo({ center: features[0].geometry.coordinates, zoom: zoom + 1 });
+                    });
+                });
+
+                map.on('click', `${prefix}-bg`, (e) => {
                     const p = e.features[0].properties;
                     const c = e.features[0].geometry.coordinates;
                     const gmapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name)}`;
@@ -213,11 +237,11 @@
                     
                     let extraBtn = "";
                     let imgHtml = "";
-
-                    if(conf.type === 'shop') extraBtn = `<a href="${p.url}" target="_blank" class="btn btn-tabelog">食べログ</a>`;
-                    if(conf.type === 'castle') extraBtn = `<a href="https://ja.wikipedia.org/wiki/${encodeURIComponent(p.name)}" target="_blank" class="btn btn-wiki">Wikipedia</a>`;
+                    if(type === 'shop') extraBtn = `<a href="${p.url}" target="_blank" class="btn btn-tabelog">食べログ</a>`;
+                    if(type === 'castle') extraBtn = `<a href="https://ja.wikipedia.org/wiki/${encodeURIComponent(p.name)}" target="_blank" class="btn btn-wiki">Wikipedia</a>`;
                     
-                    if(conf.type === 'manhole' && p.cardId) {
+                    // マンホール画像
+                    if(type === 'manhole' && p.cardId) {
                         const imgUrl = `https://ekikaramanhole.whitebeach.org/ext/manholecard/image/getimage.cgi?file=card/${p.cardId}.jpg`;
                         imgHtml = `<div class="manhole-img-container"><img src="${imgUrl}" class="manhole-img"></div>`;
                     }
@@ -234,9 +258,16 @@
                     `).addTo(map);
                 });
 
-                map.on('mouseenter', `${conf.id}-bg`, () => map.getCanvas().style.cursor = 'pointer');
-                map.on('mouseleave', `${conf.id}-bg`, () => map.getCanvas().style.cursor = '');
-            });
+                map.on('mouseenter', `${prefix}-cluster`, () => map.getCanvas().style.cursor = 'pointer');
+                map.on('mouseleave', `${prefix}-cluster`, () => map.getCanvas().style.cursor = '');
+                map.on('mouseenter', `${prefix}-bg`, () => map.getCanvas().style.cursor = 'pointer');
+                map.on('mouseleave', `${prefix}-bg`, () => map.getCanvas().style.cursor = '');
+            };
+
+            attachEvents('shops', 'shop');
+            attachEvents('castles', 'castle');
+            attachEvents('michi', 'michi');
+            attachEvents('manholes', 'manhole');
         });
     });
 </script>
