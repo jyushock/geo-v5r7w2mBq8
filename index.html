@@ -23,7 +23,20 @@
         .btn-wiki { background: #333333; }
         .btn-gmap { background: #4285f4; }
         .btn-nav { background: #34A853; }
-        .menu-ui { position: absolute; top: 10px; left: 10px; z-index: 100; background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); font-family: sans-serif; font-size: 14px; }
+        
+        /* 修正：位置を左下(bottom, left)に指定 */
+        .menu-ui { 
+            position: absolute; 
+            bottom: 30px; 
+            left: 10px; 
+            z-index: 100; 
+            background: white; 
+            padding: 10px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
+            font-family: sans-serif; 
+            font-size: 14px; 
+        }
         .menu-ui label { display: flex; align-items: center; cursor: pointer; margin-bottom: 5px; }
         .menu-ui input { margin-right: 8px; }
     </style>
@@ -38,6 +51,7 @@
 </div>
 
 <script>
+    // JS部分は変更なし
     const michiGeoJSON = {
         type: 'FeatureCollection',
         features: michiNoEkiData.map(d => ({
@@ -74,7 +88,6 @@
             configs.forEach(conf => {
                 map.addSource(conf.id, { type: 'geojson', data: conf.data, cluster: true, clusterMaxZoom: 13, clusterRadius: 50 });
 
-                // クラスター
                 map.addLayer({
                     id: `${conf.id}-cluster`,
                     type: 'circle',
@@ -96,7 +109,6 @@
                     paint: { 'text-color': '#FFFFFF' }
                 });
 
-                // 個別ピン背景円（お城の色分け：青・赤・黒）
                 map.addLayer({
                     id: `${conf.id}-bg`,
                     type: 'circle',
@@ -105,15 +117,14 @@
                     paint: {
                         'circle-color': conf.type === 'castle' ? [
                             'match', ['get', 'genre'],
-                            '日本100名城', '#4285F4', // 青
-                            '続日本100名城', '#EA4335', // 赤
-                            '#000000' // ★その他のお城は黒
+                            '日本100名城', '#4285F4',
+                            '続日本100名城', '#EA4335',
+                            '#000000'
                         ] : conf.color,
                         'circle-radius': 12, 'circle-stroke-width': 1.5, 'circle-stroke-color': '#FFFFFF'
                     }
                 });
 
-                // 個別ピンアイコン（白）
                 map.addLayer({
                     id: `${conf.id}-icon`,
                     type: 'symbol',
@@ -123,7 +134,6 @@
                     paint: { 'icon-color': '#FFFFFF' }
                 });
 
-                // UI連動
                 document.getElementById(`check-${conf.type === 'shop' ? 'shop' : conf.type === 'castle' ? 'castle' : conf.type === 'michi' ? 'michi' : 'manhole'}`).addEventListener('change', (e) => {
                     const val = e.target.checked ? 'visible' : 'none';
                     [`${conf.id}-cluster`, `${conf.id}-cluster-count`, `${conf.id}-bg`, `${conf.id}-icon`].forEach(l => {
@@ -131,7 +141,6 @@
                     });
                 });
 
-                // イベント
                 map.on('click', `${conf.id}-cluster`, (e) => {
                     const features = map.queryRenderedFeatures(e.point, { layers: [`${conf.id}-cluster`] });
                     map.getSource(conf.id).getClusterExpansionZoom(features[0].properties.cluster_id, (err, zoom) => {
@@ -142,7 +151,7 @@
                 map.on('click', `${conf.id}-bg`, (e) => {
                     const p = e.features[0].properties;
                     const c = e.features[0].geometry.coordinates;
-                    const navUrl = `https://www.google.com/maps/dir/?api=1&destination=${c[1]},${c[0]}`;
+                    const navUrl = `http://google.com/maps?daddr=${c[1]},${c[0]}`;
                     
                     if (conf.type === 'manhole') {
                         const imgUrl = p.cardId ? `https://ekikaramanhole.whitebeach.org/ext/manholecard/image/getimage.cgi?file=card/${p.cardId}.jpg` : "";
@@ -184,4 +193,3 @@
 </script>
 </body>
 </html>
-
