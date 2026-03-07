@@ -642,9 +642,13 @@
     function iosNavClick(event, appUrl, webUrl) {
         if (!/iP(hone|ad|od)/.test(navigator.userAgent)) return true;
         event.preventDefault();
-        // comgooglemaps://を試み、一定時間後にアプリが開かなければwebUrlへフォールバック
-        const timer = setTimeout(() => { window.location.href = webUrl; }, 1500);
-        window.addEventListener('pagehide', () => clearTimeout(timer), { once: true });
+        // アプリが開いてページが非表示になったらタイマーをキャンセル
+        const timer = setTimeout(() => { window.location.href = webUrl; }, 3000);
+        const cancel = () => { clearTimeout(timer); };
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) cancel();
+        }, { once: true });
+        window.addEventListener('pagehide', cancel, { once: true });
         window.location.href = appUrl;
         return false;
     }
