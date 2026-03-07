@@ -39,9 +39,86 @@
         }
         .menu-ui label { display: flex; align-items: center; cursor: pointer; margin-bottom: 5px; }
         .menu-ui input { margin-right: 8px; }
+
+        /* 検索UI */
+        #search-container {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(360px, calc(100% - 24px));
+            z-index: 200;
+            font-family: sans-serif;
+        }
+        #search-box {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+            padding: 0 12px;
+            height: 44px;
+        }
+        #search-icon { color: #9E9E9E; font-size: 16px; margin-right: 8px; flex-shrink: 0; }
+        #search-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 15px;
+            background: transparent;
+        }
+        #search-clear {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: #9E9E9E;
+            cursor: pointer;
+            padding: 0 0 0 8px;
+            flex-shrink: 0;
+        }
+        #search-results {
+            display: none;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            margin-top: 6px;
+            max-height: 320px;
+            overflow-y: auto;
+        }
+        .search-result-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 14px;
+            cursor: pointer;
+            border-bottom: 1px solid #f0f0f0;
+            gap: 10px;
+        }
+        .search-result-item:last-child { border-bottom: none; }
+        .search-result-item:hover { background: #f9f9f9; }
+        .search-result-icon {
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 13px;
+            flex-shrink: 0;
+            color: white;
+        }
+        .search-result-text { flex: 1; min-width: 0; }
+        .search-result-name { font-size: 14px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .search-result-sub  { font-size: 11px; color: #999; margin-top: 1px; }
+        .search-section-header { padding: 6px 14px; font-size: 11px; color: #999; background: #fafafa; border-bottom: 1px solid #f0f0f0; }
     </style>
 </head>
 <body>
+<div id="search-container">
+    <div id="search-box">
+        <span id="search-icon">🔍</span>
+        <input id="search-input" type="text" placeholder="ポケモン名・地名・施設名で検索..." autocomplete="off" />
+        <button id="search-clear">×</button>
+    </div>
+    <div id="search-results"></div>
+</div>
 <div id="map"></div>
 <div class="menu-ui">
     <label><input type="checkbox" id="check-shop" checked> レストラン</label>
@@ -91,15 +168,8 @@
     });
     map.addControl(geolocate);
 
-    // 現在地取得後にアニメーションなしで瞬間移動
-    geolocate.on('geolocate', (e) => {
-        map.jumpTo({
-            center: [e.coords.longitude, e.coords.latitude],
-            zoom: 13
-        });
-    });
-
     map.on('load', () => {
+        // 地図ロード完了後に自動で現在地へ移動
         geolocate.trigger();
         const loadSDF = (url, id) => new Promise(res =>
             map.loadImage(url, (err, img) => { map.addImage(id, img, { sdf: true }); res(); })
@@ -290,6 +360,221 @@
             });
         });
     });
+
+    // ══════════════════════════════════════════════════════════════
+    //  検索機能
+    // ══════════════════════════════════════════════════════════════
+    const MAPTILER_KEY = 'xEfXwvj7vY8GrgY26k3N';  // 既存のAPIキーを流用
+
+    // 自前データをフラットなリストに展開（地図ロード後に構築）
+    let searchIndex = [];
+    function buildSearchIndex() {
+        searchIndex = [];
+
+        // ポケふた
+        pokefutaGeoJSON.features.forEach(f => {
+            const p = f.properties;
+            searchIndex.push({
+                type: 'pokefuta',
+                label: p.pokemon || p.location,
+                sub: p.location,
+                coords: f.geometry.coordinates,
+                properties: p,
+            });
+        });
+
+        // マンホール
+        if (typeof manholeGeoJSON !== 'undefined') {
+            manholeGeoJSON.features.forEach(f => {
+                const p = f.properties;
+                searchIndex.push({
+                    type: 'manhole',
+                    label: p.name || '',
+                    sub: p.genre || 'マンホール',
+                    coords: f.geometry.coordinates,
+                    properties: p,
+                });
+            });
+        }
+
+        // お城
+        if (typeof castleData !== 'undefined') {
+            castleData.features.forEach(f => {
+                const p = f.properties;
+                searchIndex.push({
+                    type: 'castle',
+                    label: p.name || '',
+                    sub: p.genre || 'お城',
+                    coords: f.geometry.coordinates,
+                    properties: p,
+                });
+            });
+        }
+
+        // 道の駅
+        if (typeof michiNoEkiData !== 'undefined') {
+            michiNoEkiData.forEach(d => {
+                searchIndex.push({
+                    type: 'michi',
+                    label: d.name || '',
+                    sub: '道の駅',
+                    coords: [d.lon, d.lat],
+                    properties: d,
+                });
+            });
+        }
+
+        // レストラン
+        if (typeof shopData !== 'undefined' && shopData.features) {
+            shopData.features.forEach(f => {
+                const p = f.properties;
+                searchIndex.push({
+                    type: 'shop',
+                    label: p.name || '',
+                    sub: p.genre || 'レストラン',
+                    coords: f.geometry.coordinates,
+                    properties: p,
+                });
+            });
+        }
+    }
+
+    // アイコン設定
+    const typeConfig = {
+        pokefuta: { color: '#FBBC04', icon: '🟡', label: 'ポケふた' },
+        manhole:  { color: '#9E9E9E', icon: '🔘', label: 'マンホール' },
+        castle:   { color: '#000000', icon: '🏯', label: 'お城' },
+        michi:    { color: '#34A853', icon: '🛣',  label: '道の駅' },
+        shop:     { color: '#FF9800', icon: '🍽',  label: 'レストラン' },
+        place:    { color: '#4285F4', icon: '📍', label: '地名' },
+    };
+
+    // 自前データ検索
+    function searchLocal(query) {
+        const q = query.toLowerCase();
+        return searchIndex
+            .filter(item => item.label.toLowerCase().includes(q) || item.sub.toLowerCase().includes(q))
+            .slice(0, 6);
+    }
+
+    // MapTiler Geocoding API で地名検索
+    let geocodeTimer = null;
+    async function searchGeocode(query) {
+        try {
+            const url = `https://api.maptiler.com/geocoding/${encodeURIComponent(query)}.json?key=${MAPTILER_KEY}&language=ja&country=jp&limit=4`;
+            const res  = await fetch(url);
+            const data = await res.json();
+            return (data.features || []).map(f => ({
+                type: 'place',
+                label: f.place_name_ja || f.place_name || f.text,
+                sub: '地名',
+                coords: f.center,
+                properties: {},
+            }));
+        } catch { return []; }
+    }
+
+    // 候補リストを描画
+    function renderResults(localItems, placeItems) {
+        const box = document.getElementById('search-results');
+        box.innerHTML = '';
+
+        if (localItems.length === 0 && placeItems.length === 0) {
+            box.innerHTML = '<div style="padding:14px;text-align:center;color:#999;font-size:13px;">候補が見つかりません</div>';
+            box.style.display = 'block';
+            return;
+        }
+
+        const makeItem = (item) => {
+            const cfg = typeConfig[item.type] || typeConfig.place;
+            const div = document.createElement('div');
+            div.className = 'search-result-item';
+            div.innerHTML = `
+                <div class="search-result-icon" style="background:${cfg.color}">${cfg.icon}</div>
+                <div class="search-result-text">
+                    <div class="search-result-name">${item.label}</div>
+                    <div class="search-result-sub">${cfg.label}　${item.sub}</div>
+                </div>`;
+            div.addEventListener('click', () => onResultClick(item));
+            return div;
+        };
+
+        if (localItems.length > 0) {
+            const hdr = document.createElement('div');
+            hdr.className = 'search-section-header';
+            hdr.textContent = 'スポット';
+            box.appendChild(hdr);
+            localItems.forEach(item => box.appendChild(makeItem(item)));
+        }
+
+        if (placeItems.length > 0) {
+            const hdr = document.createElement('div');
+            hdr.className = 'search-section-header';
+            hdr.textContent = '地名・場所';
+            box.appendChild(hdr);
+            placeItems.forEach(item => box.appendChild(makeItem(item)));
+        }
+
+        box.style.display = 'block';
+    }
+
+    // 候補タップ時の処理
+    function onResultClick(item) {
+        clearSearch();
+        map.jumpTo({ center: item.coords, zoom: 15 });
+
+        // 自前データの場合はポップアップも表示
+        if (item.type !== 'place') {
+            setTimeout(() => {
+                const features = map.queryRenderedFeatures(
+                    map.project(item.coords),
+                    { layers: ['shops-bg', 'castles-bg', 'michi-bg', 'manholes-bg'] }
+                );
+                if (features.length > 0) {
+                    map.fire('click', { lngLat: { lng: item.coords[0], lat: item.coords[1] }, features, point: map.project(item.coords) });
+                }
+            }, 300);
+        }
+    }
+
+    function clearSearch() {
+        document.getElementById('search-input').value = '';
+        document.getElementById('search-clear').style.display = 'none';
+        document.getElementById('search-results').style.display = 'none';
+    }
+
+    // 入力イベント
+    document.getElementById('search-input').addEventListener('input', async (e) => {
+        const q = e.target.value.trim();
+        document.getElementById('search-clear').style.display = q ? 'block' : 'none';
+
+        if (!q) {
+            document.getElementById('search-results').style.display = 'none';
+            return;
+        }
+
+        // 自前データはすぐ表示
+        const local = searchLocal(q);
+        renderResults(local, []);
+
+        // 地名はデバウンスして取得（300ms）
+        clearTimeout(geocodeTimer);
+        geocodeTimer = setTimeout(async () => {
+            const places = await searchGeocode(q);
+            renderResults(local, places);
+        }, 300);
+    });
+
+    document.getElementById('search-clear').addEventListener('click', clearSearch);
+
+    // 地図タップで候補リストを閉じる
+    document.getElementById('map').addEventListener('click', () => {
+        document.getElementById('search-results').style.display = 'none';
+    });
+
+    // 地図ロード後にインデックス構築
+    map.on('load', () => { buildSearchIndex(); });
+
 </script>
 </body>
 </html>
