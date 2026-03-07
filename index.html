@@ -539,20 +539,20 @@
             return div;
         };
 
-        if (localItems.length > 0) {
-            const hdr = document.createElement('div');
-            hdr.className = 'search-section-header';
-            hdr.textContent = 'スポット';
-            box.appendChild(hdr);
-            localItems.forEach(item => box.appendChild(makeItem(item)));
-        }
-
         if (placeItems.length > 0) {
             const hdr = document.createElement('div');
             hdr.className = 'search-section-header';
             hdr.textContent = '地名・場所';
             box.appendChild(hdr);
             placeItems.forEach(item => box.appendChild(makeItem(item)));
+        }
+
+        if (localItems.length > 0) {
+            const hdr = document.createElement('div');
+            hdr.className = 'search-section-header';
+            hdr.textContent = 'スポット';
+            box.appendChild(hdr);
+            localItems.forEach(item => box.appendChild(makeItem(item)));
         }
 
         box.style.display = 'block';
@@ -594,13 +594,12 @@
         }
 
         const local = searchLocal(q);
-        renderResults([], local);  // 自前データをすぐ表示
 
-        // 地名はデバウンスして取得（300ms）
+        // 地名取得後にまとめて描画（中間表示による順序乱れを防ぐ）
         clearTimeout(geocodeTimer);
         geocodeTimer = setTimeout(async () => {
             const places = await searchGeocode(q);
-            renderResults(places, local);  // 地名→自前の順で表示
+            renderResults(local, places);  // local=スポット, places=地名
         }, 300);
     });
 
