@@ -14,29 +14,48 @@
     <style>
         body { margin: 0; padding: 0; }
         #map { position: absolute; top: 0; bottom: 0; width: 100%; }
-        .popup-card { min-width: 200px; padding: 10px; font-family: sans-serif; }
-        .popup-title { font-weight: bold; font-size: 16px; display: block; margin-bottom: 4px; }
-        .popup-genre { font-size: 12px; color: #666; display: block; margin-bottom: 8px; }
-        .manhole-img-container { margin: 8px 0; text-align: center; background: #f9f9f9; border-radius: 8px; border: 1px solid #eee; overflow: hidden; }
-        .manhole-img { width: 100%; max-width: 180px; height: auto; display: block; margin: 0 auto; }
-        .btn { display: block; text-align: center; padding: 10px; margin-top: 8px; border-radius: 8px; text-decoration: none; font-weight: bold; color: white; font-size: 14px; }
+        .popup-card { min-width: 180px; padding: 7px; font-family: sans-serif; }
+        .popup-title { font-weight: bold; font-size: 14px; display: block; margin-bottom: 2px; }
+        .popup-genre { font-size: 11px; color: #666; display: block; margin-bottom: 5px; }
+        .manhole-img-container { margin: 5px 0; text-align: center; background: #f9f9f9; border-radius: 6px; border: 1px solid #eee; overflow: hidden; }
+        .manhole-img { width: 100%; max-width: 160px; height: auto; display: block; margin: 0 auto; }
+        .btn { display: block; text-align: center; padding: 7px; margin-top: 5px; border-radius: 7px; text-decoration: none; font-weight: bold; color: white; font-size: 13px; }
         .btn-tabelog { background: #ff6600; }
         .btn-wiki { background: #333333; }
         .btn-gmap { background: #4285f4; }
         .btn-nav { background: #34A853; }
         .btn-pokefuta { background: #FBBC04; color: #333; }
-        .menu-ui { 
-            position: absolute; 
-            bottom: 30px; 
-            left: 10px; 
-            z-index: 100; 
-            background: white; 
-            padding: 10px; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
-            font-family: sans-serif; 
-            font-size: 14px; 
+        #filter-btn {
+            position: absolute;
+            bottom: 30px;
+            left: 10px;
+            z-index: 100;
+            background: white;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            width: 44px;
+            height: 44px;
+            font-size: 22px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+        .menu-ui {
+            position: absolute;
+            bottom: 82px;
+            left: 10px;
+            z-index: 100;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            font-family: sans-serif;
+            font-size: 14px;
+            display: none;
+        }
+        .menu-ui.open { display: block; }
         .menu-ui label { display: flex; align-items: center; cursor: pointer; margin-bottom: 5px; }
         .menu-ui input { margin-right: 8px; }
 
@@ -120,7 +139,8 @@
     <div id="search-results"></div>
 </div>
 <div id="map"></div>
-<div class="menu-ui">
+<button id="filter-btn" onclick="toggleFilter()" title="表示フィルター">🗂</button>
+<div class="menu-ui" id="filter-panel">
     <label><input type="checkbox" id="check-shop" checked> レストラン</label>
     <label><input type="checkbox" id="check-castle" checked> お城</label>
     <label><input type="checkbox" id="check-michi" checked> 道の駅</label>
@@ -240,7 +260,7 @@
                         ] : conf.color,
                         'circle-radius': 12,
                         'circle-stroke-width': 1.5,
-                        'circle-stroke-color': 'rgba(0,0,0,0.5)'
+                        'circle-stroke-color': 'rgba(0,0,0,0.35)'
                     }
                 });
                 map.addLayer({
@@ -295,7 +315,7 @@
                                             onerror="this.src='${p.image_url || ''}'">
                                    </div>`
                                 : '';
-                            new maplibregl.Popup({ closeButton: false })
+                            new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) })
                                 .setLngLat(c)
                                 .setHTML(`
                                     <div class="popup-card">
@@ -317,7 +337,7 @@
                                        <img src="${imgUrl}" class="manhole-img">
                                    </div>`
                                 : '';
-                            new maplibregl.Popup({ closeButton: false })
+                            new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) })
                                 .setLngLat(c)
                                 .setHTML(`
                                     <div class="popup-card">
@@ -336,7 +356,7 @@
                         if (conf.type === 'shop')   extraBtn = `<a href="${p.url}" target="_blank" class="btn btn-tabelog">食べログ</a>`;
                         if (conf.type === 'castle') extraBtn = `<a href="https://ja.wikipedia.org/wiki/${encodeURIComponent(p.name)}" target="_blank" class="btn btn-wiki">Wikipedia</a>`;
 
-                        new maplibregl.Popup({ closeButton: false })
+                        new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) })
                             .setLngLat(c)
                             .setHTML(`
                                 <div class="popup-card">
@@ -612,6 +632,37 @@
 
     // 地図ロード後にインデックス構築
     map.on('load', () => { buildSearchIndex(); });
+
+    // ── フィルタートグル ──────────────────────────────────────────
+    function toggleFilter() {
+        const panel = document.getElementById('filter-panel');
+        panel.classList.toggle('open');
+    }
+
+    // 地図タップでフィルターパネルも閉じる
+    document.getElementById('map').addEventListener('click', () => {
+        document.getElementById('filter-panel').classList.remove('open');
+    });
+
+    // ── ポップアップ表示位置を動的に調整 ──────────────────────────
+    // ピンの画面上の位置に応じて anchor を切り替える
+    function getPopupAnchor(lngLat) {
+        const point = map.project(lngLat);
+        const h = window.innerHeight;
+        const w = window.innerWidth;
+        const top    = point.y < h * 0.4;
+        const bottom = point.y > h * 0.6;
+        const left   = point.x < w * 0.3;
+        const right  = point.x > w * 0.7;
+        if (top && left)  return 'top-left';
+        if (top && right) return 'top-right';
+        if (top)          return 'top';
+        if (bottom && left)  return 'bottom-left';
+        if (bottom && right) return 'bottom-right';
+        if (left)  return 'left';
+        if (right) return 'right';
+        return 'bottom';
+    }
 
 </script>
 </body>
