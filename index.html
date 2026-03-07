@@ -249,14 +249,8 @@
 </div>
 
 <script>
-    const michiGeoJSON = {
-        type: 'FeatureCollection',
-        features: michiNoEkiData.map(d => ({
-            type: 'Feature',
-            geometry: { type: 'Point', coordinates: [d.lon, d.lat] },
-            properties: { name: d.name, genre: '道の駅' }
-        }))
-    };
+    // michiNoEkiGeoJSON はmichi.jsで定義済みのGeoJSON（propertyにname,prefecture,city,address,road,urlを含む）
+    const michiGeoJSON = michiNoEkiGeoJSON;
 
     // 既存マンホールとポケふたを1つのFeatureCollectionにマージ
     // manhole.js は manholeGeoJSON、pokemon.js は pokefutaGeoJSON という変数名を想定
@@ -539,13 +533,14 @@
         }
 
         // 道の駅
-        if (typeof michiNoEkiData !== 'undefined') {
-            michiNoEkiData.forEach(d => {
+        if (typeof michiNoEkiGeoJSON !== 'undefined') {
+            michiNoEkiGeoJSON.features.forEach(f => {
+                const d = f.properties;
                 searchIndex.push({
                     type: 'michi',
                     label: d.name || '',
                     sub: '道の駅',
-                    coords: [d.lon, d.lat],
+                    coords: f.geometry.coordinates,
                     properties: d,
                 });
             });
