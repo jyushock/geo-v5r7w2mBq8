@@ -24,6 +24,7 @@
         .popup-genre { font-size: 11px; color: #666; display: block; margin-bottom: 5px; }
         .manhole-img-container { margin: 4px 0; text-align: center; background: #f9f9f9; border-radius: 6px; border: 1px solid #eee; overflow: hidden; }
         .manhole-img { width: 100%; max-width: 180px; max-height: 180px; object-fit: contain; height: auto; display: block; margin: 0 auto; }
+        .manhole-img-large { width: 100%; max-width: 220px; max-height: 220px; object-fit: contain; height: auto; display: block; margin: 0 auto; }
         .btn { display: block; text-align: center; padding: 7px; margin-top: 5px; border-radius: 7px; text-decoration: none; font-weight: bold; color: white; font-size: 13px; }
         .btn-tabelog { background: #ff6600; }
         .btn-wiki { background: #333333; }
@@ -442,7 +443,7 @@
                                 : '';
                             imgHtml = imgUrl
                                 ? `<div class="manhole-img-container">
-                                       <img src="${imgUrl}" class="manhole-img">
+                                       <img src="${imgUrl}" class="manhole-img-large">
                                    </div>`
                                 : '';
                             new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) })
