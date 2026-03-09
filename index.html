@@ -294,8 +294,8 @@
 
     // 地名を日本語優先に書き換え＋駅の強調表示
     const ownLayerPrefixes = ['shops-', 'castles-', 'michi-', 'manholes-'];
-    const stationKeywords = ['poi_transit'];  // 駅・バス停（libertyではpoi_transitに統合）
-    const busKeywords     = [];               // libertyにバス停専用レイヤーなし
+    const stationLayerIds = ['poi_r20', 'poi_r7', 'poi_r1'];  // 駅を含むPOIレイヤー
+    const busKeywords     = ['poi_transit'];                    // バス停レイヤー
     map.on('styledata', () => {
         const style = map.getStyle();
         if (!style || !style.layers) return;
@@ -306,8 +306,8 @@
 
             try {
                 const lid = layer.id.toLowerCase();
-                const isStation = stationKeywords.some(k => lid.includes(k));
-                const isBus     = !isStation && busKeywords.some(k => lid.includes(k));
+                const isStation = stationLayerIds.includes(layer.id);
+                const isBus     = busKeywords.some(k => lid.includes(k));
 
                 if (layer.type === 'symbol') {
                     // 日本語優先
@@ -320,16 +320,36 @@
                     // フォント統一
                     map.setLayoutProperty(layer.id, 'text-font', ['Noto Sans Bold']);
 
-                    // 駅・バス停を強調表示（poi_transit）
+                    // 駅POIレイヤー：class=railway&subclass=stationのみ青く強調
                     if (isStation) {
-                        map.setPaintProperty(layer.id, 'text-color', '#1565C0');
+                        map.setPaintProperty(layer.id, 'text-color', [
+                            'case',
+                            ['all', ['==', ['get', 'class'], 'railway'], ['==', ['get', 'subclass'], 'station']],
+                            '#1565C0',
+                            '#666666'
+                        ]);
                         map.setPaintProperty(layer.id, 'text-halo-color', '#FFFFFF');
-                        map.setPaintProperty(layer.id, 'text-halo-width', 2);
+                        map.setPaintProperty(layer.id, 'text-halo-width', [
+                            'case',
+                            ['all', ['==', ['get', 'class'], 'railway'], ['==', ['get', 'subclass'], 'station']],
+                            2, 1
+                        ]);
+                        map.setLayoutProperty(layer.id, 'text-size', [
+                            'case',
+                            ['all', ['==', ['get', 'class'], 'railway'], ['==', ['get', 'subclass'], 'station']],
+                            14, 12
+                        ]);
+                    }
+                    // バス停（緑・やや小さめ）
+                    if (isBus) {
+                        map.setPaintProperty(layer.id, 'text-color', '#2E7D32');
+                        map.setPaintProperty(layer.id, 'text-halo-color', '#FFFFFF');
+                        map.setPaintProperty(layer.id, 'text-halo-width', 1.5);
                         map.setLayoutProperty(layer.id, 'text-size', [
                             'interpolate', ['linear'], ['zoom'],
-                            8, 12, 12, 14, 15, 15
+                            8, 11, 12, 12, 15, 13
                         ]);
-                        map.setLayoutProperty(layer.id, 'visibility', 'visible');
+                        try { map.setPaintProperty(layer.id, 'icon-color', '#2E7D32'); } catch(e) {}
                     }
                 }
 
