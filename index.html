@@ -274,7 +274,7 @@
 
     const map = new maplibregl.Map({
         container: 'map',
-        style: 'https://tiles.openfreemap.org/styles/liberty',
+        style: 'https://tiles.openfreemap.org/styles/positron',
         center: [139.76, 35.68],
         zoom: 11
     });
@@ -295,7 +295,10 @@
     map.on('load', () => {
         geolocate.trigger();
         const loadSDF = (url, id) => new Promise(res =>
-            map.loadImage(url, (err, img) => { map.addImage(id, img, { sdf: true }); res(); })
+            map.loadImage(url, (err, img) => {
+                if (!err && img) map.addImage(id, img, { sdf: true });
+                res();  // エラーでも続行
+            })
         );
 
         Promise.all([
