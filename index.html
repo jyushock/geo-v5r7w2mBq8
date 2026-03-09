@@ -336,7 +336,7 @@
                     // 駅POIレイヤー：minzoomを解除して引いた状態でも表示＋青く強調
                     if (isStation) {
                         // minzoom制限を解除（デフォルトはzoom15以上のみ）
-                        try { map.setLayerZoomRange(layer.id, 8, 24); } catch(e) {}
+                        try { map.setLayerZoomRange(layer.id, 5, 24); } catch(e) {}
                         map.setPaintProperty(layer.id, 'text-color', '#1565C0');
                         map.setPaintProperty(layer.id, 'text-halo-color', '#FFFFFF');
                         map.setPaintProperty(layer.id, 'text-halo-width', 2);
