@@ -292,56 +292,50 @@
         map.jumpTo({ center: [e.coords.longitude, e.coords.latitude], zoom: 13 });
     });
 
-    // 地名を日本語優先に書き換え＋Google Maps風スタイル調整
+    // 地名を日本語優先に書き換え＋駅の強調表示
     const ownLayerPrefixes = ['shops-', 'castles-', 'michi-', 'manholes-'];
+    const stationKeywords  = ['station', 'railway', 'transit', 'subway', 'train'];
     map.on('styledata', () => {
         const style = map.getStyle();
         if (!style || !style.layers) return;
 
         style.layers.forEach(layer => {
-            // ① 自前レイヤーはスキップ
+            // 自前レイヤーはスキップ
             if (ownLayerPrefixes.some(p => layer.id.startsWith(p))) return;
 
             try {
-                // ② 日本語優先
+                const lid = layer.id.toLowerCase();
+                const isStation = stationKeywords.some(k => lid.includes(k));
+
                 if (layer.type === 'symbol') {
+                    // 日本語優先
                     const tf = layer.layout && layer.layout['text-field'];
                     if (tf) {
                         map.setLayoutProperty(layer.id, 'text-field', [
                             'coalesce', ['get', 'name:ja'], ['get', 'name']
                         ]);
                     }
-                    // ⑤ フォントをGoogleMap風に
+                    // フォント統一
                     map.setLayoutProperty(layer.id, 'text-font', ['Noto Sans Bold']);
-                }
 
-                // ④ タイル側POIを非表示（自前ピンを際立たせる）
-                const poiKeywords = ['poi', 'place_label', 'airport', 'transit', 'shop', 'food', 'park_label'];
-                if (poiKeywords.some(k => layer.id.toLowerCase().includes(k))) {
-                    map.setLayoutProperty(layer.id, 'visibility', 'none');
-                }
-
-                // ① 主要道路を目立たせる
-                if (layer.type === 'line') {
-                    const id = layer.id.toLowerCase();
-                    if (id.includes('motorway') || id.includes('trunk')) {
-                        map.setPaintProperty(layer.id, 'line-color', '#FFA726');
-                        map.setPaintProperty(layer.id, 'line-width', ['interpolate', ['linear'], ['zoom'], 8, 3, 14, 8]);
-                    } else if (id.includes('primary')) {
-                        map.setPaintProperty(layer.id, 'line-color', '#FFD54F');
-                        map.setPaintProperty(layer.id, 'line-width', ['interpolate', ['linear'], ['zoom'], 8, 2, 14, 6]);
-                    } else if (id.includes('secondary')) {
-                        map.setPaintProperty(layer.id, 'line-color', '#FFFFFF');
-                        map.setPaintProperty(layer.id, 'line-width', ['interpolate', ['linear'], ['zoom'], 10, 1, 14, 4]);
+                    // 駅を強調表示
+                    if (isStation) {
+                        map.setPaintProperty(layer.id, 'text-color', '#1565C0');
+                        map.setPaintProperty(layer.id, 'text-halo-color', '#FFFFFF');
+                        map.setPaintProperty(layer.id, 'text-halo-width', 2);
+                        map.setLayoutProperty(layer.id, 'text-size', [
+                            'interpolate', ['linear'], ['zoom'],
+                            10, 13,
+                            15, 18
+                        ]);
                     }
                 }
 
-                // ③ 水域・公園の色をGoogleMap風に
+                // 水域・公園の色をGoogleMap風に（維持）
                 if (layer.type === 'fill') {
-                    const id = layer.id.toLowerCase();
-                    if (id.includes('water')) {
+                    if (lid.includes('water')) {
                         map.setPaintProperty(layer.id, 'fill-color', '#AAD3DF');
-                    } else if (id.includes('park') || id.includes('green') || id.includes('forest') || id.includes('wood')) {
+                    } else if (lid.includes('park') || lid.includes('green') || lid.includes('forest') || lid.includes('wood')) {
                         map.setPaintProperty(layer.id, 'fill-color', '#C8FACC');
                     }
                 }
@@ -349,7 +343,7 @@
             } catch(e) {}
         });
 
-        // ② 建物の3D表示（ズーム15以上で有効）
+        // 建物の3D表示（ズーム15以上で有効・維持）
         if (map.getZoom() >= 15 && map.getLayer('building') && !map.getLayer('3d-buildings')) {
             try {
                 map.addLayer({
