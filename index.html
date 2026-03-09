@@ -292,20 +292,21 @@
         map.jumpTo({ center: [e.coords.longitude, e.coords.latitude], zoom: 13 });
     });
 
-    // スタイルロード完了後に地名を日本語優先に書き換える
+    // 地名を日本語優先に書き換え（自前レイヤーは除外）
+    const ownLayerPrefixes = ['shops-', 'castles-', 'michi-', 'manholes-'];
     map.on('styledata', () => {
         const style = map.getStyle();
         if (!style || !style.layers) return;
         style.layers.forEach(layer => {
             if (layer.type !== 'symbol') return;
+            if (ownLayerPrefixes.some(p => layer.id.startsWith(p))) return;
             const tf = layer.layout && layer.layout['text-field'];
             if (!tf) return;
-            // name:ja が存在すれば日本語、なければ元の name を使用
-            map.setLayoutProperty(layer.id, 'text-field', [
-                'coalesce',
-                ['get', 'name:ja'],
-                ['get', 'name']
-            ]);
+            try {
+                map.setLayoutProperty(layer.id, 'text-field', [
+                    'coalesce', ['get', 'name:ja'], ['get', 'name']
+                ]);
+            } catch(e) {}
         });
     });
 
