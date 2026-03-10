@@ -344,10 +344,10 @@
                     }
                     // バス停（緑・やや小さめ・アイコン背景色も緑に）
                     if (isBus) {
+                        try { map.setLayerZoomRange(layer.id, 14, 24); } catch(e) {}
                         map.setPaintProperty(layer.id, 'text-color', '#2E7D32');
                         map.setPaintProperty(layer.id, 'text-halo-color', '#FFFFFF');
                         map.setPaintProperty(layer.id, 'text-halo-width', 1.5);
-                        map.setLayoutProperty(layer.id, 'text-size', 12);
                         try { map.setPaintProperty(layer.id, 'icon-color', '#2E7D32'); } catch(e) {}
                         try { map.setPaintProperty(layer.id, 'icon-halo-color', '#2E7D32'); } catch(e) {}
                     }
