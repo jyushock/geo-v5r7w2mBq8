@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8" />
-    <title>[v20] カスタムマップ</title>
+    <title>[v21] カスタムマップ</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -109,7 +109,7 @@
             background: white;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            margin-top: 6px;
+            margin-bottom: 6px;
             max-height: 320px;
             overflow-y: auto;
         }
@@ -224,12 +224,12 @@
 </head>
 <body>
 <div id="search-container">
+    <div id="search-results"></div>
     <div id="search-box">
         <span id="search-icon">🔍</span>
         <input id="search-input" type="text" autocomplete="off" />
         <button id="search-clear">×</button>
     </div>
-    <div id="search-results"></div>
 </div>
 <div id="map"></div>
 <button id="supermarket-btn" onclick="openSupermarket()" title="近くのスーパー">🛒</button>
