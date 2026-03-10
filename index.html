@@ -320,11 +320,12 @@
                     // フォント統一
                     map.setLayoutProperty(layer.id, 'text-font', ['Noto Sans Bold']);
 
-                    // 車関連POIをフィルターで完全非表示
-                    const carSubclasses = ['parking', 'fuel', 'car_dealer', 'car_rental', 'car_repair', 'car_wash', 'motorcycle'];
+                    // 車関連POI・名前なしPOIをフィルターで完全非表示
+                    const carSubclasses = ['parking', 'fuel', 'car_dealer', 'car_rental', 'car_repair', 'car_wash', 'motorcycle', 'charging_station'];
                     if (isStation) {
-                        map.setFilter(layer.id, [
-                            '!', ['in', ['get', 'subclass'], ['literal', carSubclasses]]
+                        map.setFilter(layer.id, ['all',
+                            ['has', 'name'],
+                            ['!', ['in', ['get', 'subclass'], ['literal', carSubclasses]]]
                         ]);
                     }
 
