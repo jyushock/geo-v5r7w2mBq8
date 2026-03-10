@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8" />
-    <title>[v2] カスタムマップ</title>
+    <title>[v3] カスタムマップ</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -309,8 +309,7 @@
 
         // 日本語化処理を削除（薄くなる原因のため）
 
-        // 【デバッグ中・一時無効化】自前3D建物
-        /*
+        // 自前3D建物
         if (!map.getLayer('3d-buildings')) {
             try {
                 map.addLayer({
@@ -328,7 +327,6 @@
                 });
             } catch(e) {}
         }
-        */
     });
 
     map.on('load', () => {
