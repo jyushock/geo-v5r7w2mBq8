@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8" />
-    <title>[v3] カスタムマップ</title>
+    <title>[v4] カスタムマップ</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -309,24 +309,7 @@
 
         // 日本語化処理を削除（薄くなる原因のため）
 
-        // 自前3D建物
-        if (!map.getLayer('3d-buildings')) {
-            try {
-                map.addLayer({
-                    id: '3d-buildings',
-                    source: 'openmaptiles',
-                    'source-layer': 'building',
-                    type: 'fill-extrusion',
-                    minzoom: 15,
-                    paint: {
-                        'fill-extrusion-color': '#E8E0D8',
-                        'fill-extrusion-height': ['get', 'render_height'],
-                        'fill-extrusion-base': ['get', 'render_min_height'],
-                        'fill-extrusion-opacity': 0.7
-                    }
-                });
-            } catch(e) {}
-        }
+        // libertyの既存building-3dレイヤーをそのまま使用（自前addLayerは削除）
     });
 
     map.on('load', () => {
