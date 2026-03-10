@@ -345,7 +345,7 @@
                         try { map.setLayerZoomRange(layer.id, 1, 24); } catch(e) {}
                         map.setPaintProperty(layer.id, 'text-color', [
                             'case',
-                            ['all', ['==', ['get', 'class'], 'railway'], ['==', ['get', 'subclass'], 'station']],
+                            ['==', ['get', 'subclass'], 'station'],
                             '#1565C0',
                             ['==', ['get', 'subclass'], 'bus_stop'],
                             '#2E7D32',
@@ -354,19 +354,21 @@
                         map.setPaintProperty(layer.id, 'text-halo-color', '#FFFFFF');
                         map.setPaintProperty(layer.id, 'text-halo-width', [
                             'case',
-                            ['any',
-                                ['all', ['==', ['get', 'class'], 'railway'], ['==', ['get', 'subclass'], 'station']],
-                                ['==', ['get', 'subclass'], 'bus_stop']
-                            ],
+                            ['in', ['get', 'subclass'], ['literal', ['station', 'bus_stop']]],
                             2, 0
                         ]);
                         map.setLayoutProperty(layer.id, 'text-size', [
                             'case',
-                            ['all', ['==', ['get', 'class'], 'railway'], ['==', ['get', 'subclass'], 'station']],
-                            14,
-                            ['==', ['get', 'subclass'], 'bus_stop'],
-                            12,
+                            ['==', ['get', 'subclass'], 'station'], 14,
+                            ['==', ['get', 'subclass'], 'bus_stop'], 12,
                             12
+                        ]);
+                        // バス停のアイコンサイズを小さく
+                        map.setLayoutProperty(layer.id, 'icon-size', [
+                            'case',
+                            ['==', ['get', 'subclass'], 'bus_stop'], 0.5,
+                            ['==', ['get', 'subclass'], 'station'], 0.8,
+                            0.7
                         ]);
                     }
                     // バス停（緑・やや小さめ・アイコン背景色も緑に）
