@@ -300,6 +300,9 @@
         const style = map.getStyle();
         if (!style || !style.layers) return;
 
+        // libertyの建物3Dレイヤーを非表示（自前の3d-buildingsで代替）
+        try { map.setLayoutProperty('building-3d', 'visibility', 'none'); } catch(e) {}
+
         style.layers.forEach(layer => {
             // 自前レイヤーはスキップ
             if (ownLayerPrefixes.some(p => layer.id.startsWith(p))) return;
