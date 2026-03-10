@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8" />
-    <title>[v23] カスタムマップ</title>
+    <title>[v22] カスタムマップ</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -828,7 +828,7 @@
     // 入力イベント
     document.getElementById('search-input').addEventListener('input', async (e) => {
         const q = e.target.value.trim();
-        document.getElementById('search-clear').style.display = q ? 'inline-block' : 'none';
+        document.getElementById('search-clear').style.display = q ? 'block' : 'none';
 
         if (!q) {
             document.getElementById('search-results').style.display = 'none';
