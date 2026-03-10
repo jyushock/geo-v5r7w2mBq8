@@ -345,7 +345,7 @@
                         try { map.setLayerZoomRange(layer.id, 1, 24); } catch(e) {}
                         map.setPaintProperty(layer.id, 'text-color', [
                             'case',
-                            ['==', ['get', 'subclass'], 'station'],
+                            ['in', ['get', 'subclass'], ['literal', ['station', 'subway']]],
                             '#1565C0',
                             ['==', ['get', 'subclass'], 'bus_stop'],
                             '#2E7D32',
@@ -354,12 +354,12 @@
                         map.setPaintProperty(layer.id, 'text-halo-color', '#FFFFFF');
                         map.setPaintProperty(layer.id, 'text-halo-width', [
                             'case',
-                            ['in', ['get', 'subclass'], ['literal', ['station', 'bus_stop']]],
+                            ['in', ['get', 'subclass'], ['literal', ['station', 'subway', 'bus_stop']]],
                             2, 0
                         ]);
                         map.setLayoutProperty(layer.id, 'text-size', [
                             'case',
-                            ['==', ['get', 'subclass'], 'station'], 14,
+                            ['in', ['get', 'subclass'], ['literal', ['station', 'subway']]], 14,
                             ['==', ['get', 'subclass'], 'bus_stop'], 12,
                             12
                         ]);
