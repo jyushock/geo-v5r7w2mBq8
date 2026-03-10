@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8" />
-    <title>[v7] カスタムマップ</title>
+    <title>[v8] カスタムマップ</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -323,7 +323,8 @@
                 if (stationLayerIds.includes(layer.id)) {
                     map.setFilter(layer.id, ['all',
                         ['has', 'name'],
-                        ['!', ['in', ['get', 'subclass'], ['literal', carSubclasses]]]
+                        ['!', ['in', ['get', 'subclass'], ['literal', carSubclasses]]],
+                        ['!', ['==', ['get', 'class'], 'car']]
                     ]);
                     // 駅はズーム1から、バス停はズーム14から表示
                     map.setLayerZoomRange(layer.id, 1, 24);
