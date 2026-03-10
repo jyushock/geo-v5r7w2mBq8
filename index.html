@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8" />
-    <title>[v16] カスタムマップ</title>
+    <title>[v17] カスタムマップ</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -504,7 +504,7 @@
                                             onerror="this.src='${p.image_url || ''}'">
                                    </div>`
                                 : '';
-                            fitPopupInView(new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) })
+                            new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }
                                 .setLngLat(c)
                                 .setHTML(`
                                     <div class="popup-card">
@@ -515,7 +515,7 @@
                                         <a href="${navUrl}" target="_blank" class="btn btn-nav" >ここへ行く</a>
                                     </div>
                                 `)
-                                ).addTo(map);
+                                .addTo(map);
                         } else {
                             // ── 既存マンホール ────────────────────────────
                             const imgUrl = p.cardId
@@ -526,7 +526,7 @@
                                        <img src="${imgUrl}" class="manhole-img-large">
                                    </div>`
                                 : '';
-                            fitPopupInView(new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) })
+                            new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }
                                 .setLngLat(c)
                                 .setHTML(`
                                     <div class="popup-card">
@@ -536,7 +536,7 @@
                                         <a href="${navUrl}" target="_blank" class="btn btn-nav" >ここへ行く</a>
                                     </div>
                                 `)
-                                ).addTo(map);
+                                .addTo(map);
                         }
                     } else {
                         // ── その他（レストラン・お城・道の駅）────────────
@@ -548,7 +548,7 @@
                             const addressHtml = p.address ? `<span class="popup-address">${p.address}</span>` : '';
                             const roadHtml    = p.road    ? `<span class="popup-road">📍 ${p.road}</span>` : '';
                             const urlBtn      = p.url     ? `<a href="${p.url}" target="_blank" class="btn btn-michi-web">公式サイト</a>` : '';
-                            fitPopupInView(new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) })
+                            new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }
                                 .setLngLat(c)
                                 .setHTML(`
                                     <div class="popup-card">
@@ -560,9 +560,9 @@
                                         <a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く</a>
                                     </div>
                                 `)
-                                ).addTo(map);
+                                .addTo(map);
                         } else {
-                            fitPopupInView(new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) })
+                            new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }
                                 .setLngLat(c)
                                 .setHTML(`
                                     <div class="popup-card">
@@ -573,7 +573,7 @@
                                         <a href="${navUrl}" target="_blank" class="btn btn-nav" >ここへ行く</a>
                                     </div>
                                 `)
-                                ).addTo(map);
+                                .addTo(map);
                         }
                     }
                 });
@@ -959,30 +959,7 @@
 
     // ── ポップアップ表示位置を動的に調整 ──────────────────────────
     // ピンの画面上の位置に応じて anchor を切り替える
-    function fitPopupInView(popup) {
-        popup.once('open', () => {
-            const el = popup.getElement();
-            if (!el) return;
-            setTimeout(() => {
-                const rect = el.getBoundingClientRect();
-                const padTop    = 64;  // 検索ボックス(10+44+10)
-                const padBottom = 80;  // 下部ボタン(30+44+6)
-                const padLeft   = 10;
-                const padRight  = 60;  // 右側ボタン類
-                let dx = 0, dy = 0;
-                if (rect.left < padLeft)                          dx = rect.left - padLeft;
-                if (rect.right > window.innerWidth - padRight)    dx = rect.right - (window.innerWidth - padRight);
-                if (rect.top < padTop)                            dy = rect.top - padTop;
-                if (rect.bottom > window.innerHeight - padBottom) dy = rect.bottom - (window.innerHeight - padBottom);
-                if (dx !== 0 || dy !== 0) {
-                    map.panBy([-dx, -dy], { duration: 300 });
-                }
-            }, 100);
-        });
-        return popup;
-    }
-
-    function getPopupAnchor(lngLat) {
+function getPopupAnchor(lngLat) {
         const point = map.project(lngLat);
         const h = window.innerHeight;
         const w = window.innerWidth;
