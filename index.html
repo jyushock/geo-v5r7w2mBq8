@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8" />
-    <title>[v10] カスタムマップ</title>
+    <title>[v16] カスタムマップ</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -963,19 +963,21 @@
         popup.once('open', () => {
             const el = popup.getElement();
             if (!el) return;
-            // DOMが描画されるのを少し待つ
             setTimeout(() => {
                 const rect = el.getBoundingClientRect();
-                const pad = 10;
+                const padTop    = 64;  // 検索ボックス(10+44+10)
+                const padBottom = 80;  // 下部ボタン(30+44+6)
+                const padLeft   = 10;
+                const padRight  = 60;  // 右側ボタン類
                 let dx = 0, dy = 0;
-                if (rect.left < pad)                    dx = rect.left - pad;
-                if (rect.right > window.innerWidth - pad)  dx = rect.right - window.innerWidth + pad;
-                if (rect.top < pad)                     dy = rect.top - pad;
-                if (rect.bottom > window.innerHeight - pad) dy = rect.bottom - window.innerHeight + pad;
+                if (rect.left < padLeft)                          dx = rect.left - padLeft;
+                if (rect.right > window.innerWidth - padRight)    dx = rect.right - (window.innerWidth - padRight);
+                if (rect.top < padTop)                            dy = rect.top - padTop;
+                if (rect.bottom > window.innerHeight - padBottom) dy = rect.bottom - (window.innerHeight - padBottom);
                 if (dx !== 0 || dy !== 0) {
-                    map.easeTo({ offset: [dx, dy], duration: 250 });
+                    map.panBy([-dx, -dy], { duration: 300 });
                 }
-            }, 50);
+            }, 100);
         });
         return popup;
     }
