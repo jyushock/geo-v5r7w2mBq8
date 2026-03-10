@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8" />
-    <title>[v22] カスタムマップ</title>
+    <title>[v23] カスタムマップ</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -718,10 +718,14 @@
 
     // スコアリング：キーワードとの一致度で優先順位を決める
     function scoreResult(title, query) {
+        const isStation = title.endsWith('駅') || title.includes('駅');
         if (title === query)                                        return 100; // 完全一致
+        if (title === query + '駅')                                return 95;  // 駅名完全一致（「駅」省略）
+        if (title.startsWith(query) && isStation)                  return 85;  // 駅・前方一致
         if (title.startsWith(query))                               return 80;  // 前方一致
         if (title.includes('駅') && query.includes('駅'))          return 60;  // 駅同士
         if (title.startsWith(query.replace(/駅$/, '')))            return 40;  // 「駅」除いて前方一致
+        if (isStation && title.includes(query))                    return 35;  // 駅・部分一致
         return 10;                                                              // その他
     }
 
