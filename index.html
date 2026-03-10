@@ -307,19 +307,7 @@
         try { map.setLayoutProperty('highway-shield-us-interstate', 'visibility', 'none'); } catch(e) {}
         try { map.setLayoutProperty('road_shield_us', 'visibility', 'none'); } catch(e) {}
 
-        style.layers.forEach(layer => {
-            if (ownLayerPrefixes.some(p => layer.id.startsWith(p))) return;
-            try {
-                // ── symbolレイヤー共通：日本語優先のみ ──
-                if (layer.type === 'symbol') {
-                    if (layer.layout && layer.layout['text-field']) {
-                        map.setLayoutProperty(layer.id, 'text-field', [
-                            'coalesce', ['get', 'name:ja'], ['get', 'name']
-                        ]);
-                    }
-                }
-            } catch(e) {}
-        });
+        // 日本語化処理を削除（薄くなる原因のため）
 
         // ── 自前3D建物（ズーム15以上）──
         if (!map.getLayer('3d-buildings')) {
