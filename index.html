@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8" />
-    <title>[v29] カスタムマップ</title>
+    <title>カスタムマップ</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -270,43 +270,44 @@
 <div id="map"></div>
 <button id="nearby-btn" onclick="toggleNearby()" title="周辺を探す">📍</button>
 <button id="filter-btn" onclick="toggleFilter()" title="表示フィルター">🗂</button>
-<div id="nearby-overlay" onclick="closeNearby()"></div>
+<div id="nearby-overlay"></div>
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">周辺を探す</span>
-        <button id="nearby-panel-close" onclick="closeNearby()">×</button>
+        <span style="margin-left:auto;margin-right:8px;font-size:10px;color:#bbb;">v30</span>
+        <button id="nearby-panel-close">×</button>
     </div>
     <div class="nearby-section-label">カテゴリ（スポット以外は複数選択可）</div>
     <div class="nearby-category-grid">
-        <div class="nearby-cat-item" data-cat="spot" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="spot">
             <div class="nearby-cat-icon">📍</div>
             <div class="nearby-cat-label">スポット</div>
         </div>
-        <div class="nearby-cat-item" data-cat="supermarket" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="supermarket">
             <div class="nearby-cat-icon">🛒</div>
             <div class="nearby-cat-label">スーパー</div>
         </div>
-        <div class="nearby-cat-item" data-cat="station" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="station">
             <div class="nearby-cat-icon">🚉</div>
             <div class="nearby-cat-label">駅</div>
         </div>
-        <div class="nearby-cat-item" data-cat="statue" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="statue">
             <div class="nearby-cat-icon">🗿</div>
             <div class="nearby-cat-label">像</div>
         </div>
-        <div class="nearby-cat-item" data-cat="sightseeing" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="sightseeing">
             <div class="nearby-cat-icon">🏛</div>
             <div class="nearby-cat-label">観光スポット</div>
         </div>
-        <div class="nearby-cat-item" data-cat="castle" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="castle">
             <div class="nearby-cat-icon">🏯</div>
             <div class="nearby-cat-label">城</div>
         </div>
-        <div class="nearby-cat-item" data-cat="restaurant" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="restaurant">
             <div class="nearby-cat-icon">🍽</div>
             <div class="nearby-cat-label">レストラン</div>
         </div>
-        <div class="nearby-cat-item" data-cat="ramen" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="ramen">
             <div class="nearby-cat-icon">🍜</div>
             <div class="nearby-cat-label">ラーメン</div>
         </div>
@@ -314,13 +315,13 @@
     <div class="nearby-dist-section" id="nearby-dist-section">
         <div class="nearby-section-label">距離</div>
         <div class="nearby-dist-chips">
-            <div class="nearby-chip" data-dist="1" onclick="selectNearbyDist(this)">1km</div>
-            <div class="nearby-chip" data-dist="3" onclick="selectNearbyDist(this)">3km</div>
-            <div class="nearby-chip" data-dist="5" onclick="selectNearbyDist(this)">5km</div>
-            <div class="nearby-chip" data-dist="10" onclick="selectNearbyDist(this)">10km</div>
+            <div class="nearby-chip" data-dist="1">1km</div>
+            <div class="nearby-chip" data-dist="3">3km</div>
+            <div class="nearby-chip" data-dist="5">5km</div>
+            <div class="nearby-chip" data-dist="10">10km</div>
         </div>
     </div>
-    <button id="nearby-search-btn" onclick="execNearbySearch()">探す</button>
+    <button id="nearby-search-btn">探す</button>
 </div>
 
 <!-- スポット検索結果パネル（別ウィンドウ） -->
@@ -1040,6 +1041,20 @@
         dist: 5                 // デフォルト：5km
     };
 
+    // カテゴリ・距離・探すボタンのイベントをaddEventListenerで登録（onclick回避でレスポンス改善）
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.nearby-cat-item').forEach(el => {
+            el.addEventListener('click', () => selectNearbyCat(el));
+        });
+        document.querySelectorAll('.nearby-chip').forEach(el => {
+            el.addEventListener('click', () => selectNearbyDist(el));
+        });
+        const searchBtn = document.getElementById('nearby-search-btn');
+        if (searchBtn) searchBtn.addEventListener('click', execNearbySearch);
+        const closeBtn = document.getElementById('nearby-panel-close');
+        if (closeBtn) closeBtn.addEventListener('click', closeNearby);
+    });
+
     function toggleNearby() {
         const panel = document.getElementById('nearby-panel');
         if (panel.classList.contains('open')) {
@@ -1076,11 +1091,16 @@
         } else {
             // スポットを解除して複数選択トグル
             document.querySelectorAll('.nearby-cat-item[data-cat="spot"]').forEach(e => e.classList.remove('selected'));
-            nearbyState.cats = nearbyState.cats.filter(c => c !== 'spot');
+            // 初回選択時はsupermarketのデフォルトをクリア
+            if (nearbyState.cats.length === 1 && nearbyState.cats[0] === 'supermarket' && cat !== 'supermarket') {
+                nearbyState.cats = [];
+                document.querySelectorAll('.nearby-cat-item[data-cat="supermarket"]').forEach(e => e.classList.remove('selected'));
+            } else {
+                nearbyState.cats = nearbyState.cats.filter(c => c !== 'spot');
+            }
             if (el.classList.contains('selected')) {
                 el.classList.remove('selected');
                 nearbyState.cats = nearbyState.cats.filter(c => c !== cat);
-                if (nearbyState.cats.length === 0) nearbyState.cats = ['supermarket'];
             } else {
                 el.classList.add('selected');
                 if (!nearbyState.cats.includes(cat)) nearbyState.cats.push(cat);
@@ -1106,6 +1126,12 @@
         }
         const { lat, lng } = currentLocation;
         const cats = nearbyState.cats;
+
+        // 未選択チェック
+        if (cats.length === 0) {
+            alert('カテゴリが選択されていません');
+            return;
+        }
 
         // スポット以外はGoogleMap遷移（複数選択時は||でつなぐ）
         if (!cats.includes('spot')) {
