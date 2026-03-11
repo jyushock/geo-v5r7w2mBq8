@@ -223,7 +223,6 @@
         }
         #nearby-list {
             overflow-y: auto;
-            flex: 1;
         }
         .nearby-item {
             display: flex;
@@ -274,9 +273,10 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">周辺を探す</span>
-        <span style="margin-left:auto;margin-right:8px;font-size:10px;color:#bbb;">v30</span>
+        <span style="margin-left:auto;margin-right:8px;font-size:10px;color:#bbb;">v31</span>
         <button id="nearby-panel-close">×</button>
     </div>
+    <div id="nearby-panel-body" style="overflow-y:auto;flex:1;">
     <div class="nearby-section-label">カテゴリ（スポット以外は複数選択可）</div>
     <div class="nearby-category-grid">
         <div class="nearby-cat-item" data-cat="spot">
@@ -321,6 +321,7 @@
             <div class="nearby-chip" data-dist="10">10km</div>
         </div>
     </div>
+    </div><!-- /nearby-panel-body -->
     <button id="nearby-search-btn">探す</button>
 </div>
 
@@ -1043,16 +1044,29 @@
 
     // カテゴリ・距離・探すボタンのイベントをaddEventListenerで登録（onclick回避でレスポンス改善）
     document.addEventListener('DOMContentLoaded', () => {
+        // touchstart で300ms遅延を回避、clickも登録してダブル発火防止
+        const addTap = (el, fn) => {
+            let touched = false;
+            el.addEventListener('touchstart', (e) => {
+                touched = true;
+                e.preventDefault();
+                fn();
+            }, { passive: false });
+            el.addEventListener('click', () => {
+                if (touched) { touched = false; return; }
+                fn();
+            });
+        };
         document.querySelectorAll('.nearby-cat-item').forEach(el => {
-            el.addEventListener('click', () => selectNearbyCat(el));
+            addTap(el, () => selectNearbyCat(el));
         });
         document.querySelectorAll('.nearby-chip').forEach(el => {
-            el.addEventListener('click', () => selectNearbyDist(el));
+            addTap(el, () => selectNearbyDist(el));
         });
         const searchBtn = document.getElementById('nearby-search-btn');
-        if (searchBtn) searchBtn.addEventListener('click', execNearbySearch);
+        if (searchBtn) addTap(searchBtn, execNearbySearch);
         const closeBtn = document.getElementById('nearby-panel-close');
-        if (closeBtn) closeBtn.addEventListener('click', closeNearby);
+        if (closeBtn) addTap(closeBtn, closeNearby);
     });
 
     function toggleNearby() {
