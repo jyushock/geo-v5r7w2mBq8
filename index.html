@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8" />
-    <title>[v23] カスタムマップ</title>
+    <title>[v24] カスタムマップ</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -142,10 +142,10 @@
             right: 10px;
             bottom: 10px;
             z-index: 100;
-            background: #4285F4;
+            background: white;
             border: none;
             border-radius: 50%;
-            box-shadow: 0 2px 8px rgba(66,133,244,0.4);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
             width: 44px;
             height: 44px;
             font-size: 20px;
@@ -153,7 +153,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
         }
 
         /* 周辺検索シート */
@@ -306,7 +305,22 @@
         </div>
     </div>
     <button id="nearby-search-btn" onclick="execNearbySearch()">探す</button>
-    <div id="nearby-list"></div>
+</div>
+
+<!-- スポット検索結果パネル（別ウィンドウ） -->
+<div id="nearby-result-overlay" onclick="closeNearbyResult()" style="display:none;position:fixed;inset:0;z-index:299;"></div>
+<div id="nearby-result-panel" style="
+    position:fixed; bottom:-100%; left:0; right:0;
+    background:white; border-radius:16px 16px 0 0;
+    box-shadow:0 -4px 16px rgba(0,0,0,0.15);
+    z-index:300; transition:bottom 0.3s ease;
+    max-height:60vh; display:flex; flex-direction:column;
+">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px 8px;border-bottom:1px solid #f0f0f0;flex-shrink:0;">
+        <span id="nearby-result-title" style="font-weight:bold;font-size:14px;color:#333;"></span>
+        <button onclick="closeNearbyResult()" style="background:none;border:none;font-size:20px;color:#999;cursor:pointer;padding:0;">×</button>
+    </div>
+    <div id="nearby-list" style="overflow-y:auto;flex:1;"></div>
 </div>
 <div class="menu-ui" id="filter-panel">
     <label><input type="checkbox" id="check-shop" checked> レストラン</label>
@@ -1008,8 +1022,11 @@
             .sort((a, b) => a.dist - b.dist)
             .slice(0, 20);
 
+        closeNearby();
+
         const list = document.getElementById('nearby-list');
         list.innerHTML = '';
+        document.getElementById('nearby-result-title').textContent = `現在地から${RADIUS}km以内`;
 
         if (results.length === 0) {
             list.innerHTML = `<div style="padding:16px;text-align:center;color:#999;font-size:13px;">${RADIUS}km以内にスポットが見つかりません</div>`;
@@ -1033,12 +1050,21 @@
                     </div>
                     <div class="nearby-item-dist">${distStr}</div>`;
                 div.addEventListener('click', () => {
-                    closeNearby();
+                    closeNearbyResult();
                     onResultClick(item);
                 });
                 list.appendChild(div);
             });
         }
+
+        // 結果パネルを表示
+        document.getElementById('nearby-result-panel').style.bottom = '0';
+        document.getElementById('nearby-result-overlay').style.display = 'block';
+    }
+
+    function closeNearbyResult() {
+        document.getElementById('nearby-result-panel').style.bottom = '-100%';
+        document.getElementById('nearby-result-overlay').style.display = 'none';
     }
 
     function closeNearby() {
