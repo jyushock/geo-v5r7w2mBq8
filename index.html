@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8" />
-    <title>[v27] カスタムマップ</title>
+    <title>[v28] カスタムマップ</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -881,25 +881,87 @@
     }
 
     // 候補タップ時の処理
+    function showPopupForItem(item) {
+        const p = item.properties;
+        const c = item.coords;
+        const gMapUrl = `https://www.google.com/maps?daddr=${c[1]},${c[0]}&dirflg=w`;
+        const navUrl  = gMapUrl;
+
+        if (item.type === 'manhole' || item.type === 'pokefuta') {
+            let imgHtml = '';
+            if (p.source === 'pokefuta' || item.type === 'pokefuta') {
+                const imgUrl = p.image_url_full || p.image_url || '';
+                const title  = `${p.pokemon || ''} (${p.city || p.location || ''})`;
+                imgHtml = imgUrl
+                    ? `<div class="manhole-img-container"><img src="${imgUrl}" class="manhole-img" onerror="this.src='${p.image_url || ''}'"></div>`
+                    : '';
+                new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) })
+                    .setLngLat(c)
+                    .setHTML(`<div class="popup-card">
+                        <span class="popup-title">${title}</span>
+                        <span class="popup-genre">ポケふた</span>
+                        ${imgHtml}
+                        <a href="${p.detail_url}" target="_blank" class="btn btn-pokefuta">ポケふた公式ページ</a>
+                        <a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く</a>
+                    </div>`)
+                    .addTo(map);
+            } else {
+                const imgUrl = p.cardId
+                    ? `https://ekikaramanhole.whitebeach.org/ext/manholecard/image/getimage.cgi?file=card/${p.cardId}.jpg`
+                    : '';
+                imgHtml = imgUrl
+                    ? `<div class="manhole-img-container"><img src="${imgUrl}" class="manhole-img-large"></div>`
+                    : '';
+                new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) })
+                    .setLngLat(c)
+                    .setHTML(`<div class="popup-card">
+                        <span class="popup-title">${p.name || ''}</span>
+                        <span class="popup-genre">${p.genre || ''}</span>
+                        ${imgHtml}
+                        <a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く</a>
+                    </div>`)
+                    .addTo(map);
+            }
+        } else if (item.type === 'michi') {
+            const gmapUrl     = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name)}`;
+            const addressHtml = p.address ? `<span class="popup-address">${p.address}</span>` : '';
+            const roadHtml    = p.road    ? `<span class="popup-road">📍 ${p.road}</span>` : '';
+            const urlBtn      = p.url     ? `<a href="${p.url}" target="_blank" class="btn btn-michi-web">公式サイト</a>` : '';
+            new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) })
+                .setLngLat(c)
+                .setHTML(`<div class="popup-card">
+                    <span class="popup-title">${p.name}</span>
+                    ${roadHtml}
+                    ${addressHtml}
+                    <a href="${gmapUrl}" target="_blank" class="btn btn-gmap">GoogleMap</a>
+                    ${urlBtn}
+                    <a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く</a>
+                </div>`)
+                .addTo(map);
+        } else {
+            const gmapUrl  = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name)}`;
+            let extraBtn = '';
+            if (item.type === 'shop')   extraBtn = `<a href="${p.url}" target="_blank" class="btn btn-tabelog">食べログ</a>`;
+            if (item.type === 'castle') extraBtn = `<a href="https://ja.wikipedia.org/wiki/${encodeURIComponent(p.name)}" target="_blank" class="btn btn-wiki">Wikipedia</a>`;
+            new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) })
+                .setLngLat(c)
+                .setHTML(`<div class="popup-card">
+                    <span class="popup-title">${p.name}</span>
+                    <span class="popup-genre">${p.genre || ''}</span>
+                    <a href="${gmapUrl}" target="_blank" class="btn btn-gmap">GoogleMap</a>
+                    ${extraBtn}
+                    <a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く</a>
+                </div>`)
+                .addTo(map);
+        }
+    }
+
     function onResultClick(item) {
         clearSearch();
         map.jumpTo({ center: item.coords, zoom: 15 });
 
-        // 自前データの場合はポップアップも表示
         if (item.type !== 'place') {
-            // タイルのレンダリング完了を待ってからクリック再現
-            const tryFire = (attempts) => {
-                const features = map.queryRenderedFeatures(
-                    map.project(item.coords),
-                    { layers: ['shops-bg', 'castles-bg', 'michi-bg', 'manholes-bg'] }
-                );
-                if (features.length > 0) {
-                    map.fire('click', { lngLat: { lng: item.coords[0], lat: item.coords[1] }, features, point: map.project(item.coords) });
-                } else if (attempts > 0) {
-                    setTimeout(() => tryFire(attempts - 1), 200);
-                }
-            };
-            setTimeout(() => tryFire(5), 300);
+            setTimeout(() => showPopupForItem(item), 300);
         }
     }
 
