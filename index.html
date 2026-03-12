@@ -273,7 +273,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">周辺を探す</span>
-        <span style="margin-left:auto;margin-right:8px;font-size:10px;color:#bbb;">v34</span>
+        <span style="margin-left:auto;margin-right:8px;font-size:10px;color:#bbb;">v35</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div class="nearby-section-label">カテゴリ（スポット以外は複数選択可）</div>
@@ -375,17 +375,35 @@
     });
     const geolocate = new maplibregl.GeolocateControl({
         positionOptions: { enableHighAccuracy: true },
-        trackUserLocation: true,
+        trackUserLocation: false,
         showUserLocation: true,
         fitBoundsOptions: { zoom: 15 }
     });
     map.addControl(geolocate);
 
-    // 現在地取得時にcurrentLocationを更新
+    // 追従フラグ
+    let isTracking = false;
+
+    // 現在地取得時にcurrentLocationを更新し、追従中なら地図を移動
     geolocate.on('geolocate', (e) => {
         currentLocation = { lat: e.coords.latitude, lng: e.coords.longitude };
-        map.jumpTo({ center: [e.coords.longitude, e.coords.latitude], zoom: 15 });
+        if (isTracking) {
+            map.easeTo({ center: [e.coords.longitude, e.coords.latitude], zoom: 15 });
+        }
     });
+
+    // 現在地ボタン押下で追従ON・現在地へ移動
+    geolocate.on('trackuserlocationstart', () => { isTracking = true; });
+    geolocate._btn.addEventListener('click', () => {
+        isTracking = true;
+        if (currentLocation) {
+            map.easeTo({ center: [currentLocation.lng, currentLocation.lat], zoom: 15 });
+        }
+    });
+
+    // ドラッグ/スクロールで追従OFF
+    map.on('dragstart', () => { isTracking = false; });
+    map.on('wheel', () => { isTracking = false; });
 
     // スタイル調整：日本語化・駅強調・POI整理・水域色・3D建物
     const ownLayerPrefixes = ['shops-', 'castles-', 'michi-', 'manholes-'];
@@ -468,6 +486,7 @@
     });
 
     map.on('load', () => {
+        isTracking = true;
         geolocate.trigger();
         const loadSDF = (url, id) => new Promise(res =>
             map.loadImage(url, (err, img) => {
