@@ -285,7 +285,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">周辺を探す</span>
-        <span style="margin-left:auto;margin-right:8px;font-size:10px;color:#bbb;">v48</span>
+        <span style="margin-left:auto;margin-right:8px;font-size:10px;color:#bbb;">v49</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div class="nearby-section-label">カテゴリ（スポット以外は複数選択可）</div>
@@ -434,23 +434,34 @@
                     ]);
                 }
 
-                // poi_r系：車関連・名前なし・駅を除外（駅は別レイヤーで管理）
+                // poi_r系：車関連・名前なし除外、駅・バス停強調
                 if (stationLayerIds.includes(layer.id)) {
                     map.setFilter(layer.id, ['all',
                         ['has', 'name'],
                         ['!', ['in', ['get', 'subclass'], ['literal', carSubclasses]]],
                         ['!', ['==', ['get', 'class'], 'car']],
-                        ['!', ['==', ['get', 'subclass'], 'bus_stop']],
-                        ['!', ['in', ['get', 'subclass'], ['literal', ['station', 'subway']]]]
+                        ['!', ['==', ['get', 'subclass'], 'bus_stop']]
                     ]);
                     map.setLayerZoomRange(layer.id, 1, 24);
                     map.setLayoutProperty(layer.id, 'visibility', 'visible');
-                    map.setPaintProperty(layer.id, 'text-color', '#333333');
+                    map.setPaintProperty(layer.id, 'text-color', [
+                        'case',
+                        ['in', ['get', 'subclass'], ['literal', ['station', 'subway']]], '#1565C0',
+                        '#333333'
+                    ]);
                     map.setPaintProperty(layer.id, 'text-halo-color', '#FFFFFF');
-                    map.setPaintProperty(layer.id, 'text-halo-width', 1);
-                    map.setLayoutProperty(layer.id, 'text-size', 12);
+                    map.setPaintProperty(layer.id, 'text-halo-width', [
+                        'case',
+                        ['in', ['get', 'subclass'], ['literal', ['station', 'subway']]], 2,
+                        1
+                    ]);
+                    map.setLayoutProperty(layer.id, 'text-size', [
+                        'case',
+                        ['in', ['get', 'subclass'], ['literal', ['station', 'subway']]], 14,
+                        12
+                    ]);
 
-                    // 駅専用レイヤーを追加（同ソースから駅のみ抽出）
+                    // 駅専用レイヤーをテキストのみで追加（アイコンは元レイヤーに任せる）
                     const stationLayerId = `station-overlay-${layer.id}`;
                     if (!map.getLayer(stationLayerId)) {
                         map.addLayer({
@@ -470,8 +481,7 @@
                                 'text-font': ['Noto Sans Bold'],
                                 'text-allow-overlap': true,
                                 'text-ignore-placement': true,
-                                'icon-allow-overlap': true,
-                                'icon-ignore-placement': true,
+                                'icon-size': 0,
                                 'visibility': 'visible'
                             },
                             paint: {
