@@ -273,7 +273,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">周辺を探す</span>
-        <span style="margin-left:auto;margin-right:8px;font-size:10px;color:#bbb;">v33</span>
+        <span style="margin-left:auto;margin-right:8px;font-size:10px;color:#bbb;">v37</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div class="nearby-section-label">カテゴリ（スポット以外は複数選択可）</div>
@@ -377,15 +377,24 @@
         positionOptions: { enableHighAccuracy: true },
         trackUserLocation: false,
         showUserLocation: true,
-        fitBoundsOptions: { zoom: 13 }
+        fitBoundsOptions: { zoom: 15 }
     });
     map.addControl(geolocate);
+
+    // 追従フラグ（ドラッグで追従OFF、現在地ボタンで追従ON）
+    let isTracking = true;
+    map.on('dragstart', () => { isTracking = false; });
 
     // 現在地取得時にcurrentLocationを更新
     geolocate.on('geolocate', (e) => {
         currentLocation = { lat: e.coords.latitude, lng: e.coords.longitude };
-        map.jumpTo({ center: [e.coords.longitude, e.coords.latitude], zoom: 13 });
+        if (isTracking) {
+            map.easeTo({ center: [e.coords.longitude, e.coords.latitude], zoom: 15 });
+        }
     });
+
+    // 現在地ボタン押下で追従ON
+    geolocate._btn.addEventListener('click', () => { isTracking = true; });
 
     // スタイル調整：日本語化・駅強調・POI整理・水域色・3D建物
     const ownLayerPrefixes = ['shops-', 'castles-', 'michi-', 'manholes-'];
