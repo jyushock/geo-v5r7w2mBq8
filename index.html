@@ -383,6 +383,7 @@
 
     // 追従フラグ
     let isTracking = false;
+    let currentLocation = null;
 
     // 現在地取得時にcurrentLocationを更新し、追従中なら地図を移動
     geolocate.on('geolocate', (e) => {
@@ -1046,7 +1047,6 @@
     }
 
     // ── 現在地周辺スポット ────────────────────────────────────────
-    let currentLocation = null;
 
     // 周辺検索の選択状態（記憶）
     const gmapKeywords = {
