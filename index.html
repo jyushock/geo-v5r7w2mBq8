@@ -31,21 +31,25 @@
         #geolocate-btn-wrap {
             position: fixed;
             right: 0;
-            bottom: 88px;
+            bottom: 92px;
             z-index: 200;
             width: 44px;
         }
         #geolocate-btn {
             width: 44px; height: 44px;
             background: white; border: none;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            border-radius: 0; box-shadow: none;
             cursor: pointer;
             display: flex; align-items: center; justify-content: center;
             color: #999;
+            border-left: 1px solid #e0e0e0;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
         }
         #geolocate-btn.geolocate-active {
             background: #4285F4;
             color: white;
+            border-color: #4285F4;
         }
         .hamburger-icon {
             display: flex; flex-direction: column; gap: 4px;
@@ -347,7 +351,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v62</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v63</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -463,30 +467,7 @@
         }
     });
 
-    // watchPositionで常時位置監視
-    if (navigator.geolocation) {
-        navigator.geolocation.watchPosition((pos) => {
-            const lng = pos.coords.longitude;
-            const lat = pos.coords.latitude;
-            currentLocation = { lat, lng };
 
-            // 現在地マーカーを更新
-            if (!currentMarker) {
-                const el = document.createElement('div');
-                el.className = 'current-location-dot';
-                currentMarker = new maplibregl.Marker({ element: el }).setLngLat([lng, lat]).addTo(map);
-            } else {
-                currentMarker.setLngLat([lng, lat]);
-            }
-
-            // 追従中はズームを維持して移動
-            if (isTracking) {
-                map.jumpTo({ center: [lng, lat] });
-            }
-        }, (err) => {
-            console.warn('位置情報取得エラー:', err);
-        }, { enableHighAccuracy: true, maximumAge: 0 });
-    }
 
     // スタイル調整：日本語化・駅強調・POI整理・水域色・3D建物
     const ownLayerPrefixes = ['shops-', 'castles-', 'michi-', 'manholes-'];
@@ -574,9 +555,34 @@
             isTracking = true;
             document.getElementById('geolocate-btn').classList.add('geolocate-active');
             if (currentLocation) {
-                map.jumpTo({ center: [currentLocation.lng, currentLocation.lat] });
+                map.jumpTo({ center: [currentLocation.lng, currentLocation.lat], zoom: map.getZoom() });
             }
         });
+
+        // watchPositionで常時位置監視（地図ロード後に開始）
+        if (navigator.geolocation) {
+            navigator.geolocation.watchPosition((pos) => {
+                const lng = pos.coords.longitude;
+                const lat = pos.coords.latitude;
+                currentLocation = { lat, lng };
+
+                // 現在地マーカーを更新
+                if (!currentMarker) {
+                    const el = document.createElement('div');
+                    el.className = 'current-location-dot';
+                    currentMarker = new maplibregl.Marker({ element: el }).setLngLat([lng, lat]).addTo(map);
+                } else {
+                    currentMarker.setLngLat([lng, lat]);
+                }
+
+                // 追従中はズームを維持して移動
+                if (isTracking) {
+                    map.jumpTo({ center: [lng, lat], zoom: map.getZoom() });
+                }
+            }, (err) => {
+                console.warn('位置情報取得エラー:', err);
+            }, { enableHighAccuracy: true, maximumAge: 0 });
+        }
 
         const loadSDF = (url, id) => new Promise(res =>
             map.loadImage(url, (err, img) => {
