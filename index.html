@@ -36,36 +36,7 @@
         .btn-michi-web { background: #34A853; color: #fff; }
         .popup-address { font-size: 11px; color: #555; display: block; margin-bottom: 4px; }
         .popup-road    { font-size: 11px; color: #888; display: block; margin-bottom: 6px; }
-        #filter-btn {
-            background: white;
-            border: none;
-            border-radius: 0;
-            box-shadow: none;
-            width: 52px;
-            height: 52px;
-            font-size: 22px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        .menu-ui {
-            position: absolute;
-            bottom: 62px;
-            left: 10px;
-            z-index: 100;
-            background: white;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            font-family: sans-serif;
-            font-size: 14px;
-            display: none;
-        }
-        .menu-ui.open { display: block; }
-        .menu-ui label { display: flex; align-items: center; cursor: pointer; margin-bottom: 5px; }
-        .menu-ui input { margin-right: 8px; }
+
 
         /* 下部バー */
         #bottom-bar {
@@ -287,7 +258,6 @@
 <div id="search-results"><div id="search-results-inner"></div></div>
 <div id="map"></div>
 <div id="bottom-bar">
-    <button id="filter-btn" onclick="toggleFilter()" title="表示フィルター">🗂</button>
     <div id="search-container">
         <div id="search-box">
             <span id="search-icon">🔍</span>
@@ -301,7 +271,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">周辺を探す</span>
-        <span style="margin-left:auto;margin-right:8px;font-size:10px;color:#bbb;">v47</span>
+        <span style="margin-left:auto;margin-right:8px;font-size:10px;color:#bbb;">v48</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div class="nearby-section-label">カテゴリ（スポット以外は複数選択可）</div>
@@ -366,12 +336,6 @@
         <button onclick="closeNearbyResult()" style="background:none;border:none;font-size:20px;color:#999;cursor:pointer;padding:0;">×</button>
     </div>
     <div id="nearby-list" style="overflow-y:auto;flex:1;"></div>
-</div>
-<div class="menu-ui" id="filter-panel">
-    <label><input type="checkbox" id="check-shop" checked> レストラン</label>
-    <label><input type="checkbox" id="check-castle" checked> お城</label>
-    <label><input type="checkbox" id="check-michi" checked> 道の駅</label>
-    <label><input type="checkbox" id="check-manhole" checked> マンホール</label>
 </div>
 
 <script>
@@ -587,16 +551,6 @@
                     paint: { 'icon-color': '#FFFFFF' }
                 });
 
-                // チェックボックス表示切替
-                const checkId = conf.type === 'shop' ? 'shop'
-                              : conf.type === 'castle' ? 'castle'
-                              : conf.type === 'michi' ? 'michi'
-                              : 'manhole';
-                document.getElementById(`check-${checkId}`).addEventListener('change', (e) => {
-                    const val = e.target.checked ? 'visible' : 'none';
-                    [`${conf.id}-cluster`, `${conf.id}-cluster-count`, `${conf.id}-bg`, `${conf.id}-icon`]
-                        .forEach(l => { if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', val); });
-                });
 
                 // クラスタークリック → 展開
                 map.on('click', `${conf.id}-cluster`, (e) => {
@@ -1104,7 +1058,6 @@
         document.getElementById('nearby-list').innerHTML = '';
         document.getElementById('nearby-panel').classList.add('open');
         document.getElementById('nearby-overlay').classList.add('open');
-        document.getElementById('filter-panel').classList.remove('open');
     }
 
     function selectNearbyCat(el) {
@@ -1228,16 +1181,6 @@
         document.getElementById('nearby-overlay').classList.remove('open');
     }
 
-    // ── フィルタートグル ──────────────────────────────────────────
-    function toggleFilter() {
-        const panel = document.getElementById('filter-panel');
-        panel.classList.toggle('open');
-    }
-
-    // 地図タップでフィルターパネルも閉じる
-    document.getElementById('map').addEventListener('click', () => {
-        document.getElementById('filter-panel').classList.remove('open');
-    });
 
     // ── ポップアップ表示位置を動的に調整 ──────────────────────────
     // ピンの画面上の位置に応じて anchor を切り替える
