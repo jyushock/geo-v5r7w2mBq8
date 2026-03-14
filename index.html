@@ -53,7 +53,7 @@
         .filter-chip {
             display: flex; align-items: center; justify-content: center; gap: 3px;
             font-size: 11px; color: #333; background: #f5f5f5;
-            border-radius: 20px; padding: 3px 4px;
+            border-radius: 20px; padding: 8px 4px;
             border: 0.5px solid #e0e0e0; cursor: pointer;
             white-space: nowrap;
         }
@@ -309,11 +309,11 @@
     </div>
     <button id="nearby-btn" onclick="toggleNearby()" title="メニュー"><span class="hamburger-icon"></span></button>
 </div>
-<div id="nearby-overlay"></div>
+<div id="nearby-overlay" onclick="closeNearby()"></div>
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v58</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v59</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
