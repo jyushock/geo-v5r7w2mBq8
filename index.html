@@ -21,6 +21,32 @@
     <style>
         body { margin: 0; padding: 0; }
         #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+        .current-location-dot {
+            width: 16px; height: 16px;
+            background: #4285F4;
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 6px rgba(0,0,0,0.3);
+        }
+        #geolocate-btn-wrap {
+            position: fixed;
+            right: 0;
+            bottom: 88px;
+            z-index: 200;
+            width: 44px;
+        }
+        #geolocate-btn {
+            width: 44px; height: 44px;
+            background: white; border: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            color: #999;
+        }
+        #geolocate-btn.geolocate-active {
+            background: #4285F4;
+            color: white;
+        }
         .hamburger-icon {
             display: flex; flex-direction: column; gap: 4px;
             width: 18px;
@@ -299,6 +325,14 @@
 <body>
 <div id="search-results"><div id="search-results-inner"></div></div>
 <div id="map"></div>
+<div id="geolocate-btn-wrap">
+    <button id="geolocate-btn" title="現在地">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/>
+            <line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/>
+        </svg>
+    </button>
+</div>
 <div id="bottom-bar">
     <div id="search-container">
         <div id="search-box">
@@ -313,7 +347,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v61</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v62</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -416,18 +450,43 @@
         attributionControl: false
     });
     map.addControl(new maplibregl.AttributionControl({ compact: true }), 'bottom-right');
-    const geolocate = new maplibregl.GeolocateControl({
-        positionOptions: { enableHighAccuracy: true },
-        trackUserLocation: true,
-        showUserLocation: true,
-        fitBoundsOptions: { zoom: 17, duration: 0 }
-    });
-    map.addControl(geolocate);
+    // 現在地マーカー
+    let currentMarker = null;
+    let isTracking = false;
 
-    // 現在地取得時にcurrentLocationを更新
-    geolocate.on('geolocate', (e) => {
-        currentLocation = { lat: e.coords.latitude, lng: e.coords.longitude };
+    // ドラッグで追従OFF
+    map.on('dragstart', () => {
+        if (isTracking) {
+            isTracking = false;
+            const btn = document.getElementById('geolocate-btn');
+            if (btn) btn.classList.remove('geolocate-active');
+        }
     });
+
+    // watchPositionで常時位置監視
+    if (navigator.geolocation) {
+        navigator.geolocation.watchPosition((pos) => {
+            const lng = pos.coords.longitude;
+            const lat = pos.coords.latitude;
+            currentLocation = { lat, lng };
+
+            // 現在地マーカーを更新
+            if (!currentMarker) {
+                const el = document.createElement('div');
+                el.className = 'current-location-dot';
+                currentMarker = new maplibregl.Marker({ element: el }).setLngLat([lng, lat]).addTo(map);
+            } else {
+                currentMarker.setLngLat([lng, lat]);
+            }
+
+            // 追従中はズームを維持して移動
+            if (isTracking) {
+                map.jumpTo({ center: [lng, lat] });
+            }
+        }, (err) => {
+            console.warn('位置情報取得エラー:', err);
+        }, { enableHighAccuracy: true, maximumAge: 0 });
+    }
 
     // スタイル調整：日本語化・駅強調・POI整理・水域色・3D建物
     const ownLayerPrefixes = ['shops-', 'castles-', 'michi-', 'manholes-'];
@@ -510,7 +569,14 @@
     });
 
     map.on('load', () => {
-        geolocate.trigger();
+        // 現在地ボタンのクリック処理
+        document.getElementById('geolocate-btn').addEventListener('click', () => {
+            isTracking = true;
+            document.getElementById('geolocate-btn').classList.add('geolocate-active');
+            if (currentLocation) {
+                map.jumpTo({ center: [currentLocation.lng, currentLocation.lat] });
+            }
+        });
 
         const loadSDF = (url, id) => new Promise(res =>
             map.loadImage(url, (err, img) => {
