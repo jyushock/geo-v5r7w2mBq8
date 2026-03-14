@@ -37,6 +37,9 @@
             width: 16px; height: 16px;
             background: rgba(66, 133, 244, 0.4);
             border-radius: 50%;
+            animation: none;
+        }
+        .current-location-dot.tracking::after {
             animation: gps-pulse 2s ease-out infinite;
         }
         @keyframes gps-pulse {
@@ -351,7 +354,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v72</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v73</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -459,6 +462,7 @@
     let isTracking = true;
     let trackingZoom = 17;
     let hadFirstFix = false;
+    let isZooming = false;
 
     // ドラッグで追従OFF
     map.on('dragstart', () => {
@@ -466,11 +470,14 @@
             isTracking = false;
             const btn = document.getElementById('geolocate-btn');
             if (btn) btn.classList.remove('geolocate-active');
+            if (currentMarker) currentMarker.getElement().classList.remove('tracking');
         }
     });
 
-    // ズーム操作時にtrackingZoomを更新
+    // ズーム操作時にtrackingZoomを更新、ズーム中はjumpToを抑制
+    map.on('zoomstart', () => { isZooming = true; });
     map.on('zoomend', () => {
+        isZooming = false;
         if (isTracking) {
             trackingZoom = map.getZoom();
         }
@@ -564,6 +571,7 @@
             isTracking = true;
             trackingZoom = 17;
             document.getElementById('geolocate-btn').classList.add('geolocate-active');
+            if (currentMarker) currentMarker.getElement().classList.add('tracking');
             if (currentLocation) {
                 map.jumpTo({ center: [currentLocation.lng, currentLocation.lat], zoom: trackingZoom });
             }
@@ -592,8 +600,9 @@
                     hadFirstFix = true;
                     isTracking = true;
                     document.getElementById('geolocate-btn').classList.add('geolocate-active');
+                    if (currentMarker) currentMarker.getElement().classList.add('tracking');
                     map.jumpTo({ center: [lng, lat], zoom: trackingZoom });
-                } else if (isTracking) {
+                } else if (isTracking && !isZooming) {
                     const dbg2 = document.getElementById('debug-overlay');
                     if (dbg2) dbg2.style.background = 'rgba(0,100,0,0.8)';
                     map.jumpTo({ center: [lng, lat], zoom: trackingZoom });
