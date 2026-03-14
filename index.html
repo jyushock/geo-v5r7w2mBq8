@@ -245,12 +245,15 @@
         #nearby-panel-header {
             display: flex;
             align-items: center;
-            padding: 10px 12px;
+            padding: 10px 16px 6px;
             flex-shrink: 0;
-            gap: 6px;
+            gap: 4px;
         }
-        #nearby-panel-title { font-weight: bold; font-size: 13px; color: #333; flex-shrink: 0; }
-        #filter-checkboxes { display: flex; gap: 6px; flex: 1; flex-wrap: nowrap; overflow-x: auto; }
+        #nearby-panel-title { font-size: 11px; color: #999; flex-shrink: 0; }
+        #filter-checkboxes {
+            display: flex; gap: 6px; flex-wrap: nowrap;
+            overflow-x: auto; padding: 0 16px 8px;
+        }
         #nearby-panel-close {
             background: none; border: none; font-size: 20px;
             color: #999; cursor: pointer; padding: 0; flex-shrink: 0;
@@ -308,14 +311,14 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <div id="filter-checkboxes">
-            <label class="filter-chip"><input type="checkbox" id="check-shop" checked onchange="onFilterChange(this)">食べログ</label>
-            <label class="filter-chip"><input type="checkbox" id="check-castle" checked onchange="onFilterChange(this)">お城</label>
-            <label class="filter-chip"><input type="checkbox" id="check-michi" checked onchange="onFilterChange(this)">道の駅</label>
-            <label class="filter-chip"><input type="checkbox" id="check-manhole" checked onchange="onFilterChange(this)">マンホール</label>
-        </div>
-        <span style="margin-left:8px;font-size:10px;color:#bbb;flex-shrink:0;">v56</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v57</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
+    </div>
+    <div id="filter-checkboxes">
+        <label class="filter-chip"><input type="checkbox" id="check-shop" checked onchange="onFilterChange(this)">食べログ</label>
+        <label class="filter-chip"><input type="checkbox" id="check-castle" checked onchange="onFilterChange(this)">お城</label>
+        <label class="filter-chip"><input type="checkbox" id="check-michi" checked onchange="onFilterChange(this)">道の駅</label>
+        <label class="filter-chip"><input type="checkbox" id="check-manhole" checked onchange="onFilterChange(this)">マンホール</label>
     </div>
     <div style="border-top:1px solid #f0f0f0;"></div>
     <div class="nearby-section-label">カテゴリ（スポット以外は複数選択可）</div>
