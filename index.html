@@ -313,6 +313,7 @@
 <body>
 <div id="search-results"><div id="search-results-inner"></div></div>
 <div id="map"></div>
+<div id="debug-overlay" style="position:fixed;top:10px;left:10px;z-index:9999;background:rgba(0,0,0,0.7);color:white;font-size:11px;padding:6px 10px;border-radius:6px;font-family:monospace;pointer-events:none;max-width:280px;"></div>
 <div id="geolocate-btn-wrap">
     <button id="geolocate-btn" title="現在地">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -335,7 +336,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v66</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v70</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -440,7 +441,7 @@
     map.addControl(new maplibregl.AttributionControl({ compact: true }), 'bottom-right');
     // 現在地マーカー
     let currentMarker = null;
-    let isTracking = false;
+    let isTracking = true;
     let trackingZoom = 17;
     let hadFirstFix = false;
 
@@ -448,7 +449,6 @@
     map.on('dragstart', () => {
         if (isTracking) {
             isTracking = false;
-            trackingZoom = null;
             const btn = document.getElementById('geolocate-btn');
             if (btn) btn.classList.remove('geolocate-active');
         }
@@ -553,6 +553,8 @@
                 const lng = pos.coords.longitude;
                 const lat = pos.coords.latitude;
                 currentLocation = { lat, lng };
+                const dbg = document.getElementById('debug-overlay');
+                if (dbg) dbg.innerHTML = 'GPS発火: ' + new Date().toLocaleTimeString() + '<br>isTracking: ' + isTracking + '<br>hadFirstFix: ' + hadFirstFix + '<br>lat: ' + lat.toFixed(5) + '<br>lng: ' + lng.toFixed(5);
 
                 // 現在地マーカーを更新
                 if (!currentMarker) {
@@ -563,17 +565,20 @@
                     currentMarker.setLngLat([lng, lat]);
                 }
 
-                // 初回取得時は自動で現在地に移動
+                // 初回取得時は自動で現在地に移動し追従ONボタンを青くする
                 if (!hadFirstFix) {
                     hadFirstFix = true;
+                    isTracking = true;
+                    document.getElementById('geolocate-btn').classList.add('geolocate-active');
                     map.jumpTo({ center: [lng, lat], zoom: trackingZoom });
                 } else if (isTracking) {
-                    // 追従中は記憶したズームを維持して移動
+                    const dbg2 = document.getElementById('debug-overlay');
+                    if (dbg2) dbg2.style.background = 'rgba(0,100,0,0.8)';
                     map.jumpTo({ center: [lng, lat], zoom: trackingZoom });
                 }
             }, (err) => {
-                console.warn('位置情報取得エラー:', err);
-            }, { enableHighAccuracy: true, maximumAge: 0, timeout: 5000 });
+                console.warn('[GPS] エラー:', err.code, err.message);
+            }, { enableHighAccuracy: true, maximumAge: 3000, timeout: 10000 });
         }
 
         const loadSDF = (url, id) => new Promise(res =>
