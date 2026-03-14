@@ -353,7 +353,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v74</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v75</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -1133,6 +1133,8 @@
         document.getElementById('search-clear').style.display = q ? 'block' : 'none';
 
         if (!q) {
+            clearTimeout(geocodeTimer);
+            searchRequestId++;
             document.getElementById('search-results').style.display = 'none';
             return;
         }
