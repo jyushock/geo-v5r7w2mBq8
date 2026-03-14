@@ -353,7 +353,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v75</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v76</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -1114,10 +1114,29 @@
 
     function onResultClick(item) {
         clearSearch();
-        map.jumpTo({ center: item.coords, zoom: 15 });
+
+        const zoom = 15;
+        const targetCoords = item.coords;
 
         if (item.type !== 'place') {
-            setTimeout(() => showPopupForItem(item), 300);
+            // ピンを画面上40%の位置に表示するようオフセットを計算
+            // 一時的にzoomだけ設定してピクセル変換の基準を作る
+            const targetPoint = map.project(targetCoords);
+            const screenH = window.innerHeight;
+            const bottomBarH = 52;
+            const availableH = screenH - bottomBarH;
+            const desiredY = availableH * 0.55; // ピンを画面の55%の位置に
+            const offsetPx = desiredY - targetPoint.y;
+            const offsetCoord = map.unproject([targetPoint.x, targetPoint.y - offsetPx]);
+            const offsetLat = offsetCoord.lat - map.unproject(targetPoint).lat;
+
+            map.jumpTo({
+                center: [targetCoords[0], targetCoords[1] + offsetLat],
+                zoom: zoom
+            });
+            setTimeout(() => showPopupForItem(item), 100);
+        } else {
+            map.jumpTo({ center: targetCoords, zoom: zoom });
         }
     }
 
