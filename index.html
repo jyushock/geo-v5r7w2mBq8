@@ -335,7 +335,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v65</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v66</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -441,7 +441,8 @@
     // 現在地マーカー
     let currentMarker = null;
     let isTracking = false;
-    let trackingZoom = null;
+    let trackingZoom = 17;
+    let hadFirstFix = false;
 
     // ドラッグで追従OFF
     map.on('dragstart', () => {
@@ -539,7 +540,7 @@
         // 現在地ボタンのクリック処理
         document.getElementById('geolocate-btn').addEventListener('click', () => {
             isTracking = true;
-            trackingZoom = map.getZoom(); // ボタン押下時のズームを記憶
+            trackingZoom = 17;
             document.getElementById('geolocate-btn').classList.add('geolocate-active');
             if (currentLocation) {
                 map.jumpTo({ center: [currentLocation.lng, currentLocation.lat], zoom: trackingZoom });
@@ -562,9 +563,13 @@
                     currentMarker.setLngLat([lng, lat]);
                 }
 
-                // 追従中は記憶したズームを維持して移動
-                if (isTracking) {
-                    map.jumpTo({ center: [lng, lat], zoom: trackingZoom !== null ? trackingZoom : map.getZoom() });
+                // 初回取得時は自動で現在地に移動
+                if (!hadFirstFix) {
+                    hadFirstFix = true;
+                    map.jumpTo({ center: [lng, lat], zoom: trackingZoom });
+                } else if (isTracking) {
+                    // 追従中は記憶したズームを維持して移動
+                    map.jumpTo({ center: [lng, lat], zoom: trackingZoom });
                 }
             }, (err) => {
                 console.warn('位置情報取得エラー:', err);
