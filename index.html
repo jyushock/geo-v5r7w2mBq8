@@ -271,7 +271,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">周辺を探す</span>
-        <span style="margin-left:auto;margin-right:8px;font-size:10px;color:#bbb;">v50</span>
+        <span style="margin-left:auto;margin-right:8px;font-size:10px;color:#bbb;">v51</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div class="nearby-section-label">カテゴリ（スポット以外は複数選択可）</div>
@@ -284,29 +284,29 @@
             <div class="nearby-cat-icon">🛒</div>
             <div class="nearby-cat-label">スーパー</div>
         </div>
+        <div class="nearby-cat-item" data-cat="busstop" onclick="selectNearbyCat(this)">
+            <div class="nearby-cat-icon">🚌</div>
+            <div class="nearby-cat-label">バス停</div>
+        </div>
         <div class="nearby-cat-item" data-cat="station" onclick="selectNearbyCat(this)">
             <div class="nearby-cat-icon">🚉</div>
             <div class="nearby-cat-label">駅</div>
-        </div>
-        <div class="nearby-cat-item" data-cat="statue" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">🗿</div>
-            <div class="nearby-cat-label">像</div>
-        </div>
-        <div class="nearby-cat-item" data-cat="sightseeing" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">🏛</div>
-            <div class="nearby-cat-label">観光スポット</div>
-        </div>
-        <div class="nearby-cat-item" data-cat="castle" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">🏯</div>
-            <div class="nearby-cat-label">城</div>
         </div>
         <div class="nearby-cat-item" data-cat="restaurant" onclick="selectNearbyCat(this)">
             <div class="nearby-cat-icon">🍽</div>
             <div class="nearby-cat-label">レストラン</div>
         </div>
-        <div class="nearby-cat-item" data-cat="ramen" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="noodle" onclick="selectNearbyCat(this)">
             <div class="nearby-cat-icon">🍜</div>
-            <div class="nearby-cat-label">ラーメン</div>
+            <div class="nearby-cat-label">麺</div>
+        </div>
+        <div class="nearby-cat-item" data-cat="museum" onclick="selectNearbyCat(this)">
+            <div class="nearby-cat-icon">🏛</div>
+            <div class="nearby-cat-label">ミュージアム</div>
+        </div>
+        <div class="nearby-cat-item" data-cat="sightseeing" onclick="selectNearbyCat(this)">
+            <div class="nearby-cat-icon">🗺</div>
+            <div class="nearby-cat-label">観光スポット</div>
         </div>
     </div>
     <div class="nearby-dist-section" id="nearby-dist-section" style="flex-shrink:0;">
@@ -1024,9 +1024,13 @@
 
     // 周辺検索の選択状態（記憶）
     const gmapKeywords = {
-        supermarket: 'スーパー', station: '駅', statue: '像',
-        sightseeing: '観光スポット', castle: '城',
-        restaurant: 'レストラン', ramen: 'ラーメン'
+        supermarket: 'スーパー',
+        busstop:     'バス停',
+        station:     '駅',
+        restaurant:  'レストラン OR カフェ',
+        noodle:      'ラーメン OR うどん OR そば',
+        museum:      '歴史館 OR 資料館 OR 博物館 OR 記念館',
+        sightseeing: '観光スポット OR 像',
     };
     let nearbyState = {
         cats: ['supermarket'],  // デフォルト：スーパー（配列）
