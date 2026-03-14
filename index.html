@@ -271,7 +271,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">周辺を探す</span>
-        <span style="margin-left:auto;margin-right:8px;font-size:10px;color:#bbb;">v51</span>
+        <span style="margin-left:auto;margin-right:8px;font-size:10px;color:#bbb;">v53</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div class="nearby-section-label">カテゴリ（スポット以外は複数選択可）</div>
@@ -1074,13 +1074,7 @@
         } else {
             // スポットを解除して複数選択トグル
             document.querySelectorAll('.nearby-cat-item[data-cat="spot"]').forEach(e => e.classList.remove('selected'));
-            // 初回選択時はsupermarketのデフォルトをクリア
-            if (nearbyState.cats.length === 1 && nearbyState.cats[0] === 'supermarket' && cat !== 'supermarket') {
-                nearbyState.cats = [];
-                document.querySelectorAll('.nearby-cat-item[data-cat="supermarket"]').forEach(e => e.classList.remove('selected'));
-            } else {
-                nearbyState.cats = nearbyState.cats.filter(c => c !== 'spot');
-            }
+            nearbyState.cats = nearbyState.cats.filter(c => c !== 'spot');
             if (el.classList.contains('selected')) {
                 el.classList.remove('selected');
                 nearbyState.cats = nearbyState.cats.filter(c => c !== cat);
@@ -1116,9 +1110,9 @@
             return;
         }
 
-        // スポット以外はGoogleMap遷移（複数選択時は||でつなぐ）
+        // スポット以外はGoogleMap遷移（複数選択時はORでつなぐ）
         if (!cats.includes('spot')) {
-            const keyword = cats.map(c => gmapKeywords[c]).filter(Boolean).join('||');
+            const keyword = cats.map(c => gmapKeywords[c]).filter(Boolean).join(' OR ');
             const url = `https://www.google.com/maps/search/${encodeURIComponent(keyword)}/@${lat},${lng},14z`;
             window.location.href = url;
             return;
