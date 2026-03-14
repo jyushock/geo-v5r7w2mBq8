@@ -353,7 +353,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v76</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v77</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -1119,19 +1119,19 @@
         const targetCoords = item.coords;
 
         if (item.type !== 'place') {
-            // ピンを画面上40%の位置に表示するようオフセットを計算
-            // 一時的にzoomだけ設定してピクセル変換の基準を作る
-            const targetPoint = map.project(targetCoords);
+            // ズーム15での1ピクセルあたりの緯度を計算
+            // メルカトル投影: 1ピクセル = (360 / 256 / 2^zoom) 度
+            const metersPerPx = 156543.03392 * Math.cos(targetCoords[1] * Math.PI / 180) / Math.pow(2, zoom);
             const screenH = window.innerHeight;
             const bottomBarH = 52;
             const availableH = screenH - bottomBarH;
-            const desiredY = availableH * 0.55; // ピンを画面の55%の位置に
-            const offsetPx = desiredY - targetPoint.y;
-            const offsetCoord = map.unproject([targetPoint.x, targetPoint.y - offsetPx]);
-            const offsetLat = offsetCoord.lat - map.unproject(targetPoint).lat;
+            // ピンを画面の60%の位置に置くためのオフセット（中心=50%からの差分）
+            const offsetPx = availableH * (0.60 - 0.50);
+            // ピクセルを緯度差に変換（緯度1度 ≈ 111320m）
+            const offsetLat = (offsetPx * metersPerPx) / 111320;
 
             map.jumpTo({
-                center: [targetCoords[0], targetCoords[1] + offsetLat],
+                center: [targetCoords[0], targetCoords[1] - offsetLat],
                 zoom: zoom
             });
             setTimeout(() => showPopupForItem(item), 100);
