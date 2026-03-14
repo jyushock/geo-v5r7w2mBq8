@@ -313,7 +313,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v59</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v60</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -824,6 +824,7 @@
 
     // 国土地理院 ジオコーディングAPI で地名・駅名検索
     let geocodeTimer = null;
+    let searchRequestId = 0;
 
     // 都道府県コード（addressCodeの上2桁）→ 都道府県名
     const PREF_MAP = {
@@ -1041,11 +1042,13 @@
 
         const local = searchLocal(q);
 
-        // 地名取得後にまとめて描画（中間表示による順序乱れを防ぐ）
+        // レースコンディション対策：リクエストIDで最新のみ反映
+        const reqId = ++searchRequestId;
         clearTimeout(geocodeTimer);
         geocodeTimer = setTimeout(async () => {
             const places = await searchGeocode(q);
-            renderResults(local, places);  // local=スポット, places=地名
+            if (reqId !== searchRequestId) return; // 古いリクエストは破棄
+            renderResults(local, places);
         }, 300);
     });
 
