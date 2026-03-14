@@ -20,30 +20,6 @@
     <script src="pokemon.js"></script>
     <style>
         body { margin: 0; padding: 0; }
-        .current-location-dot {
-            width: 16px; height: 16px;
-            background: #4285F4;
-            border: 3px solid white;
-            border-radius: 50%;
-            box-shadow: 0 0 6px rgba(0,0,0,0.3);
-        }
-        #geolocate-btn {
-            background: white;
-            border: none;
-            border-radius: 0;
-            box-shadow: none;
-            width: 44px;
-            height: 44px;
-            font-size: 18px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            border-left: 1px solid #e0e0e0;
-            opacity: 0.5;
-        }
-        #geolocate-btn.geolocate-active { opacity: 1; }
         #map { position: absolute; top: 0; bottom: 0; width: 100%; }
         .popup-card { min-width: 180px; padding: 7px; font-family: sans-serif; }
         .popup-title { font-weight: bold; font-size: 14px; display: block; margin-bottom: 2px; }
@@ -65,9 +41,9 @@
             border: none;
             border-radius: 0;
             box-shadow: none;
-            width: 44px;
-            height: 44px;
-            font-size: 18px;
+            width: 52px;
+            height: 52px;
+            font-size: 22px;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -76,7 +52,7 @@
         }
         .menu-ui {
             position: absolute;
-            bottom: 54px;
+            bottom: 62px;
             left: 10px;
             z-index: 100;
             background: white;
@@ -97,7 +73,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 44px;
+            height: 52px;
             z-index: 200;
             display: flex;
             align-items: stretch;
@@ -117,8 +93,8 @@
         #search-box {
             display: flex;
             align-items: center;
-            padding: 0 10px;
-            height: 44px;
+            padding: 0 12px;
+            height: 52px;
         }
         #search-icon { color: #9E9E9E; font-size: 16px; margin-right: 8px; flex-shrink: 0; }
         #search-input {
@@ -141,7 +117,7 @@
         #search-results {
             display: none;
             position: fixed;
-            bottom: 44px;
+            bottom: 52px;
             left: 0;
             right: 0;
             background: white;
@@ -195,9 +171,9 @@
             border: none;
             border-radius: 0;
             box-shadow: none;
-            width: 44px;
-            height: 44px;
-            font-size: 18px;
+            width: 52px;
+            height: 52px;
+            font-size: 20px;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -320,13 +296,12 @@
         </div>
     </div>
     <button id="nearby-btn" onclick="toggleNearby()" title="周辺を探す">📍</button>
-    <button id="geolocate-btn" title="現在地">🔵</button>
 </div>
 <div id="nearby-overlay"></div>
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">周辺を探す</span>
-        <span style="margin-left:auto;margin-right:8px;font-size:10px;color:#bbb;">v51</span>
+        <span style="margin-left:auto;margin-right:8px;font-size:10px;color:#bbb;">v47</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div class="nearby-section-label">カテゴリ（スポット以外は複数選択可）</div>
@@ -428,43 +403,18 @@
         attributionControl: false
     });
     map.addControl(new maplibregl.AttributionControl({ compact: true }), 'bottom-right');
-    // 現在地マーカー（watchPosition用）
-    let currentMarker = null;
-
-    // 追従フラグ
-    let isTracking = false;
-    map.on('dragstart', () => {
-        if (isTracking) {
-            isTracking = false;
-            const btn = document.querySelector('#geolocate-btn');
-            if (btn) btn.classList.remove('geolocate-active');
-        }
+    const geolocate = new maplibregl.GeolocateControl({
+        positionOptions: { enableHighAccuracy: true },
+        trackUserLocation: true,
+        showUserLocation: true,
+        fitBoundsOptions: { zoom: 15 }
     });
+    map.addControl(geolocate);
 
-    // watchPositionで常時位置監視
-    if (navigator.geolocation) {
-        navigator.geolocation.watchPosition((pos) => {
-            const lng = pos.coords.longitude;
-            const lat = pos.coords.latitude;
-            currentLocation = { lat, lng };
-
-            // 現在地マーカーを更新
-            if (!currentMarker) {
-                const el = document.createElement('div');
-                el.className = 'current-location-dot';
-                currentMarker = new maplibregl.Marker({ element: el }).setLngLat([lng, lat]).addTo(map);
-            } else {
-                currentMarker.setLngLat([lng, lat]);
-            }
-
-            // 追従中は現在のズームを維持して移動
-            if (isTracking) {
-                map.easeTo({ center: [lng, lat], zoom: map.getZoom() });
-            }
-        }, (err) => {
-            console.warn('位置情報取得エラー:', err);
-        }, { enableHighAccuracy: true, maximumAge: 0 });
-    }
+    // 現在地取得時にcurrentLocationを更新
+    geolocate.on('geolocate', (e) => {
+        currentLocation = { lat: e.coords.latitude, lng: e.coords.longitude };
+    });
 
     // スタイル調整：日本語化・駅強調・POI整理・水域色・3D建物
     const ownLayerPrefixes = ['shops-', 'castles-', 'michi-', 'manholes-'];
@@ -547,14 +497,7 @@
     });
 
     map.on('load', () => {
-        // 現在地ボタンのクリックで追従ON（現在のズーム+2）
-        document.getElementById('geolocate-btn').addEventListener('click', () => {
-            isTracking = true;
-            document.getElementById('geolocate-btn').classList.add('geolocate-active');
-            if (currentLocation) {
-                map.easeTo({ center: [currentLocation.lng, currentLocation.lat], zoom: map.getZoom() + 2 });
-            }
-        });
+        geolocate.trigger();
 
         const loadSDF = (url, id) => new Promise(res =>
             map.loadImage(url, (err, img) => {
