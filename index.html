@@ -531,13 +531,22 @@
                     map.setLayerZoomRange(layer.id, 1, 24);
                     map.setLayoutProperty(layer.id, 'visibility', 'visible');
 
-                    map.setLayoutProperty(layer.id, 'symbol-sort-key', 1);
-                    
-                    // 【追加】他のラベルと重なっても「絶対に」隠さない設定
-                    map.setLayoutProperty(layer.id, 'text-allow-overlap', true);
-                    map.setLayoutProperty(layer.id, 'icon-allow-overlap', true);
-                    map.setLayoutProperty(layer.id, 'text-ignore-placement', true);
-                    
+                    const isStation = layer.id.includes('station') || layer.id.includes('rail');
+                    if (isStation) {
+                        // 駅だけに適用する設定（優先度と色・サイズ）
+                        map.setLayoutProperty(layer.id, 'symbol-sort-key', 1);
+                        map.setLayoutProperty(layer.id, 'text-allow-overlap', true);
+                        map.setLayoutProperty(layer.id, 'text-ignore-placement', true);
+                        
+                        map.setPaintProperty(layer.id, 'text-color', '#0000FF'); // 駅は青
+                        map.setLayoutProperty(layer.id, 'text-size', 12);
+                    } else {
+                        // 駅以外のPOI（バス停やその他）はデフォルトに近い設定に戻す
+                        // 必要に応じて色やサイズを調整してください
+                        map.setPaintProperty(layer.id, 'text-color', '#666666'); // 例：グレーにする
+                        map.setLayoutProperty(layer.id, 'text-size', 10);
+                        // 優先度設定などは行わない（デフォルトに従う）
+                    }                    
                     map.setPaintProperty(layer.id, 'text-color', [
                         'case',
                         ['in', ['get', 'subclass'], ['literal', ['station', 'subway']]], '#1565C0',
