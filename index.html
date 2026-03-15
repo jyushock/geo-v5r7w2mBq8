@@ -530,6 +530,10 @@
                     // 駅はズーム1から、バス停はズーム14から表示
                     map.setLayerZoomRange(layer.id, 1, 24);
                     map.setLayoutProperty(layer.id, 'visibility', 'visible');
+
+                    // ここに以下を追加してください
+                    map.setLayoutProperty(layer.id, 'symbol-sort-key', 1);
+                    
                     map.setPaintProperty(layer.id, 'text-color', [
                         'case',
                         ['in', ['get', 'subclass'], ['literal', ['station', 'subway']]], '#1565C0',
