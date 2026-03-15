@@ -521,50 +521,37 @@
 
                 // poi_r系：車関連・名前なし除外、駅・バス停強調
                 if (stationLayerIds.includes(layer.id)) {
-                    map.setFilter(layer.id, ['all',
+                
+                    // 駅だけ表示するフィルター
+                    map.setFilter(layer.id, [
+                        'all',
                         ['has', 'name'],
-                        ['!', ['in', ['get', 'subclass'], ['literal', carSubclasses]]],
-                        ['!', ['==', ['get', 'class'], 'car']],
-                        ['!', ['==', ['get', 'subclass'], 'bus_stop']]
+                        ['in', ['get', 'subclass'], ['literal', [
+                            'station',
+                            'subway',
+                            'halt',
+                            'tram_stop',
+                            'railway'
+                        ]]]
                     ]);
-                    // 駅はズーム1から、バス停はズーム14から表示
+                
+                    // ズーム制限なし
                     map.setLayerZoomRange(layer.id, 1, 24);
-                    map.setLayoutProperty(layer.id, 'visibility', 'visible');
-
-                    const isStation = layer.id.includes('station') || layer.id.includes('rail');
-                    if (isStation) {
-                        // 駅だけに適用する設定（優先度と色・サイズ）
-                        map.setLayoutProperty(layer.id, 'symbol-sort-key', 1);
-                        map.setLayoutProperty(layer.id, 'text-allow-overlap', true);
-                        map.setLayoutProperty(layer.id, 'text-ignore-placement', true);
-                        
-                        map.setPaintProperty(layer.id, 'text-color', '#0000FF'); // 駅は青
-                        map.setLayoutProperty(layer.id, 'text-size', 12);
-                    } else {
-                        // 駅以外のPOI（バス停やその他）はデフォルトに近い設定に戻す
-                        // 必要に応じて色やサイズを調整してください
-                        map.setPaintProperty(layer.id, 'text-color', '#666666'); // 例：グレーにする
-                        map.setLayoutProperty(layer.id, 'text-size', 10);
-                        // 優先度設定などは行わない（デフォルトに従う）
-                    }                    
-                    map.setPaintProperty(layer.id, 'text-color', [
-                        'case',
-                        ['in', ['get', 'subclass'], ['literal', ['station', 'subway']]], '#1565C0',
-                        ['==', ['get', 'subclass'], 'bus_stop'], '#2E7D32',
-                        '#333333'
-                    ]);
+                
+                    // 強制表示（競合無視）
+                    map.setLayoutProperty(layer.id, 'text-allow-overlap', true);
+                    map.setLayoutProperty(layer.id, 'text-ignore-placement', true);
+                    map.setLayoutProperty(layer.id, 'icon-allow-overlap', true);
+                
+                    // 優先度最大
+                    map.setLayoutProperty(layer.id, 'symbol-sort-key', 1000);
+                
+                    // 駅カラー
+                    map.setPaintProperty(layer.id, 'text-color', '#1565C0');
                     map.setPaintProperty(layer.id, 'text-halo-color', '#FFFFFF');
-                    map.setPaintProperty(layer.id, 'text-halo-width', [
-                        'case',
-                        ['in', ['get', 'subclass'], ['literal', ['station', 'subway', 'bus_stop']]], 2,
-                        1
-                    ]);
-                    map.setLayoutProperty(layer.id, 'text-size', [
-                        'case',
-                        ['in', ['get', 'subclass'], ['literal', ['station', 'subway']]], 14,
-                        12
-                    ]);
-
+                    map.setPaintProperty(layer.id, 'text-halo-width', 2);
+                
+                    map.setLayoutProperty(layer.id, 'text-size', 14);
                 }
 
                 // poi_transit：バス停（緑・ズーム14以上）
