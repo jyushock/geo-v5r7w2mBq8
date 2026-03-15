@@ -496,13 +496,13 @@
         try { map.setLayoutProperty('highway-shield-us-interstate', 'visibility', 'none'); } catch(e) {}
         try { map.setLayoutProperty('road_shield_us', 'visibility', 'none'); } catch(e) {}
 
-        // --- 今回追加分：道路の名称ラベルも非表示にする ---
-        const roadLabelLayers = [
-            'road_label', 'road_major_label', 'highway_name_other', 'highway_name_motorway'
-        ];
-        roadLabelLayers.forEach(id => {
-            try { if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', 'none'); } catch(e) {}
-        });
+        const allLayers = map.getStyle().layers;
+        allLayers.forEach(layer => {
+            // 道路名データ層(transportation_name)またはIDにshieldを含むものを一括非表示
+            if (layer['source-layer'] === 'transportation_name' || layer.id.includes('shield')) {
+                map.setLayoutProperty(layer.id, 'visibility', 'none');
+            }
+        });        
 
         // 日本語化・駅強調・POIフィルター・水域色
         const layers = map.getStyle().layers;
