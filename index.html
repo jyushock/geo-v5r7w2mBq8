@@ -521,57 +521,63 @@
 
                 // poi_r系：車関連・名前なし除外、駅・バス停強調
                 if (stationLayerIds.includes(layer.id)) {
+
+const stationList = ['station','subway','halt','tram_stop','railway'];
+
+map.setLayoutProperty(layer.id, 'symbol-sort-key', [
+    'case',
+    ['in', ['get', 'subclass'], ['literal', stationList]],
+    1000,
+    1
+]);
+
+map.setLayoutProperty(layer.id, 'text-allow-overlap', [
+    'case',
+    ['in', ['get', 'subclass'], ['literal', stationList]],
+    true,
+    false
+]);
+
+map.setLayoutProperty(layer.id, 'text-ignore-placement', [
+    'case',
+    ['in', ['get', 'subclass'], ['literal', stationList]],
+    true,
+    false
+]);
+
                 
-                    // 元の条件に近いフィルター
+                    // 駅だけ表示するフィルター
                     map.setFilter(layer.id, [
                         'all',
                         ['has', 'name'],
-                        ['!', ['in', ['get', 'subclass'], ['literal', carSubclasses]]],
-                        ['!', ['==', ['get', 'class'], 'car']],
-                        ['!', ['==', ['get', 'subclass'], 'bus_stop']]
+                        ['in', ['get', 'subclass'], ['literal', [
+                            'station',
+                            'subway',
+                            'halt',
+                            'tram_stop',
+                            'railway'
+                        ]]]
                     ]);
                 
+                    // ズーム制限なし
                     map.setLayerZoomRange(layer.id, 1, 24);
                 
-                    // 駅だけ強制優先
-                    const stationList = ['station','subway','halt','tram_stop','railway'];
+                    // 強制表示（競合無視）
+                    map.setLayoutProperty(layer.id, 'text-allow-overlap', true);
+                    map.setLayoutProperty(layer.id, 'text-ignore-placement', true);
+                    map.setLayoutProperty(layer.id, 'icon-allow-overlap', true);
                 
-                    map.setLayoutProperty(layer.id, 'symbol-sort-key', [
-                        'case',
-                        ['in', ['get', 'subclass'], ['literal', stationList]],
-                        1000,
-                        1
-                    ]);
+                    // 優先度最大
+                    map.setLayoutProperty(layer.id, 'symbol-sort-key', 1000);
                 
-                    map.setLayoutProperty(layer.id, 'text-allow-overlap', [
-                        'case',
-                        ['in', ['get', 'subclass'], ['literal', stationList]],
-                        true,
-                        false
-                    ]);
+                    // 駅カラー
+                    map.setPaintProperty(layer.id, 'text-color', '#1565C0');
+                    map.setPaintProperty(layer.id, 'text-halo-color', '#FFFFFF');
+                    map.setPaintProperty(layer.id, 'text-halo-width', 2);
                 
-                    map.setLayoutProperty(layer.id, 'text-ignore-placement', [
-                        'case',
-                        ['in', ['get', 'subclass'], ['literal', stationList]],
-                        true,
-                        false
-                    ]);
-                
-                    map.setPaintProperty(layer.id, 'text-color', [
-                        'case',
-                        ['in', ['get', 'subclass'], ['literal', stationList]],
-                        '#1565C0',
-                        '#333'
-                    ]);
-                
-                    map.setLayoutProperty(layer.id, 'text-size', [
-                        'case',
-                        ['in', ['get', 'subclass'], ['literal', stationList]],
-                        14,
-                        11
-                    ]);
-                
+                    map.setLayoutProperty(layer.id, 'text-size', 14);
                 }
+
                 // poi_transit：バス停（緑・ズーム14以上）
                 if (busLayerIds.includes(layer.id)) {
                     map.setLayerZoomRange(layer.id, 14, 24);
