@@ -507,30 +507,51 @@
         }
     }
 
-    // 向きの更新ハンドラ
-    function handleOrientation(event) {
-        let heading = null;
-        // iOSはwebkitCompassHeadingが最も信頼できる
-        if (event.webkitCompassHeading) {
-            heading = event.webkitCompassHeading;
-        } 
-        // deviceorientationabsolute イベントは event.alpha が常に北基準
-        else if (event.absolute === true && event.alpha !== null) {
-            heading = 360 - event.alpha;
-        }
-        // 通常の deviceorientation は基準が不定な場合があるがフォールバックとして使用
-        else if (event.alpha !== null) {
-            heading = 360 - event.alpha;
-        }
+function handleOrientation(event) {
+    let heading = null;
 
-        if (heading !== null) {
-            deviceHeading = heading;
-            if (currentMarker) {
-                currentMarker.getElement().style.setProperty('--heading', `${deviceHeading}deg`);
-            }
+    // iOS (Safari) provides a direct compass heading.
+    if (event.webkitCompassHeading !== undefined) {
+        heading = event.webkitCompassHeading;
+    }
+    // For other browsers, use the alpha value from deviceorientation
+    else if (event.alpha !== null) {
+        // event.absolute indicates whether the orientation is relative to the Earth's coordinate system.
+        if (event.absolute === true || event.type === 'deviceorientationabsolute') {
+            // W3C spec: 0 is North, increases clockwise. This is a fix for incorrect direction.
+            heading = event.alpha;
+        } else {
+            // For non-absolute orientation, it's relative. The old code used (360 - alpha).
+            // This might be a legacy device behavior. We'll stick to it as a fallback.
+            heading = 360 - event.alpha;
         }
     }
 
+    if (heading !== null) {
+        // Correct for screen orientation.
+        let screenAngle = 0;
+        if (window.screen && window.screen.orientation && typeof window.screen.orientation.angle === 'number') {
+            screenAngle = window.screen.orientation.angle; // New API: 0, 90, 180, 270
+        } else if (typeof window.orientation === 'number') {
+            screenAngle = window.orientation; // Deprecated API: -90, 0, 90, 180
+        }
+        
+        // Combine device heading with screen orientation.
+        // The formula is (heading - screenAngle) to correctly align the device's physical top with the on-screen representation.
+        // We add 360 to ensure the result of the modulo is positive.
+        deviceHeading = (heading - screenAngle + 360) % 360;
+
+        if (currentMarker) {
+            // Update the CSS variable for the current location marker's direction indicator.
+            currentMarker.getElement().style.setProperty('--heading', `${deviceHeading}deg`);
+            
+            // If in heading-up tracking mode, rotate the map.
+            if (trackingMode === 2 && map && !isZooming) {
+                map.setBearing(deviceHeading);
+            }
+        }
+    }
+}
     // 地図ドラッグで追従解除
     map.on('dragstart', () => {
         if (trackingMode > 0) {
@@ -674,12 +695,14 @@
                     updateGeolocateButton();
                     map.easeTo({ center: [lng, lat], zoom: trackingZoom });
                 } else if (trackingMode > 0 && !isZooming) {
-                     map.easeTo({
+                     map.flyTo({
                         center: [lng, lat],
                         zoom: trackingZoom,
                         bearing: trackingMode === 2 ? deviceHeading : map.getBearing(),
                         pitch: trackingMode === 2 ? 50 : 0,
-                        duration: 300
+                        speed: 0.7,
+                        curve: 1,
+                        easing: (t) => t
                     });
                 }
             }, (err) => {
@@ -730,6 +753,11 @@
                 });
 
                 map.on('click', `${conf.id}-bg`, (e) => {
+                    if (trackingMode > 0) {
+                        trackingMode = 0;
+                        updateGeolocateButton();
+                        map.easeTo({ bearing: 0, pitch: 0 });
+                    }
                     if (!e.features || !e.features.length) return;
                     const p = e.features[0].properties;
                     const c = e.features[0].geometry.coordinates.slice();
@@ -860,7 +888,7 @@
             map.easeTo({ bearing: 0, pitch: 0 });
         }
         clearSearch();
-        map.jumpTo({ center: item.coords, zoom: 15 });
+        map.jumpTo({ center: item.coords, zoom: map.getZoom() });
         if (item.type !== 'place') {
             setTimeout(() => showPopupForItem(item), 300);
         }
