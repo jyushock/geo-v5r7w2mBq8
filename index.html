@@ -543,8 +543,11 @@ function handleOrientation(event) {
         deviceHeading = (heading - screenAngle + 360) % 360;
 
         if (currentMarker) {
-            // Update the CSS variable for the current location marker's direction indicator.
-            currentMarker.getElement().style.setProperty('--heading', `${deviceHeading}deg`);
+            // The fan's rotation must be relative to the map's current bearing.
+            // When the map is rotated (heading-up), the fan's rotation should be near 0 to point "up".
+            const mapBearing = map.getBearing() || 0;
+            const relativeHeading = (deviceHeading - mapBearing + 360) % 360;
+            currentMarker.getElement().style.setProperty('--heading', `${relativeHeading}deg`);
             
             // If in heading-up tracking mode, rotate the map.
             if (trackingMode === 2 && map && !isZooming) {
