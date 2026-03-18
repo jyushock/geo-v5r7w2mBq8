@@ -74,12 +74,12 @@
         #zoom-btn-wrap {
             position: fixed;
             right: 10px;
-            bottom: 125px; /* geolocateボタンの上 */
+            bottom: 135px; /* geolocateボタンの上 */
             z-index: 200;
             display: flex;
             flex-direction: column;
             background-color: rgba(255, 255, 255, 0.7);
-            border-radius: 22px;
+            border-radius: 24px;
             box-shadow: 0 1px 4px rgba(0,0,0,0.2);
             overflow: hidden;
         }
@@ -91,9 +91,23 @@
         }
         
         /* ボタンの共通スタイル */
-        #toggle-layers-btn, #geolocate-btn {
+        #toggle-layers-btn {
             width: 44px;
             height: 44px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            color: #333;
+        }
+        #geolocate-btn {
+            width: 48px;
+            height: 48px;
             background-color: rgba(255, 255, 255, 0.7);
             border: none;
             border-radius: 50%;
@@ -109,7 +123,7 @@
              background-color: rgba(255, 255, 255, 1);
         }
         #geolocate-btn {
-            border-radius: 22px; /* A案に合わせて形状を統一 */
+            border-radius: 24px; /* A案に合わせて形状を統一 */
             background-color: white;
             border: 0.5px solid #dbdbdb;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -122,8 +136,8 @@
 
         /* ズームボタン個別のスタイル */
         #zoom-in-btn, #zoom-out-btn {
-            width: 44px;
-            height: 44px;
+            width: 48px;
+            height: 48px;
             background-color: transparent;
             border: none;
             border-radius: 0;
@@ -143,7 +157,7 @@
             background-color: rgba(0, 0, 0, 0.08);
         }
         #geolocate-btn {
-            width: 44px; height: 44px;
+            width: 48px; height: 48px;
             background: white; border: none;
             border-radius: 0; box-shadow: none;
             cursor: pointer;
@@ -1082,20 +1096,26 @@ map.on('zoomend', () => {
         nearbyState.dist = parseInt(el.dataset.dist);
     }
     function execNearbySearch() {
-        if (!currentLocation) return alert('現在地が取得できていません。');
         if (nearbyState.cats.length === 0) return alert('カテゴリが選択されていません');
+
+        const useCurrentLocation = trackingMode > 0 && currentLocation;
+        const center = useCurrentLocation ? currentLocation : map.getCenter();
+        const searchLat = center.lat;
+        const searchLng = center.lng;
         
         if (!nearbyState.cats.includes('spot')) {
             const keyword = nearbyState.cats.map(c => gmapKeywords[c]).filter(Boolean).join(' OR ');
-            return window.location.href = `https://www.google.com/maps/search/${encodeURIComponent(keyword)}/@${currentLocation.lat},${currentLocation.lng},14z`;
+            return window.location.href = `https://www.google.com/maps/search/${encodeURIComponent(keyword)}/@${searchLat},${searchLng},14z`;
         }
 
         const RADIUS = nearbyState.dist;
-        const results = searchIndex.map(item => ({...item, dist: calcDist(currentLocation.lat, currentLocation.lng, item.coords[1], item.coords[0])})).filter(item => item.dist <= RADIUS).sort((a, b) => a.dist - b.dist).slice(0, 20);
+        const results = searchIndex.map(item => ({...item, dist: calcDist(searchLat, searchLng, item.coords[1], item.coords[0])})).filter(item => item.dist <= RADIUS).sort((a, b) => a.dist - b.dist).slice(0, 20);
         
         closeNearby();
         const list = document.getElementById('nearby-list');
-        document.getElementById('nearby-result-title').textContent = `現在地から${RADIUS}km以内`;
+        const titleText = useCurrentLocation ? `現在地から${RADIUS}km以内` : `マップ中心から${RADIUS}km以内`;
+        document.getElementById('nearby-result-title').textContent = titleText;
+
         if (results.length === 0) {
             list.innerHTML = `<div style="padding:16px;text-align:center;color:#999;font-size:13px;">${RADIUS}km以内にスポットが見つかりません</div>`;
         } else {
