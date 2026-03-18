@@ -67,10 +67,35 @@
         }
         #geolocate-btn-wrap {
             position: fixed;
-            right: 0;
-            bottom: 56px;
+            right: 10px;
+            bottom: 70px;
             z-index: 200;
+        }
+        #zoom-btn-wrap {
+            position: fixed;
+            right: 10px;
+            bottom: 125px; /* geolocate-btn の上に来るように調整 */
+            z-index: 200;
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+        #zoom-in-btn, #zoom-out-btn {
             width: 44px;
+            height: 44px;
+            background-color: rgba(255, 255, 255, 0.85);
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+            cursor: pointer;
+            font-size: 24px;
+            color: #333;
+            line-height: 44px;
+            text-align: center;
+            padding: 0;
+        }
+        #zoom-in-btn:hover, #zoom-out-btn:hover {
+            background-color: rgba(255, 255, 255, 1);
         }
         #geolocate-btn {
             width: 44px; height: 44px;
@@ -350,6 +375,10 @@
 <body>
 <div id="search-results"><div id="search-results-inner"></div></div>
 <div id="map"></div>
+<div id="zoom-btn-wrap">
+    <button id="zoom-in-btn" title="ズームイン">+</button>
+    <button id="zoom-out-btn" title="ズームアウト">-</button>
+</div>
 <div id="geolocate-btn-wrap">
     <button id="geolocate-btn" title="現在地">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -700,6 +729,15 @@ map.on('zoomend', () => {
             }
             updateGeolocateButton();
         });
+
+        // ズームボタンのクリック処理
+        document.getElementById('zoom-in-btn').addEventListener('click', () => {
+            map.zoomIn();
+        });
+        document.getElementById('zoom-out-btn').addEventListener('click', () => {
+            map.zoomOut();
+        });
+
 
         // watchPositionで常時位置監視（地図ロード後に開始）
         if (navigator.geolocation) {
