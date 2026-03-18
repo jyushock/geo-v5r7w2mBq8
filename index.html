@@ -574,23 +574,28 @@ function handleOrientation(event) {
         }
     }
 }
-    // 地図ドラッグで追従解除
-    map.on('dragstart', () => {
-        if (trackingMode > 0) {
-            trackingMode = 0;
-            updateGeolocateButton();
-            map.easeTo({ bearing: 0, pitch: 0 });
-        }
-    });
 
-    // ズーム操作
-    map.on('zoomstart', () => { isZooming = true; });
-    map.on('zoomend', () => {
-        isZooming = false;
-        if (trackingMode > 0) {
-            trackingZoom = map.getZoom();
-        }
-    });
+// --- 1. 地図ドラッグ（移動）開始時の処理を修正 ---
+map.on('dragstart', () => {
+    // ズーム操作中（ピンチズームなど）の移動であれば、追従モードを解除せずに無視する
+    if (isZooming) return; 
+
+    if (trackingMode > 0) {
+        trackingMode = 0;
+        updateGeolocateButton();
+        map.easeTo({ bearing: 0, pitch: 0 }); // 追従オフで回転と傾きをリセット
+    }
+});
+
+// --- 2. ズーム終了時の処理を修正（追従用ズームレベルを更新） ---
+map.on('zoomstart', () => { isZooming = true; });
+map.on('zoomend', () => {
+    isZooming = false;
+    // 追従モード中にズームが変更されたら、その値を次からの追従ズームとして保持する
+    if (trackingMode > 0) {
+        trackingZoom = map.getZoom();
+    }
+});
 
     // ボタンの見た目を更新
     function updateGeolocateButton() {
