@@ -796,10 +796,10 @@ map.on('zoomend', () => {
 
         // ズームボタンのクリック処理
         document.getElementById('zoom-in-btn').addEventListener('click', () => {
-            map.easeTo({ zoom: map.getZoom() + 1, duration: 300, essential: true });
+            map.easeTo({ zoom: map.getZoom() + 0.5, duration: 300, essential: true });
         });
         document.getElementById('zoom-out-btn').addEventListener('click', () => {
-            map.easeTo({ zoom: map.getZoom() - 1, duration: 300, essential: true });
+            map.easeTo({ zoom: map.getZoom() - 0.5, duration: 300, essential: true });
         });
 
 
