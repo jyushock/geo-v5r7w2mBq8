@@ -74,12 +74,19 @@
         #zoom-btn-wrap {
             position: fixed;
             right: 10px;
-            bottom: 125px; /* geolocate-btn の上に来るように調整 */
+            bottom: 125px; /* geolocate-btn の上 */
             z-index: 200;
             display: flex;
             flex-direction: column;
             gap: 1px;
         }
+        #toggle-layers-btn-wrap {
+            position: fixed;
+            right: 10px;
+            bottom: 225px; /* ズームボタンの上 */
+            z-index: 200;
+        }
+        #toggle-layers-btn,
         #zoom-in-btn, #zoom-out-btn {
             width: 44px;
             height: 44px;
@@ -93,7 +100,11 @@
             line-height: 44px;
             text-align: center;
             padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+        #toggle-layers-btn:hover,
         #zoom-in-btn:hover, #zoom-out-btn:hover {
             background-color: rgba(255, 255, 255, 1);
         }
@@ -375,6 +386,11 @@
 <body>
 <div id="search-results"><div id="search-results-inner"></div></div>
 <div id="map"></div>
+<div id="toggle-layers-btn-wrap">
+    <button id="toggle-layers-btn" title="スポット一時非表示">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+    </button>
+</div>
 <div id="zoom-btn-wrap">
     <button id="zoom-in-btn" title="ズームイン">+</button>
     <button id="zoom-out-btn" title="ズームアウト">-</button>
@@ -1084,6 +1100,51 @@ map.on('zoomend', () => {
         const point=map.project(lngLat), h=window.innerHeight, w=window.innerWidth, t=point.y<h*0.4, b=point.y>h*0.6, l=point.x<w*0.3, r=point.x>w*0.7;
         if(t&&l)return 'top-left'; if(t&&r)return 'top-right'; if(t)return 'top'; if(b&&l)return 'bottom-left'; if(b&&r)return 'bottom-right'; if(l)return 'left'; if(r)return 'right'; return 'bottom';
     }
+
+    // レイヤー一時非表示ボタンの処理
+    const toggleLayersBtn = document.getElementById('toggle-layers-btn');
+    const layerIdPrefixes = ['michi', 'shops', 'manholes', 'castles'];
+    const targetLayerIds = layerIdPrefixes.flatMap(prefix => [
+        `${prefix}-cluster`,
+        `${prefix}-cluster-count`,
+        `${prefix}-bg`,
+        `${prefix}-icon`
+    ]);
+
+    let originalVisibilities = new Map();
+
+    const hideOwnLayers = () => {
+        originalVisibilities.clear();
+        for (const layerId of targetLayerIds) {
+            if (map.getLayer(layerId)) {
+                const currentVisibility = map.getLayoutProperty(layerId, 'visibility') || 'visible';
+                originalVisibilities.set(layerId, currentVisibility);
+                if (currentVisibility === 'visible') {
+                    map.setLayoutProperty(layerId, 'visibility', 'none');
+                }
+            }
+        }
+    };
+
+    const restoreOwnLayers = () => {
+        if (originalVisibilities.size === 0) return;
+        for (const [layerId, visibility] of originalVisibilities.entries()) {
+            if (map.getLayer(layerId)) {
+                map.setLayoutProperty(layerId, 'visibility', visibility);
+            }
+        }
+        originalVisibilities.clear();
+    };
+
+    toggleLayersBtn.addEventListener('mousedown', hideOwnLayers);
+    toggleLayersBtn.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        hideOwnLayers();
+    });
+
+    ['mouseup', 'mouseleave', 'touchend'].forEach(event => {
+        toggleLayersBtn.addEventListener(event, restoreOwnLayers);
+    });
 </script>
 </body>
 </html>
