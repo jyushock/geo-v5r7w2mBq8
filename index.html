@@ -631,10 +631,11 @@ function handleOrientation(event) {
                     map.setFilter(layer.id, ['all', ['has', 'name'], ['!', ['in', ['get', 'subclass'], ['literal', carSubclasses]]]]);
                     const isMainStation = ['any', ['in', ['get', 'subclass'], ['literal', ['station', 'subway', 'monorail', 'halt', 'tram_stop']]], ['==', ['get', 'class'], 'railway'], ['==', ['get', 'class'], 'public_transport'], ['has', 'railway']];
                     const isBusStop = ['==', ['get', 'subclass'], 'bus_stop'];
-                    map.setLayoutProperty(layer.id, 'text-ignore-placement', true);
-                    map.setLayoutProperty(layer.id, 'icon-ignore-placement', true);
-                    map.setLayoutProperty(layer.id, 'text-allow-overlap', true);
-                    map.setLayoutProperty(layer.id, 'icon-allow-overlap', true);
+                    const isStationOrBus = ['in', ['get', 'subclass'], ['literal', stationSubclasses]];
+                    map.setLayoutProperty(layer.id, 'text-ignore-placement', ['case', isStationOrBus, true, false]);
+                    map.setLayoutProperty(layer.id, 'icon-ignore-placement', ['case', isStationOrBus, true, false]);
+                    map.setLayoutProperty(layer.id, 'text-allow-overlap', ['case', isStationOrBus, true, false]);
+                    map.setLayoutProperty(layer.id, 'icon-allow-overlap', ['case', isStationOrBus, true, false]);
                     map.setLayoutProperty(layer.id, 'symbol-sort-key', ['case', isMainStation, 1, 100]);
                     map.setLayoutProperty(layer.id, 'text-variable-anchor', ['literal', null]);
                     map.setLayoutProperty(layer.id, 'text-anchor', 'top');
