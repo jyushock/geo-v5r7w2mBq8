@@ -760,7 +760,6 @@ function handleOrientation(event) {
                     if (trackingMode > 0) {
                         trackingMode = 0;
                         updateGeolocateButton();
-                        map.easeTo({ bearing: 0, pitch: 0 });
                     }
                     if (!e.features || !e.features.length) return;
                     const p = e.features[0].properties;
