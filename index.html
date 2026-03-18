@@ -631,11 +631,12 @@ function handleOrientation(event) {
                     map.setFilter(layer.id, ['all', ['has', 'name'], ['!', ['in', ['get', 'subclass'], ['literal', carSubclasses]]]]);
                     const isMainStation = ['any', ['in', ['get', 'subclass'], ['literal', ['station', 'subway', 'monorail', 'halt', 'tram_stop']]], ['==', ['get', 'class'], 'railway'], ['==', ['get', 'class'], 'public_transport'], ['has', 'railway']];
                     const isBusStop = ['==', ['get', 'subclass'], 'bus_stop'];
-                    const isStationFeature = ['any', ['in', ['get', 'subclass'], ['literal', stationSubclasses]], ['==', ['get', 'class'], 'railway']];
-                    map.setLayoutProperty(layer.id, 'text-ignore-placement', ['case', isStationFeature, true, false]);
-                    map.setLayoutProperty(layer.id, 'icon-ignore-placement', ['case', isStationFeature, true, false]);
-                    map.setLayoutProperty(layer.id, 'text-allow-overlap', ['case', isStationFeature, true, false]);
-                    map.setLayoutProperty(layer.id, 'icon-allow-overlap', ['case', isStationFeature, true, false]);
+                    const nonEssentialSubclasses = [ 'restaurant', 'cafe', 'fast_food', 'bar', 'pub', 'supermarket', 'convenience', 'shop', 'clothing_store', 'department_store', 'hospital', 'pharmacy', 'hotel', 'motel', 'hostel', 'bank', 'atm' ];
+                    const isNonEssential = ['in', ['get', 'subclass'], ['literal', nonEssentialSubclasses]];
+                    map.setLayoutProperty(layer.id, 'text-ignore-placement', ['case', isNonEssential, false, true]);
+                    map.setLayoutProperty(layer.id, 'icon-ignore-placement', ['case', isNonEssential, false, true]);
+                    map.setLayoutProperty(layer.id, 'text-allow-overlap', ['case', isNonEssential, false, true]);
+                    map.setLayoutProperty(layer.id, 'icon-allow-overlap', ['case', isNonEssential, false, true]);
                     map.setLayoutProperty(layer.id, 'symbol-sort-key', ['case', isMainStation, 1, 100]);
                     map.setLayoutProperty(layer.id, 'text-variable-anchor', ['literal', null]);
                     map.setLayoutProperty(layer.id, 'text-anchor', 'top');
