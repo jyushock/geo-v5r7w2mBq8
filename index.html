@@ -1107,13 +1107,26 @@ map.on('zoomend', () => {
     function selectNearbyCat(el) {
         const cat = el.dataset.cat;
         const isSpot = cat === 'spot';
-        document.querySelectorAll('.nearby-cat-item').forEach(e => e.classList.toggle('selected', e === el && isSpot));
+
         if (isSpot) {
-            nearbyState.cats = ['spot'];
+            // 「スポット」がクリックされた場合、これが唯一の選択肢となる
+            const wasSelected = el.classList.contains('selected');
+            document.querySelectorAll('.nearby-cat-item').forEach(e => e.classList.remove('selected'));
+            if (!wasSelected) {
+                el.classList.add('selected');
+            }
         } else {
+            // 他のカテゴリがクリックされた場合
+            // 1. 「スポット」の選択を解除
+            document.querySelector('.nearby-cat-item[data-cat="spot"]').classList.remove('selected');
+            // 2. クリックされた項目をトグル
             el.classList.toggle('selected');
-            nearbyState.cats = Array.from(document.querySelectorAll('.nearby-cat-item.selected')).map(e=>e.dataset.cat).filter(c=>c!=='spot');
         }
+
+        // DOMの状態に基づいてstateを更新
+        nearbyState.cats = Array.from(document.querySelectorAll('.nearby-cat-item.selected')).map(e => e.dataset.cat);
+        
+        // 距離セクションの表示を更新
         document.getElementById('nearby-dist-section').style.display = nearbyState.cats.includes('spot') ? 'block' : 'none';
     }
     function selectNearbyDist(el) {
