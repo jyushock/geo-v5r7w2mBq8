@@ -655,17 +655,11 @@ function handleOrientation(event) {
             const relativeHeading = getShortestAngleDiff(mapBearing, deviceHeading);
             currentMarker.getElement().style.setProperty('--heading', `${relativeHeading}deg`);
             
-            // ヘディングアップモード時の処理
-            if (trackingMode === 2 && map && !isZooming) {
-                // setBearing ではなく easeTo を使うことで Googleマップ風の滑らかさに
-                map.easeTo({
-                    bearing: deviceHeading,
-                    duration: 200,    // 0.2秒かけて動く
-                    easing: (t) => t, // 線形移動
-                    essential: true
-                });
-            }
-        }
+                            // ヘディングアップモード時の処理
+                        if (trackingMode === 2 && map && !isZooming) {
+                            // setBearing を直接呼び出して、他のアニメーションと競合させない
+                            map.setBearing(deviceHeading);
+                        }        }
     }
 }
 
@@ -829,7 +823,6 @@ map.on('zoomend', () => {
                      map.easeTo({
                         center: [lng, lat],
                         zoom: trackingZoom,
-                        bearing: trackingMode === 2 ? deviceHeading : map.getBearing(),
                         pitch: trackingMode === 2 ? 50 : 0,
                         duration: 1000, // 1秒かけてアニメーション
                         easing: (t) => t // 線形的なイージング
