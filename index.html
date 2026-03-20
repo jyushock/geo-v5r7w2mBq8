@@ -826,14 +826,13 @@ map.on('zoomend', () => {
                     updateGeolocateButton();
                     map.easeTo({ center: [lng, lat], zoom: trackingZoom });
                 } else if (trackingMode > 0 && !isZooming) {
-                     map.flyTo({
+                     map.easeTo({
                         center: [lng, lat],
                         zoom: trackingZoom,
                         bearing: trackingMode === 2 ? deviceHeading : map.getBearing(),
                         pitch: trackingMode === 2 ? 50 : 0,
-                        speed: 0.7,
-                        curve: 1,
-                        easing: (t) => t
+                        duration: 1000, // 1秒かけてアニメーション
+                        easing: (t) => t // 線形的なイージング
                     });
                 }
             }, (err) => {
