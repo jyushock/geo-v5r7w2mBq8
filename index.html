@@ -467,7 +467,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v77</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v78</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -1192,8 +1192,7 @@ map.on('zoomend', () => {
     function execNearbySearch() {
         if (nearbyState.cats.length === 0) return alert('カテゴリが選択されていません');
 
-        const useCurrentLocation = trackingMode > 0 && currentLocation;
-        const center = useCurrentLocation ? currentLocation : map.getCenter();
+        const center = map.getCenter();
         const searchLat = center.lat;
         const searchLng = center.lng;
         
@@ -1207,8 +1206,7 @@ map.on('zoomend', () => {
         
         closeNearby();
         const list = document.getElementById('nearby-list');
-        const titleText = useCurrentLocation ? `現在地から${RADIUS}km以内` : `マップ中心から${RADIUS}km以内`;
-        document.getElementById('nearby-result-title').textContent = titleText;
+        document.getElementById('nearby-result-title').textContent = `マップ中心から${RADIUS}km以内`;
 
         if (results.length === 0) {
             list.innerHTML = `<div style="padding:16px;text-align:center;color:#999;font-size:13px;">${RADIUS}km以内にスポットが見つかりません</div>`;
