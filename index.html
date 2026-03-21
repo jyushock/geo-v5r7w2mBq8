@@ -466,7 +466,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v75</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v76</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -587,22 +587,26 @@
     // iOS向けに向き取得の権限をリクエスト
     function requestDeviceOrientation() {
         const startListening = () => {
-            const eventName = 'ondeviceorientationabsolute' in window ? 'deviceorientationabsolute' : 'deviceorientation';
-            window.addEventListener(eventName, handleOrientation, true);
+            // absolute版を優先的に試みる
+            if ('ondeviceorientationabsolute' in window) {
+                window.addEventListener('deviceorientationabsolute', handleOrientation, true);
+            } else {
+                window.addEventListener('deviceorientation', handleOrientation, true);
+            }
         };
 
-        if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
-            DeviceOrientationEvent.requestPermission().then(state => {
-                if (state === 'granted') {
-                    startListening();
-                }
-            }).catch(console.error);
+        if (typeof DeviceOrientationEvent !== 'undefined' &&
+            typeof DeviceOrientationEvent.requestPermission === 'function') {
+            // iOS
+            DeviceOrientationEvent.requestPermission()
+                .then(state => { if (state === 'granted') startListening(); })
+                .catch(console.error);
         } else {
             startListening();
         }
     }
 
-// --- 1. スムージング用の変数を追加（既存の変数定義付近に配置） ---
+// --- スムージング用変数 ---
 let currentSmoothedHeading = null;
 const smoothingFactor = 0.05; // センサー入力の平滑化（小さいほど滑らか）
 
@@ -614,53 +618,58 @@ function getShortestAngleDiff(current, target) {
     return diff;
 }
 
-// --- 2. handleOrientation 関数を全面差し替え ---
+// handleOrientation: 信頼できるabsolute系イベントのみ使用
+// absolute=falseのdeviceorientationは端末起動時基準のため180度ずれが起きるので無視
 function handleOrientation(event) {
     let rawHeading = null;
 
     if (event.webkitCompassHeading !== undefined) {
-        rawHeading = event.webkitCompassHeading; // iOS
-    } else if (event.alpha !== null) {
-        // Android等のデバイス
-        rawHeading = (event.absolute === true || event.type === 'deviceorientationabsolute') 
-                     ? event.alpha 
-                     : 360 - event.alpha;
+        // iOS: webkitCompassHeading は真北基準で信頼性が高い
+        rawHeading = event.webkitCompassHeading;
+
+    } else if (event.type === 'deviceorientationabsolute' && event.alpha !== null) {
+        // Android: absolute版は地磁気北基準なので信頼できる
+        rawHeading = (360 - event.alpha) % 360;
+
+    } else if (event.type === 'deviceorientation' && event.absolute === true && event.alpha !== null) {
+        // absolute=trueのdeviceorientationも同等
+        rawHeading = (360 - event.alpha) % 360;
+
+    } else {
+        // absolute=false のdeviceorientationは信頼できないため無視
+        return;
     }
 
-    if (rawHeading !== null) {
-        // 画面の向き（縦・横）を補正
-        let screenAngle = 0;
-        if (window.screen && window.screen.orientation) {
-            screenAngle = window.screen.orientation.angle;
-        } else if (typeof window.orientation === 'number') {
-            screenAngle = window.orientation;
-        }
-        
-        // デバイスの物理的な向きを計算
-        const targetHeading = (rawHeading + screenAngle + 360) % 360;
+    // 画面の向き（縦・横）を補正
+    let screenAngle = 0;
+    if (window.screen && window.screen.orientation) {
+        screenAngle = window.screen.orientation.angle;
+    } else if (typeof window.orientation === 'number') {
+        screenAngle = window.orientation;
+    }
 
-        // 【重要】ローパスフィルタによる平滑化
-        if (currentSmoothedHeading === null) {
-            currentSmoothedHeading = targetHeading;
-        } else {
-            const diff = getShortestAngleDiff(currentSmoothedHeading, targetHeading);
-            currentSmoothedHeading = (currentSmoothedHeading + diff * smoothingFactor + 360) % 360;
-        }
+    const targetHeading = (rawHeading + screenAngle + 360) % 360;
 
-        deviceHeading = currentSmoothedHeading;
+    if (currentSmoothedHeading === null) {
+        currentSmoothedHeading = targetHeading;
+    } else {
+        const diff = getShortestAngleDiff(currentSmoothedHeading, targetHeading);
+        currentSmoothedHeading = (currentSmoothedHeading + diff * smoothingFactor + 360) % 360;
+    }
 
-        // マーカーの扇アイコン更新のみここで行う（地図回転はrAFループに任せる）
-        if (currentMarker) {
-            const mapBearing = map.getBearing() || 0;
-            const relativeHeading = getShortestAngleDiff(mapBearing, deviceHeading);
-            currentMarker.getElement().style.setProperty('--heading', `${relativeHeading}deg`);
-        }
+    deviceHeading = currentSmoothedHeading;
+
+    // マーカーの扇アイコン更新のみここで行う（地図回転はrAFループに任せる）
+    if (currentMarker) {
+        const mapBearing = map.getBearing() || 0;
+        const relativeHeading = getShortestAngleDiff(mapBearing, deviceHeading);
+        currentMarker.getElement().style.setProperty('--heading', `${relativeHeading}deg`);
     }
 }
 
 // --- rAFループで地図bearingをなめらかに追従（震え防止） ---
 // 閾値未満の変化は無視することで静止中の震えを抑える
-const BEARING_THRESHOLD = 1.5; // この角度(度)未満の変化は無視
+const BEARING_THRESHOLD = 1.0; // この角度(度)未満の変化は無視
 const BEARING_LERP      = 0.12; // 1フレームあたりの追従率（小さいほどゆっくり）
 let rafBearing = null;
 
