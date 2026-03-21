@@ -12326,8 +12326,8 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.60555556,
-          36.65833333
+          136.55834310662894,
+          36.44964060392634
         ]
       },
       "properties": {
