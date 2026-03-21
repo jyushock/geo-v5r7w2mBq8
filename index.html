@@ -467,7 +467,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v78</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v79</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -477,7 +477,7 @@
         <label class="filter-chip"><input type="checkbox" id="check-manhole" checked onchange="onFilterChange(this)">マンホール</label>
     </div>
     <div style="border-top:1px solid #f0f0f0;"></div>
-    <div class="nearby-section-label">カテゴリ（スポット以外は複数選択可）</div>
+    <div class="nearby-section-label">カテゴリ</div>
     <div class="nearby-category-grid">
         <div class="nearby-cat-item" data-cat="spot" onclick="selectNearbyCat(this)">
             <div class="nearby-cat-icon">📍</div>
@@ -1135,7 +1135,7 @@ map.on('zoomend', () => {
         return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
     }
 
-    const gmapKeywords = { supermarket: 'スーパー', busstop: 'バス停', station: '駅', restaurant: 'レストラン OR カフェ', noodle: 'ラーメン OR うどん OR そば', museum: '歴史館 OR 資料館 OR 博物館 OR 記念館', sightseeing: '観光スポット OR 像' };
+    const gmapKeywords = { supermarket: 'スーパー', busstop: 'バス停', station: '駅', restaurant: 'レストラン OR カフェ', noodle: 'ラーメン OR うどん OR そば', museum: '歴史館 OR 資料館 OR 博物館', sightseeing: '観光スポット OR 像' };
     let nearbyState = { cats: ['supermarket'], dist: 5 };
     const filterState = { shop: true, castle: true, michi: true, manhole: true };
     function onFilterChange(el) {
@@ -1160,27 +1160,16 @@ map.on('zoomend', () => {
         document.getElementById('nearby-overlay').classList.add('open');
     }
     function selectNearbyCat(el) {
-        const cat = el.dataset.cat;
-        const isSpot = cat === 'spot';
-
-        if (isSpot) {
-            // 「スポット」がクリックされた場合、これが唯一の選択肢となる
-            const wasSelected = el.classList.contains('selected');
-            document.querySelectorAll('.nearby-cat-item').forEach(e => e.classList.remove('selected'));
-            if (!wasSelected) {
-                el.classList.add('selected');
-            }
-        } else {
-            // 他のカテゴリがクリックされた場合
-            // 1. 「スポット」の選択を解除
-            document.querySelector('.nearby-cat-item[data-cat="spot"]').classList.remove('selected');
-            // 2. クリックされた項目をトグル
-            el.classList.toggle('selected');
+        // 常に単一選択: クリックされた項目のみ選択
+        const wasSelected = el.classList.contains('selected');
+        document.querySelectorAll('.nearby-cat-item').forEach(e => e.classList.remove('selected'));
+        if (!wasSelected) {
+            el.classList.add('selected');
         }
 
         // DOMの状態に基づいてstateを更新
         nearbyState.cats = Array.from(document.querySelectorAll('.nearby-cat-item.selected')).map(e => e.dataset.cat);
-        
+
         // 距離セクションの表示を更新
         document.getElementById('nearby-dist-section').style.display = nearbyState.cats.includes('spot') ? 'block' : 'none';
     }
