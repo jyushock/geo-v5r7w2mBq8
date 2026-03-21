@@ -669,8 +669,8 @@ function handleOrientation(event) {
 
 // --- rAFループで地図bearingをなめらかに追従（震え防止） ---
 // 閾値未満の変化は無視することで静止中の震えを抑える
-const BEARING_THRESHOLD = 1.0; // この角度(度)未満の変化は無視
-const BEARING_LERP      = 0.12; // 1フレームあたりの追従率（小さいほどゆっくり）
+const BEARING_THRESHOLD = 1.2; // この角度(度)未満の変化は無視
+const BEARING_LERP      = 0.15; // 1フレームあたりの追従率（小さいほどゆっくり）
 let rafBearing = null;
 
 function bearingRafLoop() {
