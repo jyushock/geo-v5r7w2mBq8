@@ -224,6 +224,7 @@
         .btn-nav { background: #9C27B0; }
         .btn-pokefuta { background: #FBBC04; color: #333; }
         .btn-michi-web { background: #34A853; color: #fff; }
+        .btn-kojodan { background: #8B4513; color: #fff; }
         .popup-address { font-size: 11px; color: #555; display: block; margin-bottom: 4px; }
         .popup-road    { font-size: 11px; color: #888; display: block; margin-bottom: 6px; }
 
@@ -467,7 +468,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v81</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v82</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -965,7 +966,7 @@ map.on('zoomend', () => {
                         const gmapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name)}`;
                         let extraBtn = '';
                         if (conf.type === 'shop')   extraBtn = `<a href="${p.url}" target="_blank" class="btn btn-tabelog">食べログ</a>`;
-                        if (conf.type === 'castle') extraBtn = `<a href="https://ja.wikipedia.org/wiki/${encodeURIComponent(p.name)}" target="_blank" class="btn btn-wiki">Wikipedia</a>`;
+                        if (conf.type === 'castle') extraBtn = `<a href="https://ja.wikipedia.org/wiki/${encodeURIComponent(p.name)}" target="_blank" class="btn btn-wiki">Wikipedia</a>${p.url ? `<a href="${p.url}" target="_blank" class="btn btn-kojodan">攻城団</a>` : ''}`;
                         popupHtml = `<div class="popup-card"><span class="popup-title">${p.name}</span><span class="popup-genre">${p.genre || ''}</span><a href="${gmapUrl}" target="_blank" class="btn btn-gmap">GoogleMap</a>${extraBtn}<a href="${navUrl}" target="_blank" class="btn btn-nav" >ここへ行く</a></div>`;
                     }
                     new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
@@ -1100,7 +1101,7 @@ map.on('zoomend', () => {
             const gmapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.label)}`;
             let extraBtn = '';
             if (item.type === 'shop')   extraBtn = `<a href="${p.url}" target="_blank" class="btn btn-tabelog">食べログ</a>`;
-            if (item.type === 'castle') extraBtn = `<a href="https://ja.wikipedia.org/wiki/${encodeURIComponent(item.label)}" target="_blank" class="btn btn-wiki">Wikipedia</a>`;
+            if (item.type === 'castle') extraBtn = `<a href="https://ja.wikipedia.org/wiki/${encodeURIComponent(item.label)}" target="_blank" class="btn btn-wiki">Wikipedia</a>${p.url ? `<a href="${p.url}" target="_blank" class="btn btn-kojodan">攻城団</a>` : ''}`;
             popupHtml = `<div class="popup-card"><span class="popup-title">${item.label}</span><span class="popup-genre">${item.sub || ''}</span><a href="${gmapUrl}" target="_blank" class="btn btn-gmap">GoogleMap</a>${extraBtn}<a href="${navUrl}" target="_blank" class="btn btn-nav" >ここへ行く</a></div>`;
         }
         new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
