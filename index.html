@@ -436,12 +436,6 @@
 </head>
 <body>
 <div id="search-results"><div id="search-results-inner"></div></div>
-<div id="debug-overlay" style="
-    position: fixed; top: 10px; left: 10px; z-index: 9999;
-    background: rgba(0,0,0,0.75); color: #0f0; font-size: 11px;
-    font-family: monospace; padding: 8px; border-radius: 6px;
-    pointer-events: none; white-space: pre; line-height: 1.6;
-"></div>
 <div id="map"></div>
 <div id="toggle-layers-btn-wrap">
     <button id="toggle-layers-btn" title="スポット一時非表示">
@@ -474,7 +468,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v93-debug</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v93</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -630,23 +624,6 @@
         }
     }
 
-// ── デバッグログ ──
-const debugEl = document.getElementById('debug-overlay');
-const debugLog = [];
-function dbg(msg) {
-    const time = new Date().toISOString().substr(11, 8);
-    debugLog.unshift(`${time} ${msg}`);
-    if (debugLog.length > 10) debugLog.pop();
-}
-setInterval(() => {
-    if (!debugEl) return;
-    debugEl.textContent =
-        `trackingMode: ${trackingMode}\n` +
-        `rafId: ${rafId}\n` +
-        `---\n` +
-        debugLog.join('\n');
-}, 200);
-
 // --- スムージング用変数 ---
 let currentSmoothedHeading = null;
 const smoothingFactor = 0.03; // センサー入力の平滑化（小さいほど滑らか）
@@ -719,12 +696,10 @@ let rafId       = null; // ループID（nullなら停止中）
 
 function startRafLoop() {
     if (rafId !== null) return;
-    dbg('startRafLoop');
     rafId = requestAnimationFrame(bearingRafLoop);
 }
 
 function stopRafLoop() {
-    dbg(`stopRafLoop rafId=${rafId}`);
     if (rafId !== null) {
         cancelAnimationFrame(rafId);
         rafId = null;
@@ -768,7 +743,6 @@ function bearingRafLoop() {
 
 // --- 1. 地図ドラッグ（移動）開始時の処理を修正 ---
 map.on('dragstart', () => {
-    dbg(`dragstart trackingMode=${trackingMode}`);
     if (trackingMode > 0) {
         const wasMode2 = trackingMode === 2;
         trackingMode = 0;
@@ -782,7 +756,6 @@ map.on('dragstart', () => {
 });
 
 map.getCanvas().addEventListener('touchstart', () => {
-    dbg(`touchstart trackingMode=${trackingMode}`);
     if (trackingMode > 0) {
         const wasMode2 = trackingMode === 2;
         trackingMode = 0;
