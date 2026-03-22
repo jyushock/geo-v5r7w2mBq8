@@ -469,7 +469,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v97</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v99</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -856,6 +856,17 @@ map.on('zoomend', () => {
                     const lid = layer.id.toLowerCase();
                     if (lid.includes('water')) map.setPaintProperty(layer.id, 'fill-color', '#AAD3DF');
                     else if (lid.includes('park') || lid.includes('green') || lid.includes('forest') || lid.includes('wood')) map.setPaintProperty(layer.id, 'fill-color', '#C8FACC');
+                }
+                // 鉄道線路の強調表示
+                const railLayers = [
+                    'tunnel_major_rail', 'road_major_rail', 'bridge_major_rail',
+                    'tunnel_transit_rail', 'road_transit_rail', 'bridge_transit_rail'
+                ];
+                if (railLayers.includes(layer.id)) {
+                    map.setPaintProperty(layer.id, 'line-color', '#1565C0');
+                    map.setPaintProperty(layer.id, 'line-width', 0.7);
+                    map.setPaintProperty(layer.id, 'line-opacity', 0.9);
+                    map.setLayerZoomRange(layer.id, 1, 24);
                 }
             } catch (e) {}
         });
