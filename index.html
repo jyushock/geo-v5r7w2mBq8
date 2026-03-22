@@ -468,7 +468,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v83</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v85</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -911,7 +911,7 @@ map.on('zoomend', () => {
             const configs = [
                 { id: 'michi',    data: michiGeoJSON,         color: '#34A853', icon: 'michi-icon',   type: 'michi',   clusterColor: '#34A853' },
                 { id: 'shops',    data: shopData,             color: '#FF9800', icon: 'tabe-icon',    type: 'shop',    clusterColor: '#FF9800' },
-                { id: 'manholes', data: mergedManholeGeoJSON, color: '#9E9E9E', icon: 'manhole-icon', type: 'manhole', clusterColor: '#9E9E9E' },
+                { id: 'manholes', data: mergedManholeGeoJSON, color: '#B87333', icon: 'manhole-icon', type: 'manhole', clusterColor: '#B87333' },
                 { id: 'castles',  data: castleData,           color: '#546E7A', icon: 'castle-icon',  type: 'castle',  clusterColor: '#546E7A' },
             ];
 
@@ -925,7 +925,7 @@ map.on('zoomend', () => {
                 });
                 map.addLayer({ id: `${conf.id}-cluster`, type: 'circle', source: conf.id, filter: ['has', 'point_count'], paint: { 'circle-color': conf.clusterColor, 'circle-radius': 20, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' } });
                 map.addLayer({ id: `${conf.id}-cluster-count`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'text-field': '{point_count_abbreviated}', 'text-size': 12, 'text-font': ['Noto Sans Bold'] }, paint: { 'text-color': '#FFFFFF' } });
-                map.addLayer({ id: `${conf.id}-bg`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: { 'circle-color': conf.type === 'castle' ? ['match', ['get', 'genre'], '日本100名城', '#4285F4', '続日本100名城', '#EA4335', '#546E7A'] : conf.type === 'manhole' ? ['match', ['get', 'source'], 'pokefuta', '#FBBC04', '#9E9E9E'] : conf.color, 'circle-radius': 14, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' } });
+                map.addLayer({ id: `${conf.id}-bg`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: { 'circle-color': conf.type === 'castle' ? ['match', ['get', 'genre'], '日本100名城', '#4285F4', '続日本100名城', '#EA4335', '#546E7A'] : conf.type === 'manhole' ? ['match', ['get', 'source'], 'pokefuta', '#FBBC04', '#B87333'] : conf.color, 'circle-radius': 14, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' } });
                 map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': 0.35, 'icon-allow-overlap': true }, paint: { 'icon-color': '#FFFFFF' } });
 
                 map.on('click', `${conf.id}-cluster`, (e) => {
@@ -1003,7 +1003,7 @@ map.on('zoomend', () => {
 
     const typeConfig = {
         pokefuta: { color: '#FBBC04', img: 'manhole.png', label: 'ポケふた' },
-        manhole:  { color: '#9E9E9E', img: 'manhole.png', label: 'マンホール' },
+        manhole:  { color: '#B87333', img: 'manhole.png', label: 'マンホール' },
         castle:   { color: '#1a1a1a', img: 'castle.png',  label: 'お城' },
         michi:    { color: '#34A853', img: 'michi.png',   label: '道の駅' },
         shop:     { color: '#FF9800', img: 'tabe.png',    label: 'レストラン' },
