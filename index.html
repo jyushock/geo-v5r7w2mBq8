@@ -469,7 +469,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v95</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v96</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -895,26 +895,13 @@ map.on('zoomend', () => {
 
 
         // watchPositionで常時位置監視（地図ロード後に開始）
-        const GPS_THRESHOLD_M = 5;
-        function CalcDistMeters(lat1, lng1, lat2, lng2) {
-            const R = 6371000;
-            const dLat = (lat2 - lat1) * Math.PI / 180;
-            const dLng = (lng2 - lng1) * Math.PI / 180;
-            const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLng/2)**2;
-            return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-        }
         if (navigator.geolocation) {
             navigator.geolocation.watchPosition((pos) => {
+                // 精度が20m以上の低精度測位は無視
+                if (pos.coords.accuracy > 20) return;
+
                 const lng = pos.coords.longitude;
                 const lat = pos.coords.latitude;
-
-                // 初回以外は前回座標との距離が閾値以下なら無視
-                if (currentLocation) {
-                    const dist = CalcDistMeters(
-                        currentLocation.lat, currentLocation.lng, lat, lng);
-                    if (dist < GPS_THRESHOLD_M) return;
-                }
-
                 currentLocation = { lat, lng };
 
                 if (!currentMarker) {
