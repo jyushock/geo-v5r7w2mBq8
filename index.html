@@ -468,7 +468,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v88</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v89</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -708,27 +708,19 @@ function bearingRafLoop() {
             if (Math.abs(diff) >= BEARING_THRESHOLD) {
                 rafBearing = (rafBearing + diff * BEARING_LERP + 360) % 360;
             }
-            map.easeTo({
-                center: [rafLng, rafLat],
-                bearing: rafBearing,
-                zoom: trackingZoom,
-                pitch: 50,
-                duration: 0,
-                easing: (t) => t
-            });
+            // 同期メソッドで即座に反映（非同期キューに残らない）
+            map.setCenter([rafLng, rafLat]);
+            map.setBearing(rafBearing);
+            map.setPitch(50);
+
             // マーカー扇を同期
             if (currentMarker) {
                 const relativeHeading = getShortestAngleDiff(rafBearing, deviceHeading);
                 currentMarker.getElement().style.setProperty('--heading', `${relativeHeading}deg`);
             }
         } else {
-            // trackingMode === 1: 位置のみ追従
-            map.easeTo({
-                center: [rafLng, rafLat],
-                zoom: trackingZoom,
-                duration: 0,
-                easing: (t) => t
-            });
+            // trackingMode === 1: 位置のみ追従（同期メソッド）
+            map.setCenter([rafLng, rafLat]);
         }
     } else {
         rafBearing  = null;
