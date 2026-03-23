@@ -470,7 +470,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v108</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v109</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -1327,7 +1327,7 @@ map.on('zoomend', () => {
                 const distStr = item.dist < 1 ? `${Math.round(item.dist * 1000)}m` : `${item.dist.toFixed(1)}km`;
                 const div = document.createElement('div');
                 div.className = 'nearby-item';
-                div.innerHTML = `<div class="nearby-item-icon" style="background:${getItemColor(item)}">${iconHtml}</div><div class="nearby-item-text"><div class="nearby-item-name">${item.label}</div><div class="nearby-item-sub">${cfg.label}t${item.sub}</div></div><div class="nearby-item-dist">${distStr}</div>`;
+                div.innerHTML = `<div class="nearby-item-icon" style="background:${getItemColor(item)}">${iconHtml}</div><div class="nearby-item-text"><div class="nearby-item-name">${item.label}</div><div class="nearby-item-sub">${item.sub}</div></div><div class="nearby-item-dist">${distStr}</div>`;
                 div.addEventListener('click', () => { closeNearbyResult(); onResultClick(item); });
                 list.appendChild(div);
             });
