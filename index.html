@@ -469,7 +469,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v101</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v102</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -1268,7 +1268,19 @@ map.on('zoomend', () => {
         }
 
         const RADIUS = nearbyState.dist;
-        const results = searchIndex.map(item => ({...item, dist: calcDist(searchLat, searchLng, item.coords[1], item.coords[0])})).filter(item => item.dist <= RADIUS).sort((a, b) => a.dist - b.dist).slice(0, 20);
+        const typeToFilter = {
+            shop: 'shop', castle: 'castle', michi: 'michi',
+            manhole: 'manhole', pokefuta: 'manhole'
+        };
+        const results = searchIndex
+            .filter(item => {
+                const filterKey = typeToFilter[item.type];
+                return !(filterKey && filterState[filterKey] === false);
+            })
+            .map(item => ({...item, dist: calcDist(searchLat, searchLng, item.coords[1], item.coords[0])}))
+            .filter(item => item.dist <= RADIUS)
+            .sort((a, b) => a.dist - b.dist)
+            .slice(0, 20);
         
         closeNearby();
         const list = document.getElementById('nearby-list');
