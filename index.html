@@ -469,7 +469,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v102</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v105</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -1088,7 +1088,7 @@ map.on('zoomend', () => {
             const data = await res.json();
             return data.map(f => {
                 const label = f.properties.title, pref = getPref(f.properties.addressCode);
-                return { type: 'place', label: (pref && !label.includes(pref)) ? `${label}（${pref}）` : label, sub: '地名', coords: f.geometry.coordinates, properties: {}, _score: scoreResult(label, query) };
+                return { type: 'place', label: (pref && !label.includes(pref)) ? `${label}（${pref}）` : label, sub: label, coords: f.geometry.coordinates, properties: {}, _score: scoreResult(label, query) };
             }).sort((a, b) => b._score - a._score).slice(0, 6);
         } catch { return []; }
     }
