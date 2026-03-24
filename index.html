@@ -367,7 +367,30 @@
             bottom: 0;
         }
 
-        /* ハーフモーダル */
+        /* デバッグ用移動ボタン */
+        #debug-move {
+            position: fixed;
+            left: 10px;
+            bottom: 70px;
+            z-index: 200;
+            display: grid;
+            grid-template-areas: ". n ." "w . e" ". s .";
+            grid-template-columns: 32px 32px 32px;
+            grid-template-rows: 32px 32px 32px;
+            gap: 2px;
+        }
+        .debug-btn {
+            width: 32px; height: 32px;
+            background: rgba(255,50,50,0.7);
+            color: white; border: none; border-radius: 6px;
+            font-size: 14px; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            touch-action: manipulation;
+        }
+        #dbg-n { grid-area: n; }
+        #dbg-s { grid-area: s; }
+        #dbg-w { grid-area: w; }
+        #dbg-e { grid-area: e; }
         #nearby-panel {
             position: fixed;
             bottom: -100%;
@@ -438,6 +461,12 @@
 </head>
 <body>
 <div id="search-results"><div id="search-results-inner"></div></div>
+<div id="debug-move">
+    <button class="debug-btn" id="dbg-n">↑</button>
+    <button class="debug-btn" id="dbg-w">←</button>
+    <button class="debug-btn" id="dbg-e">→</button>
+    <button class="debug-btn" id="dbg-s">↓</button>
+</div>
 <div id="map"></div>
 <div id="toggle-layers-btn-wrap">
     <button id="toggle-layers-btn" title="スポット一時非表示">
@@ -470,7 +499,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v112</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v113</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -690,7 +719,7 @@ function handleOrientation(event) {
 // --- rAFループで地図bearingをなめらかに追従（震え防止） ---
 const BEARING_THRESHOLD = 1.2;
 const BEARING_LERP      = 0.04;
-const POSITION_LERP     = 0.02;
+const POSITION_LERP     = 0.05;
 let rafBearing  = null;
 let rafLng      = null;
 let rafLat      = null;
@@ -1241,7 +1270,36 @@ map.on('zoomend', () => {
         closeNearby();
     });
 
-    function calcDist(lat1, lng1, lat2, lng2) {
+    // ── デバッグ用移動ボタン（約5m/クリック） ──
+    const MOVE_M = 5;
+    function moveLocation(dLat, dLng) {
+        if (!currentLocation) {
+            // 現在地未取得の場合は地図中心を初期位置にする
+            const c = map.getCenter();
+            currentLocation = { lat: c.lat, lng: c.lng };
+            if (!currentMarker) {
+                const el = document.createElement('div');
+                el.className = 'current-location-dot';
+                currentMarker = new maplibregl.Marker({ element: el })
+                    .setLngLat([currentLocation.lng, currentLocation.lat]).addTo(map);
+            }
+            if (!hadFirstFix) {
+                hadFirstFix = true;
+                trackingMode = 1;
+                updateGeolocateButton();
+                startRafLoop();
+            }
+        }
+        // 緯度1度≒111000m、経度1度≒111000m×cos(lat)
+        currentLocation = {
+            lat: currentLocation.lat + dLat * MOVE_M / 111000,
+            lng: currentLocation.lng + dLng * MOVE_M / (111000 * Math.cos(currentLocation.lat * Math.PI / 180))
+        };
+    }
+    document.getElementById('dbg-n').addEventListener('click', () => moveLocation( 1,  0));
+    document.getElementById('dbg-s').addEventListener('click', () => moveLocation(-1,  0));
+    document.getElementById('dbg-e').addEventListener('click', () => moveLocation( 0,  1));
+    document.getElementById('dbg-w').addEventListener('click', () => moveLocation( 0, -1));
         const R = 6371, dLat = (lat2-lat1)*Math.PI/180, dLng = (lng2-lng1)*Math.PI/180;
         const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLng/2)**2;
         return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
