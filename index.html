@@ -470,7 +470,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v112</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v113</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -478,6 +478,13 @@
         <label class="filter-chip"><input type="checkbox" id="check-castle" checked onchange="onFilterChange(this)">お城</label>
         <label class="filter-chip"><input type="checkbox" id="check-michi" checked onchange="onFilterChange(this)">道の駅</label>
         <label class="filter-chip"><input type="checkbox" id="check-manhole" checked onchange="onFilterChange(this)">マンホール</label>
+    </div>
+    <div style="border-top:1px solid #f0f0f0;"></div>
+    <div class="nearby-section-label">テキスト表示</div>
+    <div id="label-checkboxes" style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0 16px 8px;">
+        <label class="filter-chip"><input type="checkbox" id="check-label-shop" onchange="onLabelChange(this)">食べログ</label>
+        <label class="filter-chip"><input type="checkbox" id="check-label-castle" checked onchange="onLabelChange(this)">お城</label>
+        <label class="filter-chip"><input type="checkbox" id="check-label-michi" checked onchange="onLabelChange(this)">道の駅</label>
     </div>
     <div style="border-top:1px solid #f0f0f0;"></div>
     <div class="nearby-section-label">カテゴリ</div>
@@ -976,6 +983,33 @@ map.on('zoomend', () => {
                 map.addLayer({ id: `${conf.id}-bg`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: { 'circle-color': conf.type === 'castle' ? ['match', ['get', 'genre'], '日本100名城', '#4285F4', '続日本100名城', '#EA4335', '#546E7A'] : conf.type === 'manhole' ? ['match', ['get', 'source'], 'pokefuta', '#FBBC04', '#B87333'] : conf.color, 'circle-radius': 14, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' } });
                 map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': 0.35, 'icon-allow-overlap': true }, paint: { 'icon-color': '#FFFFFF' } });
 
+                // テキストラベルレイヤー（マンホール以外）
+                if (conf.type !== 'manhole') {
+                    const labelKey = conf.type === 'pokefuta' ? 'pokemon' : 'name';
+                    const initVisible = (conf.type === 'castle' || conf.type === 'michi') ? 'visible' : 'none';
+                    map.addLayer({
+                        id: `${conf.id}-label`,
+                        type: 'symbol',
+                        source: conf.id,
+                        filter: ['!', ['has', 'point_count']],
+                        layout: {
+                            'text-field': ['get', labelKey],
+                            'text-size': 10,
+                            'text-font': ['Noto Sans Regular'],
+                            'text-anchor': 'top',
+                            'text-offset': [0, 1.2],
+                            'text-allow-overlap': false,
+                            'text-max-width': 6,
+                            'visibility': initVisible,
+                        },
+                        paint: {
+                            'text-color': '#222222',
+                            'text-halo-color': '#FFFFFF',
+                            'text-halo-width': 1.5,
+                        }
+                    });
+                }
+
                 map.on('click', `${conf.id}-cluster`, (e) => {
                     const features = map.queryRenderedFeatures(e.point, { layers: [`${conf.id}-cluster`] });
                     if (!features.length) return;
@@ -1250,12 +1284,22 @@ map.on('zoomend', () => {
     const gmapKeywords = { supermarket: 'スーパー', busstop: 'バス停', station: '駅', restaurant: 'レストラン OR カフェ', museum: 'ミュージアム', history: '歴史館 OR 資料館', memorial: '博物館 OR 記念館', ramen: 'ラーメン', udon: 'うどん', soba: 'そば', sightseeing: '観光スポット OR 像' };
     let nearbyState = { cats: ['supermarket'], dist: 5 };
     const filterState = { shop: true, castle: true, michi: true, manhole: true };
+    const labelState  = { shop: false, castle: true, michi: true };
+
     function onFilterChange(el) {
         const id = el.id.replace('check-', '');
         filterState[id] = el.checked;
         const sourceId = { shop: 'shops', castle: 'castles', michi: 'michi', manhole: 'manholes' }[id];
         const val = el.checked ? 'visible' : 'none';
-        [`${sourceId}-cluster`, `${sourceId}-cluster-count`, `${sourceId}-bg`, `${sourceId}-icon`].forEach(l => { if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', val); });
+        [`${sourceId}-cluster`, `${sourceId}-cluster-count`, `${sourceId}-bg`, `${sourceId}-icon`, `${sourceId}-label`].forEach(l => { if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', val); });
+    }
+
+    function onLabelChange(el) {
+        const id = el.id.replace('check-label-', '');
+        labelState[id] = el.checked;
+        const sourceId = { shop: 'shops', castle: 'castles', michi: 'michi' }[id];
+        const val = el.checked ? 'visible' : 'none';
+        if (map.getLayer(`${sourceId}-label`)) map.setLayoutProperty(`${sourceId}-label`, 'visibility', val);
     }
 
     function toggleNearby() {
@@ -1264,6 +1308,7 @@ map.on('zoomend', () => {
     }
     function openNearbyPanel() {
         Object.keys(filterState).forEach(id => { const el=document.getElementById(`check-${id}`); if(el) el.checked=filterState[id]; });
+        Object.keys(labelState).forEach(id => { const el=document.getElementById(`check-label-${id}`); if(el) el.checked=labelState[id]; });
         document.querySelectorAll('.nearby-cat-item').forEach(el => el.classList.toggle('selected', nearbyState.cats.includes(el.dataset.cat)));
         document.querySelectorAll('.nearby-chip').forEach(el => el.classList.toggle('selected', parseInt(el.dataset.dist) === nearbyState.dist));
         document.getElementById('nearby-dist-section').style.display = nearbyState.cats.includes('spot') ? 'block' : 'none';
@@ -1379,7 +1424,8 @@ map.on('zoomend', () => {
         `${prefix}-cluster`,
         `${prefix}-cluster-count`,
         `${prefix}-bg`,
-        `${prefix}-icon`
+        `${prefix}-icon`,
+        `${prefix}-label`
     ]);
 
     let originalVisibilities = new Map();
