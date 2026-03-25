@@ -470,7 +470,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v114</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v115</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -722,8 +722,14 @@ function bearingRafLoop() {
     if (trackingMode > 0 && !isZooming && currentLocation) {
         // ── 位置補間 ──
         if (rafLng === null) { rafLng = currentLocation.lng; rafLat = currentLocation.lat; }
-        rafLng += (currentLocation.lng - rafLng) * POSITION_LERP;
-        rafLat += (currentLocation.lat - rafLat) * POSITION_LERP;
+        const dLng = currentLocation.lng - rafLng;
+        const dLat = currentLocation.lat - rafLat;
+        // 約0.5m以下の差は無視して打ち切る（浮動小数点誤差による震え防止）
+        const posThreshold = 0.000005;
+        if (Math.abs(dLng) > posThreshold || Math.abs(dLat) > posThreshold) {
+            rafLng += dLng * POSITION_LERP;
+            rafLat += dLat * POSITION_LERP;
+        }
 
         // マーカーも補間済み座標で更新
         if (currentMarker) {
