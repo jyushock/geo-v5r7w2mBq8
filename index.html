@@ -588,11 +588,17 @@
         ]
     };
 
+    const savedState = (() => {
+        try { return JSON.parse(localStorage.getItem('mapState')); } catch { return null; }
+    })();
+
     const map = new maplibregl.Map({
         container: 'map',
         style: 'https://tiles.openfreemap.org/styles/liberty',
-        center: [139.76, 35.68],
-        zoom: 11,
+        center:  savedState ? [savedState.lng, savedState.lat] : [139.76, 35.68],
+        zoom:    savedState ? savedState.zoom    : 11,
+        bearing: savedState ? savedState.bearing : 0,
+        pitch:   savedState ? savedState.pitch   : 0,
         attributionControl: false
     });
     map.addControl(new maplibregl.AttributionControl({ compact: true }), 'bottom-right');
@@ -892,6 +898,20 @@ map.on('zoomend', () => {
     });
 
     map.on('load', () => {
+        // 地図状態の保存（PWA再起動時の復元用）
+        function saveMapState() {
+            const c = map.getCenter();
+            localStorage.setItem('mapState', JSON.stringify({
+                lng:     c.lng,
+                lat:     c.lat,
+                zoom:    map.getZoom(),
+                bearing: map.getBearing(),
+                pitch:   map.getPitch()
+            }));
+        }
+        map.on('moveend', saveMapState);
+        map.on('zoomend', saveMapState);
+
         // 現在地ボタンのクリック処理
         document.getElementById('geolocate-btn').addEventListener('click', () => {
             trackingMode = (trackingMode + 1) % 3;
