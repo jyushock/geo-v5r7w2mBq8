@@ -66,6 +66,9 @@
             0%   { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
             100% { transform: translate(-50%, -50%) scale(3.5); opacity: 0; }
         }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
         #geolocate-btn-wrap {
             position: fixed;
             right: 10px;
@@ -461,6 +464,7 @@
         <div id="search-box">
             <span id="search-icon">🔍</span>
             <input id="search-input" type="text" autocomplete="off" />
+            <span id="search-spinner" style="display:none;width:16px;height:16px;border:2px solid #ddd;border-top-color:#4285F4;border-radius:50%;animation:spin 0.6s linear infinite;flex-shrink:0;"></span>
             <button id="search-clear">×</button>
         </div>
     </div>
@@ -487,7 +491,7 @@
         <label class="filter-chip"><input type="checkbox" id="check-label-michi" checked onchange="onLabelChange(this)">道の駅</label>
     </div>
     <div style="border-top:1px solid #f0f0f0;"></div>
-    <div class="nearby-section-label">カテゴリ</div>
+    <div class="nearby-section-label">周辺検索</div>
     <div class="nearby-category-grid">
         <div class="nearby-cat-item" data-cat="spot" onclick="selectNearbyCat(this)">
             <div class="nearby-cat-icon">📍</div>
@@ -958,14 +962,6 @@ map.on('zoomend', () => {
                 }
                 // マーカー位置の更新はrAFループの補間済み座標で行うため
                 // ここではsetLngLatしない
-
-                if (!hadFirstFix) {
-                    hadFirstFix = true;
-                    trackingMode = 1;
-                    updateGeolocateButton();
-                    startRafLoop();
-                    map.easeTo({ center: [lng, lat], zoom: trackingZoom });
-                }
                 // 位置更新はrAFループがなめらかに反映するため
                 // ここではeaseTo不要
             }, (err) => {
@@ -1272,14 +1268,19 @@ map.on('zoomend', () => {
         const q = e.target.value.trim();
         document.getElementById('search-clear').style.display = q ? 'block' : 'none';
         document.getElementById('search-results').style.display = q ? 'block' : 'none';
+        document.getElementById('search-spinner').style.display = 'none';
         if (!q) return;
 
         const local = searchLocal(q);
         const reqId = ++searchRequestId;
         clearTimeout(geocodeTimer);
+        document.getElementById('search-spinner').style.display = 'inline-block';
         geocodeTimer = setTimeout(async () => {
             const places = await searchGeocode(q);
-            if (reqId === searchRequestId) renderResults(local, places);
+            if (reqId === searchRequestId) {
+                document.getElementById('search-spinner').style.display = 'none';
+                renderResults(local, places);
+            }
         }, 300);
     });
     // 検索ボックスにフォーカスが戻ったとき、ワードが残っていれば結果を再表示
@@ -1290,9 +1291,13 @@ map.on('zoomend', () => {
         const local = searchLocal(q);
         const reqId = ++searchRequestId;
         clearTimeout(geocodeTimer);
+        document.getElementById('search-spinner').style.display = 'inline-block';
         geocodeTimer = setTimeout(async () => {
             const places = await searchGeocode(q);
-            if (reqId === searchRequestId) renderResults(local, places);
+            if (reqId === searchRequestId) {
+                document.getElementById('search-spinner').style.display = 'none';
+                renderResults(local, places);
+            }
         }, 300);
     });
     document.getElementById('search-clear').addEventListener('click', clearSearch);
