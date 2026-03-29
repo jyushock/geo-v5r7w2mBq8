@@ -93,6 +93,31 @@
             top: 10px; /* 右上に配置 */
             right: 10px;
             z-index: 200;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        #north-reset-btn {
+            width: 44px;
+            height: 44px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            color: #333;
+            font-size: 18px;
+        }
+        #north-reset-btn:hover { background-color: rgba(255,255,255,1); }
+        #nearby-btn-wrap {
+            position: fixed;
+            left: 10px;
+            bottom: 60px;
+            z-index: 200;
         }
         
         /* ボタンの共通スタイル */
@@ -187,10 +212,12 @@
             content: '';
         }
         #nearby-btn {
-            background: white; border: none; border-radius: 0; box-shadow: none;
-            width: 44px; height: 44px; font-size: 18px; cursor: pointer;
+            width: 48px; height: 48px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none; border-radius: 50%;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+            cursor: pointer;
             display: flex; align-items: center; justify-content: center;
-            flex-shrink: 0; border-left: 1px solid #e0e0e0;
         }
         #nearby-btn .hamburger-icon {
             display: flex; flex-direction: column; gap: 4px; width: 18px;
@@ -446,6 +473,9 @@
     <button id="toggle-layers-btn" title="スポット一時非表示">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
     </button>
+    <button id="north-reset-btn" title="真北にリセット">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 9 22 9 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9 9 9"/></svg>
+    </button>
 </div>
 <div id="zoom-btn-wrap">
     <button id="zoom-in-btn" title="ズームイン">+</button>
@@ -459,6 +489,9 @@
         </svg>
     </button>
 </div>
+<div id="nearby-btn-wrap">
+    <button id="nearby-btn" onclick="toggleNearby()" title="メニュー"><span class="hamburger-icon"></span></button>
+</div>
 <div id="bottom-bar">
     <div id="search-container">
         <div id="search-box">
@@ -468,7 +501,6 @@
             <button id="search-clear">×</button>
         </div>
     </div>
-    <button id="nearby-btn" onclick="toggleNearby()" title="メニュー"><span class="hamburger-icon"></span></button>
 </div>
 <div id="nearby-overlay" onclick="closeNearby()"></div>
 <div id="nearby-panel">
@@ -939,6 +971,12 @@ map.on('zoomend', () => { isZooming = false; });
         });
         document.getElementById('zoom-out-btn').addEventListener('click', () => {
             map.easeTo({ zoom: map.getZoom() - 0.5, duration: 300, essential: true });
+        });
+        document.getElementById('north-reset-btn').addEventListener('click', () => {
+            map.easeTo({ bearing: 0, pitch: 0, duration: 300 });
+        });
+        document.getElementById('north-reset-btn').addEventListener('click', () => {
+            map.easeTo({ bearing: 0, pitch: 0, duration: 300 });
         });
 
 
