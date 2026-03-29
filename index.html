@@ -975,9 +975,6 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('north-reset-btn').addEventListener('click', () => {
             map.easeTo({ bearing: 0, pitch: 0, duration: 300 });
         });
-        document.getElementById('north-reset-btn').addEventListener('click', () => {
-            map.easeTo({ bearing: 0, pitch: 0, duration: 300 });
-        });
 
 
         // watchPositionで常時位置監視（地図ロード後に開始）
