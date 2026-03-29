@@ -1,5 +1,5 @@
 #!/bin/bash
-REMOTE="https://jyushock:$GITHUB_TOKEN@github.com/jyushock/geo-v5r7w2mBq8.git"
+REMOTE="https://oauth2:$GITHUB_TOKEN@github.com/jyushock/geo-v5r7w2mBq8.git"
 
 echo "=== コミット中... ==="
 git add -A
