@@ -917,7 +917,7 @@ map.on('zoomend', () => { isZooming = false; });
                 });
             } else if (trackingMode === 0) {
                 stopRafLoop();
-                map.easeTo({ bearing: 0, pitch: 0 });
+                map.easeTo({ bearing: 0, pitch: 0, duration: 300 });
             }
             updateGeolocateButton();
         });
@@ -939,6 +939,7 @@ map.on('zoomend', () => { isZooming = false; });
             navigator.geolocation.watchPosition((pos) => {
                 const lng = pos.coords.longitude;
                 const lat = pos.coords.latitude;
+                const isFirst = !currentLocation;
                 currentLocation = { lat, lng };
 
                 if (!currentMarker) {
@@ -946,10 +947,21 @@ map.on('zoomend', () => { isZooming = false; });
                     el.className = 'current-location-dot';
                     currentMarker = new maplibregl.Marker({ element: el }).setLngLat([lng, lat]).addTo(map);
                 }
+
+                // 追従モードONかつ初回位置取得時→アニメーションで現在地へ移動
+                if (isFirst && trackingMode > 0) {
+                    startRafLoop();
+                    map.easeTo({
+                        center: [lng, lat],
+                        zoom: Math.max(map.getZoom(), 15),
+                        bearing: trackingMode === 2 ? (deviceHeading || 0) : 0,
+                        pitch: trackingMode === 2 ? 50 : 0,
+                        duration: 600,
+                        essential: true
+                    });
+                }
                 // マーカー位置の更新はrAFループの補間済み座標で行うため
                 // ここではsetLngLatしない
-                // 位置更新はrAFループがなめらかに反映するため
-                // ここではeaseTo不要
             }, (err) => {
                 console.warn('[GPS] エラー:', err.code, err.message);
                 alert('現在地が取得できませんでした。');
@@ -1021,7 +1033,7 @@ map.on('zoomend', () => { isZooming = false; });
                 map.on('click', `${conf.id}-cluster`, (e) => {
                     const features = map.queryRenderedFeatures(e.point, { layers: [`${conf.id}-cluster`] });
                     if (!features.length) return;
-                    map.getSource(conf.id).getClusterExpansionZoom(features[0].properties.cluster_id, (err, zoom) => { if (!err) map.easeTo({ center: features[0].geometry.coordinates, zoom: zoom + 1 }); });
+                    map.getSource(conf.id).getClusterExpansionZoom(features[0].properties.cluster_id, (err, zoom) => { if (!err) map.easeTo({ center: features[0].geometry.coordinates, zoom: zoom + 1, duration: 300, essential: true }); });
                 });
 
                 map.on('click', `${conf.id}-bg`, (e) => {
@@ -1200,10 +1212,9 @@ map.on('zoomend', () => { isZooming = false; });
             trackingMode = 0;
             stopRafLoop();
             updateGeolocateButton();
-            map.easeTo({ bearing: 0, pitch: 0 });
         }
         clearSearch();
-        map.easeTo({ center: item.coords, zoom: Math.max(map.getZoom(), 15), duration: 350, essential: true });
+        map.easeTo({ center: item.coords, zoom: Math.max(map.getZoom(), 15), bearing: 0, pitch: 0, duration: 350, essential: true });
         if (item.type !== 'place') {
             setTimeout(() => showPopupForItem(item), 300);
         }
