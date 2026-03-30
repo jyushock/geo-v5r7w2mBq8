@@ -8,6 +8,7 @@
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="version" content="1.1">
     <meta name="apple-mobile-web-app-title" content="マップ">
     <link rel="icon" href="icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="icon.svg">
@@ -1299,7 +1300,11 @@ map.on('zoomend', () => { isZooming = false; });
             }
         }, 300);
     });
-    document.getElementById('search-clear').addEventListener('click', clearSearch);
+    document.getElementById('search-clear').addEventListener('click', (e) => {
+        e.preventDefault();
+        clearSearch();
+        document.getElementById('search-input').focus();
+    });
     document.getElementById('map').addEventListener('click', () => {
         document.getElementById('search-results').style.display = 'none';
         closeNearby();
