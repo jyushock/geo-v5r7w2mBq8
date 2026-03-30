@@ -471,7 +471,7 @@
 <div id="nearby-panel">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
-        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v116</span>
+        <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v117</span>
         <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
@@ -770,7 +770,7 @@ map.on('dragstart', () => {
         stopRafLoop();
         updateGeolocateButton();
         if (!wasMode2) {
-            map.easeTo({ bearing: 0, pitch: 0, duration: 200 });
+            map.easeTo({ bearing: 0, pitch: 0, duration: 200, essential: true });
         }
     }
 });
@@ -782,7 +782,7 @@ map.getCanvas().addEventListener('touchstart', () => {
         stopRafLoop();
         updateGeolocateButton();
         if (!wasMode2) {
-            map.easeTo({ bearing: 0, pitch: 0, duration: 200 });
+            map.easeTo({ bearing: 0, pitch: 0, duration: 200, essential: true });
         }
     }
 }, { passive: true });
@@ -913,11 +913,12 @@ map.on('zoomend', () => { isZooming = false; });
                     zoom: map.getZoom(),
                     bearing: trackingMode === 2 ? deviceHeading : 0,
                     pitch: trackingMode === 2 ? 50 : 0,
-                    duration: 500
+                    duration: 500,
+                    essential: true
                 });
             } else if (trackingMode === 0) {
                 stopRafLoop();
-                map.easeTo({ bearing: 0, pitch: 0, duration: 300 });
+                map.easeTo({ bearing: 0, pitch: 0, duration: 300, essential: true });
             }
             updateGeolocateButton();
         });
@@ -930,7 +931,7 @@ map.on('zoomend', () => { isZooming = false; });
             map.easeTo({ zoom: map.getZoom() - 0.5, duration: 300, essential: true });
         });
         document.getElementById('north-reset-btn').addEventListener('click', () => {
-            map.easeTo({ bearing: 0, pitch: 0, duration: 300 });
+            map.easeTo({ bearing: 0, pitch: 0, duration: 300, essential: true });
         });
 
 
