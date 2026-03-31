@@ -376,20 +376,21 @@
         #nearby-search-btn {
             flex: 1;
             background: #4285F4; color: white; border: none;
-            border-radius: 10px; height: 40px;
+            border-radius: 10px; height: 44px;
             font-size: 14px; font-weight: bold; cursor: pointer;
         }
         #nearby-panel-footer {
             display: flex;
             align-items: center;
             gap: 8px;
-            padding: 8px 16px 12px;
+            padding: 8px 16px 8px;
             position: sticky;
             bottom: 0;
             background: white;
+            border-top: 1px solid #f0f0f0;
         }
         #nearby-close-btn {
-            width: 52px; height: 40px;
+            width: 52px; height: 44px;
             background: #f0f0f0; border: none;
             border-radius: 10px;
             cursor: pointer;
@@ -397,6 +398,8 @@
             flex-shrink: 0;
             color: #555;
         }
+
+        /* ハーフモーダル */
         #nearby-panel {
             position: fixed;
             bottom: -100%;
@@ -410,7 +413,7 @@
             overflow-y: auto;
             font-family: sans-serif;
         }
-        #nearby-panel.open { bottom: 52px; }
+        #nearby-panel.open { bottom: 0; }
         #nearby-panel-header {
             display: flex;
             align-items: center;
@@ -501,6 +504,7 @@
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
         <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v121</span>
+
     </div>
     <div id="filter-checkboxes">
         <label class="filter-chip"><input type="checkbox" id="check-shop" checked onchange="onFilterChange(this)">食べログ</label>
@@ -534,21 +538,21 @@
             <div class="nearby-cat-icon">🍽</div>
             <div class="nearby-cat-label">フード</div>
         </div>
-        <div class="nearby-cat-item" data-cat="cafe" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="coffee" onclick="selectNearbyCat(this)">
             <div class="nearby-cat-icon">☕</div>
-            <div class="nearby-cat-label">カフェ</div>
+            <div class="nearby-cat-label">コーヒー</div>
+        </div>
+        <div class="nearby-cat-item" data-cat="conbini" onclick="selectNearbyCat(this)">
+            <div class="nearby-cat-icon">🏪</div>
+            <div class="nearby-cat-label">コンビニ</div>
+        </div>
+        <div class="nearby-cat-item" data-cat="takeout" onclick="selectNearbyCat(this)">
+            <div class="nearby-cat-icon">🥡</div>
+            <div class="nearby-cat-label">テイクアウト</div>
         </div>
         <div class="nearby-cat-item" data-cat="museum" onclick="selectNearbyCat(this)">
             <div class="nearby-cat-icon">🏛</div>
             <div class="nearby-cat-label">ミュージアム</div>
-        </div>
-        <div class="nearby-cat-item" data-cat="history" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">📜</div>
-            <div class="nearby-cat-label">歴史資料館</div>
-        </div>
-        <div class="nearby-cat-item" data-cat="memorial" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">🏺</div>
-            <div class="nearby-cat-label">博物記念館</div>
         </div>
         <div class="nearby-cat-item" data-cat="ramen" onclick="selectNearbyCat(this)">
             <div class="nearby-cat-icon">🍜</div>
@@ -1353,7 +1357,7 @@ map.on('zoomend', () => { isZooming = false; });
         return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
     }
 
-    const gmapKeywords = { supermarket: 'スーパー', transit: '駅 OR バス停', restaurant: 'フード', cafe: 'カフェ', museum: 'ミュージアム', history: '歴史館 OR 資料館', memorial: '博物館 OR 記念館', ramen: 'ラーメン', udon: 'うどん', soba: 'そば', sightseeing: '観光スポット OR 像' };
+    const gmapKeywords = { supermarket: 'スーパー', transit: '駅 OR バス停', restaurant: 'フード', coffee: 'コーヒー', conbini: 'コンビニ', takeout: 'テイクアウト', museum: 'ミュージアム', ramen: 'ラーメン', udon: 'うどん', soba: 'そば', sightseeing: '観光スポット OR 像' };
     let nearbyState = { cats: ['supermarket'], dist: 5 };
     const filterState = { shop: true, castle: true, michi: true, manhole: true };
     const labelState  = { shop: true, castle: true, michi: true };
