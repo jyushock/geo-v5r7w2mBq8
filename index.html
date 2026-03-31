@@ -207,10 +207,12 @@
             background: #4285F4;
             color: white;
         }
-        #nearby-btn .hamburger-icon {
+        #nearby-btn .hamburger-icon,
+        #nearby-close-btn .hamburger-icon {
             display: flex; flex-direction: column; gap: 4px; width: 18px;
         }
-        #nearby-btn .hamburger-icon::before {
+        #nearby-btn .hamburger-icon::before,
+        #nearby-close-btn .hamburger-icon::before {
             content: ''; display: block; width: 18px; height: 2px;
             background: #333; border-radius: 1px;
             box-shadow: 0 6px 0 #333, 0 12px 0 #333;
@@ -373,31 +375,32 @@
             cursor: pointer; border: 2px solid transparent;
         }
         .nearby-chip.selected { background: #e8f0fe; color: #4285F4; border-color: #4285F4; }
-        #nearby-search-btn {
-            flex: 1;
-            background: #4285F4; color: white; border: none;
-            border-radius: 10px; height: 44px;
-            font-size: 14px; font-weight: bold; cursor: pointer;
-        }
         #nearby-panel-footer {
             display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px 8px;
+            align-items: stretch;
+            height: 52px;
             position: sticky;
             bottom: 0;
             background: white;
-            border-top: 1px solid #f0f0f0;
+            box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+        }
+        #nearby-search-btn {
+            flex: 1;
+            background: #4285F4; color: white; border: none;
+            border-radius: 0;
+            font-size: 14px; font-weight: bold; cursor: pointer;
         }
         #nearby-close-btn {
-            width: 52px; height: 44px;
-            background: #f0f0f0; border: none;
-            border-radius: 10px;
+            width: 52px; height: 52px;
+            background: white; border: none;
+            border-right: 1px solid #e0e0e0;
+            border-radius: 0;
             cursor: pointer;
             display: flex; align-items: center; justify-content: center;
             flex-shrink: 0;
             color: #555;
         }
+        #nearby-close-btn:hover { background: #f5f5f5; }
 
         /* ハーフモーダル */
         #nearby-panel {
@@ -409,11 +412,11 @@
             box-shadow: 0 -4px 16px rgba(0,0,0,0.15);
             z-index: 300;
             transition: bottom 0.3s ease;
-            max-height: 80vh;
+            max-height: calc(80vh - 52px);
             overflow-y: auto;
             font-family: sans-serif;
         }
-        #nearby-panel.open { bottom: 0; }
+        #nearby-panel.open { bottom: 52px; }
         #nearby-panel-header {
             display: flex;
             align-items: center;
