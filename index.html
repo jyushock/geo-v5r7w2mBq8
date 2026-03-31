@@ -374,16 +374,29 @@
         }
         .nearby-chip.selected { background: #e8f0fe; color: #4285F4; border-color: #4285F4; }
         #nearby-search-btn {
-            margin: 12px 16px 8px;
+            flex: 1;
             background: #4285F4; color: white; border: none;
             border-radius: 10px; height: 40px;
-            width: calc(100% - 32px);
             font-size: 14px; font-weight: bold; cursor: pointer;
+        }
+        #nearby-panel-footer {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px 12px;
             position: sticky;
             bottom: 0;
+            background: white;
         }
-
-        /* ハーフモーダル */
+        #nearby-close-btn {
+            width: 52px; height: 40px;
+            background: #f0f0f0; border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            color: #555;
+        }
         #nearby-panel {
             position: fixed;
             bottom: -100%;
@@ -397,7 +410,7 @@
             overflow-y: auto;
             font-family: sans-serif;
         }
-        #nearby-panel.open { bottom: 0; }
+        #nearby-panel.open { bottom: 52px; }
         #nearby-panel-header {
             display: flex;
             align-items: center;
@@ -411,10 +424,6 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 6px;
             padding: 0 16px 8px;
-        }
-        #nearby-panel-close {
-            background: none; border: none; font-size: 20px;
-            color: #999; cursor: pointer; padding: 0; flex-shrink: 0;
         }
         #nearby-list {
             overflow-y: auto;
@@ -492,7 +501,6 @@
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
         <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v121</span>
-        <button id="nearby-panel-close" onclick="closeNearby()">×</button>
     </div>
     <div id="filter-checkboxes">
         <label class="filter-chip"><input type="checkbox" id="check-shop" checked onchange="onFilterChange(this)">食べログ</label>
@@ -568,7 +576,10 @@
             <div class="nearby-chip" data-dist="10" onclick="selectNearbyDist(this)">10km</div>
         </div>
     </div>
-    <button id="nearby-search-btn" onclick="execNearbySearch()">探す</button>
+    <div id="nearby-panel-footer">
+        <button id="nearby-close-btn" onclick="closeNearby()"><span class="hamburger-icon"></span></button>
+        <button id="nearby-search-btn" onclick="execNearbySearch()">探す</button>
+    </div>
 </div>
 
 <!-- スポット検索結果パネル（別ウィンドウ） -->
