@@ -413,6 +413,10 @@
             touch-action: manipulation;
         }
         #nearby-geolocate-btn:hover { background: #f5f5f5; }
+        #nearby-geolocate-btn.geolocate-active {
+            background: #4285F4;
+            color: white;
+        }
 
         /* ハーフモーダル */
         #nearby-panel {
@@ -424,11 +428,16 @@
             box-shadow: 0 -4px 16px rgba(0,0,0,0.15);
             z-index: 300;
             transition: bottom 0.3s ease;
-            max-height: 80vh;
-            overflow-y: auto;
+            max-height: calc(80vh);
+            display: flex;
+            flex-direction: column;
             font-family: sans-serif;
         }
         #nearby-panel.open { bottom: 0; }
+        #nearby-panel-scroll {
+            overflow-y: auto;
+            flex: 1;
+        }
         #nearby-panel-header {
             display: flex;
             align-items: center;
@@ -516,6 +525,7 @@
 </div>
 <div id="nearby-overlay" onclick="closeNearby()"></div>
 <div id="nearby-panel">
+    <div id="nearby-panel-scroll">
     <div id="nearby-panel-header">
         <span id="nearby-panel-title">表示フィルター</span>
         <span style="margin-left:auto;font-size:10px;color:#bbb;flex-shrink:0;">v121</span>
@@ -595,6 +605,7 @@
             <div class="nearby-chip" data-dist="10" onclick="selectNearbyDist(this)">10km</div>
         </div>
     </div>
+    </div><!-- /nearby-panel-scroll -->
     <div id="nearby-panel-footer">
         <button id="nearby-close-btn" onclick="closeNearby()"><span class="hamburger-icon"></span></button>
         <button id="nearby-search-btn" onclick="execNearbySearch()">探す</button>
@@ -853,12 +864,14 @@ map.on('zoomend', () => { isZooming = false; });
     // ボタンの見た目を更新
     function updateGeolocateButton() {
         const btn = document.getElementById('geolocate-btn');
+        const btn2 = document.getElementById('nearby-geolocate-btn');
         if (!btn) return;
         const markerEl = currentMarker ? currentMarker.getElement() : null;
 
         if (trackingMode === 0) {
             btn.classList.remove('geolocate-active');
             btn.innerHTML = iconLocate;
+            if (btn2) { btn2.classList.remove('geolocate-active'); btn2.innerHTML = iconLocate; }
             if (markerEl) {
                 markerEl.classList.remove('tracking');
                 markerEl.classList.remove('heading-active');
@@ -867,6 +880,7 @@ map.on('zoomend', () => { isZooming = false; });
         } else if (trackingMode === 1) {
             btn.classList.add('geolocate-active');
             btn.innerHTML = iconLocate;
+            if (btn2) { btn2.classList.add('geolocate-active'); btn2.innerHTML = iconLocate; }
             if (markerEl) {
                 markerEl.classList.add('tracking');
                 markerEl.classList.add('heading-active');
@@ -875,6 +889,7 @@ map.on('zoomend', () => { isZooming = false; });
         } else { // mode 2
             btn.classList.add('geolocate-active');
             btn.innerHTML = iconNav;
+            if (btn2) { btn2.classList.add('geolocate-active'); btn2.innerHTML = iconNav; }
             if (markerEl) {
                 markerEl.classList.add('tracking');
                 markerEl.classList.remove('heading-active');
