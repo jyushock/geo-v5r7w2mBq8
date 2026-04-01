@@ -415,7 +415,7 @@
             box-shadow: 0 -4px 16px rgba(0,0,0,0.15);
             z-index: 300;
             transition: bottom 0.3s ease;
-            max-height: calc(80vh);
+            max-height: calc(80vh - 52px);
             display: flex;
             flex-direction: column;
             font-family: sans-serif;
@@ -424,6 +424,7 @@
         #nearby-panel-scroll {
             overflow-y: auto;
             flex: 1;
+            min-height: 0;
         }
         #nearby-panel-header {
             display: flex;
