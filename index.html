@@ -365,7 +365,7 @@
         #nearby-panel-footer {
             display: flex;
             align-items: stretch;
-            height: 62px;
+            height: 52px;
             position: sticky;
             bottom: 0;
             background: white;
@@ -378,7 +378,7 @@
             font-size: 14px; font-weight: bold; cursor: pointer;
         }
         #nearby-close-btn {
-            width: 52px;
+            width: 52px; height: 52px;
             background: white; border: none;
             border-right: 1px solid #e0e0e0;
             border-radius: 0;
@@ -389,7 +389,7 @@
         }
         #nearby-close-btn:hover { background: #f5f5f5; }
         #nearby-geolocate-btn {
-            width: 52px;
+            width: 52px; height: 52px;
             background: white; border: none;
             border-left: 1px solid #e0e0e0;
             border-radius: 0;
@@ -406,6 +406,7 @@
         }
 
         /* ハーフモーダル */
+        #nearby-panel.open { bottom: 10px; }
         #nearby-panel {
             position: fixed;
             bottom: -100%;
@@ -415,12 +416,11 @@
             box-shadow: 0 -4px 16px rgba(0,0,0,0.15);
             z-index: 300;
             transition: bottom 0.3s ease;
-            max-height: calc(100svh - 52px);
+            max-height: calc(100svh - 62px);
             display: flex;
             flex-direction: column;
             font-family: sans-serif;
         }
-        #nearby-panel.open { bottom: 0; }
         #nearby-panel-scroll {
             overflow-y: auto;
             flex: 1;
