@@ -1072,8 +1072,8 @@ map.on('zoomend', () => { isZooming = false; });
                 { id: 'michi',           data: michiGeoJSON,        color: '#34A853', icon: 'michi-icon',   type: 'michi',   clusterColor: '#34A853' },
                 { id: 'shops',           data: shopData,             color: '#FF9800', icon: 'tabe-icon',    type: 'shop',    clusterColor: '#FF9800' },
                 { id: 'manholes',        data: mergedManholeGeoJSON, color: '#B87333', icon: 'manhole-icon', type: 'manhole', clusterColor: '#B87333' },
-                { id: 'castles-famous',  data: castleDataFamous,     color: '#546E7A', icon: 'castle-icon',  type: 'castle',  clusterColor: '#546E7A', noCluster: true },
                 { id: 'castles',         data: castleDataOther,      color: '#546E7A', icon: 'castle-icon',  type: 'castle',  clusterColor: '#546E7A' },
+                { id: 'castles-famous',  data: castleDataFamous,     color: '#546E7A', icon: 'castle-icon',  type: 'castle',  clusterColor: '#546E7A', noCluster: true },
             ];
 
             configs.forEach(conf => {
@@ -1083,8 +1083,8 @@ map.on('zoomend', () => { isZooming = false; });
                 );
                 map.addLayer({ id: `${conf.id}-cluster`, type: 'circle', source: conf.id, filter: ['has', 'point_count'], paint: { 'circle-color': conf.clusterColor, 'circle-radius': 20, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' } });
                 map.addLayer({ id: `${conf.id}-cluster-count`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'text-field': '{point_count_abbreviated}', 'text-size': 12, 'text-font': ['Noto Sans Bold'] }, paint: { 'text-color': '#FFFFFF' } });
-                map.addLayer({ id: `${conf.id}-bg`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: { 'circle-color': conf.type === 'castle' ? ['match', ['get', 'genre'], '日本100名城', '#4285F4', '続日本100名城', '#EA4335', '#546E7A'] : conf.type === 'manhole' ? ['match', ['get', 'source'], 'pokefuta', '#FBBC04', '#B87333'] : conf.color, 'circle-radius': 14, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' } });
-                map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': 0.35, 'icon-allow-overlap': true }, paint: { 'icon-color': '#FFFFFF' } });
+                map.addLayer({ id: `${conf.id}-bg`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: { 'circle-color': conf.type === 'castle' ? ['match', ['get', 'genre'], '日本100名城', '#4285F4', '続日本100名城', '#EA4335', '#546E7A'] : conf.type === 'manhole' ? ['match', ['get', 'source'], 'pokefuta', '#FBBC04', '#B87333'] : conf.color, 'circle-radius': 14, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' }, layout: conf.type === 'castle' ? { 'circle-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {} });
+                map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': 0.35, 'icon-allow-overlap': true, ...(conf.type === 'castle' ? { 'symbol-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}) }, paint: { 'icon-color': '#FFFFFF' } });
 
                 // テキストラベルレイヤー（マンホール以外）
                 if (conf.type !== 'manhole') {
@@ -1521,7 +1521,7 @@ map.on('zoomend', () => { isZooming = false; });
 
     // レイヤー一時非表示ボタンの処理
     const toggleLayersBtn = document.getElementById('toggle-layers-btn');
-    const layerIdPrefixes = ['michi', 'shops', 'manholes', 'castles-famous', 'castles'];
+    const layerIdPrefixes = ['michi', 'shops', 'manholes', 'castles', 'castles-famous'];
     const targetLayerIds = layerIdPrefixes.flatMap(prefix => [
         `${prefix}-cluster`,
         `${prefix}-cluster-count`,
