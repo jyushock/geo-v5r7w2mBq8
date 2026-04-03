@@ -559,12 +559,12 @@
             <div class="nearby-cat-icon">☕</div>
             <div class="nearby-cat-label">コーヒー</div>
         </div>
-        <div class="nearby-cat-item" data-cat="conbini" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">🏪</div>
-            <div class="nearby-cat-label">コンビニ</div>
+        <div class="nearby-cat-item" data-cat="statue" onclick="selectNearbyCat(this)">
+            <div class="nearby-cat-icon">🗿</div>
+            <div class="nearby-cat-label">像</div>
         </div>
         <div class="nearby-cat-item" data-cat="takeout" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">🥡</div>
+            <div class="nearby-cat-icon">🥙</div>
             <div class="nearby-cat-label">テイクアウト</div>
         </div>
         <div class="nearby-cat-item" data-cat="museum" onclick="selectNearbyCat(this)">
@@ -1396,7 +1396,7 @@ map.on('zoomend', () => { isZooming = false; });
         return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
     }
 
-    const gmapKeywords = { supermarket: 'スーパー', transit: '駅 OR バス停', restaurant: 'フード', coffee: 'コーヒー', conbini: 'コンビニ', takeout: 'テイクアウト', museum: 'ミュージアム', ramen: 'ラーメン', udon: 'うどん', soba: 'そば', sightseeing: '観光スポット OR 像' };
+    const gmapKeywords = { supermarket: 'スーパー', transit: '駅 OR バス停', restaurant: 'フード', coffee: 'コーヒー', statue: '像', takeout: 'テイクアウト', museum: 'ミュージアム', ramen: 'ラーメン', udon: 'うどん', soba: 'そば', sightseeing: '観光スポット' };
     let nearbyState = { cats: ['supermarket'] };
     const filterState = { shop: true, castle: true, michi: true, manhole: true };
     const labelState  = { shop: true, castle: true, michi: true };
