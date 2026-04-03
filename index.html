@@ -1573,9 +1573,24 @@ map.on('zoomend', () => { isZooming = false; });
 
     (function() {
         const panel = document.getElementById('nearby-panel');
+        const header = document.getElementById('nearby-panel-header');
         let startY = 0;
-        panel.addEventListener('touchstart', (e) => { startY = e.touches[0].clientY; }, { passive: true });
-        panel.addEventListener('touchend', (e) => { if (e.changedTouches[0].clientY - startY > 60) closeNearby(); }, { passive: true });
+        let dragging = false;
+
+        header.addEventListener('touchstart', (e) => {
+            startY = e.touches[0].clientY;
+            dragging = true;
+            e.stopPropagation();
+        }, { passive: true });
+
+        header.addEventListener('touchmove', (e) => {
+            if (dragging) e.preventDefault();
+        }, { passive: false });
+
+        header.addEventListener('touchend', (e) => {
+            if (dragging && e.changedTouches[0].clientY - startY > 60) closeNearby();
+            dragging = false;
+        }, { passive: true });
     })();
 
     function getPopupAnchor(lngLat) {
