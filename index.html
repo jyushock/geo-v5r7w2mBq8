@@ -652,9 +652,9 @@
     max-height:60vh; display:flex; flex-direction:column;
     font-family: sans-serif;
 ">
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px 8px;border-bottom:1px solid #f0f0f0;flex-shrink:0;">
-        <span id="nearby-result-title" style="font-weight:bold;font-size:14px;color:#333;"></span>
-        <button onclick="closeNearbyResult()" style="background:none;border:none;font-size:20px;color:#999;cursor:pointer;padding:0;">×</button>
+    <div id="nearby-result-header" onclick="closeNearbyResult()" style="display:flex;flex-direction:column;align-items:center;padding:8px 16px 6px;flex-shrink:0;cursor:pointer;border-bottom:1px solid #f0f0f0;">
+        <div style="width:36px;height:4px;background:#ccc;border-radius:2px;margin-bottom:6px;"></div>
+        <span id="nearby-result-title" style="font-weight:bold;font-size:14px;color:#333;align-self:flex-start;"></span>
     </div>
     <div id="nearby-list" style="overflow-y:auto;flex:1;"></div>
 </div>
@@ -1198,7 +1198,7 @@ map.on('zoomend', () => { isZooming = false; });
                     const p = e.features[0].properties;
                     const c = e.features[0].geometry.coordinates.slice();
                     const navUrl = `https://www.google.com/maps?daddr=${c[1]},${c[0]}&dirflg=w`;
-                    const yahooNavUrl = `https://map.yahoo.co.jp/maps?lat=${c[1]}&lon=${c[0]}&zoom=16&type=scroll`;
+                    const yahooNavUrl = `https://map.yahoo.co.jp/route/car?to=${c[1]},${c[0]}`;
                     
                     while (Math.abs(e.lngLat.lng - c[0]) > 180) { c[0] += e.lngLat.lng > c[0] ? 360 : -360; }
 
@@ -1377,7 +1377,7 @@ map.on('zoomend', () => { isZooming = false; });
         const p = item.properties;
         const c = item.coords.slice();
         const navUrl = `https://www.google.com/maps?daddr=${c[1]},${c[0]}&dirflg=w`;
-        const yahooNavUrl = `https://map.yahoo.co.jp/maps?lat=${c[1]}&lon=${c[0]}&zoom=16&type=scroll`;
+        const yahooNavUrl = `https://map.yahoo.co.jp/route/car?to=${c[1]},${c[0]}`;
 
         let popupHtml = '';
         if (item.type === 'manhole' || item.type === 'pokefuta') {
@@ -1571,9 +1571,40 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('nearby-result-overlay').style.display = 'block';
     }
     function closeNearbyResult() {
-        document.getElementById('nearby-result-panel').style.bottom = '-100%';
+        const panel = document.getElementById('nearby-result-panel');
+        panel.style.transition = '';
+        panel.style.bottom = '-100%';
         document.getElementById('nearby-result-overlay').style.display = 'none';
     }
+
+    (function() {
+        const panel = document.getElementById('nearby-result-panel');
+        let startY = 0;
+
+        panel.addEventListener('touchstart', (e) => {
+            startY = e.touches[0].clientY;
+        }, { passive: true });
+
+        panel.addEventListener('touchmove', (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            const dy = e.touches[0].clientY - startY;
+            if (dy > 0) {
+                panel.style.transition = 'none';
+                panel.style.bottom = `-${dy}px`;
+            }
+        }, { passive: false });
+
+        panel.addEventListener('touchend', (e) => {
+            const dy = e.changedTouches[0].clientY - startY;
+            if (dy > 20) {
+                closeNearbyResult();
+            } else {
+                panel.style.transition = '';
+                panel.style.bottom = '0';
+            }
+        }, { passive: true });
+    })();
     function closeNearby() {
         const panel = document.getElementById('nearby-panel');
         panel.style.transition = '';
