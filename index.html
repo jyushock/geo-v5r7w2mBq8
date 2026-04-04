@@ -433,6 +433,7 @@
 
         /* ハーフモーダル */
         #nearby-panel.open { bottom: 0; }
+        #bottom-bar.panel-open { box-shadow: none; }
         #nearby-panel {
             position: fixed;
             bottom: -100%;
@@ -1500,6 +1501,7 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('nearby-list').innerHTML = '';
         document.getElementById('nearby-panel').classList.add('open');
         document.getElementById('nearby-overlay').classList.add('open');
+        document.getElementById('bottom-bar').classList.add('panel-open');
     }
     function selectNearbyCat(el) {
         // 常に単一選択: クリックされた項目のみ選択
@@ -1572,6 +1574,7 @@ map.on('zoomend', () => { isZooming = false; });
         panel.style.bottom = '';
         panel.classList.remove('open');
         document.getElementById('nearby-overlay').classList.remove('open');
+        document.getElementById('bottom-bar').classList.remove('panel-open');
     }
 
     (function() {
