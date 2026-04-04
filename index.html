@@ -903,13 +903,15 @@ map.on('zoomend', () => { isZooming = false; });
         const mode = preTrackingMode || 1;
         trackingMode = mode;
         if (mode === 2) requestDeviceOrientation();
-        startRafLoop();
         map.easeTo({
             center: [currentLocation.lng, currentLocation.lat],
+            zoom: map.getZoom(),
             bearing: mode === 2 ? deviceHeading : 0,
-            pitch:   mode === 2 ? 50 : 0,
-            duration: 500
+            pitch:   mode === 2 ? 70 : 0,
+            duration: 700,
+            essential: true
         });
+        map.once('moveend', startRafLoop);
         updateGeolocateButton();
         hideRecenterBtn();
     }
