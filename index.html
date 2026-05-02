@@ -1564,13 +1564,12 @@ map.on('zoomend', () => { isZooming = false; });
             const makeItem = (item, col) => {
                 const cfg = typeConfig[item.type];
                 const isMhcard = item.type === 'mhcard';
-                const iconHtml = isMhcard
-                    ? `<div style="position:relative;width:28px;height:36px;flex-shrink:0;"><img src="mhcard.png" style="width:28px;height:36px;object-fit:contain;filter:none;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:14px;height:14px;object-fit:contain;filter:brightness(0) invert(1);"></div>`
-                    : (cfg.img ? `<img src="${cfg.img}">` : cfg.icon);
-                const iconStyle = isMhcard ? `background:transparent;border-radius:0;width:28px;height:36px;` : `background:${getItemColor(item)}`;
                 const div = document.createElement('div');
                 div.className = 'search-result-item';
-                div.innerHTML = `<div class="search-result-icon" style="${iconStyle}">${iconHtml}</div><div class="search-result-text"><div class="search-result-name">${item.label}</div><div class="search-result-sub">${item.sub}</div></div>`;
+                const iconPart = isMhcard
+                    ? `<div style="position:relative;width:28px;height:36px;flex-shrink:0;"><img src="mhcard.png" style="width:28px;height:36px;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:14px;height:14px;filter:brightness(0) invert(1);"></div>`
+                    : `<div class="search-result-icon" style="background:${getItemColor(item)}">${cfg.img ? `<img src="${cfg.img}">` : cfg.icon}</div>`;
+                div.innerHTML = `${iconPart}<div class="search-result-text"><div class="search-result-name">${item.label}</div><div class="search-result-sub">${item.sub}</div></div>`;
                 div.addEventListener('click', () => onResultClick(item));
                 col.appendChild(div);
             };
@@ -1804,14 +1803,13 @@ map.on('zoomend', () => { isZooming = false; });
             results.forEach(item => {
                 const cfg = typeConfig[item.type];
                 const isMhcard = item.type === 'mhcard';
-                const iconHtml = isMhcard
-                    ? `<div style="position:relative;width:28px;height:36px;flex-shrink:0;"><img src="mhcard.png" style="width:28px;height:36px;object-fit:contain;filter:none;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:14px;height:14px;object-fit:contain;filter:brightness(0) invert(1);"></div>`
-                    : (cfg.img ? `<img src="${cfg.img}">` : cfg.icon);
-                const iconStyle = isMhcard ? `background:transparent;border-radius:0;width:28px;height:36px;` : `background:${getItemColor(item)}`;
                 const distStr = item.dist < 1 ? `${Math.round(item.dist * 1000)}m` : `${item.dist.toFixed(1)}km`;
                 const div = document.createElement('div');
                 div.className = 'nearby-item';
-                div.innerHTML = `<div class="nearby-item-icon" style="${iconStyle}">${iconHtml}</div><div class="nearby-item-text"><div class="nearby-item-name">${item.label}</div><div class="nearby-item-sub">${item.sub}</div></div><div class="nearby-item-dist">${distStr}</div>`;
+                const iconPart = isMhcard
+                    ? `<div style="position:relative;width:28px;height:36px;flex-shrink:0;"><img src="mhcard.png" style="width:28px;height:36px;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:14px;height:14px;filter:brightness(0) invert(1);"></div>`
+                    : `<div class="nearby-item-icon" style="background:${getItemColor(item)}">${cfg.img ? `<img src="${cfg.img}">` : cfg.icon}</div>`;
+                div.innerHTML = `${iconPart}<div class="nearby-item-text"><div class="nearby-item-name">${item.label}</div><div class="nearby-item-sub">${item.sub}</div></div><div class="nearby-item-dist">${distStr}</div>`;
                 div.addEventListener('click', () => { closeNearbyResult(); onResultClick(item); });
                 list.appendChild(div);
             });
