@@ -1,5 +1,5 @@
 // マンホールカード配布場所データ
-// 生成日時: 2026/05/02 12:15:27
+// 生成日時: 2026/05/03 03:33:41
 // データ出典: https://www.gk-p.jp/mhcard/?pref=zenkoku
 // 座標: 国土地理院 住所検索API
 const mhcardGeoJSON = {
@@ -23,6 +23,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.jswa.go.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/00-101-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -44,6 +45,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.ur-net.go.jp/chintai/kansai/osaka/counter/senri/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/00-102-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -65,6 +67,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://akabanemuseum.ur-net.go.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/00-102-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -86,6 +89,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.sapporo-src.com/kagakukan/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -107,6 +111,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.kankyo.sl-plaza.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -123,11 +128,34 @@ const mhcardGeoJSON = {
         "name": "札幌市 (C001) 【5月～10月】大通公園観光案内所",
         "municipality": "札幌市 (C001)",
         "locationName": "【5月～10月】大通公園観光案内所",
-        "address": "北海道札幌市中央区大通西3丁目 電話:011-211-2376 【11月～4月】大通公園インフォメーションセンター＆オフィシャルショップ 北海道札幌市中央区大通西7丁目 電話:011-251-0438 （問合せ先） 札幌市下水道河川局経営企画課 電話:011-818-3452",
-        "hours": "【5月～10月】9:30～17:30 【11月～4月】10:00～12:00、13:00～16:00 ただし、年末年始（12/29～1/3）はお休みです",
+        "address": "北海道札幌市中央区大通西3丁目 電話:011-211-2376",
+        "hours": "【5月～10月】9:30～17:30",
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://odori-park.jp/access/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-100-C-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.346634,
+          43.059742
+        ]
+      },
+      "properties": {
+        "name": "札幌市 (C001) 【11月～4月】大通公園インフォメーションセンター＆オフィシャルショップ",
+        "municipality": "札幌市 (C001)",
+        "locationName": "【11月～4月】大通公園インフォメーションセンター＆オフィシャルショップ",
+        "address": "北海道札幌市中央区大通西7丁目 電話:011-251-0438 （問合せ先） 札幌市下水道河川局経営企画課 電話:011-818-3452",
+        "hours": "【11月～4月】10:00～12:00、13:00～16:00 ただし、年末年始（12/29～1/3）はお休みです",
+        "round": "第20弾",
+        "issueDate": "2023/07/28",
+        "url": "https://odori-park.jp/access/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-100-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -149,6 +177,7 @@ const mhcardGeoJSON = {
         "round": "第3弾",
         "issueDate": "2016/12/01",
         "url": "http://hakomachi.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -170,6 +199,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.otaru.lg.jp/docs/2020112200455/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-203-A-02.jpg",
         "type": "mhcard"
       }
     },
@@ -187,10 +217,33 @@ const mhcardGeoJSON = {
         "municipality": "旭川市 (A001)",
         "locationName": "【5～10月】旭川市下水処理センターバナナ館",
         "address": "室北海道旭川市神居町忠和287（旭川市下水処理センター2階）電話：0166-62-3554",
-        "hours": "【5～10月】9:00～16:00にバナナ館を見学された方に配布しますただし、月曜日（月曜日が祝日・振替休日の場合はその翌日）、年末年始（12/30～1/4）はお休みです【11～4月】8:45～17:15ただし、土日、祝日、年末年始（12/30～1/4）はお休みですそれぞれ配布窓口が異なるのでご注意ください",
+        "hours": "【5～10月】9:00～16:00にバナナ館を見学された方に配布しますただし、月曜日（月曜日が祝日・振替休日の場合はその翌日）、年末年始（12/30～1/4）はお休みです",
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.city.asahikawa.hokkaido.jp/kurashi/440/441/44281/p008338.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-204-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.29689,
+          43.783279
+        ]
+      },
+      "properties": {
+        "name": "旭川市 (A001) 【11～4月】管理本館事務室",
+        "municipality": "旭川市 (A001)",
+        "locationName": "【11～4月】管理本館事務室",
+        "address": "北海道旭川市神居町忠和287（旭川市下水処理センター2階）電話：0166-62-3554",
+        "hours": "【11～4月】8:45～17:15ただし、土日、祝日、年末年始（12/30～1/4）はお休みですそれぞれ配布窓口が異なるのでご注意ください",
+        "round": "第04弾",
+        "issueDate": "2017/04/03",
+        "url": "http://www.city.asahikawa.hokkaido.jp/kurashi/440/441/44281/p008342.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -212,6 +265,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.asahikawa.hokkaido.jp/kankou/2400/d053770.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-204-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -233,6 +287,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://muro-kanko.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -246,14 +301,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "釧路市(A001) 【平日】釧路市上下水道部 南大通庁舎経営企画課【休日】釧路市上下水道部 南大通庁舎守衛室北海道釧路市南大通2-1-121電話：0154-43-2169",
+        "name": "釧路市(A001) 【平日】釧路市 / 【休日】釧路市",
         "municipality": "釧路市(A001)",
-        "locationName": "【平日】釧路市上下水道部 南大通庁舎経営企画課【休日】釧路市上下水道部 南大通庁舎守衛室北海道釧路市南大通2-1-121電話：0154-43-2169",
+        "locationName": "【平日】釧路市 / 【休日】釧路市",
         "address": "上下水道部 南大通庁舎経営企画課【休日】釧路市上下水道部 南大通庁舎守衛室北海道釧路市南大通2-1-121電話：0154-43-2169",
         "hours": "9:00～17:00（年中無休）",
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -275,6 +331,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://ja.kushiro-lakeakan.com/overview/378/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-206-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -296,6 +353,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city.kushiro.lg.jp/shisei/shisetsu/1007655/1008369/1007879.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-206-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -317,6 +375,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://obikan.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -338,6 +397,29 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.kitami.lg.jp/soshiki/jogesuido/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-208-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          144.073364,
+          44.120422
+        ]
+      },
+      "properties": {
+        "name": "北見市（B001） 【平日】北見市上下水道局常呂上下水道課窓口（北見市役所常呂総合支所内）",
+        "municipality": "北見市（B001）",
+        "locationName": "【平日】北見市上下水道局常呂上下水道課窓口（北見市役所常呂総合支所内）",
+        "address": "北海道北見市常呂町字常呂323番地電話：0152-54-2116",
+        "hours": "【平日】8：45～17：30",
+        "round": "第10弾",
+        "issueDate": "2019/08/07",
+        "url": "https://www.city.kitami.lg.jp/soshiki/tokoro/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -351,14 +433,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "北見市（B001） 【平日】北見市上下水道局常呂上下水道課窓口（北見市役所常呂総合支所内）",
+        "name": "北見市（B001） 【休日】北見市役所 常呂総合支所 当直室",
         "municipality": "北見市（B001）",
-        "locationName": "【平日】北見市上下水道局常呂上下水道課窓口（北見市役所常呂総合支所内）",
-        "address": "上下水道局常呂上下水道課窓口（北見市役所常呂総合支所内）北海道北見市常呂町字常呂323番地電話：0152-54-2116【休日】北見市役所 常呂総合支所 当直室（問い合わせ先）北見市上下水道局総務課電話：0157-25-1177",
-        "hours": "【平日】8：45～17：30【休日】8：45～17：30 ※休日は閉庁のため、常呂総合支所正面玄関右横、階段下当直室にて配布します ※年末年始（12月29日～1月3日）は配布しておりません。",
+        "locationName": "【休日】北見市役所 常呂総合支所 当直室",
+        "address": "上下水道局総務課電話：0157-25-1177",
+        "hours": "【休日】8：45～17：30 ※休日は閉庁のため、常呂総合支所正面玄関右横、階段下当直室にて配布します ※年末年始（12月29日～1月3日）は配布しておりません。",
         "round": "第10弾",
         "issueDate": "2019/08/07",
-        "url": "https://www.city.kitami.lg.jp/soshiki/tokoro/",
+        "url": "https://www.city.kitami.lg.jp/docs/2013101700043/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -380,6 +463,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://rumoi.main.jp/shoplist/%e3%82%8b%e3%82%82%e3%81%84%e3%83%97%e3%83%a9%e3%82%b6/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-212-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -388,19 +472,64 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.577774,
-          35.999477
+          141.604599,
+          42.634579
         ]
       },
       "properties": {
         "name": "苫小牧市 【平日】苫小牧市役所上下水道部下水道課",
         "municipality": "苫小牧市",
         "locationName": "【平日】苫小牧市役所上下水道部下水道課",
-        "address": "上下水道部下水道課北海道苫小牧市旭町4-5-6電話：0144-32-6592【休日】苫小牧観光案内所北海道苫小牧市表町5-11-5 （ふれんどビル1階）電話：0144-34-2000（問い合わせ先）苫小牧市役所 上下水道部 下水道課電話：0144-32-6592（平日8:45～17:15まで）",
-        "hours": "【平日】8:45～17:15【休日】9:30～18:00ただし、年末年始（12/29～1/3）はお休みです",
+        "address": "北海道苫小牧市旭町4-5-6電話：0144-32-6592",
+        "hours": "【平日】8:45～17:15",
         "round": "第4弾",
         "issueDate": "2017/04/03",
         "url": "http://www.city.tomakomai.hokkaido.jp/kurashi/jogesuido/sokatsu/card1.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-213-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.598343,
+          42.639725
+        ]
+      },
+      "properties": {
+        "name": "苫小牧市 【休日】苫小牧観光案内所",
+        "municipality": "苫小牧市",
+        "locationName": "【休日】苫小牧観光案内所",
+        "address": "北海道苫小牧市表町5-11-5 （ふれんどビル1階）電話：0144-34-2000（問い合わせ先）苫小牧市役所 上下水道部 下水道課電話：0144-32-6592（平日8:45～17:15まで）",
+        "hours": "【休日】9:30～18:00ただし、年末年始（12/29～1/3）はお休みです",
+        "round": "第4弾",
+        "issueDate": "2017/04/03",
+        "url": "http://www.tomakomai-kanko.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-213-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.673294,
+          45.417183
+        ]
+      },
+      "properties": {
+        "name": "稚内市 (A001) 【平日】稚内市役所建設産業部水道企業室水道施設課",
+        "municipality": "稚内市 (A001)",
+        "locationName": "【平日】稚内市役所建設産業部水道企業室水道施設課",
+        "address": "北海道稚内市中央3丁目2番1号",
+        "hours": "8：45～17：30",
+        "round": "第04弾",
+        "issueDate": "2017/04/03",
+        "url": "http://www.city.wakkanai.hokkaido.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -414,14 +543,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "稚内市 (A001) 【平日】稚内市役所建設産業部水道企業室水道施設課",
+        "name": "稚内市 (A001) 【休日】稚内市役所 警備室",
         "municipality": "稚内市 (A001)",
-        "locationName": "【平日】稚内市役所建設産業部水道企業室水道施設課",
+        "locationName": "【休日】稚内市役所 警備室",
         "address": "業部水道企業室水道施設課 北海道稚内市中央3丁目2番1号 【休日】稚内市役所 警備室 電話：0162-23-6509",
         "hours": "8：45～17：30",
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.city.wakkanai.hokkaido.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -435,14 +565,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "稚内市 (B001) 稚内副港市場 1階 カフェPotto 北海道稚内市港1丁目6-28",
+        "name": "稚内市 (B001) 稚内副港市場 1階 カフェPotto",
         "municipality": "稚内市 (B001)",
-        "locationName": "稚内副港市場 1階 カフェPotto 北海道稚内市港1丁目6-28",
+        "locationName": "稚内副港市場 1階 カフェPotto",
         "address": "北海道稚内市港1丁目6-28",
         "hours": "【5月～12月】9:00～15:00 【1月～4月】9:00～14:30 ただし、年末年始（12/30～1/3）はお休みです",
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-214-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -464,6 +595,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "https://go-to-ashibetsu.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -485,6 +617,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.ebetsu.hokkaido.jp/soshiki/kanko/99486.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-217-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -506,6 +639,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://plat-ebetsu.info/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-217-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -527,6 +661,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://akabirabase.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-218-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -548,6 +683,7 @@ const mhcardGeoJSON = {
         "round": "第3弾",
         "issueDate": "2016/12/01",
         "url": "https://mombetsu.jp/life/?category=8",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -569,6 +705,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://machi-shibetsu.securesite.jp/michinoeki/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-220-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -582,14 +719,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "名寄市 (A001) 道の駅「もち米の里☆なよろ」北海道名寄市風連町西町334番地1電話：01655-7-8686（問い合わせ先）北海道名寄市建設水道部上下水道室業務課電話：01655-3-2511",
+        "name": "名寄市 (A001) 道の駅「もち米の里☆なよろ",
         "municipality": "名寄市 (A001)",
-        "locationName": "道の駅「もち米の里☆なよろ」北海道名寄市風連町西町334番地1電話：01655-7-8686（問い合わせ先）北海道名寄市建設水道部上下水道室業務課電話：01655-3-2511",
+        "locationName": "道の駅「もち米の里☆なよろ",
         "address": "」北海道名寄市風連町西町334番地1電話：01655-7-8686（問い合わせ先）北海道名寄市建設水道部上下水道室業務課電話：01655-3-2511",
         "hours": "9:00～18:00ただし、元日（1/1）はお休みです。",
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-221-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -611,6 +749,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://yoro-na.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-221-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -632,6 +771,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.city.chitose.lg.jp/docs/28386.html?cat=%2F95%2F95_170%2F95_170_938%2F",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-224-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -653,6 +793,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.city.takikawa.hokkaido.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-225-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -674,6 +815,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.sunagawa.hokkaido.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-226-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -695,6 +837,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://mypage.fukanavi.com/riceland/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-228-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -716,6 +859,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.city.furano.hokkaido.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-229-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -737,6 +881,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.noboribetsu.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-230-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -758,6 +903,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "https://www.hanaroadeniwa.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-231-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -771,14 +917,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "恵庭市 (C001) 花の拠点（はなふる）「センターハウス」 北海道恵庭市南島松828-3 （問合せ先） 恵庭市水道部下水道課 電話:0123-33-3127",
+        "name": "恵庭市 (C001) 花の拠点（はなふる）「センターハウス」",
         "municipality": "恵庭市 (C001)",
-        "locationName": "花の拠点（はなふる）「センターハウス」 北海道恵庭市南島松828-3 （問合せ先） 恵庭市水道部下水道課 電話:0123-33-3127",
+        "locationName": "花の拠点（はなふる）「センターハウス」",
         "address": "北海道恵庭市南島松828-3 （問合せ先） 恵庭市水道部下水道課 電話:0123-33-3127",
         "hours": "9：00～17：00 ただし、年末年始（12月27日～1月4日）はお休みです",
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-231-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -800,6 +947,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.city.kitahiroshima.hokkaido.jp/hotnews/category/163.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-234-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -821,6 +969,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://hub-hokkaido-selectshop.com",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-234-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -834,14 +983,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "石狩市 (A001) 道の駅石狩 あいろーど厚田北海道石狩市厚田区厚田98-2電話：0133-78-2300",
+        "name": "石狩市 (A001) 道の駅石狩 あいろーど厚",
         "municipality": "石狩市 (A001)",
-        "locationName": "道の駅石狩 あいろーど厚田北海道石狩市厚田区厚田98-2電話：0133-78-2300",
+        "locationName": "道の駅石狩 あいろーど厚",
         "address": "田北海道石狩市厚田区厚田98-2電話：0133-78-2300",
         "hours": "【4月から5月】9:30から18:00まで 【6月から8月】9:30から19:00分まで 【9月から10月】9:30から18:00分まで 【11月から3月】10:00から16:00まで ※年末年始【12月31日から1月3日】は配布をお休みします。",
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-235-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -863,6 +1013,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "http://www.ishikari-kankou.net/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-235-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -884,6 +1035,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "https://hokutoinfo.com/tec/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-236-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -905,6 +1057,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://tobest.co.jp/michinoeki/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-303-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -926,6 +1079,7 @@ const mhcardGeoJSON = {
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "http://kikonai.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-334-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -947,6 +1101,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.kaminokuni.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-362-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -968,6 +1123,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "http://www.iwanai-kanko.org/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-402-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -981,14 +1137,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "古平町 古平町総合施設「かなえーる」（古平町役場内） 北海道古平郡古平町大字浜町50番地 電話：0135-42-2181",
+        "name": "古平町 古平町総合施設「かなえーる」（古平町役場内）",
         "municipality": "古平町",
-        "locationName": "古平町総合施設「かなえーる」（古平町役場内） 北海道古平郡古平町大字浜町50番地 電話：0135-42-2181",
+        "locationName": "古平町総合施設「かなえーる」（古平町役場内）",
         "address": "北海道古平郡古平町大字浜町50番地 電話：0135-42-2181",
         "hours": "8:45～17:30",
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-406-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1002,14 +1159,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "奈井江町 奈井江町交流プラザみなクル 北海道空知郡奈井江町字奈井江町74番地 電話:0125-74-5574",
+        "name": "奈井江町 奈井江町交流プラザみなクル",
         "municipality": "奈井江町",
-        "locationName": "奈井江町交流プラザみなクル 北海道空知郡奈井江町字奈井江町74番地 電話:0125-74-5574",
+        "locationName": "奈井江町交流プラザみなクル",
         "address": "北海道空知郡奈井江町字奈井江町74番地 電話:0125-74-5574",
         "hours": "9:00～18:00",
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-424-A-01.jpg.",
         "type": "mhcard"
       }
     },
@@ -1031,6 +1189,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.town.higashikagura.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-453-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1047,11 +1206,34 @@ const mhcardGeoJSON = {
         "name": "当麻町 【火曜日以外】当麻町郷土資料館ここから",
         "municipality": "当麻町",
         "locationName": "【火曜日以外】当麻町郷土資料館ここから",
-        "address": "北海道上川郡当麻町4条南3丁目1番41号 電話：0166-56-1123 【火曜日】当麻町役場まちづくり推進課 北海道上川郡当麻町3条東2丁目11番1号 電話：0166-84-2111",
-        "hours": "【火曜日以外】10：00～19：00 ※年末年始（12/29～1/5）はお休みです 【火曜日】8：30～17：15 ※年末年始（12/29～1/5）はお休みです",
+        "address": "北海道上川郡当麻町4条南3丁目1番41号 電話：0166-56-1123",
+        "hours": "【火曜日以外】10：00～19：00 ※年末年始（12/29～1/5）はお休みです",
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "http://www.town.tohma.hokkaido.jp/all-about/03/03/1739",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-454-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.505905,
+          43.827511
+        ]
+      },
+      "properties": {
+        "name": "当麻町 【火曜日】当麻町役場まちづくり推進課",
+        "municipality": "当麻町",
+        "locationName": "【火曜日】当麻町役場まちづくり推進課",
+        "address": "北海道上川郡当麻町3条東2丁目11番1号 電話：0166-84-2111",
+        "hours": "【火曜日以外】10：00～19：00 ※年末年始（12/29～1/5）はお休みです",
+        "round": "第18弾",
+        "issueDate": "2023/01/28",
+        "url": "http://www.town.tohma.hokkaido.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-454-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1073,6 +1255,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "http://www.town.kamifurano.hokkaido.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-460-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1094,6 +1277,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.town.minamifurano.hokkaido.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-462-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1115,6 +1299,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "http://www.town.wassamu.hokkaido.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-464-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1123,19 +1308,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.298004,
-          40.523369
+          142.358536,
+          44.099403
         ]
       },
       "properties": {
         "name": "剣淵町 【水曜日以外】絵本の館",
         "municipality": "剣淵町",
         "locationName": "【水曜日以外】絵本の館",
-        "address": "館北海道上川郡剣淵町緑町15-3電話：0165-34-2624【水曜のみ】剣淵町役場 建設課窓口北海道上川郡剣淵町仲町37-1（問い合わせ先）剣淵町役場 建設課 上下水道グループ電話：0165-26-9024",
+        "address": "北海道上川郡剣淵町緑町15-3電話：0165-34-2624",
         "hours": "10:00～17:00ただし、イベント等により水曜日も開館している場合があります※年末年始（12/30～1/4）はお休みです",
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "http://ehon-yakata.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-465-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.362473,
+          44.098846
+        ]
+      },
+      "properties": {
+        "name": "剣淵町 【水曜のみ】剣淵町役場 建設課窓口",
+        "municipality": "剣淵町",
+        "locationName": "【水曜のみ】剣淵町役場 建設課窓口",
+        "address": "北海道上川郡剣淵町仲町37-1（問い合わせ先）剣淵町役場 建設課 上下水道グループ電話：0165-26-9024",
+        "hours": "10:00～17:00ただし、イベント等により水曜日も開館している場合があります※年末年始（12/30～1/4）はお休みです",
+        "round": "第5弾",
+        "issueDate": "2017/08/01",
+        "url": "https://www.town.kembuchi.hokkaido.jp/wp-content/cache/all//index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-465-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1157,6 +1365,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.teshiotown.hokkaido.jp/?page_id=620",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-487-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1178,6 +1387,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "http://www.teshiotown.hokkaido.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-487-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -1199,6 +1409,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "http://www.teshiotown.hokkaido.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-487-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1220,6 +1431,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://ｗｗｗ.town.toyotomi.hokkaido.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-516-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1233,14 +1445,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "豊富町 (B001) 湯の杜ぽっけ 北海道天塩郡豊富町字温泉 電話:0162-73-6850",
+        "name": "豊富町 (B001) 湯の杜ぽっけ",
         "municipality": "豊富町 (B001)",
-        "locationName": "湯の杜ぽっけ 北海道天塩郡豊富町字温泉 電話:0162-73-6850",
+        "locationName": "湯の杜ぽっけ",
         "address": "北海道天塩郡豊富町字温泉 電話:0162-73-6850",
         "hours": "9:00～17:00 ※12時～13時のお昼休み、年末年始は配布致しません。 ※11月～3月の休館日（月曜日、月曜日が祝日の場合は翌日）は、豊富町役場建設課上下水道係にて配布します 年末年始はお休みです",
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-516-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1254,14 +1467,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "豊富町 (C001) 豊富町定住支援センター（ふらっと★きた） 北海道天塩郡豊富町字豊富東1条6丁目 電話：0162-82-2211",
+        "name": "豊富町 (C001) 豊富町定住支援センター（ふらっと★きた）",
         "municipality": "豊富町 (C001)",
-        "locationName": "豊富町定住支援センター（ふらっと★きた） 北海道天塩郡豊富町字豊富東1条6丁目 電話：0162-82-2211",
+        "locationName": "豊富町定住支援センター（ふらっと★きた）",
         "address": "北海道天塩郡豊富町字豊富東1条6丁目 電話：0162-82-2211",
         "hours": "9時～17時 ※12時～13時のお昼休み、年末年始は配布致しません。",
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-516-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1283,6 +1497,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "http://toyotomi-kanko.net/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-516-D01.jpg",
         "type": "mhcard"
       }
     },
@@ -1304,6 +1519,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.town.rishiri.hokkaido.jp/rishiri/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-518-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1325,6 +1541,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.horokaru.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-520-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1346,6 +1563,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://hokkaido-michinoeki.jp/michinoeki/2884/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-545-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -1367,6 +1585,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://engaru-metroplaza.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-555-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1388,6 +1607,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://town.takinoue.hokkaido.jp/shokai/shisetsu/kankou/michinoeki.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-560-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1401,14 +1621,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "雄武町 道の駅おうむ 紋別郡雄武町雄武1885番地14 電話：0158-84-2403 (問合せ先) 雄武町役場上下水道課下水道係 電話：0158-84-2121",
+        "name": "雄武町 道の駅おうむ 紋別郡雄武町雄武1885番地14",
         "municipality": "雄武町",
-        "locationName": "道の駅おうむ 紋別郡雄武町雄武1885番地14 電話：0158-84-2403 (問合せ先) 雄武町役場上下水道課下水道係 電話：0158-84-2121",
+        "locationName": "道の駅おうむ 紋別郡雄武町雄武1885番地14",
         "address": "上下水道課下水道係 電話：0158-84-2121",
         "hours": "9:00～17:00",
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-563-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1430,6 +1651,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "http://d51-station.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-585-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1451,6 +1673,29 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.town.urakawa.hokkaido.jp/gyosei/organization/detail.html?id=48",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-607-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.769302,
+          42.168373
+        ]
+      },
+      "properties": {
+        "name": "浦河町 【休日】浦河町役場 警備室",
+        "municipality": "浦河町",
+        "locationName": "【休日】浦河町役場 警備室",
+        "address": "北海道浦河郡浦河町築地1丁目3番1号電話：0146-22-2554",
+        "hours": "【平日、休日】9：00～17：15",
+        "round": "第10弾",
+        "issueDate": "2019/08/07",
+        "url": "https://www.town.urakawa.hokkaido.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-607-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1472,6 +1717,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.tokachigawa.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-631-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1488,11 +1734,34 @@ const mhcardGeoJSON = {
         "name": "上士幌町 上士幌町役場建設課",
         "municipality": "上士幌町",
         "locationName": "上士幌町役場建設課",
-        "address": "北海道河東郡上士幌町字上士幌東3線238番地 電話:01564-2-4297 【土日祝日】道の駅かみしほろ 北海道河東郡上士幌町字上士幌東3線227番地 電話:01564-7-7722",
+        "address": "北海道河東郡上士幌町字上士幌東3線238番地 電話:01564-2-4297 【土日祝日】",
         "hours": "【平日】8:45～17:00 ただし、休日及び年始年末はお休みです 【土日祝日】9:00～17:00(夏季は9:00～18:00) ただし、年末年始はお休みです",
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.kamishihoro.jp/page/00000060",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-633-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          143.30162,
+          43.261906
+        ]
+      },
+      "properties": {
+        "name": "上士幌町 道の駅かみしほろ",
+        "municipality": "上士幌町",
+        "locationName": "道の駅かみしほろ",
+        "address": "北海道河東郡上士幌町字上士幌東3線227番地 電話:01564-7-7722",
+        "hours": "【平日】8:45～17:00 ただし、休日及び年始年末はお休みです 【土日祝日】9:00～17:00(夏季は9:00～18:00) ただし、年末年始はお休みです",
+        "round": "第27弾",
+        "issueDate": "2025/12/19",
+        "url": "https://www.kamishihoro.jp/place/00000251",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-633-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1514,6 +1783,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.shintoku-town.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-635-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1535,6 +1805,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.shintoku-tuktuk.com/facility/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-635-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1548,14 +1819,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "足寄町 (A001) 【平日】 足寄下水終末処理場 北海道足寄郡足寄町共栄町120-5 電話：0156-25-9070 【土日祝日】 足寄町役場裏警備員室",
+        "name": "足寄町 (A001) 【平日】足寄下水終末処理場 / 【土日祝日】足寄町役場裏警備員室",
         "municipality": "足寄町 (A001)",
-        "locationName": "【平日】 足寄下水終末処理場 北海道足寄郡足寄町共栄町120-5 電話：0156-25-9070 【土日祝日】 足寄町役場裏警備員室",
+        "locationName": "【平日】足寄下水終末処理場 / 【土日祝日】足寄町役場裏警備員室",
         "address": "北海道足寄郡足寄町共栄町120-5 電話：0156-25-9070 【土日祝日】 足寄町役場裏警備員室",
         "hours": "【平日】 9：00～17：00 【土日祝日】 8：35～17：05 ただし、年末年始（12月29日～1月3日）はお休みです",
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-647-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1577,6 +1849,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.town.ashoro.hokkaido.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-647-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1598,6 +1871,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "https://www.rikubetsu.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-648-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1619,6 +1893,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://betsukai.jp/kurashi/water/gesuidou/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-691-A-01.jpg\r\n",
         "type": "mhcard"
       }
     },
@@ -1640,6 +1915,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "http://www.yu-sa.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1661,6 +1937,7 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "http://www.hirosakipark.or.jp/green/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1682,6 +1959,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.go-kankou.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1703,6 +1981,7 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "https://www.artstowada.com/data.cgi?id=140531042222",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1724,6 +2003,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/05",
         "url": "https://skyplazamisawa.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1745,6 +2025,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.mutsu.lg.jp/bunka/leisure/kankousisetu-anndokann.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1761,11 +2042,34 @@ const mhcardGeoJSON = {
         "name": "三戸町 三戸町役場建設課",
         "municipality": "三戸町",
         "locationName": "三戸町役場建設課",
-        "address": "青森県三戸郡三戸町大字在府小路町43 電話：0179-20-1154 【土日祝日】道の駅さんのへ 青森県三戸郡三戸町大字川守田字西張渡39-1 電話：0179-22-0600",
+        "address": "青森県三戸郡三戸町大字在府小路町43 電話：0179-20-1154 【土日祝日】",
         "hours": "【平日】8：15～17：00 【土日祝日】9:00～18:00（夏・冬期間変更あり） ただし、年末年始はお休みです",
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.town.sannohe.aomori.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-441-A01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.255386,
+          40.387329
+        ]
+      },
+      "properties": {
+        "name": "三戸町 道の駅さんのへ",
+        "municipality": "三戸町",
+        "locationName": "道の駅さんのへ",
+        "address": "青森県三戸郡三戸町大字川守田字西張渡39-1 電話：0179-22-0600",
+        "hours": "【平日】8：15～17：00 【土日祝日】9:00～18:00（夏・冬期間変更あり） ただし、年末年始はお休みです",
+        "round": "第17弾",
+        "issueDate": "2022/08/06",
+        "url": "http://www.michinoeki-sannohe.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-441-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -1782,11 +2086,34 @@ const mhcardGeoJSON = {
         "name": "南部町 (A001) 南部公民館",
         "municipality": "南部町 (A001)",
         "locationName": "南部公民館",
-        "address": "青森県三戸郡南部町大字沖田面字沖中51番地２ 電話:0179-34-2800 【休館日】 南部町いちょうホール 青森県三戸郡南部町大字平字広場28番地1 電話:0178-38-5970",
+        "address": "青森県三戸郡南部町大字沖田面字沖中51番地２ 電話:0179-34-2800 【休館日】",
         "hours": "9：00～21：00 ただし、毎月第3日曜日、国民の祝日、年末年始(12月29日から翌年の1月3日まで)はお休みです 【休館日】 9：00～21：00 ただし、年末年始(12月29日から翌年の1月3日まで)はお休みです",
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.town.aomori-nanbu.lg.jp/page/1832.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-445-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.342178,
+          40.40588
+        ]
+      },
+      "properties": {
+        "name": "南部町 (A001) 南部町いちょうホール",
+        "municipality": "南部町 (A001)",
+        "locationName": "南部町いちょうホール",
+        "address": "青森県三戸郡南部町大字平字広場28番地1  電話:0178-38-5970",
+        "hours": "9：00～21：00 ただし、毎月第3日曜日、国民の祝日、年末年始(12月29日から翌年の1月3日まで)はお休みです 【休館日】 9：00～21：00 ただし、年末年始(12月29日から翌年の1月3日まで)はお休みです",
+        "round": "第21弾",
+        "issueDate": "2023/12/15",
+        "url": "https://www.town.aomori-nanbu.lg.jp/page/1716.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-445-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1808,6 +2135,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.town.aomori-nanbu.lg.jp/page/1716.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-445-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1821,14 +2149,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "岩手県（流域下水道） いわて・盛岡広域観光センター 岩手県盛岡市盛岡駅前通1-48 盛岡駅舎２階 （問い合わせ先） 岩手県県土整備部下水環境課 電話：019-629-5899",
+        "name": "岩手県（流域下水道） いわて・盛岡広域観光センター",
         "municipality": "岩手県（流域下水道）",
-        "locationName": "いわて・盛岡広域観光センター 岩手県盛岡市盛岡駅前通1-48 盛岡駅舎２階 （問い合わせ先） 岩手県県土整備部下水環境課 電話：019-629-5899",
+        "locationName": "いわて・盛岡広域観光センター",
         "address": "岩手県盛岡市盛岡駅前通1-48 盛岡駅舎２階 （問い合わせ先） 岩手県県土整備部下水環境課 電話：019-629-5899",
         "hours": "9：00～17：30 ただし、年末年始（12/30～1/3）の配布は行いません",
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-000-A-02.jpg",
         "type": "mhcard"
       }
     },
@@ -1850,6 +2179,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.morireki.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1871,6 +2201,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.kawatoku.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1892,6 +2223,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.morireki.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-201-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1913,6 +2245,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://oasis385.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1934,6 +2267,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.city.miyako.iwate.jp/gyosei/soshiki/tarosogojimusho/3/2/2081.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1947,14 +2281,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "宮古市 (C001) ひきめの里直売所 岩手県宮古市蟇目13-3-1 電話:0193-72-3383 （問合せ先） 宮古市上下水道部施設課 電話:0193-71-2299",
+        "name": "宮古市 (C001) ひきめの里直売所",
         "municipality": "宮古市 (C001)",
-        "locationName": "ひきめの里直売所 岩手県宮古市蟇目13-3-1 電話:0193-72-3383 （問合せ先） 宮古市上下水道部施設課 電話:0193-71-2299",
+        "locationName": "ひきめの里直売所",
         "address": "岩手県宮古市蟇目13-3-1 電話:0193-72-3383 （問合せ先） 宮古市上下水道部施設課 電話:0193-71-2299",
         "hours": "9:00～16:00 ただし、火曜日はお休みです",
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-202-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1976,6 +2311,7 @@ const mhcardGeoJSON = {
         "round": "第3弾",
         "issueDate": "2016/12/01",
         "url": "http://www.city.hanamaki.iwate.jp/shimin/168/172/p002630.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1997,6 +2333,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.hanamaki.iwate.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2010,14 +2347,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "花巻市（C001） 花巻市役所大迫総合支所花巻市大迫町大迫2-51-4電話：0198-48-2111(内線155)",
+        "name": "花巻市（C001） 花巻市役所大迫総合支所花巻市大迫町大迫2-51-4",
         "municipality": "花巻市（C001）",
-        "locationName": "花巻市役所大迫総合支所花巻市大迫町大迫2-51-4電話：0198-48-2111(内線155)",
+        "locationName": "花巻市役所大迫総合支所花巻市大迫町大迫2-51-4",
         "address": "花巻市（C001）",
         "hours": "【平日】9:00～16:30【休日】9:00～17:00ただし、年末年始(12/29～1/3)はお休みです",
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-205-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2039,6 +2377,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.city.hanamaki.iwate.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-205-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2060,6 +2399,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "http://www.tenshouchi.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2081,6 +2421,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "https://yomunosu-kuji.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2094,14 +2435,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "遠野市 道の駅みやもり内 めがねばし直売所 岩手県遠野市宮守町下宮守30地割37番地1 電話:0198-67-2929 (問合せ先) 遠野市環境整備部上下水道課 電話:0198-62-2111",
+        "name": "遠野市 道の駅みやもり内 めがねばし直売所",
         "municipality": "遠野市",
-        "locationName": "道の駅みやもり内 めがねばし直売所 岩手県遠野市宮守町下宮守30地割37番地1 電話:0198-67-2929 (問合せ先) 遠野市環境整備部上下水道課 電話:0198-62-2111",
+        "locationName": "道の駅みやもり内 めがねばし直売所",
         "address": "岩手県遠野市宮守町下宮守30地割37番地1 電話:0198-67-2929 (問合せ先) 遠野市環境整備部上下水道課 電話:0198-62-2111",
         "hours": "9：00～17：30（4月～9月） 9：00～17：00（10月～3月） ただし、1月1日はお休みです",
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2123,6 +2465,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.rikuzentakata.iwate.jp/soshiki/kyouikusoumuka/bunkazaigakari/1/1/3/4/8681.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2144,6 +2487,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.city.rikuzentakata.iwate.jp/soshiki/kouryusuishinka/sportskoryugakari/supoutsushisetsunitsuite/3029.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-210-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2165,6 +2509,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://kamaishi-kankou.jp/kyoukai/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2186,6 +2531,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://uogashi-terrace.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-211-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2207,6 +2553,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://unosumai-tomosu.jp/tsunami-memorial-hall/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-211-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2228,6 +2575,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.nanyato-bussan.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-213-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -2249,6 +2597,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://bigroof.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-216-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -2257,19 +2606,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.077057,
-          39.73476
+          141.076675,
+          39.735058
         ]
       },
       "properties": {
         "name": "滝沢市 (B001) 【平日】岩手県滝沢市施設課",
         "municipality": "滝沢市 (B001)",
         "locationName": "【平日】岩手県滝沢市施設課",
-        "address": "】岩手県滝沢市施設課 岩手県滝沢市中鵜飼55 電話:019-656-6581 【土日祝日】ビッグルーフ滝沢 岩手県滝沢市下鵜飼1-15 電話:019-656-781",
-        "hours": "【平日】9：00～17：00 ただし、年末年始はお休みです。 【土日祝日】9：00～21：00 ただし、毎月第2、第4火曜日（休日の場合は翌日）及び年末年始はお休みです",
+        "address": "岩手県滝沢市中鵜飼55 電話:019-656-6581",
+        "hours": "【平日】9：00～17：00 ただし、年末年始はお休みです。",
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "http://www.city.takizawa.iwate.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-216-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.076721,
+          39.732948
+        ]
+      },
+      "properties": {
+        "name": "滝沢市 (B001) 【土日祝日】ビッグルーフ滝沢",
+        "municipality": "滝沢市 (B001)",
+        "locationName": "【土日祝日】ビッグルーフ滝沢",
+        "address": "岩手県滝沢市下鵜飼1-15 電話:019-656-781",
+        "hours": "【土日祝日】9：00～21：00 ただし、毎月第2、第4火曜日（休日の場合は翌日）及び年末年始はお休みです",
+        "round": "第26弾",
+        "issueDate": "2025/07/25",
+        "url": "https://bigroof.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-216-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2291,6 +2663,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://yamada-oisuta.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-482-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2312,6 +2685,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "https://vill.kunohe.iwate.jp/docs/206.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-506-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2325,14 +2699,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "宮城県（流域下水道）(A001) 【平日】石巻浄化センター（（株）アイ・ケー・エス） 宮城県石巻市蛇田字新〆切5-2 電話:0225-94-1994 【土日祝】みやぎ東日本大震災津波伝承館（受付） 宮城県石巻市南浜町2丁目1-56 電話:0225-98-8081 （問い合わせ先） 宮城県東部下水道事務所 電話:0225-23-7381",
+        "name": "宮城県（流域下水道）(A001) 【平日】石巻浄化センター（（株）アイ・ケー・エス） / 【土日祝】みやぎ東日本大震災津波伝承館（受付）",
         "municipality": "宮城県（流域下水道）(A001)",
-        "locationName": "【平日】石巻浄化センター（（株）アイ・ケー・エス） 宮城県石巻市蛇田字新〆切5-2 電話:0225-94-1994 【土日祝】みやぎ東日本大震災津波伝承館（受付） 宮城県石巻市南浜町2丁目1-56 電話:0225-98-8081 （問い合わせ先） 宮城県東部下水道事務所 電話:0225-23-7381",
+        "locationName": "【平日】石巻浄化センター（（株）アイ・ケー・エス） / 【土日祝】みやぎ東日本大震災津波伝承館（受付）",
         "address": "宮城県石巻市蛇田字新〆切5-2 電話:0225-94-1994 【土日祝】みやぎ東日本大震災津波伝承館（受付） 宮城県石巻市南浜町2丁目1-56 電話:0225-98-8081 （問い合わせ先） 宮城県東部下水道事務所 電話:0225-23-7381",
         "hours": "【平日】9:00~16:30（昼休み12:00〜13:00） 【土日祝】9:00~16:30（毎月11日は曜日・祝日にかかわらず開館）",
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-000-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -2350,10 +2725,33 @@ const mhcardGeoJSON = {
         "municipality": "宮城県(流域下水道) (B001)",
         "locationName": "【平日】県南浄化センター内 (株)みずむすびサービスみやぎ 県南浄化センター管理棟内",
         "address": "平日】県南浄化センター内 (株)みずむすびサービスみやぎ 県南浄化センター管理棟内 岩沼市下野郷字赤江川1-3 電話:0223-22-1382 ※お越しの際は、管理棟入り口正面の内線電話から連絡をお願いします 【休日】道の駅「村田」（村田町物産交流センター） 柴田郡村田町大字村田字北塩内41 電話:0224-83-5505 (問合せ先) 宮城県中南部下水道事務所 電話:022-367-4003",
-        "hours": "【平日】9:00-16:00（昼休み12時00分～13時00分） ただし、年末年始はお休みです 【休日】9:00-17:00 ただし、年末年始（12月30～1月2日）はお休みです。",
+        "hours": "【平日】9:00-16:00（昼休み12時00分～13時00分） ただし、年末年始はお休みです",
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.pref.miyagi.jp/soshiki/senen-wwt/sisetusyoukai.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-000-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.87207,
+          38.268578
+        ]
+      },
+      "properties": {
+        "name": "宮城県(流域下水道) (B001) 【休日】道の駅「村田」（村田町物産交流センター）",
+        "municipality": "宮城県(流域下水道) (B001)",
+        "locationName": "【休日】道の駅「村田」（村田町物産交流センター）",
+        "address": "宮城県中南部下水道事務所 電話:022-367-4003",
+        "hours": "【休日】9:00-17:00 ただし、年末年始（12月30～1月2日）はお休みです。",
+        "round": "第14弾",
+        "issueDate": "2021/04/25",
+        "url": "https://muratamachi.info/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-000-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2375,6 +2773,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "http://izunuma.org/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-000-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2396,6 +2795,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://tohokudaiken-management.com/sendaikou-tagajo/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-000-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2417,6 +2817,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://www.smt.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2438,6 +2839,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.city.ishinomaki.lg.jp/cont/10505200/1212/20180919113612.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2459,6 +2861,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.mangattan.jp/manga/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2480,6 +2883,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "http://shiro-f.jp/shiroishijo/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2501,6 +2905,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.natori-machidukuri.com/oshirase/plaza.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2522,6 +2927,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.kankou.natori.miyagi.jp/tokusan/11870",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-207-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2543,6 +2949,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.kankou.natori.miyagi.jp/gourmet/9619",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-207-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2556,14 +2963,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "多賀城市（A001） 多賀城市埋蔵文化財調査センター展示室（多賀城市文化センター内）宮城県多賀城市中央2-27-1電話：022-368-0134 （問合せ先） 多賀城市上下水道部企業経営課 電話:022-745-8049",
+        "name": "多賀城市（A001） 多賀城市埋蔵文化財調査センター展示室（多賀城市文化センター内",
         "municipality": "多賀城市（A001）",
-        "locationName": "多賀城市埋蔵文化財調査センター展示室（多賀城市文化センター内）宮城県多賀城市中央2-27-1電話：022-368-0134 （問合せ先） 多賀城市上下水道部企業経営課 電話:022-745-8049",
+        "locationName": "多賀城市埋蔵文化財調査センター展示室（多賀城市文化センター内",
         "address": "）宮城県多賀城市中央2-27-1電話：022-368-0134 （問合せ先） 多賀城市上下水道部企業経営課 電話:022-745-8049",
         "hours": "9：00～16：30ただし、月曜日（祝日の場合を除く）、祝日の翌日（土曜日・日曜日を除く）、年末年始（12/28～1/4）、その他臨時休館日はお休みです※多賀城市埋蔵文化財調査センターが休館日の場合、史都多賀城観光案内所での配布となります",
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2585,6 +2993,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.tagakan.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-209-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2598,14 +3007,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "多賀城市 (C001) 多賀城跡ガイダンス施設（中央公園内） 宮城県多賀城市市川立石3 電話：022-781-8101 （問合せ先） 多賀城市上下水道部企業経営課 電話:022-745-8049",
+        "name": "多賀城市 (C001) 多賀城跡ガイダンス施設（中央公園内）",
         "municipality": "多賀城市 (C001)",
-        "locationName": "多賀城跡ガイダンス施設（中央公園内） 宮城県多賀城市市川立石3 電話：022-781-8101 （問合せ先） 多賀城市上下水道部企業経営課 電話:022-745-8049",
+        "locationName": "多賀城跡ガイダンス施設（中央公園内）",
         "address": "宮城県多賀城市市川立石3 電話：022-781-8101 （問合せ先） 多賀城市上下水道部企業経営課 電話:022-745-8049",
         "hours": "9：00〜16：30 ただし、年末年始と臨時休業日はお休みです",
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-209-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2627,6 +3037,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.city.higashimatsushima.miyagi.jp/shisei/shinsaifukko/fukkokinenkoen/fukkodensyokan.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2648,6 +3059,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://h-harappa.com",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-214-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2661,14 +3073,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "東松島市 (C001) 東松島市役所 鳴瀬庁舎2階 都市整備課窓口 宮城県東松島市小野字 新宮前5番地 電話0225-82-1111",
+        "name": "東松島市 (C001) 東松島市役所 鳴瀬庁舎",
         "municipality": "東松島市 (C001)",
-        "locationName": "東松島市役所 鳴瀬庁舎2階 都市整備課窓口 宮城県東松島市小野字 新宮前5番地 電話0225-82-1111",
+        "locationName": "東松島市役所 鳴瀬庁舎",
         "address": "2階 都市整備課窓口 宮城県東松島市小野字 新宮前5番地 電話0225-82-1111",
         "hours": "9:00~17:00 ただし、土日、祝日、年末年始はお休みです",
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-214-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2690,6 +3103,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://tomiyado.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2711,6 +3125,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "http://www.town.ogawara.miyagi.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-321-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2732,6 +3147,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "http://www.town.watari.miyagi.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-361-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -2745,14 +3161,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "七ヶ浜町 (A001) 七ヶ浜国際村宮城県宮城郡七ヶ浜町花渕浜字大山1-1(問い合わせ先)七ヶ浜町水道事業所電話：022-357-7458",
+        "name": "七ヶ浜町 (A001) 七ヶ浜国際",
         "municipality": "七ヶ浜町 (A001)",
-        "locationName": "七ヶ浜国際村宮城県宮城郡七ヶ浜町花渕浜字大山1-1(問い合わせ先)七ヶ浜町水道事業所電話：022-357-7458",
+        "locationName": "七ヶ浜国際",
         "address": "村宮城県宮城郡七ヶ浜町花渕浜字大山1-1(問い合わせ先)七ヶ浜町水道事業所電話：022-357-7458",
         "hours": "10:00～17:00ただし、火曜日（火曜日が祝日の場合は翌日）、年末年始はお休みです",
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-404-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2774,6 +3191,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.shichigahama.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-404-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2787,14 +3205,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "利府町 (A001) 利府町役場町民交流館「ペア・パル利府」 宮城県宮城郡利府町利府字新並松４番地 電話:022-767-2111",
+        "name": "利府町 (A001) 利府町役場町民交流館「ペア・",
         "municipality": "利府町 (A001)",
-        "locationName": "利府町役場町民交流館「ペア・パル利府」 宮城県宮城郡利府町利府字新並松４番地 電話:022-767-2111",
+        "locationName": "利府町役場町民交流館「ペア・",
         "address": "パル利府」 宮城県宮城郡利府町利府字新並松４番地 電話:022-767-2111",
         "hours": "【平日】8：30～17：15 【土日祝日】9：00～17：15 ただし、年末年始（12月28日から1月4日）及び臨時休館日はお休みです",
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-406-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2816,6 +3235,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.town.rifu.miyagi.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-406-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2829,14 +3249,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "大和町 大和町ふれあい文化創造センター 宮城県黒川郡大和町吉岡南二丁目4－14 電話：022-344-4401 （問合せ先） 大和町上下水道課 電話：022-345-2850",
+        "name": "大和町 大和町ふれあい文化創造センター",
         "municipality": "大和町",
-        "locationName": "大和町ふれあい文化創造センター 宮城県黒川郡大和町吉岡南二丁目4－14 電話：022-344-4401 （問合せ先） 大和町上下水道課 電話：022-345-2850",
+        "locationName": "大和町ふれあい文化創造センター",
         "address": "宮城県黒川郡大和町吉岡南二丁目4－14 電話：022-344-4401 （問合せ先） 大和町上下水道課 電話：022-345-2850",
         "hours": "9：00～17：00 ただし、第1・3火曜日、年末年始（12/28～1/4）、臨時閉館日はお休みです",
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-421-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2858,6 +3279,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://oosato-rs.co.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-422-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2879,6 +3301,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.village.ohira.miyagi.jp/soshiki/14/1161.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-424-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2900,6 +3323,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "http://ohirakan.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-424-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2921,6 +3345,7 @@ const mhcardGeoJSON = {
         "round": "第3弾",
         "issueDate": "2016/12/01",
         "url": "http://www.tenpyou.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-501-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2942,6 +3367,7 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "http://www.onagawa.org",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-581-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2963,6 +3389,7 @@ const mhcardGeoJSON = {
         "round": "第1弾",
         "issueDate": "2016/04/01",
         "url": "https://www.city.akita.lg.jp/suido/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/05-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2984,6 +3411,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://www.selion-akita.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/05-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3005,6 +3433,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": " http://www.hoophall.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/05-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3026,6 +3455,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city.yokote.lg.jp/shisetsu/1001528/1004520.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/05-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3039,14 +3469,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "男鹿市 「道の駅おが」男鹿市複合観光施設オガーレ 秋田県男鹿市船川港船川字新浜町1-19 電話:0185-47-7515 (問合せ先) 男鹿市企業局ガス上下水道課下水道班 電話:0185-46-4132",
+        "name": "男鹿市 「道の駅おが」男鹿市複合観光施設オガーレ",
         "municipality": "男鹿市",
-        "locationName": "「道の駅おが」男鹿市複合観光施設オガーレ 秋田県男鹿市船川港船川字新浜町1-19 電話:0185-47-7515 (問合せ先) 男鹿市企業局ガス上下水道課下水道班 電話:0185-46-4132",
+        "locationName": "「道の駅おが」男鹿市複合観光施設オガーレ",
         "address": "秋田県男鹿市船川港船川字新浜町1-19 電話:0185-47-7515 (問合せ先) 男鹿市企業局ガス上下水道課下水道班 電話:0185-46-4132",
         "hours": "9：00～17：00 ただし、休館日は下記のとおりです ①12月31日は14:00まで ②1月1日~1月3日 ③2・3月の第3水・木曜日 ※臨時休館する場合がありますので、訪問の際には施設のサイトをご確認ください",
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/05-206-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -3068,6 +3499,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://michinoeki-tenno.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/05-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3089,6 +3521,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://hanabimuseum.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/05-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3110,6 +3543,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "http://www.y-ctc.jp/outline/outline/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3131,6 +3565,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.m-yzao.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3152,6 +3587,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://mogamiyoshiaki.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3173,6 +3609,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://michinoeki-yonezawa.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3194,6 +3631,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.city.tsuruoka.lg.jp/kurashi/suido/gesuido/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3215,6 +3653,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.tsuruokakanko.com",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3236,6 +3675,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://miraini-sakata.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-204-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -3257,6 +3697,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.city.shinjo.yamagata.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3278,6 +3719,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "https://www.cherryland.co.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3299,6 +3741,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://kaminoyama-spa.com/news/sightseeing/2633.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3320,6 +3763,7 @@ const mhcardGeoJSON = {
         "round": "第3弾",
         "issueDate": "2016/12/01",
         "url": "http://www.city.tendo.yamagata.jp/livinfo/machidukuri/tennyu_tensyutu.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3341,6 +3785,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://www.higashine.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3362,6 +3807,7 @@ const mhcardGeoJSON = {
         "round": "第4弾",
         "issueDate": "2017/04/03",
         "url": "http://www.city.nanyo.yamagata.jp/zyougesuido/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3383,6 +3829,7 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "https://www.town.kahoku.yamagata.jp/soshiki/shoko/kankousinkou/3343/742.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-321-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3404,6 +3851,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://www.town.funagata.yamagata.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-363-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3425,6 +3873,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.pref.fukushima.lg.jp/sec/41055c/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3446,6 +3895,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.pref.fukushima.lg.jp/sec/41055c/mhcard.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-000-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3467,6 +3917,7 @@ const mhcardGeoJSON = {
         "round": "第3弾",
         "issueDate": "2016/12/01",
         "url": "https://f-aoz.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3488,6 +3939,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.f-kankou.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3501,14 +3953,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "会津若松市 会津若松市役所 会津若松市東栄町３番４６号 【平日】総合案内 【休日】警備員室",
+        "name": "会津若松市 【平日】会津若松市役所 会津若松市東栄町３番４６号 / 【休日】総合案内",
         "municipality": "会津若松市",
-        "locationName": "会津若松市役所 会津若松市東栄町３番４６号 【平日】総合案内 【休日】警備員室",
+        "locationName": "【平日】会津若松市役所 会津若松市東栄町３番４６号 / 【休日】総合案内",
         "address": "会津若松市",
         "hours": "9:00〜17:00",
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3530,6 +3983,7 @@ const mhcardGeoJSON = {
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "https://www.bandaiatami.or.jp/spot/kanko-bussankan",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3551,6 +4005,7 @@ const mhcardGeoJSON = {
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.koriyama.lg.jp/soshiki/185/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3572,6 +4027,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.lalamew.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3593,6 +4049,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.gurutto-iwaki.com/detail/2322/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-204-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -3614,6 +4071,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://iwakicity-park.or.jp/misaki/marine_tower/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-204-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3635,6 +4093,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.sekitankasekikan.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-204-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3656,6 +4115,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://kankou-iwaki.or.jp/spot/51270",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-204-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3677,6 +4137,7 @@ const mhcardGeoJSON = {
         "round": "第4弾",
         "issueDate": "2017/04/03",
         "url": "http://shirakawa315.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3698,6 +4159,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://s-tette.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3719,6 +4181,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://s-furyu.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-207-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3740,6 +4203,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://s-tokusatsu.jp/visitor/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-207-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3753,14 +4217,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "喜多方市 【平日】喜多方市役所下水道課 福島県喜多方市字御清水東7244-2 電話：0241-24-5262 【休日】喜多方市役所宿日直室（本庁舎） 電話：0241-24-5222",
+        "name": "喜多方市 【平日】喜多方市役 / 【休日】喜多方市役所宿日直室（本庁舎）",
         "municipality": "喜多方市",
-        "locationName": "【平日】喜多方市役所下水道課 福島県喜多方市字御清水東7244-2 電話：0241-24-5262 【休日】喜多方市役所宿日直室（本庁舎） 電話：0241-24-5222",
+        "locationName": "【平日】喜多方市役 / 【休日】喜多方市役所宿日直室（本庁舎）",
         "address": "所下水道課 福島県喜多方市字御清水東7244-2 電話：0241-24-5262 【休日】喜多方市役所宿日直室（本庁舎） 電話：0241-24-5222",
         "hours": "【平日】8:30～17:15 【休日】8:30～17:15",
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3782,6 +4247,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "https://www.yorozukaido.jp/soma/so_dou_senkyakubanraikan.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3795,14 +4261,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "二本松市 二本松市歴史観光施設【にほんまつ観光城報館】 ２階事務室 福島県二本松市郭内三丁目303番地5 電話：0243-22-6630",
+        "name": "二本松市 二本松市歴史観光施設 ２階事務室",
         "municipality": "二本松市",
-        "locationName": "二本松市歴史観光施設【にほんまつ観光城報館】 ２階事務室 福島県二本松市郭内三丁目303番地5 電話：0243-22-6630",
+        "locationName": "二本松市歴史観光施設 ２階事務室",
         "address": "福島県二本松市郭内三丁目303番地5 電話：0243-22-6630",
         "hours": "9：00~17：00 ただし、月曜日（月曜日が祝日の場合は火曜日）、年末年始（12/29~1/3）はお休みです。その他臨時休館があります。",
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3824,6 +4291,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "http://abukumado.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3845,6 +4313,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.minamisoma.lg.jp/portal/life/suido_gesuido/1/5485.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3866,6 +4335,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.date-shi.jp/information/4756",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3887,6 +4357,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.motomiya.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3903,11 +4374,56 @@ const mhcardGeoJSON = {
         "name": "本宮市 (B001) 【平日】本宮市中央公民館",
         "municipality": "本宮市 (B001)",
         "locationName": "【平日】本宮市中央公民館",
-        "address": "福島県本宮市本宮字矢来39-1 電話:0243-24-1930 【土日祝日】①本宮市中央公民館 福島県本宮市本宮字矢来39-1 電話:0243-24-1930 ②白沢公民館 福島県本宮市白岩字堤崎500 電話:0243-44-4284 （問合せ先） 本宮市役所建設部上下水道課 0243-24-5413",
+        "address": "福島県本宮市本宮字矢来39-1 電話:0243-24-1930",
+        "hours": "【平日】9：00〜17：15 ただし、年末年始はお休みです",
+        "round": "第26弾",
+        "issueDate": "2025/07/25",
+        "url": "http://www.city.motomiya.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-214-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.400665,
+          37.51696
+        ]
+      },
+      "properties": {
+        "name": "本宮市 (B001) 【土日祝日】①本宮市中央公民館",
+        "municipality": "本宮市 (B001)",
+        "locationName": "【土日祝日】①本宮市中央公民館",
+        "address": "福島県本宮市本宮字矢来39-1 電話:0243-24-1930",
+        "hours": "【土日祝日】9：00〜17：00 ただし、年末年始はお休みです ※詳細は市のホームページをご確認ください",
+        "round": "第26弾",
+        "issueDate": "2025/07/25",
+        "url": "http://www.city.motomiya.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-214-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.464401,
+          37.49992
+        ]
+      },
+      "properties": {
+        "name": "本宮市 (B001) ②白沢公民館",
+        "municipality": "本宮市 (B001)",
+        "locationName": "②白沢公民館",
+        "address": "福島県本宮市白岩字堤崎500 電話:0243-44-4284 （問合せ先） 本宮市役所建設部上下水道課 0243-24-5413",
         "hours": "【平日】9：00〜17：15 ただし、年末年始はお休みです 【土日祝日】9：00〜17：00 ただし、年末年始はお休みです ※詳細は市のホームページをご確認ください",
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "http://www.city.motomiya.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-214-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3929,6 +4445,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "http://www.town.koori.fukushima.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-301-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3950,6 +4467,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.town.kunimi.fukushima.jp/site/atsukashinosato/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-303-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3971,6 +4489,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "https://www.town.inawashiro.fukushima.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-408-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3992,6 +4511,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "http://www.town.aizubange.fukushima.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-421-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4013,6 +4533,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.vill.yugawa.fukushima.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-422-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4034,6 +4555,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "http://heso-aizu.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-422-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4055,6 +4577,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "https://www.marugoto-nishigo.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-461-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4076,6 +4599,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "http://www.town.tanagura.fukushima.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-481-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4097,6 +4621,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.tomizo.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-504-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4110,14 +4635,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "三春町 【月曜日以外】三春なかまち蔵一ノ蔵「花かご」 福島県田村郡三春町字中町4 電話：0247-61-2661 【月曜日】三春きたまち蔵「TENJIN」 福島県田村郡三春町字北町10 電話：0247-62-3690 (問合せ先) 三春町企業局 下水道グループ Tel：0247-62-2500",
+        "name": "三春町 【月曜日以外】三春なかまち蔵一ノ蔵「花かご」 / 【月曜日】三春きたまち蔵「TENJIN」",
         "municipality": "三春町",
-        "locationName": "【月曜日以外】三春なかまち蔵一ノ蔵「花かご」 福島県田村郡三春町字中町4 電話：0247-61-2661 【月曜日】三春きたまち蔵「TENJIN」 福島県田村郡三春町字北町10 電話：0247-62-3690 (問合せ先) 三春町企業局 下水道グループ Tel：0247-62-2500",
+        "locationName": "【月曜日以外】三春なかまち蔵一ノ蔵「花かご」 / 【月曜日】三春きたまち蔵「TENJIN」",
         "address": "福島県田村郡三春町字中町4 電話：0247-61-2661 【月曜日】三春きたまち蔵「TENJIN」 福島県田村郡三春町字北町10 電話：0247-62-3690 (問合せ先) 三春町企業局 下水道グループ Tel：0247-62-2500",
         "hours": "【月曜日以外】10：00～17：00 【月曜日】9：00～17：00",
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-521-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4139,6 +4665,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "http://naraha-tenjin.net/enjoy/rental",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-542-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -4160,6 +4687,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.facebook.com/TheHistoricalArchiveMuseumOfTomioka/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-543-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -4181,6 +4709,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.kawauchimura.jp/kanko/shisetsu/page000185.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-544-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -4202,6 +4731,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.aquaworld-oarai.com",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4223,6 +4753,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.mitokoumon.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4244,6 +4775,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.arttowermito.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4252,19 +4784,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.456619,
-          35.856865
+          140.650436,
+          36.599617
         ]
       },
       "properties": {
         "name": "日立市 【平日】日立市役所下水道課",
         "municipality": "日立市",
         "locationName": "【平日】日立市役所下水道課",
-        "address": "所下水道課茨城県日立市助川町1-1-1電話：0294-22-3111【休日】ぷらっとひたち（日立駅情報交流プラザ）茨城県日立市幸町1-1-2（日立駅中央口北側）電話：0294-51-3972",
-        "hours": "【平日】8：30～17：15【休日】9：00～19：00",
+        "address": "茨城県日立市助川町1-1-1電話：0294-22-3111",
+        "hours": "【平日】8：30～17：15",
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.city.hitachi.lg.jp/kigyo/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-202-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.661133,
+          36.58913
+        ]
+      },
+      "properties": {
+        "name": "日立市 【休日】ぷらっとひたち（日立駅情報交流プラザ）",
+        "municipality": "日立市",
+        "locationName": "【休日】ぷらっとひたち（日立駅情報交流プラザ）",
+        "address": "茨城県日立市幸町1-1-2（日立駅中央口北側）電話：0294-51-3972",
+        "hours": "【休日】9：00～19：00",
+        "round": "第10弾",
+        "issueDate": "2019/08/07",
+        "url": "http://www.kankou-hitachi.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4286,6 +4841,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.tsuchiura-kankou.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4307,6 +4863,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.tsuchiura.lg.jp/sp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4328,6 +4885,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.tsuchiura.lg.jp/page/dir000378.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-203-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4349,6 +4907,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city.tsuchiura.lg.jp/page/dir010472.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-203-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4370,6 +4929,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.tsuchiura.lg.jp/page/dir000578.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-203-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4383,14 +4943,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "土浦市 (F001) 霞ケ浦総合公園テニスコート管理事務所 茨城県土浦市大岩田580 電話：029-824-0880",
+        "name": "土浦市 (F001) 霞ケ浦総合公園テニスコート管理事務所",
         "municipality": "土浦市 (F001)",
-        "locationName": "霞ケ浦総合公園テニスコート管理事務所 茨城県土浦市大岩田580 電話：029-824-0880",
+        "locationName": "霞ケ浦総合公園テニスコート管理事務所",
         "address": "茨城県土浦市大岩田580 電話：029-824-0880",
         "hours": "9:00〜17:00 ただし、毎週月曜日（祝日にあたるときは、その翌平日）、年末年始はお休みです ※臨時の休業日については事前にご確認ください",
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-203-F-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4412,6 +4973,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.tsuchiura-kankou.jp/inquiry/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-203-G-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4433,6 +4995,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.tsuchiura.lg.jp/kurashi-tetsuzuki/kokyoshisetsu/bunka-shogaigakushunoshisetsu/chikukominkan/page000116.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-203-H-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4454,6 +5017,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.city.tsuchiura.lg.jp/kasumigaurataiikukaikan/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-203-I-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4475,6 +5039,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.kogakanko.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4496,6 +5061,7 @@ const mhcardGeoJSON = {
         "round": "第3弾",
         "issueDate": "2016/12/01",
         "url": "http://www.ishioka-kankou.com/page/page000008.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4517,6 +5083,7 @@ const mhcardGeoJSON = {
         "round": "第4弾",
         "issueDate": "2017/04/03",
         "url": "https://www.ibaraki-shokusai.net/shop/shops3?id=7383",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4538,6 +5105,7 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "http://www.city.yuki.lg.jp/page/page000264.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4551,14 +5119,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "龍ケ崎市 (A001) 【平日】龍ケ崎市 下水道課 茨城県龍ケ崎市3710番地 電話：0297-60-1552 【休日】龍ケ崎市 市民窓口ステーション 茨城県龍ケ崎市小柴5丁目1番地2サプラ2階 電話：0297-66-0650",
+        "name": "龍ケ崎市 (A001) 【平日】龍ケ崎市 / 【休日】龍ケ崎市 市民窓口ステーション",
         "municipality": "龍ケ崎市 (A001)",
-        "locationName": "【平日】龍ケ崎市 下水道課 茨城県龍ケ崎市3710番地 電話：0297-60-1552 【休日】龍ケ崎市 市民窓口ステーション 茨城県龍ケ崎市小柴5丁目1番地2サプラ2階 電話：0297-66-0650",
+        "locationName": "【平日】龍ケ崎市 / 【休日】龍ケ崎市 市民窓口ステーション",
         "address": "下水道課 茨城県龍ケ崎市3710番地 電話：0297-60-1552 【休日】龍ケ崎市 市民窓口ステーション 茨城県龍ケ崎市小柴5丁目1番地2サプラ2階 電話：0297-66-0650",
         "hours": "【平日】9:00～17:00 【休日】10:30～19:00 ※臨時休業する場合がありますので事前に直接お問い合わせください。",
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4580,6 +5149,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.ryugasaki.ibaraki.jp/kanko/kankokyokai/more-ryugasaki/2013081500794.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4601,6 +5171,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.city.shimotsuma.lg.jp/shogaigakushu-bunka-sports/library/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4622,6 +5193,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.joso.lg.jp/kurashi_gyousei/kurashi/shisetsu_koukyou/facility/tiikikoryu/page001373.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4643,6 +5215,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.kanko-hitachiota.com/page/page000428.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4664,6 +5237,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.city.takahagi.ibaraki.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4677,14 +5251,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "北茨城市 【平日】北茨城市役所総合受付 【休日】北茨城市役所守衛室 （日曜開庁日は市民課窓口にて配布） （問い合わせ先） 北茨城市役所下水道課 茨城県北茨城市磯原町磯原1630 電話：0293-43-1111",
+        "name": "北茨城市 【平日】北茨城市役所総合受付 / 【休日】北茨城市役所守衛室 （日曜開庁日は市民課窓口にて配布） （問い合わせ先） 北茨城市役",
         "municipality": "北茨城市",
-        "locationName": "【平日】北茨城市役所総合受付 【休日】北茨城市役所守衛室 （日曜開庁日は市民課窓口にて配布） （問い合わせ先） 北茨城市役所下水道課 茨城県北茨城市磯原町磯原1630 電話：0293-43-1111",
+        "locationName": "【平日】北茨城市役所総合受付 / 【休日】北茨城市役所守衛室 （日曜開庁日は市民課窓口にて配布） （問い合わせ先） 北茨城市役",
         "address": "所下水道課 茨城県北茨城市磯原町磯原1630 電話：0293-43-1111",
         "hours": "9:00～17:00",
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4706,6 +5281,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "https://www.city.toride.ibaraki.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-217-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4719,14 +5295,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "牛久市 【平日】牛久市役所分庁舎1階 下水道課 茨城県牛久市中央3丁目15番地1 【休日】エスカード牛久2階 いばらき自慢 茨城県牛久市牛久町280 （問い合わせ先） 牛久市役所 下水道課 電話：029-873-2111",
+        "name": "牛久市 【平日】牛久市役所分庁舎1階 / 【休日】エスカード牛久2階 いばらき自慢",
         "municipality": "牛久市",
-        "locationName": "【平日】牛久市役所分庁舎1階 下水道課 茨城県牛久市中央3丁目15番地1 【休日】エスカード牛久2階 いばらき自慢 茨城県牛久市牛久町280 （問い合わせ先） 牛久市役所 下水道課 電話：029-873-2111",
+        "locationName": "【平日】牛久市役所分庁舎1階 / 【休日】エスカード牛久2階 いばらき自慢",
         "address": "下水道課 茨城県牛久市中央3丁目15番地1 【休日】エスカード牛久2階 いばらき自慢 茨城県牛久市牛久町280 （問い合わせ先） 牛久市役所 下水道課 電話：029-873-2111",
         "hours": "【平日】8：30～17：15 ただし、12/29～31はいばらき自慢にて配布し、1/1～3は配布しません 【土日祝日】10:00〜19:00",
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4740,14 +5317,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "つくば市 (A001) 【月曜日から土曜日（祝日を除く）】つくば市役所１階 水道お客様センター 茨城県つくば市研究学園1-1-1（市役所1階） 【日曜日及び祝日】つくば市役所１階総合案内 茨城県つくば市研究学園1-1-1 電話：029-883-1111 （問合せ先） つくば市上下水道局下水道総務課",
+        "name": "つくば市 (A001) 【月曜日から土曜日（祝日を除く）】つくば市役所１ / 【日曜日及び祝日】つくば市役所１階総合案内",
         "municipality": "つくば市 (A001)",
-        "locationName": "【月曜日から土曜日（祝日を除く）】つくば市役所１階 水道お客様センター 茨城県つくば市研究学園1-1-1（市役所1階） 【日曜日及び祝日】つくば市役所１階総合案内 茨城県つくば市研究学園1-1-1 電話：029-883-1111 （問合せ先） つくば市上下水道局下水道総務課",
+        "locationName": "【月曜日から土曜日（祝日を除く）】つくば市役所１ / 【日曜日及び祝日】つくば市役所１階総合案内",
         "address": "階 水道お客様センター 茨城県つくば市研究学園1-1-1（市役所1階） 【日曜日及び祝日】つくば市役所１階総合案内 茨城県つくば市研究学園1-1-1 電話：029-883-1111 （問合せ先） つくば市上下水道局下水道総務課",
         "hours": "8:45～16:30 ただし、年末年始（12/29～1/3）はお休みです ※【英語版】も配布しています",
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-220-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4769,6 +5347,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://ttca.jp/%e8%a6%b3%e5%85%89%e6%a1%88%e5%86%85%e6%89%80/%e3%81%a4%e3%81%8f%e3%81%b0%e7%b7%8f%e5%90%88%e3%82%a4%e3%83%b3%e3%83%95%e3%82%a9%e3%83%a1%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%bb%e3%83%b3%e3%82%bf%e3%83%bcbivi%e3%81%a4%e3%81%8f%e3%81%b0/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-220-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4790,6 +5369,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "http://www.so-net.ne.jp/antlers/fanzone/shop.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-222-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4811,6 +5391,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "http://www.city.moriya.ibaraki.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-224-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4832,6 +5413,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.michieki-hitachiomiya.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-225-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4853,6 +5435,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.city.naka.lg.jp/page/page000512.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-226-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4874,6 +5457,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.city.chikusei.lg.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-227-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4895,6 +5479,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://granterrace-chikusei.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-227-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4916,6 +5501,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.kasumigaura.lg.jp/page/page002376.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-230-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4937,6 +5523,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.city.sakuragawa.lg.jp/page/dir000068.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-231-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4958,6 +5545,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.sakuragawa.lg.jp/shisei/soshiki/tyousha_annai/page000147.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-231-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4979,6 +5567,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://shirahonoyu.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-233-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5000,6 +5589,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.city.hokota.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-234-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5021,6 +5611,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.oarai-info.jp/page/page000533.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-309-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5034,14 +5625,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "五霞町 【平日】五霞町役場 建設水道課 茨城県猿島郡五霞町大字小福田1162番地1（庁舎2階） 電話：0280-84-3000 【土日祝日】五霞町役場 日直 茨城県猿島郡五霞町大字小福田1162番地1 電話：0280-84-1111（自動音声対応） ※土日祝日は正面玄関が施錠されていますので、庁舎に向かって右側の通用口（らせん階段脇）でインターホンを押してお待ちください。",
+        "name": "五霞町 【平日】五霞町役場 / 【土日祝日】五霞町役場 日直",
         "municipality": "五霞町",
-        "locationName": "【平日】五霞町役場 建設水道課 茨城県猿島郡五霞町大字小福田1162番地1（庁舎2階） 電話：0280-84-3000 【土日祝日】五霞町役場 日直 茨城県猿島郡五霞町大字小福田1162番地1 電話：0280-84-1111（自動音声対応） ※土日祝日は正面玄関が施錠されていますので、庁舎に向かって右側の通用口（らせん階段脇）でインターホンを押してお待ちください。",
+        "locationName": "【平日】五霞町役場 / 【土日祝日】五霞町役場 日直",
         "address": "建設水道課 茨城県猿島郡五霞町大字小福田1162番地1（庁舎2階） 電話：0280-84-3000 【土日祝日】五霞町役場 日直 茨城県猿島郡五霞町大字小福田1162番地1 電話：0280-84-1111（自動音声対応） ※土日祝日は正面玄関が施錠されていますので、庁舎に向かって右側の通用口（らせん階段脇）でインターホンを押してお待ちください。",
         "hours": "9:00～17:00",
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-542-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5050,19 +5642,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.883591,
-          36.56591
+          139.864426,
+          36.414989
         ]
       },
       "properties": {
         "name": "栃木県（流域下水道） 【平日】栃木県下水道管理事務所",
         "municipality": "栃木県（流域下水道）",
         "locationName": "【平日】栃木県下水道管理事務所",
-        "address": "】栃木県下水道管理事務所栃木県河内郡上三川町多功1159電話：0285-53-5695【休日】上三川町観光協会栃木県河内郡上三川町しらさぎ1-3-5（むかしなつかし館内）電話：0285-57-2335",
-        "hours": "【平日】9:00～16:00【休日】11:00～16:00ただし、年末年始はお休みです",
+        "address": "栃木県河内郡上三川町多功1159電話：0285-53-5695",
+        "hours": "【平日】9:00～16:00",
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "https://www.pref.tochigi.lg.jp/h60/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-000-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.907974,
+          36.439472
+        ]
+      },
+      "properties": {
+        "name": "栃木県（流域下水道） 【休日】上三川町観光協会",
+        "municipality": "栃木県（流域下水道）",
+        "locationName": "【休日】上三川町観光協会",
+        "address": "栃木県河内郡上三川町しらさぎ1-3-5（むかしなつかし館内）電話：0285-57-2335",
+        "hours": "【休日】11:00～16:00ただし、年末年始はお休みです",
+        "round": "第7弾",
+        "issueDate": "2018/04/28",
+        "url": "http://kaminokawa-kankou.org/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5084,6 +5699,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.city.utsunomiya.tochigi.jp/josuido/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5105,6 +5721,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.utsunomiya-cvb.org/9168.html ",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5126,6 +5743,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://u-movenext.net/open-square/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-201-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5134,19 +5752,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.018204,
-          36.459652
+          139.882828,
+          36.555946
         ]
       },
       "properties": {
         "name": "宇都宮市 (D001) 【平日】宇都宮市役所文化都市推進課",
         "municipality": "宇都宮市 (D001)",
         "locationName": "【平日】宇都宮市役所文化都市推進課",
-        "address": "日】宇都宮市役所文化都市推進課 栃木県宇都宮市旭1-1-5 電話:028-632-2763 【土日祝日】宇都宮城址公園清明館 栃木県宇都宮市本丸町1-15 電話:028-638-9390",
-        "hours": "【平日】8:30～17:15 【土日祝日】9：00～17:00 ただし、年末年始はお休みです",
+        "address": "栃木県宇都宮市旭1-1-5 電話:028-632-2763",
+        "hours": "【平日】8:30～17:15",
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.utsunomiya.lg.jp/shisei/kikou/soshiki/1035660.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-201-D-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.885956,
+          36.554821
+        ]
+      },
+      "properties": {
+        "name": "宇都宮市 (D001) 【土日祝日】宇都宮城址公園清明館",
+        "municipality": "宇都宮市 (D001)",
+        "locationName": "【土日祝日】宇都宮城址公園清明館",
+        "address": "栃木県宇都宮市本丸町1-15 電話:028-638-9390",
+        "hours": "【土日祝日】9：00～17:00 ただし、年末年始はお休みです",
+        "round": "第26弾",
+        "issueDate": "2025/07/25",
+        "url": "https://www.city.utsunomiya.lg.jp/citypromotion/kanko/meisho/jyiousi/1007289.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-201-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5168,6 +5809,7 @@ const mhcardGeoJSON = {
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "https://www.ashikaga-kankou.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5189,6 +5831,7 @@ const mhcardGeoJSON = {
         "round": "第4弾",
         "issueDate": "2017/04/03",
         "url": "https://www.city.ashikaga.tochigi.jp/industory/000061/000327/p002753.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5210,6 +5853,7 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "https://www.tochigi-kankou.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5231,6 +5875,7 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "https://sano-kankokk.jp/?page_id=75",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5252,6 +5897,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://kanumajuku.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5273,6 +5919,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://www.nikko-kankou.org",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5294,6 +5941,7 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "https://www.nikko-nsm.co.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-206-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5315,6 +5963,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.city.oyama.tochigi.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5336,6 +5985,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.city.oyama.tochigi.jp/shisei/shisetsu/etc/page006531.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5357,6 +6007,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.kubokinen.net/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5370,14 +6021,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "大田原市 (A001) 道の駅 那須与一の郷 物産館 栃木県大田原市南金丸1584-6 電話番号:0287-23-8641",
+        "name": "大田原市 (A001) 道の駅 那須与一の郷 物産館",
         "municipality": "大田原市 (A001)",
-        "locationName": "道の駅 那須与一の郷 物産館 栃木県大田原市南金丸1584-6 電話番号:0287-23-8641",
+        "locationName": "道の駅 那須与一の郷 物産館",
         "address": "栃木県大田原市南金丸1584-6 電話番号:0287-23-8641",
         "hours": "9:00〜17:00 ただし、年末年始（12/29〜1/3）はお休みです",
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5399,6 +6051,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.ohtawara.info/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-210-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5420,6 +6073,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "http://www.michinoeki-yaita.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5441,6 +6095,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.siobara.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5454,14 +6109,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "那須塩原市(B001) 板室自然遊学センター 栃木県那須塩原市百村3090-6 電話:0287-69-0231",
+        "name": "那須塩原市(B001) 板室自然遊学センター",
         "municipality": "那須塩原市(B001)",
-        "locationName": "板室自然遊学センター 栃木県那須塩原市百村3090-6 電話:0287-69-0231",
+        "locationName": "板室自然遊学センター",
         "address": "栃木県那須塩原市百村3090-6 電話:0287-69-0231",
         "hours": "10：00～15：00 ただし、第4水曜日、祝祭日の翌日、年末年始（12/30～1/2）はお休みです",
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-213-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5483,6 +6139,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.city.tochigi-sakura.lg.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5504,6 +6161,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.nasukarasuyama.com",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5525,6 +6183,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.nasukarasuyama.com",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-215-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5546,6 +6205,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "https://www.grimm-no.net/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5567,6 +6227,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.town.kaminokawa.lg.jp/0357/info-0000003314-0.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-301-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5588,6 +6249,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.town.mibu.tochigi.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-361-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5609,6 +6271,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://omohaku.michinoeki-mibu.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-361-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5630,6 +6293,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "http://www.pref.gunma.jp/07/p23210002.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5651,6 +6315,7 @@ const mhcardGeoJSON = {
         "round": "第3弾",
         "issueDate": "2016/12/01",
         "url": "https://maebashi-akagi.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5672,6 +6337,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.kiryu.lg.jp/shisetsu/kankou/1016644.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5693,6 +6359,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.kiryu.lg.jp/kurashi/suido/gesui/1013174.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-203-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -5709,11 +6376,34 @@ const mhcardGeoJSON = {
         "name": "伊勢崎市 【通常】伊勢崎駅前インフォメーションセンター",
         "municipality": "伊勢崎市",
         "locationName": "【通常】伊勢崎駅前インフォメーションセンター",
-        "address": "群馬県伊勢崎市曲輪町8番地1 電話:0270-61-8008 【上記の休館日】伊勢崎市上下水道局総務課 群馬県伊勢崎市連取元町170番地3 電話:0270-30-1272 （問合せ先） 伊勢崎市上下水道局下水道施設課 電話:0270-32-4554",
-        "hours": "【通常】9:00～21:00 ただし、月曜日(祝日のときは、その直後の平日)及び年末年始はお休みです 【上記の休館日】9:00～17:00 月曜日(祝日のときは、その直後の平日)に配布します ただし、年末年始はお休みです",
+        "address": "群馬県伊勢崎市曲輪町8番地1 電話:0270-61-8008",
+        "hours": "【通常】9:00～21:00 ただし、月曜日(祝日のときは、その直後の平日)及び年末年始はお休みです",
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.isesaki.lg.jp/soshiki/keizai/shoko/machinakakaseika/1588.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-204-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.180038,
+          36.310265
+        ]
+      },
+      "properties": {
+        "name": "伊勢崎市 【上記の休館日】伊勢崎市上下水道局総務課",
+        "municipality": "伊勢崎市",
+        "locationName": "【上記の休館日】伊勢崎市上下水道局総務課",
+        "address": "群馬県伊勢崎市連取元町170番地3 電話:0270-30-1272 （問合せ先） 伊勢崎市上下水道局下水道施設課 電話:0270-32-4554",
+        "hours": "【上記の休館日】9:00～17:00 月曜日(祝日のときは、その直後の平日)に配布します ただし、年末年始はお休みです",
+        "round": "第24弾",
+        "issueDate": "2024/12/20",
+        "url": "https://www.city.isesaki.lg.jp/soshiki/suidokyo/suido/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5735,6 +6425,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.numata-kankou.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5756,6 +6447,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.oigami.net/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-206-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5777,6 +6469,7 @@ const mhcardGeoJSON = {
         "round": "第3弾",
         "issueDate": "2016/12/01",
         "url": "https://www.city.tatebayashi.gunma.jp/s061/map/010/20201027183513.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5798,6 +6491,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.city.shibukawa.lg.jp/kosodate/shougaigakushuu/cyuokominkan/p000926.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5819,6 +6513,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.city.shibukawa.lg.jp/shisetsu/000349/p003096.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5840,6 +6535,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.city.shibukawa.lg.jp/kankou/gift/omiyage/p003604.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-208-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5861,6 +6557,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "http://www.laranfujioka.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5882,6 +6579,7 @@ const mhcardGeoJSON = {
         "round": "第3弾",
         "issueDate": "2016/12/01",
         "url": "https://www.tomioka-silk.jp/_spot/sightseeing/detail/id=7679",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5895,14 +6593,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "みどり市 一般社団法人みどり市観光協会 群馬県みどり市大間々町大間々1034-5 電話：0277-46-7289",
+        "name": "みどり市 一般社団法人みどり市観光協会",
         "municipality": "みどり市",
-        "locationName": "一般社団法人みどり市観光協会 群馬県みどり市大間々町大間々1034-5 電話：0277-46-7289",
+        "locationName": "一般社団法人みどり市観光協会",
         "address": "群馬県みどり市大間々町大間々1034-5 電話：0277-46-7289",
         "hours": "9:00～16:00 ただし、年末年始はお休みです",
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5916,14 +6615,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "吉岡町 【平日】吉岡町役場上下水道課 群馬県北群馬郡吉岡町大字下野田560 電話:0279-26-2284（直通） 【休日】吉岡町文化センター 群馬県北群馬郡吉岡町大字下野田472 電話:0279-54-1161",
+        "name": "吉岡町 【平日】吉岡町役場 / 【休日】吉岡町文化センター",
         "municipality": "吉岡町",
-        "locationName": "【平日】吉岡町役場上下水道課 群馬県北群馬郡吉岡町大字下野田560 電話:0279-26-2284（直通） 【休日】吉岡町文化センター 群馬県北群馬郡吉岡町大字下野田472 電話:0279-54-1161",
+        "locationName": "【平日】吉岡町役場 / 【休日】吉岡町文化センター",
         "address": "上下水道課 群馬県北群馬郡吉岡町大字下野田560 電話:0279-26-2284（直通） 【休日】吉岡町文化センター 群馬県北群馬郡吉岡町大字下野田472 電話:0279-54-1161",
         "hours": "【平日】8:30～17:15 【休日】9:00～18:00 ただし、年末年始はお休みです",
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-345-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5945,6 +6645,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.town.kusatsu.gunma.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-426-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5958,14 +6659,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "玉村町 【平日】玉村町水道庁舎（玉村町上下水道課） 群馬県佐波郡玉村町大字上新田1116-3 電話：0270-65-6691 【休日】道の駅 玉村宿（総合案内） 群馬県佐波郡玉村町大字上新田604-1 (問合せ先) 玉村町上下水道課(平日9：00〜17：00) 電話：0270-65-6691",
+        "name": "玉村町 【平日】玉 / 【休日】道の駅 玉村宿（総合案内）",
         "municipality": "玉村町",
-        "locationName": "【平日】玉村町水道庁舎（玉村町上下水道課） 群馬県佐波郡玉村町大字上新田1116-3 電話：0270-65-6691 【休日】道の駅 玉村宿（総合案内） 群馬県佐波郡玉村町大字上新田604-1 (問合せ先) 玉村町上下水道課(平日9：00〜17：00) 電話：0270-65-6691",
+        "locationName": "【平日】玉 / 【休日】道の駅 玉村宿（総合案内）",
         "address": "村町水道庁舎（玉村町上下水道課） 群馬県佐波郡玉村町大字上新田1116-3 電話：0270-65-6691 【休日】道の駅 玉村宿（総合案内） 群馬県佐波郡玉村町大字上新田604-1 (問合せ先) 玉村町上下水道課(平日9：00〜17：00) 電話：0270-65-6691",
         "hours": "9:30～17:00 ただし、年末年始はお休みです",
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-464-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5987,6 +6689,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.town.meiwa.gunma.jp/life/soshiki/toshikensetsu/1_1/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-522-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6008,6 +6711,7 @@ const mhcardGeoJSON = {
         "round": "第4弾",
         "issueDate": "2017/04/03",
         "url": "http://www.town.oizumi.gunma.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-524-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6029,6 +6733,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.town.ora.gunma.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-525-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6050,6 +6755,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.town.ora.gunma.jp/orabiyori/050/010/symbol-tower.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-525-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6071,6 +6777,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2023/01/28",
         "url": "http://www.saitama-swg.or.jp/nanbu_hp_20120423/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-010-A101.jpg",
         "type": "mhcard"
       }
     },
@@ -6092,6 +6799,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.saitama-swg.or.jp/nanbu_hp_20120423/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6113,6 +6821,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.saitama-swg.or.jp/hokubu%20hp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-000-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6134,6 +6843,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.saitama-swg.or.jp/ugan%20hp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-000-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6155,6 +6865,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.saitama-swg.or.jp/nakagawa%20hp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-000-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6176,6 +6887,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.saitama-swg.or.jp/furutone_hp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-000-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6189,14 +6901,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "埼玉県（流域下水道・F001） 埼玉県荒川上流水循環センター埼玉県深谷市菅沼984電話：048-583-7525",
+        "name": "埼玉県（流域下水道・F001） 埼玉県荒川上流水循環センター埼玉県深谷市菅沼984",
         "municipality": "埼玉県（流域下水道・F001）",
-        "locationName": "埼玉県荒川上流水循環センター埼玉県深谷市菅沼984電話：048-583-7525",
+        "locationName": "埼玉県荒川上流水循環センター埼玉県深谷市菅沼984",
         "address": "埼玉県荒川上流水循環センター埼玉県深谷市菅沼984電話：048-583-7525",
         "hours": "9：00～17：00ただし、土日、祝日、年末年始はお休みです",
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-000-F-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6210,14 +6923,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "埼玉県（流域下水道・G001） 埼玉県市野川水循環センター埼玉県比企郡滑川町大字月輪521-6電話：0493-62-0410",
+        "name": "埼玉県（流域下水道・G001） 埼玉県市野川水循環センター埼玉県比企郡滑川町大字月輪521-6",
         "municipality": "埼玉県（流域下水道・G001）",
-        "locationName": "埼玉県市野川水循環センター埼玉県比企郡滑川町大字月輪521-6電話：0493-62-0410",
+        "locationName": "埼玉県市野川水循環センター埼玉県比企郡滑川町大字月輪521-6",
         "address": "埼玉県市野川水循環センター埼玉県比企郡滑川町大字月輪521-6電話：0493-62-0410",
         "hours": "9：00～17：00ただし、土日、祝日、年末年始はお休みです",
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-000-G-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6231,14 +6945,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "埼玉県（流域下水道・H001） 埼玉県小山川水循環センター埼玉県本庄市東五十子382-1電話：0495-21-7997",
+        "name": "埼玉県（流域下水道・H001） 埼玉県小山川水循環センター埼玉県本庄市東五十子382-1",
         "municipality": "埼玉県（流域下水道・H001）",
-        "locationName": "埼玉県小山川水循環センター埼玉県本庄市東五十子382-1電話：0495-21-7997",
+        "locationName": "埼玉県小山川水循環センター埼玉県本庄市東五十子382-1",
         "address": "埼玉県小山川水循環センター埼玉県本庄市東五十子382-1電話：0495-21-7997",
         "hours": "9：00～17：00ただし、土日、祝日、年末年始はお休みです",
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-000-H-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6260,6 +6975,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2023/01/28",
         "url": "https://www.aeon.jp/sc/kitatoda/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-000-I001.jpg",
         "type": "mhcard"
       }
     },
@@ -6273,14 +6989,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "さいたま市 (A001) 浦和観光案内所 さいたま市浦和区高砂1-16-12 アトレ浦和South Area 電話：048-883-1055",
+        "name": "さいたま市 (A001) 浦和観光案内所 さいたま市浦和区高砂1-16-12 アトレ浦和South Area",
         "municipality": "さいたま市 (A001)",
-        "locationName": "浦和観光案内所 さいたま市浦和区高砂1-16-12 アトレ浦和South Area 電話：048-883-1055",
+        "locationName": "浦和観光案内所 さいたま市浦和区高砂1-16-12 アトレ浦和South Area",
         "address": "さいたま市 (A001)",
         "hours": "10:00～18:00 ただし、年末年始はお休みです",
         "round": "第1弾",
         "issueDate": "2016/04/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6302,6 +7019,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://visitsaitamacity.jp/spots/185",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6315,14 +7033,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "川越市 (A001) 本川越駅観光案内所 埼玉県川越市新富町1丁目22 オープンカウンター内 （問い合わせ先） 川越市上下水道局総務企画課 電話：049-223-3063",
+        "name": "川越市 (A001) 本川越駅観光案内所",
         "municipality": "川越市 (A001)",
-        "locationName": "本川越駅観光案内所 埼玉県川越市新富町1丁目22 オープンカウンター内 （問い合わせ先） 川越市上下水道局総務企画課 電話：049-223-3063",
+        "locationName": "本川越駅観光案内所",
         "address": "埼玉県川越市新富町1丁目22 オープンカウンター内 （問い合わせ先） 川越市上下水道局総務企画課 電話：049-223-3063",
         "hours": "9:00～17:00 （年中無休）",
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6336,14 +7055,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "川越市 (B001) 川越駅観光案内所 埼玉県川越市脇田町24-9 (問い合わせ先) 川越市上下水道局総務企画課 電話：049-223-3063",
+        "name": "川越市 (B001) 川越駅観光案内所",
         "municipality": "川越市 (B001)",
-        "locationName": "川越駅観光案内所 埼玉県川越市脇田町24-9 (問い合わせ先) 川越市上下水道局総務企画課 電話：049-223-3063",
+        "locationName": "川越駅観光案内所",
         "address": "埼玉県川越市脇田町24-9 (問い合わせ先) 川越市上下水道局総務企画課 電話：049-223-3063",
         "hours": "9:00～17:00 (年中無休)",
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-201-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -6365,6 +7085,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://www.city.kumagaya.lg.jp/about/soshiki/jogesuido/gesuidou/oshirase/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6378,14 +7099,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "熊谷市（B001） 熊谷駅観光案内所内 埼玉県熊谷市筑波2-115-1 電話：048-594-6677",
+        "name": "熊谷市（B001） 熊谷駅観光案内所内",
         "municipality": "熊谷市（B001）",
-        "locationName": "熊谷駅観光案内所内 埼玉県熊谷市筑波2-115-1 電話：048-594-6677",
+        "locationName": "熊谷駅観光案内所内",
         "address": "埼玉県熊谷市筑波2-115-1 電話：048-594-6677",
         "hours": "9:00～18:00 ただし、年末年始はお休みです",
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6407,6 +7129,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "http://kawakan2.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6423,11 +7146,34 @@ const mhcardGeoJSON = {
         "name": "行田市 行田市郷土博物館",
         "municipality": "行田市",
         "locationName": "行田市郷土博物館",
-        "address": "埼玉県行田市本丸17-23 電話：048-554-5911 【博物館休館日】観光物産館ぶらっと♪ぎょうだ 埼玉県行田市忍2-1-8 電話：048-554-1036 （問い合わせ先）行田市下水道課電話：048-564-0303",
+        "address": "埼玉県行田市本丸17-23 電話：048-554-5911 【博物館休館日】",
         "hours": "【通常】9:00～16:30 ただし、月曜日（祝日休日は開館）、祝日の翌日（土日は開館）、第4金曜日（テーマ展、企画展開催中は開館）、年末年始（12/28～1/3）はお休みです なお、臨時休館日もございますので、事前に左記HP、もしくは右記からご確認ください 【博物館休館日】9：30～17：00 ただし、年末年始（12/29～1/3）はお休みです。",
         "round": "第3弾",
         "issueDate": "2016/12/01",
         "url": "https://www.city.gyoda.lg.jp/soshiki/shougaigakusyubu/kyodohakubutsukan/riyou/manholecard.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-206-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.457687,
+          36.140301
+        ]
+      },
+      "properties": {
+        "name": "行田市 観光物産館ぶらっと♪ぎょうだ",
+        "municipality": "行田市",
+        "locationName": "観光物産館ぶらっと♪ぎょうだ",
+        "address": "埼玉県行田市忍2-1-8 電話：048-554-1036 （問い合わせ先）行田市下水道課電話：048-564-0303",
+        "hours": "【通常】9:00～16:30 ただし、月曜日（祝日休日は開館）、祝日の翌日（土日は開館）、第4金曜日（テーマ展、企画展開催中は開館）、年末年始（12/28～1/3）はお休みです なお、臨時休館日もございますので、事前に左記HP、もしくは右記からご確認ください 【博物館休館日】9：30～17：00 ただし、年末年始（12/29～1/3）はお休みです。",
+        "round": "第3弾",
+        "issueDate": "2016/12/01",
+        "url": "https://www.gyoda-kankoukyoukai.jp/shopping/998",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6449,6 +7195,29 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.city.tokorozawa.saitama.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-208-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.460052,
+          35.797726
+        ]
+      },
+      "properties": {
+        "name": "所沢市（A001） 所沢市上下水道局1階 夜間・総合窓口",
+        "municipality": "所沢市（A001）",
+        "locationName": "所沢市上下水道局1階 夜間・総合窓口",
+        "address": "埼玉県所沢市宮本町2-21-4  （問い合わせ先） 下水道維持課 電話：04-2921-1022",
+        "hours": "8：30～18：00",
+        "round": "第01弾",
+        "issueDate": "2016/04/01",
+        "url": "http://www.city.tokorozawa.saitama.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6462,14 +7231,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "所沢市（B001） 【平日】所沢市役所別館 商業観光課 埼玉県所沢市並木1-1 電話：04-2998-9155 【土日祝日】所沢市役所１階 夜間休日受付 埼玉県所沢市並木1-1-1 （問い合わせ先） 下水道維持課 電話：04-2921-1022",
+        "name": "所沢市（B001） 【平日】所沢市役所別館 商業観光課 / 【土日祝日】所沢市役所１階 夜間休日受付",
         "municipality": "所沢市（B001）",
-        "locationName": "【平日】所沢市役所別館 商業観光課 埼玉県所沢市並木1-1 電話：04-2998-9155 【土日祝日】所沢市役所１階 夜間休日受付 埼玉県所沢市並木1-1-1 （問い合わせ先） 下水道維持課 電話：04-2921-1022",
+        "locationName": "【平日】所沢市役所別館 商業観光課 / 【土日祝日】所沢市役所１階 夜間休日受付",
         "address": "埼玉県所沢市並木1-1 電話：04-2998-9155 【土日祝日】所沢市役所１階 夜間休日受付 埼玉県所沢市並木1-1-1 （問い合わせ先） 下水道維持課 電話：04-2921-1022",
         "hours": "8：30～17：15",
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6491,6 +7261,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "http://www.machizou.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-208-C01.jpg",
         "type": "mhcard"
       }
     },
@@ -6512,6 +7283,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://yot-toko.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-208-D01.jpg",
         "type": "mhcard"
       }
     },
@@ -6533,6 +7305,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://hanno-tourism.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6546,14 +7319,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "加須市 (A001) 【月曜日～金曜日】加須市物産観光協会（加須市役所本庁舎２階 観光振興課内） 埼玉県加須市三俣2-1-1 電話:0480-62-1111 【土曜日・日曜日】加須市上下水道部下水道課（加須市環境浄化センター内） 埼玉県加須市花崎2046番地 電話:0480-65-8981",
+        "name": "加須市 (A001) 【月曜日～金曜日】加須市物産観光協会（加須市役所本庁舎２階 観光振興課内） / 【土曜日・日曜日】加須市",
         "municipality": "加須市 (A001)",
-        "locationName": "【月曜日～金曜日】加須市物産観光協会（加須市役所本庁舎２階 観光振興課内） 埼玉県加須市三俣2-1-1 電話:0480-62-1111 【土曜日・日曜日】加須市上下水道部下水道課（加須市環境浄化センター内） 埼玉県加須市花崎2046番地 電話:0480-65-8981",
+        "locationName": "【月曜日～金曜日】加須市物産観光協会（加須市役所本庁舎２階 観光振興課内） / 【土曜日・日曜日】加須市",
         "address": "埼玉県加須市三俣2-1-1 電話:0480-62-1111 【土曜日・日曜日】加須市上下水道部下水道課（加須市環境浄化センター内） 埼玉県加須市花崎2046番地 電話:0480-65-8981",
         "hours": "【月曜日～金曜日】9：00～17：00 【土曜日・日曜日】9：00～17：00",
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6575,6 +7349,29 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "http://www.city.kazo.lg.jp/soshiki/gesui/oshirase/37040.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-210-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.574921,
+          36.102139
+        ]
+      },
+      "properties": {
+        "name": "加須市 (B001) 【日曜日】騎西総合支所市民税務担当",
+        "municipality": "加須市 (B001)",
+        "locationName": "【日曜日】騎西総合支所市民税務担当",
+        "address": "埼玉県加須市騎西36番地１ 電話:0480-73-1111（代表） （問合せ先） 上下水道部下水道課 電話:0480-65-8981",
+        "hours": "9：00～17：00 ただし、土曜日及び祝日（日曜日を除く）はお休みです",
+        "round": "第26弾",
+        "issueDate": "2025/07/25",
+        "url": "http://www.city.kazo.lg.jp/soshiki/gesui/oshirase/37040.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-210-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6588,14 +7385,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "本庄市 (A001) 【平日】本庄市役所１階市民ホール総合案内 埼玉県本庄市本庄3-5-3 【休日】本庄市役所休日窓口 埼玉県本庄市本庄3-5-3 電話：0495-25-1111 （問い合わせ先） 本庄市経営管理課 電話：0495-25-1146",
+        "name": "本庄市 (A001) 【平日】本庄市役所１階市民ホール総合案内 / 【休日】本庄市役所休日窓口",
         "municipality": "本庄市 (A001)",
-        "locationName": "【平日】本庄市役所１階市民ホール総合案内 埼玉県本庄市本庄3-5-3 【休日】本庄市役所休日窓口 埼玉県本庄市本庄3-5-3 電話：0495-25-1111 （問い合わせ先） 本庄市経営管理課 電話：0495-25-1146",
+        "locationName": "【平日】本庄市役所１階市民ホール総合案内 / 【休日】本庄市役所休日窓口",
         "address": "埼玉県本庄市本庄3-5-3 【休日】本庄市役所休日窓口 埼玉県本庄市本庄3-5-3 電話：0495-25-1111 （問い合わせ先） 本庄市経営管理課 電話：0495-25-1146",
         "hours": "8:30～17:15 ただし、年末年始（12/29～1/3）はお休みです",
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6617,6 +7415,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.hwmm.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-211-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6638,6 +7437,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.sayama.saitama.jp/shisei/shisetsu/bunkashisetsu/siminkouryuusenta/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6659,6 +7459,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "http://kiyasse.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6675,11 +7476,34 @@ const mhcardGeoJSON = {
         "name": "鴻巣市 (A001) 【水曜日以外】鴻巣市産業観光館「ひなの里」",
         "municipality": "鴻巣市 (A001)",
         "locationName": "【水曜日以外】鴻巣市産業観光館「ひなの里」",
-        "address": "埼玉県鴻巣市人形1-4-20 電話：048-540-3333 【水曜日】鴻巣市上下水道部下水道課 埼玉県鴻巣市中央1-1 電話：048-541-1321",
-        "hours": "【水曜日以外】9:00～17:00 【水曜日】8:30～17:15 ただし、年末年始（12/28～1/3）はお休みです",
+        "address": "埼玉県鴻巣市人形1-4-20 電話：048-540-3333",
+        "hours": "【水曜日以外】9:00～17:00",
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.konosu-kanko.jp/hinanosato/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-217-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.521286,
+          36.066757
+        ]
+      },
+      "properties": {
+        "name": "鴻巣市 (A001) 【水曜日】鴻巣市上下水道部下水道課",
+        "municipality": "鴻巣市 (A001)",
+        "locationName": "【水曜日】鴻巣市上下水道部下水道課",
+        "address": "埼玉県鴻巣市中央1-1 電話：048-541-1321",
+        "hours": "【水曜日以外】9:00～17:00",
+        "round": "第11弾",
+        "issueDate": "2019/12/14",
+        "url": "http://www.city.kounosu.saitama.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-217-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6696,11 +7520,34 @@ const mhcardGeoJSON = {
         "name": "鴻巣市 (B001) 【火曜日以外】コウノトリ野生復帰センター「天空の里」",
         "municipality": "鴻巣市 (B001)",
         "locationName": "【火曜日以外】コウノトリ野生復帰センター「天空の里」",
-        "address": "埼玉県鴻巣市明用632 電話:048-594-6311 【火曜日】鴻巣市上下水道部下水道課 鴻巣市中央1-1 電話:048-541-1321",
-        "hours": "【火曜日以外】9:00～16:45（3月～10月） 9:00～16:00（11月～2月） 【火曜日】8:30～17:15 ただし、年末年始（12月29日から1月3日）はお休みです",
+        "address": "埼玉県鴻巣市明用632 電話:048-594-6311",
+        "hours": "【火曜日以外】9:00～16:45（3月～10月） 9:00～16:00（11月～2月）",
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "http://www.city.kounosu.saitama.jp/site/konotori/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-217-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.452499,
+          36.086197
+        ]
+      },
+      "properties": {
+        "name": "鴻巣市 (B001) 【火曜日】鴻巣市上下水道部下水道課",
+        "municipality": "鴻巣市 (B001)",
+        "locationName": "【火曜日】鴻巣市上下水道部下水道課",
+        "address": "埼玉県鴻巣市明用632 電話:048-594-6311 【火曜日】鴻巣市上下水道部下水道課 鴻巣市中央1-1 電話:048-541-1321",
+        "hours": "【火曜日以外】9:00～16:45（3月～10月） 9:00～16:00（11月～2月）",
+        "round": "第20弾",
+        "issueDate": "2023/07/28",
+        "url": "http://www.city.kounosu.saitama.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-217-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6714,14 +7561,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "深谷市 (A001) 深谷テラスパーク管理棟事務所 埼玉県深谷市花園114 電話:048-579-2022",
+        "name": "深谷市 (A001) 深谷テラスパーク管理棟事務所",
         "municipality": "深谷市 (A001)",
-        "locationName": "深谷テラスパーク管理棟事務所 埼玉県深谷市花園114 電話:048-579-2022",
+        "locationName": "深谷テラスパーク管理棟事務所",
         "address": "埼玉県深谷市花園114 電話:048-579-2022",
         "hours": "9:00~17:00 ただし、年末年始はお休みです",
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-218-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6735,14 +7583,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "深谷市 (B001) 道の駅おかべ ふるさと物産センター 埼玉県深谷市岡部688-1 電話:048-585-5001",
+        "name": "深谷市 (B001) 道の駅おかべ ふるさと物産センター",
         "municipality": "深谷市 (B001)",
-        "locationName": "道の駅おかべ ふるさと物産センター 埼玉県深谷市岡部688-1 電話:048-585-5001",
+        "locationName": "道の駅おかべ ふるさと物産センター",
         "address": "埼玉県深谷市岡部688-1 電話:048-585-5001",
         "hours": "10：00～17：00",
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-218-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6751,19 +7600,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.281708,
-          36.197018
+          139.243576,
+          36.18111
         ]
       },
       "properties": {
         "name": "深谷市 (C001) 【平日】深谷市役所水道庁舎2F 下水道工務課",
         "municipality": "深谷市 (C001)",
         "locationName": "【平日】深谷市役所水道庁舎2F 下水道工務課",
-        "address": "役所水道庁舎2F 下水道工務課 埼玉県深谷市岡部1086 電話:048-577-7542 【土日祝日】深谷市役所本庁舎 警備員室 埼玉県深谷市仲町11-1 電話:048-571-1211",
-        "hours": "【平日】9:00～17:00 【土日祝日】9:00～17:00 ただし、年末年始はお休みです",
+        "address": "埼玉県深谷市岡部1086 電話:048-577-7542",
+        "hours": "【平日】9:00～17:00",
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.fukaya.saitama.jp/soshiki/kankyosuido/gesuido/tanto/00218/18676.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-218-C-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.281769,
+          36.197369
+        ]
+      },
+      "properties": {
+        "name": "深谷市 (C001) 【土日祝日】深谷市役所本庁舎 警備員室",
+        "municipality": "深谷市 (C001)",
+        "locationName": "【土日祝日】深谷市役所本庁舎 警備員室",
+        "address": "埼玉県深谷市仲町11-1 電話:048-571-1211",
+        "hours": "【土日祝日】9:00～17:00 ただし、年末年始はお休みです",
+        "round": "第26弾",
+        "issueDate": "2025/07/25",
+        "url": "https://www.city.fukaya.saitama.jp/soshiki/kankyosuido/gesuido/tanto/00218/18676.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-218-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6785,6 +7657,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.ageo.lg.jp/site/suido/list218-1040.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6806,6 +7679,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.ageo-kankou.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-219-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6827,6 +7701,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "https://www.city.soka.saitama.jp/cont/s1410/map/PAGE000000000000055984.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-221-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6848,6 +7723,7 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "https://soka-bunka.jp/smarts/index/60/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-221-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6861,14 +7737,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "越谷市（A001） 市民活動支援センター 埼玉県越谷市弥生町16番1号 越谷ツインシティBシティ5階 電話:048-969-2750",
+        "name": "越谷市（A001） 市民活動支援センター",
         "municipality": "越谷市（A001）",
-        "locationName": "市民活動支援センター 埼玉県越谷市弥生町16番1号 越谷ツインシティBシティ5階 電話:048-969-2750",
+        "locationName": "市民活動支援センター",
         "address": "埼玉県越谷市弥生町16番1号 越谷ツインシティBシティ5階 電話:048-969-2750",
         "hours": "9:00~21:30 ただし年末年始(12/29~1/3)はお休みです",
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-222-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6890,6 +7767,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.koshigaya-sightseeing.jp/ga-yachan_kurayashiki/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-222-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6911,6 +7789,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.koshigaya-sightseeing.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-222-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6924,14 +7803,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "戸田市 (A001) 【平日】戸田市役所 新曽南庁舎 4階 埼玉県戸田市新曽南3-1-5 電話：048-229-4673 【土日祝】さくらパル 埼玉県戸田市新曽南3-1-5 新曽南庁舎2階 電話：048-229-1061 ※2024年7月27日から配布場所が変わりました。",
+        "name": "戸田市 (A001) 【平日】戸田市役所 新曽南庁舎 4階 / 【土日祝】さくらパル",
         "municipality": "戸田市 (A001)",
-        "locationName": "【平日】戸田市役所 新曽南庁舎 4階 埼玉県戸田市新曽南3-1-5 電話：048-229-4673 【土日祝】さくらパル 埼玉県戸田市新曽南3-1-5 新曽南庁舎2階 電話：048-229-1061 ※2024年7月27日から配布場所が変わりました。",
+        "locationName": "【平日】戸田市役所 新曽南庁舎 4階 / 【土日祝】さくらパル",
         "address": "埼玉県戸田市新曽南3-1-5 電話：048-229-4673 【土日祝】さくらパル 埼玉県戸田市新曽南3-1-5 新曽南庁舎2階 電話：048-229-1061 ※2024年7月27日から配布場所が変わりました。",
         "hours": "【平日】8:30〜17:15 【土日祝】9:00〜19:00（さくらパルの休館日等は除く） ただし、12月29日～1月3日はお休みです",
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-224-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6953,6 +7833,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.toda.saitama.jp/soshiki/214/keizai-tbic-top.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-224-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6974,6 +7855,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.city.iruma.saitama.jp/soshiki/jogesuidokeeka/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-225-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6995,6 +7877,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.alit.city.iruma.saitama.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-225-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7008,14 +7891,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "志木市 マルイファミリー志木8階 受付 埼玉県志木市本町5丁目26番1号 電話：048-474-3030(志木市文化スポーツ振興公社) (問合せ先) 志木市水道庁舎 電話：048-473-1299",
+        "name": "志木市 マルイファミリー志木8階 受付",
         "municipality": "志木市",
-        "locationName": "マルイファミリー志木8階 受付 埼玉県志木市本町5丁目26番1号 電話：048-474-3030(志木市文化スポーツ振興公社) (問合せ先) 志木市水道庁舎 電話：048-473-1299",
+        "locationName": "マルイファミリー志木8階 受付",
         "address": "埼玉県志木市本町5丁目26番1号 電話：048-474-3030(志木市文化スポーツ振興公社) (問合せ先) 志木市水道庁舎 電話：048-473-1299",
         "hours": "8:30～17:00 施設の事情で休館する場合がありますので、志木市民会館HPを確認して下さい",
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-228-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7037,6 +7921,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.okekan.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-231-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7058,6 +7943,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "http://www.okekan.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-231-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7079,6 +7965,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.city.kuki.lg.jp/shisei/shisetsu/shiyakusho/1006530.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-232-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7100,6 +7987,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.kuki.lg.jp/shisei/shisetsu/shiyakusho/1006529.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-232-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -7121,6 +8009,7 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "https://www.city.kitamoto.lg.jp/soshiki/toshiseibi/kensetsu/gyomu/g2/mhc/14043.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-233-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7129,19 +8018,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.456619,
-          35.856865
+          139.549149,
+          35.856644
         ]
       },
       "properties": {
         "name": "富士見市 富士見市役所下水道課",
         "municipality": "富士見市",
         "locationName": "富士見市役所下水道課",
-        "address": "所下水道課 埼玉県富士見市大字鶴馬1800番地の1（分館3階） 電話：049-251-2711（内線431） 【土日祝日】富士見市役所警備員室 埼玉県富士見市大字鶴馬1800番地の1（本庁舎地下1階） 電話：049-251-2711",
+        "address": "埼玉県富士見市大字鶴馬1800番地の1（分館3階） 電話：049-251-2711（内線431） 【土日祝日】",
         "hours": "【平日】8：30～17：15 【土日祝日】9：00～17：00 ただし、年末年始はお休みです",
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.city.fujimi.saitama.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-235-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.549149,
+          35.856644
+        ]
+      },
+      "properties": {
+        "name": "富士見市 富士見市役所警備員室",
+        "municipality": "富士見市",
+        "locationName": "富士見市役所警備員室",
+        "address": "埼玉県富士見市大字鶴馬1800番地の1（本庁舎地下1階） 電話：049-251-2711",
+        "hours": "【平日】8：30～17：15 【土日祝日】9：00～17：00 ただし、年末年始はお休みです",
+        "round": "第12弾",
+        "issueDate": "2020/04/25",
+        "url": "https://www.city.fujimi.saitama.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-235-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7163,6 +8075,7 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "https://mitsui-shopping-park.com/lalaport/shinmisato/shopguide/701505.html?msockid=19c2c2c4db1e65243f39d6abdaf46457",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-237-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7179,11 +8092,34 @@ const mhcardGeoJSON = {
         "name": "蓮田市 蓮田駅西口行政センター",
         "municipality": "蓮田市",
         "locationName": "蓮田駅西口行政センター",
-        "address": "埼玉県蓮田市本町6番1号プレックス蓮田2階 電話:048-764-5111 【木曜日、祝日】中央公民館 埼玉県蓮田市東6丁目1番8号 電話:048-769-2002 （問合せ先） 蓮田市上下水道部下水道課 電話:048-768-1111",
+        "address": "埼玉県蓮田市本町6番1号プレックス蓮田2階 電話:048-764-5111 【木曜日、祝日】",
         "hours": "【木曜日、祝日以外】8.30～17：15 ただし、年末年始はお休みです 【木曜日、祝日】9:00～17:00 ※蓮田駅西口行政センターの休所日のみこちらで配布します ただし、年末年始はお休みです",
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city.hasuda.saitama.jp/kurashi/gyouseicenter/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-238-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.652557,
+          35.97924
+        ]
+      },
+      "properties": {
+        "name": "蓮田市 中央公民館",
+        "municipality": "蓮田市",
+        "locationName": "中央公民館",
+        "address": "埼玉県蓮田市東6丁目1番8号 電話:048-769-2002 （問合せ先） 蓮田市上下水道部下水道課 電話:048-768-1111",
+        "hours": "【木曜日、祝日以外】8.30～17：15 ただし、年末年始はお休みです 【木曜日、祝日】9:00～17:00 ※蓮田駅西口行政センターの休所日のみこちらで配布します ただし、年末年始はお休みです",
+        "round": "第22弾",
+        "issueDate": "2024/04/26",
+        "url": "https://www.city.hasuda.saitama.jp/kominkan/kyoiku/shogai/kominkan/cyuuoukouminnkann.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-238-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7205,6 +8141,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "https://www.stgesui.or.jp/kumiai/jouhou/shisetsu/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-239-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7218,14 +8155,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "日高市 (A001) 【平日】日高市浄化センター埼玉県日高市大字高萩1385番地1電話：042-989-2771【休日】日高市役所埼玉県日高市大字南平沢1020番地電話：042-989-2111",
+        "name": "日高市 (A001) 【平日】日高市浄化センタ / 【休日】日高市役",
         "municipality": "日高市 (A001)",
-        "locationName": "【平日】日高市浄化センター埼玉県日高市大字高萩1385番地1電話：042-989-2771【休日】日高市役所埼玉県日高市大字南平沢1020番地電話：042-989-2111",
+        "locationName": "【平日】日高市浄化センタ / 【休日】日高市役",
         "address": "ー埼玉県日高市大字高萩1385番地1電話：042-989-2771【休日】日高市役所埼玉県日高市大字南平沢1020番地電話：042-989-2111",
         "hours": "8：30～17：15",
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-242-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7239,14 +8177,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "日高市 (B001) 高麗公民館 日高市大字栗坪92番地２ 電話:042-989-2381（年末年始１２月２９日～１月３日を除く） (問合せ先) 日高市浄化センター 電話:042-989-2771（土日祝日を除く)",
+        "name": "日高市 (B001) 高麗公民館 日高市大字栗坪92番地２",
         "municipality": "日高市 (B001)",
-        "locationName": "高麗公民館 日高市大字栗坪92番地２ 電話:042-989-2381（年末年始１２月２９日～１月３日を除く） (問合せ先) 日高市浄化センター 電話:042-989-2771（土日祝日を除く)",
+        "locationName": "高麗公民館 日高市大字栗坪92番地２",
         "address": "日高市 (B001)",
         "hours": "8：30～17：00 ただし、年末年始（12月29日～1月3日）はお休みです",
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-242-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7260,14 +8199,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "吉川市 ラッピーランド(平日、休日とも) 埼玉県吉川市木売1－7－17 電話：048-983-7020",
+        "name": "吉川市 ラッピーランド(平日、休日とも)",
         "municipality": "吉川市",
-        "locationName": "ラッピーランド(平日、休日とも) 埼玉県吉川市木売1－7－17 電話：048-983-7020",
+        "locationName": "ラッピーランド(平日、休日とも)",
         "address": "埼玉県吉川市木売1－7－17 電話：048-983-7020",
         "hours": "10:00～17:00 ただし、年末年始(12/29～1/3)はお休みです",
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-243-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7289,6 +8229,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "http://www.city.fujimino.saitama.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-245-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7310,6 +8251,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.shiraoka-ajisai.center/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-246-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7326,11 +8268,34 @@ const mhcardGeoJSON = {
         "name": "伊奈町 伊奈町総合センター",
         "municipality": "伊奈町",
         "locationName": "伊奈町総合センター",
-        "address": "埼玉県北足立郡伊奈町中央五丁目179番地 電話：048-722-9111 【休館日】伊奈町上下水道庁舎埼玉県北足立郡伊奈町大字小室5048電話：048-721-5555",
+        "address": "埼玉県北足立郡伊奈町中央五丁目179番地 電話：048-722-9111  【休館日】",
         "hours": "9:00～17:00（12:00～13:00を除く） ただし、月曜は休館日です ※臨時休館日の場合がありますので、来館の際は事前にご確認ください 【休館日】9:00～17:00（12:00～13:00を除く） ただし、年末年始及び土日祝日はお休みです",
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://inamachi.info/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-301-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.617386,
+          35.995522
+        ]
+      },
+      "properties": {
+        "name": "伊奈町 伊奈町上下水道庁舎",
+        "municipality": "伊奈町",
+        "locationName": "伊奈町上下水道庁舎",
+        "address": "埼玉県北足立郡伊奈町大字小室5048電話：048-721-5555",
+        "hours": "9:00～17:00（12:00～13:00を除く） ただし、月曜は休館日です ※臨時休館日の場合がありますので、来館の際は事前にご確認ください 【休館日】9:00～17:00（12:00～13:00を除く） ただし、年末年始及び土日祝日はお休みです",
+        "round": "第10弾",
+        "issueDate": "2019/08/07",
+        "url": "http://www.town.saitama-ina.lg.jp/0000000624.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-301-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7352,6 +8317,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.town.namegawa.saitama.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-341-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7373,6 +8339,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "http://www.kankou-ogawa.com/untitled182.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-343-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7389,11 +8356,34 @@ const mhcardGeoJSON = {
         "name": "川島町 【平日】一般社団法人さまちか事務所",
         "municipality": "川島町",
         "locationName": "【平日】一般社団法人さまちか事務所",
-        "address": "埼玉県比企郡川島町大字下八ツ林923 コミュニティセンター２階 電話：049-298-3377 【土日・祝日】川島町役場本庁舎 日直 埼玉県比企郡川島町大字下八ツ林870-1 電話：049-297-1811",
+        "address": "埼玉県比企郡川島町大字下八ツ林923 コミュニティセンター２階 電話：049-298-3377",
         "hours": "9:00～17：00 ただし、年末年始（12/29〜1/3）はお休みです",
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://samachika.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-346-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.484558,
+          35.991493
+        ]
+      },
+      "properties": {
+        "name": "川島町 【土日・祝日】川島町役場本庁舎 日直",
+        "municipality": "川島町",
+        "locationName": "【土日・祝日】川島町役場本庁舎 日直",
+        "address": "埼玉県比企郡川島町大字下八ツ林870-1 電話：049-297-1811",
+        "hours": "9:00～17：00 ただし、年末年始（12/29〜1/3）はお休みです",
+        "round": "第11弾",
+        "issueDate": "2019/12/14",
+        "url": "https://www.town.kawajima.saitama.jp/1825.htm",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-346-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7415,6 +8405,7 @@ const mhcardGeoJSON = {
         "round": "第3弾",
         "issueDate": "2016/12/01",
         "url": "https://www.town.yoshimi.saitama.jp/soshiki/shogaigakushuk/7/909.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-347-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7428,14 +8419,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "寄居町 寄居駅南口駅前拠点施設Yotteco 埼玉県大里郡寄居町大字寄居１２３１番地１１ （問い合わせ先） 寄居町役場 上下水道課 電話：048-581-2121（内線268）",
+        "name": "寄居町 寄居駅南口駅前拠点施設Yotteco",
         "municipality": "寄居町",
-        "locationName": "寄居駅南口駅前拠点施設Yotteco 埼玉県大里郡寄居町大字寄居１２３１番地１１ （問い合わせ先） 寄居町役場 上下水道課 電話：048-581-2121（内線268）",
+        "locationName": "寄居駅南口駅前拠点施設Yotteco",
         "address": "埼玉県大里郡寄居町大字寄居１２３１番地１１ （問い合わせ先） 寄居町役場 上下水道課 電話：048-581-2121（内線268）",
         "hours": "9：00～1７：00 ただし、年末年始、臨時休館日はお休みです。",
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-408-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7452,11 +8444,34 @@ const mhcardGeoJSON = {
         "name": "宮代町 (A001) 新しい村",
         "municipality": "宮代町 (A001)",
         "locationName": "新しい村",
-        "address": "埼玉県南埼玉郡宮代町字山崎777-1 電話:0480-36-3441 【月曜日（祝日を除く）】宮代町上下水道事務所 埼玉県南埼玉郡宮代町字宮東51 電話:0480-33-5554 (問合せ先) 宮代町上下水道事務所 電話:0480-33-5554",
+        "address": "埼玉県南埼玉郡宮代町字山崎777-1 電話:0480-36-3441 【月曜日（祝日を除く）】",
         "hours": "【新しい村】9：30～17：00 ただし、月曜日はお休みです 月曜日が祝日の場合は配布します 【上下水道事務所】8：30～17：15 月曜日（新しい村の休業日）に配布します ただし、年末年始はお休みです",
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.atarasiimura.com",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-442-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.73909,
+          36.012714
+        ]
+      },
+      "properties": {
+        "name": "宮代町 (A001) 宮代町上下水道事務所",
+        "municipality": "宮代町 (A001)",
+        "locationName": "宮代町上下水道事務所",
+        "address": "埼玉県南埼玉郡宮代町字宮東51 電話:0480-33-5554 (問合せ先) 宮代町上下水道事務所 電話:0480-33-5554",
+        "hours": "【新しい村】9：30～17：00 ただし、月曜日はお休みです 月曜日が祝日の場合は配布します 【上下水道事務所】8：30～17：15 月曜日（新しい村の休業日）に配布します ただし、年末年始はお休みです",
+        "round": "第12弾",
+        "issueDate": "2020/04/25",
+        "url": "http://www.town.miyashiro.lg.jp/0000013667.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-442-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7478,6 +8493,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.muji.com/jp/ja/shop/detail/046636",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-442-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7499,6 +8515,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "http://www2.chiba-muse.or.jp/www/SCIENCE/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7520,6 +8537,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.chibacity-ta.or.jp/spots/ctic",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7533,14 +8551,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "千葉市 (B001) 千葉市幕張観光情報センター 千葉市美浜区ひび野2-110 ＪＲ海浜幕張駅構内 (問合せ先） 千葉市建設局下水道企画部下水道営業課 電話：043-245-5411",
+        "name": "千葉市 (B001) 千葉市幕張観光情報センター 千葉市美浜区ひび野2-110 ＪＲ海浜幕張駅構内 (問合せ先） 千葉市建設",
         "municipality": "千葉市 (B001)",
-        "locationName": "千葉市幕張観光情報センター 千葉市美浜区ひび野2-110 ＪＲ海浜幕張駅構内 (問合せ先） 千葉市建設局下水道企画部下水道営業課 電話：043-245-5411",
+        "locationName": "千葉市幕張観光情報センター 千葉市美浜区ひび野2-110 ＪＲ海浜幕張駅構内 (問合せ先） 千葉市建設",
         "address": "局下水道企画部下水道営業課 電話：043-245-5411",
         "hours": "【平日】10：00～18：00 【休日】10：00～17：00 ただし、年末年始12月28日～1月3日）はお休みです",
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7562,6 +8581,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.choshikanko.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7583,6 +8603,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.city.ichikawa.lg.jp/cul02/1111000017.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7604,6 +8625,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.city.ichikawa.lg.jp/zoo/shokubutuen.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7625,6 +8647,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.ichikawa.lg.jp/library/guide/1002.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-203-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7646,6 +8669,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.ichikawa.lg.jp/library/guide/1014.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-203-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7667,6 +8691,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://www.city.funabashi.lg.jp/soshiki/110000/110400/110409/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7680,14 +8705,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "館山市 (A001) 館山駅東口観光案内所 千葉県館山市北条1879-2 電話：0470-22-2000",
+        "name": "館山市 (A001) 館山駅東口観光案内所",
         "municipality": "館山市 (A001)",
-        "locationName": "館山駅東口観光案内所 千葉県館山市北条1879-2 電話：0470-22-2000",
+        "locationName": "館山駅東口観光案内所",
         "address": "千葉県館山市北条1879-2 電話：0470-22-2000",
         "hours": "9:00～17：00 ただし、年末年始（12/29～1/3）は10：00～16：00の配布となります",
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7709,6 +8735,29 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.tateyama.chiba.jp/minato/page100034.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-205-B01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.924973,
+          35.381168
+        ]
+      },
+      "properties": {
+        "name": "木更津市 木更津市観光案内所",
+        "municipality": "木更津市",
+        "locationName": "木更津市観光案内所",
+        "address": "千葉県木更津市富士見1丁目2番1号電話：0438-22-7711（問い合わせ先）",
+        "hours": "9：00～17：00ただし、年末年始はお休みです",
+        "round": "第10弾",
+        "issueDate": "2019/08/07",
+        "url": "http://www.kisarazu.gr.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7722,14 +8771,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "木更津市 木更津市観光案内所",
+        "name": "木更津市 木更津市役所下水道推進室",
         "municipality": "木更津市",
-        "locationName": "木更津市観光案内所",
+        "locationName": "木更津市役所下水道推進室",
         "address": "所千葉県木更津市富士見1丁目2番1号電話：0438-22-7711（問い合わせ先）木更津市役所下水道推進室電話：0438-37-9503",
         "hours": "9：00～17：00ただし、年末年始はお休みです",
         "round": "第10弾",
         "issueDate": "2019/08/07",
-        "url": "http://www.kisarazu.gr.jp/",
+        "url": "https://www.city.kisarazu.lg.jp/soshiki/toshiseibi/shitasuidosuishinshitsu/1/3320.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7751,6 +8801,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.matsudo-kankou.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7772,6 +8823,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.city.matsudo.chiba.jp/shisetsu-guide/kaikan_hole/bunka-hole/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-207-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -7793,6 +8845,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.city.noda.chiba.jp/kurashi/kankyo/gesui/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7814,6 +8867,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "http://www2.chiba-muse.or.jp/SEKIYADO/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7835,6 +8889,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.noda.chiba.jp/shisetsu/shiyakusho/1001045.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-208-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7856,6 +8911,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "http://www.city.sakura.lg.jp/sakura/museum/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-212-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -7877,6 +8933,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city.sakura.lg.jp/soshiki/koenryokuchika/3/5/15384.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-212-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7898,6 +8955,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://minorinosato-togane.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7919,6 +8977,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://www.city.narashino.lg.jp/kigyoukyoku/about/gesuido/manholecard/narashino_city_manholecard.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7940,6 +8999,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.narashino.lg.jp/soshiki/kankyoseisaku/gyomu/shisetu/koenshiseki/yatuhigatakoen.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-216-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7961,6 +9021,29 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.kashiwa.lg.jp/somu/living_environment/gesui/1561/manholecard.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-217-A-01.png",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.577774,
+          35.999477
+        ]
+      },
+      "properties": {
+        "name": "柏市 (A001) 柏市観光案内所 まるっと柏",
+        "municipality": "柏市 (A001)",
+        "locationName": "柏市観光案内所 まるっと柏",
+        "address": "上下水道局３階総務課 柏市千代田一丁目２番３２号 電話:04-7166-3181 【土日祝】柏市観光案内所 まるっと柏 柏市柏1-1-11ファミリかしわ3階 電話:04-7128-5610",
+        "hours": "【平日】 9:00~17:00 ただし、年末年始(12/29-1/3)はお休みです 【土日祝】 10:00~18:00 ただし，年末年始(12/27から1/4)はお休みです",
+        "round": "第02弾",
+        "issueDate": "2016/08/01",
+        "url": "https://www.city.kashiwa.lg.jp/shoko/shiseijoho/about_kashiwa/tourism/annaijo/annaijo.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-217-A-01.png",
         "type": "mhcard"
       }
     },
@@ -7982,6 +9065,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.city.kashiwa.lg.jp/shoko/shiseijoho/about_kashiwa/tourism/annaijo/annaijo.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-217-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8003,6 +9087,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.kazusa-sarashina.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8016,14 +9101,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "流山市 流山おおたかの森駅前観光情報センター（スターツおおたかの森ホール2階）流山市おおたかの森北1-2-1 (問い合わせ先)流山市上下水道局下水道建設課電話：04-7150-6097",
+        "name": "流山市 流山おおたかの森駅前観光情報センター（スターツおおたかの森ホール2階）流山市おおたかの森北1-2-1 (問い合わせ先)流山市",
         "municipality": "流山市",
-        "locationName": "流山おおたかの森駅前観光情報センター（スターツおおたかの森ホール2階）流山市おおたかの森北1-2-1 (問い合わせ先)流山市上下水道局下水道建設課電話：04-7150-6097",
+        "locationName": "流山おおたかの森駅前観光情報センター（スターツおおたかの森ホール2階）流山市おおたかの森北1-2-1 (問い合わせ先)流山市",
         "address": "上下水道局下水道建設課電話：04-7150-6097",
         "hours": "9:00～17:00（平日および土日祝祭日を含みます）",
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-220-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8032,19 +9118,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.577774,
-          35.999477
+          140.101151,
+          35.721539
         ]
       },
       "properties": {
         "name": "八千代市 【土日祝】株式会社八千代市水道サービス",
         "municipality": "八千代市",
         "locationName": "【土日祝】株式会社八千代市水道サービス",
-        "address": "上下水道局1階給排水相談課窓口 千葉県八千代市大和田新田312-5電話：047-483-6155【土日祝】株式会社八千代市水道サービス千葉県八千代市萱田町596-19（八千代市上下水道局敷地内）電話：047-485-6656(問合せ先)八千代市上下水道局 下水道課電話：047-482-0924",
+        "address": "千葉県八千代市萱田町596-19（八千代市上下水道局敷地内）電話：047-485-6656(問合せ先)",
         "hours": "8:30～17:00ただし、年末年始（12/29～1/3）はお休みです",
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.yss24.co.jp/company/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-221-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.577774,
+          35.999477
+        ]
+      },
+      "properties": {
+        "name": "八千代市 八千代市上下水道局 下水道課",
+        "municipality": "八千代市",
+        "locationName": "八千代市上下水道局 下水道課",
+        "address": "上下水道局1階給排水相談課窓口 千葉県八千代市大和田新田312-5電話：047-483-6155【土日祝】株式会社八千代市水道サービス千葉県八千代市萱田町596-19（八千代市上下水道局敷地内）電話：047-485-6656(問合せ先)八千代市上下水道局 下水道課電話：047-482-0924",
+        "hours": "8:30～17:00ただし、年末年始（12/29～1/3）はお休みです",
+        "round": "第07弾",
+        "issueDate": "2018/04/28",
+        "url": "https://www.city.yachiyo.lg.jp/soshiki/93/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-221-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8066,6 +9175,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.abikoinfo.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-222-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8087,6 +9197,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.abikoinfo.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-222-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8108,6 +9219,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://www.city.kamagaya.chiba.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-224-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8129,6 +9241,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.city.urayasu.lg.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-227-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8150,6 +9263,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.urayasu.lg.jp/kanko/kyodo/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-227-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8171,6 +9285,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.city.sodegaura.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-229-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8192,6 +9307,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.yachimata.lg.jp/soshiki/26/54793.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-230-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8213,6 +9329,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.shiroi.chiba.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-232-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8234,6 +9351,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.oamishirasato.lg.jp/0000005447.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-239-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8255,6 +9373,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.town.shibayama.lg.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-409-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8271,11 +9390,34 @@ const mhcardGeoJSON = {
         "name": "長生村 (A001) 【平日】長生村役場下水環境課",
         "municipality": "長生村 (A001)",
         "locationName": "【平日】長生村役場下水環境課",
-        "address": "千葉県長生郡長生村本郷1番地77 電話:0475-32-2494 【土日祝日】長生村文化会館 千葉県長生郡長生村岩沼2119番地 電話:0475-32-5100",
+        "address": "千葉県長生郡長生村本郷1番地77 電話:0475-32-2494",
         "hours": "9:00～16:30（平日・土日祝日共通） ただし、年末年始（12/28～1/3）はお休みです",
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.vill.chosei.chiba.jp/soshiki/6-0-0-0-0_1.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-423-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.350952,
+          35.40414
+        ]
+      },
+      "properties": {
+        "name": "長生村 (A001) 【土日祝日】長生村文化会館",
+        "municipality": "長生村 (A001)",
+        "locationName": "【土日祝日】長生村文化会館",
+        "address": "千葉県長生郡長生村岩沼2119番地 電話:0475-32-5100",
+        "hours": "9:00～16:30（平日・土日祝日共通） ただし、年末年始（12/28～1/3）はお休みです",
+        "round": "第21弾",
+        "issueDate": "2023/12/15",
+        "url": "http://www.chosei-bunkahall.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-423-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8292,11 +9434,34 @@ const mhcardGeoJSON = {
         "name": "長生村 (B001) 【平日】長生村保健センター",
         "municipality": "長生村 (B001)",
         "locationName": "【平日】長生村保健センター",
-        "address": "千葉県長生郡長生村本郷1番地77 電話:0475-32-2117 【土日祝日】長生村交流センター 千葉県長生郡長生村岩沼874番地1 電話:0475-32-3770 （問合せ先） 長生村役場 下水環境課 電話:0475-32-2494",
+        "address": "千葉県長生郡長生村本郷1番地77 電話:0475-32-2117",
         "hours": "9:00～16:30 ただし、年末年始（12/28～1/3）はお休みです",
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.vill.chosei.chiba.jp/soshiki/16-7-0-0-0_1.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-423-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.34697,
+          35.404217
+        ]
+      },
+      "properties": {
+        "name": "長生村 (B001) 【土日祝日】長生村交流センター",
+        "municipality": "長生村 (B001)",
+        "locationName": "【土日祝日】長生村交流センター",
+        "address": "千葉県長生郡長生村岩沼874番地1 電話:0475-32-3770 （問合せ先） 長生村役場 下水環境課 電話:0475-32-2494",
+        "hours": "9:00～16:30 ただし、年末年始（12/28～1/3）はお休みです",
+        "round": "第26弾",
+        "issueDate": "2025/07/25",
+        "url": "https://chosei-koryu.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-423-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8318,6 +9483,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.gotokyo.org/jp/plan/tourist-info-center/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-000-A01-3.jpg",
         "type": "mhcard"
       }
     },
@@ -8331,14 +9497,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "東京23区（A001） CADAN大手町 東京都千代田区大手町2-6-3 TOKYO TORCH銭瓶町ビルディング１階ぜにがめプレイス 電話：070-6464-1438 (問合せ先) 東京都下水道局総務部広報サービス課 電話：03-5320-6511",
+        "name": "東京23区（A001） CADAN大手町",
         "municipality": "東京23区（A001）",
-        "locationName": "CADAN大手町 東京都千代田区大手町2-6-3 TOKYO TORCH銭瓶町ビルディング１階ぜにがめプレイス 電話：070-6464-1438 (問合せ先) 東京都下水道局総務部広報サービス課 電話：03-5320-6511",
+        "locationName": "CADAN大手町",
         "address": "東京都千代田区大手町2-6-3 TOKYO TORCH銭瓶町ビルディング１階ぜにがめプレイス 電話：070-6464-1438 (問合せ先) 東京都下水道局総務部広報サービス課 電話：03-5320-6511",
         "hours": "12：00～19：00（日・月・祝日・年末年始を除く）",
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8360,6 +9527,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.nijinogesuidoukan.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8373,14 +9541,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "東京23区（C001） 東京観光情報センター 京成上野 東京都台東区上野公園1-60 京成上野駅改札口前 (問合せ先) 東京都下水道局総務部広報サービス課（平日のみ） 電話：03-5320-6511 ※東京観光情報センター京成上野へのお問い合わせはご遠慮ください。",
+        "name": "東京23区（C001） 東京観光情報センター 京成上野",
         "municipality": "東京23区（C001）",
-        "locationName": "東京観光情報センター 京成上野 東京都台東区上野公園1-60 京成上野駅改札口前 (問合せ先) 東京都下水道局総務部広報サービス課（平日のみ） 電話：03-5320-6511 ※東京観光情報センター京成上野へのお問い合わせはご遠慮ください。",
+        "locationName": "東京観光情報センター 京成上野",
         "address": "東京都台東区上野公園1-60 京成上野駅改札口前 (問合せ先) 東京都下水道局総務部広報サービス課（平日のみ） 電話：03-5320-6511 ※東京観光情報センター京成上野へのお問い合わせはご遠慮ください。",
         "hours": "9：30～18：30",
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8394,14 +9563,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "東京23区（D001） 第一書林（新小岩北口店） 電話：03-3696-2753 東京都葛飾区西新小岩1-2-11喜久屋ビル1F ※カードをご希望のお客様は、レジ列にご整列いただき、商品ご購入の方のお会計が終わるまでお待ちください。 （問合せ先） 葛飾区観光課 電話：03-3838-5558",
+        "name": "東京23区（D001） 第一書林（新小岩北口店）",
         "municipality": "東京23区（D001）",
-        "locationName": "第一書林（新小岩北口店） 電話：03-3696-2753 東京都葛飾区西新小岩1-2-11喜久屋ビル1F ※カードをご希望のお客様は、レジ列にご整列いただき、商品ご購入の方のお会計が終わるまでお待ちください。 （問合せ先） 葛飾区観光課 電話：03-3838-5558",
+        "locationName": "第一書林（新小岩北口店）",
         "address": "東京都葛飾区西新小岩1-2-11喜久屋ビル1F ※カードをご希望のお客様は、レジ列にご整列いただき、商品ご購入の方のお会計が終わるまでお待ちください。 （問合せ先） 葛飾区観光課 電話：03-3838-5558",
         "hours": "【平日・土】10:00～21:00 【日・祝日】10:00～20:00 元旦はお休みです。",
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8423,6 +9593,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://shinagawa-kanko.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8444,6 +9615,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://infoandcafesquare.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-M-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8457,14 +9629,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "東京23区 (N001) 丸吉玩具店 東京都葛飾区立石1-21-2 ※臨時休業の場合がございます。その際にはテクノプラザかつしか（葛飾区青戸7丁目2-1）で配布を行います。 （問合せ先） 葛飾区観光課（平日のみ） 電話：03-3838-5558",
+        "name": "東京23区 (N001) 丸吉玩具店",
         "municipality": "東京23区 (N001)",
-        "locationName": "丸吉玩具店 東京都葛飾区立石1-21-2 ※臨時休業の場合がございます。その際にはテクノプラザかつしか（葛飾区青戸7丁目2-1）で配布を行います。 （問合せ先） 葛飾区観光課（平日のみ） 電話：03-3838-5558",
+        "locationName": "丸吉玩具店",
         "address": "東京都葛飾区立石1-21-2 ※臨時休業の場合がございます。その際にはテクノプラザかつしか（葛飾区青戸7丁目2-1）で配布を行います。 （問合せ先） 葛飾区観光課（平日のみ） 電話：03-3838-5558",
         "hours": "13：00～18：00 ※臨時休業の場合がございます。その際にはテクノプラザかつしか（葛飾区青戸7丁目2-1）で配布を行います。",
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-N-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8478,14 +9651,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "東京23区 (C101) 練馬区立大泉図書館 練馬区大泉学園町2-21-17 (問合せ先) 練馬区商工観光課観光係 電話：03-5984-1032",
+        "name": "東京23区 (C101) 練馬区立大泉図書館 練馬区大泉学園町2-21-17 (問合せ先) 練馬区商工観光課観光係",
         "municipality": "東京23区 (C101)",
-        "locationName": "練馬区立大泉図書館 練馬区大泉学園町2-21-17 (問合せ先) 練馬区商工観光課観光係 電話：03-5984-1032",
+        "locationName": "練馬区立大泉図書館 練馬区大泉学園町2-21-17 (問合せ先) 練馬区商工観光課観光係",
         "address": "東京23区 (C101)",
         "hours": "【平日】9:00～20:00 【土日祝】9:00～19:00",
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-C101.jpg",
         "type": "mhcard"
       }
     },
@@ -8507,6 +9681,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.gesui.metro.tokyo.lg.jp/business/b4/guide/s-mikawa/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-D01.jpg",
         "type": "mhcard"
       }
     },
@@ -8528,6 +9703,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://museum.toei-anim.co.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-E1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8549,6 +9725,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://shibusawakitaku.tokyo/omiyage/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-F1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8570,6 +9747,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://visit-minato-city.tokyo/ja-jp/places/2774",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-G1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8586,11 +9764,34 @@ const mhcardGeoJSON = {
         "name": "東京23区 (I101) いたばし観光センター",
         "municipality": "東京23区 (I101)",
         "locationName": "いたばし観光センター",
-        "address": "東京都板橋区板橋3-14-15 電話:03-3963-5078 休館日：毎週火曜日（祝日の場合はその翌平日）、年末年始 なお、休館日（年末年始を除く）は、 板橋区産業経済部くらしと観光課 東京都板橋区板橋2-65-6情報処理センター6階 電話:03-3579-2251",
+        "address": "東京都板橋区板橋3-14-15 電話:03-3963-5078 休館日：毎週火曜日（祝日の場合はその翌平日）、年末年始  なお、休館日（年末年始を除く）は、",
         "hours": "【いたばし観光センター】9：00～17：00（土日祝日も配布） ただし、火曜日（祝日の場合はその翌平日）、年末年始はお休みです。 なお、いたばし観光センターの休館日は、板橋区くらしと観光課窓口で配布します。 9：00～17：00 ただし、年末年始はお休みです。",
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/1006728.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-I1-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.708633,
+          35.750027
+        ]
+      },
+      "properties": {
+        "name": "東京23区 (I101) 板橋区産業経済部くらしと観光課",
+        "municipality": "東京23区 (I101)",
+        "locationName": "板橋区産業経済部くらしと観光課",
+        "address": "東京都板橋区板橋2-65-6情報処理センター6階 電話:03-3579-2251",
+        "hours": "【いたばし観光センター】9：00～17：00（土日祝日も配布） ただし、火曜日（祝日の場合はその翌平日）、年末年始はお休みです。 なお、いたばし観光センターの休館日は、板橋区くらしと観光課窓口で配布します。 9：00～17：00 ただし、年末年始はお休みです。",
+        "round": "第22弾",
+        "issueDate": "2024/04/26",
+        "url": "https://www.city.itabashi.tokyo.jp/kusei/soshiki/sangyokeizai/1006922.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-I1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8612,6 +9813,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://akabane-sports.com/facilities/forest-park",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-H1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8633,6 +9835,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.ara-amoa.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-J1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8654,6 +9857,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2025/01/16",
         "url": "https://www.city.suginami.tokyo.jp/shisetsu/kouen/02/ogikubo/1054100.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-K1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8675,6 +9879,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://visit-sumida.jp/connect/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-L1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8696,6 +9901,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.tokyo-park.or.jp/park/ukima/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-M1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8717,6 +9923,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.ur-net.go.jp/east/action/akabanedai/index.html?channel=main&msockid=2d65f8d82fc266cd3f5ded012eec6723",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-N1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8738,6 +9945,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://visit-chiyoda.tokyo/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-O1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8759,6 +9967,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://kitabunka.or.jp/tabata/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-Z-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8780,6 +9989,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.nerimakanko.jp/news/detail.php?notice_id=N000000021",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-A1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8801,6 +10011,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "http://techno-plaza.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-B1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8822,6 +10033,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "https://visit-chiyoda.tokyo/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-F-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8843,6 +10055,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "https://www.kanko-shinjuku.jp/office/-/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-O01.jpg",
         "type": "mhcard"
       }
     },
@@ -8856,14 +10069,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "東京都 台東区 (Q001) 台東区生涯学習センター 東京都台東区西浅草3-25-16 (問合せ先) 台東区文化産業観光部観光課 電話：03-5246-1151",
+        "name": "東京都 台東区 (Q001) 台東区生涯学習センター",
         "municipality": "東京都 台東区 (Q001)",
-        "locationName": "台東区生涯学習センター 東京都台東区西浅草3-25-16 (問合せ先) 台東区文化産業観光部観光課 電話：03-5246-1151",
+        "locationName": "台東区生涯学習センター",
         "address": "東京都台東区西浅草3-25-16 (問合せ先) 台東区文化産業観光部観光課 電話：03-5246-1151",
         "hours": "9:00～20:00 ただし、毎月第１・第３・第５月曜日（祝日・休日にあたる場合は翌日）、年末年始（12/29～1/3）はお休みです。",
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100tairoku-Q001-omote.jpg",
         "type": "mhcard"
       }
     },
@@ -8885,6 +10099,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "https://visit-sumida.jp/spot/6196",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-R01.jpg",
         "type": "mhcard"
       }
     },
@@ -8906,6 +10121,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "https://isleshinagawa.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-S01-2.jpg",
         "type": "mhcard"
       }
     },
@@ -8919,14 +10135,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "東京都 大田区 (T001) ①一般社団法人 大田観光協会 大田区南蒲田1-20-20 大田区産業プラザ2階 ②大田区立郷土博物館 大田区南馬込5-11-13 (問合せ先) 大田区産業経済部産業経済課 電話：03-5744-1322",
+        "name": "東京都 大田区 (T001) ①一般社団法人 大田観光協会 大田区南蒲田1-20-20 大田区産業プラザ2階 ②大田区立郷土博物館 大田区南馬込5-11-13 (問合せ先) 大田区産業経済部産業経済課",
         "municipality": "東京都 大田区 (T001)",
-        "locationName": "①一般社団法人 大田観光協会 大田区南蒲田1-20-20 大田区産業プラザ2階 ②大田区立郷土博物館 大田区南馬込5-11-13 (問合せ先) 大田区産業経済部産業経済課 電話：03-5744-1322",
+        "locationName": "①一般社団法人 大田観光協会 大田区南蒲田1-20-20 大田区産業プラザ2階 ②大田区立郷土博物館 大田区南馬込5-11-13 (問合せ先) 大田区産業経済部産業経済課",
         "address": "東京都 大田区 (T001)",
         "hours": "①9:00～17:00 ただし、土曜日/日曜日/祝日/年末年始はお休みです ②9:00～17:00 ただし、月曜日（休日・祝日は開館）、年末年始、他（展示替え等により臨時休館あり）はお休みです",
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-T01.jpg",
         "type": "mhcard"
       }
     },
@@ -8948,6 +10165,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "https://www.kanko-setagaya.jp/?p=we-page-entry&spot=265539&nav=none",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-G-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8961,14 +10179,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "東京都 渋谷区 (H001) 渋谷区立千駄ヶ谷社会教育館 東京都渋谷区千駄ヶ谷1-6-5 (問合せ先) 渋谷区産業観光課 電話：03-3463-2376",
+        "name": "東京都 渋谷区 (H001) 渋谷区立千駄ヶ谷社会教育館",
         "municipality": "東京都 渋谷区 (H001)",
-        "locationName": "渋谷区立千駄ヶ谷社会教育館 東京都渋谷区千駄ヶ谷1-6-5 (問合せ先) 渋谷区産業観光課 電話：03-3463-2376",
+        "locationName": "渋谷区立千駄ヶ谷社会教育館",
         "address": "東京都渋谷区千駄ヶ谷1-6-5 (問合せ先) 渋谷区産業観光課 電話：03-3463-2376",
         "hours": "10:00～17:00 ただし、毎週月曜と年末年始（12/29～1/3）はお休みです。 ※施設の開館時間と配布時間は異なります",
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-H-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8990,6 +10209,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "https://www.city.suginami.tokyo.jp/shisetsu/sangyo/shoko/1007450.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-I-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9011,6 +10231,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "https://sam.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-U01.jpg",
         "type": "mhcard"
       }
     },
@@ -9032,6 +10253,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "https://www.toshima-mirai.or.jp/center/a_kumin/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-J-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9053,6 +10275,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "https://www.kita-bunka.com/si/si02-akabane/si02-1.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-K-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9074,6 +10297,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "https://www.nerimakanko.jp/news/detail.php?notice_id=N000000021",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-V01-2.jpg",
         "type": "mhcard"
       }
     },
@@ -9087,14 +10311,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "東京都 足立区 (L001) あだち産業センター 足立区千住1-5-7 （問合わせ先） 産業経済部産業振興課商業振興係 電話：03-3880-5865",
+        "name": "東京都 足立区 (L001) あだち産業センター 足立区千住1-5-7 （問合わせ先） 産業経済部産業振興課商業振興係",
         "municipality": "東京都 足立区 (L001)",
-        "locationName": "あだち産業センター 足立区千住1-5-7 （問合わせ先） 産業経済部産業振興課商業振興係 電話：03-3880-5865",
+        "locationName": "あだち産業センター 足立区千住1-5-7 （問合わせ先） 産業経済部産業振興課商業振興係",
         "address": "東京都 足立区 (L001)",
         "hours": "9：00～21：00 ただし、年末年始（12/29～1/3）はお休みです",
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-L-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9116,6 +10341,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "https://tokyotouristinfo.com/detail/M0319",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-W01.jpg",
         "type": "mhcard"
       }
     },
@@ -9137,6 +10363,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "http://www.youroad.com/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-X01.jpg",
         "type": "mhcard"
       }
     },
@@ -9158,6 +10385,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "https://www.city.edogawa.tokyo.jp/e066/kuseijoho/gaiyo/shisetsuguide/bunya/koendobutsuen/c_recreation/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-Y01-2.jpg",
         "type": "mhcard"
       }
     },
@@ -9166,19 +10394,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.691727,
-          35.689503
+          139.338806,
+          35.654045
         ]
       },
       "properties": {
         "name": "東京都都市づくり公社 公益財団法人東京都都市づくり公社下水道部",
         "municipality": "東京都都市づくり公社",
         "locationName": "公益財団法人東京都都市づくり公社下水道部",
-        "address": "人東京都都市づくり公社下水道部 東京都八王子市子安町4-7-1サザンスカイタワー八王子7階 電話:042-686-1601 【土日祝日】生活協同組合コープみらいコープ高倉店 東京都八王子市高倉町49-3 電話:042-648-7898 （問合せ先） 公益財団法人東京都都市づくり公社下水道部 電話:042-686-1601",
+        "address": "東京都八王子市子安町4-7-1サザンスカイタワー八王子7階 電話:042-686-1601 【土日祝日】",
         "hours": "【平日】9：00～12：00、13：00～16：00 【休日】10：00～16：00 ただし、年末年始・臨時休館日はお休みです",
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.toshizukuri.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-010-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.369217,
+          35.664776
+        ]
+      },
+      "properties": {
+        "name": "東京都都市づくり公社 生活協同組合コープみらいコープ高倉店",
+        "municipality": "東京都都市づくり公社",
+        "locationName": "生活協同組合コープみらいコープ高倉店",
+        "address": "東京都八王子市高倉町49-3 電話:042-648-7898 （問合せ先） 公益財団法人東京都都市づくり公社下水道部 電話:042-686-1601",
+        "hours": "【平日】9：00～12：00、13：00～16：00 【休日】10：00～16：00 ただし、年末年始・臨時休館日はお休みです",
+        "round": "第27弾",
+        "issueDate": "2025/12/19",
+        "url": "https://map.coopdeli.coop/mirai/shop.php?shop_id=30250212",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-010-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9192,14 +10443,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "八王子市 八王子インフォメーションセンター （ＪＲ八王子駅北口1階） 八王子市旭町1-1 電話：042-622-1900",
+        "name": "八王子市 八王子インフォメーションセンター （ＪＲ八王子駅北口1階） 八王子市旭町1-1",
         "municipality": "八王子市",
-        "locationName": "八王子インフォメーションセンター （ＪＲ八王子駅北口1階） 八王子市旭町1-1 電話：042-622-1900",
+        "locationName": "八王子インフォメーションセンター （ＪＲ八王子駅北口1階） 八王子市旭町1-1",
         "address": "八王子市",
         "hours": "10：00～19：00 年中無休。ただし、設備メンテナンス・清掃のため、不定期に休館する場合があります",
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9221,6 +10473,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.city.tachikawa.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9242,6 +10495,29 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.city.tachikawa.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-202-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.406281,
+          35.715286
+        ]
+      },
+      "properties": {
+        "name": "立川市 (B001) 【休日】立川市役所休日受付窓口",
+        "municipality": "立川市 (B001)",
+        "locationName": "【休日】立川市役所休日受付窓口",
+        "address": "東京都立川市泉町1156-9 電話：042-523-2111",
+        "hours": "8：30～17：00 ただし、年末年始はお休みです",
+        "round": "第12弾",
+        "issueDate": "2020/04/25",
+        "url": "https://www.city.tachikawa.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9263,6 +10539,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.tachikawa.lg.jp/kurashi/suido/gesuido/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-202-C01.jpg",
         "type": "mhcard"
       }
     },
@@ -9284,6 +10561,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://musashino-kanko.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9305,6 +10583,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.musashino.or.jp/place/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9318,14 +10597,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "武蔵野市 （C001） サンロード吉祥寺まち案内所 武蔵野市吉祥寺本町1-15-2 (問合せ先) 武蔵野市都市整備部交通企画課 電話：0422-60-1859 平日8:30～17:00",
+        "name": "武蔵野市 （C001） サンロード吉祥寺まち案内所 武蔵野市吉祥寺本町1-15-2 (問合せ先) 武",
         "municipality": "武蔵野市 （C001）",
-        "locationName": "サンロード吉祥寺まち案内所 武蔵野市吉祥寺本町1-15-2 (問合せ先) 武蔵野市都市整備部交通企画課 電話：0422-60-1859 平日8:30～17:00",
+        "locationName": "サンロード吉祥寺まち案内所 武蔵野市吉祥寺本町1-15-2 (問合せ先) 武",
         "address": "蔵野市都市整備部交通企画課 電話：0422-60-1859 平日8:30～17:00",
         "hours": "11:00～18:00 年末年始（12月31日～1月3日）を除く",
         "round": "第27弾",
         "issueDate": "2026/03/29",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-203-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9347,6 +10627,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "http://kanko.mitaka.ne.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-204-A01",
         "type": "mhcard"
       }
     },
@@ -9368,6 +10649,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.omekanko.gr.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9389,6 +10671,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.ja-nishitokyo.or.jp/archives/store_post/shop_greencenter",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9410,6 +10693,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://www.city.fuchu.tokyo.jp/shisetu/komyunite/senta/katamachi.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9431,6 +10715,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "http://www.kankou-fuchu.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-206-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -9452,6 +10737,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.akishima-kanko.org/information/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9473,6 +10759,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.akishimaensis.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-207-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9494,6 +10781,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.city.chofu.tokyo.jp/www/contents/1176118954796/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9515,6 +10803,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.city.chofu.lg.jp/040070/p026079.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9536,6 +10825,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.city.machida.tokyo.jp/shisei/shiyakusyo/mainoffice/officeguide.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9557,6 +10847,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://machida-guide.or.jp/?p=we-page-top-2",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-209-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9578,6 +10869,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.city.koganei.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9599,6 +10891,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "https://www.city.koganei.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-210-B-02.jpg",
         "type": "mhcard"
       }
     },
@@ -9620,6 +10913,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://kodaira-furusatomura.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9641,6 +10935,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "https://www.city.kodaira.tokyo.jp/kurashi/070/070022.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-211-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9662,6 +10957,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.city.hino.lg.jp/shinsenr/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9678,11 +10974,34 @@ const mhcardGeoJSON = {
         "name": "日野市 (B001) 【平日・土曜日】日野市役所七生支所",
         "municipality": "日野市 (B001)",
         "locationName": "【平日・土曜日】日野市役所七生支所",
-        "address": "東京都日野市高幡128-5 京王高幡SC2階 電話:042-591-7712 【日曜日・休日】日野市立高幡図書館 東京都日野市三沢4-1-12 電話:042-591-7322",
-        "hours": "【平日・土曜日】8：30～17：00 【日曜日・休日】10：00～17：00 ただし、年末年始・休業日・休館日はお休みです。",
+        "address": "東京都日野市高幡128-5 京王高幡SC2階 電話:042-591-7712",
+        "hours": "【平日・土曜日】8：30～17：00",
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.hino.lg.jp/shisetsu/shiyakusho/shiyakusho/shisho/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-212-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.413284,
+          35.658905
+        ]
+      },
+      "properties": {
+        "name": "日野市 (B001) 【日曜日・休日】日野市立高幡図書館",
+        "municipality": "日野市 (B001)",
+        "locationName": "【日曜日・休日】日野市立高幡図書館",
+        "address": "東京都日野市三沢4-1-12 電話:042-591-7322",
+        "hours": "【日曜日・休日】10：00～17：00 ただし、年末年始・休業日・休館日はお休みです。",
+        "round": "第21弾",
+        "issueDate": "2023/12/15",
+        "url": "https://www.city.hino.lg.jp/shisetsu/toshokan/toshokan/1005864.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-212-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9696,14 +11015,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "国分寺市 (A001) 【平日】国分寺市役所広報プロモーション室 東京都国分寺市泉町2-2-18 電話:042-312-8700 【土日祝】総合案内（cocobunji WEST5階 cocobunjiプラザ内）東京都国分寺市本町3-1-1電話：042-325-6330",
+        "name": "国分寺市 (A001) 【平日】国分寺市役所広報プロモーション室 / 【土日祝】総合案内（cocobunji WEST5階 cocobunjiプラザ内",
         "municipality": "国分寺市 (A001)",
-        "locationName": "【平日】国分寺市役所広報プロモーション室 東京都国分寺市泉町2-2-18 電話:042-312-8700 【土日祝】総合案内（cocobunji WEST5階 cocobunjiプラザ内）東京都国分寺市本町3-1-1電話：042-325-6330",
+        "locationName": "【平日】国分寺市役所広報プロモーション室 / 【土日祝】総合案内（cocobunji WEST5階 cocobunjiプラザ内",
         "address": "東京都国分寺市泉町2-2-18 電話:042-312-8700 【土日祝】総合案内（cocobunji WEST5階 cocobunjiプラザ内）東京都国分寺市本町3-1-1電話：042-325-6330",
         "hours": "9：00～17：00ただし、年末年始（12/29～31，1/2，1/3）は，総合案内で配布します ※1/1は，配布しません",
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9725,6 +11045,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "http://ota-cafe.com",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-214-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9746,6 +11067,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.kokubunji.tokyo.jp/shisetsu/shikanren/kouminkan/1003831.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-214-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9767,6 +11089,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.kokubunji.tokyo.jp/shisetsu/shikanren/shiyakusyo/1003818.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-214-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9788,6 +11111,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.kokubunji-izumihall.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-214-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9809,6 +11133,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9830,6 +11155,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://kuzaidan.or.jp/province/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-215-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9846,11 +11172,34 @@ const mhcardGeoJSON = {
         "name": "福生市 【通常】福生市観光案内所「くるみる ふっさ」",
         "municipality": "福生市",
         "locationName": "【通常】福生市観光案内所「くるみる ふっさ」",
-        "address": "東京都福生市本町23番地 電話：042-530-2341 【上記の定休日】福生市役所第一棟３階 道路下水道課窓口 東京都福生市本町５番地 電話：042-551-1968",
-        "hours": "【通常】10：00～18：00 ただし、月曜及び木曜（祝日の場合は翌日）、年末年始（12月29日から1月3日）はお休みです 【上記の定休日】8：30～17：15 上記の定休日に配布します ただし、年末年始（12/29～1/3）はお休みです",
+        "address": "東京都福生市本町23番地 電話：042-530-2341",
+        "hours": "【通常】10：00～18：00 ただし、月曜及び木曜（祝日の場合は翌日）、年末年始（12月29日から1月3日）はお休みです",
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.kurumiru-fussa-omotenashi.com",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-218-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.326782,
+          35.738701
+        ]
+      },
+      "properties": {
+        "name": "福生市 【上記の定休日】福生市役所第一棟３階 道路下水道課窓口",
+        "municipality": "福生市",
+        "locationName": "【上記の定休日】福生市役所第一棟３階 道路下水道課窓口",
+        "address": "東京都福生市本町５番地 電話：042-551-1968",
+        "hours": "【上記の定休日】8：30～17：15 上記の定休日に配布します ただし、年末年始（12/29～1/3）はお休みです",
+        "round": "第18弾",
+        "issueDate": "2023/01/28",
+        "url": "https://www.city.fussa.tokyo.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-218-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9872,6 +11221,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.city.komae.tokyo.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9888,11 +11238,34 @@ const mhcardGeoJSON = {
         "name": "狛江市 (B001) ① (一財)狛江市文化振興事業団事務所",
         "municipality": "狛江市 (B001)",
         "locationName": "① (一財)狛江市文化振興事業団事務所",
-        "address": "階下水道課 ③ ①の休館日（土日祝日・年末年始） 狛江市役所１階宿日直室窓口 (問合せ先) 狛江市環境部下水道課 電話：03-3430-1111",
+        "address": "階下水道課  ③ ①の休館日（土日祝日・年末年始） 狛江市役所１階宿日直室窓口  (問合せ先)",
         "hours": "9:00～17:00 ただし、①が休館の場合には②または③にて配布します",
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "https://ecorma-hall.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-219-B02.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.578705,
+          35.63483
+        ]
+      },
+      "properties": {
+        "name": "狛江市 (B001) 狛江市環境部下水道課",
+        "municipality": "狛江市 (B001)",
+        "locationName": "狛江市環境部下水道課",
+        "address": "階下水道課 ③ ①の休館日（土日祝日・年末年始） 狛江市役所１階宿日直室窓口 (問合せ先) 狛江市環境部下水道課 電話：03-3430-1111",
+        "hours": "9:00～17:00 ただし、①が休館の場合には②または③にて配布します",
+        "round": "第15弾",
+        "issueDate": "2021/11/05",
+        "url": "http://www.city.komae.tokyo.jp/index.cfm/41,0,313,2003,html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-219-B02.jpg",
         "type": "mhcard"
       }
     },
@@ -9914,6 +11287,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "https://www.city.higashiyamato.lg.jp/index.cfm/35,0,366,html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-220-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -9922,19 +11296,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.526855,
-          35.785275
+          139.52655,
+          35.785568
         ]
       },
       "properties": {
         "name": "清瀬市 【平日】清瀬市役所建設課下水道係(3階23番窓口)",
         "municipality": "清瀬市",
         "locationName": "【平日】清瀬市役所建設課下水道係(3階23番窓口)",
-        "address": "課下水道係(3階23番窓口) 東京都清瀬市中里5-842 電話：042-497-2531 【土日祝日】清瀬市生涯学習センター(アミュー 5階) 東京都清瀬市元町1-2-11 アミュー 5階 電話：042-495-7001",
-        "hours": "【平日】 8:30～17:00 【土日祝日】 9:00～17:00 ただし、月曜日の祝日は休館日となるため配布しておりません。 また、年末年始（12/29～1/3）はお休みです",
+        "address": "東京都清瀬市中里5-842  電話：042-497-2531",
+        "hours": "【平日】8:30～17:00",
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "https://www.city.kiyose.lg.jp/siseijouhou/sosikisigoto/kakukagoannai/1005112.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-221-A01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.520905,
+          35.772243
+        ]
+      },
+      "properties": {
+        "name": "清瀬市 【土日祝日】清瀬市生涯学習センター",
+        "municipality": "清瀬市",
+        "locationName": "【土日祝日】清瀬市生涯学習センター",
+        "address": "東京都清瀬市元町1-2-11 アミュー 5階 電話：042-495-7001",
+        "hours": "【土日祝日】9:00～17:00 ただし、月曜日の祝日は休館日となるため配布しておりません。 また、年末年始（12/29～1/3）はお休みです",
+        "round": "第15弾",
+        "issueDate": "2021/11/05",
+        "url": "https://www.city.kiyose.lg.jp/shisetsu/syogaigakusyu/1001192.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-221-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -9956,6 +11353,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "https://www.s-seiun.co.jp/shisetsu/higashikurume/shisetsu/plaza.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-222-A-02.jpg",
         "type": "mhcard"
       }
     },
@@ -9977,6 +11375,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "https://www.city.higashikurume.lg.jp/shisetsu/sports/1002049.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-222-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -9998,6 +11397,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "http://takiyama.in.coocan.jp/takichu-top.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-222-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10019,6 +11419,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.higashikurume-lll.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-222-D01.jpg",
         "type": "mhcard"
       }
     },
@@ -10027,19 +11428,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.45726,
-          35.530216
+          139.447174,
+          35.637653
         ]
       },
       "properties": {
         "name": "多摩市（A001） 【平日】多摩市役所 下水道課",
         "municipality": "多摩市（A001）",
         "locationName": "【平日】多摩市役所 下水道課",
-        "address": "下水道課東京都多摩市関戸6-12-1（第二庁舎）電話：042-338-6842【土日】永山公民館東京都多摩市永山1-5（ベルブ永山）電話：042-337-6661",
-        "hours": "【平日】9：00～17：00ただし、閉庁日はお休みです【休日】9：00～17：00ただし、祝日、年末年始、休館日はお休みです",
+        "address": "東京都多摩市関戸6-12-1（第二庁舎）電話：042-338-6842",
+        "hours": "【平日】9：00～17：00ただし、閉庁日はお休みです",
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.tama.lg.jp/0000005579.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-224-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.448685,
+          35.628471
+        ]
+      },
+      "properties": {
+        "name": "多摩市（A001） 【土日】永山公民館",
+        "municipality": "多摩市（A001）",
+        "locationName": "【土日】永山公民館",
+        "address": "東京都多摩市永山1-5（ベルブ永山）電話：042-337-6661",
+        "hours": "【平日】9：00～17：00ただし、閉庁日はお休みです【休日】9：00～17：00ただし、祝日、年末年始、休館日はお休みです",
+        "round": "第6弾",
+        "issueDate": "2017/12/09",
+        "url": "https://www.city.tama.lg.jp/kenkofukushi/katsudo/kouminkan/annai/1003181.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-224-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10061,6 +11485,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.tama.lg.jp/kenkofukushi/katsudo/kouminkan/annai/1003181.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-224-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10082,6 +11507,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "https://www.city.tama.lg.jp/kenkofukushi/katsudo/kouminkan/annai/1003182.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-224-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10103,6 +11529,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://tama-glc.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-224-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10124,6 +11551,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "https://inagi-kanko.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-225-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -10137,14 +11565,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "羽村市（A001） 羽村市郷土博物館 東京都羽村市羽741 電話：042-558-2561 （問い合わせ先） 羽村市水道事務所 電話：042-554-2269",
+        "name": "羽村市（A001） 羽村市郷土博物館",
         "municipality": "羽村市（A001）",
-        "locationName": "羽村市郷土博物館 東京都羽村市羽741 電話：042-558-2561 （問い合わせ先） 羽村市水道事務所 電話：042-554-2269",
+        "locationName": "羽村市郷土博物館",
         "address": "東京都羽村市羽741 電話：042-558-2561 （問い合わせ先） 羽村市水道事務所 電話：042-554-2269",
         "hours": "9：00～17：00 ただし、月曜日（祝日の場合は開館）、12月29日～1月3日はお休みです",
         "round": "第3弾",
         "issueDate": "2016/12/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-227-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10166,6 +11595,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "http://www.t-net.ne.jp/~hamura-z/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-227-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10179,14 +11609,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "あきる野市 (A001) 【平日】あきる野市都市整備部生活排水対策課 東京都あきる野市二宮350 電話:042-558-1111 【土・祝日】いろどり屋 東京都あきる野市秋川1-8（トラストルピア1階） 電話:042-550-4552",
+        "name": "あきる野市 (A001) 【平日】あき / 【土・祝日】いろどり屋",
         "municipality": "あきる野市 (A001)",
-        "locationName": "【平日】あきる野市都市整備部生活排水対策課 東京都あきる野市二宮350 電話:042-558-1111 【土・祝日】いろどり屋 東京都あきる野市秋川1-8（トラストルピア1階） 電話:042-550-4552",
+        "locationName": "【平日】あき / 【土・祝日】いろどり屋",
         "address": "る野市都市整備部生活排水対策課 東京都あきる野市二宮350 電話:042-558-1111 【土・祝日】いろどり屋 東京都あきる野市秋川1-8（トラストルピア1階） 電話:042-550-4552",
         "hours": "【平日】8：30～12：00、13：00～17：15 ただし、休日、年末年始（12/27〜1/4）はお休みです 【土・祝日】10:00～18:00 ただし、日曜日及び水曜日が祝日の場合は、いろどり屋が休業日のため、配布を行いません。 年始（1/1～1/3）はお休みです",
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-228-A01-2.jpg",
         "type": "mhcard"
       }
     },
@@ -10208,6 +11639,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "http://www.seotonoyu.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-228-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -10221,14 +11653,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "あきる野市 (C001) フレア五日市 東京都あきる野市舘谷台26番地1 電話:042-588-4200",
+        "name": "あきる野市 (C001) フレア五日市",
         "municipality": "あきる野市 (C001)",
-        "locationName": "フレア五日市 東京都あきる野市舘谷台26番地1 電話:042-588-4200",
+        "locationName": "フレア五日市",
         "address": "東京都あきる野市舘谷台26番地1 電話:042-588-4200",
         "hours": "9:00～17:00 ただし、臨時休館があります",
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-228-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10250,6 +11683,7 @@ const mhcardGeoJSON = {
         "round": "第4弾",
         "issueDate": "2017/04/03",
         "url": "http://www.mizuhokyodo.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-303-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10266,11 +11700,56 @@ const mhcardGeoJSON = {
         "name": "日の出町 日の出町役場",
         "municipality": "日の出町",
         "locationName": "日の出町役場",
-        "address": "東京都西多摩郡日の出町平井2780番地 電話:042-597-0511（代表） 【休日】①日の出町観光協会（1月25日～配布開始） 東京都西多摩郡日の出町大久野17-2番地 電話:042-588-5883 ②生涯青春の湯・ひので三ツ沢つるつる温泉センター（1月17日～配布開始） 東京都西多摩郡日の出町大久野4718番地 電話:042-597-1126 ③イオンモール日の出 ２階イオン前(1月17日のみ)",
+        "address": "東京都西多摩郡日の出町平井2780番地 電話:042-597-0511（代表） 【休日】①",
         "hours": "【平日】8：30～17：15(12：00～13：00を除く) 【土日祝日】①10：00～16：00(12：00～13：00を除く) ただし、年末年始はお休みです ②10:00〜19:00 ただし、毎月第3火曜日及び設備点検休館日はお休みです ③10：00～15：00（1月17日のみ）",
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.town.hinode.tokyo.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-305-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.253036,
+          35.742977
+        ]
+      },
+      "properties": {
+        "name": "日の出町 日の出町観光協会",
+        "municipality": "日の出町",
+        "locationName": "日の出町観光協会",
+        "address": "東京都西多摩郡日の出町大久野17-2番地 電話:042-588-5883 ②",
+        "hours": "【平日】8：30～17：15(12：00～13：00を除く) 【土日祝日】①10：00～16：00(12：00～13：00を除く) ただし、年末年始はお休みです ②10:00〜19:00 ただし、毎月第3火曜日及び設備点検休館日はお休みです ③10：00～15：00（1月17日のみ）",
+        "round": "第27弾",
+        "issueDate": "2025/12/19",
+        "url": "https://www.hinodekanko.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-305-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.180786,
+          35.782127
+        ]
+      },
+      "properties": {
+        "name": "日の出町 生涯青春の湯・ひので三ツ沢つるつる温泉センター",
+        "municipality": "日の出町",
+        "locationName": "生涯青春の湯・ひので三ツ沢つるつる温泉センター",
+        "address": "東京都西多摩郡日の出町大久野4718番地 電話:042-597-1126 ③イオンモール日の出 ２階イオン前(1月17日のみ)",
+        "hours": "【平日】8：30～17：15(12：00～13：00を除く) 【土日祝日】①10：00～16：00(12：00～13：00を除く) ただし、年末年始はお休みです ②10:00〜19:00 ただし、毎月第3火曜日及び設備点検休館日はお休みです ③10：00～15：00（1月17日のみ）",
+        "round": "第27弾",
+        "issueDate": "2025/12/19",
+        "url": "https://www.tsurutsuru-onsen.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-305-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10284,14 +11763,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "檜原村 【火曜日～土曜日・祝日】檜原温泉センター数馬の湯 【月曜日・日曜日】郷土資料館 東京都西多摩郡檜原村3221番地 電話：042-598-0880",
+        "name": "檜原村 【火曜日～土曜日・祝日】檜原温泉センター数馬の湯 / 【月曜日・日曜日】郷土資料館",
         "municipality": "檜原村",
-        "locationName": "【火曜日～土曜日・祝日】檜原温泉センター数馬の湯 【月曜日・日曜日】郷土資料館 東京都西多摩郡檜原村3221番地 電話：042-598-0880",
+        "locationName": "【火曜日～土曜日・祝日】檜原温泉センター数馬の湯 / 【月曜日・日曜日】郷土資料館",
         "address": "東京都西多摩郡檜原村3221番地 電話：042-598-0880",
         "hours": "【火曜日～土曜日・祝日】10:00～18:00 ※ただし年末年始はお休みです 【月曜日・日曜日】 4月～11月 9:30～17:00 12月～3月 10:00～16:00 ※ただし年末年始はお休みです",
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-307-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10313,6 +11793,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.ogasawaramura.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-421-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10334,6 +11815,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.welcome.city.yokohama.jp/tic/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10350,11 +11832,34 @@ const mhcardGeoJSON = {
         "name": "横浜市（B001） 横浜市旭区役所 地域振興課",
         "municipality": "横浜市（B001）",
         "locationName": "横浜市旭区役所 地域振興課",
-        "address": "神奈川県横浜市旭区鶴ケ峰1-4-12 電話：045-954-6095 【平日・土日祝日】旭区市民活動支援センター みなくる 神奈川県横浜市旭区鶴ケ峰2-82-1ココロット鶴ヶ峰4階 電話：045-382-1000",
+        "address": "神奈川県横浜市旭区鶴ケ峰1-4-12 電話：045-954-6095  【平日・土日祝日】",
         "hours": "【月〜金】8:45～17:00 ただし、祝日・年末年始はお休みです 【旭区市民活動支援センター みなくる】 月曜日・水曜日・木曜日・金曜日 9:00～17:00 火曜日 9:00～20:30 土曜日・日曜日・祝日 10:00～16:30 ※ただし、休館日（毎月第１・３水曜日ほか、年末年始）は配布しません。休館日は、変更となる場合がありますので、ホームページをご確認ください",
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.city.yokohama.lg.jp/asahi/shokai/gaiyo/mascot/asahikunmanhorukado.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-100-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.550385,
+          35.474731
+        ]
+      },
+      "properties": {
+        "name": "横浜市（B001） 旭区市民活動支援センター みなくる",
+        "municipality": "横浜市（B001）",
+        "locationName": "旭区市民活動支援センター みなくる",
+        "address": "神奈川県横浜市旭区鶴ケ峰2-82-1ココロット鶴ヶ峰4階 電話：045-382-1000",
+        "hours": "【月〜金】8:45～17:00 ただし、祝日・年末年始はお休みです 【旭区市民活動支援センター みなくる】 月曜日・水曜日・木曜日・金曜日 9:00～17:00 火曜日 9:00～20:30 土曜日・日曜日・祝日 10:00～16:30 ※ただし、休館日（毎月第１・３水曜日ほか、年末年始）は配布しません。休館日は、変更となる場合がありますので、ホームページをご確認ください",
+        "round": "第04弾",
+        "issueDate": "2017/04/03",
+        "url": "https://www.city.yokohama.lg.jp/asahi/kurashi/kyodo_manabi/kyodo_shien/minakuru/annai/kihonjyohou.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10376,6 +11881,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.welcome.city.yokohama.jp/ja/tourism/tic/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-100-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10389,14 +11895,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "川崎市 (A001) かわさききたテラス（川崎市観光案内所）神奈川県川崎市川崎区駅前本町26-1（アトレ3階 かわさききたテラス内） （問合せ先） 川崎市上下水道局経営戦略室〔広報戦略〕 電話:044-200-0410",
+        "name": "川崎市 (A001) かわさききたテラス（川崎市観光案内所）",
         "municipality": "川崎市 (A001)",
-        "locationName": "かわさききたテラス（川崎市観光案内所）神奈川県川崎市川崎区駅前本町26-1（アトレ3階 かわさききたテラス内） （問合せ先） 川崎市上下水道局経営戦略室〔広報戦略〕 電話:044-200-0410",
+        "locationName": "かわさききたテラス（川崎市観光案内所）",
         "address": "神奈川県川崎市川崎区駅前本町26-1（アトレ3階 かわさききたテラス内） （問合せ先） 川崎市上下水道局経営戦略室〔広報戦略〕 電話:044-200-0410",
         "hours": "【平日】9：00～20：00【休日】9：00～19：00",
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-130-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10418,6 +11925,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.kawasaki.jp/800/page/0000105394.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-130-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -10439,6 +11947,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "http://kawasakishuku.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-130-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10460,6 +11969,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.city.sagamihara.kanagawa.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-150-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10481,6 +11991,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.e-sagamihara.com/information-center/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-150-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10502,6 +12013,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.city.sagamihara.kanagawa.jp/shisei/1026709/1000105/1025057/1009956.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-150-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10523,6 +12035,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.e-sagamihara.com/topics/topics-971/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-150-D01.jpg",
         "type": "mhcard"
       }
     },
@@ -10544,6 +12057,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "https://www.cocoyoko.net/access/information.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10565,6 +12079,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.city.yokosuka.kanagawa.jp/2752/sisetu/fc00000087.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10586,6 +12101,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://thibaudier-yokosuka.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-201-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10607,6 +12123,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://kinuten.com/?page_id=2263",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-201-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10620,14 +12137,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "平塚市 四之宮ふれあいセンター 神奈川県平塚市四之宮4-19-2(相模川流域下水道右岸処理場内) 電話：0463-54-6419",
+        "name": "平塚市 四之宮ふれあいセンター",
         "municipality": "平塚市",
-        "locationName": "四之宮ふれあいセンター 神奈川県平塚市四之宮4-19-2(相模川流域下水道右岸処理場内) 電話：0463-54-6419",
+        "locationName": "四之宮ふれあいセンター",
         "address": "神奈川県平塚市四之宮4-19-2(相模川流域下水道右岸処理場内) 電話：0463-54-6419",
         "hours": "9：30～17：00 ただし、月曜日、年末年始（12/28～1/4）はお休です」",
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10649,6 +12167,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://fujisawa-ukiyoekan.net/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10670,6 +12189,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/12/10",
         "url": "https://fujisawashuku-kouryukan.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10678,19 +12198,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.577774,
-          35.999477
+          139.191895,
+          35.288765
         ]
       },
       "properties": {
         "name": "小田原市 (A001) 小田原市上下水道局経営総務課",
         "municipality": "小田原市 (A001)",
         "locationName": "小田原市上下水道局経営総務課",
-        "address": "上下水道局経営総務課 神奈川県小田原市高田401 電話：0465-41-1611 【土日祝】小田原宿なりわい交流館 神奈川県小田原市本町3-6-23 電話：0465-20-0515 ※専用駐車場はございません （問い合わせ先） 小田原市上下水道局経営総務課 電話：0465-41-1615",
+        "address": "神奈川県小田原市高田401 電話：0465-41-1611  【土日祝】",
         "hours": "10：00～17：00ただし、年末年始はお休みです",
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.odawara.kanagawa.jp/field/water/sewer/topics/p24794.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-206-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.159927,
+          35.24831
+        ]
+      },
+      "properties": {
+        "name": "小田原市 (A001) 小田原宿なりわい交流館",
+        "municipality": "小田原市 (A001)",
+        "locationName": "小田原宿なりわい交流館",
+        "address": "神奈川県小田原市本町3-6-23 電話：0465-20-0515 ※専用駐車場はございません  （問い合わせ先） 小田原市上下水道局経営総務課 電話：0465-41-1615",
+        "hours": "10：00～17：00ただし、年末年始はお休みです",
+        "round": "第07弾",
+        "issueDate": "2018/04/28",
+        "url": "https://www.city.odawara.kanagawa.jp/municipality/industry/urban/nariwai.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10712,6 +12255,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.city.odawara.kanagawa.jp/kanko/machimeguri/p29912.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-206-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10733,6 +12277,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.odawara.kanagawa.jp/municipality/industry/urban/nariwai.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-206-C01.jpg",
         "type": "mhcard"
       }
     },
@@ -10746,14 +12291,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "小田原市 (D001) ラスカ小田原 １階インフォメーション 神奈川県小田原市栄町1-1-9 （問合せ先） JR東日本横浜支社小田原・伊豆統括センター 電話：090-9581-5237",
+        "name": "小田原市 (D001) ラスカ小田原 １階インフォメーション",
         "municipality": "小田原市 (D001)",
-        "locationName": "ラスカ小田原 １階インフォメーション 神奈川県小田原市栄町1-1-9 （問合せ先） JR東日本横浜支社小田原・伊豆統括センター 電話：090-9581-5237",
+        "locationName": "ラスカ小田原 １階インフォメーション",
         "address": "神奈川県小田原市栄町1-1-9 （問合せ先） JR東日本横浜支社小田原・伊豆統括センター 電話：090-9581-5237",
         "hours": "11:00〜19:00",
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-206-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10775,6 +12321,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://odawaracastle.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-206-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10796,6 +12343,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.city.odawara.kanagawa.jp/field/lifelong/culture/historical_structure/p25874.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-206-F-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10817,6 +12365,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.chigasaki-kankou.org/information/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10838,6 +12387,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://m-shonanchigasaki.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-207-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10859,6 +12409,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.zushi.kanagawa.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-208-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -10880,6 +12431,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "http://www.city.miura.kanagawa.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10901,6 +12453,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.hadano.kanagawa.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10922,6 +12475,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://www.city.atsugi.kanagawa.jp/soshiki/gesuidoshisetsuka/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10943,6 +12497,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.atsugi.kanagawa.jp/kurashi_tetsuzuki/online/4/1/2/11043.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-212-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10964,6 +12519,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.atsugi.kanagawa.jp/atsugicitymuseum/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-212-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10977,14 +12533,37 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "大和市 大和市イベント観光協会 大和市大和南1-8-1 文化創造拠点シリウス2階 電話：046-260-5799",
+        "name": "大和市 大和市イベント観光協会 大和市大和南1-8-1 文化創造拠点シリウス2階",
         "municipality": "大和市",
-        "locationName": "大和市イベント観光協会 大和市大和南1-8-1 文化創造拠点シリウス2階 電話：046-260-5799",
+        "locationName": "大和市イベント観光協会 大和市大和南1-8-1 文化創造拠点シリウス2階",
         "address": "大和市",
         "hours": "10:00～16:00(昼休み12:00～13:00) ただし、月曜日、祝日、年末年始(12/29～1/3)はお休みです",
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-213-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.29567,
+          35.386677
+        ]
+      },
+      "properties": {
+        "name": "伊勢原市 アクアクリーンセンター 2階 下水道経営課窓口",
+        "municipality": "伊勢原市",
+        "locationName": "アクアクリーンセンター 2階 下水道経営課窓口",
+        "address": "神奈川県伊勢原市神戸120 電話：0463-92-3341  【土日祝日】",
+        "hours": "【平日】8:30〜12:00, 13:00〜17:00 【土日祝日】9:30〜17:00 ただし、年末年始は除く",
+        "round": "第11弾",
+        "issueDate": "2019/12/14",
+        "url": "http://www.city.isehara.kanagawa.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10998,14 +12577,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "伊勢原市 アクアクリーンセンター 2階 下水道経営課窓口",
+        "name": "伊勢原市 伊勢原市役所駅窓口センター",
         "municipality": "伊勢原市",
-        "locationName": "アクアクリーンセンター 2階 下水道経営課窓口",
+        "locationName": "伊勢原市役所駅窓口センター",
         "address": "下水道経営課窓口 神奈川県伊勢原市神戸120 電話：0463-92-3341 【土日祝日】 伊勢原市役所駅窓口センター 小田急伊勢原駅改札から南口方面へ直進、小田急マルシェ伊勢原 2階",
         "hours": "【平日】8:30〜12:00, 13:00〜17:00 【土日祝日】9:30〜17:00 ただし、年末年始は除く",
         "round": "第11弾",
         "issueDate": "2019/12/14",
-        "url": "http://www.city.isehara.kanagawa.jp/",
+        "url": "https://www.city.isehara.kanagawa.jp/docs/2014041100252/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11027,6 +12607,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.ebina.kanagawa.jp/shisei/profile/tankyusha/onko/1000654.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-215-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -11040,14 +12621,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "座間市 一般社団法人座間市観光協会 神奈川県座間市入谷東３丁目６０番５号 小田急マルシェ２ ２階 （問い合わせ先） 座間市上下水道局経営総務課 電話：046-252-7480",
+        "name": "座間市 一般社団法人座間市観光協会",
         "municipality": "座間市",
-        "locationName": "一般社団法人座間市観光協会 神奈川県座間市入谷東３丁目６０番５号 小田急マルシェ２ ２階 （問い合わせ先） 座間市上下水道局経営総務課 電話：046-252-7480",
+        "locationName": "一般社団法人座間市観光協会",
         "address": "神奈川県座間市入谷東３丁目６０番５号 小田急マルシェ２ ２階 （問い合わせ先） 座間市上下水道局経営総務課 電話：046-252-7480",
         "hours": "9：00〜17：00 ただし、毎週水曜日と12月29日から1月3日はお休みです。 また、不定期に休館となりますのでご了承ください。",
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11069,6 +12651,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.ayase.kanagawa.jp/soshiki/midorikoenka/koen/7/5858.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-218-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11085,11 +12668,34 @@ const mhcardGeoJSON = {
         "name": "葉山町 (A001) 【平日】葉山町役場",
         "municipality": "葉山町 (A001)",
         "locationName": "【平日】葉山町役場",
-        "address": "神奈川県三浦郡葉山町堀内2135 電話：046-876-1111 【休日】葉山しおさい公園 神奈川県三浦郡葉山町一色2123-1 電話：046-876-1140",
-        "hours": "【平日】8:30～17:00 【休日】8:30～17:00 ただし、年末年始（12月28日～1月3日）はお休みです",
+        "address": "神奈川県三浦郡葉山町堀内2135 電話：046-876-1111",
+        "hours": "【平日】8:30～17:00",
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.town.hayama.lg.jp/soshiki/gesui/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-301-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.577591,
+          35.262512
+        ]
+      },
+      "properties": {
+        "name": "葉山町 (A001) 【休日】葉山しおさい公園",
+        "municipality": "葉山町 (A001)",
+        "locationName": "【休日】葉山しおさい公園",
+        "address": "神奈川県三浦郡葉山町一色2123-1 電話：046-876-1140",
+        "hours": "【休日】8:30～17:00 ただし、年末年始（12月28日～1月3日）はお休みです",
+        "round": "第11弾",
+        "issueDate": "2019/12/14",
+        "url": "https://www.town.hayama.lg.jp/soshiki/shougaigakushuu/2/2/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-301-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11111,6 +12717,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.hayama-kankou.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-301-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11132,6 +12739,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.town.hayama.lg.jp/soshiki/shougaigakushuu/2/1/1540.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-301-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11153,6 +12761,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "https://www.town.nakai.kanagawa.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-361-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11174,6 +12783,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "https://www.town.oi.kanagawa.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-362-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11195,6 +12805,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.yamakita.net/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-364-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11216,6 +12827,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "http://www.town.aikawa.kanagawa.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-401-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11237,6 +12849,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.town.kiyokawa.kanagawa.jp/soshiki/machizukuri/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-402-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11258,6 +12871,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "http://www.niigata-gesuikou.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11271,14 +12885,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "新潟市（A001） 新潟古町まちみなと情報館新潟県新潟市中央区古町通七番町995-7電話：025-378-4101",
+        "name": "新潟市（A001） 新潟古町まちみなと情報",
         "municipality": "新潟市（A001）",
-        "locationName": "新潟古町まちみなと情報館新潟県新潟市中央区古町通七番町995-7電話：025-378-4101",
+        "locationName": "新潟古町まちみなと情報",
         "address": "館新潟県新潟市中央区古町通七番町995-7電話：025-378-4101",
         "hours": "10：00～17：00 ただし、毎週水曜日、年末年始はお休みです（詳しい休業期間は直接施設へお問合せください）",
         "round": "第1弾",
         "issueDate": "2016/04/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11292,14 +12907,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "新潟市（B001） 新津鉄道資料館新潟県新潟市秋葉区新津東町2-5-6電話：0250-24-5700（問い合わせ先）新潟市役所下水道部 経営企画課電話：025-226-2959（平日のみ）",
+        "name": "新潟市（B001） 新津鉄道資料館新潟県新潟市秋葉区新津東町2-5-6",
         "municipality": "新潟市（B001）",
-        "locationName": "新津鉄道資料館新潟県新潟市秋葉区新津東町2-5-6電話：0250-24-5700（問い合わせ先）新潟市役所下水道部 経営企画課電話：025-226-2959（平日のみ）",
+        "locationName": "新津鉄道資料館新潟県新潟市秋葉区新津東町2-5-6",
         "address": "新津鉄道資料館新潟県新潟市秋葉区新津東町2-5-6電話：0250-24-5700（問い合わせ先）新潟市役所下水道部 経営企画課電話：025-226-2959（平日のみ）",
         "hours": "9：30～17：00ただし、毎週火曜日（火曜が祝日の場合はその翌日）、年末年始（12/28～1/3）はお休みです",
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11321,6 +12937,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://nkyod.org/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11342,6 +12959,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://nagaoka-hanabikan.niigata.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11363,6 +12981,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.city.nagaoka.niigata.jp/kurashi/cate13/s-center/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-202-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11384,6 +13003,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "http://agrinosato.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-202-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11405,6 +13025,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://r290tochio.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-202-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11426,6 +13047,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://miraie-nagaoka.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-202-F-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11434,19 +13056,64 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.742538,
-          34.443836
+          138.953857,
+          37.633041
         ]
       },
       "properties": {
         "name": "三条市 三条鍛冶道場",
         "municipality": "三条市",
         "locationName": "三条鍛冶道場",
-        "address": "条鍛冶道場新潟県三条市元町11-53電話：0256-34-8080 【休館日①】三条下水処理センター新潟県三条市塚野目2323 【休館日②】中央公民館新潟県三条市元町13番1号 電話：0256-32-4811",
+        "address": "新潟県三条市元町11-53電話：0256-34-8080  【休館日①】",
         "hours": "【開館日】 （休館日は毎週月曜日。月曜日が祝日の場合は翌日）9：00～17：00 ※ただし、年末年始（12/29～1/3）はお休みです 【休館日①】8:30～17:15 ※ただし、年末年始（12/29～1/3）はお休みです 【休館日②】9:00〜22:00 ※ただし、年末年始（12/29～1/3）はお休みです",
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "http://kajidojo.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-204-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.973587,
+          37.65752
+        ]
+      },
+      "properties": {
+        "name": "三条市 三条下水処理センター",
+        "municipality": "三条市",
+        "locationName": "三条下水処理センター",
+        "address": "新潟県三条市塚野目2323  【休館日②】",
+        "hours": "【開館日】 （休館日は毎週月曜日。月曜日が祝日の場合は翌日）9：00～17：00 ※ただし、年末年始（12/29～1/3）はお休みです 【休館日①】8:30～17:15 ※ただし、年末年始（12/29～1/3）はお休みです 【休館日②】9:00〜22:00 ※ただし、年末年始（12/29～1/3）はお休みです",
+        "round": "第5弾",
+        "issueDate": "2017/08/01",
+        "url": "https://www.city.sanjo.niigata.jp/soshiki/kensetsubu/jogesuidoka/gesuidonituite/sisetugesui/4610.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-204-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.953873,
+          37.630909
+        ]
+      },
+      "properties": {
+        "name": "三条市 中央公民館",
+        "municipality": "三条市",
+        "locationName": "中央公民館",
+        "address": "新潟県三条市元町13番1号 電話：0256-32-4811",
+        "hours": "【開館日】 （休館日は毎週月曜日。月曜日が祝日の場合は翌日）9：00～17：00 ※ただし、年末年始（12/29～1/3）はお休みです 【休館日①】8:30～17:15 ※ただし、年末年始（12/29～1/3）はお休みです 【休館日②】9:00〜22:00 ※ただし、年末年始（12/29～1/3）はお休みです",
+        "round": "第5弾",
+        "issueDate": "2017/08/01",
+        "url": "https://www.city.sanjo.niigata.jp/kosodate_kyoiku/shogaigakushu_bunka/shogaigakushushisetsu/8/8204.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11460,14 +13127,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "柏崎市 (A001) かしわざき市民活動センターまちから 新潟県柏崎市西本町3-2-8 電話：0257-22-2003",
+        "name": "柏崎市 (A001) かしわざき市民活動センターまちから",
         "municipality": "柏崎市 (A001)",
-        "locationName": "かしわざき市民活動センターまちから 新潟県柏崎市西本町3-2-8 電話：0257-22-2003",
+        "locationName": "かしわざき市民活動センターまちから",
         "address": "新潟県柏崎市西本町3-2-8 電話：0257-22-2003",
         "hours": "9：30～21：00 ただし、毎週火曜日（火曜日が祝日の場合はその翌日）、年末年始（12/29〜1/3）はお休みです",
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11489,6 +13157,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://aqua.ksz.or.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11510,6 +13179,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://shibata-info.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11526,11 +13196,34 @@ const mhcardGeoJSON = {
         "name": "新発田市 (B001) 寺町たまり駅",
         "municipality": "新発田市 (B001)",
         "locationName": "寺町たまり駅",
-        "address": "新潟県新発田市諏訪町2丁目3番28号 電話:0254-22-1888 (問合せ先) 新発田市下水道課 電話:0254-23-7284",
+        "address": "新潟県新発田市諏訪町2丁目3番28号 電話:0254-22-1888 (問合せ先)",
         "hours": "9：00～16：30 ただし、12/29～1/3はお休みです",
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.city.shibata.lg.jp/shisetsu/kanko/kanko/1005079.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-206-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.329254,
+          37.945766
+        ]
+      },
+      "properties": {
+        "name": "新発田市 (B001) 新発田市下水道課 電話:0254-23-7284",
+        "municipality": "新発田市 (B001)",
+        "locationName": "新発田市下水道課 電話:0254-23-7284",
+        "address": "新潟県新発田市諏訪町2丁目3番28号 電話:0254-22-1888 (問合せ先) 新発田市下水道課 電話:0254-23-7284",
+        "hours": "9：00～16：30 ただし、12/29～1/3はお休みです",
+        "round": "第12弾",
+        "issueDate": "2020/04/25",
+        "url": "http://www.city.shibata.lg.jp/kurashi/suido/gesuido/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-206-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11552,6 +13245,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "http://www.tsukiokaonsen.gr.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-206-C01.jpg",
         "type": "mhcard"
       }
     },
@@ -11573,6 +13267,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.city.shibata.lg.jp/shisetsu/kanko/kanko/1022382.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-208-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11594,6 +13289,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://www.nishikigoinosato.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11615,6 +13311,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.ojiyasunplaza.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-208-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -11636,6 +13333,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.bijinnoyu.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11657,6 +13355,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "http://www.tokamachishikankou.jp/matudai/cgi-bin/kaikan/index.cgi",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11665,19 +13364,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.755569,
-          37.127499
+          138.690979,
+          37.069275
         ]
       },
       "properties": {
         "name": "十日町市（B001） 【10～3月】十日町温泉総合保養施設 宮中島温泉ミオンなかさと",
         "municipality": "十日町市（B001）",
         "locationName": "【10～3月】十日町温泉総合保養施設 宮中島温泉ミオンなかさと",
-        "address": "と新潟県十日町市宮中己4197電話：025-763-4811【10～3月（休館日）】ゆくら妻有 日帰り温泉【4～9月】清津渓谷トンネル エントランスPeriscope新潟県十日町市小出2119電話：025-763-4800（問い合わせ先）十日町市下水処理センター（上下水道局下水道係）電話：025-757-3141",
-        "hours": "【10～3月】10：00～22：00ただし、木曜日（8月を除く）、は休館日のため、「ゆくら妻有日帰り温泉」で配布します【4～9月】8：30～16：00",
+        "address": "新潟県十日町市宮中己4197電話：025-763-4811【10～3月（休館日）】ゆくら妻有 日帰り温泉",
+        "hours": "【10～3月】10：00～22：00ただし、木曜日（8月を除く）、は休館日のため、「ゆくら妻有日帰り温泉」で配布します",
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://nakasato-mion.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-210-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.73494,
+          36.953156
+        ]
+      },
+      "properties": {
+        "name": "十日町市（B001） 【4～9月】清津渓谷トンネル エントランスPeriscope",
+        "municipality": "十日町市（B001）",
+        "locationName": "【4～9月】清津渓谷トンネル エントランスPeriscope",
+        "address": "新潟県十日町市小出2119電話：025-763-4800（問い合わせ先）十日町市下水処理センター（上下水道局下水道係）電話：025-757-3141",
+        "hours": "【4～9月】8：30～16：00",
+        "round": "第8弾",
+        "issueDate": "2018/08/11",
+        "url": "http://nakasato-kiyotsu.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-210-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11699,6 +13421,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.tokamachi-museum.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-210-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11720,6 +13443,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://r.goope.jp/miraiichiba ",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-211-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -11741,6 +13465,7 @@ const mhcardGeoJSON = {
         "round": "第4弾",
         "issueDate": "2017/04/03",
         "url": "http://www.iwafune.ne.jp/~osyagiri/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11762,6 +13487,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "http://www.city.murakami.lg.jp/site/kanko/bussan-mitinoekisasagawa.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-212-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11783,6 +13509,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "http://www.city.murakami.lg.jp/soshiki/90/arakawakouminnkann.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-212-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11804,6 +13531,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://www.asahimidori.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-212-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11825,6 +13553,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.city.murakami.lg.jp/site/kanko/bussan-mitinoeki.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-212-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11846,6 +13575,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.tsubame.niigata.jp/soshiki/kyoiku/3/12/10278/683.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-213-A-02.jpg",
         "type": "mhcard"
       }
     },
@@ -11867,6 +13597,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://tsubame-shiryoukan.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-213-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11888,6 +13619,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.tsubame.niigata.jp/soshiki/kyoiku/3/12/tyouzennkann/836.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-213-C01.jpg",
         "type": "mhcard"
       }
     },
@@ -11909,6 +13641,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.michinoeki-kugami.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-213-D01.jpg",
         "type": "mhcard"
       }
     },
@@ -11930,6 +13663,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.kita-re.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11951,6 +13685,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "https://niigata-kankou.or.jp/spot/7381",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-223-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11972,6 +13707,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.sado.niigata.jp/soshiki/2021/53417.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-224-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11993,6 +13729,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city.sado.niigata.jp/soshiki/2021/60185.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-224-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12014,6 +13751,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.sado.niigata.jp/soshiki/2021/53417.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-224-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12035,6 +13773,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.sado.niigata.jp/soshiki/2021/53417.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-224-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12056,6 +13795,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.city.sado.niigata.jp/soshiki/2021/53417.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-224-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12077,6 +13817,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.sado.niigata.jp/soshiki/2021/53417.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-224-F-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12098,6 +13839,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.city.sado.niigata.jp/soshiki/2021/53417.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-224-G-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12119,6 +13861,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.city.sado.niigata.jp/soshiki/2021/53417.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-224-H-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12140,6 +13883,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://tainai.info/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-227-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12156,11 +13900,12 @@ const mhcardGeoJSON = {
         "name": "胎内市 (B001) ロイヤル胎内パークホテル",
         "municipality": "胎内市 (B001)",
         "locationName": "ロイヤル胎内パークホテル",
-        "address": "新潟県胎内市夏井1191-3 電話:0254-48-2211 （問合せ先） 胎内市商工観光課 電話:0254-43-6111",
+        "address": "新潟県胎内市夏井1191-3 電話:0254-48-2211 （問合せ先）",
         "hours": "9：00-18：00",
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://royal-tainai.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-227-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12169,19 +13914,64 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.452393,
-          36.333809
+          139.496033,
+          38.031841
+        ]
+      },
+      "properties": {
+        "name": "胎内市 (B001) 胎内市商工観光課",
+        "municipality": "胎内市 (B001)",
+        "locationName": "胎内市商工観光課",
+        "address": "新潟県胎内市夏井1191-3 電話:0254-48-2211 （問合せ先） 胎内市商工観光課 電話:0254-43-6111",
+        "hours": "9：00-18：00",
+        "round": "第21弾",
+        "issueDate": "2023/12/15",
+        "url": "https://www.city.tainai.niigata.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-227-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.679626,
+          37.536972
         ]
       },
       "properties": {
         "name": "出雲崎町 【通常】道の駅 越後出雲崎天領の里",
         "municipality": "出雲崎町",
         "locationName": "【通常】道の駅 越後出雲崎天領の里",
-        "address": "通常】道の駅 越後出雲崎天領の里 新潟県三島郡出雲崎町大字尼瀬6番地57 電話：0258-78-4000 【休館日】出雲崎町役場 建設課 新潟県三島郡出雲崎町大字川西140番地 電話：0258-78-2296",
-        "hours": "【通常】10:00～16:00 ただし、水曜日及び年末年始はお休みです。祝日及びＧＷと夏休み期間中は水曜日でも配布します。また、4月から10月までは第１水曜日のみお休みです。 【休館日】9:00～17:00 道の駅の休館日（平日の水曜日）に配布します",
+        "address": "新潟県三島郡出雲崎町大字尼瀬6番地57 電話：0258-78-4000",
+        "hours": "【通常】10:00～16:00 ただし、水曜日及び年末年始はお休みです。祝日及びＧＷと夏休み期間中は水曜日でも配布します。また、4月から10月までは第１水曜日のみお休みです。",
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://tenryonosato.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-405-A01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.707748,
+          37.527447
+        ]
+      },
+      "properties": {
+        "name": "出雲崎町 【休館日】出雲崎町役場 建設課",
+        "municipality": "出雲崎町",
+        "locationName": "【休館日】出雲崎町役場 建設課",
+        "address": "新潟県三島郡出雲崎町大字川西140番地 電話：0258-78-2296",
+        "hours": "【休館日】9:00～17:00 道の駅の休館日（平日の水曜日）に配布します",
+        "round": "第16弾",
+        "issueDate": "2022/01/15",
+        "url": "https://www.town.izumozaki.niigata.jp/kurashi/suido/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-405-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -12198,11 +13988,34 @@ const mhcardGeoJSON = {
         "name": "富山市（A001） 富山市役所",
         "municipality": "富山市（A001）",
         "locationName": "富山市役所",
-        "address": "上下水道局お客さまサービスステーション 富山市新桜町7-38 電話:076-443-2275 【土日祝】富山市国際交流センター 富山市新富町一丁目2-3 CiCビル 3階 電話:076-444-0642 （問合せ先） 富山市上下水道局上下水道計画課 電話：076-432-8571",
+        "address": "上下水道局お客さまサービスステーション 富山市新桜町7-38 電話:076-443-2275  【土日祝】",
         "hours": "【平日】9:00~16:00 ただし、年末年始はお休みです 【土日祝】10:00~20:30 ただし、年末年始・CiCビル休館日はお休みです",
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.toyama.lg.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-201-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.577774,
+          35.999477
+        ]
+      },
+      "properties": {
+        "name": "富山市（A001） 富山市国際交流センター",
+        "municipality": "富山市（A001）",
+        "locationName": "富山市国際交流センター",
+        "address": "上下水道局上下水道計画課 電話：076-432-8571",
+        "hours": "【平日】9:00~16:00 ただし、年末年始はお休みです 【土日祝】10:00~20:30 ただし、年末年始・CiCビル休館日はお休みです",
+        "round": "第02弾",
+        "issueDate": "2016/08/01",
+        "url": "https://www.city.toyama.lg.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12224,6 +14037,7 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "http://www.toyamashi-kankoukyoukai.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12245,6 +14059,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.geisou-toyama.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-201-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12266,6 +14081,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.siminplaza.co.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-201-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12287,6 +14103,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "http://canal.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-201-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12308,6 +14125,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.yatsuo.net",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-201-G01.jpg",
         "type": "mhcard"
       }
     },
@@ -12321,14 +14139,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "富山市 (H001) 路面電車等公共交通案内所 富山県富山市明輪町73番5号（富山駅停留場（市内電車）8番ホーム側） 電話:076-432-3456 （問合せ先） 富山市上下水道局上下水道計画課 電話:076-432-8571",
+        "name": "富山市 (H001) 路面電車等公共交通案内所",
         "municipality": "富山市 (H001)",
-        "locationName": "路面電車等公共交通案内所 富山県富山市明輪町73番5号（富山駅停留場（市内電車）8番ホーム側） 電話:076-432-3456 （問合せ先） 富山市上下水道局上下水道計画課 電話:076-432-8571",
+        "locationName": "路面電車等公共交通案内所",
         "address": "富山県富山市明輪町73番5号（富山駅停留場（市内電車）8番ホーム側） 電話:076-432-3456 （問合せ先） 富山市上下水道局上下水道計画課 電話:076-432-8571",
         "hours": "9：00～13：30、14：30～17：00",
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-201-H-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12350,6 +14169,29 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.city.toyama.lg.jp/kurashi/suido/1018440/1018454/1011634.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-201-I-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.577774,
+          35.999477
+        ]
+      },
+      "properties": {
+        "name": "富山市 (I001) 富山市国際交流センター",
+        "municipality": "富山市 (I001)",
+        "locationName": "富山市国際交流センター",
+        "address": "上下水道局上下水道計画課  電話:076-432-8571",
+        "hours": "【平日】9:00～16:00 【土日祝】10:00～20:30 ただし、年末年始はお休みです",
+        "round": "第28弾",
+        "issueDate": "2026/04/24",
+        "url": "https://www.city.toyama.lg.jp/kurashi/suido/1018440/1018454/1011634.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-201-I-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12371,6 +14213,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://michinoeki-amaharashi.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12392,6 +14235,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.shoukouji.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12413,6 +14257,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://himigyogyou.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12434,6 +14279,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://plaza.bunspo-namerikawa.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12455,6 +14301,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "http://www.tonami-kankou.org/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12476,6 +14323,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://michinoeki-oyabe.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12497,6 +14345,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "http://www.oyabe.info/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-209-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -12518,6 +14367,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://shinminato.co.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12539,6 +14389,7 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "http://www.union.nakaniikawa.toyama.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-321-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12560,6 +14411,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.kanazawa-kankoukyoukai.or.jp/spot/detail_50571.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12573,14 +14425,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "輪島市 (A001) 輪島キリコ会館 ※令和６年能登半島地震に伴い、配布場所を下記に変更します 輪島市上下水道局（1階窓口にて） 石川県輪島市河井町21部1番地1 電話：0768-22-2220",
+        "name": "輪島市 (A001) 輪島キリコ会館 ※令和６年能登半島地震に伴い、配布場所を下記に変更します 輪島市",
         "municipality": "輪島市 (A001)",
-        "locationName": "輪島キリコ会館 ※令和６年能登半島地震に伴い、配布場所を下記に変更します 輪島市上下水道局（1階窓口にて） 石川県輪島市河井町21部1番地1 電話：0768-22-2220",
+        "locationName": "輪島キリコ会館 ※令和６年能登半島地震に伴い、配布場所を下記に変更します 輪島市",
         "address": "上下水道局（1階窓口にて） 石川県輪島市河井町21部1番地1 電話：0768-22-2220",
         "hours": "8:30～17:15（土日祝日、年末年始を除く）",
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12594,14 +14447,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "輪島市 (B001) 旧角海家住宅（国指定重要文化財） ※令和６年能登半島地震に伴い、配布場所を下記に変更します 輪島市上下水道局（1階窓口にて） 石川県輪島市河井町21部1番地1 電話：0768-22-2220",
+        "name": "輪島市 (B001) 旧角海家住宅（国指定重要文化財） ※令和６年能登半島地震に伴い、配布場所を下記に変更します 輪島市",
         "municipality": "輪島市 (B001)",
-        "locationName": "旧角海家住宅（国指定重要文化財） ※令和６年能登半島地震に伴い、配布場所を下記に変更します 輪島市上下水道局（1階窓口にて） 石川県輪島市河井町21部1番地1 電話：0768-22-2220",
+        "locationName": "旧角海家住宅（国指定重要文化財） ※令和６年能登半島地震に伴い、配布場所を下記に変更します 輪島市",
         "address": "上下水道局（1階窓口にて） 石川県輪島市河井町21部1番地1 電話：0768-22-2220",
         "hours": "8:30～17:15（土日祝日、年末年始を除く）",
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-204-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12623,6 +14477,7 @@ const mhcardGeoJSON = {
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "http://www.city.kahoku.ishikawa.jp/www/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12636,14 +14491,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "志賀町 志賀町役場本庁舎 石川県羽咋郡志賀町末吉千古1番地1 【平日】2F 上下水道課 【休日】1F 管理人室 電話: 0767-32-1111（代表） 電話: 0767-32-9251（直通） ※平日時間内のみ",
+        "name": "志賀町 【平日】志賀町役場本庁舎 / 【休日】2F",
         "municipality": "志賀町",
-        "locationName": "志賀町役場本庁舎 石川県羽咋郡志賀町末吉千古1番地1 【平日】2F 上下水道課 【休日】1F 管理人室 電話: 0767-32-1111（代表） 電話: 0767-32-9251（直通） ※平日時間内のみ",
+        "locationName": "【平日】志賀町役場本庁舎 / 【休日】2F",
         "address": "石川県羽咋郡志賀町末吉千古1番地1 【平日】2F 上下水道課 【休日】1F 管理人室 電話: 0767-32-1111（代表） 電話: 0767-32-9251（直通） ※平日時間内のみ",
         "hours": "8：30～17：15",
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-384-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12665,6 +14521,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://orihime-nakanoto.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-407-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12686,6 +14543,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.town.anamizu.lg.jp/page/105862.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-461-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12707,6 +14565,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.town.anamizu.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-461-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12728,6 +14587,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://ikanoeki.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-463-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -12749,6 +14609,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.town.noto.lg.jp/kakuka/1012/gyomu/kyouikufront/syokannshisetsu/syougaigakusyuushisetsu/4876.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-463-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12770,6 +14631,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.lovero-koiji.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-463-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12791,6 +14653,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://www.city.fukui.lg.jp/kurasi/gesui/gesuiproject/mcard.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/18-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12812,6 +14675,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www3.fctv.ne.jp/~asakura/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/18-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12833,6 +14697,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://tsuruga-kanko.jp/spot/history_culture/railway-museum/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/18-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12854,6 +14719,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://tsuruga-museum.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/18-202-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -12875,6 +14741,7 @@ const mhcardGeoJSON = {
         "round": "第3弾",
         "issueDate": "2016/12/01",
         "url": "http://www.city.ono.fukui.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/18-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12896,6 +14763,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://kyoryunomori.net/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/18-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12917,6 +14785,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://katsuyama-navi.jp/michieki/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/18-206-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12938,6 +14807,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "https://www.echizenwashi.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/18-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12959,6 +14829,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.town.takahama.fukui.jp/page/jyousuidou/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/18-481-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12980,6 +14851,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.town.fukui-wakasa.lg.jp/soshiki/wakasamikatajomonhakubutsukan/gyomuannai/955.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/18-501-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13001,6 +14873,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://kofu.geocloud.jp/webgis/?z=18&ll=35.685429%2C138.577008&t=roadmap&mp=12&ly=0&im=055-269-5030&vlf=-1&pin=1",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13022,6 +14895,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://libnet.city.kofu.yamanashi.jp/lib/accessmap/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13043,6 +14917,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://kofu-kameyaza.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-201-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13051,19 +14926,20 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.794678,
-          36.531887
+          138.905884,
+          35.552021
         ]
       },
       "properties": {
         "name": "都留市 (A001) 【平日】都留市上下水道課下水道担当",
         "municipality": "都留市 (A001)",
         "locationName": "【平日】都留市上下水道課下水道担当",
-        "address": "平日】都留市上下水道課下水道担当 山梨県都留市上谷１丁目1-1 電話:0554-43-1111(内線：416,417,418) 【土日祝日】道の駅つる 山梨県都留市大原88 電話:0554-43-1110",
-        "hours": "【平日】8：30～17：15 ただし、年末年始(12/29～1/3)はお休みです 【土日祝日】9：00-17：30(3～11月) 9：00-17：00（12～2月） ただし、年末年始(12/31,1/1)はお休みです",
+        "address": "山梨県都留市上谷１丁目1-1 電話:0554-43-1111(内線：416,417,418)",
+        "hours": "【平日】8：30～17：15 ただし、年末年始(12/29～1/3)はお休みです",
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.tsuru.yamanashi.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13072,19 +14948,64 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.905533,
-          35.551628
+          138.931702,
+          35.583351
+        ]
+      },
+      "properties": {
+        "name": "都留市 (A001) 【土日祝日】道の駅つる",
+        "municipality": "都留市 (A001)",
+        "locationName": "【土日祝日】道の駅つる",
+        "address": "山梨県都留市大原88 電話:0554-43-1110",
+        "hours": "【土日祝日】9：00-17：30(3～11月) 9：00-17：00（12～2月） ただし、年末年始(12/31,1/1)はお休みです",
+        "round": "第21弾",
+        "issueDate": "2023/12/15",
+        "url": "https://1000nentsuru.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-204-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.905884,
+          35.552021
         ]
       },
       "properties": {
         "name": "都留市 (B001) 山梨県都留市役所上下水道課下水道担当",
         "municipality": "都留市 (B001)",
         "locationName": "山梨県都留市役所上下水道課下水道担当",
-        "address": "】山梨県都留市役所上下水道課下水道担当 山梨県都留市上谷１丁目1-1 電話:0554-43-1111(内線：157～159) 【土日祝日】道の駅つる 山梨県都留市大原88 電話:0554-43-1110",
+        "address": "山梨県都留市上谷１丁目1-1 電話:0554-43-1111(内線：157～159) 【土日祝日】",
         "hours": "【平日】8：30～17：15 ただし、年末年始(12/29～1/3)はお休みです 【土日祝日】9：00-17：30(3～11月) 9：00-17：00（12～2月） ただし、年末年始(12/31,1/1)はお休みです",
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.city.tsuru.yamanashi.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-204-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.931702,
+          35.583351
+        ]
+      },
+      "properties": {
+        "name": "都留市 (B001) 道の駅つる",
+        "municipality": "都留市 (B001)",
+        "locationName": "道の駅つる",
+        "address": "山梨県都留市大原88 電話:0554-43-1110",
+        "hours": "【平日】8：30～17：15 ただし、年末年始(12/29～1/3)はお休みです 【土日祝日】9：00-17：30(3～11月) 9：00-17：00（12～2月） ただし、年末年始(12/31,1/1)はお休みです",
+        "round": "第27弾",
+        "issueDate": "2025/12/19",
+        "url": "https://1000nentsuru.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-204-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13101,11 +15022,34 @@ const mhcardGeoJSON = {
         "name": "大月市 【平日】大月市役所花咲庁舎地域整備課",
         "municipality": "大月市",
         "locationName": "【平日】大月市役所花咲庁舎地域整備課",
-        "address": "山梨県大月市大月町花咲1608-19 電話:0554-20-1855 【土日祝日】大月市観光協会 山梨県大月市大月一丁目1-33 電話:0554-22-2942",
-        "hours": "【平日】8：30～17：15 【土日祝日】9：00～17：00 ただし、年末年始（12/29～1/3はお休みです",
+        "address": "山梨県大月市大月町花咲1608-19 電話:0554-20-1855",
+        "hours": "【平日】8：30～17：15",
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.otsuki.yamanashi.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-206-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.942474,
+          35.61322
+        ]
+      },
+      "properties": {
+        "name": "大月市 【土日祝日】大月市観光協会",
+        "municipality": "大月市",
+        "locationName": "【土日祝日】大月市観光協会",
+        "address": "山梨県大月市大月一丁目1-33 電話:0554-22-2942",
+        "hours": "【土日祝日】9：00～17：00 ただし、年末年始（12/29～1/3はお休みです",
+        "round": "第21弾",
+        "issueDate": "2023/12/15",
+        "url": "https://otsuki-kanko.info/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13127,6 +15071,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.city.minami-alps.yamanashi.jp/sisetsu/shisetsu/michinoeki-shirane/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13148,6 +15093,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://minami-alpskankou.jp/?p=20273",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13169,6 +15115,7 @@ const mhcardGeoJSON = {
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.kai.yamanashi.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13190,6 +15137,29 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "https://kai.library2.city.kai.yamanashi.jp/lib_futaba.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-210-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.108566,
+          35.629982
+        ]
+      },
+      "properties": {
+        "name": "上野原市 上野原市役所 生活環境課 下水道担当",
+        "municipality": "上野原市",
+        "locationName": "上野原市役所 生活環境課 下水道担当",
+        "address": "山梨県上野原市上野原3832 電話：0554-62-3114 【土日・祝日】",
+        "hours": "【平日】8：30～17：15 【土日祝日】8:30～17:00 ただし、年末年始はお休みです",
+        "round": "第3弾",
+        "issueDate": "2016/12/01",
+        "url": "https://www.city.uenohara.yamanashi.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13203,14 +15173,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "上野原市 上野原市役所 生活環境課 下水道担当",
+        "name": "上野原市 ふらっと上野原",
         "municipality": "上野原市",
-        "locationName": "上野原市役所 生活環境課 下水道担当",
+        "locationName": "ふらっと上野原",
         "address": "下水道担当 山梨県上野原市上野原3832 電話：0554-62-3114 【土日・祝日】ふらっと上野原 電話：0554-62-3150",
         "hours": "【平日】8：30～17：15 【土日祝日】8:30～17:00 ただし、年末年始はお休みです",
         "round": "第3弾",
         "issueDate": "2016/12/01",
-        "url": "https://www.city.uenohara.yamanashi.jp/",
+        "url": "https://www.city.uenohara.yamanashi.jp/site/kankou/1018691.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13232,6 +15203,7 @@ const mhcardGeoJSON = {
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.chuo.yamanashi.jp/benriservice/facilitymap/bunya/koukyousisetsu/684.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13253,6 +15225,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.town.fujikawaguchiko.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-430-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -13274,6 +15247,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.town.fujikawaguchiko.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-430-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13295,6 +15269,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.town.fujikawaguchiko.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-430-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13316,6 +15291,29 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.pref.nagano.lg.jp/suwakoryuiki/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-000-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.056183,
+          36.006775
+        ]
+      },
+      "properties": {
+        "name": "長野県（流域下水道・A001） 豊田終末処理場（クリーンレイク諏訪）管理本館1階受付窓口",
+        "municipality": "長野県（流域下水道・A001）",
+        "locationName": "豊田終末処理場（クリーンレイク諏訪）管理本館1階受付窓口",
+        "address": "長野県諏訪市大字豊田字湖畔1866-1 電話：0266-58-2955",
+        "hours": "【平日】8：30～17：15 【休日】8：30～10：00、13：00～17：00 土日、祝日及び年末年始休業に配布します",
+        "round": "第01弾",
+        "issueDate": "2016/04/01",
+        "url": "http://www.pref.nagano.lg.jp/suwakoryuiki/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13337,6 +15335,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://www.pref.nagano.lg.jp/azuminoryuiki/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-000-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13358,6 +15357,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.pref.nagano.lg.jp/chikumagawaryuiki/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-000-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13379,6 +15379,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://azumino-e-tabi.net/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-000-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13400,6 +15401,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.pref.nagano.lg.jp/chikumagawaryuiki/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-000-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13421,6 +15423,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.go-nagano.net/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13442,6 +15445,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "http://www.matsumoto-tca.or.jp/association/tic",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13463,6 +15467,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.city.ueda.nagano.jp/site/kankojoho/14383.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13484,6 +15489,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.ueda.nagano.jp/soshiki/ssangyo/2828.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13500,11 +15506,34 @@ const mhcardGeoJSON = {
         "name": "上田市 (C001) 【4/1～12/28】武石ともしび博物館",
         "municipality": "上田市 (C001)",
         "locationName": "【4/1～12/28】武石ともしび博物館",
-        "address": "長野県上田市下武石1902-4 電話:0268-85-2474 【12/29～3/31】上田市武石地域自治センター 長野県上田市下武石742 電話:0268-85-2311",
-        "hours": "【4/1～12/28】9:00～16：00 ただし、月曜と祝日の翌日はお休みです （休館日が変更となる場合があるので、詳細は武石ともしび博物館のホームページを確認） 【12/29～3/31】9:00～16：00 平日は、武石地域自治センター内、武石地域建設課にて、休日祝日は武石地域自治センター宿直室にて配布します",
+        "address": "長野県上田市下武石1902-4 電話:0268-85-2474",
+        "hours": "【4/1～12/28】9:00～16：00 ただし、月曜と祝日の翌日はお休みです （休館日が変更となる場合があるので、詳細は武石ともしび博物館のホームページを確認）",
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.city.ueda.nagano.jp/soshiki/tkyoiku/1974.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-203-C-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.23909,
+          36.286594
+        ]
+      },
+      "properties": {
+        "name": "上田市 (C001) 【12/29～3/31】上田市武石地域自治センター",
+        "municipality": "上田市 (C001)",
+        "locationName": "【12/29～3/31】上田市武石地域自治センター",
+        "address": "長野県上田市下武石742 電話:0268-85-2311",
+        "hours": "【12/29～3/31】9:00～16：00 平日は、武石地域自治センター内、武石地域建設課にて、休日祝日は武石地域自治センター宿直室にて配布します",
+        "round": "第25弾",
+        "issueDate": "2025/04/25",
+        "url": "https://www.city.ueda.nagano.jp/soshiki/17.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-203-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13526,6 +15555,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://ueda-kanko.or.jp/spot/kankoukaikan/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-203-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13547,6 +15577,29 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://silkfact.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-204-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.821899,
+          35.514477
+        ]
+      },
+      "properties": {
+        "name": "飯田市 (A001) 【平日】飯田市役所上下水道局下水道課",
+        "municipality": "飯田市 (A001)",
+        "locationName": "【平日】飯田市役所上下水道局下水道課",
+        "address": "長野県飯田市大久保町2534電話：0265-22-4511",
+        "hours": "【平日】8：30～17：15",
+        "round": "第10弾",
+        "issueDate": "2019/08/07",
+        "url": "https://www.city.iida.lg.jp/site/jougesuido/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13560,14 +15613,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "飯田市 (A001) 【平日】飯田市役所上下水道局下水道課",
+        "name": "飯田市 (A001) 【休日】飯田市役所本庁舎当直室",
         "municipality": "飯田市 (A001)",
-        "locationName": "【平日】飯田市役所上下水道局下水道課",
+        "locationName": "【休日】飯田市役所本庁舎当直室",
         "address": "上下水道局下水道課長野県飯田市大久保町2534電話：0265-22-4511 【休日】飯田市役所本庁舎当直室",
-        "hours": "【平日】8：30～17：15 【休日】8：30～17：15",
+        "hours": "【休日】8：30～17：15",
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.city.iida.lg.jp/site/jougesuido/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13589,6 +15643,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.iida-museum.org/guidance/related-facility/tohyama/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13610,6 +15665,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.suwakanko.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13631,6 +15687,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.komoro.lg.jp/soshikikarasagasu/kensetsusuidoubu/gesuidoka/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13652,6 +15709,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.city.komoro.lg.jp/official/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13673,6 +15731,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.komoro-tour.jp/tourist-information/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-208-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13689,11 +15748,34 @@ const mhcardGeoJSON = {
         "name": "伊那市 (A001) みはらしの湯",
         "municipality": "伊那市 (A001)",
         "locationName": "みはらしの湯",
-        "address": "長野県伊那市西箕輪3480−１ 電話：0265-76-8760【みはらしの湯休館日】 伊那市役所 長野県伊那市下新田3050番地 電話：0265-78-4111 (問合せ先) 伊那市役所水道部水道整備課 電話：0265-96-8156",
+        "address": "長野県伊那市西箕輪3480−１ 電話：0265-76-8760【みはらしの湯休館日】",
         "hours": "11:00～20:00 ただし、毎月第1、3、5火曜日（祝祭日と重なった場合は翌日）はお休みです【みはらしの湯休館日】 8:30〜17:00",
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.ina-city-kankou.co.jp/miharashinoyu/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-209-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.952713,
+          35.826057
+        ]
+      },
+      "properties": {
+        "name": "伊那市 (A001) 伊那市役所",
+        "municipality": "伊那市 (A001)",
+        "locationName": "伊那市役所",
+        "address": "長野県伊那市下新田3050番地 電話：0265-78-4111 (問合せ先) 伊那市役所水道部水道整備課 電話：0265-96-8156",
+        "hours": "11:00～20:00 ただし、毎月第1、3、5火曜日（祝祭日と重なった場合は翌日）はお休みです【みはらしの湯休館日】 8:30〜17:00",
+        "round": "第11弾",
+        "issueDate": "2019/12/14",
+        "url": "https://www.inacity.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13715,6 +15797,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.ina-city-kankou.co.jp/sakurahotel/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-209-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13736,6 +15819,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.ina-city-kankou.co.jp/panya/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-209-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13757,6 +15841,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.komagane.nagano.jp/soshikiichiran/shiminka/shiminkakari/4/1/3156.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-210-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -13770,14 +15855,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "中野市 (A001) 【平日】中野市役所建設水道部上下水道課（本庁舎3階） 長野県中野市三好町一丁目3番19号 電話:0269-22-2111 【土日、祝日】中野市役所日直窓口 長野県中野市三好町一丁目3番19号 電話:0269-22-2111",
+        "name": "中野市 (A001) 【平日】中野市役所 / 【土日、祝日】中野市役所日直窓口",
         "municipality": "中野市 (A001)",
-        "locationName": "【平日】中野市役所建設水道部上下水道課（本庁舎3階） 長野県中野市三好町一丁目3番19号 電話:0269-22-2111 【土日、祝日】中野市役所日直窓口 長野県中野市三好町一丁目3番19号 電話:0269-22-2111",
+        "locationName": "【平日】中野市役所 / 【土日、祝日】中野市役所日直窓口",
         "address": "建設水道部上下水道課（本庁舎3階） 長野県中野市三好町一丁目3番19号 電話:0269-22-2111 【土日、祝日】中野市役所日直窓口 長野県中野市三好町一丁目3番19号 電話:0269-22-2111",
         "hours": "【平日】8:30～17:15 【土日、祝日】同上 ただし、年末年始はお休みです",
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13799,6 +15885,7 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "http://www.kanko-omachi.gr.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13820,6 +15907,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.ningyoukan.net/ ",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13841,6 +15929,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.chino.lg.jp/map/kankoannaijyo.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13854,14 +15943,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "佐久市 (A001) プラザ佐久 長野県佐久市佐久平駅東1番地1 電話：0267-68-7433",
+        "name": "佐久市 (A001) プラザ佐久",
         "municipality": "佐久市 (A001)",
-        "locationName": "プラザ佐久 長野県佐久市佐久平駅東1番地1 電話：0267-68-7433",
+        "locationName": "プラザ佐久",
         "address": "長野県佐久市佐久平駅東1番地1 電話：0267-68-7433",
         "hours": "8:00～20:00",
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-217-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13883,6 +15973,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://hotpark-asashina.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-217-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13904,6 +15995,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://healthyterrace-saku.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-217-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13925,6 +16017,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.iwamurada.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-217-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13946,6 +16039,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "http://chikuma-kanko.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-218-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13967,6 +16061,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "https://www.chikuma-bunka.jp/shisetsu_goannai/koshokubunkakaikan/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-218-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13988,6 +16083,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.city.chikuma.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-218-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14009,6 +16105,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://raidenkurumi.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14030,6 +16127,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "http://www.city.azumino.nagano.jp/soshiki/39/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-220-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14043,14 +16141,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "軽井沢町 ①軽井沢町都市施設さわやかハット事務所 2階 長野県北佐久郡軽井沢町大字軽井沢1178番地1186 ※軽井沢駅北口西側の階段をご利用ください。エレベーターは停まりません。詳細は町HPをご覧ください。 ②軽井沢町役場 上下水道課（8番窓口） 長野県北佐久郡軽井沢町大字長倉2381番地1 （問合せ先） 軽井沢町役場 上下水道課 電話:0267-45-8592",
+        "name": "軽井沢町 ①軽",
         "municipality": "軽井沢町",
-        "locationName": "①軽井沢町都市施設さわやかハット事務所 2階 長野県北佐久郡軽井沢町大字軽井沢1178番地1186 ※軽井沢駅北口西側の階段をご利用ください。エレベーターは停まりません。詳細は町HPをご覧ください。 ②軽井沢町役場 上下水道課（8番窓口） 長野県北佐久郡軽井沢町大字長倉2381番地1 （問合せ先） 軽井沢町役場 上下水道課 電話:0267-45-8592",
+        "locationName": "①軽",
         "address": "井沢町都市施設さわやかハット事務所 2階 長野県北佐久郡軽井沢町大字軽井沢1178番地1186 ※軽井沢駅北口西側の階段をご利用ください。エレベーターは停まりません。詳細は町HPをご覧ください。 ②軽井沢町役場 上下水道課（8番窓口） 長野県北佐久郡軽井沢町大字長倉2381番地1 （問合せ先） 軽井沢町役場 上下水道課 電話:0267-45-8592",
         "hours": "①10：00〜16：00（平日・土日祝とも） ②8：30〜17：15（開庁日のみ）",
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-321-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14064,14 +16163,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "下諏訪町 (A001) 下諏訪観光案内所 長野県諏訪郡下諏訪町5317(JR下諏訪駅構内) 電話：0266-28-2231",
+        "name": "下諏訪町 (A001) 下諏訪観光案内所",
         "municipality": "下諏訪町 (A001)",
-        "locationName": "下諏訪観光案内所 長野県諏訪郡下諏訪町5317(JR下諏訪駅構内) 電話：0266-28-2231",
+        "locationName": "下諏訪観光案内所",
         "address": "長野県諏訪郡下諏訪町5317(JR下諏訪駅構内) 電話：0266-28-2231",
         "hours": "【通常】9：30～16：30 ただし、水曜日及び年末年始はお休みです",
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-361-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14093,6 +16193,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://konjakukan-oideya.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-361-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14114,6 +16215,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://shimosuwaonsen.jp/tourism/441/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-361-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14135,6 +16237,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://kankou-minamiminowa.nagano.jp/ajikoubou/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-385-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14156,6 +16259,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.town.nagano-takamori.lg.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-403-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -14177,6 +16281,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.town.nagano-takamori.lg.jp/docs/12584.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-403-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14198,6 +16303,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.town.nagiso.nagano.jp/jyougesuidou/manho-ru.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-423-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14219,6 +16325,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.vill.okuwa.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-430-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14240,6 +16347,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.vill.asahi.nagano.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-451-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14256,11 +16364,34 @@ const mhcardGeoJSON = {
         "name": "筑北村 西条温泉とくら",
         "municipality": "筑北村",
         "locationName": "西条温泉とくら",
-        "address": "長野県東筑摩郡筑北村西条3443番地 電話：0263-66-2114 【火曜日】筑北村役場建設課上下水道係 長野県東筑摩郡筑北村西条4195番地 0263-66-2111（代表）",
+        "address": "長野県東筑摩郡筑北村西条3443番地 電話：0263-66-2114  【火曜日】",
         "hours": "【火曜日以外】10：00～20：30 【火】8：30～17：15",
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://hpdsp.jp/tokura1000yu/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-452-A.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.994751,
+          36.403267
+        ]
+      },
+      "properties": {
+        "name": "筑北村 筑北村役場建設課上下水道係",
+        "municipality": "筑北村",
+        "locationName": "筑北村役場建設課上下水道係",
+        "address": "長野県東筑摩郡筑北村西条4195番地 0263-66-2111（代表）",
+        "hours": "【火曜日以外】10：00～20：30 【火】8：30～17：15",
+        "round": "第18弾",
+        "issueDate": "2023/01/28",
+        "url": "http://www.vill.chikuhoku.lg.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-452-A.jpg",
         "type": "mhcard"
       }
     },
@@ -14282,6 +16413,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.town.obuse.nagano.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-541-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14303,6 +16435,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.town.obuse.nagano.jp/docs/244999.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-541-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14324,6 +16457,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://www.basho-ogaki.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14345,6 +16479,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.city.takayama.lg.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14366,6 +16501,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.city.takayama.lg.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14387,6 +16523,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001413.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-203-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14408,6 +16545,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001408.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-203-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14429,6 +16567,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001409.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-203-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14450,6 +16589,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001410.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-203-F01.jpg",
         "type": "mhcard"
       }
     },
@@ -14458,19 +16598,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.452393,
-          36.333809
+          137.348541,
+          36.074844
         ]
       },
       "properties": {
         "name": "高山市 (G001) 【通常】道の駅ひだ朝日村",
         "municipality": "高山市 (G001)",
         "locationName": "【通常】道の駅ひだ朝日村",
-        "address": "通常】道の駅ひだ朝日村 岐阜県高山市朝日町万石150番地 電話：0577-55-3777 【上記の休業日】高山市朝日支所基盤産業課窓口 岐阜県高山市朝日町万石800番地 電話：0577-55-3311 (問合せ先) 高山市朝日支所 電話：0577-55-3311",
-        "hours": "【通常】10：00～16：00 ただし、水曜日（祝祭日は翌日）はお休みです 【上記の休業日】8:30～17：15 道の駅ひだ朝日村の休業日に配布します",
+        "address": "岐阜県高山市朝日町万石150番地 電話：0577-55-3777",
+        "hours": "【通常】10：00～16：00 ただし、水曜日（祝祭日は翌日）はお休みです",
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "http://www.gix.or.jp/~z33asahi/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-203-G-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.348541,
+          36.074844
+        ]
+      },
+      "properties": {
+        "name": "高山市 (G001) 【上記の休業日】高山市朝日支所基盤産業課窓口",
+        "municipality": "高山市 (G001)",
+        "locationName": "【上記の休業日】高山市朝日支所基盤産業課窓口",
+        "address": "岐阜県高山市朝日町万石800番地 電話：0577-55-3311 (問合せ先) 高山市朝日支所 電話：0577-55-3311",
+        "hours": "【上記の休業日】8:30～17：15 道の駅ひだ朝日村の休業日に配布します",
+        "round": "第18弾",
+        "issueDate": "2023/01/28",
+        "url": "https://www.city.takayama.lg.jp/shisetsu/1004141/1004416/1004417.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-203-G-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14492,6 +16655,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001406.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-203-H-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14513,6 +16677,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001407.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-203-I-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14534,6 +16699,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.toutokan.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14555,6 +16721,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.seki.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14576,6 +16743,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://nakatsugawa.town/tokusankan/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14597,6 +16765,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.kankou-ena.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14618,6 +16787,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://iwamura.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-210-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14639,6 +16809,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.city.minokamo.lg.jp/soshiki/17/1968.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14660,6 +16831,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "http://www.sorahaku.net/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14681,6 +16853,7 @@ const mhcardGeoJSON = {
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.mizuho.lg.jp/12757.htm",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14694,14 +16867,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "飛騨市（A001） 飛騨古川まちなか観光案内所 飛騨市古川町壱之町8-3 飛騨市役所商工観光部まちづくり観光課 電話：0577-73-7463（平日のみ）",
+        "name": "飛騨市（A001） 飛騨古川まちなか観光案内所 飛騨市古川町壱之町8-3 飛騨市役所商工観光部まちづくり観光課",
         "municipality": "飛騨市（A001）",
-        "locationName": "飛騨古川まちなか観光案内所 飛騨市古川町壱之町8-3 飛騨市役所商工観光部まちづくり観光課 電話：0577-73-7463（平日のみ）",
+        "locationName": "飛騨古川まちなか観光案内所 飛騨市古川町壱之町8-3 飛騨市役所商工観光部まちづくり観光課",
         "address": "飛騨市（A001）",
         "hours": "9：00～16：00 ただし、年末年始（12/29～1/3）はお休みです",
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-217-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14723,6 +16897,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.skydome.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-217-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14744,6 +16919,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://ekisya-cafe.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14765,6 +16941,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.gujo-tv.ne.jp/~kuturogi/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-219-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14786,6 +16963,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://kinenkan.gujohachiman.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-219-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14807,6 +16985,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://jm-minami.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-219-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14815,19 +16994,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.577774,
-          35.999477
+          136.636948,
+          35.219833
         ]
       },
       "properties": {
         "name": "海津市 【平日】海津市役所上下水道課",
         "municipality": "海津市",
         "locationName": "【平日】海津市役所上下水道課",
-        "address": "上下水道課 岐阜県海津市海津町高須５１５番地 電話:0584-53-1429 【土日祝日】岐阜県さぼう遊学館 岐阜県海津市南濃町奥条無番地 電話:0584-55-1110",
-        "hours": "【平日】8：30～17：15 ただし、年末年始はお休みです 【土日祝日】9：00～17：00 ただし、休館日、年末年始はお休みです",
+        "address": "岐阜県海津市海津町高須５１５番地 電話:0584-53-1429",
+        "hours": "【平日】8：30～17：15 ただし、年末年始はお休みです",
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.kaizu.lg.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-221-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.584244,
+          35.204994
+        ]
+      },
+      "properties": {
+        "name": "海津市 【土日祝日】岐阜県さぼう遊学館",
+        "municipality": "海津市",
+        "locationName": "【土日祝日】岐阜県さぼう遊学館",
+        "address": "岐阜県海津市南濃町奥条無番地 電話:0584-55-1110",
+        "hours": "【土日祝日】9：00～17：00 ただし、休館日、年末年始はお休みです",
+        "round": "第21弾",
+        "issueDate": "2023/12/15",
+        "url": "https://www.city.kaizu.lg.jp/kurashi/0000001234.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-221-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14849,6 +17051,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.town.tarui.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-361-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14870,6 +17073,7 @@ const mhcardGeoJSON = {
         "round": "第1弾",
         "issueDate": "2016/04/01",
         "url": "http://www.town.gifu-ikeda.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-404-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14891,6 +17095,7 @@ const mhcardGeoJSON = {
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "http://www.town.gifu-ikeda.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-404-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14912,6 +17117,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.city.shizuoka.lg.jp/556_000024.html#h2_5",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-100-A02.jpg",
         "type": "mhcard"
       }
     },
@@ -14933,6 +17139,7 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "http://www.visit-shizuoka.com/useful_info/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14954,6 +17161,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.inhamamatsu.com/japanese/info/tourists-info-center.php",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-130-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14975,6 +17183,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "http://www.city.hamamatsu.shizuoka.jp/c-machi/culture_art/saigagake/saigagake.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-130-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14996,6 +17205,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.numazu.shizuoka.jp/shisei/office/ichiran/suido/soumu.htm",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15017,6 +17227,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://numazuminato.com/shop/kankoukyoukai/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15038,6 +17249,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.atami.lg.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15059,6 +17271,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.ataminews.gr.jp/information/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15072,14 +17285,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "三島市 三島観光案内所 静岡県三島市一番町16-1 （問い合わせ先） 三島市都市基盤部下水道課 電話：055-983-2662",
+        "name": "三島市 三島観光案内所",
         "municipality": "三島市",
-        "locationName": "三島観光案内所 静岡県三島市一番町16-1 （問い合わせ先） 三島市都市基盤部下水道課 電話：055-983-2662",
+        "locationName": "三島観光案内所",
         "address": "静岡県三島市一番町16-1 （問い合わせ先） 三島市都市基盤部下水道課 電話：055-983-2662",
         "hours": "9:00～16:00",
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15101,6 +17315,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.city.fujinomiya.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15122,6 +17337,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://fujinomiya.gr.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-207-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15143,6 +17359,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://fmkanvol.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-207-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15159,11 +17376,34 @@ const mhcardGeoJSON = {
         "name": "伊東市 伊東温泉観光・文化施設「東海館」",
         "municipality": "伊東市",
         "locationName": "伊東温泉観光・文化施設「東海館」",
-        "address": "静岡県伊東市東松原町12-10 0557-36-2004 【東海館 休館日】 伊東市観光案内所（伊東駅構内） 静岡県伊東市湯川3-12-1 0557-37-6105 (問合せ先) 伊東市役所下水道課 電話：0557-32-1821",
+        "address": "静岡県伊東市東松原町12-10 0557-36-2004 【東海館 休館日】",
         "hours": "9:00～20:30 ただし、毎月第3火曜日（祝祭日の場合は翌日）はお休みです 【東海館 休館日】 9:00～17:00",
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://itospa.com/feature/tokaikan/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-208-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.0923,
+          34.974545
+        ]
+      },
+      "properties": {
+        "name": "伊東市 伊東市観光案内所（伊東駅構内）",
+        "municipality": "伊東市",
+        "locationName": "伊東市観光案内所（伊東駅構内）",
+        "address": "静岡県伊東市湯川3-12-1 0557-37-6105 (問合せ先) 伊東市役所下水道課 電話：0557-32-1821",
+        "hours": "9:00～20:30 ただし、毎月第3火曜日（祝祭日の場合は翌日）はお休みです 【東海館 休館日】 9:00～17:00",
+        "round": "第11弾",
+        "issueDate": "2019/12/14",
+        "url": "https://itospa.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15185,6 +17425,7 @@ const mhcardGeoJSON = {
         "round": "第1弾",
         "issueDate": "2016/04/01",
         "url": "https://www.city.fuji.shizuoka.jp/fujijikan/fujipedia/kb719c0000003ch5.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15206,6 +17447,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://gakunan-haisuiro.jp/link(html)/manhole/manhole.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-210-B-02.jpg",
         "type": "mhcard"
       }
     },
@@ -15227,6 +17469,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "http://www.kanko-iwata.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15248,6 +17491,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "http://www.yaizu.gr.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15269,6 +17513,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.city.kakegawa.shizuoka.jp/life/kouen/shisetsu/eikikitaeria/kakegawajo.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15290,6 +17535,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.fujieda.shizuoka.jp/i/kyodomuse/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15311,6 +17557,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.jukuu.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15332,6 +17579,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.kaikokushimodaminato.co.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15353,6 +17601,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.susonokanko.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-220-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15374,6 +17623,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.city.kosai.shizuoka.jp/kanko_bunka_sports/kankospot/9675.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-221-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15395,6 +17645,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://izunotabi.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-225-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15416,6 +17667,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.minami-izu.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-304-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15437,6 +17689,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.town.nagaizumi.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-342-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15458,6 +17711,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://shisetsu.mizuno.jp/m-7621",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-342-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15479,6 +17733,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://kanko-oyama.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-344-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15500,6 +17755,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://www.town.yoshida.shizuoka.jp/6462.htm",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-424-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15521,6 +17777,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.town.morimachi.shizuoka.jp/gyosei/kurashi_tetsuzuki/jogesuido/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-461-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15542,6 +17799,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.eppy.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15563,6 +17821,7 @@ const mhcardGeoJSON = {
         "round": "第1弾",
         "issueDate": "2016/04/01",
         "url": "http://waterlab.nagoya/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15584,6 +17843,7 @@ const mhcardGeoJSON = {
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "http://www.water.city.nagoya.jp/shiryokan/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15605,6 +17865,7 @@ const mhcardGeoJSON = {
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "http://www.city.toyohashi.lg.jp/23688.htm",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15626,6 +17887,7 @@ const mhcardGeoJSON = {
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "http://www.city.toyohashi.lg.jp/6455.htm",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15639,14 +17901,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "豊橋市（C001） 二川宿本陣資料館 愛知県豊橋市二川町字中町65番地 電話：0532-41-8580",
+        "name": "豊橋市（C001） 二川宿本陣資料館",
         "municipality": "豊橋市（C001）",
-        "locationName": "二川宿本陣資料館 愛知県豊橋市二川町字中町65番地 電話：0532-41-8580",
+        "locationName": "二川宿本陣資料館",
         "address": "愛知県豊橋市二川町字中町65番地 電話：0532-41-8580",
         "hours": "9：00～17：00 ※ただし、月曜日（月曜日が祝休日の場合は開館、翌平日が休館）、年末年始はお休みです",
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-201-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15660,14 +17923,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "岡崎市(A001) 三河武士のやかた家康館 愛知県岡崎市康生町561 電話：0564-24-2204",
+        "name": "岡崎市(A001) 三河武士のやかた家康館",
         "municipality": "岡崎市(A001)",
-        "locationName": "三河武士のやかた家康館 愛知県岡崎市康生町561 電話：0564-24-2204",
+        "locationName": "三河武士のやかた家康館",
         "address": "愛知県岡崎市康生町561 電話：0564-24-2204",
         "hours": "9：00～17：00（入館は16:30まで） ただし、年末（12/29～12/31）はお休みです",
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15689,6 +17953,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://okazaki-kanko.jp/feature/rune/top",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15710,6 +17975,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://okazaki-kanko.jp/feature/manhole/rune",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-202-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15731,6 +17997,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://okazaki-kanko.jp/okazaki-park/eat/33",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-202-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15744,14 +18011,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "岡崎市 (E001) 奥殿陣屋 書院内 岡崎市奥殿町雑谷下10番地 電話：0564-45-7230",
+        "name": "岡崎市 (E001) 奥殿陣屋 書院内 岡崎市奥殿町雑谷下10番地",
         "municipality": "岡崎市 (E001)",
-        "locationName": "奥殿陣屋 書院内 岡崎市奥殿町雑谷下10番地 電話：0564-45-7230",
+        "locationName": "奥殿陣屋 書院内 岡崎市奥殿町雑谷下10番地",
         "address": "岡崎市 (E001)",
         "hours": "9:30～16:30 ただし、毎週月曜日（祝日の場合は翌日）、年末年始はお休みです",
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-202-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15773,6 +18041,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.8miso.co.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-202-F01.jpg",
         "type": "mhcard"
       }
     },
@@ -15794,6 +18063,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://station.okazaki-lita.com/center/libra",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-202-G-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15815,6 +18085,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.ip.licsre-saas.jp/ichinomiya/division/chuo/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15836,6 +18107,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.setomachi.com/setotourist/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15857,6 +18129,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "http://www.seto-cul.jp/new-century/access.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-204-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15878,6 +18151,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.city.handa.lg.jp/machi/gesuido/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15899,6 +18173,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://handa-akarenga.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15920,6 +18195,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.clacity.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-205-C01.jpg",
         "type": "mhcard"
       }
     },
@@ -15941,6 +18217,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.toyokawa-map.net/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15954,14 +18231,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "津島市 【平日】津島市水道お客さまセンター 愛知県津島市立込町2丁目21番地 電話：0567-55-9738 【休日】津島市観光交流センター 愛知県津島市本町１丁目52番地１ 電話：0567-25-2701",
+        "name": "津島市 【平日】津 / 【休日】津島市観光交流センター",
         "municipality": "津島市",
-        "locationName": "【平日】津島市水道お客さまセンター 愛知県津島市立込町2丁目21番地 電話：0567-55-9738 【休日】津島市観光交流センター 愛知県津島市本町１丁目52番地１ 電話：0567-25-2701",
+        "locationName": "【平日】津 / 【休日】津島市観光交流センター",
         "address": "島市水道お客さまセンター 愛知県津島市立込町2丁目21番地 電話：0567-55-9738 【休日】津島市観光交流センター 愛知県津島市本町１丁目52番地１ 電話：0567-25-2701",
         "hours": "【平日】8：30～17：15 【休日】9：00～17：00",
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-208-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -15970,19 +18248,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.456619,
-          35.856865
+          136.993484,
+          34.884842
         ]
       },
       "properties": {
         "name": "碧南市 【平日】碧南市役所下水道課",
         "municipality": "碧南市",
         "locationName": "【平日】碧南市役所下水道課",
-        "address": "所下水道課愛知県碧南市松本町２８番地電話：0566-41-3311【火曜日～日曜日、祝日】碧南市藤井達吉現代美術館愛知県音羽町1丁目1番地電話：0566-48-6602",
-        "hours": "【碧南市役所下水道課(平日)】8:30～17:15【碧南市藤井達吉現代美術館(火曜日～日曜日、祝日)】10:00～17:00ただし、年末年始はお休みです",
+        "address": "愛知県碧南市松本町２８番地電話：0566-41-3311",
+        "hours": "【碧南市役所下水道課(平日)】8:30～17:15",
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.city.hekinan.aichi.jp/GESUIKA/index.htm",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-209-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.906586,
+          35.18021
+        ]
+      },
+      "properties": {
+        "name": "碧南市 【火曜日～日曜日、祝日】碧南市藤井達吉現代美術館",
+        "municipality": "碧南市",
+        "locationName": "【火曜日～日曜日、祝日】碧南市藤井達吉現代美術館",
+        "address": "愛知県音羽町1丁目1番地電話：0566-48-6602",
+        "hours": "【碧南市藤井達吉現代美術館(火曜日～日曜日、祝日)】10:00～17:00ただし、年末年始はお休みです",
+        "round": "第09弾",
+        "issueDate": "2018/12/14",
+        "url": "http://www.city.hekinan.aichi.jp/tatsukichimuseum/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16004,6 +18305,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.kariya-infobox.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16025,6 +18327,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://asukeyashiki.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16038,14 +18341,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "豊田市（B001） コンテナ－ニシマチ６愛知県豊田市西町6丁目81番地4電話:0565-85-0226（問い合わせ先）豊田市下水道建設課電話：0565-34-6624",
+        "name": "豊田市（B001） コンテナ－ニシマチ",
         "municipality": "豊田市（B001）",
-        "locationName": "コンテナ－ニシマチ６愛知県豊田市西町6丁目81番地4電話:0565-85-0226（問い合わせ先）豊田市下水道建設課電話：0565-34-6624",
+        "locationName": "コンテナ－ニシマチ",
         "address": "６愛知県豊田市西町6丁目81番地4電話:0565-85-0226（問い合わせ先）豊田市下水道建設課電話：0565-34-6624",
         "hours": "10:00～17:00 ただし、毎週月曜日（祝日、振替休日の場合も）、年末年始及びお盆は休みです。",
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-211-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16067,6 +18371,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://kitara-toyota.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-211-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16088,6 +18393,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.library.city.anjo.aichi.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16109,6 +18415,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.ansyobunka.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-212-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16130,6 +18437,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.nishio.aichi.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16151,6 +18459,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://ubkinenkan.com",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16172,6 +18481,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.city.inuyama.aichi.jp/kurashi/shinyou/1000701/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16193,6 +18503,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.instagram.com/kobokan.tokoname?igsh=dzQwMXhrYnhncnRj",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16214,6 +18525,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.tokoname-kankou.net/info/tourist/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-216-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16235,6 +18547,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.city.konan.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-217-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16256,6 +18569,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://www.komaki-kanko.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16269,14 +18583,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "稲沢市 稲沢市役所 上下水道庁舎 〒492-8271 稲沢市石橋六丁目82 電話：0587-21-4199",
+        "name": "稲沢市 稲沢市役所",
         "municipality": "稲沢市",
-        "locationName": "稲沢市役所 上下水道庁舎 〒492-8271 稲沢市石橋六丁目82 電話：0587-21-4199",
+        "locationName": "稲沢市役所",
         "address": "上下水道庁舎 〒492-8271 稲沢市石橋六丁目82 電話：0587-21-4199",
         "hours": "8:30～17:15 ただし、土日、祝日、年末年始はお休みです",
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-220-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16298,6 +18613,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.kuruto.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-223-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16319,6 +18635,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.sourifureai.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-224-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16327,19 +18644,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.577774,
-          35.999477
+          137.05072,
+          35.001492
         ]
       },
       "properties": {
         "name": "知立市 【平日】知立市役所上下水道部下水道課",
         "municipality": "知立市",
         "locationName": "【平日】知立市役所上下水道部下水道課",
-        "address": "上下水道部下水道課 愛知県知立市広見三丁目1番地 電話:0566-95-0159 【土日・祝日】知立市観光交流センター 愛知県知立市中町中128番地 電話:0566-55-6302",
-        "hours": "【平日】8：30～17：15 ただし、年末年始はお休みです 【土日・祝日】9：00～17：00 ただし、年末年始はお休みです",
+        "address": "愛知県知立市広見三丁目1番地 電話:0566-95-0159",
+        "hours": "【平日】8：30～17：15 ただし、年末年始はお休みです",
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.chiryu.aichi.jp/soshiki/jogesuido/gesuido/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-225-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.042374,
+          35.007603
+        ]
+      },
+      "properties": {
+        "name": "知立市 【土日・祝日】知立市観光交流センター",
+        "municipality": "知立市",
+        "locationName": "【土日・祝日】知立市観光交流センター",
+        "address": "愛知県知立市中町中128番地 電話:0566-55-6302",
+        "hours": "【土日・祝日】9：00～17：00 ただし、年末年始はお休みです",
+        "round": "第20弾",
+        "issueDate": "2023/07/28",
+        "url": "https://www.city.chiryu.aichi.jp/kanko_bunka_sports/kanko_bunka_sports/1541483998630.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-225-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16361,6 +18701,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.owariasahi.lg.jp/page/2168.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-226-A02.jpg",
         "type": "mhcard"
       }
     },
@@ -16374,14 +18715,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "高浜市 (A001) 【平日】高浜市役所2階上下水道グループ 愛知県高浜市青木町4-1-2 電話:0566-52-1111 【土日祝】高浜エコハウス 愛知県高浜市沢渡町4-6-2 電話:0566-52-2299 （問合せ先） 高浜市役所上下水道グループ（平日営業時間のみ対応） 電話:0566-52-1111",
+        "name": "高浜市 (A001) 【平日】高浜市役所2階 / 【土日祝】高浜エコハウス",
         "municipality": "高浜市 (A001)",
-        "locationName": "【平日】高浜市役所2階上下水道グループ 愛知県高浜市青木町4-1-2 電話:0566-52-1111 【土日祝】高浜エコハウス 愛知県高浜市沢渡町4-6-2 電話:0566-52-2299 （問合せ先） 高浜市役所上下水道グループ（平日営業時間のみ対応） 電話:0566-52-1111",
+        "locationName": "【平日】高浜市役所2階 / 【土日祝】高浜エコハウス",
         "address": "上下水道グループ 愛知県高浜市青木町4-1-2 電話:0566-52-1111 【土日祝】高浜エコハウス 愛知県高浜市沢渡町4-6-2 電話:0566-52-2299 （問合せ先） 高浜市役所上下水道グループ（平日営業時間のみ対応） 電話:0566-52-1111",
         "hours": "【平日】8:30～17:15 【土日祝】9:00～17：00 ただし、年末年始は休みです",
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-227-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16403,6 +18745,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "http://www.takahama-kawara-museum.com/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-227-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16424,6 +18767,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.toyoake.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-229-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16437,14 +18781,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "愛西市 愛西市観光協会 愛知県愛西市森川町井桁西25番地1 電話:0567-55-9993",
+        "name": "愛西市 愛西市観光協会",
         "municipality": "愛西市",
-        "locationName": "愛西市観光協会 愛知県愛西市森川町井桁西25番地1 電話:0567-55-9993",
+        "locationName": "愛西市観光協会",
         "address": "愛知県愛西市森川町井桁西25番地1 電話:0567-55-9993",
         "hours": "9：00～17：00 ただし、毎週木曜日・年末年始（12/29～1/3）はお休みです",
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-232-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16466,6 +18811,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.kitanagoya.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-234A.jpg",
         "type": "mhcard"
       }
     },
@@ -16487,6 +18833,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.city.yatomi.lg.jp/shisetsu/1000983/1000988/1000992.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-235-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16508,6 +18855,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.city.aichi-miyoshi.lg.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-236-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16529,6 +18877,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.city.aichi-miyoshi.lg.jp/soshiki/shiminkeizai/sangyo/syoukou/575.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-236-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16550,6 +18899,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.city.aichi-miyoshi.lg.jp/soshiki/somu/kyodo/15/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-236-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16571,6 +18921,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "https://bunkanoie.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-238-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16592,6 +18943,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "http://www.town.toyoyama.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-342-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16609,10 +18961,33 @@ const mhcardGeoJSON = {
         "municipality": "大口町",
         "locationName": "【平日】大口町役場１階 建設課",
         "address": "愛知県丹羽郡大口町下小口七丁目155番地 電話:0587-95-1626",
+        "hours": "【平日】9：00～16：00（12時から13時までの間は配布しておりません）",
+        "round": "第26弾",
+        "issueDate": "2025/07/25",
+        "url": "https://www.town.oguchi.lg.jp/item/16101.htm#itemid16101",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-361-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.908142,
+          35.332577
+        ]
+      },
+      "properties": {
+        "name": "大口町 【土日祝日】大口町役場１階 宿直室",
+        "municipality": "大口町",
+        "locationName": "【土日祝日】大口町役場１階 宿直室",
+        "address": "愛知県丹羽郡大口町下小口七丁目155番地 電話:0587-95-1626",
         "hours": "【平日】9：00～16：00（12時から13時までの間は配布しておりません） 【休日】9：00～16：00 ただし、年末年始はお休みです",
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.town.oguchi.lg.jp/item/16101.htm#itemid16101",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-361-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16634,6 +19009,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.town.fuso.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-362-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16655,6 +19031,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.town.oharu.aichi.jp/seikatsu/gesuido13.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-424-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16676,6 +19053,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.town.kanie.aichi.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-425-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16697,6 +19075,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://www.town.agui.lg.jp/soshiki_view.php?so_cd1=3&so_cd2=3&so_cd3=1&so_cd4=0&so_cd5=0",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-441-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16718,6 +19097,7 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "http://www.town.aichi-higashiura.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-442-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16739,6 +19119,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://taketoyo-kouryu.jp/ajinokura/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-447-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16760,6 +19141,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "http://www.town.kota.lg.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-501-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16781,6 +19163,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.town.shitara.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-561-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16802,6 +19185,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.city.yokkaichi.mie.jp/museum/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16823,6 +19207,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://kanko-yokkaichi.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16844,6 +19229,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.city.yokkaichi.mie.jp/new_water/index.php",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-202-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16865,6 +19251,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.ise.mie.jp//kankou/invitation/baggage/1002840.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16886,6 +19273,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.city.ise.mie.jp//kankou/invitation/baggage/1002847.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16907,6 +19295,7 @@ const mhcardGeoJSON = {
         "round": "第3弾",
         "issueDate": "2016/12/01",
         "url": "http://www.city.matsusaka.mie.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16928,6 +19317,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.kankomie.or.jp/special/matsusaka-informationcenter/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-204-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16949,6 +19339,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.matsusaka.mie.jp/site/sougouundoukouen/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-204-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16970,6 +19361,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://takeshiro.net/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-204-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16991,6 +19383,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.city.matsusaka.mie.jp/site/bunkazai-center/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-204-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17012,6 +19405,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.matsusaka-kanko.com/blog/kanrishisetsu/%e6%9d%be%e9%98%aa%e9%a7%85%e8%a6%b3%e5%85%89%e6%83%85%e5%a0%b1%e3%82%bb%e3%83%b3%e3%82%bf%e3%83%bc/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-204-F-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17025,14 +19419,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "桑名市 (A001) 桑名市物産観光案内所三重県桑名市有楽町59電話：0594-21-5416",
+        "name": "桑名市 (A001) 桑名市物産観光案内",
         "municipality": "桑名市 (A001)",
-        "locationName": "桑名市物産観光案内所三重県桑名市有楽町59電話：0594-21-5416",
+        "locationName": "桑名市物産観光案内",
         "address": "所三重県桑名市有楽町59電話：0594-21-5416",
         "hours": "9：00～17：00ただし、年末年始（12/29～1/3）はお休みです",
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17046,14 +19441,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "桑名市 (B001) 桑名市住吉浦休憩施設 三重県桑名市太一丸地先 電話：0594-23-3010",
+        "name": "桑名市 (B001) 桑名市住吉浦休憩施設",
         "municipality": "桑名市 (B001)",
-        "locationName": "桑名市住吉浦休憩施設 三重県桑名市太一丸地先 電話：0594-23-3010",
+        "locationName": "桑名市住吉浦休憩施設",
         "address": "三重県桑名市太一丸地先 電話：0594-23-3010",
         "hours": "9：00~17：00 ただし、年末年始はお休みです",
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-205-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -17062,19 +19458,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.577774,
-          35.999477
+          136.57135,
+          34.832733
         ]
       },
       "properties": {
         "name": "鈴鹿市 【平日】鈴鹿市上下水道局",
         "municipality": "鈴鹿市",
         "locationName": "【平日】鈴鹿市上下水道局",
-        "address": "上下水道局三重県鈴鹿市寺家町1170電話：059-368-1662【休日】鈴鹿市観光協会三重県鈴鹿市白子駅前17-12",
-        "hours": "【平日】8：30～17：15【休日】9：30～18：00ただし、年末年始はお休みです",
+        "address": "三重県鈴鹿市寺家町1170電話：059-368-1662",
+        "hours": "【平日】8：30～17：15",
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.city.suzuka.lg.jp/suido/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-207-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.589401,
+          34.83498
+        ]
+      },
+      "properties": {
+        "name": "鈴鹿市 【休日】鈴鹿市観光協会",
+        "municipality": "鈴鹿市",
+        "locationName": "【休日】鈴鹿市観光協会",
+        "address": "三重県鈴鹿市白子駅前17-12",
+        "hours": "【休日】9：30～18：00ただし、年末年始はお休みです",
+        "round": "第06弾",
+        "issueDate": "2017/12/09",
+        "url": "http://www.kanko.suzuka.mie.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17096,6 +19515,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.kankomie.or.jp/spot/3194",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17112,11 +19532,34 @@ const mhcardGeoJSON = {
         "name": "亀山市 (B001) 亀山市立図書館",
         "municipality": "亀山市 (B001)",
         "locationName": "亀山市立図書館",
-        "address": "三重県亀山市御幸町318番地1 電話:0595-82-0542 【休館日】亀山市上下水道部下水道課 三重県亀山市関町木崎919番地１ 電話:0595-97-0628",
+        "address": "三重県亀山市御幸町318番地1 電話:0595-82-0542",
         "hours": "9：00～20：00 ただし、火曜日（祝日の場合は翌日）、第4金曜日、図書特別整理期間・年末年始は お休みです 【休館日】8：30～17：15 ただし、年末年始はお休みです",
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.kameyama.mie.jp/library/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-210-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.391129,
+          34.854752
+        ]
+      },
+      "properties": {
+        "name": "亀山市 (B001) 【休館日】亀山市上下水道部下水道課",
+        "municipality": "亀山市 (B001)",
+        "locationName": "【休館日】亀山市上下水道部下水道課",
+        "address": "三重県亀山市関町木崎919番地１ 電話:0595-97-0628",
+        "hours": "【休館日】8：30～17：15 ただし、年末年始はお休みです",
+        "round": "第26弾",
+        "issueDate": "2025/07/25",
+        "url": "https://www.city.kameyama.mie.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-210-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17138,6 +19581,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://uedashoten.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17159,6 +19603,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "https://iga-nin.com ",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17180,6 +19625,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.town.toin.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-324-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17201,6 +19647,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.kanko-komono.com/spots/3371/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-341-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17214,14 +19661,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "滋賀県（流域下水道） 淡海環境プラザ滋賀県草津市矢橋字帰帆2108電話：077-569-5306",
+        "name": "滋賀県（流域下水道） 淡海環境プラ",
         "municipality": "滋賀県（流域下水道）",
-        "locationName": "淡海環境プラザ滋賀県草津市矢橋字帰帆2108電話：077-569-5306",
+        "locationName": "淡海環境プラ",
         "address": "ザ滋賀県草津市矢橋字帰帆2108電話：077-569-5306",
         "hours": "9：00～16：30ただし、土日、祝日、年末年始、お盆等公益財団法人淡海環境保全財団が必要と認めた日はお休みです",
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17243,6 +19691,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.city.otsu.lg.jp/soshiki/080/1902/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17264,6 +19713,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://otsu.or.jp/tourism/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17285,6 +19735,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://oportable.jp/birdcafe.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-201-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17298,14 +19749,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "彦根市（A001） 彦根市上下水道料金お客様サービスセンター 滋賀県彦根市元町4番2号（彦根市役所１階） 電話0749-27-2802 （問い合わせ先） 彦根市上下水道部下水道建設課 電話0749-22-5232",
+        "name": "彦根市（A001） 彦根市",
         "municipality": "彦根市（A001）",
-        "locationName": "彦根市上下水道料金お客様サービスセンター 滋賀県彦根市元町4番2号（彦根市役所１階） 電話0749-27-2802 （問い合わせ先） 彦根市上下水道部下水道建設課 電話0749-22-5232",
+        "locationName": "彦根市",
         "address": "上下水道料金お客様サービスセンター 滋賀県彦根市元町4番2号（彦根市役所１階） 電話0749-27-2802 （問い合わせ先） 彦根市上下水道部下水道建設課 電話0749-22-5232",
         "hours": "【平日】8:30~19:00 【土、日、祝日および12/29 ~12/31】9:00~17:00 ただし、1/1~1/3はお休みです",
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17327,6 +19779,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.hikonyan-museum.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17340,14 +19793,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "近江八幡市 近江八幡市水道事業所上下水道施設課窓口 近江八幡市桜宮町214-10 (問い合わせ先) 上下水道施設課 下水道Ｇ 電話：0748-36-5537",
+        "name": "近江八幡市 近江八",
         "municipality": "近江八幡市",
-        "locationName": "近江八幡市水道事業所上下水道施設課窓口 近江八幡市桜宮町214-10 (問い合わせ先) 上下水道施設課 下水道Ｇ 電話：0748-36-5537",
+        "locationName": "近江八",
         "address": "幡市水道事業所上下水道施設課窓口 近江八幡市桜宮町214-10 (問い合わせ先) 上下水道施設課 下水道Ｇ 電話：0748-36-5537",
         "hours": "【平日】9:00～12:00、13:00～16:00 土曜・日曜・祝日および年末年始(12/29～1/3)はお休みです。",
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17369,6 +19823,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.city.kusatsu.shiga.jp/kusatsujuku/koryukan/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17390,6 +19845,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://kanko-kusatsu.com/spot/kusatsuyumehonin",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-206-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17411,6 +19867,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.karasuma.co.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-206-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17424,14 +19881,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "守山市 守山市駅前総合案内所 滋賀県守山市梅田町1-9 電話:077-514-3765 （問合せ先） 守山市上下水道事業所 施設工務課 電話:077-582-1128",
+        "name": "守山市 守山市駅前総合案内所",
         "municipality": "守山市",
-        "locationName": "守山市駅前総合案内所 滋賀県守山市梅田町1-9 電話:077-514-3765 （問合せ先） 守山市上下水道事業所 施設工務課 電話:077-582-1128",
+        "locationName": "守山市駅前総合案内所",
         "address": "滋賀県守山市梅田町1-9 電話:077-514-3765 （問合せ先） 守山市上下水道事業所 施設工務課 電話:077-582-1128",
         "hours": "7：30～19：30 ただし、12月29日～１月3日はお休みです",
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17453,6 +19911,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.ritto-kanko.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17474,6 +19933,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17495,6 +19955,29 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.koka.lg.jp/2025.htm",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-209-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.171036,
+          34.970978
+        ]
+      },
+      "properties": {
+        "name": "甲賀市(B001) 甲賀市ひと・まち街道交流館",
+        "municipality": "甲賀市(B001)",
+        "locationName": "甲賀市ひと・まち街道交流館",
+        "address": "滋賀県甲賀市水口町八坂7番4号 （問合わせ先）",
+        "hours": "9：00～17:00 ただし、月曜日（祝日の場合は翌日）、年末年始（12/29～1/3）はお休みです",
+        "round": "第27弾",
+        "issueDate": "2025/12/19",
+        "url": "https://www.city.koka.lg.jp/7205.htm",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-209-B-01.jpg\r\n",
         "type": "mhcard"
       }
     },
@@ -17508,14 +19991,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "甲賀市(B001) 甲賀市ひと・まち街道交流館",
+        "name": "甲賀市(B001) 甲賀市役所下水道課",
         "municipality": "甲賀市(B001)",
-        "locationName": "甲賀市ひと・まち街道交流館",
+        "locationName": "甲賀市役所下水道課",
         "address": "まち街道交流館 滋賀県甲賀市水口町八坂7番4号 （問合わせ先） 甲賀市役所下水道課 電話：0748-69-2228",
         "hours": "9：00～17:00 ただし、月曜日（祝日の場合は翌日）、年末年始（12/29～1/3）はお休みです",
         "round": "第27弾",
         "issueDate": "2025/12/19",
-        "url": "https://www.city.koka.lg.jp/7205.htm",
+        "url": "https://www.city.koka.lg.jp/2025.htm",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-209-B-01.jpg\r\n",
         "type": "mhcard"
       }
     },
@@ -17537,6 +20021,29 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.yasu.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-210-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.577774,
+          35.999477
+        ]
+      },
+      "properties": {
+        "name": "野洲市 【土日祝日】野洲市役所宿日直室",
+        "municipality": "野洲市",
+        "locationName": "【土日祝日】野洲市役所宿日直室",
+        "address": "上下水道事業所事務室 野洲市西河原2400番地 電話:077-589-6433 【土日祝日】野洲市役所宿日直室 野洲市小篠原2100番地1 電話:077-587-1121",
+        "hours": "8:30～17:15",
+        "round": "第26弾",
+        "issueDate": "2025/07/25",
+        "url": "https://www.city.yasu.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17558,6 +20065,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.city.higashiomi.shiga.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17579,6 +20087,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.google.co.jp/maps/place/%E5%85%AB%E6%97%A5%E5%B8%82%E9%A7%85%E5%89%8D%E8%A6%B3%E5%85%89%E4%BA%A4%E6%B5%81%E6%96%BD%E8%A8%AD/@35.1140839,136.1947046,17z/data=!3m1!4b1!4m6!3m5!1s0x60017ddfb693998b:0xb05a0c8f4811fd92!8m2!3d35.1140839!4d136.1947046!16s%2Fg%2F11vdcn7vsp?entry=ttu&g_ep=EgoyMDI1MDcyMS4wIKXMDSoASAFQAw%3D%3D",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-213-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17600,6 +20109,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.city.higashiomi.shiga.jp/lib/about/1007560/1007574.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-213-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17621,6 +20131,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://toyosato-kanko.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-441-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17642,6 +20153,7 @@ const mhcardGeoJSON = {
         "round": "第3弾",
         "issueDate": "2016/12/01",
         "url": "http://www.michinoeki-miyazu.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17663,6 +20175,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "http://www.jade.dti.ne.jp/~rjpark/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-000-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17684,6 +20197,7 @@ const mhcardGeoJSON = {
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.kyoto.lg.jp/suido/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17705,6 +20219,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.kyoto.lg.jp/suido/page/0000216492.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-100-A-02.jpg",
         "type": "mhcard"
       }
     },
@@ -17726,6 +20241,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://biwakososui-museum.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17747,6 +20263,7 @@ const mhcardGeoJSON = {
         "round": "第 8弾",
         "issueDate": "2018/08/11",
         "url": "http://akarenga-park.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17768,6 +20285,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.city.maizuru.kyoto.jp/kyouiku/0000005026.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17789,6 +20307,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://akarenga-park.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-202-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17810,6 +20329,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://ayabe-library.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17831,6 +20351,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.uji.kyoto.jp/site/uji-kankou/3259.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17852,6 +20373,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.kameoka.kyoto.jp/jougesuidou/shisetsu/shichosha/003.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17865,14 +20387,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "亀岡市 (B001) 亀岡市文化資料館 亀岡市古世町中内坪1 (問合せ先) 上下水道お客様センター 京都府亀岡市安町釜ケ前20番地 電話：0771-25-6702",
+        "name": "亀岡市 (B001) 亀岡市文化資料館 亀岡市古世町中内坪1 (問合せ先)",
         "municipality": "亀岡市 (B001)",
-        "locationName": "亀岡市文化資料館 亀岡市古世町中内坪1 (問合せ先) 上下水道お客様センター 京都府亀岡市安町釜ケ前20番地 電話：0771-25-6702",
+        "locationName": "亀岡市文化資料館 亀岡市古世町中内坪1 (問合せ先)",
         "address": "上下水道お客様センター 京都府亀岡市安町釜ケ前20番地 電話：0771-25-6702",
         "hours": "9:00～17:00 ただし、毎週月曜日と年末年始（12/28～1/4）はお休みです",
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-206-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17894,6 +20417,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.muko.kyoto.jp/site/shiryokan/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17915,6 +20439,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.city.muko.kyoto.jp/site/shiryokan/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17928,14 +20453,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "長岡京市 (A001) 長岡京市上下水道部下水道施設課長岡京市開田1-1-1 市役所分庁舎2電話：075-955-9723",
+        "name": "長岡京市 (A001) 長岡京市",
         "municipality": "長岡京市 (A001)",
-        "locationName": "長岡京市上下水道部下水道施設課長岡京市開田1-1-1 市役所分庁舎2電話：075-955-9723",
+        "locationName": "長岡京市",
         "address": "上下水道部下水道施設課長岡京市開田1-1-1 市役所分庁舎2電話：075-955-9723",
         "hours": "【平日】9：00～17：00※土、日、祝日、12月28日～1月4日までは休みのため配布を行いません",
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17953,10 +20479,33 @@ const mhcardGeoJSON = {
         "municipality": "長岡京市 (B001)",
         "locationName": "【平日】長岡京市役所上下水道部下水道施設課",
         "address": "上下水道部下水道施設課 長岡京市開田1-1-1 市役所分庁舎2 電話：075-955-9723 【土日祝日】長岡京市観光案内所 長岡京市天神一丁目1番2号 電話：075-951-4500 (問合せ先) 長岡京市上下水道部下水道施設課 電話：075-955-9723",
-        "hours": "【平日】8:30～17:15 ただし、土日祝日、年末年始(12月29日～1月3日)はお休みです 【土日祝日】9:00～17:00 ただし、水曜日(4,5,6,11月は営業)、年末年始(12月28日～1月4日)はお休みです",
+        "hours": "【平日】8:30～17:15 ただし、土日祝日、年末年始(12月29日～1月3日)はお休みです",
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.city.nagaokakyo.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-209-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.577774,
+          35.999477
+        ]
+      },
+      "properties": {
+        "name": "長岡京市 (B001) 【土日祝日】長岡京市観光案内所",
+        "municipality": "長岡京市 (B001)",
+        "locationName": "【土日祝日】長岡京市観光案内所",
+        "address": "上下水道部下水道施設課 電話：075-955-9723",
+        "hours": "【土日祝日】9:00～17:00 ただし、水曜日(4,5,6,11月は営業)、年末年始(12月28日～1月4日)はお休みです",
+        "round": "第18弾",
+        "issueDate": "2023/01/28",
+        "url": "http://www.nagaokakyo-kankou.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-209-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17978,6 +20527,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.kankou-yawata.org/access.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17991,14 +20541,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "京丹後市 (A001) 【平日】京丹後市上下水道部経営総務課 京都府京丹後市丹後町間人1780番地 電話：0772-69-0550 【休日】道の駅 丹後王国「食のみやこ」インフォメーションセンター 京都府京丹後市弥栄町鳥取123 電話：0772-66-3081",
+        "name": "京丹後市 (A001) 【平日】京丹後市 / 【休日】道の駅 丹後王国「食のみやこ」インフォメーションセンタ",
         "municipality": "京丹後市 (A001)",
-        "locationName": "【平日】京丹後市上下水道部経営総務課 京都府京丹後市丹後町間人1780番地 電話：0772-69-0550 【休日】道の駅 丹後王国「食のみやこ」インフォメーションセンター 京都府京丹後市弥栄町鳥取123 電話：0772-66-3081",
+        "locationName": "【平日】京丹後市 / 【休日】道の駅 丹後王国「食のみやこ」インフォメーションセンタ",
         "address": "上下水道部経営総務課 京都府京丹後市丹後町間人1780番地 電話：0772-69-0550 【休日】道の駅 丹後王国「食のみやこ」インフォメーションセンター 京都府京丹後市弥栄町鳥取123 電話：0772-66-3081",
         "hours": "【平日】9:00～16:30 【休日】9:00～17:00",
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18012,14 +20563,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "京丹後市 (B001) 道の駅 丹後王国「食のみやこ」インフォメーションセンター 京都府京丹後市弥栄町鳥取123 電話：0772-66-3081",
+        "name": "京丹後市 (B001) 道の駅 丹後王国「食のみやこ」インフォメーションセンタ",
         "municipality": "京丹後市 (B001)",
-        "locationName": "道の駅 丹後王国「食のみやこ」インフォメーションセンター 京都府京丹後市弥栄町鳥取123 電話：0772-66-3081",
+        "locationName": "道の駅 丹後王国「食のみやこ」インフォメーションセンタ",
         "address": "ー 京都府京丹後市弥栄町鳥取123 電話：0772-66-3081",
         "hours": "9:00～17:00 ただし、火曜日はお休みです",
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-212-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18028,19 +20580,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.577774,
-          35.999477
+          135.688202,
+          34.902229
         ]
       },
       "properties": {
         "name": "大山崎町 【平日】大山崎町役場 環境事業部 上下水道課窓口",
         "municipality": "大山崎町",
         "locationName": "【平日】大山崎町役場 環境事業部 上下水道課窓口",
-        "address": "上下水道課窓口京都府乙訓郡大山崎町字円明寺小字夏目3電話：075-956-2101 【休日】大山崎ふるさとセンター2階京都府乙訓郡大山崎町字大山崎小字竜光3電話：075-952-6288",
-        "hours": "【平日】8：30～17：00ただし、土日、年末年始（12/28～1/3）はお休みです※大山崎町役場が休みの場合、大山崎ふるさとセンター2階にて配布します【休日】9：30～17：00ただし、毎週月曜日（祝日の場合はその翌日）、年末年始（12/28～1/4）はお休みです",
+        "address": "京都府乙訓郡大山崎町字円明寺小字夏目3電話：075-956-2101",
+        "hours": "【平日】8：30～17：00ただし、土日、年末年始（12/28～1/3）はお休みです※大山崎町役場が休みの場合、大山崎ふるさとセンター2階にて配布します",
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.town.oyamazaki.kyoto.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-303-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.682861,
+          34.89299
+        ]
+      },
+      "properties": {
+        "name": "大山崎町 【休日】大山崎ふるさとセンター2階",
+        "municipality": "大山崎町",
+        "locationName": "【休日】大山崎ふるさとセンター2階",
+        "address": "京都府乙訓郡大山崎町字大山崎小字竜光3電話：075-952-6288",
+        "hours": "【休日】9：30～17：00ただし、毎週月曜日（祝日の場合はその翌日）、年末年始（12/28～1/4）はお休みです",
+        "round": "第05弾",
+        "issueDate": "2017/08/01",
+        "url": "https://www.town.oyamazaki.kyoto.jp/annai/kikakuzaisei/furusatocenter/oyamazakifurusatocentar/14.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-303-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18062,6 +20637,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.town.kumiyama.lg.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-322-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18083,6 +20659,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.town.ujitawara.kyoto.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-344-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18091,19 +20668,20 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.577774,
-          35.999477
+          135.425552,
+          35.200954
         ]
       },
       "properties": {
         "name": "京丹波町 【平日】京丹波町上下水道課 畑川浄水場",
         "municipality": "京丹波町",
         "locationName": "【平日】京丹波町上下水道課 畑川浄水場",
-        "address": "上下水道課 畑川浄水場 京都府船井郡京丹波町下山クラベシ41番地 電話:0771-83-9105 【土日祝日】京丹波町役場 京都府船井郡京丹波町蒲生蒲生野487番地1 電話:0771-82-0200",
-        "hours": "【平日】8：30～17：15 【土日祝日】8：30～17：15",
+        "address": "京都府船井郡京丹波町下山クラベシ41番地 電話:0771-83-9105",
+        "hours": "【平日】8：30～17：15",
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.town.kyotamba.kyoto.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-407-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18112,19 +20690,64 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.520035,
-          34.686344
+          135.416977,
+          35.169052
+        ]
+      },
+      "properties": {
+        "name": "京丹波町 【土日祝日】京丹波町役場",
+        "municipality": "京丹波町",
+        "locationName": "【土日祝日】京丹波町役場",
+        "address": "京都府船井郡京丹波町蒲生蒲生野487番地1 電話:0771-82-0200",
+        "hours": "【土日祝日】8：30～17：15",
+        "round": "第26弾",
+        "issueDate": "2025/07/25",
+        "url": "https://www.town.kyotamba.kyoto.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-407-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.592896,
+          34.702637
         ]
       },
       "properties": {
         "name": "大阪府（流域下水道） 【平日】寝屋川流域下水道 鴻池水みらいセンター",
         "municipality": "大阪府（流域下水道）",
         "locationName": "【平日】寝屋川流域下水道 鴻池水みらいセンター",
-        "address": "域下水道 鴻池水みらいセンター大阪府東大阪市北鴻池町1-18（管理棟）電話：06-6911-9595【休日】原田処理場（スカイランドHARADA管理事務所）大阪府豊中市原田西町1-1電話：06-6846-8181",
-        "hours": "【平日】9：00～17：30【休日】9：00～17：00ただし、年末年始（12/27～1/5）はお休みです",
+        "address": "大阪府東大阪市北鴻池町1-18（管理棟）電話：06-6911-9595",
+        "hours": "【平日】9：00～17：30",
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://www.pref.osaka.lg.jp/gesui_jigyo/dezain/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-000-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.448883,
+          34.769676
+        ]
+      },
+      "properties": {
+        "name": "大阪府（流域下水道） 【休日】原田処理場（スカイランドHARADA管理事務所）",
+        "municipality": "大阪府（流域下水道）",
+        "locationName": "【休日】原田処理場（スカイランドHARADA管理事務所）",
+        "address": "大阪府豊中市原田西町1-1電話：06-6846-8181",
+        "hours": "【休日】9：00～17：00ただし、年末年始（12/27～1/5）はお休みです",
+        "round": "第02弾",
+        "issueDate": "2016/08/01",
+        "url": "https://www.city.toyonaka.osaka.jp/shisetsu/suidou/inagawa_harada/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18146,6 +20769,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "https://www.ecoplaza.gr.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18154,19 +20778,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.502228,
-          34.69389
+          135.507065,
+          34.683426
         ]
       },
       "properties": {
         "name": "大阪市（B001） クリアウォーターOSAKA（株）本社 総務課",
         "municipality": "大阪市（B001）",
         "locationName": "クリアウォーターOSAKA（株）本社 総務課",
-        "address": "課大阪府大阪市中央区本町1-7-7(WAKITA堺筋本町ビル6階) 06-6121-6025 【土日祝（月曜日は除く）】おおさかATCグリーンエコプラザ 大阪府大阪市住之江区南港北2−1−10（ATCビルITM棟11階西側）",
+        "address": "大阪府大阪市中央区本町1-7-7(WAKITA堺筋本町ビル6階) 06-6121-6025  【土日祝（月曜日は除く）】",
         "hours": "【平日】9：00〜17：30 ※年末年始（12/29〜1/3）はお休みです 【土日祝（月曜日は除く）】10：00〜17：00 ※年末年始（12/29〜1/3）はお休みです",
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.clearwater-osaka.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-100-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.412613,
+          34.638329
+        ]
+      },
+      "properties": {
+        "name": "大阪市（B001） おおさかATCグリーンエコプラザ",
+        "municipality": "大阪市（B001）",
+        "locationName": "おおさかATCグリーンエコプラザ",
+        "address": "大阪府大阪市住之江区南港北2−1−10（ATCビルITM棟11階西側）",
+        "hours": "【平日】9：00〜17：30 ※年末年始（12/29〜1/3）はお休みです 【土日祝（月曜日は除く）】10：00〜17：00 ※年末年始（12/29〜1/3）はお休みです",
+        "round": "第05弾",
+        "issueDate": "2017/08/01",
+        "url": "https://www.ecoplaza.gr.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18188,6 +20835,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.osaka-ssm.jp/information",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-100-C01.jpg",
         "type": "mhcard"
       }
     },
@@ -18209,6 +20857,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://osaka-info.jp/spot/tourist-information-osaka/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-100-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18230,6 +20879,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.sakai-rishonomori.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-140-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18251,6 +20901,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.sakai-tcb.or.jp/spot/detail/1164",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-140-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -18264,14 +20915,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "岸和田市 (A001) 岸和田駅前観光案内所 岸和田市宮本町1番12号 （問い合わせ先） 岸和田市下水道河川部下水道河川総務課 電話：072-423-9591",
+        "name": "岸和田市 (A001) 岸和田駅前観光案内所 岸和田市宮本町1番12号 （問い合わせ先） 岸和田",
         "municipality": "岸和田市 (A001)",
-        "locationName": "岸和田駅前観光案内所 岸和田市宮本町1番12号 （問い合わせ先） 岸和田市下水道河川部下水道河川総務課 電話：072-423-9591",
+        "locationName": "岸和田駅前観光案内所 岸和田市宮本町1番12号 （問い合わせ先） 岸和田",
         "address": "市下水道河川部下水道河川総務課 電話：072-423-9591",
         "hours": "9：00～17：00 ただし、年末年始（12/31～1/3）はお休みです",
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18293,6 +20945,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.ja-izumino.or.jp/farmstand/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-202-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -18314,6 +20967,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.kishiwada.lg.jp/site/kishiwada-side/koryucenter.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-202-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18335,6 +20989,7 @@ const mhcardGeoJSON = {
         "round": "第3弾",
         "issueDate": "2016/12/01",
         "url": "https://www.city.toyonaka.osaka.jp/jogesuido/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18356,6 +21011,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.ikedashi-kanko.jp/shop/ikeda_city_tourist_information_center",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18377,6 +21033,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.ikedashi-kanko.jp/pickup/9014",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-204-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18398,6 +21055,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.ikedashi-kanko.jp/pickup/9014",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-204-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18419,6 +21077,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.ikedashi-kanko.jp/pickup/9014",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-204-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18440,6 +21099,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.ikedashi-kanko.jp/pickup/9014",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-204-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18461,6 +21121,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.suita.osaka.jp/shisei/shisetsu/1019117/1020468.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18474,14 +21135,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "高槻市（A001） 【平日】 高槻市役所 下水河川企画課 大阪府高槻市桃園町２番１号（本館７階） 電話：072-674-7432 【土日祝】 JR高槻駅観光案内所（JR高槻駅中央改札階） 大阪府高槻市白梅町１番１号",
+        "name": "高槻市（A001） 【平日】高槻市役所 下水河川企画課 / 【土日祝】JR高槻駅観光案内所（JR高槻駅中央改札階）",
         "municipality": "高槻市（A001）",
-        "locationName": "【平日】 高槻市役所 下水河川企画課 大阪府高槻市桃園町２番１号（本館７階） 電話：072-674-7432 【土日祝】 JR高槻駅観光案内所（JR高槻駅中央改札階） 大阪府高槻市白梅町１番１号",
+        "locationName": "【平日】高槻市役所 下水河川企画課 / 【土日祝】JR高槻駅観光案内所（JR高槻駅中央改札階）",
         "address": "大阪府高槻市桃園町２番１号（本館７階） 電話：072-674-7432 【土日祝】 JR高槻駅観光案内所（JR高槻駅中央改札階） 大阪府高槻市白梅町１番１号",
         "hours": "【平日】8:45～17:15 【土日祝】10:00～17:00 ただし、年末年始（12/29～1/3）はお休みです",
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18503,6 +21165,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.seibu-la.co.jp/park/ama-sitepark/facility/bornelund/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-207-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18524,6 +21187,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "http://www.takatsuki-bsj.jp/tat/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-207-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18545,6 +21209,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.city.kaizuka.lg.jp/bunkazai/bunkazaidata/bunkazai/kuni_sitei/tourokubunkazai/rekisitenjikan.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18566,6 +21231,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.kaizuka.lg.jp/kanko/topics_kanko/machinoekikaizuka.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18587,6 +21253,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "http://www.city.moriguchi.osaka.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18600,14 +21267,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "枚方市 枚方市観光案内所Syuku56 大阪府枚方市岡東町19-1枚方モール１階 電話：072-896-7555",
+        "name": "枚方市 枚方市観光案内所Syuku56",
         "municipality": "枚方市",
-        "locationName": "枚方市観光案内所Syuku56 大阪府枚方市岡東町19-1枚方モール１階 電話：072-896-7555",
+        "locationName": "枚方市観光案内所Syuku56",
         "address": "大阪府枚方市岡東町19-1枚方モール１階 電話：072-896-7555",
         "hours": "10：00～19：00 ただし、枚方モールの休館日はお休みです",
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18629,6 +21297,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.onikuru.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18650,6 +21319,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/06/19",
         "url": "https://dampark-ibakita.com/guide",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-211-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18658,19 +21328,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.33902,
-          35.880955
+          135.600403,
+          34.626896
         ]
       },
       "properties": {
         "name": "八尾市 【平日】八尾市下水道部 下水道経営企画課",
         "municipality": "八尾市",
         "locationName": "【平日】八尾市下水道部 下水道経営企画課",
-        "address": "市下水道部 下水道経営企画課大阪府八尾市本町1-1-1電話：072-924-3883【休日】安中新田会所跡 旧植田家住宅大阪府八尾市植松1-1-25電話：072-992-5311",
-        "hours": "【平日】8：45～12：00、12：45～17：15 【休日】9：00～17：00（入館は16：30まで） ※ただし、年末年始はお休みです",
+        "address": "大阪府八尾市本町1-1-1電話：072-924-3883",
+        "hours": "【平日】8：45～12：00、12：45～17：15",
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.yao.osaka.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-212-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.599716,
+          34.615505
+        ]
+      },
+      "properties": {
+        "name": "八尾市 【休日】安中新田会所跡 旧植田家住宅",
+        "municipality": "八尾市",
+        "locationName": "【休日】安中新田会所跡 旧植田家住宅",
+        "address": "大阪府八尾市植松1-1-25電話：072-992-5311",
+        "hours": "【休日】9：00～17：00（入館は16：30まで） ※ただし、年末年始はお休みです",
+        "round": "第06弾",
+        "issueDate": "2017/12/09",
+        "url": "http://kyu-uedakejutaku.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18692,6 +21385,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.city.izumisano.lg.jp/kakuka/seikatsu/shoko/menu/matidokoro.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18708,11 +21402,34 @@ const mhcardGeoJSON = {
         "name": "泉佐野市 (B001) 観光おもてなしプラザ 泉佐野まち処",
         "municipality": "泉佐野市 (B001)",
         "locationName": "観光おもてなしプラザ 泉佐野まち処",
-        "address": "大阪府泉佐野市上町3丁目8-12 電話:072-469-0724 ②泉佐野市観光情報センター 大阪府泉佐野市上町3丁目11-47 電話:072-458-3901",
+        "address": "大阪府泉佐野市上町3丁目8-12 電話:072-469-0724 ②",
         "hours": "①16:00～19:00 ②10:00～16:00 ただし、年末年始（12/29～1/3）はお休みです",
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "http://www.city.izumisano.lg.jp/kakuka/seikatsu/shoko/menu/izumisanomachidokoro.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-213-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.316986,
+          34.410877
+        ]
+      },
+      "properties": {
+        "name": "泉佐野市 (B001) 泉佐野市観光情報センター",
+        "municipality": "泉佐野市 (B001)",
+        "locationName": "泉佐野市観光情報センター",
+        "address": "大阪府泉佐野市上町3丁目11-47 電話:072-458-3901",
+        "hours": "①16:00～19:00 ②10:00～16:00 ただし、年末年始（12/29～1/3）はお休みです",
+        "round": "第14弾",
+        "issueDate": "2021/04/25",
+        "url": "http://www.kankou-izumisano.jp/kankoannao.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-213-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18726,14 +21443,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "富田林市 観光交流施設きらめきファクトリー 大阪府富田林市本町19-8 電話：0721-24-5500 （問合せ先） 富田林市役所 上下水道部 下水道課 電話 0721-25-1000（内線262）",
+        "name": "富田林市 観光交流施設きらめきファクトリー",
         "municipality": "富田林市",
-        "locationName": "観光交流施設きらめきファクトリー 大阪府富田林市本町19-8 電話：0721-24-5500 （問合せ先） 富田林市役所 上下水道部 下水道課 電話 0721-25-1000（内線262）",
+        "locationName": "観光交流施設きらめきファクトリー",
         "address": "大阪府富田林市本町19-8 電話：0721-24-5500 （問合せ先） 富田林市役所 上下水道部 下水道課 電話 0721-25-1000（内線262）",
         "hours": "10：00〜21：00 ただし、年末年始はお休みです",
         "round": "第4弾",
         "issueDate": "2017/04/03",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18755,6 +21473,29 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.neyagawa.osaka.jp/organization_list/joge_suido/gesuido/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-215-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.550674,
+          34.435936
+        ]
+      },
+      "properties": {
+        "name": "河内長野市 道の駅 奥河内くろまろの郷",
+        "municipality": "河内長野市",
+        "locationName": "道の駅 奥河内くろまろの郷",
+        "address": "大阪府河内長野市高向1218-1電話：0721-56-9606（問い合わせ先）",
+        "hours": "9：00～17：00 ※年末年始については、配布場所のHPをご確認ください",
+        "round": "第6弾",
+        "issueDate": "2017/12/09",
+        "url": "http://kuromaro.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18768,14 +21509,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "河内長野市 道の駅 奥河内くろまろの郷",
+        "name": "河内長野市 河内長野市役所上下水道部 下水道課",
         "municipality": "河内長野市",
-        "locationName": "道の駅 奥河内くろまろの郷",
+        "locationName": "河内長野市役所上下水道部 下水道課",
         "address": "郷大阪府河内長野市高向1218-1電話：0721-56-9606（問い合わせ先）河内長野市役所上下水道部 下水道課電話：0721-53-1111",
         "hours": "9：00～17：00 ※年末年始については、配布場所のHPをご確認ください",
         "round": "第6弾",
         "issueDate": "2017/12/09",
-        "url": "http://kuromaro.com/",
+        "url": "https://www.city.kawachinagano.lg.jp/site/gesui/47644.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18789,14 +21531,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "松原市 【平日】松原市観光協会 大阪府松原市阿保4－1－4 電話：072-330-8201 【休日】松原市役所宿直室（市役所1階） 大阪府松原市阿保1－1－1 電話:072-334-1550 (問合せ先) 松原市上下水道部上下水道建設課 【平日】072-334-1550（内線2762) 【休日】072-334-1550",
+        "name": "松原市 【平日】松原市観光協会 / 【休日】松原市役所宿直室（市役所1階） / 【平日】072-334-1550（内線2762) / 【休日】072-334-1550",
         "municipality": "松原市",
-        "locationName": "【平日】松原市観光協会 大阪府松原市阿保4－1－4 電話：072-330-8201 【休日】松原市役所宿直室（市役所1階） 大阪府松原市阿保1－1－1 電話:072-334-1550 (問合せ先) 松原市上下水道部上下水道建設課 【平日】072-334-1550（内線2762) 【休日】072-334-1550",
+        "locationName": "【平日】松原市観光協会 / 【休日】松原市役所宿直室（市役所1階） / 【平日】072-334-1550（内線2762) / 【休日】072-334-1550",
         "address": "大阪府松原市阿保4－1－4 電話：072-330-8201 【休日】松原市役所宿直室（市役所1階） 大阪府松原市阿保1－1－1 電話:072-334-1550 (問合せ先) 松原市上下水道部上下水道建設課 【平日】072-334-1550（内線2762) 【休日】072-334-1550",
         "hours": "【平日、休日とも】9：00～17：30 ただし、年末年始（12/29〜1/3）はお休みです",
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-217-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18818,6 +21561,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.city.daito.lg.jp/soshiki/39/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-218-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18839,6 +21583,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://satomachi-izumi.com/omotenashi/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18860,6 +21605,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.yamaainosato.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-219-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18881,6 +21627,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.minoh.lg.jp/shisetsu/syoukou/kankou.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-220-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18889,19 +21636,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.5182487,
-          34.6818869
+          135.628326,
+          34.579174
         ]
       },
       "properties": {
         "name": "柏原市 (A001) 【平日】柏原市市役所別館 下水工務課",
         "municipality": "柏原市 (A001)",
         "locationName": "【平日】柏原市市役所別館 下水工務課",
-        "address": "課大阪府柏原市安堂町1-55（1階）電話：072-972-1501【休日】柏原市民文化会館 リビエールホール大阪府柏原市安堂1-60電話：072-972-6681",
+        "address": "大阪府柏原市安堂町1-55（1階）電話：072-972-1501",
         "hours": "9：00～17：00ただし、年末年始、臨時休館日はお休みです ※リビエールホール休館に伴い、土曜、日曜、祝日の配布については、令和7年11月1日から当面の間休止いたします",
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.city.kashiwara.osaka.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-221-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.637878,
+          34.581676
+        ]
+      },
+      "properties": {
+        "name": "柏原市 (A001) 【休日】柏原市民文化会館 リビエールホール",
+        "municipality": "柏原市 (A001)",
+        "locationName": "【休日】柏原市民文化会館 リビエールホール",
+        "address": "大阪府柏原市安堂1-60電話：072-972-6681",
+        "hours": "9：00～17：00ただし、年末年始、臨時休館日はお休みです ※リビエールホール休館に伴い、土曜、日曜、祝日の配布については、令和7年11月1日から当面の間休止いたします",
+        "round": "第07弾",
+        "issueDate": "2018/04/28",
+        "url": "http://www.kashiwara-bunka.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-221-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18923,6 +21693,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.city.kashiwara.lg.jp/docs/2014081900065/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-221-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18936,14 +21707,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "柏原市 (C001) 公民館堅下分館（堅下合同会館） 大阪府柏原市大県3丁目9-19 電話：072-971-6800",
+        "name": "柏原市 (C001) 公民館堅下分館（堅下合同会館）",
         "municipality": "柏原市 (C001)",
-        "locationName": "公民館堅下分館（堅下合同会館） 大阪府柏原市大県3丁目9-19 電話：072-971-6800",
+        "locationName": "公民館堅下分館（堅下合同会館）",
         "address": "大阪府柏原市大県3丁目9-19 電話：072-971-6800",
         "hours": "9:00～17:00 ただし、年末年始（12/29～1/3）および臨時休館日はお休みです",
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-221-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18965,6 +21737,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.city.habikino.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-222-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18986,6 +21759,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.city.kadoma.osaka.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-223-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19007,6 +21781,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.kadoma.osaka.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-223-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19028,6 +21803,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.city.settsu.osaka.jp/suidou/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-224-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19049,6 +21825,7 @@ const mhcardGeoJSON = {
         "round": "第4弾",
         "issueDate": "2017/04/03",
         "url": "https://rin-spo.com",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-225-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19057,19 +21834,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.265274,
-          37.128395
+          135.597244,
+          34.574944
         ]
       },
       "properties": {
         "name": "藤井寺市 (A001) 藤井寺市 都市整備部 下水道課",
         "municipality": "藤井寺市 (A001)",
         "locationName": "藤井寺市 都市整備部 下水道課",
-        "address": "寺市 都市整備部 下水道課 大阪府藤井寺市岡1-1-1 電話：072-939-1264 【休日】藤井寺市役所 警備室 ※東側入口すぐ 大阪府藤井寺市岡1-1-1 電話：072-939-1264",
+        "address": "大阪府藤井寺市岡1-1-1 電話：072-939-1264  【休日】",
         "hours": "【平日】9：00～17：30【休日】9：00～17：00ただし、年末年始はお休みです",
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.fujiidera.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-226-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.597244,
+          34.574944
+        ]
+      },
+      "properties": {
+        "name": "藤井寺市 (A001) 藤井寺市役所 警備室",
+        "municipality": "藤井寺市 (A001)",
+        "locationName": "藤井寺市役所 警備室",
+        "address": "大阪府藤井寺市岡1-1-1 電話：072-939-1264",
+        "hours": "【平日】9：00～17：30【休日】9：00～17：00ただし、年末年始はお休みです",
+        "round": "第05弾",
+        "issueDate": "2017/08/01",
+        "url": "https://www.city.fujiidera.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-226-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19091,6 +21891,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.city-fujiidera-kosha.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-226-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -19112,6 +21913,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.city.fujiidera.lg.jp/soshiki/shiminseikatsu/kankou/fujiiderasi-nigiwai-manabikouryukan/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-226-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19133,6 +21935,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.city.higashiosaka.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-227-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19141,19 +21944,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.456619,
-          35.856865
+          135.279327,
+          34.361778
         ]
       },
       "properties": {
         "name": "泉南市 【月・火以外】泉南市観光協会観光案内所",
         "municipality": "泉南市",
         "locationName": "【月・火以外】泉南市観光協会観光案内所",
-        "address": "所大阪府泉南市信達牧野395-4【月・火のみ】泉南市上下水道部 下水道整備課大阪府泉南市樽井737電話：072-482-5005",
-        "hours": "【月・火以外】10：00～16：00【月・火のみ】9：00～17：30ただし、年末年始（12/28～1/4）はお休みです※月・火曜が祝日の場合は、観光案内所にて配布します",
+        "address": "大阪府泉南市信達牧野395-4",
+        "hours": "【月・火以外】10：00～16：00",
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://welcome-sennan.com/access",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-228-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.274216,
+          34.367748
+        ]
+      },
+      "properties": {
+        "name": "泉南市 【月・火のみ】泉南市上下水道部 下水道整備課",
+        "municipality": "泉南市",
+        "locationName": "【月・火のみ】泉南市上下水道部 下水道整備課",
+        "address": "大阪府泉南市樽井737電話：072-482-5005",
+        "hours": "【月・火のみ】9：00～17：30ただし、年末年始（12/28～1/4）はお休みです※月・火曜が祝日の場合は、観光案内所にて配布します",
+        "round": "第05弾",
+        "issueDate": "2017/08/01",
+        "url": "https://www.city.sennan.lg.jp/kakuka/soumu/gyouzaisei/gyoseihyoka/R1hyouka/R1sosiki/R1jyougesui/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-228-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19175,6 +22001,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "http://www.city.shijonawate.lg.jp/soshiki/20/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-229-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19188,14 +22015,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "交野市 (A001) 交野市上下水道部（旧水道局）1階 大阪府交野市私市2丁目24-1 電話：072-891-0016 【内容等に関すること（平日のみ）】 2階 下水道課 電話：072-896-8815",
+        "name": "交野市 (A001) 交野市",
         "municipality": "交野市 (A001)",
-        "locationName": "交野市上下水道部（旧水道局）1階 大阪府交野市私市2丁目24-1 電話：072-891-0016 【内容等に関すること（平日のみ）】 2階 下水道課 電話：072-896-8815",
+        "locationName": "交野市",
         "address": "上下水道部（旧水道局）1階 大阪府交野市私市2丁目24-1 電話：072-891-0016 【内容等に関すること（平日のみ）】 2階 下水道課 電話：072-896-8815",
         "hours": "9:00～17:00ただし、年末年始（12月29日～1月3日）は配布を行っていません",
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-230-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19209,14 +22037,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "交野市 (B001) 交野市上下水道部（旧水道局）1階 大阪府交野市私市2丁目24-1 電話：072-891-0016 【内容等に関すること（平日のみ）】 2階 下水道課 電話：072-896-8815",
+        "name": "交野市 (B001) 交野市",
         "municipality": "交野市 (B001)",
-        "locationName": "交野市上下水道部（旧水道局）1階 大阪府交野市私市2丁目24-1 電話：072-891-0016 【内容等に関すること（平日のみ）】 2階 下水道課 電話：072-896-8815",
+        "locationName": "交野市",
         "address": "上下水道部（旧水道局）1階 大阪府交野市私市2丁目24-1 電話：072-891-0016 【内容等に関すること（平日のみ）】 2階 下水道課 電話：072-896-8815",
         "hours": "9:00～17:00ただし、年末年始（12月29日～1月3日）は配布を行っていません。",
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-230-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -19238,6 +22067,7 @@ const mhcardGeoJSON = {
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-231-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19246,19 +22076,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.555695,
-          34.503662
+          135.555862,
+          34.503681
         ]
       },
       "properties": {
         "name": "大阪狭山市 (B001) 【平日】大阪狭山市役所庁舎2階 水政策部下水道・水路グループ",
         "municipality": "大阪狭山市 (B001)",
         "locationName": "【平日】大阪狭山市役所庁舎2階 水政策部下水道・水路グループ",
-        "address": "部下水道・水路グループ 大阪府大阪狭山市狭山1-2384-１ 電話:072-366-0011（内線364） 【土日祝】大阪府立狭山池博物館 大阪府大阪狭山市池尻中二丁目",
-        "hours": "【平日】9：00～17：30 ただし、土日、祝日、年末年始（12/29～1/3）はお休みです 【土日祝】10：00時～17：00（入館は16：30まで） ただし、年末年始（12/28～1/4）はお休みです",
+        "address": "大阪府大阪狭山市狭山1-2384-１ 電話:072-366-0011（内線364）",
+        "hours": "【平日】9：00～17：30 ただし、土日、祝日、年末年始（12/29～1/3）はお休みです",
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.osakasayama.osaka.jp/tetsuzuki/jogesuido/1/1/3315.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-231-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.551895,
+          34.510361
+        ]
+      },
+      "properties": {
+        "name": "大阪狭山市 (B001) 【土日祝】大阪府立狭山池博物館",
+        "municipality": "大阪狭山市 (B001)",
+        "locationName": "【土日祝】大阪府立狭山池博物館",
+        "address": "大阪府大阪狭山市池尻中二丁目",
+        "hours": "【土日祝】10：00時～17：00（入館は16：30まで） ただし、年末年始（12/28～1/4）はお休みです",
+        "round": "第20弾",
+        "issueDate": "2023/07/28",
+        "url": "https://sayamaikehaku.osakasayama.osaka.jp/wp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-231-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19280,6 +22133,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "http://www.city.hannan.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-232-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -19301,6 +22155,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.town.shimamoto.lg.jp/site/suidou/1969.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-301-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19322,6 +22177,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.town.shimamoto.lg.jp/site/rekishi-bunka/2413.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-301-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19335,14 +22191,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "豊能町 豊能町役場3階 都市計画課 大阪府豊能郡豊能町余野414-1 ただし、土日、祝日、年末年始は豊能町役場１階警備室で配布します （問い合わせ先）豊能町建設環境部都市計画課電話：072-739-3425",
+        "name": "豊能町 豊能町役場",
         "municipality": "豊能町",
-        "locationName": "豊能町役場3階 都市計画課 大阪府豊能郡豊能町余野414-1 ただし、土日、祝日、年末年始は豊能町役場１階警備室で配布します （問い合わせ先）豊能町建設環境部都市計画課電話：072-739-3425",
+        "locationName": "豊能町役場",
         "address": "3階 都市計画課 大阪府豊能郡豊能町余野414-1 ただし、土日、祝日、年末年始は豊能町役場１階警備室で配布します （問い合わせ先）豊能町建設環境部都市計画課電話：072-739-3425",
         "hours": "9：00～17：30 ただし、土日、祝日、年末年始は警備室で配布します",
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-321-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19356,14 +22213,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "能勢町 能勢浄化センター ささゆりの丘大阪府豊能郡能勢町下田119-1電話：072-734-3403",
+        "name": "能勢町 能勢浄化センター ささゆりの",
         "municipality": "能勢町",
-        "locationName": "能勢浄化センター ささゆりの丘大阪府豊能郡能勢町下田119-1電話：072-734-3403",
+        "locationName": "能勢浄化センター ささゆりの",
         "address": "丘大阪府豊能郡能勢町下田119-1電話：072-734-3403",
         "hours": "8：45～17：00ただし、土日、祝日、年末年始はお休みです",
         "round": "第3弾",
         "issueDate": "2016/12/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-322-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19385,6 +22243,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://www.town.kumatori.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-361-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19406,6 +22265,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.town.tajiri.osaka.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-362-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19427,6 +22287,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "https://taishi-kankou.jp/michinoeki/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-381-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19448,6 +22309,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "https://www.town.kanan.osaka.jp/soshiki/machisozobu/toshikankyoka/gyomuannai/5/1/294.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-382-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19469,6 +22331,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.vill.chihayaakasaka.osaka.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-383-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19490,6 +22353,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.toyonaka.osaka.jp/shisetsu/suidou/skyland_harada/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19511,6 +22375,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "https://www.city.kobe.lg.jp/a78445/kurashi/sumai/sewage/pr/manhole_card.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19532,6 +22397,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.kairport.co.jp/service/information/info-center",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19553,6 +22419,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.kobe.lg.jp/a78445/kurashi/sumai/sewage/pr/manhole_card.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-100-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19574,6 +22441,7 @@ const mhcardGeoJSON = {
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "http://www.city.himeji.lg.jp/kanko/0000005207.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19582,19 +22450,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.577774,
-          35.999477
+          135.411743,
+          34.733425
         ]
       },
       "properties": {
         "name": "尼崎市(A001) 【平日】尼崎市公営企業局上下水道部経営企画課",
         "municipality": "尼崎市(A001)",
         "locationName": "【平日】尼崎市公営企業局上下水道部経営企画課",
-        "address": "上下水道部経営企画課 兵庫県尼崎市東七松町2-4-16（上下水道庁舎3階） 電話：06-6489-7405 【土日・祝日】あまがさき観光案内所（阪神尼崎駅前） 兵庫県尼崎市神田中通1－4 中央公園内 電話：06-6409-4634",
-        "hours": "【平日】8：45～17：30 ただし、土日・祝日・年末年始（12/29から1/3）はお休みです 【土日・祝日】9：00〜17：00 ただし、年末年始（12/29～1/2)はお休みです",
+        "address": "兵庫県尼崎市東七松町2-4-16（上下水道庁舎3階） 電話：06-6489-7405",
+        "hours": "【平日】8：45～17：30 ただし、土日・祝日・年末年始（12/29から1/3）はお休みです",
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "https://amasui.org/shoukai/shisetsu/2000610/2000611.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-202-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.416733,
+          34.719048
+        ]
+      },
+      "properties": {
+        "name": "尼崎市(A001) 【土日・祝日】あまがさき観光案内所（阪神尼崎駅前）",
+        "municipality": "尼崎市(A001)",
+        "locationName": "【土日・祝日】あまがさき観光案内所（阪神尼崎駅前）",
+        "address": "兵庫県尼崎市神田中通1－4 中央公園内 電話：06-6409-4634",
+        "hours": "【土日・祝日】9：00〜17：00 ただし、年末年始（12/29～1/2)はお休みです",
+        "round": "第2弾",
+        "issueDate": "2016/08/01",
+        "url": "https://kansai-tourism-amagasaki.jp/information-center/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19616,6 +22507,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://kansai-tourism-amagasaki.jp/amagasaki/information.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19637,6 +22529,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "http://www.am12.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19658,6 +22551,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "https://www.nishi.or.jp/kurashi/suido/jogesuidokyoku/pr_event/manholecard.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19679,6 +22573,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.city.sumoto.lg.jp/soshiki/23/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19700,6 +22595,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.ashiya.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19721,6 +22617,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://ashiya-museum.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-206-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19742,6 +22639,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.swanhall.com/access.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19750,19 +22648,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.577774,
-          35.999477
+          135.399948,
+          34.783493
         ]
       },
       "properties": {
         "name": "伊丹市 (B001) 伊丹市上下水道局 水道サービスステーション",
         "municipality": "伊丹市 (B001)",
         "locationName": "伊丹市上下水道局 水道サービスステーション",
-        "address": "上下水道局 水道サービスステーション 兵庫県伊丹市昆陽1丁目1番地2 電話:072-783-1601 【土日・祝日】伊丹市立観光物産ギャラリー 兵庫県伊丹市東有岡1-6-2（JR伊丹駅構内） 電話:072-770-7060 (問合せ先) 伊丹市上下水道局経営企画課 電話:072-783-1600",
+        "address": "兵庫県伊丹市昆陽1丁目1番地2 電話:072-783-1601  【土日・祝日】",
         "hours": "【平日】9：00～17：30 ただし、12月29日～1月3日はお休みです 【土日・祝日】10：00～17：00 ただし、12月30日～1月2日はお休みです",
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.water.itami.hyogo.jp/soshiki/keieikikakuka/1395799645874.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-207-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.42218,
+          34.780556
+        ]
+      },
+      "properties": {
+        "name": "伊丹市 (B001) 伊丹市立観光物産ギャラリー",
+        "municipality": "伊丹市 (B001)",
+        "locationName": "伊丹市立観光物産ギャラリー",
+        "address": "兵庫県伊丹市東有岡1-6-2（JR伊丹駅構内） 電話:072-770-7060  (問合せ先) 伊丹市上下水道局経営企画課 電話:072-783-1600",
+        "hours": "【平日】9：00～17：30 ただし、12月29日～1月3日はお休みです 【土日・祝日】10：00～17：00 ただし、12月30日～1月2日はお休みです",
+        "round": "第14弾",
+        "issueDate": "2021/04/25",
+        "url": "http://itami-kankou.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-207-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19784,6 +22705,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "http://itami-kankou.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-207-C01.jpg",
         "type": "mhcard"
       }
     },
@@ -19805,6 +22727,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://itami-im.jp/about/okada-ishibashi/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-207-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19826,6 +22749,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://kako-navi.jp/information.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19834,19 +22758,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.979767,
-          34.983398
+          134.9785,
+          34.983673
         ]
       },
       "properties": {
         "name": "西脇市 (A001) 【平日】西脇市役所建設水道部施設管理課",
         "municipality": "西脇市 (A001)",
         "locationName": "【平日】西脇市役所建設水道部施設管理課",
-        "address": "建設水道部施設管理課 兵庫県西脇市下戸田128番地の1電話：0795-22-3111【休日】にしわき経緯度地球科学館兵庫県西脇市上比延町334-2（テラ・ドーム）電話：0795-23-2772",
-        "hours": "【平日】9：00～17：00【休日】10：00～17：00ただし、年末年始（12/29～1/3）はお休みです",
+        "address": "兵庫県西脇市下戸田128番地の1電話：0795-22-3111",
+        "hours": "【平日】9：00～17：00",
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.city.nishiwaki.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-213-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.998871,
+          35.001751
+        ]
+      },
+      "properties": {
+        "name": "西脇市 (A001) 【休日】にしわき経緯度地球科学館",
+        "municipality": "西脇市 (A001)",
+        "locationName": "【休日】にしわき経緯度地球科学館",
+        "address": "兵庫県西脇市上比延町334-2（テラ・ドーム）電話：0795-23-2772",
+        "hours": "【休日】10：00～17：00ただし、年末年始（12/29～1/3）はお休みです",
+        "round": "第06弾",
+        "issueDate": "2017/12/09",
+        "url": "http://www.nishiwaki-cs.or.jp/terra/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19868,6 +22815,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "http://www.city.nishiwaki.lg.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-213-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19889,6 +22837,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://takarazuka-arts-center.jp/information/access/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19910,6 +22859,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.city.miki.lg.jp/soshiki/46/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19926,11 +22876,34 @@ const mhcardGeoJSON = {
         "name": "三木市 (B001) 道の駅よかわ（山田錦の館）",
         "municipality": "三木市 (B001)",
         "locationName": "道の駅よかわ（山田錦の館）",
-        "address": "兵庫県三木市吉川町吉安２２２ 電話:0794-76-2401 ②吉川支所地域振興課 兵庫県三木市吉川町大沢４１２ 電話:0794-72-0183",
+        "address": "兵庫県三木市吉川町吉安２２２ 電話:0794-76-2401 ②",
         "hours": "①9：30～17：00 ただし、月曜日（月曜日が祝日の場合は翌火曜日が定休）及び年末年始はお休みです ②8：30～17：00 山田錦の館の休館日の平日に配布します。 ただし、年末年始（12/29～1/3）はお休みです",
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.76-2401.com/company",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-215-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.121521,
+          34.8839
+        ]
+      },
+      "properties": {
+        "name": "三木市 (B001) 吉川支所地域振興課",
+        "municipality": "三木市 (B001)",
+        "locationName": "吉川支所地域振興課",
+        "address": "兵庫県三木市吉川町大沢４１２ 電話:0794-72-0183",
+        "hours": "①9：30～17：00 ただし、月曜日（月曜日が祝日の場合は翌火曜日が定休）及び年末年始はお休みです ②8：30～17：00 山田錦の館の休館日の平日に配布します。 ただし、年末年始（12/29～1/3）はお休みです",
+        "round": "第19弾",
+        "issueDate": "2023/04/28",
+        "url": "https://www.city.miki.lg.jp/soshiki/43/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-215-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19947,11 +22920,34 @@ const mhcardGeoJSON = {
         "name": "三木市 (C001) あじさいフローラみき",
         "municipality": "三木市 (C001)",
         "locationName": "あじさいフローラみき",
-        "address": "兵庫県三木市福井字三木山 電話:0794-86-1250 ②道の駅みき１Ｆインフォメーション 兵庫県三木市福井2426番地先 電話:0794-86-9500",
+        "address": "兵庫県三木市福井字三木山 電話:0794-86-1250 ②",
         "hours": "①10：00～15：00 ただし、休館日（主に火曜日）はお休みです ②10：00～15：00 あじさいフローラみき休館日のみ配布します ただし、１月１日はお休みです ※12/29～12/31、1/2～1/6は道の駅みきで配布します",
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://ajisaiflora-miki.com/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-215-C-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.981262,
+          34.786068
+        ]
+      },
+      "properties": {
+        "name": "三木市 (C001) 道の駅みき１Ｆインフォメーション",
+        "municipality": "三木市 (C001)",
+        "locationName": "道の駅みき１Ｆインフォメーション",
+        "address": "兵庫県三木市福井2426番地先 電話:0794-86-9500",
+        "hours": "①10：00～15：00 ただし、休館日（主に火曜日）はお休みです ②10：00～15：00 あじさいフローラみき休館日のみ配布します ただし、１月１日はお休みです ※12/29～12/31、1/2～1/6は道の駅みきで配布します",
+        "round": "第22弾",
+        "issueDate": "2024/04/26",
+        "url": "https://mikiyama.co.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-215-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19973,6 +22969,7 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "http://www.takasago-tavb.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19994,6 +22991,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.city.kawanishi.hyogo.jp/shisetsu/1002999/1003002/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-217-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20015,6 +23013,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://kisela-kp.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-217-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20036,6 +23035,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.city.kawanishi.hyogo.jp/shisetsu/1002871/1002872.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-217-C001.jpg",
         "type": "mhcard"
       }
     },
@@ -20044,19 +23044,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.577774,
-          35.999477
+          134.841949,
+          34.927921
         ]
       },
       "properties": {
         "name": "加西市 (A001) 【平日】加西市生活環境部 上下水道課",
         "municipality": "加西市 (A001)",
         "locationName": "【平日】加西市生活環境部 上下水道課",
-        "address": "上下水道課兵庫県加西市北条町横尾1000電話：0790-42-8760【休日】加西市民会館兵庫県加西市北条町古坂1-1電話：0790-43-0160",
-        "hours": "【平日】9：00～17：00【休日】10：00～21：00ただし、年末年始（12/28～1/4）はお休みです",
+        "address": "兵庫県加西市北条町横尾1000電話：0790-42-8760",
+        "hours": "【平日】9：00～17：00",
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.city.kasai.hyogo.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-220-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.840515,
+          34.926189
+        ]
+      },
+      "properties": {
+        "name": "加西市 (A001) 【休日】加西市民会館",
+        "municipality": "加西市 (A001)",
+        "locationName": "【休日】加西市民会館",
+        "address": "兵庫県加西市北条町古坂1-1電話：0790-43-0160",
+        "hours": "【休日】10：00～21：00ただし、年末年始（12/28～1/4）はお休みです",
+        "round": "第07弾",
+        "issueDate": "2018/04/28",
+        "url": "https://www.kasai-shimin.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-220-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20078,6 +23101,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "http://www.hojorailway.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-220-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20086,19 +23110,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.577774,
-          35.999477
+          135.218216,
+          35.075584
         ]
       },
       "properties": {
         "name": "丹波篠山市 丹波篠山市役所 上下水道部 経営企画課",
         "municipality": "丹波篠山市",
         "locationName": "丹波篠山市役所 上下水道部 経営企画課",
-        "address": "上下水道部 経営企画課兵庫県丹波篠山市北新町41（本庁舎）電話：079-552-5094 【土日祝日】丹波篠山市立歴史美術館 兵庫県丹波篠山市呉服町５３ 電話：079-552-0601",
+        "address": "兵庫県丹波篠山市北新町41（本庁舎）電話：079-552-5094  【土日祝日】",
         "hours": "【平日】8:30～17:15 ただし、年末年始はお休みです 【土日祝日】9:00～16:30 ただし、年末年始（12/25～1/1）はお休みです。 ※臨時休館等の場合がありますので、事前にご確認ください。",
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.tambasasayama.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-221-A-02.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.220322,
+          35.077023
+        ]
+      },
+      "properties": {
+        "name": "丹波篠山市 丹波篠山市立歴史美術館",
+        "municipality": "丹波篠山市",
+        "locationName": "丹波篠山市立歴史美術館",
+        "address": "兵庫県丹波篠山市呉服町５３ 電話：079-552-0601",
+        "hours": "【平日】8:30～17:15 ただし、年末年始はお休みです 【土日祝日】9:00～16:30 ただし、年末年始（12/25～1/1）はお休みです。 ※臨時休館等の場合がありますので、事前にご確認ください。",
+        "round": "第5弾",
+        "issueDate": "2017/08/01",
+        "url": "https://withsasayama.jp/history-museum/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-221-A-02.jpg",
         "type": "mhcard"
       }
     },
@@ -20120,6 +23167,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.tambacity-kankou.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-223-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20141,6 +23189,29 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.kato-kanko.jp/ ",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-228-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.973389,
+          34.918652
+        ]
+      },
+      "properties": {
+        "name": "加東市 (A001) 加東市役所商工観光課",
+        "municipality": "加東市 (A001)",
+        "locationName": "加東市役所商工観光課",
+        "address": "加東市 (A001)",
+        "hours": "【加東市観光協会】8:30〜17:15 【加東市商工観光課】8:30〜17:15",
+        "round": "第12弾",
+        "issueDate": "2020/04/25",
+        "url": "https://www.city.kato.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-228-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20154,14 +23225,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "加東市 (B001) 【月・火・木・金・土・日】加東市観光協会 兵庫県加東市河高４０２８ 電話：0795-48-0995 【水曜日】加東市役所商工観光課 兵庫県加東市社５０番地 電話：0795-43-0530",
+        "name": "加東市 (B001) 【月・火・木・金・土・日】加東市観光協会 / 【水曜日】加東市役所商工観光課",
         "municipality": "加東市 (B001)",
-        "locationName": "【月・火・木・金・土・日】加東市観光協会 兵庫県加東市河高４０２８ 電話：0795-48-0995 【水曜日】加東市役所商工観光課 兵庫県加東市社５０番地 電話：0795-43-0530",
+        "locationName": "【月・火・木・金・土・日】加東市観光協会 / 【水曜日】加東市役所商工観光課",
         "address": "兵庫県加東市河高４０２８ 電話：0795-48-0995 【水曜日】加東市役所商工観光課 兵庫県加東市社５０番地 電話：0795-43-0530",
         "hours": "【月・火・木・金・土・日】8：30～17：00 ただし、年末年始はお休みです 【水曜日】８：30～17：15 ただし、祝日および年末年始はお休みです",
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-228-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20183,6 +23255,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.city.tatsuno.lg.jp/kanko-bunka-sports/kanko/5018.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-229-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20199,11 +23272,34 @@ const mhcardGeoJSON = {
         "name": "たつの市 (B001) 醬油の郷 大正ロマン館",
         "municipality": "たつの市 (B001)",
         "locationName": "醬油の郷 大正ロマン館",
-        "address": "兵庫県たつの市龍野町上霞城126 電話:0791-72-8871 ②たつの市役所下水道管理課 兵庫県たつの市龍野町富永1005-1 電話:0791-64-3168 （問合せ先） たつの市上下水道部下水道管理課管理係 電話:0791-64-3168",
+        "address": "兵庫県たつの市龍野町上霞城126 電話:0791-72-8871 ②",
         "hours": "①10:00～17:00 ただし、月曜日(月曜日が祝日となった場合は翌日)、年末年始(12/29～1/3)はお休みです ②8:30～17：15 ※平日のみ ただし、土日・祝日及び年末年始(12/29～1/3)はお休みです",
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": " https://www.city.tatsuno.lg.jp/kanko-bunka-sports/rekishi-bunkazai/4/2/4883.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-229-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.542175,
+          34.856052
+        ]
+      },
+      "properties": {
+        "name": "たつの市 (B001) たつの市役所下水道管理課",
+        "municipality": "たつの市 (B001)",
+        "locationName": "たつの市役所下水道管理課",
+        "address": "兵庫県たつの市龍野町富永1005-1 電話:0791-64-3168 （問合せ先） たつの市上下水道部下水道管理課管理係 電話:0791-64-3168",
+        "hours": "①10:00～17:00 ただし、月曜日(月曜日が祝日となった場合は翌日)、年末年始(12/29～1/3)はお休みです ②8:30～17：15 ※平日のみ ただし、土日・祝日及び年末年始(12/29～1/3)はお休みです",
+        "round": "第25弾",
+        "issueDate": "2025/04/25",
+        "url": "https://www.city.tatsuno.lg.jp/soshiki/1030/gyomu/4398.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-229-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20221,10 +23317,33 @@ const mhcardGeoJSON = {
         "municipality": "猪名川町",
         "locationName": "【水曜日以外】道の駅いながわ",
         "address": "以外】道の駅いながわ猪名川町万善字竹添70-1電話：072-767-8600【水曜日】猪名川町役場まちづくり部上下水道課猪名川町上野字北畑１１-１電話：072-766-8716",
-        "hours": "【水曜日以外】9:00～17:00【水曜日】9:00～17:00ただし、年末年始はお休みです。",
+        "hours": "【水曜日以外】9:00～17:00",
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.eonet.ne.jp/~eki-inagawa/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-301-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.376114,
+          34.895
+        ]
+      },
+      "properties": {
+        "name": "猪名川町 【水曜日】猪名川町役場まちづくり部上下水道課",
+        "municipality": "猪名川町",
+        "locationName": "【水曜日】猪名川町役場まちづくり部上下水道課",
+        "address": "以外】道の駅いながわ猪名川町万善字竹添70-1電話：072-767-8600【水曜日】猪名川町役場まちづくり部上下水道課猪名川町上野字北畑１１-１電話：072-766-8716",
+        "hours": "【水曜日以外】9:00～17:00",
+        "round": "第10弾",
+        "issueDate": "2019/08/07",
+        "url": "https://www.town.inagawa.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-301-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20238,14 +23357,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "稲美町 稲美町役場地域整備部水道課 兵庫県加古郡稲美町国岡1-1 (問い合わせ先） 稲美町地域整備部水道課工務係 電話：079-492-9145",
+        "name": "稲美町 稲美町役場地域整",
         "municipality": "稲美町",
-        "locationName": "稲美町役場地域整備部水道課 兵庫県加古郡稲美町国岡1-1 (問い合わせ先） 稲美町地域整備部水道課工務係 電話：079-492-9145",
+        "locationName": "稲美町役場地域整",
         "address": "備部水道課 兵庫県加古郡稲美町国岡1-1 (問い合わせ先） 稲美町地域整備部水道課工務係 電話：079-492-9145",
         "hours": "8：30～17：15（平日のみ）",
         "round": "第26弾",
         "issueDate": "2025/11/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-381-A-01",
         "type": "mhcard"
       }
     },
@@ -20267,6 +23387,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.town.harima.lg.jp/kanko/kyodoshiryokan/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-382-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20288,6 +23409,7 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "https://www.town.ichikawa.lg.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-442-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20309,6 +23431,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.town.fukusaki.hyogo.jp/0000000112.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-443-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20330,6 +23453,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.town.kamikawa.hyogo.jp/0000002459.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-446-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20351,6 +23475,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.town.hyogo-taishi.lg.jp/soshikikarasagasu/keizai/kanko/6569.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-464-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20372,6 +23497,7 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "https://www.town.kamigori.hyogo.jp/soshiki/chiiki/shisetsuosagasu/1_1/2344.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-481-A-02.jpg",
         "type": "mhcard"
       }
     },
@@ -20385,14 +23511,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "奈良市 奈良町南観光案内所 奈良市井上町１１番地 電話：0742-94-3500 （問い合わせ先） 奈良市企業局 企業総務課 電話：0742-34-5200",
+        "name": "奈良市 奈良町南観光案内所 奈良市井上町１１番地",
         "municipality": "奈良市",
-        "locationName": "奈良町南観光案内所 奈良市井上町１１番地 電話：0742-94-3500 （問い合わせ先） 奈良市企業局 企業総務課 電話：0742-34-5200",
+        "locationName": "奈良町南観光案内所 奈良市井上町１１番地",
         "address": "奈良市",
         "hours": "9:00～17:00（年中無休）",
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20401,19 +23528,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.577774,
-          35.999477
+          135.780853,
+          34.654297
         ]
       },
       "properties": {
         "name": "大和郡山市 【平日】大和郡山市上下水道部 下水道推進課",
         "municipality": "大和郡山市",
         "locationName": "【平日】大和郡山市上下水道部 下水道推進課",
-        "address": "上下水道部 下水道推進課奈良県大和郡山市植槻町6-10（上下水道部庁舎2階）電話：0743-58-5600 【休日】一般社団法人 大和郡山市観光協会奈良県大和郡山市高田町92-16（市民交流館1階）（問い合わせ先）大和郡山市上下水道部 下水道推進課電話：0743-58-5600",
-        "hours": "【平日】9：00～17：00【休日】9：00～17：00ただし、年末年始（12/28～1/3）はお休みです",
+        "address": "奈良県大和郡山市植槻町6-10（上下水道部庁舎2階）電話：0743-58-5600",
+        "hours": "【平日】9：00～17：00",
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.yamatokoriyama.lg.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-203-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.790894,
+          34.648079
+        ]
+      },
+      "properties": {
+        "name": "大和郡山市 【休日】一般社団法人 大和郡山市観光協会",
+        "municipality": "大和郡山市",
+        "locationName": "【休日】一般社団法人 大和郡山市観光協会",
+        "address": "奈良県大和郡山市高田町92-16（市民交流館1階）（問い合わせ先）大和郡山市上下水道部 下水道推進課電話：0743-58-5600",
+        "hours": "【休日】9：00～17：00ただし、年末年始（12/28～1/3）はお休みです",
+        "round": "第02弾",
+        "issueDate": "2016/08/01",
+        "url": "http://www.yk-kankou.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20427,14 +23577,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "天理市 天理市立黒塚古墳展示館 天理市柳本町1118番地2 電話： 0743-67-3210",
+        "name": "天理市 天理市立黒塚古墳展示館 天理市柳本町1118番地2",
         "municipality": "天理市",
-        "locationName": "天理市立黒塚古墳展示館 天理市柳本町1118番地2 電話： 0743-67-3210",
+        "locationName": "天理市立黒塚古墳展示館 天理市柳本町1118番地2",
         "address": "天理市",
         "hours": "9：00～17：00 ただし、月曜日、祝日（月曜日が祝日の場合は翌日も休館）、年末年始（12月28日～翌年1月4日） ゴールデンウィークは祝日も臨時開館します",
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20456,6 +23607,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.city.kashihara.nara.jp/soshiki/1021/gyomu/1/332.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20469,14 +23621,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "橿原市 (B001) 橿原市藤原京資料室 奈良県橿原市縄手町178-1",
+        "name": "橿原市 (B001) 橿原市藤原京資料室",
         "municipality": "橿原市 (B001)",
-        "locationName": "橿原市藤原京資料室 奈良県橿原市縄手町178-1",
+        "locationName": "橿原市藤原京資料室",
         "address": "奈良県橿原市縄手町178-1",
         "hours": "9:00～16:30 ただし、毎週月曜日(月曜日が祝日の場合は、その翌平日)、年末年始（12/25～1/5）はお休みです",
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20490,14 +23643,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "橿原市 (C001) 橿原市観光交流センター「かしはらナビプラザ」1階 奈良県橿原市内膳町1-6-8 電話:0744-47-2270",
+        "name": "橿原市 (C001) 橿原市観光交流センター「かしはらナビプラザ」1階",
         "municipality": "橿原市 (C001)",
-        "locationName": "橿原市観光交流センター「かしはらナビプラザ」1階 奈良県橿原市内膳町1-6-8 電話:0744-47-2270",
+        "locationName": "橿原市観光交流センター「かしはらナビプラザ」1階",
         "address": "奈良県橿原市内膳町1-6-8 電話:0744-47-2270",
         "hours": "9:00～17:00（12/31～1/3を除く）",
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-205-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20519,6 +23673,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "https://www.base-ikoba.com",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20540,6 +23695,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.lib.sango.nara.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-343-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20561,6 +23717,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://ikaruga-kanko.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-344-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20582,6 +23739,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "https://www.narakotsu.co.jp/kanren/karako-kagi/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-363-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20603,6 +23761,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.yoshino-kankou.jp/useful/office/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-441-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20624,6 +23783,7 @@ const mhcardGeoJSON = {
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "http://wakayamajo.jp/tenji/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/30-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20645,6 +23805,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.hashimoto.lg.jp/hashimototaikan/asobu/hashimoto_kouiki_kankouannaisho.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/30-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20658,14 +23819,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "御坊市 【平日】御坊市役所1階 みやこ姫ロビー 和歌山県御坊市薗350番地2 電話：0738-22-4111（代表） 【休日】御坊市役所1階 夜間休日窓口 （問い合わせ先） 御坊市役所上下水道事務所 和歌山県御坊市薗350番地2 電話：0738-23-5591（直通）",
+        "name": "御坊市 【平日】御坊市役所1階 みやこ姫ロビー / 【休日】御坊市役所1階 夜間休日窓口 （問い合わせ先） 御坊市役所",
         "municipality": "御坊市",
-        "locationName": "【平日】御坊市役所1階 みやこ姫ロビー 和歌山県御坊市薗350番地2 電話：0738-22-4111（代表） 【休日】御坊市役所1階 夜間休日窓口 （問い合わせ先） 御坊市役所上下水道事務所 和歌山県御坊市薗350番地2 電話：0738-23-5591（直通）",
+        "locationName": "【平日】御坊市役所1階 みやこ姫ロビー / 【休日】御坊市役所1階 夜間休日窓口 （問い合わせ先） 御坊市役所",
         "address": "和歌山県御坊市薗350番地2 電話：0738-22-4111（代表） 【休日】御坊市役所1階 夜間休日窓口 （問い合わせ先） 御坊市役所上下水道事務所 和歌山県御坊市薗350番地2 電話：0738-23-5591（直通）",
         "hours": "【平日】8：30～17：15 【休日】8：30～17：15",
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/30-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20687,6 +23849,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.city.iwade.lg.jp/soshiki/17/8862.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/30-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20708,6 +23871,7 @@ const mhcardGeoJSON = {
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "https://www.town.aridagawa.lg.jp/top/kakuka/kanaya/9/2/syukuhaku/8556.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/30-366-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20729,6 +23893,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.torican.jp/spot/detail_1068.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/31-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20742,14 +23907,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "米子市 米子市観光センター鳥取県米子市皆生温泉3-1-1電話：0859-35-0175（問い合わせ先）米子市下水道部 整備課電話：0859-34-1301 ※【英語版】は以下の施設で配布しています。 米子市国際観光案内所 鳥取県米子市弥生町2 JR米子駅1F 電話：0859-22-6317",
+        "name": "米子市 米子市観光センタ",
         "municipality": "米子市",
-        "locationName": "米子市観光センター鳥取県米子市皆生温泉3-1-1電話：0859-35-0175（問い合わせ先）米子市下水道部 整備課電話：0859-34-1301 ※【英語版】は以下の施設で配布しています。 米子市国際観光案内所 鳥取県米子市弥生町2 JR米子駅1F 電話：0859-22-6317",
+        "locationName": "米子市観光センタ",
         "address": "ー鳥取県米子市皆生温泉3-1-1電話：0859-35-0175（問い合わせ先）米子市下水道部 整備課電話：0859-34-1301 ※【英語版】は以下の施設で配布しています。 米子市国際観光案内所 鳥取県米子市弥生町2 JR米子駅1F 電話：0859-22-6317",
         "hours": "9：00～18：00（年中無休）",
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/31-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20771,6 +23937,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.kurayoshi-kankou.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/31-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20792,6 +23959,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://enkei-museum.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/31-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20805,14 +23973,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "岩美町 道の駅 きなんせ岩美鳥取県岩美郡岩美町新井337-4電話：0857-73-5155",
+        "name": "岩美町 道の駅 きなんせ岩",
         "municipality": "岩美町",
-        "locationName": "道の駅 きなんせ岩美鳥取県岩美郡岩美町新井337-4電話：0857-73-5155",
+        "locationName": "道の駅 きなんせ岩",
         "address": "美鳥取県岩美郡岩美町新井337-4電話：0857-73-5155",
         "hours": "9：00～19：00（年中無休）",
         "round": "第4弾",
         "issueDate": "2017/04/03",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/31-302-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20834,6 +24003,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://misasaonsen.jp/sightseeings/sightseeing-1006/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/31-364-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20855,6 +24025,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "http://www.kotoura-kankou.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/31-371-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20868,14 +24039,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "北栄町 北栄町役場地域整備課 鳥取県東伯郡北栄町由良宿423-1 大栄庁舎２階",
+        "name": "北栄町 北栄町役場地域整備課",
         "municipality": "北栄町",
-        "locationName": "北栄町役場地域整備課 鳥取県東伯郡北栄町由良宿423-1 大栄庁舎２階",
+        "locationName": "北栄町役場地域整備課",
         "address": "鳥取県東伯郡北栄町由良宿423-1 大栄庁舎２階",
         "hours": "【平日】8：30～17：15 ただし、土日祝日、年末年始（12/29～1/3）はお休みです",
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/31-372-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20889,14 +24061,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "江府町 江府町役場産業建設課 鳥取県日野郡江府町大字江尾1717番地1 電話：0859-75-3306",
+        "name": "江府町 江府町役場産業建設課",
         "municipality": "江府町",
-        "locationName": "江府町役場産業建設課 鳥取県日野郡江府町大字江尾1717番地1 電話：0859-75-3306",
+        "locationName": "江府町役場産業建設課",
         "address": "鳥取県日野郡江府町大字江尾1717番地1 電話：0859-75-3306",
         "hours": "8：30～17：15 ただし、土日祝日、年末年始（12/29～1/3）はお休みです",
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/31-403-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20918,6 +24091,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://izumo-kankou.gr.jp/5279",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20939,6 +24113,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.matsue-horikawameguri.jp/course",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20955,11 +24130,34 @@ const mhcardGeoJSON = {
         "name": "浜田市 (A001) 一般社団法人浜田市観光協会",
         "municipality": "浜田市 (A001)",
         "locationName": "一般社団法人浜田市観光協会",
-        "address": "島根県浜田市浅井町777-35（JR浜田駅2階） 電話：0855-24-1085 ※年末年始（12/29～1/3）は下記で配布します 浜田市観光協会特産品販売所（ＪＲ浜田駅1階） 電話：0855-28-7133",
+        "address": "島根県浜田市浅井町777-35（JR浜田駅2階） 電話：0855-24-1085  ※年末年始（12/29～1/3）は下記で配布します",
         "hours": "9:00～17:45 (12/30～31) 9:00～17:00 (1/1) 12:00～17:00",
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.kankou-hamada.org/tourisminfo",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-202-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.087799,
+          34.903252
+        ]
+      },
+      "properties": {
+        "name": "浜田市 (A001) 浜田市観光協会特産品販売所",
+        "municipality": "浜田市 (A001)",
+        "locationName": "浜田市観光協会特産品販売所",
+        "address": "島根県浜田市浅井町777-35（JR浜田駅2階） 電話：0855-24-1085 ※年末年始（12/29～1/3）は下記で配布します 浜田市観光協会特産品販売所（ＪＲ浜田駅1階） 電話：0855-28-7133",
+        "hours": "9:00～17:45 (12/30～31) 9:00～17:00 (1/1) 12:00～17:00",
+        "round": "第08弾",
+        "issueDate": "2018/08/11",
+        "url": "https://www.kankou-hamada.org/salon",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20981,6 +24179,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.asahionsen.net/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21002,6 +24201,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.izumo-kankou.gr.jp/5280",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21023,6 +24223,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://masudashi.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21036,14 +24237,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "大田市 （一社）大田市観光協会 島根県大田市仁摩町大国42-1（道の駅「ごいせ仁摩」内 観光案内所） 電話:0854-88-9950 （問い合わせ先） 大田市上下水道部下水道課 電話：0854-83-8116",
+        "name": "大田市 （一社）大田市観光協会",
         "municipality": "大田市",
-        "locationName": "（一社）大田市観光協会 島根県大田市仁摩町大国42-1（道の駅「ごいせ仁摩」内 観光案内所） 電話:0854-88-9950 （問い合わせ先） 大田市上下水道部下水道課 電話：0854-83-8116",
+        "locationName": "（一社）大田市観光協会",
         "address": "島根県大田市仁摩町大国42-1（道の駅「ごいせ仁摩」内 観光案内所） 電話:0854-88-9950 （問い合わせ先） 大田市上下水道部下水道課 電話：0854-83-8116",
         "hours": "9：00～17：00 ただし年末年始（12/30-1/3）はお休みです",
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21065,6 +24267,7 @@ const mhcardGeoJSON = {
         "round": "第4弾",
         "issueDate": "2017/04/03",
         "url": "http://www.yasugi-kankou.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21086,6 +24289,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://gotsu-kanko.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21099,14 +24303,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "雲南市 うんなん観光案内所 雲南市三刀屋町三刀屋73番地3（コトリエット内） 電話:0854-47-7878",
+        "name": "雲南市 うんなん観光案内所 雲南市三刀屋町三刀屋73番地3（コトリエット内）",
         "municipality": "雲南市",
-        "locationName": "うんなん観光案内所 雲南市三刀屋町三刀屋73番地3（コトリエット内） 電話:0854-47-7878",
+        "locationName": "うんなん観光案内所 雲南市三刀屋町三刀屋73番地3（コトリエット内）",
         "address": "雲南市",
         "hours": "【平日】8:30～18:00 【土曜日、日曜日および祝日】10:00～15:00",
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21128,6 +24333,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://tsuwano-kanko.net/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-501-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21141,14 +24347,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "吉賀町 道の駅むいかいち温泉ゆらら 島根県鹿足郡吉賀町有飯225-2 電話：0856-77-3001 (問合せ先) 吉賀町役場建設水道課 電話：0856-79-2212",
+        "name": "吉賀町 道の駅むいかいち温泉ゆらら",
         "municipality": "吉賀町",
-        "locationName": "道の駅むいかいち温泉ゆらら 島根県鹿足郡吉賀町有飯225-2 電話：0856-77-3001 (問合せ先) 吉賀町役場建設水道課 電話：0856-79-2212",
+        "locationName": "道の駅むいかいち温泉ゆらら",
         "address": "島根県鹿足郡吉賀町有飯225-2 電話：0856-77-3001 (問合せ先) 吉賀町役場建設水道課 電話：0856-79-2212",
         "hours": "8：30～18：00 ただし、水曜日はお休みです",
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-505-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21170,6 +24377,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.town.nishinoshima.shimane.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-526-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21191,6 +24399,7 @@ const mhcardGeoJSON = {
         "round": "第1弾",
         "issueDate": "2016/04/01",
         "url": "https://okayama-kanko.net/sightseeing/information.php",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21212,6 +24421,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "https://kankou-kurashiki.jp/info/%e5%80%89%e6%95%b7%e9%a7%85%e5%89%8d%e8%a6%b3%e5%85%89%e6%a1%88%e5%86%85%e6%89%80/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21233,6 +24443,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://www.kojima-cci.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21246,14 +24457,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "倉敷市（C001） 旧柚木家住宅（西爽亭） きゅう ゆのきけ じゅうたく（さいそうてい） 岡山県倉敷市玉島3丁目8-25 電話：086-522-0151※旧柚木家住宅（西爽亭）の休館日は下記にて配布します 新倉敷駅観光案内所 岡山県倉敷市玉島爪崎390-4 JR新倉敷駅構内2階 電話:086-526-8446",
+        "name": "倉敷市（C001） 旧柚木家住宅（西爽亭） きゅう ゆのきけ じゅうたく（さいそうてい）",
         "municipality": "倉敷市（C001）",
-        "locationName": "旧柚木家住宅（西爽亭） きゅう ゆのきけ じゅうたく（さいそうてい） 岡山県倉敷市玉島3丁目8-25 電話：086-522-0151※旧柚木家住宅（西爽亭）の休館日は下記にて配布します 新倉敷駅観光案内所 岡山県倉敷市玉島爪崎390-4 JR新倉敷駅構内2階 電話:086-526-8446",
+        "locationName": "旧柚木家住宅（西爽亭） きゅう ゆのきけ じゅうたく（さいそうてい）",
         "address": "岡山県倉敷市玉島3丁目8-25 電話：086-522-0151※旧柚木家住宅（西爽亭）の休館日は下記にて配布します 新倉敷駅観光案内所 岡山県倉敷市玉島爪崎390-4 JR新倉敷駅構内2階 電話:086-526-8446",
         "hours": "9:00～17:00 休館日：毎週月曜日（月曜日が祝日にあたるときは開館し，その日後の最も近い祝日でない日を休館する）・12月28日～1月4日・その他新倉敷駅観光案内所（旧柚木家住宅（西爽亭）の休館日） 9:00～17:30（昼休み12:00～13:00） ただし、12月29日～1月3日はお休みです。",
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-202-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21275,6 +24487,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.mizurin.co.jp ",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-202-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21296,6 +24509,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.grand-cocoe.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-202-E01.jpg",
         "type": "mhcard"
       }
     },
@@ -21317,6 +24531,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.tsuyamakan.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21338,6 +24553,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.kasaoka.okayama.jp/site/kabutogani/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21359,6 +24575,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.bao.city.ibara.okayama.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21380,6 +24597,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "http://takahasikanko.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21401,6 +24619,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "http://www.niimi.gr.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21422,6 +24641,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "http://www.city.setouchi.lg.jp/museum/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21443,6 +24663,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.setouchi.lg.jp/token/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-212-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21464,6 +24685,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://greenable-hiruzen.co.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21485,6 +24707,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://spa-yunogo.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-215-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -21506,6 +24729,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.mimasaka.lg.jp/soshiki/kyouiku/sports/shisetsu/1456962900358.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-215-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21527,6 +24751,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.town.hayashima.lg.jp/yurubinoya/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-423-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21540,14 +24765,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "里庄町 里庄つばきの丘運動公園 管理棟 岡山県浅口郡里庄町大字里見2392番地 電話：0865-64-7266 (問合せ先) 里庄町役場上下水道課 電話：0865-64-3115",
+        "name": "里庄町 里庄つばきの丘運動公園 管理棟",
         "municipality": "里庄町",
-        "locationName": "里庄つばきの丘運動公園 管理棟 岡山県浅口郡里庄町大字里見2392番地 電話：0865-64-7266 (問合せ先) 里庄町役場上下水道課 電話：0865-64-3115",
+        "locationName": "里庄つばきの丘運動公園 管理棟",
         "address": "岡山県浅口郡里庄町大字里見2392番地 電話：0865-64-7266 (問合せ先) 里庄町役場上下水道課 電話：0865-64-3115",
         "hours": "8:30～17:30 ただし、年末年始（12月29日～1月3日）はお休みです",
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-445-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21569,6 +24795,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://yakagemachiya.information.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-461-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21585,11 +24812,34 @@ const mhcardGeoJSON = {
         "name": "矢掛町 (B001) 矢掛ビジターセンター問屋（といや）",
         "municipality": "矢掛町 (B001)",
         "locationName": "矢掛ビジターセンター問屋（といや）",
-        "address": "岡山県小田郡矢掛町矢掛1989 電話:0866-83-0001 （問い合わせ先） 矢掛町役場 上下水道課 電話：0866-82-0173",
+        "address": "岡山県小田郡矢掛町矢掛1989 電話:0866-83-0001 （問い合わせ先）",
         "hours": "9:00～17：00 ただし、年末年始（12月30日～1月2日）はお休みです",
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://japan-yakage.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-461-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.59201,
+          34.624489
+        ]
+      },
+      "properties": {
+        "name": "矢掛町 (B001) 矢掛町役場 上下水道課",
+        "municipality": "矢掛町 (B001)",
+        "locationName": "矢掛町役場 上下水道課",
+        "address": "岡山県小田郡矢掛町矢掛1989 電話:0866-83-0001 （問い合わせ先） 矢掛町役場 上下水道課 電話：0866-82-0173",
+        "hours": "9:00～17：00 ただし、年末年始（12月30日～1月2日）はお休みです",
+        "round": "第14弾",
+        "issueDate": "2021/04/25",
+        "url": "http://www.town.yakage.okayama.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-461-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21603,14 +24853,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "新庄村 咲蔵家.（さくらや） 岡山県真庭郡新庄村1143-4 電話：0867-56-7550 （問い合わせ先） 新庄村 産業建設課下水道係 電話：0867-56-2628",
+        "name": "新庄村 咲蔵家.（さくらや）",
         "municipality": "新庄村",
-        "locationName": "咲蔵家.（さくらや） 岡山県真庭郡新庄村1143-4 電話：0867-56-7550 （問い合わせ先） 新庄村 産業建設課下水道係 電話：0867-56-2628",
+        "locationName": "咲蔵家.（さくらや）",
         "address": "岡山県真庭郡新庄村1143-4 電話：0867-56-7550 （問い合わせ先） 新庄村 産業建設課下水道係 電話：0867-56-2628",
         "hours": "9：00～17：00",
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-586-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21632,6 +24883,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.yumehiroba.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-606-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21648,11 +24900,34 @@ const mhcardGeoJSON = {
         "name": "勝央町 (A001) 【平日】勝央町役場総務部窓口",
         "municipality": "勝央町 (A001)",
         "locationName": "【平日】勝央町役場総務部窓口",
-        "address": "岡山県勝田郡勝央町勝間田201 電話:0868-38-3111 【土日祝日】勝央図書館 岡山県勝田郡勝央町勝間田207-4 電話:0868-38-0250 （問合せ先） 勝央町役場総務部元気なまち推進室 電話:0868-38-3111",
-        "hours": "【平日】8：30～17：15 ただし、閉庁日、土日祝日はお休みです 【土日祝日】10：00～18：00 ただし、図書館の休館日はお休みです",
+        "address": "岡山県勝田郡勝央町勝間田201 電話:0868-38-3111",
+        "hours": "【平日】8：30～17：15 ただし、閉庁日、土日祝日はお休みです",
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "http://www.town.shoo.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-622-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.115829,
+          35.04245
+        ]
+      },
+      "properties": {
+        "name": "勝央町 (A001) 【土日祝日】勝央図書館",
+        "municipality": "勝央町 (A001)",
+        "locationName": "【土日祝日】勝央図書館",
+        "address": "岡山県勝田郡勝央町勝間田207-4 電話:0868-38-0250 （問合せ先） 勝央町役場総務部元気なまち推進室 電話:0868-38-3111",
+        "hours": "【土日祝日】10：00～18：00 ただし、図書館の休館日はお休みです",
+        "round": "第24弾",
+        "issueDate": "2024/12/20",
+        "url": "https://ilisod005.apsel.jp/shoo-lib/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-622-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21674,6 +24949,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "http://www.alis-nv.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-622-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21695,6 +24971,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.town.nagi.okayama.jp/gyousei/koukyou_shisetsu/nagiterrace.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-623-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -21716,6 +24993,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.town.kumenan.lg.jp/shisetsu/michinoeki.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-663-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21729,14 +25007,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "吉備中央町 【平日】吉備中央町吉川支所（きびプラザ内） 岡山県加賀郡吉備中央町吉川4860-6 電話：0866-56-9377 【休日】ロマン高原かよう総合会館 岡山県加賀郡吉備中央町豊野1-2 電話：0866-54-1301",
+        "name": "吉備中央町 【平日】吉備中央町吉川支所（きびプラザ内） / 【休日】ロマン高原かよう総合会館",
         "municipality": "吉備中央町",
-        "locationName": "【平日】吉備中央町吉川支所（きびプラザ内） 岡山県加賀郡吉備中央町吉川4860-6 電話：0866-56-9377 【休日】ロマン高原かよう総合会館 岡山県加賀郡吉備中央町豊野1-2 電話：0866-54-1301",
+        "locationName": "【平日】吉備中央町吉川支所（きびプラザ内） / 【休日】ロマン高原かよう総合会館",
         "address": "岡山県加賀郡吉備中央町吉川4860-6 電話：0866-56-9377 【休日】ロマン高原かよう総合会館 岡山県加賀郡吉備中央町豊野1-2 電話：0866-54-1301",
         "hours": "【平日】8：30～17：15 【休日】8：30～17：15 ただし、第三日曜日、祝日、年末年始はお休みです",
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-681-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21758,6 +25037,7 @@ const mhcardGeoJSON = {
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "http://www.kengesui-hiroshima.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21771,14 +25051,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "広島市 (A001) 大州雨水貯留池広島県広島市南区南蟹屋2-3（問い合わせ先）下水道管理部 維持課広島県広島市中区南千田東町7-1電話：082-241-9223",
+        "name": "広島市 (A001) 大州雨水貯留",
         "municipality": "広島市 (A001)",
-        "locationName": "大州雨水貯留池広島県広島市南区南蟹屋2-3（問い合わせ先）下水道管理部 維持課広島県広島市中区南千田東町7-1電話：082-241-9223",
+        "locationName": "大州雨水貯留",
         "address": "池広島県広島市南区南蟹屋2-3（問い合わせ先）下水道管理部 維持課広島県広島市中区南千田東町7-1電話：082-241-9223",
         "hours": "大州雨水貯留池を見学された方に配布します見学希望の方は、こちらからお申し込みください",
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21800,6 +25081,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://dive-hiroshima.com/explore/3636/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21821,6 +25103,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://hiroshima-resthouse.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-100-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21842,6 +25125,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.hiroshima.lg.jp/site/ujinaterminal/144462.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-100-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21863,6 +25147,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://hiro-chika.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-100-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21884,6 +25169,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.hiroshima.lg.jp/site/koureisha/5902.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-100-F-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21905,6 +25191,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "http://www.cf.city.hiroshima.jp/misasa-k/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-100-G-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21926,6 +25213,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "http://irifuneyama.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21939,14 +25227,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "呉市（B001） 街かど市民ギャラリー90（くれ）広島県呉市中通3-3-17電話：0823-36-3902 (問い合わせ先) 呉市上下水道局 経営企画課 電話：0823-26-1604",
+        "name": "呉市（B001） 街かど市民ギャラリー90（くれ",
         "municipality": "呉市（B001）",
-        "locationName": "街かど市民ギャラリー90（くれ）広島県呉市中通3-3-17電話：0823-36-3902 (問い合わせ先) 呉市上下水道局 経営企画課 電話：0823-26-1604",
+        "locationName": "街かど市民ギャラリー90（くれ",
         "address": "）広島県呉市中通3-3-17電話：0823-36-3902 (問い合わせ先) 呉市上下水道局 経営企画課 電話：0823-26-1604",
         "hours": "10：00～11：30、13：00～17：30 ただし、火曜日、年末年始はお休みです",
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21960,14 +25249,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "竹原市（A001） たけはら 海の駅 1階売店竹原市港町4丁目2番24号電話：0846-24-6100",
+        "name": "竹原市（A001） たけはら 海の駅 1階売店竹原市港町4丁目2番24号",
         "municipality": "竹原市（A001）",
-        "locationName": "たけはら 海の駅 1階売店竹原市港町4丁目2番24号電話：0846-24-6100",
+        "locationName": "たけはら 海の駅 1階売店竹原市港町4丁目2番24号",
         "address": "竹原市（A001）",
         "hours": "8：30～19：00ただし、毎月第3火曜日、12月31日～1月3日はお休みです",
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21989,6 +25279,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.iine-takehara.com/michinoekitakehara",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22005,11 +25296,34 @@ const mhcardGeoJSON = {
         "name": "三原市（A001） うきしろロビー",
         "municipality": "三原市（A001）",
         "locationName": "うきしろロビー",
-        "address": "広島県三原市城町1-1-1（ＪＲ三原駅構内 観光案内所） 電話：0848-67-5877（問い合わせ先）三原市下水道整備課電話：0848-67-6124",
+        "address": "広島県三原市城町1-1-1（ＪＲ三原駅構内 観光案内所） 電話：0848-67-5877（問い合わせ先）",
         "hours": "9：00～18：00ただし、年末年始（12/29～1/3）はお休みです",
         "round": "第4弾",
         "issueDate": "2017/04/03",
         "url": "http://www.mihara-kankou.com/fp-about-society/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-204-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.083344,
+          34.400368
+        ]
+      },
+      "properties": {
+        "name": "三原市（A001） 三原市下水道整備課",
+        "municipality": "三原市（A001）",
+        "locationName": "三原市下水道整備課",
+        "address": "広島県三原市城町1-1-1（ＪＲ三原駅構内 観光案内所） 電話：0848-67-5877（問い合わせ先）三原市下水道整備課電話：0848-67-6124",
+        "hours": "9：00～18：00ただし、年末年始（12/29～1/3）はお休みです",
+        "round": "第4弾",
+        "issueDate": "2017/04/03",
+        "url": "http://www.city.mihara.hiroshima.jp/soshiki/35/mhcard.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22031,6 +25345,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "https://www.shinmeinosato.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-204-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22052,6 +25367,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.fukuyama-kanko.com",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-207-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -22073,6 +25389,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://fuchu-kanko.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22094,6 +25411,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://higashihiroshima-kanko.jp/spot/hh-tourist-info/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22107,14 +25425,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "東広島市（B001） 【平日】豊栄支所地域振興課 広島県東広島市豊栄町鍛冶屋963-2 電話：082-432-2211 【土日】とよさか四季菜館 広島県東広島市豊栄町鍛冶屋841-2 電話：082-432-4520 (問い合わせ先) 東広島市下水道部下水道管理課 電話：082-420-0957",
+        "name": "東広島市（B001） 【平日】豊栄支所地域振興課 / 【土日】とよさか四季菜館",
         "municipality": "東広島市（B001）",
-        "locationName": "【平日】豊栄支所地域振興課 広島県東広島市豊栄町鍛冶屋963-2 電話：082-432-2211 【土日】とよさか四季菜館 広島県東広島市豊栄町鍛冶屋841-2 電話：082-432-4520 (問い合わせ先) 東広島市下水道部下水道管理課 電話：082-420-0957",
+        "locationName": "【平日】豊栄支所地域振興課 / 【土日】とよさか四季菜館",
         "address": "広島県東広島市豊栄町鍛冶屋963-2 電話：082-432-2211 【土日】とよさか四季菜館 広島県東広島市豊栄町鍛冶屋841-2 電話：082-432-4520 (問い合わせ先) 東広島市下水道部下水道管理課 電話：082-420-0957",
         "hours": "【平日】8：30～17：15 祝祭日・年末年始（12/29～1/3）はお休みです ※月～金の祝祭日は配布しておりません 【土日】7：30～17：00 ただし、年末年始はお休みです （お問い合わせください）",
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-212-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22136,6 +25455,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.hatsukaichi.hiroshima.jp/site/chuosc/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22157,6 +25477,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://akitakata-kankou.jp/main/mitsuyanosato/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22178,6 +25499,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.akitakata.jp/ja/shisei/section/syoukou/y100/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-214-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22199,6 +25521,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://toujimura.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-214-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22220,6 +25543,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://houkodou.jp/wp_2020spring/cat11",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-307-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22241,6 +25565,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.town.saka.lg.jp/2017/07/01/index-13/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-309-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22262,6 +25587,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://cs-akiota.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-368-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22283,6 +25609,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://shimonoseki-kgb.jp/spot/%e9%95%b7%e5%ba%9c%e8%a6%b3%e5%85%89%e4%bc%9a%e9%a4%a8/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22304,6 +25631,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://s-kanrikousha.com",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22317,14 +25645,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "宇部市 (A001) ときわ湖水ホール 山口県宇部市大字沖宇部254 電話：0836-51-7057 (問い合わせ先） 宇部市 土木建設部 下水道経営課 電話：0836-21-2191",
+        "name": "宇部市 (A001) ときわ湖水ホール",
         "municipality": "宇部市 (A001)",
-        "locationName": "ときわ湖水ホール 山口県宇部市大字沖宇部254 電話：0836-51-7057 (問い合わせ先） 宇部市 土木建設部 下水道経営課 電話：0836-21-2191",
+        "locationName": "ときわ湖水ホール",
         "address": "山口県宇部市大字沖宇部254 電話：0836-51-7057 (問い合わせ先） 宇部市 土木建設部 下水道経営課 電話：0836-21-2191",
         "hours": "9:00～17:00 ただし、年末年始（12/29～1/2）はお休みです",
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22338,14 +25667,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "宇部市 (B001) 宇部市新川ふれあいセンター 山口県宇部市朝日町8-20 電話:0836-21-2258 (問合せ先) 宇部市 土木建設部 下水道経営課 電話：0836-21-2191",
+        "name": "宇部市 (B001) 宇部市新川ふれあいセンター",
         "municipality": "宇部市 (B001)",
-        "locationName": "宇部市新川ふれあいセンター 山口県宇部市朝日町8-20 電話:0836-21-2258 (問合せ先) 宇部市 土木建設部 下水道経営課 電話：0836-21-2191",
+        "locationName": "宇部市新川ふれあいセンター",
         "address": "山口県宇部市朝日町8-20 電話:0836-21-2258 (問合せ先) 宇部市 土木建設部 下水道経営課 電話：0836-21-2191",
         "hours": "9:00~17:00 ただし、年末年始(12/29~ 1/3)はお休みです",
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-202-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -22367,6 +25697,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://yamaguchi-city.jp/convenience/information.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22388,6 +25719,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://yamaguchi-city.jp/k-center/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22409,6 +25741,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://yamaguchi-city.jp/convenience/information.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-203-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22430,6 +25763,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city.yamaguchi.lg.jp/map/7299.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-203-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22451,6 +25785,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://michinoeki-aio.com",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-203-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22472,6 +25807,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.city.hagi.lg.jp/site/meiringakusha/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22493,6 +25829,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "http://aspirante-hofu.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22514,6 +25851,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.city.kudamatsu.lg.jp/sui-gesui/kurashi/jougesuidou/gesuidou/manhole-card.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22527,14 +25865,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "下松市(B001) 【月・木以外】下松市観光案内所 山口県下松市西豊井1247(下松駅南口) 電話：(0833)45-6911 ※ただし、月・木が祝日の場合は開館しますのでご注意ください 【月・木・閉館日】下松市上下水道局 窓口 山口県下松市大手町3-3-2（上下水道局２階） 電話：(0833)41-2150",
+        "name": "下松市(B001) 【月・木以外】下松市観光案内所 / 【月・木・閉館日】下松市",
         "municipality": "下松市(B001)",
-        "locationName": "【月・木以外】下松市観光案内所 山口県下松市西豊井1247(下松駅南口) 電話：(0833)45-6911 ※ただし、月・木が祝日の場合は開館しますのでご注意ください 【月・木・閉館日】下松市上下水道局 窓口 山口県下松市大手町3-3-2（上下水道局２階） 電話：(0833)41-2150",
+        "locationName": "【月・木以外】下松市観光案内所 / 【月・木・閉館日】下松市",
         "address": "山口県下松市西豊井1247(下松駅南口) 電話：(0833)45-6911 ※ただし、月・木が祝日の場合は開館しますのでご注意ください 【月・木・閉館日】下松市上下水道局 窓口 山口県下松市大手町3-3-2（上下水道局２階） 電話：(0833)41-2150",
         "hours": "【月・木以外】9：00〜16：30 ただし、月、木曜日（祝日の場合は振替）及び年末年始（１２月２９日～１月３日）はお休みです 【月・木・閉館日】8：30〜17：15 ただし、土日、祝日及び年末年始（１２月２９日～１月３日）はお休みです",
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-207-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22556,6 +25895,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "http://k-kanrikousha-orjp.check-xserver.jp/sportspark/supokou.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-207-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22577,6 +25917,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://honke-matsugane.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22598,6 +25939,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://plat-abc.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22619,6 +25961,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.carpbeach.org/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-208-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22640,6 +25983,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "http://www.kanko-yanai.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22661,6 +26005,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://karusuto.com",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22682,6 +26027,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://kanko-shunan.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22698,11 +26044,34 @@ const mhcardGeoJSON = {
         "name": "山陽小野田市 (A001) 歴史民俗資料館",
         "municipality": "山陽小野田市 (A001)",
         "locationName": "歴史民俗資料館",
-        "address": "山口県山陽小野田市栄町9-21 電話:0836-83-5600 【休館日】山陽小野田市役所 建設部下水道課（ただし、市役所開庁日のみ） 山口県山陽小野田市日の出1-1-1 電話:0836-82-1164 (問合せ先) 山陽小野田市役所 建設部下水道課 0836-82-1164",
+        "address": "山口県山陽小野田市栄町9-21 電話:0836-83-5600  【休館日】",
         "hours": "9:00～17:00 ただし、月曜日（祝日の場合は翌平日も休館）・祝日（土曜日の場合は開館、月曜日を除く翌平日が休館）、年末年始（12/27～1/5）はお休みです ※ただし、祝日で市役所もお休みの場合は配布しません ※歴史民俗資料館の開館日はこちらをご確認ください",
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.city.sanyo-onoda.lg.jp/site/rekimin/shisetu-annai.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-216-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.182587,
+          34.003357
+        ]
+      },
+      "properties": {
+        "name": "山陽小野田市 (A001) 山陽小野田市役所 建設部下水道課",
+        "municipality": "山陽小野田市 (A001)",
+        "locationName": "山陽小野田市役所 建設部下水道課",
+        "address": "山口県山陽小野田市日の出1-1-1 電話:0836-82-1164  (問合せ先) 山陽小野田市役所 建設部下水道課 0836-82-1164",
+        "hours": "9:00～17:00 ただし、月曜日（祝日の場合は翌平日も休館）・祝日（土曜日の場合は開館、月曜日を除く翌平日が休館）、年末年始（12/27～1/5）はお休みです ※ただし、祝日で市役所もお休みの場合は配布しません ※歴史民俗資料館の開館日はこちらをご確認ください",
+        "round": "第12弾",
+        "issueDate": "2020/04/25",
+        "url": "https://www.city.sanyo-onoda.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22724,6 +26093,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://soc-park.com",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-216-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22745,6 +26115,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.hachigamine-grand-park.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-321-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22766,6 +26137,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.wakiiine.net/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-321-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22783,10 +26155,33 @@ const mhcardGeoJSON = {
         "municipality": "徳島県（流域下水道）",
         "locationName": "【平日】旧吉野川浄化センター（愛称：アクアきらら月見ヶ丘）",
         "address": "徳島県（流域下水道）",
-        "hours": "【平日】9:00～16:00【土日・祝日】10:00～16:00ただし、年末年始はお休みです",
+        "hours": "【平日】9:00～16:00",
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": " http://www.toku-eta.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-000-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.55928,
+          34.065762
+        ]
+      },
+      "properties": {
+        "name": "徳島県（流域下水道） 【休日】月見ヶ丘海浜公園",
+        "municipality": "徳島県（流域下水道）",
+        "locationName": "【休日】月見ヶ丘海浜公園",
+        "address": "徳島県（流域下水道）",
+        "hours": "【平日】9:00～16:00【土日・祝日】10:00～16:00ただし、年末年始はお休みです",
+        "round": "第9弾",
+        "issueDate": "2018/12/14",
+        "url": "http://www.tsukimigaoka.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22803,11 +26198,34 @@ const mhcardGeoJSON = {
         "name": "徳島市 ①阿波おどり会館",
         "municipality": "徳島市",
         "locationName": "①阿波おどり会館",
-        "address": "徳島県徳島市新町橋2丁目20番地 阿波おどり会館1階 電話:088-611-1611 ②徳島市上下水道局 お客さまセンター 徳島県徳島市南前川町５丁目１番地の４ 上下水道局本庁舎１階 電話:088-623-1962",
+        "address": "徳島県徳島市新町橋2丁目20番地 阿波おどり会館1階 電話:088-611-1611",
         "hours": "①9：00～17：00 ただし、12/28～1/1および2月、6月、9月、12月の第2水曜日（祝日の場合は翌日）はお休みです ②8：30～17：00 ただし、12/28～1/3および土曜・日曜・祝日はお休みです",
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.awaodori-kaikan.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-201-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.546692,
+          34.07988
+        ]
+      },
+      "properties": {
+        "name": "徳島市 ②徳島市上下水道局 お客さまセンター",
+        "municipality": "徳島市",
+        "locationName": "②徳島市上下水道局 お客さまセンター",
+        "address": "徳島県徳島市南前川町５丁目１番地の４ 上下水道局本庁舎１階 電話:088-623-1962",
+        "hours": "①9：00～17：00 ただし、12/28～1/1および2月、6月、9月、12月の第2水曜日（祝日の場合は翌日）はお休みです ②8：30～17：00 ただし、12/28～1/3および土曜・日曜・祝日はお休みです",
+        "round": "第26弾",
+        "issueDate": "2025/07/25",
+        "url": "https://www.city.tokushima.tokushima.jp/jogesuidokyoku/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22829,6 +26247,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.naruto-kankou.jp/charm/charm-2791/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22850,6 +26269,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.naruto-kankou.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22871,6 +26291,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": " https://www.city.yoshinogawa.lg.jp/top.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22892,6 +26313,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.kaiyo-kankou.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-388-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22913,6 +26335,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.town.matsushige.tokushima.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-401-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22926,14 +26349,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "松茂町 (B001) 【平日】松茂町総合会館 電話：088-699-8717 【休日】松茂町役場守衛室 徳島県板野郡松茂町広島字東裏３０番地 電話：088-699-2111",
+        "name": "松茂町 (B001) 【平日】松茂町総合会館 / 【休日】松茂町役場守衛室",
         "municipality": "松茂町 (B001)",
-        "locationName": "【平日】松茂町総合会館 電話：088-699-8717 【休日】松茂町役場守衛室 徳島県板野郡松茂町広島字東裏３０番地 電話：088-699-2111",
+        "locationName": "【平日】松茂町総合会館 / 【休日】松茂町役場守衛室",
         "address": "徳島県板野郡松茂町広島字東裏３０番地 電話：088-699-2111",
         "hours": "【平日】8：30～17：15 【土日祝日】8：30～17：15",
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-401-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22942,19 +26366,20 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.577774,
-          35.999477
+          134.547012,
+          34.125668
         ]
       },
       "properties": {
         "name": "北島町 (A001) 北島町役場上下水道課",
         "municipality": "北島町 (A001)",
         "locationName": "北島町役場上下水道課",
-        "address": "上下水道課 徳島県板野郡北島町中村字上地23番地1 電話:088-698-9818 ②北島町立図書館・創世ホール 徳島県板野郡北島町新喜来字南古田91番地 電話:088-698-1100",
+        "address": "徳島県板野郡北島町中村字上地23番地1 電話:088-698-9818 ②",
         "hours": "①平日 8:30～17:15 土・日曜日、祝祭日、年末年始（12月29日から1月3日まで）を除く ②土・日曜日 10:00～18:00 祝祭日が土・日曜日の場合は配布します。 年末年始（12月29日から1月3日まで）を除く",
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.town.kitajima.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-402-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22963,19 +26388,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.043289,
-          34.340111
+          134.546402,
+          34.126072
+        ]
+      },
+      "properties": {
+        "name": "北島町 (A001) 北島町立図書館・創世ホール",
+        "municipality": "北島町 (A001)",
+        "locationName": "北島町立図書館・創世ホール",
+        "address": "徳島県板野郡北島町新喜来字南古田91番地 電話:088-698-1100",
+        "hours": "①平日 8:30～17:15 土・日曜日、祝祭日、年末年始（12月29日から1月3日まで）を除く ②土・日曜日 10:00～18:00 祝祭日が土・日曜日の場合は配布します。 年末年始（12月29日から1月3日まで）を除く",
+        "round": "第28弾",
+        "issueDate": "2026/04/24",
+        "url": "https://www.town.kitajima.lg.jp/library/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-402-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.825516,
+          34.310349
         ]
       },
       "properties": {
         "name": "香川県（流域下水道・A001） 中讃流域下水道大束川浄化センター",
         "municipality": "香川県（流域下水道・A001）",
         "locationName": "中讃流域下水道大束川浄化センター",
-        "address": "域下水道大束川浄化センター香川県綾歌郡宇多津町吉田4001-4電話：0877-46-2016 【休日】丸亀城内観光案内所香川県丸亀市一番丁（丸亀城内）電話：0877-25-3881",
+        "address": "香川県綾歌郡宇多津町吉田4001-4電話：0877-46-2016  【休日】",
         "hours": "【平日】8：30～17：00 【休日】9：00～16：30",
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://kagawa-gesui.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22984,19 +26432,64 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.043289,
-          34.340111
+          133.800171,
+          34.286327
+        ]
+      },
+      "properties": {
+        "name": "香川県（流域下水道・A001） 丸亀城内観光案内所",
+        "municipality": "香川県（流域下水道・A001）",
+        "locationName": "丸亀城内観光案内所",
+        "address": "香川県丸亀市一番丁（丸亀城内）電話：0877-25-3881",
+        "hours": "【平日】8：30～17：00 【休日】9：00～16：30",
+        "round": "第02弾",
+        "issueDate": "2016/08/01",
+        "url": "https://www.love-marugame.jp/office",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-000-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.761627,
+          34.284096
         ]
       },
       "properties": {
         "name": "香川県（流域下水道・A002） 中讃流域下水道金倉川浄化センター",
         "municipality": "香川県（流域下水道・A002）",
         "locationName": "中讃流域下水道金倉川浄化センター",
-        "address": "域下水道金倉川浄化センター 香川県仲多度郡多度津町堀江5-10-1 電話：0877-32-6005 【休日】多度津町役場宿直室 香川県仲多度郡多度津町栄町3-3-95 電話：0877-33-1110",
+        "address": "香川県仲多度郡多度津町堀江5-10-1 電話：0877-32-6005 【休日】",
         "hours": "【平日】8:30～17:00 【休日】8:30～17:15",
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://kagawa-gesui.or.jp/publics/index/28/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-000-A-02.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.758652,
+          34.272305
+        ]
+      },
+      "properties": {
+        "name": "香川県（流域下水道・A002） 多度津町役場宿直室",
+        "municipality": "香川県（流域下水道・A002）",
+        "locationName": "多度津町役場宿直室",
+        "address": "香川県仲多度郡多度津町栄町3-3-95 電話：0877-33-1110",
+        "hours": "【平日】8:30～17:00 【休日】8:30～17:15",
+        "round": "第02弾",
+        "issueDate": "2016/08/01",
+        "url": "https://www.town.tadotsu.kagawa.jp/kakuka_tyousya/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-000-A-02.jpg",
         "type": "mhcard"
       }
     },
@@ -23010,14 +26503,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "高松市 (A001) 瓦町FLAG 市民サービスセンター香川県高松市常磐町1-3-1（FLAG8階）電話：087-863-2888",
+        "name": "高松市 (A001) 瓦町FLAG 市民サービスセンタ",
         "municipality": "高松市 (A001)",
-        "locationName": "瓦町FLAG 市民サービスセンター香川県高松市常磐町1-3-1（FLAG8階）電話：087-863-2888",
+        "locationName": "瓦町FLAG 市民サービスセンタ",
         "address": "ー香川県高松市常磐町1-3-1（FLAG8階）電話：087-863-2888",
         "hours": "10：00～18：30ただし、年末年始（12/29～1/3）はお休みです",
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23039,6 +26533,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://takamatsu-bonsai.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-201-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -23052,14 +26547,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "丸亀市（A001） 【平日】丸亀市役所 下水道課香川県丸亀市大手町2－4－21（市役所本庁3階）電話：0877-24-8850 【休日】丸亀城内観光案内所 香川県丸亀市一番丁（丸亀城内） 電話：0877-25-3881",
+        "name": "丸亀市（A001） 【平日】丸亀市役所 / 【休日】丸亀城内観光案内所",
         "municipality": "丸亀市（A001）",
-        "locationName": "【平日】丸亀市役所 下水道課香川県丸亀市大手町2－4－21（市役所本庁3階）電話：0877-24-8850 【休日】丸亀城内観光案内所 香川県丸亀市一番丁（丸亀城内） 電話：0877-25-3881",
+        "locationName": "【平日】丸亀市役所 / 【休日】丸亀城内観光案内所",
         "address": "下水道課香川県丸亀市大手町2－4－21（市役所本庁3階）電話：0877-24-8850 【休日】丸亀城内観光案内所 香川県丸亀市一番丁（丸亀城内） 電話：0877-25-3881",
         "hours": "【平日】8：30～17：15【休日】9：00～16：30",
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23073,14 +26569,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "丸亀市（B001） 【平日】丸亀市飯山市民総合センター 業務担当窓口【休日】丸亀市飯山市民総合センター 守衛室香川県丸亀市飯山町川原1114番地1電話：【平日】0877-98-7957【休日】0877-98-2251",
+        "name": "丸亀市（B001） 【平日】丸亀市飯山市民総合センター 業務担当窓口 / 【休日】丸亀市飯山市民総合センター 守衛 / 【平日】0877-98-7957 / 【休日】0877-98-2251",
         "municipality": "丸亀市（B001）",
-        "locationName": "【平日】丸亀市飯山市民総合センター 業務担当窓口【休日】丸亀市飯山市民総合センター 守衛室香川県丸亀市飯山町川原1114番地1電話：【平日】0877-98-7957【休日】0877-98-2251",
+        "locationName": "【平日】丸亀市飯山市民総合センター 業務担当窓口 / 【休日】丸亀市飯山市民総合センター 守衛 / 【平日】0877-98-7957 / 【休日】0877-98-2251",
         "address": "室香川県丸亀市飯山町川原1114番地1電話：【平日】0877-98-7957【休日】0877-98-2251",
         "hours": "8：30～17：15",
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23094,14 +26591,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "丸亀市 (C001) 【平日】丸亀市綾歌市民総合センター業務担当窓口 香川県丸亀市綾歌町栗熊西1638番地 電話：0877-86-5516 【休日】丸亀市綾歌市民総合センター守衛室 電話:0877-86-2311 (問合せ先) 丸亀市役所都市整備部下水道課 電話:0877-24-8850",
+        "name": "丸亀市 (C001) 【平日】丸亀市綾歌市民総合センター業務担当窓口 / 【休日】丸亀市綾歌市民総合センター守衛室",
         "municipality": "丸亀市 (C001)",
-        "locationName": "【平日】丸亀市綾歌市民総合センター業務担当窓口 香川県丸亀市綾歌町栗熊西1638番地 電話：0877-86-5516 【休日】丸亀市綾歌市民総合センター守衛室 電話:0877-86-2311 (問合せ先) 丸亀市役所都市整備部下水道課 電話:0877-24-8850",
+        "locationName": "【平日】丸亀市綾歌市民総合センター業務担当窓口 / 【休日】丸亀市綾歌市民総合センター守衛室",
         "address": "香川県丸亀市綾歌町栗熊西1638番地 電話：0877-86-5516 【休日】丸亀市綾歌市民総合センター守衛室 電話:0877-86-2311 (問合せ先) 丸亀市役所都市整備部下水道課 電話:0877-24-8850",
         "hours": "【平日】8：30～17：15 【休日】8：30～17：15",
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-202-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23118,11 +26616,34 @@ const mhcardGeoJSON = {
         "name": "丸亀市 (D001) 【平日】丸亀市浄化センター",
         "municipality": "丸亀市 (D001)",
         "locationName": "【平日】丸亀市浄化センター",
-        "address": "香川県丸亀市昭和町21番地1 電話:0877-23-2278 【休日】丸亀城内観光案内所 香川県丸亀市一番丁 丸亀城内 電話:0877-25-3881 （問合せ先） 丸亀市役所都市整備部下水道課 電話:0877-24-8850",
-        "hours": "【平日】8:30～17:00 【休日】9:00～16:30 ※土曜日・日曜日・祝日、12月29日～1月3日に配布します",
+        "address": "香川県丸亀市昭和町21番地1 電話:0877-23-2278",
+        "hours": "【平日】8:30～17:00",
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.marugame.lg.jp/page/1402.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-202-D-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.800171,
+          34.286327
+        ]
+      },
+      "properties": {
+        "name": "丸亀市 (D001) 【休日】丸亀城内観光案内所",
+        "municipality": "丸亀市 (D001)",
+        "locationName": "【休日】丸亀城内観光案内所",
+        "address": "香川県丸亀市一番丁 丸亀城内 電話:0877-25-3881 （問合せ先） 丸亀市役所都市整備部下水道課 電話:0877-24-8850",
+        "hours": "【休日】9:00～16:30 ※土曜日・日曜日・祝日、12月29日～1月3日に配布します",
+        "round": "第24弾",
+        "issueDate": "2024/12/20",
+        "url": "https://www.love-marugame.jp/office",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-202-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23144,6 +26665,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://sakaide-kankou.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23160,11 +26682,34 @@ const mhcardGeoJSON = {
         "name": "坂出市 (B001) 坂出市塩業資料館",
         "municipality": "坂出市 (B001)",
         "locationName": "坂出市塩業資料館",
-        "address": "香川県坂出市大屋冨町1777-12 電話:0877-47-4040 【閉館日】坂出市観光案内所 香川県坂出市元町1-1-1 JR坂出駅構内 電話:0877-45-1122",
+        "address": "香川県坂出市大屋冨町1777-12 電話:0877-47-4040 【閉館日】",
         "hours": "9:00～17:00（入館時間は16:30まで） ただし、毎週月曜日（祝日の場合は翌日）、祝日の翌日、年末年始 (12/28～1/4)はお休みです 【閉館日】8:45～17:30",
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.city.sakaide.lg.jp/soshiki/bunkashinkou/engyou-musium.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-203-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.855774,
+          34.313377
+        ]
+      },
+      "properties": {
+        "name": "坂出市 (B001) 坂出市観光案内所",
+        "municipality": "坂出市 (B001)",
+        "locationName": "坂出市観光案内所",
+        "address": "香川県坂出市元町1-1-1 JR坂出駅構内 電話:0877-45-1122",
+        "hours": "9:00～17:00（入館時間は16:30まで） ただし、毎週月曜日（祝日の場合は翌日）、祝日の翌日、年末年始 (12/28～1/4)はお休みです 【閉館日】8:45～17:30",
+        "round": "第28弾",
+        "issueDate": "2026/04/24",
+        "url": "https://sakaide-kankou.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23178,14 +26723,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "観音寺市 【平日】観音寺市下水浄化センター 香川県観音寺市瀬戸町四丁目２番11号 電話：0875-25-6890 【休日】観音寺市役所守衛室 香川県観音寺市坂本町一丁目１番１号",
+        "name": "観音寺市 【平日】観音寺市下水浄化センター / 【休日】観音寺市役所守衛室",
         "municipality": "観音寺市",
-        "locationName": "【平日】観音寺市下水浄化センター 香川県観音寺市瀬戸町四丁目２番11号 電話：0875-25-6890 【休日】観音寺市役所守衛室 香川県観音寺市坂本町一丁目１番１号",
+        "locationName": "【平日】観音寺市下水浄化センター / 【休日】観音寺市役所守衛室",
         "address": "香川県観音寺市瀬戸町四丁目２番11号 電話：0875-25-6890 【休日】観音寺市役所守衛室 香川県観音寺市坂本町一丁目１番１号",
         "hours": "8：30～17：15",
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23199,14 +26745,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "さぬき市 さぬき市役所建設経済部 下水道課香川県さぬき市志度5385番地8 本庁舎2階電話：087-894-1611",
+        "name": "さぬき市 さぬき市役所建設経済部",
         "municipality": "さぬき市",
-        "locationName": "さぬき市役所建設経済部 下水道課香川県さぬき市志度5385番地8 本庁舎2階電話：087-894-1611",
+        "locationName": "さぬき市役所建設経済部",
         "address": "下水道課香川県さぬき市志度5385番地8 本庁舎2階電話：087-894-1611",
         "hours": "【平日】8：30～17：00【休日】9：00～17：00",
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23228,6 +26775,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.higashikagawa.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23241,14 +26789,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "三木町 三木町役場下水道課香川県木田郡三木町大字氷上310電話：087-891-3315",
+        "name": "三木町 三木町役",
         "municipality": "三木町",
-        "locationName": "三木町役場下水道課香川県木田郡三木町大字氷上310電話：087-891-3315",
+        "locationName": "三木町役",
         "address": "場下水道課香川県木田郡三木町大字氷上310電話：087-891-3315",
         "hours": "8：30～17：15 ※土、日、祝日及び年末年始は宿直室で配布します",
         "round": "第4弾",
         "issueDate": "2017/04/03",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-341-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23270,6 +26819,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.town.ayagawa.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-387-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23291,6 +26841,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.town.ayagawa.lg.jp/docs/2012030900029/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-387-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23304,14 +26855,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "多度津町 【平日】多度津町役場建設課【休日】多度津町役場宿直室香川県仲多度郡多度津町栄町3丁目3番95号電話：【平日】0877-33-1112【休日】0877－33－1110",
+        "name": "多度津町 【平日】多度津町役場建設課 / 【休日】多度津町役場宿直 / 【平日】0877-33-1112 / 【休日】0877－33－1110",
         "municipality": "多度津町",
-        "locationName": "【平日】多度津町役場建設課【休日】多度津町役場宿直室香川県仲多度郡多度津町栄町3丁目3番95号電話：【平日】0877-33-1112【休日】0877－33－1110",
+        "locationName": "【平日】多度津町役場建設課 / 【休日】多度津町役場宿直 / 【平日】0877-33-1112 / 【休日】0877－33－1110",
         "address": "室香川県仲多度郡多度津町栄町3丁目3番95号電話：【平日】0877-33-1112【休日】0877－33－1110",
         "hours": "8：30～17：15",
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-404-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23325,14 +26877,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "まんのう町 道の駅「空の夢もみの木パーク」 まんのう町追上424番地1 電話：0877-75-1994",
+        "name": "まんのう町 道の駅「空の夢もみの木パーク」 まんのう町追上424番地1",
         "municipality": "まんのう町",
-        "locationName": "道の駅「空の夢もみの木パーク」 まんのう町追上424番地1 電話：0877-75-1994",
+        "locationName": "道の駅「空の夢もみの木パーク」 まんのう町追上424番地1",
         "address": "まんのう町",
         "hours": "8:00〜17:30 ※12/31〜1/5及び、臨時休業日はお休みです",
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-406-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23354,6 +26907,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://www.sakanouenokumomuseum.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23375,6 +26929,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://dogo.jp/onsen/asuka",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23396,6 +26951,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://imabari-shimanami.jp/ikiiki/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23417,6 +26973,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.imabari.ehime.jp/kanko/spot/?a=1102",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23438,6 +26995,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://imabarishintoshi-aeonmall.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-202-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23451,14 +27009,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "宇和島市 宇和島市観光情報センター「シロシタ」 （宇和島市観光物産協会事務所） 愛媛県宇和島市丸之内5-1-4 電話：0895-49-5700 （問い合わせ先） 宇和島市役所 下水道課 電話：0895-49-7115",
+        "name": "宇和島市 宇和島市観光情報センター「シロシタ」 （宇和島市観光物産協会事務所）",
         "municipality": "宇和島市",
-        "locationName": "宇和島市観光情報センター「シロシタ」 （宇和島市観光物産協会事務所） 愛媛県宇和島市丸之内5-1-4 電話：0895-49-5700 （問い合わせ先） 宇和島市役所 下水道課 電話：0895-49-7115",
+        "locationName": "宇和島市観光情報センター「シロシタ」 （宇和島市観光物産協会事務所）",
         "address": "愛媛県宇和島市丸之内5-1-4 電話：0895-49-5700 （問い合わせ先） 宇和島市役所 下水道課 電話：0895-49-7115",
         "hours": "9：00～18：00 ただし、年末年始（12/31～1/1）はお休みです",
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23480,6 +27039,7 @@ const mhcardGeoJSON = {
         "round": "第3弾",
         "issueDate": "2016/12/01",
         "url": "http://www.minatto.net/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23493,14 +27053,37 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "八幡浜市 (B001) 【平日】八幡浜市役所農林課 愛媛県八幡浜市北浜一丁目１番１号 電話：0894-22-3111 【休日】八幡浜市役所宿直室",
+        "name": "八幡浜市 (B001) 【平日】八幡浜市役所農林課 / 【休日】八幡浜市役所宿直室",
         "municipality": "八幡浜市 (B001)",
-        "locationName": "【平日】八幡浜市役所農林課 愛媛県八幡浜市北浜一丁目１番１号 電話：0894-22-3111 【休日】八幡浜市役所宿直室",
+        "locationName": "【平日】八幡浜市役所農林課 / 【休日】八幡浜市役所宿直室",
         "address": "愛媛県八幡浜市北浜一丁目１番１号 電話：0894-22-3111 【休日】八幡浜市役所宿直室",
         "hours": "8：30～17：15 休日、年末年始(12/29～1/3)は八幡浜市役所宿直室で配布します",
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-204-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.294296,
+          33.949554
+        ]
+      },
+      "properties": {
+        "name": "新居浜市 (A001) あかがねミュージアム",
+        "municipality": "新居浜市 (A001)",
+        "locationName": "あかがねミュージアム",
+        "address": "愛媛県新居浜市坂井町2-8-1電話：0897-31-0305  ※上記施設休館日のみ新居浜市観光物産協会",
+        "hours": "9：30～17：00 ※ただし、月曜日・年末年始（12/30～1/1）はお休みです。 ※振替休館日、臨時休館日もありますので、事前に左記施設HPをご確認ください",
+        "round": "第03弾",
+        "issueDate": "2016/12/01",
+        "url": "http://www.akaganemuseum.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23514,14 +27097,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "新居浜市 (A001) あかがねミュージアム",
+        "name": "新居浜市 (A001) 「ここくるにいはま」（新居浜駅東側）",
         "municipality": "新居浜市 (A001)",
-        "locationName": "あかがねミュージアム",
+        "locationName": "「ここくるにいはま」（新居浜駅東側）",
         "address": "ム愛媛県新居浜市坂井町2-8-1電話：0897-31-0305 ※上記施設休館日のみ新居浜市観光物産協会 「ここくるにいはま」（新居浜駅東側）で配布します。（年末年始除く）",
         "hours": "9：30～17：00 ※ただし、月曜日・年末年始（12/30～1/1）はお休みです。 ※振替休館日、臨時休館日もありますので、事前に左記施設HPをご確認ください",
         "round": "第03弾",
         "issueDate": "2016/12/01",
-        "url": "http://www.akaganemuseum.jp/",
+        "url": "https://niihama.info/spot/119",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23543,6 +27127,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://besshi.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23564,6 +27149,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://saijo-imadoki.jp/center/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23585,6 +27171,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.oozukankou.jp/buy-1.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23606,6 +27193,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://welpiaiyo.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-210-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -23627,6 +27215,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "http://www.shikochu-kankou.jp/?page_id=97",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23648,6 +27237,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://sakaemachi.jimdoweb.com/%E7%B5%84%E5%90%88%E3%83%88%E3%83%94%E3%83%83%E3%82%AF/%E5%9B%9B%E5%9B%BD%E4%B8%AD%E5%A4%AE%E3%83%89%E3%83%83%E3%83%88%E3%82%B3%E3%83%A0/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-213-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23669,6 +27259,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://seiyojikan.jp/spot/%E5%AE%87%E5%92%8C%E6%96%87%E5%8C%96%E3%81%AE%E9%87%8C%E4%BC%91%E6%86%A9%E6%89%80/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-214-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -23690,6 +27281,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://seiyojikan.jp/spot/otoikaikan/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-214-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23703,14 +27295,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "東温市(A001) 東温市さくらの湯 観光物産センター愛媛県東温市北方甲2098（問い合わせ先）東温市役所上下水道課電話：089-964-4416",
+        "name": "東温市(A001) 東温市さくらの湯 観光物産センタ",
         "municipality": "東温市(A001)",
-        "locationName": "東温市さくらの湯 観光物産センター愛媛県東温市北方甲2098（問い合わせ先）東温市役所上下水道課電話：089-964-4416",
+        "locationName": "東温市さくらの湯 観光物産センタ",
         "address": "ー愛媛県東温市北方甲2098（問い合わせ先）東温市役所上下水道課電話：089-964-4416",
         "hours": "9：00～17：00ただし、火曜日、毎月第4水曜日、年末年始（12/29～1/3）はお休みです",
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23732,6 +27325,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://art-village-toon.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-215-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23748,11 +27342,34 @@ const mhcardGeoJSON = {
         "name": "砥部町 【通常】砥部焼伝統産業会館",
         "municipality": "砥部町",
         "locationName": "【通常】砥部焼伝統産業会館",
-        "address": "愛媛県伊予郡砥部町大南335番地 電話：089-962-6600 【休館日】砥部町役場上下水道課 愛媛県砥部町宮内1392番地 電話：089-962-6363",
-        "hours": "【通常】9：00～17：00 ただし、月曜日(祝日の場合は翌日)、12月29日～1月1日はお休みです 【休館日】8：30～17：15 砥部焼伝統産業会館の休館日に配布します ただし、砥部町役場は、年末年始(12/29～1/3)はお休みです",
+        "address": "愛媛県伊予郡砥部町大南335番地 電話：089-962-6600",
+        "hours": "【通常】9：00～17：00 ただし、月曜日(祝日の場合は翌日)、12月29日～1月1日はお休みです",
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.town.tobe.ehime.jp/soshikikarasagasu/shoukoukannkouka/kankou/9/552.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-402-A01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.795074,
+          33.751183
+        ]
+      },
+      "properties": {
+        "name": "砥部町 【休館日】砥部町役場上下水道課",
+        "municipality": "砥部町",
+        "locationName": "【休館日】砥部町役場上下水道課",
+        "address": "愛媛県砥部町宮内1392番地 電話：089-962-6363",
+        "hours": "【休館日】8：30～17：15 砥部焼伝統産業会館の休館日に配布します ただし、砥部町役場は、年末年始(12/29～1/3)はお休みです",
+        "round": "第16弾",
+        "issueDate": "2022/01/15",
+        "url": "http://www.town.tobe.ehime.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-402-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -23774,6 +27391,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://sadamisakihanto-museum.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-442-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23795,6 +27413,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.pref.kochi.lg.jp/soshiki/171801/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23808,14 +27427,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "高知市 【平日】海老ノ丸ポンプ場 高知市海老ノ丸13-6 電話：088-882-4538 【休日】 高知県立美術館 １階 総合案内 高知県高知市高須353-2 電話：088-866-8000 （問い合わせ先） 高知市上下水道局下水道整備課 電話：088-821-9248",
+        "name": "高知市 【平日】海老ノ丸ポンプ場 高知市海老ノ丸13-6 / 【休日】高知県立美術館 １階 総合案内 高知県高知市高須353-2",
         "municipality": "高知市",
-        "locationName": "【平日】海老ノ丸ポンプ場 高知市海老ノ丸13-6 電話：088-882-4538 【休日】 高知県立美術館 １階 総合案内 高知県高知市高須353-2 電話：088-866-8000 （問い合わせ先） 高知市上下水道局下水道整備課 電話：088-821-9248",
+        "locationName": "【平日】海老ノ丸ポンプ場 高知市海老ノ丸13-6 / 【休日】高知県立美術館 １階 総合案内 高知県高知市高須353-2",
         "address": "高知県立美術館 １階 総合案内 高知県高知市高須353-2 電話：088-866-8000 （問い合わせ先） 高知市上下水道局下水道整備課 電話：088-821-9248",
         "hours": "【平日】8：30～17：15 ※土日、祝日、年末年始はお休みです 【休日】9:00～16:30 ※年末年始はお休みです ※休日は、令和7年4月1日～令和8年3月31日の試行配布です。ご注意ください",
         "round": "第1弾",
         "issueDate": "2016/04/01",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23837,6 +27457,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://kaiyodo-sfn.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23858,6 +27479,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "https://sta2020.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-206-A-01-1.jpg",
         "type": "mhcard"
       }
     },
@@ -23879,6 +27501,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://machikado-gallery.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-206-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23900,6 +27523,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.city.kochi-konan.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23921,6 +27545,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.city.kochi-konan.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-211-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23942,6 +27567,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.city.kochi-konan.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-211-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23963,6 +27589,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "http://www.kounan-navi.com",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-211-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23984,6 +27611,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://ryugadou.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24005,6 +27633,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "http://www.kigenhaeikayo.com/page/00000081.htm",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-212-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24026,6 +27655,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://monobegawa.com/tourist-spot/4396",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-212-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24047,6 +27677,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.sk-michinoeki.jp/michinoeki/440",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-212-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24068,6 +27699,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "https://www.tosa-sameura.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-363-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24089,6 +27721,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24102,14 +27735,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "福岡県 (流域下水道) (B001) 【平日】福岡県庁1階 総合案内窓口 福岡県福岡市博多区東公園7-7 電話:092-643-3727 【休日】御笠川浄化センター 福岡県福岡市博多区那珂4-5-1 電話:092-451-4911 （問合せ先） 福岡県建築都市部上下水道課 電話:092-643-3727",
+        "name": "福岡県 (流域下水道) (B001) 【平日】福岡県庁1階 総合案内窓口 福岡県福岡市博多区東公園7-7 / 【休日】御笠川浄化センター",
         "municipality": "福岡県 (流域下水道) (B001)",
-        "locationName": "【平日】福岡県庁1階 総合案内窓口 福岡県福岡市博多区東公園7-7 電話:092-643-3727 【休日】御笠川浄化センター 福岡県福岡市博多区那珂4-5-1 電話:092-451-4911 （問合せ先） 福岡県建築都市部上下水道課 電話:092-643-3727",
+        "locationName": "【平日】福岡県庁1階 総合案内窓口 福岡県福岡市博多区東公園7-7 / 【休日】御笠川浄化センター",
         "address": "】福岡県庁1階 総合案内窓口 福岡県福岡市博多区東公園7-7 電話:092-643-3727 【休日】御笠川浄化センター 福岡県福岡市博多区那珂4-5-1 電話:092-451-4911 （問合せ先） 福岡県建築都市部上下水道課 電話:092-643-3727",
         "hours": "【平日】8:30～17:45 【休日】10:00～15:00 ただし、年末年始はお休みです",
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-000-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24131,6 +27765,7 @@ const mhcardGeoJSON = {
         "round": "第1弾",
         "issueDate": "2016/04/01",
         "url": "https://www.kitakyushuspacelabo.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24148,10 +27783,33 @@ const mhcardGeoJSON = {
         "municipality": "北九州市（B001）",
         "locationName": "【平日】日明浄化センター",
         "address": "州福岡県北九州市小倉北区浅野3-9-33（問い合わせ先）北九州市上下水道局下水道計画課電話：093-582-2480（平日17：15まで）",
-        "hours": "【平日】9：00～12：00、13：00～16：00まで、日明浄化センターを見学された方に配布します。見学は事前にお申込みください【土・日・祝】9:00～21:00",
+        "hours": "【平日】9：00～12：00、13：00～16：00まで、日明浄化センターを見学された方に配布します。見学は事前にお申込みください",
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "http://www.city.kitakyushu.lg.jp/suidou/s01300023.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-100-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.888,
+          33.89056
+        ]
+      },
+      "properties": {
+        "name": "北九州市（B001） 【土・日・祝】ミクニワールドスタジアム北九州",
+        "municipality": "北九州市（B001）",
+        "locationName": "【土・日・祝】ミクニワールドスタジアム北九州",
+        "address": "福岡県北九州市小倉北区浅野3-9-33（問い合わせ先）北九州市上下水道局下水道計画課電話：093-582-2480（平日17：15まで）",
+        "hours": "【土・日・祝】9:00～21:00",
+        "round": "第5弾",
+        "issueDate": "2017/08/01",
+        "url": "https://www.kitakyushu-stadium.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24173,6 +27831,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "https://www.ktqmm.jp/ ",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-100-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24189,11 +27848,12 @@ const mhcardGeoJSON = {
         "name": "北九州市（D001） 【平日】北九州市 環境・コミュニティセンター",
         "municipality": "北九州市（D001）",
         "locationName": "【平日】北九州市 環境・コミュニティセンター",
-        "address": "福岡県北九州市若松区本町2丁目9-4 【土日祝】若松区役所守衛福岡県北九州市若松区浜町1丁目1-1 ※令和8年5月1日より下記に変更になります。 セブン‐イレブン若松区役所前店 福岡県北九州市若松区浜町１丁目1ー4 電話:093-863-2510 (問い合わせ先)北九州市上下水道局下水道部下水道計画課電話：093-582-2480",
+        "address": "福岡県北九州市若松区本町2丁目9-4 【土日祝】若松区役所守衛福岡県北九州市若松区浜町1丁目1-1  ※令和8年5月1日より下記に変更になります。 セブン‐イレブン若松区役所前店 福岡県北九州市若松区浜町１丁目1ー4 電話:093-863-2510  (問い合わせ先)北九州市上下水道局下水道部下水道計画課電話：093-582-2480",
         "hours": "【平日】12:00～16:00 【土日祝】9:00～17:00 ただし、お盆、年末年始はお休みです ※令和8年5月1日より下記に変更になります。 終日",
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "http://www.city.kitakyushu.lg.jp/suidou/s01101006.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-100-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24215,6 +27875,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "https://www.city.fukuoka.lg.jp/doro-gesuido/somu/hp/pon.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-130-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24236,6 +27897,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.fukuoka.lg.jp/shisei/kouhou-hodo/johoplaza/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-130-C02.jpg",
         "type": "mhcard"
       }
     },
@@ -24257,6 +27919,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.city.omuta.lg.jp/kigyoukyoku/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24278,6 +27941,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "http://kurumecityplaza.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24286,19 +27950,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.406113,
-          33.163055
+          130.405609,
+          33.163387
         ]
       },
       "properties": {
         "name": "柳川市 福岡県柳川市役所上下水道課",
         "municipality": "柳川市",
         "locationName": "福岡県柳川市役所上下水道課",
-        "address": "】福岡県柳川市役所上下水道課 福岡県柳川市本町87-1 電話:0944-77-8583 【土日祝日】①柳川市観光情報センター 福岡県柳川市沖端町35 電話:0944-73-2145 ②柳川市観光案内所 福岡県柳川市三橋町下百町46-2",
+        "address": "福岡県柳川市本町87-1 電話:0944-77-8583 【土日祝日】",
         "hours": "平日】8:30～17:00 ただし、年末年始はお休みです 【土日祝日】①9:30～16:00 ただし、12月31日と1月1日はお休みです ②9:30～16:00 ただし、12月31日と1月1日はお休みです",
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.city.yanagawa.fukuoka.jp/kurashi/jogesuido/gesui/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-207-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.394852,
+          33.158539
+        ]
+      },
+      "properties": {
+        "name": "柳川市 ①柳川市観光情報センター",
+        "municipality": "柳川市",
+        "locationName": "①柳川市観光情報センター",
+        "address": "福岡県柳川市沖端町35 電話:0944-73-2145 ②柳川市観光案内所 福岡県柳川市三橋町下百町46-2",
+        "hours": "平日】8:30～17:00 ただし、年末年始はお休みです 【土日祝日】①9:30～16:00 ただし、12月31日と1月1日はお休みです ②9:30～16:00 ただし、12月31日と1月1日はお休みです",
+        "round": "第25弾",
+        "issueDate": "2025/04/25",
+        "url": "https://www.yanagawa-net.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24320,6 +28007,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.city.chikugo.lg.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24328,19 +28016,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.45726,
-          35.530216
+          130.555832,
+          33.396526
         ]
       },
       "properties": {
         "name": "小郡市 【平日】小郡市役所 下水道課",
         "municipality": "小郡市",
         "locationName": "【平日】小郡市役所 下水道課",
-        "address": "下水道課福岡県小郡市小郡255-1電話：0942-72-2111（内線342）【休日】小郡市総合保健福祉センターあすてらす総合受付福岡県小郡市二森1167-1電話：0942-72-6666",
+        "address": "福岡県小郡市小郡255-1電話：0942-72-2111（内線342）",
         "hours": "9：00～17：00ただし、12月28日が土曜日の場合、年末年始（12/29～1/4）はお休みです",
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.ogori.fukuoka.jp/197/798",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-216-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.558716,
+          33.38118
+        ]
+      },
+      "properties": {
+        "name": "小郡市 【休日】小郡市総合保健福祉センターあすてらす総合受付",
+        "municipality": "小郡市",
+        "locationName": "【休日】小郡市総合保健福祉センターあすてらす総合受付",
+        "address": "福岡県小郡市二森1167-1電話：0942-72-6666",
+        "hours": "9：00～17：00ただし、12月28日が土曜日の場合、年末年始（12/29～1/4）はお休みです",
+        "round": "第07弾",
+        "issueDate": "2018/04/28",
+        "url": "http://www.city.ogori.fukuoka.jp/index.php?cID=1000",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24362,6 +28073,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://www.onojo-occm.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24383,6 +28095,7 @@ const mhcardGeoJSON = {
         "round": "第3弾",
         "issueDate": "2016/12/01",
         "url": "https://www.muna-tabi.jp/k006/20240820133134.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-220-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24404,6 +28117,7 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "http://www.akamakan.info/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-220-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24425,6 +28139,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.kotodazaifu.net/pavilion",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-221-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -24446,6 +28161,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://ssk-dazaifu-gym.com",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-221-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24467,6 +28183,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.city.dazaifu.lg.jp/site/kanko/3625.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-221-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24488,6 +28205,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.city.koga.fukuoka.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-223-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24509,6 +28227,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.city.nakagawa.lg.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-231-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24517,19 +28236,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.45726,
-          35.530216
+          130.424957,
+          33.499123
         ]
       },
       "properties": {
         "name": "那珂川市 (B001) ①那珂川市役所 下水道課",
         "municipality": "那珂川市 (B001)",
         "locationName": "①那珂川市役所 下水道課",
-        "address": "下水道課 福岡県那珂川市大字安徳702番地1 電話:092-408-6271 ②ナカイチインフォメーション 福岡県那珂川市中原2丁目120 博多南駅前ビル1F 電話:092-710-2003",
+        "address": "福岡県那珂川市大字安徳702番地1 電話:092-408-6271",
         "hours": "①8：30～17：00（平日） ②10：00～18:00（土日祝日）",
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "http://www.city.nakagawa.lg.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-231-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.434082,
+          33.518494
+        ]
+      },
+      "properties": {
+        "name": "那珂川市 (B001) ②ナカイチインフォメーション",
+        "municipality": "那珂川市 (B001)",
+        "locationName": "②ナカイチインフォメーション",
+        "address": "福岡県那珂川市中原2丁目120 博多南駅前ビル1F 電話:092-710-2003",
+        "hours": "①8：30～17：00（平日） ②10：00～18:00（土日祝日）",
+        "round": "第27弾",
+        "issueDate": "2025/12/19",
+        "url": "http://cototoba.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-231-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24551,6 +28293,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.town.umi.lg.jp/soshiki/10/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-341-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24559,19 +28302,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.577774,
-          35.999477
+          130.479721,
+          33.591457
         ]
       },
       "properties": {
         "name": "志免町 【平日】志免町役場 上下水道課窓口",
         "municipality": "志免町",
         "locationName": "【平日】志免町役場 上下水道課窓口",
-        "address": "上下水道課窓口福岡県糟屋郡志免町志免中央1-1-1【休日】志免町総合福祉施設 シーメイト総合窓口福岡県糟屋郡志免町大字志免451-1電話：092-936-8141",
-        "hours": "【平日】8：30～17：00【休日】9：00～21：00ただし、年末年始（12/29～1/4）はお休みです",
+        "address": "福岡県糟屋郡志免町志免中央1-1-1",
+        "hours": "【平日】8：30～17：00",
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "https://www.town.shime.lg.jp/soshiki/10/manhole-card.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-343-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.486526,
+          33.590244
+        ]
+      },
+      "properties": {
+        "name": "志免町 【休日】志免町総合福祉施設 シーメイト総合窓口",
+        "municipality": "志免町",
+        "locationName": "【休日】志免町総合福祉施設 シーメイト総合窓口",
+        "address": "福岡県糟屋郡志免町大字志免451-1電話：092-936-8141",
+        "hours": "【休日】9：00～21：00ただし、年末年始（12/29～1/4）はお休みです",
+        "round": "第5弾",
+        "issueDate": "2017/08/01",
+        "url": "https://www.town.shime.lg.jp/site/shimate/kannai-annai.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-343-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24593,6 +28359,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://ashikan.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-381-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24614,6 +28381,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.town.okagaki.lg.jp/010/060/010/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-383-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24635,6 +28403,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://www.water.saga.saga.jp/main/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/41-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24656,6 +28425,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.sagabai.com/balloon-museum/main/48.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/41-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24677,6 +28447,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.city.tosu.lg.jp/soshiki/18/2386.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/41-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24698,6 +28469,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.city.takeo.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/41-206-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -24719,6 +28491,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.saga-kashima.lg.jp/main/15748.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/41-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24732,14 +28505,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "神埼市 神埼情報館 佐賀県神埼市神埼町鶴3456-4 電話：0952-37-1700",
+        "name": "神埼市 神埼情報館",
         "municipality": "神埼市",
-        "locationName": "神埼情報館 佐賀県神埼市神埼町鶴3456-4 電話：0952-37-1700",
+        "locationName": "神埼情報館",
         "address": "佐賀県神埼市神埼町鶴3456-4 電話：0952-37-1700",
         "hours": "9：00～17：00 ただし、年末（12/29～12/31）はお休みです",
         "round": "第4弾",
         "issueDate": "2017/04/03",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/41-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24761,6 +28535,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.town.miyaki.lg.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/41-346-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24782,6 +28557,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.arita.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/41-401-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24803,6 +28579,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "http://www.town.kouhoku.saga.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/41-424-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24824,6 +28601,7 @@ const mhcardGeoJSON = {
         "round": "第9弾",
         "issueDate": "2018/12/14",
         "url": "https://www.town.shiroishi.lg.jp/jyuumin/seikatsu/jyougesuidou/gesuidou",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/41-425-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24837,14 +28615,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "長崎県（流域下水道） 【平日】大村湾南部浄化センター長崎県諫早市貝津町1410電話：0957-25-4758【休日】①諫早物産ホール諫早観光物産コンベンション協会長崎県諫早市高城町5-10②大村公園観光案内所大村市玖島1-45-3（問い合わせ先）長崎県環境部水環境対策課電話：095-895-2661",
+        "name": "長崎県（流域下水道） 【平日】大村湾南部浄化センタ / 【休日】①諫早物産ホール諫早観光物産コンベンション協",
         "municipality": "長崎県（流域下水道）",
-        "locationName": "【平日】大村湾南部浄化センター長崎県諫早市貝津町1410電話：0957-25-4758【休日】①諫早物産ホール諫早観光物産コンベンション協会長崎県諫早市高城町5-10②大村公園観光案内所大村市玖島1-45-3（問い合わせ先）長崎県環境部水環境対策課電話：095-895-2661",
+        "locationName": "【平日】大村湾南部浄化センタ / 【休日】①諫早物産ホール諫早観光物産コンベンション協",
         "address": "ー長崎県諫早市貝津町1410電話：0957-25-4758【休日】①諫早物産ホール諫早観光物産コンベンション協会長崎県諫早市高城町5-10②大村公園観光案内所大村市玖島1-45-3（問い合わせ先）長崎県環境部水環境対策課電話：095-895-2661",
         "hours": "【平日】9：00～17：00【休日】①9：00～17：00ただし、年末年始はお休みです②9：00～17：00ただし、水曜日（おおむら花まつり期間を除く）と年末年始はお休みです",
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24866,6 +28645,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.city.nagasaki.lg.jp/sisetsu/5120000/p011066.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24887,6 +28667,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.nmhc.jp/museum_hsb/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-201-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -24908,6 +28689,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "https://www.sasebo99.com/spot/100267",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24929,6 +28711,7 @@ const mhcardGeoJSON = {
         "round": "第4弾",
         "issueDate": "2017/04/03",
         "url": "http://www.isahaya-kankou.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24950,6 +28733,7 @@ const mhcardGeoJSON = {
         "round": "第4弾",
         "issueDate": "2017/04/03",
         "url": "http://www.e-oomura.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24971,6 +28755,7 @@ const mhcardGeoJSON = {
         "round": "第6弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.iki.nagasaki.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24992,6 +28777,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.minamishimabara.lg.jp/sekaiisan/page7165.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-214-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -25000,19 +28786,20 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.366074,
-          35.004875
+          129.874817,
+          32.825459
         ]
       },
       "properties": {
         "name": "長与町 【平日】長与町水道局",
         "municipality": "長与町",
         "locationName": "【平日】長与町水道局",
-        "address": "与町水道局 長崎県西彼杵郡長与町嬉里郷659番地1 電話:095-801-5831 【土日】長与町図書館 長崎県西彼杵郡長与町嬉里郷636番地 電話:095-883-1799",
-        "hours": "【平日】 9：00～17：00 【土日】10：00～17：00 ただし、祝日、年末年始、蔵書整理期間はお休みです。 長与町図書館ホームページの開館日カレンダーを参考ください。",
+        "address": "長崎県西彼杵郡長与町嬉里郷659番地1 電話:095-801-5831",
+        "hours": "【平日】9：00～17：00",
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://webtown.nagayo.jp/suido/default.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-307-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25021,19 +28808,64 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          129.917145,
-          33.037003
+          129.875839,
+          32.825714
+        ]
+      },
+      "properties": {
+        "name": "長与町 【土日】長与町図書館",
+        "municipality": "長与町",
+        "locationName": "【土日】長与町図書館",
+        "address": "長崎県西彼杵郡長与町嬉里郷636番地 電話:095-883-1799",
+        "hours": "【土日】10：00～17：00 ただし、祝日、年末年始、蔵書整理期間はお休みです。 長与町図書館ホームページの開館日カレンダーを参考ください。",
+        "round": "第20弾",
+        "issueDate": "2023/07/28",
+        "url": "https://www.nagayolib.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-307-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.917053,
+          33.037106
         ]
       },
       "properties": {
         "name": "東彼杵町 東彼杵町役場水道課",
         "municipality": "東彼杵町",
         "locationName": "東彼杵町役場水道課",
-        "address": "役場水道課 長崎県東彼杵郡東彼杵町蔵本郷1850-6 電話:0957-46-1327 【土日祝日】東彼杵町観光案内所 長崎県東彼杵郡東彼杵町彼杵宿郷747-2（道の駅彼杵の荘） 電話:0957-46-1909",
+        "address": "長崎県東彼杵郡東彼杵町蔵本郷1850-6 電話:0957-46-1327 【土日祝日】",
         "hours": "【平日】9:00～16:30 【土日祝日】9：00～17:00 ただし、年末年始（12月28日～1月3日）はお休みです",
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.town.higashisonogi.lg.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-321-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.919983,
+          33.035477
+        ]
+      },
+      "properties": {
+        "name": "東彼杵町 東彼杵町観光案内所",
+        "municipality": "東彼杵町",
+        "locationName": "東彼杵町観光案内所",
+        "address": "長崎県東彼杵郡東彼杵町彼杵宿郷747-2（道の駅彼杵の荘） 電話:0957-46-1909",
+        "hours": "【平日】9:00～16:30 【土日祝日】9：00～17:00 ただし、年末年始（12月28日～1月3日）はお休みです",
+        "round": "第27弾",
+        "issueDate": "2025/12/19",
+        "url": "https://place.sonogi.net/higashisonogi_kanko/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-321-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25055,6 +28887,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.kumamoto-waterworks.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25076,6 +28909,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.mizunokagakukan.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25097,6 +28931,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.kspa.or.jp/park/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25118,6 +28953,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.kspa.or.jp/sougou_taiku/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25139,6 +28975,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://kc-sks.jp/soutai/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25147,19 +28984,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.708054,
-          32.803333
+          130.787399,
+          32.842514
         ]
       },
       "properties": {
         "name": "熊本市 (F001) 熊本県民総合運動公園 受付兼事務所",
         "municipality": "熊本市 (F001)",
         "locationName": "熊本県民総合運動公園 受付兼事務所",
-        "address": "】熊本県民総合運動公園 受付兼事務所 熊本県熊本市東区石原2丁目9-1 電話:096-380-7599 ②【土日】リブワーク藤崎台球場 熊本市中央区宮内4番1号 電話：096-322-3367 （問合せ先） 熊本市上下水道局総務課 電話:096-381-4330",
+        "address": "熊本県熊本市東区石原2丁目9-1 電話:096-380-7599  ②【土日】",
         "hours": "①9:00～21:00 ただし、毎週火曜日(祝日の場合を除く)はお休みです ②9:00～17:00 ただし、年末年始（12/29〜1/3）はお休みです",
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.kspa.or.jp/sougou/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-F-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.577774,
+          35.999477
+        ]
+      },
+      "properties": {
+        "name": "熊本市 (F001) リブワーク藤崎台球場",
+        "municipality": "熊本市 (F001)",
+        "locationName": "リブワーク藤崎台球場",
+        "address": "上下水道局総務課 電話:096-381-4330",
+        "hours": "①9:00～21:00 ただし、毎週火曜日(祝日の場合を除く)はお休みです ②9:00～17:00 ただし、年末年始（12/29〜1/3）はお休みです",
+        "round": "第24弾",
+        "issueDate": "2024/12/20",
+        "url": "https://www.kspa.or.jp/huzisaki/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-F-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25181,6 +29041,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.kspa.or.jp/park/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-G-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25202,6 +29063,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.kspa.or.jp/sougou_taiku/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-H-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25223,6 +29085,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://kc-sks.jp/soutai/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-I-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25231,19 +29094,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.708054,
-          32.803333
+          130.787399,
+          32.842514
         ]
       },
       "properties": {
         "name": "熊本市 (J001) 【平日・土日】熊本県民総合運動公園 受付兼事務所",
         "municipality": "熊本市 (J001)",
         "locationName": "【平日・土日】熊本県民総合運動公園 受付兼事務所",
-        "address": "】熊本県民総合運動公園 受付兼事務所 熊本県熊本市東区石原2丁目9-1 電話:096-380-7599 ②【土日】リブワーク藤崎台球場 熊本県熊本市中央区宮内4番1号 電話:096-322-3367\" （問合せ先） 熊本市上下水道局総務課 電話:096-381-4330",
+        "address": "熊本県熊本市東区石原2丁目9-1 電話:096-380-7599 ②",
         "hours": "①9:00～21:00 ただし、毎週火曜日(祝日の場合を除く)はお休みです ②9:00～17:00 ただし、年末年始（12/29〜1/3）はお休みです",
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.kspa.or.jp/sougou/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-J-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.6987,
+          32.805843
+        ]
+      },
+      "properties": {
+        "name": "熊本市 (J001) 【土日】リブワーク藤崎台球場",
+        "municipality": "熊本市 (J001)",
+        "locationName": "【土日】リブワーク藤崎台球場",
+        "address": "熊本県熊本市中央区宮内4番1号 電話:096-322-3367\" （問合せ先） 熊本市上下水道局総務課 電話:096-381-4330",
+        "hours": "①9:00～21:00 ただし、毎週火曜日(祝日の場合を除く)はお休みです ②9:00～17:00 ただし、年末年始（12/29〜1/3）はお休みです",
+        "round": "第25弾",
+        "issueDate": "2025/04/25",
+        "url": "https://www.kspa.or.jp/huzisaki/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-J-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25265,6 +29151,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://hanabatahiroba.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-K-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25286,6 +29173,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://kc-sks.jp/suizenji/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-L-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25307,6 +29195,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.city.yatsushiro.lg.jp/kiji0037227/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25328,6 +29217,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.city.yatsushiro.lg.jp/kiji0037227/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25349,6 +29239,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.city.arao.lg.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25370,6 +29261,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/minamata/minamata.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25391,6 +29283,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "https://www.tamalala.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25399,19 +29292,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.577774,
-          35.999477
+          130.684418,
+          32.648109
         ]
       },
       "properties": {
         "name": "宇城市 【平日】宇城市役所上下水道窓口",
         "municipality": "宇城市",
         "locationName": "【平日】宇城市役所上下水道窓口",
-        "address": "上下水道窓口 熊本県宇城市松橋町大野85番地 電話：0964-32-1674 【休日】道の駅不知火 アグリパーク豊野不知火店 熊本県宇城市不知火町永尾1910-1 電話：0964-42-3303",
-        "hours": "【平日】8：30～17：15 【休日】9：00～17：00 ただし、年始（1月1～4日)はお休みです",
+        "address": "熊本県宇城市松橋町大野85番地 電話：0964-32-1674",
+        "hours": "【平日】8：30～17：15",
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.city.uki.kumamoto.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-213-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.611832,
+          32.648491
+        ]
+      },
+      "properties": {
+        "name": "宇城市 【休日】道の駅不知火 アグリパーク豊野不知火店",
+        "municipality": "宇城市",
+        "locationName": "【休日】道の駅不知火 アグリパーク豊野不知火店",
+        "address": "熊本県宇城市不知火町永尾1910-1 電話：0964-42-3303",
+        "hours": "【休日】9：00～17：00 ただし、年始（1月1～4日)はお休みです",
+        "round": "第15弾",
+        "issueDate": "2021/08/17",
+        "url": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/shiranui/shiranui.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25433,6 +29349,7 @@ const mhcardGeoJSON = {
         "round": "第8弾",
         "issueDate": "2018/08/11",
         "url": "http://www.kikusuiromankan.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-369-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25454,6 +29371,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.town.mashiki.lg.jp/kiji0037336/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-443-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25475,6 +29393,7 @@ const mhcardGeoJSON = {
         "round": "第7弾",
         "issueDate": "2018/04/28",
         "url": "http://reihoku-kumamoto.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-531-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25496,6 +29415,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.oishiimati-oita.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25517,6 +29437,29 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "http://www.takemachi.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-201-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.577774,
+          35.999477
+        ]
+      },
+      "properties": {
+        "name": "大分市 (B001) ②大分市観光案内所",
+        "municipality": "大分市 (B001)",
+        "locationName": "②大分市観光案内所",
+        "address": "上下水道局経営企画課 電話:097-538-2404",
+        "hours": "①【月～土】9：00～18：00 【※12/30】9：00～12：00 【※1/2～1/3、8/13～8/15】10：00～17：00 ただし※が日曜日にあたる場合は②で配布します。 ②【日・祝】8：30～19：00 【12/31～1/1】8：30～17：00",
+        "round": "第20弾",
+        "issueDate": "2023/07/28",
+        "url": "https://www.oishiimati-oita.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25538,6 +29481,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.opam.jp/page/shop.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-201-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25559,6 +29503,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.oita.oita.jp/bunkasports/bunka/bijutsukan/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-201-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25580,6 +29525,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://beppu-tourism.com/spot/wander-compass-beppu/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25601,6 +29547,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://fukuzawakyukyo.com",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-203-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -25622,6 +29569,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "https://www.visit-saiki.jp/spots/detail/f868f841-e816-4f0d-8dc8-ba22e082036d",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25643,6 +29591,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.city.bungotakada.oita.jp/site/showanomachi/15034.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25656,14 +29605,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "杵築市 杵築ふるさと産業館 大分県杵築市大字杵築北浜665-172 0978-62-2000",
+        "name": "杵築市 杵築ふるさと産業館",
         "municipality": "杵築市",
-        "locationName": "杵築ふるさと産業館 大分県杵築市大字杵築北浜665-172 0978-62-2000",
+        "locationName": "杵築ふるさと産業館",
         "address": "大分県杵築市大字杵築北浜665-172 0978-62-2000",
         "hours": "9：30～17：30 ただし、12月31日～1月2日はお休みです",
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25685,6 +29635,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://hijinavi.com/spots/detail/55",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-341-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25693,19 +29644,20 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.577774,
-          35.999477
+          131.406921,
+          31.914991
         ]
       },
       "properties": {
         "name": "宮崎市 (A001) 【平日昼間】宮崎市上下水道局３階 下水道整備課",
         "municipality": "宮崎市 (A001)",
         "locationName": "【平日昼間】宮崎市上下水道局３階 下水道整備課",
-        "address": "上下水道局３階 下水道整備課宮崎県宮崎市鶴島3-252電話：0985-26-7663 【平日夜間・土日・祝日】宮崎市上下水道局２階 料金センター宮崎県宮崎市鶴島3-252電話：0985-60-6500",
-        "hours": "【平日昼間】8：45～16：30 【平日夜間】16：30～20：00 【土日・祝日】8：30～17：00 ※ただし、12/29～12/31は17：00まで。1/1～1/3はお休みです。 配布窓口が【平日昼間】と【平日夜間・土日・祝日】で異なりますのでご注意ください。",
+        "address": "宮崎県宮崎市鶴島3-252電話：0985-26-7663",
+        "hours": "【平日昼間】8：45～16：30",
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.suidou-miyazaki.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/45-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25714,19 +29666,64 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.33902,
-          35.880955
+          131.406921,
+          31.914991
+        ]
+      },
+      "properties": {
+        "name": "宮崎市 (A001) 【平日夜間・土日・祝日】宮崎市上下水道局２階 料金センター",
+        "municipality": "宮崎市 (A001)",
+        "locationName": "【平日夜間・土日・祝日】宮崎市上下水道局２階 料金センター",
+        "address": "宮崎県宮崎市鶴島3-252電話：0985-60-6500",
+        "hours": "【平日夜間】16：30～20：00",
+        "round": "第03弾",
+        "issueDate": "2016/12/01",
+        "url": "http://www.suidou-miyazaki.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/45-201-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.451813,
+          31.898895
         ]
       },
       "properties": {
         "name": "宮崎市 (B001) 宮崎市下水道施設課（宮崎処理場内）",
         "municipality": "宮崎市 (B001)",
         "locationName": "宮崎市下水道施設課（宮崎処理場内）",
-        "address": "市下水道施設課（宮崎処理場内） 宮崎県宮崎市高洲町10番地 電話:0985-26-3336 【平日夜間・土日・祝日】 宮崎市上下水道局2階 料金センター 宮崎県宮崎市鶴島3丁目252番地 電話:0985-60-6500",
+        "address": "宮崎県宮崎市高洲町10番地 電話:0985-26-3336   【平日夜間・土日・祝日】",
         "hours": "【平日昼間】8：45～16：30 【平日夜間】16：30～20：00 【土日・祝日】8：30～17：00 ※ただし、12/29～12/31は17：00まで。1/1～1/3はお休みです。 配布場所が【平日昼間】と【平日夜間・土日・祝日】で異なりますのでご注意ください。",
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.miyazaki.miyazaki.jp/suidou/summary/sewer/393623.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/45-201-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.406921,
+          31.914991
+        ]
+      },
+      "properties": {
+        "name": "宮崎市 (B001) 宮崎市上下水道局2階 料金センター",
+        "municipality": "宮崎市 (B001)",
+        "locationName": "宮崎市上下水道局2階 料金センター",
+        "address": "宮崎県宮崎市鶴島3丁目252番地 電話:0985-60-6500",
+        "hours": "【平日昼間】8：45～16：30 【平日夜間】16：30～20：00 【土日・祝日】8：30～17：00 ※ただし、12/29～12/31は17：00まで。1/1～1/3はお休みです。 配布場所が【平日昼間】と【平日夜間・土日・祝日】で異なりますのでご注意ください。",
+        "round": "第24弾",
+        "issueDate": "2024/12/20",
+        "url": "https://www.city.miyazaki.miyazaki.jp/suidou/summary/sewer/393623.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/45-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25743,11 +29740,12 @@ const mhcardGeoJSON = {
         "name": "小林市 宮崎県小林市役所上下水道課",
         "municipality": "小林市",
         "locationName": "宮崎県小林市役所上下水道課",
-        "address": "】宮崎県小林市役所上下水道課 平日：宮崎県小林市細野300番地 電話:0984-23-0312 【土日祝日】小林まちづくり株式会社 観光案内所 宮崎県小林市細野1829-16 KITTO小林 電話:0984-22-8684",
+        "address": "：宮崎県小林市細野300番地 電話:0984-23-0312 【土日祝日】",
         "hours": "【平日】8：30～17：15 【土日祝日】9：00～17：00 ただし、年末年始はお休みです",
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.city.kobayashi.lg.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/45-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25756,19 +29754,64 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.577774,
-          35.999477
+          130.948776,
+          31.961666
+        ]
+      },
+      "properties": {
+        "name": "小林市 小林まちづくり株式会社 観光案内所",
+        "municipality": "小林市",
+        "locationName": "小林まちづくり株式会社 観光案内所",
+        "address": "宮崎県小林市細野1829-16 KITTO小林 電話:0984-22-8684",
+        "hours": "【平日】8：30～17：15 【土日祝日】9：00～17：00 ただし、年末年始はお休みです",
+        "round": "第25弾",
+        "issueDate": "2025/04/25",
+        "url": "https://kobayashi-machi.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/45-205-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.624207,
+          32.423183
         ]
       },
       "properties": {
         "name": "日向市 【平日】日向市役所上下水道局下水道課(別館 健康管理センター1階)",
         "municipality": "日向市",
         "locationName": "【平日】日向市役所上下水道局下水道課(別館 健康管理センター1階)",
-        "address": "上下水道局下水道課(別館 健康管理センター1階) 宮崎県日向市本町10-5 電話：0982-54-4175 【土日祝日】まちの駅 とみたか(日向市駅 南側・高架下) 宮崎県日向市上町1-19 電話：0982-54-4228",
-        "hours": "【平日】8：45～16：30 【土日祝日】8：30～17：30 ただし、12月31日・1月1日はお休みです。",
+        "address": "宮崎県日向市本町10-5 電話：0982-54-4175",
+        "hours": "【平日】8：45～16：30",
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "http://www.hyugacity.jp/display.php?slist=0024",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/45-206-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.627563,
+          32.425213
+        ]
+      },
+      "properties": {
+        "name": "日向市 【土日祝日】まちの駅 とみたか(日向市駅 南側・高架下)",
+        "municipality": "日向市",
+        "locationName": "【土日祝日】まちの駅 とみたか(日向市駅 南側・高架下)",
+        "address": "宮崎県日向市上町1-19 電話：0982-54-4228",
+        "hours": "【土日祝日】8：30～17：30 ただし、12月31日・1月1日はお休みです。",
+        "round": "第18弾",
+        "issueDate": "2023/01/28",
+        "url": "https://hyuga.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/45-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25790,6 +29833,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.kagoshima.lg.jp/suidou/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25811,6 +29855,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.city.kagoshima.lg.jp/kanshin/shisetsu/kanko/005.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25824,14 +29869,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "鹿児島市 (C001) 鹿児島市観光案内所（天文館） 鹿児島県鹿児島市千日町1番1号センテラス天文館1階 電話：099-813-7604",
+        "name": "鹿児島市 (C001) 鹿児島市観光案内所（天文館）",
         "municipality": "鹿児島市 (C001)",
-        "locationName": "鹿児島市観光案内所（天文館） 鹿児島県鹿児島市千日町1番1号センテラス天文館1階 電話：099-813-7604",
+        "locationName": "鹿児島市観光案内所（天文館）",
         "address": "鹿児島県鹿児島市千日町1番1号センテラス天文館1階 電話：099-813-7604",
         "hours": "9:00～19:00（年中無休）",
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-201-C01.jpg",
         "type": "mhcard"
       }
     },
@@ -25853,6 +29899,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.kanoya.lg.jp/kankou/bunka/kanko/omiyage/kankobussan.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25874,6 +29921,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://makutabi.jp/see/post-1198",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25895,6 +29943,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.kagoshima-izumi.lg.jp/cranepark/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25916,6 +29965,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.city.ibusuki.lg.jp/cocco/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25937,6 +29987,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://satsumasendai.gr.jp/spotlist/39471/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25958,6 +30009,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://hiokishi-kankou.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25979,6 +30031,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.city-kirishima.jp/soumu/shise/annai/choshaannai/201704kokubu.html#1",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-218-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26000,6 +30053,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://kirishimakankou.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-218-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26021,6 +30075,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city-kirishima.jp/hisyokouhou/kurashi/suido/gesuido",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-218-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26034,14 +30089,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "南さつま市 観光物産交流施設「きやったもんせ南さつま」 鹿児島県南さつま市加世田本町43番地9 電話：0993-53-3751",
+        "name": "南さつま市 観光物産交流施設「きやったもんせ南さつま」",
         "municipality": "南さつま市",
-        "locationName": "観光物産交流施設「きやったもんせ南さつま」 鹿児島県南さつま市加世田本町43番地9 電話：0993-53-3751",
+        "locationName": "観光物産交流施設「きやったもんせ南さつま」",
         "address": "鹿児島県南さつま市加世田本町43番地9 電話：0993-53-3751",
         "hours": "10：00～17：00 ただし、月曜日と年末年始はお休みです。",
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-220-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26063,6 +30119,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.amami.lg.jp/shosui/kanko/aiaihiroba.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-222-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26084,6 +30141,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.amami.lg.jp/bunka/kyoiku/bunka/hakubutsukan/shokai.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-222-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26105,6 +30163,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.tokunoshima-town.org/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-530-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -26126,6 +30185,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.okinoerabujima.info/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-534-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26147,6 +30207,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://otic.okinawa/center/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26168,6 +30229,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://oki-park.jp/shurijo/guide/1316",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-000-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -26181,14 +30243,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "那覇市 (A001) まちぐゎー総合案内所(那覇市第一牧志公設市場1F) 沖縄県那覇市松尾2丁目10番1号 電話：098-943-2110 （問い合わせ先） 那覇市上下水道局 下水道課 電話：098-941-7808",
+        "name": "那覇市 (A001) まちぐゎー総合案内所(那覇市第一牧志公設市場1F)",
         "municipality": "那覇市 (A001)",
-        "locationName": "まちぐゎー総合案内所(那覇市第一牧志公設市場1F) 沖縄県那覇市松尾2丁目10番1号 電話：098-943-2110 （問い合わせ先） 那覇市上下水道局 下水道課 電話：098-941-7808",
+        "locationName": "まちぐゎー総合案内所(那覇市第一牧志公設市場1F)",
         "address": "沖縄県那覇市松尾2丁目10番1号 電話：098-943-2110 （問い合わせ先） 那覇市上下水道局 下水道課 電話：098-941-7808",
         "hours": "9：00～20：00 ただし1月1日はお休みです",
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26202,14 +30265,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "那覇市 (B001) 一般財団法人那覇市観光協会 「那覇市観光案内所」 沖縄県那覇市牧志3丁目2番10号てんぶす那覇1階 電話:098-868-4887 (問い合わせ先） 那覇市上下水道局下水道課 電話：098-941-7808",
+        "name": "那覇市 (B001) 一般財団法人那覇市観光協会 「那覇市観光案内所」",
         "municipality": "那覇市 (B001)",
-        "locationName": "一般財団法人那覇市観光協会 「那覇市観光案内所」 沖縄県那覇市牧志3丁目2番10号てんぶす那覇1階 電話:098-868-4887 (問い合わせ先） 那覇市上下水道局下水道課 電話：098-941-7808",
+        "locationName": "一般財団法人那覇市観光協会 「那覇市観光案内所」",
         "address": "沖縄県那覇市牧志3丁目2番10号てんぶす那覇1階 電話:098-868-4887 (問い合わせ先） 那覇市上下水道局下水道課 電話：098-941-7808",
         "hours": "9:00～18:30 ただし年末年始(12/31〜1/2)はお休みです",
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26226,11 +30290,34 @@ const mhcardGeoJSON = {
         "name": "宜野湾市 (A001) 【火曜日以外】宜野湾市立博物館",
         "municipality": "宜野湾市 (A001)",
         "locationName": "【火曜日以外】宜野湾市立博物館",
-        "address": "沖縄県宜野湾市真志喜1-25-1 電話：098-870-9317 【火曜日】宜野湾市上下水道局業務サービス課 沖縄県宜野湾市字野嵩730 電話：098-892-5733 (問合せ先) 宜野湾市上下水道局（平日のみ） 098-892-5733",
-        "hours": "【火曜日以外】9:00～17:00 火曜日、年末年始・祝日、その他に臨時休館日はお休みです 【火曜日】9:00～17:00 年末年始・祝日はお休みです",
+        "address": "沖縄県宜野湾市真志喜1-25-1 電話：098-870-9317",
+        "hours": "【火曜日以外】9:00～17:00 火曜日、年末年始・祝日、その他に臨時休館日はお休みです",
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.city.ginowan.lg.jp/soshiki/kyoiku/1/2/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-205-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.781342,
+          26.282572
+        ]
+      },
+      "properties": {
+        "name": "宜野湾市 (A001) 【火曜日】宜野湾市上下水道局業務サービス課",
+        "municipality": "宜野湾市 (A001)",
+        "locationName": "【火曜日】宜野湾市上下水道局業務サービス課",
+        "address": "沖縄県宜野湾市字野嵩730 電話：098-892-5733 (問合せ先) 宜野湾市上下水道局（平日のみ） 098-892-5733",
+        "hours": "【火曜日以外】9:00～17:00 火曜日、年末年始・祝日、その他に臨時休館日はお休みです",
+        "round": "第18弾",
+        "issueDate": "2023/01/28",
+        "url": "https://www.city.ginowan.lg.jp/soshiki/suido/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26247,11 +30334,34 @@ const mhcardGeoJSON = {
         "name": "宜野湾市 (B001) 【火曜日以外】宜野湾市立体育館",
         "municipality": "宜野湾市 (B001)",
         "locationName": "【火曜日以外】宜野湾市立体育館",
-        "address": "沖縄県宜野湾市真志喜4丁目2-1 電話:098-897-2751 【火曜日】宜野湾市上下水道局業務サービス課排水設備係 沖縄県宜野湾市字野嵩730 電話:098-892-5733 （問合せ先） 宜野湾市上下水道局業務サービス課排水設備係 電話:098-892-5733",
-        "hours": "【火曜日以外】9：00～17：00 ただし、年末年始はお休みです 【火曜日】9：00～17：00 ただし、祝日及び年末年始はお休みです",
+        "address": "沖縄県宜野湾市真志喜4丁目2-1 電話:098-897-2751",
+        "hours": "【火曜日以外】9：00～17：00 ただし、年末年始はお休みです",
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": " https://ginowankaihinkouen.jp/facility/gym/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-205-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.781342,
+          26.282572
+        ]
+      },
+      "properties": {
+        "name": "宜野湾市 (B001) 【火曜日】宜野湾市上下水道局業務サービス課排水設備係",
+        "municipality": "宜野湾市 (B001)",
+        "locationName": "【火曜日】宜野湾市上下水道局業務サービス課排水設備係",
+        "address": "沖縄県宜野湾市字野嵩730 電話:098-892-5733 （問合せ先） 宜野湾市上下水道局業務サービス課排水設備係 電話:098-892-5733",
+        "hours": "【火曜日以外】9：00～17：00 ただし、年末年始はお休みです",
+        "round": "第21弾",
+        "issueDate": "2023/12/15",
+        "url": "https://www.city.ginowan.lg.jp/soshiki/suido/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26273,6 +30383,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://nago-ichiba.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26294,6 +30405,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://nagomun.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-209-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26315,6 +30427,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://www.city.nago.okinawa.jp/soshiki/kankyousuidou/keiei/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-209-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26328,14 +30441,15 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "沖縄市 コザ・ミュージックタウン内 エイサー会館 沖縄県沖縄市上地１丁目１番１号 電話:098-989-5066",
+        "name": "沖縄市 コザ・ミュージックタウン内 エイサー会館",
         "municipality": "沖縄市",
-        "locationName": "コザ・ミュージックタウン内 エイサー会館 沖縄県沖縄市上地１丁目１番１号 電話:098-989-5066",
+        "locationName": "コザ・ミュージックタウン内 エイサー会館",
         "address": "沖縄県沖縄市上地１丁目１番１号 電話:098-989-5066",
         "hours": "エイサー会館の営業時間内に配布します。 開館時間：10:00 終了時間：時期により異なりますので、エイサー会館HP、またはお電話にてご確認ください。 ただし、水曜日（休日の場合は翌平日）と年末年始(12/31-1/1）はお休みです",
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26344,19 +30458,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          127.8582,
-          26.378784
+          127.840881,
+          26.369179
         ]
       },
       "properties": {
         "name": "うるま市 うるま市水道部下水道課",
         "municipality": "うるま市",
         "locationName": "うるま市水道部下水道課",
-        "address": "ま市水道部下水道課 沖縄県うるま市字兼箇段896番地 電話:098-973-7977 【土日祝日】あまわりパーク観光ターミナル 沖縄県うるま市勝連南風原3807-2 電話:098-978-2033",
+        "address": "沖縄県うるま市字兼箇段896番地 電話:098-973-7977 【土日祝日】",
         "hours": "【平日】9:00～17:00 ただし、土日・祝日及び年末年始はお休みです 【土日祝日】9:00～17:30 ただし、臨時休館日はお休みです",
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.city.uruma.lg.jp/kurashitetsuzuki/jougesuidou/gesuidou/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-213-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.881287,
+          26.332905
+        ]
+      },
+      "properties": {
+        "name": "うるま市 あまわりパーク観光ターミナル",
+        "municipality": "うるま市",
+        "locationName": "あまわりパーク観光ターミナル",
+        "address": "沖縄県うるま市勝連南風原3807-2 電話:098-978-2033",
+        "hours": "【平日】9:00～17:00 ただし、土日・祝日及び年末年始はお休みです 【土日祝日】9:00～17:30 ただし、臨時休館日はお休みです",
+        "round": "第27弾",
+        "issueDate": "2025/12/19",
+        "url": "https://www.katsuren-jo.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26378,6 +30515,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://motobufs.jp/tempo/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-308-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26399,6 +30537,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://mitinoeki-ginoza.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-313-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26420,6 +30559,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://chatantourism.com/information-center/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-326-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26428,19 +30568,42 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.577774,
-          35.999477
+          127.762505,
+          26.320402
         ]
       },
       "properties": {
         "name": "北谷町 (B001) 【平日】北谷町上下水道庁舎内下水道係カウンター",
         "municipality": "北谷町 (B001)",
         "locationName": "【平日】北谷町上下水道庁舎内下水道係カウンター",
-        "address": "上下水道庁舎内下水道係カウンター 沖縄県中頭郡北谷町桑江1-1-2 電話：098-936-7713 【土日】北谷町立博物館 沖縄県中頭郡北谷町伊平1-11-1 電話：098-923-0300 (問合せ先) 北谷町上下水道部上下水道課 電話：098-982-7713",
-        "hours": "【平日】8：30～17：15（12：00～13：00を除く） 【土日】9：00～17：00 ※臨時休館日についてはHPをご確認ください ※祝日、年末年始（12/29～1/3）はお休みです",
+        "address": "沖縄県中頭郡北谷町桑江1-1-2 電話：098-936-7713  【土日】",
+        "hours": "【平日】8：30～17：15（12：00～13：00を除く）",
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "http://www.chatan.jp/seikatsuguide/jogesuido/gesuido/gesui50thanniv/manholecard2021.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-326-B01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.75898,
+          26.323193
+        ]
+      },
+      "properties": {
+        "name": "北谷町 (B001) 北谷町立博物館",
+        "municipality": "北谷町 (B001)",
+        "locationName": "北谷町立博物館",
+        "address": "沖縄県中頭郡北谷町伊平1-11-1 電話：098-923-0300  (問合せ先) 北谷町上下水道部上下水道課 電話：098-982-7713",
+        "hours": "【平日】8：30～17：15（12：00～13：00を除く） 【土日】9：00～17：00 ※臨時休館日についてはHPをご確認ください ※祝日、年末年始（12/29～1/3）はお休みです",
+        "round": "第16弾",
+        "issueDate": "2022/01/15",
+        "url": "https://museum.chatan.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-326-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -26462,6 +30625,7 @@ const mhcardGeoJSON = {
         "round": "第5弾",
         "issueDate": "2017/08/01",
         "url": "https://www.nakagusuku-jo.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-328-A-01.jpg",
         "type": "mhcard"
       }
     }
