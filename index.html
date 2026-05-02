@@ -1355,7 +1355,8 @@ map.on('zoomend', () => { isZooming = false; });
                 ctx.beginPath();
                 ctx.arc(cx, cy, 3 * pr, 0, Math.PI * 2);
                 ctx.fill();
-                map.addImage('mhcard-icon', canvas, { pixelRatio: pr });
+                const imageData = ctx.getImageData(0, 0, cw, ch);
+                map.addImage('mhcard-icon', { width: cw, height: ch, data: imageData.data }, { pixelRatio: pr });
                 res();
             })
         ]).then(() => {
