@@ -257,6 +257,10 @@
         .btn-access  { background: #00897B; color: #fff; }
         .popup-address { font-size: 11px; color: #555; display: block; margin-bottom: 4px; }
         .popup-road    { font-size: 11px; color: #888; display: block; margin-bottom: 6px; }
+        .popup-clamp { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; cursor: pointer; position: relative; }
+        .popup-clamp::after { content: ' ▼'; font-size: 10px; color: #999; }
+        .popup-clamp.expanded { display: block; -webkit-line-clamp: unset; overflow: visible; }
+        .popup-clamp.expanded::after { content: ' ▲'; }
         .castle-img-container { margin: 4px 0; border-radius: 6px; border: 1px solid #eee; overflow: hidden; background: #f5f0e8; }
         .castle-img { width: 100%; height: 110px; object-fit: cover; display: block; }
 
@@ -1427,10 +1431,10 @@ map.on('zoomend', () => { isZooming = false; });
                         }
                     } else if (conf.type === 'mhcard') {
                         const title = `[配布] ${p.name || ''}`;
-                        const addressHtml = p.address ? `<span class="popup-address">${p.address}</span>` : '';
-                        const hoursHtml   = p.hours   ? `<span class="popup-road">🕐 ${p.hours}</span>`  : '';
+                        const addressHtml = p.address ? `<span class="popup-address popup-clamp">${p.address}</span>` : '';
+                        const hoursHtml   = p.hours   ? `<span class="popup-road popup-clamp">🕐 ${p.hours}</span>`  : '';
                         const imgHtml = buildMhcardImgHtml(p);
-                        popupHtml = `<div class="popup-card"><span class="popup-title">${title}</span>${addressHtml}${hoursHtml}${imgHtml}<a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く(Google)</a><a href="${yahooNavUrl}" class="btn btn-nav-yahoo">ここへ行く(Yahoo)</a></div>`;
+                        popupHtml = `<div class="popup-card"><span class="popup-title popup-clamp">${title}</span>${addressHtml}${hoursHtml}${imgHtml}<a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く(Google)</a><a href="${yahooNavUrl}" class="btn btn-nav-yahoo">ここへ行く(Yahoo)</a></div>`;
                     } else if (conf.type === 'michi') {
                         const gmapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name)}`;
                         const addressHtml = p.address ? `<span class="popup-address">${p.address}</span>` : '';
@@ -1458,6 +1462,12 @@ map.on('zoomend', () => { isZooming = false; });
         });
 
         buildSearchIndex();
+
+        // popup-clamp トグル（タップで省略 ↔ 全文）
+        document.getElementById('map').addEventListener('click', e => {
+            const el = e.target.closest('.popup-clamp');
+            if (el) el.classList.toggle('expanded');
+        });
     });
 
     // ══════════════════════════════════════════════════════════════
@@ -1620,10 +1630,10 @@ map.on('zoomend', () => { isZooming = false; });
             }
         } else if (item.type === 'mhcard') {
             const title = `[配布] ${p.name || item.label}`;
-            const addressHtml = p.address ? `<span class="popup-address">${p.address}</span>` : '';
-            const hoursHtml   = p.hours   ? `<span class="popup-road">🕐 ${p.hours}</span>`  : '';
+            const addressHtml = p.address ? `<span class="popup-address popup-clamp">${p.address}</span>` : '';
+            const hoursHtml   = p.hours   ? `<span class="popup-road popup-clamp">🕐 ${p.hours}</span>`  : '';
             const imgHtml = buildMhcardImgHtml(p);
-            popupHtml = `<div class="popup-card"><span class="popup-title">${title}</span>${addressHtml}${hoursHtml}${imgHtml}<a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く(Google)</a><a href="${yahooNavUrl}" class="btn btn-nav-yahoo">ここへ行く(Yahoo)</a></div>`;
+            popupHtml = `<div class="popup-card"><span class="popup-title popup-clamp">${title}</span>${addressHtml}${hoursHtml}${imgHtml}<a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く(Google)</a><a href="${yahooNavUrl}" class="btn btn-nav-yahoo">ここへ行く(Yahoo)</a></div>`;
         } else if (item.type === 'michi') {
             const gmapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.label)}`;
             const addressHtml = p.address ? `<span class="popup-address">${p.address}</span>` : '';
