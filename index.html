@@ -1564,10 +1564,10 @@ map.on('zoomend', () => { isZooming = false; });
             const makeItem = (item, col) => {
                 const cfg = typeConfig[item.type];
                 const isMhcard = item.type === 'mhcard';
-                const iconHtml = cfg.img ? `<img src="${cfg.img}" style="width:${isMhcard?'20px':'14px'};height:${isMhcard?'20px':'14px'};object-fit:contain;${isMhcard?'':'filter:brightness(0) invert(1);'}">` : cfg.icon;
+                const iconHtml = cfg.img ? `<img src="${cfg.img}" style="width:${isMhcard?'100%':'16px'};height:${isMhcard?'100%':'16px'};object-fit:${isMhcard?'cover':'contain'};filter:${isMhcard?'none':'brightness(0) invert(1)'};border-radius:${isMhcard?'50%':'0'};">` : cfg.icon;
                 const div = document.createElement('div');
                 div.className = 'search-result-item';
-                div.innerHTML = `<div class="search-result-icon" style="background:${isMhcard?'#fff':getItemColor(item)};${isMhcard?'border:2px solid #1565C0;':''}">${iconHtml}</div><div class="search-result-text"><div class="search-result-name">${item.label}</div><div class="search-result-sub">${item.sub}</div></div>`;
+                div.innerHTML = `<div class="search-result-icon" style="background:${isMhcard?'transparent':getItemColor(item)};overflow:hidden;">${iconHtml}</div><div class="search-result-text"><div class="search-result-name">${item.label}</div><div class="search-result-sub">${item.sub}</div></div>`;
                 div.addEventListener('click', () => onResultClick(item));
                 col.appendChild(div);
             };
@@ -1801,11 +1801,11 @@ map.on('zoomend', () => { isZooming = false; });
             results.forEach(item => {
                 const cfg = typeConfig[item.type];
                 const isMhcard = item.type === 'mhcard';
-                const iconHtml = cfg.img ? `<img src="${cfg.img}" style="width:${isMhcard?'22px':'16px'};height:${isMhcard?'22px':'16px'};object-fit:contain;${isMhcard?'':'filter:brightness(0) invert(1);'}">` : cfg.icon;
+                const iconHtml = cfg.img ? `<img src="${cfg.img}" style="width:${isMhcard?'100%':'16px'};height:${isMhcard?'100%':'16px'};object-fit:${isMhcard?'cover':'contain'};filter:${isMhcard?'none':'brightness(0) invert(1)'};border-radius:${isMhcard?'50%':'0'};">` : cfg.icon;
                 const distStr = item.dist < 1 ? `${Math.round(item.dist * 1000)}m` : `${item.dist.toFixed(1)}km`;
                 const div = document.createElement('div');
                 div.className = 'nearby-item';
-                div.innerHTML = `<div class="nearby-item-icon" style="background:${isMhcard?'#fff':getItemColor(item)};${isMhcard?'border:2px solid #1565C0;':''}">${iconHtml}</div><div class="nearby-item-text"><div class="nearby-item-name">${item.label}</div><div class="nearby-item-sub">${item.sub}</div></div><div class="nearby-item-dist">${distStr}</div>`;
+                div.innerHTML = `<div class="nearby-item-icon" style="background:${isMhcard?'transparent':getItemColor(item)};overflow:hidden;">${iconHtml}</div><div class="nearby-item-text"><div class="nearby-item-name">${item.label}</div><div class="nearby-item-sub">${item.sub}</div></div><div class="nearby-item-dist">${distStr}</div>`;
                 div.addEventListener('click', () => { closeNearbyResult(); onResultClick(item); });
                 list.appendChild(div);
             });
