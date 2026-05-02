@@ -952,6 +952,30 @@ async function fetchCastleImage(castleName, kojodanUrl) {
     return null;
 }
 
+// mhcardポップアップ用カード画像HTML生成
+function buildMhcardImgHtml(p) {
+    const codeMatch = (p.municipality || '').match(/[（(]([A-Z]\d{3})[）)]/);
+    if (!codeMatch) return '';
+    const cardCode = codeMatch[1];
+    const prefMap = {
+        '北海道':'01','青森':'02','岩手':'03','宮城':'04','秋田':'05','山形':'06','福島':'07',
+        '茨城':'08','栃木':'09','群馬':'10','埼玉':'11','千葉':'12','東京':'13','神奈川':'14',
+        '新潟':'15','富山':'16','石川':'17','福井':'18','山梨':'19','長野':'20','岐阜':'21',
+        '静岡':'22','愛知':'23','三重':'24','滋賀':'25','京都':'26','大阪':'27','兵庫':'28',
+        '奈良':'29','和歌山':'30','鳥取':'31','島根':'32','岡山':'33','広島':'34','山口':'35',
+        '徳島':'36','香川':'37','愛媛':'38','高知':'39','福岡':'40','佐賀':'41','長崎':'42',
+        '熊本':'43','大分':'44','宮崎':'45','鹿児島':'46','沖縄':'47'
+    };
+    const addr = p.address || '';
+    let prefCode = null;
+    for (const [pref, code] of Object.entries(prefMap)) {
+        if (addr.includes(pref)) { prefCode = code; break; }
+    }
+    if (!prefCode) return '';
+    const imgUrl = `https://ekikaramanhole.whitebeach.org/ext/manholecard/image/getimage.cgi?file=card/${prefCode}-100-${cardCode}.jpg`;
+    return `<div class="manhole-img-container"><img src="${imgUrl}" class="manhole-img-large" onerror="this.parentNode.style.display='none'"></div>`;
+}
+
 // 城ポップアップに写真を非同期で挿入する
 async function injectCastleImage(popup, castleName, kojodanUrl) {
     const imgUrl = await fetchCastleImage(castleName, kojodanUrl);
@@ -1405,7 +1429,8 @@ map.on('zoomend', () => { isZooming = false; });
                         const title = `[配布] ${p.name || ''}`;
                         const addressHtml = p.address ? `<span class="popup-address">${p.address}</span>` : '';
                         const hoursHtml   = p.hours   ? `<span class="popup-road">🕐 ${p.hours}</span>`  : '';
-                        popupHtml = `<div class="popup-card"><span class="popup-title">${title}</span>${addressHtml}${hoursHtml}<a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く(Google)</a><a href="${yahooNavUrl}" class="btn btn-nav-yahoo">ここへ行く(Yahoo)</a></div>`;
+                        const imgHtml = buildMhcardImgHtml(p);
+                        popupHtml = `<div class="popup-card"><span class="popup-title">${title}</span>${addressHtml}${hoursHtml}${imgHtml}<a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く(Google)</a><a href="${yahooNavUrl}" class="btn btn-nav-yahoo">ここへ行く(Yahoo)</a></div>`;
                     } else if (conf.type === 'michi') {
                         const gmapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name)}`;
                         const addressHtml = p.address ? `<span class="popup-address">${p.address}</span>` : '';
@@ -1597,7 +1622,8 @@ map.on('zoomend', () => { isZooming = false; });
             const title = `[配布] ${p.name || item.label}`;
             const addressHtml = p.address ? `<span class="popup-address">${p.address}</span>` : '';
             const hoursHtml   = p.hours   ? `<span class="popup-road">🕐 ${p.hours}</span>`  : '';
-            popupHtml = `<div class="popup-card"><span class="popup-title">${title}</span>${addressHtml}${hoursHtml}<a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く(Google)</a><a href="${yahooNavUrl}" class="btn btn-nav-yahoo">ここへ行く(Yahoo)</a></div>`;
+            const imgHtml = buildMhcardImgHtml(p);
+            popupHtml = `<div class="popup-card"><span class="popup-title">${title}</span>${addressHtml}${hoursHtml}${imgHtml}<a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く(Google)</a><a href="${yahooNavUrl}" class="btn btn-nav-yahoo">ここへ行く(Yahoo)</a></div>`;
         } else if (item.type === 'michi') {
             const gmapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.label)}`;
             const addressHtml = p.address ? `<span class="popup-address">${p.address}</span>` : '';
