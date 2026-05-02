@@ -1327,7 +1327,12 @@ map.on('zoomend', () => { isZooming = false; });
                     ? { type: 'geojson', data: conf.data }
                     : { type: 'geojson', data: conf.data, cluster: true, clusterMaxZoom: 13, clusterRadius: 50 }
                 );
-                map.addLayer({ id: `${conf.id}-cluster`, type: 'circle', source: conf.id, filter: ['has', 'point_count'], paint: { 'circle-color': conf.clusterColor, 'circle-radius': 20, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' } });
+                if (conf.type === 'mhcard') {
+                    map.addLayer({ id: `${conf.id}-cluster`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'mhcard-icon', 'icon-size': 1.5, 'icon-allow-overlap': true } });
+                    map.addLayer({ id: `${conf.id}-cluster-overlay`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'manhole-icon', 'icon-size': 0.56, 'icon-allow-overlap': true }, paint: { 'icon-color': '#FFFFFF' } });
+                } else {
+                    map.addLayer({ id: `${conf.id}-cluster`, type: 'circle', source: conf.id, filter: ['has', 'point_count'], paint: { 'circle-color': conf.clusterColor, 'circle-radius': 20, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' } });
+                }
                 map.addLayer({ id: `${conf.id}-cluster-count`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'text-field': '{point_count_abbreviated}', 'text-size': 12, 'text-font': ['Noto Sans Bold'] }, paint: { 'text-color': '#FFFFFF' } });
                 if (conf.type !== 'mhcard') {
                     map.addLayer({ id: `${conf.id}-bg`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: { 'circle-color': conf.type === 'castle' ? ['match', ['get', 'genre'], '日本100名城', '#4285F4', '続日本100名城', '#EA4335', '#546E7A'] : conf.type === 'manhole' ? ['match', ['get', 'source'], 'pokefuta', '#FBBC04', '#B87333'] : conf.color, 'circle-radius': 14, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' }, layout: conf.type === 'castle' ? { 'circle-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {} });
@@ -1685,7 +1690,7 @@ map.on('zoomend', () => { isZooming = false; });
             ? ['castles-famous', 'castles']
             : [{ shop: 'shops', michi: 'michi', manhole: 'manholes', mhcard: 'mhcards' }[id]];
         sourceIds.forEach(sourceId => {
-            [`${sourceId}-cluster`, `${sourceId}-cluster-count`, `${sourceId}-bg`, `${sourceId}-icon`, `${sourceId}-icon-overlay`, `${sourceId}-label`].forEach(l => { if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', val); });
+            [`${sourceId}-cluster`, `${sourceId}-cluster-overlay`, `${sourceId}-cluster-count`, `${sourceId}-bg`, `${sourceId}-icon`, `${sourceId}-icon-overlay`, `${sourceId}-label`].forEach(l => { if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', val); });
         });
     }
 
@@ -1876,6 +1881,7 @@ map.on('zoomend', () => { isZooming = false; });
     const layerIdPrefixes = ['michi', 'shops', 'manholes', 'mhcards', 'castles', 'castles-famous'];
     const targetLayerIds = layerIdPrefixes.flatMap(prefix => [
         `${prefix}-cluster`,
+        `${prefix}-cluster-overlay`,
         `${prefix}-cluster-count`,
         `${prefix}-bg`,
         `${prefix}-icon`,

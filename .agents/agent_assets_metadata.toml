@@ -12,3 +12,9 @@ id = "z2TzGFpSjSzeptheWBXdD"
 uri = "file://preview_mhcard.png"
 type = "image"
 title = "mhcard マーカー プレビュー（マンホール絵柄を大きく）"
+
+[[outputs]]
+id = "3o2EGj-LHuEyKkokxp9Op"
+uri = "file://preview_mhcard_cluster.png"
+type = "image"
+title = "mhcard クラスター プレビュー（長方形ゖ1.5倍大）"
