@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "Y8nwXjTaD1HrJcXtkgJYL"
+uri = "file://mhcard.png"
+type = "image"
+title = "新しいmhcardアイコン（縦長長方形・模様なし）"
