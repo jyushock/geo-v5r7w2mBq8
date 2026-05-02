@@ -1307,7 +1307,7 @@ map.on('zoomend', () => { isZooming = false; });
             loadSDF('castle.png',  'castle-icon'),
             loadSDF('michi.png',   'michi-icon'),
             loadSDF('manhole.png', 'manhole-icon'),
-            loadSDF('mhcard.png', 'mhcard-icon')
+            new Promise(res => map.loadImage('mhcard.png', (err, img) => { if (!err && img) map.addImage('mhcard-icon', img, { pixelRatio: 2 }); res(); }))
         ]).then(() => {
             const famousGenres = new Set(['日本100名城', '続日本100名城']);
             const castleDataFamous = { type: 'FeatureCollection', features: castleData.features.filter(f => famousGenres.has(f.properties.genre)) };
@@ -1332,7 +1332,7 @@ map.on('zoomend', () => { isZooming = false; });
                 if (conf.type !== 'mhcard') {
                     map.addLayer({ id: `${conf.id}-bg`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: { 'circle-color': conf.type === 'castle' ? ['match', ['get', 'genre'], '日本100名城', '#4285F4', '続日本100名城', '#EA4335', '#546E7A'] : conf.type === 'manhole' ? ['match', ['get', 'source'], 'pokefuta', '#FBBC04', '#B87333'] : conf.color, 'circle-radius': 14, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' }, layout: conf.type === 'castle' ? { 'circle-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {} });
                 }
-                map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': conf.type === 'mhcard' ? 0.6 : 0.35, 'icon-allow-overlap': true, ...(conf.type === 'castle' ? { 'symbol-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}) }, paint: { 'icon-color': conf.type === 'mhcard' ? '#B87333' : '#FFFFFF' } });
+                map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': conf.type === 'mhcard' ? 1.0 : 0.35, 'icon-allow-overlap': true, ...(conf.type === 'castle' ? { 'symbol-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}) }, paint: conf.type === 'mhcard' ? {} : { 'icon-color': '#FFFFFF' } });
 
                 // テキストラベルレイヤー（マンホール以外）
                 if (conf.type !== 'manhole') {
