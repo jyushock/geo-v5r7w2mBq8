@@ -689,6 +689,7 @@
             <label class="filter-chip"><input type="checkbox" id="check-label-shop" checked onchange="onLabelChange(this)">食べログ</label>
             <label class="filter-chip"><input type="checkbox" id="check-label-castle" checked onchange="onLabelChange(this)">お城</label>
             <label class="filter-chip"><input type="checkbox" id="check-label-michi" checked onchange="onLabelChange(this)">道の駅</label>
+            <label class="filter-chip"><input type="checkbox" id="check-label-mhcard" checked onchange="onLabelChange(this)">マンホール（配布）</label>
         </div>
     </div>
 </div>
@@ -1335,7 +1336,8 @@ map.on('zoomend', () => { isZooming = false; });
             loadSDF('castle.png',  'castle-icon'),
             loadSDF('michi.png',   'michi-icon'),
             loadSDF('manhole.png', 'manhole-icon'),
-            new Promise(res => map.loadImage('mhcard.png', (err, img) => { if (!err && img) map.addImage('mhcard-icon', img, { pixelRatio: 2 }); res(); }))
+            new Promise(res => map.loadImage('mhcard.png', (err, img) => { if (!err && img) map.addImage('mhcard-icon', img, { pixelRatio: 2 }); res(); })),
+            new Promise(res => map.loadImage('mhcard-cluster.png', (err, img) => { if (!err && img) map.addImage('mhcard-cluster-icon', img, { pixelRatio: 2 }); res(); }))
         ]).then(() => {
             const famousGenres = new Set(['日本100名城', '続日本100名城']);
             const castleDataFamous = { type: 'FeatureCollection', features: castleData.features.filter(f => famousGenres.has(f.properties.genre)) };
@@ -1356,7 +1358,7 @@ map.on('zoomend', () => { isZooming = false; });
                     : { type: 'geojson', data: conf.data, cluster: true, clusterMaxZoom: 13, clusterRadius: 50 }
                 );
                 if (conf.type === 'mhcard') {
-                    map.addLayer({ id: `${conf.id}-cluster`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'mhcard-icon', 'icon-size': 1.5, 'icon-allow-overlap': true } });
+                    map.addLayer({ id: `${conf.id}-cluster`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'mhcard-cluster-icon', 'icon-size': 1.5, 'icon-allow-overlap': true } });
                 } else {
                     map.addLayer({ id: `${conf.id}-cluster`, type: 'circle', source: conf.id, filter: ['has', 'point_count'], paint: { 'circle-color': conf.clusterColor, 'circle-radius': 20, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' } });
                 }
@@ -1715,7 +1717,7 @@ map.on('zoomend', () => { isZooming = false; });
     const gmapKeywords = { supermarket: 'スーパー', transit: '駅 OR バス停', restaurant: 'レストラン', coffee: 'コーヒー', statue: '像', takeout: 'テイクアウト', museum: 'ミュージアム', ramen: 'ラーメン', udon: 'うどん', soba: 'そば', sightseeing: '観光スポット' };
     let nearbyState = { cats: ['spot'] };
     const filterState = { shop: true, castle: true, michi: true, manhole: true, mhcard: true };
-    const labelState  = { shop: true, castle: true, michi: true };
+    const labelState  = { shop: true, castle: true, michi: true, mhcard: true };
 
     function onFilterChange(el) {
         const id = el.id.replace('check-', '');
@@ -1735,7 +1737,7 @@ map.on('zoomend', () => { isZooming = false; });
         const val = el.checked ? 'visible' : 'none';
         const sourceIds = id === 'castle'
             ? ['castles-famous', 'castles']
-            : [{ shop: 'shops', michi: 'michi' }[id]];
+            : [{ shop: 'shops', michi: 'michi', mhcard: 'mhcards' }[id]];
         sourceIds.forEach(sourceId => {
             if (map.getLayer(`${sourceId}-label`)) map.setLayoutProperty(`${sourceId}-label`, 'visibility', val);
         });
