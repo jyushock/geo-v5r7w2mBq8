@@ -1329,7 +1329,6 @@ map.on('zoomend', () => { isZooming = false; });
                 );
                 if (conf.type === 'mhcard') {
                     map.addLayer({ id: `${conf.id}-cluster`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'mhcard-icon', 'icon-size': 1.5, 'icon-allow-overlap': true } });
-                    map.addLayer({ id: `${conf.id}-cluster-overlay`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'manhole-icon', 'icon-size': 0.56, 'icon-allow-overlap': true }, paint: { 'icon-color': '#FFFFFF' } });
                 } else {
                     map.addLayer({ id: `${conf.id}-cluster`, type: 'circle', source: conf.id, filter: ['has', 'point_count'], paint: { 'circle-color': conf.clusterColor, 'circle-radius': 20, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' } });
                 }
@@ -1690,7 +1689,7 @@ map.on('zoomend', () => { isZooming = false; });
             ? ['castles-famous', 'castles']
             : [{ shop: 'shops', michi: 'michi', manhole: 'manholes', mhcard: 'mhcards' }[id]];
         sourceIds.forEach(sourceId => {
-            [`${sourceId}-cluster`, `${sourceId}-cluster-overlay`, `${sourceId}-cluster-count`, `${sourceId}-bg`, `${sourceId}-icon`, `${sourceId}-icon-overlay`, `${sourceId}-label`].forEach(l => { if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', val); });
+            [`${sourceId}-cluster`, `${sourceId}-cluster-count`, `${sourceId}-bg`, `${sourceId}-icon`, `${sourceId}-icon-overlay`, `${sourceId}-label`].forEach(l => { if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', val); });
         });
     }
 
@@ -1881,7 +1880,6 @@ map.on('zoomend', () => { isZooming = false; });
     const layerIdPrefixes = ['michi', 'shops', 'manholes', 'mhcards', 'castles', 'castles-famous'];
     const targetLayerIds = layerIdPrefixes.flatMap(prefix => [
         `${prefix}-cluster`,
-        `${prefix}-cluster-overlay`,
         `${prefix}-cluster-count`,
         `${prefix}-bg`,
         `${prefix}-icon`,
