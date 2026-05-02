@@ -1307,25 +1307,55 @@ map.on('zoomend', () => { isZooming = false; });
             loadSDF('castle.png',  'castle-icon'),
             loadSDF('michi.png',   'michi-icon'),
             loadSDF('manhole.png', 'manhole-icon'),
-            // mhcard用カード型アイコンをCanvasで動的生成してSDF登録
+            // mhcard用縦長カード型アイコンをCanvasで動的生成（非SDF、色付き）
             new Promise(res => {
-                const size = 40;
+                const pr = 2;
+                const lw = 28, lh = 44;
+                const cw = lw * pr, ch = lh * pr;
                 const canvas = document.createElement('canvas');
-                canvas.width = size; canvas.height = size;
+                canvas.width = cw; canvas.height = ch;
                 const ctx = canvas.getContext('2d');
-                // 長方形（カード型）をSDF用に白で描画
-                const w = 30, h = 22, x = (size - w) / 2, y = (size - h) / 2, r = 3;
-                ctx.fillStyle = '#FFFFFF';
+                const r = 5 * pr;
+                const color = '#1565C0';
+                // 縦長角丸長方形（背景）
+                ctx.fillStyle = color;
                 ctx.beginPath();
-                ctx.moveTo(x + r, y);
-                ctx.lineTo(x + w - r, y); ctx.quadraticCurveTo(x + w, y, x + w, y + r);
-                ctx.lineTo(x + w, y + h - r); ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-                ctx.lineTo(x + r, y + h); ctx.quadraticCurveTo(x, y + h, x, y + h - r);
-                ctx.lineTo(x, y + r); ctx.quadraticCurveTo(x, y, x + r, y);
+                ctx.moveTo(r, 0);
+                ctx.lineTo(cw - r, 0); ctx.quadraticCurveTo(cw, 0, cw, r);
+                ctx.lineTo(cw, ch - r); ctx.quadraticCurveTo(cw, ch, cw - r, ch);
+                ctx.lineTo(r, ch); ctx.quadraticCurveTo(0, ch, 0, ch - r);
+                ctx.lineTo(0, r); ctx.quadraticCurveTo(0, 0, r, 0);
                 ctx.closePath();
                 ctx.fill();
-                const imageData = ctx.getImageData(0, 0, size, size);
-                map.addImage('mhcard-icon', { width: size, height: size, data: imageData.data }, { sdf: true });
+                // 白枠
+                ctx.strokeStyle = 'rgba(255,255,255,0.85)';
+                ctx.lineWidth = 2 * pr;
+                const bw = 2 * pr;
+                ctx.beginPath();
+                ctx.moveTo(r + bw, bw);
+                ctx.lineTo(cw - r - bw, bw); ctx.quadraticCurveTo(cw - bw, bw, cw - bw, r + bw);
+                ctx.lineTo(cw - bw, ch - r - bw); ctx.quadraticCurveTo(cw - bw, ch - bw, cw - r - bw, ch - bw);
+                ctx.lineTo(r + bw, ch - bw); ctx.quadraticCurveTo(bw, ch - bw, bw, ch - r - bw);
+                ctx.lineTo(bw, r + bw); ctx.quadraticCurveTo(bw, bw, r + bw, bw);
+                ctx.closePath();
+                ctx.stroke();
+                // マンホール同心円パターン（白）
+                const cx = cw / 2, cy = ch / 2;
+                const outerR = lw * pr * 0.38;
+                ctx.strokeStyle = '#FFFFFF';
+                ctx.lineWidth = 2 * pr;
+                ctx.beginPath();
+                ctx.arc(cx, cy, outerR, 0, Math.PI * 2);
+                ctx.stroke();
+                ctx.lineWidth = 1.5 * pr;
+                ctx.beginPath();
+                ctx.arc(cx, cy, outerR * 0.58, 0, Math.PI * 2);
+                ctx.stroke();
+                ctx.fillStyle = '#FFFFFF';
+                ctx.beginPath();
+                ctx.arc(cx, cy, 3 * pr, 0, Math.PI * 2);
+                ctx.fill();
+                map.addImage('mhcard-icon', canvas, { pixelRatio: pr });
                 res();
             })
         ]).then(() => {
@@ -1349,8 +1379,10 @@ map.on('zoomend', () => { isZooming = false; });
                 );
                 map.addLayer({ id: `${conf.id}-cluster`, type: 'circle', source: conf.id, filter: ['has', 'point_count'], paint: { 'circle-color': conf.clusterColor, 'circle-radius': 20, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' } });
                 map.addLayer({ id: `${conf.id}-cluster-count`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'text-field': '{point_count_abbreviated}', 'text-size': 12, 'text-font': ['Noto Sans Bold'] }, paint: { 'text-color': '#FFFFFF' } });
-                map.addLayer({ id: `${conf.id}-bg`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: { 'circle-color': conf.type === 'castle' ? ['match', ['get', 'genre'], '日本100名城', '#4285F4', '続日本100名城', '#EA4335', '#546E7A'] : conf.type === 'manhole' ? ['match', ['get', 'source'], 'pokefuta', '#FBBC04', '#B87333'] : conf.color, 'circle-radius': 14, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' }, layout: conf.type === 'castle' ? { 'circle-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {} });
-                map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': 0.35, 'icon-allow-overlap': true, ...(conf.type === 'castle' ? { 'symbol-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}) }, paint: { 'icon-color': '#FFFFFF' } });
+                if (conf.type !== 'mhcard') {
+                    map.addLayer({ id: `${conf.id}-bg`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: { 'circle-color': conf.type === 'castle' ? ['match', ['get', 'genre'], '日本100名城', '#4285F4', '続日本100名城', '#EA4335', '#546E7A'] : conf.type === 'manhole' ? ['match', ['get', 'source'], 'pokefuta', '#FBBC04', '#B87333'] : conf.color, 'circle-radius': 14, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' }, layout: conf.type === 'castle' ? { 'circle-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {} });
+                }
+                map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': conf.type === 'mhcard' ? 1.0 : 0.35, 'icon-allow-overlap': true, ...(conf.type === 'castle' ? { 'symbol-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}) }, paint: { 'icon-color': '#FFFFFF' } });
 
                 // テキストラベルレイヤー（マンホール以外）
                 if (conf.type !== 'manhole') {
