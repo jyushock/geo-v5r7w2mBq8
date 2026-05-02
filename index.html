@@ -1570,7 +1570,7 @@ map.on('zoomend', () => { isZooming = false; });
                 const div = document.createElement('div');
                 div.className = 'search-result-item';
                 const iconPart = isMhcard
-                    ? `<div style="position:relative;width:28px;height:36px;flex-shrink:0;background:#B87333;border-radius:5px;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:14px;height:14px;filter:brightness(0) invert(1);"></div>`
+                    ? `<div style="position:relative;width:28px;height:36px;flex-shrink:0;background:#B87333;border:3px solid white;border-radius:5px;box-sizing:border-box;box-shadow:0 0 0 1px #B87333;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:11px;height:11px;filter:brightness(0) invert(1);pointer-events:none;"></div>`
                     : `<div class="search-result-icon" style="background:${getItemColor(item)}">${cfg.img ? `<img src="${cfg.img}">` : cfg.icon}</div>`;
                 div.innerHTML = `${iconPart}<div class="search-result-text"><div class="search-result-name">${item.label}</div><div class="search-result-sub">${item.sub}</div></div>`;
                 div.addEventListener('click', () => onResultClick(item));
@@ -1810,7 +1810,7 @@ map.on('zoomend', () => { isZooming = false; });
                 const div = document.createElement('div');
                 div.className = 'nearby-item';
                 const iconPart = isMhcard
-                    ? `<div style="position:relative;width:28px;height:36px;flex-shrink:0;background:#B87333;border-radius:5px;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:14px;height:14px;filter:brightness(0) invert(1);"></div>`
+                    ? `<div style="position:relative;width:28px;height:36px;flex-shrink:0;background:#B87333;border:3px solid white;border-radius:5px;box-sizing:border-box;box-shadow:0 0 0 1px #B87333;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:11px;height:11px;filter:brightness(0) invert(1);pointer-events:none;"></div>`
                     : `<div class="nearby-item-icon" style="background:${getItemColor(item)}">${cfg.img ? `<img src="${cfg.img}">` : cfg.icon}</div>`;
                 div.innerHTML = `${iconPart}<div class="nearby-item-text"><div class="nearby-item-name">${item.label}</div><div class="nearby-item-sub">${item.sub}</div></div><div class="nearby-item-dist">${distStr}</div>`;
                 div.addEventListener('click', () => { closeNearbyResult(); onResultClick(item); });
