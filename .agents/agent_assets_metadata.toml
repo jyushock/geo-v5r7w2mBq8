@@ -6,3 +6,9 @@ id = "Y8nwXjTaD1HrJcXtkgJYL"
 uri = "file://mhcard.png"
 type = "image"
 title = "新アイコン（28×36px、白枚付き茶色長方形）"
+
+[[outputs]]
+id = "z2TzGFpSjSzeptheWBXdD"
+uri = "file://preview_mhcard.png"
+type = "image"
+title = "mhcard マーカー プレビュー（茶色長方形 ＋ マンホール絵柄）"
