@@ -1332,7 +1332,7 @@ map.on('zoomend', () => { isZooming = false; });
                 if (conf.type !== 'mhcard') {
                     map.addLayer({ id: `${conf.id}-bg`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: { 'circle-color': conf.type === 'castle' ? ['match', ['get', 'genre'], '日本100名城', '#4285F4', '続日本100名城', '#EA4335', '#546E7A'] : conf.type === 'manhole' ? ['match', ['get', 'source'], 'pokefuta', '#FBBC04', '#B87333'] : conf.color, 'circle-radius': 14, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' }, layout: conf.type === 'castle' ? { 'circle-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {} });
                 }
-                map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': conf.type === 'mhcard' ? 0.5 : 0.35, 'icon-allow-overlap': true, ...(conf.type === 'castle' ? { 'symbol-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}) }, paint: { 'icon-color': '#FFFFFF' } });
+                map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': conf.type === 'mhcard' ? 0.6 : 0.35, 'icon-allow-overlap': true, ...(conf.type === 'castle' ? { 'symbol-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}) }, paint: { 'icon-color': conf.type === 'mhcard' ? '#1565C0' : '#FFFFFF' } });
 
                 // テキストラベルレイヤー（マンホール以外）
                 if (conf.type !== 'manhole') {
@@ -1367,7 +1367,8 @@ map.on('zoomend', () => { isZooming = false; });
                     map.getSource(conf.id).getClusterExpansionZoom(features[0].properties.cluster_id, (err, zoom) => { if (!err) map.easeTo({ center: features[0].geometry.coordinates, zoom: zoom + 1, duration: 450, essential: true }); });
                 });
 
-                map.on('click', `${conf.id}-bg`, (e) => {
+                const clickLayer = conf.type === 'mhcard' ? `${conf.id}-icon` : `${conf.id}-bg`;
+                map.on('click', clickLayer, (e) => {
                     if (trackingMode > 0) {
                         trackingMode = 0;
                         stopRafLoop();
@@ -1419,7 +1420,7 @@ map.on('zoomend', () => { isZooming = false; });
                 });
 
                 const hover = (l, cur) => { map.on('mouseenter', l, () => map.getCanvas().style.cursor = cur); map.on('mouseleave', l, () => map.getCanvas().style.cursor = ''); };
-                hover(`${conf.id}-bg`, 'pointer');
+                hover(clickLayer, 'pointer');
                 hover(`${conf.id}-cluster`, 'pointer');
             });
         });
