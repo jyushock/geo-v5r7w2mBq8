@@ -738,6 +738,10 @@
         try { return JSON.parse(localStorage.getItem('mapState')); } catch { return null; }
     })();
 
+    const savedSettings = (() => {
+        try { return JSON.parse(localStorage.getItem('settingsState')); } catch { return null; }
+    })();
+
     const map = new maplibregl.Map({
         container: 'map',
         style: 'https://tiles.openfreemap.org/styles/liberty',
@@ -1188,6 +1192,32 @@ map.on('zoomend', () => { isZooming = false; });
         }
         map.on('moveend', saveMapState);
         map.on('zoomend', saveMapState);
+
+        // 保存済み設定をレイヤーに反映（再起動時の復元）
+        if (savedSettings) {
+            Object.keys(filterState).forEach(id => {
+                const val = filterState[id] ? 'visible' : 'none';
+                const sourceIds = id === 'castle'
+                    ? ['castles-famous', 'castles']
+                    : [{ shop: 'shops', michi: 'michi', manhole: 'manholes', mhcard: 'mhcards' }[id]];
+                if (!sourceIds[0]) return;
+                sourceIds.forEach(sourceId => {
+                    [`${sourceId}-cluster`, `${sourceId}-cluster-count`, `${sourceId}-bg`, `${sourceId}-icon`, `${sourceId}-icon-overlay`, `${sourceId}-label`].forEach(l => {
+                        if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', val);
+                    });
+                });
+            });
+            Object.keys(labelState).forEach(id => {
+                const val = labelState[id] ? 'visible' : 'none';
+                const sourceIds = id === 'castle'
+                    ? ['castles-famous', 'castles']
+                    : [{ shop: 'shops', michi: 'michi' }[id]];
+                if (!sourceIds[0]) return;
+                sourceIds.forEach(sourceId => {
+                    if (map.getLayer(`${sourceId}-label`)) map.setLayoutProperty(`${sourceId}-label`, 'visibility', val);
+                });
+            });
+        }
 
         // 現在地ボタンのクリック処理
         document.getElementById('geolocate-btn').addEventListener('click', () => {
@@ -1703,8 +1733,21 @@ map.on('zoomend', () => { isZooming = false; });
 
     const gmapKeywords = { supermarket: 'スーパー', transit: '駅 OR バス停', restaurant: 'レストラン', coffee: 'コーヒー', statue: '像', takeout: 'テイクアウト', museum: 'ミュージアム', ramen: 'ラーメン', udon: 'うどん', soba: 'そば', sightseeing: '観光スポット' };
     let nearbyState = { cats: ['spot'] };
-    const filterState = { shop: true, castle: true, michi: true, manhole: true, mhcard: true };
-    const labelState  = { shop: true, castle: true, michi: true };
+    const filterState = Object.assign(
+        { shop: true, castle: true, michi: true, manhole: true, mhcard: true },
+        savedSettings ? savedSettings.filter : {}
+    );
+    const labelState = Object.assign(
+        { shop: true, castle: true, michi: true },
+        savedSettings ? savedSettings.label : {}
+    );
+
+    function saveSettings() {
+        localStorage.setItem('settingsState', JSON.stringify({
+            filter: filterState,
+            label:  labelState
+        }));
+    }
 
     function onFilterChange(el) {
         const id = el.id.replace('check-', '');
@@ -1716,6 +1759,7 @@ map.on('zoomend', () => { isZooming = false; });
         sourceIds.forEach(sourceId => {
             [`${sourceId}-cluster`, `${sourceId}-cluster-count`, `${sourceId}-bg`, `${sourceId}-icon`, `${sourceId}-icon-overlay`, `${sourceId}-label`].forEach(l => { if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', val); });
         });
+        saveSettings();
     }
 
     function onLabelChange(el) {
@@ -1728,6 +1772,7 @@ map.on('zoomend', () => { isZooming = false; });
         sourceIds.forEach(sourceId => {
             if (map.getLayer(`${sourceId}-label`)) map.setLayoutProperty(`${sourceId}-label`, 'visibility', val);
         });
+        saveSettings();
     }
 
     function toggleNearby() {
