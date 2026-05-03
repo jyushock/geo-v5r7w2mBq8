@@ -1193,32 +1193,6 @@ map.on('zoomend', () => { isZooming = false; });
         map.on('moveend', saveMapState);
         map.on('zoomend', saveMapState);
 
-        // 保存済み設定をレイヤーに反映（再起動時の復元）
-        if (savedSettings) {
-            Object.keys(filterState).forEach(id => {
-                const val = filterState[id] ? 'visible' : 'none';
-                const sourceIds = id === 'castle'
-                    ? ['castles-famous', 'castles']
-                    : [{ shop: 'shops', michi: 'michi', manhole: 'manholes', mhcard: 'mhcards' }[id]];
-                if (!sourceIds[0]) return;
-                sourceIds.forEach(sourceId => {
-                    [`${sourceId}-cluster`, `${sourceId}-cluster-count`, `${sourceId}-bg`, `${sourceId}-icon`, `${sourceId}-icon-overlay`, `${sourceId}-label`].forEach(l => {
-                        if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', val);
-                    });
-                });
-            });
-            Object.keys(labelState).forEach(id => {
-                const val = labelState[id] ? 'visible' : 'none';
-                const sourceIds = id === 'castle'
-                    ? ['castles-famous', 'castles']
-                    : [{ shop: 'shops', michi: 'michi' }[id]];
-                if (!sourceIds[0]) return;
-                sourceIds.forEach(sourceId => {
-                    if (map.getLayer(`${sourceId}-label`)) map.setLayoutProperty(`${sourceId}-label`, 'visibility', val);
-                });
-            });
-        }
-
         // 現在地ボタンのクリック処理
         document.getElementById('geolocate-btn').addEventListener('click', () => {
             // 追従解除後（preTrackingMode保持中）にボタンを押した場合 → モード復帰して現在地へ
@@ -1478,6 +1452,33 @@ map.on('zoomend', () => { isZooming = false; });
         });
 
         buildSearchIndex();
+
+        // 保存済み設定をレイヤーに反映（再起動時の復元）
+        // ※ この時点で全レイヤーが生成済みのため確実に反映できる
+        if (savedSettings) {
+            Object.keys(filterState).forEach(id => {
+                const val = filterState[id] ? 'visible' : 'none';
+                const sourceIds = id === 'castle'
+                    ? ['castles-famous', 'castles']
+                    : [{ shop: 'shops', michi: 'michi', manhole: 'manholes', mhcard: 'mhcards' }[id]];
+                if (!sourceIds || !sourceIds[0]) return;
+                sourceIds.forEach(sourceId => {
+                    [`${sourceId}-cluster`, `${sourceId}-cluster-count`, `${sourceId}-bg`, `${sourceId}-icon`, `${sourceId}-icon-overlay`, `${sourceId}-label`].forEach(l => {
+                        if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', val);
+                    });
+                });
+            });
+            Object.keys(labelState).forEach(id => {
+                const val = labelState[id] ? 'visible' : 'none';
+                const sourceIds = id === 'castle'
+                    ? ['castles-famous', 'castles']
+                    : [{ shop: 'shops', michi: 'michi' }[id]];
+                if (!sourceIds || !sourceIds[0]) return;
+                sourceIds.forEach(sourceId => {
+                    if (map.getLayer(`${sourceId}-label`)) map.setLayoutProperty(`${sourceId}-label`, 'visibility', val);
+                });
+            });
+        }
 
         // popup-clamp トグル（タップで省略 ↔ 全文）
         document.getElementById('map').addEventListener('click', e => {
