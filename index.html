@@ -1521,10 +1521,8 @@ map.on('zoomend', () => { isZooming = false; });
             if (filterKey && filterState[filterKey] === false) return false;
             const label = item.label ? item.label.toLowerCase() : '';
             const sub   = item.sub   ? item.sub.toLowerCase()   : '';
-            // 順方向：データが入力を含む（例：「滝田城跡」→「滝田城跡公園」）
-            // 逆方向：入力がデータを含む（例：「滝田城跡」→「滝田城」）
-            return (label && (label.includes(q) || q.includes(label))) ||
-                   (sub   && (sub.includes(q)   || q.includes(sub)));
+            return (label && label.includes(q)) ||
+                   (sub   && sub.includes(q));
         }).slice(0, 24);
     }
     
