@@ -1121,7 +1121,9 @@ map.on('zoomend', () => { isZooming = false; });
     // poi_r1/r7/r20は一般POI（minzoom15-17）であり駅データは含まれない
     const stationLayerIds  = ['poi_transit'];
     const busLayerIds      = ['poi_transit'];
-    const carSubclasses    = ['parking', 'fuel', 'car_dealer', 'car_rental', 'car_repair', 'car_wash', 'motorcycle', 'charging_station'];
+    // poi_r系から除外するclass（実データ確認済み）
+    // 元のcarSubclasses + entrance・telephone（地図ノイズ）
+    const excludedPoiClasses = ['parking', 'fuel', 'car_dealer', 'car_rental', 'car_repair', 'car_wash', 'motorcycle', 'charging_station', 'entrance', 'telephone'];
     const stationSubclasses = ['station', 'halt', 'subway', 'tram_stop', 'light_rail', 'stop', 'stop_position', 'platform', 'monorail', 'funicular', 'bus_station', 'bus_stop'];
 
     map.once('style.load', () => {
@@ -1151,6 +1153,14 @@ map.on('zoomend', () => { isZooming = false; });
                         map.setLayoutProperty(layer.id, 'symbol-sort-key', 100);
                         map.setLayoutProperty(layer.id, 'text-ignore-placement', false);
                         map.setLayoutProperty(layer.id, 'icon-ignore-placement', false);
+                    }
+                    // poi_r系レイヤーから不要POIを除外（実データ確認済み）
+                    if (['poi_r1', 'poi_r7', 'poi_r20'].includes(layer.id)) {
+                        const existingFilter = map.getFilter(layer.id) || ['all'];
+                        map.setFilter(layer.id, ['all',
+                            existingFilter,
+                            ['!', ['in', ['get', 'class'], ['literal', excludedPoiClasses]]]
+                        ]);
                     }
                 }
                 if (stationLayerIds.includes(layer.id)) {
