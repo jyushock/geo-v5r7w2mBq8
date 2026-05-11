@@ -1123,7 +1123,9 @@ map.on('zoomend', () => { isZooming = false; });
     const busLayerIds      = ['poi_transit'];
     // poi_r系から除外するclass（実データ確認済み）
     // 元のcarSubclasses + entrance・telephone（地図ノイズ）
-    const excludedPoiClasses = ['parking', 'fuel', 'car_dealer', 'car_rental', 'car_repair', 'car_wash', 'motorcycle', 'charging_station', 'entrance', 'telephone'];
+    // poi_r系から除外するclass（実データ確認済み）
+    // railway・busはpoi_transitと重複するため除外
+    const excludedPoiClasses = ['parking', 'fuel', 'car_dealer', 'car_rental', 'car_repair', 'car_wash', 'motorcycle', 'charging_station', 'entrance', 'telephone', 'railway', 'bus'];
     const stationSubclasses = ['station', 'halt', 'subway', 'tram_stop', 'light_rail', 'stop', 'stop_position', 'platform', 'monorail', 'funicular', 'bus_station', 'bus_stop'];
 
     map.once('style.load', () => {
