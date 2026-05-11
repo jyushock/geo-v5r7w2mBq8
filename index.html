@@ -1117,7 +1117,9 @@ map.on('zoomend', () => { isZooming = false; });
 
     // スタイル調整：日本語化・駅強調・POI整理・水域色・3D建物
     const ownLayerPrefixes = ['shops-', 'castles-', 'michi-', 'manholes-', 'mhcards-'];
-    const stationLayerIds  = ['poi_r20', 'poi_r7', 'poi_r1', 'poi_transit'];
+    // poi_transitのみが駅・交通系POIのレイヤー（公式スタイルJSON確認済み）
+    // poi_r1/r7/r20は一般POI（minzoom15-17）であり駅データは含まれない
+    const stationLayerIds  = ['poi_transit'];
     const busLayerIds      = ['poi_transit'];
     const carSubclasses    = ['parking', 'fuel', 'car_dealer', 'car_rental', 'car_repair', 'car_wash', 'motorcycle', 'charging_station'];
     const stationSubclasses = ['station', 'halt', 'subway', 'tram_stop', 'light_rail', 'stop', 'stop_position', 'platform', 'monorail', 'funicular', 'bus_station', 'bus_stop'];
@@ -1152,15 +1154,21 @@ map.on('zoomend', () => { isZooming = false; });
                     }
                 }
                 if (stationLayerIds.includes(layer.id)) {
-                    map.setFilter(layer.id, ['all', ['has', 'name'], ['!', ['in', ['get', 'subclass'], ['literal', carSubclasses]]]]);
-                    const isMainStation = ['any', ['in', ['get', 'subclass'], ['literal', ['station', 'subway', 'monorail', 'halt', 'tram_stop']]], ['==', ['get', 'class'], 'railway'], ['==', ['get', 'class'], 'public_transport'], ['has', 'railway']];
-                    const isBusStop = ['==', ['get', 'subclass'], 'bus_stop'];
+                    // 実データ確認済み: class='railway'(駅), class='bus'(バス停)
+                    // フィルターは実データのclass値に合わせる
+                    map.setFilter(layer.id, ['all',
+                        ['has', 'name'],
+                        ['match', ['get', 'class'], ['railway', 'bus', 'airport'], true, false]
+                    ]);
+                    const isMainStation = ['==', ['get', 'class'], 'railway'];
+                    const isBusStop = ['==', ['get', 'class'], 'bus'];
                     map.setLayoutProperty(layer.id, 'text-ignore-placement', true);
                     map.setLayoutProperty(layer.id, 'icon-ignore-placement', true);
-                    map.setLayoutProperty(layer.id, 'text-allow-overlap', ['case', isMainStation, true, false]);
-                    map.setLayoutProperty(layer.id, 'icon-allow-overlap', ['case', isMainStation, true, false]);
-                    // 主要駅=-100、バス停=0、その他=50
-                    map.setLayoutProperty(layer.id, 'symbol-sort-key', ['case', isMainStation, -100, isBusStop, 0, 50]);
+                    // 全駅をoverlap許可し、rankが小さいほど優先（実データでrank=1が主要駅）
+                    map.setLayoutProperty(layer.id, 'text-allow-overlap', true);
+                    map.setLayoutProperty(layer.id, 'icon-allow-overlap', true);
+                    // symbol-sort-keyにrankを使用（小さいほど優先）、バス停は大きな値で後退
+                    map.setLayoutProperty(layer.id, 'symbol-sort-key', ['case', isMainStation, ['get', 'rank'], isBusStop, 500, 200]);
                     map.setLayoutProperty(layer.id, 'text-variable-anchor', ['literal', null]);
                     map.setLayoutProperty(layer.id, 'text-anchor', 'top');
                     map.setLayoutProperty(layer.id, 'text-offset', ['case', isMainStation, ['literal', [0, 0.9]], isBusStop, ['literal', [0, 0.6]], ['literal', [0, 0.4]]]);
