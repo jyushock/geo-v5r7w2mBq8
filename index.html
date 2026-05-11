@@ -1117,81 +1117,46 @@ map.on('zoomend', () => { isZooming = false; });
 
     // スタイル調整：日本語化・駅強調・POI整理・水域色・3D建物
     const ownLayerPrefixes = ['shops-', 'castles-', 'michi-', 'manholes-', 'mhcards-'];
-    // poi_transitのみが駅・交通系POIのレイヤー（公式スタイルJSON確認済み）
-    // poi_r1/r7/r20は一般POI（minzoom15-17）であり駅データは含まれない
-    const stationLayerIds  = ['poi_transit'];
+    const stationLayerIds  = ['poi_r20', 'poi_r7', 'poi_r1', 'poi_transit'];
     const busLayerIds      = ['poi_transit'];
-    // poi_r系から除外するclass（実データ確認済み）
-    // 元のcarSubclasses + entrance・telephone（地図ノイズ）
-    // poi_r系から除外するclass（実データ確認済み）
-    // railway・busはpoi_transitと重複するため除外
-    const excludedPoiClasses = ['parking', 'fuel', 'car_dealer', 'car_rental', 'car_repair', 'car_wash', 'motorcycle', 'charging_station', 'entrance', 'telephone', 'railway', 'bus'];
+    const carSubclasses    = ['parking', 'fuel', 'car_dealer', 'car_rental', 'car_repair', 'car_wash', 'motorcycle', 'charging_station'];
     const stationSubclasses = ['station', 'halt', 'subway', 'tram_stop', 'light_rail', 'stop', 'stop_position', 'platform', 'monorail', 'funicular', 'bus_station', 'bus_stop'];
 
     map.once('style.load', () => {
         const allLayers = map.getStyle().layers;
         if (!allLayers) return;
 
-        // symbol-sort-key 優先度定義（小さいほど優先表示）
-        // -100: 主要駅  0: バス停  100: 一般POI・地名  200: 国道シールド・道路名
         allLayers.forEach(layer => {
             const isShield = layer.id.includes('shield');
             const isTransName = layer['source-layer'] === 'transportation_name';
             if (isShield || isTransName) {
-                // 国道シールド・道路名は最背面（駅より必ず背面）
-                try {
-                    map.setLayoutProperty(layer.id, 'symbol-sort-key', 200);
-                    map.setLayoutProperty(layer.id, 'text-ignore-placement', false);
-                    map.setLayoutProperty(layer.id, 'icon-ignore-placement', false);
-                } catch (e) {}
+                // 国道表記を表示するため visibility:none の設定を削除
                 return;
             }
             if (ownLayerPrefixes.some(p => layer.id.startsWith(p))) return;
             try {
                 if (layer.type === 'symbol' && layer.layout && layer.layout['text-field']) {
                     map.setLayoutProperty(layer.id, 'text-field', ['coalesce', ['get', 'name:ja'], ['get', 'name']]);
-                    // 駅レイヤー以外の全シンボルに sort-key=100 を設定（駅より背面）
-                    if (!stationLayerIds.includes(layer.id)) {
-                        map.setLayoutProperty(layer.id, 'symbol-sort-key', 100);
-                        map.setLayoutProperty(layer.id, 'text-ignore-placement', false);
-                        map.setLayoutProperty(layer.id, 'icon-ignore-placement', false);
-                    }
-                    // poi_r系レイヤーから不要POIを除外（実データ確認済み）
-                    if (['poi_r1', 'poi_r7', 'poi_r20'].includes(layer.id)) {
-                        const existingFilter = map.getFilter(layer.id) || ['all'];
-                        map.setFilter(layer.id, ['all',
-                            existingFilter,
-                            ['!', ['in', ['get', 'class'], ['literal', excludedPoiClasses]]]
-                        ]);
-                    }
                 }
                 if (stationLayerIds.includes(layer.id)) {
-                    // poi_transitをバス停専用に設定（class='bus'のみ）
-                    // 実データ確認済み: class='bus', subclass='bus_stop'
-                    map.setFilter(layer.id, ['all',
-                        ['has', 'name'],
-                        ['==', ['get', 'class'], 'bus']
-                    ]);
-                    map.setLayoutProperty(layer.id, 'icon-image', 'bus');
-                    map.setLayoutProperty(layer.id, 'icon-size', 0.8);
-                    map.setLayoutProperty(layer.id, 'text-font', ['Noto Sans Italic']);
-                    map.setLayoutProperty(layer.id, 'text-max-width', 9);
-                    map.setLayoutProperty(layer.id, 'text-ignore-placement', false);
-                    map.setLayoutProperty(layer.id, 'icon-ignore-placement', false);
-                    // text-allow-overlapはbooleanのみ対応（公式仕様確認済み）
-                    map.setLayoutProperty(layer.id, 'text-allow-overlap', false);
-                    map.setLayoutProperty(layer.id, 'icon-allow-overlap', false);
-                    map.setLayoutProperty(layer.id, 'symbol-sort-key', ['get', 'rank']);
-                    // バス停は横表示（実データ確認済み）
-                    map.setLayoutProperty(layer.id, 'text-anchor', 'left');
-                    map.setLayoutProperty(layer.id, 'text-offset', ['literal', [0.9, 0]]);
-                    map.setLayoutProperty(layer.id, 'text-size', 11);
+                    map.setFilter(layer.id, ['all', ['has', 'name'], ['!', ['in', ['get', 'subclass'], ['literal', carSubclasses]]]]);
+                    const isMainStation = ['any', ['in', ['get', 'subclass'], ['literal', ['station', 'subway', 'monorail', 'halt', 'tram_stop']]], ['==', ['get', 'class'], 'railway'], ['==', ['get', 'class'], 'public_transport'], ['has', 'railway']];
+                    const isBusStop = ['==', ['get', 'subclass'], 'bus_stop'];
+                    map.setLayoutProperty(layer.id, 'text-ignore-placement', ['case', isMainStation, true, false]);
+                    map.setLayoutProperty(layer.id, 'icon-ignore-placement', ['case', isMainStation, true, false]);
+                    map.setLayoutProperty(layer.id, 'text-allow-overlap', ['case', isMainStation, true, false]);
+                    map.setLayoutProperty(layer.id, 'icon-allow-overlap', ['case', isMainStation, true, false]);
+                    map.setLayoutProperty(layer.id, 'symbol-sort-key', ['case', isMainStation, 1, 100]);
+                    map.setLayoutProperty(layer.id, 'text-variable-anchor', ['literal', null]);
+                    map.setLayoutProperty(layer.id, 'text-anchor', 'top');
+                    map.setLayoutProperty(layer.id, 'text-offset', ['case', isMainStation, ['literal', [0, 0.9]], isBusStop, ['literal', [0, 0.6]], ['literal', [0, 0.4]]]);
+                    map.setLayoutProperty(layer.id, 'icon-size', ['case', isMainStation, 1.0, 0.8]);
+                    map.setLayoutProperty(layer.id, 'text-size', ['case', isMainStation, 12, 11]);
                     map.setLayoutProperty(layer.id, 'visibility', 'visible');
-                    map.setLayerZoomRange(layer.id, 1, 24);
-                    map.setPaintProperty(layer.id, 'text-color', '#2E7D32');
-                    map.setPaintProperty(layer.id, 'text-halo-blur', 0.5);
+                    map.setLayerZoomRange(layer.id, 1, 24); 
+                    map.setPaintProperty(layer.id, 'text-color', ['case', isMainStation, '#0D47A1', isBusStop, '#2E7D32', '#444444']);
                     map.setPaintProperty(layer.id, 'text-halo-color', '#FFFFFF');
-                    map.setPaintProperty(layer.id, 'text-halo-width', 1.0);
+                    map.setPaintProperty(layer.id, 'text-halo-width', ['case', isMainStation, 2.5, 1.0]);
                 }
                 if (layer.type === 'fill') {
                     const lid = layer.id.toLowerCase();
@@ -1211,7 +1176,6 @@ map.on('zoomend', () => { isZooming = false; });
                 }
             } catch (e) {}
         });
-
     });
 
     map.on('load', () => {
@@ -1497,49 +1461,6 @@ map.on('zoomend', () => { isZooming = false; });
                 hover(`${conf.id}-cluster`, 'pointer');
             });
         });
-
-        // 駅専用レイヤーをpoi_transitの上に追加（map.on('load')内で実行することで発火順序を保証）
-        // text-allow-overlapはbooleanのみ対応のため駅とバス停をレイヤーで分離（公式仕様確認済み）
-        // 実データ確認済み: source='openmaptiles', class='railway', rank=1〜4, icon='railway'
-        try {
-            map.addLayer({
-                id: 'poi_transit_rail',
-                type: 'symbol',
-                source: 'openmaptiles',
-                'source-layer': 'poi',
-                filter: ['all',
-                    ['has', 'name'],
-                    ['==', ['get', 'class'], 'railway']
-                ],
-                layout: {
-                    'icon-image': 'railway',
-                    'icon-size': 1.0,
-                    'text-field': ['coalesce', ['get', 'name:ja'], ['get', 'name']],
-                    'text-font': ['Noto Sans Italic'],
-                    'text-max-width': 9,
-                    'text-anchor': 'top',
-                    'text-offset': ['literal', [0, 0.9]],
-                    'text-size': 12,
-                    'text-allow-overlap': true,
-                    'icon-allow-overlap': true,
-                    'text-ignore-placement': true,
-                    'icon-ignore-placement': true,
-                    'symbol-sort-key': ['get', 'rank'],
-                    'visibility': 'visible'
-                },
-                paint: {
-                    'text-color': '#0D47A1',
-                    'text-halo-blur': 0.5,
-                    'text-halo-color': '#FFFFFF',
-                    'text-halo-width': 2.5
-                }
-            });
-            map.setLayerZoomRange('poi_transit_rail', 1, 24);
-            // poi_transit（バス停）→ poi_transit_rail（駅）→ michi-cluster の順に配置
-            // moveLayerのbefore引数は「その直前に挿入」（公式仕様確認済み）
-            map.moveLayer('poi_transit_rail', 'michi-cluster');
-            map.moveLayer('poi_transit', 'poi_transit_rail');
-        } catch (e) { console.error('poi_transit_rail追加エラー:', e); }
 
         buildSearchIndex();
 
