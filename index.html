@@ -1182,9 +1182,10 @@ map.on('zoomend', () => { isZooming = false; });
                     // 駅(railway)はrank値そのまま（1〜数十程度）、バス停は+1000でオフセットして必ず駅より後退
                     // ※実データ確認済み: busのrankは1〜10以上、railwayのrankは2以上
                     map.setLayoutProperty(layer.id, 'symbol-sort-key', ['case', isMainStation, ['get', 'rank'], ['+', ['get', 'rank'], 1000]]);
+                    // 駅は上表示、バス停は横表示（公式スタイルJSON準拠）
                     map.setLayoutProperty(layer.id, 'text-variable-anchor', ['literal', null]);
-                    map.setLayoutProperty(layer.id, 'text-anchor', 'top');
-                    map.setLayoutProperty(layer.id, 'text-offset', ['case', isMainStation, ['literal', [0, 0.9]], isBusStop, ['literal', [0, 0.6]], ['literal', [0, 0.4]]]);
+                    map.setLayoutProperty(layer.id, 'text-anchor', ['case', isMainStation, 'top', 'left']);
+                    map.setLayoutProperty(layer.id, 'text-offset', ['case', isMainStation, ['literal', [0, 0.9]], ['literal', [0.9, 0]]]);
                     map.setLayoutProperty(layer.id, 'icon-size', ['case', isMainStation, 1.0, 0.8]);
                     map.setLayoutProperty(layer.id, 'text-size', ['case', isMainStation, 12, 11]);
                     map.setLayoutProperty(layer.id, 'visibility', 'visible');
