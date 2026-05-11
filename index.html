@@ -1117,39 +1117,75 @@ map.on('zoomend', () => { isZooming = false; });
 
     // スタイル調整：日本語化・駅強調・POI整理・水域色・3D建物
     const ownLayerPrefixes = ['shops-', 'castles-', 'michi-', 'manholes-', 'mhcards-'];
-    const stationLayerIds  = ['poi_r20', 'poi_r7', 'poi_r1', 'poi_transit'];
+    // poi_transitのみが駅・交通系POIのレイヤー（公式スタイルJSON確認済み）
+    // poi_r1/r7/r20は一般POI（minzoom15-17）であり駅データは含まれない
+    const stationLayerIds  = ['poi_transit'];
     const busLayerIds      = ['poi_transit'];
-    const carSubclasses    = ['parking', 'fuel', 'car_dealer', 'car_rental', 'car_repair', 'car_wash', 'motorcycle', 'charging_station'];
+    // poi_r系から除外するclass（実データ確認済み）
+    // 元のcarSubclasses + entrance・telephone（地図ノイズ）
+    // poi_r系から除外するclass（実データ確認済み）
+    // railway・busはpoi_transitと重複するため除外
+    const excludedPoiClasses = ['parking', 'fuel', 'car_dealer', 'car_rental', 'car_repair', 'car_wash', 'motorcycle', 'charging_station', 'entrance', 'telephone', 'railway', 'bus'];
     const stationSubclasses = ['station', 'halt', 'subway', 'tram_stop', 'light_rail', 'stop', 'stop_position', 'platform', 'monorail', 'funicular', 'bus_station', 'bus_stop'];
 
     map.once('style.load', () => {
         const allLayers = map.getStyle().layers;
         if (!allLayers) return;
 
+        // symbol-sort-key 優先度定義（小さいほど優先表示）
+        // -100: 主要駅  0: バス停  100: 一般POI・地名  200: 国道シールド・道路名
         allLayers.forEach(layer => {
             const isShield = layer.id.includes('shield');
             const isTransName = layer['source-layer'] === 'transportation_name';
             if (isShield || isTransName) {
-                // 国道表記を表示するため visibility:none の設定を削除
+                // 国道シールド・道路名は最背面（駅より必ず背面）
+                try {
+                    map.setLayoutProperty(layer.id, 'symbol-sort-key', 200);
+                    map.setLayoutProperty(layer.id, 'text-ignore-placement', false);
+                    map.setLayoutProperty(layer.id, 'icon-ignore-placement', false);
+                } catch (e) {}
                 return;
             }
             if (ownLayerPrefixes.some(p => layer.id.startsWith(p))) return;
             try {
                 if (layer.type === 'symbol' && layer.layout && layer.layout['text-field']) {
                     map.setLayoutProperty(layer.id, 'text-field', ['coalesce', ['get', 'name:ja'], ['get', 'name']]);
+                    // 駅レイヤー以外の全シンボルに sort-key=100 を設定（駅より背面）
+                    if (!stationLayerIds.includes(layer.id)) {
+                        map.setLayoutProperty(layer.id, 'symbol-sort-key', 100);
+                        map.setLayoutProperty(layer.id, 'text-ignore-placement', false);
+                        map.setLayoutProperty(layer.id, 'icon-ignore-placement', false);
+                    }
+                    // poi_r系レイヤーから不要POIを除外（実データ確認済み）
+                    if (['poi_r1', 'poi_r7', 'poi_r20'].includes(layer.id)) {
+                        const existingFilter = map.getFilter(layer.id) || ['all'];
+                        map.setFilter(layer.id, ['all',
+                            existingFilter,
+                            ['!', ['in', ['get', 'class'], ['literal', excludedPoiClasses]]]
+                        ]);
+                    }
                 }
                 if (stationLayerIds.includes(layer.id)) {
-                    map.setFilter(layer.id, ['all', ['has', 'name'], ['!', ['in', ['get', 'subclass'], ['literal', carSubclasses]]]]);
-                    const isMainStation = ['any', ['in', ['get', 'subclass'], ['literal', ['station', 'subway', 'monorail', 'halt', 'tram_stop']]], ['==', ['get', 'class'], 'railway'], ['==', ['get', 'class'], 'public_transport'], ['has', 'railway']];
-                    const isBusStop = ['==', ['get', 'subclass'], 'bus_stop'];
-                    map.setLayoutProperty(layer.id, 'text-ignore-placement', ['case', isMainStation, true, false]);
-                    map.setLayoutProperty(layer.id, 'icon-ignore-placement', ['case', isMainStation, true, false]);
-                    map.setLayoutProperty(layer.id, 'text-allow-overlap', ['case', isMainStation, true, false]);
-                    map.setLayoutProperty(layer.id, 'icon-allow-overlap', ['case', isMainStation, true, false]);
-                    map.setLayoutProperty(layer.id, 'symbol-sort-key', ['case', isMainStation, 1, 100]);
+                    // 実データ確認済み: class='railway'(駅), class='bus'(バス停)
+                    // フィルターは実データのclass値に合わせる
+                    map.setFilter(layer.id, ['all',
+                        ['has', 'name'],
+                        ['match', ['get', 'class'], ['railway', 'bus', 'airport'], true, false]
+                    ]);
+                    const isMainStation = ['==', ['get', 'class'], 'railway'];
+                    const isBusStop = ['==', ['get', 'class'], 'bus'];
+                    map.setLayoutProperty(layer.id, 'text-ignore-placement', true);
+                    map.setLayoutProperty(layer.id, 'icon-ignore-placement', true);
+                    // 全駅をoverlap許可し、rankが小さいほど優先（実データでrank=1が主要駅）
+                    map.setLayoutProperty(layer.id, 'text-allow-overlap', true);
+                    map.setLayoutProperty(layer.id, 'icon-allow-overlap', true);
+                    // 駅(railway)はrank値そのまま（1〜数十程度）、バス停は+1000でオフセットして必ず駅より後退
+                    // ※実データ確認済み: busのrankは1〜10以上、railwayのrankは2以上
+                    map.setLayoutProperty(layer.id, 'symbol-sort-key', ['case', isMainStation, ['get', 'rank'], ['+', ['get', 'rank'], 1000]]);
+                    // 駅は上表示、バス停は横表示（公式スタイルJSON準拠）
                     map.setLayoutProperty(layer.id, 'text-variable-anchor', ['literal', null]);
-                    map.setLayoutProperty(layer.id, 'text-anchor', 'top');
-                    map.setLayoutProperty(layer.id, 'text-offset', ['case', isMainStation, ['literal', [0, 0.9]], isBusStop, ['literal', [0, 0.6]], ['literal', [0, 0.4]]]);
+                    map.setLayoutProperty(layer.id, 'text-anchor', ['case', isMainStation, 'top', 'left']);
+                    map.setLayoutProperty(layer.id, 'text-offset', ['case', isMainStation, ['literal', [0, 0.9]], ['literal', [0.9, 0]]]);
                     map.setLayoutProperty(layer.id, 'icon-size', ['case', isMainStation, 1.0, 0.8]);
                     map.setLayoutProperty(layer.id, 'text-size', ['case', isMainStation, 12, 11]);
                     map.setLayoutProperty(layer.id, 'visibility', 'visible');
