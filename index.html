@@ -625,7 +625,7 @@
         </div>
         <div class="nearby-cat-item" data-cat="coffee" onclick="selectNearbyCat(this)">
             <div class="nearby-cat-icon">☕</div>
-            <div class="nearby-cat-label">コーヒー</div>
+            <div class="nearby-cat-label">カフェ</div>
         </div>
         <div class="nearby-cat-item" data-cat="statue" onclick="selectNearbyCat(this)">
             <div class="nearby-cat-icon">🗿</div>
@@ -1714,7 +1714,7 @@ map.on('zoomend', () => { isZooming = false; });
         return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
     }
 
-    const gmapKeywords = { supermarket: 'スーパー', transit: '駅 OR バス停', restaurant: 'レストラン', coffee: 'コーヒー', statue: '像', takeout: 'テイクアウト', museum: 'ミュージアム', ramen: 'ラーメン', udon: 'うどん', soba: 'そば', sightseeing: '観光スポット' };
+    const gmapKeywords = { supermarket: 'スーパー', transit: '駅 OR バス停', restaurant: 'レストラン', coffee: 'カフェ', statue: '像', takeout: 'テイクアウト', museum: 'ミュージアム OR 歴史館 OR 資料館', ramen: 'ラーメン', udon: 'うどん', soba: 'そば', sightseeing: '観光スポット' };
     let nearbyState = { cats: ['spot'] };
     const filterState = Object.assign(
         { shop: true, castle: true, michi: true, manhole: true, mhcard: true },
