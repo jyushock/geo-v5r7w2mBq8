@@ -1126,17 +1126,30 @@ map.on('zoomend', () => { isZooming = false; });
         const allLayers = map.getStyle().layers;
         if (!allLayers) return;
 
+        // symbol-sort-key 優先度定義（小さいほど優先表示）
+        // -100: 主要駅  0: バス停  100: 一般POI・地名  200: 国道シールド・道路名
         allLayers.forEach(layer => {
             const isShield = layer.id.includes('shield');
             const isTransName = layer['source-layer'] === 'transportation_name';
             if (isShield || isTransName) {
-                // 国道表記を表示するため visibility:none の設定を削除
+                // 国道シールド・道路名は最背面（駅より必ず背面）
+                try {
+                    map.setLayoutProperty(layer.id, 'symbol-sort-key', 200);
+                    map.setLayoutProperty(layer.id, 'text-ignore-placement', false);
+                    map.setLayoutProperty(layer.id, 'icon-ignore-placement', false);
+                } catch (e) {}
                 return;
             }
             if (ownLayerPrefixes.some(p => layer.id.startsWith(p))) return;
             try {
                 if (layer.type === 'symbol' && layer.layout && layer.layout['text-field']) {
                     map.setLayoutProperty(layer.id, 'text-field', ['coalesce', ['get', 'name:ja'], ['get', 'name']]);
+                    // 駅レイヤー以外の全シンボルに sort-key=100 を設定（駅より背面）
+                    if (!stationLayerIds.includes(layer.id)) {
+                        map.setLayoutProperty(layer.id, 'symbol-sort-key', 100);
+                        map.setLayoutProperty(layer.id, 'text-ignore-placement', false);
+                        map.setLayoutProperty(layer.id, 'icon-ignore-placement', false);
+                    }
                 }
                 if (stationLayerIds.includes(layer.id)) {
                     map.setFilter(layer.id, ['all', ['has', 'name'], ['!', ['in', ['get', 'subclass'], ['literal', carSubclasses]]]]);
@@ -1146,7 +1159,8 @@ map.on('zoomend', () => { isZooming = false; });
                     map.setLayoutProperty(layer.id, 'icon-ignore-placement', true);
                     map.setLayoutProperty(layer.id, 'text-allow-overlap', ['case', isMainStation, true, false]);
                     map.setLayoutProperty(layer.id, 'icon-allow-overlap', ['case', isMainStation, true, false]);
-                    map.setLayoutProperty(layer.id, 'symbol-sort-key', ['case', isMainStation, -100, 50]);
+                    // 主要駅=-100、バス停=0、その他=50
+                    map.setLayoutProperty(layer.id, 'symbol-sort-key', ['case', isMainStation, -100, isBusStop, 0, 50]);
                     map.setLayoutProperty(layer.id, 'text-variable-anchor', ['literal', null]);
                     map.setLayoutProperty(layer.id, 'text-anchor', 'top');
                     map.setLayoutProperty(layer.id, 'text-offset', ['case', isMainStation, ['literal', [0, 0.9]], isBusStop, ['literal', [0, 0.6]], ['literal', [0, 0.4]]]);
