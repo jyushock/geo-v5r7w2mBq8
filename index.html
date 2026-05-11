@@ -1167,8 +1167,9 @@ map.on('zoomend', () => { isZooming = false; });
                     // 全駅をoverlap許可し、rankが小さいほど優先（実データでrank=1が主要駅）
                     map.setLayoutProperty(layer.id, 'text-allow-overlap', true);
                     map.setLayoutProperty(layer.id, 'icon-allow-overlap', true);
-                    // symbol-sort-keyにrankを使用（小さいほど優先）、バス停は大きな値で後退
-                    map.setLayoutProperty(layer.id, 'symbol-sort-key', ['case', isMainStation, ['get', 'rank'], isBusStop, 500, 200]);
+                    // 駅(railway)はrank値そのまま（1〜数十程度）、バス停は+1000でオフセットして必ず駅より後退
+                    // ※実データ確認済み: busのrankは1〜10以上、railwayのrankは2以上
+                    map.setLayoutProperty(layer.id, 'symbol-sort-key', ['case', isMainStation, ['get', 'rank'], ['+', ['get', 'rank'], 1000]]);
                     map.setLayoutProperty(layer.id, 'text-variable-anchor', ['literal', null]);
                     map.setLayoutProperty(layer.id, 'text-anchor', 'top');
                     map.setLayoutProperty(layer.id, 'text-offset', ['case', isMainStation, ['literal', [0, 0.9]], isBusStop, ['literal', [0, 0.6]], ['literal', [0, 0.4]]]);
