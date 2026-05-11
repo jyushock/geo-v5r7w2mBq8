@@ -1255,6 +1255,49 @@ map.on('zoomend', () => { isZooming = false; });
             }, 'michi-cluster');
             map.setLayerZoomRange('poi_transit_rail', 1, 24);
         } catch (e) { console.error('poi_transit_rail追加エラー:', e); }
+
+        // 自動動作確認チェック
+        setTimeout(() => {
+            const results = [];
+            const ok  = (msg) => { results.push('✅ ' + msg); };
+            const err = (msg) => { results.push('❌ ' + msg); };
+
+            // 1. poi_transit_railレイヤーが存在するか
+            map.getLayer('poi_transit_rail') ? ok('poi_transit_rail レイヤー存在') : err('poi_transit_rail レイヤーが存在しない');
+
+            // 2. poi_transitがバス停専用フィルターになっているか
+            const busFilter = map.getFilter('poi_transit');
+            const busOnly = JSON.stringify(busFilter).includes('"bus"') && !JSON.stringify(busFilter).includes('"railway"');
+            busOnly ? ok('poi_transit フィルター: バス停専用') : err('poi_transit フィルター: railway が混在している');
+
+            // 3. poi_transit_railが駅専用フィルターになっているか
+            const railFilter = map.getFilter('poi_transit_rail');
+            const railOnly = JSON.stringify(railFilter).includes('"railway"') && !JSON.stringify(railFilter).includes('"bus"');
+            railOnly ? ok('poi_transit_rail フィルター: 駅専用') : err('poi_transit_rail フィルター: 不正');
+
+            // 4. poi_transit_railのtext-allow-overlapがtrueか
+            const tao = map.getLayoutProperty('poi_transit_rail', 'text-allow-overlap');
+            tao === true ? ok('poi_transit_rail text-allow-overlap: true') : err('poi_transit_rail text-allow-overlap: ' + tao);
+
+            // 5. poi_transitのtext-allow-overlapがfalseか
+            const taoB = map.getLayoutProperty('poi_transit', 'text-allow-overlap');
+            taoB === false ? ok('poi_transit text-allow-overlap: false') : err('poi_transit text-allow-overlap: ' + taoB);
+
+            // 6. レイヤー描画順: poi_transit_railがpoi_transitより上か
+            const layers = map.getStyle().layers;
+            const transitIdx = layers.findIndex(l => l.id === 'poi_transit');
+            const railIdx    = layers.findIndex(l => l.id === 'poi_transit_rail');
+            railIdx > transitIdx ? ok('描画順: poi_transit_rail(' + railIdx + ') > poi_transit(' + transitIdx + ')') : err('描画順が逆転している');
+
+            // 7. アイコン画像が存在するか
+            map.hasImage('railway') ? ok('railway アイコン存在') : err('railway アイコンが存在しない');
+            map.hasImage('bus')     ? ok('bus アイコン存在')     : err('bus アイコンが存在しない');
+
+            console.log('=== 動作確認結果 ===');
+            results.forEach(r => console.log(r));
+            const passed = results.filter(r => r.startsWith('✅')).length;
+            console.log(passed + '/' + results.length + ' 項目通過');
+        }, 3000);
     });
 
     map.on('load', () => {
