@@ -1775,7 +1775,7 @@ map.on('zoomend', () => { isZooming = false; });
     let nearbyAllResults = [];
     let nearbyTypeFilter = new Set();
     const filterState = Object.assign(
-        { shop: true, castle: true, michi: true, manhole: true, mhcard: true },
+        { shop: true, castle: true, michi: true, manhole: true, mhcard: false },
         savedSettings ? savedSettings.filter : {}
     );
     const labelState = Object.assign(
