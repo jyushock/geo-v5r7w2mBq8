@@ -499,6 +499,41 @@
         #nearby-list {
             overflow-y: auto;
         }
+        #nearby-type-filter {
+            display: none;
+            padding: 6px 10px;
+            border-bottom: 1px solid #f0f0f0;
+            flex-shrink: 0;
+            overflow-x: auto;
+            white-space: nowrap;
+            gap: 6px;
+        }
+        .nearby-type-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 10px;
+            border-radius: 16px;
+            border: 1.5px solid #e0e0e0;
+            background: #f5f5f5;
+            color: #999;
+            font-size: 11px;
+            font-family: sans-serif;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.15s, color 0.15s, border-color 0.15s;
+        }
+        .nearby-type-chip.active {
+            border-color: currentColor;
+            background: white;
+        }
+        .nearby-type-chip .chip-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            background: currentColor;
+        }
         .nearby-item {
             display: flex;
             align-items: center;
@@ -695,6 +730,7 @@
         <div style="width:36px;height:4px;background:#ccc;border-radius:2px;margin-bottom:6px;"></div>
         <span id="nearby-result-title" style="font-weight:bold;font-size:14px;color:#333;align-self:flex-start;"></span>
     </div>
+    <div id="nearby-type-filter"></div>
     <div id="nearby-list" style="overflow-y:auto;flex:1;"></div>
 </div>
 
@@ -1733,6 +1769,8 @@ map.on('zoomend', () => { isZooming = false; });
 
     const gmapKeywords = { supermarket: 'スーパー', transit: '駅 OR バス停', restaurant: 'レストラン', coffee: 'カフェ', statue: '像', takeout: 'テイクアウト', museum: 'ミュージアム OR 歴史館 OR 資料館', ramen: 'ラーメン', udon: 'うどん', soba: 'そば', sightseeing: '観光スポット' };
     let nearbyState = { cats: ['spot'] };
+    let nearbyAllResults = [];
+    let nearbyTypeFilter = new Set();
     const filterState = Object.assign(
         { shop: true, castle: true, michi: true, manhole: true, mhcard: true },
         savedSettings ? savedSettings.filter : {}
@@ -1825,46 +1863,90 @@ map.on('zoomend', () => { isZooming = false; });
             return window.open(`https://www.google.com/maps/search/${encodeURIComponent(keyword)}/@${searchLat},${searchLng},${zoom}z`, '_blank');
         }
 
-        const RADIUS = 10;
+        const RADIUS = 100;
         const typeToFilter = {
             shop: 'shop', castle: 'castle', michi: 'michi',
             manhole: 'manhole', pokefuta: 'manhole', mhcard: 'mhcard'
         };
-        const results = searchIndex
+        nearbyAllResults = searchIndex
             .filter(item => {
                 const filterKey = typeToFilter[item.type];
                 return !(filterKey && filterState[filterKey] === false);
             })
             .map(item => ({...item, dist: calcDist(searchLat, searchLng, item.coords[1], item.coords[0])}))
             .filter(item => item.dist <= RADIUS)
-            .sort((a, b) => a.dist - b.dist)
-            .slice(0, 20);
-        
-        closeNearby();
-        const list = document.getElementById('nearby-list');
-        document.getElementById('nearby-result-title').textContent = `マップ中心から${RADIUS}km以内`;
+            .sort((a, b) => a.dist - b.dist);
 
-        if (results.length === 0) {
-            list.innerHTML = `<div style="padding:16px;text-align:center;color:#999;font-size:13px;">${RADIUS}km以内にスポットが見つかりません</div>`;
-        } else {
-            list.innerHTML = '';
-            results.forEach(item => {
-                const cfg = typeConfig[item.type];
-                const isMhcard = item.type === 'mhcard';
-                const distStr = item.dist < 1 ? `${Math.round(item.dist * 1000)}m` : `${item.dist.toFixed(1)}km`;
-                const div = document.createElement('div');
-                div.className = 'nearby-item';
-                const iconPart = isMhcard
-                    ? `<div style="position:relative;width:28px;height:36px;flex-shrink:0;background:#e2ddd4;border-radius:6px;"><img src="mhcard.png" style="width:28px;height:36px;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:11px;height:11px;filter:brightness(0) invert(1);pointer-events:none;"></div>`
-                    : `<div class="nearby-item-icon" style="background:${getItemColor(item)}">${cfg.img ? `<img src="${cfg.img}">` : cfg.icon}</div>`;
-                div.innerHTML = `${iconPart}<div class="nearby-item-text"><div class="nearby-item-name">${item.label}</div><div class="nearby-item-sub">${item.sub}</div></div><div class="nearby-item-dist">${distStr}</div>`;
-                div.addEventListener('click', () => { closeNearbyResult(); onResultClick(item); });
-                list.appendChild(div);
-            });
-        }
+        // タイプフィルターを全種類ONで初期化
+        const typesInResults = [...new Set(nearbyAllResults.map(i => i.type))];
+        nearbyTypeFilter = new Set(typesInResults);
+
+        closeNearby();
+        document.getElementById('nearby-result-title').textContent = `マップ中心から${RADIUS}km以内`;
+        buildNearbyTypeFilterChips(typesInResults);
+        renderNearbyList();
         document.getElementById('nearby-result-panel').style.bottom = '0';
         document.getElementById('nearby-result-overlay').style.display = 'block';
     }
+    function buildNearbyTypeFilterChips(types) {
+        const strip = document.getElementById('nearby-type-filter');
+        if (types.length <= 1) { strip.style.display = 'none'; return; }
+        strip.style.display = 'flex';
+        strip.innerHTML = '';
+        const typeOrder = ['shop', 'castle', 'michi', 'manhole', 'pokefuta', 'mhcard'];
+        const sorted = [...types].sort((a, b) => typeOrder.indexOf(a) - typeOrder.indexOf(b));
+        sorted.forEach(type => {
+            const cfg = typeConfig[type];
+            if (!cfg) return;
+            const count = nearbyAllResults.filter(i => i.type === type).length;
+            const color = type === 'castle' ? '#546E7A' : cfg.color;
+            const chip = document.createElement('button');
+            chip.className = 'nearby-type-chip active';
+            chip.dataset.type = type;
+            chip.style.color = color;
+            chip.innerHTML = `<span class="chip-dot"></span>${cfg.label} <span style="opacity:0.7">${count}</span>`;
+            chip.addEventListener('click', (e) => { e.stopPropagation(); toggleNearbyTypeFilter(type); });
+            strip.appendChild(chip);
+        });
+    }
+
+    function toggleNearbyTypeFilter(type) {
+        if (nearbyTypeFilter.has(type)) {
+            nearbyTypeFilter.delete(type);
+        } else {
+            nearbyTypeFilter.add(type);
+        }
+        document.querySelectorAll('#nearby-type-filter .nearby-type-chip').forEach(chip => {
+            chip.classList.toggle('active', nearbyTypeFilter.has(chip.dataset.type));
+        });
+        renderNearbyList();
+    }
+
+    function renderNearbyList() {
+        const list = document.getElementById('nearby-list');
+        const filtered = nearbyAllResults
+            .filter(item => nearbyTypeFilter.has(item.type))
+            .slice(0, 100);
+        if (filtered.length === 0) {
+            list.innerHTML = `<div style="padding:16px;text-align:center;color:#999;font-size:13px;">条件に一致するスポットがありません</div>`;
+            return;
+        }
+        list.innerHTML = '';
+        filtered.forEach(item => {
+            const cfg = typeConfig[item.type];
+            const isMhcard = item.type === 'mhcard';
+            const distStr = item.dist < 1 ? `${Math.round(item.dist * 1000)}m` : `${item.dist.toFixed(1)}km`;
+            const div = document.createElement('div');
+            div.className = 'nearby-item';
+            const iconPart = isMhcard
+                ? `<div style="position:relative;width:28px;height:36px;flex-shrink:0;background:#e2ddd4;border-radius:6px;"><img src="mhcard.png" style="width:28px;height:36px;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:11px;height:11px;filter:brightness(0) invert(1);pointer-events:none;"></div>`
+                : `<div class="nearby-item-icon" style="background:${getItemColor(item)}">${cfg.img ? `<img src="${cfg.img}">` : cfg.icon}</div>`;
+            div.innerHTML = `${iconPart}<div class="nearby-item-text"><div class="nearby-item-name">${item.label}</div><div class="nearby-item-sub">${item.sub}</div></div><div class="nearby-item-dist">${distStr}</div>`;
+            div.addEventListener('click', () => { closeNearbyResult(); onResultClick(item); });
+            list.appendChild(div);
+        });
+    }
+
     function closeNearbyResult() {
         const panel = document.getElementById('nearby-result-panel');
         panel.style.transition = '';
