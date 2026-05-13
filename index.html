@@ -726,9 +726,12 @@
     max-height:60vh; display:flex; flex-direction:column;
     font-family: sans-serif;
 ">
-    <div id="nearby-result-header" onclick="closeNearbyResult()" style="display:flex;flex-direction:column;align-items:center;padding:8px 16px 6px;flex-shrink:0;cursor:pointer;border-bottom:1px solid #f0f0f0;">
-        <div style="width:36px;height:4px;background:#ccc;border-radius:2px;margin-bottom:6px;"></div>
-        <span id="nearby-result-title" style="font-weight:bold;font-size:14px;color:#333;align-self:flex-start;"></span>
+    <div id="nearby-result-header" style="display:flex;flex-direction:column;align-items:center;padding:8px 16px 6px;flex-shrink:0;border-bottom:1px solid #f0f0f0;cursor:grab;">
+        <div style="width:36px;height:4px;background:#ccc;border-radius:2px;margin-bottom:8px;"></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+            <span id="nearby-result-title" style="font-weight:bold;font-size:14px;color:#333;"></span>
+            <button onclick="closeNearbyResult()" style="background:none;border:none;font-size:22px;color:#bbb;cursor:pointer;padding:0 0 0 16px;line-height:1;flex-shrink:0;">×</button>
+        </div>
     </div>
     <div id="nearby-type-filter"></div>
     <div id="nearby-list" style="overflow-y:auto;flex:1;"></div>
@@ -1962,7 +1965,8 @@ map.on('zoomend', () => { isZooming = false; });
 
         panel.addEventListener('touchstart', (e) => {
             startY = e.touches[0].clientY;
-            startedInHeader = header.contains(e.target);
+            // × ボタン以外のヘッダー領域をスワイプ起点とする
+            startedInHeader = header.contains(e.target) && e.target.tagName !== 'BUTTON';
         }, { passive: true });
 
         panel.addEventListener('touchmove', (e) => {
