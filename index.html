@@ -1213,6 +1213,14 @@ map.on('zoomend', () => { isZooming = false; });
                     map.setPaintProperty(layer.id, 'text-color', ['case', isMainStation, '#0D47A1', isBusStop, '#2E7D32', '#444444']);
                     map.setPaintProperty(layer.id, 'text-halo-color', '#FFFFFF');
                     map.setPaintProperty(layer.id, 'text-halo-width', ['case', isMainStation, 2.5, 1.0]);
+                    map.setPaintProperty(layer.id, 'text-opacity', ['case', isBusStop,
+                        ['interpolate', ['linear'], ['zoom'], 13, 0, 14, 1],
+                        1
+                    ]);
+                    map.setPaintProperty(layer.id, 'icon-opacity', ['case', isBusStop,
+                        ['interpolate', ['linear'], ['zoom'], 13, 0, 14, 1],
+                        1
+                    ]);
                 }
                 if (layer.type === 'fill') {
                     const lid = layer.id.toLowerCase();
@@ -1718,12 +1726,28 @@ map.on('zoomend', () => { isZooming = false; });
         input.dispatchEvent(new Event('input'));
     }
 
+    function tryParseCoords(q) {
+        const m = q.match(/^\s*(-?\d+\.?\d*)\s*[,\s]+\s*(-?\d+\.?\d*)\s*$/);
+        if (!m) return null;
+        const a = parseFloat(m[1]), b = parseFloat(m[2]);
+        if (a >= -90 && a <= 90 && b >= -180 && b <= 180) return { lat: a, lng: b };
+        return null;
+    }
+
     document.getElementById('search-input').addEventListener('input', async (e) => {
         const q = e.target.value.trim();
         document.getElementById('search-clear').style.display = q ? 'block' : 'none';
         document.getElementById('search-results').style.display = q ? 'block' : 'none';
         document.getElementById('search-spinner').style.display = 'none';
         if (!q) return;
+
+        const coords = tryParseCoords(q);
+        if (coords) {
+            if (trackingMode > 0) { trackingMode = 0; stopRafLoop(); updateGeolocateButton(); }
+            map.easeTo({ center: [coords.lng, coords.lat], zoom: Math.max(map.getZoom(), 15), duration: 500 });
+            clearSearch();
+            return;
+        }
 
         const local = searchLocal(q);
         const reqId = ++searchRequestId;
