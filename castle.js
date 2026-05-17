@@ -1,4 +1,4 @@
-﻿const castleData = {
+const castleData = {
   "type": "FeatureCollection",
   "features": [
     {
@@ -94805,6 +94805,652 @@
         "prefecture": "",
         "url": "",
         "address": "青森県むつ市城ヶ沢畑下丁塚"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.15124850,
+          37.88640690
+        ]
+      },
+      "properties": {
+        "name": "鷺城（米沢市）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.15599980,
+          37.88831810
+        ]
+      },
+      "properties": {
+        "name": "早坂山舘（米沢市）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.07998610,
+          37.89809570
+        ]
+      },
+      "properties": {
+        "name": "片倉山館（米沢市）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.03919080,
+          38.09869980
+        ]
+      },
+      "properties": {
+        "name": "白山館（長井市）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.99850280,
+          38.12547210
+        ]
+      },
+      "properties": {
+        "name": "白山森館（長井市）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.02866000,
+          38.09593270
+        ]
+      },
+      "properties": {
+        "name": "正福寺館（長井市）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.02078920,
+          38.07572550
+        ]
+      },
+      "properties": {
+        "name": "時庭館（長井市）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.99769970,
+          38.09739320
+        ]
+      },
+      "properties": {
+        "name": "片倉館（長井市）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.05893060,
+          38.12697390
+        ]
+      },
+      "properties": {
+        "name": "横沢山館（長井市）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.13551320,
+          38.08165680
+        ]
+      },
+      "properties": {
+        "name": "宮沢城（南陽市）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.16245310,
+          38.05808720
+        ]
+      },
+      "properties": {
+        "name": "二色根館（南陽市）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.20244400,
+          38.09869400
+        ]
+      },
+      "properties": {
+        "name": "岩部山館（南陽市）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.08774630,
+          38.05677780
+        ]
+      },
+      "properties": {
+        "name": "梨郷上館（南陽市）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.17567590,
+          38.09022980
+        ]
+      },
+      "properties": {
+        "name": "虚空蔵山館（南陽市）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.15436100,
+          38.02355600
+        ]
+      },
+      "properties": {
+        "name": "大橋城（南陽市）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.25275360,
+          38.01818500
+        ]
+      },
+      "properties": {
+        "name": "志田館（高畠町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.28204060,
+          38.01781140
+        ]
+      },
+      "properties": {
+        "name": "屋代館（高畠町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.19117650,
+          37.99065840
+        ]
+      },
+      "properties": {
+        "name": "塩森館（高畠町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.13617700,
+          38.01050220
+        ]
+      },
+      "properties": {
+        "name": "資福寺館（高畠町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.16659180,
+          38.00474710
+        ]
+      },
+      "properties": {
+        "name": "一本柳館（高畠町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.02597090,
+          37.97326320
+        ]
+      },
+      "properties": {
+        "name": "柳沢館（川西町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.07601050,
+          38.04284940
+        ]
+      },
+      "properties": {
+        "name": "大塚城（川西町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.12843360,
+          38.01448820
+        ]
+      },
+      "properties": {
+        "name": "洲島館（川西町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.97481430,
+          37.92824380
+        ]
+      },
+      "properties": {
+        "name": "館山館（川西町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.68427960,
+          37.95749040
+        ]
+      },
+      "properties": {
+        "name": "大窪砦（小国町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.76441760,
+          38.17044730
+        ]
+      },
+      "properties": {
+        "name": "驚城山（小国町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.76080680,
+          38.15588970
+        ]
+      },
+      "properties": {
+        "name": "長沢城ケ峯（小国町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.86435940,
+          38.01086550
+        ]
+      },
+      "properties": {
+        "name": "白子沢城山（小国町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.09040240,
+          38.17058300
+        ]
+      },
+      "properties": {
+        "name": "黒藤館（白鷹町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.10489290,
+          38.15971290
+        ]
+      },
+      "properties": {
+        "name": "杉沢館（白鷹町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.05634870,
+          38.16678130
+        ]
+      },
+      "properties": {
+        "name": "高玉城（白鷹町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.04650000,
+          38.17794400
+        ]
+      },
+      "properties": {
+        "name": "横越館（白鷹町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.84214800,
+          37.90475300
+        ]
+      },
+      "properties": {
+        "name": "岩倉館（飯豊町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.98696580,
+          38.06265170
+        ]
+      },
+      "properties": {
+        "name": "萩生城（飯豊町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.95881600,
+          38.01067260
+        ]
+      },
+      "properties": {
+        "name": "手ノ子西館（飯豊町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.98585160,
+          38.04194810
+        ]
+      },
+      "properties": {
+        "name": "椿館（飯豊町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.89045790,
+          37.91960860
+        ]
+      },
+      "properties": {
+        "name": "上原館（飯豊町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
+      }
+    },,
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.01421970,
+          38.06267020
+        ]
+      },
+      "properties": {
+        "name": "黒沢中館（飯豊町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": ""
       }
     }
   ]
