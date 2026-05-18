@@ -1730,16 +1730,18 @@ map.on('zoomend', () => { isZooming = false; });
     function tryParsePlusCode(q) {
         try {
             const code = q.trim().toUpperCase();
-            // フルコード
-            if (OpenLocationCode.isValid(code) && OpenLocationCode.isFull(code)) {
-                const area = OpenLocationCode.decode(code);
-                return { lat: area.latitudeCenter, lng: area.longitudeCenter };
+            const firstToken = code.split(/\s+/)[0];
+            // フルコード（文字列全体 or 先頭トークン）
+            for (const c of [code, firstToken]) {
+                if (OpenLocationCode.isValid(c) && OpenLocationCode.isFull(c)) {
+                    const area = OpenLocationCode.decode(c);
+                    return { lat: area.latitudeCenter, lng: area.longitudeCenter };
+                }
             }
             // ショートコード（例: "4MXV+QR 渋谷区"）- 地図中心を参照位置として解決
-            const shortPart = code.split(/\s+/)[0];
-            if (OpenLocationCode.isValid(shortPart) && OpenLocationCode.isShort(shortPart)) {
+            if (OpenLocationCode.isValid(firstToken) && OpenLocationCode.isShort(firstToken)) {
                 const center = map.getCenter();
-                const full = OpenLocationCode.recoverNearest(shortPart, center.lat, center.lng);
+                const full = OpenLocationCode.recoverNearest(firstToken, center.lat, center.lng);
                 const area = OpenLocationCode.decode(full);
                 return { lat: area.latitudeCenter, lng: area.longitudeCenter };
             }
