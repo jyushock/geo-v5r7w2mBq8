@@ -15,6 +15,7 @@
     <link rel="icon" href="icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="icon.svg">
     <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
+    <script src="https://unpkg.com/open-location-code/openlocationcode.js"></script>
     <link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
     <script src="data.js"></script>
     <script src="castle.js"></script>
@@ -1726,6 +1727,15 @@ map.on('zoomend', () => { isZooming = false; });
         input.dispatchEvent(new Event('input'));
     }
 
+    function tryParsePlusCode(q) {
+        try {
+            const code = q.trim().toUpperCase();
+            if (!OpenLocationCode.isValid(code) || !OpenLocationCode.isFull(code)) return null;
+            const area = OpenLocationCode.decode(code);
+            return { lat: area.latitudeCenter, lng: area.longitudeCenter };
+        } catch (e) { return null; }
+    }
+
     function tryParseCoords(q) {
         const m = q.match(/^\s*(-?\d+\.?\d*)\s*[,\s]+\s*(-?\d+\.?\d*)\s*$/);
         if (!m) return null;
@@ -1741,7 +1751,7 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('search-spinner').style.display = 'none';
         if (!q) return;
 
-        const coords = tryParseCoords(q);
+        const coords = tryParseCoords(q) || tryParsePlusCode(q);
         if (coords) {
             if (trackingMode > 0) { trackingMode = 0; stopRafLoop(); updateGeolocateButton(); }
             map.easeTo({ center: [coords.lng, coords.lat], zoom: Math.max(map.getZoom(), 15), duration: 500 });
