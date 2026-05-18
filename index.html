@@ -1729,22 +1729,29 @@ map.on('zoomend', () => { isZooming = false; });
 
     function tryParsePlusCode(q) {
         try {
-            const code = q.trim().toUpperCase();
-            const firstToken = code.split(/\s+/)[0];
-            // フルコード（文字列全体 or 先頭トークン）
-            for (const c of [code, firstToken]) {
-                if (OpenLocationCode.isValid(c) && OpenLocationCode.isFull(c)) {
-                    const area = OpenLocationCode.decode(c);
+            if (!q.includes('+')) return null;
+            const OLC = '23456789CFGHJMPQRVWX0';
+            const re = new RegExp('([' + OLC + ']{2,8})\\+([' + OLC + ']{2,})', 'i');
+            const m = q.trim().match(re);
+            if (!m) return null;
+            const plc = (m[1] + '+' + m[2]).toUpperCase();
+            const olc = new OpenLocationCode();
+            // フルコード
+            try {
+                if (olc.isFull(plc)) {
+                    const area = olc.decode(plc);
                     return { lat: area.latitudeCenter, lng: area.longitudeCenter };
                 }
-            }
-            // ショートコード（例: "4MXV+QR 渋谷区"）- 地図中心を参照位置として解決
-            if (OpenLocationCode.isValid(firstToken) && OpenLocationCode.isShort(firstToken)) {
-                const center = map.getCenter();
-                const full = OpenLocationCode.recoverNearest(firstToken, center.lat, center.lng);
-                const area = OpenLocationCode.decode(full);
-                return { lat: area.latitudeCenter, lng: area.longitudeCenter };
-            }
+            } catch (e) {}
+            // ショートコード（地図中心を参照位置として解決）
+            try {
+                if (olc.isShort(plc)) {
+                    const center = map.getCenter();
+                    const full = olc.recoverNearest(plc, center.lat, center.lng);
+                    const area = olc.decode(full);
+                    return { lat: area.latitudeCenter, lng: area.longitudeCenter };
+                }
+            } catch (e) {}
             return null;
         } catch (e) { return null; }
     }
