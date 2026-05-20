@@ -256,9 +256,9 @@
         .btn-nav { background: #4285F4; }
         .btn-nav-yahoo { background: #FF0033; color: white; }
         .btn-pokefuta { background: #FBBC04; color: #333; }
-        .btn-michi-web { background: #34A853; color: #fff; }
-        .btn-michi-hp  { background: #F57C00; color: #fff; }
-        .btn-michi-eki { background: #283593; color: #fff; }
+        .btn-michi-web { background: #283593; color: #fff; }
+        .btn-michi-hp  { background: #795548; color: #fff; }
+        .btn-michi-eki { background: #34A853; color: #fff; }
         .btn-kojodan { background: #8B4513; color: #fff; }
         .btn-access  { background: #00897B; color: #fff; }
         .popup-address { font-size: 11px; color: #555; display: block; margin-bottom: 4px; }
@@ -1508,11 +1508,11 @@ map.on('zoomend', () => { isZooming = false; });
                         const addressHtml  = p.address       ? `<span class="popup-address">${p.address}</span>` : '';
                         const roadHtml     = p.road          ? `<span class="popup-road">📍 ${p.road}</span>` : '';
                         const hoursHtml    = p.businessHours ? `<span class="popup-road">🕐 ${p.businessHours}</span>` : '';
-                        const hpBtn        = p.homepage      ? `<a href="${p.homepage}" target="_blank" class="btn btn-michi-hp">ホームページ</a>` : '';
-                        const hp2Btn       = p.homepage2     ? `<a href="${p.homepage2}" target="_blank" class="btn btn-michi-hp">ホームページ2</a>` : '';
-                        const ekiBtn       = p.michiEkiUrl   ? `<a href="${p.michiEkiUrl}" target="_blank" class="btn btn-michi-eki">道の駅HP</a>` : '';
-                        const urlBtn       = p.url           ? `<a href="${p.url}" target="_blank" class="btn btn-michi-web">道の駅情報</a>` : '';
-                        popupHtml = `<div class="popup-card"><span class="popup-title">${p.name}</span>${roadHtml}${addressHtml}${hoursHtml}<a href="${gmapUrl}" target="_blank" class="btn btn-gmap">GoogleMap</a>${hpBtn}${hp2Btn}${ekiBtn}${urlBtn}<a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く(Google)</a><a href="${yahooNavUrl}" class="btn btn-nav-yahoo">ここへ行く(Yahoo)</a></div>`;
+                        const urlBtn       = p.url         ? `<a href="${p.url}" target="_blank" class="btn btn-michi-web">公式ページ</a>` : '';
+                        const hpBtn        = p.homepage    ? `<a href="${p.homepage}" target="_blank" class="btn btn-michi-hp">施設HP</a>` : '';
+                        const hp2Btn       = p.homepage2   ? `<a href="${p.homepage2}" target="_blank" class="btn btn-michi-hp">関連HP</a>` : '';
+                        const ekiBtn       = p.michiEkiUrl ? `<a href="${p.michiEkiUrl}" target="_blank" class="btn btn-michi-eki">michieki.jp</a>` : '';
+                        popupHtml = `<div class="popup-card"><span class="popup-title">${p.name}</span>${roadHtml}${addressHtml}${hoursHtml}<a href="${gmapUrl}" target="_blank" class="btn btn-gmap">GoogleMap</a>${urlBtn}${hpBtn}${hp2Btn}${ekiBtn}<a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く(Google)</a><a href="${yahooNavUrl}" class="btn btn-nav-yahoo">ここへ行く(Yahoo)</a></div>`;
                     } else {
                         const gmapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name)}`;
                         const addressHtml = p.address ? `<span class="popup-address">${p.address}</span>` : '';
@@ -1712,11 +1712,11 @@ map.on('zoomend', () => { isZooming = false; });
             const addressHtml  = p.address       ? `<span class="popup-address">${p.address}</span>` : '';
             const roadHtml     = p.road          ? `<span class="popup-road">📍 ${p.road}</span>` : '';
             const hoursHtml    = p.businessHours ? `<span class="popup-road">🕐 ${p.businessHours}</span>` : '';
-            const hpBtn        = p.homepage      ? `<a href="${p.homepage}" target="_blank" class="btn btn-michi-hp">ホームページ</a>` : '';
-            const hp2Btn       = p.homepage2     ? `<a href="${p.homepage2}" target="_blank" class="btn btn-michi-hp">ホームページ2</a>` : '';
-            const ekiBtn       = p.michiEkiUrl   ? `<a href="${p.michiEkiUrl}" target="_blank" class="btn btn-michi-eki">道の駅HP</a>` : '';
-            const urlBtn       = p.url           ? `<a href="${p.url}" target="_blank" class="btn btn-michi-web">道の駅情報</a>` : '';
-            popupHtml = `<div class="popup-card"><span class="popup-title">${item.label}</span>${roadHtml}${addressHtml}${hoursHtml}<a href="${gmapUrl}" target="_blank" class="btn btn-gmap">GoogleMap</a>${hpBtn}${hp2Btn}${ekiBtn}${urlBtn}<a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く(Google)</a><a href="${yahooNavUrl}" class="btn btn-nav-yahoo">ここへ行く(Yahoo)</a></div>`;
+            const urlBtn       = p.url         ? `<a href="${p.url}" target="_blank" class="btn btn-michi-web">公式ページ</a>` : '';
+            const hpBtn        = p.homepage    ? `<a href="${p.homepage}" target="_blank" class="btn btn-michi-hp">施設HP</a>` : '';
+            const hp2Btn       = p.homepage2   ? `<a href="${p.homepage2}" target="_blank" class="btn btn-michi-hp">関連HP</a>` : '';
+            const ekiBtn       = p.michiEkiUrl ? `<a href="${p.michiEkiUrl}" target="_blank" class="btn btn-michi-eki">michieki.jp</a>` : '';
+            popupHtml = `<div class="popup-card"><span class="popup-title">${item.label}</span>${roadHtml}${addressHtml}${hoursHtml}<a href="${gmapUrl}" target="_blank" class="btn btn-gmap">GoogleMap</a>${urlBtn}${hpBtn}${hp2Btn}${ekiBtn}<a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く(Google)</a><a href="${yahooNavUrl}" class="btn btn-nav-yahoo">ここへ行く(Yahoo)</a></div>`;
         } else {
             const gmapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.label)}`;
             const addressHtml = p.address ? `<span class="popup-address">${p.address}</span>` : '';
