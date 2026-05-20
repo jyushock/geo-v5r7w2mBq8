@@ -17,7 +17,10 @@ const michiNoEkiGeoJSON = {
         "city": "三笠市",
         "address": "北海道三笠市岡山1056-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18786"
+        "url": "https://www.michi-no-eki.jp/stations/views/18786",
+        "businessHours": "9:00～18:00（4～9月） 9:00～17:00（10～3月）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/172/",
+        "homepage2": "http://www.city.mikasa.hokkaido.jp/hotnews/detail/00000036.html"
       }
     },
     {
@@ -36,7 +39,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "北海道芦別市北４条東1-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18787"
+        "url": "https://www.michi-no-eki.jp/stations/views/18787",
+        "businessHours": "9:00～19:00（5～10月）9:00～18:00（11～4月）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/202/",
+        "homepage2": "https://go-to-ashibetsu.com/media/2018/04/01/20"
       }
     },
     {
@@ -55,7 +61,10 @@ const michiNoEkiGeoJSON = {
         "city": "南富良野町",
         "address": "北海道空知郡南富良野町字幾寅687",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18788"
+        "url": "https://www.michi-no-eki.jp/stations/views/18788",
+        "businessHours": "9:00～17:00（6～9月は19:00まで）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/222/",
+        "homepage2": ""
       }
     },
     {
@@ -74,7 +83,10 @@ const michiNoEkiGeoJSON = {
         "city": "白糠町",
         "address": "北海道白糠郡白糠町恋問3丁目2-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18789"
+        "url": "https://www.michi-no-eki.jp/stations/views/18789",
+        "businessHours": "9:00～19：00 テナント10：00～19：00(ラストオーダー18：30）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/263/",
+        "homepage2": "https://michinoeki-shiranuka.jp/"
       }
     },
     {
@@ -93,7 +105,10 @@ const michiNoEkiGeoJSON = {
         "city": "美深町",
         "address": "北海道中川郡美深町字大手307-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18790"
+        "url": "https://www.michi-no-eki.jp/stations/views/18790",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/292/",
+        "homepage2": "http://www.bifuka-kankou.com/michinoeki.php"
       }
     },
     {
@@ -112,7 +127,10 @@ const michiNoEkiGeoJSON = {
         "city": "江差町",
         "address": "北海道檜山郡江差町字尾山町1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18791"
+        "url": "https://www.michi-no-eki.jp/stations/views/18791",
+        "businessHours": "9:00～17:00（4～11月） 10:00～16:00（12～3月）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/321/",
+        "homepage2": "http://www.hokkaido-esashi.jp/modules/sightseeing/content0023.html"
       }
     },
     {
@@ -131,7 +149,10 @@ const michiNoEkiGeoJSON = {
         "city": "喜茂別町",
         "address": "北海道虻田郡喜茂別町字川上345",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18792"
+        "url": "https://www.michi-no-eki.jp/stations/views/18792",
+        "businessHours": "8:30～17:30",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/364/",
+        "homepage2": "http://ageimo.com/"
       }
     },
     {
@@ -150,7 +171,10 @@ const michiNoEkiGeoJSON = {
         "city": "遠別町",
         "address": "北海道天塩郡遠別町字富士見46-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18793"
+        "url": "https://www.michi-no-eki.jp/stations/views/18793",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/389/",
+        "homepage2": ""
       }
     },
     {
@@ -169,7 +193,10 @@ const michiNoEkiGeoJSON = {
         "city": "幕別町",
         "address": "北海道中川郡幕別町忠類白銀町384-12",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18794"
+        "url": "https://www.michi-no-eki.jp/stations/views/18794",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/407/",
+        "homepage2": "https://hotel-arco.jp/sightseeing/"
       }
     },
     {
@@ -188,7 +215,10 @@ const michiNoEkiGeoJSON = {
         "city": "弟子屈町",
         "address": "北海道川上郡弟子屈町湯の島3-5-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18796"
+        "url": "https://www.michi-no-eki.jp/stations/views/18796",
+        "businessHours": "8:00～18:00（11～4月は9:00～17:00）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/440/",
+        "homepage2": "http://www.masyuko.or.jp/michinoeki/index.html"
       }
     },
     {
@@ -207,7 +237,10 @@ const michiNoEkiGeoJSON = {
         "city": "音威子府村",
         "address": "北海道中川郡音威子府村字音威子府155",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18797"
+        "url": "https://www.michi-no-eki.jp/stations/views/18797",
+        "businessHours": "売店6:00～22:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/458/",
+        "homepage2": ""
       }
     },
     {
@@ -226,7 +259,10 @@ const michiNoEkiGeoJSON = {
         "city": "湧別町",
         "address": "北海道紋別郡湧別町中湧別中町3020-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18798"
+        "url": "https://www.michi-no-eki.jp/stations/views/18798",
+        "businessHours": "10:00～22:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/472/",
+        "homepage2": "http://www.town.yubetsu.lg.jp/50shisetsu/6nou-kankou/spa-kamiyu.html"
       }
     },
     {
@@ -245,7 +281,10 @@ const michiNoEkiGeoJSON = {
         "city": "岩内町",
         "address": "北海道岩内郡岩内町字万代47-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18799"
+        "url": "https://www.michi-no-eki.jp/stations/views/18799",
+        "businessHours": "9:00～18:00（4～10月） 9:00～17:30（11～3月）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/499/",
+        "homepage2": "http://www.iwanai-kanko.org/"
       }
     },
     {
@@ -264,7 +303,10 @@ const michiNoEkiGeoJSON = {
         "city": "厚岸町",
         "address": "北海道厚岸郡厚岸町住の江町2-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18801"
+        "url": "https://www.michi-no-eki.jp/stations/views/18801",
+        "businessHours": "9:00～17:00（4～10月） 10:00～18:00（11～3月）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/531/",
+        "homepage2": "http://www.conchiglie.net/"
       }
     },
     {
@@ -283,7 +325,10 @@ const michiNoEkiGeoJSON = {
         "city": "北竜町",
         "address": "北海道雨竜郡北竜町字板谷163-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18802"
+        "url": "https://www.michi-no-eki.jp/stations/views/18802",
+        "businessHours": "8:00～22:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/546/",
+        "homepage2": "http://portal.hokuryu.info/sunflowerpark/roadsidestation"
       }
     },
     {
@@ -302,7 +347,10 @@ const michiNoEkiGeoJSON = {
         "city": "新ひだか町",
         "address": "北海道日高郡新ひだか町三石鳧舞161-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18803"
+        "url": "https://www.michi-no-eki.jp/stations/views/18803",
+        "businessHours": "8:45～17:30",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/564/",
+        "homepage2": ""
       }
     },
     {
@@ -321,7 +369,10 @@ const michiNoEkiGeoJSON = {
         "city": "厚沢部町",
         "address": "北海道檜山郡厚沢部町緑町72-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18804"
+        "url": "https://www.michi-no-eki.jp/stations/views/18804",
+        "businessHours": "8:30～18:00（5～10月） 9:00～17:00（11～4月）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/576/",
+        "homepage2": ""
       }
     },
     {
@@ -340,7 +391,10 @@ const michiNoEkiGeoJSON = {
         "city": "島牧村",
         "address": "北海道島牧郡島牧村字千走11-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18805"
+        "url": "https://www.michi-no-eki.jp/stations/views/18805",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://michinoekishimamaki.jimdofree.com/",
+        "homepage2": ""
       }
     },
     {
@@ -359,7 +413,10 @@ const michiNoEkiGeoJSON = {
         "city": "せたな町",
         "address": "北海道久遠郡せたな町大成区平浜378",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18806"
+        "url": "https://www.michi-no-eki.jp/stations/views/18806",
+        "businessHours": "9:00～17:00， 9:00～16:00（11～3月）， 9:00～19:00（7月中旬～8月中旬）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/611/",
+        "homepage2": "http://www.hiyama.pref.hokkaido.lg.jp/ss/srk/tabi/04s_tais/parts/8401mtr.htm"
       }
     },
     {
@@ -378,7 +435,10 @@ const michiNoEkiGeoJSON = {
         "city": "紋別市",
         "address": "北海道紋別市元紋別11-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18807"
+        "url": "https://www.michi-no-eki.jp/stations/views/18807",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/626/",
+        "homepage2": "http://mombetsu.net/tourist-facilities/%E9%81%93%E3%81%AE%E9%A7%85-%E3%82%AA%E3%83%9B%E3%83%BC%E3%83"
       }
     },
     {
@@ -397,7 +457,10 @@ const michiNoEkiGeoJSON = {
         "city": "森町",
         "address": "北海道茅部郡森町字上台町326-18",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18808"
+        "url": "https://www.michi-no-eki.jp/stations/views/18808",
+        "businessHours": "9:00～17:30（3/21～10/20） 9:00～17:00（10/21～3/20）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/641/",
+        "homepage2": "http://mori-bussan.com/"
       }
     },
     {
@@ -416,7 +479,10 @@ const michiNoEkiGeoJSON = {
         "city": "北見市",
         "address": "北海道北見市留辺蘂町松山1-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18809"
+        "url": "https://www.michi-no-eki.jp/stations/views/18809",
+        "businessHours": "9:00～17:30",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/685/",
+        "homepage2": "http://onneyu-aq.com/facility3"
       }
     },
     {
@@ -435,7 +501,10 @@ const michiNoEkiGeoJSON = {
         "city": "乙部町",
         "address": "北海道爾志郡乙部町字元和169",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18810"
+        "url": "https://www.michi-no-eki.jp/stations/views/18810",
+        "businessHours": "8:30～18:00（4～10月） 9:00～16:00（11～3月）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/704/",
+        "homepage2": "http://www.town.otobe.lg.jp/section/sangyou/e0taal0000000bz1.html"
       }
     },
     {
@@ -454,7 +523,10 @@ const michiNoEkiGeoJSON = {
         "city": "奈井江町",
         "address": "北海道空知郡奈井江町字奈井江28-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18811"
+        "url": "https://www.michi-no-eki.jp/stations/views/18811",
+        "businessHours": "9:00～18:00（4～9月） 9:00～17:00（10～3月）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/722/",
+        "homepage2": "http://machiken292.com/"
       }
     },
     {
@@ -473,7 +545,10 @@ const michiNoEkiGeoJSON = {
         "city": "小平町",
         "address": "北海道留萌郡小平町字鬼鹿広富",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18812"
+        "url": "https://www.michi-no-eki.jp/stations/views/18812",
+        "businessHours": "8:00～17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/744/",
+        "homepage2": "http://www.town.obira.hokkaido.jp/kanko/detail/00001365.html"
       }
     },
     {
@@ -492,7 +567,10 @@ const michiNoEkiGeoJSON = {
         "city": "枝幸町",
         "address": "北海道枝幸郡枝幸町字岡島1978-13",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18813"
+        "url": "https://www.michi-no-eki.jp/stations/views/18813",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/768/",
+        "homepage2": ""
       }
     },
     {
@@ -511,7 +589,10 @@ const michiNoEkiGeoJSON = {
         "city": "興部町",
         "address": "北海道紋別郡興部町字興部（幸町）",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18814"
+        "url": "https://www.michi-no-eki.jp/stations/views/18814",
+        "businessHours": "5月～10月 9:00～18:00、11月～4月 9:00～17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/795/",
+        "homepage2": ""
       }
     },
     {
@@ -530,7 +611,10 @@ const michiNoEkiGeoJSON = {
         "city": "釧路市",
         "address": "北海道釧路市阿寒町上阿寒23-36-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18815"
+        "url": "https://www.michi-no-eki.jp/stations/views/18815",
+        "businessHours": "5月～9月 9:00～18:00 10月～4月 9:00～17:00 観光案内所10:00～16:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/810/",
+        "homepage2": "https://www.akan.jp/"
       }
     },
     {
@@ -549,7 +633,10 @@ const michiNoEkiGeoJSON = {
         "city": "音更町",
         "address": "北海道河東郡音更町なつぞら2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18816"
+        "url": "https://www.michi-no-eki.jp/stations/views/18816",
+        "businessHours": "9:00～19:00",
+        "homepage": "https://michinoeki-otofuke.jp/",
+        "homepage2": "http://www.hokkaido-michinoeki.jp/michinoeki/825/"
       }
     },
     {
@@ -568,7 +655,10 @@ const michiNoEkiGeoJSON = {
         "city": "中頓別町",
         "address": "北海道枝幸郡中頓別町字敏音知72-7",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18817"
+        "url": "https://www.michi-no-eki.jp/stations/views/18817",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://pinneshiri-autocamp.com/",
+        "homepage2": ""
       }
     },
     {
@@ -587,7 +677,10 @@ const michiNoEkiGeoJSON = {
         "city": "上ノ国町",
         "address": "北海道檜山郡上ノ国町字原歌3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18819"
+        "url": "https://www.michi-no-eki.jp/stations/views/18819",
+        "businessHours": "・文珠館 9：00～17：00 ・特産品販売所 9：00～17：00（4月～10月）、10：00～17：00（11月～3月）※月曜定休（11月～3月）月曜が祝日の場合は翌平日 ・レストラン 11：00～15：00（LO14：30）※月曜定休（11月～3月）月曜が祝日の場合は翌平日",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/870/",
+        "homepage2": "http://www.kaminokuni.com/"
       }
     },
     {
@@ -606,7 +699,10 @@ const michiNoEkiGeoJSON = {
         "city": "神恵内村",
         "address": "北海道古宇郡神恵内村大字赤石村字大森292-１",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18820"
+        "url": "https://www.michi-no-eki.jp/stations/views/18820",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/881/",
+        "homepage2": "http://www.vill.kamoenai.hokkaido.jp/hotnews/detail/00000142.html"
       }
     },
     {
@@ -625,7 +721,10 @@ const michiNoEkiGeoJSON = {
         "city": "中札内村",
         "address": "北海道河西郡中札内村大通南7-14",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18821"
+        "url": "https://www.michi-no-eki.jp/stations/views/18821",
+        "businessHours": "9:00～18:00（4～10月） 9:00～17:00（11～3月）営業時間、定休日は店舗により異なります",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/892/",
+        "homepage2": "http://www.michinoeki-nakasatsunai.jp/index.html"
       }
     },
     {
@@ -644,7 +743,10 @@ const michiNoEkiGeoJSON = {
         "city": "長沼町",
         "address": "北海道夕張郡長沼町東10線南7番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18822"
+        "url": "https://www.michi-no-eki.jp/stations/views/18822",
+        "businessHours": "9:00～18:00(4月～11月)、9:00～17:00(11月～3月)、※「ピッツェリアトニーノ北海道長沼」は営業時間が異なります。詳しくは、公式ホームページよりご確認下さい。",
+        "homepage": "https://maoinooka.jp/",
+        "homepage2": "http://www.hokkaido-michinoeki.jp/michinoeki/906/"
       }
     },
     {
@@ -663,7 +765,10 @@ const michiNoEkiGeoJSON = {
         "city": "日高町",
         "address": "北海道沙流郡日高町本町東1-298-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18823"
+        "url": "https://www.michi-no-eki.jp/stations/views/18823",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/921/",
+        "homepage2": "http://www.hidaka.pref.hokkaido.lg.jp/ss/srk/hkd/thidaka/008.htm"
       }
     },
     {
@@ -682,7 +787,10 @@ const michiNoEkiGeoJSON = {
         "city": "壮瞥町",
         "address": "北海道有珠郡壮瞥町字滝之町384-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18824"
+        "url": "https://www.michi-no-eki.jp/stations/views/18824",
+        "businessHours": "9:00～17:30 （11/16～3/31は17:00迄）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/937/",
+        "homepage2": "http://sobetsu-fp.co.jp/"
       }
     },
     {
@@ -701,7 +809,10 @@ const michiNoEkiGeoJSON = {
         "city": "ニセコ町",
         "address": "北海道虻田郡ニセコ町字元町77-10",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18825"
+        "url": "https://www.michi-no-eki.jp/stations/views/18825",
+        "businessHours": "情報プラザ棟：9:00-18:00農産物直売コーナー：9:00-17:00（4月下旬～10月：8:30-17:00）テイクアウトコーナー：10:00-16:00（4月下旬～10月：9:30-16:30）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/949/",
+        "homepage2": "http://www.niseko-ta.jp/index.php?id=87"
       }
     },
     {
@@ -720,7 +831,10 @@ const michiNoEkiGeoJSON = {
         "city": "知内町",
         "address": "北海道上磯郡知内町字湯の里48-13",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18826"
+        "url": "https://www.michi-no-eki.jp/stations/views/18826",
+        "businessHours": "8:00～18:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/961/",
+        "homepage2": "http://www.town.shiriuchi.hokkaido.jp/kanko/meisho/michinoeki.html"
       }
     },
     {
@@ -739,7 +853,10 @@ const michiNoEkiGeoJSON = {
         "city": "福島町",
         "address": "北海道松前郡福島町字福島143-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18827"
+        "url": "https://www.michi-no-eki.jp/stations/views/18827",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/973/",
+        "homepage2": "http://www.yokodunanosato-fukushima.info/"
       }
     },
     {
@@ -758,7 +875,10 @@ const michiNoEkiGeoJSON = {
         "city": "新冠町",
         "address": "北海道新冠郡新冠町字中央町1-20",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18828"
+        "url": "https://www.michi-no-eki.jp/stations/views/18828",
+        "businessHours": "10:00～18:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/988/",
+        "homepage2": "http://www.niikappu.jp/kurashi/sekatsu/kotsu/miti.html"
       }
     },
     {
@@ -777,7 +897,10 @@ const michiNoEkiGeoJSON = {
         "city": "士幌町",
         "address": "北海道河東郡士幌町字士幌西2線147",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18829"
+        "url": "https://www.michi-no-eki.jp/stations/views/18829",
+        "businessHours": "9:00～18:00（4月～11月） 9:00～17:00（12月～3月）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/1001/",
+        "homepage2": "http://shihoroinfo.com/road-station"
       }
     },
     {
@@ -796,7 +919,10 @@ const michiNoEkiGeoJSON = {
         "city": "滝上町",
         "address": "北海道紋別郡滝上町旭町",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18830"
+        "url": "https://www.michi-no-eki.jp/stations/views/18830",
+        "businessHours": "8:30 ～17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/1016/",
+        "homepage2": "http://town.takinoue.hokkaido.jp/shokai/shisetsu/kankou/michinoeki.html"
       }
     },
     {
@@ -815,7 +941,10 @@ const michiNoEkiGeoJSON = {
         "city": "雨竜町",
         "address": "北海道雨竜郡雨竜町字満寿28-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18831"
+        "url": "https://www.michi-no-eki.jp/stations/views/18831",
+        "businessHours": "9:00～18:00（5～10月） 10:00～16:00（11～4月）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/1026/",
+        "homepage2": "http://www.michinoeki-uryu.com/"
       }
     },
     {
@@ -834,7 +963,10 @@ const michiNoEkiGeoJSON = {
         "city": "室蘭市",
         "address": "北海道室蘭市祝津町4-16-15",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18832"
+        "url": "https://www.michi-no-eki.jp/stations/views/18832",
+        "businessHours": "9:30～19:00 （11～3月は17:00まで、毎週木曜・祝日の場合は金曜定休日) ※館内各店舗の営業時間は店舗により異なる",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/1039/",
+        "homepage2": "http://muro-kanko.com/visit/roadside_station.html"
       }
     },
     {
@@ -853,7 +985,10 @@ const michiNoEkiGeoJSON = {
         "city": "当麻町",
         "address": "北海道上川郡当麻町字園別２区",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18833"
+        "url": "https://www.michi-no-eki.jp/stations/views/18833",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/1677/",
+        "homepage2": "http://www.densukesan.net/2018/kau.html"
       }
     },
     {
@@ -872,7 +1007,10 @@ const michiNoEkiGeoJSON = {
         "city": "余市町",
         "address": "北海道余市郡余市町黒川町6-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18834"
+        "url": "https://www.michi-no-eki.jp/stations/views/18834",
+        "businessHours": "4月中旬～11月上旬 9:00～18:00 11月上旬～4月中旬 9:00～17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/1699/",
+        "homepage2": "https://www.spacedome.jp"
       }
     },
     {
@@ -891,7 +1029,10 @@ const michiNoEkiGeoJSON = {
         "city": "羽幌町",
         "address": "北海道苫前郡羽幌町北3条1-29",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18835"
+        "url": "https://www.michi-no-eki.jp/stations/views/18835",
+        "businessHours": "7:00～22:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/1747/",
+        "homepage2": ""
       }
     },
     {
@@ -910,7 +1051,10 @@ const michiNoEkiGeoJSON = {
         "city": "佐呂間町",
         "address": "北海道常呂郡佐呂間町字浪速121-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18836"
+        "url": "https://www.michi-no-eki.jp/stations/views/18836",
+        "businessHours": "9:00～18:00（11～3月は9:00～17:00）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/1787/",
+        "homepage2": "http://saroma.jp"
       }
     },
     {
@@ -929,7 +1073,10 @@ const michiNoEkiGeoJSON = {
         "city": "湧別町",
         "address": "北海道紋別郡湧別町志撫子6-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18837"
+        "url": "https://www.michi-no-eki.jp/stations/views/18837",
+        "businessHours": "9:00～17:30",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/1951/",
+        "homepage2": "http://www.town.yubetsu.lg.jp/60kanko/03annai/you.html"
       }
     },
     {
@@ -948,7 +1095,10 @@ const michiNoEkiGeoJSON = {
         "city": "雄武町",
         "address": "北海道紋別郡雄武町字雄武1885-14",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18838"
+        "url": "https://www.michi-no-eki.jp/stations/views/18838",
+        "businessHours": "8:00～21:00 （5～10月） 8:00～20:00 （11～4月）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/1975/",
+        "homepage2": "http://www.town.oumu.hokkaido.jp/hotnews/detail/00000065.html"
       }
     },
     {
@@ -967,7 +1117,10 @@ const michiNoEkiGeoJSON = {
         "city": "猿払村",
         "address": "北海道宗谷郡猿払村字浜鬼志別241-7",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18839"
+        "url": "https://www.michi-no-eki.jp/stations/views/18839",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2010/",
+        "homepage2": "http://www.vill.sarufutsu.hokkaido.jp/hotnews/detail/00000356.html"
       }
     },
     {
@@ -986,7 +1139,10 @@ const michiNoEkiGeoJSON = {
         "city": "幌加内町",
         "address": "北海道雨竜郡幌加内町字政和第1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18840"
+        "url": "https://www.michi-no-eki.jp/stations/views/18840",
+        "businessHours": "10:00～21:00 冬期10：30～21：00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2038/",
+        "homepage2": "https://horokanaisoba.com/"
       }
     },
     {
@@ -1005,7 +1161,10 @@ const michiNoEkiGeoJSON = {
         "city": "歌志内市",
         "address": "北海道歌志内市字中村72-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18841"
+        "url": "https://www.michi-no-eki.jp/stations/views/18841",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2066/",
+        "homepage2": ""
       }
     },
     {
@@ -1024,7 +1183,10 @@ const michiNoEkiGeoJSON = {
         "city": "黒松内町",
         "address": "北海道寿都郡黒松内町字白井川8-10",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18842"
+        "url": "https://www.michi-no-eki.jp/stations/views/18842",
+        "businessHours": "9:00～18:00（4～10月） 9:00～17:00（11～3月）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2088/",
+        "homepage2": "http://www.kuromatsunai.com/toitvert2/index.html"
       }
     },
     {
@@ -1043,7 +1205,10 @@ const michiNoEkiGeoJSON = {
         "city": "滝川市",
         "address": "北海道滝川市江部乙町東11-13-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18843"
+        "url": "https://www.michi-no-eki.jp/stations/views/18843",
+        "businessHours": "9:00～18:00（4～10月） 10:00～17:00（11～3月）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2107/",
+        "homepage2": ""
       }
     },
     {
@@ -1062,7 +1227,10 @@ const michiNoEkiGeoJSON = {
         "city": "根室市",
         "address": "北海道根室市酪陽1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18844"
+        "url": "https://www.michi-no-eki.jp/stations/views/18844",
+        "businessHours": "9:00～17:00（4～6,10月） 9:00～18:00（7～9月） 9:00～16:00（11～3月）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2143/",
+        "homepage2": "http://www.swan44nemuro.com/"
       }
     },
     {
@@ -1081,7 +1249,10 @@ const michiNoEkiGeoJSON = {
         "city": "浦臼町",
         "address": "北海道樺戸郡浦臼町字キナウスナイ186-214",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18845"
+        "url": "https://www.michi-no-eki.jp/stations/views/18845",
+        "businessHours": "9:00～18:00（4～9月） 10:00～17:00（10～3月）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2164/",
+        "homepage2": "http://www.town.urausu.hokkaido.jp/kankou/guide/michinoeki.html"
       }
     },
     {
@@ -1100,7 +1271,10 @@ const michiNoEkiGeoJSON = {
         "city": "函館市",
         "address": "北海道函館市日ノ浜町31-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18846"
+        "url": "https://www.michi-no-eki.jp/stations/views/18846",
+        "businessHours": "9:00～18:00（4～9月） 9:00～17:00（10～3月）",
+        "homepage": "http://www.natowaesan.com/roadside_station.htm",
+        "homepage2": "http://www.hokkaido-michinoeki.jp/michinoeki/2179/"
       }
     },
     {
@@ -1119,7 +1293,10 @@ const michiNoEkiGeoJSON = {
         "city": "森町",
         "address": "北海道茅部郡森町砂原2-358-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18847"
+        "url": "https://www.michi-no-eki.jp/stations/views/18847",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2200/",
+        "homepage2": "http://kankou.mori.hokkaido.jp/201510/07-1619.html"
       }
     },
     {
@@ -1138,7 +1315,10 @@ const michiNoEkiGeoJSON = {
         "city": "羅臼町",
         "address": "北海道目梨郡羅臼町本町361-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18848"
+        "url": "https://www.michi-no-eki.jp/stations/views/18848",
+        "businessHours": "9:00～17:00（5～10月） 10:00～16:00（11～4月）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2217/",
+        "homepage2": "http://www.nemuro.pref.hokkaido.lg.jp/ss/srk/kanko/nmrgsdb/3k-spot/3ks-shiretoko-rausu.htm"
       }
     },
     {
@@ -1157,7 +1337,10 @@ const michiNoEkiGeoJSON = {
         "city": "更別村",
         "address": "北海道河西郡更別村字弘和464-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18849"
+        "url": "https://www.michi-no-eki.jp/stations/views/18849",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.instagram.com/mitinoekisarabetsu/",
+        "homepage2": "http://www.sarabetsu-pipopa.jp/michinoeki/"
       }
     },
     {
@@ -1176,7 +1359,10 @@ const michiNoEkiGeoJSON = {
         "city": "伊達市",
         "address": "北海道伊達市松ヶ枝町34-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18850"
+        "url": "https://www.michi-no-eki.jp/stations/views/18850",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2253/",
+        "homepage2": "http://www.city.date.hokkaido.jp/hotnews/detail/00001549.html"
       }
     },
     {
@@ -1195,7 +1381,10 @@ const michiNoEkiGeoJSON = {
         "city": "旭川市",
         "address": "北海道旭川市神楽4条6-1-12",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18851"
+        "url": "https://www.michi-no-eki.jp/stations/views/18851",
+        "businessHours": "9:00～21:00 （売店は19:00（夏季）まで・フードコートは店舗により異なります)",
+        "homepage": "http://www.asahikawa-jibasan.com",
+        "homepage2": "http://www.hokkaido-michinoeki.jp/michinoeki/2272/"
       }
     },
     {
@@ -1214,7 +1403,10 @@ const michiNoEkiGeoJSON = {
         "city": "占冠村",
         "address": "北海道勇払郡占冠村字中央",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18852"
+        "url": "https://www.michi-no-eki.jp/stations/views/18852",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2298/",
+        "homepage2": "http://www.vill.shimukappu.lg.jp/shimukappu/section/kikaku/nmudtq0000002gk4.html"
       }
     },
     {
@@ -1233,7 +1425,10 @@ const michiNoEkiGeoJSON = {
         "city": "西興部村",
         "address": "北海道紋別郡西興部村字上興部37",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18853"
+        "url": "https://www.michi-no-eki.jp/stations/views/18853",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2325/",
+        "homepage2": "https://www.vill.nishiokoppe.lg.jp/section/kamu/kamu.html"
       }
     },
     {
@@ -1252,7 +1447,10 @@ const michiNoEkiGeoJSON = {
         "city": "陸別町",
         "address": "北海道足寄郡陸別町大通",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18854"
+        "url": "https://www.michi-no-eki.jp/stations/views/18854",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2355/",
+        "homepage2": "https://www.rikubetsu.jp/kanko/michinoeki/"
       }
     },
     {
@@ -1271,7 +1469,10 @@ const michiNoEkiGeoJSON = {
         "city": "小清水町",
         "address": "北海道斜里郡小清水町字浜小清水474-7",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18855"
+        "url": "https://www.michi-no-eki.jp/stations/views/18855",
+        "businessHours": "9:00～18:00 レストランは11：00～15：00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2375/",
+        "homepage2": "http://www.town.koshimizu.hokkaido.jp/hanayaka/"
       }
     },
     {
@@ -1290,7 +1491,10 @@ const michiNoEkiGeoJSON = {
         "city": "深川市",
         "address": "北海道深川市音江町字広里59-7",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18856"
+        "url": "https://www.michi-no-eki.jp/stations/views/18856",
+        "businessHours": "4月・5月～10月：9：00～18：00、6月～9月：9：00～19：00、11月～3月：9：00～17：00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2390/",
+        "homepage2": "http://mypage.fukanavi.com/riceland/"
       }
     },
     {
@@ -1309,7 +1513,10 @@ const michiNoEkiGeoJSON = {
         "city": "中川町",
         "address": "北海道中川郡中川町字誉498-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18857"
+        "url": "https://www.michi-no-eki.jp/stations/views/18857",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2424/",
+        "homepage2": "http://www.nakagawa-showya.com/"
       }
     },
     {
@@ -1328,7 +1535,10 @@ const michiNoEkiGeoJSON = {
         "city": "留寿都村",
         "address": "北海道虻田郡留寿都村字留寿都127",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18858"
+        "url": "https://www.michi-no-eki.jp/stations/views/18858",
+        "businessHours": "9:00～18:00（4月下旬～10月） 9:00～17:00（11～４月下旬）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2442/",
+        "homepage2": "http://www.rusutsu.gr.jp/shopping/687.html"
       }
     },
     {
@@ -1347,7 +1557,10 @@ const michiNoEkiGeoJSON = {
         "city": "天塩町",
         "address": "北海道天塩郡天塩町新開通4-7227-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18859"
+        "url": "https://www.michi-no-eki.jp/stations/views/18859",
+        "businessHours": "4月~10月 9:00～19:00 11月~3月 9:00~17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2467/",
+        "homepage2": "http://www.teshiotown.hokkaido.jp/?page_id=660"
       }
     },
     {
@@ -1366,7 +1579,10 @@ const michiNoEkiGeoJSON = {
         "city": "大樹町",
         "address": "北海道広尾郡大樹町西本通98",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18860"
+        "url": "https://www.michi-no-eki.jp/stations/views/18860",
+        "businessHours": "特産品コーナー 9：00〜17：30 （十勝バス大樹案内所【乗車券販売など】）休館 年末年始（12月31日〜1月3日) ショッピングセンター 9：00〜20：00 （衣料品すずき、100円ショップ、写真店、オリーブ薬局、 コープさっぽろ、ヘアークラブMock、クリーニング、 理療整体院、ラーメンハウスMAMO）休館 1月1日（各テナント臨時休業あり）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2483/",
+        "homepage2": "http://taiki-sci.jp/cosmall/"
       }
     },
     {
@@ -1385,7 +1601,10 @@ const michiNoEkiGeoJSON = {
         "city": "美幌町",
         "address": "北海道網走郡美幌町字古梅",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18861"
+        "url": "https://www.michi-no-eki.jp/stations/views/18861",
+        "businessHours": "4月～10月 9:00～18:00 12月～3月 10：00～16：00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2502/",
+        "homepage2": "https://bihoropass.jp/"
       }
     },
     {
@@ -1404,7 +1623,10 @@ const michiNoEkiGeoJSON = {
         "city": "蘭越町",
         "address": "北海道磯谷郡蘭越町字相生969",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18862"
+        "url": "https://www.michi-no-eki.jp/stations/views/18862",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2519/",
+        "homepage2": "http://www.town.rankoshi.hokkaido.jp/topics/2012/02/post_58.html"
       }
     },
     {
@@ -1423,7 +1645,10 @@ const michiNoEkiGeoJSON = {
         "city": "豊浦町",
         "address": "北海道虻田郡豊浦町字旭町65-8",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18863"
+        "url": "https://www.michi-no-eki.jp/stations/views/18863",
+        "businessHours": "直売所9:00～17:00 テイクアウトコーナー10:00～16:00",
+        "homepage": "https://toyoura-rss.amebaownd.com/",
+        "homepage2": "http://www.hokkaido-michinoeki.jp/michinoeki/2533/"
       }
     },
     {
@@ -1442,7 +1667,10 @@ const michiNoEkiGeoJSON = {
         "city": "大空町",
         "address": "北海道網走郡大空町女満別昭和96",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18864"
+        "url": "https://www.michi-no-eki.jp/stations/views/18864",
+        "businessHours": "8:45～17:30",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2548/",
+        "homepage2": "http://www.town.ozora.hokkaido.jp/docs/2014112700039/"
       }
     },
     {
@@ -1461,7 +1689,10 @@ const michiNoEkiGeoJSON = {
         "city": "むかわ町",
         "address": "北海道勇払郡むかわ町美幸3-3-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18865"
+        "url": "https://www.michi-no-eki.jp/stations/views/18865",
+        "businessHours": "6:00～22:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2569/",
+        "homepage2": "http://www.shikinoyakata.com/eki.html"
       }
     },
     {
@@ -1480,7 +1711,10 @@ const michiNoEkiGeoJSON = {
         "city": "津別町",
         "address": "北海道網走郡津別町字相生",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18866"
+        "url": "https://www.michi-no-eki.jp/stations/views/18866",
+        "businessHours": "9:00～17:00【火曜日定休日(トイレは24時間開放)】",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2585/",
+        "homepage2": "https://michinoeki-aioi.com/"
       }
     },
     {
@@ -1499,7 +1733,10 @@ const michiNoEkiGeoJSON = {
         "city": "鹿追町",
         "address": "北海道河東郡鹿追町東町3-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18867"
+        "url": "https://www.michi-no-eki.jp/stations/views/18867",
+        "businessHours": "9:00～17:00（3～6月、10～11月） 10:00～16:00（12～2月） 9:00～18:00（7～9月）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2605/",
+        "homepage2": "http://michinoeki-shikaoi.com/"
       }
     },
     {
@@ -1518,7 +1755,10 @@ const michiNoEkiGeoJSON = {
         "city": "遠軽町",
         "address": "北海道紋別郡遠軽町奥白滝",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18868"
+        "url": "https://www.michi-no-eki.jp/stations/views/18868",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2623/",
+        "homepage2": ""
       }
     },
     {
@@ -1537,7 +1777,10 @@ const michiNoEkiGeoJSON = {
         "city": "足寄町",
         "address": "北海道足寄郡足寄町北１条1丁目",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18869"
+        "url": "https://www.michi-no-eki.jp/stations/views/18869",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2639/",
+        "homepage2": "http://www.ashoro-kanko.jp"
       }
     },
     {
@@ -1556,7 +1799,10 @@ const michiNoEkiGeoJSON = {
         "city": "千歳市",
         "address": "北海道千歳市花園2-4-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18870"
+        "url": "https://www.michi-no-eki.jp/stations/views/18870",
+        "businessHours": "9:00～17:00（一部店舗は16:00まで）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2654/",
+        "homepage2": "http://salmonpark.com/"
       }
     },
     {
@@ -1575,7 +1821,10 @@ const michiNoEkiGeoJSON = {
         "city": "東川町",
         "address": "北海道上川郡東川町東町1丁目1番15号",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18871"
+        "url": "https://www.michi-no-eki.jp/stations/views/18871",
+        "businessHours": "9:00～19:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2668/",
+        "homepage2": ""
       }
     },
     {
@@ -1594,7 +1843,10 @@ const michiNoEkiGeoJSON = {
         "city": "恵庭市",
         "address": "北海道恵庭市南島松817-18",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18872"
+        "url": "https://www.michi-no-eki.jp/stations/views/18872",
+        "businessHours": "9:00～18:00（施設・時期により異なる）＜休：12/31～1/2＞",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2684/",
+        "homepage2": "https://hanafuru.jp/facility/hanaroad.html"
       }
     },
     {
@@ -1613,7 +1865,10 @@ const michiNoEkiGeoJSON = {
         "city": "蘭越町",
         "address": "北海道磯谷郡蘭越町港町1402-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18873"
+        "url": "https://www.michi-no-eki.jp/stations/views/18873",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2702/",
+        "homepage2": "http://www.town.rankoshi.hokkaido.jp/topics/2012/02/post_59.html"
       }
     },
     {
@@ -1632,7 +1887,10 @@ const michiNoEkiGeoJSON = {
         "city": "真狩村",
         "address": "北海道虻田郡真狩村字光8-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18874"
+        "url": "https://www.michi-no-eki.jp/stations/views/18874",
+        "businessHours": "9:00～17:30（4月下旬～10/31） 9:30～16:30（11/1～4月下旬）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2715/",
+        "homepage2": "http://www.pref.hokkaido.lg.jp/kn/tkn/hana/place/c010.html"
       }
     },
     {
@@ -1651,7 +1909,10 @@ const michiNoEkiGeoJSON = {
         "city": "秩父別町",
         "address": "北海道雨竜郡秩父別町2085",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18875"
+        "url": "https://www.michi-no-eki.jp/stations/views/18875",
+        "businessHours": "9:00～17:00（4～10月） 9:00～16:00（11～3月）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2732/",
+        "homepage2": ""
       }
     },
     {
@@ -1670,7 +1931,10 @@ const michiNoEkiGeoJSON = {
         "city": "洞爺湖町",
         "address": "北海道虻田郡洞爺湖町入江84-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18876"
+        "url": "https://www.michi-no-eki.jp/stations/views/18876",
+        "businessHours": "9::00～18:00（冬期17:00）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2751/",
+        "homepage2": "http://www.pref.hokkaido.lg.jp/ns/shs/data/ar10018.htm"
       }
     },
     {
@@ -1689,7 +1953,10 @@ const michiNoEkiGeoJSON = {
         "city": "鹿追町",
         "address": "北海道河東郡鹿追町瓜幕西3-1外",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18877"
+        "url": "https://www.michi-no-eki.jp/stations/views/18877",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2766/",
+        "homepage2": "http://www.urimaku.net/"
       }
     },
     {
@@ -1708,7 +1975,10 @@ const michiNoEkiGeoJSON = {
         "city": "剣淵町",
         "address": "北海道上川郡剣淵町東町2420",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18878"
+        "url": "https://www.michi-no-eki.jp/stations/views/18878",
+        "businessHours": "9:00～17:00（5～10月中旬） 9:00～16:00（10月中旬～4月）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2782/",
+        "homepage2": "http://michi-ehon.jp/"
       }
     },
     {
@@ -1727,7 +1997,10 @@ const michiNoEkiGeoJSON = {
         "city": "苫前町",
         "address": "北海道苫前郡苫前町字苫前119-１",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18879"
+        "url": "https://www.michi-no-eki.jp/stations/views/18879",
+        "businessHours": "7:00～21:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2805/",
+        "homepage2": ""
       }
     },
     {
@@ -1746,7 +2019,10 @@ const michiNoEkiGeoJSON = {
         "city": "士幌町",
         "address": "北海道河東郡士幌町字下居辺西２-134",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18880"
+        "url": "https://www.michi-no-eki.jp/stations/views/18880",
+        "businessHours": "10:00～21:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2824/",
+        "homepage2": "http://www.shihoro-spa.co.jp/"
       }
     },
     {
@@ -1765,7 +2041,10 @@ const michiNoEkiGeoJSON = {
         "city": "京極町",
         "address": "北海道虻田郡京極町字川西45-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18881"
+        "url": "https://www.michi-no-eki.jp/stations/views/18881",
+        "businessHours": "売店 9：00～17：00 レストラン 11：00～16：00 休館日 毎週水曜日及び年末年始（12/31～1/3）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2841/",
+        "homepage2": "http://meisui-plaza.com/"
       }
     },
     {
@@ -1784,7 +2063,10 @@ const michiNoEkiGeoJSON = {
         "city": "美瑛町",
         "address": "北海道上川郡美瑛町本町1-9-21",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18882"
+        "url": "https://www.michi-no-eki.jp/stations/views/18882",
+        "businessHours": "9:00～18:00（6～８月） 9:00～17:00（3～5月、9～11月） 10:00～17:00（12～2月）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2854/",
+        "homepage2": ""
       }
     },
     {
@@ -1803,7 +2085,10 @@ const michiNoEkiGeoJSON = {
         "city": "初山別村",
         "address": "北海道苫前郡初山別村字豊岬153-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18883"
+        "url": "https://www.michi-no-eki.jp/stations/views/18883",
+        "businessHours": "10:00～21:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2870/",
+        "homepage2": ""
       }
     },
     {
@@ -1822,7 +2107,10 @@ const michiNoEkiGeoJSON = {
         "city": "斜里町",
         "address": "北海道斜里郡斜里町ウトロ西186-8",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18884"
+        "url": "https://www.michi-no-eki.jp/stations/views/18884",
+        "businessHours": "9：00～17：00（レストラン 10：00～15：00）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2884/",
+        "homepage2": ""
       }
     },
     {
@@ -1841,7 +2129,10 @@ const michiNoEkiGeoJSON = {
         "city": "斜里町",
         "address": "北海道斜里郡斜里町本町37",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18885"
+        "url": "https://www.michi-no-eki.jp/stations/views/18885",
+        "businessHours": "9:00～19:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2905/",
+        "homepage2": "http://www.sharimichi.jp/"
       }
     },
     {
@@ -1860,7 +2151,10 @@ const michiNoEkiGeoJSON = {
         "city": "清里町",
         "address": "北海道斜里郡清里町字神威1071",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18886"
+        "url": "https://www.michi-no-eki.jp/stations/views/18886",
+        "businessHours": "9:00～21:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2920/",
+        "homepage2": "http://www.papasland-satturu.com/"
       }
     },
     {
@@ -1879,7 +2173,10 @@ const michiNoEkiGeoJSON = {
         "city": "名寄市",
         "address": "北海道名寄市風連町西町334-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18887"
+        "url": "https://www.michi-no-eki.jp/stations/views/18887",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2939/",
+        "homepage2": "http://www.mochigome.jp"
       }
     },
     {
@@ -1898,7 +2195,10 @@ const michiNoEkiGeoJSON = {
         "city": "寿都町",
         "address": "北海道寿都郡寿都町字大磯町29-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18888"
+        "url": "https://www.michi-no-eki.jp/stations/views/18888",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2959/",
+        "homepage2": ""
       }
     },
     {
@@ -1917,7 +2217,10 @@ const michiNoEkiGeoJSON = {
         "city": "洞爺湖町",
         "address": "北海道虻田郡洞爺湖町香川9-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18889"
+        "url": "https://www.michi-no-eki.jp/stations/views/18889",
+        "businessHours": "4月～10月（8:30～17:00） 11月～3月（9：00～16：00）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2974/",
+        "homepage2": "http://www.michinoeki-toyako.jp/"
       }
     },
     {
@@ -1936,7 +2239,10 @@ const michiNoEkiGeoJSON = {
         "city": "網走市",
         "address": "北海道網走市南3条東4丁目",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18890"
+        "url": "https://www.michi-no-eki.jp/stations/views/18890",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2986/",
+        "homepage2": ""
       }
     },
     {
@@ -1955,7 +2261,10 @@ const michiNoEkiGeoJSON = {
         "city": "松前町",
         "address": "北海道松前郡松前町字唐津379",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18891"
+        "url": "https://www.michi-no-eki.jp/stations/views/18891",
+        "businessHours": "9:00～18:00（4～9月） 9:00～17:00（10～3月） 定休日：毎週火曜日（10～3月、火曜日が祝日の場合は翌日水曜日）及び年末年始（お問い合わせください）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/3007/",
+        "homepage2": "http://michinoeki-matsumae.jp/"
       }
     },
     {
@@ -1974,7 +2283,10 @@ const michiNoEkiGeoJSON = {
         "city": "本別町",
         "address": "北海道中川郡本別町北3-1-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18892"
+        "url": "https://www.michi-no-eki.jp/stations/views/18892",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/3021/",
+        "homepage2": "https://www.facebook.com/道の駅ステラほんべつ-213161028715975/"
       }
     },
     {
@@ -1993,7 +2305,10 @@ const michiNoEkiGeoJSON = {
         "city": "苫小牧市",
         "address": "北海道苫小牧市字植苗156-30",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18893"
+        "url": "https://www.michi-no-eki.jp/stations/views/18893",
+        "businessHours": "9:00～18:00（11月～2月は9:00～17:00）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/3038/",
+        "homepage2": "http://www.michinoeki-utonaiko.com/"
       }
     },
     {
@@ -2012,7 +2327,10 @@ const michiNoEkiGeoJSON = {
         "city": "浦幌町",
         "address": "北海道十勝郡浦幌町字北町16-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18894"
+        "url": "https://www.michi-no-eki.jp/stations/views/18894",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/3057/",
+        "homepage2": "http://www.michinoeki-urahoro.com/"
       }
     },
     {
@@ -2031,7 +2349,10 @@ const michiNoEkiGeoJSON = {
         "city": "新篠津村",
         "address": "北海道石狩郡新篠津村第45線北２",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18895"
+        "url": "https://www.michi-no-eki.jp/stations/views/18895",
+        "businessHours": "7：00～22：00 ※休館日の翌日は10：00開館 道の駅グッズ販売は21：00まで",
+        "homepage": "https://tappunoyuonsen.com/",
+        "homepage2": "http://www.hokkaido-michinoeki.jp/michinoeki/3070/"
       }
     },
     {
@@ -2050,7 +2371,10 @@ const michiNoEkiGeoJSON = {
         "city": "夕張市",
         "address": "北海道夕張市紅葉山529",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18896"
+        "url": "https://www.michi-no-eki.jp/stations/views/18896",
+        "businessHours": "10:00～18:30",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/3083/",
+        "homepage2": "http://www.yubari-melon.or.jp/modules/meroad/"
       }
     },
     {
@@ -2069,7 +2393,10 @@ const michiNoEkiGeoJSON = {
         "city": "別海町",
         "address": "北海道野付郡別海町尾岱沼5-27",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18897"
+        "url": "https://www.michi-no-eki.jp/stations/views/18897",
+        "businessHours": "9:00～17:00（5～10月） 9:00～16:00（11～4月） 火曜日定休（10月～6月） ※７～9月無休",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/3099/",
+        "homepage2": ""
       }
     },
     {
@@ -2088,7 +2415,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "北海道函館市臼尻町551-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18898"
+        "url": "https://www.michi-no-eki.jp/stations/views/18898",
+        "businessHours": "9:00～17:00（4～10月） 9:00～16:30（11～3月） 定休日：毎週月曜日※月曜日が祝日の場合は翌日，年末年始（12月29日～1月3日）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/3114/",
+        "homepage2": "http://www.hjcc.jp/"
       }
     },
     {
@@ -2107,7 +2437,10 @@ const michiNoEkiGeoJSON = {
         "city": "稚内市",
         "address": "北海道稚内市開運2丁目",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18899"
+        "url": "https://www.michi-no-eki.jp/stations/views/18899",
+        "businessHours": "10:00～18:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/3126/",
+        "homepage2": ""
       }
     },
     {
@@ -2126,7 +2459,10 @@ const michiNoEkiGeoJSON = {
         "city": "七戸町",
         "address": "青森県上北郡七戸町字荒熊内67-94",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18900"
+        "url": "https://www.michi-no-eki.jp/stations/views/18900",
+        "businessHours": "9:00～18:00 ＜休 3/31＞",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -2145,7 +2481,10 @@ const michiNoEkiGeoJSON = {
         "city": "階上町",
         "address": "青森県三戸郡階上町大字道仏字耳ヶ吠3-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18901"
+        "url": "https://www.michi-no-eki.jp/stations/views/18901",
+        "businessHours": "9:00～18:00 ＜休12/31～1/1＞",
+        "homepage": "http://www.michinoeki-hashikami.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -2164,7 +2503,10 @@ const michiNoEkiGeoJSON = {
         "city": "黒石市",
         "address": "青森県黒石市大字沖浦字山神1-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18902"
+        "url": "https://www.michi-no-eki.jp/stations/views/18902",
+        "businessHours": "9:00～16:00（営業時間短縮あり）",
+        "homepage": "http://nijinokopark.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -2183,7 +2525,10 @@ const michiNoEkiGeoJSON = {
         "city": "むつ市",
         "address": "青森県むつ市脇野沢七引205-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18903"
+        "url": "https://www.michi-no-eki.jp/stations/views/18903",
+        "businessHours": "9:00～17:00",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -2202,7 +2547,10 @@ const michiNoEkiGeoJSON = {
         "city": "むつ市",
         "address": "青森県むつ市川内町福浦山314",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18904"
+        "url": "https://www.michi-no-eki.jp/stations/views/18904",
+        "businessHours": "9:00～17:00＜休 木曜日＞≪冬期閉鎖あり≫",
+        "homepage": "http://www.aptinet.jp/Detail_display_00002796.html",
+        "homepage2": ""
       }
     },
     {
@@ -2221,7 +2569,10 @@ const michiNoEkiGeoJSON = {
         "city": "新郷村",
         "address": "青森県三戸郡新郷村大字戸来字雨池11-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18905"
+        "url": "https://www.michi-no-eki.jp/stations/views/18905",
+        "businessHours": "9:00～17:00 ＜休 水曜日＞ ≪冬期閉鎖あり≫",
+        "homepage": "http://www.marumarushingo.com/",
+        "homepage2": ""
       }
     },
     {
@@ -2240,7 +2591,10 @@ const michiNoEkiGeoJSON = {
         "city": "弘前市",
         "address": "青森県弘前市大字石川字泉田62-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18906"
+        "url": "https://www.michi-no-eki.jp/stations/views/18906",
+        "businessHours": "9:00～18:30（4月～10月）、9:00～18:00（11月～3月）",
+        "homepage": "http://michinoeki-hirosaki.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -2259,7 +2613,10 @@ const michiNoEkiGeoJSON = {
         "city": "十和田市",
         "address": "青森県十和田市大字奥瀬字堰道39-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18907"
+        "url": "https://www.michi-no-eki.jp/stations/views/18907",
+        "businessHours": "9:00～18:00 ＜休 12/31～1/1＞",
+        "homepage": "http://www.oirase.or.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -2278,7 +2635,10 @@ const michiNoEkiGeoJSON = {
         "city": "三戸町",
         "address": "青森県三戸郡三戸町大字川守田字西張渡39-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18908"
+        "url": "https://www.michi-no-eki.jp/stations/views/18908",
+        "businessHours": "9:00～18:00〔施設により異なる〕",
+        "homepage": "http://www.michinoeki-sannohe.com/",
+        "homepage2": ""
       }
     },
     {
@@ -2297,7 +2657,10 @@ const michiNoEkiGeoJSON = {
         "city": "青森市",
         "address": "青森県青森市浪岡大字女鹿沢字野尻2-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18909"
+        "url": "https://www.michi-no-eki.jp/stations/views/18909",
+        "businessHours": "9:00～19:00（3/16～11/15）、9:00～18:00（11/16～3/15）〔施設により異なる〕",
+        "homepage": "http://www.applehill.co.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -2316,7 +2679,10 @@ const michiNoEkiGeoJSON = {
         "city": "五所川原市",
         "address": "青森県五所川原市相内実取287-1058",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18910"
+        "url": "https://www.michi-no-eki.jp/stations/views/18910",
+        "businessHours": "9:00～18:00（冬期・営業時間短縮あり）＜休 12/31～1/2＞",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -2335,7 +2701,10 @@ const michiNoEkiGeoJSON = {
         "city": "今別町",
         "address": "青森県東津軽郡今別町大字大川平字清川87-16",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18911"
+        "url": "https://www.michi-no-eki.jp/stations/views/18911",
+        "businessHours": "9:00～19:00 ≪冬期・営業時間短縮あり≫",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -2354,7 +2723,10 @@ const michiNoEkiGeoJSON = {
         "city": "八戸市",
         "address": "青森県八戸市南郷大字中野字舘野4-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18912"
+        "url": "https://www.michi-no-eki.jp/stations/views/18912",
+        "businessHours": "直売所8:00～18:00(4～10月)・8:30～17:00(11～3月)、レストラン 11:00～19:00(ラストオーダー18:30)",
+        "homepage": "https://www.michinoeki-nango.com",
+        "homepage2": ""
       }
     },
     {
@@ -2373,7 +2745,10 @@ const michiNoEkiGeoJSON = {
         "city": "つがる市",
         "address": "青森県つがる市森田町床舞稚桜4-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18913"
+        "url": "https://www.michi-no-eki.jp/stations/views/18913",
+        "businessHours": "9:00～18:00 ≪冬期・営業時間短縮あり≫",
+        "homepage": "http://www.earthtop.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -2392,7 +2767,10 @@ const michiNoEkiGeoJSON = {
         "city": "青森市",
         "address": "青森県青森市大字浅虫字螢谷341-19",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18914"
+        "url": "https://www.michi-no-eki.jp/stations/views/18914",
+        "businessHours": "7:00～20:30〔施設により異なる〕",
+        "homepage": "http://www.yu-sa.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -2411,7 +2789,10 @@ const michiNoEkiGeoJSON = {
         "city": "平川市",
         "address": "青森県平川市碇ヶ関碇石13-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18915"
+        "url": "https://www.michi-no-eki.jp/stations/views/18915",
+        "businessHours": "9:00～19:00 ≪冬期・営業時間短縮あり≫ ＜休 年末年始＞",
+        "homepage": "http://ikarigaseki.com/",
+        "homepage2": ""
       }
     },
     {
@@ -2430,7 +2811,10 @@ const michiNoEkiGeoJSON = {
         "city": "田舎館村",
         "address": "青森県南津軽郡田舎館村大字高樋字八幡10",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18916"
+        "url": "https://www.michi-no-eki.jp/stations/views/18916",
+        "businessHours": "8:30～18:00 ≪冬期・営業時間短縮あり≫ ＜休 12/31午後～1/1＞",
+        "homepage": "http://www.michinoeki-inakadate.com/",
+        "homepage2": ""
       }
     },
     {
@@ -2449,7 +2833,10 @@ const michiNoEkiGeoJSON = {
         "city": "横浜町",
         "address": "青森県上北郡横浜町字林ノ脇79-12",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18917"
+        "url": "https://www.michi-no-eki.jp/stations/views/18917",
+        "businessHours": "＜4月～10月＞8:30～18:00 ＜11月～3月＞9：00～17：30 ＜定休日 12/31、1/1、1月～3月の火曜日＞",
+        "homepage": "https://www.nanohana-plaza.com/",
+        "homepage2": ""
       }
     },
     {
@@ -2468,7 +2855,10 @@ const michiNoEkiGeoJSON = {
         "city": "外ヶ浜町",
         "address": "青森県東津軽郡外ヶ浜町字三厩龍浜99",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18918"
+        "url": "https://www.michi-no-eki.jp/stations/views/18918",
+        "businessHours": "8:40～17:00 ＜冬期閉鎖あり＞",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -2487,7 +2877,10 @@ const michiNoEkiGeoJSON = {
         "city": "中泊町",
         "address": "青森県北津軽郡中泊町大字小泊字折腰内45",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18919"
+        "url": "https://www.michi-no-eki.jp/stations/views/18919",
+        "businessHours": "9:00～17:00(冬季閉鎖11月上旬～4月下旬）",
+        "homepage": "https://www.aomori-yamaka.com/",
+        "homepage2": ""
       }
     },
     {
@@ -2506,7 +2899,10 @@ const michiNoEkiGeoJSON = {
         "city": "三沢市",
         "address": "青森県三沢市谷地頭4-298-652",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18920"
+        "url": "https://www.michi-no-eki.jp/stations/views/18920",
+        "businessHours": "直売所 (4月～10月)9:00～18:00 (11月～3月)9：00～17：00 レストラン (4月～10月)10：30～16：30 ラストオーダー16：00 (11月～3月)10：30～15：30 ラストオーダー15：30 ＜休 12/31～1/２＞",
+        "homepage": "http://kite-misawa.com/tonamihan/",
+        "homepage2": ""
       }
     },
     {
@@ -2525,7 +2921,10 @@ const michiNoEkiGeoJSON = {
         "city": "十和田市",
         "address": "青森県十和田市大字伝法寺字平窪37-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18921"
+        "url": "https://www.michi-no-eki.jp/stations/views/18921",
+        "businessHours": "9:00～20:00（4月～10月）、9:00～19:00（11月～3月） ＜休 1/1＞",
+        "homepage": "http://www.towadapia.com/",
+        "homepage2": ""
       }
     },
     {
@@ -2544,7 +2943,10 @@ const michiNoEkiGeoJSON = {
         "city": "鶴田町",
         "address": "青森県北津軽郡鶴田町大字境字里見176-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18922"
+        "url": "https://www.michi-no-eki.jp/stations/views/18922",
+        "businessHours": "9:00～17:00 ＜休 1/1＞",
+        "homepage": "http://www.tsurunosato-aruja.com/",
+        "homepage2": ""
       }
     },
     {
@@ -2563,7 +2965,10 @@ const michiNoEkiGeoJSON = {
         "city": "深浦町",
         "address": "青森県西津軽郡深浦町大字風合瀬字上砂子川144-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18923"
+        "url": "https://www.michi-no-eki.jp/stations/views/18923",
+        "businessHours": "9:00～18:00（1～3月17:00）",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -2582,7 +2987,10 @@ const michiNoEkiGeoJSON = {
         "city": "東北町",
         "address": "青森県上北郡東北町大字上野字南谷地122",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18924"
+        "url": "https://www.michi-no-eki.jp/stations/views/18924",
+        "businessHours": "8:30～18:00(4～9月)、9:00～17:30(10～3月）＜休 年末年始＞",
+        "homepage": "http://ogawarako.co.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -2601,7 +3009,10 @@ const michiNoEkiGeoJSON = {
         "city": "外ヶ浜町",
         "address": "青森県東津軽郡外ヶ浜町字平舘太郎右ェ門沢1-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18925"
+        "url": "https://www.michi-no-eki.jp/stations/views/18925",
+        "businessHours": "9:00～16:00",
+        "homepage": "現在、調整中",
+        "homepage2": ""
       }
     },
     {
@@ -2620,7 +3031,10 @@ const michiNoEkiGeoJSON = {
         "city": "六戸町",
         "address": "青森県上北郡六戸町大字犬落瀬字後田87",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18926"
+        "url": "https://www.michi-no-eki.jp/stations/views/18926",
+        "businessHours": "9:00～18:00 ≪冬期・営業時間短縮あり≫",
+        "homepage": "https://rokunohe.wixsite.com/home/",
+        "homepage2": ""
       }
     },
     {
@@ -2639,7 +3053,10 @@ const michiNoEkiGeoJSON = {
         "city": "花巻市",
         "address": "岩手県花巻市石鳥谷町中寺林7-17-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18927"
+        "url": "https://www.michi-no-eki.jp/stations/views/18927",
+        "businessHours": "9:00～17:30〔施設により異なる〕 ＜休 12/31～1/1＞",
+        "homepage": "https://www.sakashokan.com/",
+        "homepage2": ""
       }
     },
     {
@@ -2658,7 +3075,10 @@ const michiNoEkiGeoJSON = {
         "city": "陸前高田市",
         "address": "岩手県陸前高田市気仙町字土手影180 高田松原津波復興祈念公園内",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18928"
+        "url": "https://www.michi-no-eki.jp/stations/views/18928",
+        "businessHours": "4月〜9月・9:00〜18:00 10月〜3月・9:00〜17:00 年中無休(施設内一部店舗を除く）",
+        "homepage": "https://takata-matsubara.com/",
+        "homepage2": ""
       }
     },
     {
@@ -2677,7 +3097,10 @@ const michiNoEkiGeoJSON = {
         "city": "宮古市",
         "address": "岩手県宮古市区界2-434-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18929"
+        "url": "https://www.michi-no-eki.jp/stations/views/18929",
+        "businessHours": "9:00～17:00 ≪冬期・営業時間短縮あり≫",
+        "homepage": "http://www.miyako-kawai.com",
+        "homepage2": ""
       }
     },
     {
@@ -2696,7 +3119,10 @@ const michiNoEkiGeoJSON = {
         "city": "洋野町",
         "address": "岩手県九戸郡洋野町大野58-12-30",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18930"
+        "url": "https://www.michi-no-eki.jp/stations/views/18930",
+        "businessHours": "9:00～17:00〔施設により異なる〕",
+        "homepage": "http://www.ohnocampus.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -2715,7 +3141,10 @@ const michiNoEkiGeoJSON = {
         "city": "住田町",
         "address": "岩手県気仙郡住田町世田米字子飼沢30-39",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18931"
+        "url": "https://www.michi-no-eki.jp/stations/views/18931",
+        "businessHours": "9:00～18:00（冬期17:00まで）",
+        "homepage": "http://poran.sumita-gayagaya.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -2734,7 +3163,10 @@ const michiNoEkiGeoJSON = {
         "city": "岩泉町",
         "address": "岩手県下閉伊郡岩泉町乙茂字乙茂90-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18932"
+        "url": "https://www.michi-no-eki.jp/stations/views/18932",
+        "businessHours": "8:30～18:00（夏期）、8:30～17:30（冬期）",
+        "homepage": "http://www.ryusendo-water.co.jp/michinoeki/iwaizumi.html",
+        "homepage2": ""
       }
     },
     {
@@ -2753,7 +3185,10 @@ const michiNoEkiGeoJSON = {
         "city": "野田村",
         "address": "岩手県九戸郡野田村大字野田31-31-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18933"
+        "url": "https://www.michi-no-eki.jp/stations/views/18933",
+        "businessHours": "9:00～18:00 ＜休 1/1、3/31、9/30＞",
+        "homepage": "http://nodaeki.com/",
+        "homepage2": ""
       }
     },
     {
@@ -2772,7 +3207,10 @@ const michiNoEkiGeoJSON = {
         "city": "宮古市",
         "address": "岩手県宮古市田老二丁目5-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18934"
+        "url": "https://www.michi-no-eki.jp/stations/views/18934",
+        "businessHours": "9:00～17:00（産直とれたろう）",
+        "homepage": "http://www.city.miyako.iwate.jp/taro-shisho/michinoeki_tarou_1.html",
+        "homepage2": ""
       }
     },
     {
@@ -2791,7 +3229,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "岩手県下閉伊郡田野畑村菅窪151-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18935"
+        "url": "https://www.michi-no-eki.jp/stations/views/18935",
+        "businessHours": "9:00～17:00〔施設により異なる〕 ＜休 12/31~1/1＞",
+        "homepage": "https://shiinokaze2.com/",
+        "homepage2": ""
       }
     },
     {
@@ -2810,7 +3251,10 @@ const michiNoEkiGeoJSON = {
         "city": "奥州市",
         "address": "岩手県奥州市水沢姉体町字石川原51-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18936"
+        "url": "https://www.michi-no-eki.jp/stations/views/18936",
+        "businessHours": "売店9:00～18:00 ＜休 1/1＞ 、レストラン11:00～18:00(ラストオーダー17:00)",
+        "homepage": "https://www.city.oshu.iwate.jp/kanko/osusume/1/2/3294.html",
+        "homepage2": ""
       }
     },
     {
@@ -2829,7 +3273,10 @@ const michiNoEkiGeoJSON = {
         "city": "八幡平市",
         "address": "岩手県八幡平市大更2-154-36",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18937"
+        "url": "https://www.michi-no-eki.jp/stations/views/18937",
+        "businessHours": "4月～10月 8:30～17:00 11月～3月 9:00～17:00 ＜休 12/31～1/1＞",
+        "homepage": "http://www.hachimantai-ss.co.jp/~nishine/index.html",
+        "homepage2": ""
       }
     },
     {
@@ -2848,7 +3295,10 @@ const michiNoEkiGeoJSON = {
         "city": "久慈市",
         "address": "岩手郡久慈市山形町川井8-12-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18938"
+        "url": "https://www.michi-no-eki.jp/stations/views/18938",
+        "businessHours": "9:00～18:00 ＜休 12/30～1/3（売店は無休）＞",
+        "homepage": "http://kuji-tourism.jp/michinoeki/yamagata/",
+        "homepage2": ""
       }
     },
     {
@@ -2867,7 +3317,10 @@ const michiNoEkiGeoJSON = {
         "city": "遠野市",
         "address": "岩手県遠野市宮守町下宮守30-37-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18939"
+        "url": "https://www.michi-no-eki.jp/stations/views/18939",
+        "businessHours": "9:00～18:00≪冬期・営業時間短縮あり≫",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -2886,7 +3339,10 @@ const michiNoEkiGeoJSON = {
         "city": "紫波町",
         "address": "岩手県紫波郡紫波町遠山字松原7-8",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18940"
+        "url": "https://www.michi-no-eki.jp/stations/views/18940",
+        "businessHours": "9:00～17:00≪冬期・営業時間の変更あり≫ ＜休 12/31～1/3＞",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -2905,7 +3361,10 @@ const michiNoEkiGeoJSON = {
         "city": "花巻市",
         "address": "岩手県花巻市大迫町内川目10-30-114",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18941"
+        "url": "https://www.michi-no-eki.jp/stations/views/18941",
+        "businessHours": "売店9:00～17:30 ＜休み:火曜日と冬期（11月下旬～4月中旬）＞ トイレとスタンプと自販機は24時間年中無休で利用可",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -2924,7 +3383,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "岩手県下閉伊郡山田町山田2-111-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18942"
+        "url": "https://www.michi-no-eki.jp/stations/views/18942",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://yamada-oisuta.jp",
+        "homepage2": ""
       }
     },
     {
@@ -2943,7 +3405,10 @@ const michiNoEkiGeoJSON = {
         "city": "遠野市",
         "address": "岩手県遠野市綾織町新里8-2-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18943"
+        "url": "https://www.michi-no-eki.jp/stations/views/18943",
+        "businessHours": "9:00～18:00 ≪冬期・営業時間短縮あり≫ ＜休 1/1＞",
+        "homepage": "http://kazenooka.tonofurusato.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -2962,7 +3427,10 @@ const michiNoEkiGeoJSON = {
         "city": "大船渡市",
         "address": "岩手県大船渡市三陸町越善来字井戸洞95-27",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18944"
+        "url": "https://www.michi-no-eki.jp/stations/views/18944",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.sunfull.jp",
+        "homepage2": "https://www.sunfull-shop.jp"
       }
     },
     {
@@ -2981,7 +3449,10 @@ const michiNoEkiGeoJSON = {
         "city": "西和賀町",
         "address": "岩手県和賀郡西和賀町杉名畑44-264",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18945"
+        "url": "https://www.michi-no-eki.jp/stations/views/18945",
+        "businessHours": "9:00～18:30（12～3月は9:00～18:00）",
+        "homepage": "http://michinoeki.nishiwaga.biz/",
+        "homepage2": ""
       }
     },
     {
@@ -3000,7 +3471,10 @@ const michiNoEkiGeoJSON = {
         "city": "葛巻町",
         "address": "岩手県岩手郡葛巻町葛巻39-159-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18946"
+        "url": "https://www.michi-no-eki.jp/stations/views/18946",
+        "businessHours": "9:00～18:00 ≪冬期・営業時間短縮あり≫ ＜休 1/1～1/2＞",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -3019,7 +3493,10 @@ const michiNoEkiGeoJSON = {
         "city": "岩手町",
         "address": "岩手県岩手郡岩手町大字五日市10-121-20",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18947"
+        "url": "https://www.michi-no-eki.jp/stations/views/18947",
+        "businessHours": "産直9:00～18:00",
+        "homepage": "http://isigaminooka.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -3038,7 +3515,10 @@ const michiNoEkiGeoJSON = {
         "city": "雫石町",
         "address": "岩手県岩手郡雫石町橋場坂本118-10",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18948"
+        "url": "https://www.michi-no-eki.jp/stations/views/18948",
+        "businessHours": "8:30～18:00 ≪冬期・営業時間短縮あり≫",
+        "homepage": "http://www.anekko.co.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -3057,7 +3537,10 @@ const michiNoEkiGeoJSON = {
         "city": "花巻市",
         "address": "岩手県花巻市東和町安俵6区147-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18949"
+        "url": "https://www.michi-no-eki.jp/stations/views/18949",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.towa-spa.co.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -3076,7 +3559,10 @@ const michiNoEkiGeoJSON = {
         "city": "一関市",
         "address": "岩手県一関市厳美町字沖野々220-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18950"
+        "url": "https://www.michi-no-eki.jp/stations/views/18950",
+        "businessHours": "9:00～18:00（11～3月は9:00～17:00）＜休 毎月第3水曜日（3～10月は無休）＞",
+        "homepage": "http://www.ichitabi.jp/spot/data.php?no=13",
+        "homepage2": ""
       }
     },
     {
@@ -3095,7 +3581,10 @@ const michiNoEkiGeoJSON = {
         "city": "九戸村",
         "address": "岩手県九戸郡九戸村大字山屋2-28-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18951"
+        "url": "https://www.michi-no-eki.jp/stations/views/18951",
+        "businessHours": "8:00～19:00 ＜休 1/1、1/2＞",
+        "homepage": "http://www.vill.kunohe.iwate.jp/docs/206.html",
+        "homepage2": ""
       }
     },
     {
@@ -3114,7 +3603,10 @@ const michiNoEkiGeoJSON = {
         "city": "一関市",
         "address": "岩手県一関市川崎町薄衣字法道地42-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18952"
+        "url": "https://www.michi-no-eki.jp/stations/views/18952",
+        "businessHours": "9:00～19:00（12～2月は9:00～18:00）",
+        "homepage": "http://www.kawanoakari.com/",
+        "homepage2": ""
       }
     },
     {
@@ -3133,7 +3625,10 @@ const michiNoEkiGeoJSON = {
         "city": "宮古市",
         "address": "岩手県宮古市川内8-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18953"
+        "url": "https://www.michi-no-eki.jp/stations/views/18953",
+        "businessHours": "8:30～18:30 ≪冬期・営業時間短縮あり≫",
+        "homepage": "http://www.miyako-kawai.com",
+        "homepage2": ""
       }
     },
     {
@@ -3152,7 +3647,10 @@ const michiNoEkiGeoJSON = {
         "city": "宮古市",
         "address": "岩手県宮古市臨港通1-20",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18954"
+        "url": "https://www.michi-no-eki.jp/stations/views/18954",
+        "businessHours": "8:45～17:00〔施設により異なる〕",
+        "homepage": "https://oasis385.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -3171,7 +3669,10 @@ const michiNoEkiGeoJSON = {
         "city": "岩泉町",
         "address": "岩手県下閉伊郡岩泉町門字三田貝47-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18955"
+        "url": "https://www.michi-no-eki.jp/stations/views/18955",
+        "businessHours": "8:30～18:00 ≪冬期・営業時間短縮あり≫",
+        "homepage": "http://www.ryusendo-water.co.jp/mitinoekimitakai.html",
+        "homepage2": ""
       }
     },
     {
@@ -3190,7 +3691,10 @@ const michiNoEkiGeoJSON = {
         "city": "久慈市",
         "address": "岩手県久慈市中町2-5-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18956"
+        "url": "https://www.michi-no-eki.jp/stations/views/18956",
+        "businessHours": "9:00～19:00 ≪冬期・営業時間短縮あり≫ ＜休 1/1＞",
+        "homepage": "http://dofukan.com/",
+        "homepage2": ""
       }
     },
     {
@@ -3209,7 +3713,10 @@ const michiNoEkiGeoJSON = {
         "city": "七ヶ宿町",
         "address": "宮城県刈田郡七ヶ宿町字上野8-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18957"
+        "url": "https://www.michi-no-eki.jp/stations/views/18957",
+        "businessHours": "9:00～17:30 ≪冬期・営業時間短縮あり≫ ＜休 12/31～1/3、3/31＞",
+        "homepage": "http://www.town.shichikashuku.miyagi.jp/sightseeing/food/michinoeki.html",
+        "homepage2": ""
       }
     },
     {
@@ -3228,7 +3735,10 @@ const michiNoEkiGeoJSON = {
         "city": "登米市",
         "address": "宮城県登米市津山町横山字細谷26-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18958"
+        "url": "https://www.michi-no-eki.jp/stations/views/18958",
+        "businessHours": "9:00～17:00 ＜休 12/30～1/1＞",
+        "homepage": "http://moku2land.com/",
+        "homepage2": ""
       }
     },
     {
@@ -3247,7 +3757,10 @@ const michiNoEkiGeoJSON = {
         "city": "大崎市",
         "address": "宮城県大崎市三本木字大豆坂63-13",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18959"
+        "url": "https://www.michi-no-eki.jp/stations/views/18959",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.sanbongi.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -3266,7 +3779,10 @@ const michiNoEkiGeoJSON = {
         "city": "栗原市",
         "address": "宮城県栗原市花山字本沢北ノ前112-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18960"
+        "url": "https://www.michi-no-eki.jp/stations/views/18960",
+        "businessHours": "8:30～17:00",
+        "homepage": "https://visit-kurihara.travel/spots/143",
+        "homepage2": ""
       }
     },
     {
@@ -3285,7 +3801,10 @@ const michiNoEkiGeoJSON = {
         "city": "気仙沼市",
         "address": "宮城県気仙沼市本吉町三島94-12",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18961"
+        "url": "https://www.michi-no-eki.jp/stations/views/18961",
+        "businessHours": "9:30～17:30 ＜休 12/31～1/2＞",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -3304,7 +3823,10 @@ const michiNoEkiGeoJSON = {
         "city": "大郷町",
         "address": "宮城県黒川郡大郷町中村字北浦 51-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18962"
+        "url": "https://www.michi-no-eki.jp/stations/views/18962",
+        "businessHours": "9:00～18:00 ＜休 年末年始＞",
+        "homepage": "http://www.oosato-rs.co.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -3323,7 +3845,10 @@ const michiNoEkiGeoJSON = {
         "city": "登米市",
         "address": "宮城県登米市米山町西野字新遠田67",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18963"
+        "url": "https://www.michi-no-eki.jp/stations/views/18963",
+        "businessHours": "9:00~18:30（4月～11月）、9:00~18:00（12月～3月） ＜休 12/31~1/3＞",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -3342,7 +3867,10 @@ const michiNoEkiGeoJSON = {
         "city": "大崎市",
         "address": "宮城県大崎市岩出山池月字下宮道下4-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18964"
+        "url": "https://www.michi-no-eki.jp/stations/views/18964",
+        "businessHours": "4月～11月 9:00～18:00 12月～3月 9:00～17:00〔施設により異なる〕",
+        "homepage": "https://ala-date.com",
+        "homepage2": ""
       }
     },
     {
@@ -3361,7 +3889,10 @@ const michiNoEkiGeoJSON = {
         "city": "登米市",
         "address": "宮城県登米市東和町米川字六反33-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18965"
+        "url": "https://www.michi-no-eki.jp/stations/views/18965",
+        "businessHours": "9:00～17:00〔施設により異なる〕",
+        "homepage": "http://rinrinkan.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -3380,7 +3911,10 @@ const michiNoEkiGeoJSON = {
         "city": "石巻市",
         "address": "宮城県石巻市小船越字二子北下1-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18966"
+        "url": "https://www.michi-no-eki.jp/stations/views/18966",
+        "businessHours": "直売所9:00～19:00 温泉保養施設9:00～21:00（最終受付20:30 毎月第4火曜定休） フードコート10:00～20:00(LO19:30) お郷カフェ10:00～17:00",
+        "homepage": "https://joubon.com",
+        "homepage2": ""
       }
     },
     {
@@ -3399,7 +3933,10 @@ const michiNoEkiGeoJSON = {
         "city": "登米市",
         "address": "宮城県登米市南方町新高石浦150-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18967"
+        "url": "https://www.michi-no-eki.jp/stations/views/18967",
+        "businessHours": "9:00～18:00（施設により異なる） ＜休 12/31～1/3＞",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -3418,7 +3955,10 @@ const michiNoEkiGeoJSON = {
         "city": "村田町",
         "address": "宮城県柴田郡村田町大字村田字北塩内41",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18968"
+        "url": "https://www.michi-no-eki.jp/stations/views/18968",
+        "businessHours": "9:00～17:00 ＜休 年末年始＞",
+        "homepage": "http://www.muratamachi.info",
+        "homepage2": ""
       }
     },
     {
@@ -3437,7 +3977,10 @@ const michiNoEkiGeoJSON = {
         "city": "北秋田市",
         "address": "秋田県北秋田市綴子字大堤道下62-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18969"
+        "url": "https://www.michi-no-eki.jp/stations/views/18969",
+        "businessHours": "9:00～18:00（12～3月 9:30～17:00） ＜休 1/1＞",
+        "homepage": "http://www.city.kitaakita.akita.jp/industdb/shotengaidb/212.html",
+        "homepage2": ""
       }
     },
     {
@@ -3456,7 +3999,10 @@ const michiNoEkiGeoJSON = {
         "city": "能代市",
         "address": "秋田県能代市二ツ井町小繋字泉51番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18970"
+        "url": "https://www.michi-no-eki.jp/stations/views/18970",
+        "businessHours": "9:00～18:00 ＜休 1/1～1/2＞",
+        "homepage": "http://michinoeki-futatsui.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -3475,7 +4021,10 @@ const michiNoEkiGeoJSON = {
         "city": "由利本荘市",
         "address": "秋田県由利本荘市西目町沼田字新道下1112-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18971"
+        "url": "https://www.michi-no-eki.jp/stations/views/18971",
+        "businessHours": "9:00～18:00 ＜休 12/31～1/1＞",
+        "homepage": "http://eki.nisime.net/",
+        "homepage2": ""
       }
     },
     {
@@ -3494,7 +4043,10 @@ const michiNoEkiGeoJSON = {
         "city": "大館市",
         "address": "秋田県大館市長走字陣場311",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18972"
+        "url": "https://www.michi-no-eki.jp/stations/views/18972",
+        "businessHours": "7:00～21:00",
+        "homepage": "http://ohdate-yatate.com",
+        "homepage2": ""
       }
     },
     {
@@ -3513,7 +4065,10 @@ const michiNoEkiGeoJSON = {
         "city": "八峰町",
         "address": "秋田県山本郡八峰町八森字乙の水72-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18973"
+        "url": "https://www.michi-no-eki.jp/stations/views/18973",
+        "businessHours": "9:00～18:00 （冬季9:00～17:00） ＜休 12/30～1/2＞",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -3532,7 +4087,10 @@ const michiNoEkiGeoJSON = {
         "city": "鹿角市",
         "address": "秋田県鹿角市花輪字新田町11-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18974"
+        "url": "https://www.michi-no-eki.jp/stations/views/18974",
+        "businessHours": "9:00～18:00 （冬季9:00～17:00）",
+        "homepage": "https://antlerkazuno.jp/",
+        "homepage2": "https://explorekazuno.jp/"
       }
     },
     {
@@ -3551,7 +4109,10 @@ const michiNoEkiGeoJSON = {
         "city": "大仙市",
         "address": "秋田県大仙市北楢岡字船戸187",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18975"
+        "url": "https://www.michi-no-eki.jp/stations/views/18975",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.chayakko.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -3570,7 +4131,10 @@ const michiNoEkiGeoJSON = {
         "city": "三種町",
         "address": "秋田県山本郡三種町鹿渡字高石野126-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18976"
+        "url": "https://www.michi-no-eki.jp/stations/views/18976",
+        "businessHours": "9:00～18:00≪冬期・営業時間短縮あり≫ ＜休 12/31～1/3＞",
+        "homepage": "http://www.town.mitane.akita.jp/kyuhp/kotooka/mapp06.htm",
+        "homepage2": ""
       }
     },
     {
@@ -3589,7 +4153,10 @@ const michiNoEkiGeoJSON = {
         "city": "由利本荘市",
         "address": "秋田県由利本荘市東由利老方字畑田28",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18977"
+        "url": "https://www.michi-no-eki.jp/stations/views/18977",
+        "businessHours": "13:00～20:00〔休館日 毎週月・火曜日〕祭日の時は翌日",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -3608,7 +4175,10 @@ const michiNoEkiGeoJSON = {
         "city": "上小阿仁村",
         "address": "秋田県北秋田郡上小阿仁村小沢田字向川原66-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18978"
+        "url": "https://www.michi-no-eki.jp/stations/views/18978",
+        "businessHours": "9:00～17:30 ＜休 12/31～1/1＞",
+        "homepage": "https://michinoeki-kamikoani.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -3627,7 +4197,10 @@ const michiNoEkiGeoJSON = {
         "city": "にかほ市",
         "address": "秋田県にかほ市象潟町字大塩越73-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18979"
+        "url": "https://www.michi-no-eki.jp/stations/views/18979",
+        "businessHours": "9:00～21:00＜休 12月～3月の第3月曜日＞",
+        "homepage": "https://www.kisakata.nemunooka.jp",
+        "homepage2": ""
       }
     },
     {
@@ -3646,7 +4219,10 @@ const michiNoEkiGeoJSON = {
         "city": "大仙市",
         "address": "秋田県大仙市長野字高畑95-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18980"
+        "url": "https://www.michi-no-eki.jp/stations/views/18980",
+        "businessHours": "9:00～18:00≪冬期・営業時間短縮あり≫ ＜休 12/31～1/1＞",
+        "homepage": "http://nakasen.hana.jp",
+        "homepage2": ""
       }
     },
     {
@@ -3665,7 +4241,10 @@ const michiNoEkiGeoJSON = {
         "city": "湯沢市",
         "address": "秋田県湯沢市小野字橋本90",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18981"
+        "url": "https://www.michi-no-eki.jp/stations/views/18981",
+        "businessHours": "9:00～18:00 ≪冬期・営業時間短縮あり≫",
+        "homepage": "http://www.michinoeki-ogachi.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -3684,7 +4263,10 @@ const michiNoEkiGeoJSON = {
         "city": "潟上市",
         "address": "秋田県潟上市天王字江川上谷地109-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18982"
+        "url": "https://www.michi-no-eki.jp/stations/views/18982",
+        "businessHours": "9:00～18:00≪冬期・営業時間短縮あり≫ ＜休 12/31＞",
+        "homepage": "http://www.kurara-spa.co.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -3703,7 +4285,10 @@ const michiNoEkiGeoJSON = {
         "city": "由利本荘市",
         "address": "秋田県由利本荘市岩城内道川 字新鶴潟192-43",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18983"
+        "url": "https://www.michi-no-eki.jp/stations/views/18983",
+        "businessHours": "9:00～18:30（4月～10月）、9:00～18:00（11月～3月）〔施設により異なる〕、温泉9:00～21:00",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -3722,7 +4307,10 @@ const michiNoEkiGeoJSON = {
         "city": "潟上市",
         "address": "秋田県潟上市昭和豊川竜毛字山ノ下1-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18984"
+        "url": "https://www.michi-no-eki.jp/stations/views/18984",
+        "businessHours": "9:00～18:00 ＜休 12/31～1/1＞",
+        "homepage": "http://www.blume-messe.com/",
+        "homepage2": ""
       }
     },
     {
@@ -3741,7 +4329,10 @@ const michiNoEkiGeoJSON = {
         "city": "八峰町",
         "address": "秋田県山本郡八峰町峰浜沼田字ホンコ谷地147-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18985"
+        "url": "https://www.michi-no-eki.jp/stations/views/18985",
+        "businessHours": "9:00～18:00≪冬期・営業時間短縮あり≫ ＜休 12/31～1/3＞",
+        "homepage": "http://www.town.happou.akita.jp/docs/2017021600018/",
+        "homepage2": ""
       }
     },
     {
@@ -3760,7 +4351,10 @@ const michiNoEkiGeoJSON = {
         "city": "横手市",
         "address": "秋田県横手市山内土渕字小目倉沢34",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18986"
+        "url": "https://www.michi-no-eki.jp/stations/views/18986",
+        "businessHours": "9:00～19:00≪冬期・営業時間短縮あり≫",
+        "homepage": "http://a-woodyland.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -3779,7 +4373,10 @@ const michiNoEkiGeoJSON = {
         "city": "由利本荘市",
         "address": "秋田県由利本荘市岩谷町字西越36",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18987"
+        "url": "https://www.michi-no-eki.jp/stations/views/18987",
+        "businessHours": "9:00～21:00〔施設により異なる〕",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -3798,7 +4395,10 @@ const michiNoEkiGeoJSON = {
         "city": "北秋田市",
         "address": "秋田県北秋田市阿仁比立内字家ノ後8-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18988"
+        "url": "https://www.michi-no-eki.jp/stations/views/18988",
+        "businessHours": "9:00～17:00＜年中＞、レストラン 11:00～14:00＜年中＞、＜休 12月～3月の毎週火曜日、12/31～1/2＞",
+        "homepage": "https://www.city.kitaakita.akita.jp/kankou/category/kankou_shisetsu/ani/402.html",
+        "homepage2": ""
       }
     },
     {
@@ -3817,7 +4417,10 @@ const michiNoEkiGeoJSON = {
         "city": "大館市",
         "address": "秋田県大館市比内町扇田字新大堤下93-11",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18989"
+        "url": "https://www.michi-no-eki.jp/stations/views/18989",
+        "businessHours": "9:00～20:00〔施設により異なる〕 ＜休 12/31～1/2、レストランは毎週月曜日＞",
+        "homepage": "http://www.city.odate.akita.jp/dcity/sitemanager.nsf/doc/michinoeki_hinai.html",
+        "homepage2": ""
       }
     },
     {
@@ -3836,7 +4439,10 @@ const michiNoEkiGeoJSON = {
         "city": "五城目町",
         "address": "秋田県南秋田郡五城目町富津内下山内字上広ヶ野76-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18990"
+        "url": "https://www.michi-no-eki.jp/stations/views/18990",
+        "businessHours": "◇物産館 9:00～18:00(12月～3月 17:00) ◇レストラン 11:00～15:30 ◇軽食 9:00～18:00(12月～3月17:00)",
+        "homepage": "https://gojome-st.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -3855,7 +4461,10 @@ const michiNoEkiGeoJSON = {
         "city": "由利本荘市",
         "address": "秋田県由利本荘市鳥海町上笹子字堺台100",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18991"
+        "url": "https://www.michi-no-eki.jp/stations/views/18991",
+        "businessHours": "午前8：00～20：00（休憩所）",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -3874,7 +4483,10 @@ const michiNoEkiGeoJSON = {
         "city": "美郷町",
         "address": "秋田県仙北郡美郷町金沢字下舘124",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18992"
+        "url": "https://www.michi-no-eki.jp/stations/views/18992",
+        "businessHours": "9:00～19:00 ≪冬期・営業時間短縮あり≫ ＜休 1/1＞",
+        "homepage": "http://akita-misato.com/gantaro/",
+        "homepage2": ""
       }
     },
     {
@@ -3893,7 +4505,10 @@ const michiNoEkiGeoJSON = {
         "city": "大仙市",
         "address": "秋田県大仙市協和荒川字新田表15-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18993"
+        "url": "https://www.michi-no-eki.jp/stations/views/18993",
+        "businessHours": "9:00～18:00 （冬期9:00～17:00）※諸般の事情により時間短縮営業を行う場合があります。事前に確認をお願い致します。",
+        "homepage": "http://www.city.daisen.akita.jp/docs/2013101800194/",
+        "homepage2": ""
       }
     },
     {
@@ -3912,7 +4527,10 @@ const michiNoEkiGeoJSON = {
         "city": "横手市",
         "address": "秋田県横手市十文字町字海道下21-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18994"
+        "url": "https://www.michi-no-eki.jp/stations/views/18994",
+        "businessHours": "9:00～18:00≪元日は休業・催事等で時間変更あり≫",
+        "homepage": "https://mamederaga.com/",
+        "homepage2": ""
       }
     },
     {
@@ -3931,7 +4549,10 @@ const michiNoEkiGeoJSON = {
         "city": "大潟村",
         "address": "秋田県南秋田郡大潟村字西5-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18995"
+        "url": "https://www.michi-no-eki.jp/stations/views/18995",
+        "businessHours": "8:00～18:00≪冬期・営業時間短縮あり≫ ＜休 1/1～1/2＞",
+        "homepage": "https://katanomise.com/",
+        "homepage2": ""
       }
     },
     {
@@ -3950,7 +4571,10 @@ const michiNoEkiGeoJSON = {
         "city": "秋田市",
         "address": "秋田県秋田市土崎港西1-9-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18996"
+        "url": "https://www.michi-no-eki.jp/stations/views/18996",
+        "businessHours": "9:00～21:00〔施設により異なる〕",
+        "homepage": "http://www.selion-akita.com/",
+        "homepage2": ""
       }
     },
     {
@@ -3969,7 +4593,10 @@ const michiNoEkiGeoJSON = {
         "city": "小坂町",
         "address": "秋田県鹿角郡小坂町上向字藤原35-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18997"
+        "url": "https://www.michi-no-eki.jp/stations/views/18997",
+        "businessHours": "9:00～17:00（4/15～10/31）【冬期間は物産施設等が閉鎖】令和7年11月1日(土) ～ 令和8年4月15日(水)予定 道の駅は年中開放",
+        "homepage": "https://www.town.kosaka.akita.jp/machinososhiki/kankosangyoka/kankoshokohan/3/kosakakankouspot/1663.html",
+        "homepage2": ""
       }
     },
     {
@@ -3988,7 +4615,10 @@ const michiNoEkiGeoJSON = {
         "city": "北秋田市",
         "address": "秋田県北秋田市脇神字カラムシ岱21-144",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18998"
+        "url": "https://www.michi-no-eki.jp/stations/views/18998",
+        "businessHours": "7:45～19:00",
+        "homepage": "https://onj-airterminal.com/",
+        "homepage2": ""
       }
     },
     {
@@ -4007,7 +4637,10 @@ const michiNoEkiGeoJSON = {
         "city": "鶴岡市",
         "address": "山形県鶴岡市越中山字名平3-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/18999"
+        "url": "https://www.michi-no-eki.jp/stations/views/18999",
+        "businessHours": "9:00～17:00 ＜休 12～3月の第4月曜日＞",
+        "homepage": "http://www.gassanasahi-hakubutsumura.co.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -4026,7 +4659,10 @@ const michiNoEkiGeoJSON = {
         "city": "河北町",
         "address": "山形県西村山郡河北町谷地字真木335-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19000"
+        "url": "https://www.michi-no-eki.jp/stations/views/19000",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://sites.google.com/view/ekikahoku/home",
+        "homepage2": "https://benibananosato.com/watch/burattopia/"
       }
     },
     {
@@ -4045,7 +4681,10 @@ const michiNoEkiGeoJSON = {
         "city": "寒河江市",
         "address": "山形県寒河江市大字八鍬字川原919-8",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19001"
+        "url": "https://www.michi-no-eki.jp/stations/views/19001",
+        "businessHours": "9:00～18:00≪冬期・営業時間短縮あり≫",
+        "homepage": "http://www.cherryland.co.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -4064,7 +4703,10 @@ const michiNoEkiGeoJSON = {
         "city": "鶴岡市",
         "address": "山形県鶴岡市早田字戸ノ浦606",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19002"
+        "url": "https://www.michi-no-eki.jp/stations/views/19002",
+        "businessHours": "8:00～18:00（冬季は8:30～17:30） ＜休 毎月最終水曜日（7・8月を除く）、12/31～1/1＞",
+        "homepage": "http://www.at-syarin.com",
+        "homepage2": ""
       }
     },
     {
@@ -4083,7 +4725,10 @@ const michiNoEkiGeoJSON = {
         "city": "西川町",
         "address": "山形県西村山郡西川町大字水沢2304",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19003"
+        "url": "https://www.michi-no-eki.jp/stations/views/19003",
+        "businessHours": "9:00〜17:00 ＜休 年末年始＞",
+        "homepage": "http://www.gassan.co.jp/meisuikan/",
+        "homepage2": ""
       }
     },
     {
@@ -4102,7 +4747,10 @@ const michiNoEkiGeoJSON = {
         "city": "飯豊町",
         "address": "山形県西置賜郡飯豊町大字松原1898",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19004"
+        "url": "https://www.michi-no-eki.jp/stations/views/19004",
+        "businessHours": "9:00～18:00（12～3月は10:00～17:00） ＜休 12/31～1/1・12月～3月の第二水曜・第四水曜（変更の可能性あり）＞",
+        "homepage": "http://mezami113.com/",
+        "homepage2": ""
       }
     },
     {
@@ -4121,7 +4769,10 @@ const michiNoEkiGeoJSON = {
         "city": "村山市",
         "address": "山形県村山市大字楯岡7635-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19005"
+        "url": "https://www.michi-no-eki.jp/stations/views/19005",
+        "businessHours": "9:00～17:00（季節変更あり）",
+        "homepage": "http://www.rs-murayama.com/",
+        "homepage2": ""
       }
     },
     {
@@ -4140,7 +4791,10 @@ const michiNoEkiGeoJSON = {
         "city": "戸沢村",
         "address": "山形県最上郡戸沢村大字蔵岡字黒渕3008-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19006"
+        "url": "https://www.michi-no-eki.jp/stations/views/19006",
+        "businessHours": "9:00～17:30〔施設により異なる〕",
+        "homepage": "http://www.kouraikan.com/tozawa.html",
+        "homepage2": ""
       }
     },
     {
@@ -4159,7 +4813,10 @@ const michiNoEkiGeoJSON = {
         "city": "遊佐町",
         "address": "山形県飽海郡遊佐町大字菅里字菅野308-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19007"
+        "url": "https://www.michi-no-eki.jp/stations/views/19007",
+        "businessHours": "9:00～18:00（3月～10月）、9:00～17:00（11～2月） ＜ 休 1/1 ＞",
+        "homepage": "http://chokai-flat.com/",
+        "homepage2": ""
       }
     },
     {
@@ -4178,7 +4835,10 @@ const michiNoEkiGeoJSON = {
         "city": "米沢市",
         "address": "山形県米沢市大字入田沢573-19",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19008"
+        "url": "https://www.michi-no-eki.jp/stations/views/19008",
+        "businessHours": "9:00～18:00 ≪冬期・営業時間短縮あり≫ ＜休 1/1＞",
+        "homepage": "http://www.tazawa-forest.com/nagomi/",
+        "homepage2": "michinoeki-tazawa.jp"
       }
     },
     {
@@ -4197,7 +4857,10 @@ const michiNoEkiGeoJSON = {
         "city": "小国町",
         "address": "山形県西置賜郡小国町大字小国小坂町616-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19009"
+        "url": "https://www.michi-no-eki.jp/stations/views/19009",
+        "businessHours": "売店 白い森のくまさん・ぶな茶屋軽食コーナー9:00～17:00 お母さん食堂あいあい11：30～14：00 ＜休 1/1＞(あいあいのみ毎週火曜定休）",
+        "homepage": "http://michinoeki-oguni.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -4216,7 +4879,10 @@ const michiNoEkiGeoJSON = {
         "city": "大江町",
         "address": "山形県西村山郡大江町大字藤田218-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19010"
+        "url": "https://www.michi-no-eki.jp/stations/views/19010",
+        "businessHours": "9:00～18:00 ＜休 12/31～1/1＞",
+        "homepage": "https://oe-terume.co.jp/roadside-station-oe/",
+        "homepage2": "https://www.instagram.com/michinoeki_oe/"
       }
     },
     {
@@ -4235,7 +4901,10 @@ const michiNoEkiGeoJSON = {
         "city": "三川町",
         "address": "山形県東田川郡三川町大字横山字堤172-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19011"
+        "url": "https://www.michi-no-eki.jp/stations/views/19011",
+        "businessHours": "9:00～16:00 ＜休 12/31午後～1/3＞",
+        "homepage": "http://www.iroribinosato.info/",
+        "homepage2": ""
       }
     },
     {
@@ -4254,7 +4923,10 @@ const michiNoEkiGeoJSON = {
         "city": "高畠町",
         "address": "山形県東置賜郡高畠町大字安久津2072-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19012"
+        "url": "https://www.michi-no-eki.jp/stations/views/19012",
+        "businessHours": "9:00～17:30≪冬期・営業時間短縮あり≫",
+        "homepage": "http://www.rstakahata.com/",
+        "homepage2": ""
       }
     },
     {
@@ -4273,7 +4945,10 @@ const michiNoEkiGeoJSON = {
         "city": "天童市",
         "address": "山形県天童市鍬ノ町二丁目３番４１号",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19013"
+        "url": "https://www.michi-no-eki.jp/stations/views/19013",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.city.tendo.yamagata.jp/busiindust/nourin/mori-na_tendo.html",
+        "homepage2": ""
       }
     },
     {
@@ -4292,7 +4967,10 @@ const michiNoEkiGeoJSON = {
         "city": "尾花沢市",
         "address": "山形県尾花沢市芦沢1195-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19014"
+        "url": "https://www.michi-no-eki.jp/stations/views/19014",
+        "businessHours": "9:00～18:00 ＜休 1/1＞",
+        "homepage": "http://www.mitinoku.or.jp/nemaru/",
+        "homepage2": ""
       }
     },
     {
@@ -4311,7 +4989,10 @@ const michiNoEkiGeoJSON = {
         "city": "白鷹町",
         "address": "山形県西置賜郡白鷹町大字下山661-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19015"
+        "url": "https://www.michi-no-eki.jp/stations/views/19015",
+        "businessHours": "10:00～18:00≪冬期・営業時間短縮あり≫ ＜休 毎週水曜日＞",
+        "homepage": "http://www.ayuchaya.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -4330,7 +5011,10 @@ const michiNoEkiGeoJSON = {
         "city": "福島市",
         "address": "福島県福島市松川町水原字南沢41-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19016"
+        "url": "https://www.michi-no-eki.jp/stations/views/19016",
+        "businessHours": "9:00～18:00≪冬期・営業時間短縮あり≫",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -4349,7 +5033,10 @@ const michiNoEkiGeoJSON = {
         "city": "川俣町",
         "address": "福島県伊達郡川俣町大字鶴沢字東13-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19017"
+        "url": "https://www.michi-no-eki.jp/stations/views/19017",
+        "businessHours": "9:00～17:00 ＜休 12/31～1/1＞",
+        "homepage": "http://www.town.kawamata.lg.jp/site/kanko-event/silkpia-shisetsuannai.html",
+        "homepage2": ""
       }
     },
     {
@@ -4368,7 +5055,10 @@ const michiNoEkiGeoJSON = {
         "city": "南会津町",
         "address": "福島県南会津郡南会津町糸沢 字男鹿沼原3242-8",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19018"
+        "url": "https://www.michi-no-eki.jp/stations/views/19018",
+        "businessHours": "7:00～19:00（12月～3月は7:00～18:00まで）",
+        "homepage": "http://aizukogen-yume.jp/tajima/index.php",
+        "homepage2": ""
       }
     },
     {
@@ -4387,7 +5077,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "9691511 福島県二本松市下川崎字上平33-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19019"
+        "url": "https://www.michi-no-eki.jp/stations/views/19019",
+        "businessHours": "9:00～18:00 〔店舗により異なる〕",
+        "homepage": "http://www.michinoeki-adachi.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -4406,7 +5099,10 @@ const michiNoEkiGeoJSON = {
         "city": "喜多方市",
         "address": "福島県喜多方市松山町鳥見山字三町歩5598-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19020"
+        "url": "https://www.michi-no-eki.jp/stations/views/19020",
+        "businessHours": "売店9：30～18：00（最終入館17：45） レストラン11：00～18：00（Lo17：30）≪夏期・営業時間延長あり≫＜休 年末年始＞",
+        "homepage": "http://www.furusatosinkou.co.jp",
+        "homepage2": ""
       }
     },
     {
@@ -4425,7 +5121,10 @@ const michiNoEkiGeoJSON = {
         "city": "北塩原村",
         "address": "福島県耶麻郡北塩原村大字桧原字南黄連沢山1157",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19021"
+        "url": "https://www.michi-no-eki.jp/stations/views/19021",
+        "businessHours": "8:30～17:30≪冬期・営業時間短縮あり≫＜休 11月～4月の毎週水曜日＞",
+        "homepage": "http://www.michinoeki-urabandai.com/",
+        "homepage2": ""
       }
     },
     {
@@ -4444,7 +5143,10 @@ const michiNoEkiGeoJSON = {
         "city": "楢葉町",
         "address": "福島県双葉郡楢葉町大字山田岡字大堤入22-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19022"
+        "url": "https://www.michi-no-eki.jp/stations/views/19022",
+        "businessHours": "売店施設9：00～18：00 温泉施設10：00～21：00 フードコート11：00～20：00",
+        "homepage": "https://michinoeki-naraha.jp",
+        "homepage2": "https://www.town.naraha.lg.jp"
       }
     },
     {
@@ -4463,7 +5165,10 @@ const michiNoEkiGeoJSON = {
         "city": "相馬市",
         "address": "福島県相馬市日下石字金谷74-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19023"
+        "url": "https://www.michi-no-eki.jp/stations/views/19023",
+        "businessHours": "9:30～18:00",
+        "homepage": "https://michinoekisoma.main.jp/index.html",
+        "homepage2": ""
       }
     },
     {
@@ -4482,7 +5187,10 @@ const michiNoEkiGeoJSON = {
         "city": "塙町",
         "address": "福島県東白川郡塙町大字塙字桜木町388-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19024"
+        "url": "https://www.michi-no-eki.jp/stations/views/19024",
+        "businessHours": "9:00～18:00 ＜休 1/1、1/2＞",
+        "homepage": "https://www.michinoeki-hanawa.com/",
+        "homepage2": ""
       }
     },
     {
@@ -4501,7 +5209,10 @@ const michiNoEkiGeoJSON = {
         "city": "柳津町",
         "address": "福島県河沼郡柳津町字下平乙181-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19025"
+        "url": "https://www.michi-no-eki.jp/stations/views/19025",
+        "businessHours": "9:00～18:00 ≪冬期・営業時間短縮あり≫",
+        "homepage": "http://yanaizu-kousya.info/seiryu.shtml",
+        "homepage2": ""
       }
     },
     {
@@ -4520,7 +5231,10 @@ const michiNoEkiGeoJSON = {
         "city": "二本松市",
         "address": "福島県二本松市太田字下田2-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19026"
+        "url": "https://www.michi-no-eki.jp/stations/views/19026",
+        "businessHours": "9:00～17:00 ＜休 12/31・1/1・1/2＞",
+        "homepage": "http://www.touwanosato.net/",
+        "homepage2": ""
       }
     },
     {
@@ -4539,7 +5253,10 @@ const michiNoEkiGeoJSON = {
         "city": "西会津町",
         "address": "福島県耶麻郡西会津町野沢字下條乙1969-26",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19027"
+        "url": "https://www.michi-no-eki.jp/stations/views/19027",
+        "businessHours": "9:00～19:00 ＜休 1/1＞ 9:00～18:00（12/1～3/15）",
+        "homepage": "http://www.w-aizu.jp/yorisse/",
+        "homepage2": ""
       }
     },
     {
@@ -4558,7 +5275,10 @@ const michiNoEkiGeoJSON = {
         "city": "三島町",
         "address": "福島県大沼郡三島町大字川井字天屋原610",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19028"
+        "url": "https://www.michi-no-eki.jp/stations/views/19028",
+        "businessHours": "8:00～18:00 ＜休 1/1～1/3＞",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -4577,7 +5297,10 @@ const michiNoEkiGeoJSON = {
         "city": "玉川村",
         "address": "福島県石川郡玉川村大字岩法寺字宮ノ前140-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19029"
+        "url": "https://www.michi-no-eki.jp/stations/views/19029",
+        "businessHours": "8:30～18:00",
+        "homepage": "http://www.kobushinosato.com/",
+        "homepage2": ""
       }
     },
     {
@@ -4596,7 +5319,10 @@ const michiNoEkiGeoJSON = {
         "city": "天栄村",
         "address": "福島県岩瀬郡天栄村大字田良尾字芝草1-3552",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19030"
+        "url": "https://www.michi-no-eki.jp/stations/views/19030",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.hatoriko.jp/around/eki.html",
+        "homepage2": ""
       }
     },
     {
@@ -4615,7 +5341,10 @@ const michiNoEkiGeoJSON = {
         "city": "南相馬市",
         "address": "福島県南相馬市原町区高見町2-30-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19031"
+        "url": "https://www.michi-no-eki.jp/stations/views/19031",
+        "businessHours": "9:00～18:00〔施設により異なる〕",
+        "homepage": "http://www.nomaoinosato.co.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -4634,7 +5363,10 @@ const michiNoEkiGeoJSON = {
         "city": "下郷町",
         "address": "福島県南会津郡下郷町大字南倉沢 字木賊844-188",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19032"
+        "url": "https://www.michi-no-eki.jp/stations/views/19032",
+        "businessHours": "8:00～18:00（4月～11月）、8:00～17:00（12月～3月）＜休 12/31～1/1＞",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -4653,7 +5385,10 @@ const michiNoEkiGeoJSON = {
         "city": "平田村",
         "address": "福島県石川郡平田村大字上蓬田字横森後160",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19033"
+        "url": "https://www.michi-no-eki.jp/stations/views/19033",
+        "businessHours": "9:30～18:00 ＜休 1/1＞",
+        "homepage": "http://www.michinoeki-hirata.com/",
+        "homepage2": ""
       }
     },
     {
@@ -4672,7 +5407,10 @@ const michiNoEkiGeoJSON = {
         "city": "いわき市",
         "address": "福島県いわき市四倉町5-218-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19034"
+        "url": "https://www.michi-no-eki.jp/stations/views/19034",
+        "businessHours": "9:00～18:00〔施設により異なる〕＊『11月〜2月 閉店17:00』 ＜休 1/1、毎週火曜日（但し 祝日、GW・お盆期間、1/2・3は営業いたします。）＞",
+        "homepage": "https://www.michinoeki-yotsukurakou.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -4691,7 +5429,10 @@ const michiNoEkiGeoJSON = {
         "city": "磐梯町",
         "address": "福島県耶麻郡磐梯町大字磐梯字十王堂38",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19035"
+        "url": "https://www.michi-no-eki.jp/stations/views/19035",
+        "businessHours": "9:00～18:00（2021.12.1～） 〔コーナーにより異なる〕",
+        "homepage": "http://www.michinoekibandai.com/",
+        "homepage2": ""
       }
     },
     {
@@ -4710,7 +5451,10 @@ const michiNoEkiGeoJSON = {
         "city": "古殿町",
         "address": "福島県石川郡古殿町大字田口字平舘25",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19036"
+        "url": "https://www.michi-no-eki.jp/stations/views/19036",
+        "businessHours": "9:00～18:00 ＜休 年末年始＞",
+        "homepage": "http://ofukuro-eki.com/",
+        "homepage2": ""
       }
     },
     {
@@ -4729,7 +5473,10 @@ const michiNoEkiGeoJSON = {
         "city": "南会津町",
         "address": "福島県南会津郡南会津町番屋4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19037"
+        "url": "https://www.michi-no-eki.jp/stations/views/19037",
+        "businessHours": "8:00～17:00＜休 毎週火曜日、木曜日（冬期のみ）、12/29～1/1＞",
+        "homepage": "http://www.kanko-aizu.com/kau/3213/",
+        "homepage2": ""
       }
     },
     {
@@ -4748,7 +5495,10 @@ const michiNoEkiGeoJSON = {
         "city": "天栄村",
         "address": "福島県岩瀬郡天栄村大字大里字天房41-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19038"
+        "url": "https://www.michi-no-eki.jp/stations/views/19038",
+        "businessHours": "9:00～17:30＜休 第1水曜日12/31～1/3＞",
+        "homepage": "http://www.kinosato.fukushima.jp",
+        "homepage2": ""
       }
     },
     {
@@ -4767,7 +5517,10 @@ const michiNoEkiGeoJSON = {
         "city": "南会津町",
         "address": "福島県南会津郡南会津町山口字橋尻1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19039"
+        "url": "https://www.michi-no-eki.jp/stations/views/19039",
+        "businessHours": "10:00～20:00（火曜日は10:00～14:00）",
+        "homepage": "http://www.kirara289.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -4786,7 +5539,10 @@ const michiNoEkiGeoJSON = {
         "city": "金山町",
         "address": "福島県大沼郡金山町大字中川字上居平949-8",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19040"
+        "url": "https://www.michi-no-eki.jp/stations/views/19040",
+        "businessHours": "9:00～18:30＜休 12/30～1/2＞",
+        "homepage": "http://okuaizukaneyama.blog.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -4805,7 +5561,10 @@ const michiNoEkiGeoJSON = {
         "city": "二本松市",
         "address": "福島県二本松市東新殿字平石田12-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19041"
+        "url": "https://www.michi-no-eki.jp/stations/views/19041",
+        "businessHours": "9:00～17:00 ＜休 年始＞",
+        "homepage": "https://www.sakura-no-sato.com/",
+        "homepage2": ""
       }
     },
     {
@@ -4824,7 +5583,10 @@ const michiNoEkiGeoJSON = {
         "city": "湯川村",
         "address": "福島県河沼郡湯川村大字佐野目字五丁ノ目78-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19042"
+        "url": "https://www.michi-no-eki.jp/stations/views/19042",
+        "businessHours": "9:00～18:00〔施設により異なる〕＜休 1月1日 2月第3水曜日＞※臨時休業あり",
+        "homepage": "http://heso-aizu.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -4843,7 +5605,10 @@ const michiNoEkiGeoJSON = {
         "city": "昭和村",
         "address": "福島県大沼郡昭和村大字佐倉字上ノ原1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19043"
+        "url": "https://www.michi-no-eki.jp/stations/views/19043",
+        "businessHours": "9:00～17:00 ＜休 12/29～1/3＞",
+        "homepage": "https://www.karamushi.co.jp/",
+        "homepage2": "https://michieki-showa.shop/"
       }
     },
     {
@@ -4862,7 +5627,10 @@ const michiNoEkiGeoJSON = {
         "city": "城里町",
         "address": "茨城県東茨城郡城里町大字御前山37",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19044"
+        "url": "https://www.michi-no-eki.jp/stations/views/19044",
+        "businessHours": "9:00～18:00（4～9月） 9:00～17:00（10～3月）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000023.html",
+        "homepage2": "http://www.m-katsura.com/"
       }
     },
     {
@@ -4881,7 +5649,10 @@ const michiNoEkiGeoJSON = {
         "city": "常陸太田市",
         "address": "茨城県常陸太田市小菅694-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19045"
+        "url": "https://www.michi-no-eki.jp/stations/views/19045",
+        "businessHours": "9:00～16:30",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000055.html",
+        "homepage2": "https://www.instagram.com/michinoeki.satomi"
       }
     },
     {
@@ -4900,7 +5671,10 @@ const michiNoEkiGeoJSON = {
         "city": "境町",
         "address": "茨城県猿島郡境町1341-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19046"
+        "url": "https://www.michi-no-eki.jp/stations/views/19046",
+        "businessHours": "9:00～18:00＜休 12/30～1/1、2月・9月第2月曜日（祝日の場合はその翌日）＞",
+        "homepage": "https://www.sakaimachi.co.jp/",
+        "homepage2": "https://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000056.html"
       }
     },
     {
@@ -4919,7 +5693,10 @@ const michiNoEkiGeoJSON = {
         "city": "久慈郡大子町",
         "address": "茨城県久慈郡大子町大字池田2830-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19047"
+        "url": "https://www.michi-no-eki.jp/stations/views/19047",
+        "businessHours": "9:00～18:00 ＜休 毎月第1・第3水曜日（祝日の場合は翌日）、12/31・1/1＞",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000100.html",
+        "homepage2": "http://www.town.daigo.ibaraki.jp/sp/page/page000026.html"
       }
     },
     {
@@ -4938,7 +5715,10 @@ const michiNoEkiGeoJSON = {
         "city": "下妻市",
         "address": "茨城県下妻市数須140",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19048"
+        "url": "https://www.michi-no-eki.jp/stations/views/19048",
+        "businessHours": "8:00～20:00〔施設により異なる〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000068.html",
+        "homepage2": "http://www.city.shimotsuma.lg.jp/page/dir001734.html"
       }
     },
     {
@@ -4957,7 +5737,10 @@ const michiNoEkiGeoJSON = {
         "city": "行方市",
         "address": "茨城県行方市玉造甲1963-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19049"
+        "url": "https://www.michi-no-eki.jp/stations/views/19049",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000059.html",
+        "homepage2": "http://www.namegata-koikoi.com/"
       }
     },
     {
@@ -4976,7 +5759,10 @@ const michiNoEkiGeoJSON = {
         "city": "潮来市",
         "address": "茨城県潮来市前川1326-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19050"
+        "url": "https://www.michi-no-eki.jp/stations/views/19050",
+        "businessHours": "9:00～19:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000060.html",
+        "homepage2": "http://www.michinoeki-itako.jp"
       }
     },
     {
@@ -4995,7 +5781,10 @@ const michiNoEkiGeoJSON = {
         "city": "五霞町",
         "address": "茨城県猿島郡五霞町ごかみらい13-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19051"
+        "url": "https://www.michi-no-eki.jp/stations/views/19051",
+        "businessHours": "9:00～18:00（店舗により異なる）、【休】第1・第3月曜日（祝日の場合は翌日休み）",
+        "homepage": "https://www.michinoeki-goka.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -5014,7 +5803,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "茨城県古河市大和田2623",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19052"
+        "url": "https://www.michi-no-eki.jp/stations/views/19052",
+        "businessHours": "9:00～20:00〔施設により異なる〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000064.html",
+        "homepage2": "http://www.dynac-japan.com/michinoeki-koga/index.html"
       }
     },
     {
@@ -5033,7 +5825,10 @@ const michiNoEkiGeoJSON = {
         "city": "日立市",
         "address": "茨城県日立市みなと町5779-24",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19053"
+        "url": "https://www.michi-no-eki.jp/stations/views/19053",
+        "businessHours": "9:00～18:00（1月～3月 9:00～17:00） ※店舗により営業時間、定休日が異なります。",
+        "homepage": "https://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000065.html",
+        "homepage2": "https://hitachi-osakana-center.com/"
       }
     },
     {
@@ -5052,7 +5847,10 @@ const michiNoEkiGeoJSON = {
         "city": "茂木町",
         "address": "栃木県芳賀郡茂木町大字茂木1090-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19054"
+        "url": "https://www.michi-no-eki.jp/stations/views/19054",
+        "businessHours": "9:00～19:00（施設により異なる）〔10月～3月は18:00まで〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000071.html",
+        "homepage2": "http://www.motegiplaza.com/"
       }
     },
     {
@@ -5071,7 +5869,10 @@ const michiNoEkiGeoJSON = {
         "city": "真岡市",
         "address": "栃木県真岡市久下田2204-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19055"
+        "url": "https://www.michi-no-eki.jp/stations/views/19055",
+        "businessHours": "9:00～17:00（季節により変更あり）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000072.html",
+        "homepage2": "http://michinoeki-ninomiya.jp/"
       }
     },
     {
@@ -5090,7 +5891,10 @@ const michiNoEkiGeoJSON = {
         "city": "那須塩原市",
         "address": "栃木県那須塩原市関谷442",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19056"
+        "url": "https://www.michi-no-eki.jp/stations/views/19056",
+        "businessHours": "9:00～17:00 （12～2月 は9:00～16:00）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000057.html",
+        "homepage2": "http://www.agripal-shiobara.com/"
       }
     },
     {
@@ -5109,7 +5913,10 @@ const michiNoEkiGeoJSON = {
         "city": "那須町",
         "address": "栃木県那須郡那須町大字高久乙593-8",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19057"
+        "url": "https://www.michi-no-eki.jp/stations/views/19057",
+        "businessHours": "8:00～17:30（10月～3月は9:00～17:00）〔各施設季節により異なる〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000058.html",
+        "homepage2": "http://www.yuainomori.com/"
       }
     },
     {
@@ -5128,7 +5935,10 @@ const michiNoEkiGeoJSON = {
         "city": "那須塩原市",
         "address": "栃木県那須塩原市青木27",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19058"
+        "url": "https://www.michi-no-eki.jp/stations/views/19058",
+        "businessHours": "8:30～17:00（12～2月は8:30～16:30）",
+        "homepage": "https://meijinomori.jp/",
+        "homepage2": "https://www.instagram.com/meijinomori/"
       }
     },
     {
@@ -5147,7 +5957,10 @@ const michiNoEkiGeoJSON = {
         "city": "那珂川町",
         "address": "栃木県那須郡那珂川町北向田181-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19059"
+        "url": "https://www.michi-no-eki.jp/stations/views/19059",
+        "businessHours": "●直売所 8:00～17:00 ●レストラン[平日]▶11:00～17:30（ﾗｽﾄｵｰﾀﾞｰ:17:00）土日祝▶11:00～19:30（ﾗｽﾄｵｰﾀﾞｰ:19:00）",
+        "homepage": "http://www.tck.or.jp/michinoeki/eki/batou.html",
+        "homepage2": "https://www.michinoeki-bato.jp"
       }
     },
     {
@@ -5166,7 +5979,10 @@ const michiNoEkiGeoJSON = {
         "city": "那須町",
         "address": "栃木県那須郡那須町大字伊王野459",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19060"
+        "url": "https://www.michi-no-eki.jp/stations/views/19060",
+        "businessHours": "8:30～17:00（施設により異なる）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000104.html",
+        "homepage2": "http://michinoeki-tosando.jp/"
       }
     },
     {
@@ -5185,7 +6001,10 @@ const michiNoEkiGeoJSON = {
         "city": "さくら市",
         "address": "栃木県さくら市喜連川4145-10",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19061"
+        "url": "https://www.michi-no-eki.jp/stations/views/19061",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://michinoeki-kitsuregawa.jp",
+        "homepage2": "http://www.city.tochigi-sakura.lg.jp/site/michi-kitsuregawa/"
       }
     },
     {
@@ -5204,7 +6023,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "栃木県佐野市吉水町366-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19062"
+        "url": "https://www.michi-no-eki.jp/stations/views/19062",
+        "businessHours": "9:30～19:00（施設により異なる）現在1時間時短営業中に18：00まで",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000050.html",
+        "homepage2": "http://domannaka.co.jp/"
       }
     },
     {
@@ -5223,7 +6045,10 @@ const michiNoEkiGeoJSON = {
         "city": "芳賀町",
         "address": "栃木県芳賀郡芳賀町大字祖母井842-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19063"
+        "url": "https://www.michi-no-eki.jp/stations/views/19063",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000044.html",
+        "homepage2": "http://www.michinoeki-haga.gr.jp/"
       }
     },
     {
@@ -5242,7 +6067,10 @@ const michiNoEkiGeoJSON = {
         "city": "大田原市",
         "address": "栃木県大田原市南金丸1584-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19064"
+        "url": "https://www.michi-no-eki.jp/stations/views/19064",
+        "businessHours": "9:00～18:00 休み:12月～３月第２週の毎月曜日（月曜祝日の場合は翌日）１月1・2・3日",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000042.html",
+        "homepage2": "http://www.nasuno-yoichi.jp/"
       }
     },
     {
@@ -5261,7 +6089,10 @@ const michiNoEkiGeoJSON = {
         "city": "那須塩原市",
         "address": "栃木県那須塩原市三島5-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19065"
+        "url": "https://www.michi-no-eki.jp/stations/views/19065",
+        "businessHours": "9:00～17:00（展示室への入場は16:30まで）＜休み 月曜日（休日は開館）、年末年始、くん蒸期間中＞",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000046.html",
+        "homepage2": "http://www2.city.nasushiobara.lg.jp/hakubutsukan/"
       }
     },
     {
@@ -5280,7 +6111,10 @@ const michiNoEkiGeoJSON = {
         "city": "栃木市",
         "address": "栃木県栃木市藤岡町大和田678",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19066"
+        "url": "https://www.michi-no-eki.jp/stations/views/19066",
+        "businessHours": "8:00～19:00（施設により異なる）",
+        "homepage": "https://www.michinoeki-mikamo.jp/",
+        "homepage2": "https://www.instagram.com/roadside13mikamo/"
       }
     },
     {
@@ -5299,7 +6133,10 @@ const michiNoEkiGeoJSON = {
         "city": "小山市",
         "address": "栃木県小山市大字下国府塚25-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19067"
+        "url": "https://www.michi-no-eki.jp/stations/views/19067",
+        "businessHours": "9:00～18:00＜店舗・季節により異なる＞",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000047.html",
+        "homepage2": "http://www.michinoekiomoigawa.co.jp/"
       }
     },
     {
@@ -5318,7 +6155,10 @@ const michiNoEkiGeoJSON = {
         "city": "日光市",
         "address": "栃木県日光市西川478-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19068"
+        "url": "https://www.michi-no-eki.jp/stations/views/19068",
+        "businessHours": "9:00～17:00（施設により異なる）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000076.html",
+        "homepage2": "http://www.michinoeki-yunishigawa.jp/"
       }
     },
     {
@@ -5337,7 +6177,10 @@ const michiNoEkiGeoJSON = {
         "city": "壬生町",
         "address": "栃木県下都賀郡壬生町大字国谷1870-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19069"
+        "url": "https://www.michi-no-eki.jp/stations/views/19069",
+        "businessHours": "9:00～19:00（施設により異なる）",
+        "homepage": "https://michinoeki-mibu.jp/",
+        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000108.html"
       }
     },
     {
@@ -5356,7 +6199,10 @@ const michiNoEkiGeoJSON = {
         "city": "栃木市",
         "address": "栃木県栃木市西方町元369-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19070"
+        "url": "https://www.michi-no-eki.jp/stations/views/19070",
+        "businessHours": "9:00～17:00＜施設により異なる＞",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000109.html",
+        "homepage2": "http://michinoeki-nishikata.com/"
       }
     },
     {
@@ -5375,7 +6221,10 @@ const michiNoEkiGeoJSON = {
         "city": "下野市",
         "address": "栃木県下野市薬師寺3720-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19071"
+        "url": "https://www.michi-no-eki.jp/stations/views/19071",
+        "businessHours": "9:00～19:00（施設により異なる）＜休み 第1・3水曜日（祝日は営業）、1/1～3＞",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000110.html",
+        "homepage2": "http://www.kanpi-shimotsuke.co.jp/"
       }
     },
     {
@@ -5394,7 +6243,10 @@ const michiNoEkiGeoJSON = {
         "city": "矢板市",
         "address": "栃木県矢板市矢板114-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19072"
+        "url": "https://www.michi-no-eki.jp/stations/views/19072",
+        "businessHours": "9:00～18:00（冬季は9:00～17:00）〔施設により異なる〕＜休み 水曜不定休、12/31～1/3＞",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000111.html",
+        "homepage2": "http://www.michinoeki-yaita.com/"
       }
     },
     {
@@ -5413,7 +6265,10 @@ const michiNoEkiGeoJSON = {
         "city": "塩谷町",
         "address": "栃木県塩谷郡塩谷町大字船生3733-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19073"
+        "url": "https://www.michi-no-eki.jp/stations/views/19073",
+        "businessHours": "8:30～17:00（施設により異なる）",
+        "homepage": "https://michinoeki-shioya.com/",
+        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000112.html"
       }
     },
     {
@@ -5432,7 +6287,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "栃木県宇都宮市新里町丙254",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19074"
+        "url": "https://www.michi-no-eki.jp/stations/views/19074",
+        "businessHours": "8:30～17:00（施設により異なる）土日祝18：00＜休み 第2火曜日＞",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000113.html",
+        "homepage2": "http://www.romanticmura.com/"
       }
     },
     {
@@ -5451,7 +6309,10 @@ const michiNoEkiGeoJSON = {
         "city": "市貝町",
         "address": "栃木県芳賀郡市貝町大字市塙1270",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19075"
+        "url": "https://www.michi-no-eki.jp/stations/views/19075",
+        "businessHours": "9:00～17:00〔施設により異なる〕＜休 毎週木曜日、1/1～3＞",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000114.html",
+        "homepage2": "http://michinoeki-ichikai.jp"
       }
     },
     {
@@ -5470,7 +6331,10 @@ const michiNoEkiGeoJSON = {
         "city": "多野郡上野村",
         "address": "群馬県多野郡上野村大字勝山甲131",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19076"
+        "url": "https://www.michi-no-eki.jp/stations/views/19076",
+        "businessHours": "【売店】9:00～18:00 【レストラン】11:00～15:00(冬季の平日は14：00迄）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000168.html",
+        "homepage2": "http://www.michinoeki-ueno.jp"
       }
     },
     {
@@ -5489,7 +6353,10 @@ const michiNoEkiGeoJSON = {
         "city": "前橋市",
         "address": "群馬県前橋市滝窪町1369-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19077"
+        "url": "https://www.michi-no-eki.jp/stations/views/19077",
+        "businessHours": "農産物直売所:３~9月9:30~17:30 10月~2月9:30~16:30 レストハウス:3~9月10:30~16:30 10月~2月10:30~15:30",
+        "homepage": "https://www.maebashi-cvb.com/spot/3001",
+        "homepage2": ""
       }
     },
     {
@@ -5508,7 +6375,10 @@ const michiNoEkiGeoJSON = {
         "city": "吾妻郡中之条町",
         "address": "群馬県吾妻郡中之条町大字小雨22",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19078"
+        "url": "https://www.michi-no-eki.jp/stations/views/19078",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000170.html",
+        "homepage2": "http://www.nakanojo-kanko.jp/miru-taiken/michinoeki-kuni.shtml"
       }
     },
     {
@@ -5527,7 +6397,10 @@ const michiNoEkiGeoJSON = {
         "city": "渋川市",
         "address": "群馬県渋川市小野子1980",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19079"
+        "url": "https://www.michi-no-eki.jp/stations/views/19079",
+        "businessHours": "【4月〜10月】9:00〜18:00 【11月〜3月】9:00〜17:00 【食堂】11:00〜15:00 現在の営業時間【直売所】9:00〜17:00 【食堂】11:00〜14:00",
+        "homepage": "http://onoko.jp/",
+        "homepage2": "https://www.city.shibukawa.lg.jp/kankou/kankou/gift/tokusanhin/p000317.html"
       }
     },
     {
@@ -5546,7 +6419,10 @@ const michiNoEkiGeoJSON = {
         "city": "藤岡市",
         "address": "群馬県藤岡市譲原1089-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19080"
+        "url": "https://www.michi-no-eki.jp/stations/views/19080",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000172.html",
+        "homepage2": "http://www.ktr.mlit.go.jp/honkyoku/road/Michi-no-Eki/station/gunma_onisi/index.html"
       }
     },
     {
@@ -5565,7 +6441,10 @@ const michiNoEkiGeoJSON = {
         "city": "川場村",
         "address": "群馬県利根郡川場村大字萩室385",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19081"
+        "url": "https://www.michi-no-eki.jp/stations/views/19081",
+        "businessHours": "9:00～20:30（施設により異なる）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000173.html",
+        "homepage2": "http://www.denenplaza.co.jp/"
       }
     },
     {
@@ -5584,7 +6463,10 @@ const michiNoEkiGeoJSON = {
         "city": "利根郡みなかみ町",
         "address": "群馬県利根郡みなかみ町湯原1681-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19082"
+        "url": "https://www.michi-no-eki.jp/stations/views/19082",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000174.html",
+        "homepage2": "http://www9.wind.ne.jp/mizukikou/frame.htm"
       }
     },
     {
@@ -5603,7 +6485,10 @@ const michiNoEkiGeoJSON = {
         "city": "沼田市",
         "address": "群馬県沼田市白沢町平出1297",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19083"
+        "url": "https://www.michi-no-eki.jp/stations/views/19083",
+        "businessHours": "10:00～21:00(休館日：4、6、9、12月の第2火曜日)",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000175.html",
+        "homepage2": "http://www.boukyou.com/"
       }
     },
     {
@@ -5622,7 +6507,10 @@ const michiNoEkiGeoJSON = {
         "city": "吾妻郡草津町",
         "address": "群馬県吾妻郡草津町大字草津2-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19084"
+        "url": "https://www.michi-no-eki.jp/stations/views/19084",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://michinoeki-932.jp",
+        "homepage2": ""
       }
     },
     {
@@ -5641,7 +6529,10 @@ const michiNoEkiGeoJSON = {
         "city": "桐生市",
         "address": "群馬県桐生市黒保根町下田沢91-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19085"
+        "url": "https://www.michi-no-eki.jp/stations/views/19085",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000177.html",
+        "homepage2": "http://www15.wind.ne.jp/~kurohone-y/"
       }
     },
     {
@@ -5660,7 +6551,10 @@ const michiNoEkiGeoJSON = {
         "city": "藤岡市",
         "address": "群馬県藤岡市中1060-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19086"
+        "url": "https://www.michi-no-eki.jp/stations/views/19086",
+        "businessHours": "10:00～20:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000178.html",
+        "homepage2": "http://www.laranfujioka.com/"
       }
     },
     {
@@ -5679,7 +6573,10 @@ const michiNoEkiGeoJSON = {
         "city": "渋川市",
         "address": "群馬県渋川市白井2318-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19087"
+        "url": "https://www.michi-no-eki.jp/stations/views/19087",
+        "businessHours": "【4月〜11月】9:00～19:00【12月〜3月】9:00〜18:00 現在の営業時間 9:00〜18:00",
+        "homepage": "http://komochi.com/",
+        "homepage2": "https://www.city.shibukawa.lg.jp/kankou/gift/tokusanhin/p010562.html"
       }
     },
     {
@@ -5698,7 +6595,10 @@ const michiNoEkiGeoJSON = {
         "city": "利根郡みなかみ町",
         "address": "群馬県利根郡みなかみ町月夜野2936",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19088"
+        "url": "https://www.michi-no-eki.jp/stations/views/19088",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000180.html",
+        "homepage2": "http://www.tsukiyono-harvest.com/"
       }
     },
     {
@@ -5717,7 +6617,10 @@ const michiNoEkiGeoJSON = {
         "city": "富岡市",
         "address": "群馬県富岡市妙義町岳322-7",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19089"
+        "url": "https://www.michi-no-eki.jp/stations/views/19089",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000181.html",
+        "homepage2": "http://www.myogi-bc.jp/"
       }
     },
     {
@@ -5736,7 +6639,10 @@ const michiNoEkiGeoJSON = {
         "city": "多野郡神流町",
         "address": "群馬県多野郡神流町大字黒田742-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19090"
+        "url": "https://www.michi-no-eki.jp/stations/views/19090",
+        "businessHours": "10:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000182.html",
+        "homepage2": "http://town.kanna.gunma.jp/kanko/?page_id=30"
       }
     },
     {
@@ -5755,7 +6661,10 @@ const michiNoEkiGeoJSON = {
         "city": "下仁田町",
         "address": "群馬県甘楽郡下仁田町大字馬山3766-11",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19091"
+        "url": "https://www.michi-no-eki.jp/stations/views/19091",
+        "businessHours": "8:30～18:00",
+        "homepage": "http://shimonitanegi.com/",
+        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000183.html"
       }
     },
     {
@@ -5774,7 +6683,10 @@ const michiNoEkiGeoJSON = {
         "city": "みどり市",
         "address": "群馬県みどり市東町草木86",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19092"
+        "url": "https://www.michi-no-eki.jp/stations/views/19092",
+        "businessHours": "9:00～16:30",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000184.html",
+        "homepage2": "http://www.city.midori.gunma.jp/tomihiro/"
       }
     },
     {
@@ -5793,7 +6705,10 @@ const michiNoEkiGeoJSON = {
         "city": "利根郡みなかみ町",
         "address": "群馬県利根郡みなかみ町須川847",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19093"
+        "url": "https://www.michi-no-eki.jp/stations/views/19093",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000185.html",
+        "homepage2": "https://takuminosato.jp/"
       }
     },
     {
@@ -5812,7 +6727,10 @@ const michiNoEkiGeoJSON = {
         "city": "吾妻郡中之条町",
         "address": "群馬県吾妻郡中之条町大字五反田222-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19094"
+        "url": "https://www.michi-no-eki.jp/stations/views/19094",
+        "businessHours": "たけやま館9:00～16:30（12月〜3月は15:30迄）●そば処けやき11:00〜16:00（12月〜3月は15:00迄）●定休日毎週水曜日、年末年始（12月29日、30日、1月1日）",
+        "homepage": "http://www.michinoekireizantakeyama.com",
+        "homepage2": "https://www.town.nakanojo.gunma.jp/site/mithinoeki-takeyama/"
       }
     },
     {
@@ -5831,7 +6749,10 @@ const michiNoEkiGeoJSON = {
         "city": "北群馬郡吉岡町",
         "address": "群馬県北群馬郡吉岡町大字漆原2004",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19095"
+        "url": "https://www.michi-no-eki.jp/stations/views/19095",
+        "businessHours": "8:30～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000187.html",
+        "homepage2": "http://www.yoshioka-onsen.jp/"
       }
     },
     {
@@ -5850,7 +6771,10 @@ const michiNoEkiGeoJSON = {
         "city": "前橋市",
         "address": "群馬県前橋市荻窪町437-11",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19096"
+        "url": "https://www.michi-no-eki.jp/stations/views/19096",
+        "businessHours": "温泉施設11:00~20:00 農産物直売所9:30~18:00 情報提供コーナー10:00~17:00",
+        "homepage": "https://www.maebashi-cvb.com/spot/3003",
+        "homepage2": ""
       }
     },
     {
@@ -5869,7 +6793,10 @@ const michiNoEkiGeoJSON = {
         "city": "甘楽郡甘楽町",
         "address": "群馬県甘楽郡甘楽町大字小幡444-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19097"
+        "url": "https://www.michi-no-eki.jp/stations/views/19097",
+        "businessHours": "9:00～18:00（施設により異なる）＜休 1/1＞",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000189.html",
+        "homepage2": "http://www.town.kanra.gunma.jp/kanko/spot/busan/index.html"
       }
     },
     {
@@ -5888,7 +6815,10 @@ const michiNoEkiGeoJSON = {
         "city": "昭和村",
         "address": "群馬県利根郡昭和村大字森下2406-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19098"
+        "url": "https://www.michi-no-eki.jp/stations/views/19098",
+        "businessHours": "9:00～18:00（施設により異なる）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000190.html",
+        "homepage2": "http://agream-showa.jp/"
       }
     },
     {
@@ -5907,7 +6837,10 @@ const michiNoEkiGeoJSON = {
         "city": "甘楽郡南牧村",
         "address": "群馬県甘楽郡南牧村大字千原3-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19099"
+        "url": "https://www.michi-no-eki.jp/stations/views/19099",
+        "businessHours": "10:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000191.html",
+        "homepage2": "http://www.nanmoku.ne.jp/modules/oasis/index.php?content_id=4"
       }
     },
     {
@@ -5926,7 +6859,10 @@ const michiNoEkiGeoJSON = {
         "city": "前橋市",
         "address": "群馬県前橋市富士見町石井1569-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19100"
+        "url": "https://www.michi-no-eki.jp/stations/views/19100",
+        "businessHours": "温泉施設：月・火・水10:00～20:00 金・土・日・祝10:00～21:00 農産物直売所:3~9月9:00~18:00 10月~2月9:00~17:00",
+        "homepage": "https://www.maebashi-cvb.com/spot/3002",
+        "homepage2": ""
       }
     },
     {
@@ -5945,7 +6881,10 @@ const michiNoEkiGeoJSON = {
         "city": "太田市",
         "address": "群馬県太田市粕川町701-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19101"
+        "url": "https://www.michi-no-eki.jp/stations/views/19101",
+        "businessHours": "9:00～19:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000193.html",
+        "homepage2": "http://michinoeki-ota.com/"
       }
     },
     {
@@ -5964,7 +6903,10 @@ const michiNoEkiGeoJSON = {
         "city": "吾妻郡長野原町",
         "address": "群馬県吾妻郡長野原町大字林1567-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19102"
+        "url": "https://www.michi-no-eki.jp/stations/views/19102",
+        "businessHours": "7:00～18:00（施設により異なる）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000194.html",
+        "homepage2": "http://yambamichinoeki.com/"
       }
     },
     {
@@ -5983,7 +6925,10 @@ const michiNoEkiGeoJSON = {
         "city": "高山村",
         "address": "群馬県吾妻郡高山村大字中山2357-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19103"
+        "url": "https://www.michi-no-eki.jp/stations/views/19103",
+        "businessHours": "直売所 9:00～18:00（4月～10月）9:30～17:30(11月～3月) 日帰り温泉 9:00～21:00 レストラン 11:00～15：30",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000195.html",
+        "homepage2": "http://www.takayama-kanko.jp/"
       }
     },
     {
@@ -6002,7 +6947,10 @@ const michiNoEkiGeoJSON = {
         "city": "高崎市",
         "address": "群馬県高崎市倉渕町三ノ倉296-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19104"
+        "url": "https://www.michi-no-eki.jp/stations/views/19104",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000196.html",
+        "homepage2": "http://www.kurabuchi-oguri.com/"
       }
     },
     {
@@ -6021,7 +6969,10 @@ const michiNoEkiGeoJSON = {
         "city": "東吾妻町",
         "address": "群馬県吾妻郡東吾妻町大字三島6441",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19105"
+        "url": "https://www.michi-no-eki.jp/stations/views/19105",
+        "businessHours": "9:00～18:00（7～8月は19:00まで、12～3月は17:00まで）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000197.html",
+        "homepage2": "http://agatsumakyo.jp/"
       }
     },
     {
@@ -6040,7 +6991,10 @@ const michiNoEkiGeoJSON = {
         "city": "秩父市",
         "address": "埼玉県秩父市荒川日野538番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19106"
+        "url": "https://www.michi-no-eki.jp/stations/views/19106",
+        "businessHours": "9:00～17:00（3月～11月）、9:00～16:00（12月～2月）〔施設により異なる〕",
+        "homepage": "http://www.michinoeki-network.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -6059,7 +7013,10 @@ const michiNoEkiGeoJSON = {
         "city": "小川町",
         "address": "埼玉県比企郡小川町大字小川1220番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19107"
+        "url": "https://www.michi-no-eki.jp/stations/views/19107",
+        "businessHours": "9:00～17:00〔施設により異なる〕",
+        "homepage": "https://michinoeki-ogawamachi.com",
+        "homepage2": ""
       }
     },
     {
@@ -6078,7 +7035,10 @@ const michiNoEkiGeoJSON = {
         "city": "川口市",
         "address": "埼玉県川口市安行領家844-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19108"
+        "url": "https://www.michi-no-eki.jp/stations/views/19108",
+        "businessHours": "9:00～18:00〔施設により異なる〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000202.html",
+        "homepage2": "https://www.jurian.or.jp"
       }
     },
     {
@@ -6097,7 +7057,10 @@ const michiNoEkiGeoJSON = {
         "city": "秩父市",
         "address": "埼玉県秩父市大滝4277-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19109"
+        "url": "https://www.michi-no-eki.jp/stations/views/19109",
+        "businessHours": "10：00～20:00（4/1～11/30） 10：00～19：00（12/1～3/31）",
+        "homepage": "http://www.ootakionsen.co.jp/",
+        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000203.html"
       }
     },
     {
@@ -6116,7 +7079,10 @@ const michiNoEkiGeoJSON = {
         "city": "深谷市",
         "address": "埼玉県深谷市岡688-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19110"
+        "url": "https://www.michi-no-eki.jp/stations/views/19110",
+        "businessHours": "8:00～19:00 〔店舗により異なる〕",
+        "homepage": "https://www.michinoeki-okabe.jp/",
+        "homepage2": "http://www.rakuten.co.jp/genkioukoku/"
       }
     },
     {
@@ -6135,7 +7101,10 @@ const michiNoEkiGeoJSON = {
         "city": "秩父市",
         "address": "埼玉県秩父市吉田久長32",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19111"
+        "url": "https://www.michi-no-eki.jp/stations/views/19111",
+        "businessHours": "8:30～17:30〔施設により異なる〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000205.html",
+        "homepage2": "http://www.ryuseinomachi.co.jp/ryusei/index.htm"
       }
     },
     {
@@ -6154,7 +7123,10 @@ const michiNoEkiGeoJSON = {
         "city": "加須市",
         "address": "埼玉県加須市佐波258-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19112"
+        "url": "https://www.michi-no-eki.jp/stations/views/19112",
+        "businessHours": "9:30～18:00（9月～4月は17:30まで）〔施設により異なる〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000206.html",
+        "homepage2": ""
       }
     },
     {
@@ -6173,7 +7145,10 @@ const michiNoEkiGeoJSON = {
         "city": "深谷市",
         "address": "埼玉県深谷市小前田458-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19113"
+        "url": "https://www.michi-no-eki.jp/stations/views/19113",
+        "businessHours": "8:00～19:00〔施設により異なる〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000207.html",
+        "homepage2": "http://www.michinoeki-hanazono.jp/"
       }
     },
     {
@@ -6192,7 +7167,10 @@ const michiNoEkiGeoJSON = {
         "city": "小鹿野町",
         "address": "368－0201 埼玉県秩父郡小鹿野町両神薄2380",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19114"
+        "url": "https://www.michi-no-eki.jp/stations/views/19114",
+        "businessHours": "9:00～20:00〔施設により異なる〕 ＜休 火曜日（祝祭日の場合は翌日休館）＞",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000208.html",
+        "homepage2": "https://kabushikigaishachiikishoushaogano.jimdosite.com/"
       }
     },
     {
@@ -6211,7 +7189,10 @@ const michiNoEkiGeoJSON = {
         "city": "深谷市",
         "address": "埼玉県深谷市長在家1279-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19115"
+        "url": "https://www.michi-no-eki.jp/stations/views/19115",
+        "businessHours": "9:00～17:00〔施設により異なる〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000209.html",
+        "homepage2": "http://www.city.fukaya.saitama.jp/shisetsu/michinoeki/1499131548292.html"
       }
     },
     {
@@ -6230,7 +7211,10 @@ const michiNoEkiGeoJSON = {
         "city": "熊谷市",
         "address": "埼玉県熊谷市弥藤吾720",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19116"
+        "url": "https://www.michi-no-eki.jp/stations/views/19116",
+        "businessHours": "10:00～17:30〔施設・季節により違います〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000210.html",
+        "homepage2": "http://mitinoekimenuma.web.fc2.com"
       }
     },
     {
@@ -6249,7 +7233,10 @@ const michiNoEkiGeoJSON = {
         "city": "秩父市",
         "address": "埼玉県秩父市大宮4625",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19117"
+        "url": "https://www.michi-no-eki.jp/stations/views/19117",
+        "businessHours": "9:30～17:30〔施設により異なる〕",
+        "homepage": "http://www.michinoeki-network.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -6268,7 +7255,10 @@ const michiNoEkiGeoJSON = {
         "city": "杉戸町",
         "address": "埼玉県北葛飾郡杉戸町大字才羽823-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19118"
+        "url": "https://www.michi-no-eki.jp/stations/views/19118",
+        "businessHours": "9:00～17:00〔施設により異なる〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000212.html",
+        "homepage2": "http://www.pikaru.co.jp/index.html"
       }
     },
     {
@@ -6287,7 +7277,10 @@ const michiNoEkiGeoJSON = {
         "city": "横瀬町",
         "address": "埼玉県秩父郡横瀬町大字芦ヶ久保1915-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19119"
+        "url": "https://www.michi-no-eki.jp/stations/views/19119",
+        "businessHours": "9:00～17:00（季節、イベントにより変更あり）〔施設により異なる〕",
+        "homepage": "https://michinoeki-ashigakubo.com/",
+        "homepage2": ""
       }
     },
     {
@@ -6306,7 +7299,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "埼玉県比企郡吉見町大字久保田1737",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19120"
+        "url": "https://www.michi-no-eki.jp/stations/views/19120",
+        "businessHours": "9:00～17:00〔施設により異なる〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000214.html",
+        "homepage2": "http://www.ichigonosato.com/"
       }
     },
     {
@@ -6325,7 +7321,10 @@ const michiNoEkiGeoJSON = {
         "city": "加須市",
         "address": "埼玉県加須市小野袋1745-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19121"
+        "url": "https://www.michi-no-eki.jp/stations/views/19121",
+        "businessHours": "8:00～17:00〔施設により異なる〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000215.html",
+        "homepage2": ""
       }
     },
     {
@@ -6344,7 +7343,10 @@ const michiNoEkiGeoJSON = {
         "city": "春日部市",
         "address": "埼玉県春日部市上柳995",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19122"
+        "url": "https://www.michi-no-eki.jp/stations/views/19122",
+        "businessHours": "8:00～19:00〔施設により異なる〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000216.html",
+        "homepage2": "http://www.michinoeki-showa.or.jp"
       }
     },
     {
@@ -6363,7 +7365,10 @@ const michiNoEkiGeoJSON = {
         "city": "羽生市",
         "address": "埼玉県羽生市大字上新郷7066",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19123"
+        "url": "https://www.michi-no-eki.jp/stations/views/19123",
+        "businessHours": "8:30～19:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000217.html",
+        "homepage2": "http://www.city.hanyu.lg.jp/docs/2013072500024/"
       }
     },
     {
@@ -6382,7 +7387,10 @@ const michiNoEkiGeoJSON = {
         "city": "皆野町",
         "address": "埼玉県秩父郡皆野町皆野3236-35",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19124"
+        "url": "https://www.michi-no-eki.jp/stations/views/19124",
+        "businessHours": "8:30～17:00〔施設により異なる〕 ＜休 12/31～1/2（年末年始）＞",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000218.html",
+        "homepage2": "http://www.town.minano.saitama.jp/section/kankou/965.htm"
       }
     },
     {
@@ -6401,7 +7409,10 @@ const michiNoEkiGeoJSON = {
         "city": "南房総市",
         "address": "千葉県南房総市富浦町青木123-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19125"
+        "url": "https://www.michi-no-eki.jp/stations/views/19125",
+        "businessHours": "9:15～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000220.html",
+        "homepage2": "http://www.biwakurabu.jp/"
       }
     },
     {
@@ -6420,7 +7431,10 @@ const michiNoEkiGeoJSON = {
         "city": "南房総市",
         "address": "千葉県南房総市川田82-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19126"
+        "url": "https://www.michi-no-eki.jp/stations/views/19126",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000221.html",
+        "homepage2": "http://www.hinanosato.jp/"
       }
     },
     {
@@ -6439,7 +7453,10 @@ const michiNoEkiGeoJSON = {
         "city": "八千代市",
         "address": "千葉県八千代市米本4905-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19127"
+        "url": "https://www.michi-no-eki.jp/stations/views/19127",
+        "businessHours": "9:30～17:00 農産物直売所（季節や店舗により営業時間は違います。詳しくは公式HPをご覧ください）",
+        "homepage": "https://www.michinoeki-yachiyo.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -6458,7 +7475,10 @@ const michiNoEkiGeoJSON = {
         "city": "安房郡鋸南町",
         "address": "千葉県安房郡鋸南町吉浜517-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19128"
+        "url": "https://www.michi-no-eki.jp/stations/views/19128",
+        "businessHours": "9:00 ~ 17:00〔施設により異なる〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000223.html",
+        "homepage2": "https://www.town.kyonan.chiba.jp/site/tourism/2505.html"
       }
     },
     {
@@ -6477,7 +7497,10 @@ const michiNoEkiGeoJSON = {
         "city": "鴨川市",
         "address": "千葉県鴨川市江見太夫崎22",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19129"
+        "url": "https://www.michi-no-eki.jp/stations/views/19129",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000224.html",
+        "homepage2": "http://kamogawaocean-park.com/"
       }
     },
     {
@@ -6496,7 +7519,10 @@ const michiNoEkiGeoJSON = {
         "city": "南房総市",
         "address": "千葉県南房総市白子1501",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19130"
+        "url": "https://www.michi-no-eki.jp/stations/views/19130",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000225.html",
+        "homepage2": "http://rosemary-park.jp/"
       }
     },
     {
@@ -6515,7 +7541,10 @@ const michiNoEkiGeoJSON = {
         "city": "君津市",
         "address": "千葉県君津市笹字椿1766-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19131"
+        "url": "https://www.michi-no-eki.jp/stations/views/19131",
+        "businessHours": "9:00～18:00（10～3月は17:00まで）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000226.html",
+        "homepage2": "https://www.city.kimitsu.lg.jp/soshiki/24/2122.html"
       }
     },
     {
@@ -6534,7 +7563,10 @@ const michiNoEkiGeoJSON = {
         "city": "柏市",
         "address": "277－0911 千葉県柏市箕輪新田59-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19132"
+        "url": "https://www.michi-no-eki.jp/stations/views/19132",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000227.html",
+        "homepage2": "http://www.michinoeki-shonan.jp/"
       }
     },
     {
@@ -6553,7 +7585,10 @@ const michiNoEkiGeoJSON = {
         "city": "夷隅郡大多喜町",
         "address": "千葉県夷隅郡大多喜町石神855",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19133"
+        "url": "https://www.michi-no-eki.jp/stations/views/19133",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://takeyura.net",
+        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000228.html"
       }
     },
     {
@@ -6572,7 +7607,10 @@ const michiNoEkiGeoJSON = {
         "city": "香取郡多古町",
         "address": "千葉県香取郡多古町多古1069-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19134"
+        "url": "https://www.michi-no-eki.jp/stations/views/19134",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.michinoeki-tako.com/",
+        "homepage2": ""
       }
     },
     {
@@ -6591,7 +7629,10 @@ const michiNoEkiGeoJSON = {
         "city": "市原市",
         "address": "千葉県市原市浅井小向492-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19135"
+        "url": "https://www.michi-no-eki.jp/stations/views/19135",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000230.html",
+        "homepage2": "http://www.ichihara-kankou.or.jp/azunosato/index.html"
       }
     },
     {
@@ -6610,7 +7651,10 @@ const michiNoEkiGeoJSON = {
         "city": "香取市",
         "address": "千葉県香取市沢1372-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19136"
+        "url": "https://www.michi-no-eki.jp/stations/views/19136",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000231.html",
+        "homepage2": "https://www.benikomachi.jp/"
       }
     },
     {
@@ -6629,7 +7673,10 @@ const michiNoEkiGeoJSON = {
         "city": "南房総市",
         "address": "千葉県南房総市千倉町千田1051",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19137"
+        "url": "https://www.michi-no-eki.jp/stations/views/19137",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000232.html",
+        "homepage2": "http://shiokaze-oukoku.jp/"
       }
     },
     {
@@ -6648,7 +7695,10 @@ const michiNoEkiGeoJSON = {
         "city": "南房総市",
         "address": "千葉県南房総市二部2211",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19138"
+        "url": "https://www.michi-no-eki.jp/stations/views/19138",
+        "businessHours": "9:00～18:00（施設により異なる）※土日祝日 8：30～18：00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000233.html",
+        "homepage2": "https://www.furaritomiyama.jp/"
       }
     },
     {
@@ -6667,7 +7717,10 @@ const michiNoEkiGeoJSON = {
         "city": "南房総市",
         "address": "千葉県南房総市富浦町大津320",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19139"
+        "url": "https://www.michi-no-eki.jp/stations/views/19139",
+        "businessHours": "12月～6月 9:30～17:00 7月～11月 9：30～16：00 （5月中旬～10月末日売店閉鎖）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000234.html",
+        "homepage2": "http://www.hana-kurabu.jp/"
       }
     },
     {
@@ -6686,7 +7739,10 @@ const michiNoEkiGeoJSON = {
         "city": "山武市",
         "address": "千葉県山武市蓮沼ハ4826",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19140"
+        "url": "https://www.michi-no-eki.jp/stations/views/19140",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000235.html",
+        "homepage2": "http://oraihasunuma.com/"
       }
     },
     {
@@ -6705,7 +7761,10 @@ const michiNoEkiGeoJSON = {
         "city": "長生郡長柄町",
         "address": "千葉県長生郡長柄町六地蔵138-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19141"
+        "url": "https://www.michi-no-eki.jp/stations/views/19141",
+        "businessHours": "9:30～17:30",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000236.html",
+        "homepage2": "http://www.nagaramitinoeki.com/"
       }
     },
     {
@@ -6724,7 +7783,10 @@ const michiNoEkiGeoJSON = {
         "city": "睦沢町",
         "address": "千葉県長生郡睦沢町森2-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19142"
+        "url": "https://www.michi-no-eki.jp/stations/views/19142",
+        "businessHours": "［直売所］9:00～18:00 ［レストラン］11:00～21:00（LO 20:30） ［温浴施設］10:00～21:00",
+        "homepage": "https://mutsuzawa-swt.jp",
+        "homepage2": "https://ja-jp.facebook.com/help/289207354498410"
       }
     },
     {
@@ -6743,7 +7805,10 @@ const michiNoEkiGeoJSON = {
         "city": "南房総市",
         "address": "千葉県南房総市白浜町滝口9240",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19143"
+        "url": "https://www.michi-no-eki.jp/stations/views/19143",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000238.html",
+        "homepage2": ""
       }
     },
     {
@@ -6762,7 +7827,10 @@ const michiNoEkiGeoJSON = {
         "city": "香取市",
         "address": "千葉県香取市佐原イ3981-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19145"
+        "url": "https://www.michi-no-eki.jp/stations/views/19145",
+        "businessHours": "8:00～18:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000240.html",
+        "homepage2": "http://www.e-sawara.com/"
       }
     },
     {
@@ -6781,7 +7849,10 @@ const michiNoEkiGeoJSON = {
         "city": "山武郡芝山町",
         "address": "千葉県山武郡芝山町小池2568",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19146"
+        "url": "https://www.michi-no-eki.jp/stations/views/19146",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000241.html",
+        "homepage2": "http://www.fuwarishibayama.com"
       }
     },
     {
@@ -6800,7 +7871,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "千葉県南房総市和田町仁我浦243",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19147"
+        "url": "https://www.michi-no-eki.jp/stations/views/19147",
+        "businessHours": "9:00～18:00（施設により異なる）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000242.html",
+        "homepage2": "http://wa-o.awa.jp/"
       }
     },
     {
@@ -6819,7 +7893,10 @@ const michiNoEkiGeoJSON = {
         "city": "神崎町",
         "address": "千葉県香取郡神崎町松崎855",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19148"
+        "url": "https://www.michi-no-eki.jp/stations/views/19148",
+        "businessHours": "9:00～18:00 （施設により異なる）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000243.html",
+        "homepage2": "http://www.hakkounosato.com/"
       }
     },
     {
@@ -6838,7 +7915,10 @@ const michiNoEkiGeoJSON = {
         "city": "八王子市",
         "address": "東京都八王子市滝山町1-592-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19149"
+        "url": "https://www.michi-no-eki.jp/stations/views/19149",
+        "businessHours": "8:00～19:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000249.html",
+        "homepage2": "http://www.michinoeki-hachioji.net/"
       }
     },
     {
@@ -6857,7 +7937,10 @@ const michiNoEkiGeoJSON = {
         "city": "箱根町",
         "address": "神奈川県足柄下郡箱根町箱根381-22",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19150"
+        "url": "https://www.michi-no-eki.jp/stations/views/19150",
+        "businessHours": "9:00～17:00 (食堂L.O.15:50)",
+        "homepage": "https://www.instagram.com/michinoeki_hakonetouge/",
+        "homepage2": "https://www.hakone.or.jp/501"
       }
     },
     {
@@ -6876,7 +7959,10 @@ const michiNoEkiGeoJSON = {
         "city": "山北町",
         "address": "神奈川県足柄上郡山北町湯触317",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19151"
+        "url": "https://www.michi-no-eki.jp/stations/views/19151",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000144.html",
+        "homepage2": "http://www.yamakita.net/shopping/detail.php?id=15"
       }
     },
     {
@@ -6895,7 +7981,10 @@ const michiNoEkiGeoJSON = {
         "city": "南巨摩郡南部町",
         "address": "山梨県南巨摩郡南部町福士28507-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19152"
+        "url": "https://www.michi-no-eki.jp/stations/views/19152",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000250.html",
+        "homepage2": "http://www.shokokai.or.jp/19/193661S0013/index.htm"
       }
     },
     {
@@ -6914,7 +8003,10 @@ const michiNoEkiGeoJSON = {
         "city": "甲州市",
         "address": "山梨県甲州市大和町初鹿野2248",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19153"
+        "url": "https://www.michi-no-eki.jp/stations/views/19153",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000251.html",
+        "homepage2": "http://kaiyamato.com/"
       }
     },
     {
@@ -6933,7 +8025,10 @@ const michiNoEkiGeoJSON = {
         "city": "鳴沢村",
         "address": "山梨県南都留郡鳴沢村字ジラゴンノ8532-63",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19154"
+        "url": "https://www.michi-no-eki.jp/stations/views/19154",
+        "businessHours": "インフォメーション9:00～17:00 物産館9：00～18：00 軽食堂10：00～17：30",
+        "homepage": "https://www.ja-narusawamura.or.jp/michinoeki/",
+        "homepage2": "http://www.narusawa-kanko.jp/creation-park.html"
       }
     },
     {
@@ -6952,7 +8047,10 @@ const michiNoEkiGeoJSON = {
         "city": "山梨市",
         "address": "山梨県山梨市三富川浦1822-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19155"
+        "url": "https://www.michi-no-eki.jp/stations/views/19155",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000253.html",
+        "homepage2": "http://michinoeki-mitomi.fruits.jp/"
       }
     },
     {
@@ -6971,7 +8069,10 @@ const michiNoEkiGeoJSON = {
         "city": "南巨摩郡身延町",
         "address": "山梨県南巨摩郡身延町古関字大境4321",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19156"
+        "url": "https://www.michi-no-eki.jp/stations/views/19156",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000254.html",
+        "homepage2": "https://www.town.minobu.lg.jp/kanko/annai/midokoro-shimobe.html"
       }
     },
     {
@@ -6990,7 +8091,10 @@ const michiNoEkiGeoJSON = {
         "city": "中央市",
         "address": "山梨県中央市浅利1010-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19157"
+        "url": "https://www.michi-no-eki.jp/stations/views/19157",
+        "businessHours": "9:00～18:00 ※６月～８月は8：00～18：００、12月～2月は9：00～17：00＜休 年末年始、他不定休",
+        "homepage": "https://michinoeki-toyotomi.com/",
+        "homepage2": ""
       }
     },
     {
@@ -7009,7 +8113,10 @@ const michiNoEkiGeoJSON = {
         "city": "韮崎市",
         "address": "山梨県韮崎市中田町中条1795",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19158"
+        "url": "https://www.michi-no-eki.jp/stations/views/19158",
+        "businessHours": "9:00～17:30",
+        "homepage": "https://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000256.html",
+        "homepage2": "https://www.yamanashi-kankou.jp/kankou/specialty/n_7083.html"
       }
     },
     {
@@ -7028,7 +8135,10 @@ const michiNoEkiGeoJSON = {
         "city": "道志村",
         "address": "山梨県南都留郡道志村9745",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19159"
+        "url": "https://www.michi-no-eki.jp/stations/views/19159",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000257.html",
+        "homepage2": ""
       }
     },
     {
@@ -7047,7 +8157,10 @@ const michiNoEkiGeoJSON = {
         "city": "南都留郡富士河口湖町",
         "address": "山梨県南都留郡富士河口湖町勝山3758",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19160"
+        "url": "https://www.michi-no-eki.jp/stations/views/19160",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000258.html",
+        "homepage2": "http://www.katuyama.info/station/"
       }
     },
     {
@@ -7066,7 +8179,10 @@ const michiNoEkiGeoJSON = {
         "city": "山梨市",
         "address": "山梨県山梨市牧丘町室伏2120",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19161"
+        "url": "https://www.michi-no-eki.jp/stations/views/19161",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000259.html",
+        "homepage2": "http://michinoeki-hanakage.fruits.jp/"
       }
     },
     {
@@ -7085,7 +8201,10 @@ const michiNoEkiGeoJSON = {
         "city": "北杜市",
         "address": "山梨県北杜市白州町白須1308",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19162"
+        "url": "https://www.michi-no-eki.jp/stations/views/19162",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://michinoeki-hakushu.com/",
+        "homepage2": "http://www.hokuto-kanko.jp/guide/roadside_station_hakushu"
       }
     },
     {
@@ -7104,7 +8223,10 @@ const michiNoEkiGeoJSON = {
         "city": "富士吉田市",
         "address": "山梨県富士吉田市新屋3-7-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19163"
+        "url": "https://www.michi-no-eki.jp/stations/views/19163",
+        "businessHours": "9:00～17:00（平日）9:00～18:00（土日祝日）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000261.html",
+        "homepage2": "http://fujiyoshida.net/spot/180"
       }
     },
     {
@@ -7123,7 +8245,10 @@ const michiNoEkiGeoJSON = {
         "city": "北杜市",
         "address": "山梨県北杜市高根町長沢760",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19164"
+        "url": "https://www.michi-no-eki.jp/stations/views/19164",
+        "businessHours": "物販施設9:00～17:00、レストラン10:00～17:00（12月～3月は11:00～15:00)＜休 1月～2月の火曜日＞",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000262.html",
+        "homepage2": "https://www.alps-hs.co.jp/news/2020/273/"
       }
     },
     {
@@ -7142,7 +8267,10 @@ const michiNoEkiGeoJSON = {
         "city": "南アルプス市",
         "address": "山梨県南アルプス市在家塚595-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19165"
+        "url": "https://www.michi-no-eki.jp/stations/views/19165",
+        "businessHours": "8:30～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000263.html",
+        "homepage2": "http://www.city.minami-alps.yamanashi.jp/sisetsu/michinoeki-shirane"
       }
     },
     {
@@ -7161,7 +8289,10 @@ const michiNoEkiGeoJSON = {
         "city": "北杜市",
         "address": "山梨県北杜市小淵沢町2968-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19166"
+        "url": "https://www.michi-no-eki.jp/stations/views/19166",
+        "businessHours": "9:00～17:00〔施設により異なる〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000264.html",
+        "homepage2": "http://michinoeki.spatio.jp/"
       }
     },
     {
@@ -7180,7 +8311,10 @@ const michiNoEkiGeoJSON = {
         "city": "南巨摩郡身延町",
         "address": "山梨県南巨摩郡身延町下山1597 富士川クラフトパーク内",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19167"
+        "url": "https://www.michi-no-eki.jp/stations/views/19167",
+        "businessHours": "9:00～17:00",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -7199,7 +8333,10 @@ const michiNoEkiGeoJSON = {
         "city": "北都留郡丹波山村",
         "address": "山梨県北都留郡丹波山村2901",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19168"
+        "url": "https://www.michi-no-eki.jp/stations/views/19168",
+        "businessHours": "10:00～18:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000266.html",
+        "homepage2": "http://www.nomekoiyu.com/"
       }
     },
     {
@@ -7218,7 +8355,10 @@ const michiNoEkiGeoJSON = {
         "city": "南巨摩郡富士川町",
         "address": "山梨県南巨摩郡富士川町青柳町1655-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19169"
+        "url": "https://www.michi-no-eki.jp/stations/views/19169",
+        "businessHours": "9:00～18:00〔曜日、季節により異なる〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000267.html",
+        "homepage2": "http://www.michinoeki-fujikawa.jp/"
       }
     },
     {
@@ -7237,7 +8377,10 @@ const michiNoEkiGeoJSON = {
         "city": "小菅村",
         "address": "山梨県北都留郡小菅村3445",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19170"
+        "url": "https://www.michi-no-eki.jp/stations/views/19170",
+        "businessHours": "9:00～18:00〔施設により異なる〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000268.html",
+        "homepage2": "http://kosuge-eki.jp/"
       }
     },
     {
@@ -7256,7 +8399,10 @@ const michiNoEkiGeoJSON = {
         "city": "長野市",
         "address": "長野県長野市信州新町水内4619",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19171"
+        "url": "https://www.michi-no-eki.jp/stations/views/19171",
+        "businessHours": "8:30～17:45（食堂L.O16：30）",
+        "homepage": "https://nagano-michinoeki.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -7275,7 +8421,10 @@ const michiNoEkiGeoJSON = {
         "city": "長野市",
         "address": "長野県長野市大岡甲5275-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19172"
+        "url": "https://www.michi-no-eki.jp/stations/views/19172",
+        "businessHours": "9:30～18:30（10～3月は17:30まで）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000272.html",
+        "homepage2": ""
       }
     },
     {
@@ -7294,7 +8443,10 @@ const michiNoEkiGeoJSON = {
         "city": "栄村",
         "address": "長野県下水内郡栄村大字北信3746-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19173"
+        "url": "https://www.michi-no-eki.jp/stations/views/19173",
+        "businessHours": "8:30～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000273.html",
+        "homepage2": ""
       }
     },
     {
@@ -7313,7 +8465,10 @@ const michiNoEkiGeoJSON = {
         "city": "塩尻市",
         "address": "長野県塩尻市大字塩尻町1090",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19174"
+        "url": "https://www.michi-no-eki.jp/stations/views/19174",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://osakada-park.jp/",
+        "homepage2": "http://www.ekiichi.com/"
       }
     },
     {
@@ -7332,7 +8487,10 @@ const michiNoEkiGeoJSON = {
         "city": "池田町",
         "address": "長野県北安曇郡池田町大字会染6330-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19175"
+        "url": "https://www.michi-no-eki.jp/stations/views/19175",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000275.html",
+        "homepage2": "http://www.herbcenter.or.jp/"
       }
     },
     {
@@ -7351,7 +8509,10 @@ const michiNoEkiGeoJSON = {
         "city": "長野市",
         "address": "長野県長野市中条住良木1704",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19176"
+        "url": "https://www.michi-no-eki.jp/stations/views/19176",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://michinoekinakajo.eternal-story.com/",
+        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000276.html"
       }
     },
     {
@@ -7370,7 +8531,10 @@ const michiNoEkiGeoJSON = {
         "city": "東御市",
         "address": "長野県東御市布下35-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19177"
+        "url": "https://www.michi-no-eki.jp/stations/views/19177",
+        "businessHours": "10:00～21:00（直売所・日帰り温泉施設「御牧乃湯」）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000277.html",
+        "homepage2": "http://tomikan.jp/area/mimaki/%E9%81%93%E3%81%AE%E9%A7%85%E3%81%BF%E3%81%BE%E3%81%8D/"
       }
     },
     {
@@ -7389,7 +8553,10 @@ const michiNoEkiGeoJSON = {
         "city": "白馬村",
         "address": "長野県北安曇郡白馬村大字神城21462",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19178"
+        "url": "https://www.michi-no-eki.jp/stations/views/19178",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://michino-eki.hakubakousha.com/",
+        "homepage2": ""
       }
     },
     {
@@ -7408,7 +8575,10 @@ const michiNoEkiGeoJSON = {
         "city": "中野市",
         "address": "長野県中野市大字永江2136",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19179"
+        "url": "https://www.michi-no-eki.jp/stations/views/19179",
+        "businessHours": "9:00～18:30",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000279.html",
+        "homepage2": "http://www.furusato-toyota.com/michinoeki-furusato-toyota"
       }
     },
     {
@@ -7427,7 +8597,10 @@ const michiNoEkiGeoJSON = {
         "city": "小県郡長和町",
         "address": "長野県小県郡長和町古町2424-19",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19180"
+        "url": "https://www.michi-no-eki.jp/stations/views/19180",
+        "businessHours": "9:30～18:00",
+        "homepage": "https://marche-kokuyou.jp",
+        "homepage2": "https://www.nagawa.info"
       }
     },
     {
@@ -7446,7 +8619,10 @@ const michiNoEkiGeoJSON = {
         "city": "佐久市",
         "address": "384－2104 長野県佐久市甲2177-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19181"
+        "url": "https://www.michi-no-eki.jp/stations/views/19181",
+        "businessHours": "9:00～18.00",
+        "homepage": "https://peraichi.com/landing_pages/view/mitinoekihotparkasashina",
+        "homepage2": "http://hotpark-asashina.com/"
       }
     },
     {
@@ -7465,7 +8641,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "長野県安曇野市堀金烏川2696",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19182"
+        "url": "https://www.michi-no-eki.jp/stations/views/19182",
+        "businessHours": "通年 8:30～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000282.html",
+        "homepage2": "http://horigane.or.jp/"
       }
     },
     {
@@ -7484,7 +8663,10 @@ const michiNoEkiGeoJSON = {
         "city": "北安曇郡松川村",
         "address": "長野県北安曇郡松川村細野5375-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19183"
+        "url": "https://www.michi-no-eki.jp/stations/views/19183",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000283.html",
+        "homepage2": "https://yottetei.jp"
       }
     },
     {
@@ -7503,7 +8685,10 @@ const michiNoEkiGeoJSON = {
         "city": "松本市",
         "address": "長野県松本市安曇3528-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19184"
+        "url": "https://www.michi-no-eki.jp/stations/views/19184",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.fu-ketsu.com",
+        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000284.html"
       }
     },
     {
@@ -7522,7 +8707,10 @@ const michiNoEkiGeoJSON = {
         "city": "山ノ内町",
         "address": "長野県下高井郡山ノ内町大字佐野393-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19185"
+        "url": "https://www.michi-no-eki.jp/stations/views/19185",
+        "businessHours": "8:30～18:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000285.html",
+        "homepage2": "https://www.town.yamanouchi.nagano.jp/soshiki/chiikishinko/gyomu/kanko_joho/michinoeki/index.html"
       }
     },
     {
@@ -7541,7 +8729,10 @@ const michiNoEkiGeoJSON = {
         "city": "東信地域",
         "address": "長野県上田市小泉字塩田川原2575-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19186"
+        "url": "https://www.michi-no-eki.jp/stations/views/19186",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000286.html",
+        "homepage2": "https://www.otoginosato.jp/"
       }
     },
     {
@@ -7560,7 +8751,10 @@ const michiNoEkiGeoJSON = {
         "city": "富士見町",
         "address": "長野県諏訪郡富士見町落合1984-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19187"
+        "url": "https://www.michi-no-eki.jp/stations/views/19187",
+        "businessHours": "9:00～21:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000287.html",
+        "homepage2": "http://www.tsutakijuku.jp/"
       }
     },
     {
@@ -7579,7 +8773,10 @@ const michiNoEkiGeoJSON = {
         "city": "信濃町",
         "address": "長野県上水内郡信濃町大字柏原1260-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19188"
+        "url": "https://www.michi-no-eki.jp/stations/views/19188",
+        "businessHours": "9:00～17:00",
+        "homepage": "",
+        "homepage2": "https://f-tenbou.com/"
       }
     },
     {
@@ -7598,7 +8795,10 @@ const michiNoEkiGeoJSON = {
         "city": "小谷村",
         "address": "長野県北安曇郡小谷村大宇北小谷1861-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19189"
+        "url": "https://www.michi-no-eki.jp/stations/views/19189",
+        "businessHours": "10:00～21:00〔施設によりが異なる〕＜休 水曜日＞",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000289.html",
+        "homepage2": "http://www.otarimura.co.jp/"
       }
     },
     {
@@ -7617,7 +8817,10 @@ const michiNoEkiGeoJSON = {
         "city": "筑北村",
         "address": "長野県東筑摩郡筑北村坂北4340",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19190"
+        "url": "https://www.michi-no-eki.jp/stations/views/19190",
+        "businessHours": "10:00～17:00（12～4月は15:00まで）",
+        "homepage": "http://chikuhoku.jp/michinoeki/",
+        "homepage2": ""
       }
     },
     {
@@ -7636,7 +8839,10 @@ const michiNoEkiGeoJSON = {
         "city": "大町市",
         "address": "長野県大町市美麻16784",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19191"
+        "url": "https://www.michi-no-eki.jp/stations/views/19191",
+        "businessHours": "10:00～17:30〔施設により異なる〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000291.html",
+        "homepage2": "http://miasa-pokapokaland.com/"
       }
     },
     {
@@ -7655,7 +8861,10 @@ const michiNoEkiGeoJSON = {
         "city": "小布施町",
         "address": "長野県上高井郡小布施町大字大島601",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19192"
+        "url": "https://www.michi-no-eki.jp/stations/views/19192",
+        "businessHours": "9:00～18:00 （4月～11月の土日祝 9:00〜19:00）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000292.html",
+        "homepage2": "https://www.oasisobuse.co.jp/"
       }
     },
     {
@@ -7674,7 +8883,10 @@ const michiNoEkiGeoJSON = {
         "city": "東御市",
         "address": "長野県東御市滋野乙4524-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19193"
+        "url": "https://www.michi-no-eki.jp/stations/views/19193",
+        "businessHours": "7:00～18:00〔施設により異なる〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000293.html",
+        "homepage2": "http://raidenkurumi.jp/"
       }
     },
     {
@@ -7693,7 +8905,10 @@ const michiNoEkiGeoJSON = {
         "city": "飯山市",
         "address": "長野県飯山市大字常盤7425",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19194"
+        "url": "https://www.michi-no-eki.jp/stations/views/19194",
+        "businessHours": "7:30～18:00〔施設・季節により異なる〕",
+        "homepage": "https://www.chikumagawa.net/",
+        "homepage2": "https://www.facebook.com/hananoeki.chikumagawa/"
       }
     },
     {
@@ -7712,7 +8927,10 @@ const michiNoEkiGeoJSON = {
         "city": "青木村",
         "address": "長野県小県郡青木村大字村松26-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19195"
+        "url": "https://www.michi-no-eki.jp/stations/views/19195",
+        "businessHours": "9:00～18:00〔施設により異なる〕",
+        "homepage": "http://michinoeki-aoki.eek.jp/",
+        "homepage2": "http://www.vill.aoki.nagano.jp/sights/index.html"
       }
     },
     {
@@ -7731,7 +8949,10 @@ const michiNoEkiGeoJSON = {
         "city": "小川村",
         "address": "長野県上水内郡小川村大字高府1502-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19196"
+        "url": "https://www.michi-no-eki.jp/stations/views/19196",
+        "businessHours": "9:30～19:30",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000296.html",
+        "homepage2": ""
       }
     },
     {
@@ -7750,7 +8971,10 @@ const michiNoEkiGeoJSON = {
         "city": "上田市",
         "address": "長野県上田市武石上本入2085-70",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19197"
+        "url": "https://www.michi-no-eki.jp/stations/views/19197",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000297.html",
+        "homepage2": "http://m-utsukushigahara.jp/"
       }
     },
     {
@@ -7769,7 +8993,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "長野県松本市大字今井886-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19198"
+        "url": "https://www.michi-no-eki.jp/stations/views/19198",
+        "businessHours": "8:30～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000298.html",
+        "homepage2": "http://www.imai-megumi.com/"
       }
     },
     {
@@ -7788,7 +9015,10 @@ const michiNoEkiGeoJSON = {
         "city": "新潟市",
         "address": "新潟県新潟市北区木崎字切尾山3644-乙",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19199"
+        "url": "https://www.michi-no-eki.jp/stations/views/19199",
+        "businessHours": "売店・食堂（3.1～11.30） 7:00～18:00 （12.1～2末） 7:00～17:00 / コーヒーショップ 10:00～16:00(水曜日定休日）",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000001",
+        "homepage2": "http://www.niigata-kankou.or.jp/sys/data?page-id=7001"
       }
     },
     {
@@ -7807,7 +9037,10 @@ const michiNoEkiGeoJSON = {
         "city": "新発田市",
         "address": "新潟県新発田市横岡1147",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19200"
+        "url": "https://www.michi-no-eki.jp/stations/views/19200",
+        "businessHours": "",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000002",
+        "homepage2": "https://www.m-kajikawa.com"
       }
     },
     {
@@ -7826,7 +9059,10 @@ const michiNoEkiGeoJSON = {
         "city": "村上市",
         "address": "新潟県村上市九日市809",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19201"
+        "url": "https://www.michi-no-eki.jp/stations/views/19201",
+        "businessHours": "8:30～16:15",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000003",
+        "homepage2": "http://www.city.murakami.lg.jp/site/kanko/bussan-mitinoeki.html"
       }
     },
     {
@@ -7845,7 +9081,10 @@ const michiNoEkiGeoJSON = {
         "city": "村上市",
         "address": "新潟県村上市猿沢1215",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19202"
+        "url": "https://www.michi-no-eki.jp/stations/views/19202",
+        "businessHours": "9:00～18:00（11～3月は17:30まで）",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000004",
+        "homepage2": "http://www.asahimidori.com/"
       }
     },
     {
@@ -7864,7 +9103,10 @@ const michiNoEkiGeoJSON = {
         "city": "新潟市",
         "address": "新潟県新潟市西区山田2307",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19203"
+        "url": "https://www.michi-no-eki.jp/stations/views/19203",
+        "businessHours": "ファイブワン いいね！新潟館 9:00～17:00(夏期延長有り) / バザール館 9:30～17:30(大型連休時延長有り)",
+        "homepage": "https://furusatomura.pref.niigata.jp/",
+        "homepage2": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000005"
       }
     },
     {
@@ -7883,7 +9125,10 @@ const michiNoEkiGeoJSON = {
         "city": "糸魚川市",
         "address": "新潟県糸魚川市大字能生小泊3596-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19204"
+        "url": "https://www.michi-no-eki.jp/stations/views/19204",
+        "businessHours": "9:00～16:30",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000006",
+        "homepage2": "http://www.marine-dream.net/"
       }
     },
     {
@@ -7902,7 +9147,10 @@ const michiNoEkiGeoJSON = {
         "city": "阿賀町",
         "address": "新潟県東蒲原郡阿賀町岩谷2865",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19205"
+        "url": "https://www.michi-no-eki.jp/stations/views/19205",
+        "businessHours": "11:00～17:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000007",
+        "homepage2": ""
       }
     },
     {
@@ -7921,7 +9169,10 @@ const michiNoEkiGeoJSON = {
         "city": "関川村",
         "address": "新潟県岩船郡関川村大字上関1252-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19206"
+        "url": "https://www.michi-no-eki.jp/stations/views/19206",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000008",
+        "homepage2": "http://www.sekikawa.org/road_st/road_st.html"
       }
     },
     {
@@ -7940,7 +9191,10 @@ const michiNoEkiGeoJSON = {
         "city": "小千谷市",
         "address": "新潟県小千谷市稗生甲1670-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19207"
+        "url": "https://www.michi-no-eki.jp/stations/views/19207",
+        "businessHours": "10:00～22:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000009",
+        "homepage2": "https://www.chijiminosato.com/"
       }
     },
     {
@@ -7959,7 +9213,10 @@ const michiNoEkiGeoJSON = {
         "city": "阿賀町",
         "address": "新潟県東蒲原郡阿賀町石間4301",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19208"
+        "url": "https://www.michi-no-eki.jp/stations/views/19208",
+        "businessHours": "9:00～17:00 （12月～3月は9:00～16:00）",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=0000010",
+        "homepage2": "http://aganosato.web.fc2.com/"
       }
     },
     {
@@ -7978,7 +9235,10 @@ const michiNoEkiGeoJSON = {
         "city": "村上市",
         "address": "新潟県村上市桑川891-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19209"
+        "url": "https://www.michi-no-eki.jp/stations/views/19209",
+        "businessHours": "9:00～17:30",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000011",
+        "homepage2": ""
       }
     },
     {
@@ -7997,7 +9257,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "新潟県三島郡出雲崎町大字尼瀬6-57",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19210"
+        "url": "https://www.michi-no-eki.jp/stations/views/19210",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://tenryonosato.jp/",
+        "homepage2": "https://www.instagram.com/michinoeki_tenryo/"
       }
     },
     {
@@ -8016,7 +9279,10 @@ const michiNoEkiGeoJSON = {
         "city": "胎内市",
         "address": "新潟県胎内市下赤谷387-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19211"
+        "url": "https://www.michi-no-eki.jp/stations/views/19211",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000013",
+        "homepage2": "http://www.tainai.info/"
       }
     },
     {
@@ -8035,7 +9301,10 @@ const michiNoEkiGeoJSON = {
         "city": "魚沼市",
         "address": "新潟県魚沼市吉田1144",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19212"
+        "url": "https://www.michi-no-eki.jp/stations/views/19212",
+        "businessHours": "9:00~17:00 季節により変動有",
+        "homepage": "http://www.miyukinosato.com",
+        "homepage2": "https://www.iine-uonuma.jp/"
       }
     },
     {
@@ -8054,7 +9323,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "新潟県長岡市島崎5713-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19213"
+        "url": "https://www.michi-no-eki.jp/stations/views/19213",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000015",
+        "homepage2": "http://www.motenashiya.com/"
       }
     },
     {
@@ -8073,7 +9345,10 @@ const michiNoEkiGeoJSON = {
         "city": "十日町市",
         "address": "新潟県十日町市松代3816",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19214"
+        "url": "https://www.michi-no-eki.jp/stations/views/19214",
+        "businessHours": "8:30～17:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000016",
+        "homepage2": "https://furusato-kaikan.matsudai.jp/"
       }
     },
     {
@@ -8092,7 +9367,10 @@ const michiNoEkiGeoJSON = {
         "city": "糸魚川市",
         "address": "新潟県糸魚川市大字市振1035-50",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19215"
+        "url": "https://www.michi-no-eki.jp/stations/views/19215",
+        "businessHours": "8:00～20:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000017",
+        "homepage2": "http://www.ichiburi-seki.com/"
       }
     },
     {
@@ -8111,7 +9389,10 @@ const michiNoEkiGeoJSON = {
         "city": "十日町市",
         "address": "新潟県十日町市本町六の1-71-26",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19216"
+        "url": "https://www.michi-no-eki.jp/stations/views/19216",
+        "businessHours": "9:00～18:00（11月～3月は17：30まで）",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000018",
+        "homepage2": "http://cross10.or.jp"
       }
     },
     {
@@ -8130,7 +9411,10 @@ const michiNoEkiGeoJSON = {
         "city": "三条市",
         "address": "新潟県三条市大字庭月451-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19217"
+        "url": "https://www.michi-no-eki.jp/stations/views/19217",
+        "businessHours": "10:00～16:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000019",
+        "homepage2": "http://www.michinoeki-shitada.com/"
       }
     },
     {
@@ -8149,7 +9433,10 @@ const michiNoEkiGeoJSON = {
         "city": "柏崎市",
         "address": "新潟県柏崎市大字青海川175-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19218"
+        "url": "https://www.michi-no-eki.jp/stations/views/19218",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000020",
+        "homepage2": ""
       }
     },
     {
@@ -8168,7 +9455,10 @@ const michiNoEkiGeoJSON = {
         "city": "魚沼市",
         "address": "新潟県魚沼市大栃山356-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19219"
+        "url": "https://www.michi-no-eki.jp/stations/views/19219",
+        "businessHours": "9:00～17:00 （12月～2月は9：00～16：00）",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000021",
+        "homepage2": "http://www.irihirose.jp/"
       }
     },
     {
@@ -8187,7 +9477,10 @@ const michiNoEkiGeoJSON = {
         "city": "柏崎市",
         "address": "新潟県柏崎市西山町坂田717-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19220"
+        "url": "https://www.michi-no-eki.jp/stations/views/19220",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://nishiyama-furusato.jp/",
+        "homepage2": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000022"
       }
     },
     {
@@ -8206,7 +9499,10 @@ const michiNoEkiGeoJSON = {
         "city": "妙高市",
         "address": "新潟県妙高市大字猪野山58-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19221"
+        "url": "https://www.michi-no-eki.jp/stations/views/19221",
+        "businessHours": "9:00～21:00 くびき野情報館 （店舗によって異なります）",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000023",
+        "homepage2": "http://www.eki-arai.com/"
       }
     },
     {
@@ -8225,7 +9521,10 @@ const michiNoEkiGeoJSON = {
         "city": "長岡市",
         "address": "新潟県長岡市栃尾宮沢1764",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19222"
+        "url": "https://www.michi-no-eki.jp/stations/views/19222",
+        "businessHours": "10:00～18:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000024",
+        "homepage2": "http://r290tochio.jp/"
       }
     },
     {
@@ -8244,7 +9543,10 @@ const michiNoEkiGeoJSON = {
         "city": "佐渡市",
         "address": "952－0011 新潟県佐渡市両津夷384-11",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19223"
+        "url": "https://www.michi-no-eki.jp/stations/views/19223",
+        "businessHours": "佐渡インフォメーションセンター 8:30～17:30＜休 12/29～1/3＞",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000025",
+        "homepage2": "https://www.city.sado.niigata.jp/site/i-port/"
       }
     },
     {
@@ -8263,7 +9565,10 @@ const michiNoEkiGeoJSON = {
         "city": "糸魚川市",
         "address": "新潟県糸魚川市大字外波903-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19224"
+        "url": "https://www.michi-no-eki.jp/stations/views/19224",
+        "businessHours": "9:30～17:00（季節により異なる）",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000026",
+        "homepage2": "http://e-oyasirazu.com/"
       }
     },
     {
@@ -8282,7 +9587,10 @@ const michiNoEkiGeoJSON = {
         "city": "十日町市",
         "address": "新潟県十日町市中仙田甲826",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19225"
+        "url": "https://www.michi-no-eki.jp/stations/views/19225",
+        "businessHours": "8:00～17:45（施設・季節により異なる）",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000027",
+        "homepage2": "http://kirari21.sakura.ne.jp/"
       }
     },
     {
@@ -8301,7 +9609,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "新潟県上越市安塚区樽田140",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19226"
+        "url": "https://www.michi-no-eki.jp/stations/views/19226",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000028",
+        "homepage2": "https://www.461888.jp"
       }
     },
     {
@@ -8320,7 +9631,10 @@ const michiNoEkiGeoJSON = {
         "city": "柏崎市",
         "address": "新潟県柏崎市高柳町高尾10-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19227"
+        "url": "https://www.michi-no-eki.jp/stations/views/19227",
+        "businessHours": "11:00～20:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000029",
+        "homepage2": "http://www.jon-nobi.com/"
       }
     },
     {
@@ -8339,7 +9653,10 @@ const michiNoEkiGeoJSON = {
         "city": "新潟市",
         "address": "新潟県新潟市川根438",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19228"
+        "url": "https://www.michi-no-eki.jp/stations/views/19228",
+        "businessHours": "9:00～18:00(4月から6月) 9:00～17:00（7月から3月）",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000030",
+        "homepage2": "http://www.niigata-kankou.or.jp/sys/data?page-id=5595"
       }
     },
     {
@@ -8358,7 +9675,10 @@ const michiNoEkiGeoJSON = {
         "city": "燕市",
         "address": "新潟県燕市国上5866-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19229"
+        "url": "https://www.michi-no-eki.jp/stations/views/19229",
+        "businessHours": "10:00～18:00 ※施設によって異なる",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000031",
+        "homepage2": "https://www.michinoeki-kugami.jp/"
       }
     },
     {
@@ -8377,7 +9697,10 @@ const michiNoEkiGeoJSON = {
         "city": "長岡市",
         "address": "新潟県長岡市大字中山84-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19230"
+        "url": "https://www.michi-no-eki.jp/stations/views/19230",
+        "businessHours": "9:00～18:00（12～3月は17:00まで）",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000032",
+        "homepage2": "http://agrinosato.com/"
       }
     },
     {
@@ -8396,7 +9719,10 @@ const michiNoEkiGeoJSON = {
         "city": "上越市",
         "address": "新潟県上越市吉川区杜氏の郷1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19231"
+        "url": "https://www.michi-no-eki.jp/stations/views/19231",
+        "businessHours": "10:00～16:00",
+        "homepage": "https://eki-yoshikawa.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -8415,7 +9741,10 @@ const michiNoEkiGeoJSON = {
         "city": "上越市",
         "address": "新潟県上越市名立区名立大町4280-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19232"
+        "url": "https://www.michi-no-eki.jp/stations/views/19232",
+        "businessHours": "10:00～18:00（夏季は19:00まで）",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000034",
+        "homepage2": "http://www.umiterasu.co.jp/"
       }
     },
     {
@@ -8434,7 +9763,10 @@ const michiNoEkiGeoJSON = {
         "city": "南魚沼市",
         "address": "新潟県南魚沼市下一日市855",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19233"
+        "url": "https://www.michi-no-eki.jp/stations/views/19233",
+        "businessHours": "◆今泉記念館 9:00～17:00 ◆四季味わい館 夏期(5月～11月) 9:00～18:00 冬期(12月～4月）10:00～17:00 ◆ちゃわんめしたっぽ家 夏期(5月～11月) 10:00～18:00 ラストオーダー17:30 冬期(12月～4月) 10:00～17:00 ラストオーダー16:30",
+        "homepage": "http://www.michinoeki-minamiuonuma.jp",
+        "homepage2": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000035"
       }
     },
     {
@@ -8453,7 +9785,10 @@ const michiNoEkiGeoJSON = {
         "city": "見附市",
         "address": "新潟県見附市今町一丁目3358",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19234"
+        "url": "https://www.michi-no-eki.jp/stations/views/19234",
+        "businessHours": "9:00～16:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000036",
+        "homepage2": "http://patio-niigata.jp/"
       }
     },
     {
@@ -8472,7 +9807,10 @@ const michiNoEkiGeoJSON = {
         "city": "湯沢町",
         "address": "新潟県南魚沼郡湯沢町大字三俣1000",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19235"
+        "url": "https://www.michi-no-eki.jp/stations/views/19235",
+        "businessHours": "5月-11月9:00-17:00【レストランラストオーダー16:30】 (火曜日定休)、12月-4月10:00-18:00【レストランラストオーダー17:30】(火曜日定休）",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000037",
+        "homepage2": "http://michieki-mitsumata.jp/"
       }
     },
     {
@@ -8491,7 +9829,10 @@ const michiNoEkiGeoJSON = {
         "city": "富山市",
         "address": "富山県富山市片掛3-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19236"
+        "url": "https://www.michi-no-eki.jp/stations/views/19236",
+        "businessHours": "10:00～18:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000039",
+        "homepage2": "http://www.tenkomori.info/rinrintop.html"
       }
     },
     {
@@ -8510,7 +9851,10 @@ const michiNoEkiGeoJSON = {
         "city": "砺波市",
         "address": "富山県砺波市宮沢町3-9",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19237"
+        "url": "https://www.michi-no-eki.jp/stations/views/19237",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000040",
+        "homepage2": "http://www.tonami-kankou.org/michinoeki/"
       }
     },
     {
@@ -8529,7 +9873,10 @@ const michiNoEkiGeoJSON = {
         "city": "南砺市",
         "address": "富山県南砺市西赤尾町72-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19238"
+        "url": "https://www.michi-no-eki.jp/stations/views/19238",
+        "businessHours": "9:00～16:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000041",
+        "homepage2": "http://www2.tst.ne.jp/sasara/"
       }
     },
     {
@@ -8548,7 +9895,10 @@ const michiNoEkiGeoJSON = {
         "city": "南砺市",
         "address": "富山県南砺市利賀村171",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19239"
+        "url": "https://www.michi-no-eki.jp/stations/views/19239",
+        "businessHours": "",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000042",
+        "homepage2": ""
       }
     },
     {
@@ -8567,7 +9917,10 @@ const michiNoEkiGeoJSON = {
         "city": "南砺市",
         "address": "富山県南砺市北川730",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19240"
+        "url": "https://www.michi-no-eki.jp/stations/views/19240",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000043",
+        "homepage2": "http://www.kibori.co.jp/"
       }
     },
     {
@@ -8586,7 +9939,10 @@ const michiNoEkiGeoJSON = {
         "city": "南砺市",
         "address": "富山県南砺市中ノ江16",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19241"
+        "url": "https://www.michi-no-eki.jp/stations/views/19241",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000044",
+        "homepage2": "http://www.fukumitsu.net"
       }
     },
     {
@@ -8605,7 +9961,10 @@ const michiNoEkiGeoJSON = {
         "city": "南砺市",
         "address": "富山県南砺市東中江215",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19242"
+        "url": "https://www.michi-no-eki.jp/stations/views/19242",
+        "businessHours": "8:30～17:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000045",
+        "homepage2": "http://gokayama-washinosato.com/"
       }
     },
     {
@@ -8624,7 +9983,10 @@ const michiNoEkiGeoJSON = {
         "city": "砺波市",
         "address": "富山県砺波市庄川町示野437",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19243"
+        "url": "https://www.michi-no-eki.jp/stations/views/19243",
+        "businessHours": "9:00～18:00 （定休日 毎週火曜日）",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000046",
+        "homepage2": "https://michinoeki-shogawa.com/"
       }
     },
     {
@@ -8643,7 +10005,10 @@ const michiNoEkiGeoJSON = {
         "city": "黒部市",
         "address": "富山県黒部市宇奈月町下立686",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19244"
+        "url": "https://www.michi-no-eki.jp/stations/views/19244",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000047",
+        "homepage2": "https://www.unazuki-beer.jp/baiten/"
       }
     },
     {
@@ -8662,7 +10027,10 @@ const michiNoEkiGeoJSON = {
         "city": "射水市",
         "address": "富山県射水市鏡宮２９６",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19245"
+        "url": "https://www.michi-no-eki.jp/stations/views/19245",
+        "businessHours": "8:00～19:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000048",
+        "homepage2": "http://www.shinminato.co.jp/"
       }
     },
     {
@@ -8681,7 +10049,10 @@ const michiNoEkiGeoJSON = {
         "city": "滑川市",
         "address": "富山県滑川市中川原410",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19246"
+        "url": "https://www.michi-no-eki.jp/stations/views/19246",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000049",
+        "homepage2": "https://hotaruikamuseum.com/"
       }
     },
     {
@@ -8700,7 +10071,10 @@ const michiNoEkiGeoJSON = {
         "city": "氷見市",
         "address": "富山県氷見市北大町25-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19247"
+        "url": "https://www.michi-no-eki.jp/stations/views/19247",
+        "businessHours": "8:30～18:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000050",
+        "homepage2": "http://himi-banya.jp/"
       }
     },
     {
@@ -8719,7 +10093,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "富山県高岡市蜂ヶ島131-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19248"
+        "url": "https://www.michi-no-eki.jp/stations/views/19248",
+        "businessHours": "9:00～20:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000051",
+        "homepage2": "http://www.manyonosato.com"
       }
     },
     {
@@ -8738,7 +10115,10 @@ const michiNoEkiGeoJSON = {
         "city": "小矢部市",
         "address": "富山県小矢部市桜町1535-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19249"
+        "url": "https://www.michi-no-eki.jp/stations/views/19249",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://michinoeki-oyabe.com/",
+        "homepage2": ""
       }
     },
     {
@@ -8757,7 +10137,10 @@ const michiNoEkiGeoJSON = {
         "city": "輪島市",
         "address": "石川県輪島市白米町ハ部99-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19250"
+        "url": "https://www.michi-no-eki.jp/stations/views/19250",
+        "businessHours": "8:30～17:30",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000053",
+        "homepage2": "http://wajimanavi.lg.jp/www/view/detail.jsp?id=1577"
       }
     },
     {
@@ -8776,7 +10159,10 @@ const michiNoEkiGeoJSON = {
         "city": "かほく市",
         "address": "石川県かほく市二ツ屋16-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19251"
+        "url": "https://www.michi-no-eki.jp/stations/views/19251",
+        "businessHours": "9:00〜18:00 （R3.1.16から）",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000054",
+        "homepage2": "http://tak-rest.com/"
       }
     },
     {
@@ -8795,7 +10181,10 @@ const michiNoEkiGeoJSON = {
         "city": "七尾市",
         "address": "石川県七尾市庵町笹ヶ谷内3-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19252"
+        "url": "https://www.michi-no-eki.jp/stations/views/19252",
+        "businessHours": "10：00～17：00（休館日：木曜、年末年始）",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000055",
+        "homepage2": ""
       }
     },
     {
@@ -8814,7 +10203,10 @@ const michiNoEkiGeoJSON = {
         "city": "能登町",
         "address": "石川県鳳珠郡能登町字当目2-24-24",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19253"
+        "url": "https://www.michi-no-eki.jp/stations/views/19253",
+        "businessHours": "9:00～17:00（休館日：月曜日）",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000056",
+        "homepage2": ""
       }
     },
     {
@@ -8833,7 +10225,10 @@ const michiNoEkiGeoJSON = {
         "city": "白山市",
         "address": "石川県能美市和佐谷町200",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19254"
+        "url": "https://www.michi-no-eki.jp/stations/views/19254",
+        "businessHours": "9:00～17:30",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000057",
+        "homepage2": "https://michisirayama.wixsite.com/michisirayama"
       }
     },
     {
@@ -8852,7 +10247,10 @@ const michiNoEkiGeoJSON = {
         "city": "七尾市",
         "address": "石川県七尾市中島町中島二部1-19",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19255"
+        "url": "https://www.michi-no-eki.jp/stations/views/19255",
+        "businessHours": "7:00～20:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000058",
+        "homepage2": ""
       }
     },
     {
@@ -8871,7 +10269,10 @@ const michiNoEkiGeoJSON = {
         "city": "輪島市",
         "address": "石川県輪島市門前町赤神壱110",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19256"
+        "url": "https://www.michi-no-eki.jp/stations/views/19256",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000059",
+        "homepage2": "http://wajimanavi.lg.jp/www/view/detail.jsp?id=988"
       }
     },
     {
@@ -8890,7 +10291,10 @@ const michiNoEkiGeoJSON = {
         "city": "志賀町",
         "address": "石川県羽咋郡志賀町富来領家町タ2-11",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19257"
+        "url": "https://www.michi-no-eki.jp/stations/views/19257",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000060",
+        "homepage2": "http://togi-michinoeki.com/"
       }
     },
     {
@@ -8909,7 +10313,10 @@ const michiNoEkiGeoJSON = {
         "city": "輪島市",
         "address": "石川県輪島市河井町20-1-131",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19258"
+        "url": "https://www.michi-no-eki.jp/stations/views/19258",
+        "businessHours": "10:00～18:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000061",
+        "homepage2": "http://wajimanavi.lg.jp/www/view/detail.jsp?id=1660"
       }
     },
     {
@@ -8928,7 +10335,10 @@ const michiNoEkiGeoJSON = {
         "city": "志賀町",
         "address": "石川県羽咋郡志賀町末吉新保向10",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19259"
+        "url": "https://www.michi-no-eki.jp/stations/views/19259",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000062",
+        "homepage2": "http://www.syunsaikan-shika.jp/"
       }
     },
     {
@@ -8947,7 +10357,10 @@ const michiNoEkiGeoJSON = {
         "city": "白山市",
         "address": "石川県白山市瀬戸寅163-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19260"
+        "url": "https://www.michi-no-eki.jp/stations/views/19260",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://city-hakusan.com/shopping/road_station_sena/",
+        "homepage2": ""
       }
     },
     {
@@ -8966,7 +10379,10 @@ const michiNoEkiGeoJSON = {
         "city": "白山市",
         "address": "石川県白山市出合町甲36",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19261"
+        "url": "https://www.michi-no-eki.jp/stations/views/19261",
+        "businessHours": "4～11月中旬:9:00～16:00 11月中旬～3月:10:00～16:00（GW～11月中旬:第1・3月休 11月中旬～GW:毎週月休、月曜が祝日の場合は翌日休）",
+        "homepage": "https://www.instagram.com/michinoeki_ikkoikkinosato/",
+        "homepage2": ""
       }
     },
     {
@@ -8985,7 +10401,10 @@ const michiNoEkiGeoJSON = {
         "city": "輪島市",
         "address": "石川県輪島市三井町洲衛10-11-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19262"
+        "url": "https://www.michi-no-eki.jp/stations/views/19262",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000065",
+        "homepage2": "http://www.noto-airport.jp/"
       }
     },
     {
@@ -9004,7 +10423,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "石川県河北郡津幡町字竹橋西239-14",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19263"
+        "url": "https://www.michi-no-eki.jp/stations/views/19263",
+        "businessHours": "9:30～18:30",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000066",
+        "homepage2": "http://kurikara.org"
       }
     },
     {
@@ -9023,7 +10445,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "石川県加賀市山中温泉こおろぎ町イ19",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19264"
+        "url": "https://www.michi-no-eki.jp/stations/views/19264",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000067",
+        "homepage2": "http://www.hot-ishikawa.jp/sys/data?page-id=6675"
       }
     },
     {
@@ -9042,7 +10467,10 @@ const michiNoEkiGeoJSON = {
         "city": "七尾市",
         "address": "石川県七尾市能登島向田町122-14",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19265"
+        "url": "https://www.michi-no-eki.jp/stations/views/19265",
+        "businessHours": "令和2年9月1日から当面の間 売店10:00～15:30 レストラン10:30～14:30 （レストランは令和2年12月1日から令和3年2月28まで休業）定休日：毎週水曜日、木曜日",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000068",
+        "homepage2": "https://notojima-michinoeki.com/"
       }
     },
     {
@@ -9061,7 +10489,10 @@ const michiNoEkiGeoJSON = {
         "city": "珠洲市",
         "address": "石川県珠洲市清水町1-58-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19266"
+        "url": "https://www.michi-no-eki.jp/stations/views/19266",
+        "businessHours": "9:00～17:00（3～11月）9:00～16:00（12～2月）",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000069",
+        "homepage2": "https://enden.jp/"
       }
     },
     {
@@ -9080,7 +10511,10 @@ const michiNoEkiGeoJSON = {
         "city": "内灘町",
         "address": "石川県河北郡内灘町字大学1-4-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19267"
+        "url": "https://www.michi-no-eki.jp/stations/views/19267",
+        "businessHours": "9:00〜18:00（カフェ・物販）",
+        "homepage": "https://u-sp.jp",
+        "homepage2": ""
       }
     },
     {
@@ -9099,7 +10533,10 @@ const michiNoEkiGeoJSON = {
         "city": "七尾市",
         "address": "石川県七尾市府中町員外13-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19268"
+        "url": "https://www.michi-no-eki.jp/stations/views/19268",
+        "businessHours": "8:30～17:30（店舗により異なる）",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000071",
+        "homepage2": "http://www.shokusai.co.jp/"
       }
     },
     {
@@ -9118,7 +10555,10 @@ const michiNoEkiGeoJSON = {
         "city": "小松市",
         "address": "石川県小松市蓮代寺町ケ2-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19269"
+        "url": "https://www.michi-no-eki.jp/stations/views/19269",
+        "businessHours": "8:30～18:30（施設により異なる） ＜休 1/1～3、1～2月の水曜日＞",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000072",
+        "homepage2": "http://www.michinoeki-kibagata.com/"
       }
     },
     {
@@ -9137,7 +10577,10 @@ const michiNoEkiGeoJSON = {
         "city": "珠洲市",
         "address": "石川県珠洲市狼煙町テ部11",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19270"
+        "url": "https://www.michi-no-eki.jp/stations/views/19270",
+        "businessHours": "8:30～17:00〔季節によって変更になる場合があります〕",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000073",
+        "homepage2": "https://noroshi.info"
       }
     },
     {
@@ -9156,7 +10599,10 @@ const michiNoEkiGeoJSON = {
         "city": "珠洲市",
         "address": "石川県珠洲市野々江町シ-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19271"
+        "url": "https://www.michi-no-eki.jp/stations/views/19271",
+        "businessHours": "10:00～17:00 （水曜定休日）",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000074",
+        "homepage2": "http://www.notohantou.jp/"
       }
     },
     {
@@ -9175,7 +10621,10 @@ const michiNoEkiGeoJSON = {
         "city": "中能登町",
         "address": "石川県鹿島郡中能登町井田ぬ部10-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19272"
+        "url": "https://www.michi-no-eki.jp/stations/views/19272",
+        "businessHours": "8:45～18:30（通年）＜休：施設により異なる＞",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000075",
+        "homepage2": "http://orihime-nakanoto.jp/"
       }
     },
     {
@@ -9194,7 +10643,10 @@ const michiNoEkiGeoJSON = {
         "city": "木曽町",
         "address": "長野県木曽郡木曽町日義4730-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19273"
+        "url": "https://www.michi-no-eki.jp/stations/views/19273",
+        "businessHours": "8:30～17:30",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano01.html",
+        "homepage2": "http://www.michinoeki-kisokoma.jp/"
       }
     },
     {
@@ -9213,7 +10665,10 @@ const michiNoEkiGeoJSON = {
         "city": "大桑村",
         "address": "長野県木曽郡大桑村大字野尻160-27",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19274"
+        "url": "https://www.michi-no-eki.jp/stations/views/19274",
+        "businessHours": "9:00～19:30〔施設により異なる〕",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano02.html",
+        "homepage2": "http://www.michinoeki-ookuwa.jp/"
       }
     },
     {
@@ -9232,7 +10687,10 @@ const michiNoEkiGeoJSON = {
         "city": "塩尻市",
         "address": "長野県塩尻市大字奈良井1346-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19275"
+        "url": "https://www.michi-no-eki.jp/stations/views/19275",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano03.html",
+        "homepage2": "https://www.naraijuku.com/shop/post-54/"
       }
     },
     {
@@ -9251,7 +10709,10 @@ const michiNoEkiGeoJSON = {
         "city": "中津川市",
         "address": "岐阜県中津川市山口1-14",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19276"
+        "url": "https://www.michi-no-eki.jp/stations/views/19276",
+        "businessHours": "8:30～18:00（水曜日は16:30まで）",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu09.html",
+        "homepage2": "http://sizumo.jp/"
       }
     },
     {
@@ -9270,7 +10731,10 @@ const michiNoEkiGeoJSON = {
         "city": "平谷村",
         "address": "長野県下伊那郡平谷村252",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19277"
+        "url": "https://www.michi-no-eki.jp/stations/views/19277",
+        "businessHours": "10:00～20:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano04.html",
+        "homepage2": "http://hiraya-himawarinoyu.com/ichiba.php"
       }
     },
     {
@@ -9289,7 +10753,10 @@ const michiNoEkiGeoJSON = {
         "city": "下條村",
         "address": "長野県下伊那郡下條村睦沢4331-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19278"
+        "url": "https://www.michi-no-eki.jp/stations/views/19278",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano05.html",
+        "homepage2": "http://www.mis.janis.or.jp/~sobanoshiro/"
       }
     },
     {
@@ -9308,7 +10775,10 @@ const michiNoEkiGeoJSON = {
         "city": "伊那市",
         "address": "長野県伊那市長谷非持1400",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19279"
+        "url": "https://www.michi-no-eki.jp/stations/views/19279",
+        "businessHours": "8:00～17:30〔施設により異なる〕「パンや」毎週 月・火曜日休み（祝日の日は営業）",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano06.html",
+        "homepage2": "http://www.inacity.jp/shisetsu/kankoshisetsu/minamialpsmura.html"
       }
     },
     {
@@ -9327,7 +10797,10 @@ const michiNoEkiGeoJSON = {
         "city": "塩尻市",
         "address": "長野県塩尻市大字木曽平沢2272-7",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19280"
+        "url": "https://www.michi-no-eki.jp/stations/views/19280",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano07.html",
+        "homepage2": "http://www.kiso.or.jp/"
       }
     },
     {
@@ -9346,7 +10819,10 @@ const michiNoEkiGeoJSON = {
         "city": "木曽町",
         "address": "長野県木曽郡木曽町三岳10491-9",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19281"
+        "url": "https://www.michi-no-eki.jp/stations/views/19281",
+        "businessHours": "8:00～16:00（事情により変更する場合あり）＜休：月曜日（祝祭日の場合は営業）＞",
+        "homepage": "",
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano08.html"
       }
     },
     {
@@ -9365,7 +10841,10 @@ const michiNoEkiGeoJSON = {
         "city": "阿南町",
         "address": "長野県下伊那郡阿南町2700",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19282"
+        "url": "https://www.michi-no-eki.jp/stations/views/19282",
+        "businessHours": "8:30～17:30（冬期は変更あり） レストラン9:00～16:00 （ラストオーダー：15:30）",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano09.html",
+        "homepage2": "http://goheimochi.biz/"
       }
     },
     {
@@ -9384,7 +10863,10 @@ const michiNoEkiGeoJSON = {
         "city": "飯島町",
         "address": "長野県上伊那郡飯島町七久保2252",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19283"
+        "url": "https://www.michi-no-eki.jp/stations/views/19283",
+        "businessHours": "9:00～18:00（4月～10月）、9:00～17:30（11月～3月）＜休 年末年始＞",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano10.html",
+        "homepage2": "http://hananosato-iijima.jp/"
       }
     },
     {
@@ -9403,7 +10885,10 @@ const michiNoEkiGeoJSON = {
         "city": "飯田市",
         "address": "長野県飯田市南信濃和田456-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19284"
+        "url": "https://www.michi-no-eki.jp/stations/views/19284",
+        "businessHours": "定休日：毎週木曜日（祝日の場合は翌日）、【温泉】11：00〜21：00、【売店】10：00〜19：00、【食堂】昼営業：11：00〜14：30（Lo.14：00）、夜営業：【日・月・火・水曜日】17：00〜19：00（Lo.18：30）、【金・土曜日】17：00〜21：00（Lo.20：30）",
+        "homepage": "https://michinoeki-tohyamago.com/",
+        "homepage2": "https://www.youtube.com/watch?v=zO2A0V2pnJ8"
       }
     },
     {
@@ -9422,7 +10907,10 @@ const michiNoEkiGeoJSON = {
         "city": "木曽町",
         "address": "長野県木曽郡木曽町福島4061-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19285"
+        "url": "https://www.michi-no-eki.jp/stations/views/19285",
+        "businessHours": "8:30～17:00 冬季期間のみ水曜定休",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano12.html",
+        "homepage2": "http://www.michinoeki-kisofukushima.jp/"
       }
     },
     {
@@ -9441,7 +10929,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "長野県木曽郡木祖村大字薮原163-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19286"
+        "url": "https://www.michi-no-eki.jp/stations/views/19286",
+        "businessHours": "9:00～17:00（食堂10:00～16:00）",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano13.html",
+        "homepage2": "http://www.genryu-no-sato.com/"
       }
     },
     {
@@ -9460,7 +10951,10 @@ const michiNoEkiGeoJSON = {
         "city": "郡上市",
         "address": "岐阜県郡上市美並町上田2605",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19287"
+        "url": "https://www.michi-no-eki.jp/stations/views/19287",
+        "businessHours": "9:00～16:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu01.html",
+        "homepage2": "http://www.minami-kanko.com/sightseeing/buy/post-9.html"
       }
     },
     {
@@ -9479,7 +10973,10 @@ const michiNoEkiGeoJSON = {
         "city": "高山市",
         "address": "岐阜県高山市清見町大原858-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19288"
+        "url": "https://www.michi-no-eki.jp/stations/views/19288",
+        "businessHours": "【4月ー11月】9:00～17:00 【12月ー3月】9:00～16:00 【定休日】年末年始（レストランのみ毎週水曜定休）",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu02.html",
+        "homepage2": "http://furusatokiyomi.jp/"
       }
     },
     {
@@ -9498,7 +10995,10 @@ const michiNoEkiGeoJSON = {
         "city": "郡上市",
         "address": "岐阜県郡上市明宝大谷1015",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19289"
+        "url": "https://www.michi-no-eki.jp/stations/views/19289",
+        "businessHours": "9:00～18:00（テナントにより異なります）",
+        "homepage": "https://www.meiho-masters.co.jp/",
+        "homepage2": "https://meiho.shop/"
       }
     },
     {
@@ -9517,7 +11017,10 @@ const michiNoEkiGeoJSON = {
         "city": "中津川市",
         "address": "岐阜県中津川市付知町8581-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19290"
+        "url": "https://www.michi-no-eki.jp/stations/views/19290",
+        "businessHours": "9:00～18:00〔施設により異なる〕",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu04.html",
+        "homepage2": "http://www.michinoeki-hanakaido.jp/"
       }
     },
     {
@@ -9536,7 +11039,10 @@ const michiNoEkiGeoJSON = {
         "city": "白川町",
         "address": "岐阜県加茂郡白川町河東3500-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19291"
+        "url": "https://www.michi-no-eki.jp/stations/views/19291",
+        "businessHours": "9:00～21:00〔施設により異なる〕",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu05.html",
+        "homepage2": "http://www.minoshirakawa-piacere.com/"
       }
     },
     {
@@ -9555,7 +11061,10 @@ const michiNoEkiGeoJSON = {
         "city": "関市",
         "address": "岐阜県関市洞戸菅谷539-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19292"
+        "url": "https://www.michi-no-eki.jp/stations/views/19292",
+        "businessHours": "物産館8:00～16:00 情報館9:00～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu06.html",
+        "homepage2": "https://www.city.seki.lg.jp/kanko/0000015266.html"
       }
     },
     {
@@ -9574,7 +11083,10 @@ const michiNoEkiGeoJSON = {
         "city": "高山市",
         "address": "岐阜県高山市奥飛騨温泉郷田頃家字東垣内11-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19293"
+        "url": "https://www.michi-no-eki.jp/stations/views/19293",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu08.html",
+        "homepage2": "http://kankou.city.takayama.lg.jp/2000575/2000585/2000963.html"
       }
     },
     {
@@ -9593,7 +11105,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "岐阜県加茂郡七宗町大字中麻生1169-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19294"
+        "url": "https://www.michi-no-eki.jp/stations/views/19294",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu10.html",
+        "homepage2": ""
       }
     },
     {
@@ -9612,7 +11127,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "岐阜県揖斐郡揖斐川町東横山264-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19295"
+        "url": "https://www.michi-no-eki.jp/stations/views/19295",
+        "businessHours": "8:30～17:30",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu11.html",
+        "homepage2": "http://www.ibikogen.com/michinoeki.html"
       }
     },
     {
@@ -9631,7 +11149,10 @@ const michiNoEkiGeoJSON = {
         "city": "白川村",
         "address": "岐阜県大野郡白川村大字飯島411",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19296"
+        "url": "https://www.michi-no-eki.jp/stations/views/19296",
+        "businessHours": "9:00～16:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu12.html",
+        "homepage2": "http://www.shirakawa-go.gr.jp/details/?i=55"
       }
     },
     {
@@ -9650,7 +11171,10 @@ const michiNoEkiGeoJSON = {
         "city": "関市",
         "address": "岐阜県関市下之保2503-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19297"
+        "url": "https://www.michi-no-eki.jp/stations/views/19297",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu13.html",
+        "homepage2": "https://michinoekiheisei.jimdofree.com/"
       }
     },
     {
@@ -9669,7 +11193,10 @@ const michiNoEkiGeoJSON = {
         "city": "飛騨市",
         "address": "岐阜県飛騨市古川町上町下落1348-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19298"
+        "url": "https://www.michi-no-eki.jp/stations/views/19298",
+        "businessHours": "9:00～16:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu14.html",
+        "homepage2": "https://www.hida-kankou.jp/gourmet/1000000011/"
       }
     },
     {
@@ -9688,7 +11215,10 @@ const michiNoEkiGeoJSON = {
         "city": "下呂市",
         "address": "岐阜県下呂市金山町金山911-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19299"
+        "url": "https://www.michi-no-eki.jp/stations/views/19299",
+        "businessHours": "8:00～21:00",
+        "homepage": "",
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu15.html"
       }
     },
     {
@@ -9707,7 +11237,10 @@ const michiNoEkiGeoJSON = {
         "city": "恵那市",
         "address": "岐阜県恵那市上矢作町3566-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19300"
+        "url": "https://www.michi-no-eki.jp/stations/views/19300",
+        "businessHours": "9:00～17:00（季節により変更あり）",
+        "homepage": "",
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu16.html"
       }
     },
     {
@@ -9726,7 +11259,10 @@ const michiNoEkiGeoJSON = {
         "city": "高山市",
         "address": "岐阜県高山市一之宮町7846-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19301"
+        "url": "https://www.michi-no-eki.jp/stations/views/19301",
+        "businessHours": "9:00～17:00（12月から3月は8:30〜16:30）",
+        "homepage": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000043/1018647.h",
+        "homepage2": "https://www.instagram.com/montdeus_park/"
       }
     },
     {
@@ -9745,7 +11281,10 @@ const michiNoEkiGeoJSON = {
         "city": "下呂市",
         "address": "岐阜県下呂市小坂町赤沼田811-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19302"
+        "url": "https://www.michi-no-eki.jp/stations/views/19302",
+        "businessHours": "売店8:00～16:00(夏期) ～15:30(夏期以外)＊施設・季節により異なります ＊気象等により予告なく変更する事があります",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu18.html",
+        "homepage2": "http://hida-osaka.jp/cominfo.html?an=hanamomo"
       }
     },
     {
@@ -9764,7 +11303,10 @@ const michiNoEkiGeoJSON = {
         "city": "揖斐川町",
         "address": "岐阜県揖斐郡揖斐川町谷汲名礼1766-27",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19303"
+        "url": "https://www.michi-no-eki.jp/stations/views/19303",
+        "businessHours": "9:00～17:00 （冬季時間変更あり）",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu19.html",
+        "homepage2": "https://www.town.ibigawa.lg.jp/kankoujyouhou/0000006111.html"
       }
     },
     {
@@ -9783,7 +11325,10 @@ const michiNoEkiGeoJSON = {
         "city": "土岐市",
         "address": "岐阜県土岐市肥田町肥田286-15",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19304"
+        "url": "https://www.michi-no-eki.jp/stations/views/19304",
+        "businessHours": "9:00～19:00〔施設により異なる〕",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu20.html",
+        "homepage2": "http://www.donburi-kaikan.com/"
       }
     },
     {
@@ -9802,7 +11347,10 @@ const michiNoEkiGeoJSON = {
         "city": "本巣市",
         "address": "岐阜県本巣市上保18-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19305"
+        "url": "https://www.michi-no-eki.jp/stations/views/19305",
+        "businessHours": "9:00～16:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu21.html",
+        "homepage2": "http://www.motosukankou.gr.jp/03_buy/03_03.html"
       }
     },
     {
@@ -9821,7 +11369,10 @@ const michiNoEkiGeoJSON = {
         "city": "高山市",
         "address": "岐阜県高山市清見町牧ヶ洞2145",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19306"
+        "url": "https://www.michi-no-eki.jp/stations/views/19306",
+        "businessHours": "レストラン11:00～16:00／ 売店9:00〜16:30／野菜直売所9:00〜16:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu22.html",
+        "homepage2": "http://www.nanamori.jp/"
       }
     },
     {
@@ -9840,7 +11391,10 @@ const michiNoEkiGeoJSON = {
         "city": "中津川市",
         "address": "岐阜県中津川市坂下450-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19307"
+        "url": "https://www.michi-no-eki.jp/stations/views/19307",
+        "businessHours": "9:00～17:00（冬期16:30まで）",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu23.html",
+        "homepage2": "http://kirira-sakashita.jp/"
       }
     },
     {
@@ -9859,7 +11413,10 @@ const michiNoEkiGeoJSON = {
         "city": "海津市",
         "address": "岐阜県海津市平田町野寺2357-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19308"
+        "url": "https://www.michi-no-eki.jp/stations/views/19308",
+        "businessHours": "夏季（４月～１０月）8:00～18:00 冬季（１１月～３月）8:00～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu24.html",
+        "homepage2": "https://www.clair-hirata.com"
       }
     },
     {
@@ -9878,7 +11435,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "岐阜県下呂市馬瀬西村1447-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19309"
+        "url": "https://www.michi-no-eki.jp/stations/views/19309",
+        "businessHours": "9:00～16:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu25.html",
+        "homepage2": "http://www.mikinosato.co.jp/"
       }
     },
     {
@@ -9897,7 +11457,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "岐阜県高山市久々野町渚2685",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19310"
+        "url": "https://www.michi-no-eki.jp/stations/views/19310",
+        "businessHours": "8:30～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu26.html",
+        "homepage2": "http://www.nagisa-kuguno.com/"
       }
     },
     {
@@ -9916,7 +11479,10 @@ const michiNoEkiGeoJSON = {
         "city": "高山市",
         "address": "岐阜県高山市朝日町万石150",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19311"
+        "url": "https://www.michi-no-eki.jp/stations/views/19311",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu27.html",
+        "homepage2": "http://www.gix.or.jp/~z33asahi/"
       }
     },
     {
@@ -9935,7 +11501,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "岐阜県恵那市三郷町佐々良木1461-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19312"
+        "url": "https://www.michi-no-eki.jp/stations/views/19312",
+        "businessHours": "9:00～17:30（冬季は16:30まで）",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -9954,7 +11523,10 @@ const michiNoEkiGeoJSON = {
         "city": "本巣市",
         "address": "岐阜県本巣市本巣町山口676",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19313"
+        "url": "https://www.michi-no-eki.jp/stations/views/19313",
+        "businessHours": "8:30～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu29.html",
+        "homepage2": "http://www.oribenosato.jp/"
       }
     },
     {
@@ -9973,7 +11545,10 @@ const michiNoEkiGeoJSON = {
         "city": "高山市",
         "address": "岐阜県高山市高根町中洞767-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19314"
+        "url": "https://www.michi-no-eki.jp/stations/views/19314",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu30.html",
+        "homepage2": "http://www.takanekankou.or.jp/takanekobo/"
       }
     },
     {
@@ -9992,7 +11567,10 @@ const michiNoEkiGeoJSON = {
         "city": "郡上市",
         "address": "岐阜県郡上市高鷲町西洞3628-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19315"
+        "url": "https://www.michi-no-eki.jp/stations/views/19315",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://gujotakasu.com/eat/eat-969.html",
+        "homepage2": "https://gujotakasu.com/buy/buy-1049.html"
       }
     },
     {
@@ -10011,7 +11589,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "岐阜県高山市荘川町猿丸88-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19316"
+        "url": "https://www.michi-no-eki.jp/stations/views/19316",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu32.html",
+        "homepage2": "http://kankou.city.takayama.lg.jp/2000002/2000509/2000512.html"
       }
     },
     {
@@ -10030,7 +11611,10 @@ const michiNoEkiGeoJSON = {
         "city": "関市",
         "address": "岐阜県関市武芸川町跡部1810",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19317"
+        "url": "https://www.michi-no-eki.jp/stations/views/19317",
+        "businessHours": "9:00～16:00",
+        "homepage": "http://www.city.seki.lg.jp/kanko/0000000933.html",
+        "homepage2": ""
       }
     },
     {
@@ -10049,7 +11633,10 @@ const michiNoEkiGeoJSON = {
         "city": "郡上市",
         "address": "岐阜県郡上市大和町剣164",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19318"
+        "url": "https://www.michi-no-eki.jp/stations/views/19318",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu34.html",
+        "homepage2": "http://www.gujo-tv.ne.jp/~kuturogi/"
       }
     },
     {
@@ -10068,7 +11655,10 @@ const michiNoEkiGeoJSON = {
         "city": "美濃加茂市",
         "address": "岐阜県美濃加茂市山之上町2292-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19319"
+        "url": "https://www.michi-no-eki.jp/stations/views/19319",
+        "businessHours": "平日9:00～16:00（12～2月10:00～16:00）/土日祝9：00〜17：00（12〜2月10：00〜17：00）",
+        "homepage": "https://satoyama-park.gifu.jp/",
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu35.html"
       }
     },
     {
@@ -10087,7 +11677,10 @@ const michiNoEkiGeoJSON = {
         "city": "東白川村",
         "address": "岐阜県加茂郡東白川村越原1061",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19320"
+        "url": "https://www.michi-no-eki.jp/stations/views/19320",
+        "businessHours": "9:30～16:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu36.html",
+        "homepage2": "http://chanosato.gifu.jp"
       }
     },
     {
@@ -10106,7 +11699,10 @@ const michiNoEkiGeoJSON = {
         "city": "郡上市",
         "address": "岐阜県郡上市和良町宮地1155",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19321"
+        "url": "https://www.michi-no-eki.jp/stations/views/19321",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu37.html",
+        "homepage2": "http://gujo-wara.jp/info-sightseeing/185-road-station-wara-and-wara-dome.html"
       }
     },
     {
@@ -10125,7 +11721,10 @@ const michiNoEkiGeoJSON = {
         "city": "本巣市",
         "address": "岐阜県本巣市根尾門脇433-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19322"
+        "url": "https://www.michi-no-eki.jp/stations/views/19322",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu38.html",
+        "homepage2": "http://www.usuzumi.jp/sakura-sato/"
       }
     },
     {
@@ -10144,7 +11743,10 @@ const michiNoEkiGeoJSON = {
         "city": "土岐市",
         "address": "岐阜県土岐市泉北山町2-13-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19323"
+        "url": "https://www.michi-no-eki.jp/stations/views/19323",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu39.html",
+        "homepage2": "http://shino-oribe.co.jp/"
       }
     },
     {
@@ -10163,7 +11765,10 @@ const michiNoEkiGeoJSON = {
         "city": "中津川市",
         "address": "岐阜県中津川市加子母3900-29",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19324"
+        "url": "https://www.michi-no-eki.jp/stations/views/19324",
+        "businessHours": "8:30～17:00（12～3月中旬は16:30まで）",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu40.html",
+        "homepage2": "http://kashimozanmai.com/"
       }
     },
     {
@@ -10182,7 +11787,10 @@ const michiNoEkiGeoJSON = {
         "city": "揖斐川町",
         "address": "揖斐郡揖斐川町坂内広瀬306",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19325"
+        "url": "https://www.michi-no-eki.jp/stations/views/19325",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://yashaikenosato.com",
+        "homepage2": "https://www.town.ibigawa.lg.jp/kankoujyouhou/0000006114.html"
       }
     },
     {
@@ -10201,7 +11809,10 @@ const michiNoEkiGeoJSON = {
         "city": "恵那市",
         "address": "岐阜県恵那市山岡町田代1565-169",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19326"
+        "url": "https://www.michi-no-eki.jp/stations/views/19326",
+        "businessHours": "9:00～18:00、9:00～17:00（12～2月）",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu42.html",
+        "homepage2": "http://oba-chan.enat.jp/"
       }
     },
     {
@@ -10220,7 +11831,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "岐阜県海津市南濃町羽沢673-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19328"
+        "url": "https://www.michi-no-eki.jp/stations/views/19328",
+        "businessHours": "8:00～18:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu44.html",
+        "homepage2": "https://tsukimi-no-sato.com"
       }
     },
     {
@@ -10239,7 +11853,10 @@ const michiNoEkiGeoJSON = {
         "city": "岐阜市",
         "address": "岐阜県岐阜市柳津町北塚仙右城7696-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19329"
+        "url": "https://www.michi-no-eki.jp/stations/views/19329",
+        "businessHours": "8:30～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu45.html",
+        "homepage2": "https://michinoeki-yanaizu.wixsite.com/yanaizu"
       }
     },
     {
@@ -10258,7 +11875,10 @@ const michiNoEkiGeoJSON = {
         "city": "中津川市",
         "address": "岐阜県中津川市川上字上平1849-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19330"
+        "url": "https://www.michi-no-eki.jp/stations/views/19330",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu46.html",
+        "homepage2": "http://www.kawaue.jp/~logo2001/kh.mitinoeki.html"
       }
     },
     {
@@ -10277,7 +11897,10 @@ const michiNoEkiGeoJSON = {
         "city": "飛騨市",
         "address": "岐阜県飛騨市神岡町夕陽ヶ丘6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19331"
+        "url": "https://www.michi-no-eki.jp/stations/views/19331",
+        "businessHours": "9:00～17:00（季節により変動あり）",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu47.html",
+        "homepage2": "http://www.skydome.jp/"
       }
     },
     {
@@ -10296,7 +11919,10 @@ const michiNoEkiGeoJSON = {
         "city": "郡上市",
         "address": "岐阜県郡上市白鳥町恩地7-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19332"
+        "url": "https://www.michi-no-eki.jp/stations/views/19332",
+        "businessHours": "8:30～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu48.html",
+        "homepage2": "http://okumino-shirotori.com/pg455.html"
       }
     },
     {
@@ -10315,7 +11941,10 @@ const michiNoEkiGeoJSON = {
         "city": "美濃市",
         "address": "岐阜県美濃市曽代2007",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19333"
+        "url": "https://www.michi-no-eki.jp/stations/views/19333",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu49.html",
+        "homepage2": "http://www.mino-niwakachaya.com/"
       }
     },
     {
@@ -10334,7 +11963,10 @@ const michiNoEkiGeoJSON = {
         "city": "白川村",
         "address": "岐阜県大野郡白川村平瀬高ダイ516-12",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19334"
+        "url": "https://www.michi-no-eki.jp/stations/views/19334",
+        "businessHours": "営業期間 4月1日～11月30日 売店10:00～17:00（軽食 11:00～16:30） 定休日:毎週水曜日 情報コーナー9:00～17:00 足湯24Ｈ 年中無休",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu50.html",
+        "homepage2": "http://shirakawa-go.org/kankou/guide/265/"
       }
     },
     {
@@ -10353,7 +11985,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "岐阜県加茂郡富加町羽生2174-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19335"
+        "url": "https://www.michi-no-eki.jp/stations/views/19335",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu51.html",
+        "homepage2": "http://www.hanyuri.com/"
       }
     },
     {
@@ -10372,7 +12007,10 @@ const michiNoEkiGeoJSON = {
         "city": "可児市",
         "address": "岐阜県可児市柿田416-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19336"
+        "url": "https://www.michi-no-eki.jp/stations/views/19336",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu52.html",
+        "homepage2": "http://canitte.jp/"
       }
     },
     {
@@ -10391,7 +12029,10 @@ const michiNoEkiGeoJSON = {
         "city": "池田町",
         "address": "岐阜県揖斐郡池田町片山1953-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19337"
+        "url": "https://www.michi-no-eki.jp/stations/views/19337",
+        "businessHours": "10:00～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu53.html",
+        "homepage2": "http://www.town.gifu-ikeda.lg.jp/0000000195.html"
       }
     },
     {
@@ -10410,7 +12051,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "岐阜県加茂郡白川町和泉181-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19338"
+        "url": "https://www.michi-no-eki.jp/stations/views/19338",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu54.html",
+        "homepage2": "https://e-900.com/roadsidestation/index.html"
       }
     },
     {
@@ -10429,7 +12073,10 @@ const michiNoEkiGeoJSON = {
         "city": "富士市",
         "address": "静岡県富士市五貫島669-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19339"
+        "url": "https://www.michi-no-eki.jp/stations/views/19339",
+        "businessHours": "9:00～20:00",
+        "homepage": "http://www.michinoeki-fuji.jp",
+        "homepage2": "https://www.city.fuji.shizuoka.jp/sangyo/c0504/michinoekifuji.html"
       }
     },
     {
@@ -10448,7 +12095,10 @@ const michiNoEkiGeoJSON = {
         "city": "浜松市",
         "address": "静岡県浜松市天竜区熊1977-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19340"
+        "url": "https://www.michi-no-eki.jp/stations/views/19340",
+        "businessHours": "9:30～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka02.html",
+        "homepage2": "http://kunma.jp/suisha/"
       }
     },
     {
@@ -10467,7 +12117,10 @@ const michiNoEkiGeoJSON = {
         "city": "松崎町",
         "address": "静岡県賀茂郡松崎町大沢20-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19341"
+        "url": "https://www.michi-no-eki.jp/stations/views/19341",
+        "businessHours": "9:00～17:00（食事部門 11:00～14:30、木曜日定休）",
+        "homepage": "http://www.izu-matsuzaki.com/publics/index/55/",
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka03.html"
       }
     },
     {
@@ -10486,7 +12139,10 @@ const michiNoEkiGeoJSON = {
         "city": "浜松市",
         "address": "静岡県浜松市天竜区横川3085",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19342"
+        "url": "https://www.michi-no-eki.jp/stations/views/19342",
+        "businessHours": "9:00～16:30 (7月、8月は17:00まで）",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka05.html",
+        "homepage2": "https://yokokawa.hamazo.tv/"
       }
     },
     {
@@ -10505,7 +12161,10 @@ const michiNoEkiGeoJSON = {
         "city": "川根本町",
         "address": "静岡県榛原郡川根本町水川71-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19343"
+        "url": "https://www.michi-no-eki.jp/stations/views/19343",
+        "businessHours": "10:00～16:30（16:00受付終了）",
+        "homepage": "https://chameikan.jp",
+        "homepage2": ""
       }
     },
     {
@@ -10524,7 +12183,10 @@ const michiNoEkiGeoJSON = {
         "city": "伊豆市",
         "address": "静岡県伊豆市湯ヶ島892-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19344"
+        "url": "https://www.michi-no-eki.jp/stations/views/19344",
+        "businessHours": "8:30～16:30〔施設により異なる〕",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka07.html",
+        "homepage2": "http://kanko.city.izu.shizuoka.jp/form1.html?pid=2365"
       }
     },
     {
@@ -10543,7 +12205,10 @@ const michiNoEkiGeoJSON = {
         "city": "川根本町",
         "address": "静岡県榛原郡川根本町千頭1217-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19345"
+        "url": "https://www.michi-no-eki.jp/stations/views/19345",
+        "businessHours": "10:00～16:30",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka08.html",
+        "homepage2": "http://www.otoginosato.com/"
       }
     },
     {
@@ -10562,7 +12227,10 @@ const michiNoEkiGeoJSON = {
         "city": "富士宮市",
         "address": "静岡県富士宮市根原492-14",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19346"
+        "url": "https://www.michi-no-eki.jp/stations/views/19346",
+        "businessHours": "8:00～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka09.html",
+        "homepage2": "http://www.asagiri-kogen.com/"
       }
     },
     {
@@ -10581,7 +12249,10 @@ const michiNoEkiGeoJSON = {
         "city": "島田市",
         "address": "静岡県島田市川根町笹間渡220",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19347"
+        "url": "https://www.michi-no-eki.jp/stations/views/19347",
+        "businessHours": "9:00～19:00(最終受付18:30) 定休日:第１,第３火曜日(祝日の場合は翌平日)",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka10.html",
+        "homepage2": "http://kawaneonsen.jp/"
       }
     },
     {
@@ -10600,7 +12271,10 @@ const michiNoEkiGeoJSON = {
         "city": "富士市",
         "address": "静岡県富士市岩渕1488-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19348"
+        "url": "https://www.michi-no-eki.jp/stations/views/19348",
+        "businessHours": "9:00～20:00(2020年11月現在)",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka11.html",
+        "homepage2": "http://www.fujikawarakuza.co.jp/"
       }
     },
     {
@@ -10619,7 +12293,10 @@ const michiNoEkiGeoJSON = {
         "city": "藤枝市",
         "address": "静岡県藤枝市岡部町新舟1214-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19349"
+        "url": "https://www.michi-no-eki.jp/stations/views/19349",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka12.html",
+        "homepage2": "http://shizutetsu-retailing.com/gyokuronosato/"
       }
     },
     {
@@ -10638,7 +12315,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "静岡県浜松市天竜区大川31-10",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19350"
+        "url": "https://www.michi-no-eki.jp/stations/views/19350",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka13.html",
+        "homepage2": "http://hanamomo-sato.com/"
       }
     },
     {
@@ -10657,7 +12337,10 @@ const michiNoEkiGeoJSON = {
         "city": "伊東市",
         "address": "静岡県伊東市湯川571-19",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19351"
+        "url": "https://www.michi-no-eki.jp/stations/views/19351",
+        "businessHours": "【ショップ】9:00～20:00、【レストラン】9:00～21:00、【日帰り温泉】5:00～21:00",
+        "homepage": "https://ito-marinetown.co.jp/",
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka14.html"
       }
     },
     {
@@ -10676,7 +12359,10 @@ const michiNoEkiGeoJSON = {
         "city": "下田市",
         "address": "静岡県下田市外ヶ岡1-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19352"
+        "url": "https://www.michi-no-eki.jp/stations/views/19352",
+        "businessHours": "9:00～17:00〔施設により異なる〕",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka15.html",
+        "homepage2": "http://www.kaikokushimodaminato.co.jp/"
       }
     },
     {
@@ -10695,7 +12381,10 @@ const michiNoEkiGeoJSON = {
         "city": "掛川市",
         "address": "静岡県掛川市八坂882-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19353"
+        "url": "https://www.michi-no-eki.jp/stations/views/19353",
+        "businessHours": "直売所9:00～17:00、食堂8:00～19:00、コンビニ24時間",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka16.html",
+        "homepage2": "http://www.city.kakegawa.shizuoka.jp/kankou/spot/annaiomiyage/michinoeki.html"
       }
     },
     {
@@ -10714,7 +12403,10 @@ const michiNoEkiGeoJSON = {
         "city": "小山町",
         "address": "静岡県駿東郡小山町用沢72-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19354"
+        "url": "https://www.michi-no-eki.jp/stations/views/19354",
+        "businessHours": "7:00～20:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka17.html",
+        "homepage2": "http://fujioyama.co.jp/"
       }
     },
     {
@@ -10733,7 +12425,10 @@ const michiNoEkiGeoJSON = {
         "city": "湖西市",
         "address": "静岡県湖西市白須賀1896-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19355"
+        "url": "https://www.michi-no-eki.jp/stations/views/19355",
+        "businessHours": "8:00～18:30〔施設により異なる〕",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka18.html",
+        "homepage2": "http://www.shiomizaka.com/"
       }
     },
     {
@@ -10752,7 +12447,10 @@ const michiNoEkiGeoJSON = {
         "city": "伊豆の国市",
         "address": "静岡県伊豆の国市田京195-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19356"
+        "url": "https://www.michi-no-eki.jp/stations/views/19356",
+        "businessHours": "観光案内所 10時 - 16時 各店舗の営業時間はhttp://izunoheso.com/でご確認ください。",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka19.html",
+        "homepage2": "http://izunoheso.com/"
       }
     },
     {
@@ -10771,7 +12469,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "静岡県賀茂郡南伊豆町下賀茂157-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19357"
+        "url": "https://www.michi-no-eki.jp/stations/views/19357",
+        "businessHours": "9：00～17：00（観光案内施設） 9：00～16：00（販売施設・展示施設）",
+        "homepage": "http://yunohana-shop.com/",
+        "homepage2": "http://www.minami-izu.jp/?p=we-page-entry&spot=4932&cat=18732&pageno=3&type=list"
       }
     },
     {
@@ -10790,7 +12491,10 @@ const michiNoEkiGeoJSON = {
         "city": "小山町",
         "address": "静岡県駿東郡小山町須走338-41",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19358"
+        "url": "https://www.michi-no-eki.jp/stations/views/19358",
+        "businessHours": "9:00～19:00 （季節、店舗により営業時間変更あり）",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka21.html",
+        "homepage2": "http://www.subashiri.jp/index.html"
       }
     },
     {
@@ -10809,7 +12513,10 @@ const michiNoEkiGeoJSON = {
         "city": "御前崎市",
         "address": "静岡県御前崎市合戸海岸4384-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19359"
+        "url": "https://www.michi-no-eki.jp/stations/views/19359",
+        "businessHours": "8:00～17:00",
+        "homepage": "https://www.michinoeki-omaezaki.jp",
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka22.html"
       }
     },
     {
@@ -10828,7 +12535,10 @@ const michiNoEkiGeoJSON = {
         "city": "沼津市",
         "address": "静岡県沼津市戸田1294-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19360"
+        "url": "https://www.michi-no-eki.jp/stations/views/19360",
+        "businessHours": "9:00～21:00〔施設により異なる〕",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka23.html",
+        "homepage2": "https://kururaheda.net/"
       }
     },
     {
@@ -10847,7 +12557,10 @@ const michiNoEkiGeoJSON = {
         "city": "豊根村",
         "address": "愛知県北設楽郡豊根村大字坂宇場字宮ノ嶋29-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19361"
+        "url": "https://www.michi-no-eki.jp/stations/views/19361",
+        "businessHours": "〈レストラン〉10：00～15：30 〈売店〉9:00～16:00 ※営業時間が変更になることがあります",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi01.html",
+        "homepage2": "http://www.toyonemura-kanko.jp/greenport/"
       }
     },
     {
@@ -10866,7 +12579,10 @@ const michiNoEkiGeoJSON = {
         "city": "新城市",
         "address": "愛知県新城市下吉田字田中106-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19362"
+        "url": "https://www.michi-no-eki.jp/stations/views/19362",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi02.html",
+        "homepage2": "https://www.okuminavi.jp/search/detail.php?id=169"
       }
     },
     {
@@ -10885,7 +12601,10 @@ const michiNoEkiGeoJSON = {
         "city": "田原市",
         "address": "愛知県田原市東赤石5-74",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19363"
+        "url": "https://www.michi-no-eki.jp/stations/views/19363",
+        "businessHours": "9:00～19:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi03.html",
+        "homepage2": "https://tahara-michinoeki.com/mekkunhouse"
       }
     },
     {
@@ -10904,7 +12623,10 @@ const michiNoEkiGeoJSON = {
         "city": "田原市",
         "address": "愛知県田原市伊良湖町宮下3000-65",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19364"
+        "url": "https://www.michi-no-eki.jp/stations/views/19364",
+        "businessHours": "８：００～１７：３０",
+        "homepage": "https://www.tahara-michinoeki.com",
+        "homepage2": ""
       }
     },
     {
@@ -10923,7 +12645,10 @@ const michiNoEkiGeoJSON = {
         "city": "設楽町",
         "address": "愛知県北設楽郡設楽町津具字東山2-156",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19365"
+        "url": "https://www.michi-no-eki.jp/stations/views/19365",
+        "businessHours": "9:00～17:00 冬期9:00～16:00",
+        "homepage": "http://www.green-park.net/",
+        "homepage2": "http://www.green-park.net/"
       }
     },
     {
@@ -10942,7 +12667,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "愛知県豊田市武節町針原４番地１",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19366"
+        "url": "https://www.michi-no-eki.jp/stations/views/19366",
+        "businessHours": "9:30～16:00 ＜定休日 毎週木曜日＞",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi06.html",
+        "homepage2": "http://www.dongurinosato.com/"
       }
     },
     {
@@ -10961,7 +12689,10 @@ const michiNoEkiGeoJSON = {
         "city": "設楽町",
         "address": "愛知県北設楽郡設楽町西納庫字森田32",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19367"
+        "url": "https://www.michi-no-eki.jp/stations/views/19367",
+        "businessHours": "8:00～17:00（12～2月は16:30まで）",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi07.html",
+        "homepage2": "https://aguristationnagura.jimdofree.com"
       }
     },
     {
@@ -10980,7 +12711,10 @@ const michiNoEkiGeoJSON = {
         "city": "安城市",
         "address": "愛知県安城市赤松町梶5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19368"
+        "url": "https://www.michi-no-eki.jp/stations/views/19368",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi08.html",
+        "homepage2": "http://www.denpark.jp/"
       }
     },
     {
@@ -10999,7 +12733,10 @@ const michiNoEkiGeoJSON = {
         "city": "新城市",
         "address": "愛知県新城市作手清岳字ナガラミ10-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19369"
+        "url": "https://www.michi-no-eki.jp/stations/views/19369",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.tedukurimura.com",
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi09.html"
       }
     },
     {
@@ -11018,7 +12755,10 @@ const michiNoEkiGeoJSON = {
         "city": "愛西市",
         "address": "愛知県愛西市森川町井桁西27",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19370"
+        "url": "https://www.michi-no-eki.jp/stations/views/19370",
+        "businessHours": "9:00～18:00(季節変動)",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi10.html",
+        "homepage2": "https://hasupark-aisai.jp/"
       }
     },
     {
@@ -11037,7 +12777,10 @@ const michiNoEkiGeoJSON = {
         "city": "田原市",
         "address": "愛知県田原市赤羽根町大西32-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19371"
+        "url": "https://www.michi-no-eki.jp/stations/views/19371",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi11.html",
+        "homepage2": "https://tahara-michinoeki.com/akabane"
       }
     },
     {
@@ -11056,7 +12799,10 @@ const michiNoEkiGeoJSON = {
         "city": "幸田町",
         "address": "愛知県額田郡幸田町大字須見字東山17-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19372"
+        "url": "https://www.michi-no-eki.jp/stations/views/19372",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi12.html",
+        "homepage2": "http://www.fudegaki-sato.com/"
       }
     },
     {
@@ -11075,7 +12821,10 @@ const michiNoEkiGeoJSON = {
         "city": "西尾市",
         "address": "愛知県西尾市小島町岡ノ山105-57",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19373"
+        "url": "https://www.michi-no-eki.jp/stations/views/19373",
+        "businessHours": "6:00～18:00（コロナの影響により時短営業中）",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi13.html",
+        "homepage2": "http://okanoyama.com/"
       }
     },
     {
@@ -11094,7 +12843,10 @@ const michiNoEkiGeoJSON = {
         "city": "瀬戸市",
         "address": "愛知県瀬戸市品野町1-126-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19374"
+        "url": "https://www.michi-no-eki.jp/stations/views/19374",
+        "businessHours": "9:00～16:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi14.html",
+        "homepage2": "http://www.setoshinano.jp/"
       }
     },
     {
@@ -11113,7 +12865,10 @@ const michiNoEkiGeoJSON = {
         "city": "岡崎市",
         "address": "愛知県岡崎市藤川町字東沖田44",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19375"
+        "url": "https://www.michi-no-eki.jp/stations/views/19375",
+        "businessHours": "9:00～18:00 （コンビニは24H）",
+        "homepage": "https://okazaki-kanko.jp/feature/michinoeki.hujikawa-juku/top",
+        "homepage2": ""
       }
     },
     {
@@ -11132,7 +12887,10 @@ const michiNoEkiGeoJSON = {
         "city": "新城市",
         "address": "愛知県新城市八束穂字五反田329-7",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19376"
+        "url": "https://www.michi-no-eki.jp/stations/views/19376",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi16.html",
+        "homepage2": "http://mokkulu.jp/"
       }
     },
     {
@@ -11151,7 +12909,10 @@ const michiNoEkiGeoJSON = {
         "city": "松阪市",
         "address": "三重県松阪市飯高町宮前177",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19377"
+        "url": "https://www.michi-no-eki.jp/stations/views/19377",
+        "businessHours": "9:00～21:00 ※施設によって異なる",
+        "homepage": "http://www.iitakaeki.com/",
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie01.html"
       }
     },
     {
@@ -11170,7 +12931,10 @@ const michiNoEkiGeoJSON = {
         "city": "菰野町",
         "address": "三重県三重郡菰野町大字菰野2256",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19378"
+        "url": "https://www.michi-no-eki.jp/stations/views/19378",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie02.html",
+        "homepage2": "https://www.kanko-komono.com/spots/299/"
       }
     },
     {
@@ -11189,7 +12953,10 @@ const michiNoEkiGeoJSON = {
         "city": "紀宝町",
         "address": "三重県南牟婁郡紀宝町井田568-7",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19379"
+        "url": "https://www.michi-no-eki.jp/stations/views/19379",
+        "businessHours": "8:30～19:00（11～2月は18:00まで）",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie03.html",
+        "homepage2": "https://umigamekouen.com/"
       }
     },
     {
@@ -11208,7 +12975,10 @@ const michiNoEkiGeoJSON = {
         "city": "御浜町",
         "address": "三重県南牟婁郡御浜町大字阿田和4926-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19380"
+        "url": "https://www.michi-no-eki.jp/stations/views/19380",
+        "businessHours": "9:00～17:30",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie04.html",
+        "homepage2": "http://michinoeki-mihama.com/"
       }
     },
     {
@@ -11227,7 +12997,10 @@ const michiNoEkiGeoJSON = {
         "city": "紀北町",
         "address": "三重県北牟婁郡紀北町海山区相賀1439-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19381"
+        "url": "https://www.michi-no-eki.jp/stations/views/19381",
+        "businessHours": "9:00～19:00（10～4月は18:00まで）",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie05.html",
+        "homepage2": "http://michinoeki-miyama.com/"
       }
     },
     {
@@ -11246,7 +13019,10 @@ const michiNoEkiGeoJSON = {
         "city": "大紀町",
         "address": "三重県度会郡大紀町滝原870-37",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19382"
+        "url": "https://www.michi-no-eki.jp/stations/views/19382",
+        "businessHours": "（平日）9:00～17:00 （土日祝/GW・夏休み・正月）9:00～18:00 （2019年1月1日(火)～6日(日)は18:00まで営業、それ以降は全日9:00～17:00）",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie06.html",
+        "homepage2": "https://kitutukikan.com/"
       }
     },
     {
@@ -11265,7 +13041,10 @@ const michiNoEkiGeoJSON = {
         "city": "熊野市",
         "address": "三重県熊野市飛鳥町大又109-21",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19383"
+        "url": "https://www.michi-no-eki.jp/stations/views/19383",
+        "businessHours": "土日祝日（ただし、12月29日～1月3日を除く） 9時～13時 14時～16時",
+        "homepage": "https://www.zc.ztv.ne.jp/kumanokinokuni/",
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie07.html"
       }
     },
     {
@@ -11284,7 +13063,10 @@ const michiNoEkiGeoJSON = {
         "city": "松阪市",
         "address": "三重県松阪市飯南町粥見452-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19384"
+        "url": "https://www.michi-no-eki.jp/stations/views/19384",
+        "businessHours": "9:00～17:00（通年）",
+        "homepage": "https://www.everglades.jp/riversidechakra/chakrastation/",
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie08.html"
       }
     },
     {
@@ -11303,7 +13085,10 @@ const michiNoEkiGeoJSON = {
         "city": "大台町",
         "address": "三重県多気郡大台町大字佐原663-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19385"
+        "url": "https://www.michi-no-eki.jp/stations/views/19385",
+        "businessHours": "8:00～18:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie09.html",
+        "homepage2": "http://www.okuise-odai.jp/"
       }
     },
     {
@@ -11322,7 +13107,10 @@ const michiNoEkiGeoJSON = {
         "city": "津市",
         "address": "三重県津市美杉町上多気267",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19386"
+        "url": "https://www.michi-no-eki.jp/stations/views/19386",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie10.html",
+        "homepage2": "https://www.kankomie.or.jp/spot/detail_3967.html"
       }
     },
     {
@@ -11341,7 +13129,10 @@ const michiNoEkiGeoJSON = {
         "city": "亀山市",
         "address": "三重県亀山市関町新所674-8",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19387"
+        "url": "https://www.michi-no-eki.jp/stations/views/19387",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie11.html",
+        "homepage2": "http://kameyama-kanko.com/area/seki/%E3%80%8C%E9%81%93%E3%81%AE%E9%A7%85%E3%80%8D%E9%96%A2%E5%AE%BF/"
       }
     },
     {
@@ -11360,7 +13151,10 @@ const michiNoEkiGeoJSON = {
         "city": "志摩市",
         "address": "三重県志摩市磯部町穴川511-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19388"
+        "url": "https://www.michi-no-eki.jp/stations/views/19388",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie12.html",
+        "homepage2": "https://www.kankomie.or.jp/spot/detail_3980.html"
       }
     },
     {
@@ -11379,7 +13173,10 @@ const michiNoEkiGeoJSON = {
         "city": "紀北町",
         "address": "三重県北牟婁郡紀北町東長島2410-73",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19389"
+        "url": "https://www.michi-no-eki.jp/stations/views/19389",
+        "businessHours": "8:15～18:00（平日） 8:00～18:00（土日祝）",
+        "homepage": "http://42manbou.com/",
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie13.html"
       }
     },
     {
@@ -11398,7 +13195,10 @@ const michiNoEkiGeoJSON = {
         "city": "伊賀市",
         "address": "三重県伊賀市川合3370-29",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19390"
+        "url": "https://www.michi-no-eki.jp/stations/views/19390",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie14.html",
+        "homepage2": "http://www.michinoeki-ayama.jp/"
       }
     },
     {
@@ -11417,7 +13217,10 @@ const michiNoEkiGeoJSON = {
         "city": "伊賀市",
         "address": "三重県伊賀市柘植町6187-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19391"
+        "url": "https://www.michi-no-eki.jp/stations/views/19391",
+        "businessHours": "7:00～21:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie15.html",
+        "homepage2": "https://www.anzen-kameyama.jp/servicearea#a02"
       }
     },
     {
@@ -11436,7 +13239,10 @@ const michiNoEkiGeoJSON = {
         "city": "南越前町",
         "address": "福井県南条郡南越前町大谷86-1-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19392"
+        "url": "https://www.michi-no-eki.jp/stations/views/19392",
+        "businessHours": "8:30～19:00 定休日 毎月第2木曜、年末年始",
+        "homepage": "http://www.fuku-e.com/010_spot/index.php?id=411",
+        "homepage2": ""
       }
     },
     {
@@ -11455,7 +13261,10 @@ const michiNoEkiGeoJSON = {
         "city": "大野市",
         "address": "福井県大野市朝日26-30-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19393"
+        "url": "https://www.michi-no-eki.jp/stations/views/19393",
+        "businessHours": "9:00～17:00〔施設により異なる〕",
+        "homepage": "http://www.kuzuryu2300.com/",
+        "homepage2": ""
       }
     },
     {
@@ -11474,7 +13283,10 @@ const michiNoEkiGeoJSON = {
         "city": "越前町",
         "address": "福井県丹生郡越前町上川去45-1-7",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19394"
+        "url": "https://www.michi-no-eki.jp/stations/views/19394",
+        "businessHours": "10:00～17:00〔施設により異なる〕",
+        "homepage": "https://parkin-nyugaoka.com/",
+        "homepage2": ""
       }
     },
     {
@@ -11493,7 +13305,10 @@ const michiNoEkiGeoJSON = {
         "city": "おおい町",
         "address": "福井県大飯郡おおい町名田庄納田終109-4-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19395"
+        "url": "https://www.michi-no-eki.jp/stations/views/19395",
+        "businessHours": "3月～11月[9:00～18:00]、12月～2月[9：00～17：00]〔施設により異なる〕",
+        "homepage": "http://www.wakasa-ohi.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -11512,7 +13327,10 @@ const michiNoEkiGeoJSON = {
         "city": "坂井市",
         "address": "福井県坂井市三国町山岸67-3-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19396"
+        "url": "https://www.michi-no-eki.jp/stations/views/19396",
+        "businessHours": "9:00～17:00〔施設により異なる〕",
+        "homepage": "https://www.sanrihama.co.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -11531,7 +13349,10 @@ const michiNoEkiGeoJSON = {
         "city": "若狭町",
         "address": "福井県三方上中郡若狭町熊川11-1-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19397"
+        "url": "https://www.michi-no-eki.jp/stations/views/19397",
+        "businessHours": "9:30~17:00（食堂10：30～16：00） 【3月～11月の土日祝 9：00～18：00（食堂10：30～16：00）】",
+        "homepage": "http://kumagawajuku.jp/",
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/fukui/wakasakumakawasyuku.html"
       }
     },
     {
@@ -11550,7 +13371,10 @@ const michiNoEkiGeoJSON = {
         "city": "坂井市",
         "address": "福井県坂井市坂井町蔵垣内34-14-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19398"
+        "url": "https://www.michi-no-eki.jp/stations/views/19398",
+        "businessHours": "10:00〜18:00〔施設により異なる〕",
+        "homepage": "http://www.inesu.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -11569,7 +13393,10 @@ const michiNoEkiGeoJSON = {
         "city": "高浜町",
         "address": "福井県高浜町下車持46-10",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19399"
+        "url": "https://www.michi-no-eki.jp/stations/views/19399",
+        "businessHours": "物産館 10:00～17：00、レストラン 10:00～17:00、温浴施設 10:00～22:00（受付終了21：30）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/fukui/seasidetakahama.html",
+        "homepage2": "https://peraichi.com/landing_pages/view/michinoeki-seasidetakahama"
       }
     },
     {
@@ -11588,7 +13415,10 @@ const michiNoEkiGeoJSON = {
         "city": "小浜市",
         "address": "福井県小浜市和久里24-45-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19400"
+        "url": "https://www.michi-no-eki.jp/stations/views/19400",
+        "businessHours": "9:00～18:00（冬季17：00まで）〔施設により異なる〕",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/fukui/wakasaobama.html",
+        "homepage2": "http://obamakankokyoku.com/station/"
       }
     },
     {
@@ -11607,7 +13437,10 @@ const michiNoEkiGeoJSON = {
         "city": "おおい町",
         "address": "福井県大飯郡おおい町成海1-1-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19401"
+        "url": "https://www.michi-no-eki.jp/stations/views/19401",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/fukui/uminpiaooi.html",
+        "homepage2": "http://michinoeki-ohi.com/"
       }
     },
     {
@@ -11626,7 +13459,10 @@ const michiNoEkiGeoJSON = {
         "city": "鯖江市",
         "address": "福井県鯖江市桜町3-950",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19402"
+        "url": "https://www.michi-no-eki.jp/stations/views/19402",
+        "businessHours": "10:00～18:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/fukui/nisiyamakouen.html",
+        "homepage2": "http://www.nishiyama-park.jp/"
       }
     },
     {
@@ -11645,7 +13481,10 @@ const michiNoEkiGeoJSON = {
         "city": "越前町",
         "address": "福井県丹生郡越前町厨71-335-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19403"
+        "url": "https://www.michi-no-eki.jp/stations/views/19403",
+        "businessHours": "9:00〜22:00〔施設により異なる〕",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/fukui/echizen.html",
+        "homepage2": "http://www.echizen-kk.jp/michinoeki.html"
       }
     },
     {
@@ -11664,7 +13503,10 @@ const michiNoEkiGeoJSON = {
         "city": "若狭町",
         "address": "福井県三方上中郡若狭町鳥浜122-31-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19404"
+        "url": "https://www.michi-no-eki.jp/stations/views/19404",
+        "businessHours": "9:00～17:00【観光案内所、特産品販売所】 9:30～16:30【三方五湖自然観察棟】",
+        "homepage": "http://www.facebook.com/RSmikatagoko",
+        "homepage2": "https://www.wakasa-mikatagoko.jp/"
       }
     },
     {
@@ -11683,7 +13525,10 @@ const michiNoEkiGeoJSON = {
         "city": "福井市",
         "address": "福井県福井市安波賀中島町1-1-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19405"
+        "url": "https://www.michi-no-eki.jp/stations/views/19405",
+        "businessHours": "9:00~17:00〔年末・年始のみ休〕 飲食L.O.15時",
+        "homepage": "https://asakura-mizunoeki.com/",
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/fukui/ichijoudaniasakura.html"
       }
     },
     {
@@ -11702,7 +13547,10 @@ const michiNoEkiGeoJSON = {
         "city": "甲賀市",
         "address": "滋賀県甲賀市土山町北土山505-13",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19406"
+        "url": "https://www.michi-no-eki.jp/stations/views/19406",
+        "businessHours": "○物販 9:00～17:00 〇レストラン・カフェ 平日10:00～16:00（L.O.） ／ 土日祝 10:00～16:00（L.O.）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/ainotsuchiyama.html",
+        "homepage2": "http://www.ainotutiyama.co.jp/"
       }
     },
     {
@@ -11721,7 +13569,10 @@ const michiNoEkiGeoJSON = {
         "city": "高島市",
         "address": "滋賀県高島市朽木市場777",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19407"
+        "url": "https://www.michi-no-eki.jp/stations/views/19407",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/kutsukishinhonjin.html",
+        "homepage2": "http://kutsuki.net/"
       }
     },
     {
@@ -11740,7 +13591,10 @@ const michiNoEkiGeoJSON = {
         "city": "高島市",
         "address": "滋賀県高島市新旭町藁園336",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19408"
+        "url": "https://www.michi-no-eki.jp/stations/views/19408",
+        "businessHours": "トイレ、駐車場は24時間利用可能",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/shinasahi.html",
+        "homepage2": ""
       }
     },
     {
@@ -11759,7 +13613,10 @@ const michiNoEkiGeoJSON = {
         "city": "東近江市",
         "address": "滋賀県東近江市妹町184-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19409"
+        "url": "https://www.michi-no-eki.jp/stations/views/19409",
+        "businessHours": "9:00～17:30",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/margueritestation.html",
+        "homepage2": "http://www.aito-ms.or.jp/"
       }
     },
     {
@@ -11778,7 +13635,10 @@ const michiNoEkiGeoJSON = {
         "city": "大津市",
         "address": "滋賀県大津市今堅田3-1-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19410"
+        "url": "https://www.michi-no-eki.jp/stations/views/19410",
+        "businessHours": "9:00～19:00（季節により異なる）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/biwakoohishikomeplaza.html",
+        "homepage2": "http://www.umino-eki.jp/biwakoohashi/index.html"
       }
     },
     {
@@ -11797,7 +13657,10 @@ const michiNoEkiGeoJSON = {
         "city": "米原市",
         "address": "滋賀県米原市宇賀野1364-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19411"
+        "url": "https://www.michi-no-eki.jp/stations/views/19411",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/omihahanosato.html",
+        "homepage2": "http://www.omihahanosato.jp/"
       }
     },
     {
@@ -11816,7 +13679,10 @@ const michiNoEkiGeoJSON = {
         "city": "栗東市",
         "address": "滋賀県栗東市荒張1-11",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19412"
+        "url": "https://www.michi-no-eki.jp/stations/views/19412",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/konzenosatorittou.html",
+        "homepage2": "http://ritto-konze-no-sato.or.jp/"
       }
     },
     {
@@ -11835,7 +13701,10 @@ const michiNoEkiGeoJSON = {
         "city": "長浜市",
         "address": "滋賀県長浜市湖北町今西1731-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19413"
+        "url": "https://www.michi-no-eki.jp/stations/views/19413",
+        "businessHours": "売店：9:00～18:00 (4月～10月) 9:00～17:00 (11月～3月) レストラン：10:30～17:30 (4月～10月) 10:30～16:30 (11月～3月) ※平日は一部メニューは15:30まで ＜休館日＞第3火曜日、年末年始",
+        "homepage": "https://mizudori-st.jp/",
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/kohokumizudoristation.html"
       }
     },
     {
@@ -11854,7 +13723,10 @@ const michiNoEkiGeoJSON = {
         "city": "草津市",
         "address": "滋賀県草津市下物町1436",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19414"
+        "url": "https://www.michi-no-eki.jp/stations/views/19414",
+        "businessHours": "9:00～18:00、9:00～19:00（7・8月）＜休 毎週月曜日（月曜日が祝日の場合は翌日）・12/31～1/2＞",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/kusatsu.html",
+        "homepage2": "http://www.karasuma.co.jp/"
       }
     },
     {
@@ -11873,7 +13745,10 @@ const michiNoEkiGeoJSON = {
         "city": "竜王町",
         "address": "滋賀県蒲生郡竜王町大字鏡1231-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19415"
+        "url": "https://www.michi-no-eki.jp/stations/views/19415",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/ryuoukagaminosato.html",
+        "homepage2": "https://www.kagaminosato.com/"
       }
     },
     {
@@ -11892,7 +13767,10 @@ const michiNoEkiGeoJSON = {
         "city": "栗東市",
         "address": "滋賀県栗東市出庭961-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19416"
+        "url": "https://www.michi-no-eki.jp/stations/views/19416",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/agurinosatorittou.html",
+        "homepage2": "http://www.agurinosato.com/"
       }
     },
     {
@@ -11911,7 +13789,10 @@ const michiNoEkiGeoJSON = {
         "city": "高島市",
         "address": "滋賀県高島市マキノ町海津897-27",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19417"
+        "url": "https://www.michi-no-eki.jp/stations/views/19417",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://ossaka-touge.com/",
+        "homepage2": "http://ossaka-touge.com/"
       }
     },
     {
@@ -11930,7 +13811,10 @@ const michiNoEkiGeoJSON = {
         "city": "高島市",
         "address": "滋賀県高島市安曇川町青柳1162-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19418"
+        "url": "https://www.michi-no-eki.jp/stations/views/19418",
+        "businessHours": "9:00～18:00〔施設により異なる〕＜休 1/1、毎月第2水曜日（4・８・１１月は無休）＞",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/adogawa.html",
+        "homepage2": "http://adogawa.net/"
       }
     },
     {
@@ -11949,7 +13833,10 @@ const michiNoEkiGeoJSON = {
         "city": "米原市",
         "address": "滋賀県米原市伊吹1732-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19419"
+        "url": "https://www.michi-no-eki.jp/stations/views/19419",
+        "businessHours": "9:15～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/ibukinosato.html",
+        "homepage2": "http://shunsainomori.com/"
       }
     },
     {
@@ -11968,7 +13855,10 @@ const michiNoEkiGeoJSON = {
         "city": "長浜市",
         "address": "滋賀県長浜市西浅井町塩津浜1765",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19420"
+        "url": "https://www.michi-no-eki.jp/stations/views/19420",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/adikama.html",
+        "homepage2": "http://www.koti.jp/"
       }
     },
     {
@@ -11987,7 +13877,10 @@ const michiNoEkiGeoJSON = {
         "city": "甲良町",
         "address": "滋賀県犬上郡甲良町金屋1549-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19421"
+        "url": "https://www.michi-no-eki.jp/stations/views/19421",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/seseraginosato.html",
+        "homepage2": "http://www.m-koura.jp/"
       }
     },
     {
@@ -12006,7 +13899,10 @@ const michiNoEkiGeoJSON = {
         "city": "大津市",
         "address": "滋賀県大津市和邇中528",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19422"
+        "url": "https://www.michi-no-eki.jp/stations/views/19422",
+        "businessHours": "9:00～18:00〔季節により時間変更有※ホームページをご確認ください。〕",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/imokonosato.html",
+        "homepage2": "http://www.imokonosato.com/"
       }
     },
     {
@@ -12025,7 +13921,10 @@ const michiNoEkiGeoJSON = {
         "city": "東近江市",
         "address": "滋賀県東近江市蓼畑町510",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19423"
+        "url": "https://www.michi-no-eki.jp/stations/views/19423",
+        "businessHours": "9:00－17:00 （12月～3月は16:30まで）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/okueigenji.html",
+        "homepage2": "http://www.okueigenji-keiryunosato.com/"
       }
     },
     {
@@ -12044,7 +13943,10 @@ const michiNoEkiGeoJSON = {
         "city": "伊根町",
         "address": "京都府与謝郡伊根町字亀島459",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19424"
+        "url": "https://www.michi-no-eki.jp/stations/views/19424",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/funayanosatoine.html",
+        "homepage2": "https://www.ine-aburaya.com/michi-no-eki/"
       }
     },
     {
@@ -12063,7 +13965,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "京都府与謝郡与謝野町字滝98",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19425"
+        "url": "https://www.michi-no-eki.jp/stations/views/19425",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/silknomachikaya.html",
+        "homepage2": "https://yosano-kankou.net/vegesta/"
       }
     },
     {
@@ -12082,7 +13987,10 @@ const michiNoEkiGeoJSON = {
         "city": "京丹後市",
         "address": "京都府京丹後市丹後町竹野313-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19426"
+        "url": "https://www.michi-no-eki.jp/stations/views/19426",
+        "businessHours": "3月～11月：9:00～17:30、12月～2月：9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/tenkitenkitango.html",
+        "homepage2": "http://tenkitenki-mura.jp/"
       }
     },
     {
@@ -12101,7 +14009,10 @@ const michiNoEkiGeoJSON = {
         "city": "京丹波町",
         "address": "京都府船井郡京丹波町坂原上モジリ11",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19427"
+        "url": "https://www.michi-no-eki.jp/stations/views/19427",
+        "businessHours": "8:30～18:30（11〜3月は18:00まで）",
+        "homepage": "http://wachi-nagomi.com/",
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/nagomi.html"
       }
     },
     {
@@ -12120,7 +14031,10 @@ const michiNoEkiGeoJSON = {
         "city": "亀岡市",
         "address": "京都府亀岡市余部町宝久保1-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19428"
+        "url": "https://www.michi-no-eki.jp/stations/views/19428",
+        "businessHours": "9:00～22:00",
+        "homepage": "https://www.galleria.or.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -12139,7 +14053,10 @@ const michiNoEkiGeoJSON = {
         "city": "京丹波町",
         "address": "京都府船井郡京丹波町須知色紙田3-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19429"
+        "url": "https://www.michi-no-eki.jp/stations/views/19429",
+        "businessHours": "9:00～20:00〔店舗により異なる〕",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/tanbamakesu.html",
+        "homepage2": "https://markeds-tamba.com"
       }
     },
     {
@@ -12158,7 +14075,10 @@ const michiNoEkiGeoJSON = {
         "city": "京丹波町",
         "address": "京都府船井郡京丹波町大朴休石10-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19430"
+        "url": "https://www.michi-no-eki.jp/stations/views/19430",
+        "businessHours": "9:00～18:00（冬季は短縮の場合あり）",
+        "homepage": "https://www.greenlandmizuho.co.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -12177,7 +14097,10 @@ const michiNoEkiGeoJSON = {
         "city": "福知山市",
         "address": "京都府福知山市夜久野町平野2150",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19431"
+        "url": "https://www.michi-no-eki.jp/stations/views/19431",
+        "businessHours": "9:30～17:00",
+        "homepage": "https://www.city.fukuchiyama.lg.jp/soshiki/64/2012.html",
+        "homepage2": "https://yakuno-kougenichi.jimdofree.com/"
       }
     },
     {
@@ -12196,7 +14119,10 @@ const michiNoEkiGeoJSON = {
         "city": "舞鶴市",
         "address": "京都府舞鶴市字下福井905",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19432"
+        "url": "https://www.michi-no-eki.jp/stations/views/19432",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/toretorecenter.html",
+        "homepage2": "http://www.toretore.org/"
       }
     },
     {
@@ -12215,7 +14141,10 @@ const michiNoEkiGeoJSON = {
         "city": "南丹市",
         "address": "京都府南丹市園部町曽我谷縄手15-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19433"
+        "url": "https://www.michi-no-eki.jp/stations/views/19433",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/shinkoetsu.html",
+        "homepage2": "http://www.cans.zaq.ne.jp/ekikouetsu/"
       }
     },
     {
@@ -12234,7 +14163,10 @@ const michiNoEkiGeoJSON = {
         "city": "京丹後市",
         "address": "京都府京丹後市弥栄町鳥取123",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19434"
+        "url": "https://www.michi-no-eki.jp/stations/views/19434",
+        "businessHours": "インフォメーション 9:00～17:00 / レストラン 9:00～17:00（土日祝のみ21:00まで） ※火曜休園",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/tangooukoku.html",
+        "homepage2": "https://tangooukoku.com"
       }
     },
     {
@@ -12253,7 +14185,10 @@ const michiNoEkiGeoJSON = {
         "city": "南丹市",
         "address": "京都府南丹市美山町安掛下23-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19435"
+        "url": "https://www.michi-no-eki.jp/stations/views/19435",
+        "businessHours": "9：00～17：00（水曜日・年末年始は休館日）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/miyamafureaihiroba.html",
+        "homepage2": "https://miyamanavi.com/sightseeing/fureaihiroba"
       }
     },
     {
@@ -12272,7 +14207,10 @@ const michiNoEkiGeoJSON = {
         "city": "京都市",
         "address": "京都府京都市右京区京北周山町上寺田1-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19436"
+        "url": "https://www.michi-no-eki.jp/stations/views/19436",
+        "businessHours": "9:00～18:00 （喫茶コーナー10：30～15：00）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/woodykeihoku.html",
+        "homepage2": "http://fuw.jp/woody/"
       }
     },
     {
@@ -12291,7 +14229,10 @@ const michiNoEkiGeoJSON = {
         "city": "京丹後市",
         "address": "京都府京丹後市久美浜町浦明1709",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19437"
+        "url": "https://www.michi-no-eki.jp/stations/views/19437",
+        "businessHours": "8:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/kumihamasankaikan.html",
+        "homepage2": "http://www.sankaikan.net/"
       }
     },
     {
@@ -12310,7 +14251,10 @@ const michiNoEkiGeoJSON = {
         "city": "南丹市",
         "address": "京都府南丹市日吉町中宮の向8",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19438"
+        "url": "https://www.michi-no-eki.jp/stations/views/19438",
+        "businessHours": "10:00～18:00※施設により異なる。 ＜休 毎週水曜日（水曜日が祝日の場合、振替休館日あり）、12/30～31＞",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/springshiyoshi.html",
+        "homepage2": "http://www.springs-hiyoshi.co.jp/"
       }
     },
     {
@@ -12329,7 +14273,10 @@ const michiNoEkiGeoJSON = {
         "city": "京丹波町",
         "address": "京都府船井郡京丹波町曽根深シノ65-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19439"
+        "url": "https://www.michi-no-eki.jp/stations/views/19439",
+        "businessHours": "6:00～21:00〔施設により異なる〕",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/kyotambaajimnosato.html",
+        "homepage2": "http://ajim.info/"
       }
     },
     {
@@ -12348,7 +14295,10 @@ const michiNoEkiGeoJSON = {
         "city": "南河内郡千早赤阪村",
         "address": "大阪府南河内郡千早赤阪村二河原辺7",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19440"
+        "url": "https://www.michi-no-eki.jp/stations/views/19440",
+        "businessHours": "9:00～17:00（8月のうち3日間と年末年始は休業）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/osaka/chihayaakasaka.html",
+        "homepage2": "https://chihaya-class.com/michinoeki-chihayaakasaka"
       }
     },
     {
@@ -12367,7 +14317,10 @@ const michiNoEkiGeoJSON = {
         "city": "南河内郡太子町",
         "address": "大阪府南河内郡太子町大字山田２２５４ー３",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19441"
+        "url": "https://www.michi-no-eki.jp/stations/views/19441",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/osaka/chikatuasukanosatotaishi.html",
+        "homepage2": "http://www.taishi-kankou.jp/spot/shop/michinoeki.html"
       }
     },
     {
@@ -12386,7 +14339,10 @@ const michiNoEkiGeoJSON = {
         "city": "豊能郡能勢町",
         "address": "大阪府豊能郡能勢町平野535",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19442"
+        "url": "https://www.michi-no-eki.jp/stations/views/19442",
+        "businessHours": "9:00～17:00＜休：火曜日 7~10月は無休＞",
+        "homepage": "https://www.michinoeki-nose.jp/",
+        "homepage2": "https://www.facebook.com/mitinoekiNOSE/"
       }
     },
     {
@@ -12405,7 +14361,10 @@ const michiNoEkiGeoJSON = {
         "city": "南河内郡河南町",
         "address": "大阪府南河内郡河南町大字神山523-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19443"
+        "url": "https://www.michi-no-eki.jp/stations/views/19443",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/osaka/kanan.html",
+        "homepage2": "http://www.osaka-michinoeki-kanan.jp"
       }
     },
     {
@@ -12424,7 +14383,10 @@ const michiNoEkiGeoJSON = {
         "city": "羽曳野市",
         "address": "大阪府羽曳野市埴生野975-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19444"
+        "url": "https://www.michi-no-eki.jp/stations/views/19444",
+        "businessHours": "9:30～17:00（休：木曜、年末年始）新型コロナウイルス感染症の拡大状況により、変更する場合があります。",
+        "homepage": "https://www.city.habikino.lg.jp/soshiki/seikatsukankyo/kanko/shiratorinosato/255.html",
+        "homepage2": ""
       }
     },
     {
@@ -12443,7 +14405,10 @@ const michiNoEkiGeoJSON = {
         "city": "和泉市",
         "address": "大阪府和泉市仏並町398-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19445"
+        "url": "https://www.michi-no-eki.jp/stations/views/19445",
+        "businessHours": "9:00～17:00（地場産品販売所のみ 土日祝 8：00～）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/osaka/izumiyamaai.html",
+        "homepage2": "https://www.yamaainosato.com/"
       }
     },
     {
@@ -12462,7 +14427,10 @@ const michiNoEkiGeoJSON = {
         "city": "泉南郡岬町",
         "address": "大阪府泉南郡岬町多奈川小島455-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19446"
+        "url": "https://www.michi-no-eki.jp/stations/views/19446",
+        "businessHours": "6:00～20:00（12～2月は7:00～18:00）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/osaka/tottopark.html",
+        "homepage2": "http://minnaga.com/totopark/"
       }
     },
     {
@@ -12481,7 +14449,10 @@ const michiNoEkiGeoJSON = {
         "city": "岸和田市",
         "address": "大阪府岸和田市岸の丘町3-6-18",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19447"
+        "url": "https://www.michi-no-eki.jp/stations/views/19447",
+        "businessHours": "10:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/osaka/aisai_land.html",
+        "homepage2": "https://www.city.kishiwada.osaka.jp/soshiki/141/michinoekiaisailand.html"
       }
     },
     {
@@ -12500,7 +14471,10 @@ const michiNoEkiGeoJSON = {
         "city": "宍粟市",
         "address": "兵庫県宍粟市波賀町原149",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19448"
+        "url": "https://www.michi-no-eki.jp/stations/views/19448",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/haga.html",
+        "homepage2": "http://www.haga-net.co.jp/haga.php"
       }
     },
     {
@@ -12519,7 +14493,10 @@ const michiNoEkiGeoJSON = {
         "city": "朝来市",
         "address": "兵庫県朝来市多々良木字牧野213-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19449"
+        "url": "https://www.michi-no-eki.jp/stations/views/19449",
+        "businessHours": "8:00～18:00（物産、野菜販売店）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/asago.html",
+        "homepage2": "https://www.city.asago.hyogo.jp/0000000338.html"
       }
     },
     {
@@ -12538,7 +14515,10 @@ const michiNoEkiGeoJSON = {
         "city": "宍粟市",
         "address": "兵庫県宍粟市千種町下河野745-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19450"
+        "url": "https://www.michi-no-eki.jp/stations/views/19450",
+        "businessHours": "10:00～16:00（レストラン）、 9:00～16:00（特産館） ※ レストラン 1月～3月 11：00～18：00",
+        "homepage": "https://mitinoekichikusa.wixsite.com/home",
+        "homepage2": ""
       }
     },
     {
@@ -12557,7 +14537,10 @@ const michiNoEkiGeoJSON = {
         "city": "豊岡市",
         "address": "兵庫県豊岡市日高町栗栖野59-13",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19451"
+        "url": "https://www.michi-no-eki.jp/stations/views/19451",
+        "businessHours": "平日9:00～17:00／土日祝9:00〜17:30 ※レストランと温泉の営業時間については公式ホームページでご確認ください。",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/kannabe.html",
+        "homepage2": "https://michinoeki-kannabe.com"
       }
     },
     {
@@ -12576,7 +14559,10 @@ const michiNoEkiGeoJSON = {
         "city": "香美町",
         "address": "兵庫県美方郡香美町村岡区大糠32-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19452"
+        "url": "https://www.michi-no-eki.jp/stations/views/19452",
+        "businessHours": "平日 9:00～17:00 土日祝 9:00～18:00（※お正月・ＧＷ・お盆・ＳＷは9:00～19:00）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/muraokafarmgarden.html",
+        "homepage2": "http://www.farm-garden.jp/"
       }
     },
     {
@@ -12595,7 +14581,10 @@ const michiNoEkiGeoJSON = {
         "city": "養父市",
         "address": "兵庫県養父市養父市場1294-77",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19453"
+        "url": "https://www.michi-no-eki.jp/stations/views/19453",
+        "businessHours": "10:00～20:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/yabu.html",
+        "homepage2": "https://www.instagram.com/michino_eki_yabu/"
       }
     },
     {
@@ -12614,7 +14603,10 @@ const michiNoEkiGeoJSON = {
         "city": "養父市",
         "address": "兵庫県養父市上野299",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19454"
+        "url": "https://www.michi-no-eki.jp/stations/views/19454",
+        "businessHours": "8:00～21:30〔施設により異なる〕",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/tanbarakuza.html",
+        "homepage2": "http://www.tajima-rakuza.com/"
       }
     },
     {
@@ -12633,7 +14625,10 @@ const michiNoEkiGeoJSON = {
         "city": "宍粟市",
         "address": "兵庫県宍粟市波賀町安賀8-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19455"
+        "url": "https://www.michi-no-eki.jp/stations/views/19455",
+        "businessHours": "9:00～19:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/minamihaga.html",
+        "homepage2": "http://www.haga-net.co.jp/"
       }
     },
     {
@@ -12652,7 +14647,10 @@ const michiNoEkiGeoJSON = {
         "city": "たつの市",
         "address": "兵庫県たつの市新宮町平野99-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19456"
+        "url": "https://www.michi-no-eki.jp/stations/views/19456",
+        "businessHours": "9:00～19:00 （物産館）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/shinguu.html",
+        "homepage2": "http://www.pkp-shiteikanri.com/shinguu/index.html"
       }
     },
     {
@@ -12671,7 +14669,10 @@ const michiNoEkiGeoJSON = {
         "city": "香美町",
         "address": "兵庫県美方郡香美町村岡区福岡608-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19457"
+        "url": "https://www.michi-no-eki.jp/stations/views/19457",
+        "businessHours": "9:00～18:00 ※レストランのみ9:30～16:00（時間短縮中）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/hachikita.html",
+        "homepage2": ""
       }
     },
     {
@@ -12690,7 +14691,10 @@ const michiNoEkiGeoJSON = {
         "city": "淡路市",
         "address": "兵庫県淡路市岩屋1873-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19458"
+        "url": "https://www.michi-no-eki.jp/stations/views/19458",
+        "businessHours": "（平日）9:30～17:30（土日祝）9:00～17:30 ※12～2月の平日は17:00まで ◆レストランのみ通年 11:00～17:00 L.O.",
+        "homepage": "http://michi-awaji.co.jp/",
+        "homepage2": "http://michi-awaji.co.jp/concept.html"
       }
     },
     {
@@ -12709,7 +14713,10 @@ const michiNoEkiGeoJSON = {
         "city": "三木市",
         "address": "兵庫県三木市福井2426",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19459"
+        "url": "https://www.michi-no-eki.jp/stations/views/19459",
+        "businessHours": "9:00～18:00〔店舗により異なる〕",
+        "homepage": "https://mikiyama.co.jp/",
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/miki.html"
       }
     },
     {
@@ -12728,7 +14735,10 @@ const michiNoEkiGeoJSON = {
         "city": "南あわじ市",
         "address": "兵庫県南あわじ市福良丙947-22",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19460"
+        "url": "https://www.michi-no-eki.jp/stations/views/19460",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://eki.uzunokuni.com/",
+        "homepage2": "https://awajishimaburger.uzunokuni.com/"
       }
     },
     {
@@ -12747,7 +14757,10 @@ const michiNoEkiGeoJSON = {
         "city": "宍粟市",
         "address": "兵庫県宍粟市一宮町須行名510-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19461"
+        "url": "https://www.michi-no-eki.jp/stations/views/19461",
+        "businessHours": "(売店)8：30～17：00 （レストラン)8：00～17：00(平日15時閉店)",
+        "homepage": "http://www.michinoeki-ichinomiya.com/",
+        "homepage2": ""
       }
     },
     {
@@ -12766,7 +14779,10 @@ const michiNoEkiGeoJSON = {
         "city": "朝来市",
         "address": "兵庫県朝来市岩津96（播但連絡道路 朝来SA内）",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19462"
+        "url": "https://www.michi-no-eki.jp/stations/views/19462",
+        "businessHours": "全日 10:00～19:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/freshasago.html",
+        "homepage2": "http://fresh-asago.co.jp/"
       }
     },
     {
@@ -12785,7 +14801,10 @@ const michiNoEkiGeoJSON = {
         "city": "佐用町",
         "address": "兵庫県佐用郡佐用町平福988-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19463"
+        "url": "https://www.michi-no-eki.jp/stations/views/19463",
+        "businessHours": "平日 9:00～18:00 祝日 9:00～19:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/sykubamatihirafuku.html",
+        "homepage2": "https://m-hirafuku.com"
       }
     },
     {
@@ -12804,7 +14823,10 @@ const michiNoEkiGeoJSON = {
         "city": "香美町",
         "address": "兵庫県美方郡香美町村岡区長瀬933-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19464"
+        "url": "https://www.michi-no-eki.jp/stations/views/19464",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/ayunosatoyatagawa.html",
+        "homepage2": ""
       }
     },
     {
@@ -12823,7 +14845,10 @@ const michiNoEkiGeoJSON = {
         "city": "加東市",
         "address": "兵庫県加東市南山1-5-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19465"
+        "url": "https://www.michi-no-eki.jp/stations/views/19465",
+        "businessHours": "9:00～19:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/toujyou.html",
+        "homepage2": "http://www.tojo21.co.jp/"
       }
     },
     {
@@ -12842,7 +14867,10 @@ const michiNoEkiGeoJSON = {
         "city": "川辺郡猪名川町",
         "address": "兵庫県川辺郡猪名川町万善字竹添70-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19466"
+        "url": "https://www.michi-no-eki.jp/stations/views/19466",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://michinoeki-inagawa.com/",
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/inagawa.html"
       }
     },
     {
@@ -12861,7 +14889,10 @@ const michiNoEkiGeoJSON = {
         "city": "淡路市",
         "address": "兵庫県淡路市浦648",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19467"
+        "url": "https://www.michi-no-eki.jp/stations/views/19467",
+        "businessHours": "9:00～18:00（農産物直売所）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/higashiuratatarminalpark.html",
+        "homepage2": ""
       }
     },
     {
@@ -12880,7 +14911,10 @@ const michiNoEkiGeoJSON = {
         "city": "西脇市",
         "address": "兵庫県西脇市寺内517-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19468"
+        "url": "https://www.michi-no-eki.jp/stations/views/19468",
+        "businessHours": "9：00～19：00（3月～10月）、9：00～18：00（11月～2月）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/kitaharimaecomum.html",
+        "homepage2": "https://michinoeki-kitaharima.com/"
       }
     },
     {
@@ -12899,7 +14933,10 @@ const michiNoEkiGeoJSON = {
         "city": "相生市",
         "address": "兵庫県相生市那波南本町8-55",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19469"
+        "url": "https://www.michi-no-eki.jp/stations/views/19469",
+        "businessHours": "9:00～17:30",
+        "homepage": "http://peironjo.jp/",
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/aioipeperonjyou.html"
       }
     },
     {
@@ -12918,7 +14955,10 @@ const michiNoEkiGeoJSON = {
         "city": "丹波市",
         "address": "兵庫県丹波市春日町七日市710",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19470"
+        "url": "https://www.michi-no-eki.jp/stations/views/19470",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://tamba-obasato.co.jp/",
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/tanbaobaachan.html"
       }
     },
     {
@@ -12937,7 +14977,10 @@ const michiNoEkiGeoJSON = {
         "city": "朝来市",
         "address": "兵庫県朝来市山東町大月92-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19471"
+        "url": "https://www.michi-no-eki.jp/stations/views/19471",
+        "businessHours": "8:30～20:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/tajimanomahoroba.html",
+        "homepage2": "http://www.green-wind.co.jp/"
       }
     },
     {
@@ -12956,7 +14999,10 @@ const michiNoEkiGeoJSON = {
         "city": "養父市",
         "address": "兵庫県養父市八鹿町高柳241番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19472"
+        "url": "https://www.michi-no-eki.jp/stations/views/19472",
+        "businessHours": "9:00～19:00〔施設により異なる〕",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/youkatajimanokura.html",
+        "homepage2": "http://www.michinoekiyouka.co.jp/"
       }
     },
     {
@@ -12975,7 +15021,10 @@ const michiNoEkiGeoJSON = {
         "city": "たつの市",
         "address": "兵庫県たつの市御津町室津896-23",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19473"
+        "url": "https://www.michi-no-eki.jp/stations/views/19473",
+        "businessHours": "9:00～19:00 ※当面の間は9:00～18:00営業",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/mitsu.html",
+        "homepage2": "http://www.totonaya.com/"
       }
     },
     {
@@ -12994,7 +15043,10 @@ const michiNoEkiGeoJSON = {
         "city": "香美町",
         "address": "兵庫県美方郡香美町香住区余部1723-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19474"
+        "url": "https://www.michi-no-eki.jp/stations/views/19474",
+        "businessHours": "9:00～18:00〔食事 11:00～15:00〕",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/amarube.html",
+        "homepage2": "http://michinoeki-amarube.com/"
       }
     },
     {
@@ -13013,7 +15065,10 @@ const michiNoEkiGeoJSON = {
         "city": "神戸市",
         "address": "兵庫県神戸市北区淡河町淡河字弘法垣643-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19475"
+        "url": "https://www.michi-no-eki.jp/stations/views/19475",
+        "businessHours": "【物販コーナー】10:00～17:00 休館日 12/31, 年始【レストラン】10:30～17:00 休館日 毎水曜日 12/31, 年始 ※年始の営業については施設までお問い合わせください",
+        "homepage": "https://www.city.kobe.lg.jp/a99375/kanko/leisure/michinoeki/michinoeki-ogo.html",
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/ogo.html"
       }
     },
     {
@@ -13032,7 +15087,10 @@ const michiNoEkiGeoJSON = {
         "city": "南あわじ市",
         "address": "兵庫県南あわじ市福良甲1528-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19476"
+        "url": "https://www.michi-no-eki.jp/stations/views/19476",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/fukura.html",
+        "homepage2": "http://www.city.minamiawaji.hyogo.jp/soshiki/shoukou/hukura.html"
       }
     },
     {
@@ -13051,7 +15109,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "奈良県五條市大塔町阪本225-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19477"
+        "url": "https://www.michi-no-eki.jp/stations/views/19477",
+        "businessHours": "9:00～17:15",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/yoshinojiootou.html",
+        "homepage2": ""
       }
     },
     {
@@ -13070,7 +15131,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "奈良県吉野郡上北山村大字河合字ハジ1-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19478"
+        "url": "https://www.michi-no-eki.jp/stations/views/19478",
+        "businessHours": "10:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/yoshinojikamikitayama.html",
+        "homepage2": ""
       }
     },
     {
@@ -13089,7 +15153,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "奈良県吉野郡川上村迫695",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19479"
+        "url": "https://www.michi-no-eki.jp/stations/views/19479",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/suginoyukawakami.html",
+        "homepage2": "http://www.suginoyu.com/"
       }
     },
     {
@@ -13108,7 +15175,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "奈良県吉野郡黒滝村大字長瀬22",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19480"
+        "url": "https://www.michi-no-eki.jp/stations/views/19480",
+        "businessHours": "9:00～16:30",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/yoshinojikurotaki.html",
+        "homepage2": ""
       }
     },
     {
@@ -13127,7 +15197,10 @@ const michiNoEkiGeoJSON = {
         "city": "葛城市",
         "address": "奈良県葛城市新在家402-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19481"
+        "url": "https://www.michi-no-eki.jp/stations/views/19481",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/futakamiparktaima.html",
+        "homepage2": "http://www.futakami-park.jp/"
       }
     },
     {
@@ -13146,7 +15219,10 @@ const michiNoEkiGeoJSON = {
         "city": "宇陀市",
         "address": "奈良県宇陀市大宇陀拾生714-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19482"
+        "url": "https://www.michi-no-eki.jp/stations/views/19482",
+        "businessHours": "物販・軽飲食 8:00～18：00",
+        "homepage": "https://www.kkr.mlit.go.jp/",
+        "homepage2": "https://www.narakotsu.co.jp"
       }
     },
     {
@@ -13165,7 +15241,10 @@ const michiNoEkiGeoJSON = {
         "city": "十津川村",
         "address": "奈良県吉野郡十津川村大字小原225-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19483"
+        "url": "https://www.michi-no-eki.jp/stations/views/19483",
+        "businessHours": "8:30～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/totukawagou.html",
+        "homepage2": "http://www.michinoeki-totsukawago.com/"
       }
     },
     {
@@ -13184,7 +15263,10 @@ const michiNoEkiGeoJSON = {
         "city": "宇陀市",
         "address": "奈良県宇陀市室生三本松3176-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19484"
+        "url": "https://www.michi-no-eki.jp/stations/views/19484",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/udajimurou.html",
+        "homepage2": "https://www.michi-no-eki-udajimurou.jp/"
       }
     },
     {
@@ -13203,7 +15285,10 @@ const michiNoEkiGeoJSON = {
         "city": "奈良市",
         "address": "奈良県奈良市針町345",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19485"
+        "url": "https://www.michi-no-eki.jp/stations/views/19485",
+        "businessHours": "開店の早い店7:00 閉店の遅い店21:30 LO21:00 24時間コンビニ有",
+        "homepage": "http://hari-trs.com/",
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/hariteatimeresortstation.html"
       }
     },
     {
@@ -13222,7 +15307,10 @@ const michiNoEkiGeoJSON = {
         "city": "平群町",
         "address": "奈良県生駒郡平群町大字平等寺75-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19486"
+        "url": "https://www.michi-no-eki.jp/stations/views/19486",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/yamatojiheguri.html",
+        "homepage2": "http://www.heguri-apc.jp/station/index.html"
       }
     },
     {
@@ -13241,7 +15329,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "奈良県吉野郡大淀町大字芦原536-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19487"
+        "url": "https://www.michi-no-eki.jp/stations/views/19487",
+        "businessHours": "8:30～17:00(火曜 定休 / 季節･施設により異なる)",
+        "homepage": "http://yoshinoji-oyodo.com/",
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/yoshinojioyadoicenter.html"
       }
     },
     {
@@ -13260,7 +15351,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "奈良県宇陀郡御杖村大字神末6325",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19488"
+        "url": "https://www.michi-no-eki.jp/stations/views/19488",
+        "businessHours": "11:00～20:00",
+        "homepage": "https://mitsue.life/services/station/",
+        "homepage2": ""
       }
     },
     {
@@ -13279,7 +15373,10 @@ const michiNoEkiGeoJSON = {
         "city": "有田川町",
         "address": "和歌山県有田郡有田川町大字清水607",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19489"
+        "url": "https://www.michi-no-eki.jp/stations/views/19489",
+        "businessHours": "8:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/shimizu.html",
+        "homepage2": "https://was-aritagawa.com/"
       }
     },
     {
@@ -13298,7 +15395,10 @@ const michiNoEkiGeoJSON = {
         "city": "中津",
         "address": "和歌山県日高郡日高川町大字船津820",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19490"
+        "url": "https://www.michi-no-eki.jp/stations/views/19490",
+        "businessHours": "8:00～18:00（3月～6月・9月）、 8:00～18:30（7月～8月）、8:00～17:00（10月～2月）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/sanpinnakatsu.html",
+        "homepage2": "http://www.hidakagawa.net/sanpin-nakatsu/"
       }
     },
     {
@@ -13317,7 +15417,10 @@ const michiNoEkiGeoJSON = {
         "city": "田辺市",
         "address": "和歌山県田辺市鮎川997-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19491"
+        "url": "https://www.michi-no-eki.jp/stations/views/19491",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/furusatocenterootou.html",
+        "homepage2": ""
       }
     },
     {
@@ -13336,7 +15439,10 @@ const michiNoEkiGeoJSON = {
         "city": "田辺市",
         "address": "和歌山県田辺市龍神村龍神170-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19492"
+        "url": "https://www.michi-no-eki.jp/stations/views/19492",
+        "businessHours": "9:00～16:00（GW・お盆・紅葉時期は延長営業の場合あり）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/ryuujin.html",
+        "homepage2": ""
       }
     },
     {
@@ -13355,7 +15461,10 @@ const michiNoEkiGeoJSON = {
         "city": "すさみ町",
         "address": "和歌山県西牟婁郡すさみ町見老津地内",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19493"
+        "url": "https://www.michi-no-eki.jp/stations/views/19493",
+        "businessHours": "土日祝8:30～17:00 休館日 平日",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/inobuutanlandsusami.html",
+        "homepage2": "http://www.aikis.or.jp/~susami-k/midokoro/mitinoeki.html"
       }
     },
     {
@@ -13374,7 +15483,10 @@ const michiNoEkiGeoJSON = {
         "city": "白浜町",
         "address": "和歌山県西牟婁郡白浜町日置2039-73",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19494"
+        "url": "https://www.michi-no-eki.jp/stations/views/19494",
+        "businessHours": "9:00～17:00〔施設により異なる〕",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/shiharakaigan.html",
+        "homepage2": "http://www.hikigawa-miraikan.com/"
       }
     },
     {
@@ -13393,7 +15505,10 @@ const michiNoEkiGeoJSON = {
         "city": "田辺市",
         "address": "和歌山県田辺市中辺路町近露2474-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19495"
+        "url": "https://www.michi-no-eki.jp/stations/views/19495",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/kumanokodonakahechi.html",
+        "homepage2": ""
       }
     },
     {
@@ -13412,7 +15527,10 @@ const michiNoEkiGeoJSON = {
         "city": "有田川町",
         "address": "和歌山県有田郡有田川町大字宇井苔213-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19496"
+        "url": "https://www.michi-no-eki.jp/stations/views/19496",
+        "businessHours": "8:30～17:30",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/shiramanosato.html",
+        "homepage2": "https://www.town.aridagawa.lg.jp/top/kanko/chiikibetsu/kanaya/4824.html"
       }
     },
     {
@@ -13431,7 +15549,10 @@ const michiNoEkiGeoJSON = {
         "city": "みなべ町",
         "address": "和歌山県日高郡みなべ町谷口538-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19497"
+        "url": "https://www.michi-no-eki.jp/stations/views/19497",
+        "businessHours": "9:00～17:00",
+        "homepage": "",
+        "homepage2": "http://www.town.minabe.lg.jp/docs/2013091100182/"
       }
     },
     {
@@ -13450,7 +15571,10 @@ const michiNoEkiGeoJSON = {
         "city": "田辺市",
         "address": "和歌山県田辺市秋津川1491-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19498"
+        "url": "https://www.michi-no-eki.jp/stations/views/19498",
+        "businessHours": "9:00～17:00 12月～3月は16:00まで",
+        "homepage": "https://www.facebook.com/binchotanpark/",
+        "homepage2": "https://www.binchotan.jp"
       }
     },
     {
@@ -13469,7 +15593,10 @@ const michiNoEkiGeoJSON = {
         "city": "新宮市",
         "address": "和歌山県新宮市熊野川町田長47",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19499"
+        "url": "https://www.michi-no-eki.jp/stations/views/19499",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/dorokyokaidoukumanogawa.html",
+        "homepage2": ""
       }
     },
     {
@@ -13488,7 +15615,10 @@ const michiNoEkiGeoJSON = {
         "city": "かつらぎ町",
         "address": "和歌山県伊都郡かつらぎ町窪487-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19500"
+        "url": "https://www.michi-no-eki.jp/stations/views/19500",
+        "businessHours": "8:30～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/kinokawamanyounosato.html",
+        "homepage2": ""
       }
     },
     {
@@ -13507,7 +15637,10 @@ const michiNoEkiGeoJSON = {
         "city": "田辺市",
         "address": "和歌山県田辺市本宮町伏拝904-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19501"
+        "url": "https://www.michi-no-eki.jp/stations/views/19501",
+        "businessHours": "9:00～18:30",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/okukumanokodouhonguu.html",
+        "homepage2": "http://www.ja-mikumano.or.jp/honguu/"
       }
     },
     {
@@ -13526,7 +15659,10 @@ const michiNoEkiGeoJSON = {
         "city": "北山村",
         "address": "和歌山県東牟婁郡北山村大字下尾井字浦地335",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19502"
+        "url": "https://www.michi-no-eki.jp/stations/views/19502",
+        "businessHours": "9:00～17:00（観光センター）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/okutoro.html",
+        "homepage2": "https://www.vill.kitayama.wakayama.jp/kanko/onsen/"
       }
     },
     {
@@ -13545,7 +15681,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "和歌山県田辺市龍神村福井511",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19503"
+        "url": "https://www.michi-no-eki.jp/stations/views/19503",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/mizunosatohidakagawaryuyu.html",
+        "homepage2": "http://www.ryuyu-ryujin.com/"
       }
     },
     {
@@ -13564,7 +15703,10 @@ const michiNoEkiGeoJSON = {
         "city": "有田川町",
         "address": "和歌山県有田郡有田川町大字金屋322-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19504"
+        "url": "https://www.michi-no-eki.jp/stations/views/19504",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/myouehurusatokan.html",
+        "homepage2": "https://www.town.aridagawa.lg.jp/top/kanko/chiikibetsu/kanaya/4822.html"
       }
     },
     {
@@ -13583,7 +15725,10 @@ const michiNoEkiGeoJSON = {
         "city": "岩出市",
         "address": "和歌山県岩出市押川37-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19505"
+        "url": "https://www.michi-no-eki.jp/stations/views/19505",
+        "businessHours": "9:00～18:00（10～3月は17:00まで）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/negorosakuranosato.html",
+        "homepage2": "http://www.city.iwade.lg.jp/kanko/michinoeki-negoro.html"
       }
     },
     {
@@ -13602,7 +15747,10 @@ const michiNoEkiGeoJSON = {
         "city": "有田川町",
         "address": "和歌山県有田郡有田川町三田664-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19506"
+        "url": "https://www.michi-no-eki.jp/stations/views/19506",
+        "businessHours": "8:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/araginosato.html",
+        "homepage2": "https://www.town.aridagawa.lg.jp/top/kanko/chiikibetsu/shimizu/4839.html"
       }
     },
     {
@@ -13621,7 +15769,10 @@ const michiNoEkiGeoJSON = {
         "city": "古座川町",
         "address": "和歌山県東牟婁郡古座川町相瀬290-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19507"
+        "url": "https://www.michi-no-eki.jp/stations/views/19507",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/ichimaiiwa.html",
+        "homepage2": "http://www.kozagawa.com/kanko/rokumei/top_roku.htm"
       }
     },
     {
@@ -13640,7 +15791,10 @@ const michiNoEkiGeoJSON = {
         "city": "由良町",
         "address": "和歌山県日高郡由良町大字大引960-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19508"
+        "url": "https://www.michi-no-eki.jp/stations/views/19508",
+        "businessHours": "8:30～17:15",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/shirasaki.html",
+        "homepage2": "http://www.shirasaki.or.jp/"
       }
     },
     {
@@ -13659,7 +15813,10 @@ const michiNoEkiGeoJSON = {
         "city": "白浜町",
         "address": "和歌山県西牟婁郡白浜町椿1058-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19509"
+        "url": "https://www.michi-no-eki.jp/stations/views/19509",
+        "businessHours": "9:00～21:00（11月～2月は9:00～20:00）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/tsubaki.html",
+        "homepage2": "http://www.tsubaki-hananoyu.com/"
       }
     },
     {
@@ -13678,7 +15835,10 @@ const michiNoEkiGeoJSON = {
         "city": "那智勝浦町",
         "address": "和歌山県東牟婁郡那智勝浦町浜ノ宮361-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19510"
+        "url": "https://www.michi-no-eki.jp/stations/views/19510",
+        "businessHours": "9:00～22:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/nachi.html",
+        "homepage2": "http://www.town.nachikatsuura.wakayama.jp/forms/info/info.aspx?info_id=19241"
       }
     },
     {
@@ -13697,7 +15857,10 @@ const michiNoEkiGeoJSON = {
         "city": "古座川町",
         "address": "和歌山県東牟婁郡古座川町小川774-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19511"
+        "url": "https://www.michi-no-eki.jp/stations/views/19511",
+        "businessHours": "8:30～17:15",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -13716,7 +15879,10 @@ const michiNoEkiGeoJSON = {
         "city": "田辺市",
         "address": "和歌山県田辺市龍神村龍神1020－6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19512"
+        "url": "https://www.michi-no-eki.jp/stations/views/19512",
+        "businessHours": "9:30～17:00（休日9:00～17:00）※休業期間を除く",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/gomasanskytower.html",
+        "homepage2": "http://gomasanskytower.com/"
       }
     },
     {
@@ -13735,7 +15901,10 @@ const michiNoEkiGeoJSON = {
         "city": "串本町",
         "address": "和歌山県東牟婁郡串本町鬮野川1549-8",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19513"
+        "url": "https://www.michi-no-eki.jp/stations/views/19513",
+        "businessHours": "9:00～18:00 （営業時間を変更する場合がございます）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/hasiguiiwa.html",
+        "homepage2": "※台風7号接近に伴い、8月14日午後3時〜8月15日終日まで臨時休業とさせていただきます。なお、公衆トイレは利用可能です。"
       }
     },
     {
@@ -13754,7 +15923,10 @@ const michiNoEkiGeoJSON = {
         "city": "九度山町",
         "address": "和歌山県伊都郡九度山町入郷5-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19514"
+        "url": "https://www.michi-no-eki.jp/stations/views/19514",
+        "businessHours": "9:00～17:30 ＜休 1/1～3＞",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/kakinosatokudoyama.html",
+        "homepage2": "http://kakinosatokudoyama.com/"
       }
     },
     {
@@ -13773,7 +15945,10 @@ const michiNoEkiGeoJSON = {
         "city": "古座川町",
         "address": "和歌山県東牟婁郡古座川町池野山705-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19515"
+        "url": "https://www.michi-no-eki.jp/stations/views/19515",
+        "businessHours": "10:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/musikuiiwa.html",
+        "homepage2": ""
       }
     },
     {
@@ -13792,7 +15967,10 @@ const michiNoEkiGeoJSON = {
         "city": "北栄町",
         "address": "鳥取県東伯郡北栄町由良宿1458-10",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19516"
+        "url": "https://www.michi-no-eki.jp/stations/views/19516",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.apionet.or.jp/odaiba/",
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
       }
     },
     {
@@ -13811,7 +15989,10 @@ const michiNoEkiGeoJSON = {
         "city": "三朝町",
         "address": "鳥取県東伯郡三朝町大字大柿591",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19517"
+        "url": "https://www.michi-no-eki.jp/stations/views/19517",
+        "businessHours": "8:30～17:30",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": ""
       }
     },
     {
@@ -13830,7 +16011,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "鳥取県東伯郡北栄町国坂1525-92",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19518"
+        "url": "https://www.michi-no-eki.jp/stations/views/19518",
+        "businessHours": "物販 9：00～17：00 レストラン 10：00～17：00（LO.16：00）",
+        "homepage": "http://michinoeki-hojo.com/",
+        "homepage2": ""
       }
     },
     {
@@ -13849,7 +16033,10 @@ const michiNoEkiGeoJSON = {
         "city": "琴浦町",
         "address": "鳥取県東伯郡琴浦町大字別所255",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19519"
+        "url": "https://www.michi-no-eki.jp/stations/views/19519",
+        "businessHours": "9:00～18:00〔施設により異なる〕",
+        "homepage": "http://www.kotoura-kankou.com/port-akasaki.html",
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
       }
     },
     {
@@ -13868,7 +16055,10 @@ const michiNoEkiGeoJSON = {
         "city": "八頭町",
         "address": "鳥取県八頭郡八頭町徳丸625",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19520"
+        "url": "https://www.michi-no-eki.jp/stations/views/19520",
+        "businessHours": "9:00～17:15",
+        "homepage": "http://www.hatto-fruits.com/",
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
       }
     },
     {
@@ -13887,7 +16077,10 @@ const michiNoEkiGeoJSON = {
         "city": "倉吉市",
         "address": "鳥取県倉吉市関金町山口2030-46",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19521"
+        "url": "https://www.michi-no-eki.jp/stations/views/19521",
+        "businessHours": "9:00~17:00",
+        "homepage": "http://www.inubasari.com/",
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
       }
     },
     {
@@ -13906,7 +16099,10 @@ const michiNoEkiGeoJSON = {
         "city": "湯梨浜町",
         "address": "鳥取県東伯郡湯梨浜町大字宇野2343",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19522"
+        "url": "https://www.michi-no-eki.jp/stations/views/19522",
+        "businessHours": "9:00～18:00〔施設により異なる〕",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": ""
       }
     },
     {
@@ -13925,7 +16121,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "鳥取県鳥取市白兎613",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19523"
+        "url": "https://www.michi-no-eki.jp/stations/views/19523",
+        "businessHours": "8:00～19:00（12/3～2月末までは8:30～18:00）、レストランは11:00～17:00（土日祝は11:00～22：00）",
+        "homepage": "http://sirousagi.com/",
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
       }
     },
     {
@@ -13944,7 +16143,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "鳥取県鳥取市河原町高福837",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19524"
+        "url": "https://www.michi-no-eki.jp/stations/views/19524",
+        "businessHours": "9:00～19:00",
+        "homepage": "http://yakamihime.com/",
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
       }
     },
     {
@@ -13963,7 +16165,10 @@ const michiNoEkiGeoJSON = {
         "city": "若桜町",
         "address": "鳥取県八頭郡若桜町若桜983-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19525"
+        "url": "https://www.michi-no-eki.jp/stations/views/19525",
+        "businessHours": "9:00～18:00〔施設により異なる〕",
+        "homepage": "http://michinoeki-wakasa.com/",
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
       }
     },
     {
@@ -13982,7 +16187,10 @@ const michiNoEkiGeoJSON = {
         "city": "大山町",
         "address": "鳥取県西伯郡大山町名和951-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19526"
+        "url": "https://www.michi-no-eki.jp/stations/views/19526",
+        "businessHours": "9:00～18:00（12月~2月は9:00～17:00）",
+        "homepage": "http://www.daisen.jp/megumi/michinoeki/",
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
       }
     },
     {
@@ -14001,7 +16209,10 @@ const michiNoEkiGeoJSON = {
         "city": "湯梨浜町",
         "address": "鳥取県東伯郡湯梨浜町引地563-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19527"
+        "url": "https://www.michi-no-eki.jp/stations/views/19527",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.encho-en.com/",
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
       }
     },
     {
@@ -14020,7 +16231,10 @@ const michiNoEkiGeoJSON = {
         "city": "雲南市",
         "address": "島根県雲南市掛合町大字掛合1800-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19528"
+        "url": "https://www.michi-no-eki.jp/stations/views/19528",
+        "businessHours": "9:00～16:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "https://www.instagram.com/kakeyanosato/"
       }
     },
     {
@@ -14039,7 +16253,10 @@ const michiNoEkiGeoJSON = {
         "city": "飯南町",
         "address": "島根県飯石郡飯南町花栗48",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19529"
+        "url": "https://www.michi-no-eki.jp/stations/views/19529",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.r-yamanami.com/"
       }
     },
     {
@@ -14058,7 +16275,10 @@ const michiNoEkiGeoJSON = {
         "city": "浜田市",
         "address": "島根県浜田市原井町1203-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19530"
+        "url": "https://www.michi-no-eki.jp/stations/views/19530",
+        "businessHours": "9:00～23:00〔施設より異なる〕",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.yuhipark-hamada.com/"
       }
     },
     {
@@ -14077,7 +16297,10 @@ const michiNoEkiGeoJSON = {
         "city": "浜田市",
         "address": "島根県浜田市三隅町折居220-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19531"
+        "url": "https://www.michi-no-eki.jp/stations/views/19531",
+        "businessHours": "9：00～17：30",
+        "homepage": "http://www.cgr.mlit.go.jp/douro/Michi-no-Eki/single.html?name=ゆうひパーク三隅",
+        "homepage2": "http://www.all-iwami.com/modules/guide/index.php?action=SpotView&spot_id=97"
       }
     },
     {
@@ -14096,7 +16319,10 @@ const michiNoEkiGeoJSON = {
         "city": "邑南町",
         "address": "島根県邑智郡邑南町下田所260-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19532"
+        "url": "https://www.michi-no-eki.jp/stations/views/19532",
+        "businessHours": "7:00～18:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "https://www.kankou-shimane.com/destination/21610"
       }
     },
     {
@@ -14115,7 +16341,10 @@ const michiNoEkiGeoJSON = {
         "city": "美郷町",
         "address": "島根県邑智郡美郷町長藤248-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19533"
+        "url": "https://www.michi-no-eki.jp/stations/views/19533",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.all-iwami.com/modules/guide/index.php?action=SpotView&spot_id=51"
       }
     },
     {
@@ -14134,7 +16363,10 @@ const michiNoEkiGeoJSON = {
         "city": "出雲市",
         "address": "島根県出雲市大社町修理免735-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19534"
+        "url": "https://www.michi-no-eki.jp/stations/views/19534",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.cgr.mlit.go.jp/chiki/doyroj/Michi-no-Eki/cgi-bin/station_info.pl?param=3207",
+        "homepage2": "https://www.izumo-kankou.gr.jp/171"
       }
     },
     {
@@ -14153,7 +16385,10 @@ const michiNoEkiGeoJSON = {
         "city": "益田市",
         "address": "島根県益田市美都町宇津川 口586-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19535"
+        "url": "https://www.michi-no-eki.jp/stations/views/19535",
+        "businessHours": "9:00～19:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://mitoshin.net/"
       }
     },
     {
@@ -14172,7 +16407,10 @@ const michiNoEkiGeoJSON = {
         "city": "奥出雲町",
         "address": "島根県仁多郡奥出雲町八川2500-294",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19536"
+        "url": "https://www.michi-no-eki.jp/stations/views/19536",
+        "businessHours": "4-11月9:00～17:00：12-3月10:00～16:00/毎週水曜定休日・年末年始",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "https://peraichi.com/landing_pages/view/orochi-roop"
       }
     },
     {
@@ -14191,7 +16429,10 @@ const michiNoEkiGeoJSON = {
         "city": "安来市",
         "address": "島根県安来市広瀬町町帳775-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19537"
+        "url": "https://www.michi-no-eki.jp/stations/views/19537",
+        "businessHours": "10:00～17:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.yasugi-kankou.com/index.php?view=5292"
       }
     },
     {
@@ -14210,7 +16451,10 @@ const michiNoEkiGeoJSON = {
         "city": "飯南町",
         "address": "島根県飯石郡飯南町下赤名880-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19538"
+        "url": "https://www.michi-no-eki.jp/stations/views/19538",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "https://www.satoyamania.net/spot/2019/03/post-3.html"
       }
     },
     {
@@ -14229,7 +16473,10 @@ const michiNoEkiGeoJSON = {
         "city": "吉賀町",
         "address": "島根県鹿足郡吉賀町柿木村柿木500-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19539"
+        "url": "https://www.michi-no-eki.jp/stations/views/19539",
+        "businessHours": "9:00～18:00、9:00～18:30（7～8月）",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://kakinokimura.shop-pro.jp/"
       }
     },
     {
@@ -14248,7 +16495,10 @@ const michiNoEkiGeoJSON = {
         "city": "出雲市",
         "address": "島根県出雲市多伎町多岐135-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19540"
+        "url": "https://www.michi-no-eki.jp/stations/views/19540",
+        "businessHours": "9:00～18:30〔施設により異なる〕",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.kirara-taki.co.jp/index.php"
       }
     },
     {
@@ -14267,7 +16517,10 @@ const michiNoEkiGeoJSON = {
         "city": "出雲市",
         "address": "島根県出雲市斐川町学頭825-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19541"
+        "url": "https://www.michi-no-eki.jp/stations/views/19541",
+        "businessHours": "9:00～19:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://tokusan-hikawa.com/index.cgi"
       }
     },
     {
@@ -14286,7 +16539,10 @@ const michiNoEkiGeoJSON = {
         "city": "津和野町",
         "address": "島根県鹿足郡津和野町池村1997",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19542"
+        "url": "https://www.michi-no-eki.jp/stations/views/19542",
+        "businessHours": "8:00～19:30〔施設により異なる〕",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.silkway.co.jp/"
       }
     },
     {
@@ -14305,7 +16561,10 @@ const michiNoEkiGeoJSON = {
         "city": "松江市",
         "address": "島根県松江市岡本町1048-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19543"
+        "url": "https://www.michi-no-eki.jp/stations/views/19543",
+        "businessHours": "9:00～21:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.s-skss.com/nagisa/"
       }
     },
     {
@@ -14324,7 +16583,10 @@ const michiNoEkiGeoJSON = {
         "city": "津和野町",
         "address": "島根県鹿足郡津和野町鷲原イ256",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19544"
+        "url": "https://www.michi-no-eki.jp/stations/views/19544",
+        "businessHours": "物販コーナー9：00～21：00 レストラン「あかね雲」11：00～17：00（最終入店 16：15 ラストオーダー 16：30） 温泉「あさぎりの湯」10：00～21：00（最終入店 20：15） テイクアウト10：00～17：00 ※木曜日は、温泉・テイクアウト・レストラン定休日 物販コーナー9：00～18：00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.nagomi-nosato.com/"
       }
     },
     {
@@ -14343,7 +16605,10 @@ const michiNoEkiGeoJSON = {
         "city": "雲南市",
         "address": "島根県雲南市木次町山方1134-31",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19545"
+        "url": "https://www.michi-no-eki.jp/stations/views/19545",
+        "businessHours": "9:00～18:00〔施設により異なる〕",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "https://www.unnan-kankou.jp/sakuranosato/"
       }
     },
     {
@@ -14362,7 +16627,10 @@ const michiNoEkiGeoJSON = {
         "city": "松江市",
         "address": "島根県松江市野原町401-8",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19546"
+        "url": "https://www.michi-no-eki.jp/stations/views/19546",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "https://michinoeki-honjou.jp/"
       }
     },
     {
@@ -14381,7 +16649,10 @@ const michiNoEkiGeoJSON = {
         "city": "益田市",
         "address": "島根県益田市匹見町道川イ65-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19547"
+        "url": "https://www.michi-no-eki.jp/stations/views/19547",
+        "businessHours": "8:00～17:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.all-iwami.com/modules/guide/index.php?action=SpotView&spot_id=248"
       }
     },
     {
@@ -14400,7 +16671,10 @@ const michiNoEkiGeoJSON = {
         "city": "奥出雲町",
         "address": "島根県仁多郡奥出雲町亀嵩1380-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19548"
+        "url": "https://www.michi-no-eki.jp/stations/views/19548",
+        "businessHours": "9:00～18:00（1～2月 9:30～17:30）",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://okuizumosyuzou.com/"
       }
     },
     {
@@ -14419,7 +16693,10 @@ const michiNoEkiGeoJSON = {
         "city": "川本町",
         "address": "島根県邑智郡川本町大字因原505-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19549"
+        "url": "https://www.michi-no-eki.jp/stations/views/19549",
+        "businessHours": "8:00～19:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": ""
       }
     },
     {
@@ -14438,7 +16715,10 @@ const michiNoEkiGeoJSON = {
         "city": "吉賀町",
         "address": "島根県鹿足郡吉賀町有飯225-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19550"
+        "url": "https://www.michi-no-eki.jp/stations/views/19550",
+        "businessHours": "8:30～17:30〔季節により変更あり〕",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.muikaichi.jp/"
       }
     },
     {
@@ -14457,7 +16737,10 @@ const michiNoEkiGeoJSON = {
         "city": "大田市",
         "address": "島根県大田市久手町刺鹿1945-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19551"
+        "url": "https://www.michi-no-eki.jp/stations/views/19551",
+        "businessHours": "9:00～19:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.roadginzan.com/"
       }
     },
     {
@@ -14476,7 +16759,10 @@ const michiNoEkiGeoJSON = {
         "city": "江津市",
         "address": "島根県江津市後地町995-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19552"
+        "url": "https://www.michi-no-eki.jp/stations/views/19552",
+        "businessHours": "9:00～18:30",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.all-iwami.com/modules/guide/index.php?action=SpotView&spot_id=85"
       }
     },
     {
@@ -14495,7 +16781,10 @@ const michiNoEkiGeoJSON = {
         "city": "雲南市",
         "address": "島根県雲南市木次町北原1603",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19553"
+        "url": "https://www.michi-no-eki.jp/stations/views/19553",
+        "businessHours": "8:00～17:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "https://www.instagram.com/michinoeki_orochinosato/"
       }
     },
     {
@@ -14514,7 +16803,10 @@ const michiNoEkiGeoJSON = {
         "city": "安来市",
         "address": "島根県安来市中海町118-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19554"
+        "url": "https://www.michi-no-eki.jp/stations/views/19554",
+        "businessHours": "9:00～21:30〔施設により異なる〕",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://michinoeki-araessa.jp"
       }
     },
     {
@@ -14533,7 +16825,10 @@ const michiNoEkiGeoJSON = {
         "city": "雲南市",
         "address": "島根県雲南市吉田町吉田4378-31",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19555"
+        "url": "https://www.michi-no-eki.jp/stations/views/19555",
+        "businessHours": "9:00～20:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "https://www.unnan-kankou.jp/tataraba/"
       }
     },
     {
@@ -14552,7 +16847,10 @@ const michiNoEkiGeoJSON = {
         "city": "吉備中央町",
         "address": "岡山県加賀郡吉備中央町上田西2325-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19556"
+        "url": "https://www.michi-no-eki.jp/stations/views/19556",
+        "businessHours": "8:30～17:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "https://www.town.kibichuo.lg.jp/site/kanko/47.html"
       }
     },
     {
@@ -14571,7 +16869,10 @@ const michiNoEkiGeoJSON = {
         "city": "新庄村",
         "address": "岡山県真庭郡新庄村2190-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19557"
+        "url": "https://www.michi-no-eki.jp/stations/views/19557",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.meruhen-plaza.jp/"
       }
     },
     {
@@ -14590,7 +16891,10 @@ const michiNoEkiGeoJSON = {
         "city": "西粟倉村",
         "address": "岡山県英田郡西粟倉村影石418",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19558"
+        "url": "https://www.michi-no-eki.jp/stations/views/19558",
+        "businessHours": "9:00～19:00（7～9月は20:00まで、1～3月は18:00まで）",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://nishiawakura-kanko.com/kyukei/kyukei02.html"
       }
     },
     {
@@ -14609,7 +16913,10 @@ const michiNoEkiGeoJSON = {
         "city": "久米南町",
         "address": "岡山県久米郡久米南町下二ケ1367-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19559"
+        "url": "https://www.michi-no-eki.jp/stations/views/19559",
+        "businessHours": "〇レストラン 営業時間11:00～15:00、休／火曜日・12月31日・1月1日 〇店舗、売店 営業時間10:00～16:00（日曜祭日～17:00）、休／火曜日・12月31日・1月1日 〇休憩所 利用可能時間10:00～16:00（建物外は24時間利用可能） 〇情報コーナー 利用可能時間10:00～16:00 【定休日】火曜日・12月31日・1月1日",
+        "homepage": "https://rs-kumenan.com/",
+        "homepage2": ""
       }
     },
     {
@@ -14628,7 +16935,10 @@ const michiNoEkiGeoJSON = {
         "city": "玉野市",
         "address": "岡山県玉野市田井2-4464",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19560"
+        "url": "https://www.michi-no-eki.jp/stations/views/19560",
+        "businessHours": "8:30～16:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://m-y.jp/"
       }
     },
     {
@@ -14647,7 +16957,10 @@ const michiNoEkiGeoJSON = {
         "city": "瀬戸内市",
         "address": "岡山県瀬戸内市邑久町尻海3539",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19561"
+        "url": "https://www.michi-no-eki.jp/stations/views/19561",
+        "businessHours": "9:00～17:30",
+        "homepage": "https://ipponmatsu-blueline.com",
+        "homepage2": ""
       }
     },
     {
@@ -14666,7 +16979,10 @@ const michiNoEkiGeoJSON = {
         "city": "瀬戸内市",
         "address": "岡山県瀬戸内市邑久町虫明5165-196",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19562"
+        "url": "https://www.michi-no-eki.jp/stations/views/19562",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://kuroisan-blueline.com",
+        "homepage2": ""
       }
     },
     {
@@ -14685,7 +17001,10 @@ const michiNoEkiGeoJSON = {
         "city": "新見市",
         "address": "岡山県新見市哲西町矢田3585-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19563"
+        "url": "https://www.michi-no-eki.jp/stations/views/19563",
+        "businessHours": "※新型コロナウイルス感染症のため営業時間短縮中 売店9:00～17:00 レストラン11：00～14:00 こめ工房9:00～16:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "https://koigakubo.jp"
       }
     },
     {
@@ -14704,7 +17023,10 @@ const michiNoEkiGeoJSON = {
         "city": "真庭市",
         "address": "岡山県真庭市蒜山富山根694-129",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19564"
+        "url": "https://www.michi-no-eki.jp/stations/views/19564",
+        "businessHours": "8:30～17:00",
+        "homepage": "なし",
+        "homepage2": "なし"
       }
     },
     {
@@ -14723,7 +17045,10 @@ const michiNoEkiGeoJSON = {
         "city": "真庭市",
         "address": "岡山県真庭市蒜山上徳山1380-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19565"
+        "url": "https://www.michi-no-eki.jp/stations/views/19565",
+        "businessHours": "8:30～17:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://ww52.tiki.ne.jp/~kazenoie/"
       }
     },
     {
@@ -14742,7 +17067,10 @@ const michiNoEkiGeoJSON = {
         "city": "美作市",
         "address": "岡山県美作市明見167",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19566"
+        "url": "https://www.michi-no-eki.jp/stations/views/19566",
+        "businessHours": "8:00～18:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.sai2.jp/"
       }
     },
     {
@@ -14761,7 +17089,10 @@ const michiNoEkiGeoJSON = {
         "city": "鏡野町",
         "address": "岡山県苫田郡鏡野町奥津463",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19567"
+        "url": "https://www.michi-no-eki.jp/stations/views/19567",
+        "businessHours": "9:00～17:00 定休日：水曜日（売店・お食事処）",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "https://michinoeki-okutsuonsen.amebaownd.com/"
       }
     },
     {
@@ -14780,7 +17111,10 @@ const michiNoEkiGeoJSON = {
         "city": "津山市",
         "address": "岡山県津山市宮尾563-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19568"
+        "url": "https://www.michi-no-eki.jp/stations/views/19568",
+        "businessHours": "9:30～18:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.michinoeki-kumenosato.com/"
       }
     },
     {
@@ -14799,7 +17133,10 @@ const michiNoEkiGeoJSON = {
         "city": "真庭市",
         "address": "岡山県真庭市鹿田391-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19569"
+        "url": "https://www.michi-no-eki.jp/stations/views/19569",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.daigonosato.jp/"
       }
     },
     {
@@ -14818,7 +17155,10 @@ const michiNoEkiGeoJSON = {
         "city": "吉備中央町",
         "address": "岡山県加賀郡吉備中央町北1977-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19570"
+        "url": "https://www.michi-no-eki.jp/stations/views/19570",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.town.kibichuo.lg.jp/site/kanko/48.html"
       }
     },
     {
@@ -14837,7 +17177,10 @@ const michiNoEkiGeoJSON = {
         "city": "笠岡市",
         "address": "岡山県笠岡市カブト南町245-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19571"
+        "url": "https://www.michi-no-eki.jp/stations/views/19571",
+        "businessHours": "9:00～18:00＜休 年始＞",
+        "homepage": "http://www.k-bay.jp/",
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
       }
     },
     {
@@ -14856,7 +17199,10 @@ const michiNoEkiGeoJSON = {
         "city": "庄原市",
         "address": "広島県庄原市総領町下領家1-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19572"
+        "url": "https://www.michi-no-eki.jp/stations/views/19572",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "https://shobara-info.com/290"
       }
     },
     {
@@ -14875,7 +17221,10 @@ const michiNoEkiGeoJSON = {
         "city": "庄原市",
         "address": "広島県庄原市東城町川東877",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19573"
+        "url": "https://www.michi-no-eki.jp/stations/views/19573",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "https://youyousalontojo.sakura.ne.jp/"
       }
     },
     {
@@ -14894,7 +17243,10 @@ const michiNoEkiGeoJSON = {
         "city": "神石高原町",
         "address": "広島県神石郡神石高原町坂瀬川5146-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19574"
+        "url": "https://www.michi-no-eki.jp/stations/views/19574",
+        "businessHours": "7:30～18:00 ＜休 年末年始＞",
+        "homepage": "https://182station.jp/",
+        "homepage2": "http://www.jkougen.jp/kankou/pages/sisetu-p/182sute.html"
       }
     },
     {
@@ -14913,7 +17265,10 @@ const michiNoEkiGeoJSON = {
         "city": "北広島町",
         "address": "広島県山県郡北広島町都志見12609",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19575"
+        "url": "https://www.michi-no-eki.jp/stations/views/19575",
+        "businessHours": "9:00～19:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.donguri.gr.jp"
       }
     },
     {
@@ -14932,7 +17287,10 @@ const michiNoEkiGeoJSON = {
         "city": "安芸太田町",
         "address": "広島県山県郡安芸太田町大字上殿632-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19576"
+        "url": "https://www.michi-no-eki.jp/stations/views/19576",
+        "businessHours": "平日（火曜日を除く）、年末年始（12/29～1/3開館日）/10:00～17:00 土日祝/10：00～18：00 【令和5年12月より】",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "https://cs-akiota.or.jp/station/"
       }
     },
     {
@@ -14951,7 +17309,10 @@ const michiNoEkiGeoJSON = {
         "city": "三原市",
         "address": "広島県三原市大和町和木652-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19577"
+        "url": "https://www.michi-no-eki.jp/stations/views/19577",
+        "businessHours": "9:00～17:00（平日） 9:00～18:00（土日祝）",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "https://www.facebook.com/4GANSU"
       }
     },
     {
@@ -14970,7 +17331,10 @@ const michiNoEkiGeoJSON = {
         "city": "福山市",
         "address": "広島県福山市沼隈町大字常石1805",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19578"
+        "url": "https://www.michi-no-eki.jp/stations/views/19578",
+        "businessHours": "8:00～16:00 （産直市は土・日・祝日の7:30～） ＜休 1/1～3＞",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": ""
       }
     },
     {
@@ -14989,7 +17353,10 @@ const michiNoEkiGeoJSON = {
         "city": "廿日市市",
         "address": "広島県廿日市市飯山21-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19579"
+        "url": "https://www.michi-no-eki.jp/stations/views/19579",
+        "businessHours": "10:00～19:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.sparakan.com/"
       }
     },
     {
@@ -15008,7 +17375,10 @@ const michiNoEkiGeoJSON = {
         "city": "三次市",
         "address": "広島県三次市布野町下布野661-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19580"
+        "url": "https://www.michi-no-eki.jp/stations/views/19580",
+        "businessHours": "9:00～16:30〔施設により異なる〕＜休 年末年始＞",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.yumefuno.com/"
       }
     },
     {
@@ -15027,7 +17397,10 @@ const michiNoEkiGeoJSON = {
         "city": "三次市",
         "address": "広島県三次市君田町泉吉田311-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19581"
+        "url": "https://www.michi-no-eki.jp/stations/views/19581",
+        "businessHours": "8:30～16:30（施設により異なります）",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.kimitaonsen.com/"
       }
     },
     {
@@ -15046,7 +17419,10 @@ const michiNoEkiGeoJSON = {
         "city": "尾道市",
         "address": "広島県尾道市御調町大田33",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19582"
+        "url": "https://www.michi-no-eki.jp/stations/views/19582",
+        "businessHours": "9:00～19:00＜休 第4火曜日（祝日は営業）、12/31～1/1＞",
+        "homepage": "http://www.crossroad-mitsugi.com/",
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
       }
     },
     {
@@ -15065,7 +17441,10 @@ const michiNoEkiGeoJSON = {
         "city": "北広島町",
         "address": "広島県山県郡北広島町有田1122",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19583"
+        "url": "https://www.michi-no-eki.jp/stations/views/19583",
+        "businessHours": "8:30～18:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.kitahiro-ichiba.com/"
       }
     },
     {
@@ -15084,7 +17463,10 @@ const michiNoEkiGeoJSON = {
         "city": "安芸高田市",
         "address": "広島県安芸高田市美土里町横田331",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19584"
+        "url": "https://www.michi-no-eki.jp/stations/views/19584",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.kitanosekijyuku.jp/"
       }
     },
     {
@@ -15103,7 +17485,10 @@ const michiNoEkiGeoJSON = {
         "city": "東広島市",
         "address": "広島県東広島市福富町久芳1506",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19585"
+        "url": "https://www.michi-no-eki.jp/stations/views/19585",
+        "businessHours": "9:00～18:00 レストラン：定休日水曜日（祝日の際は営業 翌日定休日）",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "https://kohannosato.com/"
       }
     },
     {
@@ -15122,7 +17507,10 @@ const michiNoEkiGeoJSON = {
         "city": "竹原市",
         "address": "広島県竹原市本町1-1-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19586"
+        "url": "https://www.michi-no-eki.jp/stations/views/19586",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://michinoekitakehara.com/"
       }
     },
     {
@@ -15141,7 +17529,10 @@ const michiNoEkiGeoJSON = {
         "city": "三原市",
         "address": "広島県三原市糸崎4-21-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19587"
+        "url": "https://www.michi-no-eki.jp/stations/views/19587",
+        "businessHours": "9:00～18:00 ＜休 第3火曜日＞",
+        "homepage": "https://www.shinmeinosato.jp/",
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
       }
     },
     {
@@ -15160,7 +17551,10 @@ const michiNoEkiGeoJSON = {
         "city": "庄原市",
         "address": "広島県庄原市高野町下門田49",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19588"
+        "url": "https://www.michi-no-eki.jp/stations/views/19588",
+        "businessHours": "9:00～18:00〔施設により異なる〕 ＜休 第2・第4水曜日＞",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.takanoyama.jp/"
       }
     },
     {
@@ -15179,7 +17573,10 @@ const michiNoEkiGeoJSON = {
         "city": "世羅町",
         "address": "広島県世羅郡世羅町大字川尻字大柳2402-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19589"
+        "url": "https://www.michi-no-eki.jp/stations/views/19589",
+        "businessHours": "8:00~18:00",
+        "homepage": "http://seranan.jp/road-side-station/",
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
       }
     },
     {
@@ -15198,7 +17595,10 @@ const michiNoEkiGeoJSON = {
         "city": "阿武町",
         "address": "山口県阿武郡阿武町大字奈古2249",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19590"
+        "url": "https://www.michi-no-eki.jp/stations/views/19590",
+        "businessHours": "10:00～18:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.abucreation.com/"
       }
     },
     {
@@ -15217,7 +17617,10 @@ const michiNoEkiGeoJSON = {
         "city": "萩市",
         "address": "山口県萩市大字椿字悴ヶ坂1258",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19591"
+        "url": "https://www.michi-no-eki.jp/stations/views/19591",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.hagioukan.com/"
       }
     },
     {
@@ -15236,7 +17639,10 @@ const michiNoEkiGeoJSON = {
         "city": "萩市",
         "address": "山口県萩市大字佐々並2476-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19592"
+        "url": "https://www.michi-no-eki.jp/stations/views/19592",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": ""
       }
     },
     {
@@ -15255,7 +17661,10 @@ const michiNoEkiGeoJSON = {
         "city": "山口市",
         "address": "山口県山口市秋穂東1520-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19593"
+        "url": "https://www.michi-no-eki.jp/stations/views/19593",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://michinoeki-aio.com/",
+        "homepage2": "https://www.instagram.com/michinoekiaio_official/"
       }
     },
     {
@@ -15274,7 +17683,10 @@ const michiNoEkiGeoJSON = {
         "city": "萩市",
         "address": "山口県萩市大字下田万2849-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19594"
+        "url": "https://www.michi-no-eki.jp/stations/views/19594",
+        "businessHours": "8:30～19:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.hagishi.com/search/detail.php?d=1100207"
       }
     },
     {
@@ -15293,7 +17705,10 @@ const michiNoEkiGeoJSON = {
         "city": "周防大島町",
         "address": "山口県大島郡周防大島町西方1958-77",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19595"
+        "url": "https://www.michi-no-eki.jp/stations/views/19595",
+        "businessHours": "10:00～18:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.sazan-seto.com/"
       }
     },
     {
@@ -15312,7 +17727,10 @@ const michiNoEkiGeoJSON = {
         "city": "下関市",
         "address": "山口県下関市菊川町大字上岡枝766-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19596"
+        "url": "https://www.michi-no-eki.jp/stations/views/19596",
+        "businessHours": "8:30～17:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://michinoekikikugawa.co.jp/"
       }
     },
     {
@@ -15331,7 +17749,10 @@ const michiNoEkiGeoJSON = {
         "city": "萩市",
         "address": "山口県萩市大字福井下4014-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19597"
+        "url": "https://www.michi-no-eki.jp/stations/views/19597",
+        "businessHours": "8:30～17:00（売店）、 11:00～14:00（レストラン）",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": ""
       }
     },
     {
@@ -15350,7 +17771,10 @@ const michiNoEkiGeoJSON = {
         "city": "山口市",
         "address": "山口県山口市阿東生雲東分47-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19598"
+        "url": "https://www.michi-no-eki.jp/stations/views/19598",
+        "businessHours": "9:30～18:00",
+        "homepage": "",
+        "homepage2": "https://www.kunkunodaichi.com"
       }
     },
     {
@@ -15369,7 +17793,10 @@ const michiNoEkiGeoJSON = {
         "city": "岩国市",
         "address": "山口県岩国市錦町大字府谷117",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19599"
+        "url": "https://www.michi-no-eki.jp/stations/views/19599",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://pureline-nishiki.com/"
       }
     },
     {
@@ -15388,7 +17815,10 @@ const michiNoEkiGeoJSON = {
         "city": "美祢市",
         "address": "山口県美祢市於福町上4383-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19600"
+        "url": "https://www.michi-no-eki.jp/stations/views/19600",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.michinoeki-ofuku.jp/"
       }
     },
     {
@@ -15407,7 +17837,10 @@ const michiNoEkiGeoJSON = {
         "city": "美祢市",
         "address": "山口県美祢市美東町大田近光5480-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19601"
+        "url": "https://www.michi-no-eki.jp/stations/views/19601",
+        "businessHours": "8:00～18:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://michinoekimitou.blog.fc2.com/"
       }
     },
     {
@@ -15426,7 +17859,10 @@ const michiNoEkiGeoJSON = {
         "city": "山口市",
         "address": "山口県山口市仁保中郷1034",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19602"
+        "url": "https://www.michi-no-eki.jp/stations/views/19602",
+        "businessHours": "8:30～17:00 ＜休 毎週水曜日、12/31～1/3＞",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.nihonosato.com/"
       }
     },
     {
@@ -15445,7 +17881,10 @@ const michiNoEkiGeoJSON = {
         "city": "萩市",
         "address": "山口県萩市椿東4160-61",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19603"
+        "url": "https://www.michi-no-eki.jp/stations/views/19603",
+        "businessHours": "月~金9:30～18:00、土・日・祝9:00～18:00〔冬期11～2月は17:00閉館〕 ＜休 1/1・不定期に月１日程度(HPをご確認ください)＞",
+        "homepage": "https://seamart.jp/seamart/index.html",
+        "homepage2": "https://www.facebook.com/hagiseasaidmarket/"
       }
     },
     {
@@ -15464,7 +17903,10 @@ const michiNoEkiGeoJSON = {
         "city": "山口市",
         "address": "山口県山口市阿東徳佐上10002-116",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19604"
+        "url": "https://www.michi-no-eki.jp/stations/views/19604",
+        "businessHours": "9:00～21:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "https://www.ganjojuonsen.com/"
       }
     },
     {
@@ -15483,7 +17925,10 @@ const michiNoEkiGeoJSON = {
         "city": "萩市",
         "address": "山口県萩市大字片俣字円明1244-7",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19605"
+        "url": "https://www.michi-no-eki.jp/stations/views/19605",
+        "businessHours": "8:00～17:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": ""
       }
     },
     {
@@ -15502,7 +17947,10 @@ const michiNoEkiGeoJSON = {
         "city": "下関市",
         "address": "山口県下関市豊田町大字中村876-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19606"
+        "url": "https://www.michi-no-eki.jp/stations/views/19606",
+        "businessHours": "8:30～21:00〔施設により異なる〕＜休 毎月第4火曜日＞",
+        "homepage": "https://toyota-hotaru.com/",
+        "homepage2": ""
       }
     },
     {
@@ -15521,7 +17969,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "山口県山口市阿知須10509-88",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19607"
+        "url": "https://www.michi-no-eki.jp/stations/views/19607",
+        "businessHours": "8:30～18:00〔施設により異なる〕",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://kiraraajisu.jp/"
       }
     },
     {
@@ -15540,7 +17991,10 @@ const michiNoEkiGeoJSON = {
         "city": "萩市",
         "address": "山口県萩市三見1028-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19608"
+        "url": "https://www.michi-no-eki.jp/stations/views/19608",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "https://www.akeishi.net"
       }
     },
     {
@@ -15559,7 +18013,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "山口県下関市豊北町大字神田上314-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19609"
+        "url": "https://www.michi-no-eki.jp/stations/views/19609",
+        "businessHours": "8:30～18:00（7～8月は19:00まで、12～2月は17:00まで）",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://michinoeki-houhoku.jp/"
       }
     },
     {
@@ -15578,7 +18035,10 @@ const michiNoEkiGeoJSON = {
         "city": "周南市",
         "address": "周南市大字戸田2713",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19610"
+        "url": "https://www.michi-no-eki.jp/stations/views/19610",
+        "businessHours": "8:00～20:00",
+        "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "homepage2": "http://www.solene.jp/"
       }
     },
     {
@@ -15597,7 +18057,10 @@ const michiNoEkiGeoJSON = {
         "city": "上関町",
         "address": "山口県熊毛郡上関町大字室津904-15",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19611"
+        "url": "https://www.michi-no-eki.jp/stations/views/19611",
+        "businessHours": "9:00～18:00＜休 1/1～3＞",
+        "homepage": "http://www.kaminoseki-kaikyo.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -15616,7 +18079,10 @@ const michiNoEkiGeoJSON = {
         "city": "つるぎ町",
         "address": "徳島県美馬郡つるぎ町貞光字大須賀11-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19612"
+        "url": "https://www.michi-no-eki.jp/stations/views/19612",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.tsurugi-eetoko.com/yuyukan",
+        "homepage2": "https://www.tsurugi-eetoko.com/yuyukan"
       }
     },
     {
@@ -15635,7 +18101,10 @@ const michiNoEkiGeoJSON = {
         "city": "那賀町",
         "address": "徳島県那賀郡那賀町和食字田野89",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19613"
+        "url": "https://www.michi-no-eki.jp/stations/views/19613",
+        "businessHours": "7:10～17:40（12～2月は8:00～17:20）",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to02_washinosato.html",
+        "homepage2": "https://www.sk-michinoeki.jp/michinoeki/315"
       }
     },
     {
@@ -15654,7 +18123,10 @@ const michiNoEkiGeoJSON = {
         "city": "海陽町",
         "address": "徳島県海部郡海陽町久保字板取219-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19614"
+        "url": "https://www.michi-no-eki.jp/stations/views/19614",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to03_shishikui.html",
+        "homepage2": "https://www.kaiyo-kankou.jp/spots/spots-1321/"
       }
     },
     {
@@ -15673,7 +18145,10 @@ const michiNoEkiGeoJSON = {
         "city": "阿波市",
         "address": "徳島県阿波市土成町宮川内字平間28-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19615"
+        "url": "https://www.michi-no-eki.jp/stations/views/19615",
+        "businessHours": "10:00～17:30",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to04_donari.html",
+        "homepage2": "http://donari.net/"
       }
     },
     {
@@ -15692,7 +18167,10 @@ const michiNoEkiGeoJSON = {
         "city": "三好市",
         "address": "徳島県三好市西祖谷山村尾井ノ内348-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19616"
+        "url": "https://www.michi-no-eki.jp/stations/views/19616",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to05_nishiiya.html",
+        "homepage2": "https://miyoshi-tourism.jp/travel/road-side-sation-nishi-iya/"
       }
     },
     {
@@ -15711,7 +18189,10 @@ const michiNoEkiGeoJSON = {
         "city": "那賀町",
         "address": "徳島県那賀郡那賀町中山字関ヶ原34-56",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19617"
+        "url": "https://www.michi-no-eki.jp/stations/views/19617",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to06_wajiki.html",
+        "homepage2": "https://www.sk-michinoeki.jp/michinoeki/323"
       }
     },
     {
@@ -15730,7 +18211,10 @@ const michiNoEkiGeoJSON = {
         "city": "阿南市",
         "address": "徳島県阿南市那賀川町工地803",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19618"
+        "url": "https://www.michi-no-eki.jp/stations/views/19618",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to07_nakagawa.html",
+        "homepage2": "https://nakaroadstation.wixsite.com/nakagawa"
       }
     },
     {
@@ -15749,7 +18233,10 @@ const michiNoEkiGeoJSON = {
         "city": "那賀町",
         "address": "徳島県那賀郡那賀町大久保字西納野4-7",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19619"
+        "url": "https://www.michi-no-eki.jp/stations/views/19619",
+        "businessHours": "10:00～22:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to08_momijigawa.html",
+        "homepage2": "http://momijigawa-spa.com/"
       }
     },
     {
@@ -15768,7 +18255,10 @@ const michiNoEkiGeoJSON = {
         "city": "神山町",
         "address": "徳島県名西郡神山町神領字西上角151-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19620"
+        "url": "https://www.michi-no-eki.jp/stations/views/19620",
+        "businessHours": "3～10月 9:00～18:00 11月～2月 9:00～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to09_kamiyama.html",
+        "homepage2": "http://kamiyama-spa.com/michi/"
       }
     },
     {
@@ -15787,7 +18277,10 @@ const michiNoEkiGeoJSON = {
         "city": "美馬市",
         "address": "徳島県美馬市脇町大字脇町55",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19621"
+        "url": "https://www.michi-no-eki.jp/stations/views/19621",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to10_udatsu.html",
+        "homepage2": "https://www.sk-michinoeki.jp/michinoeki/331"
       }
     },
     {
@@ -15806,7 +18299,10 @@ const michiNoEkiGeoJSON = {
         "city": "三好市",
         "address": "徳島県三好市三野町太刀野1909-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19622"
+        "url": "https://www.michi-no-eki.jp/stations/views/19622",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to11_mino.html",
+        "homepage2": "https://www.sk-michinoeki.jp/michinoeki/333"
       }
     },
     {
@@ -15825,7 +18321,10 @@ const michiNoEkiGeoJSON = {
         "city": "美波町",
         "address": "徳島県海部郡美波町奥河内字寺前493-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19623"
+        "url": "https://www.michi-no-eki.jp/stations/views/19623",
+        "businessHours": "【産直館】 9:30～17:30 定休日：毎週水曜 【物産館】9:00～17：30 無休",
+        "homepage": "",
+        "homepage2": "https://sites.google.com/view/michinoeki-hiwasa/"
       }
     },
     {
@@ -15844,7 +18343,10 @@ const michiNoEkiGeoJSON = {
         "city": "鳴門市",
         "address": "徳島県鳴門市大麻町桧字東山田53",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19624"
+        "url": "https://www.michi-no-eki.jp/stations/views/19624",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to13_daiku.html",
+        "homepage2": "http://www.city.naruto.tokushima.jp/contents/michino_eki/"
       }
     },
     {
@@ -15863,7 +18365,10 @@ const michiNoEkiGeoJSON = {
         "city": "三好市",
         "address": "徳島県三好市山城町上名1553-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19625"
+        "url": "https://www.michi-no-eki.jp/stations/views/19625",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to14_ooboke.html",
+        "homepage2": "https://yamashiro-info.jp/"
       }
     },
     {
@@ -15882,7 +18387,10 @@ const michiNoEkiGeoJSON = {
         "city": "勝浦町",
         "address": "徳島県勝浦郡勝浦町大字生名字月ノ瀬4-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19626"
+        "url": "https://www.michi-no-eki.jp/stations/views/19626",
+        "businessHours": "9:00～18:00 第四月曜日定休日（祝日の場合は営業、翌火曜日が定休日）",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to15_katsuura.html",
+        "homepage2": "http://hinanosato.wp.xdomain.jp/"
       }
     },
     {
@@ -15901,7 +18409,10 @@ const michiNoEkiGeoJSON = {
         "city": "坂出市",
         "address": "香川県坂出市番の州緑町6-13",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19627"
+        "url": "https://www.michi-no-eki.jp/stations/views/19627",
+        "businessHours": "9:00～16:30",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka01_setooohashi.html",
+        "homepage2": "http://www.setoohhashi.com/"
       }
     },
     {
@@ -15920,7 +18431,10 @@ const michiNoEkiGeoJSON = {
         "city": "さぬき市",
         "address": "香川県さぬき市津田町津田103-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19628"
+        "url": "https://www.michi-no-eki.jp/stations/views/19628",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka02_tsuda.html",
+        "homepage2": "http://www.sanuki-sa.jp/station/"
       }
     },
     {
@@ -15939,7 +18453,10 @@ const michiNoEkiGeoJSON = {
         "city": "観音寺市",
         "address": "香川県観音寺市有明町3-37",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19629"
+        "url": "https://www.michi-no-eki.jp/stations/views/19629",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka03_kotohiki.html",
+        "homepage2": "http://kanonji-kankou.jp/buy/08/002.html"
       }
     },
     {
@@ -15958,7 +18475,10 @@ const michiNoEkiGeoJSON = {
         "city": "三豊市",
         "address": "香川県三豊市三野町大見乙74",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19630"
+        "url": "https://www.michi-no-eki.jp/stations/views/19630",
+        "businessHours": "8:30～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka04_mino.html",
+        "homepage2": "http://www.park-mino.info/"
       }
     },
     {
@@ -15977,7 +18497,10 @@ const michiNoEkiGeoJSON = {
         "city": "小豆島町",
         "address": "香川県小豆郡小豆島町西村甲1941-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19631"
+        "url": "https://www.michi-no-eki.jp/stations/views/19631",
+        "businessHours": "8:30～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka05_olive.html",
+        "homepage2": "http://www.olive-pk.jp/"
       }
     },
     {
@@ -15996,7 +18519,10 @@ const michiNoEkiGeoJSON = {
         "city": "小豆島町",
         "address": "香川県小豆郡小豆島町室生2084-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19632"
+        "url": "https://www.michi-no-eki.jp/stations/views/19632",
+        "businessHours": "8:30～17:00 ※軽食は10：00～15：00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka06_furusato.html",
+        "homepage2": "http://www.shodoshima.jp/"
       }
     },
     {
@@ -16015,7 +18541,10 @@ const michiNoEkiGeoJSON = {
         "city": "まんのう町",
         "address": "香川県仲多度郡まんのう町追上424-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19633"
+        "url": "https://www.michi-no-eki.jp/stations/views/19633",
+        "businessHours": "8:00～17:30",
+        "homepage": "http://www.shioiri-onsen.jp/",
+        "homepage2": "https://www.skr.mlit.go.jp/road/rstation/eki/ka07_mominoki.html"
       }
     },
     {
@@ -16034,7 +18563,10 @@ const michiNoEkiGeoJSON = {
         "city": "さぬき市",
         "address": "香川県さぬき市大川町富田中3298-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19634"
+        "url": "https://www.michi-no-eki.jp/stations/views/19634",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka08_miroku.html",
+        "homepage2": "http://www.city.sanuki.kagawa.jp/sightseeing/shopping/michi_miroku"
       }
     },
     {
@@ -16053,7 +18585,10 @@ const michiNoEkiGeoJSON = {
         "city": "高松市",
         "address": "香川県高松市塩江町安原上東字塩江390-21",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19635"
+        "url": "https://www.michi-no-eki.jp/stations/views/19635",
+        "businessHours": "8:00～18:00",
+        "homepage": "http://www.skr.mlit.go.jp/road/rstation/eki/ka09_shionoe.html",
+        "homepage2": "https://www.sk-michinoeki.jp/michinoeki/359"
       }
     },
     {
@@ -16072,7 +18607,10 @@ const michiNoEkiGeoJSON = {
         "city": "綾川町",
         "address": "香川県綾歌郡綾川町滝宮字川西1578",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19636"
+        "url": "https://www.michi-no-eki.jp/stations/views/19636",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka10_takinomiya.html",
+        "homepage2": "https://michinoeki-takinomiya.com/"
       }
     },
     {
@@ -16091,7 +18629,10 @@ const michiNoEkiGeoJSON = {
         "city": "まんのう町",
         "address": "香川県仲多度郡まんのう町川東2355-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19637"
+        "url": "https://www.michi-no-eki.jp/stations/views/19637",
+        "businessHours": "9:00～20:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka11_kotonami.html",
+        "homepage2": "http://e-mikado.jp/"
       }
     },
     {
@@ -16110,7 +18651,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "香川県綾歌郡宇多津町浜一番丁4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19638"
+        "url": "https://www.michi-no-eki.jp/stations/views/19638",
+        "businessHours": "9:00～21:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka12_utadu.html",
+        "homepage2": "http://www.uplaza-utazu.jp/umihotaru/"
       }
     },
     {
@@ -16129,7 +18673,10 @@ const michiNoEkiGeoJSON = {
         "city": "観音寺市",
         "address": "香川県観音寺市豊浜町箕浦字大西甲2506",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19639"
+        "url": "https://www.michi-no-eki.jp/stations/views/19639",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://michitoyo-oh.com/",
+        "homepage2": ""
       }
     },
     {
@@ -16148,7 +18695,10 @@ const michiNoEkiGeoJSON = {
         "city": "三豊市",
         "address": "香川県三豊市財田町財田上108-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19640"
+        "url": "https://www.michi-no-eki.jp/stations/views/19640",
+        "businessHours": "8:00～18:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka14_saita.html",
+        "homepage2": "http://www.takaradanosato.co.jp/hp/"
       }
     },
     {
@@ -16167,7 +18717,10 @@ const michiNoEkiGeoJSON = {
         "city": "土庄町",
         "address": "香川県小豆郡土庄町小海甲909-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19641"
+        "url": "https://www.michi-no-eki.jp/stations/views/19641",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.town.tonosho.kagawa.jp/gyosei/soshiki/shogai/4/505.html",
+        "homepage2": "https://www.skr.mlit.go.jp/road/rstation/eki/ka15_oosaka.html"
       }
     },
     {
@@ -16186,7 +18739,10 @@ const michiNoEkiGeoJSON = {
         "city": "さぬき市",
         "address": "香川県さぬき市前山940-12",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19642"
+        "url": "https://www.michi-no-eki.jp/stations/views/19642",
+        "businessHours": "8:00～16:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka16_nagao.html",
+        "homepage2": ""
       }
     },
     {
@@ -16205,7 +18761,10 @@ const michiNoEkiGeoJSON = {
         "city": "高松市",
         "address": "香川県高松市香南町横井997-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19643"
+        "url": "https://www.michi-no-eki.jp/stations/views/19643",
+        "businessHours": "10:00～23:00",
+        "homepage": "http://www.skr.mlit.go.jp/road/rstation/eki/ka17_kounan.html",
+        "homepage2": "http://www.souyu.co.jp/kounan/"
       }
     },
     {
@@ -16224,7 +18783,10 @@ const michiNoEkiGeoJSON = {
         "city": "高松市",
         "address": "香川県高松市牟礼町原631-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19644"
+        "url": "https://www.michi-no-eki.jp/stations/views/19644",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.genpei-mure.jp",
+        "homepage2": "http://www.skr.mlit.go.jp/road/rstation/eki/ka18_mure.html"
       }
     },
     {
@@ -16243,7 +18805,10 @@ const michiNoEkiGeoJSON = {
         "city": "西宇和郡伊方町",
         "address": "愛媛県西宇和郡伊方町塩成乙293",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19645"
+        "url": "https://www.michi-no-eki.jp/stations/views/19645",
+        "businessHours": "9:30～17:00",
+        "homepage": "https://sadamisakihanto-museum.jp/",
+        "homepage2": "https://www.town.ikata.ehime.jp/site/sadamisakihakubutukan/"
       }
     },
     {
@@ -16262,7 +18827,10 @@ const michiNoEkiGeoJSON = {
         "city": "新居浜市",
         "address": "愛媛県新居浜市立川町707-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19646"
+        "url": "https://www.michi-no-eki.jp/stations/views/19646",
+        "businessHours": "9:00～22:00（施設により異なる）",
+        "homepage": "https://besshi.com/",
+        "homepage2": "https://www.skr.mlit.go.jp/road/rstation/eki/eh02_besshi.html"
       }
     },
     {
@@ -16281,7 +18849,10 @@ const michiNoEkiGeoJSON = {
         "city": "北宇和郡鬼北町",
         "address": "愛媛県北宇和郡鬼北町大字下鍵山54",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19647"
+        "url": "https://www.michi-no-eki.jp/stations/views/19647",
+        "businessHours": "8:30～19:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh03_hiyoshi.html",
+        "homepage2": "http://www.hiyoshiyumesanchi.com/"
       }
     },
     {
@@ -16300,7 +18871,10 @@ const michiNoEkiGeoJSON = {
         "city": "砥部町",
         "address": "愛媛県伊予郡砥部町総津162-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19648"
+        "url": "https://www.michi-no-eki.jp/stations/views/19648",
+        "businessHours": "8:30～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh04_hirota.html",
+        "homepage2": ""
       }
     },
     {
@@ -16319,7 +18893,10 @@ const michiNoEkiGeoJSON = {
         "city": "伊予市",
         "address": "愛媛県伊予市双海町高岸甲2326",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19649"
+        "url": "https://www.michi-no-eki.jp/stations/views/19649",
+        "businessHours": "9:00～18:00（レストラン11:00～18:00） 定休日：第3火曜日（7・8月は無休）",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh05_futami.html",
+        "homepage2": "https://www.futamiseaside.com/"
       }
     },
     {
@@ -16338,7 +18915,10 @@ const michiNoEkiGeoJSON = {
         "city": "喜多郡内子町",
         "address": "愛媛県喜多郡内子町内子2452",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19650"
+        "url": "https://www.michi-no-eki.jp/stations/views/19650",
+        "businessHours": "直売所8：00～17：00（施設・季節により変動あり）",
+        "homepage": "https://www.karari.jp/",
+        "homepage2": "https://www.skr.mlit.go.jp/road/rstation/eki/eh06_uchiko.html"
       }
     },
     {
@@ -16357,7 +18937,10 @@ const michiNoEkiGeoJSON = {
         "city": "伊方町",
         "address": "愛媛県西宇和郡伊方町九町字3番耕地179-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19651"
+        "url": "https://www.michi-no-eki.jp/stations/views/19651",
+        "businessHours": "9:00～17:30",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh07_ikata.html",
+        "homepage2": "http://www.kirarakan.com/"
       }
     },
     {
@@ -16376,7 +18959,10 @@ const michiNoEkiGeoJSON = {
         "city": "西予市",
         "address": "愛媛県西予市城川町下相1008-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19652"
+        "url": "https://www.michi-no-eki.jp/stations/views/19652",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh08_shirokawa.html",
+        "homepage2": "https://www.shirokawa.jp/kinahaiya/"
       }
     },
     {
@@ -16395,7 +18981,10 @@ const michiNoEkiGeoJSON = {
         "city": "南宇和郡愛南町",
         "address": "愛媛県南宇和郡愛南町御荘平城4296-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19653"
+        "url": "https://www.michi-no-eki.jp/stations/views/19653",
+        "businessHours": "8:00～17:30",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh09_misyou.html",
+        "homepage2": "http://m-mic.jp/index.html"
       }
     },
     {
@@ -16414,7 +19003,10 @@ const michiNoEkiGeoJSON = {
         "city": "今治市",
         "address": "愛媛県今治市長沢甲252-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19654"
+        "url": "https://www.michi-no-eki.jp/stations/views/19654",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh10_imabari.html",
+        "homepage2": "https://www.yunoura.com/"
       }
     },
     {
@@ -16433,7 +19025,10 @@ const michiNoEkiGeoJSON = {
         "city": "北宇和郡松野町",
         "address": "愛媛県北宇和郡松野町延野々1510-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19655"
+        "url": "https://www.michi-no-eki.jp/stations/views/19655",
+        "businessHours": "10:00～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh11_matsuno.html",
+        "homepage2": "http://morinokuni.or.jp/"
       }
     },
     {
@@ -16452,7 +19047,10 @@ const michiNoEkiGeoJSON = {
         "city": "鬼北町",
         "address": "愛媛県北宇和郡鬼北町大字永野市138-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19656"
+        "url": "https://www.michi-no-eki.jp/stations/views/19656",
+        "businessHours": "9:00～17:30(時短営業中)",
+        "homepage": "https://www.sankaku-boushi.com/",
+        "homepage2": "https://www.skr.mlit.go.jp/road/rstation/eki/eh12_hiromi.html"
       }
     },
     {
@@ -16471,7 +19069,10 @@ const michiNoEkiGeoJSON = {
         "city": "今治市",
         "address": "愛媛県今治市伯方町叶浦甲1668-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19657"
+        "url": "https://www.michi-no-eki.jp/stations/views/19657",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh13_hakata.html",
+        "homepage2": "https://imabari-shimanami.jp/hakata/"
       }
     },
     {
@@ -16490,7 +19091,10 @@ const michiNoEkiGeoJSON = {
         "city": "今治市",
         "address": "愛媛県今治市上浦町井口9180-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19658"
+        "url": "https://www.michi-no-eki.jp/stations/views/19658",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh14_tatara.html",
+        "homepage2": "https://imabari-shimanami.jp/tatara/"
       }
     },
     {
@@ -16509,7 +19113,10 @@ const michiNoEkiGeoJSON = {
         "city": "今治市",
         "address": "愛媛県今治市大三島町宮浦3260",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19659"
+        "url": "https://www.michi-no-eki.jp/stations/views/19659",
+        "businessHours": "8:30～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh15_mishima.html",
+        "homepage2": "http://www.mishima-eki.jp"
       }
     },
     {
@@ -16528,7 +19135,10 @@ const michiNoEkiGeoJSON = {
         "city": "西条市",
         "address": "愛媛県西条市小松町新屋敷乙22-29",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19660"
+        "url": "https://www.michi-no-eki.jp/stations/views/19660",
+        "businessHours": "9:00～19:00",
+        "homepage": "https://www.city.saijo.ehime.jp/soshiki/kanko/oashisu.html",
+        "homepage2": "https://store.montbell.jp/common/system/information/disp.php?c=5&id=316"
       }
     },
     {
@@ -16547,7 +19157,10 @@ const michiNoEkiGeoJSON = {
         "city": "久万高原町",
         "address": "愛媛県上浮穴郡久万高原町上黒岩2840-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19661"
+        "url": "https://www.michi-no-eki.jp/stations/views/19661",
+        "businessHours": "8:00～18:00",
+        "homepage": "https://michinoeki-mikawa.com",
+        "homepage2": ""
       }
     },
     {
@@ -16566,7 +19179,10 @@ const michiNoEkiGeoJSON = {
         "city": "大洲市",
         "address": "愛媛県大洲市肱川町宇和川3030",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19662"
+        "url": "https://www.michi-no-eki.jp/stations/views/19662",
+        "businessHours": "8:00～18:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh18_hijikawa.html",
+        "homepage2": "https://seiryuunosato-hijikawa.co.jp/"
       }
     },
     {
@@ -16585,7 +19201,10 @@ const michiNoEkiGeoJSON = {
         "city": "今治市",
         "address": "愛媛県今治市吉海町名4520-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19663"
+        "url": "https://www.michi-no-eki.jp/stations/views/19663",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh19_yoshiumi.html",
+        "homepage2": "https://imabari-shimanami.jp/ikiiki/"
       }
     },
     {
@@ -16604,7 +19223,10 @@ const michiNoEkiGeoJSON = {
         "city": "松山市",
         "address": "愛媛県松山市大浦119",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19664"
+        "url": "https://www.michi-no-eki.jp/stations/views/19664",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh20_fuwari.html",
+        "homepage2": "http://www.fuwari.or.jp/"
       }
     },
     {
@@ -16623,7 +19245,10 @@ const michiNoEkiGeoJSON = {
         "city": "宇和島市",
         "address": "愛媛県宇和島市三間町務田180-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19665"
+        "url": "https://www.michi-no-eki.jp/stations/views/19665",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh21_mima.html",
+        "homepage2": "http://www.michinoekimima.jp/"
       }
     },
     {
@@ -16642,7 +19267,10 @@ const michiNoEkiGeoJSON = {
         "city": "内子町",
         "address": "愛媛県喜多郡内子町寺村251-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19666"
+        "url": "https://www.michi-no-eki.jp/stations/views/19666",
+        "businessHours": "8:00〜18:00（4月〜9月）、8:00〜17:30（10月〜3月）",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh22_oda.html",
+        "homepage2": "http://www.odamachi.com/"
       }
     },
     {
@@ -16661,7 +19289,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "愛媛県宇和島市弁天町1-318-16",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19667"
+        "url": "https://www.michi-no-eki.jp/stations/views/19667",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh23_uwajima.html",
+        "homepage2": "http://www.kisaiyahiroba.com/"
       }
     },
     {
@@ -16680,7 +19311,10 @@ const michiNoEkiGeoJSON = {
         "city": "四国中央市",
         "address": "愛媛県四国中央市新宮町馬立4491-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19668"
+        "url": "https://www.michi-no-eki.jp/stations/views/19668",
+        "businessHours": "10:00～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh24_kirinomori.html",
+        "homepage2": "http://www.kirinomori.co.jp/"
       }
     },
     {
@@ -16699,7 +19333,10 @@ const michiNoEkiGeoJSON = {
         "city": "八幡浜市",
         "address": "愛媛県八幡浜市字沖新田1581-23",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19669"
+        "url": "https://www.michi-no-eki.jp/stations/views/19669",
+        "businessHours": "9:00～21:30",
+        "homepage": "https://www.minatto.net/",
+        "homepage2": "https://www.skr.mlit.go.jp/road/rstation/eki/eh25_yawatahama.html"
       }
     },
     {
@@ -16713,12 +19350,15 @@ const michiNoEkiGeoJSON = {
       },
       "properties": {
         "id": "19670",
-        "name": "道の駅津島やすらぎの里",
+        "name": "道の駅津島熱田温泉",
         "prefecture": "愛媛県",
         "city": "宇和島市",
         "address": "愛媛県宇和島市津島町高田830-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19670"
+        "url": "https://www.michi-no-eki.jp/stations/views/19670",
+        "businessHours": "【特産品販売所】8:00～18:00（17:00 冬時間） 【温泉施設】10:00～22：00 【レストラン】11：00～21：00",
+        "homepage": "https://tsushima-atsuta-onsen.com/",
+        "homepage2": "https://tsushima-atsuta-onsen.com/"
       }
     },
     {
@@ -16737,7 +19377,10 @@ const michiNoEkiGeoJSON = {
         "city": "西予市",
         "address": "愛媛県西予市宇和町稲生118",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19671"
+        "url": "https://www.michi-no-eki.jp/stations/views/19671",
+        "businessHours": "8:00～18:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh27_donburikan.html",
+        "homepage2": "https://www.donburikan.com/"
       }
     },
     {
@@ -16756,7 +19399,10 @@ const michiNoEkiGeoJSON = {
         "city": "久万高原町",
         "address": "愛媛県上浮穴郡久万高原町入野1855-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19672"
+        "url": "https://www.michi-no-eki.jp/stations/views/19672",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh28_sansan.html",
+        "homepage2": "http://www.kumakogen-sansan.com/"
       }
     },
     {
@@ -16775,7 +19421,10 @@ const michiNoEkiGeoJSON = {
         "city": "長岡郡大豊町",
         "address": "高知県長岡郡大豊町杉743-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19673"
+        "url": "https://www.michi-no-eki.jp/stations/views/19673",
+        "businessHours": "8:00～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko01_oosugi.html",
+        "homepage2": ""
       }
     },
     {
@@ -16794,7 +19443,10 @@ const michiNoEkiGeoJSON = {
         "city": "宿毛市",
         "address": "高知県宿毛市小筑紫町田ノ浦1244-10",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19674"
+        "url": "https://www.michi-no-eki.jp/stations/views/19674",
+        "businessHours": "08:30～17:30",
+        "homepage": "https://sunnysidepark.net/",
+        "homepage2": ""
       }
     },
     {
@@ -16813,7 +19465,10 @@ const michiNoEkiGeoJSON = {
         "city": "大月町",
         "address": "高知県幡多郡大月町弘見2610",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19675"
+        "url": "https://www.michi-no-eki.jp/stations/views/19675",
+        "businessHours": "産直市 8:30～18:00 お土産売場 9：30～17：30",
+        "homepage": "https://www.facebook.com/furepa.otsuki/",
+        "homepage2": "https://www.furepa.jp/"
       }
     },
     {
@@ -16832,7 +19487,10 @@ const michiNoEkiGeoJSON = {
         "city": "四万十町",
         "address": "高知県高岡郡四万十町大正16-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19676"
+        "url": "https://www.michi-no-eki.jp/stations/views/19676",
+        "businessHours": "8:30～17:00",
+        "homepage": "https://www.google.co.jp/maps/place/%E9%81%93%E3%81%AE%E9%A7%85+%E5%9B%9B%E4%B8%87%E5%8D%81%E5%A4%A7%E6%AD%A3/@33.1969167,132.9838962,13z/data=!4m5!3m4!1s0x354f0e4f85ac352d:0xbf32dad9bc8fdbb9!8m2!3d33.1822182!4d132.9716401?hl=ja&authuser=0",
+        "homepage2": "https://www.town.shimanto.lg.jp/sisetuinfo/kankoshisetu.php"
       }
     },
     {
@@ -16851,7 +19509,10 @@ const michiNoEkiGeoJSON = {
         "city": "高岡郡梼原町",
         "address": "高知県高岡郡梼原町太郎川3785",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19677"
+        "url": "https://www.michi-no-eki.jp/stations/views/19677",
+        "businessHours": "8:30～17:30",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko05_yusuhara.html",
+        "homepage2": ""
       }
     },
     {
@@ -16870,7 +19531,10 @@ const michiNoEkiGeoJSON = {
         "city": "南国市",
         "address": "高知県南国市左右山102-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19678"
+        "url": "https://www.michi-no-eki.jp/stations/views/19678",
+        "businessHours": "8:00～18:00（定休日は施設により異なる）",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko06_nankoku.html",
+        "homepage2": "http://furari.com/"
       }
     },
     {
@@ -16889,7 +19553,10 @@ const michiNoEkiGeoJSON = {
         "city": "香美市",
         "address": "高知県香美市香北町美良布1211",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19679"
+        "url": "https://www.michi-no-eki.jp/stations/views/19679",
+        "businessHours": "7:00～18:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko07_birafu.html",
+        "homepage2": ""
       }
     },
     {
@@ -16908,7 +19575,10 @@ const michiNoEkiGeoJSON = {
         "city": "高岡郡津野町",
         "address": "高知県高岡郡津野町船戸654-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19680"
+        "url": "https://www.michi-no-eki.jp/stations/views/19680",
+        "businessHours": "9:00～17:30",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko08_fusegasaka.html",
+        "homepage2": ""
       }
     },
     {
@@ -16927,7 +19597,10 @@ const michiNoEkiGeoJSON = {
         "city": "室戸市",
         "address": "高知県室戸市吉良川町丙890-11",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19681"
+        "url": "https://www.michi-no-eki.jp/stations/views/19681",
+        "businessHours": "9:00～17:00（レストラン10:00～20:00）",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko09_muroto.html",
+        "homepage2": "http://www.kiramesse-muroto.jp/"
       }
     },
     {
@@ -16946,7 +19619,10 @@ const michiNoEkiGeoJSON = {
         "city": "いの町",
         "address": "高知県吾川郡いの町鹿敷1226",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19682"
+        "url": "https://www.michi-no-eki.jp/stations/views/19682",
+        "businessHours": "9:00～21:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko10_tosawashi.html",
+        "homepage2": "http://www.qraud-kochi.jp/"
       }
     },
     {
@@ -16965,7 +19641,10 @@ const michiNoEkiGeoJSON = {
         "city": "土佐町",
         "address": "高知県土佐郡土佐町田井字桜ヶ内448-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19683"
+        "url": "https://www.michi-no-eki.jp/stations/views/19683",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko11_sameura.html",
+        "homepage2": "http://www.tosa-sameura.com/"
       }
     },
     {
@@ -16984,7 +19663,10 @@ const michiNoEkiGeoJSON = {
         "city": "安芸市",
         "address": "高知県安芸市下山字黒ハエ1400",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19684"
+        "url": "https://www.michi-no-eki.jp/stations/views/19684",
+        "businessHours": "9:00～17:00（ランチタイム11:00～14:00）",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko12_ooyama.html",
+        "homepage2": ""
       }
     },
     {
@@ -17003,7 +19685,10 @@ const michiNoEkiGeoJSON = {
         "city": "須崎市",
         "address": "高知県須崎市下分甲263-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19685"
+        "url": "https://www.michi-no-eki.jp/stations/views/19685",
+        "businessHours": "1F 9:00～17:30、2Fレストラン 11:00～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko13_susaki.html",
+        "homepage2": "http://michinoeki-susaki.com/"
       }
     },
     {
@@ -17022,7 +19707,10 @@ const michiNoEkiGeoJSON = {
         "city": "四万十町",
         "address": "高知県高岡郡四万十町平串284-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19686"
+        "url": "https://www.michi-no-eki.jp/stations/views/19686",
+        "businessHours": "8:00～18:00",
+        "homepage": "http://www.aguri-kubokawa.co.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -17041,7 +19729,10 @@ const michiNoEkiGeoJSON = {
         "city": "吾川郡いの町",
         "address": "高知県吾川郡いの町桑瀬225-24",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19687"
+        "url": "https://www.michi-no-eki.jp/stations/views/19687",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko15_konoka.html",
+        "homepage2": ""
       }
     },
     {
@@ -17060,7 +19751,10 @@ const michiNoEkiGeoJSON = {
         "city": "土佐清水市",
         "address": "高知県土佐清水市三崎字西シリソメ671-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19688"
+        "url": "https://www.michi-no-eki.jp/stations/views/19688",
+        "businessHours": "8:30～17:30",
+        "homepage": "https://mejikanosato.com/",
+        "homepage2": "https://www.skr.mlit.go.jp/road/rstation/eki/ko16_tosashimizu.html"
       }
     },
     {
@@ -17079,7 +19773,10 @@ const michiNoEkiGeoJSON = {
         "city": "香南市",
         "address": "高知県香南市夜須町千切537-90",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19689"
+        "url": "https://www.michi-no-eki.jp/stations/views/19689",
+        "businessHours": "8:00～21:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko17_yasu.html",
+        "homepage2": "http://yasea.jp/"
       }
     },
     {
@@ -17098,7 +19795,10 @@ const michiNoEkiGeoJSON = {
         "city": "いの町",
         "address": "高知県吾川郡いの町上八川甲1160-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19690"
+        "url": "https://www.michi-no-eki.jp/stations/views/19690",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko18_musasabi.html",
+        "homepage2": "http://www.633bi.com/"
       }
     },
     {
@@ -17117,7 +19817,10 @@ const michiNoEkiGeoJSON = {
         "city": "安芸郡田野町",
         "address": "高知県安芸郡田野町上島田1431-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19691"
+        "url": "https://www.michi-no-eki.jp/stations/views/19691",
+        "businessHours": "7:30～17:30",
+        "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko19_tano.html",
+        "homepage2": "http://www.tanoekiya.com/index.php"
       }
     },
     {
@@ -17136,7 +19839,10 @@ const michiNoEkiGeoJSON = {
         "city": "幡多郡黒潮町",
         "address": "高知県幡多郡黒潮町浮鞭953-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19692"
+        "url": "https://www.michi-no-eki.jp/stations/views/19692",
+        "businessHours": "7:00～18:00",
+        "homepage": "http://hinataya.biz/",
+        "homepage2": "https://www.instagram.com/bios619/"
       }
     },
     {
@@ -17155,7 +19861,10 @@ const michiNoEkiGeoJSON = {
         "city": "高岡郡四万十町",
         "address": "高知県高岡郡四万十町十和川口62-9",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19693"
+        "url": "https://www.michi-no-eki.jp/stations/views/19693",
+        "businessHours": "8:30~17:00",
+        "homepage": "https://toowashimanto.jp",
+        "homepage2": ""
       }
     },
     {
@@ -17174,7 +19883,10 @@ const michiNoEkiGeoJSON = {
         "city": "黒潮町",
         "address": "高知県幡多郡黒潮町佐賀1350",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19694"
+        "url": "https://www.michi-no-eki.jp/stations/views/19694",
+        "businessHours": "フードコート 9:00～15:00 (土日祝日は18:00まで) 直販所 8:00～18:00 テイクアウト 9:00～18:00",
+        "homepage": "https://www.instagram.com/nabura_tosasaga/?hl=ja",
+        "homepage2": "http://nabura-tosasaga.com/"
       }
     },
     {
@@ -17193,7 +19905,10 @@ const michiNoEkiGeoJSON = {
         "city": "朝倉市",
         "address": "福岡県朝倉市杷木久喜宮1663-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19695"
+        "url": "https://www.michi-no-eki.jp/stations/views/19695",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/harazuru/harazuru.html",
+        "homepage2": "http://www.fs-basaro.jp/"
       }
     },
     {
@@ -17212,7 +19927,10 @@ const michiNoEkiGeoJSON = {
         "city": "豊前市",
         "address": "福岡県豊前市大字四郎丸1041-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19696"
+        "url": "https://www.michi-no-eki.jp/stations/views/19696",
+        "businessHours": "8:00～19:00（11～3月は8:00～18:00）",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/buzen/buzen.html",
+        "homepage2": "http://www.okoshikake.jp/"
       }
     },
     {
@@ -17231,7 +19949,10 @@ const michiNoEkiGeoJSON = {
         "city": "東峰村",
         "address": "福岡県朝倉郡東峰村大字小石原941-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19697"
+        "url": "https://www.michi-no-eki.jp/stations/views/19697",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/koishiwara/koishiwara.html",
+        "homepage2": "http://www1.vill.toho.fukuoka.jp/info/prev.asp?fol_id=3840"
       }
     },
     {
@@ -17250,7 +19971,10 @@ const michiNoEkiGeoJSON = {
         "city": "上毛町",
         "address": "福岡県築上郡上毛町大字大ノ瀬304-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19698"
+        "url": "https://www.michi-no-eki.jp/stations/views/19698",
+        "businessHours": "8:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/shinyoshitomi/shinyoshitomi.html",
+        "homepage2": "http://www.isekimae.com/"
       }
     },
     {
@@ -17269,7 +19993,10 @@ const michiNoEkiGeoJSON = {
         "city": "うきは市",
         "address": "福岡県うきは市浮羽町山北729-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19699"
+        "url": "https://www.michi-no-eki.jp/stations/views/19699",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ukiha/ukiha.html",
+        "homepage2": "http://www.michinoeki-ukiha.com/"
       }
     },
     {
@@ -17288,7 +20015,10 @@ const michiNoEkiGeoJSON = {
         "city": "大牟田市",
         "address": "福岡県大牟田市四箇新町2-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19700"
+        "url": "https://www.michi-no-eki.jp/stations/views/19700",
+        "businessHours": "10:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/omuta/omuta.html",
+        "homepage2": "http://hanapluskan.com"
       }
     },
     {
@@ -17307,7 +20037,10 @@ const michiNoEkiGeoJSON = {
         "city": "八女市",
         "address": "福岡県八女市立花町下辺春315-１",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19701"
+        "url": "https://www.michi-no-eki.jp/stations/views/19701",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/tachibana/tachibana.html",
+        "homepage2": "http://www.mitinoeki-tachibana.com/"
       }
     },
     {
@@ -17326,7 +20059,10 @@ const michiNoEkiGeoJSON = {
         "city": "嘉麻市",
         "address": "福岡県嘉麻市上臼井328-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19702"
+        "url": "https://www.michi-no-eki.jp/stations/views/19702",
+        "businessHours": "9:00～18:30",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/usui/usui.html",
+        "homepage2": "http://michinoeki-usui.jp/"
       }
     },
     {
@@ -17345,7 +20081,10 @@ const michiNoEkiGeoJSON = {
         "city": "添田町",
         "address": "福岡県田川郡添田町大字野田1113-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19703"
+        "url": "https://www.michi-no-eki.jp/stations/views/19703",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/hikosan/hikosan.html",
+        "homepage2": "http://www.kanyuusya.com/"
       }
     },
     {
@@ -17364,7 +20103,10 @@ const michiNoEkiGeoJSON = {
         "city": "宗像市",
         "address": "福岡県宗像市江口1172",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19704"
+        "url": "https://www.michi-no-eki.jp/stations/views/19704",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/munakata/munakata.html",
+        "homepage2": "http://www.michinoekimunakata.co.jp/"
       }
     },
     {
@@ -17383,7 +20125,10 @@ const michiNoEkiGeoJSON = {
         "city": "久留米市",
         "address": "福岡県久留米市善導寺町木塚221-33",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19705"
+        "url": "https://www.michi-no-eki.jp/stations/views/19705",
+        "businessHours": "09:00～18:00",
+        "homepage": "http://www.michinoeki-kurume.com/",
+        "homepage2": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kurume/kurume.html"
       }
     },
     {
@@ -17402,7 +20147,10 @@ const michiNoEkiGeoJSON = {
         "city": "香春町",
         "address": "福岡県田川郡香春町大字鏡山1870-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19706"
+        "url": "https://www.michi-no-eki.jp/stations/views/19706",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kawara/kawara.html",
+        "homepage2": "http://michinoeki-kawara.jp/"
       }
     },
     {
@@ -17421,7 +20169,10 @@ const michiNoEkiGeoJSON = {
         "city": "大木町",
         "address": "福岡県三潴郡大木町大字横溝1331-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19707"
+        "url": "https://www.michi-no-eki.jp/stations/views/19707",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ooki/ooki.html",
+        "homepage2": "https://www.michinoekioki.com/"
       }
     },
     {
@@ -17440,7 +20191,10 @@ const michiNoEkiGeoJSON = {
         "city": "大任町",
         "address": "福岡県田川郡大任町大字今任原1339",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19708"
+        "url": "https://www.michi-no-eki.jp/stations/views/19708",
+        "businessHours": "9:00～18:30",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ootousakurakaidou/ootousakurakaidou.html",
+        "homepage2": "http://www.town.oto.fukuoka.jp/info/prev.asp?fol_id=1745"
       }
     },
     {
@@ -17459,7 +20213,10 @@ const michiNoEkiGeoJSON = {
         "city": "みやま市",
         "address": "福岡県みやま市瀬高町大江2328",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19709"
+        "url": "https://www.michi-no-eki.jp/stations/views/19709",
+        "businessHours": "9:00～18:00 （不定休）",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/miyama/miyama.html",
+        "homepage2": "http://www.michinoekimiyama.com/"
       }
     },
     {
@@ -17478,7 +20235,10 @@ const michiNoEkiGeoJSON = {
         "city": "糸田町",
         "address": "福岡県田川郡糸田町162-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19710"
+        "url": "https://www.michi-no-eki.jp/stations/views/19710",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/itoda/itoda.html",
+        "homepage2": "http://www.michinoekiitoda.jp/"
       }
     },
     {
@@ -17497,7 +20257,10 @@ const michiNoEkiGeoJSON = {
         "city": "鹿島市",
         "address": "佐賀県鹿島市大字音成甲4427-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19711"
+        "url": "https://www.michi-no-eki.jp/stations/views/19711",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kashima/kashima.html",
+        "homepage2": "http://michinoekikashima.jp/main/1.html"
       }
     },
     {
@@ -17516,7 +20279,10 @@ const michiNoEkiGeoJSON = {
         "city": "唐津市",
         "address": "佐賀県唐津市厳木町牧瀬692-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19712"
+        "url": "https://www.michi-no-eki.jp/stations/views/19712",
+        "businessHours": "8:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kyuragi/kyuragi.html",
+        "homepage2": "http://www.shokokai.or.jp/41/4120210109/index.htm"
       }
     },
     {
@@ -17535,7 +20301,10 @@ const michiNoEkiGeoJSON = {
         "city": "伊万里市",
         "address": "佐賀県伊万里市南波多町井手野2754-9",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19713"
+        "url": "https://www.michi-no-eki.jp/stations/views/19713",
+        "businessHours": "8:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/imari/imari.html",
+        "homepage2": "http://www.ihn.jp/~jaimari1/"
       }
     },
     {
@@ -17554,7 +20323,10 @@ const michiNoEkiGeoJSON = {
         "city": "唐津市",
         "address": "佐賀県唐津市鎮西町名護屋1859",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19714"
+        "url": "https://www.michi-no-eki.jp/stations/views/19714",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/momoyama/momoyama.html",
+        "homepage2": "https://momo-ten.com/"
       }
     },
     {
@@ -17573,7 +20345,10 @@ const michiNoEkiGeoJSON = {
         "city": "武雄市",
         "address": "佐賀県武雄市山内町大字三間坂甲14697-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19715"
+        "url": "https://www.michi-no-eki.jp/stations/views/19715",
+        "businessHours": "8:30～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/yamauchi/yamauchi.html",
+        "homepage2": "http://www.michinoeki-yamauchi.com/top.html"
       }
     },
     {
@@ -17592,7 +20367,10 @@ const michiNoEkiGeoJSON = {
         "city": "佐賀市",
         "address": "佐賀県佐賀市大和町大字梅野805",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19716"
+        "url": "https://www.michi-no-eki.jp/stations/views/19716",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/yamato/yamato.html",
+        "homepage2": "http://www.soyokazekan.com/"
       }
     },
     {
@@ -17611,7 +20389,10 @@ const michiNoEkiGeoJSON = {
         "city": "吉野ヶ里町",
         "address": "佐賀県神埼郡吉野ヶ里町松隈1710-11",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19717"
+        "url": "https://www.michi-no-eki.jp/stations/views/19717",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/yoshino/yoshino.html",
+        "homepage2": ""
       }
     },
     {
@@ -17630,7 +20411,10 @@ const michiNoEkiGeoJSON = {
         "city": "太良町",
         "address": "佐賀県藤津郡太良町大字伊福甲3488-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19718"
+        "url": "https://www.michi-no-eki.jp/stations/views/19718",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/tara/tara.html",
+        "homepage2": "https://www.tarafukukan.com/frmDefault.aspx"
       }
     },
     {
@@ -17649,7 +20433,10 @@ const michiNoEkiGeoJSON = {
         "city": "平戸市",
         "address": "長崎県平戸市生月町南免4375-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19719"
+        "url": "https://www.michi-no-eki.jp/stations/views/19719",
+        "businessHours": "8:30～17:30（8月は8:30～18:00）",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ikitsuki/ikitsuki.html",
+        "homepage2": "http://www.ikitsuki.net/kankou/baiten/index.html"
       }
     },
     {
@@ -17668,7 +20455,10 @@ const michiNoEkiGeoJSON = {
         "city": "南島原市",
         "address": "長崎県南島原市深江町丁6077",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19720"
+        "url": "https://www.michi-no-eki.jp/stations/views/19720",
+        "businessHours": "9:00～17:00",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -17687,7 +20477,10 @@ const michiNoEkiGeoJSON = {
         "city": "平戸市",
         "address": "長崎県平戸市田平町深月免521番地３",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19721"
+        "url": "https://www.michi-no-eki.jp/stations/views/19721",
+        "businessHours": "9:00～19:00 ＜休 12/31～1/2＞",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/tabira/tabira.html",
+        "homepage2": ""
       }
     },
     {
@@ -17706,7 +20499,10 @@ const michiNoEkiGeoJSON = {
         "city": "東彼杵町",
         "address": "長崎県東彼杵郡東彼杵町彼杵宿郷747-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19722"
+        "url": "https://www.michi-no-eki.jp/stations/views/19722",
+        "businessHours": "08:00～17:30（施設により異なる）＜休1/1～1/3、12/31＞ 物産 08:00～17:30 （野菜、弁当、お茶、くじら、土産品） 食堂 11:00～14:00 （田舎うどん、くじらだご汁、くじら釜めし） 屋台 09:00～16:00 （茶ちゃ焼、ソフトクリーム、水出しそのぎ茶）",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/sonogi/sonogi.html",
+        "homepage2": "http://www.sonogi.jp/kankou.html#michinoeki"
       }
     },
     {
@@ -17725,7 +20521,10 @@ const michiNoEkiGeoJSON = {
         "city": "西海市",
         "address": "長崎県西海市西海町木場郷488-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19723"
+        "url": "https://www.michi-no-eki.jp/stations/views/19723",
+        "businessHours": "9:00～18:00（4月～9月）、9:00～17:00（10月～3月） ＜休 12/31～1/1＞",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/saikai/saikai.html",
+        "homepage2": "http://www.saikaicity.jp/mikan/"
       }
     },
     {
@@ -17744,7 +20543,10 @@ const michiNoEkiGeoJSON = {
         "city": "長崎市",
         "address": "長崎県長崎市東出津町149-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19724"
+        "url": "https://www.michi-no-eki.jp/stations/views/19724",
+        "businessHours": "9:00～18:00（施設により異なる）",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/sotome/sotome.html",
+        "homepage2": "http://www.yuhigaoka-sotome.com/"
       }
     },
     {
@@ -17763,7 +20565,10 @@ const michiNoEkiGeoJSON = {
         "city": "松浦市",
         "address": "長崎県松浦市志佐町庄野免226-30",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19725"
+        "url": "https://www.michi-no-eki.jp/stations/views/19725",
+        "businessHours": "8:30～19:00（施設により異なる）",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/matuura/matuura.html",
+        "homepage2": "http://umihuru.com/"
       }
     },
     {
@@ -17782,7 +20587,10 @@ const michiNoEkiGeoJSON = {
         "city": "五島市",
         "address": "長崎県五島市三井楽町濱の畔3150-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19726"
+        "url": "https://www.michi-no-eki.jp/stations/views/19726",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kentoushi/kentoushi.html",
+        "homepage2": "https://kentoushi-furusatokan.com/"
       }
     },
     {
@@ -17801,7 +20609,10 @@ const michiNoEkiGeoJSON = {
         "city": "松浦市",
         "address": "長崎県松浦市鷹島町神崎免1636",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19727"
+        "url": "https://www.michi-no-eki.jp/stations/views/19727",
+        "businessHours": "8:30～18:30（10月～2月は8:30～18:00）",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/takarajima/takarajima.html",
+        "homepage2": "http://www.takarajima-rs.com/"
       }
     },
     {
@@ -17820,7 +20631,10 @@ const michiNoEkiGeoJSON = {
         "city": "小国町",
         "address": "熊本県阿蘇郡小国町大字宮原1754-17",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19728"
+        "url": "https://www.michi-no-eki.jp/stations/views/19728",
+        "businessHours": "8:30～17:00",
+        "homepage": "https://sites.google.com/view/yustation-oguni",
+        "homepage2": "https://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/oguni/oguni.html"
       }
     },
     {
@@ -17839,7 +20653,10 @@ const michiNoEkiGeoJSON = {
         "city": "阿蘇市",
         "address": "熊本県阿蘇市波野大字小地野1602",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19729"
+        "url": "https://www.michi-no-eki.jp/stations/views/19729",
+        "businessHours": "8:30～18:30",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/namino/namino.html",
+        "homepage2": "http://www.aso-kagura.com/"
       }
     },
     {
@@ -17858,7 +20675,10 @@ const michiNoEkiGeoJSON = {
         "city": "菊池市",
         "address": "熊本県菊池市旭志川辺1886",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19730"
+        "url": "https://www.michi-no-eki.jp/stations/views/19730",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kyokushi/kyokushi.html",
+        "homepage2": "https://www.kyokushi.com/"
       }
     },
     {
@@ -17877,7 +20697,10 @@ const michiNoEkiGeoJSON = {
         "city": "大津町",
         "address": "熊本県菊池郡大津町大字引水759",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19731"
+        "url": "https://www.michi-no-eki.jp/stations/views/19731",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ozu/ozu.html",
+        "homepage2": "http://blog.livedoor.jp/michiekiozu/"
       }
     },
     {
@@ -17896,7 +20719,10 @@ const michiNoEkiGeoJSON = {
         "city": "八代市",
         "address": "熊本県八代市坂本町荒瀬1239-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19732"
+        "url": "https://www.michi-no-eki.jp/stations/views/19732",
+        "businessHours": "10:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/sakamoto/sakamoto.html",
+        "homepage2": "https://www.sakamoto-kureon.com"
       }
     },
     {
@@ -17915,7 +20741,10 @@ const michiNoEkiGeoJSON = {
         "city": "宇城市",
         "address": "熊本県宇城市不知火町永尾1910-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19733"
+        "url": "https://www.michi-no-eki.jp/stations/views/19733",
+        "businessHours": "物産館 9:00～17:00 レストラン 11:00〜15:30",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/shiranui/shiranui.html",
+        "homepage2": "http://agripark-toyono.net/publics/index/22/"
       }
     },
     {
@@ -17934,7 +20763,10 @@ const michiNoEkiGeoJSON = {
         "city": "天草市",
         "address": "熊本県天草市有明町大字上津浦1955",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19734"
+        "url": "https://www.michi-no-eki.jp/stations/views/19734",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ariake/ariake.html",
+        "homepage2": "http://www.rippleland.com/"
       }
     },
     {
@@ -17953,7 +20785,10 @@ const michiNoEkiGeoJSON = {
         "city": "山鹿市",
         "address": "熊本県山鹿市鹿北町岩野4186-130",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19735"
+        "url": "https://www.michi-no-eki.jp/stations/views/19735",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kahoku/kahoku.html",
+        "homepage2": "http://www.ogurigou.co.jp/"
       }
     },
     {
@@ -17972,7 +20807,10 @@ const michiNoEkiGeoJSON = {
         "city": "菊池市",
         "address": "熊本県菊池市七城町岡田306",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19736"
+        "url": "https://www.michi-no-eki.jp/stations/views/19736",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/shichijyo/shichijyo.html",
+        "homepage2": "http://www.melondome.co.jp/"
       }
     },
     {
@@ -17991,7 +20829,10 @@ const michiNoEkiGeoJSON = {
         "city": "菊池市",
         "address": "熊本県菊池市泗水町豊水3167",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19737"
+        "url": "https://www.michi-no-eki.jp/stations/views/19737",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/shisui/shisui.html",
+        "homepage2": "http://t-sumi.xsrv.jp/youjou/"
       }
     },
     {
@@ -18010,7 +20851,10 @@ const michiNoEkiGeoJSON = {
         "city": "和水町",
         "address": "熊本県玉名郡和水町江田455",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19738"
+        "url": "https://www.michi-no-eki.jp/stations/views/19738",
+        "businessHours": "9:00～20:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kikusui/kikusui.html",
+        "homepage2": "http://kikusuiromankan.jp/"
       }
     },
     {
@@ -18029,7 +20873,10 @@ const michiNoEkiGeoJSON = {
         "city": "山都町",
         "address": "熊本県上益城郡山都町大平152",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19739"
+        "url": "https://www.michi-no-eki.jp/stations/views/19739",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/seiwa/seiwa.html",
+        "homepage2": "https://seiwabunraku.com/"
       }
     },
     {
@@ -18048,7 +20895,10 @@ const michiNoEkiGeoJSON = {
         "city": "山都町",
         "address": "熊本県上益城郡山都町下市184-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19740"
+        "url": "https://www.michi-no-eki.jp/stations/views/19740",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/tujyunkyo/tujyunkyo.html",
+        "homepage2": "https://ja-jp.facebook.com/%E9%81%93%E3%81%AE%E9%A7%85-%E9%80%9A%E6%BD%A4%E6%A9%8B-1426356767633904"
       }
     },
     {
@@ -18067,7 +20917,10 @@ const michiNoEkiGeoJSON = {
         "city": "氷川町",
         "address": "熊本県八代郡氷川町大野875-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19741"
+        "url": "https://www.michi-no-eki.jp/stations/views/19741",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ryuhoku/ryuhoku.html",
+        "homepage2": "http://www.michinoeki-ryuhoku.com/"
       }
     },
     {
@@ -18086,7 +20939,10 @@ const michiNoEkiGeoJSON = {
         "city": "錦町",
         "address": "熊本県球磨郡錦町大字一武字浦田1544-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19742"
+        "url": "https://www.michi-no-eki.jp/stations/views/19742",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://kurandmarket.com",
+        "homepage2": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/nishiki/nishiki.html"
       }
     },
     {
@@ -18105,7 +20961,10 @@ const michiNoEkiGeoJSON = {
         "city": "芦北町",
         "address": "熊本県葦北郡芦北町大字田浦657",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19743"
+        "url": "https://www.michi-no-eki.jp/stations/views/19743",
+        "businessHours": "9:00～19:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/tanoura/tanoura.html",
+        "homepage2": "http://www.otachimisaki.com/station/top.html"
       }
     },
     {
@@ -18124,7 +20983,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "熊本県球磨郡五木村甲2672-54",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19744"
+        "url": "https://www.michi-no-eki.jp/stations/views/19744",
+        "businessHours": "8:30～17:30",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/itsuki/itsuki.html",
+        "homepage2": "http://www.itsuki-bussan.net/"
       }
     },
     {
@@ -18143,7 +21005,10 @@ const michiNoEkiGeoJSON = {
         "city": "宇土市",
         "address": "熊本県宇土市下網田町3084-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19745"
+        "url": "https://www.michi-no-eki.jp/stations/views/19745",
+        "businessHours": "11月～2月 9：00～17：00 3月～10月 9：00～18：00 ※12月31日 9：00～15：00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/uto/uto.html",
+        "homepage2": "https://utomichieki.com/"
       }
     },
     {
@@ -18162,7 +21027,10 @@ const michiNoEkiGeoJSON = {
         "city": "阿蘇市",
         "address": "熊本県阿蘇市黒川1440-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19746"
+        "url": "https://www.michi-no-eki.jp/stations/views/19746",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.aso-denku.jp/",
+        "homepage2": "https://store.shopping.yahoo.co.jp/mitinoekiaso/"
       }
     },
     {
@@ -18181,7 +21049,10 @@ const michiNoEkiGeoJSON = {
         "city": "水俣市",
         "address": "熊本県水俣市月浦54-162",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19747"
+        "url": "https://www.michi-no-eki.jp/stations/views/19747",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://minamata.co.jp/index.html",
+        "homepage2": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/minamata/minamata.html"
       }
     },
     {
@@ -18200,7 +21071,10 @@ const michiNoEkiGeoJSON = {
         "city": "宇城市",
         "address": "熊本県宇城市松橋町久具757-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19748"
+        "url": "https://www.michi-no-eki.jp/stations/views/19748",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/uki/uki.html",
+        "homepage2": "http://ukisaikan.jp/"
       }
     },
     {
@@ -18219,7 +21093,10 @@ const michiNoEkiGeoJSON = {
         "city": "山都町",
         "address": "熊本県上益城郡山都町今297",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19749"
+        "url": "https://www.michi-no-eki.jp/stations/views/19749",
+        "businessHours": "9:00～17:00(定休日:水曜日)",
+        "homepage": "",
+        "homepage2": "https://soyokaze-park.jp/"
       }
     },
     {
@@ -18238,7 +21115,10 @@ const michiNoEkiGeoJSON = {
         "city": "芦北町",
         "address": "熊本県葦北郡芦北町大字天月1000",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19750"
+        "url": "https://www.michi-no-eki.jp/stations/views/19750",
+        "businessHours": "9:00～20:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/oonoonsen/oonoonsen.html",
+        "homepage2": ""
       }
     },
     {
@@ -18257,7 +21137,10 @@ const michiNoEkiGeoJSON = {
         "city": "美里町",
         "address": "熊本県下益城郡美里町佐俣705",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19751"
+        "url": "https://www.michi-no-eki.jp/stations/views/19751",
+        "businessHours": "〇直売所9:00～18:00 〇温泉10:00～21:00（最終受付20:30） 〇レストラン 11:30～15:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/misatosamatanoyu/misatosamatanoyu.html",
+        "homepage2": "http://samatanoyu-misato.jp/"
       }
     },
     {
@@ -18276,7 +21159,10 @@ const michiNoEkiGeoJSON = {
         "city": "豊後大野市",
         "address": "大分県豊後大野市緒方町原尻936-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19752"
+        "url": "https://www.michi-no-eki.jp/stations/views/19752",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/harajiri/harajiri.html",
+        "homepage2": "http://www.ogatakanko.com/eki/index.html"
       }
     },
     {
@@ -18295,7 +21181,10 @@ const michiNoEkiGeoJSON = {
         "city": "佐伯市",
         "address": "大分県佐伯市宇目大字南田原2513-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19753"
+        "url": "https://www.michi-no-eki.jp/stations/views/19753",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ume/ume.html",
+        "homepage2": "http://saiki-kankou.com/ume/2014/03/1381"
       }
     },
     {
@@ -18314,7 +21203,10 @@ const michiNoEkiGeoJSON = {
         "city": "竹田市",
         "address": "大分県竹田市大字米納663-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19754"
+        "url": "https://www.michi-no-eki.jp/stations/views/19754",
+        "businessHours": "8:30～17:30",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/takeda/takeda.html",
+        "homepage2": "http://www.taketa-wakaba.jp/shop/shop1.html"
       }
     },
     {
@@ -18333,7 +21225,10 @@ const michiNoEkiGeoJSON = {
         "city": "大分市",
         "address": "大分県大分市大字大平989-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19755"
+        "url": "https://www.michi-no-eki.jp/stations/views/19755",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://rs-seki.com/",
+        "homepage2": ""
       }
     },
     {
@@ -18352,7 +21247,10 @@ const michiNoEkiGeoJSON = {
         "city": "中津市",
         "address": "大分県中津市山国町大字中摩3485-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19756"
+        "url": "https://www.michi-no-eki.jp/stations/views/19756",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/yamakuni/yamakuni.html",
+        "homepage2": "http://www.city-nakatsu.jp/kankodocs/2013102300051/"
       }
     },
     {
@@ -18371,7 +21269,10 @@ const michiNoEkiGeoJSON = {
         "city": "中津市",
         "address": "大分県中津市本耶馬渓町曽木2193-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19757"
+        "url": "https://www.michi-no-eki.jp/stations/views/19757",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/yaba/yaba.html",
+        "homepage2": "http://www.city-nakatsu.jp/kankodocs/2013102300099/"
       }
     },
     {
@@ -18390,7 +21291,10 @@ const michiNoEkiGeoJSON = {
         "city": "豊後大野市",
         "address": "大分県豊後大野市朝地町板井迫1018-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19758"
+        "url": "https://www.michi-no-eki.jp/stations/views/19758",
+        "businessHours": "道の駅9:00～17:30 テイクアウト10:00～16:00 レストラン喫茶・軽食3月～5月10:30～17:00 6月～9月10:00～17:00（12月30日、1月2日 9:00～16:00）",
+        "homepage": "https://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/asaji/asaji.html",
+        "homepage2": "https://michinoeki-asaji.com/"
       }
     },
     {
@@ -18409,7 +21313,10 @@ const michiNoEkiGeoJSON = {
         "city": "宇佐市",
         "address": "大分県宇佐市院内町副1381-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19759"
+        "url": "https://www.michi-no-eki.jp/stations/views/19759",
+        "businessHours": "8:00～17:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/innai/innai.html",
+        "homepage2": ""
       }
     },
     {
@@ -18428,7 +21335,10 @@ const michiNoEkiGeoJSON = {
         "city": "日田市",
         "address": "大分県日田市上津江町川原3848-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19760"
+        "url": "https://www.michi-no-eki.jp/stations/views/19760",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kamitsue/kamitsue.html",
+        "homepage2": ""
       }
     },
     {
@@ -18447,7 +21357,10 @@ const michiNoEkiGeoJSON = {
         "city": "佐伯市",
         "address": "大分県佐伯市弥生大字上小倉898-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19761"
+        "url": "https://www.michi-no-eki.jp/stations/views/19761",
+        "businessHours": "物産館 9:00～17:30 やよいの湯 10:00～22:00(受付終了21:20) 番匠おさかな館 10:00～17:00(受付終了16:45)",
+        "homepage": "http://michinoeki-yayoi.com/",
+        "homepage2": "https://www.facebook.com/michi.yayoi/"
       }
     },
     {
@@ -18466,7 +21379,10 @@ const michiNoEkiGeoJSON = {
         "city": "日田市",
         "address": "大分県日田市中津江村合瀬3750",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19762"
+        "url": "https://www.michi-no-eki.jp/stations/views/19762",
+        "businessHours": "夏季 9:00～17:00 ／ 冬季 10:00～16:30 ※休館日あり 詳しくは公式ホームページ「 http://taiokinzan.jp/」参照",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/taio/taio.html",
+        "homepage2": "http://taiokinzan.jp/"
       }
     },
     {
@@ -18485,7 +21401,10 @@ const michiNoEkiGeoJSON = {
         "city": "豊後大野市",
         "address": "大分県豊後大野市清川町砂田1574",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19763"
+        "url": "https://www.michi-no-eki.jp/stations/views/19763",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kiyokawa/kiyokawa.html",
+        "homepage2": "http://www.mitinoeki-kiyokawa.com/"
       }
     },
     {
@@ -18504,7 +21423,10 @@ const michiNoEkiGeoJSON = {
         "city": "由布市",
         "address": "大分県由布市湯布院町川北899-76",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19764"
+        "url": "https://www.michi-no-eki.jp/stations/views/19764",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/yuhuin/yuhuin.html",
+        "homepage2": "http://michinoekiyufuin.com/"
       }
     },
     {
@@ -18523,7 +21445,10 @@ const michiNoEkiGeoJSON = {
         "city": "豊後大野市",
         "address": "大分県豊後大野市三重町宮野2791-１",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19765"
+        "url": "https://www.michi-no-eki.jp/stations/views/19765",
+        "businessHours": "9:00～18:00 (3月～10月） 9:00～17:00（11月～2月）",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/mie/mie.html",
+        "homepage2": "http://michinoekimie.com/"
       }
     },
     {
@@ -18542,7 +21467,10 @@ const michiNoEkiGeoJSON = {
         "city": "国東市",
         "address": "大分県国東市国東町小原2662-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19766"
+        "url": "https://www.michi-no-eki.jp/stations/views/19766",
+        "businessHours": "8:30～17:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kunisaki/kunisaki.html",
+        "homepage2": "https://www.city.kunisaki.oita.jp/soshiki/kanko/mitinoeki.html"
       }
     },
     {
@@ -18561,7 +21489,10 @@ const michiNoEkiGeoJSON = {
         "city": "日田市",
         "address": "大分県日田市大山町西大山4106",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19767"
+        "url": "https://www.michi-no-eki.jp/stations/views/19767",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/oyama/oyama.html",
+        "homepage2": "http://www.mizubenosato-oyama.com/"
       }
     },
     {
@@ -18580,7 +21511,10 @@ const michiNoEkiGeoJSON = {
         "city": "佐伯市",
         "address": "大分県佐伯市蒲江大字蒲江浦5104-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19768"
+        "url": "https://www.michi-no-eki.jp/stations/views/19768",
+        "businessHours": "直売所(9:00～18:00) レストラン(11：00〜14：30) テイクアウトコーナーのソフトクリーム(11：00〜16：00)",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kamae/kamae.html",
+        "homepage2": "https://buri.fish"
       }
     },
     {
@@ -18599,7 +21533,10 @@ const michiNoEkiGeoJSON = {
         "city": "竹田市",
         "address": "大分県竹田市直入町大字長湯8043-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19769"
+        "url": "https://www.michi-no-eki.jp/stations/views/19769",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/nagayu/nagayu.html",
+        "homepage2": ""
       }
     },
     {
@@ -18618,7 +21555,10 @@ const michiNoEkiGeoJSON = {
         "city": "豊後大野市",
         "address": "大分県豊後大野市大野町田中43-10",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19770"
+        "url": "https://www.michi-no-eki.jp/stations/views/19770",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/oono/oono.html",
+        "homepage2": "http://sato-no-tabi.jp/sights/rs_ono/"
       }
     },
     {
@@ -18637,7 +21577,10 @@ const michiNoEkiGeoJSON = {
         "city": "国東市",
         "address": "大分県国東市国見町伊美4252-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19771"
+        "url": "https://www.michi-no-eki.jp/stations/views/19771",
+        "businessHours": "9:00～18:00（施設により異なる）",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kunimi/kunimi.html",
+        "homepage2": ""
       }
     },
     {
@@ -18656,7 +21599,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "大分県玖珠郡玖珠町大字帆足2121",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19772"
+        "url": "https://www.michi-no-eki.jp/stations/views/19772",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kusu/kusu.html",
+        "homepage2": "http://www.kusu-michinoeki.jp/info-jion.html"
       }
     },
     {
@@ -18675,7 +21621,10 @@ const michiNoEkiGeoJSON = {
         "city": "竹田市",
         "address": "大分県竹田市大字菅生989-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19773"
+        "url": "https://www.michi-no-eki.jp/stations/views/19773",
+        "businessHours": "8:30～17:30",
+        "homepage": "https://www.facebook.com/michinoekiSUGOU/",
+        "homepage2": "http://www.taketa-wakaba.jp/"
       }
     },
     {
@@ -18694,7 +21643,10 @@ const michiNoEkiGeoJSON = {
         "city": "中津市",
         "address": "大分県中津市加来814",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19774"
+        "url": "https://www.michi-no-eki.jp/stations/views/19774",
+        "businessHours": "9:00～19:00（施設により異なる）",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/nakatu/nakatu.html",
+        "homepage2": "http://michinoeki-nakatsu.com/"
       }
     },
     {
@@ -18713,7 +21665,10 @@ const michiNoEkiGeoJSON = {
         "city": "宮崎市",
         "address": "宮崎県宮崎市高岡町花見304-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19775"
+        "url": "https://www.michi-no-eki.jp/stations/views/19775",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://vitaminkan.miyazaki.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -18732,7 +21687,10 @@ const michiNoEkiGeoJSON = {
         "city": "延岡市",
         "address": "宮崎県延岡市北川町長井5751-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19776"
+        "url": "https://www.michi-no-eki.jp/stations/views/19776",
+        "businessHours": "8:30～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kitagawa/kitagawa.html",
+        "homepage2": "http://www.kitagawa-hayuma.jp/"
       }
     },
     {
@@ -18751,7 +21709,10 @@ const michiNoEkiGeoJSON = {
         "city": "日之影町",
         "address": "宮崎県西臼杵郡日之影町七折8705-12",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19777"
+        "url": "https://www.michi-no-eki.jp/stations/views/19777",
+        "businessHours": "物産販売所8:30～18:00 レストラン10:00～16:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/seiunbashi/seiunbashi.html",
+        "homepage2": "https://hinokagecho.com/seiunbashi.html"
       }
     },
     {
@@ -18770,7 +21731,10 @@ const michiNoEkiGeoJSON = {
         "city": "都城市",
         "address": "宮崎県都城市山之口町山之口2304-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19778"
+        "url": "https://www.michi-no-eki.jp/stations/views/19778",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/yamanokuchi/yamanokuchi.html",
+        "homepage2": "http://www.btvm.ne.jp/~yama-269/"
       }
     },
     {
@@ -18789,7 +21753,10 @@ const michiNoEkiGeoJSON = {
         "city": "延岡市",
         "address": "宮崎県延岡市北浦町古江3337-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19779"
+        "url": "https://www.michi-no-eki.jp/stations/views/19779",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kitaura/kitaura.html",
+        "homepage2": "http://michinoeki-kitaura.com/cms/"
       }
     },
     {
@@ -18808,7 +21775,10 @@ const michiNoEkiGeoJSON = {
         "city": "宮崎市",
         "address": "宮崎県宮崎市田野町甲7885-164",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19780"
+        "url": "https://www.michi-no-eki.jp/stations/views/19780",
+        "businessHours": "2025年3月23日物販施設閉店しました",
+        "homepage": "https://www.pref.miyazaki.lg.jp/dorohozen/kurashi/shakaikiban/mitiek-tano.html",
+        "homepage2": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/tano/tano.html"
       }
     },
     {
@@ -18827,7 +21797,10 @@ const michiNoEkiGeoJSON = {
         "city": "日南市",
         "address": "宮崎県日南市酒谷甲1840-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19781"
+        "url": "https://www.michi-no-eki.jp/stations/views/19781",
+        "businessHours": "8:30～17:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/sakatani/sakatani.html",
+        "homepage2": "http://michinoeki-sakatani.com/"
       }
     },
     {
@@ -18846,7 +21819,10 @@ const michiNoEkiGeoJSON = {
         "city": "日向市",
         "address": "宮崎県日向市東郷町山陰辛244-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19782"
+        "url": "https://www.michi-no-eki.jp/stations/views/19782",
+        "businessHours": "8:30～18:00",
+        "homepage": "",
+        "homepage2": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/togo/togo.html"
       }
     },
     {
@@ -18865,7 +21841,10 @@ const michiNoEkiGeoJSON = {
         "city": "都城市",
         "address": "宮崎県都城市都北町5225-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19783"
+        "url": "https://www.michi-no-eki.jp/stations/views/19783",
+        "businessHours": "9:00～19:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/miyakonojyo/miyakonojyo.html",
+        "homepage2": "https://coconiqll.co.jp"
       }
     },
     {
@@ -18884,7 +21863,10 @@ const michiNoEkiGeoJSON = {
         "city": "小林市",
         "address": "宮崎県小林市野尻町三ケ野山4347-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19784"
+        "url": "https://www.michi-no-eki.jp/stations/views/19784",
+        "businessHours": "【産直・物販店】8:00～18:00 【こばやし 味彩】11:00〜15:00（LO14:30） 【こばやしのじりの湯】12:00〜20:30（最終受付20:00）",
+        "homepage": "https://yuparu-nojiri.com/",
+        "homepage2": ""
       }
     },
     {
@@ -18903,7 +21885,10 @@ const michiNoEkiGeoJSON = {
         "city": "日南市",
         "address": "宮崎県日南市南郷町贄波3220-24",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19785"
+        "url": "https://www.michi-no-eki.jp/stations/views/19785",
+        "businessHours": "8:30～17:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/nango/nango.html",
+        "homepage2": "http://www.michinoeki-nango.jp/nango"
       }
     },
     {
@@ -18922,7 +21907,10 @@ const michiNoEkiGeoJSON = {
         "city": "日向市",
         "address": "宮崎県日向市大字幸脇241-7",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19786"
+        "url": "https://www.michi-no-eki.jp/stations/views/19786",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/hyuga/hyuga.html",
+        "homepage2": "https://www.hyugacity.jp/display.php?cont=140317091117"
       }
     },
     {
@@ -18941,7 +21929,10 @@ const michiNoEkiGeoJSON = {
         "city": "高千穂町",
         "address": "宮崎県西臼杵郡高千穂町三田井1296-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19787"
+        "url": "https://www.michi-no-eki.jp/stations/views/19787",
+        "businessHours": "9:30～17:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/takachiho/takachiho.html",
+        "homepage2": "http://www.town-takachiho.jp/industry/agriculture/post_34.html"
       }
     },
     {
@@ -18960,7 +21951,10 @@ const michiNoEkiGeoJSON = {
         "city": "宮崎市",
         "address": "宮崎県宮崎市大字内海字三池381-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19788"
+        "url": "https://www.michi-no-eki.jp/stations/views/19788",
+        "businessHours": "8:30～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/phoenix/phoenix.html",
+        "homepage2": "http://michinoekiphoenix.jp/"
       }
     },
     {
@@ -18979,7 +21973,10 @@ const michiNoEkiGeoJSON = {
         "city": "都農町",
         "address": "宮崎県児湯郡都農町大字川北5129",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19789"
+        "url": "https://www.michi-no-eki.jp/stations/views/19789",
+        "businessHours": "10:00～17:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/tuno/tuno.html",
+        "homepage2": "http://michinoeki-tsuno.com/"
       }
     },
     {
@@ -18998,7 +21995,10 @@ const michiNoEkiGeoJSON = {
         "city": "えびの市",
         "address": "宮崎県えびの市永山1006-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19790"
+        "url": "https://www.michi-no-eki.jp/stations/views/19790",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ebino/ebino.html",
+        "homepage2": "http://michinoeki-ebino.com/"
       }
     },
     {
@@ -19017,7 +22017,10 @@ const michiNoEkiGeoJSON = {
         "city": "延岡市",
         "address": "宮崎県延岡市北方町早日渡巳175-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19791"
+        "url": "https://www.michi-no-eki.jp/stations/views/19791",
+        "businessHours": "8:00～18:30（施設により異なる）",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kitakatayochimiroya/kitakatayocchimiroya.html",
+        "homepage2": "http://www.yottimiroya.com/"
       }
     },
     {
@@ -19036,7 +22039,10 @@ const michiNoEkiGeoJSON = {
         "city": "鹿児島市",
         "address": "鹿児島県鹿児島市喜入町6094-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19792"
+        "url": "https://www.michi-no-eki.jp/stations/views/19792",
+        "businessHours": "10:00～21:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kiire/kiire.html",
+        "homepage2": "http://www.michinoeki-kiire.jp/"
       }
     },
     {
@@ -19055,7 +22061,10 @@ const michiNoEkiGeoJSON = {
         "city": "霧島市",
         "address": "鹿児島県霧島市霧島田口2583-22",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19793"
+        "url": "https://www.michi-no-eki.jp/stations/views/19793",
+        "businessHours": "9:00～17:15",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kirishima/kirishima.html",
+        "homepage2": "http://www.shinwanosato.jp/"
       }
     },
     {
@@ -19074,7 +22083,10 @@ const michiNoEkiGeoJSON = {
         "city": "薩摩川内市",
         "address": "鹿児島県薩摩川内市樋脇町市比野156",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19794"
+        "url": "https://www.michi-no-eki.jp/stations/views/19794",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/hiwaki/hiwaki.html",
+        "homepage2": "http://www.kagoshima-kankou.com/guide/10426/"
       }
     },
     {
@@ -19093,7 +22105,10 @@ const michiNoEkiGeoJSON = {
         "city": "志布志市",
         "address": "鹿児島県志布志市松山町新橋1526-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19795"
+        "url": "https://www.michi-no-eki.jp/stations/views/19795",
+        "businessHours": "9:00～18:00",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -19112,7 +22127,10 @@ const michiNoEkiGeoJSON = {
         "city": "阿久根市",
         "address": "鹿児島県阿久根市大川4816-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19796"
+        "url": "https://www.michi-no-eki.jp/stations/views/19796",
+        "businessHours": "9:30～18:00 レストラン11：00～14：00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/akune/akune.html",
+        "homepage2": ""
       }
     },
     {
@@ -19131,7 +22149,10 @@ const michiNoEkiGeoJSON = {
         "city": "長島町",
         "address": "鹿児島県出水郡長島町指江1576-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19797"
+        "url": "https://www.michi-no-eki.jp/stations/views/19797",
+        "businessHours": "8:30～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/nagashima/nagashima.html",
+        "homepage2": "http://www.potatohouse.jp/access.html"
       }
     },
     {
@@ -19150,7 +22171,10 @@ const michiNoEkiGeoJSON = {
         "city": "大崎町",
         "address": "鹿児島県曽於郡大崎町大字神領字高尾2388-11",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19798"
+        "url": "https://www.michi-no-eki.jp/stations/views/19798",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/osaki/osaki.html",
+        "homepage2": "http://www.asuparu.jp/"
       }
     },
     {
@@ -19169,7 +22193,10 @@ const michiNoEkiGeoJSON = {
         "city": "南大隅町",
         "address": "鹿児島県肝属郡南大隅町根占山本6868",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19799"
+        "url": "https://www.michi-no-eki.jp/stations/views/19799",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/nejime/nejime.html",
+        "homepage2": "http://373osumi-skk.com/kankou/shop-mitinoeki/"
       }
     },
     {
@@ -19188,7 +22215,10 @@ const michiNoEkiGeoJSON = {
         "city": "南九州市",
         "address": "鹿児島県南九州市川辺町清水6910",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19800"
+        "url": "https://www.michi-no-eki.jp/stations/views/19800",
+        "businessHours": "8:00～19:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kawanabe/kawanabe.html",
+        "homepage2": "http://www.yasuraginosato.com/"
       }
     },
     {
@@ -19207,7 +22237,10 @@ const michiNoEkiGeoJSON = {
         "city": "奄美市",
         "address": "鹿児島県奄美市住用町大字石原478",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19801"
+        "url": "https://www.michi-no-eki.jp/stations/views/19801",
+        "businessHours": "9:30～18:00",
+        "homepage": "http://www.mangrovepark.com/",
+        "homepage2": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/amami/amami.html"
       }
     },
     {
@@ -19226,7 +22259,10 @@ const michiNoEkiGeoJSON = {
         "city": "鹿児島市",
         "address": "鹿児島県鹿児島市桜島横山町1722-48",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19802"
+        "url": "https://www.michi-no-eki.jp/stations/views/19802",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/sakurajima/sakurajima.html",
+        "homepage2": "http://www.megumikan.jp/"
       }
     },
     {
@@ -19245,7 +22281,10 @@ const michiNoEkiGeoJSON = {
         "city": "南さつま市",
         "address": "鹿児島県南さつま市金峰町池辺1383",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19803"
+        "url": "https://www.michi-no-eki.jp/stations/views/19803",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kinpo/kinpo.html",
+        "homepage2": "http://www5.synapse.ne.jp/konohanakan/"
       }
     },
     {
@@ -19264,7 +22303,10 @@ const michiNoEkiGeoJSON = {
         "city": "曽於市",
         "address": "鹿児島県曽於市大隅町岩川6134",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19804"
+        "url": "https://www.michi-no-eki.jp/stations/views/19804",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/osumi/osumi.html",
+        "homepage2": "http://www.nodoka-1.jp"
       }
     },
     {
@@ -19283,7 +22325,10 @@ const michiNoEkiGeoJSON = {
         "city": "曽於市",
         "address": "鹿児島県曽於市財部町南俣17",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19805"
+        "url": "https://www.michi-no-eki.jp/stations/views/19805",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/takarabe/takarabe.html",
+        "homepage2": "http://mecena-sueyoshi.com/michi-takarabe/"
       }
     },
     {
@@ -19302,7 +22347,10 @@ const michiNoEkiGeoJSON = {
         "city": "指宿市",
         "address": "鹿児島県指宿市小牧52-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19806"
+        "url": "https://www.michi-no-eki.jp/stations/views/19806",
+        "businessHours": "9:00～17:30",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ibusuki/ibusuki.html",
+        "homepage2": "https://michinoeki-ibusuki.jp/"
       }
     },
     {
@@ -19321,7 +22369,10 @@ const michiNoEkiGeoJSON = {
         "city": "垂水市",
         "address": "鹿児島県垂水市牛根麓1038-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19807"
+        "url": "https://www.michi-no-eki.jp/stations/views/19807",
+        "businessHours": "物産 9：00～19：00 レストラン11：00～14：30LO 温泉13：00～19：30最終入泉",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/tarumizu/tarumizu.html",
+        "homepage2": "https://mitinoeki-tarumizu.com/"
       }
     },
     {
@@ -19340,7 +22391,10 @@ const michiNoEkiGeoJSON = {
         "city": "曽於市",
         "address": "鹿児島県曽於市末吉町深川11051-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19808"
+        "url": "https://www.michi-no-eki.jp/stations/views/19808",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/sueyosi/sueyosi.html",
+        "homepage2": "http://mecena-sueyoshi.com/michi-sueyoshi/"
       }
     },
     {
@@ -19359,7 +22413,10 @@ const michiNoEkiGeoJSON = {
         "city": "長島町",
         "address": "鹿児島県出水郡長島町山門野4093",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19809"
+        "url": "https://www.michi-no-eki.jp/stations/views/19809",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kuronoseto/kuronoseto.html",
+        "homepage2": "http://dandanichiba.jp/0003.html"
       }
     },
     {
@@ -19378,7 +22435,10 @@ const michiNoEkiGeoJSON = {
         "city": "指宿市",
         "address": "鹿児島県指宿市山川金生町1-10",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19810"
+        "url": "https://www.michi-no-eki.jp/stations/views/19810",
+        "businessHours": "8:30～17:30",
+        "homepage": "http://io-kaido.com/",
+        "homepage2": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/iokaidou/iokaidou.html"
       }
     },
     {
@@ -19397,7 +22457,10 @@ const michiNoEkiGeoJSON = {
         "city": "錦江町",
         "address": "鹿児島県肝属郡錦江町神川3306-18",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19811"
+        "url": "https://www.michi-no-eki.jp/stations/views/19811",
+        "businessHours": "8:30～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi//michi_no_eki/kobetu/kinnkounisikinosato/kinnpounisikinosato.html",
+        "homepage2": "http://kinko-nishikinosato.com/"
       }
     },
     {
@@ -19416,7 +22479,10 @@ const michiNoEkiGeoJSON = {
         "city": "大崎町",
         "address": "鹿児島県曽於郡大崎町野方2810-7",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19812"
+        "url": "https://www.michi-no-eki.jp/stations/views/19812",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/nokataarasano/nokataarasano.html",
+        "homepage2": ""
       }
     },
     {
@@ -19435,7 +22501,10 @@ const michiNoEkiGeoJSON = {
         "city": "名護市",
         "address": "沖縄県名護市許田17-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19813"
+        "url": "https://www.michi-no-eki.jp/stations/views/19813",
+        "businessHours": "8:30～19:00",
+        "homepage": "https://www.yanbaru-b.co.jp/",
+        "homepage2": "https://www.instagram.com/kyodastagram/"
       }
     },
     {
@@ -19454,7 +22523,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "沖縄県国頭郡大宜味村字津波95",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19814"
+        "url": "https://www.michi-no-eki.jp/stations/views/19814",
+        "businessHours": "【直売所】10:00～19:00 【レストラン】11:00～19:00（Lo.18:30） 【パーラー】10:00～17:00 【観光案内所】9:00～17:00",
+        "homepage": "http://www.dc.ogb.go.jp/road/Michi-no-Eki/oogimi.htm",
+        "homepage2": ""
       }
     },
     {
@@ -19473,7 +22545,10 @@ const michiNoEkiGeoJSON = {
         "city": "国頭村",
         "address": "沖縄県国頭郡国頭村字奥間1605",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19815"
+        "url": "https://www.michi-no-eki.jp/stations/views/19815",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.dc.ogb.go.jp/road/Michi-no-Eki/kunigami.htm",
+        "homepage2": "http://www.yuiyui-k.jp/"
       }
     },
     {
@@ -19492,7 +22567,10 @@ const michiNoEkiGeoJSON = {
         "city": "嘉手納町",
         "address": "沖縄県中頭郡嘉手納町字屋良1026-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19816"
+        "url": "https://www.michi-no-eki.jp/stations/views/19816",
+        "businessHours": "8:30～20:00",
+        "homepage": "http://www.dc.ogb.go.jp/road/Michi-no-Eki/kadena.htm",
+        "homepage2": "http://michinoekikadena.com/"
       }
     },
     {
@@ -19511,7 +22589,10 @@ const michiNoEkiGeoJSON = {
         "city": "読谷村",
         "address": "沖縄県中頭郡読谷村字喜名1-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19817"
+        "url": "https://www.michi-no-eki.jp/stations/views/19817",
+        "businessHours": "9:00 ～18:00",
+        "homepage": "http://www.dc.ogb.go.jp/road/Michi-no-Eki/kinabansyo.html",
+        "homepage2": ""
       }
     },
     {
@@ -19530,7 +22611,10 @@ const michiNoEkiGeoJSON = {
         "city": "豊見城市",
         "address": "沖縄県豊見城市字豊崎3-39",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19818"
+        "url": "https://www.michi-no-eki.jp/stations/views/19818",
+        "businessHours": "9:00 ～18:00",
+        "homepage": "http://www.dc.ogb.go.jp/road/Michi-no-Eki/toyosaki.htm",
+        "homepage2": "http://www.city.tomigusuku.okinawa.jp/tourism_culture/140/548"
       }
     },
     {
@@ -19549,7 +22633,10 @@ const michiNoEkiGeoJSON = {
         "city": "糸満市",
         "address": "沖縄県糸満市西崎町4-19-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19819"
+        "url": "https://www.michi-no-eki.jp/stations/views/19819",
+        "businessHours": "9:00 ～18:00",
+        "homepage": "http://www.dc.ogb.go.jp/road/Michi-no-Eki/itoman.htm",
+        "homepage2": "http://www.yukura.jp/"
       }
     },
     {
@@ -19568,7 +22655,10 @@ const michiNoEkiGeoJSON = {
         "city": "宜野座村",
         "address": "沖縄県国頭郡宜野座字漢那1633",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19820"
+        "url": "https://www.michi-no-eki.jp/stations/views/19820",
+        "businessHours": "9:30～18:00（特産品直売所） 9:15～18:00（観光情報センター）10:00〜（各テナント）",
+        "homepage": "http://www.dc.ogb.go.jp/road/Michi-no-Eki/ginoza.htm",
+        "homepage2": "https://mitinoeki-ginoza.com/"
       }
     },
     {
@@ -19587,7 +22677,10 @@ const michiNoEkiGeoJSON = {
         "city": "赤井川村",
         "address": "北海道余市郡赤井川村字都190-16",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19821"
+        "url": "https://www.michi-no-eki.jp/stations/views/19821",
+        "businessHours": "8:30～18:00(5～10月)、9:00～17:00(11～4月)",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/3143/",
+        "homepage2": ""
       }
     },
     {
@@ -19606,7 +22699,10 @@ const michiNoEkiGeoJSON = {
         "city": "釜石市",
         "address": "岩手県釜石市甲子町7-155-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19822"
+        "url": "https://www.michi-no-eki.jp/stations/views/19822",
+        "businessHours": "9:00～18:00〔施設により異なる〕＜休 12/31～1/1＞",
+        "homepage": "http://www.city.kamaishi.iwate.jp/tanoshimu/bussan/sanchoku/detail/1193345_3298.html",
+        "homepage2": ""
       }
     },
     {
@@ -19625,7 +22721,10 @@ const michiNoEkiGeoJSON = {
         "city": "朝日町",
         "address": "山形県西村山郡朝日町大字和合字北又2724",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19823"
+        "url": "https://www.michi-no-eki.jp/stations/views/19823",
+        "businessHours": "9:00～18:00〔施設により異なる〕※現在短縮営業～17:00 （冬季は9:00～17:00）",
+        "homepage": "https://ringo-no-mori.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -19644,7 +22743,10 @@ const michiNoEkiGeoJSON = {
         "city": "日光市",
         "address": "栃木県日光市今市719-１",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19824"
+        "url": "https://www.michi-no-eki.jp/stations/views/19824",
+        "businessHours": "9:00～22:00（施設により異なる）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000115.html",
+        "homepage2": "http://www.nikko-honjin.jp/"
       }
     },
     {
@@ -19663,7 +22765,10 @@ const michiNoEkiGeoJSON = {
         "city": "玉村町",
         "address": "群馬県佐波郡玉村町大字上新田604-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19825"
+        "url": "https://www.michi-no-eki.jp/stations/views/19825",
+        "businessHours": "平日9:30～18:00土日祝日9：30～18：30(季節によって変わります）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000198.html",
+        "homepage2": "https://www.tamamura-juku.com/"
       }
     },
     {
@@ -19682,7 +22787,10 @@ const michiNoEkiGeoJSON = {
         "city": "旭市",
         "address": "千葉県旭市イの5238",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19826"
+        "url": "https://www.michi-no-eki.jp/stations/views/19826",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.city.asahi.lg.jp/attakaasahi/",
+        "homepage2": "http://www.kirari-asahi.com"
       }
     },
     {
@@ -19701,7 +22809,10 @@ const michiNoEkiGeoJSON = {
         "city": "鋸南町",
         "address": "千葉県安房郡鋸南町保田724",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19827"
+        "url": "https://www.michi-no-eki.jp/stations/views/19827",
+        "businessHours": "9：00～17：00",
+        "homepage": "http://hotasho.jp/",
+        "homepage2": "https://www.facebook.com/hotasho.jp/"
       }
     },
     {
@@ -19720,7 +22831,10 @@ const michiNoEkiGeoJSON = {
         "city": "木島平村",
         "address": "長野県下高井郡木島平村大字上木島38-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19828"
+        "url": "https://www.michi-no-eki.jp/stations/views/19828",
+        "businessHours": "10:00～17:00（そば処は11:00～14:00）全館月曜日定休（祝日の場合は翌日休）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000299.html",
+        "homepage2": "http://www.farmus.jp/"
       }
     },
     {
@@ -19739,7 +22853,10 @@ const michiNoEkiGeoJSON = {
         "city": "竜王町",
         "address": "滋賀県蒲生郡竜王町大字山之上6526",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19829"
+        "url": "https://www.michi-no-eki.jp/stations/views/19829",
+        "businessHours": "9:00～17:00（季節により変動あり）＜休 月曜日（月曜日が祝日の場合は火曜日）＞",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/aguriparkryuou.html",
+        "homepage2": "https://www.aguri-p.com/"
       }
     },
     {
@@ -19758,7 +22875,10 @@ const michiNoEkiGeoJSON = {
         "city": "上富田町",
         "address": "和歌山県西牟婁郡上富田町岩崎555-5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19830"
+        "url": "https://www.michi-no-eki.jp/stations/views/19830",
+        "businessHours": "8:00～19:00 ※レストラン 10：00～18：00（Ｌ．Ｏ 17：40）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/kuchikumano.html",
+        "homepage2": ""
       }
     },
     {
@@ -19777,7 +22897,10 @@ const michiNoEkiGeoJSON = {
         "city": "すさみ町",
         "address": "和歌山県西牟婁郡すさみ町江住808-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19831"
+        "url": "https://www.michi-no-eki.jp/stations/views/19831",
+        "businessHours": "利用時間 9:00～18:00 年中無休 （10月～3月は17:00までの営業）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/susami.html",
+        "homepage2": "http://www.michinoeki-susami.com/"
       }
     },
     {
@@ -19796,7 +22919,10 @@ const michiNoEkiGeoJSON = {
         "city": "かつらぎ町",
         "address": "和歌山県伊都郡かつらぎ町大字笠田東1271-28",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19832"
+        "url": "https://www.michi-no-eki.jp/stations/views/19832",
+        "businessHours": "物販8:00～19:00 飲食10:00～19:00（ラストオーダー18:30）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/katsuraginishi.html",
+        "homepage2": ""
       }
     },
     {
@@ -19815,7 +22941,10 @@ const michiNoEkiGeoJSON = {
         "city": "太地町",
         "address": "和歌山県東牟婁郡太地町大字森浦143-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19833"
+        "url": "https://www.michi-no-eki.jp/stations/views/19833",
+        "businessHours": "9:00～17:00〔施設により異なる〕",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/taiji.html",
+        "homepage2": "http://michiekitaiji.com/"
       }
     },
     {
@@ -19834,7 +22963,10 @@ const michiNoEkiGeoJSON = {
         "city": "岩美町",
         "address": "鳥取県岩美郡岩美町新井337-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19834"
+        "url": "https://www.michi-no-eki.jp/stations/views/19834",
+        "businessHours": "9:00～19:00〔施設により異なる〕",
+        "homepage": "http://kinanseiwami.jp/",
+        "homepage2": "http://www.cgr.mlit.go.jp/chiki/doyroj/Michi-no-Eki/index.html"
       }
     },
     {
@@ -19853,7 +22985,10 @@ const michiNoEkiGeoJSON = {
         "city": "江府町",
         "address": "鳥取県日野郡江府町佐川908−3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19835"
+        "url": "https://www.michi-no-eki.jp/stations/views/19835",
+        "businessHours": "8:30～18:30〔施設により異なる〕",
+        "homepage": "http://www.okudaisen.org/station/",
+        "homepage2": "http://www.cgr.mlit.go.jp/chiki/doyroj/Michi-no-Eki/index.html"
       }
     },
     {
@@ -19872,7 +23007,10 @@ const michiNoEkiGeoJSON = {
         "city": "防府市",
         "address": "山口県防府市新築地町2-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19836"
+        "url": "https://www.michi-no-eki.jp/stations/views/19836",
+        "businessHours": "9:00～18:00〔施設により異なる〕",
+        "homepage": "https://www.cgr.mlit.go.jp/chiki/doyroj/Michi-no-Eki/cgi-bin/station_info.pl?param=3523",
+        "homepage2": "https://www.shiosai-hofu.com/"
       }
     },
     {
@@ -19891,7 +23029,10 @@ const michiNoEkiGeoJSON = {
         "city": "上天草市",
         "address": "熊本県上天草市大矢野町中11582-24",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19837"
+        "url": "https://www.michi-no-eki.jp/stations/views/19837",
+        "businessHours": "8:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kamiamakusa/kamiamakusa.html",
+        "homepage2": "http://www.sunpearl.jp/"
       }
     },
     {
@@ -19910,7 +23051,10 @@ const michiNoEkiGeoJSON = {
         "city": "天草市",
         "address": "熊本県天草市牛深町2286-116",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19838"
+        "url": "https://www.michi-no-eki.jp/stations/views/19838",
+        "businessHours": "8:30～21:00（施設により異なる）",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ushibuka/ushibuka.html",
+        "homepage2": "http://kaisai.wix.com/usibuka-kaisaikan2"
       }
     },
     {
@@ -19929,7 +23073,10 @@ const michiNoEkiGeoJSON = {
         "city": "南阿蘇村",
         "address": "熊本県阿蘇郡南阿蘇村大字久石2807",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19839"
+        "url": "https://www.michi-no-eki.jp/stations/views/19839",
+        "businessHours": "",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/asobounosato/asobounosato.html",
+        "homepage2": "http://aso-kugino.jp/asobou.html"
       }
     },
     {
@@ -19948,7 +23095,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "北海道上磯郡木古内町字本町338-14",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19840"
+        "url": "https://www.michi-no-eki.jp/stations/views/19840",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/3158/",
+        "homepage2": "http://kikonai.jp/"
       }
     },
     {
@@ -19967,7 +23117,10 @@ const michiNoEkiGeoJSON = {
         "city": "鹿部町",
         "address": "北海道茅部郡鹿部町字鹿部18-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19841"
+        "url": "https://www.michi-no-eki.jp/stations/views/19841",
+        "businessHours": "【3月20日−11月30日】 月〜木 9時～17時 金〜日·祝 8時半～18時 定休日なし 【12月1日−3月19日】 月～木 10時～15時 金〜日·祝 9時～18時 定休日 1月4日～3月19日の毎週水曜日、年末年始（12月30日～1月1日）",
+        "homepage": "https://shikabe-tara.com/",
+        "homepage2": "http://www.town.shikabe.lg.jp/hotnews/detail/00001756.html"
       }
     },
     {
@@ -19986,7 +23139,10 @@ const michiNoEkiGeoJSON = {
         "city": "登米市",
         "address": "宮城県登米市東和町米谷字福平191-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19842"
+        "url": "https://www.michi-no-eki.jp/stations/views/19842",
+        "businessHours": "9:00～19:00〔施設により異なる〕",
+        "homepage": "https://mitakido.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -20005,7 +23161,10 @@ const michiNoEkiGeoJSON = {
         "city": "常陸大宮市",
         "address": "茨城県常陸大宮市岩崎717-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19843"
+        "url": "https://www.michi-no-eki.jp/stations/views/19843",
+        "businessHours": "9:00～18:00〔施設により異なる〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000066.html",
+        "homepage2": "http://www.michieki-hitachiomiya.jp/"
       }
     },
     {
@@ -20024,7 +23183,10 @@ const michiNoEkiGeoJSON = {
         "city": "常陸太田市",
         "address": "茨城県常陸太田市下河合町1016-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19844"
+        "url": "https://www.michi-no-eki.jp/stations/views/19844",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.hitachiota-michinoeki.jp/page/dir000002.html",
+        "homepage2": ""
       }
     },
     {
@@ -20043,7 +23205,10 @@ const michiNoEkiGeoJSON = {
         "city": "東金市",
         "address": "千葉県東金市田間1300-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19845"
+        "url": "https://www.michi-no-eki.jp/stations/views/19845",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://minorinosato-togane.com",
+        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000246.html"
       }
     },
     {
@@ -20062,7 +23227,10 @@ const michiNoEkiGeoJSON = {
         "city": "清川村",
         "address": "神奈川県愛甲郡清川村煤ヶ谷2129",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19846"
+        "url": "https://www.michi-no-eki.jp/stations/views/19846",
+        "businessHours": "10:00～18:00＜休 1/1～3＞",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000146.html",
+        "homepage2": "https://michinoeki-kiyokawa.jp/"
       }
     },
     {
@@ -20081,7 +23249,10 @@ const michiNoEkiGeoJSON = {
         "city": "三条市",
         "address": "新潟県三条市須頃1-17",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19847"
+        "url": "https://www.michi-no-eki.jp/stations/views/19847",
+        "businessHours": "9:30～17:30（施設により異なる）＜休 毎月第1水曜日、年末年始＞",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000038",
+        "homepage2": "http://www.tsjiba.or.jp/michi/"
       }
     },
     {
@@ -20100,7 +23271,10 @@ const michiNoEkiGeoJSON = {
         "city": "穴水町",
         "address": "石川県鳳珠郡穴水町字大町チ41-6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19848"
+        "url": "https://www.michi-no-eki.jp/stations/views/19848",
+        "businessHours": "9:00～17:30",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000076",
+        "homepage2": "http://www.pref.ishikawa.jp/douken/page2/main27.html"
       }
     },
     {
@@ -20119,7 +23293,10 @@ const michiNoEkiGeoJSON = {
         "city": "永平寺町",
         "address": "福井県吉田郡永平寺町清水2-21-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19849"
+        "url": "https://www.michi-no-eki.jp/stations/views/19849",
+        "businessHours": "10:00～19:00＜休 第3水曜日、年末年始＞",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/fukui/zennosato.html",
+        "homepage2": "http://michinoeki-zennosato.jp"
       }
     },
     {
@@ -20138,7 +23315,10 @@ const michiNoEkiGeoJSON = {
         "city": "津市",
         "address": "三重県津市河芸町三行255-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19850"
+        "url": "https://www.michi-no-eki.jp/stations/views/19850",
+        "businessHours": "7:00〜19:00〔施設により異なる〕",
+        "homepage": "http://www.cbr.mlit.go.jp/michinoeki/mie/mie16.html",
+        "homepage2": "http://www.tsukawage.com/"
       }
     },
     {
@@ -20157,7 +23337,10 @@ const michiNoEkiGeoJSON = {
         "city": "長浜市",
         "address": "滋賀県長浜市内保町2843",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19851"
+        "url": "https://www.michi-no-eki.jp/stations/views/19851",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://azai3-st.jp/",
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/azaisansimai.html"
       }
     },
     {
@@ -20176,7 +23359,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "京都府宮津市字浜町3007",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19852"
+        "url": "https://www.michi-no-eki.jp/stations/views/19852",
+        "businessHours": "直売所 9:00～17:00（年末年始休み）・飲食施設 10:00～17:00（年末年始、水曜日休み）・案内所 9:00～18:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/uminokyoutomiyazu.html",
+        "homepage2": "http://michinoeki-miyazu.jp/"
       }
     },
     {
@@ -20195,7 +23381,10 @@ const michiNoEkiGeoJSON = {
         "city": "多可町",
         "address": "兵庫県多可郡多可町中区岸上281-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19853"
+        "url": "https://www.michi-no-eki.jp/stations/views/19853",
+        "businessHours": "9:30～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/Yamada-nishik-taka.html",
+        "homepage2": ""
       }
     },
     {
@@ -20214,7 +23403,10 @@ const michiNoEkiGeoJSON = {
         "city": "紀の川市",
         "address": "和歌山県紀の川市西野山473",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19854"
+        "url": "https://www.michi-no-eki.jp/stations/views/19854",
+        "businessHours": "9:00～17:00 ＜定休日：火曜（祝日の場合は翌日）、年末年始＞＊施設により異なる詳細はHPへ",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/seishunosato.html",
+        "homepage2": "https://seishunosato.com"
       }
     },
     {
@@ -20233,7 +23425,10 @@ const michiNoEkiGeoJSON = {
         "city": "日南町",
         "address": "鳥取県日野郡日南町生山385",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19855"
+        "url": "https://www.michi-no-eki.jp/stations/views/19855",
+        "businessHours": "9:00～18:00〔施設により異なる〕＜年中無休＞",
+        "homepage": "http://nichinan-hinogawanosato.jp/",
+        "homepage2": "http://www.cgr.mlit.go.jp/chiki/doyroj/Michi-no-Eki/index.html"
       }
     },
     {
@@ -20252,7 +23447,10 @@ const michiNoEkiGeoJSON = {
         "city": "四万十市",
         "address": "高知県四万十市西土佐江川﨑2410-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19856"
+        "url": "https://www.michi-no-eki.jp/stations/views/19856",
+        "businessHours": "7:30～18:00（施設により異なる）＜休 3月～11月 無休、12月～2月 火曜定休（火曜祝日の場合は営業）＞",
+        "homepage": "http://www.yotte.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -20271,7 +23469,10 @@ const michiNoEkiGeoJSON = {
         "city": "佐世保市",
         "address": "長崎県佐世保市愛宕町11",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19857"
+        "url": "https://www.michi-no-eki.jp/stations/views/19857",
+        "businessHours": "10:00～18：00",
+        "homepage": "",
+        "homepage2": "http://sasebox99.com"
       }
     },
     {
@@ -20290,7 +23491,10 @@ const michiNoEkiGeoJSON = {
         "city": "大村市",
         "address": "長崎県大村市中里町452-22",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19858"
+        "url": "https://www.michi-no-eki.jp/stations/views/19858",
+        "businessHours": "9:00～18:00 （施設により異なる）",
+        "homepage": "https://www.city.omura.nagasaki.jp/kankou/kanko/michinoeki/index.html",
+        "homepage2": "http://www.michinoeki-suzutatouge.com/"
       }
     },
     {
@@ -20309,7 +23513,10 @@ const michiNoEkiGeoJSON = {
         "city": "山鹿市",
         "address": "熊本県山鹿市鹿本町梶屋1257",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19859"
+        "url": "https://www.michi-no-eki.jp/stations/views/19859",
+        "businessHours": "9:00～21:00（施設により異なる）",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/mizubeplazakamoto/kamoto.html",
+        "homepage2": "http://www.mizube-plaza.co.jp/"
       }
     },
     {
@@ -20328,7 +23535,10 @@ const michiNoEkiGeoJSON = {
         "city": "羽後町",
         "address": "秋田県雄勝郡羽後町西馬音内字中野200",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19860"
+        "url": "https://www.michi-no-eki.jp/stations/views/19860",
+        "businessHours": "9:00～18:00、9:00～17:00（11月～4月）＜休 1/1＞",
+        "homepage": "http://www.hanuinosato.jp/",
+        "homepage2": "https://www.facebook.com/michinoekiugo/"
       }
     },
     {
@@ -20347,7 +23557,10 @@ const michiNoEkiGeoJSON = {
         "city": "庄内町",
         "address": "山形県東田川郡庄内町狩川字外北割97-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19861"
+        "url": "https://www.michi-no-eki.jp/stations/views/19861",
+        "businessHours": "9:30～18:00≪冬期・営業時間短縮あり≫ ＜休 年末年始＞",
+        "homepage": "http://www.town.shonai.lg.jp/fusyaichiba/",
+        "homepage2": ""
       }
     },
     {
@@ -20366,7 +23579,10 @@ const michiNoEkiGeoJSON = {
         "city": "猪苗代町",
         "address": "福島県耶麻郡猪苗代町大字堅田字五百苅１",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19862"
+        "url": "https://www.michi-no-eki.jp/stations/views/19862",
+        "businessHours": "9:00～18:00（冬期間営業時間変更あり） 軽食9:00～17:30LO ダイニング10:30～15:30LO 観光案内9:00～16:00",
+        "homepage": "http://www.michinoeki-inawashiro.co.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -20385,7 +23601,10 @@ const michiNoEkiGeoJSON = {
         "city": "益子町",
         "address": "栃木県芳賀郡益子町大字長堤2271",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19863"
+        "url": "https://www.michi-no-eki.jp/stations/views/19863",
+        "businessHours": "9:00～18:00 ＜休 第2火曜日＞",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000129.html",
+        "homepage2": "http://m-mashiko.com/"
       }
     },
     {
@@ -20404,7 +23623,10 @@ const michiNoEkiGeoJSON = {
         "city": "都留市",
         "address": "山梨県都留市大原88",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19864"
+        "url": "https://www.michi-no-eki.jp/stations/views/19864",
+        "businessHours": "9:00～17:30(4/1～12/30)、9:00～17:00(1/5～3/31)",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000269.html",
+        "homepage2": "http://www.1000nentsuru.com/"
       }
     },
     {
@@ -20423,7 +23645,10 @@ const michiNoEkiGeoJSON = {
         "city": "熊野市",
         "address": "三重県熊野市有馬町137",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19865"
+        "url": "https://www.michi-no-eki.jp/stations/views/19865",
+        "businessHours": "10:00～17:00（季節によって終了時間の変更あり）",
+        "homepage": "http://www.cbr.mlit.go.jp/michinoeki/mie/mie17.html",
+        "homepage2": ""
       }
     },
     {
@@ -20442,7 +23667,10 @@ const michiNoEkiGeoJSON = {
         "city": "郡上市",
         "address": "岐阜県郡上市白鳥町向小駄良693-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19866"
+        "url": "https://www.michi-no-eki.jp/stations/views/19866",
+        "businessHours": "8:30～18:00",
+        "homepage": "",
+        "homepage2": "http://www.okumino-shirotori.com/pg453.html"
       }
     },
     {
@@ -20461,7 +23689,10 @@ const michiNoEkiGeoJSON = {
         "city": "飯島町",
         "address": "長野県上伊那郡飯島町田切2598-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19867"
+        "url": "https://www.michi-no-eki.jp/stations/views/19867",
+        "businessHours": "通年 9:00～17:00〔施設により異なる〕",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano14.html",
+        "homepage2": "https://tagirinosato.jp/"
       }
     },
     {
@@ -20480,7 +23711,10 @@ const michiNoEkiGeoJSON = {
         "city": "神戸市",
         "address": "兵庫県神戸市北区大沢町上大沢2150",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19868"
+        "url": "https://www.michi-no-eki.jp/stations/views/19868",
+        "businessHours": "10：00～18:00〔施設により異なる。スタンプラリーは10：00～17：00〕",
+        "homepage": "http://fruit-flowerpark.jp/",
+        "homepage2": "https://www.instagram.com/fruitflowerpark.kobe/"
       }
     },
     {
@@ -20499,7 +23733,10 @@ const michiNoEkiGeoJSON = {
         "city": "葛城市",
         "address": "奈良県葛城市太田1257",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19869"
+        "url": "https://www.michi-no-eki.jp/stations/views/19869",
+        "businessHours": "9:00～19:00(冬期は9:00～18:00)",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/katsuragi.html",
+        "homepage2": "http://michinoeki-katsuragi.jp/"
       }
     },
     {
@@ -20518,7 +23755,10 @@ const michiNoEkiGeoJSON = {
         "city": "府中市",
         "address": "広島県府中市府川町230-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19870"
+        "url": "https://www.michi-no-eki.jp/stations/views/19870",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://eki.bingofuchu.jp/",
+        "homepage2": "http://www.cgr.mlit.go.jp/chiki/doyroj/Michi-no-Eki/index.html"
       }
     },
     {
@@ -20537,7 +23777,10 @@ const michiNoEkiGeoJSON = {
         "city": "熊本市",
         "address": "熊本県熊本市北区植木町岩野160-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19871"
+        "url": "https://www.michi-no-eki.jp/stations/views/19871",
+        "businessHours": "9:00～18:30",
+        "homepage": "http://suikanosato-ueki.com/",
+        "homepage2": ""
       }
     },
     {
@@ -20556,7 +23799,10 @@ const michiNoEkiGeoJSON = {
         "city": "芦北町",
         "address": "熊本県葦北郡芦北町大字佐敷443",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19872"
+        "url": "https://www.michi-no-eki.jp/stations/views/19872",
+        "businessHours": "9:00～19:00",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -20575,7 +23821,10 @@ const michiNoEkiGeoJSON = {
         "city": "玖珠町",
         "address": "大分県玖珠郡玖珠町大字山浦618-24",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19873"
+        "url": "https://www.michi-no-eki.jp/stations/views/19873",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.kusu-michinoeki.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -20594,7 +23843,10 @@ const michiNoEkiGeoJSON = {
         "city": "かつらぎ町",
         "address": "和歌山県伊都郡かつらぎ町大字滝53-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19874"
+        "url": "https://www.michi-no-eki.jp/stations/views/19874",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/kushigakinosato.html",
+        "homepage2": ""
       }
     },
     {
@@ -20613,7 +23865,10 @@ const michiNoEkiGeoJSON = {
         "city": "岬町",
         "address": "大阪府泉南郡岬町淡輪5654-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19875"
+        "url": "https://www.michi-no-eki.jp/stations/views/19875",
+        "businessHours": "9:00 ～18:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/osaka/misaki.html",
+        "homepage2": ""
       }
     },
     {
@@ -20632,7 +23887,10 @@ const michiNoEkiGeoJSON = {
         "city": "平泉町",
         "address": "岩手県西磐井郡平泉町平泉字伽羅楽112-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19876"
+        "url": "https://www.michi-no-eki.jp/stations/views/19876",
+        "businessHours": "9:00～18:00 ≪冬期・営業時間短縮あり≫",
+        "homepage": "https://hiraizumi.town",
+        "homepage2": ""
       }
     },
     {
@@ -20651,7 +23909,10 @@ const michiNoEkiGeoJSON = {
         "city": "国見町",
         "address": "福島県伊達郡国見町大字藤田字日渡二18-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19877"
+        "url": "https://www.michi-no-eki.jp/stations/views/19877",
+        "businessHours": "9:00～17:30 〔施設により異なる〕※詳細な臨時休業日・営業時間等は下記ＨＰをご確認ください。",
+        "homepage": "http://www.michinoeki923.com/",
+        "homepage2": ""
       }
     },
     {
@@ -20670,7 +23931,10 @@ const michiNoEkiGeoJSON = {
         "city": "長井市",
         "address": "山形県長井市東町2-50",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19878"
+        "url": "https://www.michi-no-eki.jp/stations/views/19878",
+        "businessHours": "9:00〜18:00〔施設により異なる〕",
+        "homepage": "http://kawanominato.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -20689,7 +23953,10 @@ const michiNoEkiGeoJSON = {
         "city": "佐久市",
         "address": "長野県佐久市伴野7-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19879"
+        "url": "https://www.michi-no-eki.jp/stations/views/19879",
+        "businessHours": "9:00 ～18:00",
+        "homepage": "http://www.healthyterrace-saku.jp/",
+        "homepage2": "http://www.ktr.mlit.go.jp/honkyoku/road/Michi-no-Eki/station/nagano_sakuminami/index.html"
       }
     },
     {
@@ -20708,7 +23975,10 @@ const michiNoEkiGeoJSON = {
         "city": "東秩父村",
         "address": "埼玉県秩父郡東秩父村御堂441",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19880"
+        "url": "https://www.michi-no-eki.jp/stations/views/19880",
+        "businessHours": "9:00 ～17:30〔施設により異なる〕",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000219.html",
+        "homepage2": "http://www.washinosato.co.jp"
       }
     },
     {
@@ -20727,7 +23997,10 @@ const michiNoEkiGeoJSON = {
         "city": "三条市",
         "address": "新潟県三条市下保内4035",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19881"
+        "url": "https://www.michi-no-eki.jp/stations/views/19881",
+        "businessHours": "庭園生活館 3~11月 9~17時、12~2月 9~17時 カフェ 10~16時パスタとピザの店 base 11~16時 【休館日】3~12月 第1火曜、1~2月 火曜 (祝日の場合は翌日)12月31日~1月2日",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000077",
+        "homepage2": "http://honai-gardens.com"
       }
     },
     {
@@ -20746,7 +24019,10 @@ const michiNoEkiGeoJSON = {
         "city": "羽咋市",
         "address": "石川県羽咋市千里浜町夕1番地62",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19882"
+        "url": "https://www.michi-no-eki.jp/stations/views/19882",
+        "businessHours": "4月〜11月（9:00～18:00） 12月〜3月（9：00〜17：00） ※施設により異なる",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000078",
+        "homepage2": "http://noto-chirihama.com/"
       }
     },
     {
@@ -20765,7 +24041,10 @@ const michiNoEkiGeoJSON = {
         "city": "函南町",
         "address": "静岡県田方郡函南町塚本887-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19883"
+        "url": "https://www.michi-no-eki.jp/stations/views/19883",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://www.izugateway.com/",
+        "homepage2": "https://www.instagram.com/izugateway/"
       }
     },
     {
@@ -20784,7 +24063,10 @@ const michiNoEkiGeoJSON = {
         "city": "南山城村",
         "address": "京都府相楽郡南山城村大字北大河原小字殿田102",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19884"
+        "url": "https://www.michi-no-eki.jp/stations/views/19884",
+        "businessHours": "9:00～18:00〔部門により異なる〕",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/ocyanokyotominamiyamashiromura.html",
+        "homepage2": "https://michinoeki.kyoto.jp/"
       }
     },
     {
@@ -20803,7 +24085,10 @@ const michiNoEkiGeoJSON = {
         "city": "新温泉町",
         "address": "兵庫県美方郡新温泉町栃谷57",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19885"
+        "url": "https://www.michi-no-eki.jp/stations/views/19885",
+        "businessHours": "9:00～18:00（11月～3月は9:00～17:00）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/saninkaiganjioparkhamasakanosato.html",
+        "homepage2": "https://hamasakanosato.com/"
       }
     },
     {
@@ -20822,7 +24107,10 @@ const michiNoEkiGeoJSON = {
         "city": "琴浦町",
         "address": "鳥取県東伯郡琴浦町大字別所1030-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19886"
+        "url": "https://www.michi-no-eki.jp/stations/views/19886",
+        "businessHours": "9:00 ～18:00",
+        "homepage": "http://www.kotoura-kankou.com/kankou-category/facility/michinoekikotonoura/",
+        "homepage2": ""
       }
     },
     {
@@ -20841,7 +24129,10 @@ const michiNoEkiGeoJSON = {
         "city": "白石町",
         "address": "佐賀県杵島郡白石町大字福富下分306番地4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19887"
+        "url": "https://www.michi-no-eki.jp/stations/views/19887",
+        "businessHours": "9:00 ～18:00（定休日：毎月第3水曜日、12/31～1/3）",
+        "homepage": "https://www.michinoeki-shiroishi.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -20860,7 +24151,10 @@ const michiNoEkiGeoJSON = {
         "city": "大空町",
         "address": "北海道網走郡大空町東藻琴100",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19888"
+        "url": "https://www.michi-no-eki.jp/stations/views/19888",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/13538/",
+        "homepage2": "http://www.nonkyland.com/"
       }
     },
     {
@@ -20879,7 +24173,10 @@ const michiNoEkiGeoJSON = {
         "city": "当別町",
         "address": "北海道石狩郡当別町当別太774-11",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19889"
+        "url": "https://www.michi-no-eki.jp/stations/views/19889",
+        "businessHours": "【3月～12月】9:00~17:00、【1月～2月】10:00~16:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/13542/",
+        "homepage2": "https://tobest.co.jp/michinoeki/"
       }
     },
     {
@@ -20898,7 +24195,10 @@ const michiNoEkiGeoJSON = {
         "city": "飯舘村",
         "address": "福島県相馬郡飯舘村深谷字深谷前12-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19890"
+        "url": "https://www.michi-no-eki.jp/stations/views/19890",
+        "businessHours": "9:30～18:00〔施設により異なる〕冬季期間9:30～17：00（11月～2月末日） ＜休 毎週水曜、12/31～1/2＞",
+        "homepage": "http://madeikan.com",
+        "homepage2": ""
       }
     },
     {
@@ -20917,7 +24217,10 @@ const michiNoEkiGeoJSON = {
         "city": "檜枝岐村",
         "address": "福島県南会津郡檜枝岐村字見通1136-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19891"
+        "url": "https://www.michi-no-eki.jp/stations/views/19891",
+        "businessHours": "8:30～17:00〔施設・季節により異なる〕 ＜休 無休＞",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -20936,7 +24239,10 @@ const michiNoEkiGeoJSON = {
         "city": "木更津市",
         "address": "千葉県木更津市下郡1369-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19892"
+        "url": "https://www.michi-no-eki.jp/stations/views/19892",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000247.html",
+        "homepage2": "http://chiba-kisarazu.com/"
       }
     },
     {
@@ -20955,7 +24261,10 @@ const michiNoEkiGeoJSON = {
         "city": "大野町",
         "address": "岐阜県揖斐郡大野町大字下磯313番地２",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19893"
+        "url": "https://www.michi-no-eki.jp/stations/views/19893",
+        "businessHours": "9:00-18:00",
+        "homepage": "https://pallettepia-ono.com/",
+        "homepage2": ""
       }
     },
     {
@@ -20974,7 +24283,10 @@ const michiNoEkiGeoJSON = {
         "city": "神河町",
         "address": "兵庫県神崎郡神河町吉冨88-10",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19894"
+        "url": "https://www.michi-no-eki.jp/stations/views/19894",
+        "businessHours": "9:00～18:00(12月～２月9：30～17：00）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/ginnobasyamichi.html",
+        "homepage2": "https://michinoeki-ginnobasyamichi-kamikawa.com/"
       }
     },
     {
@@ -20993,7 +24305,10 @@ const michiNoEkiGeoJSON = {
         "city": "岩出市",
         "address": "和歌山県岩出市根来2020番地の１",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19895"
+        "url": "https://www.michi-no-eki.jp/stations/views/19895",
+        "businessHours": "10:00～18:00",
+        "homepage": "https://www.city.iwade.lg.jp/kanko/2017-0426-1141-58.html",
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/negororekishinooka.html"
       }
     },
     {
@@ -21012,7 +24327,10 @@ const michiNoEkiGeoJSON = {
         "city": "中土佐町",
         "address": "高知県高岡郡中土佐町久礼8645-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19896"
+        "url": "https://www.michi-no-eki.jp/stations/views/19896",
+        "businessHours": "9:00～17:00(各店舗ごとに異なる)",
+        "homepage": "https://www.nakatosa.com/",
+        "homepage2": "https://www.facebook.com/道の駅なかとさ-観光インフォメーション-631032887106265/"
       }
     },
     {
@@ -21031,7 +24349,10 @@ const michiNoEkiGeoJSON = {
         "city": "石狩市",
         "address": "北海道石狩市厚田区厚田98-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19897"
+        "url": "https://www.michi-no-eki.jp/stations/views/19897",
+        "businessHours": "10:00～16:00（11/1-3/31）",
+        "homepage": "http://aikaze.co.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -21050,7 +24371,10 @@ const michiNoEkiGeoJSON = {
         "city": "七飯町",
         "address": "北海道亀田郡七飯町字峠下380-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19898"
+        "url": "https://www.michi-no-eki.jp/stations/views/19898",
+        "businessHours": "9:00～18:00〔時期により異なる〕",
+        "homepage": "http://nanairo-nanae.jp/",
+        "homepage2": "https://shop.nanairo-nanae.jp/"
       }
     },
     {
@@ -21069,7 +24393,10 @@ const michiNoEkiGeoJSON = {
         "city": "西目屋村",
         "address": "青森県中津軽郡西目屋村大字田代字神田219-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19899"
+        "url": "https://www.michi-no-eki.jp/stations/views/19899",
+        "businessHours": "9:00～17:00（冬季間9:00～16:00）",
+        "homepage": "https://www.tsugaru-shirakami.com/",
+        "homepage2": ""
       }
     },
     {
@@ -21088,7 +24415,10 @@ const michiNoEkiGeoJSON = {
         "city": "一関市",
         "address": "岩手県一関市室根町折壁字向山131-9",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19900"
+        "url": "https://www.michi-no-eki.jp/stations/views/19900",
+        "businessHours": "9:00-18:00",
+        "homepage": "https://murone.theshop.jp",
+        "homepage2": "https://www.instagram.com/michieki.murone/"
       }
     },
     {
@@ -21107,7 +24437,10 @@ const michiNoEkiGeoJSON = {
         "city": "鹿角市",
         "address": "秋田県鹿角市十和田大湯字中谷地19",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19901"
+        "url": "https://www.michi-no-eki.jp/stations/views/19901",
+        "businessHours": "9:00~18:00",
+        "homepage": "https://yunoeki-oyu.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -21126,7 +24459,10 @@ const michiNoEkiGeoJSON = {
         "city": "米沢市",
         "address": "山形県米沢市大字川井1039-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19902"
+        "url": "https://www.michi-no-eki.jp/stations/views/19902",
+        "businessHours": "トイレ、道路情報コーナー、無料休憩所は24時間ご利用いただけます。 お土産コーナー：9時～18時 フードコート：10時～18時 セブンイレブン：7時～21時 米沢牛レストラン牛毘亭：10時～18時(※予約の際は21:00まで可)",
+        "homepage": "https://michinoeki-yonezawa.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -21145,7 +24481,10 @@ const michiNoEkiGeoJSON = {
         "city": "伊達市",
         "address": "福島県伊達市霊山町下小国字桜町3-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19903"
+        "url": "https://www.michi-no-eki.jp/stations/views/19903",
+        "businessHours": "9:30～18:00（施設により異なる）",
+        "homepage": "http://michinoeki-datenosato-ryozen.jp/",
+        "homepage2": "https://www.youtube.com/watch?v=H46qw1VwSNo"
       }
     },
     {
@@ -21164,7 +24503,10 @@ const michiNoEkiGeoJSON = {
         "city": "片品村",
         "address": "群馬県利根郡片品村大字鎌田3967-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19904"
+        "url": "https://www.michi-no-eki.jp/stations/views/19904",
+        "businessHours": "9:00～17:00（施設により異なります）",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000199.html",
+        "homepage2": "https://oze-katashina.info/michinoeki"
       }
     },
     {
@@ -21183,7 +24525,10 @@ const michiNoEkiGeoJSON = {
         "city": "市川市",
         "address": "千葉県市川市国分6-10-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19905"
+        "url": "https://www.michi-no-eki.jp/stations/views/19905",
+        "businessHours": "9:00~22:00",
+        "homepage": "http://www.michinoeki-ichikawa.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -21202,7 +24547,10 @@ const michiNoEkiGeoJSON = {
         "city": "南部町",
         "address": "山梨県南巨摩郡南部町中野3034-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19906"
+        "url": "https://www.michi-no-eki.jp/stations/views/19906",
+        "businessHours": "",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000270.html",
+        "homepage2": ""
       }
     },
     {
@@ -21221,7 +24569,10 @@ const michiNoEkiGeoJSON = {
         "city": "立科町",
         "address": "長野県北佐久郡立科町大字茂田井2480",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19907"
+        "url": "https://www.michi-no-eki.jp/stations/views/19907",
+        "businessHours": "9:00～17:00（1/5～4月・毎週木曜日定休）、9:00～18:00（GW～12/30） ＜休 12/31～1/4＞",
+        "homepage": "http://nonki-mura.com/megaminosato/",
+        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000301.html"
       }
     },
     {
@@ -21240,7 +24591,10 @@ const michiNoEkiGeoJSON = {
         "city": "豊丘村",
         "address": "長野県下伊那郡豊丘村大字神稲12410",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19908"
+        "url": "https://www.michi-no-eki.jp/stations/views/19908",
+        "businessHours": "四季彩市場9:00～18:00 VEGE-FULL KITCHEN11:00～16:00(火曜曜定休) Bread & Sweetsきらら 9:30～17:00(水曜定休)",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano15.html",
+        "homepage2": "https://www.toyooka-marche.jp/"
       }
     },
     {
@@ -21259,7 +24613,10 @@ const michiNoEkiGeoJSON = {
         "city": "高岡市",
         "address": "富山県高岡市太田24-74",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19909"
+        "url": "https://www.michi-no-eki.jp/stations/views/19909",
+        "businessHours": "9:00～17:00 ※季節やイベントにより閉店時間変更あり 最長19:00まで",
+        "homepage": "https://michinoeki-amaharashi.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -21278,7 +24635,10 @@ const michiNoEkiGeoJSON = {
         "city": "白山市",
         "address": "石川県白山市宮丸町2183",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19910"
+        "url": "https://www.michi-no-eki.jp/stations/views/19910",
+        "businessHours": "【JA直売所・観光情報コーナー9:30～18:00】【レストラン10:00～16:00】",
+        "homepage": "http://megumi-hakusan.com",
+        "homepage2": ""
       }
     },
     {
@@ -21297,7 +24657,10 @@ const michiNoEkiGeoJSON = {
         "city": "熊野市",
         "address": "三重県熊野市紀和町板屋82",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19911"
+        "url": "https://www.michi-no-eki.jp/stations/views/19911",
+        "businessHours": "平日:10:00～16:00 土日祝:10:00～17:00 お食事：11:00~14:00 定休日:第二、第三火曜日",
+        "homepage": "http://kurobee.net",
+        "homepage2": ""
       }
     },
     {
@@ -21316,7 +24679,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "奈良県磯城郡田原本町大字唐古70-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19912"
+        "url": "https://www.michi-no-eki.jp/stations/views/19912",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.town.tawaramoto.nara.jp/soshki/sangyo/kanko/kanko_1/mitinoeki/7102.html",
+        "homepage2": "https://resti-karako-kagi.jp/"
       }
     },
     {
@@ -21335,7 +24701,10 @@ const michiNoEkiGeoJSON = {
         "city": "長門市",
         "address": "山口県長門市仙崎4297-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19913"
+        "url": "https://www.michi-no-eki.jp/stations/views/19913",
+        "businessHours": "9:00~18:00",
+        "homepage": "https://nanavi.jp/senzakitchen/",
+        "homepage2": "https://www.facebook.com/senzakitchen/"
       }
     },
     {
@@ -21354,7 +24723,10 @@ const michiNoEkiGeoJSON = {
         "city": "美瑛町",
         "address": "北海道上川郡美瑛町字白金",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19914"
+        "url": "https://www.michi-no-eki.jp/stations/views/19914",
+        "businessHours": "9:00～18:00（6～８月） 9:00～17:00（3～5月、9～11月） 10:00～17:00（12～2月）",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/16028/",
+        "homepage2": ""
       }
     },
     {
@@ -21373,7 +24745,10 @@ const michiNoEkiGeoJSON = {
         "city": "男鹿市",
         "address": "秋田県男鹿市船川港船川字新浜町1番地19",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19915"
+        "url": "https://www.michi-no-eki.jp/stations/views/19915",
+        "businessHours": "9:00~17:00",
+        "homepage": "https://michinoekioga.co.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -21392,7 +24767,10 @@ const michiNoEkiGeoJSON = {
         "city": "南箕輪村",
         "address": "長野県上伊那郡南箕輪村2358番地5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19916"
+        "url": "https://www.michi-no-eki.jp/stations/views/19916",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano16.html"
       }
     },
     {
@@ -21411,7 +24789,10 @@ const michiNoEkiGeoJSON = {
         "city": "売木村",
         "address": "長野県下伊那郡売木村543番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19917"
+        "url": "https://www.michi-no-eki.jp/stations/views/19917",
+        "businessHours": "農産物直売所：9:00～16:00",
+        "homepage": "",
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano17.html"
       }
     },
     {
@@ -21430,7 +24811,10 @@ const michiNoEkiGeoJSON = {
         "city": "大鹿村",
         "address": "長野県下伊那郡大鹿村大字大河原390番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19918"
+        "url": "https://www.michi-no-eki.jp/stations/views/19918",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano18.html"
       }
     },
     {
@@ -21449,7 +24833,10 @@ const michiNoEkiGeoJSON = {
         "city": "生坂村",
         "address": "長野県東筑摩郡生坂村5204番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19919"
+        "url": "https://www.michi-no-eki.jp/stations/views/19919",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.village.ikusaka.nagano.jp/ikusakanosato/",
+        "homepage2": ""
       }
     },
     {
@@ -21468,7 +24855,10 @@ const michiNoEkiGeoJSON = {
         "city": "明日香村",
         "address": "奈良県高市郡明日香村大字越6番2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19920"
+        "url": "https://www.michi-no-eki.jp/stations/views/19920",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -21487,7 +24877,10 @@ const michiNoEkiGeoJSON = {
         "city": "美馬市",
         "address": "徳島県美馬市美馬町字願勝寺72番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19921"
+        "url": "https://www.michi-no-eki.jp/stations/views/19921",
+        "businessHours": "8:30~18:00",
+        "homepage": "https://mimanosato.jp/",
+        "homepage2": "https://www.sk-michinoeki.jp/michinoeki/1771"
       }
     },
     {
@@ -21506,7 +24899,10 @@ const michiNoEkiGeoJSON = {
         "city": "伊予市",
         "address": "愛媛県伊予市中山町中山子271番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19922"
+        "url": "https://www.michi-no-eki.jp/stations/views/19922",
+        "businessHours": "8:00~17:00（店舗により異なる）",
+        "homepage": "",
+        "homepage2": "https://www.michinoekinakayama.com/"
       }
     },
     {
@@ -21525,7 +24921,10 @@ const michiNoEkiGeoJSON = {
         "city": "天草市",
         "address": "熊本県天草市河浦町﨑津1117番地10",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19923"
+        "url": "https://www.michi-no-eki.jp/stations/views/19923",
+        "businessHours": "9:00～17:30",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/sakitsu/sakitsu.html",
+        "homepage2": "http://sakituguidance.amakusa-web.jp/MyHp/Pub/"
       }
     },
     {
@@ -21544,7 +24943,10 @@ const michiNoEkiGeoJSON = {
         "city": "垂水市",
         "address": "鹿児島県垂水市浜平2036番地6",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19924"
+        "url": "https://www.michi-no-eki.jp/stations/views/19924",
+        "businessHours": "9:00～18:30",
+        "homepage": "http://tarumizuhamabira.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -21563,7 +24965,10 @@ const michiNoEkiGeoJSON = {
         "city": "河内長野市",
         "address": "大阪府河内長野市高向1218-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19925"
+        "url": "https://www.michi-no-eki.jp/stations/views/19925",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/osaka/kuromaronosato.html",
+        "homepage2": "https://kuromaro.com/"
       }
     },
     {
@@ -21582,7 +24987,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "福島県二本松市米沢字下川原田105-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19926"
+        "url": "https://www.michi-no-eki.jp/stations/views/19926",
+        "businessHours": "9:00~17：00",
+        "homepage": "http://www.michinoeki-adachi.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -21601,7 +25009,10 @@ const michiNoEkiGeoJSON = {
         "city": "浜頓別町",
         "address": "北海道枝幸郡浜頓別町中央北21番1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19927"
+        "url": "https://www.michi-no-eki.jp/stations/views/19927",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -21620,7 +25031,10 @@ const michiNoEkiGeoJSON = {
         "city": "安平町",
         "address": "北海道勇払郡安平町追分柏が丘49番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19928"
+        "url": "https://www.michi-no-eki.jp/stations/views/19928",
+        "businessHours": "",
+        "homepage": "https://d51-station.com/",
+        "homepage2": ""
       }
     },
     {
@@ -21639,7 +25053,10 @@ const michiNoEkiGeoJSON = {
         "city": "角田市",
         "address": "宮城県角田市枝野字北島81番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19929"
+        "url": "https://www.michi-no-eki.jp/stations/views/19929",
+        "businessHours": "9：00～17：30（4月～10月) 9：00～17：00（11月～3月)",
+        "homepage": "https://kakudanotakara.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -21658,7 +25075,10 @@ const michiNoEkiGeoJSON = {
         "city": "豊橋市",
         "address": "愛知県豊橋市東七根町字一の沢113番地2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19930"
+        "url": "https://www.michi-no-eki.jp/stations/views/19930",
+        "businessHours": "9:00〜19:00",
+        "homepage": "https://www.michinoeki-toyohashi.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -21677,7 +25097,10 @@ const michiNoEkiGeoJSON = {
         "city": "鳥取市",
         "address": "鳥取県鳥取市鹿野町岡木280-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19931"
+        "url": "https://www.michi-no-eki.jp/stations/views/19931",
+        "businessHours": "[物販] 9:00～18:00 [レストラン] 10:00～18:00(L.O.17:00） [ファミリーマート] 5:00～23:00",
+        "homepage": "",
+        "homepage2": "http://nishiinaba.jp"
       }
     },
     {
@@ -21696,7 +25119,10 @@ const michiNoEkiGeoJSON = {
         "city": "天草市",
         "address": "熊本県天草市五和町二江4689番地20",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19932"
+        "url": "https://www.michi-no-eki.jp/stations/views/19932",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/amakusairuka/amakusairuka.html",
+        "homepage2": "https://www.amakusa-dolphin.jp/"
       }
     },
     {
@@ -21715,7 +25141,10 @@ const michiNoEkiGeoJSON = {
         "city": "人吉市",
         "address": "熊本県人吉市赤池原町字牛渡瀬1425-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19933"
+        "url": "https://www.michi-no-eki.jp/stations/views/19933",
+        "businessHours": "9:00〜17:00",
+        "homepage": "https://h-craftpark.com/",
+        "homepage2": ""
       }
     },
     {
@@ -21734,7 +25163,10 @@ const michiNoEkiGeoJSON = {
         "city": "大分市",
         "address": "大分県大分市大字下原1717番地の1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19934"
+        "url": "https://www.michi-no-eki.jp/stations/views/19934",
+        "businessHours": "オープン当日：午前10時40分～午後6時 2019.12.1（日）以降：午前9時～午後5時",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -21753,7 +25185,10 @@ const michiNoEkiGeoJSON = {
         "city": "大崎市",
         "address": "宮城県大崎市古川千手寺町二丁目5番50号",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19935"
+        "url": "https://www.michi-no-eki.jp/stations/views/19935",
+        "businessHours": "産直コーナー 09：30～18：30 コミュニティカフェ 10：00～18：00 共に元旦のみお休み",
+        "homepage": "",
+        "homepage2": "https://www.michinoekiosaki.jp/"
       }
     },
     {
@@ -21772,7 +25207,10 @@ const michiNoEkiGeoJSON = {
         "city": "紋別郡",
         "address": "北海道紋別郡遠軽町野上150番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19936"
+        "url": "https://www.michi-no-eki.jp/stations/views/19936",
+        "businessHours": "9:00～18:00（冬季のスキー場は9：00～20：00）※ゲレンデ状況等により変動あり",
+        "homepage": "https://engaru-mori-no-okhotsk.jp/",
+        "homepage2": "https://www.engaru-kankou.jp/"
       }
     },
     {
@@ -21791,7 +25229,10 @@ const michiNoEkiGeoJSON = {
         "city": "筑西市",
         "address": "茨城県筑西市川澄1850番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19937"
+        "url": "https://www.michi-no-eki.jp/stations/views/19937",
+        "businessHours": "9：00〜18：00",
+        "homepage": "",
+        "homepage2": "https://granterrace-chikusei.com"
       }
     },
     {
@@ -21810,7 +25251,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "栃木県塩谷郡高根沢町大字上柏崎588番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19938"
+        "url": "https://www.michi-no-eki.jp/stations/views/19938",
+        "businessHours": "本館10:00~21:00（各施設の営業時間につきましては下記をご覧ください）",
+        "homepage": "https://www.genkiupmura.com/",
+        "homepage2": ""
       }
     },
     {
@@ -21829,7 +25273,10 @@ const michiNoEkiGeoJSON = {
         "city": "下高井郡",
         "address": "長野県下高井郡野沢温泉村大字虫生2375",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19939"
+        "url": "https://www.michi-no-eki.jp/stations/views/19939",
+        "businessHours": "レストラン 11:00～17:00（L.O.16:30）ショップ 9:00～17:00（毎月第３水曜定休）、農林産物直売所 9:00～16:00（火曜・水曜定休。7月～11月は無休）",
+        "homepage": "http://www.nozawa-onsen.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -21848,7 +25295,10 @@ const michiNoEkiGeoJSON = {
         "city": "伊豆市",
         "address": "静岡県伊豆市月ヶ瀬78-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19940"
+        "url": "https://www.michi-no-eki.jp/stations/views/19940",
+        "businessHours": "2階物販スペース9：00～17：00 カフェエリア10：00～16：00 1階レストラン10：00～17：00（ラストオーダー16：00）",
+        "homepage": "https://www.izutsukigase.com/",
+        "homepage2": ""
       }
     },
     {
@@ -21867,7 +25317,10 @@ const michiNoEkiGeoJSON = {
         "city": "朝倉郡",
         "address": "福岡県朝倉郡筑前町三並866番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19941"
+        "url": "https://www.michi-no-eki.jp/stations/views/19941",
+        "businessHours": "",
+        "homepage": "http://chikuzen-minaminosato.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -21886,7 +25339,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "北海道河東郡上士幌町字上士幌東3線227番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19942"
+        "url": "https://www.michi-no-eki.jp/stations/views/19942",
+        "businessHours": "9:00～18:00（冬季～17:00）◆レストラン「La Table de KAMISHIHORO」11:00～16:00(モーニング8:00～10:00)",
+        "homepage": "https://karch.jp/michinoeki/",
+        "homepage2": "https://michinoeki-kamishihoro.shop/"
       }
     },
     {
@@ -21905,7 +25361,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "北海道留萌市船場町2丁目114",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19943"
+        "url": "https://www.michi-no-eki.jp/stations/views/19943",
+        "businessHours": "9:00～17:00",
+        "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/23225/",
+        "homepage2": "https://web.michinoeki-rumoi.info/"
       }
     },
     {
@@ -21924,7 +25383,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "岩手県花巻市轟木7地割203番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19944"
+        "url": "https://www.michi-no-eki.jp/stations/views/19944",
+        "businessHours": "物産館「すぎの樹」 9:00～17:00 食堂「味楽苑」 11:00～14:00、17:00～21:30 加工室「ミレットキッチン花」",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -21943,7 +25405,10 @@ const michiNoEkiGeoJSON = {
         "city": "浪江町",
         "address": "福島県双葉郡浪江町大字幾世橋字知命寺60",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19945"
+        "url": "https://www.michi-no-eki.jp/stations/views/19945",
+        "businessHours": "10：00〜18：00",
+        "homepage": "https://michinoeki-namie.jp",
+        "homepage2": "https://m.facebook.com/michinoeki.namie/"
       }
     },
     {
@@ -21962,7 +25427,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "神奈川県南足柄市竹松1117番1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19946"
+        "url": "https://www.michi-no-eki.jp/stations/views/19946",
+        "businessHours": "09:00～17：00",
+        "homepage": "",
+        "homepage2": "https://www.michinoeki-ashigara.com/"
       }
     },
     {
@@ -21981,7 +25449,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "長野県茅野市北山4035番地2906",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19947"
+        "url": "https://www.michi-no-eki.jp/stations/views/19947",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": "https://www.city.chino.lg.jp/soshiki/kankou/299.html"
       }
     },
     {
@@ -22000,7 +25471,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "新潟県南蒲原郡田上町大字原ヶ崎新田3072番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19948"
+        "url": "https://www.michi-no-eki.jp/stations/views/19948",
+        "businessHours": "ショップ12～3月／10:00～16:00,4～11月／9:30～17:00 食堂12～3月／10:00～15:30,4～11月／10:00～16:00 情報発信,休憩施設,コンビニエンスストア24H",
+        "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000082",
+        "homepage2": "https://michinoeki-tagami.jp"
       }
     },
     {
@@ -22019,7 +25493,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "新潟県長岡市喜多町707番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19949"
+        "url": "https://www.michi-no-eki.jp/stations/views/19949",
+        "businessHours": "長岡花火ミュージアム10：00～17：30／レストラン(HIGH AMBITION)リニューアル改装中／越後長岡御貢屋(地場産品等販売所))10：00～17：30／フードコート(ながおかKitchen)10：30～18：00／とれたて・できたて直売所(農産物等直売所)10：00～17：30",
+        "homepage": "",
+        "homepage2": "https://nagaoka-hanabikan.niigata.jp/"
       }
     },
     {
@@ -22038,7 +25515,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "福井県勝山市荒土町松ヶ崎第1号17番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19950"
+        "url": "https://www.michi-no-eki.jp/stations/views/19950",
+        "businessHours": "ショップ/9:00～17:00（時期によって変動あり） レストラン/10:00～16:00（時期によって変動あり） 定休日：毎月第2、第3火曜日（祝日の場合は営業、翌平日が定休となります）",
+        "homepage": "",
+        "homepage2": "http://katsuyama-navi.jp/michieki/"
       }
     },
     {
@@ -22057,7 +25537,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "和歌山県和歌山市明王寺85番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19951"
+        "url": "https://www.michi-no-eki.jp/stations/views/19951",
+        "businessHours": "【平日】10:00〜17:00 【土日祝】9:00〜17:00",
+        "homepage": "http://www.city.wakayama.wakayama.jp/shisetsu/kouen_sp_shisetsu/1006085/1003228/1030408.html",
+        "homepage2": "https://fh-park.jp/"
       }
     },
     {
@@ -22076,7 +25559,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "731-523 広島県安芸高田市吉田町山手1059番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19952"
+        "url": "https://www.michi-no-eki.jp/stations/views/19952",
+        "businessHours": "ベジパーク8時半～18時、レストラン11時～15時、あきたかたNAVI10時～17時、12/31～1/4",
+        "homepage": "https://akitakata-kankou.jp/main/mitsuyanosato/",
+        "homepage2": ""
       }
     },
     {
@@ -22095,7 +25581,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "熊本県天草市宮地岳町5516-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19953"
+        "url": "https://www.michi-no-eki.jp/stations/views/19953",
+        "businessHours": "おみやげ販売９：００～１８：００（冬季１７：００） レストラン１１：００～１５：００（ラストオーダー１４：３０）",
+        "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/miyajidake/miyajidake.html",
+        "homepage2": "http://www.kakashinosato.jp"
       }
     },
     {
@@ -22114,7 +25603,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "沖縄県国頭郡東村字平良550番地23",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19954"
+        "url": "https://www.michi-no-eki.jp/stations/views/19954",
+        "businessHours": "9:00～18:00",
+        "homepage": "http://www.sunrise-higashi.jp/index.jsp",
+        "homepage2": ""
       }
     },
     {
@@ -22133,7 +25625,10 @@ const michiNoEkiGeoJSON = {
         "city": "河東郡",
         "address": "北海道河東郡音更町十勝川温泉北14丁目1番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19955"
+        "url": "https://www.michi-no-eki.jp/stations/views/19955",
+        "businessHours": "5月～10月 9：00～19：00（月～木）9：00～21：00（金～日・祝日） 11月～4月 9：00～19：00",
+        "homepage": "http://www.tokachigawa.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -22152,7 +25647,10 @@ const michiNoEkiGeoJSON = {
         "city": "北設楽郡",
         "address": "愛知県北設楽郡設楽町清崎字中田17番地7",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19956"
+        "url": "https://www.michi-no-eki.jp/stations/views/19956",
+        "businessHours": "9:00～17:00 ※施設により異なる",
+        "homepage": "michinoeki-shitara.jp",
+        "homepage2": ""
       }
     },
     {
@@ -22171,7 +25669,10 @@ const michiNoEkiGeoJSON = {
         "city": "小田郡",
         "address": "岡山県小田郡矢掛町矢掛1988番10",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19957"
+        "url": "https://www.michi-no-eki.jp/stations/views/19957",
+        "businessHours": "9：00～17：00",
+        "homepage": "https://www.instagram.com/sanyodoyakagejuku/",
+        "homepage2": ""
       }
     },
     {
@@ -22190,7 +25691,10 @@ const michiNoEkiGeoJSON = {
         "city": "大田市",
         "address": "島根県大田市仁摩町大国42番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19958"
+        "url": "https://www.michi-no-eki.jp/stations/views/19958",
+        "businessHours": "",
+        "homepage": "https://goise.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -22209,7 +25713,10 @@ const michiNoEkiGeoJSON = {
         "city": "板野郡",
         "address": "徳島県板野郡板野町川端字中手崎39番地5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19959"
+        "url": "https://www.michi-no-eki.jp/stations/views/19959",
+        "businessHours": "特産物直売所 8:30～18:00/レストラン 11:00～18:00 定休日なし（年始のみ）",
+        "homepage": "http://www.town.itano.tokushima.jp/docs/2021041400015/",
+        "homepage2": "https://www.sk-michinoeki.jp/michinoeki/2581"
       }
     },
     {
@@ -22228,7 +25735,10 @@ const michiNoEkiGeoJSON = {
         "city": "八代市",
         "address": "熊本県八代市東陽町南1051番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19960"
+        "url": "https://www.michi-no-eki.jp/stations/views/19960",
+        "businessHours": "10:00～20:00〔施設により異なる〕",
+        "homepage": "",
+        "homepage2": "http://www.toyo-seseragi.com/"
       }
     },
     {
@@ -22247,7 +25757,10 @@ const michiNoEkiGeoJSON = {
         "city": "串間市",
         "address": "宮崎県串間市大字西方5503番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19961"
+        "url": "https://www.michi-no-eki.jp/stations/views/19961",
+        "businessHours": "飲食物産館：9:00～18：00※一部テナントのみ21時まで 情報提供施設（観光案内所）9:00～18:00",
+        "homepage": "",
+        "homepage2": "https://michinoeki-kushima.com/"
       }
     },
     {
@@ -22266,7 +25779,10 @@ const michiNoEkiGeoJSON = {
         "city": "士別市",
         "address": "北海道士別市大通東5丁目440番地23",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19962"
+        "url": "https://www.michi-no-eki.jp/stations/views/19962",
+        "businessHours": "夏季 ５月～１０月 9:00～18:00、冬季 １１月～４月 10:00～17:00",
+        "homepage": "https://machi-shibetsu.securesite.jp",
+        "homepage2": ""
       }
     },
     {
@@ -22285,7 +25801,10 @@ const michiNoEkiGeoJSON = {
         "city": "下閉伊郡",
         "address": "岩手県下閉伊郡普代村第9地割字銅屋5番地3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19963"
+        "url": "https://www.michi-no-eki.jp/stations/views/19963",
+        "businessHours": "8:00～17：00（年末年始休業あり）",
+        "homepage": "https://aonokuni.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -22304,7 +25823,10 @@ const michiNoEkiGeoJSON = {
         "city": "石巻市",
         "address": "宮城県石巻市雄勝町下雄勝二丁目5番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19964"
+        "url": "https://www.michi-no-eki.jp/stations/views/19964",
+        "businessHours": "9:00～16：30（各店舗による、ホームページで要確認）※雄勝硯伝統産業会館：火曜日定休",
+        "homepage": "https://kenjounosato-ogatsu.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -22323,7 +25845,10 @@ const michiNoEkiGeoJSON = {
         "city": "牡鹿郡",
         "address": "宮城県牡鹿郡女川町女川二丁目66番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19965"
+        "url": "https://www.michi-no-eki.jp/stations/views/19965",
+        "businessHours": "店舗・施設による。※ハマテラス内のトイレ、授乳スペース、情報コーナーは24時間利用可能",
+        "homepage": "http://onagawa-mirai.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -22342,7 +25867,10 @@ const michiNoEkiGeoJSON = {
         "city": "本吉郡",
         "address": "宮城県本吉郡南三陸町志津川字五日町200-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19966"
+        "url": "https://www.michi-no-eki.jp/stations/views/19966",
+        "businessHours": "商店街(店舗による) 伝承館施設(9:00～17:00※冬期12～2月は16:00まで)<(火)定休> 観光案内所(9:00～17:00※冬期12～2月は16:00まで) 志津川駅(9:00～16:30)",
+        "homepage": "https://www.m-kankou.jp/view_spot/250156.html/",
+        "homepage2": "https://www.sansan-minamisanriku.com/"
       }
     },
     {
@@ -22361,7 +25889,10 @@ const michiNoEkiGeoJSON = {
         "city": "大野市",
         "address": "福井県大野市蕨生第137号21番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19967"
+        "url": "https://www.michi-no-eki.jp/stations/views/19967",
+        "businessHours": "午前９時～午後６時（冬期間は午後５時）",
+        "homepage": "https://arashimanosato.com/",
+        "homepage2": ""
       }
     },
     {
@@ -22380,7 +25911,10 @@ const michiNoEkiGeoJSON = {
         "city": "南条郡",
         "address": "福井県南条郡南越前町牧谷39-2-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19968"
+        "url": "https://www.michi-no-eki.jp/stations/views/19968",
+        "businessHours": "9：00〜20：00（店舗により異なる）",
+        "homepage": "https://kineno-nanjo.com/",
+        "homepage2": ""
       }
     },
     {
@@ -22399,7 +25933,10 @@ const michiNoEkiGeoJSON = {
         "city": "藤枝市",
         "address": "静岡県藤枝市岡部町岡部2190-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19969"
+        "url": "https://www.michi-no-eki.jp/stations/views/19969",
+        "businessHours": "7:00～19:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka04_2.html",
+        "homepage2": ""
       }
     },
     {
@@ -22418,7 +25955,10 @@ const michiNoEkiGeoJSON = {
         "city": "静岡市",
         "address": "静岡県静岡市駿河区宇津ノ谷82-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19970"
+        "url": "https://www.michi-no-eki.jp/stations/views/19970",
+        "businessHours": "7:00～19:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka04_1.html",
+        "homepage2": ""
       }
     },
     {
@@ -22437,7 +25977,10 @@ const michiNoEkiGeoJSON = {
         "city": "福島市",
         "address": "福島県福島市大笹生字月崎1番地の1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19971"
+        "url": "https://www.michi-no-eki.jp/stations/views/19971",
+        "businessHours": "9:00～18:00〔施設・季節により異なる〕＜無休＞冬季営業時間有：詳細は道の駅ふくしまHPへ",
+        "homepage": "https://m-fukushima.com/",
+        "homepage2": ""
       }
     },
     {
@@ -22456,7 +25999,10 @@ const michiNoEkiGeoJSON = {
         "city": "笠間市",
         "address": "茨城県笠間市手越22番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19972"
+        "url": "https://www.michi-no-eki.jp/stations/views/19972",
+        "businessHours": "お食事処 楽栗 La Kuri 9:30〜18:00（LO17:30） フードコート・レストラン 11:00〜18:00（LO 17:30）※レストランのソフトクリームのみ10:00～ 直売所 みどりの風 9:00〜18:00 コンビニ 24時間営業 その他施設 24時間利用可能 トイレ、授乳室、道路情報コーナー、 EV充電施設 定休日 第２木曜日（９月～１１月は休まず営業） （ただし、自然災害や施設メンテナンス等のため、やむを得ず臨時休業になる場合がございます）",
+        "homepage": "https://m-kasama.com/",
+        "homepage2": ""
       }
     },
     {
@@ -22475,7 +26021,10 @@ const michiNoEkiGeoJSON = {
         "city": "黒部市",
         "address": "富山県黒部市堀切925番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19973"
+        "url": "https://www.michi-no-eki.jp/stations/views/19973",
+        "businessHours": "8：30〜21：00",
+        "homepage": "https://www.koko-kurobe.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -22494,7 +26043,10 @@ const michiNoEkiGeoJSON = {
         "city": "天理市",
         "address": "奈良県天理市杣之内町437-3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19974"
+        "url": "https://www.michi-no-eki.jp/stations/views/19974",
+        "businessHours": "9:00～17:00 ※レストランと貸館は 9:00～20:00 ※ショップは 9:00～18:00 ※情報発信棟トイレ・授乳室は24時間",
+        "homepage": "https://www3.pref.nara.jp/bunkamura/",
+        "homepage2": ""
       }
     },
     {
@@ -22513,7 +26065,10 @@ const michiNoEkiGeoJSON = {
         "city": "鳴門市",
         "address": "徳島県鳴門市大津町備前島字蟹田の越338番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19975"
+        "url": "https://www.michi-no-eki.jp/stations/views/19975",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -22532,7 +26087,10 @@ const michiNoEkiGeoJSON = {
         "city": "国頭村",
         "address": "沖縄県国頭郡国頭村字安波1089番地7",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/19976"
+        "url": "https://www.michi-no-eki.jp/stations/views/19976",
+        "businessHours": "10:00~17:00 （カフェ L.O16:30）",
+        "homepage": "https://pineapple-hills.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -22551,7 +26109,10 @@ const michiNoEkiGeoJSON = {
         "city": "郡上市",
         "address": "岐阜県郡上市白鳥町長滝402-19",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/20043"
+        "url": "https://www.michi-no-eki.jp/stations/views/20043",
+        "businessHours": "8:30～17:00",
+        "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu07.html",
+        "homepage2": "http://okumino-shirotori.com/pg454.html"
       }
     },
     {
@@ -22570,7 +26131,10 @@ const michiNoEkiGeoJSON = {
         "city": "多可町",
         "address": "兵庫県多可郡多可町加美区鳥羽733-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/20044"
+        "url": "https://www.michi-no-eki.jp/stations/views/20044",
+        "businessHours": "9:00～17:00（日曜日は8:00～17:00）休館日 水曜日",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/rutoyonniinanakami.html",
+        "homepage2": "http://www.sugiharagaminosato.net"
       }
     },
     {
@@ -22589,7 +26153,10 @@ const michiNoEkiGeoJSON = {
         "city": "丹波市",
         "address": "兵庫県丹波市青垣町西芦田541",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/21617"
+        "url": "https://www.michi-no-eki.jp/stations/views/21617",
+        "businessHours": "9:30～16:30",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/aogaki.html",
+        "homepage2": "http://eki.aogaki.jp/"
       }
     },
     {
@@ -22608,7 +26175,10 @@ const michiNoEkiGeoJSON = {
         "city": "常陸大宮市",
         "address": "茨城県常陸大宮市鷲子272",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/21624"
+        "url": "https://www.michi-no-eki.jp/stations/views/21624",
+        "businessHours": "9:00～18:00 ＜休 毎週月曜日（月曜日が祝日の場合は翌日）＞",
+        "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000054.html",
+        "homepage2": "http://miwa.s55.biz/"
       }
     },
     {
@@ -22627,7 +26197,10 @@ const michiNoEkiGeoJSON = {
         "city": "阿賀野市",
         "address": "新潟県阿賀野市窪川原553番2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/21777"
+        "url": "https://www.michi-no-eki.jp/stations/views/21777",
+        "businessHours": "9:00‐18:00（各店舗による） 定休日 毎月第2、第4水曜日",
+        "homepage": "https://agano.co.jp",
+        "homepage2": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000084"
       }
     },
     {
@@ -22646,7 +26219,10 @@ const michiNoEkiGeoJSON = {
         "city": "東広島市",
         "address": "7390041 広島県東広島市西条町寺家10020番地43",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/21778"
+        "url": "https://www.michi-no-eki.jp/stations/views/21778",
+        "businessHours": "9:00 ～ 20:30",
+        "homepage": "https://www.nonta-sakagura.com/",
+        "homepage2": ""
       }
     },
     {
@@ -22665,7 +26241,10 @@ const michiNoEkiGeoJSON = {
         "city": "嬉野市",
         "address": "佐賀県嬉野市嬉野町大字下宿甲4370番地2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/21779"
+        "url": "https://www.michi-no-eki.jp/stations/views/21779",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -22684,7 +26263,10 @@ const michiNoEkiGeoJSON = {
         "city": "久慈市",
         "address": "岩手県久慈市夏井町鳥谷第7地割3-2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/21974"
+        "url": "https://www.michi-no-eki.jp/stations/views/21974",
+        "businessHours": "9:00~19:00＜休 1/1＞",
+        "homepage": "https://www.michinoeki-iks.com",
+        "homepage2": ""
       }
     },
     {
@@ -22703,7 +26285,10 @@ const michiNoEkiGeoJSON = {
         "city": "常総市",
         "address": "茨城県常総市むすびまち1番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/21975"
+        "url": "https://www.michi-no-eki.jp/stations/views/21975",
+        "businessHours": "9：00～17：00 ※各店舗の詳細な営業時間は、公式HPをご覧ください。 年中無休",
+        "homepage": "https://www.michinoeki-joso.com/",
+        "homepage2": ""
       }
     },
     {
@@ -22722,7 +26307,10 @@ const michiNoEkiGeoJSON = {
         "city": "前橋市",
         "address": "群馬県前橋市田口町36番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/21976"
+        "url": "https://www.michi-no-eki.jp/stations/views/21976",
+        "businessHours": "9:00~22:00",
+        "homepage": "https://maebashi-akagi.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -22741,7 +26329,10 @@ const michiNoEkiGeoJSON = {
         "city": "越前市",
         "address": "福井県越前市大屋町第38号5番地の１",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/21977"
+        "url": "https://www.michi-no-eki.jp/stations/views/21977",
+        "businessHours": "1F物販所 9:00~18:00 2Fお食事処 11:00~14:30LO／17:00~21:30LO（20時以降閉店する場合があります）",
+        "homepage": "https://echizen-takefu.jp",
+        "homepage2": ""
       }
     },
     {
@@ -22760,7 +26351,10 @@ const michiNoEkiGeoJSON = {
         "city": "小県郡",
         "address": "長野県小県郡長和町和田2834番地5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22056"
+        "url": "https://www.michi-no-eki.jp/stations/views/22056",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -22779,7 +26373,10 @@ const michiNoEkiGeoJSON = {
         "city": "あわら市",
         "address": "福井県あわら市吉崎1丁目801番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22057"
+        "url": "https://www.michi-no-eki.jp/stations/views/22057",
+        "businessHours": "4月～11月 9:00～18:00 12月～3月 9:00～17:00",
+        "homepage": "https://rennyo-awara.com/",
+        "homepage2": ""
       }
     },
     {
@@ -22798,7 +26395,10 @@ const michiNoEkiGeoJSON = {
         "city": "三方郡",
         "address": "福井県三方郡美浜町松原第35号15番地の1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22058"
+        "url": "https://www.michi-no-eki.jp/stations/views/22058",
+        "businessHours": "8月20日(水)、21日(木)はバーのみ営業",
+        "homepage": "https://hamabiyori.com/",
+        "homepage2": ""
       }
     },
     {
@@ -22817,7 +26417,10 @@ const michiNoEkiGeoJSON = {
         "city": "海南市",
         "address": "和歌山県海南市下津町小南51番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22059"
+        "url": "https://www.michi-no-eki.jp/stations/views/22059",
+        "businessHours": "午前9時から午後5時まで（1月1日を除き、年中無休）",
+        "homepage": "https://sakuas.com",
+        "homepage2": ""
       }
     },
     {
@@ -22836,7 +26439,10 @@ const michiNoEkiGeoJSON = {
         "city": "高岡郡",
         "address": "高知県高岡郡佐川町加茂2711番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22060"
+        "url": "https://www.michi-no-eki.jp/stations/views/22060",
+        "businessHours": "8:00～18:00（12・1月は～17:00／テナント・施設により異なる）",
+        "homepage": "https://makinosan.jp/",
+        "homepage2": "https://www.instagram.com/michinoeki_sakawa/"
       }
     },
     {
@@ -22855,7 +26461,10 @@ const michiNoEkiGeoJSON = {
         "city": "日南市",
         "address": "宮崎県日南市北郷町郷之原乙1477番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22061"
+        "url": "https://www.michi-no-eki.jp/stations/views/22061",
+        "businessHours": "物産館 9:00〜18:00、レストラン 11:00〜15:30(Last 15：00)",
+        "homepage": "https://michinoekikitago.com",
+        "homepage2": "https://instagram.com/kitagoro_56"
       }
     },
     {
@@ -22874,7 +26483,10 @@ const michiNoEkiGeoJSON = {
         "city": "山形市",
         "address": "山形県山形市表蔵王79番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22266"
+        "url": "https://www.michi-no-eki.jp/stations/views/22266",
+        "businessHours": "9:00～17:30",
+        "homepage": "https://www.m-yzao.com/",
+        "homepage2": ""
       }
     },
     {
@@ -22893,7 +26505,10 @@ const michiNoEkiGeoJSON = {
         "city": "最上町",
         "address": "山形県最上郡最上町大字志茂字柳ノ原1469番地50",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22267"
+        "url": "https://www.michi-no-eki.jp/stations/views/22267",
+        "businessHours": "9時から17時",
+        "homepage": "https://michinoeki-mogami.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -22912,7 +26527,10 @@ const michiNoEkiGeoJSON = {
         "city": "館山市",
         "address": "千葉県館山市稲274番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22268"
+        "url": "https://www.michi-no-eki.jp/stations/views/22268",
+        "businessHours": "9:00~17:00",
+        "homepage": "https://greenfarm-tateyama.com/",
+        "homepage2": ""
       }
     },
     {
@@ -22931,7 +26549,10 @@ const michiNoEkiGeoJSON = {
         "city": "奈良市",
         "address": "奈良県奈良市中町4694-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22269"
+        "url": "https://www.michi-no-eki.jp/stations/views/22269",
+        "businessHours": "9:00-17:00 ※直売所・レストランは20:00まで、トイレ・授乳室は24H",
+        "homepage": "https://michi-no-eki-crosswaynakamachi.pref.nara.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -22950,7 +26571,10 @@ const michiNoEkiGeoJSON = {
         "city": "大分市",
         "address": "大分県大分市大字神崎字梶原1228番-9",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22270"
+        "url": "https://www.michi-no-eki.jp/stations/views/22270",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -22969,7 +26593,10 @@ const michiNoEkiGeoJSON = {
         "city": "鹿角郡",
         "address": "秋田県鹿角郡小坂町十和田湖字生出1番地2",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22370"
+        "url": "https://www.michi-no-eki.jp/stations/views/22370",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -22988,7 +26615,10 @@ const michiNoEkiGeoJSON = {
         "city": "南佐久郡",
         "address": "長野県南佐久郡佐久穂町大字畑1190番1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22371"
+        "url": "https://www.michi-no-eki.jp/stations/views/22371",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -23007,7 +26637,10 @@ const michiNoEkiGeoJSON = {
         "city": "八代市",
         "address": "熊本県八代市泉町下岳3296-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22372"
+        "url": "https://www.michi-no-eki.jp/stations/views/22372",
+        "businessHours": "9:00～17:00",
+        "homepage": "https://fureai-izumi.com/",
+        "homepage2": ""
       }
     },
     {
@@ -23026,7 +26659,10 @@ const michiNoEkiGeoJSON = {
         "city": "大島郡",
         "address": "鹿児島県大島郡徳之島町花徳2206番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22373"
+        "url": "https://www.michi-no-eki.jp/stations/views/22373",
+        "businessHours": "9:00～18:00",
+        "homepage": "https://michinoeki-tokunoshima.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -23045,7 +26681,10 @@ const michiNoEkiGeoJSON = {
         "city": "かつらぎ町",
         "address": "和歌山県伊都郡かつらぎ町大字笠田東1270-22",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22425"
+        "url": "https://www.michi-no-eki.jp/stations/views/22425",
+        "businessHours": "物販9：00～20：00、食堂10：00～19：00（ラストオーダー18：30）、カフェ 9：00～17：00（ラストオーダー16：30）",
+        "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/katsuraginishi.html",
+        "homepage2": "https://www.kinki-michinoeki.com/74451/%e5%92%8c%e6%ad%8c%e5%b1%b1/"
       }
     },
     {
@@ -23064,7 +26703,10 @@ const michiNoEkiGeoJSON = {
         "city": "月形町",
         "address": "北海道樺戸郡月形町81番地10",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22522"
+        "url": "https://www.michi-no-eki.jp/stations/views/22522",
+        "businessHours": "【道の駅】9：００～２１：００（毎月第３火曜日休館※祝日の場合は翌日） 【日帰り温泉】１１：００～２１：００（最終入場２０：３０）（毎月第３火曜日休館※祝日の場合は翌日） 【レストラン】１１：３０～１９：３０【LO１９：００】（毎週火曜日休館※祝日の場合は翌日）",
+        "homepage": "https://ad.t-norte.com/lp/275tsukigata_open/",
+        "homepage2": "https://tsukigataonsen-hotel.com/"
       }
     },
     {
@@ -23083,7 +26725,10 @@ const michiNoEkiGeoJSON = {
         "city": "東松島市",
         "address": "宮城県東松島市小松字上二間堀112番地5",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22523"
+        "url": "https://www.michi-no-eki.jp/stations/views/22523",
+        "businessHours": "9:00~19:00（施設により異なる）",
+        "homepage": "https://www.michinoeki-higamatsu.com/",
+        "homepage2": ""
       }
     },
     {
@@ -23102,7 +26747,10 @@ const michiNoEkiGeoJSON = {
         "city": "桶川市",
         "address": "埼玉県桶川市川田谷4324番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22524"
+        "url": "https://www.michi-no-eki.jp/stations/views/22524",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -23121,7 +26769,10 @@ const michiNoEkiGeoJSON = {
         "city": "身延町",
         "address": "山梨県南巨摩郡身延町西嶋345番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22525"
+        "url": "https://www.michi-no-eki.jp/stations/views/22525",
+        "businessHours": "9：00～17：00",
+        "homepage": "https://www.nishijima-washinosato.com",
+        "homepage2": ""
       }
     },
     {
@@ -23140,7 +26791,10 @@ const michiNoEkiGeoJSON = {
         "city": "日進市",
         "address": "愛知県日進市本郷町前田33番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22526"
+        "url": "https://www.michi-no-eki.jp/stations/views/22526",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -23159,7 +26813,10 @@ const michiNoEkiGeoJSON = {
         "city": "三木市",
         "address": "兵庫県三木市吉川町吉安222",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22527"
+        "url": "https://www.michi-no-eki.jp/stations/views/22527",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -23178,7 +26835,10 @@ const michiNoEkiGeoJSON = {
         "city": "東洋町",
         "address": "安芸郡東洋町白浜88−1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22528"
+        "url": "https://www.michi-no-eki.jp/stations/views/22528",
+        "businessHours": "9:00-17:00",
+        "homepage": "https://michinoeki-toyocho.jp/",
+        "homepage2": "https://www.instagram.com/umieki.toyo/"
       }
     },
     {
@@ -23197,7 +26857,10 @@ const michiNoEkiGeoJSON = {
         "city": "上峰町",
         "address": "佐賀県三養基郡上峰町大字坊所1550番地3",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22529"
+        "url": "https://www.michi-no-eki.jp/stations/views/22529",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -23216,7 +26879,10 @@ const michiNoEkiGeoJSON = {
         "city": "古平町",
         "address": "北海道古平郡古平町大字浜町40-4",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22681"
+        "url": "https://www.michi-no-eki.jp/stations/views/22681",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -23235,7 +26901,10 @@ const michiNoEkiGeoJSON = {
         "city": "一関市",
         "address": "岩手県一関市大東町渋民字西風47-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22682"
+        "url": "https://www.michi-no-eki.jp/stations/views/22682",
+        "businessHours": "9:00~19:00（12月～３月は18：00まで）",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -23254,7 +26923,10 @@ const michiNoEkiGeoJSON = {
         "city": "盛岡市",
         "address": "岩手県盛岡市渋民字渋民80番地42",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22683"
+        "url": "https://www.michi-no-eki.jp/stations/views/22683",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -23273,7 +26945,10 @@ const michiNoEkiGeoJSON = {
         "city": "山田町",
         "address": "岩手県下閉伊郡山田町船越第6地割141番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22684"
+        "url": "https://www.michi-no-eki.jp/stations/views/22684",
+        "businessHours": "9:00～17:30",
+        "homepage": "https://www.yamada-funakoshi.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -23292,7 +26967,10 @@ const michiNoEkiGeoJSON = {
         "city": "新庄市",
         "address": "山形県新庄市十日町6000番地の1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22685"
+        "url": "https://www.michi-no-eki.jp/stations/views/22685",
+        "businessHours": "9:00-17:00",
+        "homepage": "https://michinoeki-eg.jp/",
+        "homepage2": ""
       }
     },
     {
@@ -23311,7 +26989,10 @@ const michiNoEkiGeoJSON = {
         "city": "いわき市",
         "address": "福島県いわき市小名浜字辰巳町43番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22686"
+        "url": "https://www.michi-no-eki.jp/stations/views/22686",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -23330,7 +27011,10 @@ const michiNoEkiGeoJSON = {
         "city": "茅ヶ崎市",
         "address": "神奈川県茅ヶ崎市柳島1546番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22687"
+        "url": "https://www.michi-no-eki.jp/stations/views/22687",
+        "businessHours": "直売所 9:00～18:00 飲食店舗 11:00～19:00（L.O.18:30）※飲食店舗により異なる",
+        "homepage": "https://m-shonanchigasaki.com/",
+        "homepage2": "https://m-shonanchigasaki.com/choice-chigasaki/"
       }
     },
     {
@@ -23349,7 +27033,10 @@ const michiNoEkiGeoJSON = {
         "city": "牧之原市",
         "address": "静岡県牧之原市坂部582-1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22688"
+        "url": "https://www.michi-no-eki.jp/stations/views/22688",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -23368,7 +27055,10 @@ const michiNoEkiGeoJSON = {
         "city": "諫早市",
         "address": "長崎県諫早市飯盛町上原1376番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22689"
+        "url": "https://www.michi-no-eki.jp/stations/views/22689",
+        "businessHours": "道の駅事務室 8:30～17:00 直売所 8:00～17:00",
+        "homepage": "https://isahaya-michinoeki251.jp/",
+        "homepage2": "https://www.city.isahaya.nagasaki.jp/soshiki/43/1675.html"
       }
     },
     {
@@ -23376,8 +27066,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.943634,
-          34.069103
+          35.9624088,
+          34.0480725
         ]
       },
       "properties": {
@@ -23387,7 +27077,10 @@ const michiNoEkiGeoJSON = {
         "city": "",
         "address": "奈良県吉野郡下北山村上池原1026番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22788"
+        "url": "https://www.michi-no-eki.jp/stations/views/22788",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -23406,7 +27099,10 @@ const michiNoEkiGeoJSON = {
         "city": "荒尾市",
         "address": "熊本県荒尾市大島1437番地南新地地区12街区1画地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22789"
+        "url": "https://www.michi-no-eki.jp/stations/views/22789",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": ""
       }
     },
     {
@@ -23425,7 +27121,10 @@ const michiNoEkiGeoJSON = {
         "city": "藤枝市",
         "address": "静岡藤枝市本郷5445番地",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22976"
+        "url": "https://www.michi-no-eki.jp/stations/views/22976",
+        "businessHours": "陶芸体験施設：9:00～17:00、瀬戸谷温泉ゆらく：9:00～21:00、農産物直売所：8:00～16:00、カフェ：10:00～16:00",
+        "homepage": "https://yutoriesetoya.com/",
+        "homepage2": ""
       }
     },
     {
@@ -23444,7 +27143,10 @@ const michiNoEkiGeoJSON = {
         "city": "石川町",
         "address": "福島県石川郡石川町字大橋58番地1",
         "road": "",
-        "url": "https://www.michi-no-eki.jp/stations/views/22977"
+        "url": "https://www.michi-no-eki.jp/stations/views/22977",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": ""
       }
     }
   ]
