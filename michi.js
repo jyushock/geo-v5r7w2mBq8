@@ -20,7 +20,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18786",
         "businessHours": "9:00～18:00（4～9月） 9:00～17:00（10～3月）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/172/",
-        "homepage2": "http://www.city.mikasa.hokkaido.jp/hotnews/detail/00000036.html"
+        "homepage2": "http://www.city.mikasa.hokkaido.jp/hotnews/detail/00000036.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1/"
       }
     },
     {
@@ -35,14 +36,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "18787",
         "name": "道の駅スタープラザ 芦別",
-        "prefecture": "スタープラザ　芦別",
+        "prefecture": "スタープラザ\u3000芦別",
         "city": "",
         "address": "北海道芦別市北４条東1-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/18787",
         "businessHours": "9:00～19:00（5～10月）9:00～18:00（11～4月）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/202/",
-        "homepage2": "https://go-to-ashibetsu.com/media/2018/04/01/20"
+        "homepage2": "https://go-to-ashibetsu.com/media/2018/04/01/20",
+        "michiEkiUrl": "https://www.michieki.jp/eki/2/"
       }
     },
     {
@@ -64,7 +66,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18788",
         "businessHours": "9:00～17:00（6～9月は19:00まで）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/222/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/3/"
       }
     },
     {
@@ -86,7 +89,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18789",
         "businessHours": "9:00～19：00 テナント10：00～19：00(ラストオーダー18：30）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/263/",
-        "homepage2": "https://michinoeki-shiranuka.jp/"
+        "homepage2": "https://michinoeki-shiranuka.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/4/"
       }
     },
     {
@@ -108,7 +112,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18790",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/292/",
-        "homepage2": "http://www.bifuka-kankou.com/michinoeki.php"
+        "homepage2": "http://www.bifuka-kankou.com/michinoeki.php",
+        "michiEkiUrl": "https://www.michieki.jp/eki/5/"
       }
     },
     {
@@ -130,7 +135,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18791",
         "businessHours": "9:00～17:00（4～11月） 10:00～16:00（12～3月）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/321/",
-        "homepage2": "http://www.hokkaido-esashi.jp/modules/sightseeing/content0023.html"
+        "homepage2": "http://www.hokkaido-esashi.jp/modules/sightseeing/content0023.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/6/"
       }
     },
     {
@@ -152,7 +158,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18792",
         "businessHours": "8:30～17:30",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/364/",
-        "homepage2": "http://ageimo.com/"
+        "homepage2": "http://ageimo.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/7/"
       }
     },
     {
@@ -174,7 +181,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18793",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/389/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/8/"
       }
     },
     {
@@ -196,7 +204,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18794",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/407/",
-        "homepage2": "https://hotel-arco.jp/sightseeing/"
+        "homepage2": "https://hotel-arco.jp/sightseeing/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/9/"
       }
     },
     {
@@ -218,7 +227,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18796",
         "businessHours": "8:00～18:00（11～4月は9:00～17:00）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/440/",
-        "homepage2": "http://www.masyuko.or.jp/michinoeki/index.html"
+        "homepage2": "http://www.masyuko.or.jp/michinoeki/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/11/"
       }
     },
     {
@@ -240,7 +250,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18797",
         "businessHours": "売店6:00～22:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/458/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/12/"
       }
     },
     {
@@ -262,7 +273,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18798",
         "businessHours": "10:00～22:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/472/",
-        "homepage2": "http://www.town.yubetsu.lg.jp/50shisetsu/6nou-kankou/spa-kamiyu.html"
+        "homepage2": "http://www.town.yubetsu.lg.jp/50shisetsu/6nou-kankou/spa-kamiyu.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/13/"
       }
     },
     {
@@ -284,7 +296,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18799",
         "businessHours": "9:00～18:00（4～10月） 9:00～17:30（11～3月）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/499/",
-        "homepage2": "http://www.iwanai-kanko.org/"
+        "homepage2": "http://www.iwanai-kanko.org/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/14/"
       }
     },
     {
@@ -306,7 +319,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18801",
         "businessHours": "9:00～17:00（4～10月） 10:00～18:00（11～3月）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/531/",
-        "homepage2": "http://www.conchiglie.net/"
+        "homepage2": "http://www.conchiglie.net/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/16/"
       }
     },
     {
@@ -328,7 +342,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18802",
         "businessHours": "8:00～22:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/546/",
-        "homepage2": "http://portal.hokuryu.info/sunflowerpark/roadsidestation"
+        "homepage2": "http://portal.hokuryu.info/sunflowerpark/roadsidestation",
+        "michiEkiUrl": "https://www.michieki.jp/eki/17/"
       }
     },
     {
@@ -350,7 +365,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18803",
         "businessHours": "8:45～17:30",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/564/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/18/"
       }
     },
     {
@@ -372,7 +388,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18804",
         "businessHours": "8:30～18:00（5～10月） 9:00～17:00（11～4月）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/576/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/19/"
       }
     },
     {
@@ -394,7 +411,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18805",
         "businessHours": "9:00～17:00",
         "homepage": "https://michinoekishimamaki.jimdofree.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/20/"
       }
     },
     {
@@ -416,7 +434,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18806",
         "businessHours": "9:00～17:00， 9:00～16:00（11～3月）， 9:00～19:00（7月中旬～8月中旬）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/611/",
-        "homepage2": "http://www.hiyama.pref.hokkaido.lg.jp/ss/srk/tabi/04s_tais/parts/8401mtr.htm"
+        "homepage2": "http://www.hiyama.pref.hokkaido.lg.jp/ss/srk/tabi/04s_tais/parts/8401mtr.htm",
+        "michiEkiUrl": "https://www.michieki.jp/eki/21/"
       }
     },
     {
@@ -438,7 +457,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18807",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/626/",
-        "homepage2": "http://mombetsu.net/tourist-facilities/%E9%81%93%E3%81%AE%E9%A7%85-%E3%82%AA%E3%83%9B%E3%83%BC%E3%83"
+        "homepage2": "http://mombetsu.net/tourist-facilities/%E9%81%93%E3%81%AE%E9%A7%85-%E3%82%AA%E3%83%9B%E3%83%BC%E3%83",
+        "michiEkiUrl": "https://www.michieki.jp/eki/22/"
       }
     },
     {
@@ -460,7 +480,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18808",
         "businessHours": "9:00～17:30（3/21～10/20） 9:00～17:00（10/21～3/20）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/641/",
-        "homepage2": "http://mori-bussan.com/"
+        "homepage2": "http://mori-bussan.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/23/"
       }
     },
     {
@@ -482,7 +503,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18809",
         "businessHours": "9:00～17:30",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/685/",
-        "homepage2": "http://onneyu-aq.com/facility3"
+        "homepage2": "http://onneyu-aq.com/facility3",
+        "michiEkiUrl": "https://www.michieki.jp/eki/24/"
       }
     },
     {
@@ -504,7 +526,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18810",
         "businessHours": "8:30～18:00（4～10月） 9:00～16:00（11～3月）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/704/",
-        "homepage2": "http://www.town.otobe.lg.jp/section/sangyou/e0taal0000000bz1.html"
+        "homepage2": "http://www.town.otobe.lg.jp/section/sangyou/e0taal0000000bz1.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/25/"
       }
     },
     {
@@ -526,7 +549,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18811",
         "businessHours": "9:00～18:00（4～9月） 9:00～17:00（10～3月）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/722/",
-        "homepage2": "http://machiken292.com/"
+        "homepage2": "http://machiken292.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/26/"
       }
     },
     {
@@ -548,7 +572,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18812",
         "businessHours": "8:00～17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/744/",
-        "homepage2": "http://www.town.obira.hokkaido.jp/kanko/detail/00001365.html"
+        "homepage2": "http://www.town.obira.hokkaido.jp/kanko/detail/00001365.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/27/"
       }
     },
     {
@@ -570,7 +595,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18813",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/768/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/28/"
       }
     },
     {
@@ -592,7 +618,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18814",
         "businessHours": "5月～10月 9:00～18:00、11月～4月 9:00～17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/795/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/29/"
       }
     },
     {
@@ -614,7 +641,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18815",
         "businessHours": "5月～9月 9:00～18:00 10月～4月 9:00～17:00 観光案内所10:00～16:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/810/",
-        "homepage2": "https://www.akan.jp/"
+        "homepage2": "https://www.akan.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/30/"
       }
     },
     {
@@ -636,7 +664,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18816",
         "businessHours": "9:00～19:00",
         "homepage": "https://michinoeki-otofuke.jp/",
-        "homepage2": "http://www.hokkaido-michinoeki.jp/michinoeki/825/"
+        "homepage2": "http://www.hokkaido-michinoeki.jp/michinoeki/825/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/31/"
       }
     },
     {
@@ -658,7 +687,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18817",
         "businessHours": "9:00～17:00",
         "homepage": "https://pinneshiri-autocamp.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/32/"
       }
     },
     {
@@ -680,7 +710,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18819",
         "businessHours": "・文珠館 9：00～17：00 ・特産品販売所 9：00～17：00（4月～10月）、10：00～17：00（11月～3月）※月曜定休（11月～3月）月曜が祝日の場合は翌平日 ・レストラン 11：00～15：00（LO14：30）※月曜定休（11月～3月）月曜が祝日の場合は翌平日",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/870/",
-        "homepage2": "http://www.kaminokuni.com/"
+        "homepage2": "http://www.kaminokuni.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/34/"
       }
     },
     {
@@ -702,7 +733,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18820",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/881/",
-        "homepage2": "http://www.vill.kamoenai.hokkaido.jp/hotnews/detail/00000142.html"
+        "homepage2": "http://www.vill.kamoenai.hokkaido.jp/hotnews/detail/00000142.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/35/"
       }
     },
     {
@@ -724,7 +756,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18821",
         "businessHours": "9:00～18:00（4～10月） 9:00～17:00（11～3月）営業時間、定休日は店舗により異なります",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/892/",
-        "homepage2": "http://www.michinoeki-nakasatsunai.jp/index.html"
+        "homepage2": "http://www.michinoeki-nakasatsunai.jp/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/36/"
       }
     },
     {
@@ -746,7 +779,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18822",
         "businessHours": "9:00～18:00(4月～11月)、9:00～17:00(11月～3月)、※「ピッツェリアトニーノ北海道長沼」は営業時間が異なります。詳しくは、公式ホームページよりご確認下さい。",
         "homepage": "https://maoinooka.jp/",
-        "homepage2": "http://www.hokkaido-michinoeki.jp/michinoeki/906/"
+        "homepage2": "http://www.hokkaido-michinoeki.jp/michinoeki/906/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/37/"
       }
     },
     {
@@ -768,7 +802,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18823",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/921/",
-        "homepage2": "http://www.hidaka.pref.hokkaido.lg.jp/ss/srk/hkd/thidaka/008.htm"
+        "homepage2": "http://www.hidaka.pref.hokkaido.lg.jp/ss/srk/hkd/thidaka/008.htm",
+        "michiEkiUrl": "https://www.michieki.jp/eki/38/"
       }
     },
     {
@@ -790,7 +825,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18824",
         "businessHours": "9:00～17:30 （11/16～3/31は17:00迄）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/937/",
-        "homepage2": "http://sobetsu-fp.co.jp/"
+        "homepage2": "http://sobetsu-fp.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/39/"
       }
     },
     {
@@ -812,7 +848,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18825",
         "businessHours": "情報プラザ棟：9:00-18:00農産物直売コーナー：9:00-17:00（4月下旬～10月：8:30-17:00）テイクアウトコーナー：10:00-16:00（4月下旬～10月：9:30-16:30）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/949/",
-        "homepage2": "http://www.niseko-ta.jp/index.php?id=87"
+        "homepage2": "http://www.niseko-ta.jp/index.php?id=87",
+        "michiEkiUrl": "https://www.michieki.jp/eki/40/"
       }
     },
     {
@@ -834,7 +871,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18826",
         "businessHours": "8:00～18:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/961/",
-        "homepage2": "http://www.town.shiriuchi.hokkaido.jp/kanko/meisho/michinoeki.html"
+        "homepage2": "http://www.town.shiriuchi.hokkaido.jp/kanko/meisho/michinoeki.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/41/"
       }
     },
     {
@@ -856,7 +894,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18827",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/973/",
-        "homepage2": "http://www.yokodunanosato-fukushima.info/"
+        "homepage2": "http://www.yokodunanosato-fukushima.info/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/42/"
       }
     },
     {
@@ -878,7 +917,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18828",
         "businessHours": "10:00～18:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/988/",
-        "homepage2": "http://www.niikappu.jp/kurashi/sekatsu/kotsu/miti.html"
+        "homepage2": "http://www.niikappu.jp/kurashi/sekatsu/kotsu/miti.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/43/"
       }
     },
     {
@@ -900,7 +940,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18829",
         "businessHours": "9:00～18:00（4月～11月） 9:00～17:00（12月～3月）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/1001/",
-        "homepage2": "http://shihoroinfo.com/road-station"
+        "homepage2": "http://shihoroinfo.com/road-station",
+        "michiEkiUrl": "https://www.michieki.jp/eki/44/"
       }
     },
     {
@@ -922,7 +963,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18830",
         "businessHours": "8:30 ～17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/1016/",
-        "homepage2": "http://town.takinoue.hokkaido.jp/shokai/shisetsu/kankou/michinoeki.html"
+        "homepage2": "http://town.takinoue.hokkaido.jp/shokai/shisetsu/kankou/michinoeki.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/45/"
       }
     },
     {
@@ -944,7 +986,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18831",
         "businessHours": "9:00～18:00（5～10月） 10:00～16:00（11～4月）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/1026/",
-        "homepage2": "http://www.michinoeki-uryu.com/"
+        "homepage2": "http://www.michinoeki-uryu.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/46/"
       }
     },
     {
@@ -966,7 +1009,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18832",
         "businessHours": "9:30～19:00 （11～3月は17:00まで、毎週木曜・祝日の場合は金曜定休日) ※館内各店舗の営業時間は店舗により異なる",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/1039/",
-        "homepage2": "http://muro-kanko.com/visit/roadside_station.html"
+        "homepage2": "http://muro-kanko.com/visit/roadside_station.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/47/"
       }
     },
     {
@@ -988,7 +1032,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18833",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/1677/",
-        "homepage2": "http://www.densukesan.net/2018/kau.html"
+        "homepage2": "http://www.densukesan.net/2018/kau.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/48/"
       }
     },
     {
@@ -1010,7 +1055,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18834",
         "businessHours": "4月中旬～11月上旬 9:00～18:00 11月上旬～4月中旬 9:00～17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/1699/",
-        "homepage2": "https://www.spacedome.jp"
+        "homepage2": "https://www.spacedome.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/49/"
       }
     },
     {
@@ -1032,7 +1078,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18835",
         "businessHours": "7:00～22:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/1747/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/50/"
       }
     },
     {
@@ -1054,7 +1101,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18836",
         "businessHours": "9:00～18:00（11～3月は9:00～17:00）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/1787/",
-        "homepage2": "http://saroma.jp"
+        "homepage2": "http://saroma.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/51/"
       }
     },
     {
@@ -1076,7 +1124,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18837",
         "businessHours": "9:00～17:30",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/1951/",
-        "homepage2": "http://www.town.yubetsu.lg.jp/60kanko/03annai/you.html"
+        "homepage2": "http://www.town.yubetsu.lg.jp/60kanko/03annai/you.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/52/"
       }
     },
     {
@@ -1098,7 +1147,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18838",
         "businessHours": "8:00～21:00 （5～10月） 8:00～20:00 （11～4月）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/1975/",
-        "homepage2": "http://www.town.oumu.hokkaido.jp/hotnews/detail/00000065.html"
+        "homepage2": "http://www.town.oumu.hokkaido.jp/hotnews/detail/00000065.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/53/"
       }
     },
     {
@@ -1120,7 +1170,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18839",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2010/",
-        "homepage2": "http://www.vill.sarufutsu.hokkaido.jp/hotnews/detail/00000356.html"
+        "homepage2": "http://www.vill.sarufutsu.hokkaido.jp/hotnews/detail/00000356.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/54/"
       }
     },
     {
@@ -1142,7 +1193,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18840",
         "businessHours": "10:00～21:00 冬期10：30～21：00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2038/",
-        "homepage2": "https://horokanaisoba.com/"
+        "homepage2": "https://horokanaisoba.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/55/"
       }
     },
     {
@@ -1164,7 +1216,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18841",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2066/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/56/"
       }
     },
     {
@@ -1186,7 +1239,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18842",
         "businessHours": "9:00～18:00（4～10月） 9:00～17:00（11～3月）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2088/",
-        "homepage2": "http://www.kuromatsunai.com/toitvert2/index.html"
+        "homepage2": "http://www.kuromatsunai.com/toitvert2/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/57/"
       }
     },
     {
@@ -1208,7 +1262,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18843",
         "businessHours": "9:00～18:00（4～10月） 10:00～17:00（11～3月）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2107/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/58/"
       }
     },
     {
@@ -1230,7 +1285,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18844",
         "businessHours": "9:00～17:00（4～6,10月） 9:00～18:00（7～9月） 9:00～16:00（11～3月）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2143/",
-        "homepage2": "http://www.swan44nemuro.com/"
+        "homepage2": "http://www.swan44nemuro.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/59/"
       }
     },
     {
@@ -1252,7 +1308,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18845",
         "businessHours": "9:00～18:00（4～9月） 10:00～17:00（10～3月）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2164/",
-        "homepage2": "http://www.town.urausu.hokkaido.jp/kankou/guide/michinoeki.html"
+        "homepage2": "http://www.town.urausu.hokkaido.jp/kankou/guide/michinoeki.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/60/"
       }
     },
     {
@@ -1274,7 +1331,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18846",
         "businessHours": "9:00～18:00（4～9月） 9:00～17:00（10～3月）",
         "homepage": "http://www.natowaesan.com/roadside_station.htm",
-        "homepage2": "http://www.hokkaido-michinoeki.jp/michinoeki/2179/"
+        "homepage2": "http://www.hokkaido-michinoeki.jp/michinoeki/2179/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/61/"
       }
     },
     {
@@ -1296,7 +1354,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18847",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2200/",
-        "homepage2": "http://kankou.mori.hokkaido.jp/201510/07-1619.html"
+        "homepage2": "http://kankou.mori.hokkaido.jp/201510/07-1619.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/62/"
       }
     },
     {
@@ -1318,7 +1377,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18848",
         "businessHours": "9:00～17:00（5～10月） 10:00～16:00（11～4月）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2217/",
-        "homepage2": "http://www.nemuro.pref.hokkaido.lg.jp/ss/srk/kanko/nmrgsdb/3k-spot/3ks-shiretoko-rausu.htm"
+        "homepage2": "http://www.nemuro.pref.hokkaido.lg.jp/ss/srk/kanko/nmrgsdb/3k-spot/3ks-shiretoko-rausu.htm",
+        "michiEkiUrl": "https://www.michieki.jp/eki/63/"
       }
     },
     {
@@ -1340,7 +1400,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18849",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.instagram.com/mitinoekisarabetsu/",
-        "homepage2": "http://www.sarabetsu-pipopa.jp/michinoeki/"
+        "homepage2": "http://www.sarabetsu-pipopa.jp/michinoeki/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/64/"
       }
     },
     {
@@ -1362,7 +1423,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18850",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2253/",
-        "homepage2": "http://www.city.date.hokkaido.jp/hotnews/detail/00001549.html"
+        "homepage2": "http://www.city.date.hokkaido.jp/hotnews/detail/00001549.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/65/"
       }
     },
     {
@@ -1384,7 +1446,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18851",
         "businessHours": "9:00～21:00 （売店は19:00（夏季）まで・フードコートは店舗により異なります)",
         "homepage": "http://www.asahikawa-jibasan.com",
-        "homepage2": "http://www.hokkaido-michinoeki.jp/michinoeki/2272/"
+        "homepage2": "http://www.hokkaido-michinoeki.jp/michinoeki/2272/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/66/"
       }
     },
     {
@@ -1406,7 +1469,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18852",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2298/",
-        "homepage2": "http://www.vill.shimukappu.lg.jp/shimukappu/section/kikaku/nmudtq0000002gk4.html"
+        "homepage2": "http://www.vill.shimukappu.lg.jp/shimukappu/section/kikaku/nmudtq0000002gk4.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/67/"
       }
     },
     {
@@ -1428,7 +1492,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18853",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2325/",
-        "homepage2": "https://www.vill.nishiokoppe.lg.jp/section/kamu/kamu.html"
+        "homepage2": "https://www.vill.nishiokoppe.lg.jp/section/kamu/kamu.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/68/"
       }
     },
     {
@@ -1450,7 +1515,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18854",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2355/",
-        "homepage2": "https://www.rikubetsu.jp/kanko/michinoeki/"
+        "homepage2": "https://www.rikubetsu.jp/kanko/michinoeki/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/69/"
       }
     },
     {
@@ -1472,7 +1538,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18855",
         "businessHours": "9:00～18:00 レストランは11：00～15：00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2375/",
-        "homepage2": "http://www.town.koshimizu.hokkaido.jp/hanayaka/"
+        "homepage2": "http://www.town.koshimizu.hokkaido.jp/hanayaka/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/70/"
       }
     },
     {
@@ -1494,7 +1561,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18856",
         "businessHours": "4月・5月～10月：9：00～18：00、6月～9月：9：00～19：00、11月～3月：9：00～17：00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2390/",
-        "homepage2": "http://mypage.fukanavi.com/riceland/"
+        "homepage2": "http://mypage.fukanavi.com/riceland/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/651/"
       }
     },
     {
@@ -1516,7 +1584,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18857",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2424/",
-        "homepage2": "http://www.nakagawa-showya.com/"
+        "homepage2": "http://www.nakagawa-showya.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/652/"
       }
     },
     {
@@ -1538,7 +1607,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18858",
         "businessHours": "9:00～18:00（4月下旬～10月） 9:00～17:00（11～４月下旬）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2442/",
-        "homepage2": "http://www.rusutsu.gr.jp/shopping/687.html"
+        "homepage2": "http://www.rusutsu.gr.jp/shopping/687.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/653/"
       }
     },
     {
@@ -1560,7 +1630,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18859",
         "businessHours": "4月~10月 9:00～19:00 11月~3月 9:00~17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2467/",
-        "homepage2": "http://www.teshiotown.hokkaido.jp/?page_id=660"
+        "homepage2": "http://www.teshiotown.hokkaido.jp/?page_id=660",
+        "michiEkiUrl": "https://www.michieki.jp/eki/654/"
       }
     },
     {
@@ -1582,7 +1653,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18860",
         "businessHours": "特産品コーナー 9：00〜17：30 （十勝バス大樹案内所【乗車券販売など】）休館 年末年始（12月31日〜1月3日) ショッピングセンター 9：00〜20：00 （衣料品すずき、100円ショップ、写真店、オリーブ薬局、 コープさっぽろ、ヘアークラブMock、クリーニング、 理療整体院、ラーメンハウスMAMO）休館 1月1日（各テナント臨時休業あり）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2483/",
-        "homepage2": "http://taiki-sci.jp/cosmall/"
+        "homepage2": "http://taiki-sci.jp/cosmall/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/655/"
       }
     },
     {
@@ -1604,7 +1676,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18861",
         "businessHours": "4月～10月 9:00～18:00 12月～3月 10：00～16：00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2502/",
-        "homepage2": "https://bihoropass.jp/"
+        "homepage2": "https://bihoropass.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/656/"
       }
     },
     {
@@ -1626,7 +1699,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18862",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2519/",
-        "homepage2": "http://www.town.rankoshi.hokkaido.jp/topics/2012/02/post_58.html"
+        "homepage2": "http://www.town.rankoshi.hokkaido.jp/topics/2012/02/post_58.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/703/"
       }
     },
     {
@@ -1648,7 +1722,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18863",
         "businessHours": "直売所9:00～17:00 テイクアウトコーナー10:00～16:00",
         "homepage": "https://toyoura-rss.amebaownd.com/",
-        "homepage2": "http://www.hokkaido-michinoeki.jp/michinoeki/2533/"
+        "homepage2": "http://www.hokkaido-michinoeki.jp/michinoeki/2533/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/704/"
       }
     },
     {
@@ -1670,7 +1745,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18864",
         "businessHours": "8:45～17:30",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2548/",
-        "homepage2": "http://www.town.ozora.hokkaido.jp/docs/2014112700039/"
+        "homepage2": "http://www.town.ozora.hokkaido.jp/docs/2014112700039/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/705/"
       }
     },
     {
@@ -1692,7 +1768,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18865",
         "businessHours": "6:00～22:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2569/",
-        "homepage2": "http://www.shikinoyakata.com/eki.html"
+        "homepage2": "http://www.shikinoyakata.com/eki.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/706/"
       }
     },
     {
@@ -1714,7 +1791,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18866",
         "businessHours": "9:00～17:00【火曜日定休日(トイレは24時間開放)】",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2585/",
-        "homepage2": "https://michinoeki-aioi.com/"
+        "homepage2": "https://michinoeki-aioi.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/707/"
       }
     },
     {
@@ -1736,7 +1814,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18867",
         "businessHours": "9:00～17:00（3～6月、10～11月） 10:00～16:00（12～2月） 9:00～18:00（7～9月）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2605/",
-        "homepage2": "http://michinoeki-shikaoi.com/"
+        "homepage2": "http://michinoeki-shikaoi.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/708/"
       }
     },
     {
@@ -1758,7 +1837,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18868",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2623/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/709/"
       }
     },
     {
@@ -1780,7 +1860,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18869",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2639/",
-        "homepage2": "http://www.ashoro-kanko.jp"
+        "homepage2": "http://www.ashoro-kanko.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/743/"
       }
     },
     {
@@ -1802,7 +1883,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18870",
         "businessHours": "9:00～17:00（一部店舗は16:00まで）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2654/",
-        "homepage2": "http://salmonpark.com/"
+        "homepage2": "http://salmonpark.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/744/"
       }
     },
     {
@@ -1824,7 +1906,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18871",
         "businessHours": "9:00～19:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2668/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/745/"
       }
     },
     {
@@ -1846,7 +1929,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18872",
         "businessHours": "9:00～18:00（施設・時期により異なる）＜休：12/31～1/2＞",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2684/",
-        "homepage2": "https://hanafuru.jp/facility/hanaroad.html"
+        "homepage2": "https://hanafuru.jp/facility/hanaroad.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/786/"
       }
     },
     {
@@ -1868,7 +1952,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18873",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2702/",
-        "homepage2": "http://www.town.rankoshi.hokkaido.jp/topics/2012/02/post_59.html"
+        "homepage2": "http://www.town.rankoshi.hokkaido.jp/topics/2012/02/post_59.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/787/"
       }
     },
     {
@@ -1890,7 +1975,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18874",
         "businessHours": "9:00～17:30（4月下旬～10/31） 9:30～16:30（11/1～4月下旬）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2715/",
-        "homepage2": "http://www.pref.hokkaido.lg.jp/kn/tkn/hana/place/c010.html"
+        "homepage2": "http://www.pref.hokkaido.lg.jp/kn/tkn/hana/place/c010.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/788/"
       }
     },
     {
@@ -1912,7 +1998,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18875",
         "businessHours": "9:00～17:00（4～10月） 9:00～16:00（11～3月）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2732/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/789/"
       }
     },
     {
@@ -1934,7 +2021,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18876",
         "businessHours": "9::00～18:00（冬期17:00）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2751/",
-        "homepage2": "http://www.pref.hokkaido.lg.jp/ns/shs/data/ar10018.htm"
+        "homepage2": "http://www.pref.hokkaido.lg.jp/ns/shs/data/ar10018.htm",
+        "michiEkiUrl": "https://www.michieki.jp/eki/790/"
       }
     },
     {
@@ -1956,7 +2044,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18877",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2766/",
-        "homepage2": "http://www.urimaku.net/"
+        "homepage2": "http://www.urimaku.net/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/791/"
       }
     },
     {
@@ -1978,7 +2067,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18878",
         "businessHours": "9:00～17:00（5～10月中旬） 9:00～16:00（10月中旬～4月）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2782/",
-        "homepage2": "http://michi-ehon.jp/"
+        "homepage2": "http://michi-ehon.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/831/"
       }
     },
     {
@@ -2000,7 +2090,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18879",
         "businessHours": "7:00～21:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2805/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/832/"
       }
     },
     {
@@ -2022,7 +2113,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18880",
         "businessHours": "10:00～21:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2824/",
-        "homepage2": "http://www.shihoro-spa.co.jp/"
+        "homepage2": "http://www.shihoro-spa.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/833/"
       }
     },
     {
@@ -2044,7 +2136,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18881",
         "businessHours": "売店 9：00～17：00 レストラン 11：00～16：00 休館日 毎週水曜日及び年末年始（12/31～1/3）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2841/",
-        "homepage2": "http://meisui-plaza.com/"
+        "homepage2": "http://meisui-plaza.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/846/"
       }
     },
     {
@@ -2066,7 +2159,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18882",
         "businessHours": "9:00～18:00（6～８月） 9:00～17:00（3～5月、9～11月） 10:00～17:00（12～2月）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2854/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/847/"
       }
     },
     {
@@ -2088,7 +2182,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18883",
         "businessHours": "10:00～21:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2870/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/848/"
       }
     },
     {
@@ -2110,7 +2205,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18884",
         "businessHours": "9：00～17：00（レストラン 10：00～15：00）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2884/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/849/"
       }
     },
     {
@@ -2132,7 +2228,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18885",
         "businessHours": "9:00～19:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2905/",
-        "homepage2": "http://www.sharimichi.jp/"
+        "homepage2": "http://www.sharimichi.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/850/"
       }
     },
     {
@@ -2154,7 +2251,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18886",
         "businessHours": "9:00～21:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2920/",
-        "homepage2": "http://www.papasland-satturu.com/"
+        "homepage2": "http://www.papasland-satturu.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/859/"
       }
     },
     {
@@ -2176,7 +2274,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18887",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2939/",
-        "homepage2": "http://www.mochigome.jp"
+        "homepage2": "http://www.mochigome.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/875/"
       }
     },
     {
@@ -2198,7 +2297,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18888",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2959/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/871/"
       }
     },
     {
@@ -2220,7 +2320,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18889",
         "businessHours": "4月～10月（8:30～17:00） 11月～3月（9：00～16：00）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2974/",
-        "homepage2": "http://www.michinoeki-toyako.jp/"
+        "homepage2": "http://www.michinoeki-toyako.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/872/"
       }
     },
     {
@@ -2242,7 +2343,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18890",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/2986/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/887/"
       }
     },
     {
@@ -2264,7 +2366,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18891",
         "businessHours": "9:00～18:00（4～9月） 9:00～17:00（10～3月） 定休日：毎週火曜日（10～3月、火曜日が祝日の場合は翌日水曜日）及び年末年始（お問い合わせください）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/3007/",
-        "homepage2": "http://michinoeki-matsumae.jp/"
+        "homepage2": "http://michinoeki-matsumae.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/889/"
       }
     },
     {
@@ -2286,7 +2389,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18892",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/3021/",
-        "homepage2": "https://www.facebook.com/道の駅ステラほんべつ-213161028715975/"
+        "homepage2": "https://www.facebook.com/道の駅ステラほんべつ-213161028715975/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/890/"
       }
     },
     {
@@ -2308,7 +2412,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18893",
         "businessHours": "9:00～18:00（11月～2月は9:00～17:00）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/3038/",
-        "homepage2": "http://www.michinoeki-utonaiko.com/"
+        "homepage2": "http://www.michinoeki-utonaiko.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/904/"
       }
     },
     {
@@ -2330,7 +2435,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18894",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/3057/",
-        "homepage2": "http://www.michinoeki-urahoro.com/"
+        "homepage2": "http://www.michinoeki-urahoro.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/905/"
       }
     },
     {
@@ -2352,7 +2458,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18895",
         "businessHours": "7：00～22：00 ※休館日の翌日は10：00開館 道の駅グッズ販売は21：00まで",
         "homepage": "https://tappunoyuonsen.com/",
-        "homepage2": "http://www.hokkaido-michinoeki.jp/michinoeki/3070/"
+        "homepage2": "http://www.hokkaido-michinoeki.jp/michinoeki/3070/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/938/"
       }
     },
     {
@@ -2374,7 +2481,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18896",
         "businessHours": "10:00～18:30",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/3083/",
-        "homepage2": "http://www.yubari-melon.or.jp/modules/meroad/"
+        "homepage2": "http://www.yubari-melon.or.jp/modules/meroad/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/954/"
       }
     },
     {
@@ -2396,7 +2504,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18897",
         "businessHours": "9:00～17:00（5～10月） 9:00～16:00（11～4月） 火曜日定休（10月～6月） ※７～9月無休",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/3099/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/955/"
       }
     },
     {
@@ -2411,14 +2520,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "18898",
         "name": "道の駅縄文ロマン 南かやべ",
-        "prefecture": "縄文ロマン　南かやべ",
+        "prefecture": "縄文ロマン\u3000南かやべ",
         "city": "",
         "address": "北海道函館市臼尻町551-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/18898",
         "businessHours": "9:00～17:00（4～10月） 9:00～16:30（11～3月） 定休日：毎週月曜日※月曜日が祝日の場合は翌日，年末年始（12月29日～1月3日）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/3114/",
-        "homepage2": "http://www.hjcc.jp/"
+        "homepage2": "http://www.hjcc.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/972/"
       }
     },
     {
@@ -2440,7 +2550,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18899",
         "businessHours": "10:00～18:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/3126/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/979/"
       }
     },
     {
@@ -2462,7 +2573,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18900",
         "businessHours": "9:00～18:00 ＜休 3/31＞",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/71/"
       }
     },
     {
@@ -2484,7 +2596,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18901",
         "businessHours": "9:00～18:00 ＜休12/31～1/1＞",
         "homepage": "http://www.michinoeki-hashikami.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/72/"
       }
     },
     {
@@ -2506,7 +2619,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18902",
         "businessHours": "9:00～16:00（営業時間短縮あり）",
         "homepage": "http://nijinokopark.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/73/"
       }
     },
     {
@@ -2528,7 +2642,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18903",
         "businessHours": "9:00～17:00",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/74/"
       }
     },
     {
@@ -2550,7 +2665,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18904",
         "businessHours": "9:00～17:00＜休 木曜日＞≪冬期閉鎖あり≫",
         "homepage": "http://www.aptinet.jp/Detail_display_00002796.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/75/"
       }
     },
     {
@@ -2572,7 +2688,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18905",
         "businessHours": "9:00～17:00 ＜休 水曜日＞ ≪冬期閉鎖あり≫",
         "homepage": "http://www.marumarushingo.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/76/"
       }
     },
     {
@@ -2594,7 +2711,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18906",
         "businessHours": "9:00～18:30（4月～10月）、9:00～18:00（11月～3月）",
         "homepage": "http://michinoeki-hirosaki.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/77/"
       }
     },
     {
@@ -2616,7 +2734,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18907",
         "businessHours": "9:00～18:00 ＜休 12/31～1/1＞",
         "homepage": "http://www.oirase.or.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/78/"
       }
     },
     {
@@ -2638,7 +2757,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18908",
         "businessHours": "9:00～18:00〔施設により異なる〕",
         "homepage": "http://www.michinoeki-sannohe.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/79/"
       }
     },
     {
@@ -2660,7 +2780,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18909",
         "businessHours": "9:00～19:00（3/16～11/15）、9:00～18:00（11/16～3/15）〔施設により異なる〕",
         "homepage": "http://www.applehill.co.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/80/"
       }
     },
     {
@@ -2682,7 +2803,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18910",
         "businessHours": "9:00～18:00（冬期・営業時間短縮あり）＜休 12/31～1/2＞",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/81/"
       }
     },
     {
@@ -2704,7 +2826,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18911",
         "businessHours": "9:00～19:00 ≪冬期・営業時間短縮あり≫",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/82/"
       }
     },
     {
@@ -2726,7 +2849,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18912",
         "businessHours": "直売所8:00～18:00(4～10月)・8:30～17:00(11～3月)、レストラン 11:00～19:00(ラストオーダー18:30)",
         "homepage": "https://www.michinoeki-nango.com",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/83/"
       }
     },
     {
@@ -2748,7 +2872,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18913",
         "businessHours": "9:00～18:00 ≪冬期・営業時間短縮あり≫",
         "homepage": "http://www.earthtop.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/84/"
       }
     },
     {
@@ -2770,7 +2895,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18914",
         "businessHours": "7:00～20:30〔施設により異なる〕",
         "homepage": "http://www.yu-sa.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/85/"
       }
     },
     {
@@ -2792,7 +2918,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18915",
         "businessHours": "9:00～19:00 ≪冬期・営業時間短縮あり≫ ＜休 年末年始＞",
         "homepage": "http://ikarigaseki.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/86/"
       }
     },
     {
@@ -2814,7 +2941,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18916",
         "businessHours": "8:30～18:00 ≪冬期・営業時間短縮あり≫ ＜休 12/31午後～1/1＞",
         "homepage": "http://www.michinoeki-inakadate.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/87/"
       }
     },
     {
@@ -2836,7 +2964,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18917",
         "businessHours": "＜4月～10月＞8:30～18:00 ＜11月～3月＞9：00～17：30 ＜定休日 12/31、1/1、1月～3月の火曜日＞",
         "homepage": "https://www.nanohana-plaza.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/88/"
       }
     },
     {
@@ -2858,7 +2987,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18918",
         "businessHours": "8:40～17:00 ＜冬期閉鎖あり＞",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/89/"
       }
     },
     {
@@ -2880,7 +3010,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18919",
         "businessHours": "9:00～17:00(冬季閉鎖11月上旬～4月下旬）",
         "homepage": "https://www.aomori-yamaka.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/90/"
       }
     },
     {
@@ -2902,7 +3033,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18920",
         "businessHours": "直売所 (4月～10月)9:00～18:00 (11月～3月)9：00～17：00 レストラン (4月～10月)10：30～16：30 ラストオーダー16：00 (11月～3月)10：30～15：30 ラストオーダー15：30 ＜休 12/31～1/２＞",
         "homepage": "http://kite-misawa.com/tonamihan/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/91/"
       }
     },
     {
@@ -2924,7 +3056,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18921",
         "businessHours": "9:00～20:00（4月～10月）、9:00～19:00（11月～3月） ＜休 1/1＞",
         "homepage": "http://www.towadapia.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/92/"
       }
     },
     {
@@ -2946,7 +3079,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18922",
         "businessHours": "9:00～17:00 ＜休 1/1＞",
         "homepage": "http://www.tsurunosato-aruja.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/93/"
       }
     },
     {
@@ -2968,7 +3102,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18923",
         "businessHours": "9:00～18:00（1～3月17:00）",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/657/"
       }
     },
     {
@@ -2990,7 +3125,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18924",
         "businessHours": "8:30～18:00(4～9月)、9:00～17:30(10～3月）＜休 年末年始＞",
         "homepage": "http://ogawarako.co.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/710/"
       }
     },
     {
@@ -3012,7 +3148,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18925",
         "businessHours": "9:00～16:00",
         "homepage": "現在、調整中",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/792/"
       }
     },
     {
@@ -3034,7 +3171,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18926",
         "businessHours": "9:00～18:00 ≪冬期・営業時間短縮あり≫",
         "homepage": "https://rokunohe.wixsite.com/home/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/860/"
       }
     },
     {
@@ -3056,7 +3194,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18927",
         "businessHours": "9:00～17:30〔施設により異なる〕 ＜休 12/31～1/1＞",
         "homepage": "https://www.sakashokan.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/94/"
       }
     },
     {
@@ -3078,7 +3217,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18928",
         "businessHours": "4月〜9月・9:00〜18:00 10月〜3月・9:00〜17:00 年中無休(施設内一部店舗を除く）",
         "homepage": "https://takata-matsubara.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/95/"
       }
     },
     {
@@ -3100,7 +3240,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18929",
         "businessHours": "9:00～17:00 ≪冬期・営業時間短縮あり≫",
         "homepage": "http://www.miyako-kawai.com",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/96/"
       }
     },
     {
@@ -3122,7 +3263,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18930",
         "businessHours": "9:00～17:00〔施設により異なる〕",
         "homepage": "http://www.ohnocampus.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/97/"
       }
     },
     {
@@ -3144,7 +3286,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18931",
         "businessHours": "9:00～18:00（冬期17:00まで）",
         "homepage": "http://poran.sumita-gayagaya.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/98/"
       }
     },
     {
@@ -3166,7 +3309,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18932",
         "businessHours": "8:30～18:00（夏期）、8:30～17:30（冬期）",
         "homepage": "http://www.ryusendo-water.co.jp/michinoeki/iwaizumi.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/99/"
       }
     },
     {
@@ -3188,7 +3332,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18933",
         "businessHours": "9:00～18:00 ＜休 1/1、3/31、9/30＞",
         "homepage": "http://nodaeki.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/100/"
       }
     },
     {
@@ -3210,7 +3355,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18934",
         "businessHours": "9:00～17:00（産直とれたろう）",
         "homepage": "http://www.city.miyako.iwate.jp/taro-shisho/michinoeki_tarou_1.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/101/"
       }
     },
     {
@@ -3225,14 +3371,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "18935",
         "name": "道の駅たのはた 思惟の風",
-        "prefecture": "たのはた　思惟の風",
+        "prefecture": "たのはた\u3000思惟の風",
         "city": "",
         "address": "岩手県下閉伊郡田野畑村菅窪151-6",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/18935",
         "businessHours": "9:00～17:00〔施設により異なる〕 ＜休 12/31~1/1＞",
         "homepage": "https://shiinokaze2.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/102/"
       }
     },
     {
@@ -3254,7 +3401,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18936",
         "businessHours": "売店9:00～18:00 ＜休 1/1＞ 、レストラン11:00～18:00(ラストオーダー17:00)",
         "homepage": "https://www.city.oshu.iwate.jp/kanko/osusume/1/2/3294.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/103/"
       }
     },
     {
@@ -3276,7 +3424,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18937",
         "businessHours": "4月～10月 8:30～17:00 11月～3月 9:00～17:00 ＜休 12/31～1/1＞",
         "homepage": "http://www.hachimantai-ss.co.jp/~nishine/index.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/104/"
       }
     },
     {
@@ -3298,7 +3447,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18938",
         "businessHours": "9:00～18:00 ＜休 12/30～1/3（売店は無休）＞",
         "homepage": "http://kuji-tourism.jp/michinoeki/yamagata/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/105/"
       }
     },
     {
@@ -3320,7 +3470,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18939",
         "businessHours": "9:00～18:00≪冬期・営業時間短縮あり≫",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/106/"
       }
     },
     {
@@ -3342,7 +3493,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18940",
         "businessHours": "9:00～17:00≪冬期・営業時間の変更あり≫ ＜休 12/31～1/3＞",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/107/"
       }
     },
     {
@@ -3364,7 +3516,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18941",
         "businessHours": "売店9:00～17:30 ＜休み:火曜日と冬期（11月下旬～4月中旬）＞ トイレとスタンプと自販機は24時間年中無休で利用可",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/108/"
       }
     },
     {
@@ -3379,14 +3532,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "18942",
         "name": "道の駅やまだ おいすた",
-        "prefecture": "やまだ　おいすた",
+        "prefecture": "やまだ\u3000おいすた",
         "city": "",
         "address": "岩手県下閉伊郡山田町山田2-111-2",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/18942",
         "businessHours": "9:00～18:00",
         "homepage": "http://yamada-oisuta.jp",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/109/"
       }
     },
     {
@@ -3408,7 +3562,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18943",
         "businessHours": "9:00～18:00 ≪冬期・営業時間短縮あり≫ ＜休 1/1＞",
         "homepage": "http://kazenooka.tonofurusato.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/110/"
       }
     },
     {
@@ -3430,7 +3585,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18944",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.sunfull.jp",
-        "homepage2": "https://www.sunfull-shop.jp"
+        "homepage2": "https://www.sunfull-shop.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/111/"
       }
     },
     {
@@ -3452,7 +3608,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18945",
         "businessHours": "9:00～18:30（12～3月は9:00～18:00）",
         "homepage": "http://michinoeki.nishiwaga.biz/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/112/"
       }
     },
     {
@@ -3474,7 +3631,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18946",
         "businessHours": "9:00～18:00 ≪冬期・営業時間短縮あり≫ ＜休 1/1～1/2＞",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/113/"
       }
     },
     {
@@ -3496,7 +3654,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18947",
         "businessHours": "産直9:00～18:00",
         "homepage": "http://isigaminooka.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/114/"
       }
     },
     {
@@ -3518,7 +3677,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18948",
         "businessHours": "8:30～18:00 ≪冬期・営業時間短縮あり≫",
         "homepage": "http://www.anekko.co.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/115/"
       }
     },
     {
@@ -3540,7 +3700,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18949",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.towa-spa.co.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/116/"
       }
     },
     {
@@ -3562,7 +3723,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18950",
         "businessHours": "9:00～18:00（11～3月は9:00～17:00）＜休 毎月第3水曜日（3～10月は無休）＞",
         "homepage": "http://www.ichitabi.jp/spot/data.php?no=13",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/117/"
       }
     },
     {
@@ -3584,7 +3746,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18951",
         "businessHours": "8:00～19:00 ＜休 1/1、1/2＞",
         "homepage": "http://www.vill.kunohe.iwate.jp/docs/206.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/118/"
       }
     },
     {
@@ -3606,7 +3769,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18952",
         "businessHours": "9:00～19:00（12～2月は9:00～18:00）",
         "homepage": "http://www.kawanoakari.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/658/"
       }
     },
     {
@@ -3628,7 +3792,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18953",
         "businessHours": "8:30～18:30 ≪冬期・営業時間短縮あり≫",
         "homepage": "http://www.miyako-kawai.com",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/746/"
       }
     },
     {
@@ -3650,7 +3815,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18954",
         "businessHours": "8:45～17:00〔施設により異なる〕",
         "homepage": "https://oasis385.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/793/"
       }
     },
     {
@@ -3672,7 +3838,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18955",
         "businessHours": "8:30～18:00 ≪冬期・営業時間短縮あり≫",
         "homepage": "http://www.ryusendo-water.co.jp/mitinoekimitakai.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/861/"
       }
     },
     {
@@ -3694,7 +3861,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18956",
         "businessHours": "9:00～19:00 ≪冬期・営業時間短縮あり≫ ＜休 1/1＞",
         "homepage": "http://dofukan.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/873/"
       }
     },
     {
@@ -3716,7 +3884,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18957",
         "businessHours": "9:00～17:30 ≪冬期・営業時間短縮あり≫ ＜休 12/31～1/3、3/31＞",
         "homepage": "http://www.town.shichikashuku.miyagi.jp/sightseeing/food/michinoeki.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/119/"
       }
     },
     {
@@ -3738,7 +3907,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18958",
         "businessHours": "9:00～17:00 ＜休 12/30～1/1＞",
         "homepage": "http://moku2land.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/120/"
       }
     },
     {
@@ -3760,7 +3930,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18959",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.sanbongi.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/121/"
       }
     },
     {
@@ -3782,7 +3953,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18960",
         "businessHours": "8:30～17:00",
         "homepage": "https://visit-kurihara.travel/spots/143",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/122/"
       }
     },
     {
@@ -3804,7 +3976,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18961",
         "businessHours": "9:30～17:30 ＜休 12/31～1/2＞",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/123/"
       }
     },
     {
@@ -3826,7 +3999,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18962",
         "businessHours": "9:00～18:00 ＜休 年末年始＞",
         "homepage": "http://www.oosato-rs.co.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/124/"
       }
     },
     {
@@ -3848,7 +4022,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18963",
         "businessHours": "9:00~18:30（4月～11月）、9:00~18:00（12月～3月） ＜休 12/31~1/3＞",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/125/"
       }
     },
     {
@@ -3870,7 +4045,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18964",
         "businessHours": "4月～11月 9:00～18:00 12月～3月 9:00～17:00〔施設により異なる〕",
         "homepage": "https://ala-date.com",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/126/"
       }
     },
     {
@@ -3892,7 +4068,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18965",
         "businessHours": "9:00～17:00〔施設により異なる〕",
         "homepage": "http://rinrinkan.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/711/"
       }
     },
     {
@@ -3914,7 +4091,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18966",
         "businessHours": "直売所9:00～19:00 温泉保養施設9:00～21:00（最終受付20:30 毎月第4火曜定休） フードコート10:00～20:00(LO19:30) お郷カフェ10:00～17:00",
         "homepage": "https://joubon.com",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/747/"
       }
     },
     {
@@ -3936,7 +4114,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18967",
         "businessHours": "9:00～18:00（施設により異なる） ＜休 12/31～1/3＞",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/748/"
       }
     },
     {
@@ -3958,7 +4137,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18968",
         "businessHours": "9:00～17:00 ＜休 年末年始＞",
         "homepage": "http://www.muratamachi.info",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/919/"
       }
     },
     {
@@ -3980,7 +4160,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18969",
         "businessHours": "9:00～18:00（12～3月 9:30～17:00） ＜休 1/1＞",
         "homepage": "http://www.city.kitaakita.akita.jp/industdb/shotengaidb/212.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/127/"
       }
     },
     {
@@ -4002,7 +4183,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18970",
         "businessHours": "9:00～18:00 ＜休 1/1～1/2＞",
         "homepage": "http://michinoeki-futatsui.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/128/"
       }
     },
     {
@@ -4024,7 +4206,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18971",
         "businessHours": "9:00～18:00 ＜休 12/31～1/1＞",
         "homepage": "http://eki.nisime.net/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/129/"
       }
     },
     {
@@ -4046,7 +4229,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18972",
         "businessHours": "7:00～21:00",
         "homepage": "http://ohdate-yatate.com",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/130/"
       }
     },
     {
@@ -4068,7 +4252,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18973",
         "businessHours": "9:00～18:00 （冬季9:00～17:00） ＜休 12/30～1/2＞",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/131/"
       }
     },
     {
@@ -4090,7 +4275,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18974",
         "businessHours": "9:00～18:00 （冬季9:00～17:00）",
         "homepage": "https://antlerkazuno.jp/",
-        "homepage2": "https://explorekazuno.jp/"
+        "homepage2": "https://explorekazuno.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/132/"
       }
     },
     {
@@ -4112,7 +4298,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18975",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.chayakko.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/133/"
       }
     },
     {
@@ -4134,7 +4321,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18976",
         "businessHours": "9:00～18:00≪冬期・営業時間短縮あり≫ ＜休 12/31～1/3＞",
         "homepage": "http://www.town.mitane.akita.jp/kyuhp/kotooka/mapp06.htm",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/134/"
       }
     },
     {
@@ -4156,7 +4344,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18977",
         "businessHours": "13:00～20:00〔休館日 毎週月・火曜日〕祭日の時は翌日",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/135/"
       }
     },
     {
@@ -4178,7 +4367,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18978",
         "businessHours": "9:00～17:30 ＜休 12/31～1/1＞",
         "homepage": "https://michinoeki-kamikoani.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/136/"
       }
     },
     {
@@ -4200,7 +4390,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18979",
         "businessHours": "9:00～21:00＜休 12月～3月の第3月曜日＞",
         "homepage": "https://www.kisakata.nemunooka.jp",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/137/"
       }
     },
     {
@@ -4222,7 +4413,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18980",
         "businessHours": "9:00～18:00≪冬期・営業時間短縮あり≫ ＜休 12/31～1/1＞",
         "homepage": "http://nakasen.hana.jp",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/138/"
       }
     },
     {
@@ -4244,7 +4436,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18981",
         "businessHours": "9:00～18:00 ≪冬期・営業時間短縮あり≫",
         "homepage": "http://www.michinoeki-ogachi.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/139/"
       }
     },
     {
@@ -4266,7 +4459,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18982",
         "businessHours": "9:00～18:00≪冬期・営業時間短縮あり≫ ＜休 12/31＞",
         "homepage": "http://www.kurara-spa.co.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/140/"
       }
     },
     {
@@ -4288,7 +4482,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18983",
         "businessHours": "9:00～18:30（4月～10月）、9:00～18:00（11月～3月）〔施設により異なる〕、温泉9:00～21:00",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/141/"
       }
     },
     {
@@ -4310,7 +4505,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18984",
         "businessHours": "9:00～18:00 ＜休 12/31～1/1＞",
         "homepage": "http://www.blume-messe.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/142/"
       }
     },
     {
@@ -4332,7 +4528,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18985",
         "businessHours": "9:00～18:00≪冬期・営業時間短縮あり≫ ＜休 12/31～1/3＞",
         "homepage": "http://www.town.happou.akita.jp/docs/2017021600018/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/143/"
       }
     },
     {
@@ -4354,7 +4551,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18986",
         "businessHours": "9:00～19:00≪冬期・営業時間短縮あり≫",
         "homepage": "http://a-woodyland.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/144/"
       }
     },
     {
@@ -4376,7 +4574,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18987",
         "businessHours": "9:00～21:00〔施設により異なる〕",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/145/"
       }
     },
     {
@@ -4398,7 +4597,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18988",
         "businessHours": "9:00～17:00＜年中＞、レストラン 11:00～14:00＜年中＞、＜休 12月～3月の毎週火曜日、12/31～1/2＞",
         "homepage": "https://www.city.kitaakita.akita.jp/kankou/category/kankou_shisetsu/ani/402.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/146/"
       }
     },
     {
@@ -4420,7 +4620,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18989",
         "businessHours": "9:00～20:00〔施設により異なる〕 ＜休 12/31～1/2、レストランは毎週月曜日＞",
         "homepage": "http://www.city.odate.akita.jp/dcity/sitemanager.nsf/doc/michinoeki_hinai.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/147/"
       }
     },
     {
@@ -4442,7 +4643,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18990",
         "businessHours": "◇物産館 9:00～18:00(12月～3月 17:00) ◇レストラン 11:00～15:30 ◇軽食 9:00～18:00(12月～3月17:00)",
         "homepage": "https://gojome-st.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/659/"
       }
     },
     {
@@ -4464,7 +4666,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18991",
         "businessHours": "午前8：00～20：00（休憩所）",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/749/"
       }
     },
     {
@@ -4486,7 +4689,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18992",
         "businessHours": "9:00～19:00 ≪冬期・営業時間短縮あり≫ ＜休 1/1＞",
         "homepage": "http://akita-misato.com/gantaro/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/750/"
       }
     },
     {
@@ -4508,7 +4712,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18993",
         "businessHours": "9:00～18:00 （冬期9:00～17:00）※諸般の事情により時間短縮営業を行う場合があります。事前に確認をお願い致します。",
         "homepage": "http://www.city.daisen.akita.jp/docs/2013101800194/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/751/"
       }
     },
     {
@@ -4530,7 +4735,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18994",
         "businessHours": "9:00～18:00≪元日は休業・催事等で時間変更あり≫",
         "homepage": "https://mamederaga.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/862/"
       }
     },
     {
@@ -4552,7 +4758,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18995",
         "businessHours": "8:00～18:00≪冬期・営業時間短縮あり≫ ＜休 1/1～1/2＞",
         "homepage": "https://katanomise.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/876/"
       }
     },
     {
@@ -4574,7 +4781,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18996",
         "businessHours": "9:00～21:00〔施設により異なる〕",
         "homepage": "http://www.selion-akita.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/921/"
       }
     },
     {
@@ -4596,7 +4804,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18997",
         "businessHours": "9:00～17:00（4/15～10/31）【冬期間は物産施設等が閉鎖】令和7年11月1日(土) ～ 令和8年4月15日(水)予定 道の駅は年中開放",
         "homepage": "https://www.town.kosaka.akita.jp/machinososhiki/kankosangyoka/kankoshokohan/3/kosakakankouspot/1663.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/922/"
       }
     },
     {
@@ -4618,7 +4827,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18998",
         "businessHours": "7:45～19:00",
         "homepage": "https://onj-airterminal.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/939/"
       }
     },
     {
@@ -4640,7 +4850,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/18999",
         "businessHours": "9:00～17:00 ＜休 12～3月の第4月曜日＞",
         "homepage": "http://www.gassanasahi-hakubutsumura.co.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/148/"
       }
     },
     {
@@ -4662,7 +4873,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19000",
         "businessHours": "9:00～17:00",
         "homepage": "https://sites.google.com/view/ekikahoku/home",
-        "homepage2": "https://benibananosato.com/watch/burattopia/"
+        "homepage2": "https://benibananosato.com/watch/burattopia/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/149/"
       }
     },
     {
@@ -4684,7 +4896,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19001",
         "businessHours": "9:00～18:00≪冬期・営業時間短縮あり≫",
         "homepage": "http://www.cherryland.co.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/150/"
       }
     },
     {
@@ -4706,7 +4919,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19002",
         "businessHours": "8:00～18:00（冬季は8:30～17:30） ＜休 毎月最終水曜日（7・8月を除く）、12/31～1/1＞",
         "homepage": "http://www.at-syarin.com",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/151/"
       }
     },
     {
@@ -4728,7 +4942,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19003",
         "businessHours": "9:00〜17:00 ＜休 年末年始＞",
         "homepage": "http://www.gassan.co.jp/meisuikan/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/152/"
       }
     },
     {
@@ -4750,7 +4965,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19004",
         "businessHours": "9:00～18:00（12～3月は10:00～17:00） ＜休 12/31～1/1・12月～3月の第二水曜・第四水曜（変更の可能性あり）＞",
         "homepage": "http://mezami113.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/153/"
       }
     },
     {
@@ -4772,7 +4988,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19005",
         "businessHours": "9:00～17:00（季節変更あり）",
         "homepage": "http://www.rs-murayama.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/154/"
       }
     },
     {
@@ -4794,7 +5011,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19006",
         "businessHours": "9:00～17:30〔施設により異なる〕",
         "homepage": "http://www.kouraikan.com/tozawa.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/155/"
       }
     },
     {
@@ -4816,7 +5034,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19007",
         "businessHours": "9:00～18:00（3月～10月）、9:00～17:00（11～2月） ＜ 休 1/1 ＞",
         "homepage": "http://chokai-flat.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/156/"
       }
     },
     {
@@ -4838,7 +5057,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19008",
         "businessHours": "9:00～18:00 ≪冬期・営業時間短縮あり≫ ＜休 1/1＞",
         "homepage": "http://www.tazawa-forest.com/nagomi/",
-        "homepage2": "michinoeki-tazawa.jp"
+        "homepage2": "michinoeki-tazawa.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/157/"
       }
     },
     {
@@ -4860,7 +5080,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19009",
         "businessHours": "売店 白い森のくまさん・ぶな茶屋軽食コーナー9:00～17:00 お母さん食堂あいあい11：30～14：00 ＜休 1/1＞(あいあいのみ毎週火曜定休）",
         "homepage": "http://michinoeki-oguni.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/158/"
       }
     },
     {
@@ -4882,7 +5103,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19010",
         "businessHours": "9:00～18:00 ＜休 12/31～1/1＞",
         "homepage": "https://oe-terume.co.jp/roadside-station-oe/",
-        "homepage2": "https://www.instagram.com/michinoeki_oe/"
+        "homepage2": "https://www.instagram.com/michinoeki_oe/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/159/"
       }
     },
     {
@@ -4904,7 +5126,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19011",
         "businessHours": "9:00～16:00 ＜休 12/31午後～1/3＞",
         "homepage": "http://www.iroribinosato.info/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/160/"
       }
     },
     {
@@ -4926,7 +5149,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19012",
         "businessHours": "9:00～17:30≪冬期・営業時間短縮あり≫",
         "homepage": "http://www.rstakahata.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/161/"
       }
     },
     {
@@ -4948,7 +5172,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19013",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.city.tendo.yamagata.jp/busiindust/nourin/mori-na_tendo.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/752/"
       }
     },
     {
@@ -4970,7 +5195,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19014",
         "businessHours": "9:00～18:00 ＜休 1/1＞",
         "homepage": "http://www.mitinoku.or.jp/nemaru/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/851/"
       }
     },
     {
@@ -4992,7 +5218,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19015",
         "businessHours": "10:00～18:00≪冬期・営業時間短縮あり≫ ＜休 毎週水曜日＞",
         "homepage": "http://www.ayuchaya.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/852/"
       }
     },
     {
@@ -5014,7 +5241,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19016",
         "businessHours": "9:00～18:00≪冬期・営業時間短縮あり≫",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/162/"
       }
     },
     {
@@ -5036,7 +5264,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19017",
         "businessHours": "9:00～17:00 ＜休 12/31～1/1＞",
         "homepage": "http://www.town.kawamata.lg.jp/site/kanko-event/silkpia-shisetsuannai.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/163/"
       }
     },
     {
@@ -5058,7 +5287,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19018",
         "businessHours": "7:00～19:00（12月～3月は7:00～18:00まで）",
         "homepage": "http://aizukogen-yume.jp/tajima/index.php",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/164/"
       }
     },
     {
@@ -5073,14 +5303,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19019",
         "name": "道の駅道の駅安達智恵子の里 上り線",
-        "prefecture": "道の駅「安達」智恵子の里　上り線",
+        "prefecture": "道の駅「安達」智恵子の里\u3000上り線",
         "city": "",
         "address": "9691511 福島県二本松市下川崎字上平33-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19019",
         "businessHours": "9:00～18:00 〔店舗により異なる〕",
         "homepage": "http://www.michinoeki-adachi.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/165/"
       }
     },
     {
@@ -5102,7 +5333,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19020",
         "businessHours": "売店9：30～18：00（最終入館17：45） レストラン11：00～18：00（Lo17：30）≪夏期・営業時間延長あり≫＜休 年末年始＞",
         "homepage": "http://www.furusatosinkou.co.jp",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/166/"
       }
     },
     {
@@ -5124,7 +5356,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19021",
         "businessHours": "8:30～17:30≪冬期・営業時間短縮あり≫＜休 11月～4月の毎週水曜日＞",
         "homepage": "http://www.michinoeki-urabandai.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/167/"
       }
     },
     {
@@ -5146,7 +5379,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19022",
         "businessHours": "売店施設9：00～18：00 温泉施設10：00～21：00 フードコート11：00～20：00",
         "homepage": "https://michinoeki-naraha.jp",
-        "homepage2": "https://www.town.naraha.lg.jp"
+        "homepage2": "https://www.town.naraha.lg.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/168/"
       }
     },
     {
@@ -5168,7 +5402,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19023",
         "businessHours": "9:30～18:00",
         "homepage": "https://michinoekisoma.main.jp/index.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/660/"
       }
     },
     {
@@ -5190,7 +5425,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19024",
         "businessHours": "9:00～18:00 ＜休 1/1、1/2＞",
         "homepage": "https://www.michinoeki-hanawa.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/661/"
       }
     },
     {
@@ -5212,7 +5448,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19025",
         "businessHours": "9:00～18:00 ≪冬期・営業時間短縮あり≫",
         "homepage": "http://yanaizu-kousya.info/seiryu.shtml",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/662/"
       }
     },
     {
@@ -5234,7 +5471,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19026",
         "businessHours": "9:00～17:00 ＜休 12/31・1/1・1/2＞",
         "homepage": "http://www.touwanosato.net/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/753/"
       }
     },
     {
@@ -5256,7 +5494,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19027",
         "businessHours": "9:00～19:00 ＜休 1/1＞ 9:00～18:00（12/1～3/15）",
         "homepage": "http://www.w-aizu.jp/yorisse/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/754/"
       }
     },
     {
@@ -5278,7 +5517,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19028",
         "businessHours": "8:00～18:00 ＜休 1/1～1/3＞",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/834/"
       }
     },
     {
@@ -5300,7 +5540,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19029",
         "businessHours": "8:30～18:00",
         "homepage": "http://www.kobushinosato.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/835/"
       }
     },
     {
@@ -5322,7 +5563,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19030",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.hatoriko.jp/around/eki.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/853/"
       }
     },
     {
@@ -5344,7 +5586,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19031",
         "businessHours": "9:00～18:00〔施設により異なる〕",
         "homepage": "http://www.nomaoinosato.co.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/863/"
       }
     },
     {
@@ -5366,7 +5609,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19032",
         "businessHours": "8:00～18:00（4月～11月）、8:00～17:00（12月～3月）＜休 12/31～1/1＞",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/891/"
       }
     },
     {
@@ -5388,7 +5632,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19033",
         "businessHours": "9:30～18:00 ＜休 1/1＞",
         "homepage": "http://www.michinoeki-hirata.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/902/"
       }
     },
     {
@@ -5410,7 +5655,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19034",
         "businessHours": "9:00～18:00〔施設により異なる〕＊『11月〜2月 閉店17:00』 ＜休 1/1、毎週火曜日（但し 祝日、GW・お盆期間、1/2・3は営業いたします。）＞",
         "homepage": "https://www.michinoeki-yotsukurakou.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/906/"
       }
     },
     {
@@ -5432,7 +5678,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19035",
         "businessHours": "9:00～18:00（2021.12.1～） 〔コーナーにより異なる〕",
         "homepage": "http://www.michinoekibandai.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/907/"
       }
     },
     {
@@ -5454,7 +5701,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19036",
         "businessHours": "9:00～18:00 ＜休 年末年始＞",
         "homepage": "http://ofukuro-eki.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/920/"
       }
     },
     {
@@ -5476,7 +5724,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19037",
         "businessHours": "8:00～17:00＜休 毎週火曜日、木曜日（冬期のみ）、12/29～1/1＞",
         "homepage": "http://www.kanko-aizu.com/kau/3213/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/940/"
       }
     },
     {
@@ -5498,7 +5747,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19038",
         "businessHours": "9:00～17:30＜休 第1水曜日12/31～1/3＞",
         "homepage": "http://www.kinosato.fukushima.jp",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/956/"
       }
     },
     {
@@ -5520,7 +5770,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19039",
         "businessHours": "10:00～20:00（火曜日は10:00～14:00）",
         "homepage": "http://www.kirara289.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/980/"
       }
     },
     {
@@ -5542,7 +5793,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19040",
         "businessHours": "9:00～18:30＜休 12/30～1/2＞",
         "homepage": "http://okuaizukaneyama.blog.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/998/"
       }
     },
     {
@@ -5564,7 +5816,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19041",
         "businessHours": "9:00～17:00 ＜休 年始＞",
         "homepage": "https://www.sakura-no-sato.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/999/"
       }
     },
     {
@@ -5586,7 +5839,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19042",
         "businessHours": "9:00～18:00〔施設により異なる〕＜休 1月1日 2月第3水曜日＞※臨時休業あり",
         "homepage": "http://heso-aizu.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1017/"
       }
     },
     {
@@ -5608,7 +5862,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19043",
         "businessHours": "9:00～17:00 ＜休 12/29～1/3＞",
         "homepage": "https://www.karamushi.co.jp/",
-        "homepage2": "https://michieki-showa.shop/"
+        "homepage2": "https://michieki-showa.shop/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1018/"
       }
     },
     {
@@ -5630,7 +5885,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19044",
         "businessHours": "9:00～18:00（4～9月） 9:00～17:00（10～3月）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000023.html",
-        "homepage2": "http://www.m-katsura.com/"
+        "homepage2": "http://www.m-katsura.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/169/"
       }
     },
     {
@@ -5652,7 +5908,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19045",
         "businessHours": "9:00～16:30",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000055.html",
-        "homepage2": "https://www.instagram.com/michinoeki.satomi"
+        "homepage2": "https://www.instagram.com/michinoeki.satomi",
+        "michiEkiUrl": "https://www.michieki.jp/eki/171/"
       }
     },
     {
@@ -5674,7 +5931,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19046",
         "businessHours": "9:00～18:00＜休 12/30～1/1、2月・9月第2月曜日（祝日の場合はその翌日）＞",
         "homepage": "https://www.sakaimachi.co.jp/",
-        "homepage2": "https://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000056.html"
+        "homepage2": "https://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000056.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/389/"
       }
     },
     {
@@ -5696,7 +5954,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19047",
         "businessHours": "9:00～18:00 ＜休 毎月第1・第3水曜日（祝日の場合は翌日）、12/31・1/1＞",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000100.html",
-        "homepage2": "http://www.town.daigo.ibaraki.jp/sp/page/page000026.html"
+        "homepage2": "http://www.town.daigo.ibaraki.jp/sp/page/page000026.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/173/"
       }
     },
     {
@@ -5718,7 +5977,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19048",
         "businessHours": "8:00～20:00〔施設により異なる〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000068.html",
-        "homepage2": "http://www.city.shimotsuma.lg.jp/page/dir001734.html"
+        "homepage2": "http://www.city.shimotsuma.lg.jp/page/dir001734.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/174/"
       }
     },
     {
@@ -5740,7 +6000,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19049",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000059.html",
-        "homepage2": "http://www.namegata-koikoi.com/"
+        "homepage2": "http://www.namegata-koikoi.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/175/"
       }
     },
     {
@@ -5762,7 +6023,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19050",
         "businessHours": "9:00～19:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000060.html",
-        "homepage2": "http://www.michinoeki-itako.jp"
+        "homepage2": "http://www.michinoeki-itako.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/176/"
       }
     },
     {
@@ -5784,7 +6046,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19051",
         "businessHours": "9:00～18:00（店舗により異なる）、【休】第1・第3月曜日（祝日の場合は翌日休み）",
         "homepage": "https://www.michinoeki-goka.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/755/"
       }
     },
     {
@@ -5799,14 +6062,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19052",
         "name": "道の駅まくらがの里 こが",
-        "prefecture": "まくらがの里　こが",
+        "prefecture": "まくらがの里\u3000こが",
         "city": "",
         "address": "茨城県古河市大和田2623",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19052",
         "businessHours": "9:00～20:00〔施設により異なる〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000064.html",
-        "homepage2": "http://www.dynac-japan.com/michinoeki-koga/index.html"
+        "homepage2": "http://www.dynac-japan.com/michinoeki-koga/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1000/"
       }
     },
     {
@@ -5828,7 +6092,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19053",
         "businessHours": "9:00～18:00（1月～3月 9:00～17:00） ※店舗により営業時間、定休日が異なります。",
         "homepage": "https://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000065.html",
-        "homepage2": "https://hitachi-osakana-center.com/"
+        "homepage2": "https://hitachi-osakana-center.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1019/"
       }
     },
     {
@@ -5850,7 +6115,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19054",
         "businessHours": "9:00～19:00（施設により異なる）〔10月～3月は18:00まで〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000071.html",
-        "homepage2": "http://www.motegiplaza.com/"
+        "homepage2": "http://www.motegiplaza.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/177/"
       }
     },
     {
@@ -5872,7 +6138,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19055",
         "businessHours": "9:00～17:00（季節により変更あり）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000072.html",
-        "homepage2": "http://michinoeki-ninomiya.jp/"
+        "homepage2": "http://michinoeki-ninomiya.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/178/"
       }
     },
     {
@@ -5894,7 +6161,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19056",
         "businessHours": "9:00～17:00 （12～2月 は9:00～16:00）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000057.html",
-        "homepage2": "http://www.agripal-shiobara.com/"
+        "homepage2": "http://www.agripal-shiobara.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/179/"
       }
     },
     {
@@ -5916,7 +6184,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19057",
         "businessHours": "8:00～17:30（10月～3月は9:00～17:00）〔各施設季節により異なる〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000058.html",
-        "homepage2": "http://www.yuainomori.com/"
+        "homepage2": "http://www.yuainomori.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/180/"
       }
     },
     {
@@ -5938,7 +6207,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19058",
         "businessHours": "8:30～17:00（12～2月は8:30～16:30）",
         "homepage": "https://meijinomori.jp/",
-        "homepage2": "https://www.instagram.com/meijinomori/"
+        "homepage2": "https://www.instagram.com/meijinomori/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/181/"
       }
     },
     {
@@ -5960,7 +6230,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19059",
         "businessHours": "●直売所 8:00～17:00 ●レストラン[平日]▶11:00～17:30（ﾗｽﾄｵｰﾀﾞｰ:17:00）土日祝▶11:00～19:30（ﾗｽﾄｵｰﾀﾞｰ:19:00）",
         "homepage": "http://www.tck.or.jp/michinoeki/eki/batou.html",
-        "homepage2": "https://www.michinoeki-bato.jp"
+        "homepage2": "https://www.michinoeki-bato.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/182/"
       }
     },
     {
@@ -5982,7 +6253,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19060",
         "businessHours": "8:30～17:00（施設により異なる）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000104.html",
-        "homepage2": "http://michinoeki-tosando.jp/"
+        "homepage2": "http://michinoeki-tosando.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/183/"
       }
     },
     {
@@ -6004,7 +6276,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19061",
         "businessHours": "9:00～18:00",
         "homepage": "https://michinoeki-kitsuregawa.jp",
-        "homepage2": "http://www.city.tochigi-sakura.lg.jp/site/michi-kitsuregawa/"
+        "homepage2": "http://www.city.tochigi-sakura.lg.jp/site/michi-kitsuregawa/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/184/"
       }
     },
     {
@@ -6019,14 +6292,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19062",
         "name": "道の駅どまんなか たぬま",
-        "prefecture": "どまんなか　たぬま",
+        "prefecture": "どまんなか\u3000たぬま",
         "city": "",
         "address": "栃木県佐野市吉水町366-2",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19062",
         "businessHours": "9:30～19:00（施設により異なる）現在1時間時短営業中に18：00まで",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000050.html",
-        "homepage2": "http://domannaka.co.jp/"
+        "homepage2": "http://domannaka.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/185/"
       }
     },
     {
@@ -6048,7 +6322,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19063",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000044.html",
-        "homepage2": "http://www.michinoeki-haga.gr.jp/"
+        "homepage2": "http://www.michinoeki-haga.gr.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/186/"
       }
     },
     {
@@ -6070,7 +6345,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19064",
         "businessHours": "9:00～18:00 休み:12月～３月第２週の毎月曜日（月曜祝日の場合は翌日）１月1・2・3日",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000042.html",
-        "homepage2": "http://www.nasuno-yoichi.jp/"
+        "homepage2": "http://www.nasuno-yoichi.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/715/"
       }
     },
     {
@@ -6092,7 +6368,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19065",
         "businessHours": "9:00～17:00（展示室への入場は16:30まで）＜休み 月曜日（休日は開館）、年末年始、くん蒸期間中＞",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000046.html",
-        "homepage2": "http://www2.city.nasushiobara.lg.jp/hakubutsukan/"
+        "homepage2": "http://www2.city.nasushiobara.lg.jp/hakubutsukan/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/756/"
       }
     },
     {
@@ -6114,7 +6391,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19066",
         "businessHours": "8:00～19:00（施設により異なる）",
         "homepage": "https://www.michinoeki-mikamo.jp/",
-        "homepage2": "https://www.instagram.com/roadside13mikamo/"
+        "homepage2": "https://www.instagram.com/roadside13mikamo/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/757/"
       }
     },
     {
@@ -6136,7 +6414,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19067",
         "businessHours": "9:00～18:00＜店舗・季節により異なる＞",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000047.html",
-        "homepage2": "http://www.michinoekiomoigawa.co.jp/"
+        "homepage2": "http://www.michinoekiomoigawa.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/794/"
       }
     },
     {
@@ -6158,7 +6437,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19068",
         "businessHours": "9:00～17:00（施設により異なる）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000076.html",
-        "homepage2": "http://www.michinoeki-yunishigawa.jp/"
+        "homepage2": "http://www.michinoeki-yunishigawa.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/836/"
       }
     },
     {
@@ -6180,7 +6460,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19069",
         "businessHours": "9:00～19:00（施設により異なる）",
         "homepage": "https://michinoeki-mibu.jp/",
-        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000108.html"
+        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000108.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/909/"
       }
     },
     {
@@ -6202,7 +6483,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19070",
         "businessHours": "9:00～17:00＜施設により異なる＞",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000109.html",
-        "homepage2": "http://michinoeki-nishikata.com/"
+        "homepage2": "http://michinoeki-nishikata.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/910/"
       }
     },
     {
@@ -6224,7 +6506,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19071",
         "businessHours": "9:00～19:00（施設により異なる）＜休み 第1・3水曜日（祝日は営業）、1/1～3＞",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000110.html",
-        "homepage2": "http://www.kanpi-shimotsuke.co.jp/"
+        "homepage2": "http://www.kanpi-shimotsuke.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/941/"
       }
     },
     {
@@ -6246,7 +6529,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19072",
         "businessHours": "9:00～18:00（冬季は9:00～17:00）〔施設により異なる〕＜休み 水曜不定休、12/31～1/3＞",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000111.html",
-        "homepage2": "http://www.michinoeki-yaita.com/"
+        "homepage2": "http://www.michinoeki-yaita.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/942/"
       }
     },
     {
@@ -6268,7 +6552,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19073",
         "businessHours": "8:30～17:00（施設により異なる）",
         "homepage": "https://michinoeki-shioya.com/",
-        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000112.html"
+        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000112.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/981/"
       }
     },
     {
@@ -6283,14 +6568,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19074",
         "name": "道の駅うつのみや ろまんちっく村",
-        "prefecture": "うつのみや　ろまんちっく村",
+        "prefecture": "うつのみや\u3000ろまんちっく村",
         "city": "",
         "address": "栃木県宇都宮市新里町丙254",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19074",
         "businessHours": "8:30～17:00（施設により異なる）土日祝18：00＜休み 第2火曜日＞",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000113.html",
-        "homepage2": "http://www.romanticmura.com/"
+        "homepage2": "http://www.romanticmura.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/982/"
       }
     },
     {
@@ -6312,7 +6598,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19075",
         "businessHours": "9:00～17:00〔施設により異なる〕＜休 毎週木曜日、1/1～3＞",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000114.html",
-        "homepage2": "http://michinoeki-ichikai.jp"
+        "homepage2": "http://michinoeki-ichikai.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1020/"
       }
     },
     {
@@ -6334,7 +6621,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19076",
         "businessHours": "【売店】9:00～18:00 【レストラン】11:00～15:00(冬季の平日は14：00迄）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000168.html",
-        "homepage2": "http://www.michinoeki-ueno.jp"
+        "homepage2": "http://www.michinoeki-ueno.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/187/"
       }
     },
     {
@@ -6356,7 +6644,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19077",
         "businessHours": "農産物直売所:３~9月9:30~17:30 10月~2月9:30~16:30 レストハウス:3~9月10:30~16:30 10月~2月10:30~15:30",
         "homepage": "https://www.maebashi-cvb.com/spot/3001",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/188/"
       }
     },
     {
@@ -6378,7 +6667,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19078",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000170.html",
-        "homepage2": "http://www.nakanojo-kanko.jp/miru-taiken/michinoeki-kuni.shtml"
+        "homepage2": "http://www.nakanojo-kanko.jp/miru-taiken/michinoeki-kuni.shtml",
+        "michiEkiUrl": "https://www.michieki.jp/eki/189/"
       }
     },
     {
@@ -6400,7 +6690,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19079",
         "businessHours": "【4月〜10月】9:00〜18:00 【11月〜3月】9:00〜17:00 【食堂】11:00〜15:00 現在の営業時間【直売所】9:00〜17:00 【食堂】11:00〜14:00",
         "homepage": "http://onoko.jp/",
-        "homepage2": "https://www.city.shibukawa.lg.jp/kankou/kankou/gift/tokusanhin/p000317.html"
+        "homepage2": "https://www.city.shibukawa.lg.jp/kankou/kankou/gift/tokusanhin/p000317.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/190/"
       }
     },
     {
@@ -6422,7 +6713,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19080",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000172.html",
-        "homepage2": "http://www.ktr.mlit.go.jp/honkyoku/road/Michi-no-Eki/station/gunma_onisi/index.html"
+        "homepage2": "http://www.ktr.mlit.go.jp/honkyoku/road/Michi-no-Eki/station/gunma_onisi/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/191/"
       }
     },
     {
@@ -6444,7 +6736,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19081",
         "businessHours": "9:00～20:30（施設により異なる）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000173.html",
-        "homepage2": "http://www.denenplaza.co.jp/"
+        "homepage2": "http://www.denenplaza.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/192/"
       }
     },
     {
@@ -6466,7 +6759,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19082",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000174.html",
-        "homepage2": "http://www9.wind.ne.jp/mizukikou/frame.htm"
+        "homepage2": "http://www9.wind.ne.jp/mizukikou/frame.htm",
+        "michiEkiUrl": "https://www.michieki.jp/eki/193/"
       }
     },
     {
@@ -6488,7 +6782,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19083",
         "businessHours": "10:00～21:00(休館日：4、6、9、12月の第2火曜日)",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000175.html",
-        "homepage2": "http://www.boukyou.com/"
+        "homepage2": "http://www.boukyou.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/194/"
       }
     },
     {
@@ -6510,7 +6805,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19084",
         "businessHours": "9:00～17:00",
         "homepage": "http://michinoeki-932.jp",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/195/"
       }
     },
     {
@@ -6532,7 +6828,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19085",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000177.html",
-        "homepage2": "http://www15.wind.ne.jp/~kurohone-y/"
+        "homepage2": "http://www15.wind.ne.jp/~kurohone-y/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/196/"
       }
     },
     {
@@ -6554,7 +6851,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19086",
         "businessHours": "10:00～20:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000178.html",
-        "homepage2": "http://www.laranfujioka.com/"
+        "homepage2": "http://www.laranfujioka.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/197/"
       }
     },
     {
@@ -6576,7 +6874,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19087",
         "businessHours": "【4月〜11月】9:00～19:00【12月〜3月】9:00〜18:00 現在の営業時間 9:00〜18:00",
         "homepage": "http://komochi.com/",
-        "homepage2": "https://www.city.shibukawa.lg.jp/kankou/gift/tokusanhin/p010562.html"
+        "homepage2": "https://www.city.shibukawa.lg.jp/kankou/gift/tokusanhin/p010562.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/198/"
       }
     },
     {
@@ -6598,7 +6897,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19088",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000180.html",
-        "homepage2": "http://www.tsukiyono-harvest.com/"
+        "homepage2": "http://www.tsukiyono-harvest.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/199/"
       }
     },
     {
@@ -6620,7 +6920,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19089",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000181.html",
-        "homepage2": "http://www.myogi-bc.jp/"
+        "homepage2": "http://www.myogi-bc.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/200/"
       }
     },
     {
@@ -6642,7 +6943,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19090",
         "businessHours": "10:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000182.html",
-        "homepage2": "http://town.kanna.gunma.jp/kanko/?page_id=30"
+        "homepage2": "http://town.kanna.gunma.jp/kanko/?page_id=30",
+        "michiEkiUrl": "https://www.michieki.jp/eki/201/"
       }
     },
     {
@@ -6664,7 +6966,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19091",
         "businessHours": "8:30～18:00",
         "homepage": "http://shimonitanegi.com/",
-        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000183.html"
+        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000183.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/714/"
       }
     },
     {
@@ -6686,7 +6989,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19092",
         "businessHours": "9:00～16:30",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000184.html",
-        "homepage2": "http://www.city.midori.gunma.jp/tomihiro/"
+        "homepage2": "http://www.city.midori.gunma.jp/tomihiro/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/795/"
       }
     },
     {
@@ -6708,7 +7012,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19093",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000185.html",
-        "homepage2": "https://takuminosato.jp/"
+        "homepage2": "https://takuminosato.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/796/"
       }
     },
     {
@@ -6730,7 +7035,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19094",
         "businessHours": "たけやま館9:00～16:30（12月〜3月は15:30迄）●そば処けやき11:00〜16:00（12月〜3月は15:00迄）●定休日毎週水曜日、年末年始（12月29日、30日、1月1日）",
         "homepage": "http://www.michinoekireizantakeyama.com",
-        "homepage2": "https://www.town.nakanojo.gunma.jp/site/mithinoeki-takeyama/"
+        "homepage2": "https://www.town.nakanojo.gunma.jp/site/mithinoeki-takeyama/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/882/"
       }
     },
     {
@@ -6752,7 +7058,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19095",
         "businessHours": "8:30～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000187.html",
-        "homepage2": "http://www.yoshioka-onsen.jp/"
+        "homepage2": "http://www.yoshioka-onsen.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/924/"
       }
     },
     {
@@ -6774,7 +7081,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19096",
         "businessHours": "温泉施設11:00~20:00 農産物直売所9:30~18:00 情報提供コーナー10:00~17:00",
         "homepage": "https://www.maebashi-cvb.com/spot/3003",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/943/"
       }
     },
     {
@@ -6796,7 +7104,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19097",
         "businessHours": "9:00～18:00（施設により異なる）＜休 1/1＞",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000189.html",
-        "homepage2": "http://www.town.kanra.gunma.jp/kanko/spot/busan/index.html"
+        "homepage2": "http://www.town.kanra.gunma.jp/kanko/spot/busan/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/957/"
       }
     },
     {
@@ -6818,7 +7127,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19098",
         "businessHours": "9:00～18:00（施設により異なる）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000190.html",
-        "homepage2": "http://agream-showa.jp/"
+        "homepage2": "http://agream-showa.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/958/"
       }
     },
     {
@@ -6840,7 +7150,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19099",
         "businessHours": "10:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000191.html",
-        "homepage2": "http://www.nanmoku.ne.jp/modules/oasis/index.php?content_id=4"
+        "homepage2": "http://www.nanmoku.ne.jp/modules/oasis/index.php?content_id=4",
+        "michiEkiUrl": "https://www.michieki.jp/eki/959/"
       }
     },
     {
@@ -6862,7 +7173,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19100",
         "businessHours": "温泉施設：月・火・水10:00～20:00 金・土・日・祝10:00～21:00 農産物直売所:3~9月9:00~18:00 10月~2月9:00~17:00",
         "homepage": "https://www.maebashi-cvb.com/spot/3002",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/960/"
       }
     },
     {
@@ -6884,7 +7196,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19101",
         "businessHours": "9:00～19:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000193.html",
-        "homepage2": "http://michinoeki-ota.com/"
+        "homepage2": "http://michinoeki-ota.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/973/"
       }
     },
     {
@@ -6906,7 +7219,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19102",
         "businessHours": "7:00～18:00（施設により異なる）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000194.html",
-        "homepage2": "http://yambamichinoeki.com/"
+        "homepage2": "http://yambamichinoeki.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1001/"
       }
     },
     {
@@ -6928,7 +7242,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19103",
         "businessHours": "直売所 9:00～18:00（4月～10月）9:30～17:30(11月～3月) 日帰り温泉 9:00～21:00 レストラン 11:00～15：30",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000195.html",
-        "homepage2": "http://www.takayama-kanko.jp/"
+        "homepage2": "http://www.takayama-kanko.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1007/"
       }
     },
     {
@@ -6950,7 +7265,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19104",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000196.html",
-        "homepage2": "http://www.kurabuchi-oguri.com/"
+        "homepage2": "http://www.kurabuchi-oguri.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1021/"
       }
     },
     {
@@ -6972,7 +7288,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19105",
         "businessHours": "9:00～18:00（7～8月は19:00まで、12～3月は17:00まで）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000197.html",
-        "homepage2": "http://agatsumakyo.jp/"
+        "homepage2": "http://agatsumakyo.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1033/"
       }
     },
     {
@@ -6994,7 +7311,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19106",
         "businessHours": "9:00～17:00（3月～11月）、9:00～16:00（12月～2月）〔施設により異なる〕",
         "homepage": "http://www.michinoeki-network.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/202/"
       }
     },
     {
@@ -7016,7 +7334,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19107",
         "businessHours": "9:00～17:00〔施設により異なる〕",
         "homepage": "https://michinoeki-ogawamachi.com",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/203/"
       }
     },
     {
@@ -7038,7 +7357,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19108",
         "businessHours": "9:00～18:00〔施設により異なる〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000202.html",
-        "homepage2": "https://www.jurian.or.jp"
+        "homepage2": "https://www.jurian.or.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/204/"
       }
     },
     {
@@ -7060,7 +7380,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19109",
         "businessHours": "10：00～20:00（4/1～11/30） 10：00～19：00（12/1～3/31）",
         "homepage": "http://www.ootakionsen.co.jp/",
-        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000203.html"
+        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000203.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/205/"
       }
     },
     {
@@ -7082,7 +7403,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19110",
         "businessHours": "8:00～19:00 〔店舗により異なる〕",
         "homepage": "https://www.michinoeki-okabe.jp/",
-        "homepage2": "http://www.rakuten.co.jp/genkioukoku/"
+        "homepage2": "http://www.rakuten.co.jp/genkioukoku/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/206/"
       }
     },
     {
@@ -7104,7 +7426,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19111",
         "businessHours": "8:30～17:30〔施設により異なる〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000205.html",
-        "homepage2": "http://www.ryuseinomachi.co.jp/ryusei/index.htm"
+        "homepage2": "http://www.ryuseinomachi.co.jp/ryusei/index.htm",
+        "michiEkiUrl": "https://www.michieki.jp/eki/207/"
       }
     },
     {
@@ -7126,7 +7449,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19112",
         "businessHours": "9:30～18:00（9月～4月は17:30まで）〔施設により異なる〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000206.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/208/"
       }
     },
     {
@@ -7148,7 +7472,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19113",
         "businessHours": "8:00～19:00〔施設により異なる〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000207.html",
-        "homepage2": "http://www.michinoeki-hanazono.jp/"
+        "homepage2": "http://www.michinoeki-hanazono.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/209/"
       }
     },
     {
@@ -7170,7 +7495,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19114",
         "businessHours": "9:00～20:00〔施設により異なる〕 ＜休 火曜日（祝祭日の場合は翌日休館）＞",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000208.html",
-        "homepage2": "https://kabushikigaishachiikishoushaogano.jimdosite.com/"
+        "homepage2": "https://kabushikigaishachiikishoushaogano.jimdosite.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/210/"
       }
     },
     {
@@ -7192,7 +7518,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19115",
         "businessHours": "9:00～17:00〔施設により異なる〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000209.html",
-        "homepage2": "http://www.city.fukaya.saitama.jp/shisetsu/michinoeki/1499131548292.html"
+        "homepage2": "http://www.city.fukaya.saitama.jp/shisetsu/michinoeki/1499131548292.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/211/"
       }
     },
     {
@@ -7214,7 +7541,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19116",
         "businessHours": "10:00～17:30〔施設・季節により違います〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000210.html",
-        "homepage2": "http://mitinoekimenuma.web.fc2.com"
+        "homepage2": "http://mitinoekimenuma.web.fc2.com",
+        "michiEkiUrl": "https://www.michieki.jp/eki/212/"
       }
     },
     {
@@ -7236,7 +7564,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19117",
         "businessHours": "9:30～17:30〔施設により異なる〕",
         "homepage": "http://www.michinoeki-network.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/213/"
       }
     },
     {
@@ -7258,7 +7587,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19118",
         "businessHours": "9:00～17:00〔施設により異なる〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000212.html",
-        "homepage2": "http://www.pikaru.co.jp/index.html"
+        "homepage2": "http://www.pikaru.co.jp/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/667/"
       }
     },
     {
@@ -7280,7 +7610,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19119",
         "businessHours": "9:00～17:00（季節、イベントにより変更あり）〔施設により異なる〕",
         "homepage": "https://michinoeki-ashigakubo.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/713/"
       }
     },
     {
@@ -7295,14 +7626,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19120",
         "name": "道の駅いちごの里 よしみ",
-        "prefecture": "いちごの里　よしみ",
+        "prefecture": "いちごの里\u3000よしみ",
         "city": "",
         "address": "埼玉県比企郡吉見町大字久保田1737",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19120",
         "businessHours": "9:00～17:00〔施設により異なる〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000214.html",
-        "homepage2": "http://www.ichigonosato.com/"
+        "homepage2": "http://www.ichigonosato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/758/"
       }
     },
     {
@@ -7324,7 +7656,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19121",
         "businessHours": "8:00～17:00〔施設により異なる〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000215.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/759/"
       }
     },
     {
@@ -7346,7 +7679,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19122",
         "businessHours": "8:00～19:00〔施設により異なる〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000216.html",
-        "homepage2": "http://www.michinoeki-showa.or.jp"
+        "homepage2": "http://www.michinoeki-showa.or.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/760/"
       }
     },
     {
@@ -7368,7 +7702,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19123",
         "businessHours": "8:30～19:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000217.html",
-        "homepage2": "http://www.city.hanyu.lg.jp/docs/2013072500024/"
+        "homepage2": "http://www.city.hanyu.lg.jp/docs/2013072500024/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/864/"
       }
     },
     {
@@ -7390,7 +7725,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19124",
         "businessHours": "8:30～17:00〔施設により異なる〕 ＜休 12/31～1/2（年末年始）＞",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000218.html",
-        "homepage2": "http://www.town.minano.saitama.jp/section/kankou/965.htm"
+        "homepage2": "http://www.town.minano.saitama.jp/section/kankou/965.htm",
+        "michiEkiUrl": "https://www.michieki.jp/eki/990/"
       }
     },
     {
@@ -7412,7 +7748,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19125",
         "businessHours": "9:15～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000220.html",
-        "homepage2": "http://www.biwakurabu.jp/"
+        "homepage2": "http://www.biwakurabu.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/214/"
       }
     },
     {
@@ -7434,7 +7771,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19126",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000221.html",
-        "homepage2": "http://www.hinanosato.jp/"
+        "homepage2": "http://www.hinanosato.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/215/"
       }
     },
     {
@@ -7456,7 +7794,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19127",
         "businessHours": "9:30～17:00 農産物直売所（季節や店舗により営業時間は違います。詳しくは公式HPをご覧ください）",
         "homepage": "https://www.michinoeki-yachiyo.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/216/"
       }
     },
     {
@@ -7478,7 +7817,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19128",
         "businessHours": "9:00 ~ 17:00〔施設により異なる〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000223.html",
-        "homepage2": "https://www.town.kyonan.chiba.jp/site/tourism/2505.html"
+        "homepage2": "https://www.town.kyonan.chiba.jp/site/tourism/2505.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/217/"
       }
     },
     {
@@ -7500,7 +7840,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19129",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000224.html",
-        "homepage2": "http://kamogawaocean-park.com/"
+        "homepage2": "http://kamogawaocean-park.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/218/"
       }
     },
     {
@@ -7522,7 +7863,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19130",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000225.html",
-        "homepage2": "http://rosemary-park.jp/"
+        "homepage2": "http://rosemary-park.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/219/"
       }
     },
     {
@@ -7544,7 +7886,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19131",
         "businessHours": "9:00～18:00（10～3月は17:00まで）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000226.html",
-        "homepage2": "https://www.city.kimitsu.lg.jp/soshiki/24/2122.html"
+        "homepage2": "https://www.city.kimitsu.lg.jp/soshiki/24/2122.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/220/"
       }
     },
     {
@@ -7566,7 +7909,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19132",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000227.html",
-        "homepage2": "http://www.michinoeki-shonan.jp/"
+        "homepage2": "http://www.michinoeki-shonan.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/221/"
       }
     },
     {
@@ -7588,7 +7932,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19133",
         "businessHours": "9:00～18:00",
         "homepage": "http://takeyura.net",
-        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000228.html"
+        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000228.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/222/"
       }
     },
     {
@@ -7610,7 +7955,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19134",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.michinoeki-tako.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/223/"
       }
     },
     {
@@ -7632,7 +7978,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19135",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000230.html",
-        "homepage2": "http://www.ichihara-kankou.or.jp/azunosato/index.html"
+        "homepage2": "http://www.ichihara-kankou.or.jp/azunosato/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/663/"
       }
     },
     {
@@ -7654,7 +8001,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19136",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000231.html",
-        "homepage2": "https://www.benikomachi.jp/"
+        "homepage2": "https://www.benikomachi.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/664/"
       }
     },
     {
@@ -7676,7 +8024,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19137",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000232.html",
-        "homepage2": "http://shiokaze-oukoku.jp/"
+        "homepage2": "http://shiokaze-oukoku.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/665/"
       }
     },
     {
@@ -7698,7 +8047,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19138",
         "businessHours": "9:00～18:00（施設により異なる）※土日祝日 8：30～18：00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000233.html",
-        "homepage2": "https://www.furaritomiyama.jp/"
+        "homepage2": "https://www.furaritomiyama.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/666/"
       }
     },
     {
@@ -7720,7 +8070,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19139",
         "businessHours": "12月～6月 9:30～17:00 7月～11月 9：30～16：00 （5月中旬～10月末日売店閉鎖）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000234.html",
-        "homepage2": "http://www.hana-kurabu.jp/"
+        "homepage2": "http://www.hana-kurabu.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/712/"
       }
     },
     {
@@ -7742,7 +8093,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19140",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000235.html",
-        "homepage2": "http://oraihasunuma.com/"
+        "homepage2": "http://oraihasunuma.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/761/"
       }
     },
     {
@@ -7764,7 +8116,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19141",
         "businessHours": "9:30～17:30",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000236.html",
-        "homepage2": "http://www.nagaramitinoeki.com/"
+        "homepage2": "http://www.nagaramitinoeki.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/762/"
       }
     },
     {
@@ -7786,7 +8139,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19142",
         "businessHours": "［直売所］9:00～18:00 ［レストラン］11:00～21:00（LO 20:30） ［温浴施設］10:00～21:00",
         "homepage": "https://mutsuzawa-swt.jp",
-        "homepage2": "https://ja-jp.facebook.com/help/289207354498410"
+        "homepage2": "https://ja-jp.facebook.com/help/289207354498410",
+        "michiEkiUrl": "https://www.michieki.jp/eki/763/"
       }
     },
     {
@@ -7808,7 +8162,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19143",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000238.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/797/"
       }
     },
     {
@@ -7830,7 +8185,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19145",
         "businessHours": "8:00～18:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000240.html",
-        "homepage2": "http://www.e-sawara.com/"
+        "homepage2": "http://www.e-sawara.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/923/"
       }
     },
     {
@@ -7852,7 +8208,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19146",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000241.html",
-        "homepage2": "http://www.fuwarishibayama.com"
+        "homepage2": "http://www.fuwarishibayama.com",
+        "michiEkiUrl": "https://www.michieki.jp/eki/974/"
       }
     },
     {
@@ -7867,14 +8224,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19147",
         "name": "道の駅和田浦 WA・O！",
-        "prefecture": "和田浦　WA・O！",
+        "prefecture": "和田浦\u3000WA・O！",
         "city": "",
         "address": "千葉県南房総市和田町仁我浦243",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19147",
         "businessHours": "9:00～18:00（施設により異なる）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000242.html",
-        "homepage2": "http://wa-o.awa.jp/"
+        "homepage2": "http://wa-o.awa.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/989/"
       }
     },
     {
@@ -7896,7 +8254,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19148",
         "businessHours": "9:00～18:00 （施設により異なる）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000243.html",
-        "homepage2": "http://www.hakkounosato.com/"
+        "homepage2": "http://www.hakkounosato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1034/"
       }
     },
     {
@@ -7918,7 +8277,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19149",
         "businessHours": "8:00～19:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000249.html",
-        "homepage2": "http://www.michinoeki-hachioji.net/"
+        "homepage2": "http://www.michinoeki-hachioji.net/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/798/"
       }
     },
     {
@@ -7940,7 +8300,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19150",
         "businessHours": "9:00～17:00 (食堂L.O.15:50)",
         "homepage": "https://www.instagram.com/michinoeki_hakonetouge/",
-        "homepage2": "https://www.hakone.or.jp/501"
+        "homepage2": "https://www.hakone.or.jp/501",
+        "michiEkiUrl": "https://www.michieki.jp/eki/224/"
       }
     },
     {
@@ -7962,7 +8323,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19151",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000144.html",
-        "homepage2": "http://www.yamakita.net/shopping/detail.php?id=15"
+        "homepage2": "http://www.yamakita.net/shopping/detail.php?id=15",
+        "michiEkiUrl": "https://www.michieki.jp/eki/225/"
       }
     },
     {
@@ -7984,7 +8346,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19152",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000250.html",
-        "homepage2": "http://www.shokokai.or.jp/19/193661S0013/index.htm"
+        "homepage2": "http://www.shokokai.or.jp/19/193661S0013/index.htm",
+        "michiEkiUrl": "https://www.michieki.jp/eki/226/"
       }
     },
     {
@@ -8006,7 +8369,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19153",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000251.html",
-        "homepage2": "http://kaiyamato.com/"
+        "homepage2": "http://kaiyamato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/227/"
       }
     },
     {
@@ -8028,7 +8392,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19154",
         "businessHours": "インフォメーション9:00～17:00 物産館9：00～18：00 軽食堂10：00～17：30",
         "homepage": "https://www.ja-narusawamura.or.jp/michinoeki/",
-        "homepage2": "http://www.narusawa-kanko.jp/creation-park.html"
+        "homepage2": "http://www.narusawa-kanko.jp/creation-park.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/228/"
       }
     },
     {
@@ -8050,7 +8415,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19155",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000253.html",
-        "homepage2": "http://michinoeki-mitomi.fruits.jp/"
+        "homepage2": "http://michinoeki-mitomi.fruits.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/229/"
       }
     },
     {
@@ -8072,7 +8438,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19156",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000254.html",
-        "homepage2": "https://www.town.minobu.lg.jp/kanko/annai/midokoro-shimobe.html"
+        "homepage2": "https://www.town.minobu.lg.jp/kanko/annai/midokoro-shimobe.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/230/"
       }
     },
     {
@@ -8094,7 +8461,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19157",
         "businessHours": "9:00～18:00 ※６月～８月は8：00～18：００、12月～2月は9：00～17：00＜休 年末年始、他不定休",
         "homepage": "https://michinoeki-toyotomi.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/231/"
       }
     },
     {
@@ -8116,7 +8484,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19158",
         "businessHours": "9:00～17:30",
         "homepage": "https://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000256.html",
-        "homepage2": "https://www.yamanashi-kankou.jp/kankou/specialty/n_7083.html"
+        "homepage2": "https://www.yamanashi-kankou.jp/kankou/specialty/n_7083.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/232/"
       }
     },
     {
@@ -8138,7 +8507,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19159",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000257.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/233/"
       }
     },
     {
@@ -8160,7 +8530,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19160",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000258.html",
-        "homepage2": "http://www.katuyama.info/station/"
+        "homepage2": "http://www.katuyama.info/station/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/234/"
       }
     },
     {
@@ -8182,7 +8553,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19161",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000259.html",
-        "homepage2": "http://michinoeki-hanakage.fruits.jp/"
+        "homepage2": "http://michinoeki-hanakage.fruits.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/235/"
       }
     },
     {
@@ -8204,7 +8576,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19162",
         "businessHours": "9:00～18:00",
         "homepage": "https://michinoeki-hakushu.com/",
-        "homepage2": "http://www.hokuto-kanko.jp/guide/roadside_station_hakushu"
+        "homepage2": "http://www.hokuto-kanko.jp/guide/roadside_station_hakushu",
+        "michiEkiUrl": "https://www.michieki.jp/eki/236/"
       }
     },
     {
@@ -8226,7 +8599,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19163",
         "businessHours": "9:00～17:00（平日）9:00～18:00（土日祝日）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000261.html",
-        "homepage2": "http://fujiyoshida.net/spot/180"
+        "homepage2": "http://fujiyoshida.net/spot/180",
+        "michiEkiUrl": "https://www.michieki.jp/eki/669/"
       }
     },
     {
@@ -8248,7 +8622,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19164",
         "businessHours": "物販施設9:00～17:00、レストラン10:00～17:00（12月～3月は11:00～15:00)＜休 1月～2月の火曜日＞",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000262.html",
-        "homepage2": "https://www.alps-hs.co.jp/news/2020/273/"
+        "homepage2": "https://www.alps-hs.co.jp/news/2020/273/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/670/"
       }
     },
     {
@@ -8270,7 +8645,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19165",
         "businessHours": "8:30～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000263.html",
-        "homepage2": "http://www.city.minami-alps.yamanashi.jp/sisetsu/michinoeki-shirane"
+        "homepage2": "http://www.city.minami-alps.yamanashi.jp/sisetsu/michinoeki-shirane",
+        "michiEkiUrl": "https://www.michieki.jp/eki/671/"
       }
     },
     {
@@ -8292,7 +8668,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19166",
         "businessHours": "9:00～17:00〔施設により異なる〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000264.html",
-        "homepage2": "http://michinoeki.spatio.jp/"
+        "homepage2": "http://michinoeki.spatio.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/764/"
       }
     },
     {
@@ -8314,7 +8691,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19167",
         "businessHours": "9:00～17:00",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/799/"
       }
     },
     {
@@ -8336,7 +8714,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19168",
         "businessHours": "10:00～18:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000266.html",
-        "homepage2": "http://www.nomekoiyu.com/"
+        "homepage2": "http://www.nomekoiyu.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/883/"
       }
     },
     {
@@ -8358,7 +8737,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19169",
         "businessHours": "9:00～18:00〔曜日、季節により異なる〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000267.html",
-        "homepage2": "http://www.michinoeki-fujikawa.jp/"
+        "homepage2": "http://www.michinoeki-fujikawa.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1022/"
       }
     },
     {
@@ -8380,7 +8760,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19170",
         "businessHours": "9:00～18:00〔施設により異なる〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000268.html",
-        "homepage2": "http://kosuge-eki.jp/"
+        "homepage2": "http://kosuge-eki.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1023/"
       }
     },
     {
@@ -8402,7 +8783,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19171",
         "businessHours": "8:30～17:45（食堂L.O16：30）",
         "homepage": "https://nagano-michinoeki.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/237/"
       }
     },
     {
@@ -8424,7 +8806,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19172",
         "businessHours": "9:30～18:30（10～3月は17:30まで）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000272.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/238/"
       }
     },
     {
@@ -8446,7 +8829,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19173",
         "businessHours": "8:30～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000273.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/239/"
       }
     },
     {
@@ -8468,7 +8852,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19174",
         "businessHours": "9:00～17:00",
         "homepage": "https://osakada-park.jp/",
-        "homepage2": "http://www.ekiichi.com/"
+        "homepage2": "http://www.ekiichi.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/240/"
       }
     },
     {
@@ -8490,7 +8875,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19175",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000275.html",
-        "homepage2": "http://www.herbcenter.or.jp/"
+        "homepage2": "http://www.herbcenter.or.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/241/"
       }
     },
     {
@@ -8512,7 +8898,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19176",
         "businessHours": "9:00～17:00",
         "homepage": "http://michinoekinakajo.eternal-story.com/",
-        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000276.html"
+        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000276.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/242/"
       }
     },
     {
@@ -8534,7 +8921,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19177",
         "businessHours": "10:00～21:00（直売所・日帰り温泉施設「御牧乃湯」）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000277.html",
-        "homepage2": "http://tomikan.jp/area/mimaki/%E9%81%93%E3%81%AE%E9%A7%85%E3%81%BF%E3%81%BE%E3%81%8D/"
+        "homepage2": "http://tomikan.jp/area/mimaki/%E9%81%93%E3%81%AE%E9%A7%85%E3%81%BF%E3%81%BE%E3%81%8D/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/243/"
       }
     },
     {
@@ -8556,7 +8944,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19178",
         "businessHours": "9:00～18:00",
         "homepage": "http://michino-eki.hakubakousha.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/244/"
       }
     },
     {
@@ -8578,7 +8967,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19179",
         "businessHours": "9:00～18:30",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000279.html",
-        "homepage2": "http://www.furusato-toyota.com/michinoeki-furusato-toyota"
+        "homepage2": "http://www.furusato-toyota.com/michinoeki-furusato-toyota",
+        "michiEkiUrl": "https://www.michieki.jp/eki/245/"
       }
     },
     {
@@ -8600,7 +8990,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19180",
         "businessHours": "9:30～18:00",
         "homepage": "https://marche-kokuyou.jp",
-        "homepage2": "https://www.nagawa.info"
+        "homepage2": "https://www.nagawa.info",
+        "michiEkiUrl": "https://www.michieki.jp/eki/246/"
       }
     },
     {
@@ -8622,7 +9013,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19181",
         "businessHours": "9:00～18.00",
         "homepage": "https://peraichi.com/landing_pages/view/mitinoekihotparkasashina",
-        "homepage2": "http://hotpark-asashina.com/"
+        "homepage2": "http://hotpark-asashina.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/247/"
       }
     },
     {
@@ -8637,14 +9029,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19182",
         "name": "道の駅アルプス安曇野 ほりがねの里",
-        "prefecture": "アルプス安曇野　ほりがねの里",
+        "prefecture": "アルプス安曇野\u3000ほりがねの里",
         "city": "",
         "address": "長野県安曇野市堀金烏川2696",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19182",
         "businessHours": "通年 8:30～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000282.html",
-        "homepage2": "http://horigane.or.jp/"
+        "homepage2": "http://horigane.or.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/248/"
       }
     },
     {
@@ -8666,7 +9059,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19183",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000283.html",
-        "homepage2": "https://yottetei.jp"
+        "homepage2": "https://yottetei.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/249/"
       }
     },
     {
@@ -8688,7 +9082,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19184",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.fu-ketsu.com",
-        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000284.html"
+        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000284.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/250/"
       }
     },
     {
@@ -8710,7 +9105,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19185",
         "businessHours": "8:30～18:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000285.html",
-        "homepage2": "https://www.town.yamanouchi.nagano.jp/soshiki/chiikishinko/gyomu/kanko_joho/michinoeki/index.html"
+        "homepage2": "https://www.town.yamanouchi.nagano.jp/soshiki/chiikishinko/gyomu/kanko_joho/michinoeki/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/251/"
       }
     },
     {
@@ -8732,7 +9128,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19186",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000286.html",
-        "homepage2": "https://www.otoginosato.jp/"
+        "homepage2": "https://www.otoginosato.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/252/"
       }
     },
     {
@@ -8754,7 +9151,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19187",
         "businessHours": "9:00～21:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000287.html",
-        "homepage2": "http://www.tsutakijuku.jp/"
+        "homepage2": "http://www.tsutakijuku.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/253/"
       }
     },
     {
@@ -8776,7 +9174,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19188",
         "businessHours": "9:00～17:00",
         "homepage": "",
-        "homepage2": "https://f-tenbou.com/"
+        "homepage2": "https://f-tenbou.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/254/"
       }
     },
     {
@@ -8798,7 +9197,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19189",
         "businessHours": "10:00～21:00〔施設によりが異なる〕＜休 水曜日＞",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000289.html",
-        "homepage2": "http://www.otarimura.co.jp/"
+        "homepage2": "http://www.otarimura.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/255/"
       }
     },
     {
@@ -8820,7 +9220,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19190",
         "businessHours": "10:00～17:00（12～4月は15:00まで）",
         "homepage": "http://chikuhoku.jp/michinoeki/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/256/"
       }
     },
     {
@@ -8842,7 +9243,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19191",
         "businessHours": "10:00～17:30〔施設により異なる〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000291.html",
-        "homepage2": "http://miasa-pokapokaland.com/"
+        "homepage2": "http://miasa-pokapokaland.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/257/"
       }
     },
     {
@@ -8864,7 +9266,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19192",
         "businessHours": "9:00～18:00 （4月～11月の土日祝 9:00〜19:00）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000292.html",
-        "homepage2": "https://www.oasisobuse.co.jp/"
+        "homepage2": "https://www.oasisobuse.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/668/"
       }
     },
     {
@@ -8886,7 +9289,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19193",
         "businessHours": "7:00～18:00〔施設により異なる〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000293.html",
-        "homepage2": "http://raidenkurumi.jp/"
+        "homepage2": "http://raidenkurumi.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/716/"
       }
     },
     {
@@ -8908,7 +9312,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19194",
         "businessHours": "7:30～18:00〔施設・季節により異なる〕",
         "homepage": "https://www.chikumagawa.net/",
-        "homepage2": "https://www.facebook.com/hananoeki.chikumagawa/"
+        "homepage2": "https://www.facebook.com/hananoeki.chikumagawa/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/800/"
       }
     },
     {
@@ -8930,7 +9335,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19195",
         "businessHours": "9:00～18:00〔施設により異なる〕",
         "homepage": "http://michinoeki-aoki.eek.jp/",
-        "homepage2": "http://www.vill.aoki.nagano.jp/sights/index.html"
+        "homepage2": "http://www.vill.aoki.nagano.jp/sights/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/801/"
       }
     },
     {
@@ -8952,7 +9358,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19196",
         "businessHours": "9:30～19:30",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000296.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/865/"
       }
     },
     {
@@ -8974,7 +9381,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19197",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000297.html",
-        "homepage2": "http://m-utsukushigahara.jp/"
+        "homepage2": "http://m-utsukushigahara.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/866/"
       }
     },
     {
@@ -8989,14 +9397,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19198",
         "name": "道の駅今井 恵みの里",
-        "prefecture": "今井　恵みの里",
+        "prefecture": "今井\u3000恵みの里",
         "city": "",
         "address": "長野県松本市大字今井886-2",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19198",
         "businessHours": "8:30～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000298.html",
-        "homepage2": "http://www.imai-megumi.com/"
+        "homepage2": "http://www.imai-megumi.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/908/"
       }
     },
     {
@@ -9018,7 +9427,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19199",
         "businessHours": "売店・食堂（3.1～11.30） 7:00～18:00 （12.1～2末） 7:00～17:00 / コーヒーショップ 10:00～16:00(水曜日定休日）",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000001",
-        "homepage2": "http://www.niigata-kankou.or.jp/sys/data?page-id=7001"
+        "homepage2": "http://www.niigata-kankou.or.jp/sys/data?page-id=7001",
+        "michiEkiUrl": "https://www.michieki.jp/eki/258/"
       }
     },
     {
@@ -9040,7 +9450,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19200",
         "businessHours": "",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000002",
-        "homepage2": "https://www.m-kajikawa.com"
+        "homepage2": "https://www.m-kajikawa.com",
+        "michiEkiUrl": "https://www.michieki.jp/eki/259/"
       }
     },
     {
@@ -9062,7 +9473,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19201",
         "businessHours": "8:30～16:15",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000003",
-        "homepage2": "http://www.city.murakami.lg.jp/site/kanko/bussan-mitinoeki.html"
+        "homepage2": "http://www.city.murakami.lg.jp/site/kanko/bussan-mitinoeki.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/260/"
       }
     },
     {
@@ -9084,7 +9496,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19202",
         "businessHours": "9:00～18:00（11～3月は17:30まで）",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000004",
-        "homepage2": "http://www.asahimidori.com/"
+        "homepage2": "http://www.asahimidori.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/261/"
       }
     },
     {
@@ -9106,7 +9519,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19203",
         "businessHours": "ファイブワン いいね！新潟館 9:00～17:00(夏期延長有り) / バザール館 9:30～17:30(大型連休時延長有り)",
         "homepage": "https://furusatomura.pref.niigata.jp/",
-        "homepage2": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000005"
+        "homepage2": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000005",
+        "michiEkiUrl": "https://www.michieki.jp/eki/262/"
       }
     },
     {
@@ -9128,7 +9542,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19204",
         "businessHours": "9:00～16:30",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000006",
-        "homepage2": "http://www.marine-dream.net/"
+        "homepage2": "http://www.marine-dream.net/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/263/"
       }
     },
     {
@@ -9150,7 +9565,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19205",
         "businessHours": "11:00～17:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000007",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/264/"
       }
     },
     {
@@ -9172,7 +9588,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19206",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000008",
-        "homepage2": "http://www.sekikawa.org/road_st/road_st.html"
+        "homepage2": "http://www.sekikawa.org/road_st/road_st.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/265/"
       }
     },
     {
@@ -9194,7 +9611,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19207",
         "businessHours": "10:00～22:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000009",
-        "homepage2": "https://www.chijiminosato.com/"
+        "homepage2": "https://www.chijiminosato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/266/"
       }
     },
     {
@@ -9216,7 +9634,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19208",
         "businessHours": "9:00～17:00 （12月～3月は9:00～16:00）",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=0000010",
-        "homepage2": "http://aganosato.web.fc2.com/"
+        "homepage2": "http://aganosato.web.fc2.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/267/"
       }
     },
     {
@@ -9238,7 +9657,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19209",
         "businessHours": "9:00～17:30",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000011",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/268/"
       }
     },
     {
@@ -9253,14 +9673,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19210",
         "name": "道の駅越後出雲崎 天領の里",
-        "prefecture": "越後出雲崎　天領の里",
+        "prefecture": "越後出雲崎\u3000天領の里",
         "city": "",
         "address": "新潟県三島郡出雲崎町大字尼瀬6-57",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19210",
         "businessHours": "9:00～17:00",
         "homepage": "https://tenryonosato.jp/",
-        "homepage2": "https://www.instagram.com/michinoeki_tenryo/"
+        "homepage2": "https://www.instagram.com/michinoeki_tenryo/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/269/"
       }
     },
     {
@@ -9282,7 +9703,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19211",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000013",
-        "homepage2": "http://www.tainai.info/"
+        "homepage2": "http://www.tainai.info/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/270/"
       }
     },
     {
@@ -9304,7 +9726,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19212",
         "businessHours": "9:00~17:00 季節により変動有",
         "homepage": "http://www.miyukinosato.com",
-        "homepage2": "https://www.iine-uonuma.jp/"
+        "homepage2": "https://www.iine-uonuma.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/271/"
       }
     },
     {
@@ -9319,14 +9742,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19213",
         "name": "道の駅良寛の里 わしま",
-        "prefecture": "良寛の里　わしま",
+        "prefecture": "良寛の里\u3000わしま",
         "city": "",
         "address": "新潟県長岡市島崎5713-2",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19213",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000015",
-        "homepage2": "http://www.motenashiya.com/"
+        "homepage2": "http://www.motenashiya.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/272/"
       }
     },
     {
@@ -9348,7 +9772,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19214",
         "businessHours": "8:30～17:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000016",
-        "homepage2": "https://furusato-kaikan.matsudai.jp/"
+        "homepage2": "https://furusato-kaikan.matsudai.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/273/"
       }
     },
     {
@@ -9370,7 +9795,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19215",
         "businessHours": "8:00～20:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000017",
-        "homepage2": "http://www.ichiburi-seki.com/"
+        "homepage2": "http://www.ichiburi-seki.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/274/"
       }
     },
     {
@@ -9392,7 +9818,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19216",
         "businessHours": "9:00～18:00（11月～3月は17：30まで）",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000018",
-        "homepage2": "http://cross10.or.jp"
+        "homepage2": "http://cross10.or.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/275/"
       }
     },
     {
@@ -9414,7 +9841,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19217",
         "businessHours": "10:00～16:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000019",
-        "homepage2": "http://www.michinoeki-shitada.com/"
+        "homepage2": "http://www.michinoeki-shitada.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/276/"
       }
     },
     {
@@ -9436,7 +9864,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19218",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000020",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/277/"
       }
     },
     {
@@ -9458,7 +9887,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19219",
         "businessHours": "9:00～17:00 （12月～2月は9：00～16：00）",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000021",
-        "homepage2": "http://www.irihirose.jp/"
+        "homepage2": "http://www.irihirose.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/278/"
       }
     },
     {
@@ -9480,7 +9910,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19220",
         "businessHours": "9:00～17:00",
         "homepage": "http://nishiyama-furusato.jp/",
-        "homepage2": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000022"
+        "homepage2": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000022",
+        "michiEkiUrl": "https://www.michieki.jp/eki/279/"
       }
     },
     {
@@ -9502,7 +9933,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19221",
         "businessHours": "9:00～21:00 くびき野情報館 （店舗によって異なります）",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000023",
-        "homepage2": "http://www.eki-arai.com/"
+        "homepage2": "http://www.eki-arai.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/280/"
       }
     },
     {
@@ -9524,7 +9956,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19222",
         "businessHours": "10:00～18:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000024",
-        "homepage2": "http://r290tochio.jp/"
+        "homepage2": "http://r290tochio.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/281/"
       }
     },
     {
@@ -9546,7 +9979,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19223",
         "businessHours": "佐渡インフォメーションセンター 8:30～17:30＜休 12/29～1/3＞",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000025",
-        "homepage2": "https://www.city.sado.niigata.jp/site/i-port/"
+        "homepage2": "https://www.city.sado.niigata.jp/site/i-port/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/282/"
       }
     },
     {
@@ -9568,7 +10002,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19224",
         "businessHours": "9:30～17:00（季節により異なる）",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000026",
-        "homepage2": "http://e-oyasirazu.com/"
+        "homepage2": "http://e-oyasirazu.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/283/"
       }
     },
     {
@@ -9590,7 +10025,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19225",
         "businessHours": "8:00～17:45（施設・季節により異なる）",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000027",
-        "homepage2": "http://kirari21.sakura.ne.jp/"
+        "homepage2": "http://kirari21.sakura.ne.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/284/"
       }
     },
     {
@@ -9605,14 +10041,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19226",
         "name": "道の駅雪のふるさと やすづか",
-        "prefecture": "雪のふるさと　やすづか",
+        "prefecture": "雪のふるさと\u3000やすづか",
         "city": "",
         "address": "新潟県上越市安塚区樽田140",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19226",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000028",
-        "homepage2": "https://www.461888.jp"
+        "homepage2": "https://www.461888.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/285/"
       }
     },
     {
@@ -9634,7 +10071,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19227",
         "businessHours": "11:00～20:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000029",
-        "homepage2": "http://www.jon-nobi.com/"
+        "homepage2": "http://www.jon-nobi.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/286/"
       }
     },
     {
@@ -9656,7 +10094,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19228",
         "businessHours": "9:00～18:00(4月から6月) 9:00～17:00（7月から3月）",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000030",
-        "homepage2": "http://www.niigata-kankou.or.jp/sys/data?page-id=5595"
+        "homepage2": "http://www.niigata-kankou.or.jp/sys/data?page-id=5595",
+        "michiEkiUrl": "https://www.michieki.jp/eki/672/"
       }
     },
     {
@@ -9678,7 +10117,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19229",
         "businessHours": "10:00～18:00 ※施設によって異なる",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000031",
-        "homepage2": "https://www.michinoeki-kugami.jp/"
+        "homepage2": "https://www.michinoeki-kugami.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/673/"
       }
     },
     {
@@ -9700,7 +10140,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19230",
         "businessHours": "9:00～18:00（12～3月は17:00まで）",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000032",
-        "homepage2": "http://agrinosato.com/"
+        "homepage2": "http://agrinosato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/717/"
       }
     },
     {
@@ -9722,7 +10163,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19231",
         "businessHours": "10:00～16:00",
         "homepage": "https://eki-yoshikawa.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/718/"
       }
     },
     {
@@ -9744,7 +10186,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19232",
         "businessHours": "10:00～18:00（夏季は19:00まで）",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000034",
-        "homepage2": "http://www.umiterasu.co.jp/"
+        "homepage2": "http://www.umiterasu.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/884/"
       }
     },
     {
@@ -9766,7 +10209,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19233",
         "businessHours": "◆今泉記念館 9:00～17:00 ◆四季味わい館 夏期(5月～11月) 9:00～18:00 冬期(12月～4月）10:00～17:00 ◆ちゃわんめしたっぽ家 夏期(5月～11月) 10:00～18:00 ラストオーダー17:30 冬期(12月～4月) 10:00～17:00 ラストオーダー16:30",
         "homepage": "http://www.michinoeki-minamiuonuma.jp",
-        "homepage2": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000035"
+        "homepage2": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000035",
+        "michiEkiUrl": "https://www.michieki.jp/eki/983/"
       }
     },
     {
@@ -9788,7 +10232,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19234",
         "businessHours": "9:00～16:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000036",
-        "homepage2": "http://patio-niigata.jp/"
+        "homepage2": "http://patio-niigata.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1002/"
       }
     },
     {
@@ -9810,7 +10255,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19235",
         "businessHours": "5月-11月9:00-17:00【レストランラストオーダー16:30】 (火曜日定休)、12月-4月10:00-18:00【レストランラストオーダー17:30】(火曜日定休）",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000037",
-        "homepage2": "http://michieki-mitsumata.jp/"
+        "homepage2": "http://michieki-mitsumata.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1008/"
       }
     },
     {
@@ -9832,7 +10278,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19236",
         "businessHours": "10:00～18:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000039",
-        "homepage2": "http://www.tenkomori.info/rinrintop.html"
+        "homepage2": "http://www.tenkomori.info/rinrintop.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/287/"
       }
     },
     {
@@ -9854,7 +10301,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19237",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000040",
-        "homepage2": "http://www.tonami-kankou.org/michinoeki/"
+        "homepage2": "http://www.tonami-kankou.org/michinoeki/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/288/"
       }
     },
     {
@@ -9876,7 +10324,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19238",
         "businessHours": "9:00～16:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000041",
-        "homepage2": "http://www2.tst.ne.jp/sasara/"
+        "homepage2": "http://www2.tst.ne.jp/sasara/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/289/"
       }
     },
     {
@@ -9898,7 +10347,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19239",
         "businessHours": "",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000042",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/290/"
       }
     },
     {
@@ -9920,7 +10370,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19240",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000043",
-        "homepage2": "http://www.kibori.co.jp/"
+        "homepage2": "http://www.kibori.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/291/"
       }
     },
     {
@@ -9942,7 +10393,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19241",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000044",
-        "homepage2": "http://www.fukumitsu.net"
+        "homepage2": "http://www.fukumitsu.net",
+        "michiEkiUrl": "https://www.michieki.jp/eki/292/"
       }
     },
     {
@@ -9964,7 +10416,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19242",
         "businessHours": "8:30～17:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000045",
-        "homepage2": "http://gokayama-washinosato.com/"
+        "homepage2": "http://gokayama-washinosato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/293/"
       }
     },
     {
@@ -9986,7 +10439,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19243",
         "businessHours": "9:00～18:00 （定休日 毎週火曜日）",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000046",
-        "homepage2": "https://michinoeki-shogawa.com/"
+        "homepage2": "https://michinoeki-shogawa.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/294/"
       }
     },
     {
@@ -10008,7 +10462,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19244",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000047",
-        "homepage2": "https://www.unazuki-beer.jp/baiten/"
+        "homepage2": "https://www.unazuki-beer.jp/baiten/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/295/"
       }
     },
     {
@@ -10030,7 +10485,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19245",
         "businessHours": "8:00～19:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000048",
-        "homepage2": "http://www.shinminato.co.jp/"
+        "homepage2": "http://www.shinminato.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/296/"
       }
     },
     {
@@ -10052,7 +10508,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19246",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000049",
-        "homepage2": "https://hotaruikamuseum.com/"
+        "homepage2": "https://hotaruikamuseum.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/297/"
       }
     },
     {
@@ -10074,7 +10531,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19247",
         "businessHours": "8:30～18:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000050",
-        "homepage2": "http://himi-banya.jp/"
+        "homepage2": "http://himi-banya.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/298/"
       }
     },
     {
@@ -10089,14 +10547,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19248",
         "name": "道の駅万葉の里 高岡",
-        "prefecture": "万葉の里　高岡",
+        "prefecture": "万葉の里\u3000高岡",
         "city": "",
         "address": "富山県高岡市蜂ヶ島131-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19248",
         "businessHours": "9:00～20:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000051",
-        "homepage2": "http://www.manyonosato.com"
+        "homepage2": "http://www.manyonosato.com",
+        "michiEkiUrl": "https://www.michieki.jp/eki/802/"
       }
     },
     {
@@ -10118,7 +10577,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19249",
         "businessHours": "9:00～18:00",
         "homepage": "https://michinoeki-oyabe.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/911/"
       }
     },
     {
@@ -10140,7 +10600,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19250",
         "businessHours": "8:30～17:30",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000053",
-        "homepage2": "http://wajimanavi.lg.jp/www/view/detail.jsp?id=1577"
+        "homepage2": "http://wajimanavi.lg.jp/www/view/detail.jsp?id=1577",
+        "michiEkiUrl": "https://www.michieki.jp/eki/299/"
       }
     },
     {
@@ -10162,7 +10623,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19251",
         "businessHours": "9:00〜18:00 （R3.1.16から）",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000054",
-        "homepage2": "http://tak-rest.com/"
+        "homepage2": "http://tak-rest.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/300/"
       }
     },
     {
@@ -10184,7 +10646,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19252",
         "businessHours": "10：00～17：00（休館日：木曜、年末年始）",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000055",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/301/"
       }
     },
     {
@@ -10206,7 +10669,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19253",
         "businessHours": "9:00～17:00（休館日：月曜日）",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000056",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/302/"
       }
     },
     {
@@ -10228,7 +10692,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19254",
         "businessHours": "9:00～17:30",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000057",
-        "homepage2": "https://michisirayama.wixsite.com/michisirayama"
+        "homepage2": "https://michisirayama.wixsite.com/michisirayama",
+        "michiEkiUrl": "https://www.michieki.jp/eki/303/"
       }
     },
     {
@@ -10250,7 +10715,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19255",
         "businessHours": "7:00～20:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000058",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/304/"
       }
     },
     {
@@ -10272,7 +10738,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19256",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000059",
-        "homepage2": "http://wajimanavi.lg.jp/www/view/detail.jsp?id=988"
+        "homepage2": "http://wajimanavi.lg.jp/www/view/detail.jsp?id=988",
+        "michiEkiUrl": "https://www.michieki.jp/eki/674/"
       }
     },
     {
@@ -10294,7 +10761,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19257",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000060",
-        "homepage2": "http://togi-michinoeki.com/"
+        "homepage2": "http://togi-michinoeki.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/675/"
       }
     },
     {
@@ -10316,7 +10784,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19258",
         "businessHours": "10:00～18:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000061",
-        "homepage2": "http://wajimanavi.lg.jp/www/view/detail.jsp?id=1660"
+        "homepage2": "http://wajimanavi.lg.jp/www/view/detail.jsp?id=1660",
+        "michiEkiUrl": "https://www.michieki.jp/eki/676/"
       }
     },
     {
@@ -10338,7 +10807,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19259",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000062",
-        "homepage2": "http://www.syunsaikan-shika.jp/"
+        "homepage2": "http://www.syunsaikan-shika.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/719/"
       }
     },
     {
@@ -10360,7 +10830,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19260",
         "businessHours": "9:00～17:00",
         "homepage": "https://city-hakusan.com/shopping/road_station_sena/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/720/"
       }
     },
     {
@@ -10382,7 +10853,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19261",
         "businessHours": "4～11月中旬:9:00～16:00 11月中旬～3月:10:00～16:00（GW～11月中旬:第1・3月休 11月中旬～GW:毎週月休、月曜が祝日の場合は翌日休）",
         "homepage": "https://www.instagram.com/michinoeki_ikkoikkinosato/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/721/"
       }
     },
     {
@@ -10404,7 +10876,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19262",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000065",
-        "homepage2": "http://www.noto-airport.jp/"
+        "homepage2": "http://www.noto-airport.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/722/"
       }
     },
     {
@@ -10419,14 +10892,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19263",
         "name": "道の駅倶利伽羅 源平の郷",
-        "prefecture": "倶利伽羅　源平の郷",
+        "prefecture": "倶利伽羅\u3000源平の郷",
         "city": "",
         "address": "石川県河北郡津幡町字竹橋西239-14",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19263",
         "businessHours": "9:30～18:30",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000066",
-        "homepage2": "http://kurikara.org"
+        "homepage2": "http://kurikara.org",
+        "michiEkiUrl": "https://www.michieki.jp/eki/765/"
       }
     },
     {
@@ -10441,14 +10915,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19264",
         "name": "道の駅山中温泉 ゆけむり健康村",
-        "prefecture": "山中温泉　ゆけむり健康村",
+        "prefecture": "山中温泉\u3000ゆけむり健康村",
         "city": "",
         "address": "石川県加賀市山中温泉こおろぎ町イ19",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19264",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000067",
-        "homepage2": "http://www.hot-ishikawa.jp/sys/data?page-id=6675"
+        "homepage2": "http://www.hot-ishikawa.jp/sys/data?page-id=6675",
+        "michiEkiUrl": "https://www.michieki.jp/eki/766/"
       }
     },
     {
@@ -10470,7 +10945,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19265",
         "businessHours": "令和2年9月1日から当面の間 売店10:00～15:30 レストラン10:30～14:30 （レストランは令和2年12月1日から令和3年2月28まで休業）定休日：毎週水曜日、木曜日",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000068",
-        "homepage2": "https://notojima-michinoeki.com/"
+        "homepage2": "https://notojima-michinoeki.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/767/"
       }
     },
     {
@@ -10492,7 +10968,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19266",
         "businessHours": "9:00～17:00（3～11月）9:00～16:00（12～2月）",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000069",
-        "homepage2": "https://enden.jp/"
+        "homepage2": "https://enden.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/803/"
       }
     },
     {
@@ -10514,7 +10991,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19267",
         "businessHours": "9:00〜18:00（カフェ・物販）",
         "homepage": "https://u-sp.jp",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/854/"
       }
     },
     {
@@ -10536,7 +11014,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19268",
         "businessHours": "8:30～17:30（店舗により異なる）",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000071",
-        "homepage2": "http://www.shokusai.co.jp/"
+        "homepage2": "http://www.shokusai.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/892/"
       }
     },
     {
@@ -10558,7 +11037,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19269",
         "businessHours": "8:30～18:30（施設により異なる） ＜休 1/1～3、1～2月の水曜日＞",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000072",
-        "homepage2": "http://www.michinoeki-kibagata.com/"
+        "homepage2": "http://www.michinoeki-kibagata.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/925/"
       }
     },
     {
@@ -10580,7 +11060,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19270",
         "businessHours": "8:30～17:00〔季節によって変更になる場合があります〕",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000073",
-        "homepage2": "https://noroshi.info"
+        "homepage2": "https://noroshi.info",
+        "michiEkiUrl": "https://www.michieki.jp/eki/926/"
       }
     },
     {
@@ -10602,7 +11083,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19271",
         "businessHours": "10:00～17:00 （水曜定休日）",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000074",
-        "homepage2": "http://www.notohantou.jp/"
+        "homepage2": "http://www.notohantou.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/927/"
       }
     },
     {
@@ -10624,7 +11106,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19272",
         "businessHours": "8:45～18:30（通年）＜休：施設により異なる＞",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000075",
-        "homepage2": "http://orihime-nakanoto.jp/"
+        "homepage2": "http://orihime-nakanoto.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1009/"
       }
     },
     {
@@ -10646,7 +11129,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19273",
         "businessHours": "8:30～17:30",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano01.html",
-        "homepage2": "http://www.michinoeki-kisokoma.jp/"
+        "homepage2": "http://www.michinoeki-kisokoma.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/305/"
       }
     },
     {
@@ -10668,7 +11152,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19274",
         "businessHours": "9:00～19:30〔施設により異なる〕",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano02.html",
-        "homepage2": "http://www.michinoeki-ookuwa.jp/"
+        "homepage2": "http://www.michinoeki-ookuwa.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/306/"
       }
     },
     {
@@ -10690,7 +11175,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19275",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano03.html",
-        "homepage2": "https://www.naraijuku.com/shop/post-54/"
+        "homepage2": "https://www.naraijuku.com/shop/post-54/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/307/"
       }
     },
     {
@@ -10712,7 +11198,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19276",
         "businessHours": "8:30～18:00（水曜日は16:30まで）",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu09.html",
-        "homepage2": "http://sizumo.jp/"
+        "homepage2": "http://sizumo.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/308/"
       }
     },
     {
@@ -10734,7 +11221,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19277",
         "businessHours": "10:00～20:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano04.html",
-        "homepage2": "http://hiraya-himawarinoyu.com/ichiba.php"
+        "homepage2": "http://hiraya-himawarinoyu.com/ichiba.php",
+        "michiEkiUrl": "https://www.michieki.jp/eki/309/"
       }
     },
     {
@@ -10756,7 +11244,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19278",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano05.html",
-        "homepage2": "http://www.mis.janis.or.jp/~sobanoshiro/"
+        "homepage2": "http://www.mis.janis.or.jp/~sobanoshiro/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/310/"
       }
     },
     {
@@ -10778,7 +11267,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19279",
         "businessHours": "8:00～17:30〔施設により異なる〕「パンや」毎週 月・火曜日休み（祝日の日は営業）",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano06.html",
-        "homepage2": "http://www.inacity.jp/shisetsu/kankoshisetsu/minamialpsmura.html"
+        "homepage2": "http://www.inacity.jp/shisetsu/kankoshisetsu/minamialpsmura.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/311/"
       }
     },
     {
@@ -10800,7 +11290,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19280",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano07.html",
-        "homepage2": "http://www.kiso.or.jp/"
+        "homepage2": "http://www.kiso.or.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/312/"
       }
     },
     {
@@ -10822,7 +11313,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19281",
         "businessHours": "8:00～16:00（事情により変更する場合あり）＜休：月曜日（祝祭日の場合は営業）＞",
         "homepage": "",
-        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano08.html"
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano08.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/313/"
       }
     },
     {
@@ -10844,7 +11336,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19282",
         "businessHours": "8:30～17:30（冬期は変更あり） レストラン9:00～16:00 （ラストオーダー：15:30）",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano09.html",
-        "homepage2": "http://goheimochi.biz/"
+        "homepage2": "http://goheimochi.biz/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/314/"
       }
     },
     {
@@ -10866,7 +11359,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19283",
         "businessHours": "9:00～18:00（4月～10月）、9:00～17:30（11月～3月）＜休 年末年始＞",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano10.html",
-        "homepage2": "http://hananosato-iijima.jp/"
+        "homepage2": "http://hananosato-iijima.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/677/"
       }
     },
     {
@@ -10888,7 +11382,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19284",
         "businessHours": "定休日：毎週木曜日（祝日の場合は翌日）、【温泉】11：00〜21：00、【売店】10：00〜19：00、【食堂】昼営業：11：00〜14：30（Lo.14：00）、夜営業：【日・月・火・水曜日】17：00〜19：00（Lo.18：30）、【金・土曜日】17：00〜21：00（Lo.20：30）",
         "homepage": "https://michinoeki-tohyamago.com/",
-        "homepage2": "https://www.youtube.com/watch?v=zO2A0V2pnJ8"
+        "homepage2": "https://www.youtube.com/watch?v=zO2A0V2pnJ8",
+        "michiEkiUrl": "https://www.michieki.jp/eki/804/"
       }
     },
     {
@@ -10910,7 +11405,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19285",
         "businessHours": "8:30～17:00 冬季期間のみ水曜定休",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano12.html",
-        "homepage2": "http://www.michinoeki-kisofukushima.jp/"
+        "homepage2": "http://www.michinoeki-kisofukushima.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/947/"
       }
     },
     {
@@ -10925,14 +11421,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19286",
         "name": "道の駅木曽川源流の里 きそむら",
-        "prefecture": "木曽川源流の里　きそむら",
+        "prefecture": "木曽川源流の里\u3000きそむら",
         "city": "",
         "address": "長野県木曽郡木祖村大字薮原163-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19286",
         "businessHours": "9:00～17:00（食堂10:00～16:00）",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano13.html",
-        "homepage2": "http://www.genryu-no-sato.com/"
+        "homepage2": "http://www.genryu-no-sato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/946/"
       }
     },
     {
@@ -10954,7 +11451,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19287",
         "businessHours": "9:00～16:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu01.html",
-        "homepage2": "http://www.minami-kanko.com/sightseeing/buy/post-9.html"
+        "homepage2": "http://www.minami-kanko.com/sightseeing/buy/post-9.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/315/"
       }
     },
     {
@@ -10976,7 +11474,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19288",
         "businessHours": "【4月ー11月】9:00～17:00 【12月ー3月】9:00～16:00 【定休日】年末年始（レストランのみ毎週水曜定休）",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu02.html",
-        "homepage2": "http://furusatokiyomi.jp/"
+        "homepage2": "http://furusatokiyomi.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/316/"
       }
     },
     {
@@ -10998,7 +11497,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19289",
         "businessHours": "9:00～18:00（テナントにより異なります）",
         "homepage": "https://www.meiho-masters.co.jp/",
-        "homepage2": "https://meiho.shop/"
+        "homepage2": "https://meiho.shop/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/317/"
       }
     },
     {
@@ -11020,7 +11520,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19290",
         "businessHours": "9:00～18:00〔施設により異なる〕",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu04.html",
-        "homepage2": "http://www.michinoeki-hanakaido.jp/"
+        "homepage2": "http://www.michinoeki-hanakaido.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/318/"
       }
     },
     {
@@ -11042,7 +11543,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19291",
         "businessHours": "9:00～21:00〔施設により異なる〕",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu05.html",
-        "homepage2": "http://www.minoshirakawa-piacere.com/"
+        "homepage2": "http://www.minoshirakawa-piacere.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/319/"
       }
     },
     {
@@ -11064,7 +11566,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19292",
         "businessHours": "物産館8:00～16:00 情報館9:00～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu06.html",
-        "homepage2": "https://www.city.seki.lg.jp/kanko/0000015266.html"
+        "homepage2": "https://www.city.seki.lg.jp/kanko/0000015266.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/320/"
       }
     },
     {
@@ -11086,7 +11589,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19293",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu08.html",
-        "homepage2": "http://kankou.city.takayama.lg.jp/2000575/2000585/2000963.html"
+        "homepage2": "http://kankou.city.takayama.lg.jp/2000575/2000585/2000963.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/322/"
       }
     },
     {
@@ -11101,14 +11605,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19294",
         "name": "道の駅ロック・ガーデン ひちそう",
-        "prefecture": "ロック・ガーデン　ひちそう",
+        "prefecture": "ロック・ガーデン\u3000ひちそう",
         "city": "",
         "address": "岐阜県加茂郡七宗町大字中麻生1169-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19294",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu10.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/323/"
       }
     },
     {
@@ -11123,14 +11628,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19295",
         "name": "道の駅星のふる里 ふじはし",
-        "prefecture": "星のふる里　ふじはし",
+        "prefecture": "星のふる里\u3000ふじはし",
         "city": "",
         "address": "岐阜県揖斐郡揖斐川町東横山264-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19295",
         "businessHours": "8:30～17:30",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu11.html",
-        "homepage2": "http://www.ibikogen.com/michinoeki.html"
+        "homepage2": "http://www.ibikogen.com/michinoeki.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/324/"
       }
     },
     {
@@ -11152,7 +11658,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19296",
         "businessHours": "9:00～16:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu12.html",
-        "homepage2": "http://www.shirakawa-go.gr.jp/details/?i=55"
+        "homepage2": "http://www.shirakawa-go.gr.jp/details/?i=55",
+        "michiEkiUrl": "https://www.michieki.jp/eki/325/"
       }
     },
     {
@@ -11174,7 +11681,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19297",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu13.html",
-        "homepage2": "https://michinoekiheisei.jimdofree.com/"
+        "homepage2": "https://michinoekiheisei.jimdofree.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/326/"
       }
     },
     {
@@ -11196,7 +11704,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19298",
         "businessHours": "9:00～16:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu14.html",
-        "homepage2": "https://www.hida-kankou.jp/gourmet/1000000011/"
+        "homepage2": "https://www.hida-kankou.jp/gourmet/1000000011/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/327/"
       }
     },
     {
@@ -11218,7 +11727,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19299",
         "businessHours": "8:00～21:00",
         "homepage": "",
-        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu15.html"
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu15.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/328/"
       }
     },
     {
@@ -11240,7 +11750,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19300",
         "businessHours": "9:00～17:00（季節により変更あり）",
         "homepage": "",
-        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu16.html"
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu16.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/329/"
       }
     },
     {
@@ -11262,7 +11773,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19301",
         "businessHours": "9:00～17:00（12月から3月は8:30〜16:30）",
         "homepage": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000043/1018647.h",
-        "homepage2": "https://www.instagram.com/montdeus_park/"
+        "homepage2": "https://www.instagram.com/montdeus_park/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/330/"
       }
     },
     {
@@ -11284,7 +11796,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19302",
         "businessHours": "売店8:00～16:00(夏期) ～15:30(夏期以外)＊施設・季節により異なります ＊気象等により予告なく変更する事があります",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu18.html",
-        "homepage2": "http://hida-osaka.jp/cominfo.html?an=hanamomo"
+        "homepage2": "http://hida-osaka.jp/cominfo.html?an=hanamomo",
+        "michiEkiUrl": "https://www.michieki.jp/eki/331/"
       }
     },
     {
@@ -11306,7 +11819,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19303",
         "businessHours": "9:00～17:00 （冬季時間変更あり）",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu19.html",
-        "homepage2": "https://www.town.ibigawa.lg.jp/kankoujyouhou/0000006111.html"
+        "homepage2": "https://www.town.ibigawa.lg.jp/kankoujyouhou/0000006111.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/332/"
       }
     },
     {
@@ -11328,7 +11842,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19304",
         "businessHours": "9:00～19:00〔施設により異なる〕",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu20.html",
-        "homepage2": "http://www.donburi-kaikan.com/"
+        "homepage2": "http://www.donburi-kaikan.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/333/"
       }
     },
     {
@@ -11350,7 +11865,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19305",
         "businessHours": "9:00～16:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu21.html",
-        "homepage2": "http://www.motosukankou.gr.jp/03_buy/03_03.html"
+        "homepage2": "http://www.motosukankou.gr.jp/03_buy/03_03.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/334/"
       }
     },
     {
@@ -11372,7 +11888,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19306",
         "businessHours": "レストラン11:00～16:00／ 売店9:00〜16:30／野菜直売所9:00〜16:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu22.html",
-        "homepage2": "http://www.nanamori.jp/"
+        "homepage2": "http://www.nanamori.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/335/"
       }
     },
     {
@@ -11394,7 +11911,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19307",
         "businessHours": "9:00～17:00（冬期16:30まで）",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu23.html",
-        "homepage2": "http://kirira-sakashita.jp/"
+        "homepage2": "http://kirira-sakashita.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/336/"
       }
     },
     {
@@ -11416,7 +11934,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19308",
         "businessHours": "夏季（４月～１０月）8:00～18:00 冬季（１１月～３月）8:00～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu24.html",
-        "homepage2": "https://www.clair-hirata.com"
+        "homepage2": "https://www.clair-hirata.com",
+        "michiEkiUrl": "https://www.michieki.jp/eki/337/"
       }
     },
     {
@@ -11431,14 +11950,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19309",
         "name": "道の駅馬瀬 美輝の里",
-        "prefecture": "馬瀬　美輝の里",
+        "prefecture": "馬瀬\u3000美輝の里",
         "city": "",
         "address": "岐阜県下呂市馬瀬西村1447-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19309",
         "businessHours": "9:00～16:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu25.html",
-        "homepage2": "http://www.mikinosato.co.jp/"
+        "homepage2": "http://www.mikinosato.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/338/"
       }
     },
     {
@@ -11453,14 +11973,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19310",
         "name": "道の駅飛騨街道 なぎさ",
-        "prefecture": "飛騨街道　なぎさ",
+        "prefecture": "飛騨街道\u3000なぎさ",
         "city": "",
         "address": "岐阜県高山市久々野町渚2685",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19310",
         "businessHours": "8:30～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu26.html",
-        "homepage2": "http://www.nagisa-kuguno.com/"
+        "homepage2": "http://www.nagisa-kuguno.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/339/"
       }
     },
     {
@@ -11482,7 +12003,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19311",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu27.html",
-        "homepage2": "http://www.gix.or.jp/~z33asahi/"
+        "homepage2": "http://www.gix.or.jp/~z33asahi/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/340/"
       }
     },
     {
@@ -11497,14 +12019,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19312",
         "name": "道の駅そばの郷 らっせぃみさと",
-        "prefecture": "そばの郷　らっせぃみさと",
+        "prefecture": "そばの郷\u3000らっせぃみさと",
         "city": "",
         "address": "岐阜県恵那市三郷町佐々良木1461-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19312",
         "businessHours": "9:00～17:30（冬季は16:30まで）",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/341/"
       }
     },
     {
@@ -11526,7 +12049,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19313",
         "businessHours": "8:30～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu29.html",
-        "homepage2": "http://www.oribenosato.jp/"
+        "homepage2": "http://www.oribenosato.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/342/"
       }
     },
     {
@@ -11548,7 +12072,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19314",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu30.html",
-        "homepage2": "http://www.takanekankou.or.jp/takanekobo/"
+        "homepage2": "http://www.takanekankou.or.jp/takanekobo/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/343/"
       }
     },
     {
@@ -11570,7 +12095,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19315",
         "businessHours": "9:00～17:00",
         "homepage": "https://gujotakasu.com/eat/eat-969.html",
-        "homepage2": "https://gujotakasu.com/buy/buy-1049.html"
+        "homepage2": "https://gujotakasu.com/buy/buy-1049.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/344/"
       }
     },
     {
@@ -11585,14 +12111,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19316",
         "name": "道の駅桜の郷 荘川",
-        "prefecture": "桜の郷　荘川",
+        "prefecture": "桜の郷\u3000荘川",
         "city": "",
         "address": "岐阜県高山市荘川町猿丸88-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19316",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu32.html",
-        "homepage2": "http://kankou.city.takayama.lg.jp/2000002/2000509/2000512.html"
+        "homepage2": "http://kankou.city.takayama.lg.jp/2000002/2000509/2000512.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/345/"
       }
     },
     {
@@ -11614,7 +12141,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19317",
         "businessHours": "9:00～16:00",
         "homepage": "http://www.city.seki.lg.jp/kanko/0000000933.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/346/"
       }
     },
     {
@@ -11636,7 +12164,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19318",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu34.html",
-        "homepage2": "http://www.gujo-tv.ne.jp/~kuturogi/"
+        "homepage2": "http://www.gujo-tv.ne.jp/~kuturogi/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/347/"
       }
     },
     {
@@ -11658,7 +12187,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19319",
         "businessHours": "平日9:00～16:00（12～2月10:00～16:00）/土日祝9：00〜17：00（12〜2月10：00〜17：00）",
         "homepage": "https://satoyama-park.gifu.jp/",
-        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu35.html"
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu35.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/678/"
       }
     },
     {
@@ -11680,7 +12210,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19320",
         "businessHours": "9:30～16:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu36.html",
-        "homepage2": "http://chanosato.gifu.jp"
+        "homepage2": "http://chanosato.gifu.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/679/"
       }
     },
     {
@@ -11702,7 +12233,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19321",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu37.html",
-        "homepage2": "http://gujo-wara.jp/info-sightseeing/185-road-station-wara-and-wara-dome.html"
+        "homepage2": "http://gujo-wara.jp/info-sightseeing/185-road-station-wara-and-wara-dome.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/680/"
       }
     },
     {
@@ -11724,7 +12256,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19322",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu38.html",
-        "homepage2": "http://www.usuzumi.jp/sakura-sato/"
+        "homepage2": "http://www.usuzumi.jp/sakura-sato/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/681/"
       }
     },
     {
@@ -11746,7 +12279,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19323",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu39.html",
-        "homepage2": "http://shino-oribe.co.jp/"
+        "homepage2": "http://shino-oribe.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/723/"
       }
     },
     {
@@ -11768,7 +12302,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19324",
         "businessHours": "8:30～17:00（12～3月中旬は16:30まで）",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu40.html",
-        "homepage2": "http://kashimozanmai.com/"
+        "homepage2": "http://kashimozanmai.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/724/"
       }
     },
     {
@@ -11790,7 +12325,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19325",
         "businessHours": "9:00～17:00",
         "homepage": "https://yashaikenosato.com",
-        "homepage2": "https://www.town.ibigawa.lg.jp/kankoujyouhou/0000006114.html"
+        "homepage2": "https://www.town.ibigawa.lg.jp/kankoujyouhou/0000006114.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/725/"
       }
     },
     {
@@ -11812,7 +12348,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19326",
         "businessHours": "9:00～18:00、9:00～17:00（12～2月）",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu42.html",
-        "homepage2": "http://oba-chan.enat.jp/"
+        "homepage2": "http://oba-chan.enat.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/726/"
       }
     },
     {
@@ -11827,14 +12364,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19328",
         "name": "道の駅月見の里 南濃",
-        "prefecture": "月見の里　南濃",
+        "prefecture": "月見の里\u3000南濃",
         "city": "",
         "address": "岐阜県海津市南濃町羽沢673-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19328",
         "businessHours": "8:00～18:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu44.html",
-        "homepage2": "https://tsukimi-no-sato.com"
+        "homepage2": "https://tsukimi-no-sato.com",
+        "michiEkiUrl": "https://www.michieki.jp/eki/768/"
       }
     },
     {
@@ -11856,7 +12394,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19329",
         "businessHours": "8:30～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu45.html",
-        "homepage2": "https://michinoeki-yanaizu.wixsite.com/yanaizu"
+        "homepage2": "https://michinoeki-yanaizu.wixsite.com/yanaizu",
+        "michiEkiUrl": "https://www.michieki.jp/eki/769/"
       }
     },
     {
@@ -11878,7 +12417,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19330",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu46.html",
-        "homepage2": "http://www.kawaue.jp/~logo2001/kh.mitinoeki.html"
+        "homepage2": "http://www.kawaue.jp/~logo2001/kh.mitinoeki.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/805/"
       }
     },
     {
@@ -11900,7 +12440,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19331",
         "businessHours": "9:00～17:00（季節により変動あり）",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu47.html",
-        "homepage2": "http://www.skydome.jp/"
+        "homepage2": "http://www.skydome.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/806/"
       }
     },
     {
@@ -11922,7 +12463,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19332",
         "businessHours": "8:30～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu48.html",
-        "homepage2": "http://okumino-shirotori.com/pg455.html"
+        "homepage2": "http://okumino-shirotori.com/pg455.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/807/"
       }
     },
     {
@@ -11944,7 +12486,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19333",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu49.html",
-        "homepage2": "http://www.mino-niwakachaya.com/"
+        "homepage2": "http://www.mino-niwakachaya.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/867/"
       }
     },
     {
@@ -11966,7 +12509,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19334",
         "businessHours": "営業期間 4月1日～11月30日 売店10:00～17:00（軽食 11:00～16:30） 定休日:毎週水曜日 情報コーナー9:00～17:00 足湯24Ｈ 年中無休",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu50.html",
-        "homepage2": "http://shirakawa-go.org/kankou/guide/265/"
+        "homepage2": "http://shirakawa-go.org/kankou/guide/265/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/869/"
       }
     },
     {
@@ -11981,14 +12525,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19335",
         "name": "道の駅半布里の郷 とみか",
-        "prefecture": "半布里の郷　とみか",
+        "prefecture": "半布里の郷\u3000とみか",
         "city": "",
         "address": "岐阜県加茂郡富加町羽生2174-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19335",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu51.html",
-        "homepage2": "http://www.hanyuri.com/"
+        "homepage2": "http://www.hanyuri.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/913/"
       }
     },
     {
@@ -12010,7 +12555,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19336",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu52.html",
-        "homepage2": "http://canitte.jp/"
+        "homepage2": "http://canitte.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/945/"
       }
     },
     {
@@ -12032,7 +12578,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19337",
         "businessHours": "10:00～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu53.html",
-        "homepage2": "http://www.town.gifu-ikeda.lg.jp/0000000195.html"
+        "homepage2": "http://www.town.gifu-ikeda.lg.jp/0000000195.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/961/"
       }
     },
     {
@@ -12047,14 +12594,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19338",
         "name": "道の駅清流白川 クオーレの里",
-        "prefecture": "清流白川　クオーレの里",
+        "prefecture": "清流白川\u3000クオーレの里",
         "city": "",
         "address": "岐阜県加茂郡白川町和泉181-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19338",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu54.html",
-        "homepage2": "https://e-900.com/roadsidestation/index.html"
+        "homepage2": "https://e-900.com/roadsidestation/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/992/"
       }
     },
     {
@@ -12076,7 +12624,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19339",
         "businessHours": "9:00～20:00",
         "homepage": "http://www.michinoeki-fuji.jp",
-        "homepage2": "https://www.city.fuji.shizuoka.jp/sangyo/c0504/michinoekifuji.html"
+        "homepage2": "https://www.city.fuji.shizuoka.jp/sangyo/c0504/michinoekifuji.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/348/"
       }
     },
     {
@@ -12098,7 +12647,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19340",
         "businessHours": "9:30～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka02.html",
-        "homepage2": "http://kunma.jp/suisha/"
+        "homepage2": "http://kunma.jp/suisha/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/349/"
       }
     },
     {
@@ -12120,7 +12670,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19341",
         "businessHours": "9:00～17:00（食事部門 11:00～14:30、木曜日定休）",
         "homepage": "http://www.izu-matsuzaki.com/publics/index/55/",
-        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka03.html"
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka03.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/350/"
       }
     },
     {
@@ -12142,7 +12693,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19342",
         "businessHours": "9:00～16:30 (7月、8月は17:00まで）",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka05.html",
-        "homepage2": "https://yokokawa.hamazo.tv/"
+        "homepage2": "https://yokokawa.hamazo.tv/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/352/"
       }
     },
     {
@@ -12164,7 +12716,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19343",
         "businessHours": "10:00～16:30（16:00受付終了）",
         "homepage": "https://chameikan.jp",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/353/"
       }
     },
     {
@@ -12186,7 +12739,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19344",
         "businessHours": "8:30～16:30〔施設により異なる〕",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka07.html",
-        "homepage2": "http://kanko.city.izu.shizuoka.jp/form1.html?pid=2365"
+        "homepage2": "http://kanko.city.izu.shizuoka.jp/form1.html?pid=2365",
+        "michiEkiUrl": "https://www.michieki.jp/eki/354/"
       }
     },
     {
@@ -12208,7 +12762,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19345",
         "businessHours": "10:00～16:30",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka08.html",
-        "homepage2": "http://www.otoginosato.com/"
+        "homepage2": "http://www.otoginosato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/355/"
       }
     },
     {
@@ -12230,7 +12785,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19346",
         "businessHours": "8:00～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka09.html",
-        "homepage2": "http://www.asagiri-kogen.com/"
+        "homepage2": "http://www.asagiri-kogen.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/356/"
       }
     },
     {
@@ -12252,7 +12808,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19347",
         "businessHours": "9:00～19:00(最終受付18:30) 定休日:第１,第３火曜日(祝日の場合は翌平日)",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka10.html",
-        "homepage2": "http://kawaneonsen.jp/"
+        "homepage2": "http://kawaneonsen.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/357/"
       }
     },
     {
@@ -12274,7 +12831,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19348",
         "businessHours": "9:00～20:00(2020年11月現在)",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka11.html",
-        "homepage2": "http://www.fujikawarakuza.co.jp/"
+        "homepage2": "http://www.fujikawarakuza.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/358/"
       }
     },
     {
@@ -12296,7 +12854,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19349",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka12.html",
-        "homepage2": "http://shizutetsu-retailing.com/gyokuronosato/"
+        "homepage2": "http://shizutetsu-retailing.com/gyokuronosato/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/359/"
       }
     },
     {
@@ -12311,14 +12870,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19350",
         "name": "道の駅天竜相津 花桃の里",
-        "prefecture": "天竜相津　花桃の里",
+        "prefecture": "天竜相津\u3000花桃の里",
         "city": "",
         "address": "静岡県浜松市天竜区大川31-10",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19350",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka13.html",
-        "homepage2": "http://hanamomo-sato.com/"
+        "homepage2": "http://hanamomo-sato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/360/"
       }
     },
     {
@@ -12340,7 +12900,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19351",
         "businessHours": "【ショップ】9:00～20:00、【レストラン】9:00～21:00、【日帰り温泉】5:00～21:00",
         "homepage": "https://ito-marinetown.co.jp/",
-        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka14.html"
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka14.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/682/"
       }
     },
     {
@@ -12362,7 +12923,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19352",
         "businessHours": "9:00～17:00〔施設により異なる〕",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka15.html",
-        "homepage2": "http://www.kaikokushimodaminato.co.jp/"
+        "homepage2": "http://www.kaikokushimodaminato.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/728/"
       }
     },
     {
@@ -12384,7 +12946,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19353",
         "businessHours": "直売所9:00～17:00、食堂8:00～19:00、コンビニ24時間",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka16.html",
-        "homepage2": "http://www.city.kakegawa.shizuoka.jp/kankou/spot/annaiomiyage/michinoeki.html"
+        "homepage2": "http://www.city.kakegawa.shizuoka.jp/kankou/spot/annaiomiyage/michinoeki.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/770/"
       }
     },
     {
@@ -12406,7 +12969,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19354",
         "businessHours": "7:00～20:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka17.html",
-        "homepage2": "http://fujioyama.co.jp/"
+        "homepage2": "http://fujioyama.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/771/"
       }
     },
     {
@@ -12428,7 +12992,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19355",
         "businessHours": "8:00～18:30〔施設により異なる〕",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka18.html",
-        "homepage2": "http://www.shiomizaka.com/"
+        "homepage2": "http://www.shiomizaka.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/808/"
       }
     },
     {
@@ -12450,7 +13015,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19356",
         "businessHours": "観光案内所 10時 - 16時 各店舗の営業時間はhttp://izunoheso.com/でご確認ください。",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka19.html",
-        "homepage2": "http://izunoheso.com/"
+        "homepage2": "http://izunoheso.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/809/"
       }
     },
     {
@@ -12465,14 +13031,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19357",
         "name": "道の駅下賀茂温泉 湯の花",
-        "prefecture": "下賀茂温泉　湯の花",
+        "prefecture": "下賀茂温泉\u3000湯の花",
         "city": "",
         "address": "静岡県賀茂郡南伊豆町下賀茂157-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19357",
         "businessHours": "9：00～17：00（観光案内施設） 9：00～16：00（販売施設・展示施設）",
         "homepage": "http://yunohana-shop.com/",
-        "homepage2": "http://www.minami-izu.jp/?p=we-page-entry&spot=4932&cat=18732&pageno=3&type=list"
+        "homepage2": "http://www.minami-izu.jp/?p=we-page-entry&spot=4932&cat=18732&pageno=3&type=list",
+        "michiEkiUrl": "https://www.michieki.jp/eki/914/"
       }
     },
     {
@@ -12494,7 +13061,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19358",
         "businessHours": "9:00～19:00 （季節、店舗により営業時間変更あり）",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka21.html",
-        "homepage2": "http://www.subashiri.jp/index.html"
+        "homepage2": "http://www.subashiri.jp/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/948/"
       }
     },
     {
@@ -12516,7 +13084,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19359",
         "businessHours": "8:00～17:00",
         "homepage": "https://www.michinoeki-omaezaki.jp",
-        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka22.html"
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka22.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1010/"
       }
     },
     {
@@ -12538,7 +13107,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19360",
         "businessHours": "9:00～21:00〔施設により異なる〕",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka23.html",
-        "homepage2": "https://kururaheda.net/"
+        "homepage2": "https://kururaheda.net/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1035/"
       }
     },
     {
@@ -12560,7 +13130,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19361",
         "businessHours": "〈レストラン〉10：00～15：30 〈売店〉9:00～16:00 ※営業時間が変更になることがあります",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi01.html",
-        "homepage2": "http://www.toyonemura-kanko.jp/greenport/"
+        "homepage2": "http://www.toyonemura-kanko.jp/greenport/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/361/"
       }
     },
     {
@@ -12582,7 +13153,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19362",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi02.html",
-        "homepage2": "https://www.okuminavi.jp/search/detail.php?id=169"
+        "homepage2": "https://www.okuminavi.jp/search/detail.php?id=169",
+        "michiEkiUrl": "https://www.michieki.jp/eki/362/"
       }
     },
     {
@@ -12604,7 +13176,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19363",
         "businessHours": "9:00～19:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi03.html",
-        "homepage2": "https://tahara-michinoeki.com/mekkunhouse"
+        "homepage2": "https://tahara-michinoeki.com/mekkunhouse",
+        "michiEkiUrl": "https://www.michieki.jp/eki/363/"
       }
     },
     {
@@ -12626,7 +13199,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19364",
         "businessHours": "８：００～１７：３０",
         "homepage": "https://www.tahara-michinoeki.com",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/364/"
       }
     },
     {
@@ -12648,7 +13222,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19365",
         "businessHours": "9:00～17:00 冬期9:00～16:00",
         "homepage": "http://www.green-park.net/",
-        "homepage2": "http://www.green-park.net/"
+        "homepage2": "http://www.green-park.net/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/365/"
       }
     },
     {
@@ -12663,14 +13238,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19366",
         "name": "道の駅どんぐりの里 いなぶ",
-        "prefecture": "どんぐりの里　いなぶ",
+        "prefecture": "どんぐりの里\u3000いなぶ",
         "city": "",
         "address": "愛知県豊田市武節町針原４番地１",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19366",
         "businessHours": "9:30～16:00 ＜定休日 毎週木曜日＞",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi06.html",
-        "homepage2": "http://www.dongurinosato.com/"
+        "homepage2": "http://www.dongurinosato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/366/"
       }
     },
     {
@@ -12692,7 +13268,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19367",
         "businessHours": "8:00～17:00（12～2月は16:30まで）",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi07.html",
-        "homepage2": "https://aguristationnagura.jimdofree.com"
+        "homepage2": "https://aguristationnagura.jimdofree.com",
+        "michiEkiUrl": "https://www.michieki.jp/eki/367/"
       }
     },
     {
@@ -12714,7 +13291,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19368",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi08.html",
-        "homepage2": "http://www.denpark.jp/"
+        "homepage2": "http://www.denpark.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/368/"
       }
     },
     {
@@ -12736,7 +13314,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19369",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.tedukurimura.com",
-        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi09.html"
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi09.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/369/"
       }
     },
     {
@@ -12758,7 +13337,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19370",
         "businessHours": "9:00～18:00(季節変動)",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi10.html",
-        "homepage2": "https://hasupark-aisai.jp/"
+        "homepage2": "https://hasupark-aisai.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/810/"
       }
     },
     {
@@ -12780,7 +13360,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19371",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi11.html",
-        "homepage2": "https://tahara-michinoeki.com/akabane"
+        "homepage2": "https://tahara-michinoeki.com/akabane",
+        "michiEkiUrl": "https://www.michieki.jp/eki/893/"
       }
     },
     {
@@ -12802,7 +13383,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19372",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi12.html",
-        "homepage2": "http://www.fudegaki-sato.com/"
+        "homepage2": "http://www.fudegaki-sato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/894/"
       }
     },
     {
@@ -12824,7 +13406,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19373",
         "businessHours": "6:00～18:00（コロナの影響により時短営業中）",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi13.html",
-        "homepage2": "http://okanoyama.com/"
+        "homepage2": "http://okanoyama.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/912/"
       }
     },
     {
@@ -12846,7 +13429,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19374",
         "businessHours": "9:00～16:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi14.html",
-        "homepage2": "http://www.setoshinano.jp/"
+        "homepage2": "http://www.setoshinano.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/944/"
       }
     },
     {
@@ -12868,7 +13452,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19375",
         "businessHours": "9:00～18:00 （コンビニは24H）",
         "homepage": "https://okazaki-kanko.jp/feature/michinoeki.hujikawa-juku/top",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/991/"
       }
     },
     {
@@ -12890,7 +13475,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19376",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/aichi/aichi16.html",
-        "homepage2": "http://mokkulu.jp/"
+        "homepage2": "http://mokkulu.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1036/"
       }
     },
     {
@@ -12912,7 +13498,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19377",
         "businessHours": "9:00～21:00 ※施設によって異なる",
         "homepage": "http://www.iitakaeki.com/",
-        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie01.html"
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie01.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/370/"
       }
     },
     {
@@ -12934,7 +13521,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19378",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie02.html",
-        "homepage2": "https://www.kanko-komono.com/spots/299/"
+        "homepage2": "https://www.kanko-komono.com/spots/299/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/371/"
       }
     },
     {
@@ -12956,7 +13544,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19379",
         "businessHours": "8:30～19:00（11～2月は18:00まで）",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie03.html",
-        "homepage2": "https://umigamekouen.com/"
+        "homepage2": "https://umigamekouen.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/372/"
       }
     },
     {
@@ -12978,7 +13567,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19380",
         "businessHours": "9:00～17:30",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie04.html",
-        "homepage2": "http://michinoeki-mihama.com/"
+        "homepage2": "http://michinoeki-mihama.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/373/"
       }
     },
     {
@@ -13000,7 +13590,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19381",
         "businessHours": "9:00～19:00（10～4月は18:00まで）",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie05.html",
-        "homepage2": "http://michinoeki-miyama.com/"
+        "homepage2": "http://michinoeki-miyama.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/374/"
       }
     },
     {
@@ -13022,7 +13613,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19382",
         "businessHours": "（平日）9:00～17:00 （土日祝/GW・夏休み・正月）9:00～18:00 （2019年1月1日(火)～6日(日)は18:00まで営業、それ以降は全日9:00～17:00）",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie06.html",
-        "homepage2": "https://kitutukikan.com/"
+        "homepage2": "https://kitutukikan.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/375/"
       }
     },
     {
@@ -13044,7 +13636,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19383",
         "businessHours": "土日祝日（ただし、12月29日～1月3日を除く） 9時～13時 14時～16時",
         "homepage": "https://www.zc.ztv.ne.jp/kumanokinokuni/",
-        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie07.html"
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie07.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/376/"
       }
     },
     {
@@ -13066,7 +13659,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19384",
         "businessHours": "9:00～17:00（通年）",
         "homepage": "https://www.everglades.jp/riversidechakra/chakrastation/",
-        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie08.html"
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie08.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/377/"
       }
     },
     {
@@ -13088,7 +13682,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19385",
         "businessHours": "8:00～18:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie09.html",
-        "homepage2": "http://www.okuise-odai.jp/"
+        "homepage2": "http://www.okuise-odai.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/378/"
       }
     },
     {
@@ -13110,7 +13705,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19386",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie10.html",
-        "homepage2": "https://www.kankomie.or.jp/spot/detail_3967.html"
+        "homepage2": "https://www.kankomie.or.jp/spot/detail_3967.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/379/"
       }
     },
     {
@@ -13132,7 +13728,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19387",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie11.html",
-        "homepage2": "http://kameyama-kanko.com/area/seki/%E3%80%8C%E9%81%93%E3%81%AE%E9%A7%85%E3%80%8D%E9%96%A2%E5%AE%BF/"
+        "homepage2": "http://kameyama-kanko.com/area/seki/%E3%80%8C%E9%81%93%E3%81%AE%E9%A7%85%E3%80%8D%E9%96%A2%E5%AE%BF/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/380/"
       }
     },
     {
@@ -13154,7 +13751,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19388",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie12.html",
-        "homepage2": "https://www.kankomie.or.jp/spot/detail_3980.html"
+        "homepage2": "https://www.kankomie.or.jp/spot/detail_3980.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/381/"
       }
     },
     {
@@ -13176,7 +13774,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19389",
         "businessHours": "8:15～18:00（平日） 8:00～18:00（土日祝）",
         "homepage": "http://42manbou.com/",
-        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie13.html"
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie13.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/382/"
       }
     },
     {
@@ -13198,7 +13797,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19390",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie14.html",
-        "homepage2": "http://www.michinoeki-ayama.jp/"
+        "homepage2": "http://www.michinoeki-ayama.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/683/"
       }
     },
     {
@@ -13220,7 +13820,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19391",
         "businessHours": "7:00～21:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/mie/mie15.html",
-        "homepage2": "https://www.anzen-kameyama.jp/servicearea#a02"
+        "homepage2": "https://www.anzen-kameyama.jp/servicearea#a02",
+        "michiEkiUrl": "https://www.michieki.jp/eki/811/"
       }
     },
     {
@@ -13242,7 +13843,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19392",
         "businessHours": "8:30～19:00 定休日 毎月第2木曜、年末年始",
         "homepage": "http://www.fuku-e.com/010_spot/index.php?id=411",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/383/"
       }
     },
     {
@@ -13264,7 +13866,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19393",
         "businessHours": "9:00～17:00〔施設により異なる〕",
         "homepage": "http://www.kuzuryu2300.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/384/"
       }
     },
     {
@@ -13286,7 +13889,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19394",
         "businessHours": "10:00～17:00〔施設により異なる〕",
         "homepage": "https://parkin-nyugaoka.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/385/"
       }
     },
     {
@@ -13308,7 +13912,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19395",
         "businessHours": "3月～11月[9:00～18:00]、12月～2月[9：00～17：00]〔施設により異なる〕",
         "homepage": "http://www.wakasa-ohi.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/386/"
       }
     },
     {
@@ -13330,7 +13935,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19396",
         "businessHours": "9:00～17:00〔施設により異なる〕",
         "homepage": "https://www.sanrihama.co.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/387/"
       }
     },
     {
@@ -13352,7 +13958,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19397",
         "businessHours": "9:30~17:00（食堂10：30～16：00） 【3月～11月の土日祝 9：00～18：00（食堂10：30～16：00）】",
         "homepage": "http://kumagawajuku.jp/",
-        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/fukui/wakasakumakawasyuku.html"
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/fukui/wakasakumakawasyuku.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/388/"
       }
     },
     {
@@ -13374,7 +13981,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19398",
         "businessHours": "10:00〜18:00〔施設により異なる〕",
         "homepage": "http://www.inesu.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/389/"
       }
     },
     {
@@ -13396,7 +14004,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19399",
         "businessHours": "物産館 10:00～17：00、レストラン 10:00～17:00、温浴施設 10:00～22:00（受付終了21：30）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/fukui/seasidetakahama.html",
-        "homepage2": "https://peraichi.com/landing_pages/view/michinoeki-seasidetakahama"
+        "homepage2": "https://peraichi.com/landing_pages/view/michinoeki-seasidetakahama",
+        "michiEkiUrl": "https://www.michieki.jp/eki/390/"
       }
     },
     {
@@ -13418,7 +14027,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19400",
         "businessHours": "9:00～18:00（冬季17：00まで）〔施設により異なる〕",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/fukui/wakasaobama.html",
-        "homepage2": "http://obamakankokyoku.com/station/"
+        "homepage2": "http://obamakankokyoku.com/station/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/964/"
       }
     },
     {
@@ -13440,7 +14050,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19401",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/fukui/uminpiaooi.html",
-        "homepage2": "http://michinoeki-ohi.com/"
+        "homepage2": "http://michinoeki-ohi.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/993/"
       }
     },
     {
@@ -13462,7 +14073,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19402",
         "businessHours": "10:00～18:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/fukui/nisiyamakouen.html",
-        "homepage2": "http://www.nishiyama-park.jp/"
+        "homepage2": "http://www.nishiyama-park.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1003/"
       }
     },
     {
@@ -13484,7 +14096,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19403",
         "businessHours": "9:00〜22:00〔施設により異なる〕",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/fukui/echizen.html",
-        "homepage2": "http://www.echizen-kk.jp/michinoeki.html"
+        "homepage2": "http://www.echizen-kk.jp/michinoeki.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1011/"
       }
     },
     {
@@ -13506,7 +14119,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19404",
         "businessHours": "9:00～17:00【観光案内所、特産品販売所】 9:30～16:30【三方五湖自然観察棟】",
         "homepage": "http://www.facebook.com/RSmikatagoko",
-        "homepage2": "https://www.wakasa-mikatagoko.jp/"
+        "homepage2": "https://www.wakasa-mikatagoko.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1024/"
       }
     },
     {
@@ -13528,7 +14142,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19405",
         "businessHours": "9:00~17:00〔年末・年始のみ休〕 飲食L.O.15時",
         "homepage": "https://asakura-mizunoeki.com/",
-        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/fukui/ichijoudaniasakura.html"
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/fukui/ichijoudaniasakura.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1037/"
       }
     },
     {
@@ -13550,7 +14165,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19406",
         "businessHours": "○物販 9:00～17:00 〇レストラン・カフェ 平日10:00～16:00（L.O.） ／ 土日祝 10:00～16:00（L.O.）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/ainotsuchiyama.html",
-        "homepage2": "http://www.ainotutiyama.co.jp/"
+        "homepage2": "http://www.ainotutiyama.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/391/"
       }
     },
     {
@@ -13572,7 +14188,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19407",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/kutsukishinhonjin.html",
-        "homepage2": "http://kutsuki.net/"
+        "homepage2": "http://kutsuki.net/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/392/"
       }
     },
     {
@@ -13594,7 +14211,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19408",
         "businessHours": "トイレ、駐車場は24時間利用可能",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/shinasahi.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/393/"
       }
     },
     {
@@ -13616,7 +14234,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19409",
         "businessHours": "9:00～17:30",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/margueritestation.html",
-        "homepage2": "http://www.aito-ms.or.jp/"
+        "homepage2": "http://www.aito-ms.or.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/394/"
       }
     },
     {
@@ -13638,7 +14257,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19410",
         "businessHours": "9:00～19:00（季節により異なる）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/biwakoohishikomeplaza.html",
-        "homepage2": "http://www.umino-eki.jp/biwakoohashi/index.html"
+        "homepage2": "http://www.umino-eki.jp/biwakoohashi/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/395/"
       }
     },
     {
@@ -13660,7 +14280,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19411",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/omihahanosato.html",
-        "homepage2": "http://www.omihahanosato.jp/"
+        "homepage2": "http://www.omihahanosato.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/396/"
       }
     },
     {
@@ -13682,7 +14303,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19412",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/konzenosatorittou.html",
-        "homepage2": "http://ritto-konze-no-sato.or.jp/"
+        "homepage2": "http://ritto-konze-no-sato.or.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/397/"
       }
     },
     {
@@ -13704,7 +14326,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19413",
         "businessHours": "売店：9:00～18:00 (4月～10月) 9:00～17:00 (11月～3月) レストラン：10:30～17:30 (4月～10月) 10:30～16:30 (11月～3月) ※平日は一部メニューは15:30まで ＜休館日＞第3火曜日、年末年始",
         "homepage": "https://mizudori-st.jp/",
-        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/kohokumizudoristation.html"
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/kohokumizudoristation.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/650/"
       }
     },
     {
@@ -13726,7 +14349,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19414",
         "businessHours": "9:00～18:00、9:00～19:00（7・8月）＜休 毎週月曜日（月曜日が祝日の場合は翌日）・12/31～1/2＞",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/kusatsu.html",
-        "homepage2": "http://www.karasuma.co.jp/"
+        "homepage2": "http://www.karasuma.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/649/"
       }
     },
     {
@@ -13748,7 +14372,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19415",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/ryuoukagaminosato.html",
-        "homepage2": "https://www.kagaminosato.com/"
+        "homepage2": "https://www.kagaminosato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/701/"
       }
     },
     {
@@ -13770,7 +14395,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19416",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/agurinosatorittou.html",
-        "homepage2": "http://www.agurinosato.com/"
+        "homepage2": "http://www.agurinosato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/702/"
       }
     },
     {
@@ -13792,7 +14418,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19417",
         "businessHours": "9:00～18:00",
         "homepage": "http://ossaka-touge.com/",
-        "homepage2": "http://ossaka-touge.com/"
+        "homepage2": "http://ossaka-touge.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/772/"
       }
     },
     {
@@ -13814,7 +14441,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19418",
         "businessHours": "9:00～18:00〔施設により異なる〕＜休 1/1、毎月第2水曜日（4・８・１１月は無休）＞",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/adogawa.html",
-        "homepage2": "http://adogawa.net/"
+        "homepage2": "http://adogawa.net/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/812/"
       }
     },
     {
@@ -13836,7 +14464,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19419",
         "businessHours": "9:15～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/ibukinosato.html",
-        "homepage2": "http://shunsainomori.com/"
+        "homepage2": "http://shunsainomori.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/813/"
       }
     },
     {
@@ -13858,7 +14487,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19420",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/adikama.html",
-        "homepage2": "http://www.koti.jp/"
+        "homepage2": "http://www.koti.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/916/"
       }
     },
     {
@@ -13880,7 +14510,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19421",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/seseraginosato.html",
-        "homepage2": "http://www.m-koura.jp/"
+        "homepage2": "http://www.m-koura.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/984/"
       }
     },
     {
@@ -13902,7 +14533,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19422",
         "businessHours": "9:00～18:00〔季節により時間変更有※ホームページをご確認ください。〕",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/imokonosato.html",
-        "homepage2": "http://www.imokonosato.com/"
+        "homepage2": "http://www.imokonosato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1025/"
       }
     },
     {
@@ -13924,7 +14556,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19423",
         "businessHours": "9:00－17:00 （12月～3月は16:30まで）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/okueigenji.html",
-        "homepage2": "http://www.okueigenji-keiryunosato.com/"
+        "homepage2": "http://www.okueigenji-keiryunosato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1038/"
       }
     },
     {
@@ -13946,7 +14579,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19424",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/funayanosatoine.html",
-        "homepage2": "https://www.ine-aburaya.com/michi-no-eki/"
+        "homepage2": "https://www.ine-aburaya.com/michi-no-eki/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/398/"
       }
     },
     {
@@ -13961,14 +14595,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19425",
         "name": "道の駅シルクのまち かや",
-        "prefecture": "シルクのまち　かや",
+        "prefecture": "シルクのまち\u3000かや",
         "city": "",
         "address": "京都府与謝郡与謝野町字滝98",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19425",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/silknomachikaya.html",
-        "homepage2": "https://yosano-kankou.net/vegesta/"
+        "homepage2": "https://yosano-kankou.net/vegesta/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/399/"
       }
     },
     {
@@ -13990,7 +14625,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19426",
         "businessHours": "3月～11月：9:00～17:30、12月～2月：9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/tenkitenkitango.html",
-        "homepage2": "http://tenkitenki-mura.jp/"
+        "homepage2": "http://tenkitenki-mura.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/400/"
       }
     },
     {
@@ -14012,7 +14648,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19427",
         "businessHours": "8:30～18:30（11〜3月は18:00まで）",
         "homepage": "http://wachi-nagomi.com/",
-        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/nagomi.html"
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/nagomi.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/401/"
       }
     },
     {
@@ -14034,7 +14671,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19428",
         "businessHours": "9:00～22:00",
         "homepage": "https://www.galleria.or.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/402/"
       }
     },
     {
@@ -14056,7 +14694,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19429",
         "businessHours": "9:00～20:00〔店舗により異なる〕",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/tanbamakesu.html",
-        "homepage2": "https://markeds-tamba.com"
+        "homepage2": "https://markeds-tamba.com",
+        "michiEkiUrl": "https://www.michieki.jp/eki/403/"
       }
     },
     {
@@ -14078,7 +14717,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19430",
         "businessHours": "9:00～18:00（冬季は短縮の場合あり）",
         "homepage": "https://www.greenlandmizuho.co.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/404/"
       }
     },
     {
@@ -14100,7 +14740,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19431",
         "businessHours": "9:30～17:00",
         "homepage": "https://www.city.fukuchiyama.lg.jp/soshiki/64/2012.html",
-        "homepage2": "https://yakuno-kougenichi.jimdofree.com/"
+        "homepage2": "https://yakuno-kougenichi.jimdofree.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/684/"
       }
     },
     {
@@ -14122,7 +14763,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19432",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/toretorecenter.html",
-        "homepage2": "http://www.toretore.org/"
+        "homepage2": "http://www.toretore.org/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/685/"
       }
     },
     {
@@ -14144,7 +14786,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19433",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/shinkoetsu.html",
-        "homepage2": "http://www.cans.zaq.ne.jp/ekikouetsu/"
+        "homepage2": "http://www.cans.zaq.ne.jp/ekikouetsu/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/686/"
       }
     },
     {
@@ -14166,7 +14809,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19434",
         "businessHours": "インフォメーション 9:00～17:00 / レストラン 9:00～17:00（土日祝のみ21:00まで） ※火曜休園",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/tangooukoku.html",
-        "homepage2": "https://tangooukoku.com"
+        "homepage2": "https://tangooukoku.com",
+        "michiEkiUrl": "https://www.michieki.jp/eki/729/"
       }
     },
     {
@@ -14188,7 +14832,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19435",
         "businessHours": "9：00～17：00（水曜日・年末年始は休館日）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/miyamafureaihiroba.html",
-        "homepage2": "https://miyamanavi.com/sightseeing/fureaihiroba"
+        "homepage2": "https://miyamanavi.com/sightseeing/fureaihiroba",
+        "michiEkiUrl": "https://www.michieki.jp/eki/814/"
       }
     },
     {
@@ -14210,7 +14855,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19436",
         "businessHours": "9:00～18:00 （喫茶コーナー10：30～15：00）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/woodykeihoku.html",
-        "homepage2": "http://fuw.jp/woody/"
+        "homepage2": "http://fuw.jp/woody/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/929/"
       }
     },
     {
@@ -14232,7 +14878,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19437",
         "businessHours": "8:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/kumihamasankaikan.html",
-        "homepage2": "http://www.sankaikan.net/"
+        "homepage2": "http://www.sankaikan.net/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/963/"
       }
     },
     {
@@ -14254,7 +14901,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19438",
         "businessHours": "10:00～18:00※施設により異なる。 ＜休 毎週水曜日（水曜日が祝日の場合、振替休館日あり）、12/30～31＞",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/springshiyoshi.html",
-        "homepage2": "http://www.springs-hiyoshi.co.jp/"
+        "homepage2": "http://www.springs-hiyoshi.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/975/"
       }
     },
     {
@@ -14276,7 +14924,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19439",
         "businessHours": "6:00～21:00〔施設により異なる〕",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/kyotambaajimnosato.html",
-        "homepage2": "http://ajim.info/"
+        "homepage2": "http://ajim.info/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1026/"
       }
     },
     {
@@ -14298,7 +14947,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19440",
         "businessHours": "9:00～17:00（8月のうち3日間と年末年始は休業）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/osaka/chihayaakasaka.html",
-        "homepage2": "https://chihaya-class.com/michinoeki-chihayaakasaka"
+        "homepage2": "https://chihaya-class.com/michinoeki-chihayaakasaka",
+        "michiEkiUrl": "https://www.michieki.jp/eki/405/"
       }
     },
     {
@@ -14320,7 +14970,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19441",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/osaka/chikatuasukanosatotaishi.html",
-        "homepage2": "http://www.taishi-kankou.jp/spot/shop/michinoeki.html"
+        "homepage2": "http://www.taishi-kankou.jp/spot/shop/michinoeki.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/406/"
       }
     },
     {
@@ -14342,7 +14993,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19442",
         "businessHours": "9:00～17:00＜休：火曜日 7~10月は無休＞",
         "homepage": "https://www.michinoeki-nose.jp/",
-        "homepage2": "https://www.facebook.com/mitinoekiNOSE/"
+        "homepage2": "https://www.facebook.com/mitinoekiNOSE/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/407/"
       }
     },
     {
@@ -14364,7 +15016,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19443",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/osaka/kanan.html",
-        "homepage2": "http://www.osaka-michinoeki-kanan.jp"
+        "homepage2": "http://www.osaka-michinoeki-kanan.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/730/"
       }
     },
     {
@@ -14386,7 +15039,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19444",
         "businessHours": "9:30～17:00（休：木曜、年末年始）新型コロナウイルス感染症の拡大状況により、変更する場合があります。",
         "homepage": "https://www.city.habikino.lg.jp/soshiki/seikatsukankyo/kanko/shiratorinosato/255.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/838/"
       }
     },
     {
@@ -14408,7 +15062,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19445",
         "businessHours": "9:00～17:00（地場産品販売所のみ 土日祝 8：00～）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/osaka/izumiyamaai.html",
-        "homepage2": "https://www.yamaainosato.com/"
+        "homepage2": "https://www.yamaainosato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/877/"
       }
     },
     {
@@ -14430,7 +15085,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19446",
         "businessHours": "6:00～20:00（12～2月は7:00～18:00）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/osaka/tottopark.html",
-        "homepage2": "http://minnaga.com/totopark/"
+        "homepage2": "http://minnaga.com/totopark/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/895/"
       }
     },
     {
@@ -14452,7 +15108,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19447",
         "businessHours": "10:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/osaka/aisai_land.html",
-        "homepage2": "https://www.city.kishiwada.osaka.jp/soshiki/141/michinoekiaisailand.html"
+        "homepage2": "https://www.city.kishiwada.osaka.jp/soshiki/141/michinoekiaisailand.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/962/"
       }
     },
     {
@@ -14474,7 +15131,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19448",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/haga.html",
-        "homepage2": "http://www.haga-net.co.jp/haga.php"
+        "homepage2": "http://www.haga-net.co.jp/haga.php",
+        "michiEkiUrl": "https://www.michieki.jp/eki/186/"
       }
     },
     {
@@ -14496,7 +15154,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19449",
         "businessHours": "8:00～18:00（物産、野菜販売店）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/asago.html",
-        "homepage2": "https://www.city.asago.hyogo.jp/0000000338.html"
+        "homepage2": "https://www.city.asago.hyogo.jp/0000000338.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/410/"
       }
     },
     {
@@ -14518,7 +15177,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19450",
         "businessHours": "10:00～16:00（レストラン）、 9:00～16:00（特産館） ※ レストラン 1月～3月 11：00～18：00",
         "homepage": "https://mitinoekichikusa.wixsite.com/home",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/411/"
       }
     },
     {
@@ -14540,7 +15200,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19451",
         "businessHours": "平日9:00～17:00／土日祝9:00〜17:30 ※レストランと温泉の営業時間については公式ホームページでご確認ください。",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/kannabe.html",
-        "homepage2": "https://michinoeki-kannabe.com"
+        "homepage2": "https://michinoeki-kannabe.com",
+        "michiEkiUrl": "https://www.michieki.jp/eki/412/"
       }
     },
     {
@@ -14562,7 +15223,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19452",
         "businessHours": "平日 9:00～17:00 土日祝 9:00～18:00（※お正月・ＧＷ・お盆・ＳＷは9:00～19:00）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/muraokafarmgarden.html",
-        "homepage2": "http://www.farm-garden.jp/"
+        "homepage2": "http://www.farm-garden.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/413/"
       }
     },
     {
@@ -14584,7 +15246,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19453",
         "businessHours": "10:00～20:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/yabu.html",
-        "homepage2": "https://www.instagram.com/michino_eki_yabu/"
+        "homepage2": "https://www.instagram.com/michino_eki_yabu/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/414/"
       }
     },
     {
@@ -14606,7 +15269,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19454",
         "businessHours": "8:00～21:30〔施設により異なる〕",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/tanbarakuza.html",
-        "homepage2": "http://www.tajima-rakuza.com/"
+        "homepage2": "http://www.tajima-rakuza.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/415/"
       }
     },
     {
@@ -14628,7 +15292,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19455",
         "businessHours": "9:00～19:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/minamihaga.html",
-        "homepage2": "http://www.haga-net.co.jp/"
+        "homepage2": "http://www.haga-net.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/416/"
       }
     },
     {
@@ -14650,7 +15315,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19456",
         "businessHours": "9:00～19:00 （物産館）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/shinguu.html",
-        "homepage2": "http://www.pkp-shiteikanri.com/shinguu/index.html"
+        "homepage2": "http://www.pkp-shiteikanri.com/shinguu/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/417/"
       }
     },
     {
@@ -14672,7 +15338,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19457",
         "businessHours": "9:00～18:00 ※レストランのみ9:30～16:00（時間短縮中）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/hachikita.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/420/"
       }
     },
     {
@@ -14694,7 +15361,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19458",
         "businessHours": "（平日）9:30～17:30（土日祝）9:00～17:30 ※12～2月の平日は17:00まで ◆レストランのみ通年 11:00～17:00 L.O.",
         "homepage": "http://michi-awaji.co.jp/",
-        "homepage2": "http://michi-awaji.co.jp/concept.html"
+        "homepage2": "http://michi-awaji.co.jp/concept.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/421/"
       }
     },
     {
@@ -14716,7 +15384,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19459",
         "businessHours": "9:00～18:00〔店舗により異なる〕",
         "homepage": "https://mikiyama.co.jp/",
-        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/miki.html"
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/miki.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/422/"
       }
     },
     {
@@ -14738,7 +15407,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19460",
         "businessHours": "9:00～17:00",
         "homepage": "https://eki.uzunokuni.com/",
-        "homepage2": "https://awajishimaburger.uzunokuni.com/"
+        "homepage2": "https://awajishimaburger.uzunokuni.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/423/"
       }
     },
     {
@@ -14760,7 +15430,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19461",
         "businessHours": "(売店)8：30～17：00 （レストラン)8：00～17：00(平日15時閉店)",
         "homepage": "http://www.michinoeki-ichinomiya.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/424/"
       }
     },
     {
@@ -14782,7 +15453,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19462",
         "businessHours": "全日 10:00～19:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/freshasago.html",
-        "homepage2": "http://fresh-asago.co.jp/"
+        "homepage2": "http://fresh-asago.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/425/"
       }
     },
     {
@@ -14804,7 +15476,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19463",
         "businessHours": "平日 9:00～18:00 祝日 9:00～19:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/sykubamatihirafuku.html",
-        "homepage2": "https://m-hirafuku.com"
+        "homepage2": "https://m-hirafuku.com",
+        "michiEkiUrl": "https://www.michieki.jp/eki/426/"
       }
     },
     {
@@ -14826,7 +15499,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19464",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/ayunosatoyatagawa.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/427/"
       }
     },
     {
@@ -14848,7 +15522,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19465",
         "businessHours": "9:00～19:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/toujyou.html",
-        "homepage2": "http://www.tojo21.co.jp/"
+        "homepage2": "http://www.tojo21.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/428/"
       }
     },
     {
@@ -14870,7 +15545,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19466",
         "businessHours": "9:00～17:00",
         "homepage": "https://michinoeki-inagawa.com/",
-        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/inagawa.html"
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/inagawa.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/429/"
       }
     },
     {
@@ -14892,7 +15568,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19467",
         "businessHours": "9:00～18:00（農産物直売所）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/higashiuratatarminalpark.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/430/"
       }
     },
     {
@@ -14914,7 +15591,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19468",
         "businessHours": "9：00～19：00（3月～10月）、9：00～18：00（11月～2月）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/kitaharimaecomum.html",
-        "homepage2": "https://michinoeki-kitaharima.com/"
+        "homepage2": "https://michinoeki-kitaharima.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/431/"
       }
     },
     {
@@ -14936,7 +15614,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19469",
         "businessHours": "9:00～17:30",
         "homepage": "http://peironjo.jp/",
-        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/aioipeperonjyou.html"
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/aioipeperonjyou.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/432/"
       }
     },
     {
@@ -14958,7 +15637,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19470",
         "businessHours": "9:00～17:00",
         "homepage": "https://tamba-obasato.co.jp/",
-        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/tanbaobaachan.html"
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/tanbaobaachan.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/815/"
       }
     },
     {
@@ -14980,7 +15660,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19471",
         "businessHours": "8:30～20:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/tajimanomahoroba.html",
-        "homepage2": "http://www.green-wind.co.jp/"
+        "homepage2": "http://www.green-wind.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/816/"
       }
     },
     {
@@ -15002,7 +15683,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19472",
         "businessHours": "9:00～19:00〔施設により異なる〕",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/youkatajimanokura.html",
-        "homepage2": "http://www.michinoekiyouka.co.jp/"
+        "homepage2": "http://www.michinoekiyouka.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/839/"
       }
     },
     {
@@ -15024,7 +15706,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19473",
         "businessHours": "9:00～19:00 ※当面の間は9:00～18:00営業",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/mitsu.html",
-        "homepage2": "http://www.totonaya.com/"
+        "homepage2": "http://www.totonaya.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/915/"
       }
     },
     {
@@ -15046,7 +15729,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19474",
         "businessHours": "9:00～18:00〔食事 11:00～15:00〕",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/amarube.html",
-        "homepage2": "http://michinoeki-amarube.com/"
+        "homepage2": "http://michinoeki-amarube.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/985/"
       }
     },
     {
@@ -15068,7 +15752,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19475",
         "businessHours": "【物販コーナー】10:00～17:00 休館日 12/31, 年始【レストラン】10:30～17:00 休館日 毎水曜日 12/31, 年始 ※年始の営業については施設までお問い合わせください",
         "homepage": "https://www.city.kobe.lg.jp/a99375/kanko/leisure/michinoeki/michinoeki-ogo.html",
-        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/ogo.html"
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/ogo.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/688/"
       }
     },
     {
@@ -15090,7 +15775,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19476",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/fukura.html",
-        "homepage2": "http://www.city.minamiawaji.hyogo.jp/soshiki/shoukou/hukura.html"
+        "homepage2": "http://www.city.minamiawaji.hyogo.jp/soshiki/shoukou/hukura.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1004/"
       }
     },
     {
@@ -15105,14 +15791,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19477",
         "name": "道の駅吉野路 大塔",
-        "prefecture": "吉野路　大塔",
+        "prefecture": "吉野路\u3000大塔",
         "city": "",
         "address": "奈良県五條市大塔町阪本225-6",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19477",
         "businessHours": "9:00～17:15",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/yoshinojiootou.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/433/"
       }
     },
     {
@@ -15127,14 +15814,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19478",
         "name": "道の駅吉野路 上北山",
-        "prefecture": "吉野路　上北山",
+        "prefecture": "吉野路\u3000上北山",
         "city": "",
         "address": "奈良県吉野郡上北山村大字河合字ハジ1-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19478",
         "businessHours": "10:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/yoshinojikamikitayama.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/434/"
       }
     },
     {
@@ -15149,14 +15837,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19479",
         "name": "道の駅杉の湯 川上",
-        "prefecture": "杉の湯　川上",
+        "prefecture": "杉の湯\u3000川上",
         "city": "",
         "address": "奈良県吉野郡川上村迫695",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19479",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/suginoyukawakami.html",
-        "homepage2": "http://www.suginoyu.com/"
+        "homepage2": "http://www.suginoyu.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/435/"
       }
     },
     {
@@ -15171,14 +15860,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19480",
         "name": "道の駅吉野路 黒滝",
-        "prefecture": "吉野路　黒滝",
+        "prefecture": "吉野路\u3000黒滝",
         "city": "",
         "address": "奈良県吉野郡黒滝村大字長瀬22",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19480",
         "businessHours": "9:00～16:30",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/yoshinojikurotaki.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/436/"
       }
     },
     {
@@ -15200,7 +15890,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19481",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/futakamiparktaima.html",
-        "homepage2": "http://www.futakami-park.jp/"
+        "homepage2": "http://www.futakami-park.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/437/"
       }
     },
     {
@@ -15222,7 +15913,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19482",
         "businessHours": "物販・軽飲食 8:00～18：00",
         "homepage": "https://www.kkr.mlit.go.jp/",
-        "homepage2": "https://www.narakotsu.co.jp"
+        "homepage2": "https://www.narakotsu.co.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/438/"
       }
     },
     {
@@ -15244,7 +15936,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19483",
         "businessHours": "8:30～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/totukawagou.html",
-        "homepage2": "http://www.michinoeki-totsukawago.com/"
+        "homepage2": "http://www.michinoeki-totsukawago.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/439/"
       }
     },
     {
@@ -15266,7 +15959,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19484",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/udajimurou.html",
-        "homepage2": "https://www.michi-no-eki-udajimurou.jp/"
+        "homepage2": "https://www.michi-no-eki-udajimurou.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/440/"
       }
     },
     {
@@ -15288,7 +15982,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19485",
         "businessHours": "開店の早い店7:00 閉店の遅い店21:30 LO21:00 24時間コンビニ有",
         "homepage": "http://hari-trs.com/",
-        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/hariteatimeresortstation.html"
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/hariteatimeresortstation.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/441/"
       }
     },
     {
@@ -15310,7 +16005,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19486",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/yamatojiheguri.html",
-        "homepage2": "http://www.heguri-apc.jp/station/index.html"
+        "homepage2": "http://www.heguri-apc.jp/station/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/442/"
       }
     },
     {
@@ -15325,14 +16021,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19487",
         "name": "道の駅吉野路 大淀ｉセンター",
-        "prefecture": "吉野路　大淀ｉセンター",
+        "prefecture": "吉野路\u3000大淀ｉセンター",
         "city": "",
         "address": "奈良県吉野郡大淀町大字芦原536-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19487",
         "businessHours": "8:30～17:00(火曜 定休 / 季節･施設により異なる)",
         "homepage": "http://yoshinoji-oyodo.com/",
-        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/yoshinojioyadoicenter.html"
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/yoshinojioyadoicenter.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/443/"
       }
     },
     {
@@ -15347,14 +16044,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19488",
         "name": "道の駅伊勢本街道 御杖",
-        "prefecture": "伊勢本街道　御杖",
+        "prefecture": "伊勢本街道\u3000御杖",
         "city": "",
         "address": "奈良県宇陀郡御杖村大字神末6325",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19488",
         "businessHours": "11:00～20:00",
         "homepage": "https://mitsue.life/services/station/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/773/"
       }
     },
     {
@@ -15376,7 +16074,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19489",
         "businessHours": "8:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/shimizu.html",
-        "homepage2": "https://was-aritagawa.com/"
+        "homepage2": "https://was-aritagawa.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/444/"
       }
     },
     {
@@ -15391,14 +16090,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19490",
         "name": "道の駅San Pin 中津",
-        "prefecture": "San　Pin",
+        "prefecture": "San\u3000Pin",
         "city": "中津",
         "address": "和歌山県日高郡日高川町大字船津820",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19490",
         "businessHours": "8:00～18:00（3月～6月・9月）、 8:00～18:30（7月～8月）、8:00～17:00（10月～2月）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/sanpinnakatsu.html",
-        "homepage2": "http://www.hidakagawa.net/sanpin-nakatsu/"
+        "homepage2": "http://www.hidakagawa.net/sanpin-nakatsu/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/445/"
       }
     },
     {
@@ -15420,7 +16120,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19491",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/furusatocenterootou.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/446/"
       }
     },
     {
@@ -15442,7 +16143,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19492",
         "businessHours": "9:00～16:00（GW・お盆・紅葉時期は延長営業の場合あり）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/ryuujin.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/447/"
       }
     },
     {
@@ -15464,7 +16166,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19493",
         "businessHours": "土日祝8:30～17:00 休館日 平日",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/inobuutanlandsusami.html",
-        "homepage2": "http://www.aikis.or.jp/~susami-k/midokoro/mitinoeki.html"
+        "homepage2": "http://www.aikis.or.jp/~susami-k/midokoro/mitinoeki.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/448/"
       }
     },
     {
@@ -15486,7 +16189,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19494",
         "businessHours": "9:00～17:00〔施設により異なる〕",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/shiharakaigan.html",
-        "homepage2": "http://www.hikigawa-miraikan.com/"
+        "homepage2": "http://www.hikigawa-miraikan.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/449/"
       }
     },
     {
@@ -15508,7 +16212,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19495",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/kumanokodonakahechi.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/450/"
       }
     },
     {
@@ -15530,7 +16235,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19496",
         "businessHours": "8:30～17:30",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/shiramanosato.html",
-        "homepage2": "https://www.town.aridagawa.lg.jp/top/kanko/chiikibetsu/kanaya/4824.html"
+        "homepage2": "https://www.town.aridagawa.lg.jp/top/kanko/chiikibetsu/kanaya/4824.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/451/"
       }
     },
     {
@@ -15552,7 +16258,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19497",
         "businessHours": "9:00～17:00",
         "homepage": "",
-        "homepage2": "http://www.town.minabe.lg.jp/docs/2013091100182/"
+        "homepage2": "http://www.town.minabe.lg.jp/docs/2013091100182/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/452/"
       }
     },
     {
@@ -15574,7 +16281,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19498",
         "businessHours": "9:00～17:00 12月～3月は16:00まで",
         "homepage": "https://www.facebook.com/binchotanpark/",
-        "homepage2": "https://www.binchotan.jp"
+        "homepage2": "https://www.binchotan.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/453/"
       }
     },
     {
@@ -15596,7 +16304,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19499",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/dorokyokaidoukumanogawa.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/454/"
       }
     },
     {
@@ -15618,7 +16327,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19500",
         "businessHours": "8:30～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/kinokawamanyounosato.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/455/"
       }
     },
     {
@@ -15640,7 +16350,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19501",
         "businessHours": "9:00～18:30",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/okukumanokodouhonguu.html",
-        "homepage2": "http://www.ja-mikumano.or.jp/honguu/"
+        "homepage2": "http://www.ja-mikumano.or.jp/honguu/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/456/"
       }
     },
     {
@@ -15662,7 +16373,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19502",
         "businessHours": "9:00～17:00（観光センター）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/okutoro.html",
-        "homepage2": "https://www.vill.kitayama.wakayama.jp/kanko/onsen/"
+        "homepage2": "https://www.vill.kitayama.wakayama.jp/kanko/onsen/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/457/"
       }
     },
     {
@@ -15677,14 +16389,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19503",
         "name": "道の駅水の郷日高川 龍游",
-        "prefecture": "水の郷日高川　龍游",
+        "prefecture": "水の郷日高川\u3000龍游",
         "city": "",
         "address": "和歌山県田辺市龍神村福井511",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19503",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/mizunosatohidakagawaryuyu.html",
-        "homepage2": "http://www.ryuyu-ryujin.com/"
+        "homepage2": "http://www.ryuyu-ryujin.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/458/"
       }
     },
     {
@@ -15706,7 +16419,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19504",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/myouehurusatokan.html",
-        "homepage2": "https://www.town.aridagawa.lg.jp/top/kanko/chiikibetsu/kanaya/4822.html"
+        "homepage2": "https://www.town.aridagawa.lg.jp/top/kanko/chiikibetsu/kanaya/4822.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/459/"
       }
     },
     {
@@ -15728,7 +16442,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19505",
         "businessHours": "9:00～18:00（10～3月は17:00まで）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/negorosakuranosato.html",
-        "homepage2": "http://www.city.iwade.lg.jp/kanko/michinoeki-negoro.html"
+        "homepage2": "http://www.city.iwade.lg.jp/kanko/michinoeki-negoro.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/687/"
       }
     },
     {
@@ -15750,7 +16465,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19506",
         "businessHours": "8:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/araginosato.html",
-        "homepage2": "https://www.town.aridagawa.lg.jp/top/kanko/chiikibetsu/shimizu/4839.html"
+        "homepage2": "https://www.town.aridagawa.lg.jp/top/kanko/chiikibetsu/shimizu/4839.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/885/"
       }
     },
     {
@@ -15772,7 +16488,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19507",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/ichimaiiwa.html",
-        "homepage2": "http://www.kozagawa.com/kanko/rokumei/top_roku.htm"
+        "homepage2": "http://www.kozagawa.com/kanko/rokumei/top_roku.htm",
+        "michiEkiUrl": "https://www.michieki.jp/eki/896/"
       }
     },
     {
@@ -15794,7 +16511,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19508",
         "businessHours": "8:30～17:15",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/shirasaki.html",
-        "homepage2": "http://www.shirasaki.or.jp/"
+        "homepage2": "http://www.shirasaki.or.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/917/"
       }
     },
     {
@@ -15816,7 +16534,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19509",
         "businessHours": "9:00～21:00（11月～2月は9:00～20:00）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/tsubaki.html",
-        "homepage2": "http://www.tsubaki-hananoyu.com/"
+        "homepage2": "http://www.tsubaki-hananoyu.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/928/"
       }
     },
     {
@@ -15838,7 +16557,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19510",
         "businessHours": "9:00～22:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/nachi.html",
-        "homepage2": "http://www.town.nachikatsuura.wakayama.jp/forms/info/info.aspx?info_id=19241"
+        "homepage2": "http://www.town.nachikatsuura.wakayama.jp/forms/info/info.aspx?info_id=19241",
+        "michiEkiUrl": "https://www.michieki.jp/eki/949/"
       }
     },
     {
@@ -15860,7 +16580,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19511",
         "businessHours": "8:30～17:15",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/950/"
       }
     },
     {
@@ -15882,7 +16603,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19512",
         "businessHours": "9:30～17:00（休日9:00～17:00）※休業期間を除く",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/gomasanskytower.html",
-        "homepage2": "http://gomasanskytower.com/"
+        "homepage2": "http://gomasanskytower.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/986/"
       }
     },
     {
@@ -15904,7 +16626,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19513",
         "businessHours": "9:00～18:00 （営業時間を変更する場合がございます）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/hasiguiiwa.html",
-        "homepage2": "※台風7号接近に伴い、8月14日午後3時〜8月15日終日まで臨時休業とさせていただきます。なお、公衆トイレは利用可能です。"
+        "homepage2": "※台風7号接近に伴い、8月14日午後3時〜8月15日終日まで臨時休業とさせていただきます。なお、公衆トイレは利用可能です。",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1005/"
       }
     },
     {
@@ -15926,7 +16649,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19514",
         "businessHours": "9:00～17:30 ＜休 1/1～3＞",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/kakinosatokudoyama.html",
-        "homepage2": "http://kakinosatokudoyama.com/"
+        "homepage2": "http://kakinosatokudoyama.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1012/"
       }
     },
     {
@@ -15948,7 +16672,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19515",
         "businessHours": "10:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/musikuiiwa.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1027/"
       }
     },
     {
@@ -15970,7 +16695,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19516",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.apionet.or.jp/odaiba/",
-        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/460/"
       }
     },
     {
@@ -15992,7 +16718,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19517",
         "businessHours": "8:30～17:30",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/461/"
       }
     },
     {
@@ -16007,14 +16734,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19518",
         "name": "道の駅ほうじょう 【4/25(金)リニューアルオープン】",
-        "prefecture": "ほうじょう　【4/25(金)リニューアルオープン】",
+        "prefecture": "ほうじょう\u3000【4/25(金)リニューアルオープン】",
         "city": "",
         "address": "鳥取県東伯郡北栄町国坂1525-92",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19518",
         "businessHours": "物販 9：00～17：00 レストラン 10：00～17：00（LO.16：00）",
         "homepage": "http://michinoeki-hojo.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/462/"
       }
     },
     {
@@ -16036,7 +16764,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19519",
         "businessHours": "9:00～18:00〔施設により異なる〕",
         "homepage": "http://www.kotoura-kankou.com/port-akasaki.html",
-        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/463/"
       }
     },
     {
@@ -16058,7 +16787,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19520",
         "businessHours": "9:00～17:15",
         "homepage": "http://www.hatto-fruits.com/",
-        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/464/"
       }
     },
     {
@@ -16080,7 +16810,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19521",
         "businessHours": "9:00~17:00",
         "homepage": "http://www.inubasari.com/",
-        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/465/"
       }
     },
     {
@@ -16102,7 +16833,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19522",
         "businessHours": "9:00～18:00〔施設により異なる〕",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/731/"
       }
     },
     {
@@ -16117,14 +16849,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19523",
         "name": "道の駅神話の里 白うさぎ",
-        "prefecture": "神話の里　白うさぎ",
+        "prefecture": "神話の里\u3000白うさぎ",
         "city": "",
         "address": "鳥取県鳥取市白兎613",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19523",
         "businessHours": "8:00～19:00（12/3～2月末までは8:30～18:00）、レストランは11:00～17:00（土日祝は11:00～22：00）",
         "homepage": "http://sirousagi.com/",
-        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/817/"
       }
     },
     {
@@ -16139,14 +16872,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19524",
         "name": "道の駅清流茶屋 かわはら",
-        "prefecture": "清流茶屋　かわはら",
+        "prefecture": "清流茶屋\u3000かわはら",
         "city": "",
         "address": "鳥取県鳥取市河原町高福837",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19524",
         "businessHours": "9:00～19:00",
         "homepage": "http://yakamihime.com/",
-        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/818/"
       }
     },
     {
@@ -16168,7 +16902,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19525",
         "businessHours": "9:00～18:00〔施設により異なる〕",
         "homepage": "http://michinoeki-wakasa.com/",
-        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/878/"
       }
     },
     {
@@ -16190,7 +16925,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19526",
         "businessHours": "9:00～18:00（12月~2月は9:00～17:00）",
         "homepage": "http://www.daisen.jp/megumi/michinoeki/",
-        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/897/"
       }
     },
     {
@@ -16212,7 +16948,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19527",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.encho-en.com/",
-        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/966/"
       }
     },
     {
@@ -16234,7 +16971,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19528",
         "businessHours": "9:00～16:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "https://www.instagram.com/kakeyanosato/"
+        "homepage2": "https://www.instagram.com/kakeyanosato/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/466/"
       }
     },
     {
@@ -16256,7 +16994,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19529",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.r-yamanami.com/"
+        "homepage2": "http://www.r-yamanami.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/467/"
       }
     },
     {
@@ -16278,7 +17017,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19530",
         "businessHours": "9:00～23:00〔施設より異なる〕",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.yuhipark-hamada.com/"
+        "homepage2": "http://www.yuhipark-hamada.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/468/"
       }
     },
     {
@@ -16300,7 +17040,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19531",
         "businessHours": "9：00～17：30",
         "homepage": "http://www.cgr.mlit.go.jp/douro/Michi-no-Eki/single.html?name=ゆうひパーク三隅",
-        "homepage2": "http://www.all-iwami.com/modules/guide/index.php?action=SpotView&spot_id=97"
+        "homepage2": "http://www.all-iwami.com/modules/guide/index.php?action=SpotView&spot_id=97",
+        "michiEkiUrl": "https://www.michieki.jp/eki/469/"
       }
     },
     {
@@ -16322,7 +17063,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19532",
         "businessHours": "7:00～18:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "https://www.kankou-shimane.com/destination/21610"
+        "homepage2": "https://www.kankou-shimane.com/destination/21610",
+        "michiEkiUrl": "https://www.michieki.jp/eki/470/"
       }
     },
     {
@@ -16344,7 +17086,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19533",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.all-iwami.com/modules/guide/index.php?action=SpotView&spot_id=51"
+        "homepage2": "http://www.all-iwami.com/modules/guide/index.php?action=SpotView&spot_id=51",
+        "michiEkiUrl": "https://www.michieki.jp/eki/471/"
       }
     },
     {
@@ -16366,7 +17109,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19534",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.cgr.mlit.go.jp/chiki/doyroj/Michi-no-Eki/cgi-bin/station_info.pl?param=3207",
-        "homepage2": "https://www.izumo-kankou.gr.jp/171"
+        "homepage2": "https://www.izumo-kankou.gr.jp/171",
+        "michiEkiUrl": "https://www.michieki.jp/eki/472/"
       }
     },
     {
@@ -16388,7 +17132,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19535",
         "businessHours": "9:00～19:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://mitoshin.net/"
+        "homepage2": "http://mitoshin.net/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/473/"
       }
     },
     {
@@ -16410,7 +17155,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19536",
         "businessHours": "4-11月9:00～17:00：12-3月10:00～16:00/毎週水曜定休日・年末年始",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "https://peraichi.com/landing_pages/view/orochi-roop"
+        "homepage2": "https://peraichi.com/landing_pages/view/orochi-roop",
+        "michiEkiUrl": "https://www.michieki.jp/eki/474/"
       }
     },
     {
@@ -16432,7 +17178,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19537",
         "businessHours": "10:00～17:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.yasugi-kankou.com/index.php?view=5292"
+        "homepage2": "http://www.yasugi-kankou.com/index.php?view=5292",
+        "michiEkiUrl": "https://www.michieki.jp/eki/475/"
       }
     },
     {
@@ -16454,7 +17201,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19538",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "https://www.satoyamania.net/spot/2019/03/post-3.html"
+        "homepage2": "https://www.satoyamania.net/spot/2019/03/post-3.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/476/"
       }
     },
     {
@@ -16476,7 +17224,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19539",
         "businessHours": "9:00～18:00、9:00～18:30（7～8月）",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://kakinokimura.shop-pro.jp/"
+        "homepage2": "http://kakinokimura.shop-pro.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/477/"
       }
     },
     {
@@ -16498,7 +17247,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19540",
         "businessHours": "9:00～18:30〔施設により異なる〕",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.kirara-taki.co.jp/index.php"
+        "homepage2": "http://www.kirara-taki.co.jp/index.php",
+        "michiEkiUrl": "https://www.michieki.jp/eki/478/"
       }
     },
     {
@@ -16520,7 +17270,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19541",
         "businessHours": "9:00～19:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://tokusan-hikawa.com/index.cgi"
+        "homepage2": "http://tokusan-hikawa.com/index.cgi",
+        "michiEkiUrl": "https://www.michieki.jp/eki/479/"
       }
     },
     {
@@ -16542,7 +17293,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19542",
         "businessHours": "8:00～19:30〔施設により異なる〕",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.silkway.co.jp/"
+        "homepage2": "http://www.silkway.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/480/"
       }
     },
     {
@@ -16564,7 +17316,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19543",
         "businessHours": "9:00～21:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.s-skss.com/nagisa/"
+        "homepage2": "http://www.s-skss.com/nagisa/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/481/"
       }
     },
     {
@@ -16586,7 +17339,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19544",
         "businessHours": "物販コーナー9：00～21：00 レストラン「あかね雲」11：00～17：00（最終入店 16：15 ラストオーダー 16：30） 温泉「あさぎりの湯」10：00～21：00（最終入店 20：15） テイクアウト10：00～17：00 ※木曜日は、温泉・テイクアウト・レストラン定休日 物販コーナー9：00～18：00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.nagomi-nosato.com/"
+        "homepage2": "http://www.nagomi-nosato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/482/"
       }
     },
     {
@@ -16608,7 +17362,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19545",
         "businessHours": "9:00～18:00〔施設により異なる〕",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "https://www.unnan-kankou.jp/sakuranosato/"
+        "homepage2": "https://www.unnan-kankou.jp/sakuranosato/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/483/"
       }
     },
     {
@@ -16630,7 +17385,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19546",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "https://michinoeki-honjou.jp/"
+        "homepage2": "https://michinoeki-honjou.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/819/"
       }
     },
     {
@@ -16652,7 +17408,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19547",
         "businessHours": "8:00～17:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.all-iwami.com/modules/guide/index.php?action=SpotView&spot_id=248"
+        "homepage2": "http://www.all-iwami.com/modules/guide/index.php?action=SpotView&spot_id=248",
+        "michiEkiUrl": "https://www.michieki.jp/eki/820/"
       }
     },
     {
@@ -16674,7 +17431,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19548",
         "businessHours": "9:00～18:00（1～2月 9:30～17:30）",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://okuizumosyuzou.com/"
+        "homepage2": "http://okuizumosyuzou.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/840/"
       }
     },
     {
@@ -16696,7 +17454,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19549",
         "businessHours": "8:00～19:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/868/"
       }
     },
     {
@@ -16718,7 +17477,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19550",
         "businessHours": "8:30～17:30〔季節により変更あり〕",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.muikaichi.jp/"
+        "homepage2": "http://www.muikaichi.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/932/"
       }
     },
     {
@@ -16740,7 +17500,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19551",
         "businessHours": "9:00～19:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.roadginzan.com/"
+        "homepage2": "http://www.roadginzan.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/930/"
       }
     },
     {
@@ -16762,7 +17523,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19552",
         "businessHours": "9:00～18:30",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.all-iwami.com/modules/guide/index.php?action=SpotView&spot_id=85"
+        "homepage2": "http://www.all-iwami.com/modules/guide/index.php?action=SpotView&spot_id=85",
+        "michiEkiUrl": "https://www.michieki.jp/eki/931/"
       }
     },
     {
@@ -16784,7 +17546,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19553",
         "businessHours": "8:00～17:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "https://www.instagram.com/michinoeki_orochinosato/"
+        "homepage2": "https://www.instagram.com/michinoeki_orochinosato/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/968/"
       }
     },
     {
@@ -16806,7 +17569,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19554",
         "businessHours": "9:00～21:30〔施設により異なる〕",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://michinoeki-araessa.jp"
+        "homepage2": "http://michinoeki-araessa.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/965/"
       }
     },
     {
@@ -16828,7 +17592,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19555",
         "businessHours": "9:00～20:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "https://www.unnan-kankou.jp/tataraba/"
+        "homepage2": "https://www.unnan-kankou.jp/tataraba/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/994/"
       }
     },
     {
@@ -16850,7 +17615,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19556",
         "businessHours": "8:30～17:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "https://www.town.kibichuo.lg.jp/site/kanko/47.html"
+        "homepage2": "https://www.town.kibichuo.lg.jp/site/kanko/47.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/484/"
       }
     },
     {
@@ -16872,7 +17638,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19557",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.meruhen-plaza.jp/"
+        "homepage2": "http://www.meruhen-plaza.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/485/"
       }
     },
     {
@@ -16894,7 +17661,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19558",
         "businessHours": "9:00～19:00（7～9月は20:00まで、1～3月は18:00まで）",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://nishiawakura-kanko.com/kyukei/kyukei02.html"
+        "homepage2": "http://nishiawakura-kanko.com/kyukei/kyukei02.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/486/"
       }
     },
     {
@@ -16916,7 +17684,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19559",
         "businessHours": "〇レストラン 営業時間11:00～15:00、休／火曜日・12月31日・1月1日 〇店舗、売店 営業時間10:00～16:00（日曜祭日～17:00）、休／火曜日・12月31日・1月1日 〇休憩所 利用可能時間10:00～16:00（建物外は24時間利用可能） 〇情報コーナー 利用可能時間10:00～16:00 【定休日】火曜日・12月31日・1月1日",
         "homepage": "https://rs-kumenan.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/487/"
       }
     },
     {
@@ -16938,7 +17707,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19560",
         "businessHours": "8:30～16:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://m-y.jp/"
+        "homepage2": "http://m-y.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/488/"
       }
     },
     {
@@ -16960,7 +17730,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19561",
         "businessHours": "9:00～17:30",
         "homepage": "https://ipponmatsu-blueline.com",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/489/"
       }
     },
     {
@@ -16982,7 +17753,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19562",
         "businessHours": "9:00～17:00",
         "homepage": "https://kuroisan-blueline.com",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/490/"
       }
     },
     {
@@ -17004,7 +17776,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19563",
         "businessHours": "※新型コロナウイルス感染症のため営業時間短縮中 売店9:00～17:00 レストラン11：00～14:00 こめ工房9:00～16:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "https://koigakubo.jp"
+        "homepage2": "https://koigakubo.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/491/"
       }
     },
     {
@@ -17026,7 +17799,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19564",
         "businessHours": "8:30～17:00",
         "homepage": "なし",
-        "homepage2": "なし"
+        "homepage2": "なし",
+        "michiEkiUrl": "https://www.michieki.jp/eki/492/"
       }
     },
     {
@@ -17048,7 +17822,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19565",
         "businessHours": "8:30～17:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://ww52.tiki.ne.jp/~kazenoie/"
+        "homepage2": "http://ww52.tiki.ne.jp/~kazenoie/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/493/"
       }
     },
     {
@@ -17070,7 +17845,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19566",
         "businessHours": "8:00～18:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.sai2.jp/"
+        "homepage2": "http://www.sai2.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/494/"
       }
     },
     {
@@ -17092,7 +17868,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19567",
         "businessHours": "9:00～17:00 定休日：水曜日（売店・お食事処）",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "https://michinoeki-okutsuonsen.amebaownd.com/"
+        "homepage2": "https://michinoeki-okutsuonsen.amebaownd.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/495/"
       }
     },
     {
@@ -17114,7 +17891,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19568",
         "businessHours": "9:30～18:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.michinoeki-kumenosato.com/"
+        "homepage2": "http://www.michinoeki-kumenosato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/496/"
       }
     },
     {
@@ -17136,7 +17914,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19569",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.daigonosato.jp/"
+        "homepage2": "http://www.daigonosato.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/689/"
       }
     },
     {
@@ -17158,7 +17937,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19570",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.town.kibichuo.lg.jp/site/kanko/48.html"
+        "homepage2": "http://www.town.kibichuo.lg.jp/site/kanko/48.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/732/"
       }
     },
     {
@@ -17180,7 +17960,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19571",
         "businessHours": "9:00～18:00＜休 年始＞",
         "homepage": "http://www.k-bay.jp/",
-        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/967/"
       }
     },
     {
@@ -17202,7 +17983,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19572",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "https://shobara-info.com/290"
+        "homepage2": "https://shobara-info.com/290",
+        "michiEkiUrl": "https://www.michieki.jp/eki/497/"
       }
     },
     {
@@ -17224,7 +18006,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19573",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "https://youyousalontojo.sakura.ne.jp/"
+        "homepage2": "https://youyousalontojo.sakura.ne.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/498/"
       }
     },
     {
@@ -17246,7 +18029,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19574",
         "businessHours": "7:30～18:00 ＜休 年末年始＞",
         "homepage": "https://182station.jp/",
-        "homepage2": "http://www.jkougen.jp/kankou/pages/sisetu-p/182sute.html"
+        "homepage2": "http://www.jkougen.jp/kankou/pages/sisetu-p/182sute.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/499/"
       }
     },
     {
@@ -17268,7 +18052,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19575",
         "businessHours": "9:00～19:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.donguri.gr.jp"
+        "homepage2": "http://www.donguri.gr.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/500/"
       }
     },
     {
@@ -17290,7 +18075,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19576",
         "businessHours": "平日（火曜日を除く）、年末年始（12/29～1/3開館日）/10:00～17:00 土日祝/10：00～18：00 【令和5年12月より】",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "https://cs-akiota.or.jp/station/"
+        "homepage2": "https://cs-akiota.or.jp/station/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/501/"
       }
     },
     {
@@ -17312,7 +18098,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19577",
         "businessHours": "9:00～17:00（平日） 9:00～18:00（土日祝）",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "https://www.facebook.com/4GANSU"
+        "homepage2": "https://www.facebook.com/4GANSU",
+        "michiEkiUrl": "https://www.michieki.jp/eki/502/"
       }
     },
     {
@@ -17334,7 +18121,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19578",
         "businessHours": "8:00～16:00 （産直市は土・日・祝日の7:30～） ＜休 1/1～3＞",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/503/"
       }
     },
     {
@@ -17356,7 +18144,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19579",
         "businessHours": "10:00～19:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.sparakan.com/"
+        "homepage2": "http://www.sparakan.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/504/"
       }
     },
     {
@@ -17378,7 +18167,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19580",
         "businessHours": "9:00～16:30〔施設により異なる〕＜休 年末年始＞",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.yumefuno.com/"
+        "homepage2": "http://www.yumefuno.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/505/"
       }
     },
     {
@@ -17400,7 +18190,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19581",
         "businessHours": "8:30～16:30（施設により異なります）",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.kimitaonsen.com/"
+        "homepage2": "http://www.kimitaonsen.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/506/"
       }
     },
     {
@@ -17422,7 +18213,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19582",
         "businessHours": "9:00～19:00＜休 第4火曜日（祝日は営業）、12/31～1/1＞",
         "homepage": "http://www.crossroad-mitsugi.com/",
-        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/507/"
       }
     },
     {
@@ -17444,7 +18236,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19583",
         "businessHours": "8:30～18:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.kitahiro-ichiba.com/"
+        "homepage2": "http://www.kitahiro-ichiba.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/733/"
       }
     },
     {
@@ -17466,7 +18259,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19584",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.kitanosekijyuku.jp/"
+        "homepage2": "http://www.kitanosekijyuku.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/734/"
       }
     },
     {
@@ -17488,7 +18282,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19585",
         "businessHours": "9:00～18:00 レストラン：定休日水曜日（祝日の際は営業 翌日定休日）",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "https://kohannosato.com/"
+        "homepage2": "https://kohannosato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/879/"
       }
     },
     {
@@ -17510,7 +18305,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19586",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://michinoekitakehara.com/"
+        "homepage2": "http://michinoekitakehara.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/951/"
       }
     },
     {
@@ -17532,7 +18328,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19587",
         "businessHours": "9:00～18:00 ＜休 第3火曜日＞",
         "homepage": "https://www.shinmeinosato.jp/",
-        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/976/"
       }
     },
     {
@@ -17554,7 +18351,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19588",
         "businessHours": "9:00～18:00〔施設により異なる〕 ＜休 第2・第4水曜日＞",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.takanoyama.jp/"
+        "homepage2": "http://www.takanoyama.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/995/"
       }
     },
     {
@@ -17576,7 +18374,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19589",
         "businessHours": "8:00~18:00",
         "homepage": "http://seranan.jp/road-side-station/",
-        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html"
+        "homepage2": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1039/"
       }
     },
     {
@@ -17598,7 +18397,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19590",
         "businessHours": "10:00～18:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.abucreation.com/"
+        "homepage2": "http://www.abucreation.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/508/"
       }
     },
     {
@@ -17620,7 +18420,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19591",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.hagioukan.com/"
+        "homepage2": "http://www.hagioukan.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/509/"
       }
     },
     {
@@ -17642,7 +18443,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19592",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/510/"
       }
     },
     {
@@ -17664,7 +18466,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19593",
         "businessHours": "9:00～18:00",
         "homepage": "https://michinoeki-aio.com/",
-        "homepage2": "https://www.instagram.com/michinoekiaio_official/"
+        "homepage2": "https://www.instagram.com/michinoekiaio_official/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/511/"
       }
     },
     {
@@ -17686,7 +18489,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19594",
         "businessHours": "8:30～19:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.hagishi.com/search/detail.php?d=1100207"
+        "homepage2": "http://www.hagishi.com/search/detail.php?d=1100207",
+        "michiEkiUrl": "https://www.michieki.jp/eki/512/"
       }
     },
     {
@@ -17708,7 +18512,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19595",
         "businessHours": "10:00～18:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.sazan-seto.com/"
+        "homepage2": "http://www.sazan-seto.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/513/"
       }
     },
     {
@@ -17730,7 +18535,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19596",
         "businessHours": "8:30～17:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://michinoekikikugawa.co.jp/"
+        "homepage2": "http://michinoekikikugawa.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/514/"
       }
     },
     {
@@ -17752,7 +18558,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19597",
         "businessHours": "8:30～17:00（売店）、 11:00～14:00（レストラン）",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/515/"
       }
     },
     {
@@ -17774,7 +18581,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19598",
         "businessHours": "9:30～18:00",
         "homepage": "",
-        "homepage2": "https://www.kunkunodaichi.com"
+        "homepage2": "https://www.kunkunodaichi.com",
+        "michiEkiUrl": "https://www.michieki.jp/eki/516/"
       }
     },
     {
@@ -17796,7 +18604,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19599",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://pureline-nishiki.com/"
+        "homepage2": "http://pureline-nishiki.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/517/"
       }
     },
     {
@@ -17818,7 +18627,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19600",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.michinoeki-ofuku.jp/"
+        "homepage2": "http://www.michinoeki-ofuku.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/518/"
       }
     },
     {
@@ -17840,7 +18650,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19601",
         "businessHours": "8:00～18:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://michinoekimitou.blog.fc2.com/"
+        "homepage2": "http://michinoekimitou.blog.fc2.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/519/"
       }
     },
     {
@@ -17862,7 +18673,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19602",
         "businessHours": "8:30～17:00 ＜休 毎週水曜日、12/31～1/3＞",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.nihonosato.com/"
+        "homepage2": "http://www.nihonosato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/520/"
       }
     },
     {
@@ -17884,7 +18696,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19603",
         "businessHours": "月~金9:30～18:00、土・日・祝9:00～18:00〔冬期11～2月は17:00閉館〕 ＜休 1/1・不定期に月１日程度(HPをご確認ください)＞",
         "homepage": "https://seamart.jp/seamart/index.html",
-        "homepage2": "https://www.facebook.com/hagiseasaidmarket/"
+        "homepage2": "https://www.facebook.com/hagiseasaidmarket/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/521/"
       }
     },
     {
@@ -17906,7 +18719,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19604",
         "businessHours": "9:00～21:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "https://www.ganjojuonsen.com/"
+        "homepage2": "https://www.ganjojuonsen.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/735/"
       }
     },
     {
@@ -17928,7 +18742,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19605",
         "businessHours": "8:00～17:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/736/"
       }
     },
     {
@@ -17950,7 +18765,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19606",
         "businessHours": "8:30～21:00〔施設により異なる〕＜休 毎月第4火曜日＞",
         "homepage": "https://toyota-hotaru.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/774/"
       }
     },
     {
@@ -17965,14 +18781,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19607",
         "name": "道の駅きらら あじす",
-        "prefecture": "きらら　あじす",
+        "prefecture": "きらら\u3000あじす",
         "city": "",
         "address": "山口県山口市阿知須10509-88",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19607",
         "businessHours": "8:30～18:00〔施設により異なる〕",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://kiraraajisu.jp/"
+        "homepage2": "http://kiraraajisu.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/775/"
       }
     },
     {
@@ -17994,7 +18811,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19608",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "https://www.akeishi.net"
+        "homepage2": "https://www.akeishi.net",
+        "michiEkiUrl": "https://www.michieki.jp/eki/933/"
       }
     },
     {
@@ -18009,14 +18827,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19609",
         "name": "道の駅北浦街道 豊北",
-        "prefecture": "北浦街道　豊北",
+        "prefecture": "北浦街道\u3000豊北",
         "city": "",
         "address": "山口県下関市豊北町大字神田上314-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19609",
         "businessHours": "8:30～18:00（7～8月は19:00まで、12～2月は17:00まで）",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://michinoeki-houhoku.jp/"
+        "homepage2": "http://michinoeki-houhoku.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/977/"
       }
     },
     {
@@ -18038,7 +18857,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19610",
         "businessHours": "8:00～20:00",
         "homepage": "https://www.cgr.mlit.go.jp/douro/Michi-no-Eki/index.html",
-        "homepage2": "http://www.solene.jp/"
+        "homepage2": "http://www.solene.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1013/"
       }
     },
     {
@@ -18060,7 +18880,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19611",
         "businessHours": "9:00～18:00＜休 1/1～3＞",
         "homepage": "http://www.kaminoseki-kaikyo.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1028/"
       }
     },
     {
@@ -18082,7 +18903,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19612",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.tsurugi-eetoko.com/yuyukan",
-        "homepage2": "https://www.tsurugi-eetoko.com/yuyukan"
+        "homepage2": "https://www.tsurugi-eetoko.com/yuyukan",
+        "michiEkiUrl": "https://www.michieki.jp/eki/522/"
       }
     },
     {
@@ -18104,7 +18926,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19613",
         "businessHours": "7:10～17:40（12～2月は8:00～17:20）",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to02_washinosato.html",
-        "homepage2": "https://www.sk-michinoeki.jp/michinoeki/315"
+        "homepage2": "https://www.sk-michinoeki.jp/michinoeki/315",
+        "michiEkiUrl": "https://www.michieki.jp/eki/523/"
       }
     },
     {
@@ -18126,7 +18949,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19614",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to03_shishikui.html",
-        "homepage2": "https://www.kaiyo-kankou.jp/spots/spots-1321/"
+        "homepage2": "https://www.kaiyo-kankou.jp/spots/spots-1321/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/524/"
       }
     },
     {
@@ -18148,7 +18972,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19615",
         "businessHours": "10:00～17:30",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to04_donari.html",
-        "homepage2": "http://donari.net/"
+        "homepage2": "http://donari.net/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/525/"
       }
     },
     {
@@ -18170,7 +18995,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19616",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to05_nishiiya.html",
-        "homepage2": "https://miyoshi-tourism.jp/travel/road-side-sation-nishi-iya/"
+        "homepage2": "https://miyoshi-tourism.jp/travel/road-side-sation-nishi-iya/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/526/"
       }
     },
     {
@@ -18192,7 +19018,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19617",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to06_wajiki.html",
-        "homepage2": "https://www.sk-michinoeki.jp/michinoeki/323"
+        "homepage2": "https://www.sk-michinoeki.jp/michinoeki/323",
+        "michiEkiUrl": "https://www.michieki.jp/eki/527/"
       }
     },
     {
@@ -18214,7 +19041,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19618",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to07_nakagawa.html",
-        "homepage2": "https://nakaroadstation.wixsite.com/nakagawa"
+        "homepage2": "https://nakaroadstation.wixsite.com/nakagawa",
+        "michiEkiUrl": "https://www.michieki.jp/eki/528/"
       }
     },
     {
@@ -18236,7 +19064,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19619",
         "businessHours": "10:00～22:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to08_momijigawa.html",
-        "homepage2": "http://momijigawa-spa.com/"
+        "homepage2": "http://momijigawa-spa.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/529/"
       }
     },
     {
@@ -18258,7 +19087,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19620",
         "businessHours": "3～10月 9:00～18:00 11月～2月 9:00～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to09_kamiyama.html",
-        "homepage2": "http://kamiyama-spa.com/michi/"
+        "homepage2": "http://kamiyama-spa.com/michi/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/530/"
       }
     },
     {
@@ -18280,7 +19110,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19621",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to10_udatsu.html",
-        "homepage2": "https://www.sk-michinoeki.jp/michinoeki/331"
+        "homepage2": "https://www.sk-michinoeki.jp/michinoeki/331",
+        "michiEkiUrl": "https://www.michieki.jp/eki/690/"
       }
     },
     {
@@ -18302,7 +19133,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19622",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to11_mino.html",
-        "homepage2": "https://www.sk-michinoeki.jp/michinoeki/333"
+        "homepage2": "https://www.sk-michinoeki.jp/michinoeki/333",
+        "michiEkiUrl": "https://www.michieki.jp/eki/691/"
       }
     },
     {
@@ -18324,7 +19156,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19623",
         "businessHours": "【産直館】 9:30～17:30 定休日：毎週水曜 【物産館】9:00～17：30 無休",
         "homepage": "",
-        "homepage2": "https://sites.google.com/view/michinoeki-hiwasa/"
+        "homepage2": "https://sites.google.com/view/michinoeki-hiwasa/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/776/"
       }
     },
     {
@@ -18346,7 +19179,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19624",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to13_daiku.html",
-        "homepage2": "http://www.city.naruto.tokushima.jp/contents/michino_eki/"
+        "homepage2": "http://www.city.naruto.tokushima.jp/contents/michino_eki/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/821/"
       }
     },
     {
@@ -18368,7 +19202,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19625",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to14_ooboke.html",
-        "homepage2": "https://yamashiro-info.jp/"
+        "homepage2": "https://yamashiro-info.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/886/"
       }
     },
     {
@@ -18390,7 +19225,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19626",
         "businessHours": "9:00～18:00 第四月曜日定休日（祝日の場合は営業、翌火曜日が定休日）",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/to15_katsuura.html",
-        "homepage2": "http://hinanosato.wp.xdomain.jp/"
+        "homepage2": "http://hinanosato.wp.xdomain.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/969/"
       }
     },
     {
@@ -18412,7 +19248,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19627",
         "businessHours": "9:00～16:30",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka01_setooohashi.html",
-        "homepage2": "http://www.setoohhashi.com/"
+        "homepage2": "http://www.setoohhashi.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/531/"
       }
     },
     {
@@ -18434,7 +19271,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19628",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka02_tsuda.html",
-        "homepage2": "http://www.sanuki-sa.jp/station/"
+        "homepage2": "http://www.sanuki-sa.jp/station/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/532/"
       }
     },
     {
@@ -18456,7 +19294,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19629",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka03_kotohiki.html",
-        "homepage2": "http://kanonji-kankou.jp/buy/08/002.html"
+        "homepage2": "http://kanonji-kankou.jp/buy/08/002.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/533/"
       }
     },
     {
@@ -18478,7 +19317,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19630",
         "businessHours": "8:30～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka04_mino.html",
-        "homepage2": "http://www.park-mino.info/"
+        "homepage2": "http://www.park-mino.info/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/534/"
       }
     },
     {
@@ -18500,7 +19340,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19631",
         "businessHours": "8:30～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka05_olive.html",
-        "homepage2": "http://www.olive-pk.jp/"
+        "homepage2": "http://www.olive-pk.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/535/"
       }
     },
     {
@@ -18522,7 +19363,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19632",
         "businessHours": "8:30～17:00 ※軽食は10：00～15：00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka06_furusato.html",
-        "homepage2": "http://www.shodoshima.jp/"
+        "homepage2": "http://www.shodoshima.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/536/"
       }
     },
     {
@@ -18544,7 +19386,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19633",
         "businessHours": "8:00～17:30",
         "homepage": "http://www.shioiri-onsen.jp/",
-        "homepage2": "https://www.skr.mlit.go.jp/road/rstation/eki/ka07_mominoki.html"
+        "homepage2": "https://www.skr.mlit.go.jp/road/rstation/eki/ka07_mominoki.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/537/"
       }
     },
     {
@@ -18566,7 +19409,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19634",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka08_miroku.html",
-        "homepage2": "http://www.city.sanuki.kagawa.jp/sightseeing/shopping/michi_miroku"
+        "homepage2": "http://www.city.sanuki.kagawa.jp/sightseeing/shopping/michi_miroku",
+        "michiEkiUrl": "https://www.michieki.jp/eki/538/"
       }
     },
     {
@@ -18588,7 +19432,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19635",
         "businessHours": "8:00～18:00",
         "homepage": "http://www.skr.mlit.go.jp/road/rstation/eki/ka09_shionoe.html",
-        "homepage2": "https://www.sk-michinoeki.jp/michinoeki/359"
+        "homepage2": "https://www.sk-michinoeki.jp/michinoeki/359",
+        "michiEkiUrl": "https://www.michieki.jp/eki/539/"
       }
     },
     {
@@ -18610,7 +19455,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19636",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka10_takinomiya.html",
-        "homepage2": "https://michinoeki-takinomiya.com/"
+        "homepage2": "https://michinoeki-takinomiya.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/540/"
       }
     },
     {
@@ -18632,7 +19478,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19637",
         "businessHours": "9:00～20:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka11_kotonami.html",
-        "homepage2": "http://e-mikado.jp/"
+        "homepage2": "http://e-mikado.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/541/"
       }
     },
     {
@@ -18647,14 +19494,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19638",
         "name": "道の駅恋人の聖地 うたづ臨海公園",
-        "prefecture": "恋人の聖地　うたづ臨海公園",
+        "prefecture": "恋人の聖地\u3000うたづ臨海公園",
         "city": "",
         "address": "香川県綾歌郡宇多津町浜一番丁4",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19638",
         "businessHours": "9:00～21:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka12_utadu.html",
-        "homepage2": "http://www.uplaza-utazu.jp/umihotaru/"
+        "homepage2": "http://www.uplaza-utazu.jp/umihotaru/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/542/"
       }
     },
     {
@@ -18676,7 +19524,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19639",
         "businessHours": "9:00～17:00",
         "homepage": "http://michitoyo-oh.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/543/"
       }
     },
     {
@@ -18698,7 +19547,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19640",
         "businessHours": "8:00～18:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka14_saita.html",
-        "homepage2": "http://www.takaradanosato.co.jp/hp/"
+        "homepage2": "http://www.takaradanosato.co.jp/hp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/544/"
       }
     },
     {
@@ -18720,7 +19570,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19641",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.town.tonosho.kagawa.jp/gyosei/soshiki/shogai/4/505.html",
-        "homepage2": "https://www.skr.mlit.go.jp/road/rstation/eki/ka15_oosaka.html"
+        "homepage2": "https://www.skr.mlit.go.jp/road/rstation/eki/ka15_oosaka.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/545/"
       }
     },
     {
@@ -18742,7 +19593,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19642",
         "businessHours": "8:00～16:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ka16_nagao.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/546/"
       }
     },
     {
@@ -18764,7 +19616,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19643",
         "businessHours": "10:00～23:00",
         "homepage": "http://www.skr.mlit.go.jp/road/rstation/eki/ka17_kounan.html",
-        "homepage2": "http://www.souyu.co.jp/kounan/"
+        "homepage2": "http://www.souyu.co.jp/kounan/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/547/"
       }
     },
     {
@@ -18786,7 +19639,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19644",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.genpei-mure.jp",
-        "homepage2": "http://www.skr.mlit.go.jp/road/rstation/eki/ka18_mure.html"
+        "homepage2": "http://www.skr.mlit.go.jp/road/rstation/eki/ka18_mure.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/855/"
       }
     },
     {
@@ -18808,7 +19662,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19645",
         "businessHours": "9:30～17:00",
         "homepage": "https://sadamisakihanto-museum.jp/",
-        "homepage2": "https://www.town.ikata.ehime.jp/site/sadamisakihakubutukan/"
+        "homepage2": "https://www.town.ikata.ehime.jp/site/sadamisakihakubutukan/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/548/"
       }
     },
     {
@@ -18830,7 +19685,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19646",
         "businessHours": "9:00～22:00（施設により異なる）",
         "homepage": "https://besshi.com/",
-        "homepage2": "https://www.skr.mlit.go.jp/road/rstation/eki/eh02_besshi.html"
+        "homepage2": "https://www.skr.mlit.go.jp/road/rstation/eki/eh02_besshi.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/549/"
       }
     },
     {
@@ -18852,7 +19708,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19647",
         "businessHours": "8:30～19:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh03_hiyoshi.html",
-        "homepage2": "http://www.hiyoshiyumesanchi.com/"
+        "homepage2": "http://www.hiyoshiyumesanchi.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/550/"
       }
     },
     {
@@ -18874,7 +19731,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19648",
         "businessHours": "8:30～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh04_hirota.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/551/"
       }
     },
     {
@@ -18896,7 +19754,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19649",
         "businessHours": "9:00～18:00（レストラン11:00～18:00） 定休日：第3火曜日（7・8月は無休）",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh05_futami.html",
-        "homepage2": "https://www.futamiseaside.com/"
+        "homepage2": "https://www.futamiseaside.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/552/"
       }
     },
     {
@@ -18918,7 +19777,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19650",
         "businessHours": "直売所8：00～17：00（施設・季節により変動あり）",
         "homepage": "https://www.karari.jp/",
-        "homepage2": "https://www.skr.mlit.go.jp/road/rstation/eki/eh06_uchiko.html"
+        "homepage2": "https://www.skr.mlit.go.jp/road/rstation/eki/eh06_uchiko.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/553/"
       }
     },
     {
@@ -18940,7 +19800,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19651",
         "businessHours": "9:00～17:30",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh07_ikata.html",
-        "homepage2": "http://www.kirarakan.com/"
+        "homepage2": "http://www.kirarakan.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/554/"
       }
     },
     {
@@ -18962,7 +19823,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19652",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh08_shirokawa.html",
-        "homepage2": "https://www.shirokawa.jp/kinahaiya/"
+        "homepage2": "https://www.shirokawa.jp/kinahaiya/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/555/"
       }
     },
     {
@@ -18984,7 +19846,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19653",
         "businessHours": "8:00～17:30",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh09_misyou.html",
-        "homepage2": "http://m-mic.jp/index.html"
+        "homepage2": "http://m-mic.jp/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/556/"
       }
     },
     {
@@ -19006,7 +19869,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19654",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh10_imabari.html",
-        "homepage2": "https://www.yunoura.com/"
+        "homepage2": "https://www.yunoura.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/557/"
       }
     },
     {
@@ -19028,7 +19892,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19655",
         "businessHours": "10:00～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh11_matsuno.html",
-        "homepage2": "http://morinokuni.or.jp/"
+        "homepage2": "http://morinokuni.or.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/558/"
       }
     },
     {
@@ -19050,7 +19915,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19656",
         "businessHours": "9:00～17:30(時短営業中)",
         "homepage": "https://www.sankaku-boushi.com/",
-        "homepage2": "https://www.skr.mlit.go.jp/road/rstation/eki/eh12_hiromi.html"
+        "homepage2": "https://www.skr.mlit.go.jp/road/rstation/eki/eh12_hiromi.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/559/"
       }
     },
     {
@@ -19072,7 +19938,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19657",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh13_hakata.html",
-        "homepage2": "https://imabari-shimanami.jp/hakata/"
+        "homepage2": "https://imabari-shimanami.jp/hakata/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/560/"
       }
     },
     {
@@ -19094,7 +19961,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19658",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh14_tatara.html",
-        "homepage2": "https://imabari-shimanami.jp/tatara/"
+        "homepage2": "https://imabari-shimanami.jp/tatara/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/561/"
       }
     },
     {
@@ -19116,7 +19984,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19659",
         "businessHours": "8:30～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh15_mishima.html",
-        "homepage2": "http://www.mishima-eki.jp"
+        "homepage2": "http://www.mishima-eki.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/562/"
       }
     },
     {
@@ -19138,7 +20007,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19660",
         "businessHours": "9:00～19:00",
         "homepage": "https://www.city.saijo.ehime.jp/soshiki/kanko/oashisu.html",
-        "homepage2": "https://store.montbell.jp/common/system/information/disp.php?c=5&id=316"
+        "homepage2": "https://store.montbell.jp/common/system/information/disp.php?c=5&id=316",
+        "michiEkiUrl": "https://www.michieki.jp/eki/563/"
       }
     },
     {
@@ -19160,7 +20030,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19661",
         "businessHours": "8:00～18:00",
         "homepage": "https://michinoeki-mikawa.com",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/264/"
       }
     },
     {
@@ -19182,7 +20053,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19662",
         "businessHours": "8:00～18:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh18_hijikawa.html",
-        "homepage2": "https://seiryuunosato-hijikawa.co.jp/"
+        "homepage2": "https://seiryuunosato-hijikawa.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/565/"
       }
     },
     {
@@ -19204,7 +20076,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19663",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh19_yoshiumi.html",
-        "homepage2": "https://imabari-shimanami.jp/ikiiki/"
+        "homepage2": "https://imabari-shimanami.jp/ikiiki/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/692/"
       }
     },
     {
@@ -19226,7 +20099,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19664",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh20_fuwari.html",
-        "homepage2": "http://www.fuwari.or.jp/"
+        "homepage2": "http://www.fuwari.or.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/693/"
       }
     },
     {
@@ -19248,7 +20122,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19665",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh21_mima.html",
-        "homepage2": "http://www.michinoekimima.jp/"
+        "homepage2": "http://www.michinoekimima.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/737/"
       }
     },
     {
@@ -19270,7 +20145,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19666",
         "businessHours": "8:00〜18:00（4月〜9月）、8:00〜17:30（10月〜3月）",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh22_oda.html",
-        "homepage2": "http://www.odamachi.com/"
+        "homepage2": "http://www.odamachi.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/822/"
       }
     },
     {
@@ -19285,14 +20161,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19667",
         "name": "道の駅うわじま きさいや広場",
-        "prefecture": "うわじま　きさいや広場",
+        "prefecture": "うわじま\u3000きさいや広場",
         "city": "",
         "address": "愛媛県宇和島市弁天町1-318-16",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19667",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh23_uwajima.html",
-        "homepage2": "http://www.kisaiyahiroba.com/"
+        "homepage2": "http://www.kisaiyahiroba.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/898/"
       }
     },
     {
@@ -19314,7 +20191,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19668",
         "businessHours": "10:00～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh24_kirinomori.html",
-        "homepage2": "http://www.kirinomori.co.jp/"
+        "homepage2": "http://www.kirinomori.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/952/"
       }
     },
     {
@@ -19336,7 +20214,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19669",
         "businessHours": "9:00～21:30",
         "homepage": "https://www.minatto.net/",
-        "homepage2": "https://www.skr.mlit.go.jp/road/rstation/eki/eh25_yawatahama.html"
+        "homepage2": "https://www.skr.mlit.go.jp/road/rstation/eki/eh25_yawatahama.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1006/"
       }
     },
     {
@@ -19358,7 +20237,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19670",
         "businessHours": "【特産品販売所】8:00～18:00（17:00 冬時間） 【温泉施設】10:00～22：00 【レストラン】11：00～21：00",
         "homepage": "https://tsushima-atsuta-onsen.com/",
-        "homepage2": "https://tsushima-atsuta-onsen.com/"
+        "homepage2": "https://tsushima-atsuta-onsen.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1029/"
       }
     },
     {
@@ -19380,7 +20260,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19671",
         "businessHours": "8:00～18:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh27_donburikan.html",
-        "homepage2": "https://www.donburikan.com/"
+        "homepage2": "https://www.donburikan.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1030/"
       }
     },
     {
@@ -19402,7 +20283,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19672",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/eh28_sansan.html",
-        "homepage2": "http://www.kumakogen-sansan.com/"
+        "homepage2": "http://www.kumakogen-sansan.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1031/"
       }
     },
     {
@@ -19424,7 +20306,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19673",
         "businessHours": "8:00～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko01_oosugi.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/566/"
       }
     },
     {
@@ -19446,7 +20329,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19674",
         "businessHours": "08:30～17:30",
         "homepage": "https://sunnysidepark.net/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/567/"
       }
     },
     {
@@ -19468,7 +20352,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19675",
         "businessHours": "産直市 8:30～18:00 お土産売場 9：30～17：30",
         "homepage": "https://www.facebook.com/furepa.otsuki/",
-        "homepage2": "https://www.furepa.jp/"
+        "homepage2": "https://www.furepa.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/568/"
       }
     },
     {
@@ -19490,7 +20375,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19676",
         "businessHours": "8:30～17:00",
         "homepage": "https://www.google.co.jp/maps/place/%E9%81%93%E3%81%AE%E9%A7%85+%E5%9B%9B%E4%B8%87%E5%8D%81%E5%A4%A7%E6%AD%A3/@33.1969167,132.9838962,13z/data=!4m5!3m4!1s0x354f0e4f85ac352d:0xbf32dad9bc8fdbb9!8m2!3d33.1822182!4d132.9716401?hl=ja&authuser=0",
-        "homepage2": "https://www.town.shimanto.lg.jp/sisetuinfo/kankoshisetu.php"
+        "homepage2": "https://www.town.shimanto.lg.jp/sisetuinfo/kankoshisetu.php",
+        "michiEkiUrl": "https://www.michieki.jp/eki/569/"
       }
     },
     {
@@ -19512,7 +20398,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19677",
         "businessHours": "8:30～17:30",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko05_yusuhara.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/570/"
       }
     },
     {
@@ -19534,7 +20421,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19678",
         "businessHours": "8:00～18:00（定休日は施設により異なる）",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko06_nankoku.html",
-        "homepage2": "http://furari.com/"
+        "homepage2": "http://furari.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/571/"
       }
     },
     {
@@ -19556,7 +20444,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19679",
         "businessHours": "7:00～18:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko07_birafu.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/572/"
       }
     },
     {
@@ -19578,7 +20467,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19680",
         "businessHours": "9:00～17:30",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko08_fusegasaka.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/573/"
       }
     },
     {
@@ -19600,7 +20490,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19681",
         "businessHours": "9:00～17:00（レストラン10:00～20:00）",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko09_muroto.html",
-        "homepage2": "http://www.kiramesse-muroto.jp/"
+        "homepage2": "http://www.kiramesse-muroto.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/574/"
       }
     },
     {
@@ -19622,7 +20513,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19682",
         "businessHours": "9:00～21:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko10_tosawashi.html",
-        "homepage2": "http://www.qraud-kochi.jp/"
+        "homepage2": "http://www.qraud-kochi.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/575/"
       }
     },
     {
@@ -19644,7 +20536,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19683",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko11_sameura.html",
-        "homepage2": "http://www.tosa-sameura.com/"
+        "homepage2": "http://www.tosa-sameura.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/576/"
       }
     },
     {
@@ -19666,7 +20559,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19684",
         "businessHours": "9:00～17:00（ランチタイム11:00～14:00）",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko12_ooyama.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/577/"
       }
     },
     {
@@ -19688,7 +20582,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19685",
         "businessHours": "1F 9:00～17:30、2Fレストラン 11:00～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko13_susaki.html",
-        "homepage2": "http://michinoeki-susaki.com/"
+        "homepage2": "http://michinoeki-susaki.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/578/"
       }
     },
     {
@@ -19710,7 +20605,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19686",
         "businessHours": "8:00～18:00",
         "homepage": "http://www.aguri-kubokawa.co.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/579/"
       }
     },
     {
@@ -19732,7 +20628,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19687",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko15_konoka.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/580/"
       }
     },
     {
@@ -19754,7 +20651,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19688",
         "businessHours": "8:30～17:30",
         "homepage": "https://mejikanosato.com/",
-        "homepage2": "https://www.skr.mlit.go.jp/road/rstation/eki/ko16_tosashimizu.html"
+        "homepage2": "https://www.skr.mlit.go.jp/road/rstation/eki/ko16_tosashimizu.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/581/"
       }
     },
     {
@@ -19776,7 +20674,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19689",
         "businessHours": "8:00～21:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko17_yasu.html",
-        "homepage2": "http://yasea.jp/"
+        "homepage2": "http://yasea.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/582/"
       }
     },
     {
@@ -19798,7 +20697,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19690",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko18_musasabi.html",
-        "homepage2": "http://www.633bi.com/"
+        "homepage2": "http://www.633bi.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/694/"
       }
     },
     {
@@ -19820,7 +20720,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19691",
         "businessHours": "7:30～17:30",
         "homepage": "https://www.skr.mlit.go.jp/road/rstation/eki/ko19_tano.html",
-        "homepage2": "http://www.tanoekiya.com/index.php"
+        "homepage2": "http://www.tanoekiya.com/index.php",
+        "michiEkiUrl": "https://www.michieki.jp/eki/777/"
       }
     },
     {
@@ -19842,7 +20743,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19692",
         "businessHours": "7:00～18:00",
         "homepage": "http://hinataya.biz/",
-        "homepage2": "https://www.instagram.com/bios619/"
+        "homepage2": "https://www.instagram.com/bios619/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/823/"
       }
     },
     {
@@ -19864,7 +20766,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19693",
         "businessHours": "8:30~17:00",
         "homepage": "https://toowashimanto.jp",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/856/"
       }
     },
     {
@@ -19886,7 +20789,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19694",
         "businessHours": "フードコート 9:00～15:00 (土日祝日は18:00まで) 直販所 8:00～18:00 テイクアウト 9:00～18:00",
         "homepage": "https://www.instagram.com/nabura_tosasaga/?hl=ja",
-        "homepage2": "http://nabura-tosasaga.com/"
+        "homepage2": "http://nabura-tosasaga.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1014/"
       }
     },
     {
@@ -19908,7 +20812,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19695",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/harazuru/harazuru.html",
-        "homepage2": "http://www.fs-basaro.jp/"
+        "homepage2": "http://www.fs-basaro.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/583/"
       }
     },
     {
@@ -19930,7 +20835,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19696",
         "businessHours": "8:00～19:00（11～3月は8:00～18:00）",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/buzen/buzen.html",
-        "homepage2": "http://www.okoshikake.jp/"
+        "homepage2": "http://www.okoshikake.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/584/"
       }
     },
     {
@@ -19952,7 +20858,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19697",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/koishiwara/koishiwara.html",
-        "homepage2": "http://www1.vill.toho.fukuoka.jp/info/prev.asp?fol_id=3840"
+        "homepage2": "http://www1.vill.toho.fukuoka.jp/info/prev.asp?fol_id=3840",
+        "michiEkiUrl": "https://www.michieki.jp/eki/585/"
       }
     },
     {
@@ -19974,7 +20881,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19698",
         "businessHours": "8:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/shinyoshitomi/shinyoshitomi.html",
-        "homepage2": "http://www.isekimae.com/"
+        "homepage2": "http://www.isekimae.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/586/"
       }
     },
     {
@@ -19996,7 +20904,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19699",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ukiha/ukiha.html",
-        "homepage2": "http://www.michinoeki-ukiha.com/"
+        "homepage2": "http://www.michinoeki-ukiha.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/587/"
       }
     },
     {
@@ -20018,7 +20927,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19700",
         "businessHours": "10:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/omuta/omuta.html",
-        "homepage2": "http://hanapluskan.com"
+        "homepage2": "http://hanapluskan.com",
+        "michiEkiUrl": "https://www.michieki.jp/eki/588/"
       }
     },
     {
@@ -20040,7 +20950,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19701",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/tachibana/tachibana.html",
-        "homepage2": "http://www.mitinoeki-tachibana.com/"
+        "homepage2": "http://www.mitinoeki-tachibana.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/778/"
       }
     },
     {
@@ -20062,7 +20973,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19702",
         "businessHours": "9:00～18:30",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/usui/usui.html",
-        "homepage2": "http://michinoeki-usui.jp/"
+        "homepage2": "http://michinoeki-usui.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/824/"
       }
     },
     {
@@ -20084,7 +20996,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19703",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/hikosan/hikosan.html",
-        "homepage2": "http://www.kanyuusya.com/"
+        "homepage2": "http://www.kanyuusya.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/825/"
       }
     },
     {
@@ -20106,7 +21019,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19704",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/munakata/munakata.html",
-        "homepage2": "http://www.michinoekimunakata.co.jp/"
+        "homepage2": "http://www.michinoekimunakata.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/874/"
       }
     },
     {
@@ -20128,7 +21042,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19705",
         "businessHours": "09:00～18:00",
         "homepage": "http://www.michinoeki-kurume.com/",
-        "homepage2": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kurume/kurume.html"
+        "homepage2": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kurume/kurume.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/880/"
       }
     },
     {
@@ -20150,7 +21065,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19706",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kawara/kawara.html",
-        "homepage2": "http://michinoeki-kawara.jp/"
+        "homepage2": "http://michinoeki-kawara.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/918/"
       }
     },
     {
@@ -20172,7 +21088,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19707",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ooki/ooki.html",
-        "homepage2": "https://www.michinoekioki.com/"
+        "homepage2": "https://www.michinoekioki.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/934/"
       }
     },
     {
@@ -20194,7 +21111,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19708",
         "businessHours": "9:00～18:30",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ootousakurakaidou/ootousakurakaidou.html",
-        "homepage2": "http://www.town.oto.fukuoka.jp/info/prev.asp?fol_id=1745"
+        "homepage2": "http://www.town.oto.fukuoka.jp/info/prev.asp?fol_id=1745",
+        "michiEkiUrl": "https://www.michieki.jp/eki/953/"
       }
     },
     {
@@ -20216,7 +21134,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19709",
         "businessHours": "9:00～18:00 （不定休）",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/miyama/miyama.html",
-        "homepage2": "http://www.michinoekimiyama.com/"
+        "homepage2": "http://www.michinoekimiyama.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/970/"
       }
     },
     {
@@ -20238,7 +21157,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19710",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/itoda/itoda.html",
-        "homepage2": "http://www.michinoekiitoda.jp/"
+        "homepage2": "http://www.michinoekiitoda.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/971/"
       }
     },
     {
@@ -20260,7 +21180,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19711",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kashima/kashima.html",
-        "homepage2": "http://michinoekikashima.jp/main/1.html"
+        "homepage2": "http://michinoekikashima.jp/main/1.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/589/"
       }
     },
     {
@@ -20282,7 +21203,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19712",
         "businessHours": "8:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kyuragi/kyuragi.html",
-        "homepage2": "http://www.shokokai.or.jp/41/4120210109/index.htm"
+        "homepage2": "http://www.shokokai.or.jp/41/4120210109/index.htm",
+        "michiEkiUrl": "https://www.michieki.jp/eki/590/"
       }
     },
     {
@@ -20304,7 +21226,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19713",
         "businessHours": "8:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/imari/imari.html",
-        "homepage2": "http://www.ihn.jp/~jaimari1/"
+        "homepage2": "http://www.ihn.jp/~jaimari1/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/591/"
       }
     },
     {
@@ -20326,7 +21249,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19714",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/momoyama/momoyama.html",
-        "homepage2": "https://momo-ten.com/"
+        "homepage2": "https://momo-ten.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/592/"
       }
     },
     {
@@ -20348,7 +21272,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19715",
         "businessHours": "8:30～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/yamauchi/yamauchi.html",
-        "homepage2": "http://www.michinoeki-yamauchi.com/top.html"
+        "homepage2": "http://www.michinoeki-yamauchi.com/top.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/593/"
       }
     },
     {
@@ -20370,7 +21295,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19716",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/yamato/yamato.html",
-        "homepage2": "http://www.soyokazekan.com/"
+        "homepage2": "http://www.soyokazekan.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/695/"
       }
     },
     {
@@ -20392,7 +21318,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19717",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/yoshino/yoshino.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/857/"
       }
     },
     {
@@ -20414,7 +21341,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19718",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/tara/tara.html",
-        "homepage2": "https://www.tarafukukan.com/frmDefault.aspx"
+        "homepage2": "https://www.tarafukukan.com/frmDefault.aspx",
+        "michiEkiUrl": "https://www.michieki.jp/eki/858/"
       }
     },
     {
@@ -20436,7 +21364,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19719",
         "businessHours": "8:30～17:30（8月は8:30～18:00）",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ikitsuki/ikitsuki.html",
-        "homepage2": "http://www.ikitsuki.net/kankou/baiten/index.html"
+        "homepage2": "http://www.ikitsuki.net/kankou/baiten/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/594/"
       }
     },
     {
@@ -20458,7 +21387,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19720",
         "businessHours": "9:00～17:00",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": ""
       }
     },
     {
@@ -20480,7 +21410,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19721",
         "businessHours": "9:00～19:00 ＜休 12/31～1/2＞",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/tabira/tabira.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/596/"
       }
     },
     {
@@ -20502,7 +21433,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19722",
         "businessHours": "08:00～17:30（施設により異なる）＜休1/1～1/3、12/31＞ 物産 08:00～17:30 （野菜、弁当、お茶、くじら、土産品） 食堂 11:00～14:00 （田舎うどん、くじらだご汁、くじら釜めし） 屋台 09:00～16:00 （茶ちゃ焼、ソフトクリーム、水出しそのぎ茶）",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/sonogi/sonogi.html",
-        "homepage2": "http://www.sonogi.jp/kankou.html#michinoeki"
+        "homepage2": "http://www.sonogi.jp/kankou.html#michinoeki",
+        "michiEkiUrl": "https://www.michieki.jp/eki/597/"
       }
     },
     {
@@ -20524,7 +21456,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19723",
         "businessHours": "9:00～18:00（4月～9月）、9:00～17:00（10月～3月） ＜休 12/31～1/1＞",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/saikai/saikai.html",
-        "homepage2": "http://www.saikaicity.jp/mikan/"
+        "homepage2": "http://www.saikaicity.jp/mikan/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/741/"
       }
     },
     {
@@ -20546,7 +21479,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19724",
         "businessHours": "9:00～18:00（施設により異なる）",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/sotome/sotome.html",
-        "homepage2": "http://www.yuhigaoka-sotome.com/"
+        "homepage2": "http://www.yuhigaoka-sotome.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/826/"
       }
     },
     {
@@ -20568,7 +21502,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19725",
         "businessHours": "8:30～19:00（施設により異なる）",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/matuura/matuura.html",
-        "homepage2": "http://umihuru.com/"
+        "homepage2": "http://umihuru.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/827/"
       }
     },
     {
@@ -20590,7 +21525,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19726",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kentoushi/kentoushi.html",
-        "homepage2": "https://kentoushi-furusatokan.com/"
+        "homepage2": "https://kentoushi-furusatokan.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/841/"
       }
     },
     {
@@ -20612,7 +21548,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19727",
         "businessHours": "8:30～18:30（10月～2月は8:30～18:00）",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/takarajima/takarajima.html",
-        "homepage2": "http://www.takarajima-rs.com/"
+        "homepage2": "http://www.takarajima-rs.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/900/"
       }
     },
     {
@@ -20634,7 +21571,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19728",
         "businessHours": "8:30～17:00",
         "homepage": "https://sites.google.com/view/yustation-oguni",
-        "homepage2": "https://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/oguni/oguni.html"
+        "homepage2": "https://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/oguni/oguni.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/598/"
       }
     },
     {
@@ -20656,7 +21594,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19729",
         "businessHours": "8:30～18:30",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/namino/namino.html",
-        "homepage2": "http://www.aso-kagura.com/"
+        "homepage2": "http://www.aso-kagura.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/599/"
       }
     },
     {
@@ -20678,7 +21617,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19730",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kyokushi/kyokushi.html",
-        "homepage2": "https://www.kyokushi.com/"
+        "homepage2": "https://www.kyokushi.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/600/"
       }
     },
     {
@@ -20700,7 +21640,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19731",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ozu/ozu.html",
-        "homepage2": "http://blog.livedoor.jp/michiekiozu/"
+        "homepage2": "http://blog.livedoor.jp/michiekiozu/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/601/"
       }
     },
     {
@@ -20722,7 +21663,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19732",
         "businessHours": "10:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/sakamoto/sakamoto.html",
-        "homepage2": "https://www.sakamoto-kureon.com"
+        "homepage2": "https://www.sakamoto-kureon.com",
+        "michiEkiUrl": "https://www.michieki.jp/eki/602/"
       }
     },
     {
@@ -20744,7 +21686,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19733",
         "businessHours": "物産館 9:00～17:00 レストラン 11:00〜15:30",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/shiranui/shiranui.html",
-        "homepage2": "http://agripark-toyono.net/publics/index/22/"
+        "homepage2": "http://agripark-toyono.net/publics/index/22/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/603/"
       }
     },
     {
@@ -20766,7 +21709,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19734",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ariake/ariake.html",
-        "homepage2": "http://www.rippleland.com/"
+        "homepage2": "http://www.rippleland.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/604/"
       }
     },
     {
@@ -20788,7 +21732,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19735",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kahoku/kahoku.html",
-        "homepage2": "http://www.ogurigou.co.jp/"
+        "homepage2": "http://www.ogurigou.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/605/"
       }
     },
     {
@@ -20810,7 +21755,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19736",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/shichijyo/shichijyo.html",
-        "homepage2": "http://www.melondome.co.jp/"
+        "homepage2": "http://www.melondome.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/606/"
       }
     },
     {
@@ -20832,7 +21778,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19737",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/shisui/shisui.html",
-        "homepage2": "http://t-sumi.xsrv.jp/youjou/"
+        "homepage2": "http://t-sumi.xsrv.jp/youjou/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/607/"
       }
     },
     {
@@ -20854,7 +21801,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19738",
         "businessHours": "9:00～20:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kikusui/kikusui.html",
-        "homepage2": "http://kikusuiromankan.jp/"
+        "homepage2": "http://kikusuiromankan.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/608/"
       }
     },
     {
@@ -20876,7 +21824,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19739",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/seiwa/seiwa.html",
-        "homepage2": "https://seiwabunraku.com/"
+        "homepage2": "https://seiwabunraku.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/609/"
       }
     },
     {
@@ -20898,7 +21847,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19740",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/tujyunkyo/tujyunkyo.html",
-        "homepage2": "https://ja-jp.facebook.com/%E9%81%93%E3%81%AE%E9%A7%85-%E9%80%9A%E6%BD%A4%E6%A9%8B-1426356767633904"
+        "homepage2": "https://ja-jp.facebook.com/%E9%81%93%E3%81%AE%E9%A7%85-%E9%80%9A%E6%BD%A4%E6%A9%8B-1426356767633904",
+        "michiEkiUrl": "https://www.michieki.jp/eki/610/"
       }
     },
     {
@@ -20920,7 +21870,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19741",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ryuhoku/ryuhoku.html",
-        "homepage2": "http://www.michinoeki-ryuhoku.com/"
+        "homepage2": "http://www.michinoeki-ryuhoku.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/696/"
       }
     },
     {
@@ -20942,7 +21893,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19742",
         "businessHours": "9:00～18:00",
         "homepage": "https://kurandmarket.com",
-        "homepage2": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/nishiki/nishiki.html"
+        "homepage2": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/nishiki/nishiki.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/697/"
       }
     },
     {
@@ -20964,7 +21916,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19743",
         "businessHours": "9:00～19:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/tanoura/tanoura.html",
-        "homepage2": "http://www.otachimisaki.com/station/top.html"
+        "homepage2": "http://www.otachimisaki.com/station/top.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/738/"
       }
     },
     {
@@ -20979,14 +21932,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19744",
         "name": "道の駅子守唄の里 五木",
-        "prefecture": "子守唄の里　五木",
+        "prefecture": "子守唄の里\u3000五木",
         "city": "",
         "address": "熊本県球磨郡五木村甲2672-54",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19744",
         "businessHours": "8:30～17:30",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/itsuki/itsuki.html",
-        "homepage2": "http://www.itsuki-bussan.net/"
+        "homepage2": "http://www.itsuki-bussan.net/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/739/"
       }
     },
     {
@@ -21008,7 +21962,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19745",
         "businessHours": "11月～2月 9：00～17：00 3月～10月 9：00～18：00 ※12月31日 9：00～15：00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/uto/uto.html",
-        "homepage2": "https://utomichieki.com/"
+        "homepage2": "https://utomichieki.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/828/"
       }
     },
     {
@@ -21030,7 +21985,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19746",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.aso-denku.jp/",
-        "homepage2": "https://store.shopping.yahoo.co.jp/mitinoekiaso/"
+        "homepage2": "https://store.shopping.yahoo.co.jp/mitinoekiaso/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/881/"
       }
     },
     {
@@ -21052,7 +22008,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19747",
         "businessHours": "9:00～17:00",
         "homepage": "https://minamata.co.jp/index.html",
-        "homepage2": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/minamata/minamata.html"
+        "homepage2": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/minamata/minamata.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/899/"
       }
     },
     {
@@ -21074,7 +22031,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19748",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/uki/uki.html",
-        "homepage2": "http://ukisaikan.jp/"
+        "homepage2": "http://ukisaikan.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/935/"
       }
     },
     {
@@ -21096,7 +22054,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19749",
         "businessHours": "9:00～17:00(定休日:水曜日)",
         "homepage": "",
-        "homepage2": "https://soyokaze-park.jp/"
+        "homepage2": "https://soyokaze-park.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/987/"
       }
     },
     {
@@ -21118,7 +22077,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19750",
         "businessHours": "9:00～20:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/oonoonsen/oonoonsen.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/988/"
       }
     },
     {
@@ -21140,7 +22100,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19751",
         "businessHours": "〇直売所9:00～18:00 〇温泉10:00～21:00（最終受付20:30） 〇レストラン 11:30～15:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/misatosamatanoyu/misatosamatanoyu.html",
-        "homepage2": "http://samatanoyu-misato.jp/"
+        "homepage2": "http://samatanoyu-misato.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1015/"
       }
     },
     {
@@ -21162,7 +22123,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19752",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/harajiri/harajiri.html",
-        "homepage2": "http://www.ogatakanko.com/eki/index.html"
+        "homepage2": "http://www.ogatakanko.com/eki/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/611/"
       }
     },
     {
@@ -21184,7 +22146,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19753",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ume/ume.html",
-        "homepage2": "http://saiki-kankou.com/ume/2014/03/1381"
+        "homepage2": "http://saiki-kankou.com/ume/2014/03/1381",
+        "michiEkiUrl": "https://www.michieki.jp/eki/612/"
       }
     },
     {
@@ -21206,7 +22169,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19754",
         "businessHours": "8:30～17:30",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/takeda/takeda.html",
-        "homepage2": "http://www.taketa-wakaba.jp/shop/shop1.html"
+        "homepage2": "http://www.taketa-wakaba.jp/shop/shop1.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/613/"
       }
     },
     {
@@ -21228,7 +22192,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19755",
         "businessHours": "9:00～18:00",
         "homepage": "https://rs-seki.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/614/"
       }
     },
     {
@@ -21250,7 +22215,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19756",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/yamakuni/yamakuni.html",
-        "homepage2": "http://www.city-nakatsu.jp/kankodocs/2013102300051/"
+        "homepage2": "http://www.city-nakatsu.jp/kankodocs/2013102300051/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/615/"
       }
     },
     {
@@ -21272,7 +22238,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19757",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/yaba/yaba.html",
-        "homepage2": "http://www.city-nakatsu.jp/kankodocs/2013102300099/"
+        "homepage2": "http://www.city-nakatsu.jp/kankodocs/2013102300099/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/616/"
       }
     },
     {
@@ -21294,7 +22261,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19758",
         "businessHours": "道の駅9:00～17:30 テイクアウト10:00～16:00 レストラン喫茶・軽食3月～5月10:30～17:00 6月～9月10:00～17:00（12月30日、1月2日 9:00～16:00）",
         "homepage": "https://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/asaji/asaji.html",
-        "homepage2": "https://michinoeki-asaji.com/"
+        "homepage2": "https://michinoeki-asaji.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/617/"
       }
     },
     {
@@ -21316,7 +22284,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19759",
         "businessHours": "8:00～17:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/innai/innai.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/618/"
       }
     },
     {
@@ -21338,7 +22307,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19760",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kamitsue/kamitsue.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/619/"
       }
     },
     {
@@ -21360,7 +22330,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19761",
         "businessHours": "物産館 9:00～17:30 やよいの湯 10:00～22:00(受付終了21:20) 番匠おさかな館 10:00～17:00(受付終了16:45)",
         "homepage": "http://michinoeki-yayoi.com/",
-        "homepage2": "https://www.facebook.com/michi.yayoi/"
+        "homepage2": "https://www.facebook.com/michi.yayoi/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/620/"
       }
     },
     {
@@ -21382,7 +22353,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19762",
         "businessHours": "夏季 9:00～17:00 ／ 冬季 10:00～16:30 ※休館日あり 詳しくは公式ホームページ「 http://taiokinzan.jp/」参照",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/taio/taio.html",
-        "homepage2": "http://taiokinzan.jp/"
+        "homepage2": "http://taiokinzan.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/621/"
       }
     },
     {
@@ -21404,7 +22376,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19763",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kiyokawa/kiyokawa.html",
-        "homepage2": "http://www.mitinoeki-kiyokawa.com/"
+        "homepage2": "http://www.mitinoeki-kiyokawa.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/622/"
       }
     },
     {
@@ -21426,7 +22399,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19764",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/yuhuin/yuhuin.html",
-        "homepage2": "http://michinoekiyufuin.com/"
+        "homepage2": "http://michinoekiyufuin.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/740/"
       }
     },
     {
@@ -21448,7 +22422,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19765",
         "businessHours": "9:00～18:00 (3月～10月） 9:00～17:00（11月～2月）",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/mie/mie.html",
-        "homepage2": "http://michinoekimie.com/"
+        "homepage2": "http://michinoekimie.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/779/"
       }
     },
     {
@@ -21470,7 +22445,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19766",
         "businessHours": "8:30～17:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kunisaki/kunisaki.html",
-        "homepage2": "https://www.city.kunisaki.oita.jp/soshiki/kanko/mitinoeki.html"
+        "homepage2": "https://www.city.kunisaki.oita.jp/soshiki/kanko/mitinoeki.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/780/"
       }
     },
     {
@@ -21492,7 +22468,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19767",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/oyama/oyama.html",
-        "homepage2": "http://www.mizubenosato-oyama.com/"
+        "homepage2": "http://www.mizubenosato-oyama.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/781/"
       }
     },
     {
@@ -21514,7 +22491,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19768",
         "businessHours": "直売所(9:00～18:00) レストラン(11：00〜14：30) テイクアウトコーナーのソフトクリーム(11：00〜16：00)",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kamae/kamae.html",
-        "homepage2": "https://buri.fish"
+        "homepage2": "https://buri.fish",
+        "michiEkiUrl": "https://www.michieki.jp/eki/829/"
       }
     },
     {
@@ -21536,7 +22514,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19769",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/nagayu/nagayu.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/842/"
       }
     },
     {
@@ -21558,7 +22537,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19770",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/oono/oono.html",
-        "homepage2": "http://sato-no-tabi.jp/sights/rs_ono/"
+        "homepage2": "http://sato-no-tabi.jp/sights/rs_ono/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/97/"
       }
     },
     {
@@ -21580,7 +22560,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19771",
         "businessHours": "9:00～18:00（施設により異なる）",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kunimi/kunimi.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/844/"
       }
     },
     {
@@ -21595,14 +22576,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19772",
         "name": "道の駅童話の里 くす",
-        "prefecture": "童話の里　くす",
+        "prefecture": "童話の里\u3000くす",
         "city": "",
         "address": "大分県玖珠郡玖珠町大字帆足2121",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19772",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kusu/kusu.html",
-        "homepage2": "http://www.kusu-michinoeki.jp/info-jion.html"
+        "homepage2": "http://www.kusu-michinoeki.jp/info-jion.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/901/"
       }
     },
     {
@@ -21624,7 +22606,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19773",
         "businessHours": "8:30～17:30",
         "homepage": "https://www.facebook.com/michinoekiSUGOU/",
-        "homepage2": "http://www.taketa-wakaba.jp/"
+        "homepage2": "http://www.taketa-wakaba.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/936/"
       }
     },
     {
@@ -21646,7 +22629,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19774",
         "businessHours": "9:00～19:00（施設により異なる）",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/nakatu/nakatu.html",
-        "homepage2": "http://michinoeki-nakatsu.com/"
+        "homepage2": "http://michinoeki-nakatsu.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1032/"
       }
     },
     {
@@ -21668,7 +22652,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19775",
         "businessHours": "9:00～18:00",
         "homepage": "https://vitaminkan.miyazaki.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/623/"
       }
     },
     {
@@ -21690,7 +22675,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19776",
         "businessHours": "8:30～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kitagawa/kitagawa.html",
-        "homepage2": "http://www.kitagawa-hayuma.jp/"
+        "homepage2": "http://www.kitagawa-hayuma.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/624/"
       }
     },
     {
@@ -21712,7 +22698,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19777",
         "businessHours": "物産販売所8:30～18:00 レストラン10:00～16:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/seiunbashi/seiunbashi.html",
-        "homepage2": "https://hinokagecho.com/seiunbashi.html"
+        "homepage2": "https://hinokagecho.com/seiunbashi.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/625/"
       }
     },
     {
@@ -21734,7 +22721,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19778",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/yamanokuchi/yamanokuchi.html",
-        "homepage2": "http://www.btvm.ne.jp/~yama-269/"
+        "homepage2": "http://www.btvm.ne.jp/~yama-269/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/626/"
       }
     },
     {
@@ -21756,7 +22744,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19779",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kitaura/kitaura.html",
-        "homepage2": "http://michinoeki-kitaura.com/cms/"
+        "homepage2": "http://michinoeki-kitaura.com/cms/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/627/"
       }
     },
     {
@@ -21778,7 +22767,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19780",
         "businessHours": "2025年3月23日物販施設閉店しました",
         "homepage": "https://www.pref.miyazaki.lg.jp/dorohozen/kurashi/shakaikiban/mitiek-tano.html",
-        "homepage2": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/tano/tano.html"
+        "homepage2": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/tano/tano.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/628/"
       }
     },
     {
@@ -21800,7 +22790,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19781",
         "businessHours": "8:30～17:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/sakatani/sakatani.html",
-        "homepage2": "http://michinoeki-sakatani.com/"
+        "homepage2": "http://michinoeki-sakatani.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/629/"
       }
     },
     {
@@ -21822,7 +22813,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19782",
         "businessHours": "8:30～18:00",
         "homepage": "",
-        "homepage2": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/togo/togo.html"
+        "homepage2": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/togo/togo.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/630/"
       }
     },
     {
@@ -21844,7 +22836,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19783",
         "businessHours": "9:00～19:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/miyakonojyo/miyakonojyo.html",
-        "homepage2": "https://coconiqll.co.jp"
+        "homepage2": "https://coconiqll.co.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/631/"
       }
     },
     {
@@ -21866,7 +22859,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19784",
         "businessHours": "【産直・物販店】8:00～18:00 【こばやし 味彩】11:00〜15:00（LO14:30） 【こばやしのじりの湯】12:00〜20:30（最終受付20:00）",
         "homepage": "https://yuparu-nojiri.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/632/"
       }
     },
     {
@@ -21888,7 +22882,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19785",
         "businessHours": "8:30～17:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/nango/nango.html",
-        "homepage2": "http://www.michinoeki-nango.jp/nango"
+        "homepage2": "http://www.michinoeki-nango.jp/nango",
+        "michiEkiUrl": "https://www.michieki.jp/eki/83/"
       }
     },
     {
@@ -21910,7 +22905,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19786",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/hyuga/hyuga.html",
-        "homepage2": "https://www.hyugacity.jp/display.php?cont=140317091117"
+        "homepage2": "https://www.hyugacity.jp/display.php?cont=140317091117",
+        "michiEkiUrl": "https://www.michieki.jp/eki/698/"
       }
     },
     {
@@ -21932,7 +22928,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19787",
         "businessHours": "9:30～17:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/takachiho/takachiho.html",
-        "homepage2": "http://www.town-takachiho.jp/industry/agriculture/post_34.html"
+        "homepage2": "http://www.town-takachiho.jp/industry/agriculture/post_34.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/699/"
       }
     },
     {
@@ -21954,7 +22951,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19788",
         "businessHours": "8:30～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/phoenix/phoenix.html",
-        "homepage2": "http://michinoekiphoenix.jp/"
+        "homepage2": "http://michinoekiphoenix.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/782/"
       }
     },
     {
@@ -21976,7 +22974,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19789",
         "businessHours": "10:00～17:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/tuno/tuno.html",
-        "homepage2": "http://michinoeki-tsuno.com/"
+        "homepage2": "http://michinoeki-tsuno.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/996/"
       }
     },
     {
@@ -21998,7 +22997,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19790",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ebino/ebino.html",
-        "homepage2": "http://michinoeki-ebino.com/"
+        "homepage2": "http://michinoeki-ebino.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/997/"
       }
     },
     {
@@ -22020,7 +23020,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19791",
         "businessHours": "8:00～18:30（施設により異なる）",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kitakatayochimiroya/kitakatayocchimiroya.html",
-        "homepage2": "http://www.yottimiroya.com/"
+        "homepage2": "http://www.yottimiroya.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1040/"
       }
     },
     {
@@ -22042,7 +23043,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19792",
         "businessHours": "10:00～21:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kiire/kiire.html",
-        "homepage2": "http://www.michinoeki-kiire.jp/"
+        "homepage2": "http://www.michinoeki-kiire.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/634/"
       }
     },
     {
@@ -22064,7 +23066,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19793",
         "businessHours": "9:00～17:15",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kirishima/kirishima.html",
-        "homepage2": "http://www.shinwanosato.jp/"
+        "homepage2": "http://www.shinwanosato.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/635/"
       }
     },
     {
@@ -22086,7 +23089,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19794",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/hiwaki/hiwaki.html",
-        "homepage2": "http://www.kagoshima-kankou.com/guide/10426/"
+        "homepage2": "http://www.kagoshima-kankou.com/guide/10426/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/636/"
       }
     },
     {
@@ -22108,7 +23112,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19795",
         "businessHours": "9:00～18:00",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/637/"
       }
     },
     {
@@ -22130,7 +23135,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19796",
         "businessHours": "9:30～18:00 レストラン11：00～14：00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/akune/akune.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/638/"
       }
     },
     {
@@ -22152,7 +23158,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19797",
         "businessHours": "8:30～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/nagashima/nagashima.html",
-        "homepage2": "http://www.potatohouse.jp/access.html"
+        "homepage2": "http://www.potatohouse.jp/access.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/639/"
       }
     },
     {
@@ -22174,7 +23181,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19798",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/osaki/osaki.html",
-        "homepage2": "http://www.asuparu.jp/"
+        "homepage2": "http://www.asuparu.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/640/"
       }
     },
     {
@@ -22196,7 +23204,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19799",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/nejime/nejime.html",
-        "homepage2": "http://373osumi-skk.com/kankou/shop-mitinoeki/"
+        "homepage2": "http://373osumi-skk.com/kankou/shop-mitinoeki/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/641/"
       }
     },
     {
@@ -22218,7 +23227,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19800",
         "businessHours": "8:00～19:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kawanabe/kawanabe.html",
-        "homepage2": "http://www.yasuraginosato.com/"
+        "homepage2": "http://www.yasuraginosato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/642/"
       }
     },
     {
@@ -22240,7 +23250,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19801",
         "businessHours": "9:30～18:00",
         "homepage": "http://www.mangrovepark.com/",
-        "homepage2": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/amami/amami.html"
+        "homepage2": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/amami/amami.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/643/"
       }
     },
     {
@@ -22262,7 +23273,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19802",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/sakurajima/sakurajima.html",
-        "homepage2": "http://www.megumikan.jp/"
+        "homepage2": "http://www.megumikan.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/644/"
       }
     },
     {
@@ -22284,7 +23296,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19803",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kinpo/kinpo.html",
-        "homepage2": "http://www5.synapse.ne.jp/konohanakan/"
+        "homepage2": "http://www5.synapse.ne.jp/konohanakan/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/645/"
       }
     },
     {
@@ -22306,7 +23319,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19804",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/osumi/osumi.html",
-        "homepage2": "http://www.nodoka-1.jp"
+        "homepage2": "http://www.nodoka-1.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/700/"
       }
     },
     {
@@ -22328,7 +23342,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19805",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/takarabe/takarabe.html",
-        "homepage2": "http://mecena-sueyoshi.com/michi-takarabe/"
+        "homepage2": "http://mecena-sueyoshi.com/michi-takarabe/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/783/"
       }
     },
     {
@@ -22350,7 +23365,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19806",
         "businessHours": "9:00～17:30",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ibusuki/ibusuki.html",
-        "homepage2": "https://michinoeki-ibusuki.jp/"
+        "homepage2": "https://michinoeki-ibusuki.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/784/"
       }
     },
     {
@@ -22372,7 +23388,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19807",
         "businessHours": "物産 9：00～19：00 レストラン11：00～14：30LO 温泉13：00～19：30最終入泉",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/tarumizu/tarumizu.html",
-        "homepage2": "https://mitinoeki-tarumizu.com/"
+        "homepage2": "https://mitinoeki-tarumizu.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/785/"
       }
     },
     {
@@ -22394,7 +23411,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19808",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/sueyosi/sueyosi.html",
-        "homepage2": "http://mecena-sueyoshi.com/michi-sueyoshi/"
+        "homepage2": "http://mecena-sueyoshi.com/michi-sueyoshi/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/830/"
       }
     },
     {
@@ -22416,7 +23434,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19809",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kuronoseto/kuronoseto.html",
-        "homepage2": "http://dandanichiba.jp/0003.html"
+        "homepage2": "http://dandanichiba.jp/0003.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/937/"
       }
     },
     {
@@ -22438,7 +23457,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19810",
         "businessHours": "8:30～17:30",
         "homepage": "http://io-kaido.com/",
-        "homepage2": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/iokaidou/iokaidou.html"
+        "homepage2": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/iokaidou/iokaidou.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/978/"
       }
     },
     {
@@ -22460,7 +23480,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19811",
         "businessHours": "8:30～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi//michi_no_eki/kobetu/kinnkounisikinosato/kinnpounisikinosato.html",
-        "homepage2": "http://kinko-nishikinosato.com/"
+        "homepage2": "http://kinko-nishikinosato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1016/"
       }
     },
     {
@@ -22482,7 +23503,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19812",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/nokataarasano/nokataarasano.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1041/"
       }
     },
     {
@@ -22504,7 +23526,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19813",
         "businessHours": "8:30～19:00",
         "homepage": "https://www.yanbaru-b.co.jp/",
-        "homepage2": "https://www.instagram.com/kyodastagram/"
+        "homepage2": "https://www.instagram.com/kyodastagram/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/646/"
       }
     },
     {
@@ -22519,14 +23542,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19814",
         "name": "道の駅おおぎみ やんばるの森ビジターセンター",
-        "prefecture": "おおぎみ　やんばるの森ビジターセンター",
+        "prefecture": "おおぎみ\u3000やんばるの森ビジターセンター",
         "city": "",
         "address": "沖縄県国頭郡大宜味村字津波95",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19814",
         "businessHours": "【直売所】10:00～19:00 【レストラン】11:00～19:00（Lo.18:30） 【パーラー】10:00～17:00 【観光案内所】9:00～17:00",
         "homepage": "http://www.dc.ogb.go.jp/road/Michi-no-Eki/oogimi.htm",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/647/"
       }
     },
     {
@@ -22548,7 +23572,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19815",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.dc.ogb.go.jp/road/Michi-no-Eki/kunigami.htm",
-        "homepage2": "http://www.yuiyui-k.jp/"
+        "homepage2": "http://www.yuiyui-k.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/648/"
       }
     },
     {
@@ -22570,7 +23595,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19816",
         "businessHours": "8:30～20:00",
         "homepage": "http://www.dc.ogb.go.jp/road/Michi-no-Eki/kadena.htm",
-        "homepage2": "http://michinoekikadena.com/"
+        "homepage2": "http://michinoekikadena.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/742/"
       }
     },
     {
@@ -22592,7 +23618,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19817",
         "businessHours": "9:00 ～18:00",
         "homepage": "http://www.dc.ogb.go.jp/road/Michi-no-Eki/kinabansyo.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/845/"
       }
     },
     {
@@ -22614,7 +23641,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19818",
         "businessHours": "9:00 ～18:00",
         "homepage": "http://www.dc.ogb.go.jp/road/Michi-no-Eki/toyosaki.htm",
-        "homepage2": "http://www.city.tomigusuku.okinawa.jp/tourism_culture/140/548"
+        "homepage2": "http://www.city.tomigusuku.okinawa.jp/tourism_culture/140/548",
+        "michiEkiUrl": "https://www.michieki.jp/eki/888/"
       }
     },
     {
@@ -22636,7 +23664,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19819",
         "businessHours": "9:00 ～18:00",
         "homepage": "http://www.dc.ogb.go.jp/road/Michi-no-Eki/itoman.htm",
-        "homepage2": "http://www.yukura.jp/"
+        "homepage2": "http://www.yukura.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/903/"
       }
     },
     {
@@ -22658,7 +23687,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19820",
         "businessHours": "9:30～18:00（特産品直売所） 9:15～18:00（観光情報センター）10:00〜（各テナント）",
         "homepage": "http://www.dc.ogb.go.jp/road/Michi-no-Eki/ginoza.htm",
-        "homepage2": "https://mitinoeki-ginoza.com/"
+        "homepage2": "https://mitinoeki-ginoza.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1042/"
       }
     },
     {
@@ -22680,7 +23710,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19821",
         "businessHours": "8:30～18:00(5～10月)、9:00～17:00(11～4月)",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/3143/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1043/"
       }
     },
     {
@@ -22702,7 +23733,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19822",
         "businessHours": "9:00～18:00〔施設により異なる〕＜休 12/31～1/1＞",
         "homepage": "http://www.city.kamaishi.iwate.jp/tanoshimu/bussan/sanchoku/detail/1193345_3298.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1044/"
       }
     },
     {
@@ -22724,7 +23756,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19823",
         "businessHours": "9:00～18:00〔施設により異なる〕※現在短縮営業～17:00 （冬季は9:00～17:00）",
         "homepage": "https://ringo-no-mori.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1045/"
       }
     },
     {
@@ -22746,7 +23779,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19824",
         "businessHours": "9:00～22:00（施設により異なる）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000115.html",
-        "homepage2": "http://www.nikko-honjin.jp/"
+        "homepage2": "http://www.nikko-honjin.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1046/"
       }
     },
     {
@@ -22768,7 +23802,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19825",
         "businessHours": "平日9:30～18:00土日祝日9：30～18：30(季節によって変わります）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000198.html",
-        "homepage2": "https://www.tamamura-juku.com/"
+        "homepage2": "https://www.tamamura-juku.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1047/"
       }
     },
     {
@@ -22790,7 +23825,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19826",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.city.asahi.lg.jp/attakaasahi/",
-        "homepage2": "http://www.kirari-asahi.com"
+        "homepage2": "http://www.kirari-asahi.com",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1048/"
       }
     },
     {
@@ -22812,7 +23848,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19827",
         "businessHours": "9：00～17：00",
         "homepage": "http://hotasho.jp/",
-        "homepage2": "https://www.facebook.com/hotasho.jp/"
+        "homepage2": "https://www.facebook.com/hotasho.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1049/"
       }
     },
     {
@@ -22834,7 +23871,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19828",
         "businessHours": "10:00～17:00（そば処は11:00～14:00）全館月曜日定休（祝日の場合は翌日休）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000299.html",
-        "homepage2": "http://www.farmus.jp/"
+        "homepage2": "http://www.farmus.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1050/"
       }
     },
     {
@@ -22856,7 +23894,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19829",
         "businessHours": "9:00～17:00（季節により変動あり）＜休 月曜日（月曜日が祝日の場合は火曜日）＞",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/aguriparkryuou.html",
-        "homepage2": "https://www.aguri-p.com/"
+        "homepage2": "https://www.aguri-p.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1051/"
       }
     },
     {
@@ -22878,7 +23917,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19830",
         "businessHours": "8:00～19:00 ※レストラン 10：00～18：00（Ｌ．Ｏ 17：40）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/kuchikumano.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1052/"
       }
     },
     {
@@ -22900,7 +23940,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19831",
         "businessHours": "利用時間 9:00～18:00 年中無休 （10月～3月は17:00までの営業）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/susami.html",
-        "homepage2": "http://www.michinoeki-susami.com/"
+        "homepage2": "http://www.michinoeki-susami.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1053/"
       }
     },
     {
@@ -22922,7 +23963,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19832",
         "businessHours": "物販8:00～19:00 飲食10:00～19:00（ラストオーダー18:30）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/katsuraginishi.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1054/"
       }
     },
     {
@@ -22944,7 +23986,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19833",
         "businessHours": "9:00～17:00〔施設により異なる〕",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/taiji.html",
-        "homepage2": "http://michiekitaiji.com/"
+        "homepage2": "http://michiekitaiji.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1055/"
       }
     },
     {
@@ -22966,7 +24009,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19834",
         "businessHours": "9:00～19:00〔施設により異なる〕",
         "homepage": "http://kinanseiwami.jp/",
-        "homepage2": "http://www.cgr.mlit.go.jp/chiki/doyroj/Michi-no-Eki/index.html"
+        "homepage2": "http://www.cgr.mlit.go.jp/chiki/doyroj/Michi-no-Eki/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1056/"
       }
     },
     {
@@ -22988,7 +24032,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19835",
         "businessHours": "8:30～18:30〔施設により異なる〕",
         "homepage": "http://www.okudaisen.org/station/",
-        "homepage2": "http://www.cgr.mlit.go.jp/chiki/doyroj/Michi-no-Eki/index.html"
+        "homepage2": "http://www.cgr.mlit.go.jp/chiki/doyroj/Michi-no-Eki/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1057/"
       }
     },
     {
@@ -23010,7 +24055,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19836",
         "businessHours": "9:00～18:00〔施設により異なる〕",
         "homepage": "https://www.cgr.mlit.go.jp/chiki/doyroj/Michi-no-Eki/cgi-bin/station_info.pl?param=3523",
-        "homepage2": "https://www.shiosai-hofu.com/"
+        "homepage2": "https://www.shiosai-hofu.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1058/"
       }
     },
     {
@@ -23032,7 +24078,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19837",
         "businessHours": "8:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/kamiamakusa/kamiamakusa.html",
-        "homepage2": "http://www.sunpearl.jp/"
+        "homepage2": "http://www.sunpearl.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1059/"
       }
     },
     {
@@ -23054,7 +24101,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19838",
         "businessHours": "8:30～21:00（施設により異なる）",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/ushibuka/ushibuka.html",
-        "homepage2": "http://kaisai.wix.com/usibuka-kaisaikan2"
+        "homepage2": "http://kaisai.wix.com/usibuka-kaisaikan2",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1060/"
       }
     },
     {
@@ -23076,7 +24124,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19839",
         "businessHours": "",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/asobounosato/asobounosato.html",
-        "homepage2": "http://aso-kugino.jp/asobou.html"
+        "homepage2": "http://aso-kugino.jp/asobou.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1061/"
       }
     },
     {
@@ -23091,14 +24140,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19840",
         "name": "道の駅みそぎの郷 きこない",
-        "prefecture": "みそぎの郷　きこない",
+        "prefecture": "みそぎの郷\u3000きこない",
         "city": "",
         "address": "北海道上磯郡木古内町字本町338-14",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19840",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/3158/",
-        "homepage2": "http://kikonai.jp/"
+        "homepage2": "http://kikonai.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1062/"
       }
     },
     {
@@ -23120,7 +24170,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19841",
         "businessHours": "【3月20日−11月30日】 月〜木 9時～17時 金〜日·祝 8時半～18時 定休日なし 【12月1日−3月19日】 月～木 10時～15時 金〜日·祝 9時～18時 定休日 1月4日～3月19日の毎週水曜日、年末年始（12月30日～1月1日）",
         "homepage": "https://shikabe-tara.com/",
-        "homepage2": "http://www.town.shikabe.lg.jp/hotnews/detail/00001756.html"
+        "homepage2": "http://www.town.shikabe.lg.jp/hotnews/detail/00001756.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1063/"
       }
     },
     {
@@ -23142,7 +24193,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19842",
         "businessHours": "9:00～19:00〔施設により異なる〕",
         "homepage": "https://mitakido.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1064/"
       }
     },
     {
@@ -23164,7 +24216,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19843",
         "businessHours": "9:00～18:00〔施設により異なる〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000066.html",
-        "homepage2": "http://www.michieki-hitachiomiya.jp/"
+        "homepage2": "http://www.michieki-hitachiomiya.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1065/"
       }
     },
     {
@@ -23186,7 +24239,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19844",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.hitachiota-michinoeki.jp/page/dir000002.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1066/"
       }
     },
     {
@@ -23208,7 +24262,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19845",
         "businessHours": "9:00～18:00",
         "homepage": "https://minorinosato-togane.com",
-        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000246.html"
+        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000246.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1067/"
       }
     },
     {
@@ -23230,7 +24285,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19846",
         "businessHours": "10:00～18:00＜休 1/1～3＞",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000146.html",
-        "homepage2": "https://michinoeki-kiyokawa.jp/"
+        "homepage2": "https://michinoeki-kiyokawa.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1068/"
       }
     },
     {
@@ -23252,7 +24308,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19847",
         "businessHours": "9:30～17:30（施設により異なる）＜休 毎月第1水曜日、年末年始＞",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000038",
-        "homepage2": "http://www.tsjiba.or.jp/michi/"
+        "homepage2": "http://www.tsjiba.or.jp/michi/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1069/"
       }
     },
     {
@@ -23274,7 +24331,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19848",
         "businessHours": "9:00～17:30",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000076",
-        "homepage2": "http://www.pref.ishikawa.jp/douken/page2/main27.html"
+        "homepage2": "http://www.pref.ishikawa.jp/douken/page2/main27.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1070/"
       }
     },
     {
@@ -23296,7 +24354,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19849",
         "businessHours": "10:00～19:00＜休 第3水曜日、年末年始＞",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/fukui/zennosato.html",
-        "homepage2": "http://michinoeki-zennosato.jp"
+        "homepage2": "http://michinoeki-zennosato.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1072/"
       }
     },
     {
@@ -23318,7 +24377,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19850",
         "businessHours": "7:00〜19:00〔施設により異なる〕",
         "homepage": "http://www.cbr.mlit.go.jp/michinoeki/mie/mie16.html",
-        "homepage2": "http://www.tsukawage.com/"
+        "homepage2": "http://www.tsukawage.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1071/"
       }
     },
     {
@@ -23340,7 +24400,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19851",
         "businessHours": "9:00～18:00",
         "homepage": "http://azai3-st.jp/",
-        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/azaisansimai.html"
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/shiga/azaisansimai.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1074/"
       }
     },
     {
@@ -23355,14 +24416,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19852",
         "name": "道の駅海の京都 宮津",
-        "prefecture": "海の京都　宮津",
+        "prefecture": "海の京都\u3000宮津",
         "city": "",
         "address": "京都府宮津市字浜町3007",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19852",
         "businessHours": "直売所 9:00～17:00（年末年始休み）・飲食施設 10:00～17:00（年末年始、水曜日休み）・案内所 9:00～18:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/uminokyoutomiyazu.html",
-        "homepage2": "http://michinoeki-miyazu.jp/"
+        "homepage2": "http://michinoeki-miyazu.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1073/"
       }
     },
     {
@@ -23384,7 +24446,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19853",
         "businessHours": "9:30～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/Yamada-nishik-taka.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1075/"
       }
     },
     {
@@ -23406,7 +24469,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19854",
         "businessHours": "9:00～17:00 ＜定休日：火曜（祝日の場合は翌日）、年末年始＞＊施設により異なる詳細はHPへ",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/seishunosato.html",
-        "homepage2": "https://seishunosato.com"
+        "homepage2": "https://seishunosato.com",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1076/"
       }
     },
     {
@@ -23428,7 +24492,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19855",
         "businessHours": "9:00～18:00〔施設により異なる〕＜年中無休＞",
         "homepage": "http://nichinan-hinogawanosato.jp/",
-        "homepage2": "http://www.cgr.mlit.go.jp/chiki/doyroj/Michi-no-Eki/index.html"
+        "homepage2": "http://www.cgr.mlit.go.jp/chiki/doyroj/Michi-no-Eki/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1077/"
       }
     },
     {
@@ -23450,7 +24515,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19856",
         "businessHours": "7:30～18:00（施設により異なる）＜休 3月～11月 無休、12月～2月 火曜定休（火曜祝日の場合は営業）＞",
         "homepage": "http://www.yotte.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1078/"
       }
     },
     {
@@ -23472,7 +24538,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19857",
         "businessHours": "10:00～18：00",
         "homepage": "",
-        "homepage2": "http://sasebox99.com"
+        "homepage2": "http://sasebox99.com",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1079/"
       }
     },
     {
@@ -23494,7 +24561,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19858",
         "businessHours": "9:00～18:00 （施設により異なる）",
         "homepage": "https://www.city.omura.nagasaki.jp/kankou/kanko/michinoeki/index.html",
-        "homepage2": "http://www.michinoeki-suzutatouge.com/"
+        "homepage2": "http://www.michinoeki-suzutatouge.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1080/"
       }
     },
     {
@@ -23516,7 +24584,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19859",
         "businessHours": "9:00～21:00（施設により異なる）",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/mizubeplazakamoto/kamoto.html",
-        "homepage2": "http://www.mizube-plaza.co.jp/"
+        "homepage2": "http://www.mizube-plaza.co.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1081/"
       }
     },
     {
@@ -23538,7 +24607,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19860",
         "businessHours": "9:00～18:00、9:00～17:00（11月～4月）＜休 1/1＞",
         "homepage": "http://www.hanuinosato.jp/",
-        "homepage2": "https://www.facebook.com/michinoekiugo/"
+        "homepage2": "https://www.facebook.com/michinoekiugo/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1082/"
       }
     },
     {
@@ -23560,7 +24630,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19861",
         "businessHours": "9:30～18:00≪冬期・営業時間短縮あり≫ ＜休 年末年始＞",
         "homepage": "http://www.town.shonai.lg.jp/fusyaichiba/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1083/"
       }
     },
     {
@@ -23582,7 +24653,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19862",
         "businessHours": "9:00～18:00（冬期間営業時間変更あり） 軽食9:00～17:30LO ダイニング10:30～15:30LO 観光案内9:00～16:00",
         "homepage": "http://www.michinoeki-inawashiro.co.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1084/"
       }
     },
     {
@@ -23604,7 +24676,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19863",
         "businessHours": "9:00～18:00 ＜休 第2火曜日＞",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000129.html",
-        "homepage2": "http://m-mashiko.com/"
+        "homepage2": "http://m-mashiko.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1085/"
       }
     },
     {
@@ -23626,7 +24699,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19864",
         "businessHours": "9:00～17:30(4/1～12/30)、9:00～17:00(1/5～3/31)",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000269.html",
-        "homepage2": "http://www.1000nentsuru.com/"
+        "homepage2": "http://www.1000nentsuru.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1086/"
       }
     },
     {
@@ -23648,7 +24722,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19865",
         "businessHours": "10:00～17:00（季節によって終了時間の変更あり）",
         "homepage": "http://www.cbr.mlit.go.jp/michinoeki/mie/mie17.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1088/"
       }
     },
     {
@@ -23670,7 +24745,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19866",
         "businessHours": "8:30～18:00",
         "homepage": "",
-        "homepage2": "http://www.okumino-shirotori.com/pg453.html"
+        "homepage2": "http://www.okumino-shirotori.com/pg453.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1087/"
       }
     },
     {
@@ -23692,7 +24768,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19867",
         "businessHours": "通年 9:00～17:00〔施設により異なる〕",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano14.html",
-        "homepage2": "https://tagirinosato.jp/"
+        "homepage2": "https://tagirinosato.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1089/"
       }
     },
     {
@@ -23714,7 +24791,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19868",
         "businessHours": "10：00～18:00〔施設により異なる。スタンプラリーは10：00～17：00〕",
         "homepage": "http://fruit-flowerpark.jp/",
-        "homepage2": "https://www.instagram.com/fruitflowerpark.kobe/"
+        "homepage2": "https://www.instagram.com/fruitflowerpark.kobe/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1090/"
       }
     },
     {
@@ -23736,7 +24814,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19869",
         "businessHours": "9:00～19:00(冬期は9:00～18:00)",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/katsuragi.html",
-        "homepage2": "http://michinoeki-katsuragi.jp/"
+        "homepage2": "http://michinoeki-katsuragi.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1091/"
       }
     },
     {
@@ -23758,7 +24837,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19870",
         "businessHours": "9:00～17:00",
         "homepage": "https://eki.bingofuchu.jp/",
-        "homepage2": "http://www.cgr.mlit.go.jp/chiki/doyroj/Michi-no-Eki/index.html"
+        "homepage2": "http://www.cgr.mlit.go.jp/chiki/doyroj/Michi-no-Eki/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1092/"
       }
     },
     {
@@ -23780,7 +24860,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19871",
         "businessHours": "9:00～18:30",
         "homepage": "http://suikanosato-ueki.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1093/"
       }
     },
     {
@@ -23802,7 +24883,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19872",
         "businessHours": "9:00～19:00",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1094/"
       }
     },
     {
@@ -23824,7 +24906,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19873",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.kusu-michinoeki.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1095/"
       }
     },
     {
@@ -23846,7 +24929,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19874",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/kushigakinosato.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1108/"
       }
     },
     {
@@ -23868,7 +24952,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19875",
         "businessHours": "9:00 ～18:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/osaka/misaki.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1106/"
       }
     },
     {
@@ -23890,7 +24975,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19876",
         "businessHours": "9:00～18:00 ≪冬期・営業時間短縮あり≫",
         "homepage": "https://hiraizumi.town",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1097/"
       }
     },
     {
@@ -23912,7 +24998,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19877",
         "businessHours": "9:00～17:30 〔施設により異なる〕※詳細な臨時休業日・営業時間等は下記ＨＰをご確認ください。",
         "homepage": "http://www.michinoeki923.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1099/"
       }
     },
     {
@@ -23934,7 +25021,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19878",
         "businessHours": "9:00〜18:00〔施設により異なる〕",
         "homepage": "http://kawanominato.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1098/"
       }
     },
     {
@@ -23956,7 +25044,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19879",
         "businessHours": "9:00 ～18:00",
         "homepage": "http://www.healthyterrace-saku.jp/",
-        "homepage2": "http://www.ktr.mlit.go.jp/honkyoku/road/Michi-no-Eki/station/nagano_sakuminami/index.html"
+        "homepage2": "http://www.ktr.mlit.go.jp/honkyoku/road/Michi-no-Eki/station/nagano_sakuminami/index.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1101/"
       }
     },
     {
@@ -23978,7 +25067,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19880",
         "businessHours": "9:00 ～17:30〔施設により異なる〕",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000219.html",
-        "homepage2": "http://www.washinosato.co.jp"
+        "homepage2": "http://www.washinosato.co.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1100/"
       }
     },
     {
@@ -24000,7 +25090,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19881",
         "businessHours": "庭園生活館 3~11月 9~17時、12~2月 9~17時 カフェ 10~16時パスタとピザの店 base 11~16時 【休館日】3~12月 第1火曜、1~2月 火曜 (祝日の場合は翌日)12月31日~1月2日",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000077",
-        "homepage2": "http://honai-gardens.com"
+        "homepage2": "http://honai-gardens.com",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1102/"
       }
     },
     {
@@ -24022,7 +25113,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19882",
         "businessHours": "4月〜11月（9:00～18:00） 12月〜3月（9：00〜17：00） ※施設により異なる",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000078",
-        "homepage2": "http://noto-chirihama.com/"
+        "homepage2": "http://noto-chirihama.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1103/"
       }
     },
     {
@@ -24044,7 +25136,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19883",
         "businessHours": "9:00～18:00",
         "homepage": "https://www.izugateway.com/",
-        "homepage2": "https://www.instagram.com/izugateway/"
+        "homepage2": "https://www.instagram.com/izugateway/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1104/"
       }
     },
     {
@@ -24066,7 +25159,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19884",
         "businessHours": "9:00～18:00〔部門により異なる〕",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/kyoto/ocyanokyotominamiyamashiromura.html",
-        "homepage2": "https://michinoeki.kyoto.jp/"
+        "homepage2": "https://michinoeki.kyoto.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1105/"
       }
     },
     {
@@ -24088,7 +25182,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19885",
         "businessHours": "9:00～18:00（11月～3月は9:00～17:00）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/saninkaiganjioparkhamasakanosato.html",
-        "homepage2": "https://hamasakanosato.com/"
+        "homepage2": "https://hamasakanosato.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1107/"
       }
     },
     {
@@ -24110,7 +25205,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19886",
         "businessHours": "9:00 ～18:00",
         "homepage": "http://www.kotoura-kankou.com/kankou-category/facility/michinoekikotonoura/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1109/"
       }
     },
     {
@@ -24132,7 +25228,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19887",
         "businessHours": "9:00 ～18:00（定休日：毎月第3水曜日、12/31～1/3）",
         "homepage": "https://www.michinoeki-shiroishi.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1110/"
       }
     },
     {
@@ -24154,7 +25251,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19888",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/13538/",
-        "homepage2": "http://www.nonkyland.com/"
+        "homepage2": "http://www.nonkyland.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1111/"
       }
     },
     {
@@ -24176,7 +25274,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19889",
         "businessHours": "【3月～12月】9:00~17:00、【1月～2月】10:00~16:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/13542/",
-        "homepage2": "https://tobest.co.jp/michinoeki/"
+        "homepage2": "https://tobest.co.jp/michinoeki/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1112/"
       }
     },
     {
@@ -24198,7 +25297,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19890",
         "businessHours": "9:30～18:00〔施設により異なる〕冬季期間9:30～17：00（11月～2月末日） ＜休 毎週水曜、12/31～1/2＞",
         "homepage": "http://madeikan.com",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1113/"
       }
     },
     {
@@ -24220,7 +25320,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19891",
         "businessHours": "8:30～17:00〔施設・季節により異なる〕 ＜休 無休＞",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1114/"
       }
     },
     {
@@ -24242,7 +25343,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19892",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000247.html",
-        "homepage2": "http://chiba-kisarazu.com/"
+        "homepage2": "http://chiba-kisarazu.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1115/"
       }
     },
     {
@@ -24264,7 +25366,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19893",
         "businessHours": "9:00-18:00",
         "homepage": "https://pallettepia-ono.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1116/"
       }
     },
     {
@@ -24286,7 +25389,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19894",
         "businessHours": "9:00～18:00(12月～２月9：30～17：00）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/ginnobasyamichi.html",
-        "homepage2": "https://michinoeki-ginnobasyamichi-kamikawa.com/"
+        "homepage2": "https://michinoeki-ginnobasyamichi-kamikawa.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1118/"
       }
     },
     {
@@ -24308,7 +25412,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19895",
         "businessHours": "10:00～18:00",
         "homepage": "https://www.city.iwade.lg.jp/kanko/2017-0426-1141-58.html",
-        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/negororekishinooka.html"
+        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/negororekishinooka.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1119/"
       }
     },
     {
@@ -24330,7 +25435,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19896",
         "businessHours": "9:00～17:00(各店舗ごとに異なる)",
         "homepage": "https://www.nakatosa.com/",
-        "homepage2": "https://www.facebook.com/道の駅なかとさ-観光インフォメーション-631032887106265/"
+        "homepage2": "https://www.facebook.com/道の駅なかとさ-観光インフォメーション-631032887106265/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1120/"
       }
     },
     {
@@ -24352,7 +25458,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19897",
         "businessHours": "10:00～16:00（11/1-3/31）",
         "homepage": "http://aikaze.co.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1121/"
       }
     },
     {
@@ -24374,7 +25481,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19898",
         "businessHours": "9:00～18:00〔時期により異なる〕",
         "homepage": "http://nanairo-nanae.jp/",
-        "homepage2": "https://shop.nanairo-nanae.jp/"
+        "homepage2": "https://shop.nanairo-nanae.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1122/"
       }
     },
     {
@@ -24396,7 +25504,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19899",
         "businessHours": "9:00～17:00（冬季間9:00～16:00）",
         "homepage": "https://www.tsugaru-shirakami.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1123/"
       }
     },
     {
@@ -24418,7 +25527,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19900",
         "businessHours": "9:00-18:00",
         "homepage": "https://murone.theshop.jp",
-        "homepage2": "https://www.instagram.com/michieki.murone/"
+        "homepage2": "https://www.instagram.com/michieki.murone/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1124/"
       }
     },
     {
@@ -24440,7 +25550,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19901",
         "businessHours": "9:00~18:00",
         "homepage": "https://yunoeki-oyu.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1125/"
       }
     },
     {
@@ -24462,7 +25573,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19902",
         "businessHours": "トイレ、道路情報コーナー、無料休憩所は24時間ご利用いただけます。 お土産コーナー：9時～18時 フードコート：10時～18時 セブンイレブン：7時～21時 米沢牛レストラン牛毘亭：10時～18時(※予約の際は21:00まで可)",
         "homepage": "https://michinoeki-yonezawa.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1126/"
       }
     },
     {
@@ -24484,7 +25596,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19903",
         "businessHours": "9:30～18:00（施設により異なる）",
         "homepage": "http://michinoeki-datenosato-ryozen.jp/",
-        "homepage2": "https://www.youtube.com/watch?v=H46qw1VwSNo"
+        "homepage2": "https://www.youtube.com/watch?v=H46qw1VwSNo",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1127/"
       }
     },
     {
@@ -24506,7 +25619,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19904",
         "businessHours": "9:00～17:00（施設により異なります）",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000199.html",
-        "homepage2": "https://oze-katashina.info/michinoeki"
+        "homepage2": "https://oze-katashina.info/michinoeki",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1128/"
       }
     },
     {
@@ -24528,7 +25642,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19905",
         "businessHours": "9:00~22:00",
         "homepage": "http://www.michinoeki-ichikawa.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1129/"
       }
     },
     {
@@ -24550,7 +25665,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19906",
         "businessHours": "",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000270.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1130/"
       }
     },
     {
@@ -24572,7 +25688,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19907",
         "businessHours": "9:00～17:00（1/5～4月・毎週木曜日定休）、9:00～18:00（GW～12/30） ＜休 12/31～1/4＞",
         "homepage": "http://nonki-mura.com/megaminosato/",
-        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000301.html"
+        "homepage2": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000301.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1131/"
       }
     },
     {
@@ -24594,7 +25711,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19908",
         "businessHours": "四季彩市場9:00～18:00 VEGE-FULL KITCHEN11:00～16:00(火曜曜定休) Bread & Sweetsきらら 9:30～17:00(水曜定休)",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano15.html",
-        "homepage2": "https://www.toyooka-marche.jp/"
+        "homepage2": "https://www.toyooka-marche.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1132/"
       }
     },
     {
@@ -24616,7 +25734,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19909",
         "businessHours": "9:00～17:00 ※季節やイベントにより閉店時間変更あり 最長19:00まで",
         "homepage": "https://michinoeki-amaharashi.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1133/"
       }
     },
     {
@@ -24638,7 +25757,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19910",
         "businessHours": "【JA直売所・観光情報コーナー9:30～18:00】【レストラン10:00～16:00】",
         "homepage": "http://megumi-hakusan.com",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1134/"
       }
     },
     {
@@ -24660,7 +25780,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19911",
         "businessHours": "平日:10:00～16:00 土日祝:10:00～17:00 お食事：11:00~14:00 定休日:第二、第三火曜日",
         "homepage": "http://kurobee.net",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1135/"
       }
     },
     {
@@ -24675,14 +25796,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19912",
         "name": "道の駅レスティ 唐古・鍵",
-        "prefecture": "レスティ　唐古・鍵",
+        "prefecture": "レスティ\u3000唐古・鍵",
         "city": "",
         "address": "奈良県磯城郡田原本町大字唐古70-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19912",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.town.tawaramoto.nara.jp/soshki/sangyo/kanko/kanko_1/mitinoeki/7102.html",
-        "homepage2": "https://resti-karako-kagi.jp/"
+        "homepage2": "https://resti-karako-kagi.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1136/"
       }
     },
     {
@@ -24704,7 +25826,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19913",
         "businessHours": "9:00~18:00",
         "homepage": "https://nanavi.jp/senzakitchen/",
-        "homepage2": "https://www.facebook.com/senzakitchen/"
+        "homepage2": "https://www.facebook.com/senzakitchen/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1137/"
       }
     },
     {
@@ -24726,7 +25849,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19914",
         "businessHours": "9:00～18:00（6～８月） 9:00～17:00（3～5月、9～11月） 10:00～17:00（12～2月）",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/16028/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1138/"
       }
     },
     {
@@ -24748,7 +25872,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19915",
         "businessHours": "9:00~17:00",
         "homepage": "https://michinoekioga.co.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1139/"
       }
     },
     {
@@ -24770,7 +25895,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19916",
         "businessHours": "",
         "homepage": "",
-        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano16.html"
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano16.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1140/"
       }
     },
     {
@@ -24792,7 +25918,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19917",
         "businessHours": "農産物直売所：9:00～16:00",
         "homepage": "",
-        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano17.html"
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano17.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1141/"
       }
     },
     {
@@ -24814,7 +25941,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19918",
         "businessHours": "",
         "homepage": "",
-        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano18.html"
+        "homepage2": "https://www.cbr.mlit.go.jp/michinoeki/nagano/nagano18.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1142/"
       }
     },
     {
@@ -24836,7 +25964,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19919",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.village.ikusaka.nagano.jp/ikusakanosato/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1143/"
       }
     },
     {
@@ -24858,7 +25987,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19920",
         "businessHours": "",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1144/"
       }
     },
     {
@@ -24880,7 +26010,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19921",
         "businessHours": "8:30~18:00",
         "homepage": "https://mimanosato.jp/",
-        "homepage2": "https://www.sk-michinoeki.jp/michinoeki/1771"
+        "homepage2": "https://www.sk-michinoeki.jp/michinoeki/1771",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1145/"
       }
     },
     {
@@ -24902,7 +26033,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19922",
         "businessHours": "8:00~17:00（店舗により異なる）",
         "homepage": "",
-        "homepage2": "https://www.michinoekinakayama.com/"
+        "homepage2": "https://www.michinoekinakayama.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1146/"
       }
     },
     {
@@ -24924,7 +26056,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19923",
         "businessHours": "9:00～17:30",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/sakitsu/sakitsu.html",
-        "homepage2": "http://sakituguidance.amakusa-web.jp/MyHp/Pub/"
+        "homepage2": "http://sakituguidance.amakusa-web.jp/MyHp/Pub/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1147/"
       }
     },
     {
@@ -24946,7 +26079,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19924",
         "businessHours": "9:00～18:30",
         "homepage": "http://tarumizuhamabira.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1148/"
       }
     },
     {
@@ -24968,7 +26102,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19925",
         "businessHours": "9:00～17:00",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/osaka/kuromaronosato.html",
-        "homepage2": "https://kuromaro.com/"
+        "homepage2": "https://kuromaro.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1117/"
       }
     },
     {
@@ -24983,14 +26118,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19926",
         "name": "道の駅道の駅安達智恵子の里 下り線",
-        "prefecture": "道の駅「安達」智恵子の里　下り線",
+        "prefecture": "道の駅「安達」智恵子の里\u3000下り線",
         "city": "",
         "address": "福島県二本松市米沢字下川原田105-2",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19926",
         "businessHours": "9:00~17：00",
         "homepage": "http://www.michinoeki-adachi.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/165/"
       }
     },
     {
@@ -25012,7 +26148,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19927",
         "businessHours": "",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1149/"
       }
     },
     {
@@ -25034,7 +26171,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19928",
         "businessHours": "",
         "homepage": "https://d51-station.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1150/"
       }
     },
     {
@@ -25056,7 +26194,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19929",
         "businessHours": "9：00～17：30（4月～10月) 9：00～17：00（11月～3月)",
         "homepage": "https://kakudanotakara.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1152/"
       }
     },
     {
@@ -25078,7 +26217,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19930",
         "businessHours": "9:00〜19:00",
         "homepage": "https://www.michinoeki-toyohashi.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1153/"
       }
     },
     {
@@ -25100,7 +26240,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19931",
         "businessHours": "[物販] 9:00～18:00 [レストラン] 10:00～18:00(L.O.17:00） [ファミリーマート] 5:00～23:00",
         "homepage": "",
-        "homepage2": "http://nishiinaba.jp"
+        "homepage2": "http://nishiinaba.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1154/"
       }
     },
     {
@@ -25122,7 +26263,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19932",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/amakusairuka/amakusairuka.html",
-        "homepage2": "https://www.amakusa-dolphin.jp/"
+        "homepage2": "https://www.amakusa-dolphin.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1155/"
       }
     },
     {
@@ -25144,7 +26286,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19933",
         "businessHours": "9:00〜17:00",
         "homepage": "https://h-craftpark.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1156/"
       }
     },
     {
@@ -25166,7 +26309,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19934",
         "businessHours": "オープン当日：午前10時40分～午後6時 2019.12.1（日）以降：午前9時～午後5時",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1157/"
       }
     },
     {
@@ -25188,7 +26332,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19935",
         "businessHours": "産直コーナー 09：30～18：30 コミュニティカフェ 10：00～18：00 共に元旦のみお休み",
         "homepage": "",
-        "homepage2": "https://www.michinoekiosaki.jp/"
+        "homepage2": "https://www.michinoekiosaki.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1151/"
       }
     },
     {
@@ -25210,7 +26355,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19936",
         "businessHours": "9:00～18:00（冬季のスキー場は9：00～20：00）※ゲレンデ状況等により変動あり",
         "homepage": "https://engaru-mori-no-okhotsk.jp/",
-        "homepage2": "https://www.engaru-kankou.jp/"
+        "homepage2": "https://www.engaru-kankou.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1158/"
       }
     },
     {
@@ -25232,7 +26378,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19937",
         "businessHours": "9：00〜18：00",
         "homepage": "",
-        "homepage2": "https://granterrace-chikusei.com"
+        "homepage2": "https://granterrace-chikusei.com",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1159/"
       }
     },
     {
@@ -25247,14 +26394,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19938",
         "name": "道の駅たかねざわ 元気あっぷむら",
-        "prefecture": "たかねざわ　元気あっぷむら",
+        "prefecture": "たかねざわ\u3000元気あっぷむら",
         "city": "",
         "address": "栃木県塩谷郡高根沢町大字上柏崎588番地1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19938",
         "businessHours": "本館10:00~21:00（各施設の営業時間につきましては下記をご覧ください）",
         "homepage": "https://www.genkiupmura.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1160/"
       }
     },
     {
@@ -25276,7 +26424,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19939",
         "businessHours": "レストラン 11:00～17:00（L.O.16:30）ショップ 9:00～17:00（毎月第３水曜定休）、農林産物直売所 9:00～16:00（火曜・水曜定休。7月～11月は無休）",
         "homepage": "http://www.nozawa-onsen.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1161/"
       }
     },
     {
@@ -25298,7 +26447,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19940",
         "businessHours": "2階物販スペース9：00～17：00 カフェエリア10：00～16：00 1階レストラン10：00～17：00（ラストオーダー16：00）",
         "homepage": "https://www.izutsukigase.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1162/"
       }
     },
     {
@@ -25320,7 +26470,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19941",
         "businessHours": "",
         "homepage": "http://chikuzen-minaminosato.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1163/"
       }
     },
     {
@@ -25342,7 +26493,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19942",
         "businessHours": "9:00～18:00（冬季～17:00）◆レストラン「La Table de KAMISHIHORO」11:00～16:00(モーニング8:00～10:00)",
         "homepage": "https://karch.jp/michinoeki/",
-        "homepage2": "https://michinoeki-kamishihoro.shop/"
+        "homepage2": "https://michinoeki-kamishihoro.shop/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1164/"
       }
     },
     {
@@ -25364,7 +26516,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19943",
         "businessHours": "9:00～17:00",
         "homepage": "http://www.hokkaido-michinoeki.jp/michinoeki/23225/",
-        "homepage2": "https://web.michinoeki-rumoi.info/"
+        "homepage2": "https://web.michinoeki-rumoi.info/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1165/"
       }
     },
     {
@@ -25386,7 +26539,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19944",
         "businessHours": "物産館「すぎの樹」 9:00～17:00 食堂「味楽苑」 11:00～14:00、17:00～21:30 加工室「ミレットキッチン花」",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1166/"
       }
     },
     {
@@ -25408,7 +26562,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19945",
         "businessHours": "10：00〜18：00",
         "homepage": "https://michinoeki-namie.jp",
-        "homepage2": "https://m.facebook.com/michinoeki.namie/"
+        "homepage2": "https://m.facebook.com/michinoeki.namie/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1167/"
       }
     },
     {
@@ -25430,7 +26585,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19946",
         "businessHours": "09:00～17：00",
         "homepage": "",
-        "homepage2": "https://www.michinoeki-ashigara.com/"
+        "homepage2": "https://www.michinoeki-ashigara.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1168/"
       }
     },
     {
@@ -25452,7 +26608,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19947",
         "businessHours": "",
         "homepage": "",
-        "homepage2": "https://www.city.chino.lg.jp/soshiki/kankou/299.html"
+        "homepage2": "https://www.city.chino.lg.jp/soshiki/kankou/299.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1169/"
       }
     },
     {
@@ -25474,7 +26631,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19948",
         "businessHours": "ショップ12～3月／10:00～16:00,4～11月／9:30～17:00 食堂12～3月／10:00～15:30,4～11月／10:00～16:00 情報発信,休憩施設,コンビニエンスストア24H",
         "homepage": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000082",
-        "homepage2": "https://michinoeki-tagami.jp"
+        "homepage2": "https://michinoeki-tagami.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1170/"
       }
     },
     {
@@ -25496,7 +26654,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19949",
         "businessHours": "長岡花火ミュージアム10：00～17：30／レストラン(HIGH AMBITION)リニューアル改装中／越後長岡御貢屋(地場産品等販売所))10：00～17：30／フードコート(ながおかKitchen)10：30～18：00／とれたて・できたて直売所(農産物等直売所)10：00～17：30",
         "homepage": "",
-        "homepage2": "https://nagaoka-hanabikan.niigata.jp/"
+        "homepage2": "https://nagaoka-hanabikan.niigata.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1171/"
       }
     },
     {
@@ -25518,7 +26677,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19950",
         "businessHours": "ショップ/9:00～17:00（時期によって変動あり） レストラン/10:00～16:00（時期によって変動あり） 定休日：毎月第2、第3火曜日（祝日の場合は営業、翌平日が定休となります）",
         "homepage": "",
-        "homepage2": "http://katsuyama-navi.jp/michieki/"
+        "homepage2": "http://katsuyama-navi.jp/michieki/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1172/"
       }
     },
     {
@@ -25540,7 +26700,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19951",
         "businessHours": "【平日】10:00〜17:00 【土日祝】9:00〜17:00",
         "homepage": "http://www.city.wakayama.wakayama.jp/shisetsu/kouen_sp_shisetsu/1006085/1003228/1030408.html",
-        "homepage2": "https://fh-park.jp/"
+        "homepage2": "https://fh-park.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1173/"
       }
     },
     {
@@ -25562,7 +26723,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19952",
         "businessHours": "ベジパーク8時半～18時、レストラン11時～15時、あきたかたNAVI10時～17時、12/31～1/4",
         "homepage": "https://akitakata-kankou.jp/main/mitsuyanosato/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1174/"
       }
     },
     {
@@ -25584,7 +26746,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19953",
         "businessHours": "おみやげ販売９：００～１８：００（冬季１７：００） レストラン１１：００～１５：００（ラストオーダー１４：３０）",
         "homepage": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/miyajidake/miyajidake.html",
-        "homepage2": "http://www.kakashinosato.jp"
+        "homepage2": "http://www.kakashinosato.jp",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1175/"
       }
     },
     {
@@ -25606,7 +26769,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19954",
         "businessHours": "9:00～18:00",
         "homepage": "http://www.sunrise-higashi.jp/index.jsp",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1176/"
       }
     },
     {
@@ -25628,7 +26792,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19955",
         "businessHours": "5月～10月 9：00～19：00（月～木）9：00～21：00（金～日・祝日） 11月～4月 9：00～19：00",
         "homepage": "http://www.tokachigawa.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1177/"
       }
     },
     {
@@ -25650,7 +26815,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19956",
         "businessHours": "9:00～17:00 ※施設により異なる",
         "homepage": "michinoeki-shitara.jp",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1178/"
       }
     },
     {
@@ -25672,7 +26838,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19957",
         "businessHours": "9：00～17：00",
         "homepage": "https://www.instagram.com/sanyodoyakagejuku/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1179/"
       }
     },
     {
@@ -25694,7 +26861,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19958",
         "businessHours": "",
         "homepage": "https://goise.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1180/"
       }
     },
     {
@@ -25716,7 +26884,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19959",
         "businessHours": "特産物直売所 8:30～18:00/レストラン 11:00～18:00 定休日なし（年始のみ）",
         "homepage": "http://www.town.itano.tokushima.jp/docs/2021041400015/",
-        "homepage2": "https://www.sk-michinoeki.jp/michinoeki/2581"
+        "homepage2": "https://www.sk-michinoeki.jp/michinoeki/2581",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1181/"
       }
     },
     {
@@ -25738,7 +26907,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19960",
         "businessHours": "10:00～20:00〔施設により異なる〕",
         "homepage": "",
-        "homepage2": "http://www.toyo-seseragi.com/"
+        "homepage2": "http://www.toyo-seseragi.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1182/"
       }
     },
     {
@@ -25760,7 +26930,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19961",
         "businessHours": "飲食物産館：9:00～18：00※一部テナントのみ21時まで 情報提供施設（観光案内所）9:00～18:00",
         "homepage": "",
-        "homepage2": "https://michinoeki-kushima.com/"
+        "homepage2": "https://michinoeki-kushima.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1183/"
       }
     },
     {
@@ -25782,7 +26953,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19962",
         "businessHours": "夏季 ５月～１０月 9:00～18:00、冬季 １１月～４月 10:00～17:00",
         "homepage": "https://machi-shibetsu.securesite.jp",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1184/"
       }
     },
     {
@@ -25804,7 +26976,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19963",
         "businessHours": "8:00～17：00（年末年始休業あり）",
         "homepage": "https://aonokuni.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1185/"
       }
     },
     {
@@ -25826,7 +26999,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19964",
         "businessHours": "9:00～16：30（各店舗による、ホームページで要確認）※雄勝硯伝統産業会館：火曜日定休",
         "homepage": "https://kenjounosato-ogatsu.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1186/"
       }
     },
     {
@@ -25848,7 +27022,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19965",
         "businessHours": "店舗・施設による。※ハマテラス内のトイレ、授乳スペース、情報コーナーは24時間利用可能",
         "homepage": "http://onagawa-mirai.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1187/"
       }
     },
     {
@@ -25870,7 +27045,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19966",
         "businessHours": "商店街(店舗による) 伝承館施設(9:00～17:00※冬期12～2月は16:00まで)<(火)定休> 観光案内所(9:00～17:00※冬期12～2月は16:00まで) 志津川駅(9:00～16:30)",
         "homepage": "https://www.m-kankou.jp/view_spot/250156.html/",
-        "homepage2": "https://www.sansan-minamisanriku.com/"
+        "homepage2": "https://www.sansan-minamisanriku.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1188/"
       }
     },
     {
@@ -25892,7 +27068,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19967",
         "businessHours": "午前９時～午後６時（冬期間は午後５時）",
         "homepage": "https://arashimanosato.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1189/"
       }
     },
     {
@@ -25914,7 +27091,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19968",
         "businessHours": "9：00〜20：00（店舗により異なる）",
         "homepage": "https://kineno-nanjo.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1190/"
       }
     },
     {
@@ -25936,7 +27114,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19969",
         "businessHours": "7:00～19:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka04_2.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/351/"
       }
     },
     {
@@ -25958,7 +27137,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19970",
         "businessHours": "7:00～19:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/shizuoka/shizuoka04_1.html",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/351/"
       }
     },
     {
@@ -25980,7 +27160,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19971",
         "businessHours": "9:00～18:00〔施設・季節により異なる〕＜無休＞冬季営業時間有：詳細は道の駅ふくしまHPへ",
         "homepage": "https://m-fukushima.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1191/"
       }
     },
     {
@@ -26002,7 +27183,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19972",
         "businessHours": "お食事処 楽栗 La Kuri 9:30〜18:00（LO17:30） フードコート・レストラン 11:00〜18:00（LO 17:30）※レストランのソフトクリームのみ10:00～ 直売所 みどりの風 9:00〜18:00 コンビニ 24時間営業 その他施設 24時間利用可能 トイレ、授乳室、道路情報コーナー、 EV充電施設 定休日 第２木曜日（９月～１１月は休まず営業） （ただし、自然災害や施設メンテナンス等のため、やむを得ず臨時休業になる場合がございます）",
         "homepage": "https://m-kasama.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1192/"
       }
     },
     {
@@ -26024,7 +27206,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19973",
         "businessHours": "8：30〜21：00",
         "homepage": "https://www.koko-kurobe.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1193/"
       }
     },
     {
@@ -26046,7 +27229,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19974",
         "businessHours": "9:00～17:00 ※レストランと貸館は 9:00～20:00 ※ショップは 9:00～18:00 ※情報発信棟トイレ・授乳室は24時間",
         "homepage": "https://www3.pref.nara.jp/bunkamura/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1194/"
       }
     },
     {
@@ -26068,7 +27252,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19975",
         "businessHours": "",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1195/"
       }
     },
     {
@@ -26090,7 +27275,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/19976",
         "businessHours": "10:00~17:00 （カフェ L.O16:30）",
         "homepage": "https://pineapple-hills.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1196/"
       }
     },
     {
@@ -26112,7 +27298,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/20043",
         "businessHours": "8:30～17:00",
         "homepage": "https://www.cbr.mlit.go.jp/michinoeki/gifu/gifu07.html",
-        "homepage2": "http://okumino-shirotori.com/pg454.html"
+        "homepage2": "http://okumino-shirotori.com/pg454.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/321/"
       }
     },
     {
@@ -26134,7 +27321,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/20044",
         "businessHours": "9:00～17:00（日曜日は8:00～17:00）休館日 水曜日",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/rutoyonniinanakami.html",
-        "homepage2": "http://www.sugiharagaminosato.net"
+        "homepage2": "http://www.sugiharagaminosato.net",
+        "michiEkiUrl": "https://www.michieki.jp/eki/418/"
       }
     },
     {
@@ -26156,7 +27344,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/21617",
         "businessHours": "9:30～16:30",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/hyogo/aogaki.html",
-        "homepage2": "http://eki.aogaki.jp/"
+        "homepage2": "http://eki.aogaki.jp/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/419/"
       }
     },
     {
@@ -26178,7 +27367,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/21624",
         "businessHours": "9:00～18:00 ＜休 毎週月曜日（月曜日が祝日の場合は翌日）＞",
         "homepage": "http://www.ktr.mlit.go.jp/road/chiiki/road_chiiki00000054.html",
-        "homepage2": "http://miwa.s55.biz/"
+        "homepage2": "http://miwa.s55.biz/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/170/"
       }
     },
     {
@@ -26200,7 +27390,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/21777",
         "businessHours": "9:00‐18:00（各店舗による） 定休日 毎月第2、第4水曜日",
         "homepage": "https://agano.co.jp",
-        "homepage2": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000084"
+        "homepage2": "https://www.hokuriku-michinoeki.jp/contents/station/?sta=000084",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1197/"
       }
     },
     {
@@ -26222,7 +27413,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/21778",
         "businessHours": "9:00 ～ 20:30",
         "homepage": "https://www.nonta-sakagura.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1198/"
       }
     },
     {
@@ -26244,7 +27436,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/21779",
         "businessHours": "",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1199/"
       }
     },
     {
@@ -26266,7 +27459,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/21974",
         "businessHours": "9:00~19:00＜休 1/1＞",
         "homepage": "https://www.michinoeki-iks.com",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1200/"
       }
     },
     {
@@ -26288,7 +27482,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/21975",
         "businessHours": "9：00～17：00 ※各店舗の詳細な営業時間は、公式HPをご覧ください。 年中無休",
         "homepage": "https://www.michinoeki-joso.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1201/"
       }
     },
     {
@@ -26310,7 +27505,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/21976",
         "businessHours": "9:00~22:00",
         "homepage": "https://maebashi-akagi.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1202/"
       }
     },
     {
@@ -26332,7 +27528,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/21977",
         "businessHours": "1F物販所 9:00~18:00 2Fお食事処 11:00~14:30LO／17:00~21:30LO（20時以降閉店する場合があります）",
         "homepage": "https://echizen-takefu.jp",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1203/"
       }
     },
     {
@@ -26354,7 +27551,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22056",
         "businessHours": "",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1204/"
       }
     },
     {
@@ -26376,7 +27574,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22057",
         "businessHours": "4月～11月 9:00～18:00 12月～3月 9:00～17:00",
         "homepage": "https://rennyo-awara.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1205/"
       }
     },
     {
@@ -26398,7 +27597,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22058",
         "businessHours": "8月20日(水)、21日(木)はバーのみ営業",
         "homepage": "https://hamabiyori.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1206/"
       }
     },
     {
@@ -26420,7 +27620,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22059",
         "businessHours": "午前9時から午後5時まで（1月1日を除き、年中無休）",
         "homepage": "https://sakuas.com",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1207/"
       }
     },
     {
@@ -26442,7 +27643,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22060",
         "businessHours": "8:00～18:00（12・1月は～17:00／テナント・施設により異なる）",
         "homepage": "https://makinosan.jp/",
-        "homepage2": "https://www.instagram.com/michinoeki_sakawa/"
+        "homepage2": "https://www.instagram.com/michinoeki_sakawa/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1208/"
       }
     },
     {
@@ -26464,7 +27666,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22061",
         "businessHours": "物産館 9:00〜18:00、レストラン 11:00〜15:30(Last 15：00)",
         "homepage": "https://michinoekikitago.com",
-        "homepage2": "https://instagram.com/kitagoro_56"
+        "homepage2": "https://instagram.com/kitagoro_56",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1209/"
       }
     },
     {
@@ -26486,7 +27689,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22266",
         "businessHours": "9:00～17:30",
         "homepage": "https://www.m-yzao.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1210/"
       }
     },
     {
@@ -26508,7 +27712,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22267",
         "businessHours": "9時から17時",
         "homepage": "https://michinoeki-mogami.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1211/"
       }
     },
     {
@@ -26530,7 +27735,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22268",
         "businessHours": "9:00~17:00",
         "homepage": "https://greenfarm-tateyama.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1212/"
       }
     },
     {
@@ -26552,7 +27758,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22269",
         "businessHours": "9:00-17:00 ※直売所・レストランは20:00まで、トイレ・授乳室は24H",
         "homepage": "https://michi-no-eki-crosswaynakamachi.pref.nara.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1213/"
       }
     },
     {
@@ -26574,7 +27781,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22270",
         "businessHours": "",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1214/"
       }
     },
     {
@@ -26596,7 +27804,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22370",
         "businessHours": "",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1215/"
       }
     },
     {
@@ -26618,7 +27827,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22371",
         "businessHours": "",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1216/"
       }
     },
     {
@@ -26640,7 +27850,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22372",
         "businessHours": "9:00～17:00",
         "homepage": "https://fureai-izumi.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1217/"
       }
     },
     {
@@ -26662,7 +27873,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22373",
         "businessHours": "9:00～18:00",
         "homepage": "https://michinoeki-tokunoshima.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1218/"
       }
     },
     {
@@ -26684,7 +27896,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22425",
         "businessHours": "物販9：00～20：00、食堂10：00～19：00（ラストオーダー18：30）、カフェ 9：00～17：00（ラストオーダー16：30）",
         "homepage": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/wakayama/katsuraginishi.html",
-        "homepage2": "https://www.kinki-michinoeki.com/74451/%e5%92%8c%e6%ad%8c%e5%b1%b1/"
+        "homepage2": "https://www.kinki-michinoeki.com/74451/%e5%92%8c%e6%ad%8c%e5%b1%b1/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1054/"
       }
     },
     {
@@ -26706,7 +27919,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22522",
         "businessHours": "【道の駅】9：００～２１：００（毎月第３火曜日休館※祝日の場合は翌日） 【日帰り温泉】１１：００～２１：００（最終入場２０：３０）（毎月第３火曜日休館※祝日の場合は翌日） 【レストラン】１１：３０～１９：３０【LO１９：００】（毎週火曜日休館※祝日の場合は翌日）",
         "homepage": "https://ad.t-norte.com/lp/275tsukigata_open/",
-        "homepage2": "https://tsukigataonsen-hotel.com/"
+        "homepage2": "https://tsukigataonsen-hotel.com/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1219/"
       }
     },
     {
@@ -26728,7 +27942,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22523",
         "businessHours": "9:00~19:00（施設により異なる）",
         "homepage": "https://www.michinoeki-higamatsu.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1220/"
       }
     },
     {
@@ -26750,7 +27965,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22524",
         "businessHours": "",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1221/"
       }
     },
     {
@@ -26772,7 +27988,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22525",
         "businessHours": "9：00～17：00",
         "homepage": "https://www.nishijima-washinosato.com",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1222/"
       }
     },
     {
@@ -26794,7 +28011,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22526",
         "businessHours": "",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1223/"
       }
     },
     {
@@ -26816,7 +28034,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22527",
         "businessHours": "",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1224/"
       }
     },
     {
@@ -26838,7 +28057,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22528",
         "businessHours": "9:00-17:00",
         "homepage": "https://michinoeki-toyocho.jp/",
-        "homepage2": "https://www.instagram.com/umieki.toyo/"
+        "homepage2": "https://www.instagram.com/umieki.toyo/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1225/"
       }
     },
     {
@@ -26860,7 +28080,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22529",
         "businessHours": "",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1226/"
       }
     },
     {
@@ -26882,7 +28103,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22681",
         "businessHours": "",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1227/"
       }
     },
     {
@@ -26904,7 +28126,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22682",
         "businessHours": "9:00~19:00（12月～３月は18：00まで）",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1228/"
       }
     },
     {
@@ -26926,7 +28149,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22683",
         "businessHours": "",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1229/"
       }
     },
     {
@@ -26948,7 +28172,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22684",
         "businessHours": "9:00～17:30",
         "homepage": "https://www.yamada-funakoshi.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1230/"
       }
     },
     {
@@ -26970,7 +28195,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22685",
         "businessHours": "9:00-17:00",
         "homepage": "https://michinoeki-eg.jp/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1231/"
       }
     },
     {
@@ -26992,7 +28218,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22686",
         "businessHours": "",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1232/"
       }
     },
     {
@@ -27014,7 +28241,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22687",
         "businessHours": "直売所 9:00～18:00 飲食店舗 11:00～19:00（L.O.18:30）※飲食店舗により異なる",
         "homepage": "https://m-shonanchigasaki.com/",
-        "homepage2": "https://m-shonanchigasaki.com/choice-chigasaki/"
+        "homepage2": "https://m-shonanchigasaki.com/choice-chigasaki/",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1233/"
       }
     },
     {
@@ -27036,7 +28264,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22688",
         "businessHours": "",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1234/"
       }
     },
     {
@@ -27058,7 +28287,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22689",
         "businessHours": "道の駅事務室 8:30～17:00 直売所 8:00～17:00",
         "homepage": "https://isahaya-michinoeki251.jp/",
-        "homepage2": "https://www.city.isahaya.nagasaki.jp/soshiki/43/1675.html"
+        "homepage2": "https://www.city.isahaya.nagasaki.jp/soshiki/43/1675.html",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1235/"
       }
     },
     {
@@ -27073,14 +28303,15 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "22788",
         "name": "道の駅きなりの郷 下北山",
-        "prefecture": "きなりの郷　下北山",
+        "prefecture": "きなりの郷\u3000下北山",
         "city": "",
         "address": "奈良県吉野郡下北山村上池原1026番地",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/22788",
         "businessHours": "",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1236/"
       }
     },
     {
@@ -27102,7 +28333,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22789",
         "businessHours": "",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1237/"
       }
     },
     {
@@ -27124,7 +28356,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22976",
         "businessHours": "陶芸体験施設：9:00～17:00、瀬戸谷温泉ゆらく：9:00～21:00、農産物直売所：8:00～16:00、カフェ：10:00～16:00",
         "homepage": "https://yutoriesetoya.com/",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1239/"
       }
     },
     {
@@ -27146,7 +28379,8 @@ const michiNoEkiGeoJSON = {
         "url": "https://www.michi-no-eki.jp/stations/views/22977",
         "businessHours": "",
         "homepage": "",
-        "homepage2": ""
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1238/"
       }
     }
   ]
