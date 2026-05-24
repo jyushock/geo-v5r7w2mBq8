@@ -1,5 +1,5 @@
 // マンホールカード配布場所データ
-// 生成日時: 2026/05/25 02:31:24
+// 生成日時: 2026/05/25 03:03:48
 // データ出典: https://www.gk-p.jp/mhcard/?pref=zenkoku
 // 座標: 国土地理院 住所検索API
 const mhcardGeoJSON = {
@@ -1616,8 +1616,8 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.51059,
-          35.480701
+          142.958832,
+          44.583515
         ]
       },
       "properties": {
@@ -30502,8 +30502,8 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.466461,
-          40.745602
+          140.740555,
+          40.824589
         ]
       },
       "properties": {
