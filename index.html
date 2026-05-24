@@ -1508,7 +1508,7 @@ map.on('zoomend', () => { isZooming = false; });
                             popupHtml = `<div class="popup-card"><span class="popup-title">${p.name || ''}</span>${addressHtml}${imgHtml}<a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く(Google)</a><a href="${yahooNavUrl}" class="btn btn-nav-yahoo">ここへ行く(Yahoo)</a></div>`;
                         }
                     } else if (conf.type === 'mhcard') {
-                        const title = `[配布] ${p.name || ''}`;
+                        const title = `${p.coordOffset ? '[複]' : ''}[配布] ${p.name || ''}`;
                         const addressHtml = p.address ? `<span class="popup-address popup-clamp">${p.address}</span>` : '';
                         const hoursHtml   = p.hours   ? `<span class="popup-road popup-clamp">🕐 ${p.hours}</span>`  : '';
                         const imgHtml = buildMhcardImgHtml(p);
