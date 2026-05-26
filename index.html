@@ -1992,14 +1992,7 @@ map.on('zoomend', () => { isZooming = false; });
                 .sort((a, b) => a.dist - b.dist)[0];
             stationName = (nearest.tags['name:ja'] || nearest.tags.name || '').replace(/駅$/, '');
 
-            let isDuplicate = duplicateStationNames.has(stationName);
-            if (!isDuplicate) {
-                const countQuery = `[out:json][timeout:10];node["railway"="station"]["name"="${stationName}"]["station"!="cable_car"]["station"!="funicular"]["station"!="monorail"];out count;`;
-                const countRes = await fetch('https://overpass-api.de/api/interpreter', { method: 'POST', body: countQuery });
-                const countData = await countRes.json();
-                isDuplicate = parseInt(countData?.elements?.[0]?.tags?.total || '0') > 1;
-            }
-            if (isDuplicate) {
+            if (duplicateStationNames.has(stationName)) {
                 const prefQuery = `[out:json][timeout:10];is_in(${nearest.lat},${nearest.lon})->.a;area.a["admin_level"="4"]["name"];out tags;`;
                 const prefRes = await fetch('https://overpass-api.de/api/interpreter', { method: 'POST', body: prefQuery });
                 const prefData = await prefRes.json();
