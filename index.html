@@ -683,7 +683,7 @@
         <div class="nearby-cat-item nearby-cat-placeholder"></div>
         <div class="nearby-cat-item nearby-cat-placeholder"></div>
         <div class="nearby-cat-item nearby-cat-placeholder"></div>
-        <div class="nearby-cat-item" id="hotel-cat-item" onclick="openHotelSearch()">
+        <div class="nearby-cat-item" id="hotel-cat-item" data-cat="hotel" onclick="selectNearbyCat(this)">
             <div class="nearby-cat-icon">🏨</div>
             <div class="nearby-cat-label">ホテル</div>
         </div>
@@ -1963,23 +1963,28 @@ map.on('zoomend', () => { isZooming = false; });
         // DOMの状態に基づいてstateを更新
         nearbyState.cats = Array.from(document.querySelectorAll('.nearby-cat-item.selected')).map(e => e.dataset.cat);
     }
-    async function openHotelSearch() {
+    async function execHotelSearch() {
         const item = document.getElementById('hotel-cat-item');
         const iconEl = item.querySelector('.nearby-cat-icon');
         const labelEl = item.querySelector('.nearby-cat-label');
+        const searchBtn = document.getElementById('nearby-search-btn');
         item.style.pointerEvents = 'none';
+        searchBtn.disabled = true;
         iconEl.textContent = '⏳';
         labelEl.textContent = '検索中…';
 
-        const restore = () => { iconEl.textContent = '🏨'; labelEl.textContent = 'ホテル'; item.style.pointerEvents = ''; };
+        const restore = () => {
+            iconEl.textContent = '🏨'; labelEl.textContent = 'ホテル';
+            item.style.pointerEvents = ''; searchBtn.disabled = false;
+        };
 
         const center = map.getCenter();
         const lat = center.lat;
         const lng = center.lng;
-        const query = `[out:json][timeout:10];node["railway"="station"]["station"!="cable_car"]["station"!="funicular"]["station"!="monorail"](around:10000,${lat},${lng});out body;`;
+        const stationQuery = `[out:json][timeout:10];node["railway"="station"]["station"!="cable_car"]["station"!="funicular"]["station"!="monorail"](around:10000,${lat},${lng});out body;`;
         let stationName;
         try {
-            const res = await fetch('https://overpass-api.de/api/interpreter', { method: 'POST', body: query });
+            const res = await fetch('https://overpass-api.de/api/interpreter', { method: 'POST', body: stationQuery });
             const data = await res.json();
             if (!data.elements || data.elements.length === 0) { restore(); return alert('近くに駅が見つかりませんでした（10km圏内）'); }
             const nearest = data.elements
@@ -1987,13 +1992,20 @@ map.on('zoomend', () => { isZooming = false; });
                 .sort((a, b) => a.dist - b.dist)[0];
             stationName = (nearest.tags['name:ja'] || nearest.tags.name || '').replace(/駅$/, '');
 
-        if (duplicateStationNames.has(stationName)) {
-            const prefQuery = `[out:json][timeout:10];is_in(${nearest.lat},${nearest.lon})->.a;area.a["admin_level"="4"]["name"];out tags;`;
-            const prefRes = await fetch('https://overpass-api.de/api/interpreter', { method: 'POST', body: prefQuery });
-            const prefData = await prefRes.json();
-            const prefName = prefData.elements && prefData.elements[0] ? prefData.elements[0].tags.name : null;
-            if (prefName) stationName = `${stationName} (${prefName})`;
-        }
+            let isDuplicate = duplicateStationNames.has(stationName);
+            if (!isDuplicate) {
+                const countQuery = `[out:json][timeout:10];node["railway"="station"]["name"="${stationName}"]["station"!="cable_car"]["station"!="funicular"]["station"!="monorail"];out count;`;
+                const countRes = await fetch('https://overpass-api.de/api/interpreter', { method: 'POST', body: countQuery });
+                const countData = await countRes.json();
+                isDuplicate = parseInt(countData?.elements?.[0]?.tags?.total || '0') > 1;
+            }
+            if (isDuplicate) {
+                const prefQuery = `[out:json][timeout:10];is_in(${nearest.lat},${nearest.lon})->.a;area.a["admin_level"="4"]["name"];out tags;`;
+                const prefRes = await fetch('https://overpass-api.de/api/interpreter', { method: 'POST', body: prefQuery });
+                const prefData = await prefRes.json();
+                const prefName = prefData.elements && prefData.elements[0] ? prefData.elements[0].tags.name : null;
+                if (prefName) stationName = `${stationName} (${prefName})`;
+            }
         } catch (e) {
             restore();
             return alert('駅情報の取得に失敗しました');
@@ -2006,6 +2018,7 @@ map.on('zoomend', () => { isZooming = false; });
     }
     function execNearbySearch() {
         if (nearbyState.cats.length === 0) return alert('カテゴリが選択されていません');
+        if (nearbyState.cats.includes('hotel')) return execHotelSearch();
 
         const center = map.getCenter();
         const searchLat = center.lat;
