@@ -23,6 +23,7 @@
     <script src="manhole.js"></script>
     <script src="pokemon.js"></script>
     <script src="mhcard.js"></script>
+    <script src="duplicate-stations.js"></script>
     <style>
         body { margin: 0; padding: 0; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
         #map { position: absolute; top: 0; bottom: 0; width: 100%; }
@@ -1985,6 +1986,14 @@ map.on('zoomend', () => { isZooming = false; });
                 .map(el => ({ ...el, dist: (el.lat - lat) ** 2 + (el.lon - lng) ** 2 }))
                 .sort((a, b) => a.dist - b.dist)[0];
             stationName = (nearest.tags['name:ja'] || nearest.tags.name || '').replace(/駅$/, '');
+
+        if (duplicateStationNames.has(stationName)) {
+            const prefQuery = `[out:json][timeout:10];is_in(${nearest.lat},${nearest.lon})->.a;area.a["admin_level"="4"]["name"];out tags;`;
+            const prefRes = await fetch('https://overpass-api.de/api/interpreter', { method: 'POST', body: prefQuery });
+            const prefData = await prefRes.json();
+            const prefName = prefData.elements && prefData.elements[0] ? prefData.elements[0].tags.name : null;
+            if (prefName) stationName = `${stationName} (${prefName})`;
+        }
         } catch (e) {
             restore();
             return alert('駅情報の取得に失敗しました');
