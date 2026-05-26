@@ -388,6 +388,7 @@
         .nearby-cat-icon { font-size: 20px; }
         .nearby-cat-label { font-size: 10px; color: #555; text-align: center; }
         .nearby-cat-item.selected .nearby-cat-label { color: #4285F4; font-weight: bold; }
+        .nearby-cat-placeholder { cursor: default; background: #f0f0f0; opacity: 0.4; pointer-events: none; }
         #nearby-panel-footer {
             display: flex;
             align-items: stretch;
@@ -677,6 +678,13 @@
         <div class="nearby-cat-item" data-cat="sightseeing" onclick="selectNearbyCat(this)">
             <div class="nearby-cat-icon">🗺</div>
             <div class="nearby-cat-label">観光スポット</div>
+        </div>
+        <div class="nearby-cat-item nearby-cat-placeholder"></div>
+        <div class="nearby-cat-item nearby-cat-placeholder"></div>
+        <div class="nearby-cat-item nearby-cat-placeholder"></div>
+        <div class="nearby-cat-item" id="hotel-cat-item" onclick="openHotelSearch()">
+            <div class="nearby-cat-icon">🏨</div>
+            <div class="nearby-cat-label">ホテル</div>
         </div>
     </div>
 
@@ -1953,6 +1961,39 @@ map.on('zoomend', () => { isZooming = false; });
 
         // DOMの状態に基づいてstateを更新
         nearbyState.cats = Array.from(document.querySelectorAll('.nearby-cat-item.selected')).map(e => e.dataset.cat);
+    }
+    async function openHotelSearch() {
+        const item = document.getElementById('hotel-cat-item');
+        const iconEl = item.querySelector('.nearby-cat-icon');
+        const labelEl = item.querySelector('.nearby-cat-label');
+        item.style.pointerEvents = 'none';
+        iconEl.textContent = '⏳';
+        labelEl.textContent = '検索中…';
+
+        const restore = () => { iconEl.textContent = '🏨'; labelEl.textContent = 'ホテル'; item.style.pointerEvents = ''; };
+
+        const center = map.getCenter();
+        const lat = center.lat;
+        const lng = center.lng;
+        const query = `[out:json][timeout:10];node["railway"="station"]["station"!="cable_car"]["station"!="funicular"]["station"!="monorail"](around:10000,${lat},${lng});out body;`;
+        let stationName;
+        try {
+            const res = await fetch('https://overpass-api.de/api/interpreter', { method: 'POST', body: query });
+            const data = await res.json();
+            if (!data.elements || data.elements.length === 0) { restore(); return alert('近くに駅が見つかりませんでした（10km圏内）'); }
+            const nearest = data.elements
+                .map(el => ({ ...el, dist: (el.lat - lat) ** 2 + (el.lon - lng) ** 2 }))
+                .sort((a, b) => a.dist - b.dist)[0];
+            stationName = (nearest.tags['name:ja'] || nearest.tags.name || '').replace(/駅$/, '');
+        } catch (e) {
+            restore();
+            return alert('駅情報の取得に失敗しました');
+        }
+        restore();
+        if (!stationName) return alert('駅名が取得できませんでした');
+        const dp_ymd = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+        const url = `https://www.tour.ne.jp/j_hotel/list/?landmark=${encodeURIComponent(stationName)}&refpage=form#adult=1&dp_ymd=${dp_ymd}&dsp_sort=2&hotel_type=3,6,7,8,11,12,13,15&radius=10000&roomtype=1,2,3,5,7,8,10,11`;
+        window.open(url, '_blank');
     }
     function execNearbySearch() {
         if (nearbyState.cats.length === 0) return alert('カテゴリが選択されていません');
