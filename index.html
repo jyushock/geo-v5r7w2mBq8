@@ -1978,6 +1978,7 @@ map.on('zoomend', () => { isZooming = false; });
             item.style.pointerEvents = ''; searchBtn.disabled = false;
         };
 
+        const newTab = window.open('about:blank', '_blank');
         const center = map.getCenter();
         const lat = center.lat;
         const lng = center.lng;
@@ -2000,14 +2001,15 @@ map.on('zoomend', () => { isZooming = false; });
                 if (prefName) stationName = `${stationName} (${prefName})`;
             }
         } catch (e) {
+            newTab.close();
             restore();
             return alert('駅情報の取得に失敗しました');
         }
         restore();
-        if (!stationName) return alert('駅名が取得できませんでした');
+        if (!stationName) { newTab.close(); return alert('駅名が取得できませんでした'); }
         const dp_ymd = new Date().toISOString().slice(0, 10).replace(/-/g, '');
         const url = `https://www.tour.ne.jp/j_hotel/list/?landmark=${encodeURIComponent(stationName)}&refpage=form#adult=1&dp_ymd=${dp_ymd}&dsp_sort=2&hotel_type=3,6,7,8,11,12,13,15&radius=10000&roomtype=1,2,3,5,7,8,10,11`;
-        window.open(url, '_blank');
+        newTab.location.href = url;
     }
     function execNearbySearch() {
         if (nearbyState.cats.length === 0) return alert('カテゴリが選択されていません');
