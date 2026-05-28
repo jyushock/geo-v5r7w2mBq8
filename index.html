@@ -118,22 +118,7 @@
             animation: pinPulse 1s ease-out 1;
             pointer-events: none;
         }
-        @keyframes longPressGrow {
-            from { transform: scale(0); opacity: 1; }
-            to   { transform: scale(1); opacity: 0.6; }
-        }
-        .long-press-indicator {
-            position: absolute;
-            width: 64px; height: 64px;
-            margin-left: -32px; margin-top: -32px;
-            border-radius: 50%;
-            border: 3px solid rgba(244,67,54,0.8);
-            background: rgba(244,67,54,0.1);
-            animation: longPressGrow 0.5s ease-out forwards;
-            pointer-events: none;
-            z-index: 10;
-        }
-        @keyframes originFlash {
+@keyframes originFlash {
             0%   { background: rgba(244,67,54,0.25); }
             100% { background: #f9f9f9; }
         }
@@ -994,19 +979,11 @@
     let longPressTimer = null;
     let longPressLngLat = null;
     let longPressPoint = null;
-    let longPressIndicator = null;
     function startLongPress(lngLat, point) {
         longPressLngLat = lngLat;
         longPressPoint = point;
-        const ind = document.createElement('div');
-        ind.className = 'long-press-indicator';
-        ind.style.left = point.x + 'px';
-        ind.style.top  = point.y + 'px';
-        map.getCanvasContainer().appendChild(ind);
-        longPressIndicator = ind;
         longPressTimer = setTimeout(() => {
             longPressTimer = null;
-            if (longPressIndicator) { longPressIndicator.remove(); longPressIndicator = null; }
             if (map.queryRenderedFeatures(longPressPoint).some(f => f.properties?.cluster)) return;
             longPressActivated = true;
             placeSearchPin(longPressLngLat);
@@ -1014,7 +991,6 @@
     }
     function cancelLongPress() {
         if (longPressTimer) { clearTimeout(longPressTimer); longPressTimer = null; }
-        if (longPressIndicator) { longPressIndicator.remove(); longPressIndicator = null; }
     }
     map.on('touchstart',  (e) => { if (e.originalEvent.touches.length === 1) startLongPress(e.lngLat, e.point); });
     map.on('touchend',    cancelLongPress);
