@@ -1187,7 +1187,7 @@ function buildPopupHtml(type, label, p, lng, lat) {
     const yahooNavUrl = `https://map.yahoo.co.jp/maps?lat=${lat}&lon=${lng}&zoom=16&type=scroll`;
     const coordGmapUrl = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
     const navBtns  = `<a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く</a><a href="${yahooNavUrl}" class="btn btn-nav-yahoo">ここへ行く</a>`;
-    const nearbyBtn = `<button class="btn btn-nearby-search btn-full" onclick="searchNearby(${lng},${lat},${JSON.stringify(label)})">🔍 この周辺を検索</button>`;
+    const nearbyBtn = `<button class="btn btn-nearby-search btn-full" onclick='searchNearby(${lng},${lat},${JSON.stringify(label)})'>🔍 この周辺を検索</button>`;
     const isPokefuta = type === 'pokefuta' || (type === 'manhole' && p.source === 'pokefuta');
 
     if (isPokefuta) {
