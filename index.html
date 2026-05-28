@@ -922,7 +922,7 @@
                 <circle cx="14" cy="12" r="5" fill="white" opacity="0.9"/>
             </svg>`;
         if (searchPin) searchPin.remove();
-        searchPin = new maplibregl.Marker({ element: el, anchor: 'bottom' })
+        searchPin = new maplibregl.Marker({ element: el, anchor: 'center' })
             .setLngLat(lngLat).addTo(map);
         const pulse = el.querySelector('.search-pin-pulse');
         if (pulse) pulse.addEventListener('animationend', function() { this.remove(); });
