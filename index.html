@@ -958,15 +958,39 @@
         } catch { return ''; }
     }
 
+    // ピンのタップ削除
+    let longPressActivated = false;
     map.on('click', (e) => {
+        if (longPressActivated) { longPressActivated = false; return; }
+        if (!searchPin) return;
         if (map.queryRenderedFeatures(e.point).some(f => f.properties?.cluster)) return;
-        if (searchPin) {
-            const pinPos = map.project(searchPinLngLat);
-            const d = Math.hypot(pinPos.x - e.point.x, pinPos.y - e.point.y);
-            if (d < 22) { removeSearchPin(); return; }
-        }
-        placeSearchPin(e.lngLat);
+        const pinPos = map.project(searchPinLngLat);
+        if (Math.hypot(pinPos.x - e.point.x, pinPos.y - e.point.y) < 22) removeSearchPin();
     });
+
+    // 長押しでピン設置
+    let longPressTimer = null;
+    let longPressLngLat = null;
+    let longPressPoint = null;
+    function startLongPress(lngLat, point) {
+        longPressLngLat = lngLat;
+        longPressPoint = point;
+        longPressTimer = setTimeout(() => {
+            longPressTimer = null;
+            if (map.queryRenderedFeatures(longPressPoint).some(f => f.properties?.cluster)) return;
+            longPressActivated = true;
+            placeSearchPin(longPressLngLat);
+        }, 500);
+    }
+    function cancelLongPress() {
+        if (longPressTimer) { clearTimeout(longPressTimer); longPressTimer = null; }
+    }
+    map.on('touchstart',  (e) => { if (e.originalEvent.touches.length === 1) startLongPress(e.lngLat, e.point); });
+    map.on('touchend',    cancelLongPress);
+    map.on('touchmove',   cancelLongPress);
+    map.on('mousedown',   (e) => { if (e.originalEvent.button === 0) startLongPress(e.lngLat, e.point); });
+    map.on('mouseup',     cancelLongPress);
+    map.on('dragstart',   cancelLongPress);
 
     // 現在地関連の変数
     let currentMarker = null;
