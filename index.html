@@ -928,9 +928,8 @@
             : `${ICON_CROSSHAIR}地図中心を検索`;
     }
 
-    let pinClickGuard = false;
     map.on('click', (e) => {
-        if (pinClickGuard) { pinClickGuard = false; return; }
+        if (map.queryRenderedFeatures(e.point).some(f => f.properties?.cluster)) return;
         if (searchPin) {
             const pinPos = map.project(searchPinLngLat);
             const d = Math.hypot(pinPos.x - e.point.x, pinPos.y - e.point.y);
@@ -1651,6 +1650,7 @@ map.on('zoomend', () => { isZooming = false; });
                     const p = e.features[0].properties;
                     const c = e.features[0].geometry.coordinates.slice();
                     while (Math.abs(e.lngLat.lng - c[0]) > 180) { c[0] += e.lngLat.lng > c[0] ? 360 : -360; }
+                    placeSearchPin({ lng: c[0], lat: c[1] });
                     const popupHtml = buildPopupHtml(conf.type, p.name || '', p, c[0], c[1]);
                     const popup = new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
                     if (conf.type === 'castle') injectCastleImage(popup, p.name, p.url);
