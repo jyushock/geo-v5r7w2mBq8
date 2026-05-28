@@ -412,12 +412,9 @@
             background: #f8f8f8; cursor: pointer; border: 2px solid transparent;
             overflow: hidden;
         }
-        .nearby-cat-item.selected { background: #e8f0fe; border-color: #4285F4; }
         .nearby-cat-icon { width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; color: var(--icon-color, #555); }
         .nearby-cat-icon svg { width: 38px; height: 38px; }
-        .nearby-cat-item.selected .nearby-cat-icon { color: #4285F4; }
         .nearby-cat-label { font-size: 9px; color: #555; text-align: center; white-space: nowrap; overflow: hidden; }
-        .nearby-cat-item.selected .nearby-cat-label { color: #4285F4; font-weight: bold; }
         .nearby-cat-placeholder { cursor: default; background: #f0f0f0; opacity: 0.4; pointer-events: none; }
         #nearby-panel-footer {
             display: flex;
@@ -428,12 +425,19 @@
             background: white;
             box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
         }
-        #nearby-search-btn {
+        #nearby-search-origin {
             flex: 1;
-            background: #34A853; color: white; border: none;
-            border-radius: 0;
-            font-size: 14px; font-weight: bold; cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            gap: 7px;
+            background: #f9f9f9;
+            border-right: 1px solid #e0e0e0;
+            overflow: hidden;
         }
+        #nearby-search-origin-icon { flex-shrink: 0; display: flex; align-items: center; }
+        #nearby-search-origin-label { font-size: 10px; color: #aaa; line-height: 1.2; }
+        #nearby-search-origin-text { font-size: 13px; color: #333; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.3; }
         #nearby-close-btn {
             width: 54px; height: 52px;
             background: white; border: none;
@@ -729,7 +733,13 @@
 
     </div><!-- /nearby-panel-scroll -->
     <div id="nearby-panel-footer">
-        <button id="nearby-search-btn" onclick="execNearbySearch()">地図中心を検索</button>
+        <div id="nearby-search-origin">
+            <div id="nearby-search-origin-icon"></div>
+            <div style="overflow:hidden;">
+                <div id="nearby-search-origin-label">検索地点</div>
+                <div id="nearby-search-origin-text">地図中心</div>
+            </div>
+        </div>
         <button id="nearby-geolocate-btn" onclick="document.getElementById('geolocate-btn').click()">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/>
@@ -896,7 +906,7 @@
     let searchPin = null;
     let searchPinLngLat = null;
 
-    function placeSearchPin(lngLat) {
+    function placeSearchPin(lngLat, label = null) {
         const el = document.createElement('div');
         el.style.cssText = 'position:relative;width:20px;height:26px;';
         el.innerHTML = `
@@ -910,22 +920,42 @@
             .setLngLat(lngLat).addTo(map);
         el.querySelector('.search-pin-pulse').addEventListener('animationend', function() { this.remove(); });
         searchPinLngLat = lngLat;
-        updateSearchBtn();
+        const labelEl = document.getElementById('nearby-search-origin-label');
+        if (labelEl) labelEl.textContent = label || '検索地点';
+        setSearchOriginText('取得中...', true);
+        const capLng = lngLat.lng, capLat = lngLat.lat;
+        fetchPlaceName(capLat, capLng).then(name => {
+            if (searchPinLngLat && searchPinLngLat.lng === capLng && searchPinLngLat.lat === capLat)
+                setSearchOriginText(name || '周辺', true);
+        });
     }
 
     function removeSearchPin() {
         if (searchPin) { searchPin.remove(); searchPin = null; }
         searchPinLngLat = null;
-        updateSearchBtn();
+        const labelEl = document.getElementById('nearby-search-origin-label');
+        if (labelEl) labelEl.textContent = '検索地点';
+        setSearchOriginText('地図中心', false);
     }
 
-    const ICON_PIN = `<svg width="13" height="17" viewBox="0 0 28 36" style="vertical-align:middle;margin-right:5px;margin-bottom:2px"><path d="M14 0C7.4 0 2 5.4 2 12c0 8.4 12 24 12 24s12-15.6 12-24C26 5.4 20.6 0 14 0z" fill="white"/><circle cx="14" cy="12" r="5" fill="rgba(52,168,83,0.6)"/></svg>`;
-    const ICON_CROSSHAIR = `<svg width="16" height="16" viewBox="0 0 44 44" style="vertical-align:middle;margin-right:5px;margin-bottom:2px"><circle cx="22" cy="22" r="9" fill="none" stroke="white" stroke-width="2.5"/><circle cx="22" cy="22" r="2.5" fill="white"/><line x1="22" y1="2" x2="22" y2="11" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="22" y1="33" x2="22" y2="42" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="2" y1="22" x2="11" y2="22" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="33" y1="22" x2="42" y2="22" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>`;
-    function updateSearchBtn() {
-        const btn = document.getElementById('nearby-search-btn');
-        if (btn) btn.innerHTML = searchPinLngLat
-            ? `${ICON_PIN}指定地点を検索`
-            : `${ICON_CROSSHAIR}地図中心を検索`;
+    const ICON_PIN_INFO = `<svg width="12" height="16" viewBox="0 0 28 36"><path d="M14 0C7.4 0 2 5.4 2 12c0 8.4 12 24 12 24s12-15.6 12-24C26 5.4 20.6 0 14 0z" fill="#F44336"/><circle cx="14" cy="12" r="5" fill="white" opacity="0.9"/></svg>`;
+    const ICON_CROSSHAIR_INFO = `<svg width="14" height="14" viewBox="0 0 44 44"><circle cx="22" cy="22" r="9" fill="none" stroke="#4285F4" stroke-width="3"/><circle cx="22" cy="22" r="3" fill="#4285F4"/><line x1="22" y1="2" x2="22" y2="11" stroke="#4285F4" stroke-width="3" stroke-linecap="round"/><line x1="22" y1="33" x2="22" y2="42" stroke="#4285F4" stroke-width="3" stroke-linecap="round"/><line x1="2" y1="22" x2="11" y2="22" stroke="#4285F4" stroke-width="3" stroke-linecap="round"/><line x1="33" y1="22" x2="42" y2="22" stroke="#4285F4" stroke-width="3" stroke-linecap="round"/></svg>`;
+    function setSearchOriginText(text, pinned) {
+        const icon = document.getElementById('nearby-search-origin-icon');
+        const textEl = document.getElementById('nearby-search-origin-text');
+        if (icon) icon.innerHTML = pinned ? ICON_PIN_INFO : ICON_CROSSHAIR_INFO;
+        if (textEl) textEl.textContent = text;
+    }
+    async function fetchPlaceName(lat, lng) {
+        try {
+            const res = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json&zoom=14&accept-language=ja`);
+            const data = await res.json();
+            const a = data.address || {};
+            const state = a.state || a.province || a.region || a['ISO3166-2-lvl4'] || '';
+            const city  = a.city || a.county || a.town || a.village || '';
+            const sub   = a.suburb || a.neighbourhood || a.quarter || a.city_district || '';
+            return [state, city, sub].filter(Boolean).join(' ');
+        } catch { return ''; }
     }
 
     map.on('click', (e) => {
@@ -1122,7 +1152,7 @@ function buildPopupHtml(type, label, p, lng, lat) {
     const yahooNavUrl = `https://map.yahoo.co.jp/maps?lat=${lat}&lon=${lng}&zoom=16&type=scroll`;
     const coordGmapUrl = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
     const navBtns  = `<a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く</a><a href="${yahooNavUrl}" class="btn btn-nav-yahoo">ここへ行く</a>`;
-    const nearbyBtn = `<button class="btn btn-nearby-search btn-full" onclick="searchNearby(${lng},${lat})">🔍 この周辺を検索</button>`;
+    const nearbyBtn = `<button class="btn btn-nearby-search btn-full" onclick="searchNearby(${lng},${lat},${JSON.stringify(label)})">🔍 この周辺を検索</button>`;
     const isPokefuta = type === 'pokefuta' || (type === 'manhole' && p.source === 'pokefuta');
 
     if (isPokefuta) {
@@ -1650,7 +1680,7 @@ map.on('zoomend', () => { isZooming = false; });
                     const p = e.features[0].properties;
                     const c = e.features[0].geometry.coordinates.slice();
                     while (Math.abs(e.lngLat.lng - c[0]) > 180) { c[0] += e.lngLat.lng > c[0] ? 360 : -360; }
-                    placeSearchPin({ lng: c[0], lat: c[1] });
+                    placeSearchPin({ lng: c[0], lat: c[1] }, p.name || p.pokemon || null);
                     const popupHtml = buildPopupHtml(conf.type, p.name || '', p, c[0], c[1]);
                     const popup = new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
                     if (conf.type === 'castle') injectCastleImage(popup, p.name, p.url);
@@ -1940,7 +1970,8 @@ map.on('zoomend', () => { isZooming = false; });
     }
 
     const gmapKeywords = { supermarket: 'スーパー', transit: '駅 OR バス停', restaurant: 'レストラン', coffee: 'カフェ', statue: '像', takeout: 'テイクアウト', museum: 'ミュージアム OR 歴史館 OR 資料館', ramen: 'ラーメン', udon: 'うどん', soba: 'そば', sightseeing: '観光スポット', sushi: '寿司 OR 回転寿司', drugstore: '薬局 OR ドラッグストア', hundredyen: '100円ショップ' };
-    let nearbyState = { cats: ['spot'] };
+    let nearbyState = { cats: [] };
+    setSearchOriginText('地図中心', false);
     let nearbyAllResults = [];
     let nearbyTypeFilter = new Set();
     const filterState = Object.assign(
@@ -1998,10 +2029,10 @@ map.on('zoomend', () => { isZooming = false; });
         saveSettings();
     }
 
-    function searchNearby(lng, lat) {
+    function searchNearby(lng, lat, name = null) {
         event.stopPropagation();
         document.querySelectorAll('.maplibregl-popup').forEach(el => el.remove());
-        placeSearchPin({ lng, lat });
+        placeSearchPin({ lng, lat }, name || null);
         openNearbyPanel();
     }
 
@@ -2012,8 +2043,16 @@ map.on('zoomend', () => { isZooming = false; });
     function openNearbyPanel() {
         Object.keys(filterState).forEach(id => { const el=document.getElementById(`check-${id}`); if(el) el.checked=filterState[id]; });
         Object.keys(labelState).forEach(id => { const el=document.getElementById(`check-label-${id}`); if(el) el.checked=labelState[id]; });
-        document.querySelectorAll('.nearby-cat-item').forEach(el => el.classList.toggle('selected', nearbyState.cats.includes(el.dataset.cat)));
         document.getElementById('nearby-list').innerHTML = '';
+        if (!searchPinLngLat) {
+            const labelEl = document.getElementById('nearby-search-origin-label');
+            if (labelEl) labelEl.textContent = '検索地点';
+            setSearchOriginText('取得中...', false);
+            const center = map.getCenter();
+            fetchPlaceName(center.lat, center.lng).then(name => {
+                if (!searchPinLngLat) setSearchOriginText(name || '地図中心', false);
+            });
+        }
         // メインビューに戻す
         document.getElementById('nearby-main-view').style.display = '';
         document.getElementById('nearby-settings-view').style.display = 'none';
@@ -2032,15 +2071,8 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('nearby-settings-view').style.display = 'none';
     }
     function selectNearbyCat(el) {
-        // 常に単一選択: クリックされた項目のみ選択
-        const wasSelected = el.classList.contains('selected');
-        document.querySelectorAll('.nearby-cat-item').forEach(e => e.classList.remove('selected'));
-        if (!wasSelected) {
-            el.classList.add('selected');
-        }
-
-        // DOMの状態に基づいてstateを更新
-        nearbyState.cats = Array.from(document.querySelectorAll('.nearby-cat-item.selected')).map(e => e.dataset.cat);
+        nearbyState.cats = [el.dataset.cat];
+        execNearbySearch();
     }
     async function execHotelSearch() {
         const item = document.getElementById('hotel-cat-item');
@@ -2238,6 +2270,7 @@ map.on('zoomend', () => { isZooming = false; });
         panel.classList.remove('open');
         document.getElementById('nearby-overlay').classList.remove('open');
         document.getElementById('bottom-bar').classList.remove('panel-open');
+        nearbyState.cats = [];
     }
 
     (function() {
