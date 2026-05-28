@@ -959,7 +959,7 @@
             const res = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json&zoom=18&accept-language=ja`);
             const data = await res.json();
             const a = data.address || {};
-            const state   = a.state || a.province || a.region || a['ISO3166-2-lvl4'] || '';
+            const state   = a.state || a.province || a.region || '';
             const city    = a.city || a.county || a.town || a.village || '';
             const suburb  = a.suburb || a.neighbourhood || a.city_district || '';
             const quarter = a.quarter || '';
