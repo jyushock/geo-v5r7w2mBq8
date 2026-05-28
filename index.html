@@ -1496,6 +1496,7 @@ map.on('zoomend', () => { isZooming = false; });
 
         // 現在地ボタンのクリック処理
         document.getElementById('geolocate-btn').addEventListener('click', () => {
+            removeSearchPin();
             // 追従解除後（preTrackingMode保持中）にボタンを押した場合 → モード復帰して現在地へ
             if (trackingMode === 0 && preTrackingMode > 0) {
                 const mode = preTrackingMode;
