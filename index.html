@@ -105,6 +105,19 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+        @keyframes pinPulse {
+            0%   { transform: translate(-50%,-50%) scale(0.3); opacity: 0.8; }
+            100% { transform: translate(-50%,-50%) scale(2.5); opacity: 0; }
+        }
+        .search-pin-pulse {
+            position: absolute; top: 0; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px; height: 48px;
+            border-radius: 50%;
+            background: rgba(244,67,54,0.35);
+            animation: pinPulse 1.2s ease-out 1;
+            pointer-events: none;
+        }
         #zoom-btn-wrap {
             position: fixed;
             right: 10px;
@@ -713,7 +726,7 @@
 
     </div><!-- /nearby-panel-scroll -->
     <div id="nearby-panel-footer">
-        <button id="nearby-search-btn" onclick="execNearbySearch()">探す</button>
+        <button id="nearby-search-btn" onclick="execNearbySearch()">地図中心を検索</button>
         <button id="nearby-geolocate-btn" onclick="document.getElementById('geolocate-btn').click()">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/>
@@ -874,6 +887,53 @@
             duration: 300,
             essential: true
         });
+    });
+
+    // 検索ピン
+    let searchPin = null;
+    let searchPinLngLat = null;
+
+    function placeSearchPin(lngLat) {
+        const el = document.createElement('div');
+        el.style.cssText = 'position:relative;width:20px;height:26px;';
+        el.innerHTML = `
+            <div class="search-pin-pulse"></div>
+            <svg width="20" height="26" viewBox="0 0 28 36" style="filter:drop-shadow(0 2px 4px rgba(0,0,0,0.35));cursor:pointer;">
+                <path d="M14 0C7.4 0 2 5.4 2 12c0 8.4 12 24 12 24s12-15.6 12-24C26 5.4 20.6 0 14 0z" fill="#F44336"/>
+                <circle cx="14" cy="12" r="5" fill="white" opacity="0.9"/>
+            </svg>`;
+        if (searchPin) searchPin.remove();
+        searchPin = new maplibregl.Marker({ element: el, anchor: 'bottom' })
+            .setLngLat(lngLat).addTo(map);
+        el.querySelector('.search-pin-pulse').addEventListener('animationend', function() { this.remove(); });
+        searchPinLngLat = lngLat;
+        updateSearchBtn();
+    }
+
+    function removeSearchPin() {
+        if (searchPin) { searchPin.remove(); searchPin = null; }
+        searchPinLngLat = null;
+        updateSearchBtn();
+    }
+
+    const ICON_PIN = `<svg width="13" height="17" viewBox="0 0 28 36" style="vertical-align:middle;margin-right:5px;margin-bottom:2px"><path d="M14 0C7.4 0 2 5.4 2 12c0 8.4 12 24 12 24s12-15.6 12-24C26 5.4 20.6 0 14 0z" fill="white"/><circle cx="14" cy="12" r="5" fill="rgba(52,168,83,0.6)"/></svg>`;
+    const ICON_CROSSHAIR = `<svg width="16" height="16" viewBox="0 0 44 44" style="vertical-align:middle;margin-right:5px;margin-bottom:2px"><circle cx="22" cy="22" r="9" fill="none" stroke="white" stroke-width="2.5"/><circle cx="22" cy="22" r="2.5" fill="white"/><line x1="22" y1="2" x2="22" y2="11" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="22" y1="33" x2="22" y2="42" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="2" y1="22" x2="11" y2="22" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="33" y1="22" x2="42" y2="22" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>`;
+    function updateSearchBtn() {
+        const btn = document.getElementById('nearby-search-btn');
+        if (btn) btn.innerHTML = searchPinLngLat
+            ? `${ICON_PIN}指定地点を検索`
+            : `${ICON_CROSSHAIR}地図中心を検索`;
+    }
+
+    let pinClickGuard = false;
+    map.on('click', (e) => {
+        if (pinClickGuard) { pinClickGuard = false; return; }
+        if (searchPin) {
+            const pinPos = map.project(searchPinLngLat);
+            const d = Math.hypot(pinPos.x - e.point.x, pinPos.y - e.point.y);
+            if (d < 22) { removeSearchPin(); return; }
+        }
+        placeSearchPin(e.lngLat);
     });
 
     // 現在地関連の変数
@@ -1936,6 +1996,7 @@ map.on('zoomend', () => { isZooming = false; });
     }
 
     document.getElementById('tile-source-select').value = localStorage.getItem('mapTileSource') || 'openfreemap';
+    updateSearchBtn();
     document.getElementById('hotel-radius-select').value = localStorage.getItem('hotelRadius') || '10000';
 
     function onHotelRadiusChange(value) {
@@ -2022,7 +2083,7 @@ map.on('zoomend', () => { isZooming = false; });
         };
 
         const newTab = window.open('about:blank', '_blank');
-        const center = map.getCenter();
+        const center = searchPinLngLat || map.getCenter();
         const lat = center.lat;
         const lng = center.lng;
         const stationQuery = `[out:json][timeout:10];node["railway"="station"]["station"!="cable_car"]["station"!="funicular"]["station"!="monorail"](around:10000,${lat},${lng});out body;`;
@@ -2059,7 +2120,7 @@ map.on('zoomend', () => { isZooming = false; });
         if (nearbyState.cats.length === 0) return alert('カテゴリが選択されていません');
         if (nearbyState.cats.includes('hotel')) return execHotelSearch();
 
-        const center = map.getCenter();
+        const center = searchPinLngLat || map.getCenter();
         const searchLat = center.lat;
         const searchLng = center.lng;
         
