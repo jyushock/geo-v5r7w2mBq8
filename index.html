@@ -933,7 +933,12 @@
             const d = Math.hypot(pinPos.x - e.point.x, pinPos.y - e.point.y);
             if (d < 22) { removeSearchPin(); return; }
         }
-        placeSearchPin(e.lngLat);
+        const features = map.queryRenderedFeatures(e.point);
+        const pointFeature = features.find(f => f.geometry && f.geometry.type === 'Point');
+        const lngLat = pointFeature
+            ? { lng: pointFeature.geometry.coordinates[0], lat: pointFeature.geometry.coordinates[1] }
+            : e.lngLat;
+        placeSearchPin(lngLat);
     });
 
     // 現在地関連の変数
