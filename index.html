@@ -954,20 +954,26 @@
         }
     }
 
+    let pulseRaf = null;
     function animatePinPulse(lngLat) {
         const pulseSrc = map.getSource('pin-pulse-source');
         if (!pulseSrc) return;
+        if (pulseRaf) { cancelAnimationFrame(pulseRaf); pulseRaf = null; }
+        map.setPaintProperty('pin-pulse-layer', 'circle-radius', 0);
+        map.setPaintProperty('pin-pulse-layer', 'circle-opacity', 0);
         pulseSrc.setData({ type: 'Feature', geometry: { type: 'Point', coordinates: [lngLat.lng, lngLat.lat] }, properties: {} });
         const start = performance.now();
-        const duration = 900;
+        const duration = 1000;
+        function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
         function frame(t) {
             const p = Math.min((t - start) / duration, 1);
-            map.setPaintProperty('pin-pulse-layer', 'circle-radius',  p * 44);
-            map.setPaintProperty('pin-pulse-layer', 'circle-opacity', (1 - p) * 0.7);
-            if (p < 1) requestAnimationFrame(frame);
-            else pulseSrc.setData({ type: 'FeatureCollection', features: [] });
+            const e = easeOut(p);
+            map.setPaintProperty('pin-pulse-layer', 'circle-radius',  5.6 + e * (112 - 5.6));
+            map.setPaintProperty('pin-pulse-layer', 'circle-opacity', (1 - p) * 0.4);
+            if (p < 1) pulseRaf = requestAnimationFrame(frame);
+            else { pulseRaf = null; pulseSrc.setData({ type: 'FeatureCollection', features: [] }); }
         }
-        requestAnimationFrame(frame);
+        pulseRaf = requestAnimationFrame(frame);
     }
 
     function removeSearchPin() {
@@ -1017,10 +1023,8 @@
     function startLongPress(lngLat, point) {
         longPressLngLat = lngLat;
         longPressPoint = point;
-        startProgressRing(lngLat);
         longPressTimer = setTimeout(() => {
             longPressTimer = null;
-            stopProgressRing();
             if (map.queryRenderedFeatures(longPressPoint).some(f => f.properties?.cluster)) return;
             longPressActivated = true;
             placeSearchPin(longPressLngLat);
@@ -1028,7 +1032,6 @@
     }
     function cancelLongPress() {
         if (longPressTimer) { clearTimeout(longPressTimer); longPressTimer = null; }
-        stopProgressRing();
     }
     map.on('touchstart',  (e) => { if (e.originalEvent.touches.length === 1) startLongPress(e.lngLat, e.point); });
     map.on('touchend',    cancelLongPress);
@@ -1522,7 +1525,7 @@ map.on('zoomend', () => { isZooming = false; });
         map.addSource('search-pin-source',    { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
         map.addSource('pin-pulse-source',     { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
         map.addSource('pin-progress-source',  { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
-        map.addLayer({ id: 'pin-pulse-layer',    type: 'circle', source: 'pin-pulse-source',    paint: { 'circle-radius': 0, 'circle-color': 'rgba(244,67,54,0.5)', 'circle-opacity': 0 } });
+        map.addLayer({ id: 'pin-pulse-layer', type: 'circle', source: 'pin-pulse-source', paint: { 'circle-radius': 0, 'circle-radius-transition': { duration: 0 }, 'circle-color': 'rgba(244,67,54,1)', 'circle-opacity': 0, 'circle-opacity-transition': { duration: 0 } } });
         map.addLayer({ id: 'pin-progress-layer', type: 'circle', source: 'pin-progress-source', paint: { 'circle-radius': 0, 'circle-color': 'rgba(244,67,54,0.1)', 'circle-opacity': 1, 'circle-stroke-width': 3, 'circle-stroke-color': 'rgba(244,67,54,0.85)', 'circle-stroke-opacity': 0 } });
         map.addLayer({ id: 'search-pin-layer',   type: 'symbol', source: 'search-pin-source',   layout: { 'icon-image': 'search-pin-icon', 'icon-size': 1, 'icon-anchor': 'bottom', 'icon-allow-overlap': true, 'icon-ignore-placement': true } });
         map.on('mouseenter', 'search-pin-layer', () => { map.getCanvas().style.cursor = 'pointer'; });
