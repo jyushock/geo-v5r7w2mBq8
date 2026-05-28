@@ -2087,7 +2087,7 @@ map.on('zoomend', () => { isZooming = false; });
         }
         restore();
         if (!stationName) { newTab.close(); return alert('駅名が取得できませんでした'); }
-        const dp_ymd = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+        const dp_ymd = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Tokyo' }).replace(/-/g, '');
         const hotelRadius = localStorage.getItem('hotelRadius') || '10000';
         const url = `https://www.tour.ne.jp/j_hotel/list/?landmark=${encodeURIComponent(stationName)}&refpage=form#adult=1&dp_ymd=${dp_ymd}&dsp_sort=2&hotel_type=3,6,7,8,11,12,13,15&radius=${hotelRadius}&roomtype=1,2,3,5,7,8,10,11`;
         newTab.location.href = url;
