@@ -961,10 +961,10 @@
             const a = data.address || {};
             const state   = a.state || a.province || a.region || a['ISO3166-2-lvl4'] || '';
             const city    = a.city || a.county || a.town || a.village || '';
-            const sub     = a.suburb || a.neighbourhood || a.quarter || a.city_district || '';
-            const road    = a.road || '';
+            const suburb  = a.suburb || a.neighbourhood || a.city_district || '';
+            const quarter = a.quarter || '';
             const houseNo = a.house_number || '';
-            return [state, city, sub, road, houseNo].filter(Boolean).join(' ');
+            return [state, city, suburb, quarter, houseNo].filter(Boolean).join(' ');
         } catch { return ''; }
     }
 
