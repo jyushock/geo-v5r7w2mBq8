@@ -24,6 +24,16 @@
     <script src="pokemon.js"></script>
     <script src="mhcard.js"></script>
     <script src="duplicate-stations.js"></script>
+    <script>
+    fetch('icons-raw.svg').then(r => r.text()).then(svgText => {
+        const m = svgText.match(/<g[^>]*>([\s\S]*)<\/g>/);
+        if (!m) return;
+        const inner = m[1];
+        document.querySelectorAll('.nearby-cat-icon[data-vb]').forEach(el => {
+            el.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="${el.dataset.vb}"><g fill="currentColor">${inner}</g></svg>`;
+        });
+    });
+    </script>
     <style>
         body { margin: 0; padding: 0; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
         #map { position: absolute; top: 0; bottom: 0; width: 100%; }
@@ -382,12 +392,15 @@
         }
         .nearby-cat-item {
             display: flex; flex-direction: column; align-items: center;
-            gap: 2px; padding: 6px 4px; border-radius: 10px;
+            gap: 0px; padding: 2px 4px; border-radius: 10px;
             background: #f8f8f8; cursor: pointer; border: 2px solid transparent;
+            overflow: hidden;
         }
         .nearby-cat-item.selected { background: #e8f0fe; border-color: #4285F4; }
-        .nearby-cat-icon { font-size: 20px; }
-        .nearby-cat-label { font-size: 10px; color: #555; text-align: center; }
+        .nearby-cat-icon { width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; color: var(--icon-color, #555); }
+        .nearby-cat-icon svg { width: 38px; height: 38px; }
+        .nearby-cat-item.selected .nearby-cat-icon { color: #4285F4; }
+        .nearby-cat-label { font-size: 9px; color: #555; text-align: center; white-space: nowrap; overflow: hidden; }
         .nearby-cat-item.selected .nearby-cat-label { color: #4285F4; font-weight: bold; }
         .nearby-cat-placeholder { cursor: default; background: #f0f0f0; opacity: 0.4; pointer-events: none; }
         #nearby-panel-footer {
@@ -633,67 +646,67 @@
     <div class="nearby-section-label">周辺検索</div>
     <div class="nearby-category-grid">
         <div class="nearby-cat-item" data-cat="spot" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">📍</div>
+            <div class="nearby-cat-icon" data-vb="27 60 220 170" style="--icon-color:#4285F4"></div>
             <div class="nearby-cat-label">スポット</div>
         </div>
         <div class="nearby-cat-item" data-cat="supermarket" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">🛒</div>
+            <div class="nearby-cat-icon" data-vb="267 60 220 170" style="--icon-color:#34A853"></div>
             <div class="nearby-cat-label">スーパー</div>
         </div>
         <div class="nearby-cat-item" data-cat="transit" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">🚆</div>
-            <div class="nearby-cat-label">交通機関</div>
+            <div class="nearby-cat-icon" data-vb="505 60 220 170" style="--icon-color:#1565C0"></div>
+            <div class="nearby-cat-label">駅/バス停</div>
         </div>
         <div class="nearby-cat-item" data-cat="restaurant" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">🍽</div>
+            <div class="nearby-cat-icon" data-vb="745 60 220 170" style="--icon-color:#FF5722"></div>
             <div class="nearby-cat-label">レストラン</div>
         </div>
         <div class="nearby-cat-item" data-cat="coffee" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">☕</div>
+            <div class="nearby-cat-icon" data-vb="27 275 220 170" style="--icon-color:#795548"></div>
             <div class="nearby-cat-label">カフェ</div>
         </div>
         <div class="nearby-cat-item" data-cat="statue" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">🗿</div>
+            <div class="nearby-cat-icon" data-vb="267 275 220 170" style="--icon-color:#607D8B"></div>
             <div class="nearby-cat-label">像</div>
         </div>
         <div class="nearby-cat-item" data-cat="takeout" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">🥙</div>
+            <div class="nearby-cat-icon" data-vb="505 275 220 170" style="--icon-color:#FF9800"></div>
             <div class="nearby-cat-label">テイクアウト</div>
         </div>
         <div class="nearby-cat-item" data-cat="museum" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">🏛</div>
+            <div class="nearby-cat-icon" data-vb="745 275 220 170" style="--icon-color:#7B1FA2"></div>
             <div class="nearby-cat-label">ミュージアム</div>
         </div>
         <div class="nearby-cat-item" data-cat="ramen" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">🍜</div>
+            <div class="nearby-cat-icon" data-vb="27 502 220 170" style="--icon-color:#F44336"></div>
             <div class="nearby-cat-label">ラーメン</div>
         </div>
         <div class="nearby-cat-item" data-cat="udon" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">🍲</div>
+            <div class="nearby-cat-icon" data-vb="267 502 220 170" style="--icon-color:#FFA000"></div>
             <div class="nearby-cat-label">うどん</div>
         </div>
         <div class="nearby-cat-item" data-cat="soba" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">🥢</div>
+            <div class="nearby-cat-icon" data-vb="505 502 220 170" style="--icon-color:#8D6E63"></div>
             <div class="nearby-cat-label">そば</div>
         </div>
         <div class="nearby-cat-item" data-cat="sightseeing" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">🗺</div>
+            <div class="nearby-cat-icon" data-vb="745 502 220 170" style="--icon-color:#00897B"></div>
             <div class="nearby-cat-label">観光スポット</div>
         </div>
         <div class="nearby-cat-item" data-cat="sushi" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">🍣</div>
+            <div class="nearby-cat-icon" data-vb="27 745 220 170" style="--icon-color:#E91E63"></div>
             <div class="nearby-cat-label">寿司</div>
         </div>
         <div class="nearby-cat-item" data-cat="drugstore" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">💊</div>
+            <div class="nearby-cat-icon" data-vb="267 745 220 170" style="--icon-color:#00897B"></div>
             <div class="nearby-cat-label">ドラッグストア</div>
         </div>
         <div class="nearby-cat-item" data-cat="hundredyen" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">💴</div>
+            <div class="nearby-cat-icon" data-vb="505 745 220 170" style="--icon-color:#D32F2F"></div>
             <div class="nearby-cat-label">100円ショップ</div>
         </div>
         <div class="nearby-cat-item" id="hotel-cat-item" data-cat="hotel" onclick="selectNearbyCat(this)">
-            <div class="nearby-cat-icon">🏨</div>
+            <div class="nearby-cat-icon" data-vb="745 745 220 170" style="--icon-color:#1976D2"></div>
             <div class="nearby-cat-label">ホテル</div>
         </div>
     </div>
@@ -1999,11 +2012,12 @@ map.on('zoomend', () => { isZooming = false; });
         const searchBtn = document.getElementById('nearby-search-btn');
         item.style.pointerEvents = 'none';
         searchBtn.disabled = true;
+        const savedIconHtml = iconEl.innerHTML;
         iconEl.textContent = '⏳';
         labelEl.textContent = '検索中…';
 
         const restore = () => {
-            iconEl.textContent = '🏨'; labelEl.textContent = 'ホテル';
+            iconEl.innerHTML = savedIconHtml; labelEl.textContent = 'ホテル';
             item.style.pointerEvents = ''; searchBtn.disabled = false;
         };
 
