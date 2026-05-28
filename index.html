@@ -914,10 +914,10 @@
 
     function placeSearchPin(lngLat, label = null) {
         const el = document.createElement('div');
-        el.style.cssText = 'position:relative;width:20px;height:26px;';
+        el.style.cssText = 'position:relative;width:20px;height:26px;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.35));cursor:pointer;';
         el.innerHTML = `
             ${label ? '' : '<div class="search-pin-pulse"></div>'}
-            <svg width="20" height="26" viewBox="0 0 28 36" style="filter:drop-shadow(0 2px 4px rgba(0,0,0,0.35));cursor:pointer;">
+            <svg width="20" height="26" viewBox="0 0 28 36">
                 <path d="M14 0C7.4 0 2 5.4 2 12c0 8.4 12 24 12 24s12-15.6 12-24C26 5.4 20.6 0 14 0z" fill="#F44336"/>
                 <circle cx="14" cy="12" r="5" fill="white" opacity="0.9"/>
             </svg>`;
