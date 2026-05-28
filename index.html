@@ -2113,16 +2113,14 @@ map.on('zoomend', () => { isZooming = false; });
         const item = document.getElementById('hotel-cat-item');
         const iconEl = item.querySelector('.nearby-cat-icon');
         const labelEl = item.querySelector('.nearby-cat-label');
-        const searchBtn = document.getElementById('nearby-search-btn');
         item.style.pointerEvents = 'none';
-        searchBtn.disabled = true;
         const savedIconHtml = iconEl.innerHTML;
         iconEl.textContent = '⏳';
         labelEl.textContent = '検索中…';
 
         const restore = () => {
             iconEl.innerHTML = savedIconHtml; labelEl.textContent = 'ホテル';
-            item.style.pointerEvents = ''; searchBtn.disabled = false;
+            item.style.pointerEvents = '';
         };
 
         const newTab = window.open('about:blank', '_blank');
