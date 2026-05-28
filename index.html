@@ -909,24 +909,14 @@
     });
 
     // 検索ピン
-    let searchPin = null;
     let searchPinLngLat = null;
 
     function placeSearchPin(lngLat, label = null) {
-        const el = document.createElement('div');
-        el.style.cssText = 'position:relative;width:20px;height:26px;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.35));cursor:pointer;';
-        el.innerHTML = `
-            ${label ? '' : '<div class="search-pin-pulse"></div>'}
-            <svg width="20" height="26" viewBox="0 0 28 36">
-                <path d="M14 0C7.4 0 2 5.4 2 12c0 8.4 12 24 12 24s12-15.6 12-24C26 5.4 20.6 0 14 0z" fill="#F44336"/>
-                <circle cx="14" cy="12" r="5" fill="white" opacity="0.9"/>
-            </svg>`;
-        if (searchPin) searchPin.remove();
-        searchPin = new maplibregl.Marker({ element: el, anchor: 'center' })
-            .setLngLat(lngLat).addTo(map);
-        const pulse = el.querySelector('.search-pin-pulse');
-        if (pulse) pulse.addEventListener('animationend', function() { this.remove(); });
         searchPinLngLat = lngLat;
+        const src = map.getSource('search-pin-source');
+        if (src) src.setData({ type: 'Feature', geometry: { type: 'Point', coordinates: [lngLat.lng, lngLat.lat] }, properties: {} });
+        if (map.getLayer('search-pin-layer')) map.moveLayer('search-pin-layer');
+        if (!label) animatePinPulse(lngLat);
         const origin = document.getElementById('nearby-search-origin');
         if (origin && !label) { origin.classList.remove('flash'); void origin.offsetWidth; origin.classList.add('flash'); }
         const labelEl = document.getElementById('nearby-search-origin-label');
@@ -939,9 +929,26 @@
         });
     }
 
+    function animatePinPulse(lngLat) {
+        const pulseSrc = map.getSource('pin-pulse-source');
+        if (!pulseSrc) return;
+        pulseSrc.setData({ type: 'Feature', geometry: { type: 'Point', coordinates: [lngLat.lng, lngLat.lat] }, properties: {} });
+        const start = performance.now();
+        const duration = 900;
+        function frame(t) {
+            const p = Math.min((t - start) / duration, 1);
+            map.setPaintProperty('pin-pulse-layer', 'circle-radius',  p * 44);
+            map.setPaintProperty('pin-pulse-layer', 'circle-opacity', (1 - p) * 0.7);
+            if (p < 1) requestAnimationFrame(frame);
+            else pulseSrc.setData({ type: 'FeatureCollection', features: [] });
+        }
+        requestAnimationFrame(frame);
+    }
+
     function removeSearchPin() {
-        if (searchPin) { searchPin.remove(); searchPin = null; }
         searchPinLngLat = null;
+        const src = map.getSource('search-pin-source');
+        if (src) src.setData({ type: 'FeatureCollection', features: [] });
         const labelEl = document.getElementById('nearby-search-origin-label');
         if (labelEl) labelEl.textContent = '検索地点';
         setSearchOriginText('地図中心', false);
@@ -969,14 +976,13 @@
         } catch { return ''; }
     }
 
-    // ピンのタップ削除
     let longPressActivated = false;
     map.on('click', (e) => {
         if (longPressActivated) { longPressActivated = false; return; }
-        if (!searchPin) return;
-        if (map.queryRenderedFeatures(e.point).some(f => f.properties?.cluster)) return;
-        const pinPos = map.project(searchPinLngLat);
-        if (Math.hypot(pinPos.x - e.point.x, pinPos.y - e.point.y) < 22) removeSearchPin();
+        if (searchPinLngLat && map.getLayer('search-pin-layer')) {
+            const hit = map.queryRenderedFeatures(e.point, { layers: ['search-pin-layer'] });
+            if (hit.length > 0) { removeSearchPin(); return; }
+        }
     });
 
     // 長押しでピン設置
@@ -1480,6 +1486,18 @@ map.on('zoomend', () => { isZooming = false; });
     });
 
     map.on('load', () => {
+        // 検索ピン（GLレイヤー）
+        const pinSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="52" viewBox="0 0 28 36"><path d="M14 0C7.4 0 2 5.4 2 12c0 8.4 12 24 12 24s12-15.6 12-24C26 5.4 20.6 0 14 0z" fill="#F44336"/><circle cx="14" cy="12" r="5" fill="white" opacity="0.9"/></svg>`;
+        const pinImg = new Image(40, 52);
+        pinImg.onload = () => { if (!map.hasImage('search-pin-icon')) map.addImage('search-pin-icon', pinImg, { pixelRatio: 2 }); };
+        pinImg.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(pinSvg);
+        map.addSource('search-pin-source', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
+        map.addSource('pin-pulse-source',  { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
+        map.addLayer({ id: 'pin-pulse-layer', type: 'circle', source: 'pin-pulse-source', paint: { 'circle-radius': 0, 'circle-color': 'rgba(244,67,54,0.5)', 'circle-opacity': 0 } });
+        map.addLayer({ id: 'search-pin-layer', type: 'symbol', source: 'search-pin-source', layout: { 'icon-image': 'search-pin-icon', 'icon-size': 1, 'icon-anchor': 'bottom', 'icon-allow-overlap': true, 'icon-ignore-placement': true } });
+        map.on('mouseenter', 'search-pin-layer', () => { map.getCanvas().style.cursor = 'pointer'; });
+        map.on('mouseleave', 'search-pin-layer', () => { map.getCanvas().style.cursor = ''; });
+
         // 地図状態の保存（PWA再起動時の復元用）
         function saveMapState() {
             const c = map.getCenter();
