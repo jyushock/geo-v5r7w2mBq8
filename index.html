@@ -915,7 +915,7 @@
         const el = document.createElement('div');
         el.style.cssText = 'position:relative;width:20px;height:26px;';
         el.innerHTML = `
-            <div class="search-pin-pulse"></div>
+            ${label ? '' : '<div class="search-pin-pulse"></div>'}
             <svg width="20" height="26" viewBox="0 0 28 36" style="filter:drop-shadow(0 2px 4px rgba(0,0,0,0.35));cursor:pointer;">
                 <path d="M14 0C7.4 0 2 5.4 2 12c0 8.4 12 24 12 24s12-15.6 12-24C26 5.4 20.6 0 14 0z" fill="#F44336"/>
                 <circle cx="14" cy="12" r="5" fill="white" opacity="0.9"/>
@@ -923,10 +923,11 @@
         if (searchPin) searchPin.remove();
         searchPin = new maplibregl.Marker({ element: el, anchor: 'bottom' })
             .setLngLat(lngLat).addTo(map);
-        el.querySelector('.search-pin-pulse').addEventListener('animationend', function() { this.remove(); });
+        const pulse = el.querySelector('.search-pin-pulse');
+        if (pulse) pulse.addEventListener('animationend', function() { this.remove(); });
         searchPinLngLat = lngLat;
         const origin = document.getElementById('nearby-search-origin');
-        if (origin) { origin.classList.remove('flash'); void origin.offsetWidth; origin.classList.add('flash'); }
+        if (origin && !label) { origin.classList.remove('flash'); void origin.offsetWidth; origin.classList.add('flash'); }
         const labelEl = document.getElementById('nearby-search-origin-label');
         if (labelEl) labelEl.textContent = label || '検索地点';
         setSearchOriginText('取得中...', true);
