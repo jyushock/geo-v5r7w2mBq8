@@ -1548,6 +1548,12 @@ map.on('zoomend', () => { isZooming = false; });
         // 現在地ボタンのクリック処理
         document.getElementById('geolocate-btn').addEventListener('click', () => {
             removeSearchPin();
+            if (currentLocation) {
+                setSearchOriginText('取得中...', false);
+                fetchPlaceName(currentLocation.lat, currentLocation.lng).then(name => {
+                    if (!searchPinLngLat) setSearchOriginText(name || '現在地', false);
+                });
+            }
             // 追従解除後（preTrackingMode保持中）にボタンを押した場合 → モード復帰して現在地へ
             if (trackingMode === 0 && preTrackingMode > 0) {
                 const mode = preTrackingMode;
