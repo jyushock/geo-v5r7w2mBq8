@@ -1261,18 +1261,23 @@ function buildPopupHtml(type, label, p, lng, lat) {
         const addressHtml = p.address ? `<span class="popup-address">${p.address}</span>` : '';
         const roadHtml = p.road ? `<span class="popup-road">📍 ${p.road}</span>` : '';
         const hoursHtml = p.businessHours ? `<span class="popup-road">🕐 ${p.businessHours}</span>` : '';
-        const urlBtn  = p.url        ? `<a href="${p.url}" target="_blank" class="btn btn-michi-web">公式ページ</a>` : '';
-        const hpBtn   = p.homepage   ? `<a href="${p.homepage}" target="_blank" class="btn btn-michi-hp">施設HP</a>` : '';
-        const hp2Btn  = p.homepage2  ? `<a href="${p.homepage2}" target="_blank" class="btn btn-michi-hp">関連HP</a>` : '';
-        const ekiBtn  = p.michiEkiUrl? `<a href="${p.michiEkiUrl}" target="_blank" class="btn btn-michi-eki">michieki.jp</a>` : '';
-        return `<div class="popup-card"><span class="popup-title">${name}</span>${roadHtml}${addressHtml}${hoursHtml}<div class="btn-grid"><a href="${gmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${urlBtn}${hpBtn}${hp2Btn}${ekiBtn}${navBtns}${nearbyBtn}</div></div>`;
+        const michiExtraBtns = [
+            [p.url,       'btn-michi-web', '公式ページ', p.michiEkiUrl, 'btn-michi-eki', 'michieki.jp'],
+            [p.homepage,  'btn-michi-hp',  '施設HP',     p.homepage2,   'btn-michi-hp',  '関連HP'],
+        ].map(([lHref, lCls, lText, rHref, rCls, rText]) => {
+            if (!lHref && !rHref) return '';
+            const solo = !lHref || !rHref;
+            return (lHref ? `<a href="${lHref}" target="_blank" class="btn ${lCls}${solo ? ' btn-full' : ''}">${lText}</a>` : '')
+                 + (rHref ? `<a href="${rHref}" target="_blank" class="btn ${rCls}${solo ? ' btn-full' : ''}">${rText}</a>` : '');
+        }).join('');
+        return `<div class="popup-card"><span class="popup-title">${name}</span>${roadHtml}${addressHtml}${hoursHtml}<div class="btn-grid"><a href="${gmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${michiExtraBtns}${navBtns}${nearbyBtn}</div></div>`;
     } else {
         const name = p.name || label;
         const gmapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}`;
         const addressHtml = p.address ? `<span class="popup-address">${p.address}</span>` : '';
         let extraBtns = '';
         if (type === 'shop')   extraBtns = `<a href="${p.url}" target="_blank" class="btn btn-tabelog btn-full">食べログ</a>`;
-        if (type === 'castle') extraBtns = `<a href="https://ja.wikipedia.org/wiki/${encodeURIComponent(name)}" target="_blank" class="btn btn-wiki">Wikipedia</a>${p.url ? `<a href="${p.url}" target="_blank" class="btn btn-kojodan">攻城団</a>` : ''}<a href="https://www.google.com/search?q=${encodeURIComponent(name + ' アクセス')}" target="_blank" class="btn btn-access btn-full">アクセス</a>`;
+        if (type === 'castle') extraBtns = `<a href="https://ja.wikipedia.org/wiki/${encodeURIComponent(name)}" target="_blank" class="btn btn-wiki${p.url ? '' : ' btn-full'}">Wikipedia</a>${p.url ? `<a href="${p.url}" target="_blank" class="btn btn-kojodan">攻城団</a>` : ''}<a href="https://www.google.com/search?q=${encodeURIComponent(name + ' アクセス')}" target="_blank" class="btn btn-access btn-full">アクセス</a>`;
         const castleImgPlaceholder = type === 'castle' ? `<div class="castle-img-placeholder"></div>` : '';
         return `<div class="popup-card"><span class="popup-title">${name}</span>${addressHtml}${castleImgPlaceholder}<div class="btn-grid"><a href="${gmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${extraBtns}${navBtns}${nearbyBtn}</div></div>`;
     }
