@@ -1027,6 +1027,8 @@
         setSearchOriginText('地図中心', false);
     }
 
+    function getSearchCenter() { return searchPinLngLat || map.getCenter(); }
+
     const ICON_PIN_INFO = `<svg width="18" height="24" viewBox="0 0 28 36" style="display:block;transform:translate(2px,2px)"><path d="M14 0C7.4 0 2 5.4 2 12c0 8.4 12 24 12 24s12-15.6 12-24C26 5.4 20.6 0 14 0z" fill="#F44336"/><circle cx="14" cy="12" r="5" fill="white" opacity="0.9"/></svg>`;
     const ICON_CROSSHAIR_INFO = `<svg width="20" height="20" viewBox="0 0 44 44" style="display:block"><circle cx="22" cy="22" r="9" fill="none" stroke="#4285F4" stroke-width="3"/><circle cx="22" cy="22" r="3" fill="#4285F4"/><line x1="22" y1="2" x2="22" y2="11" stroke="#4285F4" stroke-width="3" stroke-linecap="round"/><line x1="22" y1="33" x2="22" y2="42" stroke="#4285F4" stroke-width="3" stroke-linecap="round"/><line x1="2" y1="22" x2="11" y2="22" stroke="#4285F4" stroke-width="3" stroke-linecap="round"/><line x1="33" y1="22" x2="42" y2="22" stroke="#4285F4" stroke-width="3" stroke-linecap="round"/></svg>`;
     function setSearchOriginText(text, pinned) {
@@ -2254,7 +2256,7 @@ map.on('zoomend', () => { isZooming = false; });
         };
 
         const newTab = window.open('about:blank', '_blank');
-        const center = searchPinLngLat || map.getCenter();
+        const center = getSearchCenter();
         const lat = center.lat;
         const lng = center.lng;
         const stationQuery = `[out:json][timeout:10];node["railway"="station"]["station"!="cable_car"]["station"!="funicular"]["station"!="monorail"](around:10000,${lat},${lng});out body;`;
@@ -2291,7 +2293,7 @@ map.on('zoomend', () => { isZooming = false; });
         if (nearbyState.cats.length === 0) return alert('カテゴリが選択されていません');
         if (nearbyState.cats.includes('hotel')) return execHotelSearch();
 
-        const center = searchPinLngLat || map.getCenter();
+        const center = getSearchCenter();
         const searchLat = center.lat;
         const searchLng = center.lng;
         
@@ -2544,7 +2546,7 @@ map.on('zoomend', () => { isZooming = false; });
 
     async function fetchWeather() {
         const now = Date.now();
-        const lngLat = searchPinLngLat || map.getCenter();
+        const lngLat = getSearchCenter();
         const lat = lngLat.lat.toFixed(4);
         const lng = lngLat.lng.toFixed(4);
         if (weatherCache && now - weatherCacheTime < WEATHER_CACHE_TTL
