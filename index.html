@@ -496,6 +496,7 @@
             flex-direction: column;
             font-family: sans-serif;
         }
+        #nearby-main-view { display: flex; flex-direction: column; flex: 1; min-height: 0; }
         #nearby-panel-scroll {
             overflow-y: auto;
             flex: 1;
@@ -672,7 +673,6 @@
 <div id="nearby-panel">
     <!-- 周辺検索ビュー -->
     <div id="nearby-main-view">
-    <div id="nearby-panel-scroll">
     <div id="nearby-panel-header">
         <div style="display:flex;justify-content:center;padding:8px 0 4px;">
             <div id="nearby-drag-handle"></div>
@@ -689,6 +689,7 @@
             </button>
         </div>
     </div>
+    <div id="nearby-panel-scroll">
     <div style="border-top:1px solid #f0f0f0;"></div>
     <div class="nearby-section-label">周辺検索</div>
     <div class="nearby-category-grid">
