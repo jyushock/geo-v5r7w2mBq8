@@ -2140,7 +2140,9 @@ map.on('zoomend', () => { isZooming = false; });
 
     function applyShowOrigin() {
         const el = document.getElementById('nearby-search-origin');
+        const footer = document.getElementById('nearby-panel-footer');
         if (el) el.style.display = showOriginState ? '' : 'none';
+        if (footer) footer.style.justifyContent = showOriginState ? '' : 'flex-end';
     }
 
     function onShowOriginChange(checkbox) {
