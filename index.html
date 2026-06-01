@@ -529,7 +529,7 @@
         #settings-btn:hover { background: #ebebeb; }
         /* 天気ウィジェット */
         #weather-widget { display: flex; flex-shrink: 0; gap: 2px; }
-        .weather-day-card { width: 100px; display: flex; flex-direction: column; align-items: center; position: relative; background: #f5f8ff; border-radius: 8px; padding: 4px 2px 3px; }
+        .weather-day-card { width: 60px; display: flex; flex-direction: column; align-items: center; position: relative; background: #f5f8ff; border-radius: 8px; padding: 4px 2px 3px; }
         .weather-day-label { font-size: 9px; color: #888; line-height: 1; margin-bottom: 1px; }
         .weather-icon-wrap { position: relative; width: 38px; height: 32px; display: flex; align-items: center; justify-content: center; }
         .weather-emoji { font-size: 28px; line-height: 1; }
@@ -824,6 +824,11 @@
             <label class="filter-chip"><input type="checkbox" id="check-label-castle" checked onchange="onLabelChange(this)">お城</label>
             <label class="filter-chip"><input type="checkbox" id="check-label-michi" checked onchange="onLabelChange(this)">道の駅</label>
         </div>
+        <div style="border-top:1px solid #f0f0f0;"></div>
+        <div class="nearby-section-label">メニュー表示</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0 16px 8px;">
+            <label class="filter-chip"><input type="checkbox" id="check-show-origin" onchange="onShowOriginChange(this)">検索地点</label>
+        </div>
     </div>
 </div>
 
@@ -861,6 +866,8 @@
     };
     var weatherCache = null;
     var weatherCacheTime = 0;
+    var weatherCacheLat = null;
+    var weatherCacheLng = null;
     var WEATHER_CACHE_TTL = 10 * 60 * 1000;
 
     // michiNoEkiGeoJSON はmichi.jsで定義済みのGeoJSON（propertyにname,prefecture,city,address,road,urlを含む）
@@ -2121,11 +2128,25 @@ map.on('zoomend', () => { isZooming = false; });
         savedSettings ? savedSettings.label : {}
     );
 
+    let showOriginState = savedSettings ? (savedSettings.showOrigin === true) : false;
+
     function saveSettings() {
         localStorage.setItem('settingsState', JSON.stringify({
             filter: filterState,
-            label:  labelState
+            label:  labelState,
+            showOrigin: showOriginState
         }));
+    }
+
+    function applyShowOrigin() {
+        const el = document.getElementById('nearby-search-origin');
+        if (el) el.style.display = showOriginState ? '' : 'none';
+    }
+
+    function onShowOriginChange(checkbox) {
+        showOriginState = checkbox.checked;
+        applyShowOrigin();
+        saveSettings();
     }
 
     function onTileSourceChange(value) {
@@ -2197,11 +2218,14 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('nearby-panel').classList.add('open');
         document.getElementById('nearby-overlay').classList.add('open');
         document.getElementById('bottom-bar').classList.add('panel-open');
+        applyShowOrigin();
         fetchWeather();
     }
     function openSettingsView() {
         Object.keys(filterState).forEach(id => { const el=document.getElementById(`check-${id}`); if(el) el.checked=filterState[id]; });
         Object.keys(labelState).forEach(id => { const el=document.getElementById(`check-label-${id}`); if(el) el.checked=labelState[id]; });
+        const originChk = document.getElementById('check-show-origin');
+        if (originChk) originChk.checked = showOriginState;
         document.getElementById('nearby-main-view').style.display = 'none';
         document.getElementById('nearby-settings-view').style.display = '';
     }
@@ -2518,18 +2542,20 @@ map.on('zoomend', () => { isZooming = false; });
 
     async function fetchWeather() {
         const now = Date.now();
-        if (weatherCache && now - weatherCacheTime < WEATHER_CACHE_TTL) {
+        const lngLat = searchPinLngLat || map.getCenter();
+        const lat = lngLat.lat.toFixed(4);
+        const lng = lngLat.lng.toFixed(4);
+        if (weatherCache && now - weatherCacheTime < WEATHER_CACHE_TTL
+            && weatherCacheLat === lat && weatherCacheLng === lng) {
             renderWeather(weatherCache); return;
         }
         try {
-            // 周辺検索と同じ基準座標ルール：ピンがあればピン、なければ地図中心
-            const lngLat = searchPinLngLat || map.getCenter();
-            const lat = lngLat.lat.toFixed(4);
-            const lng = lngLat.lng.toFixed(4);
             const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=Asia%2FTokyo&forecast_days=3`;
             const data = await (await fetch(url)).json();
             weatherCache = data;
             weatherCacheTime = now;
+            weatherCacheLat = lat;
+            weatherCacheLng = lng;
             renderWeather(data);
         } catch (e) {
             console.warn('[weather]', e);
