@@ -530,15 +530,18 @@
             flex-shrink: 0;
         }
         #settings-btn:hover { background: #ebebeb; }
-        /* 天気ウィジェット（ネイビー背景＋Meteoconsカラーアイコン） */
-        #weather-widget { display: flex; flex-shrink: 0; gap: 3px; background: linear-gradient(160deg,#3b5ea8,#25406f); border-radius: 8px; padding: 3px; }
-        .weather-day-card { width: 68px; display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.10); border-radius: 8px; padding: 4px 2px 5px; }
-        .weather-day-label { font-size: 9px; color: #eaf2ff; line-height: 1; margin-bottom: 2px; }
+        /* 天気ウィジェット（白背景＋天気別カラーのスタンプアイコン／CSS maskで着色） */
+        #weather-widget { display: flex; flex-shrink: 0; gap: 3px; }
+        .weather-day-card { width: 68px; display: flex; flex-direction: column; align-items: center; background: #f5f8ff; border-radius: 8px; padding: 4px 2px 5px; }
+        .weather-day-label { font-size: 9px; color: #888; line-height: 1; margin-bottom: 2px; }
         .weather-icon-temp { display: flex; align-items: center; justify-content: center; gap: 2px; }
-        .weather-emoji { width: 32px; height: 32px; flex-shrink: 0; }
+        .weather-emoji { width: 32px; height: 32px; flex-shrink: 0;
+            -webkit-mask-size: contain; mask-size: contain;
+            -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+            -webkit-mask-position: center; mask-position: center; }
         .weather-temp-col { display: flex; flex-direction: column; align-items: flex-start; }
-        .weather-temp-hi { font-size: 11px; font-weight: bold; color: #ffe0b0; line-height: 1.15; }
-        .weather-temp-lo { font-size: 10px; color: #d6ecff; line-height: 1.15; }
+        .weather-temp-hi { font-size: 11px; font-weight: bold; color: #e05000; line-height: 1.15; }
+        .weather-temp-lo { font-size: 10px; color: #4488cc; line-height: 1.15; }
         #settings-back-btn {
             display: flex;
             align-items: center;
@@ -681,9 +684,9 @@
         </div>
         <div style="display:flex;align-items:center;padding:0 0 4px;gap:6px;">
             <div id="weather-widget">
-                <div class="weather-day-card"><div class="weather-day-label">今日</div><div class="weather-icon-temp"><span style="color:#cdd9f0;font-size:16px;line-height:1">…</span></div></div>
-                <div class="weather-day-card"><div class="weather-day-label">明日</div><div class="weather-icon-temp"><span style="color:#cdd9f0;font-size:16px;line-height:1">…</span></div></div>
-                <div class="weather-day-card"><div class="weather-day-label">明後日</div><div class="weather-icon-temp"><span style="color:#cdd9f0;font-size:16px;line-height:1">…</span></div></div>
+                <div class="weather-day-card"><div class="weather-day-label">今日</div><div class="weather-icon-temp"><span style="color:#ccc;font-size:16px;line-height:1">…</span></div></div>
+                <div class="weather-day-card"><div class="weather-day-label">明日</div><div class="weather-icon-temp"><span style="color:#ccc;font-size:16px;line-height:1">…</span></div></div>
+                <div class="weather-day-card"><div class="weather-day-label">明後日</div><div class="weather-icon-temp"><span style="color:#ccc;font-size:16px;line-height:1">…</span></div></div>
             </div>
             <div style="flex:1;"></div>
             <button id="settings-btn" onclick="openSettingsView()" title="表示設定">
@@ -858,7 +861,7 @@
 
 <script>
     // ── 天気ウィジェット（スクリプト先頭で初期化）──────────────────
-    // WMOコード → Meteoconsアイコンのファイル名（weather-icons/fill/＜名前＞.svg）
+    // WMOコード → スタンプアイコンのファイル名（weather-icons/stamp/＜名前＞.png）
     var WMO_ICON = {
         0:'clear-day', 1:'partly-cloudy-day', 2:'cloudy', 3:'overcast-day',
         45:'fog', 48:'fog',
@@ -868,6 +871,12 @@
         80:'partly-cloudy-day-rain', 81:'partly-cloudy-day-rain', 82:'partly-cloudy-day-rain',
         85:'partly-cloudy-day-snow', 86:'partly-cloudy-day-snow',
         95:'thunderstorms-day-rain', 96:'thunderstorms-day-rain', 99:'thunderstorms-day-rain',
+    };
+    // アイコン名 → 天気別カラー（CSS maskのbackground-colorに使用）
+    var WMO_COLOR = {
+        'clear-day':'#FB8C00', 'partly-cloudy-day':'#F59E0B', 'cloudy':'#607D8B', 'overcast-day':'#546E7A',
+        'fog':'#78909C', 'drizzle':'#0288D1', 'rain':'#1976D2', 'partly-cloudy-day-rain':'#1E88E5',
+        'snow':'#0097A7', 'partly-cloudy-day-snow':'#26A69A', 'thunderstorms-day-rain':'#5E35B1',
     };
     var weatherCache = null;
     var weatherCacheTime = 0;
@@ -2553,17 +2562,22 @@ map.on('zoomend', () => { isZooming = false; });
         const codes  = data.daily.weather_code;
         const maxTs  = data.daily.temperature_2m_max;
         const minTs  = data.daily.temperature_2m_min;
-        widget.innerHTML = labels.map((lbl, i) => `
+        widget.innerHTML = labels.map((lbl, i) => {
+            const ic = WMO_ICON[codes[i]] || 'cloudy';
+            const col = WMO_COLOR[ic] || '#607D8B';
+            const url = `weather-icons/stamp/${ic}.png`;
+            return `
             <div class="weather-day-card">
                 <div class="weather-day-label">${lbl}</div>
                 <div class="weather-icon-temp">
-                    <img class="weather-emoji" src="weather-icons/fill/${WMO_ICON[codes[i]] || 'cloudy'}.svg" alt="">
+                    <span class="weather-emoji" style="-webkit-mask-image:url('${url}');mask-image:url('${url}');background-color:${col}"></span>
                     <div class="weather-temp-col">
                         <span class="weather-temp-hi">${Math.round(maxTs[i])}°</span>
                         <span class="weather-temp-lo">${Math.round(minTs[i])}°</span>
                     </div>
                 </div>
-            </div>`).join('');
+            </div>`;
+        }).join('');
     }
 
     async function fetchWeather() {
