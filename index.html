@@ -530,15 +530,15 @@
             flex-shrink: 0;
         }
         #settings-btn:hover { background: #ebebeb; }
-        /* 天気ウィジェット */
-        #weather-widget { display: flex; flex-shrink: 0; gap: 2px; }
-        .weather-day-card { width: 60px; display: flex; flex-direction: column; align-items: center; position: relative; background: #f5f8ff; border-radius: 8px; padding: 4px 2px 3px; }
-        .weather-day-label { font-size: 9px; color: #888; line-height: 1; margin-bottom: 1px; }
-        .weather-icon-wrap { position: relative; width: 38px; height: 32px; display: flex; align-items: center; justify-content: center; }
-        .weather-emoji { font-size: 28px; line-height: 1; }
-        .weather-temp-badge { position: absolute; right: -4px; bottom: -2px; display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
-        .weather-temp-hi { font-size: 10px; font-weight: bold; color: #e05000; line-height: 1; background: rgba(255,255,255,0.85); padding: 0 2px; border-radius: 2px; }
-        .weather-temp-lo { font-size: 9px; color: #4488cc; line-height: 1; background: rgba(255,255,255,0.85); padding: 0 2px; border-radius: 2px; }
+        /* 天気ウィジェット（ネイビー背景＋Meteoconsカラーアイコン） */
+        #weather-widget { display: flex; flex-shrink: 0; gap: 3px; background: linear-gradient(160deg,#3b5ea8,#25406f); border-radius: 8px; padding: 3px; }
+        .weather-day-card { width: 68px; display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.10); border-radius: 8px; padding: 4px 2px 5px; }
+        .weather-day-label { font-size: 9px; color: #eaf2ff; line-height: 1; margin-bottom: 2px; }
+        .weather-icon-temp { display: flex; align-items: center; justify-content: center; gap: 2px; }
+        .weather-emoji { width: 32px; height: 32px; flex-shrink: 0; }
+        .weather-temp-col { display: flex; flex-direction: column; align-items: flex-start; }
+        .weather-temp-hi { font-size: 11px; font-weight: bold; color: #ffe0b0; line-height: 1.15; }
+        .weather-temp-lo { font-size: 10px; color: #d6ecff; line-height: 1.15; }
         #settings-back-btn {
             display: flex;
             align-items: center;
@@ -681,9 +681,9 @@
         </div>
         <div style="display:flex;align-items:center;padding:0 0 4px;gap:6px;">
             <div id="weather-widget">
-                <div class="weather-day-card"><div class="weather-day-label">今日</div><div class="weather-icon-wrap"><span class="weather-emoji" style="color:#ccc">…</span></div></div>
-                <div class="weather-day-card"><div class="weather-day-label">明日</div><div class="weather-icon-wrap"><span class="weather-emoji" style="color:#ccc">…</span></div></div>
-                <div class="weather-day-card"><div class="weather-day-label">明後日</div><div class="weather-icon-wrap"><span class="weather-emoji" style="color:#ccc">…</span></div></div>
+                <div class="weather-day-card"><div class="weather-day-label">今日</div><div class="weather-icon-temp"><span style="color:#cdd9f0;font-size:16px;line-height:1">…</span></div></div>
+                <div class="weather-day-card"><div class="weather-day-label">明日</div><div class="weather-icon-temp"><span style="color:#cdd9f0;font-size:16px;line-height:1">…</span></div></div>
+                <div class="weather-day-card"><div class="weather-day-label">明後日</div><div class="weather-icon-temp"><span style="color:#cdd9f0;font-size:16px;line-height:1">…</span></div></div>
             </div>
             <div style="flex:1;"></div>
             <button id="settings-btn" onclick="openSettingsView()" title="表示設定">
@@ -858,14 +858,16 @@
 
 <script>
     // ── 天気ウィジェット（スクリプト先頭で初期化）──────────────────
+    // WMOコード → Meteoconsアイコンのファイル名（weather-icons/fill/＜名前＞.svg）
     var WMO_ICON = {
-        0:'☀️', 1:'🌤️', 2:'⛅', 3:'☁️',
-        45:'🌫️', 48:'🌫️',
-        51:'🌦️', 53:'🌦️', 55:'🌦️', 56:'🌦️', 57:'🌦️',
-        61:'🌧️', 63:'🌧️', 65:'🌧️', 66:'🌧️', 67:'🌧️',
-        71:'🌨️', 73:'🌨️', 75:'🌨️', 77:'🌨️',
-        80:'🌧️', 81:'🌧️', 82:'🌧️', 85:'🌨️', 86:'🌨️',
-        95:'⛈️', 96:'⛈️', 99:'⛈️',
+        0:'clear-day', 1:'partly-cloudy-day', 2:'cloudy', 3:'overcast-day',
+        45:'fog', 48:'fog',
+        51:'drizzle', 53:'drizzle', 55:'drizzle', 56:'drizzle', 57:'drizzle',
+        61:'rain', 63:'rain', 65:'rain', 66:'rain', 67:'rain',
+        71:'snow', 73:'snow', 75:'snow', 77:'snow',
+        80:'partly-cloudy-day-rain', 81:'partly-cloudy-day-rain', 82:'partly-cloudy-day-rain',
+        85:'partly-cloudy-day-snow', 86:'partly-cloudy-day-snow',
+        95:'thunderstorms-day-rain', 96:'thunderstorms-day-rain', 99:'thunderstorms-day-rain',
     };
     var weatherCache = null;
     var weatherCacheTime = 0;
@@ -2554,9 +2556,9 @@ map.on('zoomend', () => { isZooming = false; });
         widget.innerHTML = labels.map((lbl, i) => `
             <div class="weather-day-card">
                 <div class="weather-day-label">${lbl}</div>
-                <div class="weather-icon-wrap">
-                    <span class="weather-emoji">${WMO_ICON[codes[i]] || '🌡️'}</span>
-                    <div class="weather-temp-badge">
+                <div class="weather-icon-temp">
+                    <img class="weather-emoji" src="weather-icons/fill/${WMO_ICON[codes[i]] || 'cloudy'}.svg" alt="">
+                    <div class="weather-temp-col">
                         <span class="weather-temp-hi">${Math.round(maxTs[i])}°</span>
                         <span class="weather-temp-lo">${Math.round(minTs[i])}°</span>
                     </div>

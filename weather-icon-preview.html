@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天気アイコン置き換え案（Meteocons）</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: sans-serif; background: #eceff3; color: #222; padding: 24px; line-height: 1.5; }
+  h1 { font-size: 18px; margin-bottom: 4px; }
+  .sub { font-size: 12px; color: #666; margin-bottom: 24px; }
+  .sub a { color: #2962ff; }
+  h2 { font-size: 14px; margin: 28px 0 12px; border-left: 4px solid #2962ff; padding-left: 8px; }
+
+  /* ── 比較ギャラリー ── */
+  .gallery { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 6px rgba(0,0,0,0.08); }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { padding: 8px 10px; text-align: center; border-bottom: 1px solid #f0f0f0; }
+  th { background: #f7f9fc; font-size: 11px; color: #888; font-weight: 600; }
+  td.cond { text-align: left; }
+  .cond .name { font-size: 13px; font-weight: 600; }
+  .cond .code { font-size: 10px; color: #999; }
+  .emoji-cell { font-size: 28px; }
+  .gallery img { width: 44px; height: 44px; display: inline-block; vertical-align: middle; }
+  /* fill(カラー)は淡色設計のため、薄い青背景に置くと白い雲が際立つ */
+  .gallery tbody td:nth-child(3) { background: linear-gradient(135deg,#dbeafe,#eff6ff); }
+
+  /* ── ウィジェット再現 ── */
+  .panels { display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; }
+  .panel-wrap .label { font-size: 11px; color: #666; margin-bottom: 6px; }
+  .panel {
+    background: white; border-radius: 16px;
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.15);
+    width: 375px; overflow: hidden;
+  }
+  .drag-row { display: flex; justify-content: center; padding: 8px 0 4px; }
+  .drag-handle { width: 36px; height: 4px; background: #ddd; border-radius: 2px; }
+  .header-row { display: flex; align-items: center; padding: 0 8px 6px 8px; gap: 4px; }
+  .weather-strip { flex: 1; display: flex; gap: 2px; overflow: hidden; }
+
+  .weather-day { flex: 1; display: flex; flex-direction: column; align-items: center;
+    position: relative; background: #f5f8ff; border-radius: 8px; padding: 4px 2px 3px; min-width: 0; }
+  /* 青空背景バリアント：白いMeteoconsアイコンが際立つ */
+  .weather-strip.sky { background: linear-gradient(160deg,#5b9bd5,#3f78c0); border-radius: 8px; padding: 2px; }
+  .weather-strip.sky .weather-day { background: rgba(255,255,255,0.10); }
+  .weather-strip.sky .day-label { color: #eaf2ff; }
+  .weather-strip.sky .temp-hi { background: transparent; color: #ffe0b0; font-size: 11px; }
+  .weather-strip.sky .temp-lo { background: transparent; color: #d6ecff; font-size: 10px; }
+  /* アイコンと温度を横並びにして数字をアイコンの右に分離 */
+  .weather-strip.sky .icon-temp { display: flex; align-items: center; justify-content: center; gap: 2px; }
+  .weather-strip.sky .icon-temp img { width: 32px; height: 32px; }
+  .weather-strip.sky .temp-col { display: flex; flex-direction: column; align-items: flex-start; }
+  .day-label { font-size: 9px; color: #888; line-height: 1; margin-bottom: 1px; }
+  .icon-wrap { position: relative; width: 38px; height: 32px; display: flex; align-items: center; justify-content: center; }
+  .icon-wrap img { width: 38px; height: 38px; }
+  .temp-badge { position: absolute; right: -4px; bottom: -2px; display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+  .temp-hi { font-size: 10px; font-weight: bold; color: #e05000; line-height: 1; background: rgba(255,255,255,0.85); padding: 0 2px; border-radius: 2px; }
+  .temp-lo { font-size: 9px; color: #4488cc; line-height: 1; background: rgba(255,255,255,0.85); padding: 0 2px; border-radius: 2px; }
+
+  .settings-btn { width: 36px; height: 36px; background: none; border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; color: #555; flex-shrink: 0; border-radius: 50%; }
+  .separator { border-top: 1px solid #f0f0f0; }
+  .section-label-area { padding: 8px 12px 4px; font-size: 11px; color: #aaa; }
+
+  .note { font-size: 11px; color: #777; margin-top: 8px; max-width: 760px; }
+  code { background: #eef; padding: 1px 4px; border-radius: 3px; font-size: 11px; }
+</style>
+</head>
+<body>
+
+<h1>天気アイコン置き換え案 — Meteocons</h1>
+<p class="sub">
+  天気サイトでも広く使われる <a href="https://basmilius.github.io/meteocons/" target="_blank">Meteocons（Bas Milius作 / MITライセンス・無料）</a> を採用。
+  現行の絵文字は端末フォント依存で見え方がバラつきますが、Meteoconsは統一デザインのSVGで意味が一目で伝わります。<br>
+  ※このアイコンはアニメーションSVGです（雲が流れる・雨が降る等）。
+</p>
+<p class="sub" style="background:#fff3cd;border:1px solid #ffe69c;border-radius:8px;padding:8px 10px;max-width:820px;color:#664d03">
+  <b>検証メモ：</b> Meteoconsのカラー(fill)は<b>白〜淡色で描かれた「淡色設計」</b>のため、現行ウィジェットのような<b>明るい背景だと雲が薄く見えにくい</b>ことを確認しました（Playwrightで実描画チェック済み）。
+  そこで <b>案C：天気エリアを青空グラデにして白アイコンを乗せる</b> 案を追加しています。これが最もクッキリ見えます。
+  明るい背景のまま使うなら、輪郭のある <b>案B：線画(line)</b> が無難です。
+</p>
+
+<h2>① 現行絵文字 ↔ Meteocons 比較（WMOコード別）</h2>
+<div class="gallery">
+<table>
+  <thead>
+    <tr><th style="text-align:left">天気（WMOコード）</th><th>現行(絵文字)</th><th>案A：カラー(fill)</th><th>案B：線画(line)</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cond"><span class="name">快晴</span><br><span class="code">code 0</span></td>
+      <td class="emoji-cell">☀️</td>
+      <td><img src="weather-icons/fill/clear-day.svg" alt=""></td>
+      <td><img src="weather-icons/line/clear-day.svg" alt=""></td>
+    </tr>
+    <tr>
+      <td class="cond"><span class="name">晴れ</span><br><span class="code">code 1</span></td>
+      <td class="emoji-cell">🌤️</td>
+      <td><img src="weather-icons/fill/partly-cloudy-day.svg" alt=""></td>
+      <td><img src="weather-icons/line/partly-cloudy-day.svg" alt=""></td>
+    </tr>
+    <tr>
+      <td class="cond"><span class="name">一部曇り</span><br><span class="code">code 2</span></td>
+      <td class="emoji-cell">⛅</td>
+      <td><img src="weather-icons/fill/cloudy.svg" alt=""></td>
+      <td><img src="weather-icons/line/cloudy.svg" alt=""></td>
+    </tr>
+    <tr>
+      <td class="cond"><span class="name">曇り</span><br><span class="code">code 3</span></td>
+      <td class="emoji-cell">☁️</td>
+      <td><img src="weather-icons/fill/overcast-day.svg" alt=""></td>
+      <td><img src="weather-icons/line/overcast-day.svg" alt=""></td>
+    </tr>
+    <tr>
+      <td class="cond"><span class="name">霧</span><br><span class="code">code 45, 48</span></td>
+      <td class="emoji-cell">🌫️</td>
+      <td><img src="weather-icons/fill/fog.svg" alt=""></td>
+      <td><img src="weather-icons/line/fog.svg" alt=""></td>
+    </tr>
+    <tr>
+      <td class="cond"><span class="name">霧雨</span><br><span class="code">code 51–57</span></td>
+      <td class="emoji-cell">🌦️</td>
+      <td><img src="weather-icons/fill/drizzle.svg" alt=""></td>
+      <td><img src="weather-icons/line/drizzle.svg" alt=""></td>
+    </tr>
+    <tr>
+      <td class="cond"><span class="name">雨</span><br><span class="code">code 61–67</span></td>
+      <td class="emoji-cell">🌧️</td>
+      <td><img src="weather-icons/fill/rain.svg" alt=""></td>
+      <td><img src="weather-icons/line/rain.svg" alt=""></td>
+    </tr>
+    <tr>
+      <td class="cond"><span class="name">にわか雨</span><br><span class="code">code 80–82</span></td>
+      <td class="emoji-cell">🌧️</td>
+      <td><img src="weather-icons/fill/partly-cloudy-day-rain.svg" alt=""></td>
+      <td><img src="weather-icons/line/partly-cloudy-day-rain.svg" alt=""></td>
+    </tr>
+    <tr>
+      <td class="cond"><span class="name">雪</span><br><span class="code">code 71–77</span></td>
+      <td class="emoji-cell">🌨️</td>
+      <td><img src="weather-icons/fill/snow.svg" alt=""></td>
+      <td><img src="weather-icons/line/snow.svg" alt=""></td>
+    </tr>
+    <tr>
+      <td class="cond"><span class="name">にわか雪</span><br><span class="code">code 85, 86</span></td>
+      <td class="emoji-cell">🌨️</td>
+      <td><img src="weather-icons/fill/partly-cloudy-day-snow.svg" alt=""></td>
+      <td><img src="weather-icons/line/partly-cloudy-day-snow.svg" alt=""></td>
+    </tr>
+    <tr>
+      <td class="cond"><span class="name">雷雨</span><br><span class="code">code 95–99</span></td>
+      <td class="emoji-cell">⛈️</td>
+      <td><img src="weather-icons/fill/thunderstorms-day-rain.svg" alt=""></td>
+      <td><img src="weather-icons/line/thunderstorms-day-rain.svg" alt=""></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>② 実際のウィジェットに適用したイメージ</h2>
+<div class="panels">
+
+  <!-- 案A: カラー -->
+  <div class="panel-wrap">
+    <div class="label">案A：カラー(fill) ／ 例: 晴れ → 曇り → 雨</div>
+    <div class="panel">
+      <div class="drag-row"><div class="drag-handle"></div></div>
+      <div class="header-row">
+        <div class="weather-strip">
+          <div class="weather-day">
+            <div class="day-label">今日</div>
+            <div class="icon-wrap">
+              <img src="weather-icons/fill/clear-day.svg" alt="">
+              <div class="temp-badge"><span class="temp-hi">32°</span><span class="temp-lo">18°</span></div>
+            </div>
+          </div>
+          <div class="weather-day">
+            <div class="day-label">明日</div>
+            <div class="icon-wrap">
+              <img src="weather-icons/fill/cloudy.svg" alt="">
+              <div class="temp-badge"><span class="temp-hi">26°</span><span class="temp-lo">19°</span></div>
+            </div>
+          </div>
+          <div class="weather-day">
+            <div class="day-label">明後日</div>
+            <div class="icon-wrap">
+              <img src="weather-icons/fill/rain.svg" alt="">
+              <div class="temp-badge"><span class="temp-hi">22°</span><span class="temp-lo">17°</span></div>
+            </div>
+          </div>
+        </div>
+        <button class="settings-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </button>
+      </div>
+      <div class="separator"></div>
+      <div class="section-label-area">周辺検索</div>
+    </div>
+  </div>
+
+  <!-- 案B: 線画 -->
+  <div class="panel-wrap">
+    <div class="label">案B：線画(line) ／ 例: 晴れ → 曇り → 雨</div>
+    <div class="panel">
+      <div class="drag-row"><div class="drag-handle"></div></div>
+      <div class="header-row">
+        <div class="weather-strip">
+          <div class="weather-day">
+            <div class="day-label">今日</div>
+            <div class="icon-wrap">
+              <img src="weather-icons/line/clear-day.svg" alt="">
+              <div class="temp-badge"><span class="temp-hi">32°</span><span class="temp-lo">18°</span></div>
+            </div>
+          </div>
+          <div class="weather-day">
+            <div class="day-label">明日</div>
+            <div class="icon-wrap">
+              <img src="weather-icons/line/cloudy.svg" alt="">
+              <div class="temp-badge"><span class="temp-hi">26°</span><span class="temp-lo">19°</span></div>
+            </div>
+          </div>
+          <div class="weather-day">
+            <div class="day-label">明後日</div>
+            <div class="icon-wrap">
+              <img src="weather-icons/line/rain.svg" alt="">
+              <div class="temp-badge"><span class="temp-hi">22°</span><span class="temp-lo">17°</span></div>
+            </div>
+          </div>
+        </div>
+        <button class="settings-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </button>
+      </div>
+      <div class="separator"></div>
+      <div class="section-label-area">周辺検索</div>
+    </div>
+  </div>
+
+  <!-- 案C: 青空背景 + 白カラーアイコン（最もクッキリ） -->
+  <div class="panel-wrap">
+    <div class="label">案C：青空背景＋カラー(fill) ／ 例: 晴れ → 曇り → 雨 ★おすすめ</div>
+    <div class="panel">
+      <div class="drag-row"><div class="drag-handle"></div></div>
+      <div class="header-row">
+        <div class="weather-strip sky">
+          <div class="weather-day">
+            <div class="day-label">今日</div>
+            <div class="icon-temp">
+              <img src="weather-icons/fill/clear-day.svg" alt="">
+              <div class="temp-col"><span class="temp-hi">32°</span><span class="temp-lo">18°</span></div>
+            </div>
+          </div>
+          <div class="weather-day">
+            <div class="day-label">明日</div>
+            <div class="icon-temp">
+              <img src="weather-icons/fill/cloudy.svg" alt="">
+              <div class="temp-col"><span class="temp-hi">26°</span><span class="temp-lo">19°</span></div>
+            </div>
+          </div>
+          <div class="weather-day">
+            <div class="day-label">明後日</div>
+            <div class="icon-temp">
+              <img src="weather-icons/fill/rain.svg" alt="">
+              <div class="temp-col"><span class="temp-hi">22°</span><span class="temp-lo">17°</span></div>
+            </div>
+          </div>
+        </div>
+        <button class="settings-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </button>
+      </div>
+      <div class="separator"></div>
+      <div class="section-label-area">周辺検索</div>
+    </div>
+  </div>
+
+</div>
+
+<p class="note">
+  実装メモ：取得済みSVGは <code>weather-icons/fill/</code> と <code>weather-icons/line/</code> に保存済み。
+  本体では <code>WMO_ICON</code> の絵文字マップを、選択スタイルのファイル名マップに差し替え、
+  <code>&lt;span class="weather-emoji"&gt;絵文字&lt;/span&gt;</code> を
+  <code>&lt;img class="weather-emoji" src="weather-icons/fill/＜名前＞.svg"&gt;</code> に変えるだけで適用できます。
+</p>
+
+</body>
+</html>
