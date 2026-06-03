@@ -2595,17 +2595,20 @@ map.on('zoomend', () => { isZooming = false; });
         const codes  = data.daily.weather_code;
         const maxTs  = data.daily.temperature_2m_max;
         const minTs  = data.daily.temperature_2m_min;
+        // 最高気温の文字色: 30度以下=赤 / 31〜34度=濃い赤 / 35度以上=紫
+        const hiTempColor = (t) => t >= 35 ? '#7B1FA2' : t >= 31 ? '#B71C1C' : '#E53935';
         widget.innerHTML = labels.map((lbl, i) => {
             const ic = WMO_ICON[codes[i]] || 'cloudy';
             const col = WMO_COLOR[ic] || '#607D8B';
             const url = `weather-icons/stamp/${ic}.png`;
+            const hi = Math.round(maxTs[i]);
             return `
             <div class="weather-day-card">
                 <div class="weather-day-label">${lbl}</div>
                 <div class="weather-icon-temp">
                     <span class="weather-emoji" style="-webkit-mask-image:url('${url}');mask-image:url('${url}');background-color:${col}"></span>
                     <div class="weather-temp-col">
-                        <span class="weather-temp-hi">${Math.round(maxTs[i])}°</span>
+                        <span class="weather-temp-hi" style="color:${hiTempColor(hi)}">${hi}°</span>
                         <span class="weather-temp-lo">${Math.round(minTs[i])}°</span>
                     </div>
                 </div>
