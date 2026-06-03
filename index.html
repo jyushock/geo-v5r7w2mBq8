@@ -1014,6 +1014,7 @@
 
     function placeSearchPin(lngLat, label = null) {
         searchPinLngLat = lngLat;
+        refreshWeatherIfPanelOpen(); // 基準点が変わったらパネル表示中の天気も更新
         const src = map.getSource('search-pin-source');
         if (src) src.setData({ type: 'Feature', geometry: { type: 'Point', coordinates: [lngLat.lng, lngLat.lat] }, properties: {} });
         if (map.getLayer('search-pin-layer')) map.moveLayer('search-pin-layer');
@@ -1683,6 +1684,7 @@ map.on('zoomend', () => { isZooming = false; });
                         essential: true
                     });
                     map.once('moveend', startRafLoop);
+                    map.once('moveend', refreshWeatherIfPanelOpen);
                 }
                 updateGeolocateButton();
                 return;
@@ -1703,9 +1705,16 @@ map.on('zoomend', () => { isZooming = false; });
                     essential: true
                 });
                 map.once('moveend', startRafLoop);
+                // 現在地へ移動完了後、基準点(=ピン解除で地図中心)の天気へ更新
+                map.once('moveend', refreshWeatherIfPanelOpen);
             } else if (trackingMode === 0) {
                 stopRafLoop();
                 map.easeTo({ bearing: 0, pitch: 0, duration: 500, essential: true });
+                // ピン解除済みなので現在の地図中心の天気へ更新
+                refreshWeatherIfPanelOpen();
+            } else {
+                // 位置未取得などで地図移動が起きない場合も、ピン解除を天気へ反映
+                refreshWeatherIfPanelOpen();
             }
             updateGeolocateButton();
         });
@@ -2626,6 +2635,12 @@ map.on('zoomend', () => { isZooming = false; });
                 </div>
             </div>`;
         }).join('');
+    }
+
+    // 周辺パネルが開いている時だけ天気を再取得（基準点が変わった時に呼ぶ）
+    function refreshWeatherIfPanelOpen() {
+        const panel = document.getElementById('nearby-panel');
+        if (panel && panel.classList.contains('open')) fetchWeather();
     }
 
     async function fetchWeather() {
