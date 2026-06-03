@@ -14,12 +14,8 @@
     <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
     <script src="https://unpkg.com/open-location-code/openlocationcode.js"></script>
     <link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
-    <script src="data.js"></script>
-    <script src="castle.js"></script>
-    <script src="michi.js"></script>
-    <script src="manhole.js"></script>
-    <script src="pokemon.js"></script>
-    <script src="mhcard.js"></script>
+    <!-- 大容量データ(data/castle/michi/manhole/pokemon/mhcard)は初回描画をブロックしないよう
+         スクリプト内で非同期に動的読込する（表示中レイヤー優先＋背景取得）。小さな辞書のみ同期読込。 -->
     <script src="duplicate-stations.js"></script>
     <script src="pref_codes.js"></script>
     <script>
@@ -881,25 +877,65 @@
     var weatherCacheLng = null;
     var WEATHER_CACHE_TTL = 10 * 60 * 1000;
 
-    // michiNoEkiGeoJSON はmichi.jsで定義済みのGeoJSON（propertyにname,prefecture,city,address,road,urlを含む）
-    const michiGeoJSON = michiNoEkiGeoJSON;
+    // ── 大容量データの非同期ローダ ─────────────────────────────────
+    // data/castle/michi/manhole/pokemon/mhcard はここで動的に読み込む。
+    // 各データ到着時に対応する地図ソースを埋め、検索インデックスを再構築する。
+    // 表示中レイヤーを優先し、残りは背景で逐次取得（全件検索を維持）。
+    const EMPTY_FC = { type: 'FeatureCollection', features: [] };
+    const FAMOUS_GENRES = new Set(['日本100名城', '続日本100名城']);
+    const loadedData = Object.create(null); // key -> FeatureCollection
 
-    // 既存マンホールとポケふたを1つのFeatureCollectionにマージ
-    // manhole.js は manholeGeoJSON、pokemon.js は pokefutaGeoJSON という変数名を想定
-    // ※ pokemon.js 側の変数名が異なる場合は合わせて変更してください
-    const mergedManholeGeoJSON = {
-        type: 'FeatureCollection',
-        features: [
-            // 既存マンホール: cardId / name / genre プロパティを持つ
-            ...manholeGeoJSON.features,
-            // ポケふた: image_url_full / location / pokemon プロパティを持つ
-            // popup側で判別できるよう source:'pokefuta' を付加
-            ...pokefutaGeoJSON.features.map(f => ({
-                ...f,
-                properties: { ...f.properties, source: 'pokefuta' }
-            }))
-        ]
-    };
+    function loadScriptOnce(src) {
+        return new Promise((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = src; s.async = true;
+            s.onload = () => resolve();
+            s.onerror = () => reject(new Error('load failed: ' + src));
+            document.head.appendChild(s);
+        });
+    }
+
+    function setSourceData(id, fc) {
+        const src = map.getSource(id);
+        if (src) src.setData(fc);
+    }
+
+    // 各データ到着時にソースへ反映（manholeは2データの合成、castleは2分割）
+    function applyDataset(key) {
+        if (key === 'michi')  setSourceData('michi',   loadedData.michi);
+        if (key === 'shops')  setSourceData('shops',   loadedData.shops);
+        if (key === 'mhcard') setSourceData('mhcards', loadedData.mhcard);
+        if (key === 'castle' && loadedData.castle) {
+            const feats = loadedData.castle.features;
+            setSourceData('castles-famous', { type: 'FeatureCollection', features: feats.filter(f => FAMOUS_GENRES.has(f.properties.genre)) });
+            setSourceData('castles',        { type: 'FeatureCollection', features: feats.filter(f => !FAMOUS_GENRES.has(f.properties.genre)) });
+        }
+        if (key === 'manhole' || key === 'pokefuta') {
+            const mh = loadedData.manhole ? loadedData.manhole.features : [];
+            const pk = loadedData.pokefuta ? loadedData.pokefuta.features.map(f => ({ ...f, properties: { ...f.properties, source: 'pokefuta' } })) : [];
+            setSourceData('manholes', { type: 'FeatureCollection', features: [...mh, ...pk] });
+        }
+        buildSearchIndex(); // 到着済みデータで全件検索を再構築
+    }
+
+    // 表示中レイヤーを優先して逐次ロード（パースのジャンクを抑えるため直列）
+    function startDataLoading() {
+        const specs = [
+            { key: 'michi',    src: 'michi.js',   get: () => michiNoEkiGeoJSON, vis: filterState.michi   !== false },
+            { key: 'shops',    src: 'data.js',    get: () => shopData,          vis: filterState.shop    !== false },
+            { key: 'mhcard',   src: 'mhcard.js',  get: () => mhcardGeoJSON,     vis: filterState.mhcard  !== false },
+            { key: 'manhole',  src: 'manhole.js', get: () => manholeGeoJSON,    vis: filterState.manhole !== false },
+            { key: 'pokefuta', src: 'pokemon.js', get: () => pokefutaGeoJSON,   vis: filterState.manhole !== false },
+            { key: 'castle',   src: 'castle.js',  get: () => castleData,        vis: filterState.castle  !== false },
+        ];
+        specs.sort((a, b) => (b.vis ? 1 : 0) - (a.vis ? 1 : 0)); // 表示中を先頭へ
+        let chain = Promise.resolve();
+        specs.forEach(spec => {
+            chain = chain.then(() => loadScriptOnce(spec.src)
+                .then(() => { loadedData[spec.key] = spec.get(); applyDataset(spec.key); })
+                .catch(e => console.warn('[data]', spec.src, e)));
+        });
+    }
 
     const savedState = (() => {
         try { return JSON.parse(localStorage.getItem('mapState')); } catch { return null; }
@@ -1751,17 +1787,14 @@ map.on('zoomend', () => { isZooming = false; });
             new Promise(res => map.loadImage('mhcard.png', (err, img) => { if (!err && img) map.addImage('mhcard-icon', img, { pixelRatio: 2 }); res(); })),
             new Promise(res => map.loadImage('mhcard-cluster.png', (err, img) => { if (!err && img) map.addImage('mhcard-cluster-icon', img, { pixelRatio: 2 }); res(); }))
         ]).then(() => {
-            const famousGenres = new Set(['日本100名城', '続日本100名城']);
-            const castleDataFamous = { type: 'FeatureCollection', features: castleData.features.filter(f => famousGenres.has(f.properties.genre)) };
-            const castleDataOther  = { type: 'FeatureCollection', features: castleData.features.filter(f => !famousGenres.has(f.properties.genre)) };
-
+            // データは後から非同期に届くため、ソースは空で生成し setData で埋める
             const configs = [
-                { id: 'michi',           data: michiGeoJSON,        color: '#34A853', icon: 'michi-icon',    type: 'michi',   clusterColor: '#34A853' },
-                { id: 'shops',           data: shopData,             color: '#FF9800', icon: 'tabe-icon',     type: 'shop',    clusterColor: '#FF9800' },
-                { id: 'manholes',        data: mergedManholeGeoJSON, color: '#B87333', icon: 'manhole-icon',  type: 'manhole', clusterColor: '#B87333' },
-                { id: 'mhcards',         data: mhcardGeoJSON,        color: '#1565C0', icon: 'mhcard-icon',   type: 'mhcard',  clusterColor: '#1565C0' },
-                { id: 'castles',         data: castleDataOther,      color: '#546E7A', icon: 'castle-icon',   type: 'castle',  clusterColor: '#546E7A' },
-                { id: 'castles-famous',  data: castleDataFamous,     color: '#546E7A', icon: 'castle-icon',   type: 'castle',  clusterColor: '#546E7A', noCluster: true },
+                { id: 'michi',           color: '#34A853', icon: 'michi-icon',    type: 'michi',   clusterColor: '#34A853' },
+                { id: 'shops',           color: '#FF9800', icon: 'tabe-icon',     type: 'shop',    clusterColor: '#FF9800' },
+                { id: 'manholes',        color: '#B87333', icon: 'manhole-icon',  type: 'manhole', clusterColor: '#B87333' },
+                { id: 'mhcards',         color: '#1565C0', icon: 'mhcard-icon',   type: 'mhcard',  clusterColor: '#1565C0' },
+                { id: 'castles',         color: '#546E7A', icon: 'castle-icon',   type: 'castle',  clusterColor: '#546E7A' },
+                { id: 'castles-famous',  color: '#546E7A', icon: 'castle-icon',   type: 'castle',  clusterColor: '#546E7A', noCluster: true },
             ];
 
             configs.forEach(conf => {
@@ -1775,8 +1808,8 @@ map.on('zoomend', () => { isZooming = false; });
                 const initVis = (filterKey === null || filterState[filterKey] !== false) ? 'visible' : 'none';
 
                 map.addSource(conf.id, conf.noCluster
-                    ? { type: 'geojson', data: conf.data }
-                    : { type: 'geojson', data: conf.data, cluster: true, clusterMaxZoom: 13, clusterRadius: 50 }
+                    ? { type: 'geojson', data: EMPTY_FC }
+                    : { type: 'geojson', data: EMPTY_FC, cluster: true, clusterMaxZoom: 13, clusterRadius: 50 }
                 );
                 if (conf.type === 'mhcard') {
                     map.addLayer({ id: `${conf.id}-cluster`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'mhcard-cluster-icon', 'icon-size': 1.5, 'icon-allow-overlap': true, 'visibility': initVis } });
@@ -1848,9 +1881,11 @@ map.on('zoomend', () => { isZooming = false; });
                 hover(clickLayer, 'pointer');
                 hover(`${conf.id}-cluster`, 'pointer');
             });
-        });
 
-        buildSearchIndex();
+            // 空ソース・レイヤー生成が済んだので、大容量データの非同期読込を開始
+            // （表示中レイヤー優先 → 背景で残りを取得し、到着ごとに setData ＋検索再構築）
+            startDataLoading();
+        });
 
         // popup-clamp トグル（タップで省略 ↔ 全文）
         document.getElementById('map').addEventListener('click', e => {
@@ -1865,16 +1900,17 @@ map.on('zoomend', () => { isZooming = false; });
     let searchIndex = [];
     function buildSearchIndex() {
         searchIndex = [];
+        // loadedData に到着済みのデータのみ対象（未読込分は届き次第この関数が再実行される）
         const sources = [
-            { type: 'pokefuta', data: pokefutaGeoJSON.features, labelKey: 'pokemon', subKey: 'address' },
-            { type: 'manhole',  data: manholeGeoJSON.features,  labelKey: 'name',    subKey: 'address' },
-            { type: 'mhcard',   data: mhcardGeoJSON.features,   labelKey: 'name',    subKey: 'address' },
-            { type: 'castle',   data: castleData.features,       labelKey: 'name',    subKey: 'address' },
-            { type: 'michi',    data: michiNoEkiGeoJSON.features, labelKey: 'name',   subKey: 'address' },
-            { type: 'shop',     data: shopData.features,          labelKey: 'name',   subKey: 'address' }
+            { type: 'pokefuta', data: loadedData.pokefuta, labelKey: 'pokemon', subKey: 'address' },
+            { type: 'manhole',  data: loadedData.manhole,  labelKey: 'name',    subKey: 'address' },
+            { type: 'mhcard',   data: loadedData.mhcard,   labelKey: 'name',    subKey: 'address' },
+            { type: 'castle',   data: loadedData.castle,   labelKey: 'name',    subKey: 'address' },
+            { type: 'michi',    data: loadedData.michi,    labelKey: 'name',    subKey: 'address' },
+            { type: 'shop',     data: loadedData.shops,    labelKey: 'name',    subKey: 'address' }
         ];
         sources.forEach(s => {
-            if (s.data) s.data.forEach(f => {
+            if (s.data && s.data.features) s.data.features.forEach(f => {
                 searchIndex.push({ type: s.type, label: f.properties[s.labelKey] || '', sub: s.sub || f.properties[s.subKey] || '', coords: f.geometry.coordinates, properties: f.properties });
             });
         });
