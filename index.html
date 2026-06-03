@@ -19,14 +19,26 @@
     <script src="duplicate-stations.js"></script>
     <script src="pref_codes.js"></script>
     <script>
-    fetch('icons-raw.svg').then(r => r.text()).then(svgText => {
-        const m = svgText.match(/<g[^>]*>([\s\S]*)<\/g>/);
-        if (!m) return;
-        const inner = m[1];
-        document.querySelectorAll('.nearby-cat-icon[data-vb]').forEach(el => {
-            el.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="${el.dataset.vb}"><g fill="currentColor">${inner}</g></svg>`;
-        });
-    });
+    // 周辺検索のカテゴリアイコンをスプライト(icons-raw.svg)から注入。
+    // 注入先(.nearby-cat-icon)はbody内のため、DOM準備を待つ。
+    // SWキャッシュで本fetchが即返ってもbody未生成で空振りしないようDOMContentLoadedを待機し、
+    // 取得失敗・空振り時はリトライする（iOS等での一時的失敗からの自己復旧）。
+    (function loadNearbyCatIcons(retries) {
+        fetch('icons-raw.svg').then(r => r.text()).then(svgText => {
+            const m = svgText.match(/<g[^>]*>([\s\S]*)<\/g>/);
+            if (!m) { if (retries > 0) setTimeout(() => loadNearbyCatIcons(retries - 1), 500); return; }
+            const inner = m[1];
+            const inject = () => {
+                const els = document.querySelectorAll('.nearby-cat-icon[data-vb]');
+                if (!els.length) { if (retries > 0) setTimeout(() => loadNearbyCatIcons(retries - 1), 300); return; }
+                els.forEach(el => {
+                    el.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="${el.dataset.vb}"><g fill="currentColor">${inner}</g></svg>`;
+                });
+            };
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', inject, { once: true });
+            else inject();
+        }).catch(() => { if (retries > 0) setTimeout(() => loadNearbyCatIcons(retries - 1), 500); });
+    })(3);
     </script>
     <style>
         body { margin: 0; padding: 0; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
