@@ -2616,32 +2616,121 @@ map.on('zoomend', () => { isZooming = false; });
     });
 
 
-    function renderWeather(data) {
+    // 正規化した3日分 [{icon, hi, lo}] を描画
+    function renderWeatherDays(days) {
         const widget = document.getElementById('weather-widget');
         if (!widget) return;
         const labels = ['今日', '明日', '明後日'];
-        const codes  = data.daily.weather_code;
-        const maxTs  = data.daily.temperature_2m_max;
-        const minTs  = data.daily.temperature_2m_min;
         // 最高気温の文字色: 30度以下=赤 / 31〜34度=濃い赤 / 35度以上=紫
         const hiTempColor = (t) => t >= 35 ? '#7B1FA2' : t >= 31 ? '#B71C1C' : '#E53935';
         widget.innerHTML = labels.map((lbl, i) => {
-            const ic = WMO_ICON[codes[i]] || 'cloudy';
+            const d = days[i] || { icon: 'cloudy', hi: null, lo: null };
+            const ic = d.icon || 'cloudy';
             const col = WMO_COLOR[ic] || '#607D8B';
             const url = `weather-icons/stamp/${ic}.png`;
-            const hi = Math.round(maxTs[i]);
+            const hasHi = (d.hi !== null && d.hi !== undefined && !isNaN(d.hi));
+            const hasLo = (d.lo !== null && d.lo !== undefined && !isNaN(d.lo));
+            const hi = hasHi ? Math.round(d.hi) : null;
+            const lo = hasLo ? Math.round(d.lo) : null;
+            const hiCol = hasHi ? hiTempColor(hi) : '#e05000';
             return `
             <div class="weather-day-card">
                 <div class="weather-day-label">${lbl}</div>
                 <div class="weather-icon-temp">
                     <span class="weather-emoji" style="-webkit-mask-image:url('${url}');mask-image:url('${url}');background-color:${col}"></span>
                     <div class="weather-temp-col">
-                        <span class="weather-temp-hi" style="color:${hiTempColor(hi)}">${hi}°</span>
-                        <span class="weather-temp-lo">${Math.round(minTs[i])}°</span>
+                        <span class="weather-temp-hi" style="color:${hiCol}">${hasHi ? hi + '°' : '--'}</span>
+                        <span class="weather-temp-lo">${hasLo ? lo + '°' : '--'}</span>
                     </div>
                 </div>
             </div>`;
         }).join('');
+    }
+
+    // Open-Meteo 応答 → 正規化3日（フォールバック用）
+    function openMeteoToDays(data) {
+        return [0, 1, 2].map(i => ({
+            icon: WMO_ICON[data.daily.weather_code[i]] || 'cloudy',
+            hi: data.daily.temperature_2m_max[i],
+            lo: data.daily.temperature_2m_min[i]
+        }));
+    }
+
+    // ── 気象庁(JMA)予報 ─────────────────────────────────────────────
+    // 都道府県コード → 予報区(office)コード。複数officeの道県は緯度経度で最寄りを選択（代表点は近似）
+    var JMA_MULTI_OFFICE = {
+        '01': [['011000',45.41,141.67],['012000',43.77,142.36],['013000',43.90,144.10],['014030',42.92,143.20],['014100',42.98,144.38],['015000',42.51,141.30],['016000',43.06,141.35],['017000',41.77,140.73]],
+        '46': [['460040',28.38,129.49],['460100',31.60,130.56]],
+        '47': [['471000',26.21,127.68],['472000',25.83,131.23],['473000',24.80,125.28],['474000',24.34,124.16]],
+    };
+    async function latLngToJmaOffice(lat, lng) {
+        const res = await fetch(`https://mreversegeocoder.gsi.go.jp/reverse-geocoder/LonLatToAddress?lat=${lat}&lon=${lng}`);
+        const j = await res.json();
+        const muni = j && j.results && j.results.muniCd;
+        if (!muni) return null; // 日本国外など
+        const pref = String(muni).padStart(5, '0').slice(0, 2);
+        const multi = JMA_MULTI_OFFICE[pref];
+        if (multi) {
+            let best = null, bd = Infinity;
+            for (const [code, clat, clng] of multi) {
+                const d = (clat - lat) ** 2 + (clng - lng) ** 2;
+                if (d < bd) { bd = d; best = code; }
+            }
+            return best;
+        }
+        return pref + '0000';
+    }
+    // 気象庁の天気文＋コードから自前アイコン名へ
+    function jmaIcon(text, code) {
+        const t = text || '';
+        const has = s => t.indexOf(s) >= 0;
+        const sun = has('晴');
+        if (has('雷')) return 'thunderstorms-day-rain';
+        if (has('雪')) return sun ? 'partly-cloudy-day-snow' : 'snow';
+        if (has('雨')) return sun ? 'partly-cloudy-day-rain' : 'rain';
+        if (has('霧')) return 'fog';
+        if (has('くもり') || has('曇')) return sun ? 'cloudy' : 'overcast-day';
+        if (sun) return 'clear-day';
+        const c = parseInt(code, 10); // フォールバック: コード先頭桁
+        if (c >= 400) return 'snow';
+        if (c >= 300) return 'rain';
+        if (c >= 200) return 'overcast-day';
+        if (c >= 100) return 'clear-day';
+        return 'cloudy';
+    }
+    // 今日/明日/明後日の日付（JST, YYYY-MM-DD）
+    function jstDates3() {
+        const now = new Date();
+        const jst = new Date(now.getTime() + now.getTimezoneOffset() * 60000 + 9 * 3600000);
+        const out = [];
+        for (let i = 0; i < 3; i++) {
+            const d = new Date(jst.getTime() + i * 86400000);
+            out.push(d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'));
+        }
+        return out;
+    }
+    async function fetchJmaDays(office) {
+        const data = await (await fetch(`https://www.jma.go.jp/bosai/forecast/data/forecast/${office}.json`)).json();
+        // 天気（短期 ts0：今日/明日/明後日）
+        const ts0 = data[0].timeSeries[0], a0 = ts0.areas[0];
+        const wByDate = {};
+        ts0.timeDefines.forEach((td, i) => { wByDate[td.slice(0, 10)] = { code: a0.weatherCodes[i], text: a0.weathers ? a0.weathers[i] : '' }; });
+        // 気温（短期 ts2 ＋ 週間 wk1 を日付ごとに集約し min/max）
+        const tByDate = {};
+        const push = (date, v) => { if (v === '' || v == null) return; const n = parseFloat(v); if (!isNaN(n)) (tByDate[date] = tByDate[date] || []).push(n); };
+        const ts2 = data[0].timeSeries[2];
+        if (ts2 && ts2.areas[0] && ts2.areas[0].temps) ts2.timeDefines.forEach((td, i) => push(td.slice(0, 10), ts2.areas[0].temps[i]));
+        const wk1 = data[1] && data[1].timeSeries[1];
+        if (wk1 && wk1.areas[0]) { const wa = wk1.areas[0]; wk1.timeDefines.forEach((td, i) => { push(td.slice(0, 10), wa.tempsMax && wa.tempsMax[i]); push(td.slice(0, 10), wa.tempsMin && wa.tempsMin[i]); }); }
+        return jstDates3().map(dt => {
+            const w = wByDate[dt] || { code: '200', text: 'くもり' };
+            const ts = tByDate[dt] || [];
+            const hi = ts.length ? Math.max(...ts) : null;
+            let lo = ts.length ? Math.min(...ts) : null;
+            // 今日の最低など、最低=最高の同値（=実質1値しか無い置き値）は最低を非表示にする
+            if (hi !== null && lo === hi) lo = null;
+            return { icon: jmaIcon(w.text, w.code), hi, lo };
+        });
     }
 
     // 周辺パネルが開いている時だけ天気を再取得（基準点が変わった時に呼ぶ）
@@ -2657,19 +2746,25 @@ map.on('zoomend', () => { isZooming = false; });
         const lng = lngLat.lng.toFixed(4);
         if (weatherCache && now - weatherCacheTime < WEATHER_CACHE_TTL
             && weatherCacheLat === lat && weatherCacheLng === lng) {
-            renderWeather(weatherCache); return;
+            renderWeatherDays(weatherCache); return;
         }
+        let days = null;
+        // ① 気象庁（日本国内・高精度）
         try {
-            const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=Asia%2FTokyo&forecast_days=3`;
-            const data = await (await fetch(url)).json();
-            weatherCache = data;
-            weatherCacheTime = now;
-            weatherCacheLat = lat;
-            weatherCacheLng = lng;
-            renderWeather(data);
-        } catch (e) {
-            console.warn('[weather]', e);
+            const office = await latLngToJmaOffice(lngLat.lat, lngLat.lng);
+            if (office) days = await fetchJmaDays(office);
+        } catch (e) { console.warn('[weather:jma]', e); }
+        // ② フォールバック: Open-Meteo（国外・JMA失敗時）
+        if (!days) {
+            try {
+                const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=Asia%2FTokyo&forecast_days=3`;
+                const data = await (await fetch(url)).json();
+                days = openMeteoToDays(data);
+            } catch (e) { console.warn('[weather:openmeteo]', e); }
         }
+        if (!days) return;
+        weatherCache = days; weatherCacheTime = now; weatherCacheLat = lat; weatherCacheLng = lng;
+        renderWeatherDays(days);
     }
 
 </script>
