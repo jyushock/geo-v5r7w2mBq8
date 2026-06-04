@@ -2663,32 +2663,80 @@ map.on('zoomend', () => { isZooming = false; });
         }).join('');
     }
 
-    // Open-Meteo 応答 → 正規化3日
-    // models=jma_seamless,best_match を併用: 天気・気温は jma_seamless(JMA 5kmモデル)優先、
-    // 降水確率は jma_seamless では出ない(None)ため既定ブレンド(best_match)から取得。
-    // 単一モデル応答（suffix無し）にも後方互換でフォールバックする。
+    // 現在時刻（JST）の「時」
+    function jstHourNow() {
+        const now = new Date();
+        const jst = new Date(now.getTime() + now.getTimezoneOffset() * 60000 + 9 * 3600000);
+        return jst.getHours();
+    }
+    // 時間別カテゴリ（晴/曇/雨/雪/雷）— JMA定義: 雲量8割まで晴れ(=コード0,1,2), 3とfogは曇
+    function wmoCategory(c) {
+        if (c === 95 || c === 96 || c === 99) return 'thunder';
+        if (c === 71 || c === 73 || c === 75 || c === 77 || c === 85 || c === 86) return 'snow';
+        if ((c >= 51 && c <= 67) || (c >= 80 && c <= 82)) return 'rain';
+        if (c === 3 || c === 45 || c === 48) return 'cloud';
+        return 'sun'; // 0,1,2
+    }
+    // 時間別配列 [{code,pop}] → 単一の代表アイコン名（案A: 1日1アイコン）
+    // ルール: 雨/雪/雷は弱くても優先表示（降水確率≥30% か 降水コマ≥3）。それ以外は晴/曇を多数決。
+    function pickWeatherIcon(hours) {
+        if (!hours.length) return 'cloudy';
+        const cats = hours.map(x => wmoCategory(x.code));
+        const cnt = (k) => cats.filter(x => x === k).length;
+        const rainN = cnt('rain'), snowN = cnt('snow'), thunN = cnt('thunder');
+        const precipN = rainN + snowN + thunN, sunN = cnt('sun'), cloudN = cnt('cloud');
+        const maxPop = hours.reduce((m, x) => Math.max(m, x.pop || 0), 0);
+        if (precipN > 0 && (maxPop >= 30 || precipN >= 3)) {
+            const kind = (thunN >= rainN && thunN >= snowN) ? 'thunder' : (snowN > rainN ? 'snow' : 'rain');
+            const sunnyMix = sunN >= precipN; // 晴れ主体に一時的な降水
+            if (kind === 'thunder') return 'thunderstorms-day-rain';
+            if (kind === 'snow') return sunnyMix ? 'partly-cloudy-day-snow' : 'snow';
+            return sunnyMix ? 'partly-cloudy-day-rain' : 'rain';
+        }
+        if (sunN >= cloudN) {
+            const code2 = hours.filter(x => x.code === 2).length; // 晴れ時々曇が多めなら partly
+            return (code2 > sunN * 0.5) ? 'partly-cloudy-day' : 'clear-day';
+        }
+        const fog = hours.filter(x => x.code === 45 || x.code === 48).length;
+        return (fog > cloudN * 0.5) ? 'fog' : 'overcast-day';
+    }
+    // Open-Meteo 応答（hourly+daily, models=jma_seamless,best_match）→ 正規化3日
+    // 天気アイコン: 時間別 weather_code(jma_seamless) を日ごとに集約。
+    //   今日 = 現在時刻〜23時（過ぎた時間は除外）／明日・明後日 = 6〜18時（日中代表）。
+    // 降水確率: 同じ窓で best_match の時間別 precipitation_probability の最大。
+    // 気温: 日次の最高/最低（jma_seamless優先）。
     function openMeteoToDays(data) {
-        const dy = data.daily || {};
-        // base名の値を「jma_seamless → best_match → suffix無し」の順で取得
-        const pick = (base, i) => {
-            const cands = [dy[base + '_jma_seamless'], dy[base + '_best_match'], dy[base]];
-            for (const arr of cands) { if (arr && arr[i] !== null && arr[i] !== undefined) return arr[i]; }
-            return null;
-        };
-        // 降水確率は best_match を最優先（jma_seamless は None）
-        const pickPop = (i) => {
-            const cands = [dy['precipitation_probability_max_best_match'],
-                           dy['precipitation_probability_max'],
-                           dy['precipitation_probability_max_jma_seamless']];
-            for (const arr of cands) { if (arr && arr[i] !== null && arr[i] !== undefined) return arr[i]; }
-            return null;
-        };
-        return [0, 1, 2].map(i => ({
-            icon: WMO_ICON[pick('weather_code', i)] || 'cloudy',
-            hi: pick('temperature_2m_max', i),
-            lo: pick('temperature_2m_min', i),
-            pop: pickPop(i)
-        }));
+        const h = data.hourly || {}, dy = data.daily || {};
+        const times = h.time || [];
+        const wc = h.weather_code_jma_seamless || h.weather_code_best_match || h.weather_code || [];
+        const pp = h.precipitation_probability_best_match || h.precipitation_probability || h.precipitation_probability_jma_seamless || [];
+        const tmax = dy.temperature_2m_max_jma_seamless || dy.temperature_2m_max_best_match || dy.temperature_2m_max || [];
+        const tmin = dy.temperature_2m_min_jma_seamless || dy.temperature_2m_min_best_match || dy.temperature_2m_min || [];
+        const dailyDates = dy.time || [];
+        const nowH = jstHourNow();
+        // hourly index を日付ごとにまとめる（先頭3日）
+        const byDate = {}, order = [];
+        times.forEach((t, i) => { const d = t.slice(0, 10); if (!byDate[d]) { byDate[d] = []; order.push(d); } byDate[d].push(i); });
+        return order.slice(0, 3).map((d, di) => {
+            const idx = byDate[d];
+            let win;
+            if (di === 0) {
+                win = idx.filter(i => { const hh = parseInt(times[i].slice(11, 13), 10); return hh >= nowH && hh <= 23; });
+                if (!win.length) win = idx.slice(-1); // 夜遅く等で残りが無ければ最後の時間
+            } else {
+                win = idx.filter(i => { const hh = parseInt(times[i].slice(11, 13), 10); return hh >= 6 && hh <= 18; });
+                if (!win.length) win = idx;
+            }
+            const hours = win.map(i => ({ code: wc[i], pop: (pp[i] != null ? pp[i] : 0) }));
+            const pop = hours.length ? hours.reduce((m, x) => Math.max(m, x.pop || 0), 0) : null;
+            let ti = dailyDates.indexOf(d); if (ti < 0) ti = di;
+            return {
+                icon: pickWeatherIcon(hours),
+                hi: (tmax[ti] != null ? tmax[ti] : null),
+                lo: (tmin[ti] != null ? tmin[ti] : null),
+                pop: pop
+            };
+        });
     }
 
     // ── 気象庁(JMA)予報 ─────────────────────────────────────────────
@@ -2835,9 +2883,10 @@ map.on('zoomend', () => { isZooming = false; });
             renderWeatherDays(weatherCache); return;
         }
         let days = null;
-        // ① Open-Meteo（座標粒度）: 天気・気温=JMA 5kmモデル(jma_seamless), 降水確率=既定ブレンド(best_match)
+        // ① Open-Meteo（座標粒度）: 天気=時間別weather_code(jma_seamless)を日ごとに集約,
+        //    降水確率=時間別(best_match), 気温=日次最高/最低(jma_seamless)
         try {
-            const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&models=jma_seamless,best_match&timezone=Asia%2FTokyo&forecast_days=3`;
+            const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&hourly=weather_code,precipitation_probability&daily=temperature_2m_max,temperature_2m_min&models=jma_seamless,best_match&timezone=Asia%2FTokyo&forecast_days=3`;
             const data = await (await fetch(url)).json();
             days = openMeteoToDays(data);
         } catch (e) { console.warn('[weather:openmeteo]', e); }
