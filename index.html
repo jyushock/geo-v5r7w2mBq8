@@ -2666,22 +2666,45 @@ map.on('zoomend', () => { isZooming = false; });
         '46': [['460040',28.38,129.49],['460100',31.60,130.56]],
         '47': [['471000',26.21,127.68],['472000',25.83,131.23],['473000',24.80,125.28],['474000',24.34,124.16]],
     };
-    async function latLngToJmaOffice(lat, lng) {
+    // area.json（市区町村→細分区→予報区の階層）を1回だけ取得してキャッシュ
+    var jmaAreaCache = null;
+    async function getJmaArea() {
+        if (jmaAreaCache !== null) return jmaAreaCache;
+        try { jmaAreaCache = await (await fetch('https://www.jma.go.jp/bosai/common/const/area.json')).json(); }
+        catch (e) { jmaAreaCache = false; }
+        return jmaAreaCache;
+    }
+    // 緯度経度 → { office:予報区コード, class10:一次細分区コード }（国外はnull）
+    async function latLngToJmaArea(lat, lng) {
         const res = await fetch(`https://mreversegeocoder.gsi.go.jp/reverse-geocoder/LonLatToAddress?lat=${lat}&lon=${lng}`);
         const j = await res.json();
         const muni = j && j.results && j.results.muniCd;
         if (!muni) return null; // 日本国外など
-        const pref = String(muni).padStart(5, '0').slice(0, 2);
-        const multi = JMA_MULTI_OFFICE[pref];
-        if (multi) {
-            let best = null, bd = Infinity;
-            for (const [code, clat, clng] of multi) {
-                const d = (clat - lat) ** 2 + (clng - lng) ** 2;
-                if (d < bd) { bd = d; best = code; }
+        const m5 = String(muni).padStart(5, '0');
+        // ① area.json階層で 市区町村→class10(一次細分区)→office を正確に特定
+        const area = await getJmaArea();
+        if (area && area.class20s && area.class15s && area.class10s) {
+            let c20 = null;
+            // 政令市の区はGSIが区コード、area.jsonは市コードのことがある。区番号の桁数が市で異なるため、
+            // 「そのまま → 下1桁を0 → 下2桁を0」の順に、実在するclass20へ最初にヒットしたものを採用する
+            const cands = [m5, m5.slice(0, 4) + '0', m5.slice(0, 3) + '00'];
+            for (const cand of cands) {
+                for (const k in area.class20s) { if (k.slice(0, 5) === cand) { c20 = k; break; } }
+                if (c20) break;
             }
-            return best;
+            if (c20) {
+                const c15 = area.class20s[c20].parent;
+                const c10 = c15 && area.class15s[c15] ? area.class15s[c15].parent : null;
+                const office = c10 && area.class10s[c10] ? area.class10s[c10].parent : null;
+                if (c10 && office) return { office, class10: c10 };
+            }
         }
-        return pref + '0000';
+        // ② フォールバック: 都道府県→office（複数区は座標で最寄り）, class10なし（先頭区域を使用）
+        const pref = m5.slice(0, 2);
+        const multi = JMA_MULTI_OFFICE[pref];
+        let office = pref + '0000';
+        if (multi) { let bd = Infinity; for (const [code, clat, clng] of multi) { const dd = (clat - lat) ** 2 + (clng - lng) ** 2; if (dd < bd) { bd = dd; office = code; } } }
+        return { office, class10: null };
     }
     // 気象庁の天気文＋コードから自前アイコン名へ
     function jmaIcon(text, code) {
@@ -2712,17 +2735,22 @@ map.on('zoomend', () => { isZooming = false; });
         }
         return out;
     }
-    async function fetchJmaDays(office) {
+    async function fetchJmaDays(office, class10) {
         const data = await (await fetch(`https://www.jma.go.jp/bosai/forecast/data/forecast/${office}.json`)).json();
-        // 天気（短期 ts0：今日/明日/明後日）
-        const ts0 = data[0].timeSeries[0], a0 = ts0.areas[0];
+        // 天気（短期 ts0）: 基準点の一次細分区(class10)に一致する区域を選択。無ければ先頭
+        const ts0 = data[0].timeSeries[0];
+        let wIdx = 0;
+        if (class10) { const i = ts0.areas.findIndex(a => a.area && a.area.code === class10); if (i >= 0) wIdx = i; }
+        const a0 = ts0.areas[wIdx];
         const wByDate = {};
         ts0.timeDefines.forEach((td, i) => { wByDate[td.slice(0, 10)] = { code: a0.weatherCodes[i], text: a0.weathers ? a0.weathers[i] : '' }; });
         // 気温（短期 ts2 ＋ 週間 wk1 を日付ごとに集約し min/max）
         const tByDate = {};
         const push = (date, v) => { if (v === '' || v == null) return; const n = parseFloat(v); if (!isNaN(n)) (tByDate[date] = tByDate[date] || []).push(n); };
         const ts2 = data[0].timeSeries[2];
-        if (ts2 && ts2.areas[0] && ts2.areas[0].temps) ts2.timeDefines.forEach((td, i) => push(td.slice(0, 10), ts2.areas[0].temps[i]));
+        // 気温地点: 天気区域と並びが一致する県は同index、合わなければ先頭
+        const tArea = (ts2 && ts2.areas) ? (ts2.areas.length === ts0.areas.length ? ts2.areas[wIdx] : ts2.areas[0]) : null;
+        if (tArea && tArea.temps) ts2.timeDefines.forEach((td, i) => push(td.slice(0, 10), tArea.temps[i]));
         const wk1 = data[1] && data[1].timeSeries[1];
         if (wk1 && wk1.areas[0]) { const wa = wk1.areas[0]; wk1.timeDefines.forEach((td, i) => { push(td.slice(0, 10), wa.tempsMax && wa.tempsMax[i]); push(td.slice(0, 10), wa.tempsMin && wa.tempsMin[i]); }); }
         return jstDates3().map(dt => {
@@ -2754,8 +2782,8 @@ map.on('zoomend', () => { isZooming = false; });
         let days = null;
         // ① 気象庁（日本国内・高精度）
         try {
-            const office = await latLngToJmaOffice(lngLat.lat, lngLat.lng);
-            if (office) days = await fetchJmaDays(office);
+            const area = await latLngToJmaArea(lngLat.lat, lngLat.lng);
+            if (area && area.office) days = await fetchJmaDays(area.office, area.class10);
         } catch (e) { console.warn('[weather:jma]', e); }
         // ② フォールバック: Open-Meteo（国外・JMA失敗時）
         if (!days) {
