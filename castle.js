@@ -1,4 +1,4 @@
-const castleData = {
+﻿const castleData = {
   "type": "FeatureCollection",
   "features": [
     {
@@ -7963,7 +7963,7 @@ const castleData = {
         "type": "Point",
         "coordinates": [
           140.1273583116156,
-          35.604992973477124 
+          35.604992973477124
         ]
       },
       "properties": {
@@ -30252,7 +30252,7 @@ const castleData = {
       },
       "properties": {
         "name": "法華津本城",
-        "genre": "愛媛県宇和島市",
+        "genre": "",
         "category": "城",
         "prefecture": "愛媛県",
         "url": "https://kojodan.jp/castle/3155",
@@ -94812,8 +94812,8 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.15124850,
-          37.88640690
+          140.1512485,
+          37.8864069
         ]
       },
       "properties": {
@@ -94821,16 +94821,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.15599980,
-          37.88831810
+          140.1559998,
+          37.8883181
         ]
       },
       "properties": {
@@ -94838,16 +94839,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.07998610,
-          37.89809570
+          140.0799861,
+          37.8980957
         ]
       },
       "properties": {
@@ -94855,16 +94857,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.03919080,
-          38.09869980
+          140.0391908,
+          38.0986998
         ]
       },
       "properties": {
@@ -94872,16 +94875,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.99850280,
-          38.12547210
+          139.9985028,
+          38.1254721
         ]
       },
       "properties": {
@@ -94889,16 +94893,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.02866000,
-          38.09593270
+          140.02866,
+          38.0959327
         ]
       },
       "properties": {
@@ -94906,16 +94911,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.02078920,
-          38.07572550
+          140.0207892,
+          38.0757255
         ]
       },
       "properties": {
@@ -94923,16 +94929,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.99769970,
-          38.09739320
+          139.9976997,
+          38.0973932
         ]
       },
       "properties": {
@@ -94940,16 +94947,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.05893060,
-          38.12697390
+          140.0589306,
+          38.1269739
         ]
       },
       "properties": {
@@ -94957,16 +94965,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.13551320,
-          38.08165680
+          140.1355132,
+          38.0816568
         ]
       },
       "properties": {
@@ -94974,16 +94983,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.16245310,
-          38.05808720
+          140.1624531,
+          38.0580872
         ]
       },
       "properties": {
@@ -94991,16 +95001,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.20244400,
-          38.09869400
+          140.202444,
+          38.098694
         ]
       },
       "properties": {
@@ -95008,16 +95019,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.08774630,
-          38.05677780
+          140.0877463,
+          38.0567778
         ]
       },
       "properties": {
@@ -95025,16 +95037,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.17567590,
-          38.09022980
+          140.1756759,
+          38.0902298
         ]
       },
       "properties": {
@@ -95042,16 +95055,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.15436100,
-          38.02355600
+          140.154361,
+          38.023556
         ]
       },
       "properties": {
@@ -95059,16 +95073,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.25275360,
-          38.01818500
+          140.2527536,
+          38.018185
         ]
       },
       "properties": {
@@ -95076,16 +95091,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.28204060,
-          38.01781140
+          140.2820406,
+          38.0178114
         ]
       },
       "properties": {
@@ -95093,16 +95109,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.19117650,
-          37.99065840
+          140.1911765,
+          37.9906584
         ]
       },
       "properties": {
@@ -95110,16 +95127,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.13617700,
-          38.01050220
+          140.136177,
+          38.0105022
         ]
       },
       "properties": {
@@ -95127,16 +95145,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.16659180,
-          38.00474710
+          140.1665918,
+          38.0047471
         ]
       },
       "properties": {
@@ -95144,16 +95163,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.02597090,
-          37.97326320
+          140.0259709,
+          37.9732632
         ]
       },
       "properties": {
@@ -95161,16 +95181,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.07601050,
-          38.04284940
+          140.0760105,
+          38.0428494
         ]
       },
       "properties": {
@@ -95178,16 +95199,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.12843360,
-          38.01448820
+          140.1284336,
+          38.0144882
         ]
       },
       "properties": {
@@ -95195,16 +95217,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.97481430,
-          37.92824380
+          139.9748143,
+          37.9282438
         ]
       },
       "properties": {
@@ -95212,16 +95235,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.68427960,
-          37.95749040
+          139.6842796,
+          37.9574904
         ]
       },
       "properties": {
@@ -95229,16 +95253,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.76441760,
-          38.17044730
+          139.7644176,
+          38.1704473
         ]
       },
       "properties": {
@@ -95246,16 +95271,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.76080680,
-          38.15588970
+          139.7608068,
+          38.1558897
         ]
       },
       "properties": {
@@ -95263,16 +95289,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.86435940,
-          38.01086550
+          139.8643594,
+          38.0108655
         ]
       },
       "properties": {
@@ -95280,16 +95307,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.09040240,
-          38.17058300
+          140.0904024,
+          38.170583
         ]
       },
       "properties": {
@@ -95297,16 +95325,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.10489290,
-          38.15971290
+          140.1048929,
+          38.1597129
         ]
       },
       "properties": {
@@ -95314,16 +95343,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.05634870,
-          38.16678130
+          140.0563487,
+          38.1667813
         ]
       },
       "properties": {
@@ -95331,16 +95361,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.04650000,
-          38.17794400
+          140.0465,
+          38.177944
         ]
       },
       "properties": {
@@ -95348,16 +95379,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.84214800,
-          37.90475300
+          139.842148,
+          37.904753
         ]
       },
       "properties": {
@@ -95365,16 +95397,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.98696580,
-          38.06265170
+          139.9869658,
+          38.0626517
         ]
       },
       "properties": {
@@ -95382,16 +95415,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.95881600,
-          38.01067260
+          139.958816,
+          38.0106726
         ]
       },
       "properties": {
@@ -95399,16 +95433,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.98585160,
-          38.04194810
+          139.9858516,
+          38.0419481
         ]
       },
       "properties": {
@@ -95416,16 +95451,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.89045790,
-          37.91960860
+          139.8904579,
+          37.9196086
         ]
       },
       "properties": {
@@ -95433,16 +95469,17 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
       }
-    },,
+    },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.01421970,
-          38.06267020
+          140.0142197,
+          38.0626702
         ]
       },
       "properties": {
@@ -95450,7 +95487,33506 @@ const castleData = {
         "genre": "",
         "category": "城",
         "prefecture": "",
-        "url": ""
+        "url": "",
+        "address": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.80879619999999,
+          26.3015957
+        ]
+      },
+      "properties": {
+        "name": "与那嶺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "沖縄県島尻郡久米島町島尻"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.0536094,
+          26.5506223
+        ]
+      },
+      "properties": {
+        "name": "高山城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "沖縄県名護市瀬嵩４０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.59416299999998,
+          27.381407
+        ]
+      },
+      "properties": {
+        "name": "後蘭孫八の城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県大島郡和泊町後蘭"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.6140949,
+          27.3864894
+        ]
+      },
+      "properties": {
+        "name": "世之主の城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県大島郡和泊町内城"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4605612,
+          28.3175559
+        ]
+      },
+      "properties": {
+        "name": "住用町大字城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県奄美市住用町大字城"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.8817464,
+          30.464390099999996
+        ]
+      },
+      "properties": {
+        "name": "上妻城址（南種子町)",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県熊毛郡南種子町島間３５１２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.92072779999998,
+          30.8408668
+        ]
+      },
+      "properties": {
+        "name": "平家城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県鹿児島郡三島村黒島"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3035043,
+          30.8075372
+        ]
+      },
+      "properties": {
+        "name": "平家城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県鹿児島郡三島村硫黄島"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3221252,
+          31.3980467
+        ]
+      },
+      "properties": {
+        "name": "荒瀬城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県南さつま市加世田内山田１６４９８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3271466,
+          31.385557499999997
+        ]
+      },
+      "properties": {
+        "name": "土城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県南さつま市加世田内山田１９３３９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3581859,
+          31.3695615
+        ]
+      },
+      "properties": {
+        "name": "勝目城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県南九州市川辺町中山田８９７ 0132"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3500484,
+          31.3600244
+        ]
+      },
+      "properties": {
+        "name": "上山田陣之尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県南九州市川辺町中山田１０５０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.352012,
+          31.347393999999998
+        ]
+      },
+      "properties": {
+        "name": "野首城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県南九州市川辺町本別府６５２２−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.5600794,
+          31.214903300000003
+        ]
+      },
+      "properties": {
+        "name": "上野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県指宿市開聞上野１９４７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.5350355,
+          31.254499499999994
+        ]
+      },
+      "properties": {
+        "name": "栫山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県南九州市頴娃町郡６２７５−４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.5130814,
+          31.23669
+        ]
+      },
+      "properties": {
+        "name": "頴娃古城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県南九州市頴娃町郡８９９１−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.791833,
+          31.3753369
+        ]
+      },
+      "properties": {
+        "name": "荒平城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県鹿屋市小野原町 9QGV+72"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7910918,
+          31.228443
+        ]
+      },
+      "properties": {
+        "name": "国見城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県肝属郡南大隅町根占川北"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.565426,
+          31.318019000000003
+        ]
+      },
+      "properties": {
+        "name": "米倉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県鹿児島市喜入生見町４２１−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.4342265,
+          31.3916452
+        ]
+      },
+      "properties": {
+        "name": "山石城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県南九州市知覧町厚地５００９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.48774459999998,
+          31.295372699999998
+        ]
+      },
+      "properties": {
+        "name": "只角城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県南九州市頴娃町上別府２１６０−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.4444068,
+          31.3986672
+        ]
+      },
+      "properties": {
+        "name": "野石城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県南九州市知覧町厚地 9CXV+FQ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.400238,
+          31.394802799999994
+        ]
+      },
+      "properties": {
+        "name": "平山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県南九州市川辺町平山８９７ 0215"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.78920979999998,
+          31.2112542
+        ]
+      },
+      "properties": {
+        "name": "富田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県肝属郡南大隅町根占川南５４６３−３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.6324276,
+          31.232446
+        ]
+      },
+      "properties": {
+        "name": "薩摩・原田城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県指宿市十二町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.81134509999998,
+          31.3713889
+        ]
+      },
+      "properties": {
+        "name": "野里城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県鹿屋市野里町１０６−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.8316578,
+          31.3413073
+        ]
+      },
+      "properties": {
+        "name": "横山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県鹿屋市横山町３０２４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.8428208,
+          31.320567599999993
+        ]
+      },
+      "properties": {
+        "name": "志々目城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県鹿屋市獅子目町７８９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.92176039999998,
+          31.337444899999998
+        ]
+      },
+      "properties": {
+        "name": "検見崎城址（肝付町）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県肝属郡肝付町後田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.8679829,
+          31.3298995
+        ]
+      },
+      "properties": {
+        "name": "西俣城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県鹿屋市南町１８８−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3275686,
+          31.414538099999994
+        ]
+      },
+      "properties": {
+        "name": "花牟礼城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県南さつま市加世田川畑２２０５−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3567931,
+          31.483484699999995
+        ]
+      },
+      "properties": {
+        "name": "田中城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県日置市吹上町和田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.35485789999998,
+          31.489514800000002
+        ]
+      },
+      "properties": {
+        "name": "天ヶ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県日置市吹上町和田 F9Q3+VX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3606282,
+          31.407628199999998
+        ]
+      },
+      "properties": {
+        "name": "兎ケ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県南九州市川辺町下山田８９７ 0133"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3548131,
+          31.574485
+        ]
+      },
+      "properties": {
+        "name": "第一吉利城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県日置市日吉町吉利４６９９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.31230979999998,
+          31.7930038
+        ]
+      },
+      "properties": {
+        "name": "隈之城跡(二福城跡)",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県薩摩川内市隈之城町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.37800769999998,
+          31.575504499999997
+        ]
+      },
+      "properties": {
+        "name": "田平城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県日置市日吉町吉利８９９ 3203"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3472844,
+          31.547219700000003
+        ]
+      },
+      "properties": {
+        "name": "栫ノ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県日置市吹上町永吉８９９ 3221"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.335183,
+          31.431756
+        ]
+      },
+      "properties": {
+        "name": "鶴之城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県南さつま市金峰町花瀬１８３３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3931781,
+          31.5960182
+        ]
+      },
+      "properties": {
+        "name": "内城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県日置市伊集院町古城１０２１−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.54722859999998,
+          31.601317299999998
+        ]
+      },
+      "properties": {
+        "name": "夏蔭城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県鹿児島市城山２丁目１−１４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7873013,
+          31.753252
+        ]
+      },
+      "properties": {
+        "name": "清水城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県霧島市国分清水"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.4963146,
+          31.690385300000003
+        ]
+      },
+      "properties": {
+        "name": "陣ノ尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県鹿児島市東俣町６５４−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.53209329999999,
+          31.5872502
+        ]
+      },
+      "properties": {
+        "name": "谷峰城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県鹿児島市常盤町８９０ 0044"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7795298,
+          31.7246397
+        ]
+      },
+      "properties": {
+        "name": "上井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県霧島市国分上井"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.627508,
+          31.778195
+        ]
+      },
+      "properties": {
+        "name": "山田城（大隅山田城）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県姶良市上名 QJHH+72"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7029275,
+          31.732349
+        ]
+      },
+      "properties": {
+        "name": "大隅長浜城(生別府城)址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県霧島市隼人町小浜"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.8165331,
+          31.694251899999998
+        ]
+      },
+      "properties": {
+        "name": "長尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県霧島市国分敷根"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.10148479999998,
+          31.687795400000002
+        ]
+      },
+      "properties": {
+        "name": "六ヶ村城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県都城市安久町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.098757,
+          31.694457000000003
+        ]
+      },
+      "properties": {
+        "name": "池平城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県都城市豊満町９２５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.04789739999998,
+          31.637407200000002
+        ]
+      },
+      "properties": {
+        "name": "平松城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県曽於市末吉町南之郷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.1531215,
+          31.761067399999995
+        ]
+      },
+      "properties": {
+        "name": "七浦城跡(玖摩陣)",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県都城市山之口町富吉"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.1231175,
+          31.792457000000002
+        ]
+      },
+      "properties": {
+        "name": "小山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県都城市高城町桜木"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.861875,
+          31.548220500000003
+        ]
+      },
+      "properties": {
+        "name": "西原城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県鹿屋市輝北町上百引"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.0764811,
+          31.7890324
+        ]
+      },
+      "properties": {
+        "name": "野々美谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県都城市野々美谷町８２０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.900635,
+          31.541138999999998
+        ]
+      },
+      "properties": {
+        "name": "加瀬田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県鹿屋市輝北町平房６６３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.0751642,
+          31.4866688
+        ]
+      },
+      "properties": {
+        "name": "安楽城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県志布志市志布志町安楽"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.062579,
+          31.7174959
+        ]
+      },
+      "properties": {
+        "name": "姫木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県都城市姫城町１７−１７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.9808717,
+          31.537838899999997
+        ]
+      },
+      "properties": {
+        "name": "高牧城址（志布志市）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県志布志市有明町山重８９９ 7513"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.1387321,
+          31.725383
+        ]
+      },
+      "properties": {
+        "name": "樺山城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県北諸県郡三股町樺山１１５−３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.05217059999998,
+          31.708535899999994
+        ]
+      },
+      "properties": {
+        "name": "大岩田城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県都城市大岩田町８８５ 0062"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.00571539999999,
+          31.555726899999996
+        ]
+      },
+      "properties": {
+        "name": "広津田城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県曽於市大隅町月野８９９ 8212"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.1192477,
+          31.7474338
+        ]
+      },
+      "properties": {
+        "name": "勝岡城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県北諸県郡三股町蓼池"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.0296309,
+          31.486180299999997
+        ]
+      },
+      "properties": {
+        "name": "蓬原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県志布志市有明町蓬原８９９ 7503"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.3510253,
+          31.528071599999997
+        ]
+      },
+      "properties": {
+        "name": "湖雲ケ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県日南市南郷町脇本"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3041488,
+          32.0435977
+        ]
+      },
+      "properties": {
+        "name": "紅葉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県出水市高尾野町柴引"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.2493126,
+          31.819979099999998
+        ]
+      },
+      "properties": {
+        "name": "白石ヶ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県薩摩川内市高江町５０９８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.34026230000003,
+          31.864963499999998
+        ]
+      },
+      "properties": {
+        "name": "斧渕城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県薩摩川内市東郷町斧渕"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.2381134,
+          32.0410081
+        ]
+      },
+      "properties": {
+        "name": "桑原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県阿久根市鶴川内９５３８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.34551779999998,
+          31.800122599999998
+        ]
+      },
+      "properties": {
+        "name": "永利城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県薩摩川内市永利町３８８８−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.265516,
+          32.016324
+        ]
+      },
+      "properties": {
+        "name": "田代西之城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県阿久根市鶴川内８３３２−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.6026019,
+          31.817199400000003
+        ]
+      },
+      "properties": {
+        "name": "姶良町下城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県姶良市北山６２０−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.53738289999998,
+          32.171223399999995
+        ]
+      },
+      "properties": {
+        "name": "中尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県水俣市古里"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.630476,
+          31.988114399999997
+        ]
+      },
+      "properties": {
+        "name": "太良城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県伊佐市菱刈南浦"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.78463259999998,
+          32.1898077
+        ]
+      },
+      "properties": {
+        "name": "赤池城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県人吉市赤池原町１３９１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.70817689999998,
+          31.9054046
+        ]
+      },
+      "properties": {
+        "name": "中尾田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県霧島市横川町中ノ８１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.47734230000003,
+          32.182202
+        ]
+      },
+      "properties": {
+        "name": "宝川内城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県水俣市宝川内"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.6421516,
+          32.015138
+        ]
+      },
+      "properties": {
+        "name": "馬越城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県伊佐市菱刈前目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.5603124,
+          31.9682472
+        ]
+      },
+      "properties": {
+        "name": "境田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県薩摩郡さつま町求名"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.4708363,
+          31.917192900000003
+        ]
+      },
+      "properties": {
+        "name": "時吉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県薩摩郡さつま町時吉１５２０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.64386009999998,
+          31.903014199999998
+        ]
+      },
+      "properties": {
+        "name": "古城城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県霧島市横川町上ノ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.5799673,
+          31.8231601
+        ]
+      },
+      "properties": {
+        "name": "上脇城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県姶良市木津志１８７９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7310458,
+          31.8400401
+        ]
+      },
+      "properties": {
+        "name": "踊城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県霧島市牧園町宿窪田 RPRJ+2C"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7148142,
+          31.862540300000003
+        ]
+      },
+      "properties": {
+        "name": "佐々木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県霧島市横川町下ノ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7588653,
+          31.860793899999997
+        ]
+      },
+      "properties": {
+        "name": "小碓城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県霧島市牧園町三体堂"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7980208,
+          32.165396199999996
+        ]
+      },
+      "properties": {
+        "name": "大畑城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県人吉市大畑麓町３９１８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.79061389999998,
+          32.0348113
+        ]
+      },
+      "properties": {
+        "name": "見吉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県えびの市島内１６９０−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.71077670000003,
+          31.958979999999997
+        ]
+      },
+      "properties": {
+        "name": "北里城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県姶良郡湧水町北方"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.6071697,
+          32.0093477
+        ]
+      },
+      "properties": {
+        "name": "曽木城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県伊佐市大口曽木"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.75548569999998,
+          32.0274503
+        ]
+      },
+      "properties": {
+        "name": "亀鶴城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鹿児島県姶良郡湧水町鶴丸"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.0958302,
+          31.8050054
+        ]
+      },
+      "properties": {
+        "name": "新城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県都城市上水流町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.91082699999998,
+          32.194945
+        ]
+      },
+      "properties": {
+        "name": "永里城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県球磨郡あさぎり町上西 5WV6+X8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.12095499999998,
+          31.863643999999997
+        ]
+      },
+      "properties": {
+        "name": "須田木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県都城市高城町有水１３３５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.1702893,
+          31.804542199999997
+        ]
+      },
+      "properties": {
+        "name": "山之口城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県都城市山之口町山之口８８９ 1803"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.11787959999998,
+          31.838616299999995
+        ]
+      },
+      "properties": {
+        "name": "石山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県都城市高城町石山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.8415645,
+          32.0511699
+        ]
+      },
+      "properties": {
+        "name": "宮ノ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県えびの市大明司１２５６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.821408,
+          32.033777799999996
+        ]
+      },
+      "properties": {
+        "name": "柿ノ木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県えびの市栗下５７４−２３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.19147949999999,
+          31.9598468
+        ]
+      },
+      "properties": {
+        "name": "紙屋城跡(第二の空堀跡)",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県小林市野尻町紙屋"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.385613,
+          32.062148
+        ]
+      },
+      "properties": {
+        "name": "前ノ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県西都市鹿野田６７７３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.3771233,
+          32.05402490000001
+        ]
+      },
+      "properties": {
+        "name": "南ノ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県西都市鹿野田５４４１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.268508,
+          31.990692000000003
+        ]
+      },
+      "properties": {
+        "name": "垂水城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県東諸県郡綾町入野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.448251,
+          32.009758999999995
+        ]
+      },
+      "properties": {
+        "name": "西ノ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県宮崎市佐土原町下那珂 町下那珂１０１２８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.4304109,
+          31.8334235
+        ]
+      },
+      "properties": {
+        "name": "今江城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県宮崎市学園木花台北１丁目４−４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.3892012,
+          31.944315399999997
+        ]
+      },
+      "properties": {
+        "name": "跡江城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県宮崎市跡江２６９１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.318726,
+          31.842531
+        ]
+      },
+      "properties": {
+        "name": "梅谷城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県宮崎市田野町甲６６０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.4737678,
+          32.0158974
+        ]
+      },
+      "properties": {
+        "name": "広瀬城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県宮崎市佐土原町下田島２０３０８−１０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.19270699999998,
+          32.497481199999996
+        ]
+      },
+      "properties": {
+        "name": "才津城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県天草市佐伊津町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.1804422,
+          32.549036099999995
+        ]
+      },
+      "properties": {
+        "name": "宮津城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県天草市五和町鬼池８６３ 2331"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.1471061,
+          32.5201529
+        ]
+      },
+      "properties": {
+        "name": "下内野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県天草市五和町手野２丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.1891456,
+          32.51547130000001
+        ]
+      },
+      "properties": {
+        "name": "御領城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県天草市五和町御領６６１０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.1836783,
+          32.365742499999996
+        ]
+      },
+      "properties": {
+        "name": "小宮地城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県天草市新和町小宮地"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3096161,
+          32.3998947
+        ]
+      },
+      "properties": {
+        "name": "宮田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県天草市倉岳町宮田１４８０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.15076990000003,
+          32.5027247
+        ]
+      },
+      "properties": {
+        "name": "上野原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県天草市五和町城河原１丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3350196,
+          32.313759399999995
+        ]
+      },
+      "properties": {
+        "name": "元浦城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県天草市御所浦町御所浦島８６６ 0313"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.1417641,
+          32.3094805
+        ]
+      },
+      "properties": {
+        "name": "宮野河内城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県天草市河浦町宮野河内"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.2050434,
+          32.3462381
+        ]
+      },
+      "properties": {
+        "name": "大多尾城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県天草市新和町大多尾"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.0765073,
+          32.3243107
+        ]
+      },
+      "properties": {
+        "name": "下田城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県天草市河浦町河浦"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.4605837,
+          32.2339181
+        ]
+      },
+      "properties": {
+        "name": "津奈木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県葦北郡津奈木町岩城"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.6700088,
+          32.5378286
+        ]
+      },
+      "properties": {
+        "name": "岡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県八代市岡町中６２６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.4299809,
+          32.5838171
+        ]
+      },
+      "properties": {
+        "name": "大矢野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県上天草市大矢野町中４８３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.77398739999998,
+          32.217615099999996
+        ]
+      },
+      "properties": {
+        "name": "大村平家城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県人吉市願成寺町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.68255109999998,
+          32.4969664
+        ]
+      },
+      "properties": {
+        "name": "平家ヶ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県八代市東町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7122254,
+          32.5350421
+        ]
+      },
+      "properties": {
+        "name": "陣内城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県八代市東陽町小浦"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.696931,
+          32.571269
+        ]
+      },
+      "properties": {
+        "name": "笹尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県八代郡氷川町大野 HMCW+GQ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.6536113,
+          32.5410561
+        ]
+      },
+      "properties": {
+        "name": "上土城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県八代市千丁町太牟田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.1509457,
+          32.2272507
+        ]
+      },
+      "properties": {
+        "name": "村所城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県児湯郡西米良村村所"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.9286008,
+          32.2724304
+        ]
+      },
+      "properties": {
+        "name": "里の城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県球磨郡多良木町多良木"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.9703903,
+          32.249022
+        ]
+      },
+      "properties": {
+        "name": "久米城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県球磨郡多良木町久米"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.91854659999998,
+          32.2030378
+        ]
+      },
+      "properties": {
+        "name": "上村城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県球磨郡あさぎり町上西３２３７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.8808163,
+          32.2548154
+        ]
+      },
+      "properties": {
+        "name": "高山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県球磨郡あさぎり町深田東"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.9581859,
+          32.238086599999995
+        ]
+      },
+      "properties": {
+        "name": "奥野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県球磨郡多良木町奥野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.4267691,
+          32.4367467
+        ]
+      },
+      "properties": {
+        "name": "上野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県東臼杵郡美郷町西郷田代"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.25321449999998,
+          32.264896
+        ]
+      },
+      "properties": {
+        "name": "銀鏡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県西都市銀鏡"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.3503611,
+          32.5218333
+        ]
+      },
+      "properties": {
+        "name": "家代城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県東臼杵郡諸塚村家代４０６２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.59287250000003,
+          32.719403
+        ]
+      },
+      "properties": {
+        "name": "玉之浦納の城跡(砦跡)",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県五島市三井楽町嵯峨島"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.085582,
+          32.994236
+        ]
+      },
+      "properties": {
+        "name": "魚目城山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県南松浦郡新上五島町榎津郷 X3VP+VR"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.82186489999998,
+          32.7569993
+        ]
+      },
+      "properties": {
+        "name": "月川家奥之城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県五島市戸岐町８５３ 0054"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.99871249999998,
+          32.891346399999996
+        ]
+      },
+      "properties": {
+        "name": "平ノ前城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県大村市小川内町５９６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.8803557,
+          32.7903845
+        ]
+      },
+      "properties": {
+        "name": "鳥山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県長崎市川平町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.8040978,
+          32.7865646
+        ]
+      },
+      "properties": {
+        "name": "舞岳城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県長崎市向町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.9654735,
+          32.7776569
+        ]
+      },
+      "properties": {
+        "name": "戸石城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県長崎市東町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.78603479999998,
+          32.9033265
+        ]
+      },
+      "properties": {
+        "name": "小崎古城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県長崎市琴海戸根原町１４２１−４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.8555603,
+          32.7771793
+        ]
+      },
+      "properties": {
+        "name": "寺野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県長崎市城栄町４１−６７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.8843065,
+          32.8195466
+        ]
+      },
+      "properties": {
+        "name": "中尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県西彼杵郡長与町三根郷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.9982662,
+          32.8336916
+        ]
+      },
+      "properties": {
+        "name": "久山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県諫早市久山町 RXMX+F8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.9514547,
+          32.9102804
+        ]
+      },
+      "properties": {
+        "name": "新城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県大村市杭出津１丁目８６３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.97480800000002,
+          32.7810846
+        ]
+      },
+      "properties": {
+        "name": "上戸石城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県長崎市上戸石町 QXJF+CW"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.94700749999998,
+          32.9607381
+        ]
+      },
+      "properties": {
+        "name": "今富城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県大村市皆同町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3516184,
+          32.791719799999996
+        ]
+      },
+      "properties": {
+        "name": "丸尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県島原市小山町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.04307319999998,
+          32.9688073
+        ]
+      },
+      "properties": {
+        "name": "鳥甲城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県大村市黒木町８５６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3703745,
+          32.7833788
+        ]
+      },
+      "properties": {
+        "name": "浜の城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県島原市新町１丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.21906200000004,
+          32.8505349
+        ]
+      },
+      "properties": {
+        "name": "岡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県雲仙市瑞穂町古部乙２６６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.02770500000003,
+          32.784084
+        ]
+      },
+      "properties": {
+        "name": "囲城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県諫早市飯盛町中山５５６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.2365017,
+          32.859664699999996
+        ]
+      },
+      "properties": {
+        "name": "大河城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県雲仙市瑞穂町伊福甲４６２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.0867372,
+          32.8311001
+        ]
+      },
+      "properties": {
+        "name": "小野城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県諫早市小野町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3032374,
+          32.8685293
+        ]
+      },
+      "properties": {
+        "name": "多比良城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県雲仙市国見町多比良甲９７５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.79307699999998,
+          32.836708
+        ]
+      },
+      "properties": {
+        "name": "小山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県熊本市東区小山６丁目３−２７ 梅谷寺"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.5217345,
+          32.9519114
+        ]
+      },
+      "properties": {
+        "name": "日嶽城跡(鶴城)",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県玉名市岱明町開田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.6013214,
+          32.8540359
+        ]
+      },
+      "properties": {
+        "name": "小天城跡（山之上三名字衆田尻家）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県玉名市天水町小天１６０３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7309784,
+          32.8550044
+        ]
+      },
+      "properties": {
+        "name": "須屋城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県合志市須屋"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.64963799999998,
+          32.9685361
+        ]
+      },
+      "properties": {
+        "name": "萩原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県玉名郡和水町萩原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.699008,
+          32.800979999999996
+        ]
+      },
+      "properties": {
+        "name": "隈本古城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県熊本市中央区古城町４−１２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.6365847,
+          32.7833839
+        ]
+      },
+      "properties": {
+        "name": "楢崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県熊本市西区小島８丁目 QJMP+9J"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7510347,
+          32.9614565
+        ]
+      },
+      "properties": {
+        "name": "馬渡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県菊池市七城町亀尾"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.6005308,
+          32.9958015
+        ]
+      },
+      "properties": {
+        "name": "内田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県玉名郡和水町内田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.63546789999998,
+          32.672413
+        ]
+      },
+      "properties": {
+        "name": "白山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県宇土市石橋町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.5417529,
+          32.9365568
+        ]
+      },
+      "properties": {
+        "name": "高岡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県玉名市山田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.65896139999998,
+          32.7837521
+        ]
+      },
+      "properties": {
+        "name": "上代城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県熊本市西区西区上代９丁目８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7599928,
+          32.9871961
+        ]
+      },
+      "properties": {
+        "name": "台城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県菊池市七城町台５１６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7229639,
+          32.8398677
+        ]
+      },
+      "properties": {
+        "name": "亀井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県熊本市北区清水亀井町５０−２５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7219485,
+          32.9633683
+        ]
+      },
+      "properties": {
+        "name": "大橋城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県熊本市北区植木町田底１４０４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.6481618,
+          32.9985303
+        ]
+      },
+      "properties": {
+        "name": "坂田城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県山鹿市坂田２０５０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.53373,
+          32.6215568
+        ]
+      },
+      "properties": {
+        "name": "矢崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県宇城市三角町郡浦５０５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.0074058,
+          32.701042099999995
+        ]
+      },
+      "properties": {
+        "name": "入佐城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県上益城郡山都町入佐"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.8025109,
+          32.9518827
+        ]
+      },
+      "properties": {
+        "name": "古池城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県菊池市出田７０２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.8283587,
+          32.9805986
+        ]
+      },
+      "properties": {
+        "name": "城林城跡（木庭城跡）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県菊池市木庭"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.8833805,
+          32.86226020000001
+        ]
+      },
+      "properties": {
+        "name": "玉岡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県菊池郡大津町陣内"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.9118655,
+          32.8541026
+        ]
+      },
+      "properties": {
+        "name": "鳥子城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県阿蘇郡西原村鳥子"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.81490499999998,
+          32.9407581
+        ]
+      },
+      "properties": {
+        "name": "飛隈城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県菊池市泗水町住吉"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.07206069999998,
+          32.8229706
+        ]
+      },
+      "properties": {
+        "name": "吉田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県阿蘇郡南阿蘇村吉田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.051101,
+          32.8536559
+        ]
+      },
+      "properties": {
+        "name": "峯城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県阿蘇郡南阿蘇村中松"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.8645773,
+          32.744109699999996
+        ]
+      },
+      "properties": {
+        "name": "染野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県上益城郡御船町上野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.15417560000003,
+          32.6762517
+        ]
+      },
+      "properties": {
+        "name": "揚城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県西臼杵郡五ヶ瀬町鞍岡"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.372511,
+          32.970566
+        ]
+      },
+      "properties": {
+        "name": "騎牟礼城・鎮西城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "32.970566, 131.372511, 会々 竹田市 大分県 878-0011 日本"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.3967717,
+          32.934210199999995
+        ]
+      },
+      "properties": {
+        "name": "津賀牟礼城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県竹田市太田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.4599968,
+          32.9898638
+        ]
+      },
+      "properties": {
+        "name": "志賀城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県豊後大野市朝地町志賀"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.4315297,
+          32.973515
+        ]
+      },
+      "properties": {
+        "name": "腰ヶ城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県豊後大野市緒方町草深野字炭焼"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.4217246,
+          32.903028899999995
+        ]
+      },
+      "properties": {
+        "name": "烏嶽城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県豊後大野市緒方町中野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.21110249999998,
+          32.7058372
+        ]
+      },
+      "properties": {
+        "name": "樺木岳城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮崎県西臼杵郡五ヶ瀬町桑野内 P646+8C"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.8746167,
+          32.9288922
+        ]
+      },
+      "properties": {
+        "name": "宇山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県佐伯市長谷２７８６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.7022356,
+          32.8525394
+        ]
+      },
+      "properties": {
+        "name": "豊後 朝日嶽城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県佐伯市宇目大字塩見園"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.7514519,
+          32.874836699999996
+        ]
+      },
+      "properties": {
+        "name": "用来城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県佐伯市直川大字仁田原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.614038,
+          32.971928399999996
+        ]
+      },
+      "properties": {
+        "name": "松尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県豊後大野市三重町松尾"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.7758952,
+          32.9798403
+        ]
+      },
+      "properties": {
+        "name": "星降城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県臼杵市野津町大字垣河内"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.5583138,
+          32.961218599999995
+        ]
+      },
+      "properties": {
+        "name": "御荘平城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県南宇和郡愛南町御荘平城"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.76568659999998,
+          32.7660897
+        ]
+      },
+      "properties": {
+        "name": "才角城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県幡多郡大月町才角"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.6841541,
+          32.999361500000006
+        ]
+      },
+      "properties": {
+        "name": "伊比曽野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県南宇和郡愛南町正木"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.59749929999998,
+          32.9764815
+        ]
+      },
+      "properties": {
+        "name": "緑城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県南宇和郡愛南町緑乙７９８ 4133"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.5774159,
+          32.9802725
+        ]
+      },
+      "properties": {
+        "name": "永月城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県南宇和郡愛南町御荘長月７９８ 4105"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.8662043,
+          32.7734214
+        ]
+      },
+      "properties": {
+        "name": "蜂の巣城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県土佐清水市三崎 QVF8+9M"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.0675535,
+          33.2016759
+        ]
+      },
+      "properties": {
+        "name": "膳所城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県北松浦郡小値賀町前方郷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4675355,
+          33.2249799
+        ]
+      },
+      "properties": {
+        "name": "船木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県平戸市船木町７０３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.48339289999998,
+          33.3495385
+        ]
+      },
+      "properties": {
+        "name": "箕坪城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県平戸市主師町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.44845429999998,
+          33.2111614
+        ]
+      },
+      "properties": {
+        "name": "前津吉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県平戸市前津吉町１０５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.51393,
+          33.377058
+        ]
+      },
+      "properties": {
+        "name": "小富士城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県平戸市古江町 9GG7+RH"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.6669474,
+          33.0309001
+        ]
+      },
+      "properties": {
+        "name": "長尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県西海市西海町中浦北郷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.6815389,
+          33.3865973
+        ]
+      },
+      "properties": {
+        "name": "刈萱城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県松浦市星鹿町岳崎免"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.9652166,
+          33.3100648
+        ]
+      },
+      "properties": {
+        "name": "日在城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "佐賀県伊万里市大川町川西"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.8708729,
+          33.0967033
+        ]
+      },
+      "properties": {
+        "name": "小峰城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県東彼杵郡東彼杵郡川棚町五反田郷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.68034319999998,
+          33.198247699999996
+        ]
+      },
+      "properties": {
+        "name": "武辺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県佐世保市竹辺町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.6597356,
+          33.260381699999996
+        ]
+      },
+      "properties": {
+        "name": "大日山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県北松浦郡佐々町市瀬免２９９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.82482389999998,
+          33.146132099999996
+        ]
+      },
+      "properties": {
+        "name": "井手平城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県佐世保市新替町２８５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.7094079,
+          33.3367499
+        ]
+      },
+      "properties": {
+        "name": "陣ノ内城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県松浦市志佐町里免２９３−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.7854597,
+          33.1037354
+        ]
+      },
+      "properties": {
+        "name": "佐志方城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県佐世保市指方町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.9070192,
+          33.1310382
+        ]
+      },
+      "properties": {
+        "name": "松山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県東彼杵郡波佐見町金屋郷８５９ 3714"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.6639688,
+          33.201627699999996
+        ]
+      },
+      "properties": {
+        "name": "肥前 飯盛城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県佐世保市相浦町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.80716690000003,
+          33.1283329
+        ]
+      },
+      "properties": {
+        "name": "広田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県佐世保市広田町９３１ グランヴェール広田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.9134924,
+          33.138755599999996
+        ]
+      },
+      "properties": {
+        "name": "井石城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県東彼杵郡波佐見町井石郷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.86151479999998,
+          33.2629024
+        ]
+      },
+      "properties": {
+        "name": "吉武城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "佐賀県伊万里市二里町大里甲１３８３−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.8675074,
+          33.079268899999995
+        ]
+      },
+      "properties": {
+        "name": "風南城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県東彼杵郡川棚町百津郷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.1509711,
+          33.2718188
+        ]
+      },
+      "properties": {
+        "name": "羽佐間城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "佐賀県多久市東多久町大字別府９８０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3833708,
+          33.2112891
+        ]
+      },
+      "properties": {
+        "name": "筑後酒見城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県大川市酒見４５８−８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.1492669,
+          33.2324133
+        ]
+      },
+      "properties": {
+        "name": "城野山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "佐賀県杵島郡江北町山口５０４６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.0437288,
+          33.172921699999996
+        ]
+      },
+      "properties": {
+        "name": "潮見城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "佐賀県武雄市橘町大字永島"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.30915199999998,
+          33.258362
+        ]
+      },
+      "properties": {
+        "name": "大財端城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "佐賀県佐賀市大財２丁目４−５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.0081103,
+          33.356271299999996
+        ]
+      },
+      "properties": {
+        "name": "山崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "佐賀県唐津市相知町中山３４２０−７５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.1806482,
+          33.2287327
+        ]
+      },
+      "properties": {
+        "name": "八幡山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "佐賀県小城市牛津町下砥川６９５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.09074999999999,
+          33.167097999999996
+        ]
+      },
+      "properties": {
+        "name": "高城山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "佐賀県杵島郡白石町湯崎 538R+R7"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.351,
+          33.3555278
+        ]
+      },
+      "properties": {
+        "name": "菩提寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "佐賀県神埼市脊振町広滝 9942+69"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.37332419999998,
+          33.2063546
+        ]
+      },
+      "properties": {
+        "name": "筑後榎津城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県大川市榎津７９７−４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.2263271,
+          33.3910384
+        ]
+      },
+      "properties": {
+        "name": "畑瀬城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "佐賀県佐賀市富士町大字小副川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.1095655,
+          33.159830299999996
+        ]
+      },
+      "properties": {
+        "name": "島津城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "佐賀県杵島郡白石町田野上"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3737635,
+          33.2872494
+        ]
+      },
+      "properties": {
+        "name": "大門城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "佐賀県神埼市神埼町永歌８４２ 0004"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.2430852,
+          33.3724505
+        ]
+      },
+      "properties": {
+        "name": "肥前谷田城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "佐賀県佐賀市富士町大字小副川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.405463,
+          33.1853087
+        ]
+      },
+      "properties": {
+        "name": "筑後蒲池城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県柳川市東蒲池１４７２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.6069461,
+          33.356113199999996
+        ]
+      },
+      "properties": {
+        "name": "赤司城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県久留米市北野町赤司１７４７−４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.62261239999998,
+          33.3856938
+        ]
+      },
+      "properties": {
+        "name": "三原城跡（本郷城）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県三井郡大刀洗町本郷１６６８−２３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.4668623,
+          33.2740443
+        ]
+      },
+      "properties": {
+        "name": "隈城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県久留米市大善寺町夜明１２２７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.6642229,
+          33.0396496
+        ]
+      },
+      "properties": {
+        "name": "西之付城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県山鹿市小群４７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.4707397,
+          33.3071647
+        ]
+      },
+      "properties": {
+        "name": "中野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "佐賀県三養基郡みやき町江口４５６１−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.53004869999998,
+          33.1654106
+        ]
+      },
+      "properties": {
+        "name": "小田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県みやま市瀬高町小田２０２５−１２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.62138299999998,
+          33.110515899999996
+        ]
+      },
+      "properties": {
+        "name": "坂本城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県玉名郡和水町山十町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7355229,
+          33.00700640000001
+        ]
+      },
+      "properties": {
+        "name": "御宇田城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県山鹿市鹿本町御宇田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.4921283,
+          33.1487161
+        ]
+      },
+      "properties": {
+        "name": "筑後松延城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県みやま市瀬高町松田１０４０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.6181101,
+          33.0700905
+        ]
+      },
+      "properties": {
+        "name": "肥後岡原城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県玉名郡和水町上板楠１８９９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.4747845,
+          33.0480418
+        ]
+      },
+      "properties": {
+        "name": "大間城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県大牟田市三池"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7782181,
+          33.0156365
+        ]
+      },
+      "properties": {
+        "name": "木野城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県山鹿市菊鹿町木野３０５８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.8286766,
+          33.35415
+        ]
+      },
+      "properties": {
+        "name": "長尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県朝倉市杷木穂坂"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.839869,
+          33.021606
+        ]
+      },
+      "properties": {
+        "name": "鷹取城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県菊池市龍門"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.83916589999998,
+          33.3840275
+        ]
+      },
+      "properties": {
+        "name": "真竹山城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県朝倉市杷木松末９３２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.9017469,
+          33.189551699999996
+        ]
+      },
+      "properties": {
+        "name": "雪ケ獄城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県日田市前津江町大野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.0239373,
+          33.070722599999996
+        ]
+      },
+      "properties": {
+        "name": "城ケ平城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県阿蘇郡南小国町中原 32FC+83"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.8537558,
+          33.022970799999996
+        ]
+      },
+      "properties": {
+        "name": "五社尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県菊池市雪野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.851309,
+          33.003015
+        ]
+      },
+      "properties": {
+        "name": "元居城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県菊池市重味３１３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.8993601,
+          33.0206892
+        ]
+      },
+      "properties": {
+        "name": "掛幕城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県菊池市原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.819136,
+          33.0606175
+        ]
+      },
+      "properties": {
+        "name": "米山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県山鹿市菊鹿町上永野８６１ 0404"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.8036201,
+          33.3714133
+        ]
+      },
+      "properties": {
+        "name": "夕月城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県朝倉市杷木古賀"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.8060078,
+          33.062073999999996
+        ]
+      },
+      "properties": {
+        "name": "猿返城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県山鹿市菊鹿町上内田８６１ 0414"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.9857326,
+          33.1593291
+        ]
+      },
+      "properties": {
+        "name": "蜂の巣城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県阿蘇郡小国町黒渕"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.1738427,
+          33.2118684
+        ]
+      },
+      "properties": {
+        "name": "岐部城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県玖珠郡九重町町田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.8272858,
+          33.026694899999995
+        ]
+      },
+      "properties": {
+        "name": "葛原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "熊本県菊池市市野瀬"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.9422885,
+          33.1318614
+        ]
+      },
+      "properties": {
+        "name": "臥牛城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県日田市中津江村栃野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.58001529999999,
+          33.1905785
+        ]
+      },
+      "properties": {
+        "name": "雄城城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県大分市玉沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.4196603,
+          33.178242499999996
+        ]
+      },
+      "properties": {
+        "name": "船ケ尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県由布市庄内町柿原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.3884707,
+          33.271240999999996
+        ]
+      },
+      "properties": {
+        "name": "飯盛ヶ城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県由布市湯布院町川上"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.452331,
+          33.1765624
+        ]
+      },
+      "properties": {
+        "name": "豊後・権現嶽城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県由布市庄内町龍原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.2457935,
+          33.0865474
+        ]
+      },
+      "properties": {
+        "name": "天狗ヶ城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県竹田市久住町大字久住"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.3821966,
+          33.1391001
+        ]
+      },
+      "properties": {
+        "name": "松牟礼城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "市直 入 町 大字 上田 北 三 笈 山, 直入町大字上田北 竹田市 大分県 878-0403 日本"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.40224179999998,
+          33.1176826
+        ]
+      },
+      "properties": {
+        "name": "田北城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県竹田市直入町大字上田北４０６９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.585867,
+          33.352308
+        ]
+      },
+      "properties": {
+        "name": "亀甲城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県速見郡日出町大神６８４６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.41530799999998,
+          33.132404
+        ]
+      },
+      "properties": {
+        "name": "岩野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県竹田市直入町大字下田北 4CJ8+X4"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.53179699999998,
+          33.160008
+        ]
+      },
+      "properties": {
+        "name": "鷲ヶ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県大分市野津原１０１９−１２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.44544199999999,
+          33.13973
+        ]
+      },
+      "properties": {
+        "name": "双石城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県大分市今市 4CQW+V5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.40655999999998,
+          33.12086
+        ]
+      },
+      "properties": {
+        "name": "真法院城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県竹田市直入町大字下田北３２５５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.470134,
+          33.19083200000001
+        ]
+      },
+      "properties": {
+        "name": "櫟木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県由布市庄内町櫟木１０７３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.4364141,
+          33.0540887
+        ]
+      },
+      "properties": {
+        "name": "鳥屋城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県豊後大野市朝地町鳥田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.4381015,
+          33.2132612
+        ]
+      },
+      "properties": {
+        "name": "松ケ尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県由布市庄内町東大津留"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.5671248,
+          33.37489370000001
+        ]
+      },
+      "properties": {
+        "name": "石松城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県速見郡日出町大神２３９２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.4274375,
+          33.1211875
+        ]
+      },
+      "properties": {
+        "name": "法螺貝城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県竹田市直入町大字下田北 4CCG+FX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.5065701,
+          33.3893248
+        ]
+      },
+      "properties": {
+        "name": "鹿鳴越城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県速見郡杵築市豊岡 9FXW+GF"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.3457376,
+          33.066016999999995
+        ]
+      },
+      "properties": {
+        "name": "三船城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県竹田市久住町大字仏原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.4324862,
+          33.0618001
+        ]
+      },
+      "properties": {
+        "name": "鳥屋城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県豊後大野市朝地町鳥田８７９ 6331"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.53043599999998,
+          33.105539
+        ]
+      },
+      "properties": {
+        "name": "田附城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県豊後大野市大野町澤田 4G4J+65"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.507911,
+          33.065926999999995
+        ]
+      },
+      "properties": {
+        "name": "松尾城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県豊後大野市大野町藤北 3G85+95"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.6547972,
+          33.1355994
+        ]
+      },
+      "properties": {
+        "name": "鏡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県大分市竹中３３４２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.7856048,
+          33.1504354
+        ]
+      },
+      "properties": {
+        "name": "栗山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県臼杵市稲田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.607781,
+          33.148309999999995
+        ]
+      },
+      "properties": {
+        "name": "小岳城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県大分市上判田２０７８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.67428300000003,
+          33.235807
+        ]
+      },
+      "properties": {
+        "name": "千歳城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県大分市千歳２１６５−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.85858500000003,
+          33.2087143
+        ]
+      },
+      "properties": {
+        "name": "摺木城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県大分市一尺屋"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.6579284,
+          33.067249499999996
+        ]
+      },
+      "properties": {
+        "name": "鍋田城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県臼杵市野津町大字西寒田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.115648,
+          33.369217
+        ]
+      },
+      "properties": {
+        "name": "松森城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県西宇和郡伊方町大佐田２９０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.290861,
+          33.169833
+        ]
+      },
+      "properties": {
+        "name": "城ヶ森城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県宇和島市日振島１９６１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.359029,
+          33.200091
+        ]
+      },
+      "properties": {
+        "name": "戸島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県宇和島市戸島２２３１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.124739,
+          33.389447
+        ]
+      },
+      "properties": {
+        "name": "土居城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県西宇和郡伊方町三崎１９０７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.63300619999998,
+          33.2884597
+        ]
+      },
+      "properties": {
+        "name": "岡本城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県宇和島市三間町土居垣内１９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.5679123,
+          33.2333201
+        ]
+      },
+      "properties": {
+        "name": "板島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県宇和島市和霊町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.5148204,
+          33.3191608
+        ]
+      },
+      "properties": {
+        "name": "法華津本城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県宇和島市吉田町法花津"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.715164,
+          33.213271
+        ]
+      },
+      "properties": {
+        "name": "山瀬城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県北宇和郡松野町富岡 6P78+83"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.508561,
+          33.354169
+        ]
+      },
+      "properties": {
+        "name": "護摩ケ森城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県西予市宇和町卯之町３丁目 9G35+MC"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.772967,
+          33.390263
+        ]
+      },
+      "properties": {
+        "name": "城之台城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県西予市城川町土居 9QRF+45"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.537946,
+          33.395436
+        ]
+      },
+      "properties": {
+        "name": "今城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県西予市宇和町窪３１５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.53315,
+          33.399578
+        ]
+      },
+      "properties": {
+        "name": "伊崎越城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県西予市宇和町田野中 9GXM+R7"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.0999895,
+          33.1076988
+        ]
+      },
+      "properties": {
+        "name": "伊与木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県幡多郡黒潮町伊與喜 字フルシロ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.7612821,
+          33.7511238
+        ]
+      },
+      "properties": {
+        "name": "黒木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県壱岐市石田町本村触"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.7203003,
+          33.7978665
+        ]
+      },
+      "properties": {
+        "name": "郡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県壱岐市芦辺町国分東触６０５−５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.71611199999998,
+          33.747579
+        ]
+      },
+      "properties": {
+        "name": "帯田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県壱岐市郷ノ浦町志原南触１９９５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.6799754,
+          33.755380099999996
+        ]
+      },
+      "properties": {
+        "name": "白石城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県壱岐市郷ノ浦町庄触"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.74964889999998,
+          33.7467377
+        ]
+      },
+      "properties": {
+        "name": "浦山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県壱岐市石田町池田東触"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.75543199999998,
+          33.4181598
+        ]
+      },
+      "properties": {
+        "name": "日本山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県松浦市鷹島町原免８５９ 4306"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.6952526,
+          33.7194169
+        ]
+      },
+      "properties": {
+        "name": "鋸崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県壱岐市郷ノ浦町初山西触"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.70265179999998,
+          33.7643503
+        ]
+      },
+      "properties": {
+        "name": "鉢形城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県壱岐市郷ノ浦町田中触７３０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.26462569999998,
+          33.5571499
+        ]
+      },
+      "properties": {
+        "name": "怡土城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県福岡市西区女原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.165169,
+          33.508679
+        ]
+      },
+      "properties": {
+        "name": "宝珠岳城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県糸島市二丈長石５２７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.29881010000003,
+          33.5365939
+        ]
+      },
+      "properties": {
+        "name": "飯盛城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県福岡市西区飯盛"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3349629,
+          33.5604909
+        ]
+      },
+      "properties": {
+        "name": "小田部城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県福岡市早良区有田２丁目２０−１５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.398934,
+          33.4643218
+        ]
+      },
+      "properties": {
+        "name": "鷲ヶ岳城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県那珂川市南面里"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.4589579,
+          33.6550903
+        ]
+      },
+      "properties": {
+        "name": "御飯ノ山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県福岡市東区香椎台５丁目１０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.4682867,
+          33.5725996
+        ]
+      },
+      "properties": {
+        "name": "稲居塚城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県福岡市博多区月隈６丁目１６−２７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.50061879999998,
+          33.4694224
+        ]
+      },
+      "properties": {
+        "name": "博多見城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県筑紫野市山口 FGC2+2H"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7454744,
+          33.6386661
+        ]
+      },
+      "properties": {
+        "name": "城腰城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県飯塚市綱分 JPQW+F5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.4370907,
+          33.5138926
+        ]
+      },
+      "properties": {
+        "name": "中原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県那珂川市中原６丁目１０−３２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.642296,
+          33.686855
+        ]
+      },
+      "properties": {
+        "name": "笠木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県宮若市宮田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.4814042,
+          33.512095699999996
+        ]
+      },
+      "properties": {
+        "name": "上大利小水城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県大野城市旭ケ丘１丁目３−１５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.77765109999999,
+          33.6579099
+        ]
+      },
+      "properties": {
+        "name": "糸田城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県田川郡糸田町２３５４−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.5561127,
+          33.483001099999996
+        ]
+      },
+      "properties": {
+        "name": "柴田城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県筑紫野市天山３３８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.150898,
+          33.547743499999996
+        ]
+      },
+      "properties": {
+        "name": "叶松城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県築上郡上毛町西友枝 G5X2+39"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.0143249,
+          33.6521714
+        ]
+      },
+      "properties": {
+        "name": "豊前赤幡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県築上郡築上町赤幡２１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.1558795,
+          33.5412082
+        ]
+      },
+      "properties": {
+        "name": "内蔵寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県築上郡上毛町東上"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.907311,
+          33.63156
+        ]
+      },
+      "properties": {
+        "name": "燕岩城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県田川郡赤村犀川崎山 JWJ4+JW"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.0970604,
+          33.559520299999996
+        ]
+      },
+      "properties": {
+        "name": "下川底城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県豊前市下川底４３９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.9836556,
+          33.588161
+        ]
+      },
+      "properties": {
+        "name": "本庄城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県築上郡築上町本庄"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.18954399999998,
+          33.565087999999996
+        ]
+      },
+      "properties": {
+        "name": "坂手隈城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県中津市相原３２１８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.929674,
+          33.652998
+        ]
+      },
+      "properties": {
+        "name": "不動ヶ岳城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県京都郡みやこ町犀川大村９４２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.95495409999998,
+          33.7067449
+        ]
+      },
+      "properties": {
+        "name": "宝山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県行橋市宝山５２１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.99824999999998,
+          33.595943999999996
+        ]
+      },
+      "properties": {
+        "name": "小山田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県築上郡築上町小山田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.06780949999998,
+          33.5091099
+        ]
+      },
+      "properties": {
+        "name": "雁股城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県築上郡上毛町西友枝"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.9616383,
+          33.6305999
+        ]
+      },
+      "properties": {
+        "name": "毘沙門城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県京都郡みやこ町犀川木井馬場"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.16424999999998,
+          33.523222
+        ]
+      },
+      "properties": {
+        "name": "原井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県築上郡上毛町原井７６４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.95549169999998,
+          33.517334999999996
+        ]
+      },
+      "properties": {
+        "name": "金山城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県京都郡みやこ町犀川帆柱１０６２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.0317988,
+          33.6513233
+        ]
+      },
+      "properties": {
+        "name": "豊前廣幡山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県築上郡築上町広末"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.03572599999998,
+          33.667639
+        ]
+      },
+      "properties": {
+        "name": "築城城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県築上郡築上町築城２７６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.98293669999998,
+          33.610371
+        ]
+      },
+      "properties": {
+        "name": "堂山城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県築上郡築上町伝法寺１３５７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.0950488,
+          33.422062
+        ]
+      },
+      "properties": {
+        "name": "下城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県中津市耶馬溪町大字宮園"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.2430157,
+          33.530284
+        ]
+      },
+      "properties": {
+        "name": "秣城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県中津市三光上秣１０１２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.3642885,
+          33.5505011
+        ]
+      },
+      "properties": {
+        "name": "高森城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県宇佐市高森１２６５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.21534789999998,
+          33.5831371
+        ]
+      },
+      "properties": {
+        "name": "池永城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県中津市上池永３８７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.52351579999998,
+          33.5679186
+        ]
+      },
+      "properties": {
+        "name": "筧城跡（吉弘氏館）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県豊後高田市長岩屋 氏館大分県豊後高田市長岩屋４９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.2120684,
+          33.5543607
+        ]
+      },
+      "properties": {
+        "name": "大畑城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県中津市加来"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.320349,
+          33.422404799999995
+        ]
+      },
+      "properties": {
+        "name": "副城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県宇佐市院内町副"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.365937,
+          33.490089
+        ]
+      },
+      "properties": {
+        "name": "城山城跡（大城）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県宇佐市上矢部 F9R8+29"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.2522793,
+          33.5656198
+        ]
+      },
+      "properties": {
+        "name": "中尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県中津市犬丸８７５−６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.3525156,
+          33.4197327
+        ]
+      },
+      "properties": {
+        "name": "龍王城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県宇佐市安心院町龍王"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.3223213,
+          33.4817524
+        ]
+      },
+      "properties": {
+        "name": "妙見嶽城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県宇佐市院内町香下"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.27829900000003,
+          33.475739
+        ]
+      },
+      "properties": {
+        "name": "高尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県宇佐市麻生 F7GH+78"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.5375468,
+          33.4856911
+        ]
+      },
+      "properties": {
+        "name": "田原山城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県杵築市大田沓掛"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.4832344,
+          33.4575075
+        ]
+      },
+      "properties": {
+        "name": "内河野城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県杵築市山香町大字内河野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.2486389,
+          33.5362222
+        ]
+      },
+      "properties": {
+        "name": "三保山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県中津市三光上秣"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.3286436,
+          33.4630698
+        ]
+      },
+      "properties": {
+        "name": "櫛野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県宇佐市院内町櫛野７５４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.35335,
+          33.5306
+        ]
+      },
+      "properties": {
+        "name": "上田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県宇佐市上田１４３５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.375665,
+          33.569652999999995
+        ]
+      },
+      "properties": {
+        "name": "長洲城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県宇佐市長洲６３０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.260124,
+          33.549564
+        ]
+      },
+      "properties": {
+        "name": "丸尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県宇佐市清水８２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.5586152,
+          33.5071748
+        ]
+      },
+      "properties": {
+        "name": "沓掛城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県杵築市大田沓掛８７９ 0902"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.239033,
+          33.555925
+        ]
+      },
+      "properties": {
+        "name": "上伊藤田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県中津市伊藤田４１５８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.2204912,
+          33.5373526
+        ]
+      },
+      "properties": {
+        "name": "岡崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県中津市三光田口１８８４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.284046,
+          33.490013
+        ]
+      },
+      "properties": {
+        "name": "城址（山袋）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県宇佐市山袋７９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.2581377,
+          33.5694252
+        ]
+      },
+      "properties": {
+        "name": "犬丸城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県中津市犬丸"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.4753399,
+          33.6022315
+        ]
+      },
+      "properties": {
+        "name": "真玉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県豊後高田市西真玉"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.7084974,
+          33.5056598
+        ]
+      },
+      "properties": {
+        "name": "今市城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県国東市武蔵町成吉８１０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.603636,
+          33.430686
+        ]
+      },
+      "properties": {
+        "name": "竹の尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県杵築市鴨川１９０２−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.705048,
+          33.437536
+        ]
+      },
+      "properties": {
+        "name": "奈多城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県杵築市奈多１４４２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.7295658,
+          33.561765199999996
+        ]
+      },
+      "properties": {
+        "name": "飯塚城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県国東市国東町安国寺６２７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.610312,
+          33.427818
+        ]
+      },
+      "properties": {
+        "name": "台山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県杵築市宮司３３６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.604234,
+          33.663301
+        ]
+      },
+      "properties": {
+        "name": "櫛来城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県国東市国見町櫛来１４８２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.622274,
+          33.5970662
+        ]
+      },
+      "properties": {
+        "name": "雄渡牟礼城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大分県国東市国東町成仏字金 湧２６０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.7592377,
+          33.7191377
+        ]
+      },
+      "properties": {
+        "name": "白滝城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県伊予郡伊予市鵜崎"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.79796539999998,
+          33.7293419
+        ]
+      },
+      "properties": {
+        "name": "岩谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県伊予郡砥部町岩谷１７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.75243559999998,
+          33.6434213
+        ]
+      },
+      "properties": {
+        "name": "蒲山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県伊予市中山町出渕"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.624494,
+          33.552095
+        ]
+      },
+      "properties": {
+        "name": "西の城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県大洲市喜多山５２７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.7217669,
+          33.7488842
+        ]
+      },
+      "properties": {
+        "name": "鴛小山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県伊予市上吾川１４１８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.690145,
+          33.500098
+        ]
+      },
+      "properties": {
+        "name": "笹の森城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県大洲市肱川町名荷谷１６７２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.6849056,
+          33.7353844
+        ]
+      },
+      "properties": {
+        "name": "森山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県伊予市大平"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.55603299999999,
+          33.539167
+        ]
+      },
+      "properties": {
+        "name": "粟ケ森城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県大洲市五郎１９０９−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.508319,
+          33.425262000000004
+        ]
+      },
+      "properties": {
+        "name": "白木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県西予市宇和町東多田１００−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.6831652,
+          33.4858449
+        ]
+      },
+      "properties": {
+        "name": "向城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県大洲市肱川町名荷谷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.6567736,
+          33.544429199999996
+        ]
+      },
+      "properties": {
+        "name": "龍王城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県喜多郡内子町五十崎甲"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.7768779,
+          33.5135462
+        ]
+      },
+      "properties": {
+        "name": "高森城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県大洲市河辺町川上 GQ7G+CC"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.6107556,
+          33.639015799999996
+        ]
+      },
+      "properties": {
+        "name": "黒山城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県喜多郡内子町石畳"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.913543,
+          33.685316
+        ]
+      },
+      "properties": {
+        "name": "高藪城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県上浮穴郡久万高原町上畑野川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.8063338,
+          33.569680999999996
+        ]
+      },
+      "properties": {
+        "name": "太田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県喜多郡内子町小田４２０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.83858379999998,
+          33.72837570000001
+        ]
+      },
+      "properties": {
+        "name": "勝山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県松山市久谷町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.965084,
+          33.786131
+        ]
+      },
+      "properties": {
+        "name": "名越城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県東温市河之内"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.878908,
+          33.627832999999995
+        ]
+      },
+      "properties": {
+        "name": "虎太郎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県上浮穴郡久万高原町二名"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.91863999999998,
+          33.619645
+        ]
+      },
+      "properties": {
+        "name": "尾首城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県上浮穴郡久万高原町露峰甲２５３６-７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.862592,
+          33.629335999999995
+        ]
+      },
+      "properties": {
+        "name": "飯森城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県上浮穴郡久万高原町二名甲１２００-４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.0384073,
+          33.7937307
+        ]
+      },
+      "properties": {
+        "name": "赤滝城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県西条市丹原町明河６６４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.934694,
+          33.422799
+        ]
+      },
+      "properties": {
+        "name": "遠見ケ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県高岡郡梼原町後別当ゴーラ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.93654279999998,
+          33.470675799999995
+        ]
+      },
+      "properties": {
+        "name": "小牛城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県高岡郡梼原町永野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.85576899999998,
+          33.727239
+        ]
+      },
+      "properties": {
+        "name": "窪野真城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県松山市窪野町 PVG4+V8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.986669,
+          33.585519999999995
+        ]
+      },
+      "properties": {
+        "name": "銭尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県上浮穴郡久万高原町日野浦３１２５−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.0322514,
+          33.776972
+        ]
+      },
+      "properties": {
+        "name": "赤滝城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県西条市丹原町鞍瀬７９１ 0541"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.50853859999998,
+          33.5493756
+        ]
+      },
+      "properties": {
+        "name": "神田城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県高知市鴨部能茶山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.51653819999999,
+          33.6357548
+        ]
+      },
+      "properties": {
+        "name": "西ノ森城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県高知市土佐山桑尾"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.4757444,
+          33.5881289
+        ]
+      },
+      "properties": {
+        "name": "大垣内城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県高知市鏡大河内"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.53568429999999,
+          33.5791513
+        ]
+      },
+      "properties": {
+        "name": "秦泉寺別城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県高知市中秦泉寺"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.5768606,
+          33.5849869
+        ]
+      },
+      "properties": {
+        "name": "一宮城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県高知市一宮１丁目２０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.5310678,
+          33.5956132
+        ]
+      },
+      "properties": {
+        "name": "三谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県高知市三谷４７４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.54388269999998,
+          33.5196934
+        ]
+      },
+      "properties": {
+        "name": "横浜城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県高知市横浜１ 字水口山570-ロ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.4820914,
+          33.4697619
+        ]
+      },
+      "properties": {
+        "name": "仁ノ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県高知市春野町西畑"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.4909435,
+          33.493662799999996
+        ]
+      },
+      "properties": {
+        "name": "秋山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県高知市春野町秋山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.500904,
+          33.622597
+        ]
+      },
+      "properties": {
+        "name": "城ヶ森城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県高知市土佐山弘瀬"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.6581549,
+          33.607209399999995
+        ]
+      },
+      "properties": {
+        "name": "三畠城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県南国市三畠 字神母"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.7756628,
+          33.5577317
+        ]
+      },
+      "properties": {
+        "name": "釣鐘城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県香南市夜須町上夜須 字クスダ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.7659928,
+          33.5700905
+        ]
+      },
+      "properties": {
+        "name": "堀の内城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県香南市香我美町上分"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.705152,
+          33.5755068
+        ]
+      },
+      "properties": {
+        "name": "大谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県香南市大谷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.7481939,
+          33.5850782
+        ]
+      },
+      "properties": {
+        "name": "土居山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県香南市香我美町山北4194ほか"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.6344803,
+          33.5432343
+        ]
+      },
+      "properties": {
+        "name": "三ツ城城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県南国市十市"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.7332906,
+          33.5617389
+        ]
+      },
+      "properties": {
+        "name": "刈谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県香南市香我美町徳王子 字刈谷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.6313025,
+          33.6078549
+        ]
+      },
+      "properties": {
+        "name": "池尻古城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県南国市岡豊町笠ノ川 字池尻"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.800727,
+          33.5976493
+        ]
+      },
+      "properties": {
+        "name": "正延城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県香南市香我美町正延"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.7607992,
+          33.562160299999995
+        ]
+      },
+      "properties": {
+        "name": "岩神城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県香南市香我美町上分字黒神 小字樫尾山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.7411,
+          33.561909299999996
+        ]
+      },
+      "properties": {
+        "name": "国吉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県香南市香我美町徳王子 字国吉"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.631399,
+          33.6136402
+        ]
+      },
+      "properties": {
+        "name": "岡豊新城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県南国市岡豊町笠ノ川字新城"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.74218249999998,
+          33.581057099999995
+        ]
+      },
+      "properties": {
+        "name": "城山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県香南市香我美町山北4063ほか"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.7387614,
+          33.5678201
+        ]
+      },
+      "properties": {
+        "name": "中城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県香南市香我美町下分 字遠崎"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.69374349999998,
+          33.5447248
+        ]
+      },
+      "properties": {
+        "name": "吉原城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "高知県香南市吉川町吉原７８１ 5241"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.3193623,
+          33.6125511
+        ]
+      },
+      "properties": {
+        "name": "吉田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県海部郡海陽町吉田西沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.2964106,
+          33.5637082
+        ]
+      },
+      "properties": {
+        "name": "角力取山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県海部郡海陽町日比原馳馬"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.6430667,
+          33.7970641
+        ]
+      },
+      "properties": {
+        "name": "阿部城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県海部郡美波町阿部"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.493261,
+          33.7605411
+        ]
+      },
+      "properties": {
+        "name": "赤松城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県海部郡美波町赤松影野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.41624729999998,
+          33.678418
+        ]
+      },
+      "properties": {
+        "name": "鴻巣城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県西牟婁郡白浜町内ノ川７９６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3451574,
+          33.7463745
+        ]
+      },
+      "properties": {
+        "name": "泊城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県田辺市芳養町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4479074,
+          33.558302999999995
+        ]
+      },
+      "properties": {
+        "name": "大向出城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県西牟婁郡白浜町日置"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4428447,
+          33.7001236
+        ]
+      },
+      "properties": {
+        "name": "釣塀山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県西牟婁郡上富田町岩田７１６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3408907,
+          33.7832332
+        ]
+      },
+      "properties": {
+        "name": "城の段城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県日高郡みなべ町晩稲１３２８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4163788,
+          33.7775586
+        ]
+      },
+      "properties": {
+        "name": "鷹ノ巣城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県田辺市上秋津"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3979,
+          33.741119
+        ]
+      },
+      "properties": {
+        "name": "楠本城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県田辺市下万呂"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.541008,
+          33.532858
+        ]
+      },
+      "properties": {
+        "name": "和深川城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県西牟婁郡すさみ町和深川１９８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3489782,
+          33.7525644
+        ]
+      },
+      "properties": {
+        "name": "芳養城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県田辺市芳養町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.49509089999998,
+          33.7609706
+        ]
+      },
+      "properties": {
+        "name": "真砂城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県田辺市中辺路町西谷 QF6W+92"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3880017,
+          33.6757388
+        ]
+      },
+      "properties": {
+        "name": "堅田要害山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県西牟婁郡白浜町堅田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4957847,
+          33.7300335
+        ]
+      },
+      "properties": {
+        "name": "宮代城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県田辺市鮎川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.44727609999998,
+          33.5691023
+        ]
+      },
+      "properties": {
+        "name": "日置城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県西牟婁郡白浜町日置"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.49746389999999,
+          33.547475
+        ]
+      },
+      "properties": {
+        "name": "周参見城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県西牟婁郡すさみ町周参見４４１１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.7463575,
+          33.5283599
+        ]
+      },
+      "properties": {
+        "name": "鶴川城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県東牟婁郡古座川町鶴川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.921403,
+          33.6537371
+        ]
+      },
+      "properties": {
+        "name": "石倉山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県東牟婁郡那智勝浦町井関６９７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.9191563,
+          33.5865475
+        ]
+      },
+      "properties": {
+        "name": "下里城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県東牟婁郡那智勝浦町下里１９０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.77650939999998,
+          33.5415924
+        ]
+      },
+      "properties": {
+        "name": "川口城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県東牟婁郡古座川町川口"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.8978554,
+          33.5879044
+        ]
+      },
+      "properties": {
+        "name": "中山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県東牟婁郡那智勝浦町中里"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.8975369,
+          33.667713899999995
+        ]
+      },
+      "properties": {
+        "name": "城之尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県東牟婁郡那智勝浦町市野々 MV9X+32"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.9133917,
+          33.6096704
+        ]
+      },
+      "properties": {
+        "name": "二河城之森城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県東牟婁郡那智勝浦町二河 JW57+V9"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.9783532,
+          33.7215711
+        ]
+      },
+      "properties": {
+        "name": "越路城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県新宮市磐盾９−１４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.6705435,
+          33.5446968
+        ]
+      },
+      "properties": {
+        "name": "中村城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県東牟婁郡古座川町三尾川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.819109,
+          33.514513
+        ]
+      },
+      "properties": {
+        "name": "小山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県東牟婁郡串本町神野川１７７−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.6163121,
+          33.5781256
+        ]
+      },
+      "properties": {
+        "name": "大谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県西牟婁郡すさみ町大谷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.86631090000003,
+          33.547419399999995
+        ]
+      },
+      "properties": {
+        "name": "岩屋城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県東牟婁郡串本町田原１２５０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.8644733,
+          33.5547318
+        ]
+      },
+      "properties": {
+        "name": "佐部城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県東牟婁郡串本町上田原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.72497629999998,
+          33.566518699999996
+        ]
+      },
+      "properties": {
+        "name": "黒山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県東牟婁郡古座川町立合川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.766232,
+          33.487325999999996
+        ]
+      },
+      "properties": {
+        "name": "二部城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県東牟婁郡串本町高富４２７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.8698561,
+          33.6703553
+        ]
+      },
+      "properties": {
+        "name": "鳴滝城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県東牟婁郡那智勝浦町口色川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.87162100000003,
+          33.542712800000004
+        ]
+      },
+      "properties": {
+        "name": "高松城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県東牟婁郡串本町田原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.7024422,
+          33.846343499999996
+        ]
+      },
+      "properties": {
+        "name": "高津城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県壱岐市勝本町仲触"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.729445,
+          33.8015444
+        ]
+      },
+      "properties": {
+        "name": "鶴翔城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県壱岐市芦辺町国分東触"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.718163,
+          33.8332062
+        ]
+      },
+      "properties": {
+        "name": "樋詰城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県壱岐市勝本町新城東触"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.6734681,
+          33.819713899999996
+        ]
+      },
+      "properties": {
+        "name": "嶽城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県壱岐市勝本町本宮仲触 字 岳 城"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.70307499999998,
+          33.8204774
+        ]
+      },
+      "properties": {
+        "name": "陣屋山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県壱岐市勝本町本宮東触 字 陣屋"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.6931559,
+          33.844386
+        ]
+      },
+      "properties": {
+        "name": "風早城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県壱岐市勝本町大久保触"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.6838548,
+          33.8413852
+        ]
+      },
+      "properties": {
+        "name": "加賀城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県壱岐市勝本町坂本触"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.69669439999998,
+          33.8528678
+        ]
+      },
+      "properties": {
+        "name": "本浦城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県壱岐市勝本町仲触 字 町 ノ 崎"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.68561689999999,
+          33.8367132
+        ]
+      },
+      "properties": {
+        "name": "烏城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県壱岐市勝本町坂本触 字 平 畠"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.75117160000002,
+          33.8195525
+        ]
+      },
+      "properties": {
+        "name": "安城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県壱岐市芦辺町箱崎中山触"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.7137047,
+          33.8386851
+        ]
+      },
+      "properties": {
+        "name": "庄ノ三郎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県壱岐市勝本町北触 字 打越"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.70675,
+          33.8574115
+        ]
+      },
+      "properties": {
+        "name": "大岳城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県壱岐市勝本町仲触字 口８１１ 黒瀬 白浜 辻 5511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.5850556,
+          33.8170278
+        ]
+      },
+      "properties": {
+        "name": "茶臼山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県宗像市三郎丸 RH8P+R2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7350787,
+          33.8441279
+        ]
+      },
+      "properties": {
+        "name": "園田浦城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県北九州市八幡西区北筑２丁目２０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.585,
+          33.860982199999995
+        ]
+      },
+      "properties": {
+        "name": "雨乞山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県遠賀郡岡垣町手野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7967056,
+          33.8466623
+        ]
+      },
+      "properties": {
+        "name": "多良倉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県北九州市八幡東区尾倉１４８１−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.57974919999998,
+          33.827937399999996
+        ]
+      },
+      "properties": {
+        "name": "草場城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県宗像市平等寺"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.59558959999998,
+          33.845722200000004
+        ]
+      },
+      "properties": {
+        "name": "龍昌寺山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県遠賀郡岡垣町高倉"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7609722,
+          33.802
+        ]
+      },
+      "properties": {
+        "name": "畑城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県北九州市八幡西区畑 RQ26+Q9"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7546389,
+          33.8994722
+        ]
+      },
+      "properties": {
+        "name": "花房城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県北九州市若松区畠田 VQX3+QV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.0668387,
+          34.1082386
+        ]
+      },
+      "properties": {
+        "name": "城光寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県下関市菊川町大字下保木１０６９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.96185499999999,
+          33.897631
+        ]
+      },
+      "properties": {
+        "name": "猿喰城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県北九州市門司区畑 VXX6+3P"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.9639444,
+          33.939222199999996
+        ]
+      },
+      "properties": {
+        "name": "三角山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県北九州市門司区元清滝４−７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.8947818,
+          33.8092879
+        ]
+      },
+      "properties": {
+        "name": "堀越城趾",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県北九州市小倉南区堀越"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.867466,
+          33.81068
+        ]
+      },
+      "properties": {
+        "name": "古川山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県北九州市小倉南区志井１３１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.0450054,
+          34.130938199999996
+        ]
+      },
+      "properties": {
+        "name": "上保木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県下関市菊川町大字上保木５８０−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.80744439999998,
+          33.8531944
+        ]
+      },
+      "properties": {
+        "name": "茶臼山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県北九州市八幡東区尾倉 VR34+7X"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.9737222,
+          33.945
+        ]
+      },
+      "properties": {
+        "name": "東明寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県北九州市門司区東門司２丁目１９−１９ 東明寺山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.949788,
+          33.901486999999996
+        ]
+      },
+      "properties": {
+        "name": "柳城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県北九州市門司区寺内５丁目３−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.9818759,
+          34.0282167
+        ]
+      },
+      "properties": {
+        "name": "四王司山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県下関市松小田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.09334440000003,
+          34.179440899999996
+        ]
+      },
+      "properties": {
+        "name": "一ノ瀬城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県下関市豊田町大字殿敷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.0388242,
+          34.1388417
+        ]
+      },
+      "properties": {
+        "name": "岡枝茶臼山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県下関市菊川町大字下岡枝 42QQ+GG"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.0545278,
+          34.0981975
+        ]
+      },
+      "properties": {
+        "name": "下大野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県下関市菊川町大字下大野２７１−８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.9464553,
+          34.1475442
+        ]
+      },
+      "properties": {
+        "name": "金怡山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県下関市豊浦町大字川棚"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.9096571,
+          34.142762999999995
+        ]
+      },
+      "properties": {
+        "name": "烏山城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県下関市豊浦町大字涌田後地 4WV5+4V"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.0599513,
+          34.0637362
+        ]
+      },
+      "properties": {
+        "name": "松屋城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県下関市松屋"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.1569341,
+          34.0343624
+        ]
+      },
+      "properties": {
+        "name": "物刈城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県山陽小野田市郡"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.9478604,
+          34.1286804
+        ]
+      },
+      "properties": {
+        "name": "川棚茶臼山城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県下関市豊浦町大字川棚 4WHX+F4"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.9638283,
+          33.8729067
+        ]
+      },
+      "properties": {
+        "name": "寒竹城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福岡県北九州市門司区吉志８１−４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.47824749999998,
+          34.1986612
+        ]
+      },
+      "properties": {
+        "name": "七ツ尾山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県山口市上宇野令 5FXH+F7"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.3124386,
+          34.073983999999996
+        ]
+      },
+      "properties": {
+        "name": "鷹ノ子山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県宇部市山中 38F6+HX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.2002554,
+          34.1691052
+        ]
+      },
+      "properties": {
+        "name": "東分茶臼山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県美祢市大嶺町東分３１３３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.2844844,
+          34.062340999999996
+        ]
+      },
+      "properties": {
+        "name": "丸山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県宇部市木田５７−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.23189059999999,
+          34.0471983
+        ]
+      },
+      "properties": {
+        "name": "船木茶臼山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県宇部市船木３１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.2533262,
+          34.035517299999995
+        ]
+      },
+      "properties": {
+        "name": "吉見城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県宇部市吉見下岡１８７３−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.2792494,
+          34.1937322
+        ]
+      },
+      "properties": {
+        "name": "岡部城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県美祢市秋芳町岩永本郷堀の内"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.5101813,
+          34.190596299999996
+        ]
+      },
+      "properties": {
+        "name": "恋路城山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県山口市宮野下４３７ 伊藤組"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.2963863,
+          34.182105799999995
+        ]
+      },
+      "properties": {
+        "name": "治郎丸山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県美祢市秋芳町岩永下郷 57JW+RG"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.2343851,
+          34.018256099999995
+        ]
+      },
+      "properties": {
+        "name": "引地城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県宇部市棚井 棚井下１００７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.872673,
+          34.028712999999996
+        ]
+      },
+      "properties": {
+        "name": "末武城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県下松市末武上 2VHF+F3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.8280887,
+          34.0676708
+        ]
+      },
+      "properties": {
+        "name": "一ノ井手城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県周南市徳山 上一ノ井手９５１−１８８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.88939059999998,
+          34.1129579
+        ]
+      },
+      "properties": {
+        "name": "熊毛山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県周南市須々万奥 4V7Q+5Q"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.9147834,
+          34.11279
+        ]
+      },
+      "properties": {
+        "name": "西山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県周南市中須南１０８７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.79935799999998,
+          34.096888
+        ]
+      },
+      "properties": {
+        "name": "別所城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県周南市上村 3QWX+QP"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.6988518,
+          34.1629173
+        ]
+      },
+      "properties": {
+        "name": "上山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県山口市徳地島地 5M6X+W8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.67350660000002,
+          34.1910713
+        ]
+      },
+      "properties": {
+        "name": "要害山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県山口市徳地小古祖 5MRG+J2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.7740658,
+          34.082177699999995
+        ]
+      },
+      "properties": {
+        "name": "七尾山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県周南市下上３６７−６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.17700019999998,
+          33.9816459
+        ]
+      },
+      "properties": {
+        "name": "神代城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県柳井市日積 X5JG+MR"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.285334,
+          33.903616
+        ]
+      },
+      "properties": {
+        "name": "清木山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県大島郡周防大島町町東安下庄１８４３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.1505305,
+          34.011153
+        ]
+      },
+      "properties": {
+        "name": "茶臼山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県柳井市日積"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.2017051,
+          34.1619044
+        ]
+      },
+      "properties": {
+        "name": "関所山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県岩国市錦見８丁目１３−９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.0808329,
+          34.0754083
+        ]
+      },
+      "properties": {
+        "name": "瀬田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県岩国市玖珂町瀬田１４００"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.2018917,
+          33.8015378
+        ]
+      },
+      "properties": {
+        "name": "平見山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県柳井市平郡４６９４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.0911229,
+          34.1651935
+        ]
+      },
+      "properties": {
+        "name": "愛宕山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県岩国市下"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.14916159999999,
+          33.9732811
+        ]
+      },
+      "properties": {
+        "name": "琴石山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県柳井市柳井"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.1543908,
+          34.1975342
+        ]
+      },
+      "properties": {
+        "name": "松尾要害山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県岩国市多田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.0676902,
+          34.119825399999996
+        ]
+      },
+      "properties": {
+        "name": "蓮華山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県岩国市玖珂町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.2057135,
+          34.0769898
+        ]
+      },
+      "properties": {
+        "name": "高山城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県岩国市通津２０９６−２０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.7004644,
+          33.8440528
+        ]
+      },
+      "properties": {
+        "name": "忽那山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県松山市北吉田町７７−３１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.6762358,
+          34.192517099999996
+        ]
+      },
+      "properties": {
+        "name": "丸谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県呉市下蒲刈町下島２０８９−２１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.4624797,
+          34.1667074
+        ]
+      },
+      "properties": {
+        "name": "能美城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県江田島市大柿町大原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.50713679999998,
+          34.1083345
+        ]
+      },
+      "properties": {
+        "name": "丸子山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県呉市倉橋町才ノ木"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.5414808,
+          34.1981071
+        ]
+      },
+      "properties": {
+        "name": "小浜山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県呉市警固屋８丁目３−１９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.7574881,
+          34.1905133
+        ]
+      },
+      "properties": {
+        "name": "八幡山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県呉市蒲刈町大浦９５−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.1286758,
+          33.888312899999995
+        ]
+      },
+      "properties": {
+        "name": "氷見 高尾城里城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県西条市氷見丁"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.1035894,
+          33.8757452
+        ]
+      },
+      "properties": {
+        "name": "幻城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県西条市小松町新屋敷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.06400000000002,
+          33.98225
+        ]
+      },
+      "properties": {
+        "name": "大崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県今治市桜井甲１１９３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.8309536,
+          33.808230099999996
+        ]
+      },
+      "properties": {
+        "name": "平井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県松山市平井町甲１２４３-２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.037815,
+          33.951385
+        ]
+      },
+      "properties": {
+        "name": "大聖寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県西条市旦之上甲１４５１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.1934471,
+          33.886265
+        ]
+      },
+      "properties": {
+        "name": "横山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県西条市中野丙"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.8446594,
+          33.9718537
+        ]
+      },
+      "properties": {
+        "name": "萩尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県松山市猿川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.9719197,
+          34.0857873
+        ]
+      },
+      "properties": {
+        "name": "近見山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県今治市近見町５丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.83088,
+          33.877738
+        ]
+      },
+      "properties": {
+        "name": "奥の城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県松山市宿野町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.021028,
+          34.113278
+        ]
+      },
+      "properties": {
+        "name": "立山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県今治市吉海町正味 427C+8C"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.90040399999998,
+          33.963452
+        ]
+      },
+      "properties": {
+        "name": "嵯峨子城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県今治市玉川町龍岡上丁２２６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.81588929999998,
+          33.859854999999996
+        ]
+      },
+      "properties": {
+        "name": "菊ヶ森城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県松山市食場町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.2875836,
+          33.8997206
+        ]
+      },
+      "properties": {
+        "name": "高尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県新居浜市大永山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.425003,
+          33.952216
+        ]
+      },
+      "properties": {
+        "name": "伊予横尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県四国中央市土居町入野５４３−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.3207986,
+          34.1765717
+        ]
+      },
+      "properties": {
+        "name": "亀井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県越智郡上島町魚島一番耕地８２８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.43894559999998,
+          33.956267499999996
+        ]
+      },
+      "properties": {
+        "name": "里城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県四国中央市土居町小林"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.40240799999998,
+          33.937961
+        ]
+      },
+      "properties": {
+        "name": "中尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県四国中央市土居町浦山 WCQ2+5X"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.216781,
+          33.927047
+        ]
+      },
+      "properties": {
+        "name": "笹山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県西条市下島山甲２００３−４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.368043,
+          33.924316
+        ]
+      },
+      "properties": {
+        "name": "大の城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県新居浜市船木市場川橋"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.424959,
+          33.941674
+        ]
+      },
+      "properties": {
+        "name": "国吉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県四国中央市土居町浦山 WCRF+MX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.223063,
+          33.924931
+        ]
+      },
+      "properties": {
+        "name": "中山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛媛県西条市下島山甲２９４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.8688503,
+          34.02655600000001
+        ]
+      },
+      "properties": {
+        "name": "野津後城（西城）跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県三好市井川町聖巌寺７７８ 0000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.8335271,
+          34.1568465
+        ]
+      },
+      "properties": {
+        "name": "生間城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "香川県仲多度郡まんのう町十郷 生間"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.9998588,
+          34.0579692
+        ]
+      },
+      "properties": {
+        "name": "清水城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県三好市三野町清水"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.6505089,
+          34.0601041
+        ]
+      },
+      "properties": {
+        "name": "獅子の鼻城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "香川県観音寺市豊浜町和田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.9730717,
+          34.1001933
+        ]
+      },
+      "properties": {
+        "name": "勝浦城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "香川県仲多度郡まんのう町勝浦５４６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.82656,
+          34.1922277
+        ]
+      },
+      "properties": {
+        "name": "石川城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "香川県仲多度郡琴平町榎井６３１−１７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.1587083,
+          34.0709445
+        ]
+      },
+      "properties": {
+        "name": "上野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県美馬市脇町大字猪尻西上野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.05911849999998,
+          34.066138099999996
+        ]
+      },
+      "properties": {
+        "name": "郡里城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県美馬市美馬町池ノ浦"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.1803356,
+          34.1155459
+        ]
+      },
+      "properties": {
+        "name": "城野城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県美馬市脇町東赤谷名"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.1277279,
+          34.0779366
+        ]
+      },
+      "properties": {
+        "name": "塩ヶ峰城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県美馬市脇町福堂"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.1167118,
+          34.071701000000004
+        ]
+      },
+      "properties": {
+        "name": "城ノ坂城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県美馬市脇町井口東"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.3039715,
+          33.9819895
+        ]
+      },
+      "properties": {
+        "name": "焼山寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県名西郡神山町下分"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.3440976,
+          34.0647838
+        ]
+      },
+      "properties": {
+        "name": "西麻植城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県吉野川市鴨島町西麻植中筋"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.178958,
+          34.1296254
+        ]
+      },
+      "properties": {
+        "name": "台ヶ丸城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県美馬市脇町東赤谷名"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.3692806,
+          34.0529594
+        ]
+      },
+      "properties": {
+        "name": "城ケ丸城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県吉野川市鴨島町森藤"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.3381801,
+          33.9656325
+        ]
+      },
+      "properties": {
+        "name": "上山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県名西郡神山町神領谷６８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.31412179999998,
+          34.056652
+        ]
+      },
+      "properties": {
+        "name": "桑村城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県吉野川市川島町桑村２１９３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.1618279,
+          34.0372949
+        ]
+      },
+      "properties": {
+        "name": "南郷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県美馬市穴吹町口山初草１４６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.16970609999998,
+          34.0470775
+        ]
+      },
+      "properties": {
+        "name": "穴吹城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県美馬市穴吹町穴吹藪ノ下５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.5324139,
+          34.119284
+        ]
+      },
+      "properties": {
+        "name": "轟城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県徳島市応神町吉成轟"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.43822269999998,
+          33.9895006
+        ]
+      },
+      "properties": {
+        "name": "安芸城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県名東郡佐那河内村上幸田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.5285944,
+          34.081493200000004
+        ]
+      },
+      "properties": {
+        "name": "横田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県徳島市南矢三町１丁目１０−２６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.6337886,
+          33.9147755
+        ]
+      },
+      "properties": {
+        "name": "本庄城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県阿南市長生町宮ノ本"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.5202306,
+          34.1442614
+        ]
+      },
+      "properties": {
+        "name": "川崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県鳴門市大麻町川崎"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.5365316,
+          34.073541399999996
+        ]
+      },
+      "properties": {
+        "name": "佐古城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県徳島市南佐古二番町２−２０ 佐古山不勲院"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.4987887,
+          34.0370148
+        ]
+      },
+      "properties": {
+        "name": "上八万城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県徳島市上八万町上中筋９２３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.4003999,
+          34.1339761
+        ]
+      },
+      "properties": {
+        "name": "台山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県板野郡上板町神宅台山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.8108077,
+          33.8467001
+        ]
+      },
+      "properties": {
+        "name": "伊島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県阿南市伊島町瀬戸"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.82167429999998,
+          34.1699395
+        ]
+      },
+      "properties": {
+        "name": "沼島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県南あわじ市沼島２２０７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.1878025,
+          34.125210599999996
+        ]
+      },
+      "properties": {
+        "name": "加茂城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県海南市下津町小松原１４０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.16865099999998,
+          33.912188
+        ]
+      },
+      "properties": {
+        "name": "八幡山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県御坊市藤田町吉田２２６８−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.1448232,
+          33.9555609
+        ]
+      },
+      "properties": {
+        "name": "田島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県日高郡日高町原谷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.08500759999998,
+          33.9748589
+        ]
+      },
+      "properties": {
+        "name": "番所山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県日高郡由良町大引"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.176026,
+          33.8874261
+        ]
+      },
+      "properties": {
+        "name": "野口城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県御坊市熊野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.1129803,
+          33.9185667
+        ]
+      },
+      "properties": {
+        "name": "志賀城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県日高郡日高町志賀４９３３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.17906829999998,
+          34.10560050000001
+        ]
+      },
+      "properties": {
+        "name": "小畑城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県海南市下津町小畑"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.14211079999998,
+          33.9101625
+        ]
+      },
+      "properties": {
+        "name": "入山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県日高郡美浜町和田２８０５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.0784342,
+          33.8991821
+        ]
+      },
+      "properties": {
+        "name": "阿尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県日高郡日高町阿尾"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.13096249999998,
+          33.950839699999996
+        ]
+      },
+      "properties": {
+        "name": "池田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県日高郡日高町池田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.17741709999999,
+          33.841547399999996
+        ]
+      },
+      "properties": {
+        "name": "野島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県御坊市名田町野島"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.1805583,
+          34.0320426
+        ]
+      },
+      "properties": {
+        "name": "白樫城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県有田郡湯浅町別所２４−５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3533683,
+          34.071221099999995
+        ]
+      },
+      "properties": {
+        "name": "城空山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県有田郡有田川町二川 町東大谷８０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4388292,
+          34.176922399999995
+        ]
+      },
+      "properties": {
+        "name": "深山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県海草郡紀の川市勝谷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.329503,
+          34.1449418
+        ]
+      },
+      "properties": {
+        "name": "福井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県海草郡紀美野町福井１２７７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.29281899999998,
+          34.023472999999996
+        ]
+      },
+      "properties": {
+        "name": "若田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県有田郡有田川町修理川 27FV+94"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.21040689999998,
+          33.8976434
+        ]
+      },
+      "properties": {
+        "name": "山崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県日高郡日高川町和佐１４５７−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.212492,
+          34.1648667
+        ]
+      },
+      "properties": {
+        "name": "城の平城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県海南市岡田 5686+3P"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4288296,
+          34.0867839
+        ]
+      },
+      "properties": {
+        "name": "清水城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県有田郡有田川町清水１８４３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4217035,
+          34.0839159
+        ]
+      },
+      "properties": {
+        "name": "丸山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県有田郡有田川町清水１６２０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3415661,
+          34.180771
+        ]
+      },
+      "properties": {
+        "name": "応神山城跡（城段山城跡）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県海草郡紀美野町柴目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3003363,
+          34.1697092
+        ]
+      },
+      "properties": {
+        "name": "寺中城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県海草郡紀美野町小畑"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.2085062,
+          33.8379105
+        ]
+      },
+      "properties": {
+        "name": "高城山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県御坊市名田町楠井"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.26507469999999,
+          33.8076911
+        ]
+      },
+      "properties": {
+        "name": "鳴神城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県日高郡印南町島田 R758+32"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.2791615,
+          33.8037393
+        ]
+      },
+      "properties": {
+        "name": "市井谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県日高郡みなべ町西岩代"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4327754,
+          34.1388347
+        ]
+      },
+      "properties": {
+        "name": "平岩城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県海草郡紀美野町中"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3776966,
+          34.0491051
+        ]
+      },
+      "properties": {
+        "name": "中原大城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県有田郡有田川町中原３１３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.48864949999998,
+          34.1849476
+        ]
+      },
+      "properties": {
+        "name": "土井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県海草郡紀美野町長谷宮６４８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.2254702,
+          34.1556028
+        ]
+      },
+      "properties": {
+        "name": "春日山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県海南市大野中"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3152753,
+          34.1626489
+        ]
+      },
+      "properties": {
+        "name": "中ノ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県海草郡紀美野町下佐々 5878+34"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3672276,
+          34.159714099999995
+        ]
+      },
+      "properties": {
+        "name": "上ノ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県海草郡紀美野町津川 5958+VV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.26611499999999,
+          34.1312166
+        ]
+      },
+      "properties": {
+        "name": "東畑城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県海南市東畑"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3504155,
+          33.9352898
+        ]
+      },
+      "properties": {
+        "name": "田尻城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県日高郡日高川町田尻"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.2290151,
+          33.860762699999995
+        ]
+      },
+      "properties": {
+        "name": "塩路城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県日高郡印南町印南原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3599427,
+          34.073319999999995
+        ]
+      },
+      "properties": {
+        "name": "二川天城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県有田郡有田川町日物川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.2815381,
+          33.944287
+        ]
+      },
+      "properties": {
+        "name": "後山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県日高郡日高川町船津"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.6085828,
+          33.820427599999995
+        ]
+      },
+      "properties": {
+        "name": "千丈山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県田辺市中辺路町近露３１９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.7023647,
+          33.844024
+        ]
+      },
+      "properties": {
+        "name": "要害森山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県田辺市本宮町三越"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.8547647,
+          33.836490999999995
+        ]
+      },
+      "properties": {
+        "name": "宮井城 出城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県新宮市熊野川町宮井"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.81224699999999,
+          33.8388843
+        ]
+      },
+      "properties": {
+        "name": "敷屋城之森城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県新宮市熊野川町東敷屋"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.7537031,
+          33.80657670000001
+        ]
+      },
+      "properties": {
+        "name": "和田城之森城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県田辺市本宮町東和田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.98160009999998,
+          33.8552779
+        ]
+      },
+      "properties": {
+        "name": "尾呂志城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県南牟婁郡御浜町上野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.77307629999999,
+          33.857511099999996
+        ]
+      },
+      "properties": {
+        "name": "鷹巣山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県田辺市本宮町大居"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.9761524,
+          33.9485877
+        ]
+      },
+      "properties": {
+        "name": "相須屋敷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県東牟婁郡北山村竹原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.23591919999998,
+          34.1428759
+        ]
+      },
+      "properties": {
+        "name": "上里城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県北牟婁郡紀北町上里２９−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.0340516,
+          33.9263841
+        ]
+      },
+      "properties": {
+        "name": "久留米木山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県熊野市井戸町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.0803889,
+          33.8797778
+        ]
+      },
+      "properties": {
+        "name": "有馬本城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県熊野市有馬町１７８６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.3586647,
+          34.325894399999996
+        ]
+      },
+      "properties": {
+        "name": "大山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県対馬市美津島町小船越"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2782037,
+          34.294359799999995
+        ]
+      },
+      "properties": {
+        "name": "金田城跡(城山)登山口",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長崎県対馬市美津島町黒瀬"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.18803910000003,
+          34.3417281
+        ]
+      },
+      "properties": {
+        "name": "深川城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県長門市深川湯本７５９ 4103"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.080198,
+          34.211135999999996
+        ]
+      },
+      "properties": {
+        "name": "諏訪山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県下関市豊田町大字楢原２２４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.0774822,
+          34.2056462
+        ]
+      },
+      "properties": {
+        "name": "長正司城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県下関市豊田町大字殿敷１９５２−６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.0258316,
+          34.2783635
+        ]
+      },
+      "properties": {
+        "name": "竜山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県下関市豊北町大字田耕 72HG+78"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.9257383,
+          34.316005200000006
+        ]
+      },
+      "properties": {
+        "name": "丸嶽山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県下関市豊北町大字阿川７５９ 5241"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.433413,
+          34.471167
+        ]
+      },
+      "properties": {
+        "name": "櫛山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県萩市大井 FCCM+F9"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.3546724,
+          34.207498699999995
+        ]
+      },
+      "properties": {
+        "name": "藤ノ丸山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県美祢市美東町綾木２８０３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.30268859999998,
+          34.2003135
+        ]
+      },
+      "properties": {
+        "name": "鳥栖城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県美祢市秋芳町秋吉片山１８７６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.2515418,
+          34.2682068
+        ]
+      },
+      "properties": {
+        "name": "沢差城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県美祢市秋芳町嘉万 7792+7J"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.2435156,
+          34.2552699
+        ]
+      },
+      "properties": {
+        "name": "茶臼山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県美祢市秋芳町別府"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.446009,
+          34.483013
+        ]
+      },
+      "properties": {
+        "name": "鵜山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県萩市大井港"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.2376533,
+          34.2608479
+        ]
+      },
+      "properties": {
+        "name": "堅田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県美祢市秋芳町別府 766P+6X"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.9520081,
+          34.2681331
+        ]
+      },
+      "properties": {
+        "name": "朝霞城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県岩国市錦町広瀬 7X92+7R"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.8810907,
+          34.3995154
+        ]
+      },
+      "properties": {
+        "name": "抜舞城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県鹿足郡吉賀町抜月"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.7575339,
+          34.4645017
+        ]
+      },
+      "properties": {
+        "name": "喜時雨陣城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県鹿足郡津和野町田二穂"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.75996089999998,
+          34.455095899999996
+        ]
+      },
+      "properties": {
+        "name": "中荒城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県鹿足郡津和野町田二穂"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.7369,
+          34.589
+        ]
+      },
+      "properties": {
+        "name": "横山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県益田市桂平町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.9160836,
+          34.3731034
+        ]
+      },
+      "properties": {
+        "name": "五郎丸城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県鹿足郡吉賀町立戸６９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.809076,
+          34.5461447
+        ]
+      },
+      "properties": {
+        "name": "下瀬山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県鹿足郡津和野町池村"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.7123461,
+          34.5171226
+        ]
+      },
+      "properties": {
+        "name": "徳永城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県鹿足郡津和野町山下"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.67541599999998,
+          34.466599699999996
+        ]
+      },
+      "properties": {
+        "name": "和田山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県山口市阿東嘉年下"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.70570320000002,
+          34.5447503
+        ]
+      },
+      "properties": {
+        "name": "御嶽城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県鹿足郡津和野町中山奥ヶ野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.209303,
+          34.358937
+        ]
+      },
+      "properties": {
+        "name": "中山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県廿日市市河津原６１７−１１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.08578119999999,
+          34.261651
+        ]
+      },
+      "properties": {
+        "name": "高森城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県岩国市美和町生見 736M+9X"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.3765566,
+          34.415955200000006
+        ]
+      },
+      "properties": {
+        "name": "水晶城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県広島市佐伯区五日市町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.2611685,
+          34.2917148
+        ]
+      },
+      "properties": {
+        "name": "門山城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県廿日市市大野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.22991919999998,
+          34.3575166
+        ]
+      },
+      "properties": {
+        "name": "溝ヶ迫城趾",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県廿日市市峠"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.3196846,
+          34.3539239
+        ]
+      },
+      "properties": {
+        "name": "谷宗尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県廿日市市上平良１丁目１−４０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.3576621,
+          34.3677413
+        ]
+      },
+      "properties": {
+        "name": "五日市城跡（幸崎城跡 光明寺城跡）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県広島市佐伯区五日市４丁目１６−９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.2800057,
+          34.3270836
+        ]
+      },
+      "properties": {
+        "name": "王舍城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県廿日市市大野中山７００"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.0272052,
+          34.3104863
+        ]
+      },
+      "properties": {
+        "name": "成君寺山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県岩国市本郷町宇塚"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.2721954,
+          34.4857611
+        ]
+      },
+      "properties": {
+        "name": "安南坊城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県広島市佐伯区湯来町大字和田１１８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.355143,
+          34.386621
+        ]
+      },
+      "properties": {
+        "name": "池田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県広島市佐伯区城山１丁目６−１７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.2810012,
+          34.3000238
+        ]
+      },
+      "properties": {
+        "name": "河内城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県廿日市市物見東２丁目１３−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.3505253,
+          34.415392000000004
+        ]
+      },
+      "properties": {
+        "name": "山根城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県広島市佐伯区五日市町大字上河内６０９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.3601843,
+          34.432312599999996
+        ]
+      },
+      "properties": {
+        "name": "狐ヶ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県広島市佐伯区五日市町大字上小深川６７４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.3873256,
+          34.439859399999996
+        ]
+      },
+      "properties": {
+        "name": "西城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県広島市安佐南区大塚西町 C9QP+WW"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.1858433,
+          34.348407
+        ]
+      },
+      "properties": {
+        "name": "勝成山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県廿日市市津田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.3533292,
+          34.4087439
+        ]
+      },
+      "properties": {
+        "name": "土井岡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県広島市佐伯区五日市町５９１−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.5260789,
+          34.3367612
+        ]
+      },
+      "properties": {
+        "name": "高尾山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県広島市安芸区矢野町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.511709,
+          34.4023545
+        ]
+      },
+      "properties": {
+        "name": "石井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県安芸郡府中町石井城２丁目２−１９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.6660715,
+          34.560612299999995
+        ]
+      },
+      "properties": {
+        "name": "星ヶ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県広島市安佐北区白木町小越"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.45479419999998,
+          34.585389
+        ]
+      },
+      "properties": {
+        "name": "下西山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県広島市安佐北区安佐町鈴張"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.40709139999998,
+          34.4619241
+        ]
+      },
+      "properties": {
+        "name": "伴北城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県広島市安佐南区伴中央１丁目７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.6001235,
+          34.3489405
+        ]
+      },
+      "properties": {
+        "name": "土岐城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県安芸郡熊野町萩原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.5946789,
+          34.34238920000001
+        ]
+      },
+      "properties": {
+        "name": "狐ヶ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県安芸郡熊野町萩原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.5019474,
+          34.382631499999995
+        ]
+      },
+      "properties": {
+        "name": "千代城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県安芸郡府中町鹿籠１丁目６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.6232852,
+          34.5191884
+        ]
+      },
+      "properties": {
+        "name": "古川城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県広島市安佐北区白木町三田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.53866019999998,
+          34.5278677
+        ]
+      },
+      "properties": {
+        "name": "天上山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県広島市安佐北区可部町桐原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.59332759999998,
+          34.4167531
+        ]
+      },
+      "properties": {
+        "name": "丸山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県広島市安芸区中野東町 CH8V+P8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.6038254,
+          34.4203082
+        ]
+      },
+      "properties": {
+        "name": "檜木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県広島市安芸区瀬野南町１６６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.9854739,
+          34.4100926
+        ]
+      },
+      "properties": {
+        "name": "古高山小早川城趾",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県三原市本郷南６丁目２４−３８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.09397200000004,
+          34.596424999999996
+        ]
+      },
+      "properties": {
+        "name": "松岡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県世羅郡世羅町川尻 H3WV+HH"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.91992009999998,
+          34.3277664
+        ]
+      },
+      "properties": {
+        "name": "的場山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県竹原市竹原町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.9384988,
+          34.332448500000005
+        ]
+      },
+      "properties": {
+        "name": "安芸高崎岬城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県竹原市高崎町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.1154886,
+          34.4984408
+        ]
+      },
+      "properties": {
+        "name": "丸山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県尾道市御調町丸河南１１０８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.0995221,
+          34.584933299999996
+        ]
+      },
+      "properties": {
+        "name": "赤城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県世羅郡世羅町川尻８１９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.1452505,
+          34.5083804
+        ]
+      },
+      "properties": {
+        "name": "雲雀城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県尾道市御調町市"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.8858718,
+          34.3889795
+        ]
+      },
+      "properties": {
+        "name": "安芸本城山城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県竹原市東野町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.8709331,
+          34.4567403
+        ]
+      },
+      "properties": {
+        "name": "松ヶ嶽城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県東広島市河内町入野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.2755733,
+          34.4027837
+        ]
+      },
+      "properties": {
+        "name": "岩淵城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県尾道市浦崎町２１９１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.2836005,
+          34.4717652
+        ]
+      },
+      "properties": {
+        "name": "倉田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県福山市神村町４３３５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.26624089999999,
+          34.5176616
+        ]
+      },
+      "properties": {
+        "name": "市迫城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県福山市芦田町下有地"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.556884,
+          34.568878
+        ]
+      },
+      "properties": {
+        "name": "尾坂城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県笠岡市尾坂１５０４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.2197511,
+          34.4560895
+        ]
+      },
+      "properties": {
+        "name": "大町山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県尾道市西藤町１７０５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.3419304,
+          34.4846655
+        ]
+      },
+      "properties": {
+        "name": "神島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県福山市神島町５−１０−６ 法然寺"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.5624245,
+          34.4936939
+        ]
+      },
+      "properties": {
+        "name": "茶臼山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県浅口市寄島町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.4552565,
+          34.562236299999995
+        ]
+      },
+      "properties": {
+        "name": "匠ヶ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県井原市上稲木町２１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.5734309,
+          34.3511445
+        ]
+      },
+      "properties": {
+        "name": "備中沢津城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県笠岡市真鍋島２９０５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.4320319,
+          34.5280024
+        ]
+      },
+      "properties": {
+        "name": "西山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県福山市坪生町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.4450168,
+          34.5057863
+        ]
+      },
+      "properties": {
+        "name": "明知山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県福山市大門町大門"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.45708340000002,
+          34.5413213
+        ]
+      },
+      "properties": {
+        "name": "仮名沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県笠岡市篠坂２３２３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.42601539999998,
+          34.574196799999996
+        ]
+      },
+      "properties": {
+        "name": "滝山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県井原市大江町八尋３６９７−３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.3707938,
+          34.3754925
+        ]
+      },
+      "properties": {
+        "name": "室城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県福山市鞆町後地乙２２１７-１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.5826054,
+          34.3581847
+        ]
+      },
+      "properties": {
+        "name": "旧:真鍋城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県笠岡市真鍋島"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.4304186,
+          34.5913229
+        ]
+      },
+      "properties": {
+        "name": "小見山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県井原市高屋町１８４９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.5011734,
+          34.5840878
+        ]
+      },
+      "properties": {
+        "name": "才崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県井原市木之子町４５１８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.3056761,
+          34.539242
+        ]
+      },
+      "properties": {
+        "name": "宿茂塚城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県福山市芦田町福田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.3787974,
+          34.569737499999995
+        ]
+      },
+      "properties": {
+        "name": "井手上城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県福山市神辺町西中条"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.240856,
+          34.474810999999995
+        ]
+      },
+      "properties": {
+        "name": "大場山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県福山市本郷町７０５−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.8100464,
+          34.5451388
+        ]
+      },
+      "properties": {
+        "name": "鼻高山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県倉敷市串田 GRW6+32"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.61875759999998,
+          34.5569987
+        ]
+      },
+      "properties": {
+        "name": "加賀山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県浅口市市"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.7506381,
+          34.5662836
+        ]
+      },
+      "properties": {
+        "name": "黒山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県倉敷市浦田２５３２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.71756209999998,
+          34.580292899999996
+        ]
+      },
+      "properties": {
+        "name": "片島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県倉敷市片島町６５１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.9641738,
+          34.5591011
+        ]
+      },
+      "properties": {
+        "name": "金甲山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県玉野市八浜町波知"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.779543,
+          34.53336
+        ]
+      },
+      "properties": {
+        "name": "川越城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県倉敷市福田町広江"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.7622189,
+          34.4925308
+        ]
+      },
+      "properties": {
+        "name": "本太城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県倉敷市児島塩生"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.8572093,
+          34.5349426
+        ]
+      },
+      "properties": {
+        "name": "片岡城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県岡山市南区片岡"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.6164251,
+          34.5076452
+        ]
+      },
+      "properties": {
+        "name": "佐方竜王山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県浅口市金光町佐方"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.0986031,
+          34.358658
+        ]
+      },
+      "properties": {
+        "name": "屋島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "香川県高松市屋島東町７６１ 0111"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.00760499999998,
+          34.550115999999996
+        ]
+      },
+      "properties": {
+        "name": "胸上城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県玉野市胸上２３６１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.11716769999998,
+          34.3393278
+        ]
+      },
+      "properties": {
+        "name": "牟礼城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "香川県高松市高松町 津の村"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.03248,
+          34.596547
+        ]
+      },
+      "properties": {
+        "name": "備前小串城跡(小串台場跡)",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県岡山市南区小串２１９９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.21927019999998,
+          34.2874774
+        ]
+      },
+      "properties": {
+        "name": "神崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "香川県さぬき市寒川町神前８８４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7466,
+          34.261238999999996
+        ]
+      },
+      "properties": {
+        "name": "城ノ腰城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県南あわじ市賀集鍛治屋１２７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7877355,
+          34.3377682
+        ]
+      },
+      "properties": {
+        "name": "庄田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県南あわじ市倭文庄田１２７７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.6711475,
+          34.2695587
+        ]
+      },
+      "properties": {
+        "name": "阿那賀城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県南あわじ市阿那賀６５６ 0661"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7968773,
+          34.3443097
+        ]
+      },
+      "properties": {
+        "name": "庄田城の腰城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県南あわじ市倭文安住寺６５６ 0151"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.761238,
+          34.3074562
+        ]
+      },
+      "properties": {
+        "name": "高木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県南あわじ市榎列大榎列５６４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.70328519999998,
+          34.245334
+        ]
+      },
+      "properties": {
+        "name": "鶴島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県南あわじ市福良丙"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.6912953,
+          34.282268699999996
+        ]
+      },
+      "properties": {
+        "name": "城山城跡（伊加利城跡）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県南あわじ市伊加利"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.79149959999998,
+          34.277773499999995
+        ]
+      },
+      "properties": {
+        "name": "上田土居城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県南あわじ市八木寺内"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.797866,
+          34.2632453
+        ]
+      },
+      "properties": {
+        "name": "栗原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県南あわじ市神代社家６５６ 0451"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7273478,
+          34.2257913
+        ]
+      },
+      "properties": {
+        "name": "塩屋古城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県南あわじ市阿万塩屋町６５６ 0543"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.4059071,
+          34.2017611
+        ]
+      },
+      "properties": {
+        "name": "黒羽城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "香川県東かがわ市黒羽"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7397417,
+          34.2276157
+        ]
+      },
+      "properties": {
+        "name": "郷殿城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県南あわじ市阿万塩屋町６５６ 0543"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7387719,
+          34.2570445
+        ]
+      },
+      "properties": {
+        "name": "古城山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県南あわじ市賀集鍛治屋６５６ 0515"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.588246,
+          34.2370766
+        ]
+      },
+      "properties": {
+        "name": "北泊城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "徳島県鳴門市瀬戸町北泊北泊"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.79552719999998,
+          34.402881
+        ]
+      },
+      "properties": {
+        "name": "都志城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県洲本市五色町都志大宮 CQ2V+QF"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.88379129999998,
+          34.3928566
+        ]
+      },
+      "properties": {
+        "name": "城腰城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県洲本市安乎町平安浦"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.9480826,
+          34.29523150000001
+        ]
+      },
+      "properties": {
+        "name": "由良城跡（成山城跡）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県洲本市由良町由良"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.8430109,
+          34.3267503
+        ]
+      },
+      "properties": {
+        "name": "勝間城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県南あわじ市広田中筋３９９−４１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.1931945,
+          34.26431960000001
+        ]
+      },
+      "properties": {
+        "name": "薗部城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県和歌山市園部７７０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.9371667,
+          34.465972199999996
+        ]
+      },
+      "properties": {
+        "name": "佐野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県淡路市佐野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.9410735,
+          34.297587199999995
+        ]
+      },
+      "properties": {
+        "name": "由良古城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県洲本市由良４丁目１５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.8582537,
+          34.4575574
+        ]
+      },
+      "properties": {
+        "name": "群家城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県淡路市中村２７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4849337,
+          34.4399496
+        ]
+      },
+      "properties": {
+        "name": "宮里城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大阪府和泉市国分町５９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.5101649,
+          34.599496699999996
+        ]
+      },
+      "properties": {
+        "name": "我孫子城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大阪府大阪市住吉区我孫子４丁目１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3769202,
+          34.2520716
+        ]
+      },
+      "properties": {
+        "name": "佐藤城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県紀の川市竹房１５２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.36405349999998,
+          34.2847355
+        ]
+      },
+      "properties": {
+        "name": "神領城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県紀の川市神領２５７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3088098,
+          34.2178537
+        ]
+      },
+      "properties": {
+        "name": "貴志城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県紀の川市貴志川町上野山貴志川中学校 前"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3640479,
+          34.2700467
+        ]
+      },
+      "properties": {
+        "name": "長名の城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県紀の川市東大井"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.5346601,
+          34.2952639
+        ]
+      },
+      "properties": {
+        "name": "高門城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "和歌山県伊都郡かつらぎ町山崎１２９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.5774762,
+          34.5283179
+        ]
+      },
+      "properties": {
+        "name": "平尾城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大阪府堺市美原区平尾１０６０−１４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4352298,
+          34.4305357
+        ]
+      },
+      "properties": {
+        "name": "稲葉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大阪府岸和田市稲葉町２６００"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.298056,
+          34.3829588
+        ]
+      },
+      "properties": {
+        "name": "樫井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大阪府泉佐野市南中樫井２３７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.5751601,
+          34.5513791
+        ]
+      },
+      "properties": {
+        "name": "河原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大阪府羽曳野市河原城１０３２−３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.82219999999998,
+          34.4823624
+        ]
+      },
+      "properties": {
+        "name": "飛鳥城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "奈良県高市郡明日香村飛鳥"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.6492536,
+          34.4740348
+        ]
+      },
+      "properties": {
+        "name": "河内城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大阪府南河内郡河南町下河内８８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.6258284,
+          34.5066886
+        ]
+      },
+      "properties": {
+        "name": "北城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大阪府南河内郡河南町一須賀５８５ 0002"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.6814346,
+          34.5352569
+        ]
+      },
+      "properties": {
+        "name": "岡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "奈良県香芝市畑"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.6256142,
+          34.501828499999995
+        ]
+      },
+      "properties": {
+        "name": "大宝寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大阪府南河内郡河南町山城"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.6572242,
+          34.4098368
+        ]
+      },
+      "properties": {
+        "name": "妙見城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大阪府南河内郡千早赤阪村千早"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.9524896,
+          34.5212936
+        ]
+      },
+      "properties": {
+        "name": "井足城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "奈良県宇陀市榛原下井足"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.6595739,
+          34.4854597
+        ]
+      },
+      "properties": {
+        "name": "持尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大阪府南河内郡河南町持尾９４７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.6857681,
+          34.362799599999995
+        ]
+      },
+      "properties": {
+        "name": "岡西山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "奈良県五條市田園４丁目５３−７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.8451168,
+          34.5058242
+        ]
+      },
+      "properties": {
+        "name": "安倍山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "奈良県桜井市谷５６５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.6708502,
+          34.4208573
+        ]
+      },
+      "properties": {
+        "name": "国見城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "奈良県御所市高天"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.660732,
+          34.4682059
+        ]
+      },
+      "properties": {
+        "name": "弘川城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大阪府南河内郡河南町弘川 FM96+77"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.6903101,
+          34.4838471
+        ]
+      },
+      "properties": {
+        "name": "布施城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "奈良県葛城市寺口 FMMR+G4"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.0607134,
+          34.5691698
+        ]
+      },
+      "properties": {
+        "name": "城山城趾",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "奈良県宇陀市室生龍口 H396+M7"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.14508329999998,
+          34.597322999999996
+        ]
+      },
+      "properties": {
+        "name": "吉村氏城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県名張市奈垣"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.1273506,
+          34.5171789
+        ]
+      },
+      "properties": {
+        "name": "曽爾今井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "奈良県宇陀郡曽爾村今井"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.048051,
+          34.5150741
+        ]
+      },
+      "properties": {
+        "name": "猫ヶ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "奈良県宇陀市室生下田口２５８０−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.1139053,
+          34.5011399
+        ]
+      },
+      "properties": {
+        "name": "掛城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "奈良県宇陀郡曽爾村掛"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.1546407,
+          34.5922665
+        ]
+      },
+      "properties": {
+        "name": "下山甲斐守城跡（奈垣）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県名張市神屋２５３０−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.16669539999998,
+          34.4925485
+        ]
+      },
+      "properties": {
+        "name": "菅野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "奈良県宇陀郡御杖村菅野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.1466164,
+          34.5796274
+        ]
+      },
+      "properties": {
+        "name": "吉原氏城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県名張市布生４７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.0555995,
+          34.5002943
+        ]
+      },
+      "properties": {
+        "name": "黒岩城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "奈良県宇陀市室生黒岩 G324+46"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.074626,
+          34.592084
+        ]
+      },
+      "properties": {
+        "name": "滝野氏城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県名張市赤目町一ノ井"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.08627819999998,
+          34.5097532
+        ]
+      },
+      "properties": {
+        "name": "住塚山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "奈良県宇陀郡宇陀市長野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.3403121,
+          34.429285899999996
+        ]
+      },
+      "properties": {
+        "name": "滝野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県松阪市飯南町有間野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.0084267,
+          34.512955999999996
+        ]
+      },
+      "properties": {
+        "name": "大和赤埴下城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "奈良県宇陀市榛原赤埴１６５９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.219978,
+          34.4065788
+        ]
+      },
+      "properties": {
+        "name": "七日市城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県松阪市飯高町七日市９６２−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.7706301,
+          34.277857399999995
+        ]
+      },
+      "properties": {
+        "name": "御座城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県志摩市志摩町御座１０３−４６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.46653369999999,
+          34.520571499999996
+        ]
+      },
+      "properties": {
+        "name": "脇谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県松阪市大河内町５１５ 1105"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.5165994,
+          34.5979208
+        ]
+      },
+      "properties": {
+        "name": "久米城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県松阪市久米町１３５８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.4604785,
+          34.5737698
+        ]
+      },
+      "properties": {
+        "name": "岩内城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県松阪市岩内町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.5670835,
+          34.4907263
+        ]
+      },
+      "properties": {
+        "name": "矢田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県多気郡多気町矢田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.8979714,
+          34.493668299999996
+        ]
+      },
+      "properties": {
+        "name": "菅島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県鳥羽市菅島町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.88071069999998,
+          34.4407344
+        ]
+      },
+      "properties": {
+        "name": "浦城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県鳥羽市浦村町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.8797668,
+          34.3824021
+        ]
+      },
+      "properties": {
+        "name": "崎山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県鳥羽市堅子町 9VJH+XW"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.8545863,
+          34.515232499999996
+        ]
+      },
+      "properties": {
+        "name": "桃取城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県鳥羽市桃取町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.2117839,
+          34.318234499999996
+        ]
+      },
+      "properties": {
+        "name": "浜津城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "東京都新島村式根島１００７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.596308,
+          34.620159
+        ]
+      },
+      "properties": {
+        "name": "笠松山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県萩市須佐３３０−７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.816816,
+          34.661271
+        ]
+      },
+      "properties": {
+        "name": "角井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県益田市須子町角井ロ ４０５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.8201613,
+          34.677589
+        ]
+      },
+      "properties": {
+        "name": "高津城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県益田市高津町地方上市イ２６１２−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.7963091,
+          34.6155343
+        ]
+      },
+      "properties": {
+        "name": "向横田頚ヶ滝城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県益田市向横田町イ３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.9892878,
+          34.7579537
+        ]
+      },
+      "properties": {
+        "name": "河内城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県浜田市三隅町河内"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.8458972,
+          34.692017199999995
+        ]
+      },
+      "properties": {
+        "name": "下本郷三百城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県益田市下本郷町１１２０−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.6659946,
+          34.6529289
+        ]
+      },
+      "properties": {
+        "name": "鰐坊山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山口県萩市下田万３２０２−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.87703299999998,
+          34.675711
+        ]
+      },
+      "properties": {
+        "name": "旧:大谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県益田市久々茂町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.9241966,
+          34.680384700000005
+        ]
+      },
+      "properties": {
+        "name": "四ツ山城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県益田市美都町朝倉５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.7300962,
+          34.6293631
+        ]
+      },
+      "properties": {
+        "name": "桜田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県益田市美濃地町３４０−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.93755059999998,
+          34.788019
+        ]
+      },
+      "properties": {
+        "name": "針藻城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県浜田市三隅町古市場１０５４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.90702249999998,
+          34.6338475
+        ]
+      },
+      "properties": {
+        "name": "高嶽城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県益田市馬谷町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.950763,
+          34.60407
+        ]
+      },
+      "properties": {
+        "name": "嶽城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県益田市匹見町澄川７９０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.80392999999998,
+          34.64983910000001
+        ]
+      },
+      "properties": {
+        "name": "虫追大嶽城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県益田市虫追町イ−５９０−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.9442424,
+          34.756076199999995
+        ]
+      },
+      "properties": {
+        "name": "三隅茶臼山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県浜田市三隅町向野田 QW4V+CM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.9222699,
+          34.7513686
+        ]
+      },
+      "properties": {
+        "name": "大山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県益田市金山町６９９ 3501"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.8113195,
+          34.646343699999996
+        ]
+      },
+      "properties": {
+        "name": "安富小倉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県益田市安富町３３４４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.05415159999998,
+          34.6940326
+        ]
+      },
+      "properties": {
+        "name": "登代城(板井川城)跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県益田市美都町板井川２５２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.394015,
+          34.836103
+        ]
+      },
+      "properties": {
+        "name": "高城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県邑智郡邑南町市木 R9PV+CJ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.3978888,
+          34.922145199999996
+        ]
+      },
+      "properties": {
+        "name": "日和城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県邑智郡邑南町日和３１２２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.00376839999998,
+          34.6728519
+        ]
+      },
+      "properties": {
+        "name": "丸茂城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県益田市美都町丸茂"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.1155139,
+          34.9274722
+        ]
+      },
+      "properties": {
+        "name": "笹山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県浜田市下府町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.211736,
+          34.923873
+        ]
+      },
+      "properties": {
+        "name": "本明城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県江津市有福温泉町本明１５０４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.310359,
+          34.616928
+        ]
+      },
+      "properties": {
+        "name": "桜尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県山県郡安芸太田町加計"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.294694,
+          34.9975425
+        ]
+      },
+      "properties": {
+        "name": "櫃城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県江津市松川町長良９８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.19461700000002,
+          34.774191
+        ]
+      },
+      "properties": {
+        "name": "一本松城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県浜田市金城町長田 Q5FV+MR"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.20237,
+          34.787849
+        ]
+      },
+      "properties": {
+        "name": "花城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県浜田市金城町波佐イ−２８６−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.0243279,
+          34.81025
+        ]
+      },
+      "properties": {
+        "name": "鳥屋尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県浜田市三隅町室谷１０８０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.35669769999998,
+          34.8808574
+        ]
+      },
+      "properties": {
+        "name": "東屋城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県邑智郡邑南町日貫"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.2101824,
+          34.974171
+        ]
+      },
+      "properties": {
+        "name": "神村城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県江津市二宮町神村羽代口"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.0567656,
+          34.8572375
+        ]
+      },
+      "properties": {
+        "name": "内田要害山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県浜田市内田町 V344+VPR"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.27601289999998,
+          34.7609764
+        ]
+      },
+      "properties": {
+        "name": "大利城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県山県郡北広島町大利原２４６−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.3375404,
+          34.9567009
+        ]
+      },
+      "properties": {
+        "name": "鳴石城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県江津市桜江町川戸３９４−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.113146,
+          34.777457999999996
+        ]
+      },
+      "properties": {
+        "name": "矢懸城跡（誰笠山）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県浜田市弥栄町長安本郷１９２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.5217093,
+          34.6462971
+        ]
+      },
+      "properties": {
+        "name": "丸山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県山県郡北広島町本地５４１２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.70473099999998,
+          34.65052
+        ]
+      },
+      "properties": {
+        "name": "田淵ヶ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県安芸高田市甲田町上小原 MP23+6V"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.709252,
+          34.655057
+        ]
+      },
+      "properties": {
+        "name": "吉常ヶ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県安芸高田市吉田町国司 MP45+2P"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.51661479999999,
+          34.6386779
+        ]
+      },
+      "properties": {
+        "name": "湯船城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県山県郡北広島町本地"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.617908,
+          34.7280766
+        ]
+      },
+      "properties": {
+        "name": "日野原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県安芸高田市美土里町本郷 PJH9+65"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.63027069999998,
+          34.9658081
+        ]
+      },
+      "properties": {
+        "name": "要路城(丁城)跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県邑智郡美郷町都賀行 XJ8J+84"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.4981709,
+          34.6462899
+        ]
+      },
+      "properties": {
+        "name": "小積山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県山県郡北広島町本地"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.54286,
+          34.695009999999996
+        ]
+      },
+      "properties": {
+        "name": "川西城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県山県郡北広島町川西 MGWV+24"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.6656237,
+          34.758125899999996
+        ]
+      },
+      "properties": {
+        "name": "河内山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県安芸高田市高宮町来女木５９７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.7583979,
+          34.7827665
+        ]
+      },
+      "properties": {
+        "name": "日原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県安芸高田市高宮町船木"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.4389386,
+          34.782813499999996
+        ]
+      },
+      "properties": {
+        "name": "野田山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県山県郡北広島町大塚１０１９−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.6314444,
+          34.866
+        ]
+      },
+      "properties": {
+        "name": "鷲影城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県邑智郡邑南町阿須那 VJ8J+9H"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.475268,
+          34.903352999999996
+        ]
+      },
+      "properties": {
+        "name": "平城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県邑智郡邑南町井原１０１１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.6090994,
+          34.7718985
+        ]
+      },
+      "properties": {
+        "name": "高橋城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県安芸高田市美土里町生田３２５２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.4791179,
+          34.6822501
+        ]
+      },
+      "properties": {
+        "name": "余谷城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県山県郡北広島町寺原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.6802113,
+          34.699799399999996
+        ]
+      },
+      "properties": {
+        "name": "風越山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県安芸高田市吉田町多治比"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.5994164,
+          34.9458141
+        ]
+      },
+      "properties": {
+        "name": "山南城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県邑智郡美郷町村之郷５３８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.1771456,
+          34.60807450000001
+        ]
+      },
+      "properties": {
+        "name": "岡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県府中市阿字町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.8524224,
+          34.8406927
+        ]
+      },
+      "properties": {
+        "name": "亀山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県三次市西河内町４４９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.982395,
+          34.790983
+        ]
+      },
+      "properties": {
+        "name": "友永城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県三次市三良坂町仁賀３２２−３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.808028,
+          34.7730234
+        ]
+      },
+      "properties": {
+        "name": "勝山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県三次市粟屋町 QRF5+66"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.0876549,
+          34.875074
+        ]
+      },
+      "properties": {
+        "name": "雲井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県庄原市高町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.84645,
+          34.629858
+        ]
+      },
+      "properties": {
+        "name": "高八山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県三次市三和町上壱１１２８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.1408882,
+          34.7153214
+        ]
+      },
+      "properties": {
+        "name": "備後平田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県府中市上下町小堀５９７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.94892289999999,
+          34.8782321
+        ]
+      },
+      "properties": {
+        "name": "小倉山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県庄原市濁川町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.0829159,
+          34.67492430000001
+        ]
+      },
+      "properties": {
+        "name": "麓山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県三次市甲奴町小童 M3FM+X5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.093223,
+          34.905108
+        ]
+      },
+      "properties": {
+        "name": "高取城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県庄原市西城町平子６４２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.93332949999999,
+          34.9336899
+        ]
+      },
+      "properties": {
+        "name": "釜峰山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県庄原市口和町湯木 WWMM+F8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.931824,
+          34.899616
+        ]
+      },
+      "properties": {
+        "name": "迫城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県庄原市口和町湯木 VWXJ+RP"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.1704428,
+          34.879013199999996
+        ]
+      },
+      "properties": {
+        "name": "國廣城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県庄原市東城町帝釈未渡"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.877181,
+          34.9123345
+        ]
+      },
+      "properties": {
+        "name": "黒岩城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県庄原市口和町大月"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.889131,
+          34.738934
+        ]
+      },
+      "properties": {
+        "name": "笠城山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県三次市糸井町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.0811654,
+          34.8800707
+        ]
+      },
+      "properties": {
+        "name": "福山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県庄原市高町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.108969,
+          34.670979599999995
+        ]
+      },
+      "properties": {
+        "name": "備後日掛山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県府中市上下町矢野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.8405173,
+          34.886567899999996
+        ]
+      },
+      "properties": {
+        "name": "福山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県三次市君田町西入君 VRPR+J6"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.8489554,
+          34.677371799999996
+        ]
+      },
+      "properties": {
+        "name": "高井地城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県三次市三和町敷名"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.1271499,
+          34.6929327
+        ]
+      },
+      "properties": {
+        "name": "翁山城跡（護国山城跡）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県府中市上下町上下"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.1148561,
+          34.7139978
+        ]
+      },
+      "properties": {
+        "name": "有福城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県府中市上下町有福"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.9254051,
+          34.7885002
+        ]
+      },
+      "properties": {
+        "name": "茶臼山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県三次市向江田町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.0354752,
+          34.7025948
+        ]
+      },
+      "properties": {
+        "name": "茶臼山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県三次市甲奴町宇賀１２０５ 宇賀公園"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.4215693,
+          34.6015911
+        ]
+      },
+      "properties": {
+        "name": "高屋城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県井原市高屋町２９７９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.37160509999998,
+          34.6691129
+        ]
+      },
+      "properties": {
+        "name": "備後串之丸城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県福山市山野町山野 妻屋橋（バス"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.5131972,
+          34.6957941
+        ]
+      },
+      "properties": {
+        "name": "小笹丸城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県井原市美星町黒忠５００"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.58699049999998,
+          34.8624771
+        ]
+      },
+      "properties": {
+        "name": "城平城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県高梁市川面町９９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.3928539,
+          34.7463208
+        ]
+      },
+      "properties": {
+        "name": "中山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県高梁市川上町高山市９９４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.394949,
+          34.818918
+        ]
+      },
+      "properties": {
+        "name": "紫城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県高梁市備中町平川３３８８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.46397,
+          34.8023003
+        ]
+      },
+      "properties": {
+        "name": "長地城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県高梁市成羽町長地３９２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.576062,
+          34.831742999999996
+        ]
+      },
+      "properties": {
+        "name": "秋町城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県高梁市高倉町１５４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.528204,
+          34.916104
+        ]
+      },
+      "properties": {
+        "name": "川崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県新見市草間"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.3439985,
+          34.6105346
+        ]
+      },
+      "properties": {
+        "name": "古代山城 茨城山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県福山市加茂町北山３９８４−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.363335,
+          34.96821
+        ]
+      },
+      "properties": {
+        "name": "見坂山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県新見市神郷下神代６３５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.2452682,
+          34.708272099999995
+        ]
+      },
+      "properties": {
+        "name": "固屋城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県神石郡神石高原町小畠"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.263266,
+          34.70104
+        ]
+      },
+      "properties": {
+        "name": "九鬼城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県神石郡神石高原町小畠"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.48728,
+          34.845135
+        ]
+      },
+      "properties": {
+        "name": "笹尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県高梁市宇治町宇治２４８０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.321012,
+          34.925506999999996
+        ]
+      },
+      "properties": {
+        "name": "白石城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県新見市哲西町畑木 W8GC+6C"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.47186159999998,
+          34.747553599999996
+        ]
+      },
+      "properties": {
+        "name": "国吉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県高梁市川上町七地２４９２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.2533647,
+          34.6138258
+        ]
+      },
+      "properties": {
+        "name": "備後田能城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県福山市新市町金丸１１９９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.2936933,
+          34.8695546
+        ]
+      },
+      "properties": {
+        "name": "比田山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県庄原市東城町久代１７１５−８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.2334884,
+          34.8270695
+        ]
+      },
+      "properties": {
+        "name": "立石城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県神石郡神石高原町永野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.43093299999998,
+          34.63382
+        ]
+      },
+      "properties": {
+        "name": "正霊山城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県井原市芳井町吉井"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.2248612,
+          34.8458998
+        ]
+      },
+      "properties": {
+        "name": "矢不立城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県神石郡神石高原町相渡６８６２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.44936099999998,
+          34.988623
+        ]
+      },
+      "properties": {
+        "name": "宮田山城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県新見市西方 XCQX+CP"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.523046,
+          34.947148999999996
+        ]
+      },
+      "properties": {
+        "name": "城山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県新見市足見３４２９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.5644807,
+          34.6054631
+        ]
+      },
+      "properties": {
+        "name": "太郎丸城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県小田郡矢掛町浅海２６５６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.846023,
+          34.716224
+        ]
+      },
+      "properties": {
+        "name": "長野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県岡山市北区長野９３５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.85603559999998,
+          34.686986999999995
+        ]
+      },
+      "properties": {
+        "name": "辛川城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県岡山市北区西辛川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.9294617,
+          34.668530499999996
+        ]
+      },
+      "properties": {
+        "name": "天神山出城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県岡山市北区天神町８−８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.073542,
+          34.802305
+        ]
+      },
+      "properties": {
+        "name": "可真下城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県赤磐市可真下５３５−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.0891644,
+          34.709263799999995
+        ]
+      },
+      "properties": {
+        "name": "福岡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県瀬戸内市福岡"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.0969175,
+          34.6629852
+        ]
+      },
+      "properties": {
+        "name": "尾張城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県瀬戸内市邑久町尾張６８１−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.2162705,
+          34.68798700000001
+        ]
+      },
+      "properties": {
+        "name": "虫明城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県瀬戸内市邑久町虫明"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.1565257,
+          34.8352451
+        ]
+      },
+      "properties": {
+        "name": "鹿帰前丸山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県和気郡和気町日笠下"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.10697629999999,
+          34.7115578
+        ]
+      },
+      "properties": {
+        "name": "丸山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県瀬戸内市長船町服部"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.2106834,
+          34.737848
+        ]
+      },
+      "properties": {
+        "name": "前山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県備前市穂浪"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.2503657,
+          34.891612099999996
+        ]
+      },
+      "properties": {
+        "name": "大股城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県備前市吉永町都留岐"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.19130289999998,
+          34.8192727
+        ]
+      },
+      "properties": {
+        "name": "宮山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県和気郡和気町吉田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7985754,
+          34.993304
+        ]
+      },
+      "properties": {
+        "name": "瀬加山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県神崎郡市川町上瀬加１７２５−１１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.4666168,
+          34.807496
+        ]
+      },
+      "properties": {
+        "name": "大島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県相生市那波大浜町２５−１１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7537098,
+          34.7865495
+        ]
+      },
+      "properties": {
+        "name": "北脇城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県高砂市北浜町北脇２０２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7318244,
+          34.7737427
+        ]
+      },
+      "properties": {
+        "name": "赤坂山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県姫路市的形町福泊２７７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.0428097,
+          34.7189377
+        ]
+      },
+      "properties": {
+        "name": "城ヶ谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県神戸市西区櫨谷町福谷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.07214199999999,
+          34.711028999999996
+        ]
+      },
+      "properties": {
+        "name": "高畑城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県神戸市西区伊川谷町前開 P36C+CV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.9091597,
+          34.72084830000001
+        ]
+      },
+      "properties": {
+        "name": "明石学園の城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県明石市魚住町清水２７４４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.9160798,
+          34.9592556
+        ]
+      },
+      "properties": {
+        "name": "宇仁山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県加西市国正町６７５ 2401"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.1804074,
+          34.697555799999996
+        ]
+      },
+      "properties": {
+        "name": "山路城跡(諏訪城跡)",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県神戸市中央区諏訪山町口一里山１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.94588539999998,
+          34.828265
+        ]
+      },
+      "properties": {
+        "name": "池尻城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県小野市池尻町１３８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.5820326,
+          34.662859399999995
+        ]
+      },
+      "properties": {
+        "name": "小阪城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大阪府東大阪市下小阪１丁目１２−２９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.37981019999998,
+          34.721263799999996
+        ]
+      },
+      "properties": {
+        "name": "平重盛之城跡（小松城跡）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県西宮市小松南町２丁目２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4593515,
+          34.8780941
+        ]
+      },
+      "properties": {
+        "name": "止々呂美城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "大阪府箕面市下止々呂美７９７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4125925,
+          34.718038299999996
+        ]
+      },
+      "properties": {
+        "name": "大覚寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県尼崎市寺町９−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.8755431,
+          34.628130999999996
+        ]
+      },
+      "properties": {
+        "name": "興隆寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "奈良県奈良市興隆寺町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.7346288,
+          34.9849502
+        ]
+      },
+      "properties": {
+        "name": "梅小路城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府京都市下京区梅小路西中町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.32807169999998,
+          34.6359534
+        ]
+      },
+      "properties": {
+        "name": "北家城城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県津市白山町北家城 J8PH+C6"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.21803359999998,
+          34.9076995
+        ]
+      },
+      "properties": {
+        "name": "相模篠山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県甲賀市甲賀町相模３５２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.026082,
+          34.628017
+        ]
+      },
+      "properties": {
+        "name": "笠間城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "奈良県宇陀市室生下笠間"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.3442303,
+          34.9605697
+        ]
+      },
+      "properties": {
+        "name": "高尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県甲賀市土山町鮎河９４１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.0752207,
+          34.6186246
+        ]
+      },
+      "properties": {
+        "name": "黒田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県名張市黒田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.2162584,
+          34.9398615
+        ]
+      },
+      "properties": {
+        "name": "佐治城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県甲賀市甲賀町小佐治"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.1408494,
+          34.737767999999996
+        ]
+      },
+      "properties": {
+        "name": "北の城城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県伊賀市依那具"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.20122849999998,
+          34.9120835
+        ]
+      },
+      "properties": {
+        "name": "高野城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県甲賀市甲賀町高野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.4546112,
+          34.6856961
+        ]
+      },
+      "properties": {
+        "name": "城山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県津市戸木町３８１９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.5739267,
+          34.9860413
+        ]
+      },
+      "properties": {
+        "name": "曽井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県四日市市曽井町５１２ 0922"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.4743843,
+          34.6597734
+        ]
+      },
+      "properties": {
+        "name": "牧城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県津市牧町２６９−４３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.4278637,
+          34.8277693
+        ]
+      },
+      "properties": {
+        "name": "伊勢林城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県津市芸濃町林１３２９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.1343913,
+          34.921569700000006
+        ]
+      },
+      "properties": {
+        "name": "土井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛知県岡崎市土井町城屋敷１７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.398438,
+          34.8266317
+        ]
+      },
+      "properties": {
+        "name": "豊川城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛知県豊川市西豊町１丁目４３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.4567878,
+          34.839239
+        ]
+      },
+      "properties": {
+        "name": "西川城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛知県豊橋市石巻西川町城山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.3449525,
+          34.7208361
+        ]
+      },
+      "properties": {
+        "name": "大崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛知県豊橋市船渡町城戸中"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.79236029999998,
+          34.771734699999996
+        ]
+      },
+      "properties": {
+        "name": "笠井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県浜松市中央区笠井町１０７１−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9067135,
+          34.8267163
+        ]
+      },
+      "properties": {
+        "name": "遠江 丸山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県周智郡森町円田９０３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.16879369999998,
+          34.644889899999995
+        ]
+      },
+      "properties": {
+        "name": "城ヶ峰城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県御前崎市比木５２９０−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.036518,
+          34.797734999999996
+        ]
+      },
+      "properties": {
+        "name": "水垂城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県掛川市初馬２１３７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7685831,
+          34.8958802
+        ]
+      },
+      "properties": {
+        "name": "丸山城跡（出城）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県伊豆市八木沢１３６８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7600986,
+          34.8261068
+        ]
+      },
+      "properties": {
+        "name": "安良里城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県賀茂郡西伊豆町安良里"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7883477,
+          34.917223899999996
+        ]
+      },
+      "properties": {
+        "name": "高谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県伊豆市土肥３８４１−５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7729823,
+          34.8132016
+        ]
+      },
+      "properties": {
+        "name": "小松城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県賀茂郡西伊豆町田子７６０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.74636239999998,
+          34.7247079
+        ]
+      },
+      "properties": {
+        "name": "雲見上の山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県賀茂郡松崎町雲見５６６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.94578199999998,
+          34.683294
+        ]
+      },
+      "properties": {
+        "name": "青葉城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県下田市東本郷２丁目２−９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.8435906,
+          34.8233289
+        ]
+      },
+      "properties": {
+        "name": "大城城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県賀茂郡西伊豆町大沢里５１４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.8550374,
+          34.6501971
+        ]
+      },
+      "properties": {
+        "name": "加納矢崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県賀茂郡南伊豆町加納４９７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.8924314,
+          34.9916477
+        ]
+      },
+      "properties": {
+        "name": "山本城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県館山市山本１０２５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.94759399999998,
+          34.9805588
+        ]
+      },
+      "properties": {
+        "name": "金沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県南房総市千倉町北朝夷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.9247885,
+          34.9718863
+        ]
+      },
+      "properties": {
+        "name": "大貫城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県南房総市千倉町大貫"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.95966970000003,
+          34.9997099
+        ]
+      },
+      "properties": {
+        "name": "久保城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県南房総市千倉町久保１４０１−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.229611,
+          35.0081859
+        ]
+      },
+      "properties": {
+        "name": "亀山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県江津市江津町 本町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.30406299999999,
+          35.020865199999996
+        ]
+      },
+      "properties": {
+        "name": "高畑城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県江津市松川町畑田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.37664429999998,
+          35.1047089
+        ]
+      },
+      "properties": {
+        "name": "温泉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県大田市温泉津町湯里１６６７−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.3329666,
+          35.0970101
+        ]
+      },
+      "properties": {
+        "name": "笹島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県大田市温泉津町温泉津Unnamed Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.2375232,
+          35.0327165
+        ]
+      },
+      "properties": {
+        "name": "鎌満城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県江津市渡津町２０７０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.3131933,
+          35.035744799999996
+        ]
+      },
+      "properties": {
+        "name": "今井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県江津市都治町９２９−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.2998232,
+          35.0311774
+        ]
+      },
+      "properties": {
+        "name": "佐賀里松城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県江津市都治町１４７０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.4026192,
+          35.1642101
+        ]
+      },
+      "properties": {
+        "name": "復城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県大田市仁摩町宅野１５２１−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.5816318,
+          35.223600999999995
+        ]
+      },
+      "properties": {
+        "name": "富山要害山城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県大田市富山町神原 6HFJ+CM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.44349,
+          35.0099
+        ]
+      },
+      "properties": {
+        "name": "湯谷城(弥山城)",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県邑智郡川本町湯谷７４０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.7624624,
+          35.3446115
+        ]
+      },
+      "properties": {
+        "name": "半分城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県出雲市上塩冶町３９８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.402537,
+          35.119436
+        ]
+      },
+      "properties": {
+        "name": "乙見城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県大田市仁摩町天河内６９９ 2305"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.7105843,
+          35.0153654
+        ]
+      },
+      "properties": {
+        "name": "高取城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県飯石郡飯南町下赤名１６８８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.7661336,
+          35.3573507
+        ]
+      },
+      "properties": {
+        "name": "向山城(大廻城)跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県出雲市上塩冶町２７５８−１１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.7458896,
+          35.3298644
+        ]
+      },
+      "properties": {
+        "name": "栗栖城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県出雲市古志町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.5789734,
+          35.26398160000001
+        ]
+      },
+      "properties": {
+        "name": "鶴ヶ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県大田市朝山町仙山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.50808329999998,
+          35.0308333
+        ]
+      },
+      "properties": {
+        "name": "小谷城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県邑智郡美郷町地頭所 2GJ5+86"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.626528,
+          35.2727881
+        ]
+      },
+      "properties": {
+        "name": "富士ヶ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県出雲市多伎町小田１５４８−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.7590147,
+          35.1726732
+        ]
+      },
+      "properties": {
+        "name": "穴見城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県雲南市掛合町穴見８５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.7688207,
+          35.326321899999996
+        ]
+      },
+      "properties": {
+        "name": "姉山城跡（朝山城跡）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県出雲市所原町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.7220723,
+          35.2212645
+        ]
+      },
+      "properties": {
+        "name": "茶磨山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県出雲市佐田町大呂３２９−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.6886038,
+          35.1227192
+        ]
+      },
+      "properties": {
+        "name": "森脇山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県飯石郡飯南町志津見"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.7148742,
+          35.2458472
+        ]
+      },
+      "properties": {
+        "name": "高櫓城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県出雲市佐田町反邊"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.7866247,
+          35.299671599999996
+        ]
+      },
+      "properties": {
+        "name": "戸倉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県出雲市稗原町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.7671394,
+          35.3474198
+        ]
+      },
+      "properties": {
+        "name": "大井谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県出雲市上塩冶町１４８３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.6699079,
+          35.240367299999996
+        ]
+      },
+      "properties": {
+        "name": "伊秩城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県出雲市佐田町一窪田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.95900799999998,
+          35.3977205
+        ]
+      },
+      "properties": {
+        "name": "大森城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県松江市宍道町上来待６９９ 0405"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.0880343,
+          35.158250300000006
+        ]
+      },
+      "properties": {
+        "name": "下横田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県仁多郡奥出雲町下横田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.05745339999999,
+          35.100778999999996
+        ]
+      },
+      "properties": {
+        "name": "甲斐の平城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県仁多郡奥出雲町大馬木１３７４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.8280208,
+          35.3320617
+        ]
+      },
+      "properties": {
+        "name": "上之郷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県出雲市上島町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.8687405,
+          35.0237054
+        ]
+      },
+      "properties": {
+        "name": "備後坂本城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "広島県庄原市高野町下門田２１７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.09163709999999,
+          35.1822327
+        ]
+      },
+      "properties": {
+        "name": "藤ヶ瀬城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県仁多郡奥出雲町横田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.95981899999998,
+          35.374869499999996
+        ]
+      },
+      "properties": {
+        "name": "大平山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県雲南市大東町遠所"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.8780089,
+          35.227542299999996
+        ]
+      },
+      "properties": {
+        "name": "六重城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県雲南市三刀屋町六重６９０ 2522"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.8176244,
+          35.1867105
+        ]
+      },
+      "properties": {
+        "name": "日倉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県雲南市掛合町掛合"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.8752028,
+          35.2584029
+        ]
+      },
+      "properties": {
+        "name": "多久和城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県雲南市三刀屋町多久和"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.4233955,
+          35.1552341
+        ]
+      },
+      "properties": {
+        "name": "赤坂城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県新見市千屋花見８５１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.228361,
+          35.3569113
+        ]
+      },
+      "properties": {
+        "name": "田中要害山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県安来市上吉田町６９２ 0043"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.278853,
+          35.3566271
+        ]
+      },
+      "properties": {
+        "name": "豊岡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県安来市伯太町東母里１１９９−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.3004849,
+          35.1084399
+        ]
+      },
+      "properties": {
+        "name": "妙見山城趾",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県日野郡日南町神福６８９ 5672"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.44052399999998,
+          35.104749999999996
+        ]
+      },
+      "properties": {
+        "name": "実山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県新見市千屋実１５８６−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.5072122,
+          35.0240696
+        ]
+      },
+      "properties": {
+        "name": "潮城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県新見市上熊谷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.57292300000003,
+          35.087095999999995
+        ]
+      },
+      "properties": {
+        "name": "円通山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県新見市大佐永富３５８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.3851603,
+          35.2011982
+        ]
+      },
+      "properties": {
+        "name": "不動ヶ嶽城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県日野郡日野町中菅９１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.3774731,
+          35.3460864
+        ]
+      },
+      "properties": {
+        "name": "小松城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県西伯郡南部町金田４４０−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.369487,
+          35.041489
+        ]
+      },
+      "properties": {
+        "name": "重藤城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県新見市神郷油野１４０９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.56596299999998,
+          35.094249999999995
+        ]
+      },
+      "properties": {
+        "name": "割亀山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県新見市大佐小阪部７２５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.2806766,
+          35.345498299999996
+        ]
+      },
+      "properties": {
+        "name": "青垣山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県安来市伯太町東母里６９２ 0207"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.44348019999998,
+          35.0008773
+        ]
+      },
+      "properties": {
+        "name": "竹野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県新見市西方１３２２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.90067009999999,
+          35.0281866
+        ]
+      },
+      "properties": {
+        "name": "平福寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県津山市里公文字平福寺 １４３６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.88731199999998,
+          35.1314541
+        ]
+      },
+      "properties": {
+        "name": "城峪城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県苫田郡鏡野町久田下原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.9545296,
+          35.0220722
+        ]
+      },
+      "properties": {
+        "name": "丸山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県津山市福田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.7659277,
+          35.0272369
+        ]
+      },
+      "properties": {
+        "name": "赤野城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県真庭市赤野５３３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.7369666,
+          35.0966198
+        ]
+      },
+      "properties": {
+        "name": "大寺畑城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県真庭市久世"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.9004946,
+          35.1522173
+        ]
+      },
+      "properties": {
+        "name": "河内城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県苫田郡鏡野町河内１１６９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.75099989999998,
+          35.1001925
+        ]
+      },
+      "properties": {
+        "name": "小寺畑城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県真庭市三阪"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.73355949999998,
+          35.203961899999996
+        ]
+      },
+      "properties": {
+        "name": "湯山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県真庭市湯原温泉８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.97472349999998,
+          35.0351054
+        ]
+      },
+      "properties": {
+        "name": "篠山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県津山市皿"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.900533,
+          35.177620399999995
+        ]
+      },
+      "properties": {
+        "name": "西屋城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県苫田郡鏡野町西屋"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.805079,
+          35.06147
+        ]
+      },
+      "properties": {
+        "name": "持家城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県真庭市上河内６３４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.9450925,
+          35.056250299999995
+        ]
+      },
+      "properties": {
+        "name": "院庄構城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県津山市院庄"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.68493469999999,
+          35.2620984
+        ]
+      },
+      "properties": {
+        "name": "粟住城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県真庭市蒜山東茅部"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.955635,
+          35.0733852
+        ]
+      },
+      "properties": {
+        "name": "局笠山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県津山市下田邑"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.744583,
+          35.059484999999995
+        ]
+      },
+      "properties": {
+        "name": "月沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県真庭市中４９３−７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.6830124,
+          35.231046299999996
+        ]
+      },
+      "properties": {
+        "name": "飯山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県真庭市藤森"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.8820426,
+          35.0362131
+        ]
+      },
+      "properties": {
+        "name": "円宗寺城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県津山市里公文上６１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.658889,
+          35.2826062
+        ]
+      },
+      "properties": {
+        "name": "日爪城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県真庭市蒜山中福田６２１−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.6578417,
+          35.0151756
+        ]
+      },
+      "properties": {
+        "name": "佐引城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県真庭市佐引"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.67571999999998,
+          35.041802
+        ]
+      },
+      "properties": {
+        "name": "月田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県真庭市月田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.8618163,
+          35.088066999999995
+        ]
+      },
+      "properties": {
+        "name": "仲仙道城山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県津山市宮部上５０８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.8677979,
+          35.062335399999995
+        ]
+      },
+      "properties": {
+        "name": "亀山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県津山市坪井下"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.7514636,
+          35.0893762
+        ]
+      },
+      "properties": {
+        "name": "羽庭城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県真庭市久世５４０−３ 社会福祉法人十字会在宅複合施設ライラック久世"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.073296,
+          35.12824
+        ]
+      },
+      "properties": {
+        "name": "堀坂城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県津山市堀坂３６４−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.025199,
+          35.126007
+        ]
+      },
+      "properties": {
+        "name": "懸縄山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県津山市下横野 42GG+C3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.10279599999998,
+          35.139451
+        ]
+      },
+      "properties": {
+        "name": "仲山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県津山市新野山形 44Q3+Q4"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.094926,
+          35.067703
+        ]
+      },
+      "properties": {
+        "name": "岩倉山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県津山市田熊１９６３−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.21719629999998,
+          35.1106805
+        ]
+      },
+      "properties": {
+        "name": "丸山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県勝田郡奈義町皆木２５８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.1252547,
+          35.1593358
+        ]
+      },
+      "properties": {
+        "name": "爪ヶ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県津山市大岩"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.3264376,
+          35.3617397
+        ]
+      },
+      "properties": {
+        "name": "小畑城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県八頭郡八頭町東６７５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.0305776,
+          35.120962899999995
+        ]
+      },
+      "properties": {
+        "name": "藤田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県津山市大篠２６１０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.2267061,
+          35.2387584
+        ]
+      },
+      "properties": {
+        "name": "唐櫃城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県八頭郡智頭町木原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.0732864,
+          35.0575326
+        ]
+      },
+      "properties": {
+        "name": "新宮城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県津山市福井"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.20562809999998,
+          35.0675542
+        ]
+      },
+      "properties": {
+        "name": "干尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岡山県美作市大町３７６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.736974,
+          35.074508
+        ]
+      },
+      "properties": {
+        "name": "寺前城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県神崎郡神河町寺前 3PFP+RQ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.78072799999998,
+          35.09380300000001
+        ]
+      },
+      "properties": {
+        "name": "大山城南小城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県神崎郡神河町杉７６０−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7952338,
+          35.251959299999996
+        ]
+      },
+      "properties": {
+        "name": "立脇一宮城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県朝来市立脇"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7360244,
+          35.0831635
+        ]
+      },
+      "properties": {
+        "name": "寺前城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県神崎郡神河町大河 3PMP+7C"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7515426,
+          35.065519
+        ]
+      },
+      "properties": {
+        "name": "柏尾山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県神崎郡神河町柏尾"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7980671,
+          35.3574528
+        ]
+      },
+      "properties": {
+        "name": "石和下城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県養父市上野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7752523,
+          35.36397
+        ]
+      },
+      "properties": {
+        "name": "稲津城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県養父市上野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.575658,
+          35.1239488
+        ]
+      },
+      "properties": {
+        "name": "安積城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県宍粟市一宮町安積"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7507606,
+          35.0079316
+        ]
+      },
+      "properties": {
+        "name": "谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県神崎郡市川町谷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.782275,
+          35.0644948
+        ]
+      },
+      "properties": {
+        "name": "高峰城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県神崎郡神河町粟賀町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7612184,
+          35.0171724
+        ]
+      },
+      "properties": {
+        "name": "播磨 飯盛山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県神崎郡市川町屋形"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7855219,
+          35.1010902
+        ]
+      },
+      "properties": {
+        "name": "大山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県神崎郡神河町大山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.4408325,
+          35.14349680000001
+        ]
+      },
+      "properties": {
+        "name": "千草城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県宍粟市千種町黒土"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.0387442,
+          35.1408432
+        ]
+      },
+      "properties": {
+        "name": "鴨野城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県丹波市柏原町鴨野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.1033422,
+          35.1576672
+        ]
+      },
+      "properties": {
+        "name": "茶臼山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県丹波市春日町野村"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.093934,
+          35.230003599999996
+        ]
+      },
+      "properties": {
+        "name": "鴨阪城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県丹波市市島町上鴨阪"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.9180094,
+          35.3028969
+        ]
+      },
+      "properties": {
+        "name": "柴城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県朝来市山東町柴６６９ 5124"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.1296171,
+          35.3145364
+        ]
+      },
+      "properties": {
+        "name": "中村城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府福知山市中"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.1701644,
+          35.112381
+        ]
+      },
+      "properties": {
+        "name": "小坂城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県丹波篠山市小坂５３２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.89561899999998,
+          35.0816035
+        ]
+      },
+      "properties": {
+        "name": "築ヶ鼻城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県多可郡多可町中区門前"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.14908889999998,
+          35.2032291
+        ]
+      },
+      "properties": {
+        "name": "長谷山城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県丹波市市島町喜多４１５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.0936865,
+          35.3062202
+        ]
+      },
+      "properties": {
+        "name": "新庄城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府福知山市新庄"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.1468204,
+          35.373292
+        ]
+      },
+      "properties": {
+        "name": "尾藤城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府福知山市大江町尾藤"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.13843319999998,
+          35.1405885
+        ]
+      },
+      "properties": {
+        "name": "東中城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県丹波市春日町東中"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.8998278,
+          35.0872114
+        ]
+      },
+      "properties": {
+        "name": "段ノ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県多可郡多可町加美区熊野部６７９ 1202"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.56090319999998,
+          35.0279096
+        ]
+      },
+      "properties": {
+        "name": "並河城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府亀岡市大井町並河１丁目３９−１７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.26828229999998,
+          35.2880075
+        ]
+      },
+      "properties": {
+        "name": "野田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府綾部市野田町井根山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4548819,
+          35.1136547
+        ]
+      },
+      "properties": {
+        "name": "黒田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府南丹市園部町黒田下河原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.26247859999998,
+          35.240274299999996
+        ]
+      },
+      "properties": {
+        "name": "経ヶ端城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府福知山市三和町上川合"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.2130187,
+          35.2990305
+        ]
+      },
+      "properties": {
+        "name": "高津城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府綾部市高津町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4199073,
+          35.1376305
+        ]
+      },
+      "properties": {
+        "name": "水戸城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府船井郡京丹波町水戸"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.22669439999999,
+          35.3323801
+        ]
+      },
+      "properties": {
+        "name": "丸山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府綾部市大畠町西谷田４６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.5235199,
+          35.0074243
+        ]
+      },
+      "properties": {
+        "name": "高岳城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府亀岡市稗田野町佐伯岩谷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.9531924,
+          35.0060401
+        ]
+      },
+      "properties": {
+        "name": "矢倉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県草津市矢倉２丁目７−４７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.9786416,
+          35.317675
+        ]
+      },
+      "properties": {
+        "name": "武曽城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県高島市武曽横山２０７４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.7192081,
+          35.0775597
+        ]
+      },
+      "properties": {
+        "name": "堂ノ庭城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府京都市北区西賀茂宮ノ谷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.9717203,
+          35.0554738
+        ]
+      },
+      "properties": {
+        "name": "三宅城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県守山市三宅町１０３３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.9789446,
+          35.0984238
+        ]
+      },
+      "properties": {
+        "name": "戸田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県守山市立田町１７１９−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.6767642,
+          35.178138
+        ]
+      },
+      "properties": {
+        "name": "中江城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府京都市右京区京北中江町吉田谷 5MHG+7P"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.9478044,
+          35.221061999999996
+        ]
+      },
+      "properties": {
+        "name": "北比良城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県大津市北比良１７３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.147366,
+          35.177122
+        ]
+      },
+      "properties": {
+        "name": "伊庭城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県東近江市伊庭町２０１１−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.36517060000003,
+          35.368865299999996
+        ]
+      },
+      "properties": {
+        "name": "西山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県米原市西山６１１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.3291623,
+          35.2369395
+        ]
+      },
+      "properties": {
+        "name": "桃原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県犬上郡多賀町杉 68PH+QM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.199671,
+          35.240216
+        ]
+      },
+      "properties": {
+        "name": "日夏城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県彦根市日夏町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.1256383,
+          35.102673599999996
+        ]
+      },
+      "properties": {
+        "name": "長福寺城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県東近江市上平木町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.3096181,
+          35.084299699999995
+        ]
+      },
+      "properties": {
+        "name": "高野城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県東近江市永源寺高野町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.7729593,
+          35.2709299
+        ]
+      },
+      "properties": {
+        "name": "中島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛知県一宮市萩原町中島城趾 字城址"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.490475,
+          35.161676
+        ]
+      },
+      "properties": {
+        "name": "野尻城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "三重県いなべ市藤原町西野尻６０１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.55155589999998,
+          35.3069874
+        ]
+      },
+      "properties": {
+        "name": "大平城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県恵那市上矢作町 8H42+QJ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.34976609999998,
+          35.2520604
+        ]
+      },
+      "properties": {
+        "name": "一色城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛知県豊田市一色町城ケ洞５４７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.3979781,
+          35.1972294
+        ]
+      },
+      "properties": {
+        "name": "槇本城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛知県豊田市槇本町尺治 尺治"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.2373386,
+          35.066988099999996
+        ]
+      },
+      "properties": {
+        "name": "梟ヶ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛知県豊田市王滝町高田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9354397,
+          35.295439
+        ]
+      },
+      "properties": {
+        "name": "八重河内城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県飯田市南信濃八重河内"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.85502510000003,
+          35.086022299999996
+        ]
+      },
+      "properties": {
+        "name": "小川城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県浜松市天竜区佐久間町大井 3VP4+C2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.796181,
+          35.3661
+        ]
+      },
+      "properties": {
+        "name": "大沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県下伊那郡阿南町富草２１２８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.904833,
+          35.306972
+        ]
+      },
+      "properties": {
+        "name": "長山城址（名古山城址）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県飯田市南信濃南和田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.8157661,
+          35.3191348
+        ]
+      },
+      "properties": {
+        "name": "上田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県下伊那郡阿南町西條１５５０−８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.960028,
+          35.352278000000005
+        ]
+      },
+      "properties": {
+        "name": "中根城跡（天神ヶ森城址）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県飯田市南信濃木沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.74900399999999,
+          35.061814999999996
+        ]
+      },
+      "properties": {
+        "name": "名倉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県浜松市天竜区佐久間町浦川 3P6X+PJ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.80553799999998,
+          35.319656
+        ]
+      },
+      "properties": {
+        "name": "八幡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県下伊那郡阿南町西條 8R94+V6"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.74652269999999,
+          35.257011899999995
+        ]
+      },
+      "properties": {
+        "name": "日差城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県下伊那郡阿南町新野２７３１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.85606110000003,
+          35.1033184
+        ]
+      },
+      "properties": {
+        "name": "日余城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県浜松市天竜区佐久間町相月 4V34+8C"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.6960167,
+          35.078600200000004
+        ]
+      },
+      "properties": {
+        "name": "別所城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "愛知県北設楽郡東栄町本郷宮平"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.946,
+          35.348056
+        ]
+      },
+      "properties": {
+        "name": "木沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県飯田市南信濃木沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3475997,
+          35.1358562
+        ]
+      },
+      "properties": {
+        "name": "大篠山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県静岡市葵区相淵 48PX+82"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.003937,
+          35.060001
+        ]
+      },
+      "properties": {
+        "name": "入手城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県浜松市天竜区春野町小俣京丸 3263+2H"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.2308445,
+          35.0376474
+        ]
+      },
+      "properties": {
+        "name": "尾沢渡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県静岡市葵区黒俣"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3254848,
+          35.1469576
+        ]
+      },
+      "properties": {
+        "name": "奥池ヶ谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県静岡市葵区柿島"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.254283,
+          35.0976869
+        ]
+      },
+      "properties": {
+        "name": "萩多和城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県静岡市葵区日向"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.1515503,
+          35.0621954
+        ]
+      },
+      "properties": {
+        "name": "徳山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県榛原郡川根本町文沢 3562+VJ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.18841759999998,
+          35.0938054
+        ]
+      },
+      "properties": {
+        "name": "護応土城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県榛原郡川根本町東藤川 榛原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3661549,
+          35.111039999999996
+        ]
+      },
+      "properties": {
+        "name": "湯島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県静岡市葵区俵沢５５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3671646,
+          35.0906644
+        ]
+      },
+      "properties": {
+        "name": "津渡野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県静岡市葵区津渡野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3450556,
+          35.0208885
+        ]
+      },
+      "properties": {
+        "name": "内牧城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県静岡市葵区内牧"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7257775,
+          35.1855
+        ]
+      },
+      "properties": {
+        "name": "間門城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県富士市間門"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.53912119999998,
+          35.134496399999996
+        ]
+      },
+      "properties": {
+        "name": "篠原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県静岡市清水区由比入山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.5387098,
+          35.0671128
+        ]
+      },
+      "properties": {
+        "name": "薩埵の本城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県静岡市清水区興津東町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.5851727,
+          35.184584099999995
+        ]
+      },
+      "properties": {
+        "name": "北松野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県富士市北松野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.56991689999998,
+          35.1128504
+        ]
+      },
+      "properties": {
+        "name": "由比城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県静岡市清水区由比 4H79+4X"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.5327354,
+          35.2635392
+        ]
+      },
+      "properties": {
+        "name": "稲子城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県富士宮市上稲子"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.4632733,
+          35.02049960000001
+        ]
+      },
+      "properties": {
+        "name": "北脇城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県静岡市清水区北脇４２３−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.9323454,
+          35.012870299999996
+        ]
+      },
+      "properties": {
+        "name": "伊豆神島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "静岡県伊豆の国市神島"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.04232969999998,
+          35.260551299999996
+        ]
+      },
+      "properties": {
+        "name": "宮城野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "神奈川県足柄下郡箱根町宮城野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.0871711,
+          35.2031466
+        ]
+      },
+      "properties": {
+        "name": "御所山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "神奈川県小田原市早川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.2956456,
+          35.3569962
+        ]
+      },
+      "properties": {
+        "name": "片岡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "神奈川県平塚市片岡１２４１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.5238326,
+          35.3429973
+        ]
+      },
+      "properties": {
+        "name": "天神山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "神奈川県鎌倉市山崎"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.2611753,
+          35.35290330000001
+        ]
+      },
+      "properties": {
+        "name": "土屋城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "神奈川県平塚市土屋１９４−３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.300601,
+          35.3543288
+        ]
+      },
+      "properties": {
+        "name": "広川城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "神奈川県平塚市広川７３４−４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.2064494,
+          35.3340422
+        ]
+      },
+      "properties": {
+        "name": "鴨沢城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "神奈川県足柄上郡中井町雑色３９０−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.6672659,
+          35.2532867
+        ]
+      },
+      "properties": {
+        "name": "小矢部城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "神奈川県横須賀市小矢部１丁目２６−１６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.9706761,
+          35.3812274
+        ]
+      },
+      "properties": {
+        "name": "中尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県木更津市中尾８３８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.9303142,
+          35.307194599999995
+        ]
+      },
+      "properties": {
+        "name": "常代城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県君津市常代８０６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.1111283,
+          35.1340479
+        ]
+      },
+      "properties": {
+        "name": "鶴見城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県鴨川市西町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.18755009999998,
+          35.3342002
+        ]
+      },
+      "properties": {
+        "name": "吉沢城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県市原市吉沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.15700239999998,
+          35.3783246
+        ]
+      },
+      "properties": {
+        "name": "雀ヶ崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県市原市藪３２３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.0608997,
+          35.0656913
+        ]
+      },
+      "properties": {
+        "name": "江見根古屋城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県鴨川市東江見２９４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.0771145,
+          35.366784599999995
+        ]
+      },
+      "properties": {
+        "name": "天神台城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県木更津市真里谷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.3549559,
+          35.2226403
+        ]
+      },
+      "properties": {
+        "name": "大寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県いすみ市下布施"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.1106921,
+          35.2268231
+        ]
+      },
+      "properties": {
+        "name": "荏柄城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県君津市滝原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.2884279,
+          35.1379046
+        ]
+      },
+      "properties": {
+        "name": "吉尾城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県勝浦市吉尾３４７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.0941514,
+          35.4360162
+        ]
+      },
+      "properties": {
+        "name": "茶臼山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県松江市山代町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.9338061,
+          35.4929655
+        ]
+      },
+      "properties": {
+        "name": "本宮山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県松江市上大野町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.9481855,
+          35.489775099999996
+        ]
+      },
+      "properties": {
+        "name": "鰐尾山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県松江市岡本町６９０ 0262"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.8886262,
+          35.5055365
+        ]
+      },
+      "properties": {
+        "name": "城山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県出雲市地合町６９１ 0071"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.03907039999999,
+          35.5309463
+        ]
+      },
+      "properties": {
+        "name": "大石山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県松江市鹿島町上講武６９０ 0801"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.9213236,
+          35.492868099999995
+        ]
+      },
+      "properties": {
+        "name": "土居城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県松江市上大野町１８１２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.1283947,
+          35.4260136
+        ]
+      },
+      "properties": {
+        "name": "古城山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県松江市東出雲町出雲郷６９９ 0108"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.1201998,
+          35.5170289
+        ]
+      },
+      "properties": {
+        "name": "城山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県松江市上本庄町６９０ 1102"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.8744559,
+          35.4851093
+        ]
+      },
+      "properties": {
+        "name": "横山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県出雲市鹿園寺町６９１ 0075"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.8006902,
+          35.466350000000006
+        ]
+      },
+      "properties": {
+        "name": "西ノ谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県出雲市久多見町 FR82+G7"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.0692439,
+          35.533369
+        ]
+      },
+      "properties": {
+        "name": "大城山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県松江市島根町大芦６９０ 0402"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.55852959999999,
+          35.5118608
+        ]
+      },
+      "properties": {
+        "name": "天守山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県西伯郡大山町下市"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.36280109999998,
+          35.418557899999996
+        ]
+      },
+      "properties": {
+        "name": "戸上城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県米子市観音寺３４−１０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.5428873,
+          35.5201643
+        ]
+      },
+      "properties": {
+        "name": "旧:長野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県西伯郡大山町豊成"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.89646439999999,
+          35.4290793
+        ]
+      },
+      "properties": {
+        "name": "十万寺城跡（太閤ヶ平）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県東伯郡湯梨浜町羽衣石Unnamed Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.73977779999998,
+          35.4795746
+        ]
+      },
+      "properties": {
+        "name": "由良城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県東伯郡北栄町由良宿２１３０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.81312599999998,
+          35.42009
+        ]
+      },
+      "properties": {
+        "name": "赤磐城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県倉吉市八幡町 CRC7+27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.790361,
+          35.4475933
+        ]
+      },
+      "properties": {
+        "name": "大谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県倉吉市大谷茶屋"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.7895776,
+          35.407047
+        ]
+      },
+      "properties": {
+        "name": "市場城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県倉吉市小鴨Unnamed Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.85969939999998,
+          35.4754273
+        ]
+      },
+      "properties": {
+        "name": "日下山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県倉吉市清谷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.62444399999998,
+          35.4969543
+        ]
+      },
+      "properties": {
+        "name": "條山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県東伯郡琴浦町太一垣２３６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.88070299999998,
+          35.432893
+        ]
+      },
+      "properties": {
+        "name": "蛇山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県東伯郡湯梨浜町羽衣石 CVMJ+57"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.9985498,
+          35.5031854
+        ]
+      },
+      "properties": {
+        "name": "大平田城跡 (南城跡)",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県鳥取市青谷町善田６８９ 0511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.9856878,
+          35.514477299999996
+        ]
+      },
+      "properties": {
+        "name": "青谷大平城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県鳥取市青谷町青谷６８９ 0501"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.85272849999998,
+          35.4819138
+        ]
+      },
+      "properties": {
+        "name": "田尻城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県東伯郡湯梨浜町田後５７０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.1943284,
+          35.407363499999995
+        ]
+      },
+      "properties": {
+        "name": "長瀬城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県鳥取市河原町長瀬６８０ 1241"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.22395609999998,
+          35.5223513
+        ]
+      },
+      "properties": {
+        "name": "丸山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県鳥取市丸山町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.15824089999998,
+          35.4548444
+        ]
+      },
+      "properties": {
+        "name": "蛇山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県鳥取市有富"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.18080659999998,
+          35.4943271
+        ]
+      },
+      "properties": {
+        "name": "鍋山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県鳥取市桂見６８０ 1417"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.21389019999998,
+          35.515982799999996
+        ]
+      },
+      "properties": {
+        "name": "秋里城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "鳥取県鳥取市秋里３３−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.6827448,
+          35.656169
+        ]
+      },
+      "properties": {
+        "name": "館山城（無南垣城）跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県美方郡香美町香住区無南垣"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7591404,
+          35.4335664
+        ]
+      },
+      "properties": {
+        "name": "青山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県養父市八鹿町青山６６７ 0001"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.55735199999998,
+          35.488834
+        ]
+      },
+      "properties": {
+        "name": "長板城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県美方郡香美町村岡区長板"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.759611,
+          35.6645684
+        ]
+      },
+      "properties": {
+        "name": "賀嶋城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市竹野町竹野４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.784306,
+          35.5164295
+        ]
+      },
+      "properties": {
+        "name": "岩井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市岩井１４９２−３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7045844,
+          35.445240399999996
+        ]
+      },
+      "properties": {
+        "name": "鶴ヶ嶺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市日高町殿６６９ 5358"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7745526,
+          35.4750577
+        ]
+      },
+      "properties": {
+        "name": "国分寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市日高町国分寺６６９ 5341"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.75732589999998,
+          35.570911599999995
+        ]
+      },
+      "properties": {
+        "name": "江野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市江野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7174908,
+          35.452048
+        ]
+      },
+      "properties": {
+        "name": "栗山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市日高町栗山６６９ 5361"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7772057,
+          35.4334997
+        ]
+      },
+      "properties": {
+        "name": "宿南城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県養父市八鹿町宿南６６７ 0003"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.74648299999998,
+          35.498165
+        ]
+      },
+      "properties": {
+        "name": "宝城城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市日高町八代 FPXW+7H"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.59336589999998,
+          35.4117489
+        ]
+      },
+      "properties": {
+        "name": "福岡西城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県美方郡香美町村岡区福岡"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.766451,
+          35.4710287
+        ]
+      },
+      "properties": {
+        "name": "祢布城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市日高町祢布 字城山446"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.79216449999998,
+          35.545017699999995
+        ]
+      },
+      "properties": {
+        "name": "本井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市岩井"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7288298,
+          35.446249699999996
+        ]
+      },
+      "properties": {
+        "name": "森山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市日高町森山１７４４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.78949369999998,
+          35.4757694
+        ]
+      },
+      "properties": {
+        "name": "伊福城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市日高町鶴岡１２２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.647111,
+          35.52313
+        ]
+      },
+      "properties": {
+        "name": "稲葉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市日高町稲葉"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.793641,
+          35.503901
+        ]
+      },
+      "properties": {
+        "name": "竹貫城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市日高町竹貫 GQ3V+HF"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.75467799999998,
+          35.4098107
+        ]
+      },
+      "properties": {
+        "name": "九鹿城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県養父市八鹿町九鹿３８０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7686784,
+          35.4073685
+        ]
+      },
+      "properties": {
+        "name": "愛宕山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県養父市八鹿町八鹿６６７ 0021"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.749361,
+          35.617597
+        ]
+      },
+      "properties": {
+        "name": "轟城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市竹野町東大谷１２９−３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7724241,
+          35.5026258
+        ]
+      },
+      "properties": {
+        "name": "八代城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市日高町奈佐路"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7969722,
+          35.5950979
+        ]
+      },
+      "properties": {
+        "name": "上山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市城崎町上山６５７−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.74592189999998,
+          35.5273067
+        ]
+      },
+      "properties": {
+        "name": "石谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市福成寺"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7566824,
+          35.5336502
+        ]
+      },
+      "properties": {
+        "name": "福成寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市福成寺"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.6623387,
+          35.521070200000004
+        ]
+      },
+      "properties": {
+        "name": "東河内城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市日高町東河内"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.7983746,
+          35.54140770000001
+        ]
+      },
+      "properties": {
+        "name": "高屋城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市高屋５２４−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.64598089999998,
+          35.50202650000001
+        ]
+      },
+      "properties": {
+        "name": "山田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市日高町山田 GJ2W+R9"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.472329,
+          35.6372985
+        ]
+      },
+      "properties": {
+        "name": "指杭城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県美方郡新温泉町指杭"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.94943899999998,
+          35.6313844
+        ]
+      },
+      "properties": {
+        "name": "三分城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府京丹後市久美浜町三分３６９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.04743879999998,
+          35.6717497
+        ]
+      },
+      "properties": {
+        "name": "島津城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府京丹後市網野町島津６２９ 3121"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.06685059999998,
+          35.6049035
+        ]
+      },
+      "properties": {
+        "name": "城ノ上城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府京丹後市峰山町長岡６２７ 0042"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.1098782,
+          35.565677
+        ]
+      },
+      "properties": {
+        "name": "三重城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府京丹後市大宮町三重８３１−４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.0377505,
+          35.6004988
+        ]
+      },
+      "properties": {
+        "name": "二箇城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府京丹後市峰山町二箇６２７ 0051"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.0539595,
+          35.5924453
+        ]
+      },
+      "properties": {
+        "name": "長尾城跡（長岡城・高城）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府京丹後市峰山町長岡６２７ 0042"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.01427479999998,
+          35.6882941
+        ]
+      },
+      "properties": {
+        "name": "浅茂川城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府京丹後市網野町浅茂川６２９ 3104"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.97188789999998,
+          35.6492332
+        ]
+      },
+      "properties": {
+        "name": "大森城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府京丹後市網野町木津７０９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.1194392,
+          35.5161892
+        ]
+      },
+      "properties": {
+        "name": "枝ケ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府与謝郡与謝野町明石"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.109962,
+          35.505043
+        ]
+      },
+      "properties": {
+        "name": "亥の代城跡（明石城跡） 本丸",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府与謝郡与謝野町温江３６０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.86372219999998,
+          35.5166901
+        ]
+      },
+      "properties": {
+        "name": "立石城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市立石３３５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.80401659999998,
+          35.423082199999996
+        ]
+      },
+      "properties": {
+        "name": "坂本城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県養父市八鹿町坂本１９８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.0931451,
+          35.5337007
+        ]
+      },
+      "properties": {
+        "name": "伊久知城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府与謝郡与謝野町幾地"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.1468354,
+          35.7145732
+        ]
+      },
+      "properties": {
+        "name": "力石城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府京丹後市丹後町神主６２７ 0000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.909059,
+          35.4511146
+        ]
+      },
+      "properties": {
+        "name": "桐野東城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市出石町桐野３９２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.0248114,
+          35.610186999999996
+        ]
+      },
+      "properties": {
+        "name": "奥吉原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府京丹後市峰山町小西"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.08236,
+          35.493888999999996
+        ]
+      },
+      "properties": {
+        "name": "金屋城址（笠野城址）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府与謝郡与謝野町金屋 F3VJ+HW"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.1820291,
+          35.5091387
+        ]
+      },
+      "properties": {
+        "name": "上宮津城跡（喜多城・小倉城）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府宮津市喜多"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.84882349999998,
+          35.4753106
+        ]
+      },
+      "properties": {
+        "name": "森井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "兵庫県豊岡市出石町荒木"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.0900651,
+          35.5275068
+        ]
+      },
+      "properties": {
+        "name": "香久山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府与謝郡与謝野町幾地６２９ 2311"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.0749937,
+          35.6341585
+        ]
+      },
+      "properties": {
+        "name": "丹波城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府京丹後市峰山町丹波１３４６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3923887,
+          35.4487275
+        ]
+      },
+      "properties": {
+        "name": "行永青山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市行永１２０９−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.5840241,
+          35.4590168
+        ]
+      },
+      "properties": {
+        "name": "岡安城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福井県大飯郡おおい町岡安"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4185502,
+          35.4690146
+        ]
+      },
+      "properties": {
+        "name": "溝尻城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市堂奥"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.2481498,
+          35.6958206
+        ]
+      },
+      "properties": {
+        "name": "菅野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府与謝郡伊根町菅野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3999959,
+          35.453178099999995
+        ]
+      },
+      "properties": {
+        "name": "行永城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市行永"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3680833,
+          35.4969825
+        ]
+      },
+      "properties": {
+        "name": "蛇島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市長浜"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.2840238,
+          35.467689899999996
+        ]
+      },
+      "properties": {
+        "name": "中山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市中山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.27596699999998,
+          35.481041499999996
+        ]
+      },
+      "properties": {
+        "name": "和江城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市和江６２４ 0956"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.32261979999998,
+          35.4476618
+        ]
+      },
+      "properties": {
+        "name": "神明山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市紺屋４７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3042358,
+          35.456796
+        ]
+      },
+      "properties": {
+        "name": "建部山東支城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市喜多４０３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.2623022,
+          35.4381098
+        ]
+      },
+      "properties": {
+        "name": "三日市朝城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市三日市"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3629517,
+          35.5126601
+        ]
+      },
+      "properties": {
+        "name": "佐波賀城跡（鴻山城）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市大丹生６２５ 0136"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.23493779999998,
+          35.5548116
+        ]
+      },
+      "properties": {
+        "name": "中津城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府宮津市中津"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.22090939999998,
+          35.421802899999996
+        ]
+      },
+      "properties": {
+        "name": "宇谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市桑飼上"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3999701,
+          35.4702585
+        ]
+      },
+      "properties": {
+        "name": "片山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市浜７９７−２６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3810168,
+          35.417250599999996
+        ]
+      },
+      "properties": {
+        "name": "白滝城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市上根６２４ 0802"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.28885599999998,
+          35.4597519
+        ]
+      },
+      "properties": {
+        "name": "佐織城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市下東"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3696671,
+          35.4693829
+        ]
+      },
+      "properties": {
+        "name": "余部上城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市余部上７５６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.229303,
+          35.544450999999995
+        ]
+      },
+      "properties": {
+        "name": "高妻山城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府宮津市上司７４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4219762,
+          35.48385220000001
+        ]
+      },
+      "properties": {
+        "name": "舞鶴市田中城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市田中町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3885164,
+          35.4258447
+        ]
+      },
+      "properties": {
+        "name": "寺田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市寺田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4086466,
+          35.472412399999996
+        ]
+      },
+      "properties": {
+        "name": "市場城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市溝尻"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3880793,
+          35.4687924
+        ]
+      },
+      "properties": {
+        "name": "四面山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市北吸"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.43116129999999,
+          35.491672
+        ]
+      },
+      "properties": {
+        "name": "吉野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市白屋"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.3835001,
+          35.4715509
+        ]
+      },
+      "properties": {
+        "name": "北吸城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市北吸"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4110991,
+          35.4456335
+        ]
+      },
+      "properties": {
+        "name": "木ノ下城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "京都府舞鶴市木ノ下"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.70009400000004,
+          35.455461
+        ]
+      },
+      "properties": {
+        "name": "谷小屋城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福井県小浜市中井 FP42+52"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.974524,
+          35.61156
+        ]
+      },
+      "properties": {
+        "name": "山上田ノ上城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福井県三方郡美浜町佐柿 JX6F+JR"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.896685,
+          35.506944
+        ]
+      },
+      "properties": {
+        "name": "岩屋城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福井県三方上中郡若狭町岩屋 GV4W+QM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.9990417,
+          35.624445699999995
+        ]
+      },
+      "properties": {
+        "name": "駈倉山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福井県三方郡美浜町佐田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.7557545,
+          35.5233805
+        ]
+      },
+      "properties": {
+        "name": "畑田城跡（甲ヶ崎城跡）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福井県小浜市福谷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.910854,
+          35.50723
+        ]
+      },
+      "properties": {
+        "name": "能登野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福井県三方上中郡若狭町上野２１−１６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.87778129999998,
+          35.4878924
+        ]
+      },
+      "properties": {
+        "name": "山内城跡（下城跡）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福井県三方上中郡若狭町山内"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.87741,
+          35.5263214
+        ]
+      },
+      "properties": {
+        "name": "田上城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福井県三方上中郡若狭町田上"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.78596009999998,
+          35.4975646
+        ]
+      },
+      "properties": {
+        "name": "高塚城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福井県小浜市太良庄"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.9000946,
+          35.5555344
+        ]
+      },
+      "properties": {
+        "name": "鳥浜城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福井県三方上中郡若狭町鳥浜"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.6502845,
+          35.4320801
+        ]
+      },
+      "properties": {
+        "name": "小村城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福井県小浜市上田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.6226391,
+          35.5226545
+        ]
+      },
+      "properties": {
+        "name": "大島丸山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福井県大飯郡おおい町犬見"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.911307,
+          35.501321
+        ]
+      },
+      "properties": {
+        "name": "若狭成願寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福井県三方上中郡若狭町成願寺 GW26+GG"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.2737355,
+          35.4659346
+        ]
+      },
+      "properties": {
+        "name": "大嶽城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県長浜市小谷上山田町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.26057799999998,
+          35.423946
+        ]
+      },
+      "properties": {
+        "name": "大寺城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県長浜市大寺町５５７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.0292138,
+          35.4185286
+        ]
+      },
+      "properties": {
+        "name": "構城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県高島市今津町福岡"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.1657836,
+          35.5234235
+        ]
+      },
+      "properties": {
+        "name": "塩津城跡（塩津城山城跡）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県長浜市西浅井町塩津浜"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.2327905,
+          35.435943
+        ]
+      },
+      "properties": {
+        "name": "南速水城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県長浜市湖北町南速水４３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.261699,
+          35.416520999999996
+        ]
+      },
+      "properties": {
+        "name": "大井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県長浜市大井町９７８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.2814361,
+          35.4089697
+        ]
+      },
+      "properties": {
+        "name": "國友城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県長浜市国友町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.27728869999999,
+          35.4878632
+        ]
+      },
+      "properties": {
+        "name": "山田山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県長浜市小谷上山田町 F7QG+4W"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.3128688,
+          35.404009099999996
+        ]
+      },
+      "properties": {
+        "name": "上坂城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県長浜市西上坂町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.2578326,
+          35.5060947
+        ]
+      },
+      "properties": {
+        "name": "飯福寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県長浜市木之本町石道４１９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.07510059999998,
+          35.4648691
+        ]
+      },
+      "properties": {
+        "name": "海津西内城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "滋賀県高島市マキノ町海津５２０ 1811"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.04161209999998,
+          35.6586077
+        ]
+      },
+      "properties": {
+        "name": "花城山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福井県敦賀市櫛川９１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.4189278,
+          35.594631899999996
+        ]
+      },
+      "properties": {
+        "name": "坂本城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県揖斐郡揖斐川町坂内坂本 HCV9+VH"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.5876346,
+          35.5005813
+        ]
+      },
+      "properties": {
+        "name": "城ヶ峰城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県揖斐郡揖斐川町上南方 GH2Q+63"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.618516,
+          35.4989695
+        ]
+      },
+      "properties": {
+        "name": "野村城跡（大谷山）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県揖斐郡揖斐川町谷汲大洞 FJX9+HC"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.6114916,
+          35.4683603
+        ]
+      },
+      "properties": {
+        "name": "中之元城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県揖斐郡大野町中之元"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.68154049999998,
+          35.405538299999996
+        ]
+      },
+      "properties": {
+        "name": "本田城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県瑞穂市本田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.6378728,
+          35.4848553
+        ]
+      },
+      "properties": {
+        "name": "上ノ城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県揖斐郡大野町大野８５１−３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.99793259999998,
+          35.5632715
+        ]
+      },
+      "properties": {
+        "name": "大門城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県関市下之保 HX7X+85"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.45911429999998,
+          35.5813746
+        ]
+      },
+      "properties": {
+        "name": "福岡城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県中津川市下野４０８−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.4789921,
+          35.5129775
+        ]
+      },
+      "properties": {
+        "name": "苗木城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県中津川市苗木"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.3769766,
+          35.4073339
+        ]
+      },
+      "properties": {
+        "name": "白金城跡（野井城跡）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県恵那市三郷町野井 C94G+WQ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.5485488,
+          35.4698432
+        ]
+      },
+      "properties": {
+        "name": "徳ノ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県中津川市中津川 FG9X+WC"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.517859,
+          35.5222513
+        ]
+      },
+      "properties": {
+        "name": "瀬戸崎城跡(推定地)",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県中津川市瀬戸"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.23160719999998,
+          35.6639945
+        ]
+      },
+      "properties": {
+        "name": "成山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県加茂郡白川町下佐見５０９ 1222"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.5705121,
+          35.536881099999995
+        ]
+      },
+      "properties": {
+        "name": "馬籠愛宕山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県中津川市馬籠 GHPC+Q6"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.3786507,
+          35.5498492
+        ]
+      },
+      "properties": {
+        "name": "大博士城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県中津川市蛭川 G9XH+WF"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.960275,
+          35.772276399999996
+        ]
+      },
+      "properties": {
+        "name": "北の城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県上伊那郡宮田村"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9121701,
+          35.588570000000004
+        ]
+      },
+      "properties": {
+        "name": "北の城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県下伊那郡松川町元大島５８１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9194625,
+          35.7687963
+        ]
+      },
+      "properties": {
+        "name": "宮田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県上伊那郡宮田村"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9798693,
+          35.7509979
+        ]
+      },
+      "properties": {
+        "name": "城村城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県駒ヶ根市東伊那"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.635211,
+          35.6547731
+        ]
+      },
+      "properties": {
+        "name": "野尻城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県木曽郡大桑村野尻"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.981113,
+          35.73677
+        ]
+      },
+      "properties": {
+        "name": "原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県駒ヶ根市中沢原１２４９４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.87658539999998,
+          35.4868869
+        ]
+      },
+      "properties": {
+        "name": "富田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県下伊那郡喬木村１２８１２−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.92745309999998,
+          35.5306211
+        ]
+      },
+      "properties": {
+        "name": "戸中城山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県下伊那郡豊丘村神稲"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9021374,
+          35.545775299999995
+        ]
+      },
+      "properties": {
+        "name": "城山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県下伊那郡豊丘村神稲"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9361425,
+          35.655555199999995
+        ]
+      },
+      "properties": {
+        "name": "飯島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県上伊那郡飯島町本郷１６０４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.0535535,
+          35.549047
+        ]
+      },
+      "properties": {
+        "name": "大河原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県下伊那郡大鹿村大河原１８９２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.0208484,
+          35.710813099999996
+        ]
+      },
+      "properties": {
+        "name": "菅沼城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県駒ヶ根市中沢２７２０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.0590753,
+          35.5889589
+        ]
+      },
+      "properties": {
+        "name": "駿木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県下伊那郡大鹿村鹿塩７５５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.0395503,
+          35.5631017
+        ]
+      },
+      "properties": {
+        "name": "松平城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県下伊那郡大鹿村大河原５２０６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.0426245,
+          35.5698882
+        ]
+      },
+      "properties": {
+        "name": "堀田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県下伊那郡大鹿村大河原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.052193,
+          35.5951923
+        ]
+      },
+      "properties": {
+        "name": "天狗森城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県下伊那郡大鹿村鹿塩"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.0862932,
+          35.777862
+        ]
+      },
+      "properties": {
+        "name": "艮城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県伊那市長谷黒河内６８８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.8771318,
+          35.534196699999995
+        ]
+      },
+      "properties": {
+        "name": "古渡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山梨県都留市鹿留２９８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.2517069,
+          35.7351265
+        ]
+      },
+      "properties": {
+        "name": "伊奈城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "東京都あきる野市伊奈"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.39719359999998,
+          35.7572688
+        ]
+      },
+      "properties": {
+        "name": "真福寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "東京都武蔵村山市中藤１丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.42651229999998,
+          35.6541406
+        ]
+      },
+      "properties": {
+        "name": "百草城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "東京都日野市百草２丁目１１−８６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7401453,
+          35.6749584
+        ]
+      },
+      "properties": {
+        "name": "星ヶ岡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "東京都千代田区永田町２丁目１０−６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.9306468,
+          35.742525199999996
+        ]
+      },
+      "properties": {
+        "name": "曽谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県市川市曽谷３丁目２１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.1658723,
+          35.4037423
+        ]
+      },
+      "properties": {
+        "name": "真ヶ谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県市原市真ケ谷８０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.43608229999998,
+          35.701194699999995
+        ]
+      },
+      "properties": {
+        "name": "山中南城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県山武郡芝山町山中８３８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.50918149999998,
+          35.7004593
+        ]
+      },
+      "properties": {
+        "name": "新村城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県匝瑳市新"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.576642,
+          35.670352
+        ]
+      },
+      "properties": {
+        "name": "野手城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県匝瑳市野手９１５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.5298455,
+          35.6946953
+        ]
+      },
+      "properties": {
+        "name": "米倉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県匝瑳市八日市場ホ２６９７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.5330491,
+          35.712579
+        ]
+      },
+      "properties": {
+        "name": "松山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県匝瑳市松山１１２８−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.408683,
+          35.7335241
+        ]
+      },
+      "properties": {
+        "name": "岩山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県山武郡芝山町岩山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.52424969999998,
+          35.7279555
+        ]
+      },
+      "properties": {
+        "name": "長岡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県匝瑳市長岡３４４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.4719785,
+          35.710932299999996
+        ]
+      },
+      "properties": {
+        "name": "大島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県香取郡多古町船越"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.40575619999998,
+          35.7037079
+        ]
+      },
+      "properties": {
+        "name": "高田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県山武郡芝山町高田３８４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.8065844,
+          35.7352372
+        ]
+      },
+      "properties": {
+        "name": "本城城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県銚子市本城町４丁目７９５−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.98171299999998,
+          35.9948541
+        ]
+      },
+      "properties": {
+        "name": "城有殿稲場城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福井県福井市城有町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.307596,
+          36.0900946
+        ]
+      },
+      "properties": {
+        "name": "三峰山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福井県吉田郡永平寺町松岡室"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.3459878,
+          35.9621959
+        ]
+      },
+      "properties": {
+        "name": "赤谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福井県福井市赤谷町１３−９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.2442892,
+          35.8975051
+        ]
+      },
+      "properties": {
+        "name": "茶臼山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福井県越前市不老町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.11943499999998,
+          36.0227879
+        ]
+      },
+      "properties": {
+        "name": "天目山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福井県福井市大森町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.4782636,
+          35.9806988
+        ]
+      },
+      "properties": {
+        "name": "西方寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福井県大野市鍬掛９１２ 0071"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.0732476,
+          36.1361669
+        ]
+      },
+      "properties": {
+        "name": "岩田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県高山市清見町夏厩"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.84684,
+          35.803822
+        ]
+      },
+      "properties": {
+        "name": "池原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県郡上市大和町内ヶ谷 RR3W+GP"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.95049799999998,
+          35.8366228
+        ]
+      },
+      "properties": {
+        "name": "高冠城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県郡上市大和町栗巣"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.200099,
+          35.865637
+        ]
+      },
+      "properties": {
+        "name": "楢尾山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県下呂市萩原町古関"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.2552242,
+          36.124370899999995
+        ]
+      },
+      "properties": {
+        "name": "飯山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県高山市千島町４９４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.23699009999999,
+          35.872098
+        ]
+      },
+      "properties": {
+        "name": "為坪城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県下呂市萩原町桜洞"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.2375418,
+          35.8899843
+        ]
+      },
+      "properties": {
+        "name": "桜谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県下呂市萩原町桜洞５０９ 2513"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.24267709999998,
+          36.1601212
+        ]
+      },
+      "properties": {
+        "name": "冬頭城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県高山市冬頭町１５００−１８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.58889980000004,
+          35.809627899999995
+        ]
+      },
+      "properties": {
+        "name": "王滝城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県木曽郡王滝村崩越１０３６−９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.339259,
+          36.0868336
+        ]
+      },
+      "properties": {
+        "name": "甲城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県高山市朝日町甲"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.4342857,
+          36.1782308
+        ]
+      },
+      "properties": {
+        "name": "和田原城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県高山市丹生川町日面"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.4521809,
+          36.1838835
+        ]
+      },
+      "properties": {
+        "name": "入道洞城城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県高山市丹生川町曽手"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9727523,
+          36.0906649
+        ]
+      },
+      "properties": {
+        "name": "飯縄城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県塩尻市中西条"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.8788793,
+          35.8367825
+        ]
+      },
+      "properties": {
+        "name": "義信城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県伊那市伊那"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9669767,
+          36.0799345
+        ]
+      },
+      "properties": {
+        "name": "西條城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県塩尻市下西条"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.8517065,
+          36.1488298
+        ]
+      },
+      "properties": {
+        "name": "殿の子城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県東筑摩郡山形村 4VX2+GM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.954861,
+          36.1777073
+        ]
+      },
+      "properties": {
+        "name": "小屋城跡（村井城跡）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県松本市小屋南１丁目３３−１７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9971995,
+          35.8177552
+        ]
+      },
+      "properties": {
+        "name": "埋橋の城上の城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県伊那市富県３９６−０６２１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9829202,
+          36.1147355
+        ]
+      },
+      "properties": {
+        "name": "高山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県塩尻市長畝"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.97127,
+          36.12341
+        ]
+      },
+      "properties": {
+        "name": "南熊井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県塩尻市片丘"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9886525,
+          35.8868187
+        ]
+      },
+      "properties": {
+        "name": "田中城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県上伊那郡箕輪町三日町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9611498,
+          36.1012933
+        ]
+      },
+      "properties": {
+        "name": "上の山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県塩尻市下西条"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9344863,
+          35.8520433
+        ]
+      },
+      "properties": {
+        "name": "小沢の古城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県伊那市小沢８０５５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.862026,
+          35.971584
+        ]
+      },
+      "properties": {
+        "name": "楡沢山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県上伊那郡辰野町横川 XVC6+JR"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9602665,
+          35.8457609
+        ]
+      },
+      "properties": {
+        "name": "狐林城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県伊那市山寺２１２４−２１１９−５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.8602234,
+          36.138554899999995
+        ]
+      },
+      "properties": {
+        "name": "旭城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県東筑摩郡朝日村古見"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9819268,
+          35.9259993
+        ]
+      },
+      "properties": {
+        "name": "大出城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県上伊那郡箕輪町中箕輪"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9465352,
+          35.8300079
+        ]
+      },
+      "properties": {
+        "name": "小黒城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県伊那市西町６０３１−９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.86139699999998,
+          36.16986
+        ]
+      },
+      "properties": {
+        "name": "竹田城跡 (秋葉城)",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県東筑摩郡山形村 5V96+WH"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.8497164,
+          36.1958001
+        ]
+      },
+      "properties": {
+        "name": "淡路城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県松本市波田鼠街道９７５４−９ 鼠街道９７５４−９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9817672,
+          35.85338610000001
+        ]
+      },
+      "properties": {
+        "name": "城林城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県伊那市上牧"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.92633999999998,
+          35.828231599999995
+        ]
+      },
+      "properties": {
+        "name": "城平の城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県伊那市西春近"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.064124,
+          36.0349006
+        ]
+      },
+      "properties": {
+        "name": "小坂城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県岡谷市湊"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.1525647,
+          35.9788351
+        ]
+      },
+      "properties": {
+        "name": "茅野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県茅野市宮川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.0637472,
+          35.8411731
+        ]
+      },
+      "properties": {
+        "name": "的場城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県伊那市高遠町長藤"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.1474749,
+          35.959083199999995
+        ]
+      },
+      "properties": {
+        "name": "御天城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県茅野市宮川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.1362993,
+          35.990181199999995
+        ]
+      },
+      "properties": {
+        "name": "干沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県茅野市宮川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.2121515,
+          36.039274299999995
+        ]
+      },
+      "properties": {
+        "name": "朝倉山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県茅野市米沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.75226519999998,
+          36.1845322
+        ]
+      },
+      "properties": {
+        "name": "小沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県甘楽郡南牧村小沢１１９８−６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.5391465,
+          36.0397023
+        ]
+      },
+      "properties": {
+        "name": "火燈城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "3288, 南相木村 南佐久郡 長野県 384-1211 日本"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.46716899999998,
+          36.175391999999995
+        ]
+      },
+      "properties": {
+        "name": "雁峰城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県佐久市中小田切"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.50069349999998,
+          36.1714857
+        ]
+      },
+      "properties": {
+        "name": "入澤城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県佐久市入澤"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.481,
+          36.165861
+        ]
+      },
+      "properties": {
+        "name": "高野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県南佐久郡佐久穂町高野町相生町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.4601472,
+          36.1877968
+        ]
+      },
+      "properties": {
+        "name": "湯原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県佐久市湯原６９２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.5203286,
+          36.1476968
+        ]
+      },
+      "properties": {
+        "name": "勝見城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県南佐久郡佐久穂町海瀬"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.5300513,
+          36.1409755
+        ]
+      },
+      "properties": {
+        "name": "大影城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県南佐久郡佐久穂町大日向"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.4852842,
+          36.1296104
+        ]
+      },
+      "properties": {
+        "name": "蟻城(北城)跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県南佐久郡佐久穂町穂積"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.4721176,
+          36.1123221
+        ]
+      },
+      "properties": {
+        "name": "本間城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県南佐久郡小海町千代里２３２３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7798645,
+          36.081755099999995
+        ]
+      },
+      "properties": {
+        "name": "諸城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県多野郡上野村勝山２３８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.4691861,
+          36.199295
+        ]
+      },
+      "properties": {
+        "name": "医王寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県佐久市臼田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.4535982,
+          36.1200924
+        ]
+      },
+      "properties": {
+        "name": "馬越城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県南佐久郡佐久穂町千代里"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.4521193,
+          36.1752363
+        ]
+      },
+      "properties": {
+        "name": "上小田切城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県佐久市上小田切５９４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.4550041,
+          36.1596326
+        ]
+      },
+      "properties": {
+        "name": "福田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県南佐久郡佐久穂町上１１８８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.0697467,
+          35.9871123
+        ]
+      },
+      "properties": {
+        "name": "下原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "埼玉県秩父市下影森６６５０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.04147709999998,
+          36.1531332
+        ]
+      },
+      "properties": {
+        "name": "真下城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県藤岡市譲原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.9862511,
+          36.1938284
+        ]
+      },
+      "properties": {
+        "name": "駒留城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県藤岡市上日野２５５６−５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.80495299999998,
+          36.090257
+        ]
+      },
+      "properties": {
+        "name": "尾附城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県多野郡神流町尾附１３９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.0795226,
+          35.9657548
+        ]
+      },
+      "properties": {
+        "name": "根岸城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "埼玉県秩父市下影森"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.88696579999998,
+          36.100907899999996
+        ]
+      },
+      "properties": {
+        "name": "小平城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県多野郡神流町小平６６９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.05354839999998,
+          36.1145096
+        ]
+      },
+      "properties": {
+        "name": "浦山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "埼玉県秩父郡皆野町金沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.0220827,
+          36.194045900000006
+        ]
+      },
+      "properties": {
+        "name": "清水山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県藤岡市高山 52VC+JR"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.05900359999998,
+          35.9519026
+        ]
+      },
+      "properties": {
+        "name": "室山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "埼玉県秩父市荒川久那"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.0732142,
+          36.0072651
+        ]
+      },
+      "properties": {
+        "name": "永田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "埼玉県秩父市寺尾３６００"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.305645,
+          35.884153
+        ]
+      },
+      "properties": {
+        "name": "岡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "埼玉県日高市台９５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7489074,
+          35.8613218
+        ]
+      },
+      "properties": {
+        "name": "戸塚城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "埼玉県川口市戸塚南２丁目１−６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.9005277,
+          35.9139888
+        ]
+      },
+      "properties": {
+        "name": "深井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県流山市西深井７９０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.90211109999998,
+          35.9959625
+        ]
+      },
+      "properties": {
+        "name": "竜見前城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県坂東市矢作２６８１−２８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.6814297,
+          35.8136021
+        ]
+      },
+      "properties": {
+        "name": "戸田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "埼玉県戸田市上戸田２丁目９−７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.8253906,
+          35.9889931
+        ]
+      },
+      "properties": {
+        "name": "金野井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県野田市東金野井８８４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.3051224,
+          35.9176818
+        ]
+      },
+      "properties": {
+        "name": "伊佐津城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県稲敷市柴崎８０６１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.2593056,
+          36.021944399999995
+        ]
+      },
+      "properties": {
+        "name": "島津城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県稲敷郡阿見町島津"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.0952007,
+          36.0856542
+        ]
+      },
+      "properties": {
+        "name": "苅間城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県つくば市苅間１８６５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.0626725,
+          35.831066
+        ]
+      },
+      "properties": {
+        "name": "名内城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県白井市名内６２１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.13911009999998,
+          35.9478291
+        ]
+      },
+      "properties": {
+        "name": "屏風ヶ崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県龍ケ崎市庄兵衛新田町２９３−３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.5452928,
+          35.8784522
+        ]
+      },
+      "properties": {
+        "name": "多田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県香取市多田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.5271091,
+          36.074602999999996
+        ]
+      },
+      "properties": {
+        "name": "山田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県行方市山田１２７０−３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.4163054,
+          36.1101463
+        ]
+      },
+      "properties": {
+        "name": "玉造城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県行方市玉造甲４５６３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.4830764,
+          35.9006907
+        ]
+      },
+      "properties": {
+        "name": "岩ヶ崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県香取市佐原ホ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.60927999999998,
+          36.007509999999996
+        ]
+      },
+      "properties": {
+        "name": "林外城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県鹿嶋市林 2J55+2P"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.70377249999999,
+          35.8095838
+        ]
+      },
+      "properties": {
+        "name": "今泉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県香取郡東庄町東今泉１０６９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.5473087,
+          36.0854274
+        ]
+      },
+      "properties": {
+        "name": "札城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県鉾田市札１３７６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.60274959999998,
+          35.992136699999996
+        ]
+      },
+      "properties": {
+        "name": "塚原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県鹿嶋市沼尾９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.59235089999999,
+          35.8124754
+        ]
+      },
+      "properties": {
+        "name": "手古内城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県香取市田部２２００"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.4317328,
+          36.0916856
+        ]
+      },
+      "properties": {
+        "name": "手賀城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県行方市手賀３５４０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.5634811,
+          35.883755199999996
+        ]
+      },
+      "properties": {
+        "name": "大倉城（二条城）跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県香取市大倉１０００−７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.5519581,
+          36.1319005
+        ]
+      },
+      "properties": {
+        "name": "武田城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県鉾田市二重作１２６３−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.5172647,
+          35.8888043
+        ]
+      },
+      "properties": {
+        "name": "香取坊山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "千葉県香取市香取"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.3372212,
+          36.2201892
+        ]
+      },
+      "properties": {
+        "name": "宮田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "島根県隠岐郡隠岐の島町東郷２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.301382,
+          36.30544
+        ]
+      },
+      "properties": {
+        "name": "津葉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県加賀市大聖寺錦町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.378174,
+          36.248453
+        ]
+      },
+      "properties": {
+        "name": "山中城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県加賀市山中温泉東町２丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.3049261,
+          36.3195761
+        ]
+      },
+      "properties": {
+        "name": "畑城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県加賀市大聖寺畑町ウ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.321179,
+          36.316974
+        ]
+      },
+      "properties": {
+        "name": "金吾ケ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県加賀市大聖寺岡町坊山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.3973766,
+          36.2751216
+        ]
+      },
+      "properties": {
+        "name": "柏野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県加賀市柏野町イ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.371069,
+          36.2496429
+        ]
+      },
+      "properties": {
+        "name": "柴田の付城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県加賀市山中温泉白山町ハ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.5576566,
+          36.524431199999995
+        ]
+      },
+      "properties": {
+        "name": "出城城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県白山市成町５６８−４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.719699,
+          36.567138
+        ]
+      },
+      "properties": {
+        "name": "伝燈寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県金沢市伝燈寺町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.637185,
+          36.295598
+        ]
+      },
+      "properties": {
+        "name": "瀬戸丸山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県白山市瀬戸申"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.5321895,
+          36.3882202
+        ]
+      },
+      "properties": {
+        "name": "岩渕城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県小松市岩渕町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.6852221,
+          36.5791912
+        ]
+      },
+      "properties": {
+        "name": "城塚山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県金沢市御所町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.7485186,
+          36.559013799999995
+        ]
+      },
+      "properties": {
+        "name": "高峠城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県金沢市釣部町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.4031195,
+          36.3359665
+        ]
+      },
+      "properties": {
+        "name": "打越城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県加賀市打越町と"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.8808288,
+          36.5934308
+        ]
+      },
+      "properties": {
+        "name": "安居城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "富山県南砺市安居"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.12308769999999,
+          36.255322899999996
+        ]
+      },
+      "properties": {
+        "name": "城見寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県飛騨市古川町信包"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.1493794,
+          36.2489231
+        ]
+      },
+      "properties": {
+        "name": "池之山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県飛騨市古川町中野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.08113699999998,
+          36.597243000000006
+        ]
+      },
+      "properties": {
+        "name": "小島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "富山県富山市山田小島７７０−１０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.1126821,
+          36.5659724
+        ]
+      },
+      "properties": {
+        "name": "高尾城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "富山県富山市八尾町坂ノ下"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.15615739999998,
+          36.5480537
+        ]
+      },
+      "properties": {
+        "name": "掛畑城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "富山県富山市八尾町上笹原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.2366016,
+          36.2086343
+        ]
+      },
+      "properties": {
+        "name": "境の峰城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県高山市国府町広瀬町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.2530473,
+          36.2118293
+        ]
+      },
+      "properties": {
+        "name": "甲山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県高山市国府町今"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.2296678,
+          36.209696
+        ]
+      },
+      "properties": {
+        "name": "中山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県高山市国府町広瀬町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.22141059999998,
+          36.210907399999996
+        ]
+      },
+      "properties": {
+        "name": "山崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県高山市国府町広瀬町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.2403573,
+          36.2145718
+        ]
+      },
+      "properties": {
+        "name": "白米城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県高山市国府町蓑輪"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.3141191,
+          36.5940288
+        ]
+      },
+      "properties": {
+        "name": "湯端城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "富山県富山市新町１３７８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.23858500000003,
+          36.570903
+        ]
+      },
+      "properties": {
+        "name": "栂ノ尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "富山県富山市市場 H6CQ+9C"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.33199700000003,
+          36.270074699999995
+        ]
+      },
+      "properties": {
+        "name": "堂殿城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県高山市上宝町蔵柱"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.2896225,
+          36.5731513
+        ]
+      },
+      "properties": {
+        "name": "樫ノ木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "富山県富山市砂見"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.3881207,
+          36.5708621
+        ]
+      },
+      "properties": {
+        "name": "論田山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "富山県富山市亀谷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.44128419999998,
+          36.25396130000001
+        ]
+      },
+      "properties": {
+        "name": "苧生茂城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県高山市上宝町苧生茂"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.3790409,
+          36.2195976
+        ]
+      },
+      "properties": {
+        "name": "五味原城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県高山市丹生川町折敷地"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.3195394,
+          36.2728307
+        ]
+      },
+      "properties": {
+        "name": "田谷城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岐阜県高山市上宝町蔵柱"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9655276,
+          36.2340004
+        ]
+      },
+      "properties": {
+        "name": "松本城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県松本市中央１丁目２４−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9724066,
+          36.3483076
+        ]
+      },
+      "properties": {
+        "name": "笹沢城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県松本市五常 8XVC+PW"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9812234,
+          36.357438699999996
+        ]
+      },
+      "properties": {
+        "name": "山笹城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県松本市五常 9X4J+M8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.8401774,
+          36.2172695
+        ]
+      },
+      "properties": {
+        "name": "亀山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県松本市梓川梓３４７５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9987506,
+          36.40351810000001
+        ]
+      },
+      "properties": {
+        "name": "西条城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県東筑摩郡筑北村西条長野自動車道"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.8916889,
+          36.3410565
+        ]
+      },
+      "properties": {
+        "name": "等々力城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県安曇野市穂高２６７９−５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.8720396,
+          36.247970099999996
+        ]
+      },
+      "properties": {
+        "name": "長尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県安曇野市三郷温"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.8977906,
+          36.4012832
+        ]
+      },
+      "properties": {
+        "name": "滝沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県北安曇郡池田町会染３３６３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.93755629999998,
+          36.4206617
+        ]
+      },
+      "properties": {
+        "name": "日岐城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県東筑摩郡生坂村北陸郷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9372313,
+          36.3559759
+        ]
+      },
+      "properties": {
+        "name": "茶臼山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県安曇野市明科東川手１００３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.84015979999998,
+          36.223144399999995
+        ]
+      },
+      "properties": {
+        "name": "北条城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県松本市梓川梓"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.8279589,
+          36.4792363
+        ]
+      },
+      "properties": {
+        "name": "大崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県大町市常盤清水７５７−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.8370238,
+          36.2697492
+        ]
+      },
+      "properties": {
+        "name": "小倉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県安曇野市三郷小倉"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9009637,
+          36.42192970000001
+        ]
+      },
+      "properties": {
+        "name": "白駒城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県北安曇郡池田町会染"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9102106,
+          36.4404214
+        ]
+      },
+      "properties": {
+        "name": "中山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県北安曇郡池田町広津３１９８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9374,
+          36.401250999999995
+        ]
+      },
+      "properties": {
+        "name": "大池城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県東筑摩郡生坂村 CW2P+GX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.2312717,
+          36.2787674
+        ]
+      },
+      "properties": {
+        "name": "中山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県上田市武石小沢根２３０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.098649,
+          36.540742
+        ]
+      },
+      "properties": {
+        "name": "赤沢城跡（塩崎新城）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県長野市篠ノ井塩崎"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.6551505,
+          36.540041099999996
+        ]
+      },
+      "properties": {
+        "name": "柳沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県吾妻郡長野原町横壁"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7288388,
+          36.569052
+        ]
+      },
+      "properties": {
+        "name": "雁ヶ沢城跡（横谷城跡）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県吾妻郡東吾妻町松谷３７８２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.54911970000003,
+          36.244465399999996
+        ]
+      },
+      "properties": {
+        "name": "笠原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県佐久市志賀"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7640085,
+          36.2327577
+        ]
+      },
+      "properties": {
+        "name": "春日田城上の城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県甘楽郡下仁田町中小坂 6QM7+4J"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7583297,
+          36.2384799
+        ]
+      },
+      "properties": {
+        "name": "尾屋敷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県甘楽郡下仁田町中小坂１１５９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.4747448,
+          36.3291598
+        ]
+      },
+      "properties": {
+        "name": "宮崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県小諸市塩野１７５０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7527021,
+          36.416742299999996
+        ]
+      },
+      "properties": {
+        "name": "鑰掛城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県高崎市倉渕町岩氷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.4755659,
+          36.2444248
+        ]
+      },
+      "properties": {
+        "name": "深堀城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県佐久市中込２８０２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.77643,
+          36.48797
+        ]
+      },
+      "properties": {
+        "name": "萩生城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県吾妻郡東吾妻町萩生２０３０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.6786698,
+          36.5005717
+        ]
+      },
+      "properties": {
+        "name": "鷹繋城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県吾妻郡東吾妻町須賀尾"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7082304,
+          36.3513782
+        ]
+      },
+      "properties": {
+        "name": "坂本城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県安中市松井田町坂本"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.0619417,
+          36.221554
+        ]
+      },
+      "properties": {
+        "name": "常岡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県藤岡市神田４７５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.0115296,
+          36.2297872
+        ]
+      },
+      "properties": {
+        "name": "瀬戸城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県高崎市吉井町多比良１８９１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.0568537,
+          36.2567221
+        ]
+      },
+      "properties": {
+        "name": "下大塚城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県藤岡市下大塚"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.0441429,
+          36.262923799999996
+        ]
+      },
+      "properties": {
+        "name": "落合城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県藤岡市上落合８９３−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.0539028,
+          36.2636256
+        ]
+      },
+      "properties": {
+        "name": "本動堂城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県藤岡市本動堂"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.92701460000004,
+          36.2337548
+        ]
+      },
+      "properties": {
+        "name": "上野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県甘楽郡甘楽町上野２３３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.417383,
+          36.332316
+        ]
+      },
+      "properties": {
+        "name": "市場城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県太田市市場町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.37576149999998,
+          36.396606399999996
+        ]
+      },
+      "properties": {
+        "name": "小俣城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県足利市小俣町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.44168109999998,
+          36.3268707
+        ]
+      },
+      "properties": {
+        "name": "坊主山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県足利市八幡町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.25452199999998,
+          36.270511899999995
+        ]
+      },
+      "properties": {
+        "name": "境城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県伊勢崎市境４８９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.2221535,
+          36.37981
+        ]
+      },
+      "properties": {
+        "name": "赤堀城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県伊勢崎市赤堀今井町２丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.4975273,
+          36.2807718
+        ]
+      },
+      "properties": {
+        "name": "高松城（川島氏館）跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県足利市高松町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.4901352,
+          36.256596
+        ]
+      },
+      "properties": {
+        "name": "鶉古城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県邑楽郡邑楽町鶉新田６−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.4323993,
+          36.2119917
+        ]
+      },
+      "properties": {
+        "name": "舞木城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県邑楽郡千代田町舞木４９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.4183096,
+          36.3053835
+        ]
+      },
+      "properties": {
+        "name": "本矢場城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県太田市矢場町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.64842000000002,
+          36.44949
+        ]
+      },
+      "properties": {
+        "name": "藤沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県栃木市鍋山町 CJXX+Q9"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.831292,
+          36.3993953
+        ]
+      },
+      "properties": {
+        "name": "箕輪城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県下野市箕輪３３９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.74295759999998,
+          36.5017537
+        ]
+      },
+      "properties": {
+        "name": "茶臼山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県鹿沼市楡木町 GP2V+P5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.72041769999998,
+          36.3911744
+        ]
+      },
+      "properties": {
+        "name": "箱森城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県栃木市箱森町２６−１６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7020217,
+          36.327205899999996
+        ]
+      },
+      "properties": {
+        "name": "新城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県栃木市大平町新 8PG2+VR"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.0958528,
+          36.2614823
+        ]
+      },
+      "properties": {
+        "name": "竜ヶ井城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県桜川市真壁町羽鳥"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.0660275,
+          36.5144442
+        ]
+      },
+      "properties": {
+        "name": "赤羽城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県芳賀郡市貝町赤羽"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.12348830000002,
+          36.347954699999995
+        ]
+      },
+      "properties": {
+        "name": "橋本城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県桜川市上城"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.09830599999998,
+          36.493409
+        ]
+      },
+      "properties": {
+        "name": "七井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県芳賀郡益子町七井３２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.0997148,
+          36.4815366
+        ]
+      },
+      "properties": {
+        "name": "館坂城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県芳賀郡益子町北中６４９−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.1716924,
+          36.4752515
+        ]
+      },
+      "properties": {
+        "name": "飯村城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県芳賀郡茂木町飯"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.13388,
+          36.21136
+        ]
+      },
+      "properties": {
+        "name": "手葉井山城（長峰城）跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県石岡市小幡 646M+GH"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.17065,
+          36.30564
+        ]
+      },
+      "properties": {
+        "name": "大増城（八幡平城）跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県石岡市大増 854C+77"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.0163048,
+          36.5243086
+        ]
+      },
+      "properties": {
+        "name": "舟戸城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県芳賀郡芳賀町西水沼"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.59523099999998,
+          36.4696794
+        ]
+      },
+      "properties": {
+        "name": "白方城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県那珂郡東海村白方６６２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.40084,
+          36.45491
+        ]
+      },
+      "properties": {
+        "name": "藤井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県水戸市藤井町 FC32+X8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.48704759999998,
+          36.485508800000005
+        ]
+      },
+      "properties": {
+        "name": "北酒出城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県那珂市北酒出"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.5306628,
+          36.2711529
+        ]
+      },
+      "properties": {
+        "name": "小館城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県東茨城郡大洗町成田町３１１ 1313"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.732781,
+          36.703911
+        ]
+      },
+      "properties": {
+        "name": "多田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県かほく市多田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.7818782,
+          36.6662672
+        ]
+      },
+      "properties": {
+        "name": "竹橋城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県河北郡津幡町竹橋東"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.7230826,
+          36.602067399999996
+        ]
+      },
+      "properties": {
+        "name": "梨木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県金沢市梨木町イ−２２８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.7907222,
+          36.8565833
+        ]
+      },
+      "properties": {
+        "name": "三日城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県羽咋郡宝達志水町荻谷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.6948758,
+          36.6006433
+        ]
+      },
+      "properties": {
+        "name": "御屋敷山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県金沢市神谷内町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.723691,
+          36.7129818
+        ]
+      },
+      "properties": {
+        "name": "上山田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県かほく市上山田ハ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.7292429,
+          36.7650663
+        ]
+      },
+      "properties": {
+        "name": "高松城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県かほく市内高松ケ−１３１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.74915600000003,
+          36.7974694
+        ]
+      },
+      "properties": {
+        "name": "免田平城跡（不破氏の居城跡）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県羽咋郡宝達志水町冬野ム 免田ム−78"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.988796,
+          36.967
+        ]
+      },
+      "properties": {
+        "name": "高坂山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "富山県氷見市平 XX8Q+QG"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9805579,
+          36.8558623
+        ]
+      },
+      "properties": {
+        "name": "朝日山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "富山県氷見市幸町２０−１２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.99577879999998,
+          36.9247666
+        ]
+      },
+      "properties": {
+        "name": "白河城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "富山県氷見市戸津宮９３５ 0415"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.4167414,
+          36.681891
+        ]
+      },
+      "properties": {
+        "name": "稲村城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "富山県中新川郡上市町稲村"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.257811,
+          36.6025399
+        ]
+      },
+      "properties": {
+        "name": "津毛城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "富山県富山市東福沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.2360807,
+          36.6422467
+        ]
+      },
+      "properties": {
+        "name": "布市城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "富山県富山市布市７２５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.4426667,
+          36.764664499999995
+        ]
+      },
+      "properties": {
+        "name": "小菅沼Ａ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "富山県魚津市小菅沼９３７ 0833"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.5792238,
+          36.951837999999995
+        ]
+      },
+      "properties": {
+        "name": "横尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "富山県下新川郡朝日町南保"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.83302,
+          36.658409999999996
+        ]
+      },
+      "properties": {
+        "name": "飯田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県北安曇郡白馬村神城 MR5M+96"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.96284269999998,
+          36.603858699999996
+        ]
+      },
+      "properties": {
+        "name": "立屋城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県上水内郡小川村小根山７９９８−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9443497,
+          36.8297296
+        ]
+      },
+      "properties": {
+        "name": "稲葉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県北安曇郡小谷村中土中谷東７６０３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.901268,
+          36.825159
+        ]
+      },
+      "properties": {
+        "name": "来馬城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県北安曇郡小谷村中小谷８８２４−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.95746739999998,
+          36.6330776
+        ]
+      },
+      "properties": {
+        "name": "馬曲城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県上水内郡小川村瀬戸川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.8975,
+          36.810096
+        ]
+      },
+      "properties": {
+        "name": "千束城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県北安曇郡小谷村中小谷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9386621,
+          36.989641299999995
+        ]
+      },
+      "properties": {
+        "name": "粟倉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県糸魚川市見滝 XWQQ+VF"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.2157614,
+          36.8327903
+        ]
+      },
+      "properties": {
+        "name": "琵琶島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県上水内郡信濃町野尻２４６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.2419999,
+          36.809356199999996
+        ]
+      },
+      "properties": {
+        "name": "割ヶ岳城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県上水内郡信濃町富濃"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.2960027,
+          36.629118399999996
+        ]
+      },
+      "properties": {
+        "name": "竹の城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県須坂市八町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3617366,
+          36.6704194
+        ]
+      },
+      "properties": {
+        "name": "城山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県上高井郡高山村高井"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.2118531,
+          36.6548582
+        ]
+      },
+      "properties": {
+        "name": "平林城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県長野市平林２丁目９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3467176,
+          36.648268
+        ]
+      },
+      "properties": {
+        "name": "雨引城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県上高井郡高山村高井"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.2556243,
+          36.6583678
+        ]
+      },
+      "properties": {
+        "name": "中俣城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県長野市柳原１８５９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.28322269999998,
+          36.7337923
+        ]
+      },
+      "properties": {
+        "name": "大倉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県長野市豊野町大倉１０２８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.249119,
+          36.7760221
+        ]
+      },
+      "properties": {
+        "name": "鼻見城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県上水内郡飯綱町芋川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.356967,
+          36.870526999999996
+        ]
+      },
+      "properties": {
+        "name": "小佐原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県飯山市小佐原６８４０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3436023,
+          36.7039535
+        ]
+      },
+      "properties": {
+        "name": "二十端城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県上高井郡小布施町雁田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.0997078,
+          36.6188765
+        ]
+      },
+      "properties": {
+        "name": "飯森城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県長野市七二会己"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.247759,
+          36.8445088
+        ]
+      },
+      "properties": {
+        "name": "古海城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県上水内郡信濃町古海３２２２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.217252,
+          36.69402720000001
+        ]
+      },
+      "properties": {
+        "name": "若槻山城.堂沢出城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県長野市浅川東条"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.066049,
+          36.6443736
+        ]
+      },
+      "properties": {
+        "name": "萩野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県長野市七二会丁丁１９７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3127984,
+          36.7593857
+        ]
+      },
+      "properties": {
+        "name": "今井北城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県中野市上今井"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3214971,
+          36.7243498
+        ]
+      },
+      "properties": {
+        "name": "草間城址（草間氏の城館跡）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県中野市草間５５７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.27610049999998,
+          36.895535699999996
+        ]
+      },
+      "properties": {
+        "name": "樽本城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県妙高市樽本甲"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7156209,
+          36.998599299999995
+        ]
+      },
+      "properties": {
+        "name": "牧畑城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県十日町市重地"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7983552,
+          36.6062332
+        ]
+      },
+      "properties": {
+        "name": "内山城跡 (仙蔵城)",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県吾妻郡中之条町下沢渡"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.4425593,
+          36.856034799999996
+        ]
+      },
+      "properties": {
+        "name": "平沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県下高井郡木島平村往郷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.4323748,
+          36.8144683
+        ]
+      },
+      "properties": {
+        "name": "落合城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県下高井郡山ノ内町夜間瀬１００８８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.4265183,
+          36.840916299999996
+        ]
+      },
+      "properties": {
+        "name": "日向城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県下高井郡木島平村往郷 RCRG+9J"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.4197069,
+          36.7590473
+        ]
+      },
+      "properties": {
+        "name": "夜交氏山城跡(大城、男城)",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県下高井郡山ノ内町平穏 QC59+JV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.43126479999998,
+          36.8739348
+        ]
+      },
+      "properties": {
+        "name": "犬飼山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県飯山市瑞穂"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.4049413,
+          36.679697399999995
+        ]
+      },
+      "properties": {
+        "name": "高原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県上高井郡高山村奥山田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7902487,
+          36.7912068
+        ]
+      },
+      "properties": {
+        "name": "浅貝寄居城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県南魚沼郡湯沢町三国"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.420794,
+          36.883182999999995
+        ]
+      },
+      "properties": {
+        "name": "神戸城跡 (向山砦)",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県飯山市瑞穂 VCMC+78"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.4044853,
+          36.854669
+        ]
+      },
+      "properties": {
+        "name": "大塚城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "長野県下高井郡木島平村往郷９２３０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.9235273,
+          36.6840024
+        ]
+      },
+      "properties": {
+        "name": "箱崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県利根郡みなかみ町布施９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.0349788,
+          36.660334999999996
+        ]
+      },
+      "properties": {
+        "name": "下沼田城跡（内藤陣屋跡）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県沼田市下沼田町４５０−２５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.90686069999998,
+          36.6308609
+        ]
+      },
+      "properties": {
+        "name": "尻高城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県吾妻郡高山村尻高"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.41455159999998,
+          36.617626099999995
+        ]
+      },
+      "properties": {
+        "name": "原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県日光市足尾町３３５６−４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.2081479,
+          36.8276623
+        ]
+      },
+      "properties": {
+        "name": "古仲城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県利根郡片品村土出３７８ 0412"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.2407783,
+          36.8269016
+        ]
+      },
+      "properties": {
+        "name": "古仲城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "群馬県利根郡片品村土出 R6GR+Q8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.9069609,
+          36.830991499999996
+        ]
+      },
+      "properties": {
+        "name": "松ケ嶺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県矢板市上太田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.8947507,
+          36.6572491
+        ]
+      },
+      "properties": {
+        "name": "逆面城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県宇都宮市逆面町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.88213389999999,
+          36.6758281
+        ]
+      },
+      "properties": {
+        "name": "中里城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県宇都宮市中里町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.76133,
+          36.665569999999995
+        ]
+      },
+      "properties": {
+        "name": "猪倉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県日光市猪倉 MQ86+6G"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.920675,
+          36.687571399999996
+        ]
+      },
+      "properties": {
+        "name": "大桶城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県宇都宮市下小倉町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.924363,
+          36.7826982
+        ]
+      },
+      "properties": {
+        "name": "堀江山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県矢板市館ノ川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.74411,
+          36.63425
+        ]
+      },
+      "properties": {
+        "name": "岩崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県日光市岩崎 JPMV+PJ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.9958289,
+          36.789115699999996
+        ]
+      },
+      "properties": {
+        "name": "龍崖城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県さくら市上河戸１４８１−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.862341,
+          36.6334677
+        ]
+      },
+      "properties": {
+        "name": "下横倉城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県宇都宮市下横倉町６５０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.92752629999998,
+          36.807802599999995
+        ]
+      },
+      "properties": {
+        "name": "矢板城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県矢板市本町４−６０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.8333886,
+          36.6259188
+        ]
+      },
+      "properties": {
+        "name": "大堀城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県宇都宮市新里町丁８３０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.6215,
+          36.669129999999996
+        ]
+      },
+      "properties": {
+        "name": "愛宕山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県日光市中小来川 MJ9C+MH"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.11297249999998,
+          36.7553011
+        ]
+      },
+      "properties": {
+        "name": "戸田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県那須郡那珂川町東戸田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.0429237,
+          36.7022845
+        ]
+      },
+      "properties": {
+        "name": "葛城城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県さくら市葛城"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.1559569,
+          36.984369
+        ]
+      },
+      "properties": {
+        "name": "館山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県那須郡那須町芦野"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.1331684,
+          36.8061945
+        ]
+      },
+      "properties": {
+        "name": "大関城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県大田原市片田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.03571399999998,
+          36.7039599
+        ]
+      },
+      "properties": {
+        "name": "葛城龍害城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県さくら市葛城"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.29156799999998,
+          36.62603
+        ]
+      },
+      "properties": {
+        "name": "小舟城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県常陸大宮市小舟 J7GR+CJ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.0693945,
+          36.80017060000001
+        ]
+      },
+      "properties": {
+        "name": "福原要害城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県大田原市福原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.149613,
+          36.708016799999996
+        ]
+      },
+      "properties": {
+        "name": "根古屋城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県那須烏山市大桶"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.04319999999998,
+          36.740273699999996
+        ]
+      },
+      "properties": {
+        "name": "金枝城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県さくら市金枝１１８０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.1156513,
+          36.6330625
+        ]
+      },
+      "properties": {
+        "name": "高館城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県那須烏山市森田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.3461663,
+          36.8433499
+        ]
+      },
+      "properties": {
+        "name": "荒蒔城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県久慈郡大子町町付"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.1188613,
+          36.7413062
+        ]
+      },
+      "properties": {
+        "name": "片平城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "栃木県那須郡那珂川町片平"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.754496,
+          36.837626
+        ]
+      },
+      "properties": {
+        "name": "湯ノ網城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県北茨城市関南町神岡下２５４６−３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.46395619999998,
+          36.6879121
+        ]
+      },
+      "properties": {
+        "name": "武生城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県常陸太田市下高倉町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.73246,
+          36.851183
+        ]
+      },
+      "properties": {
+        "name": "山小屋城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県北茨城市関本町富士ヶ丘 VP2J+FX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.48381650000002,
+          36.6345825
+        ]
+      },
+      "properties": {
+        "name": "曽目城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県常陸太田市中染町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.7221001,
+          36.782432799999995
+        ]
+      },
+      "properties": {
+        "name": "島崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "茨城県北茨城市中郷町松井６９５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.7900565,
+          36.9198442
+        ]
+      },
+      "properties": {
+        "name": "植田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県いわき市植田町館跡３−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.7893661,
+          36.887905200000006
+        ]
+      },
+      "properties": {
+        "name": "伊勢山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県いわき市勿来町四沢伊勢林"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.41169979999998,
+          36.8734019
+        ]
+      },
+      "properties": {
+        "name": "石館出城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県東白川郡矢祭町関岡 VCF6+9M"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.8937723,
+          36.9852469
+        ]
+      },
+      "properties": {
+        "name": "小名浜林城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県いわき市小名浜林城"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.692388,
+          37.178629
+        ]
+      },
+      "properties": {
+        "name": "寺尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県羽咋郡志賀町鹿頭 5MHR+FX"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.71787319999999,
+          37.2281058
+        ]
+      },
+      "properties": {
+        "name": "馬場城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県輪島市門前町馬場"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.0354386,
+          37.2803347
+        ]
+      },
+      "properties": {
+        "name": "大峰山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県鳳珠郡能登町山田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.838209,
+          37.0411526
+        ]
+      },
+      "properties": {
+        "name": "青谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県羽咋郡志賀町徳田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.0619332,
+          37.3430342
+        ]
+      },
+      "properties": {
+        "name": "神和住城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県鳳珠郡能登町神和住４２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.8117725,
+          37.1612047
+        ]
+      },
+      "properties": {
+        "name": "西ヶ谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県七尾市中島町河内８１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.87331949999998,
+          37.058571
+        ]
+      },
+      "properties": {
+        "name": "曲松城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県七尾市三引町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.0477044,
+          37.2803174
+        ]
+      },
+      "properties": {
+        "name": "山田城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県鳳珠郡能登町瑞穂２−１８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.0097836,
+          37.13864230000001
+        ]
+      },
+      "properties": {
+        "name": "向田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県七尾市能登島向田町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.26528539999998,
+          37.3406789
+        ]
+      },
+      "properties": {
+        "name": "立壁城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県鳳珠郡能登町立壁１−３９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.23984149999998,
+          37.3039774
+        ]
+      },
+      "properties": {
+        "name": "越坂城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県鳳珠郡能登町越坂"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.8476296,
+          37.0016347
+        ]
+      },
+      "properties": {
+        "name": "今井城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県糸魚川市大谷内"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3187303,
+          37.035745299999995
+        ]
+      },
+      "properties": {
+        "name": "御天山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県上越市板倉区栗沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.2097519,
+          37.0847787
+        ]
+      },
+      "properties": {
+        "name": "黒田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県上越市上湯谷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.20158569999998,
+          37.167299299999996
+        ]
+      },
+      "properties": {
+        "name": "沖見城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県上越市五智国分２１１１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.2504965,
+          37.0849731
+        ]
+      },
+      "properties": {
+        "name": "今泉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県上越市大和２丁目１０−２４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.1634815,
+          37.1088734
+        ]
+      },
+      "properties": {
+        "name": "中ノ俣城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県上越市上綱子"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7800164,
+          37.1386237
+        ]
+      },
+      "properties": {
+        "name": "新座城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県十日町市新座甲字 大城・小城"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.431193,
+          37.2451331
+        ]
+      },
+      "properties": {
+        "name": "岩手城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県上越市吉川区赤沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.75543,
+          37.041586099999996
+        ]
+      },
+      "properties": {
+        "name": "当間城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県十日町市伊達辛"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7363684,
+          37.0916066
+        ]
+      },
+      "properties": {
+        "name": "土市城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県十日町市馬場丁"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.6991146,
+          37.1899753
+        ]
+      },
+      "properties": {
+        "name": "田戸城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県十日町市越ケ沢壬"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.69665709999998,
+          37.199186
+        ]
+      },
+      "properties": {
+        "name": "赤谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県十日町市赤谷癸"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.72361039999998,
+          37.0717024
+        ]
+      },
+      "properties": {
+        "name": "桃山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県十日町市馬場乙"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7982051,
+          37.153477599999995
+        ]
+      },
+      "properties": {
+        "name": "陣ヶ轟城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県十日町市中条乙"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.776276,
+          37.3897707
+        ]
+      },
+      "properties": {
+        "name": "来迎寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県長岡市来迎寺１２７０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.73569559999999,
+          37.1221259
+        ]
+      },
+      "properties": {
+        "name": "琵琶懸城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県十日町市城之古"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7929175,
+          37.1514003
+        ]
+      },
+      "properties": {
+        "name": "峰の薬師城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県十日町市中条丙"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.5984023,
+          37.394439
+        ]
+      },
+      "properties": {
+        "name": "岩野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県柏崎市土合２５３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.6475632,
+          37.303071599999996
+        ]
+      },
+      "properties": {
+        "name": "八石城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県柏崎市善根 8J3X+62"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.73152439999998,
+          37.1387493
+        ]
+      },
+      "properties": {
+        "name": "小泉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県十日町市小泉"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.69780269999998,
+          37.303498
+        ]
+      },
+      "properties": {
+        "name": "箕輪山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県長岡市小国町横沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.6712109,
+          37.1811404
+        ]
+      },
+      "properties": {
+        "name": "室島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県十日町市室島乙"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.743537,
+          37.348192499999996
+        ]
+      },
+      "properties": {
+        "name": "阿蔵平城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県長岡市東谷 8PXV+7C"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.4430818,
+          37.1095323
+        ]
+      },
+      "properties": {
+        "name": "石橋城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県上越市安塚区石橋"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.9396667,
+          37.1394722
+        ]
+      },
+      "properties": {
+        "name": "大崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県南魚沼市大崎 4WQQ+QV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.9518441,
+          37.19687
+        ]
+      },
+      "properties": {
+        "name": "桑原城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県魚沼市虫野２１６−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.02523929999998,
+          37.313006
+        ]
+      },
+      "properties": {
+        "name": "須川城(桂ヶ瀬城)跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県魚沼市須川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.8358792,
+          37.3507518
+        ]
+      },
+      "properties": {
+        "name": "中潟城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県長岡市妙見町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.0612674,
+          37.3607739
+        ]
+      },
+      "properties": {
+        "name": "鷹待城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県魚沼市大栃山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.0011706,
+          37.231791799999996
+        ]
+      },
+      "properties": {
+        "name": "大澤城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県魚沼市大沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.9262345,
+          37.1165333
+        ]
+      },
+      "properties": {
+        "name": "六万騎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県南魚沼市水尾"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.9756287,
+          37.1935255
+        ]
+      },
+      "properties": {
+        "name": "湯谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県南魚沼市板木"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.84035450000002,
+          37.2464671
+        ]
+      },
+      "properties": {
+        "name": "内ヶ巻城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県小千谷市川井"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.9413851,
+          37.2490094
+        ]
+      },
+      "properties": {
+        "name": "根小屋城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県魚沼市田戸"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.3126606,
+          37.3512422
+        ]
+      },
+      "properties": {
+        "name": "水久保城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県南会津郡只見町只見後山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.5630481,
+          37.3581061
+        ]
+      },
+      "properties": {
+        "name": "昭和村松山牛首城趾",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県大沼郡昭和村野尻戸中沢 9H57+66"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.9178523,
+          37.359367299999995
+        ]
+      },
+      "properties": {
+        "name": "舟子城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県会津若松市大戸町大字芦牧"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.867167,
+          37.249221999999996
+        ]
+      },
+      "properties": {
+        "name": "塩生城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県南会津郡下郷町沢田若林甲１５７２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.2445746,
+          37.240184899999996
+        ]
+      },
+      "properties": {
+        "name": "牛ヶ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県岩瀬郡天栄村大里向舘"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.3190674,
+          37.2097535
+        ]
+      },
+      "properties": {
+        "name": "袖ヶ館城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県西白河郡矢吹町舘沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.2886847,
+          37.3240458
+        ]
+      },
+      "properties": {
+        "name": "舘山城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県須賀川市舘ケ岡舘山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.2640821,
+          37.1644806
+        ]
+      },
+      "properties": {
+        "name": "岩窪切岸城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県白河市小田川八幡山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.62944679999998,
+          37.1887579
+        ]
+      },
+      "properties": {
+        "name": "三坂城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県いわき市三和町中三坂羽生"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.6483378,
+          37.3599466
+        ]
+      },
+      "properties": {
+        "name": "田木山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県田村市滝根町菅谷田木山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.7074709,
+          37.0330331
+        ]
+      },
+      "properties": {
+        "name": "日ノ澤城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県いわき市遠野町上根本小谷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.640322,
+          37.358762999999996
+        ]
+      },
+      "properties": {
+        "name": "石神城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県田村市滝根町菅谷入上入"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.4231825,
+          37.105066099999995
+        ]
+      },
+      "properties": {
+        "name": "白石城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県石川郡浅川町里白石出シ−３４８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.99403039999999,
+          37.2043566
+        ]
+      },
+      "properties": {
+        "name": "東禅寺館城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県双葉郡広野町折木大平８７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.9806787,
+          37.272695899999995
+        ]
+      },
+      "properties": {
+        "name": "小山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県双葉郡楢葉町上小塙小山６−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.8608976,
+          37.1214231
+        ]
+      },
+      "properties": {
+        "name": "中柴外城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県いわき市小川町西小川下野地２５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.03695059999998,
+          37.4310928
+        ]
+      },
+      "properties": {
+        "name": "南志見城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県輪島市里町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.0087667,
+          37.4207813
+        ]
+      },
+      "properties": {
+        "name": "名舟城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県輪島市野田町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.2434353,
+          37.422024199999996
+        ]
+      },
+      "properties": {
+        "name": "萩城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県珠洲市上戸町寺社１８−９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.2327482,
+          37.4039954
+        ]
+      },
+      "properties": {
+        "name": "見鳥城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "石川県珠洲市宝立町春日野２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7226358,
+          37.4373648
+        ]
+      },
+      "properties": {
+        "name": "三丁田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県長岡市大積町１丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7791038,
+          37.5432372
+        ]
+      },
+      "properties": {
+        "name": "阿弥陀瀬城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県長岡市阿弥陀瀬"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7694899,
+          37.560221299999995
+        ]
+      },
+      "properties": {
+        "name": "小島谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県長岡市小島谷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7842348,
+          37.6074711
+        ]
+      },
+      "properties": {
+        "name": "木島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県長岡市寺泊木島"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.6367237,
+          37.4940492
+        ]
+      },
+      "properties": {
+        "name": "大崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県柏崎市西山町大崎"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.6867797,
+          37.5283
+        ]
+      },
+      "properties": {
+        "name": "荒城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県三島郡出雲崎町中山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7312724,
+          37.4500363
+        ]
+      },
+      "properties": {
+        "name": "堀之内城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県長岡市宮本堀之内町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7564638,
+          37.4810407
+        ]
+      },
+      "properties": {
+        "name": "鳥越城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県長岡市鳥越"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.76605809999998,
+          37.5317509
+        ]
+      },
+      "properties": {
+        "name": "笠抜城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県長岡市日野浦"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.72657,
+          37.41215
+        ]
+      },
+      "properties": {
+        "name": "水梨城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県長岡市大積灰下町 CP6G+VJ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.6446597,
+          37.4677834
+        ]
+      },
+      "properties": {
+        "name": "鎌田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県柏崎市西山町鎌田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7421886,
+          37.4675262
+        ]
+      },
+      "properties": {
+        "name": "岩野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県長岡市雲出町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.8032869,
+          37.608703399999996
+        ]
+      },
+      "properties": {
+        "name": "和田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県長岡市寺泊下桐"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.1138421,
+          37.5530711
+        ]
+      },
+      "properties": {
+        "name": "高城城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県三条市森町 H429+HF"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.0343924,
+          37.6175007
+        ]
+      },
+      "properties": {
+        "name": "姫ノ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県加茂市下条 J29M+2Q"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.93656819999998,
+          37.4840796
+        ]
+      },
+      "properties": {
+        "name": "椿沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県見附市亀崎町 FWJQ+P5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.8415892,
+          37.45298
+        ]
+      },
+      "properties": {
+        "name": "政宗城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県大沼郡会津美里町勝原竹原４２３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.88983299999998,
+          37.5884376
+        ]
+      },
+      "properties": {
+        "name": "浜崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県河沼郡湯川村浜崎城東１６００−３２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.8929849,
+          37.4510788
+        ]
+      },
+      "properties": {
+        "name": "岩崎山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県大沼郡会津美里町船場甲"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.69498199999998,
+          37.48688
+        ]
+      },
+      "properties": {
+        "name": "岩谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県大沼郡三島町滝谷"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.6757662,
+          37.483928299999995
+        ]
+      },
+      "properties": {
+        "name": "桧原丸山城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県大沼郡三島町桧原 FMMG+H8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.2246059,
+          37.494274
+        ]
+      },
+      "properties": {
+        "name": "中山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県郡山市熱海町中山城ノ脇"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.3431564,
+          37.4819594
+        ]
+      },
+      "properties": {
+        "name": "苗代田城(小屋館)跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県本宮市岩根小屋舘山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.2976,
+          37.482959099999995
+        ]
+      },
+      "properties": {
+        "name": "横川城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県郡山市熱海町玉川舘山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.0346708,
+          37.7255703
+        ]
+      },
+      "properties": {
+        "name": "戸山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県耶麻郡北塩原村檜原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.3576253,
+          37.469432499999996
+        ]
+      },
+      "properties": {
+        "name": "前田沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県郡山市喜久田町前田沢１丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.5353788,
+          37.7521266
+        ]
+      },
+      "properties": {
+        "name": "大波城趾",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県福島市大波水戸内"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.5420107,
+          37.6446234
+        ]
+      },
+      "properties": {
+        "name": "苅松田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県福島市飯野町舘"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.9439027,
+          37.645508
+        ]
+      },
+      "properties": {
+        "name": "牛越城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県南相馬市原町区牛越城下"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.2981907,
+          37.8393951
+        ]
+      },
+      "properties": {
+        "name": "西方城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県佐渡市羽茂大橋 R7QX+Q7"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3786474,
+          38.0608243
+        ]
+      },
+      "properties": {
+        "name": "安養寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県佐渡市安養寺"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3899176,
+          37.904041
+        ]
+      },
+      "properties": {
+        "name": "上川茂城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県佐渡市上川茂４９０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3461992,
+          38.024213200000005
+        ]
+      },
+      "properties": {
+        "name": "立野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県佐渡市泉乙３３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3682239,
+          38.017908299999995
+        ]
+      },
+      "properties": {
+        "name": "新保城趾",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県佐渡市千種２３２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.269611,
+          37.8117849
+        ]
+      },
+      "properties": {
+        "name": "元小木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県佐渡市小木町１４７３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.287591,
+          38.0083959
+        ]
+      },
+      "properties": {
+        "name": "五十里城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県佐渡市沢根五十里１０１３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.2987369,
+          37.903163299999996
+        ]
+      },
+      "properties": {
+        "name": "西三川城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県佐渡市西三川 W73X+7F"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.4305393,
+          38.108575699999996
+        ]
+      },
+      "properties": {
+        "name": "梅津城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県佐渡市梅津９２５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.4045611,
+          38.040397899999995
+        ]
+      },
+      "properties": {
+        "name": "水渡田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県佐渡市水渡田１１０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.1082459,
+          37.861871099999995
+        ]
+      },
+      "properties": {
+        "name": "亀田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県新潟市江南区城所１丁目４−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.3805784,
+          38.0087403
+        ]
+      },
+      "properties": {
+        "name": "寺尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県新発田市寺尾７４−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.5922379,
+          38.093573600000006
+        ]
+      },
+      "properties": {
+        "name": "垂水城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県岩船郡関川村湯沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.4291419,
+          38.0082345
+        ]
+      },
+      "properties": {
+        "name": "溝足城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県新発田市上荒沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.4319539,
+          38.0301986
+        ]
+      },
+      "properties": {
+        "name": "旧山居寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県胎内市飯角"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.4257201,
+          37.848532999999996
+        ]
+      },
+      "properties": {
+        "name": "笠萱城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県新発田市小戸"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.4196234,
+          38.0286887
+        ]
+      },
+      "properties": {
+        "name": "高畑城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県胎内市小牧台"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.3472425,
+          37.9088018
+        ]
+      },
+      "properties": {
+        "name": "八幡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県新発田市八幡新田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.54840679999998,
+          38.0813524
+        ]
+      },
+      "properties": {
+        "name": "内須川城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県岩船郡関川村内須川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.21383509999998,
+          37.838824699999996
+        ]
+      },
+      "properties": {
+        "name": "下条城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県阿賀野市山口町１丁目１０−１０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.48633669999998,
+          38.1347507
+        ]
+      },
+      "properties": {
+        "name": "平林加護山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県村上市葛籠山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.314418,
+          37.8482512
+        ]
+      },
+      "properties": {
+        "name": "鉢盛城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県阿賀野市女堂"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.3781859,
+          37.88609400000001
+        ]
+      },
+      "properties": {
+        "name": "米倉城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県新発田市大槻"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.14720789999998,
+          38.0847236
+        ]
+      },
+      "properties": {
+        "name": "金山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山形県南陽市金山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.0730236,
+          37.912393699999996
+        ]
+      },
+      "properties": {
+        "name": "舘山平城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山形県米沢市舘山４丁目２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.314378,
+          38.095859
+        ]
+      },
+      "properties": {
+        "name": "楢下城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山形県上山市楢下１１６４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.128601,
+          38.197208
+        ]
+      },
+      "properties": {
+        "name": "塩田城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山形県西置賜郡白鷹町十王 54WH+VC"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.6500054,
+          38.0697536
+        ]
+      },
+      "properties": {
+        "name": "館の山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県刈田郡蔵王町宮青竹"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.5395084,
+          37.8809526
+        ]
+      },
+      "properties": {
+        "name": "山崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県伊達郡国見町山崎舘"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.89688999999998,
+          37.812349999999995
+        ]
+      },
+      "properties": {
+        "name": "黒木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "福島県相馬市黒木中樋３１−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.84151,
+          38.18945000000001
+        ]
+      },
+      "properties": {
+        "name": "高舘城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県名取市高舘吉田上鹿野東 5RQR+QJ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.80153959999998,
+          38.085401399999995
+        ]
+      },
+      "properties": {
+        "name": "入間野山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県柴田郡柴田町松ケ越１丁目１−４０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.829036,
+          37.869454399999995
+        ]
+      },
+      "properties": {
+        "name": "陣林城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県伊具郡丸森町大内横手"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.21817389999998,
+          38.4390917
+        ]
+      },
+      "properties": {
+        "name": "釜谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県岩船郡粟島浦村"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.4790583,
+          38.2389747
+        ]
+      },
+      "properties": {
+        "name": "下渡山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県村上市下渡"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.57396789999999,
+          38.2365193
+        ]
+      },
+      "properties": {
+        "name": "笹平城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県村上市釜杭"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.5587146,
+          38.30116050000001
+        ]
+      },
+      "properties": {
+        "name": "関口城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県村上市関口"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.2478903,
+          38.4660276
+        ]
+      },
+      "properties": {
+        "name": "内浦城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県岩船郡粟島浦村内浦"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.5717803,
+          38.485777299999995
+        ]
+      },
+      "properties": {
+        "name": "荒川口城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県村上市荒川口 FHPC+8P"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.48345419999998,
+          38.247076299999996
+        ]
+      },
+      "properties": {
+        "name": "菅谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県村上市西興屋 6FWM+R9"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.52957849999999,
+          38.4745166
+        ]
+      },
+      "properties": {
+        "name": "立島城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県村上市立島 FGFH+RR"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.5250143,
+          38.3077507
+        ]
+      },
+      "properties": {
+        "name": "板屋越城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県村上市板屋越 8G5G+42"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.5901595,
+          38.2752949
+        ]
+      },
+      "properties": {
+        "name": "布部城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県村上市布部 7HGR+43"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.5434374,
+          38.4815093
+        ]
+      },
+      "properties": {
+        "name": "三条山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "新潟県村上市垣之内 FGJV+J9"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.32252359999998,
+          38.497132799999996
+        ]
+      },
+      "properties": {
+        "name": "白鳥城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山形県村山市白鳥"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.3548516,
+          38.381389899999995
+        ]
+      },
+      "properties": {
+        "name": "成生城跡(成生楯跡)",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山形県天童市成生"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.1651268,
+          38.2942252
+        ]
+      },
+      "properties": {
+        "name": "鳥屋ヶ森城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山形県西村山郡朝日町下芦沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.3404548,
+          38.5384746
+        ]
+      },
+      "properties": {
+        "name": "鬼甲城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山形県村山市富並"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.1307467,
+          38.309237599999996
+        ]
+      },
+      "properties": {
+        "name": "八ツ沼城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山形県西村山郡朝日町三中２４４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.3107532,
+          38.3950221
+        ]
+      },
+      "properties": {
+        "name": "溝延城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山形県西村山郡河北町溝延本丸１−３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.68284169999998,
+          38.255625099999996
+        ]
+      },
+      "properties": {
+        "name": "境野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県仙台市太白区秋保町境野漆方"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.6479463,
+          38.2417683
+        ]
+      },
+      "properties": {
+        "name": "本砂金城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県柴田郡川崎町本砂金宿"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.69051059999998,
+          38.2929865
+        ]
+      },
+      "properties": {
+        "name": "熊ヶ根城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県仙台市青葉区熊ケ根町二番"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.67629710000003,
+          38.2466431
+        ]
+      },
+      "properties": {
+        "name": "楯山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県仙台市太白区秋保町長袋舘山原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.7246102,
+          38.5824062
+        ]
+      },
+      "properties": {
+        "name": "荒館城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県加美郡加美町味ケ袋用水御林"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.40747199999998,
+          38.552111
+        ]
+      },
+      "properties": {
+        "name": "土生田楯山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山形県村山市土生田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.3197753,
+          38.501052099999995
+        ]
+      },
+      "properties": {
+        "name": "大森城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県石巻市三輪田尾崎前"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.24870579999998,
+          38.4748362
+        ]
+      },
+      "properties": {
+        "name": "塩野田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県石巻市須江舘１８−４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.2537061,
+          38.560747299999996
+        ]
+      },
+      "properties": {
+        "name": "中津山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県石巻市桃生町城内舘下５２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.45348,
+          38.5818046
+        ]
+      },
+      "properties": {
+        "name": "高古屋城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県石巻市北上町十三浜東田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.3433351,
+          38.5287705
+        ]
+      },
+      "properties": {
+        "name": "七尾城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県石巻市中野的場"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.2396694,
+          38.4967161
+        ]
+      },
+      "properties": {
+        "name": "糠塚城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県石巻市須江糠塚３−１６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.9486949,
+          38.9733181
+        ]
+      },
+      "properties": {
+        "name": "観音寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山形県酒田市麓楯ノ腰"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.79213149999998,
+          38.71230750000001
+        ]
+      },
+      "properties": {
+        "name": "井岡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山形県鶴岡市井岡和田１８１−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.913455,
+          38.889631
+        ]
+      },
+      "properties": {
+        "name": "砂越城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山形県酒田市砂越楯之内２３２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.8480625,
+          38.7769902
+        ]
+      },
+      "properties": {
+        "name": "横山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山形県東田川郡三川町横山横山１５５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.946305,
+          38.903458
+        ]
+      },
+      "properties": {
+        "name": "山楯城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山形県酒田市山楯"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.904699,
+          38.852846
+        ]
+      },
+      "properties": {
+        "name": "余目城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山形県東田川郡庄内町余目町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.975034,
+          38.789139999999996
+        ]
+      },
+      "properties": {
+        "name": "狩川城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山形県東田川郡庄内町狩川楯山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.8707176,
+          38.715046099999995
+        ]
+      },
+      "properties": {
+        "name": "松尾城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山形県鶴岡市羽黒町松尾成沢向７６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.0073209,
+          38.6934797
+        ]
+      },
+      "properties": {
+        "name": "立谷沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "山形県東田川郡庄内町科沢東山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.79145,
+          38.71989
+        ]
+      },
+      "properties": {
+        "name": "湯山城（宿ノ沢館）跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県大崎市鳴子温泉南山 PQ9R+XH"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.93948810000003,
+          38.6335688
+        ]
+      },
+      "properties": {
+        "name": "雨生沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県大崎市古川雨生沢欠下"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.9170835,
+          38.620543
+        ]
+      },
+      "properties": {
+        "name": "三丁目城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県大崎市古川清水三丁目舘１７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.9911674,
+          38.748888699999995
+        ]
+      },
+      "properties": {
+        "name": "白坂城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県栗原市築館上宮野小館山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.8101182,
+          38.7093981
+        ]
+      },
+      "properties": {
+        "name": "鵙目城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県大崎市岩出山池月鵙目舘山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.0285662,
+          38.605888
+        ]
+      },
+      "properties": {
+        "name": "通木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県大崎市田尻通木御室"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.904121,
+          38.691807
+        ]
+      },
+      "properties": {
+        "name": "葛岡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県大崎市岩出山葛岡沼田５４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.1597138,
+          38.902248199999995
+        ]
+      },
+      "properties": {
+        "name": "牧沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県一関市真柴細田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.8632389,
+          38.6895829
+        ]
+      },
+      "properties": {
+        "name": "一栗城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県大崎市岩出山下一栗片岸浦１３６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.2948757,
+          38.7123251
+        ]
+      },
+      "properties": {
+        "name": "米谷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県登米市東和町米谷根郭"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.2321084,
+          38.7585542
+        ]
+      },
+      "properties": {
+        "name": "高倉城(西永井館)跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県一関市花泉町永井薬師沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.3522203,
+          38.6275717
+        ]
+      },
+      "properties": {
+        "name": "久保城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県登米市津山町横山久保８２−７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.331109,
+          38.9944335
+        ]
+      },
+      "properties": {
+        "name": "摺沢城跡（八丁館）",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県一関市大東町摺沢但馬崎６２−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.3397148,
+          38.7740614
+        ]
+      },
+      "properties": {
+        "name": "鳩岡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県登米市東和町米川中嶋２１０−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.57352749999998,
+          38.839583
+        ]
+      },
+      "properties": {
+        "name": "南最知城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県気仙沼市長磯鳥子沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.4929173,
+          38.7705833
+        ]
+      },
+      "properties": {
+        "name": "小泉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県気仙沼市本吉町泉沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.5506672,
+          38.9166951
+        ]
+      },
+      "properties": {
+        "name": "赤岩城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県気仙沼市松川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.423843,
+          38.933609
+        ]
+      },
+      "properties": {
+        "name": "上折壁城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県一関市室根町矢越千刈田"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.4416333,
+          38.9402812
+        ]
+      },
+      "properties": {
+        "name": "金鶏城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県一関市室根町折壁聖沢１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.5827387,
+          38.872060999999995
+        ]
+      },
+      "properties": {
+        "name": "小屋館城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県気仙沼市松崎中瀬"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.5431626,
+          38.920367899999995
+        ]
+      },
+      "properties": {
+        "name": "月館城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県気仙沼市松川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.28369419999999,
+          38.7722779
+        ]
+      },
+      "properties": {
+        "name": "洲崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県登米市東和町錦織岩ノ沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.3959732,
+          38.9210772
+        ]
+      },
+      "properties": {
+        "name": "清水馬場城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県一関市千厩町清田林崎４０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.2765032,
+          38.641500799999996
+        ]
+      },
+      "properties": {
+        "name": "保呂羽城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県登米市登米町寺池銀山１０９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.6906826,
+          38.9625037
+        ]
+      },
+      "properties": {
+        "name": "広田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県陸前高田市広田町御城林"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.7161562,
+          38.9826982
+        ]
+      },
+      "properties": {
+        "name": "蛇ヶ崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県陸前高田市小友町谷地館１５７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.7258674,
+          38.990435999999995
+        ]
+      },
+      "properties": {
+        "name": "末崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県大船渡市末崎町西舘"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.6383061,
+          38.9042502
+        ]
+      },
+      "properties": {
+        "name": "唐桑城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "宮城県気仙沼市唐桑町宿浦"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.10982579999998,
+          39.3093705
+        ]
+      },
+      "properties": {
+        "name": "滝沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県由利本荘市前郷滝沢舘７９−３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.3507433,
+          39.046737199999995
+        ]
+      },
+      "properties": {
+        "name": "五郎城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県湯沢市院内銀山町五郎城"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.3716705,
+          39.246606400000005
+        ]
+      },
+      "properties": {
+        "name": "高寺城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県雄勝郡羽後町新町 69W9+3R"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.397095,
+          39.244084
+        ]
+      },
+      "properties": {
+        "name": "八反田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県雄勝郡羽後町新町最上山１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.569631,
+          39.247392999999995
+        ]
+      },
+      "properties": {
+        "name": "馬鞍城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県横手市平鹿町醍醐城廻 6HW9+XV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.484751,
+          39.2662325
+        ]
+      },
+      "properties": {
+        "name": "浅舞城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県横手市平鹿町浅舞館廻２１４−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.543369,
+          39.201699
+        ]
+      },
+      "properties": {
+        "name": "増田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県横手市増田町増田土肥館１４１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.50708,
+          39.29096
+        ]
+      },
+      "properties": {
+        "name": "吉田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県横手市平鹿町上吉田吉田９５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.55833769999998,
+          39.1843303
+        ]
+      },
+      "properties": {
+        "name": "三又城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県湯沢市駒形町三又高村１５４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.5611135,
+          39.3148364
+        ]
+      },
+      "properties": {
+        "name": "平城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県横手市平城町５−２９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.53074999999998,
+          39.274249999999995
+        ]
+      },
+      "properties": {
+        "name": "樋ノ口城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県横手市平鹿町醍醐館ノ山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.53516399999998,
+          39.198555
+        ]
+      },
+      "properties": {
+        "name": "八木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県横手市増田町八木屋布合２２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.4783693,
+          39.2525604
+        ]
+      },
+      "properties": {
+        "name": "鍋倉城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県横手市平鹿町下鍋倉城戸１０８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.48957629999998,
+          39.313466
+        ]
+      },
+      "properties": {
+        "name": "八柏城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県横手市大雄八柏４８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.0913996,
+          39.0058721
+        ]
+      },
+      "properties": {
+        "name": "泉ケ城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県西磐井郡平泉町平泉泉ケ城"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.998584,
+          39.287234999999995
+        ]
+      },
+      "properties": {
+        "name": "上煤孫城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県北上市大通り１丁目９ 39°17'14. 140°59'54."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.1555149,
+          39.3111797
+        ]
+      },
+      "properties": {
+        "name": "黒岩城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県北上市黒岩１８地割"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.0631707,
+          39.1614627
+        ]
+      },
+      "properties": {
+        "name": "細越城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県胆沢郡金ケ崎町永栄寺窪１−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.2253844,
+          39.1964027
+        ]
+      },
+      "properties": {
+        "name": "長信田城(長志田城) 跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県奥州市江刺玉里巽沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.2597538,
+          39.2217365
+        ]
+      },
+      "properties": {
+        "name": "羽山城(鳥羽館) 跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県奥州市江刺玉里長倉沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.5908069,
+          39.19516
+        ]
+      },
+      "properties": {
+        "name": "上有住城(八日町城･八幡館)跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県気仙郡住田町上有住櫃割"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.2433,
+          39.32599
+        ]
+      },
+      "properties": {
+        "name": "倉沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県花巻市東和町倉沢４区 86GV+98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.408763,
+          39.016675
+        ]
+      },
+      "properties": {
+        "name": "新山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県一関市大東町大原八幡舘１３−４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.26329909999998,
+          39.1945415
+        ]
+      },
+      "properties": {
+        "name": "倉迫城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県奥州市江刺藤里本杵"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.65950999999998,
+          39.001889999999996
+        ]
+      },
+      "properties": {
+        "name": "米ヶ崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県陸前高田市米崎町館６５−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.8310627,
+          39.1490973
+        ]
+      },
+      "properties": {
+        "name": "吉浜城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県大船渡市三陸町吉浜中井８１−６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.7376292,
+          39.0662915
+        ]
+      },
+      "properties": {
+        "name": "赤崎城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県大船渡市赤崎町山口８０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.1078396,
+          39.6470695
+        ]
+      },
+      "properties": {
+        "name": "白華城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県秋田市豊岩豊巻杉ノ下"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.26465600000003,
+          39.555104
+        ]
+      },
+      "properties": {
+        "name": "馬場城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県大仙市協和下淀川２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.3279968,
+          39.5285125
+        ]
+      },
+      "properties": {
+        "name": "打越城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県大仙市大沢郷寺白坂館３１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.31126,
+          39.630947
+        ]
+      },
+      "properties": {
+        "name": "内城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県大仙市協和船岡一ノ渡２０２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.3193257,
+          39.6077903
+        ]
+      },
+      "properties": {
+        "name": "唐松城址",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県大仙市協和境唐松岳"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.5381964,
+          39.572868799999995
+        ]
+      },
+      "properties": {
+        "name": "水平城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県仙北市角館町下延上野坊"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.65105,
+          39.6317027
+        ]
+      },
+      "properties": {
+        "name": "真崎城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県仙北市田沢湖卒田０１４ 1113"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.44935999999998,
+          39.475577
+        ]
+      },
+      "properties": {
+        "name": "松山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県大仙市花館松山１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.6210008,
+          39.475786899999996
+        ]
+      },
+      "properties": {
+        "name": "元本堂城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県仙北郡美郷町浪花館ノ沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.63119369999998,
+          39.5212609
+        ]
+      },
+      "properties": {
+        "name": "太田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県大仙市太田町太田築地古館６５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.50111880000003,
+          39.441885299999996
+        ]
+      },
+      "properties": {
+        "name": "孔雀城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県大仙市大曲上高畑２７−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.61428999999998,
+          39.637541
+        ]
+      },
+      "properties": {
+        "name": "梅沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県仙北市田沢湖梅沢 JJQ7+2P"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.549222,
+          39.673209
+        ]
+      },
+      "properties": {
+        "name": "小山田城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県仙北市西木町小山田石川原"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.429529,
+          39.411905999999995
+        ]
+      },
+      "properties": {
+        "name": "高寺山城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県大仙市内小友高寺１５４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.4935439,
+          39.4587121
+        ]
+      },
+      "properties": {
+        "name": "戸蒔城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県大仙市大曲戸巻町松ノ木69−３"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.3037165,
+          39.476805
+        ]
+      },
+      "properties": {
+        "name": "奥津城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県花巻市大迫町内川目第４６地割０２８ 3201"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.2033004,
+          39.580407099999995
+        ]
+      },
+      "properties": {
+        "name": "長岡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県紫波郡紫波町東長岡竹洞１５−５"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.66947159999998,
+          39.5163572
+        ]
+      },
+      "properties": {
+        "name": "小国城趾(洞ヶ沢遺跡)",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県宮古市小国５６−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.8034696,
+          39.9556277
+        ]
+      },
+      "properties": {
+        "name": "染川城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県男鹿市男鹿中山町下宮ノ沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.1612792,
+          39.920102199999995
+        ]
+      },
+      "properties": {
+        "name": "史跡 馬場目城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県南秋田郡五城目町馬場目門前"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.3673973,
+          40.1153543
+        ]
+      },
+      "properties": {
+        "name": "米内沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県北秋田市米内沢長下"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.15585,
+          39.953289999999996
+        ]
+      },
+      "properties": {
+        "name": "山内城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県南秋田郡五城目町富津内富田大ナコ−５９"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.342745,
+          40.125001
+        ]
+      },
+      "properties": {
+        "name": "阿仁城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県北秋田市本城摩当沢 48GV+23"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.39039400000001,
+          40.036797
+        ]
+      },
+      "properties": {
+        "name": "風張城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県北秋田市阿仁吉田上ミ上野 29PR+P5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.7980938,
+          40.1590474
+        ]
+      },
+      "properties": {
+        "name": "大里城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県鹿角市八幡平堀合"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.5766837,
+          39.8558829
+        ]
+      },
+      "properties": {
+        "name": "戸沢城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県仙北市西木町上桧木内西下戸沢７"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.76783749999998,
+          40.1157355
+        ]
+      },
+      "properties": {
+        "name": "長牛城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県鹿角市八幡平長牛５０−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.597926,
+          40.175664
+        ]
+      },
+      "properties": {
+        "name": "中野城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県大館市比内町中野１−１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.1726397,
+          39.970826699999996
+        ]
+      },
+      "properties": {
+        "name": "一方井城(古館) 跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県岩手郡岩手町一方井第１５地割"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.20187579999998,
+          39.9270363
+        ]
+      },
+      "properties": {
+        "name": "川口城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "岩手県岩手郡岩手町川口第１７地割２０−２"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.24330559999999,
+          40.2249167
+        ]
+      },
+      "properties": {
+        "name": "館平城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県能代市二ツ井町荷上場町館１４６"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.6737763,
+          40.213695799999996
+        ]
+      },
+      "properties": {
+        "name": "十二所城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県大館市十二所元館４１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.5850928,
+          40.219952899999996
+        ]
+      },
+      "properties": {
+        "name": "長岡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県大館市比内町扇田新大堤下９３−１１"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.5660772,
+          40.2035747
+        ]
+      },
+      "properties": {
+        "name": "笹館城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県大館市比内町笹館笹館２０８"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.465146,
+          40.55202
+        ]
+      },
+      "properties": {
+        "name": "大和沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "青森県弘前市大和沢里見"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.5531054,
+          40.3176561
+        ]
+      },
+      "properties": {
+        "name": "花岡城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県大館市花岡町アセ石"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.5281552,
+          40.21769
+        ]
+      },
+      "properties": {
+        "name": "八木橋城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県大館市比内町八木橋八木橋 6G9H+37"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.82943219999999,
+          40.2899269
+        ]
+      },
+      "properties": {
+        "name": "大湯城(大湯新城) 本丸跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "秋田県鹿角市十和田大湯和町１０"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.21261619999999,
+          40.476288
+        ]
+      },
+      "properties": {
+        "name": "又重城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "青森県三戸郡五戸町倉石又重舘町１０４"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.3271667,
+          40.4897244
+        ]
+      },
+      "properties": {
+        "name": "野沢城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "青森県三戸郡五戸町扇田野沢"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.7099641,
+          40.7603599
+        ]
+      },
+      "properties": {
+        "name": "高田蝦夷城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "青森県青森市高田朝日山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.53494999999998,
+          40.680279399999996
+        ]
+      },
+      "properties": {
+        "name": "水木城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "青森県南津軽郡藤崎町水木古舘"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.4914723,
+          41.160654
+        ]
+      },
+      "properties": {
+        "name": "大開城跡",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "青森県東津軽郡今別町今別西大川平山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.6806476,
+          41.9116042
+        ]
+      },
+      "properties": {
+        "name": "上藤城",
+        "genre": "",
+        "category": "城",
+        "prefecture": "",
+        "url": "",
+        "address": "北海道亀田郡七飯町上藤城"
       }
     }
   ]
