@@ -547,6 +547,10 @@
         .weather-temp-col { display: flex; flex-direction: column; align-items: flex-start; }
         .weather-temp-hi { font-size: 11px; font-weight: bold; color: #e05000; line-height: 1.15; }
         .weather-temp-lo { font-size: 10px; color: #4488cc; line-height: 1.15; }
+        /* 降水確率（案B: アイコン+気温の下に水滴+数字を中央寄せ・確率で色分け） */
+        .weather-pop-row { display: flex; align-items: center; justify-content: center; gap: 1px; margin-top: 2px; }
+        .weather-pop-drop { width: 9px; height: 9px; flex-shrink: 0; }
+        .weather-pop-num { font-size: 10px; line-height: 1; }
         #settings-back-btn {
             display: flex;
             align-items: center;
@@ -2626,8 +2630,12 @@ map.on('zoomend', () => { isZooming = false; });
         const labels = ['今日', '明日', '明後日'];
         // 最高気温の文字色: 30度以下=赤 / 31〜34度=濃い赤 / 35度以上=紫
         const hiTempColor = (t) => t >= 35 ? '#7B1FA2' : t >= 31 ? '#B71C1C' : '#E53935';
+        // 降水確率の文字色: 〜30%=灰寄り / 30〜50%=水色 / 50〜70%=青 / 70%〜=濃青
+        const popColor = (p) => p >= 70 ? '#0D47A1' : p >= 50 ? '#1976D2' : p >= 30 ? '#42A5F5' : '#9aa6b2';
+        const dropSvg = (c) => 'data:image/svg+xml;utf8,' + encodeURIComponent(
+            "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='" + c + "' d='M12 2.5C12 2.5 5 11 5 15.5a7 7 0 0 0 14 0C19 11 12 2.5 12 2.5z'/></svg>");
         widget.innerHTML = labels.map((lbl, i) => {
-            const d = days[i] || { icon: 'cloudy', hi: null, lo: null };
+            const d = days[i] || { icon: 'cloudy', hi: null, lo: null, pop: null };
             const ic = d.icon || 'cloudy';
             const col = WMO_COLOR[ic] || '#607D8B';
             const url = `weather-icons/stamp/${ic}.png`;
@@ -2636,6 +2644,10 @@ map.on('zoomend', () => { isZooming = false; });
             const hi = hasHi ? Math.round(d.hi) : null;
             const lo = hasLo ? Math.round(d.lo) : null;
             const hiCol = hasHi ? hiTempColor(hi) : '#e05000';
+            const hasPop = (d.pop !== null && d.pop !== undefined && !isNaN(d.pop));
+            const pop = hasPop ? Math.round(d.pop) : null;
+            const pc = hasPop ? popColor(pop) : '#bbb';
+            const popRow = `<div class="weather-pop-row">${hasPop ? `<img class="weather-pop-drop" src="${dropSvg(pc)}" alt="">` : ''}<span class="weather-pop-num" style="color:${pc};font-weight:${hasPop && pop >= 50 ? '700' : '600'}">${hasPop ? pop + '%' : '--'}</span></div>`;
             return `
             <div class="weather-day-card">
                 <div class="weather-day-label">${lbl}</div>
@@ -2646,16 +2658,19 @@ map.on('zoomend', () => { isZooming = false; });
                         <span class="weather-temp-lo">${hasLo ? lo + '°' : '--'}</span>
                     </div>
                 </div>
+                ${popRow}
             </div>`;
         }).join('');
     }
 
     // Open-Meteo 応答 → 正規化3日（フォールバック用）
     function openMeteoToDays(data) {
+        const pp = data.daily.precipitation_probability_max;
         return [0, 1, 2].map(i => ({
             icon: WMO_ICON[data.daily.weather_code[i]] || 'cloudy',
             hi: data.daily.temperature_2m_max[i],
-            lo: data.daily.temperature_2m_min[i]
+            lo: data.daily.temperature_2m_min[i],
+            pop: (pp && pp[i] !== null && pp[i] !== undefined) ? pp[i] : null
         }));
     }
 
@@ -2753,6 +2768,29 @@ map.on('zoomend', () => { isZooming = false; });
         if (tArea && tArea.temps) ts2.timeDefines.forEach((td, i) => push(td.slice(0, 10), tArea.temps[i]));
         const wk1 = data[1] && data[1].timeSeries[1];
         if (wk1 && wk1.areas[0]) { const wa = wk1.areas[0]; wk1.timeDefines.forEach((td, i) => { push(td.slice(0, 10), wa.tempsMax && wa.tempsMax[i]); push(td.slice(0, 10), wa.tempsMin && wa.tempsMin[i]); }); }
+        // 降水確率（① その日の最大）: ts1(6時間毎, 天気と同じ区域) → 日毎max。ts0に無い明後日等は週間popsで補完
+        const popByDate = {};
+        const ts1 = data[0].timeSeries[1];
+        if (ts1 && ts1.areas) {
+            const pArea = ts1.areas.length === ts0.areas.length ? ts1.areas[wIdx] : ts1.areas[0];
+            if (pArea && pArea.pops) ts1.timeDefines.forEach((td, i) => {
+                const v = pArea.pops[i]; if (v === '' || v == null) return;
+                const n = parseInt(v, 10); if (isNaN(n)) return;
+                const dt = td.slice(0, 10);
+                popByDate[dt] = (popByDate[dt] == null) ? n : Math.max(popByDate[dt], n);
+            });
+        }
+        const wkp = data[1] && data[1].timeSeries[0];
+        if (wkp && wkp.areas) {
+            let pa = class10 ? wkp.areas.find(a => a.area && a.area.code === class10) : null;
+            if (!pa) pa = wkp.areas[0];
+            if (pa && pa.pops) wkp.timeDefines.forEach((td, i) => {
+                const dt = td.slice(0, 10);
+                if (popByDate[dt] != null) return; // ts0優先
+                const v = pa.pops[i]; if (v === '' || v == null) return;
+                const n = parseInt(v, 10); if (!isNaN(n)) popByDate[dt] = n;
+            });
+        }
         return jstDates3().map(dt => {
             const w = wByDate[dt] || { code: '200', text: 'くもり' };
             const ts = tByDate[dt] || [];
@@ -2760,7 +2798,7 @@ map.on('zoomend', () => { isZooming = false; });
             let lo = ts.length ? Math.min(...ts) : null;
             // 今日の最低など、最低=最高の同値（=実質1値しか無い置き値）は最低を非表示にする
             if (hi !== null && lo === hi) lo = null;
-            return { icon: jmaIcon(w.text, w.code), hi, lo };
+            return { icon: jmaIcon(w.text, w.code), hi, lo, pop: (popByDate[dt] != null ? popByDate[dt] : null) };
         });
     }
 
@@ -2788,7 +2826,7 @@ map.on('zoomend', () => { isZooming = false; });
         // ② フォールバック: Open-Meteo（国外・JMA失敗時）
         if (!days) {
             try {
-                const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=Asia%2FTokyo&forecast_days=3`;
+                const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Asia%2FTokyo&forecast_days=3`;
                 const data = await (await fetch(url)).json();
                 days = openMeteoToDays(data);
             } catch (e) { console.warn('[weather:openmeteo]', e); }
