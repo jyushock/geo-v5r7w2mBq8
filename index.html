@@ -2710,6 +2710,7 @@ map.on('zoomend', () => { isZooming = false; });
         const times = h.time || [];
         const wc = h.weather_code_jma_seamless || h.weather_code_best_match || h.weather_code || [];
         const pp = h.precipitation_probability_best_match || h.precipitation_probability || h.precipitation_probability_jma_seamless || [];
+        const th = h.temperature_2m_jma_seamless || h.temperature_2m_best_match || h.temperature_2m || [];
         const tmax = dy.temperature_2m_max_jma_seamless || dy.temperature_2m_max_best_match || dy.temperature_2m_max || [];
         const tmin = dy.temperature_2m_min_jma_seamless || dy.temperature_2m_min_best_match || dy.temperature_2m_min || [];
         const dailyDates = dy.time || [];
@@ -2730,12 +2731,19 @@ map.on('zoomend', () => { isZooming = false; });
             const hours = win.map(i => ({ code: wc[i], pop: (pp[i] != null ? pp[i] : 0) }));
             const pop = hours.length ? hours.reduce((m, x) => Math.max(m, x.pop || 0), 0) : null;
             let ti = dailyDates.indexOf(d); if (ti < 0) ti = di;
-            return {
-                icon: pickWeatherIcon(hours),
-                hi: (tmax[ti] != null ? tmax[ti] : null),
-                lo: (tmin[ti] != null ? tmin[ti] : null),
-                pop: pop
-            };
+            // 気温: 今日のみ「現在時刻〜23時」の時間別から最高/最低（過ぎた時間を除外）。
+            //       明日・明後日は日次の最高/最低（早朝の最低も含む真の値）。
+            let hi, lo;
+            if (di === 0) {
+                const temps = win.map(i => th[i]).filter(v => v != null && !isNaN(v));
+                hi = temps.length ? Math.max.apply(null, temps) : (tmax[ti] != null ? tmax[ti] : null);
+                lo = temps.length ? Math.min.apply(null, temps) : (tmin[ti] != null ? tmin[ti] : null);
+                if (hi != null && lo === hi) lo = null; // 残り1時間等で同値なら最低を非表示
+            } else {
+                hi = (tmax[ti] != null ? tmax[ti] : null);
+                lo = (tmin[ti] != null ? tmin[ti] : null);
+            }
+            return { icon: pickWeatherIcon(hours), hi: hi, lo: lo, pop: pop };
         });
     }
 
@@ -2886,7 +2894,7 @@ map.on('zoomend', () => { isZooming = false; });
         // ① Open-Meteo（座標粒度）: 天気=時間別weather_code(jma_seamless)を日ごとに集約,
         //    降水確率=時間別(best_match), 気温=日次最高/最低(jma_seamless)
         try {
-            const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&hourly=weather_code,precipitation_probability&daily=temperature_2m_max,temperature_2m_min&models=jma_seamless,best_match&timezone=Asia%2FTokyo&forecast_days=3`;
+            const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&hourly=weather_code,precipitation_probability,temperature_2m&daily=temperature_2m_max,temperature_2m_min&models=jma_seamless,best_match&timezone=Asia%2FTokyo&forecast_days=3`;
             const data = await (await fetch(url)).json();
             days = openMeteoToDays(data);
         } catch (e) { console.warn('[weather:openmeteo]', e); }
