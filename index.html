@@ -1961,6 +1961,8 @@ map.on('zoomend', () => { isZooming = false; });
             shop: 'shop', castle: 'castle', michi: 'michi',
             manhole: 'manhole', pokefuta: 'manhole', mhcard: 'mhcard'
         };
+        // 周辺検索・天気と同じ基準点からの距離で近い順に並べ、上位100件を返す
+        const center = getSearchCenter();
         return searchIndex.filter(item => {
             const filterKey = typeToFilter[item.type];
             if (filterKey && filterState[filterKey] === false) return false;
@@ -1968,7 +1970,12 @@ map.on('zoomend', () => { isZooming = false; });
             const sub   = item.sub   ? item.sub.toLowerCase()   : '';
             return (label && label.includes(q)) ||
                    (sub   && sub.includes(q));
-        }).slice(0, 24);
+        }).map(item => ({
+            ...item,
+            _dist: (item.coords && item.coords.length >= 2)
+                ? calcDist(center.lat, center.lng, item.coords[1], item.coords[0])
+                : Infinity
+        })).sort((a, b) => a._dist - b._dist).slice(0, 100);
     }
     
     let geocodeTimer = null, searchRequestId = 0;
