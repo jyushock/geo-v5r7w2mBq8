@@ -1999,6 +1999,7 @@ map.on('zoomend', () => { isZooming = false; });
             const scoreResult = (title, q) => { if(title===q)return 100; if(title.startsWith(q))return 80; if(title.includes('駅')&&q.includes('駅'))return 60; if(title.startsWith(q.replace(/駅$/,'')))return 40; return 10; };
             const res = await fetch(`https://msearch.gsi.go.jp/address-search/AddressSearch?q=${encodeURIComponent(query)}`);
             const data = await res.json();
+            const center = getSearchCenter(); // 基準点（周辺検索・天気と同じ）
             return data.map(f => {
                 const title = f.properties.title;
                 const code  = f.properties.addressCode || '';
@@ -2018,8 +2019,10 @@ map.on('zoomend', () => { isZooming = false; });
                 // labelとsubが同じ場合はsubを空に
                 if (label === sub) sub = '';
 
-                return { type: 'place', label, sub, coords: f.geometry.coordinates, properties: {}, _score: scoreResult(title, query) };
-            }).sort((a, b) => b._score - a._score).slice(0, 24);
+                const c = f.geometry.coordinates;
+                const _dist = (c && c.length >= 2) ? calcDist(center.lat, center.lng, c[1], c[0]) : Infinity;
+                return { type: 'place', label, sub, coords: c, properties: {}, _dist };
+            }).sort((a, b) => a._dist - b._dist).slice(0, 24);
         } catch { return []; }
     }
 
