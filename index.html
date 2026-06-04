@@ -2663,14 +2663,31 @@ map.on('zoomend', () => { isZooming = false; });
         }).join('');
     }
 
-    // Open-Meteo 応答 → 正規化3日（フォールバック用）
+    // Open-Meteo 応答 → 正規化3日
+    // models=jma_seamless,best_match を併用: 天気・気温は jma_seamless(JMA 5kmモデル)優先、
+    // 降水確率は jma_seamless では出ない(None)ため既定ブレンド(best_match)から取得。
+    // 単一モデル応答（suffix無し）にも後方互換でフォールバックする。
     function openMeteoToDays(data) {
-        const pp = data.daily.precipitation_probability_max;
+        const dy = data.daily || {};
+        // base名の値を「jma_seamless → best_match → suffix無し」の順で取得
+        const pick = (base, i) => {
+            const cands = [dy[base + '_jma_seamless'], dy[base + '_best_match'], dy[base]];
+            for (const arr of cands) { if (arr && arr[i] !== null && arr[i] !== undefined) return arr[i]; }
+            return null;
+        };
+        // 降水確率は best_match を最優先（jma_seamless は None）
+        const pickPop = (i) => {
+            const cands = [dy['precipitation_probability_max_best_match'],
+                           dy['precipitation_probability_max'],
+                           dy['precipitation_probability_max_jma_seamless']];
+            for (const arr of cands) { if (arr && arr[i] !== null && arr[i] !== undefined) return arr[i]; }
+            return null;
+        };
         return [0, 1, 2].map(i => ({
-            icon: WMO_ICON[data.daily.weather_code[i]] || 'cloudy',
-            hi: data.daily.temperature_2m_max[i],
-            lo: data.daily.temperature_2m_min[i],
-            pop: (pp && pp[i] !== null && pp[i] !== undefined) ? pp[i] : null
+            icon: WMO_ICON[pick('weather_code', i)] || 'cloudy',
+            hi: pick('temperature_2m_max', i),
+            lo: pick('temperature_2m_min', i),
+            pop: pickPop(i)
         }));
     }
 
@@ -2818,18 +2835,18 @@ map.on('zoomend', () => { isZooming = false; });
             renderWeatherDays(weatherCache); return;
         }
         let days = null;
-        // ① 気象庁（日本国内・高精度）
+        // ① Open-Meteo（座標粒度）: 天気・気温=JMA 5kmモデル(jma_seamless), 降水確率=既定ブレンド(best_match)
         try {
-            const area = await latLngToJmaArea(lngLat.lat, lngLat.lng);
-            if (area && area.office) days = await fetchJmaDays(area.office, area.class10);
-        } catch (e) { console.warn('[weather:jma]', e); }
-        // ② フォールバック: Open-Meteo（国外・JMA失敗時）
+            const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&models=jma_seamless,best_match&timezone=Asia%2FTokyo&forecast_days=3`;
+            const data = await (await fetch(url)).json();
+            days = openMeteoToDays(data);
+        } catch (e) { console.warn('[weather:openmeteo]', e); }
+        // ② フォールバック: 気象庁公式予報（Open-Meteo失敗時）
         if (!days) {
             try {
-                const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Asia%2FTokyo&forecast_days=3`;
-                const data = await (await fetch(url)).json();
-                days = openMeteoToDays(data);
-            } catch (e) { console.warn('[weather:openmeteo]', e); }
+                const area = await latLngToJmaArea(lngLat.lat, lngLat.lng);
+                if (area && area.office) days = await fetchJmaDays(area.office, area.class10);
+            } catch (e) { console.warn('[weather:jma]', e); }
         }
         if (!days) return;
         weatherCache = days; weatherCacheTime = now; weatherCacheLat = lat; weatherCacheLng = lng;
