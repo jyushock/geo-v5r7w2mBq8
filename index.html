@@ -2758,7 +2758,6 @@ map.on('zoomend', () => { isZooming = false; });
                 const temps = win.map(i => th[i]).filter(v => v != null && !isNaN(v));
                 hi = temps.length ? Math.max.apply(null, temps) : (tmax[ti] != null ? tmax[ti] : null);
                 lo = temps.length ? Math.min.apply(null, temps) : (tmin[ti] != null ? tmin[ti] : null);
-                if (hi != null && lo === hi) lo = null; // 残り1時間等で同値なら最低を非表示
             } else {
                 hi = (tmax[ti] != null ? tmax[ti] : null);
                 lo = (tmin[ti] != null ? tmin[ti] : null);
@@ -2888,9 +2887,7 @@ map.on('zoomend', () => { isZooming = false; });
             const w = wByDate[dt] || { code: '200', text: 'くもり' };
             const ts = tByDate[dt] || [];
             const hi = ts.length ? Math.max(...ts) : null;
-            let lo = ts.length ? Math.min(...ts) : null;
-            // 今日の最低など、最低=最高の同値（=実質1値しか無い置き値）は最低を非表示にする
-            if (hi !== null && lo === hi) lo = null;
+            const lo = ts.length ? Math.min(...ts) : null;
             return { icon: jmaIcon(w.text, w.code), hi, lo, pop: (popByDate[dt] != null ? popByDate[dt] : null) };
         });
     }
