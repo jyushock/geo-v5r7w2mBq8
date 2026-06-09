@@ -2836,6 +2836,7 @@ map.on('zoomend', () => { isZooming = false; });
         const tmin = dy.temperature_2m_min_jma_seamless || dy.temperature_2m_min_best_match || dy.temperature_2m_min || [];
         const dailyDates = dy.time || [];
         const nowH = jstHourNow();
+        const current6hStart = Math.floor(nowH / 6) * 6;
         const pickFirstValue = (i, ...arrays) => {
             for (const arr of arrays) {
                 if (!arr || i >= arr.length) continue;
@@ -2881,7 +2882,7 @@ map.on('zoomend', () => { isZooming = false; });
             const hourlyIdx = idx.filter(i => {
                 const hh = parseInt(times[i].slice(11, 13), 10);
                 if (hh % 6 !== 0) return false;
-                return di === 0 ? hh >= nowH : true;
+                return di === 0 ? hh >= current6hStart : true;
             });
             hourlyByDay.push(hourlyIdx.map(i => {
                 const code = pickFirstValue(i, wcJma, wcBest, wcBase);
