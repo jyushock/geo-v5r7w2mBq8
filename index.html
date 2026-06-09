@@ -538,6 +538,15 @@
         /* 天気ウィジェット（白背景＋天気別カラーのスタンプアイコン／CSS maskで着色） */
         #weather-widget { display: flex; flex-shrink: 0; gap: 3px; }
         .weather-day-card { width: 68px; display: flex; flex-direction: column; align-items: center; background: #f5f8ff; border-radius: 8px; padding: 4px 2px 5px; }
+        button.weather-day-card {
+            border: none;
+            appearance: none;
+            -webkit-appearance: none;
+            font: inherit;
+            cursor: pointer;
+            touch-action: manipulation;
+        }
+        .weather-day-card.weather-day-active { box-shadow: inset 0 0 0 2px #90caf9; background: #eef6ff; }
         .weather-day-label { font-size: 9px; color: #888; line-height: 1; margin-bottom: 2px; }
         .weather-icon-temp { display: flex; align-items: center; justify-content: center; gap: 2px; }
         .weather-emoji { width: 32px; height: 32px; flex-shrink: 0;
@@ -551,6 +560,32 @@
         .weather-pop-row { display: flex; align-items: center; justify-content: center; gap: 1px; margin-top: 2px; }
         .weather-pop-drop { width: 9px; height: 9px; flex-shrink: 0; }
         .weather-pop-num { font-size: 10px; line-height: 1; }
+        #weather-hourly-panel {
+            display: none;
+            margin: 6px 0 0;
+            padding: 8px 6px 2px;
+            background: #f8fbff;
+            border: 1px solid #e3eefc;
+            border-radius: 10px;
+        }
+        #weather-hourly-panel.open { display: block; }
+        .weather-hourly-strip { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px; touch-action: pan-x; }
+        .weather-hourly-strip::-webkit-scrollbar { display: none; }
+        .weather-hourly-card {
+            min-width: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f5f8ff;
+            border-radius: 8px;
+            padding: 5px 4px 6px;
+            flex-shrink: 0;
+        }
+        .weather-hourly-time { font-size: 10px; color: #7f8fa4; line-height: 1; margin-bottom: 4px; }
+        .weather-hourly-main { display: flex; align-items: center; justify-content: center; gap: 3px; min-height: 28px; }
+        .weather-hourly-card .weather-emoji { width: 26px; height: 26px; }
+        .weather-hourly-temp { font-size: 12px; font-weight: 700; color: #7f8fa4; line-height: 1; }
+        .weather-hourly-empty { font-size: 11px; color: #8a97a8; padding: 4px 0 2px; }
         #settings-back-btn {
             display: flex;
             align-items: center;
@@ -702,6 +737,7 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
             </button>
         </div>
+        <div id="weather-hourly-panel" aria-live="polite"></div>
     </div>
     <div id="nearby-panel-scroll">
     <div style="border-top:1px solid #f0f0f0;"></div>
@@ -891,6 +927,7 @@
     var weatherCacheTime = 0;
     var weatherCacheLat = null;
     var weatherCacheLng = null;
+    var selectedWeatherDayIndex = null;
     var WEATHER_CACHE_TTL = 10 * 60 * 1000;
 
     // ── 大容量データの非同期ローダ ─────────────────────────────────
@@ -2537,6 +2574,7 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('nearby-overlay').classList.remove('open');
         document.getElementById('bottom-bar').classList.remove('panel-open');
         nearbyState.cats = [];
+        closeWeatherHourlyPanel();
     }
 
     (function() {
@@ -2550,7 +2588,10 @@ map.on('zoomend', () => { isZooming = false; });
         // 起点要素がDOMから外れても、pointermove/up が必ず panel に配送される。
         // touch/mouse 両対応なので PC・実機どちらでもドラッグで閉じられる。
         panel.addEventListener('pointerdown', (e) => {
-            isDragging = header.contains(e.target) && !e.target.closest('button');
+            isDragging = header.contains(e.target)
+                && !e.target.closest('button')
+                && !e.target.closest('#weather-widget')
+                && !e.target.closest('#weather-hourly-panel');
             if (isDragging) {
                 startY = e.clientY;
                 try { panel.setPointerCapture(e.pointerId); } catch (_) {}
@@ -2643,10 +2684,65 @@ map.on('zoomend', () => { isZooming = false; });
     });
 
 
+    function weatherModelFromDays(days) {
+        return { days: days || [], hourlyByDay: [[], [], []], dayDates: jstDates3() };
+    }
+    function closeWeatherHourlyPanel() {
+        selectedWeatherDayIndex = null;
+        if (weatherCache) renderWeatherDays(weatherCache);
+    }
+    function toggleWeatherHourly(dayIndex) {
+        selectedWeatherDayIndex = (selectedWeatherDayIndex === dayIndex) ? null : dayIndex;
+        if (weatherCache) renderWeatherDays(weatherCache);
+    }
+    function renderWeatherHourly(model) {
+        const panel = document.getElementById('weather-hourly-panel');
+        if (!panel) return;
+        const days = model.days || [];
+        const hourlyByDay = model.hourlyByDay || [[], [], []];
+        if (selectedWeatherDayIndex == null || !days[selectedWeatherDayIndex]) {
+            panel.classList.remove('open');
+            panel.innerHTML = '';
+            return;
+        }
+        const slots = hourlyByDay[selectedWeatherDayIndex] || [];
+        if (!slots.length) {
+            panel.classList.add('open');
+            panel.innerHTML = `<div class="weather-hourly-empty">6時間ごとの予報を表示できませんでした。</div>`;
+            return;
+        }
+        const popColor = (p) => p >= 70 ? '#0D47A1' : p >= 50 ? '#1976D2' : p >= 30 ? '#42A5F5' : '#9aa6b2';
+        const dropSvg = (c) => 'data:image/svg+xml;utf8,' + encodeURIComponent(
+            "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='" + c + "' d='M12 2.5C12 2.5 5 11 5 15.5a7 7 0 0 0 14 0C19 11 12 2.5 12 2.5z'/></svg>");
+        panel.classList.add('open');
+        panel.innerHTML = `
+            <div class="weather-hourly-strip">
+                ${slots.map(slot => {
+                    const col = WMO_COLOR[slot.icon] || '#607D8B';
+                    const url = `weather-icons/stamp/${slot.icon}.png`;
+                    const temp = (slot.temp !== null && slot.temp !== undefined && !isNaN(slot.temp)) ? Math.round(slot.temp) + '°' : '--';
+                    const popRaw = (slot.pop !== null && slot.pop !== undefined && !isNaN(slot.pop)) ? slot.pop : slot.dayPop;
+                    const hasPop = (popRaw !== null && popRaw !== undefined && !isNaN(popRaw));
+                    const pop = hasPop ? Math.round(popRaw) : null;
+                    const pc = hasPop ? popColor(pop) : '#bbb';
+                    return `
+                    <div class="weather-hourly-card">
+                        <div class="weather-hourly-time">${slot.label}</div>
+                        <div class="weather-hourly-main">
+                            <span class="weather-emoji" style="-webkit-mask-image:url('${url}');mask-image:url('${url}');background-color:${col}"></span>
+                            <div class="weather-hourly-temp">${temp}</div>
+                        </div>
+                        <div class="weather-pop-row">${hasPop ? `<img class="weather-pop-drop" src="${dropSvg(pc)}" alt="">` : ''}<span class="weather-pop-num" style="color:${pc};font-weight:${hasPop && pop >= 50 ? '700' : '600'}">${hasPop ? pop + '%' : '--'}</span></div>
+                    </div>`;
+                }).join('')}
+            </div>`;
+    }
     // 正規化した3日分 [{icon, hi, lo}] を描画
-    function renderWeatherDays(days) {
+    function renderWeatherDays(model) {
         const widget = document.getElementById('weather-widget');
         if (!widget) return;
+        if (Array.isArray(model)) model = weatherModelFromDays(model);
+        const days = model.days || [];
         const labels = ['今日', '明日', '明後日'];
         // 最高気温の文字色: 30度以下=赤 / 31〜34度=濃い赤 / 35度以上=紫
         const hiTempColor = (t) => t >= 35 ? '#7B1FA2' : t >= 31 ? '#B71C1C' : '#E53935';
@@ -2668,8 +2764,9 @@ map.on('zoomend', () => { isZooming = false; });
             const pop = hasPop ? Math.round(d.pop) : null;
             const pc = hasPop ? popColor(pop) : '#bbb';
             const popRow = `<div class="weather-pop-row">${hasPop ? `<img class="weather-pop-drop" src="${dropSvg(pc)}" alt="">` : ''}<span class="weather-pop-num" style="color:${pc};font-weight:${hasPop && pop >= 50 ? '700' : '600'}">${hasPop ? pop + '%' : '--'}</span></div>`;
+            const activeClass = selectedWeatherDayIndex === i ? ' weather-day-active' : '';
             return `
-            <div class="weather-day-card">
+            <button type="button" class="weather-day-card${activeClass}" onclick="toggleWeatherHourly(${i})" aria-pressed="${selectedWeatherDayIndex === i ? 'true' : 'false'}" aria-label="${lbl}の6時間ごとの天気を表示">
                 <div class="weather-day-label">${lbl}</div>
                 <div class="weather-icon-temp">
                     <span class="weather-emoji" style="-webkit-mask-image:url('${url}');mask-image:url('${url}');background-color:${col}"></span>
@@ -2679,8 +2776,9 @@ map.on('zoomend', () => { isZooming = false; });
                     </div>
                 </div>
                 ${popRow}
-            </div>`;
+            </button>`;
         }).join('');
+        renderWeatherHourly(model);
     }
 
     // 現在時刻（JST）の「時」
@@ -2725,20 +2823,37 @@ map.on('zoomend', () => { isZooming = false; });
     //   今日 = 現在時刻〜23時（過ぎた時間は除外）／明日・明後日 = 6〜18時（日中代表）。
     // 降水確率: 同じ窓で best_match の時間別 precipitation_probability の最大。
     // 気温: 日次の最高/最低（jma_seamless優先）。
-    function openMeteoToDays(data) {
+    function openMeteoToWeatherModel(data) {
         const h = data.hourly || {}, dy = data.daily || {};
         const times = h.time || [];
-        const wc = h.weather_code_jma_seamless || h.weather_code_best_match || h.weather_code || [];
-        const pp = h.precipitation_probability_best_match || h.precipitation_probability || h.precipitation_probability_jma_seamless || [];
-        const th = h.temperature_2m_jma_seamless || h.temperature_2m_best_match || h.temperature_2m || [];
+        const wcJma = h.weather_code_jma_seamless || [];
+        const wcBest = h.weather_code_best_match || [];
+        const wcBase = h.weather_code || [];
+        const ppJma = h.precipitation_probability_jma_seamless || [];
+        const ppBest = h.precipitation_probability_best_match || [];
+        const ppBase = h.precipitation_probability || [];
+        const thJma = h.temperature_2m_jma_seamless || [];
+        const thBest = h.temperature_2m_best_match || [];
+        const thBase = h.temperature_2m || [];
         const tmax = dy.temperature_2m_max_jma_seamless || dy.temperature_2m_max_best_match || dy.temperature_2m_max || [];
         const tmin = dy.temperature_2m_min_jma_seamless || dy.temperature_2m_min_best_match || dy.temperature_2m_min || [];
         const dailyDates = dy.time || [];
         const nowH = jstHourNow();
+        const pickFirstValue = (i, ...arrays) => {
+            for (const arr of arrays) {
+                if (!arr || i >= arr.length) continue;
+                const v = arr[i];
+                if (v !== null && v !== undefined && v !== '') return v;
+            }
+            return null;
+        };
         // hourly index を日付ごとにまとめる（先頭3日）
         const byDate = {}, order = [];
         times.forEach((t, i) => { const d = t.slice(0, 10); if (!byDate[d]) { byDate[d] = []; order.push(d); } byDate[d].push(i); });
-        return order.slice(0, 3).map((d, di) => {
+        const dayDates = order.slice(0, 3);
+        const days = [];
+        const hourlyByDay = [];
+        dayDates.forEach((d, di) => {
             const idx = byDate[d];
             let win;
             if (di === 0) {
@@ -2748,22 +2863,44 @@ map.on('zoomend', () => { isZooming = false; });
                 win = idx.filter(i => { const hh = parseInt(times[i].slice(11, 13), 10); return hh >= 6 && hh <= 18; });
                 if (!win.length) win = idx;
             }
-            const hours = win.map(i => ({ code: wc[i], pop: (pp[i] != null ? pp[i] : 0) }));
+            const hours = win.map(i => ({
+                code: pickFirstValue(i, wcJma, wcBest, wcBase),
+                pop: (pickFirstValue(i, ppJma, ppBest, ppBase) != null ? pickFirstValue(i, ppJma, ppBest, ppBase) : 0)
+            }));
             const pop = hours.length ? hours.reduce((m, x) => Math.max(m, x.pop || 0), 0) : null;
             let ti = dailyDates.indexOf(d); if (ti < 0) ti = di;
             // 気温: 今日のみ「現在時刻〜23時」の時間別から最高/最低（過ぎた時間を除外）。
             //       明日・明後日は日次の最高/最低（早朝の最低も含む真の値）。
             let hi, lo;
             if (di === 0) {
-                const temps = win.map(i => th[i]).filter(v => v != null && !isNaN(v));
+                const temps = win.map(i => pickFirstValue(i, thJma, thBest, thBase)).filter(v => v != null && !isNaN(v));
                 hi = temps.length ? Math.max.apply(null, temps) : (tmax[ti] != null ? tmax[ti] : null);
                 lo = temps.length ? Math.min.apply(null, temps) : (tmin[ti] != null ? tmin[ti] : null);
             } else {
                 hi = (tmax[ti] != null ? tmax[ti] : null);
                 lo = (tmin[ti] != null ? tmin[ti] : null);
             }
-            return { icon: pickWeatherIcon(hours), hi: hi, lo: lo, pop: pop };
+            days.push({ icon: pickWeatherIcon(hours), hi: hi, lo: lo, pop: pop });
+            const hourlyIdx = idx.filter(i => {
+                const hh = parseInt(times[i].slice(11, 13), 10);
+                if (hh % 6 !== 0) return false;
+                return di === 0 ? hh >= nowH : true;
+            });
+            hourlyByDay.push(hourlyIdx.map(i => {
+                const code = pickFirstValue(i, wcJma, wcBest, wcBase);
+                const popAtHour = pickFirstValue(i, ppJma, ppBest, ppBase);
+                const tempAtHour = pickFirstValue(i, thJma, thBest, thBase);
+                const icon = WMO_ICON[code] || pickWeatherIcon([{ code: code, pop: (popAtHour != null ? popAtHour : 0) }]);
+                return {
+                    label: String(parseInt(times[i].slice(11, 13), 10)),
+                    icon: icon || 'cloudy',
+                    temp: (tempAtHour != null && !isNaN(tempAtHour)) ? tempAtHour : null,
+                    pop: (popAtHour != null && !isNaN(popAtHour)) ? popAtHour : null,
+                    dayPop: pop
+                };
+            }));
         });
+        return { days: days, hourlyByDay: hourlyByDay, dayDates: dayDates };
     }
 
     // ── 気象庁(JMA)予報 ─────────────────────────────────────────────
@@ -2909,17 +3046,17 @@ map.on('zoomend', () => { isZooming = false; });
         }
         let days = null;
         // ① Open-Meteo（座標粒度）: 天気=時間別weather_code(jma_seamless)を日ごとに集約,
-        //    降水確率=時間別(best_match), 気温=日次最高/最低(jma_seamless)
+        //    降水確率=時間別(jma_seamless), 気温=日次最高/最低(jma_seamless)
         try {
             const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&hourly=weather_code,precipitation_probability,temperature_2m&daily=temperature_2m_max,temperature_2m_min&models=jma_seamless,best_match&timezone=Asia%2FTokyo&forecast_days=3`;
             const data = await (await fetch(url)).json();
-            days = openMeteoToDays(data);
+            days = openMeteoToWeatherModel(data);
         } catch (e) { console.warn('[weather:openmeteo]', e); }
         // ② フォールバック: 気象庁公式予報（Open-Meteo失敗時）
         if (!days) {
             try {
                 const area = await latLngToJmaArea(lngLat.lat, lngLat.lng);
-                if (area && area.office) days = await fetchJmaDays(area.office, area.class10);
+                if (area && area.office) days = weatherModelFromDays(await fetchJmaDays(area.office, area.class10));
             } catch (e) { console.warn('[weather:jma]', e); }
         }
         if (!days) return;
