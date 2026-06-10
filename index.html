@@ -564,9 +564,12 @@
             display: none;
             margin: 2px 0 0;
             padding: 0;
+            max-width: 100%;
+            overflow: hidden;
+            touch-action: pan-x;
         }
         #weather-hourly-panel.open { display: block; }
-        .weather-hourly-strip { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px; touch-action: pan-x; }
+        .weather-hourly-strip { display: flex; gap: 6px; max-width: 100%; overflow-x: auto; overflow-y: hidden; padding-bottom: 2px; touch-action: pan-x; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
         .weather-hourly-strip::-webkit-scrollbar { display: none; }
         .weather-hourly-card {
             min-width: 60px;
@@ -2705,7 +2708,7 @@ map.on('zoomend', () => { isZooming = false; });
         const slots = hourlyByDay[selectedWeatherDayIndex] || [];
         if (!slots.length) {
             panel.classList.add('open');
-            panel.innerHTML = `<div class="weather-hourly-empty">6時間ごとの予報を表示できませんでした。</div>`;
+            panel.innerHTML = `<div class="weather-hourly-empty">3時間ごとの予報を表示できませんでした。</div>`;
             return;
         }
         const popColor = (p) => p >= 70 ? '#0D47A1' : p >= 50 ? '#1976D2' : p >= 30 ? '#42A5F5' : '#9aa6b2';
@@ -2763,7 +2766,7 @@ map.on('zoomend', () => { isZooming = false; });
             const popRow = `<div class="weather-pop-row">${hasPop ? `<img class="weather-pop-drop" src="${dropSvg(pc)}" alt="">` : ''}<span class="weather-pop-num" style="color:${pc};font-weight:${hasPop && pop >= 50 ? '700' : '600'}">${hasPop ? pop + '%' : '--'}</span></div>`;
             const activeClass = selectedWeatherDayIndex === i ? ' weather-day-active' : '';
             return `
-            <button type="button" class="weather-day-card${activeClass}" onclick="toggleWeatherHourly(${i})" aria-pressed="${selectedWeatherDayIndex === i ? 'true' : 'false'}" aria-label="${lbl}の6時間ごとの天気を表示">
+            <button type="button" class="weather-day-card${activeClass}" onclick="toggleWeatherHourly(${i})" aria-pressed="${selectedWeatherDayIndex === i ? 'true' : 'false'}" aria-label="${lbl}の3時間ごとの天気を表示">
                 <div class="weather-day-label">${lbl}</div>
                 <div class="weather-icon-temp">
                     <span class="weather-emoji" style="-webkit-mask-image:url('${url}');mask-image:url('${url}');background-color:${col}"></span>
@@ -2836,7 +2839,7 @@ map.on('zoomend', () => { isZooming = false; });
         const tmin = dy.temperature_2m_min_jma_seamless || dy.temperature_2m_min_best_match || dy.temperature_2m_min || [];
         const dailyDates = dy.time || [];
         const nowH = jstHourNow();
-        const current6hStart = Math.floor(nowH / 6) * 6;
+        const current3hStart = Math.floor(nowH / 3) * 3;
         const pickFirstValue = (i, ...arrays) => {
             for (const arr of arrays) {
                 if (!arr || i >= arr.length) continue;
@@ -2881,8 +2884,8 @@ map.on('zoomend', () => { isZooming = false; });
             days.push({ icon: pickWeatherIcon(hours), hi: hi, lo: lo, pop: pop });
             const hourlyIdx = idx.filter(i => {
                 const hh = parseInt(times[i].slice(11, 13), 10);
-                if (hh % 6 !== 0) return false;
-                return di === 0 ? hh >= current6hStart : true;
+                if (hh % 3 !== 0) return false;
+                return di === 0 ? hh >= current3hStart : true;
             });
             hourlyByDay.push(hourlyIdx.map(i => {
                 const code = pickFirstValue(i, wcJma, wcBest, wcBase);
