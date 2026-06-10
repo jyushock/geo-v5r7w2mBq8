@@ -2888,12 +2888,20 @@ map.on('zoomend', () => { isZooming = false; });
                 return di === 0 ? hh >= current3hStart : true;
             });
             hourlyByDay.push(hourlyIdx.map(i => {
+                const slotHour = parseInt(times[i].slice(11, 13), 10);
+                const popWindow = idx
+                    .filter(j => {
+                        const hh = parseInt(times[j].slice(11, 13), 10);
+                        return hh >= slotHour && hh < slotHour + 3;
+                    })
+                    .map(j => pickFirstValue(j, ppJma, ppBest, ppBase))
+                    .filter(v => v != null && !isNaN(v));
                 const code = pickFirstValue(i, wcJma, wcBest, wcBase);
-                const popAtHour = pickFirstValue(i, ppJma, ppBest, ppBase);
+                const popAtHour = popWindow.length ? Math.max.apply(null, popWindow) : null;
                 const tempAtHour = pickFirstValue(i, thJma, thBest, thBase);
                 const icon = WMO_ICON[code] || pickWeatherIcon([{ code: code, pop: (popAtHour != null ? popAtHour : 0) }]);
                 return {
-                    label: String(parseInt(times[i].slice(11, 13), 10)),
+                    label: String(slotHour),
                     icon: icon || 'cloudy',
                     temp: (tempAtHour != null && !isNaN(tempAtHour)) ? tempAtHour : null,
                     pop: (popAtHour != null && !isNaN(popAtHour)) ? popAtHour : null,
