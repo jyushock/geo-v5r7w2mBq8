@@ -2889,17 +2889,23 @@ map.on('zoomend', () => { isZooming = false; });
             });
             hourlyByDay.push(hourlyIdx.map(i => {
                 const slotHour = parseInt(times[i].slice(11, 13), 10);
-                const popWindow = idx
-                    .filter(j => {
-                        const hh = parseInt(times[j].slice(11, 13), 10);
-                        return hh >= slotHour && hh < slotHour + 3;
-                    })
+                const slotIdx = idx.filter(j => {
+                    const hh = parseInt(times[j].slice(11, 13), 10);
+                    return hh >= slotHour && hh < slotHour + 3;
+                });
+                const slotHours = slotIdx.map(j => {
+                    const slotPop = pickFirstValue(j, ppJma, ppBest, ppBase);
+                    return {
+                        code: pickFirstValue(j, wcJma, wcBest, wcBase),
+                        pop: (slotPop != null && !isNaN(slotPop)) ? slotPop : 0
+                    };
+                });
+                const popWindow = slotIdx
                     .map(j => pickFirstValue(j, ppJma, ppBest, ppBase))
                     .filter(v => v != null && !isNaN(v));
-                const code = pickFirstValue(i, wcJma, wcBest, wcBase);
                 const popAtHour = popWindow.length ? Math.max.apply(null, popWindow) : null;
                 const tempAtHour = pickFirstValue(i, thJma, thBest, thBase);
-                const icon = WMO_ICON[code] || pickWeatherIcon([{ code: code, pop: (popAtHour != null ? popAtHour : 0) }]);
+                const icon = pickWeatherIcon(slotHours);
                 return {
                     label: String(slotHour),
                     icon: icon || 'cloudy',
