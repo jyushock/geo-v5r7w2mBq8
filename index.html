@@ -560,6 +560,7 @@
         .weather-pop-row { display: flex; align-items: center; justify-content: center; gap: 1px; margin-top: 2px; }
         .weather-pop-drop { width: 9px; height: 9px; flex-shrink: 0; }
         .weather-pop-num { font-size: 10px; line-height: 1; }
+        .weather-precip-num { font-size: 9px; line-height: 1; color: #6b9bd2; margin-left: 3px; }
         #weather-hourly-panel {
             display: none;
             margin: 2px 0 0;
@@ -2725,6 +2726,8 @@ map.on('zoomend', () => { isZooming = false; });
                     const hasPop = (popRaw !== null && popRaw !== undefined && !isNaN(popRaw));
                     const pop = hasPop ? Math.round(popRaw) : null;
                     const pc = hasPop ? popColor(pop) : '#bbb';
+                    const hasPrecip = (slot.precip !== null && slot.precip !== undefined && !isNaN(slot.precip));
+                    const precipTxt = hasPrecip ? (slot.precip >= 10 ? Math.round(slot.precip) : Math.round(slot.precip * 10) / 10) + 'mm' : '';
                     return `
                     <div class="weather-hourly-card">
                         <div class="weather-hourly-time">${slot.label}</div>
@@ -2732,7 +2735,7 @@ map.on('zoomend', () => { isZooming = false; });
                             <span class="weather-emoji" style="-webkit-mask-image:url('${url}');mask-image:url('${url}');background-color:${col}"></span>
                             <div class="weather-hourly-temp">${temp}</div>
                         </div>
-                        <div class="weather-pop-row">${hasPop ? `<img class="weather-pop-drop" src="${dropSvg(pc)}" alt="">` : ''}<span class="weather-pop-num" style="color:${pc};font-weight:${hasPop && pop >= 50 ? '700' : '600'}">${hasPop ? pop + '%' : '--'}</span></div>
+                        <div class="weather-pop-row">${hasPop ? `<img class="weather-pop-drop" src="${dropSvg(pc)}" alt="">` : ''}<span class="weather-pop-num" style="color:${pc};font-weight:${hasPop && pop >= 50 ? '700' : '600'}">${hasPop ? pop + '%' : '--'}</span>${hasPrecip ? `<span class="weather-precip-num">${precipTxt}</span>` : ''}</div>
                     </div>`;
                 }).join('')}
             </div>`;
@@ -2832,6 +2835,10 @@ map.on('zoomend', () => { isZooming = false; });
         const ppJma = h.precipitation_probability_jma_seamless || [];
         const ppBest = h.precipitation_probability_best_match || [];
         const ppBase = h.precipitation_probability || [];
+        const precJma = h.precipitation_jma_seamless || [];
+        const precBest = h.precipitation_best_match || [];
+        const precBase = h.precipitation || [];
+        const precSum = dy.precipitation_sum_jma_seamless || dy.precipitation_sum_best_match || dy.precipitation_sum || [];
         const thJma = h.temperature_2m_jma_seamless || [];
         const thBest = h.temperature_2m_best_match || [];
         const thBase = h.temperature_2m || [];
@@ -2869,6 +2876,11 @@ map.on('zoomend', () => { isZooming = false; });
                 pop: (pickFirstValue(i, ppJma, ppBest, ppBase) != null ? pickFirstValue(i, ppJma, ppBest, ppBase) : 0)
             }));
             const pop = hours.length ? hours.reduce((m, x) => Math.max(m, x.pop || 0), 0) : null;
+            const precVals = win.map(i => pickFirstValue(i, precJma, precBest, precBase)).filter(v => v != null && !isNaN(v));
+            let precip = precVals.length ? precVals.reduce((s, v) => s + v, 0) : null;
+            if ((precip == null || (di > 0 && precVals.length < win.length)) && precSum[di] != null && !isNaN(precSum[di])) {
+                precip = precSum[di];
+            }
             let ti = dailyDates.indexOf(d); if (ti < 0) ti = di;
             // 気温: 今日のみ「現在時刻〜23時」の時間別から最高/最低（過ぎた時間を除外）。
             //       明日・明後日は日次の最高/最低（早朝の最低も含む真の値）。
@@ -2881,7 +2893,7 @@ map.on('zoomend', () => { isZooming = false; });
                 hi = (tmax[ti] != null ? tmax[ti] : null);
                 lo = (tmin[ti] != null ? tmin[ti] : null);
             }
-            days.push({ icon: pickWeatherIcon(hours), hi: hi, lo: lo, pop: pop });
+            days.push({ icon: pickWeatherIcon(hours), hi: hi, lo: lo, pop: pop, precip: precip });
             const hourlyIdx = idx.filter(i => {
                 const hh = parseInt(times[i].slice(11, 13), 10);
                 if (hh % 3 !== 0) return false;
@@ -2904,6 +2916,10 @@ map.on('zoomend', () => { isZooming = false; });
                     .map(j => pickFirstValue(j, ppJma, ppBest, ppBase))
                     .filter(v => v != null && !isNaN(v));
                 const popAtHour = popWindow.length ? Math.max.apply(null, popWindow) : null;
+                const precipWindow = slotIdx
+                    .map(j => pickFirstValue(j, precJma, precBest, precBase))
+                    .filter(v => v != null && !isNaN(v));
+                const precipAtSlot = precipWindow.length ? precipWindow.reduce((s, v) => s + v, 0) : null;
                 const tempAtHour = pickFirstValue(i, thJma, thBest, thBase);
                 const icon = pickWeatherIcon(slotHours);
                 return {
@@ -2911,6 +2927,7 @@ map.on('zoomend', () => { isZooming = false; });
                     icon: icon || 'cloudy',
                     temp: (tempAtHour != null && !isNaN(tempAtHour)) ? tempAtHour : null,
                     pop: (popAtHour != null && !isNaN(popAtHour)) ? popAtHour : null,
+                    precip: (precipAtSlot != null && !isNaN(precipAtSlot)) ? precipAtSlot : null,
                     dayPop: pop
                 };
             }));
@@ -3063,7 +3080,7 @@ map.on('zoomend', () => { isZooming = false; });
         // ① Open-Meteo（座標粒度）: 天気=時間別weather_code(jma_seamless)を日ごとに集約,
         //    降水確率=時間別(jma_seamless), 気温=日次最高/最低(jma_seamless)
         try {
-            const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&hourly=weather_code,precipitation_probability,temperature_2m&daily=temperature_2m_max,temperature_2m_min&models=jma_seamless,best_match&timezone=Asia%2FTokyo&forecast_days=3`;
+            const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&hourly=weather_code,precipitation_probability,precipitation,temperature_2m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&models=jma_seamless,best_match&timezone=Asia%2FTokyo&forecast_days=3`;
             const data = await (await fetch(url)).json();
             days = openMeteoToWeatherModel(data);
         } catch (e) { console.warn('[weather:openmeteo]', e); }
