@@ -560,6 +560,7 @@
         .weather-pop-row { display: flex; align-items: center; justify-content: center; gap: 1px; margin-top: 2px; }
         .weather-pop-drop { width: 9px; height: 9px; flex-shrink: 0; }
         .weather-pop-num { font-size: 10px; line-height: 1; }
+        .weather-precip-num { font-size: 9px; line-height: 1; color: #6b9bd2; margin-left: 3px; }
         #weather-hourly-panel {
             display: none;
             margin: 2px 0 0;
@@ -2725,7 +2726,7 @@ map.on('zoomend', () => { isZooming = false; });
                     const hasPop = (popRaw !== null && popRaw !== undefined && !isNaN(popRaw));
                     const pop = hasPop ? Math.round(popRaw) : null;
                     const pc = hasPop ? popColor(pop) : '#bbb';
-                    const hasPrecip = (slot.precip !== null && slot.precip !== undefined && !isNaN(slot.precip) && slot.precip > 0);
+                    const hasPrecip = (slot.precip !== null && slot.precip !== undefined && !isNaN(slot.precip));
                     const precipTxt = hasPrecip ? (slot.precip >= 10 ? Math.round(slot.precip) : Math.round(slot.precip * 10) / 10) + 'mm' : '';
                     return `
                     <div class="weather-hourly-card">
@@ -2734,7 +2735,7 @@ map.on('zoomend', () => { isZooming = false; });
                             <span class="weather-emoji" style="-webkit-mask-image:url('${url}');mask-image:url('${url}');background-color:${col}"></span>
                             <div class="weather-hourly-temp">${temp}</div>
                         </div>
-                        <div class="weather-pop-row">${hasPop ? `<img class="weather-pop-drop" src="${dropSvg(pc)}" alt="">` : ''}<span class="weather-pop-num" style="color:${pc};font-weight:${hasPop && pop >= 50 ? '700' : '600'}">${hasPop ? pop + '%' : '--'}</span>${hasPrecip ? `<span class="weather-pop-num" style="color:${pc};font-weight:${hasPop && pop >= 50 ? '700' : '600'}">${precipTxt}</span>` : ''}</div>
+                        <div class="weather-pop-row">${hasPop ? `<img class="weather-pop-drop" src="${dropSvg(pc)}" alt="">` : ''}<span class="weather-pop-num" style="color:${pc};font-weight:${hasPop && pop >= 50 ? '700' : '600'}">${hasPop ? pop + '%' : '--'}</span>${hasPrecip ? `<span class="weather-precip-num">${precipTxt}</span>` : ''}</div>
                     </div>`;
                 }).join('')}
             </div>`;
