@@ -1053,18 +1053,6 @@
 
     // 検索ピン
     let searchPinLngLat = null;
-    // オブジェクトのクリック判定レイヤー（設定ループで収集）。汎用クリックハンドラが
-    // 「オブジェクト上のクリックか」を判定し、ピン除去をオブジェクト側ハンドラへ委譲するために使う。
-    let OBJECT_CLICK_LAYERS = [];
-
-    // 指定座標に現在の検索ピンが立っているか（経度は360ラップを考慮）
-    function isPinAt(lng, lat) {
-        if (!searchPinLngLat) return false;
-        const dLat = Math.abs(searchPinLngLat.lat - lat);
-        let dLng = Math.abs(searchPinLngLat.lng - lng) % 360;
-        if (dLng > 180) dLng = 360 - dLng;
-        return dLat < 1e-6 && dLng < 1e-6;
-    }
 
     function placeSearchPin(lngLat, label = null) {
         searchPinLngLat = lngLat;
@@ -1173,10 +1161,6 @@
     let longPressActivated = false;
     map.on('click', (e) => {
         if (longPressActivated) { longPressActivated = false; return; }
-        // オブジェクト上のクリックはオブジェクト側ハンドラに委譲（ここではピン除去しない）。
-        // これで「オブジェクトのピンをトグルで外す」処理と二重に走らない（発火順非依存）。
-        const objLayers = OBJECT_CLICK_LAYERS.filter(l => map.getLayer(l));
-        if (objLayers.length && map.queryRenderedFeatures(e.point, { layers: objLayers }).length > 0) return;
         if (searchPinLngLat && map.getLayer('search-pin-layer')) {
             const hit = map.queryRenderedFeatures(e.point, { layers: ['search-pin-layer'] });
             if (hit.length > 0) { removeSearchPin(); return; }
@@ -1940,7 +1924,6 @@ map.on('zoomend', () => { isZooming = false; });
                 });
 
                 const clickLayer = conf.type === 'mhcard' ? `${conf.id}-icon` : `${conf.id}-bg`;
-                OBJECT_CLICK_LAYERS.push(clickLayer);
                 map.on('click', clickLayer, (e) => {
                     if (trackingMode > 0) {
                         trackingMode = 0;
@@ -1951,10 +1934,6 @@ map.on('zoomend', () => { isZooming = false; });
                     const p = e.features[0].properties;
                     const c = e.features[0].geometry.coordinates.slice();
                     while (Math.abs(e.lngLat.lng - c[0]) > 180) { c[0] += e.lngLat.lng > c[0] ? 360 : -360; }
-                    // トグル: このオブジェクトに既にピンが立っていれば、ピンを外しポップアップは出さない
-                    // （ポップアップは closeOnClick で既存分が閉じる）
-                    if (isPinAt(c[0], c[1])) { removeSearchPin(); return; }
-                    placeSearchPin({ lng: c[0], lat: c[1] }, p.name || p.pokemon || null);
                     const popupHtml = buildPopupHtml(conf.type, p.name || '', p, c[0], c[1]);
                     const popup = new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
                     if (conf.type === 'castle') injectCastleImage(popup, p.name, p.url);
