@@ -2706,7 +2706,7 @@ map.on('zoomend', () => { isZooming = false; });
                     const pop = hasPop ? Math.round(popRaw) : null;
                     const pc = hasPop ? popColor(pop) : '#bbb';
                     const hasPrecip = (slot.precip !== null && slot.precip !== undefined && !isNaN(slot.precip));
-                    const precipTxt = hasPrecip ? (slot.precip >= 10 ? Math.round(slot.precip) : Math.round(slot.precip * 10) / 10) + 'mm' : '';
+                    const precipNum = hasPrecip ? (slot.precip >= 10 ? Math.round(slot.precip) : Math.round(slot.precip * 10) / 10) : null;
                     return `
                     <div class="weather-hourly-card">
                         <div class="weather-hourly-time">${slot.label}</div>
@@ -2714,7 +2714,7 @@ map.on('zoomend', () => { isZooming = false; });
                             <span class="weather-emoji" style="-webkit-mask-image:url('${url}');mask-image:url('${url}');background-color:${col}"></span>
                             <div class="weather-hourly-temp">${temp}</div>
                         </div>
-                        <div class="weather-pop-row">${hasPop ? `<img class="weather-pop-drop" src="${dropSvg(pc)}" alt="">` : ''}<span class="weather-pop-num" style="color:${pc};font-weight:${hasPop && pop >= 50 ? '700' : '600'}">${hasPop ? pop + '%' : '--'}</span>${hasPrecip ? `<span class="weather-precip-num">${precipTxt}</span>` : ''}</div>
+                        <div class="weather-pop-row">${hasPop ? `<img class="weather-pop-drop" src="${dropSvg(pc)}" alt="">` : ''}<span class="weather-pop-num" style="color:${pc}">${hasPop ? `<span style="font-weight:${pop >= 50 ? '700' : '600'}">${pop}</span><span>%</span>` : '--'}</span>${hasPrecip ? `<span class="weather-precip-num"><span style="font-weight:${slot.precip >= 1 ? '700' : '400'}">${precipNum}</span><span>mm</span></span>` : ''}</div>
                     </div>`;
                 }).join('')}
             </div>`;
@@ -2745,7 +2745,7 @@ map.on('zoomend', () => { isZooming = false; });
             const hasPop = (d.pop !== null && d.pop !== undefined && !isNaN(d.pop));
             const pop = hasPop ? Math.round(d.pop) : null;
             const pc = hasPop ? popColor(pop) : '#bbb';
-            const popRow = `<div class="weather-pop-row">${hasPop ? `<img class="weather-pop-drop" src="${dropSvg(pc)}" alt="">` : ''}<span class="weather-pop-num" style="color:${pc};font-weight:${hasPop && pop >= 50 ? '700' : '600'}">${hasPop ? pop + '%' : '--'}</span></div>`;
+            const popRow = `<div class="weather-pop-row">${hasPop ? `<img class="weather-pop-drop" src="${dropSvg(pc)}" alt="">` : ''}<span class="weather-pop-num" style="color:${pc}">${hasPop ? `<span style="font-weight:${pop >= 50 ? '700' : '600'}">${pop}</span><span>%</span>` : '--'}</span></div>`;
             const activeClass = selectedWeatherDayIndex === i ? ' weather-day-active' : '';
             return `
             <button type="button" class="weather-day-card${activeClass}" onclick="toggleWeatherHourly(${i})" aria-pressed="${selectedWeatherDayIndex === i ? 'true' : 'false'}" aria-label="${lbl}の3時間ごとの天気を表示">
