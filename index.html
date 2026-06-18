@@ -2707,6 +2707,7 @@ map.on('zoomend', () => { isZooming = false; });
                     const pc = hasPop ? popColor(pop) : '#bbb';
                     const hasPrecip = (slot.precip !== null && slot.precip !== undefined && !isNaN(slot.precip));
                     const precipNum = hasPrecip ? (slot.precip >= 10 ? Math.round(slot.precip) : Math.round(slot.precip * 10) / 10) : null;
+                    const precipColor = hasPrecip && slot.precip >= 1 ? popColor(100) : '';
                     return `
                     <div class="weather-hourly-card">
                         <div class="weather-hourly-time">${slot.label}</div>
@@ -2714,7 +2715,7 @@ map.on('zoomend', () => { isZooming = false; });
                             <span class="weather-emoji" style="-webkit-mask-image:url('${url}');mask-image:url('${url}');background-color:${col}"></span>
                             <div class="weather-hourly-temp">${temp}</div>
                         </div>
-                        <div class="weather-pop-row">${hasPop ? `<img class="weather-pop-drop" src="${dropSvg(pc)}" alt="">` : ''}<span class="weather-pop-num" style="color:${pc}">${hasPop ? `<span style="font-weight:${pop >= 50 ? '700' : '600'}">${pop}</span><span>%</span>` : '--'}</span>${hasPrecip ? `<span class="weather-precip-num"><span style="font-size:${slot.precip >= 1 ? '10px' : '9px'};font-weight:${slot.precip >= 1 ? '700' : '400'}">${precipNum}</span><span>mm</span></span>` : ''}</div>
+                        <div class="weather-pop-row">${hasPop ? `<img class="weather-pop-drop" src="${dropSvg(pc)}" alt="">` : ''}<span class="weather-pop-num" style="color:${pc}">${hasPop ? `<span style="font-weight:${pop >= 50 ? '700' : '600'}">${pop}</span><span>%</span>` : '--'}</span>${hasPrecip ? `<span class="weather-precip-num" style="${precipColor ? 'color:' + precipColor : ''}"><span style="font-size:${slot.precip >= 1 ? '10px' : '9px'};font-weight:${slot.precip >= 1 ? '700' : '400'}">${precipNum}</span><span>mm</span></span>` : ''}</div>
                     </div>`;
                 }).join('')}
             </div>`;
