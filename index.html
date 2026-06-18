@@ -2714,7 +2714,7 @@ map.on('zoomend', () => { isZooming = false; });
                             <span class="weather-emoji" style="-webkit-mask-image:url('${url}');mask-image:url('${url}');background-color:${col}"></span>
                             <div class="weather-hourly-temp">${temp}</div>
                         </div>
-                        <div class="weather-pop-row">${hasPop ? `<img class="weather-pop-drop" src="${dropSvg(pc)}" alt="">` : ''}<span class="weather-pop-num" style="color:${pc}">${hasPop ? `<span style="font-weight:${pop >= 50 ? '700' : '600'}">${pop}</span><span>%</span>` : '--'}</span>${hasPrecip ? `<span class="weather-precip-num"><span style="font-weight:${slot.precip >= 1 ? '700' : '400'}">${precipNum}</span><span>mm</span></span>` : ''}</div>
+                        <div class="weather-pop-row">${hasPop ? `<img class="weather-pop-drop" src="${dropSvg(pc)}" alt="">` : ''}<span class="weather-pop-num" style="color:${pc}">${hasPop ? `<span style="font-weight:${pop >= 50 ? '700' : '600'}">${pop}</span><span>%</span>` : '--'}</span>${hasPrecip ? `<span class="weather-precip-num"><span style="font-size:${slot.precip >= 1 ? '10px' : '9px'};font-weight:${slot.precip >= 1 ? '700' : '400'}">${precipNum}</span><span>mm</span></span>` : ''}</div>
                     </div>`;
                 }).join('')}
             </div>`;
