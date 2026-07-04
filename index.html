@@ -24,7 +24,7 @@
     // SWキャッシュで本fetchが即返ってもbody未生成で空振りしないようDOMContentLoadedを待機し、
     // 取得失敗・空振り時はリトライする（iOS等での一時的失敗からの自己復旧）。
     (function loadNearbyCatIcons(retries) {
-        fetch('icons-raw.svg').then(r => r.text()).then(svgText => {
+        fetch('icons-raw.svg?v=20260704-icons').then(r => r.text()).then(svgText => {
             const m = svgText.match(/<g[^>]*>([\s\S]*)<\/g>/);
             if (!m) { if (retries > 0) setTimeout(() => loadNearbyCatIcons(retries - 1), 500); return; }
             const inner = m[1];
@@ -1054,15 +1054,20 @@
     // 検索ピン
     let searchPinLngLat = null;
 
-    function placeSearchPin(lngLat, label = null) {
+    function placeSearchPin(lngLat, label = null, options = {}) {
+        const showMapPin = options.showMapPin !== false;
         searchPinLngLat = lngLat;
         refreshWeatherIfPanelOpen(); // 基準点が変わったらパネル表示中の天気も更新
         const src = map.getSource('search-pin-source');
-        if (src) src.setData({ type: 'Feature', geometry: { type: 'Point', coordinates: [lngLat.lng, lngLat.lat] }, properties: {} });
-        if (map.getLayer('search-pin-layer')) map.moveLayer('search-pin-layer');
-        if (!label) animatePinPulse(lngLat);
+        if (src) {
+            src.setData(showMapPin
+                ? { type: 'Feature', geometry: { type: 'Point', coordinates: [lngLat.lng, lngLat.lat] }, properties: {} }
+                : { type: 'FeatureCollection', features: [] });
+        }
+        if (showMapPin && map.getLayer('search-pin-layer')) map.moveLayer('search-pin-layer');
+        if (showMapPin && !label) animatePinPulse(lngLat);
         const origin = document.getElementById('nearby-search-origin');
-        if (origin && !label) { origin.classList.remove('flash'); void origin.offsetWidth; origin.classList.add('flash'); }
+        if (showMapPin && origin && !label) { origin.classList.remove('flash'); void origin.offsetWidth; origin.classList.add('flash'); }
         const labelEl = document.getElementById('nearby-search-origin-label');
         if (labelEl) labelEl.textContent = label || '検索地点';
         setSearchOriginText('取得中...', true);
@@ -2313,7 +2318,7 @@ map.on('zoomend', () => { isZooming = false; });
     function searchNearby(lng, lat, name = null) {
         event.stopPropagation();
         document.querySelectorAll('.maplibregl-popup').forEach(el => el.remove());
-        placeSearchPin({ lng, lat }, name || null);
+        placeSearchPin({ lng, lat }, name || null, { showMapPin: false });
         openNearbyPanel();
     }
 
