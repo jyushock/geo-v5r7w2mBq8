@@ -562,7 +562,7 @@
         .weather-pop-row { display: flex; align-items: center; justify-content: center; gap: 1px; margin-top: 2px; }
         .weather-pop-drop { width: 9px; height: 9px; flex-shrink: 0; }
         .weather-pop-num { font-size: 10px; line-height: 1; }
-        .weather-precip-num { font-size: 9px; line-height: 1; color: #6b9bd2; margin-left: 3px; }
+        .weather-precip-num { font-size: 9px; line-height: 1; color: #6b9bd2; margin-left: 2px; }
         #weather-hourly-panel {
             display: none;
             margin: 2px 0 0;
@@ -2758,7 +2758,9 @@ map.on('zoomend', () => { isZooming = false; });
             const hasPrecip = (d.precip !== null && d.precip !== undefined && !isNaN(d.precip));
             const precipNum = hasPrecip ? (d.precip >= 10 ? Math.round(d.precip) : Math.round(d.precip * 10) / 10) : null;
             const precipColor = hasPrecip && d.precip >= 1 ? popColor(100) : '';
-            const popRow = `<div class="weather-pop-row">${hasPop ? `<img class="weather-pop-drop" src="${dropSvg(pc)}" alt="">` : ''}<span class="weather-pop-num" style="color:${pc}">${hasPop ? `<span style="font-weight:${pop >= 50 ? '700' : '600'}">${pop}</span><span>%</span>` : '--'}</span>${hasPrecip ? `<span class="weather-precip-num" style="${precipColor ? 'color:' + precipColor : ''}"><span style="font-size:${d.precip >= 1 ? '10px' : '9px'};font-weight:${d.precip >= 1 ? '700' : '400'}">${precipNum}</span><span>mm</span></span>` : ''}</div>`;
+            // 降水量が3桁(100mm以上)の時は水滴アイコンを省略して幅を確保（カード幅は最大86px固定のため）
+            const showDrop = hasPop && !(hasPrecip && d.precip >= 100);
+            const popRow = `<div class="weather-pop-row">${showDrop ? `<img class="weather-pop-drop" src="${dropSvg(pc)}" alt="">` : ''}<span class="weather-pop-num" style="color:${pc}">${hasPop ? `<span style="font-weight:${pop >= 50 ? '700' : '600'}">${pop}</span><span>%</span>` : '--'}</span>${hasPrecip ? `<span class="weather-precip-num" style="${precipColor ? 'color:' + precipColor : ''}"><span style="font-size:${d.precip >= 1 ? '10px' : '9px'};font-weight:${d.precip >= 1 ? '700' : '400'}">${precipNum}</span><span>mm</span></span>` : ''}</div>`;
             // 3時間毎データがある日だけ開閉ボタンにする（気象庁フォールバック時は日毎のみ）
             const canOpen = !!(model.hourlyByDay && model.hourlyByDay[i] && model.hourlyByDay[i].length);
             const activeClass = canOpen && selectedWeatherDayIndex === i ? ' weather-day-active' : '';
