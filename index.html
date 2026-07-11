@@ -2784,7 +2784,8 @@ map.on('zoomend', () => { isZooming = false; });
         return 'sun'; // 0,1,2
     }
     // 時間別配列 [{code,pop}] → 単一の代表アイコン名（案A: 1日1アイコン）
-    // ルール: 雨/雪/雷は弱くても優先表示（降水確率≥30% か 降水コマ≥3）。それ以外は晴/曇を多数決。
+    // ルール: 雨/雪/雷は弱くても優先表示（降水確率≥30% か 降水コマ≥3 か 過半数が降水）。
+    //   過半数条件は3時間スロット（3コマ）でも降水を拾うため。それ以外は晴/曇を多数決。
     function pickWeatherIcon(hours) {
         if (!hours.length) return 'cloudy';
         const cats = hours.map(x => wmoCategory(x.code));
@@ -2792,7 +2793,7 @@ map.on('zoomend', () => { isZooming = false; });
         const rainN = cnt('rain'), snowN = cnt('snow'), thunN = cnt('thunder');
         const precipN = rainN + snowN + thunN, sunN = cnt('sun'), cloudN = cnt('cloud');
         const maxPop = hours.reduce((m, x) => Math.max(m, x.pop || 0), 0);
-        if (precipN > 0 && (maxPop >= 30 || precipN >= 3)) {
+        if (precipN > 0 && (maxPop >= 30 || precipN >= 3 || precipN * 2 >= hours.length)) {
             const kind = (thunN >= rainN && thunN >= snowN) ? 'thunder' : (snowN > rainN ? 'snow' : 'rain');
             const sunnyMix = sunN >= precipN; // 晴れ主体に一時的な降水
             if (kind === 'thunder') return 'thunderstorms-day-rain';
@@ -2808,7 +2809,8 @@ map.on('zoomend', () => { isZooming = false; });
     }
     // Open-Meteo 応答（hourly+daily, models=jma_seamless,best_match）→ 正規化3日
     // 天気アイコン: 時間別 weather_code(jma_seamless) を日ごとに集約。
-    //   今日 = 現在時刻〜23時（過ぎた時間は除外）／明日・明後日 = 6〜18時（日中代表）。
+    //   集約窓は3時間毎パネルに表示するスロットと同一（今日 = 現在の3時間スロット〜23時／
+    //   明日・明後日 = 終日）。窓を揃えることで日毎バッジとパネルの矛盾を防ぐ。
     // 降水確率: 同じ窓で best_match の時間別 precipitation_probability の最大。
     // 気温: 日次の最高/最低（jma_seamless優先）。
     function openMeteoToWeatherModel(data) {
@@ -2848,13 +2850,14 @@ map.on('zoomend', () => { isZooming = false; });
         const hourlyByDay = [];
         dayDates.forEach((d, di) => {
             const idx = byDate[d];
+            // 日毎バッジの集約窓 = パネルに表示する3時間スロットが覆う時間帯
+            //（今日 = 現在スロット以降／明日・明後日 = 終日）
             let win;
             if (di === 0) {
-                win = idx.filter(i => { const hh = parseInt(times[i].slice(11, 13), 10); return hh >= nowH && hh <= 23; });
+                win = idx.filter(i => { const hh = parseInt(times[i].slice(11, 13), 10); return hh >= current3hStart && hh <= 23; });
                 if (!win.length) win = idx.slice(-1); // 夜遅く等で残りが無ければ最後の時間
             } else {
-                win = idx.filter(i => { const hh = parseInt(times[i].slice(11, 13), 10); return hh >= 6 && hh <= 18; });
-                if (!win.length) win = idx;
+                win = idx;
             }
             const hours = win.map(i => ({
                 code: pickFirstValue(i, wcJma, wcBest, wcBase),
