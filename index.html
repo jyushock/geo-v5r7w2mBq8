@@ -2908,12 +2908,17 @@ map.on('zoomend', () => { isZooming = false; });
                     .map(j => pickFirstValue(j, precJma, precBest, precBase))
                     .filter(v => v != null && !isNaN(v));
                 const precipAtSlot = precipWindow.length ? precipWindow.reduce((s, v) => s + v, 0) : null;
-                const tempAtHour = pickFirstValue(i, thJma, thBest, thBase);
+                // 気温はスロット3時間窓内の最高値
+                //（瞬間値だと日毎バッジの最高気温が全スロットより高く見えるため）
+                const tempWindow = slotIdx
+                    .map(j => pickFirstValue(j, thJma, thBest, thBase))
+                    .filter(v => v != null && !isNaN(v));
+                const tempAtSlot = tempWindow.length ? Math.max.apply(null, tempWindow) : null;
                 const icon = pickWeatherIcon(slotHours);
                 return {
                     label: String(slotHour),
                     icon: icon || 'cloudy',
-                    temp: (tempAtHour != null && !isNaN(tempAtHour)) ? tempAtHour : null,
+                    temp: tempAtSlot,
                     pop: (popAtHour != null && !isNaN(popAtHour)) ? popAtHour : null,
                     precip: (precipAtSlot != null && !isNaN(precipAtSlot)) ? precipAtSlot : null,
                     dayPop: pop
