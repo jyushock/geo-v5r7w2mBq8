@@ -2692,8 +2692,10 @@ map.on('zoomend', () => { isZooming = false; });
         }
         const slots = hourlyByDay[selectedWeatherDayIndex] || [];
         if (!slots.length) {
-            panel.classList.add('open');
-            panel.innerHTML = `<div class="weather-hourly-empty">3時間ごとの予報を表示できませんでした。</div>`;
+            // 3時間毎データ無し（気象庁フォールバック等でカードは非ボタン化済み）→ 選択を解除して閉じる
+            selectedWeatherDayIndex = null;
+            panel.classList.remove('open');
+            panel.innerHTML = '';
             return;
         }
         const popColor = (p) => p >= 70 ? '#0D47A1' : p >= 50 ? '#1976D2' : p >= 30 ? '#42A5F5' : '#9aa6b2';
@@ -2751,10 +2753,15 @@ map.on('zoomend', () => { isZooming = false; });
             const hasPop = (d.pop !== null && d.pop !== undefined && !isNaN(d.pop));
             const pop = hasPop ? Math.round(d.pop) : null;
             const pc = hasPop ? popColor(pop) : '#bbb';
-            const popRow = `<div class="weather-pop-row">${hasPop ? `<img class="weather-pop-drop" src="${dropSvg(pc)}" alt="">` : ''}<span class="weather-pop-num" style="color:${pc}">${hasPop ? `<span style="font-weight:${pop >= 50 ? '700' : '600'}">${pop}</span><span>%</span>` : '--'}</span></div>`;
-            const activeClass = selectedWeatherDayIndex === i ? ' weather-day-active' : '';
-            return `
-            <button type="button" class="weather-day-card${activeClass}" onclick="toggleWeatherHourly(${i})" aria-pressed="${selectedWeatherDayIndex === i ? 'true' : 'false'}" aria-label="${lbl}の3時間ごとの天気を表示">
+            // 降水量合計（3時間毎パネルと同じ書式・色ルール）
+            const hasPrecip = (d.precip !== null && d.precip !== undefined && !isNaN(d.precip));
+            const precipNum = hasPrecip ? (d.precip >= 10 ? Math.round(d.precip) : Math.round(d.precip * 10) / 10) : null;
+            const precipColor = hasPrecip && d.precip >= 1 ? popColor(100) : '';
+            const popRow = `<div class="weather-pop-row">${hasPop ? `<img class="weather-pop-drop" src="${dropSvg(pc)}" alt="">` : ''}<span class="weather-pop-num" style="color:${pc}">${hasPop ? `<span style="font-weight:${pop >= 50 ? '700' : '600'}">${pop}</span><span>%</span>` : '--'}</span>${hasPrecip ? `<span class="weather-precip-num" style="${precipColor ? 'color:' + precipColor : ''}"><span style="font-size:${d.precip >= 1 ? '10px' : '9px'};font-weight:${d.precip >= 1 ? '700' : '400'}">${precipNum}</span><span>mm</span></span>` : ''}</div>`;
+            // 3時間毎データがある日だけ開閉ボタンにする（気象庁フォールバック時は日毎のみ）
+            const canOpen = !!(model.hourlyByDay && model.hourlyByDay[i] && model.hourlyByDay[i].length);
+            const activeClass = canOpen && selectedWeatherDayIndex === i ? ' weather-day-active' : '';
+            const inner = `
                 <div class="weather-day-label">${lbl}</div>
                 <div class="weather-icon-temp">
                     <span class="weather-emoji" style="-webkit-mask-image:url('${url}');mask-image:url('${url}');background-color:${col}"></span>
@@ -2763,8 +2770,10 @@ map.on('zoomend', () => { isZooming = false; });
                         <span class="weather-temp-lo">${hasLo ? lo + '°' : '--'}</span>
                     </div>
                 </div>
-                ${popRow}
-            </button>`;
+                ${popRow}`;
+            if (!canOpen) return `<div class="weather-day-card">${inner}</div>`;
+            return `
+            <button type="button" class="weather-day-card${activeClass}" onclick="toggleWeatherHourly(${i})" aria-pressed="${selectedWeatherDayIndex === i ? 'true' : 'false'}" aria-label="${lbl}の3時間ごとの天気を表示">${inner}</button>`;
         }).join('');
         renderWeatherHourly(model);
     }
@@ -3063,15 +3072,17 @@ map.on('zoomend', () => { isZooming = false; });
     async function fetchWeather() {
         const now = Date.now();
         const lngLat = getSearchCenter();
-        const lat = lngLat.lat.toFixed(4);
-        const lng = lngLat.lng.toFixed(4);
+        // 約1km粒度に丸める（地図の微小な移動で再フェッチしないように。気象モデルの格子より十分細かい）
+        const lat = lngLat.lat.toFixed(2);
+        const lng = lngLat.lng.toFixed(2);
         if (weatherCache && now - weatherCacheTime < WEATHER_CACHE_TTL
             && weatherCacheLat === lat && weatherCacheLng === lng) {
             renderWeatherDays(weatherCache); return;
         }
         let days = null;
         // ① Open-Meteo（座標粒度）: 天気=時間別weather_code(jma_seamless)を日ごとに集約,
-        //    降水確率=時間別(jma_seamless), 気温=日次最高/最低(jma_seamless)
+        //    降水確率=時間別(best_match。jma_seamlessは全時間nullを返すため実質未使用),
+        //    気温=日次最高/最低(jma_seamless)
         try {
             const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&hourly=weather_code,precipitation_probability,precipitation,temperature_2m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&models=jma_seamless,best_match&timezone=Asia%2FTokyo&forecast_days=3`;
             const data = await (await fetch(url)).json();
