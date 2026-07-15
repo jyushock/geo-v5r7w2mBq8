@@ -1801,7 +1801,7 @@
         "prefecture": "岩手県",
         "city": "野田村",
         "pokemon": "イワーク",
-        "address": "岩手県野田村大字野田第5地割45-20",
+        "address": "岩手県野田村大字野田第5地割",
         "image_url": "https://local.pokemon.jp/img/p/manhole/b30c30e0cdf7b450379ca2f43faa3aac_m.png",
         "image_url_full": "https://local.pokemon.jp/img/p/manhole/b30c30e0cdf7b450379ca2f43faa3aac_l.png",
         "detail_url": "https://local.pokemon.jp/manhole/desc/12/"
@@ -2389,7 +2389,7 @@
         "prefecture": "宮城県",
         "city": "名取市",
         "pokemon": "ラプラス",
-        "address": "宮城県名取市閖上五丁目",
+        "address": "宮城県名取市閖上東二丁目13‐2",
         "image_url": "https://local.pokemon.jp/img/p/manhole/b66498501b206eb2ec6a710f114c44bd_m.png",
         "image_url_full": "https://local.pokemon.jp/img/p/manhole/b66498501b206eb2ec6a710f114c44bd_l.png",
         "detail_url": "https://local.pokemon.jp/manhole/desc/55/"
@@ -4584,6 +4584,27 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          136.957244,
+          37.295752
+        ]
+      },
+      "properties": {
+        "id": 475,
+        "location": "石川県/輪島市",
+        "prefecture": "石川県",
+        "city": "輪島市",
+        "pokemon": "タツベイ / ボーマンダ",
+        "address": "石川県輪島市・のと里山空港敷地内（輪島市三井町洲衛10-11-1）",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/ebbdbee7f35498be1af93b5dc2f8e6c2_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/ebbdbee7f35498be1af93b5dc2f8e6c2_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/475/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           137.138718,
           37.333975
         ]
@@ -5081,6 +5102,132 @@
         "image_url": "https://local.pokemon.jp/img/p/manhole/8911ceb39e882e398c2d3ce2c706e4cd_m.png",
         "image_url_full": "https://local.pokemon.jp/img/p/manhole/8911ceb39e882e398c2d3ce2c706e4cd_l.png",
         "detail_url": "https://local.pokemon.jp/manhole/desc/336/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.41505,
+          36.74156
+        ]
+      },
+      "properties": {
+        "id": 486,
+        "location": "長野県/山ノ内町",
+        "prefecture": "長野県",
+        "city": "山ノ内町",
+        "pokemon": "マンキー / ガラルダルマッカ / ヒヤップ",
+        "address": "長野県山ノ内町大字平穏3227番地1",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/7fe9b42164a7f9fbaeb73ef90a2790ea_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/7fe9b42164a7f9fbaeb73ef90a2790ea_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/486/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.784559,
+          35.935271
+        ]
+      },
+      "properties": {
+        "id": 485,
+        "location": "長野県/木祖村",
+        "prefecture": "長野県",
+        "city": "木祖村",
+        "pokemon": "パチリス / オーロット / ココガラ",
+        "address": "長野県木祖村薮原1038-1",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/391c9a8f8b3ef650a85d3b05d39e1fd5_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/391c9a8f8b3ef650a85d3b05d39e1fd5_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/485/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.474215,
+          35.955351
+        ]
+      },
+      "properties": {
+        "id": 484,
+        "location": "長野県/南牧村",
+        "prefecture": "長野県",
+        "city": "南牧村",
+        "pokemon": "エレザード / エリキテル",
+        "address": "長野県南牧村大字野辺山306付近",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/34adefec6db50af8befe1d98435efa6c_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/34adefec6db50af8befe1d98435efa6c_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/484/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.859702,
+          36.506032
+        ]
+      },
+      "properties": {
+        "id": 483,
+        "location": "長野県/大町市",
+        "prefecture": "長野県",
+        "city": "大町市",
+        "pokemon": "ミニリュウ / ビッパ",
+        "address": "長野県大町市大町2532-7（名店街）",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/b04877fef931bfc2dd4b85cee9758ede_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/b04877fef931bfc2dd4b85cee9758ede_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/483/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.919057,
+          35.882479
+        ]
+      },
+      "properties": {
+        "id": 482,
+        "location": "長野県/伊那市",
+        "prefecture": "長野県",
+        "city": "伊那市",
+        "pokemon": "バサギリ / ヒヒダルマ / アマージョ",
+        "address": "長野県伊那市西箕輪3416-1（みはらしファーム内 名人亭南側）",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/1cd7407c636a3fdfb846915335153d04_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/1cd7407c636a3fdfb846915335153d04_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/482/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.0511,
+          36.06648
+        ]
+      },
+      "properties": {
+        "id": 481,
+        "location": "長野県/岡谷市",
+        "prefecture": "長野県",
+        "city": "岡谷市",
+        "pokemon": "モスノウ / ユキハミ",
+        "address": "長野県岡谷市幸町1",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/38dbfc1d6e8a42120c2fd6136f511a97_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/38dbfc1d6e8a42120c2fd6136f511a97_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/481/"
       }
     },
     {
@@ -8574,6 +8721,111 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          129.910858,
+          33.141048
+        ]
+      },
+      "properties": {
+        "id": 480,
+        "location": "長崎県/波佐見町",
+        "prefecture": "長崎県",
+        "city": "波佐見町",
+        "pokemon": "デンリュウ / カイロス / ハッサム",
+        "address": "長崎県波佐見町井石郷2255-2",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/273a40e9db77b08bc4a8aadd8d8f5d6d_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/273a40e9db77b08bc4a8aadd8d8f5d6d_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/480/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.637485,
+          33.036768
+        ]
+      },
+      "properties": {
+        "id": 479,
+        "location": "長崎県/西海市",
+        "prefecture": "長崎県",
+        "city": "西海市",
+        "pokemon": "デンリュウ / タイカイデン / トリトドン",
+        "address": "長崎県西海市大島町1374-4",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/4543d040f87f6f6edbc37f69e73abde7_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/4543d040f87f6f6edbc37f69e73abde7_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/479/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.847861,
+          32.641898
+        ]
+      },
+      "properties": {
+        "id": 478,
+        "location": "長崎県/五島市",
+        "prefecture": "長崎県",
+        "city": "五島市",
+        "pokemon": "デンリュウ / モココ / メリープ",
+        "address": "長崎県五島市野々切町1333-3",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/1fd094dccc46d6d5a016ab6fc88a5ebf_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/1fd094dccc46d6d5a016ab6fc88a5ebf_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/478/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.289139,
+          34.202685
+        ]
+      },
+      "properties": {
+        "id": 477,
+        "location": "長崎県/対馬市",
+        "prefecture": "長崎県",
+        "city": "対馬市",
+        "pokemon": "デンリュウ / レパルダス / キノガッサ",
+        "address": "長崎県対馬市厳原町今屋敷672-1",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/7cab4fbef67520a2aa892e78044ba411_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/7cab4fbef67520a2aa892e78044ba411_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/477/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.042015,
+          32.851951
+        ]
+      },
+      "properties": {
+        "id": 476,
+        "location": "長崎県/諫早市",
+        "prefecture": "長崎県",
+        "city": "諫早市",
+        "pokemon": "デンリュウ / メタグロス",
+        "address": "長崎県諫早市永昌東町2",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/9ad3148fd75c57b00c5e66503d73af38_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/9ad3148fd75c57b00c5e66503d73af38_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/476/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           129.6589353,
           33.254897
         ]
@@ -8605,7 +8857,7 @@
         "prefecture": "長崎県",
         "city": "東彼杵町",
         "pokemon": "デンリュウ / ジュペッタ / ワタッコ",
-        "address": "長崎県東彼杵町彼杵宿郷747-2",
+        "address": "長崎県東彼杵町彼杵宿郷４７２",
         "image_url": "https://local.pokemon.jp/img/p/manhole/7e0358daa2f0bd5c89903de1a57cecf8_m.png",
         "image_url_full": "https://local.pokemon.jp/img/p/manhole/7e0358daa2f0bd5c89903de1a57cecf8_l.png",
         "detail_url": "https://local.pokemon.jp/manhole/desc/430/"
