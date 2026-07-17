@@ -129,19 +129,22 @@
             100% { background: #f9f9f9; }
         }
         #nearby-search-origin.flash { animation: originFlash 0.7s ease-out; }
+        /* 十字パッド（ズーム＋移動履歴） */
         #zoom-btn-wrap {
             position: fixed;
             right: 10px;
             bottom: 90px;
+            width: 144px;
+            height: 144px;
             z-index: 200;
-            display: flex;
-            flex-direction: column;
-            background-color: rgba(255, 255, 255, 0.7);
-            border-radius: 24px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-            overflow: hidden;
+            pointer-events: none; /* 四隅の空き領域は地図操作を通す */
             touch-action: manipulation; /* iOSでのダブルタップズームを無効化 */
         }
+        /* 十字形の背景（縦ピル＋左右の腕。重ねず並べて透過ムラを防ぐ） */
+        #dpad-bg { position: absolute; inset: 0; filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2)); pointer-events: none; }
+        #dpad-bg .dpad-v { position: absolute; left: 48px; top: 0; width: 48px; height: 144px; background: rgba(255,255,255,0.7); border-radius: 24px; }
+        #dpad-bg .dpad-l { position: absolute; left: 0; top: 48px; width: 48px; height: 48px; background: rgba(255,255,255,0.7); border-radius: 24px 0 0 24px; }
+        #dpad-bg .dpad-r { position: absolute; right: 0; top: 48px; width: 48px; height: 48px; background: rgba(255,255,255,0.7); border-radius: 0 24px 24px 0; }
         #toggle-layers-btn-wrap {
             position: fixed;
             top: 10px; /* 右上に配置 */
@@ -187,13 +190,14 @@
         #toggle-layers-btn.pressed,
         #toggle-layers-btn:active  { background-color: rgba(180, 180, 180, 0.9); }
 
-        /* ズームボタン個別のスタイル */
-        #zoom-in-btn, #zoom-out-btn {
+        /* 十字パッドの各ボタン */
+        #zoom-in-btn, #zoom-out-btn, #hist-back-btn, #hist-fwd-btn {
+            position: absolute;
             width: 48px;
             height: 48px;
             background-color: transparent;
             border: none;
-            border-radius: 0;
+            border-radius: 50%;
             box-shadow: none;
             cursor: pointer;
             font-size: 24px;
@@ -202,17 +206,49 @@
             align-items: center;
             justify-content: center;
             padding: 0;
+            pointer-events: auto;
             touch-action: manipulation;
             -webkit-user-select: none;
             user-select: none;
             -webkit-touch-callout: none;
         }
-        #zoom-in-btn {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-        }
-        #zoom-in-btn:active, #zoom-out-btn:active {
+        #zoom-in-btn   { top: 0;    left: 48px; }
+        #zoom-out-btn  { bottom: 0; left: 48px; }
+        #hist-back-btn { left: 0;   top: 48px; }
+        #hist-fwd-btn  { right: 0;  top: 48px; }
+        #zoom-in-btn:active, #zoom-out-btn:active,
+        #hist-back-btn:active:not(:disabled), #hist-fwd-btn:active:not(:disabled) {
             background-color: rgba(0, 0, 0, 0.08);
         }
+        #hist-back-btn:disabled, #hist-fwd-btn:disabled { color: #c5c5c5; cursor: default; }
+
+        /* 移動履歴リストポップアップ（＜＞長押しで表示） */
+        #hist-list-popup {
+            display: none;
+            position: fixed;
+            right: 10px;
+            bottom: 244px; /* 十字パッド上端(90+144)+10px */
+            z-index: 250;
+            width: 220px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            font-family: sans-serif;
+        }
+        #hist-list-popup .hist-hdr { font-size: 11px; color: #888; font-weight: bold; padding: 8px 12px 4px; }
+        #hist-list-popup .hist-item { display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-top: 1px solid #f2f2f2; cursor: pointer; }
+        #hist-list-popup .hist-item:last-child { border-radius: 0 0 12px 12px; }
+        #hist-list-popup .hist-item:hover { background: #f9f9f9; }
+        #hist-list-popup .hist-ico { font-size: 14px; flex-shrink: 0; }
+        #hist-list-popup .hist-txt { flex: 1; min-width: 0; }
+        #hist-list-popup .hist-name { font-size: 12px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        #hist-list-popup .hist-meta { font-size: 10px; color: #999; margin-top: 1px; }
+        #hist-list-popup::after {
+            content: ''; position: absolute; bottom: -6px; width: 12px; height: 12px;
+            background: #fff; transform: rotate(45deg); box-shadow: 3px 3px 6px rgba(0,0,0,0.08);
+        }
+        #hist-list-popup.anchor-back::after { right: 124px; } /* ＜ボタンの真上 */
+        #hist-list-popup.anchor-fwd::after  { right: 28px; }  /* ＞ボタンの真上 */
         .hamburger-icon {
             display: flex; flex-direction: column; gap: 4px;
             width: 18px;
@@ -700,9 +736,17 @@
     </button>
 </div>
 <div id="zoom-btn-wrap">
+    <div id="dpad-bg"><div class="dpad-v"></div><div class="dpad-l"></div><div class="dpad-r"></div></div>
     <button id="zoom-in-btn" title="ズームイン">+</button>
     <button id="zoom-out-btn" title="ズームアウト">-</button>
+    <button id="hist-back-btn" title="ひとつ前に戻る（長押しで履歴）" disabled>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button id="hist-fwd-btn" title="ひとつ先へ進む（長押しで履歴）" disabled>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
 </div>
+<div id="hist-list-popup"></div>
 
 <div id="bottom-bar">
     <div id="search-container">
@@ -1050,6 +1094,170 @@
             duration: 300,
             essential: true
         });
+    });
+
+    // --- 移動履歴（戻る/進む） ---
+    const HIST_MAX = 50;
+    const mapHistory = [];
+    let histIndex = -1;
+    let histPending = null;    // プログラム移動の直後のmoveendで記録するラベル
+    let histNavActive = false; // 履歴ジャンプによる移動中はmoveendで記録しない
+    let histNavTimer = null;
+
+    // moveend不発（同一地点への移動等）で残った古いpendingを次のmoveendに誤適用しないよう時刻を持つ
+    function histSetPending(label, cause) {
+        histPending = { label, cause, t: Date.now() };
+    }
+
+    function histPush(info) {
+        const c = map.getCenter();
+        const entry = Object.assign({ lng: c.lng, lat: c.lat, zoom: map.getZoom(), time: Date.now() }, info);
+        // 直前エントリと同じ操作・同じラベル・ほぼ同位置なら上書き（連打による重複防止）
+        const cur = mapHistory[histIndex];
+        if (cur && cur.cause === entry.cause && cur.label === entry.label) {
+            const p1 = map.project([cur.lng, cur.lat]);
+            const p2 = map.project([entry.lng, entry.lat]);
+            if (Math.hypot(p1.x - p2.x, p1.y - p2.y) < 40) {
+                Object.assign(cur, entry);
+                updateHistButtons();
+                return;
+            }
+        }
+        mapHistory.splice(histIndex + 1); // 進む側の履歴は破棄
+        mapHistory.push(entry);
+        if (mapHistory.length > HIST_MAX) mapHistory.shift();
+        histIndex = mapHistory.length - 1;
+        updateHistButtons();
+    }
+
+    // ピンタップ時：直前エントリとほぼ同位置ならラベルを引き継いで上書き、離れていれば新規追加
+    function histRecordPin(label, coords) {
+        const cur = mapHistory[histIndex];
+        if (cur) {
+            const p1 = map.project([cur.lng, cur.lat]);
+            const p2 = map.project(coords);
+            if (Math.hypot(p1.x - p2.x, p1.y - p2.y) < 40) {
+                Object.assign(cur, { label, cause: 'pin', lng: coords[0], lat: coords[1], time: Date.now() });
+                return;
+            }
+        }
+        histPush({ label, cause: 'pin', lng: coords[0], lat: coords[1] });
+    }
+
+    // 手動移動：直前エントリから画面短辺の40%以上動いたら記録（現在地追従中は記録しない）
+    function histCheckManualMove() {
+        if (trackingMode > 0) return;
+        const cur = mapHistory[histIndex];
+        if (!cur) return;
+        const c = map.getCenter();
+        const p1 = map.project([cur.lng, cur.lat]);
+        const p2 = map.project([c.lng, c.lat]);
+        if (Math.hypot(p1.x - p2.x, p1.y - p2.y) < Math.min(window.innerWidth, window.innerHeight) * 0.4) return;
+        // 15秒以内に続く手動移動は直近エントリを更新（細かい移動での履歴増殖を防ぐ）
+        if (cur.cause === 'move' && Date.now() - cur.time < 15000 && histIndex === mapHistory.length - 1) {
+            Object.assign(cur, { lng: c.lng, lat: c.lat, zoom: map.getZoom(), time: Date.now() });
+            return;
+        }
+        histPush({ label: '地図移動', cause: 'move' });
+    }
+
+    function onHistMoveEnd() {
+        if (histNavActive) {
+            histNavActive = false;
+            clearTimeout(histNavTimer);
+            updateHistButtons();
+            return;
+        }
+        if (histPending) {
+            const p = histPending;
+            histPending = null;
+            if (Date.now() - p.t < 3000) {
+                histPush({ label: p.label, cause: p.cause });
+                return;
+            }
+        }
+        histCheckManualMove();
+    }
+
+    function updateHistButtons() {
+        document.getElementById('hist-back-btn').disabled = histIndex <= 0;
+        document.getElementById('hist-fwd-btn').disabled  = histIndex >= mapHistory.length - 1;
+    }
+
+    function histGoTo(idx) {
+        if (idx < 0 || idx >= mapHistory.length || idx === histIndex) return;
+        closeHistList();
+        if (trackingMode > 0) { trackingMode = 0; stopRafLoop(); updateGeolocateButton(); }
+        const e = mapHistory[idx];
+        histIndex = idx;
+        histPending = null;
+        histNavActive = true;
+        clearTimeout(histNavTimer);
+        histNavTimer = setTimeout(() => { histNavActive = false; }, 1500); // moveend不発時の保険
+        updateHistButtons();
+        map.easeTo({ center: [e.lng, e.lat], zoom: e.zoom, bearing: 0, pitch: 0, duration: 550, essential: true });
+    }
+
+    const HIST_ICONS  = { init: '🚩', search: '🔍', pin: '📍', geo: '🧭', move: '🖐' };
+    const HIST_CAUSES = { init: '開始地点', search: '検索', pin: 'ピン選択', geo: '現在地', move: '地図移動' };
+
+    function histTimeAgo(t) {
+        const s = (Date.now() - t) / 1000;
+        if (s < 60) return 'たった今';
+        if (s < 3600) return `${Math.floor(s / 60)}分前`;
+        if (s < 86400) return `${Math.floor(s / 3600)}時間前`;
+        return `${Math.floor(s / 86400)}日前`;
+    }
+
+    function histEscape(s) {
+        return String(s).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+    }
+
+    function openHistList(dir) {
+        const items = dir < 0
+            ? mapHistory.slice(0, histIndex).map((e, i) => ({ e, idx: i })).reverse()
+            : mapHistory.slice(histIndex + 1).map((e, i) => ({ e, idx: histIndex + 1 + i }));
+        if (!items.length) return;
+        const pop = document.getElementById('hist-list-popup');
+        pop.innerHTML = `<div class="hist-hdr">${dir < 0 ? '◀ 戻る' : '▶ 進む'}</div>` + items.slice(0, 10).map(({ e, idx }) =>
+            `<div class="hist-item" data-idx="${idx}"><span class="hist-ico">${HIST_ICONS[e.cause] || '📍'}</span><div class="hist-txt"><div class="hist-name">${histEscape(e.label)}</div><div class="hist-meta">${histTimeAgo(e.time)}・${HIST_CAUSES[e.cause] || ''}</div></div></div>`).join('');
+        pop.classList.remove('anchor-back', 'anchor-fwd');
+        pop.classList.add(dir < 0 ? 'anchor-back' : 'anchor-fwd');
+        pop.style.display = 'block';
+    }
+
+    function closeHistList() {
+        document.getElementById('hist-list-popup').style.display = 'none';
+    }
+
+    // ＜＞ボタン：タップで1段移動、長押し(500ms)で履歴リスト
+    function setupHistButton(btnId, dir) {
+        const btn = document.getElementById(btnId);
+        let timer = null;
+        btn.addEventListener('pointerdown', (e) => {
+            e.preventDefault();
+            if (btn.disabled) return;
+            timer = setTimeout(() => { timer = null; openHistList(dir); }, 500);
+        });
+        btn.addEventListener('pointerup', () => {
+            if (timer) { clearTimeout(timer); timer = null; histGoTo(histIndex + dir); }
+        });
+        const cancelPress = () => { clearTimeout(timer); timer = null; };
+        btn.addEventListener('pointerleave', cancelPress);
+        btn.addEventListener('pointercancel', cancelPress);
+        btn.addEventListener('contextmenu', (e) => e.preventDefault());
+    }
+    setupHistButton('hist-back-btn', -1);
+    setupHistButton('hist-fwd-btn', 1);
+
+    document.getElementById('hist-list-popup').addEventListener('click', (e) => {
+        const row = e.target.closest('.hist-item');
+        if (row) histGoTo(Number(row.dataset.idx));
+    });
+    // リスト外タップで閉じる（＜＞ボタン上のタップは長押し直後のclickを無視するため除外）
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('#hist-list-popup') || e.target.closest('#hist-back-btn') || e.target.closest('#hist-fwd-btn')) return;
+        closeHistList();
     });
 
     // 検索ピン
@@ -1707,6 +1915,11 @@ map.on('zoomend', () => { isZooming = false; });
         map.on('moveend', saveMapState);
         map.on('zoomend', saveMapState);
 
+        // 移動履歴：記録開始と初期エントリ
+        map.on('moveend', onHistMoveEnd);
+        map.on('movestart', closeHistList);
+        histPush({ label: '開始地点', cause: 'init' });
+
         // 現在地ボタンのクリック処理
         document.getElementById('geolocate-btn').addEventListener('click', () => {
             removeSearchPin();
@@ -1723,6 +1936,7 @@ map.on('zoomend', () => { isZooming = false; });
                 trackingMode = mode;
                 if (mode === 2) requestDeviceOrientation();
                 if (currentLocation) {
+                    histSetPending('現在地', 'geo');
                     map.easeTo({
                         center: [currentLocation.lng, currentLocation.lat],
                         zoom: map.getZoom(),
@@ -1744,6 +1958,7 @@ map.on('zoomend', () => { isZooming = false; });
             }
 
             if (trackingMode > 0 && currentLocation) {
+                histSetPending('現在地', 'geo');
                 map.easeTo({
                     center: [currentLocation.lng, currentLocation.lat],
                     zoom: map.getZoom(),
@@ -1821,6 +2036,7 @@ map.on('zoomend', () => { isZooming = false; });
 
                 // 追従モードONかつ初回位置取得時→アニメーションで現在地へ移動
                 if (isFirst && trackingMode > 0) {
+                    histSetPending('現在地', 'geo');
                     map.easeTo({
                         center: [lng, lat],
                         zoom: Math.max(map.getZoom(), 15),
@@ -1943,6 +2159,7 @@ map.on('zoomend', () => { isZooming = false; });
                     const popupHtml = buildPopupHtml(conf.type, p.name || '', p, c[0], c[1]);
                     const popup = new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
                     if (conf.type === 'castle') injectCastleImage(popup, p.name, p.url);
+                    histRecordPin(p.name || p.pokemon || '地点', c);
                 });
 
                 const hover = (l, cur) => { map.on('mouseenter', l, () => map.getCanvas().style.cursor = cur); map.on('mouseleave', l, () => map.getCanvas().style.cursor = ''); };
@@ -2107,6 +2324,7 @@ map.on('zoomend', () => { isZooming = false; });
             updateGeolocateButton();
         }
         clearSearch();
+        histSetPending(item.label, 'search');
         map.easeTo({ center: item.coords, zoom: Math.max(map.getZoom(), 15), bearing: 0, pitch: 0, duration: 550, essential: true });
         if (item.type !== 'place') {
             setTimeout(() => showPopupForItem(item), 300);
@@ -2191,6 +2409,7 @@ map.on('zoomend', () => { isZooming = false; });
         const coords = tryParseCoords(q) || tryParsePlusCode(q) || tryParseDMS(q);
         if (coords) {
             if (trackingMode > 0) { trackingMode = 0; stopRafLoop(); updateGeolocateButton(); }
+            histSetPending(`${coords.lat.toFixed(4)}, ${coords.lng.toFixed(4)}`, 'search');
             map.easeTo({ center: [coords.lng, coords.lat], zoom: Math.max(map.getZoom(), 15), duration: 500 });
             clearSearch();
             return;
