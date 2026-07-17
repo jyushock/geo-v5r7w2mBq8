@@ -1778,6 +1778,26 @@ function buildMhcardImgHtml(p) {
     return `<div class="manhole-img-container"><img src="${p.cardImgUrl}" class="manhole-img-large" onerror="this.parentNode.style.display='none'"></div>`;
 }
 
+// --- ポップアップ共通パーツ（全タイプで同一マークアップを1箇所に集約） ---
+function popupTitleHtml(text) {
+    return `<span class="popup-title popup-clamp">${text}</span>`;
+}
+function popupAddressHtml(address) {
+    return address ? `<span class="popup-address popup-clamp">${address}</span>` : '';
+}
+function popupRoadHtml(icon, text) {
+    return text ? `<span class="popup-road popup-clamp">${icon} ${text}</span>` : '';
+}
+function popupImgHtml(url, cls) {
+    return url ? `<div class="manhole-img-container"><img src="${url}" class="${cls}"></div>` : '';
+}
+function gmapCoordBtnHtml(coordGmapUrl) {
+    return `<a href="${coordGmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>`;
+}
+function cardDetailBtnHtml() {
+    return `<button class="btn btn-carddetail btn-full" onclick="openCardDetail()">カード詳細</button>`;
+}
+
 function buildPopupHtml(type, label, p, lng, lat) {
     const navUrl      = `https://www.google.com/maps?daddr=${lat},${lng}&dirflg=w`;
     const yahooNavUrl = `https://map.yahoo.co.jp/maps?lat=${lat}&lon=${lng}&zoom=16&type=scroll`;
@@ -1789,32 +1809,27 @@ function buildPopupHtml(type, label, p, lng, lat) {
     if (isPokefuta) {
         const title = p.pokemon || label;
         const imgUrl = p.image_url_full || (p.cardId ? `https://ekikaramanhole.whitebeach.org/ext/pokefuta/image/main/${String(p.cardId).padStart(3,'0')}.jpg` : '');
-        const imgHtml = imgUrl ? `<div class="manhole-img-container"><img src="${imgUrl}" class="manhole-img"></div>` : '';
-        const addressHtml = p.address ? `<span class="popup-address popup-clamp">${p.address}</span>` : '';
-        return `<div class="popup-card"><span class="popup-title popup-clamp">${title}</span>${addressHtml}${imgHtml}<div class="btn-grid"><a href="${coordGmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a><a href="${p.detail_url}" target="_blank" class="btn btn-pokefuta btn-full">公式ページ</a>${navBtns}${nearbyBtn}</div></div>`;
+        const imgHtml = popupImgHtml(imgUrl, 'manhole-img');
+        return `<div class="popup-card">${popupTitleHtml(title)}${popupAddressHtml(p.address)}${imgHtml}<div class="btn-grid">${gmapCoordBtnHtml(coordGmapUrl)}<a href="${p.detail_url}" target="_blank" class="btn btn-pokefuta btn-full">公式ページ</a>${navBtns}${nearbyBtn}</div></div>`;
     } else if (type === 'manhole') {
         const name = p.name || label;
-        const imgHtml = p.cardId ? `<div class="manhole-img-container"><img src="https://ekikaramanhole.whitebeach.org/ext/manholecard/image/getimage.cgi?file=card/${p.cardId}.jpg" class="manhole-img-large"></div>` : '';
-        const addressHtml = p.address ? `<span class="popup-address popup-clamp">${p.address}</span>` : '';
+        const imgHtml = popupImgHtml(p.cardId ? `https://ekikaramanhole.whitebeach.org/ext/manholecard/image/getimage.cgi?file=card/${p.cardId}.jpg` : '', 'manhole-img-large');
         // 配布場所データと紐付いた場合のみ「カード詳細」を表示
         const joined = findCardByCardId(p.cardId);
         if (joined) cardDetailProps = joined;
-        const detailBtn = joined ? `<button class="btn btn-carddetail btn-full" onclick="openCardDetail()">カード詳細</button>` : '';
-        return `<div class="popup-card"><span class="popup-title popup-clamp">${name}</span>${addressHtml}${imgHtml}<div class="btn-grid"><a href="${coordGmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${detailBtn}${navBtns}${nearbyBtn}</div></div>`;
+        const detailBtn = joined ? cardDetailBtnHtml() : '';
+        return `<div class="popup-card">${popupTitleHtml(name)}${popupAddressHtml(p.address)}${imgHtml}<div class="btn-grid">${gmapCoordBtnHtml(coordGmapUrl)}${detailBtn}${navBtns}${nearbyBtn}</div></div>`;
     } else if (type === 'mhcard') {
         const title = `${p.coordOffset ? '[複]' : ''}[配布] ${p.name || label}`;
-        const addressHtml = p.address ? `<span class="popup-address popup-clamp">${p.address}</span>` : '';
-        const hoursHtml = p.hours ? `<span class="popup-road popup-clamp">🕐 ${p.hours}</span>` : '';
+        const hoursHtml = popupRoadHtml('🕐', p.hours);
         const imgHtml = buildMhcardImgHtml(p);
         cardDetailProps = p;
-        const detailBtn = `<button class="btn btn-carddetail btn-full" onclick="openCardDetail()">カード詳細</button>`;
-        return `<div class="popup-card"><span class="popup-title popup-clamp">${title}</span>${addressHtml}${hoursHtml}${imgHtml}<div class="btn-grid"><a href="${coordGmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${detailBtn}${navBtns}${nearbyBtn}</div></div>`;
+        return `<div class="popup-card">${popupTitleHtml(title)}${popupAddressHtml(p.address)}${hoursHtml}${imgHtml}<div class="btn-grid">${gmapCoordBtnHtml(coordGmapUrl)}${cardDetailBtnHtml()}${navBtns}${nearbyBtn}</div></div>`;
     } else if (type === 'michi') {
         const name = p.name || label;
         const gmapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}`;
-        const addressHtml = p.address ? `<span class="popup-address popup-clamp">${p.address}</span>` : '';
-        const roadHtml = p.road ? `<span class="popup-road popup-clamp">📍 ${p.road}</span>` : '';
-        const hoursHtml = p.businessHours ? `<span class="popup-road popup-clamp">🕐 ${p.businessHours}</span>` : '';
+        const roadHtml = popupRoadHtml('📍', p.road);
+        const hoursHtml = popupRoadHtml('🕐', p.businessHours);
         const michiExtraBtns = [
             [p.url,       'btn-michi-web', '公式ページ', p.michiEkiUrl, 'btn-michi-eki', 'michieki.jp'],
             [p.homepage,  'btn-michi-hp',  '施設HP',     p.homepage2,   'btn-michi-hp',  '関連HP'],
@@ -1824,17 +1839,16 @@ function buildPopupHtml(type, label, p, lng, lat) {
             return (lHref ? `<a href="${lHref}" target="_blank" class="btn ${lCls}${solo ? ' btn-full' : ''}">${lText}</a>` : '')
                  + (rHref ? `<a href="${rHref}" target="_blank" class="btn ${rCls}${solo ? ' btn-full' : ''}">${rText}</a>` : '');
         }).join('');
-        return `<div class="popup-card"><span class="popup-title popup-clamp">${name}</span>${roadHtml}${addressHtml}${hoursHtml}<div class="btn-grid"><a href="${gmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${michiExtraBtns}${navBtns}${nearbyBtn}</div></div>`;
+        return `<div class="popup-card">${popupTitleHtml(name)}${roadHtml}${popupAddressHtml(p.address)}${hoursHtml}<div class="btn-grid"><a href="${gmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${michiExtraBtns}${navBtns}${nearbyBtn}</div></div>`;
     } else {
         const name = p.name || label;
         const gmapQuery = type === 'castle' ? castleGmapQuery(name, p.address) : name;
         const gmapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(gmapQuery)}`;
-        const addressHtml = p.address ? `<span class="popup-address popup-clamp">${p.address}</span>` : '';
         let extraBtns = '';
         if (type === 'shop')   extraBtns = `<a href="${p.url}" target="_blank" class="btn btn-tabelog btn-full">食べログ</a>`;
         if (type === 'castle') extraBtns = `<a href="https://ja.wikipedia.org/wiki/${encodeURIComponent(name)}" target="_blank" class="btn btn-wiki${p.url ? '' : ' btn-full'}">Wikipedia</a>${p.url ? `<a href="${p.url}" target="_blank" class="btn btn-kojodan">攻城団</a>` : ''}<a href="https://www.google.com/search?q=${encodeURIComponent(name + ' アクセス')}" target="_blank" class="btn btn-access btn-full">アクセス</a>`;
         const castleImgPlaceholder = type === 'castle' ? `<div class="castle-img-placeholder"></div>` : '';
-        return `<div class="popup-card"><span class="popup-title popup-clamp">${name}</span>${addressHtml}${castleImgPlaceholder}<div class="btn-grid"><a href="${gmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${extraBtns}${navBtns}${nearbyBtn}</div></div>`;
+        return `<div class="popup-card">${popupTitleHtml(name)}${popupAddressHtml(p.address)}${castleImgPlaceholder}<div class="btn-grid"><a href="${gmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${extraBtns}${navBtns}${nearbyBtn}</div></div>`;
     }
 }
 
