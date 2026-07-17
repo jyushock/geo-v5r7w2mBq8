@@ -942,7 +942,10 @@
     <div id="nearby-result-header" style="display:flex;flex-direction:column;align-items:center;padding:8px 16px 6px;flex-shrink:0;border-bottom:1px solid #f0f0f0;cursor:grab;">
         <div style="width:36px;height:4px;background:#ccc;border-radius:2px;margin-bottom:8px;"></div>
         <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
-            <span id="nearby-result-title" style="font-weight:bold;font-size:14px;color:#333;"></span>
+            <div style="display:flex;align-items:center;gap:10px;min-width:0;">
+                <span id="nearby-result-title" style="font-weight:bold;font-size:14px;color:#333;white-space:nowrap;"></span>
+                <button id="nearby-filter-all-btn" onclick="event.stopPropagation();toggleAllNearbyTypeFilter()" style="display:none;background:#f5f5f5;border:1px solid #ddd;border-radius:14px;font-size:11px;color:#555;padding:3px 10px;cursor:pointer;white-space:nowrap;flex-shrink:0;">全解除</button>
+            </div>
             <button onclick="closeNearbyResult()" style="background:none;border:none;font-size:22px;color:#bbb;cursor:pointer;padding:0 0 0 16px;line-height:1;flex-shrink:0;">×</button>
         </div>
     </div>
@@ -2325,7 +2328,7 @@ map.on('zoomend', () => { isZooming = false; });
         }
         clearSearch();
         histSetPending(item.label, 'search');
-        map.easeTo({ center: item.coords, zoom: Math.max(map.getZoom(), 15), bearing: 0, pitch: 0, duration: 550, essential: true });
+        map.easeTo({ center: item.coords, bearing: 0, pitch: 0, duration: 550, essential: true });
         if (item.type !== 'place') {
             setTimeout(() => showPopupForItem(item), 300);
         }
@@ -2465,6 +2468,18 @@ map.on('zoomend', () => { isZooming = false; });
     setSearchOriginText('地図中心', false);
     let nearbyAllResults = [];
     let nearbyTypeFilter = new Set();
+    let nearbyResultTypes = []; // 現在の検索結果に含まれるタイプ一覧
+
+    // タイプフィルターのOFF状態をlocalStorageへ永続化
+    function loadNearbyFilterOff() {
+        try { return new Set(JSON.parse(localStorage.getItem('nearbyTypeFilterOff')) || []); } catch { return new Set(); }
+    }
+    function saveNearbyFilterOff() {
+        // 今回の結果に含まれないタイプの保存済みOFF状態は維持する
+        const off = loadNearbyFilterOff();
+        nearbyResultTypes.forEach(t => { if (nearbyTypeFilter.has(t)) off.delete(t); else off.add(t); });
+        localStorage.setItem('nearbyTypeFilterOff', JSON.stringify([...off]));
+    }
     const filterState = Object.assign(
         { shop: true, castle: true, michi: true, manhole: true, mhcard: false },
         savedSettings ? savedSettings.filter : {}
@@ -2660,9 +2675,15 @@ map.on('zoomend', () => { isZooming = false; });
             .filter(item => item.dist <= RADIUS)
             .sort((a, b) => a.dist - b.dist);
 
-        // タイプフィルターを全種類ONで初期化
+        // タイプフィルターを保存済み状態で初期化（フィルターUIが出ない1種類以下の時は全ON）
         const typesInResults = [...new Set(nearbyAllResults.map(i => i.type))];
-        nearbyTypeFilter = new Set(typesInResults);
+        nearbyResultTypes = typesInResults;
+        if (typesInResults.length <= 1) {
+            nearbyTypeFilter = new Set(typesInResults);
+        } else {
+            const savedOff = loadNearbyFilterOff();
+            nearbyTypeFilter = new Set(typesInResults.filter(t => !savedOff.has(t)));
+        }
 
         closeNearby();
         document.getElementById('nearby-result-title').textContent = `マップ中心から${RADIUS}km以内`;
@@ -2673,8 +2694,10 @@ map.on('zoomend', () => { isZooming = false; });
     }
     function buildNearbyTypeFilterChips(types) {
         const strip = document.getElementById('nearby-type-filter');
-        if (types.length <= 1) { strip.style.display = 'none'; return; }
+        const allBtn = document.getElementById('nearby-filter-all-btn');
+        if (types.length <= 1) { strip.style.display = 'none'; allBtn.style.display = 'none'; return; }
         strip.style.display = 'flex';
+        allBtn.style.display = 'inline-block';
         strip.innerHTML = '';
         const typeOrder = ['shop', 'castle', 'michi', 'manhole', 'pokefuta', 'mhcard'];
         const sorted = [...types].sort((a, b) => typeOrder.indexOf(a) - typeOrder.indexOf(b));
@@ -2684,13 +2707,14 @@ map.on('zoomend', () => { isZooming = false; });
             const count = nearbyAllResults.filter(i => i.type === type).length;
             const color = type === 'castle' ? '#546E7A' : cfg.color;
             const chip = document.createElement('button');
-            chip.className = 'nearby-type-chip active';
+            chip.className = 'nearby-type-chip' + (nearbyTypeFilter.has(type) ? ' active' : '');
             chip.dataset.type = type;
             chip.style.color = color;
             chip.innerHTML = `<span class="chip-dot"></span>${cfg.label} <span style="opacity:0.7">${count}</span>`;
             chip.addEventListener('click', (e) => { e.stopPropagation(); toggleNearbyTypeFilter(type); });
             strip.appendChild(chip);
         });
+        updateNearbyAllBtn();
     }
 
     function toggleNearbyTypeFilter(type) {
@@ -2702,6 +2726,25 @@ map.on('zoomend', () => { isZooming = false; });
         document.querySelectorAll('#nearby-type-filter .nearby-type-chip').forEach(chip => {
             chip.classList.toggle('active', nearbyTypeFilter.has(chip.dataset.type));
         });
+        saveNearbyFilterOff();
+        updateNearbyAllBtn();
+        renderNearbyList();
+    }
+
+    // 全選択/全解除ボタン：全ONなら「全解除」、それ以外は「全選択」として動作
+    function updateNearbyAllBtn() {
+        const allOn = nearbyResultTypes.every(t => nearbyTypeFilter.has(t));
+        document.getElementById('nearby-filter-all-btn').textContent = allOn ? '全解除' : '全選択';
+    }
+
+    function toggleAllNearbyTypeFilter() {
+        const allOn = nearbyResultTypes.every(t => nearbyTypeFilter.has(t));
+        nearbyTypeFilter = allOn ? new Set() : new Set(nearbyResultTypes);
+        document.querySelectorAll('#nearby-type-filter .nearby-type-chip').forEach(chip => {
+            chip.classList.toggle('active', nearbyTypeFilter.has(chip.dataset.type));
+        });
+        saveNearbyFilterOff();
+        updateNearbyAllBtn();
         renderNearbyList();
     }
 
