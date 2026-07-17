@@ -1,5 +1,5 @@
 // マンホールカード配布場所データ
-// 生成日時: 2026/05/25 03:54:24
+// 生成日時: 2026/07/17 12:21:43
 // データ出典: https://www.gk-p.jp/mhcard/?pref=zenkoku
 // 座標: 国土地理院 住所検索API
 const mhcardGeoJSON = {
@@ -805,19 +805,19 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.903656,
-          43.494259
+          141.907425,
+          43.493008
         ]
       },
       "properties": {
-        "name": "砂川市 【平日】砂川市役所 土木課窓口",
+        "name": "砂川市 砂川市まちなか交流施設「すないる」",
         "municipality": "砂川市",
-        "locationName": "【平日】砂川市役所 土木課窓口",
-        "address": "北海道砂川市西6条北3丁目1番1号電話：0125-54-2121  ※令和8年6月1日より下記の場所に変更になります 砂川市まちなか交流施設「すないる」 北海道砂川市西1条北2丁目1番20号 【休館日】砂川市役所当直室 北海道砂川市西6条北3丁目1番1号 （問合せ先） 砂川市役所都市計画課下水道係 電話:0125-74-8748",
-        "hours": "8:30～17:15 ※令和8年6月1日より下記の時間に変更になります 8:30～19:00",
+        "locationName": "砂川市まちなか交流施設「すないる」",
+        "address": "北海道砂川市西1条北2丁目1番20号 【休館日】砂川市役所当直室 北海道砂川市西6条北3丁目1番1号 （問合せ先） 砂川市役所都市計画課下水道係 電話:0125-74-8748",
+        "hours": "8:30～19:00",
         "round": "第08弾",
         "issueDate": "2018/08/11",
-        "url": "http://www.city.sunagawa.hokkaido.jp/index.html",
+        "url": "https://sunairu.jp/",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-226-A-01.jpg",
         "type": "mhcard"
       }
@@ -863,6 +863,28 @@ const mhcardGeoJSON = {
         "issueDate": "2019/12/14",
         "url": "http://www.city.furano.hokkaido.jp/",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-229-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.379395,
+          43.312824
+        ]
+      },
+      "properties": {
+        "name": "富良野市 (B001) 富良野チーズ工房",
+        "municipality": "富良野市 (B001)",
+        "locationName": "富良野チーズ工房",
+        "address": "北海道富良野市中五区 電話:0167-23-1156 （問合せ先） 富良野市上下水道課 電話:0167-39-2317",
+        "hours": "【4月1日～10月31日】9:00～17:00 【11月1日～3月31日】9:00～16:00 ただし、12/31～1/3、1月～2月は毎週月曜日はお休みです。11月は第2週に機械整備で休業予定です。",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.furano-cheese.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-229-B-01",
         "type": "mhcard"
       }
     },
@@ -1775,6 +1797,51 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
+          142.989044,
+          43.099342
+        ]
+      },
+      "properties": {
+        "name": "鹿追町 (A001) 鹿追町観光インフォメーションデスク",
+        "municipality": "鹿追町 (A001)",
+        "locationName": "鹿追町観光インフォメーションデスク",
+        "address": "北海道河東郡鹿追町東町1丁目9 電話:0156-66-1135 ②【水、木】",
+        "hours": "①【4月～10月】9:00～17:00、【11月～3月】10:00～16:00 ②8:30～17:15 ①、②ともに、年末年始はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.town.shikaoi.lg.jp/sightseeing/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-634-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.989044,
+          43.099442
+        ]
+      },
+      "properties": {
+        "name": "鹿追町 (A001) 鹿追町役場商工観光課",
+        "municipality": "鹿追町 (A001)",
+        "locationName": "鹿追町役場商工観光課",
+        "address": "北海道河東郡鹿追町東町1丁目15番地1  電話:0156-66-4034",
+        "hours": "①【4月～10月】9:00～17:00、【11月～3月】10:00～16:00 ②8:30～17:15 ①、②ともに、年末年始はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.town.shikaoi.lg.jp/sightseeing/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-634-A-01.jpg",
+        "type": "mhcard",
+        "coordOffset": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           142.838654,
           43.079666
         ]
@@ -1951,19 +2018,19 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.446991,
-          40.809471
+          140.445312,
+          40.809814
         ]
       },
       "properties": {
-        "name": "五所川原市 五所川原市観光案内所（一般社団法人 五所川原市観光協会）",
+        "name": "五所川原市 立佞武多の館",
         "municipality": "五所川原市",
-        "locationName": "五所川原市観光案内所（一般社団法人 五所川原市観光協会）",
-        "address": "青森県五所川原市字大町38番地 電話:0173-38-1515 (問合せ先) 五所川原市役所経営管理課下水道管理係 0173-35-2111 内線2720",
-        "hours": "8:30～17:00 ただし、12/31、1/1はお休みです",
+        "locationName": "立佞武多の館",
+        "address": "青森県五所川原市大町506-10 電話:0173-38-3232 (問合せ先) 五所川原市役所経営管理課下水道管理係 0173-35-2111 内線2720",
+        "hours": "【4月～9月】9:00～19:00 【10月～3月】9:00～17:00",
         "round": "第11弾",
         "issueDate": "2019/12/14",
-        "url": "http://www.go-kankou.jp/",
+        "url": "https://www.tachineputa.jp/",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-205-A-01.jpg",
         "type": "mhcard"
       }
@@ -2310,14 +2377,14 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "花巻市（A001） 【平日】花巻市役所 建設部 下水道課",
+        "name": "花巻市（A001） 【平日】花巻市役所 建設部 下水道課 / 【休日】花巻市役所本庁舎警備員室（本庁舎1階守衛室）",
         "municipality": "花巻市（A001）",
-        "locationName": "【平日】花巻市役所 建設部 下水道課",
+        "locationName": "【平日】花巻市役所 建設部 下水道課 / 【休日】花巻市役所本庁舎警備員室（本庁舎1階守衛室）",
         "address": "岩手県花巻市花城町9-30（市役所新館2階）電話：0198-24-2111【休日】花巻市役所本庁舎警備員室（本庁舎1階守衛室）",
         "hours": "【平日】9:00～16:30【休日】9:00～17:00ただし、年末年始（12/29～1/3）はお休みです",
         "round": "第03弾",
         "issueDate": "2016/12/01",
-        "url": "http://www.city.hanamaki.iwate.jp/shimin/168/172/p002630.html",
+        "url": "",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-205-A-01.jpg",
         "type": "mhcard"
       }
@@ -2376,14 +2443,14 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "花巻市(D001) 【平日】花巻市東和総合支所 地域振興課",
+        "name": "花巻市(D001) 【平日】花巻市東和総合支所 地域振興課 / 【休日】花巻市東和総合支所 警備員室 花巻市東和町土沢8区60番地",
         "municipality": "花巻市(D001)",
-        "locationName": "【平日】花巻市東和総合支所 地域振興課",
+        "locationName": "【平日】花巻市東和総合支所 地域振興課 / 【休日】花巻市東和総合支所 警備員室 花巻市東和町土沢8区60番地",
         "address": "岩手県花巻市東和町土沢8区60番地 電話：0198-42-2111（内線342） 【休日】花巻市東和総合支所 警備員室 花巻市東和町土沢8区60番地",
         "hours": "【平日】9:00～16:30 【休日】9:00～17:00 ただし、年末年始（12/29～1/3)はお休みです",
         "round": "第11弾",
         "issueDate": "2019/12/14",
-        "url": "https://www.city.hanamaki.iwate.jp/",
+        "url": "",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-205-D-01.jpg",
         "type": "mhcard"
       }
@@ -3055,19 +3122,19 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.219559,
-          38.423225
+          141.165543,
+          38.376858
         ]
       },
       "properties": {
-        "name": "東松島市（B001） Harappa 本店",
+        "name": "東松島市（B001） 東松島商工会 東松島市矢本字河戸7番地",
         "municipality": "東松島市（B001）",
-        "locationName": "Harappa 本店",
-        "address": "宮城県東松島市矢本字北浦485番地1電話：0225-24-6740 ※令和8年6月1日から配布場所が下記に変わります。 東松島商工会 東松島市矢本字河戸7番地 電話0225-82-2088",
-        "hours": "9:00～16:30ただし、年末年始はお休みです ※なお、営業時間が臨時に変更されることが多いため、配布場所にご確認ください ※令和8年6月1日から配布時間が下記に変わります。 9:00～17:00",
+        "locationName": "東松島商工会 東松島市矢本字河戸7番地",
+        "address": "宮城県東松島市野蒜北景56-36 電話:0225-86-2985",
+        "hours": "9:00～17:00 ただし、土日、祝日はお休みです 【定休日】 9:00～17:00",
         "round": "第09弾",
         "issueDate": "2018/12/14",
-        "url": "http://h-harappa.com",
+        "url": "",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-214-B-01.jpg",
         "type": "mhcard"
       }
@@ -3085,8 +3152,8 @@ const mhcardGeoJSON = {
         "name": "東松島市 (C001) 東松島市役所 鳴瀬庁舎2階 都市整備課窓口",
         "municipality": "東松島市 (C001)",
         "locationName": "東松島市役所 鳴瀬庁舎2階 都市整備課窓口",
-        "address": "宮城県東松島市小野字 新宮前5番地 電話0225-82-1111",
-        "hours": "9:00~17:00 ただし、土日、祝日、年末年始はお休みです",
+        "address": "宮城県東松島市小野字 新宮前5番地 電話:0225-82-1111 【定休日】 東松島市震災復興伝承館 宮城県東松島市野蒜北景56-36 電話:0225-86-2985",
+        "hours": "9:00～17:00 ただし、土日、祝日、年末年始はお休みです 【定休日】 9:00～17:00",
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "",
@@ -3615,7 +3682,7 @@ const mhcardGeoJSON = {
         "name": "米沢市 道の駅米沢",
         "municipality": "米沢市",
         "locationName": "道の駅米沢",
-        "address": "山形県米沢市川井1039-1 電話:0238-40-8400 （問合せ先） 米沢市産業部観光課 電話:0238-22-5111",
+        "address": "山形県米沢市川井1039-1 電話:0238-40-8400 （問合せ先） 米沢市観光文化スポーツ部観光課 電話:0238-22-5111",
         "hours": "9:00～18:00（年中無休）",
         "round": "第27弾",
         "issueDate": "2025/12/19",
@@ -4621,19 +4688,19 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.415756,
-          37.072304
+          140.415405,
+          37.078392
         ]
       },
       "properties": {
-        "name": "浅川町 (A001) 吉田富三記念館",
+        "name": "浅川町 (A001) つながるBASE",
         "municipality": "浅川町 (A001)",
-        "locationName": "吉田富三記念館",
-        "address": "福島県石川郡浅川町大字袖山字森下287番地 電話:0247-36-4129 （問合せ先） 浅川町役場建設水道課 電話:0247-36-1185",
-        "hours": "9：00～16：30 ただし、月曜日、第2・第4日曜日（祝日と重なる場合は翌平日）、臨時休館日はお休みです",
+        "locationName": "つながるBASE",
+        "address": "福島県石川郡浅川町大字浅川字本町西裏47番地3 （問合せ先） 浅川町役場建設水道課 電話:0247-36-1185",
+        "hours": "10:00～12:00、13:30～18:00 ただし、火曜日・水曜日はお休みです",
         "round": "第28弾",
         "issueDate": "2026/04/24",
-        "url": "https://www.tomizo.or.jp/",
+        "url": "",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-504-A-01.jpg",
         "type": "mhcard"
       }
@@ -4868,9 +4935,9 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "土浦市 (B001) 【平日】土浦市役所 広報広聴課",
+        "name": "土浦市 (B001) 【平日】土浦市役所 シティプロモーション課",
         "municipality": "土浦市 (B001)",
-        "locationName": "【平日】土浦市役所 広報広聴課",
+        "locationName": "【平日】土浦市役所 シティプロモーション課",
         "address": "茨城県土浦市大和町9-1 3階 電話:029-826-1111（内線2323） 【土日祝日】観光情報物産センターきらら館 茨城県土浦市大和町9-1 1階 電話：029-824-6110",
         "hours": "【平日】8：30～17：00 【土日祝日】9：00～17：30 ただし、年末年始（12/29～1/3）はお休みです（12月28日は16：30で終了）",
         "round": "第20弾",
@@ -5031,6 +5098,28 @@ const mhcardGeoJSON = {
         "issueDate": "2025/12/19",
         "url": "https://www.city.tsuchiura.lg.jp/kasumigaurataiikukaikan/index.html",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-203-I-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.212585,
+          36.083279
+        ]
+      },
+      "properties": {
+        "name": "土浦市 (J001) りんりんポート土浦",
+        "municipality": "土浦市 (J001)",
+        "locationName": "りんりんポート土浦",
+        "address": "茨城県土浦市川口二丁目13番25号 電話:029-846-3320",
+        "hours": "9:00～18:00 ただし、年末年始はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.city.tsuchiura.lg.jp/kanko-bunka-sports/jitenshanomachi/cyclist-support-spot/page011935.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-203-J-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5325,16 +5414,38 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
+          140.146576,
+          35.978191
+        ]
+      },
+      "properties": {
+        "name": "牛久市 (B001) 牛久シャトーショップ",
+        "municipality": "牛久市 (B001)",
+        "locationName": "牛久シャトーショップ",
+        "address": "茨城県牛久市中央三丁目20番地1",
+        "hours": "10:00～18:00",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://ushiku-chateau.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-219-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           140.076492,
           36.083321
         ]
       },
       "properties": {
-        "name": "つくば市 (A001) 【月曜日から土曜日（祝日を除く）】つくば市役所１階 水道お客様センター / 【日曜日及び祝日】つくば市役所１階総合案内",
+        "name": "つくば市 (A001) つくば市役所1階水道お客様センター",
         "municipality": "つくば市 (A001)",
-        "locationName": "【月曜日から土曜日（祝日を除く）】つくば市役所１階 水道お客様センター / 【日曜日及び祝日】つくば市役所１階総合案内",
-        "address": "茨城県つくば市研究学園1-1-1（市役所1階） 【日曜日及び祝日】つくば市役所１階総合案内 茨城県つくば市研究学園1-1-1 電話：029-883-1111 （問合せ先） つくば市上下水道局下水道総務課",
-        "hours": "8:45～16:30 ただし、年末年始（12/29～1/3）はお休みです ※【英語版】も配布しています",
+        "locationName": "つくば市役所1階水道お客様センター",
+        "address": "茨城県つくば市研究学園1丁目1番地1 （問合せ先） つくば市上下水道局下水道総務課 電話:029-883-1111",
+        "hours": "8:45～16:30 ただし、日曜日、祝日及び年末年始（12/29～1/3）はお休みです ※【英語版】も配布しています",
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "",
@@ -5897,6 +6008,28 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
+          139.591599,
+          36.356735
+        ]
+      },
+      "properties": {
+        "name": "佐野市 (B001) 佐野市国際クリケット場Tearoom at the SICG",
+        "municipality": "佐野市 (B001)",
+        "locationName": "佐野市国際クリケット場Tearoom at the SICG",
+        "address": "栃木県佐野市栃本町300番地1 電話:050-5799-4502",
+        "hours": "【月・水・木・土・日】10:00～16:00（土日は18:00まで） 定休日：火・金 冬季休業：12月中旬～1月中旬",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.cricket.or.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-204-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           139.746017,
           36.564056
         ]
@@ -6095,50 +6228,6 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.819473,
-          36.972401
-        ]
-      },
-      "properties": {
-        "name": "那須塩原市(A001) 那須塩原市塩原もの語り館",
-        "municipality": "那須塩原市(A001)",
-        "locationName": "那須塩原市塩原もの語り館",
-        "address": "栃木県那須塩原市塩原747 電話：0287-32-4000",
-        "hours": "8：30～17：00 臨時閉館日がありますのでご注意ください",
-        "round": "第11弾",
-        "issueDate": "2019/12/14",
-        "url": "http://www.siobara.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-213-A-01.jpg",
-        "type": "mhcard"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.865112,
-          37.080147
-        ]
-      },
-      "properties": {
-        "name": "那須塩原市(B001) 板室自然遊学センター",
-        "municipality": "那須塩原市(B001)",
-        "locationName": "板室自然遊学センター",
-        "address": "栃木県那須塩原市百村3090-6 電話:0287-69-0231",
-        "hours": "10：00～15：00 ただし、第4水曜日、祝祭日の翌日、年末年始（12/30～1/2）はお休みです",
-        "round": "第12弾",
-        "issueDate": "2020/04/25",
-        "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-213-B-01.jpg",
-        "type": "mhcard"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.956802,
           36.682716
         ]
@@ -6169,8 +6258,8 @@ const mhcardGeoJSON = {
         "name": "那須烏山市 (A001) 山あげ会館（那須烏山市観光協会）",
         "municipality": "那須烏山市 (A001)",
         "locationName": "山あげ会館（那須烏山市観光協会）",
-        "address": "栃木県那須烏山市金井2-5-26 電話:0287-84-1977",
-        "hours": "9:00～16:00 ただし、毎週火曜日（祝日の場合はその翌日）、年末年始はお休みです。 なお、臨時休館日等の最新情報は、山あげ会館（那須烏山市観光協会）ホームページをご確認ください。",
+        "address": "栃木県那須烏山市金井2-5-26 電話:0287-84-1977  ※令和8年7月1日より下記に変更になります 【平日】那須烏山市役所烏山庁舎（まちづくり課） 【土日祝日】那須烏山市役所烏山庁舎（日直室） 栃木県那須烏山市中央1-1-1 電話:0287-83-1151",
+        "hours": "9:00～16:00 ただし、毎週火曜日（祝日の場合はその翌日）、年末年始はお休みです。 なお、臨時休館日等の最新情報は、山あげ会館（那須烏山市観光協会）ホームページをご確認ください。 ※令和8年7月1日より下記に変更になります 8:30～17:00",
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.nasukarasuyama.com",
@@ -6197,6 +6286,29 @@ const mhcardGeoJSON = {
         "issueDate": "2025/07/25",
         "url": "https://www.nasukarasuyama.com",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-215-B-01.jpg",
+        "type": "mhcard",
+        "coordOffset": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.154251,
+          36.654416000000005
+        ]
+      },
+      "properties": {
+        "name": "那須烏山市 (C001) 山あげ会館（那須烏山市観光協会）",
+        "municipality": "那須烏山市 (C001)",
+        "locationName": "山あげ会館（那須烏山市観光協会）",
+        "address": "栃木県那須烏山市金井2-5-26 電話:0287-84-1977",
+        "hours": "9:00～16:00 ただし、毎週火曜日（祝日の場合はその翌日）、年末年始、観光協会が指定する日はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.nasukarasuyama.com",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-215-C-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -6286,6 +6398,28 @@ const mhcardGeoJSON = {
         "issueDate": "2023/01/28",
         "url": "https://omohaku.michinoeki-mibu.jp/",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-361-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.126801,
+          36.765774
+        ]
+      },
+      "properties": {
+        "name": "那珂川町 (A001) 那珂川町役場小川出張所",
+        "municipality": "那珂川町 (A001)",
+        "locationName": "那珂川町役場小川出張所",
+        "address": "栃木県那珂川町小川1065 電話:0287-96-2111 0287-92-2002(上下水道課) 【土日・祝日】那珂川町役場（庁舎西側、日直室） 栃木県那珂川町馬頭555 電話:0287-92-1111",
+        "hours": "9:00～17:00",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.town.tochigi-nakagawa.lg.jp/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-411-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7819,6 +7953,29 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
+          139.786575,
+          35.88906600000001
+        ]
+      },
+      "properties": {
+        "name": "越谷市 (D001) ガーヤちゃんの蔵屋敷",
+        "municipality": "越谷市 (D001)",
+        "locationName": "ガーヤちゃんの蔵屋敷",
+        "address": "埼玉県越谷市弥生町505-2 電話:048-940-5550 （問合せ先） 越谷市役所経済振興課 電話:048-967-4680",
+        "hours": "10:00～19:00 ただし、年末年始（12/31から1/2）はお休みです。店内整理等で臨時休業する場合もあります",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.koshigaya-sightseeing.jp/information/uncategorized/%e3%82%ac%e3%83%bc%e3%83%a4%e3%81%a1%e3%82%83%e3%82%93%e3%81%ae%e8%94%b5%e5%b1%8b%e6%95%b7/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-222-D-01.jpg",
+        "type": "mhcard",
+        "coordOffset": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           139.670731,
           35.807007
         ]
@@ -8247,13 +8404,80 @@ const mhcardGeoJSON = {
         "name": "ふじみ野市 【平日】ふじみ野市役所 上下水道課",
         "municipality": "ふじみ野市",
         "locationName": "【平日】ふじみ野市役所 上下水道課",
-        "address": "埼玉県ふじみ野市福岡1-1-1（第二庁舎）電話：049-220-2075 【土日祝】ふじみ野ステラ・ウェスト 埼玉県ふじみ野市大井中央2-1-8",
-        "hours": "【平日】9：00～17：00ただし、月曜日が祝日の場合、年末年始（12/28～1/3）はお休みです 【土日祝】9：00〜17：00",
+        "address": "埼玉県ふじみ野市福岡1-1-1（第二庁舎）電話：049-220-2075",
+        "hours": "【平日】9：00～17：00ただし、月曜日が祝日の場合、年末年始（12/28～1/3）はお休みです",
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.city.fujimino.saitama.jp/",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-245-A-01.jpg",
         "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.507599,
+          35.858505
+        ]
+      },
+      "properties": {
+        "name": "ふじみ野市 【土日祝】ふじみ野ステラ・ウェスト",
+        "municipality": "ふじみ野市",
+        "locationName": "【土日祝】ふじみ野ステラ・ウェスト",
+        "address": "埼玉県ふじみ野市大井中央2-1-8  ※令和8年7月31日より平日の配布場所が以下の通り変更になります 【平日】ふじみ野市水道サービスセンター 埼玉県ふじみ野市福岡1-1-1（第二庁舎）",
+        "hours": "【土日祝】9：00〜17：00",
+        "round": "第06弾",
+        "issueDate": "2017/12/09",
+        "url": "https://f-bunka.jp/stella-west/accessmap/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-245-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.519562,
+          35.878754
+        ]
+      },
+      "properties": {
+        "name": "ふじみ野市 (B001) ふじみ野 ステラ・イースト",
+        "municipality": "ふじみ野市 (B001)",
+        "locationName": "ふじみ野 ステラ・イースト",
+        "address": "埼玉県ふじみ野市福岡一丁目1番8号 【毎月第3月曜日（ふじみ野 ステラ・イースト休館日）】",
+        "hours": "【平日、土日、祝日】9:00～17:00 ただし、毎月第3月曜日（なお、月曜日が祝日の場合は翌日）はお休みです 【毎月第3月曜日】9:00～17:00",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.f-bunka.jp/stella-east/accessmap/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-245-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.519592,
+          35.879975
+        ]
+      },
+      "properties": {
+        "name": "ふじみ野市 (B001) ふじみ野市上下水道課",
+        "municipality": "ふじみ野市 (B001)",
+        "locationName": "ふじみ野市上下水道課",
+        "address": "埼玉県ふじみ野市福岡一丁目1番1号（第2庁舎）  電話:049-220-2075",
+        "hours": "【平日、土日、祝日】9:00～17:00 ただし、毎月第3月曜日（なお、月曜日が祝日の場合は翌日）はお休みです 【毎月第3月曜日】9:00～17:00",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.city.fujimino.saitama.jp/soshikiichiran/jogesuidoka/gesuidoshisetsukakari/2309.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-245-B-01.jpg",
+        "type": "mhcard",
+        "coordOffset": true
       }
     },
     {
@@ -9388,15 +9612,15 @@ const mhcardGeoJSON = {
         "type": "Point",
         "coordinates": [
           140.41452,
-          35.693462
+          35.693459
         ]
       },
       "properties": {
         "name": "芝山町 芝山町役場まちづくり課環境下水道係",
         "municipality": "芝山町",
         "locationName": "芝山町役場まちづくり課環境下水道係",
-        "address": "千葉県山武郡芝山町小池992 電話:0479-77-3924",
-        "hours": "9:00～17:00 ただし、年末年始（12月27日～1月4日）はお休みです",
+        "address": "千葉県山武郡芝山町小池992 電話:0479-77-3924  ※令和8年8月1日より下記の通り変更になります 【平日】芝山町役場まちづくり課環境下水道係 千葉県山武郡芝山町小池992 電話:0479-77-3924 【土日祝日】 道の駅 風和里しばやま 千葉県芝山町小池2568 電話:0479-70-8877",
+        "hours": "9:00～17:00 ただし、年末年始（12月27日～1月3日）はお休みです ※令和8年8月1日より下記の通り変更になります 【平日】 9:00～17:00 ただし、年末年始（12月27日～1月3日）はお休みです 【土日祝日】 9:00～18:00 ただし、年末年始（12月29日～1月3日）はお休みです",
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.town.shibayama.lg.jp",
@@ -9491,6 +9715,52 @@ const mhcardGeoJSON = {
         "url": "https://chosei-koryu.com/",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-423-B-01.jpg",
         "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.350388,
+          35.415459000000006
+        ]
+      },
+      "properties": {
+        "name": "長生村 (C001) 長生村役場産業課",
+        "municipality": "長生村 (C001)",
+        "locationName": "長生村役場産業課",
+        "address": "千葉県長生郡長生村本郷1番地77 電話:0475-32-2114 【土日、祝日】",
+        "hours": "9:00～16:30 ただし、年末年始（12/28～1/4）はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.vill.chosei.chiba.jp/soshiki/16-7-0-0-0_1.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-423-C-01.jpg",
+        "type": "mhcard",
+        "coordOffset": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.34697,
+          35.404317000000006
+        ]
+      },
+      "properties": {
+        "name": "長生村 (C001) 長生村交流センター",
+        "municipality": "長生村 (C001)",
+        "locationName": "長生村交流センター",
+        "address": "千葉県長生郡長生村岩沼874番地1 電話:0475-32-3770   （問合せ先） 長生村役場下水環境課  電話:0475-32-2494",
+        "hours": "9:00～16:30 ただし、年末年始（12/28～1/4）はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://chosei-koryu.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-423-C-01.jpg",
+        "type": "mhcard",
+        "coordOffset": true
       }
     },
     {
@@ -10665,6 +10935,29 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
+          139.56221,
+          35.701985
+        ]
+      },
+      "properties": {
+        "name": "三鷹市 (B001) みたか観光BASE",
+        "municipality": "三鷹市 (B001)",
+        "locationName": "みたか観光BASE",
+        "address": "東京都三鷹市下連雀3-24-3-105 電話：0422-24-9177",
+        "hours": "9：00～18：00 ただし、火曜日、年末年始及び臨時休業日はお休みです 詳細はこちらから事前にご確認ください",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://kanko.mitaka.ne.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-204-B-01.jpg",
+        "type": "mhcard",
+        "coordOffset": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           139.259079,
           35.79034
         ]
@@ -10717,7 +11010,7 @@ const mhcardGeoJSON = {
         "name": "府中市 (A001) 片町文化センター",
         "municipality": "府中市 (A001)",
         "locationName": "片町文化センター",
-        "address": "東京都府中市片町2丁目17番地 （問合せ先） 府中市生活環境部観光プロモーション課 電話：042-335-4095",
+        "address": "東京都府中市片町2丁目17番地 （問合せ先） 府中市生活環境部産業観光課 電話：042-335-4095",
         "hours": "9：00～20：00 ただし、年末年始（12月29日から1月3日まで）、国民の祝日、臨時休館日（保守点検のため）はお休みです ※臨時休館日はこちらからご確認ください",
         "round": "第13弾",
         "issueDate": "2020/12/17",
@@ -10739,7 +11032,7 @@ const mhcardGeoJSON = {
         "name": "府中市 (B001) 府中市観光情報センター",
         "municipality": "府中市 (B001)",
         "locationName": "府中市観光情報センター",
-        "address": "東京都府中市宮町3丁目1番地 電話：042-302-2000 (問合せ先) 府中市生活環境部観光プロモーション課 電話：042-335-4095",
+        "address": "東京都府中市宮町3丁目1番地 電話：042-302-2000 (問合せ先) 府中市生活環境部産業観光課 電話：042-335-4095",
         "hours": "9：00～17：00 ただし、年末年始及び毎月最終火曜日はお休みです",
         "round": "第16弾",
         "issueDate": "2022/01/15",
@@ -11619,9 +11912,9 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "羽村市（B001） 羽村市動物公園 チケット売り場",
+        "name": "羽村市（B001） ヒノトントンZOO（羽村市動物公園）チケット売り場",
         "municipality": "羽村市（B001）",
-        "locationName": "羽村市動物公園 チケット売り場",
+        "locationName": "ヒノトントンZOO（羽村市動物公園）チケット売り場",
         "address": "東京都羽村市羽村4122電話：042-579-4041（問い合わせ先）羽村市水道事務所電話：042-554-2269",
         "hours": "【3～10月】9：00～16：00【11～2月】9：00～15：30ただし、毎週月曜日（月曜日が祝日の場合は営業）、年始（1/1）はお休みです",
         "round": "第06弾",
@@ -11694,6 +11987,28 @@ const mhcardGeoJSON = {
         "issueDate": "2026/04/24",
         "url": "",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-228-C-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.539459,
+          35.727524
+        ]
+      },
+      "properties": {
+        "name": "西東京市 (A001) まちテナ西東京",
+        "municipality": "西東京市 (A001)",
+        "locationName": "まちテナ西東京",
+        "address": "東京都西東京市田無町4-1-2（田無駅改札横） （問合せ先） 西東京市企画部企画政策課 電話:042-460-9800",
+        "hours": "【平日】10:00～20:00 【土曜】10:00～19:00 【日曜・祝日】10:00～18:00 ただし、元日はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://machitenna.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-229-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13076,12 +13391,35 @@ const mhcardGeoJSON = {
         "name": "長岡市 (F001) 米百俵プレイス ミライエ長岡",
         "municipality": "長岡市 (F001)",
         "locationName": "米百俵プレイス ミライエ長岡",
-        "address": "新潟県長岡市大手通2丁目3番地10 米百俵プレイス ミライエ長岡3階 電話:0258-86-6008",
+        "address": "新潟県長岡市大手通2丁目3番地10 米百俵プレイス ミライエ長岡3階インフォメーションカウンター 電話:0258-86-6008",
         "hours": "【平日・土曜日】 9:00～21:00 【日曜日・祝日】 9:00～18:00 ただし、毎月第２木曜日（休日の場合は翌日）、毎月末日（土日の場合は翌月曜日）、年末年始（12/29～1/3）はお休みです",
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://miraie-nagaoka.jp/",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-202-F-01.jpg",
+        "type": "mhcard",
+        "coordOffset": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.848648,
+          37.448389999999996
+        ]
+      },
+      "properties": {
+        "name": "長岡市 (G001) 米百俵プレイス ミライエ長岡",
+        "municipality": "長岡市 (G001)",
+        "locationName": "米百俵プレイス ミライエ長岡",
+        "address": "新潟県長岡市大手通2丁目3番地10 米百俵プレイス ミライエ長岡3階インフォメーションカウンター 電話:0258-86-6008",
+        "hours": "【平日・土曜日】9:00～21:00 【日曜日・祝日】9:00～18:00 ただし、休館日：毎月第2木曜日（休日の場合は翌日）、毎月の末日（土日の場合は翌月曜日）、年末年始（12/29～1/3）はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://miraie-nagaoka.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-202-G-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -13686,6 +14024,28 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
+          138.882874,
+          37.672703
+        ]
+      },
+      "properties": {
+        "name": "燕市 (E001) 燕市役所 2階 下水道課",
+        "municipality": "燕市 (E001)",
+        "locationName": "燕市役所 2階 下水道課",
+        "address": "新潟県燕市吉田西太田1934番地 電話:0256-77-8291 【土曜日・日曜日・祝日】燕市役所 1階 夜間休日受付 電話:0256-92-1111",
+        "hours": "【平日】9:00～16:30 【土曜日・日曜日・祝日】9:00～16:30 ただし、12/29～1/3はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.city.tsubame.niigata.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-213-E-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           137.85907,
           37.04504
         ]
@@ -13862,19 +14222,19 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.34494,
-          37.986542
+          138.322357,
+          37.998203
         ]
       },
       "properties": {
-        "name": "佐渡市 (G001) 佐渡博物館",
+        "name": "佐渡市 (G001) 佐和田市民センター",
         "municipality": "佐渡市 (G001)",
-        "locationName": "佐渡博物館",
-        "address": "新潟県佐渡市八幡2041番地 電話:0259-52-2447 （問合せ先） 佐渡市役所上下水道課下水道総務係 電話:0259-67-7857",
+        "locationName": "佐和田市民センター",
+        "address": "新潟県佐渡市河原田本町394番地 電話:0259-57-2111 （問合せ先） 佐渡市役所上下水道課下水道総務係 電話:0259-67-7857",
         "hours": "8:30～17:00 ただし、年末年始はお休みです",
         "round": "第27弾",
         "issueDate": "2025/12/19",
-        "url": "https://www.city.sado.niigata.jp/soshiki/2021/53417.html",
+        "url": "",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-224-G-01.jpg",
         "type": "mhcard"
       }
@@ -13899,6 +14259,29 @@ const mhcardGeoJSON = {
         "url": "https://www.city.sado.niigata.jp/soshiki/2021/53417.html",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-224-H-01.jpg",
         "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.322357,
+          37.998303
+        ]
+      },
+      "properties": {
+        "name": "佐渡市 (I001) 佐和田市民センター",
+        "municipality": "佐渡市 (I001)",
+        "locationName": "佐和田市民センター",
+        "address": "新潟県佐渡市河原田本町394番地 電話:0259-57-2111 （問合せ先） 佐渡市役所上下水道課下水道総務係 電話:0259-67-7857",
+        "hours": "8:30～17:00",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.city.sado.niigata.jp/soshiki/2021/53417.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-224-I-01.jpg",
+        "type": "mhcard",
+        "coordOffset": true
       }
     },
     {
@@ -15105,11 +15488,11 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "南アルプス市 (A001) 道の駅しらね",
+        "name": "南アルプス市 (A001) 道の駅しらね（情報館）",
         "municipality": "南アルプス市 (A001)",
-        "locationName": "道の駅しらね",
-        "address": "山梨県南アルプス市在家塚595-1 （問合せ先） 南アルプス市企業局総務課 電話：055-282-2082",
-        "hours": "8：30～17：00 ただし、年末年始（12月29日～1月3日）は定休日です",
+        "locationName": "道の駅しらね（情報館）",
+        "address": "山梨県南アルプス市在家塚595-1 （問合せ先） 南アルプス市上下水道局総務課 電話：055-282-2082",
+        "hours": "9:00～17:00 ただし、年末年始（12月29日～1月3日）は定休日です",
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.city.minami-alps.yamanashi.jp/sisetsu/shisetsu/michinoeki-shirane/",
@@ -15130,8 +15513,8 @@ const mhcardGeoJSON = {
         "name": "南アルプス市 (B001) fumotto南アルプス「まちの案内所」",
         "municipality": "南アルプス市 (B001)",
         "locationName": "fumotto南アルプス「まちの案内所」",
-        "address": "南アルプス市十日市場1571-1（fumotto南アルプス臨時駐車場内） 電話:055-284-4204 （問合せ先） 南アルプス市 上下水道局 総務課 電話:055-282-208",
-        "hours": "9：00～17：00 ただし、1月1日はお休みです",
+        "address": "南アルプス市十日市場1571-1（fumotto南アルプス臨時駐車場内） （問合せ先） 南アルプス市上下水道局総務課 電話:055-282-2082",
+        "hours": "9:30～17:00 ただし、年末年始（12月29日～1月3日）は定休日です",
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://minami-alpskankou.jp/?p=20273",
@@ -16140,6 +16523,28 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
+          138.145676,
+          36.478214
+        ]
+      },
+      "properties": {
+        "name": "千曲市 (D001) 千曲市上山田文化会館",
+        "municipality": "千曲市 (D001)",
+        "locationName": "千曲市上山田文化会館",
+        "address": "長野県千曲市上山田温泉3丁目1番地1 電話:026-275-0500 （問合せ先） 千曲市建設部上下水道課下水道係 電話:026-273-1111（内線3232）",
+        "hours": "9:00～17:00 ただし、毎週月曜日（祝日を除く）、休日の翌日、12/29から1/3はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.chikuma-bunka.jp/shisetsu_goannai/kamiyamadabunkakaikan/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-218-D-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           138.374252,
           36.355644
         ]
@@ -16806,6 +17211,28 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
+          137.505371,
+          35.497948
+        ]
+      },
+      "properties": {
+        "name": "中津川市 (B001) 中津川市ひと・まちテラス",
+        "municipality": "中津川市 (B001)",
+        "locationName": "中津川市ひと・まちテラス",
+        "address": "岐阜県中津川市新町2-34 電話:0573-67-7111 （問合せ先） 中津川市観光課 電話:0573-66-1111",
+        "hours": "9:00～21:30 ただし、年末年始（12/29～1/3）、施設点検日（2月第3火曜日）はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.city.nakatsugawa.lg.jp/tcs/hitomachi/index.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-206-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           137.409058,
           35.456429
         ]
@@ -17159,6 +17586,28 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
+          137.141068,
+          35.476372
+        ]
+      },
+      "properties": {
+        "name": "八百津町 (A001) 八百津町役場本庁舎 水道環境課",
+        "municipality": "八百津町 (A001)",
+        "locationName": "八百津町役場本庁舎 水道環境課",
+        "address": "岐阜県加茂郡八百津町八百津3903番地2 電話:0574-43-2111",
+        "hours": "8:30～17:15",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.town.yaotsu.lg.jp/7629.htm",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-505-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           138.379791,
           34.972336
         ]
@@ -17296,10 +17745,10 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "熱海市（A001） 【平日】熱海市役所 下水道課",
+        "name": "熱海市（A001） 【平日】熱海市役所 下水道課（上下水道・温泉料金センター）",
         "municipality": "熱海市（A001）",
-        "locationName": "【平日】熱海市役所 下水道課",
-        "address": "静岡県熱海市中央町1-1（第2庁舎2階）電話：0557-86-6526",
+        "locationName": "【平日】熱海市役所 下水道課（上下水道・温泉料金センター）",
+        "address": "静岡県熱海市中央町1-1 熱海市役所第2庁舎1階 【休日】熱海市役所 警備員室 熱海市役所第1庁舎1階 （問い合わせ先） 熱海市役所公営企業部下水道課 電話:0557-86-6526",
         "hours": "8：30～17：15",
         "round": "第08弾",
         "issueDate": "2018/08/11",
@@ -17511,6 +17960,28 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
+          138.677155,
+          35.139099
+        ]
+      },
+      "properties": {
+        "name": "富士市 (C001) イオンタウン富士南 2階モールインフォメーション",
+        "municipality": "富士市 (C001)",
+        "locationName": "イオンタウン富士南 2階モールインフォメーション",
+        "address": "静岡県富士市鮫島118-10 電話:0545-66-5020 （問合せ先） 富士市役所上下水道営業課 電話:0545-67-2829",
+        "hours": "10:00～17:00 ただし、休業日はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.aeontown.co.jp/fujiminami/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-210-C-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           137.853271,
           34.711632
         ]
@@ -17679,6 +18150,28 @@ const mhcardGeoJSON = {
         "issueDate": "2023/04/28",
         "url": "https://www.city.kosai.shizuoka.jp/kanko_bunka_sports/kankospot/9675.html",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-221-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.497803,
+          34.677471
+        ]
+      },
+      "properties": {
+        "name": "湖西市 (B001) 道の駅 潮見坂",
+        "municipality": "湖西市 (B001)",
+        "locationName": "道の駅 潮見坂",
+        "address": "静岡県湖西市白須賀1896-2 電話:053-573-1155 （問合せ先） 湖西市役所環境部上下水道課 電話:053-574-2213",
+        "hours": "8:00～18:00 年中無休※臨時休業する場合があります。最新情報は道の駅潮見坂ウェブサイトをご確認ください",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.city.kosai.shizuoka.jp/kanko_bunka_sports/kankospot/12197.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-221-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18770,11 +19263,11 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "高浜市 (A001) 【平日】高浜市役所2階上下水道グループ / 【土日祝】高浜エコハウス",
+        "name": "高浜市 (A001) 【平日】高浜市役所2階上下水道グループ / 【土祝】高浜エコハウス",
         "municipality": "高浜市 (A001)",
-        "locationName": "【平日】高浜市役所2階上下水道グループ / 【土日祝】高浜エコハウス",
-        "address": "愛知県高浜市青木町4-1-2 電話:0566-52-1111 【土日祝】高浜エコハウス 愛知県高浜市沢渡町4-6-2 電話:0566-52-2299 （問合せ先） 高浜市役所上下水道グループ（平日営業時間のみ対応） 電話:0566-52-1111",
-        "hours": "【平日】8:30～17:15 【土日祝】9:00～17：00 ただし、年末年始は休みです",
+        "locationName": "【平日】高浜市役所2階上下水道グループ / 【土祝】高浜エコハウス",
+        "address": "愛知県高浜市青木町4-1-2 電話:0566-52-1111 【土祝】高浜エコハウス 愛知県高浜市沢渡町4-6-2 電話:0566-52-2299 （問合せ先） 高浜市役所上下水道グループ（平日営業時間のみ対応） 電話:0566-52-1111",
+        "hours": "【平日】9:00～16:00 【土祝】9:00～17：00 ただし、日曜日、年末年始は休みです",
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
@@ -18823,6 +19316,28 @@ const mhcardGeoJSON = {
         "issueDate": "2017/08/01",
         "url": "https://www.city.toyoake.lg.jp/",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-229-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.043808,
+          35.13773
+        ]
+      },
+      "properties": {
+        "name": "日進市 (A001) にっしん観光まちづくり協会（道の駅マチテラス日進内）",
+        "municipality": "日進市 (A001)",
+        "locationName": "にっしん観光まちづくり協会（道の駅マチテラス日進内）",
+        "address": "愛知県日進市本郷町前田33番地 道の駅マチテラス日進内 （問合せ先） 日進市役所 下水道課 電話:0561-73-2343",
+        "hours": "10:00～17:00 ただし、毎週月曜日、第2火曜日、年末年始はお休みです。 ※「道の駅マチテラス日進」の営業時間とは異なります。 ※状況により変更する場合があります。",
+        "round": "第28弾",
+        "issueDate": "2026/06/24",
+        "url": "https://glglnisshin.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-230-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19478,7 +19993,7 @@ const mhcardGeoJSON = {
         "name": "桑名市 (A001) 桑名市物産観光案内所",
         "municipality": "桑名市 (A001)",
         "locationName": "桑名市物産観光案内所",
-        "address": "三重県桑名市有楽町59電話：0594-21-5416",
+        "address": "三重県桑名市有楽町59電話：0594-21-5416 ※令和8年7月19日より以下の通り変更になります クワナベース 三重県桑名市大字東方55-1",
         "hours": "9：00～17：00ただし、年末年始（12/29～1/3）はお休みです",
         "round": "第06弾",
         "issueDate": "2017/12/09",
@@ -20058,6 +20573,28 @@ const mhcardGeoJSON = {
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-209-B-01.jpg\r\n",
         "type": "mhcard",
         "coordOffset": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.170532,
+          34.919628
+        ]
+      },
+      "properties": {
+        "name": "甲賀市 (C001) 観光インフォメーションセンター甲賀流リアル忍者館",
+        "municipality": "甲賀市 (C001)",
+        "locationName": "観光インフォメーションセンター甲賀流リアル忍者館",
+        "address": "滋賀県甲賀市甲南町竜法師600番地 （問合せ先） 甲賀市役所上下水道部下水道課 電話:0748-69-2228",
+        "hours": "10:00～16:00 ただし、月曜日（祝日の場合は開館）、年末年始（令和8年12月28日～令和9年1月4日）はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.real-ninjakan.com/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-209-C-01.jpg",
+        "type": "mhcard"
       }
     },
     {
@@ -20729,6 +21266,29 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
+          135.861572,
+          34.853722000000005
+        ]
+      },
+      "properties": {
+        "name": "宇治田原町 (B001) 宇治田原町役場上下水道課",
+        "municipality": "宇治田原町 (B001)",
+        "locationName": "宇治田原町役場上下水道課",
+        "address": "京都府綴喜郡宇治田原町大字立川小字坂口18番地1（宇治田原町役場2階） 電話：0774-88-3337 【土日祝】宇治田原町総合文化センター 京都府綴喜郡宇治田原町大字岩山小字沼尻46番地1 電話：0774-88-5851",
+        "hours": "【平日】8:30～17:15 ただし、年末年始（12/29～1/3）はお休みです 【土日祝】9:00～17:00 ただし、12/28～1/4はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.town.ujitawara.kyoto.jp",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-344-B-01.jpg",
+        "type": "mhcard",
+        "coordOffset": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           135.425552,
           35.200954
         ]
@@ -21016,19 +21576,19 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.36972,
-          34.459347
+          135.368423,
+          34.459957
         ]
       },
       "properties": {
-        "name": "岸和田市 (C001) 岸和田市二の丸広場観光交流センター",
+        "name": "岸和田市 (C001) まちづくりの館",
         "municipality": "岸和田市 (C001)",
-        "locationName": "岸和田市二の丸広場観光交流センター",
-        "address": "大阪府岸和田市岸城町7-22 （問合せ先） 岸和田市下水道河川部下水道河川総務課 電話：072-423-9591",
-        "hours": "9：00～18：00 ただし、年末年始（12月29日～1月3日）はお休みです",
+        "locationName": "まちづくりの館",
+        "address": "大阪府岸和田市本町8番8号 （問合せ先） 岸和田市下水道河川部下水道河川総務課 電話：072-423-9591",
+        "hours": "10:00～18:00 年末年始（12月29日～1月3日）、月曜日はお休みです（ただし月曜日が祝日の場合は開館）",
         "round": "第20弾",
         "issueDate": "2023/07/28",
-        "url": "https://www.city.kishiwada.lg.jp/site/kishiwada-side/koryucenter.html",
+        "url": "",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-202-C-01.jpg",
         "type": "mhcard"
       }
@@ -21597,11 +22157,11 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "松原市 【平日】松原市観光協会 / 【休日】松原市役所宿直室（市役所1階） / 【平日】072-334-1550（内線2762) / 【休日】072-334-1550",
+        "name": "松原市 【平日】松原市観光協会 / 【休日】松原市役所宿直室（市役所1階） / 【平日】072-337-3140 / 【休日】072-334-1550",
         "municipality": "松原市",
-        "locationName": "【平日】松原市観光協会 / 【休日】松原市役所宿直室（市役所1階） / 【平日】072-334-1550（内線2762) / 【休日】072-334-1550",
-        "address": "大阪府松原市阿保4－1－4 電話：072-330-8201 【休日】松原市役所宿直室（市役所1階） 大阪府松原市阿保1－1－1 電話:072-334-1550 (問合せ先) 松原市上下水道部上下水道建設課 【平日】072-334-1550（内線2762) 【休日】072-334-1550",
-        "hours": "【平日、休日とも】9：00～17：30 ただし、年末年始（12/29〜1/3）はお休みです",
+        "locationName": "【平日】松原市観光協会 / 【休日】松原市役所宿直室（市役所1階） / 【平日】072-337-3140 / 【休日】072-334-1550",
+        "address": "大阪府松原市阿保4－1－4 電話：072-330-8201 【休日】松原市役所宿直室（市役所1階） 大阪府松原市阿保1－1－1 電話:072-334-1550 (問合せ先) 松原市上下水道部上下水道建設課 【平日】072-337-3140 【休日】072-334-1550",
+        "hours": "【平日】10:00～17:00 【休日】9:00～17:30 ただし、年末年始（12/29～1/3）はお休みです",
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "",
@@ -21622,8 +22182,8 @@ const mhcardGeoJSON = {
         "name": "大東市 大東市上下水道局 総務課",
         "municipality": "大東市",
         "locationName": "大東市上下水道局 総務課",
-        "address": "大阪府大東市灰塚4-1-1電話：072-871-1191",
-        "hours": "9：00～17：30ただし、土日、祝日、年末年始はお休みです",
+        "address": "大阪府大東市灰塚4-1-1電話：072-871-1191 【休日】大東市上下水道局 宿直室",
+        "hours": "9：00～17：30",
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.city.daito.lg.jp/soshiki/39/",
@@ -22011,16 +22571,16 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.279327,
-          34.361778
+          135.267197,
+          34.382992
         ]
       },
       "properties": {
-        "name": "泉南市 【月・火以外】泉南市観光協会観光案内所",
+        "name": "泉南市 【火・水以外】泉南市観光協会観光案内所",
         "municipality": "泉南市",
-        "locationName": "【月・火以外】泉南市観光協会観光案内所",
-        "address": "大阪府泉南市信達牧野395-4",
-        "hours": "【月・火以外】10：00～16：00",
+        "locationName": "【火・水以外】泉南市観光協会観光案内所",
+        "address": "大阪府泉南市りんくう南浜4-201",
+        "hours": "【月・火以外】10：00～16：00【月・火のみ】9：00～17：30ただし、年末年始（12/28～1/4）はお休みです※月・火曜が祝日の場合は、観光案内所にて配布します",
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://welcome-sennan.com/access",
@@ -22038,11 +22598,11 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "泉南市 【月・火のみ】泉南市上下水道部 下水道整備課",
+        "name": "泉南市 【火・水のみ】泉南市上下水道部 下水道整備課",
         "municipality": "泉南市",
-        "locationName": "【月・火のみ】泉南市上下水道部 下水道整備課",
+        "locationName": "【火・水のみ】泉南市上下水道部 下水道整備課",
         "address": "大阪府泉南市樽井737電話：072-482-5005",
-        "hours": "【月・火のみ】9：00～17：30ただし、年末年始（12/28～1/4）はお休みです※月・火曜が祝日の場合は、観光案内所にて配布します",
+        "hours": "【月・火以外】10：00～16：00【月・火のみ】9：00～17：30ただし、年末年始（12/28～1/4）はお休みです※月・火曜が祝日の場合は、観光案内所にて配布します",
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.sennan.lg.jp/kakuka/soumu/gyouzaisei/gyoseihyoka/R1hyouka/R1sosiki/R1jyougesui/index.html",
@@ -22489,6 +23049,28 @@ const mhcardGeoJSON = {
         "issueDate": "2025/07/25",
         "url": "https://www.city.kobe.lg.jp/a78445/kurashi/sumai/sewage/pr/manhole_card.html",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-100-C-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.189804,
+          34.701435
+        ]
+      },
+      "properties": {
+        "name": "神戸市 (D001) 北野観光案内所",
+        "municipality": "神戸市 (D001)",
+        "locationName": "北野観光案内所",
+        "address": "神戸市中央区北野町3-10-20 電話:078-251-8360",
+        "hours": "【3月～10月】9:00～18:00 【11月～2月】9:00～17:00 ただし、年末年始（12/31～1/1）はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.city.kobe.lg.jp/a64051/kenko/handicap/syakaikatdudou/barrierfree/shurui/bunka/03093.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-100-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22991,33 +23573,11 @@ const mhcardGeoJSON = {
         "name": "三木市 (C001) あじさいフローラみき",
         "municipality": "三木市 (C001)",
         "locationName": "あじさいフローラみき",
-        "address": "兵庫県三木市福井字三木山 電話:0794-86-1250 ②",
-        "hours": "①10：00～15：00 ただし、休館日（主に火曜日）はお休みです ②10：00～15：00 あじさいフローラみき休館日のみ配布します ただし、1/1はお休みです ※12/29～12/31、1/2～1/6は道の駅みきで配布します",
+        "address": "兵庫県三木市福井字三木山 電話:0794-86-1250",
+        "hours": "10:00～15:00 ただし、火曜日（祝日の場合は翌平日が定休日）と年末年始はお休みです。 ※上記以外にも休業日があります。営業日の詳細は、あじさいフローラみき公式インスタグラムで事前にご確認ください",
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://ajisaiflora-miki.com/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-215-C-01.jpg",
-        "type": "mhcard"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          134.981262,
-          34.786068
-        ]
-      },
-      "properties": {
-        "name": "三木市 (C001) 道の駅みき１Ｆインフォメーション",
-        "municipality": "三木市 (C001)",
-        "locationName": "道の駅みき１Ｆインフォメーション",
-        "address": "兵庫県三木市福井2426番地先 電話:0794-86-9500",
-        "hours": "①10：00～15：00 ただし、休館日（主に火曜日）はお休みです ②10：00～15：00 あじさいフローラみき休館日のみ配布します ただし、1/1はお休みです ※12/29～12/31、1/2～1/6は道の駅みきで配布します",
-        "round": "第22弾",
-        "issueDate": "2024/04/26",
-        "url": "https://mikiyama.co.jp",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-215-C-01.jpg",
         "type": "mhcard"
       }
@@ -24814,6 +25374,51 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
+          133.935028,
+          34.661739
+        ]
+      },
+      "properties": {
+        "name": "浅口市 (A001) 浅口市役所上下水道部下水道課（金光総合支所2階）",
+        "municipality": "浅口市 (A001)",
+        "locationName": "浅口市役所上下水道部下水道課（金光総合支所2階）",
+        "address": "岡山県金光町占見新田751番地 電話:0865-42-7305 【土日祝】",
+        "hours": "9:00～16:00 ただし、年末年始（12/29～1/3）はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.city.asakuchi.lg.jp/soshiki/19/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-216-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.935028,
+          34.661839
+        ]
+      },
+      "properties": {
+        "name": "浅口市 (A001) 浅口市役所金光総合支所宿直室",
+        "municipality": "浅口市 (A001)",
+        "locationName": "浅口市役所金光総合支所宿直室",
+        "address": "岡山県金光町占見新田751番地 電話:0865-42-7300",
+        "hours": "9:00～16:00 ただし、年末年始（12/29～1/3）はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.city.asakuchi.lg.jp/soshiki/21/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-216-A-01.jpg",
+        "type": "mhcard",
+        "coordOffset": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           133.828003,
           34.601704
         ]
@@ -25506,12 +26111,34 @@ const mhcardGeoJSON = {
         "name": "東広島市（B001） 【平日】豊栄支所地域振興課 / 【土日】とよさか四季菜館",
         "municipality": "東広島市（B001）",
         "locationName": "【平日】豊栄支所地域振興課 / 【土日】とよさか四季菜館",
-        "address": "広島県東広島市豊栄町鍛冶屋963-2 電話：082-432-2211 【土日】とよさか四季菜館 広島県東広島市豊栄町鍛冶屋841-2 電話：082-432-4520 (問い合わせ先) 東広島市下水道部下水道管理課 電話：082-420-0957",
+        "address": "広島県東広島市豊栄町鍛冶屋963-2 電話：082-432-2211 【土日】とよさか四季菜館 広島県東広島市豊栄町鍛冶屋841-2 電話：082-432-4520",
         "hours": "【平日】8：30～17：15 祝祭日・年末年始（12/29～1/3）はお休みです ※月～金の祝祭日は配布しておりません 【土日】7：30～17：00 ただし、年末年始はお休みです （お問い合わせください）",
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-212-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.746811,
+          34.429699
+        ]
+      },
+      "properties": {
+        "name": "東広島市 (C001) 西条酒蔵通り観光案内所",
+        "municipality": "東広島市 (C001)",
+        "locationName": "西条酒蔵通り観光案内所",
+        "address": "広島県東広島市西条本町17-1 電話:082-421-2511 ②【西条酒蔵通り観光案内所の定休日（第1・第3水曜日）及び臨時休業日（平日に限る）】 東広島市下水道管理課 広島県東広島市西条栄町8-29 本館7F 電話:082-420-0957",
+        "hours": "①10:00～16:00 ただし、第1・3水曜日、年末年始、10月上旬に開催される酒まつり期間中はお休みです ②8：30～17：15 ただし、土日祝祭日、年末年始はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://jpn01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhigashihiroshima-kanko.jp%2Fspot%2Fsakaguradori-tourist-info%2F&data=05%7C02%7Chgh200957%40city.higashihiroshima.lg.jp%7C6679458235f74fdab46b08ded9d35646%7C7a6f116510b74e51b43fbdb60acb8c70%7C1%7C0%7C639187698872164881%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=8QHj0cc8kym6zSO94%2F4MSxUu1tGS1%2FMuofKGjdzEfqM%3D&reserved=0",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-212-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26040,6 +26667,28 @@ const mhcardGeoJSON = {
         "issueDate": "2026/04/24",
         "url": "https://www.carpbeach.org/",
         "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-208-C-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.201813,
+          34.390816
+        ]
+      },
+      "properties": {
+        "name": "長門市 (A001) 長門市観光案内所 YUKUTE",
+        "municipality": "長門市 (A001)",
+        "locationName": "長門市観光案内所 YUKUTE",
+        "address": "山口県長門市仙崎4297-6 電話:0837-26-0708",
+        "hours": "9:00～18:00 ただし、年末・年始（12/31・1/1）、12月～2月は毎月第2木曜日はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://nanavi.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28037,6 +28686,50 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
+          130.729477,
+          33.744667
+        ]
+      },
+      "properties": {
+        "name": "直方市 (A001) 直方市役所下水道課",
+        "municipality": "直方市 (A001)",
+        "locationName": "直方市役所下水道課",
+        "address": "福岡県直方市殿町7-1 電話:0949-25-2203 【土日、祝日】",
+        "hours": "【平日】9:00～16:30 年末年始はお休みです 【土日、祝日】10:30～16:30 水曜日が祝日の場合と年末年始はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.city.nogata.fukuoka.jp/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-204-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.727783,
+          33.748116
+        ]
+      },
+      "properties": {
+        "name": "直方市 (A001) 多世代交流スペースここっちゃ（交流エリア）",
+        "municipality": "直方市 (A001)",
+        "locationName": "多世代交流スペースここっちゃ（交流エリア）",
+        "address": "福岡県直方市古町5-35 電話:0949-52-6234",
+        "hours": "【平日】9:00～16:30 年末年始はお休みです 【土日、祝日】10:30～16:30 水曜日が祝日の場合と年末年始はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.city.nogata.fukuoka.jp/shisei/_1242/_2793/_12358.html",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-204-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           130.405609,
           33.163387
         ]
@@ -28064,11 +28757,11 @@ const mhcardGeoJSON = {
         ]
       },
       "properties": {
-        "name": "柳川市 ①柳川市観光情報センター",
+        "name": "柳川市 柳川市観光情報センター",
         "municipality": "柳川市",
-        "locationName": "①柳川市観光情報センター",
-        "address": "福岡県柳川市沖端町35 電話:0944-73-2145 ②柳川市観光案内所 福岡県柳川市三橋町下百町46-2",
-        "hours": "平日】8:30～17:00 ただし、年末年始はお休みです 【土日祝日】①9:30～16:00 ただし、12月31日と1月1日はお休みです ②9:30～16:00 ただし、12月31日と1月1日はお休みです",
+        "locationName": "柳川市観光情報センター",
+        "address": "福岡県柳川市沖端町35 電話:0944-73-2145",
+        "hours": "平日】8:30～17:00 ただし、年末年始はお休みです 【土日祝日】9:30～16:00 ただし、12月31日と1月1日はお休みです",
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.yanagawa-net.com/",
@@ -30070,6 +30763,28 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
+          129.733948,
+          31.711575
+        ]
+      },
+      "properties": {
+        "name": "薩摩川内市 (B001) 下甑島観光案内所",
+        "municipality": "薩摩川内市 (B001)",
+        "locationName": "下甑島観光案内所",
+        "address": "鹿児島県薩摩川内市下甑町長浜913番4 電話:0996-24-8114 （問合せ先） 薩摩川内市水道局下水道室 電話:0996-20-8503",
+        "hours": "8:00～17:30",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://koshiki.satsumasendai.gr.jp/spotlist/39470",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-215-B-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           130.311935,
           31.813478
         ]
@@ -30599,6 +31314,50 @@ const mhcardGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
+          125.296478,
+          24.812847
+        ]
+      },
+      "properties": {
+        "name": "宮古島市 (A001) 宮古島市 下水道課",
+        "municipality": "宮古島市 (A001)",
+        "locationName": "宮古島市 下水道課",
+        "address": "沖縄県宮古島市平良字西仲宗根565-6 電話:0980-75-5121 【土日】",
+        "hours": "【平日】9:00～17:00 【土日】10:00～17:30 ただし、祝日、閉館日、年末年始はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.city.miyakojima.lg.jp/soshiki/shityo/kankyoueisei/gesuidou/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-214-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          125.290588,
+          24.801834
+        ]
+      },
+      "properties": {
+        "name": "宮古島市 (A001) 宮古島市未来創造センター",
+        "municipality": "宮古島市 (A001)",
+        "locationName": "宮古島市未来創造センター",
+        "address": "沖縄県宮古島市平良字東仲宗根807 電話:0980-72-2235",
+        "hours": "【平日】9:00～17:00 【土日】10:00～17:30 ただし、祝日、閉館日、年末年始はお休みです",
+        "round": "第29弾",
+        "issueDate": "2026/07/31",
+        "url": "https://www.city.miyakojima.lg.jp/soshiki/kyouiku/syougaigakusyu/miraisouzou/",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-214-A-01.jpg",
+        "type": "mhcard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           140.740555,
           40.824589
         ]
@@ -30673,8 +31432,8 @@ const mhcardGeoJSON = {
         "name": "北谷町 (B001) 【平日】北谷町上下水道庁舎内下水道係カウンター",
         "municipality": "北谷町 (B001)",
         "locationName": "【平日】北谷町上下水道庁舎内下水道係カウンター",
-        "address": "沖縄県中頭郡北谷町桑江1-1-2 電話：098-936-7713  【土日】",
-        "hours": "【平日】8：30～17：15（12：00～13：00を除く）",
+        "address": "沖縄県中頭郡北谷町桑江1-1-2 電話：098-936-7713 【土日】",
+        "hours": "【平日】8:30～17:15 （12:00～13:00を除く）",
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "http://www.chatan.jp/seikatsuguide/jogesuido/gesuido/gesui50thanniv/manholecard2021.html",
@@ -30695,8 +31454,8 @@ const mhcardGeoJSON = {
         "name": "北谷町 (B001) 北谷町立博物館",
         "municipality": "北谷町 (B001)",
         "locationName": "北谷町立博物館",
-        "address": "沖縄県中頭郡北谷町伊平1-11-1 電話：098-923-0300  (問合せ先) 北谷町上下水道部上下水道課 電話：098-982-7713",
-        "hours": "【平日】8：30～17：15（12：00～13：00を除く） 【土日】9：00～17：00 ※臨時休館日についてはHPをご確認ください ※祝日、年末年始（12/29～1/3）はお休みです",
+        "address": "沖縄県中頭郡北谷町伊平1-11-1 電話：098-923-0300 【祝日】北谷町観光情報センター 沖縄県中頭郡北谷町字美浜16-3 電話：098-926-5678 (問合せ先) 北谷町上下水道部上下水道課 電話：098-982-7713",
+        "hours": "【平日】8:30～17:15 （12:00～13:00を除く） 【土日】9:00～17:00 ※博物館の臨時休館日についてはHPをご確認ください ※年末年始（12/29～1/3）はお休みです 【祝日】9:00～18:00 ただし、年末年始（12/29～1/3）はお休みです",
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://museum.chatan.jp/",
