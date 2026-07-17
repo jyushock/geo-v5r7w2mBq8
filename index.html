@@ -1141,6 +1141,7 @@
             const p2 = map.project(coords);
             if (Math.hypot(p1.x - p2.x, p1.y - p2.y) < 40) {
                 Object.assign(cur, { label, cause: 'pin', lng: coords[0], lat: coords[1], time: Date.now() });
+                delete cur.addr; // ピン名で表示するため取得済み住所を破棄
                 return;
             }
         }
@@ -1159,6 +1160,7 @@
         // 15秒以内に続く手動移動は直近エントリを更新（細かい移動での履歴増殖を防ぐ）
         if (cur.cause === 'move' && Date.now() - cur.time < 15000 && histIndex === mapHistory.length - 1) {
             Object.assign(cur, { lng: c.lng, lat: c.lat, zoom: map.getZoom(), time: Date.now() });
+            delete cur.addr; // 位置が変わったので取得済み住所を無効化
             return;
         }
         histPush({ label: '地図移動', cause: 'move' });
@@ -1221,12 +1223,46 @@
             ? mapHistory.slice(0, histIndex).map((e, i) => ({ e, idx: i })).reverse()
             : mapHistory.slice(histIndex + 1).map((e, i) => ({ e, idx: histIndex + 1 + i }));
         if (!items.length) return;
+        const visible = items.slice(0, 10);
         const pop = document.getElementById('hist-list-popup');
-        pop.innerHTML = `<div class="hist-hdr">${dir < 0 ? '◀ 戻る' : '▶ 進む'}</div>` + items.slice(0, 10).map(({ e, idx }) =>
-            `<div class="hist-item" data-idx="${idx}"><span class="hist-ico">${HIST_ICONS[e.cause] || '📍'}</span><div class="hist-txt"><div class="hist-name">${histEscape(e.label)}</div><div class="hist-meta">${histTimeAgo(e.time)}・${HIST_CAUSES[e.cause] || ''}</div></div></div>`).join('');
+        pop.innerHTML = `<div class="hist-hdr">${dir < 0 ? '◀ 戻る' : '▶ 進む'}</div>` + visible.map(({ e, idx }) =>
+            `<div class="hist-item" data-idx="${idx}"><span class="hist-ico">${HIST_ICONS[e.cause] || '📍'}</span><div class="hist-txt"><div class="hist-name">${histEscape(e.addr || e.label)}</div><div class="hist-meta">${histTimeAgo(e.time)}・${HIST_CAUSES[e.cause] || ''}</div></div></div>`).join('');
         pop.classList.remove('anchor-back', 'anchor-fwd');
         pop.classList.add(dir < 0 ? 'anchor-back' : 'anchor-fwd');
         pop.style.display = 'block';
+        histFetchAddrs(visible.map(v => v.e));
+    }
+
+    // 「地図移動」エントリの住所をリスト表示時に遅延取得してキャッシュ
+    // Nominatim利用規約（最大1リクエスト/秒）に合わせて逐次・間隔付きで取得する
+    let histAddrFetching = false;
+    async function histFetchAddrs(entries) {
+        if (histAddrFetching) return;
+        const targets = entries.filter(e => e.cause === 'move' && !e.addr);
+        if (!targets.length) return;
+        histAddrFetching = true;
+        try {
+            for (let i = 0; i < targets.length; i++) {
+                const e = targets[i];
+                const t0 = Date.now();
+                const addr = await fetchPlaceName(e.lat, e.lng);
+                if (addr && !e.addr) {
+                    e.addr = addr;
+                    // ポップアップが開いたままならその行だけ書き換える
+                    const idx = mapHistory.indexOf(e);
+                    const pop = document.getElementById('hist-list-popup');
+                    if (pop.style.display === 'block' && idx >= 0) {
+                        const nameEl = pop.querySelector(`.hist-item[data-idx="${idx}"] .hist-name`);
+                        if (nameEl) nameEl.textContent = addr;
+                    }
+                }
+                if (i < targets.length - 1) {
+                    await new Promise(r => setTimeout(r, Math.max(0, 1000 - (Date.now() - t0))));
+                }
+            }
+        } finally {
+            histAddrFetching = false;
+        }
     }
 
     function closeHistList() {
