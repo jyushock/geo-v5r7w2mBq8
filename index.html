@@ -1617,6 +1617,15 @@ async function fetchCastleImage(castleName, kojodanUrl) {
     return null;
 }
 
+// 城のGoogleMap検索クエリ：同名城の誤ヒット防止に市区町村までの住所を付与
+// 丁目以下まで含めるとPOIカード直行になりにくいため市区町村で切る（実測確認済み）
+// 切り出せない書式は住所全体、住所なしは城名のみにフォールバック
+function castleGmapQuery(name, address) {
+    if (!address) return name;
+    const m = address.match(/^(北海道|東京都|京都府|大阪府|[一-龠々]{2,3}県)(.+?[市区町村郡])/);
+    return `${name},${m ? m[1] + m[2] : address}`;
+}
+
 // mhcardポップアップ用カード画像HTML生成
 function buildMhcardImgHtml(p) {
     if (!p.cardImgUrl) return '';
@@ -1666,7 +1675,8 @@ function buildPopupHtml(type, label, p, lng, lat) {
         return `<div class="popup-card"><span class="popup-title">${name}</span>${roadHtml}${addressHtml}${hoursHtml}<div class="btn-grid"><a href="${gmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${michiExtraBtns}${navBtns}${nearbyBtn}</div></div>`;
     } else {
         const name = p.name || label;
-        const gmapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}`;
+        const gmapQuery = type === 'castle' ? castleGmapQuery(name, p.address) : name;
+        const gmapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(gmapQuery)}`;
         const addressHtml = p.address ? `<span class="popup-address">${p.address}</span>` : '';
         let extraBtns = '';
         if (type === 'shop')   extraBtns = `<a href="${p.url}" target="_blank" class="btn btn-tabelog btn-full">食べログ</a>`;
