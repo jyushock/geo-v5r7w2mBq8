@@ -344,6 +344,37 @@
         .popup-clamp.expanded::after { content: ' ▲'; }
         .castle-img-container { margin: 4px 0; border-radius: 6px; border: 1px solid #eee; overflow: hidden; background: #f5f0e8; }
         .castle-img { width: 100%; height: 110px; object-fit: cover; display: block; }
+        .btn-carddetail { background: #8D6E63; color: #fff; }
+
+        /* マンホールカード詳細シート */
+        #card-detail-panel {
+            position: fixed; bottom: -100%; left: 0; right: 0;
+            background: white; border-radius: 16px 16px 0 0;
+            box-shadow: 0 -4px 16px rgba(0,0,0,0.15);
+            z-index: 320; transition: bottom 0.3s ease;
+            max-height: 80vh; display: flex; flex-direction: column;
+            font-family: sans-serif;
+        }
+        #card-detail-header { position: relative; padding: 8px 16px 4px; flex-shrink: 0; cursor: grab; }
+        #card-detail-header .cd-handle { width: 36px; height: 4px; background: #ccc; border-radius: 2px; margin: 0 auto; }
+        #card-detail-close {
+            position: absolute; top: 6px; right: 12px;
+            background: none; border: none; font-size: 22px; color: #bbb;
+            cursor: pointer; padding: 0 4px; line-height: 1;
+        }
+        #card-detail-body { overflow-y: auto; padding: 4px 16px 14px; }
+        .cd-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+        .cd-muni { font-size: 15px; font-weight: bold; color: #333; }
+        .cd-badge { font-size: 10px; font-weight: bold; color: #fff; background: #8d6e63; border-radius: 10px; padding: 2px 8px; flex-shrink: 0; }
+        .cd-badge.cd-round { background: #546E7A; }
+        .cd-img-wrap { background: #f5f2ec; border: 1px solid #eee; border-radius: 10px; padding: 10px; text-align: center; margin-bottom: 10px; }
+        .cd-img { max-width: 170px; max-height: 240px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.25); }
+        .cd-table { width: 100%; border-collapse: collapse; margin-bottom: 10px; }
+        .cd-table th { font-size: 10px; color: #999; font-weight: normal; text-align: left; white-space: nowrap; padding: 5px 10px 5px 0; vertical-align: top; width: 58px; }
+        .cd-table td { font-size: 11.5px; color: #333; padding: 5px 0; line-height: 1.5; border-bottom: 1px solid #f5f5f5; }
+        .cd-table tr:last-child td { border-bottom: none; }
+        .btn-cd-stock { background: #00897B; }
+        .btn-cd-gkp { background: #455A64; }
 
 
 
@@ -951,6 +982,16 @@
     </div>
     <div id="nearby-type-filter"></div>
     <div id="nearby-list" style="overflow-y:auto;flex:1;"></div>
+</div>
+
+<!-- マンホールカード詳細シート -->
+<div id="card-detail-overlay" onclick="closeCardDetail()" style="display:none;position:fixed;inset:0;z-index:319;"></div>
+<div id="card-detail-panel">
+    <div id="card-detail-header">
+        <div class="cd-handle"></div>
+        <button id="card-detail-close" onclick="closeCardDetail()">×</button>
+    </div>
+    <div id="card-detail-body"></div>
 </div>
 
 <script>
@@ -1626,6 +1667,112 @@ function castleGmapQuery(name, address) {
     return `${name},${m ? m[1] + m[2] : address}`;
 }
 
+// --- マンホールカード詳細シート ---
+let cardDetailProps = null; // 直近に構築したポップアップの詳細表示用データ
+let cardJoinIndex = null;   // 蓋ピンcardId → 配布場所propertiesの索引（遅延構築）
+
+// カードコード正規化: "13-100-P001" / "01-100-A-01" → "13-100-P-1"
+function cardCodeKey(s) {
+    const m = String(s).match(/^(\d{2})-(\d{3})-?([A-Z])-?0*(\d+)/i);
+    return m ? `${m[1]}-${m[2]}-${m[3].toUpperCase()}-${parseInt(m[4], 10)}` : null;
+}
+
+function findCardByCardId(cardId) {
+    if (!cardId) return null;
+    if (!cardJoinIndex) {
+        const fc = loadedData.mhcard;
+        if (!fc) return null; // 配布場所データ未読込（読込後に再タップで解決）
+        cardJoinIndex = {};
+        fc.features.forEach(f => {
+            const p = f.properties;
+            const m = (p.cardImgUrl || '').match(/\/mhc\/([\w-]+)\.jpg/i);
+            const key = m && cardCodeKey(m[1]);
+            if (key && !cardJoinIndex[key]) cardJoinIndex[key] = p;
+        });
+    }
+    const key = cardCodeKey(cardId);
+    return key ? (cardJoinIndex[key] || null) : null;
+}
+
+function openCardDetail() {
+    const p = cardDetailProps;
+    if (!p) return;
+    const esc = histEscape;
+    const muniRaw = p.municipality || '';
+    const muni = muniRaw.replace(/[（(].*$/, '').trim();
+    const idm = muniRaw.match(/[（(]\s*([A-Za-z0-9]+)\s*[）)]/);
+    const prefM = (p.cardImgUrl || '').match(/\/mhc\/(\d{2})-/);
+    const gkpPref = (!prefM || prefM[1] === '00') ? 'zenkoku' : prefM[1];
+    const gkpUrl = `https://www.gk-p.jp/mhcard/?pref=${gkpPref}` +
+        (muni ? `#:~:text=${encodeURIComponent(muni)}` : '#mhcard_result');
+
+    const badges =
+        (idm ? `<span class="cd-badge">${esc(idm[1])}</span>` : '') +
+        (p.round ? `<span class="cd-badge cd-round">${esc(p.round)}</span>` : '');
+    const imgHtml = p.cardImgUrl
+        ? `<div class="cd-img-wrap"><img class="cd-img" src="${p.cardImgUrl}" onerror="this.parentElement.style.display='none'"></div>` : '';
+    const rows = [];
+    if (p.issueDate) rows.push(['発行日', esc(p.issueDate)]);
+    if (p.locationName || p.address) {
+        rows.push(['配布場所',
+            `${esc(p.locationName || '')}${p.address ? `${p.locationName ? '<br>' : ''}<span style="color:#777;">${esc(p.address)}</span>` : ''}`]);
+    }
+    if (p.hours) rows.push(['配布時間', esc(p.hours)]);
+    const tableHtml = rows.length
+        ? `<table class="cd-table">${rows.map(([th, td]) => `<tr><th>${th}</th><td>${td}</td></tr>`).join('')}</table>` : '';
+    const stockBtn = p.url
+        ? `<a href="${p.url}" target="_blank" class="btn btn-cd-stock btn-full">在庫状況を確認（公式ページ）</a>` : '';
+
+    document.getElementById('card-detail-body').innerHTML =
+        `<div class="cd-head"><span class="cd-muni">${esc(muni || p.name || '')}</span>${badges}</div>` +
+        imgHtml + tableHtml +
+        `<div class="btn-grid">${stockBtn}<a href="${gkpUrl}" target="_blank" class="btn btn-cd-gkp btn-full">GKP公式一覧（該当行へ移動）</a></div>`;
+    document.getElementById('card-detail-body').scrollTop = 0;
+    document.getElementById('card-detail-panel').style.bottom = '0';
+    document.getElementById('card-detail-overlay').style.display = 'block';
+}
+
+function closeCardDetail() {
+    const panel = document.getElementById('card-detail-panel');
+    panel.style.transition = '';
+    panel.style.bottom = '-100%';
+    document.getElementById('card-detail-overlay').style.display = 'none';
+}
+
+// ヘッダーの下スワイプで閉じる（周辺検索結果パネルと同パターン）
+(function() {
+    const panel = document.getElementById('card-detail-panel');
+    const header = document.getElementById('card-detail-header');
+    let startY = 0;
+    let isDragging = false;
+    panel.addEventListener('pointerdown', (e) => {
+        isDragging = header.contains(e.target) && !e.target.closest('button');
+        if (isDragging) {
+            startY = e.clientY;
+            try { panel.setPointerCapture(e.pointerId); } catch (_) {}
+        }
+    });
+    panel.addEventListener('pointermove', (e) => {
+        if (!isDragging) return;
+        const dy = e.clientY - startY;
+        if (dy > 0) {
+            panel.style.transition = 'none';
+            panel.style.bottom = `-${dy}px`;
+        }
+    });
+    panel.addEventListener('pointerup', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        const dy = e.clientY - startY;
+        if (dy > 60) {
+            closeCardDetail();
+        } else {
+            panel.style.transition = '';
+            panel.style.bottom = '0';
+        }
+    });
+})();
+
 // mhcardポップアップ用カード画像HTML生成
 function buildMhcardImgHtml(p) {
     if (!p.cardImgUrl) return '';
@@ -1650,13 +1797,19 @@ function buildPopupHtml(type, label, p, lng, lat) {
         const name = p.name || label;
         const imgHtml = p.cardId ? `<div class="manhole-img-container"><img src="https://ekikaramanhole.whitebeach.org/ext/manholecard/image/getimage.cgi?file=card/${p.cardId}.jpg" class="manhole-img-large"></div>` : '';
         const addressHtml = p.address ? `<span class="popup-address">${p.address}</span>` : '';
-        return `<div class="popup-card"><span class="popup-title">${name}</span>${addressHtml}${imgHtml}<div class="btn-grid"><a href="${coordGmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${navBtns}${nearbyBtn}</div></div>`;
+        // 配布場所データと紐付いた場合のみ「カード詳細」を表示
+        const joined = findCardByCardId(p.cardId);
+        if (joined) cardDetailProps = joined;
+        const detailBtn = joined ? `<button class="btn btn-carddetail btn-full" onclick="openCardDetail()">カード詳細</button>` : '';
+        return `<div class="popup-card"><span class="popup-title">${name}</span>${addressHtml}${imgHtml}<div class="btn-grid"><a href="${coordGmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${detailBtn}${navBtns}${nearbyBtn}</div></div>`;
     } else if (type === 'mhcard') {
         const title = `${p.coordOffset ? '[複]' : ''}[配布] ${p.name || label}`;
         const addressHtml = p.address ? `<span class="popup-address popup-clamp">${p.address}</span>` : '';
         const hoursHtml = p.hours ? `<span class="popup-road popup-clamp">🕐 ${p.hours}</span>` : '';
         const imgHtml = buildMhcardImgHtml(p);
-        return `<div class="popup-card"><span class="popup-title popup-clamp">${title}</span>${addressHtml}${hoursHtml}${imgHtml}<div class="btn-grid"><a href="${coordGmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${navBtns}${nearbyBtn}</div></div>`;
+        cardDetailProps = p;
+        const detailBtn = `<button class="btn btn-carddetail btn-full" onclick="openCardDetail()">カード詳細</button>`;
+        return `<div class="popup-card"><span class="popup-title popup-clamp">${title}</span>${addressHtml}${hoursHtml}${imgHtml}<div class="btn-grid"><a href="${coordGmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${detailBtn}${navBtns}${nearbyBtn}</div></div>`;
     } else if (type === 'michi') {
         const name = p.name || label;
         const gmapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}`;
