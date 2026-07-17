@@ -94128,24 +94128,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.883407,
-          37.0623
-        ]
-      },
-      "properties": {
-        "name": "旬彩の庄 坂戸城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "新潟県南魚沼市坂戸２９２−４"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.6191026,
           36.7524526
         ]
@@ -130668,24 +130650,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.2571199,
-          32.6363011
-        ]
-      },
-      "properties": {
-        "name": "原城の宿 城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "長崎県南島原市南有馬町丁１７０"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           130.25963000000002,
           32.870806
         ]
@@ -147210,24 +147174,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.80000640000003,
-          34.4453482
-        ]
-      },
-      "properties": {
-        "name": "街の駅 城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "奈良県高市郡高取町上土佐５８−１"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           135.92627819999998,
           34.5401488
         ]
@@ -156239,24 +156185,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "島根県雲南市吉田町吉田 5RGV+M8"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          133.1806078,
-          35.3683383
-        ]
-      },
-      "properties": {
-        "name": "道の駅 広瀬·富田城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "島根県安来市広瀬町町帳７７５−１"
       }
     },
     {
@@ -180143,24 +180071,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "福島県会津若松市北会津町下荒井"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          140.07572249999998,
-          37.536152
-        ]
-      },
-      "properties": {
-        "name": "美蕎旬菜 三城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "福島県耶麻郡猪苗代町三ツ和波々帰目１１０６−１"
       }
     },
     {
@@ -229139,24 +229049,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "埼玉県秩父市東町１１−１０"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.4799772,
-          35.9031045
-        ]
-      },
-      "properties": {
-        "name": "川越人 妻城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "埼玉県川越市新宿町１丁目２"
       }
     },
     {
