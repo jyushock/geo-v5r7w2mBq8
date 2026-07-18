@@ -3568,24 +3568,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.49555556,
-          39.16316667
-        ]
-      },
-      "properties": {
-        "name": "湯沢城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "秋田県",
-        "url": "",
-        "address": "秋田県湯沢市−"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           140.56922778,
           39.32106111
         ]
@@ -3875,24 +3857,6 @@ const castleData = {
         "aliases": [
           "真室城"
         ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          140.228944,
-          38.698056
-        ]
-      },
-      "properties": {
-        "name": "清水城 (出羽国)",
-        "genre": "",
-        "category": "城",
-        "prefecture": "山形県",
-        "url": "",
-        "address": "山形県大蔵村大字清水"
       }
     },
     {
@@ -6162,24 +6126,6 @@ const castleData = {
         "prefecture": "茨城県",
         "url": "https://kojodan.jp/castle/1912",
         "address": "茨城県水戸市見川三丁目"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.7594611,
-          36.1308639
-        ]
-      },
-      "properties": {
-        "name": "水海城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "茨城県",
-        "url": "",
-        "address": "茨城県古河市水海"
       }
     },
     {
@@ -10876,27 +10822,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.43059444,
-          35.60066944
-        ]
-      },
-      "properties": {
-        "name": "小野路城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "東京都",
-        "url": "",
-        "address": "東京都町田市小野路町",
-        "aliases": [
-          "結道城"
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.85463,
           35.75544
         ]
@@ -13064,24 +12989,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.827056,
-          37.729944
-        ]
-      },
-      "properties": {
-        "name": "天神山城 (越後国)",
-        "genre": "",
-        "category": "城",
-        "prefecture": "新潟県",
-        "url": "",
-        "address": "新潟県新潟市西蒲区岩室温泉"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           138.98791667,
           37.47225
         ]
@@ -13258,24 +13165,6 @@ const castleData = {
         "prefecture": "新潟県",
         "url": "https://kojodan.jp/castle/2014",
         "address": "新潟県佐渡市羽茂本郷"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          138.83269444,
-          37.30983333
-        ]
-      },
-      "properties": {
-        "name": "薭生城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "新潟県",
-        "url": "",
-        "address": "新潟県小千谷市大字薭生"
       }
     },
     {
@@ -14766,28 +14655,6 @@ const castleData = {
         "aliases": [
           "増山城",
           "和田城"
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          137.441797,
-          36.758966
-        ]
-      },
-      "properties": {
-        "name": "松倉城 (越中国)",
-        "genre": "",
-        "category": "城",
-        "prefecture": "富山県",
-        "url": "",
-        "address": "富山県魚津市鹿熊",
-        "aliases": [
-          "金山城",
-          "鹿熊城"
         ]
       }
     },
@@ -18871,24 +18738,6 @@ const castleData = {
         "aliases": [
           "船岡城"
         ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          137.229023,
-          35.886029
-        ]
-      },
-      "properties": {
-        "name": "桜洞城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "岐阜県",
-        "url": "",
-        "address": "岐阜県下呂市萩原町桜洞"
       }
     },
     {
@@ -28573,24 +28422,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.14527778,
-          34.19161111
-        ]
-      },
-      "properties": {
-        "name": "雑賀崎城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "和歌山県",
-        "url": "",
-        "address": "和歌山県和歌山市雑賀崎"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           135.13988889,
           34.19363889
         ]
@@ -31535,28 +31366,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.89458333,
-          34.81769444
-        ]
-      },
-      "properties": {
-        "name": "比叡尾山城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "広島県",
-        "url": "",
-        "address": "広島県三次市畠敷町",
-        "aliases": [
-          "畠敷本城",
-          "比海老城"
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           132.84,
           34.81972222
         ]
@@ -31955,27 +31764,6 @@ const castleData = {
         "aliases": [
           "安芸草津城",
           "田方城"
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          132.53586111,
-          34.326
-        ]
-      },
-      "properties": {
-        "name": "矢野城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "広島県",
-        "url": "",
-        "address": "広島県広島市安芸区矢野町",
-        "aliases": [
-          "保木城"
         ]
       }
     },
@@ -33822,24 +33610,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.799275,
-          33.409575
-        ]
-      },
-      "properties": {
-        "name": "三滝城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "愛媛県",
-        "url": "",
-        "address": "愛媛県西予市城川町窪野"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           132.7109,
           33.8687
         ]
@@ -34348,24 +34118,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.52155556,
-          33.53991667
-        ]
-      },
-      "properties": {
-        "name": "大野城 (筑前国)",
-        "genre": "日本100名城",
-        "category": "城",
-        "prefecture": "福岡県",
-        "url": "",
-        "address": "福岡県宇美町大字四王寺"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           130.6025,
           33.844083
         ]
@@ -34400,24 +34152,6 @@ const castleData = {
         "prefecture": "福岡県",
         "url": "https://kojodan.jp/castle/1666",
         "address": "福岡県飯塚市鹿毛馬"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          130.840056,
-          33.675972
-        ]
-      },
-      "properties": {
-        "name": "香春岳城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "福岡県",
-        "url": "",
-        "address": "福岡県香春町大字香春"
       }
     },
     {
@@ -34581,24 +34315,6 @@ const castleData = {
           "杉ノ城",
           "杉城"
         ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          130.51897778,
-          33.16330556
-        ]
-      },
-      "properties": {
-        "name": "女山神籠石",
-        "genre": "",
-        "category": "城",
-        "prefecture": "福岡県",
-        "url": "",
-        "address": "福岡県みやま市瀬高町大草"
       }
     },
     {
@@ -38178,27 +37894,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          131.33183333,
-          31.93330556
-        ]
-      },
-      "properties": {
-        "name": "穆佐城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "宮崎県",
-        "url": "",
-        "address": "宮崎県宮崎市高岡町小山田",
-        "aliases": [
-          "穆佐院高城"
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           129.68111111,
           28.45480556
         ]
@@ -39597,24 +39292,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "長野県長野市大字安茂里"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          138.6503088,
-          37.4701362
-        ]
-      },
-      "properties": {
-        "name": "鎌田城址",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "新潟県柏崎市西山町鎌田"
       }
     },
     {
@@ -41407,24 +41084,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          129.9785748,
-          33.3567376
-        ]
-      },
-      "properties": {
-        "name": "岸岳城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "佐賀県唐津市相知町佐里"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.7253236,
           36.4735566
         ]
@@ -42426,24 +42085,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "沖縄県西原町字棚原"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          129.8759583,
-          33.5270662
-        ]
-      },
-      "properties": {
-        "name": "名護屋城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "佐賀県唐津市鎮西町名護屋"
       }
     },
     {
@@ -63858,24 +63499,6 @@ const castleData = {
         "prefecture": "岐阜県",
         "url": "https://kojodan.jp/castle/1329",
         "address": "岐阜県瑞浪市釜戸町"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          137.257217,
-          35.369939
-        ]
-      },
-      "properties": {
-        "name": "一日市場館",
-        "genre": "",
-        "category": "城",
-        "prefecture": "岐阜県",
-        "url": "https://kojodan.jp/castle/1360",
-        "address": "岐阜県瑞浪市土岐町"
       }
     },
     {
@@ -91853,7 +91476,7 @@ const castleData = {
       },
       "properties": {
         "name": "大野城",
-        "genre": "",
+        "genre": "日本100名城",
         "category": "城",
         "prefecture": "福岡県",
         "url": "https://kojodan.jp/castle/91",
@@ -92054,24 +91677,6 @@ const castleData = {
         "prefecture": "福岡県",
         "url": "https://kojodan.jp/castle/578",
         "address": "福岡県北九州市八幡西区屋敷一丁目"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          130.254474,
-          33.542209
-        ]
-      },
-      "properties": {
-        "name": "怡土城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "福岡県",
-        "url": "https://kojodan.jp/castle/1344",
-        "address": "福岡県糸島市高祖"
       }
     },
     {
@@ -97416,24 +97021,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "広島県竹原市田ノ浦２丁目２−１８"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.02079519999998,
-          34.5888583
-        ]
-      },
-      "properties": {
-        "name": "岩屋城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "兵庫県淡路市岩屋９３６−２"
       }
     },
     {
@@ -104788,24 +104375,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          131.4364141,
-          33.0540887
-        ]
-      },
-      "properties": {
-        "name": "鳥屋城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "大分県豊後大野市朝地町鳥田"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           131.4381015,
           33.2132612
         ]
@@ -106725,24 +106294,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "愛媛県西予市宇和町東多田１００−１"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          132.6831652,
-          33.4858449
-        ]
-      },
-      "properties": {
-        "name": "向城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "愛媛県大洲市肱川町名荷谷"
       }
     },
     {
@@ -109461,24 +109012,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "愛媛県西条市氷見丁"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          133.1035894,
-          33.8757452
-        ]
-      },
-      "properties": {
-        "name": "幻城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "愛媛県西条市小松町新屋敷"
       }
     },
     {
@@ -113493,24 +113026,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "大阪府泉佐野市南中樫井２３７"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.5751601,
-          34.5513791
-        ]
-      },
-      "properties": {
-        "name": "河原城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "大阪府羽曳野市河原城１０３２−３"
       }
     },
     {
@@ -120793,24 +120308,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.22395609999998,
-          35.5223513
-        ]
-      },
-      "properties": {
-        "name": "丸山城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "鳥取県鳥取市丸山町"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           134.15824089999998,
           35.4548444
         ]
@@ -122827,28 +122324,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.4789921,
-          35.5129775
-        ]
-      },
-      "properties": {
-        "name": "苗木城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "岐阜県中津川市苗木",
-        "aliases": [
-          "霞ヶ城",
-          "赤壁城"
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           137.3769766,
           35.4073339
         ]
@@ -122878,24 +122353,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "岐阜県中津川市中津川 FG9X+WC"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          137.517859,
-          35.5222513
-        ]
-      },
-      "properties": {
-        "name": "瀬戸崎城跡(推定地)",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "岐阜県中津川市瀬戸"
       }
     },
     {
@@ -127972,24 +127429,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "群馬県利根郡片品村土出３７８ 0412"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.2407783,
-          36.8269016
-        ]
-      },
-      "properties": {
-        "name": "古仲城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "群馬県利根郡片品村土出 R6GR+Q8"
       }
     },
     {
@@ -133523,24 +132962,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.615264,
-          31.729553
-        ]
-      },
-      "properties": {
-        "name": "瓜生野城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "鹿児島県姶良市西餅田"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           130.5498835,
           31.6219592
         ]
@@ -137393,24 +136814,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.7416077,
-          33.0105089
-        ]
-      },
-      "properties": {
-        "name": "御宇田城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "熊本県山鹿市鹿本町御宇田"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           130.7118624,
           33.319918799999996
         ]
@@ -140896,24 +140299,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "大分県豊後高田市田染小崎２１３０"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          131.47131199999998,
-          33.521115
-        ]
-      },
-      "properties": {
-        "name": "鞍懸城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "大分県豊後高田市佐野 GFCC+CG"
       }
     },
     {
@@ -162074,24 +161459,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.1072365,
-          35.2055848
-        ]
-      },
-      "properties": {
-        "name": "矢筈城趾",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "岡山県津山市加茂町山下７６−６"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           134.04401,
           35.173818
         ]
@@ -162607,24 +161974,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "兵庫県宍粟市一宮町生栖６７１ 4123"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          134.41438309999998,
-          35.008291799999995
-        ]
-      },
-      "properties": {
-        "name": "徳久城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "兵庫県佐用郡佐用町東徳久６７９ 5213"
       }
     },
     {
@@ -163838,24 +163187,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.4383648,
-          35.0857946
-        ]
-      },
-      "properties": {
-        "name": "宍人城跡（宍人館跡）",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "京都府南丹市園部町宍人"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           135.3247089,
           35.361580599999996
         ]
@@ -164893,24 +164224,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "滋賀県近江八幡市円山町"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.5993336,
-          35.3902881
-        ]
-      },
-      "properties": {
-        "name": "池尻城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "岐阜県大垣市池尻町"
       }
     },
     {
@@ -175088,24 +174401,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.6635589,
-          36.1556249
-        ]
-      },
-      "properties": {
-        "name": "砥沢城（胡桃城裡山砦）",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "群馬県甘楽郡南牧村砥沢"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           138.552359,
           36.038213
         ]
@@ -176395,24 +175690,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "茨城県龍ケ崎市若柴町"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          140.48833249999998,
-          35.8699504
-        ]
-      },
-      "properties": {
-        "name": "大崎城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "千葉県香取市大崎９６２"
       }
     },
     {
@@ -182036,24 +181313,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.26545529999999,
-          36.612816900000006
-        ]
-      },
-      "properties": {
-        "name": "春山城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "長野県長野市若穂綿内"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           138.0721139,
           36.6298059
         ]
@@ -183840,24 +183099,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.5468601,
-          37.1053883
-        ]
-      },
-      "properties": {
-        "name": "室野城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "新潟県十日町市室野"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           138.644848,
           37.216817
         ]
@@ -184373,24 +183614,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "新潟県長岡市宮沢"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          138.90705979999998,
-          37.404832
-        ]
-      },
-      "properties": {
-        "name": "栖吉城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "新潟県長岡市栖吉町"
       }
     },
     {
@@ -203514,30 +202737,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.5287352,
-          34.6868225
-        ]
-      },
-      "properties": {
-        "name": "大阪城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "大阪府大阪市中央区大阪城",
-        "aliases": [
-          "錦城",
-          "金城",
-          "大坂城",
-          "大阪城"
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           135.3930556,
           34.9718056
         ]
@@ -219651,24 +218850,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.2936797,
-          35.1374873
-        ]
-      },
-      "properties": {
-        "name": "北坂本城趾",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "滋賀県東近江市北坂町"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           136.22842359999999,
           35.1636783
         ]
@@ -220107,24 +219288,6 @@ const castleData = {
       },
       "properties": {
         "name": "高室山城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "滋賀県犬上郡多賀町佐目"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.345639,
-          35.213111
-        ]
-      },
-      "properties": {
-        "name": "高室山城跡",
         "genre": "",
         "category": "城",
         "prefecture": "",
@@ -225810,24 +224973,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "鳥取県鳥取市覚寺"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          134.2361745,
-          35.5069065
-        ]
-      },
-      "properties": {
-        "name": "鳥取城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "鳥取県鳥取市東町２丁目"
       }
     },
     {
