@@ -240,6 +240,11 @@
         #hist-list-popup .hist-item:last-child { border-radius: 0 0 12px 12px; }
         #hist-list-popup .hist-item:hover { background: #f9f9f9; }
         #hist-list-popup .hist-ico { font-size: 14px; flex-shrink: 0; }
+        #hist-list-popup .hist-ico-type { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; color: white; flex-shrink: 0; }
+        #hist-list-popup .hist-ico-type img { width: 13px; height: 13px; object-fit: contain; filter: brightness(0) invert(1); }
+        #hist-list-popup .hist-ico-mhcard { position: relative; width: 22px; height: 22px; flex-shrink: 0; background: #e2ddd4; border-radius: 6px; overflow: hidden; }
+        #hist-list-popup .hist-ico-mhcard-main { width: 100%; height: 100%; object-fit: cover; display: block; }
+        #hist-list-popup .hist-ico-mhcard-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 9px; height: 9px; filter: brightness(0) invert(1); pointer-events: none; }
         #hist-list-popup .hist-txt { flex: 1; min-width: 0; }
         #hist-list-popup .hist-name { font-size: 12px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         #hist-list-popup .hist-meta { font-size: 10px; color: #999; margin-top: 1px; }
@@ -1175,18 +1180,18 @@
     }
 
     // ピンタップ時：直前エントリとほぼ同位置ならラベルを引き継いで上書き、離れていれば新規追加
-    function histRecordPin(label, coords) {
+    function histRecordPin(label, coords, objType, objProps) {
         const cur = mapHistory[histIndex];
         if (cur) {
             const p1 = map.project([cur.lng, cur.lat]);
             const p2 = map.project(coords);
             if (Math.hypot(p1.x - p2.x, p1.y - p2.y) < 40) {
-                Object.assign(cur, { label, cause: 'pin', lng: coords[0], lat: coords[1], time: Date.now() });
+                Object.assign(cur, { label, cause: 'pin', lng: coords[0], lat: coords[1], time: Date.now(), objType, objProps });
                 delete cur.addr; // ピン名で表示するため取得済み住所を破棄
                 return;
             }
         }
-        histPush({ label, cause: 'pin', lng: coords[0], lat: coords[1] });
+        histPush({ label, cause: 'pin', lng: coords[0], lat: coords[1], objType, objProps });
     }
 
     // 手動移動：直前エントリから画面短辺の40%以上動いたら記録（現在地追従中は記録しない）
@@ -1247,6 +1252,17 @@
     const HIST_ICONS  = { init: '🚩', search: '🔍', pin: '📍', geo: '🧭', move: '🖐' };
     const HIST_CAUSES = { init: '開始地点', search: '検索', pin: 'ピン選択', geo: '現在地', move: '地図移動' };
 
+    // ピン選択エントリはオブジェクト種別ごとのアイコン（検索結果ドロップダウンと同じ画像）を優先表示
+    function histIconHtml(e) {
+        const cfg = e.cause === 'pin' && e.objType ? typeConfig[e.objType] : null;
+        if (!cfg) return `<span class="hist-ico">${HIST_ICONS[e.cause] || '📍'}</span>`;
+        if (e.objType === 'mhcard') {
+            return `<div class="hist-ico-mhcard"><img class="hist-ico-mhcard-main" src="mhcard.png"><img class="hist-ico-mhcard-overlay" src="manhole.png"></div>`;
+        }
+        const color = getItemColor({ type: e.objType, properties: e.objProps || {} });
+        return `<div class="hist-ico-type" style="background:${color}">${cfg.img ? `<img src="${cfg.img}">` : cfg.icon}</div>`;
+    }
+
     function histTimeAgo(t) {
         const s = (Date.now() - t) / 1000;
         if (s < 60) return 'たった今';
@@ -1267,7 +1283,7 @@
         const visible = items.slice(0, 10);
         const pop = document.getElementById('hist-list-popup');
         pop.innerHTML = `<div class="hist-hdr">${dir < 0 ? '◀ 戻る' : '▶ 進む'}</div>` + visible.map(({ e, idx }) =>
-            `<div class="hist-item" data-idx="${idx}"><span class="hist-ico">${HIST_ICONS[e.cause] || '📍'}</span><div class="hist-txt"><div class="hist-name">${histEscape(e.addr || e.label)}</div><div class="hist-meta">${histTimeAgo(e.time)}・${HIST_CAUSES[e.cause] || ''}</div></div></div>`).join('');
+            `<div class="hist-item" data-idx="${idx}">${histIconHtml(e)}<div class="hist-txt"><div class="hist-name">${histEscape(e.addr || e.label)}</div><div class="hist-meta">${histTimeAgo(e.time)}・${HIST_CAUSES[e.cause] || ''}</div></div></div>`).join('');
         pop.classList.remove('anchor-back', 'anchor-fwd');
         pop.classList.add(dir < 0 ? 'anchor-back' : 'anchor-fwd');
         pop.style.display = 'block';
@@ -2386,7 +2402,8 @@ map.on('zoomend', () => { isZooming = false; });
                     const popup = new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
                     applyClampMarkers(popup);
                     if (conf.type === 'castle') injectCastleImage(popup, p.name, p.url);
-                    histRecordPin(p.name || p.pokemon || '地点', c);
+                    const histType = (conf.type === 'manhole' && p.source === 'pokefuta') ? 'pokefuta' : conf.type;
+                    histRecordPin(p.name || p.pokemon || '地点', c, histType, p);
                 });
 
                 const hover = (l, cur) => { map.on('mouseenter', l, () => map.getCanvas().style.cursor = cur); map.on('mouseleave', l, () => map.getCanvas().style.cursor = ''); };
