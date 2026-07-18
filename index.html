@@ -341,6 +341,7 @@
         .btn-kojodan { background: #8B4513; color: #fff; }
         .btn-access  { background: #00897B; color: #fff; }
         .popup-address { font-size: 11px; color: #555; display: block; margin-bottom: 4px; }
+        .popup-alias   { font-size: 11px; color: #888; display: block; margin-bottom: 4px; }
         .popup-road    { font-size: 11px; color: #888; display: block; margin-bottom: 6px; }
         .popup-clamp { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; position: relative; }
         .popup-clamp.clampable { cursor: pointer; }
@@ -1812,6 +1813,9 @@ function applyClampMarkers(popup) {
 function popupAddressHtml(address) {
     return address ? `<span class="popup-address popup-clamp">${address}</span>` : '';
 }
+function popupAliasHtml(aliases) {
+    return (aliases && aliases.length) ? `<span class="popup-alias">別名: ${aliases.join('、')}</span>` : '';
+}
 function popupRoadHtml(icon, text) {
     return text ? `<span class="popup-road popup-clamp">${icon} ${text}</span>` : '';
 }
@@ -1875,7 +1879,8 @@ function buildPopupHtml(type, label, p, lng, lat) {
         if (type === 'shop')   extraBtns = `<a href="${p.url}" target="_blank" class="btn btn-tabelog btn-full">食べログ</a>`;
         if (type === 'castle') extraBtns = `<a href="https://ja.wikipedia.org/wiki/${encodeURIComponent(name)}" target="_blank" class="btn btn-wiki${p.url ? '' : ' btn-full'}">Wikipedia</a>${p.url ? `<a href="${p.url}" target="_blank" class="btn btn-kojodan">攻城団</a>` : ''}<a href="https://www.google.com/search?q=${encodeURIComponent(name + ' アクセス')}" target="_blank" class="btn btn-access btn-full">アクセス</a>`;
         const castleImgPlaceholder = type === 'castle' ? `<div class="castle-img-placeholder"></div>` : '';
-        return `<div class="popup-card">${popupTitleHtml(name)}${popupAddressHtml(p.address)}${castleImgPlaceholder}<div class="btn-grid"><a href="${gmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${extraBtns}${navBtns}${nearbyBtn}</div></div>`;
+        const aliasHtml = type === 'castle' ? popupAliasHtml(p.aliases) : '';
+        return `<div class="popup-card">${popupTitleHtml(name)}${aliasHtml}${popupAddressHtml(p.address)}${castleImgPlaceholder}<div class="btn-grid"><a href="${gmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${extraBtns}${navBtns}${nearbyBtn}</div></div>`;
     }
 }
 

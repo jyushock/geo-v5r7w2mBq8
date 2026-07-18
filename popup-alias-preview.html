@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ポップアップ別名表示 モック案</title>
+<style>
+  body { font-family: sans-serif; background: #eee; padding: 20px; }
+  h2 { font-size: 14px; margin: 24px 0 8px; }
+  .row { display: flex; gap: 24px; flex-wrap: wrap; }
+  .popup-card { width: 180px; padding: 7px; font-family: sans-serif; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+  .popup-title { font-weight: bold; font-size: 14px; display: block; margin-bottom: 2px; }
+  .popup-address { font-size: 11px; color: #555; display: block; margin-bottom: 4px; }
+  .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 5px; }
+  .btn-full { grid-column: 1 / -1; }
+  .btn { display: flex; align-items: center; justify-content: center; height: 40px; border-radius: 7px; color: white; font-size: 12px; font-weight: bold; }
+  .btn-gmap { background: white; color: #4285f4; border: 1px solid #4285f4; }
+  .btn-wiki { background: #333333; }
+  .btn-kojodan { background: #8B4513; }
+
+  /* 案A: 別名行(住所と同系統のテキスト行) */
+  .popup-alias-a { font-size: 11px; color: #888; display: block; margin-bottom: 4px; }
+
+  /* 案B: タグ/チップ */
+  .popup-alias-b-wrap { display: flex; flex-wrap: wrap; gap: 3px; margin-bottom: 4px; }
+  .popup-alias-chip { font-size: 10px; color: #666; background: #f0ede6; border-radius: 8px; padding: 1px 7px; }
+
+  /* 案C: ラベル+控えめな1行、長い場合は省略 */
+  .popup-alias-c { font-size: 10.5px; color: #999; display: block; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .popup-alias-c .label { color: #b0a89a; }
+</style>
+</head>
+<body>
+
+<h2>案A: 住所と同系統のテキスト行として「別名: ...」を表示</h2>
+<div class="row">
+  <div class="popup-card">
+    <span class="popup-title">高見城</span>
+    <span class="popup-alias-a">別名: 四津山城</span>
+    <span class="popup-address">埼玉県小川町大字高見</span>
+    <div class="btn-grid">
+      <a class="btn btn-gmap btn-full">GoogleMap</a>
+      <a class="btn btn-wiki">Wikipedia</a>
+      <a class="btn btn-kojodan">攻城団</a>
+    </div>
+  </div>
+  <div class="popup-card">
+    <span class="popup-title">戸切地陣屋</span>
+    <span class="popup-alias-a">別名: 松前陣屋、濁川陣屋、文月陣屋、清川陣屋</span>
+    <span class="popup-address">北海道北斗市野崎</span>
+    <div class="btn-grid">
+      <a class="btn btn-gmap btn-full">GoogleMap</a>
+      <a class="btn btn-wiki">Wikipedia</a>
+    </div>
+  </div>
+</div>
+
+<h2>案B: タグ(チップ)形式で個別に列挙</h2>
+<div class="row">
+  <div class="popup-card">
+    <span class="popup-title">高見城</span>
+    <div class="popup-alias-b-wrap"><span class="popup-alias-chip">四津山城</span></div>
+    <span class="popup-address">埼玉県小川町大字高見</span>
+    <div class="btn-grid">
+      <a class="btn btn-gmap btn-full">GoogleMap</a>
+      <a class="btn btn-wiki">Wikipedia</a>
+      <a class="btn btn-kojodan">攻城団</a>
+    </div>
+  </div>
+  <div class="popup-card">
+    <span class="popup-title">戸切地陣屋</span>
+    <div class="popup-alias-b-wrap">
+      <span class="popup-alias-chip">松前陣屋</span>
+      <span class="popup-alias-chip">濁川陣屋</span>
+      <span class="popup-alias-chip">文月陣屋</span>
+      <span class="popup-alias-chip">清川陣屋</span>
+    </div>
+    <span class="popup-address">北海道北斗市野崎</span>
+    <div class="btn-grid">
+      <a class="btn btn-gmap btn-full">GoogleMap</a>
+      <a class="btn btn-wiki">Wikipedia</a>
+    </div>
+  </div>
+</div>
+
+<h2>案C: 控えめな1行(ラベルを薄い色にし、長い場合は省略記号)</h2>
+<div class="row">
+  <div class="popup-card">
+    <span class="popup-title">高見城</span>
+    <span class="popup-alias-c"><span class="label">別名 </span>四津山城</span>
+    <span class="popup-address">埼玉県小川町大字高見</span>
+    <div class="btn-grid">
+      <a class="btn btn-gmap btn-full">GoogleMap</a>
+      <a class="btn btn-wiki">Wikipedia</a>
+      <a class="btn btn-kojodan">攻城団</a>
+    </div>
+  </div>
+  <div class="popup-card">
+    <span class="popup-title">戸切地陣屋</span>
+    <span class="popup-alias-c"><span class="label">別名 </span>松前陣屋、濁川陣屋、文月陣屋、清川陣屋</span>
+    <span class="popup-address">北海道北斗市野崎</span>
+    <div class="btn-grid">
+      <a class="btn btn-gmap btn-full">GoogleMap</a>
+      <a class="btn btn-wiki">Wikipedia</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
