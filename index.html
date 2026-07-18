@@ -1814,7 +1814,13 @@ function popupAddressHtml(address) {
     return address ? `<span class="popup-address popup-clamp">${address}</span>` : '';
 }
 function popupAliasHtml(aliases) {
-    return (aliases && aliases.length) ? `<span class="popup-alias">別名: ${aliases.join('、')}</span>` : '';
+    // MapLibre GLは地図上のレンダリング済みfeatureのproperties経由で参照すると
+    // 配列プロパティをJSON文字列化して返すため(検索結果側の生JSONパースとは異なる)、
+    // 文字列で来た場合はパースしてから扱う
+    if (typeof aliases === 'string') {
+        try { aliases = JSON.parse(aliases); } catch { aliases = null; }
+    }
+    return (Array.isArray(aliases) && aliases.length) ? `<span class="popup-alias">別名: ${aliases.join('、')}</span>` : '';
 }
 function popupRoadHtml(icon, text) {
     return text ? `<span class="popup-road popup-clamp">${icon} ${text}</span>` : '';
