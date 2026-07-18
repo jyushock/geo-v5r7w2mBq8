@@ -2476,8 +2476,10 @@ map.on('zoomend', () => { isZooming = false; });
             if (filterKey && filterState[filterKey] === false) return false;
             const label = item.label ? item.label.toLowerCase() : '';
             const sub   = item.sub   ? item.sub.toLowerCase()   : '';
+            const aliases = item.properties && item.properties.aliases;
             return (label && label.includes(q)) ||
-                   (sub   && sub.includes(q));
+                   (sub   && sub.includes(q)) ||
+                   (aliases && aliases.some(a => a.toLowerCase().includes(q)));
         }).map(item => ({
             ...item,
             _dist: (item.coords && item.coords.length >= 2)
