@@ -24132,7 +24132,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.town.kamigori.hyogo.jp/soshiki/chiiki/shisetsuosagasu/1_1/2344.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-481-A-02.jpg",
+        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-481-A-01.jpg",
         "type": "mhcard"
       }
     },
