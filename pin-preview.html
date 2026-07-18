@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ピンデザイン案</title>
+<style>
+  body { font-family: sans-serif; background: #f0f0f0; padding: 16px; }
+  h3 { font-size: 13px; color: #333; margin: 0 0 6px; }
+  .row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .card {
+    background: white; border-radius: 12px; padding: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12); width: 180px;
+  }
+  .map-bg {
+    width: 100%; height: 160px; background: #e8f4e8;
+    border-radius: 8px; position: relative; overflow: hidden;
+    margin-bottom: 8px;
+  }
+  /* 地図っぽい背景 */
+  .map-bg::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(#d4e8d4 1px, transparent 1px),
+      linear-gradient(90deg, #d4e8d4 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  .road-h { position: absolute; left: 0; right: 0; height: 8px; background: #fff; top: 70px; }
+  .road-v { position: absolute; top: 0; bottom: 0; width: 8px; background: #fff; left: 85px; }
+  .pin-wrap {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .desc { font-size: 11px; color: #555; line-height: 1.5; }
+
+  /* 案①：オレンジのドロップピン */
+  .pin1 {
+    width: 28px; height: 36px; position: relative;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  }
+  .pin1 svg { width: 28px; height: 36px; }
+
+  /* 案②：紫のクロスヘア */
+  .pin2 { position: relative; }
+  .pin2 svg { width: 44px; height: 44px; filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3)); }
+
+  /* 案③：黄色のひし形 */
+  .pin3 { position: relative; }
+  .pin3 svg { width: 32px; height: 32px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
+
+  /* 案④：赤ピン＋パルス */
+  .pin4 { position: relative; }
+  .pin4 svg { width: 28px; height: 36px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
+  .pulse {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: rgba(244,67,54,0.3);
+    animation: pulse 1.5s ease-out infinite;
+    z-index: -1;
+    margin-top: 6px;
+  }
+  .pulse2 {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: rgba(244,67,54,0.2);
+    animation: pulse 1.5s ease-out 0.5s infinite;
+    z-index: -1;
+    margin-top: 6px;
+  }
+  @keyframes pulse {
+    0% { transform: translate(-50%,-50%) scale(0.5); opacity: 1; }
+    100% { transform: translate(-50%,-50%) scale(2); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="row">
+
+  <!-- 案① オレンジのドロップピン -->
+  <div class="card">
+    <h3>案① オレンジのドロップピン</h3>
+    <div class="map-bg">
+      <div class="road-h"></div>
+      <div class="road-v"></div>
+      <div class="pin-wrap" style="margin-top:-18px">
+        <div class="pin1">
+          <svg viewBox="0 0 28 36" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 0C7.4 0 2 5.4 2 12c0 8.4 12 24 12 24s12-15.6 12-24C26 5.4 20.6 0 14 0z" fill="#FF6D00"/>
+            <circle cx="14" cy="12" r="5" fill="white" opacity="0.9"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="desc">
+      色：オレンジ #FF6D00<br>
+      直感的な「ピン」形状<br>
+      中央に白丸
+    </div>
+  </div>
+
+  <!-- 案② 紫のクロスヘア -->
+  <div class="card">
+    <h3>案② 紫のクロスヘア</h3>
+    <div class="map-bg">
+      <div class="road-h"></div>
+      <div class="road-v"></div>
+      <div class="pin-wrap">
+        <div class="pin2">
+          <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="22" cy="22" r="9" fill="none" stroke="#7B1FA2" stroke-width="2.5"/>
+            <circle cx="22" cy="22" r="2.5" fill="#7B1FA2"/>
+            <line x1="22" y1="2" x2="22" y2="11" stroke="#7B1FA2" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="22" y1="33" x2="22" y2="42" stroke="#7B1FA2" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="2" y1="22" x2="11" y2="22" stroke="#7B1FA2" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="33" y1="22" x2="42" y2="22" stroke="#7B1FA2" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="desc">
+      色：紫 #7B1FA2<br>
+      「検索中心点」が明確<br>
+      照準イメージ
+    </div>
+  </div>
+
+  <!-- 案③ 黄色のひし形 -->
+  <div class="card">
+    <h3>案③ 黄色のひし形</h3>
+    <div class="map-bg">
+      <div class="road-h"></div>
+      <div class="road-v"></div>
+      <div class="pin-wrap">
+        <div class="pin3">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 2 L30 16 L16 30 L2 16 Z" fill="#FFC107" stroke="#F57F17" stroke-width="1.5"/>
+            <path d="M16 8 L24 16 L16 24 L8 16 Z" fill="#F57F17" opacity="0.4"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="desc">
+      色：黄色 #FFC107<br>
+      シンプルで目立つ<br>
+      内側にアクセント
+    </div>
+  </div>
+
+  <!-- 案④ 赤ピン＋パルス -->
+  <div class="card">
+    <h3>案④ 赤ピン＋パルス</h3>
+    <div class="map-bg">
+      <div class="road-h"></div>
+      <div class="road-v"></div>
+      <div class="pin-wrap" style="margin-top:-18px">
+        <div class="pin4">
+          <div class="pulse"></div>
+          <div class="pulse2"></div>
+          <svg viewBox="0 0 28 36" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 0C7.4 0 2 5.4 2 12c0 8.4 12 24 12 24s12-15.6 12-24C26 5.4 20.6 0 14 0z" fill="#F44336"/>
+            <circle cx="14" cy="12" r="5" fill="white" opacity="0.9"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="desc">
+      色：赤 #F44336<br>
+      設置時に波紋アニメ<br>
+      「立てた」感が強い
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

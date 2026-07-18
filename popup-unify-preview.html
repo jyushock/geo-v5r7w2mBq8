@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ポップアップ統一案 v4（実寸）</title>
+<style>
+  body { font-family: sans-serif; background: #e8e8e8; padding: 20px; margin: 0; }
+  h1 { font-size: 15px; color: #333; margin: 0 0 4px; }
+  h2 { font-size: 13px; color: #333; margin: 24px 0 4px; padding-top: 10px; border-top: 2px solid #ccc; }
+  .lead, .note { font-size: 12px; color: #666; margin: 0 0 14px; line-height: 1.7; }
+  .row { display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-start; }
+  .slot h4 { font-size: 11px; color: #555; margin: 0 0 2px; font-weight: bold; }
+  .slot .cnt { font-size: 10px; color: #999; margin: 0 0 5px; }
+
+  /* ===== 実寸再現: MapLibreポップアップ白枠 =====
+     実測: 幅214px / 内側余白 縦22px・横17px（content15+card7, 10+7）/ 角丸3px
+     内容幅 = 214 - 17*2 = 180px（全幅ボタン実測180pxと一致） */
+  .mlbox {
+    width: 214px; box-sizing: border-box;
+    padding: 22px 17px; background: #fff; border-radius: 3px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.3);
+  }
+  .mlbox.w240 { width: 240px; } /* 現行の道の駅長文・配布場所の実測幅 */
+
+  .popup-title { font-weight: bold; font-size: 14px; display: block; margin-bottom: 2px; }
+  .popup-address { font-size: 11px; color: #555; display: block; margin-bottom: 4px; }
+  .popup-road { font-size: 11px; color: #888; display: block; margin-bottom: 6px; }
+  .clamp2 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+
+  /* ボタン: 実CSSと同一（padding 10px 4px / font 12px / 半幅=(内容幅-4)/2=88px） */
+  .btn { display: block; text-align: center; padding: 10px 4px; border-radius: 7px;
+    text-decoration: none; font-weight: bold; color: #fff; font-size: 12px; line-height: 20px; border: none;
+    box-sizing: border-box; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; }
+  .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 5px; }
+  .btn-full { grid-column: 1 / -1; }
+  .b-gmap { background: #fff; color: #4285f4; border: 1px solid #4285f4; }
+  .b-nav { background: #4285F4; }
+  .b-yahoo { background: #FF0033; }
+  .b-nearby { background: #34A853; }
+  .b-tabelog { background: #ff6600; }
+  .b-wiki { background: #333; }
+  .b-kojodan { background: #8B4513; }
+  .b-access { background: #00897B; }
+  .b-detail { background: #8D6E63; }
+  .b-mweb { background: #283593; }
+  .b-mhp { background: #795548; }
+  .b-meki { background: #BF360C; }
+
+  /* 現行の画像実寸 */
+  .cur-castle { width: 100%; height: 110px; margin: 4px 0; border-radius: 6px;
+    background: linear-gradient(135deg,#c9b8a0,#8a7050);
+    display: flex; align-items: center; justify-content: center; color: #fff; font-size: 10px; }
+  .cur-imgbox { margin: 4px 0; text-align: center; background: #f9f9f9; border-radius: 6px; border: 1px solid #eee; }
+  .cur-card240 { width: 172px; height: 240px; margin: 0 auto; background: linear-gradient(135deg,#b3d4e8,#7aa8c4);
+    display: flex; align-items: center; justify-content: center; color: #fff; font-size: 10px; }
+
+  /* 統一案の画像枠: 内容幅180×高さ160px */
+  .img-frame { margin: 4px 0; height: 160px; border-radius: 6px; border: 1px solid #eee;
+    background: #f7f5f1; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .uni-cardv { width: 115px; height: 160px; background: linear-gradient(135deg,#b3d4e8,#7aa8c4);
+    display: flex; align-items: center; justify-content: center; color: #fff; font-size: 10px; }
+  .uni-castle { width: 100%; height: 100%; background: linear-gradient(135deg,#c9b8a0,#8a7050);
+    display: flex; align-items: center; justify-content: center; color: #fff; font-size: 10px; }
+</style>
+</head>
+<body>
+
+<h1>ポップアップ統一案 v4 — 全て実寸（1:1）で表示</h1>
+<p class="lead">
+実アプリ計測値: 白枠幅 <b>214px</b>（食べログ・城・マンホール）／<b>240px</b>（道の駅長文・配布場所）。内容幅180px。
+ボタン実寸: 全幅<b>180×40px</b>（枠線付きGoogleMapは42px）・半幅<b>88×40px</b>・間隔4px。GKPカード画像は516×720（縦横比0.717）。<br>
+統一案は<b>現行多数派の214px</b>に固定（食べログ・城・マンホールは幅が現行と完全一致。道の駅・配布場所のみ26px縮む）。
+</p>
+
+<!-- ===================== 現行 ===================== -->
+<h2>現行（実寸再現）</h2>
+<p class="note">実測: 食べログ214×263／城214×307／道の駅(長文)240×352／マンホール214×465／配布場所240×594。クランプは配布場所のみ。</p>
+<div class="row">
+  <div class="slot"><h4>食べログ</h4><p class="cnt">実測 214×263px</p>
+    <div class="mlbox"><span class="popup-title">ラーメン○○軒 本店</span><span class="popup-address">東京都港区芝1-2-3</span>
+      <div class="btn-grid"><a class="btn b-gmap btn-full">GoogleMap</a><a class="btn b-tabelog btn-full">食べログ</a><a class="btn b-nav">ここへ行く</a><a class="btn b-yahoo">ここへ行く</a><a class="btn b-nearby btn-full">🔍 この周辺を検索</a></div>
+    </div>
+  </div>
+  <div class="slot"><h4>お城（攻城団あり）</h4><p class="cnt">実測 214×307px・城写真110px高</p>
+    <div class="mlbox"><span class="popup-title">松本城</span><span class="popup-address">長野県松本市丸の内</span>
+      <div class="cur-castle">城写真 180×110</div>
+      <div class="btn-grid"><a class="btn b-gmap btn-full">GoogleMap</a><a class="btn b-wiki">Wikipedia</a><a class="btn b-kojodan">攻城団</a><a class="btn b-access btn-full">アクセス</a><a class="btn b-nav">ここへ行く</a><a class="btn b-yahoo">ここへ行く</a><a class="btn b-nearby btn-full">🔍 この周辺を検索</a></div>
+    </div>
+  </div>
+  <div class="slot"><h4>道の駅（関連HPなし・長文）</h4><p class="cnt">実測 240×352px・全文折り返し</p>
+    <div class="mlbox w240"><span class="popup-title">道の駅 ○○</span><span class="popup-road">📍 国道123号</span><span class="popup-address">長野県○○市大字○○ 123-4</span><span class="popup-road">🕐 9:00～18:00（レストランは10:00～17:00、冬期は9:30～17:30に短縮）</span>
+      <div class="btn-grid"><a class="btn b-gmap btn-full">GoogleMap</a><a class="btn b-mweb">公式ページ</a><a class="btn b-meki">michieki.jp</a><a class="btn b-mhp btn-full">施設HP</a><a class="btn b-nav">ここへ行く</a><a class="btn b-yahoo">ここへ行く</a><a class="btn b-nearby btn-full">🔍 この周辺を検索</a></div>
+    </div>
+  </div>
+  <div class="slot"><h4>配布場所</h4><p class="cnt">実測 240×594px・カード172×240</p>
+    <div class="mlbox w240"><span class="popup-title clamp2">[配布] 札幌市下水道科学館</span><span class="popup-address clamp2">北海道札幌市北区麻生町8丁目</span><span class="popup-road clamp2">🕐 9：30～17：00 休館日（毎月第2水曜日・年末年始）を除く</span>
+      <div class="cur-imgbox"><div class="cur-card240">カード 172×240</div></div>
+      <div class="btn-grid"><a class="btn b-gmap btn-full">GoogleMap</a><a class="btn b-detail btn-full">カード詳細</a><a class="btn b-nav">ここへ行く</a><a class="btn b-yahoo">ここへ行く</a><a class="btn b-nearby btn-full">🔍 この周辺を検索</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== 案1 ===================== -->
+<h2>案1：現行ボタン配置維持 ＋ 幅214px統一</h2>
+<p class="note">食べログ・城・マンホールは現行と同幅（変化はクランプと画像枠のみ）。道の駅・配布場所が240→214pxに揃う。ボタン寸法は現行実寸のまま。</p>
+<div class="row">
+  <div class="slot"><h4>食べログ</h4><p class="cnt">現行と同寸</p>
+    <div class="mlbox"><span class="popup-title clamp2">ラーメン○○軒 本店</span><span class="popup-address clamp2">東京都港区芝1-2-3</span>
+      <div class="btn-grid"><a class="btn b-gmap btn-full">GoogleMap</a><a class="btn b-tabelog btn-full">食べログ</a><a class="btn b-nav">ここへ行く</a><a class="btn b-yahoo">ここへ行く</a><a class="btn b-nearby btn-full">🔍 この周辺を検索</a></div>
+    </div>
+  </div>
+  <div class="slot"><h4>お城（攻城団なし）</h4><p class="cnt">Wikipediaが全幅化（現行挙動）・画像枠160px</p>
+    <div class="mlbox"><span class="popup-title clamp2">松山城</span><span class="popup-address clamp2">愛媛県松山市丸之内</span>
+      <div class="img-frame"><div class="uni-castle">城写真 180×160 (cover)</div></div>
+      <div class="btn-grid"><a class="btn b-gmap btn-full">GoogleMap</a><a class="btn b-wiki btn-full">Wikipedia</a><a class="btn b-access btn-full">アクセス</a><a class="btn b-nav">ここへ行く</a><a class="btn b-yahoo">ここへ行く</a><a class="btn b-nearby btn-full">🔍 この周辺を検索</a></div>
+    </div>
+  </div>
+  <div class="slot"><h4>道の駅（関連HPなし）</h4><p class="cnt">240→214px・時間は2行クランプ・施設HP全幅化</p>
+    <div class="mlbox"><span class="popup-title clamp2">道の駅 ○○</span><span class="popup-road clamp2">📍 国道123号</span><span class="popup-address clamp2">長野県○○市大字○○ 123-4</span><span class="popup-road clamp2">🕐 9:00～18:00（レストランは10:00～17:00、冬期は9:30～17:30に短縮）</span>
+      <div class="btn-grid"><a class="btn b-gmap btn-full">GoogleMap</a><a class="btn b-mweb">公式ページ</a><a class="btn b-meki">michieki.jp</a><a class="btn b-mhp btn-full">施設HP</a><a class="btn b-nav">ここへ行く</a><a class="btn b-yahoo">ここへ行く</a><a class="btn b-nearby btn-full">🔍 この周辺を検索</a></div>
+    </div>
+  </div>
+  <div class="slot"><h4>配布場所</h4><p class="cnt">240→214px・カード240px高→160px枠</p>
+    <div class="mlbox"><span class="popup-title clamp2">[配布] 札幌市下水道科学館</span><span class="popup-address clamp2">北海道札幌市北区麻生町8丁目</span><span class="popup-road clamp2">🕐 9：30～17：00 休館日（毎月第2水曜日・年末年始）を除く</span>
+      <div class="img-frame"><div class="uni-cardv">カード 115×160</div></div>
+      <div class="btn-grid"><a class="btn b-gmap btn-full">GoogleMap</a><a class="btn b-detail btn-full">カード詳細</a><a class="btn b-nav">ここへ行く</a><a class="btn b-yahoo">ここへ行く</a><a class="btn b-nearby btn-full">🔍 この周辺を検索</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== 案2 ===================== -->
+<h2>案2：ペア詰め ＋ 幅214px統一</h2>
+<p class="note">情報系を半幅ペアに圧縮（奇数なら先頭GoogleMapが全幅昇格・空欄なし）。半幅ボタンは実寸88pxのままで文言が収まることを確認済み。</p>
+<div class="row">
+  <div class="slot"><h4>食べログ</h4><p class="cnt">2個 → ペア1行</p>
+    <div class="mlbox"><span class="popup-title clamp2">ラーメン○○軒 本店</span><span class="popup-address clamp2">東京都港区芝1-2-3</span>
+      <div class="btn-grid"><a class="btn b-gmap">GoogleMap</a><a class="btn b-tabelog">食べログ</a><a class="btn b-nav">ここへ行く</a><a class="btn b-yahoo">ここへ行く</a><a class="btn b-nearby btn-full">🔍 この周辺を検索</a></div>
+    </div>
+  </div>
+  <div class="slot"><h4>お城（攻城団あり）</h4><p class="cnt">4個 → ペア2行</p>
+    <div class="mlbox"><span class="popup-title clamp2">松本城</span><span class="popup-address clamp2">長野県松本市丸の内</span>
+      <div class="img-frame"><div class="uni-castle">城写真 180×160 (cover)</div></div>
+      <div class="btn-grid"><a class="btn b-gmap">GoogleMap</a><a class="btn b-access">アクセス</a><a class="btn b-wiki">Wikipedia</a><a class="btn b-kojodan">攻城団</a><a class="btn b-nav">ここへ行く</a><a class="btn b-yahoo">ここへ行く</a><a class="btn b-nearby btn-full">🔍 この周辺を検索</a></div>
+    </div>
+  </div>
+  <div class="slot"><h4>お城（攻城団なし）</h4><p class="cnt">3個 → GoogleMap全幅＋ペア1行</p>
+    <div class="mlbox"><span class="popup-title clamp2">松山城</span><span class="popup-address clamp2">愛媛県松山市丸之内</span>
+      <div class="img-frame"><div class="uni-castle">城写真 180×160 (cover)</div></div>
+      <div class="btn-grid"><a class="btn b-gmap btn-full">GoogleMap</a><a class="btn b-wiki">Wikipedia</a><a class="btn b-access">アクセス</a><a class="btn b-nav">ここへ行く</a><a class="btn b-yahoo">ここへ行く</a><a class="btn b-nearby btn-full">🔍 この周辺を検索</a></div>
+    </div>
+  </div>
+  <div class="slot"><h4>道の駅（関連HPなし）</h4><p class="cnt">4個 → ペア2行</p>
+    <div class="mlbox"><span class="popup-title clamp2">道の駅 ○○</span><span class="popup-road clamp2">📍 国道123号</span><span class="popup-address clamp2">長野県○○市大字○○ 123-4</span><span class="popup-road clamp2">🕐 9:00～18:00（レストランは10:00～17:00、冬期は9:30～17:30に短縮）</span>
+      <div class="btn-grid"><a class="btn b-gmap">GoogleMap</a><a class="btn b-mweb">公式ページ</a><a class="btn b-meki">michieki.jp</a><a class="btn b-mhp">施設HP</a><a class="btn b-nav">ここへ行く</a><a class="btn b-yahoo">ここへ行く</a><a class="btn b-nearby btn-full">🔍 この周辺を検索</a></div>
+    </div>
+  </div>
+  <div class="slot"><h4>配布場所</h4><p class="cnt">2個 → ペア1行</p>
+    <div class="mlbox"><span class="popup-title clamp2">[配布] 札幌市下水道科学館</span><span class="popup-address clamp2">北海道札幌市北区麻生町8丁目</span><span class="popup-road clamp2">🕐 9：30～17：00 休館日（毎月第2水曜日・年末年始）を除く</span>
+      <div class="img-frame"><div class="uni-cardv">カード 115×160</div></div>
+      <div class="btn-grid"><a class="btn b-gmap">GoogleMap</a><a class="btn b-detail">カード詳細</a><a class="btn b-nav">ここへ行く</a><a class="btn b-yahoo">ここへ行く</a><a class="btn b-nearby btn-full">🔍 この周辺を検索</a></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

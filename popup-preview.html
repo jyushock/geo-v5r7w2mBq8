@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ポップアップ 2列案 v2</title>
+<style>
+  body { font-family: sans-serif; background: #e8e8e8; padding: 16px; }
+  h2 { font-size: 13px; color: #333; margin: 16px 0 8px; border-left: 3px solid #4285F4; padding-left: 8px; }
+  .row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
+  .col h3 { font-size: 12px; color: #555; margin: 0 0 6px; }
+  .popup-card { min-width: 200px; max-width: 220px; padding: 7px; background: white; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.2); }
+  .popup-title { font-weight: bold; font-size: 14px; display: block; margin-bottom: 2px; }
+  .popup-genre { font-size: 11px; color: #666; display: block; margin-bottom: 5px; }
+  .popup-address { font-size: 11px; color: #555; display: block; margin-bottom: 4px; }
+  .popup-road { font-size: 11px; color: #888; display: block; margin-bottom: 4px; }
+  .img-placeholder { height: 60px; background: #eee; margin: 4px 0; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #aaa; font-size: 12px; }
+  .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 5px; }
+  .btn { display: block; text-align: center; padding: 12px 4px; border-radius: 7px; font-weight: bold; color: white; font-size: 12px; cursor: pointer; border: none; box-sizing: border-box; text-decoration: none; }
+  .btn-full { grid-column: 1 / -1; }
+  .btn-gmap     { background: white; color: #4285F4; border: 1px solid #4285F4; }
+  .btn-nav      { background: #4285F4; }
+  .btn-nav-yahoo{ background: #FF0033; }
+  .btn-pokefuta { background: #FBBC04; color: #333; }
+  .btn-michi-web{ background: #283593; }
+  .btn-michi-hp { background: #795548; }
+  .btn-michi-eki{ background: #BF360C; }
+  .btn-kojodan  { background: #8B4513; }
+  .btn-access   { background: #00897B; }
+  .btn-tabelog  { background: #ff6600; }
+  .btn-wiki     { background: #333; }
+  .btn-nearby   { background: #34A853; }
+  .divider { border: none; border-top: 1px solid #eee; margin: 4px 0; }
+</style>
+</head>
+<body>
+
+<h2>① ポケふた</h2>
+<div class="row">
+  <div class="col">
+    <div class="popup-card">
+      <span class="popup-title">ピカチュウ</span>
+      <span class="popup-address">○○県○○市</span>
+      <div class="img-placeholder">画像</div>
+      <div class="btn-grid">
+        <a class="btn btn-gmap btn-full">GoogleMap</a>
+        <a class="btn btn-pokefuta btn-full">公式ページ</a>
+        <a class="btn btn-nav">ここへ行く</a>
+        <a class="btn btn-nav-yahoo">ここへ行く</a>
+        <button class="btn btn-nearby btn-full">🔍 この周辺を検索</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>② マンホール / ③ マンホールカード</h2>
+<div class="row">
+  <div class="col">
+    <h3>マンホール</h3>
+    <div class="popup-card">
+      <span class="popup-title">○○市マンホール</span>
+      <span class="popup-address">○○県○○市</span>
+      <div class="img-placeholder">画像</div>
+      <div class="btn-grid">
+        <a class="btn btn-gmap btn-full">GoogleMap</a>
+        <a class="btn btn-nav">ここへ行く</a>
+        <a class="btn btn-nav-yahoo">ここへ行く</a>
+        <button class="btn btn-nearby btn-full">🔍 この周辺を検索</button>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <h3>マンホールカード</h3>
+    <div class="popup-card">
+      <span class="popup-title">[配布] ○○市マンホールカード</span>
+      <span class="popup-address">○○県○○市</span>
+      <span class="popup-road">🕐 9:00〜17:00</span>
+      <div class="img-placeholder">画像</div>
+      <div class="btn-grid">
+        <a class="btn btn-gmap btn-full">GoogleMap</a>
+        <a class="btn btn-nav">ここへ行く</a>
+        <a class="btn btn-nav-yahoo">ここへ行く</a>
+        <button class="btn btn-nearby btn-full">🔍 この周辺を検索</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>④ 道の駅</h2>
+<div class="row">
+  <div class="col">
+    <div class="popup-card">
+      <span class="popup-title">道の駅○○</span>
+      <span class="popup-road">📍 国道○号</span>
+      <span class="popup-address">○○県○○市</span>
+      <span class="popup-road">🕐 9:00〜18:00</span>
+      <div class="btn-grid">
+        <a class="btn btn-gmap btn-full">GoogleMap</a>
+        <a class="btn btn-michi-web">公式ページ</a>
+        <a class="btn btn-michi-eki">michieki.jp</a>
+        <a class="btn btn-michi-hp">施設HP</a>
+        <a class="btn btn-michi-hp">関連HP</a>
+        <a class="btn btn-nav">ここへ行く</a>
+        <a class="btn btn-nav-yahoo">ここへ行く</a>
+        <button class="btn btn-nearby btn-full">🔍 この周辺を検索</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>⑤ お城</h2>
+<div class="row">
+  <div class="col">
+    <div class="popup-card">
+      <span class="popup-title">○○城</span>
+      <span class="popup-genre">日本100名城</span>
+      <span class="popup-address">○○県○○市</span>
+      <div class="img-placeholder">画像</div>
+      <div class="btn-grid">
+        <a class="btn btn-gmap btn-full">GoogleMap</a>
+        <a class="btn btn-wiki">Wikipedia</a>
+        <a class="btn btn-kojodan">攻城団</a>
+        <a class="btn btn-access btn-full">アクセス</a>
+        <a class="btn btn-nav">ここへ行く</a>
+        <a class="btn btn-nav-yahoo">ここへ行く</a>
+        <button class="btn btn-nearby btn-full">🔍 この周辺を検索</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>⑥ 食べログ</h2>
+<div class="row">
+  <div class="col">
+    <div class="popup-card">
+      <span class="popup-title">○○レストラン</span>
+      <span class="popup-address">○○県○○市</span>
+      <div class="btn-grid">
+        <a class="btn btn-gmap btn-full">GoogleMap</a>
+        <a class="btn btn-tabelog btn-full">食べログ</a>
+        <a class="btn btn-nav">ここへ行く</a>
+        <a class="btn btn-nav-yahoo">ここへ行く</a>
+        <button class="btn btn-nearby btn-full">🔍 この周辺を検索</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
