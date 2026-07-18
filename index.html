@@ -337,10 +337,11 @@
         .btn-access  { background: #00897B; color: #fff; }
         .popup-address { font-size: 11px; color: #555; display: block; margin-bottom: 4px; }
         .popup-road    { font-size: 11px; color: #888; display: block; margin-bottom: 6px; }
-        .popup-clamp { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; cursor: pointer; position: relative; }
-        .popup-clamp::after { content: ' ▼'; font-size: 10px; color: #999; }
+        .popup-clamp { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; position: relative; }
+        .popup-clamp.clampable { cursor: pointer; }
+        .popup-clamp.clampable::after { content: ' ▼'; font-size: 10px; color: #999; }
         .popup-clamp.expanded { display: block; -webkit-line-clamp: unset; overflow: visible; }
-        .popup-clamp.expanded::after { content: ' ▲'; }
+        .popup-clamp.clampable.expanded::after { content: ' ▲'; }
         .castle-img-container { margin: 4px 0; border-radius: 6px; border: 1px solid #eee; overflow: hidden; background: #f5f0e8; }
         .castle-img { width: 100%; height: 160px; object-fit: cover; display: block; }
         .btn-carddetail { background: #8D6E63; color: #fff; }
@@ -1782,6 +1783,16 @@ function buildMhcardImgHtml(p) {
 function popupTitleHtml(text) {
     return `<span class="popup-title popup-clamp">${text}</span>`;
 }
+// 実際に2行を超えて省略されている要素にのみ▼マークを付与する
+function applyClampMarkers(popup) {
+    const el = popup.getElement ? popup.getElement() : null;
+    if (!el) return;
+    el.querySelectorAll('.popup-clamp').forEach(clampEl => {
+        if (clampEl.scrollHeight > clampEl.clientHeight + 1) {
+            clampEl.classList.add('clampable');
+        }
+    });
+}
 function popupAddressHtml(address) {
     return address ? `<span class="popup-address popup-clamp">${address}</span>` : '';
 }
@@ -2373,6 +2384,7 @@ map.on('zoomend', () => { isZooming = false; });
                     while (Math.abs(e.lngLat.lng - c[0]) > 180) { c[0] += e.lngLat.lng > c[0] ? 360 : -360; }
                     const popupHtml = buildPopupHtml(conf.type, p.name || '', p, c[0], c[1]);
                     const popup = new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
+                    applyClampMarkers(popup);
                     if (conf.type === 'castle') injectCastleImage(popup, p.name, p.url);
                     histRecordPin(p.name || p.pokemon || '地点', c);
                 });
@@ -2551,6 +2563,7 @@ map.on('zoomend', () => { isZooming = false; });
         const c = item.coords.slice();
         const popupHtml = buildPopupHtml(item.type, item.label, p, c[0], c[1]);
         const popup2 = new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
+        applyClampMarkers(popup2);
         if (item.type === 'castle') injectCastleImage(popup2, item.label, p.url);
     }
 
