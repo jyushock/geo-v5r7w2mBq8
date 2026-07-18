@@ -66,8 +66,7 @@ const castleData = {
         "aliases": [
           "亀田（御）役所土塁",
           "柳野城",
-          "亀田役所土塁",
-          "五稜郭公園"
+          "亀田役所土塁"
         ]
       }
     },
@@ -107,10 +106,7 @@ const castleData = {
         "category": "城",
         "prefecture": "北海道",
         "url": "https://kojodan.jp/castle/418",
-        "address": "北海道白老町陣屋町",
-        "aliases": [
-          "仙台藩白老元陣屋資料館"
-        ]
+        "address": "北海道白老町陣屋町"
       }
     },
     {
@@ -212,7 +208,6 @@ const castleData = {
           "文月陣屋",
           "清川陣屋",
           "戸切地陣屋跡",
-          "戸切地陣屋跡史跡公園",
           "松前藩戸切地陣屋跡"
         ]
       }
@@ -256,8 +251,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/21",
         "address": "北海道松前町字松城",
         "aliases": [
-          "福山城",
-          "松前公園"
+          "福山城"
         ]
       }
     },
@@ -2461,9 +2455,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/36",
         "address": "岩手県盛岡市内丸",
         "aliases": [
-          "不来方城",
-          "岩手公園",
-          "盛岡城跡公園"
+          "不来方城"
         ]
       }
     },
@@ -2972,8 +2964,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/2988",
         "address": "宮城県仙台市泉区加茂二丁目",
         "aliases": [
-          "深沢城",
-          "長命館公園"
+          "深沢城"
         ]
       }
     },
@@ -3085,7 +3076,6 @@ const castleData = {
           "柴田城",
           "船岡要害",
           "舟岡要害",
-          "船岡城址公園",
           "船岡平和観音"
         ]
       }
@@ -3270,9 +3260,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/377",
         "address": "秋田県秋田市寺内大畑",
         "aliases": [
-          "秋田城跡",
-          "高清水公園",
-          "秋田城跡歴史資料館"
+          "秋田城跡"
         ]
       }
     },
@@ -3355,8 +3343,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/378",
         "address": "秋田県大館市字中城",
         "aliases": [
-          "桂城",
-          "桂城公園"
+          "桂城"
         ]
       }
     },
@@ -3738,8 +3725,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/1302",
         "address": "山形県大江町大字左沢",
         "aliases": [
-          "左沢城",
-          "楯山公園 (大江町)"
+          "左沢城"
         ]
       }
     },
@@ -4263,8 +4249,7 @@ const castleData = {
         "address": "山形県米沢市丸の内一丁目",
         "aliases": [
           "舞鶴城",
-          "松ヶ岬城",
-          "上杉記念館"
+          "松ヶ岬城"
         ]
       }
     },
@@ -4505,7 +4490,6 @@ const castleData = {
         "address": "福島県福島市大森",
         "aliases": [
           "臥牛城",
-          "大森城山公園",
           "大森城山"
         ]
       }
@@ -5406,9 +5390,7 @@ const castleData = {
           "会津若松城",
           "黒川城",
           "会津城",
-          "会津黒川城",
-          "鶴ヶ城公園",
-          "鶴ヶ城会館"
+          "会津黒川城"
         ]
       }
     },
@@ -5450,8 +5432,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/1195",
         "address": "福島県福島市飯坂町",
         "aliases": [
-          "大鳥城",
-          "館の山公園"
+          "大鳥城"
         ]
       }
     },
@@ -5870,10 +5851,7 @@ const castleData = {
         "category": "城",
         "prefecture": "茨城県",
         "url": "https://kojodan.jp/castle/110",
-        "address": "茨城県坂東市逆井",
-        "aliases": [
-          "逆井城跡公園"
-        ]
+        "address": "茨城県坂東市逆井"
       }
     },
     {
@@ -7162,10 +7140,7 @@ const castleData = {
         "category": "城",
         "prefecture": "栃木県",
         "url": "https://kojodan.jp/castle/1190",
-        "address": "栃木県栃木市城内町一丁目",
-        "aliases": [
-          "栃木城址公園"
-        ]
+        "address": "栃木県栃木市城内町一丁目"
       }
     },
     {
@@ -7372,7 +7347,6 @@ const castleData = {
         "address": "栃木県栃木市皆川城内町",
         "aliases": [
           "法螺貝城",
-          "皆川城址公園",
           "皆川城址"
         ]
       }
@@ -8287,9 +8261,7 @@ const castleData = {
           "岩付城",
           "岩附城",
           "白鶴城",
-          "浮城",
-          "岩槻公園",
-          "岩槻城址公園"
+          "浮城"
         ]
       }
     },
@@ -8564,7 +8536,6 @@ const castleData = {
         "address": "埼玉県所沢市大字城",
         "aliases": [
           "本郷城",
-          "滝の城址公園",
           "滝之城跡",
           "滝之城"
         ]
@@ -8736,8 +8707,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/909",
         "address": "埼玉県深谷市本住町",
         "aliases": [
-          "木瓜城",
-          "深谷城址公園"
+          "木瓜城"
         ]
       }
     },
@@ -9030,8 +9000,7 @@ const castleData = {
         "address": "千葉県千葉市中央区亥鼻一丁目",
         "aliases": [
           "千葉城",
-          "猪鼻城",
-          "千葉市立郷土博物館"
+          "猪鼻城"
         ]
       }
     },
@@ -10106,9 +10075,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/3633",
         "address": "千葉県館山市館山",
         "aliases": [
-          "根古屋城",
-          "館山市立博物館",
-          "城山公園 (館山市)"
+          "根古屋城"
         ]
       }
     },
@@ -11074,7 +11041,6 @@ const castleData = {
         "address": "東京都千代田区千代田",
         "aliases": [
           "千代田城",
-          "江戸城天守閣",
           "巽櫓",
           "江戸城伏見櫓",
           "坂下門"
@@ -11280,10 +11246,7 @@ const castleData = {
         "category": "城",
         "prefecture": "東京都",
         "url": "https://kojodan.jp/castle/448",
-        "address": "東京都世田谷区豪徳寺二丁目",
-        "aliases": [
-          "世田谷城址公園"
-        ]
+        "address": "東京都世田谷区豪徳寺二丁目"
       }
     },
     {
@@ -11465,8 +11428,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/721",
         "address": "東京都八王子市片倉町",
         "aliases": [
-          "八王子城",
-          "片倉城跡公園"
+          "八王子城"
         ]
       }
     },
@@ -12771,9 +12733,7 @@ const castleData = {
         "url": "",
         "address": "神奈川県横浜市都筑区大棚西",
         "aliases": [
-          "大塚歳勝土遺跡",
-          "大塚・歳勝土遺跡公園",
-          "大塚歳勝土公園"
+          "大塚歳勝土遺跡"
         ]
       }
     },
@@ -13998,10 +13958,7 @@ const castleData = {
         "category": "城",
         "prefecture": "富山県",
         "url": "https://kojodan.jp/castle/433",
-        "address": "富山県小矢部市城山町",
-        "aliases": [
-          "城山公園 (小矢部市)"
-        ]
+        "address": "富山県小矢部市城山町"
       }
     },
     {
@@ -14561,10 +14518,7 @@ const castleData = {
         "category": "城",
         "prefecture": "富山県",
         "url": "https://kojodan.jp/castle/52",
-        "address": "富山県高岡市古城",
-        "aliases": [
-          "高岡古城公園"
-        ]
+        "address": "富山県高岡市古城"
       }
     },
     {
@@ -14711,8 +14665,7 @@ const castleData = {
         "address": "富山県富山市本丸",
         "aliases": [
           "安住城",
-          "浮城",
-          "富山城址公園"
+          "浮城"
         ]
       }
     },
@@ -15239,7 +15192,6 @@ const castleData = {
           "尾上城",
           "金城",
           "金沢御坊",
-          "金沢城公園",
           "尾山御坊"
         ]
       }
@@ -15461,8 +15413,7 @@ const castleData = {
         "address": "石川県七尾市古城町",
         "aliases": [
           "松尾城",
-          "末尾城",
-          "七尾城史資料館"
+          "末尾城"
         ]
       }
     },
@@ -15634,8 +15585,7 @@ const castleData = {
         "address": "福井県大野市城町",
         "aliases": [
           "亀山城",
-          "越前大野城",
-          "亀山公園 (大野市)"
+          "越前大野城"
         ]
       }
     },
@@ -15940,7 +15890,6 @@ const castleData = {
           "北ノ庄城",
           "北庄城",
           "庄城",
-          "北の庄城址公園",
           "北之庄城"
         ]
       }
@@ -16214,7 +16163,6 @@ const castleData = {
           "舞鶴城",
           "一条小山城",
           "甲府城下町",
-          "舞鶴城公園",
           "一条小山"
         ]
       }
@@ -16806,10 +16754,7 @@ const castleData = {
         "category": "城",
         "prefecture": "長野県",
         "url": "https://kojodan.jp/castle/2531",
-        "address": "長野県中川村大草",
-        "aliases": [
-          "大草城址公園"
-        ]
+        "address": "長野県中川村大草"
       }
     },
     {
@@ -17725,8 +17670,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/4",
         "address": "長野県松本市丸の内",
         "aliases": [
-          "深志城",
-          "松本城公園"
+          "深志城"
         ]
       }
     },
@@ -17946,10 +17890,7 @@ const castleData = {
         "category": "城",
         "prefecture": "長野県",
         "url": "https://kojodan.jp/castle/1247",
-        "address": "長野県長野市大字長野",
-        "aliases": [
-          "大峰城チョウと自然の博物館"
-        ]
+        "address": "長野県長野市大字長野"
       }
     },
     {
@@ -18065,8 +18006,7 @@ const castleData = {
           "海津城",
           "貝津城",
           "長野城",
-          "松代城址",
-          "松代城公園"
+          "松代城址"
         ]
       }
     },
@@ -21239,8 +21179,7 @@ const castleData = {
           "出世城",
           "濱松城",
           "引馬城",
-          "引間城",
-          "浜松城公園"
+          "引間城"
         ]
       }
     },
@@ -21773,9 +21712,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/683",
         "address": "愛知県豊川市伊奈町",
         "aliases": [
-          "上嶋古城",
-          "伊奈城址公園",
-          "伊奈城趾公園"
+          "上嶋古城"
         ]
       }
     },
@@ -22161,8 +22098,7 @@ const castleData = {
         "aliases": [
           "箭筈城",
           "大久地城",
-          "於久地城",
-          "小口城址公園"
+          "於久地城"
         ]
       }
     },
@@ -23831,8 +23767,7 @@ const castleData = {
           "白鳳城",
           "伊賀上野城",
           "伊賀文化産業城",
-          "平楽寺",
-          "上野公園 (伊賀市)"
+          "平楽寺"
         ]
       }
     },
@@ -24265,8 +24200,7 @@ const castleData = {
         "address": "三重県尾鷲市中村町",
         "aliases": [
           "中村山砦",
-          "中村山",
-          "中村山公園"
+          "中村山"
         ]
       }
     },
@@ -24387,8 +24321,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/69",
         "address": "三重県松阪市殿町",
         "aliases": [
-          "松阪城",
-          "松阪公園"
+          "松阪城"
         ]
       }
     },
@@ -24767,8 +24700,7 @@ const castleData = {
         "address": "滋賀県大津市本丸町",
         "aliases": [
           "石鹿城",
-          "望湖城",
-          "膳所城跡公園"
+          "望湖城"
         ]
       }
     },
@@ -24790,9 +24722,7 @@ const castleData = {
         "address": "滋賀県長浜市公園町",
         "aliases": [
           "今浜城",
-          "豊公園",
-          "長浜城跡",
-          "長浜城歴史博物館"
+          "長浜城跡"
         ]
       }
     },
@@ -24850,8 +24780,7 @@ const castleData = {
         "address": "滋賀県彦根市金亀町",
         "aliases": [
           "金亀城",
-          "彦根城跡",
-          "金亀公園"
+          "彦根城跡"
         ]
       }
     },
@@ -25320,7 +25249,6 @@ const castleData = {
         "address": "京都府舞鶴市字南田辺",
         "aliases": [
           "舞鶴城",
-          "田辺城資料館",
           "丹後田辺城"
         ]
       }
@@ -25460,10 +25388,7 @@ const castleData = {
           "臥龍城",
           "八幡城",
           "福智山城",
-          "掻上城",
-          "福知山市郷土資料館",
-          "福知山市立郷土資料館",
-          "福知山城公園"
+          "掻上城"
         ]
       }
     },
@@ -25989,8 +25914,7 @@ const castleData = {
         "address": "大阪府河内長野市喜多町",
         "aliases": [
           "押子形城",
-          "烏帽子形山城",
-          "烏帽子形公園"
+          "烏帽子形山城"
         ]
       }
     },
@@ -26901,8 +26825,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/74",
         "address": "兵庫県赤穂市上仮屋",
         "aliases": [
-          "加里屋城",
-          "赤穂城址公園"
+          "加里屋城"
         ]
       }
     },
@@ -27967,7 +27890,6 @@ const castleData = {
           "花熊城",
           "鼻隅城",
           "鼻熊城",
-          "花隈公園",
           "花隈城の戦い"
         ]
       }
@@ -28296,9 +28218,7 @@ const castleData = {
         "aliases": [
           "波賀城",
           "波賀城趾",
-          "波賀城跡",
-          "波賀城史蹟公園",
-          "波賀城跡公園"
+          "波賀城跡"
         ]
       }
     },
@@ -29074,7 +28994,6 @@ const castleData = {
         "aliases": [
           "丹鶴城",
           "沖見城",
-          "丹鶴城公園",
           "堀内新宮城",
           "堀内新宮城跡"
         ]
@@ -29288,8 +29207,7 @@ const castleData = {
         "address": "和歌山県和歌山市一番丁",
         "aliases": [
           "虎伏城",
-          "竹垣城",
-          "和歌山城公園"
+          "竹垣城"
         ]
       }
     },
@@ -30534,9 +30452,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/12",
         "address": "島根県松江市殿町",
         "aliases": [
-          "千鳥城",
-          "城山公園 (松江市)",
-          "城山公園 (島根県)"
+          "千鳥城"
         ]
       }
     },
@@ -30735,7 +30651,6 @@ const castleData = {
         "aliases": [
           "烏城",
           "金烏城",
-          "烏城公園",
           "石山城"
         ]
       }
@@ -31125,8 +31040,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/143",
         "address": "岡山県岡山市北区高松",
         "aliases": [
-          "備中高松城",
-          "高松城址公園"
+          "備中高松城"
         ]
       }
     },
@@ -32090,8 +32004,7 @@ const castleData = {
         "address": "広島県福山市丸之内一丁目",
         "aliases": [
           "久松城",
-          "葦陽城",
-          "福山城博物館"
+          "葦陽城"
         ]
       }
     },
@@ -32317,8 +32230,7 @@ const castleData = {
         "aliases": [
           "鯉城",
           "在間城",
-          "当麻城",
-          "広島城址公園"
+          "当麻城"
         ]
       }
     },
@@ -32645,8 +32557,7 @@ const castleData = {
           "串崎城",
           "雄山城",
           "長府城",
-          "長府陣屋",
-          "関見台公園"
+          "長府陣屋"
         ]
       }
     },
@@ -32748,8 +32659,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/86",
         "address": "山口県萩市大字堀内",
         "aliases": [
-          "指月城",
-          "指月公園"
+          "指月城"
         ]
       }
     },
@@ -33566,8 +33476,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/88",
         "address": "香川県高松市玉藻町",
         "aliases": [
-          "玉藻城",
-          "玉藻公園"
+          "玉藻城"
         ]
       }
     },
@@ -33700,8 +33609,7 @@ const castleData = {
         "address": "香川県丸亀市一番丁",
         "aliases": [
           "亀山城",
-          "蓬莱城",
-          "亀山公園 (丸亀市)"
+          "蓬莱城"
         ]
       }
     },
@@ -33850,8 +33758,7 @@ const castleData = {
         "address": "愛媛県今治市通町三丁目",
         "aliases": [
           "吹上城",
-          "吹揚城",
-          "吹揚公園"
+          "吹揚城"
         ]
       }
     },
@@ -33873,8 +33780,7 @@ const castleData = {
         "address": "愛媛県宇和島市丸之内一丁目",
         "aliases": [
           "鶴島城",
-          "板島丸串城",
-          "城山公園 (宇和島市)"
+          "板島丸串城"
         ]
       }
     },
@@ -33915,8 +33821,7 @@ const castleData = {
         "aliases": [
           "比志城",
           "地蔵ヶ嶽城",
-          "大津城",
-          "城山公園 (大洲市)"
+          "大津城"
         ]
       }
     },
@@ -34602,8 +34507,7 @@ const castleData = {
         "aliases": [
           "鷹城",
           "大高坂城",
-          "大高坂山城",
-          "高知公園"
+          "大高坂山城"
         ]
       }
     },
@@ -34667,8 +34571,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/144",
         "address": "高知県四万十市中村",
         "aliases": [
-          "為松城",
-          "為松公園"
+          "為松城"
         ]
       }
     },
@@ -36434,9 +36337,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/94",
         "address": "佐賀県吉野ヶ里町田手",
         "aliases": [
-          "国営吉野ヶ里歴史公園",
-          "吉野ケ里遺跡",
-          "吉野ヶ里歴史公園"
+          "吉野ケ里遺跡"
         ]
       }
     },
@@ -36631,8 +36532,7 @@ const castleData = {
         "address": "長崎県島原市城内一丁目",
         "aliases": [
           "森岳城",
-          "高来城",
-          "島原城跡公園"
+          "高来城"
         ]
       }
     },
@@ -36963,10 +36863,7 @@ const castleData = {
         "category": "城",
         "prefecture": "熊本県",
         "url": "https://kojodan.jp/castle/802",
-        "address": "熊本県山鹿市菊鹿町米原",
-        "aliases": [
-          "歴史公園鞠智城"
-        ]
+        "address": "熊本県山鹿市菊鹿町米原"
       }
     },
     {
@@ -37031,8 +36928,7 @@ const castleData = {
           "千葉城",
           "六実城",
           "隈本城",
-          "銀杏城",
-          "熊本城公園"
+          "銀杏城"
         ]
       }
     },
@@ -37507,8 +37403,7 @@ const castleData = {
           "丹生島城",
           "巨亀城",
           "金亀城",
-          "亀城",
-          "臼杵公園"
+          "亀城"
         ]
       }
     },
@@ -37791,8 +37686,7 @@ const castleData = {
         "aliases": [
           "大分城",
           "荷揚城",
-          "白雉城",
-          "大分城址公園"
+          "白雉城"
         ]
       }
     },
@@ -38574,9 +38468,7 @@ const castleData = {
         "address": "宮崎県延岡市東本小路",
         "aliases": [
           "縣城",
-          "亀井城",
-          "城山公園 (延岡市)",
-          "城山公園 (宮崎県)"
+          "亀井城"
         ]
       }
     },
@@ -39422,8 +39314,7 @@ const castleData = {
         "address": "沖縄県読谷村字座喜味",
         "aliases": [
           "読谷山城",
-          "座喜味城跡",
-          "座喜味城跡公園"
+          "座喜味城跡"
         ]
       }
     },
@@ -39486,7 +39377,6 @@ const castleData = {
         "address": "沖縄県竹富町字波照間",
         "aliases": [
           "下田原城跡",
-          "ぶりぶち公園",
           "下田原貝塚"
         ]
       }
@@ -39512,7 +39402,6 @@ const castleData = {
           "首里の御城",
           "中山",
           "首里城跡",
-          "首里城公園",
           "首里城火災"
         ]
       }
@@ -59603,7 +59492,6 @@ const castleData = {
         "aliases": [
           "北庄城",
           "庄城",
-          "北の庄城址公園",
           "北之庄城"
         ]
       }
@@ -80256,7 +80144,6 @@ const castleData = {
         "aliases": [
           "丹鶴城",
           "沖見城",
-          "丹鶴城公園",
           "堀内新宮城跡"
         ]
       }
@@ -93186,8 +93073,7 @@ const castleData = {
         "aliases": [
           "貝津城",
           "長野城",
-          "松代城址",
-          "松代城公園"
+          "松代城址"
         ]
       }
     },
@@ -126316,8 +126202,7 @@ const castleData = {
         "url": "",
         "address": "長野県松本市中央１丁目２４−１",
         "aliases": [
-          "深志城",
-          "松本城公園"
+          "深志城"
         ]
       }
     },
