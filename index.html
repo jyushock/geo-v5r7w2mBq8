@@ -1675,6 +1675,44 @@ async function fetchCastleImage(castleName, kojodanUrl) {
     return null;
 }
 
+// --- Wikipedia記事の存在確認（キャッシュ付き） ---
+// pageimages APIをtitlesのみで叩き、"missing"の有無で記事の存在を判定する
+// （実際に存在しない記事名で照会すると pages: {"-1":{"missing":""}} が返ることを確認済み）
+const wikiExistsCache = {};
+
+async function checkWikipediaExists(castleName) {
+    if (wikiExistsCache[castleName] !== undefined) return wikiExistsCache[castleName];
+    try {
+        const apiUrl = `https://ja.wikipedia.org/w/api.php?action=query&format=json&titles=${encodeURIComponent(castleName)}&origin=*`;
+        const res = await fetch(apiUrl);
+        const data = await res.json();
+        const page = Object.values(data.query.pages)[0];
+        const exists = !(page && page.missing !== undefined);
+        wikiExistsCache[castleName] = exists;
+        return exists;
+    } catch (_) {
+        // 判定不能時はボタンを消さない（安全側）。キャッシュもしない（次回再試行させる）
+        return true;
+    }
+}
+
+// 城ポップアップのWikipediaボタン表示を非同期で制御する
+// 記事が存在する場合のみ表示し、存在しない場合は攻城団ボタンをフル幅化する
+async function injectWikiButtonState(popup, castleName) {
+    const el = popup.getElement ? popup.getElement() : null;
+    if (!el) return;
+    const wikiBtn = el.querySelector('.btn-wiki');
+    if (!wikiBtn) return;
+    const exists = await checkWikipediaExists(castleName);
+    if (exists) {
+        wikiBtn.style.display = '';
+    } else {
+        wikiBtn.remove();
+        const kojodanBtn = el.querySelector('.btn-kojodan');
+        if (kojodanBtn) kojodanBtn.classList.add('btn-full');
+    }
+}
+
 // 城のGoogleMap検索クエリ：同名城の誤ヒット防止に市区町村までの住所を付与
 // 丁目以下まで含めるとPOIカード直行になりにくいため市区町村で切る（実測確認済み）
 // 切り出せない書式は住所全体、住所なしは城名のみにフォールバック
@@ -1883,7 +1921,7 @@ function buildPopupHtml(type, label, p, lng, lat) {
         const gmapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(gmapQuery)}`;
         let extraBtns = '';
         if (type === 'shop')   extraBtns = `<a href="${p.url}" target="_blank" class="btn btn-tabelog btn-full">食べログ</a>`;
-        if (type === 'castle') extraBtns = `<a href="https://ja.wikipedia.org/wiki/${encodeURIComponent(name)}" target="_blank" class="btn btn-wiki${p.url ? '' : ' btn-full'}">Wikipedia</a>${p.url ? `<a href="${p.url}" target="_blank" class="btn btn-kojodan">攻城団</a>` : ''}<a href="https://www.google.com/search?q=${encodeURIComponent(name + ' アクセス')}" target="_blank" class="btn btn-access btn-full">アクセス</a>`;
+        if (type === 'castle') extraBtns = `<a href="https://ja.wikipedia.org/wiki/${encodeURIComponent(name)}" target="_blank" class="btn btn-wiki${p.url ? '' : ' btn-full'}" style="display:none">Wikipedia</a>${p.url ? `<a href="${p.url}" target="_blank" class="btn btn-kojodan">攻城団</a>` : ''}<a href="https://www.google.com/search?q=${encodeURIComponent(name + ' アクセス')}" target="_blank" class="btn btn-access btn-full">アクセス</a>`;
         const castleImgPlaceholder = type === 'castle' ? `<div class="castle-img-placeholder"></div>` : '';
         const aliasHtml = type === 'castle' ? popupAliasHtml(p.aliases) : '';
         return `<div class="popup-card">${popupTitleHtml(name)}${aliasHtml}${popupAddressHtml(p.address)}${castleImgPlaceholder}<div class="btn-grid"><a href="${gmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${extraBtns}${navBtns}${nearbyBtn}</div></div>`;
@@ -2412,7 +2450,7 @@ map.on('zoomend', () => { isZooming = false; });
                     const popupHtml = buildPopupHtml(conf.type, p.name || '', p, c[0], c[1]);
                     const popup = new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
                     applyClampMarkers(popup);
-                    if (conf.type === 'castle') injectCastleImage(popup, p.name, p.url);
+                    if (conf.type === 'castle') { injectCastleImage(popup, p.name, p.url); injectWikiButtonState(popup, p.name); }
                     const histType = (conf.type === 'manhole' && p.source === 'pokefuta') ? 'pokefuta' : conf.type;
                     histRecordPin(p.name || p.pokemon || '地点', c, histType, p);
                 });
@@ -2600,7 +2638,7 @@ map.on('zoomend', () => { isZooming = false; });
         const popupHtml = buildPopupHtml(item.type, item.label, p, c[0], c[1]);
         const popup2 = new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
         applyClampMarkers(popup2);
-        if (item.type === 'castle') injectCastleImage(popup2, item.label, p.url);
+        if (item.type === 'castle') { injectCastleImage(popup2, item.label, p.url); injectWikiButtonState(popup2, item.label); }
     }
 
     function clearSearch() {
