@@ -344,6 +344,7 @@
         .popup-alias   { font-size: 11px; color: #888; display: block; margin-bottom: 4px; }
         .popup-road    { font-size: 11px; color: #888; display: block; margin-bottom: 6px; }
         .popup-clamp { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; position: relative; }
+        .popup-clamp.popup-clamp-1 { -webkit-line-clamp: 1; }
         .popup-clamp.clampable { cursor: pointer; }
         .popup-clamp.clampable::after { content: ' ▼'; font-size: 10px; color: #999; }
         .popup-clamp.expanded { display: block; -webkit-line-clamp: unset; overflow: visible; }
@@ -351,6 +352,37 @@
         .castle-img-container { margin: 4px 0; border-radius: 6px; border: 1px solid #eee; overflow: hidden; background: #f5f0e8; }
         .castle-img { width: 100%; height: 160px; object-fit: cover; display: block; }
         .btn-carddetail { background: #8D6E63; color: #fff; }
+        .btn-shirohb { background: #6A4C93; color: #fff; }
+        .source-btns { display: contents; }
+        .popup-form { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; margin-bottom: 4px; }
+        .popup-form-badge {
+            font-size: 10.5px; font-weight: 700; color: #fff;
+            padding: 2px 8px; border-radius: 10px; line-height: 1.6; white-space: nowrap;
+        }
+        .popup-form-meta { font-size: 11px; color: #666; font-variant-numeric: tabular-nums; }
+        /* 形態名ごとの個別色。平城系(平城・平山城)は緑系、水系(水軍城・海城・水城)は青系、寺社は紫系に統一。
+           他は意味によるグループ化をせず、上記3系統の帯域を避けて個別に配置（モックで確定した配色）。 */
+        .popup-form-badge.f-yamajiro   { background: hsl(0,   42%, 38%); } /* 山城 */
+        .popup-form-badge.f-okajiro    { background: hsl(20,  42%, 38%); } /* 丘城 */
+        .popup-form-badge.f-hirajiro   { background: hsl(125, 38%, 32%); } /* 平城（緑系） */
+        .popup-form-badge.f-kyokan     { background: hsl(45,  42%, 34%); } /* 居館 */
+        .popup-form-badge.f-hirayama   { background: hsl(105, 36%, 32%); } /* 平山城（緑系） */
+        .popup-form-badge.f-jinya      { background: hsl(60,  38%, 32%); } /* 陣屋 */
+        .popup-form-badge.f-jinsho     { background: hsl(75,  34%, 32%); } /* 陣所 */
+        .popup-form-badge.f-daikansho  { background: hsl(160, 26%, 32%); } /* 代官所 */
+        .popup-form-badge.f-daiba      { background: hsl(180, 26%, 32%); } /* 台場 */
+        .popup-form-badge.f-bansho     { background: hsl(325, 30%, 36%); } /* 番所 */
+        .popup-form-badge.f-gakebata   { background: hsl(340, 32%, 36%); } /* 崖端城 */
+        .popup-form-badge.f-suigun     { background: hsl(205, 40%, 36%); } /* 水軍城（青系） */
+        .popup-form-badge.f-kango      { background: hsl(250, 28%, 40%); } /* 環濠 */
+        .popup-form-badge.f-daijiro    { background: hsl(310, 28%, 38%); } /* 台城 */
+        .popup-form-badge.f-umijiro    { background: hsl(218, 40%, 38%); } /* 海城（青系） */
+        .popup-form-badge.f-jisha      { background: hsl(280, 35%, 40%); } /* 寺社（紫系） */
+        .popup-form-badge.f-boruei     { background: hsl(355, 34%, 38%); } /* 防塁 */
+        .popup-form-badge.f-sekisho    { background: hsl(235, 30%, 40%); } /* 関所 */
+        .popup-form-badge.f-mizujiro   { background: hsl(230, 38%, 40%); } /* 水城（青系） */
+        .popup-form-badge.f-houkadai   { background: hsl(0,   0%,  38%); } /* 烽火台（グレー） */
+        .popup-form-badge.f-kanga      { background: hsl(0,   0%,  55%); } /* 官衙（グレー） */
 
         /* マンホールカード詳細シート */
         #card-detail-panel {
@@ -1701,26 +1733,54 @@ async function resolveWikipediaTitle(castleName, aliases) {
     }
 }
 
-// 城ポップアップのWikipediaボタン表示を非同期で制御する
-// 記事が存在する場合のみ表示し、存在しない場合は攻城団ボタンをフル幅化する
-async function injectWikiButtonState(popup, castleName, aliases) {
+// 城ポップアップの情報源ボタン（Wikipedia・攻城団・城郭放浪記）表示を非同期で制御する。
+// 攻城団・城郭放浪記はHTML生成時点でp.url/p.shiroHbUrlの有無から確定済み（暫定レイアウト済み）だが、
+// Wikipediaは記事存在確認が非同期のため、確定後にsource-btns領域全体をbuildSourceButtons()で再構築する。
+async function injectWikiButtonState(popup, castleName, aliases, kojodanUrl, shirohbUrl) {
     const el = popup.getElement ? popup.getElement() : null;
     if (!el) return;
-    const wikiBtn = el.querySelector('.btn-wiki');
-    if (!wikiBtn) return;
+    const slot = el.querySelector('.source-btns');
+    if (!slot) return;
     // MapLibreのfeature.properties経由だと配列がJSON文字列化される（popupAliasHtmlと同じ対策）
     if (typeof aliases === 'string') {
         try { aliases = JSON.parse(aliases); } catch { aliases = null; }
     }
     const resolvedTitle = await resolveWikipediaTitle(castleName, aliases);
-    if (resolvedTitle) {
-        wikiBtn.href = `https://ja.wikipedia.org/wiki/${encodeURIComponent(resolvedTitle)}`;
-        wikiBtn.style.display = '';
-    } else {
-        wikiBtn.remove();
-        const kojodanBtn = el.querySelector('.btn-kojodan');
-        if (kojodanBtn) kojodanBtn.classList.add('btn-full');
-    }
+    const wikiHref = resolvedTitle ? `https://ja.wikipedia.org/wiki/${encodeURIComponent(resolvedTitle)}` : '';
+    slot.innerHTML = buildSourceButtons(wikiHref, kojodanUrl, shirohbUrl);
+}
+
+// --- 城の形態（城郭放浪記データ由来）表示 ---
+// 形態名(21種類、実データで確認済み)をCSSクラスに対応させる。
+// 「不明」という値がそのまま入っているケースがあるため、その場合はバッジ自体を出さない。
+const FORM_BADGE_CLASS = {
+    '山城': 'f-yamajiro', '丘城': 'f-okajiro', '平城': 'f-hirajiro', '居館': 'f-kyokan',
+    '平山城': 'f-hirayama', '陣屋': 'f-jinya', '陣所': 'f-jinsho', '代官所': 'f-daikansho',
+    '台場': 'f-daiba', '番所': 'f-bansho', '崖端城': 'f-gakebata', '水軍城': 'f-suigun',
+    '環濠': 'f-kango', '台城': 'f-daijiro', '海城': 'f-umijiro', '寺社': 'f-jisha',
+    '防塁': 'f-boruei', '関所': 'f-sekisho', '水城': 'f-mizujiro', '烽火台': 'f-houkadai',
+    '官衙': 'f-kanga',
+};
+
+function popupFormHtml(form, elevationM, relativeHeightM) {
+    if (!form || form === '不明') return '';
+    const cls = FORM_BADGE_CLASS[form] || '';
+    const elev = (elevationM !== undefined && elevationM !== null) ? `標高${elevationM}m` : '標高不明';
+    const rel = (relativeHeightM !== undefined && relativeHeightM !== null) ? `比高${relativeHeightM}m` : null;
+    const meta = rel ? `${elev}／${rel}` : elev;
+    return `<div class="popup-form"><span class="popup-form-badge ${cls}">${form}</span><span class="popup-form-meta">${meta}</span></div>`;
+}
+
+// 情報源ボタン（Wikipedia・攻城団・城郭放浪記）を2カラムグリッドに空欄なく配置する。
+// 3個(奇数)揃った場合のみ先頭=Wikipediaをfull化して単独行にし、残り2個をペアで配置する。
+// 1個だけの場合も同じ式で自然にfullになる。
+function buildSourceButtons(wikiHref, kojodanUrl, shirohbUrl) {
+    const items = [];
+    if (wikiHref)    items.push(`<a href="${wikiHref}" target="_blank" class="btn btn-wiki">Wikipedia</a>`);
+    if (kojodanUrl)  items.push(`<a href="${kojodanUrl}" target="_blank" class="btn btn-kojodan">攻城団</a>`);
+    if (shirohbUrl)  items.push(`<a href="${shirohbUrl}" target="_blank" class="btn btn-shirohb">城郭放浪記</a>`);
+    const isFirstOdd = items.length % 2 === 1;
+    return items.map((html, i) => (i === 0 && isFirstOdd) ? html.replace('class="btn ', 'class="btn btn-full ') : html).join('');
 }
 
 // 城のGoogleMap検索クエリ：同名城の誤ヒット防止に市区町村までの住所を付与
@@ -1868,7 +1928,7 @@ function popupAliasHtml(aliases) {
     if (typeof aliases === 'string') {
         try { aliases = JSON.parse(aliases); } catch { aliases = null; }
     }
-    return (Array.isArray(aliases) && aliases.length) ? `<span class="popup-alias">別名: ${aliases.join('、')}</span>` : '';
+    return (Array.isArray(aliases) && aliases.length) ? `<span class="popup-alias popup-clamp popup-clamp-1">別名: ${aliases.join('、')}</span>` : '';
 }
 function popupRoadHtml(icon, text) {
     return text ? `<span class="popup-road popup-clamp">${icon} ${text}</span>` : '';
@@ -1931,10 +1991,13 @@ function buildPopupHtml(type, label, p, lng, lat) {
         const gmapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(gmapQuery)}`;
         let extraBtns = '';
         if (type === 'shop')   extraBtns = `<a href="${p.url}" target="_blank" class="btn btn-tabelog btn-full">食べログ</a>`;
-        if (type === 'castle') extraBtns = `<a href="https://ja.wikipedia.org/wiki/${encodeURIComponent(name)}" target="_blank" class="btn btn-wiki${p.url ? '' : ' btn-full'}" style="display:none">Wikipedia</a>${p.url ? `<a href="${p.url}" target="_blank" class="btn btn-kojodan">攻城団</a>` : ''}<a href="https://www.google.com/search?q=${encodeURIComponent(name + ' アクセス')}" target="_blank" class="btn btn-access btn-full">アクセス</a>`;
+        // Wikipediaは記事存在確認が非同期のため初期表示には含めず、injectWikiButtonStateで確定後に
+        // source-btns領域ごと buildSourceButtons() で再構築する（攻城団・城郭放浪記は同期的に確定済み）
+        if (type === 'castle') extraBtns = `<span class="source-btns">${buildSourceButtons('', p.url, p.shiroHbUrl)}</span><a href="https://www.google.com/search?q=${encodeURIComponent(name + ' アクセス')}" target="_blank" class="btn btn-access btn-full">アクセス</a>`;
         const castleImgPlaceholder = type === 'castle' ? `<div class="castle-img-placeholder"></div>` : '';
         const aliasHtml = type === 'castle' ? popupAliasHtml(p.aliases) : '';
-        return `<div class="popup-card">${popupTitleHtml(name)}${aliasHtml}${popupAddressHtml(p.address)}${castleImgPlaceholder}<div class="btn-grid"><a href="${gmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${extraBtns}${navBtns}${nearbyBtn}</div></div>`;
+        const formHtml = type === 'castle' ? popupFormHtml(p.shiroHbForm, p.shiroHbElevationM, p.shiroHbRelativeHeightM) : '';
+        return `<div class="popup-card">${popupTitleHtml(name)}${aliasHtml}${formHtml}${popupAddressHtml(p.address)}${castleImgPlaceholder}<div class="btn-grid"><a href="${gmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${extraBtns}${navBtns}${nearbyBtn}</div></div>`;
     }
 }
 
@@ -2460,7 +2523,7 @@ map.on('zoomend', () => { isZooming = false; });
                     const popupHtml = buildPopupHtml(conf.type, p.name || '', p, c[0], c[1]);
                     const popup = new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
                     applyClampMarkers(popup);
-                    if (conf.type === 'castle') { injectCastleImage(popup, p.name, p.url); injectWikiButtonState(popup, p.name, p.aliases); }
+                    if (conf.type === 'castle') { injectCastleImage(popup, p.name, p.url); injectWikiButtonState(popup, p.name, p.aliases, p.url, p.shiroHbUrl); }
                     const histType = (conf.type === 'manhole' && p.source === 'pokefuta') ? 'pokefuta' : conf.type;
                     histRecordPin(p.name || p.pokemon || '地点', c, histType, p);
                 });
@@ -2648,7 +2711,7 @@ map.on('zoomend', () => { isZooming = false; });
         const popupHtml = buildPopupHtml(item.type, item.label, p, c[0], c[1]);
         const popup2 = new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
         applyClampMarkers(popup2);
-        if (item.type === 'castle') { injectCastleImage(popup2, item.label, p.url); injectWikiButtonState(popup2, item.label, p.aliases); }
+        if (item.type === 'castle') { injectCastleImage(popup2, item.label, p.url); injectWikiButtonState(popup2, item.label, p.aliases, p.url, p.shiroHbUrl); }
     }
 
     function clearSearch() {
