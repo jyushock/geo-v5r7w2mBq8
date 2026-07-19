@@ -1676,35 +1676,45 @@ async function fetchCastleImage(castleName, kojodanUrl) {
 }
 
 // --- Wikipedia記事の存在確認（キャッシュ付き） ---
-// pageimages APIをtitlesのみで叩き、"missing"の有無で記事の存在を判定する
-// （実際に存在しない記事名で照会すると pages: {"-1":{"missing":""}} が返ることを確認済み）
+// name単独だとWikipediaの正式タイトルと不一致で誤って「記事なし」判定になるケースがあるため
+// （例:「上之国館」はmissingだが、aliases由来の「上之国勝山館跡」はリダイレクトで実在記事「勝山館」に解決）、
+// name + aliasesを候補としてtitlesに一括指定し、redirects=1でリダイレクトも解決した上で判定する。
+// いずれかがmissingでなければ、その実在タイトルをリンク先として採用する。
 const wikiExistsCache = {};
 
-async function checkWikipediaExists(castleName) {
-    if (wikiExistsCache[castleName] !== undefined) return wikiExistsCache[castleName];
+async function resolveWikipediaTitle(castleName, aliases) {
+    const cacheKey = castleName;
+    if (wikiExistsCache[cacheKey] !== undefined) return wikiExistsCache[cacheKey];
     try {
-        const apiUrl = `https://ja.wikipedia.org/w/api.php?action=query&format=json&titles=${encodeURIComponent(castleName)}&origin=*`;
+        const candidates = [castleName, ...(Array.isArray(aliases) ? aliases : [])].slice(0, 10);
+        const apiUrl = `https://ja.wikipedia.org/w/api.php?action=query&format=json&redirects=1&titles=${encodeURIComponent(candidates.join('|'))}&origin=*`;
         const res = await fetch(apiUrl);
         const data = await res.json();
-        const page = Object.values(data.query.pages)[0];
-        const exists = !(page && page.missing !== undefined);
-        wikiExistsCache[castleName] = exists;
-        return exists;
+        const pages = Object.values(data.query.pages || {});
+        const found = pages.find(pg => pg.pageid !== undefined && pg.missing === undefined);
+        const result = found ? found.title : null;
+        wikiExistsCache[cacheKey] = result;
+        return result;
     } catch (_) {
         // 判定不能時はボタンを消さない（安全側）。キャッシュもしない（次回再試行させる）
-        return true;
+        return castleName;
     }
 }
 
 // 城ポップアップのWikipediaボタン表示を非同期で制御する
 // 記事が存在する場合のみ表示し、存在しない場合は攻城団ボタンをフル幅化する
-async function injectWikiButtonState(popup, castleName) {
+async function injectWikiButtonState(popup, castleName, aliases) {
     const el = popup.getElement ? popup.getElement() : null;
     if (!el) return;
     const wikiBtn = el.querySelector('.btn-wiki');
     if (!wikiBtn) return;
-    const exists = await checkWikipediaExists(castleName);
-    if (exists) {
+    // MapLibreのfeature.properties経由だと配列がJSON文字列化される（popupAliasHtmlと同じ対策）
+    if (typeof aliases === 'string') {
+        try { aliases = JSON.parse(aliases); } catch { aliases = null; }
+    }
+    const resolvedTitle = await resolveWikipediaTitle(castleName, aliases);
+    if (resolvedTitle) {
+        wikiBtn.href = `https://ja.wikipedia.org/wiki/${encodeURIComponent(resolvedTitle)}`;
         wikiBtn.style.display = '';
     } else {
         wikiBtn.remove();
@@ -2450,7 +2460,7 @@ map.on('zoomend', () => { isZooming = false; });
                     const popupHtml = buildPopupHtml(conf.type, p.name || '', p, c[0], c[1]);
                     const popup = new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
                     applyClampMarkers(popup);
-                    if (conf.type === 'castle') { injectCastleImage(popup, p.name, p.url); injectWikiButtonState(popup, p.name); }
+                    if (conf.type === 'castle') { injectCastleImage(popup, p.name, p.url); injectWikiButtonState(popup, p.name, p.aliases); }
                     const histType = (conf.type === 'manhole' && p.source === 'pokefuta') ? 'pokefuta' : conf.type;
                     histRecordPin(p.name || p.pokemon || '地点', c, histType, p);
                 });
@@ -2638,7 +2648,7 @@ map.on('zoomend', () => { isZooming = false; });
         const popupHtml = buildPopupHtml(item.type, item.label, p, c[0], c[1]);
         const popup2 = new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
         applyClampMarkers(popup2);
-        if (item.type === 'castle') { injectCastleImage(popup2, item.label, p.url); injectWikiButtonState(popup2, item.label); }
+        if (item.type === 'castle') { injectCastleImage(popup2, item.label, p.url); injectWikiButtonState(popup2, item.label, p.aliases); }
     }
 
     function clearSearch() {
