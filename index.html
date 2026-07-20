@@ -1765,10 +1765,11 @@ const FORM_BADGE_CLASS = {
 function popupFormHtml(form, elevationM, relativeHeightM) {
     if (!form || form === '不明') return '';
     const cls = FORM_BADGE_CLASS[form] || '';
-    const elev = (elevationM !== undefined && elevationM !== null) ? `標高${elevationM}m` : '標高不明';
+    const elev = (elevationM !== undefined && elevationM !== null) ? `標高${elevationM}m` : null;
     const rel = (relativeHeightM !== undefined && relativeHeightM !== null) ? `比高${relativeHeightM}m` : null;
-    const meta = rel ? `${elev}／${rel}` : elev;
-    return `<div class="popup-form"><span class="popup-form-badge ${cls}">${form}</span><span class="popup-form-meta">${meta}</span></div>`;
+    const meta = [elev, rel].filter(Boolean).join('／');
+    const metaHtml = meta ? `<span class="popup-form-meta">${meta}</span>` : '';
+    return `<div class="popup-form"><span class="popup-form-badge ${cls}">${form}</span>${metaHtml}</div>`;
 }
 
 // 情報源ボタン（Wikipedia・攻城団・城郭放浪記）を2カラムグリッドに空欄なく配置する。
