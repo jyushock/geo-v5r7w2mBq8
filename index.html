@@ -321,7 +321,8 @@
         }
         .filter-chip input { width: 11px; height: 11px; margin: 0; }
         .popup-card { width: 180px; padding: 7px; font-family: sans-serif; }
-        .popup-title { font-weight: bold; font-size: 14px; display: block; margin-bottom: 2px; }
+        .popup-title-row { display: flex; align-items: center; gap: 5px; margin-bottom: 2px; }
+        .popup-title { font-weight: bold; font-size: 14px; }
         .popup-genre { font-size: 11px; color: #666; display: block; margin-bottom: 5px; }
         .manhole-img-container { margin: 4px 0; height: 160px; background: #f9f9f9; border-radius: 6px; border: 1px solid #eee; overflow: hidden; display: flex; align-items: center; justify-content: center; }
         .manhole-img, .manhole-img-large { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; margin: 0 auto; }
@@ -359,6 +360,8 @@
             font-size: 10.5px; font-weight: 700; color: #fff;
             padding: 2px 8px; border-radius: 10px; line-height: 1.6; white-space: nowrap;
         }
+        /* タイトル行(城名14px)に合わせて少し大きくしたバリエーション */
+        .popup-form-badge.popup-form-badge-title { font-size: 12px; flex-shrink: 0; }
         .popup-form-meta { font-size: 11px; color: #666; font-variant-numeric: tabular-nums; }
         /* 形態名ごとの個別色。平城系(平城・平山城)は緑系、水系(水軍城・海城・水城)は青系、寺社は紫系に統一。
            他は意味によるグループ化をせず、上記3系統の帯域を避けて個別に配置（モックで確定した配色）。 */
@@ -1762,14 +1765,19 @@ const FORM_BADGE_CLASS = {
     '官衙': 'f-kanga',
 };
 
-function popupFormHtml(form, elevationM, relativeHeightM) {
+// 形態バッジ（城名の左に配置。タイトル行用に少し大きいフォントサイズを使う）
+function popupFormBadgeHtml(form) {
     if (!form || form === '不明') return '';
     const cls = FORM_BADGE_CLASS[form] || '';
+    return `<span class="popup-form-badge popup-form-badge-title ${cls}">${form}</span>`;
+}
+
+// 標高／比高（バッジとは別行、住所の上に表示）
+function popupFormMetaHtml(elevationM, relativeHeightM) {
     const elev = (elevationM !== undefined && elevationM !== null) ? `標高${elevationM}m` : null;
     const rel = (relativeHeightM !== undefined && relativeHeightM !== null) ? `比高${relativeHeightM}m` : null;
     const meta = [elev, rel].filter(Boolean).join('／');
-    const metaHtml = meta ? `<span class="popup-form-meta">${meta}</span>` : '';
-    return `<div class="popup-form"><span class="popup-form-badge ${cls}">${form}</span>${metaHtml}</div>`;
+    return meta ? `<div class="popup-form"><span class="popup-form-meta">${meta}</span></div>` : '';
 }
 
 // 情報源ボタン（Wikipedia・攻城団・城郭放浪記）を2カラムグリッドに空欄なく配置する。
@@ -1906,8 +1914,8 @@ function buildMhcardImgHtml(p) {
 }
 
 // --- ポップアップ共通パーツ（全タイプで同一マークアップを1箇所に集約） ---
-function popupTitleHtml(text) {
-    return `<span class="popup-title popup-clamp">${text}</span>`;
+function popupTitleHtml(text, badgeHtml = '') {
+    return `<div class="popup-title-row">${badgeHtml}<span class="popup-title popup-clamp">${text}</span></div>`;
 }
 // 実際に2行を超えて省略されている要素にのみ▼マークを付与する
 function applyClampMarkers(popup) {
@@ -1997,11 +2005,12 @@ function buildPopupHtml(type, label, p, lng, lat) {
         if (type === 'castle') extraBtns = `<span class="source-btns">${buildSourceButtons('', p.url, p.shiroHbUrl)}</span><a href="https://www.google.com/search?q=${encodeURIComponent(name + ' アクセス')}" target="_blank" class="btn btn-access btn-full">アクセス</a>`;
         const castleImgPlaceholder = type === 'castle' ? `<div class="castle-img-placeholder"></div>` : '';
         const aliasHtml = type === 'castle' ? popupAliasHtml(p.aliases) : '';
-        const formHtml = type === 'castle' ? popupFormHtml(p.shiroHbForm, p.shiroHbElevationM, p.shiroHbRelativeHeightM) : '';
+        const badgeHtml = type === 'castle' ? popupFormBadgeHtml(p.shiroHbForm) : '';
+        const formMetaHtml = type === 'castle' ? popupFormMetaHtml(p.shiroHbElevationM, p.shiroHbRelativeHeightM) : '';
         // 近接する別の城と座標が重なるため表示位置をずらしたエントリには目印を付ける
         // （マンホールカード配布場所のcoordOffsetと同じ仕組み。実際の座標は元の位置から数m~十数mずれている）
         const titleText = (type === 'castle' && p.coordOffset) ? `[近接あり] ${name}` : name;
-        return `<div class="popup-card">${popupTitleHtml(titleText)}${aliasHtml}${formHtml}${popupAddressHtml(p.address)}${castleImgPlaceholder}<div class="btn-grid"><a href="${gmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${extraBtns}${navBtns}${nearbyBtn}</div></div>`;
+        return `<div class="popup-card">${popupTitleHtml(titleText, badgeHtml)}${aliasHtml}${formMetaHtml}${popupAddressHtml(p.address)}${castleImgPlaceholder}<div class="btn-grid"><a href="${gmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${extraBtns}${navBtns}${nearbyBtn}</div></div>`;
     }
 }
 
