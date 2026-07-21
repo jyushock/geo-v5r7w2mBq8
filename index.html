@@ -420,6 +420,17 @@
 
 
         .maplibregl-popup { z-index: 10 !important; }
+        /* 簡易トースト(攻城団Chrome未導入通知などに使用) */
+        #app-toast {
+            position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+            transform: translateX(-50%) translateY(12px);
+            max-width: min(88vw, 420px); box-sizing: border-box;
+            background: rgba(33,33,33,0.94); color: #fff; font-size: 13px; line-height: 1.5;
+            padding: 11px 16px; border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            z-index: 10000; opacity: 0; pointer-events: none; text-align: center;
+            transition: opacity .2s ease, transform .2s ease;
+        }
+        #app-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
         /* 画面内補正(ensurePopupInView)の保険: ポップアップ自体が画面より大きいと
            どこへ動かしても収まらないため、高さに上限を設けて超過分は内部スクロールにする。
            通常の端末・内容ではこの上限に達しないため見た目は変わらない。 */
@@ -1804,6 +1815,62 @@ function buildSourceButtons(wikiHref, kojodanUrl, shirohbUrl) {
     const isFirstOdd = items.length % 2 === 1;
     return items.map((html, i) => (i === 0 && isFirstOdd) ? html.replace('class="btn ', 'class="btn btn-full ') : html).join('');
 }
+
+// iOSのホーム画面PWA(navigator.standalone)では、攻城団ボタン(target=_blank)の外部遷移が
+// Safari相当のUA(Version/26.5.2)で開かれ、攻城団側のUAフィルターに弾かれる(実測503)。
+// 攻城団はこのバージョンをピンポイントで遮断しており(隣の26.4/26.6は通る)、こちらでは直せない。
+// 対処: iOS PWA時のみ、攻城団リンクをChromeを直接起動するURLスキーム(googlechromes://)に
+// 差し替える。ChromeはCriOSのUAを送るため攻城団に通る(実測200)。UA偽装ではなく、
+// 攻城団が許可しているChromeで開くだけ。他サイト・他ブラウザ・他OSには影響しない。
+// この制限を課しているのは攻城団のみのため、対象は攻城団リンクに限定する。
+function isIosStandalonePwa() {
+    return window.navigator.standalone === true;
+}
+
+function showToast(message) {
+    let toast = document.getElementById('app-toast');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'app-toast';
+        document.body.appendChild(toast);
+    }
+    toast.textContent = message;
+    toast.classList.add('show');
+    clearTimeout(showToast._timer);
+    showToast._timer = setTimeout(() => toast.classList.remove('show'), 4000);
+}
+
+document.addEventListener('click', (e) => {
+    const a = e.target.closest && e.target.closest('a.btn-kojodan');
+    if (!a || !isIosStandalonePwa()) return; // 通常ブラウザ/Android/PCは従来のtarget=_blankのまま
+    const href = a.getAttribute('href') || '';
+    if (!/^https?:\/\//i.test(href)) return;
+    e.preventDefault();
+
+    const chromeUrl = href.replace(/^https?:\/\//i, 'googlechromes://');
+    let launched = false;
+    const onLeave = () => { launched = true; cleanup(); };
+    const onVis = () => { if (document.hidden) onLeave(); };
+    function cleanup() {
+        document.removeEventListener('visibilitychange', onVis);
+        window.removeEventListener('pagehide', onLeave);
+        window.removeEventListener('blur', onLeave);
+    }
+    document.addEventListener('visibilitychange', onVis);
+    window.addEventListener('pagehide', onLeave);
+    window.addEventListener('blur', onLeave);
+
+    // スキームを起動。Chromeがあれば即アプリ切替でページがバックグラウンド化する。
+    window.location.href = chromeUrl;
+
+    // 一定時間たっても前面のまま=Chrome未起動=未インストールとみなして通知する。
+    setTimeout(() => {
+        cleanup();
+        if (!launched && !document.hidden) {
+            showToast('攻城団の閲覧にはChromeが必要です。App StoreでChromeを入れてください。');
+        }
+    }, 2000);
+});
 
 // 城のGoogleMap検索クエリ：同名城の誤ヒット防止に市区町村までの住所を付与
 // 丁目以下まで含めるとPOIカード直行になりにくいため市区町村で切る（実測確認済み）
