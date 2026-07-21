@@ -420,6 +420,10 @@
 
 
         .maplibregl-popup { z-index: 10 !important; }
+        /* 画面内補正(ensurePopupInView)の保険: ポップアップ自体が画面より大きいと
+           どこへ動かしても収まらないため、高さに上限を設けて超過分は内部スクロールにする。
+           通常の端末・内容ではこの上限に達しないため見た目は変わらない。 */
+        .maplibregl-popup-content { max-height: calc(100svh - 48px); overflow-y: auto; }
 
 
         /* 下部バー */
@@ -1751,6 +1755,8 @@ async function injectWikiButtonState(popup, castleName, aliases, kojodanUrl, shi
     const resolvedTitle = await resolveWikipediaTitle(castleName, aliases);
     const wikiHref = resolvedTitle ? `https://ja.wikipedia.org/wiki/${encodeURIComponent(resolvedTitle)}` : '';
     slot.innerHTML = buildSourceButtons(wikiHref, kojodanUrl, shirohbUrl);
+    // ボタン数の増減で高さが変わり得るため画面内補正をかけ直す
+    ensurePopupInView(popup);
 }
 
 // --- 城の形態（城郭放浪記データ由来）表示 ---
@@ -2023,6 +2029,9 @@ async function injectCastleImage(popup, castleName, kojodanUrl) {
     const placeholder = el.querySelector('.castle-img-placeholder');
     if (placeholder) {
         placeholder.innerHTML = `<div class="castle-img-container"><img class="castle-img" src="${imgUrl}" onerror="this.parentElement.style.display='none'"></div>`;
+        // 画像ロード完了でポップアップの高さが伸びるため、その時点で画面内補正をかけ直す
+        const img = placeholder.querySelector('img');
+        if (img) img.addEventListener('load', () => ensurePopupInView(popup), { once: true });
     }
 }
 
@@ -2536,6 +2545,7 @@ map.on('zoomend', () => { isZooming = false; });
                     const popupHtml = buildPopupHtml(conf.type, p.name || '', p, c[0], c[1]);
                     const popup = new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
                     applyClampMarkers(popup);
+                    ensurePopupInView(popup);
                     if (conf.type === 'castle') { injectCastleImage(popup, p.name, p.url); injectWikiButtonState(popup, p.name, p.aliases, p.url, p.shiroHbUrl); }
                     const histType = (conf.type === 'manhole' && p.source === 'pokefuta') ? 'pokefuta' : conf.type;
                     histRecordPin(p.name || p.pokemon || '地点', c, histType, p);
@@ -2724,6 +2734,7 @@ map.on('zoomend', () => { isZooming = false; });
         const popupHtml = buildPopupHtml(item.type, item.label, p, c[0], c[1]);
         const popup2 = new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
         applyClampMarkers(popup2);
+        ensurePopupInView(popup2); // 検索経由はeaseTo中のためmoveend後に測定される
         if (item.type === 'castle') { injectCastleImage(popup2, item.label, p.url); injectWikiButtonState(popup2, item.label, p.aliases, p.url, p.shiroHbUrl); }
     }
 
@@ -3263,6 +3274,36 @@ map.on('zoomend', () => { isZooming = false; });
     function getPopupAnchor(lngLat) {
         const point=map.project(lngLat), h=window.innerHeight, w=window.innerWidth, t=point.y<h*0.4, b=point.y>h*0.6, l=point.x<w*0.3, r=point.x>w*0.7;
         if(t&&l)return 'top-left'; if(t&&r)return 'top-right'; if(t)return 'top'; if(b&&l)return 'bottom-left'; if(b&&r)return 'bottom-right'; if(l)return 'left'; if(r)return 'right'; return 'bottom';
+    }
+
+    // ポップアップの実寸を測り、地図表示領域からはみ出している分＋マージンだけ地図を最小移動する。
+    // getPopupAnchor(タップ位置ベースの展開方向決め)はポップアップの実寸を知らないため、
+    // 背の高いポップアップや画面中央帯のタップでははみ出しが残る。その不足を実測で補正する。
+    // 画像の遅延挿入(injectCastleImage)等で表示後に高さが伸びた場合も、各挿入完了時に
+    // 本関数を再度呼ぶことで追加補正される。地図がアニメーション中は静止後に測定する
+    // (移動中の測定は位置がずれるため)。
+    function ensurePopupInView(popup) {
+        const run = () => requestAnimationFrame(() => {
+            if (!popup.isOpen || !popup.isOpen()) return;
+            const el = popup.getElement && popup.getElement();
+            if (!el) return;
+            const margin = 8;
+            const rect = el.getBoundingClientRect();
+            if (rect.width === 0 && rect.height === 0) return;
+            const bounds = map.getContainer().getBoundingClientRect();
+            let dx = 0, dy = 0;
+            // 左右: 左端優先(両側はみ出しはmax-widthにより実質発生しない)
+            if (rect.left < bounds.left + margin) dx = rect.left - (bounds.left + margin);
+            else if (rect.right > bounds.right - margin) dx = rect.right - (bounds.right - margin);
+            // 上下: 上端優先(全体が収まらない場合はタイトル側の視認を確保)
+            if (rect.top < bounds.top + margin) dy = rect.top - (bounds.top + margin);
+            else if (rect.bottom > bounds.bottom - margin) dy = rect.bottom - (bounds.bottom - margin);
+            // panBy正方向はカメラ移動=画面内容は逆方向へ移動する。
+            // 例: 下にNpxはみ出し → dy=+N → カメラが下へ → 内容(ポップアップ)は上へN px移動
+            if (Math.abs(dx) >= 1 || Math.abs(dy) >= 1)
+                map.panBy([dx, dy], { duration: 250, essential: true });
+        });
+        if (map.isMoving()) map.once('moveend', run); else run();
     }
 
     // レイヤー一時非表示ボタンの処理
