@@ -16831,7 +16831,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/2221",
         "address": "石川県能登町字崎山四丁目",
         "aliases": [
-          "天呑城\u3000三宅小三郎城"
+          "天呑城　三宅小三郎城"
         ]
       }
     },
@@ -18879,7 +18879,7 @@ const castleData = {
           "真田山城",
           "住蓮寺城",
           "十林の城山",
-          "真田山城\u3000松尾城"
+          "真田山城　松尾城"
         ],
         "shiroHbForm": "山城",
         "shiroHbElevationM": 890,
@@ -20782,7 +20782,7 @@ const castleData = {
         "address": "岐阜県富加町加治田",
         "aliases": [
           "古城山城",
-          "'''却敵城'''\u3000加治田山城\u3000古城山\u3000白華山 梨割山"
+          "'''却敵城'''　加治田山城　古城山　白華山 梨割山"
         ],
         "shiroHbForm": "山城",
         "shiroHbElevationM": 271,
@@ -50405,8 +50405,8 @@ const castleData = {
         "url": "https://kojodan.jp/castle/2990",
         "address": "宮城県仙台市泉区松森",
         "aliases": [
-          "\uE2DDヶ城",
-          "\uE2DD館",
+          "ヶ城",
+          "館",
           "乙森城"
         ],
         "shiroHbForm": "山城",
@@ -53499,7 +53499,7 @@ const castleData = {
         "url": "https://kojodan.jp/castle/2537",
         "address": "茨城県かすみがうら市戸崎",
         "aliases": [
-          "戸\uE1CC城"
+          "戸城"
         ],
         "shiroHbForm": "台城",
         "shiroHbElevationM": 40,
@@ -283907,7 +283907,7 @@ const castleData = {
         ]
       },
       "properties": {
-        "name": "\uE20E山楯",
+        "name": "山楯",
         "genre": "",
         "category": "城",
         "prefecture": "山形県",
@@ -460660,24 +460660,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.2571199,
-          32.6363011
-        ]
-      },
-      "properties": {
-        "name": "原城の宿 城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "長崎県南島原市南有馬町丁１７０"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           130.2573006,
           32.636471199999995
         ]
@@ -461866,24 +461848,6 @@ const castleData = {
         "shiroHbElevationM": 610,
         "shiroHbRelativeHeightM": 140,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/kii/kawahari-nishi-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.80000640000003,
-          34.4453482
-        ]
-      },
-      "properties": {
-        "name": "街の駅 城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "奈良県高市郡高取町上土佐５８−１"
       }
     },
     {
@@ -463382,24 +463346,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.1806078,
-          35.3683383
-        ]
-      },
-      "properties": {
-        "name": "道の駅 広瀬·富田城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "島根県安来市広瀬町町帳７７５−１"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           132.95404969999998,
           35.3248883
         ]
@@ -464877,24 +464823,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.4799772,
-          35.9031045
-        ]
-      },
-      "properties": {
-        "name": "川越人 妻城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "埼玉県川越市新宿町１丁目２"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.6296337,
           35.864419
         ]
@@ -465467,24 +465395,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.883407,
-          37.0623
-        ]
-      },
-      "properties": {
-        "name": "旬彩の庄 坂戸城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "新潟県南魚沼市坂戸２９２−４"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           138.97116,
           37.1917307
         ]
@@ -465568,24 +465478,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "新潟県長岡市栖吉町"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          140.07572249999998,
-          37.536152
-        ]
-      },
-      "properties": {
-        "name": "美蕎旬菜 三城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "福島県耶麻郡猪苗代町三ツ和波々帰目１１０６−１"
       }
     },
     {
