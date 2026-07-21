@@ -1683,10 +1683,28 @@ function stopRafLoop() {
     prevSetPitch   = null; // ② リセット
 }
 
-// --- 城写真取得（攻城団→Wikipedia フォールバック、キャッシュ付き） ---
+// --- 城写真取得（攻城団→城郭放浪記→Wikipedia フォールバック、キャッシュ付き） ---
 const castleImgCache = {};
 
-async function fetchCastleImage(castleName, kojodanUrl) {
+// 画像URLが実在するかを<img>読み込みの成否で判定する（Promise化）。
+// 城郭放浪記(hb.pei.jp)はAccess-Control-Allow-Originを返さないため、
+// 攻城団のようなfetch()+blob()方式は使えない(CORSエラーで常に失敗する。実測確認済み)。
+// <img>の読み込みはCORS不要で、成功時はそのURLがHTTPキャッシュに乗るため
+// (ETag/Last-Modifiedのみでmax-ageは無いが、ブラウザの既定動作でキャッシュされる)、
+// 後で同じURLをポップアップに挿入する際に再利用される。
+function checkImageLoads(url, timeoutMs = 8000) {
+    return new Promise((resolve) => {
+        const img = new Image();
+        let done = false;
+        const finish = (ok) => { if (!done) { done = true; resolve(ok); } };
+        img.onload = () => finish(true);
+        img.onerror = () => finish(false);
+        img.src = url;
+        setTimeout(() => finish(false), timeoutMs);
+    });
+}
+
+async function fetchCastleImage(castleName, kojodanUrl, shiroHbUrl) {
     const cacheKey = castleName;
     if (castleImgCache[cacheKey] !== undefined) return castleImgCache[cacheKey];
 
@@ -1710,6 +1728,16 @@ async function fetchCastleImage(castleName, kojodanUrl) {
                     return imgUrl;
                 }
             } catch (_) {}
+        }
+    }
+
+    // 城郭放浪記: 個別ページURL(shiroHbUrl)配下の indexb.jpg が写真ページの規約的な命名
+    // (実測確認済み。城郭放浪記は個人運営サイトのため、タップ時1回のみのアクセスに留める)
+    if (shiroHbUrl) {
+        const imgUrl = `${shiroHbUrl}indexb.jpg`;
+        if (await checkImageLoads(imgUrl)) {
+            castleImgCache[cacheKey] = imgUrl;
+            return imgUrl;
         }
     }
 
@@ -2095,8 +2123,8 @@ function buildPopupHtml(type, label, p, lng, lat) {
 }
 
 // 城ポップアップに写真を非同期で挿入する
-async function injectCastleImage(popup, castleName, kojodanUrl) {
-    const imgUrl = await fetchCastleImage(castleName, kojodanUrl);
+async function injectCastleImage(popup, castleName, kojodanUrl, shiroHbUrl) {
+    const imgUrl = await fetchCastleImage(castleName, kojodanUrl, shiroHbUrl);
     if (!imgUrl) return;
     const el = popup.getElement ? popup.getElement() : null;
     if (!el) return;
@@ -2622,7 +2650,7 @@ map.on('zoomend', () => { isZooming = false; });
                     const popup = new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
                     applyClampMarkers(popup);
                     ensurePopupInView(popup);
-                    if (conf.type === 'castle') { injectCastleImage(popup, p.name, p.url); injectWikiButtonState(popup, p.name, p.aliases, p.url, p.shiroHbUrl); }
+                    if (conf.type === 'castle') { injectCastleImage(popup, p.name, p.url, p.shiroHbUrl); injectWikiButtonState(popup, p.name, p.aliases, p.url, p.shiroHbUrl); }
                     const histType = (conf.type === 'manhole' && p.source === 'pokefuta') ? 'pokefuta' : conf.type;
                     histRecordPin(p.name || p.pokemon || '地点', c, histType, p);
                 });
@@ -2811,7 +2839,7 @@ map.on('zoomend', () => { isZooming = false; });
         const popup2 = new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
         applyClampMarkers(popup2);
         ensurePopupInView(popup2); // 検索経由はeaseTo中のためmoveend後に測定される
-        if (item.type === 'castle') { injectCastleImage(popup2, item.label, p.url); injectWikiButtonState(popup2, item.label, p.aliases, p.url, p.shiroHbUrl); }
+        if (item.type === 'castle') { injectCastleImage(popup2, item.label, p.url, p.shiroHbUrl); injectWikiButtonState(popup2, item.label, p.aliases, p.url, p.shiroHbUrl); }
     }
 
     function clearSearch() {
