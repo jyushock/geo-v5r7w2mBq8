@@ -1684,10 +1684,17 @@ async function fetchCastleImage(castleName, kojodanUrl) {
         const m = kojodanUrl.match(/kojodan\.jp\/castle\/(\d+)/);
         if (m) {
             const imgUrl = `https://kojodan.com/pic/panorama/${m[1]}.jpg`;
-            // HEADリクエストで画像の存在確認
+            // HEADでの事前存在確認は廃止し、画像GET自体を存在確認に使う
+            // (攻城団へのリクエストを成功時2回→1回に削減。GETした画像は
+            //  Cache-Control: max-age=7日でHTTPキャッシュされ、表示時に再利用される)。
+            // 存在判定はfetchのステータスで行う。<img>のonerrorは使えない:
+            // このサーバは404応答の本文にもJPEG(エラー画像)を返し、Chromeは
+            // その場合loadイベントを発火するため誤って表示してしまう(実測確認済み)。
+            // CORSはAccess-Control-Allow-Origin:*を確認済み。
             try {
-                const res = await fetch(imgUrl, { method: 'HEAD' });
+                const res = await fetch(imgUrl);
                 if (res.ok) {
+                    await res.blob(); // ダウンロードを完了させHTTPキャッシュに乗せる
                     castleImgCache[cacheKey] = imgUrl;
                     return imgUrl;
                 }
@@ -2032,6 +2039,8 @@ async function injectCastleImage(popup, castleName, kojodanUrl) {
         // 画像ロード完了でポップアップの高さが伸びるため、その時点で画面内補正をかけ直す
         const img = placeholder.querySelector('img');
         if (img) img.addEventListener('load', () => ensurePopupInView(popup), { once: true });
+        // 事前読み込み済み(キャッシュ)の場合は挿入時点で寸法が確定しているため即時にも補正する
+        ensurePopupInView(popup);
     }
 }
 
