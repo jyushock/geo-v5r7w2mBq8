@@ -3036,13 +3036,12 @@ map.on('zoomend', () => { isZooming = false; });
     }
 
     // IME変換確定前（未確定文字列）で毎打鍵検索が走らないようにするガード。
-    // compositionend後はブラウザが input イベントを発火するため、そこで確定文字列の検索が動く
+    // compositionend後にinputイベントが発火しない/isComposing判定のタイミングが前後する
+    // ブラウザ・IME実装があるため、inputイベントのみに頼らずcompositionend自体からも
+    // 同じ処理を実行し、変換確定後に検索が更新されないケースを防ぐ。
     let isComposing = false;
-    document.getElementById('search-input').addEventListener('compositionstart', () => { isComposing = true; });
-    document.getElementById('search-input').addEventListener('compositionend', () => { isComposing = false; });
-    document.getElementById('search-input').addEventListener('input', async (e) => {
-        if (isComposing) return;
-        const q = e.target.value.trim();
+    function runSearchInput(inputEl) {
+        const q = inputEl.value.trim();
         document.getElementById('search-clear').style.display = q ? 'block' : 'none';
         document.getElementById('search-results').style.display = q ? 'block' : 'none';
         document.getElementById('search-spinner').style.display = 'none';
@@ -3068,6 +3067,15 @@ map.on('zoomend', () => { isZooming = false; });
                 renderResults(local, places);
             }
         }, 300);
+    }
+    document.getElementById('search-input').addEventListener('compositionstart', () => { isComposing = true; });
+    document.getElementById('search-input').addEventListener('compositionend', (e) => {
+        isComposing = false;
+        runSearchInput(e.target);
+    });
+    document.getElementById('search-input').addEventListener('input', (e) => {
+        if (isComposing) return;
+        runSearchInput(e.target);
     });
     // 検索ボックスにフォーカスが戻ったとき、ワードが残っていれば結果を再表示
     document.getElementById('search-input').addEventListener('focus', async (e) => {
