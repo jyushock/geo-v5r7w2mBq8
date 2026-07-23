@@ -1833,7 +1833,12 @@ async function resolveWikipediaTitle(castleName, aliases, lat, lng) {
     if (wikiExistsCache[cacheKey] !== undefined) return wikiExistsCache[cacheKey];
     try {
         const candidates = [castleName, ...(Array.isArray(aliases) ? aliases : [])].slice(0, 10);
-        const apiUrl = `https://ja.wikipedia.org/w/api.php?action=query&format=json&redirects=1&prop=coordinates&titles=${encodeURIComponent(candidates.join('|'))}&origin=*`;
+        // prop=pageprops&ppprop=disambiguation: 別名が曖昧さ回避ページ（例:「朝倉城」は
+        // 兵庫・高知の同名城への入口ページで、それ自体は特定の城の記事ではない）に
+        // ヒットするケースを除外するため(2026-07-24追加、実データ確認: 保々西城→朝倉城)。
+        // 曖昧さ回避ページは記事本文がなく座標情報も持たないため、座標なしフォールバック
+        // 採用ロジックに紛れ込むと無関係なページへ誤誘導してしまう。
+        const apiUrl = `https://ja.wikipedia.org/w/api.php?action=query&format=json&redirects=1&prop=coordinates|pageprops&ppprop=disambiguation&titles=${encodeURIComponent(candidates.join('|'))}&origin=*`;
         const res = await fetch(apiUrl);
         const data = await res.json();
 
@@ -1842,7 +1847,8 @@ async function resolveWikipediaTitle(castleName, aliases, lat, lng) {
         (data.query.redirects || []).forEach(r => { redirectMap[r.from] = r.to; });
         const pagesByTitle = {};
         Object.values(data.query.pages || {}).forEach(pg => {
-            if (pg.pageid !== undefined && pg.missing === undefined) pagesByTitle[pg.title] = pg;
+            const isDisambiguation = pg.pageprops && pg.pageprops.disambiguation !== undefined;
+            if (pg.pageid !== undefined && pg.missing === undefined && !isDisambiguation) pagesByTitle[pg.title] = pg;
         });
 
         // candidatesの順序（castleName最優先）通りに解決済みページを並べ直す（重複除去）
