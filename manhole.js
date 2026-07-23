@@ -3822,7 +3822,7 @@ const manholeGeoJSON = {
         "name": "山形県 流域下水道",
         "genre": "マンホールカード",
         "cardId": "06-000-A001",
-        "address": "山形県大石田町桂木町"
+        "address": "山形県大石田町大字大石田"
       }
     },
     {
@@ -6910,7 +6910,7 @@ const manholeGeoJSON = {
         "name": "茨城県 結城市",
         "genre": "マンホールカード",
         "cardId": "08-207-A001",
-        "address": "茨城県結城市国府町一丁目"
+        "address": "茨城県結城市大字結城"
       }
     },
     {
@@ -12358,7 +12358,7 @@ const manholeGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.577683333333,
+          139.577583333333,
           35.6326666666667
         ]
       },
@@ -12390,7 +12390,7 @@ const manholeGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.540905555556,
+          139.540805555556,
           35.7643888888889
         ]
       },
@@ -18846,7 +18846,7 @@ const manholeGeoJSON = {
         "name": "長野県 軽井沢町",
         "genre": "マンホールカード",
         "cardId": "20-321-A001",
-        "address": "長野県軽井沢町軽井沢東"
+        "address": "長野県軽井沢町大字軽井沢"
       }
     },
     {
@@ -19583,6 +19583,694 @@ const manholeGeoJSON = {
         "genre": "マンホールカード",
         "cardId": "13-010-A001",
         "address": "東京都八王子市北野町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.579805555556,
+          35.7036666666667
+        ]
+      },
+      "properties": {
+        "name": "東京都 武蔵野市",
+        "genre": "マンホールカード",
+        "cardId": "13-203-C001",
+        "address": "東京都武蔵野市吉祥寺本町一丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.529166666667,
+          43.0928055555556
+        ]
+      },
+      "properties": {
+        "name": "北海道 江別市",
+        "genre": "マンホールカード",
+        "cardId": "01-217-B001",
+        "address": "北海道江別市野幌町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.861027777778,
+          45.0408333333333
+        ]
+      },
+      "properties": {
+        "name": "北海道 幌延町",
+        "genre": "マンホールカード",
+        "cardId": "01-520-A001",
+        "address": "北海道幌延町字北進"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.833222222222,
+          43.08275
+        ]
+      },
+      "properties": {
+        "name": "北海道 新得町",
+        "genre": "マンホールカード",
+        "cardId": "01-635-B001",
+        "address": "北海道新得町本通北一丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.197388888889,
+          39.7492222222222
+        ]
+      },
+      "properties": {
+        "name": "岩手県 盛岡市",
+        "genre": "マンホールカード",
+        "cardId": "03-201-C001",
+        "address": "岩手県盛岡市桜台二丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.309527777778,
+          38.4307777777778
+        ]
+      },
+      "properties": {
+        "name": "宮城県 石巻市",
+        "genre": "マンホールカード",
+        "cardId": "04-202-B001",
+        "address": "宮城県石巻市中央二丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.976472222222,
+          38.3291111111111
+        ]
+      },
+      "properties": {
+        "name": "宮城県 利府町",
+        "genre": "マンホールカード",
+        "cardId": "04-406-B001",
+        "address": "宮城県利府町加瀬"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.892055555556,
+          37.05775
+        ]
+      },
+      "properties": {
+        "name": "福島県 いわき市",
+        "genre": "マンホールカード",
+        "cardId": "07-204-E001",
+        "address": "福島県いわき市平"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.412583333333,
+          37.081
+        ]
+      },
+      "properties": {
+        "name": "福島県 浅川町",
+        "genre": "マンホールカード",
+        "cardId": "07-504-A001",
+        "address": "福島県浅川町大字浅川"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.464888888889,
+          36.3796944444444
+        ]
+      },
+      "properties": {
+        "name": "茨城県 水戸市",
+        "genre": "マンホールカード",
+        "cardId": "08-201-B001",
+        "address": "茨城県水戸市泉町一丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.978666666667,
+          36.3049166666667
+        ]
+      },
+      "properties": {
+        "name": "茨城県 筑西市",
+        "genre": "マンホールカード",
+        "cardId": "08-227-B001",
+        "address": "茨城県筑西市丙"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.804055555556,
+          36.31375
+        ]
+      },
+      "properties": {
+        "name": "栃木県 小山市",
+        "genre": "マンホールカード",
+        "cardId": "09-208-B001",
+        "address": "栃木県小山市中央町三丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.123583333333,
+          36.8621944444444
+        ]
+      },
+      "properties": {
+        "name": "栃木県 大田原市",
+        "genre": "マンホールカード",
+        "cardId": "09-210-B001",
+        "address": "栃木県大田原市黒羽田町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.921888888889,
+          36.7867222222222
+        ]
+      },
+      "properties": {
+        "name": "栃木県 矢板市",
+        "genre": "マンホールカード",
+        "cardId": "09-211-A001",
+        "address": "栃木県矢板市川崎反町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.209638888889,
+          36.6709444444444
+        ]
+      },
+      "properties": {
+        "name": "群馬県 沼田市",
+        "genre": "マンホールカード",
+        "cardId": "10-206-B001",
+        "address": "群馬県沼田市利根町老神"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.763722222222,
+          35.6931388888889
+        ]
+      },
+      "properties": {
+        "name": "東京都 東京23区",
+        "genre": "マンホールカード",
+        "cardId": "13-100-O101",
+        "address": "東京都千代田区神田錦町二丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.228888888889,
+          35.73225
+        ]
+      },
+      "properties": {
+        "name": "東京都 あきる野市",
+        "genre": "マンホールカード",
+        "cardId": "13-228-C001",
+        "address": "東京都あきる野市舘谷台"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.578055555556,
+          35.2739722222222
+        ]
+      },
+      "properties": {
+        "name": "神奈川県 葉山町",
+        "genre": "マンホールカード",
+        "cardId": "14-301-C001",
+        "address": "神奈川県葉山町堀内"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.332,
+          37.944
+        ]
+      },
+      "properties": {
+        "name": "新潟県 新発田市",
+        "genre": "マンホールカード",
+        "cardId": "15-206-D001",
+        "address": "新潟県新発田市諏訪町一丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.435472222222,
+          38.0810833333333
+        ]
+      },
+      "properties": {
+        "name": "新潟県 佐渡市",
+        "genre": "マンホールカード",
+        "cardId": "15-224-H001",
+        "address": "新潟県佐渡市両津湊"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.21375,
+          36.69575
+        ]
+      },
+      "properties": {
+        "name": "富山県 富山市",
+        "genre": "マンホールカード",
+        "cardId": "16-201-I001",
+        "address": "富山県富山市新桜町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.912416666667,
+          37.2308888888889
+        ]
+      },
+      "properties": {
+        "name": "石川県 穴水町",
+        "genre": "マンホールカード",
+        "cardId": "17-461-B001",
+        "address": "石川県穴水町字川島"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.253277777778,
+          36.4005555555556
+        ]
+      },
+      "properties": {
+        "name": "長野県 上田市",
+        "genre": "マンホールカード",
+        "cardId": "20-203-D001",
+        "address": "長野県上田市中央二丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.368083333333,
+          36.7421944444444
+        ]
+      },
+      "properties": {
+        "name": "長野県 中野市",
+        "genre": "マンホールカード",
+        "cardId": "20-211-A001",
+        "address": "長野県中野市三好町一丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.119833333333,
+          35.336
+        ]
+      },
+      "properties": {
+        "name": "岐阜県 多治見市",
+        "genre": "マンホールカード",
+        "cardId": "21-204-A001",
+        "address": "岐阜県多治見市音羽町二丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.09075,
+          35.0693055555556
+        ]
+      },
+      "properties": {
+        "name": "愛知県 みよし市",
+        "genre": "マンホールカード",
+        "cardId": "23-236-C001",
+        "address": "愛知県みよし市打越町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.534055555556,
+          34.5759444444444
+        ]
+      },
+      "properties": {
+        "name": "三重県 松阪市",
+        "genre": "マンホールカード",
+        "cardId": "24-204-F001",
+        "address": "三重県松阪市日野町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.881194444444,
+          34.9996666666667
+        ]
+      },
+      "properties": {
+        "name": "滋賀県 大津市",
+        "genre": "マンホールカード",
+        "cardId": "25-201-C001",
+        "address": "滋賀県大津市馬場二丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.597055555556,
+          34.566
+        ]
+      },
+      "properties": {
+        "name": "大阪府 藤井寺市",
+        "genre": "マンホールカード",
+        "cardId": "27-226-C001",
+        "address": "大阪府藤井寺市藤井寺三丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.792222222222,
+          34.5123055555556
+        ]
+      },
+      "properties": {
+        "name": "奈良県 橿原市",
+        "genre": "マンホールカード",
+        "cardId": "29-205-C001",
+        "address": "奈良県橿原市内膳町一丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.320972222222,
+          34.2547777777778
+        ]
+      },
+      "properties": {
+        "name": "和歌山県 岩出市",
+        "genre": "マンホールカード",
+        "cardId": "30-209-A001",
+        "address": "和歌山県岩出市高塚"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.208444444444,
+          34.5996944444444
+        ]
+      },
+      "properties": {
+        "name": "広島県 安芸太田町",
+        "genre": "マンホールカード",
+        "cardId": "34-368-A001",
+        "address": "広島県安芸太田町大字柴木"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.433,
+          34.0197222222222
+        ]
+      },
+      "properties": {
+        "name": "山口県 山口市",
+        "genre": "マンホールカード",
+        "cardId": "35-203-E001",
+        "address": "山口県山口市秋穂東"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.885888888889,
+          34.0259722222222
+        ]
+      },
+      "properties": {
+        "name": "山口県 下松市",
+        "genre": "マンホールカード",
+        "cardId": "35-207-C001",
+        "address": "山口県下松市大字河内"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.216888888889,
+          34.0327777777778
+        ]
+      },
+      "properties": {
+        "name": "山口県 岩国市",
+        "genre": "マンホールカード",
+        "cardId": "35-208-C001",
+        "address": "山口県岩国市由宇町"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.546972222222,
+          34.1255
+        ]
+      },
+      "properties": {
+        "name": "徳島県 北島町",
+        "genre": "マンホールカード",
+        "cardId": "36-402-A001",
+        "address": "徳島県北島町中村"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.856444444444,
+          34.3138333333333
+        ]
+      },
+      "properties": {
+        "name": "香川県 坂出市",
+        "genre": "マンホールカード",
+        "cardId": "37-203-B001",
+        "address": "香川県坂出市京町一丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.644805555556,
+          33.3786111111111
+        ]
+      },
+      "properties": {
+        "name": "愛媛県 西予市",
+        "genre": "マンホールカード",
+        "cardId": "38-214-B001",
+        "address": "愛媛県西予市野村町野村"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.685333333333,
+          33.6057777777778
+        ]
+      },
+      "properties": {
+        "name": "高知県 香美市",
+        "genre": "マンホールカード",
+        "cardId": "39-212-D001",
+        "address": "高知県香美市土佐山田町西本町一丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.442944444444,
+          33.569
+        ]
+      },
+      "properties": {
+        "name": "福岡県 流域下水道",
+        "genre": "マンホールカード",
+        "cardId": "40-000-B001",
+        "address": "福岡県福岡市博多区那珂四丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.517194444444,
+          33.3740555555556
+        ]
+      },
+      "properties": {
+        "name": "佐賀県 鳥栖市",
+        "genre": "マンホールカード",
+        "cardId": "41-203-A001",
+        "address": "佐賀県鳥栖市本通町一丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.740472222222,
+          32.7943888888889
+        ]
+      },
+      "properties": {
+        "name": "熊本県 熊本市",
+        "genre": "マンホールカード",
+        "cardId": "43-100-L001",
+        "address": "熊本県熊本市中央区水前寺五丁目"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.439722222222,
+          33.559
+        ]
+      },
+      "properties": {
+        "name": "大分県 豊後高田市",
+        "genre": "マンホールカード",
+        "cardId": "44-209-A001",
+        "address": "大分県豊後高田市新町"
       }
     }
   ]
