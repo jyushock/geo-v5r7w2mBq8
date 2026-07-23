@@ -188,8 +188,8 @@
         #toggle-layers-btn.pressed,
         #toggle-layers-btn:active  { background-color: rgba(180, 180, 180, 0.9); }
 
-        /* カプセル内の各ボタン */
-        #zoom-in-btn, #zoom-out-btn, #hist-nav-btn {
+        /* カプセル内の各ボタン（＋－の2段に復帰） */
+        #zoom-in-btn, #zoom-out-btn {
             width: 48px;
             height: 48px;
             background-color: transparent;
@@ -208,21 +208,46 @@
             user-select: none;
             -webkit-touch-callout: none;
         }
-        #zoom-in-btn, #hist-nav-btn {
+        #zoom-in-btn {
             border-bottom: 1px solid rgba(0, 0, 0, 0.15);
         }
-        #zoom-in-btn:active, #zoom-out-btn:active,
-        #hist-nav-btn:active:not(:disabled) {
+        #zoom-in-btn:active, #zoom-out-btn:active {
             background-color: rgba(0, 0, 0, 0.08);
         }
+
+        /* 移動履歴ボタン（目隠し／北リセットと同仕様の丸ボタンとして独立配置） */
+        #hist-nav-btn {
+            position: fixed;
+            right: 10px;
+            bottom: 194px; /* ズームカプセル上端(90+96)+8pxのgap */
+            z-index: 200;
+            width: 44px;
+            height: 44px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            color: #333;
+            touch-action: manipulation;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+        }
+        #hist-nav-btn:hover:not(:disabled) { background-color: rgba(255,255,255,1); }
+        #hist-nav-btn:active:not(:disabled) { background-color: rgba(180, 180, 180, 0.9); }
         #hist-nav-btn:disabled { color: #c5c5c5; cursor: default; }
 
-        /* 移動履歴リストポップアップ（中央ボタン長押しで表示） */
+        /* 移動履歴リストポップアップ（丸ボタン長押しで表示） */
         #hist-list-popup {
             display: none;
             position: fixed;
             right: 10px;
-            bottom: 244px; /* カプセル上端(90+144)+10px */
+            bottom: 246px; /* 丸ボタン上端(194+44)+8px */
             z-index: 250;
             width: 220px;
             background: #fff;
@@ -247,7 +272,7 @@
         #hist-list-popup .hist-name { font-size: 12px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         #hist-list-popup .hist-meta { font-size: 10px; color: #999; margin-top: 1px; }
         #hist-list-popup::after {
-            content: ''; position: absolute; bottom: -6px; right: 28px; width: 12px; height: 12px;
+            content: ''; position: absolute; bottom: -6px; right: 26px; width: 12px; height: 12px;
             background: #fff; transform: rotate(45deg); box-shadow: 3px 3px 6px rgba(0,0,0,0.08);
         }
         .hamburger-icon {
@@ -818,11 +843,11 @@
         </svg>
     </button>
 </div>
+<button id="hist-nav-btn" title="ひとつ前に戻る（長押しで履歴）" disabled>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11a9 9 0 1 1 2.2 5.9"/><polyline points="3 5 3 11 9 11"/></svg>
+</button>
 <div id="zoom-btn-wrap">
     <button id="zoom-in-btn" title="ズームイン">+</button>
-    <button id="hist-nav-btn" title="ひとつ前に戻る（長押しで履歴）" disabled>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11a9 9 0 1 1 2.2 5.9"/><polyline points="3 5 3 11 9 11"/></svg>
-    </button>
     <button id="zoom-out-btn" title="ズームアウト">-</button>
 </div>
 <div id="hist-list-popup"></div>
