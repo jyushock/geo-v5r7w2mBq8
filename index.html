@@ -265,6 +265,9 @@
         #hist-list-popup .hist-ico { font-size: 14px; flex-shrink: 0; }
         #hist-list-popup .hist-ico-type { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; color: white; flex-shrink: 0; }
         #hist-list-popup .hist-ico-type img { width: 13px; height: 13px; object-fit: contain; filter: brightness(0) invert(1); }
+        #hist-list-popup .hist-ico-cause { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; }
+        #hist-list-popup .hist-ico-cause svg { width: 13px; height: 13px; }
+        #hist-list-popup .hist-ico-cause img { width: 12px; height: 12px; object-fit: contain; }
         #hist-list-popup .hist-ico-mhcard { position: relative; width: 22px; height: 22px; flex-shrink: 0; background: #e2ddd4; border-radius: 6px; overflow: hidden; }
         #hist-list-popup .hist-ico-mhcard-main { width: 100%; height: 100%; object-fit: cover; display: block; }
         #hist-list-popup .hist-ico-mhcard-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 9px; height: 9px; filter: brightness(0) invert(1); pointer-events: none; }
@@ -486,7 +489,7 @@
             padding: 0 12px;
             height: 52px;
         }
-        #search-icon { color: #9E9E9E; font-size: 16px; margin-right: 8px; flex-shrink: 0; }
+        #search-icon { color: #9E9E9E; margin-right: 8px; flex-shrink: 0; display: flex; align-items: center; }
         #search-input {
             flex: 1;
             border: none;
@@ -855,7 +858,7 @@
 <div id="bottom-bar">
     <div id="search-container">
         <div id="search-box">
-            <span id="search-icon">🔍</span>
+            <span id="search-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"/><line x1="14.24" y1="14.24" x2="20" y2="20"/></svg></span>
             <input id="search-input" type="text" autocomplete="off" />
             <span id="search-spinner" style="display:none;width:16px;height:16px;border:2px solid #ddd;border-top-color:#4285F4;border-radius:50%;animation:spin 0.6s linear infinite;flex-shrink:0;"></span>
             <button id="search-clear">×</button>
@@ -1319,13 +1322,27 @@
         map.easeTo({ center: [e.lng, e.lat], zoom: e.zoom, bearing: 0, pitch: 0, duration: 550, essential: true });
     }
 
-    const HIST_ICONS  = { init: '🚩', search: '🔍', pin: '📍', geo: '🧭', move: '🖐' };
     const HIST_CAUSES = { init: '開始地点', search: '検索', pin: 'ピン選択', geo: '現在地', move: '地図移動' };
+
+    // init/search/move用の線画アイコン（丸背景＋白線で種別色ピン(hist-ico-type)と統一）
+    const HIST_ICON_SVG = {
+        search: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"/><line x1="14.24" y1="14.24" x2="20" y2="20"/></svg>',
+        move:   '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><polyline points="8 6 12 2 16 6"/><polyline points="8 18 12 22 16 18"/><polyline points="6 8 2 12 6 16"/><polyline points="18 8 22 12 18 16"/></svg>',
+        init:   '<svg viewBox="0 0 24 24" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#fff"><line x1="6" y1="3" x2="6" y2="21" stroke-width="2"/><path d="M6 4 L18 4 L14 8 L18 12 L6 12 Z"/></svg>',
+    };
+    const HIST_ICON_COLOR = { search: '#4285F4', move: '#F4B400', init: '#00796B' };
+    // geo（現在地）は地図長押しピン設置（search-pin-icon）と同じマーカーSVGを流用
+    const HIST_GEO_PIN_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 36"><path d="M14 0C7.4 0 2 5.4 2 12c0 8.4 12 24 12 24s12-15.6 12-24C26 5.4 20.6 0 14 0z" fill="#F44336"/><circle cx="14" cy="12" r="5" fill="white" opacity="0.9"/></svg>';
 
     // ピン選択エントリはオブジェクト種別ごとのアイコン（検索結果ドロップダウンと同じ画像）を優先表示
     function histIconHtml(e) {
         const cfg = e.cause === 'pin' && e.objType ? typeConfig[e.objType] : null;
-        if (!cfg) return `<span class="hist-ico">${HIST_ICONS[e.cause] || '📍'}</span>`;
+        if (!cfg) {
+            if (e.cause === 'geo') return `<div class="hist-ico-cause" style="background:#fce8e6;"><img src="data:image/svg+xml;utf8,${encodeURIComponent(HIST_GEO_PIN_SVG)}"></div>`;
+            const svg = HIST_ICON_SVG[e.cause];
+            if (svg) return `<div class="hist-ico-cause" style="background:${HIST_ICON_COLOR[e.cause]}">${svg}</div>`;
+            return `<span class="hist-ico">📍</span>`;
+        }
         if (e.objType === 'mhcard') {
             return `<div class="hist-ico-mhcard"><img class="hist-ico-mhcard-main" src="mhcard.png"><img class="hist-ico-mhcard-overlay" src="manhole.png"></div>`;
         }
