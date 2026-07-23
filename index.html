@@ -1812,6 +1812,15 @@ async function fetchCastleImage(castleName, kojodanUrl, shiroHbUrl) {
 // が無いケース）は判定不能なので、ボタンを消さない方針（誤って開かれるより出ないことを
 // 避ける、というユーザー判断）によりフォールバック候補として保持し、座標一致が
 // 無ければ採用する。座標はあるが閾値を超えて離れている記事は明確に無関係と判断し除外する。
+//
+// 【重要】候補(pages)はcandidatesの順序ではなく、APIレスポンスのpages連想配列のキー(pageid)
+// 順に返ってくる。JSではObject.values()で整数キーは数値昇順に自動ソートされるため、
+// 例えば千葉の佐貫城(aliases:「亀城」「亀ヶ城」)では、aliasesが全く無関係な記事
+// （亀城→中国の「亀城市」、亀ヶ城→福島の「猪苗代城」）にリダイレクトされてしまっており、
+// かつそれらの記事にも座標情報が無いため、pageid最小の「猪苗代城」が本来の「佐貫城」より
+// 先にフォールバック採用され、無関係なページに遷移する実害を確認した(2026-07-24)。
+// candidates配列の順序（castleName自身を最優先、aliasesは補完）通りに評価するよう、
+// redirectsマッピングでcandidateごとの解決先ページを個別に引いてから順序を組み直す。
 const wikiExistsCache = {};
 const WIKI_COORD_MATCH_THRESHOLD_KM = 5;
 
@@ -1827,14 +1836,29 @@ async function resolveWikipediaTitle(castleName, aliases, lat, lng) {
         const apiUrl = `https://ja.wikipedia.org/w/api.php?action=query&format=json&redirects=1&prop=coordinates&titles=${encodeURIComponent(candidates.join('|'))}&origin=*`;
         const res = await fetch(apiUrl);
         const data = await res.json();
-        const pages = Object.values(data.query.pages || {});
-        const existing = pages.filter(pg => pg.pageid !== undefined && pg.missing === undefined);
+
+        // candidate(元の表記) → 実際に解決されたページタイトル、のマッピングを作る
+        const redirectMap = {};
+        (data.query.redirects || []).forEach(r => { redirectMap[r.from] = r.to; });
+        const pagesByTitle = {};
+        Object.values(data.query.pages || {}).forEach(pg => {
+            if (pg.pageid !== undefined && pg.missing === undefined) pagesByTitle[pg.title] = pg;
+        });
+
+        // candidatesの順序（castleName最優先）通りに解決済みページを並べ直す（重複除去）
+        const orderedPages = [];
+        const seenPageIds = new Set();
+        for (const cand of candidates) {
+            const resolvedTitle = redirectMap[cand] || cand;
+            const pg = pagesByTitle[resolvedTitle];
+            if (pg && !seenPageIds.has(pg.pageid)) { orderedPages.push(pg); seenPageIds.add(pg.pageid); }
+        }
 
         let result = null;
         const hasCoord = typeof lat === 'number' && typeof lng === 'number';
         if (hasCoord) {
             let fallback = null;
-            for (const pg of existing) {
+            for (const pg of orderedPages) {
                 const pc = pg.coordinates && pg.coordinates[0];
                 if (pc) {
                     const d = calcDist(lat, lng, pc.lat, pc.lon);
@@ -1847,7 +1871,7 @@ async function resolveWikipediaTitle(castleName, aliases, lat, lng) {
             if (result === null) result = fallback;
         } else {
             // 呼び出し側で座標が渡せない場合は従来通り名前一致のみで判定
-            result = existing.length > 0 ? existing[0].title : null;
+            result = orderedPages.length > 0 ? orderedPages[0].title : null;
         }
 
         wikiExistsCache[cacheKey] = result;
