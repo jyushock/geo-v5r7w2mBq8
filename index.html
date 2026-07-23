@@ -2715,6 +2715,23 @@ map.on('zoomend', () => { isZooming = false; });
     // ══════════════════════════════════════════════════════════════
     //  検索機能
     // ══════════════════════════════════════════════════════════════
+    // カタカナ→ひらがな変換。NFKCで全角/半角（英数字・半角カナ）を先に統一してから適用する
+    function toHiragana(str) {
+        return str.replace(/[ァ-ヶ]/g, ch => String.fromCharCode(ch.charCodeAt(0) - 0x60));
+    }
+    function normalizeForSearch(str) {
+        if (!str) return '';
+        return toHiragana(str.normalize('NFKC')).toLowerCase();
+    }
+    // 完全一致=100 / 前方一致=80 / 部分一致=50 / 不一致=0（text・qは正規化済み前提）
+    function matchScore(text, q) {
+        if (!text || !q) return 0;
+        if (text === q) return 100;
+        if (text.startsWith(q)) return 80;
+        if (text.includes(q)) return 50;
+        return 0;
+    }
+
     let searchIndex = [];
     function buildSearchIndex() {
         searchIndex = [];
@@ -2729,7 +2746,12 @@ map.on('zoomend', () => { isZooming = false; });
         ];
         sources.forEach(s => {
             if (s.data && s.data.features) s.data.features.forEach(f => {
-                searchIndex.push({ type: s.type, label: f.properties[s.labelKey] || '', sub: s.sub || f.properties[s.subKey] || '', coords: f.geometry.coordinates, properties: f.properties });
+                const label = f.properties[s.labelKey] || '';
+                const sub = s.sub || f.properties[s.subKey] || '';
+                searchIndex.push({
+                    type: s.type, label, sub, coords: f.geometry.coordinates, properties: f.properties,
+                    _normLabel: normalizeForSearch(label), _normSub: normalizeForSearch(sub)
+                });
             });
         });
     }
@@ -2753,33 +2775,40 @@ map.on('zoomend', () => { isZooming = false; });
     }
 
     function searchLocal(query) {
-        const q = query.toLowerCase();
+        const q = normalizeForSearch(query);
         const typeToFilter = {
             shop: 'shop', castle: 'castle', michi: 'michi',
             manhole: 'manhole', pokefuta: 'manhole', mhcard: 'mhcard'
         };
-        // 周辺検索・天気と同じ基準点からの距離で近い順に並べ、上位100件を返す
+        // 一致度（完全一致>前方一致>部分一致、alias一致は減点）を優先し、同スコア内は
+        // 周辺検索・天気と同じ基準点からの距離が近い順に並べて上位100件を返す
         const center = getSearchCenter();
         const matched = [];
         for (const item of searchIndex) {
             const filterKey = typeToFilter[item.type];
             if (filterKey && filterState[filterKey] === false) continue;
-            const label = item.label ? item.label.toLowerCase() : '';
-            const sub   = item.sub   ? item.sub.toLowerCase()   : '';
-            if (label.includes(q) || sub.includes(q)) {
-                matched.push({ ...item, _matchedAlias: null });
+            const labelScore = matchScore(item._normLabel, q);
+            const subScore = matchScore(item._normSub, q);
+            if (labelScore > 0 || subScore > 0) {
+                matched.push({ ...item, _matchedAlias: null, _score: Math.max(labelScore, subScore * 0.5) });
                 continue;
             }
             const aliases = item.properties && item.properties.aliases;
-            const hitAlias = aliases && aliases.find(a => a.toLowerCase().includes(q));
-            if (hitAlias) matched.push({ ...item, _matchedAlias: hitAlias });
+            if (Array.isArray(aliases)) {
+                let bestScore = 0, bestAlias = null;
+                for (const a of aliases) {
+                    const s = matchScore(normalizeForSearch(a), q);
+                    if (s > bestScore) { bestScore = s; bestAlias = a; }
+                }
+                if (bestAlias) matched.push({ ...item, _matchedAlias: bestAlias, _score: bestScore * 0.6 });
+            }
         }
         return matched.map(item => ({
             ...item,
             _dist: (item.coords && item.coords.length >= 2)
                 ? calcDist(center.lat, center.lng, item.coords[1], item.coords[0])
                 : Infinity
-        })).sort((a, b) => a._dist - b._dist).slice(0, 100);
+        })).sort((a, b) => (b._score - a._score) || (a._dist - b._dist)).slice(0, 100);
     }
     
     let geocodeTimer = null, searchRequestId = 0;
@@ -2942,7 +2971,13 @@ map.on('zoomend', () => { isZooming = false; });
         } catch (e) { return null; }
     }
 
+    // IME変換確定前（未確定文字列）で毎打鍵検索が走らないようにするガード。
+    // compositionend後はブラウザが input イベントを発火するため、そこで確定文字列の検索が動く
+    let isComposing = false;
+    document.getElementById('search-input').addEventListener('compositionstart', () => { isComposing = true; });
+    document.getElementById('search-input').addEventListener('compositionend', () => { isComposing = false; });
     document.getElementById('search-input').addEventListener('input', async (e) => {
+        if (isComposing) return;
         const q = e.target.value.trim();
         document.getElementById('search-clear').style.display = q ? 'block' : 'none';
         document.getElementById('search-results').style.display = q ? 'block' : 'none';
