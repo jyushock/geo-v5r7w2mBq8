@@ -129,22 +129,20 @@
             100% { background: #f9f9f9; }
         }
         #nearby-search-origin.flash { animation: originFlash 0.7s ease-out; }
-        /* 十字パッド（ズーム＋移動履歴） */
+        /* ズーム＋移動履歴ボタン（縦カプセル） */
         #zoom-btn-wrap {
             position: fixed;
             right: 10px;
             bottom: 90px;
-            width: 144px;
-            height: 144px;
             z-index: 200;
-            pointer-events: none; /* 四隅の空き領域は地図操作を通す */
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 24px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+            overflow: hidden;
             touch-action: manipulation; /* iOSでのダブルタップズームを無効化 */
         }
-        /* 十字形の背景（縦ピル＋左右の腕。重ねず並べて透過ムラを防ぐ） */
-        #dpad-bg { position: absolute; inset: 0; filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2)); pointer-events: none; }
-        #dpad-bg .dpad-v { position: absolute; left: 48px; top: 0; width: 48px; height: 144px; background: rgba(255,255,255,0.7); border-radius: 24px; }
-        #dpad-bg .dpad-l { position: absolute; left: 0; top: 48px; width: 48px; height: 48px; background: rgba(255,255,255,0.7); border-radius: 24px 0 0 24px; }
-        #dpad-bg .dpad-r { position: absolute; right: 0; top: 48px; width: 48px; height: 48px; background: rgba(255,255,255,0.7); border-radius: 0 24px 24px 0; }
         #toggle-layers-btn-wrap {
             position: fixed;
             top: 10px; /* 右上に配置 */
@@ -190,14 +188,13 @@
         #toggle-layers-btn.pressed,
         #toggle-layers-btn:active  { background-color: rgba(180, 180, 180, 0.9); }
 
-        /* 十字パッドの各ボタン */
-        #zoom-in-btn, #zoom-out-btn, #hist-back-btn, #hist-fwd-btn {
-            position: absolute;
+        /* カプセル内の各ボタン */
+        #zoom-in-btn, #zoom-out-btn, #hist-nav-btn {
             width: 48px;
             height: 48px;
             background-color: transparent;
             border: none;
-            border-radius: 50%;
+            border-radius: 0;
             box-shadow: none;
             cursor: pointer;
             font-size: 24px;
@@ -206,28 +203,26 @@
             align-items: center;
             justify-content: center;
             padding: 0;
-            pointer-events: auto;
             touch-action: manipulation;
             -webkit-user-select: none;
             user-select: none;
             -webkit-touch-callout: none;
         }
-        #zoom-in-btn   { top: 0;    left: 48px; }
-        #zoom-out-btn  { bottom: 0; left: 48px; }
-        #hist-back-btn { left: 0;   top: 48px; }
-        #hist-fwd-btn  { right: 0;  top: 48px; }
+        #zoom-in-btn, #hist-nav-btn {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+        }
         #zoom-in-btn:active, #zoom-out-btn:active,
-        #hist-back-btn:active:not(:disabled), #hist-fwd-btn:active:not(:disabled) {
+        #hist-nav-btn:active:not(:disabled) {
             background-color: rgba(0, 0, 0, 0.08);
         }
-        #hist-back-btn:disabled, #hist-fwd-btn:disabled { color: #c5c5c5; cursor: default; }
+        #hist-nav-btn:disabled { color: #c5c5c5; cursor: default; }
 
-        /* 移動履歴リストポップアップ（＜＞長押しで表示） */
+        /* 移動履歴リストポップアップ（中央ボタン長押しで表示） */
         #hist-list-popup {
             display: none;
             position: fixed;
             right: 10px;
-            bottom: 244px; /* 十字パッド上端(90+144)+10px */
+            bottom: 244px; /* カプセル上端(90+144)+10px */
             z-index: 250;
             width: 220px;
             background: #fff;
@@ -239,6 +234,9 @@
         #hist-list-popup .hist-item { display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-top: 1px solid #f2f2f2; cursor: pointer; }
         #hist-list-popup .hist-item:last-child { border-radius: 0 0 12px 12px; }
         #hist-list-popup .hist-item:hover { background: #f9f9f9; }
+        #hist-list-popup .hist-item.hist-cur { background: #f5f8ff; cursor: default; }
+        #hist-list-popup .hist-item.hist-future { opacity: 0.55; }
+        #hist-list-popup .hist-cur-tag { color: #4285f4; font-weight: normal; }
         #hist-list-popup .hist-ico { font-size: 14px; flex-shrink: 0; }
         #hist-list-popup .hist-ico-type { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; color: white; flex-shrink: 0; }
         #hist-list-popup .hist-ico-type img { width: 13px; height: 13px; object-fit: contain; filter: brightness(0) invert(1); }
@@ -249,11 +247,9 @@
         #hist-list-popup .hist-name { font-size: 12px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         #hist-list-popup .hist-meta { font-size: 10px; color: #999; margin-top: 1px; }
         #hist-list-popup::after {
-            content: ''; position: absolute; bottom: -6px; width: 12px; height: 12px;
+            content: ''; position: absolute; bottom: -6px; right: 28px; width: 12px; height: 12px;
             background: #fff; transform: rotate(45deg); box-shadow: 3px 3px 6px rgba(0,0,0,0.08);
         }
-        #hist-list-popup.anchor-back::after { right: 124px; } /* ＜ボタンの真上 */
-        #hist-list-popup.anchor-fwd::after  { right: 28px; }  /* ＞ボタンの真上 */
         .hamburger-icon {
             display: flex; flex-direction: column; gap: 4px;
             width: 18px;
@@ -823,15 +819,11 @@
     </button>
 </div>
 <div id="zoom-btn-wrap">
-    <div id="dpad-bg"><div class="dpad-v"></div><div class="dpad-l"></div><div class="dpad-r"></div></div>
     <button id="zoom-in-btn" title="ズームイン">+</button>
+    <button id="hist-nav-btn" title="ひとつ前に戻る（長押しで履歴）" disabled>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11a9 9 0 1 1 2.2 5.9"/><polyline points="3 5 3 11 9 11"/></svg>
+    </button>
     <button id="zoom-out-btn" title="ズームアウト">-</button>
-    <button id="hist-back-btn" title="ひとつ前に戻る（長押しで履歴）" disabled>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-    </button>
-    <button id="hist-fwd-btn" title="ひとつ先へ進む（長押しで履歴）" disabled>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
 </div>
 <div id="hist-list-popup"></div>
 
@@ -1281,9 +1273,11 @@
         histCheckManualMove();
     }
 
+    // ボタン自体は「前後どちらにも移動先が無い」時だけ無効化。
+    // タップ動作（戻る）はhistIndex<=0の時にhistGoTo側でno-opになるだけで、
+    // 「進むだけ可能」な状態でも長押しで履歴を開けるようにする。
     function updateHistButtons() {
-        document.getElementById('hist-back-btn').disabled = histIndex <= 0;
-        document.getElementById('hist-fwd-btn').disabled  = histIndex >= mapHistory.length - 1;
+        document.getElementById('hist-nav-btn').disabled = mapHistory.length <= 1;
     }
 
     function histGoTo(idx) {
@@ -1326,17 +1320,22 @@
         return String(s).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
     }
 
-    function openHistList(dir) {
-        const items = dir < 0
-            ? mapHistory.slice(0, histIndex).map((e, i) => ({ e, idx: i })).reverse()
-            : mapHistory.slice(histIndex + 1).map((e, i) => ({ e, idx: histIndex + 1 + i }));
-        if (!items.length) return;
-        const visible = items.slice(0, 10);
+    // 現在地点を境に、上＝戻れる場所（直近優先）／下＝進める場所（direct順）を1つのリストに統合表示
+    function openHistList() {
+        if (mapHistory.length <= 1) return;
+        const BEFORE = 6, AFTER = 4;
+        const start = Math.max(0, histIndex - BEFORE);
+        const end = Math.min(mapHistory.length - 1, histIndex + AFTER);
+        const visible = [];
+        for (let idx = end; idx >= start; idx--) visible.push({ e: mapHistory[idx], idx });
+
         const pop = document.getElementById('hist-list-popup');
-        pop.innerHTML = `<div class="hist-hdr">${dir < 0 ? '◀ 戻る' : '▶ 進む'}</div>` + visible.map(({ e, idx }) =>
-            `<div class="hist-item" data-idx="${idx}">${histIconHtml(e)}<div class="hist-txt"><div class="hist-name">${histEscape(e.addr || e.label)}</div><div class="hist-meta">${histTimeAgo(e.time)}・${HIST_CAUSES[e.cause] || ''}</div></div></div>`).join('');
-        pop.classList.remove('anchor-back', 'anchor-fwd');
-        pop.classList.add(dir < 0 ? 'anchor-back' : 'anchor-fwd');
+        pop.innerHTML = `<div class="hist-hdr">移動履歴</div>` + visible.map(({ e, idx }) => {
+            const isCur = idx === histIndex;
+            const cls = isCur ? ' hist-cur' : (idx > histIndex ? ' hist-future' : '');
+            const curTag = isCur ? ' <span class="hist-cur-tag">● 現在地点</span>' : '';
+            return `<div class="hist-item${cls}" data-idx="${idx}">${histIconHtml(e)}<div class="hist-txt"><div class="hist-name">${histEscape(e.addr || e.label)}${curTag}</div><div class="hist-meta">${histTimeAgo(e.time)}・${HIST_CAUSES[e.cause] || ''}</div></div></div>`;
+        }).join('');
         pop.style.display = 'block';
         histFetchAddrs(visible.map(v => v.e));
     }
@@ -1377,33 +1376,32 @@
         document.getElementById('hist-list-popup').style.display = 'none';
     }
 
-    // ＜＞ボタン：タップで1段移動、長押し(500ms)で履歴リスト
-    function setupHistButton(btnId, dir) {
+    // 中央ボタン：タップでひとつ前に戻る、長押し(500ms)で移動履歴リスト
+    function setupHistButton(btnId) {
         const btn = document.getElementById(btnId);
         let timer = null;
         btn.addEventListener('pointerdown', (e) => {
             e.preventDefault();
             if (btn.disabled) return;
-            timer = setTimeout(() => { timer = null; openHistList(dir); }, 500);
+            timer = setTimeout(() => { timer = null; openHistList(); }, 500);
         });
         btn.addEventListener('pointerup', () => {
-            if (timer) { clearTimeout(timer); timer = null; histGoTo(histIndex + dir); }
+            if (timer) { clearTimeout(timer); timer = null; histGoTo(histIndex - 1); }
         });
         const cancelPress = () => { clearTimeout(timer); timer = null; };
         btn.addEventListener('pointerleave', cancelPress);
         btn.addEventListener('pointercancel', cancelPress);
         btn.addEventListener('contextmenu', (e) => e.preventDefault());
     }
-    setupHistButton('hist-back-btn', -1);
-    setupHistButton('hist-fwd-btn', 1);
+    setupHistButton('hist-nav-btn');
 
     document.getElementById('hist-list-popup').addEventListener('click', (e) => {
         const row = e.target.closest('.hist-item');
         if (row) histGoTo(Number(row.dataset.idx));
     });
-    // リスト外タップで閉じる（＜＞ボタン上のタップは長押し直後のclickを無視するため除外）
+    // リスト外タップで閉じる（中央ボタン上のタップは長押し直後のclickを無視するため除外）
     document.addEventListener('click', (e) => {
-        if (e.target.closest('#hist-list-popup') || e.target.closest('#hist-back-btn') || e.target.closest('#hist-fwd-btn')) return;
+        if (e.target.closest('#hist-list-popup') || e.target.closest('#hist-nav-btn')) return;
         closeHistList();
     });
 
