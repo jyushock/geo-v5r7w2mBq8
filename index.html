@@ -1804,20 +1804,52 @@ async function fetchCastleImage(castleName, kojodanUrl, shiroHbUrl) {
 // name単独だとWikipediaの正式タイトルと不一致で誤って「記事なし」判定になるケースがあるため
 // （例:「上之国館」はmissingだが、aliases由来の「上之国勝山館跡」はリダイレクトで実在記事「勝山館」に解決）、
 // name + aliasesを候補としてtitlesに一括指定し、redirects=1でリダイレクトも解決した上で判定する。
-// いずれかがmissingでなければ、その実在タイトルをリンク先として採用する。
+//
+// 名前だけでは同名の無関係な記事（例: 茨城の館山城 vs 千葉の館山城）にヒットしうるため、
+// prop=coordinatesで記事側の座標も取得し、城のcastle.js側座標(lat/lng)と突き合わせる
+// (2026-07-24追加。閾値5kmはGetTabelog側の別名同定処理と同じ基準に合わせた)。
+// 座標が近い候補があれば最優先で採用する。座標情報がない記事（Infoboxに座標テンプレート
+// が無いケース）は判定不能なので、ボタンを消さない方針（誤って開かれるより出ないことを
+// 避ける、というユーザー判断）によりフォールバック候補として保持し、座標一致が
+// 無ければ採用する。座標はあるが閾値を超えて離れている記事は明確に無関係と判断し除外する。
 const wikiExistsCache = {};
+const WIKI_COORD_MATCH_THRESHOLD_KM = 5;
 
-async function resolveWikipediaTitle(castleName, aliases) {
-    const cacheKey = castleName;
+async function resolveWikipediaTitle(castleName, aliases, lat, lng) {
+    // 座標を判定に使うため、キャッシュキーにも座標を含める。座標なしで同名の城が
+    // 複数箇所にある場合（例:「堀城」）、名前だけをキーにすると片方の判定結果が
+    // 無関係な別の場所の同名城にも誤って適用されてしまうため。
+    const cacheKey = (typeof lat === 'number' && typeof lng === 'number')
+        ? `${castleName}:${lat.toFixed(4)}:${lng.toFixed(4)}` : castleName;
     if (wikiExistsCache[cacheKey] !== undefined) return wikiExistsCache[cacheKey];
     try {
         const candidates = [castleName, ...(Array.isArray(aliases) ? aliases : [])].slice(0, 10);
-        const apiUrl = `https://ja.wikipedia.org/w/api.php?action=query&format=json&redirects=1&titles=${encodeURIComponent(candidates.join('|'))}&origin=*`;
+        const apiUrl = `https://ja.wikipedia.org/w/api.php?action=query&format=json&redirects=1&prop=coordinates&titles=${encodeURIComponent(candidates.join('|'))}&origin=*`;
         const res = await fetch(apiUrl);
         const data = await res.json();
         const pages = Object.values(data.query.pages || {});
-        const found = pages.find(pg => pg.pageid !== undefined && pg.missing === undefined);
-        const result = found ? found.title : null;
+        const existing = pages.filter(pg => pg.pageid !== undefined && pg.missing === undefined);
+
+        let result = null;
+        const hasCoord = typeof lat === 'number' && typeof lng === 'number';
+        if (hasCoord) {
+            let fallback = null;
+            for (const pg of existing) {
+                const pc = pg.coordinates && pg.coordinates[0];
+                if (pc) {
+                    const d = calcDist(lat, lng, pc.lat, pc.lon);
+                    if (d <= WIKI_COORD_MATCH_THRESHOLD_KM) { result = pg.title; break; }
+                    // 座標があるが閾値超え: 無関係と判断し不採用（何もしない）
+                } else if (fallback === null) {
+                    fallback = pg.title; // 座標なし: 判定不能なのでフォールバック候補として保持
+                }
+            }
+            if (result === null) result = fallback;
+        } else {
+            // 呼び出し側で座標が渡せない場合は従来通り名前一致のみで判定
+            result = existing.length > 0 ? existing[0].title : null;
+        }
+
         wikiExistsCache[cacheKey] = result;
         return result;
     } catch (_) {
@@ -1829,7 +1861,7 @@ async function resolveWikipediaTitle(castleName, aliases) {
 // 城ポップアップの情報源ボタン（Wikipedia・攻城団・城郭放浪記）表示を非同期で制御する。
 // 攻城団・城郭放浪記はHTML生成時点でp.url/p.shiroHbUrlの有無から確定済み（暫定レイアウト済み）だが、
 // Wikipediaは記事存在確認が非同期のため、確定後にsource-btns領域全体をbuildSourceButtons()で再構築する。
-async function injectWikiButtonState(popup, castleName, aliases, kojodanUrl, shirohbUrl) {
+async function injectWikiButtonState(popup, castleName, aliases, kojodanUrl, shirohbUrl, lat, lng) {
     const el = popup.getElement ? popup.getElement() : null;
     if (!el) return;
     const slot = el.querySelector('.source-btns');
@@ -1838,7 +1870,7 @@ async function injectWikiButtonState(popup, castleName, aliases, kojodanUrl, shi
     if (typeof aliases === 'string') {
         try { aliases = JSON.parse(aliases); } catch { aliases = null; }
     }
-    const resolvedTitle = await resolveWikipediaTitle(castleName, aliases);
+    const resolvedTitle = await resolveWikipediaTitle(castleName, aliases, lat, lng);
     const wikiHref = resolvedTitle ? `https://ja.wikipedia.org/wiki/${encodeURIComponent(resolvedTitle)}` : '';
     slot.innerHTML = buildSourceButtons(wikiHref, kojodanUrl, shirohbUrl);
     // ボタン数の増減で高さが変わり得るため画面内補正をかけ直す
@@ -2690,7 +2722,7 @@ map.on('zoomend', () => { isZooming = false; });
                     const popup = new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
                     applyClampMarkers(popup);
                     ensurePopupInView(popup);
-                    if (conf.type === 'castle') { injectCastleImage(popup, p.name, p.url, p.shiroHbUrl); injectWikiButtonState(popup, p.name, p.aliases, p.url, p.shiroHbUrl); }
+                    if (conf.type === 'castle') { injectCastleImage(popup, p.name, p.url, p.shiroHbUrl); injectWikiButtonState(popup, p.name, p.aliases, p.url, p.shiroHbUrl, c[1], c[0]); }
                     const histType = (conf.type === 'manhole' && p.source === 'pokefuta') ? 'pokefuta' : conf.type;
                     histRecordPin(p.name || p.pokemon || '地点', c, histType, p);
                 });
@@ -2908,7 +2940,7 @@ map.on('zoomend', () => { isZooming = false; });
         const popup2 = new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
         applyClampMarkers(popup2);
         ensurePopupInView(popup2); // 検索経由はeaseTo中のためmoveend後に測定される
-        if (item.type === 'castle') { injectCastleImage(popup2, item.label, p.url, p.shiroHbUrl); injectWikiButtonState(popup2, item.label, p.aliases, p.url, p.shiroHbUrl); }
+        if (item.type === 'castle') { injectCastleImage(popup2, item.label, p.url, p.shiroHbUrl); injectWikiButtonState(popup2, item.label, p.aliases, p.url, p.shiroHbUrl, c[1], c[0]); }
     }
 
     function clearSearch() {
