@@ -344,7 +344,7 @@
             white-space: nowrap;
         }
         .filter-chip input { width: 11px; height: 11px; margin: 0; }
-        .popup-card { width: 180px; padding: 7px; font-family: sans-serif; }
+        .popup-card { width: 180px; padding: 6px 8px; font-family: sans-serif; }
         .popup-title-row { display: flex; align-items: center; gap: 5px; margin-bottom: 2px; }
         .popup-title { font-weight: bold; font-size: 14px; }
         .popup-genre { font-size: 11px; color: #666; display: block; margin-bottom: 5px; }
@@ -458,7 +458,9 @@
         /* 画面内補正(ensurePopupInView)の保険: ポップアップ自体が画面より大きいと
            どこへ動かしても収まらないため、高さに上限を設けて超過分は内部スクロールにする。
            通常の端末・内容ではこの上限に達しないため見た目は変わらない。 */
-        .maplibregl-popup-content { max-height: calc(100svh - 48px); overflow-y: auto; }
+        /* MapLibre標準padding(15px 10px)は.popup-card側のpaddingと二重になるため0にし、
+           余白の制御を.popup-card側に一本化する(案3: 上下6px・左右8px)。 */
+        .maplibregl-popup-content { max-height: calc(100svh - 48px); overflow-y: auto; padding: 0; }
 
 
         /* 下部バー */
