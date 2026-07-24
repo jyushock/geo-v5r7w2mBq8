@@ -263,8 +263,8 @@
         #hist-list-popup .hist-item.hist-future { opacity: 0.55; }
         #hist-list-popup .hist-cur-tag { color: #4285f4; font-weight: normal; }
         #hist-list-popup .hist-ico { font-size: 14px; flex-shrink: 0; }
-        #hist-list-popup .hist-ico-type { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; color: white; flex-shrink: 0; }
-        #hist-list-popup .hist-ico-type img { width: 13px; height: 13px; object-fit: contain; filter: brightness(0) invert(1); }
+        #hist-list-popup .hist-ico-type { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; color: white; flex-shrink: 0; }
+        #hist-list-popup .hist-ico-type img { width: 25px; height: 25px; object-fit: contain; filter: brightness(0) invert(1); }
         #hist-list-popup .hist-ico-cause { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; }
         #hist-list-popup .hist-ico-cause svg { width: 13px; height: 13px; }
         #hist-list-popup .hist-ico-cause img { width: 12px; height: 12px; object-fit: contain; }
@@ -549,7 +549,7 @@
         .search-result-item:last-child { border-bottom: none; }
         .search-result-item:hover { background: #f9f9f9; }
         .search-result-icon {
-            width: 24px; height: 24px;
+            width: 28px; height: 28px;
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             font-size: 12px;
@@ -813,8 +813,8 @@
             overflow: hidden;
             background: #eee;
         }
-        .nearby-item-icon img { width: 16px; height: 16px; object-fit: contain; filter: brightness(0) invert(1); }
-        .search-result-icon img { width: 16px; height: 16px; object-fit: contain; filter: brightness(0) invert(1); }
+        .nearby-item-icon img { width: 25px; height: 25px; object-fit: contain; filter: brightness(0) invert(1); }
+        .search-result-icon img { width: 25px; height: 25px; object-fit: contain; filter: brightness(0) invert(1); }
         .nearby-item-text { flex: 1; min-width: 0; }
         .nearby-item-name { font-size: 13px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .nearby-item-sub  { font-size: 11px; color: #999; margin-top: 1px; }
@@ -2699,7 +2699,7 @@ map.on('zoomend', () => { isZooming = false; });
                 if (conf.type !== 'mhcard') {
                     map.addLayer({ id: `${conf.id}-bg`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: { 'circle-color': conf.type === 'castle' ? ['match', ['get', 'genre'], '日本100名城', '#4285F4', '続日本100名城', '#EA4335', '#546E7A'] : conf.type === 'manhole' ? ['match', ['get', 'source'], 'pokefuta', '#FBBC04', '#B87333'] : conf.color, 'circle-radius': 14, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' }, layout: { ...(conf.type === 'castle' ? { 'circle-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis } });
                 }
-                map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': conf.type === 'mhcard' ? 1.0 : 0.35, 'icon-allow-overlap': true, ...(conf.type === 'castle' ? { 'symbol-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis }, paint: conf.type === 'mhcard' ? {} : { 'icon-color': '#FFFFFF' } });
+                map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': conf.type === 'mhcard' ? 1.0 : 0.390625, 'icon-allow-overlap': true, ...(conf.type === 'castle' ? { 'symbol-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis }, paint: conf.type === 'mhcard' ? {} : { 'icon-color': '#FFFFFF' } });
                 if (conf.type === 'mhcard') {
                     map.addLayer({ id: `${conf.id}-icon-overlay`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': 'manhole-icon', 'icon-size': 0.3, 'icon-allow-overlap': true, 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
                 }
