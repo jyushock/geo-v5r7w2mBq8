@@ -50,6 +50,8 @@
             /* マンホールカードのカード枠（地図のmhcard-icon: 56x72px画像をpixelRatio2で読込んだ実寸と同じ） */
             --mhcard-w: 28px;
             --mhcard-h: 36px;
+            /* カードに重ねるマンホールバッジ。カード幅28pxに対し80% */
+            --mhcard-badge: 22.4px;
         }
         body { margin: 0; padding: 0; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
         #map { position: absolute; top: 0; bottom: 0; width: 100%; }
@@ -281,7 +283,7 @@
         #hist-list-popup .hist-ico-cause img { width: var(--obj-icon-inner); height: var(--obj-icon-inner); object-fit: contain; }
         #hist-list-popup .hist-ico-mhcard { position: relative; width: var(--mhcard-w); height: var(--mhcard-h); flex-shrink: 0; background: #e2ddd4; border-radius: 6px; overflow: hidden; }
         #hist-list-popup .hist-ico-mhcard-main { width: 100%; height: 100%; object-fit: contain; display: block; }
-        #hist-list-popup .hist-ico-mhcard-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: var(--obj-icon-inner); height: var(--obj-icon-inner); filter: brightness(0) invert(1); pointer-events: none; }
+        #hist-list-popup .hist-ico-mhcard-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: var(--mhcard-badge); height: var(--mhcard-badge); filter: brightness(0) invert(1); pointer-events: none; }
         #hist-list-popup .hist-txt { flex: 1; min-width: 0; }
         #hist-list-popup .hist-name { font-size: 12px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         #hist-list-popup .hist-meta { font-size: 10px; color: #999; margin-top: 1px; }
@@ -2682,6 +2684,9 @@ map.on('zoomend', () => { isZooming = false; });
             const OBJ_ICON_CIRCLE_PX = 28;
             const OBJ_ICON_INNER_PX = 25;
             const OBJ_ICON_NATIVE_PX = 64;
+            // マンホールカードに重ねるバッジ。CSS変数 --mhcard-badge と同じ値（カード幅28pxの80%）
+            const MHCARD_W_PX = 28;
+            const MHCARD_BADGE_PX = MHCARD_W_PX * 0.8;
             // データは後から非同期に届くため、ソースは空で生成し setData で埋める
             const configs = [
                 { id: 'michi',           color: '#34A853', icon: 'michi-icon',    type: 'michi',   clusterColor: '#34A853' },
@@ -2717,7 +2722,7 @@ map.on('zoomend', () => { isZooming = false; });
                 }
                 map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': conf.type === 'mhcard' ? 1.0 : conf.type === 'manhole' ? OBJ_ICON_INNER_PX / OBJ_ICON_NATIVE_PX : OBJ_ICON_CIRCLE_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, ...(conf.type === 'castle' ? { 'symbol-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis }, paint: conf.type === 'mhcard' ? {} : { 'icon-color': '#FFFFFF' } });
                 if (conf.type === 'mhcard') {
-                    map.addLayer({ id: `${conf.id}-icon-overlay`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': 'manhole-icon', 'icon-size': OBJ_ICON_INNER_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
+                    map.addLayer({ id: `${conf.id}-icon-overlay`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': 'manhole-icon', 'icon-size': MHCARD_BADGE_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
                 }
 
                 // テキストラベルレイヤー（マンホール・mhcard以外）
@@ -2951,7 +2956,7 @@ map.on('zoomend', () => { isZooming = false; });
                 const div = document.createElement('div');
                 div.className = 'search-result-item';
                 const iconPart = isMhcard
-                    ? `<div style="position:relative;width:var(--mhcard-w);height:var(--mhcard-h);flex-shrink:0;background:#e2ddd4;border-radius:6px;"><img src="mhcard.png" style="width:100%;height:100%;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:var(--obj-icon-inner);height:var(--obj-icon-inner);filter:brightness(0) invert(1);pointer-events:none;"></div>`
+                    ? `<div style="position:relative;width:var(--mhcard-w);height:var(--mhcard-h);flex-shrink:0;background:#e2ddd4;border-radius:6px;"><img src="mhcard.png" style="width:100%;height:100%;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:var(--mhcard-badge);height:var(--mhcard-badge);filter:brightness(0) invert(1);pointer-events:none;"></div>`
                     : `<div class="search-result-icon" style="background:${getItemColor(item)}">${cfg.img ? `<img src="${cfg.img}"${cfg.img === 'manhole.png' ? '' : ' class="icon-full"'}>` : cfg.icon}</div>`;
                 const subText = item._matchedAlias ? `（別名: ${item._matchedAlias}）${item.sub}` : item.sub;
                 div.innerHTML = `${iconPart}<div class="search-result-text"><div class="search-result-name">${item.label}</div><div class="search-result-sub">${subText}</div></div>`;
@@ -3428,7 +3433,7 @@ map.on('zoomend', () => { isZooming = false; });
             const div = document.createElement('div');
             div.className = 'nearby-item';
             const iconPart = isMhcard
-                ? `<div style="position:relative;width:var(--mhcard-w);height:var(--mhcard-h);flex-shrink:0;background:#e2ddd4;border-radius:6px;"><img src="mhcard.png" style="width:100%;height:100%;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:var(--obj-icon-inner);height:var(--obj-icon-inner);filter:brightness(0) invert(1);pointer-events:none;"></div>`
+                ? `<div style="position:relative;width:var(--mhcard-w);height:var(--mhcard-h);flex-shrink:0;background:#e2ddd4;border-radius:6px;"><img src="mhcard.png" style="width:100%;height:100%;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:var(--mhcard-badge);height:var(--mhcard-badge);filter:brightness(0) invert(1);pointer-events:none;"></div>`
                 : `<div class="nearby-item-icon" style="background:${getItemColor(item)}">${cfg.img ? `<img src="${cfg.img}"${cfg.img === 'manhole.png' ? '' : ' class="icon-full"'}>` : cfg.icon}</div>`;
             div.innerHTML = `${iconPart}<div class="nearby-item-text"><div class="nearby-item-name">${item.label}</div><div class="nearby-item-sub">${item.sub}</div></div><div class="nearby-item-dist">${distStr}</div>`;
             div.addEventListener('click', () => { closeNearbyResult(); onResultClick(item); });
