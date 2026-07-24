@@ -41,6 +41,11 @@
     })(3);
     </script>
     <style>
+        :root {
+            /* オブジェクト種別アイコン（地図・検索結果・周辺検索・移動履歴で共通） */
+            --obj-icon-circle: 28px;
+            --obj-icon-inner: 25px;
+        }
         body { margin: 0; padding: 0; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
         #map { position: absolute; top: 0; bottom: 0; width: 100%; }
         .current-location-dot {
@@ -263,11 +268,11 @@
         #hist-list-popup .hist-item.hist-future { opacity: 0.55; }
         #hist-list-popup .hist-cur-tag { color: #4285f4; font-weight: normal; }
         #hist-list-popup .hist-ico { font-size: 14px; flex-shrink: 0; }
-        #hist-list-popup .hist-ico-type { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; color: white; flex-shrink: 0; }
-        #hist-list-popup .hist-ico-type img { width: 25px; height: 25px; object-fit: contain; filter: brightness(0) invert(1); }
-        #hist-list-popup .hist-ico-cause { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; }
-        #hist-list-popup .hist-ico-cause svg { width: 13px; height: 13px; }
-        #hist-list-popup .hist-ico-cause img { width: 12px; height: 12px; object-fit: contain; }
+        #hist-list-popup .hist-ico-type { width: var(--obj-icon-circle); height: var(--obj-icon-circle); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; color: white; flex-shrink: 0; }
+        #hist-list-popup .hist-ico-type img { width: var(--obj-icon-inner); height: var(--obj-icon-inner); object-fit: contain; filter: brightness(0) invert(1); }
+        #hist-list-popup .hist-ico-cause { width: var(--obj-icon-circle); height: var(--obj-icon-circle); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; }
+        #hist-list-popup .hist-ico-cause svg { width: var(--obj-icon-inner); height: var(--obj-icon-inner); }
+        #hist-list-popup .hist-ico-cause img { width: var(--obj-icon-inner); height: var(--obj-icon-inner); object-fit: contain; }
         #hist-list-popup .hist-ico-mhcard { position: relative; width: 22px; height: 22px; flex-shrink: 0; background: #e2ddd4; border-radius: 6px; overflow: hidden; }
         #hist-list-popup .hist-ico-mhcard-main { width: 100%; height: 100%; object-fit: cover; display: block; }
         #hist-list-popup .hist-ico-mhcard-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 9px; height: 9px; filter: brightness(0) invert(1); pointer-events: none; }
@@ -549,7 +554,7 @@
         .search-result-item:last-child { border-bottom: none; }
         .search-result-item:hover { background: #f9f9f9; }
         .search-result-icon {
-            width: 28px; height: 28px;
+            width: var(--obj-icon-circle); height: var(--obj-icon-circle);
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             font-size: 12px;
@@ -806,15 +811,15 @@
         .nearby-item:last-child { border-bottom: none; }
         .nearby-item:hover { background: #f9f9f9; }
         .nearby-item-icon {
-            width: 28px; height: 28px;
+            width: var(--obj-icon-circle); height: var(--obj-icon-circle);
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             flex-shrink: 0;
             overflow: hidden;
             background: #eee;
         }
-        .nearby-item-icon img { width: 25px; height: 25px; object-fit: contain; filter: brightness(0) invert(1); }
-        .search-result-icon img { width: 25px; height: 25px; object-fit: contain; filter: brightness(0) invert(1); }
+        .nearby-item-icon img { width: var(--obj-icon-inner); height: var(--obj-icon-inner); object-fit: contain; filter: brightness(0) invert(1); }
+        .search-result-icon img { width: var(--obj-icon-inner); height: var(--obj-icon-inner); object-fit: contain; filter: brightness(0) invert(1); }
         .nearby-item-text { flex: 1; min-width: 0; }
         .nearby-item-name { font-size: 13px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .nearby-item-sub  { font-size: 11px; color: #999; margin-top: 1px; }
@@ -2666,6 +2671,10 @@ map.on('zoomend', () => { isZooming = false; });
             new Promise(res => map.loadImage('mhcard.png', (err, img) => { if (!err && img) map.addImage('mhcard-icon', img, { pixelRatio: 2 }); res(); })),
             new Promise(res => map.loadImage('mhcard-cluster.png', (err, img) => { if (!err && img) map.addImage('mhcard-cluster-icon', img, { pixelRatio: 2 }); res(); }))
         ]).then(() => {
+            // オブジェクト種別アイコンの円直径/表示サイズ。CSS変数 --obj-icon-circle / --obj-icon-inner と同じ値（画像ネイティブ幅64pxに対する比率をicon-sizeに使用）
+            const OBJ_ICON_CIRCLE_PX = 28;
+            const OBJ_ICON_INNER_PX = 25;
+            const OBJ_ICON_NATIVE_PX = 64;
             // データは後から非同期に届くため、ソースは空で生成し setData で埋める
             const configs = [
                 { id: 'michi',           color: '#34A853', icon: 'michi-icon',    type: 'michi',   clusterColor: '#34A853' },
@@ -2697,9 +2706,9 @@ map.on('zoomend', () => { isZooming = false; });
                 }
                 map.addLayer({ id: `${conf.id}-cluster-count`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'text-field': '{point_count_abbreviated}', 'text-size': 12, 'text-font': ['Noto Sans Bold'], 'visibility': initVis }, paint: { 'text-color': '#FFFFFF' } });
                 if (conf.type !== 'mhcard') {
-                    map.addLayer({ id: `${conf.id}-bg`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: { 'circle-color': conf.type === 'castle' ? ['match', ['get', 'genre'], '日本100名城', '#4285F4', '続日本100名城', '#EA4335', '#546E7A'] : conf.type === 'manhole' ? ['match', ['get', 'source'], 'pokefuta', '#FBBC04', '#B87333'] : conf.color, 'circle-radius': 14, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' }, layout: { ...(conf.type === 'castle' ? { 'circle-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis } });
+                    map.addLayer({ id: `${conf.id}-bg`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: { 'circle-color': conf.type === 'castle' ? ['match', ['get', 'genre'], '日本100名城', '#4285F4', '続日本100名城', '#EA4335', '#546E7A'] : conf.type === 'manhole' ? ['match', ['get', 'source'], 'pokefuta', '#FBBC04', '#B87333'] : conf.color, 'circle-radius': OBJ_ICON_CIRCLE_PX / 2, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' }, layout: { ...(conf.type === 'castle' ? { 'circle-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis } });
                 }
-                map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': conf.type === 'mhcard' ? 1.0 : 0.390625, 'icon-allow-overlap': true, ...(conf.type === 'castle' ? { 'symbol-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis }, paint: conf.type === 'mhcard' ? {} : { 'icon-color': '#FFFFFF' } });
+                map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': conf.type === 'mhcard' ? 1.0 : OBJ_ICON_INNER_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, ...(conf.type === 'castle' ? { 'symbol-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis }, paint: conf.type === 'mhcard' ? {} : { 'icon-color': '#FFFFFF' } });
                 if (conf.type === 'mhcard') {
                     map.addLayer({ id: `${conf.id}-icon-overlay`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': 'manhole-icon', 'icon-size': 0.3, 'icon-allow-overlap': true, 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
                 }
