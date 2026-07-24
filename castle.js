@@ -205,24 +205,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          145.7825,
-          43.38861111
-        ]
-      },
-      "properties": {
-        "name": "根室半島チャシ跡群",
-        "genre": "日本100名城",
-        "category": "城",
-        "prefecture": "北海道",
-        "url": "",
-        "address": "北海道根室市温根元"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           140.61923583,
           41.85418444
         ]
@@ -3640,24 +3622,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.3081,
-          38.4244
-        ]
-      },
-      "properties": {
-        "name": "日和山 (石巻市)",
-        "genre": "",
-        "category": "城",
-        "prefecture": "宮城県",
-        "url": "",
-        "address": "宮城県石巻市日和が丘二丁目"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           130.557194,
           33.310056
         ]
@@ -4015,7 +3979,8 @@ const castleData = {
         "url": "",
         "address": "秋田県横手市雄物川町沼館",
         "aliases": [
-          "沼の柵"
+          "沼の柵",
+          "沼の柵本城址"
         ],
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/dewa/numadate-jyo/"
@@ -9045,31 +9010,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.83175,
-          36.61397222
-        ]
-      },
-      "properties": {
-        "name": "嶽山城 (上野国)",
-        "genre": "",
-        "category": "城",
-        "prefecture": "群馬県",
-        "url": "",
-        "address": "群馬県中之条町大字五反田",
-        "aliases": [
-          "武山城"
-        ],
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 789,
-        "shiroHbRelativeHeightM": 210,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/kouzuke/takeyama-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.54133333,
           36.24423611
         ]
@@ -12403,28 +12343,6 @@ const castleData = {
         "aliases": [
           "真地野城"
         ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          140.32675,
-          35.29705556
-        ]
-      },
-      "properties": {
-        "name": "万喜城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "千葉県",
-        "url": "",
-        "address": "千葉県いすみ市万木",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 70,
-        "shiroHbRelativeHeightM": 60,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/kazusa/mangi-jyo/"
       }
     },
     {
@@ -16502,7 +16420,8 @@ const castleData = {
         ],
         "shiroHbForm": "山城",
         "shiroHbElevationM": 245,
-        "shiroHbRelativeHeightM": 34
+        "shiroHbRelativeHeightM": 34,
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/ecchu/genjigamine-jyo/"
       }
     },
     {
@@ -17022,34 +16941,10 @@ const castleData = {
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/ecchu/nagasawa-jyo/",
         "aliases": [
           "長沢城",
-          "長沢東城"
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          137.10972222,
-          36.65194444
-        ]
-      },
-      "properties": {
-        "name": "長沢東城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "富山県",
-        "url": "",
-        "address": "富山県富山市婦中町長沢",
-        "aliases": [
+          "長沢東城",
           "家老屋敷城",
           "菅谷砦"
-        ],
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 131,
-        "shiroHbRelativeHeightM": 70,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/ecchu/nagasawa-higashi-jyo/"
+        ]
       }
     },
     {
@@ -22057,28 +21952,6 @@ const castleData = {
         "shiroHbElevationM": 336,
         "shiroHbRelativeHeightM": 308,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/mino/gifu-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          137.11358333,
-          35.40483333
-        ]
-      },
-      "properties": {
-        "name": "久々利城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "岐阜県",
-        "url": "https://kojodan.jp/castle/670",
-        "address": "岐阜県可児市久々利",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 190,
-        "shiroHbRelativeHeightM": 60,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/mino/kukuri-jyo/"
       }
     },
     {
@@ -27792,7 +27665,8 @@ const castleData = {
           "亀山古城",
           "近世亀山城",
           "亀山新城",
-          "伊勢亀山城"
+          "伊勢亀山城",
+          "若山城"
         ],
         "shiroHbForm": "平山城",
         "shiroHbElevationM": 70,
@@ -29365,27 +29239,6 @@ const castleData = {
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/yamashiro/kitashirakawa-jyo/",
         "shiroHbElevationM": 301,
         "shiroHbRelativeHeightM": 200
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.700692,
-          34.918114
-        ]
-      },
-      "properties": {
-        "name": "勝竜寺城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "京都府",
-        "url": "",
-        "address": "京都府長岡京市勝竜寺",
-        "aliases": [
-          "小竜寺城"
-        ]
       }
     },
     {
@@ -32296,32 +32149,6 @@ const castleData = {
         "shiroHbElevationM": 353,
         "shiroHbRelativeHeightM": 250,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/tajima/takeda-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          134.544833,
-          34.868797
-        ]
-      },
-      "properties": {
-        "name": "龍野城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "兵庫県",
-        "url": "https://kojodan.jp/castle/138",
-        "address": "兵庫県たつの市龍野町上霞城",
-        "aliases": [
-          "台山城",
-          "朝霧城",
-          "霞城"
-        ],
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/harima/tatsuno-jyo/",
-        "shiroHbForm": "平山城",
-        "shiroHbElevationM": 43.9
       }
     },
     {
@@ -38286,7 +38113,8 @@ const castleData = {
         "address": "徳島県海陽町鞆浦",
         "aliases": [
           "鞆城",
-          "御陣屋"
+          "御陣屋",
+          "旧御陣屋跡"
         ],
         "shiroHbForm": "山城",
         "shiroHbElevationM": 50,
@@ -39505,24 +39333,6 @@ const castleData = {
         "shiroHbElevationM": 80,
         "shiroHbRelativeHeightM": 70,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/iyo/kanekoyama-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          132.75730556,
-          33.38822222
-        ]
-      },
-      "properties": {
-        "name": "甲之森城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "愛媛県",
-        "url": "",
-        "address": "愛媛県西予市城川町下相"
       }
     },
     {
@@ -42584,7 +42394,8 @@ const castleData = {
           "日暮城",
           "有馬城",
           "志自岐原城",
-          "春の城"
+          "春の城",
+          "天草四郎像原城跡"
         ],
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/hizen/hara-jyo/",
         "shiroHbForm": "平山城",
@@ -45330,7 +45141,8 @@ const castleData = {
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/satsuma/tofukuji-jyo/",
         "aliases": [
           "長谷場城",
-          "浜崎城"
+          "浜崎城",
+          "浜ヶ崎城"
         ]
       }
     },
@@ -45766,29 +45578,6 @@ const castleData = {
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/ryukyu/zakimi-gusuku/",
         "aliases": [
           "読谷山城"
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          127.78952778,
-          26.16244444
-        ]
-      },
-      "properties": {
-        "name": "佐敷城 (琉球国)",
-        "genre": "",
-        "category": "城",
-        "prefecture": "沖縄県",
-        "url": "",
-        "address": "沖縄県南城市佐敷字佐敷",
-        "aliases": [
-          "サシチグスク",
-          "イーグスク",
-          "つきしろの宮"
         ]
       }
     },
@@ -47902,7 +47691,7 @@ const castleData = {
         "name": "佐敷上グスク",
         "genre": "",
         "category": "城",
-        "prefecture": "",
+        "prefecture": "沖縄県",
         "url": "https://kojodan.jp/castle/530",
         "address": "沖縄県南城市佐敷字佐敷",
         "shiroHbForm": "丘城",
@@ -48771,32 +48560,6 @@ const castleData = {
         "shiroHbElevationM": 47,
         "shiroHbRelativeHeightM": 30,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/higo/kutama-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          130.5034512,
-          31.5190765
-        ]
-      },
-      "properties": {
-        "name": "千々輪城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "鹿児島県鹿児島市下福元町",
-        "aliases": [
-          "谷山本城",
-          "愛宕城"
-        ],
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 50,
-        "shiroHbRelativeHeightM": 50,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/satsuma/chijiwa-jyo/"
       }
     },
     {
@@ -52261,7 +52024,8 @@ const castleData = {
         "shiroHbRelativeHeightM": 30,
         "aliases": [
           "天童山館",
-          "長松館"
+          "長松館",
+          "鯵ヶ沢館"
         ]
       }
     },
@@ -53461,7 +53225,8 @@ const castleData = {
         "shiroHbRelativeHeightM": 90,
         "aliases": [
           "金沢柵"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/dewa/kanazawa-saku/"
       }
     },
     {
@@ -56327,7 +56092,8 @@ const castleData = {
         "shiroHbElevationM": 55,
         "shiroHbRelativeHeightM": 10,
         "aliases": [
-          "大久保城"
+          "大久保城",
+          "天神山城"
         ]
       }
     },
@@ -57161,7 +56927,8 @@ const castleData = {
         "aliases": [
           "小川城",
           "薗部城"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/hitachi/ogawa-jyo/"
       }
     },
     {
@@ -58458,31 +58225,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.615666,
-          36.553754
-        ]
-      },
-      "properties": {
-        "name": "天神山城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "茨城県",
-        "url": "https://kojodan.jp/castle/4029",
-        "address": "茨城県日立市大久保町",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 120,
-        "shiroHbRelativeHeightM": 70,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/hitachi/ohkubo-tenjinyama-jyo/",
-        "aliases": [
-          "大久保城"
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           140.031679,
           35.915272
         ]
@@ -59463,8 +59205,10 @@ const castleData = {
         "shiroHbElevationM": 25.957,
         "aliases": [
           "佐野陣屋",
-          "堀田佐野城"
-        ]
+          "堀田佐野城",
+          "植田陣屋"
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/shimotsuke/sano-jinya/"
       }
     },
     {
@@ -60253,7 +59997,8 @@ const castleData = {
         "aliases": [
           "白倉城",
           "浅場城",
-          "白蔵城"
+          "白蔵城",
+          "仁井屋城"
         ],
         "shiroHbForm": "丘城",
         "shiroHbElevationM": 170,
@@ -60361,7 +60106,8 @@ const castleData = {
         "shiroHbElevationM": 178,
         "aliases": [
           "女淵城"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/kouzuke/onabuchi-jyo/"
       }
     },
     {
@@ -61086,32 +60832,6 @@ const castleData = {
         "address": "群馬県伊勢崎市美茂呂町",
         "shiroHbForm": "平城",
         "shiroHbElevationM": 55
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          138.947886,
-          36.246721
-        ]
-      },
-      "properties": {
-        "name": "仁井屋城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "群馬県",
-        "url": "https://kojodan.jp/castle/2474",
-        "address": "群馬県甘楽町大字天引",
-        "shiroHbForm": "丘城",
-        "shiroHbElevationM": 170,
-        "shiroHbRelativeHeightM": 30,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/kouzuke/niiya-jyo/",
-        "aliases": [
-          "白倉城",
-          "白蔵城"
-        ]
       }
     },
     {
@@ -61860,7 +61580,8 @@ const castleData = {
           "毛呂要害",
           "竜ケ谷城"
         ],
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/musashi/moro-ryugaisan-jyo/"
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/musashi/moro-ryugaisan-jyo/",
+        "shiroHbRelativeHeightM": 100
       }
     },
     {
@@ -62208,8 +61929,10 @@ const castleData = {
         "shiroHbElevationM": 19.2,
         "shiroHbRelativeHeightM": 10,
         "aliases": [
-          "岡の城山"
-        ]
+          "岡の城山",
+          "岡城"
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/musashi/oka-jyo/"
       }
     },
     {
@@ -65111,7 +64834,8 @@ const castleData = {
         "shiroHbElevationM": 7,
         "aliases": [
           "阿知戸城"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/shimousa/ajito-jyo/"
       }
     },
     {
@@ -66426,8 +66150,11 @@ const castleData = {
         "shiroHbForm": "丘城",
         "shiroHbElevationM": 50.325,
         "aliases": [
-          "曽我城"
-        ]
+          "曽我城",
+          "曾我氏館"
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/sagami/soga-jyo/",
+        "shiroHbRelativeHeightM": 20
       }
     },
     {
@@ -68563,7 +68290,8 @@ const castleData = {
         "aliases": [
           "東城",
           "東城館"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/echigo/takemata-tojyo-yakata/"
       }
     },
     {
@@ -71036,7 +70764,8 @@ const castleData = {
         "aliases": [
           "鞍ヶ嶽城",
           "倉ヶ嶽城"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/kaga/kuragadake-jyo/"
       }
     },
     {
@@ -71601,7 +71330,8 @@ const castleData = {
         "aliases": [
           "居山城",
           "土橋城"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/echizen/hiyoshi-inuyama-jyo/"
       }
     },
     {
@@ -71936,33 +71666,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.1411775,
-          35.71688052
-        ]
-      },
-      "properties": {
-        "name": "木ノ芽峠城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "福井県",
-        "url": "https://kojodan.jp/castle/3120",
-        "address": "福井県南越前町板取",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 630,
-        "shiroHbRelativeHeightM": 320,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/echizen/kinometouge-jyo/",
-        "aliases": [
-          "木ノ芽城塞群",
-          "木ノ芽峠城塞群",
-          "木ノ芽峠城砦群"
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           136.13986542,
           35.717047
         ]
@@ -71982,34 +71685,8 @@ const castleData = {
           "観音寺丸城",
           "木ノ芽城塞群",
           "木ノ芽峠城塞群",
-          "木ノ芽峠城砦群"
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.14300427,
-          35.71565543
-        ]
-      },
-      "properties": {
-        "name": "西光寺丸城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "福井県",
-        "url": "https://kojodan.jp/castle/3122",
-        "address": "福井県敦賀市新保",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 643,
-        "shiroHbRelativeHeightM": 330,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/echizen/saikojimaru-jyo/",
-        "aliases": [
-          "木ノ芽城塞群",
-          "木ノ芽峠城塞群",
-          "木ノ芽峠城砦群"
+          "木ノ芽峠城砦群",
+          "木ノ芽峠城"
         ]
       }
     },
@@ -75892,7 +75569,8 @@ const castleData = {
         "aliases": [
           "波田山城",
           "秋葉城"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/shinano/hatayama-jyo/"
       }
     },
     {
@@ -77036,7 +76714,8 @@ const castleData = {
         "shiroHbRelativeHeightM": 280,
         "aliases": [
           "王城"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/shinano/oh-jyo/"
       }
     },
     {
@@ -78514,9 +78193,11 @@ const castleData = {
         "aliases": [
           "多羅砦",
           "千畳敷砦",
-          "落合砦"
+          "落合砦",
+          "落合山取手"
         ],
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/mino/ochiaiyama-toride/"
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/mino/ochiaiyama-toride/",
+        "shiroHbRelativeHeightM": 50
       }
     },
     {
@@ -80311,7 +79992,8 @@ const castleData = {
         "aliases": [
           "小長谷城",
           "徳谷城"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/suruga/konagai-jyo/"
       }
     },
     {
@@ -80696,7 +80378,9 @@ const castleData = {
         "shiroHbRelativeHeightM": 40,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/tohtoumi/iida-jyo/",
         "aliases": [
-          "飯田新城"
+          "飯田新城",
+          "飯田古城",
+          "飯田本城"
         ]
       }
     },
@@ -81070,31 +80754,6 @@ const castleData = {
         "shiroHbElevationM": 86.608,
         "aliases": [
           "一宮城"
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          137.923918,
-          34.807259
-        ]
-      },
-      "properties": {
-        "name": "飯田古城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "静岡県",
-        "url": "https://kojodan.jp/castle/1829",
-        "address": "静岡県森町飯田",
-        "shiroHbForm": "丘城",
-        "shiroHbElevationM": 50,
-        "shiroHbRelativeHeightM": 40,
-        "aliases": [
-          "飯田城",
-          "飯田本城"
         ]
       }
     },
@@ -82062,38 +81721,14 @@ const castleData = {
         "address": "愛知県豊田市則定町",
         "aliases": [
           "則貞城ヶ峯城",
-          "則定村古城"
+          "則定村古城",
+          "則定小畑城",
+          "小畑城"
         ],
         "shiroHbForm": "丘城",
         "shiroHbElevationM": 120,
         "shiroHbRelativeHeightM": 30,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/mikawa/norisada-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          137.258208,
-          35.098684
-        ]
-      },
-      "properties": {
-        "name": "則定小畑城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "愛知県",
-        "url": "https://kojodan.jp/castle/2124",
-        "address": "愛知県豊田市則定町",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 120,
-        "shiroHbRelativeHeightM": 50,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/mikawa/norisada-kobata-jyo/",
-        "aliases": [
-          "小畑城",
-          "則定村古屋敷"
-        ]
       }
     },
     {
@@ -83352,7 +82987,8 @@ const castleData = {
         "shiroHbElevationM": 55,
         "aliases": [
           "杉山端城"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/mikawa/sugiyama-ha-jyo/"
       }
     },
     {
@@ -84453,31 +84089,8 @@ const castleData = {
         "shiroHbRelativeHeightM": 13.3,
         "aliases": [
           "折戸古城",
-          "掻上城"
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          137.0446245,
-          35.123238
-        ]
-      },
-      "properties": {
-        "name": "折戸城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "愛知県",
-        "url": "https://kojodan.jp/castle/3134",
-        "address": "愛知県日進市折戸町",
-        "shiroHbForm": "平山城",
-        "shiroHbElevationM": 63.1,
-        "shiroHbRelativeHeightM": 12.9,
-        "aliases": [
-          "折戸古城"
+          "掻上城",
+          "折戸城"
         ]
       }
     },
@@ -85023,7 +84636,8 @@ const castleData = {
         "aliases": [
           "豊楽城",
           "臼木ヶ峰城"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/mikawa/usukigamine-jyo/"
       }
     },
     {
@@ -85787,7 +85401,9 @@ const castleData = {
           "富貴城",
           "大高城",
           "邑城"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/owari/fuki-jyo/",
+        "shiroHbRelativeHeightM": 5
       }
     },
     {
@@ -85991,7 +85607,8 @@ const castleData = {
           "今崎城",
           "\uD86D\uDF46崎城",
           "来迎寺古城"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/mikawa/raigoji-jyo/"
       }
     },
     {
@@ -91390,32 +91007,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.318111,
-          35.300833
-        ]
-      },
-      "properties": {
-        "name": "山家城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "京都府",
-        "url": "https://kojodan.jp/castle/455",
-        "address": "京都府綾部市広瀬町",
-        "aliases": [
-          "甲ヶ峰城",
-          "左衛門屋敷"
-        ],
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 236,
-        "shiroHbRelativeHeightM": 130,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/tanba/yamaga-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           135.321831,
           35.301951
         ]
@@ -91434,7 +91025,8 @@ const castleData = {
           "中世山家城",
           "山家古城",
           "甲ヶ峰城",
-          "左衛門屋敷"
+          "左衛門屋敷",
+          "山家城"
         ],
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/tanba/yamaga-jyo/"
       }
@@ -91486,7 +91078,8 @@ const castleData = {
         "aliases": [
           "如意岳城",
           "如意城"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/yamashiro/nyoigatake-jyo/"
       }
     },
     {
@@ -91714,7 +91307,8 @@ const castleData = {
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/tango/yoshiwarayama-jyo/",
         "aliases": [
           "峰山城",
-          "権現山城"
+          "権現山城",
+          "峯山陣屋"
         ]
       }
     },
@@ -92088,31 +91682,6 @@ const castleData = {
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/yamashiro/shugakuin-kirarazaka-jyo/",
         "aliases": [
           "修学院雲母坂城"
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.053613,
-          35.631863
-        ]
-      },
-      "properties": {
-        "name": "峰山陣屋",
-        "genre": "",
-        "category": "城",
-        "prefecture": "京都府",
-        "url": "https://kojodan.jp/castle/2272",
-        "address": "京都府京丹後市峰山町吉原",
-        "shiroHbForm": "陣屋",
-        "shiroHbElevationM": 60,
-        "shiroHbRelativeHeightM": 10,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/tango/mineyama-jinya/",
-        "aliases": [
-          "峯山陣屋"
         ]
       }
     },
@@ -97022,37 +96591,13 @@ const castleData = {
         "address": "奈良県宇陀市大宇陀本郷",
         "aliases": [
           "山神の城",
-          "大和本郷城"
+          "大和本郷城",
+          "本郷東城"
         ],
         "shiroHbForm": "山城",
         "shiroHbElevationM": 504,
         "shiroHbRelativeHeightM": 110,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/yamato/hongo-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.918603,
-          34.477791
-        ]
-      },
-      "properties": {
-        "name": "本郷東城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "奈良県",
-        "url": "https://kojodan.jp/castle/2284",
-        "address": "奈良県宇陀市大宇陀本郷",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 462,
-        "shiroHbRelativeHeightM": 70,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/yamato/hongo-higashi-jyo/",
-        "aliases": [
-          "山神の城"
-        ]
       }
     },
     {
@@ -97341,7 +96886,8 @@ const castleData = {
         "aliases": [
           "八幡山城",
           "安宅八幡山城"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/kii/atagi-hachimanyama-jyo/"
       }
     },
     {
@@ -98078,8 +97624,10 @@ const castleData = {
         "shiroHbElevationM": 292.5,
         "shiroHbRelativeHeightM": 287.6,
         "aliases": [
-          "古武ノ関"
-        ]
+          "古武ノ関",
+          "古武之森城"
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/kii/kobunomori-jyo/"
       }
     },
     {
@@ -98303,7 +97851,8 @@ const castleData = {
         "aliases": [
           "松崎城",
           "亀形ヶ鼻城"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/houki/matsuzaki-jyo/"
       }
     },
     {
@@ -98430,7 +97979,8 @@ const castleData = {
           "槙城",
           "槇城"
         ],
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/houki/notsu-jyo/"
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/houki/notsu-jyo/",
+        "shiroHbRelativeHeightM": 25
       }
     },
     {
@@ -99966,8 +99516,10 @@ const castleData = {
         "shiroHbRelativeHeightM": 110,
         "aliases": [
           "鞍掛城 倉掛城",
-          "楢原城"
-        ]
+          "楢原城",
+          "鞍掛城"
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/mimasaka/kurakake-jyo/"
       }
     },
     {
@@ -100770,8 +100322,10 @@ const castleData = {
           "一橋陣屋",
           "江原陣屋",
           "江原役所",
-          "森和泉守館"
-        ]
+          "森和泉守館",
+          "西荏原陣屋"
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/bicchu/nishiebara-jinya/"
       }
     },
     {
@@ -101038,7 +100592,8 @@ const castleData = {
           "明見山城",
           "鑵子の釣城",
           "釣城"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/bizen/myokenyama-jyo/"
       }
     },
     {
@@ -101130,8 +100685,10 @@ const castleData = {
         "shiroHbRelativeHeightM": 120,
         "aliases": [
           "片刈山城",
-          "因島水軍城"
-        ]
+          "因島水軍城",
+          "片刈城跡"
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/bingo/katagari-jyo/"
       }
     },
     {
@@ -104225,7 +103782,8 @@ const castleData = {
         "shiroHbRelativeHeightM": 40,
         "aliases": [
           "内山城"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/awa/uchiyama-jyo/"
       }
     },
     {
@@ -107581,7 +107139,8 @@ const castleData = {
         "aliases": [
           "木ノ浦城",
           "伯方城"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/iyo/kinoura-jyo/"
       }
     },
     {
@@ -109883,8 +109442,10 @@ const castleData = {
         "shiroHbRelativeHeightM": 250,
         "aliases": [
           "大友城",
-          "大唯城"
-        ]
+          "大唯城",
+          "大砥城"
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/iyo/ohdo-jyo/"
       }
     },
     {
@@ -113594,37 +113155,13 @@ const castleData = {
         "aliases": [
           "瓶岩亀ヶ森城",
           "亀岩土居",
-          "瓶岩土居"
+          "瓶岩土居",
+          "坂本城"
         ],
         "shiroHbForm": "丘城",
         "shiroHbElevationM": 80,
         "shiroHbRelativeHeightM": 40,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/tosa/kameiwa-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          133.6330038,
-          33.6287381
-        ]
-      },
-      "properties": {
-        "name": "坂本城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "高知県",
-        "url": "https://kojodan.jp/castle/4213",
-        "address": "高知県南国市亀岩",
-        "aliases": [
-          "瓶岩土居城"
-        ],
-        "shiroHbForm": "丘城",
-        "shiroHbElevationM": 70,
-        "shiroHbRelativeHeightM": 30,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/tosa/kameiwa-sakamoto-jyo/"
       }
     },
     {
@@ -115632,7 +115169,8 @@ const castleData = {
         "shiroHbElevationM": 4.068,
         "aliases": [
           "太田城"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/hizen/ohta-jyo/"
       }
     },
     {
@@ -135319,7 +134857,8 @@ const castleData = {
         "url": "",
         "address": "愛媛県西条市氷見丁",
         "aliases": [
-          "里の城"
+          "里の城",
+          "里城跡"
         ],
         "shiroHbForm": "丘城",
         "shiroHbElevationM": 50,
@@ -159795,13 +159334,14 @@ const castleData = {
         "name": "高舘城跡",
         "genre": "",
         "category": "城",
-        "prefecture": "",
+        "prefecture": "宮城県",
         "url": "",
         "address": "宮城県名取市高舘吉田上鹿野東 5RQR+QJ",
         "aliases": [
           "高館",
           "名取要害",
-          "羽黒城"
+          "羽黒城",
+          "高館城"
         ],
         "shiroHbForm": "山城",
         "shiroHbElevationM": 182,
@@ -163157,46 +162697,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "鹿児島県鹿児島市福山町１２４"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          130.49966799999999,
-          31.519681799999997
-        ]
-      },
-      "properties": {
-        "name": "陣之尾城址",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "鹿児島県鹿児島市下福元町１５２３"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          131.10551999999998,
-          31.4832965
-        ]
-      },
-      "properties": {
-        "name": "松尾城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "鹿児島県志布志市志布志町帖４３５６",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 50,
-        "shiroHbRelativeHeightM": 50,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/hyuuga/shibushi-matsuo-jyo/"
       }
     },
     {
@@ -181596,24 +181096,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.83165649999998,
-          34.3193476
-        ]
-      },
-      "properties": {
-        "name": "平山城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "香川県綾歌郡宇多津町"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           133.9342058,
           34.4579544
         ]
@@ -188344,24 +187826,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.69938,
-          34.7989332
-        ]
-      },
-      "properties": {
-        "name": "妻鹿城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "兵庫県姫路市兼田５５２−６４"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           134.6555381,
           34.893209999999996
         ]
@@ -189840,24 +189304,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.2489764,
-          34.7246372
-        ]
-      },
-      "properties": {
-        "name": "平野城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "兵庫県神戸市東灘区御影山手１丁目１２−１ 神戸市立御影北小学校"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           135.4024387,
           34.9596072
         ]
@@ -190671,32 +190117,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "三重県伊賀市喰代"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.3664368,
-          34.745046699999996
-        ]
-      },
-      "properties": {
-        "name": "西の城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "三重県津市美里町北長野２１０１",
-        "aliases": [
-          "中の城",
-          "東の城"
-        ],
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 230,
-        "shiroHbRelativeHeightM": 60,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/ise/hosono-jyo/"
       }
     },
     {
@@ -192090,24 +191510,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "愛知県岡崎市小呂町下屋下３７"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          137.1680303,
-          34.950215
-        ]
-      },
-      "properties": {
-        "name": "明大寺城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "愛知県岡崎市明大寺町耳取８４"
       }
     },
     {
@@ -213290,28 +212692,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.28889619999998,
-          36.4224307
-        ]
-      },
-      "properties": {
-        "name": "米山城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "長野県上田市住吉",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 734,
-        "shiroHbRelativeHeightM": 110,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/shinano/toishi-komeyama-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           138.2798468,
           36.425329399999995
         ]
@@ -215533,26 +214913,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.5793276,
-          36.3480682
-        ]
-      },
-      "properties": {
-        "name": "吉水城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "栃木県佐野市吉水駅前１丁目１３",
-        "shiroHbForm": "陣屋",
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/shimotsuke/yoshimizu-jinya/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.5396585,
           36.431232099999995
         ]
@@ -215809,24 +215169,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "栃木県下都賀郡壬生町藤井１２４０"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.7412384,
-          36.569753
-        ]
-      },
-      "properties": {
-        "name": "坂田山城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "栃木県鹿沼市坂田山２丁目"
       }
     },
     {
@@ -220205,27 +219547,6 @@ const castleData = {
         "shiroHbForm": "山城",
         "shiroHbElevationM": 342,
         "shiroHbRelativeHeightM": 170
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.73036159999998,
-          37.0281964
-        ]
-      },
-      "properties": {
-        "name": "姥捨山城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "栃木県日光市上三依",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 860,
-        "shiroHbRelativeHeightM": 160
       }
     },
     {
@@ -229953,31 +229274,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.1686551,
-          34.3292767
-        ]
-      },
-      "properties": {
-        "name": "片刈城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "広島県尾道市因島中庄町 85H9+PF",
-        "aliases": [
-          "片刈山城"
-        ],
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 126,
-        "shiroHbRelativeHeightM": 120,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/bingo/katagari-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           133.17051569999998,
           34.320296
         ]
@@ -230831,11 +230127,12 @@ const castleData = {
         "name": "備後滑城跡",
         "genre": "",
         "category": "城",
-        "prefecture": "",
+        "prefecture": "広島県",
         "url": "",
         "address": "広島県三原市久井町江木１７２３",
         "aliases": [
-          "江木滑城"
+          "江木滑城",
+          "滑城"
         ],
         "shiroHbForm": "山城",
         "shiroHbElevationM": 440,
@@ -231349,11 +230646,12 @@ const castleData = {
         "name": "備後雀城跡",
         "genre": "",
         "category": "城",
-        "prefecture": "",
+        "prefecture": "広島県",
         "url": "",
         "address": "広島県府中市本山町７−１",
         "aliases": [
-          "鈴目城"
+          "鈴目城",
+          "雀城"
         ],
         "shiroHbForm": "丘城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/bingo/suzume-jyo/"
@@ -310357,32 +309655,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.199358,
-          40.78194
-        ]
-      },
-      "properties": {
-        "name": "鯵ヶ沢館",
-        "genre": "",
-        "category": "城",
-        "prefecture": "青森県",
-        "url": "",
-        "address": "青森県鰺ヶ沢町大字舞戸町",
-        "aliases": [
-          "長松館",
-          "天童山館"
-        ],
-        "shiroHbForm": "丘城",
-        "shiroHbElevationM": 30,
-        "shiroHbRelativeHeightM": 30,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/mutsu/ajigasawa-date/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           140.313746,
           40.783596
         ]
@@ -316342,25 +315614,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.41166666667,
-          40.620555555556
-        ]
-      },
-      "properties": {
-        "name": "八幡館(岩木町)",
-        "genre": "",
-        "category": "城",
-        "prefecture": "青森県",
-        "url": "",
-        "address": "青森県弘前市大字八幡",
-        "shiroHbForm": "平城"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           140.36194444444,
           40.596944444444
         ]
@@ -320643,25 +319896,6 @@ const castleData = {
         "url": "",
         "address": "岩手県金ケ崎町永沢",
         "shiroHbForm": "平城"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          141.08222222222,
-          39.170833333333
-        ]
-      },
-      "properties": {
-        "name": "松本館",
-        "genre": "",
-        "category": "城",
-        "prefecture": "岩手県",
-        "url": "",
-        "address": "岩手県金ケ崎町永沢",
-        "shiroHbForm": "丘城"
       }
     },
     {
@@ -338250,28 +337484,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.467015,
-          36.467076
-        ]
-      },
-      "properties": {
-        "name": "根古屋館",
-        "genre": "",
-        "category": "城",
-        "prefecture": "栃木県",
-        "url": "",
-        "address": "栃木県佐野市飛駒町",
-        "shiroHbForm": "平山城",
-        "shiroHbElevationM": 240,
-        "shiroHbRelativeHeightM": 30,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/shimotsuke/hikoma-negoya-yakata/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.873856,
           36.68464
         ]
@@ -348300,26 +347512,6 @@ const castleData = {
         "address": "新潟県新発田市下石川",
         "shiroHbForm": "居館",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/echigo/kuramitsu-yakata/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.046805,
-          37.570951
-        ]
-      },
-      "properties": {
-        "name": "五十嵐館",
-        "genre": "",
-        "category": "城",
-        "prefecture": "新潟県",
-        "url": "",
-        "address": "新潟県三条市飯田",
-        "shiroHbForm": "居館",
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/echigo/ikarashi-yakata/"
       }
     },
     {
@@ -358951,28 +358143,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.335048,
-          36.699831
-        ]
-      },
-      "properties": {
-        "name": "苅田城(小城)",
-        "genre": "",
-        "category": "城",
-        "prefecture": "長野県",
-        "url": "",
-        "address": "長野県小布施町大字雁田",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 390,
-        "shiroHbRelativeHeightM": 50,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/shinano/obuse-karita-ko-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           138.02662,
           36.430616
         ]
@@ -367823,27 +366993,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.99611111111,
-          36.587777777778
-        ]
-      },
-      "properties": {
-        "name": "壇の城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "富山県",
-        "url": "",
-        "address": "富山県砺波市庄川町庄",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 190,
-        "shiroHbRelativeHeightM": 90
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           136.99,
           36.781111111111
         ]
@@ -370317,27 +369466,6 @@ const castleData = {
         "shiroHbForm": "山城",
         "shiroHbElevationM": 217,
         "shiroHbRelativeHeightM": 170
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.23805555556,
-          35.925
-        ]
-      },
-      "properties": {
-        "name": "行事岳城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "福井県",
-        "url": "",
-        "address": "福井県越前市粟田部町",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 311,
-        "shiroHbRelativeHeightM": 290
       }
     },
     {
@@ -384636,7 +383764,8 @@ const castleData = {
         ],
         "shiroHbForm": "陣屋",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/mino/chimura-jinya/",
-        "shiroHbElevationM": 137.173
+        "shiroHbElevationM": 137.173,
+        "shiroHbRelativeHeightM": 60
       }
     },
     {
@@ -386931,27 +386060,6 @@ const castleData = {
         "shiroHbForm": "山城",
         "shiroHbElevationM": 397,
         "shiroHbRelativeHeightM": 340
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.95222222222,
-          35.7525
-        ]
-      },
-      "properties": {
-        "name": "尾壷城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "岐阜県",
-        "url": "",
-        "address": "岐阜県郡上市八幡町中坪",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 381,
-        "shiroHbRelativeHeightM": 141
       }
     },
     {
@@ -416930,25 +416038,6 @@ const castleData = {
         "shiroHbForm": "丘城",
         "shiroHbElevationM": 200,
         "shiroHbRelativeHeightM": 30
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          134.33333333333,
-          35.173055555556
-        ]
-      },
-      "properties": {
-        "name": "佐淵城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "岡山県",
-        "url": "",
-        "address": "岡山県西粟倉村大字影石",
-        "shiroHbForm": "山城"
       }
     },
     {
@@ -461759,26 +460848,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.726888,
-          33.744141
-        ]
-      },
-      "properties": {
-        "name": "東蓮寺陣屋",
-        "genre": "",
-        "category": "城",
-        "prefecture": "福岡県",
-        "url": "",
-        "address": "福岡県直方市殿町",
-        "shiroHbForm": "陣屋",
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/chikuzen/torenji-jinya/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           130.380946,
           33.597655
         ]
@@ -475405,27 +474474,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.715,
-          32.535
-        ]
-      },
-      "properties": {
-        "name": "種山城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "熊本県",
-        "url": "",
-        "address": "熊本県八代市東陽町南",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 130,
-        "shiroHbRelativeHeightM": 80
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           130.57611111111,
           32.423888888889
         ]
@@ -484028,24 +483076,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.3184916,
-          31.412460099999997
-        ]
-      },
-      "properties": {
-        "name": "別府城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "鹿児島県南さつま市加世田武田"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           130.50348879999999,
           31.5202977
         ]
@@ -484067,7 +483097,8 @@ const castleData = {
           "愛宕城",
           "弓場ヶ城",
           "陣之尾城"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/satsuma/chijiwa-jyo/"
       }
     },
     {
@@ -484224,34 +483255,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.2549429,
-          32.6291477
-        ]
-      },
-      "properties": {
-        "name": "天草四郎像原城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "長崎県南島原市南有馬町乙",
-        "aliases": [
-          "有馬城",
-          "日暮城",
-          "志自岐原城",
-          "春の城"
-        ],
-        "shiroHbForm": "平山城",
-        "shiroHbElevationM": 31,
-        "shiroHbRelativeHeightM": 30,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/hizen/hara-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           129.5519459,
           33.3740127
         ]
@@ -484266,26 +483269,6 @@ const castleData = {
         "shiroHbForm": "山城",
         "shiroHbElevationM": 60,
         "shiroHbRelativeHeightM": 60
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          130.20477929999998,
-          33.239055
-        ]
-      },
-      "properties": {
-        "name": "徳島城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "佐賀県小城市芦刈町浜枝川８４８",
-        "shiroHbForm": "平城",
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/hizen/tokushima-jyo/"
       }
     },
     {
@@ -484387,24 +483370,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.7690452,
-          33.3776254
-        ]
-      },
-      "properties": {
-        "name": "麻氐良城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "福岡県朝倉市杷木志波"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           130.6420448,
           33.313924
         ]
@@ -484441,27 +483406,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          131.4776284,
-          33.0720058
-        ]
-      },
-      "properties": {
-        "name": "鎧ヶ岳城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "大分県大分市高原",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 847,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/bungo/yoroigatake-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           131.45196959999998,
           33.175847399999995
         ]
@@ -484488,7 +483432,7 @@ const castleData = {
         "name": "甲ケ森城跡",
         "genre": "",
         "category": "城",
-        "prefecture": "",
+        "prefecture": "愛媛県",
         "url": "https://kojodan.jp/castle/3165",
         "address": "愛媛県西予市城川町土居７３０",
         "shiroHbForm": "山城",
@@ -484516,24 +483460,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "愛媛県西予市宇和町卯之町５丁目２２６"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          133.1349246,
-          33.203626799999995
-        ]
-      },
-      "properties": {
-        "name": "窪川城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "高知県高岡郡四万十町金上野"
       }
     },
     {
@@ -484778,49 +483704,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.65500939999998,
-          33.530943799999996
-        ]
-      },
-      "properties": {
-        "name": "南城址",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "愛媛県喜多郡内子町五十崎甲"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          132.8051642,
-          33.7529336
-        ]
-      },
-      "properties": {
-        "name": "大友城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "愛媛県松山市恵原町",
-        "aliases": [
-          "大砥城"
-        ],
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 340,
-        "shiroHbRelativeHeightM": 250,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/iyo/ohdo-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           133.4170469,
           33.4852774
         ]
@@ -484869,51 +483752,6 @@ const castleData = {
         "url": "",
         "address": "高知県南国市岡豊町笠ノ川 両城",
         "shiroHbForm": "丘城"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          134.3588199,
-          33.593902899999996
-        ]
-      },
-      "properties": {
-        "name": "旧御陣屋跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "徳島県海部郡海陽町鞆浦山下６",
-        "aliases": [
-          "御陣屋"
-        ],
-        "shiroHbForm": "代官所",
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/awa/kaifu-jinya/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.4653203,
-          33.583247799999995
-        ]
-      },
-      "properties": {
-        "name": "安宅八幡山城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "和歌山県西牟婁郡白浜町矢田５５５",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 83,
-        "shiroHbRelativeHeightM": 70,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/kii/atagi-hachimanyama-jyo/"
       }
     },
     {
@@ -485000,28 +483838,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.19473360000003,
-          34.165950599999995
-        ]
-      },
-      "properties": {
-        "name": "亀ヶ尾城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "山口県岩国市錦見２丁目９−１３",
-        "shiroHbForm": "丘城",
-        "shiroHbElevationM": 40,
-        "shiroHbRelativeHeightM": 30,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/suo/kamegao-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           132.76153069999998,
           33.8760409
         ]
@@ -485033,50 +483849,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "愛媛県松山市吉藤５丁目２２"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          133.1290708,
-          33.8889419
-        ]
-      },
-      "properties": {
-        "name": "里城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "愛媛県西条市氷見丁",
-        "aliases": [
-          "里の城"
-        ],
-        "shiroHbForm": "丘城",
-        "shiroHbElevationM": 50,
-        "shiroHbRelativeHeightM": 20,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/iyo/himi-takao-sato-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          133.9793324,
-          34.0545865
-        ]
-      },
-      "properties": {
-        "name": "屋形山城（天王山城）跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "徳島県三好市三野町勢力",
-        "coordOffset": true
       }
     },
     {
@@ -485237,28 +484009,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.1196027,
-          34.2079658
-        ]
-      },
-      "properties": {
-        "name": "木ノ浦城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "愛媛県今治市伯方町木浦甲５４６",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 90,
-        "shiroHbRelativeHeightM": 90,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/iyo/kinoura-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           133.1824547,
           34.281879599999996
         ]
@@ -485336,24 +484086,6 @@ const castleData = {
         "shiroHbElevationM": 152,
         "shiroHbRelativeHeightM": 40,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/sanuki/kurikuma-tamura-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          134.839622,
-          34.4491048
-        ]
-      },
-      "properties": {
-        "name": "柳澤城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "兵庫県淡路市柳澤乙"
       }
     },
     {
@@ -485687,42 +484419,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.1218578,
-          34.960515
-        ]
-      },
-      "properties": {
-        "name": "下山城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "岡山県美作市下山"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          134.148263,
-          34.908564999999996
-        ]
-      },
-      "properties": {
-        "name": "上山城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "岡山県美作市上山３５７６"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           134.6940257,
           34.8411726
         ]
@@ -485741,32 +484437,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.2265382,
-          34.866492699999995
-        ]
-      },
-      "properties": {
-        "name": "蒲公英城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "兵庫県神戸市北区道場町日下部１３５７",
-        "aliases": [
-          "道場川原城",
-          "たんぽぽ城"
-        ],
-        "shiroHbForm": "丘城",
-        "shiroHbElevationM": 180,
-        "shiroHbRelativeHeightM": 30,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/settsu/dojyo-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           135.7005185,
           34.9181508
         ]
@@ -485775,7 +484445,7 @@ const castleData = {
         "name": "勝龍寺城跡",
         "genre": "",
         "category": "城",
-        "prefecture": "",
+        "prefecture": "京都府",
         "url": "https://kojodan.jp/castle/135",
         "address": "京都府長岡京市勝竜寺１３−１",
         "aliases": [
@@ -486881,24 +485551,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.4222285,
-          34.971889399999995
-        ]
-      },
-      "properties": {
-        "name": "塞ノ神城趾",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "愛知県新城市作手清岳上ノ山 クザ畑2"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           137.2896049,
           34.868950399999996
         ]
@@ -487077,42 +485729,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.0439958,
-          35.087919
-        ]
-      },
-      "properties": {
-        "name": "玉巻城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "兵庫県丹波市山南町岡本"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.09922029999998,
-          35.2330292
-        ]
-      },
-      "properties": {
-        "name": "余田城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "兵庫県丹波市市島町上鴨阪"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           135.1347984,
           35.308137099999996
         ]
@@ -487146,24 +485762,6 @@ const castleData = {
         "shiroHbElevationM": 240,
         "shiroHbRelativeHeightM": 50,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/tanba/ijiri-kita-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.2276106,
-          35.0801562
-        ]
-      },
-      "properties": {
-        "name": "澤田城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "兵庫県丹波篠山市沢田"
       }
     },
     {
@@ -487240,24 +485838,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "京都府京都市下京区神明町２４４ 綾小路通東洞院東入"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.9793842,
-          35.0559582
-        ]
-      },
-      "properties": {
-        "name": "金森城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "滋賀県守山市金森町１４０−４１"
       }
     },
     {
@@ -487642,56 +486222,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.1402079,
-          35.1021332
-        ]
-      },
-      "properties": {
-        "name": "小長谷城址",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "静岡県榛原郡川根本町東藤川１２４０",
-        "aliases": [
-          "徳谷城"
-        ],
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 362,
-        "shiroHbRelativeHeightM": 55,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/suruga/konagai-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.1894163,
-          35.3054165
-        ]
-      },
-      "properties": {
-        "name": "曽我城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "神奈川県小田原市曽我谷津",
-        "aliases": [
-          "曾我氏館"
-        ],
-        "shiroHbForm": "丘城",
-        "shiroHbElevationM": 52,
-        "shiroHbRelativeHeightM": 20,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/sagami/soga-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.989366,
           35.040054
         ]
@@ -487764,7 +486294,7 @@ const castleData = {
         "name": "万木城址",
         "genre": "",
         "category": "城",
-        "prefecture": "",
+        "prefecture": "千葉県",
         "url": "https://kojodan.jp/castle/862",
         "address": "千葉県いすみ市万木８３４",
         "shiroHbForm": "山城",
@@ -487773,7 +486303,8 @@ const castleData = {
           "万喜城",
           "満喜城"
         ],
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/kazusa/mangi-jyo/"
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/kazusa/mangi-jyo/",
+        "shiroHbRelativeHeightM": 60
       }
     },
     {
@@ -487956,24 +486487,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.8447498,
-          35.4812188
-        ]
-      },
-      "properties": {
-        "name": "箱ヶ嶽城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "福井県三方上中郡若狭町堤"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           135.62799710000002,
           35.4740246
         ]
@@ -487985,27 +486498,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "福井県大飯郡おおい町小堀"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.952252,
-          35.6535029
-        ]
-      },
-      "properties": {
-        "name": "福野城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "岐阜県郡上市美並町白山",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 195,
-        "shiroHbRelativeHeightM": 50
       }
     },
     {
@@ -488042,24 +486534,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "岐阜県中津川市苗木"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          137.3182173,
-          35.4419833
-        ]
-      },
-      "properties": {
-        "name": "荻之島城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "岐阜県瑞浪市釜戸町"
       }
     },
     {
@@ -488107,24 +486581,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.2782169,
-          35.714047199999996
-        ]
-      },
-      "properties": {
-        "name": "根小屋城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "東京都八王子市戸吹町"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.2514948,
           35.7352378
         ]
@@ -488158,62 +486614,6 @@ const castleData = {
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/musashi/inatsuke-jyo/",
         "shiroHbElevationM": 12.954,
         "shiroHbRelativeHeightM": 20
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          140.2594686,
-          35.637869099999996
-        ]
-      },
-      "properties": {
-        "name": "根古谷城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "千葉県八街市根古谷６９０"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          140.6678843,
-          35.7231707
-        ]
-      },
-      "properties": {
-        "name": "阿知戸城跡(蘆戸城跡)",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "千葉県旭市イ",
-        "shiroHbForm": "平城",
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/shimousa/ajito-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          140.6481516,
-          35.783806399999996
-        ]
-      },
-      "properties": {
-        "name": "櫻井城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "千葉県旭市櫻井"
       }
     },
     {
@@ -488274,26 +486674,6 @@ const castleData = {
         "address": "福井県福井市藤島町４９−１ みんなのひろば",
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/echizen/hayashi-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.4933661,
-          35.9835531
-        ]
-      },
-      "properties": {
-        "name": "土橋城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "福井県大野市日吉町１６",
-        "shiroHbForm": "平城",
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/echizen/hiyoshi-inuyama-jyo/"
       }
     },
     {
@@ -488395,82 +486775,6 @@ const castleData = {
         "shiroHbElevationM": 20,
         "shiroHbRelativeHeightM": 5,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/musashi/mitsugi-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.307972,
-          35.9445467
-        ]
-      },
-      "properties": {
-        "name": "山根城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "埼玉県入間郡毛呂山町岩井西５丁目１−１"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.33181639999998,
-          35.924641199999996
-        ]
-      },
-      "properties": {
-        "name": "田波目城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "埼玉県坂戸市西坂戸４丁目１５−２０"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.294129,
-          35.9366212
-        ]
-      },
-      "properties": {
-        "name": "竜ヶ谷城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "埼玉県入間郡毛呂山町阿諏訪１５６２−２",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 203,
-        "shiroHbRelativeHeightM": 100,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/musashi/moro-ryugaisan-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.6296337,
-          35.864419
-        ]
-      },
-      "properties": {
-        "name": "真鳥日向守城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "埼玉県さいたま市桜区西堀１０丁目１０−１１"
       }
     },
     {
@@ -488709,46 +487013,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.4716843,
-          36.4649966
-        ]
-      },
-      "properties": {
-        "name": "要谷山城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "栃木県佐野市飛駒町",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 400,
-        "shiroHbRelativeHeightM": 180,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/shimotsuke/hikoma-yogaisan-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.3111121,
-          36.2999742
-        ]
-      },
-      "properties": {
-        "name": "新田義貞公古城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "群馬県太田市新田反町町３７０ 0313"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.60092459999998,
           36.3530626
         ]
@@ -488928,7 +487192,7 @@ const castleData = {
         "name": "嵩山城跡",
         "genre": "",
         "category": "城",
-        "prefecture": "",
+        "prefecture": "群馬県",
         "url": "https://kojodan.jp/castle/3593",
         "address": "群馬県吾妻郡中之条町五反田",
         "shiroHbForm": "山城",
@@ -488937,7 +487201,8 @@ const castleData = {
         "aliases": [
           "武山城",
           "嶽山城"
-        ]
+        ],
+        "shiroHbUrl": "https://www.hb.pei.jp/shiro/kouzuke/takeyama-jyo/"
       }
     },
     {
@@ -488979,42 +487244,6 @@ const castleData = {
         "shiroHbRelativeHeightM": 110,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/shimotsuke/takadate-jyo/",
         "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.742087,
-          37.150449
-        ]
-      },
-      "properties": {
-        "name": "富木城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "石川県羽咋郡志賀町八幡５−１０９"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.8445716,
-          37.129748
-        ]
-      },
-      "properties": {
-        "name": "貝田城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "石川県七尾市中島町谷内"
       }
     },
     {
@@ -489185,29 +487414,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.30805200000003,
-          37.9276087
-        ]
-      },
-      "properties": {
-        "name": "池ノ端城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "新潟県新発田市池ノ端８３４−１",
-        "aliases": [
-          "亀形城"
-        ],
-        "shiroHbForm": "平城",
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/echigo/ikenohata-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           140.0655817,
           37.9119892
         ]
@@ -489259,24 +487465,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.63135,
-          38.171279999999996
-        ]
-      },
-      "properties": {
-        "name": "前川本城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "宮城県柴田郡川崎町前川本城１２−３"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           141.3079536,
           38.4232349
         ]
@@ -489285,7 +487473,7 @@ const castleData = {
         "name": "石巻城跡",
         "genre": "",
         "category": "城",
-        "prefecture": "",
+        "prefecture": "宮城県",
         "url": "https://kojodan.jp/castle/2245",
         "address": "宮城県石巻市日和が丘２丁目２",
         "shiroHbForm": "山城",
@@ -489295,51 +487483,6 @@ const castleData = {
         "aliases": [
           "日和山城"
         ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          140.42773219999998,
-          39.2970861
-        ]
-      },
-      "properties": {
-        "name": "沼の柵本城址",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "秋田県横手市雄物川町沼館４２９",
-        "aliases": [
-          "沼の柵"
-        ],
-        "shiroHbForm": "平城",
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/dewa/numadate-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          140.57738,
-          39.372879999999995
-        ]
-      },
-      "properties": {
-        "name": "金沢城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "秋田県横手市金沢安本館4−４",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 172,
-        "shiroHbRelativeHeightM": 91,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/dewa/kanazawa-saku/"
       }
     },
     {
@@ -489376,25 +487519,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "青森県弘前市乳井外ノ沢"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          143.30805555556,
-          42.286666666667
-        ]
-      },
-      "properties": {
-        "name": "仙台藩広尾(トカチ)陣屋",
-        "genre": "",
-        "category": "城",
-        "prefecture": "北海道",
-        "url": "",
-        "address": "北海道広尾町西四条十丁目",
-        "shiroHbForm": "陣屋"
       }
     },
     {
@@ -489452,24 +487576,6 @@ const castleData = {
         "url": "",
         "address": "北海道根室市牧の内",
         "shiroHbForm": "平城"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          141.34305555556,
-          42.563888888889
-        ]
-      },
-      "properties": {
-        "name": "仙台藩白老元陣屋",
-        "genre": "",
-        "category": "城",
-        "prefecture": "北海道",
-        "url": "",
-        "address": "北海道白老町陣屋町"
       }
     },
     {
@@ -489754,25 +487860,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.25972222222,
-          39.285555555556
-        ]
-      },
-      "properties": {
-        "name": "野手崎城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "岩手県",
-        "url": "",
-        "address": "岩手県奥州市江刺梁川",
-        "shiroHbForm": "丘城"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           141.57916666667,
           38.930833333333
         ]
@@ -489808,24 +487895,6 @@ const castleData = {
         "shiroHbForm": "山城",
         "shiroHbElevationM": 350,
         "shiroHbRelativeHeightM": 50
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          140.62333333333,
-          37.406388888889
-        ]
-      },
-      "properties": {
-        "name": "朝霧城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "福島県",
-        "url": "",
-        "address": "福島県田村市大越町下大越"
       }
     },
     {
@@ -489957,31 +488026,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.35747,
-          36.171406
-        ]
-      },
-      "properties": {
-        "name": "小川城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "茨城県",
-        "url": "",
-        "address": "茨城県小美玉市小川",
-        "aliases": [
-          "薗部城"
-        ],
-        "shiroHbForm": "平山城",
-        "shiroHbElevationM": 20,
-        "shiroHbRelativeHeightM": 10,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/hitachi/ogawa-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           140.00888888889,
           36.141944444444
         ]
@@ -490053,26 +488097,6 @@ const castleData = {
         "url": "",
         "address": "茨城県美浦村大字大谷",
         "shiroHbForm": "丘城"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.202218,
-          36.41348
-        ]
-      },
-      "properties": {
-        "name": "女淵城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "群馬県",
-        "url": "",
-        "address": "群馬県前橋市粕川町女渕",
-        "shiroHbForm": "平城",
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/kouzuke/onabuchi-jyo/"
       }
     },
     {
@@ -490193,27 +488217,6 @@ const castleData = {
         "url": "",
         "address": "群馬県沼田市大釜町",
         "shiroHbForm": "丘城"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.03916666667,
-          36.529722222222
-        ]
-      },
-      "properties": {
-        "name": "猫山城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "群馬県",
-        "url": "",
-        "address": "群馬県渋川市赤城町敷島",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 340,
-        "shiroHbRelativeHeightM": 90
       }
     },
     {
@@ -490559,24 +488562,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.64833333333,
-          35.784444444444
-        ]
-      },
-      "properties": {
-        "name": "上代陣屋",
-        "genre": "",
-        "category": "城",
-        "prefecture": "千葉県",
-        "url": "",
-        "address": "千葉県旭市櫻井"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           140.08611111111,
           35.13
         ]
@@ -490618,31 +488603,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.602513,
-          35.812855
-        ]
-      },
-      "properties": {
-        "name": "岡城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "埼玉県",
-        "url": "",
-        "address": "埼玉県朝霞市岡三丁目",
-        "aliases": [
-          "岡の城山"
-        ],
-        "shiroHbForm": "丘城",
-        "shiroHbElevationM": 12,
-        "shiroHbRelativeHeightM": 10,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/musashi/oka-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.064243,
           36.083891
         ]
@@ -490656,63 +488616,6 @@ const castleData = {
         "address": "埼玉県皆野町大字下日野沢",
         "shiroHbForm": "居館",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/musashi/asamishi-yakata/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.57388888889,
-          35.905277777778
-        ]
-      },
-      "properties": {
-        "name": "土屋陣屋",
-        "genre": "",
-        "category": "城",
-        "prefecture": "埼玉県",
-        "url": "",
-        "address": "埼玉県さいたま市西区大字西遊馬",
-        "shiroHbForm": "陣屋"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.64277777778,
-          35.926666666667
-        ]
-      },
-      "properties": {
-        "name": "伊達城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "埼玉県",
-        "url": "",
-        "address": "埼玉県さいたま市見沼区大和田町一丁目",
-        "shiroHbForm": "平城"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.67277777778,
-          36.068888888889
-        ]
-      },
-      "properties": {
-        "name": "米津氏陣屋",
-        "genre": "",
-        "category": "城",
-        "prefecture": "埼玉県",
-        "url": "",
-        "address": "埼玉県久喜市久喜中央四丁目",
-        "shiroHbForm": "陣屋"
       }
     },
     {
@@ -490795,24 +488698,6 @@ const castleData = {
         "shiroHbForm": "山城",
         "shiroHbElevationM": 382,
         "shiroHbRelativeHeightM": 180
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.43777777778,
-          35.678888888889
-        ]
-      },
-      "properties": {
-        "name": "三田氏館",
-        "genre": "",
-        "category": "城",
-        "prefecture": "東京都",
-        "url": "",
-        "address": "東京都国立市谷保"
       }
     },
     {
@@ -490975,26 +488860,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.428015,
-          37.939991
-        ]
-      },
-      "properties": {
-        "name": "東城館",
-        "genre": "",
-        "category": "城",
-        "prefecture": "新潟県",
-        "url": "",
-        "address": "新潟県新発田市上三光",
-        "shiroHbForm": "平城",
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/echigo/takemata-tojyo-yakata/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.21371,
           37.838909
         ]
@@ -491100,31 +488965,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.83739,
-          36.183714
-        ]
-      },
-      "properties": {
-        "name": "波田山城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "長野県",
-        "url": "",
-        "address": "長野県松本市波田",
-        "aliases": [
-          "秋葉城"
-        ],
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 977,
-        "shiroHbRelativeHeightM": 237,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/shinano/hatayama-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           138.154063,
           36.545713
         ]
@@ -491190,28 +489030,6 @@ const castleData = {
         "shiroHbElevationM": 540,
         "shiroHbRelativeHeightM": 110,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/shinano/wakatsukiyama-jyo-dosawa-dejiro/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          137.994921,
-          35.993363
-        ]
-      },
-      "properties": {
-        "name": "王城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "長野県",
-        "url": "",
-        "address": "長野県辰野町大字辰野",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 1027,
-        "shiroHbRelativeHeightM": 280,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/shinano/oh-jyo/"
       }
     },
     {
@@ -491486,28 +489304,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.824074,
-          36.65482
-        ]
-      },
-      "properties": {
-        "name": "源氏ヶ嶺城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "富山県",
-        "url": "",
-        "address": "富山県小矢部市−",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 242,
-        "shiroHbRelativeHeightM": 190,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/ecchu/genjigamine-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           136.94972222222,
           36.4325
         ]
@@ -491581,27 +489377,6 @@ const castleData = {
         "url": "",
         "address": "富山県砺波市増山",
         "shiroHbForm": "平山城"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          137.44138888889,
-          36.775
-        ]
-      },
-      "properties": {
-        "name": "金山谷城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "富山県",
-        "url": "",
-        "address": "富山県魚津市北山",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 310,
-        "shiroHbRelativeHeightM": 90
       }
     },
     {
@@ -491712,27 +489487,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.12861111111,
-          35.948611111111
-        ]
-      },
-      "properties": {
-        "name": "御床ヶ岳城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "福井県",
-        "url": "",
-        "address": "福井県越前町佐々生",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 280,
-        "shiroHbRelativeHeightM": 260
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           136.09666666667,
           36.004722222222
         ]
@@ -491793,24 +489547,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.56083333333,
-          35.946111111111
-        ]
-      },
-      "properties": {
-        "name": "神明山城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "福井県",
-        "url": "",
-        "address": "福井県大野市佐開"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           136.26638888889,
           35.899444444444
         ]
@@ -491846,49 +489582,6 @@ const castleData = {
         "shiroHbForm": "山城",
         "shiroHbElevationM": 346,
         "shiroHbRelativeHeightM": 300
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.89916666667,
-          37.325555555556
-        ]
-      },
-      "properties": {
-        "name": "渡合城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "石川県",
-        "url": "",
-        "address": "石川県輪島市三井町渡合"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.644729,
-          36.470081
-        ]
-      },
-      "properties": {
-        "name": "鞍ヶ嶽城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "石川県",
-        "url": "",
-        "address": "石川県金沢市倉ケ嶽",
-        "aliases": [
-          "倉ヶ嶽城"
-        ],
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 565,
-        "shiroHbRelativeHeightM": 200,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/kaga/kuragadake-jyo/"
       }
     },
     {
@@ -492189,53 +489882,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.310989,
-          35.129061
-        ]
-      },
-      "properties": {
-        "name": "臼木ヶ峰城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "愛知県",
-        "url": "",
-        "address": "愛知県豊田市岩神町",
-        "aliases": [
-          "豊楽城"
-        ],
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 200,
-        "shiroHbRelativeHeightM": 90,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/mikawa/usukigamine-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          137.521748,
-          35.146362
-        ]
-      },
-      "properties": {
-        "name": "二の宮砦",
-        "genre": "",
-        "category": "城",
-        "prefecture": "愛知県",
-        "url": "",
-        "address": "愛知県設楽町東納庫",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 960,
-        "shiroHbRelativeHeightM": 320,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/mikawa/kotaka-ninomiya-toride/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           137.291979,
           34.868935
         ]
@@ -492256,26 +489902,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.483409,
-          34.900754
-        ]
-      },
-      "properties": {
-        "name": "杉山端城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "愛知県",
-        "url": "",
-        "address": "愛知県新城市杉山",
-        "shiroHbForm": "平城",
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/mikawa/sugiyama-ha-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           137.399868,
           34.851178
         ]
@@ -492289,25 +489915,6 @@ const castleData = {
         "address": "愛知県豊川市大木町",
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/mikawa/oogi-matsudaira-yakata/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          137.5,
-          34.913888888889
-        ]
-      },
-      "properties": {
-        "name": "夷ヶ谷城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "愛知県",
-        "url": "",
-        "address": "愛知県新城市上平井",
-        "shiroHbForm": "丘城"
       }
     },
     {
@@ -492350,32 +489957,6 @@ const castleData = {
         "shiroHbForm": "山城",
         "shiroHbElevationM": 739,
         "shiroHbRelativeHeightM": 200
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.914913,
-          34.830296
-        ]
-      },
-      "properties": {
-        "name": "富貴城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "愛知県",
-        "url": "",
-        "address": "愛知県武豊町大字冨貴",
-        "aliases": [
-          "大高城",
-          "邑城"
-        ],
-        "shiroHbForm": "平城",
-        "shiroHbElevationM": 10,
-        "shiroHbRelativeHeightM": 5,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/owari/fuki-jyo/"
       }
     },
     {
@@ -492626,27 +490207,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.66083333333,
-          35.558611111111
-        ]
-      },
-      "properties": {
-        "name": "鷲見蔵人の城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "岐阜県",
-        "url": "",
-        "address": "岐阜県本巣市外山",
-        "shiroHbForm": "丘城",
-        "shiroHbElevationM": 180,
-        "shiroHbRelativeHeightM": 30
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           137.02666666667,
           35.850555555556
         ]
@@ -492682,24 +490242,6 @@ const castleData = {
         "shiroHbForm": "山城",
         "shiroHbElevationM": 232,
         "shiroHbRelativeHeightM": 84
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.94916666667,
-          35.659722222222
-        ]
-      },
-      "properties": {
-        "name": "高原城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "岐阜県",
-        "url": "",
-        "address": "岐阜県郡上市美並町高砂"
       }
     },
     {
@@ -493035,25 +490577,6 @@ const castleData = {
         "shiroHbForm": "山城",
         "shiroHbElevationM": 294,
         "shiroHbRelativeHeightM": 117
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.10361111111,
-          34.599444444444
-        ]
-      },
-      "properties": {
-        "name": "青蓮寺城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "三重県",
-        "url": "",
-        "address": "三重県名張市青蓮寺",
-        "shiroHbForm": "丘城"
       }
     },
     {
@@ -493576,28 +491099,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.811558,
-          35.019773
-        ]
-      },
-      "properties": {
-        "name": "如意岳城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "京都府",
-        "url": "",
-        "address": "京都府京都市左京区鹿ケ谷菖蒲谷町",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 465,
-        "shiroHbRelativeHeightM": 460,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/yamashiro/nyoigatake-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           135.807509,
           35.040489
         ]
@@ -493783,25 +491284,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.79472222222,
-          35.046111111111
-        ]
-      },
-      "properties": {
-        "name": "渡辺館",
-        "genre": "",
-        "category": "城",
-        "prefecture": "京都府",
-        "url": "",
-        "address": "京都府京都市左京区一乗寺堀ノ内町",
-        "shiroHbForm": "居館"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           135.84722222222,
           34.770277777778
         ]
@@ -493878,31 +491360,6 @@ const castleData = {
         "shiroHbElevationM": 245,
         "shiroHbRelativeHeightM": 200,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/kii/shinoga-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.47058,
-          33.567788
-        ]
-      },
-      "properties": {
-        "name": "古武之森城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "和歌山県",
-        "url": "",
-        "address": "和歌山県白浜町塩野",
-        "aliases": [
-          "古武ノ関"
-        ],
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 301,
-        "shiroHbRelativeHeightM": 290,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/kii/kobunomori-jyo/"
       }
     },
     {
@@ -494130,44 +491587,6 @@ const castleData = {
         "shiroHbElevationM": 213,
         "shiroHbRelativeHeightM": 60,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/settsu/nakanishiyama-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.53527777778,
-          34.728888888889
-        ]
-      },
-      "properties": {
-        "name": "荒生城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "大阪府",
-        "url": "",
-        "address": "大阪府大阪市旭区生江三丁目",
-        "shiroHbForm": "平城"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.5875,
-          34.780833333333
-        ]
-      },
-      "properties": {
-        "name": "鳥飼砦",
-        "genre": "",
-        "category": "城",
-        "prefecture": "大阪府",
-        "url": "",
-        "address": "大阪府摂津市鳥飼中二丁目",
-        "shiroHbForm": "平城"
       }
     },
     {
@@ -495038,31 +492457,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.179458,
-          35.037463
-        ]
-      },
-      "properties": {
-        "name": "鞍掛城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "岡山県",
-        "url": "",
-        "address": "岡山県美作市楢原中",
-        "aliases": [
-          "楢原城"
-        ],
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 220,
-        "shiroHbRelativeHeightM": 120,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/mimasaka/kurakake-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           134.122844,
           35.130687
         ]
@@ -495166,27 +492560,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.17111111111,
-          34.966388888889
-        ]
-      },
-      "properties": {
-        "name": "鷹ノ巣城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "岡山県",
-        "url": "",
-        "address": "岡山県美作市海田",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 327,
-        "shiroHbRelativeHeightM": 210
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           134.14805555556,
           34.920833333333
         ]
@@ -495201,31 +492574,6 @@ const castleData = {
         "shiroHbForm": "山城",
         "shiroHbElevationM": 359,
         "shiroHbRelativeHeightM": 270
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          133.904044,
-          35.476723
-        ]
-      },
-      "properties": {
-        "name": "松崎城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "鳥取県",
-        "url": "",
-        "address": "鳥取県湯梨浜町大字松崎",
-        "aliases": [
-          "亀形ヶ鼻城"
-        ],
-        "shiroHbForm": "丘城",
-        "shiroHbElevationM": 20,
-        "shiroHbRelativeHeightM": 15,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/houki/matsuzaki-jyo/"
       }
     },
     {
@@ -496621,27 +493969,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.098981,
-          34.001843
-        ]
-      },
-      "properties": {
-        "name": "内山城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "徳島県",
-        "url": "",
-        "address": "徳島県つるぎ町貞光",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 472,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/awa/uchiyama-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           134.504765,
           34.092042
         ]
@@ -496697,24 +494024,6 @@ const castleData = {
         "address": "高知県高知市福井町",
         "shiroHbForm": "丘城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/tosa/fukui-nishi-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          133.90694444444,
-          33.716944444444
-        ]
-      },
-      "properties": {
-        "name": "楮ヶ谷城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "高知県",
-        "url": "",
-        "address": "高知県香美市物部町大栃"
       }
     },
     {
@@ -497251,26 +494560,6 @@ const castleData = {
         "shiroHbElevationM": 87,
         "shiroHbRelativeHeightM": 60,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/hizen/jyozenji-jyosai/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          130.351241,
-          33.234293
-        ]
-      },
-      "properties": {
-        "name": "太田城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "佐賀県",
-        "url": "",
-        "address": "佐賀県佐賀市諸富町大字大堂",
-        "shiroHbForm": "平城",
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/hizen/ohta-jyo/"
       }
     },
     {
@@ -497866,25 +495155,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          131.33444444444,
-          32.385833333333
-        ]
-      },
-      "properties": {
-        "name": "星原城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "宮崎県",
-        "url": "",
-        "address": "宮崎県美郷町南郷神門",
-        "shiroHbForm": "平山城"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           131.42722222222,
           32.437777777778
         ]
@@ -498028,29 +495298,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.569921,
-          31.606442
-        ]
-      },
-      "properties": {
-        "name": "浜崎城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "鹿児島県",
-        "url": "",
-        "address": "鹿児島県鹿児島市清水町",
-        "aliases": [
-          "浜ヶ崎城"
-        ],
-        "shiroHbForm": "山城",
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/satsuma/hamazaki-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           130.471009,
           31.917349
         ]
@@ -498124,25 +495371,6 @@ const castleData = {
         "url": "",
         "address": "鹿児島県薩摩川内市里町里",
         "shiroHbForm": "平城"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          130.60222222222,
-          31.593055555556
-        ]
-      },
-      "properties": {
-        "name": "横山城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "鹿児島県",
-        "url": "",
-        "address": "鹿児島県鹿児島市桜島横山町",
-        "shiroHbForm": "山城"
       }
     },
     {
@@ -498226,25 +495454,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.5896654,
-          33.952632300000005
-        ]
-      },
-      "properties": {
-        "name": "能磯城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "愛媛県松山市神浦",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           132.77659789999998,
           33.8174702
         ]
@@ -498256,27 +495465,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "愛媛県松山市東石井５丁目１３",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          134.3424016,
-          34.0899927
-        ]
-      },
-      "properties": {
-        "name": "高畠城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "徳島県阿波市吉野町柿原１丁目",
-        "shiroHbForm": "平城",
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/awa/kakihara-takabatake-jyo/",
         "coordOffset": true
       }
     },
@@ -498315,47 +495503,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "香川県丸亀市綾歌町栗熊西東龍人湯船山",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          133.8201234,
-          34.3501102
-        ]
-      },
-      "properties": {
-        "name": "沙弥島城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "香川県坂出市沙弥島２１０−４",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.9046645,
-          34.36268880000001
-        ]
-      },
-      "properties": {
-        "name": "畔乗城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "三重県志摩市阿児町安乗８４５",
-        "shiroHbForm": "丘城",
-        "shiroHbElevationM": 25,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/shima/anori-jyo/",
         "coordOffset": true
       }
     },
@@ -498429,48 +495576,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.9387244,
-          34.694749
-        ]
-      },
-      "properties": {
-        "name": "明見山城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "岡山県岡山市北区三野本町４−４",
-        "shiroHbForm": "丘城",
-        "shiroHbElevationM": 50,
-        "shiroHbRelativeHeightM": 40,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/bizen/myokenyama-jyo/",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          134.831105,
-          34.8785684
-        ]
-      },
-      "properties": {
-        "name": "善防師城址",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "兵庫県加西市戸田井町",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           135.4105365,
           34.900744700000004
         ]
@@ -498482,25 +495587,6 @@ const castleData = {
         "prefecture": "",
         "url": "",
         "address": "兵庫県川西市山下",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.4779233,
-          34.9725509
-        ]
-      },
-      "properties": {
-        "name": "加治信濃守城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "三重県四日市市水沢町２５５０",
         "coordOffset": true
       }
     },
@@ -498547,25 +495633,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.12128959999998,
-          35.066817900000004
-        ]
-      },
-      "properties": {
-        "name": "宮山城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "岡山県勝田郡勝央町植月中１２５０",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           135.480448,
           35.020568000000004
         ]
@@ -498604,25 +495671,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.4662529,
-          35.287762900000004
-        ]
-      },
-      "properties": {
-        "name": "西高木家陣屋跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "岐阜県大垣市上石津町宮２３６−１",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           136.9741797,
           35.119553100000005
         ]
@@ -498637,27 +495685,6 @@ const castleData = {
         "coordOffset": true,
         "shiroHbForm": "平城",
         "shiroHbElevationM": 20.551
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          137.07026639999998,
-          35.0024188
-        ]
-      },
-      "properties": {
-        "name": "今崎城址",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "愛知県知立市来迎寺町古城",
-        "shiroHbForm": "平城",
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/mikawa/raigoji-jyo/",
-        "coordOffset": true
       }
     },
     {
@@ -498734,82 +495761,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.453793,
-          35.734475
-        ]
-      },
-      "properties": {
-        "name": "日之出城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "山梨県韮崎市穂坂町三之蔵",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.6494018,
-          35.6182323
-        ]
-      },
-      "properties": {
-        "name": "兎々呂城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "東京都世田谷区深沢５丁目３８−１",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.2008634,
-          35.8941206
-        ]
-      },
-      "properties": {
-        "name": "二峰城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "福井県越前市岩内町",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          138.29161299999998,
-          36.449772
-        ]
-      },
-      "properties": {
-        "name": "根小屋城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "長野県上田市真田町傍陽",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           138.26992629999998,
           36.3716357
         ]
@@ -498871,29 +495822,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.1260972,
-          39.9569902
-        ]
-      },
-      "properties": {
-        "name": "砂沢城跡",
-        "genre": "",
-        "category": "城",
-        "prefecture": "",
-        "url": "",
-        "address": "秋田県南秋田郡五城目町兎品沢６２−２",
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 96,
-        "shiroHbRelativeHeightM": 80,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/dewa/gojyome-jyo/",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           143.25277777778,
           42.8975
         ]
@@ -498938,7 +495866,7 @@ const castleData = {
       },
       "properties": {
         "name": "ヲンネモトチャシ",
-        "genre": "",
+        "genre": "日本100名城",
         "category": "城",
         "prefecture": "北海道",
         "url": "https://kojodan.jp/castle/33",
@@ -498968,34 +495896,6 @@ const castleData = {
         "url": "",
         "address": "北海道浦河町字西舎",
         "shiroHbForm": "丘城"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          140.841519,
-          38.189556
-        ]
-      },
-      "properties": {
-        "name": "高館城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "宮城県",
-        "url": "",
-        "address": "宮城県名取市高舘吉田",
-        "aliases": [
-          "高館",
-          "名取要害",
-          "羽黒城"
-        ],
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 182,
-        "shiroHbRelativeHeightM": 160,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/mutsu/natori-takadate-jyo/",
-        "coordOffset": true
       }
     },
     {
@@ -499133,29 +496033,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.49503,
-          35.951631000000006
-        ]
-      },
-      "properties": {
-        "name": "山城城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "福井県",
-        "url": "",
-        "address": "福井県大野市上舌",
-        "shiroHbForm": "丘城",
-        "shiroHbElevationM": 230,
-        "shiroHbRelativeHeightM": 40,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/echizen/yamashiro-jyo/",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           136.811767,
           37.16139900000001
         ]
@@ -499211,33 +496088,6 @@ const castleData = {
         "address": "愛知県大口町堀尾跡一丁目",
         "shiroHbForm": "居館",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/owari/horio-yashiki/",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          137.387828,
-          35.299048000000006
-        ]
-      },
-      "properties": {
-        "name": "落合山取手",
-        "genre": "",
-        "category": "城",
-        "prefecture": "岐阜県",
-        "url": "",
-        "address": "岐阜県恵那市明智町",
-        "aliases": [
-          "千畳敷砦",
-          "落合砦"
-        ],
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 504,
-        "shiroHbRelativeHeightM": 50,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/mino/ochiaiyama-toride/",
         "coordOffset": true
       }
     },
@@ -499440,29 +496290,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.125863,
-          34.26573500000001
-        ]
-      },
-      "properties": {
-        "name": "木本城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "和歌山県",
-        "url": "",
-        "address": "和歌山県和歌山市木ノ本",
-        "shiroHbForm": "丘城",
-        "shiroHbElevationM": 40,
-        "shiroHbRelativeHeightM": 30,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/kii/kinomoto-jyo/",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           135.641651,
           34.74678800000001
         ]
@@ -499551,32 +496378,6 @@ const castleData = {
         "shiroHbElevationM": 135,
         "shiroHbRelativeHeightM": 110,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/inaba/ubeyama-gohonmatsu-jyo/",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          133.612047,
-          35.520555
-        ]
-      },
-      "properties": {
-        "name": "篦津城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "鳥取県",
-        "url": "",
-        "address": "鳥取県琴浦町大字箆津",
-        "aliases": [
-          "槙城"
-        ],
-        "shiroHbForm": "丘城",
-        "shiroHbElevationM": 25,
-        "shiroHbRelativeHeightM": 25,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/houki/notsu-jyo/",
         "coordOffset": true
       }
     },
@@ -499690,32 +496491,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.033056,
-          34.54835800000001
-        ]
-      },
-      "properties": {
-        "name": "滑城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "広島県",
-        "url": "",
-        "address": "広島県三原市久井町江木",
-        "aliases": [
-          "江木滑城"
-        ],
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 440,
-        "shiroHbRelativeHeightM": 50,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/bingo/namera-jyo/",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           133.383366,
           34.381918000000006
         ]
@@ -499731,30 +496506,6 @@ const castleData = {
         "shiroHbElevationM": 10,
         "shiroHbRelativeHeightM": 10,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/bingo/taigashima-jyo/",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          133.238093,
-          34.578593000000005
-        ]
-      },
-      "properties": {
-        "name": "雀城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "広島県",
-        "url": "",
-        "address": "広島県府中市本山町",
-        "aliases": [
-          "鈴目城"
-        ],
-        "shiroHbForm": "丘城",
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/bingo/suzume-jyo/",
         "coordOffset": true
       }
     },
@@ -499974,26 +496725,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.5325,
-          33.343433333333
-        ]
-      },
-      "properties": {
-        "name": "篠田城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "愛媛県",
-        "url": "",
-        "address": "愛媛県西予市宇和町皆田",
-        "coordOffset": true,
-        "shiroHbForm": "山城"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           134.063495,
           34.320918000000006
         ]
@@ -500007,60 +496738,6 @@ const castleData = {
         "address": "香川県高松市松縄町",
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/sanuki/matsunawa-jyo/",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          134.607866,
-          33.882876
-        ]
-      },
-      "properties": {
-        "name": "高原寺城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "徳島県",
-        "url": "",
-        "address": "徳島県阿南市桑野町",
-        "aliases": [
-          "高原寺塁",
-          "桑野城"
-        ],
-        "shiroHbForm": "山城",
-        "shiroHbElevationM": 85,
-        "shiroHbRelativeHeightM": 75,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/awa/kogenji-jyo/",
-        "coordOffset": true
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          133.383824,
-          33.54081
-        ]
-      },
-      "properties": {
-        "name": "三ノ塀城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "高知県",
-        "url": "",
-        "address": "高知県日高村下分",
-        "aliases": [
-          "福良城",
-          "福良古城"
-        ],
-        "shiroHbForm": "丘城",
-        "shiroHbElevationM": 50,
-        "shiroHbRelativeHeightM": 40,
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/tosa/sannohe-jyo/",
         "coordOffset": true
       }
     },
@@ -500226,30 +496903,6 @@ const castleData = {
         ],
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/mutsu/toyozato-tsukinowa-date/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.582928,
-          36.292415
-        ]
-      },
-      "properties": {
-        "name": "佐野陣屋",
-        "genre": "",
-        "category": "城",
-        "prefecture": "栃木県",
-        "url": "",
-        "address": "栃木県佐野市植下町",
-        "aliases": [
-          "植田陣屋",
-          "植田城"
-        ],
-        "shiroHbForm": "陣屋",
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/shimotsuke/sano-jinya/"
       }
     },
     {
@@ -500884,29 +497537,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.477498,
-          34.601347
-        ]
-      },
-      "properties": {
-        "name": "西荏原陣屋",
-        "genre": "",
-        "category": "城",
-        "prefecture": "岡山県",
-        "url": "",
-        "address": "岡山県井原市西江原町",
-        "aliases": [
-          "一橋陣屋"
-        ],
-        "shiroHbForm": "陣屋",
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/bicchu/nishiebara-jinya/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           133.845137,
           34.663384
         ]
@@ -501504,24 +498134,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.479815,
-          36.274225
-        ]
-      },
-      "properties": {
-        "name": "岩村田陣屋",
-        "genre": "",
-        "category": "城",
-        "prefecture": "長野県",
-        "url": "https://kojodan.jp/castle/3680",
-        "address": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           136.969831,
           35.74275
         ]
@@ -501540,30 +498152,6 @@ const castleData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.447435,
-          34.857589
-        ]
-      },
-      "properties": {
-        "name": "若山城",
-        "genre": "",
-        "category": "城",
-        "prefecture": "三重県",
-        "url": "https://kojodan.jp/castle/1442",
-        "address": "",
-        "aliases": [
-          "丹陵城",
-          "亀山古城"
-        ],
-        "shiroHbForm": "平山城",
-        "shiroHbUrl": "https://www.hb.pei.jp/shiro/ise/wakayama-jyo/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           134.544909,
           34.872752
         ]
@@ -501574,7 +498162,7 @@ const castleData = {
         "category": "城",
         "prefecture": "兵庫県",
         "url": "https://kojodan.jp/castle/200",
-        "address": "",
+        "address": "兵庫県たつの市龍野町上霞城",
         "aliases": [
           "龍野城",
           "台山城",
