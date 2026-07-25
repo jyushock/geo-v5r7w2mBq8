@@ -392,6 +392,15 @@
            上下が切れてしまう。カード系は高さを画像の比率なりに伸ばして全体を見せる。 */
         .os-photo.os-photo-full { height: auto; }
         .os-photo.os-photo-full img { height: auto; object-fit: contain; }
+        /* 城の写真は取得元がいずれも横長（攻城団パノラマ 720×240 / 城郭放浪記 640×427〜480 /
+           Wikipedia 400×300 など）。高さは128pxのまま枠を4:3(171×128)に広げると、
+           城郭放浪記とWikipediaの横長画像はほぼ切れずに収まる（4:3ちょうどの640×480は全体が入る）。
+           行の高さはテキスト側（最大約96px）より写真が高いままなのでシート高は変わらない。 */
+        .os-photo.os-photo-wide { width: 171px; }
+        /* ただし攻城団パノラマ(720×240=3:1)のように極端に横長のものは、4:3枠にcoverすると
+           左右が半分以上欠ける。横縦比が2を超える画像だけ枠に収めて全体を見せる
+           （枠の寸法は変えないのでテキスト幅もシート高も影響を受けない）。 */
+        .os-photo.os-photo-fit img { object-fit: contain; }
         /* 城の写真は非同期取得。取得できるまで（できなかった場合も）場所を取らない */
         .os-castle-photo { display: none; }
         .os-line { font-size: 11px; color: #666; line-height: 1.45; }
@@ -2079,10 +2088,12 @@ function mhcardInfo(p) {
 function osLine(html) {
     return html ? `<div class="os-line os-clamp">${html}</div>` : '';
 }
-// 写真枠。既定は128×128にcover、full=true なら幅128pxのまま高さを比率なりに伸ばして全体を見せる
-// （マンホールカードのような縦長画像が切れないようにするため）。urlが空なら枠ごと出さない。
-function osPhotoHtml(url, full) {
-    return url ? `<div class="os-photo${full ? ' os-photo-full' : ''}">`
+// 写真枠。urlが空なら枠ごと出さない。variant で枠の形を切り替える:
+//   ''(既定) 128×128にcover      … ポケふた(750×750)のような正方形向け
+//   'full'   幅128・高さは比率なり … マンホールカード(縦長)を切らずに全体表示
+//   'wide'   171×128にcover       … 城(横長ソース)の左右の欠けを減らす
+function osPhotoHtml(url, variant) {
+    return url ? `<div class="os-photo${variant ? ' os-photo-' + variant : ''}">`
                + `<img src="${url}" onerror="this.parentElement.style.display='none'"></div>` : '';
 }
 function osRow(btns) {
@@ -2131,14 +2142,14 @@ function buildSheetHtml(type, label, p, lng, lat) {
         }
         if (type === 'mhcard') {
             title = `${p.coordOffset ? '[複]' : ''}[配布] ${[info && info.muni, p.locationName].filter(Boolean).join(' ') || p.name || label}`;
-            photo = osPhotoHtml(p.cardImgUrl, true);   // カードは縦長なので切らずに全体を見せる
+            photo = osPhotoHtml(p.cardImgUrl, 'full');   // カードは縦長なので切らずに全体を見せる
             lines = osLine(p.address) + osLine(p.hours ? `🕐 ${p.hours}` : '')
                   + osLine(p.issueDate ? `<span class="os-k">発行</span> ${p.issueDate}` : '');
         } else {
             title = p.name || label;
             photo = osPhotoHtml(p.cardId
                 ? `https://ekikaramanhole.whitebeach.org/ext/manholecard/image/getimage.cgi?file=card/${p.cardId}.jpg` : '',
-                true);   // カードは縦長なので切らずに全体を見せる
+                'full');   // カードは縦長なので切らずに全体を見せる
             lines = osLine(p.address)
                   + (card ? osLine(card.locationName ? `<span class="os-k">配布場所</span> ${card.locationName}` : '')
                           + osLine(card.address) + osLine(card.hours ? `🕐 ${card.hours}` : '')
@@ -2202,10 +2213,20 @@ async function injectCastleImage(castleName, kojodanUrl, shiroHbUrl) {
     const slot = document.querySelector('#obj-sheet-body .os-castle-photo');
     // 取得完了までに別のオブジェクトへ切り替わっていたら、その城の写真を差し込まない
     if (!slot || slot !== slotAtStart) return;
-    slot.outerHTML = osPhotoHtml(imgUrl);
-    // 画像ロードで高さが変わるため、確定した時点で選択ピンの見え方を補正し直す
+    slot.outerHTML = osPhotoHtml(imgUrl, 'wide');   // 城の取得元は横長なので4:3枠にする
     const img = document.querySelector('#obj-sheet-body .os-photo img');
-    if (img) img.addEventListener('load', adjustMapForSheet, { once: true });
+    if (img) {
+        // 実寸が分かってから表示方式を決める。攻城団パノラマ(720×240)のように
+        // 横縦比が2を超えるものは cover だと左右が半分以上欠けるため contain に切り替える。
+        const applyFit = () => {
+            if (img.naturalWidth && img.naturalWidth / img.naturalHeight > 2) {
+                img.parentElement.classList.add('os-photo-fit');
+            }
+            adjustMapForSheet();   // 画像確定で高さが変わり得るので選択ピンの見え方を補正し直す
+        };
+        if (img.complete && img.naturalWidth) applyFit();
+        else img.addEventListener('load', applyFit, { once: true });
+    }
     applyClampMarkers();
     adjustMapForSheet();
 }

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>城の写真枠 3案比較（実画像・実寸）</title>
+<style>
+  body { font-family: sans-serif; background: #ececec; padding: 18px; margin: 0; color: #222; }
+  h1 { font-size: 16px; margin: 0 0 6px; }
+  h2 { font-size: 14.5px; margin: 26px 0 4px; padding: 10px 0 0; border-top: 3px solid #b5b5b5; }
+  .lead { font-size: 12px; color: #555; line-height: 1.8; margin: 0 0 10px; max-width: 1200px; }
+  .lead b { color: #b00; }
+  code { background: #fff; padding: 0 3px; border-radius: 3px; font-size: 11px; }
+  table.calc { border-collapse: collapse; font-size: 11.5px; margin: 8px 0; background: #fff; }
+  table.calc th, table.calc td { border: 1px solid #ddd; padding: 4px 9px; text-align: left; white-space: nowrap; }
+  table.calc th { background: #f4f4f4; }
+  table.calc td.n { text-align: right; font-variant-numeric: tabular-nums; }
+  table.calc td.ok { background: #e8f5e9; font-weight: bold; }
+  table.calc td.ng { background: #fdecea; }
+
+  .vrow { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; }
+  .cell { width: 375px; }
+  .cell .hd { font-size: 11.5px; font-weight: bold; margin: 0 0 1px; }
+  .cell .sub { font-size: 10px; color: #888; margin: 0 0 4px; }
+  .cell .mt { font-size: 10.5px; color: #666; margin: 5px 0 0; line-height: 1.6; font-variant-numeric: tabular-nums; }
+  .cell .mt b { color: #111; } .cell .mt .warn { color: #b00; font-weight: bold; }
+  .cell .mt .good { color: #0a7a2f; font-weight: bold; }
+
+  /* ===== index.html の実CSSと同じ寸法 ===== */
+  .sheet { width: 375px; box-sizing: border-box; background: #fff; border-radius: 16px 16px 0 0;
+           box-shadow: 0 -3px 14px rgba(0,0,0,.22); overflow: hidden; }
+  .sheet .handle { width: 36px; height: 4px; background: #ccc; border-radius: 2px; margin: 8px auto 6px; }
+  .sheet .body { padding: 0 14px 14px; }          /* 内容幅 347px */
+  .os-title { display: flex; align-items: center; gap: 5px; margin-bottom: 3px; min-width: 0; }
+  .os-name { font-size: 15px; font-weight: bold; min-width: 0; overflow: hidden;
+             display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .badge { font-size: 12px; font-weight: 700; color: #fff; padding: 2px 8px; border-radius: 10px;
+           line-height: 1.6; white-space: nowrap; flex-shrink: 0; background: hsl(0,42%,38%); }
+  .os-row { display: flex; gap: 10px; margin-top: 5px; align-items: flex-start; }
+  .os-meta { flex: 1; min-width: 0; }
+  .os-line { font-size: 11px; color: #666; line-height: 1.45; overflow: hidden;
+             display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .os-line + .os-line { margin-top: 1px; }
+  .os-photo { width: 128px; height: 128px; flex-shrink: 0; border-radius: 7px; border: 1px solid #eee;
+              overflow: hidden; background: #f2f0ec; position: relative; }
+  .os-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .os-photo.os-photo-wide { width: 171px; }
+  .os-photo.fit-contain img { object-fit: contain; }
+  .os-photo .tag { position: absolute; left: 0; right: 0; bottom: 0; font-size: 8.5px; color: #fff;
+                   background: rgba(0,0,0,.55); text-align: center; line-height: 1.4; }
+  .btn { display: flex; align-items: center; justify-content: center; text-align: center; height: 40px;
+         padding: 0 4px; border-radius: 7px; font-weight: bold; color: #fff; font-size: 12px;
+         box-sizing: border-box; white-space: nowrap; overflow: hidden; flex: 1 1 0; min-width: 0; }
+  .os-brow { display: flex; gap: 4px; margin-top: 4px; }
+  .b-gmap { background: #fff; color: #4285f4; border: 1px solid #4285f4; }
+  .b-acc { background: #00897B; } .b-kojo { background: #8B4513; } .b-shb { background: #6A4C93; }
+  .b-nav { background: #4285F4; } .b-yahoo { background: #FF0033; } .b-near { background: #34A853; }
+</style>
+</head>
+<body>
+
+<h1>城の写真枠 3案比較（実画像・実寸375px）</h1>
+<p class="lead">
+実際の画像URL（攻城団・城郭放浪記・Wikipedia）をそのまま読み込んでいます。数値は読み込み後に
+<code>naturalWidth/naturalHeight</code> から実測して表示します。<br>
+内容幅は 375 − 左右padding28 = <b>347px</b>。写真とテキストの間は10pxなので、<b>テキスト幅 = 347 − 写真幅 − 10</b>。
+</p>
+
+<table class="calc">
+<tr><th>案</th><th>写真枠</th><th>テキスト幅</th><th>方式</th></tr>
+<tr><td>① 変更前</td><td>128 × 128</td><td class="n">209px</td><td>cover（はみ出しを切る）</td></tr>
+<tr><td>② 4:3（適用済み）</td><td>171 × 128</td><td class="n">166px</td><td>cover</td></tr>
+<tr><td>③ 4:3＋極端な横長のみcontain</td><td>171 × 128</td><td class="n">166px</td><td>cover。ただし <b>横縦比 &gt; 2</b> の画像だけ contain（枠に収める）</td></tr>
+</table>
+
+<div id="out"></div>
+
+<h2>■ 実測サマリ</h2>
+<table class="calc" id="summary"></table>
+
+<script>
+// 実データから採録した実在の画像URL
+const SRCS = [
+  { key:'kojo',  name:'攻城団パノラマ（弘前城）', expect:'720×240',
+    url:'https://kojodan.com/pic/panorama/5.jpg',
+    castle:'弘前城', metas:['別名: 鷹岡城、高岡城','標高 50m / 比高 25m','青森県弘前市大字下白銀町'] },
+  { key:'shb32', name:'城郭放浪記 3:2（相内館）', expect:'640×427',
+    url:'https://www.hb.pei.jp/shiro/mutsu/ainai-date/indexb.jpg',
+    castle:'相内館', metas:['青森県青森市大字宮田'] },
+  { key:'shb43', name:'城郭放浪記 4:3寄り（岩村城）', expect:'640×475',
+    url:'https://www.hb.pei.jp/shiro/mino/iwamura-jyo/indexb.jpg',
+    castle:'岩村城', metas:['別名: 霧ヶ城','標高 721m / 比高 153m','岐阜県恵那市岩村町'] },
+  { key:'wiki43', name:'Wikipedia 横長（岩村城）', expect:'400×300',
+    url:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Iwamura_Castle.JPG/500px-Iwamura_Castle.JPG',
+    castle:'岩村城', metas:['別名: 霧ヶ城','標高 721m / 比高 153m','岐阜県恵那市岩村町'] },
+  { key:'wikiV', name:'Wikipedia 縦長（国吉城）', expect:'400×533',
+    url:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/A_series_of_Kuruwa_on_Kuniyoshi-jo.jpg/500px-A_series_of_Kuruwa_on_Kuniyoshi-jo.jpg',
+    castle:'国吉城', metas:['別名: 佐柿城、佐柿国吉城','標高 197m / 比高 140m','福井県美浜町坂尻'] },
+];
+
+const PLANS = [
+  { id:'①', name:'変更前 128×128 cover', cls:'', contain:false },
+  { id:'②', name:'4:3 171×128 cover（適用済み）', cls:'os-photo-wide', contain:false },
+  { id:'③', name:'4:3 171×128 ＋ 横縦比>2 のみ contain', cls:'os-photo-wide', contain:true },
+];
+
+function sheet(plan, s) {
+  const metas = s.metas.map(m => `<div class="os-line">${m}</div>`).join('');
+  return `<div class="sheet"><div class="handle"></div><div class="body">
+    <div class="os-title"><span class="badge">山城</span><span class="os-name">${s.castle}</span></div>
+    <div class="os-row">
+      <div class="os-photo ${plan.cls}" data-plan="${plan.id}" data-key="${s.key}"${plan.contain ? ' data-auto="1"' : ''}>
+        <img src="${s.url}" referrerpolicy="no-referrer"><span class="tag"></span>
+      </div>
+      <div class="os-meta">${metas}</div>
+    </div>
+    <div class="os-brow"><a class="btn b-gmap">GoogleMap</a><a class="btn b-acc">アクセス</a></div>
+    <div class="os-brow"><a class="btn b-kojo">攻城団</a><a class="btn b-shb">城郭放浪記</a></div>
+    <div class="os-brow"><a class="btn b-nav">ここへ行く</a><a class="btn b-yahoo">ここへ行く</a><a class="btn b-near">🔍 この周辺を検索</a></div>
+  </div></div>`;
+}
+
+document.getElementById('out').innerHTML = PLANS.map(p => {
+  const cells = SRCS.map(s => `
+    <div class="cell"><div class="hd">${s.name}</div><div class="sub">想定 ${s.expect}</div>
+      ${sheet(p, s)}<div class="mt"></div></div>`).join('');
+  return `<h2>■ 案${p.id}　${p.name}</h2><div class="vrow">${cells}</div>`;
+}).join('');
+
+// 画像の実寸から、枠に対して見えている割合を実測する
+function report() {
+  const rows = {};
+  document.querySelectorAll('.os-photo').forEach(ph => {
+    const img = ph.querySelector('img');
+    const cell = ph.closest('.cell');
+    const mt = cell.querySelector('.mt');
+    if (!img.naturalWidth) { mt.innerHTML = '<span class="warn">画像を読み込めませんでした（通信または参照元制限）</span>'; return; }
+    const nw = img.naturalWidth, nh = img.naturalHeight;
+    // 案③: 横縦比が2を超える画像だけ contain に切り替える
+    if (ph.dataset.auto && nw / nh > 2) ph.classList.add('fit-contain');
+    const contain = ph.classList.contains('fit-contain');
+    const bw = ph.clientWidth, bh = ph.clientHeight;
+    const s = contain ? Math.min(bw / nw, bh / nh) : Math.max(bw / nw, bh / nh);
+    const dw = nw * s, dh = nh * s;
+    const visW = Math.min(100, bw / dw * 100), visH = Math.min(100, bh / dh * 100);
+    const cut = (visW < 99.5) ? `<span class="warn">左右が ${Math.round(100 - visW)}% 欠ける</span>`
+              : (visH < 99.5) ? `<span class="warn">上下が ${Math.round(100 - visH)}% 欠ける</span>`
+              : '<span class="good">全体が見える</span>';
+    ph.querySelector('.tag').textContent = `原寸 ${nw}×${nh}${contain ? '（contain）' : ''}`;
+    mt.innerHTML = `原寸 <b>${nw}×${nh}</b> ／ 枠 ${bw}×${bh} ／ 表示 ${Math.round(dw)}×${Math.round(dh)}<br>`
+                 + `見えている割合 幅${Math.round(visW)}% 高${Math.round(visH)}% ／ ${cut}`
+                 + `<br>テキスト幅 ${347 - bw - 10}px ／ シート高 ${Math.round(cell.querySelector('.sheet').getBoundingClientRect().height)}px`;
+    (rows[ph.dataset.key] = rows[ph.dataset.key] || {})[ph.dataset.plan] = { visW, visH, contain, bw };
+  });
+
+  const tbl = document.getElementById('summary');
+  tbl.innerHTML = '<tr><th>画像ソース</th><th>案① 128×128</th><th>案② 171×128</th><th>案③ 171×128＋contain</th></tr>'
+    + SRCS.map(s => {
+        const r = rows[s.key] || {};
+        const td = id => {
+          const v = r[id];
+          if (!v) return '<td>-</td>';
+          const full = v.visW > 99.5 && v.visH > 99.5;
+          const txt = full ? '全体が見える' + (v.contain ? '（contain）' : '')
+                           : (v.visW < 99.5 ? `幅${Math.round(v.visW)}%` : `高${Math.round(v.visH)}%`);
+          return `<td class="${full ? 'ok' : 'ng'}">${txt}</td>`;
+        };
+        return `<tr><td>${s.name}</td>${td('①')}${td('②')}${td('③')}</tr>`;
+      }).join('')
+    + '<tr><th>テキスト幅</th><th>209px</th><th>166px</th><th>166px</th></tr>';
+}
+
+let pending = document.querySelectorAll('.os-photo img').length;
+document.querySelectorAll('.os-photo img').forEach(img => {
+  const done = () => { if (--pending <= 0) report(); };
+  if (img.complete) done(); else { img.addEventListener('load', done); img.addEventListener('error', done); }
+});
+setTimeout(report, 4000);   // 読み込みが遅い場合の保険
+</script>
+</body>
+</html>
