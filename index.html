@@ -397,10 +397,6 @@
            城郭放浪記とWikipediaの横長画像はほぼ切れずに収まる（4:3ちょうどの640×480は全体が入る）。
            行の高さはテキスト側（最大約96px）より写真が高いままなのでシート高は変わらない。 */
         .os-photo.os-photo-wide { width: 171px; }
-        /* ただし攻城団パノラマ(720×240=3:1)のように極端に横長のものは、4:3枠にcoverすると
-           左右が半分以上欠ける。横縦比が2を超える画像だけ枠に収めて全体を見せる
-           （枠の寸法は変えないのでテキスト幅もシート高も影響を受けない）。 */
-        .os-photo.os-photo-fit img { object-fit: contain; }
         /* 城の写真は非同期取得。取得できるまで（できなかった場合も）場所を取らない */
         .os-castle-photo { display: none; }
         .os-line { font-size: 11px; color: #666; line-height: 1.45; }
@@ -2214,19 +2210,9 @@ async function injectCastleImage(castleName, kojodanUrl, shiroHbUrl) {
     // 取得完了までに別のオブジェクトへ切り替わっていたら、その城の写真を差し込まない
     if (!slot || slot !== slotAtStart) return;
     slot.outerHTML = osPhotoHtml(imgUrl, 'wide');   // 城の取得元は横長なので4:3枠にする
+    // 画像ロードで高さが変わるため、確定した時点で選択ピンの見え方を補正し直す
     const img = document.querySelector('#obj-sheet-body .os-photo img');
-    if (img) {
-        // 実寸が分かってから表示方式を決める。攻城団パノラマ(720×240)のように
-        // 横縦比が2を超えるものは cover だと左右が半分以上欠けるため contain に切り替える。
-        const applyFit = () => {
-            if (img.naturalWidth && img.naturalWidth / img.naturalHeight > 2) {
-                img.parentElement.classList.add('os-photo-fit');
-            }
-            adjustMapForSheet();   // 画像確定で高さが変わり得るので選択ピンの見え方を補正し直す
-        };
-        if (img.complete && img.naturalWidth) applyFit();
-        else img.addEventListener('load', applyFit, { once: true });
-    }
+    if (img) img.addEventListener('load', adjustMapForSheet, { once: true });
     applyClampMarkers();
     adjustMapForSheet();
 }
