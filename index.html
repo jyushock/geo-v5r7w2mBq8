@@ -357,15 +357,57 @@
             white-space: nowrap;
         }
         .filter-chip input { width: 11px; height: 11px; margin: 0; }
-        .popup-card { width: 180px; padding: 6px 8px; font-family: sans-serif; }
-        .popup-title-row { display: flex; align-items: center; gap: 5px; margin-bottom: 2px; }
-        .popup-title { font-weight: bold; font-size: 14px; }
-        .popup-genre { font-size: 11px; color: #666; display: block; margin-bottom: 5px; }
-        .manhole-img-container { margin: 4px 0; height: 160px; background: #f9f9f9; border-radius: 6px; border: 1px solid #eee; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-        .manhole-img, .manhole-img-large { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; margin: 0 auto; }
+        /* ══ オブジェクト情報シート（下から出る。旧ポップアップの置き換え） ══
+           レイアウト: タイトル行（バッジ左＋名前） / 写真128px＋テキスト横並び / ボタン3行
+           ボタン行は flex で等分するため、個数が変わっても空きセルが出ない。 */
+        #obj-sheet {
+            position: fixed; bottom: -100%; left: 0; right: 0;
+            background: #fff; border-radius: 16px 16px 0 0;
+            box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
+            z-index: 310; transition: bottom 0.28s ease;
+            max-height: calc(100svh - 40px); display: flex; flex-direction: column;
+            font-family: sans-serif;
+        }
+        /* 閉じるボタン(20px)がヘッダー内に収まる高さを確保し、本文と重ならないようにする */
+        #obj-sheet-header { position: relative; padding: 8px 14px 4px; min-height: 24px;
+                            box-sizing: border-box; flex-shrink: 0; cursor: grab; }
+        #obj-sheet-header .os-handle { width: 36px; height: 4px; background: #ccc; border-radius: 2px; margin: 0 auto; }
+        #obj-sheet-close {
+            position: absolute; top: 1px; right: 8px;
+            background: none; border: none; font-size: 20px; color: #bbb;
+            cursor: pointer; padding: 0 6px; line-height: 1;
+        }
+        #obj-sheet-body { overflow-y: auto; padding: 0 14px 14px; }   /* 内容幅 = 画面幅 - 28px */
+        .os-title { display: flex; align-items: center; gap: 5px; margin-bottom: 3px; min-width: 0; }
+        /* 長い名前（食べログの店名など）は2行で省略する */
+        .os-name { font-size: 15px; font-weight: bold; min-width: 0; overflow: hidden;
+                   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+        .os-row { display: flex; gap: 10px; margin-top: 5px; align-items: flex-start; }
+        .os-meta { flex: 1; min-width: 0; }
+        /* 写真: 幅128pxの枠。既定は128×128にcover（旧 .castle-img と同じトリミング方式） */
+        .os-photo { width: 128px; height: 128px; flex-shrink: 0; border-radius: 7px; border: 1px solid #eee;
+                    overflow: hidden; background: #f2f0ec; }
+        .os-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        /* マンホールカードは縦長（実測 232×320 / 517×722 ＝ 約1:1.39）で、正方形枠にcoverすると
+           上下が切れてしまう。カード系は高さを画像の比率なりに伸ばして全体を見せる。 */
+        .os-photo.os-photo-full { height: auto; }
+        .os-photo.os-photo-full img { height: auto; object-fit: contain; }
+        /* 城の写真は非同期取得。取得できるまで（できなかった場合も）場所を取らない */
+        .os-castle-photo { display: none; }
+        .os-line { font-size: 11px; color: #666; line-height: 1.45; }
+        .os-line + .os-line { margin-top: 1px; }
+        .os-line .os-k { color: #aaa; }
+        .os-clamp { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+        .os-clamp.clampable { cursor: pointer; }
+        .os-clamp.clampable::after { content: ' ▼'; font-size: 10px; color: #999; }
+        .os-clamp.expanded { display: block; -webkit-line-clamp: unset; overflow: visible; }
+        .os-clamp.clampable.expanded::after { content: ' ▲'; }
+        /* ボタン行: flex:1 で等分するので個数が何個でも行がぴったり埋まる */
+        .os-brow { display: flex; gap: 4px; margin-top: 4px; }
+        /* 情報源が1つも無い城では、非同期挿入用に残しているセット行が空になるので消す */
+        .os-brow:empty { display: none; }
         .btn { display: flex; align-items: center; justify-content: center; text-align: center; height: 40px; padding: 0 4px; border-radius: 7px; text-decoration: none; font-family: inherit; font-weight: bold; color: white; font-size: 12px; line-height: normal; border: none; box-sizing: border-box; cursor: pointer; }
-        .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 5px; }
-        .btn-full { grid-column: 1 / -1; }
+        .os-brow .btn { flex: 1 1 0; min-width: 0; white-space: nowrap; overflow: hidden; }
         .btn-tabelog { background: #ff6600; }
         .btn-wiki { background: #333333; }
         .btn-gmap { background: white; color: #4285f4; border: 1px solid #4285f4; }
@@ -375,31 +417,21 @@
         .btn-michi-web { background: #283593; color: #fff; }
         .btn-michi-hp  { background: #795548; color: #fff; }
         .btn-michi-eki { background: #BF360C; color: #fff; }
-        .btn-nearby-search { background: #34A853; color: #fff; width: 100%; box-sizing: border-box; border: none; }
+        .btn-nearby-search { background: #34A853; color: #fff; }
         .btn-kojodan { background: #8B4513; color: #fff; }
         .btn-access  { background: #00897B; color: #fff; }
-        .popup-address { font-size: 11px; color: #666; display: block; margin-bottom: 0px; padding-left: 2px; }
-        .popup-alias   { font-size: 11px; color: #666; display: block; margin-bottom: 0px; padding-left: 2px; }
-        .popup-road    { font-size: 11px; color: #888; display: block; margin-bottom: 6px; }
-        .popup-clamp { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; position: relative; }
-        .popup-clamp.popup-clamp-1 { -webkit-line-clamp: 1; }
-        .popup-clamp.clampable { cursor: pointer; }
-        .popup-clamp.clampable::after { content: ' ▼'; font-size: 10px; color: #999; }
-        .popup-clamp.expanded { display: block; -webkit-line-clamp: unset; overflow: visible; }
-        .popup-clamp.clampable.expanded::after { content: ' ▲'; }
-        .castle-img-container { margin: 4px 0; border-radius: 6px; border: 1px solid #eee; overflow: hidden; background: #f5f0e8; }
-        .castle-img { width: 100%; height: 160px; object-fit: cover; display: block; }
-        .btn-carddetail { background: #8D6E63; color: #fff; }
         .btn-shirohb { background: #6A4C93; color: #fff; }
-        .source-btns { display: contents; }
-        .popup-form { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; margin-bottom: 0px; padding-left: 2px; }
         .popup-form-badge {
             font-size: 10.5px; font-weight: 700; color: #fff;
             padding: 2px 8px; border-radius: 10px; line-height: 1.6; white-space: nowrap;
         }
         /* タイトル行(城名14px)に合わせて少し大きくしたバリエーション */
         .popup-form-badge.popup-form-badge-title { font-size: 12px; flex-shrink: 0; }
-        .popup-form-meta { font-size: 11px; color: #666; font-variant-numeric: tabular-nums; }
+        /* マンホール系のカードID／弾バッジ。位置(タイトル左)と寸法は城の形態バッジと同一に揃える。 */
+        .os-cdbadge { font-size: 12px; font-weight: 700; color: #fff;
+                      padding: 2px 8px; border-radius: 10px; line-height: 1.6;
+                      white-space: nowrap; flex-shrink: 0; background: #8d6e63; }
+        .os-cdbadge.os-cdround { background: #546E7A; }
         /* 形態名ごとの個別色。平城系(平城・平山城)は緑系、水系(水軍城・海城・水城)は青系、寺社は紫系に統一。
            他は意味によるグループ化をせず、上記3系統の帯域を避けて個別に配置（モックで確定した配色）。 */
         .popup-form-badge.f-yamajiro   { background: hsl(0,   42%, 38%); } /* 山城 */
@@ -424,39 +456,10 @@
         .popup-form-badge.f-houkadai   { background: hsl(0,   0%,  38%); } /* 烽火台（グレー） */
         .popup-form-badge.f-kanga      { background: hsl(0,   0%,  55%); } /* 官衙（グレー） */
 
-        /* マンホールカード詳細シート */
-        #card-detail-panel {
-            position: fixed; bottom: -100%; left: 0; right: 0;
-            background: white; border-radius: 16px 16px 0 0;
-            box-shadow: 0 -4px 16px rgba(0,0,0,0.15);
-            z-index: 320; transition: bottom 0.3s ease;
-            max-height: 80vh; display: flex; flex-direction: column;
-            font-family: sans-serif;
-        }
-        #card-detail-header { position: relative; padding: 8px 16px 4px; flex-shrink: 0; cursor: grab; }
-        #card-detail-header .cd-handle { width: 36px; height: 4px; background: #ccc; border-radius: 2px; margin: 0 auto; }
-        #card-detail-close {
-            position: absolute; top: 6px; right: 12px;
-            background: none; border: none; font-size: 22px; color: #bbb;
-            cursor: pointer; padding: 0 4px; line-height: 1;
-        }
-        #card-detail-body { overflow-y: auto; padding: 4px 16px 14px; }
-        .cd-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
-        .cd-muni { font-size: 15px; font-weight: bold; color: #333; }
-        .cd-badge { font-size: 10px; font-weight: bold; color: #fff; background: #8d6e63; border-radius: 10px; padding: 2px 8px; flex-shrink: 0; }
-        .cd-badge.cd-round { background: #546E7A; }
-        .cd-img-wrap { background: #f5f2ec; border: 1px solid #eee; border-radius: 10px; padding: 10px; text-align: center; margin-bottom: 10px; }
-        .cd-img { max-width: 170px; max-height: 240px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.25); }
-        .cd-table { width: 100%; border-collapse: collapse; margin-bottom: 10px; }
-        .cd-table th { font-size: 10px; color: #999; font-weight: normal; text-align: left; white-space: nowrap; padding: 5px 10px 5px 0; vertical-align: top; width: 58px; }
-        .cd-table td { font-size: 11.5px; color: #333; padding: 5px 0; line-height: 1.5; border-bottom: 1px solid #f5f5f5; }
-        .cd-table tr:last-child td { border-bottom: none; }
+        /* マンホールカードの外部リンク（旧カード詳細シートのボタン色を踏襲） */
         .btn-cd-stock { background: #00897B; }
         .btn-cd-gkp { background: #455A64; }
 
-
-
-        .maplibregl-popup { z-index: 10 !important; }
         /* 簡易トースト(攻城団Chrome未導入通知などに使用) */
         #app-toast {
             position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px));
@@ -468,12 +471,6 @@
             transition: opacity .2s ease, transform .2s ease;
         }
         #app-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-        /* 画面内補正(ensurePopupInView)の保険: ポップアップ自体が画面より大きいと
-           どこへ動かしても収まらないため、高さに上限を設けて超過分は内部スクロールにする。
-           通常の端末・内容ではこの上限に達しないため見た目は変わらない。 */
-        /* MapLibre標準padding(15px 10px)は.popup-card側のpaddingと二重になるため0にし、
-           余白の制御を.popup-card側に一本化する(案3: 上下6px・左右8px)。 */
-        .maplibregl-popup-content { max-height: calc(100svh - 48px); overflow-y: auto; padding: 0; }
 
 
         /* 下部バー */
@@ -1077,13 +1074,14 @@
 </div>
 
 <!-- マンホールカード詳細シート -->
-<div id="card-detail-overlay" onclick="closeCardDetail()" style="display:none;position:fixed;inset:0;z-index:319;"></div>
-<div id="card-detail-panel">
-    <div id="card-detail-header">
-        <div class="cd-handle"></div>
-        <button id="card-detail-close" onclick="closeCardDetail()">×</button>
+<!-- オブジェクトタップで下から出る情報シート（旧ポップアップの置き換え）。
+     地図操作を妨げないようオーバーレイは持たせず、地図の空きをタップすると閉じる。 -->
+<div id="obj-sheet">
+    <div id="obj-sheet-header">
+        <div class="os-handle"></div>
+        <button id="obj-sheet-close" onclick="closeObjSheet()">×</button>
     </div>
-    <div id="card-detail-body"></div>
+    <div id="obj-sheet-body"></div>
 </div>
 
 <script>
@@ -1904,23 +1902,20 @@ async function resolveWikipediaTitle(castleName, aliases, lat, lng) {
     }
 }
 
-// 城ポップアップの情報源ボタン（Wikipedia・攻城団・城郭放浪記）表示を非同期で制御する。
+// 城シートの情報源セット行（Wikipedia・攻城団・城郭放浪記）を非同期で確定させる。
 // 攻城団・城郭放浪記はHTML生成時点でp.url/p.shiroHbUrlの有無から確定済み（暫定レイアウト済み）だが、
-// Wikipediaは記事存在確認が非同期のため、確定後にsource-btns領域全体をbuildSourceButtons()で再構築する。
-async function injectWikiButtonState(popup, castleName, aliases, kojodanUrl, shirohbUrl, lat, lng) {
-    const el = popup.getElement ? popup.getElement() : null;
-    if (!el) return;
-    const slot = el.querySelector('.source-btns');
+// Wikipediaは記事存在確認が非同期のため、確定後にセット行全体をbuildSourceButtons()で再構築する。
+async function injectWikiButtonState(castleName, aliases, kojodanUrl, shirohbUrl, lat, lng) {
+    const slot = document.querySelector('#obj-sheet-body .os-source-row');
     if (!slot) return;
-    // MapLibreのfeature.properties経由だと配列がJSON文字列化される（popupAliasHtmlと同じ対策）
-    if (typeof aliases === 'string') {
-        try { aliases = JSON.parse(aliases); } catch { aliases = null; }
-    }
-    const resolvedTitle = await resolveWikipediaTitle(castleName, aliases, lat, lng);
+    const resolvedTitle = await resolveWikipediaTitle(castleName, osParseAliases(aliases), lat, lng);
     const wikiHref = resolvedTitle ? `https://ja.wikipedia.org/wiki/${encodeURIComponent(resolvedTitle)}` : '';
+    // 取得完了までに別のオブジェクトへ切り替わっていたら書き換えない
+    const cur = document.querySelector('#obj-sheet-body .os-source-row');
+    if (cur !== slot) return;
     slot.innerHTML = buildSourceButtons(wikiHref, kojodanUrl, shirohbUrl);
-    // ボタン数の増減で高さが変わり得るため画面内補正をかけ直す
-    ensurePopupInView(popup);
+    // ボタン数の増減で高さが変わるため選択ピンの見え方を補正し直す
+    adjustMapForSheet();
 }
 
 // --- 城の形態（城郭放浪記データ由来）表示 ---
@@ -1943,23 +1938,20 @@ function popupFormBadgeHtml(form) {
 }
 
 // 標高／比高（バッジとは別行、住所の上に表示）
-function popupFormMetaHtml(elevationM, relativeHeightM) {
+function popupFormMetaText(elevationM, relativeHeightM) {
     const elev = (elevationM !== undefined && elevationM !== null) ? `標高${elevationM}m` : null;
     const rel = (relativeHeightM !== undefined && relativeHeightM !== null) ? `比高${relativeHeightM}m` : null;
-    const meta = [elev, rel].filter(Boolean).join('／');
-    return meta ? `<div class="popup-form"><span class="popup-form-meta">${meta}</span></div>` : '';
+    return [elev, rel].filter(Boolean).join('／');
 }
 
-// 情報源ボタン（Wikipedia・攻城団・城郭放浪記）を2カラムグリッドに空欄なく配置する。
-// 3個(奇数)揃った場合のみ先頭=Wikipediaをfull化して単独行にし、残り2個をペアで配置する。
-// 1個だけの場合も同じ式で自然にfullになる。
+// 情報源ボタン（Wikipedia・攻城団・城郭放浪記）。セット行に並べ、
+// 非表示のものがあれば残ったボタンが flex:1 で自動的に幅を広げる（空欄は作らない）。
 function buildSourceButtons(wikiHref, kojodanUrl, shirohbUrl) {
     const items = [];
     if (wikiHref)    items.push(`<a href="${wikiHref}" target="_blank" class="btn btn-wiki">Wikipedia</a>`);
     if (kojodanUrl)  items.push(`<a href="${kojodanUrl}" target="_blank" class="btn btn-kojodan">攻城団</a>`);
     if (shirohbUrl)  items.push(`<a href="${shirohbUrl}" target="_blank" class="btn btn-shirohb">城郭放浪記</a>`);
-    const isFirstOdd = items.length % 2 === 1;
-    return items.map((html, i) => (i === 0 && isFirstOdd) ? html.replace('class="btn ', 'class="btn btn-full ') : html).join('');
+    return items.join('');
 }
 
 // iOSのホーム画面PWA(navigator.standalone)では、攻城団ボタン(target=_blank)の外部遷移が
@@ -2027,8 +2019,8 @@ function castleGmapQuery(name, address) {
     return `${name},${m ? m[1] + m[2] : address}`;
 }
 
-// --- マンホールカード詳細シート ---
-let cardDetailProps = null; // 直近に構築したポップアップの詳細表示用データ
+// --- マンホールカード（蓋ピン ⇔ 配布場所レコードの紐付け） ---
+// 旧「カード詳細」シートは廃止し、その情報は情報シート本体に統合した。
 let cardJoinIndex = null;   // 蓋ピンcardId → 配布場所propertiesの索引（遅延構築）
 
 // カードコード正規化: "13-100-P001" / "01-100-A-01" → "13-100-P-1"
@@ -2054,207 +2046,260 @@ function findCardByCardId(cardId) {
     return key ? (cardJoinIndex[key] || null) : null;
 }
 
-function openCardDetail() {
-    const p = cardDetailProps;
-    if (!p) return;
-    const esc = histEscape;
+// 配布場所レコードから、シート表示に必要な派生情報を作る。
+// muni: 自治体名（"札幌市（A001）" → "札幌市"）／ id: 括弧内のカードID（1,426件中864件のみ）
+// gkpUrl: GKP公式一覧の該当行へのリンク（旧カード詳細シートと同じ生成規則）
+function mhcardInfo(p) {
     const muniRaw = p.municipality || '';
     const muni = muniRaw.replace(/[（(].*$/, '').trim();
     const idm = muniRaw.match(/[（(]\s*([A-Za-z0-9]+)\s*[）)]/);
     const prefM = (p.cardImgUrl || '').match(/\/mhc\/(\d{2})-/);
     const gkpPref = (!prefM || prefM[1] === '00') ? 'zenkoku' : prefM[1];
-    const gkpUrl = `https://www.gk-p.jp/mhcard/?pref=${gkpPref}` +
-        (muni ? `#:~:text=${encodeURIComponent(muni)}` : '#mhcard_result');
-
-    const badges =
-        (idm ? `<span class="cd-badge">${esc(idm[1])}</span>` : '') +
-        (p.round ? `<span class="cd-badge cd-round">${esc(p.round)}</span>` : '');
-    const imgHtml = p.cardImgUrl
-        ? `<div class="cd-img-wrap"><img class="cd-img" src="${p.cardImgUrl}" onerror="this.parentElement.style.display='none'"></div>` : '';
-    const rows = [];
-    if (p.issueDate) rows.push(['発行日', esc(p.issueDate)]);
-    if (p.locationName || p.address) {
-        rows.push(['配布場所',
-            `${esc(p.locationName || '')}${p.address ? `${p.locationName ? '<br>' : ''}<span style="color:#777;">${esc(p.address)}</span>` : ''}`]);
-    }
-    if (p.hours) rows.push(['配布時間', esc(p.hours)]);
-    const tableHtml = rows.length
-        ? `<table class="cd-table">${rows.map(([th, td]) => `<tr><th>${th}</th><td>${td}</td></tr>`).join('')}</table>` : '';
-    const stockBtn = p.url
-        ? `<a href="${p.url}" target="_blank" class="btn btn-cd-stock btn-full">在庫状況を確認（公式ページ）</a>` : '';
-
-    document.getElementById('card-detail-body').innerHTML =
-        `<div class="cd-head"><span class="cd-muni">${esc(muni || p.name || '')}</span>${badges}</div>` +
-        imgHtml + tableHtml +
-        `<div class="btn-grid">${stockBtn}<a href="${gkpUrl}" target="_blank" class="btn btn-cd-gkp btn-full">GKP公式一覧（該当行へ移動）</a></div>`;
-    document.getElementById('card-detail-body').scrollTop = 0;
-    document.getElementById('card-detail-panel').style.bottom = '0';
-    document.getElementById('card-detail-overlay').style.display = 'block';
+    return {
+        muni,
+        id: idm ? idm[1] : '',
+        round: p.round || '',
+        gkpUrl: `https://www.gk-p.jp/mhcard/?pref=${gkpPref}`
+              + (muni ? `#:~:text=${encodeURIComponent(muni)}` : '#mhcard_result'),
+    };
 }
 
-function closeCardDetail() {
-    const panel = document.getElementById('card-detail-panel');
-    panel.style.transition = '';
-    panel.style.bottom = '-100%';
-    document.getElementById('card-detail-overlay').style.display = 'none';
-}
+// ══════════════════════════════════════════════════════════════
+//  オブジェクト情報シート（下から出る）
+//  全タイプ共通の3行構成:
+//    行A  GoogleMap ＋ 種別固有の単発リンク（アクセス／公式ページ／食べログ）
+//    行B  セット行（城=Wikipedia/攻城団/城郭放浪記、道の駅=michieki.jp/施設HP/関連HP、
+//                  マンホール系=在庫状況/GKP公式一覧）。非表示があれば残りが自動で広がり、
+//                  0個なら行ごと出さない。
+//    行C  固定セット（ここへ行く(Google)／ここへ行く(Yahoo)／この周辺を検索）
+//  各行は flex で等分するため、個数が変わっても空きセルが出ない。
+// ══════════════════════════════════════════════════════════════
 
-// ヘッダーの下スワイプで閉じる（周辺検索結果パネルと同パターン）
-(function() {
-    const panel = document.getElementById('card-detail-panel');
-    const header = document.getElementById('card-detail-header');
-    let startY = 0;
-    let isDragging = false;
-    panel.addEventListener('pointerdown', (e) => {
-        isDragging = header.contains(e.target) && !e.target.closest('button');
-        if (isDragging) {
-            startY = e.clientY;
-            try { panel.setPointerCapture(e.pointerId); } catch (_) {}
-        }
-    });
-    panel.addEventListener('pointermove', (e) => {
-        if (!isDragging) return;
-        const dy = e.clientY - startY;
-        if (dy > 0) {
-            panel.style.transition = 'none';
-            panel.style.bottom = `-${dy}px`;
-        }
-    });
-    panel.addEventListener('pointerup', (e) => {
-        if (!isDragging) return;
-        isDragging = false;
-        const dy = e.clientY - startY;
-        if (dy > 60) {
-            closeCardDetail();
-        } else {
-            panel.style.transition = '';
-            panel.style.bottom = '0';
-        }
-    });
-})();
-
-// mhcardポップアップ用カード画像HTML生成
-function buildMhcardImgHtml(p) {
-    if (!p.cardImgUrl) return '';
-    return `<div class="manhole-img-container"><img src="${p.cardImgUrl}" class="manhole-img-large" onerror="this.parentNode.style.display='none'"></div>`;
+// テキスト1行（2行を超える分は省略。タップで全文表示）
+function osLine(html) {
+    return html ? `<div class="os-line os-clamp">${html}</div>` : '';
 }
-
-// --- ポップアップ共通パーツ（全タイプで同一マークアップを1箇所に集約） ---
-function popupTitleHtml(text, badgeHtml = '') {
-    return `<div class="popup-title-row">${badgeHtml}<span class="popup-title popup-clamp">${text}</span></div>`;
+// 写真枠。既定は128×128にcover、full=true なら幅128pxのまま高さを比率なりに伸ばして全体を見せる
+// （マンホールカードのような縦長画像が切れないようにするため）。urlが空なら枠ごと出さない。
+function osPhotoHtml(url, full) {
+    return url ? `<div class="os-photo${full ? ' os-photo-full' : ''}">`
+               + `<img src="${url}" onerror="this.parentElement.style.display='none'"></div>` : '';
 }
-// 実際に2行を超えて省略されている要素にのみ▼マークを付与する
-function applyClampMarkers(popup) {
-    const el = popup.getElement ? popup.getElement() : null;
-    if (!el) return;
-    el.querySelectorAll('.popup-clamp').forEach(clampEl => {
-        if (clampEl.scrollHeight > clampEl.clientHeight + 1) {
-            clampEl.classList.add('clampable');
-        }
-    });
+function osRow(btns) {
+    const items = btns.filter(Boolean);
+    return items.length ? `<div class="os-brow">${items.join('')}</div>` : '';
 }
-function popupAddressHtml(address) {
-    return address ? `<span class="popup-address popup-clamp">${address}</span>` : '';
+function osBtn(href, cls, text) {
+    return href ? `<a href="${href}" target="_blank" class="btn ${cls}">${text}</a>` : '';
 }
-function popupAliasHtml(aliases) {
-    // MapLibre GLは地図上のレンダリング済みfeatureのproperties経由で参照すると
-    // 配列プロパティをJSON文字列化して返すため(検索結果側の生JSONパースとは異なる)、
-    // 文字列で来た場合はパースしてから扱う
+// 別名はMapLibreのfeature.properties経由だとJSON文字列化されて届くため、その場合はパースする
+// （検索結果側は生JSONをそのまま渡すので配列で届く）
+function osParseAliases(aliases) {
     if (typeof aliases === 'string') {
         try { aliases = JSON.parse(aliases); } catch { aliases = null; }
     }
-    return (Array.isArray(aliases) && aliases.length) ? `<span class="popup-alias popup-clamp popup-clamp-1">別名: ${aliases.join('、')}</span>` : '';
-}
-function popupRoadHtml(icon, text) {
-    return text ? `<span class="popup-road popup-clamp">${icon} ${text}</span>` : '';
-}
-function popupImgHtml(url, cls) {
-    return url ? `<div class="manhole-img-container"><img src="${url}" class="${cls}"></div>` : '';
-}
-function gmapCoordBtnHtml(coordGmapUrl) {
-    return `<a href="${coordGmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>`;
-}
-function cardDetailBtnHtml() {
-    return `<button class="btn btn-carddetail btn-full" onclick="openCardDetail()">カード詳細</button>`;
+    return Array.isArray(aliases) ? aliases : [];
 }
 
-function buildPopupHtml(type, label, p, lng, lat) {
+function buildSheetHtml(type, label, p, lng, lat) {
     const navUrl      = `https://www.google.com/maps?daddr=${lat},${lng}&dirflg=w`;
     const yahooNavUrl = `https://map.yahoo.co.jp/maps?lat=${lat}&lon=${lng}&zoom=16&type=scroll`;
     const coordGmapUrl = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
-    const navBtns  = `<a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く</a><a href="${yahooNavUrl}" class="btn btn-nav-yahoo">ここへ行く</a>`;
-    const nearbyBtn = `<button class="btn btn-nearby-search btn-full" onclick='searchNearby(${lng},${lat},${JSON.stringify(label)})'>🔍 この周辺を検索</button>`;
+    // 行C: 全タイプ共通・常に3個
+    const rowC = osRow([
+        `<a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く</a>`,
+        `<a href="${yahooNavUrl}" class="btn btn-nav-yahoo">ここへ行く</a>`,
+        `<button class="btn btn-nearby-search" onclick='searchNearby(${lng},${lat},${JSON.stringify(label)})'>🔍 この周辺を検索</button>`,
+    ]);
     const isPokefuta = type === 'pokefuta' || (type === 'manhole' && p.source === 'pokefuta');
+    let badges = '', title = '', photo = '', lines = '', rowA = '', rowB = '';
 
     if (isPokefuta) {
-        const title = p.pokemon || label;
-        const imgUrl = p.image_url_full || (p.cardId ? `https://ekikaramanhole.whitebeach.org/ext/pokefuta/image/main/${String(p.cardId).padStart(3,'0')}.jpg` : '');
-        const imgHtml = popupImgHtml(imgUrl, 'manhole-img');
-        return `<div class="popup-card">${popupTitleHtml(title)}${popupAddressHtml(p.address)}${imgHtml}<div class="btn-grid">${gmapCoordBtnHtml(coordGmapUrl)}<a href="${p.detail_url}" target="_blank" class="btn btn-pokefuta btn-full">公式ページ</a>${navBtns}${nearbyBtn}</div></div>`;
-    } else if (type === 'manhole') {
-        const name = p.name || label;
-        const imgHtml = popupImgHtml(p.cardId ? `https://ekikaramanhole.whitebeach.org/ext/manholecard/image/getimage.cgi?file=card/${p.cardId}.jpg` : '', 'manhole-img-large');
-        // 配布場所データと紐付いた場合のみ「カード詳細」を表示
-        const joined = findCardByCardId(p.cardId);
-        if (joined) cardDetailProps = joined;
-        const detailBtn = joined ? cardDetailBtnHtml() : '';
-        return `<div class="popup-card">${popupTitleHtml(name)}${popupAddressHtml(p.address)}${imgHtml}<div class="btn-grid">${gmapCoordBtnHtml(coordGmapUrl)}${detailBtn}${navBtns}${nearbyBtn}</div></div>`;
-    } else if (type === 'mhcard') {
-        const title = `${p.coordOffset ? '[複]' : ''}[配布] ${p.name || label}`;
-        const hoursHtml = popupRoadHtml('🕐', p.hours);
-        const imgHtml = buildMhcardImgHtml(p);
-        cardDetailProps = p;
-        return `<div class="popup-card">${popupTitleHtml(title)}${popupAddressHtml(p.address)}${hoursHtml}${imgHtml}<div class="btn-grid">${gmapCoordBtnHtml(coordGmapUrl)}${cardDetailBtnHtml()}${navBtns}${nearbyBtn}</div></div>`;
+        title = p.pokemon || label;
+        photo = osPhotoHtml(p.image_url_full
+            || (p.cardId ? `https://ekikaramanhole.whitebeach.org/ext/pokefuta/image/main/${String(p.cardId).padStart(3,'0')}.jpg` : ''));
+        lines = osLine(p.address);
+        rowA = osRow([osBtn(coordGmapUrl, 'btn-gmap', 'GoogleMap'), osBtn(p.detail_url, 'btn-pokefuta', '公式ページ')]);
+
+    } else if (type === 'manhole' || type === 'mhcard') {
+        // 蓋は配布場所レコードを紐付けて参照する（蓋の住所と配布場所の住所は別物）
+        const card = type === 'mhcard' ? p : findCardByCardId(p.cardId);
+        const info = card ? mhcardInfo(card) : null;
+        if (info) {
+            badges = (info.id ? `<span class="os-cdbadge">${info.id}</span>` : '')
+                   + (info.round ? `<span class="os-cdbadge os-cdround">${info.round}</span>` : '');
+        }
+        if (type === 'mhcard') {
+            title = `${p.coordOffset ? '[複]' : ''}[配布] ${[info && info.muni, p.locationName].filter(Boolean).join(' ') || p.name || label}`;
+            photo = osPhotoHtml(p.cardImgUrl, true);   // カードは縦長なので切らずに全体を見せる
+            lines = osLine(p.address) + osLine(p.hours ? `🕐 ${p.hours}` : '')
+                  + osLine(p.issueDate ? `<span class="os-k">発行</span> ${p.issueDate}` : '');
+        } else {
+            title = p.name || label;
+            photo = osPhotoHtml(p.cardId
+                ? `https://ekikaramanhole.whitebeach.org/ext/manholecard/image/getimage.cgi?file=card/${p.cardId}.jpg` : '',
+                true);   // カードは縦長なので切らずに全体を見せる
+            lines = osLine(p.address)
+                  + (card ? osLine(card.locationName ? `<span class="os-k">配布場所</span> ${card.locationName}` : '')
+                          + osLine(card.address) + osLine(card.hours ? `🕐 ${card.hours}` : '')
+                          + osLine(card.issueDate ? `<span class="os-k">発行</span> ${card.issueDate}` : '')
+                    : '');
+        }
+        rowA = osRow([osBtn(coordGmapUrl, 'btn-gmap', 'GoogleMap')]);
+        // 旧「カード詳細」シートの外部リンク2つをセット行へ（在庫状況は url がある場合のみ＝1,246/1,426件）
+        if (info) rowB = osRow([osBtn(card.url, 'btn-cd-stock', '在庫状況'), osBtn(info.gkpUrl, 'btn-cd-gkp', 'GKP公式一覧')]);
+
     } else if (type === 'michi') {
+        title = p.name || label;
+        lines = osLine(p.road ? `📍 ${p.road}` : '') + osLine(p.address)
+              + osLine(p.businessHours ? `🕐 ${p.businessHours}` : '');
+        rowA = osRow([
+            osBtn(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(title)}`, 'btn-gmap', 'GoogleMap'),
+            osBtn(p.url, 'btn-michi-web', '公式ページ'),
+        ]);
+        rowB = osRow([osBtn(p.michiEkiUrl, 'btn-michi-eki', 'michieki.jp'),
+                      osBtn(p.homepage, 'btn-michi-hp', '施設HP'),
+                      osBtn(p.homepage2, 'btn-michi-hp', '関連HP')]);
+
+    } else if (type === 'castle') {
         const name = p.name || label;
-        const gmapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}`;
-        const roadHtml = popupRoadHtml('📍', p.road);
-        const hoursHtml = popupRoadHtml('🕐', p.businessHours);
-        const michiExtraBtns = [
-            [p.url,       'btn-michi-web', '公式ページ', p.michiEkiUrl, 'btn-michi-eki', 'michieki.jp'],
-            [p.homepage,  'btn-michi-hp',  '施設HP',     p.homepage2,   'btn-michi-hp',  '関連HP'],
-        ].map(([lHref, lCls, lText, rHref, rCls, rText]) => {
-            if (!lHref && !rHref) return '';
-            const solo = !lHref || !rHref;
-            return (lHref ? `<a href="${lHref}" target="_blank" class="btn ${lCls}${solo ? ' btn-full' : ''}">${lText}</a>` : '')
-                 + (rHref ? `<a href="${rHref}" target="_blank" class="btn ${rCls}${solo ? ' btn-full' : ''}">${rText}</a>` : '');
-        }).join('');
-        return `<div class="popup-card">${popupTitleHtml(name)}${roadHtml}${popupAddressHtml(p.address)}${hoursHtml}<div class="btn-grid"><a href="${gmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${michiExtraBtns}${navBtns}${nearbyBtn}</div></div>`;
-    } else {
-        const name = p.name || label;
-        const gmapQuery = type === 'castle' ? castleGmapQuery(name, p.address) : name;
-        const gmapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(gmapQuery)}`;
-        let extraBtns = '';
-        if (type === 'shop')   extraBtns = `<a href="${p.url}" target="_blank" class="btn btn-tabelog btn-full">食べログ</a>`;
-        // Wikipediaは記事存在確認が非同期のため初期表示には含めず、injectWikiButtonStateで確定後に
-        // source-btns領域ごと buildSourceButtons() で再構築する（攻城団・城郭放浪記は同期的に確定済み）
-        if (type === 'castle') extraBtns = `<span class="source-btns">${buildSourceButtons('', p.url, p.shiroHbUrl)}</span><a href="https://www.google.com/search?q=${encodeURIComponent(name + ' アクセス')}" target="_blank" class="btn btn-access btn-full">アクセス</a>`;
-        const castleImgPlaceholder = type === 'castle' ? `<div class="castle-img-placeholder"></div>` : '';
-        const aliasHtml = type === 'castle' ? popupAliasHtml(p.aliases) : '';
-        const badgeHtml = type === 'castle' ? popupFormBadgeHtml(p.shiroHbForm) : '';
-        const formMetaHtml = type === 'castle' ? popupFormMetaHtml(p.shiroHbElevationM, p.shiroHbRelativeHeightM) : '';
         // 近接する別の城と座標が重なるため表示位置をずらしたエントリには目印を付ける
         // （マンホールカード配布場所のcoordOffsetと同じ仕組み。実際の座標は元の位置から数m~十数mずれている）
-        const titleText = (type === 'castle' && p.coordOffset) ? `[近接あり] ${name}` : name;
-        return `<div class="popup-card">${popupTitleHtml(titleText, badgeHtml)}${aliasHtml}${formMetaHtml}${popupAddressHtml(p.address)}${castleImgPlaceholder}<div class="btn-grid"><a href="${gmapUrl}" target="_blank" class="btn btn-gmap btn-full">GoogleMap</a>${extraBtns}${navBtns}${nearbyBtn}</div></div>`;
+        title = p.coordOffset ? `[近接あり] ${name}` : name;
+        badges = popupFormBadgeHtml(p.shiroHbForm);
+        const aliases = osParseAliases(p.aliases);
+        lines = osLine(aliases.length ? `別名: ${aliases.join('、')}` : '')
+              + osLine(popupFormMetaText(p.shiroHbElevationM, p.shiroHbRelativeHeightM))
+              + osLine(p.address);
+        // 写真は非同期取得のため枠だけ先に置き、injectCastleImage で差し込む
+        photo = `<div class="os-castle-photo"></div>`;
+        rowA = osRow([
+            osBtn(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(castleGmapQuery(name, p.address))}`, 'btn-gmap', 'GoogleMap'),
+            osBtn(`https://www.google.com/search?q=${encodeURIComponent(name + ' アクセス')}`, 'btn-access', 'アクセス'),
+        ]);
+        // Wikipediaは記事存在確認が非同期のため初期表示には含めず、injectWikiButtonStateで
+        // セット行ごと buildSourceButtons() で再構築する（攻城団・城郭放浪記は同期的に確定済み）
+        rowB = `<div class="os-brow os-source-row">${buildSourceButtons('', p.url, p.shiroHbUrl)}</div>`;
+
+    } else {   // shop（食べログ）
+        title = p.name || label;
+        lines = osLine(p.address);
+        rowA = osRow([
+            osBtn(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(title)}`, 'btn-gmap', 'GoogleMap'),
+            osBtn(p.url, 'btn-tabelog', '食べログ'),
+        ]);
     }
+
+    const media = photo ? `<div class="os-row">${photo}<div class="os-meta">${lines}</div></div>` : lines;
+    return `<div class="os-title">${badges}<span class="os-name">${title}</span></div>${media}${rowA}${rowB}${rowC}`;
 }
 
-// 城ポップアップに写真を非同期で挿入する
-async function injectCastleImage(popup, castleName, kojodanUrl, shiroHbUrl) {
+// 城シートに写真を非同期で挿入する
+async function injectCastleImage(castleName, kojodanUrl, shiroHbUrl) {
+    const slotAtStart = document.querySelector('#obj-sheet-body .os-castle-photo');
     const imgUrl = await fetchCastleImage(castleName, kojodanUrl, shiroHbUrl);
     if (!imgUrl) return;
-    const el = popup.getElement ? popup.getElement() : null;
-    if (!el) return;
-    const placeholder = el.querySelector('.castle-img-placeholder');
-    if (placeholder) {
-        placeholder.innerHTML = `<div class="castle-img-container"><img class="castle-img" src="${imgUrl}" onerror="this.parentElement.style.display='none'"></div>`;
-        // 画像ロード完了でポップアップの高さが伸びるため、その時点で画面内補正をかけ直す
-        const img = placeholder.querySelector('img');
-        if (img) img.addEventListener('load', () => ensurePopupInView(popup), { once: true });
-        // 事前読み込み済み(キャッシュ)の場合は挿入時点で寸法が確定しているため即時にも補正する
-        ensurePopupInView(popup);
+    const slot = document.querySelector('#obj-sheet-body .os-castle-photo');
+    // 取得完了までに別のオブジェクトへ切り替わっていたら、その城の写真を差し込まない
+    if (!slot || slot !== slotAtStart) return;
+    slot.outerHTML = osPhotoHtml(imgUrl);
+    // 画像ロードで高さが変わるため、確定した時点で選択ピンの見え方を補正し直す
+    const img = document.querySelector('#obj-sheet-body .os-photo img');
+    if (img) img.addEventListener('load', adjustMapForSheet, { once: true });
+    applyClampMarkers();
+    adjustMapForSheet();
+}
+
+// ── シートの開閉と、選択中オブジェクトが隠れないための地図調整 ─────────
+let objSheetLngLat = null;   // 現在シートを開いているオブジェクトの座標
+
+// 実際に2行を超えて省略されている行にのみ▼マークを付ける
+function applyClampMarkers() {
+    document.querySelectorAll('#obj-sheet-body .os-clamp').forEach(el => {
+        el.classList.toggle('clampable', el.scrollHeight > el.clientHeight + 1);
+    });
+}
+
+// 選択中のオブジェクトがシートに隠れないよう、シート高さの半分だけ上にずらして
+// 「シートより上に残っている領域」の中央にピンが来るように地図を動かす。
+// 可視領域の中心 = (H - シート高)/2、地図コンテナの中心 = H/2 なので、
+// easeTo の offset に [0, -シート高/2] を渡せばその位置に着地する。
+function adjustMapForSheet() {
+    if (!objSheetLngLat) return;
+    const sheet = document.getElementById('obj-sheet');
+    const h = sheet.getBoundingClientRect().height;
+    if (!h) return;
+    const mapH = map.getContainer().getBoundingClientRect().height;
+    // シートが画面の大半を占める場合でもピンが上端外へ飛ばないよう、ずらし量を制限する
+    const dy = Math.min(h / 2, Math.max(0, (mapH - 80) / 2));
+    map.easeTo({ center: objSheetLngLat, offset: [0, -dy], duration: 400, essential: true });
+}
+
+function openObjSheet(type, label, p, lng, lat) {
+    const body = document.getElementById('obj-sheet-body');
+    body.innerHTML = buildSheetHtml(type, label, p, lng, lat);
+    body.scrollTop = 0;
+    const sheet = document.getElementById('obj-sheet');
+    sheet.style.transition = '';
+    sheet.style.bottom = '0';
+    objSheetLngLat = [lng, lat];
+    setSelectedObject([lng, lat], objRingColor(type, p));
+    applyClampMarkers();
+    // 写真は読み込み完了で高さが確定する（カード系は比率なりに伸びる）ため、その時点で寄せ直す
+    body.querySelectorAll('img').forEach(img => {
+        if (!img.complete) img.addEventListener('load', adjustMapForSheet, { once: true });
+    });
+    if (type === 'castle') {
+        injectCastleImage(p.name || label, p.url, p.shiroHbUrl);
+        injectWikiButtonState(p.name || label, p.aliases, p.url, p.shiroHbUrl, lat, lng);
     }
+    // レイアウト確定後の実寸で地図を寄せる
+    requestAnimationFrame(adjustMapForSheet);
+}
+
+function closeObjSheet() {
+    const sheet = document.getElementById('obj-sheet');
+    sheet.style.transition = '';
+    sheet.style.bottom = '-100%';
+    objSheetLngLat = null;
+    clearSelectedObject();
+}
+
+function isObjSheetOpen() {
+    return objSheetLngLat !== null;
+}
+
+// オブジェクトのクリック対象レイヤーID（レイヤー生成時に詰める）
+const objClickLayers = [];
+
+// ── 選択リング（②二重リング）。ピンと同じ種別色で、ピンの外側に2重の輪を出す ──
+// ピンは直径28px＋白枠3px（外径34px）なので、内リングφ46/外リングφ62なら重ならない。
+// 色は「地図上のピンと同じ色」に合わせる。
+// mhcard だけは typeConfig の #1565C0（検索結果や履歴のアイコン背景用）を使うと
+// 地図上のピン（mhcard.png のカード画像。主要色を実測すると #b07030 の茶系）と
+// 食い違うため、ピンの見た目に合わせてマンホール系の #B87333 を使う。
+const OBJ_TYPE_COLOR = {
+    castle: '#546E7A', michi: '#34A853', shop: '#FF9800',
+    manhole: '#B87333', mhcard: '#B87333', pokefuta: '#FBBC04',
+};
+function objRingColor(type, p) {
+    if (type === 'castle') {
+        if (p.genre === '日本100名城') return '#4285F4';
+        if (p.genre === '続日本100名城') return '#EA4335';
+    }
+    if (type === 'manhole' && p.source === 'pokefuta') return OBJ_TYPE_COLOR.pokefuta;
+    return OBJ_TYPE_COLOR[type] || '#546E7A';
+}
+function setSelectedObject(coords, color) {
+    const src = map.getSource('selected-object-source');
+    if (!src) return;
+    src.setData({ type: 'Feature', geometry: { type: 'Point', coordinates: coords }, properties: {} });
+    map.setPaintProperty('selected-ring-inner', 'circle-stroke-color', color);
+    map.setPaintProperty('selected-ring-outer', 'circle-stroke-color', color);
+}
+function clearSelectedObject() {
+    const src = map.getSource('selected-object-source');
+    if (src) src.setData({ type: 'FeatureCollection', features: [] });
 }
 
 function bearingRafLoop() {
@@ -2506,6 +2551,12 @@ map.on('zoomend', () => { isZooming = false; });
         map.addLayer({ id: 'pin-pulse-layer', type: 'circle', source: 'pin-pulse-source', paint: { 'circle-radius': 0, 'circle-radius-transition': { duration: 0 }, 'circle-color': 'rgba(244,67,54,1)', 'circle-opacity': 0, 'circle-opacity-transition': { duration: 0 } } });
         map.addLayer({ id: 'pin-progress-layer', type: 'circle', source: 'pin-progress-source', paint: { 'circle-radius': 0, 'circle-color': 'rgba(244,67,54,0.1)', 'circle-opacity': 1, 'circle-stroke-width': 3, 'circle-stroke-color': 'rgba(244,67,54,0.85)', 'circle-stroke-opacity': 0 } });
         map.addLayer({ id: 'search-pin-layer',   type: 'symbol', source: 'search-pin-source',   layout: { 'icon-image': 'search-pin-icon', 'icon-size': 1, 'icon-anchor': 'bottom', 'icon-allow-overlap': true, 'icon-ignore-placement': true } });
+        // 選択中オブジェクトの二重リング。オブジェクトのピンレイヤーはこの後に追加されるため、
+        // ここで先に足しておけば常にピンの下に描かれ、リングがピンを隠さない。
+        // 寸法: ピン直径28＋白枠3（外径34）に対し 内リングφ46(線3)／外リングφ62(線2)。
+        map.addSource('selected-object-source', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
+        map.addLayer({ id: 'selected-ring-outer', type: 'circle', source: 'selected-object-source', paint: { 'circle-radius': 31, 'circle-opacity': 0, 'circle-stroke-width': 2, 'circle-stroke-color': '#546E7A', 'circle-stroke-opacity': 0.45 } });
+        map.addLayer({ id: 'selected-ring-inner', type: 'circle', source: 'selected-object-source', paint: { 'circle-radius': 23, 'circle-opacity': 0, 'circle-stroke-width': 3, 'circle-stroke-color': '#546E7A' } });
         map.on('mouseenter', 'search-pin-layer', () => { map.getCanvas().style.cursor = 'pointer'; });
         map.on('mouseleave', 'search-pin-layer', () => { map.getCanvas().style.cursor = ''; });
 
@@ -2697,6 +2748,9 @@ map.on('zoomend', () => { isZooming = false; });
                 { id: 'castles-famous',  color: '#546E7A', icon: 'castle-icon',   type: 'castle',  clusterColor: '#546E7A', noCluster: true },
             ];
 
+            // 地図の空きタップで情報シートを閉じる判定に使う、オブジェクトのクリック対象レイヤー一覧
+            objClickLayers.length = 0;
+
             configs.forEach(conf => {
                 // filterState から初期visibility を決定（保存済み設定を反映）
                 const filterKey = conf.type === 'castle' ? 'castle'
@@ -2761,6 +2815,8 @@ map.on('zoomend', () => { isZooming = false; });
                 });
 
                 const clickLayer = conf.type === 'mhcard' ? `${conf.id}-icon` : `${conf.id}-bg`;
+                // クラスタは対象外。クラスタをタップしたときはズームインしつつシートを閉じる
+                objClickLayers.push(clickLayer);
                 map.on('click', clickLayer, (e) => {
                     if (trackingMode > 0) {
                         trackingMode = 0;
@@ -2771,11 +2827,7 @@ map.on('zoomend', () => { isZooming = false; });
                     const p = e.features[0].properties;
                     const c = e.features[0].geometry.coordinates.slice();
                     while (Math.abs(e.lngLat.lng - c[0]) > 180) { c[0] += e.lngLat.lng > c[0] ? 360 : -360; }
-                    const popupHtml = buildPopupHtml(conf.type, p.name || '', p, c[0], c[1]);
-                    const popup = new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
-                    applyClampMarkers(popup);
-                    ensurePopupInView(popup);
-                    if (conf.type === 'castle') { injectCastleImage(popup, p.name, p.url, p.shiroHbUrl); injectWikiButtonState(popup, p.name, p.aliases, p.url, p.shiroHbUrl, c[1], c[0]); }
+                    openObjSheet(conf.type, p.name || '', p, c[0], c[1]);
                     const histType = (conf.type === 'manhole' && p.source === 'pokefuta') ? 'pokefuta' : conf.type;
                     histRecordPin(p.name || p.pokemon || '地点', c, histType, p);
                 });
@@ -2785,17 +2837,54 @@ map.on('zoomend', () => { isZooming = false; });
                 hover(`${conf.id}-cluster`, 'pointer');
             });
 
+            // オブジェクト以外（地図の空き）をタップしたら情報シートを閉じる。
+            // レイヤー個別のclickハンドラとこのハンドラは両方発火するため、
+            // queryRenderedFeaturesでオブジェクトを踏んでいないことを確認してから閉じる。
+            map.on('click', (e) => {
+                if (!isObjSheetOpen()) return;
+                const layers = objClickLayers.filter(id => map.getLayer(id));
+                if (layers.length && map.queryRenderedFeatures(e.point, { layers }).length) return;
+                closeObjSheet();
+            });
+
             // 空ソース・レイヤー生成が済んだので、大容量データの非同期読込を開始
             // （表示中レイヤー優先 → 背景で残りを取得し、到着ごとに setData ＋検索再構築）
             startDataLoading();
         });
-
-        // popup-clamp トグル（タップで省略 ↔ 全文）
-        document.getElementById('map').addEventListener('click', e => {
-            const el = e.target.closest('.popup-clamp');
-            if (el) el.classList.toggle('expanded');
-        });
     });
+
+    // 情報シートの省略行トグル（タップで省略 ↔ 全文）。高さが変わるので地図も寄せ直す。
+    document.getElementById('obj-sheet-body').addEventListener('click', e => {
+        const el = e.target.closest('.os-clamp.clampable');
+        if (!el) return;
+        el.classList.toggle('expanded');
+        adjustMapForSheet();
+    });
+
+    // 情報シートのヘッダーを下スワイプで閉じる（周辺検索パネルと同パターン）
+    (function () {
+        const sheet = document.getElementById('obj-sheet');
+        const header = document.getElementById('obj-sheet-header');
+        let startY = 0, isDragging = false;
+        sheet.addEventListener('pointerdown', (e) => {
+            isDragging = header.contains(e.target) && !e.target.closest('button');
+            if (isDragging) {
+                startY = e.clientY;
+                try { sheet.setPointerCapture(e.pointerId); } catch (_) {}
+            }
+        });
+        sheet.addEventListener('pointermove', (e) => {
+            if (!isDragging) return;
+            const dy = e.clientY - startY;
+            if (dy > 0) { sheet.style.transition = 'none'; sheet.style.bottom = `-${dy}px`; }
+        });
+        sheet.addEventListener('pointerup', (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+            if (e.clientY - startY > 60) closeObjSheet();
+            else { sheet.style.transition = ''; sheet.style.bottom = '0'; }
+        });
+    })();
 
     // ══════════════════════════════════════════════════════════════
     //  検索機能
@@ -2982,18 +3071,14 @@ map.on('zoomend', () => { isZooming = false; });
         histSetPending(item.label, 'search');
         map.easeTo({ center: item.coords, bearing: 0, pitch: 0, duration: 550, essential: true });
         if (item.type !== 'place') {
-            setTimeout(() => showPopupForItem(item), 300);
+            setTimeout(() => showSheetForItem(item), 300);
         }
     }
-    
-    function showPopupForItem(item) {
-        const p = item.properties;
+
+    function showSheetForItem(item) {
         const c = item.coords.slice();
-        const popupHtml = buildPopupHtml(item.type, item.label, p, c[0], c[1]);
-        const popup2 = new maplibregl.Popup({ closeButton: false, anchor: getPopupAnchor(c) }).setLngLat(c).setHTML(popupHtml).addTo(map);
-        applyClampMarkers(popup2);
-        ensurePopupInView(popup2); // 検索経由はeaseTo中のためmoveend後に測定される
-        if (item.type === 'castle') { injectCastleImage(popup2, item.label, p.url, p.shiroHbUrl); injectWikiButtonState(popup2, item.label, p.aliases, p.url, p.shiroHbUrl, c[1], c[0]); }
+        // openObjSheet 内の adjustMapForSheet が、シート高さぶん上に寄せ直す
+        openObjSheet(item.type, item.label, item.properties, c[0], c[1]);
     }
 
     function clearSearch() {
@@ -3220,7 +3305,7 @@ map.on('zoomend', () => { isZooming = false; });
 
     function searchNearby(lng, lat, name = null) {
         event.stopPropagation();
-        document.querySelectorAll('.maplibregl-popup').forEach(el => el.remove());
+        closeObjSheet();   // 周辺検索パネルと情報シートは同じ下部領域を使うため重ねない
         placeSearchPin({ lng, lat }, name || null, { showMapPin: false });
         openNearbyPanel();
     }
@@ -3230,6 +3315,7 @@ map.on('zoomend', () => { isZooming = false; });
         panel.classList.contains('open') ? closeNearby() : openNearbyPanel();
     }
     function openNearbyPanel() {
+        closeObjSheet();   // 同じ下部領域を使うため、情報シートが開いていれば閉じる
         Object.keys(filterState).forEach(id => { const el=document.getElementById(`check-${id}`); if(el) el.checked=filterState[id]; });
         Object.keys(labelState).forEach(id => { const el=document.getElementById(`check-label-${id}`); if(el) el.checked=labelState[id]; });
         document.getElementById('nearby-list').innerHTML = '';
@@ -3542,41 +3628,6 @@ map.on('zoomend', () => { isZooming = false; });
             panel.style.bottom = '0';
         });
     })();
-
-    function getPopupAnchor(lngLat) {
-        const point=map.project(lngLat), h=window.innerHeight, w=window.innerWidth, t=point.y<h*0.4, b=point.y>h*0.6, l=point.x<w*0.3, r=point.x>w*0.7;
-        if(t&&l)return 'top-left'; if(t&&r)return 'top-right'; if(t)return 'top'; if(b&&l)return 'bottom-left'; if(b&&r)return 'bottom-right'; if(l)return 'left'; if(r)return 'right'; return 'bottom';
-    }
-
-    // ポップアップの実寸を測り、地図表示領域からはみ出している分＋マージンだけ地図を最小移動する。
-    // getPopupAnchor(タップ位置ベースの展開方向決め)はポップアップの実寸を知らないため、
-    // 背の高いポップアップや画面中央帯のタップでははみ出しが残る。その不足を実測で補正する。
-    // 画像の遅延挿入(injectCastleImage)等で表示後に高さが伸びた場合も、各挿入完了時に
-    // 本関数を再度呼ぶことで追加補正される。地図がアニメーション中は静止後に測定する
-    // (移動中の測定は位置がずれるため)。
-    function ensurePopupInView(popup) {
-        const run = () => requestAnimationFrame(() => {
-            if (!popup.isOpen || !popup.isOpen()) return;
-            const el = popup.getElement && popup.getElement();
-            if (!el) return;
-            const margin = 8;
-            const rect = el.getBoundingClientRect();
-            if (rect.width === 0 && rect.height === 0) return;
-            const bounds = map.getContainer().getBoundingClientRect();
-            let dx = 0, dy = 0;
-            // 左右: 左端優先(両側はみ出しはmax-widthにより実質発生しない)
-            if (rect.left < bounds.left + margin) dx = rect.left - (bounds.left + margin);
-            else if (rect.right > bounds.right - margin) dx = rect.right - (bounds.right - margin);
-            // 上下: 上端優先(全体が収まらない場合はタイトル側の視認を確保)
-            if (rect.top < bounds.top + margin) dy = rect.top - (bounds.top + margin);
-            else if (rect.bottom > bounds.bottom - margin) dy = rect.bottom - (bounds.bottom - margin);
-            // panBy正方向はカメラ移動=画面内容は逆方向へ移動する。
-            // 例: 下にNpxはみ出し → dy=+N → カメラが下へ → 内容(ポップアップ)は上へN px移動
-            if (Math.abs(dx) >= 1 || Math.abs(dy) >= 1)
-                map.panBy([dx, dy], { duration: 250, essential: true });
-        });
-        if (map.isMoving()) map.once('moveend', run); else run();
-    }
 
     // レイヤー一時非表示ボタンの処理
     const toggleLayersBtn = document.getElementById('toggle-layers-btn');

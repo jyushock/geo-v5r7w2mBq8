@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V3確定版（案4統合・左バッジ・二重リング選択）</title>
+<style>
+  body { font-family: sans-serif; background: #ececec; padding: 18px; margin: 0; color: #222; }
+  h1 { font-size: 16px; margin: 0 0 6px; }
+  h2 { font-size: 14.5px; margin: 30px 0 4px; padding: 10px 0 0; border-top: 3px solid #b5b5b5; }
+  h3 { font-size: 12.5px; margin: 18px 0 6px; color: #333; }
+  .lead { font-size: 12px; color: #555; line-height: 1.8; margin: 0 0 10px; max-width: 1200px; }
+  .lead b { color: #b00; }
+  code { background: #fff; padding: 0 3px; border-radius: 3px; font-size: 11px; }
+  table.calc { border-collapse: collapse; font-size: 11.5px; margin: 8px 0; background: #fff; }
+  table.calc th, table.calc td { border: 1px solid #ddd; padding: 4px 9px; text-align: left; white-space: nowrap; }
+  table.calc th { background: #f4f4f4; }
+  table.calc td.n { text-align: right; font-variant-numeric: tabular-nums; }
+  table.calc tr.hi td { background: #fdecea; font-weight: bold; }
+  table.calc tr.lo td { background: #e8f5e9; }
+
+  #ctl { position: sticky; top: 0; z-index: 60; background: #fff; border: 1px solid #ccc; border-radius: 8px;
+         padding: 9px 12px; margin: 0 0 14px; font-size: 12px; display: flex; gap: 22px; align-items: center;
+         flex-wrap: wrap; box-shadow: 0 2px 8px rgba(0,0,0,.13); }
+  #ctl .grp { display: flex; gap: 9px; align-items: center; }
+  #ctl .gl { font-weight: bold; color: #555; }
+  #ctl .fixed { color: #0a7a2f; font-weight: bold; }
+
+  .vrow { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; }
+  .cell { width: 375px; }
+  .cell .hd { font-size: 11.5px; font-weight: bold; margin: 0 0 1px; }
+  .cell .sub { font-size: 10px; color: #888; margin: 0 0 4px; }
+  .cell .mt { font-size: 10.5px; color: #666; margin: 5px 0 0; font-variant-numeric: tabular-nums; line-height: 1.6; }
+  .cell .mt b { color: #111; } .cell .mt .warn { color: #b00; font-weight: bold; }
+  .cell.tallest .hd::after { content: ' ← 最大'; color: #b00; }
+
+  /* ===== シート実寸（幅375px・内容幅347px） ===== */
+  .sheet { width: 375px; box-sizing: border-box; background: #fff; border-radius: 16px 16px 0 0;
+           box-shadow: 0 -3px 14px rgba(0,0,0,.22); overflow: hidden; }
+  .sheet .handle { width: 36px; height: 4px; background: #ccc; border-radius: 2px; margin: 8px auto 6px; }
+  .sheet .body { padding: 0 14px 14px; }
+
+  /* タイトル行: バッジは常に左・城と同一寸法 */
+  .t-row { display: flex; align-items: center; gap: 5px; margin-bottom: 3px; min-width: 0; }
+  .t-name { font-size: 15px; font-weight: bold; min-width: 0; overflow: hidden;
+            display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  /* 城の形態バッジ（index.html .popup-form-badge-title と同一: 12px / padding 2px 8px / line-height 1.6 → 高さ23.2px） */
+  .badge { font-size: 12px; font-weight: 700; color: #fff; padding: 2px 8px; border-radius: 10px;
+           line-height: 1.6; white-space: nowrap; flex-shrink: 0; }
+  .b-yamajiro { background: hsl(0,42%,38%); }
+  /* カード系バッジ: 色は現行 .cd-badge を踏襲、寸法は城バッジに合わせて統一 */
+  .badge.b-cdid   { background: #8d6e63; }
+  .badge.b-cdround{ background: #546E7A; }
+
+  .hrow { display: flex; gap: 10px; margin-top: 5px; align-items: flex-start; }
+  .hrow .rt { flex: 1; min-width: 0; }
+  .ph { border-radius: 7px; border: 1px solid #eee; overflow: hidden; flex-shrink: 0;
+        position: relative; background: #efece7; display: flex; align-items: center; justify-content: center; }
+  .ph .phim { display: block; flex-shrink: 0; }
+  .ph .phlab { position: absolute; left: 0; right: 0; bottom: 0; font-size: 8px; color: #fff;
+               background: rgba(0,0,0,.5); text-align: center; line-height: 1.35; padding: 1px 0;
+               white-space: nowrap; overflow: hidden; }
+  .phim.castle { background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.22) 0 6px, rgba(255,255,255,0) 6px 14px), linear-gradient(135deg,#cbbba1,#7d6446); }
+  .phim.card   { background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.22) 0 6px, rgba(255,255,255,0) 6px 14px), linear-gradient(150deg,#9fc3dd,#4d7ea3); }
+  .phim.poke   { background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.22) 0 6px, rgba(255,255,255,0) 6px 14px), linear-gradient(140deg,#e8d38a,#b8863a); }
+
+  .meta { font-size: 11px; color: #666; line-height: 1.45; display: -webkit-box;
+          -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+  .meta + .meta { margin-top: 1px; }
+  .meta .k { color: #aaa; }
+
+  .btn { display: flex; align-items: center; justify-content: center; text-align: center; height: 40px;
+         padding: 0 4px; border-radius: 7px; font-weight: bold; color: #fff; font-size: 12px;
+         box-sizing: border-box; cursor: pointer; text-decoration: none; white-space: nowrap; overflow: hidden;
+         flex: 1 1 0; min-width: 0; }
+  .brow { display: flex; gap: 4px; margin-top: 4px; }
+  .btn.ovf { outline: 2px solid #ff1744; outline-offset: -2px; }
+  .g-gmap { background: #fff; color: #4285f4; border: 1px solid #4285f4; }
+  .g-nav { background: #4285F4; } .g-yahoo { background: #FF0033; } .g-near { background: #34A853; }
+  .g-wiki { background: #333; } .g-kojo { background: #8B4513; } .g-shb { background: #6A4C93; }
+  .g-acc { background: #00897B; } .g-tabe { background: #ff6600; }
+  .g-poke { background: #FBBC04; color: #333; } .g-mweb { background: #283593; }
+  .g-meki { background: #BF360C; } .g-mhp { background: #795548; }
+  .g-stock { background: #00897B; } .g-gkp { background: #455A64; }
+
+  /* ===== iPhone SE3 実寸フレーム ===== */
+  .frames { display: flex; gap: 26px; flex-wrap: wrap; align-items: flex-start; }
+  .devwrap { position: relative; padding-left: 58px; }
+  .device { position: relative; width: 375px; height: 667px; overflow: hidden;
+            border: 1px solid #888; border-radius: 6px; background: #dfe3d8; }
+  .device .map { position: absolute; inset: 0;
+    background:
+      repeating-linear-gradient(64deg, rgba(255,255,255,.85) 0 7px, rgba(255,255,255,0) 7px 78px),
+      repeating-linear-gradient(-24deg, rgba(255,255,255,.75) 0 5px, rgba(255,255,255,0) 5px 96px),
+      radial-gradient(circle at 22% 62%, #bcd4c4 0 62px, transparent 63px),
+      radial-gradient(circle at 78% 18%, #cfe2ea 0 78px, transparent 79px),
+      linear-gradient(150deg, #e6ead9, #d5ded0); }
+  .device .statusbar { position: absolute; left: 0; right: 0; top: 0; height: 20px; background: rgba(255,255,255,.82);
+                       font-size: 10px; color: #444; display: flex; align-items: center; justify-content: space-between;
+                       padding: 0 8px; z-index: 8; }
+  .device .sheet { position: absolute; left: 0; right: 0; bottom: 0; width: 375px; z-index: 10; }
+  .device .barghost { position: absolute; left: 0; right: 0; bottom: 0; height: 52px; background: #fff;
+                      box-shadow: 0 -2px 8px rgba(0,0,0,.15); z-index: 5; display: flex; align-items: center;
+                      padding: 0 12px; font-size: 13px; color: #bbb; }
+  .maparea { position: absolute; left: 0; right: 0; top: 20px; z-index: 9; pointer-events: none;
+             border-bottom: 2px dashed rgba(211,47,47,.85); }
+  .maparea .lab { position: absolute; right: 6px; bottom: 4px; background: rgba(211,47,47,.9); color: #fff;
+                  font-size: 10px; font-weight: bold; padding: 2px 7px; border-radius: 4px; }
+  .ruler { position: absolute; left: 0; top: 0; width: 52px; height: 667px; }
+  .ruler .seg { position: absolute; left: 0; width: 52px; box-sizing: border-box; border-top: 1px solid #999;
+                border-bottom: 1px solid #999; font-size: 9.5px; color: #555; text-align: center;
+                display: flex; align-items: center; justify-content: center; }
+  .ruler .seg.m { background: rgba(76,175,80,.16); } .ruler .seg.s { background: rgba(211,47,47,.14); }
+  .fcap { font-size: 11.5px; font-weight: bold; margin: 0 0 4px; }
+  .fnote { font-size: 10.5px; color: #666; line-height: 1.7; margin: 6px 0 0; width: 433px; }
+  .fnote b { color: #111; }
+
+  /* ===== 選択効果 ②二重リング ===== */
+  /* ピン実寸: 直径28px＋白枠3px（OBJ_ICON_CIRCLE_PX=28 / circle-stroke-width:3） */
+  .mp { position: absolute; width: 28px; height: 28px; border-radius: 50%; box-shadow: 0 0 0 3px #fff;
+        transform: translate(-50%,-50%); display: flex; align-items: center; justify-content: center;
+        color: #fff; font-size: 12px; z-index: 4; }
+  .mp.c100 { background: #4285F4; } .mp.c200 { background: #EA4335; } .mp.cetc { background: #546E7A; }
+  .mp.michi { background: #34A853; } .mp.mh { background: #B87333; } .mp.poke { background: #FBBC04; }
+  .ring { position: absolute; border-radius: 50%; transform: translate(-50%,-50%); z-index: 3;
+          box-sizing: border-box; }
+  .ring.r1 { width: 46px; height: 46px; border-width: 3px; border-style: solid; }
+  .ring.r2 { width: 62px; height: 62px; border-width: 2px; border-style: solid; }
+
+  .fxgrid { display: flex; gap: 14px; flex-wrap: wrap; }
+  .fx { width: 236px; }
+  .fx .cap { font-size: 11.5px; font-weight: bold; margin: 0 0 2px; }
+  .fx .nt { font-size: 10px; color: #666; line-height: 1.6; margin: 5px 0 0; }
+  .mini { position: relative; width: 236px; height: 190px; border-radius: 7px; overflow: hidden;
+          border: 1px solid #aaa;
+          background:
+            repeating-linear-gradient(64deg, rgba(255,255,255,.85) 0 5px, rgba(255,255,255,0) 5px 56px),
+            repeating-linear-gradient(-24deg, rgba(255,255,255,.75) 0 4px, rgba(255,255,255,0) 4px 68px),
+            radial-gradient(circle at 20% 74%, #bcd4c4 0 44px, transparent 45px),
+            linear-gradient(150deg, #e6ead9, #d5ded0); }
+  .mini .msheet { position: absolute; left: 0; right: 0; bottom: 0; height: 58px; background: #fff;
+                  border-radius: 12px 12px 0 0; box-shadow: 0 -2px 8px rgba(0,0,0,.2); z-index: 6;
+                  padding: 7px 10px; font-size: 10.5px; color: #555; }
+  .mini .msheet b { font-size: 12px; color: #222; display: block; }
+  .mini .msheet i { display: block; width: 30px; height: 3px; background: #ccc; border-radius: 2px;
+                    margin: 0 auto 5px; }
+</style>
+</head>
+<body>
+
+<h1>V3 確定版 — マンホール系は案4＋全テキスト／バッジ左寄せ／選択効果は②二重リング</h1>
+
+<div id="ctl">
+  <div class="grp"><span class="gl">確定条件</span>
+    <span class="fixed">行ラベルなし ／ 1:1枠にcover ／ 128px ／ 別名2行 ／ マンホール系=案4＋全テキスト ／ バッジ左</span>
+  </div>
+  <div class="grp"><span class="gl">城の写真ソース</span>
+    <select id="src">
+      <option value="kojo" selected>攻城団パノラマ 720×240</option>
+      <option value="shb">城郭放浪記 640×475</option>
+      <option value="wiki3">Wikipedia(横) 400×300</option>
+      <option value="wiki4">Wikipedia(縦) 400×533</option>
+    </select>
+  </div>
+  <div class="grp"><span class="gl">テキスト</span>
+    <label><input type="radio" name="txt" value="rep" checked> 代表例（札幌市 A001）</label>
+    <label><input type="radio" name="txt" value="max"> 実データ最長（大田区 T001）</label>
+  </div>
+  <div class="grp"><span class="gl">写真</span>
+    <label><input type="radio" name="pic" value="on" checked> あり</label>
+    <label><input type="radio" name="pic" value="off"> なし</label>
+  </div>
+  <div class="grp"><span class="gl">リング色</span>
+    <select id="ring">
+      <option value="type" selected>種別色（ピンと同色）</option>
+      <option value="accent">固定アクセント #EA4335</option>
+      <option value="white">白＋影</option>
+    </select>
+  </div>
+</div>
+
+<h2>■ 確定した構成</h2>
+<table class="calc">
+<tr><th>行</th><th>内容</th></tr>
+<tr><td>タイトル行</td><td><b>バッジ（左）＋名前</b>。城=形態バッジ、マンホール系=<b>カードID＋弾</b>。寸法は城バッジに統一（12px / padding 2px 8px / line-height 1.6 → 高さ23.2px）</td></tr>
+<tr><td>横並び</td><td>写真128×128（1:1枠にcover）｜ テキスト（幅209px・各行2行省略）</td></tr>
+<tr><td>行A</td><td>GoogleMap ＋ 種別固有の単発リンク（<b>マンホール系は案4なのでGoogleMap単独＝全幅</b>）</td></tr>
+<tr><td>行B（セット）</td><td>城=Wikipedia/攻城団/城郭放浪記　道の駅=michieki.jp/施設HP/関連HP　<b>マンホール系=在庫状況/GKP公式一覧</b></td></tr>
+<tr><td>行C（固定）</td><td>ここへ行く(Google) / ここへ行く(Yahoo) / 🔍 この周辺を検索</td></tr>
+</table>
+<p class="lead">
+<b>マンホール系のテキストは「カード詳細が持つテキストを全て」表示</b>します（バッジで出すカードID・弾は重複させない）。<br>
+・配布場所: 住所 ／ 🕐配布時間 ／ 発行日<br>
+・マンホール蓋: <b>蓋の設置住所</b> ／ 配布場所名 ／ 配布場所の住所 ／ 🕐配布時間 ／ 発行日<br>
+※蓋の配布場所情報は <code>findCardByCardId()</code> で紐付いた別レコードなので、<b>蓋の住所と配布場所の住所は別物</b>です。両方出すためラベルを付けています。<br>
+※配布場所のタイトルは、現行の <code>[配布] 札幌市（A001） 札幌市下水道科学館</code> から括弧内IDをバッジへ移し <code>[配布] 札幌市 札幌市下水道科学館</code> としています（<code>openCardDetail()</code> の <code>muni</code> と同じ括弧除去処理）。
+</p>
+
+<div id="out"></div>
+
+<h2>■ 選択中オブジェクトの表示効果：②二重リング</h2>
+<p class="lead">
+ピンは実寸再現（直径28px＋白枠3px）。リングは <b>外側 φ62px（線2px）／内側 φ46px（線3px）</b>。ピン外径34pxとの間に6pxの余白があるので、ピン自体を隠しません。<br>
+<b>実装</b>: 選択専用のGeoJSONソース1つ＋circleレイヤー2枚。<code>circle-opacity: 0</code>（塗りなし）＋ <code>circle-stroke-width: 3 / 2</code>、<code>circle-radius: 23 / 31</code>。既存の <code>pin-pulse-source</code>（<code>index.html</code> L2504-L2507）と同じ作り方で、<code>map.addLayer(layer, '最初のピンレイヤーID')</code> でピンより下に差し込めばリングがピンに被りません。アニメーション不要なので毎フレーム再描画は発生しません。
+</p>
+<div class="fxgrid" id="fxout"></div>
+
+<h2>■ iPhone SE3（375×667）実寸 — 地図領域と選択リング</h2>
+<div class="frames" id="frames"></div>
+
+<h2>■ 高さ一覧（JS実測）</h2>
+<table class="calc" id="summary"></table>
+
+<script>
+// ================= ボタン =================
+const BTN = {
+  gmap:['GoogleMap','g-gmap'], navG:['ここへ行く','g-nav'], navY:['ここへ行く','g-yahoo'],
+  near:['🔍 この周辺を検索','g-near'],
+  wiki:['Wikipedia','g-wiki'], kojo:['攻城団','g-kojo'], shb:['城郭放浪記','g-shb'], acc:['アクセス','g-acc'],
+  mweb:['公式ページ','g-mweb'], meki:['michieki.jp','g-meki'], hp:['施設HP','g-mhp'], hp2:['関連HP','g-mhp'],
+  tabe:['食べログ','g-tabe'], poke:['公式ページ','g-poke'],
+  stock:['在庫状況','g-stock'], gkp:['GKP公式一覧','g-gkp']
+};
+
+// ================= 実データ =================
+// カード（配布場所）: 札幌市 A001 / 東京都 大田区 T001（いずれも mhcard.js の実レコード）
+const CARD = {
+  rep: { id:'A001', round:'第01弾', issueDate:'2016/04/01', muni:'札幌市',
+         place:'札幌市下水道科学館', addr:'北海道札幌市北区麻生町8電話：011-717-0046',
+         hours:'9:30～17:00（入館は16:30まで）ただし、月曜日（祝休日の場合は翌日）、年末年始はお休みです。その他休館日は左記HPよりご確認ください',
+         hasUrl:true,
+         lidName:'北海道 札幌市', lidAddr:'北海道札幌市中央区北一条西二丁目' },   // 紐付く蓋 01-100-A001
+  max: { id:'T001', round:'第15弾', issueDate:'2021/11/05', muni:'東京都 大田区',
+         place:'①一般社団法人 大田観光協会 ②大田区立郷土博物館',
+         addr:'①大田区南蒲田1-20-20 大田区産業プラザ2階 ②大田区南馬込5-11-13 (問合せ先) 大田区産業経済部産業経済課 電話：03-5744-1322',
+         hours:'①9:00～17:00 ただし、土曜日/日曜日/祝日/年末年始はお休みです ②9:00～17:00 ただし、月曜日（休日・祝日は開館）、年末年始、他（展示替え等により臨時休館あり）はお休みです',
+         hasUrl:false,   // 大田区は url が空（180/1,426件）→ 在庫状況ボタンなし
+         lidName:'東京都 大田区', lidAddr:'東京都大田区南六郷三丁目' }            // 紐付く蓋 13-100-T001
+};
+
+const REP = {
+  castle : { name:'岩村城', badges:[['山城','b-yamajiro']],
+             metas:['別名: 霧ヶ城','標高 721m / 比高 153m','岐阜県恵那市岩村町'] },
+  michi  : { name:'道の駅三笠',
+             metas:['北海道三笠市岡山1056-1','🕐 9:00～18:00（4～9月） 9:00～17:00（10～3月）'] },
+  shop   : { name:'ラーメン札幌一粒庵（いちりゅうあん） - さっぽろ（札幌市営）（ラーメン）',
+             metas:['北海道札幌市中央区北四条西一丁目'] },
+  pokefuta:{ name:'アローラロコン / トドグラー', metas:['北海道別海町尾岱沼5-27'] }
+};
+const MAXT = {
+  castle : { name:'国吉城', badges:[['山城','b-yamajiro']],
+             metas:['別名: 佐柿城、wakasa-mihama.jp、spot、%E4%BD%90%E6%9F%BF%E5%9B%BD%E5%90%89%E5%9F%8E、佐柿国吉城',
+                    '標高 197m / 比高 140m','福井県美浜町坂尻'] },
+  michi  : { name:'道の駅むつざわスマートウェルネスタウン・道の駅・つどいの郷',
+             metas:['千葉県長生郡睦沢町森2-1',
+                    '🕐 ［直売所］9:00～18:00 ［レストラン］11:00～21:00（LO 20:30） ［温浴施設］10:00～21:00'] },
+  shop   : { name:'ブルガリ イル・リストランテ ルカ・ファンティン（BVLGARI Il Ristorante LUCA FANTIN【旧店名】ブルガリ イル リストランテ） - 銀座一丁目（イタリアン）',
+             metas:['東京都中央区銀座二丁目'] },
+  pokefuta:{ name:'ラプラス / ニャース / ニャビー / エネコ / ニャルマー', metas:['宮城県石巻市穀町14番1号'] }
+};
+// マンホール系はカードデータから動的に組み立てる（案4＋全テキスト）
+function mhcardEntry(c) {
+  return { name:`[配布] ${c.muni} ${c.place}`,
+           badges:[[c.id,'b-cdid'], [c.round,'b-cdround']],
+           metas:[ c.addr, `🕐 ${c.hours}`, `<span class="k">発行</span> ${c.issueDate}` ] };
+}
+function manholeEntry(c, joined) {
+  if (!joined) return { name:c.lidName, badges:[], metas:[ c.lidAddr ] };
+  return { name:c.lidName,
+           badges:[[c.id,'b-cdid'], [c.round,'b-cdround']],
+           metas:[ c.lidAddr,
+                   `<span class="k">配布場所</span> ${c.place}`,
+                   c.addr,
+                   `🕐 ${c.hours}`,
+                   `<span class="k">発行</span> ${c.issueDate}` ] };
+}
+
+// ===== 写真ソース実寸（2026-07-26 実測） =====
+const PHOTOSRC = {
+  castle: [ { id:'kojo', w:720, h:240 }, { id:'shb', w:640, h:475 },
+            { id:'wiki3', w:400, h:300 }, { id:'wiki4', w:400, h:533 } ],
+  manhole : [{ id:'mh', w:232, h:320 }],
+  mhcard  : [{ id:'mc', w:517, h:722 }],
+  pokefuta: [{ id:'pk', w:750, h:750 }],
+  michi: null, shop: null
+};
+const PHCLS = { castle:'castle', manhole:'card', mhcard:'card', pokefuta:'poke' };
+const SIZE = 128;
+
+// ================= 全ボタン表示パターン =================
+const PATTERNS = [
+  { type:'castle', label:'城 ①Wiki○ 攻城団○ 放浪記○', cnt:'3,542件のうちWikiあり', rowA:[BTN.acc], setRow:[BTN.wiki,BTN.kojo,BTN.shb] },
+  { type:'castle', label:'城 ②Wiki○ 攻城団○ 放浪記✕', cnt:'937件のうちWikiあり',   rowA:[BTN.acc], setRow:[BTN.wiki,BTN.kojo] },
+  { type:'castle', label:'城 ③Wiki○ 攻城団✕ 放浪記○', cnt:'7,399件のうちWikiあり', rowA:[BTN.acc], setRow:[BTN.wiki,BTN.shb] },
+  { type:'castle', label:'城 ④Wiki○ 攻城団✕ 放浪記✕', cnt:'11,556件のうちWikiあり', rowA:[BTN.acc], setRow:[BTN.wiki] },
+  { type:'castle', label:'城 ⑤Wiki✕ 攻城団○ 放浪記○', cnt:'3,542件のうちWikiなし', rowA:[BTN.acc], setRow:[BTN.kojo,BTN.shb] },
+  { type:'castle', label:'城 ⑥Wiki✕ 攻城団○ 放浪記✕', cnt:'937件のうちWikiなし',   rowA:[BTN.acc], setRow:[BTN.kojo] },
+  { type:'castle', label:'城 ⑦Wiki✕ 攻城団✕ 放浪記○', cnt:'7,399件のうちWikiなし', rowA:[BTN.acc], setRow:[BTN.shb] },
+  { type:'castle', label:'城 ⑧Wiki✕ 攻城団✕ 放浪記✕', cnt:'11,556件のうちWikiなし → 行B消滅', rowA:[BTN.acc], setRow:[] },
+  { type:'michi', label:'道の駅 ①4リンク揃い',  cnt:'834件（最頻）', rowA:[BTN.mweb], setRow:[BTN.meki,BTN.hp,BTN.hp2] },
+  { type:'michi', label:'道の駅 ②関連HPなし',   cnt:'326件', rowA:[BTN.mweb], setRow:[BTN.meki,BTN.hp] },
+  { type:'michi', label:'道の駅 ③施設HPなし',   cnt:'24件',  rowA:[BTN.mweb], setRow:[BTN.meki,BTN.hp2] },
+  { type:'michi', label:'道の駅 ④michiekiのみ', cnt:'49件',  rowA:[BTN.mweb], setRow:[BTN.meki] },
+  { type:'michi', label:'道の駅 ⑤公式のみ',     cnt:'1件 → 行B消滅', rowA:[BTN.mweb], setRow:[] },
+  { type:'manhole', label:'マンホール蓋 ①紐付きあり・在庫状況あり', cnt:'案4＋全テキスト', joined:true },
+  { type:'manhole', label:'マンホール蓋 ②紐付きなし', cnt:'44件 → バッジ・カード情報・行Bすべてなし', joined:false },
+  { type:'mhcard',  label:'カード配布場所', cnt:'1,426件・案4＋全テキスト' },
+  { type:'pokefuta', label:'ポケふた', cnt:'482件', rowA:[BTN.poke], setRow:[] },
+  { type:'shop', label:'食べログ', cnt:'7,077件', rowA:[BTN.tabe], setRow:[] }
+];
+
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const rowHtml = (btns) => btns.length
+  ? '<div class="brow">' + btns.map(b => `<a class="btn ${b[1]}">${b[0]}</a>`).join('') + '</div>' : '';
+
+function photoHtml(src, cls) {                    // 1:1枠にcover（現行方式）
+  const s = Math.max(SIZE / src.w, SIZE / src.h);
+  const iw = Math.round(src.w * s), ih = Math.round(src.h * s);
+  const trimmed = iw > SIZE + 0.5 || ih > SIZE + 0.5;
+  return `<div class="ph" style="width:${SIZE}px;height:${SIZE}px">`
+       + `<div class="phim ${cls}" style="width:${iw}px;height:${ih}px"></div>`
+       + `<span class="phlab">原寸 ${src.w}×${src.h}${trimmed ? ' ✂トリミング' : ''}</span></div>`;
+}
+
+// 種別ごとの中身と行構成を決める（マンホール系だけカードデータから組む）
+function entryOf(pat, o) {
+  const c = o.txt === 'max' ? CARD.max : CARD.rep;
+  if (pat.type === 'mhcard') {
+    return { src: mhcardEntry(c),
+             rowA: [], setRow: c.hasUrl ? [BTN.stock, BTN.gkp] : [BTN.gkp] };
+  }
+  if (pat.type === 'manhole') {
+    return { src: manholeEntry(c, pat.joined),
+             rowA: [], setRow: !pat.joined ? [] : (c.hasUrl ? [BTN.stock, BTN.gkp] : [BTN.gkp]) };
+  }
+  return { src: (o.txt === 'max' ? MAXT : REP)[pat.type], rowA: pat.rowA, setRow: pat.setRow };
+}
+
+function buildSheet(pat, o) {
+  const e = entryOf(pat, o);
+  const srcs = o.pic === 'off' ? null : PHOTOSRC[pat.type];
+  const ph = srcs ? (srcs.find(s => s.id === o.src) || srcs[0]) : null;
+  const badges = (e.src.badges || []).map(b => `<span class="badge ${b[1]}">${esc(b[0])}</span>`).join('');
+  const title = `<div class="t-row">${badges}<span class="t-name">${esc(e.src.name)}</span></div>`;
+  // metas は一部に <span class="k"> を含めるため esc 済み前提で埋め込む
+  const metas = e.src.metas.map(m => `<div class="meta">${m}</div>`).join('');
+  const media = ph ? `<div class="hrow">${photoHtml(ph, PHCLS[pat.type])}<div class="rt">${metas}</div></div>` : metas;
+  return `<div class="sheet"><div class="handle"></div><div class="body">`
+    + title + media
+    + rowHtml([BTN.gmap].concat(e.rowA)) + rowHtml(e.setRow) + rowHtml([BTN.navG, BTN.navY, BTN.near])
+    + `</div></div>`;
+}
+
+const opts = () => ({
+  txt: document.querySelector('input[name=txt]:checked').value,
+  pic: document.querySelector('input[name=pic]:checked').value,
+  src: document.getElementById('src').value,
+  ring: document.getElementById('ring').value
+});
+
+// ================= ②二重リングの見本 =================
+const RINGDEMO = [
+  { cls:'c100',  name:'城（日本100名城）', col:'#4285F4', ic:'城' },
+  { cls:'cetc',  name:'城（その他）',      col:'#546E7A', ic:'城' },
+  { cls:'michi', name:'道の駅',            col:'#34A853', ic:'道' },
+  { cls:'mh',    name:'マンホール蓋',      col:'#B87333', ic:'M' },
+  { cls:'poke',  name:'ポケふた',          col:'#FBBC04', ic:'P' }
+];
+// リング2枚の色。内側は不透明、外側は同色を薄く。
+function ringStyle(o, col) {
+  if (o.ring === 'accent') return { c1:'#EA4335', c2:'#EA4335', op2:'opacity:.45;', sh:'' };
+  if (o.ring === 'white')  return { c1:'#ffffff', c2:'#ffffff', op2:'opacity:.7;',
+                                    sh:'filter:drop-shadow(0 1px 2px rgba(0,0,0,.55));' };
+  return { c1:col, c2:col, op2:'opacity:.45;', sh:'' };   // 種別色
+}
+function ringHtml(o, col, x, y) {
+  const s = ringStyle(o, col);
+  return `<div class="ring r2" style="left:${x}px;top:${y}px;border-color:${s.c2};${s.op2}${s.sh}"></div>`
+       + `<div class="ring r1" style="left:${x}px;top:${y}px;border-color:${s.c1};${s.sh}"></div>`;
+}
+
+// ================= 描画 =================
+function render() {
+  const o = opts();
+
+  const groups = [['castle','城（8パターン）'],['michi','道の駅（5パターン）'],
+                  ['manhole','マンホール蓋（案4＋全テキスト）'],['mhcard','カード配布場所（案4＋全テキスト）'],
+                  ['pokefuta','ポケふた'],['shop','食べログ']];
+  document.getElementById('out').innerHTML = groups.map(([g, title]) => {
+    const cells = PATTERNS.filter(p => p.type === g).map(p => `
+      <div class="cell"><div class="hd">${p.label}</div><div class="sub">${p.cnt}</div>
+        ${buildSheet(p, o)}<div class="mt"></div></div>`).join('');
+    return `<h3>${title}</h3><div class="vrow">${cells}</div>`;
+  }).join('');
+
+  document.getElementById('fxout').innerHTML = RINGDEMO.map(d => `
+    <div class="fx">
+      <div class="cap">${d.name}</div>
+      <div class="mini">
+        <div class="mp michi" style="left:44px;top:48px">道</div>
+        <div class="mp mh" style="left:196px;top:38px">M</div>
+        ${ringHtml(o, d.col, 118, 76)}
+        <div class="mp ${d.cls}" style="left:118px;top:76px">${d.ic}</div>
+        <div class="msheet"><i></i><b>選択中のオブジェクト</b>下部シートに詳細</div>
+      </div>
+      <div class="nt">ピン外径34px ／ 内リング φ46px(3px) ／ 外リング φ62px(2px)</div>
+    </div>`).join('');
+
+  measure(o);
+}
+
+function measure(o) {
+  const PWA = 647, SAFARI = 553;
+  const list = [];
+  document.querySelectorAll('#out .cell').forEach(cell => {
+    const sheet = cell.querySelector('.sheet');
+    const h = Math.round(sheet.getBoundingClientRect().height);
+    const rt = cell.querySelector('.rt'), ph = cell.querySelector('.ph');
+    const txtH = rt ? Math.round(rt.getBoundingClientRect().height) : 0;
+    const phH = ph ? Math.round(ph.getBoundingClientRect().height) : 0;
+    let ovf = 0;
+    cell.querySelectorAll('.btn').forEach(b => {
+      b.classList.remove('ovf');
+      if (b.scrollWidth > b.clientWidth + 0.5) { b.classList.add('ovf'); ovf++; }
+    });
+    cell.classList.remove('tallest');
+    const waste = ph ? phH - txtH : 0;
+    cell.querySelector('.mt').innerHTML =
+      `シート高 <b>${h}px</b> ／ 地図領域 PWA <b>${PWA - h}px</b>（${Math.round((PWA - h) / PWA * 100)}%）・Safari ${SAFARI - h}px`
+      + (ovf ? ` ／ <span class="warn">ラベルはみ出し ${ovf}個</span>` : ' ／ はみ出しなし')
+      + (ph ? `<br>写真 ${phH}px ／ テキスト ${txtH}px → 行 ${Math.max(phH, txtH)}px`
+              + (waste > 0 ? ` ／ <span class="warn">写真の余り +${waste}px</span>`
+                           : waste < 0 ? ` ／ テキストが ${-waste}px 高い` : ' ／ 一致')
+              + ` ／ テキスト幅 ${347 - SIZE - 10}px` : '<br>写真なし');
+    list.push({ h, ovf, label: cell.querySelector('.hd').textContent, cell });
+  });
+
+  list.sort((a, b) => b.h - a.h);
+  if (list.length) list[0].cell.classList.add('tallest');
+  const tall = list[0], short = list[list.length - 1];
+
+  document.getElementById('frames').innerHTML = [
+    { d: tall, cap: '最大: ' + tall.label, col:'#4285F4', ic:'城' },
+    { d: short, cap: '最小: ' + short.label, col:'#546E7A', ic:'城' }
+  ].map(({ d, cap, col, ic }) => {
+    const sheetHtml = d.cell.querySelector('.sheet').outerHTML;
+    const mapH = 647 - d.h, pct = Math.round(mapH / 647 * 100);
+    const py = Math.max(70, Math.round(20 + mapH * 0.55));
+    return `<div>
+      <div class="fcap">${esc(cap)}</div>
+      <div class="devwrap">
+        <div class="ruler">
+          <div class="seg" style="top:0;height:20px;font-size:8px">status<br>20</div>
+          <div class="seg m" style="top:20px;height:${mapH}px">地図<br><b>${mapH}px</b><br>${pct}%</div>
+          <div class="seg s" style="top:${20 + mapH}px;height:${d.h}px">シート<br><b>${d.h}px</b></div>
+        </div>
+        <div class="device">
+          <div class="map"></div>
+          <div class="statusbar"><span>9:41</span><span>▮▮▮ ᯤ 🔋</span></div>
+          <div class="mp michi" style="left:86px;top:${Math.max(50, Math.round(20 + mapH * 0.3))}px">道</div>
+          <div class="mp mh" style="left:296px;top:${Math.max(50, Math.round(20 + mapH * 0.22))}px">M</div>
+          ${ringHtml(o, col, 187, py)}
+          <div class="mp c100" style="left:187px;top:${py}px">${ic}</div>
+          <div class="barghost">🔍 検索（シートに隠れる）</div>
+          <div class="maparea" style="height:${mapH}px"><span class="lab">地図 375×${mapH}px</span></div>
+          ${sheetHtml}
+        </div>
+      </div>
+      <div class="fnote">
+        ホーム画面PWA（standalone）想定：コンテンツ高 647px = 667 − ステータスバー20px（<b>実機未確認</b>）。<br>
+        <b>地図領域 375×${mapH}px（${pct}%）</b>／シート ${d.h}px。Safari通常表示（参考値553px）なら <b>${553 - d.h}px</b>。<br>
+        選択ピンには②二重リング（φ46/φ62）を表示。シート表示中は下部バー52pxがシートの下に隠れます。
+      </div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('summary').innerHTML =
+    '<tr><th>パターン</th><th>シート高</th><th>地図領域(PWA 647px)</th><th>割合</th><th>はみ出し</th></tr>'
+    + list.map((d, i) => `<tr class="${i === 0 ? 'hi' : i === list.length - 1 ? 'lo' : ''}">`
+        + `<td>${esc(d.label)}</td><td class="n">${d.h}px</td><td class="n">${647 - d.h}px</td>`
+        + `<td class="n">${Math.round((647 - d.h) / 647 * 100)}%</td>`
+        + `<td class="n">${d.ovf ? '<b style="color:#b00">' + d.ovf + '</b>' : '0'}</td></tr>`).join('');
+}
+
+document.querySelectorAll('#ctl input, #ctl select').forEach(el => el.addEventListener('change', render));
+render();
+</script>
+</body>
+</html>
