@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>情報シートの写真タップ拡大 案A〜F</title>
+<style>
+  body { font-family: sans-serif; background: #ececec; padding: 18px; margin: 0; color: #222; }
+  h1 { font-size: 16px; margin: 0 0 6px; }
+  h2 { font-size: 14.5px; margin: 26px 0 4px; padding: 10px 0 0; border-top: 3px solid #b5b5b5; }
+  .lead { font-size: 12px; color: #555; line-height: 1.8; margin: 0 0 10px; max-width: 1100px; }
+  .lead b { color: #b00; }
+  code { background: #fff; padding: 0 3px; border-radius: 3px; font-size: 11px; }
+
+  #ctl { position: sticky; top: 0; z-index: 60; background: #fff; border: 1px solid #ccc; border-radius: 8px;
+         padding: 9px 12px; margin: 0 0 14px; font-size: 12px; display: flex; gap: 20px; align-items: center;
+         flex-wrap: wrap; box-shadow: 0 2px 8px rgba(0,0,0,.13); }
+  #ctl .gl { font-weight: bold; color: #555; margin-right: 4px; }
+  #ctl button { font-size: 12px; padding: 4px 9px; border: 1px solid #bbb; background: #f7f7f7;
+                border-radius: 5px; cursor: pointer; }
+  #ctl button.on { background: #1a73e8; color: #fff; border-color: #1a73e8; }
+
+  .stage { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+  /* 実機相当の枠。実装では position:fixed でよいが、モックでは枠内に閉じ込めるため relative にする */
+  .phone { position: relative; width: 375px; height: 720px; background: #dfe6e9; border: 1px solid #aaa;
+           border-radius: 12px; overflow: hidden; flex-shrink: 0; }
+  .phone .mapbg { position: absolute; inset: 0;
+                  background: repeating-linear-gradient(45deg, #e8efe8 0 14px, #dfe8df 14px 28px); }
+  .phone .mapbg::after { content: '地図'; position: absolute; top: 12px; left: 12px; font-size: 11px; color: #789; }
+
+  /* ── 情報シート（index.html の #obj-sheet 相当） ── */
+  .sheet { position: absolute; left: 0; right: 0; bottom: 0; background: #fff;
+           border-radius: 16px 16px 0 0; box-shadow: 0 -4px 16px rgba(0,0,0,.18);
+           max-height: calc(100% - 40px); display: flex; flex-direction: column; z-index: 10; }
+  .sheet-hd { padding: 8px 14px 4px; min-height: 24px; flex-shrink: 0; position: relative; }
+  .sheet-hd .handle { width: 36px; height: 4px; background: #ccc; border-radius: 2px; margin: 0 auto; }
+  .sheet-bd { overflow-y: auto; padding: 0 14px 14px; }
+  .os-title { display: flex; align-items: center; gap: 5px; margin-bottom: 3px; }
+  .os-name { font-size: 15px; font-weight: bold; }
+  .os-row { display: flex; gap: 10px; margin-top: 5px; align-items: flex-start; }
+  .os-photo { width: 128px; height: 128px; flex-shrink: 0; border-radius: 7px; border: 1px solid #eee;
+              overflow: hidden; background: #f2f0ec; cursor: zoom-in; position: relative; }
+  .os-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .os-photo.wide { width: 171px; height: 128px; }
+  .os-photo.full { height: auto; }
+  .os-photo.full img { height: auto; object-fit: contain; }
+  .os-meta { flex: 1; min-width: 0; font-size: 12px; color: #555; line-height: 1.6; }
+  .os-brow { display: flex; gap: 6px; margin-top: 8px; }
+  .os-brow .btn { flex: 1; text-align: center; font-size: 11px; padding: 7px 0; border-radius: 6px;
+                  background: #f5f5f5; border: 1px solid #e0e0e0; color: #444; }
+  /* 拡大できることを示すヒント。案の比較用に出し分ける */
+  .zoomhint { position: absolute; right: 4px; bottom: 4px; width: 20px; height: 20px; border-radius: 4px;
+              background: rgba(0,0,0,.55); color: #fff; font-size: 12px; display: flex;
+              align-items: center; justify-content: center; }
+
+  /* ── 拡大ビュー共通 ── */
+  .viewer { position: absolute; inset: 0; z-index: 40; display: none; touch-action: none; }
+  .viewer.open { display: block; }
+  .viewer .backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.92); }
+  .viewer .stagewrap { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+  /* 既定は「等倍を超えて引き伸ばさない」。小さい画像は小さいまま出るが劣化しない。 */
+  .viewer img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; user-select: none;
+                -webkit-user-drag: none; }
+  /* upscale モード: 低解像度でも枠いっぱいに広げる（232×320 のカードは 1.62 倍でぼやける） */
+  .viewer.upscale img { width: 100%; height: 100%; max-width: none; max-height: none; }
+  .viewer.upscale .track img { width: auto; height: auto; max-width: 100%; max-height: 100%; }
+  .viewer .closebtn { position: absolute; top: 10px; right: 10px; z-index: 5; width: 32px; height: 32px;
+                      border-radius: 50%; background: rgba(0,0,0,.5); color: #fff; border: none;
+                      font-size: 19px; line-height: 1; cursor: pointer; }
+  .viewer .scaleinfo { position: absolute; top: 12px; left: 12px; z-index: 5; font-size: 11px; color: #fff;
+                       background: rgba(0,0,0,.5); padding: 3px 8px; border-radius: 10px; }
+
+  /* 案E: 情報オーバーレイ */
+  .ovinfo { position: absolute; left: 0; right: 0; bottom: 0; z-index: 5; padding: 34px 14px 14px; color: #fff;
+            background: linear-gradient(to top, rgba(0,0,0,.82), rgba(0,0,0,0)); }
+  .ovinfo .t { font-size: 14px; font-weight: bold; }
+  .ovinfo .s { font-size: 11px; opacity: .85; margin-top: 3px; }
+  .ovinfo .acts { display: flex; gap: 8px; margin-top: 10px; }
+  .ovinfo .acts a { flex: 1; text-align: center; font-size: 11px; padding: 7px 0; border-radius: 6px;
+                    background: rgba(255,255,255,.16); color: #fff; text-decoration: none; }
+
+  /* 案F: 複数ソース切替 */
+  .track { position: absolute; inset: 0; display: flex; transition: transform .28s ease; }
+  .track .pane { width: 100%; height: 100%; flex-shrink: 0; display: flex; align-items: center;
+                 justify-content: center; padding: 0 4px; box-sizing: border-box; }
+  .dots { position: absolute; left: 0; right: 0; bottom: 14px; z-index: 5; display: flex; gap: 6px;
+          justify-content: center; }
+  .dots i { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.35); }
+  .dots i.on { background: #fff; }
+  .srclabel { position: absolute; left: 0; right: 0; bottom: 28px; z-index: 5; text-align: center;
+              font-size: 11px; color: rgba(255,255,255,.8); }
+
+  /* 案D: シート内インライン展開 */
+  .os-photo.inline-open { width: 100% !important; height: auto !important; cursor: zoom-out; }
+  .os-photo.inline-open img { height: auto; object-fit: contain; }
+
+  table.calc { border-collapse: collapse; font-size: 11.5px; background: #fff; margin: 6px 0 0; }
+  table.calc th, table.calc td { border: 1px solid #ddd; padding: 4px 9px; text-align: left; white-space: nowrap; }
+  table.calc th { background: #f4f4f4; }
+  table.calc td.n { text-align: right; font-variant-numeric: tabular-nums; }
+  table.calc tr.warn td { background: #fdecea; }
+  .side { width: 430px; font-size: 12px; line-height: 1.75; color: #333; }
+  .side h3 { font-size: 13px; margin: 0 0 6px; }
+  .side ul { margin: 4px 0 12px; padding-left: 18px; }
+  .side .ok { color: #0a7a2f; font-weight: bold; }
+  .side .ng { color: #b00; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h1>情報シートの写真タップ拡大 — 案A〜F</h1>
+<p class="lead">
+  写真は<b>すべて既存の表示用URLをそのまま使う</b>ため、新たなAPI発行もデータ追加も不要。
+  画像はシート表示時点でHTTPキャッシュに載っているので、拡大時の再ダウンロードも基本発生しない。<br>
+  下の画像切替で<b>解像度の異なる実データ</b>を差し替えられる。<code>倍率</code>表示が 1.0 を超えると元画像より引き伸ばしている＝粗くなる。<br>
+  <b>拡大方針</b>は案A〜Fすべてに共通する別軸の判断。
+  「等倍まで」は <code>max-width/max-height:100%</code> で頭打ちにするため小さい画像は小さいまま出るが劣化しない。
+  「枠いっぱい」は <code>width/height:100%</code> で必ず画面を埋めるが、
+  <b>蓋のカード(232×320)だけは1.62倍に引き伸ばされてぼやける</b>。
+</p>
+
+<div id="ctl">
+  <span class="gl">案</span>
+  <span id="planbtns"></span>
+  <span class="gl">画像</span>
+  <span id="imgbtns"></span>
+  <span class="gl">拡大方針</span>
+  <span id="upbtns">
+    <button data-u="0">等倍まで（劣化なし）</button>
+    <button data-u="1">枠いっぱい（引き伸ばし）</button>
+  </span>
+</div>
+
+<div class="stage">
+  <div class="phone" id="phone">
+    <div class="mapbg"></div>
+
+    <div class="sheet">
+      <div class="sheet-hd"><div class="handle"></div></div>
+      <div class="sheet-bd">
+        <div class="os-title"><span class="os-name" id="ttl">サンプル</span></div>
+        <div class="os-row">
+          <div class="os-photo" id="thumb"><img id="thumbimg" alt=""><span class="zoomhint" id="hint">⤢</span></div>
+          <div class="os-meta" id="meta">住所などのテキストがここに入る</div>
+        </div>
+        <div class="os-brow"><span class="btn">GoogleMap</span><span class="btn">公式ページ</span></div>
+        <div class="os-brow"><span class="btn">ここへ行く</span><span class="btn">🔍 この周辺を検索</span></div>
+      </div>
+    </div>
+
+    <div class="viewer" id="viewer">
+      <div class="backdrop" id="backdrop"></div>
+      <div class="stagewrap" id="stagewrap"><img id="bigimg" alt=""></div>
+      <div class="track" id="track" style="display:none"></div>
+      <button class="closebtn" id="closebtn">×</button>
+      <div class="scaleinfo" id="scaleinfo"></div>
+      <div class="ovinfo" id="ovinfo" style="display:none">
+        <div class="t" id="ovt"></div>
+        <div class="s" id="ovs"></div>
+        <div class="acts"><a href="#" id="ovopen" target="_blank">元画像を開く</a><a href="#">共有</a></div>
+      </div>
+      <div class="srclabel" id="srclabel" style="display:none"></div>
+      <div class="dots" id="dots" style="display:none"></div>
+    </div>
+  </div>
+
+  <div class="side">
+    <h3 id="planttl"></h3>
+    <div id="plandesc"></div>
+    <h3>実データの解像度と拡大倍率</h3>
+    <table class="calc" id="restable"></table>
+    <p class="lead" style="margin-top:10px">
+      倍率は「拡大表示の実効表示幅 ÷ 画像の実ピクセル幅」。<br>
+      枠375pxでの概算。1.0以下なら等倍以内で劣化しない。
+    </p>
+  </div>
+</div>
+
+<script>
+// 解像度はすべて headless Chrome で naturalWidth/naturalHeight を実測した値
+const IMAGES = [
+  { key: 'card',   name: 'マンホールカード', w: 517, h: 722,
+    url: 'https://www.gk-p.jp/wp-content/uploads/mhc/00-101-A01.jpg',
+    title: '[配布] 北海道 岩見沢市役所', sub: '北海道岩見沢市', variant: 'full' },
+  { key: 'poke',   name: 'ポケふた', w: 750, h: 750,
+    url: 'https://local.pokemon.jp/img/p/manhole/63d1b0ab4923f1c3cd03a928dd57d7b5_l.png',
+    title: 'ピカチュウ', sub: 'ポケふた設置場所', variant: '' },
+  { key: 'pano',   name: '城: 攻城団パノラマ', w: 720, h: 240,
+    url: 'https://kojodan.com/pic/panorama/414.jpg',
+    title: '五稜郭', sub: '北海道函館市五稜郭町', variant: 'wide' },
+  { key: 'shiro',  name: '城: 城郭放浪記', w: 640, h: 480,
+    url: 'https://www.hb.pei.jp/shiro/ezo/goryokaku/indexb.jpg',
+    title: '五稜郭', sub: '北海道函館市五稜郭町', variant: 'wide' },
+  { key: 'ekikara', name: '蓋のカード(低解像度)', w: 232, h: 320,
+    url: 'https://ekikaramanhole.whitebeach.org/ext/manholecard/image/getimage.cgi?file=card/13-100-P001.jpg',
+    title: '東京都 下水道局', sub: '東京都新宿区', variant: 'full' },
+];
+
+const PLANS = [
+  { key: 'A', name: '案A: 全画面ライトボックス（最小）', desc: `
+    <ul>
+      <li>黒背景に画像を1枚。<b>どこをタップしても閉じる</b>。</li>
+      <li>実装量が最小。追加CSS/JSとも数十行で済む。</li>
+      <li>拡大率は固定（画面に収まる最大）。細部は読めない。</li>
+      <li class="ok">向く用途: 写真の全体を大きく見たいだけの場合。</li>
+    </ul>` },
+  { key: 'B', name: '案B: 下スワイプで閉じる（Google Photos 風）', desc: `
+    <ul>
+      <li>ドラッグに追従して画像が縮み、背景が透けていく。閾値を超えたら閉じる。</li>
+      <li><b>今回入れたドロワーの下スワイプと操作感が揃う</b>のが利点。</li>
+      <li>既存の <code>enableSheetSwipeClose</code> は <code>bottom</code> を動かす前提なので流用不可。
+          <code>transform</code> 版を別に書く必要がある（ロジックはほぼ同型）。</li>
+      <li class="ok">向く用途: アプリ全体の操作系を統一したい場合。</li>
+    </ul>` },
+  { key: 'C', name: '案C: ピンチズーム＋パン', desc: `
+    <ul>
+      <li>ダブルタップで2.5倍、2本指ピンチで任意倍率、ドラッグでパン。マウスはホイール。</li>
+      <li><b>マンホールカードの説明文やポケふたの細部を読める</b>のが最大の利点。</li>
+      <li>実装量は最大。ピンチ中心の計算とパン境界の制限が必要。</li>
+      <li class="warn ng">元画像を超えて拡大すると当然ぼやける。倍率表示で歯止めを付けるとよい。</li>
+      <li class="ok">向く用途: カード類の情報を読ませたい場合。</li>
+    </ul>` },
+  { key: 'D', name: '案D: シート内インライン展開', desc: `
+    <ul>
+      <li>全画面にせず、<b>シートの中で写真だけ幅いっぱいに広がる</b>。再タップで元に戻る。</li>
+      <li>地図とシートの文脈が保たれる。閉じる操作を覚えなくてよい。</li>
+      <li>拡大できる幅はシート幅（=画面幅-28px）まで。全画面より小さい。</li>
+      <li>シート高さが変わるので <code>adjustMapForSheet()</code> の呼び直しが要る（既存の画像load時と同じ扱い）。</li>
+      <li class="ok">向く用途: 拡大というより「もう少し大きく」で足りる場合。</li>
+    </ul>` },
+  { key: 'E', name: '案E: 情報オーバーレイ付き全画面', desc: `
+    <ul>
+      <li>案Aに名前・住所と操作ボタンを重ねる。元画像を別タブで開く導線を置ける。</li>
+      <li>拡大中も何の写真か分かる。城のように出典が複数ありうる対象で有効。</li>
+      <li>画像の下部が帯に隠れるため、縦長画像（カード類）とは相性が悪い。</li>
+      <li class="ok">向く用途: 出典表示や外部リンクを一緒に見せたい場合。</li>
+    </ul>` },
+  { key: 'F', name: '案F: 複数ソースを左右スワイプで切替（城限定）', desc: `
+    <ul>
+      <li>城は攻城団・城郭放浪記・Wikipedia の<b>3系統から写真を取得できる</b>が、
+          現状 <code>fetchCastleImage</code> は最初にヒットした1枚で打ち切っている。</li>
+      <li>拡大時だけ残りも取得すれば、左右スワイプで見比べられる。</li>
+      <li class="warn">追加リクエストは発生する（新規APIではなく既存取得先の追加取得）。
+          城郭放浪記は個人サイトのため、コード上も「タップ時1回のみ」と明記されている点に注意。</li>
+      <li class="ok">向く用途: 城の写真を充実させたい場合。他タイプには効かない。</li>
+    </ul>` },
+];
+
+let curPlan = 'A', curImg = IMAGES[0], upscale = false;
+
+const $ = id => document.getElementById(id);
+const viewer = $('viewer'), track = $('track'), bigimg = $('bigimg'), stagewrap = $('stagewrap');
+
+// ── コントロール ──
+$('planbtns').innerHTML = PLANS.map(p => `<button data-p="${p.key}">${p.key}</button>`).join(' ');
+$('imgbtns').innerHTML = IMAGES.map(i => `<button data-i="${i.key}">${i.name}</button>`).join(' ');
+$('planbtns').onclick = e => { if (e.target.dataset.p) { curPlan = e.target.dataset.p; render(); } };
+$('imgbtns').onclick = e => {
+  if (!e.target.dataset.i) return;
+  curImg = IMAGES.find(x => x.key === e.target.dataset.i);
+  render();
+};
+$('upbtns').onclick = e => { if (e.target.dataset.u) { upscale = e.target.dataset.u === '1'; render(); } };
+
+function render() {
+  [...$('planbtns').children].forEach(b => b.classList.toggle('on', b.dataset.p === curPlan));
+  [...$('imgbtns').children].forEach(b => b.classList.toggle('on', b.dataset.i === curImg.key));
+  [...$('upbtns').children].forEach(b => b.classList.toggle('on', (b.dataset.u === '1') === upscale));
+  viewer.classList.toggle('upscale', upscale);
+  const p = PLANS.find(x => x.key === curPlan);
+  $('planttl').textContent = p.name;
+  $('plandesc').innerHTML = p.desc;
+
+  closeViewer();
+  $('thumb').className = 'os-photo ' + (curImg.variant || '');
+  $('thumb').classList.remove('inline-open');
+  $('thumbimg').src = curImg.url;
+  $('ttl').textContent = curImg.title;
+  $('meta').textContent = curImg.sub;
+  $('hint').style.display = curPlan === 'D' ? 'none' : '';
+  buildTable();
+}
+
+function buildTable() {
+  // 拡大時の実効表示幅：全画面(375px)か、シート内(375-28=347px)か
+  const frameW = 375, frameH = 720;
+  const rows = IMAGES.map(i => {
+    const availW = curPlan === 'D' ? frameW - 28 : frameW;
+    const availH = curPlan === 'D' ? 99999 : frameH;
+    const fit = Math.min(availW / i.w, availH / i.h);
+    const ratio = upscale ? fit : Math.min(1, fit);   // 等倍までモードでは1.0で頭打ち
+    const shownW = i.w * ratio;
+    return { i, shownW, ratio };
+  });
+  $('restable').innerHTML =
+    '<tr><th>画像</th><th>実解像度</th><th>拡大表示幅</th><th>倍率</th></tr>' +
+    rows.map(r => `<tr class="${r.ratio > 1.05 ? 'warn' : ''}${r.i.key === curImg.key ? '' : ''}">`
+      + `<td>${r.i.key === curImg.key ? '▶ ' : ''}${r.i.name}</td>`
+      + `<td class="n">${r.i.w}×${r.i.h}</td>`
+      + `<td class="n">${r.shownW.toFixed(0)}px</td>`
+      + `<td class="n">${r.ratio.toFixed(2)}倍</td></tr>`).join('');
+}
+
+// ── サムネイルのタップ → 案ごとの拡大 ──
+$('thumb').addEventListener('click', () => {
+  if (curPlan === 'D') { $('thumb').classList.toggle('inline-open'); return; }
+  openViewer();
+});
+
+function openViewer() {
+  viewer.classList.add('open');
+  $('ovinfo').style.display = curPlan === 'E' ? '' : 'none';
+  $('dots').style.display = curPlan === 'F' ? '' : 'none';
+  $('srclabel').style.display = curPlan === 'F' ? '' : 'none';
+  $('closebtn').style.display = (curPlan === 'A' || curPlan === 'B') ? 'none' : '';
+  $('scaleinfo').style.display = curPlan === 'C' ? '' : 'none';
+
+  if (curPlan === 'F') { setupTrack(); stagewrap.style.display = 'none'; track.style.display = 'flex'; }
+  else { track.style.display = 'none'; stagewrap.style.display = 'flex'; bigimg.src = curImg.url; }
+
+  $('ovt').textContent = curImg.title;
+  $('ovs').textContent = curImg.sub + '  /  ' + curImg.w + '×' + curImg.h;
+  $('ovopen').href = curImg.url;
+
+  resetTransform();
+  if (curPlan === 'C') updateScaleInfo();
+}
+function closeViewer() {
+  viewer.classList.remove('open');
+  resetTransform();
+  viewer.style.opacity = '';
+  $('backdrop').style.opacity = '';
+}
+$('closebtn').addEventListener('click', e => { e.stopPropagation(); closeViewer(); });
+
+// 案A/E: どこでもタップで閉じる（Eは情報帯とボタンを除く）
+viewer.addEventListener('click', e => {
+  if (curPlan === 'A') closeViewer();
+  if (curPlan === 'E' && !e.target.closest('.ovinfo')) closeViewer();
+});
+
+// ── 案B: 下スワイプで閉じる ──
+let bStartY = 0, bDrag = false;
+viewer.addEventListener('pointerdown', e => {
+  if (curPlan !== 'B') return;
+  bStartY = e.clientY; bDrag = true;
+  try { viewer.setPointerCapture(e.pointerId); } catch (_) {}
+});
+viewer.addEventListener('pointermove', e => {
+  if (curPlan !== 'B' || !bDrag) return;
+  const dy = Math.max(0, e.clientY - bStartY);
+  const k = Math.min(1, dy / 320);
+  stagewrap.style.transform = `translateY(${dy}px) scale(${1 - k * 0.3})`;
+  $('backdrop').style.opacity = String(1 - k * 0.75);
+});
+viewer.addEventListener('pointerup', e => {
+  if (curPlan !== 'B' || !bDrag) return;
+  bDrag = false;
+  const dy = e.clientY - bStartY;
+  if (dy > 90) { closeViewer(); return; }
+  if (dy < 4) { closeViewer(); return; }   // 実質タップ → 閉じる
+  stagewrap.style.transition = 'transform .2s ease';
+  stagewrap.style.transform = '';
+  $('backdrop').style.opacity = '';
+  setTimeout(() => { stagewrap.style.transition = ''; }, 220);
+});
+
+// ── 案C: ピンチズーム＋パン ──
+let cScale = 1, cX = 0, cY = 0, cPointers = new Map(), cStartDist = 0, cStartScale = 1, cPanFrom = null;
+function resetTransform() {
+  cScale = 1; cX = 0; cY = 0; cPointers.clear();
+  stagewrap.style.transform = ''; stagewrap.style.transition = '';
+}
+function applyTransform() {
+  stagewrap.style.transform = `translate(${cX}px, ${cY}px) scale(${cScale})`;
+  updateScaleInfo();
+}
+function updateScaleInfo() {
+  // 表示中の実効倍率（元画像1pxが画面何pxになっているか）
+  const fit = Math.min(375 / curImg.w, 720 / curImg.h);
+  const fitScale = upscale ? fit : Math.min(1, fit);
+  const eff = fitScale * cScale;
+  $('scaleinfo').textContent = `等倍比 ${eff.toFixed(2)}倍` + (eff > 1.05 ? '（引き伸ばし）' : '');
+}
+viewer.addEventListener('pointerdown', e => {
+  if (curPlan !== 'C') return;
+  cPointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  try { viewer.setPointerCapture(e.pointerId); } catch (_) {}
+  if (cPointers.size === 2) {
+    const [a, b] = [...cPointers.values()];
+    cStartDist = Math.hypot(a.x - b.x, a.y - b.y);
+    cStartScale = cScale;
+  } else if (cPointers.size === 1 && cScale > 1) {
+    cPanFrom = { x: e.clientX - cX, y: e.clientY - cY };
+  }
+});
+viewer.addEventListener('pointermove', e => {
+  if (curPlan !== 'C' || !cPointers.has(e.pointerId)) return;
+  cPointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (cPointers.size === 2) {
+    const [a, b] = [...cPointers.values()];
+    const d = Math.hypot(a.x - b.x, a.y - b.y);
+    cScale = Math.min(6, Math.max(1, cStartScale * (d / cStartDist)));
+    applyTransform();
+  } else if (cPanFrom && cScale > 1) {
+    cX = e.clientX - cPanFrom.x; cY = e.clientY - cPanFrom.y;
+    applyTransform();
+  }
+});
+['pointerup', 'pointercancel'].forEach(t => viewer.addEventListener(t, e => {
+  if (curPlan !== 'C') return;
+  cPointers.delete(e.pointerId);
+  if (cPointers.size === 0) cPanFrom = null;
+}));
+viewer.addEventListener('wheel', e => {
+  if (curPlan !== 'C') return;
+  e.preventDefault();
+  cScale = Math.min(6, Math.max(1, cScale * (e.deltaY < 0 ? 1.15 : 1 / 1.15)));
+  if (cScale === 1) { cX = 0; cY = 0; }
+  applyTransform();
+}, { passive: false });
+let lastTap = 0;
+viewer.addEventListener('click', () => {
+  if (curPlan !== 'C') return;
+  const now = Date.now();
+  if (now - lastTap < 320) {
+    stagewrap.style.transition = 'transform .22s ease';
+    if (cScale > 1) { cScale = 1; cX = 0; cY = 0; } else { cScale = 2.5; }
+    applyTransform();
+    setTimeout(() => { stagewrap.style.transition = ''; }, 240);
+  }
+  lastTap = now;
+});
+
+// ── 案F: 複数ソース切替 ──
+const CASTLE_SOURCES = [
+  { label: '攻城団（パノラマ 720×240）', url: 'https://kojodan.com/pic/panorama/414.jpg' },
+  { label: '城郭放浪記（640×480）',      url: 'https://www.hb.pei.jp/shiro/ezo/goryokaku/indexb.jpg' },
+  // pageimages API に pithumbsize=1200 を渡して実際に返った source（現行コードは 400 指定で 400×267）
+  { label: 'Wikipedia（pithumbsize=1200 → 1200×800／現行コードは400指定で400×267）',
+    url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Hakodate_Goryokaku_Panorama_1.JPG/1280px-Hakodate_Goryokaku_Panorama_1.JPG' },
+];
+let fIdx = 0;
+function setupTrack() {
+  track.innerHTML = CASTLE_SOURCES.map(s => `<div class="pane"><img src="${s.url}" alt=""></div>`).join('');
+  $('dots').innerHTML = CASTLE_SOURCES.map(() => '<i></i>').join('');
+  fIdx = 0; updateTrack();
+}
+function updateTrack() {
+  track.style.transform = `translateX(${-fIdx * 100}%)`;
+  [...$('dots').children].forEach((d, i) => d.classList.toggle('on', i === fIdx));
+  $('srclabel').textContent = CASTLE_SOURCES[fIdx].label;
+}
+let fStartX = 0, fDrag = false;
+viewer.addEventListener('pointerdown', e => {
+  if (curPlan !== 'F') return;
+  fStartX = e.clientX; fDrag = true;
+  try { viewer.setPointerCapture(e.pointerId); } catch (_) {}
+});
+viewer.addEventListener('pointerup', e => {
+  if (curPlan !== 'F' || !fDrag) return;
+  fDrag = false;
+  const dx = e.clientX - fStartX;
+  if (Math.abs(dx) < 8) return;   // タップは切替扱いにしない
+  if (dx < -40 && fIdx < CASTLE_SOURCES.length - 1) fIdx++;
+  else if (dx > 40 && fIdx > 0) fIdx--;
+  updateTrack();
+});
+
+render();
+</script>
+</body>
+</html>

@@ -23,7 +23,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.jswa.go.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/00-101-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/00-101-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -45,7 +45,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.ur-net.go.jp/chintai/kansai/osaka/counter/senri/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/00-102-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/00-102-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -67,7 +67,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://akabanemuseum.ur-net.go.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/00-102-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/00-102-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -89,7 +89,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.sapporo-src.com/kagakukan/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-100-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -111,7 +111,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.kankyo.sl-plaza.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-100-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -133,7 +133,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://odori-park.jp/access/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-100-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-100-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -155,7 +155,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://odori-park.jp/access/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-100-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-100-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -177,7 +177,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://hakomachi.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -199,7 +199,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.otaru.lg.jp/docs/2020112200455/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-203-A-02.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-203-A-02.jpg",
         "type": "mhcard"
       }
     },
@@ -221,7 +221,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.city.asahikawa.hokkaido.jp/kurashi/440/441/44281/p008338.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -243,7 +243,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.city.asahikawa.hokkaido.jp/kurashi/440/441/44281/p008342.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-204-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -266,7 +266,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.asahikawa.hokkaido.jp/kankou/2400/d053770.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-204-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-204-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -288,7 +288,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://muro-kanko.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -310,7 +310,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -332,7 +332,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://ja.kushiro-lakeakan.com/overview/378/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-206-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-206-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -354,7 +354,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city.kushiro.lg.jp/shisei/shisetsu/1007655/1008369/1007879.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-206-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-206-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -376,7 +376,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://obikan.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -398,7 +398,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.kitami.lg.jp/soshiki/jogesuido/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -420,7 +420,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.city.kitami.lg.jp/soshiki/tokoro/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-208-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -442,7 +442,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.city.kitami.lg.jp/docs/2013101700043/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-208-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-208-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -465,7 +465,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://rumoi.main.jp/shoplist/%e3%82%8b%e3%82%82%e3%81%84%e3%83%97%e3%83%a9%e3%82%b6/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-212-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-212-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -487,7 +487,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.city.tomakomai.hokkaido.jp/kurashi/jogesuido/sokatsu/card1.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-213-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -509,7 +509,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.tomakomai-kanko.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-213-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -531,7 +531,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.city.wakkanai.hokkaido.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-214-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -553,7 +553,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.city.wakkanai.hokkaido.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-214-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-214-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -576,7 +576,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-214-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-214-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -598,7 +598,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://go-to-ashibetsu.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-216-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -620,7 +620,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.ebetsu.hokkaido.jp/soshiki/kanko/99486.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-217-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-217-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -642,7 +642,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://plat-ebetsu.info/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-217-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-217-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -664,7 +664,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://akabirabase.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-218-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-218-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -686,7 +686,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://mombetsu.jp/life/?category=8",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-219-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -708,7 +708,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://machi-shibetsu.securesite.jp/michinoeki/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-220-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-220-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -730,7 +730,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-221-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-221-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -752,7 +752,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://yoro-na.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-221-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-221-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -774,7 +774,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.city.chitose.lg.jp/docs/28386.html?cat=%2F95%2F95_170%2F95_170_938%2F",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-224-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-224-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -796,7 +796,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.city.takikawa.hokkaido.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-225-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-225-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -818,7 +818,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://sunairu.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-226-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-226-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -840,7 +840,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://mypage.fukanavi.com/riceland/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-228-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-228-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -862,7 +862,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.city.furano.hokkaido.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-229-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-229-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -884,7 +884,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.furano-cheese.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-229-B-01",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-229-B-01",
         "type": "mhcard"
       }
     },
@@ -906,7 +906,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.noboribetsu.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-230-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-230-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -928,7 +928,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.hanaroadeniwa.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-231-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-231-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -950,7 +950,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-231-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-231-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -972,7 +972,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.city.kitahiroshima.hokkaido.jp/hotnews/category/163.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-234-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-234-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -994,7 +994,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://hub-hokkaido-selectshop.com",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-234-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-234-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1016,7 +1016,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-235-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-235-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1038,7 +1038,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "http://www.ishikari-kankou.net/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-235-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-235-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1060,7 +1060,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://hokutoinfo.com/tec/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-236-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-236-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1082,7 +1082,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://tobest.co.jp/michinoeki/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-303-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-303-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1104,7 +1104,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://kikonai.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-334-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-334-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1126,7 +1126,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.kaminokuni.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-362-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-362-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1148,7 +1148,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.iwanai-kanko.org/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-402-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-402-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1170,7 +1170,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-406-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-406-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1192,7 +1192,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-424-A-01.jpg.",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-424-A-01.jpg.",
         "type": "mhcard"
       }
     },
@@ -1214,7 +1214,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.town.higashikagura.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-453-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-453-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1236,7 +1236,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "http://www.town.tohma.hokkaido.jp/all-about/03/03/1739",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-454-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-454-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1258,7 +1258,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "http://www.town.tohma.hokkaido.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-454-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-454-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1280,7 +1280,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "http://www.town.kamifurano.hokkaido.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-460-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-460-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1302,7 +1302,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.town.minamifurano.hokkaido.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-462-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-462-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1324,7 +1324,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.town.wassamu.hokkaido.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-464-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-464-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1346,7 +1346,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://ehon-yakata.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-465-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-465-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1368,7 +1368,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.town.kembuchi.hokkaido.jp/wp-content/cache/all//index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-465-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-465-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1390,7 +1390,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.teshiotown.hokkaido.jp/?page_id=620",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-487-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-487-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1412,7 +1412,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "http://www.teshiotown.hokkaido.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-487-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-487-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -1434,7 +1434,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "http://www.teshiotown.hokkaido.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-487-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-487-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1456,7 +1456,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://ｗｗｗ.town.toyotomi.hokkaido.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-516-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-516-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1478,7 +1478,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-516-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-516-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1500,7 +1500,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-516-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-516-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1522,7 +1522,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "http://toyotomi-kanko.net/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-516-D01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-516-D01.jpg",
         "type": "mhcard"
       }
     },
@@ -1544,7 +1544,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.town.rishiri.hokkaido.jp/rishiri/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-518-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-518-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1566,7 +1566,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.horokaru.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-520-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-520-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1588,7 +1588,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://hokkaido-michinoeki.jp/michinoeki/2884/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-545-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-545-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -1610,7 +1610,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://engaru-metroplaza.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-555-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-555-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1632,7 +1632,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://town.takinoue.hokkaido.jp/shokai/shisetsu/kankou/michinoeki.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-560-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-560-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1654,7 +1654,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-563-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-563-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1676,7 +1676,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "http://d51-station.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-585-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-585-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1698,7 +1698,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.town.urakawa.hokkaido.jp/gyosei/organization/detail.html?id=48",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-607-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-607-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1720,7 +1720,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.town.urakawa.hokkaido.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-607-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-607-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -1743,7 +1743,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.tokachigawa.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-631-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-631-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1765,7 +1765,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.kamishihoro.jp/page/00000060",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-633-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-633-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1787,7 +1787,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.kamishihoro.jp/place/00000251",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-633-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-633-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -1810,7 +1810,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.town.shikaoi.lg.jp/sightseeing/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-634-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-634-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1832,7 +1832,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.town.shikaoi.lg.jp/sightseeing/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-634-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-634-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -1855,7 +1855,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.shintoku-town.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-635-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-635-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1877,7 +1877,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.shintoku-tuktuk.com/facility/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-635-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-635-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1899,7 +1899,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-647-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-647-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1921,7 +1921,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.town.ashoro.hokkaido.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-647-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-647-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1943,7 +1943,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.rikubetsu.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-648-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-648-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -1965,7 +1965,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://betsukai.jp/kurashi/water/gesuidou/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/01-691-A-01.jpg\r\n",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/01-691-A-01.jpg\r\n",
         "type": "mhcard"
       }
     },
@@ -1987,7 +1987,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.yu-sa.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/02-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2009,7 +2009,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.hirosakipark.or.jp/green/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/02-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2031,7 +2031,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.tachineputa.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/02-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2053,7 +2053,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.artstowada.com/data.cgi?id=140531042222",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/02-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2075,7 +2075,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/05",
         "url": "https://skyplazamisawa.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/02-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2097,7 +2097,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.mutsu.lg.jp/bunka/leisure/kankousisetu-anndokann.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/02-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2119,7 +2119,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.town.sannohe.aomori.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-441-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/02-441-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -2141,7 +2141,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "http://www.michinoeki-sannohe.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-441-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/02-441-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -2163,7 +2163,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.town.aomori-nanbu.lg.jp/page/1832.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-445-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/02-445-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2185,7 +2185,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.town.aomori-nanbu.lg.jp/page/1716.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-445-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/02-445-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2207,7 +2207,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.town.aomori-nanbu.lg.jp/page/1716.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/02-445-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/02-445-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -2230,7 +2230,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-000-A-02.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-000-A-02.jpg",
         "type": "mhcard"
       }
     },
@@ -2252,7 +2252,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.morireki.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2274,7 +2274,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.kawatoku.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-201-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2296,7 +2296,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.morireki.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-201-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-201-C-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -2319,7 +2319,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://oasis385.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2341,7 +2341,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.city.miyako.iwate.jp/gyosei/soshiki/tarosogojimusho/3/2/2081.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-202-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2363,7 +2363,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-202-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-202-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2385,7 +2385,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2407,7 +2407,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.hanamaki.iwate.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-205-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2429,7 +2429,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-205-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-205-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2451,7 +2451,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-205-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-205-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2473,7 +2473,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "http://www.tenshouchi.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2495,7 +2495,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://yomunosu-kuji.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2517,7 +2517,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2539,7 +2539,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.rikuzentakata.iwate.jp/soshiki/kyouikusoumuka/bunkazaigakari/1/1/3/4/8681.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2561,7 +2561,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.city.rikuzentakata.iwate.jp/soshiki/kouryusuishinka/sportskoryugakari/supoutsushisetsunitsuite/3029.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-210-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-210-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2583,7 +2583,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://kamaishi-kankou.jp/kyoukai/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-211-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2605,7 +2605,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://uogashi-terrace.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-211-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-211-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2627,7 +2627,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://unosumai-tomosu.jp/tsunami-memorial-hall/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-211-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-211-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2649,7 +2649,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.nanyato-bussan.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-213-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-213-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -2671,7 +2671,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://bigroof.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-216-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-216-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -2693,7 +2693,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "http://www.city.takizawa.iwate.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-216-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-216-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2715,7 +2715,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://bigroof.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-216-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-216-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -2738,7 +2738,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://yamada-oisuta.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-482-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-482-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2760,7 +2760,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://vill.kunohe.iwate.jp/docs/206.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/03-506-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/03-506-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2782,7 +2782,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-000-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-000-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -2804,7 +2804,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.pref.miyagi.jp/soshiki/senen-wwt/sisetusyoukai.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-000-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-000-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2826,7 +2826,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://muratamachi.info/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-000-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-000-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -2849,7 +2849,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "http://izunuma.org/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-000-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-000-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2871,7 +2871,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://tohokudaiken-management.com/sendaikou-tagajo/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-000-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-000-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2893,7 +2893,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.smt.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-100-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2915,7 +2915,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.city.ishinomaki.lg.jp/cont/10505200/1212/20180919113612.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2937,7 +2937,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.mangattan.jp/manga/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-202-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2959,7 +2959,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://shiro-f.jp/shiroishijo/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -2981,7 +2981,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.natori-machidukuri.com/oshirase/plaza.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3003,7 +3003,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.kankou.natori.miyagi.jp/tokusan/11870",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-207-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-207-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3025,7 +3025,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.kankou.natori.miyagi.jp/gourmet/9619",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-207-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-207-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3047,7 +3047,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3069,7 +3069,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.tagakan.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-209-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-209-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3091,7 +3091,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-209-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-209-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3113,7 +3113,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.city.higashimatsushima.miyagi.jp/shisei/shinsaifukko/fukkokinenkoen/fukkodensyokan.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-214-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3135,7 +3135,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-214-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-214-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3157,7 +3157,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-214-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-214-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3179,7 +3179,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://tomiyado.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-216-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3201,7 +3201,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.town.ogawara.miyagi.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-321-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-321-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3223,7 +3223,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "http://www.town.watari.miyagi.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-361-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-361-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -3245,7 +3245,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-404-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-404-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3267,7 +3267,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.shichigahama.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-404-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-404-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -3290,7 +3290,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-406-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-406-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3312,7 +3312,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.town.rifu.miyagi.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-406-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-406-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -3335,7 +3335,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-421-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-421-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3357,7 +3357,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://oosato-rs.co.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-422-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-422-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3379,7 +3379,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.village.ohira.miyagi.jp/soshiki/14/1161.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-424-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-424-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3401,7 +3401,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "http://ohirakan.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-424-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-424-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3423,7 +3423,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.tenpyou.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-501-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-501-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3445,7 +3445,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.onagawa.org",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/04-581-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/04-581-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3467,7 +3467,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "https://www.city.akita.lg.jp/suido/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/05-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/05-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3489,7 +3489,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.selion-akita.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/05-201-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/05-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3511,7 +3511,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": " http://www.hoophall.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/05-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/05-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3533,7 +3533,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city.yokote.lg.jp/shisetsu/1001528/1004520.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/05-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/05-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3555,7 +3555,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/05-206-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/05-206-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -3577,7 +3577,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://michinoeki-tenno.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/05-211-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/05-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3599,7 +3599,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://hanabimuseum.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/05-212-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/05-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3621,7 +3621,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.y-ctc.jp/outline/outline/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/06-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3643,7 +3643,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.m-yzao.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/06-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3665,7 +3665,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://mogamiyoshiaki.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-201-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/06-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3687,7 +3687,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://michinoeki-yonezawa.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/06-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3709,7 +3709,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "https://www.city.tsuruoka.lg.jp/kurashi/suido/gesui/gesuido/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/06-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3731,7 +3731,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.tsuruokakanko.com",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-203-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/06-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3753,7 +3753,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://miraini-sakata.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-204-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/06-204-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -3775,7 +3775,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.city.shinjo.yamagata.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/06-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3797,7 +3797,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.cherryland.co.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/06-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3819,7 +3819,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://kaminoyama-spa.com/news/sightseeing/2633.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/06-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3841,7 +3841,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.city.tendo.yamagata.jp/livinfo/machidukuri/tennyu_tensyutu.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/06-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3863,7 +3863,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.higashine.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-211-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/06-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3885,7 +3885,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.city.nanyo.yamagata.jp/zyougesuido/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-213-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/06-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3907,7 +3907,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.town.kahoku.yamagata.jp/soshiki/shoko/kankousinkou/3343/742.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-321-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/06-321-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3929,7 +3929,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.town.funagata.yamagata.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/06-363-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/06-363-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3951,7 +3951,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.pref.fukushima.lg.jp/sec/41055c/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3973,7 +3973,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.pref.fukushima.lg.jp/sec/41055c/mhcard.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-000-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-000-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -3995,7 +3995,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://f-aoz.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4017,7 +4017,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.f-kankou.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-201-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4039,7 +4039,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4061,7 +4061,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.bandaiatami.or.jp/spot/kanko-bussankan",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4083,7 +4083,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.koriyama.lg.jp/soshiki/185/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-203-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4105,7 +4105,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.lalamew.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4127,7 +4127,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.gurutto-iwaki.com/detail/2322/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-204-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-204-A01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -4150,7 +4150,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://iwakicity-park.or.jp/misaki/marine_tower/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-204-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-204-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4172,7 +4172,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.sekitankasekikan.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-204-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-204-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4194,7 +4194,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://kankou-iwaki.or.jp/spot/51270",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-204-E-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-204-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4216,7 +4216,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://shirakawa315.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4238,7 +4238,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://s-tette.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4260,7 +4260,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://s-furyu.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-207-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-207-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4282,7 +4282,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://s-tokusatsu.jp/visitor/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-207-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-207-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4304,7 +4304,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4326,7 +4326,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.yorozukaido.jp/soma/so_dou_senkyakubanraikan.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4348,7 +4348,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4370,7 +4370,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://abukumado.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-211-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4392,7 +4392,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.minamisoma.lg.jp/portal/life/suido_gesuido/1/5485.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-212-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4414,7 +4414,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.date-shi.jp/information/4756",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-213-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4436,7 +4436,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.motomiya.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-214-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4458,7 +4458,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "http://www.city.motomiya.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-214-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-214-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4480,7 +4480,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "http://www.city.motomiya.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-214-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-214-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -4503,7 +4503,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "http://www.city.motomiya.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-214-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-214-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4525,7 +4525,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.town.koori.fukushima.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-301-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-301-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4547,7 +4547,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.town.kunimi.fukushima.jp/site/atsukashinosato/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-303-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-303-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4569,7 +4569,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.town.inawashiro.fukushima.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-408-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-408-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4591,7 +4591,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.town.aizubange.fukushima.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-421-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-421-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4613,7 +4613,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.vill.yugawa.fukushima.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-422-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-422-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4635,7 +4635,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "http://heso-aizu.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-422-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-422-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4657,7 +4657,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.marugoto-nishigo.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-461-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-461-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4679,7 +4679,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "http://www.town.tanagura.fukushima.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-481-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-481-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4701,7 +4701,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-504-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-504-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4723,7 +4723,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-521-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-521-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4745,7 +4745,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "http://naraha-tenjin.net/enjoy/rental",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-542-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-542-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -4767,7 +4767,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.facebook.com/TheHistoricalArchiveMuseumOfTomioka/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-543-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-543-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -4789,7 +4789,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.kawauchimura.jp/kanko/shisetsu/page000185.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/07-544-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/07-544-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -4811,7 +4811,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.aquaworld-oarai.com",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4833,7 +4833,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.mitokoumon.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4855,7 +4855,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.arttowermito.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-201-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4877,7 +4877,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.city.hitachi.lg.jp/kigyo/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4899,7 +4899,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.kankou-hitachi.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4921,7 +4921,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.tsuchiura-kankou.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4943,7 +4943,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.tsuchiura.lg.jp/sp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-203-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4965,7 +4965,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.tsuchiura.lg.jp/page/dir000378.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-203-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-203-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -4987,7 +4987,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city.tsuchiura.lg.jp/page/dir010472.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-203-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-203-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5009,7 +5009,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.tsuchiura.lg.jp/page/dir000578.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-203-E-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-203-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5031,7 +5031,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-203-F-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-203-F-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5053,7 +5053,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.tsuchiura-kankou.jp/inquiry/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-203-G-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-203-G-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5075,7 +5075,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.tsuchiura.lg.jp/kurashi-tetsuzuki/kokyoshisetsu/bunka-shogaigakushunoshisetsu/chikukominkan/page000116.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-203-H-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-203-H-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5097,7 +5097,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.city.tsuchiura.lg.jp/kasumigaurataiikukaikan/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-203-I-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-203-I-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5119,7 +5119,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.city.tsuchiura.lg.jp/kanko-bunka-sports/jitenshanomachi/cyclist-support-spot/page011935.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-203-J-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-203-J-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5141,7 +5141,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.kogakanko.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5163,7 +5163,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.ishioka-kankou.com/page/page000008.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5185,7 +5185,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.ibaraki-shokusai.net/shop/shops3?id=7383",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-205-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5207,7 +5207,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.city.yuki.lg.jp/page/page000264.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5229,7 +5229,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5251,7 +5251,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.ryugasaki.ibaraki.jp/kanko/kankokyokai/more-ryugasaki/2013081500794.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-208-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5273,7 +5273,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.city.shimotsuma.lg.jp/shogaigakushu-bunka-sports/library/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5295,7 +5295,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.joso.lg.jp/kurashi_gyousei/kurashi/shisetsu_koukyou/facility/tiikikoryu/page001373.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-211-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5317,7 +5317,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.kanko-hitachiota.com/page/page000428.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-212-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5339,7 +5339,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.city.takahagi.ibaraki.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-214-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5361,7 +5361,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-215-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5383,7 +5383,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.city.toride.ibaraki.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-217-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-217-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5405,7 +5405,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-219-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5427,7 +5427,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://ushiku-chateau.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-219-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-219-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5449,7 +5449,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-220-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-220-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5471,7 +5471,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://ttca.jp/%e8%a6%b3%e5%85%89%e6%a1%88%e5%86%85%e6%89%80/%e3%81%a4%e3%81%8f%e3%81%b0%e7%b7%8f%e5%90%88%e3%82%a4%e3%83%b3%e3%83%95%e3%82%a9%e3%83%a1%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%bb%e3%83%b3%e3%82%bf%e3%83%bcbivi%e3%81%a4%e3%81%8f%e3%81%b0/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-220-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-220-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5493,7 +5493,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.so-net.ne.jp/antlers/fanzone/shop.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-222-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-222-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5515,7 +5515,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.city.moriya.ibaraki.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-224-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-224-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5537,7 +5537,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.michieki-hitachiomiya.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-225-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-225-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5559,7 +5559,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.city.naka.lg.jp/page/page000512.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-226-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-226-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5581,7 +5581,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.city.chikusei.lg.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-227-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-227-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5603,7 +5603,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://granterrace-chikusei.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-227-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-227-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5625,7 +5625,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.kasumigaura.lg.jp/page/page002376.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-230-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-230-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5647,7 +5647,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.city.sakuragawa.lg.jp/page/dir000068.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-231-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-231-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5669,7 +5669,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.sakuragawa.lg.jp/shisei/soshiki/tyousha_annai/page000147.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-231-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-231-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5691,7 +5691,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://shirahonoyu.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-233-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-233-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5713,7 +5713,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.city.hokota.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-234-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-234-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5735,7 +5735,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.oarai-info.jp/page/page000533.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-309-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-309-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5757,7 +5757,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/08-542-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/08-542-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5779,7 +5779,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.pref.tochigi.lg.jp/h60/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5801,7 +5801,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://kaminokawa-kankou.org/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5823,7 +5823,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.city.utsunomiya.tochigi.jp/josuido/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5845,7 +5845,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.utsunomiya-cvb.org/9168.html ",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-201-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5867,7 +5867,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://u-movenext.net/open-square/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-201-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-201-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5889,7 +5889,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.utsunomiya.lg.jp/shisei/kikou/soshiki/1035660.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-201-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-201-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5911,7 +5911,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.utsunomiya.lg.jp/citypromotion/kanko/meisho/jyiousi/1007289.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-201-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-201-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5933,7 +5933,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.ashikaga-kankou.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5955,7 +5955,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.city.ashikaga.tochigi.jp/industory/000061/000327/p002753.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-202-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5977,7 +5977,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.tochigi-kankou.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -5999,7 +5999,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://sano-kankokk.jp/?page_id=75",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6021,7 +6021,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.cricket.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-204-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-204-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6043,7 +6043,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://kanumajuku.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6065,7 +6065,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.nikko-kankou.org",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6087,7 +6087,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.nikko-nsm.co.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-206-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-206-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6109,7 +6109,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.city.oyama.tochigi.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6131,7 +6131,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.city.oyama.tochigi.jp/shisei/shisetsu/etc/page006531.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-208-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6153,7 +6153,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.kubokinen.net/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6175,7 +6175,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6197,7 +6197,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.ohtawara.info/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-210-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-210-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6219,7 +6219,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "http://www.michinoeki-yaita.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-211-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6241,7 +6241,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.city.tochigi-sakura.lg.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-214-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6263,7 +6263,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.nasukarasuyama.com",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-215-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6285,7 +6285,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.nasukarasuyama.com",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-215-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-215-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -6308,7 +6308,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.nasukarasuyama.com",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-215-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-215-C-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -6331,7 +6331,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.grimm-no.net/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-216-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6353,7 +6353,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.town.kaminokawa.lg.jp/0357/info-0000003314-0.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-301-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-301-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6375,7 +6375,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.town.mibu.tochigi.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-361-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-361-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6397,7 +6397,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://omohaku.michinoeki-mibu.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-361-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-361-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6419,7 +6419,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.town.tochigi-nakagawa.lg.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/09-411-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/09-411-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6441,7 +6441,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.pref.gunma.jp/07/p23210002.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6463,7 +6463,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://maebashi-akagi.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6485,7 +6485,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.kiryu.lg.jp/shisetsu/kankou/1016644.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6507,7 +6507,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.kiryu.lg.jp/kurashi/suido/gesui/1013174.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-203-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-203-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -6529,7 +6529,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.isesaki.lg.jp/soshiki/keizai/shoko/machinakakaseika/1588.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6551,7 +6551,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.isesaki.lg.jp/soshiki/suidokyo/suido/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6573,7 +6573,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.numata-kankou.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6595,7 +6595,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.oigami.net/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-206-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-206-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6617,7 +6617,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://www.city.tatebayashi.gunma.jp/s061/map/010/20201027183513.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6639,7 +6639,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.city.shibukawa.lg.jp/kosodate/shougaigakushuu/cyuokominkan/p000926.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6661,7 +6661,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.city.shibukawa.lg.jp/shisetsu/000349/p003096.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-208-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6683,7 +6683,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.city.shibukawa.lg.jp/kankou/gift/omiyage/p003604.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-208-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-208-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6705,7 +6705,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.laranfujioka.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6727,7 +6727,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://www.tomioka-silk.jp/_spot/sightseeing/detail/id=7679",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6749,7 +6749,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-212-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6771,7 +6771,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-345-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-345-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6793,7 +6793,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.town.kusatsu.gunma.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-426-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-426-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6815,7 +6815,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-464-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-464-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6837,7 +6837,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.town.meiwa.gunma.jp/life/soshiki/toshikensetsu/1_1/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-522-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-522-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6859,7 +6859,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.town.oizumi.gunma.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-524-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-524-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6881,7 +6881,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.town.ora.gunma.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-525-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-525-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6903,7 +6903,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.town.ora.gunma.jp/orabiyori/050/010/symbol-tower.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/10-525-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/10-525-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -6926,7 +6926,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2023/01/28",
         "url": "http://www.saitama-swg.or.jp/nanbu_hp_20120423/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-010-A101.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-010-A101.jpg",
         "type": "mhcard"
       }
     },
@@ -6948,7 +6948,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.saitama-swg.or.jp/nanbu_hp_20120423/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-000-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -6971,7 +6971,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.saitama-swg.or.jp/hokubu%20hp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-000-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-000-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -6993,7 +6993,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.saitama-swg.or.jp/ugan%20hp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-000-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-000-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7015,7 +7015,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.saitama-swg.or.jp/nakagawa%20hp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-000-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-000-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7037,7 +7037,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.saitama-swg.or.jp/furutone_hp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-000-E-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-000-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7059,7 +7059,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-000-F-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-000-F-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7081,7 +7081,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-000-G-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-000-G-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -7104,7 +7104,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-000-H-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-000-H-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7126,7 +7126,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2023/01/28",
         "url": "https://www.aeon.jp/sc/kitatoda/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-000-I001.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-000-I001.jpg",
         "type": "mhcard"
       }
     },
@@ -7148,7 +7148,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-100-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7170,7 +7170,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://visitsaitamacity.jp/spots/185",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-100-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7192,7 +7192,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7214,7 +7214,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-201-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-201-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -7236,7 +7236,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://www.city.kumagaya.lg.jp/about/soshiki/jogesuido/gesuidou/oshirase/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7258,7 +7258,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-202-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7280,7 +7280,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://kawakan2.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7302,7 +7302,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://www.city.gyoda.lg.jp/soshiki/shougaigakusyubu/kyodohakubutsukan/riyou/manholecard.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7324,7 +7324,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://www.gyoda-kankoukyoukai.jp/shopping/998",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7346,7 +7346,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.city.tokorozawa.saitama.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7368,7 +7368,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.city.tokorozawa.saitama.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-208-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -7391,7 +7391,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-208-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7413,7 +7413,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "http://www.machizou.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-208-C01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-208-C01.jpg",
         "type": "mhcard"
       }
     },
@@ -7435,7 +7435,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://yot-toko.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-208-D01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-208-D01.jpg",
         "type": "mhcard"
       }
     },
@@ -7457,7 +7457,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://hanno-tourism.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7479,7 +7479,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7501,7 +7501,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "http://www.city.kazo.lg.jp/soshiki/gesui/oshirase/37040.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-210-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-210-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7523,7 +7523,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "http://www.city.kazo.lg.jp/soshiki/gesui/oshirase/37040.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-210-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-210-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -7546,7 +7546,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-211-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7568,7 +7568,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.hwmm.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-211-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-211-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7590,7 +7590,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.sayama.saitama.jp/shisei/shisetsu/bunkashisetsu/siminkouryuusenta/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-215-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7612,7 +7612,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://kiyasse.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-216-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7634,7 +7634,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.konosu-kanko.jp/hinanosato/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-217-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-217-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7656,7 +7656,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.city.kounosu.saitama.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-217-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-217-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7678,7 +7678,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "http://www.city.kounosu.saitama.jp/site/konotori/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-217-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-217-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7700,7 +7700,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "http://www.city.kounosu.saitama.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-217-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-217-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -7723,7 +7723,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-218-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-218-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7745,7 +7745,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-218-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-218-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7767,7 +7767,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.fukaya.saitama.jp/soshiki/kankyosuido/gesuido/tanto/00218/18676.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-218-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-218-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7789,7 +7789,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.fukaya.saitama.jp/soshiki/kankyosuido/gesuido/tanto/00218/18676.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-218-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-218-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7811,7 +7811,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.ageo.lg.jp/site/suido/list218-1040.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-219-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7833,7 +7833,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.ageo-kankou.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-219-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-219-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7855,7 +7855,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.city.soka.saitama.jp/cont/s1410/map/PAGE000000000000055984.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-221-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-221-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7877,7 +7877,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://soka-bunka.jp/smarts/index/60/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-221-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-221-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7899,7 +7899,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-222-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-222-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7921,7 +7921,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.koshigaya-sightseeing.jp/ga-yachan_kurayashiki/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-222-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-222-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -7944,7 +7944,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.koshigaya-sightseeing.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-222-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-222-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -7966,7 +7966,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.koshigaya-sightseeing.jp/information/uncategorized/%e3%82%ac%e3%83%bc%e3%83%a4%e3%81%a1%e3%82%83%e3%82%93%e3%81%ae%e8%94%b5%e5%b1%8b%e6%95%b7/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-222-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-222-D-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -7989,7 +7989,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-224-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-224-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8011,7 +8011,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.toda.saitama.jp/soshiki/214/keizai-tbic-top.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-224-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-224-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8033,7 +8033,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.city.iruma.saitama.jp/soshiki/jogesuidokeeka/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-225-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-225-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8055,7 +8055,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.alit.city.iruma.saitama.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-225-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-225-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8077,7 +8077,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-228-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-228-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8099,7 +8099,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.okekan.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-231-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-231-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8121,7 +8121,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "http://www.okekan.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-231-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-231-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -8144,7 +8144,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.city.kuki.lg.jp/shisei/shisetsu/shiyakusho/1006530.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-232-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-232-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8166,7 +8166,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.kuki.lg.jp/shisei/shisetsu/shiyakusho/1006529.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-232-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-232-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -8188,7 +8188,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.city.kitamoto.lg.jp/soshiki/toshiseibi/kensetsu/gyomu/g2/mhc/14043.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-233-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-233-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8210,7 +8210,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.city.fujimi.saitama.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-235-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-235-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8232,7 +8232,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.city.fujimi.saitama.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-235-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-235-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -8255,7 +8255,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://mitsui-shopping-park.com/lalaport/shinmisato/shopguide/701505.html?msockid=19c2c2c4db1e65243f39d6abdaf46457",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-237-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-237-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8277,7 +8277,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city.hasuda.saitama.jp/kurashi/gyouseicenter/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-238-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-238-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8299,7 +8299,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city.hasuda.saitama.jp/kominkan/kyoiku/shogai/kominkan/cyuuoukouminnkann.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-238-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-238-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8321,7 +8321,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.stgesui.or.jp/kumiai/jouhou/shisetsu/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-239-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-239-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8343,7 +8343,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-242-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-242-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8365,7 +8365,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-242-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-242-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8387,7 +8387,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-243-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-243-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8409,7 +8409,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.city.fujimino.saitama.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-245-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-245-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8431,7 +8431,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://f-bunka.jp/stella-west/accessmap/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-245-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-245-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8453,7 +8453,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.f-bunka.jp/stella-east/accessmap/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-245-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-245-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8475,7 +8475,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.city.fujimino.saitama.jp/soshikiichiran/jogesuidoka/gesuidoshisetsukakari/2309.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-245-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-245-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -8498,7 +8498,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.shiraoka-ajisai.center/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-246-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-246-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8520,7 +8520,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://inamachi.info/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-301-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-301-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8542,7 +8542,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.town.saitama-ina.lg.jp/0000000624.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-301-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-301-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8564,7 +8564,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.town.namegawa.saitama.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-341-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-341-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8586,7 +8586,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "http://www.kankou-ogawa.com/untitled182.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-343-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-343-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8608,7 +8608,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://samachika.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-346-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-346-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8630,7 +8630,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.town.kawajima.saitama.jp/1825.htm",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-346-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-346-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -8653,7 +8653,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://www.town.yoshimi.saitama.jp/soshiki/shogaigakushuk/7/909.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-347-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-347-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8675,7 +8675,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-408-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-408-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8697,7 +8697,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.atarasiimura.com",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-442-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-442-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8719,7 +8719,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.town.miyashiro.lg.jp/0000013667.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-442-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-442-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8741,7 +8741,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.muji.com/jp/ja/shop/detail/046636",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/11-442-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/11-442-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8763,7 +8763,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "http://www2.chiba-muse.or.jp/www/SCIENCE/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8785,7 +8785,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.chibacity-ta.or.jp/spots/ctic",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-100-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8807,7 +8807,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-100-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8829,7 +8829,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.choshikanko.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8851,7 +8851,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.city.ichikawa.lg.jp/cul02/1111000017.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8873,7 +8873,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.city.ichikawa.lg.jp/zoo/shokubutuen.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-203-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8895,7 +8895,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.ichikawa.lg.jp/library/guide/1002.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-203-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-203-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8917,7 +8917,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.ichikawa.lg.jp/library/guide/1014.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-203-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-203-D-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -8940,7 +8940,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://www.city.funabashi.lg.jp/soshiki/110000/110400/110409/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8962,7 +8962,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -8984,7 +8984,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.tateyama.chiba.jp/minato/page100034.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-205-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-205-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -9006,7 +9006,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.kisarazu.gr.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9028,7 +9028,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.city.kisarazu.lg.jp/soshiki/toshiseibi/shitasuidosuishinshitsu/1/3320.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-206-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -9051,7 +9051,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.matsudo-kankou.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9073,7 +9073,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.city.matsudo.chiba.jp/shisetsu-guide/kaikan_hole/bunka-hole/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-207-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-207-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -9095,7 +9095,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.city.noda.chiba.jp/kurashi/kankyo/gesui/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9117,7 +9117,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "http://www2.chiba-muse.or.jp/SEKIYADO/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-208-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9139,7 +9139,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.noda.chiba.jp/shisetsu/shiyakusho/1001045.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-208-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-208-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9161,7 +9161,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "http://www.city.sakura.lg.jp/sakura/museum/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-212-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-212-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -9183,7 +9183,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city.sakura.lg.jp/soshiki/koenryokuchika/3/5/15384.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-212-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-212-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9205,7 +9205,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://minorinosato-togane.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-213-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9227,7 +9227,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://www.city.narashino.lg.jp/kigyoukyoku/about/gesuido/manholecard/narashino_city_manholecard.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-216-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9249,7 +9249,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.narashino.lg.jp/soshiki/kankyoseisaku/gyomu/shisetu/koenshiseki/yatuhigatakoen.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-216-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-216-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9271,7 +9271,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.kashiwa.lg.jp/somu/living_environment/gesui/1561/manholecard.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-217-A-01.png",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-217-A-01.png",
         "type": "mhcard"
       }
     },
@@ -9293,7 +9293,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.kashiwa.lg.jp/shoko/shiseijoho/about_kashiwa/tourism/annaijo/annaijo.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-217-A-01.png",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-217-A-01.png",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -9316,7 +9316,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.city.kashiwa.lg.jp/shoko/shiseijoho/about_kashiwa/tourism/annaijo/annaijo.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-217-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-217-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9338,7 +9338,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.kazusa-sarashina.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-219-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9360,7 +9360,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-220-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-220-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9382,7 +9382,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.yss24.co.jp/company/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-221-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-221-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9404,7 +9404,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.yachiyo.lg.jp/soshiki/93/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-221-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-221-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9426,7 +9426,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.city.abiko.chiba.jp/event/shiseki_bunkazai/inoueke/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-222-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-222-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9448,7 +9448,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.abikoinfo.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-222-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-222-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9470,7 +9470,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://www.city.kamagaya.chiba.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-224-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-224-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9492,7 +9492,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.city.urayasu.lg.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-227-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-227-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9514,7 +9514,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.urayasu.lg.jp/kanko/kyodo/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-227-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-227-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9536,7 +9536,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.city.sodegaura.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-229-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-229-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9558,7 +9558,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.yachimata.lg.jp/soshiki/26/54793.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-230-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-230-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9580,7 +9580,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.shiroi.chiba.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-232-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-232-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9602,7 +9602,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.oamishirasato.lg.jp/0000005447.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-239-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-239-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9624,7 +9624,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.town.shibayama.lg.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-409-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-409-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9646,7 +9646,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.vill.chosei.chiba.jp/soshiki/6-0-0-0-0_1.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-423-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-423-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9668,7 +9668,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "http://www.chosei-bunkahall.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-423-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-423-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9690,7 +9690,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.vill.chosei.chiba.jp/soshiki/16-7-0-0-0_1.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-423-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-423-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -9713,7 +9713,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://chosei-koryu.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-423-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-423-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9735,7 +9735,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.vill.chosei.chiba.jp/soshiki/16-7-0-0-0_1.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-423-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-423-C-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -9758,7 +9758,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://chosei-koryu.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/12-423-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/12-423-C-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -9781,7 +9781,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.gotokyo.org/jp/plan/tourist-info-center/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-000-A01-3.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-000-A01-3.jpg",
         "type": "mhcard"
       }
     },
@@ -9803,7 +9803,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9825,7 +9825,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.nijinogesuidoukan.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9847,7 +9847,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9869,7 +9869,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9891,7 +9891,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://shinagawa-kanko.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-E-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9913,7 +9913,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://infoandcafesquare.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-M-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-M-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9935,7 +9935,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-N-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-N-01.jpg",
         "type": "mhcard"
       }
     },
@@ -9957,7 +9957,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-C101.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-C101.jpg",
         "type": "mhcard"
       }
     },
@@ -9979,7 +9979,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.gesui.metro.tokyo.lg.jp/business/b4/guide/s-mikawa/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-D01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-D01.jpg",
         "type": "mhcard"
       }
     },
@@ -10001,7 +10001,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://museum.toei-anim.co.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-E1-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-E1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10023,7 +10023,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://shibusawakitaku.tokyo/omiyage/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-F1-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-F1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10045,7 +10045,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://visit-minato-city.tokyo/ja-jp/places/2774",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-G1-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-G1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10067,7 +10067,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/1006728.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-I1-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-I1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10089,7 +10089,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city.itabashi.tokyo.jp/kusei/soshiki/sangyokeizai/1006922.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-I1-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-I1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10111,7 +10111,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://akabane-sports.com/facilities/forest-park",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-H1-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-H1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10133,7 +10133,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.ara-amoa.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-J1-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-J1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10155,7 +10155,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2025/01/16",
         "url": "https://www.city.suginami.tokyo.jp/shisetsu/kouen/02/ogikubo/1054100.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-K1-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-K1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10177,7 +10177,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://visit-sumida.jp/connect/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-L1-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-L1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10199,7 +10199,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.tokyo-park.or.jp/park/ukima/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-M1-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-M1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10221,7 +10221,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.ur-net.go.jp/east/action/akabanedai/index.html?channel=main&msockid=2d65f8d82fc266cd3f5ded012eec6723",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-N1-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-N1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10243,7 +10243,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://visit-chiyoda.tokyo/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-O1-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-O1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10265,7 +10265,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://kitabunka.or.jp/tabata/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-Z-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-Z-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10287,7 +10287,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.nerimakanko.jp/news/detail.php?notice_id=N000000021",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-A1-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-A1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10309,7 +10309,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "http://techno-plaza.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-B1-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-B1-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10331,7 +10331,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-F-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-F-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10353,7 +10353,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "https://www.kanko-shinjuku.jp/office/-/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-O01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-O01.jpg",
         "type": "mhcard"
       }
     },
@@ -10375,7 +10375,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100tairoku-Q001-omote.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100tairoku-Q001-omote.jpg",
         "type": "mhcard"
       }
     },
@@ -10397,7 +10397,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "https://visit-sumida.jp/spot/6196",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-R01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-R01.jpg",
         "type": "mhcard"
       }
     },
@@ -10419,7 +10419,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "https://isleshinagawa.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-S01-2.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-S01-2.jpg",
         "type": "mhcard"
       }
     },
@@ -10441,7 +10441,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-T01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-T01.jpg",
         "type": "mhcard"
       }
     },
@@ -10463,7 +10463,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "https://www.kanko-setagaya.jp/?p=we-page-entry&spot=265539&nav=none",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-G-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-G-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10485,7 +10485,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-H-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-H-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10507,7 +10507,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "https://www.city.suginami.tokyo.jp/shisetsu/sangyo/shoko/1007450.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-I-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-I-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10529,7 +10529,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "https://sam.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-U01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-U01.jpg",
         "type": "mhcard"
       }
     },
@@ -10551,7 +10551,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "https://www.toshima-mirai.or.jp/center/a_kumin/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-J-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-J-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10573,7 +10573,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "https://www.kita-bunka.com/si/si02-akabane/si02-1.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-K-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-K-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10595,7 +10595,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "https://www.nerimakanko.jp/news/detail.php?notice_id=N000000021",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-V01-2.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-V01-2.jpg",
         "type": "mhcard"
       }
     },
@@ -10617,7 +10617,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-L-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-L-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10639,7 +10639,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "https://tokyotouristinfo.com/detail/M0319",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-W01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-W01.jpg",
         "type": "mhcard"
       }
     },
@@ -10661,7 +10661,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "http://www.youroad.com/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-X01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-X01.jpg",
         "type": "mhcard"
       }
     },
@@ -10683,7 +10683,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "https://www.city.edogawa.tokyo.jp/e066/kuseijoho/gaiyo/shisetsuguide/bunya/koendobutsuen/c_recreation/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-100-Y01-2.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-100-Y01-2.jpg",
         "type": "mhcard"
       }
     },
@@ -10705,7 +10705,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.toshizukuri.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-010-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-010-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10727,7 +10727,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://map.coopdeli.coop/mirai/shop.php?shop_id=30250212",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-010-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-010-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10749,7 +10749,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10771,7 +10771,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.city.tachikawa.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10793,7 +10793,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.city.tachikawa.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-202-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10815,7 +10815,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.city.tachikawa.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-202-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-202-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -10838,7 +10838,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.tachikawa.lg.jp/kurashi/suido/gesuido/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-202-C01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-202-C01.jpg",
         "type": "mhcard"
       }
     },
@@ -10860,7 +10860,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://musashino-kanko.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10882,7 +10882,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.musashino.or.jp/place/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-203-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10904,7 +10904,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2026/03/29",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-203-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-203-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10926,7 +10926,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "http://kanko.mitaka.ne.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-204-A01",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-204-A01",
         "type": "mhcard"
       }
     },
@@ -10948,7 +10948,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://kanko.mitaka.ne.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-204-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-204-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -10971,7 +10971,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.omekanko.gr.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -10993,7 +10993,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.ja-nishitokyo.or.jp/archives/store_post/shop_greencenter",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-205-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11015,7 +11015,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://www.city.fuchu.tokyo.jp/shisetu/komyunite/senta/katamachi.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11037,7 +11037,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "http://www.kankou-fuchu.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-206-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-206-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -11059,7 +11059,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.akishima-kanko.org/information/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11081,7 +11081,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.akishimaensis.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-207-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-207-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11103,7 +11103,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.city.chofu.tokyo.jp/www/contents/1176118954796/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11125,7 +11125,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.city.chofu.lg.jp/040070/p026079.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-208-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11147,7 +11147,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.city.machida.tokyo.jp/shisei/shiyakusyo/mainoffice/officeguide.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11169,7 +11169,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://machida-guide.or.jp/?p=we-page-top-2",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-209-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-209-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11191,7 +11191,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.city.koganei.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11213,7 +11213,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "https://www.city.koganei.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-210-B-02.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-210-B-02.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -11236,7 +11236,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://kodaira-furusatomura.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-211-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11258,7 +11258,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "https://www.city.kodaira.tokyo.jp/kurashi/070/070022.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-211-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-211-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11280,7 +11280,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.city.hino.lg.jp/shinsenr/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-212-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11302,7 +11302,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.hino.lg.jp/shisetsu/shiyakusho/shiyakusho/shisho/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-212-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-212-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11324,7 +11324,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.hino.lg.jp/shisetsu/toshokan/toshokan/1005864.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-212-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-212-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11346,7 +11346,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-214-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11368,7 +11368,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "http://ota-cafe.com",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-214-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-214-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11390,7 +11390,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.kokubunji.tokyo.jp/shisetsu/shikanren/kouminkan/1003831.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-214-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-214-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11412,7 +11412,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.kokubunji.tokyo.jp/shisetsu/shikanren/shiyakusyo/1003818.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-214-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-214-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11434,7 +11434,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.kokubunji-izumihall.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-214-E-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-214-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11456,7 +11456,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-215-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11478,7 +11478,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://kuzaidan.or.jp/province/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-215-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-215-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11500,7 +11500,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.kurumiru-fussa-omotenashi.com",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-218-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-218-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11522,7 +11522,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.city.fussa.tokyo.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-218-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-218-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11544,7 +11544,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.city.komae.tokyo.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-219-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11566,7 +11566,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "https://ecorma-hall.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-219-B02.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-219-B02.jpg",
         "type": "mhcard"
       }
     },
@@ -11588,7 +11588,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "http://www.city.komae.tokyo.jp/index.cfm/41,0,313,2003,html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-219-B02.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-219-B02.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -11611,7 +11611,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "https://www.city.higashiyamato.lg.jp/index.cfm/35,0,366,html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-220-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-220-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -11633,7 +11633,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "https://www.city.kiyose.lg.jp/siseijouhou/sosikisigoto/kakukagoannai/1005112.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-221-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-221-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -11655,7 +11655,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "https://www.city.kiyose.lg.jp/shisetsu/syogaigakusyu/1001192.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-221-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-221-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -11677,7 +11677,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "https://www.s-seiun.co.jp/shisetsu/higashikurume/shisetsu/plaza.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-222-A-02.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-222-A-02.jpg",
         "type": "mhcard"
       }
     },
@@ -11699,7 +11699,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "https://www.city.higashikurume.lg.jp/shisetsu/sports/1002049.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-222-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-222-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -11721,7 +11721,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "http://takiyama.in.coocan.jp/takichu-top.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-222-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-222-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11743,7 +11743,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.higashikurume-lll.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-222-D01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-222-D01.jpg",
         "type": "mhcard"
       }
     },
@@ -11765,7 +11765,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.tama.lg.jp/0000005579.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-224-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-224-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11787,7 +11787,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.tama.lg.jp/kenkofukushi/katsudo/kouminkan/annai/1003181.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-224-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-224-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11809,7 +11809,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.tama.lg.jp/kenkofukushi/katsudo/kouminkan/annai/1003181.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-224-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-224-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -11832,7 +11832,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.city.tama.lg.jp/kenkofukushi/katsudo/kouminkan/annai/1003182.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-224-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-224-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11854,7 +11854,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://tama-glc.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-224-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-224-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11876,7 +11876,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/03/09",
         "url": "https://inagi-kanko.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-225-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-225-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -11898,7 +11898,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-227-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-227-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11920,7 +11920,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.t-net.ne.jp/~hamura-z/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-227-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-227-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -11942,7 +11942,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/11/05",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-228-A01-2.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-228-A01-2.jpg",
         "type": "mhcard"
       }
     },
@@ -11964,7 +11964,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "http://www.seotonoyu.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-228-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-228-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -11986,7 +11986,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-228-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-228-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12008,7 +12008,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://machitenna.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-229-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-229-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12030,7 +12030,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.mizuhokyodo.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-303-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-303-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12052,7 +12052,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.town.hinode.tokyo.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-305-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-305-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12074,7 +12074,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.hinodekanko.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-305-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-305-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12096,7 +12096,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.tsurutsuru-onsen.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-305-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-305-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12118,7 +12118,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-307-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-307-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12140,7 +12140,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.ogasawaramura.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/13-421-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/13-421-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12162,7 +12162,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.welcome.city.yokohama.jp/tic/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-100-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12184,7 +12184,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.city.yokohama.lg.jp/asahi/shokai/gaiyo/mascot/asahikunmanhorukado.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-100-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12206,7 +12206,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.city.yokohama.lg.jp/asahi/kurashi/kyodo_manabi/kyodo_shien/minakuru/annai/kihonjyohou.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-100-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12228,7 +12228,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.welcome.city.yokohama.jp/ja/tourism/tic/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-100-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-100-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12250,7 +12250,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-130-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-130-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12272,7 +12272,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.kawasaki.jp/800/page/0000105394.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-130-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-130-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -12294,7 +12294,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "http://kawasakishuku.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-130-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-130-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12316,7 +12316,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.city.sagamihara.kanagawa.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-150-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-150-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12338,7 +12338,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.e-sagamihara.com/information-center/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-150-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-150-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12360,7 +12360,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.city.sagamihara.kanagawa.jp/shisei/1026709/1000105/1025057/1009956.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-150-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-150-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12382,7 +12382,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.e-sagamihara.com/topics/topics-971/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-150-D01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-150-D01.jpg",
         "type": "mhcard"
       }
     },
@@ -12404,7 +12404,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "https://www.cocoyoko.net/access/information.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12426,7 +12426,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.city.yokosuka.kanagawa.jp/2752/sisetu/fc00000087.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-201-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12448,7 +12448,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://thibaudier-yokosuka.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-201-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-201-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12470,7 +12470,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://kinuten.com/?page_id=2263",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-201-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-201-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12492,7 +12492,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12514,7 +12514,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://fujisawa-ukiyoekan.net/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12536,7 +12536,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/12/10",
         "url": "https://fujisawashuku-kouryukan.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-205-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12558,7 +12558,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.odawara.kanagawa.jp/field/water/sewer/topics/p24794.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12580,7 +12580,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.odawara.kanagawa.jp/municipality/industry/urban/nariwai.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12602,7 +12602,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.city.odawara.kanagawa.jp/kanko/machimeguri/p29912.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-206-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-206-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12624,7 +12624,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.odawara.kanagawa.jp/municipality/industry/urban/nariwai.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-206-C01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-206-C01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -12647,7 +12647,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-206-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-206-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12669,7 +12669,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://odawaracastle.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-206-E-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-206-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12691,7 +12691,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.city.odawara.kanagawa.jp/field/lifelong/culture/historical_structure/p25874.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-206-F-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-206-F-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12713,7 +12713,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.chigasaki-kankou.org/information/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12735,7 +12735,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://m-shonanchigasaki.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-207-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-207-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12757,7 +12757,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.zushi.kanagawa.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-208-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-208-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -12779,7 +12779,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "http://www.city.miura.kanagawa.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12801,7 +12801,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.hadano.kanagawa.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-211-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12823,7 +12823,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://www.city.atsugi.kanagawa.jp/soshiki/gesuidoshisetsuka/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-212-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12845,7 +12845,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.atsugi.kanagawa.jp/kurashi_tetsuzuki/online/4/1/2/11043.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-212-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-212-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12867,7 +12867,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.atsugi.kanagawa.jp/atsugicitymuseum/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-212-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-212-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12889,7 +12889,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-213-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12911,7 +12911,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.city.isehara.kanagawa.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-214-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -12933,7 +12933,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.city.isehara.kanagawa.jp/docs/2014041100252/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-214-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-214-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -12956,7 +12956,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.ebina.kanagawa.jp/shisei/profile/tankyusha/onko/1000654.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-215-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-215-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -12978,7 +12978,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-216-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13000,7 +13000,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.ayase.kanagawa.jp/soshiki/midorikoenka/koen/7/5858.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-218-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-218-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13022,7 +13022,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.town.hayama.lg.jp/soshiki/gesui/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-301-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-301-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13044,7 +13044,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.town.hayama.lg.jp/soshiki/shougaigakushuu/2/2/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-301-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-301-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13066,7 +13066,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.hayama-kankou.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-301-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-301-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13088,7 +13088,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.town.hayama.lg.jp/soshiki/shougaigakushuu/2/1/1540.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-301-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-301-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13110,7 +13110,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.town.nakai.kanagawa.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-361-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-361-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13132,7 +13132,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.town.oi.kanagawa.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-362-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-362-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13154,7 +13154,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.yamakita.net/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-364-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-364-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13176,7 +13176,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.town.aikawa.kanagawa.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-401-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-401-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13198,7 +13198,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.town.kiyokawa.kanagawa.jp/soshiki/machizukuri/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/14-402-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/14-402-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13220,7 +13220,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.niigata-gesuikou.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13242,7 +13242,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-100-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13264,7 +13264,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-100-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13286,7 +13286,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://nkyod.org/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13308,7 +13308,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://nagaoka-hanabikan.niigata.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-202-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13330,7 +13330,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.city.nagaoka.niigata.jp/kurashi/cate13/s-center/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-202-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-202-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13352,7 +13352,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "http://agrinosato.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-202-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-202-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13374,7 +13374,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://r290tochio.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-202-E-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-202-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13396,7 +13396,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://miraie-nagaoka.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-202-F-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-202-F-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -13419,7 +13419,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://miraie-nagaoka.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-202-G-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-202-G-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -13442,7 +13442,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://kajidojo.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13464,7 +13464,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.sanjo.niigata.jp/soshiki/kensetsubu/jogesuidoka/gesuidonituite/sisetugesui/4610.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13486,7 +13486,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.sanjo.niigata.jp/kosodate_kyoiku/shogaigakushu_bunka/shogaigakushushisetsu/8/8204.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13508,7 +13508,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13530,7 +13530,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://aqua.ksz.or.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-205-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13552,7 +13552,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://shibata-info.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13574,7 +13574,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.city.shibata.lg.jp/shisetsu/kanko/kanko/1005079.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-206-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-206-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13596,7 +13596,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.city.shibata.lg.jp/kurashi/suido/gesuido/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-206-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-206-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -13619,7 +13619,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "http://www.tsukiokaonsen.gr.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-206-C01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-206-C01.jpg",
         "type": "mhcard"
       }
     },
@@ -13641,7 +13641,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.city.shibata.lg.jp/shisetsu/kanko/kanko/1022382.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-208-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-208-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13663,7 +13663,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://www.nishikigoinosato.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13685,7 +13685,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.ojiyasunplaza.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-208-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-208-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -13707,7 +13707,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.bijinnoyu.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13729,7 +13729,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.tokamachishikankou.jp/matudai/cgi-bin/kaikan/index.cgi",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13751,7 +13751,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://nakasato-mion.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-210-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-210-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13773,7 +13773,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://nakasato-kiyotsu.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-210-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-210-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13795,7 +13795,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.tokamachi-museum.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-210-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-210-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13817,7 +13817,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://r.goope.jp/miraiichiba ",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-211-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-211-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -13839,7 +13839,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.iwafune.ne.jp/~osyagiri/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-212-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13861,7 +13861,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.city.murakami.lg.jp/site/kanko/bussan-mitinoekisasagawa.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-212-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-212-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13883,7 +13883,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.city.murakami.lg.jp/soshiki/90/arakawakouminnkann.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-212-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-212-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13905,7 +13905,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.asahimidori.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-212-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-212-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13927,7 +13927,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.city.murakami.lg.jp/site/kanko/bussan-mitinoeki.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-212-E-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-212-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13949,7 +13949,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.tsubame.niigata.jp/soshiki/kyoiku/3/12/10278/683.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-213-A-02.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-213-A-02.jpg",
         "type": "mhcard"
       }
     },
@@ -13971,7 +13971,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://tsubame-shiryoukan.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-213-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-213-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -13993,7 +13993,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.tsubame.niigata.jp/soshiki/kyoiku/3/12/tyouzennkann/836.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-213-C01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-213-C01.jpg",
         "type": "mhcard"
       }
     },
@@ -14015,7 +14015,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.michinoeki-kugami.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-213-D01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-213-D01.jpg",
         "type": "mhcard"
       }
     },
@@ -14037,7 +14037,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.city.tsubame.niigata.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-213-E-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-213-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14059,7 +14059,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.kita-re.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-216-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14081,7 +14081,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://niigata-kankou.or.jp/spot/7381",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-223-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-223-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14103,7 +14103,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.sado.niigata.jp/soshiki/2021/53417.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-224-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-224-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14125,7 +14125,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city.sado.niigata.jp/soshiki/2021/60185.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-224-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-224-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14147,7 +14147,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.sado.niigata.jp/soshiki/2021/53417.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-224-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-224-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14169,7 +14169,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.sado.niigata.jp/soshiki/2021/53417.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-224-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-224-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14191,7 +14191,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.city.sado.niigata.jp/soshiki/2021/53417.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-224-E-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-224-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14213,7 +14213,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.sado.niigata.jp/soshiki/2021/53417.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-224-F-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-224-F-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14235,7 +14235,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-224-G-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-224-G-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14257,7 +14257,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.city.sado.niigata.jp/soshiki/2021/53417.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-224-H-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-224-H-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14279,7 +14279,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.city.sado.niigata.jp/soshiki/2021/53417.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-224-I-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-224-I-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -14302,7 +14302,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://tainai.info/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-227-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-227-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14324,7 +14324,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://royal-tainai.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-227-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-227-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14346,7 +14346,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.tainai.niigata.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-227-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-227-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -14369,7 +14369,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://tenryonosato.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-405-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-405-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -14391,7 +14391,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.town.izumozaki.niigata.jp/kurashi/suido/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/15-405-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/15-405-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -14413,7 +14413,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.toyama.lg.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/16-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14435,7 +14435,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.toyama.lg.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/16-201-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -14458,7 +14458,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.toyamashi-kankoukyoukai.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-201-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/16-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14480,7 +14480,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.geisou-toyama.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-201-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/16-201-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14502,7 +14502,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.siminplaza.co.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-201-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/16-201-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14524,7 +14524,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "http://canal.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-201-E-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/16-201-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14546,7 +14546,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.yatsuo.net",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-201-G01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/16-201-G01.jpg",
         "type": "mhcard"
       }
     },
@@ -14568,7 +14568,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-201-H-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/16-201-H-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14590,7 +14590,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.city.toyama.lg.jp/kurashi/suido/1018440/1018454/1011634.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-201-I-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/16-201-I-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14612,7 +14612,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.city.toyama.lg.jp/kurashi/suido/1018440/1018454/1011634.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-201-I-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/16-201-I-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -14635,7 +14635,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://michinoeki-amaharashi.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/16-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14657,7 +14657,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.shoukouji.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-202-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/16-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14679,7 +14679,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://himigyogyou.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/16-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14701,7 +14701,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://plaza.bunspo-namerikawa.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/16-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14723,7 +14723,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "http://www.tonami-kankou.org/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/16-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14745,7 +14745,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://michinoeki-oyabe.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/16-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14767,7 +14767,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "http://www.oyabe.info/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-209-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/16-209-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -14789,7 +14789,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://shinminato.co.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-211-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/16-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14811,7 +14811,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.union.nakaniikawa.toyama.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/16-321-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/16-321-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14833,7 +14833,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.kanazawa-kankoukyoukai.or.jp/spot/detail_50571.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/17-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14855,7 +14855,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/17-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14877,7 +14877,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-204-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/17-204-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -14900,7 +14900,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://www.city.kahoku.ishikawa.jp/www/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/17-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14922,7 +14922,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-384-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/17-384-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14944,7 +14944,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://orihime-nakanoto.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-407-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/17-407-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14966,7 +14966,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.town.anamizu.lg.jp/page/105862.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-461-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/17-461-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -14988,7 +14988,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.town.anamizu.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-461-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/17-461-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15010,7 +15010,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://ikanoeki.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-463-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/17-463-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -15032,7 +15032,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.town.noto.lg.jp/kakuka/1012/gyomu/kyouikufront/syokannshisetsu/syougaigakusyuushisetsu/4876.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-463-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/17-463-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15054,7 +15054,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.lovero-koiji.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/17-463-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/17-463-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15076,7 +15076,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://www.city.fukui.lg.jp/kurasi/gesui/gesuiproject/mcard.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/18-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/18-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15098,7 +15098,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www3.fctv.ne.jp/~asakura/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/18-201-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/18-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15120,7 +15120,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://tsuruga-kanko.jp/spot/history_culture/railway-museum/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/18-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/18-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15142,7 +15142,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://tsuruga-museum.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/18-202-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/18-202-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -15164,7 +15164,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.city.ono.fukui.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/18-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/18-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15186,7 +15186,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://kyoryunomori.net/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/18-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/18-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15208,7 +15208,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://katsuyama-navi.jp/michieki/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/18-206-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/18-206-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15230,7 +15230,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.echizenwashi.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/18-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/18-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15252,7 +15252,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.town.takahama.fukui.jp/page/jyousuidou/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/18-481-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/18-481-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15274,7 +15274,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.town.fukui-wakasa.lg.jp/soshiki/wakasamikatajomonhakubutsukan/gyomuannai/955.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/18-501-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/18-501-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15296,7 +15296,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://kofu.geocloud.jp/webgis/?z=18&ll=35.685429%2C138.577008&t=roadmap&mp=12&ly=0&im=055-269-5030&vlf=-1&pin=1",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/19-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15318,7 +15318,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://libnet.city.kofu.yamanashi.jp/lib/accessmap/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-201-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/19-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15340,7 +15340,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://kofu-kameyaza.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-201-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/19-201-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15362,7 +15362,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.tsuru.yamanashi.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/19-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15384,7 +15384,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://1000nentsuru.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/19-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15406,7 +15406,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.city.tsuru.yamanashi.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-204-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/19-204-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -15429,7 +15429,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://1000nentsuru.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-204-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/19-204-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -15452,7 +15452,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.otsuki.yamanashi.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/19-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15474,7 +15474,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://otsuki-kanko.info/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/19-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15496,7 +15496,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.city.minami-alps.yamanashi.jp/sisetsu/shisetsu/michinoeki-shirane/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/19-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15518,7 +15518,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://minami-alpskankou.jp/?p=20273",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-208-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/19-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15540,7 +15540,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.kai.yamanashi.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/19-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15562,7 +15562,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://kai.library2.city.kai.yamanashi.jp/lib_futaba.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-210-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/19-210-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15584,7 +15584,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://www.city.uenohara.yamanashi.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-212-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/19-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15606,7 +15606,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://www.city.uenohara.yamanashi.jp/site/kankou/1018691.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-212-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/19-212-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -15629,7 +15629,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.chuo.yamanashi.jp/benriservice/facilitymap/bunya/koukyousisetsu/684.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-214-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/19-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15651,7 +15651,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.town.fujikawaguchiko.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-430-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/19-430-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -15673,7 +15673,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.town.fujikawaguchiko.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-430-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/19-430-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15695,7 +15695,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.town.fujikawaguchiko.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/19-430-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/19-430-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15717,7 +15717,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.pref.nagano.lg.jp/suwakoryuiki/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15739,7 +15739,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.pref.nagano.lg.jp/suwakoryuiki/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-000-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -15762,7 +15762,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://www.pref.nagano.lg.jp/azuminoryuiki/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-000-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-000-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15784,7 +15784,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.pref.nagano.lg.jp/chikumagawaryuiki/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-000-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-000-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15806,7 +15806,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://azumino-e-tabi.net/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-000-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-000-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15828,7 +15828,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.pref.nagano.lg.jp/chikumagawaryuiki/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-000-E-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-000-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15850,7 +15850,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.go-nagano.net/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15872,7 +15872,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.matsumoto-tca.or.jp/association/tic",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15894,7 +15894,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.city.ueda.nagano.jp/site/kankojoho/14383.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15916,7 +15916,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.ueda.nagano.jp/soshiki/ssangyo/2828.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-203-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15938,7 +15938,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.city.ueda.nagano.jp/soshiki/tkyoiku/1974.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-203-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-203-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -15960,7 +15960,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.city.ueda.nagano.jp/soshiki/17.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-203-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-203-C-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -15983,7 +15983,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://ueda-kanko.or.jp/spot/kankoukaikan/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-203-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-203-D-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -16006,7 +16006,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://silkfact.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16028,7 +16028,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.city.iida.lg.jp/site/jougesuido/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16050,7 +16050,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.city.iida.lg.jp/site/jougesuido/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-205-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -16073,7 +16073,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.iida-museum.org/guidance/related-facility/tohyama/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-205-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16095,7 +16095,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.suwakanko.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16117,7 +16117,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.komoro.lg.jp/soshikikarasagasu/kensetsusuidoubu/gesuidoka/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16139,7 +16139,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.city.komoro.lg.jp/official/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-208-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-208-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -16162,7 +16162,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.komoro-tour.jp/tourist-information/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-208-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-208-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16184,7 +16184,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.ina-city-kankou.co.jp/miharashinoyu/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16206,7 +16206,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.inacity.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16228,7 +16228,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.ina-city-kankou.co.jp/sakurahotel/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-209-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-209-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16250,7 +16250,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.ina-city-kankou.co.jp/panya/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-209-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-209-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16272,7 +16272,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.komagane.nagano.jp/soshikiichiran/shiminka/shiminkakari/4/1/3156.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-210-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-210-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -16294,7 +16294,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-211-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16316,7 +16316,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.kanko-omachi.gr.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-212-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16338,7 +16338,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.ningyoukan.net/ ",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-213-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16360,7 +16360,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.chino.lg.jp/map/kankoannaijyo.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-214-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16382,7 +16382,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-217-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-217-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16404,7 +16404,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://hotpark-asashina.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-217-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-217-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16426,7 +16426,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://healthyterrace-saku.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-217-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-217-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16448,7 +16448,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.iwamurada.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-217-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-217-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16470,7 +16470,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://chikuma-kanko.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-218-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-218-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16492,7 +16492,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.chikuma-bunka.jp/shisetsu_goannai/koshokubunkakaikan/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-218-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-218-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16514,7 +16514,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.city.chikuma.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-218-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-218-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16536,7 +16536,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.chikuma-bunka.jp/shisetsu_goannai/kamiyamadabunkakaikan/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-218-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-218-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16558,7 +16558,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://raidenkurumi.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-219-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16580,7 +16580,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "http://www.city.azumino.nagano.jp/soshiki/39/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-220-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-220-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16602,7 +16602,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-321-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-321-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16624,7 +16624,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-361-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-361-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16646,7 +16646,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://konjakukan-oideya.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-361-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-361-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -16669,7 +16669,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://shimosuwaonsen.jp/tourism/441/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-361-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-361-C-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -16692,7 +16692,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://kankou-minamiminowa.nagano.jp/ajikoubou/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-385-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-385-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16714,7 +16714,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.town.nagano-takamori.lg.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-403-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-403-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -16736,7 +16736,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.town.nagano-takamori.lg.jp/docs/12584.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-403-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-403-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -16759,7 +16759,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.town.nagiso.nagano.jp/jyougesuidou/manho-ru.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-423-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-423-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16781,7 +16781,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.vill.okuwa.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-430-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-430-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16803,7 +16803,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.vill.asahi.nagano.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-451-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-451-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16825,7 +16825,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://hpdsp.jp/tokura1000yu/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-452-A.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-452-A.jpg",
         "type": "mhcard"
       }
     },
@@ -16847,7 +16847,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "http://www.vill.chikuhoku.lg.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-452-A.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-452-A.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -16870,7 +16870,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.town.obuse.nagano.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-541-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-541-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16892,7 +16892,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.town.obuse.nagano.jp/docs/244999.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/20-541-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/20-541-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -16915,7 +16915,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.basho-ogaki.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16937,7 +16937,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.city.takayama.lg.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16959,7 +16959,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.city.takayama.lg.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-203-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -16981,7 +16981,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001413.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-203-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-203-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17003,7 +17003,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001408.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-203-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-203-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17025,7 +17025,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001409.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-203-E-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-203-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17047,7 +17047,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001410.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-203-F01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-203-F01.jpg",
         "type": "mhcard"
       }
     },
@@ -17069,7 +17069,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "http://www.gix.or.jp/~z33asahi/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-203-G-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-203-G-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17091,7 +17091,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.city.takayama.lg.jp/shisetsu/1004141/1004416/1004417.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-203-G-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-203-G-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -17114,7 +17114,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001406.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-203-H-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-203-H-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17136,7 +17136,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001407.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-203-I-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-203-I-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17158,7 +17158,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.toutokan.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17180,7 +17180,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.seki.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17202,7 +17202,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://nakatsugawa.town/tokusankan/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17224,7 +17224,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.city.nakatsugawa.lg.jp/tcs/hitomachi/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-206-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-206-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17246,7 +17246,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.kankou-ena.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17268,7 +17268,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://iwamura.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-210-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-210-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17290,7 +17290,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.city.minokamo.lg.jp/soshiki/17/1968.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-211-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17312,7 +17312,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "http://www.sorahaku.net/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-213-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17334,7 +17334,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.mizuho.lg.jp/12757.htm",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-216-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17356,7 +17356,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-217-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-217-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17378,7 +17378,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.skydome.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-217-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-217-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17400,7 +17400,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://ekisya-cafe.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-219-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17422,7 +17422,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.gujo-tv.ne.jp/~kuturogi/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-219-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-219-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17444,7 +17444,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://kinenkan.gujohachiman.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-219-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-219-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17466,7 +17466,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://jm-minami.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-219-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-219-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17488,7 +17488,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.kaizu.lg.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-221-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-221-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17510,7 +17510,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.kaizu.lg.jp/kurashi/0000001234.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-221-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-221-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17532,7 +17532,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.town.tarui.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-361-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-361-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17554,7 +17554,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.town.gifu-ikeda.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-404-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-404-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17576,7 +17576,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://www.town.gifu-ikeda.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-404-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-404-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -17599,7 +17599,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.town.yaotsu.lg.jp/7629.htm",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/21-505-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/21-505-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17621,7 +17621,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.city.shizuoka.lg.jp/556_000024.html#h2_5",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-100-A02.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-100-A02.jpg",
         "type": "mhcard"
       }
     },
@@ -17643,7 +17643,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.visit-shizuoka.com/useful_info/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-100-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17665,7 +17665,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.inhamamatsu.com/japanese/info/tourists-info-center.php",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-130-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-130-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17687,7 +17687,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "http://www.city.hamamatsu.shizuoka.jp/c-machi/culture_art/saigagake/saigagake.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-130-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-130-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17709,7 +17709,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.numazu.shizuoka.jp/shisei/office/ichiran/suido/soumu.htm",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17731,7 +17731,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://numazuminato.com/shop/kankoukyoukai/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-203-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17753,7 +17753,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.atami.lg.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17775,7 +17775,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.ataminews.gr.jp/information/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-205-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17797,7 +17797,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17819,7 +17819,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.city.fujinomiya.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17841,7 +17841,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://fujinomiya.gr.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-207-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-207-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17863,7 +17863,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://fmkanvol.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-207-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-207-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17885,7 +17885,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://itospa.com/feature/tokaikan/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17907,7 +17907,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://itospa.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17929,7 +17929,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "https://www.city.fuji.shizuoka.jp/fujijikan/fujipedia/kb719c0000003ch5.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17951,7 +17951,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://gakunan-haisuiro.jp/link(html)/manhole/manhole.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-210-B-02.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-210-B-02.jpg",
         "type": "mhcard"
       }
     },
@@ -17973,7 +17973,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.aeontown.co.jp/fujiminami/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-210-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-210-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -17995,7 +17995,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.kanko-iwata.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-211-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18017,7 +18017,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.yaizu.gr.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-212-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18039,7 +18039,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.city.kakegawa.shizuoka.jp/life/kouen/shisetsu/eikikitaeria/kakegawajo.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-213-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18061,7 +18061,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.fujieda.shizuoka.jp/i/kyodomuse/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-214-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18083,7 +18083,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.jukuu.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-215-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18105,7 +18105,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.kaikokushimodaminato.co.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-219-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18127,7 +18127,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.susonokanko.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-220-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-220-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18149,7 +18149,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.city.kosai.shizuoka.jp/kanko_bunka_sports/kankospot/9675.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-221-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-221-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18171,7 +18171,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.city.kosai.shizuoka.jp/kanko_bunka_sports/kankospot/12197.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-221-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-221-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18193,7 +18193,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://izunotabi.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-225-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-225-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18215,7 +18215,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.minami-izu.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-304-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-304-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18237,7 +18237,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.town.nagaizumi.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-342-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-342-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18259,7 +18259,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://shisetsu.mizuno.jp/m-7621",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-342-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-342-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18281,7 +18281,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://kanko-oyama.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-344-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-344-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18303,7 +18303,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://www.town.yoshida.shizuoka.jp/6462.htm",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-424-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-424-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18325,7 +18325,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.town.morimachi.shizuoka.jp/gyosei/kurashi_tetsuzuki/jogesuido/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/22-461-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/22-461-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18347,7 +18347,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.eppy.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18369,7 +18369,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://waterlab.nagoya/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-100-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18391,7 +18391,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://www.water.city.nagoya.jp/shiryokan/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-100-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18413,7 +18413,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://www.city.toyohashi.lg.jp/23688.htm",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18435,7 +18435,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://www.city.toyohashi.lg.jp/6455.htm",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-201-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18457,7 +18457,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-201-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-201-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18479,7 +18479,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18501,7 +18501,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://okazaki-kanko.jp/feature/rune/top",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-202-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18523,7 +18523,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://okazaki-kanko.jp/feature/manhole/rune",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-202-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-202-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18545,7 +18545,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://okazaki-kanko.jp/okazaki-park/eat/33",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-202-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-202-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18567,7 +18567,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-202-E-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-202-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18589,7 +18589,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.8miso.co.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-202-F01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-202-F01.jpg",
         "type": "mhcard"
       }
     },
@@ -18611,7 +18611,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://station.okazaki-lita.com/center/libra",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-202-G-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-202-G-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18633,7 +18633,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.ip.licsre-saas.jp/ichinomiya/division/chuo/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18655,7 +18655,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.setomachi.com/setotourist/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18677,7 +18677,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "http://www.seto-cul.jp/new-century/access.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-204-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-204-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18699,7 +18699,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.city.handa.lg.jp/machi/gesuido/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18721,7 +18721,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://handa-akarenga.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-205-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18743,7 +18743,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.clacity.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-205-C01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-205-C01.jpg",
         "type": "mhcard"
       }
     },
@@ -18765,7 +18765,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.toyokawa-map.net/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18787,7 +18787,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-208-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-208-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -18809,7 +18809,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.city.hekinan.aichi.jp/GESUIKA/index.htm",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18831,7 +18831,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.city.hekinan.aichi.jp/tatsukichimuseum/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18853,7 +18853,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.kariya-infobox.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18875,7 +18875,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://asukeyashiki.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-211-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18897,7 +18897,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-211-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-211-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18919,7 +18919,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://kitara-toyota.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-211-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-211-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18941,7 +18941,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.library.city.anjo.aichi.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-212-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18963,7 +18963,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.ansyobunka.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-212-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-212-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -18985,7 +18985,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.nishio.aichi.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-213-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19007,7 +19007,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://ubkinenkan.com",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-214-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19029,7 +19029,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.city.inuyama.aichi.jp/kurashi/shinyou/1000701/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-215-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19051,7 +19051,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.instagram.com/kobokan.tokoname?igsh=dzQwMXhrYnhncnRj",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-216-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19073,7 +19073,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.tokoname-kankou.net/info/tourist/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-216-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-216-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19095,7 +19095,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.city.konan.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-217-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-217-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19117,7 +19117,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://www.komaki-kanko.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-219-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19139,7 +19139,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-220-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-220-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19161,7 +19161,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.kuruto.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-223-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-223-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19183,7 +19183,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.sourifureai.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-224-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-224-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19205,7 +19205,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.chiryu.aichi.jp/soshiki/jogesuido/gesuido/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-225-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-225-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19227,7 +19227,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.chiryu.aichi.jp/kanko_bunka_sports/kanko_bunka_sports/1541483998630.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-225-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-225-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19249,7 +19249,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.owariasahi.lg.jp/page/2168.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-226-A02.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-226-A02.jpg",
         "type": "mhcard"
       }
     },
@@ -19271,7 +19271,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-227-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-227-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19293,7 +19293,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "http://www.takahama-kawara-museum.com/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-227-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-227-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19315,7 +19315,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.toyoake.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-229-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-229-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19337,7 +19337,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/06/24",
         "url": "https://glglnisshin.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-230-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-230-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19359,7 +19359,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-232-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-232-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19381,7 +19381,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.kitanagoya.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-234A.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-234A.jpg",
         "type": "mhcard"
       }
     },
@@ -19403,7 +19403,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.city.yatomi.lg.jp/shisetsu/1000983/1000988/1000992.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-235-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-235-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19425,7 +19425,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.city.aichi-miyoshi.lg.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-236-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-236-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19447,7 +19447,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.city.aichi-miyoshi.lg.jp/soshiki/shiminkeizai/sangyo/syoukou/575.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-236-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-236-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19469,7 +19469,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.city.aichi-miyoshi.lg.jp/soshiki/somu/kyodo/15/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-236-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-236-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19491,7 +19491,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://bunkanoie.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-238-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-238-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19513,7 +19513,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.town.toyoyama.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-342-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-342-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19535,7 +19535,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.town.oguchi.lg.jp/item/16101.htm#itemid16101",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-361-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-361-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19557,7 +19557,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.town.oguchi.lg.jp/item/16101.htm#itemid16101",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-361-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-361-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -19580,7 +19580,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.town.fuso.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-362-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-362-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19602,7 +19602,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.town.oharu.aichi.jp/seikatsu/gesuido13.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-424-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-424-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19624,7 +19624,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.town.kanie.aichi.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-425-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-425-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19646,7 +19646,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.town.agui.lg.jp/soshiki_view.php?so_cd1=3&so_cd2=3&so_cd3=1&so_cd4=0&so_cd5=0",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-441-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-441-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19668,7 +19668,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.town.aichi-higashiura.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-442-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-442-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19690,7 +19690,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://taketoyo-kouryu.jp/ajinokura/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-447-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-447-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19712,7 +19712,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "http://www.town.kota.lg.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-501-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-501-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19734,7 +19734,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.town.shitara.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/23-561-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/23-561-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19756,7 +19756,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.city.yokkaichi.mie.jp/museum/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19778,7 +19778,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://kanko-yokkaichi.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-202-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19800,7 +19800,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.city.yokkaichi.mie.jp/new_water/index.php",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-202-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-202-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19822,7 +19822,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.ise.mie.jp//kankou/invitation/baggage/1002840.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19844,7 +19844,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.city.ise.mie.jp//kankou/invitation/baggage/1002847.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-203-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19866,7 +19866,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.city.matsusaka.mie.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19888,7 +19888,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.kankomie.or.jp/special/matsusaka-informationcenter/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-204-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-204-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19910,7 +19910,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.matsusaka.mie.jp/site/sougouundoukouen/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-204-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-204-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19932,7 +19932,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://takeshiro.net/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-204-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-204-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19954,7 +19954,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.city.matsusaka.mie.jp/site/bunkazai-center/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-204-E-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-204-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19976,7 +19976,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.matsusaka-kanko.com/blog/kanrishisetsu/%e6%9d%be%e9%98%aa%e9%a7%85%e8%a6%b3%e5%85%89%e6%83%85%e5%a0%b1%e3%82%bb%e3%83%b3%e3%82%bf%e3%83%bc/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-204-F-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-204-F-01.jpg",
         "type": "mhcard"
       }
     },
@@ -19998,7 +19998,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20020,7 +20020,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-205-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-205-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -20042,7 +20042,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.city.suzuka.lg.jp/suido/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20064,7 +20064,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.kanko.suzuka.mie.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20086,7 +20086,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.kankomie.or.jp/spot/3194",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20108,7 +20108,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.kameyama.mie.jp/library/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-210-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-210-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20130,7 +20130,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.kameyama.mie.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-210-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-210-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20152,7 +20152,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://uedashoten.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-215-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20174,7 +20174,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://iga-nin.com ",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-216-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20196,7 +20196,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.town.toin.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-324-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-324-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20218,7 +20218,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.kanko-komono.com/spots/3371/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/24-341-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/24-341-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20240,7 +20240,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20262,7 +20262,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.city.otsu.lg.jp/soshiki/080/1902/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20284,7 +20284,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://otsu.or.jp/tourism/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-201-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20306,7 +20306,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://oportable.jp/birdcafe.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-201-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-201-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20328,7 +20328,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20350,7 +20350,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.hikonyan-museum.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-202-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20372,7 +20372,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20394,7 +20394,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.city.kusatsu.shiga.jp/kusatsujuku/koryukan/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20416,7 +20416,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://kanko-kusatsu.com/spot/kusatsuyumehonin",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-206-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-206-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20438,7 +20438,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.karasuma.co.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-206-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-206-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20460,7 +20460,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20482,7 +20482,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.ritto-kanko.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20504,7 +20504,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-208-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20526,7 +20526,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.koka.lg.jp/2025.htm",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20548,7 +20548,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.city.koka.lg.jp/7205.htm",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-209-B-01.jpg\r\n",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-209-B-01.jpg\r\n",
         "type": "mhcard"
       }
     },
@@ -20570,7 +20570,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.city.koka.lg.jp/2025.htm",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-209-B-01.jpg\r\n",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-209-B-01.jpg\r\n",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -20593,7 +20593,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.real-ninjakan.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-209-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-209-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20615,7 +20615,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.yasu.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20637,7 +20637,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.yasu.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-210-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -20660,7 +20660,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.city.higashiomi.shiga.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-213-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20682,7 +20682,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.google.co.jp/maps/place/%E5%85%AB%E6%97%A5%E5%B8%82%E9%A7%85%E5%89%8D%E8%A6%B3%E5%85%89%E4%BA%A4%E6%B5%81%E6%96%BD%E8%A8%AD/@35.1140839,136.1947046,17z/data=!3m1!4b1!4m6!3m5!1s0x60017ddfb693998b:0xb05a0c8f4811fd92!8m2!3d35.1140839!4d136.1947046!16s%2Fg%2F11vdcn7vsp?entry=ttu&g_ep=EgoyMDI1MDcyMS4wIKXMDSoASAFQAw%3D%3D",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-213-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-213-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20704,7 +20704,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.city.higashiomi.shiga.jp/lib/about/1007560/1007574.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-213-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-213-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20726,7 +20726,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://toyosato-kanko.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/25-441-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/25-441-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20748,7 +20748,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.michinoeki-miyazu.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20770,7 +20770,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.jade.dti.ne.jp/~rjpark/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-000-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-000-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20792,7 +20792,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.kyoto.lg.jp/suido/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-100-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20814,7 +20814,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.kyoto.lg.jp/suido/page/0000216492.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-100-A-02.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-100-A-02.jpg",
         "type": "mhcard"
       }
     },
@@ -20836,7 +20836,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://biwakososui-museum.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-100-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20858,7 +20858,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://akarenga-park.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20880,7 +20880,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.city.maizuru.kyoto.jp/kyouiku/0000005026.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-202-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20902,7 +20902,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://akarenga-park.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-202-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-202-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20924,7 +20924,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://ayabe-library.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20946,7 +20946,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.uji.kyoto.jp/site/uji-kankou/3259.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20968,7 +20968,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.kameoka.kyoto.jp/jougesuidou/shisetsu/shichosha/003.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -20990,7 +20990,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-206-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-206-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -21013,7 +21013,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.muko.kyoto.jp/site/shiryokan/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21035,7 +21035,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.city.muko.kyoto.jp/site/shiryokan/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-208-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-208-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -21058,7 +21058,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21080,7 +21080,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.city.nagaokakyo.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-209-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-209-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21102,7 +21102,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "http://www.nagaokakyo-kankou.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-209-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-209-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -21125,7 +21125,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.kankou-yawata.org/access.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21147,7 +21147,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-212-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21169,7 +21169,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-212-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-212-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21191,7 +21191,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.town.oyamazaki.kyoto.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-303-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-303-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21213,7 +21213,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.town.oyamazaki.kyoto.jp/annai/kikakuzaisei/furusatocenter/oyamazakifurusatocentar/14.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-303-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-303-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21235,7 +21235,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.town.kumiyama.lg.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-322-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-322-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21257,7 +21257,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.town.ujitawara.kyoto.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-344-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-344-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21279,7 +21279,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.town.ujitawara.kyoto.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-344-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-344-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -21302,7 +21302,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.town.kyotamba.kyoto.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-407-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-407-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21324,7 +21324,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.town.kyotamba.kyoto.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/26-407-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/26-407-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21346,7 +21346,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://www.pref.osaka.lg.jp/gesui_jigyo/dezain/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21368,7 +21368,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.toyonaka.osaka.jp/shisetsu/suidou/inagawa_harada/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21390,7 +21390,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "https://www.ecoplaza.gr.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-100-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21412,7 +21412,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.clearwater-osaka.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-100-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21434,7 +21434,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.ecoplaza.gr.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-100-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-100-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -21457,7 +21457,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.osaka-ssm.jp/information",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-100-C01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-100-C01.jpg",
         "type": "mhcard"
       }
     },
@@ -21479,7 +21479,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://osaka-info.jp/spot/tourist-information-osaka/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-100-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-100-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21501,7 +21501,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.sakai-rishonomori.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-140-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-140-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21523,7 +21523,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.sakai-tcb.or.jp/spot/detail/1164",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-140-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-140-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -21545,7 +21545,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21567,7 +21567,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.ja-izumino.or.jp/farmstand/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-202-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-202-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -21589,7 +21589,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-202-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-202-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21611,7 +21611,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://www.city.toyonaka.osaka.jp/jogesuido/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21633,7 +21633,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.ikedashi-kanko.jp/shop/ikeda_city_tourist_information_center",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21655,7 +21655,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.ikedashi-kanko.jp/pickup/9014",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-204-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-204-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21677,7 +21677,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.ikedashi-kanko.jp/pickup/9014",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-204-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-204-C-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -21700,7 +21700,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.ikedashi-kanko.jp/pickup/9014",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-204-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-204-D-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -21723,7 +21723,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.ikedashi-kanko.jp/pickup/9014",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-204-E-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-204-E-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -21746,7 +21746,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.suita.osaka.jp/shisei/shisetsu/1019117/1020468.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21768,7 +21768,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21790,7 +21790,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.seibu-la.co.jp/park/ama-sitepark/facility/bornelund/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-207-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-207-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21812,7 +21812,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "http://www.takatsuki-bsj.jp/tat/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-207-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-207-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21834,7 +21834,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.city.kaizuka.lg.jp/bunkazai/bunkazaidata/bunkazai/kuni_sitei/tourokubunkazai/rekisitenjikan.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21856,7 +21856,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.kaizuka.lg.jp/kanko/topics_kanko/machinoekikaizuka.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-208-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21878,7 +21878,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.city.moriguchi.osaka.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21900,7 +21900,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21922,7 +21922,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.onikuru.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-211-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21944,7 +21944,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/06/19",
         "url": "https://dampark-ibakita.com/guide",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-211-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-211-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21966,7 +21966,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.yao.osaka.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-212-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -21988,7 +21988,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://kyu-uedakejutaku.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-212-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22010,7 +22010,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.city.izumisano.lg.jp/kakuka/seikatsu/shoko/menu/matidokoro.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-213-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22032,7 +22032,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "http://www.city.izumisano.lg.jp/kakuka/seikatsu/shoko/menu/izumisanomachidokoro.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-213-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-213-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22054,7 +22054,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "http://www.kankou-izumisano.jp/kankoannao.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-213-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-213-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22076,7 +22076,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-214-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22098,7 +22098,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.neyagawa.osaka.jp/organization_list/joge_suido/gesuido/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-215-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22120,7 +22120,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://kuromaro.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-216-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22142,7 +22142,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.kawachinagano.lg.jp/site/gesui/47644.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-216-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-216-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -22165,7 +22165,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-217-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-217-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22187,7 +22187,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.city.daito.lg.jp/soshiki/39/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-218-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-218-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22209,7 +22209,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://satomachi-izumi.com/omotenashi/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-219-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22231,7 +22231,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.yamaainosato.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-219-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-219-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22253,7 +22253,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.minoh.lg.jp/shisetsu/syoukou/kankou.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-220-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-220-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22275,7 +22275,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.city.kashiwara.osaka.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-221-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-221-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22297,7 +22297,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.kashiwara-bunka.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-221-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-221-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22319,7 +22319,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.city.kashiwara.lg.jp/docs/2014081900065/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-221-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-221-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22341,7 +22341,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-221-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-221-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22363,7 +22363,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.city.habikino.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-222-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-222-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22385,7 +22385,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.city.kadoma.osaka.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-223-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-223-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22407,7 +22407,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.kadoma.osaka.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-223-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-223-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22429,7 +22429,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.city.settsu.osaka.jp/suidou/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-224-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-224-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22451,7 +22451,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://rin-spo.com",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-225-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-225-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22473,7 +22473,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.fujiidera.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-226-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-226-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22495,7 +22495,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.fujiidera.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-226-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-226-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -22518,7 +22518,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.city-fujiidera-kosha.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-226-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-226-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -22540,7 +22540,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.city.fujiidera.lg.jp/soshiki/shiminseikatsu/kankou/fujiiderasi-nigiwai-manabikouryukan/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-226-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-226-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22562,7 +22562,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.city.higashiosaka.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-227-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-227-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22584,7 +22584,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://welcome-sennan.com/access",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-228-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-228-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22606,7 +22606,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.sennan.lg.jp/kakuka/soumu/gyouzaisei/gyoseihyoka/R1hyouka/R1sosiki/R1jyougesui/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-228-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-228-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22628,7 +22628,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.city.shijonawate.lg.jp/soshiki/20/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-229-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-229-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22650,7 +22650,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-230-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-230-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22672,7 +22672,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-230-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-230-B01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -22695,7 +22695,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-231-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-231-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22717,7 +22717,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.osakasayama.osaka.jp/tetsuzuki/jogesuido/1/1/3315.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-231-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-231-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22739,7 +22739,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://sayamaikehaku.osakasayama.osaka.jp/wp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-231-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-231-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22761,7 +22761,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "http://www.city.hannan.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-232-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-232-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -22783,7 +22783,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.town.shimamoto.lg.jp/site/suidou/1969.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-301-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-301-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22805,7 +22805,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.town.shimamoto.lg.jp/site/rekishi-bunka/2413.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-301-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-301-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22827,7 +22827,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-321-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-321-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22849,7 +22849,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-322-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-322-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22871,7 +22871,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.town.kumatori.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-361-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-361-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22893,7 +22893,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.town.tajiri.osaka.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-362-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-362-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22915,7 +22915,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://taishi-kankou.jp/michinoeki/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-381-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-381-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22937,7 +22937,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.town.kanan.osaka.jp/soshiki/machisozobu/toshikankyoka/gyomuannai/5/1/294.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-382-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-382-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22959,7 +22959,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.vill.chihayaakasaka.osaka.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/27-383-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/27-383-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -22981,7 +22981,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.toyonaka.osaka.jp/shisetsu/suidou/skyland_harada/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-000-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -23004,7 +23004,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "https://www.city.kobe.lg.jp/a78445/kurashi/sumai/sewage/pr/manhole_card.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-100-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23026,7 +23026,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.kairport.co.jp/service/information/info-center",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-100-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23048,7 +23048,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.kobe.lg.jp/a78445/kurashi/sumai/sewage/pr/manhole_card.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-100-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-100-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23070,7 +23070,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.city.kobe.lg.jp/a64051/kenko/handicap/syakaikatdudou/barrierfree/shurui/bunka/03093.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-100-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-100-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23092,7 +23092,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://www.city.himeji.lg.jp/kanko/0000005207.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23114,7 +23114,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://amasui.org/shoukai/shisetsu/2000610/2000611.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23136,7 +23136,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://kansai-tourism-amagasaki.jp/information-center/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23158,7 +23158,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://kansai-tourism-amagasaki.jp/amagasaki/information.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-202-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-202-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -23181,7 +23181,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.am12.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23203,7 +23203,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.nishi.or.jp/kurashi/suido/jogesuidokyoku/pr_event/manholecard.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23225,7 +23225,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.city.sumoto.lg.jp/soshiki/23/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23247,7 +23247,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.ashiya.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23269,7 +23269,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://ashiya-museum.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-206-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-206-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23291,7 +23291,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.swanhall.com/access.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23313,7 +23313,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.water.itami.hyogo.jp/soshiki/keieikikakuka/1395799645874.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-207-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-207-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23335,7 +23335,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "http://itami-kankou.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-207-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-207-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23357,7 +23357,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "http://itami-kankou.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-207-C01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-207-C01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -23380,7 +23380,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://itami-im.jp/about/okada-ishibashi/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-207-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-207-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23402,7 +23402,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://kako-navi.jp/information.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23424,7 +23424,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.city.nishiwaki.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-213-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23446,7 +23446,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.nishiwaki-cs.or.jp/terra/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-213-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23468,7 +23468,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "http://www.city.nishiwaki.lg.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-213-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-213-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23490,7 +23490,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://takarazuka-arts-center.jp/information/access/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-214-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23512,7 +23512,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.city.miki.lg.jp/soshiki/46/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-215-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23534,7 +23534,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.76-2401.com/company",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-215-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-215-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23556,7 +23556,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.city.miki.lg.jp/soshiki/43/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-215-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-215-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23578,7 +23578,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://ajisaiflora-miki.com/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-215-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-215-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23600,7 +23600,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.takasago-tavb.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-216-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23622,7 +23622,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.city.kawanishi.hyogo.jp/shisetsu/1002999/1003002/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-217-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-217-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23644,7 +23644,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://kisela-kp.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-217-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-217-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23666,7 +23666,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.city.kawanishi.hyogo.jp/shisetsu/1002871/1002872.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-217-C001.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-217-C001.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -23689,7 +23689,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.city.kasai.hyogo.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-220-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-220-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23711,7 +23711,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.kasai-shimin.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-220-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-220-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23733,7 +23733,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "http://www.hojorailway.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-220-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-220-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23755,7 +23755,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.city.tambasasayama.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-221-A-02.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-221-A-02.jpg",
         "type": "mhcard"
       }
     },
@@ -23777,7 +23777,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://withsasayama.jp/history-museum/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-221-A-02.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-221-A-02.jpg",
         "type": "mhcard"
       }
     },
@@ -23799,7 +23799,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.tambacity-kankou.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-223-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-223-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23821,7 +23821,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.kato-kanko.jp/ ",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-228-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-228-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23843,7 +23843,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.city.kato.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-228-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-228-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -23866,7 +23866,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-228-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-228-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -23889,7 +23889,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.city.tatsuno.lg.jp/kanko-bunka-sports/kanko/5018.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-229-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-229-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23911,7 +23911,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": " https://www.city.tatsuno.lg.jp/kanko-bunka-sports/rekishi-bunkazai/4/2/4883.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-229-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-229-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23933,7 +23933,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.city.tatsuno.lg.jp/soshiki/1030/gyomu/4398.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-229-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-229-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23955,7 +23955,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.eonet.ne.jp/~eki-inagawa/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-301-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-301-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -23977,7 +23977,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.town.inagawa.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-301-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-301-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -24000,7 +24000,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/11/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-381-A-01",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-381-A-01",
         "type": "mhcard"
       }
     },
@@ -24022,7 +24022,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.town.harima.lg.jp/kanko/kyodoshiryokan/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-382-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-382-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24044,7 +24044,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.town.ichikawa.lg.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-442-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-442-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24066,7 +24066,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.town.fukusaki.hyogo.jp/0000000112.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-443-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-443-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24088,7 +24088,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.town.kamikawa.hyogo.jp/0000002459.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-446-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-446-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24110,7 +24110,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.town.hyogo-taishi.lg.jp/soshikikarasagasu/keizai/kanko/6569.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-464-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-464-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24132,7 +24132,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.town.kamigori.hyogo.jp/soshiki/chiiki/shisetsuosagasu/1_1/2344.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/28-481-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/28-481-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24154,7 +24154,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/29-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24176,7 +24176,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.city.yamatokoriyama.lg.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/29-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24198,7 +24198,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://www.yk-kankou.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/29-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24220,7 +24220,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/29-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24242,7 +24242,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.city.kashihara.nara.jp/soshiki/1021/gyomu/1/332.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/29-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24264,7 +24264,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-205-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/29-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24286,7 +24286,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-205-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/29-205-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24308,7 +24308,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.base-ikoba.com",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/29-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24330,7 +24330,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-343-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/29-343-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24352,7 +24352,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://ikaruga-kanko.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-344-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/29-344-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24374,7 +24374,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.narakotsu.co.jp/kanren/karako-kagi/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-363-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/29-363-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24396,7 +24396,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.yoshino-kankou.jp/useful/office/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/29-441-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/29-441-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24418,7 +24418,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://wakayamajo.jp/tenji/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/30-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/30-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24440,7 +24440,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.hashimoto.lg.jp/hashimototaikan/asobu/hashimoto_kouiki_kankouannaisho.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/30-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/30-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24462,7 +24462,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/30-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/30-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24484,7 +24484,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.city.iwade.lg.jp/soshiki/16/10835.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/30-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/30-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24506,7 +24506,7 @@ const mhcardGeoJSON = {
         "round": "第2弾",
         "issueDate": "2016/08/01",
         "url": "https://www.town.aridagawa.lg.jp/top/kakuka/kanaya/9/2/syukuhaku/8556.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/30-366-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/30-366-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24528,7 +24528,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.torican.jp/spot/detail_1068.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/31-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/31-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24550,7 +24550,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/31-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/31-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24572,7 +24572,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.kurayoshi-kankou.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/31-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/31-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24594,7 +24594,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://enkei-museum.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/31-203-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/31-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24616,7 +24616,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/31-302-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/31-302-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24638,7 +24638,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://misasaonsen.jp/sightseeings/sightseeing-1006/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/31-364-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/31-364-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24660,7 +24660,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.kotoura-kankou.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/31-371-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/31-371-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24682,7 +24682,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/31-372-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/31-372-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24704,7 +24704,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/31-403-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/31-403-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24726,7 +24726,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://izumo-kankou.gr.jp/5279",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/32-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24748,7 +24748,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.matsue-horikawameguri.jp/course",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/32-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24770,7 +24770,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.kankou-hamada.org/tourisminfo",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/32-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24792,7 +24792,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.kankou-hamada.org/salon",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/32-202-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -24815,7 +24815,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.asahionsen.net/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-202-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/32-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24837,7 +24837,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.izumo-kankou.gr.jp/5280",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/32-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24859,7 +24859,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://masudashi.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/32-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24881,7 +24881,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/32-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24903,7 +24903,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.yasugi-kankou.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/32-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24925,7 +24925,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://gotsu-kanko.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/32-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24947,7 +24947,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/32-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24969,7 +24969,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://tsuwano-kanko.net/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-501-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/32-501-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -24991,7 +24991,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-505-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/32-505-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25013,7 +25013,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.town.nishinoshima.shimane.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/32-526-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/32-526-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25035,7 +25035,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "https://okayama-kanko.net/sightseeing/information.php",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-100-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25057,7 +25057,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "https://kankou-kurashiki.jp/info/%e5%80%89%e6%95%b7%e9%a7%85%e5%89%8d%e8%a6%b3%e5%85%89%e6%a1%88%e5%86%85%e6%89%80/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25079,7 +25079,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://www.kojima-cci.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-202-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25101,7 +25101,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-202-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-202-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25123,7 +25123,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.mizurin.co.jp ",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-202-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-202-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25145,7 +25145,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.grand-cocoe.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-202-E01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-202-E01.jpg",
         "type": "mhcard"
       }
     },
@@ -25167,7 +25167,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.tsuyamakan.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25189,7 +25189,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.kasaoka.okayama.jp/site/kabutogani/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25211,7 +25211,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.bao.city.ibara.okayama.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25233,7 +25233,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "http://takahasikanko.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25255,7 +25255,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "http://www.niimi.gr.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25277,7 +25277,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.city.setouchi.lg.jp/museum/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-212-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25299,7 +25299,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.setouchi.lg.jp/token/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-212-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-212-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25321,7 +25321,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://greenable-hiruzen.co.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-214-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25343,7 +25343,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://spa-yunogo.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-215-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-215-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -25365,7 +25365,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.mimasaka.lg.jp/soshiki/kyouiku/sports/shisetsu/1456962900358.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-215-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-215-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25387,7 +25387,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.city.asakuchi.lg.jp/soshiki/19/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-216-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25409,7 +25409,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.city.asakuchi.lg.jp/soshiki/21/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-216-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-216-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -25432,7 +25432,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.town.hayashima.lg.jp/yurubinoya/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-423-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-423-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25454,7 +25454,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-445-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-445-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25476,7 +25476,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://yakagemachiya.information.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-461-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-461-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25498,7 +25498,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://japan-yakage.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-461-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-461-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25520,7 +25520,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "http://www.town.yakage.okayama.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-461-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-461-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -25543,7 +25543,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-586-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-586-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25565,7 +25565,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.yumehiroba.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-606-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-606-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25587,7 +25587,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "http://www.town.shoo.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-622-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-622-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25609,7 +25609,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://ilisod005.apsel.jp/shoo-lib/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-622-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-622-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25631,7 +25631,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "http://www.alis-nv.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-622-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-622-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25653,7 +25653,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.town.nagi.okayama.jp/gyousei/koukyou_shisetsu/nagiterrace.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-623-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-623-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -25675,7 +25675,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.town.kumenan.lg.jp/shisetsu/michinoeki.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-663-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-663-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25697,7 +25697,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/33-681-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/33-681-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25719,7 +25719,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://www.kengesui-hiroshima.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25741,7 +25741,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-100-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25763,7 +25763,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://dive-hiroshima.com/explore/3636/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-100-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25785,7 +25785,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://hiroshima-resthouse.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-100-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-100-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25807,7 +25807,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.hiroshima.lg.jp/site/ujinaterminal/144462.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-100-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-100-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25829,7 +25829,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://hiro-chika.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-100-E-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-100-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25851,7 +25851,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.hiroshima.lg.jp/site/koureisha/5902.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-100-F-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-100-F-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25873,7 +25873,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "http://www.cf.city.hiroshima.jp/misasa-k/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-100-G-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-100-G-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25895,7 +25895,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://irifuneyama.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25917,7 +25917,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-202-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25939,7 +25939,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25961,7 +25961,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.iine-takehara.com/michinoekitakehara",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-203-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -25983,7 +25983,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.mihara-kankou.com/fp-about-society/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26005,7 +26005,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.city.mihara.hiroshima.jp/soshiki/35/mhcard.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-204-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -26028,7 +26028,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.shinmeinosato.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-204-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-204-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26050,7 +26050,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.fukuyama-kanko.com",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-207-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-207-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -26072,7 +26072,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://fuchu-kanko.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26094,7 +26094,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://higashihiroshima-kanko.jp/spot/hh-tourist-info/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-212-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26116,7 +26116,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-212-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-212-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26138,7 +26138,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://jpn01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhigashihiroshima-kanko.jp%2Fspot%2Fsakaguradori-tourist-info%2F&data=05%7C02%7Chgh200957%40city.higashihiroshima.lg.jp%7C6679458235f74fdab46b08ded9d35646%7C7a6f116510b74e51b43fbdb60acb8c70%7C1%7C0%7C639187698872164881%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=8QHj0cc8kym6zSO94%2F4MSxUu1tGS1%2FMuofKGjdzEfqM%3D&reserved=0",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-212-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-212-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26160,7 +26160,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.hatsukaichi.hiroshima.jp/site/chuosc/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-213-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26182,7 +26182,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://akitakata-kankou.jp/main/mitsuyanosato/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-214-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26204,7 +26204,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.akitakata.jp/ja/shisei/section/syoukou/y100/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-214-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-214-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26226,7 +26226,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://toujimura.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-214-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-214-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26248,7 +26248,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://houkodou.jp/wp_2020spring/cat11",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-307-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-307-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26270,7 +26270,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.town.saka.lg.jp/2017/07/01/index-13/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-309-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-309-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26292,7 +26292,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://cs-akiota.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/34-368-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/34-368-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26314,7 +26314,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://shimonoseki-kgb.jp/spot/%e9%95%b7%e5%ba%9c%e8%a6%b3%e5%85%89%e4%bc%9a%e9%a4%a8/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26336,7 +26336,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://s-kanrikousha.com",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-201-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26358,7 +26358,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26380,7 +26380,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-202-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-202-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -26402,7 +26402,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://yamaguchi-city.jp/convenience/information.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26424,7 +26424,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://yamaguchi-city.jp/k-center/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-203-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26446,7 +26446,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://yamaguchi-city.jp/convenience/information.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-203-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-203-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26468,7 +26468,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city.yamaguchi.lg.jp/map/7299.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-203-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-203-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26490,7 +26490,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://michinoeki-aio.com",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-203-E-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-203-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26512,7 +26512,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "http://www.city.hagi.lg.jp/site/meiringakusha/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26534,7 +26534,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://aspirante-hofu.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26556,7 +26556,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.city.kudamatsu.lg.jp/sui-gesui/kurashi/jougesuidou/gesuidou/manhole-card.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26578,7 +26578,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-207-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-207-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26600,7 +26600,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "http://k-kanrikousha-orjp.check-xserver.jp/sportspark/supokou.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-207-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-207-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26622,7 +26622,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://honke-matsugane.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26644,7 +26644,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://plat-abc.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-208-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-208-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26666,7 +26666,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.carpbeach.org/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-208-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-208-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26688,7 +26688,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://nanavi.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-211-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26710,7 +26710,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "http://www.kanko-yanai.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-212-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26732,7 +26732,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://karusuto.com",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-213-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26754,7 +26754,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://kanko-shunan.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-215-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26776,7 +26776,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.city.sanyo-onoda.lg.jp/site/rekimin/shisetu-annai.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-216-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26798,7 +26798,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.city.sanyo-onoda.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-216-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26820,7 +26820,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://soc-park.com",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-216-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-216-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26842,7 +26842,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.hachigamine-grand-park.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-321-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-321-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26864,7 +26864,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.wakiiine.net/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/35-321-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/35-321-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -26887,7 +26887,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": " http://www.toku-eta.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/36-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26909,7 +26909,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.tsukimigaoka.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/36-000-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -26932,7 +26932,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.awaodori-kaikan.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/36-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26954,7 +26954,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.tokushima.tokushima.jp/jogesuidokyoku/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/36-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26976,7 +26976,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "https://www.naruto-kankou.jp/charm/charm-2791/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/36-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -26998,7 +26998,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.naruto-kankou.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-202-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/36-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27020,7 +27020,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": " https://www.city.yoshinogawa.lg.jp/top.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/36-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27042,7 +27042,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.kaiyo-kankou.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-388-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/36-388-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27064,7 +27064,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.town.matsushige.tokushima.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-401-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/36-401-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27086,7 +27086,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-401-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/36-401-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -27109,7 +27109,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.town.kitajima.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-402-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/36-402-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27131,7 +27131,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.town.kitajima.lg.jp/library/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/36-402-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/36-402-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27153,7 +27153,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://kagawa-gesui.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27175,7 +27175,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.love-marugame.jp/office",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27197,7 +27197,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://kagawa-gesui.or.jp/publics/index/28/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-000-A-02.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-000-A-02.jpg",
         "type": "mhcard"
       }
     },
@@ -27219,7 +27219,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://www.town.tadotsu.kagawa.jp/kakuka_tyousya/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-000-A-02.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-000-A-02.jpg",
         "type": "mhcard"
       }
     },
@@ -27241,7 +27241,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27263,7 +27263,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://takamatsu-bonsai.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-201-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-201-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -27285,7 +27285,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27307,7 +27307,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-202-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27329,7 +27329,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-202-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-202-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27351,7 +27351,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.marugame.lg.jp/page/1402.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-202-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-202-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27373,7 +27373,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.love-marugame.jp/office",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-202-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-202-D-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -27396,7 +27396,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://sakaide-kankou.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27418,7 +27418,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.city.sakaide.lg.jp/soshiki/bunkashinkou/engyou-musium.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-203-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-203-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27440,7 +27440,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://sakaide-kankou.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-203-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-203-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -27463,7 +27463,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27485,7 +27485,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27507,7 +27507,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.higashikagawa.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27529,7 +27529,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-341-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-341-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27551,7 +27551,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.town.ayagawa.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-387-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-387-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27573,7 +27573,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://www.town.ayagawa.lg.jp/docs/2012030900029/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-387-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-387-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -27596,7 +27596,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-404-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-404-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -27619,7 +27619,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/37-406-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/37-406-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27641,7 +27641,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://www.sakanouenokumomuseum.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27663,7 +27663,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://dogo.jp/onsen/asuka",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-201-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27685,7 +27685,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://imabari-shimanami.jp/ikiiki/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27707,7 +27707,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.imabari.ehime.jp/kanko/spot/?a=1102",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-202-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27729,7 +27729,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://imabarishintoshi-aeonmall.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-202-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-202-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27751,7 +27751,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27773,7 +27773,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.minatto.net/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27795,7 +27795,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-204-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-204-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27817,7 +27817,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.akaganemuseum.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27839,7 +27839,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://niihama.info/spot/119",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-205-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -27862,7 +27862,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://besshi.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-205-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27884,7 +27884,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://saijo-imadoki.jp/center/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27906,7 +27906,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.oozukankou.jp/buy-1.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27928,7 +27928,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://welpiaiyo.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-210-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-210-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -27950,7 +27950,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "http://www.shikochu-kankou.jp/?page_id=97",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-213-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27972,7 +27972,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://sakaemachi.jimdoweb.com/%E7%B5%84%E5%90%88%E3%83%88%E3%83%94%E3%83%83%E3%82%AF/%E5%9B%9B%E5%9B%BD%E4%B8%AD%E5%A4%AE%E3%83%89%E3%83%83%E3%83%88%E3%82%B3%E3%83%A0/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-213-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-213-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -27994,7 +27994,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://seiyojikan.jp/spot/%E5%AE%87%E5%92%8C%E6%96%87%E5%8C%96%E3%81%AE%E9%87%8C%E4%BC%91%E6%86%A9%E6%89%80/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-214-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-214-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -28016,7 +28016,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://seiyojikan.jp/spot/otoikaikan/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-214-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-214-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28038,7 +28038,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-215-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28060,7 +28060,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://art-village-toon.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-215-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-215-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28082,7 +28082,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.town.tobe.ehime.jp/soshikikarasagasu/shoukoukannkouka/kankou/9/552.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-402-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-402-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -28104,7 +28104,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "http://www.town.tobe.ehime.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-402-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-402-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -28126,7 +28126,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://sadamisakihanto-museum.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/38-442-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/38-442-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28148,7 +28148,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.pref.kochi.lg.jp/soshiki/171801/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/39-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28170,7 +28170,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/39-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28192,7 +28192,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://kaiyodo-sfn.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/39-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28214,7 +28214,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "https://sta2020.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-206-A-01-1.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/39-206-A-01-1.jpg",
         "type": "mhcard"
       }
     },
@@ -28236,7 +28236,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://machikado-gallery.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-206-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/39-206-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28258,7 +28258,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.city.kochi-konan.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-211-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/39-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28280,7 +28280,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.city.kochi-konan.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-211-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/39-211-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28302,7 +28302,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "http://www.city.kochi-konan.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-211-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/39-211-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28324,7 +28324,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "http://www.kounan-navi.com",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-211-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/39-211-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28346,7 +28346,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://ryugadou.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-212-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/39-212-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28368,7 +28368,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "http://www.kigenhaeikayo.com/page/00000081.htm",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-212-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/39-212-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28390,7 +28390,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://monobegawa.com/tourist-spot/4396",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-212-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/39-212-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28412,7 +28412,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.sk-michinoeki.jp/michinoeki/440",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-212-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/39-212-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28434,7 +28434,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.tosa-sameura.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/39-363-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/39-363-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28456,7 +28456,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28478,7 +28478,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-000-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-000-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28500,7 +28500,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "https://www.kitakyushuspacelabo.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-100-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28522,7 +28522,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.city.kitakyushu.lg.jp/suidou/s01300023.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-100-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28544,7 +28544,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.kitakyushu-stadium.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-100-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-100-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -28567,7 +28567,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.ktqmm.jp/ ",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-100-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-100-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28589,7 +28589,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://seven-eleven.areamarker.com/711map/info/547276?shopid=547276",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-100-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-100-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28611,7 +28611,7 @@ const mhcardGeoJSON = {
         "round": "第01弾",
         "issueDate": "2016/04/01",
         "url": "https://www.city.fukuoka.lg.jp/doro-gesuido/somu/hp/pon.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-130-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-130-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28633,7 +28633,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.fukuoka.lg.jp/shisei/kouhou-hodo/johoplaza/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-130-C02.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-130-C02.jpg",
         "type": "mhcard"
       }
     },
@@ -28655,7 +28655,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.city.omuta.lg.jp/kigyoukyoku/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28677,7 +28677,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://kurumecityplaza.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28699,7 +28699,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.city.nogata.fukuoka.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28721,7 +28721,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.city.nogata.fukuoka.jp/shisei/_1242/_2793/_12358.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28743,7 +28743,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.city.yanagawa.fukuoka.jp/kurashi/jogesuido/gesui/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28765,7 +28765,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.yanagawa-net.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28787,7 +28787,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.city.chikugo.lg.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-211-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28809,7 +28809,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.ogori.fukuoka.jp/197/798",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-216-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28831,7 +28831,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.city.ogori.fukuoka.jp/index.php?cID=1000",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-216-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28853,7 +28853,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.onojo-occm.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-219-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-219-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28875,7 +28875,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "https://www.muna-tabi.jp/k006/20240820133134.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-220-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-220-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28897,7 +28897,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.akamakan.info/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-220-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-220-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28919,7 +28919,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.kotodazaifu.net/pavilion",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-221-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-221-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -28941,7 +28941,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://ssk-dazaifu-gym.com",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-221-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-221-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28963,7 +28963,7 @@ const mhcardGeoJSON = {
         "round": "第19弾",
         "issueDate": "2023/04/28",
         "url": "https://www.city.dazaifu.lg.jp/site/kanko/3625.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-221-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-221-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -28985,7 +28985,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "https://www.city.koga.fukuoka.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-223-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-223-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29007,7 +29007,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://www.city.nakagawa.lg.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-231-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-231-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29029,7 +29029,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "http://www.city.nakagawa.lg.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-231-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-231-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -29052,7 +29052,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "http://cototoba.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-231-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-231-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29074,7 +29074,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://www.town.umi.lg.jp/soshiki/10/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-341-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-341-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29096,7 +29096,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.town.shime.lg.jp/soshiki/10/manhole-card.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-343-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-343-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29118,7 +29118,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.town.shime.lg.jp/site/shimate/kannai-annai.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-343-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-343-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29140,7 +29140,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "http://ashikan.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-381-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-381-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29162,7 +29162,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.town.okagaki.lg.jp/010/060/010/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/40-383-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/40-383-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29184,7 +29184,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "http://www.water.saga.saga.jp/main/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/41-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/41-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29206,7 +29206,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.sagabai.com/balloon-museum/main/48.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/41-201-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/41-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29228,7 +29228,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.city.tosu.lg.jp/soshiki/18/2386.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/41-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/41-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29250,7 +29250,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://www.city.takeo.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/41-206-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/41-206-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -29272,7 +29272,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.saga-kashima.lg.jp/main/15748.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/41-207-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/41-207-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29294,7 +29294,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/41-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/41-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29316,7 +29316,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.town.miyaki.lg.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/41-346-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/41-346-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29338,7 +29338,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.arita.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/41-401-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/41-401-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29360,7 +29360,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "http://www.town.kouhoku.saga.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/41-424-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/41-424-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29382,7 +29382,7 @@ const mhcardGeoJSON = {
         "round": "第09弾",
         "issueDate": "2018/12/14",
         "url": "https://www.town.shiroishi.lg.jp/jyuumin/seikatsu/jyougesuidou/gesuidou",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/41-425-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/41-425-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29404,7 +29404,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/42-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29426,7 +29426,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.city.nagasaki.lg.jp/sisetsu/5120000/p011066.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/42-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29448,7 +29448,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.nmhc.jp/museum_hsb/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-201-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/42-201-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -29470,7 +29470,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.sasebo99.com/spot/100267",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/42-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29492,7 +29492,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.isahaya-kankou.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/42-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29514,7 +29514,7 @@ const mhcardGeoJSON = {
         "round": "第04弾",
         "issueDate": "2017/04/03",
         "url": "http://www.e-oomura.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/42-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29536,7 +29536,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "https://www.city.iki.nagasaki.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/42-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29558,7 +29558,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.city.minamishimabara.lg.jp/sekaiisan/page7165.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-214-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/42-214-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -29580,7 +29580,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://webtown.nagayo.jp/suido/default.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-307-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/42-307-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29602,7 +29602,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.nagayolib.jp",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-307-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/42-307-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29624,7 +29624,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.town.higashisonogi.lg.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-321-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/42-321-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29646,7 +29646,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://place.sonogi.net/higashisonogi_kanko/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/42-321-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/42-321-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29668,7 +29668,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.kumamoto-waterworks.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-100-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29690,7 +29690,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "http://www.mizunokagakukan.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-100-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29712,7 +29712,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.kspa.or.jp/park/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-100-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29734,7 +29734,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.kspa.or.jp/sougou_taiku/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-100-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29756,7 +29756,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://kc-sks.jp/soutai/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-E-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-100-E-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29778,7 +29778,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.kspa.or.jp/sougou/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-F-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-100-F-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29800,7 +29800,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.kspa.or.jp/huzisaki/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-F-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-100-F-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -29823,7 +29823,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.kspa.or.jp/park/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-G-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-100-G-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -29846,7 +29846,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.kspa.or.jp/sougou_taiku/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-H-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-100-H-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -29869,7 +29869,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://kc-sks.jp/soutai/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-I-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-100-I-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -29892,7 +29892,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.kspa.or.jp/sougou/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-J-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-100-J-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -29915,7 +29915,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.kspa.or.jp/huzisaki/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-J-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-100-J-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29937,7 +29937,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://hanabatahiroba.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-K-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-100-K-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29959,7 +29959,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://kc-sks.jp/suizenji/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-100-L-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-100-L-01.jpg",
         "type": "mhcard"
       }
     },
@@ -29981,7 +29981,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://www.city.yatsushiro.lg.jp/kiji0037227/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30003,7 +30003,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://www.city.yatsushiro.lg.jp/kiji0037227/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-202-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-202-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30025,7 +30025,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://www.city.arao.lg.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30047,7 +30047,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/minamata/minamata.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30069,7 +30069,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.tamalala.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30091,7 +30091,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "https://www.city.uki.kumamoto.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-213-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30113,7 +30113,7 @@ const mhcardGeoJSON = {
         "round": "第15弾",
         "issueDate": "2021/08/17",
         "url": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/shiranui/shiranui.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-213-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30135,7 +30135,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.kikusuiromankan.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-369-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-369-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30157,7 +30157,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.town.mashiki.lg.jp/kiji0037336/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-443-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-443-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30179,7 +30179,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "http://reihoku-kumamoto.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/43-531-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/43-531-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30201,7 +30201,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.oishiimati-oita.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/44-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30223,7 +30223,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "http://www.takemachi.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-201-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/44-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30245,7 +30245,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.oishiimati-oita.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-201-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/44-201-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -30268,7 +30268,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.opam.jp/page/shop.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-201-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/44-201-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30290,7 +30290,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://www.city.oita.oita.jp/bunkasports/bunka/bijutsukan/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-201-D-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/44-201-D-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30312,7 +30312,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://beppu-tourism.com/spot/wander-compass-beppu/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-202-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/44-202-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30334,7 +30334,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "https://fukuzawakyukyo.com",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-203-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/44-203-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -30356,7 +30356,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.visit-saiki.jp/spots/detail/f868f841-e816-4f0d-8dc8-ba22e082036d",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/44-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30378,7 +30378,7 @@ const mhcardGeoJSON = {
         "round": "第28弾",
         "issueDate": "2026/04/24",
         "url": "https://www.city.bungotakada.oita.jp/site/showanomachi/15034.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/44-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30400,7 +30400,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/44-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30422,7 +30422,7 @@ const mhcardGeoJSON = {
         "round": "第10弾",
         "issueDate": "2019/08/07",
         "url": "https://hijinavi.com/spots/detail/55",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/44-341-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/44-341-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30444,7 +30444,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.suidou-miyazaki.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/45-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/45-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30466,7 +30466,7 @@ const mhcardGeoJSON = {
         "round": "第03弾",
         "issueDate": "2016/12/01",
         "url": "http://www.suidou-miyazaki.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/45-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/45-201-A-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -30489,7 +30489,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.miyazaki.miyazaki.jp/suidou/summary/sewer/393623.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/45-201-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/45-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30511,7 +30511,7 @@ const mhcardGeoJSON = {
         "round": "第24弾",
         "issueDate": "2024/12/20",
         "url": "https://www.city.miyazaki.miyazaki.jp/suidou/summary/sewer/393623.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/45-201-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/45-201-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -30534,7 +30534,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://www.city.kobayashi.lg.jp/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/45-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/45-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30556,7 +30556,7 @@ const mhcardGeoJSON = {
         "round": "第25弾",
         "issueDate": "2025/04/25",
         "url": "https://kobayashi-machi.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/45-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/45-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30578,7 +30578,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "http://www.hyugacity.jp/display.php?slist=0024",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/45-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/45-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30600,7 +30600,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://hyuga.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/45-206-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/45-206-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30622,7 +30622,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "http://www.city.kagoshima.lg.jp/suidou/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/46-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30644,7 +30644,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://www.city.kagoshima.lg.jp/kanshin/shisetsu/kanko/005.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-201-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/46-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30666,7 +30666,7 @@ const mhcardGeoJSON = {
         "round": "第17弾",
         "issueDate": "2022/08/06",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-201-C01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/46-201-C01.jpg",
         "type": "mhcard"
       }
     },
@@ -30688,7 +30688,7 @@ const mhcardGeoJSON = {
         "round": "第20弾",
         "issueDate": "2023/07/28",
         "url": "https://www.city.kanoya.lg.jp/kankou/bunka/kanko/omiyage/kankobussan.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-203-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/46-203-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30710,7 +30710,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "http://makutabi.jp/see/post-1198",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-204-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/46-204-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30732,7 +30732,7 @@ const mhcardGeoJSON = {
         "round": "第23弾",
         "issueDate": "2024/07/26",
         "url": "https://www.city.kagoshima-izumi.lg.jp/cranepark/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-208-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/46-208-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30754,7 +30754,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.city.ibusuki.lg.jp/cocco/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-210-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/46-210-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30776,7 +30776,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://koshiki.satsumasendai.gr.jp/spotlist/39470",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-215-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/46-215-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30798,7 +30798,7 @@ const mhcardGeoJSON = {
         "round": "第11弾",
         "issueDate": "2019/12/14",
         "url": "https://satsumasendai.gr.jp/spotlist/39471/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-215-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/46-215-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30820,7 +30820,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://hiokishi-kankou.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-216-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/46-216-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30842,7 +30842,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "https://www.city-kirishima.jp/soumu/shise/annai/choshaannai/201704kokubu.html#1",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-218-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/46-218-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30864,7 +30864,7 @@ const mhcardGeoJSON = {
         "round": "第14弾",
         "issueDate": "2021/04/25",
         "url": "https://kirishimakankou.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-218-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/46-218-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30886,7 +30886,7 @@ const mhcardGeoJSON = {
         "round": "第22弾",
         "issueDate": "2024/04/26",
         "url": "https://www.city-kirishima.jp/hisyokouhou/kurashi/suido/gesuido",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-218-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/46-218-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30908,7 +30908,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-220-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/46-220-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30930,7 +30930,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://www.city.amami.lg.jp/shosui/kanko/aiaihiroba.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-222-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/46-222-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30952,7 +30952,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.amami.lg.jp/bunka/kyoiku/bunka/hakubutsukan/shokai.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-222-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/46-222-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -30974,7 +30974,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://www.tokunoshima-town.org/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-530-A01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/46-530-A01.jpg",
         "type": "mhcard"
       }
     },
@@ -30996,7 +30996,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://www.okinoerabujima.info/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/46-534-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/46-534-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -31018,7 +31018,7 @@ const mhcardGeoJSON = {
         "round": "第02弾",
         "issueDate": "2016/08/01",
         "url": "https://otic.okinawa/center/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-000-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-000-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -31040,7 +31040,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://oki-park.jp/shurijo/guide/1316",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-000-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-000-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -31062,7 +31062,7 @@ const mhcardGeoJSON = {
         "round": "第08弾",
         "issueDate": "2018/08/11",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-201-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-201-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -31084,7 +31084,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-201-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-201-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -31106,7 +31106,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.city.ginowan.lg.jp/soshiki/kyoiku/1/2/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -31128,7 +31128,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://www.city.ginowan.lg.jp/soshiki/suido/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-205-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-205-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -31150,7 +31150,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": " https://ginowankaihinkouen.jp/facility/gym/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-205-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-205-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -31172,7 +31172,7 @@ const mhcardGeoJSON = {
         "round": "第21弾",
         "issueDate": "2023/12/15",
         "url": "https://www.city.ginowan.lg.jp/soshiki/suido/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-205-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-205-B-01.jpg",
         "type": "mhcard",
         "coordOffset": true
       }
@@ -31195,7 +31195,7 @@ const mhcardGeoJSON = {
         "round": "第06弾",
         "issueDate": "2017/12/09",
         "url": "http://nago-ichiba.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-209-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-209-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -31217,7 +31217,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "https://nagomun.or.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-209-B-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-209-B-01.jpg",
         "type": "mhcard"
       }
     },
@@ -31239,7 +31239,7 @@ const mhcardGeoJSON = {
         "round": "第13弾",
         "issueDate": "2020/12/17",
         "url": "http://www.city.nago.okinawa.jp/soshiki/kankyousuidou/keiei/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-209-C-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-209-C-01.jpg",
         "type": "mhcard"
       }
     },
@@ -31261,7 +31261,7 @@ const mhcardGeoJSON = {
         "round": "第12弾",
         "issueDate": "2020/04/25",
         "url": "",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-211-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-211-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -31283,7 +31283,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.city.uruma.lg.jp/kurashitetsuzuki/jougesuidou/gesuidou/index.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-213-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -31305,7 +31305,7 @@ const mhcardGeoJSON = {
         "round": "第27弾",
         "issueDate": "2025/12/19",
         "url": "https://www.katsuren-jo.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-213-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-213-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -31327,7 +31327,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.city.miyakojima.lg.jp/soshiki/shityo/kankyoueisei/gesuidou/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-214-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -31349,7 +31349,7 @@ const mhcardGeoJSON = {
         "round": "第29弾",
         "issueDate": "2026/07/31",
         "url": "https://www.city.miyakojima.lg.jp/soshiki/kyouiku/syougaigakusyu/miraisouzou/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-214-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-214-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -31371,7 +31371,7 @@ const mhcardGeoJSON = {
         "round": "第26弾",
         "issueDate": "2025/07/25",
         "url": "https://motobufs.jp/tempo/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-308-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-308-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -31393,7 +31393,7 @@ const mhcardGeoJSON = {
         "round": "第18弾",
         "issueDate": "2023/01/28",
         "url": "https://mitinoeki-ginoza.com/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-313-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-313-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -31415,7 +31415,7 @@ const mhcardGeoJSON = {
         "round": "第07弾",
         "issueDate": "2018/04/28",
         "url": "https://chatantourism.com/information-center/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-326-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-326-A-01.jpg",
         "type": "mhcard"
       }
     },
@@ -31437,7 +31437,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "http://www.chatan.jp/seikatsuguide/jogesuido/gesuido/gesui50thanniv/manholecard2021.html",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-326-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-326-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -31459,7 +31459,7 @@ const mhcardGeoJSON = {
         "round": "第16弾",
         "issueDate": "2022/01/15",
         "url": "https://museum.chatan.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-326-B01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-326-B01.jpg",
         "type": "mhcard"
       }
     },
@@ -31481,7 +31481,7 @@ const mhcardGeoJSON = {
         "round": "第05弾",
         "issueDate": "2017/08/01",
         "url": "https://www.nakagusuku-jo.jp/",
-        "cardImgUrl": "http://www.gk-p.jp/wp-content/uploads/mhc/47-328-A-01.jpg",
+        "cardImgUrl": "https://www.gk-p.jp/wp-content/uploads/mhc/47-328-A-01.jpg",
         "type": "mhcard"
       }
     }
