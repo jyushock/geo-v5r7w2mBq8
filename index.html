@@ -401,6 +401,57 @@
         .os-photo.os-photo-wide { width: 171px; }
         /* 城の写真は非同期取得。取得できるまで（できなかった場合も）場所を取らない */
         .os-castle-photo { display: none; }
+        /* 写真がタップで拡大できることを示す目印 */
+        .os-photo { cursor: zoom-in; }
+        .os-photo::after {
+            content: '⤢'; position: absolute; right: 3px; bottom: 3px;
+            width: 18px; height: 18px; border-radius: 4px; background: rgba(0,0,0,0.5);
+            color: #fff; font-size: 11px; line-height: 18px; text-align: center; pointer-events: none;
+        }
+        /* ══ 写真の全画面ビューア ══════════════════════════════════════
+           トラック（出典間の横移動）と内側要素（ズーム／パン）で transform の役割を
+           2階層に分け、出典スワイプ中の変形とズームが混ざらないようにする。
+           ビューポートが user-scalable=no のためブラウザのピンチが効かず、拡大は自前で行う。 */
+        #photo-viewer { position: fixed; inset: 0; z-index: 9000; display: none; touch-action: none; }
+        #photo-viewer.open { display: block; }
+        #pv-backdrop { position: absolute; inset: 0; background: #000; }
+        #pv-track { position: absolute; inset: 0; display: flex; }
+        #pv-track .pv-pane { width: 100%; height: 100%; flex-shrink: 0;
+                             display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        #pv-track .pv-inner { width: 100%; height: 100%; display: flex;
+                              align-items: center; justify-content: center; transform-origin: center center; }
+        /* 等倍を超えて引き伸ばさない。低解像度の取得元（蓋のカード 232×320）をぼかさないため。 */
+        #pv-track img { max-width: 100%; max-height: 100%; object-fit: contain; display: block;
+                        user-select: none; -webkit-user-drag: none; }
+        #pv-close {
+            position: absolute; top: 10px; right: 10px; z-index: 5;
+            width: 34px; height: 34px; border-radius: 50%; background: rgba(0,0,0,0.5);
+            color: #fff; border: none; font-size: 20px; line-height: 1; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; touch-action: manipulation;
+        }
+        #pv-scale {
+            position: absolute; top: 13px; left: 12px; z-index: 5; font-size: 11px; color: #fff;
+            background: rgba(0,0,0,0.5); padding: 3px 8px; border-radius: 10px; pointer-events: none;
+        }
+        #pv-info {
+            position: absolute; left: 0; right: 0; bottom: 0; z-index: 5; color: #fff;
+            padding: 34px 14px calc(14px + env(safe-area-inset-bottom, 0px));
+            background: linear-gradient(to top, rgba(0,0,0,0.82), rgba(0,0,0,0));
+        }
+        #pv-title { font-size: 14px; font-weight: bold; }
+        #pv-sub { font-size: 11px; opacity: 0.85; margin-top: 3px; }
+        #pv-acts { display: flex; gap: 8px; margin-top: 10px; }
+        #pv-acts a { flex: 1; text-align: center; font-size: 11px; padding: 9px 0; border-radius: 6px;
+                     background: rgba(255,255,255,0.16); color: #fff; text-decoration: none; }
+        #pv-dots {
+            position: absolute; left: 0; right: 0; z-index: 5; display: flex; gap: 6px; justify-content: center;
+            bottom: calc(92px + env(safe-area-inset-bottom, 0px)); pointer-events: none;
+        }
+        #pv-dots i { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.35); }
+        #pv-dots i.on { background: #fff; }
+        /* 拡大中・UI非表示中は帯とドットを消して写真を遮らない */
+        .pv-ui { transition: opacity 0.18s ease; }
+        .pv-ui.pv-hidden { opacity: 0; pointer-events: none; }
         .os-line { font-size: 11px; color: #666; line-height: 1.45; }
         .os-line + .os-line { margin-top: 1px; }
         .os-line .os-k { color: #aaa; }
@@ -1093,6 +1144,21 @@
         <button id="obj-sheet-close" onclick="closeObjSheet()">×</button>
     </div>
     <div id="obj-sheet-body"></div>
+</div>
+
+<!-- 写真タップで開く全画面ビューア。
+     情報シートの外に置き、z-index を上に取ることでシートの下スワイプ判定に触れさせない。 -->
+<div id="photo-viewer" aria-hidden="true">
+    <div id="pv-backdrop"></div>
+    <div id="pv-track"></div>
+    <button id="pv-close" onclick="closePhotoViewer()" aria-label="写真を閉じる">×</button>
+    <div id="pv-scale"></div>
+    <div id="pv-info" class="pv-ui">
+        <div id="pv-title"></div>
+        <div id="pv-sub"></div>
+        <div id="pv-acts"><a id="pv-open" target="_blank" rel="noopener">元画像を開く</a></div>
+    </div>
+    <div id="pv-dots" class="pv-ui"></div>
 </div>
 
 <script>
@@ -1799,60 +1865,81 @@ function checkImageLoads(url, timeoutMs = 8000) {
     });
 }
 
+// 攻城団: URLから城IDを抽出してパノラマ画像URLを構築
+// HEADでの事前存在確認は廃止し、画像GET自体を存在確認に使う
+// (攻城団へのリクエストを成功時2回→1回に削減。GETした画像は
+//  Cache-Control: max-age=7日でHTTPキャッシュされ、表示時に再利用される)。
+// 存在判定はfetchのステータスで行う。<img>のonerrorは使えない:
+// このサーバは404応答の本文にもJPEG(エラー画像)を返し、Chromeは
+// その場合loadイベントを発火するため誤って表示してしまう(実測確認済み)。
+// CORSはAccess-Control-Allow-Origin:*を確認済み。
+async function castleImgFromKojodan(kojodanUrl) {
+    if (!kojodanUrl) return null;
+    const m = kojodanUrl.match(/kojodan\.jp\/castle\/(\d+)/);
+    if (!m) return null;
+    const imgUrl = `https://kojodan.com/pic/panorama/${m[1]}.jpg`;
+    try {
+        const res = await fetch(imgUrl);
+        if (res.ok) {
+            await res.blob(); // ダウンロードを完了させHTTPキャッシュに乗せる
+            return imgUrl;
+        }
+    } catch (_) {}
+    return null;
+}
+
+// 城郭放浪記: 個別ページURL(shiroHbUrl)配下の indexb.jpg が写真ページの規約的な命名
+// (実測確認済み。城郭放浪記は個人運営サイトのため、タップ時1回のみのアクセスに留める)
+async function castleImgFromShiroHb(shiroHbUrl) {
+    if (!shiroHbUrl) return null;
+    const imgUrl = `${shiroHbUrl}indexb.jpg`;
+    return (await checkImageLoads(imgUrl)) ? imgUrl : null;
+}
+
+// Wikipedia: ja.wikipedia.org の pageimages API（CORS許可: origin=*）
+// 公式ドキュメント: https://www.mediawiki.org/wiki/Extension:PageImages
+// size はサムネイルの最大幅。シート表示は400、拡大表示は CASTLE_ZOOM_THUMB を使う。
+async function castleImgFromWikipedia(castleName, size) {
+    try {
+        const apiUrl = `https://ja.wikipedia.org/w/api.php?action=query&prop=pageimages&piprop=thumbnail&pithumbsize=${size}&titles=${encodeURIComponent(castleName)}&format=json&origin=*`;
+        const res = await fetch(apiUrl);
+        const data = await res.json();
+        const page = Object.values(data.query.pages)[0];
+        if (page && page.thumbnail && page.thumbnail.source) return page.thumbnail.source;
+    } catch (_) {}
+    return null;
+}
+
 async function fetchCastleImage(castleName, kojodanUrl, shiroHbUrl) {
     const cacheKey = castleName;
     if (castleImgCache[cacheKey] !== undefined) return castleImgCache[cacheKey];
+    // 先に見つかった時点で打ち切る（攻城団・城郭放浪記へのアクセスを増やさないため）
+    let url = await castleImgFromKojodan(kojodanUrl);
+    if (!url) url = await castleImgFromShiroHb(shiroHbUrl);
+    if (!url) url = await castleImgFromWikipedia(castleName, 400);
+    castleImgCache[cacheKey] = url;   // どこからも取得できなければ null
+    return url;
+}
 
-    // 攻城団: URLから城IDを抽出してパノラマ画像URLを構築
-    if (kojodanUrl) {
-        const m = kojodanUrl.match(/kojodan\.jp\/castle\/(\d+)/);
-        if (m) {
-            const imgUrl = `https://kojodan.com/pic/panorama/${m[1]}.jpg`;
-            // HEADでの事前存在確認は廃止し、画像GET自体を存在確認に使う
-            // (攻城団へのリクエストを成功時2回→1回に削減。GETした画像は
-            //  Cache-Control: max-age=7日でHTTPキャッシュされ、表示時に再利用される)。
-            // 存在判定はfetchのステータスで行う。<img>のonerrorは使えない:
-            // このサーバは404応答の本文にもJPEG(エラー画像)を返し、Chromeは
-            // その場合loadイベントを発火するため誤って表示してしまう(実測確認済み)。
-            // CORSはAccess-Control-Allow-Origin:*を確認済み。
-            try {
-                const res = await fetch(imgUrl);
-                if (res.ok) {
-                    await res.blob(); // ダウンロードを完了させHTTPキャッシュに乗せる
-                    castleImgCache[cacheKey] = imgUrl;
-                    return imgUrl;
-                }
-            } catch (_) {}
-        }
-    }
-
-    // 城郭放浪記: 個別ページURL(shiroHbUrl)配下の indexb.jpg が写真ページの規約的な命名
-    // (実測確認済み。城郭放浪記は個人運営サイトのため、タップ時1回のみのアクセスに留める)
-    if (shiroHbUrl) {
-        const imgUrl = `${shiroHbUrl}indexb.jpg`;
-        if (await checkImageLoads(imgUrl)) {
-            castleImgCache[cacheKey] = imgUrl;
-            return imgUrl;
-        }
-    }
-
-    // Wikipedia: ja.wikipedia.org の pageimages API（CORS許可: origin=*）
-    // 公式ドキュメント: https://www.mediawiki.org/wiki/Extension:PageImages
-    try {
-        const apiUrl = `https://ja.wikipedia.org/w/api.php?action=query&prop=pageimages&piprop=thumbnail&pithumbsize=400&titles=${encodeURIComponent(castleName)}&format=json&origin=*`;
-        const res = await fetch(apiUrl);
-        const data = await res.json();
-        const pages = data.query.pages;
-        const page = Object.values(pages)[0];
-        if (page && page.thumbnail && page.thumbnail.source) {
-            castleImgCache[cacheKey] = page.thumbnail.source;
-            return page.thumbnail.source;
-        }
-    } catch (_) {}
-
-    // どちらも取得できなかった場合
-    castleImgCache[cacheKey] = null;
-    return null;
+// 拡大表示用に、シート表示では打ち切っていた残りの取得元も調べて配列にする。
+// 写真を拡大したときだけ呼ぶので、通常の閲覧でアクセスが増えることはない。
+// Wikipediaはシート用の400pxではなく拡大に耐える幅で取り直す
+// (pithumbsize=1200 で 1200×800 が返ることを実測確認済み。原寸は4200×2800)。
+const CASTLE_ZOOM_THUMB = 1200;
+const castleImgAllCache = {};
+async function fetchCastleImagesAll(castleName, kojodanUrl, shiroHbUrl) {
+    if (castleImgAllCache[castleName]) return castleImgAllCache[castleName];
+    const [ko, sh, wp] = await Promise.all([
+        castleImgFromKojodan(kojodanUrl),
+        castleImgFromShiroHb(shiroHbUrl),
+        castleImgFromWikipedia(castleName, CASTLE_ZOOM_THUMB),
+    ]);
+    const list = [];
+    if (ko) list.push({ url: ko, label: '攻城団' });
+    if (sh) list.push({ url: sh, label: '城郭放浪記' });
+    if (wp) list.push({ url: wp, label: 'Wikipedia' });
+    castleImgAllCache[castleName] = list;
+    return list;
 }
 
 // --- Wikipedia記事の存在確認（キャッシュ付き） ---
@@ -2255,6 +2342,7 @@ async function injectCastleImage(castleName, kojodanUrl, shiroHbUrl) {
 
 // ── シートの開閉と、選択中オブジェクトが隠れないための地図調整 ─────────
 let objSheetLngLat = null;   // 現在シートを開いているオブジェクトの座標
+let objSheetCtx = null;      // 写真ビューアが「何の写真か」を出すための対象情報
 
 // 実際に2行を超えて省略されている行にのみ▼マークを付ける
 function applyClampMarkers() {
@@ -2287,6 +2375,7 @@ function openObjSheet(type, label, p, lng, lat) {
     sheet.style.transition = '';
     sheet.style.bottom = '0';
     objSheetLngLat = [lng, lat];
+    objSheetCtx = { type, label, p };
     setSelectedObject([lng, lat], objRingColor(type, p));
     applyClampMarkers();
     // 写真は読み込み完了で高さが確定する（カード系は比率なりに伸びる）ため、その時点で寄せ直す
@@ -2306,7 +2395,105 @@ function closeObjSheet() {
     sheet.style.transition = '';
     sheet.style.bottom = '-100%';
     objSheetLngLat = null;
+    objSheetCtx = null;
+    closePhotoViewer();   // シートが閉じたら写真ビューアも残さない
     clearSelectedObject();
+}
+
+// ══ 写真の全画面ビューア ═══════════════════════════════════════════
+/* 情報帯・ピンチズーム／パン・出典切替を1つにまとめたもの。
+   3つとも1本指ドラッグを使うため、次の取り決めで衝突を避ける。
+     ・等倍のとき  … 横ドラッグで出典切替（縦ドラッグは何もしない）
+     ・拡大中のとき … ドラッグはパン。出典切替は無効
+     ・ピンチは2本指なのでどちらとも衝突しない
+   拡大すると情報帯とドットは自動で隠す（写真を遮らないため）。
+   1本指タップでUIの表示/非表示を手動で切り替えられる。
+   出典を切り替えたときは倍率とパン位置をリセットする。これをしないと
+   横長パノラマの倍率が縦長の写真に持ち越されて破綻する。
+   閉じるのは×ボタン。「どこでもタップで閉じる」はダブルタップ拡大・パン・
+   UIトグルと競合するため採らない。 */
+const PV_SLOP = 8;            // 縦横どちらに倒れたかを判定する移動量(px)
+const PV_SWITCH_DIST = 50;    // 出典を切り替える横移動量(px)
+const PV_MAX_SCALE = 6;
+let pvSources = [];           // [{url, label}]
+let pvIdx = 0, pvScale = 1, pvX = 0, pvY = 0, pvUI = true;
+let pvPtr = new Map(), pvPinchDist = 0, pvPinchStart = 1, pvPanFrom = null, pvAxis = null, pvDragDX = 0;
+
+function isPhotoViewerOpen() {
+    return document.getElementById('photo-viewer').classList.contains('open');
+}
+
+function openPhotoViewer(sources, startUrl) {
+    pvSources = sources.filter(s => s && s.url);
+    if (!pvSources.length) return;
+    const at = pvSources.findIndex(s => s.url === startUrl);
+    pvIdx = at >= 0 ? at : 0;
+    pvScale = 1; pvX = 0; pvY = 0; pvUI = true;
+    pvPtr.clear(); pvPanFrom = null; pvAxis = null; pvDragDX = 0;
+
+    document.getElementById('pv-track').innerHTML = pvSources.map(s =>
+        `<div class="pv-pane"><div class="pv-inner"><img src="${s.url}" alt=""></div></div>`).join('');
+    document.getElementById('pv-dots').innerHTML =
+        pvSources.length > 1 ? pvSources.map(() => '<i></i>').join('') : '';
+    const v = document.getElementById('photo-viewer');
+    v.classList.add('open');
+    v.setAttribute('aria-hidden', 'false');
+    pvRender();
+}
+
+function closePhotoViewer() {
+    const v = document.getElementById('photo-viewer');
+    if (!v.classList.contains('open')) return;
+    v.classList.remove('open');
+    v.setAttribute('aria-hidden', 'true');
+    document.getElementById('pv-track').innerHTML = '';   // 画像デコードを抱えたままにしない
+    pvSources = [];
+    pvPtr.clear();
+}
+
+function pvRender(animate) {
+    const track = document.getElementById('pv-track');
+    track.style.transition = animate ? 'transform 0.26s ease' : '';
+    track.style.transform = `translateX(calc(${-pvIdx * 100}% + ${pvDragDX}px))`;
+    const inner = track.children[pvIdx] && track.children[pvIdx].querySelector('.pv-inner');
+    if (inner) {
+        inner.style.transition = animate ? 'transform 0.22s ease' : '';
+        inner.style.transform = `translate(${pvX}px, ${pvY}px) scale(${pvScale})`;
+    }
+    // 表示していないペインの倍率は常に戻しておく（切替時に持ち越さない）
+    [...track.children].forEach((pane, i) => {
+        if (i === pvIdx) return;
+        const el = pane.querySelector('.pv-inner');
+        if (el) { el.style.transition = ''; el.style.transform = ''; }
+    });
+    [...document.getElementById('pv-dots').children]
+        .forEach((d, i) => d.classList.toggle('on', i === pvIdx));
+
+    const src = pvSources[pvIdx] || {};
+    const ctx = objSheetCtx || {};
+    document.getElementById('pv-title').textContent = ctx.label || '';
+    // 「何の写真か」と「どの取得元か」を1か所にまとめる
+    const sub = [(ctx.p && ctx.p.address) || '', src.label || ''].filter(Boolean).join('　/　');
+    document.getElementById('pv-sub').textContent = sub;
+    document.getElementById('pv-open').href = src.url || '#';
+
+    const img = inner && inner.querySelector('img');
+    const nw = img && img.naturalWidth, nh = img && img.naturalHeight;
+    const info = document.getElementById('pv-scale');
+    if (nw && nh) {
+        // 等倍比 = 元画像1pxが画面何pxで描かれているか。1.0を超えると引き伸ばし。
+        const fit = Math.min(window.innerWidth / nw, window.innerHeight / nh);
+        const eff = Math.min(1, fit) * pvScale;
+        info.textContent = `${eff.toFixed(2)}倍`
+            + (eff > 1.05 ? '（拡大）' : '')
+            + (pvSources.length > 1 ? `　${pvIdx + 1}/${pvSources.length}` : '');
+    } else {
+        info.textContent = pvSources.length > 1 ? `${pvIdx + 1}/${pvSources.length}` : '';
+    }
+
+    const hide = !pvUI || pvScale > 1.02;
+    document.getElementById('pv-info').classList.toggle('pv-hidden', hide);
+    document.getElementById('pv-dots').classList.toggle('pv-hidden', hide || pvSources.length <= 1);
 }
 
 function isObjSheetOpen() {
@@ -3041,6 +3228,120 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('obj-sheet-header'),
         closeObjSheet
     );
+
+    // 情報シートの写真タップで全画面ビューアを開く。
+    // 城の写真は injectCastleImage で後から差し込まれるので、委譲で拾う。
+    document.getElementById('obj-sheet-body').addEventListener('click', async (e) => {
+        const img = e.target.closest('.os-photo img');
+        if (!img) return;
+        const ctx = objSheetCtx || {};
+        // 城だけは取得元が複数ある。拡大したときに残りも取りに行き、左右スワイプで見比べられる。
+        if (ctx.type === 'castle' && ctx.p) {
+            const name = ctx.p.name || ctx.label || '';
+            const cached = castleImgAllCache[name];
+            if (cached) { openPhotoViewer(cached, img.src); return; }
+            openPhotoViewer([{ url: img.src, label: '' }], img.src);   // まず表示中の1枚で開く
+            const all = await fetchCastleImagesAll(name, ctx.p.url, ctx.p.shiroHbUrl);
+            // 取得を待つ間に閉じられていたら差し替えない
+            if (all.length && isPhotoViewerOpen()) openPhotoViewer(all, img.src);
+            return;
+        }
+        openPhotoViewer([{ url: img.src, label: '' }], img.src);
+    });
+
+    // ── 写真ビューアの操作（案G: 等倍=出典切替 / 拡大中=パン / 2本指=ピンチ） ──
+    (function () {
+        const viewer = document.getElementById('photo-viewer');
+        const isUiTarget = (t) => t.closest('#pv-info') || t.closest('#pv-close');
+
+        viewer.addEventListener('pointerdown', (e) => {
+            if (isUiTarget(e.target)) return;
+            pvPtr.set(e.pointerId, { x0: e.clientX, y0: e.clientY, x: e.clientX, y: e.clientY });
+            try { viewer.setPointerCapture(e.pointerId); } catch (_) {}
+            if (pvPtr.size === 2) {
+                const [a, b] = [...pvPtr.values()];
+                pvPinchDist = Math.hypot(a.x - b.x, a.y - b.y);
+                pvPinchStart = pvScale;
+                pvAxis = 'pinch';
+            } else if (pvPtr.size === 1) {
+                pvAxis = null;   // 縦横どちらに倒れたかは最初の移動で決める
+                pvPanFrom = { x: e.clientX - pvX, y: e.clientY - pvY };
+            }
+        });
+
+        viewer.addEventListener('pointermove', (e) => {
+            const p = pvPtr.get(e.pointerId);
+            if (!p) return;
+            p.x = e.clientX; p.y = e.clientY;
+            if (pvPtr.size === 2) {
+                const [a, b] = [...pvPtr.values()];
+                const d = Math.hypot(a.x - b.x, a.y - b.y);
+                pvScale = Math.min(PV_MAX_SCALE, Math.max(1, pvPinchStart * (d / (pvPinchDist || 1))));
+                if (pvScale <= 1.001) { pvX = 0; pvY = 0; }
+                pvRender();
+                return;
+            }
+            const dx = e.clientX - p.x0, dy = e.clientY - p.y0;
+            if (pvScale > 1.02) {
+                pvX = e.clientX - pvPanFrom.x;
+                pvY = e.clientY - pvPanFrom.y;
+                pvRender();
+            } else {
+                if (!pvAxis && (Math.abs(dx) > PV_SLOP || Math.abs(dy) > PV_SLOP)) {
+                    pvAxis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+                }
+                if (pvAxis === 'x' && pvSources.length > 1) { pvDragDX = dx; pvRender(); }
+            }
+        });
+
+        const endPointer = (e) => {
+            const p = pvPtr.get(e.pointerId);
+            if (!p) return;
+            const dx = e.clientX - p.x0, dy = e.clientY - p.y0;
+            pvPtr.delete(e.pointerId);
+            if (pvPtr.size > 0) return;
+
+            if (pvAxis === 'x') {
+                if (dx < -PV_SWITCH_DIST && pvIdx < pvSources.length - 1) { pvIdx++; pvScale = 1; pvX = 0; pvY = 0; }
+                else if (dx > PV_SWITCH_DIST && pvIdx > 0) { pvIdx--; pvScale = 1; pvX = 0; pvY = 0; }
+                pvDragDX = 0; pvAxis = null; pvPanFrom = null;
+                pvRender(true);
+                return;
+            }
+            if (pvAxis === 'pinch') { pvAxis = null; pvPanFrom = null; pvRender(); return; }
+            // 動いていなければタップ扱い → UIの表示/非表示をトグル
+            if (Math.abs(dx) < 6 && Math.abs(dy) < 6) pvUI = !pvUI;
+            pvAxis = null; pvPanFrom = null;
+            pvRender();
+        };
+        viewer.addEventListener('pointerup', endPointer);
+        viewer.addEventListener('pointercancel', endPointer);
+
+        // ダブルタップで2.5倍 ⇄ 等倍
+        let lastTap = 0;
+        viewer.addEventListener('click', (e) => {
+            if (isUiTarget(e.target)) return;
+            const now = Date.now();
+            if (now - lastTap < 320) {
+                if (pvScale > 1) { pvScale = 1; pvX = 0; pvY = 0; } else { pvScale = 2.5; }
+                pvRender(true);
+            }
+            lastTap = now;
+        });
+
+        // PCでの確認用。実機はピンチを使う
+        viewer.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            pvScale = Math.min(PV_MAX_SCALE, Math.max(1, pvScale * (e.deltaY < 0 ? 1.15 : 1 / 1.15)));
+            if (pvScale <= 1.001) { pvX = 0; pvY = 0; }
+            pvRender();
+        }, { passive: false });
+    })();
+
+    // PCでの確認用に Esc でも閉じられるようにする（実機は×ボタン）
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isPhotoViewerOpen()) closePhotoViewer();
+    });
 
     // ══════════════════════════════════════════════════════════════
     //  検索機能
