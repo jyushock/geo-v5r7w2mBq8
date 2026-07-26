@@ -2296,8 +2296,12 @@ function isObjSheetOpen() {
    キャプチャ段階で握りつぶす（カテゴリ項目やリンクの誤発火防止）。
    抑止フラグは次のジェスチャ開始(down)で必ず落とすため、時間で解除する必要がなく、
    無関係な後続タップを巻き込まない。 */
+/* 感度の調整はこの2定数だけで行う。
+   SWIPE_SLOP を下げるとドラッグ開始が早くなるが、本文最上部での軽い引き下げを
+   スクロールと誤認しにくくなる代わりに、意図しないドラッグ開始が増える。
+   SWIPE_CLOSE_DIST を下げると少ないスワイプ量で閉じる。 */
 const SWIPE_SLOP = 8;         // タップ／スクロールとドラッグを分ける移動量(px)
-const SWIPE_CLOSE_DIST = 60;  // 下に振り切ったと判定する移動量(px)
+const SWIPE_CLOSE_DIST = 30;  // 下に振り切ったと判定する移動量(px)
 
 function enableSheetSwipeClose(panel, headerEl, onClose, blockSelector) {
     let startX = 0, startY = 0;
