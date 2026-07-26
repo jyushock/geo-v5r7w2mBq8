@@ -880,7 +880,9 @@
 <div id="bottom-bar">
     <div id="search-container">
         <div id="search-box">
-            <span id="search-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"/><line x1="14.24" y1="14.24" x2="20" y2="20"/></svg></span>
+            <!-- 虫眼鏡: 枠20px・絵柄をviewBox一杯(ストローク込み1〜23)に取り、
+                 隣の現在地アイコン(枠20px/実効18.33px/線幅1.67px)と実寸を揃える -->
+            <span id="search-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9.5" cy="9.5" r="7.5"/><line x1="14.8" y1="14.8" x2="22" y2="22"/></svg></span>
             <input id="search-input" type="text" autocomplete="off" />
             <span id="search-spinner" style="display:none;width:16px;height:16px;border:2px solid #ddd;border-top-color:#4285F4;border-radius:50%;animation:spin 0.6s linear infinite;flex-shrink:0;"></span>
             <button id="search-clear">×</button>
