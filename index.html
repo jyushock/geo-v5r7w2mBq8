@@ -3510,6 +3510,9 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('search-results').style.display = 'block';
     }
 
+    // 検索結果・周辺検索結果からオブジェクトへ飛ぶときの最低ズーム
+    const SEARCH_RESULT_MIN_ZOOM = 16;
+
     function onResultClick(item) {
         if (trackingMode > 0) {
             trackingMode = 0;
@@ -3518,7 +3521,18 @@ map.on('zoomend', () => { isZooming = false; });
         }
         clearSearch();
         histSetPending(item.label, 'search');
-        map.easeTo({ center: item.coords, bearing: 0, pitch: 0, duration: 550, essential: true });
+        // オブジェクトを選んだときは、対象を判別できるところまで寄る。
+        // ズームアウトしたまま移動すると clusterMaxZoom:13 によりクラスタに畳まれ、
+        // 選択リングを出しても対象が見えない。
+        // 16 の根拠(実データ実測): z14でクラスタは解けるが、最も密集する上位5%の
+        // マンホールは最近傍が z14=6px / z16=24px。アイコン径28pxに対しz16でほぼ分離でき、
+        // 中央値では2,000px以上離れる。z17以上まで寄せると周囲の街並みが読み取れなくなる。
+        // 既にそれより拡大して見ている場合は、その倍率を保つ。
+        // 地名(place)は市区町村・町名の指し示しなので寄せすぎないよう対象外にする。
+        const zoom = item.type !== 'place'
+            ? Math.max(map.getZoom(), SEARCH_RESULT_MIN_ZOOM)
+            : map.getZoom();
+        map.easeTo({ center: item.coords, zoom, bearing: 0, pitch: 0, duration: 550, essential: true });
         if (item.type !== 'place') {
             setTimeout(() => showSheetForItem(item), 300);
         }
