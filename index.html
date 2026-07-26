@@ -423,16 +423,6 @@
         /* 等倍を超えて引き伸ばさない。低解像度の取得元（蓋のカード 232×320）をぼかさないため。 */
         #pv-track img { max-width: 100%; max-height: 100%; object-fit: contain; display: block;
                         user-select: none; -webkit-user-drag: none; }
-        #pv-close {
-            position: absolute; top: 10px; right: 10px; z-index: 5;
-            width: 34px; height: 34px; border-radius: 50%; background: rgba(0,0,0,0.5);
-            color: #fff; border: none; font-size: 20px; line-height: 1; cursor: pointer;
-            display: flex; align-items: center; justify-content: center; touch-action: manipulation;
-        }
-        #pv-scale {
-            position: absolute; top: 13px; left: 12px; z-index: 5; font-size: 11px; color: #fff;
-            background: rgba(0,0,0,0.5); padding: 3px 8px; border-radius: 10px; pointer-events: none;
-        }
         #pv-info {
             position: absolute; left: 0; right: 0; bottom: 0; z-index: 5; color: #fff;
             padding: 34px 14px calc(14px + env(safe-area-inset-bottom, 0px));
@@ -441,8 +431,11 @@
         #pv-title { font-size: 14px; font-weight: bold; }
         #pv-sub { font-size: 11px; opacity: 0.85; margin-top: 3px; }
         #pv-acts { display: flex; gap: 8px; margin-top: 10px; }
-        #pv-acts a { flex: 1; text-align: center; font-size: 11px; padding: 9px 0; border-radius: 6px;
-                     background: rgba(255,255,255,0.16); color: #fff; text-decoration: none; }
+        #pv-close {
+            flex: 1; text-align: center; font-size: 12px; padding: 10px 0; border-radius: 6px;
+            background: rgba(255,255,255,0.16); color: #fff; border: none; font-family: inherit;
+            cursor: pointer; touch-action: manipulation;
+        }
         #pv-dots {
             position: absolute; left: 0; right: 0; z-index: 5; display: flex; gap: 6px; justify-content: center;
             bottom: calc(92px + env(safe-area-inset-bottom, 0px)); pointer-events: none;
@@ -1145,12 +1138,10 @@
 <div id="photo-viewer" aria-hidden="true">
     <div id="pv-backdrop"></div>
     <div id="pv-track"></div>
-    <button id="pv-close" onclick="closePhotoViewer()" aria-label="写真を閉じる">×</button>
-    <div id="pv-scale"></div>
     <div id="pv-info" class="pv-ui">
         <div id="pv-title"></div>
         <div id="pv-sub"></div>
-        <div id="pv-acts"><a id="pv-open" target="_blank" rel="noopener">元画像を開く</a></div>
+        <div id="pv-acts"><button id="pv-close" onclick="closePhotoViewer()">閉じる</button></div>
     </div>
     <div id="pv-dots" class="pv-ui"></div>
 </div>
@@ -2404,17 +2395,18 @@ function closeObjSheet() {
      ・等倍のとき  … 横ドラッグで出典切替（縦ドラッグは何もしない）
      ・拡大中のとき … ドラッグはパン。出典切替は無効
      ・ピンチは2本指なのでどちらとも衝突しない
-   拡大すると情報帯とドットは自動で隠す（写真を遮らないため）。
-   1本指タップでUIの表示/非表示を手動で切り替えられる。
+   拡大に入った瞬間に情報帯とドットを畳む（写真を遮らないため）。ただし畳んだ後も
+   1本指タップで出せる。閉じるボタンは情報帯の中にあるので、拡大中に出せないと
+   閉じられなくなるため。等倍に戻した瞬間は自動で出す。
    出典を切り替えたときは倍率とパン位置をリセットする。これをしないと
    横長パノラマの倍率が縦長の写真に持ち越されて破綻する。
-   閉じるのは×ボタン。「どこでもタップで閉じる」はダブルタップ拡大・パン・
-   UIトグルと競合するため採らない。 */
+   閉じるのは情報帯の「閉じる」ボタン。「どこでもタップで閉じる」はダブルタップ拡大・
+   パン・UIトグルと競合するため採らない。 */
 const PV_SLOP = 8;            // 縦横どちらに倒れたかを判定する移動量(px)
 const PV_SWITCH_DIST = 50;    // 出典を切り替える横移動量(px)
 const PV_MAX_SCALE = 6;
 let pvSources = [];           // [{url, label}]
-let pvIdx = 0, pvScale = 1, pvX = 0, pvY = 0, pvUI = true;
+let pvIdx = 0, pvScale = 1, pvX = 0, pvY = 0, pvUI = true, pvZoomed = false;
 let pvPtr = new Map(), pvPinchDist = 0, pvPinchStart = 1, pvPanFrom = null, pvAxis = null, pvDragDX = 0;
 
 function isPhotoViewerOpen() {
@@ -2426,7 +2418,7 @@ function openPhotoViewer(sources, startUrl) {
     if (!pvSources.length) return;
     const at = pvSources.findIndex(s => s.url === startUrl);
     pvIdx = at >= 0 ? at : 0;
-    pvScale = 1; pvX = 0; pvY = 0; pvUI = true;
+    pvScale = 1; pvX = 0; pvY = 0; pvUI = true; pvZoomed = false;
     pvPtr.clear(); pvPanFrom = null; pvAxis = null; pvDragDX = 0;
 
     document.getElementById('pv-track').innerHTML = pvSources.map(s =>
@@ -2473,25 +2465,15 @@ function pvRender(animate) {
     // 「何の写真か」と「どの取得元か」を1か所にまとめる
     const sub = [(ctx.p && ctx.p.address) || '', src.label || ''].filter(Boolean).join('　/　');
     document.getElementById('pv-sub').textContent = sub;
-    document.getElementById('pv-open').href = src.url || '#';
 
-    const img = inner && inner.querySelector('img');
-    const nw = img && img.naturalWidth, nh = img && img.naturalHeight;
-    const info = document.getElementById('pv-scale');
-    if (nw && nh) {
-        // 等倍比 = 元画像1pxが画面何pxで描かれているか。1.0を超えると引き伸ばし。
-        const fit = Math.min(window.innerWidth / nw, window.innerHeight / nh);
-        const eff = Math.min(1, fit) * pvScale;
-        info.textContent = `${eff.toFixed(2)}倍`
-            + (eff > 1.05 ? '（拡大）' : '')
-            + (pvSources.length > 1 ? `　${pvIdx + 1}/${pvSources.length}` : '');
-    } else {
-        info.textContent = pvSources.length > 1 ? `${pvIdx + 1}/${pvSources.length}` : '';
-    }
+    // 拡大に入った瞬間だけUIを畳み、等倍に戻った瞬間だけ出す。
+    // 拡大中も「隠れたまま固定」にはしない（閉じるボタンが情報帯の中にあるため、
+    // 拡大したまま閉じられなくなってしまう）。畳んだ後でもタップで出せる。
+    const zoomed = pvScale > 1.02;
+    if (zoomed !== pvZoomed) { pvZoomed = zoomed; pvUI = !zoomed; }
 
-    const hide = !pvUI || pvScale > 1.02;
-    document.getElementById('pv-info').classList.toggle('pv-hidden', hide);
-    document.getElementById('pv-dots').classList.toggle('pv-hidden', hide || pvSources.length <= 1);
+    document.getElementById('pv-info').classList.toggle('pv-hidden', !pvUI);
+    document.getElementById('pv-dots').classList.toggle('pv-hidden', !pvUI || pvSources.length <= 1);
 }
 
 function isObjSheetOpen() {
@@ -3250,7 +3232,8 @@ map.on('zoomend', () => { isZooming = false; });
     // ── 写真ビューアの操作（案G: 等倍=出典切替 / 拡大中=パン / 2本指=ピンチ） ──
     (function () {
         const viewer = document.getElementById('photo-viewer');
-        const isUiTarget = (t) => t.closest('#pv-info') || t.closest('#pv-close');
+        // 情報帯（閉じるボタンを含む）の上で始まった操作はジェスチャとして扱わない
+        const isUiTarget = (t) => t.closest('#pv-info');
 
         viewer.addEventListener('pointerdown', (e) => {
             if (isUiTarget(e.target)) return;
