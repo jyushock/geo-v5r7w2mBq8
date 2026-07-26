@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>情報シートの写真タップ拡大 案A〜F</title>
+<title>情報シートの写真タップ拡大 案A〜G</title>
 <style>
   body { font-family: sans-serif; background: #ececec; padding: 18px; margin: 0; color: #222; }
   h1 { font-size: 16px; margin: 0 0 6px; }
@@ -104,16 +104,31 @@
   .side ul { margin: 4px 0 12px; padding-left: 18px; }
   .side .ok { color: #0a7a2f; font-weight: bold; }
   .side .ng { color: #b00; font-weight: bold; }
+
+  /* ── 案G: E+C+F 統合 ── */
+  /* トラックはソース間の横移動、その中の .inner が現在ペインのズーム／パンを担う。
+     役割を2階層に分けることで、横スワイプ中の transform とズームの transform が混ざらない。 */
+  #gtrack { position: absolute; inset: 0; display: flex; }
+  #gtrack .gpane { width: 100%; height: 100%; flex-shrink: 0; display: flex; align-items: center;
+                   justify-content: center; overflow: hidden; }
+  #gtrack .inner { display: flex; align-items: center; justify-content: center;
+                   width: 100%; height: 100%; transform-origin: center center; }
+  #gtrack img { max-width: 100%; max-height: 100%; object-fit: contain; display: block;
+                user-select: none; -webkit-user-drag: none; }
+  .viewer.upscale #gtrack img { width: 100%; height: 100%; max-width: none; max-height: none; }
+  /* 拡大中・UI非表示中は帯とドットを消す（写真を遮らない） */
+  .gui { transition: opacity .18s ease; }
+  .gui.hidden { opacity: 0; pointer-events: none; }
 </style>
 </head>
 <body>
 
-<h1>情報シートの写真タップ拡大 — 案A〜F</h1>
+<h1>情報シートの写真タップ拡大 — 案A〜G</h1>
 <p class="lead">
   写真は<b>すべて既存の表示用URLをそのまま使う</b>ため、新たなAPI発行もデータ追加も不要。
   画像はシート表示時点でHTTPキャッシュに載っているので、拡大時の再ダウンロードも基本発生しない。<br>
   下の画像切替で<b>解像度の異なる実データ</b>を差し替えられる。<code>倍率</code>表示が 1.0 を超えると元画像より引き伸ばしている＝粗くなる。<br>
-  <b>拡大方針</b>は案A〜Fすべてに共通する別軸の判断。
+  <b>拡大方針</b>は案A〜Gすべてに共通する別軸の判断。
   「等倍まで」は <code>max-width/max-height:100%</code> で頭打ちにするため小さい画像は小さいまま出るが劣化しない。
   「枠いっぱい」は <code>width/height:100%</code> で必ず画面を埋めるが、
   <b>蓋のカード(232×320)だけは1.62倍に引き伸ばされてぼやける</b>。
@@ -152,6 +167,7 @@
       <div class="backdrop" id="backdrop"></div>
       <div class="stagewrap" id="stagewrap"><img id="bigimg" alt=""></div>
       <div class="track" id="track" style="display:none"></div>
+      <div id="gtrack" style="display:none"></div>
       <button class="closebtn" id="closebtn">×</button>
       <div class="scaleinfo" id="scaleinfo"></div>
       <div class="ovinfo" id="ovinfo" style="display:none">
@@ -244,6 +260,30 @@ const PLANS = [
           城郭放浪記は個人サイトのため、コード上も「タップ時1回のみ」と明記されている点に注意。</li>
       <li class="ok">向く用途: 城の写真を充実させたい場合。他タイプには効かない。</li>
     </ul>` },
+  { key: 'G', name: '案G: E+C+F 統合（Google Photos 相当）', desc: `
+    <p><b>3案は組み合わせ可能。</b>ただし E・C・F はいずれも1本指ドラッグを使うため、
+       次の3点を決めないと操作が食い合う。モックはこの解決で実装してある。</p>
+    <ul>
+      <li><b>①パン(C)と左右スワイプ(F)の切り分け</b> …
+        <b>等倍のときは左右スワイプでソース切替、拡大中はパン</b>に振り分ける。
+        写真アプリ類と同じ作法。ピンチは2本指なので衝突しない。</li>
+      <li><b>②情報帯(E)がパンを奪う／写真を隠す</b> …
+        <b>拡大したら帯とドットを自動で隠す</b>。等倍に戻すと復帰。
+        1本指タップでUIの表示/非表示を手動トグルもできる。</li>
+      <li><b>③ソース切替時のズーム残り</b> …
+        F で別ソースへ移ったら<b>倍率とパン位置をリセット</b>する。
+        しないと横長パノラマの倍率が縦長カードに持ち越される。</li>
+    </ul>
+    <p>副次的な利点として、<b>F の出典ラベルを E の情報帯に統合できる</b>。
+       「どの出典の写真を見ているか」と「何の写真か」が1か所に出る。</p>
+    <ul>
+      <li>閉じるのは×ボタン。<b>「どこでもタップで閉じる」は使えない</b>
+          （ダブルタップ拡大・パン・UIトグルと競合するため）。</li>
+      <li>下スワイプ(案B)を足すなら<b>等倍のときだけ有効</b>にすれば共存できるが、
+          ①で横スワイプも等倍時に割り当てているので、縦横どちらに倒れたかの判定が要る。</li>
+      <li>ソースが1つのタイプ（カード類・ポケふた）ではドットを出さず、左右スワイプも無効になる。</li>
+      <li class="warn ng">実装量は全案中で最大。C単体＋Eの帯だけでも実用上は足りる可能性がある。</li>
+    </ul>` },
 ];
 
 let curPlan = 'A', curImg = IMAGES[0], upscale = false;
@@ -309,14 +349,25 @@ $('thumb').addEventListener('click', () => {
 
 function openViewer() {
   viewer.classList.add('open');
-  $('ovinfo').style.display = curPlan === 'E' ? '' : 'none';
-  $('dots').style.display = curPlan === 'F' ? '' : 'none';
+  const isG = curPlan === 'G';
+  $('ovinfo').style.display = (curPlan === 'E' || isG) ? '' : 'none';
+  $('dots').style.display = (curPlan === 'F' || isG) ? '' : 'none';
   $('srclabel').style.display = curPlan === 'F' ? '' : 'none';
   $('closebtn').style.display = (curPlan === 'A' || curPlan === 'B') ? 'none' : '';
-  $('scaleinfo').style.display = curPlan === 'C' ? '' : 'none';
+  $('scaleinfo').style.display = (curPlan === 'C' || isG) ? '' : 'none';
+  $('ovinfo').classList.add('gui'); $('dots').classList.add('gui');
+  $('ovinfo').classList.remove('hidden'); $('dots').classList.remove('hidden');
 
-  if (curPlan === 'F') { setupTrack(); stagewrap.style.display = 'none'; track.style.display = 'flex'; }
-  else { track.style.display = 'none'; stagewrap.style.display = 'flex'; bigimg.src = curImg.url; }
+  if (isG) {
+    setupG();
+    stagewrap.style.display = 'none'; track.style.display = 'none'; $('gtrack').style.display = 'flex';
+  } else if (curPlan === 'F') {
+    setupTrack();
+    $('gtrack').style.display = 'none'; stagewrap.style.display = 'none'; track.style.display = 'flex';
+  } else {
+    $('gtrack').style.display = 'none'; track.style.display = 'none';
+    stagewrap.style.display = 'flex'; bigimg.src = curImg.url;
+  }
 
   $('ovt').textContent = curImg.title;
   $('ovs').textContent = curImg.sub + '  /  ' + curImg.w + '×' + curImg.h;
@@ -324,6 +375,7 @@ function openViewer() {
 
   resetTransform();
   if (curPlan === 'C') updateScaleInfo();
+  if (isG) { gReset(); gRender(); }
 }
 function closeViewer() {
   viewer.classList.remove('open');
@@ -433,11 +485,12 @@ viewer.addEventListener('click', () => {
 });
 
 // ── 案F: 複数ソース切替 ──
+// 解像度はいずれも naturalWidth/naturalHeight の実測値
 const CASTLE_SOURCES = [
-  { label: '攻城団（パノラマ 720×240）', url: 'https://kojodan.com/pic/panorama/414.jpg' },
-  { label: '城郭放浪記（640×480）',      url: 'https://www.hb.pei.jp/shiro/ezo/goryokaku/indexb.jpg' },
+  { label: '攻城団 パノラマ', w: 720, h: 240, url: 'https://kojodan.com/pic/panorama/414.jpg' },
+  { label: '城郭放浪記',      w: 640, h: 480, url: 'https://www.hb.pei.jp/shiro/ezo/goryokaku/indexb.jpg' },
   // pageimages API に pithumbsize=1200 を渡して実際に返った source（現行コードは 400 指定で 400×267）
-  { label: 'Wikipedia（pithumbsize=1200 → 1200×800／現行コードは400指定で400×267）',
+  { label: 'Wikipedia（pithumbsize=1200）', w: 1280, h: 853,
     url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Hakodate_Goryokaku_Panorama_1.JPG/1280px-Hakodate_Goryokaku_Panorama_1.JPG' },
 ];
 let fIdx = 0;
@@ -465,6 +518,140 @@ viewer.addEventListener('pointerup', e => {
   if (dx < -40 && fIdx < CASTLE_SOURCES.length - 1) fIdx++;
   else if (dx > 40 && fIdx > 0) fIdx--;
   updateTrack();
+});
+
+// ══════════════════════════════════════════════════════════════
+//  案G: E(情報帯) + C(ピンチズーム/パン) + F(ソース切替) の統合
+// ══════════════════════════════════════════════════════════════
+// 城は3系統から写真を取得できる。それ以外は1枚なので切替は無効になる。
+function gSources() {
+  if (curImg.key === 'pano' || curImg.key === 'shiro') return CASTLE_SOURCES;
+  return [{ label: curImg.name + '（' + curImg.w + '×' + curImg.h + '）', url: curImg.url,
+            w: curImg.w, h: curImg.h }];
+}
+let gIdx = 0, gScale = 1, gX = 0, gY = 0, gUI = true;
+let gPtr = new Map(), gPinchDist = 0, gPinchStart = 1, gDragFrom = null, gAxis = null, gDragDX = 0;
+
+function setupG() {
+  const src = gSources();
+  $('gtrack').innerHTML = src.map(s =>
+    `<div class="gpane"><div class="inner"><img src="${s.url}" alt=""></div></div>`).join('');
+  $('dots').innerHTML = src.length > 1 ? src.map(() => '<i></i>').join('') : '';
+  gIdx = 0;
+}
+function gReset() { gScale = 1; gX = 0; gY = 0; gPtr.clear(); gDragFrom = null; gAxis = null; gDragDX = 0; }
+
+function gRender(animate) {
+  const src = gSources();
+  const t = $('gtrack');
+  t.style.transition = animate ? 'transform .26s ease' : '';
+  t.style.transform = `translateX(calc(${-gIdx * 100}% + ${gDragDX}px))`;
+  const inner = t.children[gIdx] && t.children[gIdx].querySelector('.inner');
+  if (inner) {
+    inner.style.transition = animate ? 'transform .22s ease' : '';
+    inner.style.transform = `translate(${gX}px, ${gY}px) scale(${gScale})`;
+  }
+  // 他ペインのズームは常に等倍へ戻しておく（切替時にズームが持ち越されないようにする）
+  [...t.children].forEach((p, i) => {
+    if (i === gIdx) return;
+    const el = p.querySelector('.inner');
+    if (el) { el.style.transition = ''; el.style.transform = ''; }
+  });
+  [...$('dots').children].forEach((d, i) => d.classList.toggle('on', i === gIdx));
+
+  // 情報帯: 出典ラベル(F由来)と対象名(E由来)を1か所にまとめる
+  const s = src[gIdx];
+  $('ovt').textContent = curImg.title;
+  $('ovs').textContent = curImg.sub + '  /  ' + s.label;
+  $('ovopen').href = s.url;
+
+  // 拡大中は帯とドットを隠して写真を遮らない
+  const hide = !gUI || gScale > 1.02;
+  $('ovinfo').classList.toggle('hidden', hide);
+  $('dots').classList.toggle('hidden', hide || src.length <= 1);
+  gScaleInfo();
+}
+function gScaleInfo() {
+  const s = gSources()[gIdx];
+  const fit = Math.min(375 / s.w, 720 / s.h);
+  const base = upscale ? fit : Math.min(1, fit);
+  const eff = base * gScale;
+  $('scaleinfo').textContent = `等倍比 ${eff.toFixed(2)}倍` + (eff > 1.05 ? '（引き伸ばし）' : '')
+    + (gSources().length > 1 ? `　${gIdx + 1}/${gSources().length}` : '');
+}
+
+viewer.addEventListener('pointerdown', e => {
+  if (curPlan !== 'G' || e.target.closest('.ovinfo') || e.target.closest('.closebtn')) return;
+  gPtr.set(e.pointerId, { x: e.clientX, y: e.clientY, x0: e.clientX, y0: e.clientY });
+  try { viewer.setPointerCapture(e.pointerId); } catch (_) {}
+  if (gPtr.size === 2) {
+    const [a, b] = [...gPtr.values()];
+    gPinchDist = Math.hypot(a.x - b.x, a.y - b.y);
+    gPinchStart = gScale;
+    gAxis = 'pinch';
+  } else if (gPtr.size === 1) {
+    gAxis = null;                                  // 縦横どちらに倒れたかは最初の移動で決める
+    gDragFrom = { x: e.clientX - gX, y: e.clientY - gY };
+  }
+});
+viewer.addEventListener('pointermove', e => {
+  if (curPlan !== 'G' || !gPtr.has(e.pointerId)) return;
+  const p = gPtr.get(e.pointerId);
+  p.x = e.clientX; p.y = e.clientY;
+  if (gPtr.size === 2) {
+    const [a, b] = [...gPtr.values()];
+    gScale = Math.min(6, Math.max(1, gPinchStart * (Math.hypot(a.x - b.x, a.y - b.y) / gPinchDist)));
+    if (gScale <= 1.001) { gX = 0; gY = 0; }
+    gRender();
+    return;
+  }
+  const dx = e.clientX - p.x0, dy = e.clientY - p.y0;
+  if (gScale > 1.02) {
+    // ── 拡大中: パン（Cの挙動）──
+    gX = e.clientX - gDragFrom.x; gY = e.clientY - gDragFrom.y;
+    gRender();
+  } else {
+    // ── 等倍: 左右スワイプでソース切替（Fの挙動）──
+    if (!gAxis && (Math.abs(dx) > 8 || Math.abs(dy) > 8)) gAxis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+    if (gAxis === 'x' && gSources().length > 1) { gDragDX = dx; gRender(); }
+  }
+});
+['pointerup', 'pointercancel'].forEach(t => viewer.addEventListener(t, e => {
+  if (curPlan !== 'G' || !gPtr.has(e.pointerId)) return;
+  const p = gPtr.get(e.pointerId);
+  const dx = e.clientX - p.x0, dy = e.clientY - p.y0;
+  gPtr.delete(e.pointerId);
+  if (gPtr.size > 0) return;
+
+  if (gAxis === 'x') {
+    const n = gSources().length;
+    if (dx < -50 && gIdx < n - 1) { gIdx++; gReset(); }        // 切替時にズームをリセット
+    else if (dx > 50 && gIdx > 0) { gIdx--; gReset(); }
+    gDragDX = 0; gAxis = null; gRender(true);
+    return;
+  }
+  if (gAxis === 'pinch') { gAxis = null; gRender(); return; }
+  // 移動していなければタップ扱い → UIの表示/非表示をトグル
+  if (Math.abs(dx) < 6 && Math.abs(dy) < 6) { gUI = !gUI; }
+  gAxis = null; gDragFrom = null;
+  gRender();
+}));
+viewer.addEventListener('wheel', e => {
+  if (curPlan !== 'G') return;
+  e.preventDefault();
+  gScale = Math.min(6, Math.max(1, gScale * (e.deltaY < 0 ? 1.15 : 1 / 1.15)));
+  if (gScale <= 1.001) { gX = 0; gY = 0; }
+  gRender();
+}, { passive: false });
+let gLastTap = 0;
+viewer.addEventListener('click', e => {
+  if (curPlan !== 'G' || e.target.closest('.ovinfo') || e.target.closest('.closebtn')) return;
+  const now = Date.now();
+  if (now - gLastTap < 320) {
+    if (gScale > 1) { gScale = 1; gX = 0; gY = 0; } else { gScale = 2.5; }
+    gRender(true);
+  }
+  gLastTap = now;
 });
 
 render();
