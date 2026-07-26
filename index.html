@@ -2288,8 +2288,8 @@ function isObjSheetOpen() {
    入力経路を2本に分ける:
      タッチ … Touch Events。ドラッグ確定後の touchmove を preventDefault して、
               ブラウザのスクロール／オーバースクロールに主導権を渡さない（passive:false 必須）。
-     マウス … Pointer Events を pointerType==='mouse' に限定し、setPointerCapture で
-              起点要素が再描画で外れても pointermove/up が届くようにする。
+     マウス … Pointer Events を pointerType==='mouse' に限定。ドラッグ確定後に
+              setPointerCapture し、起点要素が再描画で外れても pointermove/up が届くようにする。
    pointerType で振り分けることで、1操作が両経路で二重処理されるのを防ぐ。
 
    タップとの区別は移動量 SWIPE_SLOP で行い、ドラッグが成立した場合は直後の click を
@@ -2306,6 +2306,7 @@ const SWIPE_CLOSE_DIST = 30;  // 下に振り切ったと判定する移動量(p
 function enableSheetSwipeClose(panel, headerEl, onClose, blockSelector) {
     let startX = 0, startY = 0;
     let armed = false, dragging = false, swallowClick = false;
+    let capturePointerId = null;   // マウス経路のみ。ドラッグ確定時に捕捉するため保持する
 
     // 起点要素から見た、パネル内側の直近のスクロール可能な祖先
     function scrollerAt(target) {
@@ -2318,10 +2319,11 @@ function enableSheetSwipeClose(panel, headerEl, onClose, blockSelector) {
         return null;
     }
 
-    function down(target, x, y) {
+    function down(target, x, y, pointerId) {
         armed = false;
         dragging = false;
         swallowClick = false;   // 前ジェスチャの抑止を持ち越さない
+        capturePointerId = (pointerId === undefined) ? null : pointerId;
         if (!(target instanceof Element)) return;
         if (blockSelector && target.closest(blockSelector)) return;
         startX = x;
@@ -2341,6 +2343,12 @@ function enableSheetSwipeClose(panel, headerEl, onClose, blockSelector) {
                 return false;
             }
             dragging = true;
+            // 捕捉はドラッグが確定してから行う。pointerdown 時点で捕捉すると
+            // 以後の click のターゲットが panel に差し替わり、シート内のボタンや
+            // リンクが一切反応しなくなる（CDPの実マウス入力で確認済み）。
+            if (capturePointerId !== null) {
+                try { panel.setPointerCapture(capturePointerId); } catch (_) {}
+            }
             panel.style.transition = 'none';
         }
         panel.style.bottom = `-${dy - SWIPE_SLOP}px`;
@@ -2389,8 +2397,7 @@ function enableSheetSwipeClose(panel, headerEl, onClose, blockSelector) {
 
     panel.addEventListener('pointerdown', (e) => {
         if (e.pointerType !== 'mouse') return;
-        down(e.target, e.clientX, e.clientY);
-        if (armed) { try { panel.setPointerCapture(e.pointerId); } catch (_) {} }
+        down(e.target, e.clientX, e.clientY, e.pointerId);
     });
     panel.addEventListener('pointermove', (e) => {
         if (e.pointerType === 'mouse') move(e.clientX, e.clientY);
