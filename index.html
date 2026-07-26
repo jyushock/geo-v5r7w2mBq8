@@ -2260,9 +2260,13 @@ function buildSheetHtml(type, label, p, lng, lat) {
                   + osLine(p.issueDate ? `<span class="os-k">発行</span> ${p.issueDate}` : '');
         } else {
             title = p.name || label;
-            photo = osPhotoHtml(p.cardId
-                ? `https://ekikaramanhole.whitebeach.org/ext/manholecard/image/getimage.cgi?file=card/${p.cardId}.jpg` : '',
-                'full');   // カードは縦長なので切らずに全体を見せる
+            // 同じカードの画像でも、配布場所レコード側(gk-p.jp)は516×720、cardIdから
+            // 組み立てる ekikaramanhole 側は232×320（実測）。写真タップの拡大表示で
+            // 引き伸ばさずに済むよう、紐付いていれば大きい方を使う。
+            // 紐付かない蓋（1,267件中44件）と、配布場所データ未読込のときは従来のURLにする。
+            const cardImgUrl = (card && card.cardImgUrl)
+                || (p.cardId ? `https://ekikaramanhole.whitebeach.org/ext/manholecard/image/getimage.cgi?file=card/${p.cardId}.jpg` : '');
+            photo = osPhotoHtml(cardImgUrl, 'full');   // カードは縦長なので切らずに全体を見せる
             lines = osLine(p.address)
                   + (card ? osLine(card.locationName ? `<span class="os-k">配布場所</span> ${card.locationName}` : '')
                           + osLine(card.address) + osLine(card.hours ? `🕐 ${card.hours}` : '')
