@@ -1282,7 +1282,9 @@
             const p1 = map.project([cur.lng, cur.lat]);
             const p2 = map.project(coords);
             if (Math.hypot(p1.x - p2.x, p1.y - p2.y) < 40) {
-                Object.assign(cur, { label, cause: 'pin', lng: coords[0], lat: coords[1], time: Date.now(), objType, objProps });
+                // zoom も更新する。上書き元のズームを残すと、この履歴に戻ったとき
+                // タップした時ではなく以前のズームに戻ってしまう。
+                Object.assign(cur, { label, cause: 'pin', lng: coords[0], lat: coords[1], zoom: map.getZoom(), time: Date.now(), objType, objProps });
                 delete cur.addr; // ピン名で表示するため取得済み住所を破棄
                 return;
             }
@@ -1308,7 +1310,11 @@
         histPush({ label: '地図移動', cause: 'move' });
     }
 
-    function onHistMoveEnd() {
+    function onHistMoveEnd(ev) {
+        // 情報シートを開いたときの寄せ直し（adjustMapForSheet）は利用者の移動操作ではないので
+        // 履歴に残さない。ここで弾かないと、シートが大きいときに寄せ量が
+        // histCheckManualMove のしきい値を超え、「地図移動」が積まれて進む側の履歴が消える。
+        if (ev && ev.histIgnore) return;
         if (histNavActive) {
             histNavActive = false;
             clearTimeout(histNavTimer);
@@ -1333,6 +1339,8 @@
         document.getElementById('hist-nav-btn').disabled = mapHistory.length <= 1;
     }
 
+    let histSheetHandler = null;   // 履歴移動の完了後に情報シートを開くための moveend ハンドラ
+
     function histGoTo(idx) {
         if (idx < 0 || idx >= mapHistory.length || idx === histIndex) return;
         closeHistList();
@@ -1344,6 +1352,25 @@
         clearTimeout(histNavTimer);
         histNavTimer = setTimeout(() => { histNavActive = false; }, 1500); // moveend不発時の保険
         updateHistButtons();
+
+        // 連続で履歴移動したとき、前回の予約が残って別地点のシートが開かないようにする
+        if (histSheetHandler) { map.off('moveend', histSheetHandler); histSheetHandler = null; }
+        closeObjSheet();   // 移動先と無関係なシートを残さない
+
+        // オブジェクトの履歴に戻るときは、タップした時と同じ状態（情報シート＋選択リング）へ戻す。
+        // 移動の完了後に開くのは、openObjSheet 内の adjustMapForSheet がシート高さぶん
+        // 寄せ直すため。寄せ直しはズームを変えないので、下で合わせる e.zoom が保たれる。
+        // 登録を easeTo より先に行うのは、既に目的地にいる等で moveend が
+        // easeTo の呼び出し中に同期発火しても取りこぼさないようにするため。
+        if (e.cause === 'pin' && e.objType && e.objProps) {
+            const handler = () => {
+                map.off('moveend', handler);
+                if (histSheetHandler === handler) histSheetHandler = null;
+                openObjSheet(e.objType, e.label, e.objProps, e.lng, e.lat);
+            };
+            histSheetHandler = handler;
+            map.on('moveend', handler);
+        }
         map.easeTo({ center: [e.lng, e.lat], zoom: e.zoom, bearing: 0, pitch: 0, duration: 550, essential: true });
     }
 
@@ -2248,7 +2275,8 @@ function adjustMapForSheet() {
     const mapH = map.getContainer().getBoundingClientRect().height;
     // シートが画面の大半を占める場合でもピンが上端外へ飛ばないよう、ずらし量を制限する
     const dy = Math.min(h / 2, Math.max(0, (mapH - 80) / 2));
-    map.easeTo({ center: objSheetLngLat, offset: [0, -dy], duration: 400, essential: true });
+    // histIgnore: この移動はシート表示の副作用なので、移動履歴には記録しない
+    map.easeTo({ center: objSheetLngLat, offset: [0, -dy], duration: 400, essential: true }, { histIgnore: true });
 }
 
 function openObjSheet(type, label, p, lng, lat) {
