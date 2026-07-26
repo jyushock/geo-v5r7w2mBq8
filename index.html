@@ -420,9 +420,20 @@
                              display: flex; align-items: center; justify-content: center; overflow: hidden; }
         #pv-track .pv-inner { width: 100%; height: 100%; display: flex;
                               align-items: center; justify-content: center; transform-origin: center center; }
-        /* 等倍を超えて引き伸ばさない。低解像度の取得元（蓋のカード 232×320）をぼかさないため。 */
+        /* 等倍を超えて引き伸ばさない。低解像度の取得元（蓋のカード 232×320）をぼかさないため。
+           スマホは画像より画面が小さく常に縮小がかかるので、この上限は実質効かない。 */
         #pv-track img { max-width: 100%; max-height: 100%; object-fit: contain; display: block;
                         user-select: none; -webkit-user-drag: none; }
+        /* PC等の広い画面では、上の上限により画像が原寸のまま中央に置かれ黒く余る
+           （1920×1080で最大91.7%が黒）。広い画面に限り画面に合わせて拡大する。
+           object-fit:contain なので拡大しても比率は維持される。
+           768px 未満（スマホ）には一切影響しない。
+           なお暗幕(#pv-backdrop)を半透明にして圧迫感を抑える案も試したが、
+           背後の情報シートのボタンやサムネイルが透けて情報帯の文字と重なり
+           読めなくなるため採らない（実測確認済み）。暗幕は不透明のままにする。 */
+        @media (min-width: 768px) {
+            #pv-track img { width: 100%; height: 100%; max-width: none; max-height: none; }
+        }
         #pv-info {
             position: absolute; left: 0; right: 0; bottom: 0; z-index: 5; color: #fff;
             padding: 34px 14px calc(14px + env(safe-area-inset-bottom, 0px));
