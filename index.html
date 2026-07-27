@@ -1096,6 +1096,17 @@
                 </select>
             </div>
         </div>
+        <div style="display:flex;gap:12px;padding:0 16px 10px;align-items:flex-end;">
+            <div style="display:flex;flex-direction:column;gap:4px;flex:1;">
+                <span style="font-size:11px;color:#888;">「ここへ行く」の移動手段</span>
+                <select id="travel-mode-select" onchange="onTravelModeChange(this.value)" style="font-size:13px;padding:4px 6px;border:1px solid #ddd;border-radius:6px;background:white;">
+                    <option value="walk">徒歩</option>
+                    <option value="car">自動車</option>
+                    <option value="transit">公共交通機関</option>
+                    <option value="bicycle">自転車（Yahooは徒歩）</option>
+                </select>
+            </div>
+        </div>
         <div style="border-top:1px solid #f0f0f0;"></div>
         <div class="nearby-section-label">テキスト表示</div>
         <div id="label-checkboxes" style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0 16px 8px;">
@@ -2229,7 +2240,24 @@ function osParseAliases(aliases) {
     return Array.isArray(aliases) ? aliases : [];
 }
 
-// Yahoo!地図の徒歩経路URL（Googleの ここへ行く が dirflg=w なので徒歩で揃える）。
+// 「ここへ行く」の移動手段。設定画面で選んだ既定値を両サービスに適用する。
+//   Google … 旧形式URLの dirflg。4種すべて意図どおりに開くことを実測で確認
+//             (w=徒歩25分/1.8km、d=車10分/1.9km、r=バス18分/210円、b=自転車9分/1.8km)
+//   Yahoo  … 公式URL仕様どおり train / car / walk の3種のみ。/route/bicycle は経路画面に
+//             ならず地図が出るだけなので、自転車を選んだときは徒歩で代替する
+const TRAVEL_MODES = {
+    walk:    { label: '徒歩',         gmap: 'w', yahoo: 'walk'  },
+    car:     { label: '自動車',       gmap: 'd', yahoo: 'car'   },
+    transit: { label: '公共交通機関', gmap: 'r', yahoo: 'train' },
+    bicycle: { label: '自転車',       gmap: 'b', yahoo: 'walk'  },
+};
+const TRAVEL_MODE_DEFAULT = 'walk';
+function travelMode() {
+    const v = localStorage.getItem('travelMode');
+    return TRAVEL_MODES[v] ? v : TRAVEL_MODE_DEFAULT;
+}
+
+// Yahoo!地図の経路URL。移動手段は設定画面の既定値に従う。
 // from/to には表示用の名前を、fromLat/fromLon・toLat/toLon には実際の座標を渡す。
 // 実測で確かめた前提:
 //   ・from を省くとYahooはスタート地点が空のまま開く（現在地は自動で入らない）
@@ -2245,7 +2273,7 @@ function yahooRouteUrl(fromLat, fromLng, toLat, toLng, toName) {
     if (fromLat != null) {
         q.unshift(`from=${encodeURIComponent('現在位置')}`, `fromLat=${fromLat}`, `fromLon=${fromLng}`);
     }
-    return `https://map.yahoo.co.jp/route/walk?${q.join('&')}`;
+    return `https://map.yahoo.co.jp/route/${TRAVEL_MODES[travelMode()].yahoo}?${q.join('&')}`;
 }
 
 // 検索ボックスの虫眼鏡(#search-icon)と同じ絵柄。stroke=currentColor なので、
@@ -2259,7 +2287,7 @@ function attrEscape(s) {
 }
 
 function buildSheetHtml(type, label, p, lng, lat) {
-    const navUrl      = `https://www.google.com/maps?daddr=${lat},${lng}&dirflg=w`;
+    const navUrl      = `https://www.google.com/maps?daddr=${lat},${lng}&dirflg=${TRAVEL_MODES[travelMode()].gmap}`;
     const coordGmapUrl = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
     // Yahooの経路画面に出す行き先の名前（[配布]などの装飾が付く title ではなく素の名前を使う）
     const destName = p.name || p.pokemon || p.locationName || label || '';
@@ -3799,9 +3827,21 @@ map.on('zoomend', () => { isZooming = false; });
 
     document.getElementById('tile-source-select').value = localStorage.getItem('mapTileSource') || 'openfreemap';
     document.getElementById('hotel-radius-select').value = localStorage.getItem('hotelRadius') || '10000';
+    document.getElementById('travel-mode-select').value = travelMode();
 
     function onHotelRadiusChange(value) {
         localStorage.setItem('hotelRadius', value);
+    }
+
+    function onTravelModeChange(value) {
+        localStorage.setItem('travelMode', value);
+        // 情報シートを開いたまま設定を変えた場合に備える。Yahooはボタン押下時にURLを組むので
+        // 影響を受けないが、Google側はhrefを埋め込んでいるため開いているシートだけ貼り替える。
+        const a = document.querySelector('#obj-sheet-body .btn-nav');
+        if (a && objSheetLngLat) {
+            const [lng, lat] = objSheetLngLat;
+            a.href = `https://www.google.com/maps?daddr=${lat},${lng}&dirflg=${TRAVEL_MODES[travelMode()].gmap}`;
+        }
     }
 
     function onFilterChange(el) {
