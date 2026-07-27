@@ -2464,9 +2464,11 @@ function closeObjSheet() {
 // ══ 写真の全画面ビューア ═══════════════════════════════════════════
 /* 情報帯・ピンチズーム／パン・出典切替を1つにまとめたもの。
    3つとも1本指ドラッグを使うため、次の取り決めで衝突を避ける。
-     ・等倍のとき  … 横ドラッグで出典切替（縦ドラッグは何もしない）
-     ・拡大中のとき … ドラッグはパン。出典切替は無効
+     ・等倍のとき  … 横ドラッグで出典切替、下ドラッグで閉じる（上ドラッグは何もしない）
+     ・拡大中のとき … ドラッグはパン。出典切替も下スワイプ閉じも無効
      ・ピンチは2本指なのでどちらとも衝突しない
+   下スワイプ閉じは等倍限定にしている。拡大中はドラッグがパンなので、下へパンする操作と
+   区別できないため。
    拡大に入った瞬間に情報帯とドットを畳む（写真を遮らないため）。ただし畳んだ後も
    1本指タップで出せる。閉じるボタンは情報帯の中にあるので、拡大中に出せないと
    閉じられなくなるため。等倍に戻した瞬間は自動で出す。
@@ -2476,6 +2478,9 @@ function closeObjSheet() {
    パン・UIトグルと競合するため採らない。 */
 const PV_SLOP = 8;            // 縦横どちらに倒れたかを判定する移動量(px)
 const PV_SWITCH_DIST = 50;    // 出典を切り替える横移動量(px)
+// 下スワイプで閉じる移動量(px)。シートの SWIPE_CLOSE_DIST(30) より大きくしている。
+// 写真は全画面で指の可動域が広く、30pxでは意図しない縦ぶれで閉じてしまうため。
+const PV_CLOSE_DIST = 90;
 const PV_MAX_SCALE = 6;
 let pvSources = [];           // [{url, label}]
 let pvIdx = 0, pvScale = 1, pvX = 0, pvY = 0, pvUI = true, pvZoomed = false;
@@ -2483,6 +2488,15 @@ let pvPtr = new Map(), pvPinchDist = 0, pvPinchStart = 1, pvPanFrom = null, pvAx
 
 function isPhotoViewerOpen() {
     return document.getElementById('photo-viewer').classList.contains('open');
+}
+
+// 下スワイプ中の手応え。引くほど黒背景を透かし、下に地図が見えることで
+// 「閉じる方向の操作だ」と分かるようにする。
+function pvSetDismissProgress(dy, animate) {
+    const bd = document.getElementById('pv-backdrop');
+    if (!bd) return;
+    bd.style.transition = animate ? 'opacity 0.22s ease' : '';
+    bd.style.opacity = String(Math.max(0.4, 1 - dy / 400));
 }
 
 function openPhotoViewer(sources, startUrl) {
@@ -2500,6 +2514,7 @@ function openPhotoViewer(sources, startUrl) {
     const v = document.getElementById('photo-viewer');
     v.classList.add('open');
     v.setAttribute('aria-hidden', 'false');
+    pvSetDismissProgress(0);   // 前回スワイプ途中で閉じた場合の透過を戻す
     pvRender();
 }
 
@@ -2511,6 +2526,8 @@ function closePhotoViewer() {
     document.getElementById('pv-track').innerHTML = '';   // 画像デコードを抱えたままにしない
     pvSources = [];
     pvPtr.clear();
+    pvY = 0; pvAxis = null; pvPanFrom = null;
+    pvSetDismissProgress(0);
 }
 
 function pvRender(animate) {
@@ -3375,6 +3392,8 @@ map.on('zoomend', () => { isZooming = false; });
                     pvAxis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
                 }
                 if (pvAxis === 'x' && pvSources.length > 1) { pvDragDX = dx; pvRender(); }
+                // 下スワイプは指に追従させ、どこまで引けば閉じるかを見せる（上方向は動かさない）
+                if (pvAxis === 'y') { pvY = Math.max(0, dy); pvSetDismissProgress(pvY); pvRender(); }
             }
         });
 
@@ -3389,6 +3408,14 @@ map.on('zoomend', () => { isZooming = false; });
                 if (dx < -PV_SWITCH_DIST && pvIdx < pvSources.length - 1) { pvIdx++; pvScale = 1; pvX = 0; pvY = 0; }
                 else if (dx > PV_SWITCH_DIST && pvIdx > 0) { pvIdx--; pvScale = 1; pvX = 0; pvY = 0; }
                 pvDragDX = 0; pvAxis = null; pvPanFrom = null;
+                pvRender(true);
+                return;
+            }
+            if (pvAxis === 'y') {
+                pvAxis = null; pvPanFrom = null;
+                if (dy > PV_CLOSE_DIST) return closePhotoViewer();
+                pvY = 0;                       // 届かなければ元の位置へ戻す
+                pvSetDismissProgress(0, true);
                 pvRender(true);
                 return;
             }
