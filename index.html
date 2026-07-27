@@ -2228,27 +2228,40 @@ function osParseAliases(aliases) {
 }
 
 // Yahoo!地図の徒歩経路URL（Googleの ここへ行く が dirflg=w なので徒歩で揃える）。
-// 出発地・目的地とも「緯度,経度」で渡す。実測で確かめた前提が3つある。
+// from/to には表示用の名前を、fromLat/fromLon・toLat/toLon には実際の座標を渡す。
+// 実測で確かめた前提:
 //   ・from を省くとYahooはスタート地点が空のまま開く（現在地は自動で入らない）
-//   ・目的地をキーワード（城名など）にすると経路が出ない地点がある（姫路城・松本城で再現）
-//   ・座標文字列の from は位置情報の許可が無くても解釈される（Yahoo側の許可は不要）
-// fromLat/fromLon・toLat/toLon はYahooのURL仕様にある地点特定用の補助パラメータ。
-function yahooRouteUrl(fromLat, fromLng, toLat, toLng) {
-    const q = [`to=${encodeURIComponent(`${toLat},${toLng}`)}`, `toLat=${toLat}`, `toLon=${toLng}`];
+//   ・緯度経度を併せて渡すと from/to の文字列は表示ラベルにしかならない。存在しない名前
+//     （「ほげほげ架空城跡」）でも座標どおりの経路が出たので、名前の解決失敗で行き先が
+//     ずれる心配はない
+//   ・ただし文字列「現在地」だけは特別扱いで、fromLat/fromLon を無視してYahoo側の位置情報を
+//     使う。位置情報が未許可だとエラーになるため、出発地のラベルは「現在位置」にする
+//   ・名前を渡さず座標文字列にした場合も同じ経路になる（表示が座標のままになるだけ）
+function yahooRouteUrl(fromLat, fromLng, toLat, toLng, toName) {
+    const dest = toName || `${toLat},${toLng}`;
+    const q = [`to=${encodeURIComponent(dest)}`, `toLat=${toLat}`, `toLon=${toLng}`];
     if (fromLat != null) {
-        q.unshift(`from=${encodeURIComponent(`${fromLat},${fromLng}`)}`, `fromLat=${fromLat}`, `fromLon=${fromLng}`);
+        q.unshift(`from=${encodeURIComponent('現在位置')}`, `fromLat=${fromLat}`, `fromLon=${fromLng}`);
     }
     return `https://map.yahoo.co.jp/route/walk?${q.join('&')}`;
+}
+
+// data-*属性に地名を入れるための最小限のエスケープ（施設名に " や & が入り得る）
+function attrEscape(s) {
+    return String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
 function buildSheetHtml(type, label, p, lng, lat) {
     const navUrl      = `https://www.google.com/maps?daddr=${lat},${lng}&dirflg=w`;
     const coordGmapUrl = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+    // Yahooの経路画面に出す行き先の名前（[配布]などの装飾が付く title ではなく素の名前を使う）
+    const destName = p.name || p.pokemon || p.locationName || label || '';
     // 行C: 全タイプ共通・常に3個
     // Yahooだけリンクでなくボタンなのは、出発地(現在地)を押された時点で読むため（委譲側に理由）
     const rowC = osRow([
         `<a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く</a>`,
-        `<button class="btn btn-nav-yahoo" data-lat="${lat}" data-lng="${lng}">ここへ行く</button>`,
+        `<button class="btn btn-nav-yahoo" data-lat="${lat}" data-lng="${lng}" data-name="${attrEscape(destName)}">ここへ行く</button>`,
         `<button class="btn btn-nearby-search" onclick='searchNearby(${lng},${lat},${JSON.stringify(label)})'>🔍 この周辺を検索</button>`,
     ]);
     const isPokefuta = type === 'pokefuta' || (type === 'manhole' && p.source === 'pokefuta');
@@ -3228,8 +3241,9 @@ map.on('zoomend', () => { isZooming = false; });
         if (!btn) return;
         const toLat = btn.dataset.lat;
         const toLng = btn.dataset.lng;
+        const toName = btn.dataset.name || '';
         if (currentLocation) {
-            window.open(yahooRouteUrl(currentLocation.lat, currentLocation.lng, toLat, toLng), '_blank');
+            window.open(yahooRouteUrl(currentLocation.lat, currentLocation.lng, toLat, toLng, toName), '_blank');
             return;
         }
         // 未測位（許可ダイアログ未応答・初回測位待ち・測位失敗）の場合はここで改めて要求する。
@@ -3238,12 +3252,12 @@ map.on('zoomend', () => { isZooming = false; });
         const tab = window.open('about:blank', '_blank');
         if (!tab) return;
         const openWithoutOrigin = () => {
-            tab.location.href = yahooRouteUrl(null, null, toLat, toLng);   // 目的地だけ渡す（出発地はYahoo側で指定できる）
+            tab.location.href = yahooRouteUrl(null, null, toLat, toLng, toName);   // 目的地だけ渡す（出発地はYahoo側で指定できる）
             showToast('現在地が取得できませんでした。出発地はYahoo!地図で指定してください');
         };
         if (!navigator.geolocation) return openWithoutOrigin();
         navigator.geolocation.getCurrentPosition(
-            (pos) => { tab.location.href = yahooRouteUrl(pos.coords.latitude, pos.coords.longitude, toLat, toLng); },
+            (pos) => { tab.location.href = yahooRouteUrl(pos.coords.latitude, pos.coords.longitude, toLat, toLng, toName); },
             openWithoutOrigin,
             { enableHighAccuracy: true, timeout: 10000 }
         );
