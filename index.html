@@ -2478,9 +2478,14 @@ function closeObjSheet() {
    パン・UIトグルと競合するため採らない。 */
 const PV_SLOP = 8;            // 縦横どちらに倒れたかを判定する移動量(px)
 const PV_SWITCH_DIST = 50;    // 出典を切り替える横移動量(px)
-// 下スワイプで閉じる移動量(px)。シートの SWIPE_CLOSE_DIST(30) より大きくしている。
-// 写真は全画面で指の可動域が広く、30pxでは意図しない縦ぶれで閉じてしまうため。
-const PV_CLOSE_DIST = 90;
+// 下スワイプで閉じる判定。ゆっくり引くときは距離、素早く払うときは速さで決める。
+// 距離だけだと、軽く払ったときは指が離れる位置が浅く、閉じたつもりで閉じない。
+// 速さは「押してから離すまでの平均」で見る。直近の移動量から求める方式は、
+// 速く払った直後に指を止めてから離すと古い速さが残って誤って閉じるうえ、
+// 逆に一瞬で払うと標本が1つも取れずに速さ0になる（実測で確認）。
+// 平均ならどちらも起きない（止めていた時間が分母に入って自然に遅くなる）。
+const PV_CLOSE_DIST = 45;     // ゆっくり引いて閉じる移動量(px)
+const PV_FLICK_SPEED = 0.25;  // 距離が足りなくても閉じる下向きの平均速さ(px/ms)
 const PV_MAX_SCALE = 6;
 let pvSources = [];           // [{url, label}]
 let pvIdx = 0, pvScale = 1, pvX = 0, pvY = 0, pvUI = true, pvZoomed = false;
@@ -3357,7 +3362,7 @@ map.on('zoomend', () => { isZooming = false; });
 
         viewer.addEventListener('pointerdown', (e) => {
             if (isUiTarget(e.target)) return;
-            pvPtr.set(e.pointerId, { x0: e.clientX, y0: e.clientY, x: e.clientX, y: e.clientY });
+            pvPtr.set(e.pointerId, { x0: e.clientX, y0: e.clientY, x: e.clientX, y: e.clientY, t0: e.timeStamp });
             try { viewer.setPointerCapture(e.pointerId); } catch (_) {}
             if (pvPtr.size === 2) {
                 const [a, b] = [...pvPtr.values()];
@@ -3413,7 +3418,8 @@ map.on('zoomend', () => { isZooming = false; });
             }
             if (pvAxis === 'y') {
                 pvAxis = null; pvPanFrom = null;
-                if (dy > PV_CLOSE_DIST) return closePhotoViewer();
+                const speed = dy / Math.max(1, e.timeStamp - p.t0);
+                if (dy > PV_CLOSE_DIST || (dy > PV_SLOP && speed > PV_FLICK_SPEED)) return closePhotoViewer();
                 pvY = 0;                       // 届かなければ元の位置へ戻す
                 pvSetDismissProgress(0, true);
                 pvRender(true);
