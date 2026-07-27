@@ -2251,7 +2251,7 @@ const TRAVEL_MODES = {
     transit: { label: '公共交通機関', gmap: 'r', yahoo: 'train' },
     bicycle: { label: '自転車',       gmap: 'b', yahoo: 'walk'  },
 };
-const TRAVEL_MODE_DEFAULT = 'walk';
+const TRAVEL_MODE_DEFAULT = 'transit';
 function travelMode() {
     const v = localStorage.getItem('travelMode');
     return TRAVEL_MODES[v] ? v : TRAVEL_MODE_DEFAULT;
