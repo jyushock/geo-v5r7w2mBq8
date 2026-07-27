@@ -480,6 +480,8 @@
         .btn-michi-hp  { background: #795548; color: #fff; }
         .btn-michi-eki { background: #BF360C; color: #fff; }
         .btn-nearby-search { background: #34A853; color: #fff; }
+        /* 虫眼鏡は絵文字と同じくらいの占有幅にする（3ボタンが1行に収まる余白を崩さないため） */
+        .btn-nearby-search svg { width: 14px; height: 14px; margin-right: 3px; flex-shrink: 0; }
         .btn-kojodan { background: #8B4513; color: #fff; }
         .btn-access  { background: #00897B; color: #fff; }
         .btn-shirohb { background: #6A4C93; color: #fff; }
@@ -2246,6 +2248,10 @@ function yahooRouteUrl(fromLat, fromLng, toLat, toLng, toName) {
     return `https://map.yahoo.co.jp/route/walk?${q.join('&')}`;
 }
 
+// 検索ボックスの虫眼鏡(#search-icon)と同じ絵柄。stroke=currentColor なので、
+// 置き場所の文字色をそのまま拾う（.btn は color:white のため白抜きになる）
+const ICON_SEARCH_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9.5" cy="9.5" r="7.5"/><line x1="14.8" y1="14.8" x2="22" y2="22"/></svg>';
+
 // data-*属性に地名を入れるための最小限のエスケープ（施設名に " や & が入り得る）
 function attrEscape(s) {
     return String(s == null ? '' : s)
@@ -2262,7 +2268,7 @@ function buildSheetHtml(type, label, p, lng, lat) {
     const rowC = osRow([
         `<a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く</a>`,
         `<button class="btn btn-nav-yahoo" data-lat="${lat}" data-lng="${lng}" data-name="${attrEscape(destName)}">ここへ行く</button>`,
-        `<button class="btn btn-nearby-search" onclick='searchNearby(${lng},${lat},${JSON.stringify(label)})'>🔍 この周辺を検索</button>`,
+        `<button class="btn btn-nearby-search" onclick='searchNearby(${lng},${lat},${JSON.stringify(label)})'>${ICON_SEARCH_SVG}この周辺を検索</button>`,
     ]);
     const isPokefuta = type === 'pokefuta' || (type === 'manhole' && p.source === 'pokefuta');
     let badges = '', title = '', photo = '', lines = '', rowA = '', rowB = '';
