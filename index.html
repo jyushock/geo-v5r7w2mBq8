@@ -2081,7 +2081,7 @@ function popupFormMetaText(elevationM, relativeHeightM) {
     return [elev, rel].filter(Boolean).join('／');
 }
 
-// 遺構・城主・築城主は、原典（城郭放浪記）が「なし」「不明」と明記しているケースが多い
+// 遺構・城主は、原典（城郭放浪記）が「なし」「不明」と明記しているケースが多い
 // （遺構が付く18,000件のうち2,743件、城主11,776件のうち2,441件）。castle.js には
 // その記載どおり保持しているが、読み手にとって情報量が無いのでシートには行ごと出さない。
 const CASTLE_UNKNOWN_ATTRS = new Set(['なし', '無し', '無', '不明', '不詳', '－', '-', '―', 'ー']);
@@ -2375,7 +2375,6 @@ function buildSheetHtml(type, label, p, lng, lat) {
               + osLine(popupFormMetaText(p.shiroHbElevationM, p.shiroHbRelativeHeightM))
               + castleAttrLine('遺構', p.remains)
               + castleAttrLine('城主', p.lords)
-              + castleAttrLine('築城主', p.builder)
               + osLine(p.address);
         // 写真は非同期取得のため枠だけ先に置き、injectCastleImage で差し込む
         photo = `<div class="os-castle-photo"></div>`;
