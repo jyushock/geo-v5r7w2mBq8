@@ -2081,6 +2081,18 @@ function popupFormMetaText(elevationM, relativeHeightM) {
     return [elev, rel].filter(Boolean).join('／');
 }
 
+// 遺構・城主・築城主は、原典（城郭放浪記）が「なし」「不明」と明記しているケースが多い
+// （遺構が付く18,000件のうち2,743件、城主11,776件のうち2,441件）。castle.js には
+// その記載どおり保持しているが、読み手にとって情報量が無いのでシートには行ごと出さない。
+const CASTLE_UNKNOWN_ATTRS = new Set(['なし', '無し', '無', '不明', '不詳', '－', '-', '―', 'ー']);
+// ラベルは城シート既存の「別名: …」に合わせてプレーンテキストで書く
+function castleAttrLine(label, value) {
+    if (!value) return '';
+    const v = String(value).trim();
+    if (!v || CASTLE_UNKNOWN_ATTRS.has(v)) return '';
+    return osLine(`${label}: ${v}`);
+}
+
 // 情報源ボタン（Wikipedia・攻城団・城郭放浪記）。セット行に並べ、
 // 非表示のものがあれば残ったボタンが flex:1 で自動的に幅を広げる（空欄は作らない）。
 function buildSourceButtons(wikiHref, kojodanUrl, shirohbUrl) {
@@ -2361,6 +2373,9 @@ function buildSheetHtml(type, label, p, lng, lat) {
         const aliases = osParseAliases(p.aliases);
         lines = osLine(aliases.length ? `別名: ${aliases.join('、')}` : '')
               + osLine(popupFormMetaText(p.shiroHbElevationM, p.shiroHbRelativeHeightM))
+              + castleAttrLine('遺構', p.remains)
+              + castleAttrLine('城主', p.lords)
+              + castleAttrLine('築城主', p.builder)
               + osLine(p.address);
         // 写真は非同期取得のため枠だけ先に置き、injectCastleImage で差し込む
         photo = `<div class="os-castle-photo"></div>`;
