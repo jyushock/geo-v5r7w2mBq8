@@ -401,8 +401,10 @@
         .os-photo.os-photo-wide { width: 171px; }
         /* 城の写真は非同期取得。取得できるまで（できなかった場合も）場所を取らない */
         .os-castle-photo { display: none; }
-        /* 写真がタップで拡大できることを示す目印 */
-        .os-photo { cursor: zoom-in; }
+        /* 写真がタップで拡大できることを示す目印。
+           position:relative が無いと ::after の位置の基準が #obj-sheet(position:fixed)になり、
+           写真の右下ではなくシートの右下＝ボタン行の上に出てしまう（実測で確認）。 */
+        .os-photo { cursor: zoom-in; position: relative; }
         .os-photo::after {
             content: '⤢'; position: absolute; right: 3px; bottom: 3px;
             width: 18px; height: 18px; border-radius: 4px; background: rgba(0,0,0,0.5);
@@ -416,7 +418,16 @@
         #photo-viewer.open { display: block; }
         #pv-backdrop { position: absolute; inset: 0; background: #000; }
         #pv-track { position: absolute; inset: 0; display: flex; }
-        #pv-track .pv-pane { width: 100%; height: 100%; flex-shrink: 0;
+        /* 写真の置き場は情報帯の上までとし、帯を写真に重ねない。
+           マンホールカードは画像そのものに説明文が刷られており（gk-p.jp の実物は 517×722。
+           iPhone SE3 の幅375pxでは 375×523.7 に縮むので、画面高667でも下端が情報帯へ62px、
+           Safariのバーが出る高さ553では119px食い込む）、重ねると説明が読めなくなる。
+           ポケふた(750×750)も高さ553では45px食い込むため、種別を問わず余白を取る。
+           帯の高さは名前・住所の行数で変わるので pvSyncInfoHeight() が実測して --pv-info-h に入れる。
+           下限100pxは出典ドット(bottom:92px＋直径6px)を写真にかけないための分。
+           拡大中や情報帯を畳んだ間もこの余白は残す。写真の位置が操作のたびに動く方が読みづらいため。 */
+        #pv-track .pv-pane { width: 100%; height: 100%; flex-shrink: 0; box-sizing: border-box;
+                             padding-bottom: max(var(--pv-info-h, 134px), 100px);
                              display: flex; align-items: center; justify-content: center; overflow: hidden; }
         #pv-track .pv-inner { width: 100%; height: 100%; display: flex;
                               align-items: center; justify-content: center; transform-origin: center center; }
@@ -2560,6 +2571,16 @@ function openPhotoViewer(sources, startUrl) {
     v.setAttribute('aria-hidden', 'false');
     pvSetDismissProgress(0);   // 前回スワイプ途中で閉じた場合の透過を戻す
     pvRender();
+    pvSyncInfoHeight();
+}
+
+// 情報帯の実高さを写真側の余白(--pv-info-h)へ渡す。
+// 帯の高さは名前や住所の行数で変わるため固定値では足りない／余りすぎる。
+// 閉じている間(display:none)は測っても0なので、開いた後にだけ呼ぶ。
+function pvSyncInfoHeight() {
+    const info = document.getElementById('pv-info');
+    const h = info.offsetHeight;
+    if (h > 0) document.getElementById('photo-viewer').style.setProperty('--pv-info-h', h + 'px');
 }
 
 function closePhotoViewer() {
@@ -3392,6 +3413,13 @@ map.on('zoomend', () => { isZooming = false; });
         }
         openPhotoViewer([{ url: img.src, label: '' }], img.src);
     });
+
+    // 情報帯の高さが変わったら写真側の余白も追従させる（出典切替での住所・出典名の行数変化、
+    // 端末回転による折り返しの変化）。pvRender はドラッグ中に毎フレーム走るので、
+    // そこで offsetHeight を読むと強制レイアウトが挟まる。監視側に任せる。
+    if (window.ResizeObserver) {
+        new ResizeObserver(pvSyncInfoHeight).observe(document.getElementById('pv-info'));
+    }
 
     // ── 写真ビューアの操作（案G: 等倍=出典切替 / 拡大中=パン / 2本指=ピンチ） ──
     (function () {
