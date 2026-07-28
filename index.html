@@ -2592,9 +2592,11 @@ async function injectCastleImage(castleName, kojodanUrl, shiroHbUrl) {
 let objSheetLngLat = null;   // 現在シートを開いているオブジェクトの座標
 let objSheetCtx = null;      // 写真ビューアが「何の写真か」を出すための対象情報
 let objSheetPair = null;     // 蓋⇄配布場所を行き来してきたときの[移動元, 移動先]。通常のタップではnull
-// ペア表示のときに地図を引く範囲。下限14はクラスタが解ける倍率（clusterMaxZoom:13のため、
-// これより引くとピンがクラスタに畳まれて消える）。上限17は周囲の街並みが読み取れる限度で、
-// 実データでは1,223組中26.2%が上限に、18.2%が下限に当たる（実測）。
+// ペア表示のときに地図を引く範囲。
+// 下限14は「ここまで引いても2点が入らないならペア表示をあきらめる」境目。clusterMaxZoom:13 の
+// ため、これより引くとピンがクラスタに畳まれて消えることによる。割った場合は移動先だけへ寄せる。
+// 上限17は近すぎる組で寄りすぎないための頭打ちで、周囲の街並みが読み取れる限度。
+// 実データ1,223組では26.2%が上限に当たり、18.2%が下限を割ってペア表示を見送る（実測）。
 const MH_PAIR_MIN_ZOOM = 14;
 const MH_PAIR_MAX_ZOOM = 17;
 
@@ -2616,23 +2618,32 @@ function adjustMapForSheet() {
     if (!h) return;
     const mapH = map.getContainer().getBoundingClientRect().height;
     // 蓋⇄配布場所を行き来した直後は、相手も画面に入るところまで引く。
-    // fitBounds は下限を指定できないので、cameraForBounds で倍率を出してから挟む。
+    // 収める先はシートに隠れない範囲。padding の bottom にシートの実測高さを渡して、
+    // その上の帯に2点が入る倍率を cameraForBounds に出させる。
+    // シートが高いときに padding が地図を食い潰さないよう、可視域は最低160px残す。
     if (objSheetPair) {
         const [a, b] = objSheetPair;
+        const padBottom = Math.min(Math.round(h) + 20, Math.max(0, mapH - 160));
         const cam = map.cameraForBounds(
             [[Math.min(a[0], b[0]), Math.min(a[1], b[1])], [Math.max(a[0], b[0]), Math.max(a[1], b[1])]],
-            { padding: { top: 60, bottom: Math.round(h) + 20, left: 40, right: 40 } });
-        if (cam) {
-            const z = Math.min(MH_PAIR_MAX_ZOOM, Math.max(MH_PAIR_MIN_ZOOM, cam.zoom));
-            map.easeTo({ center: cam.center, zoom: z, bearing: 0, pitch: 0, duration: 550, essential: true },
-                       { histIgnore: true });
+            { padding: { top: 60, bottom: padBottom, left: 40, right: 40 } });
+        // 2点が入る倍率が下限を割るときは、引かずに移動先だけへ寄せる（下の通常処理へ流す）。
+        // 無理に下限で止めると、2点の中間を中心にしたまま寄ることになり、
+        // 移動先まで画面の外へ出てしまう（8.6km離れた組で実測：移動先が画面右外1077px）。
+        if (cam && cam.zoom >= MH_PAIR_MIN_ZOOM) {
+            map.easeTo({ center: cam.center, zoom: Math.min(MH_PAIR_MAX_ZOOM, cam.zoom),
+                         bearing: 0, pitch: 0, duration: 550, essential: true }, { histIgnore: true });
             return;
         }
     }
     // シートが画面の大半を占める場合でもピンが上端外へ飛ばないよう、ずらし量を制限する
     const dy = Math.min(h / 2, Math.max(0, (mapH - 80) / 2));
+    const opts = { center: objSheetLngLat, offset: [0, -dy], duration: 400, essential: true };
+    // ここへ来た objSheetPair は「行き来したが2点は入らなかった」場合。移動先だけへ寄せるが、
+    // 引いたままだとクラスタに畳まれて着いた先が分からないので、判別できる倍率までは寄せる。
+    if (objSheetPair) opts.zoom = Math.max(map.getZoom(), MH_PAIR_MIN_ZOOM);
     // histIgnore: この移動はシート表示の副作用なので、移動履歴には記録しない
-    map.easeTo({ center: objSheetLngLat, offset: [0, -dy], duration: 400, essential: true }, { histIgnore: true });
+    map.easeTo(opts, { histIgnore: true });
 }
 
 // pairFrom: 蓋⇄配布場所を行き来してきたときの移動元の座標。渡すと両方にリングを出して線で結び、
