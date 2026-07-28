@@ -2084,7 +2084,9 @@ function popupFormMetaText(elevationM, relativeHeightM) {
 // 遺構・城主は、原典（城郭放浪記）が「なし」「不明」と明記しているケースが多い
 // （遺構が付く18,000件のうち2,743件、城主11,776件のうち2,441件）。castle.js には
 // その記載どおり保持しているが、読み手にとって情報量が無いのでシートには行ごと出さない。
-const CASTLE_UNKNOWN_ATTRS = new Set(['なし', '無し', '無', '不明', '不詳', '－', '-', '―', 'ー']);
+// 「破壊」「消滅」はWikipediaが遺構の現存しない城に使う表記（castle.js側でも同じ扱い）
+const CASTLE_UNKNOWN_ATTRS = new Set(['なし', '無し', '無', '不明', '不詳', '－', '-', '―', 'ー',
+                                      '破壊', '消滅']);
 // ラベルは城シート既存の「別名: …」に合わせてプレーンテキストで書く
 function castleAttrLine(label, value) {
     if (!value) return '';
