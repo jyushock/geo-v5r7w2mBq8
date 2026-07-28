@@ -472,11 +472,13 @@
         /* メタ行の項目ラベル。全種別を同じ白抜きチップに統一する（以前はコロン・
            os-kタグ・絵文字・ラベルなしの4系統が混在していた）。
            枠線や影を付けると1行あたり1px背が伸びてシートが高くなるので、下地だけで表現する。
-           下地は #546E7A（カードIDの「第◯弾」バッジ os-cdround と同じ色）。
-           以前の #a8a294 は白文字とのコントラストが2.54:1しかなく、同じ行の本文
+           淡い空色の下地に黒文字（sheet-tag-darktext-preview.html のB8）。以前の白抜き
+           （#a8a294 に白）は文字とのコントラストが2.54:1しかなく、同じ行の本文
            （#333／白地＝12.63:1）に対して極端に薄かった。9.5pxはWCAGの「大きい文字」に
-           当たらないため基準は4.5:1で、この色は5.40:1で満たす（いずれも計算で確認）。 */
-        .os-line .os-k { display: inline-block; background: #546E7A; color: #fff; border-radius: 3px;
+           当たらないため基準は4.5:1で、この配色は10.25:1。
+           背景の明度は、白地との差が1.38:1になる値を選んでいる。これ以上明るくすると
+           チップの輪郭が地の白に溶けてタグに見えなくなる（いずれも計算で確認）。 */
+        .os-line .os-k { display: inline-block; background: #CCDEEA; color: #2b2b2b; border-radius: 3px;
                          font-size: 9.5px; font-weight: 700; line-height: 1.5; padding: 0 4px;
                          margin-right: 4px; vertical-align: 1px; letter-spacing: 0.8px; }
         .os-clamp { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
@@ -515,11 +517,13 @@
         .os-cdbadge { font-size: 12px; font-weight: 700; color: #fff;
                       padding: 2px 8px; border-radius: 10px; line-height: 1.6;
                       white-space: nowrap; flex-shrink: 0; background: #8d6e63; }
-        /* 「第◯弾」はカードIDバッジ(#8d6e63)ともメタ行の項目ラベル(#546E7A)とも別系統の紫にする。
-           以前の #546E7A はメタ行と同色で、同じシートに同じ色のチップが2種類並んでいた。
-           紫はマンホール系のシートで他に使っていない唯一の色相で、白文字とのコントラストは
-           6.85:1（計算で確認）。城郭放浪記ボタン(btn-shirohb)と同じ色だが、あれは城のシートに
-           しか出ないので、このバッジと同じ画面に並ぶことはない。 */
+        /* 「第◯弾」は隣のカードIDバッジ(#8d6e63)と別系統の紫にする。白文字とのコントラストは
+           6.85:1（計算で確認）。もとは #546E7A だったが、メタ行の項目ラベルを同じ色にした際に
+           同じシートへ同色のチップが2種類並んだため紫へ移した。その後ラベルは淡い空色＋黒文字
+           （#CCDEEA）に変えたので色の重複自体は解消しているが、明度が大きく離れていて
+           タイトル行のバッジとメタ行の役割の違いが出るため、この紫のままにしている。
+           城郭放浪記ボタン(btn-shirohb)と同じ色だが、あれは城のシートにしか出ないので、
+           このバッジと同じ画面に並ぶことはない。 */
         .os-cdbadge.os-cdround { background: #6A4C93; }
         /* 形態名ごとの個別色。平城系(平城・平山城)は緑系、水系(水軍城・海城・水城)は青系、寺社は紫系に統一。
            他は意味によるグループ化をせず、上記3系統の帯域を避けて個別に配置（モックで確定した配色）。 */
