@@ -471,8 +471,12 @@
         .os-line + .os-line { margin-top: 1px; }
         /* メタ行の項目ラベル。全種別を同じ白抜きチップに統一する（以前はコロン・
            os-kタグ・絵文字・ラベルなしの4系統が混在していた）。
-           枠線や影を付けると1行あたり1px背が伸びてシートが高くなるので、下地だけで表現する。 */
-        .os-line .os-k { display: inline-block; background: #a8a294; color: #fff; border-radius: 3px;
+           枠線や影を付けると1行あたり1px背が伸びてシートが高くなるので、下地だけで表現する。
+           下地は #546E7A（カードIDの「第◯弾」バッジ os-cdround と同じ色）。
+           以前の #a8a294 は白文字とのコントラストが2.54:1しかなく、同じ行の本文
+           （#333／白地＝12.63:1）に対して極端に薄かった。9.5pxはWCAGの「大きい文字」に
+           当たらないため基準は4.5:1で、この色は5.40:1で満たす（いずれも計算で確認）。 */
+        .os-line .os-k { display: inline-block; background: #546E7A; color: #fff; border-radius: 3px;
                          font-size: 9.5px; font-weight: 700; line-height: 1.5; padding: 0 4px;
                          margin-right: 4px; vertical-align: 1px; letter-spacing: 0.8px; }
         .os-clamp { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
