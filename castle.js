@@ -3522,7 +3522,6 @@ const castleData = {
         "shiroHbForm": "平山城",
         "shiroHbElevationM": 132,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/mutsu/sendai-jyo/",
-        "coordOffset": true,
         "remains": "門、石垣、土塁、曲輪、堀",
         "lords": "伊達政宗、伊達忠宗、伊達綱宗、伊達綱村、伊達吉村、伊達宗村、伊達重村、伊達斉村、伊達周宗、伊達斉宗、伊達斉義、伊達斉邦、伊達慶邦、伊達宗基、伊達宗敦、伊達氏"
       }
@@ -58139,7 +58138,6 @@ const castleData = {
         ],
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/dewa/nagatoro-jyo/",
-        "coordOffset": true,
         "shiroHbElevationM": 91.462,
         "remains": "土塁、堀、大手門",
         "lords": "最上氏、米津通政、米津政懿、米津政易、米津政明、米津政敏、米津氏"
@@ -525201,7 +525199,6 @@ const castleData = {
         "shiroHbElevationM": 55,
         "shiroHbRelativeHeightM": 20,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/houki/iwaigaki-jyo/",
-        "coordOffset": true,
         "remains": "土塁、曲輪、堀",
         "lords": "糟屋元覚、箆津敦忠"
       }
@@ -525342,7 +525339,6 @@ const castleData = {
         "prefecture": "北海道",
         "url": "https://kojodan.jp/castle/33",
         "address": "北海道根室市温根元",
-        "coordOffset": true,
         "shiroHbForm": "崖端城",
         "shiroHbElevationM": 11.9,
         "aliases": [
@@ -525497,7 +525493,6 @@ const castleData = {
         "address": "富山県砺波市鷹栖",
         "shiroHbForm": "居館",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/ecchu/oguradono-yakata/",
-        "coordOffset": true,
         "aliases": [
           "小倉殿館跡",
           "庄官屋敷",
