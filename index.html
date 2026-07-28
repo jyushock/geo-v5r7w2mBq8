@@ -540,6 +540,28 @@
         .btn-cd-stock { background: #00897B; }
         .btn-cd-gkp { background: #455A64; }
 
+        /* 蓋 ⇄ カード配布場所の行き来。飛び先の種別色（typeConfig と同じ色）を使い、
+           どちらへ移るボタンかを色でも見分けられるようにする。 */
+        .btn-to-card { background: #1565C0; }   /* → カード配布場所（mhcard） */
+        .btn-to-lid  { background: #B87333; }   /* → マンホール蓋（manhole） */
+        /* 配布場所が複数あるカード（実データで2箇所=143キー、3箇所=4キー）の候補リスト。
+           季節・曜日で窓口が変わる例が大半なので、施設名と蓋からの距離を並べて選べるようにする。
+           ボタン幅(3分割で105px)には施設名が入りきらないため、ボタンではなく行で並べる。 */
+        .os-pick { margin-top: 4px; border: 1px solid #dcd9d2; border-radius: 8px;
+                   overflow: hidden; background: #faf9f7; }
+        .os-pick[hidden] { display: none; }
+        .os-pick-hd { font-size: 10.5px; color: #6a6459; background: #f0ede7; padding: 5px 9px; font-weight: bold; }
+        .os-pick-it { display: flex; align-items: center; gap: 8px; padding: 8px 9px;
+                      border-top: 1px solid #e6e2da; font-size: 11.5px; color: #333;
+                      background: none; border-left: 0; border-right: 0; border-bottom: 0;
+                      width: 100%; text-align: left; font-family: inherit; cursor: pointer; }
+        .os-pick-it:active { background: #f2eee6; }
+        .os-pick-nm { flex: 1; min-width: 0; line-height: 1.35; }
+        .os-pick-sub { display: block; font-size: 10px; color: #888; margin-top: 1px;
+                       overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .os-pick-d { font-size: 11px; font-weight: bold; color: #1565C0; flex-shrink: 0;
+                     font-variant-numeric: tabular-nums; }
+
         /* 簡易トースト(攻城団Chrome未導入通知などに使用) */
         #app-toast {
             position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px));
@@ -2189,7 +2211,8 @@ function castleGmapQuery(name, address) {
 
 // --- マンホールカード（蓋ピン ⇔ 配布場所レコードの紐付け） ---
 // 旧「カード詳細」シートは廃止し、その情報は情報シート本体に統合した。
-let cardJoinIndex = null;   // 蓋ピンcardId → 配布場所propertiesの索引（遅延構築）
+let cardJoinIndex = null;   // カードコード → 配布場所featureの配列（遅延構築）
+let lidJoinIndex = null;    // カードコード → 蓋feature（遅延構築。実データでは1カードにつき蓋は1件）
 
 // カードコード正規化: "13-100-P001" / "01-100-A-01" → "13-100-P-1"
 function cardCodeKey(s) {
@@ -2197,21 +2220,51 @@ function cardCodeKey(s) {
     return m ? `${m[1]}-${m[2]}-${m[3].toUpperCase()}-${parseInt(m[4], 10)}` : null;
 }
 
-function findCardByCardId(cardId) {
-    if (!cardId) return null;
+// 配布場所レコード側のカードコードは、カード画像URL（…/mhc/13-100-P001.jpg）から取る
+function cardKeyOfCardRecord(p) {
+    const m = ((p && p.cardImgUrl) || '').match(/\/mhc\/([\w-]+)\.jpg/i);
+    return m ? cardCodeKey(m[1]) : null;
+}
+
+// 蓋のcardId → 配布場所featureの一覧。
+// 同じカードを複数箇所で配る例が147キーある（2箇所=143 / 3箇所=4。季節・曜日で窓口が変わるものが大半）
+// ため、propertiesではなくfeatureの配列で返す（行き先の座標が要るため）。
+function findCardFeaturesByKey(key) {
+    if (!key) return [];
     if (!cardJoinIndex) {
         const fc = loadedData.mhcard;
-        if (!fc) return null; // 配布場所データ未読込（読込後に再タップで解決）
+        if (!fc) return []; // 配布場所データ未読込（読込後に再タップで解決）
         cardJoinIndex = {};
         fc.features.forEach(f => {
-            const p = f.properties;
-            const m = (p.cardImgUrl || '').match(/\/mhc\/([\w-]+)\.jpg/i);
-            const key = m && cardCodeKey(m[1]);
-            if (key && !cardJoinIndex[key]) cardJoinIndex[key] = p;
+            const k = cardKeyOfCardRecord(f.properties);
+            if (k) (cardJoinIndex[k] = cardJoinIndex[k] || []).push(f);
         });
     }
-    const key = cardCodeKey(cardId);
-    return key ? (cardJoinIndex[key] || null) : null;
+    return cardJoinIndex[key] || [];
+}
+function findCardFeaturesByCardId(cardId) {
+    return findCardFeaturesByKey(cardCodeKey(cardId));
+}
+
+// シート表示に使う配布場所は先頭の1件（複数あっても住所・時間の欄は1件ぶんしか出さない）
+function findCardByCardId(cardId) {
+    const fs = findCardFeaturesByCardId(cardId);
+    return fs.length ? fs[0].properties : null;
+}
+
+// カードコード → 対応する蓋feature（配布場所1,426件中1,365件で引ける）
+function findLidFeatureByKey(key) {
+    if (!key) return null;
+    if (!lidJoinIndex) {
+        const fc = loadedData.manhole;
+        if (!fc) return null; // 蓋データ未読込（読込後に再タップで解決）
+        lidJoinIndex = {};
+        fc.features.forEach(f => {
+            const k = cardCodeKey(f.properties.cardId);
+            if (k && !lidJoinIndex[k]) lidJoinIndex[k] = f;
+        });
+    }
+    return lidJoinIndex[key] || null;
 }
 
 // 配布場所レコードから、シート表示に必要な派生情報を作る。
@@ -2229,6 +2282,62 @@ function mhcardInfo(p) {
         round: p.round || '',
         gkpUrl: `https://www.gk-p.jp/mhcard/?pref=${gkpPref}`
               + (muni ? `#:~:text=${encodeURIComponent(muni)}` : '#mhcard_result'),
+    };
+}
+
+// --- 蓋 ⇄ カード配布場所の行き来 ---------------------------------------
+/* 蓋のシートから「そのカードをもらえる配布場所」へ、配布場所のシートから「そのカードのデザイン蓋」へ移る。
+   移動後はピンをタップしたときと同じ状態にする（地図を寄せる → 情報シート＋選択リング → 履歴に記録）。
+   飛び先の種別を表示していない（設定でOFF）ときはボタンを出さない。検索・周辺検索が
+   OFFの種別を候補から外すのと同じ扱いで、表示していない種別へは連れて行かない。
+   onclickに渡すのは正規化済みのカードコード（英数字とハイフンのみ）で、URLや施設名は埋め込まない。 */
+const MH_JUMP_ZOOM = 16;   // 検索結果から飛ぶときと同じ倍率（クラスタが解けて対象を判別できる）
+
+function mhJumpTo(type, feature) {
+    if (!feature) return;
+    const c = feature.geometry.coordinates.slice();
+    const p = feature.properties;
+    const label = p.name || p.locationName || '地点';
+    map.easeTo({ center: c, zoom: Math.max(map.getZoom(), MH_JUMP_ZOOM),
+                 bearing: 0, pitch: 0, duration: 550, essential: true });
+    // 移動の途中でシートを出す（検索結果から飛ぶときと同じ間合い）
+    setTimeout(() => {
+        openObjSheet(type, label, p, c[0], c[1]);
+        histRecordPin(label, c, type, p);
+    }, 300);
+}
+function mhJumpToCard(key, idx) {
+    mhJumpTo('mhcard', findCardFeaturesByKey(key)[idx || 0]);
+}
+function mhJumpToLid(key) {
+    mhJumpTo('manhole', findLidFeatureByKey(key));
+}
+// 配布場所が複数のときの候補リストの開閉。高さが変わるので地図を寄せ直す
+function mhTogglePicker() {
+    const pick = document.querySelector('#obj-sheet-body .os-pick');
+    if (!pick) return;
+    pick.hidden = !pick.hidden;
+    adjustMapForSheet();
+}
+
+// 蓋シートの「配布場所」ボタンと、複数のときに開く候補リストを作る。
+// 候補には蓋からの距離を出す（季節・曜日で分かれた同名の窓口を見分ける手がかりになる）。
+function mhCardJumpHtml(cardFeatures, key, lng, lat) {
+    if (cardFeatures.length === 1) {
+        return { btn: `<button class="btn btn-to-card" onclick="mhJumpToCard('${key}',0)">配布場所</button>`, pick: '' };
+    }
+    const items = cardFeatures.map((f, i) => {
+        const q = f.properties;
+        const d = calcDist(lat, lng, f.geometry.coordinates[1], f.geometry.coordinates[0]);
+        const ds = d < 1 ? `${Math.round(d * 1000)}m` : `${d.toFixed(1)}km`;
+        return `<button class="os-pick-it" onclick="mhJumpToCard('${key}',${i})">`
+             + `<span class="os-pick-nm">${q.locationName || q.name || '配布場所'}`
+             + `<span class="os-pick-sub">${q.address || ''}</span></span>`
+             + `<span class="os-pick-d">${ds}</span></button>`;
+    }).join('');
+    return {
+        btn: `<button class="btn btn-to-card" onclick="mhTogglePicker()">配布場所（${cardFeatures.length}件）</button>`,
+        pick: `<div class="os-pick" hidden><div class="os-pick-hd">配布場所を選ぶ</div>${items}</div>`,
     };
 }
 
@@ -2347,7 +2456,8 @@ function buildSheetHtml(type, label, p, lng, lat) {
         `<button class="btn btn-nearby-search" onclick='searchNearby(${lng},${lat},${JSON.stringify(label)})'>${ICON_SEARCH_SVG}この周辺を検索</button>`,
     ]);
     const isPokefuta = type === 'pokefuta' || (type === 'manhole' && p.source === 'pokefuta');
-    let badges = '', title = '', photo = '', lines = '', rowA = '', rowB = '';
+    // pick は配布場所が複数のカードで行Bの下に出す候補リスト（他の種別では空）
+    let badges = '', title = '', photo = '', lines = '', rowA = '', rowB = '', pick = '';
 
     if (isPokefuta) {
         title = p.pokemon || label;
@@ -2358,7 +2468,9 @@ function buildSheetHtml(type, label, p, lng, lat) {
 
     } else if (type === 'manhole' || type === 'mhcard') {
         // 蓋は配布場所レコードを紐付けて参照する（蓋の住所と配布場所の住所は別物）
-        const card = type === 'mhcard' ? p : findCardByCardId(p.cardId);
+        const cardKey = type === 'mhcard' ? cardKeyOfCardRecord(p) : cardCodeKey(p.cardId);
+        const cardFeatures = type === 'mhcard' ? [] : findCardFeaturesByKey(cardKey);
+        const card = type === 'mhcard' ? p : (cardFeatures.length ? cardFeatures[0].properties : null);
         const info = card ? mhcardInfo(card) : null;
         if (info) {
             badges = (info.id ? `<span class="os-cdbadge">${info.id}</span>` : '')
@@ -2385,8 +2497,21 @@ function buildSheetHtml(type, label, p, lng, lat) {
                     : '');
         }
         rowA = osRow([osBtn(coordGmapUrl, 'btn-gmap', 'GoogleMap')]);
-        // 旧「カード詳細」シートの外部リンク2つをセット行へ（在庫状況は url がある場合のみ＝1,246/1,426件）
-        if (info) rowB = osRow([osBtn(card.url, 'btn-cd-stock', '在庫状況'), osBtn(info.gkpUrl, 'btn-cd-gkp', 'GKP公式一覧')]);
+        // 行B: 旧「カード詳細」シートの外部リンク2つ（在庫状況は url がある場合のみ＝1,246/1,426件）に
+        //      3つ目として相手側への行き来ボタンを足す。飛び先の種別がOFFのときは出さない。
+        let jumpBtn = '';
+        if (type === 'mhcard') {
+            if (filterState.manhole !== false && findLidFeatureByKey(cardKey)) {
+                jumpBtn = `<button class="btn btn-to-lid" onclick="mhJumpToLid('${cardKey}')">マンホールへ</button>`;
+            }
+        } else if (filterState.mhcard !== false && cardFeatures.length) {
+            const j = mhCardJumpHtml(cardFeatures, cardKey, lng, lat);
+            jumpBtn = j.btn;
+            pick = j.pick;
+        }
+        rowB = osRow([info ? osBtn(card.url, 'btn-cd-stock', '在庫状況') : '',
+                      info ? osBtn(info.gkpUrl, 'btn-cd-gkp', 'GKP公式一覧') : '',
+                      jumpBtn]);
 
     } else if (type === 'michi') {
         title = p.name || label;
@@ -2432,7 +2557,7 @@ function buildSheetHtml(type, label, p, lng, lat) {
     }
 
     const media = photo ? `<div class="os-row">${photo}<div class="os-meta">${lines}</div></div>` : lines;
-    return `<div class="os-title">${badges}<span class="os-name">${title}</span></div>${media}${rowA}${rowB}${rowC}`;
+    return `<div class="os-title">${badges}<span class="os-name">${title}</span></div>${media}${rowA}${rowB}${pick}${rowC}`;
 }
 
 // 城シートに写真を非同期で挿入する
