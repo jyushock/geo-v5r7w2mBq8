@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>メタ行ラベルチップの配色案</title>
+<style>
+  body { font-family: sans-serif; background: #e9e9e9; padding: 18px; margin: 0; color: #222; }
+  h1 { font-size: 17px; margin: 0 0 8px; }
+  h2 { font-size: 14px; margin: 30px 0 8px; padding: 10px 0 0; border-top: 3px solid #bbb; }
+  .lead { font-size: 12px; color: #555; line-height: 1.85; margin: 0 0 12px; max-width: 1180px; }
+  .lead b { color: #b00; }
+  code { background: #ddd; padding: 0 3px; border-radius: 3px; font-size: 11px; }
+  table.t { border-collapse: collapse; font-size: 11.5px; margin: 8px 0 16px; background: #fff; }
+  table.t th, table.t td { border: 1px solid #ddd; padding: 4px 9px; text-align: left; }
+  table.t th { background: #f4f4f4; }
+  td.ok { color: #0a7a2f; font-weight: bold; } td.ok3 { color: #06621f; font-weight: bold; }
+  td.ng { color: #b00; font-weight: bold; }
+  .grid { display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-start; }
+  .card { width: 300px; background: #fff; border-radius: 10px; padding: 10px 12px 12px;
+          box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+  .card.now { outline: 2px solid #b00; }
+  .card h4 { font-size: 12px; margin: 0 0 2px; }
+  .card .meta { font-size: 10px; color: #888; margin: 0 0 7px; font-family: monospace; }
+  .card .cmt { font-size: 10.5px; color: #666; line-height: 1.6; margin: 7px 0 0; }
+  .badge { display: inline-block; font-size: 10px; font-weight: bold; border-radius: 3px;
+           padding: 1px 5px; margin-left: 5px; }
+  .badge.ok { background: #e3f3e7; color: #0a7a2f; } .badge.ok3 { background: #d8efdf; color: #06621f; }
+  .badge.ng { background: #fbe4e4; color: #b00; }
+
+  /* ══ index.html の該当CSSをそのまま移植（形は変えない） ══ */
+  .os-line { font-size: 11px; color: #333; line-height: 1.45; font-variant-numeric: tabular-nums; }
+  .os-line + .os-line { margin-top: 1px; }
+  .os-k { display: inline-block; background: #a8a294; color: #fff; border-radius: 3px;
+          font-size: 9.5px; font-weight: 700; line-height: 1.5; padding: 0 4px;
+          margin-right: 4px; vertical-align: 1px; letter-spacing: 0.8px; }
+  .k-now { background: #a8a294; color: #ffffff; }
+  .k-A1 { background: #8a8375; color: #ffffff; }
+  .k-A2 { background: #77705f; color: #ffffff; }
+  .k-A3 { background: #6b6455; color: #ffffff; }
+  .k-A4 { background: #5d5647; color: #ffffff; }
+  .k-B1 { background: #ece9e1; color: #5c5648; }
+  .k-B2 { background: #efe9dc; color: #6b5b3e; }
+  .k-B3 { background: #eceaea; color: #4f4f4f; }
+  .k-B4 { background: #f2eee4; color: #57503f; }
+  .k-K1 { background: #e6e2d8; color: #3f3a2e; }
+  .k-K2 { background: #eee7d9; color: #463c28; }
+  .k-C1 { background: #6e6e6e; color: #ffffff; }
+  .k-C2 { background: #555555; color: #ffffff; }
+  .k-C3 { background: #3a3a3a; color: #ffffff; }
+  .k-I1 { background: #a8a294; color: #2b2b2b; }
+  .k-I2 { background: #a8a294; color: #332f26; }
+  .k-D1 { background: #8d6e63; color: #ffffff; }
+  .k-D2 { background: #546e7a; color: #ffffff; }
+  .k-D3 { background: #B87333; color: #ffffff; }
+  .k-E1 { background: #ffffff; color: #6b6455; }
+  .k-E2 { background: #ffffff; color: #5d5647; }
+  .k-H1 { background: #2b2b2b; color: #ffffff; }
+  .k-H2 { background: #f5f3ee; color: #2b2b2b; }
+  .k-J1 { background: #737373; color: #ffffff; }
+  .k-J2 { background: #525252; color: #ffffff; }
+  .kk-F-0 { background: #e3edf7; color: #1a5b8f; }
+  .kk-F-1 { background: #e5f1e6; color: #2b6b2f; }
+  .kk-F-2 { background: #f0e8f4; color: #6a3a75; }
+  .kk-F-3 { background: #f0e7de; color: #7a5230; }
+  .kk-F-4 { background: #e3edf7; color: #1a5b8f; }
+  .kk-F-5 { background: #fbecec; color: #8f2f2f; }
+  .kk-F-6 { background: #eae7f6; color: #463a86; }
+  .kk-F-7 { background: #e9f0e4; color: #4a6b2a; }
+  .kk-F-8 { background: #f7ecdf; color: #8a5a1f; }
+  .kk-F-9 { background: #e6f2f4; color: #1d6470; }
+  .kk-G-0 { background: #2a6ea8; color: #ffffff; }
+  .kk-G-1 { background: #3c7a41; color: #ffffff; }
+  .kk-G-2 { background: #7a4a86; color: #ffffff; }
+  .kk-G-3 { background: #8a5a33; color: #ffffff; }
+  .kk-G-4 { background: #2a6ea8; color: #ffffff; }
+  .kk-G-5 { background: #a03b3b; color: #ffffff; }
+  .kk-G-6 { background: #5a4e9c; color: #ffffff; }
+  .kk-G-7 { background: #5b7f34; color: #ffffff; }
+  .kk-G-8 { background: #9a6626; color: #ffffff; }
+  .kk-G-9 { background: #2a7681; color: #ffffff; }
+</style>
+</head><body>
+<h1>情報シートのメタ行ラベル（<code>.os-line .os-k</code>）の配色案</h1>
+<p class="lead">
+  形（角丸3px・9.5px太字・<code>padding:0 4px</code>・<code>letter-spacing:.8px</code>）は現状のまま、<b>背景色と文字色だけ</b>を変えた案。<br>
+  枠線と影は付けない。付けると1行あたり1px背が伸びてシートが高くなるため（既存コメントの理由をそのまま踏襲）。<br>
+  数値は WCAG のコントラスト比。<b>9.5pxは「大きい文字」に当たらないので基準は 4.5:1（AA）</b>、7:1 以上で AAA。
+</p>
+<table class="t">
+  <tr><th>比較対象</th><th>色</th><th>コントラスト比</th><th>判定</th></tr>
+  <tr><td>現状のラベル</td><td>#a8a294 に白</td><td>2.54:1</td><td class="ng">不足（AAの4.5:1に届かない）</td></tr>
+  <tr><td>同じ行の本文</td><td>#333 に白地</td><td>12.63:1</td><td class="ok3">AAA</td></tr>
+  <tr><td>城の形態バッジ</td><td>#8d6e63 に白</td><td>4.62:1</td><td class="ok">AA</td></tr>
+</table>
+<p class="lead">同じ行の中で本文が12.63、ラベルが2.54。<b>ラベルだけが極端に薄い</b>のが見づらさの原因（実測）。</p>
+<h2>1. 全案の一覧</h2>
+<table class="t"><tr><th>案</th><th>系統</th><th>背景</th><th>文字</th><th>比</th><th>判定</th></tr>
+<tr><td>現状</td><td>現状</td><td><code>#a8a294</code></td><td><code>#ffffff</code></td><td>2.54:1</td><td class="ng">不足</td></tr>
+<tr><td>A1 グレージュ濃</td><td>A 同系を濃く</td><td><code>#8a8375</code></td><td><code>#ffffff</code></td><td>3.76:1</td><td class="ng">不足</td></tr>
+<tr><td>A2 グレージュ暗</td><td>A 同系を濃く</td><td><code>#77705f</code></td><td><code>#ffffff</code></td><td>4.92:1</td><td class="ok">AA</td></tr>
+<tr><td>A3 セピア暗</td><td>A 同系を濃く</td><td><code>#6b6455</code></td><td><code>#ffffff</code></td><td>5.87:1</td><td class="ok">AA</td></tr>
+<tr><td>A4 こげ茶</td><td>A 同系を濃く</td><td><code>#5d5647</code></td><td><code>#ffffff</code></td><td>7.27:1</td><td class="ok3">AAA</td></tr>
+<tr><td>B1 淡グレージュ</td><td>B 淡背景＋濃文字</td><td><code>#ece9e1</code></td><td><code>#5c5648</code></td><td>6.01:1</td><td class="ok">AA</td></tr>
+<tr><td>B2 淡ベージュ</td><td>B 淡背景＋濃文字</td><td><code>#efe9dc</code></td><td><code>#6b5b3e</code></td><td>5.44:1</td><td class="ok">AA</td></tr>
+<tr><td>B3 淡グレー</td><td>B 淡背景＋濃文字</td><td><code>#eceaea</code></td><td><code>#4f4f4f</code></td><td>6.84:1</td><td class="ok">AA</td></tr>
+<tr><td>B4 生成り</td><td>B 淡背景＋濃文字</td><td><code>#f2eee4</code></td><td><code>#57503f</code></td><td>6.91:1</td><td class="ok">AA</td></tr>
+<tr><td>K1 淡グレージュ＋極濃</td><td>B 淡背景＋濃文字</td><td><code>#e6e2d8</code></td><td><code>#3f3a2e</code></td><td>8.75:1</td><td class="ok3">AAA</td></tr>
+<tr><td>K2 淡セピア＋極濃</td><td>B 淡背景＋濃文字</td><td><code>#eee7d9</code></td><td><code>#463c28</code></td><td>8.81:1</td><td class="ok3">AAA</td></tr>
+<tr><td>C1 中グレー</td><td>C 無彩色</td><td><code>#6e6e6e</code></td><td><code>#ffffff</code></td><td>5.10:1</td><td class="ok">AA</td></tr>
+<tr><td>C2 濃グレー</td><td>C 無彩色</td><td><code>#555555</code></td><td><code>#ffffff</code></td><td>7.46:1</td><td class="ok3">AAA</td></tr>
+<tr><td>C3 ほぼ黒</td><td>C 無彩色</td><td><code>#3a3a3a</code></td><td><code>#ffffff</code></td><td>11.37:1</td><td class="ok3">AAA</td></tr>
+<tr><td>I1 現状背景＋黒字</td><td>I 背景そのまま</td><td><code>#a8a294</code></td><td><code>#2b2b2b</code></td><td>5.57:1</td><td class="ok">AA</td></tr>
+<tr><td>I2 現状背景＋こげ茶字</td><td>I 背景そのまま</td><td><code>#a8a294</code></td><td><code>#332f26</code></td><td>5.24:1</td><td class="ok">AA</td></tr>
+<tr><td>D1 城バッジ茶</td><td>D 既存パレット流用</td><td><code>#8d6e63</code></td><td><code>#ffffff</code></td><td>4.62:1</td><td class="ok">AA</td></tr>
+<tr><td>D2 カードID青灰</td><td>D 既存パレット流用</td><td><code>#546e7a</code></td><td><code>#ffffff</code></td><td>5.40:1</td><td class="ok">AA</td></tr>
+<tr><td>D3 銅（蓋の種別色）</td><td>D 既存パレット流用</td><td><code>#B87333</code></td><td><code>#ffffff</code></td><td>3.79:1</td><td class="ng">不足</td></tr>
+<tr><td>E1 白地＋セピア字</td><td>E 反転（白地）</td><td><code>#ffffff</code></td><td><code>#6b6455</code></td><td>5.87:1</td><td class="ok">AA</td></tr>
+<tr><td>E2 白地＋こげ茶字</td><td>E 反転（白地）</td><td><code>#ffffff</code></td><td><code>#5d5647</code></td><td>7.27:1</td><td class="ok3">AAA</td></tr>
+<tr><td>H1 黒地白字</td><td>H 高コントラスト</td><td><code>#2b2b2b</code></td><td><code>#ffffff</code></td><td>14.16:1</td><td class="ok3">AAA</td></tr>
+<tr><td>H2 生成り地黒字</td><td>H 高コントラスト</td><td><code>#f5f3ee</code></td><td><code>#2b2b2b</code></td><td>12.77:1</td><td class="ok3">AAA</td></tr>
+<tr><td>J1 黒55%相当</td><td>J 半透明黒相当</td><td><code>#737373</code></td><td><code>#ffffff</code></td><td>4.74:1</td><td class="ok">AA</td></tr>
+<tr><td>J2 黒68%相当</td><td>J 半透明黒相当</td><td><code>#525252</code></td><td><code>#ffffff</code></td><td>7.81:1</td><td class="ok3">AAA</td></tr>
+</table>
+<h2>2. 単色案（全ラベル共通の色）— マンホール蓋のシートの行で</h2>
+<div class="grid">
+<div class="card now"><h4>現状<span class="badge ng">不足 2.54:1</span></h4><p class="meta">bg #a8a294 / fg #ffffff</p><div class="os-line"><span class="os-k k-now">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-now">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-now">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-now">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-now">発行</span>2025/07/25</div><p class="cmt">グレージュに白。9.5pxでは文字の輪郭がにじむ</p></div>
+<div class="card"><h4>A1 グレージュ濃<span class="badge ng">不足 3.76:1</span></h4><p class="meta">bg #8a8375 / fg #ffffff</p><div class="os-line"><span class="os-k k-A1">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-A1">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-A1">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-A1">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-A1">発行</span>2025/07/25</div><p class="cmt">現状の色味のまま一段暗く。まだ基準未満</p></div>
+<div class="card"><h4>A2 グレージュ暗<span class="badge ok">AA 4.92:1</span></h4><p class="meta">bg #77705f / fg #ffffff</p><div class="os-line"><span class="os-k k-A2">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-A2">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-A2">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-A2">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-A2">発行</span>2025/07/25</div><p class="cmt">色味を保ったままAAに乗る最小の暗さ</p></div>
+<div class="card"><h4>A3 セピア暗<span class="badge ok">AA 5.87:1</span></h4><p class="meta">bg #6b6455 / fg #ffffff</p><div class="os-line"><span class="os-k k-A3">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-A3">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-A3">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-A3">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-A3">発行</span>2025/07/25</div><p class="cmt">写真やカード画像と喧嘩しない落ち着き</p></div>
+<div class="card"><h4>A4 こげ茶<span class="badge ok3">AAA 7.27:1</span></h4><p class="meta">bg #5d5647 / fg #ffffff</p><div class="os-line"><span class="os-k k-A4">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-A4">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-A4">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-A4">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-A4">発行</span>2025/07/25</div><p class="cmt">AAAに届く。地の白との差が最大</p></div>
+<div class="card"><h4>B1 淡グレージュ<span class="badge ok">AA 6.01:1</span></h4><p class="meta">bg #ece9e1 / fg #5c5648</p><div class="os-line"><span class="os-k k-B1">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-B1">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-B1">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-B1">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-B1">発行</span>2025/07/25</div><p class="cmt">白の面積が減り、行がうるさくならない</p></div>
+<div class="card"><h4>B2 淡ベージュ<span class="badge ok">AA 5.44:1</span></h4><p class="meta">bg #efe9dc / fg #6b5b3e</p><div class="os-line"><span class="os-k k-B2">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-B2">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-B2">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-B2">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-B2">発行</span>2025/07/25</div><p class="cmt">カード画像の色に馴染む</p></div>
+<div class="card"><h4>B3 淡グレー<span class="badge ok">AA 6.84:1</span></h4><p class="meta">bg #eceaea / fg #4f4f4f</p><div class="os-line"><span class="os-k k-B3">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-B3">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-B3">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-B3">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-B3">発行</span>2025/07/25</div><p class="cmt">色味を持たない。どの種別にも中立</p></div>
+<div class="card"><h4>B4 生成り<span class="badge ok">AA 6.91:1</span></h4><p class="meta">bg #f2eee4 / fg #57503f</p><div class="os-line"><span class="os-k k-B4">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-B4">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-B4">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-B4">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-B4">発行</span>2025/07/25</div><p class="cmt">最も軽い。チップの主張は弱め</p></div>
+<div class="card"><h4>K1 淡グレージュ＋極濃<span class="badge ok3">AAA 8.75:1</span></h4><p class="meta">bg #e6e2d8 / fg #3f3a2e</p><div class="os-line"><span class="os-k k-K1">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-K1">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-K1">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-K1">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-K1">発行</span>2025/07/25</div><p class="cmt">Bの中で最も強い。本文との差も出る</p></div>
+<div class="card"><h4>K2 淡セピア＋極濃<span class="badge ok3">AAA 8.81:1</span></h4><p class="meta">bg #eee7d9 / fg #463c28</p><div class="os-line"><span class="os-k k-K2">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-K2">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-K2">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-K2">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-K2">発行</span>2025/07/25</div><p class="cmt">同上。やや暖色寄り</p></div>
+<div class="card"><h4>C1 中グレー<span class="badge ok">AA 5.10:1</span></h4><p class="meta">bg #6e6e6e / fg #ffffff</p><div class="os-line"><span class="os-k k-C1">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-C1">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-C1">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-C1">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-C1">発行</span>2025/07/25</div><p class="cmt">無難。現状の色味は失う</p></div>
+<div class="card"><h4>C2 濃グレー<span class="badge ok3">AAA 7.46:1</span></h4><p class="meta">bg #555555 / fg #ffffff</p><div class="os-line"><span class="os-k k-C2">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-C2">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-C2">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-C2">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-C2">発行</span>2025/07/25</div><p class="cmt">AAA。本文#333に近く統一感が出る</p></div>
+<div class="card"><h4>C3 ほぼ黒<span class="badge ok3">AAA 11.37:1</span></h4><p class="meta">bg #3a3a3a / fg #ffffff</p><div class="os-line"><span class="os-k k-C3">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-C3">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-C3">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-C3">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-C3">発行</span>2025/07/25</div><p class="cmt">最も強い。ラベルが主役に見えるほど</p></div>
+<div class="card"><h4>I1 現状背景＋黒字<span class="badge ok">AA 5.57:1</span></h4><p class="meta">bg #a8a294 / fg #2b2b2b</p><div class="os-line"><span class="os-k k-I1">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-I1">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-I1">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-I1">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-I1">発行</span>2025/07/25</div><p class="cmt">背景を1つも変えず文字だけ濃くする</p></div>
+<div class="card"><h4>I2 現状背景＋こげ茶字<span class="badge ok">AA 5.24:1</span></h4><p class="meta">bg #a8a294 / fg #332f26</p><div class="os-line"><span class="os-k k-I2">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-I2">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-I2">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-I2">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-I2">発行</span>2025/07/25</div><p class="cmt">同上。やや柔らかい</p></div>
+<div class="card"><h4>D1 城バッジ茶<span class="badge ok">AA 4.62:1</span></h4><p class="meta">bg #8d6e63 / fg #ffffff</p><div class="os-line"><span class="os-k k-D1">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-D1">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-D1">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-D1">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-D1">発行</span>2025/07/25</div><p class="cmt">城の形態バッジと同色。既存と揃う</p></div>
+<div class="card"><h4>D2 カードID青灰<span class="badge ok">AA 5.40:1</span></h4><p class="meta">bg #546e7a / fg #ffffff</p><div class="os-line"><span class="os-k k-D2">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-D2">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-D2">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-D2">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-D2">発行</span>2025/07/25</div><p class="cmt">カードIDバッジ(os-cdround)と同色</p></div>
+<div class="card"><h4>D3 銅（蓋の種別色）<span class="badge ng">不足 3.79:1</span></h4><p class="meta">bg #B87333 / fg #ffffff</p><div class="os-line"><span class="os-k k-D3">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-D3">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-D3">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-D3">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-D3">発行</span>2025/07/25</div><p class="cmt">蓋のピン色。基準未満なので採れない</p></div>
+<div class="card"><h4>E1 白地＋セピア字<span class="badge ok">AA 5.87:1</span></h4><p class="meta">bg #ffffff / fg #6b6455</p><div class="os-line"><span class="os-k k-E1">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-E1">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-E1">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-E1">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-E1">発行</span>2025/07/25</div><p class="cmt">地色と同じでチップに見えない恐れ</p></div>
+<div class="card"><h4>E2 白地＋こげ茶字<span class="badge ok3">AAA 7.27:1</span></h4><p class="meta">bg #ffffff / fg #5d5647</p><div class="os-line"><span class="os-k k-E2">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-E2">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-E2">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-E2">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-E2">発行</span>2025/07/25</div><p class="cmt">同上</p></div>
+<div class="card"><h4>H1 黒地白字<span class="badge ok3">AAA 14.16:1</span></h4><p class="meta">bg #2b2b2b / fg #ffffff</p><div class="os-line"><span class="os-k k-H1">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-H1">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-H1">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-H1">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-H1">発行</span>2025/07/25</div><p class="cmt">最大級。シートが硬くなる</p></div>
+<div class="card"><h4>H2 生成り地黒字<span class="badge ok3">AAA 12.77:1</span></h4><p class="meta">bg #f5f3ee / fg #2b2b2b</p><div class="os-line"><span class="os-k k-H2">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-H2">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-H2">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-H2">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-H2">発行</span>2025/07/25</div><p class="cmt">背景がほぼ地色。枠が曖昧になる</p></div>
+<div class="card"><h4>J1 黒55%相当<span class="badge ok">AA 4.74:1</span></h4><p class="meta">bg #737373 / fg #ffffff</p><div class="os-line"><span class="os-k k-J1">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-J1">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-J1">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-J1">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-J1">発行</span>2025/07/25</div><p class="cmt">写真の上に置いても成立する濃さ</p></div>
+<div class="card"><h4>J2 黒68%相当<span class="badge ok3">AAA 7.81:1</span></h4><p class="meta">bg #525252 / fg #ffffff</p><div class="os-line"><span class="os-k k-J2">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k k-J2">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k k-J2">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k k-J2">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k k-J2">発行</span>2025/07/25</div><p class="cmt">同上。より強い</p></div>
+</div>
+<h2>3. 主な候補を城のシート（ラベルが多い）で</h2>
+<div class="grid">
+<div class="card now"><h4>現状<span class="badge ng">不足 2.54:1</span></h4><div class="os-line"><span class="os-k k-now">別名</span>鶴ヶ城、若松城</div><div class="os-line"><span class="os-k k-now">標高</span>410m</div><div class="os-line"><span class="os-k k-now">遺構</span>石垣、堀、土塁</div><div class="os-line"><span class="os-k k-now">城主</span>蒲生氏郷、加藤嘉明</div><div class="os-line"><span class="os-k k-now">住所</span>福島県会津若松市追手町1-1</div></div>
+<div class="card"><h4>A3 セピア暗<span class="badge ok">AA 5.87:1</span></h4><div class="os-line"><span class="os-k k-A3">別名</span>鶴ヶ城、若松城</div><div class="os-line"><span class="os-k k-A3">標高</span>410m</div><div class="os-line"><span class="os-k k-A3">遺構</span>石垣、堀、土塁</div><div class="os-line"><span class="os-k k-A3">城主</span>蒲生氏郷、加藤嘉明</div><div class="os-line"><span class="os-k k-A3">住所</span>福島県会津若松市追手町1-1</div></div>
+<div class="card"><h4>A4 こげ茶<span class="badge ok3">AAA 7.27:1</span></h4><div class="os-line"><span class="os-k k-A4">別名</span>鶴ヶ城、若松城</div><div class="os-line"><span class="os-k k-A4">標高</span>410m</div><div class="os-line"><span class="os-k k-A4">遺構</span>石垣、堀、土塁</div><div class="os-line"><span class="os-k k-A4">城主</span>蒲生氏郷、加藤嘉明</div><div class="os-line"><span class="os-k k-A4">住所</span>福島県会津若松市追手町1-1</div></div>
+<div class="card"><h4>B1 淡グレージュ<span class="badge ok">AA 6.01:1</span></h4><div class="os-line"><span class="os-k k-B1">別名</span>鶴ヶ城、若松城</div><div class="os-line"><span class="os-k k-B1">標高</span>410m</div><div class="os-line"><span class="os-k k-B1">遺構</span>石垣、堀、土塁</div><div class="os-line"><span class="os-k k-B1">城主</span>蒲生氏郷、加藤嘉明</div><div class="os-line"><span class="os-k k-B1">住所</span>福島県会津若松市追手町1-1</div></div>
+<div class="card"><h4>K1 淡グレージュ＋極濃<span class="badge ok3">AAA 8.75:1</span></h4><div class="os-line"><span class="os-k k-K1">別名</span>鶴ヶ城、若松城</div><div class="os-line"><span class="os-k k-K1">標高</span>410m</div><div class="os-line"><span class="os-k k-K1">遺構</span>石垣、堀、土塁</div><div class="os-line"><span class="os-k k-K1">城主</span>蒲生氏郷、加藤嘉明</div><div class="os-line"><span class="os-k k-K1">住所</span>福島県会津若松市追手町1-1</div></div>
+<div class="card"><h4>C2 濃グレー<span class="badge ok3">AAA 7.46:1</span></h4><div class="os-line"><span class="os-k k-C2">別名</span>鶴ヶ城、若松城</div><div class="os-line"><span class="os-k k-C2">標高</span>410m</div><div class="os-line"><span class="os-k k-C2">遺構</span>石垣、堀、土塁</div><div class="os-line"><span class="os-k k-C2">城主</span>蒲生氏郷、加藤嘉明</div><div class="os-line"><span class="os-k k-C2">住所</span>福島県会津若松市追手町1-1</div></div>
+<div class="card"><h4>I1 現状背景＋黒字<span class="badge ok">AA 5.57:1</span></h4><div class="os-line"><span class="os-k k-I1">別名</span>鶴ヶ城、若松城</div><div class="os-line"><span class="os-k k-I1">標高</span>410m</div><div class="os-line"><span class="os-k k-I1">遺構</span>石垣、堀、土塁</div><div class="os-line"><span class="os-k k-I1">城主</span>蒲生氏郷、加藤嘉明</div><div class="os-line"><span class="os-k k-I1">住所</span>福島県会津若松市追手町1-1</div></div>
+<div class="card"><h4>D1 城バッジ茶<span class="badge ok">AA 4.62:1</span></h4><div class="os-line"><span class="os-k k-D1">別名</span>鶴ヶ城、若松城</div><div class="os-line"><span class="os-k k-D1">標高</span>410m</div><div class="os-line"><span class="os-k k-D1">遺構</span>石垣、堀、土塁</div><div class="os-line"><span class="os-k k-D1">城主</span>蒲生氏郷、加藤嘉明</div><div class="os-line"><span class="os-k k-D1">住所</span>福島県会津若松市追手町1-1</div></div>
+</div>
+<h2>4. 種別ごとに色を変える案</h2>
+<p class="lead">ラベルの意味ごとに色を割り当てる。行の意味が色でも分かる反面、1シートに5色前後が並ぶ。全10種別（城・道の駅・マンホール系で使うラベルすべて）で確認する。</p>
+<div class="grid">
+<div class="card" style="width:330px"><h4>F 淡背景＋濃文字（種別色）<span class="badge ok">最小 5.06:1 AA</span></h4><div class="os-line"><span class="os-k kk-F-0">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k kk-F-1">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k kk-F-2">発行</span>2025/07/25</div><div class="os-line"><span class="os-k kk-F-3">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k kk-F-4">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k kk-F-5">別名</span>鶴ヶ城、若松城</div><div class="os-line"><span class="os-k kk-F-6">標高</span>410m</div><div class="os-line"><span class="os-k kk-F-7">遺構</span>石垣、堀、土塁</div><div class="os-line"><span class="os-k kk-F-8">城主</span>蒲生氏郷</div><div class="os-line"><span class="os-k kk-F-9">路線</span>国道4号</div></div>
+<div class="card" style="width:330px"><h4>G 濃背景＋白文字（種別色）<span class="badge ok">最小 4.64:1 AA</span></h4><div class="os-line"><span class="os-k kk-G-0">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k kk-G-1">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k kk-G-2">発行</span>2025/07/25</div><div class="os-line"><span class="os-k kk-G-3">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k kk-G-4">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k kk-G-5">別名</span>鶴ヶ城、若松城</div><div class="os-line"><span class="os-k kk-G-6">標高</span>410m</div><div class="os-line"><span class="os-k kk-G-7">遺構</span>石垣、堀、土塁</div><div class="os-line"><span class="os-k kk-G-8">城主</span>蒲生氏郷</div><div class="os-line"><span class="os-k kk-G-9">路線</span>国道4号</div></div>
+</div>
+<h2>5. 種別色の内訳</h2>
+<table class="t"><tr><th>ラベル</th><th>F 背景</th><th>F 文字</th><th>F 比</th><th>G 背景</th><th>G 文字</th><th>G 比</th></tr>
+<tr><td>住所</td><td><code>#e3edf7</code></td><td><code>#1a5b8f</code></td><td class="ok">6.03</td><td><code>#2a6ea8</code></td><td><code>#ffffff</code></td><td class="ok">5.39</td></tr>
+<tr><td>時間</td><td><code>#e5f1e6</code></td><td><code>#2b6b2f</code></td><td class="ok">5.56</td><td><code>#3c7a41</code></td><td><code>#ffffff</code></td><td class="ok">5.18</td></tr>
+<tr><td>発行</td><td><code>#f0e8f4</code></td><td><code>#6a3a75</code></td><td class="ok3">7.09</td><td><code>#7a4a86</code></td><td><code>#ffffff</code></td><td class="ok">6.66</td></tr>
+<tr><td>設置</td><td><code>#f0e7de</code></td><td><code>#7a5230</code></td><td class="ok">5.59</td><td><code>#8a5a33</code></td><td><code>#ffffff</code></td><td class="ok">5.85</td></tr>
+<tr><td>配布場所</td><td><code>#e3edf7</code></td><td><code>#1a5b8f</code></td><td class="ok">6.03</td><td><code>#2a6ea8</code></td><td><code>#ffffff</code></td><td class="ok">5.39</td></tr>
+<tr><td>別名</td><td><code>#fbecec</code></td><td><code>#8f2f2f</code></td><td class="ok3">7.00</td><td><code>#a03b3b</code></td><td><code>#ffffff</code></td><td class="ok">6.60</td></tr>
+<tr><td>標高</td><td><code>#eae7f6</code></td><td><code>#463a86</code></td><td class="ok3">7.81</td><td><code>#5a4e9c</code></td><td><code>#ffffff</code></td><td class="ok">6.99</td></tr>
+<tr><td>遺構</td><td><code>#e9f0e4</code></td><td><code>#4a6b2a</code></td><td class="ok">5.27</td><td><code>#5b7f34</code></td><td><code>#ffffff</code></td><td class="ok">4.64</td></tr>
+<tr><td>城主</td><td><code>#f7ecdf</code></td><td><code>#8a5a1f</code></td><td class="ok">5.06</td><td><code>#9a6626</code></td><td><code>#ffffff</code></td><td class="ok">4.88</td></tr>
+<tr><td>路線</td><td><code>#e6f2f4</code></td><td><code>#1d6470</code></td><td class="ok">5.91</td><td><code>#2a7681</code></td><td><code>#ffffff</code></td><td class="ok">5.24</td></tr>
+</table>
+</body></html>
