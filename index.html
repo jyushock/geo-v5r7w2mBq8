@@ -2339,7 +2339,7 @@ function mhTogglePicker() {
 // 候補には蓋からの距離を出す（季節・曜日で分かれた同名の窓口を見分ける手がかりになる）。
 function mhCardJumpHtml(cardFeatures, key, lng, lat) {
     if (cardFeatures.length === 1) {
-        return { btn: `<button class="btn btn-to-card" onclick="mhJumpToCard('${key}',0)">配布場所へ</button>`, pick: '' };
+        return { btn: `<button class="btn btn-to-card" onclick="mhJumpToCard('${key}',0)">配布場所</button>`, pick: '' };
     }
     const items = cardFeatures.map((f, i) => {
         const q = f.properties;
