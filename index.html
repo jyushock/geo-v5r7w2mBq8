@@ -515,7 +515,12 @@
         .os-cdbadge { font-size: 12px; font-weight: 700; color: #fff;
                       padding: 2px 8px; border-radius: 10px; line-height: 1.6;
                       white-space: nowrap; flex-shrink: 0; background: #8d6e63; }
-        .os-cdbadge.os-cdround { background: #546E7A; }
+        /* 「第◯弾」はカードIDバッジ(#8d6e63)ともメタ行の項目ラベル(#546E7A)とも別系統の紫にする。
+           以前の #546E7A はメタ行と同色で、同じシートに同じ色のチップが2種類並んでいた。
+           紫はマンホール系のシートで他に使っていない唯一の色相で、白文字とのコントラストは
+           6.85:1（計算で確認）。城郭放浪記ボタン(btn-shirohb)と同じ色だが、あれは城のシートに
+           しか出ないので、このバッジと同じ画面に並ぶことはない。 */
+        .os-cdbadge.os-cdround { background: #6A4C93; }
         /* 形態名ごとの個別色。平城系(平城・平山城)は緑系、水系(水軍城・海城・水城)は青系、寺社は紫系に統一。
            他は意味によるグループ化をせず、上記3系統の帯域を避けて個別に配置（モックで確定した配色）。 */
         .popup-form-badge.f-yamajiro   { background: hsl(0,   42%, 38%); } /* 山城 */
