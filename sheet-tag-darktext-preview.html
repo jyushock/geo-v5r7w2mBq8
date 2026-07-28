@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>メタ行ラベル：黒系文字＋任意色背景</title>
+<style>
+  body { font-family: sans-serif; background: #ececec; margin: 0; padding: 18px; color: #222; }
+  h1 { font-size: 17px; margin: 0 0 8px; }
+  h2 { font-size: 14px; margin: 30px 0 8px; padding: 10px 0 0; border-top: 3px solid #bbb; }
+  h3 { font-size: 12.5px; margin: 16px 0 6px; color: #444; }
+  .lead { font-size: 12px; color: #555; line-height: 1.85; margin: 0 0 12px; max-width: 1180px; }
+  .lead b { color: #b00; }
+  code { background: #ddd; padding: 0 3px; border-radius: 3px; font-size: 11px; }
+  table.t { border-collapse: collapse; font-size: 11px; margin: 8px 0 14px; background: #fff; }
+  table.t th, table.t td { border: 1px solid #ddd; padding: 3px 7px; text-align: left; white-space: nowrap; }
+  table.t th { background: #f4f4f4; }
+  td.ok, span.ok { color: #0a7a2f; font-weight: bold; }
+  td.ok3, span.ok3 { color: #06621f; font-weight: bold; }
+  td.ng, span.ng { color: #b00; font-weight: bold; }
+  .swgrid { display: grid; grid-template-columns: repeat(auto-fill, 176px); gap: 8px; }
+  .sw { background: #fff; border-radius: 8px; padding: 7px 8px 8px; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+  .sw .lab { font-size: 10px; color: #777; font-family: monospace; margin-top: 4px; line-height: 1.5; }
+  .cards { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-start; }
+  .card { width: 300px; background: #fff; border-radius: 10px; padding: 10px 12px 12px;
+          box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+  .card h4 { font-size: 12px; margin: 0 0 5px; }
+  .card .meta { font-size: 10px; color: #888; margin: 0 0 6px; font-family: monospace; }
+  .card.now { outline: 2px solid #b00; }
+
+  /* ══ index.html から移植（形は変えない） ══ */
+  .os-line { font-size: 11px; color: #333; line-height: 1.45; font-variant-numeric: tabular-nums; }
+  .os-line + .os-line { margin-top: 1px; }
+  .os-k { display: inline-block; background: #546E7A; color: #fff; border-radius: 3px;
+          font-size: 9.5px; font-weight: 700; line-height: 1.5; padding: 0 4px;
+          margin-right: 4px; vertical-align: 1px; letter-spacing: 0.8px; }
+  .ink-0 { background: #e8e8e8; color: #000000; }
+  .ink-1 { background: #e8e8e8; color: #1a1a1a; }
+  .ink-2 { background: #e8e8e8; color: #222222; }
+  .ink-3 { background: #e8e8e8; color: #2b2b2b; }
+  .ink-4 { background: #e8e8e8; color: #333333; }
+  .ink-5 { background: #e8e8e8; color: #3d3d3d; }
+  .ink-6 { background: #e8e8e8; color: #4a4a4a; }
+  .h5-92 { background: #f4e3e1; color: #2b2b2b; }
+  .h25-92 { background: #f4e9e1; color: #2b2b2b; }
+  .h45-92 { background: #f4efe1; color: #2b2b2b; }
+  .h75-92 { background: #eff4e1; color: #2b2b2b; }
+  .h105-92 { background: #e6f4e1; color: #2b2b2b; }
+  .h150-92 { background: #e1f4eb; color: #2b2b2b; }
+  .h185-92 { background: #e1f2f4; color: #2b2b2b; }
+  .h205-92 { background: #e1ecf4; color: #2b2b2b; }
+  .h220-92 { background: #e1e8f4; color: #2b2b2b; }
+  .h240-92 { background: #e1e1f4; color: #2b2b2b; }
+  .h270-92 { background: #ebe1f4; color: #2b2b2b; }
+  .h300-92 { background: #f4e1f4; color: #2b2b2b; }
+  .h330-92 { background: #f4e1eb; color: #2b2b2b; }
+  .h5-86 { background: #eacfcc; color: #2b2b2b; }
+  .h25-86 { background: #ead9cc; color: #2b2b2b; }
+  .h45-86 { background: #eae3cc; color: #2b2b2b; }
+  .h75-86 { background: #e3eacc; color: #2b2b2b; }
+  .h105-86 { background: #d4eacc; color: #2b2b2b; }
+  .h150-86 { background: #cceadb; color: #2b2b2b; }
+  .h185-86 { background: #cce8ea; color: #2b2b2b; }
+  .h205-86 { background: #ccdeea; color: #2b2b2b; }
+  .h220-86 { background: #ccd6ea; color: #2b2b2b; }
+  .h240-86 { background: #ccccea; color: #2b2b2b; }
+  .h270-86 { background: #dbccea; color: #2b2b2b; }
+  .h300-86 { background: #eaccea; color: #2b2b2b; }
+  .h330-86 { background: #eaccdb; color: #2b2b2b; }
+  .h5-79 { background: #deb8b5; color: #2b2b2b; }
+  .h25-79 { background: #dec6b5; color: #2b2b2b; }
+  .h45-79 { background: #ded4b5; color: #2b2b2b; }
+  .h75-79 { background: #d4deb5; color: #2b2b2b; }
+  .h105-79 { background: #bfdeb5; color: #2b2b2b; }
+  .h150-79 { background: #b5dec9; color: #2b2b2b; }
+  .h185-79 { background: #b5dade; color: #2b2b2b; }
+  .h205-79 { background: #b5cdde; color: #2b2b2b; }
+  .h220-79 { background: #b5c3de; color: #2b2b2b; }
+  .h240-79 { background: #b5b5de; color: #2b2b2b; }
+  .h270-79 { background: #c9b5de; color: #2b2b2b; }
+  .h300-79 { background: #deb5de; color: #2b2b2b; }
+  .h330-79 { background: #deb5c9; color: #2b2b2b; }
+  .h5-72 { background: #d0a39f; color: #2b2b2b; }
+  .h25-72 { background: #d0b49f; color: #2b2b2b; }
+  .h45-72 { background: #d0c49f; color: #2b2b2b; }
+  .h75-72 { background: #c4d09f; color: #2b2b2b; }
+  .h105-72 { background: #abd09f; color: #2b2b2b; }
+  .h150-72 { background: #9fd0b8; color: #2b2b2b; }
+  .h185-72 { background: #9fccd0; color: #2b2b2b; }
+  .h205-72 { background: #9fbcd0; color: #2b2b2b; }
+  .h220-72 { background: #9fb0d0; color: #2b2b2b; }
+  .h240-72 { background: #9f9fd0; color: #2b2b2b; }
+  .h270-72 { background: #b89fd0; color: #2b2b2b; }
+  .h300-72 { background: #d09fd0; color: #2b2b2b; }
+  .h330-72 { background: #d09fb8; color: #2b2b2b; }
+  .n-0 { background: #f2f2f2; color: #2b2b2b; }
+  .n-1 { background: #e8e8e8; color: #2b2b2b; }
+  .n-2 { background: #dcdcdc; color: #2b2b2b; }
+  .n-3 { background: #cfcfcf; color: #2b2b2b; }
+  .n-4 { background: #f2eee4; color: #2b2b2b; }
+  .n-5 { background: #efe9dc; color: #2b2b2b; }
+  .n-6 { background: #e6dcc8; color: #2b2b2b; }
+  .n-7 { background: #e6e2d8; color: #2b2b2b; }
+  .n-8 { background: #eee7d9; color: #2b2b2b; }
+  .n-9 { background: #dcd8cf; color: #2b2b2b; }
+  .n-10 { background: #a8a294; color: #2b2b2b; }
+  .n-11 { background: #d8d8d4; color: #2b2b2b; }
+  .p-0 { background: #546E7A; color: #ffffff; }
+  .p-1 { background: #f4e9e1; color: #2b2b2b; }
+  .p-2 { background: #f4efe1; color: #2b2b2b; }
+  .p-3 { background: #e6f4e1; color: #2b2b2b; }
+  .p-4 { background: #e1e8f4; color: #2b2b2b; }
+  .p-5 { background: #ebe1f4; color: #2b2b2b; }
+  .p-6 { background: #f2eee4; color: #2b2b2b; }
+  .p-7 { background: #e6e2d8; color: #2b2b2b; }
+  .p-8 { background: #e8e8e8; color: #2b2b2b; }
+  .p-9 { background: #cfcfcf; color: #2b2b2b; }
+  .kd0-205 { background: #e1ecf4; color: #2b2b2b; }
+  .kd0-105 { background: #e6f4e1; color: #2b2b2b; }
+  .kd0-270 { background: #ebe1f4; color: #2b2b2b; }
+  .kd0-25 { background: #f4e9e1; color: #2b2b2b; }
+  .kd0-205 { background: #e1ecf4; color: #2b2b2b; }
+  .kd0-5 { background: #f4e3e1; color: #2b2b2b; }
+  .kd0-240 { background: #e1e1f4; color: #2b2b2b; }
+  .kd0-75 { background: #eff4e1; color: #2b2b2b; }
+  .kd0-45 { background: #f4efe1; color: #2b2b2b; }
+  .kd0-185 { background: #e1f2f4; color: #2b2b2b; }
+  .kd1-205 { background: #ccdeea; color: #2b2b2b; }
+  .kd1-105 { background: #d4eacc; color: #2b2b2b; }
+  .kd1-270 { background: #dbccea; color: #2b2b2b; }
+  .kd1-25 { background: #ead9cc; color: #2b2b2b; }
+  .kd1-205 { background: #ccdeea; color: #2b2b2b; }
+  .kd1-5 { background: #eacfcc; color: #2b2b2b; }
+  .kd1-240 { background: #ccccea; color: #2b2b2b; }
+  .kd1-75 { background: #e3eacc; color: #2b2b2b; }
+  .kd1-45 { background: #eae3cc; color: #2b2b2b; }
+  .kd1-185 { background: #cce8ea; color: #2b2b2b; }
+  .kd2-205 { background: #b5cdde; color: #2b2b2b; }
+  .kd2-105 { background: #bfdeb5; color: #2b2b2b; }
+  .kd2-270 { background: #c9b5de; color: #2b2b2b; }
+  .kd2-25 { background: #dec6b5; color: #2b2b2b; }
+  .kd2-205 { background: #b5cdde; color: #2b2b2b; }
+  .kd2-5 { background: #deb8b5; color: #2b2b2b; }
+  .kd2-240 { background: #b5b5de; color: #2b2b2b; }
+  .kd2-75 { background: #d4deb5; color: #2b2b2b; }
+  .kd2-45 { background: #ded4b5; color: #2b2b2b; }
+  .kd2-185 { background: #b5dade; color: #2b2b2b; }
+</style></head><body>
+<h1>メタ行ラベル（<code>.os-line .os-k</code>）：黒系文字 ＋ 任意色の背景</h1>
+<p class="lead">
+  形（角丸3px・9.5px太字・<code>padding:0 4px</code>・<code>letter-spacing:.8px</code>）は現状のまま、
+  <b>文字を黒系に固定して背景色だけを振った</b>パターン。<br>
+  見るべき数字は2つ。<b>①文字とのコントラスト</b>（WCAG AAは4.5:1。9.5pxは「大きい文字」に当たらない）と、
+  <b>②白地との差</b>（シートの地色は白なので、ここが小さいとチップの輪郭が溶けてタグに見えない）。<br>
+  ②は目安として 1.35:1 以上を「輪郭 明確」、1.18〜1.35 を「やや弱」、それ未満を「溶ける」と表示している。
+</p>
+<h2>1. どの黒にするか（背景は淡グレー #e8e8e8 で固定）</h2>
+<div class="swgrid">
+<div class="sw"><div class="os-line"><span class="os-k ink-0">住所</span>福島県本宮市</div><div class="lab">真っ黒 #000000<br>文字比 17.14:1 <span class="ok3">AAA</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k ink-1">住所</span>福島県本宮市</div><div class="lab">ほぼ黒 #1a1a1a<br>文字比 14.20:1 <span class="ok3">AAA</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k ink-2">住所</span>福島県本宮市</div><div class="lab">黒 #222222<br>文字比 12.98:1 <span class="ok3">AAA</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k ink-3">住所</span>福島県本宮市</div><div class="lab">黒（標準） #2b2b2b<br>文字比 11.56:1 <span class="ok3">AAA</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k ink-4">住所</span>福島県本宮市</div><div class="lab">本文と同じ#333 #333333<br>文字比 10.31:1 <span class="ok3">AAA</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k ink-5">住所</span>福島県本宮市</div><div class="lab">やや薄い黒 #3d3d3d<br>文字比 8.87:1 <span class="ok3">AAA</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k ink-6">住所</span>福島県本宮市</div><div class="lab">チャコール #4a4a4a<br>文字比 7.23:1 <span class="ok3">AAA</span></div></div>
+</div>
+<p class="lead">以下は文字色を <code>#2b2b2b</code> に固定して背景を振る。文字色を変えたい場合は、上の中から選んで置き換えればよい（比は数値ぶん上下する）。</p>
+<h2>2. 色相13 × 明度4（黒系文字 #2b2b2b 固定）</h2>
+<h3>淡（HSL 彩度45% 明度92%）</h3>
+<div class="swgrid">
+<div class="sw"><div class="os-line"><span class="os-k h5-92">住所</span>福島県本宮市</div><div class="lab">赤 #f4e3e1<br>文字比 11.41:1 <span class="ok3">AAA</span><br>白地差 1.24:1 <span class="">輪郭 やや弱</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h25-92">住所</span>福島県本宮市</div><div class="lab">橙 #f4e9e1<br>文字比 11.86:1 <span class="ok3">AAA</span><br>白地差 1.19:1 <span class="">輪郭 やや弱</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h45-92">住所</span>福島県本宮市</div><div class="lab">黄 #f4efe1<br>文字比 12.33:1 <span class="ok3">AAA</span><br>白地差 1.15:1 <span class="ng">輪郭 溶ける</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h75-92">住所</span>福島県本宮市</div><div class="lab">黄緑 #eff4e1<br>文字比 12.61:1 <span class="ok3">AAA</span><br>白地差 1.12:1 <span class="ng">輪郭 溶ける</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h105-92">住所</span>福島県本宮市</div><div class="lab">緑 #e6f4e1<br>文字比 12.40:1 <span class="ok3">AAA</span><br>白地差 1.14:1 <span class="ng">輪郭 溶ける</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h150-92">住所</span>福島県本宮市</div><div class="lab">青緑 #e1f4eb<br>文字比 12.37:1 <span class="ok3">AAA</span><br>白地差 1.14:1 <span class="ng">輪郭 溶ける</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h185-92">住所</span>福島県本宮市</div><div class="lab">シアン #e1f2f4<br>文字比 12.28:1 <span class="ok3">AAA</span><br>白地差 1.15:1 <span class="ng">輪郭 溶ける</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h205-92">住所</span>福島県本宮市</div><div class="lab">空 #e1ecf4<br>文字比 11.80:1 <span class="ok3">AAA</span><br>白地差 1.20:1 <span class="">輪郭 やや弱</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h220-92">住所</span>福島県本宮市</div><div class="lab">青 #e1e8f4<br>文字比 11.50:1 <span class="ok3">AAA</span><br>白地差 1.23:1 <span class="">輪郭 やや弱</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h240-92">住所</span>福島県本宮市</div><div class="lab">藍 #e1e1f4<br>文字比 10.98:1 <span class="ok3">AAA</span><br>白地差 1.29:1 <span class="">輪郭 やや弱</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h270-92">住所</span>福島県本宮市</div><div class="lab">紫 #ebe1f4<br>文字比 11.20:1 <span class="ok3">AAA</span><br>白地差 1.26:1 <span class="">輪郭 やや弱</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h300-92">住所</span>福島県本宮市</div><div class="lab">マゼンタ #f4e1f4<br>文字比 11.41:1 <span class="ok3">AAA</span><br>白地差 1.24:1 <span class="">輪郭 やや弱</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h330-92">住所</span>福島県本宮市</div><div class="lab">桃 #f4e1eb<br>文字比 11.34:1 <span class="ok3">AAA</span><br>白地差 1.25:1 <span class="">輪郭 やや弱</span></div></div>
+</div>
+<h3>中淡（HSL 彩度42% 明度86%）</h3>
+<div class="swgrid">
+<div class="sw"><div class="os-line"><span class="os-k h5-86">住所</span>福島県本宮市</div><div class="lab">赤 #eacfcc<br>文字比 9.64:1 <span class="ok3">AAA</span><br>白地差 1.47:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h25-86">住所</span>福島県本宮市</div><div class="lab">橙 #ead9cc<br>文字比 10.31:1 <span class="ok3">AAA</span><br>白地差 1.37:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h45-86">住所</span>福島県本宮市</div><div class="lab">黄 #eae3cc<br>文字比 11.03:1 <span class="ok3">AAA</span><br>白地差 1.28:1 <span class="">輪郭 やや弱</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h75-86">住所</span>福島県本宮市</div><div class="lab">黄緑 #e3eacc<br>文字比 11.40:1 <span class="ok3">AAA</span><br>白地差 1.24:1 <span class="">輪郭 やや弱</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h105-86">住所</span>福島県本宮市</div><div class="lab">緑 #d4eacc<br>文字比 11.08:1 <span class="ok3">AAA</span><br>白地差 1.28:1 <span class="">輪郭 やや弱</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h150-86">住所</span>福島県本宮市</div><div class="lab">青緑 #cceadb<br>文字比 11.03:1 <span class="ok3">AAA</span><br>白地差 1.28:1 <span class="">輪郭 やや弱</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h185-86">住所</span>福島県本宮市</div><div class="lab">シアン #cce8ea<br>文字比 10.99:1 <span class="ok3">AAA</span><br>白地差 1.29:1 <span class="">輪郭 やや弱</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h205-86">住所</span>福島県本宮市</div><div class="lab">空 #ccdeea<br>文字比 10.25:1 <span class="ok3">AAA</span><br>白地差 1.38:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h220-86">住所</span>福島県本宮市</div><div class="lab">青 #ccd6ea<br>文字比 9.69:1 <span class="ok3">AAA</span><br>白地差 1.46:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h240-86">住所</span>福島県本宮市</div><div class="lab">藍 #ccccea<br>文字比 9.03:1 <span class="ok3">AAA</span><br>白地差 1.57:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h270-86">住所</span>福島県本宮市</div><div class="lab">紫 #dbccea<br>文字比 9.33:1 <span class="ok3">AAA</span><br>白地差 1.52:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h300-86">住所</span>福島県本宮市</div><div class="lab">マゼンタ #eaccea<br>文字比 9.66:1 <span class="ok3">AAA</span><br>白地差 1.47:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h330-86">住所</span>福島県本宮市</div><div class="lab">桃 #eaccdb<br>文字比 9.55:1 <span class="ok3">AAA</span><br>白地差 1.48:1 <span class="ok">輪郭 明確</span></div></div>
+</div>
+<h3>中（HSL 彩度38% 明度79%）</h3>
+<div class="swgrid">
+<div class="sw"><div class="os-line"><span class="os-k h5-79">住所</span>福島県本宮市</div><div class="lab">赤 #deb8b5<br>文字比 7.84:1 <span class="ok3">AAA</span><br>白地差 1.81:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h25-79">住所</span>福島県本宮市</div><div class="lab">橙 #dec6b5<br>文字比 8.66:1 <span class="ok3">AAA</span><br>白地差 1.63:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h45-79">住所</span>福島県本宮市</div><div class="lab">黄 #ded4b5<br>文字比 9.57:1 <span class="ok3">AAA</span><br>白地差 1.48:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h75-79">住所</span>福島県本宮市</div><div class="lab">黄緑 #d4deb5<br>文字比 10.06:1 <span class="ok3">AAA</span><br>白地差 1.41:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h105-79">住所</span>福島県本宮市</div><div class="lab">緑 #bfdeb5<br>文字比 9.66:1 <span class="ok3">AAA</span><br>白地差 1.47:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h150-79">住所</span>福島県本宮市</div><div class="lab">青緑 #b5dec9<br>文字比 9.61:1 <span class="ok3">AAA</span><br>白地差 1.47:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h185-79">住所</span>福島県本宮市</div><div class="lab">シアン #b5dade<br>文字比 9.47:1 <span class="ok3">AAA</span><br>白地差 1.49:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h205-79">住所</span>福島県本宮市</div><div class="lab">空 #b5cdde<br>文字比 8.60:1 <span class="ok3">AAA</span><br>白地差 1.65:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h220-79">住所</span>福島県本宮市</div><div class="lab">青 #b5c3de<br>文字比 7.97:1 <span class="ok3">AAA</span><br>白地差 1.78:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h240-79">住所</span>福島県本宮市</div><div class="lab">藍 #b5b5de<br>文字比 7.17:1 <span class="ok3">AAA</span><br>白地差 1.98:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h270-79">住所</span>福島県本宮市</div><div class="lab">紫 #c9b5de<br>文字比 7.52:1 <span class="ok3">AAA</span><br>白地差 1.88:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h300-79">住所</span>福島県本宮市</div><div class="lab">マゼンタ #deb5de<br>文字比 7.94:1 <span class="ok3">AAA</span><br>白地差 1.78:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h330-79">住所</span>福島県本宮市</div><div class="lab">桃 #deb5c9<br>文字比 7.79:1 <span class="ok3">AAA</span><br>白地差 1.82:1 <span class="ok">輪郭 明確</span></div></div>
+</div>
+<h3>やや濃（HSL 彩度34% 明度72%）</h3>
+<div class="swgrid">
+<div class="sw"><div class="os-line"><span class="os-k h5-72">住所</span>福島県本宮市</div><div class="lab">赤 #d0a39f<br>文字比 6.35:1 <span class="ok">AA</span><br>白地差 2.23:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h25-72">住所</span>福島県本宮市</div><div class="lab">橙 #d0b49f<br>文字比 7.22:1 <span class="ok3">AAA</span><br>白地差 1.96:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h45-72">住所</span>福島県本宮市</div><div class="lab">黄 #d0c49f<br>文字比 8.14:1 <span class="ok3">AAA</span><br>白地差 1.74:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h75-72">住所</span>福島県本宮市</div><div class="lab">黄緑 #c4d09f<br>文字比 8.68:1 <span class="ok3">AAA</span><br>白地差 1.63:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h105-72">住所</span>福島県本宮市</div><div class="lab">緑 #abd09f<br>文字比 8.26:1 <span class="ok3">AAA</span><br>白地差 1.71:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h150-72">住所</span>福島県本宮市</div><div class="lab">青緑 #9fd0b8<br>文字比 8.22:1 <span class="ok3">AAA</span><br>白地差 1.72:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h185-72">住所</span>福島県本宮市</div><div class="lab">シアン #9fccd0<br>文字比 8.11:1 <span class="ok3">AAA</span><br>白地差 1.75:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h205-72">住所</span>福島県本宮市</div><div class="lab">空 #9fbcd0<br>文字比 7.13:1 <span class="ok3">AAA</span><br>白地差 1.99:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h220-72">住所</span>福島県本宮市</div><div class="lab">青 #9fb0d0<br>文字比 6.47:1 <span class="ok">AA</span><br>白地差 2.19:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h240-72">住所</span>福島県本宮市</div><div class="lab">藍 #9f9fd0<br>文字比 5.63:1 <span class="ok">AA</span><br>白地差 2.52:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h270-72">住所</span>福島県本宮市</div><div class="lab">紫 #b89fd0<br>文字比 6.01:1 <span class="ok">AA</span><br>白地差 2.36:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h300-72">住所</span>福島県本宮市</div><div class="lab">マゼンタ #d09fd0<br>文字比 6.44:1 <span class="ok">AA</span><br>白地差 2.20:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k h330-72">住所</span>福島県本宮市</div><div class="lab">桃 #d09fb8<br>文字比 6.29:1 <span class="ok">AA</span><br>白地差 2.25:1 <span class="ok">輪郭 明確</span></div></div>
+</div>
+<h2>3. 無彩色・ベージュ／グレージュ系（黒系文字 #2b2b2b 固定）</h2>
+<div class="swgrid">
+<div class="sw"><div class="os-line"><span class="os-k n-0">住所</span>福島県本宮市</div><div class="lab">白に近いグレー #f2f2f2<br>文字比 12.65:1 <span class="ok3">AAA</span><br>白地差 1.12:1 <span class="ng">輪郭 溶ける</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k n-1">住所</span>福島県本宮市</div><div class="lab">淡グレー #e8e8e8<br>文字比 11.56:1 <span class="ok3">AAA</span><br>白地差 1.23:1 <span class="">輪郭 やや弱</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k n-2">住所</span>福島県本宮市</div><div class="lab">グレー #dcdcdc<br>文字比 10.33:1 <span class="ok3">AAA</span><br>白地差 1.37:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k n-3">住所</span>福島県本宮市</div><div class="lab">中グレー #cfcfcf<br>文字比 9.09:1 <span class="ok3">AAA</span><br>白地差 1.56:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k n-4">住所</span>福島県本宮市</div><div class="lab">生成り #f2eee4<br>文字比 12.22:1 <span class="ok3">AAA</span><br>白地差 1.16:1 <span class="ng">輪郭 溶ける</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k n-5">住所</span>福島県本宮市</div><div class="lab">淡ベージュ #efe9dc<br>文字比 11.70:1 <span class="ok3">AAA</span><br>白地差 1.21:1 <span class="">輪郭 やや弱</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k n-6">住所</span>福島県本宮市</div><div class="lab">ベージュ #e6dcc8<br>文字比 10.41:1 <span class="ok3">AAA</span><br>白地差 1.36:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k n-7">住所</span>福島県本宮市</div><div class="lab">グレージュ #e6e2d8<br>文字比 10.95:1 <span class="ok3">AAA</span><br>白地差 1.29:1 <span class="">輪郭 やや弱</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k n-8">住所</span>福島県本宮市</div><div class="lab">薄セピア #eee7d9<br>文字比 11.51:1 <span class="ok3">AAA</span><br>白地差 1.23:1 <span class="">輪郭 やや弱</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k n-9">住所</span>福島県本宮市</div><div class="lab">現状色の淡版 #dcd8cf<br>文字比 9.96:1 <span class="ok3">AAA</span><br>白地差 1.42:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k n-10">住所</span>福島県本宮市</div><div class="lab">現状色そのまま #a8a294<br>文字比 5.57:1 <span class="ok">AA</span><br>白地差 2.54:1 <span class="ok">輪郭 明確</span></div></div>
+<div class="sw"><div class="os-line"><span class="os-k n-11">住所</span>福島県本宮市</div><div class="lab">薄墨 #d8d8d4<br>文字比 9.91:1 <span class="ok3">AAA</span><br>白地差 1.43:1 <span class="ok">輪郭 明確</span></div></div>
+</div>
+<h2>4. 主な候補を実際のシートの行で</h2>
+<div class="cards">
+<div class="card now"><h4>現状（白文字 #546E7A）</h4><p class="meta">bg #546E7A / fg #ffffff ｜ 文字比 5.40:1 AA ｜ 白地差 5.40:1 輪郭 明確</p><div class="os-line"><span class="os-k p-0">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k p-0">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k p-0">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k p-0">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k p-0">発行</span>2025/07/25</div></div>
+<div class="card"><h4>橙 淡</h4><p class="meta">bg #f4e9e1 / fg #2b2b2b ｜ 文字比 11.86:1 AAA ｜ 白地差 1.19:1 輪郭 やや弱</p><div class="os-line"><span class="os-k p-1">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k p-1">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k p-1">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k p-1">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k p-1">発行</span>2025/07/25</div></div>
+<div class="card"><h4>黄 淡</h4><p class="meta">bg #f4efe1 / fg #2b2b2b ｜ 文字比 12.33:1 AAA ｜ 白地差 1.15:1 輪郭 溶ける</p><div class="os-line"><span class="os-k p-2">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k p-2">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k p-2">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k p-2">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k p-2">発行</span>2025/07/25</div></div>
+<div class="card"><h4>緑 淡</h4><p class="meta">bg #e6f4e1 / fg #2b2b2b ｜ 文字比 12.40:1 AAA ｜ 白地差 1.14:1 輪郭 溶ける</p><div class="os-line"><span class="os-k p-3">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k p-3">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k p-3">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k p-3">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k p-3">発行</span>2025/07/25</div></div>
+<div class="card"><h4>青 淡</h4><p class="meta">bg #e1e8f4 / fg #2b2b2b ｜ 文字比 11.50:1 AAA ｜ 白地差 1.23:1 輪郭 やや弱</p><div class="os-line"><span class="os-k p-4">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k p-4">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k p-4">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k p-4">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k p-4">発行</span>2025/07/25</div></div>
+<div class="card"><h4>紫 淡</h4><p class="meta">bg #ebe1f4 / fg #2b2b2b ｜ 文字比 11.20:1 AAA ｜ 白地差 1.26:1 輪郭 やや弱</p><div class="os-line"><span class="os-k p-5">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k p-5">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k p-5">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k p-5">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k p-5">発行</span>2025/07/25</div></div>
+<div class="card"><h4>生成り</h4><p class="meta">bg #f2eee4 / fg #2b2b2b ｜ 文字比 12.22:1 AAA ｜ 白地差 1.16:1 輪郭 溶ける</p><div class="os-line"><span class="os-k p-6">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k p-6">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k p-6">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k p-6">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k p-6">発行</span>2025/07/25</div></div>
+<div class="card"><h4>グレージュ</h4><p class="meta">bg #e6e2d8 / fg #2b2b2b ｜ 文字比 10.95:1 AAA ｜ 白地差 1.29:1 輪郭 やや弱</p><div class="os-line"><span class="os-k p-7">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k p-7">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k p-7">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k p-7">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k p-7">発行</span>2025/07/25</div></div>
+<div class="card"><h4>淡グレー</h4><p class="meta">bg #e8e8e8 / fg #2b2b2b ｜ 文字比 11.56:1 AAA ｜ 白地差 1.23:1 輪郭 やや弱</p><div class="os-line"><span class="os-k p-8">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k p-8">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k p-8">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k p-8">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k p-8">発行</span>2025/07/25</div></div>
+<div class="card"><h4>中グレー</h4><p class="meta">bg #cfcfcf / fg #2b2b2b ｜ 文字比 9.09:1 AAA ｜ 白地差 1.56:1 輪郭 明確</p><div class="os-line"><span class="os-k p-9">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k p-9">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k p-9">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k p-9">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k p-9">発行</span>2025/07/25</div></div>
+</div>
+<h2>5. 種別ごとに色相を割り当てる（黒系文字 #2b2b2b 固定）</h2>
+<p class="lead">ラベルの意味ごとに色相を変え、文字は全部同じ黒にする。白文字の種別色分けと違い、明度が揃うので色数が多くても騒がしくなりにくい。</p>
+<div class="cards">
+<div class="card" style="width:330px"><h4>種別色（淡）</h4><p class="meta">文字比 最小 10.98:1 AAA ｜ 白地差 最小 1.12:1</p><div class="os-line"><span class="os-k kd0-205">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k kd0-105">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k kd0-270">発行</span>2025/07/25</div><div class="os-line"><span class="os-k kd0-25">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k kd0-205">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k kd0-5">別名</span>鶴ヶ城、若松城</div><div class="os-line"><span class="os-k kd0-240">標高</span>410m</div><div class="os-line"><span class="os-k kd0-75">遺構</span>石垣、堀、土塁</div><div class="os-line"><span class="os-k kd0-45">城主</span>蒲生氏郷</div><div class="os-line"><span class="os-k kd0-185">路線</span>国道4号</div></div>
+<div class="card" style="width:330px"><h4>種別色（中淡）</h4><p class="meta">文字比 最小 9.03:1 AAA ｜ 白地差 最小 1.24:1</p><div class="os-line"><span class="os-k kd1-205">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k kd1-105">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k kd1-270">発行</span>2025/07/25</div><div class="os-line"><span class="os-k kd1-25">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k kd1-205">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k kd1-5">別名</span>鶴ヶ城、若松城</div><div class="os-line"><span class="os-k kd1-240">標高</span>410m</div><div class="os-line"><span class="os-k kd1-75">遺構</span>石垣、堀、土塁</div><div class="os-line"><span class="os-k kd1-45">城主</span>蒲生氏郷</div><div class="os-line"><span class="os-k kd1-185">路線</span>国道4号</div></div>
+<div class="card" style="width:330px"><h4>種別色（中）</h4><p class="meta">文字比 最小 7.17:1 AAA ｜ 白地差 最小 1.41:1</p><div class="os-line"><span class="os-k kd2-205">住所</span>福島県本宮市本宮字矢来39-1</div><div class="os-line"><span class="os-k kd2-105">時間</span>9:00〜17:15</div><div class="os-line"><span class="os-k kd2-270">発行</span>2025/07/25</div><div class="os-line"><span class="os-k kd2-25">設置</span>福島県本宮市本宮</div><div class="os-line"><span class="os-k kd2-205">配布場所</span>【平日】本宮市中央公民館</div><div class="os-line"><span class="os-k kd2-5">別名</span>鶴ヶ城、若松城</div><div class="os-line"><span class="os-k kd2-240">標高</span>410m</div><div class="os-line"><span class="os-k kd2-75">遺構</span>石垣、堀、土塁</div><div class="os-line"><span class="os-k kd2-45">城主</span>蒲生氏郷</div><div class="os-line"><span class="os-k kd2-185">路線</span>国道4号</div></div>
+</div>
+<h2>6. 一覧（色相×明度）</h2>
+<table class="t"><tr><th>色相</th><th>淡 色</th><th>文字比</th><th>白地差</th><th>中淡 色</th><th>文字比</th><th>白地差</th><th>中 色</th><th>文字比</th><th>白地差</th><th>やや濃 色</th><th>文字比</th><th>白地差</th></tr>
+<tr><td>赤</td><td><code>#f4e3e1</code></td><td class="ok3">11.41</td><td class="">1.24</td><td><code>#eacfcc</code></td><td class="ok3">9.64</td><td class="ok">1.47</td><td><code>#deb8b5</code></td><td class="ok3">7.84</td><td class="ok">1.81</td><td><code>#d0a39f</code></td><td class="ok">6.35</td><td class="ok">2.23</td></tr>
+<tr><td>橙</td><td><code>#f4e9e1</code></td><td class="ok3">11.86</td><td class="">1.19</td><td><code>#ead9cc</code></td><td class="ok3">10.31</td><td class="ok">1.37</td><td><code>#dec6b5</code></td><td class="ok3">8.66</td><td class="ok">1.63</td><td><code>#d0b49f</code></td><td class="ok3">7.22</td><td class="ok">1.96</td></tr>
+<tr><td>黄</td><td><code>#f4efe1</code></td><td class="ok3">12.33</td><td class="ng">1.15</td><td><code>#eae3cc</code></td><td class="ok3">11.03</td><td class="">1.28</td><td><code>#ded4b5</code></td><td class="ok3">9.57</td><td class="ok">1.48</td><td><code>#d0c49f</code></td><td class="ok3">8.14</td><td class="ok">1.74</td></tr>
+<tr><td>黄緑</td><td><code>#eff4e1</code></td><td class="ok3">12.61</td><td class="ng">1.12</td><td><code>#e3eacc</code></td><td class="ok3">11.40</td><td class="">1.24</td><td><code>#d4deb5</code></td><td class="ok3">10.06</td><td class="ok">1.41</td><td><code>#c4d09f</code></td><td class="ok3">8.68</td><td class="ok">1.63</td></tr>
+<tr><td>緑</td><td><code>#e6f4e1</code></td><td class="ok3">12.40</td><td class="ng">1.14</td><td><code>#d4eacc</code></td><td class="ok3">11.08</td><td class="">1.28</td><td><code>#bfdeb5</code></td><td class="ok3">9.66</td><td class="ok">1.47</td><td><code>#abd09f</code></td><td class="ok3">8.26</td><td class="ok">1.71</td></tr>
+<tr><td>青緑</td><td><code>#e1f4eb</code></td><td class="ok3">12.37</td><td class="ng">1.14</td><td><code>#cceadb</code></td><td class="ok3">11.03</td><td class="">1.28</td><td><code>#b5dec9</code></td><td class="ok3">9.61</td><td class="ok">1.47</td><td><code>#9fd0b8</code></td><td class="ok3">8.22</td><td class="ok">1.72</td></tr>
+<tr><td>シアン</td><td><code>#e1f2f4</code></td><td class="ok3">12.28</td><td class="ng">1.15</td><td><code>#cce8ea</code></td><td class="ok3">10.99</td><td class="">1.29</td><td><code>#b5dade</code></td><td class="ok3">9.47</td><td class="ok">1.49</td><td><code>#9fccd0</code></td><td class="ok3">8.11</td><td class="ok">1.75</td></tr>
+<tr><td>空</td><td><code>#e1ecf4</code></td><td class="ok3">11.80</td><td class="">1.20</td><td><code>#ccdeea</code></td><td class="ok3">10.25</td><td class="ok">1.38</td><td><code>#b5cdde</code></td><td class="ok3">8.60</td><td class="ok">1.65</td><td><code>#9fbcd0</code></td><td class="ok3">7.13</td><td class="ok">1.99</td></tr>
+<tr><td>青</td><td><code>#e1e8f4</code></td><td class="ok3">11.50</td><td class="">1.23</td><td><code>#ccd6ea</code></td><td class="ok3">9.69</td><td class="ok">1.46</td><td><code>#b5c3de</code></td><td class="ok3">7.97</td><td class="ok">1.78</td><td><code>#9fb0d0</code></td><td class="ok">6.47</td><td class="ok">2.19</td></tr>
+<tr><td>藍</td><td><code>#e1e1f4</code></td><td class="ok3">10.98</td><td class="">1.29</td><td><code>#ccccea</code></td><td class="ok3">9.03</td><td class="ok">1.57</td><td><code>#b5b5de</code></td><td class="ok3">7.17</td><td class="ok">1.98</td><td><code>#9f9fd0</code></td><td class="ok">5.63</td><td class="ok">2.52</td></tr>
+<tr><td>紫</td><td><code>#ebe1f4</code></td><td class="ok3">11.20</td><td class="">1.26</td><td><code>#dbccea</code></td><td class="ok3">9.33</td><td class="ok">1.52</td><td><code>#c9b5de</code></td><td class="ok3">7.52</td><td class="ok">1.88</td><td><code>#b89fd0</code></td><td class="ok">6.01</td><td class="ok">2.36</td></tr>
+<tr><td>マゼンタ</td><td><code>#f4e1f4</code></td><td class="ok3">11.41</td><td class="">1.24</td><td><code>#eaccea</code></td><td class="ok3">9.66</td><td class="ok">1.47</td><td><code>#deb5de</code></td><td class="ok3">7.94</td><td class="ok">1.78</td><td><code>#d09fd0</code></td><td class="ok">6.44</td><td class="ok">2.20</td></tr>
+<tr><td>桃</td><td><code>#f4e1eb</code></td><td class="ok3">11.34</td><td class="">1.25</td><td><code>#eaccdb</code></td><td class="ok3">9.55</td><td class="ok">1.48</td><td><code>#deb5c9</code></td><td class="ok3">7.79</td><td class="ok">1.82</td><td><code>#d09fb8</code></td><td class="ok">6.29</td><td class="ok">2.25</td></tr>
+</table>
+<h2>7. 選ぶときの目安</h2>
+<p class="lead">・<b>文字比</b>は黒系文字ならほぼ全パターンでAAAに届く。制約になるのはむしろ<b>白地差</b>。<br>・明度92%%（淡）は白地差が1.1前後で、<b>チップの輪郭がほぼ見えない</b>。タグとして見せたいなら明度86%%以下が要る。<br>・明度79%%〜72%%まで下げると輪郭ははっきりするが、行に色面が増えて写真の横では賑やかになる。<br>・黄・黄緑（色相45〜75）は同じ明度でも明るく見えるため、白地差が小さめに出る。<br>・タイトル行のバッジ（カードID #8d6e63／第◯弾 #6A4C93）とは明度が大きく離れるので、同じ画面に置いても役割の違いは伝わる。</p>
+</body></html>
