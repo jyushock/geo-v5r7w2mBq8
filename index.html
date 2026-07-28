@@ -475,12 +475,12 @@
            淡い空色の下地に濃い文字（sheet-tag-darktext-preview.html のB8）。以前の白抜き
            （#a8a294 に白）は文字とのコントラストが2.54:1しかなく、同じ行の本文
            （#333／白地＝12.63:1）に対して極端に薄かった。9.5pxはWCAGの「大きい文字」に
-           当たらないため基準は4.5:1で、この配色は9.15:1。
-           文字は本文と同じ #333。真っ黒に寄せるとラベルだけが本文より強く見えるので、
-           本文と同じ濃さに揃えている。
+           当たらないため基準は4.5:1で、この配色は7.86:1。
+           文字は #3d3d3d。真っ黒に寄せるとラベルだけが本文(#333)より強く見えるので、
+           本文よりわずかに薄いところまで下げている。
            背景の明度は、白地との差が1.38:1になる値を選んでいる。これ以上明るくすると
            チップの輪郭が地の白に溶けてタグに見えなくなる（いずれも計算で確認）。 */
-        .os-line .os-k { display: inline-block; background: #CCDEEA; color: #333; border-radius: 3px;
+        .os-line .os-k { display: inline-block; background: #CCDEEA; color: #3d3d3d; border-radius: 3px;
                          font-size: 9.5px; font-weight: 700; line-height: 1.5; padding: 0 4px;
                          margin-right: 4px; vertical-align: 1px; letter-spacing: 0.8px; }
         .os-clamp { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
@@ -2305,21 +2305,18 @@ function mhcardInfo(p) {
    移動後はピンをタップしたときと同じ状態にする（地図を寄せる → 情報シート＋選択リング → 履歴に記録）。
    飛び先の種別を表示していない（設定でOFF）ときはボタンを出さない。検索・周辺検索が
    OFFの種別を候補から外すのと同じ扱いで、表示していない種別へは連れて行かない。
-   onclickに渡すのは正規化済みのカードコード（英数字とハイフンのみ）で、URLや施設名は埋め込まない。 */
-const MH_JUMP_ZOOM = 16;   // 検索結果から飛ぶときと同じ倍率（クラスタが解けて対象を判別できる）
-
+   onclickに渡すのは正規化済みのカードコード（英数字とハイフンのみ）で、URLや施設名は埋め込まない。
+   移動先だけを中央に置くのではなく、移動元も画面に残して線で結ぶ。どこから来たのかと
+   2点の距離感が分かるようにするため。地図を引く範囲と解除の条件は openObjSheet 側にある。 */
 function mhJumpTo(type, feature) {
     if (!feature) return;
+    const from = objSheetLngLat ? objSheetLngLat.slice() : null;   // 今シートを開いている側が移動元
     const c = feature.geometry.coordinates.slice();
     const p = feature.properties;
     const label = p.name || p.locationName || '地点';
-    map.easeTo({ center: c, zoom: Math.max(map.getZoom(), MH_JUMP_ZOOM),
-                 bearing: 0, pitch: 0, duration: 550, essential: true });
-    // 移動の途中でシートを出す（検索結果から飛ぶときと同じ間合い）
-    setTimeout(() => {
-        openObjSheet(type, label, p, c[0], c[1]);
-        histRecordPin(label, c, type, p);
-    }, 300);
+    // 地図は openObjSheet → adjustMapForSheet が両方の入る位置まで動かす
+    openObjSheet(type, label, p, c[0], c[1], from);
+    histRecordPin(label, c, type, p);
 }
 function mhJumpToCard(key, idx) {
     mhJumpTo('mhcard', findCardFeaturesByKey(key)[idx || 0]);
@@ -2594,6 +2591,12 @@ async function injectCastleImage(castleName, kojodanUrl, shiroHbUrl) {
 // ── シートの開閉と、選択中オブジェクトが隠れないための地図調整 ─────────
 let objSheetLngLat = null;   // 現在シートを開いているオブジェクトの座標
 let objSheetCtx = null;      // 写真ビューアが「何の写真か」を出すための対象情報
+let objSheetPair = null;     // 蓋⇄配布場所を行き来してきたときの[移動元, 移動先]。通常のタップではnull
+// ペア表示のときに地図を引く範囲。下限14はクラスタが解ける倍率（clusterMaxZoom:13のため、
+// これより引くとピンがクラスタに畳まれて消える）。上限17は周囲の街並みが読み取れる限度で、
+// 実データでは1,223組中26.2%が上限に、18.2%が下限に当たる（実測）。
+const MH_PAIR_MIN_ZOOM = 14;
+const MH_PAIR_MAX_ZOOM = 17;
 
 // 実際に2行を超えて省略されている行にのみ▼マークを付ける
 function applyClampMarkers() {
@@ -2612,13 +2615,29 @@ function adjustMapForSheet() {
     const h = sheet.getBoundingClientRect().height;
     if (!h) return;
     const mapH = map.getContainer().getBoundingClientRect().height;
+    // 蓋⇄配布場所を行き来した直後は、相手も画面に入るところまで引く。
+    // fitBounds は下限を指定できないので、cameraForBounds で倍率を出してから挟む。
+    if (objSheetPair) {
+        const [a, b] = objSheetPair;
+        const cam = map.cameraForBounds(
+            [[Math.min(a[0], b[0]), Math.min(a[1], b[1])], [Math.max(a[0], b[0]), Math.max(a[1], b[1])]],
+            { padding: { top: 60, bottom: Math.round(h) + 20, left: 40, right: 40 } });
+        if (cam) {
+            const z = Math.min(MH_PAIR_MAX_ZOOM, Math.max(MH_PAIR_MIN_ZOOM, cam.zoom));
+            map.easeTo({ center: cam.center, zoom: z, bearing: 0, pitch: 0, duration: 550, essential: true },
+                       { histIgnore: true });
+            return;
+        }
+    }
     // シートが画面の大半を占める場合でもピンが上端外へ飛ばないよう、ずらし量を制限する
     const dy = Math.min(h / 2, Math.max(0, (mapH - 80) / 2));
     // histIgnore: この移動はシート表示の副作用なので、移動履歴には記録しない
     map.easeTo({ center: objSheetLngLat, offset: [0, -dy], duration: 400, essential: true }, { histIgnore: true });
 }
 
-function openObjSheet(type, label, p, lng, lat) {
+// pairFrom: 蓋⇄配布場所を行き来してきたときの移動元の座標。渡すと両方にリングを出して線で結び、
+//           地図も両方が入るところまで引く。通常のピンタップでは渡さないので、そこで解除される。
+function openObjSheet(type, label, p, lng, lat, pairFrom) {
     const body = document.getElementById('obj-sheet-body');
     body.innerHTML = buildSheetHtml(type, label, p, lng, lat);
     body.scrollTop = 0;
@@ -2627,7 +2646,8 @@ function openObjSheet(type, label, p, lng, lat) {
     sheet.style.bottom = '0';
     objSheetLngLat = [lng, lat];
     objSheetCtx = { type, label, p };
-    setSelectedObject([lng, lat], objRingColor(type, p));
+    objSheetPair = pairFrom ? [pairFrom.slice(), [lng, lat]] : null;
+    setSelectedObjects(objSheetPair || [[lng, lat]], objRingColor(type, p));
     applyClampMarkers();
     // 写真は読み込み完了で高さが確定する（カード系は比率なりに伸びる）ため、その時点で寄せ直す
     body.querySelectorAll('img').forEach(img => {
@@ -2647,6 +2667,7 @@ function closeObjSheet() {
     sheet.style.bottom = '-100%';
     objSheetLngLat = null;
     objSheetCtx = null;
+    objSheetPair = null;
     closePhotoViewer();   // シートが閉じたら写真ビューアも残さない
     clearSelectedObject();
 }
@@ -2926,15 +2947,33 @@ function objRingColor(type, p) {
     return OBJ_TYPE_COLOR[type] || '#546E7A';
 }
 function setSelectedObject(coords, color) {
+    setSelectedObjects([coords], color);
+}
+// 蓋⇄配布場所をボタンで行き来したときは、移動元と移動先の両方にリングを出し、間を線で結ぶ。
+// リングのレイヤーは circle なので、ソースに2点入れるだけで両方に描かれる。
+// 線は消し方をリングと揃えたいので、同じ関数で出し入れする。
+function setSelectedObjects(coordsList, color) {
     const src = map.getSource('selected-object-source');
     if (!src) return;
-    src.setData({ type: 'Feature', geometry: { type: 'Point', coordinates: coords }, properties: {} });
+    src.setData({
+        type: 'FeatureCollection',
+        features: coordsList.map(c => ({ type: 'Feature', geometry: { type: 'Point', coordinates: c }, properties: {} })),
+    });
     map.setPaintProperty('selected-ring-inner', 'circle-stroke-color', color);
     map.setPaintProperty('selected-ring-outer', 'circle-stroke-color', color);
+    const link = map.getSource('selected-link-source');
+    if (link) {
+        link.setData(coordsList.length >= 2
+            ? { type: 'Feature', geometry: { type: 'LineString', coordinates: coordsList.slice(0, 2) }, properties: {} }
+            : { type: 'FeatureCollection', features: [] });
+        if (map.getLayer('selected-link')) map.setPaintProperty('selected-link', 'line-color', color);
+    }
 }
 function clearSelectedObject() {
     const src = map.getSource('selected-object-source');
     if (src) src.setData({ type: 'FeatureCollection', features: [] });
+    const link = map.getSource('selected-link-source');
+    if (link) link.setData({ type: 'FeatureCollection', features: [] });
 }
 
 function bearingRafLoop() {
@@ -3189,6 +3228,11 @@ map.on('zoomend', () => { isZooming = false; });
         // 選択中オブジェクトの二重リング。オブジェクトのピンレイヤーはこの後に追加されるため、
         // ここで先に足しておけば常にピンの下に描かれ、リングがピンを隠さない。
         // 寸法: ピン直径28＋白枠3（外径34）に対し 内リングφ46(線3)／外リングφ62(線2)。
+        // 蓋⇄配布場所を行き来したときに2つのリングを結ぶ線。リングより先に足してその下に敷く。
+        map.addSource('selected-link-source', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
+        map.addLayer({ id: 'selected-link', type: 'line', source: 'selected-link-source',
+            layout: { 'line-cap': 'round' },
+            paint: { 'line-color': '#546E7A', 'line-width': 2.5, 'line-opacity': 0.75, 'line-dasharray': [2, 1.6] } });
         map.addSource('selected-object-source', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
         map.addLayer({ id: 'selected-ring-outer', type: 'circle', source: 'selected-object-source', paint: { 'circle-radius': 31, 'circle-opacity': 0, 'circle-stroke-width': 2, 'circle-stroke-color': '#546E7A', 'circle-stroke-opacity': 0.45 } });
         map.addLayer({ id: 'selected-ring-inner', type: 'circle', source: 'selected-object-source', paint: { 'circle-radius': 23, 'circle-opacity': 0, 'circle-stroke-width': 3, 'circle-stroke-color': '#546E7A' } });
