@@ -456,9 +456,14 @@
         /* 拡大中・UI非表示中は帯とドットを消して写真を遮らない */
         .pv-ui { transition: opacity 0.18s ease; }
         .pv-ui.pv-hidden { opacity: 0; pointer-events: none; }
-        .os-line { font-size: 11px; color: #666; line-height: 1.45; }
+        .os-line { font-size: 11px; color: #333; line-height: 1.45; font-variant-numeric: tabular-nums; }
         .os-line + .os-line { margin-top: 1px; }
-        .os-line .os-k { color: #aaa; }
+        /* メタ行の項目ラベル。全種別を同じ白抜きチップに統一する（以前はコロン・
+           os-kタグ・絵文字・ラベルなしの4系統が混在していた）。
+           枠線や影を付けると1行あたり1px背が伸びてシートが高くなるので、下地だけで表現する。 */
+        .os-line .os-k { display: inline-block; background: #a8a294; color: #fff; border-radius: 3px;
+                         font-size: 9.5px; font-weight: 700; line-height: 1.5; padding: 0 4px;
+                         margin-right: 4px; vertical-align: 1px; letter-spacing: 0.8px; }
         .os-clamp { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
         .os-clamp.clampable { cursor: pointer; }
         .os-clamp.clampable::after { content: ' ▼'; font-size: 10px; color: #999; }
@@ -2074,11 +2079,12 @@ function popupFormBadgeHtml(form) {
     return `<span class="popup-form-badge popup-form-badge-title ${cls}">${form}</span>`;
 }
 
-// 標高／比高（バッジとは別行、住所の上に表示）
-function popupFormMetaText(elevationM, relativeHeightM) {
-    const elev = (elevationM !== undefined && elevationM !== null) ? `標高${elevationM}m` : null;
-    const rel = (relativeHeightM !== undefined && relativeHeightM !== null) ? `比高${relativeHeightM}m` : null;
-    return [elev, rel].filter(Boolean).join('／');
+// 標高／比高（バッジとは別行、住所の上に表示）。
+// 他の行と同じラベルチップを使い、1行に2項目を並べる（比高が無い城は標高だけになる）。
+function popupFormMetaHtml(elevationM, relativeHeightM) {
+    const elev = (elevationM !== undefined && elevationM !== null) ? osKvHtml('標高', `${elevationM}m`) : null;
+    const rel = (relativeHeightM !== undefined && relativeHeightM !== null) ? osKvHtml('比高', `${relativeHeightM}m`) : null;
+    return [elev, rel].filter(Boolean).join(' ');
 }
 
 // 遺構・城主は、原典（城郭放浪記）が「なし」「不明」と明記しているケースが多い
@@ -2087,12 +2093,12 @@ function popupFormMetaText(elevationM, relativeHeightM) {
 // 「破壊」「消滅」はWikipediaが遺構の現存しない城に使う表記（castle.js側でも同じ扱い）
 const CASTLE_UNKNOWN_ATTRS = new Set(['なし', '無し', '無', '不明', '不詳', '－', '-', '―', 'ー',
                                       '破壊', '消滅']);
-// ラベルは城シート既存の「別名: …」に合わせてプレーンテキストで書く
+// ラベルは他のメタ行と同じチップで書く
 function castleAttrLine(label, value) {
     if (!value) return '';
     const v = String(value).trim();
     if (!v || CASTLE_UNKNOWN_ATTRS.has(v)) return '';
-    return osLine(`${label}: ${v}`);
+    return osKv(label, v);
 }
 
 // 情報源ボタン（Wikipedia・攻城団・城郭放浪記）。セット行に並べ、
@@ -2224,11 +2230,28 @@ function mhcardInfo(p) {
 //                  0個なら行ごと出さない。
 //    行C  固定セット（ここへ行く(Google)／ここへ行く(Yahoo)／この周辺を検索）
 //  各行は flex で等分するため、個数が変わっても空きセルが出ない。
+//
+//  写真の横のテキスト（.os-meta）は、全種別で osKv() のラベルチップに統一している。
+//  使うラベルは次のとおり:
+//    城          別名／標高／比高／遺構／城主／住所
+//    マンホール蓋 設置／配布場所／住所／時間／発行
+//    カード      住所／時間／発行        ポケふた・食べログ  住所
+//    道の駅      路線／住所／時間（路線は michi.js の全1,234件が空なので実際は出ない）
+//  蓋だけ「設置」を使うのは、蓋自身の住所とカード配布場所の住所を続けて出すため。
+//  同じ「住所」チップが2つ並ぶと、どちらが蓋の位置か読み取れなくなる。
 // ══════════════════════════════════════════════════════════════
 
 // テキスト1行（2行を超える分は省略。タップで全文表示）
 function osLine(html) {
     return html ? `<div class="os-line os-clamp">${html}</div>` : '';
+}
+// ラベルチップ＋値。値が空なら行ごと出さない。
+// 全種別のメタ行をこの形に統一しているので、新しい項目もこれで足すこと。
+function osKvHtml(label, value) {
+    return `<span class="os-k">${label}</span>${value}`;
+}
+function osKv(label, value) {
+    return value ? osLine(osKvHtml(label, value)) : '';
 }
 // 写真枠。urlが空なら枠ごと出さない。variant で枠の形を切り替える:
 //   ''(既定) 128×128にcover      … ポケふた(750×750)のような正方形向け
@@ -2319,7 +2342,7 @@ function buildSheetHtml(type, label, p, lng, lat) {
         title = p.pokemon || label;
         photo = osPhotoHtml(p.image_url_full
             || (p.cardId ? `https://ekikaramanhole.whitebeach.org/ext/pokefuta/image/main/${String(p.cardId).padStart(3,'0')}.jpg` : ''));
-        lines = osLine(p.address);
+        lines = osKv('住所', p.address);
         rowA = osRow([osBtn(coordGmapUrl, 'btn-gmap', 'GoogleMap'), osBtn(p.detail_url, 'btn-pokefuta', '公式ページ')]);
 
     } else if (type === 'manhole' || type === 'mhcard') {
@@ -2333,8 +2356,7 @@ function buildSheetHtml(type, label, p, lng, lat) {
         if (type === 'mhcard') {
             title = `${p.coordOffset ? '[複]' : ''}[配布] ${[info && info.muni, p.locationName].filter(Boolean).join(' ') || p.name || label}`;
             photo = osPhotoHtml(p.cardImgUrl, 'full');   // カードは縦長なので切らずに全体を見せる
-            lines = osLine(p.address) + osLine(p.hours ? `🕐 ${p.hours}` : '')
-                  + osLine(p.issueDate ? `<span class="os-k">発行</span> ${p.issueDate}` : '');
+            lines = osKv('住所', p.address) + osKv('時間', p.hours) + osKv('発行', p.issueDate);
         } else {
             title = p.name || label;
             // 同じカードの画像でも、配布場所レコード側(gk-p.jp)は516×720、cardIdから
@@ -2344,10 +2366,11 @@ function buildSheetHtml(type, label, p, lng, lat) {
             const cardImgUrl = (card && card.cardImgUrl)
                 || (p.cardId ? `https://ekikaramanhole.whitebeach.org/ext/manholecard/image/getimage.cgi?file=card/${p.cardId}.jpg` : '');
             photo = osPhotoHtml(cardImgUrl, 'full');   // カードは縦長なので切らずに全体を見せる
-            lines = osLine(p.address)
-                  + (card ? osLine(card.locationName ? `<span class="os-k">配布場所</span> ${card.locationName}` : '')
-                          + osLine(card.address) + osLine(card.hours ? `🕐 ${card.hours}` : '')
-                          + osLine(card.issueDate ? `<span class="os-k">発行</span> ${card.issueDate}` : '')
+            // 蓋自身の住所と、紐付いたカード配布場所の住所を続けて出すため、
+            // 同じ「住所」チップが2つ並ばないよう蓋側は「設置」と呼び分ける。
+            lines = osKv('設置', p.address)
+                  + (card ? osKv('配布場所', card.locationName) + osKv('住所', card.address)
+                          + osKv('時間', card.hours) + osKv('発行', card.issueDate)
                     : '');
         }
         rowA = osRow([osBtn(coordGmapUrl, 'btn-gmap', 'GoogleMap')]);
@@ -2356,8 +2379,8 @@ function buildSheetHtml(type, label, p, lng, lat) {
 
     } else if (type === 'michi') {
         title = p.name || label;
-        lines = osLine(p.road ? `📍 ${p.road}` : '') + osLine(p.address)
-              + osLine(p.businessHours ? `🕐 ${p.businessHours}` : '');
+        // road は michi.js の全1,234件が空文字なので、実際にはこの行は出ない（残しておく）
+        lines = osKv('路線', p.road) + osKv('住所', p.address) + osKv('時間', p.businessHours);
         rowA = osRow([
             osBtn(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(title)}`, 'btn-gmap', 'GoogleMap'),
             osBtn(p.url, 'btn-michi-web', '公式ページ'),
@@ -2373,11 +2396,11 @@ function buildSheetHtml(type, label, p, lng, lat) {
         title = p.coordOffset ? `[近接あり] ${name}` : name;
         badges = popupFormBadgeHtml(p.shiroHbForm);
         const aliases = osParseAliases(p.aliases);
-        lines = osLine(aliases.length ? `別名: ${aliases.join('、')}` : '')
-              + osLine(popupFormMetaText(p.shiroHbElevationM, p.shiroHbRelativeHeightM))
+        lines = osKv('別名', aliases.length ? aliases.join('、') : '')
+              + osLine(popupFormMetaHtml(p.shiroHbElevationM, p.shiroHbRelativeHeightM))
               + castleAttrLine('遺構', p.remains)
               + castleAttrLine('城主', p.lords)
-              + osLine(p.address);
+              + osKv('住所', p.address);
         // 写真は非同期取得のため枠だけ先に置き、injectCastleImage で差し込む
         photo = `<div class="os-castle-photo"></div>`;
         rowA = osRow([
@@ -2390,7 +2413,7 @@ function buildSheetHtml(type, label, p, lng, lat) {
 
     } else {   // shop（食べログ）
         title = p.name || label;
-        lines = osLine(p.address);
+        lines = osKv('住所', p.address);
         rowA = osRow([
             osBtn(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(title)}`, 'btn-gmap', 'GoogleMap'),
             osBtn(p.url, 'btn-tabelog', '食べログ'),
