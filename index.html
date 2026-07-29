@@ -757,7 +757,6 @@
             font-size: 12px; font-weight: bold; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
         .lord-av.person { background: #fdf1e3; color: #a2691f; }
-        .lord-av.org { background: #e4efe6; color: #33703f; }
         .lord-main { flex: 1; min-width: 0; }
         .lord-name { font-size: 13.5px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .lord-sub { font-size: 10.5px; color: #999; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -1265,7 +1264,6 @@
             <input id="lords-search" type="search" autocomplete="off" placeholder="城主名・城名・都道府県で絞り込み" oninput="onLordsSearchInput(this.value)">
             <div class="lords-chips">
                 <button class="lords-chip" data-lt="all"    aria-pressed="true"  onclick="setLordsType('all')">すべて</button>
-                <button class="lords-chip" data-lt="clan"   aria-pressed="false" onclick="setLordsType('clan')">氏族</button>
                 <button class="lords-chip" data-lt="person" aria-pressed="false" onclick="setLordsType('person')">個人</button>
                 <button class="lords-chip" data-lt="org"    aria-pressed="false" onclick="setLordsType('org')">組織</button>
                 <button class="lords-chip" id="lords-min-chip" aria-pressed="false" onclick="toggleLordsMin()">2城以上</button>
@@ -4425,7 +4423,7 @@ map.on('zoomend', () => { isZooming = false; });
         '関澤神社脇から登る。',
     ]);
     const LORDS_CHUNK = 60;              // 一覧の追加描画単位（11,000名超を一度に積まない）
-    const LORD_KIND_MARK = { clan: '氏', person: '人', org: '組' };
+    const LORD_KIND_MARK = { person: '人', org: '組' };
     let lordIndex = null;                // [{ n, kind, idx:[城のfeature番号], v:[原表記], _n }]
     let lordCastleNorm = null;           // feature番号 → 検索用に正規化した「城名＋都道府県」
     let lordsState = { q: '', type: 'all', min: 1, sort: 'dist', filtered: [], shown: 0, lord: null };
@@ -4433,16 +4431,15 @@ map.on('zoomend', () => { isZooming = false; });
     // 集計キーを作る。末尾の括弧注記（石高・別称）と推量記号を落とす。
     // 先頭の括弧注記は個人名のときだけ落とす（氏族名から落とすと「（大給）松平氏」が
     // 「松平氏」に吸われて分家の区別が消えるため）。語中の括弧は人名の一部なので触らない。
-    /* 氏族／個人／組織の判定。城主欄には人物のほかに幕府・藩・一揆・寺社なども入るため、
-       人名と衝突しない語尾だけを組織の目印にする（実データ全件で確認）。
+    /* 個人／組織の判定。組織には氏族（「〜氏」）も含める。
+       城主欄には人物のほかに幕府・藩・一揆・寺社なども入るため、人名と衝突しない語尾
+       だけを組織の目印にする（実データ全件で確認）。
        「家」「衆」「坊」「国」「村」「方」は前田利家・松平容衆・杉谷善住坊・本多忠国・
        三浦義村・板垣信方のように人名と衝突するので使わない。
        琉球の「〜按司」は人物の称号なので個人のままにする。 */
-    const LORD_ORG_RE = /(幕府|藩|朝廷|皇室|公儀|一族|一門|党|水軍|軍|勢|寺|院|社|法人|財団)$/;
+    const LORD_ORG_RE = /(氏|幕府|藩|朝廷|皇室|公儀|一族|一門|党|水軍|軍|勢|寺|院|社|法人|財団)$/;
     function lordKind(name) {
-        if (name.endsWith('氏')) return 'clan';
-        if (name.includes('一揆') || LORD_ORG_RE.test(name)) return 'org';
-        return 'person';
+        return (name.includes('一揆') || LORD_ORG_RE.test(name)) ? 'org' : 'person';
     }
 
     function normalizeLordName(raw) {

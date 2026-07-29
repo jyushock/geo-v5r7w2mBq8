@@ -23,20 +23,17 @@ NOISE_VALUES = {
 }
 
 
-# 氏族／個人／組織の判定。城主欄には人物のほかに幕府・藩・一揆・寺社なども入るため、
-# 人名と衝突しない語尾だけを組織の目印にする（実データ全件で確認）。
+# 個人／組織の判定。組織には氏族（「〜氏」）も含める。
+# 城主欄には人物のほかに幕府・藩・一揆・寺社なども入るため、人名と衝突しない語尾
+# だけを組織の目印にする（実データ全件で確認）。
 # 「家」「衆」「坊」「国」「村」「方」は前田利家・松平容衆・杉谷善住坊・本多忠国・
 # 三浦義村・板垣信方のように人名と衝突するので使わない。
 # 琉球の「〜按司」は人物の称号なので個人のままにする。
-ORG_RE = re.compile(r'(幕府|藩|朝廷|皇室|公儀|一族|一門|党|水軍|軍|勢|寺|院|社|法人|財団)$')
+ORG_RE = re.compile(r'(氏|幕府|藩|朝廷|皇室|公儀|一族|一門|党|水軍|軍|勢|寺|院|社|法人|財団)$')
 
 
 def lord_kind(name):
-    if name.endswith('氏'):
-        return 'clan'
-    if '一揆' in name or ORG_RE.search(name):
-        return 'org'
-    return 'person'
+    return 'org' if ('一揆' in name or ORG_RE.search(name)) else 'person'
 
 
 def normalize(raw):
@@ -108,9 +105,10 @@ def main():
         'unknownOnly': n_unknown_only,
         'castles': len(castles),
         'lords': len(lords),
-        'clans': sum(1 for x in lords if x['c'] == 'clan'),
         'persons': sum(1 for x in lords if x['c'] == 'person'),
         'orgs': sum(1 for x in lords if x['c'] == 'org'),
+        # 組織の内訳（表示は参考値。氏族名は絞り込みでは組織に含める）
+        'clans': sum(1 for x in lords if x['n'].endswith('氏')),
         'multi': sum(1 for x in lords if len(x['k']) >= 2),
         'pairs': sum(len(x['k']) for x in lords),
     }
@@ -167,9 +165,7 @@ TEMPLATE = r'''<!DOCTYPE html>
   .lord{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap;margin-bottom:6px}
   .lord .nm{font-size:16px;font-weight:700;letter-spacing:.01em}
   .tag{font-size:11px;padding:1px 6px;border-radius:99px;border:1px solid var(--line);color:var(--sub)}
-  .tag.clan{background:var(--accent-bg);color:var(--accent);border-color:transparent}
-  .tag.org{background:#e4efe6;color:#33703f;border-color:transparent}
-  @media (prefers-color-scheme:dark){ .tag.org{background:#26362a;color:#8fc79c} }
+  .tag.org{background:var(--accent-bg);color:var(--accent);border-color:transparent}
   .num{margin-left:auto;font-size:12.5px;color:var(--sub);white-space:nowrap}
   .num b{color:var(--accent);font-size:15px}
   .alias{font-size:11.5px;color:var(--sub);margin:-2px 0 6px}
@@ -223,7 +219,6 @@ TEMPLATE = r'''<!DOCTYPE html>
     <div class="segs">
       <div class="seg" id="type">
         <button data-v="all" aria-pressed="true">すべて</button>
-        <button data-v="clan" aria-pressed="false">氏族</button>
         <button data-v="person" aria-pressed="false">個人</button>
         <button data-v="org" aria-pressed="false">組織</button>
       </div>
@@ -253,7 +248,7 @@ TEMPLATE = r'''<!DOCTYPE html>
     <li>末尾の括弧注記（石高・別称。例「小笠原氏（6万石）」「北畠氏（浪岡氏）」）と推量記号「?」は集計キーから外し、元の表記はカード内に併記した。語中の括弧（例「武田（蠣崎）信廣」）は人名の一部として残す。</li>
     <li>先頭の括弧注記は個人名のときだけ外す（「（久松）松平定勝」→「松平定勝」）。氏族名では分家の区別が消えるため残す（「（大給）松平氏」は「松平氏」と別項目）。</li>
     <li>「不明」「不詳」は集計から除外。表記ゆれ（例「南部光信」と「大浦光信」）の名寄せは行っていないため、同一人物が別項目に分かれている場合がある。</li>
-    <li>「氏」で終わる項目を氏族、「幕府・藩・朝廷・皇室・公儀・一族・一門・党・水軍・軍・勢・寺・院・社・法人・財団」で終わるものと「一揆」を含むものを組織、残りを個人としている。「家」「衆」「坊」「国」「村」「方」は前田利<b>家</b>・松平容<b>衆</b>・杉谷善住<b>坊</b>・本多忠<b>国</b>・三浦義<b>村</b>・板垣信<b>方</b>のように人名と衝突するため判定に使っていない。そのため「徳川将軍家」「根来衆」等は個人側に残る。</li>
+    <li>「氏・幕府・藩・朝廷・皇室・公儀・一族・一門・党・水軍・軍・勢・寺・院・社・法人・財団」で終わるものと「一揆」を含むものを組織、残りを個人としている（氏族名は組織に含めている）。「家」「衆」「坊」「国」「村」「方」は前田利<b>家</b>・松平容<b>衆</b>・杉谷善住<b>坊</b>・本多忠<b>国</b>・三浦義<b>村</b>・板垣信<b>方</b>のように人名と衝突するため判定に使っていない。そのため「徳川将軍家」「根来衆」等は個人側に残る。</li>
     <li>琉球の「〜按司」は人物の称号なので個人として扱っている。</li>
     <li>城郭放浪記のアクセス解説文が城主欄に混入していた4城分（朝日山城(駿河国)・鷹尾城(筑後国)・倉田城・板西城）は、その文だけ除外した。</li>
     <li>城名のリンク先は攻城団の個別ページ（URLのある城のみ）。</li>
@@ -265,11 +260,11 @@ const {castles, lords, stats} = DATA;
 const el = id => document.getElementById(id);
 const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const GENRE = {'日本100名城':'100', '続日本100名城':'続100'};
-const KIND_LABEL = {clan:'氏族', person:'個人', org:'組織'};
+const KIND_LABEL = {person:'個人', org:'組織'};
 
 el('stats').innerHTML =
   `城主データのある城 <b>${stats.castles.toLocaleString()}</b> 件（全 ${stats.features.toLocaleString()} 件中） / ` +
-  `城主 <b>${stats.lords.toLocaleString()}</b> 件（氏族 ${stats.clans.toLocaleString()}・個人 ${stats.persons.toLocaleString()}・組織 ${stats.orgs.toLocaleString()}） / ` +
+  `城主 <b>${stats.lords.toLocaleString()}</b> 件（個人 ${stats.persons.toLocaleString()}・組織 ${stats.orgs.toLocaleString()}／うち氏族名 ${stats.clans.toLocaleString()}） / ` +
   `2城以上を持つ城主 <b>${stats.multi.toLocaleString()}</b> 名 / 城主と城の組 ${stats.pairs.toLocaleString()} 件`;
 
 const state = {q:'', type:'all', min:2, sort:'count', shown:0};
