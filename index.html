@@ -717,10 +717,12 @@
         }
         .nearby-list-btn:disabled { opacity: 0.5; cursor: default; }
         .nlb-ic {
-            width: 32px; height: 32px; border-radius: 8px; background: #546E7A;
+            width: 34px; height: 34px; border-radius: 9px; background: #546E7A;
             display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
-        .nlb-ic img { width: 20px; height: 20px; filter: brightness(0) invert(1); }
+        /* お城アイコンは枠いっぱいに描く。他の場所（地図・検索結果・周辺検索・履歴）でも
+           マンホール以外は比率100%（--obj-icon-inner-full と --obj-icon-circle が同値）のため */
+        .nlb-ic img { width: 100%; height: 100%; object-fit: contain; filter: brightness(0) invert(1); }
         .nlb-n { display: block; font-size: 13px; font-weight: bold; color: #333; }
         .nlb-s { display: block; font-size: 10.5px; color: #999; }
 
