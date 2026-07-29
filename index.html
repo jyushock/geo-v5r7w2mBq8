@@ -472,15 +472,15 @@
         /* メタ行の項目ラベル。全種別を同じ白抜きチップに統一する（以前はコロン・
            os-kタグ・絵文字・ラベルなしの4系統が混在していた）。
            枠線や影を付けると1行あたり1px背が伸びてシートが高くなるので、下地だけで表現する。
-           淡い空色の下地に濃い文字（sheet-tag-darktext-preview.html のB8）。以前の白抜き
+           グレージュの下地に濃い文字（sheet-tag-darktext-preview.html のN8）。以前の白抜き
            （#a8a294 に白）は文字とのコントラストが2.54:1しかなく、同じ行の本文
            （#333／白地＝12.63:1）に対して極端に薄かった。9.5pxはWCAGの「大きい文字」に
-           当たらないため基準は4.5:1で、この配色は7.86:1。
+           当たらないため基準は4.5:1で、この配色は8.40:1。
            文字は #3d3d3d。真っ黒に寄せるとラベルだけが本文(#333)より強く見えるので、
            本文よりわずかに薄いところまで下げている。
-           背景の明度は、白地との差が1.38:1になる値を選んでいる。これ以上明るくすると
-           チップの輪郭が地の白に溶けてタグに見えなくなる（いずれも計算で確認）。 */
-        .os-line .os-k { display: inline-block; background: #CCDEEA; color: #3d3d3d; border-radius: 3px;
+           下地は白地との差が1.29:1。これ以上明るくするとチップの輪郭が地の白に溶けて
+           タグに見えなくなる（いずれも計算で確認）。 */
+        .os-line .os-k { display: inline-block; background: #E6E2D8; color: #3d3d3d; border-radius: 3px;
                          font-size: 9.5px; font-weight: 700; line-height: 1.5; padding: 0 4px;
                          margin-right: 4px; vertical-align: 1px; letter-spacing: 0.8px; }
         .os-clamp { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
