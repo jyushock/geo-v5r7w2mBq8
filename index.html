@@ -4475,6 +4475,12 @@ map.on('zoomend', () => { isZooming = false; });
             });
         });
         lordIndex = [...byName.values()];
+        // 「〜家」は家名（森家）と人名（前田利家）が混在するため語尾だけでは分けられない。
+        // 語幹＋「氏」が別項目として実在するものだけを家名とみなして組織に寄せる
+        // （実データでは29件が該当し、人名は1件も混ざらないことを確認済み）
+        lordIndex.forEach(e => {
+            if (e.kind === 'person' && e.n.endsWith('家') && byName.has(e.n.slice(0, -1) + '氏')) e.kind = 'org';
+        });
         lordIndex.sort((a, b) => (b.idx.length - a.idx.length) || a.n.localeCompare(b.n, 'ja'));
         lordIndex.forEach((e, i) => { e.id = i; });
     }
