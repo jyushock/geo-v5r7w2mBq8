@@ -14252,7 +14252,7 @@ const castleData = {
       },
       "properties": {
         "name": "お台場",
-        "genre": "続日本100名城",
+        "genre": "",
         "category": "城",
         "prefecture": "東京都",
         "url": "",
@@ -20007,7 +20007,7 @@ const castleData = {
       },
       "properties": {
         "name": "一乗谷朝倉氏遺跡",
-        "genre": "日本100名城",
+        "genre": "",
         "category": "城",
         "prefecture": "福井県",
         "url": "",
@@ -29305,7 +29305,7 @@ const castleData = {
       },
       "properties": {
         "name": "小牧山",
-        "genre": "",
+        "genre": "続日本100名城",
         "category": "城",
         "prefecture": "愛知県",
         "url": "https://kojodan.jp/castle/124",
@@ -29978,7 +29978,7 @@ const castleData = {
       },
       "properties": {
         "name": "霧山城",
-        "genre": "",
+        "genre": "続日本100名城",
         "category": "城",
         "prefecture": "三重県",
         "url": "https://kojodan.jp/castle/665",
@@ -35359,7 +35359,7 @@ const castleData = {
       },
       "properties": {
         "name": "宇陀松山城",
-        "genre": "続日本100名城",
+        "genre": "",
         "category": "城",
         "prefecture": "奈良県",
         "url": "",
@@ -76633,7 +76633,7 @@ const castleData = {
       },
       "properties": {
         "name": "一乗谷城",
-        "genre": "",
+        "genre": "日本100名城",
         "category": "城",
         "prefecture": "福井県",
         "url": "https://kojodan.jp/castle/55",
@@ -92864,7 +92864,7 @@ const castleData = {
       },
       "properties": {
         "name": "北畠氏館",
-        "genre": "",
+        "genre": "続日本100名城",
         "category": "城",
         "prefecture": "三重県",
         "url": "https://kojodan.jp/castle/1255",
@@ -103822,7 +103822,7 @@ const castleData = {
       },
       "properties": {
         "name": "宇陀松山城",
-        "genre": "",
+        "genre": "続日本100名城",
         "category": "城",
         "prefecture": "奈良県",
         "url": "https://kojodan.jp/castle/486",
@@ -363019,7 +363019,7 @@ const castleData = {
       },
       "properties": {
         "name": "品川第三台場",
-        "genre": "",
+        "genre": "続日本100名城",
         "category": "城",
         "prefecture": "東京都",
         "url": "https://kojodan.jp/castle/1476",
