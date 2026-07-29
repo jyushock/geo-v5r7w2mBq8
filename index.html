@@ -527,6 +527,11 @@
            城郭放浪記ボタン(btn-shirohb)と同じ色だが、あれは城のシートにしか出ないので、
            このバッジと同じ画面に並ぶことはない。 */
         .os-cdbadge.os-cdround { background: #6A4C93; }
+        /* 100名城・続100名城の印。形態バッジの右に並べる。寸法は形態バッジと同一で、
+           色は地図のピン・検索結果と同じものを getItemColor から取って直接指定する。 */
+        .os-genrebadge { font-size: 12px; font-weight: 700; color: #fff;
+                         padding: 2px 8px; border-radius: 10px; line-height: 1.6;
+                         white-space: nowrap; flex-shrink: 0; }
         /* 形態名ごとの個別色。平城系(平城・平山城)は緑系、水系(水軍城・海城・水城)は青系、寺社は紫系に統一。
            他は意味によるグループ化をせず、上記3系統の帯域を避けて個別に配置（モックで確定した配色）。 */
         .popup-form-badge.f-yamajiro   { background: hsl(0,   42%, 38%); } /* 山城 */
@@ -2248,6 +2253,15 @@ function popupFormBadgeHtml(form) {
     return `<span class="popup-form-badge popup-form-badge-title ${cls}">${form}</span>`;
 }
 
+// 100名城・続100名城のバッジ。色は地図のピン・検索結果のアイコンと同じものを使う
+// （getItemColor が genre から決めるので、色の定義がここで二重にならない）
+const CASTLE_GENRE_LABEL = { '日本100名城': '100名城', '続日本100名城': '続100名城' };
+function castleGenreBadgeHtml(p) {
+    const label = CASTLE_GENRE_LABEL[p.genre];
+    if (!label) return '';
+    return `<span class="os-genrebadge" style="background:${getItemColor({ type: 'castle', properties: p })}">${label}</span>`;
+}
+
 // 標高／比高（バッジとは別行、住所の上に表示）。
 // 他の行と同じラベルチップを使い、1行に2項目を並べる（比高が無い城は標高だけになる）。
 function popupFormMetaHtml(elevationM, relativeHeightM) {
@@ -2728,7 +2742,7 @@ function buildSheetHtml(type, label, p, lng, lat) {
         // 近接する別の城と座標が重なるため表示位置をずらしたエントリには目印を付ける
         // （マンホールカード配布場所のcoordOffsetと同じ仕組み。実際の座標は元の位置から数m~十数mずれている）
         title = p.coordOffset ? `[近接あり] ${name}` : name;
-        badges = popupFormBadgeHtml(p.shiroHbForm);
+        badges = popupFormBadgeHtml(p.shiroHbForm) + castleGenreBadgeHtml(p);
         const aliases = osParseAliases(p.aliases);
         lines = osKv('別名', aliases.length ? aliases.join('、') : '')
               + osLine(popupFormMetaHtml(p.shiroHbElevationM, p.shiroHbRelativeHeightM))
