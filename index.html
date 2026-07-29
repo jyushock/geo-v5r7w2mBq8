@@ -559,6 +559,9 @@
            どちらへ移るボタンかを色でも見分けられるようにする。 */
         .btn-to-card { background: #1565C0; }   /* → カード配布場所（mhcard） */
         .btn-to-lid  { background: #B87333; }   /* → マンホール蓋（manhole） */
+        /* 配布が終わったカードの見出し。警告色まで強めず、彩度を落とした赤にする
+           （白地とのコントラスト4.99:1）。 */
+        .os-ended { color: #b5504a; }
         /* 配布場所が複数あるカード（実データで2箇所=143キー、3箇所=4キー）の候補リスト。
            季節・曜日で窓口が変わる例が大半なので、施設名と蓋からの距離を並べて選べるようにする。
            ボタン幅(3分割で105px)には施設名が入りきらないため、ボタンではなく行で並べる。 */
@@ -2230,32 +2233,67 @@ let cardJoinIndex = null;   // カードコード → 配布場所featureの配�
 let lidJoinIndex = null;    // カードコード → 蓋feature（遅延構築。実データでは1カードにつき蓋は1件）
 
 // カードコード正規化: "13-100-P001" / "01-100-A-01" → "13-100-P-1"
+// 先頭の "S-"（東京都の特別版2件）と、枝番のないコード（20-452-A / 23-234A）も受ける。
 function cardCodeKey(s) {
-    const m = String(s).match(/^(\d{2})-(\d{3})-?([A-Z])-?0*(\d+)/i);
-    return m ? `${m[1]}-${m[2]}-${m[3].toUpperCase()}-${parseInt(m[4], 10)}` : null;
+    const t = String(s == null ? '' : s).replace(/^S-/i, '');
+    let m = t.match(/^(\d{2})-(\d{3})-?([A-Z])-?0*(\d+)/i);
+    if (m) return `${m[1]}-${m[2]}-${m[3].toUpperCase()}-${parseInt(m[4], 10)}`;
+    m = t.match(/^(\d{2})-(\d{3})-?([A-Z])$/i);   // 枝番なしは1枚目とみなす
+    return m ? `${m[1]}-${m[2]}-${m[3].toUpperCase()}-1` : null;
 }
 
-// 配布場所レコード側のカードコードは、カード画像URL（…/mhc/13-100-P001.jpg）から取る
+// 配布場所レコードが名乗るカードコード。次の2通りを両方登録して、どちらでも引けるようにする。
+//   cardId … 公式ページの市町村セルの括弧内ID（「富山市 (F001)」→ F001）。蓋側のIDと同じ体系で
+//            確実だが、括弧内IDは全行にあるわけではない（公式1,311行中809行）。
+//   画像URL … ファイル名から取る従来の方法。命名の揺れが大きく（13-100-A1-01 / 13-100-C101 /
+//            13-100-D01 が全部別体系）単独では24件を取り逃すが、cardIdが無い行でも取れる。
+function cardKeysOfCardRecord(p) {
+    const keys = [];
+    const url = (p && p.cardImgUrl) || '';
+    const pm = url.match(/\/mhc\/(\d{2})-(\d{3})/);
+    if (pm && p && p.cardId) keys.push(cardCodeKey(`${pm[1]}-${pm[2]}-${p.cardId}`));
+    const m = url.match(/\/mhc\/([\w-]+?)(?:\.\w+)?$/i);   // 拡張子は .jpg 以外や無しもある
+    if (m) keys.push(cardCodeKey(m[1]));
+    return keys.filter((k, i) => k && keys.indexOf(k) === i);
+}
 function cardKeyOfCardRecord(p) {
-    const m = ((p && p.cardImgUrl) || '').match(/\/mhc\/([\w-]+)\.jpg/i);
-    return m ? cardCodeKey(m[1]) : null;
+    return cardKeysOfCardRecord(p)[0] || null;
 }
 
 // 蓋のcardId → 配布場所featureの一覧。
 // 同じカードを複数箇所で配る例が147キーある（2箇所=143 / 3箇所=4。季節・曜日で窓口が変わるものが大半）
 // ため、propertiesではなくfeatureの配列で返す（行き先の座標が要るため）。
-function findCardFeaturesByKey(key) {
-    if (!key) return [];
-    if (!cardJoinIndex) {
-        const fc = loadedData.mhcard;
-        if (!fc) return []; // 配布場所データ未読込（読込後に再タップで解決）
-        cardJoinIndex = {};
-        fc.features.forEach(f => {
-            const k = cardKeyOfCardRecord(f.properties);
-            if (k) (cardJoinIndex[k] = cardJoinIndex[k] || []).push(f);
+function ensureCardJoinIndex() {
+    if (cardJoinIndex) return true;
+    const fc = loadedData.mhcard;
+    if (!fc) return false;   // 配布場所データ未読込（読込後に再タップで解決）
+    cardJoinIndex = {};
+    fc.features.forEach(f => {
+        cardKeysOfCardRecord(f.properties).forEach(k => {
+            const list = (cardJoinIndex[k] = cardJoinIndex[k] || []);
+            if (!list.includes(f)) list.push(f);
         });
-    }
+    });
+    return true;
+}
+function findCardFeaturesByKey(key) {
+    if (!key || !ensureCardJoinIndex()) return [];
     return cardJoinIndex[key] || [];
+}
+
+// 相手が見つからない蓋のための後継カード探し。
+// 改版されたカードは公式一覧から旧版の行ごと消える（小樽市A001→A002など）。
+// 同じ自治体・同じ記号で枝番だけ違うカードが残っていれば、それが後継にあたる。
+function findSuccessorCards(cardId) {
+    const self = cardCodeKey(cardId);
+    if (!self || !ensureCardJoinIndex()) return [];
+    const prefix = self.replace(/-\d+$/, '-');   // 13-100-A-1 → 13-100-A-
+    const out = [];
+    Object.keys(cardJoinIndex).forEach(k => {
+        if (k === self || !k.startsWith(prefix)) return;
+        cardJoinIndex[k].forEach(f => { if (!out.includes(f)) out.push(f); });
+    });
+    return out;
 }
 function findCardFeaturesByCardId(cardId) {
     return findCardFeaturesByKey(cardCodeKey(cardId));
@@ -2334,9 +2372,12 @@ function mhTogglePicker() {
 
 // 蓋シートの「配布場所」ボタンと、複数のときに開く候補リストを作る。
 // 候補には蓋からの距離を出す（季節・曜日で分かれた同名の窓口を見分ける手がかりになる）。
-function mhCardJumpHtml(cardFeatures, key, lng, lat) {
+function mhCardJumpHtml(cardFeatures, key, lng, lat, label) {
     if (cardFeatures.length === 1) {
-        return { btn: `<button class="btn btn-to-card" onclick="mhJumpToCard('${key}',0)">配布場所</button>`, pick: '' };
+        // 配布が終わったカードの行き先は配布場所ではない（問合せ先か市町村の代表点）。
+        // 「配布場所」と書くと押した先と食い違うので、状態をそのまま文言にする。
+        const single = label || (cardFeatures[0].properties.discontinued ? '配布終了' : '配布場所');
+        return { btn: `<button class="btn btn-to-card" onclick="mhJumpToCard('${key}',0)">${single}</button>`, pick: '' };
     }
     const items = cardFeatures.map((f, i) => {
         const q = f.properties;
@@ -2366,8 +2407,10 @@ function mhCardJumpHtml(cardFeatures, key, lng, lat) {
 //  写真の横のテキスト（.os-meta）は、全種別で osKv() のラベルチップに統一している。
 //  使うラベルは次のとおり:
 //    城          別名／標高／比高／遺構／城主／住所
-//    マンホール蓋 設置／配布場所／住所／時間／発行
-//    カード      住所／時間／発行        ポケふた・食べログ  住所
+//    マンホール蓋 設置／配布場所／住所／時間／発行（配布終了なら 配布／問合せ／発行、
+//                 後継カードしか無いときは 配布／後継）
+//    カード      住所／時間／発行（配布終了なら 配布／問合せ／発行）
+//    ポケふた・食べログ  住所
 //    道の駅      路線／住所／時間（路線は michi.js の全1,234件が空なので実際は出ない）
 //  蓋だけ「設置」を使うのは、蓋自身の住所とカード配布場所の住所を続けて出すため。
 //  同じ「住所」チップが2つ並ぶと、どちらが蓋の位置か読み取れなくなる。
@@ -2488,25 +2531,45 @@ function buildSheetHtml(type, label, p, lng, lat) {
             badges = (info.id ? `<span class="os-cdbadge">${info.id}</span>` : '')
                    + (info.round ? `<span class="os-cdbadge os-cdround">${info.round}</span>` : '');
         }
+        // 配布が終わったカードは公式一覧に「配布終了」の行として残っている（全国で6件）。
+        // 配布場所が無いので、そのぶんの行は出さずに終了した旨を出す。
+        const ended = !!(card && card.discontinued);
+        // 相手が見つからない蓋のうち、改版で旧版の行ごと消えたものは後継カードを案内する
+        const successors = (type === 'manhole' && !card) ? findSuccessorCards(p.cardId) : [];
         if (type === 'mhcard') {
-            title = `${p.coordOffset ? '[複]' : ''}[配布] ${[info && info.muni, p.locationName].filter(Boolean).join(' ') || p.name || label}`;
+            const head = ended ? '<span class="os-ended">[配布終了]</span>' : '[配布]';
+            // 配布終了レコードは locationName が「配布終了」なので、見出しに二度出さない
+            const who = [info && info.muni, ended ? '' : p.locationName].filter(Boolean).join(' ');
+            title = `${p.coordOffset ? '[複]' : ''}${head} ${who || p.name || label}`;
             photo = osPhotoHtml(p.cardImgUrl, 'full');   // カードは縦長なので切らずに全体を見せる
-            lines = osKv('住所', p.address) + osKv('時間', p.hours) + osKv('発行', p.issueDate);
+            lines = ended
+                ? osKv('問合せ', p.contactInfo) + osKv('発行', p.issueDate)
+                : osKv('住所', p.address) + osKv('時間', p.hours) + osKv('発行', p.issueDate);
         } else {
             title = p.name || label;
             // 同じカードの画像でも、配布場所レコード側(gk-p.jp)は516×720、cardIdから
             // 組み立てる ekikaramanhole 側は232×320（実測）。写真タップの拡大表示で
             // 引き伸ばさずに済むよう、紐付いていれば大きい方を使う。
-            // 紐付かない蓋（1,267件中44件）と、配布場所データ未読込のときは従来のURLにする。
+            // 紐付かない蓋と、配布場所データ未読込のときは従来のURLにする。
             const cardImgUrl = (card && card.cardImgUrl)
                 || (p.cardId ? `https://ekikaramanhole.whitebeach.org/ext/manholecard/image/getimage.cgi?file=card/${p.cardId}.jpg` : '');
             photo = osPhotoHtml(cardImgUrl, 'full');   // カードは縦長なので切らずに全体を見せる
             // 蓋自身の住所と、紐付いたカード配布場所の住所を続けて出すため、
             // 同じ「住所」チップが2つ並ばないよう蓋側は「設置」と呼び分ける。
-            lines = osKv('設置', p.address)
-                  + (card ? osKv('配布場所', card.locationName) + osKv('住所', card.address)
-                          + osKv('時間', card.hours) + osKv('発行', card.issueDate)
-                    : '');
+            let cardLines = '';
+            if (card && ended) {
+                cardLines = osKv('配布', '配布終了') + osKv('問合せ', card.contactInfo) + osKv('発行', card.issueDate);
+            } else if (card) {
+                cardLines = osKv('配布場所', card.locationName) + osKv('住所', card.address)
+                          + osKv('時間', card.hours) + osKv('発行', card.issueDate);
+            } else if (successors.length) {
+                // 公式一覧から旧版の行ごと消えているので、発行日すら残っていない。
+                // 同じ自治体の後継カードが今どこで配られているかだけを出す。
+                const s = successors[0].properties;
+                cardLines = osKv('配布', `このカードの配布情報は公式一覧にありません（後継カードあり）`)
+                          + osKv('後継', [mhcardInfo(s).id, s.locationName].filter(Boolean).join(' '));
+            }
+            lines = osKv('設置', p.address) + cardLines;
         }
         rowA = osRow([osBtn(coordGmapUrl, 'btn-gmap', 'GoogleMap')]);
         // 行B: 旧「カード詳細」シートの外部リンク2つ（在庫状況は url がある場合のみ＝1,246/1,426件）に
@@ -2518,6 +2581,11 @@ function buildSheetHtml(type, label, p, lng, lat) {
             }
         } else if (filterState.mhcard !== false && cardFeatures.length) {
             const j = mhCardJumpHtml(cardFeatures, cardKey, lng, lat);
+            jumpBtn = j.btn;
+            pick = j.pick;
+        } else if (filterState.mhcard !== false && successors.length) {
+            // 直接の相手はいないが後継カードがある場合は、そちらの配布場所へ行けるようにする
+            const j = mhCardJumpHtml(successors, cardKeyOfCardRecord(successors[0].properties), lng, lat, '後継の配布場所');
             jumpBtn = j.btn;
             pick = j.pick;
         }
