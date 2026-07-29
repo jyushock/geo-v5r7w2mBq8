@@ -707,6 +707,66 @@
         .nearby-cat-icon svg { width: 38px; height: 38px; }
         .nearby-cat-label { font-size: 9px; color: #555; text-align: center; white-space: nowrap; overflow: hidden; }
         .nearby-cat-placeholder { cursor: default; background: #f0f0f0; opacity: 0.4; pointer-events: none; }
+
+        /* 一覧から探す（メニュー内の入口ボタン） */
+        .nearby-list-btns { display: grid; gap: 8px; padding: 0 16px 12px; }
+        .nearby-list-btn {
+            display: flex; align-items: center; gap: 10px; width: 100%;
+            background: #f8f8f8; border: 0; border-radius: 10px; padding: 10px 12px;
+            cursor: pointer; font-family: inherit; text-align: left;
+        }
+        .nearby-list-btn:disabled { opacity: 0.5; cursor: default; }
+        .nlb-ic {
+            width: 32px; height: 32px; border-radius: 8px; background: #546E7A;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .nlb-ic img { width: 20px; height: 20px; filter: brightness(0) invert(1); }
+        .nlb-n { display: block; font-size: 13px; font-weight: bold; color: #333; }
+        .nlb-s { display: block; font-size: 10.5px; color: #999; }
+
+        /* 城主一覧ビュー（メニューパネル内の第3・第4ビュー） */
+        #nearby-lords-view, #nearby-lord-detail-view {
+            display: none; flex-direction: column; min-height: 0;
+            height: calc(100svh - 52px); max-height: 100%;
+        }
+        #nearby-lords-view.open, #nearby-lord-detail-view.open { display: flex; }
+        .lords-head { display: flex; align-items: center; gap: 8px; padding: 12px 12px 8px; flex-shrink: 0; }
+        .lords-head-title { font-size: 14px; font-weight: bold; color: #333; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .lords-iconbtn {
+            width: 32px; height: 32px; border: 0; background: #f5f5f5; border-radius: 8px;
+            color: #555; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .lords-filter { padding: 0 12px 8px; flex-shrink: 0; border-bottom: 1px solid #f0f0f0; }
+        .lords-filter input {
+            width: 100%; height: 34px; border: 1px solid #e3e3e3; border-radius: 17px;
+            padding: 0 12px; font-size: 13px; font-family: inherit; background: #fafafa; color: #333;
+        }
+        .lords-chips { display: flex; gap: 6px; margin-top: 7px; flex-wrap: wrap; }
+        .lords-chip {
+            font-size: 11px; padding: 4px 10px; border-radius: 14px; background: #f2f2f2;
+            color: #666; border: 0; cursor: pointer; font-family: inherit;
+        }
+        .lords-chip[aria-pressed="true"] { background: #e3ecff; color: #2a5bd7; font-weight: bold; }
+        .lords-scroll { overflow-y: auto; overscroll-behavior-y: contain; flex: 1; min-height: 0; }
+        .lord-row { display: flex; align-items: center; gap: 9px; padding: 10px 13px; border-bottom: 1px solid #f0f0f0; cursor: pointer; }
+        .lord-row:active { background: #f7f9ff; }
+        .lord-av {
+            width: 30px; height: 30px; border-radius: 50%; background: #eceff1; color: #546E7A;
+            font-size: 12px; font-weight: bold; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .lord-av.person { background: #fdf1e3; color: #a2691f; }
+        .lord-main { flex: 1; min-width: 0; }
+        .lord-name { font-size: 13.5px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .lord-sub { font-size: 10.5px; color: #999; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .lord-num { font-size: 12px; color: #546E7A; font-weight: bold; flex-shrink: 0; }
+        .lord-chev { color: #ccc; font-size: 15px; flex-shrink: 0; }
+        .lords-note { padding: 16px; text-align: center; color: #999; font-size: 13px; }
+        /* 城の情報シートに出す「城主一覧に戻る」導線 */
+        .os-lords-back {
+            display: flex; align-items: center; gap: 6px; margin: 0 0 8px; padding: 7px 10px;
+            background: #f3f6ff; border: 1px solid #dbe6ff; border-radius: 9px;
+            font-size: 11.5px; color: #2a5bd7; cursor: pointer;
+        }
         #nearby-panel-footer {
             display: flex;
             align-items: stretch;
@@ -1093,6 +1153,21 @@
         </div>
     </div>
 
+    <!-- 一覧から探す（周辺検索は現在地起点、こちらは全国のデータ起点なのでセクションを分ける） -->
+    <div id="lords-entry-section">
+        <div style="border-top:1px solid #f0f0f0;"></div>
+        <div class="nearby-section-label">一覧から探す</div>
+        <div class="nearby-list-btns">
+            <button class="nearby-list-btn" id="lords-entry-btn" onclick="openLordsView()">
+                <span class="nlb-ic"><img src="castle.png" alt=""></span>
+                <span style="min-width:0;">
+                    <span class="nlb-n">城主から探す</span>
+                    <span class="nlb-s" id="lords-entry-sub">城主名から城をたどる</span>
+                </span>
+            </button>
+        </div>
+    </div>
+
     </div><!-- /nearby-panel-scroll -->
     <div id="nearby-panel-footer">
         <div id="nearby-search-origin">
@@ -1175,6 +1250,46 @@
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0 16px 8px;">
             <label class="filter-chip"><input type="checkbox" id="check-show-origin" onchange="onShowOriginChange(this)">検索地点</label>
         </div>
+    </div>
+
+    <!-- 城主一覧ビュー -->
+    <div id="nearby-lords-view">
+        <div class="lords-head">
+            <button class="lords-iconbtn" onclick="closeLordsView()" title="戻る">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="lords-head-title" id="lords-title">城主から探す</div>
+            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+        </div>
+        <div class="lords-filter">
+            <input id="lords-search" type="search" autocomplete="off" placeholder="城主名・城名・都道府県で絞り込み" oninput="onLordsSearchInput(this.value)">
+            <div class="lords-chips">
+                <button class="lords-chip" data-lt="all"    aria-pressed="true"  onclick="setLordsType('all')">すべて</button>
+                <button class="lords-chip" data-lt="clan"   aria-pressed="false" onclick="setLordsType('clan')">氏族</button>
+                <button class="lords-chip" data-lt="person" aria-pressed="false" onclick="setLordsType('person')">個人</button>
+                <button class="lords-chip" id="lords-min-chip" aria-pressed="false" onclick="toggleLordsMin()">2城以上</button>
+            </div>
+        </div>
+        <div class="lords-scroll" id="lords-list"></div>
+    </div>
+
+    <!-- 城主詳細（その城主の城一覧）ビュー -->
+    <div id="nearby-lord-detail-view">
+        <div class="lords-head">
+            <button class="lords-iconbtn" onclick="backToLordsList()" title="城主一覧へ戻る">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="lords-head-title" id="lord-detail-title"></div>
+            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+        </div>
+        <div class="lords-filter">
+            <div class="lords-chips" style="margin-top:0;">
+                <button class="lords-chip" aria-pressed="true"  onclick="setLordCastleSort('dist')">近い順</button>
+                <button class="lords-chip" aria-pressed="false" onclick="setLordCastleSort('pref')">都道府県順</button>
+            </div>
+            <div class="lord-sub" id="lord-detail-variants" style="margin-top:6px;"></div>
+        </div>
+        <div class="lords-scroll" id="lord-castle-list"></div>
     </div>
 </div>
 
@@ -1284,6 +1399,9 @@
             const feats = loadedData.castle.features;
             setSourceData('castles-famous', { type: 'FeatureCollection', features: feats.filter(f => FAMOUS_GENRES.has(f.properties.genre)) });
             setSourceData('castles',        { type: 'FeatureCollection', features: feats.filter(f => !FAMOUS_GENRES.has(f.properties.genre)) });
+            lordIndex = null;        // 城データが入れ替わったら城主索引は作り直す
+            lordCastleNorm = null;
+            updateLordsEntry();
         }
         if (key === 'manhole' || key === 'pokefuta') {
             const mh = loadedData.manhole ? loadedData.manhole.features : [];
@@ -1381,8 +1499,9 @@
     let histNavTimer = null;
 
     // moveend不発（同一地点への移動等）で残った古いpendingを次のmoveendに誤適用しないよう時刻を持つ
-    function histSetPending(label, cause) {
-        histPending = { label, cause, t: Date.now() };
+    // extra: 記録時に一緒に残す情報（ピン選択の objType / objProps）。省略時は従来どおり
+    function histSetPending(label, cause, extra) {
+        histPending = { label, cause, extra: extra || null, t: Date.now() };
     }
 
     function histPush(info) {
@@ -1456,7 +1575,7 @@
             const p = histPending;
             histPending = null;
             if (Date.now() - p.t < 3000) {
-                histPush({ label: p.label, cause: p.cause });
+                histPush(Object.assign({ label: p.label, cause: p.cause }, p.extra || {}));
                 return;
             }
         }
@@ -4217,6 +4336,7 @@ map.on('zoomend', () => { isZooming = false; });
         sourceIds.forEach(sourceId => {
             [`${sourceId}-cluster`, `${sourceId}-cluster-count`, `${sourceId}-bg`, `${sourceId}-icon`, `${sourceId}-icon-overlay`, `${sourceId}-label`].forEach(l => { if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', val); });
         });
+        if (id === 'castle') updateLordsEntry();   // 城を非表示にしたら「城主から探す」も出さない
         saveSettings();
     }
 
@@ -4261,6 +4381,9 @@ map.on('zoomend', () => { isZooming = false; });
         // メインビューに戻す
         document.getElementById('nearby-main-view').style.display = '';
         document.getElementById('nearby-settings-view').style.display = 'none';
+        document.getElementById('nearby-lords-view').classList.remove('open');
+        document.getElementById('nearby-lord-detail-view').classList.remove('open');
+        updateLordsEntry();
         document.getElementById('nearby-panel').classList.add('open');
         document.getElementById('nearby-overlay').classList.add('open');
         document.getElementById('bottom-bar').classList.add('panel-open');
@@ -4278,6 +4401,275 @@ map.on('zoomend', () => { isZooming = false; });
     function closeSettingsView() {
         document.getElementById('nearby-main-view').style.display = '';
         document.getElementById('nearby-settings-view').style.display = 'none';
+    }
+
+    // ══ 城主から探す ═══════════════════════════════════════════════════
+    /* castle.js の properties.lords（攻城団・城郭放浪記・Wikipediaの城主欄を統合した値）を
+       人物・氏族ごとにまとめ、そこから城へ飛ぶ一覧。索引は castle.js が届いた後に
+       初回オープンで組む（表示用の別データファイルは持たない。castle.js に既に入っている
+       情報なので、二重に配ると更新のたびに食い違うため）。
+       分割・正規化の規則は資料生成スクリプト gen_castle_lords.py と同じにしてある。 */
+
+    // 城主欄の区切り。読点のほか、実データに出る半角読点・「･」・継承の「→」・空白も区切る
+    const LORD_SPLIT_RE = /[、,，･→\s;；]+/;
+    // 実体のない値。castle.js には原典どおり残っているが、一覧には出さない
+    const LORD_SKIP = new Set(['不明', '不詳', 'なし', '無し']);
+    // 城郭放浪記のアクセス解説文が城主欄に混入している4城分（castle.js側のデータ不良）。
+    // 元データが直れば空振りするだけなので、直った後もこのままで害はない。
+    const LORD_NOISE = new Set([
+        '潮山の西側を通る県道209号線沿いに道標があり',
+        'それに従って山へ入って行くと茶畑の間を通って城址近くまで車で行くことができる。',
+        '西側から泰仙寺橋へ続く道の北側に土手下を走る道があり',
+        'そこに案内板がある。',
+        '関澤神社脇から登る。',
+    ]);
+    const LORDS_CHUNK = 60;              // 一覧の追加描画単位（11,000名超を一度に積まない）
+    let lordIndex = null;                // [{ n, clan, idx:[城のfeature番号], v:[原表記], _n }]
+    let lordCastleNorm = null;           // feature番号 → 検索用に正規化した「城名＋都道府県」
+    let lordsState = { q: '', type: 'all', min: 1, sort: 'dist', filtered: [], shown: 0, lord: null };
+
+    // 集計キーを作る。末尾の括弧注記（石高・別称）と推量記号を落とす。
+    // 先頭の括弧注記は個人名のときだけ落とす（氏族名から落とすと「（大給）松平氏」が
+    // 「松平氏」に吸われて分家の区別が消えるため）。語中の括弧は人名の一部なので触らない。
+    function normalizeLordName(raw) {
+        let t = raw.trim().replace(/^[?？。]+/, '').replace(/[?？。]+$/, '').trim();
+        t = t.replace(/\(/g, '（').replace(/\)/g, '）');
+        t = t.replace(/（[^（）]*）$/, '').trim();
+        const m = t.match(/^（[^（）]*）(.+)$/);
+        if (m && !m[1].endsWith('氏')) t = m[1].trim();
+        return t;
+    }
+
+    function buildLordIndex() {
+        const feats = (loadedData.castle && loadedData.castle.features) || [];
+        const byName = new Map();
+        lordCastleNorm = new Array(feats.length);
+        feats.forEach((f, i) => {
+            const p = f.properties || {};
+            lordCastleNorm[i] = normalizeForSearch(`${p.name || ''} ${p.prefecture || ''}`);
+            if (!p.lords) return;
+            const seen = new Set();
+            p.lords.split(LORD_SPLIT_RE).forEach(tok => {
+                tok = tok.trim();
+                if (!tok || LORD_NOISE.has(tok)) return;
+                const key = normalizeLordName(tok);
+                if (!key || LORD_SKIP.has(key) || LORD_NOISE.has(key)) return;
+                let e = byName.get(key);
+                if (!e) {
+                    e = { n: key, clan: key.endsWith('氏'), idx: [], v: [], _n: normalizeForSearch(key) };
+                    byName.set(key, e);
+                }
+                if (tok !== key && !e.v.includes(tok)) e.v.push(tok);
+                if (!seen.has(key)) { e.idx.push(i); seen.add(key); }   // 同じ城で同じキーは1回
+            });
+        });
+        lordIndex = [...byName.values()];
+        lordIndex.sort((a, b) => (b.idx.length - a.idx.length) || a.n.localeCompare(b.n, 'ja'));
+        lordIndex.forEach((e, i) => { e.id = i; });
+    }
+
+    // メニューの入口ボタンの状態。城レイヤーを表示していないときは出さない
+    // （検索・周辺検索が非表示の種別を候補から外すのと同じ扱い）
+    function updateLordsEntry() {
+        const sect = document.getElementById('lords-entry-section');
+        const btn = document.getElementById('lords-entry-btn');
+        const sub = document.getElementById('lords-entry-sub');
+        if (!sect || !btn || !sub) return;
+        sect.style.display = filterState.castle === false ? 'none' : '';
+        if (!loadedData.castle) {
+            btn.disabled = true;
+            sub.textContent = '城データを読み込み中…';
+        } else {
+            btn.disabled = false;
+            sub.textContent = lordIndex
+                ? `${lordIndex.length.toLocaleString()}名の城主から城をたどる`
+                : '城主名から城をたどる';
+        }
+    }
+
+    function showLordsView(which) {
+        document.getElementById('nearby-main-view').style.display = which ? 'none' : '';
+        document.getElementById('nearby-settings-view').style.display = 'none';
+        document.getElementById('nearby-lords-view').classList.toggle('open', which === 'list');
+        document.getElementById('nearby-lord-detail-view').classList.toggle('open', which === 'detail');
+    }
+
+    // lordId を渡すと、その城主の城一覧を直接開く（情報シートからの戻り導線で使う）
+    function openLordsView(lordId) {
+        if (!loadedData.castle) return;
+        if (!lordIndex) { buildLordIndex(); updateLordsEntry(); }
+        if (lordId != null && lordIndex[lordId]) { openLordDetail(lordId); return; }
+        showLordsView('list');
+        applyLordsFilter();
+    }
+    function closeLordsView() {
+        showLordsView(null);
+    }
+    function backToLordsList() {
+        showLordsView('list');
+        applyLordsFilter();
+    }
+
+    function onLordsSearchInput(v) { lordsState.q = v; applyLordsFilter(); }
+    function setLordsType(t) {
+        lordsState.type = t;
+        document.querySelectorAll('#nearby-lords-view .lords-chip[data-lt]').forEach(b => {
+            b.setAttribute('aria-pressed', String(b.dataset.lt === t));
+        });
+        applyLordsFilter();
+    }
+    function toggleLordsMin() {
+        lordsState.min = lordsState.min === 1 ? 2 : 1;
+        document.getElementById('lords-min-chip').setAttribute('aria-pressed', String(lordsState.min === 2));
+        applyLordsFilter();
+    }
+
+    function applyLordsFilter() {
+        const q = normalizeForSearch(lordsState.q.trim());
+        lordsState.filtered = lordIndex.filter(l => {
+            if (l.idx.length < lordsState.min) return false;
+            if (lordsState.type !== 'all' && (lordsState.type === 'clan') !== l.clan) return false;
+            if (!q) return true;
+            if (l._n.includes(q)) return true;
+            if (l.v.some(v => normalizeForSearch(v).includes(q))) return true;
+            return l.idx.some(i => lordCastleNorm[i].includes(q));   // 城名・都道府県でも引ける
+        });
+        const list = document.getElementById('lords-list');
+        list.innerHTML = '';
+        list.scrollTop = 0;
+        lordsState.shown = 0;
+        if (lordsState.filtered.length === 0) {
+            list.innerHTML = '<div class="lords-note">該当する城主がいません</div>';
+            return;
+        }
+        renderLordsChunk();
+    }
+
+    function renderLordsChunk() {
+        const list = document.getElementById('lords-list');
+        const part = lordsState.filtered.slice(lordsState.shown, lordsState.shown + LORDS_CHUNK);
+        const feats = loadedData.castle.features;
+        list.insertAdjacentHTML('beforeend', part.map(l => {
+            // 副見出しは表記ゆれがあればそれを、無ければ城名を並べる（どの城の城主か分かるように）
+            const sub = l.v.length
+                ? '表記: ' + l.v.join(' / ')
+                : l.idx.slice(0, 3).map(i => (feats[i].properties.name || '')).join('・')
+                  + (l.idx.length > 3 ? ' ほか' : '');
+            return `<div class="lord-row" onclick="openLordDetail(${l.id})">
+                <div class="lord-av${l.clan ? '' : ' person'}">${l.clan ? '氏' : '人'}</div>
+                <div class="lord-main">
+                    <div class="lord-name">${attrEscape(l.n)}</div>
+                    <div class="lord-sub">${attrEscape(sub)}</div>
+                </div>
+                <div class="lord-num">${l.idx.length}城</div>
+                <div class="lord-chev">›</div>
+            </div>`;
+        }).join(''));
+        lordsState.shown += part.length;
+    }
+
+    // 末尾付近までスクロールしたら続きを描画
+    document.getElementById('lords-list').addEventListener('scroll', function () {
+        if (lordsState.shown >= lordsState.filtered.length) return;
+        if (this.scrollTop + this.clientHeight > this.scrollHeight - 400) renderLordsChunk();
+    });
+
+    function openLordDetail(id) {
+        const l = lordIndex[id];
+        if (!l) return;
+        lordsState.lord = l;
+        document.getElementById('lord-detail-title').textContent = `${l.n}（${l.idx.length}城）`;
+        const vEl = document.getElementById('lord-detail-variants');
+        vEl.textContent = l.v.length ? '表記: ' + l.v.join(' / ') : '';
+        vEl.style.display = l.v.length ? '' : 'none';
+        showLordsView('detail');
+        renderLordCastles();
+    }
+
+    function setLordCastleSort(sort) {
+        lordsState.sort = sort;
+        document.querySelectorAll('#nearby-lord-detail-view .lords-chip').forEach((b, i) => {
+            b.setAttribute('aria-pressed', String((i === 0) === (sort === 'dist')));
+        });
+        renderLordCastles();
+    }
+
+    function renderLordCastles() {
+        const l = lordsState.lord;
+        if (!l) return;
+        const feats = loadedData.castle.features;
+        const center = getSearchCenter();   // 現在地ピンがあればそこ、無ければ地図中心（周辺検索と同基準）
+        const rows = l.idx.map(i => {
+            const f = feats[i];
+            const c = f.geometry.coordinates;
+            return { i, f, dist: calcDist(center.lat, center.lng, c[1], c[0]) };
+        });
+        if (lordsState.sort === 'dist') rows.sort((a, b) => a.dist - b.dist);
+        else rows.sort((a, b) => (PREF_ORDER[a.f.properties.prefecture] ?? 99) - (PREF_ORDER[b.f.properties.prefecture] ?? 99)
+                                 || a.f.properties.name.localeCompare(b.f.properties.name, 'ja'));
+        document.getElementById('lord-castle-list').innerHTML = rows.map(r => {
+            const p = r.f.properties;
+            const color = getItemColor({ type: 'castle', properties: p });
+            const distStr = r.dist < 1 ? `${Math.round(r.dist * 1000)}m` : `${r.dist.toFixed(1)}km`;
+            const sub = [p.prefecture, p.genre].filter(Boolean).join(' ・ ');
+            return `<div class="nearby-item" onclick="lordsJumpToCastle(${r.i})">
+                <div class="nearby-item-icon" style="background:${color}"><img src="castle.png" class="icon-full"></div>
+                <div class="nearby-item-text">
+                    <div class="nearby-item-name">${attrEscape(p.coordOffset ? '[近接あり] ' + p.name : p.name)}</div>
+                    <div class="nearby-item-sub">${attrEscape(sub)}</div>
+                </div>
+                <div class="nearby-item-dist">${distStr}</div>
+            </div>`;
+        }).join('');
+        document.getElementById('lord-castle-list').scrollTop = 0;
+    }
+
+    // 都道府県順の並び（pref_codes.js の JP-01…JP-47 の順をそのまま使う）
+    const PREF_ORDER = (() => {
+        const o = {};
+        Object.values(typeof PREF_CODES !== 'undefined' ? PREF_CODES : {}).forEach((name, i) => { o[name] = i; });
+        return o;
+    })();
+
+    /* 一覧から城へ飛ぶ。検索結果タップ（onResultClick）と同じ扱いにする＝
+       対象を判別できる倍率まで寄せ、情報シートを開き、選択リングを出し、履歴にはピン選択として残す。
+       履歴の種別アイコンを城にするため、cause は 'pin' で objType/objProps も一緒に記録する。 */
+    function lordsJumpToCastle(featIdx) {
+        const f = loadedData.castle.features[featIdx];
+        if (!f) return;
+        const c = f.geometry.coordinates.slice();
+        const p = f.properties;
+        const label = p.name || '城';
+        const lordId = lordsState.lord ? lordsState.lord.id : null;
+        closeNearby();
+        if (trackingMode > 0) {
+            trackingMode = 0;
+            stopRafLoop();
+            updateGeolocateButton();
+        }
+        histSetPending(label, 'pin', { objType: 'castle', objProps: p });
+        map.easeTo({
+            center: c,
+            zoom: Math.max(map.getZoom(), SEARCH_RESULT_MIN_ZOOM),
+            bearing: 0, pitch: 0, duration: 550, essential: true
+        });
+        setTimeout(() => {
+            openObjSheet('castle', label, p, c[0], c[1]);
+            injectLordsBackLink(lordId);
+        }, 300);
+    }
+
+    // 一覧から来たときだけ、情報シートの先頭に戻り導線を挿す。
+    // 別のピンをタップするとシート本文ごと作り直されるので、自然に消える。
+    function injectLordsBackLink(lordId) {
+        if (lordId == null || !lordIndex || !lordIndex[lordId]) return;
+        const body = document.getElementById('obj-sheet-body');
+        if (!body) return;
+        const div = document.createElement('div');
+        div.className = 'os-lords-back';
+        div.textContent = `↩ 「${lordIndex[lordId].n}」の城一覧に戻る`;
+        div.onclick = () => { closeObjSheet(); openNearbyPanel(); openLordsView(lordId); };
+        body.insertBefore(div, body.firstChild);
     }
     function selectNearbyCat(el) {
         nearbyState.cats = [el.dataset.cat];

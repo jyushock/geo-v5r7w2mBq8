@@ -133,8 +133,9 @@ TEMPLATE = r'''<!DOCTYPE html>
   .stats{color:var(--sub);font-size:12.5px;margin-bottom:10px}
   .stats b{color:var(--fg);font-weight:600}
   .controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  /* font-size は16px以上。これを下回るとiOS Safariが入力時にページを拡大する */
   input[type=search]{flex:1 1 220px;min-width:180px;padding:7px 10px;border:1px solid var(--line);
-    border-radius:8px;background:var(--bg);color:var(--fg);font-size:14px;font-family:inherit}
+    border-radius:8px;background:var(--bg);color:var(--fg);font-size:16px;font-family:inherit}
   .seg{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
   .seg button{border:0;background:var(--panel);color:var(--sub);padding:7px 11px;font-size:13px;
     cursor:pointer;font-family:inherit;border-right:1px solid var(--line)}
@@ -142,7 +143,8 @@ TEMPLATE = r'''<!DOCTYPE html>
   .seg button[aria-pressed=true]{background:var(--accent-bg);color:var(--accent);font-weight:600}
   main{padding:14px 16px 40px;max-width:1180px;margin:0 auto}
   .hit{color:var(--sub);font-size:12.5px;margin:0 0 10px}
-  .list{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));align-items:start}
+  /* minmax の下限に min() を噛ませる。340px固定だと横320pxの端末で列が画面からはみ出す */
+  .list{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr));align-items:start}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px 11px;
     box-shadow:var(--shadow)}
   .lord{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap;margin-bottom:6px}
@@ -164,6 +166,33 @@ TEMPLATE = r'''<!DOCTYPE html>
   footer{max-width:1180px;margin:0 auto;padding:0 16px 40px;color:var(--sub);font-size:12px;line-height:1.8}
   footer h2{font-size:13px;color:var(--fg);margin:18px 0 4px}
   footer ul{margin:0;padding-left:1.2em}
+  /* min-width:0 が無いと、横スクロールさせたい行の min-content 幅が親を押し広げ、
+     ページ全体が画面幅を超えて横スクロールになる（スマホ表示で実測） */
+  .segs{display:flex;gap:8px;flex-wrap:wrap;min-width:0}
+  .totop{position:fixed;right:14px;bottom:14px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);
+    background:var(--panel);color:var(--fg);font-size:18px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.18);z-index:20}
+
+  /* ── スマホ表示 ──────────────────────────────────────────────
+     ヘッダーは画面上端に貼り付くので、縦を食わないよう見出しと統計を詰め、
+     切替（3群）は折り返さず横1行のスクロールにする。カードは1カラム。 */
+  @media (max-width:640px){
+    body{font-size:14.5px}
+    header{padding:9px 12px 7px}
+    h1{font-size:16px;margin-bottom:2px}
+    .stats{font-size:11.5px;line-height:1.5;margin-bottom:7px}
+    .controls{flex-direction:column;align-items:stretch;gap:7px}
+    input[type=search]{flex:none;width:100%;padding:9px 10px}
+    .segs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+    .segs::-webkit-scrollbar{display:none}
+    .seg{flex:0 0 auto}
+    .seg button{padding:8px 12px;font-size:13px}
+    main{padding:10px 12px 40px}
+    .card{padding:9px 11px 10px}
+    .lord .nm{font-size:15px}
+    .castles{gap:6px}
+    .c{padding:5px 9px;font-size:13.5px}      /* 指で押せる高さ（約30px）にする */
+    footer{padding:0 12px 40px}
+  }
 </style>
 </head>
 <body>
@@ -172,19 +201,21 @@ TEMPLATE = r'''<!DOCTYPE html>
   <div class="stats" id="stats"></div>
   <div class="controls">
     <input type="search" id="q" placeholder="城主名・城名・都道府県で絞り込み" autocomplete="off">
-    <div class="seg" id="type">
-      <button data-v="all" aria-pressed="true">すべて</button>
-      <button data-v="clan" aria-pressed="false">氏族</button>
-      <button data-v="person" aria-pressed="false">個人</button>
-    </div>
-    <div class="seg" id="min">
-      <button data-v="2" aria-pressed="true">2城以上</button>
-      <button data-v="3" aria-pressed="false">3城以上</button>
-      <button data-v="1" aria-pressed="false">1城も表示</button>
-    </div>
-    <div class="seg" id="sort">
-      <button data-v="count" aria-pressed="true">城数順</button>
-      <button data-v="name" aria-pressed="false">名前順</button>
+    <div class="segs">
+      <div class="seg" id="type">
+        <button data-v="all" aria-pressed="true">すべて</button>
+        <button data-v="clan" aria-pressed="false">氏族</button>
+        <button data-v="person" aria-pressed="false">個人</button>
+      </div>
+      <div class="seg" id="min">
+        <button data-v="2" aria-pressed="true">2城以上</button>
+        <button data-v="3" aria-pressed="false">3城以上</button>
+        <button data-v="1" aria-pressed="false">1城も表示</button>
+      </div>
+      <div class="seg" id="sort">
+        <button data-v="count" aria-pressed="true">城数順</button>
+        <button data-v="name" aria-pressed="false">名前順</button>
+      </div>
     </div>
   </div>
 </header>
@@ -193,6 +224,7 @@ TEMPLATE = r'''<!DOCTYPE html>
   <div class="list" id="list"></div>
   <button class="more" id="more" hidden>さらに表示</button>
 </main>
+<button class="totop" id="totop" hidden title="先頭へ戻る">↑</button>
 <footer>
   <h2>この資料について</h2>
   <ul>
@@ -288,6 +320,12 @@ for (const id of ['type','min','sort']){
   });
 }
 el('more').addEventListener('click', render);
+
+// 先頭へ戻るボタン（スマホで長い一覧を戻るのが手間なため、1画面ぶん送ったら出す）
+const totop = el('totop');
+addEventListener('scroll', () => { totop.hidden = scrollY < innerHeight; }, { passive: true });
+totop.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
+
 apply();
 </script>
 </body>
