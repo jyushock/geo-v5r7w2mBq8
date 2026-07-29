@@ -54,6 +54,11 @@
             --mhcard-badge: 22.4px;
         }
         body { margin: 0; padding: 0; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+        /* ドロワーの下スワイプがドキュメントのオーバースクロール（iOSのバウンス）に化けるのを防ぐ保険。
+           Safari16+/Chrome63-143 は「スクロール可能なオーバーフローを持たないコンテナには効かない」
+           部分実装のため、これだけでは塞ぎ切れない。各ドロワーの非スクロール領域の
+           touch-action:none と、スクロール領域の watchScrollerTouchAction と併せて塞ぐ。 */
+        html, body { overscroll-behavior: none; }
         #map { position: absolute; top: 0; bottom: 0; width: 100%; }
         .current-location-dot {
             width: 16px; height: 16px;
@@ -379,7 +384,7 @@
         }
         /* overscroll-behavior-y: 最上部からさらに下へ引いたとき、スクロールを外側へ波及させない。
            下スワイプで閉じる判定（enableSheetSwipeClose）をブラウザのオーバースクロールに奪われないため。 */
-        #obj-sheet-body { overflow-y: auto; overscroll-behavior-y: contain; padding: 0 14px 14px; }   /* 内容幅 = 画面幅 - 28px */
+        #obj-sheet-body { overflow-y: auto; overscroll-behavior-y: contain; touch-action: pan-y; padding: 0 14px 14px; }   /* 内容幅 = 画面幅 - 28px */
         .os-title { display: flex; align-items: center; gap: 5px; margin-bottom: 3px; min-width: 0; }
         /* 長い名前（食べログの店名など）は2行で省略する */
         .os-name { font-size: 15px; font-weight: bold; min-width: 0; overflow: hidden;
@@ -737,13 +742,14 @@
             height: calc(100svh - 52px); max-height: 100%;
         }
         #nearby-lords-view.open, #nearby-lord-detail-view.open { display: flex; }
-        .lords-head { display: flex; align-items: center; gap: 8px; padding: 12px 12px 8px; flex-shrink: 0; }
+        /* 城主ビューの見出し・絞り込み帯もスクロールしない領域。素通しさせない */
+        .lords-head { display: flex; align-items: center; gap: 8px; padding: 12px 12px 8px; flex-shrink: 0; touch-action: none; }
         .lords-head-title { font-size: 14px; font-weight: bold; color: #333; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         .lords-iconbtn {
             width: 32px; height: 32px; border: 0; background: #f5f5f5; border-radius: 8px;
             color: #555; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
-        .lords-filter { padding: 0 12px 8px; flex-shrink: 0; border-bottom: 1px solid #f0f0f0; }
+        .lords-filter { padding: 0 12px 8px; flex-shrink: 0; border-bottom: 1px solid #f0f0f0; touch-action: none; }
         .lords-filter input {
             width: 100%; height: 34px; border: 1px solid #e3e3e3; border-radius: 17px;
             padding: 0 12px; font-size: 13px; font-family: inherit; background: #fafafa; color: #333;
@@ -754,7 +760,7 @@
             color: #666; border: 0; cursor: pointer; font-family: inherit;
         }
         .lords-chip[aria-pressed="true"] { background: #e3ecff; color: #2a5bd7; font-weight: bold; }
-        .lords-scroll { overflow-y: auto; overscroll-behavior-y: contain; flex: 1; min-height: 0; }
+        .lords-scroll { overflow-y: auto; overscroll-behavior-y: contain; touch-action: pan-y; flex: 1; min-height: 0; }
         .lord-row { display: flex; align-items: center; gap: 9px; padding: 10px 13px; border-bottom: 1px solid #f0f0f0; cursor: pointer; }
         .lord-row:active { background: #f7f9ff; }
         .lord-av {
@@ -774,10 +780,14 @@
             background: #f3f6ff; border: 1px solid #dbe6ff; border-radius: 9px;
             font-size: 11.5px; color: #2a5bd7; cursor: pointer;
         }
+        /* フッターは #nearby-panel-scroll の外側にある兄弟要素で、本文の
+           overscroll-behavior が掛からない。ここ起点の下スワイプが素通しで
+           ドキュメントに届いていたため touch-action: none で塞ぐ。 */
         #nearby-panel-footer {
             display: flex;
             align-items: stretch;
             min-height: 52px;
+            touch-action: none;
             position: sticky;
             bottom: 0;
             background: white;
@@ -848,9 +858,12 @@
             font-family: sans-serif;
         }
         #nearby-main-view { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+        /* 設定ビューはスクロール領域を持たないので、下スワイプを素通しさせない */
+        #nearby-settings-view { touch-action: none; }
         #nearby-panel-scroll {
             overflow-y: auto;
             overscroll-behavior-y: contain;
+            touch-action: pan-y;   /* 縦スクロールのみ許可。横パンやピンチを外側へ渡さない */
             flex: 1;
             min-height: 0;
         }
@@ -958,6 +971,7 @@
         #nearby-list {
             overflow-y: auto;
             overscroll-behavior-y: contain;
+            touch-action: pan-y;
         }
         #nearby-type-filter {
             display: none;
@@ -965,6 +979,8 @@
             border-bottom: 1px solid #f0f0f0;
             flex-shrink: 0;
             overflow-x: auto;
+            overscroll-behavior-x: contain;
+            touch-action: pan-x;   /* 横スクロール帯。縦方向は下スワイプ判定に渡す */
             white-space: nowrap;
             gap: 6px;
         }
@@ -1019,11 +1035,14 @@
         .nearby-item-name { font-size: 13px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .nearby-item-sub  { font-size: 11px; color: #999; margin-top: 1px; }
         .nearby-item-dist { font-size: 12px; color: #4285F4; font-weight: bold; flex-shrink: 0; }
+        /* パネルの外側（地図の上）を覆う透明レイヤー。タップで閉じるだけの層なので、
+           ここでのスワイプはブラウザに渡さない（渡すとiOSがドキュメントごとバウンスする）。 */
         #nearby-overlay {
             display: none;
             position: fixed;
             inset: 0;
             z-index: 299;
+            touch-action: none;
         }
         #nearby-overlay.open { display: block; }
     </style>
@@ -1298,7 +1317,7 @@
 </div>
 
 <!-- スポット検索結果パネル（別ウィンドウ） -->
-<div id="nearby-result-overlay" onclick="closeNearbyResult()" style="display:none;position:fixed;inset:0;z-index:299;"></div>
+<div id="nearby-result-overlay" onclick="closeNearbyResult()" style="display:none;position:fixed;inset:0;z-index:299;touch-action:none;"></div>
 <div id="nearby-result-panel" style="
     position:fixed; bottom:-100%; left:0; right:0;
     background:white; border-radius:16px 16px 0 0;
@@ -3136,6 +3155,33 @@ function enableSheetSwipeClose(panel, headerEl, onClose, blockSelector) {
     });
 }
 
+/* シート内の縦スクロール領域は、スクロール不能な間だけ touch-action を none にする。
+
+   overscroll-behavior: contain は「スクロール可能なオーバーフローを持たないコンテナには
+   効かない」部分実装（Safari 16+ / Chrome 63-143）。そのため内容が短くスクロール不要な
+   状態では防波堤が無くなり、本文起点の下スワイプがドキュメントまで波及する。iOSでは
+   ビューポートごとバウンスし、背後の地図が下にずれて上端に隙間が出る。
+   スクロール不能なら pan-y を許す理由がないので、none にしてブラウザ側で塞ぐ。
+
+   touchmove の preventDefault を SWIPE_SLOP 到達前に前倒しする手もあるが、
+   W3C Touch Events はキャンセルされたタッチに続くマウスイベント／click を
+   発火させないと規定しており、指のわずかなブレでシート内のボタンが
+   反応しなくなるため採らない。 */
+function watchScrollerTouchAction(selector) {
+    document.querySelectorAll(selector).forEach(sc => {
+        let queued = false;
+        const apply = () => {
+            queued = false;
+            sc.style.touchAction = (sc.scrollHeight > sc.clientHeight + 1) ? 'pan-y' : 'none';
+        };
+        // 内容の差し替えでまとめて発火するため、1フレームに1回へ間引く
+        const schedule = () => { if (!queued) { queued = true; requestAnimationFrame(apply); } };
+        apply();
+        new ResizeObserver(schedule).observe(sc);
+        new MutationObserver(schedule).observe(sc, { childList: true, subtree: true });
+    });
+}
+
 // オブジェクトのクリック対象レイヤーID（レイヤー生成時に詰める）
 const objClickLayers = [];
 
@@ -4910,6 +4956,9 @@ map.on('zoomend', () => { isZooming = false; });
         closeNearby,
         '#weather-widget, #weather-hourly-panel'
     );
+
+    // 3ドロワーの縦スクロール領域をまとめて監視する（内容の増減でスクロール可否が変わるため）
+    watchScrollerTouchAction('#nearby-panel-scroll, .lords-scroll, #nearby-list, #obj-sheet-body');
 
     // レイヤー一時非表示ボタンの処理
     const toggleLayersBtn = document.getElementById('toggle-layers-btn');
