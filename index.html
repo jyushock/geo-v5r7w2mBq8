@@ -757,6 +757,7 @@
             font-size: 12px; font-weight: bold; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
         .lord-av.person { background: #fdf1e3; color: #a2691f; }
+        .lord-av.org { background: #e4efe6; color: #33703f; }
         .lord-main { flex: 1; min-width: 0; }
         .lord-name { font-size: 13.5px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .lord-sub { font-size: 10.5px; color: #999; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -1266,6 +1267,7 @@
                 <button class="lords-chip" data-lt="all"    aria-pressed="true"  onclick="setLordsType('all')">すべて</button>
                 <button class="lords-chip" data-lt="clan"   aria-pressed="false" onclick="setLordsType('clan')">氏族</button>
                 <button class="lords-chip" data-lt="person" aria-pressed="false" onclick="setLordsType('person')">個人</button>
+                <button class="lords-chip" data-lt="org"    aria-pressed="false" onclick="setLordsType('org')">組織</button>
                 <button class="lords-chip" id="lords-min-chip" aria-pressed="false" onclick="toggleLordsMin()">2城以上</button>
             </div>
         </div>
@@ -4423,13 +4425,26 @@ map.on('zoomend', () => { isZooming = false; });
         '関澤神社脇から登る。',
     ]);
     const LORDS_CHUNK = 60;              // 一覧の追加描画単位（11,000名超を一度に積まない）
-    let lordIndex = null;                // [{ n, clan, idx:[城のfeature番号], v:[原表記], _n }]
+    const LORD_KIND_MARK = { clan: '氏', person: '人', org: '組' };
+    let lordIndex = null;                // [{ n, kind, idx:[城のfeature番号], v:[原表記], _n }]
     let lordCastleNorm = null;           // feature番号 → 検索用に正規化した「城名＋都道府県」
     let lordsState = { q: '', type: 'all', min: 1, sort: 'dist', filtered: [], shown: 0, lord: null };
 
     // 集計キーを作る。末尾の括弧注記（石高・別称）と推量記号を落とす。
     // 先頭の括弧注記は個人名のときだけ落とす（氏族名から落とすと「（大給）松平氏」が
     // 「松平氏」に吸われて分家の区別が消えるため）。語中の括弧は人名の一部なので触らない。
+    /* 氏族／個人／組織の判定。城主欄には人物のほかに幕府・藩・一揆・寺社なども入るため、
+       人名と衝突しない語尾だけを組織の目印にする（実データ全件で確認）。
+       「家」「衆」「坊」「国」「村」「方」は前田利家・松平容衆・杉谷善住坊・本多忠国・
+       三浦義村・板垣信方のように人名と衝突するので使わない。
+       琉球の「〜按司」は人物の称号なので個人のままにする。 */
+    const LORD_ORG_RE = /(幕府|藩|朝廷|皇室|公儀|一族|一門|党|水軍|軍|勢|寺|院|社|法人|財団)$/;
+    function lordKind(name) {
+        if (name.endsWith('氏')) return 'clan';
+        if (name.includes('一揆') || LORD_ORG_RE.test(name)) return 'org';
+        return 'person';
+    }
+
     function normalizeLordName(raw) {
         let t = raw.trim().replace(/^[?？。]+/, '').replace(/[?？。]+$/, '').trim();
         t = t.replace(/\(/g, '（').replace(/\)/g, '）');
@@ -4455,7 +4470,7 @@ map.on('zoomend', () => { isZooming = false; });
                 if (!key || LORD_SKIP.has(key) || LORD_NOISE.has(key)) return;
                 let e = byName.get(key);
                 if (!e) {
-                    e = { n: key, clan: key.endsWith('氏'), idx: [], v: [], _n: normalizeForSearch(key) };
+                    e = { n: key, kind: lordKind(key), idx: [], v: [], _n: normalizeForSearch(key) };
                     byName.set(key, e);
                 }
                 if (tok !== key && !e.v.includes(tok)) e.v.push(tok);
@@ -4525,7 +4540,7 @@ map.on('zoomend', () => { isZooming = false; });
         const q = normalizeForSearch(lordsState.q.trim());
         lordsState.filtered = lordIndex.filter(l => {
             if (l.idx.length < lordsState.min) return false;
-            if (lordsState.type !== 'all' && (lordsState.type === 'clan') !== l.clan) return false;
+            if (lordsState.type !== 'all' && lordsState.type !== l.kind) return false;
             if (!q) return true;
             if (l._n.includes(q)) return true;
             if (l.v.some(v => normalizeForSearch(v).includes(q))) return true;
@@ -4553,7 +4568,7 @@ map.on('zoomend', () => { isZooming = false; });
                 : l.idx.slice(0, 3).map(i => (feats[i].properties.name || '')).join('・')
                   + (l.idx.length > 3 ? ' ほか' : '');
             return `<div class="lord-row" onclick="openLordDetail(${l.id})">
-                <div class="lord-av${l.clan ? '' : ' person'}">${l.clan ? '氏' : '人'}</div>
+                <div class="lord-av ${l.kind}">${LORD_KIND_MARK[l.kind]}</div>
                 <div class="lord-main">
                     <div class="lord-name">${attrEscape(l.n)}</div>
                     <div class="lord-sub">${attrEscape(sub)}</div>
