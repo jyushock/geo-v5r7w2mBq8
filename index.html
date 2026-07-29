@@ -1255,9 +1255,6 @@
     <!-- 城主一覧ビュー -->
     <div id="nearby-lords-view">
         <div class="lords-head">
-            <button class="lords-iconbtn" onclick="closeLordsView()" title="戻る">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-            </button>
             <div class="lords-head-title" id="lords-title">城主から探す</div>
             <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
         </div>
@@ -4487,8 +4484,9 @@ map.on('zoomend', () => { isZooming = false; });
         }
     }
 
+    // メインビューへ戻すのは openNearbyPanel 側（メニューを開き直したとき）
     function showLordsView(which) {
-        document.getElementById('nearby-main-view').style.display = which ? 'none' : '';
+        document.getElementById('nearby-main-view').style.display = 'none';
         document.getElementById('nearby-settings-view').style.display = 'none';
         document.getElementById('nearby-lords-view').classList.toggle('open', which === 'list');
         document.getElementById('nearby-lord-detail-view').classList.toggle('open', which === 'detail');
@@ -4501,9 +4499,6 @@ map.on('zoomend', () => { isZooming = false; });
         if (lordId != null && lordIndex[lordId]) { openLordDetail(lordId); return; }
         showLordsView('list');
         applyLordsFilter();
-    }
-    function closeLordsView() {
-        showLordsView(null);
     }
     function backToLordsList() {
         showLordsView('list');
