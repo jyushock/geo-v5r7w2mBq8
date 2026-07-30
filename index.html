@@ -364,13 +364,24 @@
         .filter-chip input { width: 11px; height: 11px; margin: 0; }
         /* ══ オブジェクト情報シート（下から出る。旧ポップアップの置き換え） ══
            レイアウト: タイトル行（バッジ左＋名前） / 写真128px＋テキスト横並び / ボタン3行
-           ボタン行は flex で等分するため、個数が変わっても空きセルが出ない。 */
+           ボタン行は flex で等分するため、個数が変わっても空きセルが出ない。
+
+           --sheet-base: 開いているときの bottom。下部バー（検索欄・メニュー）を隠さず、
+           その上に載せる（GoogleMapのタブとシートの関係と同じ）。0 でないシートはこれだけで、
+           enableSheetSwipeClose と openObjSheet はこの値を読んで引きずり位置を決める。
+           値は #bottom-bar の height と揃える。
+
+           max-height: 下部バー52pxに加えて地図を160px残す。160pxは adjustMapForSheet が
+           既に使っている「可視域は最低160px残す」と同じ基準。iPhone SE3(667px)で455pxとなり、
+           本文が2行clampされた通常時（実測で最大402px）は制限に掛からない。
+           clampを展開して超えた分は #obj-sheet-body 側がスクロールする。 */
         #obj-sheet {
+            --sheet-base: 52px;
             position: fixed; bottom: -100%; left: 0; right: 0;
             background: #fff; border-radius: 16px 16px 0 0;
             box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
             z-index: 310; transition: bottom 0.28s ease;
-            max-height: calc(100svh - 40px); display: flex; flex-direction: column;
+            max-height: calc(100svh - var(--sheet-base) - 160px); display: flex; flex-direction: column;
             font-family: sans-serif;
         }
         /* 閉じるボタン(20px)がヘッダー内に収まる高さを確保し、本文と重ならないようにする */
@@ -2836,13 +2847,15 @@ function adjustMapForSheet() {
     const h = sheet.getBoundingClientRect().height;
     if (!h) return;
     const mapH = map.getContainer().getBoundingClientRect().height;
+    // シートは下部バーの上に載るので、画面下から隠れる高さはシート自身より base ぶん高い
+    const covered = h + sheetBaseBottom(sheet);
     // 蓋⇄配布場所を行き来した直後は、相手も画面に入るところまで引く。
     // 収める先はシートに隠れない範囲。padding の bottom にシートの実測高さを渡して、
     // その上の帯に2点が入る倍率を cameraForBounds に出させる。
     // シートが高いときに padding が地図を食い潰さないよう、可視域は最低160px残す。
     if (objSheetPair) {
         const [a, b] = objSheetPair;
-        const padBottom = Math.min(Math.round(h) + 20, Math.max(0, mapH - 160));
+        const padBottom = Math.min(Math.round(covered) + 20, Math.max(0, mapH - 160));
         const cam = map.cameraForBounds(
             [[Math.min(a[0], b[0]), Math.min(a[1], b[1])], [Math.max(a[0], b[0]), Math.max(a[1], b[1])]],
             { padding: { top: 60, bottom: padBottom, left: 40, right: 40 } });
@@ -2856,7 +2869,7 @@ function adjustMapForSheet() {
         }
     }
     // シートが画面の大半を占める場合でもピンが上端外へ飛ばないよう、ずらし量を制限する
-    const dy = Math.min(h / 2, Math.max(0, (mapH - 80) / 2));
+    const dy = Math.min(covered / 2, Math.max(0, (mapH - 80) / 2));
     const opts = { center: objSheetLngLat, offset: [0, -dy], duration: 400, essential: true };
     // ここへ来た objSheetPair は「行き来したが2点は入らなかった」場合。移動先だけへ寄せるが、
     // 引いたままだとクラスタに畳まれて着いた先が分からないので、判別できる倍率までは寄せる。
@@ -2873,7 +2886,7 @@ function openObjSheet(type, label, p, lng, lat, pairFrom) {
     body.scrollTop = 0;
     const sheet = document.getElementById('obj-sheet');
     sheet.style.transition = '';
-    sheet.style.bottom = '0';
+    sheet.style.bottom = `${sheetBaseBottom(sheet)}px`;
     objSheetLngLat = [lng, lat];
     objSheetCtx = { type, label, p };
     objSheetPair = pairFrom ? [pairFrom.slice(), [lng, lat]] : null;
@@ -3048,7 +3061,14 @@ function isObjSheetOpen() {
 const SWIPE_SLOP = 8;         // タップ／スクロールとドラッグを分ける移動量(px)
 const SWIPE_CLOSE_DIST = 30;  // 下に振り切ったと判定する移動量(px)
 
+/* 開いているときの bottom。下部バーの上に載せるシートだけ 0 でない（CSS の --sheet-base）。
+   引きずり位置と復帰位置をここから決めるので、ベースを変えるときは CSS だけ直せばよい。 */
+function sheetBaseBottom(el) {
+    return parseFloat(getComputedStyle(el).getPropertyValue('--sheet-base')) || 0;
+}
+
 function enableSheetSwipeClose(panel, headerEl, onClose, blockSelector) {
+    const baseBottom = sheetBaseBottom(panel);
     let startX = 0, startY = 0;
     let armed = false, dragging = false, swallowClick = false;
     let capturePointerId = null;   // マウス経路のみ。ドラッグ確定時に捕捉するため保持する
@@ -3096,13 +3116,13 @@ function enableSheetSwipeClose(panel, headerEl, onClose, blockSelector) {
             }
             panel.style.transition = 'none';
         }
-        panel.style.bottom = `-${dy - SWIPE_SLOP}px`;
+        panel.style.bottom = `${baseBottom - (dy - SWIPE_SLOP)}px`;
         return true;
     }
 
     function restore() {
         panel.style.transition = '';
-        panel.style.bottom = '0';
+        panel.style.bottom = `${baseBottom}px`;
     }
 
     function up(y) {
