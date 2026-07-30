@@ -1381,9 +1381,9 @@
             <div class="lords-head-title" id="pref-title">都道府県から探す</div>
             <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
         </div>
+        <!-- 47件しかなく地方見出しで区切ってあるので、絞り込みの入力欄は置かない -->
         <div class="lords-filter">
-            <input id="pref-search" type="search" autocomplete="off" placeholder="都道府県名で絞り込み" oninput="onPrefSearchInput(this.value)">
-            <div class="lords-chips" id="pref-type-chips"></div>
+            <div class="lords-chips" style="margin-top:0;" id="pref-type-chips"></div>
         </div>
         <div class="lords-scroll" id="pref-list"></div>
     </div>
@@ -4887,7 +4887,7 @@ map.on('zoomend', () => { isZooming = false; });
     ];
     let prefIndex = null;       // { 県名: { 種別: [searchIndexの要素] } }
     // sort の既定は種別順（図鑑的な使い方を想定し、近い順の優先度は下げる）
-    let prefState = { q: '', types: null, pref: null, sort: 'type' };
+    let prefState = { types: null, pref: null, sort: 'type' };
 
     function prefOfProps(p) {
         if (p.prefecture) return p.prefecture;
@@ -4954,7 +4954,6 @@ map.on('zoomend', () => { isZooming = false; });
         showPrefView('list');
         renderPrefList();
     }
-    function onPrefSearchInput(v) { prefState.q = v; renderPrefList(); }
 
     /* チップは「全選択／全解除」＋種別。周辺検索結果の全解除ボタンと同じく、
        全部ONのときだけ文言が「全解除」になる。 */
@@ -4984,11 +4983,9 @@ map.on('zoomend', () => { isZooming = false; });
 
     function renderPrefList() {
         const types = [...prefState.types];
-        const q = normalizeForSearch(prefState.q.trim());
         const out = [];
         for (const [region, members] of PREF_REGIONS) {
-            const shown = members.filter(n => !q || normalizeForSearch(n).includes(q));
-            if (shown.length === 0) continue;
+            const shown = members;
             const total = shown.reduce((s, n) => s + prefCount(n, types), 0);
             out.push(`<div class="reg-head"><span>${region}</span>
                       <span class="reg-num">${total.toLocaleString()}件 / ${shown.length}県</span></div>`);
