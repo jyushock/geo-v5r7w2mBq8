@@ -747,7 +747,9 @@
         /* お城アイコンは枠いっぱいに描く。他の場所（地図・検索結果・周辺検索・履歴）でも
            マンホール以外は比率100%（--obj-icon-inner-full と --obj-icon-circle が同値）のため */
         .nlb-ic img { width: 100%; height: 100%; object-fit: contain; filter: brightness(0) invert(1); }
-        .nlb-n { display: block; font-size: 12px; font-weight: bold; color: #333;
+        /* 文字の主張は周辺検索のカテゴリラベル（.nearby-cat-label）に合わせる。
+           同じ列に並ぶ要素なので、太字や濃い色にすると入口だけが浮く。 */
+        .nlb-n { display: block; font-size: 9px; color: #555; text-align: center;
                  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
 
         /* 城主一覧ビュー（メニューパネル内の第3・第4ビュー） */
