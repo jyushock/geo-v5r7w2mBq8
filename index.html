@@ -730,7 +730,9 @@
         .nearby-cat-placeholder { cursor: default; background: #f0f0f0; opacity: 0.4; pointer-events: none; }
 
         /* 一覧から探す（メニュー内の入口ボタン） */
-        .nearby-list-btns { display: grid; gap: 8px; padding: 0 16px 12px; }
+        /* 入口ボタンは横並び。1列だと縦に伸びて、下の周辺検索まで押し下げてしまうため */
+        .nearby-list-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 0 16px 12px; }
+        .nearby-list-btns .nearby-list-btn { margin-bottom: 0; }
         .nearby-list-btn {
             display: flex; align-items: center; gap: 10px; width: 100%;
             background: #f8f8f8; border: 0; border-radius: 10px; padding: 10px 12px;
@@ -775,17 +777,19 @@
         .pref-sum { padding: 9px 13px; background: #f7f9fa; border-bottom: 1px solid #f0f0f0;
                     flex-shrink: 0; touch-action: none; }
         /* アイコンは種別で縦横比が違う（カード配布だけ縦長のカード画像）。
-           行の高さを揃えないと数字の位置がばらつくので、アイコン枠の高さを固定して中央に置く。 */
-        .pref-sum-line { display: flex; gap: 12px; justify-content: space-between; align-items: flex-end; }
-        .pref-sum-item { text-align: center; }
-        .pref-sum-item > :first-child { height: var(--mhcard-h); display: flex;
-                                        align-items: center; justify-content: center; margin: 0 auto; }
-        .pref-sum-v { font-size: 13px; font-weight: bold; color: #546E7A; margin-top: 2px; }
+           数字の位置を揃えるため、アイコンは元の寸法のまま列の高さだけを合わせて下端に寄せる。
+           アイコン自身に height を掛けると丸アイコンが縦に伸びるので触らない。 */
+        .pref-sum-line { display: flex; gap: 12px; justify-content: space-between;
+                         align-items: flex-end; min-height: calc(var(--mhcard-h) + 20px); }
+        .pref-sum-item { display: flex; flex-direction: column; align-items: center;
+                         justify-content: flex-end; text-align: center; }
+        .pref-sum-v { font-size: 13px; font-weight: bold; color: #546E7A; margin-top: 3px; }
         /* 一覧の行に出すバッジ。情報シートの os-genrebadge / popup-form-badge / os-cdbadge と同じ見た目を小さくしたもの */
         .pref-badges { display: flex; flex-direction: column; gap: 2px; align-items: flex-end; flex-shrink: 0; }
+        /* 寸法だけ一覧用に小さくし、色はシート側の定義（popup-form-badge の f-* / os-cdbadge）に任せる。
+           popup-form-badge と併記したときにこちらの font-size / padding が効くよう後に置く。 */
         .pref-badge { font-size: 9.5px; font-weight: 700; color: #fff; padding: 1px 7px;
-                      border-radius: 9px; white-space: nowrap; }
-        .pref-badge.sub { font-weight: 500; color: #607D8B; background: #eceff1; }
+                      border-radius: 9px; white-space: nowrap; line-height: 1.5; }
         .pref-badge.card { background: #8d6e63; }
         .pref-badge.round { background: #6A4C93; }
 
@@ -5025,13 +5029,16 @@ map.on('zoomend', () => { isZooming = false; });
     }
 
     /* 種別アイコン。周辺検索結果（renderNearbyList）と同じ作りにする。
-       マンホールカードだけはカード画像に蓋バッジを重ねた専用の見た目。 */
-    function prefTypeIconHtml(type) {
+       マンホールカードだけはカード画像に蓋バッジを重ねた専用の見た目。
+       props を渡すと色を objRingColor に決めさせる（地図のピンと同じく
+       100名城は青・続100名城は赤になる）。集計帯のように種別の代表として
+       出すときは props を省いて種別の基本色にする。 */
+    function prefTypeIconHtml(type, props) {
         if (type === 'mhcard') {
             return `<div style="position:relative;width:var(--mhcard-w);height:var(--mhcard-h);flex-shrink:0;background:#e2ddd4;border-radius:6px;"><img src="mhcard.png" style="width:100%;height:100%;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:var(--mhcard-badge);height:var(--mhcard-badge);filter:brightness(0) invert(1);pointer-events:none;"></div>`;
         }
         const cfg = typeConfig[type] || {};
-        const color = OBJ_TYPE_COLOR[type] || cfg.color || '#546E7A';
+        const color = props ? objRingColor(type, props) : (OBJ_TYPE_COLOR[type] || cfg.color || '#546E7A');
         return `<div class="nearby-item-icon" style="background:${color}">${cfg.img
             ? `<img src="${cfg.img}"${cfg.img === 'manhole.png' ? '' : ' class="icon-full"'}>` : (cfg.icon || '')}</div>`;
     }
@@ -5044,7 +5051,10 @@ map.on('zoomend', () => { isZooming = false; });
         if (item.type === 'castle') {
             const label = CASTLE_GENRE_LABEL[p.genre];
             if (label) b.push(`<span class="pref-badge" style="background:${getItemColor(item)}">${label}</span>`);
-            if (p.shiroHbForm) b.push(`<span class="pref-badge sub">${attrEscape(p.shiroHbForm)}</span>`);
+            // 形態は情報シートと同じ色分け（FORM_BADGE_CLASS）をそのまま使う
+            if (p.shiroHbForm && p.shiroHbForm !== '不明') {
+                b.push(`<span class="pref-badge popup-form-badge ${FORM_BADGE_CLASS[p.shiroHbForm] || ''}">${attrEscape(p.shiroHbForm)}</span>`);
+            }
         } else if (item.type === 'mhcard') {
             const info = mhcardInfo(p);
             if (info && info.id) b.push(`<span class="pref-badge card">${attrEscape(info.id)}</span>`);
@@ -5097,7 +5107,7 @@ map.on('zoomend', () => { isZooming = false; });
             const item = r.item;
             const distStr = r.dist < 1 ? `${Math.round(r.dist * 1000)}m` : `${r.dist.toFixed(1)}km`;
             return `<div class="nearby-item" onclick="prefJumpToItem(${i})">
-                ${prefTypeIconHtml(item.type)}
+                ${prefTypeIconHtml(item.type, item.properties || {})}
                 <div class="nearby-item-text">
                     <div class="nearby-item-name">${attrEscape(item.label)}</div>
                     <div class="nearby-item-sub">${attrEscape(item.sub || '')}</div>
@@ -5120,8 +5130,24 @@ map.on('zoomend', () => { isZooming = false; });
     function prefJumpToItem(i) {
         const r = (prefState.rows || [])[i];
         if (!r) return;
+        const back = prefState.pref;
         closeNearby();
         onResultClick(r.item);
+        // onResultClick は 300ms 後に情報シートを開くので、その後に戻り導線を挿す
+        setTimeout(() => injectPrefBackLink(back), 400);
+    }
+
+    // 一覧から来たときだけ、情報シートの先頭に戻り導線を挿す（城主から探すと同じ扱い）。
+    // 別のピンをタップするとシート本文ごと作り直されるので、自然に消える。
+    function injectPrefBackLink(prefName) {
+        if (!prefName) return;
+        const body = document.getElementById('obj-sheet-body');
+        if (!body || body.querySelector('.os-lords-back')) return;
+        const div = document.createElement('div');
+        div.className = 'os-lords-back';
+        div.textContent = `↩ 「${prefName}」の一覧に戻る`;
+        div.onclick = () => { closeObjSheet(); openNearbyPanel(); openPrefView(prefName); };
+        body.insertBefore(div, body.firstChild);
     }
 
     function selectNearbyCat(el) {
