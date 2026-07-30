@@ -1400,9 +1400,9 @@
         <div class="pref-sum" id="pref-detail-sum"></div>
         <div class="lords-filter">
             <div class="lords-chips" style="margin-top:0;">
-                <button class="lords-chip" data-ps="name" aria-pressed="true"  onclick="setPrefSort('name')">名前順</button>
+                <button class="lords-chip" data-ps="type" aria-pressed="true"  onclick="setPrefSort('type')">種別順</button>
+                <button class="lords-chip" data-ps="name" aria-pressed="false" onclick="setPrefSort('name')">名前順</button>
                 <button class="lords-chip" data-ps="dist" aria-pressed="false" onclick="setPrefSort('dist')">近い順</button>
-                <button class="lords-chip" data-ps="type" aria-pressed="false" onclick="setPrefSort('type')">種別順</button>
             </div>
         </div>
         <div class="lords-scroll" id="pref-item-list"></div>
@@ -4886,7 +4886,8 @@ map.on('zoomend', () => { isZooming = false; });
         { type: 'shop',     label: 'レストラン', filter: 'shop'    },
     ];
     let prefIndex = null;       // { 県名: { 種別: [searchIndexの要素] } }
-    let prefState = { q: '', types: null, pref: null, sort: 'name' };
+    // sort の既定は種別順（図鑑的な使い方を想定し、近い順の優先度は下げる）
+    let prefState = { q: '', types: null, pref: null, sort: 'type' };
 
     function prefOfProps(p) {
         if (p.prefecture) return p.prefecture;
