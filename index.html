@@ -753,6 +753,42 @@
             height: calc(100svh - 52px); max-height: 100%;
         }
         #nearby-lords-view.open, #nearby-lord-detail-view.open { display: flex; }
+        /* 都道府県ビュー（第5・第6）。城主ビューと同じ枠組みを使う */
+        #nearby-pref-view, #nearby-pref-detail-view {
+            display: none; flex-direction: column; min-height: 0;
+            height: calc(100svh - 52px); max-height: 100%;
+        }
+        #nearby-pref-view.open, #nearby-pref-detail-view.open { display: flex; }
+        /* 地方の見出し。スクロールしても頭に残す */
+        .reg-head {
+            position: sticky; top: 0; background: #f7f9fa; padding: 6px 13px;
+            font-size: 11px; font-weight: bold; color: #546E7A;
+            border-bottom: 1px solid #eceff1; display: flex; justify-content: space-between;
+            z-index: 2;
+        }
+        .reg-head .reg-num { color: #90a4ae; font-weight: normal; }
+        /* 県の行。アイコンは置かない（県名を示す有効な絵が無く、頭文字だけではノイズになるため） */
+        .pref-row { display: flex; align-items: center; gap: 9px; padding: 11px 13px;
+                    border-bottom: 1px solid #f0f0f0; cursor: pointer; }
+        .pref-row:active { background: #f7f9ff; }
+        /* 県詳細の集計帯。種別ごとにオブジェクトのアイコンと件数を並べる */
+        .pref-sum { padding: 9px 13px; background: #f7f9fa; border-bottom: 1px solid #f0f0f0;
+                    flex-shrink: 0; touch-action: none; }
+        /* アイコンは種別で縦横比が違う（カード配布だけ縦長のカード画像）。
+           行の高さを揃えないと数字の位置がばらつくので、アイコン枠の高さを固定して中央に置く。 */
+        .pref-sum-line { display: flex; gap: 12px; justify-content: space-between; align-items: flex-end; }
+        .pref-sum-item { text-align: center; }
+        .pref-sum-item > :first-child { height: var(--mhcard-h); display: flex;
+                                        align-items: center; justify-content: center; margin: 0 auto; }
+        .pref-sum-v { font-size: 13px; font-weight: bold; color: #546E7A; margin-top: 2px; }
+        /* 一覧の行に出すバッジ。情報シートの os-genrebadge / popup-form-badge / os-cdbadge と同じ見た目を小さくしたもの */
+        .pref-badges { display: flex; flex-direction: column; gap: 2px; align-items: flex-end; flex-shrink: 0; }
+        .pref-badge { font-size: 9.5px; font-weight: 700; color: #fff; padding: 1px 7px;
+                      border-radius: 9px; white-space: nowrap; }
+        .pref-badge.sub { font-weight: 500; color: #607D8B; background: #eceff1; }
+        .pref-badge.card { background: #8d6e63; }
+        .pref-badge.round { background: #6A4C93; }
+
         /* 城主ビューの見出し・絞り込み帯もスクロールしない領域。素通しさせない */
         .lords-head { display: flex; align-items: center; gap: 8px; padding: 12px 12px 8px; flex-shrink: 0; touch-action: none; }
         .lords-head-title { font-size: 14px; font-weight: bold; color: #333; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -1202,6 +1238,13 @@
                     <span class="nlb-s" id="lords-entry-sub">城主名から城をたどる</span>
                 </span>
             </button>
+            <button class="nearby-list-btn" id="pref-entry-btn" onclick="openPrefView()">
+                <span class="nlb-ic" style="background:#2a7d5f;color:#fff;font-size:15px;font-weight:bold;">都</span>
+                <span style="min-width:0;">
+                    <span class="nlb-n">都道府県から探す</span>
+                    <span class="nlb-s" id="pref-entry-sub">読み込み中…</span>
+                </span>
+            </button>
         </div>
     </div>
 
@@ -1325,6 +1368,41 @@
         </div>
         <div class="lords-scroll" id="lord-castle-list"></div>
     </div>
+
+    <!-- 都道府県一覧ビュー（メニューパネル内の第5ビュー）。
+         城主一覧と同じ枠組みだが、対象は全オブジェクト種別。
+         地方見出しで束ね、行は県名と件数だけにする（種別の内訳はチップで切り替える）。 -->
+    <div id="nearby-pref-view">
+        <div class="lords-head">
+            <div class="lords-head-title" id="pref-title">都道府県から探す</div>
+            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+        </div>
+        <div class="lords-filter">
+            <input id="pref-search" type="search" autocomplete="off" placeholder="都道府県名で絞り込み" oninput="onPrefSearchInput(this.value)">
+            <div class="lords-chips" id="pref-type-chips"></div>
+        </div>
+        <div class="lords-scroll" id="pref-list"></div>
+    </div>
+
+    <!-- 都道府県詳細（その県のオブジェクト一覧）ビュー（第6ビュー） -->
+    <div id="nearby-pref-detail-view">
+        <div class="lords-head">
+            <button class="lords-iconbtn" onclick="backToPrefList()" title="都道府県一覧へ戻る">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="lords-head-title" id="pref-detail-title"></div>
+            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+        </div>
+        <div class="pref-sum" id="pref-detail-sum"></div>
+        <div class="lords-filter">
+            <div class="lords-chips" style="margin-top:0;">
+                <button class="lords-chip" data-ps="name" aria-pressed="true"  onclick="setPrefSort('name')">名前順</button>
+                <button class="lords-chip" data-ps="dist" aria-pressed="false" onclick="setPrefSort('dist')">近い順</button>
+                <button class="lords-chip" data-ps="type" aria-pressed="false" onclick="setPrefSort('type')">種別順</button>
+            </div>
+        </div>
+        <div class="lords-scroll" id="pref-item-list"></div>
+    </div>
 </div>
 
 <!-- スポット検索結果パネル（別ウィンドウ） -->
@@ -1443,6 +1521,8 @@
             setSourceData('manholes', { type: 'FeatureCollection', features: [...mh, ...pk] });
         }
         buildSearchIndex(); // 到着済みデータで全件検索を再構築
+        prefIndex = null;   // 都道府県索引は searchIndex から組むので作り直させる
+        updatePrefEntry();
     }
 
     // 表示中レイヤーを優先して逐次ロード（パースのジャンクを抑えるため直列）
@@ -4462,7 +4542,11 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('nearby-settings-view').style.display = 'none';
         document.getElementById('nearby-lords-view').classList.remove('open');
         document.getElementById('nearby-lord-detail-view').classList.remove('open');
+        document.getElementById('nearby-pref-view').classList.remove('open');
+        document.getElementById('nearby-pref-detail-view').classList.remove('open');
+        prefState.pref = null;
         updateLordsEntry();
+        updatePrefEntry();
         document.getElementById('nearby-panel').classList.add('open');
         document.getElementById('nearby-overlay').classList.add('open');
         document.getElementById('bottom-bar').classList.add('panel-open');
@@ -4766,6 +4850,280 @@ map.on('zoomend', () => { isZooming = false; });
         div.onclick = () => { closeObjSheet(); openNearbyPanel(); openLordsView(lordId); };
         body.insertBefore(div, body.firstChild);
     }
+
+    // ══ 都道府県から探す ═══════════════════════════════════════════════
+    /* 全オブジェクト種別を都道府県で束ねた一覧。城主から探すと同じ枠組みで、
+       索引は表示中のデータから毎回組む（別データファイルは持たない）。
+
+       都道府県の決め方: properties.prefecture があればそれを使い、無ければ address の
+       先頭が都道府県名かを見る。どちらも取れない場合だけ address 中に1つだけ現れる
+       都道府県名を拾う。prefecture を持つのは城・道の駅・ポケふた・カード配布だけで、
+       マンホールとレストランは address からしか取れない（2026-07-31 時点で
+       この手順により全34,934件が振り分けられることを実データで確認済み）。 */
+    const PREF_NAMES = Object.values(typeof PREF_CODES !== 'undefined' ? PREF_CODES : {});
+    // 8地方区分。並び順は PREF_CODES（JP-01…JP-47）に従う
+    const PREF_REGIONS = [
+        ['北海道', ['北海道']],
+        ['東北', ['青森県', '岩手県', '宮城県', '秋田県', '山形県', '福島県']],
+        ['関東', ['茨城県', '栃木県', '群馬県', '埼玉県', '千葉県', '東京都', '神奈川県']],
+        ['中部', ['新潟県', '富山県', '石川県', '福井県', '山梨県', '長野県', '岐阜県', '静岡県', '愛知県']],
+        ['近畿', ['三重県', '滋賀県', '京都府', '大阪府', '兵庫県', '奈良県', '和歌山県']],
+        ['中国', ['鳥取県', '島根県', '岡山県', '広島県', '山口県']],
+        ['四国', ['徳島県', '香川県', '愛媛県', '高知県']],
+        ['九州・沖縄', ['福岡県', '佐賀県', '長崎県', '熊本県', '大分県', '宮崎県', '鹿児島県', '沖縄県']],
+    ];
+    // 種別チップの並び。地図の表示設定（filterState）と対応させる
+    const PREF_TYPES = [
+        { type: 'castle',   label: 'お城',       filter: 'castle'  },
+        { type: 'michi',    label: '道の駅',     filter: 'michi'   },
+        { type: 'mhcard',   label: '配布',       filter: 'mhcard'  },
+        { type: 'manhole',  label: 'マンホール', filter: 'manhole' },
+        { type: 'pokefuta', label: 'ポケふた',   filter: 'manhole' },
+        { type: 'shop',     label: 'レストラン', filter: 'shop'    },
+    ];
+    let prefIndex = null;       // { 県名: { 種別: [searchIndexの要素] } }
+    let prefState = { q: '', types: null, pref: null, sort: 'name' };
+
+    function prefOfProps(p) {
+        if (p.prefecture) return p.prefecture;
+        const ad = p.address || '';
+        for (const n of PREF_NAMES) if (ad.startsWith(n)) return n;
+        const hits = PREF_NAMES.filter(n => ad.includes(n));
+        return hits.length === 1 ? hits[0] : null;
+    }
+
+    /* 索引を組む。検索と同じ searchIndex を使うので、到着済みのデータだけが対象になる
+       （データが後から届いたら buildSearchIndex 経由で作り直される）。 */
+    function buildPrefIndex() {
+        prefIndex = {};
+        PREF_NAMES.forEach(n => { prefIndex[n] = {}; });
+        for (const item of searchIndex) {
+            const n = prefOfProps(item.properties || {});
+            if (!n || !prefIndex[n]) continue;
+            (prefIndex[n][item.type] = prefIndex[n][item.type] || []).push(item);
+        }
+    }
+
+    /// 地図の表示設定で表示中の種別だけを返す
+    function prefVisibleTypes() {
+        return PREF_TYPES.filter(t => filterState[t.filter] !== false).map(t => t.type);
+    }
+
+    function prefCount(name, types) {
+        const g = prefIndex[name] || {};
+        return types.reduce((s, t) => s + ((g[t] || []).length), 0);
+    }
+
+    function updatePrefEntry() {
+        const btn = document.getElementById('pref-entry-btn');
+        const sub = document.getElementById('pref-entry-sub');
+        if (!btn || !sub) return;
+        // 索引はまだ組まなくてよい。件数だけ searchIndex の長さから出す
+        if (searchIndex.length === 0) {
+            btn.disabled = true;
+            sub.textContent = 'データを読み込み中…';
+        } else {
+            btn.disabled = false;
+            sub.textContent = `47都道府県・${searchIndex.length.toLocaleString()}件`;
+        }
+    }
+
+    function showPrefView(which) {
+        document.getElementById('nearby-main-view').style.display = 'none';
+        document.getElementById('nearby-settings-view').style.display = 'none';
+        document.getElementById('nearby-pref-view').classList.toggle('open', which === 'list');
+        document.getElementById('nearby-pref-detail-view').classList.toggle('open', which === 'detail');
+    }
+
+    function openPrefView(prefName) {
+        if (searchIndex.length === 0) return;
+        buildPrefIndex();
+        // 表示中の種別を既定の選択にする（地図で消している種別は最初から出さない）
+        if (!prefState.types) prefState.types = new Set(prefVisibleTypes());
+        renderPrefChips();
+        if (prefName && prefIndex[prefName]) { openPrefDetail(prefName); return; }
+        showPrefView('list');
+        renderPrefList();
+    }
+    function backToPrefList() {
+        showPrefView('list');
+        renderPrefList();
+    }
+    function onPrefSearchInput(v) { prefState.q = v; renderPrefList(); }
+
+    /* チップは「全選択／全解除」＋種別。周辺検索結果の全解除ボタンと同じく、
+       全部ONのときだけ文言が「全解除」になる。 */
+    function renderPrefChips() {
+        const visible = prefVisibleTypes();
+        const allOn = visible.every(t => prefState.types.has(t));
+        const html = [`<button class="lords-chip" onclick="togglePrefAllTypes()">${allOn ? '全解除' : '全選択'}</button>`];
+        for (const t of PREF_TYPES) {
+            if (!visible.includes(t.type)) continue;   // 地図で非表示の種別はチップごと出さない
+            html.push(`<button class="lords-chip" data-pt="${t.type}" aria-pressed="${prefState.types.has(t.type)}"
+                        onclick="togglePrefType('${t.type}')">${t.label}</button>`);
+        }
+        document.getElementById('pref-type-chips').innerHTML = html.join('');
+    }
+    function togglePrefType(t) {
+        if (prefState.types.has(t)) prefState.types.delete(t); else prefState.types.add(t);
+        renderPrefChips();
+        if (prefState.pref) renderPrefItems(); else renderPrefList();
+    }
+    function togglePrefAllTypes() {
+        const visible = prefVisibleTypes();
+        const allOn = visible.every(t => prefState.types.has(t));
+        prefState.types = allOn ? new Set() : new Set(visible);
+        renderPrefChips();
+        if (prefState.pref) renderPrefItems(); else renderPrefList();
+    }
+
+    function renderPrefList() {
+        const types = [...prefState.types];
+        const q = normalizeForSearch(prefState.q.trim());
+        const out = [];
+        for (const [region, members] of PREF_REGIONS) {
+            const shown = members.filter(n => !q || normalizeForSearch(n).includes(q));
+            if (shown.length === 0) continue;
+            const total = shown.reduce((s, n) => s + prefCount(n, types), 0);
+            out.push(`<div class="reg-head"><span>${region}</span>
+                      <span class="reg-num">${total.toLocaleString()}件 / ${shown.length}県</span></div>`);
+            for (const n of shown) {
+                out.push(`<div class="pref-row" onclick="openPrefDetail('${n}')">
+                    <div class="lord-main"><div class="lord-name">${n}</div></div>
+                    <div class="lord-num">${prefCount(n, types).toLocaleString()}</div>
+                    <div class="lord-chev">›</div>
+                </div>`);
+            }
+        }
+        const list = document.getElementById('pref-list');
+        list.innerHTML = out.length ? out.join('')
+            : '<div class="lords-note">該当する都道府県がありません</div>';
+        list.scrollTop = 0;
+    }
+
+    function openPrefDetail(name) {
+        if (!prefIndex || !prefIndex[name]) return;
+        prefState.pref = name;
+        document.getElementById('pref-detail-title').textContent = name;
+        // 集計帯は選択中の種別に関わらず、その県が持つ全種別を出す（何がどれだけあるか分かるように）
+        const visible = prefVisibleTypes();
+        const sum = PREF_TYPES.filter(t => visible.includes(t.type) && (prefIndex[name][t.type] || []).length)
+            .map(t => `<div class="pref-sum-item">${prefTypeIconHtml(t.type)}
+                       <div class="pref-sum-v">${prefIndex[name][t.type].length.toLocaleString()}</div></div>`);
+        document.getElementById('pref-detail-sum').innerHTML =
+            `<div class="pref-sum-line">${sum.join('')}</div>`;
+        showPrefView('detail');
+        renderPrefItems();
+    }
+
+    function setPrefSort(sort) {
+        prefState.sort = sort;
+        document.querySelectorAll('#nearby-pref-detail-view .lords-chip[data-ps]').forEach(b => {
+            b.setAttribute('aria-pressed', String(b.dataset.ps === sort));
+        });
+        renderPrefItems();
+    }
+
+    /* 種別アイコン。周辺検索結果（renderNearbyList）と同じ作りにする。
+       マンホールカードだけはカード画像に蓋バッジを重ねた専用の見た目。 */
+    function prefTypeIconHtml(type) {
+        if (type === 'mhcard') {
+            return `<div style="position:relative;width:var(--mhcard-w);height:var(--mhcard-h);flex-shrink:0;background:#e2ddd4;border-radius:6px;"><img src="mhcard.png" style="width:100%;height:100%;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:var(--mhcard-badge);height:var(--mhcard-badge);filter:brightness(0) invert(1);pointer-events:none;"></div>`;
+        }
+        const cfg = typeConfig[type] || {};
+        const color = OBJ_TYPE_COLOR[type] || cfg.color || '#546E7A';
+        return `<div class="nearby-item-icon" style="background:${color}">${cfg.img
+            ? `<img src="${cfg.img}"${cfg.img === 'manhole.png' ? '' : ' class="icon-full"'}>` : (cfg.icon || '')}</div>`;
+    }
+
+    /* 行に出すバッジ。情報シートで出しているものと同じ内容にする。
+       城は 100名城/続100名城 と形態、カード配布はカードIDと弾、蓋はカードID。 */
+    function prefBadgesHtml(item) {
+        const p = item.properties || {};
+        const b = [];
+        if (item.type === 'castle') {
+            const label = CASTLE_GENRE_LABEL[p.genre];
+            if (label) b.push(`<span class="pref-badge" style="background:${getItemColor(item)}">${label}</span>`);
+            if (p.shiroHbForm) b.push(`<span class="pref-badge sub">${attrEscape(p.shiroHbForm)}</span>`);
+        } else if (item.type === 'mhcard') {
+            const info = mhcardInfo(p);
+            if (info && info.id) b.push(`<span class="pref-badge card">${attrEscape(info.id)}</span>`);
+            if (info && info.round) b.push(`<span class="pref-badge round">${attrEscape(info.round)}</span>`);
+        } else if (item.type === 'manhole' && p.cardId) {
+            b.push(`<span class="pref-badge card">${attrEscape(p.cardId)}</span>`);
+        }
+        return b.length ? `<div class="pref-badges">${b.join('')}</div>` : '';
+    }
+
+    /* 城は 100名城 → 続100名城 → その他 の順に寄せる。地図のピンが circle-sort-key で
+       使っている優先度（100名城3 / 続2 / その他1）と同じ考え方。 */
+    function castleGenreRank(p) {
+        if (p.genre === '日本100名城') return 0;
+        if (p.genre === '続日本100名城') return 1;
+        return 2;
+    }
+
+    function renderPrefItems() {
+        const name = prefState.pref;
+        if (!name) return;
+        const types = [...prefState.types];
+        const center = getSearchCenter();
+        let rows = [];
+        for (const t of types) {
+            for (const item of (prefIndex[name][t] || [])) {
+                const c = item.coords;
+                rows.push({ item, dist: calcDist(center.lat, center.lng, c[1], c[0]) });
+            }
+        }
+        const byName = (a, b) => (a.item.label || '').localeCompare(b.item.label || '', 'ja');
+        if (prefState.sort === 'dist') {
+            rows.sort((a, b) => a.dist - b.dist);
+        } else if (prefState.sort === 'type') {
+            const order = PREF_TYPES.map(t => t.type);
+            rows.sort((a, b) => order.indexOf(a.item.type) - order.indexOf(b.item.type)
+                                || castleGenreRank(a.item.properties || {}) - castleGenreRank(b.item.properties || {})
+                                || byName(a, b));
+        } else {
+            // 名前順。城だけは 100名城 → 続100名城 → その他 を名前より優先する
+            rows.sort((a, b) => castleGenreRank(a.item.properties || {}) - castleGenreRank(b.item.properties || {})
+                                || byName(a, b));
+        }
+        const list = document.getElementById('pref-item-list');
+        if (rows.length === 0) {
+            list.innerHTML = '<div class="lords-note">表示する種別が選ばれていません</div>';
+            return;
+        }
+        list.innerHTML = rows.slice(0, PREF_ITEM_LIMIT).map((r, i) => {
+            const item = r.item;
+            const distStr = r.dist < 1 ? `${Math.round(r.dist * 1000)}m` : `${r.dist.toFixed(1)}km`;
+            return `<div class="nearby-item" onclick="prefJumpToItem(${i})">
+                ${prefTypeIconHtml(item.type)}
+                <div class="nearby-item-text">
+                    <div class="nearby-item-name">${attrEscape(item.label)}</div>
+                    <div class="nearby-item-sub">${attrEscape(item.sub || '')}</div>
+                </div>
+                ${prefBadgesHtml(item)}
+                <div class="nearby-item-dist">${distStr}</div>
+            </div>`;
+        }).join('');
+        prefState.rows = rows.slice(0, PREF_ITEM_LIMIT);
+        list.scrollTop = 0;
+        if (rows.length > PREF_ITEM_LIMIT) {
+            list.insertAdjacentHTML('beforeend',
+                `<div class="lords-note">上位${PREF_ITEM_LIMIT.toLocaleString()}件を表示（全${rows.length.toLocaleString()}件）</div>`);
+        }
+    }
+    const PREF_ITEM_LIMIT = 300;   // 一度に描く上限。レストランだけで2,000件を超える県があるため
+
+    /* 一覧からオブジェクトへ飛ぶ。検索結果タップ（onResultClick）と同じ扱いにして、
+       寄せ方・情報シート・履歴の記録を揃える。 */
+    function prefJumpToItem(i) {
+        const r = (prefState.rows || [])[i];
+        if (!r) return;
+        closeNearby();
+        onResultClick(r.item);
+    }
+
     function selectNearbyCat(el) {
         nearbyState.cats = [el.dataset.cat];
         execNearbySearch();
