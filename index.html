@@ -1389,10 +1389,10 @@
         <div class="nearby-section-label">オブジェクト表示</div>
         <div id="filter-checkboxes">
             <label class="filter-chip"><input type="checkbox" id="check-shop" checked onchange="onFilterChange(this)">食べログ</label>
-            <label class="filter-chip"><input type="checkbox" id="check-castle" checked onchange="onFilterChange(this)">お城</label>
-            <label class="filter-chip"><input type="checkbox" id="check-michi" checked onchange="onFilterChange(this)">道の駅</label>
             <label class="filter-chip"><input type="checkbox" id="check-manhole" checked onchange="onFilterChange(this)">マンホール</label>
             <label class="filter-chip"><input type="checkbox" id="check-mhcard" checked onchange="onFilterChange(this)">マンホールカード配布</label>
+            <label class="filter-chip"><input type="checkbox" id="check-michi" checked onchange="onFilterChange(this)">道の駅</label>
+            <label class="filter-chip"><input type="checkbox" id="check-castle" checked onchange="onFilterChange(this)">お城</label>
         </div>
         <div style="border-top:1px solid #f0f0f0;"></div>
         <div style="display:flex;gap:12px;padding:8px 16px 10px;align-items:flex-end;">
@@ -1433,8 +1433,8 @@
         <div class="nearby-section-label">テキスト表示</div>
         <div id="label-checkboxes" style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0 16px 8px;">
             <label class="filter-chip"><input type="checkbox" id="check-label-shop" checked onchange="onLabelChange(this)">食べログ</label>
-            <label class="filter-chip"><input type="checkbox" id="check-label-castle" checked onchange="onLabelChange(this)">お城</label>
             <label class="filter-chip"><input type="checkbox" id="check-label-michi" checked onchange="onLabelChange(this)">道の駅</label>
+            <label class="filter-chip"><input type="checkbox" id="check-label-castle" checked onchange="onLabelChange(this)">お城</label>
         </div>
         <div style="border-top:1px solid #f0f0f0;"></div>
         <div class="nearby-section-label">メニュー表示</div>
@@ -1656,12 +1656,15 @@
 
     // 表示中レイヤーを優先して逐次ロード（パースのジャンクを抑えるため直列）
     function startDataLoading() {
+        // 並びは種別の共通順（食べログ→ポケふた→マンホール→カード配布→道の駅→城）。
+        // 下の sort は安定なので、表示中グループ・非表示グループそれぞれの中では
+        // この順のまま読む。地図のピンの重なり順（configs）とは別物で揃える必要はない
         const specs = [
-            { key: 'michi',    src: 'michi.js',   get: () => michiNoEkiGeoJSON, vis: filterState.michi   !== false },
             { key: 'shops',    src: 'data.js',    get: () => shopData,          vis: filterState.shop    !== false },
-            { key: 'mhcard',   src: 'mhcard.js',  get: () => mhcardGeoJSON,     vis: filterState.mhcard  !== false },
-            { key: 'manhole',  src: 'manhole.js', get: () => manholeGeoJSON,    vis: filterState.manhole !== false },
             { key: 'pokefuta', src: 'pokemon.js', get: () => pokefutaGeoJSON,   vis: filterState.manhole !== false },
+            { key: 'manhole',  src: 'manhole.js', get: () => manholeGeoJSON,    vis: filterState.manhole !== false },
+            { key: 'mhcard',   src: 'mhcard.js',  get: () => mhcardGeoJSON,     vis: filterState.mhcard  !== false },
+            { key: 'michi',    src: 'michi.js',   get: () => michiNoEkiGeoJSON, vis: filterState.michi   !== false },
             { key: 'castle',   src: 'castle.js',  get: () => castleData,        vis: filterState.castle  !== false },
         ];
         specs.sort((a, b) => (b.vis ? 1 : 0) - (a.vis ? 1 : 0)); // 表示中を先頭へ
@@ -4635,12 +4638,14 @@ map.on('zoomend', () => { isZooming = false; });
         nearbyResultTypes.forEach(t => { if (nearbyTypeFilter.has(t)) off.delete(t); else off.add(t); });
         localStorage.setItem('nearbyTypeFilterOff', JSON.stringify([...off]));
     }
+    // キーの並びは種別の共通順（食べログ→ポケふた→マンホール→カード配布→道の駅→城）に合わせてある。
+    // ポケふたは専用のキーを持たず manhole のフィルタで出し入れする
     const filterState = Object.assign(
-        { shop: true, castle: true, michi: true, manhole: true, mhcard: false },
+        { shop: true, manhole: true, mhcard: false, michi: true, castle: true },
         savedSettings ? savedSettings.filter : {}
     );
     const labelState = Object.assign(
-        { shop: true, castle: true, michi: true },
+        { shop: true, michi: true, castle: true },
         savedSettings ? savedSettings.label : {}
     );
 
@@ -5126,12 +5131,12 @@ map.on('zoomend', () => { isZooming = false; });
     ];
     // 種別チップの並び。地図の表示設定（filterState）と対応させる
     const PREF_TYPES = [
-        { type: 'castle',   label: 'お城',       filter: 'castle'  },
-        { type: 'michi',    label: '道の駅',     filter: 'michi'   },
-        { type: 'mhcard',   label: 'マンホールカード配布', filter: 'mhcard'  },
-        { type: 'manhole',  label: 'マンホール', filter: 'manhole' },
-        { type: 'pokefuta', label: 'ポケふた',   filter: 'manhole' },
         { type: 'shop',     label: '食べログ',   filter: 'shop'    },
+        { type: 'pokefuta', label: 'ポケふた',   filter: 'manhole' },
+        { type: 'manhole',  label: 'マンホール', filter: 'manhole' },
+        { type: 'mhcard',   label: 'マンホールカード配布', filter: 'mhcard'  },
+        { type: 'michi',    label: '道の駅',     filter: 'michi'   },
+        { type: 'castle',   label: 'お城',       filter: 'castle'  },
     ];
     let prefIndex = null;       // { 県名: { 種別: [searchIndexの要素] } }
     let prefShopGenreAll = [];  // 全国の食べログ部門（多い順）。ジャンル選択の初期値に使う
