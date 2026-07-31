@@ -45,7 +45,7 @@
             /* オブジェクト種別アイコン（地図・検索結果・周辺検索・移動履歴で共通） */
             --obj-icon-circle: 28px;
             --obj-icon-inner: 25px;
-            /* マンホール以外の丸形オブジェクト（お城・道の駅・レストラン）は比率100% */
+            /* マンホール以外の丸形オブジェクト（お城・道の駅・食べログ）は比率100% */
             --obj-icon-inner-full: 28px;
             /* マンホールカードのカード枠（地図のmhcard-icon: 56x72px画像をpixelRatio2で読込んだ実寸と同じ） */
             --mhcard-w: 28px;
@@ -4228,7 +4228,7 @@ map.on('zoomend', () => { isZooming = false; });
         mhcard:   { color: '#1565C0', img: 'manhole.png', label: 'マンホールカード配布' },
         castle:   { color: '#546E7A', img: 'castle.png',  label: 'お城' },
         michi:    { color: '#34A853', img: 'michi.png',   label: '道の駅' },
-        shop:     { color: '#FF9800', img: 'tabe.png',    label: 'レストラン' },
+        shop:     { color: '#FF9800', img: 'tabe.png',    label: '食べログ' },
         place:    { color: '#4285F4', icon: '📍',        label: '地名' },
     };
     function getItemColor(item) {
@@ -4964,7 +4964,7 @@ map.on('zoomend', () => { isZooming = false; });
        都道府県の決め方: properties.prefecture があればそれを使い、無ければ address の
        先頭が都道府県名かを見る。どちらも取れない場合だけ address 中に1つだけ現れる
        都道府県名を拾う。prefecture を持つのは城・道の駅・ポケふた・カード配布だけで、
-       マンホールとレストランは address からしか取れない（2026-07-31 時点で
+       マンホールと食べログは address からしか取れない（2026-07-31 時点で
        この手順により全34,934件が振り分けられることを実データで確認済み）。 */
     const PREF_NAMES = Object.values(typeof PREF_CODES !== 'undefined' ? PREF_CODES : {});
     // 8地方区分。並び順は PREF_CODES（JP-01…JP-47）に従う
@@ -4985,7 +4985,7 @@ map.on('zoomend', () => { isZooming = false; });
         { type: 'mhcard',   label: 'マンホールカード配布', filter: 'mhcard'  },
         { type: 'manhole',  label: 'マンホール', filter: 'manhole' },
         { type: 'pokefuta', label: 'ポケふた',   filter: 'manhole' },
-        { type: 'shop',     label: 'レストラン', filter: 'shop'    },
+        { type: 'shop',     label: '食べログ',   filter: 'shop'    },
     ];
     let prefIndex = null;       // { 県名: { 種別: [searchIndexの要素] } }
     let prefShopGenreAll = [];  // 全国の食べログ部門（多い順）。ジャンル選択の初期値に使う
@@ -5314,7 +5314,7 @@ map.on('zoomend', () => { isZooming = false; });
                 `<div class="lords-note">上位${PREF_ITEM_LIMIT.toLocaleString()}件を表示（全${rows.length.toLocaleString()}件）</div>`);
         }
     }
-    const PREF_ITEM_LIMIT = 300;   // 一度に描く上限。レストランだけで2,000件を超える県があるため
+    const PREF_ITEM_LIMIT = 300;   // 一度に描く上限。食べログだけで2,000件を超える県があるため
 
     /* 一覧からオブジェクトへ飛ぶ。検索結果タップ（onResultClick）と同じ扱いにして、
        寄せ方・情報シート・履歴の記録を揃える。 */
