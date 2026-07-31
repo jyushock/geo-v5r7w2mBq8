@@ -5092,8 +5092,8 @@ map.on('zoomend', () => { isZooming = false; });
     const prefGenreSeen = new Set();
     // sort の既定は種別順（図鑑的な使い方を想定し、近い順の優先度は下げる）
     // genres は食べログだけが持つ2段目の絞り込み。types と同じく県をまたいで保つ。
-    // genreOpen の既定は開いた状態（2段目があること自体に気付けるように）
-    let prefState = { types: null, genres: null, genreOpen: true, pref: null, sort: 'type' };
+    // genreOpen の既定は閉じた状態。食べログの長押しで開く
+    let prefState = { types: null, genres: null, genreOpen: false, pref: null, sort: 'type' };
 
     function prefOfProps(p) {
         if (p.prefecture) return p.prefecture;
