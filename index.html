@@ -4710,6 +4710,10 @@ map.on('zoomend', () => { isZooming = false; });
         Object.keys(filterState).forEach(id => { const el=document.getElementById(`check-${id}`); if(el) el.checked=filterState[id]; });
         Object.keys(labelState).forEach(id => { const el=document.getElementById(`check-label-${id}`); if(el) el.checked=labelState[id]; });
         document.getElementById('nearby-list').innerHTML = '';
+        // 検索地点の行は開くたびに畳んだ状態から始める。展開（expanded）を解除しているのは
+        // setSearchOriginText だけで、検索ピンがある間はそこを通らないため、
+        // 展開したまま閉じると次に開いても2行のままになる
+        document.getElementById('nearby-search-origin').classList.remove('expanded');
         if (!searchPinLngLat) {
             const labelEl = document.getElementById('nearby-search-origin-label');
             if (labelEl) labelEl.textContent = '検索地点';
