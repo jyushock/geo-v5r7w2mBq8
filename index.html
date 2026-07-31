@@ -182,7 +182,8 @@
             justify-content: center;
             padding: 0;
             color: #333;
-            font-size: 18px;
+            /* 中身は「N」の一文字。48pxの円に対して図案が小さく見えないよう字を大きく取る */
+            font-size: 22px; font-weight: 800; letter-spacing: .5px; font-family: sans-serif;
         }
         #north-reset-btn:hover { background-color: rgba(255,255,255,1); }
         /* ボタンの共通スタイル */
@@ -1187,12 +1188,7 @@
     <button id="toggle-layers-btn" title="スポット一時非表示">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
     </button>
-    <button id="north-reset-btn" title="真北にリセット">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="12" y1="14" x2="12" y2="4"/><polyline points="8 8 12 4 16 8"/>
-            <text x="12" y="22" text-anchor="middle" font-size="8" font-weight="bold" fill="currentColor" stroke="none" font-family="sans-serif">N</text>
-        </svg>
-    </button>
+    <button id="north-reset-btn" title="真北にリセット">N</button>
 </div>
 <button id="hist-nav-btn" title="ひとつ前に戻る（長押しで履歴）" disabled>
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11a9 9 0 1 1 2.2 5.9"/><polyline points="3 5 3 11 9 11"/></svg>
@@ -4982,8 +4978,12 @@ map.on('zoomend', () => { isZooming = false; });
             const p = r.f.properties;
             return normalizeForSearch(`${p.name || ''} ${p.prefecture || ''} ${p.address || ''}`).includes(q);
         });
-        if (lordsState.sort === 'dist') rows.sort((a, b) => a.dist - b.dist);
-        else rows.sort((a, b) => (PREF_ORDER[a.f.properties.prefecture] ?? 99) - (PREF_ORDER[b.f.properties.prefecture] ?? 99)
+        /* どの並びでも 100名城 → 続100名城 → その他 を先に寄せ、その中で選んだ順に並べる
+           （「近い順」なら100名城の中で近い順、続100名城の中で近い順…となる）。 */
+        const rank = r => castleGenreRank(r.f.properties);
+        if (lordsState.sort === 'dist') rows.sort((a, b) => rank(a) - rank(b) || a.dist - b.dist);
+        else rows.sort((a, b) => rank(a) - rank(b)
+                                 || (PREF_ORDER[a.f.properties.prefecture] ?? 99) - (PREF_ORDER[b.f.properties.prefecture] ?? 99)
                                  || a.f.properties.name.localeCompare(b.f.properties.name, 'ja'));
         if (rows.length === 0) {
             document.getElementById('lord-castle-list').innerHTML =
@@ -5431,7 +5431,9 @@ map.on('zoomend', () => { isZooming = false; });
         }
         const byName = (a, b) => (a.item.label || '').localeCompare(b.item.label || '', 'ja');
         if (prefState.sort === 'dist') {
-            rows.sort((a, b) => a.dist - b.dist);
+            // 近い順でも 100名城 → 続100名城 → その他 を先に寄せる（各グループの中で近い順）
+            rows.sort((a, b) => castleGenreRank(a.item.properties || {}) - castleGenreRank(b.item.properties || {})
+                                || a.dist - b.dist);
         } else if (prefState.sort === 'type') {
             const order = PREF_TYPES.map(t => t.type);
             rows.sort((a, b) => order.indexOf(a.item.type) - order.indexOf(b.item.type)
