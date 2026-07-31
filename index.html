@@ -829,8 +829,14 @@
            寸法だけ CSS 変数の上書きで小さくする（マークアップは共通のまま）。
            数字の欄は種別ごとに固定幅なので、アイコンが全行で同じ位置に来る。
            iPhone SE3（375px）で6種別すべて出しても県名は切れない。 */
+        /* 県名の欄は固定幅にする。flex: 1 のままだと画面が広いPCでは県名の欄だけが伸びて、
+           件数が県名から遠く離れた右端に飛ばされる。幅は4文字の県名（神奈川県・和歌山県・
+           鹿児島県）の実測54pxに余白を足した値。件数の側に margin-right: auto を置くので、
+           余った幅は件数と「›」の間に入り、「›」は今までどおり行の右端に残る。 */
+        .pref-row .lord-main { flex: 0 0 auto; width: 56px; }
         .pref-cnt-line {
             display: flex; align-items: center; gap: 5px; flex-shrink: 0; font-size: 11px;
+            margin-right: auto;
             --obj-icon-circle: 15px; --obj-icon-inner: 13.4px; --obj-icon-inner-full: 15px;
             --mhcard-w: 14px; --mhcard-h: 18px; --mhcard-badge: 11.2px; --mhcard-radius: 3px;
         }
