@@ -3,10 +3,6 @@
 <head>
     <meta charset="utf-8" />
     <meta name="robots" content="noindex,nofollow">
-    <!-- 配信確認用の目印。表示にも動作にも影響しない。
-         公開サイトで document.querySelector('meta[name=deploy-check]').content を見れば、
-         どの時点のファイルが配信されているか分かる。 -->
-    <meta name="deploy-check" content="2026-07-31T21:47 JST">
     <title>カスタムマップ</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="manifest" href="manifest.json">
@@ -186,8 +182,8 @@
             justify-content: center;
             padding: 0;
             color: #333;
-            /* 中身は「N」の一文字。48pxの円に対して図案が小さく見えないよう字を大きく取る */
-            font-size: 22px; font-weight: 800; letter-spacing: .5px; font-family: sans-serif;
+            /* 中身は「N」の一文字。地図の上に常時出るので、読める大きさを保ちつつ主張は抑える */
+            font-size: 18px; font-weight: 800; letter-spacing: .5px; font-family: sans-serif;
         }
         #north-reset-btn:hover { background-color: rgba(255,255,255,1); }
         /* ボタンの共通スタイル */
