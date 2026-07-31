@@ -854,11 +854,6 @@
         .lords-scroll { overflow-y: auto; overscroll-behavior-y: contain; touch-action: pan-y; flex: 1; min-height: 0; }
         .lord-row { display: flex; align-items: center; gap: 9px; padding: 10px 13px; border-bottom: 1px solid #f0f0f0; cursor: pointer; }
         .lord-row:active { background: #f7f9ff; }
-        .lord-av {
-            width: 30px; height: 30px; border-radius: 50%; background: #eceff1; color: #546E7A;
-            font-size: 12px; font-weight: bold; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-        }
-        .lord-av.person { background: #fdf1e3; color: #a2691f; }
         .lord-main { flex: 1; min-width: 0; }
         .lord-name { font-size: 13.5px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .lord-sub { font-size: 10.5px; color: #999; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -4645,7 +4640,6 @@ map.on('zoomend', () => { isZooming = false; });
         '関澤神社脇から登る。',
     ]);
     const LORDS_CHUNK = 60;              // 一覧の追加描画単位（11,000名超を一度に積まない）
-    const LORD_KIND_MARK = { person: '人', org: '組' };
     let lordIndex = null;                // [{ n, kind, idx:[城のfeature番号], v:[原表記], _n }]
     let lordCastleNorm = null;           // feature番号 → 検索用に正規化した「城名＋都道府県」
     let lordsState = { q: '', type: 'all', min: 1, sort: 'dist', filtered: [], shown: 0, lord: null };
@@ -4784,8 +4778,9 @@ map.on('zoomend', () => { isZooming = false; });
                 ? '表記: ' + l.v.join(' / ')
                 : l.idx.slice(0, 3).map(i => (feats[i].properties.name || '')).join('・')
                   + (l.idx.length > 3 ? ' ほか' : '');
+            // 行にアイコンは置かない（人／組は「人」「組」の一文字を丸で囲んでいただけで、
+            // 絵ではなく文字だったため。人／組の区別は絞り込みチップで付けられる）
             return `<div class="lord-row" onclick="openLordDetail(${l.id})">
-                <div class="lord-av ${l.kind}">${LORD_KIND_MARK[l.kind]}</div>
                 <div class="lord-main">
                     <div class="lord-name">${attrEscape(l.n)}</div>
                     <div class="lord-sub">${attrEscape(sub)}</div>
