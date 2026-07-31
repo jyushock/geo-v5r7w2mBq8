@@ -710,9 +710,22 @@
         .search-result-text { flex: 1; min-width: 0; }
         .search-result-name { font-size: 13px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .search-result-sub  { font-size: 10px; color: #999; margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        /* 食べログの部門バッジ（検索結果）。住所行の先頭に置くので、住所より小さくしない */
-        .sr-genre { display: inline-block; background: #FF9800; color: #fff; font-weight: 700;
+        /* 食べログの部門バッジ（検索結果）。住所行の先頭に置くので、住所より小さくしない。
+           色は .shop-genre.g-* が持つ */
+        .sr-genre { display: inline-block; color: #fff; font-weight: 700;
                     font-size: 9px; line-height: 1.5; padding: 0 5px; border-radius: 8px; margin-right: 4px; }
+        /* 部門バッジの色。35部門を内容で10グループに束ね、グループごとに1色。
+           彩度・明度は城の形態バッジ（f-*）と同じ帯（S 26〜42% / L 37%）に揃える。 */
+        .shop-genre.g-men      { background: hsl(20,  42%, 37%); }  /* 麺（ラーメン・うどん・そば） */
+        .shop-genre.g-niku     { background: hsl(0,   42%, 37%); }  /* 肉（焼肉・焼き鳥・とんかつ等） */
+        .shop-genre.g-gyokai   { background: hsl(205, 40%, 37%); }  /* 魚介・和食（寿司・天ぷら等） */
+        .shop-genre.g-chuka    { background: hsl(340, 32%, 37%); }  /* 中華・アジア（中国料理・カレー等） */
+        .shop-genre.g-yoshoku  { background: hsl(230, 30%, 37%); }  /* 洋食（フレンチ・イタリアン等） */
+        .shop-genre.g-keishoku { background: hsl(45,  42%, 37%); }  /* 軽食・粉もの（お好み焼き・食堂） */
+        .shop-genre.g-kanmi    { background: hsl(320, 28%, 37%); }  /* 甘味・パン */
+        .shop-genre.g-sake     { background: hsl(285, 35%, 37%); }  /* 酒（バー・居酒屋・立ち飲み） */
+        .shop-genre.g-kissa    { background: hsl(160, 26%, 37%); }  /* 喫茶（カフェ・喫茶） */
+        .shop-genre.g-sonota   { background: hsl(0,   0%,  45%); }  /* その他（創作料理・イノベーティブ） */
         .search-section-header { padding: 5px 10px; font-size: 11px; color: #999; background: #fafafa; border-bottom: 1px solid #f0f0f0; position: sticky; top: 0; }
 
         /* 周辺検索シート */
@@ -1448,7 +1461,9 @@
             <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
         </div>
         <div class="lords-filter">
-            <div class="lords-chips" style="margin-top:0;">
+            <input id="lord-castle-search" type="search" autocomplete="off"
+                   placeholder="城名・都道府県で絞り込み" oninput="onLordCastleSearchInput(this.value)">
+            <div class="lords-chips">
                 <button class="lords-chip" aria-pressed="true"  onclick="setLordCastleSort('dist')">近い順</button>
                 <button class="lords-chip" aria-pressed="false" onclick="setLordCastleSort('pref')">都道府県順</button>
             </div>
@@ -1483,6 +1498,11 @@
                 <span class="pref-filter-dot"></span>
             </button>
             <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+        </div>
+        <!-- 絞り込みは最上段。集計帯（その県に何があるか）とソートはその下 -->
+        <div class="lords-filter" style="border-bottom:0; padding-bottom:6px;">
+            <input id="pref-item-search" type="search" autocomplete="off"
+                   placeholder="名前・住所で絞り込み" oninput="onPrefSearchInput(this.value)">
         </div>
         <div class="pref-sum" id="pref-detail-sum"></div>
         <div class="lords-filter">
@@ -2489,15 +2509,29 @@ function shopParts(p) {
 function shopGenreBase(category) {
     return String(category || '').replace(/（[^（）]*）\s*$/, '').trim();
 }
-// 部門バッジ。色は種別色（地図のピン・検索結果のアイコンと同じ #FF9800）
-function shopGenreBadgeHtml(p) {
+/* 部門バッジの色。35部門を内容で10グループに束ね、グループごとに1色にする
+   （種別色のオレンジ1色だと白文字が読みにくく、部門も見分けられなかったため）。
+   彩度・明度は城の形態バッジ（f-*）と同じ帯に揃えてある。 */
+const SHOP_GENRE_CLASS = {
+    'ラーメン': 'g-men', 'うどん': 'g-men', 'そば': 'g-men',
+    '焼肉': 'g-niku', '焼き鳥': 'g-niku', '鳥料理': 'g-niku',
+    'ステーキ・鉄板焼き': 'g-niku', 'とんかつ': 'g-niku', 'すき焼き・しゃぶしゃぶ': 'g-niku',
+    '寿司': 'g-gyokai', 'うなぎ': 'g-gyokai', '天ぷら': 'g-gyokai', '日本料理': 'g-gyokai',
+    '中国料理': 'g-chuka', '餃子': 'g-chuka', 'アジア・エスニック': 'g-chuka', 'カレー': 'g-chuka',
+    'フレンチ': 'g-yoshoku', 'イタリアン': 'g-yoshoku', 'スペイン料理': 'g-yoshoku',
+    '洋食': 'g-yoshoku', 'ピザ': 'g-yoshoku', 'ハンバーガー': 'g-yoshoku',
+    'お好み焼き': 'g-keishoku', '食堂': 'g-keishoku',
+    'スイーツ': 'g-kanmi', '和菓子・甘味処': 'g-kanmi', 'パン': 'g-kanmi', 'アイス・ジェラート': 'g-kanmi',
+    'バー': 'g-sake', '居酒屋': 'g-sake', '立ち飲み': 'g-sake',
+    'カフェ': 'g-kissa', '喫茶': 'g-kissa',
+    '創作料理・イノベーティブ': 'g-sonota',
+};
+/* 部門バッジ。sizeClass に置き場所ごとの寸法クラスを渡す
+   （情報シート=os-genrebadge / 一覧=pref-badge / 検索結果=sr-genre）。色はグループのクラスが持つ。 */
+function shopGenreBadgeHtml(p, sizeClass) {
     const g = shopGenreBase(p && p.category);
-    return g ? `<span class="os-genrebadge" style="background:${OBJ_TYPE_COLOR.shop}">${attrEscape(g)}</span>` : '';
-}
-// 一覧用の小さい部門バッジ（検索結果の住所行に置くもの）
-function srGenreBadgeHtml(p) {
-    const g = shopGenreBase(p && p.category);
-    return g ? `<span class="sr-genre">${attrEscape(g)}</span>` : '';
+    if (!g) return '';
+    return `<span class="${sizeClass} shop-genre ${SHOP_GENRE_CLASS[g] || 'g-sonota'}">${attrEscape(g)}</span>`;
 }
 
 // 標高／比高（バッジとは別行、住所の上に表示）。
@@ -3003,7 +3037,7 @@ function buildSheetHtml(type, label, p, lng, lat) {
         // ジャンル=店自身のジャンル（つけ麺）、100名店=賞の部門（ラーメン（東京））で別物。
         const sp = shopParts(p);
         title = sp.shop || label;
-        badges = shopGenreBadgeHtml(p);
+        badges = shopGenreBadgeHtml(p, 'os-genrebadge');
         lines = osKv('ジャンル', sp.genre)
               + osKv('100名店', p.category)
               + osKv('最寄り', sp.station)
@@ -4371,7 +4405,7 @@ map.on('zoomend', () => { isZooming = false; });
                 const subText = item._matchedAlias ? `（別名: ${item._matchedAlias}）${item.sub}` : item.sub;
                 // 食べログの部門バッジ。結果は2列で幅が狭いため、店名の行ではなく
                 // 住所の行の先頭に小さく置く（店名を押し出さないため）
-                const badge = item.type === 'shop' ? srGenreBadgeHtml(item.properties) : '';
+                const badge = item.type === 'shop' ? shopGenreBadgeHtml(item.properties, 'sr-genre') : '';
                 div.innerHTML = `${iconPart}<div class="search-result-text"><div class="search-result-name">${item.label}</div><div class="search-result-sub">${badge}${subText}</div></div>`;
                 div.addEventListener('click', () => onResultClick(item));
                 col.appendChild(div);
@@ -4893,6 +4927,9 @@ map.on('zoomend', () => { isZooming = false; });
         if (!l) return;
         lordsState.lord = l;
         document.getElementById('lord-detail-title').textContent = `${l.n}（${l.idx.length}城）`;
+        // 別の城主を開いたら絞り込みは持ち越さない（前の語のまま0件になるのを防ぐ）
+        lordsState.castleQ = '';
+        document.getElementById('lord-castle-search').value = '';
         const vEl = document.getElementById('lord-detail-variants');
         vEl.textContent = l.v.length ? '表記: ' + l.v.join(' / ') : '';
         vEl.style.display = l.v.length ? '' : 'none';
@@ -4908,19 +4945,32 @@ map.on('zoomend', () => { isZooming = false; });
         renderLordCastles();
     }
 
+    // 城一覧の絞り込み。城主一覧の検索と同じく normalizeForSearch で照合する
+    function onLordCastleSearchInput(v) { lordsState.castleQ = v; renderLordCastles(); }
+
     function renderLordCastles() {
         const l = lordsState.lord;
         if (!l) return;
         const feats = loadedData.castle.features;
         const center = getSearchCenter();   // 現在地ピンがあればそこ、無ければ地図中心（周辺検索と同基準）
+        const q = normalizeForSearch((lordsState.castleQ || '').trim());
         const rows = l.idx.map(i => {
             const f = feats[i];
             const c = f.geometry.coordinates;
             return { i, f, dist: calcDist(center.lat, center.lng, c[1], c[0]) };
+        }).filter(r => {
+            if (!q) return true;
+            const p = r.f.properties;
+            return normalizeForSearch(`${p.name || ''} ${p.prefecture || ''} ${p.address || ''}`).includes(q);
         });
         if (lordsState.sort === 'dist') rows.sort((a, b) => a.dist - b.dist);
         else rows.sort((a, b) => (PREF_ORDER[a.f.properties.prefecture] ?? 99) - (PREF_ORDER[b.f.properties.prefecture] ?? 99)
                                  || a.f.properties.name.localeCompare(b.f.properties.name, 'ja'));
+        if (rows.length === 0) {
+            document.getElementById('lord-castle-list').innerHTML =
+                '<div class="lords-note">該当する城がありません</div>';
+            return;
+        }
         document.getElementById('lord-castle-list').innerHTML = rows.map(r => {
             const p = r.f.properties;
             const color = getItemColor({ type: 'castle', properties: p });
@@ -5229,6 +5279,9 @@ map.on('zoomend', () => { isZooming = false; });
                        <div class="pref-sum-v">${prefIndex[name][t.type].length.toLocaleString()}</div></div>`);
         document.getElementById('pref-detail-sum').innerHTML =
             `<div class="pref-sum-line">${sum.join('')}</div>`;
+        // 別の県を開いたら絞り込みの語は持ち越さない（種別・部門の選択は保つ）
+        prefState.q = '';
+        document.getElementById('pref-item-search').value = '';
         // 県を切り替えたときにシートが開いたままにならないようにする
         closePrefTypeSheet();
         updatePrefFilterBtn();
@@ -5279,8 +5332,8 @@ map.on('zoomend', () => { isZooming = false; });
             b.push(`<span class="pref-badge card">${attrEscape(p.cardId)}</span>`);
         } else if (item.type === 'shop') {
             // 部門バッジ。同じ画面のジャンル絞り込みと同じ語彙になる
-            const g = shopGenreBase(p.category);
-            if (g) b.push(`<span class="pref-badge" style="background:${OBJ_TYPE_COLOR.shop}">${attrEscape(g)}</span>`);
+            const badge = shopGenreBadgeHtml(p, 'pref-badge');
+            if (badge) b.push(badge);
         }
         return b.length ? `<div class="pref-badges">${b.join('')}</div>` : '';
     }
@@ -5293,15 +5346,22 @@ map.on('zoomend', () => { isZooming = false; });
         return 2;
     }
 
+    // 一覧の絞り込み。照合は searchIndex が持つ正規化済みの名前・住所を使う
+    // （毎入力で2,000件超を正規化し直さずに済む）
+    function onPrefSearchInput(v) { prefState.q = v; renderPrefItems(); }
+
     function renderPrefItems() {
         const name = prefState.pref;
         if (!name) return;
         const types = [...prefState.types];
         const center = getSearchCenter();
+        const q = normalizeForSearch((prefState.q || '').trim());
         let rows = [];
         for (const t of types) {
             for (const item of (prefIndex[name][t] || [])) {
                 if (!prefGenrePass(item)) continue;   // 食べログの部門で絞る（2段目）
+                if (q && !(item._normLabel || '').includes(q)
+                      && !(item._normSub || '').includes(q)) continue;
                 const c = item.coords;
                 rows.push({ item, dist: calcDist(center.lat, center.lng, c[1], c[0]) });
             }
@@ -5321,7 +5381,8 @@ map.on('zoomend', () => { isZooming = false; });
         }
         const list = document.getElementById('pref-item-list');
         if (rows.length === 0) {
-            list.innerHTML = '<div class="lords-note">表示する種別が選ばれていません</div>';
+            list.innerHTML = `<div class="lords-note">${
+                q ? '該当する項目がありません' : '表示する種別が選ばれていません'}</div>`;
             return;
         }
         // 件数の上限は設けない。最大の県（東京都2,496件）でもPC実測で
