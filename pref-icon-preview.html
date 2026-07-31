@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><title>都道府県アイコン — 絵にする案</title>
+<style>
+* { box-sizing: border-box; }
+body { margin:0; background:#eceff1; font-family: sans-serif; padding:24px; color:#333; }
+h1 { font-size:18px; margin:0 0 4px; }
+.lead { font-size:13px; color:#555; margin:0 0 18px; line-height:1.7; max-width:1100px; }
+.lead code { background:#fff; padding:1px 5px; border-radius:4px; }
+h2.sec { font-size:14px; margin:26px 0 10px; padding-bottom:5px; border-bottom:1px solid #cfd8dc; }
+
+/* 実寸: index.html の .nearby-list-btn / .nlb-ic / .nlb-n をそのまま写した */
+.real { display:flex; gap:14px; flex-wrap:wrap; }
+.real-cell { width:104px; background:#fff; border-radius:10px; padding:10px 8px 8px; text-align:center; }
+.real-cell.now { outline:2px solid #ffb300; }
+.nearby-list-btn { display:flex; flex-direction:column; align-items:center; gap:4px; width:100%;
+  background:#f8f8f8; border:0; border-radius:10px; padding:8px 6px; font-family:inherit; }
+.nlb-ic { width:34px; height:34px; border-radius:9px; background:#2a7d5f;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0; overflow:hidden; }
+.nlb-ic svg { width:100%; height:100%; display:block; }
+.nlb-n { display:block; font-size:9px; color:#555; text-align:center; }
+.cap { font-size:10.5px; color:#777; margin-top:6px; line-height:1.5; }
+
+/* 拡大 */
+.zoom { display:flex; gap:18px; flex-wrap:wrap; }
+.z-cell { width:250px; background:#fff; border-radius:10px; padding:14px; }
+.z-ic { width:96px; height:96px; border-radius:24px; background:#2a7d5f; margin:0 auto 10px;
+  display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.z-ic svg { width:100%; height:100%; display:block; }
+.z-cell h3 { font-size:13px; margin:0 0 4px; }
+.z-cell p { font-size:11.5px; color:#666; margin:0; line-height:1.65; }
+.pros { font-size:11px; color:#2e7d32; margin-top:6px; }
+.cons { font-size:11px; color:#c62828; margin-top:2px; }
+.note { font-size:12px; color:#555; background:#fff; border-left:3px solid #90a4ae;
+  padding:10px 12px; line-height:1.7; margin-top:10px; max-width:1100px; }
+</style></head>
+<body>
+
+<h1>「一覧から → 都道府県」アイコンを絵にする案</h1>
+<p class="lead">
+現状は <code>&lt;span class="nlb-ic" style="background:#2a7d5f"&gt;都&lt;/span&gt;</code>（緑地に「都」の一文字）。
+同じ行の城主ボタンは <code>castle.png</code> を <code>filter: brightness(0) invert(1)</code> で白抜きにしているので、
+<b>色ベタの角丸34px＋白一色のシルエット</b>が既存の作法。案はすべてこれに合わせた inline SVG で、画像ファイルの追加は不要。
+黄枠が現行。
+</p>
+
+<!-- ══ 共通パーツ: 日本列島 ══════════════════════════════════
+     経度127〜146度・緯度26〜45.6度を 0〜100 に正規化した位置に主要な岬を置き、
+     多角形で結んだ簡略シルエット（北海道・本州・四国・九州・沖縄本島）。
+     34pxでは細部が潰れるので、塗りと同色の stroke で1ユニット分太らせている。 -->
+<svg width="0" height="0" style="position:absolute"><defs>
+  <g id="jp-main" fill="currentColor" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round">
+    <!-- 北海道: 稚内-知床-根室-襟裳-函館-寿都-留萌 -->
+    <path d="M77.4 1 L96.3 6.5 L97.9 11.5 L85.3 18.5 L73.4 18.6 L69.5 14.5 L76.8 8 Z"/>
+    <!-- 本州: 下北-男鹿-新潟-能登-若狭-鳥取-下関-(南岸)-広島-大阪-潮岬-伊勢-御前崎-房総-仙台 -->
+    <path d="M75 21 L67.4 28.5 L63.2 38 L52.6 41 L44.7 49.5 L36.8 50 L28.9 50.5 L21.1 55.5
+             L21.1 58.6 L30 57.2 L36.8 56.5 L44.2 56.8 L46.3 61 L51.6 57 L59 55.6 L63.2 55.8
+             L70.5 53.5 L72.6 48 L73.7 36.5 Z"/>
+    <!-- 四国（本州と接して見えないよう瀬戸内海の分だけ下げている） -->
+    <path d="M28.4 61.6 L40 59.8 L38 64.6 L30.2 66.6 Z"/>
+    <!-- 九州（同じく関門海峡の分だけ下げている） -->
+    <path d="M20.5 61.5 L14.8 62.5 L13.2 67 L16.3 73.5 L20.6 74.7 L25.3 65.5 L22.1 62.1 Z"/>
+  </g>
+  <g id="jp-oki" fill="none" stroke="currentColor" stroke-linecap="round">
+    <path d="M4 94.5 L8.5 91.5" stroke-width="5"/>
+  </g>
+  <!-- 角丸の枠に触れないよう内側に寄せた通常版 -->
+  <g id="jp"><g transform="translate(4,5) scale(0.9)"><use href="#jp-main"/><use href="#jp-oki"/></g></g>
+  <!-- 併記物（虫めがね・ピン）と組む用の小さめ版 -->
+  <g id="jp-sm"><g transform="translate(0,2) scale(0.78)"><use href="#jp-main"/><use href="#jp-oki"/></g></g>
+</defs></svg>
+
+<h2 class="sec">実寸（34px・メニュー内での見え方）</h2>
+<div class="real">
+  <div class="real-cell now">
+    <button class="nearby-list-btn">
+      <span class="nlb-ic" style="color:#fff;font-size:15px;font-weight:bold;">都</span>
+      <span class="nlb-n">都道府県</span>
+    </button>
+    <div class="cap">現行</div>
+  </div>
+
+  <div class="real-cell">
+    <button class="nearby-list-btn"><span class="nlb-ic">
+      <svg viewBox="0 0 100 100" color="#fff"><use href="#jp"/></svg>
+    </span><span class="nlb-n">都道府県</span></button>
+    <div class="cap">A 列島</div>
+  </div>
+
+  <div class="real-cell">
+    <button class="nearby-list-btn"><span class="nlb-ic">
+      <svg viewBox="0 0 100 100" color="#fff"><use href="#jp"/>
+        <g transform="translate(4,5) scale(0.9)" stroke="#2a7d5f" stroke-width="4.5" stroke-linecap="round">
+          <path d="M65 30 L77 34"/><path d="M58 42 L71 50"/><path d="M43 47 L48 60"/><path d="M27 48 L31 59"/>
+        </g></svg>
+    </span><span class="nlb-n">都道府県</span></button>
+    <div class="cap">B 列島＋県境</div>
+  </div>
+
+  <div class="real-cell">
+    <button class="nearby-list-btn"><span class="nlb-ic">
+      <svg viewBox="0 0 100 100" color="#fff">
+        <use href="#jp-sm"/>
+        <circle cx="72" cy="72" r="24" fill="#2a7d5f"/>
+        <circle cx="69" cy="69" r="13" fill="none" stroke="#fff" stroke-width="8"/>
+        <path d="M79 79 L92 92" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+      </svg>
+    </span><span class="nlb-n">都道府県</span></button>
+    <div class="cap">C 列島＋虫めがね</div>
+  </div>
+
+  <div class="real-cell">
+    <button class="nearby-list-btn"><span class="nlb-ic">
+      <svg viewBox="0 0 100 100" color="#fff">
+        <use href="#jp-sm"/>
+        <path d="M74 34 c11 0 20 9 20 20 c0 14 -20 33 -20 33 c0 0 -20 -19 -20 -33 c0 -11 9 -20 20 -20 z"
+              fill="#fff" stroke="#2a7d5f" stroke-width="7"/>
+        <circle cx="74" cy="54" r="7" fill="#2a7d5f"/>
+      </svg>
+    </span><span class="nlb-n">都道府県</span></button>
+    <div class="cap">D 列島＋ピン</div>
+  </div>
+
+  <div class="real-cell">
+    <button class="nearby-list-btn"><span class="nlb-ic">
+      <svg viewBox="0 0 100 100">
+        <g fill="#fff">
+          <rect x="12" y="12" width="34" height="30" rx="4"/>
+          <rect x="52" y="12" width="36" height="18" rx="4"/>
+          <rect x="52" y="36" width="36" height="52" rx="4"/>
+          <rect x="12" y="48" width="34" height="40" rx="4"/>
+        </g></svg>
+    </span><span class="nlb-n">都道府県</span></button>
+    <div class="cap">E 区画</div>
+  </div>
+
+  <div class="real-cell">
+    <button class="nearby-list-btn"><span class="nlb-ic" style="background:#e0f0e8;">
+      <svg viewBox="0 0 100 100" color="#2a7d5f"><use href="#jp"/></svg>
+    </span><span class="nlb-n">都道府県</span></button>
+    <div class="cap">F 配色逆転</div>
+  </div>
+
+  <div class="real-cell">
+    <button class="nearby-list-btn"><span class="nlb-ic">
+      <svg viewBox="0 0 100 100" color="#fff">
+        <use href="#jp"/>
+        <g fill="#2a7d5f" transform="translate(4,5) scale(0.9)">
+          <circle cx="84" cy="10" r="4.6"/><circle cx="70" cy="31" r="4.6"/><circle cx="70" cy="49" r="4.6"/>
+          <circle cx="55" cy="50" r="4"/><circle cx="30" cy="53" r="4"/><circle cx="19" cy="67.5" r="4"/></g>
+      </svg>
+    </span><span class="nlb-n">都道府県</span></button>
+    <div class="cap">G 列島＋県庁点</div>
+  </div>
+</div>
+
+<h2 class="sec">拡大（96px）</h2>
+<div class="zoom">
+  <div class="z-cell">
+    <div class="z-ic"><svg viewBox="0 0 100 100" color="#fff"><use href="#jp"/></svg></div>
+    <h3>A 日本列島シルエット</h3>
+    <p>47都道府県の総体＝日本全国をそのまま形にした最短の表現。城主の城アイコンと同じ「白一色シルエット」で、一番くせがない。</p>
+    <div class="pros">◯ 34pxでも輪郭が読める／既存の作法どおり</div>
+    <div class="cons">△「都道府県」より「全国」の意味に寄る</div>
+  </div>
+
+  <div class="z-cell">
+    <div class="z-ic"><svg viewBox="0 0 100 100" color="#fff"><use href="#jp"/>
+      <g transform="translate(4,5) scale(0.9)" stroke="#2a7d5f" stroke-width="4.5" stroke-linecap="round">
+        <path d="M65 30 L77 34"/><path d="M58 42 L71 50"/><path d="M43 47 L48 60"/><path d="M27 48 L31 59"/>
+      </g></svg></div>
+    <h3>B 列島＋県境</h3>
+    <p>列島に背景色の切れ目を入れ、「区切られている＝都道府県」を示す。意味は最も正確。</p>
+    <div class="pros">◯ 意味が「全国」ではなく「区分」になる</div>
+    <div class="cons">△ 34pxでは切れ目が細く、ギザつきに見えやすい</div>
+  </div>
+
+  <div class="z-cell">
+    <div class="z-ic"><svg viewBox="0 0 100 100" color="#fff">
+      <use href="#jp-sm"/>
+      <circle cx="72" cy="72" r="24" fill="#2a7d5f"/>
+      <circle cx="69" cy="69" r="13" fill="none" stroke="#fff" stroke-width="8"/>
+      <path d="M79 79 L92 92" stroke="#fff" stroke-width="9" stroke-linecap="round"/></svg></div>
+    <h3>C 列島＋虫めがね</h3>
+    <p>「都道府県<b>から探す</b>」の動作まで含める案。セクション名（一覧から）と意味が重なる。</p>
+    <div class="pros">◯ 押すと何が起きるか伝わる</div>
+    <div class="cons">△ 要素が2つで34pxだと密／検索窓の虫めがねと役割が紛れる</div>
+  </div>
+
+  <div class="z-cell">
+    <div class="z-ic"><svg viewBox="0 0 100 100" color="#fff">
+      <use href="#jp-sm"/>
+      <path d="M74 34 c11 0 20 9 20 20 c0 14 -20 33 -20 33 c0 0 -20 -19 -20 -33 c0 -11 9 -20 20 -20 z"
+            fill="#fff" stroke="#2a7d5f" stroke-width="7"/>
+      <circle cx="74" cy="54" r="7" fill="#2a7d5f"/></svg></div>
+    <h3>D 列島＋ピン</h3>
+    <p>列島の上に地図ピン。「地図上の地域を選ぶ」意味。</p>
+    <div class="pros">◯ 地図アプリの語彙として通りが良い</div>
+    <div class="cons">△ ピンは地図上のマーカーと同形なので、種別ピンと誤解されうる</div>
+  </div>
+
+  <div class="z-cell">
+    <div class="z-ic"><svg viewBox="0 0 100 100"><g fill="#fff">
+      <rect x="12" y="12" width="34" height="30" rx="4"/><rect x="52" y="12" width="36" height="18" rx="4"/>
+      <rect x="52" y="36" width="36" height="52" rx="4"/><rect x="12" y="48" width="34" height="40" rx="4"/>
+    </g></svg></div>
+    <h3>E 区画（抽象）</h3>
+    <p>不揃いの区画＝行政区分の抽象化。列島の形に依存しないので小サイズでも潰れない。</p>
+    <div class="pros">◯ 34pxで最も明瞭</div>
+    <div class="cons">△ 抽象的で「都道府県」と結び付くまでに一拍かかる</div>
+  </div>
+
+  <div class="z-cell">
+    <div class="z-ic" style="background:#e0f0e8"><svg viewBox="0 0 100 100" color="#2a7d5f"><use href="#jp"/></svg></div>
+    <h3>F 配色逆転（淡背景に緑の列島）</h3>
+    <p>Aと同じ形で、地図らしく「海＝淡色・陸＝緑」にした版。</p>
+    <div class="pros">◯ 陸と海の関係が自然で、列島と読み取りやすい</div>
+    <div class="cons">△ 濃色ベタで揃っている他ボタン（城主・周辺検索の各カテゴリ）から浮く</div>
+  </div>
+
+  <div class="z-cell">
+    <div class="z-ic"><svg viewBox="0 0 100 100" color="#fff">
+      <use href="#jp"/>
+      <g fill="#2a7d5f" transform="translate(4,5) scale(0.9)">
+        <circle cx="84" cy="10" r="4.6"/><circle cx="70" cy="31" r="4.6"/><circle cx="70" cy="49" r="4.6"/>
+        <circle cx="55" cy="50" r="4"/><circle cx="30" cy="53" r="4"/><circle cx="19" cy="67.5" r="4"/></g></svg></div>
+    <h3>G 列島＋県庁点</h3>
+    <p>列島に抜き穴の点を打ち、「地域ごとの集合」を示す。Bより穴が丸い分つぶれにくい。</p>
+    <div class="pros">◯ Bの意味を保ちつつ小サイズに強い</div>
+    <div class="cons">△ 点がデータのプロットにも見える</div>
+  </div>
+</div>
+
+<div class="note">
+<b>補足（実装上の事実）</b>
+<ul style="margin:6px 0 0; padding-left:18px;">
+<li>アプリのファビコン <code>icon.svg</code> は既に「折り畳み地図」の絵なので、その形は都道府県ボタンには使わない案にしている（同じ絵が別の意味を持つのを避けるため）。</li>
+<li>いずれの案も inline SVG のみで、<code>castle.png</code> のような画像ファイル追加や <code>filter</code> 処理は不要。背景色は現行の <code>#2a7d5f</code> のまま（Fのみ淡色）。</li>
+<li>列島の形は経度127〜146度・緯度26〜45.6度を正方形に正規化した位置取りで、北海道・本州・四国・九州・沖縄の5要素に簡略化している。</li>
+</ul>
+</div>
+
+</body></html>
