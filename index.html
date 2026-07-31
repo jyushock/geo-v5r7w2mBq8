@@ -397,6 +397,8 @@
            下スワイプで閉じる判定（enableSheetSwipeClose）をブラウザのオーバースクロールに奪われないため。 */
         #obj-sheet-body { overflow-y: auto; overscroll-behavior-y: contain; touch-action: pan-y; padding: 0 14px 14px; }   /* 内容幅 = 画面幅 - 28px */
         .os-title { display: flex; align-items: center; gap: 5px; margin-bottom: 3px; min-width: 0; }
+        /* タイトルの上に独立して置くバッジ（食べログの部門）。名前の左に置くと店名が押されるため */
+        .os-badge-row { display: flex; gap: 5px; margin-bottom: 3px; }
         /* 長い名前（食べログの店名など）は2行で省略する */
         .os-name { font-size: 15px; font-weight: bold; min-width: 0; overflow: hidden;
                    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
@@ -806,8 +808,13 @@
         #pref-type-sheet.open { transform: translateY(0); }
         .pts-head { display: flex; align-items: center; padding: 12px 14px 8px;
                     font-size: 13px; font-weight: bold; color: #333; }
-        .pts-head button { margin-left: auto; border: 0; background: #f5f5f5; border-radius: 8px;
+        .pts-head button { border: 0; background: #f5f5f5; border-radius: 8px;
                            width: 28px; height: 28px; color: #555; font-size: 15px; cursor: pointer; font-family: inherit; }
+        /* 種別と部門の選択を既定（すべて選択）に戻す。絞り込んでいないときは押せない */
+        .pts-head .pts-reset { width: auto; height: 26px; padding: 0 11px; margin-left: auto;
+                               font-size: 11.5px; font-weight: bold; color: #2a5bd7; background: #e3ecff; }
+        .pts-head .pts-reset:disabled { color: #b0b0b0; background: #f2f2f2; cursor: default; }
+        .pts-head .pts-reset + button { margin-left: 6px; }
         /* 行の中は集計帯と同じ種別アイコン。ここだけ一回り小さくしたいので、
            寸法を決めている CSS 変数をこの行の中でだけ上書きする（アイコン側の指定は触らない） */
         .pts-row { display: flex; align-items: center; gap: 10px; padding: 9px 14px;
@@ -876,6 +883,17 @@
             width: 100%; height: 34px; border: 1px solid #e3e3e3; border-radius: 17px;
             padding: 0 12px; font-size: 13px; font-family: inherit; background: #fafafa; color: #333;
         }
+        /* 絞り込み欄のクリアボタン。メイン画面の #search-clear と同じ振る舞いで、
+           入力があるときだけ出す。type=search の既定ボタンは二重になるので消す。 */
+        .lords-search-wrap { position: relative; }
+        .lords-search-wrap input { padding-right: 34px; }
+        .lords-search-wrap input::-webkit-search-cancel-button { display: none; }
+        .lords-search-clear {
+            display: none; position: absolute; right: 2px; top: 0; height: 34px;
+            background: none; border: 0; font-size: 18px; color: #9E9E9E;
+            cursor: pointer; padding: 0 10px; font-family: inherit;
+        }
+        .lords-search-wrap.has-text .lords-search-clear { display: block; }
         .lords-chips { display: flex; gap: 6px; margin-top: 7px; flex-wrap: wrap; }
         .lords-chip {
             font-size: 11px; padding: 4px 10px; border-radius: 14px; background: #f2f2f2;
@@ -1461,8 +1479,11 @@
             <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
         </div>
         <div class="lords-filter">
-            <input id="lord-castle-search" type="search" autocomplete="off"
-                   placeholder="城名・都道府県で絞り込み" oninput="onLordCastleSearchInput(this.value)">
+            <div class="lords-search-wrap">
+                <input id="lord-castle-search" type="search" autocomplete="off"
+                       placeholder="城名・都道府県で絞り込み" oninput="onLordCastleSearchInput(this.value)">
+                <button class="lords-search-clear" onclick="clearLordCastleSearch()" title="クリア">×</button>
+            </div>
             <div class="lords-chips">
                 <button class="lords-chip" aria-pressed="true"  onclick="setLordCastleSort('dist')">近い順</button>
                 <button class="lords-chip" aria-pressed="false" onclick="setLordCastleSort('pref')">都道府県順</button>
@@ -1501,8 +1522,11 @@
         </div>
         <!-- 絞り込みは最上段。集計帯（その県に何があるか）とソートはその下 -->
         <div class="lords-filter" style="border-bottom:0; padding-bottom:6px;">
-            <input id="pref-item-search" type="search" autocomplete="off"
-                   placeholder="名前・住所で絞り込み" oninput="onPrefSearchInput(this.value)">
+            <div class="lords-search-wrap">
+                <input id="pref-item-search" type="search" autocomplete="off"
+                       placeholder="名前・住所で絞り込み" oninput="onPrefSearchInput(this.value)">
+                <button class="lords-search-clear" onclick="clearPrefSearch()" title="クリア">×</button>
+            </div>
         </div>
         <div class="pref-sum" id="pref-detail-sum"></div>
         <div class="lords-filter">
@@ -1517,6 +1541,7 @@
         <div id="pref-type-mask" onclick="closePrefTypeSheet()"></div>
         <div id="pref-type-sheet">
             <div class="pts-head">種別で絞り込む
+                <button class="pts-reset" id="pref-filter-reset" onclick="resetPrefFilter()">リセット</button>
                 <button onclick="closePrefTypeSheet()" title="閉じる">×</button>
             </div>
             <div id="pref-type-rows"></div>
@@ -2916,7 +2941,9 @@ function buildSheetHtml(type, label, p, lng, lat) {
     ]);
     const isPokefuta = type === 'pokefuta' || (type === 'manhole' && p.source === 'pokefuta');
     // pick は配布場所が複数のカードで行Bの下に出す候補リスト（他の種別では空）
-    let badges = '', title = '', photo = '', lines = '', rowA = '', rowB = '', pick = '';
+    // badgeAbove はタイトルの上に独立した行で出すバッジ（食べログの部門）。
+    // 城やカードのように名前の左に置くと、店名が長い食べログでは名前が押し出されるため
+    let badges = '', badgeAbove = '', title = '', photo = '', lines = '', rowA = '', rowB = '', pick = '';
 
     if (isPokefuta) {
         title = p.pokemon || label;
@@ -3037,7 +3064,8 @@ function buildSheetHtml(type, label, p, lng, lat) {
         // ジャンル=店自身のジャンル（つけ麺）、100名店=賞の部門（ラーメン（東京））で別物。
         const sp = shopParts(p);
         title = sp.shop || label;
-        badges = shopGenreBadgeHtml(p, 'os-genrebadge');
+        const genreBadge = shopGenreBadgeHtml(p, 'os-genrebadge');
+        badgeAbove = genreBadge ? `<div class="os-badge-row">${genreBadge}</div>` : '';
         lines = osKv('ジャンル', sp.genre)
               + osKv('100名店', p.category)
               + osKv('最寄り', sp.station)
@@ -3052,7 +3080,7 @@ function buildSheetHtml(type, label, p, lng, lat) {
     }
 
     const media = photo ? `<div class="os-row">${photo}<div class="os-meta">${lines}</div></div>` : lines;
-    return `<div class="os-title">${badges}<span class="os-name">${title}</span></div>${media}${rowA}${rowB}${pick}${rowC}`;
+    return `${badgeAbove}<div class="os-title">${badges}<span class="os-name">${title}</span></div>${media}${rowA}${rowB}${pick}${rowC}`;
 }
 
 // 城シートに写真を非同期で挿入する
@@ -4930,6 +4958,7 @@ map.on('zoomend', () => { isZooming = false; });
         // 別の城主を開いたら絞り込みは持ち越さない（前の語のまま0件になるのを防ぐ）
         lordsState.castleQ = '';
         document.getElementById('lord-castle-search').value = '';
+        setSearchClearVisible('lord-castle-search', '');
         const vEl = document.getElementById('lord-detail-variants');
         vEl.textContent = l.v.length ? '表記: ' + l.v.join(' / ') : '';
         vEl.style.display = l.v.length ? '' : 'none';
@@ -4945,8 +4974,24 @@ map.on('zoomend', () => { isZooming = false; });
         renderLordCastles();
     }
 
+    // 入力があるときだけクリアボタンを出す（メイン画面の #search-clear と同じ振る舞い）
+    function setSearchClearVisible(inputId, v) {
+        const el = document.getElementById(inputId);
+        if (el && el.parentElement) el.parentElement.classList.toggle('has-text', !!v);
+    }
+
     // 城一覧の絞り込み。城主一覧の検索と同じく normalizeForSearch で照合する
-    function onLordCastleSearchInput(v) { lordsState.castleQ = v; renderLordCastles(); }
+    function onLordCastleSearchInput(v) {
+        lordsState.castleQ = v;
+        setSearchClearVisible('lord-castle-search', v);
+        renderLordCastles();
+    }
+    function clearLordCastleSearch() {
+        const el = document.getElementById('lord-castle-search');
+        el.value = '';
+        onLordCastleSearchInput('');
+        el.focus();
+    }
 
     function renderLordCastles() {
         const l = lordsState.lord;
@@ -5173,8 +5218,18 @@ map.on('zoomend', () => { isZooming = false; });
        全解除の制限は設けない。全部外せば一覧は空になる。 */
     function openPrefTypeSheet() {
         renderPrefTypeSheet();
+        updatePrefFilterBtn();   // リセットボタンの有効・無効もここで決まる
         document.getElementById('pref-type-mask').classList.add('open');
         document.getElementById('pref-type-sheet').classList.add('open');
+    }
+    /* 種別と部門の選択を既定（どちらもすべて選択）に戻す。
+       絞り込み欄の語は別の操作なので消さない。 */
+    function resetPrefFilter() {
+        prefState.types = new Set(prefVisibleTypes());
+        prefState.genres = new Set(prefShopGenreAll);
+        renderPrefTypeSheet();
+        updatePrefFilterBtn();
+        renderPrefItems();
     }
     function closePrefTypeSheet() {
         document.getElementById('pref-type-mask').classList.remove('open');
@@ -5222,7 +5277,10 @@ map.on('zoomend', () => { isZooming = false; });
         if (!btn || !prefState.types || !prefState.genres) return;
         const typeAll = prefVisibleTypes().every(t => prefState.types.has(t));
         const genreAll = prefShopGenreAll.every(g => prefState.genres.has(g));
-        btn.classList.toggle('on', !(typeAll && genreAll));
+        const filtered = !(typeAll && genreAll);
+        btn.classList.toggle('on', filtered);
+        const reset = document.getElementById('pref-filter-reset');
+        if (reset) reset.disabled = !filtered;
     }
     function togglePrefGenreOpen() {
         prefState.genreOpen = !prefState.genreOpen;
@@ -5282,6 +5340,7 @@ map.on('zoomend', () => { isZooming = false; });
         // 別の県を開いたら絞り込みの語は持ち越さない（種別・部門の選択は保つ）
         prefState.q = '';
         document.getElementById('pref-item-search').value = '';
+        setSearchClearVisible('pref-item-search', '');
         // 県を切り替えたときにシートが開いたままにならないようにする
         closePrefTypeSheet();
         updatePrefFilterBtn();
@@ -5348,7 +5407,17 @@ map.on('zoomend', () => { isZooming = false; });
 
     // 一覧の絞り込み。照合は searchIndex が持つ正規化済みの名前・住所を使う
     // （毎入力で2,000件超を正規化し直さずに済む）
-    function onPrefSearchInput(v) { prefState.q = v; renderPrefItems(); }
+    function onPrefSearchInput(v) {
+        prefState.q = v;
+        setSearchClearVisible('pref-item-search', v);
+        renderPrefItems();
+    }
+    function clearPrefSearch() {
+        const el = document.getElementById('pref-item-search');
+        el.value = '';
+        onPrefSearchInput('');
+        el.focus();
+    }
 
     function renderPrefItems() {
         const name = prefState.pref;
