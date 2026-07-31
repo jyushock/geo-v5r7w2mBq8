@@ -870,6 +870,35 @@
         }
         .lords-chip[aria-pressed="true"] { background: #e3ecff; color: #2a5bd7; font-weight: bold; }
         .lords-scroll { overflow-y: auto; overscroll-behavior-y: contain; touch-action: pan-y; flex: 1; min-height: 0; }
+
+        /* ══ 件数の多い一覧のスクロールバー ═══════════════════════════════
+           指でつまんで動かせるように太くする。対象は行数が数百〜1万件規模になり得る
+           一覧（城主・都道府県・県ページ・周辺検索・検索結果・種別シート）。
+           情報シート本体やメニューのカテゴリ面は行数が知れているので触らない。
+           つまみに最低の高さを与えているのは、1万件を超える城主一覧だと
+           高さ比だけでは数pxになって掴めなくなるため。
+           iOS Safari / Chrome とも ::-webkit-scrollbar を指定すると重ね表示をやめて
+           常時表示の細帯になる。Firefox は scrollbar-width で太くはできないので
+           既定（auto）のまま。 */
+        .lords-scroll::-webkit-scrollbar,
+        #nearby-list::-webkit-scrollbar,
+        #search-results-inner::-webkit-scrollbar,
+        #pref-type-rows::-webkit-scrollbar { width: 13px; }
+        .lords-scroll::-webkit-scrollbar-track,
+        #nearby-list::-webkit-scrollbar-track,
+        #search-results-inner::-webkit-scrollbar-track,
+        #pref-type-rows::-webkit-scrollbar-track { background: transparent; }
+        .lords-scroll::-webkit-scrollbar-thumb,
+        #nearby-list::-webkit-scrollbar-thumb,
+        #search-results-inner::-webkit-scrollbar-thumb,
+        #pref-type-rows::-webkit-scrollbar-thumb {
+            background: #b7c3cf; border-radius: 7px; min-height: 44px;
+            border: 3px solid transparent; background-clip: padding-box;
+        }
+        .lords-scroll::-webkit-scrollbar-thumb:active,
+        #nearby-list::-webkit-scrollbar-thumb:active,
+        #search-results-inner::-webkit-scrollbar-thumb:active,
+        #pref-type-rows::-webkit-scrollbar-thumb:active { background: #8fa1b3; }
         .lord-row { display: flex; align-items: center; gap: 9px; padding: 10px 13px; border-bottom: 1px solid #f0f0f0; cursor: pointer; }
         .lord-row:active { background: #f7f9ff; }
         .lord-main { flex: 1; min-width: 0; }
@@ -5294,7 +5323,11 @@ map.on('zoomend', () => { isZooming = false; });
             list.innerHTML = '<div class="lords-note">表示する種別が選ばれていません</div>';
             return;
         }
-        list.innerHTML = rows.slice(0, PREF_ITEM_LIMIT).map((r, i) => {
+        // 件数の上限は設けない。最大の県（東京都2,496件）でもPC実測で
+        // HTML生成5.8ms・DOM反映34.2ms・ノード22,307・ヒープ+2.9MB に収まる一方、
+        // 300件で打ち切ると47県中46県で内容が欠け、うち35県は城だけで枠を使い切って
+        // 道の駅以降が1件も出なかったため（2026-08-01 実データで確認）
+        list.innerHTML = rows.map((r, i) => {
             const item = r.item;
             const distStr = r.dist < 1 ? `${Math.round(r.dist * 1000)}m` : `${r.dist.toFixed(1)}km`;
             return `<div class="nearby-item" onclick="prefJumpToItem(${i})">
@@ -5307,14 +5340,11 @@ map.on('zoomend', () => { isZooming = false; });
                 <div class="nearby-item-dist">${distStr}</div>
             </div>`;
         }).join('');
-        prefState.rows = rows.slice(0, PREF_ITEM_LIMIT);
+        prefState.rows = rows;
         list.scrollTop = 0;
-        if (rows.length > PREF_ITEM_LIMIT) {
-            list.insertAdjacentHTML('beforeend',
-                `<div class="lords-note">上位${PREF_ITEM_LIMIT.toLocaleString()}件を表示（全${rows.length.toLocaleString()}件）</div>`);
-        }
+        list.insertAdjacentHTML('beforeend',
+            `<div class="lords-note">全${rows.length.toLocaleString()}件</div>`);
     }
-    const PREF_ITEM_LIMIT = 300;   // 一度に描く上限。食べログだけで2,000件を超える県があるため
 
     /* 一覧からオブジェクトへ飛ぶ。検索結果タップ（onResultClick）と同じ扱いにして、
        寄せ方・情報シート・履歴の記録を揃える。 */
