@@ -5363,7 +5363,8 @@ map.on('zoomend', () => { isZooming = false; });
     }
 
     /* 行に出すバッジ。情報シートで出しているものと同じ内容にする。
-       城は 100名城/続100名城 と形態、カード配布はカードIDと弾、蓋はカードID。 */
+       城は 100名城/続100名城 と形態、カード配布はカードIDと弾、蓋はカードID、
+       食べログは部門。県ページの一覧と周辺検索結果（renderNearbyList）の両方で使う。 */
     function prefBadgesHtml(item) {
         const p = item.properties || {};
         const b = [];
@@ -5665,7 +5666,8 @@ map.on('zoomend', () => { isZooming = false; });
             const iconPart = isMhcard
                 ? `<div style="position:relative;width:var(--mhcard-w);height:var(--mhcard-h);flex-shrink:0;background:#e2ddd4;border-radius:6px;"><img src="mhcard.png" style="width:100%;height:100%;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:var(--mhcard-badge);height:var(--mhcard-badge);filter:brightness(0) invert(1);pointer-events:none;"></div>`
                 : `<div class="nearby-item-icon" style="background:${getItemColor(item)}">${cfg.img ? `<img src="${cfg.img}"${cfg.img === 'manhole.png' ? '' : ' class="icon-full"'}>` : cfg.icon}</div>`;
-            div.innerHTML = `${iconPart}<div class="nearby-item-text"><div class="nearby-item-name">${item.label}</div><div class="nearby-item-sub">${item.sub}</div></div><div class="nearby-item-dist">${distStr}</div>`;
+            // バッジは県ページの一覧と同じ内容（城の名城・形態、カードのID・弾、食べログの部門）
+            div.innerHTML = `${iconPart}<div class="nearby-item-text"><div class="nearby-item-name">${item.label}</div><div class="nearby-item-sub">${item.sub}</div></div>${prefBadgesHtml(item)}<div class="nearby-item-dist">${distStr}</div>`;
             div.addEventListener('click', () => { closeNearbyResult(); onResultClick(item); });
             list.appendChild(div);
         });
