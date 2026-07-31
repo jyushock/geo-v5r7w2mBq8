@@ -814,12 +814,17 @@
                               padding: 3px 10px; font-size: 11px; color: #2a5bd7; font-weight: bold;
                               cursor: pointer; font-family: inherit; flex-shrink: 0; }
         /* 地方の見出し。スクロールしても頭に残す */
+        /* 地方見出し。件数は行の内訳と同じ位置（左から13＋56＋9＝78px）に置きたいので、
+           space-between をやめて地方名を県名と同じ56pxの欄にし、行と同じ9pxのgapを取る。
+           地方名は11pxなので最長の「九州・沖縄」でも49.5pxで、8地方すべて56pxに収まる
+           （min-width にしてあるので、将来長い名前が来ても切れずに右へずれるだけ）。 */
         .reg-head {
             position: sticky; top: 0; background: #f7f9fa; padding: 6px 13px;
             font-size: 11px; font-weight: bold; color: #546E7A;
-            border-bottom: 1px solid #eceff1; display: flex; justify-content: space-between;
+            border-bottom: 1px solid #eceff1; display: flex; gap: 9px;
             z-index: 2;
         }
+        .reg-head .reg-name { flex: 0 0 auto; min-width: 56px; }
         .reg-head .reg-num { color: #90a4ae; font-weight: normal; }
         /* 県の行。県名のアイコンは置かない（県名を示す有効な絵が無く、頭文字だけではノイズになるため） */
         .pref-row { display: flex; align-items: center; gap: 9px; padding: 11px 13px;
@@ -5373,7 +5378,7 @@ map.on('zoomend', () => { isZooming = false; });
         for (const [region, members] of PREF_REGIONS) {
             const shown = members;
             const total = shown.reduce((s, n) => s + prefCount(n, types), 0);
-            out.push(`<div class="reg-head"><span>${region}</span>
+            out.push(`<div class="reg-head"><span class="reg-name">${region}</span>
                       <span class="reg-num">${total.toLocaleString()}件 / ${shown.length}県</span></div>`);
             for (const n of shown) {
                 const g = prefIndex[n] || {};
