@@ -821,10 +821,23 @@
             z-index: 2;
         }
         .reg-head .reg-num { color: #90a4ae; font-weight: normal; }
-        /* 県の行。アイコンは置かない（県名を示す有効な絵が無く、頭文字だけではノイズになるため） */
+        /* 県の行。県名のアイコンは置かない（県名を示す有効な絵が無く、頭文字だけではノイズになるため） */
         .pref-row { display: flex; align-items: center; gap: 9px; padding: 11px 13px;
                     border-bottom: 1px solid #f0f0f0; cursor: pointer; }
         .pref-row:active { background: #f7f9ff; }
+        /* 県の行に出す種別ごとの件数。アイコンは県ページの集計帯と同じ prefTypeIconHtml を使い、
+           寸法だけ CSS 変数の上書きで小さくする（マークアップは共通のまま）。
+           数字の欄は種別ごとに固定幅なので、アイコンが全行で同じ位置に来る。
+           iPhone SE3（375px）で6種別すべて出しても県名は切れない。 */
+        .pref-cnt-line {
+            display: flex; align-items: center; gap: 5px; flex-shrink: 0; font-size: 11px;
+            --obj-icon-circle: 15px; --obj-icon-inner: 13.4px; --obj-icon-inner-full: 15px;
+            --mhcard-w: 14px; --mhcard-h: 18px; --mhcard-badge: 11.2px; --mhcard-radius: 3px;
+        }
+        .pref-cnt-cell { display: flex; align-items: center; gap: 1px; }
+        .pref-cnt-n { display: inline-block; color: #546E7A; font-weight: bold;
+                      font-variant-numeric: tabular-nums; }
+        .pref-cnt-n.zero { color: #cfd8dc; }
         /* 県詳細の集計帯。種別ごとにオブジェクトのアイコンと件数を並べる */
         .pref-sum { padding: 9px 13px; background: #f7f9fa; border-bottom: 1px solid #f0f0f0;
                     flex-shrink: 0; touch-action: none; }
@@ -5332,9 +5345,24 @@ map.on('zoomend', () => { isZooming = false; });
 
     /* 一覧の件数は種別の選択に関わらず「地図で表示中の種別の合計」。
        種別の絞り込みは県ページ側に移したので、ここで選択中の種別だけを数えると、
-       47県の合計がどこにも出なくなる。 */
+       47県の合計がどこにも出なくなる。
+
+       行には合計ではなく種別ごとの内訳を出す。合計は地方見出しと県ページ側に残るので
+       情報は失われない。数字の欄はその種別の47都道府県での最大件数の文字数で固定し、
+       アイコンが全行で同じ位置に来るようにする（県どうしを縦に見比べられる）。
+       幅を ch で取るのは、フォントが変わっても桁数どおりの幅になるため。 */
+    function prefCntWidths(types) {
+        const w = {};
+        for (const t of types) {
+            w[t] = Math.max(1, ...PREF_NAMES.map(
+                n => ((prefIndex[n] || {})[t] || []).length.toLocaleString().length));
+        }
+        return w;
+    }
+
     function renderPrefList() {
         const types = prefVisibleTypes();
+        const w = prefCntWidths(types);
         const out = [];
         for (const [region, members] of PREF_REGIONS) {
             const shown = members;
@@ -5342,9 +5370,16 @@ map.on('zoomend', () => { isZooming = false; });
             out.push(`<div class="reg-head"><span>${region}</span>
                       <span class="reg-num">${total.toLocaleString()}件 / ${shown.length}県</span></div>`);
             for (const n of shown) {
+                const g = prefIndex[n] || {};
+                const cnt = types.map(t => {
+                    const v = (g[t] || []).length;
+                    return `<span class="pref-cnt-cell">${prefTypeIconHtml(t)}<span
+                        class="pref-cnt-n${v ? '' : ' zero'}" style="width:${w[t]}ch"
+                        >${v.toLocaleString()}</span></span>`;
+                }).join('');
                 out.push(`<div class="pref-row" onclick="openPrefDetail('${n}')">
                     <div class="lord-main"><div class="lord-name">${n}</div></div>
-                    <div class="lord-num">${prefCount(n, types).toLocaleString()}</div>
+                    <div class="pref-cnt-line">${cnt}</div>
                     <div class="lord-chev">›</div>
                 </div>`);
             }
@@ -5384,7 +5419,9 @@ map.on('zoomend', () => { isZooming = false; });
        出すときは props を省いて種別の基本色にする。 */
     function prefTypeIconHtml(type, props) {
         if (type === 'mhcard') {
-            return `<div style="position:relative;width:var(--mhcard-w);height:var(--mhcard-h);flex-shrink:0;background:#e2ddd4;border-radius:6px;"><img src="mhcard.png" style="width:100%;height:100%;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:var(--mhcard-badge);height:var(--mhcard-badge);filter:brightness(0) invert(1);pointer-events:none;"></div>`;
+            // 角丸は --mhcard-radius で上書きできる。カード画像の四隅が透明なので、
+            // 小さく出す場所（都道府県一覧の内訳）で 6px のままだと丸くなりすぎる
+            return `<div style="position:relative;width:var(--mhcard-w);height:var(--mhcard-h);flex-shrink:0;background:#e2ddd4;border-radius:var(--mhcard-radius,6px);"><img src="mhcard.png" style="width:100%;height:100%;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:var(--mhcard-badge);height:var(--mhcard-badge);filter:brightness(0) invert(1);pointer-events:none;"></div>`;
         }
         const cfg = typeConfig[type] || {};
         const color = props ? objRingColor(type, props) : (OBJ_TYPE_COLOR[type] || cfg.color || '#546E7A');

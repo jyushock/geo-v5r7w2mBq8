@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<title>案6: 都道府県一覧に種別ごとの件数 — iPhone SE3 実機相当の実測モック</title>
+<style>
+* { box-sizing: border-box; }
+body { margin:0; background:#eceff1; font-family:sans-serif; color:#222; padding:24px; }
+h1 { font-size:19px; margin:0 0 8px; }
+.lead { font-size:13px; color:#455a64; line-height:1.9; max-width:1100px; margin:0 0 16px;
+        background:#fff; border-left:4px solid #2e7d32; padding:12px 16px; border-radius:0 8px 8px 0; }
+.lead code { background:#f3f6f8; padding:1px 5px; border-radius:4px; }
+.lead b { color:#b26a00; }
+.base { display:flex; gap:8px; flex-wrap:wrap; margin:0 0 24px; }
+.base div { background:#fff; border:1px solid #dde3e7; border-radius:8px; padding:7px 11px;
+            font-size:11.5px; color:#455a64; line-height:1.5; }
+.base b { color:#1565C0; font-size:13px; }
+section { background:#fff; border-radius:10px; padding:16px 18px; margin:0 0 18px;
+           border:1px solid #dde3e7; }
+section.rec { border-color:#2e7d32; box-shadow:0 0 0 2px rgba(46,125,50,.12); }
+section h2 { font-size:15px; margin:0 0 4px; }
+section h2 .tag { font-size:10px; color:#fff; background:#2e7d32; border-radius:4px;
+                  padding:2px 7px; vertical-align:2px; margin-left:6px; }
+section p { font-size:12px; color:#666; margin:0 0 12px; line-height:1.7; }
+section p code, .m code { background:#f3f6f8; padding:1px 5px; border-radius:4px; }
+.pair { display:flex; gap:22px; flex-wrap:wrap; }
+figure { margin:0; width:375px; }
+figcaption { font-size:11px; color:#78909c; margin:0 0 6px; line-height:1.5; min-height:32px; }
+figure img { display:block; width:375px; height:667px; border-radius:10px;
+             box-shadow:0 3px 12px rgba(0,0,0,.16); background:#fff; }
+.m { margin-top:8px; font-size:11px; color:#455a64; line-height:1.6; }
+.mrow { display:flex; gap:6px; align-items:baseline; padding:2px 0;
+        border-bottom:1px dotted #e3e8eb; }
+.mrow span:first-child { flex:1; color:#78909c; }
+.mrow b { font-variant-numeric:tabular-nums; }
+.mrow .k { color:#b0bec5; font-size:10px; }
+.ok { color:#2e7d32; } .no { color:#c62828; }
+</style></head><body>
+
+<h1>案6: 都道府県一覧に種別ごとの件数を出す — iPhone SE3 実機相当の実測モック</h1>
+
+<p class="lead">
+<b>並んでいる画像は、実機と同じ条件で描いた実物のスクリーンショットです（再レイアウトされません）。</b>
+エンジンは <b>WebKit</b>（iOS Safari と同じ系統）、端末は <b>iPhone SE3（375×667 CSS px / DPR2）</b>、
+画像は 750×1334 を 375px 幅で貼っています。
+モックのCSSは <code>#nearby-panel</code> / <code>#nearby-pref-view</code> / <code>.lords-*</code> /
+<code>.pref-row</code> / <code>.reg-head</code> / <code>.lord-*</code> を <code>index.html</code> から
+値を変えずに写したもので、パネルの高さも <code>calc(100svh - 104px)</code> のまま計算させています。<br>
+数値は「詰めなければ何px要るか」ではなく、<b>375pxの中で実際に何が起きたか</b>（県名が省略記号で切れた行数・
+横にはみ出した行数・件数欄が実際に占めた幅）を測ったものです。<br>
+<b>残る不確かさは1つだけです。</b>フォントは実機が iOS の <code>sans-serif</code>、この計測は Windows の
+<code>sans-serif</code> に解決されるため、数字の字送りがわずかに違い得ます
+（漢字は全角＝1em で同じ、数字は Arial と Helvetica が同じ字送りなので差は小さいはずですが、実機での確認はしていません）。
+</p>
+
+<div class="base">
+  <div>実アプリを同条件で測った基準値<br><b>行41px / 10行 / スクロール内362px</b></div>
+  <div>このモックの「現状」<br><b>行41px / 10行 / スクロール内362px</b>（一致）</div>
+  <div>データ<br><b>34,934件</b>（6ファイルを実集計）</div>
+  <div>既定の表示種別<br><b>5種別</b>（カード配布は既定OFF）</div>
+</div>
+
+
+    <section class="case " id="c-now">
+      <h2>現状（合計だけ）</h2>
+      <p>比較の基準。この行が実機と同じ 41px・10行で描かれることを確認してから、他の案を測っている。</p>
+      <div class="pair">
+        <figure>
+          <figcaption>既定の5種別（マンホールカード配布は <code>filterState.mhcard: false</code> で既定OFF）</figcaption>
+          <img src="shots/now-t5.png" width="375" height="667" alt="">
+          
+      <div class="m">
+        <div class="mrow"><span>件数欄が実際に占めた幅</span><b>30px</b>
+             <span class="k">（スクロール内の幅 362px＝375−スクロールバー13）</span></div>
+        <div class="mrow"><span>県名に残った幅（最小）</span><b>283px</b>
+             <span class="k">4文字の県名に要る約54pxとの差 229px</span></div>
+        <div class="mrow"><span>県名が省略記号で切れた行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>横にはみ出した行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>行の高さ / 1画面に見える県</span><b>41px / 10行</b></div>
+      </div>
+        </figure>
+        <figure>
+          <figcaption>6種別すべて表示（設定でカード配布をONにした状態）</figcaption>
+          <img src="shots/now-t6.png" width="375" height="667" alt="">
+          
+      <div class="m">
+        <div class="mrow"><span>件数欄が実際に占めた幅</span><b>30px</b>
+             <span class="k">（スクロール内の幅 362px＝375−スクロールバー13）</span></div>
+        <div class="mrow"><span>県名に残った幅（最小）</span><b>283px</b>
+             <span class="k">4文字の県名に要る約54pxとの差 229px</span></div>
+        <div class="mrow"><span>県名が省略記号で切れた行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>横にはみ出した行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>行の高さ / 1画面に見える県</span><b>41px / 10行</b></div>
+      </div>
+        </figure>
+      </div>
+    </section>
+    <section class="case " id="c-a">
+      <h2>案6-a: カード配布を青い丸のまま</h2>
+      <p>前回のモックと同じ形。カード配布・マンホール・ポケふたが同じ丸なので、色でしか区別できない。</p>
+      <div class="pair">
+        <figure>
+          <figcaption>既定の5種別（マンホールカード配布は <code>filterState.mhcard: false</code> で既定OFF）</figcaption>
+          <img src="shots/a-t5.png" width="375" height="667" alt="">
+          
+      <div class="m">
+        <div class="mrow"><span>件数欄が実際に占めた幅</span><b>158.3px</b>
+             <span class="k">（スクロール内の幅 362px＝375−スクロールバー13）</span></div>
+        <div class="mrow"><span>県名に残った幅（最小）</span><b>154.7px</b>
+             <span class="k">4文字の県名に要る約54pxとの差 101px</span></div>
+        <div class="mrow"><span>県名が省略記号で切れた行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>横にはみ出した行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>行の高さ / 1画面に見える県</span><b>41px / 10行</b></div>
+      </div>
+        </figure>
+        <figure>
+          <figcaption>6種別すべて表示（設定でカード配布をONにした状態）</figcaption>
+          <img src="shots/a-t6.png" width="375" height="667" alt="">
+          
+      <div class="m">
+        <div class="mrow"><span>件数欄が実際に占めた幅</span><b>190.2px</b>
+             <span class="k">（スクロール内の幅 362px＝375−スクロールバー13）</span></div>
+        <div class="mrow"><span>県名に残った幅（最小）</span><b>122.8px</b>
+             <span class="k">4文字の県名に要る約54pxとの差 69px</span></div>
+        <div class="mrow"><span>県名が省略記号で切れた行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>横にはみ出した行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>行の高さ / 1画面に見える県</span><b>41px / 10行</b></div>
+      </div>
+        </figure>
+      </div>
+    </section>
+    <section class="case " id="c-b">
+      <h2>案6-b: カード配布を本体と同じカード画像に</h2>
+      <p>本体の <code>prefTypeIconHtml</code> と同じ「カード＋マンホールのバッジ」に差し替えた。丸と角丸の縦長で形が違うため色に頼らず区別できる。数字の桁数が県ごとに違うので、アイコンの位置が行ごとに横へずれる。</p>
+      <div class="pair">
+        <figure>
+          <figcaption>既定の5種別（マンホールカード配布は <code>filterState.mhcard: false</code> で既定OFF）</figcaption>
+          <img src="shots/b-t5.png" width="375" height="667" alt="">
+          
+      <div class="m">
+        <div class="mrow"><span>件数欄が実際に占めた幅</span><b>158.3px</b>
+             <span class="k">（スクロール内の幅 362px＝375−スクロールバー13）</span></div>
+        <div class="mrow"><span>県名に残った幅（最小）</span><b>154.7px</b>
+             <span class="k">4文字の県名に要る約54pxとの差 101px</span></div>
+        <div class="mrow"><span>県名が省略記号で切れた行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>横にはみ出した行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>行の高さ / 1画面に見える県</span><b>41px / 10行</b></div>
+      </div>
+        </figure>
+        <figure>
+          <figcaption>6種別すべて表示（設定でカード配布をONにした状態）</figcaption>
+          <img src="shots/b-t6.png" width="375" height="667" alt="">
+          
+      <div class="m">
+        <div class="mrow"><span>件数欄が実際に占めた幅</span><b>189.2px</b>
+             <span class="k">（スクロール内の幅 362px＝375−スクロールバー13）</span></div>
+        <div class="mrow"><span>県名に残った幅（最小）</span><b>123.8px</b>
+             <span class="k">4文字の県名に要る約54pxとの差 70px</span></div>
+        <div class="mrow"><span>県名が省略記号で切れた行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>横にはみ出した行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>行の高さ / 1画面に見える県</span><b>41px / 10行</b></div>
+      </div>
+        </figure>
+      </div>
+    </section>
+    <section class="case rec" id="c-c">
+      <h2>案6-c: bに加えて数字を固定幅にして縦を揃える <span class="tag">推し</span></h2>
+      <p>各種別の数字を「その種別の県内最大件数が入る幅」に固定した（城28 / 道の駅18 / カード18 / 蓋13 / ポケ13 / 食28 px）。アイコンが全行で同じ位置に来るので、縦に目で追って県どうしを比べられる。</p>
+      <div class="pair">
+        <figure>
+          <figcaption>既定の5種別（マンホールカード配布は <code>filterState.mhcard: false</code> で既定OFF）</figcaption>
+          <img src="shots/c-t5.png" width="375" height="667" alt="">
+          
+      <div class="m">
+        <div class="mrow"><span>件数欄が実際に占めた幅</span><b>186px</b>
+             <span class="k">（スクロール内の幅 362px＝375−スクロールバー13）</span></div>
+        <div class="mrow"><span>県名に残った幅（最小）</span><b>127px</b>
+             <span class="k">4文字の県名に要る約54pxとの差 73px</span></div>
+        <div class="mrow"><span>県名が省略記号で切れた行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>横にはみ出した行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>行の高さ / 1画面に見える県</span><b>41px / 10行</b></div>
+      </div>
+        </figure>
+        <figure>
+          <figcaption>6種別すべて表示（設定でカード配布をONにした状態）</figcaption>
+          <img src="shots/c-t6.png" width="375" height="667" alt="">
+          
+      <div class="m">
+        <div class="mrow"><span>件数欄が実際に占めた幅</span><b>221px</b>
+             <span class="k">（スクロール内の幅 362px＝375−スクロールバー13）</span></div>
+        <div class="mrow"><span>県名に残った幅（最小）</span><b>92px</b>
+             <span class="k">4文字の県名に要る約54pxとの差 38px</span></div>
+        <div class="mrow"><span>県名が省略記号で切れた行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>横にはみ出した行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>行の高さ / 1画面に見える県</span><b>41px / 10行</b></div>
+      </div>
+        </figure>
+      </div>
+    </section>
+    <section class="case " id="c-d">
+      <h2>案6-d: cを一回り大きく（アイコン15px・数字11px）</h2>
+      <p>合計を落として空いた分を読みやすさに回した版。</p>
+      <div class="pair">
+        <figure>
+          <figcaption>既定の5種別（マンホールカード配布は <code>filterState.mhcard: false</code> で既定OFF）</figcaption>
+          <img src="shots/d-t5.png" width="375" height="667" alt="">
+          
+      <div class="m">
+        <div class="mrow"><span>件数欄が実際に占めた幅</span><b>200px</b>
+             <span class="k">（スクロール内の幅 362px＝375−スクロールバー13）</span></div>
+        <div class="mrow"><span>県名に残った幅（最小）</span><b>113px</b>
+             <span class="k">4文字の県名に要る約54pxとの差 59px</span></div>
+        <div class="mrow"><span>県名が省略記号で切れた行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>横にはみ出した行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>行の高さ / 1画面に見える県</span><b>41px / 10行</b></div>
+      </div>
+        </figure>
+        <figure>
+          <figcaption>6種別すべて表示（設定でカード配布をONにした状態）</figcaption>
+          <img src="shots/d-t6.png" width="375" height="667" alt="">
+          
+      <div class="m">
+        <div class="mrow"><span>件数欄が実際に占めた幅</span><b>238px</b>
+             <span class="k">（スクロール内の幅 362px＝375−スクロールバー13）</span></div>
+        <div class="mrow"><span>県名に残った幅（最小）</span><b>75px</b>
+             <span class="k">4文字の県名に要る約54pxとの差 21px</span></div>
+        <div class="mrow"><span>県名が省略記号で切れた行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>横にはみ出した行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>行の高さ / 1画面に見える県</span><b>41px / 10行</b></div>
+      </div>
+        </figure>
+      </div>
+    </section>
+    <section class="case " id="c-e">
+      <h2>案6-e: cの0件を「·」にする</h2>
+      <p>0件は282セル中5つだけ（ポケふた不在の群馬・山梨・広島・熊本・大分）。この画面では群馬県で見える。</p>
+      <div class="pair">
+        <figure>
+          <figcaption>既定の5種別（マンホールカード配布は <code>filterState.mhcard: false</code> で既定OFF）</figcaption>
+          <img src="shots/e-t5.png" width="375" height="667" alt="">
+          
+      <div class="m">
+        <div class="mrow"><span>件数欄が実際に占めた幅</span><b>186px</b>
+             <span class="k">（スクロール内の幅 362px＝375−スクロールバー13）</span></div>
+        <div class="mrow"><span>県名に残った幅（最小）</span><b>127px</b>
+             <span class="k">4文字の県名に要る約54pxとの差 73px</span></div>
+        <div class="mrow"><span>県名が省略記号で切れた行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>横にはみ出した行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>行の高さ / 1画面に見える県</span><b>41px / 10行</b></div>
+      </div>
+        </figure>
+        <figure>
+          <figcaption>6種別すべて表示（設定でカード配布をONにした状態）</figcaption>
+          <img src="shots/e-t6.png" width="375" height="667" alt="">
+          
+      <div class="m">
+        <div class="mrow"><span>件数欄が実際に占めた幅</span><b>221px</b>
+             <span class="k">（スクロール内の幅 362px＝375−スクロールバー13）</span></div>
+        <div class="mrow"><span>県名に残った幅（最小）</span><b>92px</b>
+             <span class="k">4文字の県名に要る約54pxとの差 38px</span></div>
+        <div class="mrow"><span>県名が省略記号で切れた行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>横にはみ出した行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>行の高さ / 1画面に見える県</span><b>41px / 10行</b></div>
+      </div>
+        </figure>
+      </div>
+    </section>
+    <section class="case " id="c-f">
+      <h2>案6-f: cに合計を県名の下へ小さく戻す</h2>
+      <p>合計が一覧から消えるのを嫌う場合の折衷。既存の <code>.lord-sub</code> の位置に置く。</p>
+      <div class="pair">
+        <figure>
+          <figcaption>既定の5種別（マンホールカード配布は <code>filterState.mhcard: false</code> で既定OFF）</figcaption>
+          <img src="shots/f-t5.png" width="375" height="667" alt="">
+          
+      <div class="m">
+        <div class="mrow"><span>件数欄が実際に占めた幅</span><b>186px</b>
+             <span class="k">（スクロール内の幅 362px＝375−スクロールバー13）</span></div>
+        <div class="mrow"><span>県名に残った幅（最小）</span><b>127px</b>
+             <span class="k">4文字の県名に要る約54pxとの差 73px</span></div>
+        <div class="mrow"><span>県名が省略記号で切れた行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>横にはみ出した行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>行の高さ / 1画面に見える県</span><b>55px / 7行</b></div>
+      </div>
+        </figure>
+        <figure>
+          <figcaption>6種別すべて表示（設定でカード配布をONにした状態）</figcaption>
+          <img src="shots/f-t6.png" width="375" height="667" alt="">
+          
+      <div class="m">
+        <div class="mrow"><span>件数欄が実際に占めた幅</span><b>221px</b>
+             <span class="k">（スクロール内の幅 362px＝375−スクロールバー13）</span></div>
+        <div class="mrow"><span>県名に残った幅（最小）</span><b>92px</b>
+             <span class="k">4文字の県名に要る約54pxとの差 38px</span></div>
+        <div class="mrow"><span>県名が省略記号で切れた行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>横にはみ出した行</span><b class="ok">0行</b></div>
+        <div class="mrow"><span>行の高さ / 1画面に見える県</span><b>55px / 7行</b></div>
+      </div>
+        </figure>
+      </div>
+    </section>
+
+<section>
+  <h2>まだ決まっていない点</h2>
+  <p>
+  ・<b>合計を一覧に残すか</b>（案6-f を採るか）。落としても地方見出しと県ページ側には残るが、県どうしの総量比較は一覧ではできなくなる。案6-f は行41→55px、10行→7行が代償。<br>
+  ・<b>0件の表記</b>（<code>0</code> か <code>·</code> か）。該当は282セル中5つだけ。<br>
+  ・<b>アイコンの大きさ</b>（案6-c と 案6-d）。どちらも切れずに収まる。<br>
+  ・<b>種別を絞っているときの見え方。</b> 表示する種別は地図の表示設定（<code>filterState</code>）に従うので、
+     列数は0〜6で変わる。上の2枚はその両端（既定5種別・全6種別）。1〜2種別しか出していないときは
+     余白がかなり空くが、案6は行の右端そろえなので破綻はしない。<br>
+  ・桁区切りは全案カンマ有り（本体の <code>toLocaleString</code> に合わせた）。
+  </p>
+</section>
+
+</body></html>

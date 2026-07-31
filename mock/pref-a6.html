@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<!-- index.html と同じ viewport 指定 -->
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<base href="../">
+<title>案6 実寸モック</title>
+<style>
+/* ══════════════════════════════════════════════════════════════
+   この2枚（.mock-* を除く全て）は index.html からの写しで、値は一切変えていない。
+   #nearby-panel / #nearby-pref-view / .lords-* / .pref-row / .reg-head / .lord-*
+   ══════════════════════════════════════════════════════════════ */
+:root {
+    --obj-icon-circle: 28px; --obj-icon-inner: 25px; --obj-icon-inner-full: 28px;
+    --mhcard-w: 28px; --mhcard-h: 36px; --mhcard-badge: 22.4px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; padding: 0; -webkit-user-select: none; user-select: none; }
+html, body { height: 100%; overflow: hidden; }
+
+#bottom-bar {
+    position: fixed; bottom: 0; left: 0; right: 0; height: 52px; z-index: 200;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 18px;
+    background: white; box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+    color: #9E9E9E; font-size: 19px; font-family: sans-serif;
+}
+#nearby-panel {
+    position: fixed; bottom: 52px; left: 0; right: 0;
+    background: white; border-radius: 16px 16px 0 0;
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.15); z-index: 300;
+    --sheet-base: 52px;
+    max-height: calc(100svh - var(--sheet-base) - 52px);
+    display: flex; flex-direction: column; font-family: sans-serif;
+}
+#nearby-pref-view {
+    display: flex; flex-direction: column; min-height: 0;
+    height: calc(100svh - 104px); max-height: 100%;
+}
+.lords-head { display: flex; align-items: center; gap: 8px; padding: 12px 12px 8px; flex-shrink: 0; }
+.lords-head-title { font-size: 14px; font-weight: bold; color: #333; flex: 1; min-width: 0;
+                    overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lords-iconbtn { width: 32px; height: 32px; border: 0; background: #f5f5f5; border-radius: 8px;
+                 color: #555; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.lords-scroll { overflow-y: auto; overscroll-behavior-y: contain; touch-action: pan-y; flex: 1; min-height: 0; }
+.lords-scroll::-webkit-scrollbar { width: 13px; }
+.lords-scroll::-webkit-scrollbar-track { background: transparent; }
+.lords-scroll::-webkit-scrollbar-thumb { background: #b7c3cf; border-radius: 7px; min-height: 44px;
+                                         border: 3px solid transparent; background-clip: padding-box; }
+.reg-head { position: sticky; top: 0; background: #f7f9fa; padding: 6px 13px;
+            font-size: 11px; font-weight: bold; color: #546E7A;
+            border-bottom: 1px solid #eceff1; display: flex; justify-content: space-between; z-index: 2; }
+.reg-head .reg-num { color: #90a4ae; font-weight: normal; }
+.pref-row { display: flex; align-items: center; gap: 9px; padding: 11px 13px;
+            border-bottom: 1px solid #f0f0f0; }
+.lord-main { flex: 1; min-width: 0; }
+.lord-name { font-size: 13.5px; font-weight: bold; color: #333; white-space: nowrap;
+             overflow: hidden; text-overflow: ellipsis; }
+.lord-sub { font-size: 10.5px; color: #999; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lord-num { font-size: 12px; color: #546E7A; font-weight: bold; flex-shrink: 0; }
+.lord-chev { color: #ccc; font-size: 15px; flex-shrink: 0; }
+.nearby-item-icon { border-radius: 50%; display: flex; align-items: center; justify-content: center;
+                    flex-shrink: 0; overflow: hidden; background: #eee; }
+.nearby-item-icon img { object-fit: contain; filter: brightness(0) invert(1); display: block; }
+
+/* ══ ここから下だけが案6のための追加分 ══════════════════════════ */
+/* 行内に並べる「アイコン＋件数」。合計は出さない（案6） */
+.pc-line { display: flex; align-items: center; flex-shrink: 0; }
+.pc-cell { display: flex; align-items: center; }
+.pc-n { color: #546E7A; font-weight: bold; font-variant-numeric: tabular-nums; }
+.pc-n.zero { color: #cfd8dc; }
+/* カード配布は本体 prefTypeIconHtml と同じ「カード＋マンホールのバッジ」。
+   カードの比率 28:36 は --mhcard-w / --mhcard-h と同じ */
+.pc-card { position: relative; flex-shrink: 0; background: #e2ddd4; border-radius: 3px; }
+.pc-card img.card { width: 100%; height: 100%; display: block; border-radius: 3px; }
+.pc-card img.badge { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+                     filter: brightness(0) invert(1); }
+
+/* 地図の代わりの背景 */
+.mock-map { position: fixed; inset: 0; background: #c8d6c0; z-index: 1; }
+.mock-map span { position: absolute; top: 10px; left: 14px; color: #7d8f74;
+                 font-size: 12px; font-family: sans-serif; }
+</style></head>
+<body>
+<div class="mock-map"><span>地図</span></div>
+<div id="bottom-bar"><span>◎</span><span>☰</span></div>
+
+<div id="nearby-panel">
+  <div id="nearby-pref-view">
+    <div class="lords-head">
+      <div class="lords-head-title">都道府県から探す</div>
+      <button class="lords-iconbtn" style="font-size:17px;">×</button>
+    </div>
+    <div class="lords-scroll" id="pref-list"></div>
+  </div>
+</div>
+
+<script>
+/* ── 実データ（castle.js / michi.js / mhcard.js / manhole.js / pokemon.js / data.js を集計）── */
+const ORDER = ['castle','michi','mhcard','manhole','pokefuta','shop'];
+const TYPE = {
+  castle:   { img:'castle.png',  color:'#546E7A', full:true  },
+  michi:    { img:'michi.png',   color:'#34A853', full:true  },
+  mhcard:   { img:'manhole.png', color:'#1565C0', full:false, card:true },
+  manhole:  { img:'manhole.png', color:'#B87333', full:false },
+  pokefuta: { img:'manhole.png', color:'#FBBC04', full:false },
+  shop:     { img:'tabe.png',    color:'#FF9800', full:true  },
+};
+const COUNTS = {"北海道":[196,128,89,75,50,339],"青森県":[396,28,12,9,2,28],"岩手県":[404,39,26,24,36,22],"宮城県":[442,19,31,30,37,65],"秋田県":[565,34,7,7,5,47],"山形県":[559,24,16,15,5,29],"福島県":[567,38,39,37,43,37],"茨城県":[523,16,44,41,5,44],"栃木県":[409,25,34,27,3,46],"群馬県":[528,33,22,21,0,39],"埼玉県":[211,21,85,69,3,146],"千葉県":[525,29,48,39,4,134],"東京都":[184,1,115,99,13,2084],"神奈川県":[194,5,50,46,5,429],"新潟県":[656,42,54,45,4,45],"富山県":[253,16,20,18,3,31],"石川県":[263,26,11,11,8,70],"福井県":[412,21,10,10,17,20],"山梨県":[274,22,19,15,0,19],"長野県":[1131,54,55,48,6,76],"岐阜県":[559,55,32,28,5,81],"静岡県":[594,28,33,30,5,79],"愛知県":[912,19,64,60,9,521],"三重県":[706,18,22,20,31,56],"滋賀県":[593,20,23,20,5,36],"京都府":[1039,18,27,23,8,445],"大阪府":[282,10,77,66,5,949],"兵庫県":[1089,36,52,43,3,272],"奈良県":[354,18,12,11,5,62],"和歌山県":[413,37,5,5,5,17],"鳥取県":[449,17,9,9,20,3],"島根県":[521,29,14,13,5,8],"岡山県":[1060,17,31,27,4,27],"広島県":[1229,21,27,25,0,79],"山口県":[310,24,26,24,4,9],"徳島県":[278,18,12,9,3,16],"香川県":[255,18,22,18,18,120],"愛媛県":[634,29,23,21,2,22],"高知県":[513,26,15,14,18,18],"福岡県":[581,17,36,27,8,247],"佐賀県":[543,11,10,10,3,18],"長崎県":[376,12,12,10,15,28],"熊本県":[394,37,25,21,0,43],"大分県":[307,26,11,10,0,23],"宮崎県":[220,19,8,4,26,49],"鹿児島県":[422,23,18,17,9,37],"沖縄県":[94,10,22,16,17,62]};
+const REGIONS = [
+  ['北海道', ['北海道']],
+  ['東北', ['青森県','岩手県','宮城県','秋田県','山形県','福島県']],
+  ['関東', ['茨城県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県']],
+  ['中部', ['新潟県','富山県','石川県','福井県','山梨県','長野県','岐阜県','静岡県','愛知県']],
+  ['近畿', ['三重県','滋賀県','京都府','大阪府','兵庫県','奈良県','和歌山県']],
+  ['中国', ['鳥取県','島根県','岡山県','広島県','山口県']],
+  ['四国', ['徳島県','香川県','愛媛県','高知県']],
+  ['九州・沖縄', ['福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県']],
+];
+const cm = v => v.toLocaleString();
+
+/* ── 表示する種別。既定は index.html の filterState
+   （{shop:true, castle:true, michi:true, manhole:true, mhcard:false}）と
+   PREF_TYPES の対応どおり、カード配布を外した5種別 ── */
+const P = new URLSearchParams(location.search);
+const SHOWN = P.get('t') === '6' ? ORDER : ORDER.filter(t => t !== 'mhcard');
+const idxOf = t => ORDER.indexOf(t);
+const sumOf = n => SHOWN.reduce((s,t) => s + COUNTS[n][idxOf(t)], 0);
+
+/* ── 案の設定 ── */
+const V = {
+  now: { kind:'now' },
+  a:   { icon:13, font:10, gap:4, ig:1, card:false },
+  b:   { icon:13, font:10, gap:4, ig:1, card:true  },
+  c:   { icon:13, font:10, gap:4, ig:1, card:true, fixed:true },
+  d:   { icon:15, font:11, gap:5, ig:1, card:true, fixed:true },
+  e:   { icon:13, font:10, gap:4, ig:1, card:true, fixed:true, zeroDot:true },
+  f:   { icon:13, font:10, gap:4, ig:1, card:true, fixed:true, sub:true },
+};
+const opt = V[P.get('v') || 'c'] || V.c;
+
+function circleIcon(t, px){
+  const c = TYPE[t], inner = Math.round(px * (c.full ? 1 : 0.89));
+  return `<span class="nearby-item-icon" style="width:${px}px;height:${px}px;background:${c.color}"><img src="${c.img}" style="width:${inner}px;height:${inner}px"></span>`;
+}
+function cardIcon(hpx){
+  const w = Math.round(hpx * 28 / 36), badge = Math.round(w * 0.8);
+  return `<span class="pc-card" style="width:${w}px;height:${hpx}px"><img class="card" src="mhcard.png"><img class="badge" src="manhole.png" style="width:${badge}px;height:${badge}px"></span>`;
+}
+function icon(t, o){ return (o.card && TYPE[t].card) ? cardIcon(o.icon + 3) : circleIcon(t, o.icon); }
+
+/* 固定幅のときの数字の欄。その種別の県内最大件数をカンマ込みで置ける幅 */
+const W = { castle:28, michi:18, mhcard:18, manhole:13, pokefuta:13, shop:28 };
+
+function cells(n, o){
+  return `<div class="pc-line" style="gap:${o.gap}px;font-size:${o.font}px">${
+    SHOWN.map(t => {
+      const v = COUNTS[n][idxOf(t)];
+      const body = v === 0
+        ? `<span class="pc-n zero">${o.zeroDot ? '·' : '0'}</span>`
+        : `<span class="pc-n">${cm(v)}</span>`;
+      const box = o.fixed ? `<span style="display:inline-block;width:${W[t]}px">${body}</span>` : body;
+      return `<span class="pc-cell" style="gap:${o.ig}px">${icon(t,o)}${box}</span>`;
+    }).join('')
+  }</div>`;
+}
+
+const out = [];
+for (const [region, members] of REGIONS) {
+  const total = members.reduce((s,n) => s + sumOf(n), 0);
+  out.push(`<div class="reg-head"><span>${region}</span>
+            <span class="reg-num">${cm(total)}件 / ${members.length}県</span></div>`);
+  for (const n of members) {
+    if (opt.kind === 'now') {
+      out.push(`<div class="pref-row">
+        <div class="lord-main"><div class="lord-name">${n}</div></div>
+        <div class="lord-num">${cm(sumOf(n))}</div>
+        <div class="lord-chev">›</div></div>`);
+    } else {
+      out.push(`<div class="pref-row">
+        <div class="lord-main"><div class="lord-name">${n}</div>${
+          opt.sub ? `<div class="lord-sub">計 ${cm(sumOf(n))}</div>` : ''}</div>
+        ${cells(n, opt)}
+        <div class="lord-chev">›</div></div>`);
+    }
+  }
+}
+document.getElementById('pref-list').innerHTML = out.join('');
+</script>
+</body></html>

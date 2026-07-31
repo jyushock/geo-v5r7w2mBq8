@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<base href="../"><meta charset="utf-8"><title>都道府県一覧に種別ごとの件数を出す — モック案</title>
+<style>
+* { box-sizing: border-box; }
+body { margin:0; background:#eceff1; font-family: sans-serif; padding:24px; color:#222; }
+h1 { font-size:18px; margin:0 0 6px; }
+.lead { font-size:13px; color:#555; margin:0 0 12px; line-height:1.75; max-width:1180px; }
+.lead code { background:#fff; padding:1px 5px; border-radius:4px; }
+.lead b { color:#b26a00; }
+.facts { display:flex; gap:8px; flex-wrap:wrap; margin:0 0 20px; }
+.fact { background:#fff; border:1px solid #dde3e7; border-radius:8px; padding:7px 11px;
+        font-size:11.5px; color:#455a64; line-height:1.5; }
+.fact b { color:#1565C0; font-size:13px; }
+.wrap { display:flex; gap:20px; flex-wrap:wrap; align-items:flex-start; }
+.case { width:375px; }
+.case > h2 { font-size:14px; margin:0 0 3px; }
+.case > h2 .tag { font-size:10px; font-weight:normal; color:#fff; background:#90a4ae;
+                  border-radius:4px; padding:2px 6px; margin-left:6px; vertical-align:2px; }
+.case.rec > h2 .tag { background:#2e7d32; }
+.case.ng  > h2 .tag { background:#c62828; }
+.case > p { font-size:11.5px; color:#666; margin:0 0 8px; line-height:1.65; min-height:74px; }
+
+/* ── 端末の枠。iPhone SE3 = 375×667 CSS px（DPR2 / 750×1334）── */
+.phone { width:375px; height:667px; background:#c8d6c0; border-radius:12px; overflow:hidden;
+         position:relative; box-shadow:0 4px 14px rgba(0,0,0,.18); }
+.phone::before { content:"地図"; position:absolute; top:10px; left:14px; color:#7d8f74; font-size:12px; }
+.bar { position:absolute; left:0; right:0; bottom:0; height:52px; background:#fff;
+       box-shadow:0 -2px 8px rgba(0,0,0,.15); display:flex; align-items:center;
+       justify-content:space-between; padding:0 18px; color:#9E9E9E; font-size:19px; z-index:5; }
+.panel { position:absolute; left:0; right:0; bottom:0; background:#fff;
+         border-radius:16px 16px 0 0; box-shadow:0 -4px 16px rgba(0,0,0,.15);
+         height:calc(100% - 52px); display:flex; flex-direction:column; z-index:6; }
+.lords-head { display:flex; align-items:center; gap:8px; padding:12px 12px 8px; flex-shrink:0; }
+.lords-head-title { font-size:14px; font-weight:bold; color:#333; flex:1; }
+.lords-iconbtn { width:32px; height:32px; border:0; background:#f5f5f5; border-radius:8px;
+                 color:#555; display:flex; align-items:center; justify-content:center; font-size:17px; }
+
+/* ── 以下は index.html の実値をそのまま写したもの ── */
+.lords-scroll { overflow-y:auto; flex:1; min-height:0; }
+/* iOS Safari / Chrome とも ::-webkit-scrollbar を指定すると重ね表示をやめて幅を食う
+   （index.html の同じ指定と同値。この 13px が横幅の計算に効く） */
+.lords-scroll::-webkit-scrollbar { width:13px; }
+.lords-scroll::-webkit-scrollbar-track { background:transparent; }
+.lords-scroll::-webkit-scrollbar-thumb { background:#b7c3cf; border-radius:7px; min-height:44px;
+                                         border:3px solid transparent; background-clip:padding-box; }
+.reg-head { position:sticky; top:0; background:#f7f9fa; padding:6px 13px; font-size:11px;
+            font-weight:bold; color:#546E7A; border-bottom:1px solid #eceff1;
+            display:flex; align-items:center; gap:9px; z-index:2; }
+.reg-head .reg-name { flex:1; min-width:0; }
+.reg-head .reg-num { color:#90a4ae; font-weight:normal; }
+.pref-row { display:flex; align-items:center; gap:9px; padding:11px 13px;
+            border-bottom:1px solid #f0f0f0; }
+.lord-main { flex:1; min-width:0; }
+.lord-name { font-size:13.5px; font-weight:bold; color:#333; white-space:nowrap;
+             overflow:hidden; text-overflow:ellipsis; }
+.lord-sub { font-size:10.5px; color:#999; white-space:nowrap; overflow:hidden;
+            text-overflow:ellipsis; margin-top:2px; }
+.lord-num { font-size:12px; color:#546E7A; font-weight:bold; flex-shrink:0;
+            font-variant-numeric:tabular-nums; }
+.lord-chev { color:#ccc; font-size:15px; flex-shrink:0; }
+
+/* ── 種別アイコン（index.html の nearby-item-icon を小さくしたもの）── */
+.ti { border-radius:50%; display:flex; align-items:center; justify-content:center;
+      flex-shrink:0; overflow:hidden; }
+.ti img { object-fit:contain; filter:brightness(0) invert(1); display:block; }
+
+/* 案1 / 案6: 行内にアイコン＋数字を横並び */
+.inl { display:flex; align-items:center; gap:4px; flex-shrink:0; }
+.inl .c { display:flex; align-items:center; gap:1px; }
+.inl .n { font-size:10px; color:#546E7A; font-weight:bold; font-variant-numeric:tabular-nums; }
+
+/* 案2: 地方見出しを列ヘッダにして、行は数字だけ */
+/* 列幅は「その種別の最大桁の数字」と「見出しのアイコン13px」の両方が入る px で固定する。
+   ch にすると見出し（11px）と行（16px継承）で 1ch の実寸が変わって列がずれ、
+   さらに 2ch＝約10px にアイコン13pxが入らず見出し側だけ広がってしまう。 */
+.colgrid { display:grid; grid-template-columns:24px 20px 20px 16px 16px 26px 34px; gap:5px;
+           align-items:center; flex-shrink:0; font-variant-numeric:tabular-nums;
+           font-size:10.5px; }
+.colgrid > * { text-align:right; }
+.colgrid .v  { font-size:10.5px; color:#607d8b; }
+.colgrid .z  { color:#cfd8dc; }
+.colgrid .tt { font-size:11px; color:#37474f; font-weight:bold; }
+.colgrid .hd { display:flex; justify-content:flex-end; }
+.colhead-spacer { width:10px; flex-shrink:0; }
+
+/* 案4: 3列×2行のミニグリッド */
+.mg { display:grid; grid-template-columns:repeat(3,auto); gap:3px 7px; flex-shrink:0; }
+.mg .c { display:flex; align-items:center; gap:2px; justify-content:flex-end; }
+.mg .n { font-size:10px; color:#546E7A; font-weight:bold; font-variant-numeric:tabular-nums;
+         min-width:3.4ch; text-align:right; }
+
+/* 案5: 積み上げ横バー */
+.sbar { display:flex; height:9px; border-radius:5px; overflow:hidden; width:140px;
+        flex-shrink:0; background:#eceff1; }
+.sbar > i { display:block; min-width:1px; }
+
+/* 案3: 2段目の内訳テキスト */
+.brk { font-size:10.5px; margin-top:3px; white-space:nowrap; font-variant-numeric:tabular-nums; }
+.brk span { margin-right:7px; }
+.brk b { font-weight:bold; }
+
+/* ── 判定パネル（実測値をJSで入れる）── */
+.verdict { margin-top:9px; background:#fff; border:1px solid #dde3e7; border-radius:8px;
+           padding:9px 11px; font-size:11px; line-height:1.7; color:#455a64; }
+.verdict .t { font-weight:bold; color:#263238; }
+.verdict .ok { color:#2e7d32; font-weight:bold; }
+.verdict .no { color:#c62828; font-weight:bold; }
+.verdict .k { color:#90a4ae; }
+.note { margin:26px 0 0; font-size:12px; color:#546e7a; line-height:1.9; max-width:1180px;
+        background:#fff; border-left:4px solid #90a4ae; padding:12px 16px; border-radius:0 8px 8px 0; }
+.note h3 { font-size:13px; margin:0 0 6px; color:#263238; }
+.note code { background:#f3f6f8; padding:1px 5px; border-radius:4px; }
+</style></head><body>
+
+<h1>「都道府県から探す」の余白に種別ごとの件数を出す — 案の比較</h1>
+<p style="background:#fff3e0;border-left:4px solid #ef6c00;padding:10px 14px;border-radius:0 8px 8px 0;
+          font-size:12.5px;color:#5d4037;line-height:1.8;max-width:1180px;margin:0 0 16px;">
+<b>このページの「実測」はデスクトップのブラウザで測った値で、実機の値ではありません。</b>
+形の見比べ用としてだけ残しています。iPhone SE3 の実寸・WebKit で実際に描いて測った結果は
+<a href="pref-counts-a6-preview.html">pref-counts-a6-preview.html</a> にあります
+（実機相当では行の高さ41px・1画面10行で、こちらの44px・10行とは違います）。
+</p>
+<p class="lead">
+枠は <b>iPhone SE3 の実寸（375×667 CSS px / DPR2）</b>。行の padding・gap・文字サイズ・スクロールバー幅は
+<code>index.html</code> の実値をそのまま写しています。件数は <code>castle.js / michi.js / mhcard.js /
+manhole.js / pokemon.js / data.js</code> を実際に集計した本物の値です。
+各案の下の「実測」は、この場でレンダリングした行を <code>width:max-content</code> で測った結果で、
+推測ではありません。
+</p>
+<div class="facts" id="facts"></div>
+
+<div class="wrap" id="wrap"></div>
+
+<p class="note">
+<h3>モックを作る過程で出てきた、決めておく必要のある点</h3>
+・<b>マンホールカードとマンホールの色が衝突する。</b> <code>OBJ_TYPE_COLOR</code> ではどちらも <code>#B87333</code> で、
+画像もどちらも <code>manhole.png</code>。県詳細の集計帯はカード画像を特別扱いして描き分けているが、
+行内に置く小さい丸では区別がつかない。このモックではカード配布を <code>typeConfig.mhcard</code> の
+<code>#1565C0</code> に振って区別している（要判断）。<br>
+・<b>桁区切りのカンマ。</b> 案2は幅を詰めるためカンマ無し（<code>1229</code>）。合計だけカンマ有り。<br>
+・<b>0件セル。</b> 282セル中5つだけ（ポケふた不在の群馬・山梨・広島・熊本・大分）。<code>0</code> ではなく
+薄いグレーの <code>0</code> で置いてある。<code>·</code> に落とす手もある。<br>
+・<b>並び順。</b> 種別の並びは <code>PREF_TYPES</code>（城→道の駅→カード→蓋→ポケふた→食べログ）に合わせた。<br>
+・<b>案2は地方見出しの「◯◯件 / ◯県」が消える。</b> アイコン列に場所を譲るため、見出しに残せるのは
+地方名と合計件数だけ（県数は落ちる）。県数は見出しの下に並ぶ行を数えれば分かるという判断だが、要確認。
+</p>
+
+<script>
+/* ══ 実データ（6ファイルを集計） ══ */
+const ORDER = ['castle','michi','mhcard','manhole','pokefuta','shop'];
+const TYPE = {
+  castle:   { label:'お城',       img:'castle.png',  color:'#546E7A', full:true  },
+  michi:    { label:'道の駅',     img:'michi.png',   color:'#34A853', full:true  },
+  mhcard:   { label:'カード配布', img:'manhole.png', color:'#1565C0', full:false },
+  manhole:  { label:'マンホール', img:'manhole.png', color:'#B87333', full:false },
+  pokefuta: { label:'ポケふた',   img:'manhole.png', color:'#FBBC04', full:false },
+  shop:     { label:'食べログ',   img:'tabe.png',    color:'#FF9800', full:true  },
+};
+const COUNTS = {"北海道":[196,128,89,75,50,339],"青森県":[396,28,12,9,2,28],"岩手県":[404,39,26,24,36,22],"宮城県":[442,19,31,30,37,65],"秋田県":[565,34,7,7,5,47],"山形県":[559,24,16,15,5,29],"福島県":[567,38,39,37,43,37],"茨城県":[523,16,44,41,5,44],"栃木県":[409,25,34,27,3,46],"群馬県":[528,33,22,21,0,39],"埼玉県":[211,21,85,69,3,146],"千葉県":[525,29,48,39,4,134],"東京都":[184,1,115,99,13,2084],"神奈川県":[194,5,50,46,5,429],"新潟県":[656,42,54,45,4,45],"富山県":[253,16,20,18,3,31],"石川県":[263,26,11,11,8,70],"福井県":[412,21,10,10,17,20],"山梨県":[274,22,19,15,0,19],"長野県":[1131,54,55,48,6,76],"岐阜県":[559,55,32,28,5,81],"静岡県":[594,28,33,30,5,79],"愛知県":[912,19,64,60,9,521],"三重県":[706,18,22,20,31,56],"滋賀県":[593,20,23,20,5,36],"京都府":[1039,18,27,23,8,445],"大阪府":[282,10,77,66,5,949],"兵庫県":[1089,36,52,43,3,272],"奈良県":[354,18,12,11,5,62],"和歌山県":[413,37,5,5,5,17],"鳥取県":[449,17,9,9,20,3],"島根県":[521,29,14,13,5,8],"岡山県":[1060,17,31,27,4,27],"広島県":[1229,21,27,25,0,79],"山口県":[310,24,26,24,4,9],"徳島県":[278,18,12,9,3,16],"香川県":[255,18,22,18,18,120],"愛媛県":[634,29,23,21,2,22],"高知県":[513,26,15,14,18,18],"福岡県":[581,17,36,27,8,247],"佐賀県":[543,11,10,10,3,18],"長崎県":[376,12,12,10,15,28],"熊本県":[394,37,25,21,0,43],"大分県":[307,26,11,10,0,23],"宮崎県":[220,19,8,4,26,49],"鹿児島県":[422,23,18,17,9,37],"沖縄県":[94,10,22,16,17,62]};
+const REGIONS = [
+  ['北海道', ['北海道']],
+  ['東北', ['青森県','岩手県','宮城県','秋田県','山形県','福島県']],
+  ['関東', ['茨城県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県']],
+  ['中部', ['新潟県','富山県','石川県','福井県','山梨県','長野県','岐阜県','静岡県','愛知県']],
+  ['近畿', ['三重県','滋賀県','京都府','大阪府','兵庫県','奈良県','和歌山県']],
+  ['中国', ['鳥取県','島根県','岡山県','広島県','山口県']],
+  ['四国', ['徳島県','香川県','愛媛県','高知県']],
+  ['九州・沖縄', ['福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県']],
+];
+const total = n => COUNTS[n].reduce((a,b)=>a+b,0);
+const cm = v => v.toLocaleString();
+
+/* 上部の数値カード */
+(function(){
+  const all = Object.keys(COUNTS).reduce((s,n)=>s+total(n),0);
+  const mx = t => { const i=ORDER.indexOf(t); let b=[0,'']; for(const n in COUNTS) if(COUNTS[n][i]>b[0]) b=[COUNTS[n][i],n]; return b; };
+  const rows = [['総件数', cm(all)+' 件'], ['県合計の最大', cm(Math.max(...Object.keys(COUNTS).map(total)))+' 件（東京都）'],
+                ['県合計の最小', cm(Math.min(...Object.keys(COUNTS).map(total)))+' 件（沖縄県）']]
+    .concat(ORDER.map(t=>{const b=mx(t); return [TYPE[t].label+' 最大', cm(b[0])+'（'+b[1]+'）'];}));
+  document.getElementById('facts').innerHTML = rows.map(r=>
+    `<div class="fact">${r[0]}<br><b>${r[1]}</b></div>`).join('');
+})();
+
+/* 種別アイコン（サイズ可変） */
+function icon(t, px){
+  const c = TYPE[t], inner = Math.round(px * (c.full ? 1 : 0.89));
+  return `<span class="ti" style="width:${px}px;height:${px}px;background:${c.color}">
+            <img src="${c.img}" style="width:${inner}px;height:${inner}px"></span>`;
+}
+const chev = '<div class="lord-chev">›</div>';
+
+/* ══ 各案の行の作り ══ */
+const CASES = [
+  { id:'now', tag:'現状', rec:'',
+    title:'現状',
+    desc:'県名と合計だけ。余白が約220px空いている。比較の基準として置く。',
+    head:(r,m,t)=>`<span class="reg-name">${r}</span><span class="reg-num">${cm(t)}件 / ${m.length}県</span>`,
+    row:n=>`<div class="lord-main"><div class="lord-name">${n}</div></div>
+            <div class="lord-num">${cm(total(n))}</div>${chev}` },
+
+  { id:'a1', tag:'案1', rec:'',
+    title:'案1: 行内にアイコン＋数字を6セット',
+    desc:'いちばん素直な形。アイコンで種別が分かり、数字もそのまま読める。実データはほとんどが2〜3桁なので、測ってみると375pxに収まる。ただし余りは全案の中で最も少ない。',
+    head:(r,m,t)=>`<span class="reg-name">${r}</span><span class="reg-num">${cm(t)}件 / ${m.length}県</span>`,
+    row:n=>`<div class="lord-main"><div class="lord-name">${n}</div></div>
+            <div class="inl">${ORDER.map((t,i)=>
+              `<span class="c">${icon(t,13)}<span class="n">${cm(COUNTS[n][i])}</span></span>`).join('')}</div>
+            <div class="lord-num">${cm(total(n))}</div>${chev}` },
+
+  { id:'a6', tag:'案6', rec:'',
+    title:'案6: 案1から合計を落とす',
+    desc:'案1の余りが少ないので、合計を落として幅を稼いだ変形。合計は地方見出しと県ページ側に残るので情報自体は失われない。県ごとの合計を一覧で比べられなくなるのが代償。',
+    head:(r,m,t)=>`<span class="reg-name">${r}</span><span class="reg-num">${cm(t)}件 / ${m.length}県</span>`,
+    row:n=>`<div class="lord-main"><div class="lord-name">${n}</div></div>
+            <div class="inl">${ORDER.map((t,i)=>
+              `<span class="c">${icon(t,13)}<span class="n">${cm(COUNTS[n][i])}</span></span>`).join('')}</div>${chev}` },
+
+  { id:'a2', tag:'案2', rec:'rec',
+    title:'案2: 地方見出しを列ヘッダにして、行は数字だけ',
+    desc:'アイコンを sticky な地方見出しに1回だけ置き、行は右揃えの数字7列（内訳6＋合計）にする。行の高さが変わらないので1画面の行数が減らない。アイコンの描画も47行×6個→8個で済む。',
+    head:(r,m,t)=>`<span class="reg-name">${r}</span>
+      <div class="colgrid">${ORDER.map(t=>`<span class="hd">${icon(t,13)}</span>`).join('')}
+      <span class="reg-num" style="text-align:right">${cm(t)}</span></div><span class="colhead-spacer"></span>`,
+    row:n=>`<div class="lord-main"><div class="lord-name">${n}</div></div>
+            <div class="colgrid">${ORDER.map((t,i)=>{const v=COUNTS[n][i];
+              return `<span class="v${v?'':' z'}">${v}</span>`;}).join('')}
+              <span class="tt">${cm(total(n))}</span></div>
+            <div class="lord-chev" style="width:10px">›</div>` },
+
+  { id:'a4', tag:'案4', rec:'',
+    title:'案4: 3列×2行のミニグリッド',
+    desc:'アイコン付きを保ったまま、幅の問題だけを縦に逃がす。行の高さは約39px→約53pxに増える。',
+    head:(r,m,t)=>`<span class="reg-name">${r}</span><span class="reg-num">${cm(t)}件 / ${m.length}県</span>`,
+    row:n=>`<div class="lord-main"><div class="lord-name">${n}</div></div>
+            <div class="mg">${ORDER.map((t,i)=>
+              `<span class="c">${icon(t,12)}<span class="n">${cm(COUNTS[n][i])}</span></span>`).join('')}</div>
+            <div class="lord-num">${cm(total(n))}</div>${chev}` },
+
+  { id:'a3', tag:'案3', rec:'',
+    title:'案3: 2段目に内訳テキスト',
+    desc:'既存の .lord-sub の位置に文字で流し込む。実装は最も軽い。1文字略記（城/駅/札/蓋/ポ/食）という新しい語彙を増やすのと、行が高くなるのが代償。',
+    head:(r,m,t)=>`<span class="reg-name">${r}</span><span class="reg-num">${cm(t)}件 / ${m.length}県</span>`,
+    row:n=>{ const ab=['城','駅','札','蓋','ポ','食'];
+      return `<div class="lord-main"><div class="lord-name">${n}</div>
+        <div class="brk">${ORDER.map((t,i)=>
+          `<span style="color:${TYPE[t].color}">${ab[i]}<b>${cm(COUNTS[n][i])}</b></span>`).join('')}</div></div>
+        <div class="lord-num">${cm(total(n))}</div>${chev}`; } },
+
+  { id:'a5', tag:'案5', rec:'ng',
+    title:'案5: 積み上げ横バー',
+    desc:'幅も高さも確実に収まるが、お城が全体の67%（23,419/34,934）を占めるため細い種別が潰れる。数字は出ない。「各オブジェクト数を表示したい」という要求自体は満たさないので、比較のために置く。',
+    head:(r,m,t)=>`<span class="reg-name">${r}</span><span class="reg-num">${cm(t)}件 / ${m.length}県</span>`,
+    row:n=>`<div class="lord-main"><div class="lord-name">${n}</div></div>
+            <div class="sbar">${ORDER.map((t,i)=>
+              `<i style="flex:${COUNTS[n][i]};background:${TYPE[t].color}"></i>`).join('')}</div>
+            <div class="lord-num">${cm(total(n))}</div>${chev}` },
+];
+
+/* ══ 描画 ══ */
+const wrap = document.getElementById('wrap');
+for (const c of CASES) {
+  const body = REGIONS.map(([r,mem])=>{
+    const t = mem.reduce((s,n)=>s+total(n),0);
+    return `<div class="reg-head">${c.head(r,mem,t)}</div>` +
+           mem.map(n=>`<div class="pref-row">${c.row(n)}</div>`).join('');
+  }).join('');
+  wrap.insertAdjacentHTML('beforeend', `
+    <div class="case ${c.rec}" id="c-${c.id}" data-id="${c.id}">
+      <h2>${c.title}<span class="tag">${c.tag}</span></h2>
+      <p>${c.desc}</p>
+      <div class="phone"><div class="bar"><span>◎</span><span>☰</span></div>
+        <div class="panel">
+          <div class="lords-head"><div class="lords-head-title">都道府県から探す</div>
+            <button class="lords-iconbtn">×</button></div>
+          <div class="lords-scroll">${body}</div>
+        </div></div>
+      <div class="verdict"></div>
+    </div>`);
+}
+
+/* ══ 実測 ══
+   行を width:max-content で複製して「詰めずに描くと何px要るか」を測る。
+   使える幅 = 375 − 13(スクロールバー)。padding 26px は複製側に含まれる。 */
+const AVAIL = 375 - 13;
+document.querySelectorAll('.case').forEach(cs=>{
+  const scroll = cs.querySelector('.lords-scroll');
+  const rows = [...cs.querySelectorAll('.pref-row')];
+  const probe = document.createElement('div');
+  probe.style.cssText = 'position:absolute;left:-9999px;top:0;visibility:hidden;';
+  document.body.appendChild(probe);
+
+  let worst = 0, worstName = '';
+  rows.forEach(r=>{
+    const cl = r.cloneNode(true);
+    cl.style.width = 'max-content';
+    cl.style.whiteSpace = 'nowrap';
+    probe.appendChild(cl);
+    const w = cl.getBoundingClientRect().width;
+    if (w > worst) { worst = w; worstName = r.querySelector('.lord-name').textContent; }
+    probe.removeChild(cl);
+  });
+  probe.remove();
+
+  // 1画面に完全に見える県の行数（スクロール位置0のとき）
+  const top = scroll.getBoundingClientRect().top;
+  const visible = rows.filter(r=>{
+    const b = r.getBoundingClientRect();
+    return b.top - top >= -0.5 && b.bottom - top <= scroll.clientHeight + 0.5;
+  }).length;
+  const rowH = rows[0].getBoundingClientRect().height;
+
+  const over = worst - AVAIL;
+  const fit = over <= 0;
+  cs.querySelector('.verdict').innerHTML = `
+    <div class="t">実測</div>
+    必要幅（最大の行：${worstName}） <b>${worst.toFixed(1)}px</b>
+      <span class="k">/ 使える幅 ${AVAIL}px（375 − スクロールバー13）</span><br>
+    判定 <span class="${fit?'ok':'no'}">${fit
+      ? '収まる（余り '+(-over).toFixed(1)+'px）'
+      : 'はみ出す（超過 '+over.toFixed(1)+'px）'}</span><br>
+    行の高さ <b>${rowH.toFixed(1)}px</b> ／ 1画面に見える県 <b>${visible}行</b>`;
+});
+</script>
+</body></html>
