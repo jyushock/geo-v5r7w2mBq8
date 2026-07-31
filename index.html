@@ -776,13 +776,13 @@
         /* 城主一覧ビュー（メニューパネル内の第3・第4ビュー） */
         #nearby-lords-view, #nearby-lord-detail-view {
             display: none; flex-direction: column; min-height: 0;
-            height: calc(100svh - 52px); max-height: 100%;
+            height: calc(100svh - 104px); max-height: 100%;   /* 下部バー52px＋上に残す地図52px */
         }
         #nearby-lords-view.open, #nearby-lord-detail-view.open { display: flex; }
         /* 都道府県ビュー（第5・第6）。城主ビューと同じ枠組みを使う */
         #nearby-pref-view, #nearby-pref-detail-view {
             display: none; flex-direction: column; min-height: 0;
-            height: calc(100svh - 52px); max-height: 100%;
+            height: calc(100svh - 104px); max-height: 100%;   /* 下部バー52px＋上に残す地図52px */
         }
         #nearby-pref-view.open, #nearby-pref-detail-view.open { display: flex; }
         /* ══ 県ページの絞り込み（集計帯を直接押す） ═══════════════════════
@@ -975,7 +975,7 @@
         }
 
         /* ハーフモーダル */
-        #nearby-panel.open { bottom: 0; }
+        #nearby-panel.open { bottom: var(--sheet-base); }
         #bottom-bar.panel-open { box-shadow: none; }
         #nearby-panel {
             position: fixed;
@@ -986,7 +986,10 @@
             box-shadow: 0 -4px 16px rgba(0,0,0,0.15);
             z-index: 300;
             transition: bottom 0.3s ease;
-            max-height: calc(100svh - 52px);
+            /* 情報シートと同じく下部バーの上に載せる（バーを隠さない）。
+               上げたぶん画面からはみ出さないよう、上にも同じだけ地図を残す。 */
+            --sheet-base: 52px;
+            max-height: calc(100svh - var(--sheet-base) - 52px);
             display: flex;
             flex-direction: column;
             font-family: sans-serif;
@@ -1505,12 +1508,16 @@
 
 <!-- スポット検索結果パネル（別ウィンドウ） -->
 <div id="nearby-result-overlay" onclick="closeNearbyResult()" style="display:none;position:fixed;inset:0;z-index:299;touch-action:none;"></div>
+<!-- 情報シート・メニューと同じく下部バーの上に載せる（--sheet-base を
+     enableSheetSwipeClose が読んで引きずりの戻り位置に使う） -->
 <div id="nearby-result-panel" style="
+    --sheet-base:52px;
     position:fixed; bottom:-100%; left:0; right:0;
     background:white; border-radius:16px 16px 0 0;
     box-shadow:0 -4px 16px rgba(0,0,0,0.15);
     z-index:300; transition:bottom 0.3s ease;
-    height:60vh; display:flex; flex-direction:column;
+    height:60vh; max-height:calc(100svh - var(--sheet-base) - 52px);
+    display:flex; flex-direction:column;
     font-family: sans-serif;
 ">
     <div id="nearby-result-header" style="display:flex;flex-direction:column;align-items:center;padding:8px 16px 6px;flex-shrink:0;border-bottom:1px solid #f0f0f0;cursor:grab;touch-action:none;">
@@ -5592,7 +5599,7 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('nearby-result-title').textContent = `マップ中心から${RADIUS}km以内`;
         buildNearbyTypeFilterChips(typesInResults);
         renderNearbyList();
-        document.getElementById('nearby-result-panel').style.bottom = '0';
+        document.getElementById('nearby-result-panel').style.bottom = '52px';   /* 下部バーの上（--sheet-base と同値） */
         document.getElementById('nearby-result-overlay').style.display = 'block';
     }
     function buildNearbyTypeFilterChips(types) {
