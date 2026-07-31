@@ -813,19 +813,14 @@
         .pref-rstbar button { margin-left: auto; border: 0; background: #fff; border-radius: 12px;
                               padding: 3px 10px; font-size: 11px; color: #2a5bd7; font-weight: bold;
                               cursor: pointer; font-family: inherit; flex-shrink: 0; }
-        /* 地方の見出し。スクロールしても頭に残す */
-        /* 地方見出し。件数は行の内訳と同じ位置（左から13＋56＋9＝78px）に置きたいので、
-           space-between をやめて地方名を県名と同じ56pxの欄にし、行と同じ9pxのgapを取る。
-           地方名は11pxなので最長の「九州・沖縄」でも49.5pxで、8地方すべて56pxに収まる
-           （min-width にしてあるので、将来長い名前が来ても切れずに右へずれるだけ）。 */
+        /* 地方の見出し。スクロールしても頭に残す。
+           中身は地方名だけ。件数は各行の内訳と県ページ側にあるので、ここには置かない */
         .reg-head {
             position: sticky; top: 0; background: #f7f9fa; padding: 6px 13px;
             font-size: 11px; font-weight: bold; color: #546E7A;
-            border-bottom: 1px solid #eceff1; display: flex; gap: 9px;
+            border-bottom: 1px solid #eceff1;
             z-index: 2;
         }
-        .reg-head .reg-name { flex: 0 0 auto; min-width: 56px; }
-        .reg-head .reg-num { color: #90a4ae; font-weight: normal; }
         /* 県の行。県名のアイコンは置かない（県名を示す有効な絵が無く、頭文字だけではノイズになるため） */
         .pref-row { display: flex; align-items: center; gap: 9px; padding: 11px 13px;
                     border-bottom: 1px solid #f0f0f0; cursor: pointer; }
@@ -5199,11 +5194,6 @@ map.on('zoomend', () => { isZooming = false; });
         return PREF_TYPES.filter(t => filterState[t.filter] !== false).map(t => t.type);
     }
 
-    function prefCount(name, types) {
-        const g = prefIndex[name] || {};
-        return types.reduce((s, t) => s + ((g[t] || []).length), 0);
-    }
-
     function updatePrefEntry() {
         const btn = document.getElementById('pref-entry-btn');
         if (!btn) return;
@@ -5354,13 +5344,11 @@ map.on('zoomend', () => { isZooming = false; });
         renderPrefItems();
     }
 
-    /* 一覧の件数は種別の選択に関わらず「地図で表示中の種別の合計」。
-       種別の絞り込みは県ページ側に移したので、ここで選択中の種別だけを数えると、
-       47県の合計がどこにも出なくなる。
+    /* 一覧に出すのは種別ごとの内訳だけ。合計は県ページ側にあるので、行にも地方見出しにも置かない。
+       数える対象は種別の選択に関わらず「地図で表示中の種別」（種別の絞り込みは県ページ側）。
 
-       行には合計ではなく種別ごとの内訳を出す。合計は地方見出しと県ページ側に残るので
-       情報は失われない。数字の欄はその種別の47都道府県での最大件数の文字数で固定し、
-       アイコンが全行で同じ位置に来るようにする（県どうしを縦に見比べられる）。
+       数字の欄はその種別の47都道府県での最大件数の文字数で固定し、アイコンが全行で
+       同じ位置に来るようにする（県どうしを縦に見比べられる）。
        幅を ch で取るのは、フォントが変わっても桁数どおりの幅になるため。 */
     function prefCntWidths(types) {
         const w = {};
@@ -5376,11 +5364,8 @@ map.on('zoomend', () => { isZooming = false; });
         const w = prefCntWidths(types);
         const out = [];
         for (const [region, members] of PREF_REGIONS) {
-            const shown = members;
-            const total = shown.reduce((s, n) => s + prefCount(n, types), 0);
-            out.push(`<div class="reg-head"><span class="reg-name">${region}</span>
-                      <span class="reg-num">${total.toLocaleString()}件 / ${shown.length}県</span></div>`);
-            for (const n of shown) {
+            out.push(`<div class="reg-head">${region}</div>`);
+            for (const n of members) {
                 const g = prefIndex[n] || {};
                 const cnt = types.map(t => {
                     const v = (g[t] || []).length;
