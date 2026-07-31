@@ -1322,7 +1322,7 @@
             <label class="filter-chip"><input type="checkbox" id="check-castle" checked onchange="onFilterChange(this)">お城</label>
             <label class="filter-chip"><input type="checkbox" id="check-michi" checked onchange="onFilterChange(this)">道の駅</label>
             <label class="filter-chip"><input type="checkbox" id="check-manhole" checked onchange="onFilterChange(this)">マンホール</label>
-            <label class="filter-chip"><input type="checkbox" id="check-mhcard" checked onchange="onFilterChange(this)">マンホール(配布)</label>
+            <label class="filter-chip"><input type="checkbox" id="check-mhcard" checked onchange="onFilterChange(this)">マンホールカード配布</label>
         </div>
         <div style="border-top:1px solid #f0f0f0;"></div>
         <div style="display:flex;gap:12px;padding:8px 16px 10px;align-items:flex-end;">
@@ -4167,7 +4167,7 @@ map.on('zoomend', () => { isZooming = false; });
     const typeConfig = {
         pokefuta: { color: '#FBBC04', img: 'manhole.png', label: 'ポケふた' },
         manhole:  { color: '#B87333', img: 'manhole.png', label: 'マンホール' },
-        mhcard:   { color: '#1565C0', img: 'manhole.png', label: 'マンホール(配布)' },
+        mhcard:   { color: '#1565C0', img: 'manhole.png', label: 'マンホールカード配布' },
         castle:   { color: '#546E7A', img: 'castle.png',  label: 'お城' },
         michi:    { color: '#34A853', img: 'michi.png',   label: '道の駅' },
         shop:     { color: '#FF9800', img: 'tabe.png',    label: 'レストラン' },
