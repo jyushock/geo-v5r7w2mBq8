@@ -766,6 +766,41 @@
             height: calc(100svh - 52px); max-height: 100%;
         }
         #nearby-pref-view.open, #nearby-pref-detail-view.open { display: flex; }
+        /* 種別で絞り込むシートは県詳細ビューの中に敷く */
+        #nearby-pref-detail-view { position: relative; }
+        /* 絞り込みボタン。全種別が選ばれているときは他のアイコンボタンと同じ見た目、
+           1つでも外していると青にして点を出す（絞り込み中だと気付けるように） */
+        #pref-filter-btn { position: relative; }
+        #pref-filter-btn.on { background: #e3ecff; color: #2a5bd7; }
+        .pref-filter-dot { display: none; position: absolute; top: 4px; right: 4px;
+                           width: 8px; height: 8px; border-radius: 50%; background: #2a5bd7; }
+        #pref-filter-btn.on .pref-filter-dot { display: block; }
+        #pref-type-mask { display: none; position: absolute; inset: 0; background: rgba(0,0,0,.28); z-index: 8; }
+        #pref-type-mask.open { display: block; }
+        #pref-type-sheet {
+            position: absolute; left: 0; right: 0; bottom: 0; z-index: 9;
+            background: #fff; border-radius: 16px 16px 0 0; box-shadow: 0 -4px 16px rgba(0,0,0,.18);
+            padding-bottom: calc(10px + env(safe-area-inset-bottom));
+            transform: translateY(100%); transition: transform .18s ease; touch-action: none;
+        }
+        #pref-type-sheet.open { transform: translateY(0); }
+        .pts-head { display: flex; align-items: center; padding: 12px 14px 8px;
+                    font-size: 13px; font-weight: bold; color: #333; }
+        .pts-head button { margin-left: auto; border: 0; background: #f5f5f5; border-radius: 8px;
+                           width: 28px; height: 28px; color: #555; font-size: 15px; cursor: pointer; font-family: inherit; }
+        /* 行の中は集計帯と同じ種別アイコン。ここだけ一回り小さくしたいので、
+           寸法を決めている CSS 変数をこの行の中でだけ上書きする（アイコン側の指定は触らない） */
+        .pts-row { display: flex; align-items: center; gap: 10px; padding: 9px 14px;
+                   font-size: 13px; color: #333; cursor: pointer;
+                   --obj-icon-circle: 26px; --obj-icon-inner: 23px; --obj-icon-inner-full: 26px;
+                   --mhcard-w: 22px; --mhcard-h: 28px; --mhcard-badge: 17.6px; }
+        .pts-row + .pts-row { border-top: 1px solid #f4f4f4; }
+        .pts-row:active { background: #f7f9ff; }
+        .pts-check { width: 18px; height: 18px; border-radius: 5px; border: 1.5px solid #c8d2dc;
+                     flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+                     color: #fff; font-size: 12px; }
+        .pts-row.on .pts-check { background: #2a5bd7; border-color: #2a5bd7; }
+        .pts-num { margin-left: auto; font-size: 11.5px; color: #90a4ae; flex-shrink: 0; }
         /* 地方の見出し。スクロールしても頭に残す */
         .reg-head {
             position: sticky; top: 0; background: #f7f9fa; padding: 6px 13px;
@@ -1388,10 +1423,8 @@
             <div class="lords-head-title" id="pref-title">都道府県から探す</div>
             <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
         </div>
-        <!-- 47件しかなく地方見出しで区切ってあるので、絞り込みの入力欄は置かない -->
-        <div class="lords-filter">
-            <div class="lords-chips" style="margin-top:0;" id="pref-type-chips"></div>
-        </div>
+        <!-- 47件しかなく地方見出しで区切ってあるので、絞り込みの入力欄は置かない。
+             種別の絞り込みも県ページ側（第6ビューの漏斗ボタン）に寄せてあるので、ここには置かない -->
         <div class="lords-scroll" id="pref-list"></div>
     </div>
 
@@ -1402,6 +1435,11 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
             <div class="lords-head-title" id="pref-detail-title"></div>
+            <!-- 種別の絞り込み。絞り込み中は色を変えて印を出す（updatePrefFilterBtn） -->
+            <button class="lords-iconbtn" id="pref-filter-btn" onclick="openPrefTypeSheet()" title="種別で絞り込む">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                <span class="pref-filter-dot"></span>
+            </button>
             <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
         </div>
         <div class="pref-sum" id="pref-detail-sum"></div>
@@ -1413,6 +1451,14 @@
             </div>
         </div>
         <div class="lords-scroll" id="pref-item-list"></div>
+        <!-- 種別で絞り込むシート。全解除の制限は設けない（全部外せば一覧は空になる） -->
+        <div id="pref-type-mask" onclick="closePrefTypeSheet()"></div>
+        <div id="pref-type-sheet">
+            <div class="pts-head">種別で絞り込む
+                <button onclick="closePrefTypeSheet()" title="閉じる">×</button>
+            </div>
+            <div id="pref-type-rows"></div>
+        </div>
     </div>
 </div>
 
@@ -4555,6 +4601,7 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('nearby-lord-detail-view').classList.remove('open');
         document.getElementById('nearby-pref-view').classList.remove('open');
         document.getElementById('nearby-pref-detail-view').classList.remove('open');
+        closePrefTypeSheet();
         prefState.pref = null;
         updateLordsEntry();
         updatePrefEntry();
@@ -4879,7 +4926,7 @@ map.on('zoomend', () => { isZooming = false; });
     const PREF_TYPES = [
         { type: 'castle',   label: 'お城',       filter: 'castle'  },
         { type: 'michi',    label: '道の駅',     filter: 'michi'   },
-        { type: 'mhcard',   label: '配布',       filter: 'mhcard'  },
+        { type: 'mhcard',   label: 'マンホールカード配布', filter: 'mhcard'  },
         { type: 'manhole',  label: 'マンホール', filter: 'manhole' },
         { type: 'pokefuta', label: 'ポケふた',   filter: 'manhole' },
         { type: 'shop',     label: 'レストラン', filter: 'shop'    },
@@ -4937,44 +4984,66 @@ map.on('zoomend', () => { isZooming = false; });
         buildPrefIndex();
         // 表示中の種別を既定の選択にする（地図で消している種別は最初から出さない）
         if (!prefState.types) prefState.types = new Set(prefVisibleTypes());
-        renderPrefChips();
         if (prefName && prefIndex[prefName]) { openPrefDetail(prefName); return; }
         showPrefView('list');
         renderPrefList();
     }
     function backToPrefList() {
+        closePrefTypeSheet();
         showPrefView('list');
         renderPrefList();
     }
 
-    /* チップは「全選択／全解除」＋種別。周辺検索結果の全解除ボタンと同じく、
-       全部ONのときだけ文言が「全解除」になる。 */
-    function renderPrefChips() {
-        const visible = prefVisibleTypes();
-        const allOn = visible.every(t => prefState.types.has(t));
-        const html = [`<button class="lords-chip" onclick="togglePrefAllTypes()">${allOn ? '全解除' : '全選択'}</button>`];
-        for (const t of PREF_TYPES) {
-            if (!visible.includes(t.type)) continue;   // 地図で非表示の種別はチップごと出さない
-            html.push(`<button class="lords-chip" data-pt="${t.type}" aria-pressed="${prefState.types.has(t.type)}"
-                        onclick="togglePrefType('${t.type}')">${t.label}</button>`);
-        }
-        document.getElementById('pref-type-chips').innerHTML = html.join('');
+    /* ══ 種別の絞り込み（県ページ側） ══════════════════════════════
+       絞り込みは県ページの漏斗ボタン → シートで行う。都道府県一覧には置かない
+       （47県の一覧では種別ごとの内訳より合計件数の方が見たいものだという判断）。
+       選択内容は県をまたいで保つ（prefState.types を県ごとに初期化しない）。
+       全解除の制限は設けない。全部外せば一覧は空になる。 */
+    function openPrefTypeSheet() {
+        renderPrefTypeSheet();
+        document.getElementById('pref-type-mask').classList.add('open');
+        document.getElementById('pref-type-sheet').classList.add('open');
     }
+    function closePrefTypeSheet() {
+        document.getElementById('pref-type-mask').classList.remove('open');
+        document.getElementById('pref-type-sheet').classList.remove('open');
+    }
+    /* 行はその県の件数つき。地図で非表示の種別は出さない（集計帯と同じ基準）。
+       件数0の種別も出す。集計帯は0件を落とすが、こちらは選択状態を見せる場所なので、
+       落とすと「外したのか、そもそも無いのか」が分からなくなる。 */
+    function renderPrefTypeSheet() {
+        const visible = prefVisibleTypes();
+        const g = prefIndex[prefState.pref] || {};
+        document.getElementById('pref-type-rows').innerHTML = PREF_TYPES
+            .filter(t => visible.includes(t.type))
+            .map(t => {
+                const n = (g[t.type] || []).length;
+                return `<div class="pts-row ${prefState.types.has(t.type) ? 'on' : ''}"
+                             onclick="togglePrefType('${t.type}')">
+                    <span class="pts-check">✓</span>${prefTypeIconHtml(t.type)}
+                    <span>${t.label}</span><span class="pts-num">${n.toLocaleString()}</span></div>`;
+            }).join('');
+    }
+    /* 絞り込み中（表示中の種別を1つでも外している）ならボタンを青にして点を出す */
+    function updatePrefFilterBtn() {
+        const btn = document.getElementById('pref-filter-btn');
+        if (!btn || !prefState.types) return;
+        btn.classList.toggle('on', !prefVisibleTypes().every(t => prefState.types.has(t)));
+    }
+    /* 呼び出し元はシートの行だけ（＝県ページを開いている間だけ）。
+       チェックした瞬間に裏の一覧へ反映し、シートは開いたままにする。 */
     function togglePrefType(t) {
         if (prefState.types.has(t)) prefState.types.delete(t); else prefState.types.add(t);
-        renderPrefChips();
-        if (prefState.pref) renderPrefItems(); else renderPrefList();
-    }
-    function togglePrefAllTypes() {
-        const visible = prefVisibleTypes();
-        const allOn = visible.every(t => prefState.types.has(t));
-        prefState.types = allOn ? new Set() : new Set(visible);
-        renderPrefChips();
-        if (prefState.pref) renderPrefItems(); else renderPrefList();
+        renderPrefTypeSheet();
+        updatePrefFilterBtn();
+        renderPrefItems();
     }
 
+    /* 一覧の件数は種別の選択に関わらず「地図で表示中の種別の合計」。
+       種別の絞り込みは県ページ側に移したので、ここで選択中の種別だけを数えると、
+       47県の合計がどこにも出なくなる。 */
     function renderPrefList() {
-        const types = [...prefState.types];
+        const types = prefVisibleTypes();
         const out = [];
         for (const [region, members] of PREF_REGIONS) {
             const shown = members;
@@ -5006,6 +5075,9 @@ map.on('zoomend', () => { isZooming = false; });
                        <div class="pref-sum-v">${prefIndex[name][t.type].length.toLocaleString()}</div></div>`);
         document.getElementById('pref-detail-sum').innerHTML =
             `<div class="pref-sum-line">${sum.join('')}</div>`;
+        // 県を切り替えたときにシートが開いたままにならないようにする
+        closePrefTypeSheet();
+        updatePrefFilterBtn();
         showPrefView('detail');
         renderPrefItems();
     }
