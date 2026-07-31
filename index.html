@@ -4994,13 +4994,15 @@ map.on('zoomend', () => { isZooming = false; });
             const p = r.f.properties;
             const color = getItemColor({ type: 'castle', properties: p });
             const distStr = r.dist < 1 ? `${Math.round(r.dist * 1000)}m` : `${r.dist.toFixed(1)}km`;
-            const sub = [p.prefecture, p.genre].filter(Boolean).join(' ・ ');
+            // 100名城の印はバッジ側に出るので、副見出しは都道府県だけにする（同じ語が2つ並ばないように）
+            const sub = p.prefecture || '';
             return `<div class="nearby-item" onclick="lordsJumpToCastle(${r.i})">
                 <div class="nearby-item-icon" style="background:${color}"><img src="castle.png" class="icon-full"></div>
                 <div class="nearby-item-text">
                     <div class="nearby-item-name">${attrEscape(p.coordOffset ? '[近接あり] ' + p.name : p.name)}</div>
                     <div class="nearby-item-sub">${attrEscape(sub)}</div>
                 </div>
+                ${prefBadgesHtml({ type: 'castle', properties: p })}
                 <div class="nearby-item-dist">${distStr}</div>
             </div>`;
         }).join('');
