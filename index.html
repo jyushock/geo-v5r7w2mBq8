@@ -784,61 +784,34 @@
             height: calc(100svh - 52px); max-height: 100%;
         }
         #nearby-pref-view.open, #nearby-pref-detail-view.open { display: flex; }
-        /* 種別で絞り込むシートは県詳細ビューの中に敷く */
-        #nearby-pref-detail-view { position: relative; }
-        /* 絞り込みボタン。全種別が選ばれているときは他のアイコンボタンと同じ見た目、
-           1つでも外していると青にして点を出す（絞り込み中だと気付けるように） */
-        #pref-filter-btn { position: relative; }
-        #pref-filter-btn.on { background: #e3ecff; color: #2a5bd7; }
-        .pref-filter-dot { display: none; position: absolute; top: 4px; right: 4px;
-                           width: 8px; height: 8px; border-radius: 50%; background: #2a5bd7; }
-        #pref-filter-btn.on .pref-filter-dot { display: block; }
-        #pref-type-mask { display: none; position: absolute; inset: 0; background: rgba(0,0,0,.28); z-index: 8; }
-        #pref-type-mask.open { display: block; }
-        /* 食べログのジャンルを開くと最大35種のチップが入るので、シートは高さを頭打ちにして
-           中だけスクロールさせる（開いた瞬間に画面外へはみ出すのを防ぐ） */
-        #pref-type-sheet {
-            position: absolute; left: 0; right: 0; bottom: 0; z-index: 9;
-            background: #fff; border-radius: 16px 16px 0 0; box-shadow: 0 -4px 16px rgba(0,0,0,.18);
-            padding-bottom: calc(10px + env(safe-area-inset-bottom));
-            transform: translateY(100%); transition: transform .18s ease; touch-action: none;
-            max-height: 86%; display: flex; flex-direction: column;
-        }
-        #pref-type-rows { overflow-y: auto; overscroll-behavior-y: contain; touch-action: pan-y; }
-        #pref-type-sheet.open { transform: translateY(0); }
-        .pts-head { display: flex; align-items: center; padding: 12px 14px 8px;
-                    font-size: 13px; font-weight: bold; color: #333; }
-        .pts-head button { border: 0; background: #f5f5f5; border-radius: 8px;
-                           width: 28px; height: 28px; color: #555; font-size: 15px; cursor: pointer; font-family: inherit; }
-        /* 種別と部門の選択を既定（すべて選択）に戻す。絞り込んでいないときは押せない */
-        .pts-head .pts-reset { width: auto; height: 26px; padding: 0 11px; margin-left: auto;
-                               font-size: 11.5px; font-weight: bold; color: #2a5bd7; background: #e3ecff; }
-        .pts-head .pts-reset:disabled { color: #b0b0b0; background: #f2f2f2; cursor: default; }
-        .pts-head .pts-reset + button { margin-left: 6px; }
-        /* 行の中は集計帯と同じ種別アイコン。ここだけ一回り小さくしたいので、
-           寸法を決めている CSS 変数をこの行の中でだけ上書きする（アイコン側の指定は触らない） */
-        .pts-row { display: flex; align-items: center; gap: 10px; padding: 9px 14px;
-                   font-size: 13px; color: #333; cursor: pointer;
-                   --obj-icon-circle: 26px; --obj-icon-inner: 23px; --obj-icon-inner-full: 26px;
-                   --mhcard-w: 22px; --mhcard-h: 28px; --mhcard-badge: 17.6px; }
-        .pts-row + .pts-row { border-top: 1px solid #f4f4f4; }
-        .pts-row:active { background: #f7f9ff; }
-        .pts-check { width: 18px; height: 18px; border-radius: 5px; border: 1.5px solid #c8d2dc;
-                     flex-shrink: 0; display: flex; align-items: center; justify-content: center;
-                     color: #fff; font-size: 12px; }
-        .pts-row.on .pts-check { background: #2a5bd7; border-color: #2a5bd7; }
-        .pts-num { margin-left: auto; font-size: 11.5px; color: #90a4ae; flex-shrink: 0; }
-        /* 食べログの2段目（部門）。行の中の開閉ボタンと、その下に開くチップ群 */
-        .pts-more { border: 0; background: transparent; color: #90a4ae; font-size: 12px;
-                    padding: 2px 2px 2px 8px; cursor: pointer; font-family: inherit; flex-shrink: 0; }
-        .pts-genres { padding: 0 14px 10px 44px; }
-        .pts-genres-off { opacity: .4; pointer-events: none; }
-        .pts-gsub { font-size: 11px; color: #888; padding: 2px 0 6px; }
-        .pts-gchips { display: flex; flex-wrap: wrap; gap: 6px; }
-        .ptg { font-size: 11.5px; padding: 5px 10px; border-radius: 14px; background: #f2f2f2;
+        /* ══ 県ページの絞り込み（集計帯を直接押す） ═══════════════════════
+           集計帯の種別を押すと表示・非表示が切り替わる。外した種別はグレーに落とす。
+           食べログだけは長押しでジャンル行（部門35種）が開く（地図の長押しと同じ500ms）。 */
+        .pref-sum-item { cursor: pointer; padding: 3px 5px 4px; border-radius: 9px;
+                         -webkit-tap-highlight-color: transparent; }
+        .pref-sum-item.off { filter: grayscale(1); opacity: .34; }
+        /* 食べログのジャンル行。バッジと同じ10グループの区分で並べ、
+           選んでいるチップはバッジと同じ色にする（一覧の色と一致させるため） */
+        #pref-genre-line:empty { display: none; }
+        .pref-gline { padding: 6px 13px 8px; border-bottom: 1px solid #f0f0f0; }
+        .pref-gline-h { font-size: 11px; color: #888; margin-bottom: 5px; }
+        .pref-gline-h b { color: #b26a00; }
+        .pref-ggrp { margin-bottom: 6px; }
+        .pref-ggrp:last-child { margin-bottom: 0; }
+        .pref-ggname { font-size: 10px; color: #9aa4ad; margin-bottom: 3px; }
+        .pref-gchips { display: flex; flex-wrap: wrap; gap: 5px; }
+        .ptg { font-size: 11px; padding: 4px 9px; border-radius: 13px; background: #f2f2f2;
                color: #666; border: 0; cursor: pointer; font-family: inherit; }
-        .ptg.on { background: #ffe9cc; color: #b26a00; font-weight: bold; }
-        .ptg-n { opacity: .65; margin-left: 4px; font-size: 10.5px; }
+        .ptg.on { color: #fff; font-weight: bold; }
+        .ptg-n { opacity: .6; margin-left: 3px; font-size: 10px; }
+        /* 絞り込み中だけ出す帯。今どれだけ絞られているかと、戻す操作をここにまとめる */
+        #pref-reset-bar:empty { display: none; }
+        .pref-rstbar { display: flex; align-items: center; gap: 8px; padding: 6px 13px;
+                       background: #fff8e1; border-bottom: 1px solid #f0e2b8;
+                       font-size: 11.5px; color: #8a6d1a; }
+        .pref-rstbar button { margin-left: auto; border: 0; background: #fff; border-radius: 12px;
+                              padding: 3px 10px; font-size: 11px; color: #2a5bd7; font-weight: bold;
+                              cursor: pointer; font-family: inherit; flex-shrink: 0; }
         /* 地方の見出し。スクロールしても頭に残す */
         .reg-head {
             position: sticky; top: 0; background: #f7f9fa; padding: 6px 13px;
@@ -913,23 +886,19 @@
            既定（auto）のまま。 */
         .lords-scroll::-webkit-scrollbar,
         #nearby-list::-webkit-scrollbar,
-        #search-results-inner::-webkit-scrollbar,
-        #pref-type-rows::-webkit-scrollbar { width: 13px; }
+        #search-results-inner::-webkit-scrollbar { width: 13px; }
         .lords-scroll::-webkit-scrollbar-track,
         #nearby-list::-webkit-scrollbar-track,
-        #search-results-inner::-webkit-scrollbar-track,
-        #pref-type-rows::-webkit-scrollbar-track { background: transparent; }
+        #search-results-inner::-webkit-scrollbar-track { background: transparent; }
         .lords-scroll::-webkit-scrollbar-thumb,
         #nearby-list::-webkit-scrollbar-thumb,
-        #search-results-inner::-webkit-scrollbar-thumb,
-        #pref-type-rows::-webkit-scrollbar-thumb {
+        #search-results-inner::-webkit-scrollbar-thumb {
             background: #b7c3cf; border-radius: 7px; min-height: 44px;
             border: 3px solid transparent; background-clip: padding-box;
         }
         .lords-scroll::-webkit-scrollbar-thumb:active,
         #nearby-list::-webkit-scrollbar-thumb:active,
-        #search-results-inner::-webkit-scrollbar-thumb:active,
-        #pref-type-rows::-webkit-scrollbar-thumb:active { background: #8fa1b3; }
+        #search-results-inner::-webkit-scrollbar-thumb:active { background: #8fa1b3; }
         .lord-row { display: flex; align-items: center; gap: 9px; padding: 10px 13px; border-bottom: 1px solid #f0f0f0; cursor: pointer; }
         .lord-row:active { background: #f7f9ff; }
         .lord-main { flex: 1; min-width: 0; }
@@ -1513,11 +1482,6 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
             <div class="lords-head-title" id="pref-detail-title"></div>
-            <!-- 種別の絞り込み。絞り込み中は色を変えて印を出す（updatePrefFilterBtn） -->
-            <button class="lords-iconbtn" id="pref-filter-btn" onclick="openPrefTypeSheet()" title="種別で絞り込む">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
-                <span class="pref-filter-dot"></span>
-            </button>
             <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
         </div>
         <!-- 絞り込みは最上段。集計帯（その県に何があるか）とソートはその下 -->
@@ -1528,7 +1492,10 @@
                 <button class="lords-search-clear" onclick="clearPrefSearch()" title="クリア">×</button>
             </div>
         </div>
+        <!-- 集計帯は押して種別を絞る帯でもある。食べログだけ長押しでジャンル行が開く -->
         <div class="pref-sum" id="pref-detail-sum"></div>
+        <div id="pref-genre-line"></div>
+        <div id="pref-reset-bar"></div>
         <div class="lords-filter">
             <div class="lords-chips" style="margin-top:0;">
                 <button class="lords-chip" data-ps="type" aria-pressed="true"  onclick="setPrefSort('type')">種別順</button>
@@ -1537,15 +1504,6 @@
             </div>
         </div>
         <div class="lords-scroll" id="pref-item-list"></div>
-        <!-- 種別で絞り込むシート。全解除の制限は設けない（全部外せば一覧は空になる） -->
-        <div id="pref-type-mask" onclick="closePrefTypeSheet()"></div>
-        <div id="pref-type-sheet">
-            <div class="pts-head">種別で絞り込む
-                <button class="pts-reset" id="pref-filter-reset" onclick="resetPrefFilter()">リセット</button>
-                <button onclick="closePrefTypeSheet()" title="閉じる">×</button>
-            </div>
-            <div id="pref-type-rows"></div>
-        </div>
     </div>
 </div>
 
@@ -2551,6 +2509,21 @@ const SHOP_GENRE_CLASS = {
     'カフェ': 'g-kissa', '喫茶': 'g-kissa',
     '創作料理・イノベーティブ': 'g-sonota',
 };
+/* ジャンル選択の並び順。バッジの色分けと同じ10グループで束ねて出す
+   （色でまとまって見えるものが、並びでも隣り合うようにするため）。
+   SHOP_GENRE_CLASS の全35部門がこの中に漏れなく入る。 */
+const SHOP_GENRE_GROUPS = [
+    ['麺', ['ラーメン', 'うどん', 'そば']],
+    ['肉', ['焼肉', '焼き鳥', '鳥料理', 'ステーキ・鉄板焼き', 'とんかつ', 'すき焼き・しゃぶしゃぶ']],
+    ['魚介・和食', ['寿司', 'うなぎ', '天ぷら', '日本料理']],
+    ['中華・アジア', ['中国料理', '餃子', 'アジア・エスニック', 'カレー']],
+    ['洋食', ['フレンチ', 'イタリアン', 'スペイン料理', '洋食', 'ピザ', 'ハンバーガー']],
+    ['軽食・粉もの', ['お好み焼き', '食堂']],
+    ['甘味・パン', ['スイーツ', '和菓子・甘味処', 'パン', 'アイス・ジェラート']],
+    ['酒', ['バー', '居酒屋', '立ち飲み']],
+    ['喫茶', ['カフェ', '喫茶']],
+    ['その他', ['創作料理・イノベーティブ']],
+];
 /* 部門バッジ。sizeClass に置き場所ごとの寸法クラスを渡す
    （情報シート=os-genrebadge / 一覧=pref-badge / 検索結果=sr-genre）。色はグループのクラスが持つ。 */
 function shopGenreBadgeHtml(p, sizeClass) {
@@ -2959,8 +2932,10 @@ function buildSheetHtml(type, label, p, lng, lat) {
         const card = type === 'mhcard' ? p : (cardFeatures.length ? cardFeatures[0].properties : null);
         const info = card ? mhcardInfo(card) : null;
         if (info) {
-            badges = (info.id ? `<span class="os-cdbadge">${info.id}</span>` : '')
-                   + (info.round ? `<span class="os-cdbadge os-cdround">${info.round}</span>` : '');
+            // 食べログと同じく、バッジはタイトルの上の行に置く（名前が長いと押し出されるため）
+            const b = (info.id ? `<span class="os-cdbadge">${info.id}</span>` : '')
+                    + (info.round ? `<span class="os-cdbadge os-cdround">${info.round}</span>` : '');
+            badgeAbove = b ? `<div class="os-badge-row">${b}</div>` : '';
         }
         // 配布が終わったカードは公式一覧に「配布終了」の行として残っている（全国で6件）。
         // 配布場所が無いので、そのぶんの行は出さずに終了した旨を出す。
@@ -4748,7 +4723,6 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('nearby-lord-detail-view').classList.remove('open');
         document.getElementById('nearby-pref-view').classList.remove('open');
         document.getElementById('nearby-pref-detail-view').classList.remove('open');
-        closePrefTypeSheet();
         prefState.pref = null;
         updateLordsEntry();
         updatePrefEntry();
@@ -5206,98 +5180,123 @@ map.on('zoomend', () => { isZooming = false; });
         renderPrefList();
     }
     function backToPrefList() {
-        closePrefTypeSheet();
         showPrefView('list');
         renderPrefList();
     }
 
     /* ══ 種別の絞り込み（県ページ側） ══════════════════════════════
-       絞り込みは県ページの漏斗ボタン → シートで行う。都道府県一覧には置かない
-       （47県の一覧では種別ごとの内訳より合計件数の方が見たいものだという判断）。
-       選択内容は県をまたいで保つ（prefState.types を県ごとに初期化しない）。
-       全解除の制限は設けない。全部外せば一覧は空になる。 */
-    function openPrefTypeSheet() {
-        renderPrefTypeSheet();
-        updatePrefFilterBtn();   // リセットボタンの有効・無効もここで決まる
-        document.getElementById('pref-type-mask').classList.add('open');
-        document.getElementById('pref-type-sheet').classList.add('open');
+       集計帯の種別アイコンを押して表示・非表示を切り替える。外した種別はグレーに落とす。
+       食べログだけは長押し（500ms・地図の長押しと同じ間合い）でジャンル行が開く。
+       都道府県一覧には絞り込みを置かない（47県の一覧では合計件数の方が見たいものだという判断）。
+       選択内容は県をまたいで保ち、全解除の制限は設けない（全部外せば一覧は空になる）。 */
+
+    /* 集計帯に出す種別＝その県に1件以上ある表示中の種別。
+       絞り込み中かどうかもこの並びを基準に決める（0件の種別は押せないので数に入れない）。 */
+    function prefSumTypes(name) {
+        const visible = prefVisibleTypes();
+        const g = prefIndex[name] || {};
+        return PREF_TYPES.filter(t => visible.includes(t.type) && (g[t.type] || []).length).map(t => t.type);
     }
+
+    function renderPrefSum() {
+        const name = prefState.pref;
+        if (!name) return;
+        const g = prefIndex[name] || {};
+        const items = prefSumTypes(name).map(t => `
+            <div class="pref-sum-item ${prefState.types.has(t) ? '' : 'off'}" data-t="${t}">
+                ${prefTypeIconHtml(t)}<div class="pref-sum-v">${g[t].length.toLocaleString()}</div></div>`);
+        const el = document.getElementById('pref-detail-sum');
+        el.innerHTML = `<div class="pref-sum-line">${items.join('')}</div>`;
+        el.querySelectorAll('.pref-sum-item').forEach(bindPrefSumItem);
+    }
+
+    /* タップで種別のON/OFF、長押しで食べログのジャンル行。
+       タッチのあとに合成されるマウスイベントで二重に反応しないよう、直後の mouse は捨てる。 */
+    let prefLpTimer = null, prefLpFired = false, prefLpTouched = false;
+    function bindPrefSumItem(el) {
+        const t = el.dataset.t;
+        const start = () => {
+            prefLpFired = false;
+            if (t !== 'shop') return;           // 2段目を持つのは食べログだけ
+            prefLpTimer = setTimeout(() => {
+                prefLpTimer = null; prefLpFired = true;
+                if (!prefState.types.has('shop')) return;   // 非表示のときは開かない
+                prefState.genreOpen = !prefState.genreOpen;
+                renderPrefGenreLine();
+            }, 500);
+        };
+        const cancel = () => { if (prefLpTimer) { clearTimeout(prefLpTimer); prefLpTimer = null; } };
+        const end = () => { cancel(); if (prefLpFired) { prefLpFired = false; return; } togglePrefType(t); };
+        el.addEventListener('touchstart', start, { passive: true });
+        el.addEventListener('touchmove', cancel, { passive: true });
+        el.addEventListener('touchend', () => { prefLpTouched = true; setTimeout(() => { prefLpTouched = false; }, 600); end(); });
+        el.addEventListener('mousedown', e => { if (e.button === 0 && !prefLpTouched) start(); });
+        el.addEventListener('mouseup', e => { if (e.button === 0 && !prefLpTouched) end(); });
+        el.addEventListener('mouseleave', cancel);
+        el.addEventListener('contextmenu', e => e.preventDefault());   // 長押しのメニューを出さない
+    }
+
+    /* 食べログのジャンル行。バッジと同じ10グループの区分で並べ、選択中のチップは
+       バッジと同じ色にする。食べログを非表示にしている間は出さない。 */
+    function renderPrefGenreLine() {
+        const el = document.getElementById('pref-genre-line');
+        const list = prefShopGenresOf(prefState.pref);
+        if (!prefState.genreOpen || !prefState.types.has('shop') || !list.length) { el.innerHTML = ''; return; }
+        const cnt = Object.fromEntries(list);
+        const on = list.filter(([g]) => prefState.genres.has(g));
+        const groups = SHOP_GENRE_GROUPS.map(([gname, members]) => {
+            const has = members.filter(c => cnt[c] !== undefined);
+            if (!has.length) return '';
+            return `<div class="pref-ggrp"><div class="pref-ggname">${gname}</div><div class="pref-gchips">${
+                has.map(c => `<button class="ptg ${prefState.genres.has(c) ? 'on shop-genre ' + (SHOP_GENRE_CLASS[c] || 'g-sonota') : ''}"
+                    onclick="togglePrefGenre('${attrEscape(c)}')">${attrEscape(c)}<span class="ptg-n">${cnt[c]}</span></button>`).join('')
+            }</div></div>`;
+        }).join('');
+        el.innerHTML = `<div class="pref-gline">
+            <div class="pref-gline-h">食べログのジャンル <b>${on.length}/${list.length}</b>・${
+                on.reduce((s, e) => s + e[1], 0).toLocaleString()}件</div>${groups}</div>`;
+    }
+
+    /* 絞り込み中だけ出す帯。何をどれだけ絞っているかと、戻す操作をここにまとめる。 */
+    function renderPrefResetBar() {
+        const el = document.getElementById('pref-reset-bar');
+        const types = prefSumTypes(prefState.pref);
+        const onTypes = types.filter(t => prefState.types.has(t));
+        const genres = prefShopGenresOf(prefState.pref);
+        const onGenres = genres.filter(([g]) => prefState.genres.has(g));
+        const typeFiltered = onTypes.length !== types.length;
+        const genreFiltered = prefState.types.has('shop') && genres.length && onGenres.length !== genres.length;
+        if (!typeFiltered && !genreFiltered) { el.innerHTML = ''; return; }
+        const parts = [];
+        if (typeFiltered) parts.push(`${onTypes.length}/${types.length}種別`);
+        if (genreFiltered) parts.push(`ジャンル${onGenres.length}/${genres.length}`);
+        el.innerHTML = `<div class="pref-rstbar">${parts.join('・')}を表示中
+            <button onclick="resetPrefFilter()">すべて表示</button></div>`;
+    }
+
     /* 種別と部門の選択を既定（どちらもすべて選択）に戻す。
        絞り込み欄の語は別の操作なので消さない。 */
     function resetPrefFilter() {
         prefState.types = new Set(prefVisibleTypes());
         prefState.genres = new Set(prefShopGenreAll);
-        renderPrefTypeSheet();
-        updatePrefFilterBtn();
+        renderPrefFilterUI();
         renderPrefItems();
     }
-    function closePrefTypeSheet() {
-        document.getElementById('pref-type-mask').classList.remove('open');
-        document.getElementById('pref-type-sheet').classList.remove('open');
-    }
-    /* 行はその県の件数つき。地図で非表示の種別は出さない（集計帯と同じ基準）。
-       件数0の種別も出す。集計帯は0件を落とすが、こちらは選択状態を見せる場所なので、
-       落とすと「外したのか、そもそも無いのか」が分からなくなる。 */
-    function renderPrefTypeSheet() {
-        const visible = prefVisibleTypes();
-        const g = prefIndex[prefState.pref] || {};
-        document.getElementById('pref-type-rows').innerHTML = PREF_TYPES
-            .filter(t => visible.includes(t.type))
-            .map(t => {
-                const n = (g[t.type] || []).length;
-                // 食べログだけ2段目（部門）を持つ。行の中の「▾」でその場に開く
-                const more = t.type === 'shop' && n
-                    ? `<button class="pts-more" onclick="event.stopPropagation();togglePrefGenreOpen()"
-                               title="ジャンルで絞り込む">${prefState.genreOpen ? '▴' : '▾'}</button>` : '';
-                const row = `<div class="pts-row ${prefState.types.has(t.type) ? 'on' : ''}"
-                             onclick="togglePrefType('${t.type}')">
-                    <span class="pts-check">✓</span>${prefTypeIconHtml(t.type)}
-                    <span>${t.label}</span><span class="pts-num">${n.toLocaleString()}</span>${more}</div>`;
-                return (more && prefState.genreOpen) ? row + prefGenrePanelHtml() : row;
-            }).join('');
-    }
-    /* 食べログの部門（35種のうちその県にあるもの）。種別のチェックを外している間は
-       効かないので、その場合は薄くして押せなくする。 */
-    function prefGenrePanelHtml() {
-        const list = prefShopGenresOf(prefState.pref);
-        const on = list.filter(([g]) => prefState.genres.has(g));
-        const dim = prefState.types.has('shop') ? '' : ' pts-genres-off';
-        return `<div class="pts-genres${dim}">
-            <div class="pts-gsub">選択中 ${on.length} / ${list.length} ジャンル・${
-                on.reduce((s, e) => s + e[1], 0).toLocaleString()}件</div>
-            <div class="pts-gchips">${list.map(([g, n]) =>
-                `<button class="ptg ${prefState.genres.has(g) ? 'on' : ''}"
-                         onclick="togglePrefGenre('${attrEscape(g)}')">${attrEscape(g)}<span class="ptg-n">${n}</span></button>`
-            ).join('')}</div></div>`;
-    }
-    /* 絞り込み中（表示中の種別か、食べログの部門を1つでも外している）なら
-       ボタンを青にして点を出す */
-    function updatePrefFilterBtn() {
-        const btn = document.getElementById('pref-filter-btn');
-        if (!btn || !prefState.types || !prefState.genres) return;
-        const typeAll = prefVisibleTypes().every(t => prefState.types.has(t));
-        const genreAll = prefShopGenreAll.every(g => prefState.genres.has(g));
-        const filtered = !(typeAll && genreAll);
-        btn.classList.toggle('on', filtered);
-        const reset = document.getElementById('pref-filter-reset');
-        if (reset) reset.disabled = !filtered;
-    }
-    function togglePrefGenreOpen() {
-        prefState.genreOpen = !prefState.genreOpen;
-        renderPrefTypeSheet();
+    // 集計帯・ジャンル行・絞り込み帯はいつも同じ状態から作るので、まとめて描き直す
+    function renderPrefFilterUI() {
+        renderPrefSum();
+        renderPrefGenreLine();
+        renderPrefResetBar();
     }
     function togglePrefGenre(g) {
         if (prefState.genres.has(g)) prefState.genres.delete(g); else prefState.genres.add(g);
-        renderPrefTypeSheet();
-        updatePrefFilterBtn();
+        renderPrefGenreLine();
+        renderPrefResetBar();
         renderPrefItems();
     }
-    /* 呼び出し元はシートの行だけ（＝県ページを開いている間だけ）。
-       チェックした瞬間に裏の一覧へ反映し、シートは開いたままにする。 */
     function togglePrefType(t) {
         if (prefState.types.has(t)) prefState.types.delete(t); else prefState.types.add(t);
-        renderPrefTypeSheet();
-        updatePrefFilterBtn();
+        renderPrefFilterUI();
         renderPrefItems();
     }
 
@@ -5330,20 +5329,12 @@ map.on('zoomend', () => { isZooming = false; });
         if (!prefIndex || !prefIndex[name]) return;
         prefState.pref = name;
         document.getElementById('pref-detail-title').textContent = name;
-        // 集計帯は選択中の種別に関わらず、その県が持つ全種別を出す（何がどれだけあるか分かるように）
-        const visible = prefVisibleTypes();
-        const sum = PREF_TYPES.filter(t => visible.includes(t.type) && (prefIndex[name][t.type] || []).length)
-            .map(t => `<div class="pref-sum-item">${prefTypeIconHtml(t.type)}
-                       <div class="pref-sum-v">${prefIndex[name][t.type].length.toLocaleString()}</div></div>`);
-        document.getElementById('pref-detail-sum').innerHTML =
-            `<div class="pref-sum-line">${sum.join('')}</div>`;
         // 別の県を開いたら絞り込みの語は持ち越さない（種別・部門の選択は保つ）
         prefState.q = '';
         document.getElementById('pref-item-search').value = '';
         setSearchClearVisible('pref-item-search', '');
-        // 県を切り替えたときにシートが開いたままにならないようにする
-        closePrefTypeSheet();
-        updatePrefFilterBtn();
+        // 集計帯・ジャンル行・絞り込み帯はその県の内訳から作り直す
+        renderPrefFilterUI();
         showPrefView('detail');
         renderPrefItems();
     }
