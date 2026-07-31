@@ -710,6 +710,9 @@
         .search-result-text { flex: 1; min-width: 0; }
         .search-result-name { font-size: 13px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .search-result-sub  { font-size: 10px; color: #999; margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        /* 食べログの部門バッジ（検索結果）。住所行の先頭に置くので、住所より小さくしない */
+        .sr-genre { display: inline-block; background: #FF9800; color: #fff; font-weight: 700;
+                    font-size: 9px; line-height: 1.5; padding: 0 5px; border-radius: 8px; margin-right: 4px; }
         .search-section-header { padding: 5px 10px; font-size: 11px; color: #999; background: #fafafa; border-bottom: 1px solid #f0f0f0; position: sticky; top: 0; }
 
         /* 周辺検索シート */
@@ -777,12 +780,16 @@
         #pref-filter-btn.on .pref-filter-dot { display: block; }
         #pref-type-mask { display: none; position: absolute; inset: 0; background: rgba(0,0,0,.28); z-index: 8; }
         #pref-type-mask.open { display: block; }
+        /* 食べログのジャンルを開くと最大35種のチップが入るので、シートは高さを頭打ちにして
+           中だけスクロールさせる（開いた瞬間に画面外へはみ出すのを防ぐ） */
         #pref-type-sheet {
             position: absolute; left: 0; right: 0; bottom: 0; z-index: 9;
             background: #fff; border-radius: 16px 16px 0 0; box-shadow: 0 -4px 16px rgba(0,0,0,.18);
             padding-bottom: calc(10px + env(safe-area-inset-bottom));
             transform: translateY(100%); transition: transform .18s ease; touch-action: none;
+            max-height: 86%; display: flex; flex-direction: column;
         }
+        #pref-type-rows { overflow-y: auto; overscroll-behavior-y: contain; touch-action: pan-y; }
         #pref-type-sheet.open { transform: translateY(0); }
         .pts-head { display: flex; align-items: center; padding: 12px 14px 8px;
                     font-size: 13px; font-weight: bold; color: #333; }
@@ -801,6 +808,17 @@
                      color: #fff; font-size: 12px; }
         .pts-row.on .pts-check { background: #2a5bd7; border-color: #2a5bd7; }
         .pts-num { margin-left: auto; font-size: 11.5px; color: #90a4ae; flex-shrink: 0; }
+        /* 食べログの2段目（部門）。行の中の開閉ボタンと、その下に開くチップ群 */
+        .pts-more { border: 0; background: transparent; color: #90a4ae; font-size: 12px;
+                    padding: 2px 2px 2px 8px; cursor: pointer; font-family: inherit; flex-shrink: 0; }
+        .pts-genres { padding: 0 14px 10px 44px; }
+        .pts-genres-off { opacity: .4; pointer-events: none; }
+        .pts-gsub { font-size: 11px; color: #888; padding: 2px 0 6px; }
+        .pts-gchips { display: flex; flex-wrap: wrap; gap: 6px; }
+        .ptg { font-size: 11.5px; padding: 5px 10px; border-radius: 14px; background: #f2f2f2;
+               color: #666; border: 0; cursor: pointer; font-family: inherit; }
+        .ptg.on { background: #ffe9cc; color: #b26a00; font-weight: bold; }
+        .ptg-n { opacity: .65; margin-left: 4px; font-size: 10.5px; }
         /* 地方の見出し。スクロールしても頭に残す */
         .reg-head {
             position: sticky; top: 0; background: #f7f9fa; padding: 6px 13px;
@@ -2424,6 +2442,35 @@ function castleGenreBadgeHtml(p) {
     return `<span class="os-genrebadge" style="background:${getItemColor({ type: 'castle', properties: p })}">${label}</span>`;
 }
 
+/* ══ 食べログの店名・駅・ジャンル・部門 ═══════════════════════════════
+   data.js の name は「店名 - 駅（ジャンル）」の3点セット（食べログ店舗ページの h1 由来）。
+   実データ7,077件すべてがこの形であることを全件検査で確認済み（2026-08-01、例外0件）。
+   地図のラベルは ['get','name'] で name をそのまま出しているので data.js は変えず、
+   表示のたびにここで分解する。合致しない名前が来たら店名だけとして扱う。
+
+   部門（category）は「ラーメン（東京）」のように地域が付く。括弧内は北海道・東京・
+   神奈川・愛知・大阪・香川・東日本・西日本の8種しか現れない（全71種で確認）ので、
+   括弧を落とせば35種の部門になる。バッジとジャンル絞り込みはこの35種を使う。 */
+const SHOP_NAME_RE = /^(.+?)\s+-\s+(.+?)（([^（）]+)）\s*$/;
+function shopParts(p) {
+    const m = SHOP_NAME_RE.exec(((p && p.name) || '').trim());
+    return m ? { shop: m[1], station: m[2], genre: m[3] }
+             : { shop: (p && p.name) || '', station: '', genre: '' };
+}
+function shopGenreBase(category) {
+    return String(category || '').replace(/（[^（）]*）\s*$/, '').trim();
+}
+// 部門バッジ。色は種別色（地図のピン・検索結果のアイコンと同じ #FF9800）
+function shopGenreBadgeHtml(p) {
+    const g = shopGenreBase(p && p.category);
+    return g ? `<span class="os-genrebadge" style="background:${OBJ_TYPE_COLOR.shop}">${attrEscape(g)}</span>` : '';
+}
+// 一覧用の小さい部門バッジ（検索結果の住所行に置くもの）
+function srGenreBadgeHtml(p) {
+    const g = shopGenreBase(p && p.category);
+    return g ? `<span class="sr-genre">${attrEscape(g)}</span>` : '';
+}
+
 // 標高／比高（バッジとは別行、住所の上に表示）。
 // 他の行と同じラベルチップを使い、1行に2項目を並べる（比高が無い城は標高だけになる）。
 function popupFormMetaHtml(elevationM, relativeHeightM) {
@@ -2922,10 +2969,21 @@ function buildSheetHtml(type, label, p, lng, lat) {
         rowB = `<div class="os-brow os-source-row">${buildSourceButtons('', p.url, p.shiroHbUrl)}</div>`;
 
     } else {   // shop（食べログ）
-        title = p.name || label;
-        lines = osKv('住所', p.address);
+        // タイトルは店名だけにし、駅とジャンルは項目へ移す（name をそのまま出すと
+        // 「店名 - 駅（ジャンル）」で店名が省略されるため）。
+        // ジャンル=店自身のジャンル（つけ麺）、100名店=賞の部門（ラーメン（東京））で別物。
+        const sp = shopParts(p);
+        title = sp.shop || label;
+        badges = shopGenreBadgeHtml(p);
+        lines = osKv('ジャンル', sp.genre)
+              + osKv('100名店', p.category)
+              + osKv('最寄り', sp.station)
+              + osKv('住所', p.address);
+        // GoogleMap検索は従来どおり name 全体（店名＋駅＋ジャンル）で引く。
+        // タイトルが店名だけになったからといって店名だけで引くと、同名店の多い
+        // チェーン・支店で別の店に当たるため。
         rowA = osRow([
-            osBtn(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(title)}`, 'btn-gmap', 'GoogleMap'),
+            osBtn(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name || label)}`, 'btn-gmap', 'GoogleMap'),
             osBtn(p.url, 'btn-tabelog', '食べログ'),
         ]);
     }
@@ -4282,7 +4340,10 @@ map.on('zoomend', () => { isZooming = false; });
                     ? `<div style="position:relative;width:var(--mhcard-w);height:var(--mhcard-h);flex-shrink:0;background:#e2ddd4;border-radius:6px;"><img src="mhcard.png" style="width:100%;height:100%;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:var(--mhcard-badge);height:var(--mhcard-badge);filter:brightness(0) invert(1);pointer-events:none;"></div>`
                     : `<div class="search-result-icon" style="background:${getItemColor(item)}">${cfg.img ? `<img src="${cfg.img}"${cfg.img === 'manhole.png' ? '' : ' class="icon-full"'}>` : cfg.icon}</div>`;
                 const subText = item._matchedAlias ? `（別名: ${item._matchedAlias}）${item.sub}` : item.sub;
-                div.innerHTML = `${iconPart}<div class="search-result-text"><div class="search-result-name">${item.label}</div><div class="search-result-sub">${subText}</div></div>`;
+                // 食べログの部門バッジ。結果は2列で幅が狭いため、店名の行ではなく
+                // 住所の行の先頭に小さく置く（店名を押し出さないため）
+                const badge = item.type === 'shop' ? srGenreBadgeHtml(item.properties) : '';
+                div.innerHTML = `${iconPart}<div class="search-result-text"><div class="search-result-name">${item.label}</div><div class="search-result-sub">${badge}${subText}</div></div>`;
                 div.addEventListener('click', () => onResultClick(item));
                 col.appendChild(div);
             };
@@ -4927,8 +4988,13 @@ map.on('zoomend', () => { isZooming = false; });
         { type: 'shop',     label: 'レストラン', filter: 'shop'    },
     ];
     let prefIndex = null;       // { 県名: { 種別: [searchIndexの要素] } }
+    let prefShopGenreAll = [];  // 全国の食べログ部門（多い順）。ジャンル選択の初期値に使う
+    // 一度でも選択肢に出した部門。データが後から届いて部門が増えたとき、
+    // 「まだ見せていない部門」だけを既定ONに足すために使う（外した部門は外れたまま）
+    const prefGenreSeen = new Set();
     // sort の既定は種別順（図鑑的な使い方を想定し、近い順の優先度は下げる）
-    let prefState = { types: null, pref: null, sort: 'type' };
+    // genres は食べログだけが持つ2段目の絞り込み。types と同じく県をまたいで保つ
+    let prefState = { types: null, genres: null, genreOpen: false, pref: null, sort: 'type' };
 
     function prefOfProps(p) {
         if (p.prefecture) return p.prefecture;
@@ -4943,11 +5009,37 @@ map.on('zoomend', () => { isZooming = false; });
     function buildPrefIndex() {
         prefIndex = {};
         PREF_NAMES.forEach(n => { prefIndex[n] = {}; });
+        const genres = new Map();
         for (const item of searchIndex) {
             const n = prefOfProps(item.properties || {});
             if (!n || !prefIndex[n]) continue;
             (prefIndex[n][item.type] = prefIndex[n][item.type] || []).push(item);
+            if (item.type === 'shop') {
+                const g = shopGenreBase((item.properties || {}).category);
+                if (g) genres.set(g, (genres.get(g) || 0) + 1);
+            }
         }
+        // 部門は全国で35種。多い順に持っておき、県ごとの一覧はこの順で出す
+        prefShopGenreAll = [...genres.entries()]
+            .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'ja')).map(e => e[0]);
+    }
+
+    /* その県にある食べログの部門と件数（多い順）。県ごとに持っている部門が違う
+       （東京都35種・青森県11種）ので、選択肢はその県にあるものだけ出す。 */
+    function prefShopGenresOf(name) {
+        const list = (prefIndex[name] || {}).shop || [];
+        const m = new Map();
+        for (const it of list) {
+            const g = shopGenreBase((it.properties || {}).category);
+            if (g) m.set(g, (m.get(g) || 0) + 1);
+        }
+        return prefShopGenreAll.filter(g => m.has(g)).map(g => [g, m.get(g)]);
+    }
+    // その要素がジャンル絞り込みを通るか（食べログ以外は常に通る）
+    function prefGenrePass(item) {
+        if (item.type !== 'shop' || !prefState.genres) return true;
+        const g = shopGenreBase((item.properties || {}).category);
+        return !g || prefState.genres.has(g);
     }
 
     /// 地図の表示設定で表示中の種別だけを返す
@@ -4979,6 +5071,11 @@ map.on('zoomend', () => { isZooming = false; });
         buildPrefIndex();
         // 表示中の種別を既定の選択にする（地図で消している種別は最初から出さない）
         if (!prefState.types) prefState.types = new Set(prefVisibleTypes());
+        // 部門は「全部選択」から始める（食べログを開いた瞬間に何も出ないのを避ける）。
+        // 索引を組み直すたびに新しい部門が増えている場合があるので、既存の選択に足す
+        if (!prefState.genres) prefState.genres = new Set(prefShopGenreAll);
+        else prefShopGenreAll.forEach(g => { if (!prefGenreSeen.has(g)) prefState.genres.add(g); });
+        prefShopGenreAll.forEach(g => prefGenreSeen.add(g));
         if (prefName && prefIndex[prefName]) { openPrefDetail(prefName); return; }
         showPrefView('list');
         renderPrefList();
@@ -5013,17 +5110,49 @@ map.on('zoomend', () => { isZooming = false; });
             .filter(t => visible.includes(t.type))
             .map(t => {
                 const n = (g[t.type] || []).length;
-                return `<div class="pts-row ${prefState.types.has(t.type) ? 'on' : ''}"
+                // 食べログだけ2段目（部門）を持つ。行の中の「▾」でその場に開く
+                const more = t.type === 'shop' && n
+                    ? `<button class="pts-more" onclick="event.stopPropagation();togglePrefGenreOpen()"
+                               title="ジャンルで絞り込む">${prefState.genreOpen ? '▴' : '▾'}</button>` : '';
+                const row = `<div class="pts-row ${prefState.types.has(t.type) ? 'on' : ''}"
                              onclick="togglePrefType('${t.type}')">
                     <span class="pts-check">✓</span>${prefTypeIconHtml(t.type)}
-                    <span>${t.label}</span><span class="pts-num">${n.toLocaleString()}</span></div>`;
+                    <span>${t.label}</span><span class="pts-num">${n.toLocaleString()}</span>${more}</div>`;
+                return (more && prefState.genreOpen) ? row + prefGenrePanelHtml() : row;
             }).join('');
     }
-    /* 絞り込み中（表示中の種別を1つでも外している）ならボタンを青にして点を出す */
+    /* 食べログの部門（35種のうちその県にあるもの）。種別のチェックを外している間は
+       効かないので、その場合は薄くして押せなくする。 */
+    function prefGenrePanelHtml() {
+        const list = prefShopGenresOf(prefState.pref);
+        const on = list.filter(([g]) => prefState.genres.has(g));
+        const dim = prefState.types.has('shop') ? '' : ' pts-genres-off';
+        return `<div class="pts-genres${dim}">
+            <div class="pts-gsub">選択中 ${on.length} / ${list.length} ジャンル・${
+                on.reduce((s, e) => s + e[1], 0).toLocaleString()}件</div>
+            <div class="pts-gchips">${list.map(([g, n]) =>
+                `<button class="ptg ${prefState.genres.has(g) ? 'on' : ''}"
+                         onclick="togglePrefGenre('${attrEscape(g)}')">${attrEscape(g)}<span class="ptg-n">${n}</span></button>`
+            ).join('')}</div></div>`;
+    }
+    /* 絞り込み中（表示中の種別か、食べログの部門を1つでも外している）なら
+       ボタンを青にして点を出す */
     function updatePrefFilterBtn() {
         const btn = document.getElementById('pref-filter-btn');
-        if (!btn || !prefState.types) return;
-        btn.classList.toggle('on', !prefVisibleTypes().every(t => prefState.types.has(t)));
+        if (!btn || !prefState.types || !prefState.genres) return;
+        const typeAll = prefVisibleTypes().every(t => prefState.types.has(t));
+        const genreAll = prefShopGenreAll.every(g => prefState.genres.has(g));
+        btn.classList.toggle('on', !(typeAll && genreAll));
+    }
+    function togglePrefGenreOpen() {
+        prefState.genreOpen = !prefState.genreOpen;
+        renderPrefTypeSheet();
+    }
+    function togglePrefGenre(g) {
+        if (prefState.genres.has(g)) prefState.genres.delete(g); else prefState.genres.add(g);
+        renderPrefTypeSheet();
+        updatePrefFilterBtn();
+        renderPrefItems();
     }
     /* 呼び出し元はシートの行だけ（＝県ページを開いている間だけ）。
        チェックした瞬間に裏の一覧へ反映し、シートは開いたままにする。 */
@@ -5118,6 +5247,10 @@ map.on('zoomend', () => { isZooming = false; });
             if (info && info.round) b.push(`<span class="pref-badge round">${attrEscape(info.round)}</span>`);
         } else if (item.type === 'manhole' && p.cardId) {
             b.push(`<span class="pref-badge card">${attrEscape(p.cardId)}</span>`);
+        } else if (item.type === 'shop') {
+            // 部門バッジ。同じ画面のジャンル絞り込みと同じ語彙になる
+            const g = shopGenreBase(p.category);
+            if (g) b.push(`<span class="pref-badge" style="background:${OBJ_TYPE_COLOR.shop}">${attrEscape(g)}</span>`);
         }
         return b.length ? `<div class="pref-badges">${b.join('')}</div>` : '';
     }
@@ -5138,6 +5271,7 @@ map.on('zoomend', () => { isZooming = false; });
         let rows = [];
         for (const t of types) {
             for (const item of (prefIndex[name][t] || [])) {
+                if (!prefGenrePass(item)) continue;   // 食べログの部門で絞る（2段目）
                 const c = item.coords;
                 rows.push({ item, dist: calcDist(center.lat, center.lng, c[1], c[0]) });
             }
