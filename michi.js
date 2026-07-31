@@ -36,8 +36,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "18787",
         "name": "道の駅スタープラザ 芦別",
-        "prefecture": "スタープラザ\u3000芦別",
-        "city": "",
+        "prefecture": "北海道",
+        "city": "芦別市",
         "address": "北海道芦別市北４条東1-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/18787",
@@ -75,8 +75,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          144.1897390,
-          42.9905330
+          144.189739,
+          42.990533
         ]
       },
       "properties": {
@@ -236,8 +236,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          142.2578720,
-          44.7290780
+          142.257872,
+          44.729078
         ]
       },
       "properties": {
@@ -328,7 +328,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.8753020,
+          141.875302,
           43.7510483
         ]
       },
@@ -420,8 +420,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.8766810,
-          42.2123660
+          139.876681,
+          42.212366
         ]
       },
       "properties": {
@@ -466,8 +466,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.5687160,
-          42.0989010
+          140.568716,
+          42.098901
         ]
       },
       "properties": {
@@ -558,8 +558,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.6549560,
-          44.1370220
+          141.654956,
+          44.137022
         ]
       },
       "properties": {
@@ -581,7 +581,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          142.6318130,
+          142.631813,
           44.8783757
         ]
       },
@@ -604,8 +604,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          143.1169550,
-          44.4694980
+          143.116955,
+          44.469498
         ]
       },
       "properties": {
@@ -650,8 +650,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          143.1816940,
-          42.9749170
+          143.181694,
+          42.974917
         ]
       },
       "properties": {
@@ -742,8 +742,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          143.1268390,
-          42.6921400
+          143.126839,
+          42.69214
         ]
       },
       "properties": {
@@ -765,8 +765,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.7166160,
-          42.9499800
+          141.716616,
+          42.94998
         ]
       },
       "properties": {
@@ -812,7 +812,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           140.8990485,
-          42.5591330
+          42.559133
         ]
       },
       "properties": {
@@ -880,8 +880,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.2557310,
-          41.4791340
+          140.255731,
+          41.479134
         ]
       },
       "properties": {
@@ -926,7 +926,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          143.2392430,
+          143.239243,
           43.1443424
         ]
       },
@@ -949,8 +949,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          143.0909860,
-          44.1968900
+          143.090986,
+          44.19689
         ]
       },
       "properties": {
@@ -995,8 +995,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.9437450,
-          42.3420120
+          140.943745,
+          42.342012
         ]
       },
       "properties": {
@@ -1018,8 +1018,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          142.4895000,
-          43.8441340
+          142.4895,
+          43.844134
         ]
       },
       "properties": {
@@ -1156,8 +1156,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          142.1773480,
-          45.3292190
+          142.177348,
+          45.329219
         ]
       },
       "properties": {
@@ -1179,8 +1179,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          142.1395460,
-          44.1146330
+          142.139546,
+          44.114633
         ]
       },
       "properties": {
@@ -1248,7 +1248,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.9414780,
+          141.941478,
           43.6234396
         ]
       },
@@ -1455,8 +1455,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          142.3975800,
-          42.9788590
+          142.39758,
+          42.978859
         ]
       },
       "properties": {
@@ -1501,8 +1501,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          143.7423670,
-          43.4678630
+          143.742367,
+          43.467863
         ]
       },
       "properties": {
@@ -1524,7 +1524,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          144.4532680,
+          144.453268,
           43.9339211
         ]
       },
@@ -1547,7 +1547,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          142.0705930,
+          142.070593,
           43.6994831
         ]
       },
@@ -1639,8 +1639,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          143.2732590,
-          42.4898240
+          143.273259,
+          42.489824
         ]
       },
       "properties": {
@@ -1708,8 +1708,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.7223820,
-          42.5775510
+          140.722382,
+          42.577551
         ]
       },
       "properties": {
@@ -1777,8 +1777,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          143.9805250,
-          43.5456220
+          143.980525,
+          43.545622
         ]
       },
       "properties": {
@@ -1800,8 +1800,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          142.9885700,
-          43.0981880
+          142.98857,
+          43.098188
         ]
       },
       "properties": {
@@ -1823,8 +1823,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          143.0762780,
-          43.8700610
+          143.076278,
+          43.870061
         ]
       },
       "properties": {
@@ -1846,8 +1846,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          143.5464550,
-          43.2443320
+          143.546455,
+          43.244332
         ]
       },
       "properties": {
@@ -1869,8 +1869,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.6593300,
-          42.8337880
+          141.65933,
+          42.833788
         ]
       },
       "properties": {
@@ -1938,7 +1938,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.3700270,
+          140.370027,
           42.8801825
         ]
       },
@@ -2099,8 +2099,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          143.3679110,
-          43.1388810
+          143.367911,
+          43.138881
         ]
       },
       "properties": {
@@ -2329,8 +2329,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          144.2738930,
-          44.0220340
+          144.273893,
+          44.022034
         ]
       },
       "properties": {
@@ -2467,8 +2467,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          142.0380780,
-          42.9369900
+          142.038078,
+          42.93699
         ]
       },
       "properties": {
@@ -2491,7 +2491,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           145.2368756,
-          43.5334130
+          43.533413
         ]
       },
       "properties": {
@@ -2520,8 +2520,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "18898",
         "name": "道の駅縄文ロマン 南かやべ",
-        "prefecture": "縄文ロマン\u3000南かやべ",
-        "city": "",
+        "prefecture": "北海道",
+        "city": "函館市",
         "address": "北海道函館市臼尻町551-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/18898",
@@ -2536,8 +2536,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.6773480,
-          45.4172500
+          141.677348,
+          45.41725
         ]
       },
       "properties": {
@@ -2628,8 +2628,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.8047700,
-          41.1679610
+          140.80477,
+          41.167961
         ]
       },
       "properties": {
@@ -2720,8 +2720,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.1174340,
-          40.5862040
+          141.117434,
+          40.586204
         ]
       },
       "properties": {
@@ -2744,7 +2744,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           141.2554758,
-          40.3878080
+          40.387808
         ]
       },
       "properties": {
@@ -2766,7 +2766,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.5795190,
+          140.579519,
           40.7179284
         ]
       },
@@ -2812,8 +2812,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.5143350,
-          41.1455110
+          140.514335,
+          41.145511
         ]
       },
       "properties": {
@@ -2858,8 +2858,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.3222510,
-          40.7844060
+          140.322251,
+          40.784406
         ]
       },
       "properties": {
@@ -2881,8 +2881,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.8613700,
-          40.8916920
+          140.86137,
+          40.891692
         ]
       },
       "properties": {
@@ -2927,7 +2927,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.5776860,
+          140.577686,
           40.6336189
         ]
       },
@@ -2950,8 +2950,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.2565880,
-          41.0837310
+          141.256588,
+          41.083731
         ]
       },
       "properties": {
@@ -3043,7 +3043,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           141.2646116,
-          40.5746450
+          40.574645
         ]
       },
       "properties": {
@@ -3111,8 +3111,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.2749610,
-          40.7280390
+          141.274961,
+          40.728039
         ]
       },
       "properties": {
@@ -3318,8 +3318,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.8187070,
-          40.1161050
+          141.818707,
+          40.116105
         ]
       },
       "properties": {
@@ -3341,8 +3341,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.9719870,
-          39.7375540
+          141.971987,
+          39.737554
         ]
       },
       "properties": {
@@ -3364,15 +3364,15 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.9026370,
-          39.9142740
+          141.902637,
+          39.914274
         ]
       },
       "properties": {
         "id": "18935",
         "name": "道の駅たのはた 思惟の風",
-        "prefecture": "たのはた\u3000思惟の風",
-        "city": "",
+        "prefecture": "岩手県",
+        "city": "田野畑村",
         "address": "岩手県下閉伊郡田野畑村菅窪151-6",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/18935",
@@ -3387,8 +3387,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.1814770,
-          39.0942170
+          141.181477,
+          39.094217
         ]
       },
       "properties": {
@@ -3525,15 +3525,15 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.9529950,
-          39.4782940
+          141.952995,
+          39.478294
         ]
       },
       "properties": {
         "id": "18942",
         "name": "道の駅やまだ おいすた",
-        "prefecture": "やまだ\u3000おいすた",
-        "city": "",
+        "prefecture": "岩手県",
+        "city": "山田町",
         "address": "岩手県下閉伊郡山田町山田2-111-2",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/18942",
@@ -3548,7 +3548,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.5011230,
+          141.501123,
           39.3309253
         ]
       },
@@ -3571,8 +3571,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.7989980,
-          39.1211580
+          141.798998,
+          39.121158
         ]
       },
       "properties": {
@@ -3594,7 +3594,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.8751470,
+          140.875147,
           39.3007195
         ]
       },
@@ -3618,7 +3618,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           141.3399576,
-          39.9845670
+          39.984567
         ]
       },
       "properties": {
@@ -3640,8 +3640,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.2138100,
-          39.9685450
+          141.21381,
+          39.968545
         ]
       },
       "properties": {
@@ -3663,8 +3663,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.8748860,
-          39.7064120
+          140.874886,
+          39.706412
         ]
       },
       "properties": {
@@ -3733,7 +3733,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           141.4165286,
-          40.2483490
+          40.248349
         ]
       },
       "properties": {
@@ -3824,8 +3824,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.5893110,
-          39.8711220
+          141.589311,
+          39.871122
         ]
       },
       "properties": {
@@ -3870,8 +3870,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.4665020,
-          37.9826910
+          140.466502,
+          37.982691
         ]
       },
       "properties": {
@@ -3893,8 +3893,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.3255250,
-          38.6195930
+          141.325525,
+          38.619593
         ]
       },
       "properties": {
@@ -3916,8 +3916,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.9383880,
-          38.5216110
+          140.938388,
+          38.521611
         ]
       },
       "properties": {
@@ -3939,8 +3939,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.8443190,
-          38.7944180
+          140.844319,
+          38.794418
         ]
       },
       "properties": {
@@ -3985,8 +3985,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.9927910,
-          38.4240530
+          140.992791,
+          38.424053
         ]
       },
       "properties": {
@@ -4031,8 +4031,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.8332940,
-          38.7074400
+          140.833294,
+          38.70744
         ]
       },
       "properties": {
@@ -4054,8 +4054,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.3160760,
-          38.7426640
+          141.316076,
+          38.742664
         ]
       },
       "properties": {
@@ -4077,8 +4077,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.2953180,
-          38.5010330
+          141.295318,
+          38.501033
         ]
       },
       "properties": {
@@ -4100,8 +4100,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.1606410,
-          38.6648800
+          141.160641,
+          38.66488
         ]
       },
       "properties": {
@@ -4123,8 +4123,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.7172790,
-          38.1186390
+          140.717279,
+          38.118639
         ]
       },
       "properties": {
@@ -4146,8 +4146,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.3758560,
-          40.2515130
+          140.375856,
+          40.251513
         ]
       },
       "properties": {
@@ -4169,8 +4169,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.2598230,
-          40.2163480
+          140.259823,
+          40.216348
         ]
       },
       "properties": {
@@ -4192,8 +4192,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.0145640,
-          39.3628800
+          140.014564,
+          39.36288
         ]
       },
       "properties": {
@@ -4215,7 +4215,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.6244290,
+          140.624429,
           40.4210338
         ]
       },
@@ -4238,8 +4238,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.9486780,
-          40.4215830
+          139.948678,
+          40.421583
         ]
       },
       "properties": {
@@ -4307,8 +4307,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.0803500,
-          40.0223080
+          140.08035,
+          40.022308
         ]
       },
       "properties": {
@@ -4330,7 +4330,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.2850260,
+          140.285026,
           39.3016038
         ]
       },
@@ -4353,8 +4353,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.2972030,
-          40.0635150
+          140.297203,
+          40.063515
         ]
       },
       "properties": {
@@ -4377,7 +4377,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           139.9001819,
-          39.2201290
+          39.220129
         ]
       },
       "properties": {
@@ -4422,7 +4422,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.4603930,
+          140.460393,
           39.0651389
         ]
       },
@@ -4468,7 +4468,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.0529330,
+          140.052933,
           39.5420844
         ]
       },
@@ -4491,8 +4491,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.0777990,
-          39.8647340
+          140.077799,
+          39.864734
         ]
       },
       "properties": {
@@ -4583,8 +4583,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.4567740,
-          39.9018240
+          140.456774,
+          39.901824
         ]
       },
       "properties": {
@@ -4606,8 +4606,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.5852140,
-          40.2193480
+          140.585214,
+          40.219348
         ]
       },
       "properties": {
@@ -4698,8 +4698,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.3625170,
-          39.6188400
+          140.362517,
+          39.61884
         ]
       },
       "properties": {
@@ -4721,8 +4721,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.5214470,
-          39.2261740
+          140.521447,
+          39.226174
         ]
       },
       "properties": {
@@ -4767,7 +4767,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.0610050,
+          140.061005,
           39.7527085
         ]
       },
@@ -4790,8 +4790,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.7816860,
-          40.3565980
+          140.781686,
+          40.356598
         ]
       },
       "properties": {
@@ -4814,7 +4814,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           140.3721642,
-          40.1955280
+          40.195528
         ]
       },
       "properties": {
@@ -4836,7 +4836,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.8745010,
+          139.874501,
           38.5869944
         ]
       },
@@ -4859,8 +4859,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.3284470,
-          38.4130400
+          140.328447,
+          38.41304
         ]
       },
       "properties": {
@@ -4882,8 +4882,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.2698910,
-          38.3990130
+          140.269891,
+          38.399013
         ]
       },
       "properties": {
@@ -4906,7 +4906,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           139.5581086,
-          38.5804220
+          38.580422
         ]
       },
       "properties": {
@@ -4928,8 +4928,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.0992370,
-          38.4360590
+          140.099237,
+          38.436059
         ]
       },
       "properties": {
@@ -4951,8 +4951,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.9946710,
-          38.0260650
+          139.994671,
+          38.026065
         ]
       },
       "properties": {
@@ -4997,8 +4997,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.1614310,
-          38.7286880
+          140.161431,
+          38.728688
         ]
       },
       "properties": {
@@ -5020,8 +5020,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.8755830,
-          39.0601630
+          139.875583,
+          39.060163
         ]
       },
       "properties": {
@@ -5089,8 +5089,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.2132910,
-          38.3677560
+          140.213291,
+          38.367756
         ]
       },
       "properties": {
@@ -5135,8 +5135,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.2174420,
-          38.0067750
+          140.217442,
+          38.006775
         ]
       },
       "properties": {
@@ -5158,8 +5158,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.3871270,
-          38.3544810
+          140.387127,
+          38.354481
         ]
       },
       "properties": {
@@ -5227,8 +5227,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.3342940,
-          37.6551200
+          140.334294,
+          37.65512
         ]
       },
       "properties": {
@@ -5296,15 +5296,15 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.4836880,
-          37.6356660
+          140.483688,
+          37.635666
         ]
       },
       "properties": {
         "id": "19019",
         "name": "道の駅道の駅安達智恵子の里 上り線",
-        "prefecture": "道の駅「安達」智恵子の里\u3000上り線",
-        "city": "",
+        "prefecture": "福島県",
+        "city": "二本松市",
         "address": "9691511 福島県二本松市下川崎字上平33-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19019",
@@ -5435,7 +5435,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           139.7221754,
-          37.5276930
+          37.527693
         ]
       },
       "properties": {
@@ -5503,7 +5503,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.6708020,
+          139.670802,
           37.4777576
         ]
       },
@@ -5572,8 +5572,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.9835820,
-          37.6357070
+          140.983582,
+          37.635707
         ]
       },
       "properties": {
@@ -5641,8 +5641,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.9929950,
-          37.1074290
+          140.992995,
+          37.107429
         ]
       },
       "properties": {
@@ -5803,7 +5803,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           140.5902479,
-          37.5347800
+          37.53478
         ]
       },
       "properties": {
@@ -5848,8 +5848,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.6301390,
-          37.3254630
+          139.630139,
+          37.325463
         ]
       },
       "properties": {
@@ -5917,8 +5917,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.7953030,
-          36.1026760
+          139.795303,
+          36.102676
         ]
       },
       "properties": {
@@ -6055,15 +6055,15 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.7897320,
-          36.1914310
+          139.789732,
+          36.191431
         ]
       },
       "properties": {
         "id": "19052",
         "name": "道の駅まくらがの里 こが",
-        "prefecture": "まくらがの里\u3000こが",
-        "city": "",
+        "prefecture": "茨城県",
+        "city": "古河市",
         "address": "茨城県古河市大和田2623",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19052",
@@ -6124,7 +6124,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.9649960,
+          139.964996,
           36.3673361
         ]
       },
@@ -6193,8 +6193,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.9844790,
-          37.0003750
+          139.984479,
+          37.000375
         ]
       },
       "properties": {
@@ -6239,7 +6239,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.1574120,
+          140.157412,
           36.9540486
         ]
       },
@@ -6292,8 +6292,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19062",
         "name": "道の駅どまんなか たぬま",
-        "prefecture": "どまんなか\u3000たぬま",
-        "city": "",
+        "prefecture": "栃木県",
+        "city": "佐野市",
         "address": "栃木県佐野市吉水町366-2",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19062",
@@ -6354,8 +6354,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.9691390,
-          36.8997060
+          139.969139,
+          36.899706
         ]
       },
       "properties": {
@@ -6377,8 +6377,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.6252480,
-          36.2967140
+          139.625248,
+          36.296714
         ]
       },
       "properties": {
@@ -6423,8 +6423,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.6869570,
-          36.9300140
+          139.686957,
+          36.930014
         ]
       },
       "properties": {
@@ -6516,7 +6516,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           139.9216154,
-          36.8056140
+          36.805614
         ]
       },
       "properties": {
@@ -6562,14 +6562,14 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           139.8313127,
-          36.6333910
+          36.633391
         ]
       },
       "properties": {
         "id": "19074",
         "name": "道の駅うつのみや ろまんちっく村",
-        "prefecture": "うつのみや\u3000ろまんちっく村",
-        "city": "",
+        "prefecture": "栃木県",
+        "city": "宇都宮市",
         "address": "栃木県宇都宮市新里町丙254",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19074",
@@ -6584,8 +6584,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.1011800,
-          36.5437660
+          140.10118,
+          36.543766
         ]
       },
       "properties": {
@@ -6607,8 +6607,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.7841060,
-          36.0805320
+          138.784106,
+          36.080532
         ]
       },
       "properties": {
@@ -6630,7 +6630,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.1364290,
+          139.136429,
           36.4590603
         ]
       },
@@ -6653,8 +6653,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.6386180,
-          36.6074830
+          138.638618,
+          36.607483
         ]
       },
       "properties": {
@@ -6745,7 +6745,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.9676700,
+          138.96767,
           36.7645152
         ]
       },
@@ -6791,8 +6791,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.5900480,
-          36.6145280
+          138.590048,
+          36.614528
         ]
       },
       "properties": {
@@ -6815,7 +6815,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           139.2719912,
-          36.4911840
+          36.491184
         ]
       },
       "properties": {
@@ -6906,7 +6906,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.7659670,
+          138.765967,
           36.2996438
         ]
       },
@@ -6999,7 +6999,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           138.9083498,
-          36.6960800
+          36.69608
         ]
       },
       "properties": {
@@ -7044,7 +7044,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.0351640,
+          139.035164,
           36.4413405
         ]
       },
@@ -7114,7 +7114,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           139.0689353,
-          36.6127750
+          36.612775
         ]
       },
       "properties": {
@@ -7274,8 +7274,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.7356900,
-          36.5704800
+          138.73569,
+          36.57048
         ]
       },
       "properties": {
@@ -7343,8 +7343,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.7657690,
-          35.8480190
+          139.765769,
+          35.848019
         ]
       },
       "properties": {
@@ -7436,7 +7436,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           139.6451589,
-          36.1703070
+          36.170307
         ]
       },
       "properties": {
@@ -7458,7 +7458,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.2272940,
+          139.227294,
           36.1218906
         ]
       },
@@ -7626,8 +7626,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19120",
         "name": "道の駅いちごの里 よしみ",
-        "prefecture": "いちごの里\u3000よしみ",
-        "city": "",
+        "prefecture": "埼玉県",
+        "city": "吉見町",
         "address": "埼玉県比企郡吉見町大字久保田1737",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19120",
@@ -7872,8 +7872,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.0695450,
-          35.1985570
+          140.069545,
+          35.198557
         ]
       },
       "properties": {
@@ -7918,8 +7918,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.2586160,
-          35.2548250
+          140.258616,
+          35.254825
         ]
       },
       "properties": {
@@ -7964,7 +7964,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.1096460,
+          140.109646,
           35.4638588
         ]
       },
@@ -7988,7 +7988,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           140.4699424,
-          35.8058520
+          35.805852
         ]
       },
       "properties": {
@@ -8171,8 +8171,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.5059080,
-          35.8963130
+          140.505908,
+          35.896313
         ]
       },
       "properties": {
@@ -8217,15 +8217,15 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.0205700,
-          35.0425820
+          140.02057,
+          35.042582
         ]
       },
       "properties": {
         "id": "19147",
         "name": "道の駅和田浦 WA・O！",
-        "prefecture": "和田浦\u3000WA・O！",
-        "city": "",
+        "prefecture": "千葉県",
+        "city": "南房総市",
         "address": "千葉県南房総市和田町仁我浦243",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19147",
@@ -8240,8 +8240,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.3797000,
-          35.9002300
+          140.3797,
+          35.90023
         ]
       },
       "properties": {
@@ -8424,8 +8424,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.5128940,
-          35.4699850
+          138.512894,
+          35.469985
         ]
       },
       "properties": {
@@ -8493,8 +8493,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.9898480,
-          35.5033870
+          138.989848,
+          35.503387
         ]
       },
       "properties": {
@@ -8631,7 +8631,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.4711590,
+          138.471159,
           35.6380315
         ]
       },
@@ -8677,8 +8677,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.4372490,
-          35.4185920
+          138.437249,
+          35.418592
         ]
       },
       "properties": {
@@ -8700,8 +8700,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.9238190,
-          35.7892600
+          138.923819,
+          35.78926
         ]
       },
       "properties": {
@@ -8723,8 +8723,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.4720640,
-          35.5570150
+          138.472064,
+          35.557015
         ]
       },
       "properties": {
@@ -8746,8 +8746,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.9499460,
-          35.7539600
+          138.949946,
+          35.75396
         ]
       },
       "properties": {
@@ -8769,8 +8769,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.0527420,
-          36.5854170
+          138.052742,
+          36.585417
         ]
       },
       "properties": {
@@ -8931,7 +8931,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           137.8473274,
-          36.6535900
+          36.65359
         ]
       },
       "properties": {
@@ -8953,7 +8953,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.3223240,
+          138.322324,
           36.8005161
         ]
       },
@@ -9022,15 +9022,15 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.8777200,
+          137.87772,
           36.2934956
         ]
       },
       "properties": {
         "id": "19182",
         "name": "道の駅アルプス安曇野 ほりがねの里",
-        "prefecture": "アルプス安曇野\u3000ほりがねの里",
-        "city": "",
+        "prefecture": "長野県",
+        "city": "安曇野市",
         "address": "長野県安曇野市堀金烏川2696",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19182",
@@ -9045,8 +9045,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.8676430,
-          36.3962780
+          137.867643,
+          36.396278
         ]
       },
       "properties": {
@@ -9114,8 +9114,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.2055860,
-          36.4071220
+          138.205586,
+          36.407122
         ]
       },
       "properties": {
@@ -9229,7 +9229,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.8955630,
+          137.895563,
           36.6053378
         ]
       },
@@ -9253,7 +9253,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           138.2948649,
-          36.6891230
+          36.689123
         ]
       },
       "properties": {
@@ -9321,8 +9321,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.1408840,
-          36.3728650
+          138.140884,
+          36.372865
         ]
       },
       "properties": {
@@ -9391,14 +9391,14 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           137.9027543,
-          36.1482810
+          36.148281
         ]
       },
       "properties": {
         "id": "19198",
         "name": "道の駅今井 恵みの里",
-        "prefecture": "今井\u3000恵みの里",
-        "city": "",
+        "prefecture": "長野県",
+        "city": "松本市",
         "address": "長野県松本市大字今井886-2",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19198",
@@ -9413,8 +9413,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.2230100,
-          37.9579110
+          139.22301,
+          37.957911
         ]
       },
       "properties": {
@@ -9505,8 +9505,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.0202120,
-          37.8663450
+          139.020212,
+          37.866345
         ]
       },
       "properties": {
@@ -9528,8 +9528,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.0037750,
-          37.1135660
+          138.003775,
+          37.113566
         ]
       },
       "properties": {
@@ -9574,8 +9574,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.5670010,
-          38.0914730
+          139.567001,
+          38.091473
         ]
       },
       "properties": {
@@ -9597,8 +9597,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.8229080,
-          37.3051430
+          138.822908,
+          37.305143
         ]
       },
       "properties": {
@@ -9673,8 +9673,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19210",
         "name": "道の駅越後出雲崎 天領の里",
-        "prefecture": "越後出雲崎\u3000天領の里",
-        "city": "",
+        "prefecture": "新潟県",
+        "city": "出雲崎町",
         "address": "新潟県三島郡出雲崎町大字尼瀬6-57",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19210",
@@ -9742,8 +9742,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19213",
         "name": "道の駅良寛の里 わしま",
-        "prefecture": "良寛の里\u3000わしま",
-        "city": "",
+        "prefecture": "新潟県",
+        "city": "長岡市",
         "address": "新潟県長岡市島崎5713-2",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19213",
@@ -9781,8 +9781,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.6447650,
-          36.9799820
+          137.644765,
+          36.979982
         ]
       },
       "properties": {
@@ -9804,7 +9804,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.7613790,
+          138.761379,
           37.1384419
         ]
       },
@@ -9873,8 +9873,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.0572440,
-          37.3559210
+          139.057244,
+          37.355921
         ]
       },
       "properties": {
@@ -9988,7 +9988,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.7302840,
+          137.730284,
           37.0031567
         ]
       },
@@ -10034,15 +10034,15 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.4703250,
-          37.0955940
+          138.470325,
+          37.095594
         ]
       },
       "properties": {
         "id": "19226",
         "name": "道の駅雪のふるさと やすづか",
-        "prefecture": "雪のふるさと\u3000やすづか",
-        "city": "",
+        "prefecture": "新潟県",
+        "city": "上越市",
         "address": "新潟県上越市安塚区樽田140",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19226",
@@ -10080,7 +10080,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.0788950,
+          139.078895,
           37.7925908
         ]
       },
@@ -10173,7 +10173,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           138.0866912,
-          37.1635330
+          37.163533
         ]
       },
       "properties": {
@@ -10195,7 +10195,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.8192140,
+          138.819214,
           37.0030693
         ]
       },
@@ -10218,8 +10218,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.8834710,
-          37.5467090
+          138.883471,
+          37.546709
         ]
       },
       "properties": {
@@ -10241,7 +10241,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.7771750,
+          138.777175,
           36.8996915
         ]
       },
@@ -10287,7 +10287,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.9600920,
+          136.960092,
           36.6414874
         ]
       },
@@ -10310,8 +10310,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.8714690,
-          36.3774910
+          136.871469,
+          36.377491
         ]
       },
       "properties": {
@@ -10356,7 +10356,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.9778870,
+          136.977887,
           36.5615091
         ]
       },
@@ -10403,7 +10403,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           136.9739623,
-          36.4454010
+          36.445401
         ]
       },
       "properties": {
@@ -10517,8 +10517,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.9872100,
-          36.8644170
+          136.98721,
+          36.864417
         ]
       },
       "properties": {
@@ -10547,8 +10547,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19248",
         "name": "道の駅万葉の里 高岡",
-        "prefecture": "万葉の里\u3000高岡",
-        "city": "",
+        "prefecture": "富山県",
+        "city": "高岡市",
         "address": "富山県高岡市蜂ヶ島131-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19248",
@@ -10586,8 +10586,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.9976310,
-          37.4241660
+          136.997631,
+          37.424166
         ]
       },
       "properties": {
@@ -10609,8 +10609,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.7246910,
-          36.7863010
+          136.724691,
+          36.786301
         ]
       },
       "properties": {
@@ -10678,8 +10678,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.6304730,
-          36.4368580
+          136.630473,
+          36.436858
         ]
       },
       "properties": {
@@ -10701,8 +10701,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.8632460,
-          37.1305470
+          136.863246,
+          37.130547
         ]
       },
       "properties": {
@@ -10747,8 +10747,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.7248830,
-          37.1401770
+          136.724883,
+          37.140177
         ]
       },
       "properties": {
@@ -10770,8 +10770,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.9059710,
-          37.3886180
+          136.905971,
+          37.388618
         ]
       },
       "properties": {
@@ -10793,7 +10793,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.7800210,
+          136.780021,
           37.0068731
         ]
       },
@@ -10885,15 +10885,15 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.7685160,
-          36.6627450
+          136.768516,
+          36.662745
         ]
       },
       "properties": {
         "id": "19263",
         "name": "道の駅倶利伽羅 源平の郷",
-        "prefecture": "倶利伽羅\u3000源平の郷",
-        "city": "",
+        "prefecture": "石川県",
+        "city": "津幡町",
         "address": "石川県河北郡津幡町字竹橋西239-14",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19263",
@@ -10915,8 +10915,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19264",
         "name": "道の駅山中温泉 ゆけむり健康村",
-        "prefecture": "山中温泉\u3000ゆけむり健康村",
-        "city": "",
+        "prefecture": "石川県",
+        "city": "加賀市",
         "address": "石川県加賀市山中温泉こおろぎ町イ19",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19264",
@@ -10954,8 +10954,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.1137860,
-          37.4863350
+          137.113786,
+          37.486335
         ]
       },
       "properties": {
@@ -10977,7 +10977,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.6488970,
+          136.648897,
           36.6591958
         ]
       },
@@ -11000,7 +11000,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.9689840,
+          136.968984,
           37.0489849
         ]
       },
@@ -11046,8 +11046,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.3244230,
-          37.5259750
+          137.324423,
+          37.525975
         ]
       },
       "properties": {
@@ -11069,8 +11069,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.2699640,
-          37.4415610
+          137.269964,
+          37.441561
         ]
       },
       "properties": {
@@ -11092,8 +11092,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.9047890,
-          36.9699540
+          136.904789,
+          36.969954
         ]
       },
       "properties": {
@@ -11138,7 +11138,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.6534670,
+          137.653467,
           35.6820939
         ]
       },
@@ -11161,8 +11161,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.8144050,
-          35.9659460
+          137.814405,
+          35.965946
         ]
       },
       "properties": {
@@ -11185,7 +11185,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           137.5504388,
-          35.5861120
+          35.586112
         ]
       },
       "properties": {
@@ -11207,8 +11207,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.6317460,
-          35.3243560
+          137.631746,
+          35.324356
         ]
       },
       "properties": {
@@ -11254,7 +11254,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           138.0837089,
-          35.8098140
+          35.809814
         ]
       },
       "properties": {
@@ -11322,8 +11322,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.7453870,
-          35.2574810
+          137.745387,
+          35.257481
         ]
       },
       "properties": {
@@ -11421,8 +11421,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19286",
         "name": "道の駅木曽川源流の里 きそむら",
-        "prefecture": "木曽川源流の里\u3000きそむら",
-        "city": "",
+        "prefecture": "長野県",
+        "city": "木祖村",
         "address": "長野県木曽郡木祖村大字薮原163-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19286",
@@ -11575,8 +11575,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.4996540,
-          36.2490020
+          137.499654,
+          36.249002
         ]
       },
       "properties": {
@@ -11598,15 +11598,15 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.1144500,
-          35.5339110
+          137.11445,
+          35.533911
         ]
       },
       "properties": {
         "id": "19294",
         "name": "道の駅ロック・ガーデン ひちそう",
-        "prefecture": "ロック・ガーデン\u3000ひちそう",
-        "city": "",
+        "prefecture": "岐阜県",
+        "city": "七宗町",
         "address": "岐阜県加茂郡七宗町大字中麻生1169-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19294",
@@ -11628,8 +11628,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19295",
         "name": "道の駅星のふる里 ふじはし",
-        "prefecture": "星のふる里\u3000ふじはし",
-        "city": "",
+        "prefecture": "岐阜県",
+        "city": "揖斐川町",
         "address": "岐阜県揖斐郡揖斐川町東横山264-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19295",
@@ -11668,7 +11668,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           136.9972918,
-          35.5522450
+          35.552245
         ]
       },
       "properties": {
@@ -11690,8 +11690,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.1923510,
-          36.2204460
+          137.192351,
+          36.220446
         ]
       },
       "properties": {
@@ -11736,8 +11736,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.4715780,
-          35.3236360
+          137.471578,
+          35.323636
         ]
       },
       "properties": {
@@ -11829,7 +11829,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           137.2231904,
-          35.3360590
+          35.336059
         ]
       },
       "properties": {
@@ -11897,7 +11897,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.5345740,
+          137.534574,
           35.5704301
         ]
       },
@@ -11943,15 +11943,15 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.1874130,
-          35.8199130
+          137.187413,
+          35.819913
         ]
       },
       "properties": {
         "id": "19309",
         "name": "道の駅馬瀬 美輝の里",
-        "prefecture": "馬瀬\u3000美輝の里",
-        "city": "",
+        "prefecture": "岐阜県",
+        "city": "下呂市",
         "address": "岐阜県下呂市馬瀬西村1447-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19309",
@@ -11973,8 +11973,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19310",
         "name": "道の駅飛騨街道 なぎさ",
-        "prefecture": "飛騨街道\u3000なぎさ",
-        "city": "",
+        "prefecture": "岐阜県",
+        "city": "高山市",
         "address": "岐阜県高山市久々野町渚2685",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19310",
@@ -12019,8 +12019,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19312",
         "name": "道の駅そばの郷 らっせぃみさと",
-        "prefecture": "そばの郷\u3000らっせぃみさと",
-        "city": "",
+        "prefecture": "岐阜県",
+        "city": "恵那市",
         "address": "岐阜県恵那市三郷町佐々良木1461-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19312",
@@ -12035,8 +12035,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.6671870,
-          35.5001150
+          136.667187,
+          35.500115
         ]
       },
       "properties": {
@@ -12111,8 +12111,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19316",
         "name": "道の駅桜の郷 荘川",
-        "prefecture": "桜の郷\u3000荘川",
-        "city": "",
+        "prefecture": "岐阜県",
+        "city": "高山市",
         "address": "岐阜県高山市荘川町猿丸88-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19316",
@@ -12150,7 +12150,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.9017350,
+          136.901735,
           35.8160909
         ]
       },
@@ -12242,8 +12242,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.5892410,
-          35.6601630
+          136.589241,
+          35.660163
         ]
       },
       "properties": {
@@ -12311,8 +12311,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.4137320,
-          35.6020320
+          136.413732,
+          35.602032
         ]
       },
       "properties": {
@@ -12357,15 +12357,15 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.6006910,
-          35.2150870
+          136.600691,
+          35.215087
         ]
       },
       "properties": {
         "id": "19328",
         "name": "道の駅月見の里 南濃",
-        "prefecture": "月見の里\u3000南濃",
-        "city": "",
+        "prefecture": "岐阜県",
+        "city": "海津市",
         "address": "岐阜県海津市南濃町羽沢673-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19328",
@@ -12403,8 +12403,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.5018640,
-          35.6023520
+          137.501864,
+          35.602352
         ]
       },
       "properties": {
@@ -12449,8 +12449,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.8919240,
-          35.8896710
+          136.891924,
+          35.889671
         ]
       },
       "properties": {
@@ -12472,8 +12472,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.9137330,
-          35.5545990
+          136.913733,
+          35.554599
         ]
       },
       "properties": {
@@ -12495,8 +12495,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.9016480,
-          36.1738800
+          136.901648,
+          36.17388
         ]
       },
       "properties": {
@@ -12518,15 +12518,15 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.9801460,
+          136.980146,
           35.4743201
         ]
       },
       "properties": {
         "id": "19335",
         "name": "道の駅半布里の郷 とみか",
-        "prefecture": "半布里の郷\u3000とみか",
-        "city": "",
+        "prefecture": "岐阜県",
+        "city": "富加町",
         "address": "岐阜県加茂郡富加町羽生2174-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19335",
@@ -12541,8 +12541,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.1011630,
-          35.4300550
+          137.101163,
+          35.430055
         ]
       },
       "properties": {
@@ -12564,8 +12564,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.5598140,
-          35.4194420
+          136.559814,
+          35.419442
         ]
       },
       "properties": {
@@ -12594,8 +12594,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19338",
         "name": "道の駅清流白川 クオーレの里",
-        "prefecture": "清流白川\u3000クオーレの里",
-        "city": "",
+        "prefecture": "岐阜県",
+        "city": "白川町",
         "address": "岐阜県加茂郡白川町和泉181-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19338",
@@ -12725,7 +12725,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.9219350,
+          138.921935,
           34.8558282
         ]
       },
@@ -12864,14 +12864,14 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           137.8150063,
-          34.9117880
+          34.911788
         ]
       },
       "properties": {
         "id": "19350",
         "name": "道の駅天竜相津 花桃の里",
-        "prefecture": "天竜相津\u3000花桃の里",
-        "city": "",
+        "prefecture": "静岡県",
+        "city": "浜松市",
         "address": "静岡県浜松市天竜区大川31-10",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19350",
@@ -12886,7 +12886,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.0943860,
+          139.094386,
           34.9846432
         ]
       },
@@ -12932,7 +12932,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.0760640,
+          138.076064,
           34.7942015
         ]
       },
@@ -13031,8 +13031,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19357",
         "name": "道の駅下賀茂温泉 湯の花",
-        "prefecture": "下賀茂温泉\u3000湯の花",
-        "city": "",
+        "prefecture": "静岡県",
+        "city": "南伊豆町",
         "address": "静岡県賀茂郡南伊豆町下賀茂157-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19357",
@@ -13070,8 +13070,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.1107510,
-          34.6406770
+          138.110751,
+          34.640677
         ]
       },
       "properties": {
@@ -13093,8 +13093,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.7868000,
-          34.9713000
+          138.7868,
+          34.9713
         ]
       },
       "properties": {
@@ -13162,7 +13162,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.2724280,
+          137.272428,
           34.6613618
         ]
       },
@@ -13238,8 +13238,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19366",
         "name": "道の駅どんぐりの里 いなぶ",
-        "prefecture": "どんぐりの里\u3000いなぶ",
-        "city": "",
+        "prefecture": "愛知県",
+        "city": "豊田市",
         "address": "愛知県豊田市武節町針原４番地１",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19366",
@@ -13300,7 +13300,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.4206920,
+          137.420692,
           34.9631966
         ]
       },
@@ -13369,7 +13369,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.1383040,
+          137.138304,
           34.8485237
         ]
       },
@@ -13461,8 +13461,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.5337000,
-          34.9175700
+          137.5337,
+          34.91757
         ]
       },
       "properties": {
@@ -13508,7 +13508,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           136.5030552,
-          35.0136630
+          35.013663
         ]
       },
       "properties": {
@@ -13576,8 +13576,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.2140840,
-          34.1023630
+          136.214084,
+          34.102363
         ]
       },
       "properties": {
@@ -13623,7 +13623,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           136.1042538,
-          33.9599150
+          33.959915
         ]
       },
       "properties": {
@@ -13715,7 +13715,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           136.3926996,
-          34.8495080
+          34.849508
         ]
       },
       "properties": {
@@ -13829,8 +13829,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.0919440,
-          35.7967250
+          136.091944,
+          35.796725
         ]
       },
       "properties": {
@@ -13853,7 +13853,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           136.6614651,
-          35.9042370
+          35.904237
         ]
       },
       "properties": {
@@ -13875,8 +13875,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.1195140,
-          35.9694830
+          136.119514,
+          35.969483
         ]
       },
       "properties": {
@@ -13944,8 +13944,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.9060770,
-          35.4406960
+          135.906077,
+          35.440696
         ]
       },
       "properties": {
@@ -13968,7 +13968,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           136.2215746,
-          36.1710160
+          36.171016
         ]
       },
       "properties": {
@@ -14082,8 +14082,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.9970470,
-          35.9198800
+          135.997047,
+          35.91988
         ]
       },
       "properties": {
@@ -14105,8 +14105,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.8943610,
-          35.5601900
+          135.894361,
+          35.56019
         ]
       },
       "properties": {
@@ -14128,8 +14128,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.2945800,
-          36.0205640
+          136.29458,
+          36.020564
         ]
       },
       "properties": {
@@ -14312,7 +14312,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.1907650,
+          136.190765,
           35.4450126
         ]
       },
@@ -14358,8 +14358,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.0792970,
-          35.0857770
+          136.079297,
+          35.085777
         ]
       },
       "properties": {
@@ -14405,7 +14405,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           136.0830386,
-          35.4811020
+          35.481102
         ]
       },
       "properties": {
@@ -14473,7 +14473,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.1628050,
+          136.162805,
           35.5205935
         ]
       },
@@ -14542,8 +14542,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.3717920,
-          35.1057110
+          136.371792,
+          35.105711
         ]
       },
       "properties": {
@@ -14595,8 +14595,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19425",
         "name": "道の駅シルクのまち かや",
-        "prefecture": "シルクのまち\u3000かや",
-        "city": "",
+        "prefecture": "京都府",
+        "city": "与謝野町",
         "address": "京都府与謝郡与謝野町字滝98",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19425",
@@ -14657,7 +14657,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.5666820,
+          135.566682,
           35.0145442
         ]
       },
@@ -14681,7 +14681,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           135.4287046,
-          35.1548130
+          35.154813
         ]
       },
       "properties": {
@@ -14726,7 +14726,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.9297960,
+          134.929796,
           35.3383704
         ]
       },
@@ -14750,7 +14750,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           135.3145072,
-          35.4503490
+          35.450349
         ]
       },
       "properties": {
@@ -14772,8 +14772,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.4822130,
-          35.1238860
+          135.482213,
+          35.123886
         ]
       },
       "properties": {
@@ -14818,8 +14818,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.5880350,
-          35.2771210
+          135.588035,
+          35.277121
         ]
       },
       "properties": {
@@ -14841,7 +14841,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.6331080,
+          135.633108,
           35.1558354
         ]
       },
@@ -15002,8 +15002,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.6170620,
-          34.4784380
+          135.617062,
+          34.478438
         ]
       },
       "properties": {
@@ -15025,8 +15025,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.5877470,
-          34.5330430
+          135.587747,
+          34.533043
         ]
       },
       "properties": {
@@ -15049,7 +15049,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           135.4830003,
-          34.4231540
+          34.423154
         ]
       },
       "properties": {
@@ -15094,7 +15094,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.4254300,
+          135.42543,
           34.4225565
         ]
       },
@@ -15140,8 +15140,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.8038840,
-          35.2470090
+          134.803884,
+          35.247009
         ]
       },
       "properties": {
@@ -15325,7 +15325,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           134.5998095,
-          35.4114420
+          35.411442
         ]
       },
       "properties": {
@@ -15577,8 +15577,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.9871290,
-          35.0077940
+          134.987129,
+          35.007794
         ]
       },
       "properties": {
@@ -15600,8 +15600,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.4618410,
-          34.8042860
+          134.461841,
+          34.804286
         ]
       },
       "properties": {
@@ -15669,8 +15669,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.7424870,
-          35.3939940
+          134.742487,
+          35.393994
         ]
       },
       "properties": {
@@ -15738,8 +15738,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.0974180,
-          34.8139040
+          135.097418,
+          34.813904
         ]
       },
       "properties": {
@@ -15761,8 +15761,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.7192560,
-          34.2556400
+          134.719256,
+          34.25564
         ]
       },
       "properties": {
@@ -15791,8 +15791,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19477",
         "name": "道の駅吉野路 大塔",
-        "prefecture": "吉野路\u3000大塔",
-        "city": "",
+        "prefecture": "奈良県",
+        "city": "五條市",
         "address": "奈良県五條市大塔町阪本225-6",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19477",
@@ -15807,15 +15807,15 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.0001170,
-          34.1397560
+          136.000117,
+          34.139756
         ]
       },
       "properties": {
         "id": "19478",
         "name": "道の駅吉野路 上北山",
-        "prefecture": "吉野路\u3000上北山",
-        "city": "",
+        "prefecture": "奈良県",
+        "city": "上北山村",
         "address": "奈良県吉野郡上北山村大字河合字ハジ1-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19478",
@@ -15837,8 +15837,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19479",
         "name": "道の駅杉の湯 川上",
-        "prefecture": "杉の湯\u3000川上",
-        "city": "",
+        "prefecture": "奈良県",
+        "city": "川上村",
         "address": "奈良県吉野郡川上村迫695",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19479",
@@ -15860,8 +15860,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19480",
         "name": "道の駅吉野路 黒滝",
-        "prefecture": "吉野路\u3000黒滝",
-        "city": "",
+        "prefecture": "奈良県",
+        "city": "黒滝村",
         "address": "奈良県吉野郡黒滝村大字長瀬22",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19480",
@@ -15968,8 +15968,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.9632080,
-          34.6104290
+          135.963208,
+          34.610429
         ]
       },
       "properties": {
@@ -16021,14 +16021,14 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19487",
         "name": "道の駅吉野路 大淀ｉセンター",
-        "prefecture": "吉野路\u3000大淀ｉセンター",
-        "city": "",
+        "prefecture": "奈良県",
+        "city": "大淀町",
         "address": "奈良県吉野郡大淀町大字芦原536-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19487",
         "businessHours": "8:30～17:00(火曜 定休 / 季節･施設により異なる)",
         "homepage": "http://yoshinoji-oyodo.com/",
-        "homepage2": "https://www.kkr.mlit.go.jp/road/michi_no_eki/contents/nara/yoshinojioyadoicenter.html",
+        "homepage2": "https://www.kinki-michinoeki.com/station/yoshinoji-oyodo-icenter/",
         "michiEkiUrl": "https://www.michieki.jp/eki/443/"
       }
     },
@@ -16044,8 +16044,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19488",
         "name": "道の駅伊勢本街道 御杖",
-        "prefecture": "伊勢本街道\u3000御杖",
-        "city": "",
+        "prefecture": "奈良県",
+        "city": "御杖村",
         "address": "奈良県宇陀郡御杖村大字神末6325",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19488",
@@ -16084,14 +16084,14 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           135.2633365,
-          33.9503180
+          33.950318
         ]
       },
       "properties": {
         "id": "19490",
         "name": "道の駅San Pin 中津",
-        "prefecture": "San\u3000Pin",
-        "city": "中津",
+        "prefecture": "和歌山県",
+        "city": "日高川町",
         "address": "和歌山県日高郡日高川町大字船津820",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19490",
@@ -16152,8 +16152,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.5457230,
-          33.5198820
+          135.545723,
+          33.519882
         ]
       },
       "properties": {
@@ -16267,8 +16267,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.4272820,
-          33.8032510
+          135.427282,
+          33.803251
         ]
       },
       "properties": {
@@ -16313,8 +16313,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.4645310,
-          34.2845100
+          135.464531,
+          34.28451
         ]
       },
       "properties": {
@@ -16336,7 +16336,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.7619850,
+          135.761985,
           33.8652408
         ]
       },
@@ -16359,8 +16359,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.9464280,
-          33.9398280
+          135.946428,
+          33.939828
         ]
       },
       "properties": {
@@ -16383,14 +16383,14 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           135.4393106,
-          33.8955420
+          33.895542
         ]
       },
       "properties": {
         "id": "19503",
         "name": "道の駅水の郷日高川 龍游",
-        "prefecture": "水の郷日高川\u3000龍游",
-        "city": "",
+        "prefecture": "和歌山県",
+        "city": "田辺市",
         "address": "和歌山県田辺市龍神村福井511",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19503",
@@ -16566,8 +16566,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.7656460,
-          33.6015780
+          135.765646,
+          33.601578
         ]
       },
       "properties": {
@@ -16613,7 +16613,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           135.7944057,
-          33.4881520
+          33.488152
         ]
       },
       "properties": {
@@ -16635,8 +16635,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.5555570,
-          34.2932000
+          135.555557,
+          34.2932
         ]
       },
       "properties": {
@@ -16658,8 +16658,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.8261210,
-          33.5397560
+          135.826121,
+          33.539756
         ]
       },
       "properties": {
@@ -16734,8 +16734,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19518",
         "name": "道の駅ほうじょう 【4/25(金)リニューアルオープン】",
-        "prefecture": "ほうじょう\u3000【4/25(金)リニューアルオープン】",
-        "city": "",
+        "prefecture": "鳥取県",
+        "city": "北栄町",
         "address": "鳥取県東伯郡北栄町国坂1525-92",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19518",
@@ -16751,7 +16751,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           133.6624616,
-          35.5070590
+          35.507059
         ]
       },
       "properties": {
@@ -16849,8 +16849,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19523",
         "name": "道の駅神話の里 白うさぎ",
-        "prefecture": "神話の里\u3000白うさぎ",
-        "city": "",
+        "prefecture": "鳥取県",
+        "city": "鳥取市",
         "address": "鳥取県鳥取市白兎613",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19523",
@@ -16872,8 +16872,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19524",
         "name": "道の駅清流茶屋 かわはら",
-        "prefecture": "清流茶屋\u3000かわはら",
-        "city": "",
+        "prefecture": "鳥取県",
+        "city": "鳥取市",
         "address": "鳥取県鳥取市河原町高福837",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19524",
@@ -16888,8 +16888,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.4002720,
-          35.3438860
+          134.400272,
+          35.343886
         ]
       },
       "properties": {
@@ -16957,7 +16957,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.8170380,
+          132.817038,
           35.2109317
         ]
       },
@@ -17049,8 +17049,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.5188500,
-          34.8544460
+          132.51885,
+          34.854446
         ]
       },
       "properties": {
@@ -17095,7 +17095,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.6863980,
+          132.686398,
           35.3892258
         ]
       },
@@ -17280,7 +17280,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           131.8080661,
-          34.5535410
+          34.553541
         ]
       },
       "properties": {
@@ -17325,7 +17325,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          131.7607710,
+          131.760771,
           34.4501785
         ]
       },
@@ -17348,8 +17348,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.9121420,
-          35.3189050
+          132.912142,
+          35.318905
         ]
       },
       "properties": {
@@ -17372,7 +17372,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           133.1365866,
-          35.5182440
+          35.518244
         ]
       },
       "properties": {
@@ -17509,7 +17509,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.2989400,
+          132.29894,
           35.0451252
         ]
       },
@@ -17579,7 +17579,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           132.8302795,
-          35.1670180
+          35.167018
         ]
       },
       "properties": {
@@ -17624,8 +17624,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.5718760,
-          35.1754670
+          133.571876,
+          35.175467
         ]
       },
       "properties": {
@@ -17670,7 +17670,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.9470280,
+          133.947028,
           34.9122666
         ]
       },
@@ -17693,8 +17693,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.9269040,
-          34.5202010
+          133.926904,
+          34.520201
         ]
       },
       "properties": {
@@ -17832,7 +17832,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           134.1508967,
-          35.0147210
+          35.014721
         ]
       },
       "properties": {
@@ -17946,8 +17946,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.5002440,
-          34.4733170
+          133.500244,
+          34.473317
         ]
       },
       "properties": {
@@ -17970,7 +17970,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           133.0713142,
-          34.7845910
+          34.784591
         ]
       },
       "properties": {
@@ -17993,7 +17993,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           133.2757124,
-          34.8896700
+          34.88967
         ]
       },
       "properties": {
@@ -18084,7 +18084,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.9139450,
+          132.913945,
           34.5064709
         ]
       },
@@ -18108,7 +18108,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           133.3173083,
-          34.3946840
+          34.394684
         ]
       },
       "properties": {
@@ -18131,7 +18131,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           132.1042513,
-          34.3891190
+          34.389119
         ]
       },
       "properties": {
@@ -18338,7 +18338,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           132.8815981,
-          35.0240580
+          35.024058
         ]
       },
       "properties": {
@@ -18360,8 +18360,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.0841000,
-          34.5963800
+          133.0841,
+          34.59638
         ]
       },
       "properties": {
@@ -18430,7 +18430,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           131.4595121,
-          34.2862960
+          34.286296
         ]
       },
       "properties": {
@@ -18781,8 +18781,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19607",
         "name": "道の駅きらら あじす",
-        "prefecture": "きらら\u3000あじす",
-        "city": "",
+        "prefecture": "山口県",
+        "city": "山口市",
         "address": "山口県山口市阿知須10509-88",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19607",
@@ -18827,8 +18827,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19609",
         "name": "道の駅北浦街道 豊北",
-        "prefecture": "北浦街道\u3000豊北",
-        "city": "",
+        "prefecture": "山口県",
+        "city": "下関市",
         "address": "山口県下関市豊北町大字神田上314-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19609",
@@ -18890,7 +18890,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           134.0600296,
-          34.0426260
+          34.042626
         ]
       },
       "properties": {
@@ -18913,7 +18913,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           134.5022843,
-          33.8631990
+          33.863199
         ]
       },
       "properties": {
@@ -18959,7 +18959,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           134.3524444,
-          34.1509420
+          34.150942
         ]
       },
       "properties": {
@@ -18981,7 +18981,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.8113120,
+          133.811312,
           33.8891692
         ]
       },
@@ -19189,7 +19189,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           133.7600397,
-          33.8813630
+          33.881363
         ]
       },
       "properties": {
@@ -19396,7 +19396,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           134.2424659,
-          34.2581900
+          34.25819
         ]
       },
       "properties": {
@@ -19464,7 +19464,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.0077440,
+          134.007744,
           34.0950942
         ]
       },
@@ -19487,15 +19487,15 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.8079660,
+          133.807966,
           34.3133882
         ]
       },
       "properties": {
         "id": "19638",
         "name": "道の駅恋人の聖地 うたづ臨海公園",
-        "prefecture": "恋人の聖地\u3000うたづ臨海公園",
-        "city": "",
+        "prefecture": "香川県",
+        "city": "宇多津町",
         "address": "香川県綾歌郡宇多津町浜一番丁4",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19638",
@@ -19511,7 +19511,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           133.6013067,
-          34.0427680
+          34.042768
         ]
       },
       "properties": {
@@ -19533,7 +19533,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.7980270,
+          133.798027,
           34.1100368
         ]
       },
@@ -19695,7 +19695,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           132.7982451,
-          33.3302340
+          33.330234
         ]
       },
       "properties": {
@@ -19810,7 +19810,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           132.7493583,
-          33.3797890
+          33.379789
         ]
       },
       "properties": {
@@ -19832,7 +19832,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.5615990,
+          132.561599,
           32.9587802
         ]
       },
@@ -20161,8 +20161,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19667",
         "name": "道の駅うわじま きさいや広場",
-        "prefecture": "うわじま\u3000きさいや広場",
-        "city": "",
+        "prefecture": "愛媛県",
+        "city": "宇和島市",
         "address": "愛媛県宇和島市弁天町1-318-16",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19667",
@@ -20200,7 +20200,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.4181380,
+          132.418138,
           33.4581626
         ]
       },
@@ -20224,7 +20224,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           132.5203019,
-          33.1396820
+          33.139682
         ]
       },
       "properties": {
@@ -20293,7 +20293,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           133.6634001,
-          33.7509230
+          33.750923
         ]
       },
       "properties": {
@@ -20453,7 +20453,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.0996120,
+          133.099612,
           33.4266321
         ]
       },
@@ -20499,7 +20499,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.3661910,
+          133.366191,
           33.5735339
         ]
       },
@@ -20522,7 +20522,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.5442350,
+          133.544235,
           33.7426438
         ]
       },
@@ -20752,7 +20752,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.8354330,
+          132.835433,
           33.2239124
         ]
       },
@@ -20775,7 +20775,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.1017810,
+          133.101781,
           33.0867393
         ]
       },
@@ -20868,7 +20868,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           131.1543082,
-          33.5887160
+          33.588716
         ]
       },
       "properties": {
@@ -21005,7 +21005,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.5034510,
+          130.503451,
           33.8484732
         ]
       },
@@ -21074,7 +21074,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.4379730,
+          130.437973,
           33.2179063
         ]
       },
@@ -21098,7 +21098,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           130.8451701,
-          33.6261540
+          33.626154
         ]
       },
       "properties": {
@@ -21189,7 +21189,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.0719110,
+          130.071911,
           33.3111192
         ]
       },
@@ -21213,7 +21213,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           129.9289587,
-          33.3136200
+          33.31362
         ]
       },
       "properties": {
@@ -21442,7 +21442,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          129.6957010,
+          129.695701,
           33.0429925
         ]
       },
@@ -21558,7 +21558,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           131.0646886,
-          33.1231010
+          33.123101
         ]
       },
       "properties": {
@@ -21810,7 +21810,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          131.0913500,
+          131.09135,
           32.6906433
         ]
       },
@@ -21925,15 +21925,15 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.8267330,
+          130.826733,
           32.3993167
         ]
       },
       "properties": {
         "id": "19744",
         "name": "道の駅子守唄の里 五木",
-        "prefecture": "子守唄の里\u3000五木",
-        "city": "",
+        "prefecture": "熊本県",
+        "city": "五木村",
         "address": "熊本県球磨郡五木村甲2672-54",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19744",
@@ -22040,8 +22040,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          131.1672290,
-          32.7274600
+          131.167229,
+          32.72746
         ]
       },
       "properties": {
@@ -22385,7 +22385,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          131.3270880,
+          131.327088,
           33.2606456
         ]
       },
@@ -22408,7 +22408,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          131.6215480,
+          131.621548,
           33.0286904
         ]
       },
@@ -22454,7 +22454,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.9720930,
+          130.972093,
           33.2479097
         ]
       },
@@ -22547,7 +22547,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           131.6057447,
-          33.6805020
+          33.680502
         ]
       },
       "properties": {
@@ -22576,8 +22576,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19772",
         "name": "道の駅童話の里 くす",
-        "prefecture": "童話の里\u3000くす",
-        "city": "",
+        "prefecture": "大分県",
+        "city": "玖珠町",
         "address": "大分県玖珠郡玖珠町大字帆足2121",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19772",
@@ -22707,8 +22707,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          131.2026150,
-          31.7944200
+          131.202615,
+          31.79442
         ]
       },
       "properties": {
@@ -22868,7 +22868,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          131.3789290,
+          131.378929,
           31.5031169
         ]
       },
@@ -23006,8 +23006,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          131.4919300,
-          32.5957570
+          131.49193,
+          32.595757
         ]
       },
       "properties": {
@@ -23029,8 +23029,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.5451720,
-          31.3789620
+          130.545172,
+          31.378962
         ]
       },
       "properties": {
@@ -23489,8 +23489,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.9242000,
-          31.5000200
+          130.9242,
+          31.50002
         ]
       },
       "properties": {
@@ -23513,7 +23513,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           127.9693201,
-          26.5520690
+          26.552069
         ]
       },
       "properties": {
@@ -23535,15 +23535,15 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          128.1021800,
-          26.6607400
+          128.10218,
+          26.66074
         ]
       },
       "properties": {
         "id": "19814",
         "name": "道の駅おおぎみ やんばるの森ビジターセンター",
-        "prefecture": "おおぎみ\u3000やんばるの森ビジターセンター",
-        "city": "",
+        "prefecture": "沖縄県",
+        "city": "大宜味村",
         "address": "沖縄県国頭郡大宜味村字津波95",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19814",
@@ -23604,7 +23604,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          127.7582040,
+          127.758204,
           26.3993416
         ]
       },
@@ -23650,7 +23650,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          127.6611560,
+          127.661156,
           26.1384965
         ]
       },
@@ -23673,8 +23673,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          127.9523280,
-          26.4738740
+          127.952328,
+          26.473874
         ]
       },
       "properties": {
@@ -23696,7 +23696,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.8448430,
+          140.844843,
           43.0508677
         ]
       },
@@ -23811,7 +23811,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.6755570,
+          140.675557,
           35.7178557
         ]
       },
@@ -23857,7 +23857,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.3882230,
+          138.388223,
           36.8521479
         ]
       },
@@ -23904,7 +23904,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           135.4145694,
-          33.6914250
+          33.691425
         ]
       },
       "properties": {
@@ -23926,7 +23926,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.5998870,
+          135.599887,
           33.5058378
         ]
       },
@@ -24087,8 +24087,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.0269680,
-          32.1938360
+          130.026968,
+          32.193836
         ]
       },
       "properties": {
@@ -24111,7 +24111,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           131.0415257,
-          32.8185100
+          32.81851
         ]
       },
       "properties": {
@@ -24140,8 +24140,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19840",
         "name": "道の駅みそぎの郷 きこない",
-        "prefecture": "みそぎの郷\u3000きこない",
-        "city": "",
+        "prefecture": "北海道",
+        "city": "木古内町",
         "address": "北海道上磯郡木古内町字本町338-14",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19840",
@@ -24179,7 +24179,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.3278230,
+          141.327823,
           38.7079696
         ]
       },
@@ -24416,8 +24416,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "19852",
         "name": "道の駅海の京都 宮津",
-        "prefecture": "海の京都\u3000宮津",
-        "city": "",
+        "prefecture": "京都府",
+        "city": "宮津市",
         "address": "京都府宮津市字浜町3007",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19852",
@@ -24524,7 +24524,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          129.6716340,
+          129.671634,
           33.2015015
         ]
       },
@@ -24570,7 +24570,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.7559000,
+          130.7559,
           32.9871618
         ]
       },
@@ -24593,8 +24593,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.4124380,
-          39.2005320
+          140.412438,
+          39.200532
         ]
       },
       "properties": {
@@ -24616,8 +24616,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.9844120,
-          38.7941580
+          139.984412,
+          38.794158
         ]
       },
       "properties": {
@@ -24639,8 +24639,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.1074590,
-          37.5383410
+          140.107459,
+          37.538341
         ]
       },
       "properties": {
@@ -24662,8 +24662,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.0719760,
-          36.4311680
+          140.071976,
+          36.431168
         ]
       },
       "properties": {
@@ -24685,8 +24685,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.9312270,
-          35.5829170
+          138.931227,
+          35.582917
         ]
       },
       "properties": {
@@ -24708,8 +24708,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.0925410,
-          33.8789390
+          136.092541,
+          33.878939
         ]
       },
       "properties": {
@@ -24731,8 +24731,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.8547670,
-          35.8815640
+          136.854767,
+          35.881564
         ]
       },
       "properties": {
@@ -24754,8 +24754,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.9399440,
-          35.6910230
+          137.939944,
+          35.691023
         ]
       },
       "properties": {
@@ -24777,8 +24777,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.1905220,
-          34.8502490
+          135.190522,
+          34.850249
         ]
       },
       "properties": {
@@ -24800,8 +24800,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.7047880,
-          34.4954010
+          135.704788,
+          34.495401
         ]
       },
       "properties": {
@@ -24823,8 +24823,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.2356330,
-          34.5697700
+          133.235633,
+          34.56977
         ]
       },
       "properties": {
@@ -24846,8 +24846,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.6928740,
-          32.9079390
+          130.692874,
+          32.907939
         ]
       },
       "properties": {
@@ -24869,8 +24869,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.5080360,
-          32.3028820
+          130.508036,
+          32.302882
         ]
       },
       "properties": {
@@ -24892,8 +24892,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          131.0685060,
-          33.2659530
+          131.068506,
+          33.265953
         ]
       },
       "properties": {
@@ -24915,8 +24915,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.4773460,
-          34.3182900
+          135.477346,
+          34.31829
         ]
       },
       "properties": {
@@ -24938,8 +24938,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.1737900,
-          34.3259360
+          135.17379,
+          34.325936
         ]
       },
       "properties": {
@@ -24961,8 +24961,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.1217910,
-          38.9918160
+          141.121791,
+          38.991816
         ]
       },
       "properties": {
@@ -24984,8 +24984,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.5456120,
-          37.8726810
+          140.545612,
+          37.872681
         ]
       },
       "properties": {
@@ -25007,8 +25007,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.0435160,
-          38.1082110
+          140.043516,
+          38.108211
         ]
       },
       "properties": {
@@ -25030,8 +25030,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.4408220,
-          36.2366920
+          138.440822,
+          36.236692
         ]
       },
       "properties": {
@@ -25053,8 +25053,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.2035060,
-          36.0524820
+          139.203506,
+          36.052482
         ]
       },
       "properties": {
@@ -25076,8 +25076,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.0262940,
-          37.6471250
+          139.026294,
+          37.647125
         ]
       },
       "properties": {
@@ -25099,8 +25099,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.7684550,
-          36.8860270
+          136.768455,
+          36.886027
         ]
       },
       "properties": {
@@ -25122,8 +25122,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.9260140,
-          35.0756040
+          138.926014,
+          35.075604
         ]
       },
       "properties": {
@@ -25145,8 +25145,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.0240070,
-          34.7654720
+          136.024007,
+          34.765472
         ]
       },
       "properties": {
@@ -25168,8 +25168,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.4698070,
-          35.6106490
+          134.469807,
+          35.610649
         ]
       },
       "properties": {
@@ -25191,8 +25191,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.6585000,
-          35.5024270
+          133.6585,
+          35.502427
         ]
       },
       "properties": {
@@ -25214,8 +25214,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.1964580,
-          33.1768710
+          130.196458,
+          33.176871
         ]
       },
       "properties": {
@@ -25237,8 +25237,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          144.2949510,
-          43.8453190
+          144.294951,
+          43.845319
         ]
       },
       "properties": {
@@ -25260,8 +25260,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.4484980,
-          43.1772540
+          141.448498,
+          43.177254
         ]
       },
       "properties": {
@@ -25283,8 +25283,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.7356240,
-          37.6972670
+          140.735624,
+          37.697267
         ]
       },
       "properties": {
@@ -25306,8 +25306,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.3957210,
-          37.0327560
+          139.395721,
+          37.032756
         ]
       },
       "properties": {
@@ -25329,8 +25329,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.0524790,
-          35.3599480
+          140.052479,
+          35.359948
         ]
       },
       "properties": {
@@ -25352,8 +25352,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.6280840,
-          35.4319180
+          136.628084,
+          35.431918
         ]
       },
       "properties": {
@@ -25375,8 +25375,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.7782100,
-          35.0910490
+          134.77821,
+          35.091049
         ]
       },
       "properties": {
@@ -25398,8 +25398,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.3113610,
-          34.2868130
+          135.311361,
+          34.286813
         ]
       },
       "properties": {
@@ -25421,8 +25421,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.2352460,
-          33.3223940
+          133.235246,
+          33.322394
         ]
       },
       "properties": {
@@ -25444,8 +25444,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.4311800,
-          43.4038730
+          141.43118,
+          43.403873
         ]
       },
       "properties": {
@@ -25467,8 +25467,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.6559730,
-          41.9256660
+          140.655973,
+          41.925666
         ]
       },
       "properties": {
@@ -25490,8 +25490,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.3004620,
-          40.5777390
+          140.300462,
+          40.577739
         ]
       },
       "properties": {
@@ -25536,8 +25536,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.8259300,
-          40.2958310
+          140.82593,
+          40.295831
         ]
       },
       "properties": {
@@ -25559,8 +25559,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.1370170,
-          37.9220550
+          140.137017,
+          37.922055
         ]
       },
       "properties": {
@@ -25582,8 +25582,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.5884500,
-          37.7665240
+          140.58845,
+          37.766524
         ]
       },
       "properties": {
@@ -25605,8 +25605,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.2252380,
-          36.7732310
+          139.225238,
+          36.773231
         ]
       },
       "properties": {
@@ -25651,8 +25651,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.4469410,
-          35.3067550
+          138.446941,
+          35.306755
         ]
       },
       "properties": {
@@ -25697,8 +25697,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.8913470,
-          35.5444420
+          137.891347,
+          35.544442
         ]
       },
       "properties": {
@@ -25720,8 +25720,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.0416230,
-          36.8149060
+          137.041623,
+          36.814906
         ]
       },
       "properties": {
@@ -25743,8 +25743,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.5467190,
-          36.5014570
+          136.546719,
+          36.501457
         ]
       },
       "properties": {
@@ -25766,8 +25766,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.9152360,
-          33.8765180
+          135.915236,
+          33.876518
         ]
       },
       "properties": {
@@ -25789,15 +25789,15 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.7974180,
-          34.5714070
+          135.797418,
+          34.571407
         ]
       },
       "properties": {
         "id": "19912",
         "name": "道の駅レスティ 唐古・鍵",
-        "prefecture": "レスティ\u3000唐古・鍵",
-        "city": "",
+        "prefecture": "奈良県",
+        "city": "田原本町",
         "address": "奈良県磯城郡田原本町大字唐古70-1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19912",
@@ -25812,8 +25812,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          131.2027130,
-          34.3884660
+          131.202713,
+          34.388466
         ]
       },
       "properties": {
@@ -25835,8 +25835,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          142.5973420,
-          43.5030710
+          142.597342,
+          43.503071
         ]
       },
       "properties": {
@@ -25858,8 +25858,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.8484910,
-          39.8820270
+          139.848491,
+          39.882027
         ]
       },
       "properties": {
@@ -25881,8 +25881,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.9440050,
-          35.8867530
+          137.944005,
+          35.886753
         ]
       },
       "properties": {
@@ -25904,8 +25904,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.7095340,
-          35.2739000
+          137.709534,
+          35.2739
         ]
       },
       "properties": {
@@ -25927,8 +25927,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.0371590,
-          35.5651070
+          138.037159,
+          35.565107
         ]
       },
       "properties": {
@@ -25973,8 +25973,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.7986360,
-          34.4649310
+          135.798636,
+          34.464931
         ]
       },
       "properties": {
@@ -25996,8 +25996,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.0576060,
-          34.0544370
+          134.057606,
+          34.054437
         ]
       },
       "properties": {
@@ -26019,8 +26019,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.6950050,
-          33.6697940
+          132.695005,
+          33.669794
         ]
       },
       "properties": {
@@ -26042,8 +26042,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.0255110,
-          32.3167730
+          130.025511,
+          32.316773
         ]
       },
       "properties": {
@@ -26065,8 +26065,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.6982340,
-          31.4687390
+          130.698234,
+          31.468739
         ]
       },
       "properties": {
@@ -26088,8 +26088,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.5510960,
-          34.4359660
+          135.551096,
+          34.435966
         ]
       },
       "properties": {
@@ -26111,14 +26111,14 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.4815520,
-          37.6358770
+          140.481552,
+          37.635877
         ]
       },
       "properties": {
         "id": "19926",
         "name": "道の駅道の駅安達智恵子の里 下り線",
-        "prefecture": "道の駅「安達」智恵子の里\u3000下り線",
+        "prefecture": "福島県",
         "city": "",
         "address": "福島県二本松市米沢字下川原田105-2",
         "road": "",
@@ -26134,8 +26134,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          142.3604370,
-          45.1249360
+          142.360437,
+          45.124936
         ]
       },
       "properties": {
@@ -26157,8 +26157,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.8187660,
-          42.8760950
+          141.818766,
+          42.876095
         ]
       },
       "properties": {
@@ -26203,8 +26203,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.4145090,
-          34.6958630
+          137.414509,
+          34.695863
         ]
       },
       "properties": {
@@ -26226,8 +26226,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.0534720,
-          35.4974820
+          134.053472,
+          35.497482
         ]
       },
       "properties": {
@@ -26249,8 +26249,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.1304560,
-          32.5455060
+          130.130456,
+          32.545506
         ]
       },
       "properties": {
@@ -26272,8 +26272,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.7892790,
-          32.1931360
+          130.789279,
+          32.193136
         ]
       },
       "properties": {
@@ -26295,8 +26295,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          131.4926600,
-          33.1268010
+          131.49266,
+          33.126801
         ]
       },
       "properties": {
@@ -26318,8 +26318,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.9567970,
-          38.5799370
+          140.956797,
+          38.579937
         ]
       },
       "properties": {
@@ -26341,8 +26341,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          143.4984880,
-          44.0237590
+          143.498488,
+          44.023759
         ]
       },
       "properties": {
@@ -26364,8 +26364,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.9938330,
-          36.3228070
+          139.993833,
+          36.322807
         ]
       },
       "properties": {
@@ -26387,15 +26387,15 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.0532500,
-          36.6327210
+          140.05325,
+          36.632721
         ]
       },
       "properties": {
         "id": "19938",
         "name": "道の駅たかねざわ 元気あっぷむら",
-        "prefecture": "たかねざわ\u3000元気あっぷむら",
-        "city": "",
+        "prefecture": "栃木県",
+        "city": "塩谷郡",
         "address": "栃木県塩谷郡高根沢町大字上柏崎588番地1",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/19938",
@@ -26410,8 +26410,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.4480680,
-          36.9600990
+          138.448068,
+          36.960099
         ]
       },
       "properties": {
@@ -26433,8 +26433,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.9305550,
-          34.9227540
+          138.930555,
+          34.922754
         ]
       },
       "properties": {
@@ -26456,8 +26456,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.6244730,
-          33.4666380
+          130.624473,
+          33.466638
         ]
       },
       "properties": {
@@ -26479,8 +26479,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          143.2917800,
-          43.2246370
+          143.29178,
+          43.224637
         ]
       },
       "properties": {
@@ -26502,8 +26502,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.6488170,
-          43.9444540
+          141.648817,
+          43.944454
         ]
       },
       "properties": {
@@ -26525,8 +26525,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.0560100,
-          39.3657520
+          141.05601,
+          39.365752
         ]
       },
       "properties": {
@@ -26548,8 +26548,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.0001220,
-          37.4964560
+          141.000122,
+          37.496456
         ]
       },
       "properties": {
@@ -26571,8 +26571,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.1184160,
-          35.3261970
+          139.118416,
+          35.326197
         ]
       },
       "properties": {
@@ -26594,8 +26594,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.2576780,
-          36.0513230
+          138.257678,
+          36.051323
         ]
       },
       "properties": {
@@ -26617,8 +26617,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.0591310,
-          37.6989760
+          139.059131,
+          37.698976
         ]
       },
       "properties": {
@@ -26640,8 +26640,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.8044700,
-          37.4551060
+          138.80447,
+          37.455106
         ]
       },
       "properties": {
@@ -26663,8 +26663,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.4789920,
-          36.0717660
+          136.478992,
+          36.071766
         ]
       },
       "properties": {
@@ -26686,8 +26686,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.2573740,
-          34.2149800
+          135.257374,
+          34.21498
         ]
       },
       "properties": {
@@ -26709,8 +26709,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.6735560,
-          34.6484390
+          132.673556,
+          34.648439
         ]
       },
       "properties": {
@@ -26732,8 +26732,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.1264320,
-          32.3850930
+          130.126432,
+          32.385093
         ]
       },
       "properties": {
@@ -26755,8 +26755,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          128.1535320,
-          26.6309490
+          128.153532,
+          26.630949
         ]
       },
       "properties": {
@@ -26778,8 +26778,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          143.3008350,
-          42.9334380
+          143.300835,
+          42.933438
         ]
       },
       "properties": {
@@ -26801,8 +26801,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.5490520,
-          35.0641490
+          137.549052,
+          35.064149
         ]
       },
       "properties": {
@@ -26824,8 +26824,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.5919460,
-          34.6236150
+          133.591946,
+          34.623615
         ]
       },
       "properties": {
@@ -26847,8 +26847,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.4131100,
-          35.1456300
+          132.41311,
+          35.14563
         ]
       },
       "properties": {
@@ -26870,8 +26870,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.4746310,
-          34.1362680
+          134.474631,
+          34.136268
         ]
       },
       "properties": {
@@ -26893,8 +26893,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.7157310,
-          32.5477910
+          130.715731,
+          32.547791
         ]
       },
       "properties": {
@@ -26916,8 +26916,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          131.2293780,
-          31.4628630
+          131.229378,
+          31.462863
         ]
       },
       "properties": {
@@ -27009,7 +27009,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           141.4459847,
-          38.4458100
+          38.44581
         ]
       },
       "properties": {
@@ -27169,7 +27169,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.2743740,
+          140.274374,
           36.3555952
         ]
       },
@@ -27307,7 +27307,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.9301230,
+          134.930123,
           35.1889597
         ]
       },
@@ -27331,7 +27331,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           135.0098438,
-          35.2412670
+          35.241267
         ]
       },
       "properties": {
@@ -27376,8 +27376,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.1645860,
-          37.8370740
+          139.164586,
+          37.837074
         ]
       },
       "properties": {
@@ -27399,8 +27399,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.7036130,
-          34.4335380
+          132.703613,
+          34.433538
         ]
       },
       "properties": {
@@ -27445,7 +27445,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.7813410,
+          141.781341,
           40.2264503
         ]
       },
@@ -27468,8 +27468,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.9853380,
-          36.0835560
+          139.985338,
+          36.083556
         ]
       },
       "properties": {
@@ -27537,8 +27537,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.2137590,
-          36.2057180
+          138.213759,
+          36.205718
         ]
       },
       "properties": {
@@ -27560,8 +27560,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.2515550,
-          36.2887270
+          136.251555,
+          36.288727
         ]
       },
       "properties": {
@@ -27583,8 +27583,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.9354110,
-          35.6045460
+          135.935411,
+          35.604546
         ]
       },
       "properties": {
@@ -27606,8 +27606,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.1699930,
-          34.1282900
+          135.169993,
+          34.12829
         ]
       },
       "properties": {
@@ -27629,8 +27629,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.3163990,
-          33.5032400
+          133.316399,
+          33.50324
         ]
       },
       "properties": {
@@ -27745,7 +27745,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           135.7544065,
-          34.6694950
+          34.669495
         ]
       },
       "properties": {
@@ -27768,7 +27768,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           131.5549927,
-          33.2564800
+          33.25648
         ]
       },
       "properties": {
@@ -27813,8 +27813,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.4659290,
-          36.1286030
+          138.465929,
+          36.128603
         ]
       },
       "properties": {
@@ -28043,7 +28043,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.2953300,
+          134.29533,
           33.5432904
         ]
       },
@@ -28159,7 +28159,7 @@ const michiNoEkiGeoJSON = {
         "type": "Point",
         "coordinates": [
           141.9731475,
-          39.4370230
+          39.437023
         ]
       },
       "properties": {
@@ -28303,8 +28303,8 @@ const michiNoEkiGeoJSON = {
       "properties": {
         "id": "22788",
         "name": "道の駅きなりの郷 下北山",
-        "prefecture": "きなりの郷\u3000下北山",
-        "city": "",
+        "prefecture": "奈良県",
+        "city": "下北山村",
         "address": "奈良県吉野郡下北山村上池原1026番地",
         "road": "",
         "url": "https://www.michi-no-eki.jp/stations/views/22788",
@@ -28319,7 +28319,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.4301810,
+          130.430181,
           32.9892547
         ]
       },
@@ -28342,7 +28342,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.2043080,
+          138.204308,
           34.9279112
         ]
       },
