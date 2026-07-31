@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<base href="../">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ポップアップ廃止案モック（画面全体・実寸375×667）</title>
+<style>
+  body { font-family: sans-serif; background: #ececec; padding: 18px; margin: 0; color: #222; }
+  h1 { font-size: 16px; margin: 0 0 6px; }
+  h2 { font-size: 14px; margin: 32px 0 8px; padding: 9px 0 0; border-top: 3px solid #bbb; }
+  .lead { font-size: 12px; color: #555; line-height: 1.8; margin: 0 0 12px; max-width: 1150px; }
+  .lead b { color: #b00; }
+  code { background: #fff; padding: 0 3px; border-radius: 3px; font-size: 11px; }
+  table.calc { border-collapse: collapse; font-size: 11.5px; margin: 6px 0; background: #fff; }
+  table.calc th, table.calc td { border: 1px solid #ddd; padding: 3px 9px; text-align: left; }
+  table.calc th { background: #f4f4f4; }
+
+  .row { display: flex; gap: 18px; flex-wrap: wrap; align-items: flex-start; }
+  .slot { width: 375px; }
+  .slot h4 { font-size: 12.5px; margin: 0 0 3px; }
+  .slot .cnt { font-size: 10.5px; color: #777; margin: 0 0 6px; font-variant-numeric: tabular-nums; }
+  .slot .cnt b { color: #333; }
+  .slot .note { font-size: 11px; color: #444; line-height: 1.7; margin: 8px 0 0; }
+  .slot .note .o { color: #0a7a2f; font-weight: bold; }
+  .slot .note .x { color: #b00; font-weight: bold; }
+  .slot .note .c { color: #0645ad; font-weight: bold; }
+
+  /* ===== 端末フレーム（iPhone SE/8 相当 375×667 実寸） ===== */
+  .phone { position: relative; width: 375px; height: 667px; overflow: hidden;
+           border: 1px solid #999; border-radius: 6px; background: #dfe3d8; font-family: sans-serif; }
+  .map { position: absolute; inset: 0;
+         background:
+           repeating-linear-gradient(64deg, rgba(255,255,255,.85) 0 7px, rgba(255,255,255,0) 7px 78px),
+           repeating-linear-gradient(-24deg, rgba(255,255,255,.75) 0 5px, rgba(255,255,255,0) 5px 96px),
+           radial-gradient(circle at 22% 72%, #bcd4c4 0 62px, transparent 63px),
+           radial-gradient(circle at 78% 22%, #cfe2ea 0 78px, transparent 79px),
+           linear-gradient(150deg, #e6ead9, #d5ded0); }
+  .pin { position: absolute; width: 26px; height: 26px; border-radius: 50%; border: 2px solid #fff;
+         box-shadow: 0 1px 4px rgba(0,0,0,.4); display: flex; align-items: center; justify-content: center;
+         font-size: 12px; color: #fff; transform: translate(-50%,-50%); }
+  .pin.sel { width: 34px; height: 34px; box-shadow: 0 0 0 5px rgba(66,133,244,.35), 0 2px 6px rgba(0,0,0,.5); }
+  .p-castle { background: #8B4513; } .p-michi { background: #283593; } .p-mh { background: #00897B; }
+
+  /* 既存クローム（index.html 実寸: 右上48px+gap8 / zoom right10 bottom90 / hist bottom194 / bar 52px） */
+  .fab { position: absolute; width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,.7);
+         box-shadow: 0 1px 4px rgba(0,0,0,.2); display: flex; align-items: center; justify-content: center;
+         font-size: 15px; color: #555; }
+  .fab.f1 { top: 10px; right: 10px; } .fab.f2 { top: 66px; right: 10px; }
+  .fab.f3 { bottom: 194px; right: 10px; }
+  .zoomcap { position: absolute; right: 10px; bottom: 90px; width: 48px; height: 96px; border-radius: 24px;
+             background: rgba(255,255,255,.7); box-shadow: 0 1px 4px rgba(0,0,0,.2);
+             display: flex; flex-direction: column; }
+  .zoomcap span { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 19px; color: #555; }
+  .bar { position: absolute; left: 0; right: 0; bottom: 0; height: 52px; background: #fff;
+         box-shadow: 0 -2px 8px rgba(0,0,0,.15); display: flex; align-items: stretch; z-index: 4; }
+  .bar .sbox { flex: 1; display: flex; align-items: center; padding: 0 12px; gap: 8px; color: #9E9E9E; font-size: 14px; }
+  .bar .bbtn { width: 54px; border-left: 2px solid #e0e0e0; display: flex; align-items: center;
+               justify-content: center; font-size: 16px; color: #555; }
+
+  /* ===== ポップアップ（比較用の現行） ===== */
+  .popup-card { width: 180px; padding: 6px 8px; }
+  .popup-title-row { display: flex; align-items: center; gap: 5px; margin-bottom: 2px; }
+  .popup-title { font-weight: bold; font-size: 14px; }
+  .popup-address, .popup-alias { font-size: 11px; color: #666; display: block; padding-left: 2px; }
+  .popup-form { display: flex; gap: 5px; padding-left: 2px; }
+  .popup-form-meta { font-size: 11px; color: #666; }
+  .badge { font-size: 12px; font-weight: 700; color: #fff; padding: 2px 8px; border-radius: 10px;
+           line-height: 1.6; white-space: nowrap; background: hsl(0,42%,38%); }
+  .castle-img { height: 160px; margin: 4px 0; border: 1px solid #eee; border-radius: 6px;
+                background: linear-gradient(135deg,#cbbba1,#7d6446); color: #fff; font-size: 10px;
+                text-align: center; line-height: 160px; }
+  .mlbox { position: absolute; background: #fff; border-radius: 3px; box-shadow: 0 1px 8px rgba(0,0,0,.3); z-index: 3; }
+  .mlbox::after { content: ''; position: absolute; left: 50%; bottom: -9px; margin-left: -9px;
+                  border: 9px solid transparent; border-top-color: #fff; border-bottom: 0; }
+
+  .btn { display: flex; align-items: center; justify-content: center; text-align: center; height: 40px;
+         padding: 0 4px; border-radius: 7px; font-weight: bold; color: #fff; font-size: 12px;
+         box-sizing: border-box; cursor: pointer; text-decoration: none; }
+  .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 5px; }
+  .btn-full { grid-column: 1 / -1; }
+  .b-gmap { background: #fff; color: #4285f4; border: 1px solid #4285f4; }
+  .b-nav { background: #4285F4; } .b-yahoo { background: #FF0033; } .b-near { background: #34A853; }
+  .b-wiki { background: #333; } .b-kojo { background: #8B4513; } .b-shb { background: #6A4C93; }
+  .b-acc { background: #00897B; } .b-detail { background: #8D6E63; }
+
+  /* ===== 共通シート ===== */
+  .sheet { position: absolute; left: 0; right: 0; background: #fff; z-index: 5;
+           box-shadow: 0 -4px 16px rgba(0,0,0,.18); font-family: sans-serif; }
+  .sheet.bottom { bottom: 0; border-radius: 16px 16px 0 0; }
+  .sheet .handle { width: 36px; height: 4px; background: #ccc; border-radius: 2px; margin: 8px auto 6px; }
+  .sheet .body { padding: 0 14px 14px; }
+  .sheet .close { position: absolute; top: 6px; right: 12px; font-size: 20px; color: #bbb; }
+  .s-title { font-size: 16px; font-weight: bold; }
+  .s-sub { font-size: 11.5px; color: #777; margin-top: 2px; line-height: 1.5; }
+
+  /* 上部カード */
+  .topcard { position: absolute; top: 10px; left: 10px; right: 66px; background: #fff; border-radius: 12px;
+             box-shadow: 0 3px 14px rgba(0,0,0,.22); z-index: 5; padding: 10px 12px 12px; }
+
+  /* 上部1行ヘッダー（ピーク） */
+  .peek { position: absolute; top: 0; left: 0; right: 0; background: #fff; z-index: 5;
+          box-shadow: 0 2px 10px rgba(0,0,0,.18); }
+  .peek .hrow { display: flex; align-items: center; gap: 9px; padding: 0 12px; height: 52px; }
+  .peek .hrow .ic { width: 28px; height: 28px; border-radius: 50%; background: #8B4513; color: #fff;
+                    display: flex; align-items: center; justify-content: center; font-size: 13px; flex: 0 0 28px; }
+  .peek .hrow .tx { flex: 1; min-width: 0; }
+  .peek .hrow .n { font-size: 14px; font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .peek .hrow .a { font-size: 10.5px; color: #999; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .peek .hrow .cv { font-size: 15px; color: #aaa; }
+  .peek .grab { width: 40px; height: 4px; background: #ddd; border-radius: 2px; margin: 0 auto 6px; }
+  .peek .exp { display: none; padding: 0 12px 12px; border-top: 1px solid #f2f2f2; }
+  .peek.open .exp { display: block; }
+
+  /* 下部ミニカード（Googleマップ型） */
+  .minicard { position: absolute; left: 10px; right: 10px; bottom: 62px; background: #fff; border-radius: 12px;
+              box-shadow: 0 3px 14px rgba(0,0,0,.25); z-index: 5; display: flex; gap: 10px; padding: 10px; }
+  .minicard .th { width: 64px; height: 64px; border-radius: 8px; flex: 0 0 64px;
+                  background: linear-gradient(135deg,#cbbba1,#7d6446); }
+  .minicard .tx { flex: 1; min-width: 0; }
+  .minicard .n { font-size: 14.5px; font-weight: bold; }
+  .minicard .a { font-size: 11px; color: #888; margin-top: 2px; }
+  .minicard .acts { display: flex; gap: 6px; margin-top: 7px; }
+  .minicard .acts .btn { height: 32px; font-size: 11px; padding: 0 10px; border-radius: 16px; }
+
+  /* カルーセル */
+  .carou { position: absolute; left: 0; right: 0; bottom: 62px; z-index: 5;
+           display: flex; gap: 10px; overflow-x: auto; padding: 4px 10px 8px; scroll-snap-type: x mandatory; }
+  .carou::-webkit-scrollbar { height: 4px; }
+  .carou::-webkit-scrollbar-thumb { background: #bbb; border-radius: 2px; }
+  .carou .card { flex: 0 0 285px; scroll-snap-align: center; background: #fff; border-radius: 12px;
+                 box-shadow: 0 3px 12px rgba(0,0,0,.22); padding: 9px; display: flex; gap: 9px; }
+  .carou .card .th { width: 56px; height: 56px; flex: 0 0 56px; border-radius: 7px;
+                     background: linear-gradient(135deg,#cbbba1,#7d6446); }
+  .carou .pgn { position: absolute; }
+
+  /* 分割ビュー */
+  .split-map { position: absolute; left: 0; right: 0; top: 0; height: 300px; overflow: hidden; }
+  .split-detail { position: absolute; left: 0; right: 0; top: 300px; bottom: 52px; background: #fff;
+                  z-index: 5; overflow-y: auto; padding: 12px 14px; box-shadow: 0 -2px 8px rgba(0,0,0,.12); }
+
+  /* 全画面ビュー */
+  .fullview { position: absolute; inset: 0; background: #fff; z-index: 6; display: flex; flex-direction: column; }
+  .fullview .navbar { height: 48px; display: flex; align-items: center; gap: 10px; padding: 0 12px;
+                      border-bottom: 1px solid #eee; flex: 0 0 48px; }
+  .fullview .navbar .bk { font-size: 18px; color: #4285f4; }
+  .fullview .navbar .t { font-size: 15px; font-weight: bold; }
+  .fullview .fv-body { flex: 1; overflow-y: auto; padding: 12px 14px; }
+  .fullview .hero { height: 150px; border-radius: 10px; background: linear-gradient(135deg,#cbbba1,#7d6446);
+                    color: #fff; font-size: 11px; display: flex; align-items: center; justify-content: center; }
+
+  /* スポットライト */
+  .spot { position: absolute; inset: 0; z-index: 2;
+          background: radial-gradient(circle at 50% 30%, rgba(0,0,0,0) 0 62px, rgba(0,0,0,.45) 120px); }
+
+  /* 右端アクションドック */
+  .dock { position: absolute; right: 10px; top: 120px; width: 48px; z-index: 5;
+          display: flex; flex-direction: column; gap: 8px; }
+  .dock .d { width: 48px; height: 48px; border-radius: 50%; color: #fff; display: flex; align-items: center;
+             justify-content: center; font-size: 17px; box-shadow: 0 2px 6px rgba(0,0,0,.3); }
+  .dock .cap { position: absolute; right: 56px; white-space: nowrap; background: rgba(33,33,33,.86); color: #fff;
+               font-size: 10px; padding: 3px 7px; border-radius: 5px; top: 15px; }
+  .dockname { position: absolute; left: 10px; right: 66px; top: 120px; z-index: 5; background: rgba(33,33,33,.86);
+              color: #fff; border-radius: 9px; padding: 8px 11px; }
+  .dockname .n { font-size: 14px; font-weight: bold; }
+  .dockname .a { font-size: 10.5px; opacity: .8; margin-top: 2px; }
+
+  /* 放射メニュー */
+  .radial { position: absolute; z-index: 5; width: 220px; height: 220px; transform: translate(-50%,-50%); }
+  .radial .rc { position: absolute; width: 46px; height: 46px; border-radius: 50%; color: #fff;
+                display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold;
+                box-shadow: 0 2px 6px rgba(0,0,0,.35); text-align: center; line-height: 1.15; }
+  .radial .ctr { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+                 width: 54px; height: 54px; border-radius: 50%; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.35);
+                 display: flex; align-items: center; justify-content: center; font-size: 10px; color: #555; text-align: center; }
+
+  /* ピン展開 */
+  .pinexp { position: absolute; z-index: 5; transform: translate(-50%,-50%); background: rgba(255,255,255,.97);
+            border-radius: 26px; box-shadow: 0 3px 12px rgba(0,0,0,.3); display: flex; align-items: center;
+            gap: 6px; padding: 6px 10px 6px 6px; }
+  .pinexp .h { width: 34px; height: 34px; border-radius: 50%; background: #8B4513; color: #fff;
+               display: flex; align-items: center; justify-content: center; font-size: 15px; flex: 0 0 34px; }
+  .pinexp .nm { font-size: 12.5px; font-weight: bold; white-space: nowrap; }
+  .pinexp .mini { width: 34px; height: 34px; border-radius: 50%; color: #fff; display: flex;
+                  align-items: center; justify-content: center; font-size: 14px; }
+
+  /* 下部バー変身型 */
+  .bar-detail { position: absolute; left: 0; right: 0; bottom: 0; background: #fff; z-index: 5;
+                box-shadow: 0 -2px 10px rgba(0,0,0,.18); }
+  .bar-detail .top { display: flex; align-items: center; gap: 9px; padding: 8px 12px 6px; }
+  .bar-detail .ic { width: 30px; height: 30px; border-radius: 50%; background: #8B4513; color: #fff;
+                    display: flex; align-items: center; justify-content: center; font-size: 14px; flex: 0 0 30px; }
+  .bar-detail .n { font-size: 14px; font-weight: bold; }
+  .bar-detail .a { font-size: 10.5px; color: #999; }
+  .bar-detail .chips { display: flex; gap: 6px; overflow-x: auto; padding: 0 12px 10px; }
+  .bar-detail .chips .btn { height: 34px; flex: 0 0 auto; padding: 0 12px; font-size: 11px; border-radius: 17px; }
+  .maplabel { position: absolute; transform: translate(-50%,-140%); background: rgba(255,255,255,.96);
+              border-radius: 6px; padding: 3px 8px; font-size: 11.5px; font-weight: bold;
+              box-shadow: 0 1px 5px rgba(0,0,0,.3); white-space: nowrap; }
+
+  /* nearby-panel タブ統合 */
+  .tabs { display: flex; border-bottom: 1px solid #eee; margin: 0 -14px 10px; padding: 0 14px; gap: 16px; }
+  .tabs .t { font-size: 12.5px; color: #999; padding: 8px 0; }
+  .tabs .t.on { color: #333; font-weight: bold; border-bottom: 2px solid #4285f4; }
+
+  /* ワイド/PC サイドパネル */
+  .wide { position: relative; width: 720px; height: 420px; border: 1px solid #999; border-radius: 6px;
+          overflow: hidden; font-family: sans-serif; }
+  .wide .sidepanel { position: absolute; left: 0; top: 0; bottom: 0; width: 300px; background: #fff;
+                     box-shadow: 2px 0 12px rgba(0,0,0,.15); z-index: 5; padding: 12px 14px; overflow-y: auto; }
+
+  .occbar { height: 7px; background: #ddd; border-radius: 4px; margin-top: 5px; overflow: hidden; }
+  .occbar > i { display: block; height: 100%; background: #5cb85c; }
+</style>
+</head>
+<body>
+
+<h1>ポップアップを廃止した場合の代替UI モック（画面全体・iPhone SE/8 相当 375×667 実寸）</h1>
+<p class="lead">
+前回は「ポップアップの中身を縮める」案でしたが、今回は<b>吹き出し(<code>maplibregl.Popup</code>)そのものを使わない</b>案を14通り。<br>
+各フレームには既存クローム（右上48pxボタン2個 / 右下ズームカプセル・履歴ボタン / 下部バー52px）を <code>index.html</code> の実座標どおりに描いてあるので、<b>新UIが既存の操作系とぶつかるかどうか</b>もそのまま見えます。<br>
+「地図可視率」はJSが4px格子で実測した値（各UI要素の矩形を実際にサンプリングして被覆面積を算出）。下部バー・右側ボタンも被覆に含めているので、案間で公平に比較できます。
+</p>
+
+<table class="calc">
+<tr><th>既存の重なり順（index.html）</th><th>z-index</th><th>備考</th></tr>
+<tr><td><code>.maplibregl-popup</code></td><td>10</td><td>今回廃止対象</td></tr>
+<tr><td><code>#bottom-bar</code> / 右側ボタン群</td><td>200</td><td>常時表示・高さ52px</td></tr>
+<tr><td><code>#nearby-panel</code>（周辺検索ハーフモーダル）</td><td>300</td><td>下から出るシート。既存資産</td></tr>
+<tr><td><code>#card-detail-panel</code>（マンホールカード詳細）</td><td>320</td><td><b>下から出るシートが既に実装済み</b>（L428-L440, <code>openCardDetail()</code> L2057）</td></tr>
+</table>
+<p class="lead">
+つまり<b>「ボトムシート」は新規部品ではなく既存部品の再利用</b>になります。以下の案の実装コスト評価はこれを前提にしています。
+</p>
+
+
+<h2>■ 比較用：現行ポップアップ</h2>
+<div class="row">
+  <div class="slot">
+    <h4>現行（城・情報源3種）</h4>
+    <p class="cnt"></p>
+    <div class="phone">
+      <div class="map"></div>
+      <div class="pin p-michi" style="left:80px;top:520px">道</div>
+      <div class="pin p-mh" style="left:300px;top:140px">M</div>
+      <div class="pin sel p-castle" style="left:187px;top:600px">城</div>
+      <div class="mlbox occl" style="left:89px;bottom:130px">
+        <div class="popup-card">
+          <div class="popup-title-row"><span class="badge">山城</span><span class="popup-title">岩村城</span></div>
+          <span class="popup-alias">別名: 霧ヶ城</span>
+          <div class="popup-form"><span class="popup-form-meta">標高 717m / 比高 180m</span></div>
+          <span class="popup-address">岐阜県恵那市岩村町字城山</span>
+          <div class="castle-img">写真 160px</div>
+          <div class="btn-grid">
+            <a class="btn b-gmap btn-full">GoogleMap</a>
+            <a class="btn b-wiki btn-full">Wikipedia</a>
+            <a class="btn b-kojo">攻城団</a><a class="btn b-shb">城郭放浪記</a>
+            <a class="btn b-acc btn-full">アクセス</a>
+            <a class="btn b-nav">ここへ行く</a><a class="btn b-yahoo">ここへ行く</a>
+            <a class="btn b-near btn-full">🔍 この周辺を検索</a>
+          </div>
+        </div>
+      </div>
+      <div class="fab f1 occl">👁</div><div class="fab f2 occl">N</div>
+      <div class="fab f3 occl">↺</div><div class="zoomcap occl"><span>+</span><span>−</span></div>
+      <div class="bar occl"><div class="sbox">🔍 検索</div><div class="bbtn">◎</div><div class="bbtn">☰</div></div>
+    </div>
+    <div class="occbar"><i></i></div>
+    <p class="note"><span class="x">問題</span> 高さ約535px。<code>ensurePopupInView()</code>が地図をパンして無理やり収めるため、<b>タップした地点が画面中央から移動する</b>のも副作用。</p>
+  </div>
+</div>
+
+
+<h2>■ 案群A：下から出す（シート系）</h2>
+<div class="row">
+
+  <div class="slot">
+    <h4>案A1 ボトムシート（既存 #card-detail-panel を流用）</h4>
+    <p class="cnt"></p>
+    <div class="phone">
+      <div class="map"></div>
+      <div class="pin p-michi" style="left:80px;top:300px">道</div>
+      <div class="pin sel p-castle" style="left:187px;top:210px">城</div>
+      <div class="fab f1 occl">👁</div><div class="fab f2 occl">N</div>
+      <div class="sheet bottom occl" style="height:360px">
+        <div class="handle"></div><div class="close">×</div>
+        <div class="body">
+          <div class="popup-title-row"><span class="badge">山城</span><span class="s-title">岩村城</span></div>
+          <div class="s-sub">別名: 霧ヶ城 ／ 標高717m・比高180m<br>岐阜県恵那市岩村町字城山</div>
+          <div class="castle-img" style="height:120px;line-height:120px">写真</div>
+          <div class="btn-grid" style="grid-template-columns:1fr 1fr 1fr">
+            <a class="btn b-gmap">GoogleMap</a><a class="btn b-acc">アクセス</a><a class="btn b-near">🔍 周辺</a>
+            <a class="btn b-wiki">Wikipedia</a><a class="btn b-kojo">攻城団</a><a class="btn b-shb">城郭放浪記</a>
+            <a class="btn b-nav btn-full" style="grid-column:1/-1">🚶 ここへ行く（Google / Yahoo ▾）</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="occbar"><i></i></div>
+    <p class="note"><span class="o">利点</span> 画面幅375pxをフルに使えるので<b>3列でもラベルが省略されない</b>。中身が増えてもシート内スクロールで完結し、<code>ensurePopupInView()</code>の地図パンが完全に不要になる。ピンが隠れない位置に地図側を自動オフセットできる。<br>
+    <span class="x">欠点</span> ピンとカードの視覚的な結びつきが弱い（選択ピンを強調表示して補う）。<br>
+    <span class="c">コスト</span> <b>低</b>。<code>#card-detail-panel</code>のCSS/開閉ロジックがそのまま使える。</p>
+  </div>
+
+  <div class="slot">
+    <h4>案A2 ミニシート＋引き上げで詳細（2段階スナップ）</h4>
+    <p class="cnt"></p>
+    <div class="phone">
+      <div class="map"></div>
+      <div class="pin p-michi" style="left:80px;top:300px">道</div>
+      <div class="pin p-mh" style="left:300px;top:180px">M</div>
+      <div class="pin sel p-castle" style="left:187px;top:380px">城</div>
+      <div class="fab f1 occl">👁</div><div class="fab f2 occl">N</div>
+      <div class="fab f3 occl">↺</div><div class="zoomcap occl"><span>+</span><span>−</span></div>
+      <div class="sheet bottom occl" style="height:150px">
+        <div class="handle"></div>
+        <div class="body">
+          <div class="popup-title-row"><span class="badge">山城</span><span class="s-title">岩村城</span></div>
+          <div class="s-sub">岐阜県恵那市岩村町字城山 ／ 標高717m</div>
+          <div class="btn-grid" style="grid-template-columns:1fr 1fr 1fr">
+            <a class="btn b-nav">🚶 行く</a><a class="btn b-gmap">GoogleMap</a><a class="btn b-detail">詳細 ↑</a>
+          </div>
+        </div>
+      </div>
+      <div style="position:absolute;left:0;right:0;bottom:150px;text-align:center;font-size:10px;color:#555;
+                  background:rgba(255,255,255,.75);padding:2px 0;z-index:5">↑ 引き上げると全情報（写真・情報源）</div>
+    </div>
+    <div class="occbar"><i></i></div>
+    <p class="note"><span class="o">利点</span> 既定は150pxだけ。地図の8割が見え、<b>連続して別のピンを見比べる操作が快適</b>。下部バーは隠れるがシート内に主要操作が来る。<br>
+    <span class="x">欠点</span> スナップ位置のドラッグ実装が要る（<code>#nearby-panel</code>のドラッグ処理が流用可）。<br>
+    <span class="c">コスト</span> 中。</p>
+  </div>
+
+  <div class="slot">
+    <h4>案A3 下部ミニカード（Googleマップ型・角丸フロート）</h4>
+    <p class="cnt"></p>
+    <div class="phone">
+      <div class="map"></div>
+      <div class="pin p-michi" style="left:80px;top:300px">道</div>
+      <div class="pin p-mh" style="left:300px;top:180px">M</div>
+      <div class="pin sel p-castle" style="left:187px;top:400px">城</div>
+      <div class="fab f1 occl">👁</div><div class="fab f2 occl">N</div>
+      <div class="minicard occl">
+        <div class="th"></div>
+        <div class="tx">
+          <div class="n">岩村城 <span class="badge" style="font-size:10px">山城</span></div>
+          <div class="a">岐阜県恵那市岩村町字城山 ／ 標高717m</div>
+          <div class="acts">
+            <a class="btn b-nav">🚶 行く</a><a class="btn b-gmap">Map</a><a class="btn b-detail">詳細</a>
+          </div>
+        </div>
+      </div>
+      <div class="bar occl"><div class="sbox">🔍 検索</div><div class="bbtn">◎</div><div class="bbtn">☰</div></div>
+    </div>
+    <div class="occbar"><i></i></div>
+    <p class="note"><span class="o">利点</span> シートと違い<b>下部バーを潰さない</b>ので、検索・現在地・メニューが選択中も使える。地図が最も広く残る案のひとつ。<br>
+    <span class="x">欠点</span> 情報量は名前＋住所＋3操作が限界。情報源は「詳細」経由になる。<br>
+    <span class="c">コスト</span> 低〜中（新規だが単純なfixed要素）。</p>
+  </div>
+
+  <div class="slot">
+    <h4>案A4 カルーセル（横スワイプで隣のスポットへ）</h4>
+    <p class="cnt"></p>
+    <div class="phone">
+      <div class="map"></div>
+      <div class="pin p-michi" style="left:80px;top:300px">道</div>
+      <div class="pin p-mh" style="left:300px;top:180px">M</div>
+      <div class="pin sel p-castle" style="left:187px;top:400px">城</div>
+      <div class="fab f1 occl">👁</div><div class="fab f2 occl">N</div>
+      <div class="carou occl">
+        <div class="card"><div class="th"></div><div class="tx">
+          <div class="n" style="font-size:13.5px;font-weight:bold">岩村城</div>
+          <div class="a" style="font-size:10.5px;color:#888;margin-top:2px">山城 ／ 標高717m<br>岐阜県恵那市</div>
+          <div class="acts" style="display:flex;gap:5px;margin-top:6px">
+            <a class="btn b-nav" style="height:30px;font-size:11px;padding:0 10px;border-radius:15px">🚶 行く</a>
+            <a class="btn b-detail" style="height:30px;font-size:11px;padding:0 10px;border-radius:15px">詳細</a>
+          </div></div></div>
+        <div class="card"><div class="th" style="background:linear-gradient(135deg,#a8c4e0,#40608f)"></div><div class="tx">
+          <div class="n" style="font-size:13.5px;font-weight:bold">苗木城</div>
+          <div class="a" style="font-size:10.5px;color:#888;margin-top:2px">山城 ／ 標高432m<br>岐阜県中津川市</div>
+          <div class="acts" style="display:flex;gap:5px;margin-top:6px">
+            <a class="btn b-nav" style="height:30px;font-size:11px;padding:0 10px;border-radius:15px">🚶 行く</a>
+            <a class="btn b-detail" style="height:30px;font-size:11px;padding:0 10px;border-radius:15px">詳細</a>
+          </div></div></div>
+      </div>
+      <div class="bar occl"><div class="sbox">🔍 検索</div><div class="bbtn">◎</div><div class="bbtn">☰</div></div>
+    </div>
+    <div class="occbar"><i></i></div>
+    <p class="note"><span class="o">利点</span> <b>クラスタや密集地でこそ効く</b>。今はズームインしないと個別に開けないが、カルーセルなら周辺N件をその場でめくれる。スワイプ連動で地図側のセンタリングも可能。<br>
+    <span class="x">欠点</span> 単一ピンのタップにはやや大げさ。横スワイプが地図パンと競合（<code>touch-action</code>指定が必要）。<br>
+    <span class="c">コスト</span> 中〜高。</p>
+  </div>
+</div>
+
+
+<h2>■ 案群B：上から出す／画面を割る</h2>
+<div class="row">
+
+  <div class="slot">
+    <h4>案B1 上部カード（トップバナー）</h4>
+    <p class="cnt"></p>
+    <div class="phone">
+      <div class="map"></div>
+      <div class="pin p-michi" style="left:80px;top:420px">道</div>
+      <div class="pin sel p-castle" style="left:187px;top:330px">城</div>
+      <div class="topcard occl">
+        <div class="popup-title-row"><span class="badge">山城</span><span class="s-title">岩村城</span></div>
+        <div class="s-sub">別名: 霧ヶ城 ／ 標高717m・比高180m<br>岐阜県恵那市岩村町字城山</div>
+        <div class="btn-grid" style="grid-template-columns:1fr 1fr 1fr">
+          <a class="btn b-gmap">GoogleMap</a><a class="btn b-acc">アクセス</a><a class="btn b-near">🔍 周辺</a>
+          <a class="btn b-wiki">Wikipedia</a><a class="btn b-kojo">攻城団</a><a class="btn b-shb">城郭放浪記</a>
+          <a class="btn b-nav" style="grid-column:1/-1">🚶 ここへ行く</a>
+        </div>
+      </div>
+      <div class="fab f1 occl" style="top:10px">👁</div>
+      <div class="fab f3 occl">↺</div><div class="zoomcap occl"><span>+</span><span>−</span></div>
+      <div class="bar occl"><div class="sbox">🔍 検索</div><div class="bbtn">◎</div><div class="bbtn">☰</div></div>
+    </div>
+    <div class="occbar"><i></i></div>
+    <p class="note"><span class="o">利点</span> <b>親指の可動域（下半分）を地図操作に丸ごと空けられる</b>。下部バー・ズーム・履歴ボタンと一切ぶつからない。<br>
+    <span class="x">欠点</span> 右上の表示切替/真北ボタン2個と衝突するので、選択中はそれらを退避させる処理が要る（モックでは1個に減らして表現）。カードが上端＝<b>片手だと指が届きにくい</b>。<br>
+    <span class="c">コスト</span> 中。</p>
+  </div>
+
+  <div class="slot">
+    <h4>案B2 上部1行ヘッダー＋引き出し（クリックで開閉）</h4>
+    <p class="cnt"></p>
+    <div class="phone">
+      <div class="map"></div>
+      <div class="pin p-michi" style="left:80px;top:420px">道</div>
+      <div class="pin p-mh" style="left:300px;top:260px">M</div>
+      <div class="pin sel p-castle" style="left:187px;top:330px">城</div>
+      <div class="peek occl" onclick="this.classList.toggle('open')">
+        <div class="hrow">
+          <div class="ic">城</div>
+          <div class="tx"><div class="n">岩村城</div><div class="a">山城 ／ 標高717m ／ 岐阜県恵那市岩村町</div></div>
+          <div class="cv">▾</div>
+        </div>
+        <div class="exp">
+          <div class="castle-img" style="height:110px;line-height:110px">写真</div>
+          <div class="btn-grid" style="grid-template-columns:1fr 1fr 1fr">
+            <a class="btn b-gmap">GoogleMap</a><a class="btn b-acc">アクセス</a><a class="btn b-near">🔍 周辺</a>
+            <a class="btn b-wiki">Wikipedia</a><a class="btn b-kojo">攻城団</a><a class="btn b-shb">城郭放浪記</a>
+            <a class="btn b-nav" style="grid-column:1/-1">🚶 ここへ行く</a>
+          </div>
+        </div>
+      </div>
+      <div class="fab f1 occl" style="top:62px">👁</div>
+      <div class="fab f3 occl">↺</div><div class="zoomcap occl"><span>+</span><span>−</span></div>
+      <div class="bar occl"><div class="sbox">🔍 検索</div><div class="bbtn">◎</div><div class="bbtn">☰</div></div>
+    </div>
+    <div class="occbar"><i></i></div>
+    <p class="note"><span class="o">利点</span> 既定は<b>52px（下部バーと同じ高さ）だけ</b>。ピンを次々タップして名前を確かめる使い方が最速。カード上をクリックすると展開します。<br>
+    <span class="x">欠点</span> 展開すると結局大きい（＝ポップアップ肥大化と同じ問題を「開いた時だけ」に閉じ込める案）。<br>
+    <span class="c">コスト</span> 中。</p>
+  </div>
+
+  <div class="slot">
+    <h4>案B3 分割ビュー（上=地図 / 下=詳細を常設）</h4>
+    <p class="cnt"></p>
+    <div class="phone">
+      <div class="split-map">
+        <div class="map"></div>
+        <div class="pin p-michi" style="left:80px;top:180px">道</div>
+        <div class="pin sel p-castle" style="left:187px;top:150px">城</div>
+        <div class="fab occl" style="top:10px;right:10px">👁</div>
+      </div>
+      <div class="split-detail occl">
+        <div class="popup-title-row"><span class="badge">山城</span><span class="s-title">岩村城</span></div>
+        <div class="s-sub">別名: 霧ヶ城 ／ 標高717m・比高180m<br>岐阜県恵那市岩村町字城山</div>
+        <div class="castle-img" style="height:110px;line-height:110px">写真</div>
+        <div class="btn-grid" style="grid-template-columns:1fr 1fr 1fr">
+          <a class="btn b-gmap">GoogleMap</a><a class="btn b-acc">アクセス</a><a class="btn b-near">🔍 周辺</a>
+          <a class="btn b-wiki">Wikipedia</a><a class="btn b-kojo">攻城団</a><a class="btn b-shb">城郭放浪記</a>
+          <a class="btn b-nav" style="grid-column:1/-1">🚶 ここへ行く</a>
+        </div>
+      </div>
+      <div class="bar occl"><div class="sbox">🔍 検索</div><div class="bbtn">◎</div><div class="bbtn">☰</div></div>
+    </div>
+    <div class="occbar"><i></i></div>
+    <p class="note"><span class="o">利点</span> 詳細の高さが地図に一切影響しない（領域固定＋内部スクロール）。<b>情報量の上限が事実上なくなる</b>。<br>
+    <span class="x">欠点</span> 未選択時に下半分が無駄になる。地図が300pxしか残らず、地図アプリとしての体験が落ちる。<br>
+    <span class="c">コスト</span> 高（地図コンテナのリサイズ＝<code>map.resize()</code>連動が必要）。</p>
+  </div>
+
+  <div class="slot">
+    <h4>案B4 全画面詳細ビュー（プッシュ遷移）</h4>
+    <p class="cnt"></p>
+    <div class="phone">
+      <div class="map"></div>
+      <div class="fullview occl">
+        <div class="navbar"><span class="bk">‹ 地図</span><span class="t">岩村城</span></div>
+        <div class="fv-body">
+          <div class="hero">写真（大きく見せられる）</div>
+          <div class="popup-title-row" style="margin-top:10px"><span class="badge">山城</span><span class="s-title">岩村城</span></div>
+          <div class="s-sub">別名: 霧ヶ城／朝霧城<br>標高717m・比高180m<br>岐阜県恵那市岩村町字城山</div>
+          <div class="btn-grid" style="grid-template-columns:1fr 1fr">
+            <a class="btn b-gmap">GoogleMap</a><a class="btn b-acc">アクセス</a>
+            <a class="btn b-wiki">Wikipedia</a><a class="btn b-kojo">攻城団</a>
+            <a class="btn b-shb">城郭放浪記</a><a class="btn b-near">🔍 この周辺を検索</a>
+            <a class="btn b-nav" style="grid-column:1/-1">🚶 ここへ行く</a>
+          </div>
+          <div style="font-size:11px;color:#999;margin-top:12px;line-height:1.7">
+            遺構: 石垣・曲輪・井戸<br>築城: 1185年頃<br>（今は入れていない情報も置ける）
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="occbar"><i></i></div>
+    <p class="note"><span class="o">利点</span> <b>肥大化という概念自体が消える</b>。写真も大きく出せ、将来の情報追加も無制限。履歴(<code>#hist-nav-btn</code>)と相性が良い。<br>
+    <span class="x">欠点</span> 地図が完全に消える＝「地図を見ながら比べる」用途が失われる。戻る操作が毎回必要。<br>
+    <span class="c">コスト</span> 中（ルーティング／戻る制御が要る）。</p>
+  </div>
+</div>
+
+
+<h2>■ 案群C：地図上で完結させる（カードを出さない）</h2>
+<div class="row">
+
+  <div class="slot">
+    <h4>案C1 選択ピンがその場で展開（インライン展開）</h4>
+    <p class="cnt"></p>
+    <div class="phone">
+      <div class="map"></div>
+      <div class="pin p-michi" style="left:80px;top:480px">道</div>
+      <div class="pin p-mh" style="left:310px;top:170px">M</div>
+      <div class="pinexp occl" style="left:187px;top:300px">
+        <div class="h">城</div>
+        <div class="nm">岩村城</div>
+        <div class="mini" style="background:#4285F4">🚶</div>
+        <div class="mini" style="background:#34A853">🔍</div>
+        <div class="mini" style="background:#8D6E63">›</div>
+      </div>
+      <div class="fab f1 occl">👁</div><div class="fab f2 occl">N</div>
+      <div class="fab f3 occl">↺</div><div class="zoomcap occl"><span>+</span><span>−</span></div>
+      <div class="bar occl"><div class="sbox">🔍 検索</div><div class="bbtn">◎</div><div class="bbtn">☰</div></div>
+    </div>
+    <div class="occbar"><i></i></div>
+    <p class="note"><span class="o">利点</span> <b>地図可視率が最大級</b>。ピンとの結びつきも最強（ピン自体が変形するだけ）。高さ46px固定。<br>
+    <span class="x">欠点</span> 名前と3操作が上限。「›」で結局シートか全画面へ送る必要がある＝単独では成立せず、A1やB4との併用前提。<br>
+    <span class="c">コスト</span> 中（DOMマーカーへの置き換えが必要。現在はシンボルレイヤー描画）。</p>
+  </div>
+
+  <div class="slot">
+    <h4>案C2 放射メニュー（長押しで展開）</h4>
+    <p class="cnt"></p>
+    <div class="phone">
+      <div class="map"></div>
+      <div class="pin p-michi" style="left:70px;top:520px">道</div>
+      <div class="radial occl" style="left:187px;top:300px">
+        <div class="ctr">岩村城</div>
+        <div class="rc" style="background:#4285F4;left:87px;top:0">🚶行く</div>
+        <div class="rc" style="background:#00897B;left:161px;top:52px">アクセス</div>
+        <div class="rc" style="background:#34A853;left:161px;top:122px">🔍周辺</div>
+        <div class="rc" style="background:#8B4513;left:87px;top:174px">攻城団</div>
+        <div class="rc" style="background:#6A4C93;left:13px;top:122px">放浪記</div>
+        <div class="rc" style="background:#333;left:13px;top:52px">Wiki</div>
+      </div>
+      <div class="fab f1 occl">👁</div><div class="fab f2 occl">N</div>
+      <div class="fab f3 occl">↺</div><div class="zoomcap occl"><span>+</span><span>−</span></div>
+      <div class="bar occl"><div class="sbox">🔍 検索</div><div class="bbtn">◎</div><div class="bbtn">☰</div></div>
+    </div>
+    <div class="occbar"><i></i></div>
+    <p class="note"><span class="o">利点</span> ボタンが「行」を作らないので縦に伸びない。指を離さずスワイプで選べる（ジェスチャ操作）。<br>
+    <span class="x">欠点</span> <b>住所・写真・標高などの情報が一切出せない</b>。6個程度が限界で、情報源が増えると破綻。学習コストが高く、Webでは非定番。<br>
+    <span class="c">コスト</span> 高。<b>単独採用は非推奨</b>（面白いが実用性は低い）。</p>
+  </div>
+
+  <div class="slot">
+    <h4>案C3 地図ラベル＋下部バーが詳細バーに変身</h4>
+    <p class="cnt"></p>
+    <div class="phone">
+      <div class="map"></div>
+      <div class="pin p-michi" style="left:80px;top:300px">道</div>
+      <div class="pin p-mh" style="left:310px;top:170px">M</div>
+      <div class="pin sel p-castle" style="left:187px;top:380px">城</div>
+      <div class="maplabel" style="left:187px;top:380px">岩村城</div>
+      <div class="fab f1 occl">👁</div><div class="fab f2 occl">N</div>
+      <div class="fab f3 occl" style="bottom:200px">↺</div>
+      <div class="zoomcap occl" style="bottom:96px"><span>+</span><span>−</span></div>
+      <div class="bar-detail occl">
+        <div class="top">
+          <div class="ic">城</div>
+          <div style="flex:1;min-width:0"><div class="n">岩村城 <span class="badge" style="font-size:10px">山城</span></div>
+          <div class="a">岐阜県恵那市岩村町字城山 ／ 標高717m</div></div>
+          <div style="font-size:18px;color:#bbb">×</div>
+        </div>
+        <div class="chips">
+          <a class="btn b-nav">🚶 ここへ行く</a><a class="btn b-gmap">GoogleMap</a>
+          <a class="btn b-wiki">Wikipedia</a><a class="btn b-kojo">攻城団</a>
+          <a class="btn b-shb">城郭放浪記</a><a class="btn b-acc">アクセス</a><a class="btn b-near">🔍 周辺</a>
+        </div>
+      </div>
+    </div>
+    <div class="occbar"><i></i></div>
+    <p class="note"><span class="o">利点</span> 常時ある下部バー（52px）が<b>選択中だけ詳細バー(約100px)に変わる</b>ので、実質的な追加占有は約50pxだけ。ボタンは横スクロールなので何個増えても高さ不変。名前は地図上のラベルで示すのでピンとの結びつきも保てる。<br>
+    <span class="x">欠点</span> 選択中は検索ボックスが隠れる（×で戻す）。写真は出せない。<br>
+    <span class="c">コスト</span> 中。<b>「地図可視率」と「情報の充実」のバランスが最も良い候補。</b></p>
+  </div>
+
+  <div class="slot">
+    <h4>案C4 右端アクションドック（既存ボタン列に相乗り）</h4>
+    <p class="cnt"></p>
+    <div class="phone">
+      <div class="map"></div>
+      <div class="pin p-michi" style="left:80px;top:420px">道</div>
+      <div class="pin sel p-castle" style="left:150px;top:300px">城</div>
+      <div class="dockname occl">
+        <div class="n">岩村城 <span class="badge" style="font-size:10px">山城</span></div>
+        <div class="a">岐阜県恵那市岩村町字城山 ／ 標高717m・比高180m</div>
+      </div>
+      <div class="dock occl">
+        <div class="d" style="background:#4285F4">🚶</div>
+        <div class="d" style="background:#fff;color:#4285f4">🗺</div>
+        <div class="d" style="background:#34A853">🔍</div>
+        <div class="d" style="background:#333">W</div>
+        <div class="d" style="background:#8B4513">攻</div>
+        <div class="d" style="background:#8D6E63">⋯</div>
+      </div>
+      <div class="fab f1 occl">👁</div><div class="fab f2 occl">N</div>
+      <div class="bar occl"><div class="sbox">🔍 検索</div><div class="bbtn">◎</div><div class="bbtn">☰</div></div>
+    </div>
+    <div class="occbar"><i></i></div>
+    <p class="note"><span class="o">利点</span> 既に右端に縦のボタン列がある画面なので、<b>デザイン言語が一貫する</b>。縦に伸びても地図中央は塞がない。48px＝タップ目標も十分。<br>
+    <span class="x">欠点</span> ズーム／履歴ボタンと同じ列で場所の取り合いになる。アイコンだけでは意味が伝わらない（初回はラベル表示が要る）。<br>
+    <span class="c">コスト</span> 中。</p>
+  </div>
+
+  <div class="slot">
+    <h4>案C5 スポットライト＋中央カード（フォーカスモード）</h4>
+    <p class="cnt"></p>
+    <div class="phone">
+      <div class="map"></div>
+      <div class="pin sel p-castle" style="left:187px;top:200px">城</div>
+      <div class="spot"></div>
+      <div class="occl" style="position:absolute;left:24px;right:24px;top:300px;background:#fff;border-radius:14px;
+                  box-shadow:0 6px 24px rgba(0,0,0,.4);padding:12px 14px;z-index:5">
+        <div class="popup-title-row"><span class="badge">山城</span><span class="s-title">岩村城</span></div>
+        <div class="s-sub">別名: 霧ヶ城 ／ 標高717m・比高180m<br>岐阜県恵那市岩村町字城山</div>
+        <div class="btn-grid" style="grid-template-columns:1fr 1fr 1fr">
+          <a class="btn b-gmap">GoogleMap</a><a class="btn b-acc">アクセス</a><a class="btn b-near">🔍 周辺</a>
+          <a class="btn b-wiki">Wikipedia</a><a class="btn b-kojo">攻城団</a><a class="btn b-shb">城郭放浪記</a>
+          <a class="btn b-nav" style="grid-column:1/-1">🚶 ここへ行く</a>
+        </div>
+      </div>
+    </div>
+    <div class="occbar"><i></i></div>
+    <p class="note"><span class="o">利点</span> 選択ピンだけ明るく残すので<b>「どのピンの話か」が最も明確</b>。カードは画面中央＝親指が届きやすい。位置固定なので高さが伸びても地図がパンしない。<br>
+    <span class="x">欠点</span> 暗幕で地図が読めなくなり、周辺を見比べられない。閉じる操作が必須になる。<br>
+    <span class="c">コスト</span> 低（オーバーレイ1枚＋中央固定カード）。</p>
+  </div>
+
+  <div class="slot">
+    <h4>案C6 既存メニュー(#nearby-panel)にタブ統合</h4>
+    <p class="cnt"></p>
+    <div class="phone">
+      <div class="map"></div>
+      <div class="pin p-michi" style="left:80px;top:200px">道</div>
+      <div class="pin sel p-castle" style="left:187px;top:140px">城</div>
+      <div class="fab f1 occl">👁</div><div class="fab f2 occl">N</div>
+      <div class="sheet bottom occl" style="height:400px">
+        <div class="handle"></div>
+        <div class="body">
+          <div class="tabs"><span class="t on">スポット</span><span class="t">周辺検索</span><span class="t">天気</span><span class="t">設定</span></div>
+          <div class="popup-title-row"><span class="badge">山城</span><span class="s-title">岩村城</span></div>
+          <div class="s-sub">別名: 霧ヶ城 ／ 標高717m・比高180m<br>岐阜県恵那市岩村町字城山</div>
+          <div class="castle-img" style="height:110px;line-height:110px">写真</div>
+          <div class="btn-grid" style="grid-template-columns:1fr 1fr 1fr">
+            <a class="btn b-gmap">GoogleMap</a><a class="btn b-acc">アクセス</a><a class="btn b-near">🔍 周辺</a>
+            <a class="btn b-wiki">Wikipedia</a><a class="btn b-kojo">攻城団</a><a class="btn b-shb">城郭放浪記</a>
+            <a class="btn b-nav" style="grid-column:1/-1">🚶 ここへ行く</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="occbar"><i></i></div>
+    <p class="note"><span class="o">利点</span> シートが<b>アプリ内に1つだけ</b>になる（今は <code>#nearby-panel</code> と <code>#card-detail-panel</code> の2つ＋ポップアップの3系統）。z-index の重なり問題も消える。「この周辺を検索」がタブ切替になり導線が自然。<br>
+    <span class="x">欠点</span> 既存パネルの改修範囲が大きい。タブが増えると迷う。<br>
+    <span class="c">コスト</span> 高（ただし構造の整理という副次的な利益が大きい）。</p>
+  </div>
+</div>
+
+
+<h2>■ 案群D：画面サイズで出し分ける</h2>
+<div class="row">
+  <div class="slot" style="width:720px">
+    <h4>案D1 レスポンシブ（横長・PCはサイドパネル／縦持ちはシート）</h4>
+    <p class="cnt" style="visibility:hidden">-</p>
+    <div class="wide">
+      <div class="map"></div>
+      <div class="pin p-michi" style="left:420px;top:280px">道</div>
+      <div class="pin sel p-castle" style="left:500px;top:180px">城</div>
+      <div class="sidepanel">
+        <div class="popup-title-row"><span class="badge">山城</span><span class="s-title">岩村城</span></div>
+        <div class="s-sub">別名: 霧ヶ城／朝霧城 ／ 標高717m・比高180m<br>岐阜県恵那市岩村町字城山</div>
+        <div class="castle-img" style="height:130px;line-height:130px">写真</div>
+        <div class="btn-grid" style="grid-template-columns:1fr 1fr">
+          <a class="btn b-gmap">GoogleMap</a><a class="btn b-acc">アクセス</a>
+          <a class="btn b-wiki">Wikipedia</a><a class="btn b-kojo">攻城団</a>
+          <a class="btn b-shb">城郭放浪記</a><a class="btn b-near">🔍 この周辺を検索</a>
+          <a class="btn b-nav" style="grid-column:1/-1">🚶 ここへ行く</a>
+        </div>
+      </div>
+      <div class="fab" style="top:10px;right:10px">👁</div>
+      <div class="zoomcap" style="bottom:20px"><span>+</span><span>−</span></div>
+    </div>
+    <p class="note"><span class="o">利点</span> PC・タブレット横持ちでは縦スペースが潤沢なので、<b>そもそも高さ制約が消える</b>。地図の右側（または左側）は元々余っている。<br>
+    <span class="x">欠点</span> 2種類のUIを保守することになる。<br>
+    <span class="c">コスト</span> 中（<code>matchMedia('(min-width:768px)')</code>で分岐し、中身のHTML生成は共通化できる）。</p>
+  </div>
+</div>
+
+
+<h2>■ 一覧（地図可視率はJS実測値）</h2>
+<table class="calc" id="summary"><tr><th>案</th><th>追加占有</th><th>地図可視率</th><th>情報量</th><th>実装コスト</th><th>単独で成立</th></tr></table>
+
+<script>
+(function () {
+  // 各フレームで「地図が見えている面積の割合」を4px格子サンプリングで実測する。
+  // 被覆要素は class="occl"（新UI＋既存の下部バー・右側ボタン）。矩形の重なりも正しく扱える。
+  var STEP = 4;
+  document.querySelectorAll('.phone, .wide').forEach(function (ph) {
+    var pr = ph.getBoundingClientRect();
+    var rects = Array.prototype.map.call(ph.querySelectorAll('.occl'), function (el) {
+      var r = el.getBoundingClientRect();
+      return { l: r.left - pr.left, t: r.top - pr.top, r: r.right - pr.left, b: r.bottom - pr.top };
+    });
+    var total = 0, covered = 0;
+    for (var y = STEP / 2; y < pr.height; y += STEP) {
+      for (var x = STEP / 2; x < pr.width; x += STEP) {
+        total++;
+        for (var i = 0; i < rects.length; i++) {
+          var q = rects[i];
+          if (x >= q.l && x < q.r && y >= q.t && y < q.b) { covered++; break; }
+        }
+      }
+    }
+    var vis = total ? Math.round((1 - covered / total) * 100) : 0;
+    ph.dataset.vis = vis;
+    var slot = ph.closest('.slot');
+    if (!slot) return;
+    var cnt = slot.querySelector('.cnt');
+    if (cnt && cnt.style.visibility !== 'hidden') {
+      cnt.innerHTML = '地図可視率 <b>' + vis + '%</b>（既存クローム込み・4px格子で実測）';
+    }
+    var ob = slot.querySelector('.occbar');
+    if (ob) {
+      ob.querySelector('i').style.width = vis + '%';
+      ob.querySelector('i').style.background = vis >= 75 ? '#5cb85c' : vis >= 55 ? '#f0ad4e' : '#d9534f';
+    }
+  });
+
+  // 一覧表を組み立てる
+  var ROWS = [
+    ['現行ポップアップ', '約535px（可変）', '中', '低（伸びる）', '—'],
+    ['A1 ボトムシート', '360px（可変・内部スクロール）', '多', '低（既存部品）', '○'],
+    ['A2 ミニシート＋引き上げ', '150px→可変', '中〜多', '中', '○'],
+    ['A3 下部ミニカード', '約96px', '少', '低〜中', '△（詳細へ送る）'],
+    ['A4 カルーセル', '約104px', '少', '中〜高', '△'],
+    ['B1 上部カード', '約210px', '多', '中', '○'],
+    ['B2 上部ヘッダー＋引き出し', '52px→可変', '中〜多', '中', '○'],
+    ['B3 分割ビュー', '常時315px', '無制限', '高', '○'],
+    ['B4 全画面詳細', '全画面', '無制限', '中', '○'],
+    ['C1 ピン展開', '約46px', '極小', '中', '×（要併用）'],
+    ['C2 放射メニュー', '0（重畳）', '極小', '高', '×'],
+    ['C3 ラベル＋詳細バー', '実質+約50px', '中', '中', '○'],
+    ['C4 右端ドック', '約340×48px', '中', '中', '○'],
+    ['C5 スポットライト＋中央カード', '約200px＋暗幕', '多', '低', '○'],
+    ['C6 nearby-panelにタブ統合', '400px', '多', '高（構造整理を伴う）', '○'],
+    ['D1 レスポンシブ側パネル', '横幅300px', '多', '中', '○（PC限定）']
+  ];
+  var slots = Array.prototype.slice.call(document.querySelectorAll('.slot'));
+  var tbl = document.getElementById('summary');
+  ROWS.forEach(function (r) {
+    var key = r[0].split(' ')[0];
+    var vis = '';
+    slots.forEach(function (s) {
+      var h = s.querySelector('h4');
+      var ph = s.querySelector('.phone, .wide');
+      if (!h || !ph) return;
+      if (h.textContent.indexOf(key) === 0 || (key === '現行ポップアップ' && h.textContent.indexOf('現行') === 0)) {
+        vis = ph.dataset.vis + '%';
+      }
+    });
+    var tr = document.createElement('tr');
+    tr.innerHTML = '<td>' + r[0] + '</td><td>' + r[1] + '</td><td>' + vis + '</td><td>' + r[2] + '</td><td>' + r[3] + '</td><td>' + r[4] + '</td>';
+    tbl.appendChild(tr);
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<base href="../">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マンホールカード詳細 レイアウト案 v2</title>
+<style>
+  body { font-family: sans-serif; background: #e8e8e8; padding: 20px; margin: 0; }
+  h1 { font-size: 15px; color: #333; margin: 0 0 4px; }
+  .lead { font-size: 12px; color: #666; margin: 0 0 20px; line-height: 1.6; }
+  .row { display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; }
+  .col h3 { font-size: 13px; color: #333; margin: 0 0 4px; }
+  .col .desc { font-size: 11px; color: #666; margin: 0 0 8px; line-height: 1.6; width: 260px; min-height: 44px; }
+
+  /* ===== 本体のポップアップ再現 ===== */
+  .popup-card { width: 210px; padding: 7px; background: #fff; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.25); }
+  .popup-title { font-weight: bold; font-size: 14px; display: block; margin-bottom: 2px; }
+  .popup-address { font-size: 11px; color: #555; display: block; margin-bottom: 4px; }
+  .popup-road { font-size: 11px; color: #888; display: block; margin-bottom: 4px; }
+  .clamp::after { content: ' ▼'; font-size: 10px; color: #999; }
+  .mimg { margin: 4px 0; text-align: center; background: #f9f9f9; border-radius: 6px; border: 1px solid #eee; padding: 6px; }
+  .mimg .ph { width: 110px; height: 155px; background: linear-gradient(135deg, #b3d4e8 0 55%, #7aa8c4 55% 100%); border-radius: 5px; display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: 10px; }
+  .btn { display: block; text-align: center; padding: 9px 4px; border-radius: 7px; text-decoration: none; font-weight: bold; color: #fff; font-size: 12px; border: none; box-sizing: border-box; }
+  .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 5px; }
+  .btn-full { grid-column: 1 / -1; }
+  .btn-gmap { background: #fff; color: #4285f4; border: 1px solid #4285f4; }
+  .btn-nav { background: #4285F4; }
+  .btn-nav-yahoo { background: #FF0033; }
+  .btn-nearby { background: #34A853; }
+  .btn-detail { background: #8D6E63; }   /* 新設：カード詳細 */
+  .new-tag { position: relative; }
+  .new-tag::after {
+    content: '新設'; position: absolute; top: -7px; right: -6px;
+    background: #E53935; color: #fff; font-size: 9px; font-weight: bold;
+    border-radius: 8px; padding: 1px 6px;
+  }
+
+  /* ===== 詳細シート ===== */
+  .phone {
+    position: relative; width: 300px; height: 560px;
+    border-radius: 18px; overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    background:
+      repeating-linear-gradient(0deg, transparent 0 39px, rgba(0,0,0,0.05) 39px 40px),
+      repeating-linear-gradient(90deg, transparent 0 39px, rgba(0,0,0,0.05) 39px 40px),
+      #ede7dc;
+  }
+  .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.25); }
+  .sheet {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    background: #fff; border-radius: 16px 16px 0 0;
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.15);
+    display: flex; flex-direction: column;
+    max-height: 88%;
+  }
+  .sheet-handle { width: 36px; height: 4px; background: #ccc; border-radius: 2px; margin: 8px auto 4px; }
+  .sheet-close { position: absolute; top: 10px; right: 14px; font-size: 20px; color: #bbb; background: none; border: none; }
+  .sheet-body { overflow-y: auto; padding: 4px 16px 14px; }
+  .card-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .muni { font-size: 15px; font-weight: bold; color: #333; }
+  .badge { font-size: 10px; font-weight: bold; color: #fff; background: #8d6e63; border-radius: 10px; padding: 2px 8px; }
+  .badge.round { background: #546E7A; }
+  .card-img-wrap { background: #f5f2ec; border: 1px solid #eee; border-radius: 10px; padding: 10px; text-align: center; margin-bottom: 10px; }
+  .card-img { width: 150px; height: 212px; background: linear-gradient(135deg, #b3d4e8 0 55%, #7aa8c4 55% 100%); border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; box-shadow: 0 2px 6px rgba(0,0,0,0.25); }
+  .info-table { width: 100%; border-collapse: collapse; margin-bottom: 10px; }
+  .info-table th { font-size: 10px; color: #999; font-weight: normal; text-align: left; white-space: nowrap; padding: 5px 10px 5px 0; vertical-align: top; width: 58px; }
+  .info-table td { font-size: 11.5px; color: #333; padding: 5px 0; line-height: 1.5; border-bottom: 1px solid #f5f5f5; }
+  .info-table tr:last-child td { border-bottom: none; }
+  .btn-stock { background: #00897B; }
+  .btn-gkp { background: #455A64; }
+</style>
+</head>
+<body>
+
+<h1>マンホールカード詳細 — レイアウト案 v2（ナビ系ボタンなし）</h1>
+<p class="lead">
+親ポップアップに「カード詳細」ボタンを新設し、タップで詳細シートを表示。<br>
+詳細シートのボタンは「在庫状況を確認」「GKP公式一覧」のみ（GoogleMap・ここへ行く・周辺検索は親ポップアップに既存のため非搭載）。
+</p>
+
+<div class="row">
+
+  <!-- ===================== 親ポップアップ：配布場所 ===================== -->
+  <div class="col">
+    <h3>親ポップアップ（配布場所）</h3>
+    <p class="desc">カード画像の直下に「カード詳細」を新設。他のボタンは現状のまま。</p>
+    <div class="popup-card">
+      <span class="popup-title clamp">[配布] 札幌市下水道科学館</span>
+      <span class="popup-address clamp">北海道札幌市北区麻生町8丁目</span>
+      <span class="popup-road clamp">🕐 9：30～17：00 休館日（毎月第2水曜…</span>
+      <div class="mimg"><div class="ph">カード画像</div></div>
+      <div class="btn-grid">
+        <a class="btn btn-gmap btn-full">GoogleMap</a>
+        <a class="btn btn-detail btn-full new-tag">カード詳細</a>
+        <a class="btn btn-nav">ここへ行く</a>
+        <a class="btn btn-nav-yahoo">ここへ行く</a>
+        <a class="btn btn-nearby btn-full">🔍 この周辺を検索</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== 親ポップアップ：蓋ピン ===================== -->
+  <div class="col">
+    <h3>親ポップアップ（蓋ピン）</h3>
+    <p class="desc">同じ位置に「カード詳細」を新設。cardIdが配布場所データと紐付かない約3%はボタン自体を出さない。</p>
+    <div class="popup-card">
+      <span class="popup-title">北海道 札幌市</span>
+      <span class="popup-address">北海道札幌市北区麻生町</span>
+      <div class="mimg"><div class="ph">カード画像</div></div>
+      <div class="btn-grid">
+        <a class="btn btn-gmap btn-full">GoogleMap</a>
+        <a class="btn btn-detail btn-full new-tag">カード詳細</a>
+        <a class="btn btn-nav">ここへ行く</a>
+        <a class="btn btn-nav-yahoo">ここへ行く</a>
+        <a class="btn btn-nearby btn-full">🔍 この周辺を検索</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== 詳細シート ===================== -->
+  <div class="col">
+    <h3>カード詳細シート（下部シート型）</h3>
+    <p class="desc">「カード詳細」タップで表示。ボタンは在庫状況とGKP一覧の2つのみ。外側タップ・×・下スワイプで閉じて親ポップアップに戻る。</p>
+    <div class="phone">
+      <div class="overlay"></div>
+      <div class="sheet">
+        <div class="sheet-handle"></div>
+        <button class="sheet-close">×</button>
+        <div class="sheet-body">
+          <div class="card-head">
+            <span class="muni">札幌市</span>
+            <span class="badge">A001</span>
+            <span class="badge round">第1弾</span>
+          </div>
+          <div class="card-img-wrap">
+            <div class="card-img">カード画像<br>(cardImgUrl)</div>
+          </div>
+          <table class="info-table">
+            <tr><th>発行日</th><td>2016/04/01</td></tr>
+            <tr><th>配布場所</th><td>札幌市下水道科学館<br><span style="color:#777;">北海道札幌市北区麻生町8丁目</span></td></tr>
+            <tr><th>配布時間</th><td>9：30～17：00 休館日（毎月第2水曜日・年末年始）を除く</td></tr>
+          </table>
+          <div class="btn-grid">
+            <a class="btn btn-stock btn-full">在庫状況を確認（札幌市公式）</a>
+            <a class="btn btn-gkp btn-full">GKP公式一覧（該当行へ移動）</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

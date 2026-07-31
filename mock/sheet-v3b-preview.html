@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<base href="../">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V3確定版＋カード詳細統合案＋選択表示効果</title>
+<style>
+  body { font-family: sans-serif; background: #ececec; padding: 18px; margin: 0; color: #222; }
+  h1 { font-size: 16px; margin: 0 0 6px; }
+  h2 { font-size: 14.5px; margin: 30px 0 4px; padding: 10px 0 0; border-top: 3px solid #b5b5b5; }
+  h3 { font-size: 12.5px; margin: 18px 0 6px; color: #333; }
+  .lead { font-size: 12px; color: #555; line-height: 1.8; margin: 0 0 10px; max-width: 1200px; }
+  .lead b { color: #b00; }
+  code { background: #fff; padding: 0 3px; border-radius: 3px; font-size: 11px; }
+  table.calc { border-collapse: collapse; font-size: 11.5px; margin: 8px 0; background: #fff; }
+  table.calc th, table.calc td { border: 1px solid #ddd; padding: 4px 9px; text-align: left; white-space: nowrap; }
+  table.calc th { background: #f4f4f4; }
+  table.calc td.n { text-align: right; font-variant-numeric: tabular-nums; }
+  table.calc tr.hi td { background: #fdecea; font-weight: bold; }
+  table.calc tr.lo td { background: #e8f5e9; }
+
+  #ctl { position: sticky; top: 0; z-index: 60; background: #fff; border: 1px solid #ccc; border-radius: 8px;
+         padding: 9px 12px; margin: 0 0 14px; font-size: 12px; display: flex; gap: 22px; align-items: center;
+         flex-wrap: wrap; box-shadow: 0 2px 8px rgba(0,0,0,.13); }
+  #ctl .grp { display: flex; gap: 9px; align-items: center; }
+  #ctl .gl { font-weight: bold; color: #555; }
+  #ctl .fixed { color: #0a7a2f; font-weight: bold; }
+
+  .vrow { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; }
+  .cell { width: 375px; }
+  .cell .hd { font-size: 11.5px; font-weight: bold; margin: 0 0 1px; }
+  .cell .sub { font-size: 10px; color: #888; margin: 0 0 4px; }
+  .cell .mt { font-size: 10.5px; color: #666; margin: 5px 0 0; font-variant-numeric: tabular-nums; line-height: 1.6; }
+  .cell .mt b { color: #111; } .cell .mt .warn { color: #b00; font-weight: bold; }
+  .cell.tallest .hd::after { content: ' ← 最大'; color: #b00; }
+
+  /* ===== シート実寸（幅375px） ===== */
+  .sheet { width: 375px; box-sizing: border-box; background: #fff; border-radius: 16px 16px 0 0;
+           box-shadow: 0 -3px 14px rgba(0,0,0,.22); overflow: hidden; }
+  .sheet .handle { width: 36px; height: 4px; background: #ccc; border-radius: 2px; margin: 8px auto 6px; }
+  .sheet .body { padding: 0 14px 14px; }     /* 内容幅 = 347px */
+
+  .t-row { display: flex; align-items: flex-start; gap: 6px; margin-bottom: 3px; min-width: 0; flex-wrap: wrap; }
+  .t-name { font-size: 15px; font-weight: bold; min-width: 0; overflow: hidden;
+            display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .badge { font-size: 12px; font-weight: 700; color: #fff; padding: 2px 8px; border-radius: 10px;
+           line-height: 1.6; white-space: nowrap; flex-shrink: 0; }
+  .b-yamajiro { background: hsl(0,42%,38%); }
+  .cdbadge { font-size: 10px; font-weight: bold; color: #fff; background: #8d6e63; border-radius: 10px;
+             padding: 2px 8px; white-space: nowrap; flex-shrink: 0; }
+  .cdbadge.round { background: #546E7A; }
+
+  .hrow { display: flex; gap: 10px; margin-top: 5px; align-items: flex-start; }
+  .hrow .rt { flex: 1; min-width: 0; }
+  .ph { border-radius: 7px; border: 1px solid #eee; overflow: hidden; flex-shrink: 0;
+        position: relative; background: #efece7; display: flex; align-items: center; justify-content: center; }
+  .ph .phim { display: block; flex-shrink: 0;
+    background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.22) 0 6px, rgba(255,255,255,0) 6px 14px); }
+  .ph .phlab { position: absolute; left: 0; right: 0; bottom: 0; font-size: 8px; color: #fff;
+               background: rgba(0,0,0,.5); text-align: center; line-height: 1.35; padding: 1px 0;
+               white-space: nowrap; overflow: hidden; }
+  .phim.castle { background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.22) 0 6px, rgba(255,255,255,0) 6px 14px), linear-gradient(135deg,#cbbba1,#7d6446); }
+  .phim.card   { background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.22) 0 6px, rgba(255,255,255,0) 6px 14px), linear-gradient(150deg,#9fc3dd,#4d7ea3); }
+  .phim.poke   { background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.22) 0 6px, rgba(255,255,255,0) 6px 14px), linear-gradient(140deg,#e8d38a,#b8863a); }
+
+  .meta { font-size: 11px; color: #666; line-height: 1.45; display: -webkit-box;
+          -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+  .meta + .meta { margin-top: 1px; }
+  /* 定義リスト（カード詳細の項目をテキスト側に詰める用） */
+  .dl { font-size: 10.5px; line-height: 1.5; margin-top: 2px; }
+  .dl > div { display: flex; gap: 6px; }
+  .dl .k { color: #aaa; flex: 0 0 46px; }
+  .dl .v { color: #555; flex: 1; min-width: 0; overflow: hidden;
+           display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+
+  /* ボタン */
+  .btn { display: flex; align-items: center; justify-content: center; text-align: center; height: 40px;
+         padding: 0 4px; border-radius: 7px; font-weight: bold; color: #fff; font-size: 12px;
+         box-sizing: border-box; cursor: pointer; text-decoration: none; white-space: nowrap; overflow: hidden;
+         flex: 1 1 0; min-width: 0; }
+  .brow { display: flex; gap: 4px; margin-top: 4px; }
+  .btn.ovf { outline: 2px solid #ff1744; outline-offset: -2px; }
+  .g-gmap { background: #fff; color: #4285f4; border: 1px solid #4285f4; }
+  .g-nav { background: #4285F4; } .g-yahoo { background: #FF0033; } .g-near { background: #34A853; }
+  .g-wiki { background: #333; } .g-kojo { background: #8B4513; } .g-shb { background: #6A4C93; }
+  .g-acc { background: #00897B; } .g-tabe { background: #ff6600; } .g-detail { background: #8D6E63; }
+  .g-poke { background: #FBBC04; color: #333; } .g-mweb { background: #283593; }
+  .g-meki { background: #BF360C; } .g-mhp { background: #795548; }
+  .g-stock { background: #00897B; } .g-gkp { background: #455A64; }
+
+  .acc { margin-top: 5px; }
+  .acc > button { width: 100%; height: 28px; border: 1px dashed #cfcfcf; background: #fbfbfb;
+                  border-radius: 7px; font-size: 10.5px; color: #666; cursor: pointer; font-family: inherit; }
+  .acc > .bd { display: none; padding-top: 4px; }
+  .acc.open > .bd { display: block; }
+
+  /* ===== 選択表示効果 ===== */
+  .fxgrid { display: flex; gap: 14px; flex-wrap: wrap; }
+  .fx { width: 236px; }
+  .fx .cap { font-size: 11.5px; font-weight: bold; margin: 0 0 2px; }
+  .fx .nt { font-size: 10px; color: #666; line-height: 1.6; margin: 5px 0 0; }
+  .fx .nt .ok { color: #0a7a2f; font-weight: bold; } .fx .nt .ng { color: #b00; font-weight: bold; }
+  .mini { position: relative; width: 236px; height: 190px; border-radius: 7px; overflow: hidden;
+          border: 1px solid #aaa;
+          background:
+            repeating-linear-gradient(64deg, rgba(255,255,255,.85) 0 5px, rgba(255,255,255,0) 5px 56px),
+            repeating-linear-gradient(-24deg, rgba(255,255,255,.75) 0 4px, rgba(255,255,255,0) 4px 68px),
+            radial-gradient(circle at 20% 74%, #bcd4c4 0 44px, transparent 45px),
+            linear-gradient(150deg, #e6ead9, #d5ded0); }
+  /* 実寸ピン: 直径28px＋白枠3px（index.html OBJ_ICON_CIRCLE_PX=28, circle-stroke-width:3） */
+  .mp { position: absolute; width: 28px; height: 28px; border-radius: 50%; box-shadow: 0 0 0 3px #fff;
+        transform: translate(-50%,-50%); display: flex; align-items: center; justify-content: center;
+        color: #fff; font-size: 12px; z-index: 4; }
+  .mp.c100 { background: #4285F4; } .mp.cetc { background: #546E7A; }
+  .mp.michi { background: #34A853; } .mp.mh { background: #B87333; }
+  .mini .msheet { position: absolute; left: 0; right: 0; bottom: 0; height: 62px; background: #fff;
+                  border-radius: 12px 12px 0 0; box-shadow: 0 -2px 8px rgba(0,0,0,.2); z-index: 6;
+                  padding: 7px 10px; font-size: 10.5px; color: #555; }
+  .mini .msheet b { font-size: 12px; color: #222; display: block; }
+  .mini .msheet i { display: block; width: 30px; height: 3px; background: #ccc; border-radius: 2px;
+                    margin: 0 auto 5px; }
+
+  /* --- 効果ごとのCSS --- */
+  .ring { position: absolute; border-radius: 50%; transform: translate(-50%,-50%); z-index: 3; }
+  @keyframes pulseA { 0% { width:11px;height:11px;opacity:.4 } 100% { width:224px;height:224px;opacity:0 } }
+  .fx-pulse .ring { background: rgba(244,67,54,1); animation: pulseA 1s cubic-bezier(.22,.61,.36,1) infinite; }
+  .fx-ring .ring.r1 { width: 46px; height: 46px; border: 3px solid rgba(66,133,244,.9); }
+  .fx-ring .ring.r2 { width: 62px; height: 62px; border: 2px solid rgba(66,133,244,.4); }
+  .fx-scale .mp { width: 40px; height: 40px; font-size: 17px; box-shadow: 0 0 0 4px #fff, 0 3px 8px rgba(0,0,0,.45); }
+  @keyframes liftA { 0%,100% { transform: translate(-50%,-58%) } 50% { transform: translate(-50%,-72%) } }
+  .fx-lift .mp { animation: liftA 1.1s ease-in-out infinite; }
+  .fx-lift .shadow { position: absolute; width: 26px; height: 7px; border-radius: 50%;
+                     background: rgba(0,0,0,.28); transform: translate(-50%,-50%); z-index: 2; filter: blur(1px); }
+  .fx-dim .mp.other { opacity: .28; }
+  .fx-label .lb { position: absolute; transform: translate(-50%,-135%); background: #fff; border-radius: 5px;
+                  padding: 2px 7px; font-size: 10.5px; font-weight: bold; white-space: nowrap; z-index: 5;
+                  box-shadow: 0 1px 4px rgba(0,0,0,.3); }
+  .fx-spot .sp { position: absolute; inset: 0; z-index: 3; pointer-events: none;
+                 background: radial-gradient(circle at var(--x) var(--y), rgba(0,0,0,0) 0 40px, rgba(0,0,0,.5) 92px); }
+  @keyframes spinA { to { transform: translate(-50%,-50%) rotate(360deg) } }
+  .fx-dash .ring { width: 52px; height: 52px; border: 3px dashed #EA4335; animation: spinA 3.2s linear infinite; }
+  .fx-glow .gl { position: absolute; width: 74px; height: 30px; border-radius: 50%; z-index: 2;
+                 transform: translate(-50%,-50%); background: radial-gradient(ellipse, rgba(66,133,244,.55), rgba(66,133,244,0) 70%); }
+  .fx-conn svg { position: absolute; inset: 0; z-index: 5; }
+  .fx-cross .cx, .fx-cross .cy { position: absolute; background: rgba(234,67,53,.65); z-index: 3; }
+  .fx-cross .cx { left: 0; right: 0; height: 1px; }
+  .fx-cross .cy { top: 0; bottom: 0; width: 1px; }
+  .fx-invert .mp { background: #fff !important; color: #4285F4; box-shadow: 0 0 0 3px #4285F4, 0 2px 6px rgba(0,0,0,.35); }
+  .fx-beak .bk { position: absolute; z-index: 7; width: 0; height: 0;
+                 border-left: 10px solid transparent; border-right: 10px solid transparent;
+                 border-bottom: 12px solid #fff; transform: translate(-50%,0); filter: drop-shadow(0 -1px 1px rgba(0,0,0,.12)); }
+</style>
+</head>
+<body>
+
+<h1>V3 確定版 ＋ カード詳細の統合案 ＋ 選択中オブジェクトの表示効果</h1>
+
+<div id="ctl">
+  <div class="grp"><span class="gl">確定条件</span>
+    <span class="fixed">行ラベルなし ／ 表示形式=現行方式(1:1枠にcover) ／ サイズ128px ／ 別名2行省略</span>
+  </div>
+  <div class="grp"><span class="gl">城の写真ソース</span>
+    <select id="src">
+      <option value="kojo" selected>攻城団パノラマ 720×240</option>
+      <option value="shb">城郭放浪記 640×475</option>
+      <option value="wiki3">Wikipedia(横) 400×300</option>
+      <option value="wiki4">Wikipedia(縦) 400×533</option>
+    </select>
+  </div>
+  <div class="grp"><span class="gl">テキスト</span>
+    <label><input type="radio" name="txt" value="rep" checked> 代表例</label>
+    <label><input type="radio" name="txt" value="max"> 実データ最長</label>
+  </div>
+  <div class="grp"><span class="gl">写真</span>
+    <label><input type="radio" name="pic" value="on" checked> あり</label>
+    <label><input type="radio" name="pic" value="off"> なし</label>
+  </div>
+</div>
+
+<h2>■ 確定した行構成</h2>
+<table class="calc">
+<tr><th>行</th><th>内容</th><th>幅</th></tr>
+<tr><td>行A</td><td>GoogleMap ＋ 種別固有の単発リンク</td><td>等分（1個なら全幅）</td></tr>
+<tr><td>行B（セット）</td><td>城=Wikipedia / 攻城団 / 城郭放浪記　道の駅=michieki.jp / 施設HP / 関連HP</td><td>非表示があれば残りが自動で広がる／0個なら行ごと消滅</td></tr>
+<tr><td>行C（最下段・固定）</td><td>ここへ行く(Google) / ここへ行く(Yahoo) / 🔍 この周辺を検索</td><td>常に3等分・全種別共通</td></tr>
+</table>
+<p class="lead">
+写真は <b>128×128 の枠に cover</b>（現行 <code>.castle-img</code> と同じトリミング方式）。テキスト幅は 347 − 128 − 10 = <b>209px</b>。<br>
+城の別名は <b>1行省略 → 2行省略</b> に変更（<code>-webkit-line-clamp: 2</code>）。<br>
+※<b>注記</b>: 「現行方式=cover」は城（<code>.castle-img</code> L391）の話で、マンホール系の現行は <code>object-fit: contain</code>（L365）です。ここでは全種別を cover で統一していますが、カード画像は上下が切れます（写真下の「✂トリミング」表示で確認できます）。
+</p>
+
+<div id="out"></div>
+
+<h2>■ カード詳細ボタン廃止 → 情報統合案</h2>
+<p class="lead">
+現行の「カード詳細」シート（<code>openCardDetail()</code> L2057）が持っている情報のうち、<b>V3シートにまだ無いもの</b>は次の5点です。
+</p>
+<table class="calc">
+<tr><th>項目</th><th>フィールド</th><th>実データでの充足</th><th>V3シートにあるか</th></tr>
+<tr><td>カードID</td><td><code>municipality</code> の括弧内</td><td class="n">864 / 1,426（60.6%）</td><td>なし</td></tr>
+<tr><td>弾（配布回）</td><td><code>round</code></td><td class="n">1,426 / 1,426（30種類）</td><td>なし</td></tr>
+<tr><td>発行日</td><td><code>issueDate</code></td><td class="n">1,426 / 1,426</td><td>なし</td></tr>
+<tr><td>在庫状況（公式ページ）</td><td><code>url</code></td><td class="n">1,246 / 1,426（87.4%）</td><td>なし</td></tr>
+<tr><td>GKP公式一覧</td><td>常に生成（<code>gk-p.jp/mhcard/?pref=</code>）</td><td class="n">1,426 / 1,426</td><td>なし</td></tr>
+<tr><td colspan="4" style="background:#f9f9f9">配布場所名・住所・配布時間・カード画像は<b>すでにV3シートに存在（重複）</b></td></tr>
+</table>
+<p class="lead">
+つまり統合で増えるのは <b>バッジ2種＋テキスト1〜2行＋ボタン2個</b>。以下に5案を出します。<br>
+※<b>マンホール蓋の場合</b>、配布場所の情報は <code>findCardByCardId()</code> で紐付いた別レコードです（蓋の住所と配布場所の住所は別物）。紐付かない44件では統合分がまるごと出ません。
+</p>
+<div id="cardout"></div>
+
+<h2>■ 選択中オブジェクトの表示効果 バリエーション</h2>
+<p class="lead">
+下部シート方式にすると「どのピンを見ているのか」がポップアップの吹き出しほど自明でなくなるため、選択状態の表示が必要になります。<br>
+ピンは実寸で再現（<b>直径28px＋白枠3px</b>／<code>OBJ_ICON_CIRCLE_PX=28</code>, <code>circle-stroke-width:3</code>）。城の色は 日本100名城=#4285F4・続100名城=#EA4335・その他=#546E7A。<br>
+<b>実装方式の前提</b>: ピンはDOM要素ではなく MapLibre のレイヤー描画（<code>-bg</code> circle ＋ <code>-icon</code> symbol）です。そのため「選択専用のGeoJSONソース＋レイヤーを最前面に1枚足す」形が基本になります。既存の検索ピン（<code>pin-pulse-source</code> / <code>animatePinPulse()</code> L1519）が同じ手法なので流用できます。
+</p>
+<div class="fxgrid" id="fxout"></div>
+
+<h2>■ 高さ一覧（JS実測）</h2>
+<table class="calc" id="summary"></table>
+
+<script>
+// ================= ボタン =================
+const BTN = {
+  gmap:['GoogleMap','g-gmap'], navG:['ここへ行く','g-nav'], navY:['ここへ行く','g-yahoo'],
+  near:['🔍 この周辺を検索','g-near'],
+  wiki:['Wikipedia','g-wiki'], kojo:['攻城団','g-kojo'], shb:['城郭放浪記','g-shb'], acc:['アクセス','g-acc'],
+  mweb:['公式ページ','g-mweb'], meki:['michieki.jp','g-meki'], hp:['施設HP','g-mhp'], hp2:['関連HP','g-mhp'],
+  tabe:['食べログ','g-tabe'], detail:['カード詳細','g-detail'], poke:['公式ページ','g-poke'],
+  stock:['在庫状況','g-stock'], gkp:['GKP公式一覧','g-gkp']
+};
+
+// ================= 各種別の中身（実データ） =================
+const REP = {
+  castle : { name:'岩村城', badge:['山城','b-yamajiro'],
+             metas:['別名: 霧ヶ城','標高 721m / 比高 153m','岐阜県恵那市岩村町'] },
+  michi  : { name:'道の駅三笠',
+             metas:['北海道三笠市岡山1056-1','🕐 9:00～18:00（4～9月） 9:00～17:00（10～3月）'] },
+  shop   : { name:'ラーメン札幌一粒庵（いちりゅうあん） - さっぽろ（札幌市営）（ラーメン）',
+             metas:['北海道札幌市中央区北四条西一丁目'] },
+  manhole: { name:'北海道 札幌市', metas:['北海道札幌市中央区北一条西二丁目'] },
+  mhcard : { name:'[配布] 札幌市（A001） 札幌市下水道科学館',
+             metas:['北海道札幌市北区麻生町8電話：011-717-0046',
+                    '🕐 9:30～17:00（入館は16:30まで）ただし、月曜日（祝休日の場合は翌日）、年末年始はお休みです'] },
+  pokefuta:{ name:'アローラロコン / トドグラー', metas:['北海道別海町尾岱沼5-27'] }
+};
+const MAXT = {
+  castle : { name:'国吉城', badge:['山城','b-yamajiro'],
+             metas:['別名: 佐柿城、wakasa-mihama.jp、spot、%E4%BD%90%E6%9F%BF%E5%9B%BD%E5%90%89%E5%9F%8E、佐柿国吉城',
+                    '標高 197m / 比高 140m','福井県美浜町坂尻'] },
+  michi  : { name:'道の駅むつざわスマートウェルネスタウン・道の駅・つどいの郷',
+             metas:['千葉県長生郡睦沢町森2-1',
+                    '🕐 ［直売所］9:00～18:00 ［レストラン］11:00～21:00（LO 20:30） ［温浴施設］10:00～21:00'] },
+  shop   : { name:'ブルガリ イル・リストランテ ルカ・ファンティン（BVLGARI Il Ristorante LUCA FANTIN【旧店名】ブルガリ イル リストランテ） - 銀座一丁目（イタリアン）',
+             metas:['東京都中央区銀座二丁目'] },
+  manhole: { name:'東京都 世田谷区 特別版', metas:['東京都世田谷区砧八丁目'] },
+  mhcard : { name:'[配布] 東京都 大田区 (T001) ①一般社団法人 大田観光協会 大田区南蒲田1-20-20 大田区産業プラザ2階 ②大田区立郷土博物館 大田区南馬込5-11-13 (問合せ先) 大田区産業経済部産業経済課',
+             metas:['①一般社団法人 大田観光協会 大田区南蒲田1-20-20 大田区産業プラザ2階 ②大田区立郷土博物館 大田区南馬込5-11-13 (問合せ先) 大田区産業経済部産業経済課 電話：03-5744-1322',
+                    '🕐 ①9:00～17:00 ただし、土曜日/日曜日/祝日/年末年始はお休みです ②9:00～17:00 ただし、月曜日（休日・祝日は開館）、年末年始、他（展示替え等により臨時休館あり）はお休みです'] },
+  pokefuta:{ name:'ラプラス / ニャース / ニャビー / エネコ / ニャルマー', metas:['宮城県石巻市穀町14番1号'] }
+};
+// カード詳細側の実データ（札幌市 A001 / 大田区 T001）
+const CARD = {
+  rep: { id:'A001', round:'第01弾', issueDate:'2016/04/01',
+         place:'札幌市下水道科学館', addr:'北海道札幌市北区麻生町8電話：011-717-0046',
+         hours:'9:30～17:00（入館は16:30まで）ただし、月曜日（祝休日の場合は翌日）、年末年始はお休みです',
+         hasUrl:true },
+  max: { id:'T001', round:'第15弾', issueDate:'2021/11/05',
+         place:'①一般社団法人 大田観光協会 ②大田区立郷土博物館',
+         addr:'①大田区南蒲田1-20-20 大田区産業プラザ2階 ②大田区南馬込5-11-13 電話：03-5744-1322',
+         hours:'①9:00～17:00 ただし、土曜日/日曜日/祝日/年末年始はお休みです ②9:00～17:00 ただし、月曜日（休日・祝日は開館）、年末年始、他はお休みです',
+         hasUrl:false }   // 大田区は url が空 → 在庫状況ボタンなし
+};
+
+// ===== 写真ソース実寸（2026-07-26 実測） =====
+const PHOTOSRC = {
+  castle: [
+    { id:'kojo',  name:'攻城団パノラマ', w:720, h:240 },
+    { id:'shb',   name:'城郭放浪記',     w:640, h:475 },
+    { id:'wiki3', name:'Wikipedia(横)',  w:400, h:300 },
+    { id:'wiki4', name:'Wikipedia(縦)',  w:400, h:533 }
+  ],
+  manhole : [{ id:'mh', name:'蓋カード画像', w:232, h:320 }],
+  mhcard  : [{ id:'mc', name:'配布場所カード', w:517, h:722 }],
+  pokefuta: [{ id:'pk', name:'ポケふた', w:750, h:750 }],
+  michi: null, shop: null
+};
+const PHCLS = { castle:'castle', manhole:'card', mhcard:'card', pokefuta:'poke' };
+const SIZE = 128;   // 確定値
+
+// ================= 全ボタン表示パターン =================
+const PATTERNS = [
+  { type:'castle', label:'城 ①Wiki○ 攻城団○ 放浪記○', cnt:'3,542件のうちWikiあり', rowA:[BTN.acc], setRow:[BTN.wiki,BTN.kojo,BTN.shb] },
+  { type:'castle', label:'城 ②Wiki○ 攻城団○ 放浪記✕', cnt:'937件のうちWikiあり',   rowA:[BTN.acc], setRow:[BTN.wiki,BTN.kojo] },
+  { type:'castle', label:'城 ③Wiki○ 攻城団✕ 放浪記○', cnt:'7,399件のうちWikiあり', rowA:[BTN.acc], setRow:[BTN.wiki,BTN.shb] },
+  { type:'castle', label:'城 ④Wiki○ 攻城団✕ 放浪記✕', cnt:'11,556件のうちWikiあり', rowA:[BTN.acc], setRow:[BTN.wiki] },
+  { type:'castle', label:'城 ⑤Wiki✕ 攻城団○ 放浪記○', cnt:'3,542件のうちWikiなし', rowA:[BTN.acc], setRow:[BTN.kojo,BTN.shb] },
+  { type:'castle', label:'城 ⑥Wiki✕ 攻城団○ 放浪記✕', cnt:'937件のうちWikiなし',   rowA:[BTN.acc], setRow:[BTN.kojo] },
+  { type:'castle', label:'城 ⑦Wiki✕ 攻城団✕ 放浪記○', cnt:'7,399件のうちWikiなし', rowA:[BTN.acc], setRow:[BTN.shb] },
+  { type:'castle', label:'城 ⑧Wiki✕ 攻城団✕ 放浪記✕', cnt:'11,556件のうちWikiなし → 行B消滅', rowA:[BTN.acc], setRow:[] },
+  { type:'michi', label:'道の駅 ①4リンク揃い', cnt:'834件（最頻）', rowA:[BTN.mweb], setRow:[BTN.meki,BTN.hp,BTN.hp2] },
+  { type:'michi', label:'道の駅 ②関連HPなし',  cnt:'326件', rowA:[BTN.mweb], setRow:[BTN.meki,BTN.hp] },
+  { type:'michi', label:'道の駅 ③施設HPなし',  cnt:'24件',  rowA:[BTN.mweb], setRow:[BTN.meki,BTN.hp2] },
+  { type:'michi', label:'道の駅 ④michiekiのみ', cnt:'49件', rowA:[BTN.mweb], setRow:[BTN.meki] },
+  { type:'michi', label:'道の駅 ⑤公式のみ',    cnt:'1件 → 行B消滅', rowA:[BTN.mweb], setRow:[] },
+  { type:'manhole', label:'マンホール蓋 ①カード紐付きあり', cnt:'1,223件（統合案は下の章）', rowA:[BTN.detail], setRow:[] },
+  { type:'manhole', label:'マンホール蓋 ②カード紐付きなし', cnt:'44件 → 行AはGoogleMap単独', rowA:[], setRow:[] },
+  { type:'mhcard', label:'カード配布場所', cnt:'1,426件（統合案は下の章）', rowA:[BTN.detail], setRow:[] },
+  { type:'pokefuta', label:'ポケふた', cnt:'482件', rowA:[BTN.poke], setRow:[] },
+  { type:'shop', label:'食べログ', cnt:'7,077件', rowA:[BTN.tabe], setRow:[] }
+];
+
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const rowHtml = (btns) => btns.length
+  ? '<div class="brow">' + btns.map(b => `<a class="btn ${b[1]}">${b[0]}</a>`).join('') + '</div>' : '';
+
+// 1:1枠にcover（現行方式）
+function photoHtml(src, cls) {
+  const s = Math.max(SIZE / src.w, SIZE / src.h);
+  const iw = Math.round(src.w * s), ih = Math.round(src.h * s);
+  const trimmed = iw > SIZE + 0.5 || ih > SIZE + 0.5;
+  return `<div class="ph" style="width:${SIZE}px;height:${SIZE}px">`
+       + `<div class="phim ${cls}" style="width:${iw}px;height:${ih}px"></div>`
+       + `<span class="phlab">原寸 ${src.w}×${src.h}${trimmed ? ' ✂トリミング' : ''}</span></div>`;
+}
+const metasHtml = t => t.metas.map(m => `<div class="meta">${esc(m)}</div>`).join('');  // 全行2行省略
+
+function buildSheet(pat, o, extra) {
+  extra = extra || {};
+  const src = o.txt === 'max' ? MAXT[pat.type] : REP[pat.type];
+  const srcs = o.pic === 'off' ? null : PHOTOSRC[pat.type];
+  const ph = srcs ? (srcs.find(s => s.id === o.src) || srcs[0]) : null;
+  const title = `<div class="t-row">${src.badge ? `<span class="badge ${src.badge[1]}">${src.badge[0]}</span>` : ''}`
+              + `<span class="t-name">${esc(src.name)}</span>${extra.badges || ''}</div>`;
+  const right = (extra.rightExtra || '') + metasHtml(src) + (extra.metaExtra || '');
+  const media = ph ? `<div class="hrow">${photoHtml(ph, PHCLS[pat.type])}<div class="rt">${right}</div></div>`
+                   : right;
+  const rowA  = [BTN.gmap].concat(extra.rowA || pat.rowA);
+  const setRow = extra.setRow || pat.setRow;
+  return `<div class="sheet"><div class="handle"></div><div class="body">`
+    + title + media + (extra.afterMedia || '')
+    + rowHtml(rowA) + rowHtml(setRow) + rowHtml([BTN.navG, BTN.navY, BTN.near])
+    + `</div></div>`;
+}
+
+const opts = () => ({
+  txt: document.querySelector('input[name=txt]:checked').value,
+  pic: document.querySelector('input[name=pic]:checked').value,
+  src: document.getElementById('src').value
+});
+
+// ================= カード詳細 統合5案 =================
+const CARD_PLANS = [
+  { id:'案1', name:'全部入れ（バッジ＋テキスト行追加）',
+    desc:'カードID・弾をタイトル行のバッジに、発行日をテキストに追加。リンク2個は行A/行Bへ。<span class="ok">最も情報量が多い</span>／<span class="ng">縦が最も伸びる</span>',
+    build(o, c) { return {
+      badges: `<span class="cdbadge">${c.id}</span><span class="cdbadge round">${c.round}</span>`,
+      metaExtra: `<div class="meta">発行日 ${c.issueDate}</div>`,
+      rowA: c.hasUrl ? [BTN.stock] : [], setRow: [BTN.gkp] }; } },
+
+  { id:'案2', name:'アコーディオン（既定は閉じる）',
+    desc:'バッジのみ常時表示。発行日・配布場所はたたむ。<span class="ok">既定の高さが最小</span>／<span class="ng">1タップ増える</span>',
+    build(o, c) { return {
+      badges: `<span class="cdbadge">${c.id}</span><span class="cdbadge round">${c.round}</span>`,
+      afterMedia: `<div class="acc"><button onclick="this.parentElement.classList.toggle('open');`
+        + `this.textContent=this.parentElement.classList.contains('open')?'カード情報 ▲':'カード情報 ▾ (発行日・配布場所)'">カード情報 ▾ (発行日・配布場所)</button>`
+        + `<div class="bd"><div class="dl"><div><span class="k">発行日</span><span class="v">${c.issueDate}</span></div>`
+        + `<div><span class="k">配布場所</span><span class="v">${esc(c.place)}</span></div></div></div></div>`,
+      rowA: c.hasUrl ? [BTN.stock] : [], setRow: [BTN.gkp] }; } },
+
+  { id:'案3', name:'写真の右に定義リスト（縦を増やさない）',
+    desc:'128px写真の右の余白（209×128px）に弾・発行日を詰める。<span class="ok">縦の増加ゼロを狙える</span>／<span class="ng">1行あたりが窮屈</span>',
+    build(o, c) { return {
+      rightExtra: `<div class="dl"><div><span class="k">ID/弾</span><span class="v">${c.id}・${c.round}</span></div>`
+        + `<div><span class="k">発行日</span><span class="v">${c.issueDate}</span></div></div>`,
+      rowA: c.hasUrl ? [BTN.stock] : [], setRow: [BTN.gkp] }; } },
+
+  { id:'案4', name:'セット行に寄せる（城・道の駅と同じ3層ルール）',
+    desc:'外部リンク2個を行B（セット行）に置き、他種別と構造を完全に揃える。<span class="ok">一貫性が最も高い</span>／<span class="ng">発行日を出す場所がない</span>',
+    build(o, c) { return {
+      badges: `<span class="cdbadge">${c.id}</span><span class="cdbadge round">${c.round}</span>`,
+      rowA: [], setRow: c.hasUrl ? [BTN.stock, BTN.gkp] : [BTN.gkp] }; } },
+
+  { id:'案5', name:'写真タップで原寸カード（詳細シートの代替）',
+    desc:'カード画像タップで全画面拡大＋発行日等を重ねて表示。シート本体はバッジのみ。<span class="ok">カードを大きく見られる</span>／<span class="ng">情報が隠れる</span>',
+    build(o, c) { return {
+      badges: `<span class="cdbadge">${c.id}</span><span class="cdbadge round">${c.round}</span>`,
+      afterMedia: `<div style="font-size:10px;color:#b26a00;background:#fff5e0;border:1px solid #ffd88a;`
+        + `border-radius:5px;padding:3px 7px;margin-top:5px;display:inline-block">🔍 カード画像をタップ → 原寸表示＋発行日・配布場所</div>`,
+      rowA: c.hasUrl ? [BTN.stock] : [], setRow: [BTN.gkp] }; } }
+];
+
+// ================= 選択表示効果 =================
+const FX = [
+  { cls:'fx-pulse', cap:'① 波紋パルス（既存流用）',
+    body:'<div class="ring" style="left:118px;top:78px"></div>',
+    nt:'<span class="ok">実装コスト最小</span>。既存の <code>animatePinPulse()</code>（半径5.6→112px・1秒・easeOutCubic・不透明度0.4→0）をそのまま呼ぶだけ。<span class="ng">1秒で消えるので「選択中」の継続表示にはならない</span>（ループさせるか下記と併用）。' },
+  { cls:'fx-ring', cap:'② 二重リング（静止）',
+    body:'<div class="ring r1" style="left:118px;top:78px"></div><div class="ring r2" style="left:118px;top:78px"></div>',
+    nt:'選択専用ソースに circle レイヤーを2枚（塗りなし・stroke のみ）。<span class="ok">常時表示でき、アニメ不要＝電池に優しい</span>。' },
+  { cls:'fx-scale', cap:'③ ピン拡大（28→40px）＋影',
+    body:'',
+    nt:'選択専用レイヤーを最前面に置き <code>circle-radius</code> を20に。<span class="ok">直感的</span>／<span class="ng">拡大分が近接ピンを隠す</span>。' },
+  { cls:'fx-lift', cap:'④ 浮き上がり（上下バウンド）',
+    body:'<div class="shadow" style="left:118px;top:96px"></div>',
+    nt:'symbol の <code>icon-translate</code> をアニメーション、または選択ピンのみ DOM マーカー化。<span class="ng">レイヤー描画のままでは実装がやや重い</span>。' },
+  { cls:'fx-dim', cap:'⑤ 選択以外を減光',
+    body:'',
+    nt:'各レイヤーの <code>circle-opacity</code>/<code>icon-opacity</code> を下げ、選択だけ別レイヤーで濃く描く。<span class="ok">選択が一目で分かる</span>／<span class="ng">周囲の把握がしにくくなる</span>。' },
+  { cls:'fx-label', cap:'⑥ 名前ラベルを常時表示',
+    body:'<div class="lb" style="left:118px;top:78px">岩村城</div>',
+    nt:'選択専用の symbol レイヤーに <code>text-field</code>。既存のラベルレイヤーは <code>text-allow-overlap:false</code> で消えることがあるが、選択用は <code>true</code> にすれば必ず出る。<span class="ok">シートの内容と一致することを確認しやすい</span>。' },
+  { cls:'fx-spot', cap:'⑦ スポットライト（周囲を暗く）',
+    body:'<div class="sp" style="--x:118px;--y:78px"></div>',
+    nt:'地図の上にCSSの <code>radial-gradient</code> オーバーレイを1枚。<span class="ok">最も強い強調</span>／<span class="ng">地図が読めなくなる・シートと二重に暗くなる</span>。' },
+  { cls:'fx-dash', cap:'⑧ 回転する破線リング',
+    body:'<div class="ring" style="left:118px;top:78px"></div>',
+    nt:'CSSでは容易だが、<span class="ng">MapLibreのcircleレイヤーに破線・回転は無い</span>ため、DOMマーカーかSVGオーバーレイが必要。' },
+  { cls:'fx-glow', cap:'⑨ 足元の光（グラウンドグロー）',
+    body:'<div class="gl" style="left:118px;top:88px"></div>',
+    nt:'選択専用ソースに <code>circle-blur</code> を効かせた大きめの circle を1枚下に敷く。<span class="ok">ピンを隠さず主張できる</span>。' },
+  { cls:'fx-conn', cap:'⑩ シートとピンを線で結ぶ',
+    body:'<svg viewBox="0 0 236 190"><line x1="118" y1="86" x2="118" y2="128" stroke="#4285F4" stroke-width="2" stroke-dasharray="4 3"/><circle cx="118" cy="128" r="3" fill="#4285F4"/></svg>',
+    nt:'SVGオーバーレイ。地図移動のたびに座標→画面座標の再計算（<code>map.project()</code>）が要る。<span class="ok">対応関係が最も明確</span>／<span class="ng">実装コスト高</span>。' },
+  { cls:'fx-cross', cap:'⑪ クロスヘア（十字線）',
+    body:'<div class="cx" style="top:78px"></div><div class="cy" style="left:118px"></div>',
+    nt:'DOMオーバーレイ2本。<span class="ok">画面外にピンが出ても方向が分かる</span>／<span class="ng">地図が線で分断され煩わしい</span>。' },
+  { cls:'fx-invert', cap:'⑫ 色反転（白地＋種別色の枠）',
+    body:'',
+    nt:'選択専用レイヤーで <code>circle-color</code>/<code>circle-stroke-color</code> を入れ替え。<span class="ok">アニメも追加要素も不要で最も軽い</span>／<span class="ng">種別色が消えるので何のピンか分かりにくくなる</span>。' },
+  { cls:'fx-beak', cap:'⑬ シート上端にくちばし（吹き出しの名残）',
+    body:'<div class="bk" style="left:118px;bottom:62px"></div>',
+    nt:'シート上端に三角形を出し、選択ピンのX座標に合わせて左右に動かす。<span class="ok">ポップアップの「どこから出たか」の感覚を残せる</span>／<span class="ng">ピンが画面外・シートの裏だと成立しない</span>。' }
+];
+
+// ================= 描画 =================
+function render() {
+  const o = opts();
+
+  // --- A: 全18パターン ---
+  const groups = [['castle','城（8パターン）'],['michi','道の駅（5パターン）'],
+                  ['manhole','マンホール蓋（2パターン）'],['mhcard','カード配布場所'],
+                  ['pokefuta','ポケふた'],['shop','食べログ']];
+  document.getElementById('out').innerHTML = groups.map(([g, title]) => {
+    const cells = PATTERNS.filter(p => p.type === g).map(p => `
+      <div class="cell"><div class="hd">${p.label}</div><div class="sub">${p.cnt}</div>
+        ${buildSheet(p, o)}<div class="mt"></div></div>`).join('');
+    return `<h3>${title}</h3><div class="vrow">${cells}</div>`;
+  }).join('');
+
+  // --- B: カード詳細統合5案 ---
+  const c = o.txt === 'max' ? CARD.max : CARD.rep;
+  const mhPat = PATTERNS.find(p => p.type === 'manhole');
+  const mcPat = PATTERNS.find(p => p.type === 'mhcard');
+  document.getElementById('cardout').innerHTML = CARD_PLANS.map(plan => {
+    const ex = plan.build(o, c);
+    const cells = [[mcPat, 'カード配布場所'], [mhPat, 'マンホール蓋（紐付きあり）']].map(([p, nm]) => `
+      <div class="cell"><div class="hd">${plan.id} ${nm}</div>
+        <div class="sub">${c.hasUrl ? '在庫状況ボタンあり（1,246件）' : '在庫状況ボタンなし（180件・url空）'}</div>
+        ${buildSheet(p, o, ex)}<div class="mt"></div></div>`).join('');
+    return `<h3>${plan.id} ${plan.name}</h3><p class="lead" style="margin:0 0 6px">${plan.desc}</p>`
+         + `<div class="vrow">${cells}</div>`;
+  }).join('');
+
+  // --- C: 選択表示効果 ---
+  document.getElementById('fxout').innerHTML = FX.map(f => `
+    <div class="fx">
+      <div class="cap">${f.cap}</div>
+      <div class="mini ${f.cls}">
+        <div class="mp michi other" style="left:44px;top:52px">道</div>
+        <div class="mp mh other" style="left:196px;top:40px">M</div>
+        ${f.body}
+        <div class="mp c100" style="left:118px;top:78px">城</div>
+        <div class="msheet"><i></i><b>岩村城</b>岐阜県恵那市岩村町</div>
+      </div>
+      <div class="nt">${f.nt}</div>
+    </div>`).join('');
+
+  measure();
+}
+
+function measure() {
+  const PWA = 647, SAFARI = 553;
+  const list = [];
+  document.querySelectorAll('.cell').forEach(cell => {
+    const sheet = cell.querySelector('.sheet');
+    const h = Math.round(sheet.getBoundingClientRect().height);
+    const rt = cell.querySelector('.rt'), ph = cell.querySelector('.ph');
+    const txtH = rt ? Math.round(rt.getBoundingClientRect().height) : 0;
+    const phH = ph ? Math.round(ph.getBoundingClientRect().height) : 0;
+    let ovf = 0;
+    cell.querySelectorAll('.btn').forEach(b => {
+      b.classList.remove('ovf');
+      if (b.scrollWidth > b.clientWidth + 0.5) { b.classList.add('ovf'); ovf++; }
+    });
+    cell.classList.remove('tallest');
+    const waste = ph ? phH - txtH : 0;
+    cell.querySelector('.mt').innerHTML =
+      `シート高 <b>${h}px</b> ／ 地図領域 PWA <b>${PWA - h}px</b>（${Math.round((PWA - h) / PWA * 100)}%）・Safari ${SAFARI - h}px`
+      + (ovf ? ` ／ <span class="warn">ラベルはみ出し ${ovf}個</span>` : ' ／ はみ出しなし')
+      + (ph ? `<br>写真 ${phH}px ／ テキスト ${txtH}px → 行の高さ ${Math.max(phH, txtH)}px`
+              + (waste > 0 ? ` ／ <span class="warn">写真の余り +${waste}px</span>`
+                           : waste < 0 ? ` ／ テキストが ${-waste}px 高い` : ' ／ 一致')
+              + ` ／ テキスト幅 ${347 - SIZE - 10}px`
+            : '<br>写真なし');
+    if (cell.closest('#out')) list.push({ h, ovf, label: cell.querySelector('.hd').textContent, cell });
+  });
+  list.sort((a, b) => b.h - a.h);
+  if (list.length) list[0].cell.classList.add('tallest');
+  document.getElementById('summary').innerHTML =
+    '<tr><th>パターン</th><th>シート高</th><th>地図領域(PWA 647px)</th><th>割合</th><th>はみ出し</th></tr>'
+    + list.map((d, i) => `<tr class="${i === 0 ? 'hi' : i === list.length - 1 ? 'lo' : ''}">`
+        + `<td>${esc(d.label)}</td><td class="n">${d.h}px</td><td class="n">${647 - d.h}px</td>`
+        + `<td class="n">${Math.round((647 - d.h) / 647 * 100)}%</td>`
+        + `<td class="n">${d.ovf ? '<b style="color:#b00">' + d.ovf + '</b>' : '0'}</td></tr>`).join('');
+}
+
+document.querySelectorAll('#ctl input, #ctl select').forEach(el => el.addEventListener('change', render));
+render();
+</script>
+</body>
+</html>

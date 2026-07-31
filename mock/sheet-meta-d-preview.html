@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<base href="../">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>案3-D（白抜きチップ）全オブジェクト適用モック</title>
+<style>
+  body { font-family: sans-serif; background: #e9e9e9; padding: 18px; margin: 0; color: #222; }
+  h1 { font-size: 17px; margin: 0 0 8px; }
+  h2 { font-size: 14px; margin: 34px 0 8px; padding: 10px 0 0; border-top: 3px solid #bbb; }
+  h3 { font-size: 12.5px; margin: 16px 0 6px; color: #444; }
+  .lead { font-size: 12px; color: #555; line-height: 1.85; margin: 0 0 12px; max-width: 1180px; }
+  .lead b { color: #b00; }
+  code { background: #ddd; padding: 0 3px; border-radius: 3px; font-size: 11px; }
+  table.t { border-collapse: collapse; font-size: 11.5px; margin: 8px 0; background: #fff; }
+  table.t th, table.t td { border: 1px solid #ddd; padding: 4px 9px; text-align: left; vertical-align: top; }
+  table.t th { background: #f4f4f4; font-weight: bold; }
+  table.t td.bad { color: #b00; font-weight: bold; }
+  .row { display: flex; gap: 18px; flex-wrap: wrap; align-items: flex-start; }
+  .slot { width: 375px; }
+  .slot h4 { font-size: 12.5px; margin: 0 0 3px; font-weight: bold; color: #222; }
+  .slot .spec { font-size: 10px; color: #777; margin: 0 0 5px; line-height: 1.5; }
+  .slot .note { font-size: 10.5px; color: #555; line-height: 1.7; margin: 7px 0 0; }
+  .slot .note .o { color: #0a7a2f; font-weight: bold; }
+  .slot .note .x { color: #b00; font-weight: bold; }
+
+  /* ══ 情報シート本体の実寸再現（index.html からコピー）══ */
+  .sheet { width: 375px; background: #fff; border-radius: 16px 16px 0 0;
+           box-shadow: 0 -4px 16px rgba(0,0,0,0.18); box-sizing: border-box; }
+  .sheet .hd { padding: 8px 14px 4px; }
+  .sheet .hd .os-handle { width: 36px; height: 4px; background: #ccc; border-radius: 2px; margin: 0 auto; }
+  .sheet .bd { padding: 0 14px 14px; }
+  .os-title { display: flex; align-items: center; gap: 5px; margin-bottom: 3px; min-width: 0; }
+  .os-name { font-size: 15px; font-weight: bold; min-width: 0; overflow: hidden;
+             display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .os-row { display: flex; gap: 10px; margin-top: 5px; align-items: flex-start; }
+  .os-meta { flex: 1; min-width: 0; }
+  .os-photo { width: 128px; height: 128px; flex-shrink: 0; border-radius: 7px; border: 1px solid #eee;
+              overflow: hidden; background: #f2f0ec; position: relative; }
+  .os-photo.os-photo-wide { width: 171px; }
+  .os-photo.os-photo-full { height: auto; }
+  .os-photo .ph { width: 100%; height: 100%; display: block; color: #fff; font-size: 10px;
+                  text-align: center; line-height: 128px; }
+  .os-photo.os-photo-full .ph { height: 178px; line-height: 178px; }
+  .ph-castle { background: linear-gradient(135deg,#a8977c,#6d5a3f); }
+  .ph-card   { background: linear-gradient(135deg,#7f93a8,#3f5468); }
+  .ph-poke   { background: linear-gradient(135deg,#9ec27a,#4b7a3f); }
+  .os-photo::after { content: '⤢'; position: absolute; right: 3px; bottom: 3px;
+                     width: 18px; height: 18px; border-radius: 4px; background: rgba(0,0,0,0.5);
+                     color: #fff; font-size: 11px; line-height: 18px; text-align: center; }
+  .os-line { font-size: 11px; color: #666; line-height: 1.45; }
+  .os-line + .os-line { margin-top: 1px; }
+  .os-line .os-k { color: #aaa; }
+  .os-clamp { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .os-clamp.clampable::after { content: ' ▼'; font-size: 10px; color: #999; }
+  .os-brow { display: flex; gap: 4px; margin-top: 4px; }
+  .btn { display: flex; align-items: center; justify-content: center; text-align: center; height: 40px;
+         padding: 0 4px; border-radius: 7px; text-decoration: none; font-family: inherit; font-weight: bold;
+         color: white; font-size: 12px; line-height: normal; border: none; box-sizing: border-box;
+         flex: 1 1 0; min-width: 0; white-space: nowrap; overflow: hidden; }
+  .btn-gmap { background: white; color: #4285f4; border: 1px solid #4285f4; }
+  .btn-access { background: #00897B; } .btn-wiki { background: #333; }
+  .btn-kojodan { background: #8B4513; } .btn-shirohb { background: #6A4C93; }
+  .btn-nav { background: #4285F4; } .btn-nav-yahoo { background: #FF0033; } .btn-nearby-search { background: #34A853; }
+  .btn-tabelog { background: #ff6600; } .btn-pokefuta { background: #FBBC04; color: #333; }
+  .btn-michi-web { background: #283593; } .btn-michi-hp { background: #795548; } .btn-michi-eki { background: #BF360C; }
+  .btn-cd-stock { background: #00897B; } .btn-cd-gkp { background: #455A64; }
+  .popup-form-badge { font-size: 10.5px; font-weight: 700; color: #fff; padding: 2px 8px;
+                      border-radius: 10px; line-height: 1.6; white-space: nowrap; }
+  .popup-form-badge.popup-form-badge-title { font-size: 12px; flex-shrink: 0; }
+  .f-hirayama { background: hsl(105, 36%, 32%); }
+  .os-cdbadge { font-size: 12px; font-weight: 700; color: #fff; padding: 2px 8px; border-radius: 10px;
+                line-height: 1.6; white-space: nowrap; flex-shrink: 0; background: #8d6e63; }
+  .os-cdbadge.os-cdround { background: #546E7A; }
+
+  /* ══════════════════════════════════════════════════════════
+     案3-D（白抜きチップ）。ここだけが現状からの変更点
+     ══════════════════════════════════════════════════════════ */
+  .d .os-line { color: #333; font-variant-numeric: tabular-nums; }
+  .d .os-line .k {
+      display: inline-block; background: #a8a294; color: #fff; border-radius: 3px;
+      font-size: 9.5px; font-weight: 700; line-height: 1.5; padding: 0 4px; margin-right: 4px;
+      vertical-align: 1px; letter-spacing: 0.8px;
+  }
+  /* 論点A-3で使う、種別ごとにチップの濃さを変えるバリエーション
+     （.d .os-line .k より詳細度を上げないと効かない） */
+  .d .os-line .k.k-sub { background: #c9c4b8; }
+</style>
+</head>
+<body>
+
+<h1>案3-D（白抜きチップ）を全オブジェクトに適用したモック</h1>
+<p class="lead">
+チップの仕様：<code>background:#a8a294 / color:#fff / font-weight:700 / font-size:9.5px / letter-spacing:0.8px / border-radius:3px / padding:0 4px</code>。<br>
+サンプルは<b>すべて castle.js・manhole.js・mhcard.js・pokemon.js・michi.js・data.js の実レコード</b>をそのまま使っている（値を短く整えていないので、実際に起きる折り返しと省略がそのまま出る）。<br>
+実寸：端末幅375px、本文347px、<code>.os-line</code> は 11px・2行クランプ。2行を超えた行は実装では末尾に ▼ が付いてタップで全文展開する。
+</p>
+
+<h2>適用するラベル語彙（この案で決める必要があるもの）</h2>
+<table class="t">
+  <tr><th>種別</th><th>行</th><th>現状</th><th>D適用後のラベル</th></tr>
+  <tr><td rowspan="6">城</td><td>別名</td><td><code>別名: …</code></td><td>別名</td></tr>
+  <tr><td>標高</td><td class="bad"><code>標高46m／比高10m</code></td><td>標高</td></tr>
+  <tr><td>比高</td><td class="bad">（同上・同じ行）</td><td>比高</td></tr>
+  <tr><td>遺構</td><td><code>遺構: …</code></td><td>遺構</td></tr>
+  <tr><td>城主</td><td><code>城主: …</code></td><td>城主</td></tr>
+  <tr><td>住所</td><td>ラベルなし</td><td>住所</td></tr>
+  <tr><td rowspan="5">マンホール蓋</td><td>蓋の住所</td><td>ラベルなし</td><td class="bad">住所（→ 論点A）</td></tr>
+  <tr><td>配布場所</td><td><code>os-kタグ</code></td><td>配布場所</td></tr>
+  <tr><td>カードの住所</td><td>ラベルなし</td><td class="bad">住所（→ 論点A）</td></tr>
+  <tr><td>時間</td><td><code>🕐 …</code></td><td>時間</td></tr>
+  <tr><td>発行</td><td><code>os-kタグ</code></td><td>発行</td></tr>
+  <tr><td rowspan="4">マンホールカード</td><td>住所</td><td>ラベルなし</td><td>住所</td></tr>
+  <tr><td>時間</td><td><code>🕐 …</code></td><td>時間</td></tr>
+  <tr><td>発行</td><td><code>os-kタグ</code></td><td>発行</td></tr>
+  <tr><td>（配布場所名）</td><td colspan="2">タイトル行に入るのでメタ行には出ない</td></tr>
+  <tr><td>ポケふた</td><td>住所</td><td>ラベルなし</td><td>住所</td></tr>
+  <tr><td rowspan="2">道の駅</td><td>路線</td><td><code>📍 …</code></td><td class="bad">路線（→ 論点B：実データが全件空）</td></tr>
+  <tr><td>住所／時間</td><td>ラベルなし／<code>🕐 …</code></td><td>住所／時間</td></tr>
+  <tr><td>食べログ</td><td>住所</td><td>ラベルなし</td><td>住所</td></tr>
+</table>
+
+<h2>全6種別への適用（実データ）</h2>
+<div class="row" id="all"></div>
+
+<h2>論点A　マンホール蓋では「住所」チップが2回出る</h2>
+<p class="lead">
+蓋のシートは<b>蓋そのものの住所</b>と<b>紐付いたカードの配布場所の住所</b>を両方出す（index.html:2347・2349）。
+現状は住所がどちらもラベルなしなので見分けは付かないが、D適用で両方に「住所」チップが付くと、同じラベルが2つ並んで見える。語彙を分ける必要がある。
+</p>
+<div class="row" id="dup"></div>
+
+<h2>論点B　道の駅の「路線」行は実データ1,234件すべて空</h2>
+<p class="lead">
+<code>michi.js</code> の <code>road</code> を全件調べたところ <b>1,234件すべてが空文字</b>で、<code>osLine(p.road ? '📍 ' + p.road : '')</code>（index.html:2359）は常に空を返している。
+つまり<b>この行は現状も表示されていない</b>。D適用にあたって路線チップの色や語彙を決める必要はなく、行ごと消す判断もできる。参考に、値が入っていた場合の見え方も並べる。
+</p>
+<div class="row" id="road"></div>
+
+<h2>現状との対比</h2>
+<div class="row" id="cmp"></div>
+
+<h2>行が欠けるケース（実データの分布）</h2>
+<p class="lead">
+城 23,435件のうち<b>別名を持つのは 4,983件（21%）、標高は 14,147件（60%）、比高は 12,124件（52%）</b>で、
+<b>別名も標高も持たない城が 8,564件（37%）</b>ある。つまり「住所チップ1つだけ」のシートが全体の1/3以上を占める。
+マンホールカードの <code>hours</code> は中央値40文字だが最大254文字、50文字超が519/1,426件（36%）あり、時間行は2行クランプで省略されるほうが多い。
+</p>
+<div class="row" id="sparse"></div>
+
+<script>
+// ══ 実データ（各 *.js からそのまま引用）══════════════════════
+const D = {};
+
+// castle.js: 弘前城
+D.castle = {
+  cls: 'd',
+  badge: '<span class="popup-form-badge popup-form-badge-title f-hirayama">平山城</span>',
+  title: '弘前城',
+  photo: { cls: 'os-photo-wide', ph: 'ph-castle', cap: '城の写真' },
+  lines: [
+    ['別名', '高岡城、鷹ヶ岡城、鷹岡城'],
+    ['標高', '46m', '比高', '10m'],
+    ['遺構', '天守、櫓、門、石垣、土塁、曲輪、堀、現存天守'],
+    ['城主', '津軽信枚、津軽信義、津軽信政、津軽信寿、津軽信著、津軽信寧、津軽信明、津軽信親、津軽信順、津軽信承、津軽信昭、津軽氏（10万石）、津軽氏'],
+    ['住所', '青森県弘前市大字下白銀町'],
+  ],
+  rows: [
+    ['<a class="btn btn-gmap">GoogleMap</a>', '<a class="btn btn-access">アクセス</a>'],
+    ['<a class="btn btn-wiki">Wikipedia</a>', '<a class="btn btn-kojodan">攻城団</a>', '<a class="btn btn-shirohb">城郭放浪記</a>'],
+  ],
+};
+
+// castle.js: 小栗山館（別名・標高・遺構・城主すべて無し＝8,564件の型）
+D.castleMin = {
+  cls: 'd', badge: '', title: '小栗山館', photo: null,
+  lines: [['住所', '青森県弘前市大字小栗山']],
+  rows: [['<a class="btn btn-gmap">GoogleMap</a>', '<a class="btn btn-access">アクセス</a>']],
+};
+
+// manhole.js: 東京都 東京23区(13-100-D001) ＋ 紐付く mhcard.js: 13-100-D01
+D.manhole = {
+  cls: 'd',
+  badge: '<span class="os-cdbadge">D101</span><span class="os-cdbadge os-cdround">第17弾</span>',
+  title: '東京都 東京23区',
+  photo: { cls: 'os-photo-full', ph: 'ph-card', cap: 'カード画像' },
+  lines: [
+    ['住所', '東京都葛飾区東新小岩一丁目'],
+    ['配布場所', '国指定重要文化財 旧三河島汚水処分場喞筒場施設'],
+    ['住所', '東京都荒川区荒川8-25-1電話：03-6458-3940 (問合せ先) 東京都下水道局総務部広報サービス課 電話：03-5320-6511'],
+    ['時間', '9：30～16：30（平日：火、金、年末年始を除く）、土日、祝日に左記施設の見学をされた方（要事前申込）に配布します※施設見学は事前に予約が必要です'],
+    ['発行', '2022/08/06'],
+  ],
+  rows: [['<a class="btn btn-gmap">GoogleMap</a>'],
+         ['<a class="btn btn-cd-stock">在庫状況</a>', '<a class="btn btn-cd-gkp">GKP公式一覧</a>']],
+};
+
+// manhole.js: カードに紐付かない44件の実例（13-100-P001）
+D.manholeAlone = {
+  cls: 'd', badge: '', title: '東京都 東京23区', photo: { cls: 'os-photo-full', ph: 'ph-card', cap: 'カード画像' },
+  lines: [['住所', '東京都足立区西伊興一丁目']],
+  rows: [['<a class="btn btn-gmap">GoogleMap</a>']],
+};
+
+// mhcard.js: 東京23区 (D101)
+D.mhcard = {
+  cls: 'd',
+  badge: '<span class="os-cdbadge">D101</span><span class="os-cdbadge os-cdround">第17弾</span>',
+  title: '[配布] 東京23区 国指定重要文化財 旧三河島汚水処分場喞筒場施設',
+  photo: { cls: 'os-photo-full', ph: 'ph-card', cap: 'カード画像' },
+  lines: [
+    ['住所', '東京都荒川区荒川8-25-1電話：03-6458-3940 (問合せ先) 東京都下水道局総務部広報サービス課 電話：03-5320-6511'],
+    ['時間', '9：30～16：30（平日：火、金、年末年始を除く）、土日、祝日に左記施設の見学をされた方（要事前申込）に配布します※施設見学は事前に予約が必要です'],
+    ['発行', '2022/08/06'],
+  ],
+  rows: [['<a class="btn btn-gmap">GoogleMap</a>'],
+         ['<a class="btn btn-cd-stock">在庫状況</a>', '<a class="btn btn-cd-gkp">GKP公式一覧</a>']],
+};
+
+// pokemon.js: 445番
+D.pokefuta = {
+  cls: 'd', badge: '', title: 'アローラロコン / トドグラー',
+  photo: { cls: '', ph: 'ph-poke', cap: 'ポケふた写真' },
+  lines: [['住所', '北海道別海町尾岱沼5-27']],
+  rows: [['<a class="btn btn-gmap">GoogleMap</a>', '<a class="btn btn-pokefuta">公式ページ</a>']],
+};
+
+// michi.js: 道の駅三笠（road は空なので路線行は出ない）
+D.michi = {
+  cls: 'd', badge: '', title: '道の駅三笠', photo: null,
+  lines: [
+    ['住所', '北海道三笠市岡山1056-1'],
+    ['時間', '9:00～18:00（4～9月） 9:00～17:00（10～3月）'],
+  ],
+  rows: [['<a class="btn btn-gmap">GoogleMap</a>', '<a class="btn btn-michi-web">公式ページ</a>'],
+         ['<a class="btn btn-michi-eki">michieki.jp</a>', '<a class="btn btn-michi-hp">施設HP</a>', '<a class="btn btn-michi-hp">関連HP</a>']],
+};
+
+// data.js: 食べログ
+D.shop = {
+  cls: 'd', badge: '', title: 'ラーメン札幌一粒庵（いちりゅうあん） - さっぽろ（札幌市営）（ラーメン）',
+  photo: null,
+  lines: [['住所', '北海道札幌市中央区北四条西一丁目']],
+  rows: [['<a class="btn btn-gmap">GoogleMap</a>', '<a class="btn btn-tabelog">食べログ</a>']],
+};
+
+// ══ 組み立て ══════════════════════════════════════════════
+function metaHtml(lines, chipCls) {
+  return lines.map(l => {
+    const cells = [];
+    for (let i = 0; i < l.length; i += 2) {
+      const cls = (chipCls && chipCls[l[i]]) ? ' ' + chipCls[l[i]] : '';
+      cells.push(`<span class="k${cls}">${l[i]}</span>${l[i + 1]}`);
+    }
+    return `<div class="os-line os-clamp">${cells.join(' ')}</div>`;
+  }).join('');
+}
+// 現状（ラベル書式が4系統混在）の再現用
+function metaNow(kind) {
+  const L = h => `<div class="os-line os-clamp">${h}</div>`;
+  if (kind === 'castle') {
+    return L('別名: 高岡城、鷹ヶ岡城、鷹岡城') + L('標高46m／比高10m')
+         + L('遺構: 天守、櫓、門、石垣、土塁、曲輪、堀、現存天守')
+         + L('城主: 津軽信枚、津軽信義、津軽信政、津軽信寿、津軽信著、津軽信寧、津軽信明、津軽信親、津軽信順、津軽信承、津軽信昭、津軽氏（10万石）、津軽氏')
+         + L('青森県弘前市大字下白銀町');
+  }
+  return L('東京都葛飾区東新小岩一丁目')
+       + L('<span class="os-k">配布場所</span> 国指定重要文化財 旧三河島汚水処分場喞筒場施設')
+       + L('東京都荒川区荒川8-25-1電話：03-6458-3940 (問合せ先) 東京都下水道局総務部広報サービス課 電話：03-5320-6511')
+       + L('🕐 9：30～16：30（平日：火、金、年末年始を除く）、土日、祝日に左記施設の見学をされた方（要事前申込）に配布します※施設見学は事前に予約が必要です')
+       + L('<span class="os-k">発行</span> 2022/08/06');
+}
+function sheet(o, metaOverride) {
+  const rowC = '<div class="os-brow"><a class="btn btn-nav">ここへ行く</a>'
+             + '<a class="btn btn-nav-yahoo">ここへ行く</a>'
+             + '<a class="btn btn-nearby-search">この周辺を検索</a></div>';
+  const rows = o.rows.map(r => `<div class="os-brow">${r.join('')}</div>`).join('') + rowC;
+  const meta = metaOverride !== undefined ? metaOverride : metaHtml(o.lines);
+  const media = o.photo
+    ? `<div class="os-row"><div class="os-photo ${o.photo.cls}"><span class="ph ${o.photo.ph}">${o.photo.cap}</span></div>`
+      + `<div class="os-meta">${meta}</div></div>`
+    : `<div class="os-meta">${meta}</div>`;
+  return `<div class="sheet ${o.cls}"><div class="hd"><div class="os-handle"></div></div><div class="bd">`
+       + `<div class="os-title">${o.badge}<span class="os-name">${o.title}</span></div>${media}${rows}</div></div>`;
+}
+function slot(title, spec, html, note) {
+  return `<div class="slot"><h4>${title}</h4>${spec ? `<p class="spec">${spec}</p>` : ''}${html}`
+       + (note ? `<p class="note">${note}</p>` : '') + '</div>';
+}
+
+document.getElementById('all').innerHTML =
+  slot('城（弘前城）', 'castle.js の実レコード。6行→チップ6個', sheet(D.castle),
+       '<span class="o">○</span> 標高・比高が他と同じ書式に揃い、コロンの不統一が消える。'
+     + '<span class="x">×</span> テキスト側が166pxしかないため、城主のような長い値は2行で省略される（現状と同じ）。')
++ slot('マンホール蓋（カード紐付きあり）', 'manhole.js 13-100-D001 ＋ mhcard.js 13-100-D01', sheet(D.manhole),
+       '<span class="x">×</span> <b>「住所」チップが2回出る</b>（1行目＝蓋の位置、3行目＝カード配布場所）。→ 論点A')
++ slot('マンホールカード（配布場所）', 'mhcard.js 東京23区(D101)', sheet(D.mhcard),
+       '<span class="o">○</span> 配布場所名はタイトル行にあるので、メタ行は住所・時間・発行の3つで収まる。')
++ slot('ポケふた', 'pokemon.js id:445。写真は128×128', sheet(D.pokefuta),
+       '<span class="o">○</span> 1行しかないので、チップが付くと「これは住所だ」と即分かる。'
+     + '<span class="x">×</span> 逆に、1行だけのシートにチップは過剰という見方もできる（→ 最下段の比較）。')
++ slot('道の駅', 'michi.js 道の駅三笠。road が空なので路線行は出ない', sheet(D.michi),
+       '<span class="o">○</span> 絵文字🕐が「時間」チップに変わり、他種別と同じ語彙になる。')
++ slot('食べログ', 'data.js。写真なし・住所1行のみ', sheet(D.shop),
+       '<span class="x">×</span> 店名が2行で場所を取るうえ、住所1行にチップが付くだけなので変化はほぼ無い。');
+
+// 論点A: 住所ラベルの重複
+document.getElementById('dup').innerHTML =
+  slot('A-1　そのまま（住所チップが2つ）', 'ラベル語彙を変えない場合', sheet(D.manhole),
+       '<span class="x">×</span> 同じ「住所」が2行に出て、どちらが蓋でどちらが配布場所か分からない。')
++ slot('A-2　蓋側を「設置」に変える', '1行目のラベルだけ差し替え',
+       sheet(Object.assign({}, D.manhole, { lines: [
+         ['設置', '東京都葛飾区東新小岩一丁目'],
+         ['配布場所', '国指定重要文化財 旧三河島汚水処分場喞筒場施設'],
+         ['住所', '東京都荒川区荒川8-25-1電話：03-6458-3940 (問合せ先) 東京都下水道局総務部広報サービス課 電話：03-5320-6511'],
+         ['時間', '9：30～16：30（平日：火、金、年末年始を除く）、土日、祝日に左記施設の見学をされた方（要事前申込）に配布します※施設見学は事前に予約が必要です'],
+         ['発行', '2022/08/06'],
+       ] })),
+       '<span class="o">○</span> 2文字で済み、幅を食わない。<span class="o">○</span> 蓋＝設置場所、カード＝住所、と役割が分かれる。'
+     + '<span class="x">×</span> 「設置」だけでは何の設置か伝わらないという見方もある。')
++ slot('A-3　カード由来の3行を淡いチップにする', '配布場所・住所・時間・発行を <code>#c4bfb2</code> に',
+       sheet(D.manhole, metaHtml(D.manhole.lines, { '配布場所': 'k-sub', '時間': 'k-sub', '発行': 'k-sub' })
+             .replace('<span class="k">住所</span>東京都荒川区', '<span class="k k-sub">住所</span>東京都荒川区')),
+       '<span class="o">○</span> ラベル語彙を変えずに「ここから下はカードの情報」と示せる。'
+     + '<span class="x">×</span> 濃淡の差は小さく、意味を読み取れるとは限らない。');
+
+// 論点B: 道の駅の路線
+document.getElementById('road').innerHTML =
+  slot('B-1　実データどおり（路線行なし）', 'road="" のため現状も表示されていない', sheet(D.michi), '')
++ slot('B-2　参考：路線に値が入っていた場合', '仮に road="国道12号" だったとき',
+       sheet(Object.assign({}, D.michi, { lines: [['路線', '国道12号']].concat(D.michi.lines) })),
+       '<span class="x">×</span> 1,234件すべて空なので、この見た目は現状のデータでは発生しない。');
+
+// 現状との対比
+document.getElementById('cmp').innerHTML =
+  slot('現状（城）', 'コロン／ラベルなしが混在。標高だけラベル直結',
+       sheet(Object.assign({}, D.castle, { cls: '' }), metaNow('castle')), '')
++ slot('D適用（城）', '6行すべて白抜きチップ', sheet(D.castle), '')
++ slot('現状（マンホール蓋）', 'ラベルなし／os-kタグ／絵文字の3系統が1枚に同居',
+       sheet(Object.assign({}, D.manhole, { cls: '' }), metaNow('manhole')), '')
++ slot('D適用（マンホール蓋）', '5行すべて白抜きチップ', sheet(D.manhole), '');
+
+// 行が欠けるケース
+document.getElementById('sparse').innerHTML =
+  slot('城：住所しか無い型（8,564件＝37%）', 'castle.js 小栗山館。写真も取得できないことが多い', sheet(D.castleMin),
+       '<span class="x">×</span> チップ1個だけが浮いて見える。<span class="o">○</span> ただし「住所である」ことは明示される。')
++ slot('蓋：カードに紐付かない型（44件）', 'manhole.js 13-100-P001', sheet(D.manholeAlone), '')
++ slot('比較：同じ2枚をチップなしにした場合', '現状（ラベルなし）',
+       sheet(Object.assign({}, D.castleMin, { cls: '' }), '<div class="os-line os-clamp">青森県弘前市大字小栗山</div>')
+       + '<div style="height:12px"></div>'
+       + sheet(Object.assign({}, D.manholeAlone, { cls: '' }), '<div class="os-line os-clamp">東京都足立区西伊興一丁目</div>'),
+       '1行しかないシートでは、チップの有無で受ける印象が大きく変わる。');
+</script>
+</body>
+</html>

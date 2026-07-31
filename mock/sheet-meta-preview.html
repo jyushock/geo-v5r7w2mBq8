@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<base href="../">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>オブジェクト情報シート：写真の横のテキスト 装飾案モック</title>
+<style>
+  body { font-family: sans-serif; background: #e9e9e9; padding: 18px; margin: 0; color: #222; }
+  h1 { font-size: 17px; margin: 0 0 8px; }
+  h2 { font-size: 14px; margin: 34px 0 8px; padding: 10px 0 0; border-top: 3px solid #bbb; }
+  h3 { font-size: 12.5px; margin: 18px 0 8px; color: #444; }
+  .lead { font-size: 12px; color: #555; line-height: 1.85; margin: 0 0 12px; max-width: 1180px; }
+  .lead b { color: #b00; }
+  code { background: #ddd; padding: 0 3px; border-radius: 3px; font-size: 11px; }
+
+  table.calc { border-collapse: collapse; font-size: 11.5px; margin: 8px 0; background: #fff; }
+  table.calc th, table.calc td { border: 1px solid #ddd; padding: 4px 9px; text-align: left; vertical-align: top; }
+  table.calc th { background: #f4f4f4; font-weight: bold; }
+  table.calc td.bad { color: #b00; font-weight: bold; }
+
+  .row { display: flex; gap: 18px; flex-wrap: wrap; align-items: flex-start; }
+  .slot { width: 375px; }
+  .slot h4 { font-size: 12.5px; margin: 0 0 5px; font-weight: bold; color: #222; }
+  .slot .note { font-size: 10.5px; color: #555; line-height: 1.7; margin: 7px 0 0; }
+  .slot .note .o { color: #0a7a2f; font-weight: bold; }
+  .slot .note .x { color: #b00; font-weight: bold; }
+
+  /* ══════════════════════════════════════════════════════════
+     オブジェクト情報シート本体の実寸再現（index.html からコピー）
+     幅375pxの端末想定：本文幅 = 375 - 28 = 347px
+     城の写真枠 171px + gap 10px → テキスト側 166px
+     ══════════════════════════════════════════════════════════ */
+  .sheet { width: 375px; background: #fff; border-radius: 16px 16px 0 0;
+           box-shadow: 0 -4px 16px rgba(0,0,0,0.18); box-sizing: border-box; }
+  .sheet .hd { padding: 8px 14px 4px; }
+  .sheet .hd .os-handle { width: 36px; height: 4px; background: #ccc; border-radius: 2px; margin: 0 auto; }
+  .sheet .bd { padding: 0 14px 14px; }
+  .os-title { display: flex; align-items: center; gap: 5px; margin-bottom: 3px; min-width: 0; }
+  .os-name { font-size: 15px; font-weight: bold; min-width: 0; overflow: hidden;
+             display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .os-row { display: flex; gap: 10px; margin-top: 5px; align-items: flex-start; }
+  .os-meta { flex: 1; min-width: 0; }
+  .os-photo { width: 128px; height: 128px; flex-shrink: 0; border-radius: 7px; border: 1px solid #eee;
+              overflow: hidden; background: #f2f0ec; position: relative; }
+  .os-photo.os-photo-wide { width: 171px; }
+  .os-photo.os-photo-full { height: auto; }
+  .os-photo .ph { width: 100%; height: 100%; display: block; color: #fff; font-size: 10px;
+                  text-align: center; line-height: 128px; background: linear-gradient(135deg,#a8977c,#6d5a3f); }
+  .os-photo.os-photo-full .ph { height: 178px; line-height: 178px; background: linear-gradient(135deg,#7f93a8,#3f5468); }
+  .os-photo::after { content: '⤢'; position: absolute; right: 3px; bottom: 3px;
+                     width: 18px; height: 18px; border-radius: 4px; background: rgba(0,0,0,0.5);
+                     color: #fff; font-size: 11px; line-height: 18px; text-align: center; }
+  .os-line { font-size: 11px; color: #666; line-height: 1.45; }
+  .os-line + .os-line { margin-top: 1px; }
+  .os-line .os-k { color: #aaa; }
+  .os-clamp { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .os-clamp.clampable::after { content: ' ▼'; font-size: 10px; color: #999; }
+  .os-brow { display: flex; gap: 4px; margin-top: 4px; }
+  .btn { display: flex; align-items: center; justify-content: center; text-align: center; height: 40px;
+         padding: 0 4px; border-radius: 7px; text-decoration: none; font-family: inherit; font-weight: bold;
+         color: white; font-size: 12px; line-height: normal; border: none; box-sizing: border-box;
+         flex: 1 1 0; min-width: 0; white-space: nowrap; overflow: hidden; }
+  .btn-gmap { background: white; color: #4285f4; border: 1px solid #4285f4; }
+  .btn-access { background: #00897B; } .btn-wiki { background: #333; }
+  .btn-kojodan { background: #8B4513; } .btn-shirohb { background: #6A4C93; }
+  .btn-nav { background: #4285F4; } .btn-nav-yahoo { background: #FF0033; } .btn-nearby-search { background: #34A853; }
+  .popup-form-badge { font-size: 10.5px; font-weight: 700; color: #fff; padding: 2px 8px;
+                      border-radius: 10px; line-height: 1.6; white-space: nowrap; }
+  .popup-form-badge.popup-form-badge-title { font-size: 12px; flex-shrink: 0; }
+  .f-hirajiro { background: hsl(125, 38%, 32%); }
+  .f-yamajiro { background: hsl(0, 42%, 38%); }
+  .os-cdbadge { font-size: 12px; font-weight: 700; color: #fff; padding: 2px 8px; border-radius: 10px;
+                line-height: 1.6; white-space: nowrap; flex-shrink: 0; background: #8d6e63; }
+  .os-cdbadge.os-cdround { background: #546E7A; }
+
+  /* ══════════════════════════════════════════════════════════
+     案ごとの追加スタイル（すべて .os-meta 配下のテキストにのみ効く）
+     ══════════════════════════════════════════════════════════ */
+
+  /* 案0: 共通ベース（ラベル/値のコントラスト差＋等幅数字）。他案に重ねて使える */
+  .v-base .os-line { color: #333; font-variant-numeric: tabular-nums; }
+  .v-base .os-line .k { color: #a0a0a0; }
+
+  /* 案1: コロン全統一（最小修正） */
+  .v-colon .os-line .k { color: inherit; }
+
+  /* 案2: os-kタグ方式に全統一（既存の「発行」表記に寄せる。コロンなし） */
+  .v-ostag .os-line { color: #333; }
+  .v-ostag .os-line .k { color: #aaa; margin-right: 3px; }
+
+  /* 案3: ラベルチップ（薄い下地の角丸タグ） */
+  .v-chip .os-line { color: #333; font-variant-numeric: tabular-nums; }
+  .v-chip .os-line .k { display: inline-block; background: #f0efec; color: #8a8578; border-radius: 3px;
+                        font-size: 9.5px; line-height: 1.5; padding: 0 4px; margin-right: 4px;
+                        vertical-align: 1px; letter-spacing: 0.5px; }
+
+  /* 案4: 定義リスト（ラベル列を固定幅で揃え、値の折り返しも縦に揃う） */
+  .v-dl .os-meta { display: grid; grid-template-columns: 3.4em 1fr; column-gap: 6px; row-gap: 2px; }
+  .v-dl .os-line { display: contents; }
+  .v-dl .os-line .k { color: #a0a0a0; text-align: justify; text-align-last: justify; }
+  .v-dl .os-line .val { color: #333; overflow: hidden; display: -webkit-box;
+                        -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+
+  /* 案5: 属性ごとの色バー（左に3pxの縦線） */
+  .v-bar .os-line { color: #333; border-left: 3px solid #ddd; padding-left: 6px; }
+  .v-bar .os-line + .os-line { margin-top: 3px; }
+  .v-bar .os-line .k { color: #a0a0a0; margin-right: 4px; }
+  .v-bar .a-alias { border-left-color: #8B4513; }
+  .v-bar .a-num   { border-left-color: hsl(125,38%,42%); }
+  .v-bar .a-ruin  { border-left-color: #78909C; }
+  .v-bar .a-lord  { border-left-color: #7B1FA2; }
+  .v-bar .a-addr  { border-left-color: #4285F4; }
+  .v-bar .a-time  { border-left-color: #FB8C00; }
+  .v-bar .a-place { border-left-color: #8d6e63; }
+  .v-bar .a-issue { border-left-color: #546E7A; }
+  .v-bar .a-road  { border-left-color: #BF360C; }
+
+  /* 案6: 絵文字アイコン統一（既存の🕐📍と同じ路線を全属性へ） */
+  .v-icon .os-line { color: #333; }
+  .v-icon .os-line .ic { margin-right: 3px; }
+
+  /* 案7: ラベル極小＋値を主役に（メリハリ最大） */
+  .v-emph .os-line { color: #2b2b2b; font-size: 11.5px; font-variant-numeric: tabular-nums; }
+  .v-emph .os-line + .os-line { margin-top: 2px; }
+  .v-emph .os-line .k { font-size: 9px; color: #b3b3b3; letter-spacing: 1px; margin-right: 4px;
+                        vertical-align: 1px; }
+
+  /* 案8: 計測値だけミニ枠バッジ（標高・比高を数値として別扱い） */
+  .v-nb .os-line { color: #333; }
+  .v-nb .os-line .k { color: #a0a0a0; }
+  .v-nb .nb { display: inline-flex; align-items: baseline; gap: 3px; border: 1px solid #dcdcd6;
+              border-radius: 4px; padding: 0 5px; margin-right: 4px; background: #fafaf8;
+              font-variant-numeric: tabular-nums; }
+  .v-nb .nb i { font-style: normal; font-size: 9px; color: #a8a8a0; }
+  .v-nb .nb b { font-size: 11.5px; color: #333; font-weight: 600; }
+
+  /* 案9: 標高・比高をタイトル行の形態バッジ隣へ退避（メタ行から追い出す） */
+  .v-tb .os-tbadge { font-size: 10px; color: #5f7a5f; border: 1px solid #cfe0cf; background: #f4f9f4;
+                     border-radius: 10px; padding: 1px 7px; line-height: 1.5; white-space: nowrap;
+                     font-variant-numeric: tabular-nums; flex-shrink: 0; }
+  .v-tb .os-line { color: #333; }
+  .v-tb .os-line .k { color: #a0a0a0; }
+
+  /* 案10: 行間に薄い区切り線 */
+  .v-div .os-line { color: #333; padding: 3px 0; }
+  .v-div .os-line + .os-line { margin-top: 0; border-top: 1px solid #f0efec; }
+  .v-div .os-line .k { color: #a0a0a0; margin-right: 4px; }
+
+  /* 案11: ラベルの文字色を属性ごとに変える（下地なしの色分け） */
+  .v-cl .os-line { color: #333; }
+  .v-cl .os-line .k { font-size: 10px; font-weight: 700; margin-right: 4px; }
+  .v-cl .a-alias .k { color: #8B4513; }
+  .v-cl .a-num .k   { color: hsl(125,38%,34%); }
+  .v-cl .a-ruin .k  { color: #607D8B; }
+  .v-cl .a-lord .k  { color: #7B1FA2; }
+  .v-cl .a-addr .k  { color: #3f76d4; }
+  .v-cl .a-time .k  { color: #E07B00; }
+
+  /* 案12: ハンギングインデント（折り返し2行目をラベル幅ぶん下げて値を揃える）
+     text-indent の負値でぶら下げる書き方は -webkit-box（=.os-clamp）の中では
+     はみ出したラベルがクリップされて消えるため、ラベルを絶対配置にして逃がす。 */
+  .v-hang .os-line { color: #333; position: relative; padding-left: 3.9em; }
+  .v-hang .os-line .k { position: absolute; left: 0; top: 0; width: 3.6em; color: #a0a0a0;
+                        text-align: justify; text-align-last: justify; }
+
+  /* 案13: 密度重視（1行目に形態＋計測値をまとめる） */
+  .v-dense .os-line { color: #333; }
+  .v-dense .os-line .k { color: #a0a0a0; margin-right: 3px; }
+  .v-dense .sep { color: #ccc; margin: 0 5px; }
+  .v-dense .m { font-variant-numeric: tabular-nums; }
+
+  /* 案14: ゼブラの2列テーブル（ラベル列に薄い下地） */
+  .v-zebra .os-meta { display: grid; grid-template-columns: 3.6em 1fr; border-radius: 5px; overflow: hidden; }
+  .v-zebra .os-line { display: contents; }
+  .v-zebra .os-line .k { color: #8a8578; background: #f5f4f1; padding: 3px 5px; text-align: center;
+                         border-bottom: 1px solid #fff; box-sizing: border-box; }
+  .v-zebra .os-line .val { color: #333; background: #fbfaf8; padding: 3px 6px;
+                           border-bottom: 1px solid #fff; overflow: hidden; display: -webkit-box;
+                           -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+
+  /* 推奨用: ハンギング案のラベル幅を4文字（配布場所）まで許容する拡張 */
+  .v-hang.v-wide .os-line { padding-left: 4.9em; }
+  .v-hang.v-wide .os-line .k { width: 4.6em; }
+
+  .badgeline { display: flex; align-items: center; gap: 5px; margin-bottom: 3px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+
+<h1>オブジェクト情報シート：写真の横のテキスト（.os-meta）装飾案</h1>
+<p class="lead">
+対象は <code>buildSheetHtml()</code> が組み立てる <code>.os-row &gt; .os-photo + .os-meta</code> のテキスト側（index.html:2400）。<br>
+実寸再現：端末幅375px想定、本文幅347px、城の写真枠171px、テキスト側166px、<code>.os-line</code> は 11px/#666/2行クランプ。<br>
+サンプル値は castle.js の実データ書式に合わせている（標高は <code>13.8</code> のような小数もあり、遺構・城主は「石垣、土塁、曲輪、兵糧庫、水堀、胸壁、厩」のように長い）。
+</p>
+
+<h2>現状の不統一点（コードで確認した事実）</h2>
+<table class="calc">
+  <tr><th>種別</th><th>行</th><th>現行の書式</th><th>生成箇所</th></tr>
+  <tr><td rowspan="5">城</td><td>別名</td><td><code>別名: 鷹岡城、高岡城</code>（コロン）</td><td>index.html:2376</td></tr>
+  <tr><td class="bad">標高・比高</td><td class="bad"><code>標高50m／比高25m</code>（コロンなし・ラベルと値が地続き）</td><td>index.html:2079</td></tr>
+  <tr><td>遺構</td><td><code>遺構: 土塁、堀…</code>（コロン）</td><td>index.html:2095</td></tr>
+  <tr><td>城主</td><td><code>城主: 津軽為信…</code>（コロン）</td><td>index.html:2095</td></tr>
+  <tr><td>住所</td><td>ラベルなし</td><td>index.html:2380</td></tr>
+  <tr><td rowspan="4">マンホールカード</td><td>配布場所</td><td class="bad"><code>&lt;span class="os-k"&gt;配布場所&lt;/span&gt; ○○</code>（薄グレーのタグ・コロンなし）</td><td>index.html:2348</td></tr>
+  <tr><td>発行</td><td class="bad"><code>&lt;span class="os-k"&gt;発行&lt;/span&gt; 2019/…</code></td><td>index.html:2350</td></tr>
+  <tr><td>時間</td><td class="bad"><code>🕐 9:00-17:00</code>（絵文字）</td><td>index.html:2349</td></tr>
+  <tr><td>住所</td><td>ラベルなし</td><td>index.html:2347</td></tr>
+  <tr><td rowspan="2">道の駅</td><td>路線</td><td class="bad"><code>📍 国道○号</code>（絵文字）</td><td>index.html:2359</td></tr>
+  <tr><td>営業時間</td><td class="bad"><code>🕐 …</code>（絵文字）</td><td>index.html:2360</td></tr>
+</table>
+<p class="lead">
+つまりラベル表記が<b>4系統（コロン／os-kタグ／絵文字／ラベルなし）</b>混在している。指摘の「標高にコロンがない」は、その中でも
+<b>ラベルと値がスペースもなく直結している唯一の書式</b>で、いちばん目立つ。あわせて全体を1系統に寄せる案を並べる。<br>
+加えて現状は<b>ラベルも値も同じ #666</b> なので、視線がどこに行けばよいか手掛かりがない（各案でここも触る）。
+</p>
+
+<h2>案0：共通ベース（どの案にも重ねられる土台）</h2>
+<div class="row" id="base"></div>
+
+<h2>案1〜14</h2>
+<div class="row" id="ideas"></div>
+
+<h2>他種別への横展開（統一の効き方を確認）</h2>
+<p class="lead">代表案（案1コロン統一／案4定義リスト／案7ラベル極小／案12ハンギング／案14ゼブラ）を、マンホールカードと道の駅にも当てて比較する。<br>
+マンホール側には現行実装にある<b>4文字ラベル「配布場所」</b>（index.html:2348）を入れてある。ラベル幅を固定する案（4・12・14）がここで破綻しないかが判断材料になる。</p>
+<div class="row" id="others"></div>
+
+<h2>組み合わせ（実装するならこの形、という具体案）</h2>
+<p class="lead">
+各案は排他ではなく、<b>「ラベル書式の統一」（案1〜3・6）</b>と<b>「見栄えの付け方」（案5・7・10・11）</b>と<b>「レイアウト」（案4・12・14）</b>の3層に分けて重ねられる。<br>
+下は実際に組み合わせた3パターン。左から順に、変更コストが小さい順。
+</p>
+<div class="row" id="reco"></div>
+
+<script>
+// ── サンプルデータ（castle.js / mhcard.js / michi.js の実書式に合わせた値）──
+const CASTLE = {
+  title: '弘前城',
+  badge: { text: '平城', cls: 'f-hirajiro' },
+  photo: { cls: 'os-photo-wide', cap: '城の写真' },
+  fields: [
+    { a:'alias', k:'別名', ic:'🏯', v:'鷹岡城、高岡城' },
+    { a:'num',   k:'標高', ic:'⛰️', v:'50m', num:true },
+    { a:'num',   k:'比高', ic:'📐', v:'25m', num:true },
+    { a:'ruin',  k:'遺構', ic:'🧱', v:'天守、櫓、門、石垣、土塁、堀' },
+    { a:'lord',  k:'城主', ic:'👤', v:'津軽為信、津軽信枚' },
+    { a:'addr',  k:'住所', ic:'📍', v:'青森県弘前市大字下白銀町1' },
+  ],
+  rows: [
+    ['<a class="btn btn-gmap">GoogleMap</a>', '<a class="btn btn-access">アクセス</a>'],
+    ['<a class="btn btn-wiki">Wikipedia</a>', '<a class="btn btn-kojodan">攻城団</a>', '<a class="btn btn-shirohb">城郭放浪記</a>'],
+  ],
+};
+const MHCARD = {
+  title: '[配布] 弘前市 弘前市上下水道部',
+  badges: '<span class="os-cdbadge">A001</span><span class="os-cdbadge os-cdround">第20弾</span>',
+  photo: { cls: 'os-photo-full', cap: 'カード画像' },
+  fields: [
+    // 「配布場所」は現行の実装にある4文字ラベル（index.html:2348）。
+    // ラベル幅を固定する案（4・12・14）が破綻しないかを見るために入れてある。
+    { a:'place', k:'配布場所', ic:'🏢', v:'弘前市上下水道部 料金センター' },
+    { a:'addr', k:'住所', ic:'📍', v:'青森県弘前市大字上白銀町1-1' },
+    { a:'time', k:'時間', ic:'🕐', v:'平日 8:30-17:00（土日祝休）' },
+    { a:'issue', k:'発行', ic:'📅', v:'2024/04/26', num:true },
+  ],
+  rows: [['<a class="btn btn-gmap">GoogleMap</a>']],
+};
+const MICHI = {
+  title: '道の駅 いかりがせき',
+  photo: null,
+  fields: [
+    { a:'road', k:'路線', ic:'🛣️', v:'国道7号' },
+    { a:'addr', k:'住所', ic:'📍', v:'青森県平川市碇ヶ関三笠山1-1' },
+    { a:'time', k:'時間', ic:'🕐', v:'9:00-18:00（12〜3月は17:00まで）' },
+  ],
+  rows: [['<a class="btn btn-gmap">GoogleMap</a>', '<a class="btn btn-nav">公式ページ</a>']],
+};
+
+// ── 共通の組み立て ────────────────────────────────────
+function photoHtml(p) {
+  if (!p) return '';
+  return `<div class="os-photo ${p.cls}"><span class="ph">${p.cap}</span></div>`;
+}
+function rowsHtml(rows) {
+  const c = ['<div class="os-brow"><a class="btn btn-nav">ここへ行く</a>'
+           + '<a class="btn btn-nav-yahoo">ここへ行く</a>'
+           + '<a class="btn btn-nearby-search">この周辺を検索</a></div>'];
+  return rows.map(r => `<div class="os-brow">${r.join('')}</div>`).join('') + c.join('');
+}
+// 標高・比高の扱いを案ごとに切り替える。
+//   'split'  … 別行のまま（ラベル列が縦に揃う案向け）
+//   'inline' … 1行にまとめる。ラベルは値側が各自持つので、行ラベルは付けない(k=null)
+function numFields(o, mode, cell, sep) {
+  if (mode === 'split') return o.fields.slice();
+  const nums = o.fields.filter(f => f.a === 'num');
+  if (nums.length < 2) return o.fields.slice();
+  const out = [];
+  let placed = false;
+  for (const f of o.fields) {
+    if (f.a === 'num') {
+      if (placed) continue;
+      placed = true;
+      out.push({ a:'num', k:null, ic:'⛰️', num:true, v: nums.map(cell).join(sep) });
+    } else out.push(f);
+  }
+  return out;
+}
+// 1案ぶんのメタ行を組み立てる。cell(f) が「ラベル＋値」1個分のHTMLを返す。
+function build(o, mode, cell, sep) {
+  return numFields(o, mode, cell, sep || ' ／ ')
+    .map(f => line(f.a, f.k === null ? f.v : cell(f))).join('');
+}
+function sheet(variant, obj, metaHtml, titleExtra) {
+  const badges = obj.badges || (obj.badge
+      ? `<span class="popup-form-badge popup-form-badge-title ${obj.badge.cls}">${obj.badge.text}</span>` : '');
+  const title = `<div class="os-title">${badges}<span class="os-name">${obj.title}</span>${titleExtra || ''}</div>`;
+  const media = obj.photo
+      ? `<div class="os-row">${photoHtml(obj.photo)}<div class="os-meta">${metaHtml}</div></div>`
+      : `<div class="os-meta">${metaHtml}</div>`;
+  return `<div class="sheet ${variant}"><div class="hd"><div class="os-handle"></div></div>`
+       + `<div class="bd">${title}${media}${rowsHtml(obj.rows)}</div></div>`;
+}
+
+// ── 各案のメタ行レンダラ ───────────────────────────────
+const line = (a, inner, extraCls) =>
+  `<div class="os-line os-clamp a-${a}${extraCls ? ' ' + extraCls : ''}">${inner}</div>`;
+
+const RENDER = {
+  // 現状
+  now(o) {
+    const f = Object.fromEntries(o.fields.map(x => [x.k, x.v]));
+    if (o === CASTLE) {
+      return line('alias', `別名: ${f['別名']}`)
+           + line('num', `標高${f['標高']}／比高${f['比高']}`)
+           + line('ruin', `遺構: ${f['遺構']}`)
+           + line('lord', `城主: ${f['城主']}`)
+           + line('addr', f['住所']);
+    }
+    if (o === MHCARD) {
+      return line('place', `<span class="os-k">配布場所</span> ${f['配布場所']}`)
+           + line('addr', f['住所'])
+           + line('time', `🕐 ${f['時間']}`)
+           + line('issue', `<span class="os-k">発行</span> ${f['発行']}`);
+    }
+    return line('road', `📍 ${f['路線']}`) + line('addr', f['住所']) + line('time', `🕐 ${f['時間']}`);
+  },
+  // 案0 共通ベース（ラベルはコロン、色差と等幅数字だけ入れる）
+  base(o) { return RENDER.colon(o); },
+  // 案1 コロン全統一
+  colon(o) {
+    return build(o, 'inline', f => `<span class="k">${f.k}:</span> ${f.v}`);
+  },
+  // 案1b 住所だけラベルを省く版
+  colonNoAddr(o) {
+    const cell = f => `<span class="k">${f.k}:</span> ${f.v}`;
+    return numFields(o, 'inline', cell, ' ／ ')
+      .map(f => line(f.a, (f.a === 'addr' || f.k === null) ? f.v : cell(f))).join('');
+  },
+  // 案2 os-kタグ方式に全統一
+  ostag(o) {
+    return build(o, 'inline', f => `<span class="k os-k">${f.k}</span>${f.v}`);
+  },
+  // 案3 ラベルチップ
+  chip(o) {
+    return build(o, 'inline', f => `<span class="k">${f.k}</span>${f.v}`, ' ');
+  },
+  // 案4 定義リスト（ラベル列を揃えるので標高・比高は別行のまま）
+  dl(o) {
+    return build(o, 'split', f => `<span class="k">${f.k}</span><span class="val">${f.v}</span>`);
+  },
+  // 案5 色バー
+  bar(o) {
+    return build(o, 'inline', f => `<span class="k">${f.k}</span>${f.v}`);
+  },
+  // 案6 絵文字アイコン
+  icon(o) {
+    return build(o, 'inline', f => `<span class="ic">${f.ic}</span>${f.v}`, ' ');
+  },
+  // 案7 ラベル極小＋値主役
+  emph(o) {
+    return build(o, 'inline', f => `<span class="k">${f.k}</span>${f.v}`);
+  },
+  // 案8 計測値だけミニ枠バッジ
+  nb(o) {
+    const out = [];
+    const nums = o.fields.filter(f => f.a === 'num');
+    let placed = false;
+    for (const f of o.fields) {
+      if (f.a === 'num') {
+        if (placed) continue;
+        placed = true;
+        out.push(line('num', nums.map(n => `<span class="nb"><i>${n.k}</i><b>${n.v}</b></span>`).join('')));
+      } else {
+        out.push(line(f.a, `<span class="k">${f.k}:</span> ${f.v}`));
+      }
+    }
+    return out.join('');
+  },
+  // 案9 計測値をタイトル行へ退避
+  tb(o) {
+    return o.fields.filter(f => f.a !== 'num')
+      .map(f => line(f.a, `<span class="k">${f.k}:</span> ${f.v}`)).join('');
+  },
+  // 案10 区切り線（線で切れ目が分かるので標高・比高も別行のまま出せる）
+  div(o) {
+    return build(o, 'split', f => `<span class="k">${f.k}</span>${f.v}`);
+  },
+  // 案11 ラベル色分け
+  cl(o) {
+    return build(o, 'inline', f => `<span class="k">${f.k}</span>${f.v}`);
+  },
+  // 案12 ハンギングインデント（ラベル幅が固定なので別行のまま）
+  hang(o) {
+    return build(o, 'split', f => `<span class="k">${f.k}</span>${f.v}`);
+  },
+  // 案13 密度重視
+  dense(o) {
+    const f = Object.fromEntries(o.fields.map(x => [x.k, x.v]));
+    if (o === CASTLE) {
+      return line('num', `<span class="m">標高 ${f['標高']}</span><span class="sep">|</span><span class="m">比高 ${f['比高']}</span>`)
+           + line('alias', `<span class="k">別名</span>${f['別名']}`)
+           + line('ruin', `<span class="k">遺構</span>${f['遺構']}`)
+           + line('lord', `<span class="k">城主</span>${f['城主']}`)
+           + line('addr', f['住所']);
+    }
+    return o.fields.map(x => line(x.a, `<span class="k">${x.k}</span>${x.v}`)).join('');
+  },
+  // 案14 ゼブラ2列（表として揃えるので標高・比高は別行のまま）
+  zebra(o) {
+    return build(o, 'split', f => `<span class="k">${f.k}</span><span class="val">${f.v}</span>`);
+  },
+};
+
+// ── 案の定義 ─────────────────────────────────────────
+const IDEAS = [
+  { id:'now', cls:'', r:'now', name:'現状', note:
+    '<span class="x">×</span> 標高だけコロンなし・ラベルと値が直結。<span class="x">×</span> ラベルと値が同じ #666 で階層がない。<span class="x">×</span> 住所だけラベルなし。' },
+  { id:'i1', cls:'v-base v-colon', r:'colon', name:'案1　コロン全統一（最小修正）', note:
+    '全行を <code>ラベル: 値</code> に揃え、標高・比高は <code>標高: 50m／比高: 25m</code> の1行に。住所にもラベルを付ける。<br>'
+    + '<span class="o">○</span> 変更は文字列組み立てだけで、CSSは色2箇所のみ。<span class="o">○</span> 一番読み違えが起きない。'
+    + '<span class="x">×</span> 見た目の華やかさは出ない。' },
+  { id:'i1b', cls:'v-base v-colon', r:'colonNoAddr', name:'案1b　コロン統一＋住所はラベルなし', note:
+    '住所は文字列だけで自明なのでラベルを持たせない折衷案。<br>'
+    + '<span class="o">○</span> 166pxの狭い幅で住所の1行目を無駄にしない。<span class="x">×</span> 「ラベルのある行/ない行」の混在は残る。' },
+  { id:'i2', cls:'v-ostag', r:'ostag', name:'案2　os-kタグ方式へ全統一', note:
+    '既存のマンホールカード「発行」表記（<code>.os-k</code>＝#aaa のラベル）に全種別を寄せる。コロンは使わない。<br>'
+    + '<span class="o">○</span> 既存クラスの流用のみで新CSSがほぼ不要。<span class="o">○</span> ラベルが薄く値が濃い＝視線が値に行く。'
+    + '<span class="x">×</span> 区切りが色だけなので、白背景以外（将来のダークモード）では弱い。' },
+  { id:'i3', cls:'v-chip', r:'chip', name:'案3　ラベルチップ（角丸タグ）', note:
+    'ラベルを薄い下地の小タグにする。<br>'
+    + '<span class="o">○</span> 走査性が最も高い。行頭が揃って見え、装飾感が出る。'
+    + '<span class="x">×</span> チップ幅ぶん値が押され、166px幅では遺構・城主の折り返しが1〜2文字早まる。' },
+  { id:'i4', cls:'v-dl', r:'dl', name:'案4　定義リスト（ラベル列を固定幅で揃える）', note:
+    'CSS Grid の2列。ラベルは <code>text-align-last: justify</code> で「別名／標高」など2〜3文字を均等割付。<br>'
+    + '<span class="o">○</span> 値の左端が完全に揃い、2行目に折り返しても揃ったまま＝一番「表」らしく整う。'
+    + '<span class="x">×</span> ラベル列 3.4em を固定で取るため値の幅が約 40px 減る。'
+    + '<span class="x">×</span> <code>display:contents</code> を使うので、既存の <code>.os-clamp</code> は値側 span に付け替えが必要。' },
+  { id:'i5', cls:'v-bar', r:'bar', name:'案5　属性ごとの色バー', note:
+    '行の左に3pxの縦線を置き、属性ごとに色を割り当てる（別名=茶／計測=緑／遺構=灰青／城主=紫／住所=青）。<br>'
+    + '<span class="o">○</span> 形態バッジの配色文化と地続きで、城らしさが出る。<span class="o">○</span> 行の区切りが明確。'
+    + '<span class="x">×</span> 色数が増えて画面が賑やかになる。<span class="x">×</span> 色の意味は覚えないと伝わらない（結局ラベルも要る）。' },
+  { id:'i6', cls:'v-icon', r:'icon', name:'案6　絵文字アイコンで統一', note:
+    '既存の <code>🕐</code>・<code>📍</code> の路線を全属性へ広げ、ラベル文字を廃す。<br>'
+    + '<span class="o">○</span> 文字数を食わないので値の表示幅が最大。<span class="o">○</span> 既存表記と矛盾しない。'
+    + '<span class="x">×</span> 「⛰️＝標高」「📐＝比高」は一意に伝わらない。<span class="x">×</span> 絵文字の字形はOS依存で、Androidと iOS で見え方が変わる。' },
+  { id:'i7', cls:'v-emph', r:'emph', name:'案7　ラベル極小＋値を主役に', note:
+    'ラベル 9px/#b3b3b3・字間広め、値 11.5px/#2b2b2b。<br>'
+    + '<span class="o">○</span> 装飾を足さずにメリハリだけで見栄えが上がる。<span class="o">○</span> 値が読みやすくなる（現状の #666 11px より可読）。'
+    + '<span class="x">×</span> ラベルが小さく、屋外の明るい場所では読みにくい可能性。' },
+  { id:'i8', cls:'v-nb', r:'nb', name:'案8　計測値だけミニ枠バッジ', note:
+    '標高・比高は「文章」ではなく「数値」なので枠付きバッジにし、他はコロン統一。<br>'
+    + '<span class="o">○</span> 指摘のコロン不統一を「そもそも同じ書式にしない」形で解消できる。<span class="o">○</span> 数値が拾いやすい。'
+    + '<span class="x">×</span> バッジが1行を占有する。<span class="x">×</span> 比高なしの城（実データに多数）ではバッジ1個で間延びする。' },
+  { id:'i9', cls:'v-tb', r:'tb', name:'案9　計測値をタイトル行へ退避', note:
+    '標高・比高を形態バッジの隣に出し、メタ行からは消す。<br>'
+    + '<span class="o">○</span> メタ行が1行減り、写真横の4行（別名・遺構・城主・住所）が全部見える。<span class="o">○</span> コロン問題そのものが消える。'
+    + '<span class="x">×</span> 城名が長いとタイトル行が2段になり、バッジが押し出される。' },
+  { id:'i10', cls:'v-div', r:'div', name:'案10　行間に薄い区切り線', note:
+    '<span class="o">○</span> 2行に折り返した行と次の行の切れ目が分かる（現状は行間1pxで見分けにくい）。'
+    + '<span class="x">×</span> 行数×6px ほど背が伸び、シートが高くなる＝地図の見える面積が減る。' },
+  { id:'i11', cls:'v-cl', r:'cl', name:'案11　ラベルの文字色を属性ごとに', note:
+    '下地を使わず、ラベル文字の色だけ属性ごとに変える（案5の軽量版）。<br>'
+    + '<span class="o">○</span> 追加の余白ゼロで色分けできる。<span class="x">×</span> 彩度の高い小文字が並び、落ち着きは失われる。' },
+  { id:'i12', cls:'v-hang', r:'hang', name:'案12　ハンギングインデント', note:
+    'コロン統一に加え、折り返した2行目をラベル幅ぶん字下げして値の左端を揃える。<br>'
+    + '<span class="o">○</span> 案4の「値が揃う」利点を、Grid を使わず <code>text-indent</code> だけで得られる＝<code>.os-clamp</code> をそのまま使える。'
+    + '<span class="x">×</span> ラベル幅が固定なので3文字ラベル（配布場所）ではみ出す。' },
+  { id:'i13', cls:'v-base v-dense', r:'dense', name:'案13　密度重視（計測値を1行目に集約）', note:
+    '1行目を <code>標高 50m | 比高 25m</code> の数値行にし、以下をラベル付きで並べる。<br>'
+    + '<span class="o">○</span> 城の「山かどうか」が写真の真横で最初に目に入る。<span class="x">×</span> ラベル書式が数値行だけ別扱いになり、統一という当初の目的からは外れる。' },
+  { id:'i14', cls:'v-zebra', r:'zebra', name:'案14　ゼブラ2列テーブル', note:
+    'ラベル列に薄い下地を敷いた表組み。<br>'
+    + '<span class="o">○</span> 情報の対応が最も明確。<span class="x">×</span> 166px幅では窮屈で、値が2行に折り返しやすい。'
+    + '<span class="x">×</span> シート全体のカジュアルな見た目から浮く。' },
+];
+
+document.getElementById('base').innerHTML =
+  ['now', 'i1'].map(id => {
+    const it = IDEAS.find(x => x.id === id);
+    return `<div class="slot"><h4>${it.name}</h4>${sheet(it.cls, CASTLE, RENDER[it.r](CASTLE))}`
+         + `<p class="note">${it.note}</p></div>`;
+  }).join('');
+
+document.getElementById('ideas').innerHTML = IDEAS.filter(x => x.id !== 'now').map(it => {
+  const extra = it.id === 'i9'
+    ? '<span class="os-tbadge">標高50m ／ 比高25m</span>' : '';
+  return `<div class="slot"><h4>${it.name}</h4>${sheet(it.cls, CASTLE, RENDER[it.r](CASTLE), extra)}`
+       + `<p class="note">${it.note}</p></div>`;
+}).join('');
+
+document.getElementById('others').innerHTML = [
+  { cls:'', r:'now', name:'現状' },
+  { cls:'v-base v-colon', r:'colon', name:'案1 コロン統一' },
+  { cls:'v-dl', r:'dl', name:'案4 定義リスト' },
+  { cls:'v-emph', r:'emph', name:'案7 ラベル極小' },
+  { cls:'v-hang', r:'hang', name:'案12 ハンギング' },
+  { cls:'v-zebra', r:'zebra', name:'案14 ゼブラ2列' },
+].map(v =>
+  `<div class="slot"><h4>${v.name}（マンホールカード）</h4>${sheet(v.cls, MHCARD, RENDER[v.r](MHCARD))}`
++ `<h4 style="margin-top:14px">${v.name}（道の駅）</h4>${sheet(v.cls, MICHI, RENDER[v.r](MICHI))}</div>`
+).join('');
+
+// ── 組み合わせ（推奨） ───────────────────────────────
+const RECO = [
+  { cls:'v-colon v-emph', r:'colon', name:'組合せA　案1コロン統一 ＋ 案7ラベル極小', note:
+    '<b>ラベル書式を1系統（コロン）に揃え、ラベルを9px/#b3b3b3・値を11.5px/#2b2b2b にするだけ。</b><br>'
+    + '<span class="o">○</span> 変更は <code>popupFormMetaText()</code> と各 <code>osLine()</code> の文字列＋<code>.os-line</code> のCSS数行のみ。'
+    + '<span class="o">○</span> ラベルが何文字でも破綻しないので、全種別にそのまま適用できる。'
+    + '<span class="o">○</span> 行の高さは変わらないのでシートの高さ＝地図の見える面積に影響しない。' },
+  { cls:'v-colon v-emph v-bar', r:'colon', name:'組合せB　組合せA ＋ 案5の色バー', note:
+    'Aに、属性ごとの3px色バーを足したもの。<br>'
+    + '<span class="o">○</span> 形態バッジの配色と地続きで、装飾としての効きが一番大きい。'
+    + '<span class="x">×</span> 行間が3pxずつ広がり、6行なら約12px背が伸びる。<span class="x">×</span> 色の割り当てを種別ごとに決める必要がある。' },
+  { cls:'v-hang v-wide v-emph', r:'hang', name:'組合せC　案12ハンギング ＋ 案7ラベル極小（ラベル幅4文字対応）', note:
+    'ラベルを絶対配置で左に固定し、値の左端と折り返し2行目を揃える。ラベル幅は4文字（配布場所）まで許容する4.6emに拡張。<br>'
+    + '<span class="o">○</span> 見た目の整い方は案4の定義リストと同等で、<code>.os-clamp</code> をそのまま使える（Grid化不要）。'
+    + '<span class="x">×</span> ラベル幅ぶん（約50px）値が狭くなり、166px幅の城では遺構・城主の折り返しが増える。' },
+];
+document.getElementById('reco').innerHTML = RECO.map(v =>
+  `<div class="slot"><h4>${v.name}</h4>${sheet(v.cls, CASTLE, RENDER[v.r](CASTLE))}`
++ `<div style="height:12px"></div>${sheet(v.cls, MHCARD, RENDER[v.r](MHCARD))}`
++ `<p class="note">${v.note}</p></div>`
+).join('');
+</script>
+</body>
+</html>
