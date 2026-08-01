@@ -4808,7 +4808,10 @@ map.on('zoomend', () => { isZooming = false; });
     const LORDS_CHUNK = 60;              // 一覧の追加描画単位（11,000名超を一度に積まない）
     let lordIndex = null;                // [{ n, kind, idx:[城のfeature番号], v:[原表記], _n }]
     let lordCastleNorm = null;           // feature番号 → 検索用に正規化した「城名＋都道府県」
-    let lordsState = { q: '', type: 'all', min: 1, sort: 'dist', filtered: [], shown: 0, lord: null };
+    // center は城一覧の近い順の起点で、城主を開いた時点で固定する（openLordDetail を参照）。
+    // listScrollTop / listShown は城主一覧、castleScrollTop は城一覧の、離れる前の位置
+    let lordsState = { q: '', type: 'all', min: 1, sort: 'dist', filtered: [], shown: 0, lord: null,
+                       center: null, listScrollTop: 0, listShown: 0, castleScrollTop: 0 };
 
     // 集計キーを作る。末尾の括弧注記（石高・別称）と推量記号を落とす。
     // 先頭の括弧注記は個人名のときだけ落とす（氏族名から落とすと「（大給）松平氏」が
@@ -4895,14 +4898,17 @@ map.on('zoomend', () => { isZooming = false; });
     }
 
     // lordId を渡すと、その城主の城一覧を直接開く（情報シートからの戻り導線で使う）
-    function openLordsView(lordId) {
+    function openLordsView(lordId, restoreView) {
         if (!loadedData.castle) return;
         if (!lordIndex) { buildLordIndex(); updateLordsEntry(); }
-        if (lordId != null && lordIndex[lordId]) { openLordDetail(lordId); return; }
+        if (lordId != null && lordIndex[lordId]) { openLordDetail(lordId, restoreView); return; }
         showLordsView('list');
         applyLordsFilter();
     }
     function backToLordsList() {
+        // 城主を開く前の位置へ戻す（描いてある行数も揃えてから位置を指定する）
+        lordsState.restoreListScroll = lordsState.listScrollTop || 0;
+        lordsState.restoreShown = lordsState.listShown || 0;
         showLordsView('list');
         applyLordsFilter();
     }
@@ -4931,6 +4937,11 @@ map.on('zoomend', () => { isZooming = false; });
             if (l.v.some(v => normalizeForSearch(v).includes(q))) return true;
             return l.idx.some(i => lordCastleNorm[i].includes(q));   // 城名・都道府県でも引ける
         });
+        // 戻ってきたときだけ、離れる前の描画量と位置に復元する（絞り込みが同じなら並びも同じ）
+        const restoreTop = lordsState.restoreListScroll || 0;
+        const restoreShown = lordsState.restoreShown || 0;
+        lordsState.restoreListScroll = 0;
+        lordsState.restoreShown = 0;
         const list = document.getElementById('lords-list');
         list.innerHTML = '';
         list.scrollTop = 0;
@@ -4940,6 +4951,10 @@ map.on('zoomend', () => { isZooming = false; });
             return;
         }
         renderLordsChunk();
+        while (lordsState.shown < restoreShown && lordsState.shown < lordsState.filtered.length) {
+            renderLordsChunk();
+        }
+        if (restoreTop) list.scrollTop = restoreTop;
     }
 
     function renderLordsChunk() {
@@ -4972,9 +4987,21 @@ map.on('zoomend', () => { isZooming = false; });
         if (this.scrollTop + this.clientHeight > this.scrollHeight - 400) renderLordsChunk();
     });
 
-    function openLordDetail(id) {
+    /* restoreView は openPrefDetail と同じ意味で、城を開く前の一覧の状態
+       （近い順の起点・スクロール位置）を保つ。戻り導線から立てて呼ぶ。 */
+    function openLordDetail(id, restoreView) {
         const l = lordIndex[id];
         if (!l) return;
+        if (!restoreView) {
+            // 一覧から開いたときだけ、城主一覧に戻るための位置を控える
+            lordsState.listScrollTop = document.getElementById('lords-list').scrollTop;
+            lordsState.listShown = lordsState.shown;
+        }
+        if (!restoreView || !lordsState.center) {
+            const c = getSearchCenter();
+            lordsState.center = { lat: c.lat, lng: c.lng };
+        }
+        lordsState.restoreCastleScroll = restoreView ? (lordsState.castleScrollTop || 0) : 0;
         lordsState.lord = l;
         document.getElementById('lord-detail-title').textContent = `${l.n}（${l.idx.length}城）`;
         // 別の城主を開いたら絞り込みは持ち越さない（前の語のまま0件になるのを防ぐ）
@@ -5019,7 +5046,8 @@ map.on('zoomend', () => { isZooming = false; });
         const l = lordsState.lord;
         if (!l) return;
         const feats = loadedData.castle.features;
-        const center = getSearchCenter();   // 現在地ピンがあればそこ、無ければ地図中心（周辺検索と同基準）
+        // 起点は城主を開いた時点で固定（城を開くと地図が動くので、戻ったときに並びが変わらないように）
+        const center = lordsState.center || getSearchCenter();
         const q = normalizeForSearch((lordsState.castleQ || '').trim());
         const rows = l.idx.map(i => {
             const f = feats[i];
@@ -5058,7 +5086,9 @@ map.on('zoomend', () => { isZooming = false; });
                 <div class="nearby-item-dist">${distStr}</div>
             </div>`;
         }).join('');
-        document.getElementById('lord-castle-list').scrollTop = 0;
+        // 通常は先頭から。城を開いて戻ってきたときだけ、開く前の位置へ戻す
+        document.getElementById('lord-castle-list').scrollTop = lordsState.restoreCastleScroll || 0;
+        lordsState.restoreCastleScroll = 0;
     }
 
     // 都道府県順の並び（pref_codes.js の JP-01…JP-47 の順をそのまま使う）
@@ -5078,6 +5108,8 @@ map.on('zoomend', () => { isZooming = false; });
         const p = f.properties;
         const label = p.name || '城';
         const lordId = lordsState.lord ? lordsState.lord.id : null;
+        // 戻り導線で開く前の位置へ戻せるよう、離れる前に控える
+        lordsState.castleScrollTop = document.getElementById('lord-castle-list').scrollTop;
         closeNearby();
         if (trackingMode > 0) {
             trackingMode = 0;
@@ -5105,7 +5137,8 @@ map.on('zoomend', () => { isZooming = false; });
         const div = document.createElement('div');
         div.className = 'os-lords-back';
         div.textContent = `↩ 「${lordIndex[lordId].n}」の城一覧に戻る`;
-        div.onclick = () => { closeObjSheet(); openNearbyPanel(); openLordsView(lordId); };
+        // 開く前の一覧の状態（近い順の起点・スクロール位置）のまま戻す
+        div.onclick = () => { closeObjSheet(); openNearbyPanel(); openLordsView(lordId, true); };
         body.insertBefore(div, body.firstChild);
     }
 
@@ -5231,6 +5264,8 @@ map.on('zoomend', () => { isZooming = false; });
         renderPrefList();
     }
     function backToPrefList() {
+        // 県を開く前の位置へ戻す
+        prefState.restoreListScroll = prefState.listScrollTop || 0;
         showPrefView('list');
         renderPrefList();
     }
@@ -5390,7 +5425,9 @@ map.on('zoomend', () => { isZooming = false; });
         const list = document.getElementById('pref-list');
         list.innerHTML = out.length ? out.join('')
             : '<div class="lords-note">該当する都道府県がありません</div>';
-        list.scrollTop = 0;
+        // 通常は先頭から。県ページから戻ってきたときだけ、開く前の位置へ戻す
+        list.scrollTop = prefState.restoreListScroll || 0;
+        prefState.restoreListScroll = 0;
     }
 
     /* restoreView を立てて呼ぶと、オブジェクトを開く前の一覧の状態に戻す。
@@ -5401,6 +5438,8 @@ map.on('zoomend', () => { isZooming = false; });
     function openPrefDetail(name, restoreView) {
         if (!prefIndex || !prefIndex[name]) return;
         prefState.pref = name;
+        // 47県の一覧から開いたときだけ、そこへ戻るための位置を控える
+        if (!restoreView) prefState.listScrollTop = document.getElementById('pref-list').scrollTop;
         if (!restoreView || !prefState.center) {
             const c = getSearchCenter();
             prefState.center = { lat: c.lat, lng: c.lng };
