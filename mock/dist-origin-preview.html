@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<title>近い順の起点をどこに出すか — iPhone SE3 実機相当の実測モック</title>
+<style>
+* { box-sizing: border-box; }
+body { margin:0; background:#eceff1; font-family:sans-serif; color:#222; padding:24px; }
+h1 { font-size:19px; margin:0 0 8px; }
+.lead { font-size:13px; color:#455a64; line-height:1.9; max-width:1100px; margin:0 0 16px;
+        background:#fff; border-left:4px solid #2e7d32; padding:12px 16px; border-radius:0 8px 8px 0; }
+.lead code { background:#f3f6f8; padding:1px 5px; border-radius:4px; }
+.lead b { color:#b26a00; }
+.base { display:flex; gap:8px; flex-wrap:wrap; margin:0 0 24px; }
+.base div { background:#fff; border:1px solid #dde3e7; border-radius:8px; padding:7px 11px;
+            font-size:11.5px; color:#455a64; line-height:1.5; }
+.base b { color:#1565C0; font-size:13px; }
+section { background:#fff; border-radius:10px; padding:16px 18px; margin:0 0 18px;
+          border:1px solid #dde3e7; }
+section.rec { border-color:#2e7d32; box-shadow:0 0 0 2px rgba(46,125,50,.12); }
+section h2 { font-size:15px; margin:0 0 4px; }
+section h2 .tag { font-size:10px; color:#fff; background:#2e7d32; border-radius:4px;
+                  padding:2px 7px; vertical-align:2px; margin-left:6px; }
+section h2 .tag.warn { background:#c62828; }
+section p { font-size:12px; color:#666; margin:0 0 12px; line-height:1.7; }
+section p code, .m code { background:#f3f6f8; padding:1px 5px; border-radius:4px; }
+.pair { display:flex; gap:22px; flex-wrap:wrap; }
+figure { margin:0; width:375px; }
+figcaption { font-size:11px; color:#78909c; margin:0 0 6px; line-height:1.5; min-height:32px; }
+figure img { display:block; width:375px; height:667px; border-radius:10px;
+             box-shadow:0 3px 12px rgba(0,0,0,.16); background:#fff; }
+.m { margin-top:8px; font-size:11px; color:#455a64; line-height:1.6; }
+.mrow { display:flex; gap:6px; align-items:baseline; padding:2px 0;
+        border-bottom:1px dotted #e3e8eb; }
+.mrow span:first-child { flex:1; color:#78909c; }
+.mrow b { font-variant-numeric:tabular-nums; }
+.ok { color:#2e7d32; } .no { color:#c62828; }
+table.sum { border-collapse:collapse; font-size:12px; background:#fff; margin:0 0 24px;
+            border:1px solid #dde3e7; border-radius:8px; overflow:hidden; }
+table.sum th, table.sum td { padding:7px 11px; border-bottom:1px solid #eceff1; text-align:left; }
+table.sum th { background:#f7f9fa; color:#455a64; font-size:11px; font-weight:bold; }
+table.sum td { color:#455a64; }
+table.sum td b { font-variant-numeric:tabular-nums; color:#1565C0; }
+table.sum tr:last-child td { border-bottom:0; }
+</style></head><body>
+
+<h1>近い順の起点をどこに出すか — iPhone SE3 実機相当の実測モック</h1>
+
+<p class="lead">
+<b>並んでいる画像は、実アプリに案の要素を差し込んで撮った実物のスクリーンショットです（再レイアウトされません）。</b>
+CSSを写し取ったのではなく <code>127.0.0.1/index.html</code> の県ページ（東京都・近い順）そのものに足しているので、
+既存の集計帯・ソートチップ・一覧の行との寸法関係はそのままです。
+エンジンは <b>WebKit 26.4</b>（iOS Safari と同じ系統）、端末は <b>iPhone SE3（375×667 CSS px / DPR2）</b>、
+画像は 750×1334 を 375px 幅で貼っています。<br>
+起点の文字列は作り物ではなく、<code>fetchPlaceName()</code>（Nominatim逆ジオコーディング）が実際に返した値です。
+<b>典型例</b>が「東京都 千代田区 皇居外苑」（13字＝既定の地図中心 35.68/139.76）、
+<b>長い例</b>が「東京都 千代田区 丸の内一丁目 丸の内」（19字＝東京駅）。<br>
+<b>残る不確かさは1つだけです。</b>フォントは実機が iOS の <code>sans-serif</code>、この計測は Windows の
+<code>sans-serif</code> に解決されるため、字送りがわずかに違い得ます（漢字は全角＝1emで同じ）。実機での確認はしていません。
+</p>
+
+<div class="base">
+  <div>起点の持ち方<br><b>ページを開いた時点で固定</b>（<code>prefState.center</code> / <code>lordsState.center</code>）</div>
+  <div>起点の正体<br><b>検索ピン</b>があればそこ、無ければ<b>地図の中心</b>（<code>getSearchCenter()</code>）</div>
+  <div>今どこにも出ていない<br><b>メニューの「検索地点」行のみ</b>（既定OFF・<code>showOrigin</code>）</div>
+  <div>効く画面<br><b>県ページ</b>と<b>城主詳細</b>（同じ <code>.lords-filter</code> の枠組み）</div>
+</div>
+
+<p class="lead" style="border-left-color:#c62828">
+<b>そもそもこれを出す価値がある理由（コードで確認済み）。</b>
+起点はページを開いた瞬間に固定され、その後に地図を動かしても<b>変わりません</b>
+（<code>openPrefDetail</code> / <code>openLordDetail</code> が <code>center</code> を控える）。
+つまり「今の地図の真ん中」と「近い順の起点」は<b>ずれ得る</b>ので、どこ基準なのかは画面から読み取れません。
+また起点には<b>検索ピン</b>と<b>地図中心</b>の2状態があり、どちらなのかも今は分かりません。
+以下の案はすべて、その2状態をアイコンで描き分けています（<span style="color:#4285F4">青い十字＝地図中心</span> /
+<span style="color:#F44336">赤いピン＝検索ピン</span>。アプリの <code>ICON_CROSSHAIR_INFO</code> /
+<code>ICON_PIN_INFO</code> と同じ絵）。
+</p>
+
+<table class="sum">
+<tr><th>案</th><th>置き場所</th><th>一覧が下がる量</th><th>長い名前(19字)のとき</th><th>近い順以外でも出せるか</th></tr>
+<tr><td><b>現状</b></td><td>—</td><td>0px</td><td>—</td><td>—</td></tr>
+<tr><td><b>A</b></td><td>ソート行の右端</td><td><b>0</b>px</td><td>2行目に回る（<b>+20</b>px・省略なし）</td><td>出せる</td></tr>
+<tr><td><b>B</b></td><td>ソート行の下に専用の帯（取り直すボタン付き）</td><td><b>33</b>px</td><td>省略なし</td><td>出せる</td></tr>
+<tr><td><b>B2</b></td><td>同上・ボタン無し</td><td><b>28</b>px</td><td>省略なし</td><td>出せる</td></tr>
+<tr><td><b>C</b></td><td>「近い順」チップの中</td><td><b>0</b>px</td><td>末尾だけなので元から短い</td><td><span class="no">近い順のときだけ</span></td></tr>
+<tr><td><b>D</b></td><td>県名の下（見出し内）</td><td><b>3</b>px</td><td>省略なし</td><td>出せる</td></tr>
+<tr><td><b>E</b></td><td>一覧の先頭に貼り付く行</td><td>0px（一覧の中で<b>25</b>px）</td><td>省略なし</td><td>出せる</td></tr>
+</table>
+
+<section id="c-now">
+  <h2>現状</h2>
+  <p>比較の基準。近い順で並んでいるが、177m・185m…が<b>どこからの距離なのか画面に何も出ていない</b>。</p>
+  <div class="pair">
+    <figure>
+      <figcaption>県ページ（東京都）を近い順にした状態</figcaption>
+      <img src="shots/org-now-typ.png" width="375" height="667" alt="">
+      <div class="m">
+        <div class="mrow"><span>一覧の開始位置</span><b>251px</b></div>
+        <div class="mrow"><span>一覧の高さ / 行の高さ</span><b>364px / 54px</b></div>
+        <div class="mrow"><span>見えている行数</span><b>6行</b></div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section class="rec" id="c-a">
+  <h2>案A：ソート行の右端に置く<span class="tag">高さ0</span></h2>
+  <p>ソートのチップは 3つで171pxしか使っておらず、右側に<b>180px空いている</b>。そこへ起点を右寄せで置く。
+     一覧はまったく下がらない。名前が長いときだけ2行目に回り、そのときも省略はされない。</p>
+  <div class="pair">
+    <figure>
+      <figcaption>典型（13字・地図中心）。チップの行は1行のまま、一覧は 251px から始まり現状と同じ</figcaption>
+      <img src="shots/org-a-typ.png" width="375" height="667" alt="">
+      <div class="m">
+        <div class="mrow"><span>一覧の開始位置</span><b>251px</b> <span class="ok">現状と同じ</span></div>
+        <div class="mrow"><span>チップ行</span><b>1行 / 23px</b></div>
+        <div class="mrow"><span>名前が省略されたか</span><b class="ok">されていない</b></div>
+      </div>
+    </figure>
+    <figure>
+      <figcaption>長い名前（19字・検索ピン）。右に入り切らず2行目へ回る。省略はされないが一覧が20px下がる</figcaption>
+      <img src="shots/org-a-pin.png" width="375" height="667" alt="">
+      <div class="m">
+        <div class="mrow"><span>一覧の開始位置</span><b>271px</b> <span class="no">+20px</span></div>
+        <div class="mrow"><span>チップ行</span><b class="no">2行 / 43px</b></div>
+        <div class="mrow"><span>名前が省略されたか</span><b class="ok">されていない</b></div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section id="c-b">
+  <h2>案B：ソート行の下に専用の帯を出す<span class="tag">起点を取り直せる</span></h2>
+  <p>全幅を使えるので、名前がどれだけ長くても収まり、<b>操作も置ける</b>。
+     起点はページを開いた時点で固定されるので、地図を動かしたあとに取り直したい場面がある。
+     帯の形は絞り込み中に出る帯（<code>.pref-rstbar</code>）と同じ作りで、色は集計帯と同じ <code>#f7f9fa</code>。</p>
+  <div class="pair">
+    <figure>
+      <figcaption>典型（13字・地図中心）。帯は33px、一覧は284pxから</figcaption>
+      <img src="shots/org-b-typ.png" width="375" height="667" alt="">
+      <div class="m">
+        <div class="mrow"><span>帯の高さ</span><b>33px</b></div>
+        <div class="mrow"><span>一覧の開始位置</span><b>284px</b> <span class="no">+33px</span></div>
+        <div class="mrow"><span>名前が省略されたか</span><b class="ok">されていない</b></div>
+      </div>
+    </figure>
+    <figure>
+      <figcaption>長い名前（19字・検索ピン）。ボタンがあっても省略されず、帯の高さも変わらない</figcaption>
+      <img src="shots/org-b-pin.png" width="375" height="667" alt="">
+      <div class="m">
+        <div class="mrow"><span>帯の高さ</span><b>33px</b> <span class="ok">典型と同じ</span></div>
+        <div class="mrow"><span>一覧の開始位置</span><b>284px</b></div>
+        <div class="mrow"><span>名前が省略されたか</span><b class="ok">されていない</b></div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section id="c-b2">
+  <h2>案B2：同じ帯からボタンを外す<span class="tag">見るだけ</span></h2>
+  <p>「取り直す」を置かず、起点を伝えるだけにした版。帯が28pxに縮む。</p>
+  <div class="pair">
+    <figure>
+      <figcaption>典型（13字・地図中心）</figcaption>
+      <img src="shots/org-b2-typ.png" width="375" height="667" alt="">
+      <div class="m">
+        <div class="mrow"><span>帯の高さ</span><b>28px</b></div>
+        <div class="mrow"><span>一覧の開始位置</span><b>279px</b> <span class="no">+28px</span></div>
+      </div>
+    </figure>
+    <figure>
+      <figcaption>長い名前（19字・検索ピン）</figcaption>
+      <img src="shots/org-b2-pin.png" width="375" height="667" alt="">
+      <div class="m">
+        <div class="mrow"><span>帯の高さ</span><b>28px</b></div>
+        <div class="mrow"><span>名前が省略されたか</span><b class="ok">されていない</b></div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section id="c-c">
+  <h2>案C：「近い順」チップの中に書く<span class="tag warn">近い順のときだけ</span></h2>
+  <p>チップの文字を <code>近い順（皇居外苑から）</code> にする。高さは一切増えない。
+     ただし<b>チップに入る長さではないので末尾だけを取る</b>ことになり
+     （「東京都 千代田区 丸の内一丁目 <b>丸の内</b>」→「丸の内」）、どこの丸の内かは分からなくなる。
+     また、種別順・名前順を選んでいる間はチップが「近い順」に戻るので<b>起点が見えなくなる</b>。</p>
+  <div class="pair">
+    <figure>
+      <figcaption>典型。末尾の「皇居外苑」だけが入る</figcaption>
+      <img src="shots/org-c-typ.png" width="375" height="667" alt="">
+      <div class="m">
+        <div class="mrow"><span>一覧の開始位置</span><b>251px</b> <span class="ok">現状と同じ</span></div>
+        <div class="mrow"><span>チップ行</span><b>1行 / 23px</b></div>
+        <div class="mrow"><span>出せる情報</span><b class="no">末尾の1語だけ</b></div>
+      </div>
+    </figure>
+    <figure>
+      <figcaption>長い名前。「丸の内一丁目 丸の内」のうち「丸の内」しか残らない</figcaption>
+      <img src="shots/org-c-pin.png" width="375" height="667" alt="">
+      <div class="m">
+        <div class="mrow"><span>チップ行</span><b>1行 / 23px</b></div>
+        <div class="mrow"><span>検索ピンか地図中心か</span><b class="no">区別が出せない</b></div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section class="rec" id="c-d">
+  <h2>案D：県名の下にサブ行として出す<span class="tag">高さ+3px</span></h2>
+  <p>見出しの「東京都」の下に小さく添える。見出しは 52px → 55px にしかならない。
+     並び順と無関係な場所なので、<b>種別順・名前順のときも同じ場所に出したまま</b>にできる
+     （「特に近い順のときだけでなくてよい」に一番素直に合う）。城主詳細でも同じ位置に置ける。</p>
+  <div class="pair">
+    <figure>
+      <figcaption>典型（13字・地図中心）。見出しが3px伸びるだけ</figcaption>
+      <img src="shots/org-d-typ.png" width="375" height="667" alt="">
+      <div class="m">
+        <div class="mrow"><span>見出しの高さ</span><b>55px</b>（現状52px）</div>
+        <div class="mrow"><span>一覧の開始位置</span><b>254px</b> <span class="ok">+3px</span></div>
+        <div class="mrow"><span>名前が省略されたか</span><b class="ok">されていない</b></div>
+      </div>
+    </figure>
+    <figure>
+      <figcaption>長い名前（19字・検索ピン）。見出しの幅は271pxあるので19字でも収まる</figcaption>
+      <img src="shots/org-d-pin.png" width="375" height="667" alt="">
+      <div class="m">
+        <div class="mrow"><span>見出しの高さ</span><b>55px</b> <span class="ok">典型と同じ</span></div>
+        <div class="mrow"><span>名前が省略されたか</span><b class="ok">されていない</b></div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section id="c-e">
+  <h2>案E：一覧の先頭に貼り付く行として出す<span class="tag">地方見出しと同じ形</span></h2>
+  <p>都道府県一覧の地方見出し（<code>.reg-head</code>）と同じ <code>position:sticky</code> の行。
+     スクロールしても頭に残るので、一覧を下まで送っても起点が見える。
+     帯を1本増やさずに済む代わりに、<b>一覧の中を25px使う</b>。</p>
+  <div class="pair">
+    <figure>
+      <figcaption>典型（13字・地図中心）。一覧の頭に貼り付く</figcaption>
+      <img src="shots/org-e-typ.png" width="375" height="667" alt="">
+      <div class="m">
+        <div class="mrow"><span>貼り付く行の高さ</span><b>25px</b></div>
+        <div class="mrow"><span>一覧の開始位置</span><b>251px</b> <span class="ok">現状と同じ</span></div>
+        <div class="mrow"><span>名前が省略されたか</span><b class="ok">されていない</b></div>
+      </div>
+    </figure>
+    <figure>
+      <figcaption>長い名前（19字・検索ピン）。「（江戸城）から近い順」まで入る</figcaption>
+      <img src="shots/org-e-pin.png" width="375" height="667" alt="">
+      <div class="m">
+        <div class="mrow"><span>貼り付く行の高さ</span><b>25px</b></div>
+        <div class="mrow"><span>名前が省略されたか</span><b class="ok">されていない</b></div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+</body></html>
