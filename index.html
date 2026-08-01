@@ -892,6 +892,17 @@
             color: #666; border: 0; cursor: pointer; font-family: inherit;
         }
         .lords-chip[aria-pressed="true"] { background: #e3ecff; color: #2a5bd7; font-weight: bold; }
+        /* 近い順の起点。「どこからの距離なのか」を並びのチップと同じ行の右端に出す。
+           この行は一覧のスクロール領域（.lords-scroll）の外にあるので、一覧をどれだけ
+           送っても出たまま残る（貼り付ける指定は要らない）。
+           チップは3つで171pxしか使っておらず、右に180px空いているのでそこへ入れる。
+           起点は検索ピンがあればそこ、無ければ地図の中心（getSearchCenter）で、
+           どちらなのかはアイコンで描き分ける。並び順に関わらず常に出す。 */
+        .dorg { margin-left: auto; display: flex; align-items: center; gap: 4px; min-width: 0;
+                font-size: 10px; color: #90a4ae; }
+        .dorg:empty { display: none; }
+        .dorg b { font-weight: 600; color: #546E7A; min-width: 0;
+                  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .lords-scroll { overflow-y: auto; overscroll-behavior-y: contain; touch-action: pan-y; flex: 1; min-height: 0; }
 
         /* ══ 件数の多い一覧のスクロールバー ═══════════════════════════════
@@ -1508,6 +1519,7 @@
             <div class="lords-chips">
                 <button class="lords-chip" aria-pressed="true"  onclick="setLordCastleSort('dist')">近い順</button>
                 <button class="lords-chip" aria-pressed="false" onclick="setLordCastleSort('pref')">都道府県順</button>
+                <span class="dorg" id="lord-origin"></span>
             </div>
             <div class="lord-sub" id="lord-detail-variants" style="margin-top:6px;"></div>
         </div>
@@ -1553,6 +1565,7 @@
                 <button class="lords-chip" data-ps="type" aria-pressed="true"  onclick="setPrefSort('type')">種別順</button>
                 <button class="lords-chip" data-ps="name" aria-pressed="false" onclick="setPrefSort('name')">名前順</button>
                 <button class="lords-chip" data-ps="dist" aria-pressed="false" onclick="setPrefSort('dist')">近い順</button>
+                <span class="dorg" id="pref-origin"></span>
             </div>
         </div>
         <div class="lords-scroll" id="pref-item-list"></div>
@@ -2133,6 +2146,50 @@
     }
 
     function getSearchCenter() { return searchPinLngLat || map.getCenter(); }
+
+    /* ══ 近い順の起点の表示 ═══════════════════════════════════════════
+       県ページと城主詳細の距離は getSearchCenter() を起点に測っている。
+       起点は開くたびに取り直すので普段は地図の中心と同じだが、次の2つの場面では
+       ずれるので、どこからの距離なのかを画面に出す。
+        ・検索ピンが立っている間は、起点は地図の中心ではなくピンの位置になる
+        ・一覧からオブジェクトを開いて戻ったとき（restoreView）は起点を据え置くので、
+          地図はオブジェクトの位置に寄ったまま起点だけが前のところに残る
+       控えているのは緯度経度だけなので、地名は逆ジオコーディングで取る。
+       同じ地点を何度も問い合わせないよう originNames に控える
+       （undefined=未着手 / null=問い合わせ中 / 文字列=結果。'' は取得できなかった）。 */
+    const ICON_ORIGIN_CROSS = '<svg width="13" height="13" viewBox="0 0 44 44" style="display:block;flex-shrink:0">'
+        + '<circle cx="22" cy="22" r="9" fill="none" stroke="#4285F4" stroke-width="4"/>'
+        + '<circle cx="22" cy="22" r="3" fill="#4285F4"/>'
+        + '<line x1="22" y1="1" x2="22" y2="10" stroke="#4285F4" stroke-width="4" stroke-linecap="round"/>'
+        + '<line x1="22" y1="34" x2="22" y2="43" stroke="#4285F4" stroke-width="4" stroke-linecap="round"/>'
+        + '<line x1="1" y1="22" x2="10" y2="22" stroke="#4285F4" stroke-width="4" stroke-linecap="round"/>'
+        + '<line x1="34" y1="22" x2="43" y2="22" stroke="#4285F4" stroke-width="4" stroke-linecap="round"/></svg>';
+    const ICON_ORIGIN_PIN = '<svg width="10" height="13" viewBox="0 0 28 36" style="display:block;flex-shrink:0">'
+        + '<path d="M14 0C7.4 0 2 5.4 2 12c0 8.4 12 24 12 24s12-15.6 12-24C26 5.4 20.6 0 14 0z" fill="#F44336"/>'
+        + '<circle cx="14" cy="12" r="5" fill="white" opacity="0.9"/></svg>';
+    const originNames = new Map();
+
+    function renderDistOrigin(elId, state) {
+        const el = document.getElementById(elId);
+        if (!el) return;
+        const c = state.center;
+        if (!c) { el.innerHTML = ''; return; }
+        const key = `${c.lat.toFixed(4)},${c.lng.toFixed(4)}`;
+        if (!originNames.has(key)) {
+            originNames.set(key, null);
+            // 届いたら描き直す。そのときの state.center から引き直すので、
+            // 待っている間に別の県や城主へ移っていても取り違えない
+            fetchPlaceName(c.lat, c.lng).then(n => {
+                originNames.set(key, n || '');
+                renderDistOrigin(elId, state);
+            });
+        }
+        const cached = originNames.get(key);
+        const fallback = state.centerPinned ? '検索地点' : '地図中心';
+        const name = cached === null ? '取得中…' : (cached || fallback);
+        el.innerHTML = (state.centerPinned ? ICON_ORIGIN_PIN : ICON_ORIGIN_CROSS)
+                     + `<b>${attrEscape(name)}</b>`;
+    }
 
     const ICON_PIN_INFO = `<svg width="18" height="24" viewBox="0 0 28 36" style="display:block;transform:translate(2px,2px)"><path d="M14 0C7.4 0 2 5.4 2 12c0 8.4 12 24 12 24s12-15.6 12-24C26 5.4 20.6 0 14 0z" fill="#F44336"/><circle cx="14" cy="12" r="5" fill="white" opacity="0.9"/></svg>`;
     const ICON_CROSSHAIR_INFO = `<svg width="20" height="20" viewBox="0 0 44 44" style="display:block"><circle cx="22" cy="22" r="9" fill="none" stroke="#4285F4" stroke-width="3"/><circle cx="22" cy="22" r="3" fill="#4285F4"/><line x1="22" y1="2" x2="22" y2="11" stroke="#4285F4" stroke-width="3" stroke-linecap="round"/><line x1="22" y1="33" x2="22" y2="42" stroke="#4285F4" stroke-width="3" stroke-linecap="round"/><line x1="2" y1="22" x2="11" y2="22" stroke="#4285F4" stroke-width="3" stroke-linecap="round"/><line x1="33" y1="22" x2="42" y2="22" stroke="#4285F4" stroke-width="3" stroke-linecap="round"/></svg>`;
@@ -5189,6 +5246,8 @@ map.on('zoomend', () => { isZooming = false; });
         if (!restoreView || !lordsState.center) {
             const c = getSearchCenter();
             lordsState.center = { lat: c.lat, lng: c.lng };
+            // 起点が検索ピンだったのか地図の中心だったのかは、控えた時点でしか分からない
+            lordsState.centerPinned = !!searchPinLngLat;
         }
         lordsState.restoreCastleScroll = restoreView ? (lordsState.castleScrollTop || 0) : 0;
         lordsState.lord = l;
@@ -5200,6 +5259,7 @@ map.on('zoomend', () => { isZooming = false; });
         const vEl = document.getElementById('lord-detail-variants');
         vEl.textContent = l.v.length ? '表記: ' + l.v.join(' / ') : '';
         vEl.style.display = l.v.length ? '' : 'none';
+        renderDistOrigin('lord-origin', lordsState);
         showLordsView('detail');
         renderLordCastles();
     }
@@ -5640,6 +5700,8 @@ map.on('zoomend', () => { isZooming = false; });
         if (!restoreView || !prefState.center) {
             const c = getSearchCenter();
             prefState.center = { lat: c.lat, lng: c.lng };
+            // 起点が検索ピンだったのか地図の中心だったのかは、控えた時点でしか分からない
+            prefState.centerPinned = !!searchPinLngLat;
         }
         prefState.restoreScroll = restoreView ? (prefState.scrollTop || 0) : 0;
         document.getElementById('pref-detail-title').textContent = name;
@@ -5649,6 +5711,7 @@ map.on('zoomend', () => { isZooming = false; });
         setSearchClearVisible('pref-item-search', '');
         // 集計帯・ジャンル行・絞り込み帯はその県の内訳から作り直す
         renderPrefFilterUI();
+        renderDistOrigin('pref-origin', prefState);
         showPrefView('detail');
         renderPrefItems();
     }
