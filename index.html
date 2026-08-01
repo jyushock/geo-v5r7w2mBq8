@@ -5511,9 +5511,8 @@ map.on('zoomend', () => { isZooming = false; });
         }
         const byName = (a, b) => (a.item.label || '').localeCompare(b.item.label || '', 'ja');
         if (prefState.sort === 'dist') {
-            // 近い順でも 100名城 → 続100名城 → その他 を先に寄せる（各グループの中で近い順）
-            rows.sort((a, b) => castleGenreRank(a.item.properties || {}) - castleGenreRank(b.item.properties || {})
-                                || a.dist - b.dist);
+            // 近い順は種別も城の格付けも見ず、距離だけで並べる
+            rows.sort((a, b) => a.dist - b.dist);
         } else if (prefState.sort === 'type') {
             // 種別でまとめたうえで、城は 100名城 → 続100名城 → その他、食べログは部門の順に寄せる
             const order = PREF_TYPES.map(t => t.type);
@@ -5522,9 +5521,8 @@ map.on('zoomend', () => { isZooming = false; });
                                 || shopGenreRank(a.item.properties || {}) - shopGenreRank(b.item.properties || {})
                                 || byName(a, b));
         } else {
-            // 名前順。城だけは 100名城 → 続100名城 → その他 を名前より優先する
-            rows.sort((a, b) => castleGenreRank(a.item.properties || {}) - castleGenreRank(b.item.properties || {})
-                                || byName(a, b));
+            // 名前順は種別も城の格付けも見ず、名前だけで並べる
+            rows.sort(byName);
         }
         const list = document.getElementById('pref-item-list');
         if (rows.length === 0) {
