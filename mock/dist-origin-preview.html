@@ -58,19 +58,28 @@ CSSを写し取ったのではなく <code>127.0.0.1/index.html</code> の県ペ
 </p>
 
 <div class="base">
-  <div>起点の持ち方<br><b>ページを開いた時点で固定</b>（<code>prefState.center</code> / <code>lordsState.center</code>）</div>
+  <div>起点の持ち方<br><b>開くたびに取り直す</b>（戻り導線のときだけ据え置く）</div>
   <div>起点の正体<br><b>検索ピン</b>があればそこ、無ければ<b>地図の中心</b>（<code>getSearchCenter()</code>）</div>
   <div>今どこにも出ていない<br><b>メニューの「検索地点」行のみ</b>（既定OFF・<code>showOrigin</code>）</div>
   <div>効く画面<br><b>県ページ</b>と<b>城主詳細</b>（同じ <code>.lords-filter</code> の枠組み）</div>
 </div>
 
 <p class="lead" style="border-left-color:#c62828">
-<b>そもそもこれを出す価値がある理由（コードで確認済み）。</b>
-起点はページを開いた瞬間に固定され、その後に地図を動かしても<b>変わりません</b>
-（<code>openPrefDetail</code> / <code>openLordDetail</code> が <code>center</code> を控える）。
-つまり「今の地図の真ん中」と「近い順の起点」は<b>ずれ得る</b>ので、どこ基準なのかは画面から読み取れません。
-また起点には<b>検索ピン</b>と<b>地図中心</b>の2状態があり、どちらなのかも今は分かりません。
-以下の案はすべて、その2状態をアイコンで描き分けています（<span style="color:#4285F4">青い十字＝地図中心</span> /
+<b>そもそもこれを出す価値がある理由（実行して確認済み）。</b>
+まず前提として、<b>県ページを開くたびに起点は取り直され、そのときの地図の中心になります</b>
+（<code>openPrefDetail</code> の <code>if (!restoreView || !prefState.center)</code>）。
+東京駅で開くと起点は東京駅、閉じて立川へ動かして開き直すと起点は立川になることを実行で確かめました。
+開いたまま地図を触ることはパネルとオーバーレイに覆われてできません。<br>
+それでも起点を出す値打ちがあるのは、<b>起点が地図の中心とは限らない</b>からです。
+<code>getSearchCenter()</code> は <code>searchPinLngLat || map.getCenter()</code> なので、
+<b>検索ピンが立っている間は、起点は地図の中心ではなくピンの位置</b>になります。
+ピンは地図の長押しやオブジェクトからの「周辺検索」で立ち、地図を動かしても残ります。<br>
+もうひとつ、<b>一覧 → オブジェクト → 戻る</b>（<code>restoreView</code>）の経路だけは起点を据え置きます。
+一覧からオブジェクトを開くと地図がそこへ寄るため、取り直すと戻るたびに並び順が変わってしまうからです
+（意図した作り・コミット <code>88eceb8</code>）。実行すると、地図中心が
+<code>139.7674/35.6797</code> に動いたのに起点は <code>139.7671/35.6812</code> のままでした。
+この2つの場面では「今の地図の真ん中」と「近い順の起点」が<b>ずれます</b>。<br>
+以下の案はすべて、起点の2状態をアイコンで描き分けています（<span style="color:#4285F4">青い十字＝地図中心</span> /
 <span style="color:#F44336">赤いピン＝検索ピン</span>。アプリの <code>ICON_CROSSHAIR_INFO</code> /
 <code>ICON_PIN_INFO</code> と同じ絵）。
 </p>
