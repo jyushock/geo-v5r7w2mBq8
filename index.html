@@ -4590,6 +4590,7 @@ map.on('zoomend', () => { isZooming = false; });
     });
     // 検索ボックスにフォーカスが戻ったとき、ワードが残っていれば結果を再表示
     document.getElementById('search-input').addEventListener('focus', async (e) => {
+        closeObjSheet();   // 検索を始める時点で、タップで開いた情報シートは用済みなので閉じる
         const q = e.target.value.trim();
         if (!q) return;
         document.getElementById('search-clear').style.display = 'block';
