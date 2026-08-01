@@ -5466,6 +5466,19 @@ map.on('zoomend', () => { isZooming = false; });
         return 2;
     }
 
+    /* 食べログは部門でまとめる。並びはバッジと同じ10グループの区分（SHOP_GENRE_GROUPS）の順で、
+       同じ画面のジャンル行に出るチップの並びと一致させてある。
+       区分に無い部門と食べログ以外の種別は同じ値になるので、種別順の中では影響しない。 */
+    const SHOP_GENRE_ORDER = (() => {
+        const m = new Map();
+        SHOP_GENRE_GROUPS.forEach(([, members]) => members.forEach(c => m.set(c, m.size)));
+        return m;
+    })();
+    function shopGenreRank(p) {
+        const r = SHOP_GENRE_ORDER.get(shopGenreBase(p && p.category));
+        return r === undefined ? SHOP_GENRE_ORDER.size : r;
+    }
+
     // 一覧の絞り込み。照合は searchIndex が持つ正規化済みの名前・住所を使う
     // （毎入力で2,000件超を正規化し直さずに済む）
     function onPrefSearchInput(v) {
@@ -5502,9 +5515,11 @@ map.on('zoomend', () => { isZooming = false; });
             rows.sort((a, b) => castleGenreRank(a.item.properties || {}) - castleGenreRank(b.item.properties || {})
                                 || a.dist - b.dist);
         } else if (prefState.sort === 'type') {
+            // 種別でまとめたうえで、城は 100名城 → 続100名城 → その他、食べログは部門の順に寄せる
             const order = PREF_TYPES.map(t => t.type);
             rows.sort((a, b) => order.indexOf(a.item.type) - order.indexOf(b.item.type)
                                 || castleGenreRank(a.item.properties || {}) - castleGenreRank(b.item.properties || {})
+                                || shopGenreRank(a.item.properties || {}) - shopGenreRank(b.item.properties || {})
                                 || byName(a, b));
         } else {
             // 名前順。城だけは 100名城 → 続100名城 → その他 を名前より優先する
