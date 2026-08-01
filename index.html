@@ -1133,23 +1133,31 @@
         #settings-back-btn:hover { background: #e0e0e0; }
         /* オブジェクト表示。都道府県から探すの集計帯（.pref-sum-item）と同じ扱いにする。
            押して出し入れし、外した種別はグレーに落とす。文字のチェックボックスは使わない。
-           2列に並べるのは、6種別を一度に見渡せる高さに収めるため。カード配布のアイコンだけ
-           縦長（--mhcard-h）なので、行の高さはそれに合わせて揃える。 */
+           形は周辺検索のカテゴリ（.nearby-cat-item）と同じアイコン上・名前下の縦積みで、
+           6種別を横一列に並べる。SE3(375px)で1列53.8pxとなり、9pxの名前は
+           「マンホールカード配布」を2行に折り返せば全種別が収まる（実測）。
+           列に minmax(0,…) を使うのは、長い名前がその列だけを広げないようにするため。 */
         #obj-filter-list {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(6, minmax(0, 1fr));
             gap: 4px;
             padding: 0 16px 8px;
         }
         .objf-item {
-            display: flex; align-items: center; gap: 7px;
-            padding: 4px 7px; border-radius: 10px;
+            display: flex; flex-direction: column; align-items: center; gap: 3px;
+            padding: 5px 2px; border-radius: 10px;
             background: #f7f9fa; cursor: pointer;
-            min-height: calc(var(--mhcard-h) + 8px);
             -webkit-tap-highlight-color: transparent;
         }
         .objf-item.off { filter: grayscale(1); opacity: .34; }
-        .objf-n { font-size: 11px; color: #333; line-height: 1.25; min-width: 0; }
+        /* アイコンは種別で縦横比が違う（カード配布だけ縦長のカード画像）。
+           枠の高さを縦長のほうに合わせて固定し、名前の出る位置を6列で揃える。
+           アイコン自身に height を掛けると丸アイコンが縦に伸びるので触らない。 */
+        .objf-ic { height: var(--mhcard-h); display: flex; align-items: center; }
+        /* 文字の主張は周辺検索のカテゴリラベル（.nearby-cat-label）に合わせる。
+           同じ形で並ぶ要素なので、太字や濃い色にするとここだけが浮く。 */
+        .objf-n { font-size: 9px; line-height: 1.3; color: #555; text-align: center;
+                  max-width: 100%; }
         #nearby-list {
             overflow-y: auto;
             overscroll-behavior-y: contain;
@@ -4822,12 +4830,14 @@ map.on('zoomend', () => { isZooming = false; });
         saveSettings();
     }
 
-    // 設定画面に並べる種別。順は種別の共通順。アイコンは一覧・集計帯と同じものを使う
+    /* 設定画面に並べる種別。順は種別の共通順。アイコンは一覧・集計帯と同じものを使う。
+       6列に並べると1列53.8pxしかないので、カード配布だけは折り返す位置を決め打ちする
+       （成り行きに任せると「マンホールカ／ード配布」のような切れ方になるため）。 */
     const OBJ_FILTER_ITEMS = [
         { id: 'shop',     type: 'shop',     label: '食べログ' },
         { id: 'pokefuta', type: 'pokefuta', label: 'ポケふた' },
         { id: 'manhole',  type: 'manhole',  label: 'マンホール' },
-        { id: 'mhcard',   type: 'mhcard',   label: 'マンホールカード配布' },
+        { id: 'mhcard',   type: 'mhcard',   label: 'マンホール<br>カード配布' },
         { id: 'michi',    type: 'michi',    label: '道の駅' },
         { id: 'castle',   type: 'castle',   label: 'お城' },
     ];
@@ -4836,7 +4846,8 @@ map.on('zoomend', () => { isZooming = false; });
         if (!el) return;
         el.innerHTML = OBJ_FILTER_ITEMS.map(o => `
             <div class="objf-item${filterState[o.id] === false ? ' off' : ''}" data-t="${o.id}">
-                ${prefTypeIconHtml(o.type)}<span class="objf-n">${o.label}</span></div>`).join('');
+                <span class="objf-ic">${prefTypeIconHtml(o.type)}</span>
+                <span class="objf-n">${o.label}</span></div>`).join('');
         el.querySelectorAll('.objf-item').forEach(row =>
             bindTypeToggle(row, row.dataset.t, () => toggleObjFilter(row.dataset.t), () => {
                 if (filterState.shop === false) return;     // 非表示のときは開かない
