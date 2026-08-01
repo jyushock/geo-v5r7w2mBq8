@@ -352,9 +352,8 @@
             display: flex; align-items: center;
             padding: 8px 12px; gap: 8px;
         }
-        #filter-checkboxes {
-            display: flex; gap: 6px; flex-wrap: nowrap; flex: 1; justify-content: flex-end;
-        }
+        /* テキスト表示・メニュー表示のチェックボックス。
+           オブジェクト表示は文字ではなくアイコンの行（.objf-item）で出すので、ここは使わない */
         .filter-chip {
             display: flex; align-items: center; justify-content: center; gap: 3px;
             font-size: 11px; color: #333; background: #f5f5f5;
@@ -1019,8 +1018,17 @@
             font-family: sans-serif;
         }
         #nearby-main-view { display: flex; flex-direction: column; flex: 1; min-height: 0; }
-        /* 設定ビューはスクロール領域を持たないので、下スワイプを素通しさせない */
-        #nearby-settings-view { touch-action: none; }
+        /* 設定ビュー。オブジェクト表示の6種別＋食べログのジャンル行（35部門）まで開くと
+           SE3(667px)では入り切らないので、見出しだけ固定して中身をスクロールさせる。
+           枠組みは城主・都道府県ビュー（.lords-head ＋ .lords-scroll）と同じ考え方。
+           見出し側はスクロールしない領域なので、下スワイプを素通しさせない。 */
+        #nearby-settings-view { display: none; flex-direction: column; min-height: 0; touch-action: none; }
+        #nearby-settings-view.open { display: flex; }
+        #settings-scroll {
+            overflow-y: auto; overscroll-behavior-y: contain;
+            touch-action: pan-y;   /* 縦スクロールのみ許可。横パンやピンチを外側へ渡さない */
+            min-height: 0;
+        }
         #nearby-panel-scroll {
             overflow-y: auto;
             overscroll-behavior-y: contain;
@@ -1123,12 +1131,25 @@
             flex-shrink: 0;
         }
         #settings-back-btn:hover { background: #e0e0e0; }
-        #filter-checkboxes {
+        /* オブジェクト表示。都道府県から探すの集計帯（.pref-sum-item）と同じ扱いにする。
+           押して出し入れし、外した種別はグレーに落とす。文字のチェックボックスは使わない。
+           2列に並べるのは、6種別を一度に見渡せる高さに収めるため。カード配布のアイコンだけ
+           縦長（--mhcard-h）なので、行の高さはそれに合わせて揃える。 */
+        #obj-filter-list {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 6px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4px;
             padding: 0 16px 8px;
         }
+        .objf-item {
+            display: flex; align-items: center; gap: 7px;
+            padding: 4px 7px; border-radius: 10px;
+            background: #f7f9fa; cursor: pointer;
+            min-height: calc(var(--mhcard-h) + 8px);
+            -webkit-tap-highlight-color: transparent;
+        }
+        .objf-item.off { filter: grayscale(1); opacity: .34; }
+        .objf-n { font-size: 11px; color: #333; line-height: 1.25; min-width: 0; }
         #nearby-list {
             overflow-y: auto;
             overscroll-behavior-y: contain;
@@ -1379,21 +1400,20 @@
     </div><!-- /nearby-main-view -->
 
     <!-- 表示設定ビュー -->
-    <div id="nearby-settings-view" style="display:none;">
-        <div style="display:flex;align-items:center;padding:12px 16px 8px;gap:8px;">
+    <div id="nearby-settings-view">
+        <div style="display:flex;align-items:center;padding:12px 16px 8px;gap:8px;flex-shrink:0;">
             <button id="settings-back-btn" onclick="closeSettingsView()">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
             <span style="font-size:14px;font-weight:bold;color:#333;">設定</span>
         </div>
+        <div id="settings-scroll">
+        <!-- ここでの出し入れは地図だけでなく、検索・周辺検索・都道府県から探す・城主から探すの
+             すべてに効く（表示していない種別はどこにも出さない）。
+             食べログだけは長押しでジャンル行が開き、部門ごとに出し入れできる -->
         <div class="nearby-section-label">オブジェクト表示</div>
-        <div id="filter-checkboxes">
-            <label class="filter-chip"><input type="checkbox" id="check-shop" checked onchange="onFilterChange(this)">食べログ</label>
-            <label class="filter-chip"><input type="checkbox" id="check-manhole" checked onchange="onFilterChange(this)">マンホール</label>
-            <label class="filter-chip"><input type="checkbox" id="check-mhcard" checked onchange="onFilterChange(this)">マンホールカード配布</label>
-            <label class="filter-chip"><input type="checkbox" id="check-michi" checked onchange="onFilterChange(this)">道の駅</label>
-            <label class="filter-chip"><input type="checkbox" id="check-castle" checked onchange="onFilterChange(this)">お城</label>
-        </div>
+        <div id="obj-filter-list"></div>
+        <div id="obj-genre-line"></div>
         <div style="border-top:1px solid #f0f0f0;"></div>
         <div style="display:flex;gap:12px;padding:8px 16px 10px;align-items:flex-end;">
             <div style="display:flex;flex-direction:column;gap:4px;flex:1;">
@@ -1441,6 +1461,7 @@
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0 16px 8px;">
             <label class="filter-chip"><input type="checkbox" id="check-show-origin" onchange="onShowOriginChange(this)">検索地点</label>
         </div>
+        </div><!-- /settings-scroll -->
     </div>
 
     <!-- 城主一覧ビュー -->
@@ -1631,10 +1652,33 @@
         if (src) src.setData(fc);
     }
 
+    /* 食べログの部門・ポケふたは、レイヤーの visibility では出し入れできない。
+       どちらもソースの中の一部（部門／source:'pokefuta'）だけを消す話で、
+       shops と manholes は cluster:true のためクラスタの件数がソース側で決まるからで、
+       レイヤーに filter を掛けても丸の中の数字は絞る前のままになる。
+       そこで、表示設定を反映した features をソースへ入れ直す。
+       件数は食べログ7,077・マンホール1,267・ポケふた482で、入れ直しは一瞬で済む。 */
+    function shopFeaturesForMap() {
+        const fc = loadedData.shops;
+        if (!fc) return EMPTY_FC;
+        if (!genreOff.size) return fc;   // 絞っていないときは元の配列をそのまま渡す
+        return { type: 'FeatureCollection',
+                 features: fc.features.filter(f => genreVisible(shopGenreBase(f.properties.category))) };
+    }
+    function manholeFeaturesForMap() {
+        // 蓋とポケふたは1つのソースに同居している。ポケふたは source:'pokefuta' で見分ける
+        const mh = (filterState.manhole !== false && loadedData.manhole) ? loadedData.manhole.features : [];
+        const pk = (filterState.pokefuta !== false && loadedData.pokefuta)
+            ? loadedData.pokefuta.features.map(f => ({ ...f, properties: { ...f.properties, source: 'pokefuta' } })) : [];
+        return { type: 'FeatureCollection', features: [...mh, ...pk] };
+    }
+    function refreshShopSource()    { setSourceData('shops',    shopFeaturesForMap()); }
+    function refreshManholeSource() { setSourceData('manholes', manholeFeaturesForMap()); }
+
     // 各データ到着時にソースへ反映（manholeは2データの合成、castleは2分割）
     function applyDataset(key) {
         if (key === 'michi')  setSourceData('michi',   loadedData.michi);
-        if (key === 'shops')  setSourceData('shops',   loadedData.shops);
+        if (key === 'shops')  refreshShopSource();
         if (key === 'mhcard') setSourceData('mhcards', loadedData.mhcard);
         if (key === 'castle' && loadedData.castle) {
             const feats = loadedData.castle.features;
@@ -1644,14 +1688,13 @@
             lordCastleNorm = null;
             updateLordsEntry();
         }
-        if (key === 'manhole' || key === 'pokefuta') {
-            const mh = loadedData.manhole ? loadedData.manhole.features : [];
-            const pk = loadedData.pokefuta ? loadedData.pokefuta.features.map(f => ({ ...f, properties: { ...f.properties, source: 'pokefuta' } })) : [];
-            setSourceData('manholes', { type: 'FeatureCollection', features: [...mh, ...pk] });
-        }
+        if (key === 'manhole' || key === 'pokefuta') refreshManholeSource();
         buildSearchIndex(); // 到着済みデータで全件検索を再構築
         prefIndex = null;   // 都道府県索引は searchIndex から組むので作り直させる
+        objGenreCounts = null;   // 部門の件数も searchIndex から数えるので数え直させる
         updatePrefEntry();
+        // 設定を開いたまま食べログが届いたときのために、開いていれば描き直す
+        if (document.getElementById('nearby-settings-view').classList.contains('open')) renderObjFilterUI();
     }
 
     // 表示中レイヤーを優先して逐次ロード（パースのジャンクを抑えるため直列）
@@ -1661,7 +1704,7 @@
         // この順のまま読む。地図のピンの重なり順（configs）とは別物で揃える必要はない
         const specs = [
             { key: 'shops',    src: 'data.js',    get: () => shopData,          vis: filterState.shop    !== false },
-            { key: 'pokefuta', src: 'pokemon.js', get: () => pokefutaGeoJSON,   vis: filterState.manhole !== false },
+            { key: 'pokefuta', src: 'pokemon.js', get: () => pokefutaGeoJSON,   vis: filterState.pokefuta !== false },
             { key: 'manhole',  src: 'manhole.js', get: () => manholeGeoJSON,    vis: filterState.manhole !== false },
             { key: 'mhcard',   src: 'mhcard.js',  get: () => mhcardGeoJSON,     vis: filterState.mhcard  !== false },
             { key: 'michi',    src: 'michi.js',   get: () => michiNoEkiGeoJSON, vis: filterState.michi   !== false },
@@ -3994,14 +4037,16 @@ map.on('zoomend', () => { isZooming = false; });
             objClickLayers.length = 0;
 
             configs.forEach(conf => {
-                // filterState から初期visibility を決定（保存済み設定を反映）
+                /* filterState から初期visibility を決定（保存済み設定を反映）。
+                   manholes は蓋とポケふたが同居するソースなので、どちらかが表示中なら
+                   レイヤーは出す（中身の出し入れは manholeFeaturesForMap 側）。 */
                 const filterKey = conf.type === 'castle' ? 'castle'
                     : conf.type === 'manhole' ? 'manhole'
                     : conf.type === 'mhcard'  ? 'mhcard'
                     : conf.type === 'michi'   ? 'michi'
                     : conf.type === 'shop'    ? 'shop'
                     : null;
-                const initVis = (filterKey === null || filterState[filterKey] !== false) ? 'visible' : 'none';
+                const initVis = (filterKey === null || objLayerVisible(filterKey)) ? 'visible' : 'none';
 
                 map.addSource(conf.id, conf.noCluster
                     ? { type: 'geojson', data: EMPTY_FC }
@@ -4340,7 +4385,7 @@ map.on('zoomend', () => { isZooming = false; });
         const q = normalizeForSearch(query);
         const typeToFilter = {
             shop: 'shop', castle: 'castle', michi: 'michi',
-            manhole: 'manhole', pokefuta: 'manhole', mhcard: 'mhcard'
+            manhole: 'manhole', pokefuta: 'pokefuta', mhcard: 'mhcard'
         };
         // 一致度（完全一致>前方一致>部分一致、alias一致は減点）を優先し、同スコア内は
         // 周辺検索・天気と同じ基準点からの距離が近い順に並べて上位100件を返す
@@ -4349,6 +4394,8 @@ map.on('zoomend', () => { isZooming = false; });
         for (const item of searchIndex) {
             const filterKey = typeToFilter[item.type];
             if (filterKey && filterState[filterKey] === false) continue;
+            // 食べログは部門でも消せる（設定のオブジェクト表示を長押しして選ぶ）
+            if (item.type === 'shop' && !genreVisible(shopGenreBase((item.properties || {}).category))) continue;
             const labelScore = matchScore(item._normLabel, q);
             const subScore = matchScore(item._normSub, q);
             if (labelScore > 0 || subScore > 0) {
@@ -4639,10 +4686,12 @@ map.on('zoomend', () => { isZooming = false; });
         nearbyResultTypes.forEach(t => { if (nearbyTypeFilter.has(t)) off.delete(t); else off.add(t); });
         localStorage.setItem('nearbyTypeFilterOff', JSON.stringify([...off]));
     }
-    // キーの並びは種別の共通順（食べログ→ポケふた→マンホール→カード配布→道の駅→城）に合わせてある。
-    // ポケふたは専用のキーを持たず manhole のフィルタで出し入れする
+    /* オブジェクトの表示設定。キーの並びは種別の共通順
+       （食べログ→ポケふた→マンホール→カード配布→道の駅→城）に合わせてある。
+       これは地図だけの設定ではなく、検索・周辺検索・都道府県から探す・城主から探すの
+       すべてが見る土台で、外した種別はどこにも出さない。 */
     const filterState = Object.assign(
-        { shop: true, manhole: true, mhcard: false, michi: true, castle: true },
+        { shop: true, pokefuta: true, manhole: true, mhcard: false, michi: true, castle: true },
         savedSettings ? savedSettings.filter : {}
     );
     const labelState = Object.assign(
@@ -4650,12 +4699,22 @@ map.on('zoomend', () => { isZooming = false; });
         savedSettings ? savedSettings.label : {}
     );
 
+    /* 食べログは部門（35種）でも出し入れできる。覚えるのは外した部門だけで、
+       全部入りの一覧は持たない。データが後から届いて部門が増えたとき、
+       知らない部門を勝手に消さずに既定ONで足すため。 */
+    const genreOff = new Set(
+        savedSettings && Array.isArray(savedSettings.genreOff) ? savedSettings.genreOff : []
+    );
+    // 部門が表示中か。部門を持たない食べログ（category 空）は部門で消さない
+    function genreVisible(g) { return !g || !genreOff.has(g); }
+
     let showOriginState = savedSettings ? (savedSettings.showOrigin === true) : false;
 
     function saveSettings() {
         localStorage.setItem('settingsState', JSON.stringify({
             filter: filterState,
             label:  labelState,
+            genreOff: [...genreOff],
             showOrigin: showOriginState
         }));
     }
@@ -4697,24 +4756,144 @@ map.on('zoomend', () => { isZooming = false; });
         }
     }
 
-    function onFilterChange(el) {
-        const id = el.id.replace('check-', '');
-        filterState[id] = el.checked;
-        const val = el.checked ? 'visible' : 'none';
-        const sourceIds = id === 'castle'
-            ? ['castles-famous', 'castles']
-            : [{ shop: 'shops', michi: 'michi', manhole: 'manholes', mhcard: 'mhcards' }[id]];
-        sourceIds.forEach(sourceId => {
-            [`${sourceId}-cluster`, `${sourceId}-cluster-count`, `${sourceId}-bg`, `${sourceId}-icon`, `${sourceId}-icon-overlay`, `${sourceId}-label`].forEach(l => { if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', val); });
+    /* ══ オブジェクト表示（設定の土台） ══════════════════════════════════
+       種別ごとの地図ソースと、その種別を出し入れする設定キーの対応。
+       manholes だけは蓋とポケふたの2種別が同居していて、どちらかが表示中なら
+       レイヤーは出したままにする（中身は manholeFeaturesForMap が絞る）。 */
+    const OBJ_FILTER_SOURCES = {
+        shop:   ['shops'],
+        manhole: ['manholes'], pokefuta: ['manholes'],
+        mhcard: ['mhcards'],
+        michi:  ['michi'],
+        castle: ['castles-famous', 'castles'],
+    };
+    function objLayerVisible(id) {
+        if (id === 'manhole' || id === 'pokefuta') {
+            return filterState.manhole !== false || filterState.pokefuta !== false;
+        }
+        return filterState[id] !== false;
+    }
+    /* レイヤーの visibility を種別の設定に合わせる。
+       ラベル（-label）だけは「テキスト表示」の設定も通す。種別をONに戻したときに
+       消しているはずのラベルまで復活させないため。 */
+    function applyObjLayerVis(id) {
+        const vis = objLayerVisible(id) ? 'visible' : 'none';
+        const labelId = (id === 'manhole' || id === 'pokefuta') ? null
+            : (id === 'mhcard' ? null : id);
+        const labelVis = (vis === 'visible' && labelId && labelState[labelId] !== false) ? 'visible' : 'none';
+        (OBJ_FILTER_SOURCES[id] || []).forEach(sourceId => {
+            [`${sourceId}-cluster`, `${sourceId}-cluster-count`, `${sourceId}-bg`,
+             `${sourceId}-icon`, `${sourceId}-icon-overlay`].forEach(l => {
+                if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', vis);
+            });
+            const l = `${sourceId}-label`;
+            if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', labelVis);
         });
+    }
+
+    /* 種別の出し入れ。地図・検索・周辺検索は filterState を直接見るので、
+       ここで作り直すのは地図のソースと、設定画面の見た目だけでよい。
+       都道府県索引は表示中の種別だけで組むので、次に開くときに組み直させる。 */
+    function toggleObjFilter(id) {
+        filterState[id] = filterState[id] === false;
+        if (id === 'manhole' || id === 'pokefuta') refreshManholeSource();
+        applyObjLayerVis(id);
         if (id === 'castle') updateLordsEntry();   // 城を非表示にしたら「城主から探す」も出さない
+        // 県ページの種別の選択にも反映する（設定が土台で、そちらはその中の一時的な絞り込み）
+        if (prefState.types) PREF_TYPES.filter(t => t.filter === id).forEach(t => {
+            if (filterState[id] === false) prefState.types.delete(t.type);
+            else prefState.types.add(t.type);
+        });
+        prefIndex = null;
+        renderObjFilterUI();
         saveSettings();
+    }
+
+    /* 食べログの部門の出し入れ。地図はソースを入れ直し、一覧側は次に組むときに反映される。
+       県ページ側の選択（prefState.genres）にも、外した部門を残さない。 */
+    function toggleObjGenre(g) {
+        if (genreOff.has(g)) genreOff.delete(g); else genreOff.add(g);
+        refreshShopSource();
+        if (prefState.genres) {
+            if (genreOff.has(g)) prefState.genres.delete(g); else prefState.genres.add(g);
+        }
+        prefIndex = null;
+        renderObjGenreLine();
+        saveSettings();
+    }
+
+    // 設定画面に並べる種別。順は種別の共通順。アイコンは一覧・集計帯と同じものを使う
+    const OBJ_FILTER_ITEMS = [
+        { id: 'shop',     type: 'shop',     label: '食べログ' },
+        { id: 'pokefuta', type: 'pokefuta', label: 'ポケふた' },
+        { id: 'manhole',  type: 'manhole',  label: 'マンホール' },
+        { id: 'mhcard',   type: 'mhcard',   label: 'マンホールカード配布' },
+        { id: 'michi',    type: 'michi',    label: '道の駅' },
+        { id: 'castle',   type: 'castle',   label: 'お城' },
+    ];
+    function renderObjFilterList() {
+        const el = document.getElementById('obj-filter-list');
+        if (!el) return;
+        el.innerHTML = OBJ_FILTER_ITEMS.map(o => `
+            <div class="objf-item${filterState[o.id] === false ? ' off' : ''}" data-t="${o.id}">
+                ${prefTypeIconHtml(o.type)}<span class="objf-n">${o.label}</span></div>`).join('');
+        el.querySelectorAll('.objf-item').forEach(row =>
+            bindTypeToggle(row, row.dataset.t, () => toggleObjFilter(row.dataset.t), () => {
+                if (filterState.shop === false) return;     // 非表示のときは開かない
+                objGenreOpen = !objGenreOpen;
+                renderObjGenreLine();
+            }));
+    }
+
+    /* 食べログのジャンル行。県ページのもの（renderPrefGenreLine）と同じ見た目で、
+       対象がその県ではなく全国になる。件数は読み込み済みの食べログ全件から数える。 */
+    let objGenreOpen = false;
+    let objGenreCounts = null;   // buildSearchIndex のたびに捨てる
+    function shopGenreCountsAll() {
+        if (objGenreCounts) return objGenreCounts;
+        const m = new Map();
+        for (const it of searchIndex) {
+            if (it.type !== 'shop') continue;
+            const g = shopGenreBase((it.properties || {}).category);
+            if (g) m.set(g, (m.get(g) || 0) + 1);
+        }
+        // 並びは県ページと同じく多い順。行の中はさらに10グループの区分で束ねる
+        objGenreCounts = [...m.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'ja'));
+        return objGenreCounts;
+    }
+    function renderObjGenreLine() {
+        const el = document.getElementById('obj-genre-line');
+        if (!el) return;
+        if (!objGenreOpen || filterState.shop === false) { el.innerHTML = ''; return; }
+        const list = shopGenreCountsAll();
+        if (!list.length) {
+            el.innerHTML = `<div class="pref-gline"><div class="pref-gline-h">食べログを読み込み中…</div></div>`;
+            return;
+        }
+        const cnt = Object.fromEntries(list);
+        const on = list.filter(([g]) => genreVisible(g));
+        const groups = SHOP_GENRE_GROUPS.map(([gname, members]) => {
+            const has = members.filter(c => cnt[c] !== undefined);
+            if (!has.length) return '';
+            return `<div class="pref-ggrp"><div class="pref-ggname">${gname}</div><div class="pref-gchips">${
+                has.map(c => `<button class="ptg ${genreVisible(c) ? 'on shop-genre ' + (SHOP_GENRE_CLASS[c] || 'g-sonota') : ''}"
+                    onclick="toggleObjGenre('${attrEscape(c)}')">${attrEscape(c)}<span class="ptg-n">${cnt[c]}</span></button>`).join('')
+            }</div></div>`;
+        }).join('');
+        el.innerHTML = `<div class="pref-gline">
+            <div class="pref-gline-h">食べログのジャンル <b>${on.length}/${list.length}</b>・${
+                on.reduce((s, e) => s + e[1], 0).toLocaleString()}件</div>${groups}</div>`;
+    }
+    function renderObjFilterUI() {
+        renderObjFilterList();
+        renderObjGenreLine();
     }
 
     function onLabelChange(el) {
         const id = el.id.replace('check-label-', '');
         labelState[id] = el.checked;
-        const val = el.checked ? 'visible' : 'none';
+        // 種別ごと消しているときは、ラベルをONに戻してもピンだけ文字が出ることはない
+        const val = (el.checked && filterState[id] !== false) ? 'visible' : 'none';
         const sourceIds = id === 'castle'
             ? ['castles-famous', 'castles']
             : [{ shop: 'shops', michi: 'michi' }[id]];
@@ -4737,7 +4916,6 @@ map.on('zoomend', () => { isZooming = false; });
     }
     function openNearbyPanel() {
         closeObjSheet();   // 同じ下部領域を使うため、情報シートが開いていれば閉じる
-        Object.keys(filterState).forEach(id => { const el=document.getElementById(`check-${id}`); if(el) el.checked=filterState[id]; });
         Object.keys(labelState).forEach(id => { const el=document.getElementById(`check-label-${id}`); if(el) el.checked=labelState[id]; });
         document.getElementById('nearby-list').innerHTML = '';
         // 検索地点の行は開くたびに畳んだ状態から始める。展開（expanded）を解除しているのは
@@ -4756,7 +4934,7 @@ map.on('zoomend', () => { isZooming = false; });
         // メインビューに戻す（フッターがあるので下部バーの位置まで下ろす）
         setPanelLifted(false);
         document.getElementById('nearby-main-view').style.display = '';
-        document.getElementById('nearby-settings-view').style.display = 'none';
+        document.getElementById('nearby-settings-view').classList.remove('open');
         document.getElementById('nearby-lords-view').classList.remove('open');
         document.getElementById('nearby-lord-detail-view').classList.remove('open');
         document.getElementById('nearby-pref-view').classList.remove('open');
@@ -4772,17 +4950,17 @@ map.on('zoomend', () => { isZooming = false; });
     }
     function openSettingsView() {
         setPanelLifted(true);
-        Object.keys(filterState).forEach(id => { const el=document.getElementById(`check-${id}`); if(el) el.checked=filterState[id]; });
+        renderObjFilterUI();
         Object.keys(labelState).forEach(id => { const el=document.getElementById(`check-label-${id}`); if(el) el.checked=labelState[id]; });
         const originChk = document.getElementById('check-show-origin');
         if (originChk) originChk.checked = showOriginState;
         document.getElementById('nearby-main-view').style.display = 'none';
-        document.getElementById('nearby-settings-view').style.display = '';
+        document.getElementById('nearby-settings-view').classList.add('open');
     }
     function closeSettingsView() {
         setPanelLifted(false);
         document.getElementById('nearby-main-view').style.display = '';
-        document.getElementById('nearby-settings-view').style.display = 'none';
+        document.getElementById('nearby-settings-view').classList.remove('open');
     }
 
     // ══ 城主から探す ═══════════════════════════════════════════════════
@@ -4892,7 +5070,7 @@ map.on('zoomend', () => { isZooming = false; });
     function showLordsView(which) {
         setPanelLifted(true);
         document.getElementById('nearby-main-view').style.display = 'none';
-        document.getElementById('nearby-settings-view').style.display = 'none';
+        document.getElementById('nearby-settings-view').classList.remove('open');
         document.getElementById('nearby-lords-view').classList.toggle('open', which === 'list');
         document.getElementById('nearby-lord-detail-view').classList.toggle('open', which === 'detail');
     }
@@ -5163,10 +5341,10 @@ map.on('zoomend', () => { isZooming = false; });
         ['四国', ['徳島県', '香川県', '愛媛県', '高知県']],
         ['九州・沖縄', ['福岡県', '佐賀県', '長崎県', '熊本県', '大分県', '宮崎県', '鹿児島県', '沖縄県']],
     ];
-    // 種別チップの並び。地図の表示設定（filterState）と対応させる
+    // 種別チップの並び。表示設定（filterState）と対応させる
     const PREF_TYPES = [
         { type: 'shop',     label: '食べログ',   filter: 'shop'    },
-        { type: 'pokefuta', label: 'ポケふた',   filter: 'manhole' },
+        { type: 'pokefuta', label: 'ポケふた',   filter: 'pokefuta' },
         { type: 'manhole',  label: 'マンホール', filter: 'manhole' },
         { type: 'mhcard',   label: 'マンホールカード配布', filter: 'mhcard'  },
         { type: 'michi',    label: '道の駅',     filter: 'michi'   },
@@ -5192,19 +5370,24 @@ map.on('zoomend', () => { isZooming = false; });
     }
 
     /* 索引を組む。検索と同じ searchIndex を使うので、到着済みのデータだけが対象になる
-       （データが後から届いたら buildSearchIndex 経由で作り直される）。 */
+       （データが後から届いたら buildSearchIndex 経由で作り直される）。
+       設定で消している食べログの部門はここで落とす。設定は全体の土台なので、
+       県ページの件数にも一覧にも、その部門は最初から無いものとして扱う。 */
     function buildPrefIndex() {
         prefIndex = {};
         PREF_NAMES.forEach(n => { prefIndex[n] = {}; });
+        const visible = new Set(prefVisibleTypes());
         const genres = new Map();
         for (const item of searchIndex) {
+            if (!visible.has(item.type)) continue;   // 設定で消している種別は索引に入れない
             const n = prefOfProps(item.properties || {});
             if (!n || !prefIndex[n]) continue;
-            (prefIndex[n][item.type] = prefIndex[n][item.type] || []).push(item);
             if (item.type === 'shop') {
                 const g = shopGenreBase((item.properties || {}).category);
+                if (!genreVisible(g)) continue;
                 if (g) genres.set(g, (genres.get(g) || 0) + 1);
             }
+            (prefIndex[n][item.type] = prefIndex[n][item.type] || []).push(item);
         }
         // 部門は全国で35種。多い順に持っておき、県ごとの一覧はこの順で出す
         prefShopGenreAll = [...genres.entries()]
@@ -5229,7 +5412,7 @@ map.on('zoomend', () => { isZooming = false; });
         return !g || prefState.genres.has(g);
     }
 
-    /// 地図の表示設定で表示中の種別だけを返す
+    /// 表示設定（設定画面のオブジェクト表示）で表示中の種別だけを返す
     function prefVisibleTypes() {
         return PREF_TYPES.filter(t => filterState[t.filter] !== false).map(t => t.type);
     }
@@ -5244,7 +5427,7 @@ map.on('zoomend', () => { isZooming = false; });
     function showPrefView(which) {
         setPanelLifted(true);
         document.getElementById('nearby-main-view').style.display = 'none';
-        document.getElementById('nearby-settings-view').style.display = 'none';
+        document.getElementById('nearby-settings-view').classList.remove('open');
         document.getElementById('nearby-pref-view').classList.toggle('open', which === 'list');
         document.getElementById('nearby-pref-detail-view').classList.toggle('open', which === 'detail');
     }
@@ -5297,29 +5480,32 @@ map.on('zoomend', () => { isZooming = false; });
     }
 
     /* タップで種別のON/OFF、長押しで食べログのジャンル行。
-       タッチのあとに合成されるマウスイベントで二重に反応しないよう、直後の mouse は捨てる。 */
-    let prefLpTimer = null, prefLpFired = false, prefLpTouched = false;
-    function bindPrefSumItem(el) {
-        const t = el.dataset.t;
+       タッチのあとに合成されるマウスイベントで二重に反応しないよう、直後の mouse は捨てる。
+       設定のオブジェクト表示（renderObjFilterList）と県ページの集計帯で同じものを使う。 */
+    let lpTimer = null, lpFired = false, lpTouched = false;
+    function bindTypeToggle(el, type, onTap, onLongPress) {
         const start = () => {
-            prefLpFired = false;
-            if (t !== 'shop') return;           // 2段目を持つのは食べログだけ
-            prefLpTimer = setTimeout(() => {
-                prefLpTimer = null; prefLpFired = true;
-                if (!prefState.types.has('shop')) return;   // 非表示のときは開かない
-                prefState.genreOpen = !prefState.genreOpen;
-                renderPrefGenreLine();
-            }, 500);
+            lpFired = false;
+            if (type !== 'shop' || !onLongPress) return;   // 2段目を持つのは食べログだけ
+            lpTimer = setTimeout(() => { lpTimer = null; lpFired = true; onLongPress(); }, 500);
         };
-        const cancel = () => { if (prefLpTimer) { clearTimeout(prefLpTimer); prefLpTimer = null; } };
-        const end = () => { cancel(); if (prefLpFired) { prefLpFired = false; return; } togglePrefType(t); };
+        const cancel = () => { if (lpTimer) { clearTimeout(lpTimer); lpTimer = null; } };
+        const end = () => { cancel(); if (lpFired) { lpFired = false; return; } onTap(); };
         el.addEventListener('touchstart', start, { passive: true });
         el.addEventListener('touchmove', cancel, { passive: true });
-        el.addEventListener('touchend', () => { prefLpTouched = true; setTimeout(() => { prefLpTouched = false; }, 600); end(); });
-        el.addEventListener('mousedown', e => { if (e.button === 0 && !prefLpTouched) start(); });
-        el.addEventListener('mouseup', e => { if (e.button === 0 && !prefLpTouched) end(); });
+        el.addEventListener('touchend', () => { lpTouched = true; setTimeout(() => { lpTouched = false; }, 600); end(); });
+        el.addEventListener('mousedown', e => { if (e.button === 0 && !lpTouched) start(); });
+        el.addEventListener('mouseup', e => { if (e.button === 0 && !lpTouched) end(); });
         el.addEventListener('mouseleave', cancel);
         el.addEventListener('contextmenu', e => e.preventDefault());   // 長押しのメニューを出さない
+    }
+    function bindPrefSumItem(el) {
+        const t = el.dataset.t;
+        bindTypeToggle(el, t, () => togglePrefType(t), () => {
+            if (!prefState.types.has('shop')) return;   // 非表示のときは開かない
+            prefState.genreOpen = !prefState.genreOpen;
+            renderPrefGenreLine();
+        });
     }
 
     /* 食べログのジャンル行。バッジと同じ10グループの区分で並べ、選択中のチップは
@@ -5703,12 +5889,14 @@ map.on('zoomend', () => { isZooming = false; });
         const RADIUS = 100;
         const typeToFilter = {
             shop: 'shop', castle: 'castle', michi: 'michi',
-            manhole: 'manhole', pokefuta: 'manhole', mhcard: 'mhcard'
+            manhole: 'manhole', pokefuta: 'pokefuta', mhcard: 'mhcard'
         };
         nearbyAllResults = searchIndex
             .filter(item => {
                 const filterKey = typeToFilter[item.type];
-                return !(filterKey && filterState[filterKey] === false);
+                if (filterKey && filterState[filterKey] === false) return false;
+                // 食べログは部門でも消せる（検索と同じ扱い）
+                return item.type !== 'shop' || genreVisible(shopGenreBase((item.properties || {}).category));
             })
             .map(item => ({...item, dist: calcDist(searchLat, searchLng, item.coords[1], item.coords[0])}))
             .filter(item => item.dist <= RADIUS)
@@ -5847,7 +6035,7 @@ map.on('zoomend', () => { isZooming = false; });
     );
 
     // 3ドロワーの縦スクロール領域をまとめて監視する（内容の増減でスクロール可否が変わるため）
-    watchScrollerTouchAction('#nearby-panel-scroll, .lords-scroll, #nearby-list, #obj-sheet-body');
+    watchScrollerTouchAction('#nearby-panel-scroll, #settings-scroll, .lords-scroll, #nearby-list, #obj-sheet-body');
 
     // レイヤー一時非表示ボタンの処理
     const toggleLayersBtn = document.getElementById('toggle-layers-btn');
