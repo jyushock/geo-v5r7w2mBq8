@@ -5147,7 +5147,8 @@ map.on('zoomend', () => { isZooming = false; });
     // sort の既定は種別順（図鑑的な使い方を想定し、近い順の優先度は下げる）
     // genres は食べログだけが持つ2段目の絞り込み。types と同じく県をまたいで保つ。
     // genreOpen の既定は閉じた状態。食べログの長押しで開く
-    let prefState = { types: null, genres: null, genreOpen: false, pref: null, sort: 'type' };
+    // center は近い順の起点。県ページを開いた時点で固定する（下の openPrefDetail を参照）
+    let prefState = { types: null, genres: null, genreOpen: false, pref: null, sort: 'type', center: null };
 
     function prefOfProps(p) {
         if (p.prefecture) return p.prefecture;
@@ -5215,7 +5216,7 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('nearby-pref-detail-view').classList.toggle('open', which === 'detail');
     }
 
-    function openPrefView(prefName) {
+    function openPrefView(prefName, keepCenter) {
         if (searchIndex.length === 0) return;
         buildPrefIndex();
         // 表示中の種別を既定の選択にする（地図で消している種別は最初から出さない）
@@ -5225,7 +5226,7 @@ map.on('zoomend', () => { isZooming = false; });
         if (!prefState.genres) prefState.genres = new Set(prefShopGenreAll);
         else prefShopGenreAll.forEach(g => { if (!prefGenreSeen.has(g)) prefState.genres.add(g); });
         prefShopGenreAll.forEach(g => prefGenreSeen.add(g));
-        if (prefName && prefIndex[prefName]) { openPrefDetail(prefName); return; }
+        if (prefName && prefIndex[prefName]) { openPrefDetail(prefName, keepCenter); return; }
         showPrefView('list');
         renderPrefList();
     }
@@ -5392,9 +5393,17 @@ map.on('zoomend', () => { isZooming = false; });
         list.scrollTop = 0;
     }
 
-    function openPrefDetail(name) {
+    /* keepCenter を立てて呼ぶと、近い順の起点を取り直さない。
+       getSearchCenter() は検索ピンが無ければ地図の中心を返すので、一覧からオブジェクトを
+       開くと地図がそこへ寄って起点が変わってしまう。一覧に戻ったときは開く前の並びのままに
+       したいので、戻り導線からはこれを立てて呼ぶ。 */
+    function openPrefDetail(name, keepCenter) {
         if (!prefIndex || !prefIndex[name]) return;
         prefState.pref = name;
+        if (!keepCenter || !prefState.center) {
+            const c = getSearchCenter();
+            prefState.center = { lat: c.lat, lng: c.lng };
+        }
         document.getElementById('pref-detail-title').textContent = name;
         // 別の県を開いたら絞り込みの語は持ち越さない（種別・部門の選択は保つ）
         prefState.q = '';
@@ -5497,7 +5506,7 @@ map.on('zoomend', () => { isZooming = false; });
         const name = prefState.pref;
         if (!name) return;
         const types = [...prefState.types];
-        const center = getSearchCenter();
+        const center = prefState.center || getSearchCenter();   // 起点は県ページを開いた時点で固定
         const q = normalizeForSearch((prefState.q || '').trim());
         let rows = [];
         for (const t of types) {
@@ -5574,7 +5583,8 @@ map.on('zoomend', () => { isZooming = false; });
         const div = document.createElement('div');
         div.className = 'os-lords-back';
         div.textContent = `↩ 「${prefName}」の一覧に戻る`;
-        div.onclick = () => { closeObjSheet(); openNearbyPanel(); openPrefView(prefName); };
+        // 開く前の並びのまま戻す（近い順の起点を取り直さない）
+        div.onclick = () => { closeObjSheet(); openNearbyPanel(); openPrefView(prefName, true); };
         body.insertBefore(div, body.firstChild);
     }
 
