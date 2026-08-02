@@ -2650,8 +2650,8 @@ function castleGenreBadgeHtml(p) {
 /* ══ 食べログの店名・駅・ジャンル・部門 ═══════════════════════════════
    data.js の name は「店名 - 駅（ジャンル）」の3点セット（食べログ店舗ページの h1 由来）。
    実データ7,077件すべてがこの形であることを全件検査で確認済み（2026-08-01、例外0件）。
-   地図のラベルは ['get','name'] で name をそのまま出しているので data.js は変えず、
-   表示のたびにここで分解する。合致しない名前が来たら店名だけとして扱う。
+   data.js は変えず、表示のたびにここで分解する（地図のラベルだけは JS を通せないので、
+   同じ切り出しを SHOP_LABEL_FIELD の式でやる）。合致しない名前が来たら店名だけとして扱う。
 
    部門（category）は「ラーメン（東京）」のように地域が付く。括弧内は北海道・東京・
    神奈川・愛知・大阪・香川・東日本・西日本の8種しか現れない（全71種で確認）ので、
@@ -2662,6 +2662,21 @@ function shopParts(p) {
     return m ? { shop: m[1], station: m[2], genre: m[3] }
              : { shop: (p && p.name) || '', station: '', genre: '' };
 }
+/* 名前を出す場所は、どこでも店名だけにする（情報シートのタイトルと同じ）。
+   name をそのまま出すと平均26.6字・67%が20字超で、1行の置き場所では末尾が切れて
+   店名まで読めなくなるため。駅とジャンルは情報シートの項目で読める。 */
+function shopDisplayName(p) { return shopParts(p).shop || (p && p.name) || ''; }
+/* 検索・周辺検索・都道府県一覧が持つ item 用。label（name 全体）は書き換えず、
+   出すときだけ店名にする。照合に使う _normLabel は label から作られているので、
+   駅名やジャンルで引ける検索の当たり方はそのまま残る。 */
+function itemDisplayName(item) {
+    return item.type === 'shop' ? shopDisplayName(item.properties) : item.label;
+}
+/* 地図のラベル用。JSの正規表現は使えないので、最初の " - " までを切り出す式にする。
+   店名の側に " - " を含む店は0件（全7,077件で確認済み）。分解できない名前が来たら
+   name をそのまま出す（shopParts が店名だけとして扱うのと同じ振る舞い）。 */
+const SHOP_LABEL_FIELD = ['let', 'i', ['index-of', ' - ', ['get', 'name']],
+    ['case', ['>', ['var', 'i'], 0], ['slice', ['get', 'name'], 0, ['var', 'i']], ['get', 'name']]];
 function shopGenreBase(category) {
     return String(category || '').replace(/（[^（）]*）\s*$/, '').trim();
 }
@@ -3078,12 +3093,15 @@ function buildSheetHtml(type, label, p, lng, lat) {
     const coordGmapUrl = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
     // Yahooの経路画面に出す行き先の名前（[配布]などの装飾が付く title ではなく素の名前を使う）
     const destName = p.name || p.pokemon || p.locationName || label || '';
+    // 周辺検索の「検索地点」に出す名前。ここは人が読む見出しなので、食べログは
+    // 経路の行き先名（destName）と違って店名だけにする
+    const originName = type === 'shop' ? (shopDisplayName(p) || label) : label;
     // 行C: 全タイプ共通・常に3個
     // Yahooだけリンクでなくボタンなのは、出発地(現在地)を押された時点で読むため（委譲側に理由）
     const rowC = osRow([
         `<a href="${navUrl}" target="_blank" class="btn btn-nav">ここへ行く</a>`,
         `<button class="btn btn-nav-yahoo" data-lat="${lat}" data-lng="${lng}" data-name="${attrEscape(destName)}">ここへ行く</button>`,
-        `<button class="btn btn-nearby-search" onclick='searchNearby(${lng},${lat},${JSON.stringify(label)})'>${ICON_SEARCH_SVG}この周辺を検索</button>`,
+        `<button class="btn btn-nearby-search" onclick='searchNearby(${lng},${lat},${JSON.stringify(originName)})'>${ICON_SEARCH_SVG}この周辺を検索</button>`,
     ]);
     const isPokefuta = type === 'pokefuta' || (type === 'manhole' && p.source === 'pokefuta');
     // pick は配布場所が複数のカードで行Bの下に出す候補リスト（他の種別では空）
@@ -4168,7 +4186,9 @@ map.on('zoomend', () => { isZooming = false; });
 
                 // テキストラベルレイヤー（マンホール・mhcard以外）
                 if (conf.type !== 'manhole' && conf.type !== 'mhcard') {
-                    const labelKey = conf.type === 'pokefuta' ? 'pokemon' : 'name';
+                    // 食べログだけは name が複合のため、店名だけを切り出す式を使う
+                    const labelField = conf.type === 'shop' ? SHOP_LABEL_FIELD
+                        : ['get', conf.type === 'pokefuta' ? 'pokemon' : 'name'];
                     // pokefutaはlabelStateの対象外のため非表示固定、それ以外はlabelStateから取得
                     const labelVis = conf.type === 'pokefuta' ? 'none'
                         : (labelState[conf.type] !== false ? 'visible' : 'none');
@@ -4178,7 +4198,7 @@ map.on('zoomend', () => { isZooming = false; });
                         source: conf.id,
                         filter: ['!', ['has', 'point_count']],
                         layout: {
-                            'text-field': ['get', labelKey],
+                            'text-field': labelField,
                             'text-size': 10,
                             'text-font': ['Noto Sans Regular'],
                             'text-anchor': 'top',
@@ -4216,7 +4236,8 @@ map.on('zoomend', () => { isZooming = false; });
                     while (Math.abs(e.lngLat.lng - c[0]) > 180) { c[0] += e.lngLat.lng > c[0] ? 360 : -360; }
                     openObjSheet(conf.type, p.name || '', p, c[0], c[1]);
                     const histType = (conf.type === 'manhole' && p.source === 'pokefuta') ? 'pokefuta' : conf.type;
-                    histRecordPin(p.name || p.pokemon || '地点', c, histType, p);
+                    const histLabel = conf.type === 'shop' ? shopDisplayName(p) : (p.name || p.pokemon || '地点');
+                    histRecordPin(histLabel || '地点', c, histType, p);
                 });
 
                 const hover = (l, cur) => { map.on('mouseenter', l, () => map.getCanvas().style.cursor = cur); map.on('mouseleave', l, () => map.getCanvas().style.cursor = ''); };
@@ -4439,6 +4460,26 @@ map.on('zoomend', () => { isZooming = false; });
         return 0;
     }
 
+    /* 食べログの照合は name 全体（店名＋駅＋ジャンル）に掛かるので、店名に無い語でも当たる。
+       名前は店名だけを出すようにしたため、当たった語が画面のどこにも出ない結果が生まれる
+       （例: 「担々麺」で出る創作麺工房 鳴龍は、店名にもバッジ「ラーメン」にも担々麺が無い）。
+       そこで店名で当たっていないときだけ、当たった側を住所の行に添える。
+       別名で当たったときに「（別名: ◯◯）」を出しているのと同じ扱い。
+       q は照合と同じ normalizeForSearch を通した文字列を渡すこと。 */
+    function shopMatchedPart(p, q) {
+        if (!q) return null;
+        const sp = shopParts(p);
+        if (normalizeForSearch(sp.shop).includes(q)) return null;
+        if (sp.station && normalizeForSearch(sp.station).includes(q)) return `駅: ${sp.station}`;
+        if (sp.genre && normalizeForSearch(sp.genre).includes(q)) return `ジャンル: ${sp.genre}`;
+        return null;
+    }
+    // 住所の行に前置きする括弧書き。当たり方が分かるものが無ければ空文字
+    function matchNoteHtml(alias, part) {
+        if (alias) return `（別名: ${attrEscape(alias)}）`;
+        return part ? `（${attrEscape(part)}）` : '';
+    }
+
     let searchIndex = [];
     function buildSearchIndex() {
         searchIndex = [];
@@ -4499,7 +4540,10 @@ map.on('zoomend', () => { isZooming = false; });
             const labelScore = matchScore(item._normLabel, q);
             const subScore = matchScore(item._normSub, q);
             if (labelScore > 0 || subScore > 0) {
-                matched.push({ ...item, _matchedAlias: null, _score: Math.max(labelScore, subScore * 0.5) });
+                // 店名で当たっていないときだけ、駅・ジャンルのどちらで当たったかを持たせる
+                matched.push({ ...item, _matchedAlias: null,
+                    _matchedPart: item.type === 'shop' ? shopMatchedPart(item.properties, q) : null,
+                    _score: Math.max(labelScore, subScore * 0.5) });
                 continue;
             }
             const aliases = item.properties && item.properties.aliases;
@@ -4582,11 +4626,11 @@ map.on('zoomend', () => { isZooming = false; });
                 const iconPart = isMhcard
                     ? `<div style="position:relative;width:var(--mhcard-w);height:var(--mhcard-h);flex-shrink:0;background:#e2ddd4;border-radius:6px;"><img src="mhcard.png" style="width:100%;height:100%;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:var(--mhcard-badge);height:var(--mhcard-badge);filter:brightness(0) invert(1);pointer-events:none;"></div>`
                     : `<div class="search-result-icon" style="background:${getItemColor(item)}">${cfg.img ? `<img src="${cfg.img}"${cfg.img === 'manhole.png' ? '' : ' class="icon-full"'}>` : cfg.icon}</div>`;
-                const subText = item._matchedAlias ? `（別名: ${item._matchedAlias}）${item.sub}` : item.sub;
+                const subText = `${matchNoteHtml(item._matchedAlias, item._matchedPart)}${item.sub}`;
                 // 食べログの部門バッジ。結果は2列で幅が狭いため、店名の行ではなく
                 // 住所の行の先頭に小さく置く（店名を押し出さないため）
                 const badge = item.type === 'shop' ? shopGenreBadgeHtml(item.properties, 'sr-genre') : '';
-                div.innerHTML = `${iconPart}<div class="search-result-text"><div class="search-result-name">${item.label}</div><div class="search-result-sub">${badge}${subText}</div></div>`;
+                div.innerHTML = `${iconPart}<div class="search-result-text"><div class="search-result-name">${itemDisplayName(item)}</div><div class="search-result-sub">${badge}${subText}</div></div>`;
                 div.addEventListener('click', () => onResultClick(item));
                 col.appendChild(div);
             };
@@ -4609,7 +4653,7 @@ map.on('zoomend', () => { isZooming = false; });
             updateGeolocateButton();
         }
         clearSearch();
-        histSetPending(item.label, 'search');
+        histSetPending(itemDisplayName(item), 'search');
         // オブジェクトを選んだときは、対象を判別できるところまで寄る。
         // ズームアウトしたまま移動すると clusterMaxZoom:13 によりクラスタに畳まれ、
         // 選択リングを出しても対象が見えない。
@@ -5851,10 +5895,14 @@ map.on('zoomend', () => { isZooming = false; });
                 if (q && !(item._normLabel || '').includes(q)
                       && !(item._normSub || '').includes(q)) continue;
                 const c = item.coords;
-                rows.push({ item, dist: calcDist(center.lat, center.lng, c[1], c[0]) });
+                // 絞り込み中は、検索結果と同じく「店名以外のどこで当たったか」を添える
+                rows.push({ item, dist: calcDist(center.lat, center.lng, c[1], c[0]),
+                            part: (q && item.type === 'shop') ? shopMatchedPart(item.properties, q) : null });
             }
         }
-        const byName = (a, b) => (a.item.label || '').localeCompare(b.item.label || '', 'ja');
+        // 並べる基準は行に出している名前と同じにする（食べログは店名）。
+        // name 全体で並べると、画面では見えない駅名やジャンルで順番が決まってしまうため
+        const byName = (a, b) => itemDisplayName(a.item).localeCompare(itemDisplayName(b.item), 'ja');
         if (prefState.sort === 'dist') {
             // 近い順は種別も城の格付けも見ず、距離だけで並べる
             rows.sort((a, b) => a.dist - b.dist);
@@ -5885,8 +5933,8 @@ map.on('zoomend', () => { isZooming = false; });
             return `<div class="nearby-item" onclick="prefJumpToItem(${i})">
                 ${prefTypeIconHtml(item.type, item.properties || {})}
                 <div class="nearby-item-text">
-                    <div class="nearby-item-name">${attrEscape(item.label)}</div>
-                    <div class="nearby-item-sub">${attrEscape(item.sub || '')}</div>
+                    <div class="nearby-item-name">${attrEscape(itemDisplayName(item))}</div>
+                    <div class="nearby-item-sub">${matchNoteHtml(null, r.part)}${attrEscape(item.sub || '')}</div>
                 </div>
                 ${prefBadgesHtml(item)}
                 <div class="nearby-item-dist">${distStr}</div>
@@ -6104,7 +6152,7 @@ map.on('zoomend', () => { isZooming = false; });
                 ? `<div style="position:relative;width:var(--mhcard-w);height:var(--mhcard-h);flex-shrink:0;background:#e2ddd4;border-radius:6px;"><img src="mhcard.png" style="width:100%;height:100%;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:var(--mhcard-badge);height:var(--mhcard-badge);filter:brightness(0) invert(1);pointer-events:none;"></div>`
                 : `<div class="nearby-item-icon" style="background:${getItemColor(item)}">${cfg.img ? `<img src="${cfg.img}"${cfg.img === 'manhole.png' ? '' : ' class="icon-full"'}>` : cfg.icon}</div>`;
             // バッジは県ページの一覧と同じ内容（城の名城・形態、カードのID・弾、食べログの部門）
-            div.innerHTML = `${iconPart}<div class="nearby-item-text"><div class="nearby-item-name">${item.label}</div><div class="nearby-item-sub">${item.sub}</div></div>${prefBadgesHtml(item)}<div class="nearby-item-dist">${distStr}</div>`;
+            div.innerHTML = `${iconPart}<div class="nearby-item-text"><div class="nearby-item-name">${itemDisplayName(item)}</div><div class="nearby-item-sub">${item.sub}</div></div>${prefBadgesHtml(item)}<div class="nearby-item-dist">${distStr}</div>`;
             div.addEventListener('click', () => { closeNearbyResult(); onResultClick(item); });
             list.appendChild(div);
         });
