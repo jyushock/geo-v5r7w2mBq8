@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<base href="../"><meta charset="utf-8"><title>県ページの種別ジャンプ — 操作とUIの案</title>
+<style>
+:root {
+    --obj-icon-circle: 28px; --obj-icon-inner: 25px; --obj-icon-inner-full: 28px;
+    --mhcard-w: 28px; --mhcard-h: 36px; --mhcard-badge: 22.4px;
+}
+* { box-sizing: border-box; }
+body { margin:0; background:#eceff1; font-family: sans-serif; padding:24px; color:#333; }
+h1 { font-size:18px; margin:0 0 6px; }
+.lead { font-size:13px; color:#555; margin:0 0 8px; line-height:1.8; max-width:1200px; }
+.lead code, .lead b { background:#fff; padding:1px 5px; border-radius:4px; font-weight:bold; }
+.lead .num { color:#c62828; }
+h2.sec { font-size:14px; margin:26px 0 12px; padding-bottom:5px; border-bottom:1px solid #cfd8dc; }
+.wrap { display:flex; gap:18px; flex-wrap:wrap; align-items:flex-start; }
+.case { width:375px; }
+.case > h3 { font-size:13.5px; margin:0 0 3px; }
+.case > h3 .op { font-size:11px; color:#fff; background:#546E7A; border-radius:9px; padding:2px 7px; margin-left:6px; font-weight:normal; }
+.case > .desc { font-size:11.5px; color:#666; margin:0 0 8px; line-height:1.7; min-height:76px; }
+.case .pros { font-size:11px; color:#2e7d32; line-height:1.65; margin-top:7px; }
+.case .cons { font-size:11px; color:#c62828; line-height:1.65; }
+.case.reco { outline:3px solid #2a5bd7; outline-offset:9px; border-radius:4px; }
+.case.reco > h3::after { content:'推奨'; font-size:10.5px; color:#fff; background:#2a5bd7; border-radius:9px; padding:2px 8px; margin-left:6px; }
+.phone { width:375px; height:640px; background:#fff; border-radius:12px; overflow:hidden;
+         position:relative; box-shadow:0 4px 14px rgba(0,0,0,.16); display:flex; flex-direction:column; }
+.note { font-size:12px; color:#555; line-height:1.9; max-width:1200px; background:#fff;
+        border-left:4px solid #90a4ae; padding:12px 16px; border-radius:0 6px 6px 0; }
+.note b { color:#333; }
+.note ul { margin:6px 0 0; padding-left:20px; }
+.note li { margin-bottom:4px; }
+
+/* ── ここから index.html からそのまま持ってきた実CSS ───────────── */
+.lords-head { display:flex; align-items:center; gap:8px; padding:12px 12px 8px; flex-shrink:0; }
+.lords-head-title { font-size:14px; font-weight:bold; color:#333; flex:1; min-width:0;
+                    overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.lords-iconbtn { width:32px; height:32px; border:0; background:#f5f5f5; border-radius:8px;
+                 color:#555; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.lords-filter { padding:0 12px 8px; flex-shrink:0; border-bottom:1px solid #f0f0f0; }
+.lords-filter input { width:100%; height:34px; border:1px solid #e3e3e3; border-radius:17px;
+                      padding:0 12px; font-size:13px; font-family:inherit; background:#fafafa; color:#333; }
+.lords-chips { display:flex; gap:6px; margin-top:7px; flex-wrap:wrap; }
+.lords-chip { font-size:11px; padding:4px 10px; border-radius:14px; background:#f2f2f2;
+              color:#666; border:0; cursor:pointer; font-family:inherit; }
+.lords-chip[aria-pressed="true"] { background:#e3ecff; color:#2a5bd7; font-weight:bold; }
+.lords-scroll { overflow-y:auto; flex:1; min-height:0; position:relative; }
+.lords-scroll::-webkit-scrollbar { width:13px; }
+.lords-scroll::-webkit-scrollbar-track { background:#f4f6f7; }
+.lords-scroll::-webkit-scrollbar-thumb { background:#c3ccd2; border-radius:7px; border:3px solid #f4f6f7; }
+.lords-note { padding:16px; text-align:center; color:#999; font-size:13px; }
+.pref-sum { padding:9px 13px; background:#f7f9fa; border-bottom:1px solid #f0f0f0; flex-shrink:0; }
+.pref-sum-line { display:flex; gap:12px; justify-content:space-between; align-items:flex-end;
+                 min-height:calc(var(--mhcard-h) + 20px); }
+.pref-sum-item { display:flex; flex-direction:column; align-items:center; justify-content:flex-end;
+                 text-align:center; cursor:pointer; padding:3px 5px 4px; border-radius:9px;
+                 -webkit-tap-highlight-color:transparent; user-select:none; }
+.pref-sum-item.off { filter:grayscale(1); opacity:.34; }
+.pref-sum-v { font-size:13px; font-weight:bold; color:#546E7A; margin-top:3px; }
+.dorg { display:flex; align-items:center; gap:6px; padding:6px 13px; background:#f7f9fa;
+        border-bottom:1px solid #f0f0f0; font-size:11px; flex-shrink:0; }
+.dorg b { color:#455a64; font-weight:600; }
+.pref-badges { display:flex; flex-direction:column; gap:2px; align-items:flex-end; flex-shrink:0; }
+.pref-badge { font-size:9.5px; font-weight:700; color:#fff; padding:1px 7px; border-radius:9px;
+              white-space:nowrap; line-height:1.5; }
+.pref-badge.card { background:#8d6e63; }
+.popup-form-badge.f-yamajiro { background:hsl(0,42%,38%); }
+.popup-form-badge.f-okajiro  { background:hsl(20,42%,38%); }
+.popup-form-badge.f-hirajiro { background:hsl(125,38%,32%); }
+.popup-form-badge.f-hirayama { background:hsl(105,36%,32%); }
+.shop-genre.g-men      { background:hsl(20,42%,37%); }
+.shop-genre.g-niku     { background:hsl(0,42%,37%); }
+.shop-genre.g-gyokai   { background:hsl(205,40%,37%); }
+.shop-genre.g-chuka    { background:hsl(340,32%,37%); }
+.shop-genre.g-yoshoku  { background:hsl(230,30%,37%); }
+.shop-genre.g-keishoku { background:hsl(45,42%,37%); }
+.shop-genre.g-kanmi    { background:hsl(320,28%,37%); }
+.shop-genre.g-sake     { background:hsl(285,35%,37%); }
+.shop-genre.g-kissa    { background:hsl(160,26%,37%); }
+.shop-genre.g-sonota   { background:hsl(0,0%,45%); }
+.nearby-item { display:flex; align-items:center; padding:10px 14px; border-bottom:1px solid #f0f0f0;
+               cursor:pointer; gap:10px; }
+.nearby-item-icon { width:var(--obj-icon-circle); height:var(--obj-icon-circle); border-radius:50%;
+                    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+                    overflow:hidden; background:#eee; }
+.nearby-item-icon img { width:var(--obj-icon-inner); height:var(--obj-icon-inner); object-fit:contain;
+                        filter:brightness(0) invert(1); }
+.nearby-item-icon img.icon-full { width:var(--obj-icon-inner-full); height:var(--obj-icon-inner-full); }
+.nearby-item-text { flex:1; min-width:0; }
+.nearby-item-name { font-size:13px; font-weight:bold; color:#333; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.nearby-item-sub  { font-size:11px; color:#999; margin-top:1px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.nearby-item-dist { font-size:12px; color:#4285F4; font-weight:bold; flex-shrink:0; }
+
+/* ── ここから案ごとの新CSS（この提案で足すぶん） ───────────────── */
+
+/* 飛んだ先を一瞬光らせる（どこへ飛んだか分からなくなるのを防ぐ） */
+@keyframes jumpflash { from { background:#fff59d; } to { background:transparent; } }
+.jump-flash { animation: jumpflash 1.1s ease-out; }
+
+/* A案: 集計帯の長押し（表示ON/OFF）。長押し中の進み具合をリングで見せる */
+.lp-ring { position:absolute; inset:-2px; border-radius:9px; border:2px solid #2a5bd7;
+           clip-path: inset(100% 0 0 0); transition: clip-path .5s linear; pointer-events:none; }
+.pref-sum-item { position:relative; }
+.pref-sum-item.lp .lp-ring { clip-path: inset(0 0 0 0); }
+
+/* B案: ジャンプ専用のチップ行 */
+.jumpline { display:flex; gap:6px; padding:6px 13px; overflow-x:auto; background:#fff;
+            border-bottom:1px solid #f0f0f0; flex-shrink:0; scrollbar-width:none; }
+.jumpline::-webkit-scrollbar { display:none; }
+.jchip { display:flex; align-items:center; gap:4px; flex-shrink:0; font-size:11px; padding:4px 9px 4px 5px;
+         border-radius:14px; background:#f2f2f2; color:#555; border:0; cursor:pointer; font-family:inherit;
+         --obj-icon-circle:16px; --obj-icon-inner:14.3px; --obj-icon-inner-full:16px;
+         --mhcard-w:13px; --mhcard-h:16px; --mhcard-badge:10.4px; --mhcard-radius:3px; }
+.jchip b { color:#546E7A; font-variant-numeric:tabular-nums; }
+.jchip:active { background:#e3ecff; }
+
+/* C案: 右端の縦インデックス。太いスクロールバー(13px)の内側に置く */
+.rail { position:absolute; right:15px; top:0; bottom:0; width:34px; z-index:5;
+        display:flex; align-items:center; justify-content:center;
+        touch-action:none; user-select:none; }
+.rail-in { display:flex; flex-direction:column; align-items:center; gap:4px; width:34px;
+           padding:7px 0; border-radius:17px; background:rgba(255,255,255,.88);
+           box-shadow:0 1px 5px rgba(0,0,0,.16); }
+.rail-item { position:relative; z-index:1; padding:3px 0; cursor:pointer;
+             --obj-icon-circle:22px; --obj-icon-inner:19.7px; --obj-icon-inner-full:22px;
+             --mhcard-w:17px; --mhcard-h:22px; --mhcard-badge:13.6px; --mhcard-radius:4px; }
+.rail-item.cur .nearby-item-icon { box-shadow:0 0 0 2px #fff, 0 0 0 4px #2a5bd7; }
+.rail-bubble { position:absolute; right:44px; background:#37474f; color:#fff; font-size:12px;
+               font-weight:bold; padding:6px 12px; border-radius:16px; white-space:nowrap;
+               display:none; pointer-events:none; }
+.rail-bubble.on { display:block; }
+
+/* D・E案: 種別の見出し（貼り付け） */
+.grp-head { position:sticky; top:0; z-index:2; display:flex; align-items:center; gap:7px;
+            padding:5px 13px; background:#eef2f4; border-bottom:1px solid #dfe6ea;
+            font-size:11px; font-weight:bold; color:#455a64; cursor:pointer;
+            --obj-icon-circle:17px; --obj-icon-inner:15.2px; --obj-icon-inner-full:17px;
+            --mhcard-w:13px; --mhcard-h:17px; --mhcard-badge:10.4px; --mhcard-radius:3px; }
+.grp-head .g-n { color:#90a4ae; font-weight:normal; }
+.grp-head .g-next { margin-left:auto; border:0; background:#fff; border-radius:12px; padding:3px 9px;
+                    font-size:10.5px; color:#2a5bd7; font-weight:bold; cursor:pointer; font-family:inherit; }
+.grp-head .g-caret { margin-left:auto; color:#78909c; font-size:12px; }
+.grp-head.collapsed { background:#f7f9fa; }
+.grp-head.collapsed .g-caret { transform:rotate(-90deg); }
+.collapsed-hide { display:none; }
+</style>
+</head><body>
+
+<h1>県ページの一覧で、種別の先頭へ飛ぶ操作</h1>
+<p class="lead">
+題材は最大の県 <b>東京都・全2,496件</b>（実データ。食べログ <span class="num">2,084</span>／ポケふた 13／マンホール 99／カード配布 115／道の駅 1／お城 184）。<br>
+今の一覧は<b>種別順</b>で並ぶが、その順番は <code>PREF_TYPES</code> 固定（食べログ→ポケふた→マンホール→カード配布→道の駅→お城）で、
+<b>先頭の食べログだけで2,084行</b>ある。お城の先頭に着くには <span class="num">2,312行</span>を送ることになる。
+今そこに置ける操作は「集計帯のタップ＝種別のON/OFF」「食べログの長押し＝ジャンル行」の2つが既に埋まっている（<code>bindPrefSumItem</code>）。
+以下は、その2つを壊さずに種別の先頭へ飛ぶ案。<b>すべて実際に動く</b>ので、枠の中を触って比べられる。<br>
+<span style="color:#888;">※ 行の名前・住所・バッジは実データから抜いた十数件を繰り返したもの。件数・種別の並び・部門の内訳・城の格付けの内訳は東京都の実データどおり。距離は仮の値。</span>
+</p>
+
+<h2 class="sec">案の一覧（枠内は操作できます）</h2>
+<div class="wrap" id="cases"></div>
+
+<h2 class="sec">どの案でも決めておくこと</h2>
+<div class="note">
+<ul>
+<li><b>並び順が「種別順」のときしか意味がない。</b> 名前順・近い順では種別が混ざるので、飛び先が定義できない。
+    案は2つ：<b>(a)</b> 種別順以外ではジャンプUIを出さない（最小）／<b>(b)</b> 押したら種別順へ切り替えてから飛ぶ（並びが勝手に変わる）。上のモックは (a) で作ってある。</li>
+<li><b>絞り込みでOFFにした種別・0件の種別は飛び先に出さない。</b> 集計帯と同じ集合（<code>prefSumTypes</code> の中で <code>prefState.types</code> がONのもの）に限る。
+    絞り込み欄に語を入れている間も、残った行から作り直す必要がある。</li>
+<li><b>飛んだ直後に「どこに着いたか」が分かること。</b> 2,000行を一瞬で飛ぶと画面が別物になるので、着地した行を1秒ほど光らせている（<code>.jump-flash</code>）。
+    なめらかスクロールは2,000行では遅すぎるので使わない。</li>
+<li><b>2段目（城の格付け・食べログの部門）まで飛べるようにするか。</b> 種別順の中は 100名城→続100名城→その他、食べログは部門10グループ順に並んでいるので、
+    同じ仕組みで「100名城の先頭」「寿司の先頭」まで飛べる。最初は種別だけに絞るのが素直。</li>
+</ul>
+</div>
+
+<script>
+/* ══ 実データから作ったサンプル ══════════════════════════════ */
+const D = {"counts":{"shop":2084,"pokefuta":13,"manhole":99,"mhcard":115,"michi":1,"castle":184},
+"samples":{"shop":[{"n":"銀座 八五","s":"東京都中央区銀座三丁目"},{"n":"麺処 銀笹（ぎんざさ）","s":"東京都中央区銀座八丁目"},{"n":"六厘舎 東京駅東京ラーメンストリート","s":"東京都千代田区丸の内一丁目"},{"n":"麺や 七彩（しちさい）","s":"東京都中央区八丁堀二丁目"},{"n":"はやし","s":"東京都渋谷区道玄坂一丁目"},{"n":"麺屋 翔 本店","s":"東京都新宿区西新宿七丁目"},{"n":"風雲児 新宿本店（ふううんじ）","s":"東京都渋谷区代々木二丁目"},{"n":"つけ麺 五ノ神製作所","s":"東京都渋谷区千駄ヶ谷五丁目"},{"n":"らぁ麺や 嶋","s":"東京都渋谷区本町三丁目"},{"n":"RAMEN MATSUI","s":"東京都新宿区四谷四丁目"},{"n":"ジャパニーズ ラーメン 五感","s":"東京都豊島区東池袋二丁目"},{"n":"らぁ麺やまぐち","s":"東京都新宿区西早稲田三丁目"},{"n":"自家製中華そば としおか","s":"東京都新宿区弁天町"},{"n":"入鹿TOKYO 六本木","s":"東京都港区六本木四丁目"}],
+"pokefuta":[{"n":"ピカチュウ / イーブイ","s":"東京都稲城市矢野口4015-1 よみうりランド遊園地内"},{"n":"ヤジロン / ドーミラー","s":"東京都台東区上野公園13-9"},{"n":"チゴラス / ソーナノ","s":"東京都台東区上野公園7-20"},{"n":"ミュウ","s":"東京都小笠原村父島字東町"},{"n":"カメックス","s":"東京都小笠原村父島字東町"},{"n":"リザードン","s":"東京都小笠原村父島字東町"},{"n":"フシギバナ","s":"東京都小笠原村父島字東町"},{"n":"ニョロモ","s":"東京都町田市原町田5-16"},{"n":"ポッポ / コラッタ","s":"東京都町田市原町田5-16"},{"n":"ナゾノクサ / ビードル / キャタピー","s":"東京都町田市原町田5-16"},{"n":"ゼニガメ","s":"東京都町田市原町田5-16"},{"n":"ヒトカゲ","s":"東京都町田市原町田5-16"},{"n":"フシギダネ","s":"東京都町田市原町田5-16"}],
+"manhole":[{"n":"東京都 東京23区","s":"東京都足立区西伊興一丁目","cid":"13-100-P001"},{"n":"東京都 八王子市","s":"東京都八王子市高尾町","cid":"13-201-A001"},{"n":"東京都 小平市","s":"東京都小平市上水本町一丁目","cid":"13-211-A001"},{"n":"東京都 羽村市","s":"東京都羽村市羽東一丁目","cid":"13-227-A001"},{"n":"東京都 瑞穂町","s":"東京都瑞穂町大字箱根ケ崎","cid":"13-303-A001"},{"n":"東京都 小金井市","s":"東京都小金井市東町四丁目","cid":"13-210-A001"},{"n":"東京都 武蔵野市","s":"東京都武蔵野市吉祥寺本町一丁目","cid":"13-203-P001"},{"n":"東京都 国分寺市","s":"東京都国分寺市本町一丁目","cid":"13-214-A001"},{"n":"東京都 狛江市","s":"東京都狛江市東和泉四丁目","cid":"13-219-A001"},{"n":"東京都 多摩市","s":"東京都多摩市落合一丁目","cid":"13-224-A001"},{"n":"東京都 昭島市","s":"東京都昭島市田中町一丁目","cid":"13-207-A001"},{"n":"東京都 立川市","s":"東京都立川市錦町三丁目","cid":"13-202-A001"},{"n":"東京都 調布市","s":"東京都調布市小島町一丁目","cid":"13-208-A001"},{"n":"東京都 町田市","s":"東京都町田市森野二丁目","cid":"13-209-A001"}],
+"mhcard":[{"n":"UR都市機構 (B001) URまちとくらしのミュージアム","s":"東京都北区赤羽台1-4-50","cid":"B001"},{"n":"流域下水道 東京観光情報センター 多摩","s":"東京都立川市柴崎町3-1-1「エキュート立川」3階","cid":""},{"n":"東京23区（A001） CADAN大手町","s":"東京都千代田区大手町2-6-3 TOKYO TORCH","cid":"A001"},{"n":"東京23区（B001） 東京都虹の下水道館","s":"東京都江東区有明2-3-5（有明水再生センター5階）","cid":"B001"},{"n":"東京23区（C001） 東京観光情報センター 京成上野","s":"東京都台東区上野公園1-60 京成上野駅改札口前","cid":"C001"},{"n":"東京23区（D001） 第一書林（新小岩北口店）","s":"東京都葛飾区西新小岩1-2-11喜久屋ビル1F","cid":"D001"},{"n":"東京23区（E001） しながわ観光協会","s":"東京都品川区大井1-14-1 大井1丁目共同ビル1階","cid":"E001"},{"n":"東京23区(M001) info & cafe SQUARE","s":"東京都品川区荏原4-5-28 スクエア荏原1F","cid":"M001"},{"n":"東京23区 (N001) 丸吉玩具店","s":"東京都葛飾区立石1-21-2","cid":"N001"},{"n":"東京23区 (C101) 練馬区立大泉図書館","s":"東京都練馬区大泉学園町2-21-17","cid":"C101"},{"n":"東京23区 (D101) 旧三河島汚水処分場喞筒場施設","s":"東京都荒川区荒川8-25-1","cid":"D101"},{"n":"東京23区 (E101) 東映アニメーションミュージアムショップ","s":"東京都練馬区東大泉2-10-5","cid":"E101"},{"n":"東京23区 (F101) 渋沢×北区 飛鳥山おみやげ館","s":"東京都北区西ケ原2-16飛鳥山公園管理事務所内","cid":"F101"},{"n":"東京23区 (G101) 港区観光インフォメーションセンター","s":"東京都港区芝五丁目36番4号 札の辻スクエア1階","cid":"G101"}],
+"michi":[{"n":"道の駅八王子滝山","s":"東京都八王子市滝山町1-592-2"}],
+"castle":[{"n":"赤塚城","s":"東京都板橋区赤塚五丁目","fm":"平山城"},{"n":"石浜城","s":"東京都荒川区南千住三丁目","fm":"平山城"},{"n":"今井城 (武蔵国)","s":"東京都青梅市今井一丁目","fm":"平山城"},{"n":"奥沢城","s":"東京都世田谷区奥沢七丁目","fm":"平城"},{"n":"葛西城","s":"東京都葛飾区青戸七丁目","fm":"平城"},{"n":"勝沼城","s":"東京都青梅市東青梅六丁目","fm":"丘城"},{"n":"辛垣城","s":"東京都青梅市成木八丁目","fm":"山城"},{"n":"渋谷城","s":"東京都渋谷区渋谷三丁目","fm":"平山城"},{"n":"志村城","s":"東京都板橋区志村二丁目","fm":"平山城"},{"n":"石神井城","s":"東京都練馬区石神井台一丁目","fm":"平城"},{"n":"白金長者屋敷","s":"東京都港区白金台五丁目","fm":"平山城"},{"n":"深大寺城","s":"東京都調布市深大寺元町二丁目","fm":"平山城"},{"n":"世田谷城","s":"東京都世田谷区豪徳寺二丁目","fm":"平山城"}],
+},
+"shopGenres":{"ラーメン":100,"うどん":59,"そば":48,"焼肉":100,"焼き鳥":68,"鳥料理":25,"ステーキ・鉄板焼き":54,"とんかつ":46,"すき焼き・しゃぶしゃぶ":31,"寿司":99,"うなぎ":27,"天ぷら":36,"日本料理":95,"中国料理":100,"餃子":22,"アジア・エスニック":100,"カレー":100,"フレンチ":100,"イタリアン":100,"スペイン料理":33,"洋食":49,"ピザ":32,"ハンバーガー":40,"お好み焼き":11,"食堂":23,"スイーツ":100,"和菓子・甘味処":100,"パン":100,"アイス・ジェラート":23,"バー":35,"居酒屋":39,"立ち飲み":20,"カフェ":87,"喫茶":55,"創作料理・イノベーティブ":27},
+"castleRank":[["日本100名城",2],["続日本100名城",2],["",180]]};
+
+const SHOP_GENRE_CLASS = {'ラーメン':'g-men','うどん':'g-men','そば':'g-men','焼肉':'g-niku','焼き鳥':'g-niku','鳥料理':'g-niku','ステーキ・鉄板焼き':'g-niku','とんかつ':'g-niku','すき焼き・しゃぶしゃぶ':'g-niku','寿司':'g-gyokai','うなぎ':'g-gyokai','天ぷら':'g-gyokai','日本料理':'g-gyokai','中国料理':'g-chuka','餃子':'g-chuka','アジア・エスニック':'g-chuka','カレー':'g-chuka','フレンチ':'g-yoshoku','イタリアン':'g-yoshoku','スペイン料理':'g-yoshoku','洋食':'g-yoshoku','ピザ':'g-yoshoku','ハンバーガー':'g-yoshoku','お好み焼き':'g-keishoku','食堂':'g-keishoku','スイーツ':'g-kanmi','和菓子・甘味処':'g-kanmi','パン':'g-kanmi','アイス・ジェラート':'g-kanmi','バー':'g-sake','居酒屋':'g-sake','立ち飲み':'g-sake','カフェ':'g-kissa','喫茶':'g-kissa','創作料理・イノベーティブ':'g-sonota'};
+const FORM_CLASS = {'山城':'f-yamajiro','丘城':'f-okajiro','平城':'f-hirajiro','平山城':'f-hirayama'};
+const OBJ_TYPE_COLOR = { castle:'#546E7A', michi:'#34A853', shop:'#FF9800', manhole:'#B87333', mhcard:'#B87333', pokefuta:'#FBBC04' };
+const typeConfig = { pokefuta:{img:'manhole.png'}, manhole:{img:'manhole.png'}, mhcard:{img:'manhole.png'},
+                     castle:{img:'castle.png'}, michi:{img:'michi.png'}, shop:{img:'tabe.png'} };
+// PREF_TYPES と同じ並び
+const TYPES = [ {t:'shop',label:'食べログ'}, {t:'pokefuta',label:'ポケふた'}, {t:'manhole',label:'マンホール'},
+                {t:'mhcard',label:'カード配布'}, {t:'michi',label:'道の駅'}, {t:'castle',label:'お城'} ];
+
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+/* prefTypeIconHtml と同じ作り */
+function iconHTML(type, color){
+    if (type === 'mhcard') {
+        return `<div style="position:relative;width:var(--mhcard-w);height:var(--mhcard-h);flex-shrink:0;background:#e2ddd4;border-radius:var(--mhcard-radius,6px);"><img src="mhcard.png" style="width:100%;height:100%;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:var(--mhcard-badge);height:var(--mhcard-badge);filter:brightness(0) invert(1);pointer-events:none;"></div>`;
+    }
+    const cfg = typeConfig[type] || {};
+    const c = color || OBJ_TYPE_COLOR[type];
+    return `<div class="nearby-item-icon" style="background:${c}"><img src="${cfg.img}"${cfg.img==='manhole.png'?'':' class="icon-full"'}></div>`;
+}
+
+/* ══ 一覧の行を組む（種別順・実件数） ═════════════════════════ */
+function buildRows(){
+    const rows = [];
+    for (const T of TYPES) {
+        const smp = D.samples[T.t];
+        const push = (i, extra) => {
+            const s = smp[i % smp.length];
+            rows.push(Object.assign({ type:T.t, n:s.n, s:s.s, cid:s.cid, fm:s.fm,
+                dist: (((rows.length*37) % 620) / 10 + 0.4).toFixed(1) + 'km' }, extra || {}));
+        };
+        if (T.t === 'shop') {
+            let i = 0;
+            for (const [g, n] of Object.entries(D.shopGenres)) for (let k = 0; k < n; k++) push(i++, { g });
+        } else if (T.t === 'castle') {
+            let i = 0;
+            for (const [rank, n] of D.castleRank) for (let k = 0; k < n; k++) push(i++, { gr: rank });
+        } else {
+            for (let k = 0; k < D.counts[T.t]; k++) push(k);
+        }
+    }
+    return rows;
+}
+const ROWS = buildRows();
+// 種別ごとの先頭の行番号
+const HEAD = {}; ROWS.forEach((r,i) => { if (HEAD[r.type] === undefined) HEAD[r.type] = i; });
+
+function badgeHTML(r){
+    const b = [];
+    if (r.type === 'castle') {
+        if (r.gr) b.push(`<span class="pref-badge" style="background:${r.gr==='日本100名城'?'#4285F4':'#EA4335'}">${r.gr==='日本100名城'?'100名城':'続100名城'}</span>`);
+        if (r.fm) b.push(`<span class="pref-badge popup-form-badge ${FORM_CLASS[r.fm]||''}">${r.fm}</span>`);
+    } else if (r.type === 'mhcard' && r.cid) b.push(`<span class="pref-badge card">${r.cid}</span>`);
+    else if (r.type === 'manhole' && r.cid) b.push(`<span class="pref-badge card">${r.cid}</span>`);
+    else if (r.type === 'shop' && r.g) b.push(`<span class="pref-badge shop-genre ${SHOP_GENRE_CLASS[r.g]||'g-sonota'}">${r.g}</span>`);
+    return b.length ? `<div class="pref-badges">${b.join('')}</div>` : '';
+}
+function rowHTML(r, i){
+    const col = r.type === 'castle' && r.gr ? (r.gr === '日本100名城' ? '#4285F4' : '#EA4335') : null;
+    return `<div class="nearby-item" data-i="${i}" data-t="${r.type}">${iconHTML(r.type, col)}
+        <div class="nearby-item-text"><div class="nearby-item-name">${esc(r.n)}</div>
+        <div class="nearby-item-sub">${esc(r.s)}</div></div>
+        ${badgeHTML(r)}<div class="nearby-item-dist">${r.dist}</div></div>`;
+}
+/* withHeads: 種別の見出し行を挟む（D・E・推奨案） */
+function listHTML(withHeads){
+    const out = [];
+    ROWS.forEach((r, i) => {
+        if (withHeads && HEAD[r.type] === i) {
+            const T = TYPES.find(x => x.t === r.type);
+            out.push(`<div class="grp-head" data-head="${r.type}">${iconHTML(r.type)}
+                <span>${T.label}</span><span class="g-n">${D.counts[r.type].toLocaleString()}件</span>
+                ${withHeads === 'next' ? '<button class="g-next">次の種別 ↓</button>' : '<span class="g-caret">▼</span>'}</div>`);
+        } else if (!withHeads && HEAD[r.type] === i) {
+            out.push(`<div data-head="${r.type}" style="height:0;"></div>`);
+        }
+        out.push(rowHTML(r, i));
+    });
+    out.push(`<div class="lords-note">全${ROWS.length.toLocaleString()}件</div>`);
+    return out.join('');
+}
+
+/* ══ 画面の枠（ヘッダ〜ソートチップ）は全案で共通 ══════════════ */
+function chromeHTML(extra){
+    const sum = TYPES.map(T => `<div class="pref-sum-item" data-t="${T.t}"><div class="lp-ring"></div>
+        ${iconHTML(T.t)}<div class="pref-sum-v">${D.counts[T.t].toLocaleString()}</div></div>`).join('');
+    return `
+    <div class="lords-head">
+        <button class="lords-iconbtn">‹</button>
+        <div class="lords-head-title">東京都</div>
+        <button class="lords-iconbtn" style="font-size:17px;">×</button>
+    </div>
+    <div class="lords-filter" style="border-bottom:0; padding-bottom:6px;">
+        <input type="search" placeholder="名前・住所で絞り込み">
+    </div>
+    <div class="pref-sum"><div class="pref-sum-line">${sum}</div></div>
+    ${extra.afterSum || ''}
+    <div class="lords-filter">
+        <div class="lords-chips" style="margin-top:0;">
+            <button class="lords-chip" aria-pressed="true">種別順</button>
+            <button class="lords-chip" aria-pressed="false">名前順</button>
+            <button class="lords-chip" aria-pressed="false">近い順</button>
+        </div>
+    </div>
+    <div class="dorg">📍 <b>地図の中心</b> からの距離</div>
+    <div style="position:relative;flex:1;min-height:0;display:flex;">
+      <div class="lords-scroll">${extra.list}</div>
+      ${extra.rail || ''}
+    </div>`;
+}
+
+/* ══ 共通のジャンプ動作 ═══════════════════════════════════ */
+function jump(phone, type){
+    const list = phone.querySelector('.lords-scroll');
+    const head = list.querySelector(`[data-head="${type}"]`);
+    if (!head) return;
+    const sticky = head.classList.contains('grp-head') ? 0 : 0;
+    list.scrollTop += head.getBoundingClientRect().top - list.getBoundingClientRect().top - sticky;
+    const target = head.classList.contains('grp-head') ? head.nextElementSibling : head.nextElementSibling;
+    if (target) { target.classList.remove('jump-flash'); void target.offsetWidth; target.classList.add('jump-flash'); }
+}
+/* 集計帯の操作。
+   mode 省略時は今の挙動（タップ＝種別の表示ON/OFF）。
+   mode==='jump' は役割を入れ替えて、タップ＝その種別の先頭へジャンプ、長押し＝表示ON/OFF。 */
+function bindToggle(phone, mode){
+    const doToggle = el => el.classList.toggle('off');
+    const doJump = el => jump(phone, el.dataset.t);
+    const onTap = mode === 'jump' ? doJump : doToggle;
+    const onLongPress = mode === 'jump' ? doToggle : null;
+    phone.querySelectorAll('.pref-sum-item').forEach(el => {
+        let timer = null, fired = false;
+        const start = () => { fired = false; if (!onLongPress) return;
+            el.classList.add('lp');
+            timer = setTimeout(() => { timer = null; fired = true; el.classList.remove('lp'); onLongPress(el); }, 500); };
+        const cancel = () => { el.classList.remove('lp'); if (timer) { clearTimeout(timer); timer = null; } };
+        const end = () => { cancel(); if (fired) { fired = false; return; } onTap(el); };
+        el.addEventListener('mousedown', start); el.addEventListener('mouseup', end);
+        el.addEventListener('mouseleave', cancel);
+        el.addEventListener('touchstart', start, {passive:true});
+        el.addEventListener('touchend', e => { e.preventDefault(); end(); });
+        el.addEventListener('contextmenu', e => e.preventDefault());
+    });
+}
+
+/* ══ 案の定義 ═══════════════════════════════════════════ */
+const CASES = [
+{
+  id:'A', title:'集計帯をタップでジャンプ（表示ON/OFFは長押しへ）', op:'タップ 1回',
+  desc:'今ある集計帯の<b>役割を入れ替える</b>。タップ＝その種別の先頭へジャンプ、長押し＝表示のON/OFF。追加の部品も縦の場所も一切いらない。長押し中はアイコンの周りに枠が出て、ON/OFFに切り替わることを伝える。',
+  pros:'・画面に何も足さない（縦の余白ゼロ）<br>・1タップで任意の種別へ飛べる<br>・アイコンの並びが集計帯＝一覧の順と一致していて迷わない<br>・使う頻度の高い操作（見に行く）を、軽いほうのタップに割り当てられる',
+  cons:'・今の「タップ＝表示ON/OFF」から意味が変わる<br>・食べログの長押しは既にジャンル行に使われていて、表示ON/OFFと衝突する（食べログだけ別扱いにするか、ジャンル行を別の操作へ移す必要）<br>・長押しは見えない操作なので、表示ON/OFFの見つけやすさが下がる',
+  build(phone){
+    phone.innerHTML = chromeHTML({ list: listHTML(false) });
+    bindToggle(phone, 'jump');
+  }
+},
+{
+  id:'B', title:'ジャンプ用のチップ行を1本足す', op:'タップ 1回',
+  desc:'集計帯の下に<b>横並びのチップ行</b>を足し、押すとその種別の先頭へ飛ぶ。何が起きるかが字で読めるので、説明がいらない。',
+  pros:'・意味が一目で分かり、1タップで任意の種別へ<br>・既存の操作に一切触らない<br>・実装が最も単純（押す→scrollTop）',
+  cons:'・縦を約31px使う。ヘッダ・検索・集計帯・ソート・起点帯で既に上が重く、一覧が更に狭くなる<br>・集計帯と同じ情報（種別と件数）が二重に出る',
+  build(phone){
+    const line = '<div class="jumpline">' + TYPES.map(T =>
+      `<button class="jchip" data-t="${T.t}">${iconHTML(T.t)}${T.label}<b>${D.counts[T.t].toLocaleString()}</b></button>`).join('') + '</div>';
+    phone.innerHTML = chromeHTML({ list: listHTML(false), afterSum: line });
+    bindToggle(phone, null);
+    phone.querySelectorAll('.jchip').forEach(c => c.onclick = () => jump(phone, c.dataset.t));
+  }
+},
+{
+  id:'C', title:'右端に縦の種別インデックス', op:'タップ / なぞる',
+  desc:'一覧の右端に種別アイコンを縦に並べ、<b>タップで飛ぶ・指を上下に滑らせると飛び先が続けて変わる</b>（iOSの連絡先のA〜Z索引と同じ操作）。一覧に重ねるので縦を使わない。',
+  pros:'・縦の場所を使わずに1タップで任意の種別へ<br>・親指の届く右端にあり、片手で送りながら操作できる<br>・なぞると次々に切り替わるので、行き過ぎても戻せる',
+  cons:'・一覧の右端（距離・バッジ）に重なる<br>・太いスクロールバー（13px）の隣に細い操作面が並ぶので、掴み間違いが起きうる<br>・アイコンだけでは何の操作か伝わりにくい',
+  build(phone){
+    const rail = `<div class="rail"><div class="rail-in">
+      ${TYPES.map(T => `<div class="rail-item" data-t="${T.t}">${iconHTML(T.t)}</div>`).join('')}
+      </div><div class="rail-bubble"></div></div>`;
+    phone.innerHTML = chromeHTML({ list: listHTML(false), rail });
+    bindToggle(phone, null);
+    bindRail(phone);
+  }
+},
+{
+  id:'D', title:'種別の見出しを貼り付け＋「次の種別 ↓」', op:'タップ 1回（隣へ）',
+  desc:'一覧に<b>種別の見出し行</b>を入れて上に貼り付ける。今どの種別を見ているかが常に出て、見出しの右のボタンで<b>次の種別の先頭</b>へ送れる。',
+  pros:'・「今どこにいるか」が常に見えるので、ジャンプ後に迷わない<br>・見出しは一覧の中なので、上の固定領域を増やさない<br>・種別の区切りが視覚的に分かり、境目を探す必要がなくなる',
+  cons:'・隣の種別へしか進めない。食べログからお城へは5回押す<br>・戻る向きの導線が別にいる（見出しをタップ＝前へ、など）<br>・見出しの行だけ一覧が6行分伸びる',
+  build(phone){
+    phone.innerHTML = chromeHTML({ list: listHTML('next') });
+    bindToggle(phone, null);
+    phone.querySelectorAll('.g-next').forEach(b => b.onclick = e => {
+      e.stopPropagation();
+      const cur = b.closest('.grp-head').dataset.head;
+      const i = TYPES.findIndex(x => x.t === cur);
+      const nx = TYPES[(i + 1) % TYPES.length];
+      jump(phone, nx.t);
+    });
+  }
+},
+{
+  id:'E', title:'種別の見出しをタップで折りたたむ', op:'タップ 1回（畳む）',
+  desc:'見出しをタップすると、その種別が<b>畳まれて件数だけ</b>になる。飛ぶのではなく、<b>邪魔なものを消して目的の種別を上へ引き上げる</b>考え方。食べログを畳めば残り5種別が1画面に収まる。',
+  pros:'・畳んだ状態を覚えておけば、次に開いた県でも同じ見え方にできる<br>・「その種別だけを見る」用途では絞り込みより直感的<br>・ジャンプと違って現在地の感覚が失われない',
+  cons:'・目的の種別に着くまでに、手前の種別を畳む操作がいる（最悪5回）<br>・集計帯のON/OFFと機能が重なる（畳む＝実質そこだけ非表示）<br>・畳んだことを忘れると、件数が合わないように見える',
+  build(phone){
+    phone.innerHTML = chromeHTML({ list: listHTML(true) });
+    bindToggle(phone, null);
+    phone.querySelectorAll('.grp-head').forEach(h => h.onclick = () => {
+      const t = h.dataset.head, on = h.classList.toggle('collapsed');
+      phone.querySelectorAll(`.nearby-item[data-t="${t}"]`).forEach(r => r.classList.toggle('collapsed-hide', on));
+    });
+  }
+},
+{
+  id:'F', title:'C＋D（右端インデックス＋貼り付け見出し）', op:'タップ / なぞる', reco:true,
+  desc:'右端のインデックスで<b>任意の種別へ1操作で飛び</b>、貼り付いた見出しで<b>今どこにいるかが常に見える</b>。インデックスは今見ている種別を丸で示すので、両者が互いの弱点（現在地が分からない／隣にしか行けない）を消し合う。iOSの連絡先が採っている組み合わせ。',
+  pros:'・1タップで任意の種別へ、なぞれば連続で移動<br>・上の固定領域を1pxも増やさない<br>・スクロール中も現在の種別が見出しとインデックスの両方に出る<br>・見出しが飛び先の目印になり、着地位置が分かりやすい',
+  cons:'・部品が2つ増えるぶん実装量は最大<br>・右端の重なり問題（C案と同じ）は残る',
+  build(phone){
+    const rail = `<div class="rail"><div class="rail-in">
+      ${TYPES.map(T => `<div class="rail-item" data-t="${T.t}">${iconHTML(T.t)}</div>`).join('')}
+      </div><div class="rail-bubble"></div></div>`;
+    phone.innerHTML = chromeHTML({ list: listHTML(true), rail });
+    bindToggle(phone, null);
+    bindRail(phone);
+    // スクロールに合わせて今の種別をインデックスに反映
+    const list = phone.querySelector('.lords-scroll');
+    list.addEventListener('scroll', () => {
+      const top = list.getBoundingClientRect().top + 4;
+      let cur = TYPES[0].t;
+      TYPES.forEach(T => {
+        const h = list.querySelector(`[data-head="${T.t}"]`);
+        if (h && h.getBoundingClientRect().top <= top + 24) cur = T.t;
+      });
+      phone.querySelectorAll('.rail-item').forEach(r => r.classList.toggle('cur', r.dataset.t === cur));
+    });
+  }
+}];
+
+/* 右端インデックスの操作（タップ・なぞり） */
+function bindRail(phone){
+    const rail = phone.querySelector('.rail');
+    const bubble = rail.querySelector('.rail-bubble');
+    const pick = y => {
+        let hit = null;
+        rail.querySelectorAll('.rail-item').forEach(it => {
+            const r = it.getBoundingClientRect();
+            if (y >= r.top && y <= r.bottom) hit = it;
+        });
+        return hit;
+    };
+    let dragging = false, last = null;
+    const move = y => {
+        const it = pick(y);
+        if (!it || it === last) return;
+        last = it;
+        jump(phone, it.dataset.t);
+        const T = TYPES.find(x => x.t === it.dataset.t);
+        bubble.textContent = `${T.label} ${D.counts[T.t].toLocaleString()}件`;
+        bubble.style.top = (it.offsetTop + it.offsetHeight / 2 - 15) + 'px';
+        bubble.classList.add('on');
+        rail.querySelectorAll('.rail-item').forEach(r => r.classList.toggle('cur', r === it));
+    };
+    const end = () => { dragging = false; last = null; setTimeout(() => bubble.classList.remove('on'), 550); };
+    rail.addEventListener('pointerdown', e => { dragging = true; rail.setPointerCapture(e.pointerId); move(e.clientY); });
+    rail.addEventListener('pointermove', e => { if (dragging) move(e.clientY); });
+    rail.addEventListener('pointerup', end);
+    rail.addEventListener('pointercancel', end);
+}
+
+/* ══ 描画（見えたときに組む。1枠2,496行あるため） ═══════════ */
+const host = document.getElementById('cases');
+host.innerHTML = CASES.map(c => `
+  <div class="case${c.reco ? ' reco' : ''}">
+    <h3>${c.id}案：${c.title}<span class="op">${c.op}</span></h3>
+    <div class="desc">${c.desc}</div>
+    <div class="phone" data-id="${c.id}"><div class="lords-note">…</div></div>
+    <div class="pros">${c.pros}</div>
+    <div class="cons">${c.cons}</div>
+  </div>`).join('');
+
+const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting || e.target.dataset.built) return;
+    e.target.dataset.built = '1';
+    CASES.find(c => c.id === e.target.dataset.id).build(e.target);
+}), { rootMargin: '400px' });
+document.querySelectorAll('.phone').forEach(p => io.observe(p));
+</script>
+</body></html>
