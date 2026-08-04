@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<base href="../"><meta charset="utf-8"><title>A案でジャンル行をどこから開くか — 3案</title>
+<style>
+:root {
+    --obj-icon-circle: 28px; --obj-icon-inner: 25px; --obj-icon-inner-full: 28px;
+    --mhcard-w: 28px; --mhcard-h: 36px; --mhcard-badge: 22.4px;
+}
+* { box-sizing: border-box; }
+body { margin:0; background:#eceff1; font-family: sans-serif; padding:24px; color:#333; }
+h1 { font-size:18px; margin:0 0 6px; }
+.lead { font-size:13px; color:#555; margin:0 0 8px; line-height:1.8; max-width:1200px; }
+.lead code, .lead b { background:#fff; padding:1px 5px; border-radius:4px; font-weight:bold; }
+.lead .num { color:#c62828; }
+h2.sec { font-size:14px; margin:26px 0 12px; padding-bottom:5px; border-bottom:1px solid #cfd8dc; }
+.wrap { display:flex; gap:18px; flex-wrap:wrap; align-items:flex-start; }
+.case { width:375px; }
+.case > h3 { font-size:13.5px; margin:0 0 3px; }
+.case > .desc { font-size:11.5px; color:#666; margin:0 0 8px; line-height:1.7; min-height:92px; }
+.case .pros { font-size:11px; color:#2e7d32; line-height:1.65; margin-top:7px; }
+.case .cons { font-size:11px; color:#c62828; line-height:1.65; }
+.case.reco { outline:3px solid #2a5bd7; outline-offset:9px; border-radius:4px; }
+.case.reco > h3::after { content:'推奨'; font-size:10.5px; color:#fff; background:#2a5bd7; border-radius:9px; padding:2px 8px; margin-left:6px; }
+.phone { width:375px; height:640px; background:#fff; border-radius:12px; overflow:hidden;
+         position:relative; box-shadow:0 4px 14px rgba(0,0,0,.16); display:flex; flex-direction:column; }
+.note { font-size:12px; color:#555; line-height:1.9; max-width:1200px; background:#fff;
+        border-left:4px solid #90a4ae; padding:12px 16px; border-radius:0 6px 6px 0; }
+.note b { color:#333; }
+.note ul { margin:6px 0 0; padding-left:20px; }
+.note li { margin-bottom:4px; }
+
+/* ── index.html からそのまま持ってきた実CSS ───────────────────── */
+.lords-head { display:flex; align-items:center; gap:8px; padding:12px 12px 8px; flex-shrink:0; }
+.lords-head-title { font-size:14px; font-weight:bold; color:#333; flex:1; min-width:0;
+                    overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.lords-iconbtn { width:32px; height:32px; border:0; background:#f5f5f5; border-radius:8px;
+                 color:#555; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.lords-filter { padding:0 12px 8px; flex-shrink:0; border-bottom:1px solid #f0f0f0; }
+.lords-filter input { width:100%; height:34px; border:1px solid #e3e3e3; border-radius:17px;
+                      padding:0 12px; font-size:13px; font-family:inherit; background:#fafafa; color:#333; }
+.lords-chips { display:flex; gap:6px; margin-top:7px; flex-wrap:wrap; }
+.lords-chip { font-size:11px; padding:4px 10px; border-radius:14px; background:#f2f2f2;
+              color:#666; border:0; cursor:pointer; font-family:inherit; }
+.lords-chip[aria-pressed="true"] { background:#e3ecff; color:#2a5bd7; font-weight:bold; }
+.lords-scroll { overflow-y:auto; flex:1; min-height:0; position:relative; }
+.lords-scroll::-webkit-scrollbar { width:13px; }
+.lords-scroll::-webkit-scrollbar-track { background:#f4f6f7; }
+.lords-scroll::-webkit-scrollbar-thumb { background:#c3ccd2; border-radius:7px; border:3px solid #f4f6f7; }
+.lords-note { padding:16px; text-align:center; color:#999; font-size:13px; }
+.pref-sum { padding:9px 13px; background:#f7f9fa; border-bottom:1px solid #f0f0f0; flex-shrink:0; }
+.pref-sum-line { display:flex; gap:12px; justify-content:space-between; align-items:flex-end;
+                 min-height:calc(var(--mhcard-h) + 20px); }
+.pref-sum-item { display:flex; flex-direction:column; align-items:center; justify-content:flex-end;
+                 text-align:center; cursor:pointer; padding:3px 5px 4px; border-radius:9px;
+                 -webkit-tap-highlight-color:transparent; user-select:none; position:relative; }
+.pref-sum-item.off { filter:grayscale(1); opacity:.34; }
+.pref-sum-v { font-size:13px; font-weight:bold; color:#546E7A; margin-top:3px; }
+.pref-gline { padding:6px 13px 8px; border-bottom:1px solid #f0f0f0; flex-shrink:0; }
+.pref-gline-h { font-size:11px; color:#888; margin-bottom:5px; }
+.pref-gline-h b { color:#b26a00; }
+.pref-ggrp { margin-bottom:6px; }
+.pref-ggrp:last-child { margin-bottom:0; }
+.pref-ggname { font-size:10px; color:#9aa4ad; margin-bottom:3px; }
+.pref-gchips { display:flex; flex-wrap:wrap; gap:5px; }
+.ptg { font-size:11px; padding:4px 9px; border-radius:13px; background:#f2f2f2; color:#666;
+       border:0; cursor:pointer; font-family:inherit; }
+.ptg.on { color:#fff; font-weight:bold; }
+.ptg-n { opacity:.6; margin-left:3px; font-size:10px; }
+.pref-rstbar { display:flex; align-items:center; gap:8px; padding:6px 13px; background:#fff8e1;
+               border-bottom:1px solid #f0e2b8; font-size:11.5px; color:#8a6d1a; flex-shrink:0; }
+.pref-rstbar button { margin-left:auto; border:0; background:#fff; border-radius:12px; padding:3px 10px;
+                      font-size:11px; color:#2a5bd7; font-weight:bold; cursor:pointer; font-family:inherit; flex-shrink:0; }
+.dorg { display:flex; align-items:center; gap:6px; padding:6px 13px; background:#f7f9fa;
+        border-bottom:1px solid #f0f0f0; font-size:11px; flex-shrink:0; }
+.dorg b { color:#455a64; font-weight:600; }
+.pref-badges { display:flex; flex-direction:column; gap:2px; align-items:flex-end; flex-shrink:0; }
+.pref-badge { font-size:9.5px; font-weight:700; color:#fff; padding:1px 7px; border-radius:9px;
+              white-space:nowrap; line-height:1.5; }
+.pref-badge.card { background:#8d6e63; }
+.popup-form-badge.f-yamajiro { background:hsl(0,42%,38%); }
+.popup-form-badge.f-okajiro  { background:hsl(20,42%,38%); }
+.popup-form-badge.f-hirajiro { background:hsl(125,38%,32%); }
+.popup-form-badge.f-hirayama { background:hsl(105,36%,32%); }
+.shop-genre.g-men      { background:hsl(20,42%,37%); }
+.shop-genre.g-niku     { background:hsl(0,42%,37%); }
+.shop-genre.g-gyokai   { background:hsl(205,40%,37%); }
+.shop-genre.g-chuka    { background:hsl(340,32%,37%); }
+.shop-genre.g-yoshoku  { background:hsl(230,30%,37%); }
+.shop-genre.g-keishoku { background:hsl(45,42%,37%); }
+.shop-genre.g-kanmi    { background:hsl(320,28%,37%); }
+.shop-genre.g-sake     { background:hsl(285,35%,37%); }
+.shop-genre.g-kissa    { background:hsl(160,26%,37%); }
+.shop-genre.g-sonota   { background:hsl(0,0%,45%); }
+.nearby-item { display:flex; align-items:center; padding:10px 14px; border-bottom:1px solid #f0f0f0;
+               cursor:pointer; gap:10px; }
+.nearby-item.hide { display:none; }
+.nearby-item-icon { width:var(--obj-icon-circle); height:var(--obj-icon-circle); border-radius:50%;
+                    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+                    overflow:hidden; background:#eee; }
+.nearby-item-icon img { width:var(--obj-icon-inner); height:var(--obj-icon-inner); object-fit:contain;
+                        filter:brightness(0) invert(1); }
+.nearby-item-icon img.icon-full { width:var(--obj-icon-inner-full); height:var(--obj-icon-inner-full); }
+.nearby-item-text { flex:1; min-width:0; }
+.nearby-item-name { font-size:13px; font-weight:bold; color:#333; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.nearby-item-sub  { font-size:11px; color:#999; margin-top:1px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.nearby-item-dist { font-size:12px; color:#4285F4; font-weight:bold; flex-shrink:0; }
+
+/* ── この提案で足すぶん ────────────────────────────────── */
+@keyframes jumpflash { from { background:#fff59d; } to { background:transparent; } }
+.jump-flash { animation: jumpflash 1.1s ease-out; }
+/* 長押し中の進み具合（表示ON/OFFに切り替わることを伝える） */
+.lp-ring { position:absolute; inset:-2px; border-radius:9px; border:2px solid #2a5bd7;
+           clip-path: inset(100% 0 0 0); transition: clip-path .5s linear; pointer-events:none; }
+.pref-sum-item.lp .lp-ring { clip-path: inset(0 0 0 0); }
+/* 案3: 件数の横に出す開閉マーク */
+.gcaret { display:inline-block; margin-left:2px; font-size:10px; color:#2a5bd7;
+          padding:2px 4px; margin:-2px -4px -2px 0; }
+.gcaret.open { transform:rotate(180deg); }
+/* 操作の対応表 */
+.optable { width:100%; border-collapse:collapse; font-size:11px; margin-top:8px; background:#fff; }
+.optable th, .optable td { border:1px solid #e0e6e9; padding:4px 7px; text-align:left; }
+.optable th { background:#f7f9fa; color:#546E7A; font-weight:bold; white-space:nowrap; }
+.optable td { color:#555; }
+</style>
+</head><body>
+
+<h1>A案（タップ＝ジャンプ／長押し＝表示ON・OFF）で、食べログのジャンル行をどこから開くか</h1>
+<p class="lead">
+A案にすると、集計帯の<b>長押し</b>が「表示のON/OFF」に使われる。ところが今そこには<b>食べログの長押し＝ジャンル行（その県の部門を絞る2段目）</b>が入っていて（<code>bindPrefSumItem</code>）、置き場所が要る。
+設定画面のオブジェクト表示にも同じ見た目のジャンル行があるが、あちらは<b>全国の部門を消す設定</b>（<code>genreVisible</code>）で別物なので、代わりにはならない。<br>
+題材は東京都・全2,496件（食べログ2,084／ポケふた13／マンホール99／カード配布115／道の駅1／お城184）。
+部門は東京都に実在する<b>35部門</b>で、件数も実データ。<b>3案とも実際に動く</b>（集計帯をタップ＝ジャンプ、長押し＝表示ON/OFF、ジャンルのチップは押すと一覧が絞られる）。
+</p>
+
+<h2 class="sec">3案（枠内は操作できます）</h2>
+<div class="wrap" id="cases"></div>
+
+<h2 class="sec">3案に共通して分かること</h2>
+<div class="note">
+<ul>
+<li><b>ジャンル行は開くと縦を大きく食う。</b> 35部門を10グループで出すので、開いている間は一覧が大きく潰れる（モックのとおり）。
+    これは置き場所を変えても直らない今の作りで、3案とも同じ。ジャンル行を出したまま一覧を見る使い方は、どの案でも成立しない。</li>
+<li><b>食べログを非表示にすると、ジャンル行は開けない（今と同じ）。</b> <code>renderPrefGenreLine</code> は <code>prefState.types.has('shop')</code> を見ていて、
+    OFFのときは空にする。案1・案3では「食べログがOFFのときジャンルの導線をどう見せるか」（消す／押せなくする）を決める必要がある。上のモックは押せなくして薄く出している。</li>
+<li><b>表示OFFにした種別をタップしても飛び先が無い。</b> その種別の行は一覧から消えているので、何も起きない（モックも同じ）。長押しでONに戻してから飛ぶことになる。</li>
+<li><b>絞り込み中の帯（黄色）はどの案でも同じ。</b> 種別・部門のどちらかを絞っていると出て、「すべて表示」で両方戻る。</li>
+</ul>
+</div>
+
+<script>
+/* ══ 実データから作ったサンプル（pref-jump-preview.html と同じ） ══ */
+const D = {"counts":{"shop":2084,"pokefuta":13,"manhole":99,"mhcard":115,"michi":1,"castle":184},
+"samples":{"shop":[{"n":"銀座 八五","s":"東京都中央区銀座三丁目"},{"n":"麺処 銀笹（ぎんざさ）","s":"東京都中央区銀座八丁目"},{"n":"六厘舎 東京駅東京ラーメンストリート","s":"東京都千代田区丸の内一丁目"},{"n":"麺や 七彩（しちさい）","s":"東京都中央区八丁堀二丁目"},{"n":"はやし","s":"東京都渋谷区道玄坂一丁目"},{"n":"麺屋 翔 本店","s":"東京都新宿区西新宿七丁目"},{"n":"風雲児 新宿本店（ふううんじ）","s":"東京都渋谷区代々木二丁目"},{"n":"つけ麺 五ノ神製作所","s":"東京都渋谷区千駄ヶ谷五丁目"},{"n":"らぁ麺や 嶋","s":"東京都渋谷区本町三丁目"},{"n":"RAMEN MATSUI","s":"東京都新宿区四谷四丁目"},{"n":"ジャパニーズ ラーメン 五感","s":"東京都豊島区東池袋二丁目"},{"n":"らぁ麺やまぐち","s":"東京都新宿区西早稲田三丁目"},{"n":"自家製中華そば としおか","s":"東京都新宿区弁天町"},{"n":"入鹿TOKYO 六本木","s":"東京都港区六本木四丁目"}],
+"pokefuta":[{"n":"ピカチュウ / イーブイ","s":"東京都稲城市矢野口4015-1 よみうりランド遊園地内"},{"n":"ヤジロン / ドーミラー","s":"東京都台東区上野公園13-9"},{"n":"チゴラス / ソーナノ","s":"東京都台東区上野公園7-20"},{"n":"ミュウ","s":"東京都小笠原村父島字東町"},{"n":"カメックス","s":"東京都小笠原村父島字東町"},{"n":"リザードン","s":"東京都小笠原村父島字東町"},{"n":"フシギバナ","s":"東京都小笠原村父島字東町"},{"n":"ニョロモ","s":"東京都町田市原町田5-16"},{"n":"ポッポ / コラッタ","s":"東京都町田市原町田5-16"},{"n":"ナゾノクサ / ビードル / キャタピー","s":"東京都町田市原町田5-16"},{"n":"ゼニガメ","s":"東京都町田市原町田5-16"},{"n":"ヒトカゲ","s":"東京都町田市原町田5-16"},{"n":"フシギダネ","s":"東京都町田市原町田5-16"}],
+"manhole":[{"n":"東京都 東京23区","s":"東京都足立区西伊興一丁目","cid":"13-100-P001"},{"n":"東京都 八王子市","s":"東京都八王子市高尾町","cid":"13-201-A001"},{"n":"東京都 小平市","s":"東京都小平市上水本町一丁目","cid":"13-211-A001"},{"n":"東京都 羽村市","s":"東京都羽村市羽東一丁目","cid":"13-227-A001"},{"n":"東京都 瑞穂町","s":"東京都瑞穂町大字箱根ケ崎","cid":"13-303-A001"},{"n":"東京都 小金井市","s":"東京都小金井市東町四丁目","cid":"13-210-A001"},{"n":"東京都 武蔵野市","s":"東京都武蔵野市吉祥寺本町一丁目","cid":"13-203-P001"},{"n":"東京都 国分寺市","s":"東京都国分寺市本町一丁目","cid":"13-214-A001"},{"n":"東京都 狛江市","s":"東京都狛江市東和泉四丁目","cid":"13-219-A001"},{"n":"東京都 多摩市","s":"東京都多摩市落合一丁目","cid":"13-224-A001"},{"n":"東京都 昭島市","s":"東京都昭島市田中町一丁目","cid":"13-207-A001"},{"n":"東京都 立川市","s":"東京都立川市錦町三丁目","cid":"13-202-A001"},{"n":"東京都 調布市","s":"東京都調布市小島町一丁目","cid":"13-208-A001"},{"n":"東京都 町田市","s":"東京都町田市森野二丁目","cid":"13-209-A001"}],
+"mhcard":[{"n":"UR都市機構 (B001) URまちとくらしのミュージアム","s":"東京都北区赤羽台1-4-50","cid":"B001"},{"n":"流域下水道 東京観光情報センター 多摩","s":"東京都立川市柴崎町3-1-1「エキュート立川」3階","cid":""},{"n":"東京23区（A001） CADAN大手町","s":"東京都千代田区大手町2-6-3 TOKYO TORCH","cid":"A001"},{"n":"東京23区（B001） 東京都虹の下水道館","s":"東京都江東区有明2-3-5（有明水再生センター5階）","cid":"B001"},{"n":"東京23区（C001） 東京観光情報センター 京成上野","s":"東京都台東区上野公園1-60 京成上野駅改札口前","cid":"C001"},{"n":"東京23区（D001） 第一書林（新小岩北口店）","s":"東京都葛飾区西新小岩1-2-11喜久屋ビル1F","cid":"D001"},{"n":"東京23区（E001） しながわ観光協会","s":"東京都品川区大井1-14-1 大井1丁目共同ビル1階","cid":"E001"},{"n":"東京23区(M001) info & cafe SQUARE","s":"東京都品川区荏原4-5-28 スクエア荏原1F","cid":"M001"},{"n":"東京23区 (N001) 丸吉玩具店","s":"東京都葛飾区立石1-21-2","cid":"N001"},{"n":"東京23区 (C101) 練馬区立大泉図書館","s":"東京都練馬区大泉学園町2-21-17","cid":"C101"},{"n":"東京23区 (D101) 旧三河島汚水処分場喞筒場施設","s":"東京都荒川区荒川8-25-1","cid":"D101"},{"n":"東京23区 (E101) 東映アニメーションミュージアムショップ","s":"東京都練馬区東大泉2-10-5","cid":"E101"},{"n":"東京23区 (F101) 渋沢×北区 飛鳥山おみやげ館","s":"東京都北区西ケ原2-16飛鳥山公園管理事務所内","cid":"F101"},{"n":"東京23区 (G101) 港区観光インフォメーションセンター","s":"東京都港区芝五丁目36番4号 札の辻スクエア1階","cid":"G101"}],
+"michi":[{"n":"道の駅八王子滝山","s":"東京都八王子市滝山町1-592-2"}],
+"castle":[{"n":"赤塚城","s":"東京都板橋区赤塚五丁目","fm":"平山城"},{"n":"石浜城","s":"東京都荒川区南千住三丁目","fm":"平山城"},{"n":"今井城 (武蔵国)","s":"東京都青梅市今井一丁目","fm":"平山城"},{"n":"奥沢城","s":"東京都世田谷区奥沢七丁目","fm":"平城"},{"n":"葛西城","s":"東京都葛飾区青戸七丁目","fm":"平城"},{"n":"勝沼城","s":"東京都青梅市東青梅六丁目","fm":"丘城"},{"n":"辛垣城","s":"東京都青梅市成木八丁目","fm":"山城"},{"n":"渋谷城","s":"東京都渋谷区渋谷三丁目","fm":"平山城"},{"n":"志村城","s":"東京都板橋区志村二丁目","fm":"平山城"},{"n":"石神井城","s":"東京都練馬区石神井台一丁目","fm":"平城"},{"n":"白金長者屋敷","s":"東京都港区白金台五丁目","fm":"平山城"},{"n":"深大寺城","s":"東京都調布市深大寺元町二丁目","fm":"平山城"},{"n":"世田谷城","s":"東京都世田谷区豪徳寺二丁目","fm":"平山城"}],
+},
+"shopGenres":{"ラーメン":100,"うどん":59,"そば":48,"焼肉":100,"焼き鳥":68,"鳥料理":25,"ステーキ・鉄板焼き":54,"とんかつ":46,"すき焼き・しゃぶしゃぶ":31,"寿司":99,"うなぎ":27,"天ぷら":36,"日本料理":95,"中国料理":100,"餃子":22,"アジア・エスニック":100,"カレー":100,"フレンチ":100,"イタリアン":100,"スペイン料理":33,"洋食":49,"ピザ":32,"ハンバーガー":40,"お好み焼き":11,"食堂":23,"スイーツ":100,"和菓子・甘味処":100,"パン":100,"アイス・ジェラート":23,"バー":35,"居酒屋":39,"立ち飲み":20,"カフェ":87,"喫茶":55,"創作料理・イノベーティブ":27},
+"castleRank":[["日本100名城",2],["続日本100名城",2],["",180]]};
+
+const SHOP_GENRE_GROUPS = [
+    ['麺', ['ラーメン','うどん','そば']],
+    ['肉', ['焼肉','焼き鳥','鳥料理','ステーキ・鉄板焼き','とんかつ','すき焼き・しゃぶしゃぶ']],
+    ['魚介・和食', ['寿司','うなぎ','天ぷら','日本料理']],
+    ['中華・アジア', ['中国料理','餃子','アジア・エスニック','カレー']],
+    ['洋食', ['フレンチ','イタリアン','スペイン料理','洋食','ピザ','ハンバーガー']],
+    ['軽食・粉もの', ['お好み焼き','食堂']],
+    ['甘味・パン', ['スイーツ','和菓子・甘味処','パン','アイス・ジェラート']],
+    ['酒', ['バー','居酒屋','立ち飲み']],
+    ['喫茶', ['カフェ','喫茶']],
+    ['その他', ['創作料理・イノベーティブ']],
+];
+const SHOP_GENRE_CLASS = {'ラーメン':'g-men','うどん':'g-men','そば':'g-men','焼肉':'g-niku','焼き鳥':'g-niku','鳥料理':'g-niku','ステーキ・鉄板焼き':'g-niku','とんかつ':'g-niku','すき焼き・しゃぶしゃぶ':'g-niku','寿司':'g-gyokai','うなぎ':'g-gyokai','天ぷら':'g-gyokai','日本料理':'g-gyokai','中国料理':'g-chuka','餃子':'g-chuka','アジア・エスニック':'g-chuka','カレー':'g-chuka','フレンチ':'g-yoshoku','イタリアン':'g-yoshoku','スペイン料理':'g-yoshoku','洋食':'g-yoshoku','ピザ':'g-yoshoku','ハンバーガー':'g-yoshoku','お好み焼き':'g-keishoku','食堂':'g-keishoku','スイーツ':'g-kanmi','和菓子・甘味処':'g-kanmi','パン':'g-kanmi','アイス・ジェラート':'g-kanmi','バー':'g-sake','居酒屋':'g-sake','立ち飲み':'g-sake','カフェ':'g-kissa','喫茶':'g-kissa','創作料理・イノベーティブ':'g-sonota'};
+const FORM_CLASS = {'山城':'f-yamajiro','丘城':'f-okajiro','平城':'f-hirajiro','平山城':'f-hirayama'};
+const OBJ_TYPE_COLOR = { castle:'#546E7A', michi:'#34A853', shop:'#FF9800', manhole:'#B87333', mhcard:'#B87333', pokefuta:'#FBBC04' };
+const typeConfig = { pokefuta:{img:'manhole.png'}, manhole:{img:'manhole.png'}, mhcard:{img:'manhole.png'},
+                     castle:{img:'castle.png'}, michi:{img:'michi.png'}, shop:{img:'tabe.png'} };
+const TYPES = [ {t:'shop',label:'食べログ'}, {t:'pokefuta',label:'ポケふた'}, {t:'manhole',label:'マンホール'},
+                {t:'mhcard',label:'カード配布'}, {t:'michi',label:'道の駅'}, {t:'castle',label:'お城'} ];
+// ジャンル行の並びは10グループの区分順（renderPrefGenreLine と同じ）
+const GENRES = SHOP_GENRE_GROUPS.flatMap(([, m]) => m.filter(c => D.shopGenres[c] !== undefined));
+
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function iconHTML(type, color){
+    if (type === 'mhcard') {
+        return `<div style="position:relative;width:var(--mhcard-w);height:var(--mhcard-h);flex-shrink:0;background:#e2ddd4;border-radius:var(--mhcard-radius,6px);"><img src="mhcard.png" style="width:100%;height:100%;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:var(--mhcard-badge);height:var(--mhcard-badge);filter:brightness(0) invert(1);pointer-events:none;"></div>`;
+    }
+    const cfg = typeConfig[type] || {};
+    return `<div class="nearby-item-icon" style="background:${color || OBJ_TYPE_COLOR[type]}"><img src="${cfg.img}"${cfg.img==='manhole.png'?'':' class="icon-full"'}></div>`;
+}
+
+/* ══ 一覧の行（種別順・実件数） ═════════════════════════════ */
+function buildRows(){
+    const rows = [];
+    for (const T of TYPES) {
+        const smp = D.samples[T.t];
+        const push = (i, extra) => {
+            const s = smp[i % smp.length];
+            rows.push(Object.assign({ type:T.t, n:s.n, s:s.s, cid:s.cid, fm:s.fm,
+                dist: (((rows.length*37) % 620) / 10 + 0.4).toFixed(1) + 'km' }, extra || {}));
+        };
+        if (T.t === 'shop') { let i = 0;
+            for (const g of GENRES) for (let k = 0; k < D.shopGenres[g]; k++) push(i++, { g });
+        } else if (T.t === 'castle') { let i = 0;
+            for (const [rank, n] of D.castleRank) for (let k = 0; k < n; k++) push(i++, { gr: rank });
+        } else {
+            for (let k = 0; k < D.counts[T.t]; k++) push(k);
+        }
+    }
+    return rows;
+}
+const ROWS = buildRows();
+
+function badgeHTML(r){
+    const b = [];
+    if (r.type === 'castle') {
+        if (r.gr) b.push(`<span class="pref-badge" style="background:${r.gr==='日本100名城'?'#4285F4':'#EA4335'}">${r.gr==='日本100名城'?'100名城':'続100名城'}</span>`);
+        if (r.fm) b.push(`<span class="pref-badge popup-form-badge ${FORM_CLASS[r.fm]||''}">${r.fm}</span>`);
+    } else if ((r.type === 'mhcard' || r.type === 'manhole') && r.cid) b.push(`<span class="pref-badge card">${r.cid}</span>`);
+    else if (r.type === 'shop' && r.g) b.push(`<span class="pref-badge shop-genre ${SHOP_GENRE_CLASS[r.g]||'g-sonota'}">${r.g}</span>`);
+    return b.length ? `<div class="pref-badges">${b.join('')}</div>` : '';
+}
+function listHTML(){
+    return ROWS.map(r => {
+        const col = r.type === 'castle' && r.gr ? (r.gr === '日本100名城' ? '#4285F4' : '#EA4335') : null;
+        return `<div class="nearby-item" data-t="${r.type}"${r.g ? ` data-g="${esc(r.g)}"` : ''}>${iconHTML(r.type, col)}
+            <div class="nearby-item-text"><div class="nearby-item-name">${esc(r.n)}</div>
+            <div class="nearby-item-sub">${esc(r.s)}</div></div>
+            ${badgeHTML(r)}<div class="nearby-item-dist">${r.dist}</div></div>`;
+    }).join('') + `<div class="lords-note tail">全${ROWS.length.toLocaleString()}件</div>`;
+}
+
+/* ══ 画面の枠 ═══════════════════════════════════════════
+   並びは本番と同じ：集計帯 → ジャンル行 → 絞り込み帯 → 並びのチップ → 起点 → 一覧 */
+function chromeHTML(cfg){
+    const sum = TYPES.map(T => `<div class="pref-sum-item" data-t="${T.t}"><div class="lp-ring"></div>
+        ${iconHTML(T.t)}<div class="pref-sum-v">${D.counts[T.t].toLocaleString()}${
+            cfg.caret && T.t === 'shop' ? '<span class="gcaret">▾</span>' : ''}</div></div>`).join('');
+    return `
+    <div class="lords-head">
+        <button class="lords-iconbtn">‹</button><div class="lords-head-title">東京都</div>
+        <button class="lords-iconbtn" style="font-size:17px;">×</button>
+    </div>
+    <div class="lords-filter" style="border-bottom:0; padding-bottom:6px;">
+        <input type="search" placeholder="名前・住所で絞り込み">
+    </div>
+    <div class="pref-sum"><div class="pref-sum-line">${sum}</div></div>
+    <div class="gline-slot"></div>
+    <div class="rst-slot"></div>
+    <div class="lords-filter">
+        <div class="lords-chips" style="margin-top:0;">
+            <button class="lords-chip" aria-pressed="true">種別順</button>
+            <button class="lords-chip" aria-pressed="false">名前順</button>
+            <button class="lords-chip" aria-pressed="false">近い順</button>
+            ${cfg.chip ? '<button class="lords-chip gchip" aria-pressed="false">ジャンル ▾</button>' : ''}
+        </div>
+    </div>
+    <div class="dorg">📍 <b>地図の中心</b> からの距離</div>
+    <div class="lords-scroll">${listHTML()}</div>`;
+}
+
+/* ══ 1枠ぶんの動き ═════════════════════════════════════ */
+function setup(phone, cfg){
+    phone.innerHTML = chromeHTML(cfg);
+    const st = { off: new Set(), goff: new Set(), open: false };
+    const list = phone.querySelector('.lords-scroll');
+    const gslot = phone.querySelector('.gline-slot');
+    const rslot = phone.querySelector('.rst-slot');
+
+    const shopOn = () => !st.off.has('shop');
+    const applyRows = () => {
+        phone.querySelectorAll('.nearby-item').forEach(el => {
+            const g = el.dataset.g;
+            el.classList.toggle('hide', st.off.has(el.dataset.t) || (g && st.goff.has(g)));
+        });
+        const n = phone.querySelectorAll('.nearby-item:not(.hide)').length;
+        phone.querySelector('.tail').textContent = `全${n.toLocaleString()}件`;
+    };
+    const renderGenre = () => {
+        if (!st.open || !shopOn()) { gslot.innerHTML = ''; return; }
+        const on = GENRES.filter(g => !st.goff.has(g));
+        const groups = SHOP_GENRE_GROUPS.map(([name, members]) => {
+            const has = members.filter(c => D.shopGenres[c] !== undefined);
+            if (!has.length) return '';
+            return `<div class="pref-ggrp"><div class="pref-ggname">${name}</div><div class="pref-gchips">${
+                has.map(c => `<button class="ptg ${st.goff.has(c) ? '' : 'on shop-genre ' + (SHOP_GENRE_CLASS[c]||'g-sonota')}"
+                    data-g="${esc(c)}">${c}<span class="ptg-n">${D.shopGenres[c]}</span></button>`).join('')}</div></div>`;
+        }).join('');
+        gslot.innerHTML = `<div class="pref-gline"><div class="pref-gline-h">食べログのジャンル
+            <b>${on.length}/${GENRES.length}</b>・${on.reduce((s,g) => s + D.shopGenres[g], 0).toLocaleString()}件</div>${groups}</div>`;
+        gslot.querySelectorAll('.ptg').forEach(b => b.onclick = () => {
+            const g = b.dataset.g;
+            if (st.goff.has(g)) st.goff.delete(g); else st.goff.add(g);
+            renderGenre(); renderRst(); applyRows();
+        });
+    };
+    const renderRst = () => {
+        const parts = [];
+        if (st.off.size) parts.push(`${TYPES.length - st.off.size}/${TYPES.length}種別`);
+        if (shopOn() && st.goff.size) parts.push(`ジャンル${GENRES.length - st.goff.size}/${GENRES.length}`);
+        if (!parts.length) { rslot.innerHTML = ''; return; }
+        rslot.innerHTML = `<div class="pref-rstbar">${parts.join('・')}を表示中<button>すべて表示</button></div>`;
+        rslot.querySelector('button').onclick = () => {
+            st.off.clear(); st.goff.clear(); renderAll();
+        };
+    };
+    const renderChip = () => {
+        const chip = phone.querySelector('.gchip');
+        if (!chip) return;
+        chip.setAttribute('aria-pressed', String(st.open && shopOn()));
+        chip.style.opacity = shopOn() ? '' : '.35';
+        chip.textContent = (st.open && shopOn()) ? 'ジャンル ▴' : 'ジャンル ▾';
+    };
+    const renderCaret = () => {
+        const c = phone.querySelector('.gcaret');
+        if (!c) return;
+        c.classList.toggle('open', st.open && shopOn());
+    };
+    const renderSum = () => {
+        phone.querySelectorAll('.pref-sum-item').forEach(el => el.classList.toggle('off', st.off.has(el.dataset.t)));
+    };
+    const renderAll = () => { renderSum(); renderGenre(); renderRst(); renderChip(); renderCaret(); applyRows(); };
+
+    const jumpTo = t => {
+        const el = phone.querySelector(`.nearby-item[data-t="${t}"]:not(.hide)`);
+        if (!el) return;
+        list.scrollTop += el.getBoundingClientRect().top - list.getBoundingClientRect().top;
+        el.classList.remove('jump-flash'); void el.offsetWidth; el.classList.add('jump-flash');
+    };
+    const toggleType = t => { if (st.off.has(t)) st.off.delete(t); else st.off.add(t); renderAll(); };
+    const toggleGenreLine = () => { if (!shopOn()) return; st.open = !st.open; renderAll(); };
+
+    // 集計帯：タップ＝ジャンプ、長押し＝表示ON/OFF（案2の食べログだけ長押し＝ジャンル行）
+    phone.querySelectorAll('.pref-sum-item').forEach(el => {
+        const t = el.dataset.t;
+        const long = (cfg.shopLongGenre && t === 'shop') ? toggleGenreLine : () => toggleType(t);
+        let timer = null, fired = false;
+        const start = e => {
+            if (cfg.caret && t === 'shop' && e.target.closest('.gcaret')) return;   // ▾は別の操作
+            fired = false; el.classList.add('lp');
+            timer = setTimeout(() => { timer = null; fired = true; el.classList.remove('lp'); long(); }, 500);
+        };
+        const cancel = () => { el.classList.remove('lp'); if (timer) { clearTimeout(timer); timer = null; } };
+        const end = e => {
+            if (cfg.caret && t === 'shop' && e && e.target.closest('.gcaret')) { cancel(); toggleGenreLine(); return; }
+            cancel(); if (fired) { fired = false; return; } jumpTo(t);
+        };
+        el.addEventListener('mousedown', start);
+        el.addEventListener('mouseup', end);
+        el.addEventListener('mouseleave', cancel);
+        el.addEventListener('touchstart', start, { passive:true });
+        el.addEventListener('touchend', e => { e.preventDefault(); end(e); });
+        el.addEventListener('contextmenu', e => e.preventDefault());
+    });
+    const chip = phone.querySelector('.gchip');
+    if (chip) chip.onclick = toggleGenreLine;
+    renderAll();
+}
+
+/* ══ 3案 ═══════════════════════════════════════════════ */
+const CASES = [
+{
+  id:'1', reco:true, title:'並びのチップの行に「ジャンル ▾」を足す',
+  cfg:{ chip:true },
+  desc:'集計帯は<b>6種別とも同じ振る舞い</b>（タップ＝ジャンプ、長押し＝表示ON/OFF）に揃え、ジャンル行の開閉は<b>種別順・名前順・近い順と同じ行の右</b>に置いたチップに移す。既にある行に同居するので、縦は1pxも増えない。',
+  pros:'・6種別で操作が同じになり、食べログだけ例外という説明が要らない<br>・開閉が字で読める（長押しのように隠れない）<br>・押せる面積がチップ1つぶんあり、狙いやすい<br>・開いているかどうかがチップの色（青）で分かる',
+  cons:'・並び順のチップと絞り込みのチップが同じ行に混ざる（意味の違う2種類が並ぶ）<br>・食べログを非表示にすると押せないチップが残る（薄く出して押せなくしてある）',
+  ops:[['タップ','その種別の先頭へジャンプ'],['長押し','その種別の表示ON/OFF'],['ジャンル ▾','ジャンル行の開閉']],
+},
+{
+  id:'2', title:'食べログだけ長押し＝ジャンル行のまま',
+  cfg:{ shopLongGenre:true },
+  desc:'画面には何も足さない。食べログの長押しは今までどおりジャンル行を開き、他の5種別の長押しが表示ON/OFFになる。<b>食べログだけ県ページから非表示にできなくなる</b>（設定画面のオブジェクト表示からは今までどおり消せる）。',
+  pros:'・見た目の追加がゼロで、今の操作を覚えている人はそのまま使える<br>・実装が最も小さい（食べログの分岐を残すだけ）',
+  cons:'・6種別のうち食べログだけ長押しの意味が違う<br>・食べログを県ページで一時的に消せない。城だけ見たいときは他の4種別を1つずつ消すことになる<br>・どの種別で何が起きるかが、押してみるまで分からない',
+  ops:[['タップ','その種別の先頭へジャンプ'],['長押し（食べログ以外）','その種別の表示ON/OFF'],['長押し（食べログ）','ジャンル行の開閉']],
+},
+{
+  id:'3', title:'集計帯の食べログの件数に「▾」を出す',
+  cfg:{ caret:true },
+  desc:'集計帯は6種別とも同じ振る舞いに揃え、食べログの件数の右に小さな<b>「▾」</b>を出して、そこだけジャンル行の開閉にする。ジャンルの入口が食べログそのものの隣にあるので、結び付きが分かりやすい。',
+  pros:'・ジャンルの入口が食べログのすぐ横にあり、どの種別の話か迷わない<br>・縦は増えない<br>・開閉が「▾／▴」の向きで分かる',
+  cons:'・当たり判定が小さい（数字の横の約16px四方）。隣＝ジャンプなので、押し間違えると2,084行の先頭へ飛ぶ<br>・集計帯の中に「押すと違うことが起きる点」が生まれ、他の5種別と見た目が揃わない<br>・食べログを非表示にすると▾も意味を失う',
+  ops:[['タップ','その種別の先頭へジャンプ'],['長押し','その種別の表示ON/OFF'],['▾ をタップ','ジャンル行の開閉']],
+}];
+
+const host = document.getElementById('cases');
+host.innerHTML = CASES.map(c => `
+  <div class="case${c.reco ? ' reco' : ''}">
+    <h3>案${c.id}：${c.title}</h3>
+    <div class="desc">${c.desc}</div>
+    <div class="phone" data-id="${c.id}"><div class="lords-note">…</div></div>
+    <table class="optable"><tr><th>操作</th><th>起きること</th></tr>
+      ${c.ops.map(o => `<tr><td>${o[0]}</td><td>${o[1]}</td></tr>`).join('')}</table>
+    <div class="pros">${c.pros}</div>
+    <div class="cons">${c.cons}</div>
+  </div>`).join('');
+
+const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting || e.target.dataset.built) return;
+    e.target.dataset.built = '1';
+    setup(e.target, CASES.find(c => c.id === e.target.dataset.id).cfg);
+}), { rootMargin: '400px' });
+document.querySelectorAll('.phone').forEach(p => io.observe(p));
+</script>
+</body></html>

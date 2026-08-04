@@ -790,12 +790,21 @@
         .pref-sum-item { cursor: pointer; padding: 3px 5px 4px; border-radius: 9px;
                          -webkit-tap-highlight-color: transparent; }
         .pref-sum-item.off { filter: grayscale(1); opacity: .34; }
+        /* 集計帯のタップで飛んだ先の行。最大の県では2,000行を超えて動くので、
+           着いた場所が分かるように一瞬光らせる（prefJumpToType） */
+        @keyframes prefJumped { from { background: #fff59d; } to { background: transparent; } }
+        .pref-jumped { animation: prefJumped 1.1s ease-out; }
         /* 食べログのジャンル行。バッジと同じ10グループの区分で並べ、
            選んでいるチップはバッジと同じ色にする（一覧の色と一致させるため） */
         #pref-genre-line:empty { display: none; }
         .pref-gline { padding: 6px 13px 8px; border-bottom: 1px solid #f0f0f0; }
-        .pref-gline-h { font-size: 11px; color: #888; margin-bottom: 5px; }
+        .pref-gline-h { font-size: 11px; color: #888; margin-bottom: 5px;
+                        display: flex; align-items: center; gap: 8px; }
         .pref-gline-h b { color: #b26a00; }
+        /* 部門の「全解除／全選択」。見た目は絞り込み帯の「すべて表示」（.pref-rstbar button）と揃える */
+        .ptg-all { margin-left: auto; border: 0; background: #f2f2f2; border-radius: 12px;
+                   padding: 3px 10px; font-size: 11px; color: #2a5bd7; font-weight: bold;
+                   cursor: pointer; font-family: inherit; flex-shrink: 0; }
         .pref-ggrp { margin-bottom: 6px; }
         .pref-ggrp:last-child { margin-bottom: 0; }
         .pref-ggname { font-size: 10px; color: #9aa4ad; margin-bottom: 3px; }
@@ -4984,12 +4993,14 @@ map.on('zoomend', () => { isZooming = false; });
             <div class="objf-item${filterState[o.id] === false ? ' off' : ''}" data-t="${o.id}">
                 <span class="objf-ic">${prefTypeIconHtml(o.type)}</span>
                 <span class="objf-n">${o.label}</span></div>`).join('');
+        // タップは表示のON/OFF。2段目のジャンル行を持つのは食べログだけなので、長押しもそこだけ
         el.querySelectorAll('.objf-item').forEach(row =>
-            bindTypeToggle(row, row.dataset.t, () => toggleObjFilter(row.dataset.t), () => {
-                if (filterState.shop === false) return;     // 非表示のときは開かない
-                objGenreOpen = !objGenreOpen;
-                renderObjGenreLine();
-            }));
+            bindTypeToggle(row, () => toggleObjFilter(row.dataset.t),
+                row.dataset.t === 'shop' ? () => {
+                    if (filterState.shop === false) return;     // 非表示のときは開かない
+                    objGenreOpen = !objGenreOpen;
+                    renderObjGenreLine();
+                } : null));
     }
 
     /* 食べログのジャンル行。県ページのもの（renderPrefGenreLine）と同じ見た目で、
@@ -5603,9 +5614,10 @@ map.on('zoomend', () => { isZooming = false; });
         renderPrefList();
     }
 
-    /* ══ 種別の絞り込み（県ページ側） ══════════════════════════════
-       集計帯の種別アイコンを押して表示・非表示を切り替える。外した種別はグレーに落とす。
-       食べログだけは長押し（500ms・地図の長押しと同じ間合い）でジャンル行が開く。
+    /* ══ 集計帯の操作（県ページ側） ══════════════════════════════
+       集計帯の種別アイコンは、タップでその種別の先頭へ飛び、長押し（500ms・地図の長押しと
+       同じ間合い）で表示・非表示が切り替わる。外した種別はグレーに落とす。
+       食べログだけは長押しでジャンル行が開き、表示・非表示はそのジャンル行の「全解除」で行う。
        都道府県一覧には絞り込みを置かない（47県の一覧では合計件数の方が見たいものだという判断）。
        選択内容は県をまたいで保ち、全解除の制限は設けない（全部外せば一覧は空になる）。 */
 
@@ -5617,26 +5629,37 @@ map.on('zoomend', () => { isZooming = false; });
         return PREF_TYPES.filter(t => visible.includes(t.type) && (g[t.type] || []).length).map(t => t.type);
     }
 
+    /* 集計帯でグレーに落とす種別。表示を外しているものに加えて、食べログは部門を
+       すべて外したときも落とす。全7,077件のどれにも部門が入っているので（データで確認済み）、
+       部門を全部外すと一覧から食べログが1件も出なくなり、種別を外したのと同じ状態になる。 */
+    function prefSumOff(t) {
+        if (!prefState.types.has(t)) return true;
+        if (t !== 'shop') return false;
+        const list = prefShopGenresOf(prefState.pref);
+        return list.length > 0 && !list.some(([g]) => prefState.genres.has(g));
+    }
+
     function renderPrefSum() {
         const name = prefState.pref;
         if (!name) return;
         const g = prefIndex[name] || {};
         const items = prefSumTypes(name).map(t => `
-            <div class="pref-sum-item ${prefState.types.has(t) ? '' : 'off'}" data-t="${t}">
+            <div class="pref-sum-item ${prefSumOff(t) ? 'off' : ''}" data-t="${t}">
                 ${prefTypeIconHtml(t)}<div class="pref-sum-v">${g[t].length.toLocaleString()}</div></div>`);
         const el = document.getElementById('pref-detail-sum');
         el.innerHTML = `<div class="pref-sum-line">${items.join('')}</div>`;
         el.querySelectorAll('.pref-sum-item').forEach(bindPrefSumItem);
     }
 
-    /* タップで種別のON/OFF、長押しで食べログのジャンル行。
-       タッチのあとに合成されるマウスイベントで二重に反応しないよう、直後の mouse は捨てる。
-       設定のオブジェクト表示（renderObjFilterList）と県ページの集計帯で同じものを使う。 */
+    /* 種別アイコンのタップと長押しの割り当て。長押しは onLongPress を渡した要素だけで働く。
+       割り当てる中身は置き場所ごとに違うので、呼ぶ側が決める（設定のオブジェクト表示＝
+       renderObjFilterList と、県ページの集計帯＝bindPrefSumItem の2か所で使う）。
+       タッチのあとに合成されるマウスイベントで二重に反応しないよう、直後の mouse は捨てる。 */
     let lpTimer = null, lpFired = false, lpTouched = false;
-    function bindTypeToggle(el, type, onTap, onLongPress) {
+    function bindTypeToggle(el, onTap, onLongPress) {
         const start = () => {
             lpFired = false;
-            if (type !== 'shop' || !onLongPress) return;   // 2段目を持つのは食べログだけ
+            if (!onLongPress) return;
             lpTimer = setTimeout(() => { lpTimer = null; lpFired = true; onLongPress(); }, 500);
         };
         const cancel = () => { if (lpTimer) { clearTimeout(lpTimer); lpTimer = null; } };
@@ -5649,13 +5672,34 @@ map.on('zoomend', () => { isZooming = false; });
         el.addEventListener('mouseleave', cancel);
         el.addEventListener('contextmenu', e => e.preventDefault());   // 長押しのメニューを出さない
     }
+    /* 県ページの集計帯。タップはその種別の先頭へ飛ぶ操作にする。東京都は2,496件あって
+       先頭の食べログだけで2,084行あり、いちばん下のお城まで指で送ると2,312行かかるため。
+       表示のON/OFF は長押しへ移す。
+       食べログだけは長押しでジャンル行が開き、表示のON/OFF はそのジャンル行の
+       「全解除」（部門を全部外す＝一覧から1件も出なくなる）で行う。 */
     function bindPrefSumItem(el) {
         const t = el.dataset.t;
-        bindTypeToggle(el, t, () => togglePrefType(t), () => {
+        bindTypeToggle(el, () => prefJumpToType(t), t === 'shop' ? () => {
             if (!prefState.types.has('shop')) return;   // 非表示のときは開かない
             prefState.genreOpen = !prefState.genreOpen;
             renderPrefGenreLine();
-        });
+        } : () => togglePrefType(t));
+    }
+
+    /* 集計帯のタップで、その種別の最初の行へ飛ぶ。種別順ならその種別の先頭、名前順・近い順なら
+       一覧で最初に出てくるその種別の行（近い順ならいちばん近いもの）になる。どの並びでも
+       意味が通るので、種別順のときだけの操作にはしていない。
+       2,000行を超えて動くのでなめらかスクロールは使わず、一気に飛ばして着いた行を光らせる。 */
+    function prefJumpToType(t) {
+        const list = document.getElementById('pref-item-list');
+        const i = (prefState.typeHead || {})[t];
+        if (!list || i === undefined) return;   // 絞り込みで1件も残っていない種別
+        const el = list.children[i];
+        if (!el) return;
+        list.scrollTop += el.getBoundingClientRect().top - list.getBoundingClientRect().top;
+        el.classList.remove('pref-jumped');
+        void el.offsetWidth;                    // 同じ行へ続けて飛んでも光らせ直す
+        el.classList.add('pref-jumped');
     }
 
     /* 食べログのジャンル行。バッジと同じ10グループの区分で並べ、選択中のチップは
@@ -5675,8 +5719,24 @@ map.on('zoomend', () => { isZooming = false; });
             }</div></div>`;
         }).join('');
         el.innerHTML = `<div class="pref-gline">
-            <div class="pref-gline-h">食べログのジャンル <b>${on.length}/${list.length}</b>・${
-                on.reduce((s, e) => s + e[1], 0).toLocaleString()}件</div>${groups}</div>`;
+            <div class="pref-gline-h"><span>食べログのジャンル <b>${on.length}/${list.length}</b>・${
+                on.reduce((s, e) => s + e[1], 0).toLocaleString()}件</span>
+                <button class="ptg-all" onclick="togglePrefGenreAll()">${
+                    on.length === list.length ? '全解除' : '全選択'}</button></div>${groups}</div>`;
+    }
+
+    /* ジャンル行の「全解除／全選択」。全部選んでいるときは全解除、それ以外は全選択に戻す
+       （周辺検索結果の種別チップ＝toggleAllNearbyTypeFilter と同じ言い回しにする）。
+       全解除は、この県の食べログをまとめて消す操作でもある。集計帯の食べログを長押しして
+       全解除すれば、表示を外したのと同じ状態になり、集計帯もグレーに落ちる（prefSumOff）。
+       触るのはその県にある部門だけ。県ごとに持っている部門が違う（東京都35種・青森県11種）ので、
+       他の県にしか無い部門の選択まで巻き込まない。 */
+    function togglePrefGenreAll() {
+        const list = prefShopGenresOf(prefState.pref);
+        const allOn = list.every(([g]) => prefState.genres.has(g));
+        list.forEach(([g]) => { if (allOn) prefState.genres.delete(g); else prefState.genres.add(g); });
+        renderPrefFilterUI();
+        renderPrefItems();
     }
 
     /* 絞り込み中だけ出す帯。何をどれだけ絞っているかと、戻す操作をここにまとめる。 */
@@ -5917,6 +5977,12 @@ map.on('zoomend', () => { isZooming = false; });
             // 名前順は種別も城の格付けも見ず、名前だけで並べる
             rows.sort(byName);
         }
+        // 種別ごとの最初の行。集計帯のタップ（prefJumpToType）で飛ぶ先に使う。
+        // 並べ替えと絞り込みの結果から取るので、一覧を作り直すたびに取り直す
+        prefState.typeHead = {};
+        rows.forEach((r, i) => {
+            if (prefState.typeHead[r.item.type] === undefined) prefState.typeHead[r.item.type] = i;
+        });
         const list = document.getElementById('pref-item-list');
         if (rows.length === 0) {
             list.innerHTML = `<div class="lords-note">${
