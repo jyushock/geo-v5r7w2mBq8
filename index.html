@@ -850,6 +850,10 @@
            鹿児島県）の実測54pxに余白を足した値。件数の側に margin-right: auto を置くので、
            余った幅は件数と「›」の間に入り、「›」は今までどおり行の右端に残る。 */
         .pref-row .lord-main { flex: 0 0 auto; width: 56px; }
+        /* 全国の行だけ県名の欄を固定幅にしない。「全国」は2文字で済む一方、件数は県より桁が多く
+           （6種別で合わせて9ch多い）、56px のままだと行の幅が385px必要になって
+           375px では「›」が画面の外へ出るため（実測）。名前の欄を詰めるとちょうど収まる。 */
+        .pref-row.pref-row-all .lord-main { width: auto; }
         .pref-cnt-line {
             display: flex; align-items: center; gap: 5px; flex-shrink: 0; font-size: 11px;
             margin-right: auto;
@@ -5622,6 +5626,9 @@ map.on('zoomend', () => { isZooming = false; });
         ['四国', ['徳島県', '香川県', '愛媛県', '高知県']],
         ['九州・沖縄', ['福岡県', '佐賀県', '長崎県', '熊本県', '大分県', '宮崎県', '鹿児島県', '沖縄県']],
     ];
+    /* 一覧の先頭に置く全国の行。索引では47県と同じ1つの県として扱い（prefIndex['全国']）、
+       県ページも同じ画面をそのまま使う。県名と衝突しないので、県の並びに混ざる心配はない。 */
+    const PREF_ALL = '全国';
     // 種別チップの並び。表示設定（filterState）と対応させる
     const PREF_TYPES = [
         { type: 'shop',     label: '食べログ',   filter: 'shop'    },
@@ -5656,18 +5663,24 @@ map.on('zoomend', () => { isZooming = false; });
        県ページの件数にも一覧にも、その部門は最初から無いものとして扱う。 */
     function buildPrefIndex() {
         prefIndex = {};
+        prefIndex[PREF_ALL] = {};
         PREF_NAMES.forEach(n => { prefIndex[n] = {}; });
         const visible = new Set(prefVisibleTypes());
         const genres = new Map();
         for (const item of searchIndex) {
             if (!visible.has(item.type)) continue;   // 設定で消している種別は索引に入れない
-            const n = prefOfProps(item.properties || {});
-            if (!n || !prefIndex[n]) continue;
             if (item.type === 'shop') {
                 const g = shopGenreBase((item.properties || {}).category);
                 if (!genreVisible(g)) continue;
                 if (g) genres.set(g, (genres.get(g) || 0) + 1);
             }
+            /* 全国には県が取れなかったものも入れる（全国は総数であってほしいため）。
+               2026-08-10 時点の実データでは全34,934件すべてに県が付くので、
+               全国の件数は47県の合計と一致する。県が取れないものが出た場合だけ、
+               全国の方が多くなり、その分は全国の一覧からしか辿れない。 */
+            (prefIndex[PREF_ALL][item.type] = prefIndex[PREF_ALL][item.type] || []).push(item);
+            const n = prefOfProps(item.properties || {});
+            if (!n || !prefIndex[n]) continue;
             (prefIndex[n][item.type] = prefIndex[n][item.type] || []).push(item);
         }
         // 部門は全国で35種。多い順に持っておき、県ごとの一覧はこの順で出す
@@ -5907,7 +5920,10 @@ map.on('zoomend', () => { isZooming = false; });
 
        数字の欄はその種別の47都道府県での最大件数の文字数で固定し、アイコンが全行で
        同じ位置に来るようにする（県どうしを縦に見比べられる）。
-       幅を ch で取るのは、フォントが変わっても桁数どおりの幅になるため。 */
+       幅を ch で取るのは、フォントが変わっても桁数どおりの幅になるため。
+       全国の行はこの固定幅の対象にしない。全国の件数を最大に含めると6種別で合わせて
+       9ch 広がり（例：マンホールは最大の県が99件・全国が1,267件）、
+       375px で県名と「›」が押し出されるため、全国の行だけ桁なりの幅で出す。 */
     function prefCntWidths(types) {
         const w = {};
         for (const t of types) {
@@ -5917,26 +5933,31 @@ map.on('zoomend', () => { isZooming = false; });
         return w;
     }
 
+    /* 一覧の1行。全国も県も同じ作りにする（開く先も同じ県ページ）。
+       違うのは件数の欄の幅だけで、w を渡すと種別ごとの固定幅、省くと桁なりの幅になる。 */
+    function prefRowHtml(name, types, w) {
+        const g = prefIndex[name] || {};
+        const cnt = types.map(t => {
+            const v = (g[t] || []).length;
+            return `<span class="pref-cnt-cell">${prefTypeIconHtml(t)}<span
+                class="pref-cnt-n${v ? '' : ' zero'}"${w ? ` style="width:${w[t]}ch"` : ''}
+                >${v.toLocaleString()}</span></span>`;
+        }).join('');
+        return `<div class="pref-row${name === PREF_ALL ? ' pref-row-all' : ''}" onclick="openPrefDetail('${name}')">
+            <div class="lord-main"><div class="lord-name">${name}</div></div>
+            <div class="pref-cnt-line">${cnt}</div>
+            <div class="lord-chev">›</div>
+        </div>`;
+    }
+
     function renderPrefList() {
         const types = prefVisibleTypes();
         const w = prefCntWidths(types);
-        const out = [];
+        // 先頭は全国。8地方と同じ形の見出しを付けて、地方と同じ並びの中に置く
+        const out = [`<div class="reg-head">${PREF_ALL}</div>`, prefRowHtml(PREF_ALL, types, null)];
         for (const [region, members] of PREF_REGIONS) {
             out.push(`<div class="reg-head">${region}</div>`);
-            for (const n of members) {
-                const g = prefIndex[n] || {};
-                const cnt = types.map(t => {
-                    const v = (g[t] || []).length;
-                    return `<span class="pref-cnt-cell">${prefTypeIconHtml(t)}<span
-                        class="pref-cnt-n${v ? '' : ' zero'}" style="width:${w[t]}ch"
-                        >${v.toLocaleString()}</span></span>`;
-                }).join('');
-                out.push(`<div class="pref-row" onclick="openPrefDetail('${n}')">
-                    <div class="lord-main"><div class="lord-name">${n}</div></div>
-                    <div class="pref-cnt-line">${cnt}</div>
-                    <div class="lord-chev">›</div>
-                </div>`);
-            }
+            for (const n of members) out.push(prefRowHtml(n, types, w));
         }
         const list = document.getElementById('pref-list');
         list.innerHTML = out.length ? out.join('')
