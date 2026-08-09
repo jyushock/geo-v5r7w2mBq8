@@ -5304,7 +5304,8 @@ map.on('zoomend', () => { isZooming = false; });
         lordCastleNorm = new Array(feats.length);
         feats.forEach((f, i) => {
             const p = f.properties || {};
-            lordCastleNorm[i] = normalizeForSearch(`${p.name || ''} ${p.prefecture || ''}`);
+            // 都道府県は prefOfProps で取る（prefecture を持たない城でも住所から決まる）
+            lordCastleNorm[i] = normalizeForSearch(`${p.name || ''} ${prefOfProps(p) || ''}`);
             if (!p.lords) return;
             const seen = new Set();
             p.lords.split(LORD_SPLIT_RE).forEach(tok => {
@@ -5517,18 +5518,21 @@ map.on('zoomend', () => { isZooming = false; });
         const rows = l.idx.map(i => {
             const f = feats[i];
             const c = f.geometry.coordinates;
-            return { i, f, dist: calcDist(center.lat, center.lng, c[1], c[0]) };
+            // 都道府県は prefOfProps で取る（prefecture を持たない城でも住所から決まる）。
+            // 副見出しと都道府県順の並びの両方で使うので、ここで一度だけ求める
+            return { i, f, pref: prefOfProps(f.properties) || '',
+                     dist: calcDist(center.lat, center.lng, c[1], c[0]) };
         }).filter(r => {
             if (!q) return true;
             const p = r.f.properties;
-            return normalizeForSearch(`${p.name || ''} ${p.prefecture || ''} ${p.address || ''}`).includes(q);
+            return normalizeForSearch(`${p.name || ''} ${r.pref} ${p.address || ''}`).includes(q);
         });
         /* どの並びでも 100名城 → 続100名城 → その他 を先に寄せ、その中で選んだ順に並べる
            （「近い順」なら100名城の中で近い順、続100名城の中で近い順…となる）。 */
         const rank = r => castleGenreRank(r.f.properties);
         if (lordsState.sort === 'dist') rows.sort((a, b) => rank(a) - rank(b) || a.dist - b.dist);
         else rows.sort((a, b) => rank(a) - rank(b)
-                                 || (PREF_ORDER[a.f.properties.prefecture] ?? 99) - (PREF_ORDER[b.f.properties.prefecture] ?? 99)
+                                 || (PREF_ORDER[a.pref] ?? 99) - (PREF_ORDER[b.pref] ?? 99)
                                  || a.f.properties.name.localeCompare(b.f.properties.name, 'ja'));
         if (rows.length === 0) {
             document.getElementById('lord-castle-list').innerHTML =
@@ -5540,7 +5544,7 @@ map.on('zoomend', () => { isZooming = false; });
             const color = getItemColor({ type: 'castle', properties: p });
             const distStr = r.dist < 1 ? `${Math.round(r.dist * 1000)}m` : `${r.dist.toFixed(1)}km`;
             // 100名城の印はバッジ側に出るので、副見出しは都道府県だけにする（同じ語が2つ並ばないように）
-            const sub = p.prefecture || '';
+            const sub = r.pref;
             return `<div class="nearby-item" onclick="lordsJumpToCastle(${r.i})">
                 <div class="nearby-item-icon" style="background:${color}"><img src="castle.png" class="icon-full"></div>
                 <div class="nearby-item-text">
@@ -6601,17 +6605,19 @@ map.on('zoomend', () => { isZooming = false; });
         const rows = (remainsState.castleIdx || []).map(i => {
             const f = feats[i];
             const c = f.geometry.coordinates;
-            return { i, f, dist: calcDist(center.lat, center.lng, c[1], c[0]) };
+            // 城主詳細と同じく、都道府県は prefOfProps で取る
+            return { i, f, pref: prefOfProps(f.properties) || '',
+                     dist: calcDist(center.lat, center.lng, c[1], c[0]) };
         }).filter(r => {
             if (!q) return true;
             const p = r.f.properties;
-            return normalizeForSearch(`${p.name || ''} ${p.prefecture || ''} ${p.address || ''}`).includes(q);
+            return normalizeForSearch(`${p.name || ''} ${r.pref} ${p.address || ''}`).includes(q);
         });
         // 城主詳細と同じ並び。どの並びでも 100名城 → 続100名城 → その他 を先に寄せる
         const rank = r => castleGenreRank(r.f.properties);
         if (remainsState.sort === 'dist') rows.sort((a, b) => rank(a) - rank(b) || a.dist - b.dist);
         else rows.sort((a, b) => rank(a) - rank(b)
-                                 || (PREF_ORDER[a.f.properties.prefecture] ?? 99) - (PREF_ORDER[b.f.properties.prefecture] ?? 99)
+                                 || (PREF_ORDER[a.pref] ?? 99) - (PREF_ORDER[b.pref] ?? 99)
                                  || a.f.properties.name.localeCompare(b.f.properties.name, 'ja'));
         const list = document.getElementById('remains-castle-list');
         if (rows.length === 0) {
@@ -6626,7 +6632,7 @@ map.on('zoomend', () => { isZooming = false; });
                 <div class="nearby-item-icon" style="background:${color}"><img src="castle.png" class="icon-full"></div>
                 <div class="nearby-item-text">
                     <div class="nearby-item-name">${attrEscape(p.coordOffset ? '[近接あり] ' + p.name : p.name)}</div>
-                    <div class="nearby-item-sub">${attrEscape(p.prefecture || '')}</div>
+                    <div class="nearby-item-sub">${attrEscape(r.pref)}</div>
                 </div>
                 ${prefBadgesHtml({ type: 'castle', properties: p })}
                 <div class="nearby-item-dist">${distStr}</div>
