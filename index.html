@@ -1557,12 +1557,11 @@
             <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
         </div>
         <div class="lords-filter">
-            <input id="lords-search" type="search" autocomplete="off" placeholder="城主名・城名・都道府県で絞り込み" oninput="onLordsSearchInput(this.value)">
+            <input id="lords-search" type="search" autocomplete="off" placeholder="城主名で絞り込み" oninput="onLordsSearchInput(this.value)">
             <div class="lords-chips">
                 <button class="lords-chip" data-lt="all"    aria-pressed="true"  onclick="setLordsType('all')">すべて</button>
                 <button class="lords-chip" data-lt="person" aria-pressed="false" onclick="setLordsType('person')">個人</button>
                 <button class="lords-chip" data-lt="org"    aria-pressed="false" onclick="setLordsType('org')">組織</button>
-                <button class="lords-chip" id="lords-min-chip" aria-pressed="false" onclick="toggleLordsMin()">2城以上</button>
             </div>
         </div>
         <div class="lords-scroll" id="lords-list"></div>
@@ -1842,7 +1841,6 @@
             setSourceData('castles-famous', { type: 'FeatureCollection', features: feats.filter(f => FAMOUS_GENRES.has(f.properties.genre)) });
             setSourceData('castles',        { type: 'FeatureCollection', features: feats.filter(f => !FAMOUS_GENRES.has(f.properties.genre)) });
             lordIndex = null;        // 城データが入れ替わったら城主索引は作り直す
-            lordCastleNorm = null;
             updateLordsEntry();
             remainsIndex = null;     // 遺構索引も同じ理由で作り直す
             remainsGroups = null;
@@ -5269,10 +5267,9 @@ map.on('zoomend', () => { isZooming = false; });
     ]);
     const LORDS_CHUNK = 60;              // 一覧の追加描画単位（11,000名超を一度に積まない）
     let lordIndex = null;                // [{ n, kind, idx:[城のfeature番号], v:[原表記], _n }]
-    let lordCastleNorm = null;           // feature番号 → 検索用に正規化した「城名＋都道府県」
     // center は城一覧の近い順の起点で、城主を開いた時点で固定する（openLordDetail を参照）。
     // listScrollTop / listShown は城主一覧、castleScrollTop は城一覧の、離れる前の位置
-    let lordsState = { q: '', type: 'all', min: 1, sort: 'dist', filtered: [], shown: 0, lord: null,
+    let lordsState = { q: '', type: 'all', sort: 'dist', filtered: [], shown: 0, lord: null,
                        center: null, listScrollTop: 0, listShown: 0, castleScrollTop: 0 };
 
     // 集計キーを作る。末尾の括弧注記（石高・別称）と推量記号を落とす。
@@ -5301,11 +5298,8 @@ map.on('zoomend', () => { isZooming = false; });
     function buildLordIndex() {
         const feats = (loadedData.castle && loadedData.castle.features) || [];
         const byName = new Map();
-        lordCastleNorm = new Array(feats.length);
         feats.forEach((f, i) => {
             const p = f.properties || {};
-            // 都道府県は prefOfProps で取る（prefecture を持たない城でも住所から決まる）
-            lordCastleNorm[i] = normalizeForSearch(`${p.name || ''} ${prefOfProps(p) || ''}`);
             if (!p.lords) return;
             const seen = new Set();
             p.lords.split(LORD_SPLIT_RE).forEach(tok => {
@@ -5384,21 +5378,17 @@ map.on('zoomend', () => { isZooming = false; });
         });
         applyLordsFilter();
     }
-    function toggleLordsMin() {
-        lordsState.min = lordsState.min === 1 ? 2 : 1;
-        document.getElementById('lords-min-chip').setAttribute('aria-pressed', String(lordsState.min === 2));
-        applyLordsFilter();
-    }
-
+    /* 照合するのは城主名（集計キーと、その表記ゆれ）だけにする。
+       以前は城名・都道府県でも引けるようにしていたが、人物・氏族を探す画面で
+       城側の語に当たると意図しない城主が並ぶため、城名は対象から外した。
+       城名で城を探す導線は、メイン検索と「都道府県から探す」が受け持つ。 */
     function applyLordsFilter() {
         const q = normalizeForSearch(lordsState.q.trim());
         lordsState.filtered = lordIndex.filter(l => {
-            if (l.idx.length < lordsState.min) return false;
             if (lordsState.type !== 'all' && lordsState.type !== l.kind) return false;
             if (!q) return true;
             if (l._n.includes(q)) return true;
-            if (l.v.some(v => normalizeForSearch(v).includes(q))) return true;
-            return l.idx.some(i => lordCastleNorm[i].includes(q));   // 城名・都道府県でも引ける
+            return l.v.some(v => normalizeForSearch(v).includes(q));
         });
         // 戻ってきたときだけ、離れる前の描画量と位置に復元する（絞り込みが同じなら並びも同じ）
         const restoreTop = lordsState.restoreListScroll || 0;
