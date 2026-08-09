@@ -894,14 +894,14 @@
                    overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         .rt-g { font-size: 10px; color: #aaa; flex-shrink: 0; }
         .rt-num { font-size: 11.5px; color: #546E7A; font-weight: bold; flex-shrink: 0; }
-        /* 中分類の見出し（建造物の内訳）。見出しでありながらタップでその中分類の城一覧へ
-           行けるので、地の一覧（.rt-row）より濃く、押せることが分かる作りにする */
-        .rt-sub { display: flex; align-items: center; gap: 8px; padding: 8px 13px;
-                  background: #f2f5f7; border-top: 1px solid #e6ecef;
-                  border-bottom: 1px solid #e6ecef; cursor: pointer; }
-        .rt-sub:active { background: #e8eef2; }
-        .rt-sub-n { font-size: 12px; font-weight: bold; color: #455A64; flex: 1; min-width: 0;
-                    overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        /* 中分類の行の右端に切り出す「内訳」ボタン。行本体はその中分類の城一覧へ行くので、
+           1つ下の階層（小分類）へ降りる操作はここに分ける。長押しのような隠し操作にせず、
+           何が起きるかをボタンの文字（内訳68種）に出す */
+        .rt-drill { display: flex; align-items: center; gap: 3px; flex-shrink: 0;
+                    border: 1px solid #dbe6ff; background: #f3f6ff; color: #2a5bd7;
+                    border-radius: 13px; padding: 4px 8px 4px 9px; font-size: 10.5px;
+                    font-family: inherit; cursor: pointer; }
+        .rt-drill:active { background: #e3ecff; }
         /* グループの城をまとめて見る行（第8ビューの先頭）。情報シートの戻り導線
            （.os-lords-back）と同じ配色にして、遷移する行だと分かるようにする */
         .rt-all { display: flex; align-items: center; gap: 8px; padding: 10px 13px;
@@ -1665,7 +1665,7 @@
     <!-- グループの内訳（その分類に属する遺構の一覧）ビュー（第8ビュー） -->
     <div id="nearby-remains-group-view">
         <div class="lords-head">
-            <button class="lords-iconbtn" onclick="backToRemainsList()" title="遺構の分類一覧へ戻る">
+            <button class="lords-iconbtn" onclick="backFromRemainsBreakdown()" title="ひとつ前の一覧へ戻る">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
             <div class="lords-head-title" id="remains-group-title"></div>
@@ -1678,7 +1678,7 @@
                 <button class="lords-search-clear" onclick="clearRemainsTokSearch()" title="クリア">×</button>
             </div>
         </div>
-        <div class="rt-all" id="remains-group-all" onclick="openRemainsDetail('g')"></div>
+        <div class="rt-all" id="remains-group-all" onclick="openRemainsDetail(this.dataset.t)"></div>
         <div class="lords-scroll" id="remains-tok-list"></div>
     </div>
 
@@ -6237,8 +6237,8 @@ map.on('zoomend', () => { isZooming = false; });
     let remainsGroups = null;   // [{ id, name, color, toks:[remainsIndex の要素], castles:Set }]
     // center は城一覧の近い順の起点で、遺構を開いた時点で固定する（openLordDetail と同じ扱い）
     let remainsState = { q: '', tokQ: '', castleQ: '', mode: 'group', sort: 'dist',
-                         group: null, target: null, center: null, centerPinned: false,
-                         listScrollTop: 0, tokScrollTop: 0, castleScrollTop: 0,
+                         group: null, sub: null, target: null, center: null, centerPinned: false,
+                         listScrollTop: 0, tokScrollTop: 0, subScrollTop: 0, castleScrollTop: 0,
                          restoreListScroll: 0, restoreTokScroll: 0, restoreCastleScroll: 0 };
 
     function remainGroupOf(tok) {
@@ -6395,21 +6395,46 @@ map.on('zoomend', () => { isZooming = false; });
         remainsState.restoreListScroll = 0;
     }
 
-    /* 分類の内訳。restoreView を立てて呼ぶと、離れる前のスクロール位置に戻す。 */
+    /* 分類の内訳（第8ビュー）。中分類を持つ分類（建造物）では中分類の一覧を出し、
+       持たない分類では遺構をそのまま並べる。中分類の中身（小分類）も同じビューを
+       使い回す（remainsState.sub が入っているかどうかで切り替える）。
+       restoreView を立てて呼ぶと、離れる前のスクロール位置に戻す。 */
     function openRemainsGroup(gid, restoreView) {
         const g = remainsGroups.find(x => x.id === gid);
         if (!g) return;
         // 分類一覧から開いたときだけ、そこへ戻るための位置を控える
         if (!restoreView) remainsState.listScrollTop = document.getElementById('remains-list').scrollTop;
         remainsState.group = g;
+        remainsState.sub = null;
         remainsState.restoreTokScroll = restoreView ? (remainsState.tokScrollTop || 0) : 0;
-        document.getElementById('remains-group-title').textContent = g.name;
-        document.getElementById('remains-group-all').textContent =
-            `＋ 「${g.name}」の城をまとめて見る（${g.castles.size.toLocaleString()}城）`;
-        // 別の分類を開いたら絞り込みの語は持ち越さない（前の語のまま0件になるのを防ぐ）
-        remainsState.tokQ = '';
-        document.getElementById('remains-tok-search').value = '';
-        setSearchClearVisible('remains-tok-search', '');
+        openRemainsBreakdown(g.name, g.castles.size, restoreView, `g:${g.id}`);
+    }
+
+    /* 中分類の中身（小分類）。中分類の行の「内訳」ボタンから降りる。 */
+    function openRemainsSub(subName, restoreView) {
+        const g = remainsState.group;
+        const s = g && g.subs && g.subs.find(x => x.name === subName);
+        if (!s) return;
+        // 中分類一覧から降りたときだけ、そこへ戻るための位置を控える
+        if (!restoreView) remainsState.tokScrollTop = document.getElementById('remains-tok-list').scrollTop;
+        remainsState.sub = s;
+        remainsState.restoreTokScroll = restoreView ? (remainsState.subScrollTop || 0) : 0;
+        openRemainsBreakdown(s.name, s.castles.size, restoreView, `s:${g.id}:${s.name}`);
+    }
+
+    // 第8ビューの共通部分（見出し・まとめて見る行・絞り込みの初期化）
+    function openRemainsBreakdown(title, castleCount, restoreView, target) {
+        document.getElementById('remains-group-title').textContent = title;
+        const all = document.getElementById('remains-group-all');
+        all.dataset.t = target;
+        all.textContent = `＋ 「${title}」の城をまとめて見る（${castleCount.toLocaleString()}城）`;
+        // 別の分類を開いたら絞り込みの語は持ち越さない（前の語のまま0件になるのを防ぐ）。
+        // 戻ってきたときは離れる前の状態に戻すので触らない
+        if (!restoreView) {
+            remainsState.tokQ = '';
+            document.getElementById('remains-tok-search').value = '';
+            setSearchClearVisible('remains-tok-search', '');
+        }
         showRemainsView('group');
         renderRemainsTokList();
     }
@@ -6417,6 +6442,11 @@ map.on('zoomend', () => { isZooming = false; });
         remainsState.restoreListScroll = remainsState.listScrollTop || 0;
         showRemainsView('list');
         renderRemainsList();
+    }
+    // 第8ビューの戻る。小分類を開いていれば中分類の一覧へ、そうでなければ分類一覧へ
+    function backFromRemainsBreakdown() {
+        if (remainsState.sub) { openRemainsGroup(remainsState.group.id, true); return; }
+        backToRemainsList();
     }
     function onRemainsTokSearchInput(v) {
         remainsState.tokQ = v;
@@ -6432,26 +6462,33 @@ map.on('zoomend', () => { isZooming = false; });
         if (!g) return;
         const q = normalizeForSearch(remainsState.tokQ.trim());
         const list = document.getElementById('remains-tok-list');
-        let html = '', hit = 0;
-        if (g.subs) {
-            // 中分類の見出しで束ねる。絞り込みで中身が無くなった中分類は見出しごと出さない
-            g.subs.forEach(s => {
-                const rows = s.toks.filter(e => !q || e._n.includes(q));
-                if (rows.length === 0) return;
-                hit += rows.length;
-                html += `<div class="rt-sub" data-t="s:${attrEscape(s.name)}" onclick="openRemainsDetail(this.dataset.t)">
-                    <div class="rt-sub-n">${attrEscape(s.name)}</div>
-                    <div class="rt-num">${s.castles.size.toLocaleString()}城</div>
-                    <div class="lord-chev">›</div></div>`
-                    + rows.map(e => remainsRowHtml(e, false)).join('');
-            });
+        let html, hit, total;
+        if (g.subs && !remainsState.sub) {
+            /* 中分類の一覧。行を押すとその中分類の城一覧、右端の「内訳」で小分類へ降りる。
+               閲覧の中心は中分類（門286城・櫓181城）なので、いちばん使う操作を主タップに当てる。
+               絞り込みの語は中分類名だけでなく中身の遺構名でも当てる（「移築門」で門が残るように） */
+            const rows = g.subs.filter(s => !q || normalizeForSearch(s.name).includes(q)
+                                            || s.toks.some(e => e._n.includes(q)));
+            hit = rows.length; total = `全${g.subs.length}分類`;
+            html = rows.map(s => `<div class="lord-row" data-t="s:${attrEscape(s.name)}" onclick="openRemainsDetail(this.dataset.t)">
+                <div class="lord-main">
+                    <div class="lord-name">${attrEscape(s.name)}</div>
+                    <div class="lord-sub">${attrEscape(s.toks.slice(0, 3).map(e => e.n).join('、'))} ほか${s.toks.length}種</div>
+                </div>
+                <div class="lord-num">${s.castles.size.toLocaleString()}城</div>
+                <button class="rt-drill" data-s="${attrEscape(s.name)}"
+                        onclick="event.stopPropagation(); openRemainsSub(this.dataset.s)">内訳${s.toks.length}種
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button></div>`).join('');
         } else {
-            const rows = g.toks.filter(e => !q || e._n.includes(q));
-            hit = rows.length;
+            // 遺構（小分類）の一覧。中分類を持たない分類の内訳と、中分類の中身の両方で使う
+            const src = remainsState.sub ? remainsState.sub.toks : g.toks;
+            const rows = src.filter(e => !q || e._n.includes(q));
+            hit = rows.length; total = `全${src.length.toLocaleString()}種`;
             html = rows.map(e => remainsRowHtml(e, false)).join('');
         }
         list.innerHTML = hit
-            ? html + `<div class="lords-note">全${g.toks.length.toLocaleString()}種</div>`
+            ? html + `<div class="lords-note">${total}</div>`
             : '<div class="lords-note">該当する遺構がありません</div>';
         list.scrollTop = remainsState.restoreTokScroll || 0;
         remainsState.restoreTokScroll = 0;
@@ -6462,6 +6499,9 @@ map.on('zoomend', () => { isZooming = false; });
        （近い順の起点・スクロール位置）を保つ。 */
     function openRemainsDetail(target, restoreView) {
         let name, idx;
+        // 第8ビューのどちらを見ていたか（中分類の一覧か、小分類の一覧か）は
+        // remainsState.sub を書き換える前にしか分からないので先に控える
+        const leftSubList = !!remainsState.sub;
         if (target === 'g' || target.startsWith('g:')) {
             const g = target === 'g' ? remainsState.group
                                      : remainsGroups.find(x => x.id === target.slice(2));
@@ -6478,6 +6518,9 @@ map.on('zoomend', () => { isZooming = false; });
             const s = g && g.subs && g.subs.find(x => x.name === subName);
             if (!s) return;
             remainsState.group = g;
+            // 中分類の行から来たなら戻り先は中分類の一覧。小分類の一覧の「まとめて見る」から
+            // 来たならそこへ帰したいので、そのときだけ sub を残す
+            if (!leftSubList) remainsState.sub = null;
             remainsState.target = `s:${g.id}:${s.name}`;
             name = s.name;
             idx = [...s.castles];
@@ -6486,21 +6529,28 @@ map.on('zoomend', () => { isZooming = false; });
             const e = remainsIndex.find(x => x.n === key);
             if (!e) return;
             remainsState.target = `t:${e.n}`;
-            // 個別の遺構は、戻り導線からも属する分類の内訳へ帰れるようにしておく
+            // 個別の遺構は、戻り導線からも属する分類の内訳へ帰れるようにしておく。
+            // 中分類を持つ分類なら、その遺構が属する中分類まで特定して戻り先にする
             if (!remainsState.group || remainsState.group.id !== e.g) {
                 remainsState.group = remainsGroups.find(g => g.id === e.g) || null;
+                remainsState.sub = null;
             }
+            const g = remainsState.group;
+            if (g && g.subs) remainsState.sub = g.subs.find(s => s.toks.includes(e)) || null;
             name = e.n;
             idx = e.idx;
         }
         if (!restoreView) {
-            // 一覧から開いたときだけ、そこへ戻るための位置を控える
-            const tokList = document.getElementById('remains-tok-list');
-            const list = document.getElementById('remains-list');
+            // 一覧から開いたときだけ、どの一覧から来たかと、そこへ戻るための位置を控える
             if (document.getElementById('nearby-remains-group-view').classList.contains('open')) {
-                remainsState.tokScrollTop = tokList.scrollTop;
+                const top = document.getElementById('remains-tok-list').scrollTop;
+                if (leftSubList) remainsState.subScrollTop = top;
+                else remainsState.tokScrollTop = top;
+                remainsState.from = 'breakdown';
             } else if (document.getElementById('nearby-remains-view').classList.contains('open')) {
-                remainsState.listScrollTop = list.scrollTop;
+                remainsState.listScrollTop = document.getElementById('remains-list').scrollTop;
+                // チップ「個別」のフラット一覧から直接開いた場合。戻り先はそこにする
+                remainsState.from = 'list';
             }
         }
         if (!restoreView || !remainsState.center) {
@@ -6520,8 +6570,10 @@ map.on('zoomend', () => { isZooming = false; });
         showRemainsView('detail');
         renderRemainsCastles();
     }
+    // 城一覧の戻る。開く前に見ていた一覧（分類一覧／中分類の一覧／小分類の一覧）へ帰す
     function backToRemainsGroup() {
-        // 個別の遺構から来たときはその分類の内訳へ、分類の「まとめて」から来たときも同じ場所へ
+        if (remainsState.from === 'list') { backToRemainsList(); return; }
+        if (remainsState.sub) { openRemainsSub(remainsState.sub.name, true); return; }
         if (remainsState.group) { openRemainsGroup(remainsState.group.id, true); return; }
         backToRemainsList();
     }
