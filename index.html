@@ -4828,6 +4828,7 @@ map.on('zoomend', () => { isZooming = false; });
     let nearbyAllResults = [];
     let nearbyTypeFilter = new Set();
     let nearbyResultTypes = []; // 現在の検索結果に含まれるタイプ一覧
+    let nearbyResultScrollTop = 0; // 結果からオブジェクトを開く直前の一覧のスクロール位置
 
     // タイプフィルターのOFF状態をlocalStorageへ永続化
     function loadNearbyFilterOff() {
@@ -6219,9 +6220,42 @@ map.on('zoomend', () => { isZooming = false; });
                 : `<div class="nearby-item-icon" style="background:${getItemColor(item)}">${cfg.img ? `<img src="${cfg.img}"${cfg.img === 'manhole.png' ? '' : ' class="icon-full"'}>` : cfg.icon}</div>`;
             // バッジは県ページの一覧と同じ内容（城の名城・形態、カードのID・弾、食べログの部門）
             div.innerHTML = `${iconPart}<div class="nearby-item-text"><div class="nearby-item-name">${itemDisplayName(item)}</div><div class="nearby-item-sub">${item.sub}</div></div>${prefBadgesHtml(item)}<div class="nearby-item-dist">${distStr}</div>`;
-            div.addEventListener('click', () => { closeNearbyResult(); onResultClick(item); });
+            div.addEventListener('click', () => nearbyJumpToItem(item));
             list.appendChild(div);
         });
+    }
+
+    /* 結果一覧からオブジェクトへ飛ぶ。県ページ（prefJumpToItem）と同じ扱いにして、
+       離れる前に一覧の位置を控え、情報シートに戻り導線を挿す。 */
+    function nearbyJumpToItem(item) {
+        nearbyResultScrollTop = document.getElementById('nearby-list').scrollTop;
+        closeNearbyResult();
+        onResultClick(item);
+        // onResultClick は 300ms 後に情報シートを開くので、その後に戻り導線を挿す
+        setTimeout(injectNearbyBackLink, 400);
+    }
+
+    // 周辺検索結果から来たときだけ、情報シートの先頭に戻り導線を挿す（都道府県から探すと同じ扱い）。
+    // 別のピンをタップするとシート本文ごと作り直されるので、自然に消える。
+    function injectNearbyBackLink() {
+        const body = document.getElementById('obj-sheet-body');
+        if (!body || body.querySelector('.os-lords-back')) return;
+        const div = document.createElement('div');
+        div.className = 'os-lords-back';
+        div.textContent = '↩ 周辺検索結果へ戻る';
+        div.onclick = () => { closeObjSheet(); reopenNearbyResult(); };
+        body.insertBefore(div, body.firstChild);
+    }
+
+    /* 開く前の一覧の状態のまま戻す。距離は検索した時点の起点で確定済みなので取り直さない
+       （取り直すと、オブジェクトへ寄った先の地図中心が起点になって並びが変わる）。
+       一覧のDOMは openNearbyPanel が空にすることがあるため、描き直してから位置を戻す。 */
+    function reopenNearbyResult() {
+        if (!nearbyAllResults.length) return;
+        renderNearbyList();
+        document.getElementById('nearby-list').scrollTop = nearbyResultScrollTop || 0;
+        document.getElementById('nearby-result-panel').style.bottom = '52px';
+        document.getElementById('nearby-result-overlay').style.display = 'block';
     }
 
     function closeNearbyResult() {
