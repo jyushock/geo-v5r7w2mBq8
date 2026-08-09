@@ -42850,7 +42850,7 @@ const castleData = {
         "shiroHbElevationM": 132,
         "shiroHbRelativeHeightM": 100,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/iyo/matsuyama-jyo/",
-        "remains": "天守、櫓、門、石垣、土塁、曲輪、堀、井戸、塀",
+        "remains": "天守、櫓、門、石垣、土塁、曲輪、堀、井戸、塀、現存天守",
         "lords": "加藤嘉明、蒲生忠知、(久松)松平定行、松平定頼、松平定長、松平定直、松平定英、松平定喬、松平定功、松平定静、松平定国、松平定則、松平定通、松平勝善、松平勝成、松平定昭、加藤氏（20万石）、蒲生氏（24万石）、松平氏（15万石）、加藤氏、松平（久松）氏"
       }
     },
