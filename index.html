@@ -854,6 +854,13 @@
            （6種別で合わせて9ch多い）、56px のままだと行の幅が385px必要になって
            375px では「›」が画面の外へ出るため（実測）。名前の欄を詰めるとちょうど収まる。 */
         .pref-row.pref-row-all .lord-main { width: auto; }
+        /* 名前の欄を詰めるだけでは375pxで残りが6pxしかなく、端末によるフォントの幅の差で
+           「›」が画面の外へ出る。全国の行だけ間隔も詰めて30px弱の余りを作る。
+           アイコンと数字は他の行と同じ寸法のまま（詰めるのは隙間だけ）。
+           それでも収まらない端末のために、描いたあとに実測して縮める（fitPrefAllRow）。 */
+        .pref-row.pref-row-all { gap: 6px; }
+        .pref-row.pref-row-all .pref-cnt-line { gap: 3px; }
+        .pref-row.pref-row-all .pref-cnt-cell { gap: 0; }
         .pref-cnt-line {
             display: flex; align-items: center; gap: 5px; flex-shrink: 0; font-size: 11px;
             margin-right: auto;
@@ -995,6 +1002,11 @@
         .lord-num { font-size: 12px; color: #546E7A; font-weight: bold; flex-shrink: 0; }
         .lord-chev { color: #ccc; font-size: 15px; flex-shrink: 0; }
         .lords-note { padding: 16px; text-align: center; color: #999; font-size: 13px; }
+        /* 一覧を上限で打ち切ったときの「さらに◯件」。
+           見た目は絞り込み帯の「すべて表示」（.pref-rstbar button）と揃える */
+        .pref-more { display: block; margin: 9px auto 0; border: 0; background: #f2f2f2;
+                     border-radius: 12px; padding: 5px 14px; font-size: 12px; color: #2a5bd7;
+                     font-weight: bold; cursor: pointer; font-family: inherit; }
         /* 城の情報シートに出す「城主一覧に戻る」導線 */
         .os-lords-back {
             display: flex; align-items: center; gap: 6px; margin: 0 0 8px; padding: 7px 10px;
@@ -5827,6 +5839,11 @@ map.on('zoomend', () => { isZooming = false; });
         const list = document.getElementById('pref-item-list');
         const i = (prefState.typeHead || {})[t];
         if (!list || i === undefined) return;   // 絞り込みで1件も残っていない種別
+        // 上限で打ち切った先にある種別は、その行が入るところまで継ぎ足してから飛ぶ
+        if (i >= (prefState.shown || 0)) {
+            prefState.shown = Math.ceil((i + 1) / PREF_ITEM_CHUNK) * PREF_ITEM_CHUNK;
+            renderPrefItems(true);
+        }
         const el = list.children[i];
         if (!el) return;
         list.scrollTop += el.getBoundingClientRect().top - list.getBoundingClientRect().top;
@@ -5962,9 +5979,25 @@ map.on('zoomend', () => { isZooming = false; });
         const list = document.getElementById('pref-list');
         list.innerHTML = out.length ? out.join('')
             : '<div class="lords-note">該当する都道府県がありません</div>';
+        fitPrefAllRow();
         // 通常は先頭から。県ページから戻ってきたときだけ、開く前の位置へ戻す
         list.scrollTop = prefState.restoreListScroll || 0;
         prefState.restoreListScroll = 0;
+    }
+
+    /* 全国の行の収まりを実測で確かめる。件数の桁が県より9ch多く、間隔を詰めても
+       375px（iPhone SE3。スクロールバー13pxを引いて362px）での余りは30px弱なので、
+       フォントの幅が想定より広い端末では「›」が画面の外へ出る。はみ出していたら
+       この行の数字だけを0.5pxずつ縮めて収める（アイコンと県の行には触らない）。
+       画面が狭い端末（320px幅）でも同じ仕組みで収まる。 */
+    function fitPrefAllRow() {
+        const row = document.querySelector('#pref-list .pref-row-all');
+        if (!row) return;
+        const line = row.querySelector('.pref-cnt-line');
+        line.style.fontSize = '';
+        for (let size = 11; size > 8.5 && row.scrollWidth > row.clientWidth; size -= 0.5) {
+            line.style.fontSize = (size - 0.5) + 'px';
+        }
     }
 
     /* restoreView を立てて呼ぶと、オブジェクトを開く前の一覧の状態に戻す。
@@ -5993,7 +6026,8 @@ map.on('zoomend', () => { isZooming = false; });
         renderPrefFilterUI();
         renderDistOrigin('pref');
         showPrefView('detail');
-        renderPrefItems();
+        // 戻ってきたときは継ぎ足した分もそのまま（スクロール位置を戻す先が変わらないように）
+        renderPrefItems(restoreView);
     }
 
     function setPrefSort(sort) {
@@ -6083,9 +6117,20 @@ map.on('zoomend', () => { isZooming = false; });
         el.focus();
     }
 
-    function renderPrefItems() {
+    /* 一度に描く件数の上限。全国（34,934件）を一度に描くと重く、実測で
+       東京都2,496件の6.9倍かかった（同じ端末・同じブラウザで884ms→6.1秒、
+       DOMノード307,398。2026-08-10）。上限は、これまで問題なく使えていた
+       東京都2,496件より軽い1,000件に置く。続きは末尾の「さらに表示」で継ぎ足す
+       ので、打ち切っても辿れなくなるものは無い。 */
+    const PREF_ITEM_CHUNK = 1000;
+
+    /* keepShown を立てて呼ぶと、継ぎ足した分（prefState.shown）を保つ。
+       「さらに表示」と、オブジェクトから戻ったときの描き直しがこれに当たる。
+       絞り込みや並べ替えで一覧の中身が変わるときは、先頭1,000件から見せ直す。 */
+    function renderPrefItems(keepShown) {
         const name = prefState.pref;
         if (!name) return;
+        if (!keepShown) prefState.shown = PREF_ITEM_CHUNK;
         const types = [...prefState.types];
         const center = prefState.center || getSearchCenter();   // 起点は県ページを開いた時点で固定
         const q = normalizeForSearch((prefState.q || '').trim());
@@ -6130,11 +6175,12 @@ map.on('zoomend', () => { isZooming = false; });
                 q ? '該当する項目がありません' : '表示する種別が選ばれていません'}</div>`;
             return;
         }
-        // 件数の上限は設けない。最大の県（東京都2,496件）でもPC実測で
-        // HTML生成5.8ms・DOM反映34.2ms・ノード22,307・ヒープ+2.9MB に収まる一方、
-        // 300件で打ち切ると47県中46県で内容が欠け、うち35県は城だけで枠を使い切って
-        // 道の駅以降が1件も出なかったため（2026-08-01 実データで確認）
-        list.innerHTML = rows.map((r, i) => {
+        /* 上限までを描く。上限は種別で分けずに先頭から数える（種別ごとの枠にすると、
+           並べ替えが名前順・近い順のときに枠の意味が無くなるため）。集計帯のタップで
+           上限の先にある種別へ飛ぶときは、そこまで継ぎ足してから飛ぶ（prefJumpToType）。 */
+        const shown = Math.min(rows.length, prefState.shown || PREF_ITEM_CHUNK);
+        prefState.shown = shown;
+        list.innerHTML = rows.slice(0, shown).map((r, i) => {
             const item = r.item;
             const distStr = r.dist < 1 ? `${Math.round(r.dist * 1000)}m` : `${r.dist.toFixed(1)}km`;
             return `<div class="nearby-item" onclick="prefJumpToItem(${i})">
@@ -6148,12 +6194,23 @@ map.on('zoomend', () => { isZooming = false; });
             </div>`;
         }).join('');
         prefState.rows = rows;
-        list.insertAdjacentHTML('beforeend',
-            `<div class="lords-note">全${rows.length.toLocaleString()}件</div>`);
+        // 末尾。打ち切っているときは、いま出ている件数と全件数を並べて「さらに表示」を添える
+        list.insertAdjacentHTML('beforeend', shown < rows.length
+            ? `<div class="lords-note">${shown.toLocaleString()}件を表示中（全${
+                rows.length.toLocaleString()}件）<button class="pref-more" onclick="showMorePrefItems()"
+                >さらに${Math.min(PREF_ITEM_CHUNK, rows.length - shown).toLocaleString()}件</button></div>`
+            : `<div class="lords-note">全${rows.length.toLocaleString()}件</div>`);
         // 通常は先頭から。オブジェクトを開いて戻ってきたときだけ、開く前の位置へ戻す
         // （全件を入れ終えてから指定しないと、スクロールできる高さが足りずに切り詰められる）
         list.scrollTop = prefState.restoreScroll || 0;
         prefState.restoreScroll = 0;
+    }
+
+    /* 「さらに表示」。いま出ている続きから見えるよう、スクロール位置は動かさない。 */
+    function showMorePrefItems() {
+        prefState.restoreScroll = document.getElementById('pref-item-list').scrollTop;
+        prefState.shown = (prefState.shown || PREF_ITEM_CHUNK) + PREF_ITEM_CHUNK;
+        renderPrefItems(true);
     }
 
     /* 一覧からオブジェクトへ飛ぶ。検索結果タップ（onResultClick）と同じ扱いにして、
