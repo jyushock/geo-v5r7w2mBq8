@@ -23716,7 +23716,7 @@ const castleData = {
         "shiroHbElevationM": 336,
         "shiroHbRelativeHeightM": 308,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/mino/gifu-jyo/",
-        "remains": "石垣、曲輪、堀、井戸、土塁、堀切、模擬天守",
+        "remains": "石垣、曲輪、堀、井戸、土塁、堀切、復興天守",
         "lords": "二階堂行政、佐藤朝光、伊賀光宗、二階堂行藤、斎藤利永、斎藤妙椿、長井新左衛門尉、斎藤道三、斎藤義龍、斎藤龍興、織田信長、織田信忠、神戸信孝、池田元助、池田輝政、豊臣秀勝、織田秀信、斎藤氏、織田氏"
       }
     },
@@ -29300,7 +29300,7 @@ const castleData = {
         "aliases": [
           "小牧城"
         ],
-        "remains": "石垣、土塁、曲輪、堀、井戸",
+        "remains": "石垣、土塁、曲輪、堀、井戸、模擬天守",
         "lords": "織田信長、徳川家康、織田氏、徳川氏"
       }
     },
@@ -33605,7 +33605,7 @@ const castleData = {
           "尼丘城"
         ],
         "shiroHbElevationM": 2.6,
-        "remains": "石垣、堀、地上面に遺構なし、模擬天守",
+        "remains": "石垣、堀、地上面に遺構なし、復興天守",
         "lords": "戸田氏鉄、青山氏、(桜井)松平氏、松平忠喬"
       }
     },
@@ -40070,7 +40070,7 @@ const castleData = {
         "shiroHbElevationM": 28,
         "shiroHbRelativeHeightM": 25,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/bingo/fukuyama-jyo/",
-        "remains": "天守、櫓、門、土塀、石垣、曲輪、井戸、虎口、鐘楼、外観復元天守",
+        "remains": "天守、櫓、門、土塀、石垣、曲輪、井戸、虎口、鐘楼、復興天守",
         "lords": "水野勝成、水野勝俊、水野勝貞、水野勝種、水野勝岑、松平忠雅、阿部正邦、阿部正福、阿部正右、阿部正倫、阿部正精、阿部正寧、阿部正弘、阿部正教、阿部正方、阿部正桓、水野氏（10万石）、松平氏（10万石）、阿部氏（10万石、7代、正弘から11万石）、水野氏、松平氏、阿部氏"
       }
     },
