@@ -5533,12 +5533,13 @@ map.on('zoomend', () => { isZooming = false; });
             const p = r.f.properties;
             return normalizeForSearch(`${p.name || ''} ${r.pref} ${p.address || ''}`).includes(q);
         });
-        /* どの並びでも 100名城 → 続100名城 → その他 を先に寄せ、その中で選んだ順に並べる
-           （「近い順」なら100名城の中で近い順、続100名城の中で近い順…となる）。 */
+        /* 選んだ基準をそのまま第一キーにする。近い順は距離だけで並べ、100名城で束ねない
+           （束ねると「いま近いのはどれか」が分からなくなり、近い順にした意味が消えるため）。
+           都道府県順は県が先で、格付けは同じ県の中での並びに使う。 */
         const rank = r => castleGenreRank(r.f.properties);
-        if (lordsState.sort === 'dist') rows.sort((a, b) => rank(a) - rank(b) || a.dist - b.dist);
-        else rows.sort((a, b) => rank(a) - rank(b)
-                                 || (PREF_ORDER[a.pref] ?? 99) - (PREF_ORDER[b.pref] ?? 99)
+        if (lordsState.sort === 'dist') rows.sort((a, b) => a.dist - b.dist);
+        else rows.sort((a, b) => (PREF_ORDER[a.pref] ?? 99) - (PREF_ORDER[b.pref] ?? 99)
+                                 || rank(a) - rank(b)
                                  || a.f.properties.name.localeCompare(b.f.properties.name, 'ja'));
         if (rows.length === 0) {
             document.getElementById('lord-castle-list').innerHTML =
@@ -6681,11 +6682,11 @@ map.on('zoomend', () => { isZooming = false; });
             const p = r.f.properties;
             return normalizeForSearch(`${p.name || ''} ${r.pref} ${p.address || ''}`).includes(q);
         });
-        // 城主詳細と同じ並び。どの並びでも 100名城 → 続100名城 → その他 を先に寄せる
+        // 城主詳細と同じ並び。近い順は距離だけ、都道府県順は県が先で格付けは県の中での並び
         const rank = r => castleGenreRank(r.f.properties);
-        if (remainsState.sort === 'dist') rows.sort((a, b) => rank(a) - rank(b) || a.dist - b.dist);
-        else rows.sort((a, b) => rank(a) - rank(b)
-                                 || (PREF_ORDER[a.pref] ?? 99) - (PREF_ORDER[b.pref] ?? 99)
+        if (remainsState.sort === 'dist') rows.sort((a, b) => a.dist - b.dist);
+        else rows.sort((a, b) => (PREF_ORDER[a.pref] ?? 99) - (PREF_ORDER[b.pref] ?? 99)
+                                 || rank(a) - rank(b)
                                  || a.f.properties.name.localeCompare(b.f.properties.name, 'ja'));
         const list = document.getElementById('remains-castle-list');
         if (rows.length === 0) {
