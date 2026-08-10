@@ -8,7 +8,7 @@
  *
  * 更新方法: デプロイ時に下の VERSION を上げると旧キャッシュを破棄して入れ替わる。
  */
-const VERSION = 'v3';
+const VERSION = 'v4';
 const STATIC_CACHE  = `static-${VERSION}`;
 const RUNTIME_CACHE = `runtime-${VERSION}`;
 
