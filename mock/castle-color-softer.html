@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>城の紫 — 存在感を弱めた候補</title>
+<style>
+    body { margin: 0; padding: 20px 16px 60px; font-family: system-ui, sans-serif; background: #fff; color: #222; }
+    h1 { font-size: 17px; margin: 0 0 4px; }
+    .lead { font-size: 13px; color: #555; margin: 0 0 18px; line-height: 1.7; }
+    h2 { font-size: 14px; margin: 26px 0 10px; padding-bottom: 5px; border-bottom: 1px solid #ddd; }
+
+    .pin { width: 28px; height: 28px; border-radius: 50%; box-shadow: 0 0 0 3px #fff; display: inline-flex;
+           align-items: center; justify-content: center; flex-shrink: 0; }
+    .pin img { width: 28px; height: 28px; object-fit: contain; filter: brightness(0) invert(1); }
+    .pin.mh img { width: 25px; height: 25px; }
+    .pin.sq { width: 24px; height: 24px; border-radius: 2px; }
+    .pin.sq img { width: 24px; height: 24px; }
+
+    .row { display: flex; align-items: center; gap: 16px; padding: 10px 14px; border-radius: 10px;
+           background: #e8eef3; margin-bottom: 10px; }
+    .name { width: 150px; font-size: 12.5px; line-height: 1.5; flex-shrink: 0; }
+    .hex { font-family: ui-monospace, monospace; font-size: 11px; color: #555; display: block; }
+    .memo { font-size: 11px; color: #777; display: block; }
+    .pins { display: flex; align-items: center; gap: 9px; }
+    .sep { width: 1px; height: 30px; background: #b9c6d1; }
+    .field { position: relative; width: 330px; height: 104px; background: #e2e9ef; border-radius: 8px; flex-shrink: 0; }
+    .field .pin { position: absolute; }
+    .zoom { transform: scale(2.4); transform-origin: left center; }
+    .zwrap { height: 84px; display: flex; align-items: center; padding-left: 8px; }
+</style>
+</head>
+<body>
+
+<h1>城（100名城以外）の紫 — 存在感を弱めた候補</h1>
+<p class="lead">
+現行の <code>#6A1B9A</code> は彩度70%・明度35%で、地図上で主張が強い状態です。<br>
+色相（277°＝紫）は保ったまま、<strong>彩度</strong>と<strong>明度</strong>を動かした案を並べます。城は13,098件で最多のため、右側は密集したときの見え方です。
+</p>
+
+<h2>候補（実寸）— 左：単体　中：他種別との並び　右：密集</h2>
+<div id="rows"></div>
+
+<h2>拡大（2.4倍）</h2>
+<div id="zoomrows"></div>
+
+<script>
+const CANDS = [
+    ['現行の紫',         '#6A1B9A', 'S70% L36%（変更なし）'],
+    ['彩度を下げる(中)', '#703B91', 'S42% L40%'],
+    ['彩度を下げる(強)', '#7A5591', 'S26% L45%'],
+    ['くすませて明るく', '#9273A5', 'S22% L55%'],
+    ['淡い紫',           '#A779C3', 'S38% L62%'],
+    ['暗く沈める',       '#492460', 'S45% L26%'],
+    ['灰紫',             '#786383', 'S14% L45%'],
+    ['青寄りの淡紫',     '#876AAF', 'H265 S30% L55%'],
+];
+
+const OTHERS = [
+    ['sq', '#0B499D', '../michi.png'],
+    ['',   '#4285F4', '../castle.png'],
+    ['',   '#EA4335', '../castle.png'],
+    ['',   '#FF9800', '../tabe.png'],
+    ['mh', '#B87333', '../manhole.png'],
+    ['mh', '#FBBC04', '../manhole.png'],
+];
+
+const pin = (cls, color, img) => `<div class="pin ${cls}" style="background:${color}"><img src="${img}"></div>`;
+
+// 密集配置。城が多数派になるよう配分する
+let seed = 7;
+const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
+const SPOTS = [];
+while (SPOTS.length < 20) {
+    const x = Math.round(rnd() * 294), y = Math.round(rnd() * 68), r = rnd();
+    if (SPOTS.every(s => Math.abs(s.x - x) > 26 || Math.abs(s.y - y) > 26)) SPOTS.push({ x, y, r });
+}
+
+function field(hex) {
+    return `<div class="field">` + SPOTS.map(({ x, y, r }) => {
+        let cls = '', col = hex, img = '../castle.png';
+        if (r > 0.93) { cls = 'mh'; col = '#B87333'; img = '../manhole.png'; }
+        else if (r > 0.85) { col = '#FF9800'; img = '../tabe.png'; }
+        else if (r > 0.76) { cls = 'sq'; col = '#0B499D'; img = '../michi.png'; }
+        else if (r > 0.70) { col = '#EA4335'; }
+        else if (r > 0.62) { col = '#4285F4'; }
+        return `<div class="pin ${cls}" style="background:${col};left:${x}px;top:${y}px"><img src="${img}"></div>`;
+    }).join('') + `</div>`;
+}
+
+document.getElementById('rows').innerHTML = CANDS.map(([name, hex, memo]) => `
+    <div class="row">
+        <div class="name">${name}<span class="hex">${hex}</span><span class="memo">${memo}</span></div>
+        <div class="pins">${pin('', hex, '../castle.png')}<div class="sep"></div>
+            ${OTHERS.map(([c, col, img]) => pin(c, col, img)).join('')}</div>
+        ${field(hex)}
+    </div>`).join('');
+
+document.getElementById('zoomrows').innerHTML = CANDS.map(([name, hex]) => `
+    <div class="row">
+        <div class="name">${name}<span class="hex">${hex}</span></div>
+        <div class="zwrap"><div class="zoom"><div class="pins">
+            ${pin('', hex, '../castle.png')}
+            ${pin('sq', '#0B499D', '../michi.png')}
+            ${pin('', '#4285F4', '../castle.png')}
+            ${pin('', '#EA4335', '../castle.png')}
+        </div></div></div>
+    </div>`).join('');
+</script>
+
+</body>
+</html>

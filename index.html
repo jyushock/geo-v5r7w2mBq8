@@ -763,7 +763,7 @@
         }
         .nearby-list-btn:disabled { opacity: 0.5; cursor: default; }
         .nlb-ic {
-            width: 34px; height: 34px; border-radius: 9px; background: #6A1B9A;   /* 城主の入口。城アイコンなので城の種別色に合わせる */
+            width: 34px; height: 34px; border-radius: 9px; background: #786383;   /* 城主の入口。城アイコンなので城の種別色に合わせる */
             display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
         /* お城アイコンは枠いっぱいに描く。他の場所（地図・検索結果・周辺検索・履歴）でも
@@ -3806,7 +3806,7 @@ const objClickLayers = [];
 // 地図上のピン（カードの面は MHCARD_FACE_COLOR の #B87333）と食い違うため、
 // ピンの見た目に合わせてマンホール系の #B87333 を使う。
 const OBJ_TYPE_COLOR = {
-    castle: '#6A1B9A', michi: '#0B499D', shop: '#FF9800',
+    castle: '#786383', michi: '#0B499D', shop: '#FF9800',
     manhole: '#B87333', mhcard: '#B87333', pokefuta: '#FBBC04',
 };
 function objRingColor(type, p) {
@@ -4313,8 +4313,8 @@ map.on('zoomend', () => { isZooming = false; });
                 { id: 'shops',           color: '#FF9800', icon: 'tabe-icon',     type: 'shop',    clusterColor: '#FF9800' },
                 { id: 'manholes',        color: '#B87333', icon: 'manhole-icon',  type: 'manhole', clusterColor: '#B87333' },
                 { id: 'mhcards',         color: '#1565C0', icon: 'mhcard-icon',   type: 'mhcard',  clusterColor: '#1565C0' },
-                { id: 'castles',         color: '#6A1B9A', icon: 'castle-icon',   type: 'castle',  clusterColor: '#6A1B9A' },
-                { id: 'castles-famous',  color: '#6A1B9A', icon: 'castle-icon',   type: 'castle',  clusterColor: '#6A1B9A', noCluster: true },
+                { id: 'castles',         color: '#786383', icon: 'castle-icon',   type: 'castle',  clusterColor: '#786383' },
+                { id: 'castles-famous',  color: '#786383', icon: 'castle-icon',   type: 'castle',  clusterColor: '#786383', noCluster: true },
             ];
 
             // 地図の空きタップで情報シートを閉じる判定に使う、オブジェクトのクリック対象レイヤー一覧
@@ -4355,7 +4355,7 @@ map.on('zoomend', () => { isZooming = false; });
                     map.addLayer({ id: `${conf.id}-bg-outline`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': 'michi-plate-icon', 'icon-size': (MICHI_PLATE_PX + 6) / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
                     map.addLayer({ id: `${conf.id}-bg`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': 'michi-plate-icon', 'icon-size': MICHI_PLATE_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': conf.color } });
                 } else if (conf.type !== 'mhcard') {
-                    map.addLayer({ id: `${conf.id}-bg`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: { 'circle-color': conf.type === 'castle' ? ['match', ['get', 'genre'], '日本100名城', '#4285F4', '続日本100名城', '#EA4335', '#6A1B9A'] : conf.type === 'manhole' ? ['match', ['get', 'source'], 'pokefuta', '#FBBC04', '#B87333'] : conf.color, 'circle-radius': OBJ_ICON_CIRCLE_PX / 2, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' }, layout: { ...(conf.type === 'castle' ? { 'circle-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis } });
+                    map.addLayer({ id: `${conf.id}-bg`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: { 'circle-color': conf.type === 'castle' ? ['match', ['get', 'genre'], '日本100名城', '#4285F4', '続日本100名城', '#EA4335', '#786383'] : conf.type === 'manhole' ? ['match', ['get', 'source'], 'pokefuta', '#FBBC04', '#B87333'] : conf.color, 'circle-radius': OBJ_ICON_CIRCLE_PX / 2, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' }, layout: { ...(conf.type === 'castle' ? { 'circle-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis } });
                 }
                 map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': conf.type === 'mhcard' ? 1.0 : conf.type === 'manhole' ? OBJ_ICON_INNER_PX / OBJ_ICON_NATIVE_PX : conf.type === 'michi' ? MICHI_PLATE_PX / OBJ_ICON_NATIVE_PX : OBJ_ICON_CIRCLE_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, ...(conf.type === 'castle' ? { 'symbol-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
                 if (conf.type === 'mhcard') {
@@ -4688,7 +4688,7 @@ map.on('zoomend', () => { isZooming = false; });
         pokefuta: { color: '#FBBC04', img: 'manhole.png', label: 'ポケふた' },
         manhole:  { color: '#B87333', img: 'manhole.png', label: 'マンホール' },
         mhcard:   { color: '#1565C0', img: 'manhole.png', label: 'マンホールカード配布' },
-        castle:   { color: '#6A1B9A', img: 'castle.png',  label: 'お城' },
+        castle:   { color: '#786383', img: 'castle.png',  label: 'お城' },
         michi:    { color: '#0B499D', img: 'michi.png',   label: '道の駅' },   /* 色は道の駅紋章の地色 */
         shop:     { color: '#FF9800', img: 'tabe.png',    label: '食べログ' },
         place:    { color: '#4285F4', icon: '📍',        label: '地名' },
