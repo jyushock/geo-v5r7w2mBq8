@@ -3803,8 +3803,8 @@ const objClickLayers = [];
 // ピンは直径28px＋白枠3px（外径34px）なので、内リングφ46/外リングφ62なら重ならない。
 // 色は「地図上のピンと同じ色」に合わせる。
 // mhcard だけは typeConfig の #1565C0（検索結果や履歴のアイコン背景用）を使うと
-// 地図上のピン（mhcard.png のカード画像。主要色を実測すると #b07030 の茶系）と
-// 食い違うため、ピンの見た目に合わせてマンホール系の #B87333 を使う。
+// 地図上のピン（カードの面は MHCARD_FACE_COLOR の #B87333）と食い違うため、
+// ピンの見た目に合わせてマンホール系の #B87333 を使う。
 const OBJ_TYPE_COLOR = {
     castle: '#546E7A', michi: '#0B499D', shop: '#FF9800',
     manhole: '#B87333', mhcard: '#B87333', pokefuta: '#FBBC04',
@@ -4272,6 +4272,13 @@ map.on('zoomend', () => { isZooming = false; });
                 res();
             })
         );
+        // マンホールカードの素材だけは実寸の2倍で描いてあるので pixelRatio 2 で読む
+        const loadSDF2x = (url, id) => new Promise(res =>
+            map.loadImage(url, (err, img) => {
+                if (!err && img) map.addImage(id, img, { sdf: true, pixelRatio: 2 });
+                res();
+            })
+        );
 
         Promise.all([
             loadSDF('tabe.png',    'tabe-icon'),
@@ -4279,8 +4286,14 @@ map.on('zoomend', () => { isZooming = false; });
             loadSDF('michi.png',   'michi-icon'),
             loadSDF('michi-plate.png', 'michi-plate-icon'),
             loadSDF('manhole.png', 'manhole-icon'),
-            new Promise(res => map.loadImage('mhcard.png', (err, img) => { if (!err && img) map.addImage('mhcard-icon', img, { pixelRatio: 2 }); res(); })),
-            new Promise(res => map.loadImage('mhcard-cluster.png', (err, img) => { if (!err && img) map.addImage('mhcard-cluster-icon', img, { pixelRatio: 2 }); res(); }))
+            /* マンホールカードも他と同じSDF。カード画像は白フチ＋銅色の面の2色なので、
+               外形（mhcard.png のアルファ）を白、面（mhcard-face.png）を銅色で2枚重ねる。
+               画像が56x72/56x56なので pixelRatio 2 は従来どおり（表示は28x36 / 28x28）。
+               HTML側の一覧は img として mhcard.png をそのまま使うため、原画は残す。 */
+            loadSDF2x('mhcard.png',              'mhcard-icon'),
+            loadSDF2x('mhcard-face.png',         'mhcard-face-icon'),
+            loadSDF2x('mhcard-cluster.png',      'mhcard-cluster-icon'),
+            loadSDF2x('mhcard-cluster-face.png', 'mhcard-cluster-face-icon')
         ]).then(() => {
             // オブジェクト種別アイコンの円直径/表示サイズ。CSS変数 --obj-icon-circle / --obj-icon-inner と同じ値（画像ネイティブ幅64pxに対する比率をicon-sizeに使用）
             const OBJ_ICON_CIRCLE_PX = 28;
@@ -4289,6 +4302,8 @@ map.on('zoomend', () => { isZooming = false; });
             // 道の駅の板。正方形は同じ寸法だと丸より大きく見えるので、本体を丸の28pxより小さくする。
             // CSS変数 --obj-icon-square と同じ値。白フチ3pxを足した外径は30px。
             const MICHI_PLATE_PX = 24;
+            // カードの面の色。mhcard.png / mhcard-cluster.png の銅色部分の実測値と同じ
+            const MHCARD_FACE_COLOR = '#B87333';
             // マンホールカードに重ねるバッジ。CSS変数 --mhcard-badge と同じ値（カード幅28pxの80%）
             const MHCARD_W_PX = 28;
             const MHCARD_BADGE_PX = MHCARD_W_PX * 0.8;
@@ -4322,7 +4337,9 @@ map.on('zoomend', () => { isZooming = false; });
                     : { type: 'geojson', data: EMPTY_FC, cluster: true, clusterMaxZoom: 13, clusterRadius: 50 }
                 );
                 if (conf.type === 'mhcard') {
-                    map.addLayer({ id: `${conf.id}-cluster`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'mhcard-cluster-icon', 'icon-size': 1.5, 'icon-allow-overlap': true, 'visibility': initVis } });
+                    // カードのクラスタも白フチ＋銅色の面の2枚重ね。色は icon-color から与える
+                    map.addLayer({ id: `${conf.id}-cluster`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'mhcard-cluster-icon', 'icon-size': 1.5, 'icon-allow-overlap': true, 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
+                    map.addLayer({ id: `${conf.id}-cluster-face`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'mhcard-cluster-face-icon', 'icon-size': 1.5, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': MHCARD_FACE_COLOR } });
                 } else {
                     map.addLayer({ id: `${conf.id}-cluster`, type: 'circle', source: conf.id, filter: ['has', 'point_count'], paint: { 'circle-color': conf.clusterColor, 'circle-radius': 20, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' }, layout: { 'visibility': initVis } });
                 }
@@ -4340,8 +4357,10 @@ map.on('zoomend', () => { isZooming = false; });
                 } else if (conf.type !== 'mhcard') {
                     map.addLayer({ id: `${conf.id}-bg`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: { 'circle-color': conf.type === 'castle' ? ['match', ['get', 'genre'], '日本100名城', '#4285F4', '続日本100名城', '#EA4335', '#546E7A'] : conf.type === 'manhole' ? ['match', ['get', 'source'], 'pokefuta', '#FBBC04', '#B87333'] : conf.color, 'circle-radius': OBJ_ICON_CIRCLE_PX / 2, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' }, layout: { ...(conf.type === 'castle' ? { 'circle-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis } });
                 }
-                map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': conf.type === 'mhcard' ? 1.0 : conf.type === 'manhole' ? OBJ_ICON_INNER_PX / OBJ_ICON_NATIVE_PX : conf.type === 'michi' ? MICHI_PLATE_PX / OBJ_ICON_NATIVE_PX : OBJ_ICON_CIRCLE_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, ...(conf.type === 'castle' ? { 'symbol-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis }, paint: conf.type === 'mhcard' ? {} : { 'icon-color': '#FFFFFF' } });
+                map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': conf.type === 'mhcard' ? 1.0 : conf.type === 'manhole' ? OBJ_ICON_INNER_PX / OBJ_ICON_NATIVE_PX : conf.type === 'michi' ? MICHI_PLATE_PX / OBJ_ICON_NATIVE_PX : OBJ_ICON_CIRCLE_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, ...(conf.type === 'castle' ? { 'symbol-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
                 if (conf.type === 'mhcard') {
+                    // -icon がカードの白フチ、その上に銅色の面、さらにマンホールのバッジを重ねる
+                    map.addLayer({ id: `${conf.id}-icon-face`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': 'mhcard-face-icon', 'icon-size': 1.0, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': MHCARD_FACE_COLOR } });
                     map.addLayer({ id: `${conf.id}-icon-overlay`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': 'manhole-icon', 'icon-size': MHCARD_BADGE_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
                 }
 
@@ -5096,8 +5115,9 @@ map.on('zoomend', () => { isZooming = false; });
             : (id === 'mhcard' ? null : id);
         const labelVis = (vis === 'visible' && labelId && labelState[labelId] !== false) ? 'visible' : 'none';
         (OBJ_FILTER_SOURCES[id] || []).forEach(sourceId => {
-            [`${sourceId}-cluster`, `${sourceId}-cluster-count`, `${sourceId}-bg-outline`, `${sourceId}-bg`,
-             `${sourceId}-icon`, `${sourceId}-icon-overlay`].forEach(l => {
+            [`${sourceId}-cluster`, `${sourceId}-cluster-face`, `${sourceId}-cluster-count`,
+             `${sourceId}-bg-outline`, `${sourceId}-bg`,
+             `${sourceId}-icon`, `${sourceId}-icon-face`, `${sourceId}-icon-overlay`].forEach(l => {
                 if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', vis);
             });
             const l = `${sourceId}-label`;
@@ -7099,10 +7119,12 @@ map.on('zoomend', () => { isZooming = false; });
     const layerIdPrefixes = ['michi', 'shops', 'manholes', 'mhcards', 'castles', 'castles-famous'];
     const targetLayerIds = layerIdPrefixes.flatMap(prefix => [
         `${prefix}-cluster`,
+        `${prefix}-cluster-face`,
         `${prefix}-cluster-count`,
         `${prefix}-bg-outline`,
         `${prefix}-bg`,
         `${prefix}-icon`,
+        `${prefix}-icon-face`,
         `${prefix}-icon-overlay`,
         `${prefix}-label`
     ]);
