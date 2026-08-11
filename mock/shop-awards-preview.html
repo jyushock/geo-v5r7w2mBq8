@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>食べログ 受賞歴の表示モック</title>
+<style>
+    body { margin: 0; padding: 20px; background: #eceae5; font-family: sans-serif; color: #222; }
+    h1 { font-size: 19px; margin: 0 0 6px; }
+    h2 { font-size: 15px; margin: 34px 0 4px; padding-bottom: 5px; border-bottom: 2px solid #c9c4b8; }
+    h3 { font-size: 13px; margin: 20px 0 6px; }
+    p.note { font-size: 12px; line-height: 1.7; color: #555; margin: 4px 0 10px; max-width: 980px; }
+    p.note b { color: #222; }
+    .verdict { display: inline-block; font-size: 10.5px; font-weight: 700; border-radius: 4px;
+               padding: 1px 7px; margin-left: 6px; vertical-align: 2px; }
+    .v-rec  { background: #2e7d32; color: #fff; }
+    .v-alt  { background: #E6E2D8; color: #3d3d3d; }
+    .v-no   { background: #b5504a; color: #fff; }
+    .cases { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+    .case { width: 375px; }
+    .case-cap { font-size: 11px; color: #666; margin: 0 0 4px 2px; }
+
+    /* ══ index.html から転記した情報シートのスタイル（改変なし） ══ */
+    .sheet { background: #fff; border-radius: 16px 16px 0 0; box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
+             font-family: sans-serif; padding: 8px 14px 14px; }
+    .sheet .os-handle { width: 36px; height: 4px; background: #ccc; border-radius: 2px; margin: 0 auto 8px; }
+    .os-title { display: flex; align-items: center; gap: 5px; margin-bottom: 3px; min-width: 0; }
+    .os-badge-row { display: flex; gap: 5px; margin-bottom: 3px; flex-wrap: wrap; }
+    .os-name { font-size: 15px; font-weight: bold; min-width: 0; overflow: hidden;
+               display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+    .os-row { display: flex; gap: 10px; margin-top: 5px; align-items: flex-start; }
+    .os-meta { flex: 1; min-width: 0; }
+    .os-line { font-size: 11px; color: #333; line-height: 1.45; font-variant-numeric: tabular-nums; }
+    .os-line + .os-line { margin-top: 1px; }
+    .os-line .os-k { display: inline-block; background: #E6E2D8; color: #3d3d3d; border-radius: 3px;
+                     font-size: 9.5px; font-weight: 700; line-height: 1.5; padding: 0 4px;
+                     margin-right: 4px; vertical-align: 1px; letter-spacing: 0.8px; }
+    .os-brow { display: flex; gap: 4px; margin-top: 4px; }
+    .btn { display: flex; align-items: center; justify-content: center; text-align: center; height: 40px;
+           padding: 0 4px; border-radius: 7px; text-decoration: none; font-family: inherit; font-weight: bold;
+           color: white; font-size: 12px; line-height: normal; border: none; box-sizing: border-box; cursor: pointer; }
+    .os-brow .btn { flex: 1 1 0; min-width: 0; white-space: nowrap; overflow: hidden; }
+    .btn-tabelog { background: #ff6600; }
+    .btn-gmap { background: white; color: #4285f4; border: 1px solid #4285f4; }
+    .os-genrebadge { font-size: 12px; font-weight: 700; color: #fff; padding: 2px 8px; border-radius: 10px;
+                     line-height: 1.6; white-space: nowrap; flex-shrink: 0; }
+    .sr-genre { display: inline-block; color: #fff; font-weight: 700; font-size: 9px; line-height: 1.5;
+                padding: 0 5px; border-radius: 8px; margin-right: 4px; }
+    .shop-genre.g-men      { background: hsl(20,  42%, 37%); }
+    .shop-genre.g-niku     { background: hsl(0,   42%, 37%); }
+    .shop-genre.g-gyokai   { background: hsl(205, 40%, 37%); }
+    .shop-genre.g-chuka    { background: hsl(340, 32%, 37%); }
+    .shop-genre.g-yoshoku  { background: hsl(230, 30%, 37%); }
+    .shop-genre.g-keishoku { background: hsl(45,  42%, 37%); }
+    .shop-genre.g-kanmi    { background: hsl(320, 28%, 37%); }
+    .shop-genre.g-sake     { background: hsl(285, 35%, 37%); }
+    .shop-genre.g-kissa    { background: hsl(160, 26%, 37%); }
+    .shop-genre.g-sonota   { background: hsl(0,   0%,  45%); }
+    .search-result { display: flex; align-items: center; gap: 8px; padding: 8px 10px; background: #fff;
+                     border-bottom: 1px solid #f0f0f0; }
+    .search-result-icon { width: 26px; height: 26px; border-radius: 50%; background: #FF9800; flex-shrink: 0; }
+    .search-result-text { flex: 1; min-width: 0; }
+    .search-result-name { font-size: 13px; font-weight: bold; color: #333; white-space: nowrap;
+                          overflow: hidden; text-overflow: ellipsis; }
+    .search-result-sub  { font-size: 10px; color: #999; margin-top: 1px; white-space: nowrap;
+                          overflow: hidden; text-overflow: ellipsis; }
+
+    /* ══ 新規：受賞歴の表現（この検討で追加する分だけ） ══ */
+
+    /* A1 年チップを横並び */
+    .aw-chips { display: flex; flex-wrap: wrap; gap: 3px; align-items: center; margin-top: 4px; }
+    .aw-y { font-size: 10px; font-weight: 700; line-height: 1.6; padding: 1px 6px; border-radius: 9px;
+            background: #E6E2D8; color: #5a5344; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .aw-y.aw-now { background: #ff6600; color: #fff; }      /* 最新の受賞年 */
+    .aw-y.aw-other { background: #fff; color: #7a7365; border: 1px solid #d8d3c7; }  /* 別部門で取った年 */
+
+    /* A2 サマリ1行 + 折りたたみ */
+    .aw-sum { font-size: 11px; color: #333; line-height: 1.45; }
+    .aw-sum b { color: #c1560c; font-variant-numeric: tabular-nums; }
+    .aw-more { font-size: 10px; color: #999; cursor: pointer; user-select: none; }
+    .aw-detail { margin-top: 3px; }
+    .aw-detail[hidden] { display: none; }
+
+    /* A3 年表 */
+    .aw-tl { margin-top: 4px; border: 1px solid #e6e2da; border-radius: 8px; overflow: hidden; background: #faf9f7; }
+    .aw-tl-hd { font-size: 10px; color: #6a6459; background: #f0ede7; padding: 4px 9px; font-weight: bold;
+                display: flex; justify-content: space-between; }
+    .aw-tl-it { display: flex; align-items: center; gap: 8px; padding: 5px 9px; border-top: 1px solid #ecE8e0;
+                font-size: 11px; color: #333; }
+    .aw-tl-y { font-weight: 700; color: #5a5344; font-variant-numeric: tabular-nums; flex-shrink: 0; width: 34px; }
+    .aw-tl-g { flex: 1; min-width: 0; }
+
+    /* B2 過去部門バッジ（枠線だけの弱いバッジ） */
+    .os-genrebadge.past { background: #fff !important; color: #7a7365; border: 1px solid #d0cabb;
+                          font-weight: 700; }
+    .sr-genre.past { background: #fff !important; color: #8a8371; border: 1px solid #d8d3c7; }
+
+    /* C 評点 */
+    .rt { display: inline-flex; align-items: baseline; gap: 3px; }
+    .rt-v { font-size: 13px; font-weight: 700; color: #c1560c; font-variant-numeric: tabular-nums; }
+    .rt-n { font-size: 10px; color: #999; font-variant-numeric: tabular-nums; }
+    .rt-star { font-size: 10px; color: #f0a020; letter-spacing: -1px; }
+
+    table.cmp { border-collapse: collapse; font-size: 12px; background: #fff; margin: 8px 0 4px; }
+    table.cmp th, table.cmp td { border: 1px solid #d8d3c7; padding: 5px 9px; text-align: left; vertical-align: top; }
+    table.cmp th { background: #f0ede7; font-size: 11px; white-space: nowrap; }
+    table.cmp td.ok { color: #2e7d32; }
+    table.cmp td.ng { color: #b5504a; }
+    pre.js { background: #2b2b2b; color: #e8e6e1; font-size: 11.5px; line-height: 1.55; padding: 12px 14px;
+             border-radius: 8px; overflow-x: auto; max-width: 980px; }
+    pre.js .c { color: #8fa88f; }
+    pre.js .k { color: #9cc3e8; }
+    .src { font-size: 11px; color: #777; margin-top: 2px; }
+</style>
+</head>
+<body>
+
+<h1>食べログ100名店：受賞歴の蓄積と表示（モック）</h1>
+<p class="note">
+実データで確認した内容だけで作っています。店舗ページの
+<code>rstinfo-table-badge-award__badge-link</code> の href が
+<code>https://award.tabelog.com/hyakumeiten/&lt;部門タグ&gt;/&lt;年&gt;/</code> の形なので、
+受賞年と受賞時の部門がそのまま取れます（サンプル12店で全店取得できることを確認済み）。
+以下に出す店名・年・部門・評点・予算は、その12店から取った実データです。
+</p>
+
+<h2>0. データ構造の案</h2>
+<p class="note">
+既存の <code>category</code>（単一文字列）は表示側の35部門バッジ・ジャンル絞り込み・県別集計・検索が全部使っているので、
+<b>そのまま残して「直近の受賞部門」を入れる</b>。受賞歴は新しい <code>awards</code> に持たせる。
+これなら表示側を1行も変えなくても今までどおり動き、受賞歴の表示は足したところだけで済みます。
+</p>
+<pre class="js">{
+  <span class="k">"name"</span>: "メーヤウ - 信濃町（タイ料理）",
+  <span class="k">"url"</span>:  "https://tabelog.com/tokyo/A1309/A130901/13001938/",   <span class="c">// ← 蓄積のキー</span>
+  <span class="k">"category"</span>: "アジア・エスニック（東京）",   <span class="c">// 直近の受賞部門（既存フィールド・意味も従来どおり）</span>
+  <span class="k">"address"</span>:  "東京都新宿区信濃町",
+  <span class="k">"awards"</span>: [                                <span class="c">// 追加。年の降順</span>
+    { <span class="k">"y"</span>: 2024, <span class="k">"t"</span>: "asia_ethnic_tokyo", <span class="k">"g"</span>: "アジア・エスニック（東京）" },
+    { <span class="k">"y"</span>: 2023, <span class="k">"t"</span>: "asia_ethnic_tokyo", <span class="k">"g"</span>: "アジア・エスニック（東京）" },
+    { <span class="k">"y"</span>: 2020, <span class="k">"t"</span>: "curry_tokyo",       <span class="k">"g"</span>: "カレー（東京）" },
+    { <span class="k">"y"</span>: 2019, <span class="k">"t"</span>: "curry_tokyo",       <span class="k">"g"</span>: "カレー（東京）" }
+  ]
+}</pre>
+<p class="note">
+<b>削除しない仕組み：</b>取得結果を既存 data.js に <code>url</code> をキーにして重ね、
+既存にしかない店はそのまま残す（現在は取得結果だけで作り直しているので消えます）。
+<code>awards</code> は年でユニークにして統合するので、何度回しても増えるだけです。
+</p>
+
+<h2>1. 受賞歴のレイアウト 3案</h2>
+<p class="note">
+実データの受賞回数は1〜6回（サンプル12店：1回3店 / 2回5店 / 3回1店 / 4回1店 / 5回1店 / 6回1店）。
+年が飛ぶ店（モンプリュ = 2023,2022,2020,2019,2018）と、
+途中で部門が変わる店（メーヤウ = カレー→アジア・エスニック）が実在するので、その2つを各案で出しています。
+</p>
+
+<h3>A1. 年チップを横に並べる <span class="verdict v-rec">推し</span></h3>
+<div class="cases">
+
+  <div class="case">
+    <p class="case-cap">6年連続（仙台牛焼肉 花牛）</p>
+    <div class="sheet">
+      <div class="os-handle"></div>
+      <div class="os-badge-row"><span class="os-genrebadge shop-genre g-niku">焼肉</span></div>
+      <div class="os-title"><span class="os-name">仙台牛焼肉 花牛（はなぎゅう）</span></div>
+      <div class="os-line"><span class="os-k">ジャンル</span>焼肉</div>
+      <div class="os-line"><span class="os-k">100名店</span>焼肉（東日本）</div>
+      <div class="os-line"><span class="os-k">受賞歴</span>6回
+        <span class="aw-chips">
+          <span class="aw-y aw-now">2025</span><span class="aw-y">2024</span><span class="aw-y">2023</span>
+          <span class="aw-y">2022</span><span class="aw-y">2021</span><span class="aw-y">2020</span>
+        </span>
+      </div>
+      <div class="os-line"><span class="os-k">最寄り</span>あおば通</div>
+      <div class="os-line"><span class="os-k">住所</span>宮城県仙台市青葉区一番町一丁目</div>
+      <div class="os-brow"><a class="btn btn-gmap">GoogleMap</a><a class="btn btn-tabelog">食べログ</a></div>
+    </div>
+  </div>
+
+  <div class="case">
+    <p class="case-cap">年が飛ぶ（パティスリー モンプリュ 本店）</p>
+    <div class="sheet">
+      <div class="os-handle"></div>
+      <div class="os-badge-row"><span class="os-genrebadge shop-genre g-kanmi">スイーツ</span></div>
+      <div class="os-title"><span class="os-name">パティスリー モンプリュ 本店（patisserie mont plus）</span></div>
+      <div class="os-line"><span class="os-k">ジャンル</span>ケーキ</div>
+      <div class="os-line"><span class="os-k">100名店</span>スイーツ（西日本）</div>
+      <div class="os-line"><span class="os-k">受賞歴</span>5回
+        <span class="aw-chips">
+          <span class="aw-y aw-now">2023</span><span class="aw-y">2022</span><span class="aw-y">2020</span>
+          <span class="aw-y">2019</span><span class="aw-y">2018</span>
+        </span>
+      </div>
+      <div class="os-line"><span class="os-k">最寄り</span>みなと元町</div>
+      <div class="os-line"><span class="os-k">住所</span>兵庫県神戸市中央区海岸通三丁目</div>
+      <div class="os-brow"><a class="btn btn-gmap">GoogleMap</a><a class="btn btn-tabelog">食べログ</a></div>
+    </div>
+  </div>
+
+  <div class="case">
+    <p class="case-cap">部門が変わる（メーヤウ）／別部門の年は白チップ</p>
+    <div class="sheet">
+      <div class="os-handle"></div>
+      <div class="os-badge-row"><span class="os-genrebadge shop-genre g-chuka">アジア・エスニック</span></div>
+      <div class="os-title"><span class="os-name">メーヤウ</span></div>
+      <div class="os-line"><span class="os-k">ジャンル</span>タイ料理</div>
+      <div class="os-line"><span class="os-k">100名店</span>アジア・エスニック（東京）</div>
+      <div class="os-line"><span class="os-k">受賞歴</span>4回
+        <span class="aw-chips">
+          <span class="aw-y aw-now">2024</span><span class="aw-y">2023</span>
+          <span class="aw-y aw-other">2020 カレー</span><span class="aw-y aw-other">2019 カレー</span>
+        </span>
+      </div>
+      <div class="os-line"><span class="os-k">最寄り</span>信濃町</div>
+      <div class="os-line"><span class="os-k">住所</span>東京都新宿区信濃町</div>
+      <div class="os-brow"><a class="btn btn-gmap">GoogleMap</a><a class="btn btn-tabelog">食べログ</a></div>
+    </div>
+  </div>
+
+</div>
+<p class="note">
+1行に収まり、6回でも折り返し1行で足ります（375px幅で年チップは約42px×6＝252px＋ラベル）。
+現在の部門と同じ年はオレンジ（＝最新）／グレー、部門が違う年だけ白＋部門名を添えるので、
+「ずっと同じ部門で取り続けている店」と「部門をまたいだ店」がひと目で分かれます。
+</p>
+
+<h3>A2. サマリ1行＋タップで展開 <span class="verdict v-alt">情報量を削りたいなら</span></h3>
+<div class="cases">
+  <div class="case">
+    <div class="sheet">
+      <div class="os-handle"></div>
+      <div class="os-badge-row"><span class="os-genrebadge shop-genre g-niku">焼肉</span></div>
+      <div class="os-title"><span class="os-name">仙台牛焼肉 花牛（はなぎゅう）</span></div>
+      <div class="os-line"><span class="os-k">ジャンル</span>焼肉</div>
+      <div class="os-line aw-sum"><span class="os-k">受賞歴</span><b>6年連続</b>（2020–2025）
+        <span class="aw-more" onclick="var d=this.parentNode.parentNode.querySelector('.aw-detail'); d.hidden=!d.hidden; this.textContent=d.hidden?'▼':'▲';">▼</span>
+        <div class="aw-detail" hidden>
+          <span class="aw-chips">
+            <span class="aw-y aw-now">2025</span><span class="aw-y">2024</span><span class="aw-y">2023</span>
+            <span class="aw-y">2022</span><span class="aw-y">2021</span><span class="aw-y">2020</span>
+          </span>
+        </div>
+      </div>
+      <div class="os-line"><span class="os-k">最寄り</span>あおば通</div>
+      <div class="os-line"><span class="os-k">住所</span>宮城県仙台市青葉区一番町一丁目</div>
+      <div class="os-brow"><a class="btn btn-gmap">GoogleMap</a><a class="btn btn-tabelog">食べログ</a></div>
+    </div>
+  </div>
+  <div class="case">
+    <p class="case-cap">飛びがあると「連続」が使えず、表現が割れる</p>
+    <div class="sheet">
+      <div class="os-handle"></div>
+      <div class="os-badge-row"><span class="os-genrebadge shop-genre g-kanmi">スイーツ</span></div>
+      <div class="os-title"><span class="os-name">パティスリー モンプリュ 本店（patisserie mont plus）</span></div>
+      <div class="os-line"><span class="os-k">ジャンル</span>ケーキ</div>
+      <div class="os-line aw-sum"><span class="os-k">受賞歴</span>通算<b>5回</b>（2018–2023、うち2021は選外）
+        <span class="aw-more">▼</span></div>
+      <div class="os-line"><span class="os-k">最寄り</span>みなと元町</div>
+      <div class="os-line"><span class="os-k">住所</span>兵庫県神戸市中央区海岸通三丁目</div>
+      <div class="os-brow"><a class="btn btn-gmap">GoogleMap</a><a class="btn btn-tabelog">食べログ</a></div>
+    </div>
+  </div>
+</div>
+<p class="note">
+高さは最小ですが、飛びのある店（サンプルでは5店中2店）で「◯年連続」が使えず、
+「通算◯回（うち◯年は選外）」と言い回しが変わります。年チップを出す A1 なら、飛びも部門替えも同じ形で出せます。
+</p>
+
+<h3>A3. 年表で縦に並べる <span class="verdict v-no">シートが高くなりすぎる</span></h3>
+<div class="cases">
+  <div class="case">
+    <div class="sheet">
+      <div class="os-handle"></div>
+      <div class="os-badge-row"><span class="os-genrebadge shop-genre g-chuka">アジア・エスニック</span></div>
+      <div class="os-title"><span class="os-name">メーヤウ</span></div>
+      <div class="os-line"><span class="os-k">ジャンル</span>タイ料理</div>
+      <div class="aw-tl">
+        <div class="aw-tl-hd"><span>受賞歴</span><span>4回</span></div>
+        <div class="aw-tl-it"><span class="aw-tl-y">2024</span><span class="aw-tl-g">アジア・エスニック（東京）</span></div>
+        <div class="aw-tl-it"><span class="aw-tl-y">2023</span><span class="aw-tl-g">アジア・エスニック（東京）</span></div>
+        <div class="aw-tl-it"><span class="aw-tl-y">2020</span><span class="aw-tl-g">カレー（東京）</span></div>
+        <div class="aw-tl-it"><span class="aw-tl-y">2019</span><span class="aw-tl-g">カレー（東京）</span></div>
+      </div>
+      <div class="os-line"><span class="os-k">最寄り</span>信濃町</div>
+      <div class="os-line"><span class="os-k">住所</span>東京都新宿区信濃町</div>
+      <div class="os-brow"><a class="btn btn-gmap">GoogleMap</a><a class="btn btn-tabelog">食べログ</a></div>
+    </div>
+  </div>
+</div>
+<p class="note">
+部門替えは一番読みやすいですが、1行22pxが受賞回数ぶん積み上がります。6回だと年表だけで約155px。
+シートは <code>100svh - 52px - 160px</code>（iPhone SE3 で455px）が上限なので、他の項目と合わせると常時スクロールになります。
+</p>
+
+<h2>2. 複数ジャンルをどう見せるか</h2>
+<p class="note">
+部門が変わった店はサンプル12店中1店（メーヤウ）。少数ですが、
+「カレー100名店で絞り込んだのにメーヤウが出ない」は起きます。2案。
+</p>
+<div class="cases">
+  <div class="case">
+    <p class="case-cap">B1. バッジは直近だけ（現行のまま）<span class="verdict v-rec">推し</span></p>
+    <div class="sheet">
+      <div class="os-handle"></div>
+      <div class="os-badge-row"><span class="os-genrebadge shop-genre g-chuka">アジア・エスニック</span></div>
+      <div class="os-title"><span class="os-name">メーヤウ</span></div>
+      <div class="os-line"><span class="os-k">100名店</span>アジア・エスニック（東京）</div>
+      <div class="os-line"><span class="os-k">受賞歴</span>4回
+        <span class="aw-chips"><span class="aw-y aw-now">2024</span><span class="aw-y">2023</span>
+        <span class="aw-y aw-other">2020 カレー</span><span class="aw-y aw-other">2019 カレー</span></span></div>
+    </div>
+    <div style="margin-top:10px">
+      <div class="search-result"><div class="search-result-icon"></div><div class="search-result-text">
+        <div class="search-result-name">メーヤウ</div>
+        <div class="search-result-sub"><span class="sr-genre shop-genre g-chuka">アジア・エスニック</span>東京都新宿区信濃町</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="case">
+    <p class="case-cap">B2. 過去部門も白バッジで併記</p>
+    <div class="sheet">
+      <div class="os-handle"></div>
+      <div class="os-badge-row">
+        <span class="os-genrebadge shop-genre g-chuka">アジア・エスニック</span>
+        <span class="os-genrebadge past">カレー</span>
+      </div>
+      <div class="os-title"><span class="os-name">メーヤウ</span></div>
+      <div class="os-line"><span class="os-k">100名店</span>アジア・エスニック（東京）／カレー（東京）</div>
+      <div class="os-line"><span class="os-k">受賞歴</span>4回
+        <span class="aw-chips"><span class="aw-y aw-now">2024</span><span class="aw-y">2023</span>
+        <span class="aw-y aw-other">2020 カレー</span><span class="aw-y aw-other">2019 カレー</span></span></div>
+    </div>
+    <div style="margin-top:10px">
+      <div class="search-result"><div class="search-result-icon"></div><div class="search-result-text">
+        <div class="search-result-name">メーヤウ</div>
+        <div class="search-result-sub"><span class="sr-genre shop-genre g-chuka">アジア・エスニック</span><span class="sr-genre past">カレー</span>東京都新宿区信濃町</div>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<table class="cmp">
+  <tr><th></th><th>B1 直近だけ</th><th>B2 過去も併記</th></tr>
+  <tr><th>表示側の改修</th><td class="ok">受賞歴の1行を足すだけ</td>
+      <td class="ng">バッジ生成・検索結果・県別一覧・件数集計の4箇所を配列対応に</td></tr>
+  <tr><th>ジャンル絞り込み</th><td>直近部門でだけヒット</td><td>過去部門でもヒットさせられる</td></tr>
+  <tr><th>件数の意味</th><td class="ok">部門ごとの件数＝現在の選出数で一致</td>
+      <td class="ng">1店が複数部門に計上され、合計が店舗数と合わなくなる</td></tr>
+  <tr><th>地図のピン</th><td class="ok">1店1ピンのまま</td><td class="ng">部門で色を変えているので、どちらの色で出すか決めが要る</td></tr>
+</table>
+<p class="note">
+データには <code>awards</code> として全部門を持たせたうえで、<b>表示は B1（直近のみ）</b>を推します。
+部門替えは実データで1/12と少なく、B2 は件数集計とピンの色に決めごとが増える割に得るものが小さいためです。
+過去部門は受賞歴の白チップで読めます。
+</p>
+
+<h2>3. 併せて取れる項目（おすすめ）</h2>
+<p class="note">
+店舗ページの <code>ld+json</code>（schema.org/Restaurant）から、追加のリクエストなしで取れます。
+サンプル12店すべてで取得できました。<code>priceRange</code> だけ2/12で空（<code>&amp;nbsp;</code>）でした。
+</p>
+<table class="cmp">
+  <tr><th>項目</th><th>ld+json のキー</th><th>実データ例</th><th>評価</th></tr>
+  <tr><td>評点・口コミ数</td><td>aggregateRating</td><td>3.60 / 1,514件</td><td class="ok">推し。100名店の中の序列が付く</td></tr>
+  <tr><td>予算</td><td>priceRange</td><td>￥2,000～￥2,999</td><td class="ok">推し。行く前に一番効く。2/12が空</td></tr>
+  <tr><td>詳細住所</td><td>address</td><td>北海道札幌市中央区北四条西1-1 ホクレンビル B1F</td>
+      <td class="ok">現在の逆ジオ住所（…北四条西一丁目）より詳しく、国土地理院APIも不要になる</td></tr>
+  <tr><td>店のジャンル</td><td>servesCuisine</td><td>ラーメン、餃子、にんにく料理</td>
+      <td>現在は店名から切り出して1つだけ出している。置き換え候補</td></tr>
+  <tr><td>電話番号</td><td>telephone</td><td>03-6721-0468</td><td>予約が要る店で効く</td></tr>
+  <tr><td>写真</td><td>image</td><td>tblg.k-img.com の URL</td>
+      <td class="ng">城と違い他社画像の直リンクになるので、入れるなら別途判断</td></tr>
+  <tr><td>営業時間・定休日</td><td>FAQPage 側</td><td>[月] 11:30 - 16:00 …（長文）</td>
+      <td class="ng">1店で数百字。data.js が肥大するので入れない</td></tr>
+</table>
+
+<h3>追加項目を入れたシート（受賞歴 A1 と組み合わせ）</h3>
+<div class="cases">
+  <div class="case">
+    <p class="case-cap">C1. 評点をタイトル行の右に置く <span class="verdict v-rec">推し</span></p>
+    <div class="sheet">
+      <div class="os-handle"></div>
+      <div class="os-badge-row"><span class="os-genrebadge shop-genre g-men">ラーメン</span></div>
+      <div class="os-title">
+        <span class="os-name">ラーメン札幌一粒庵（いちりゅうあん）</span>
+        <span class="rt" style="margin-left:auto;flex-shrink:0">
+          <span class="rt-star">★</span><span class="rt-v">3.60</span><span class="rt-n">(1,514)</span></span>
+      </div>
+      <div class="os-line"><span class="os-k">ジャンル</span>ラーメン、餃子、にんにく料理</div>
+      <div class="os-line"><span class="os-k">100名店</span>ラーメン（北海道）</div>
+      <div class="os-line"><span class="os-k">受賞歴</span>2回
+        <span class="aw-chips"><span class="aw-y aw-now">2025</span><span class="aw-y">2024</span></span></div>
+      <div class="os-line"><span class="os-k">予算</span>￥2,000～￥2,999</div>
+      <div class="os-line"><span class="os-k">最寄り</span>さっぽろ（札幌市営）</div>
+      <div class="os-line"><span class="os-k">住所</span>北海道札幌市中央区北四条西1-1 ホクレンビル B1F</div>
+      <div class="os-brow"><a class="btn btn-gmap">GoogleMap</a><a class="btn btn-tabelog">食べログ</a></div>
+    </div>
+  </div>
+
+  <div class="case">
+    <p class="case-cap">C2. 評点も予算も項目行にそろえる</p>
+    <div class="sheet">
+      <div class="os-handle"></div>
+      <div class="os-badge-row"><span class="os-genrebadge shop-genre g-men">ラーメン</span></div>
+      <div class="os-title"><span class="os-name">ラーメン札幌一粒庵（いちりゅうあん）</span></div>
+      <div class="os-line"><span class="os-k">評点</span>★3.60（1,514件）　<span class="os-k">予算</span>￥2,000～￥2,999</div>
+      <div class="os-line"><span class="os-k">ジャンル</span>ラーメン、餃子、にんにく料理</div>
+      <div class="os-line"><span class="os-k">100名店</span>ラーメン（北海道）</div>
+      <div class="os-line"><span class="os-k">受賞歴</span>2回
+        <span class="aw-chips"><span class="aw-y aw-now">2025</span><span class="aw-y">2024</span></span></div>
+      <div class="os-line"><span class="os-k">最寄り</span>さっぽろ（札幌市営）</div>
+      <div class="os-line"><span class="os-k">住所</span>北海道札幌市中央区北四条西1-1 ホクレンビル B1F</div>
+      <div class="os-brow"><a class="btn btn-gmap">GoogleMap</a><a class="btn btn-tabelog">食べログ</a></div>
+    </div>
+  </div>
+
+  <div class="case">
+    <p class="case-cap">C3. 予算が空の店（12店中2店）の見え方（C1 の形）</p>
+    <div class="sheet">
+      <div class="os-handle"></div>
+      <div class="os-badge-row"><span class="os-genrebadge shop-genre g-men">うどん</span></div>
+      <div class="os-title">
+        <span class="os-name">千舟屋（チブネヤ）</span>
+        <span class="rt" style="margin-left:auto;flex-shrink:0">
+          <span class="rt-star">★</span><span class="rt-v">3.65</span><span class="rt-n">(500)</span></span>
+      </div>
+      <div class="os-line"><span class="os-k">ジャンル</span>うどん、揚げ物、カレーうどん</div>
+      <div class="os-line"><span class="os-k">100名店</span>うどん（西日本）</div>
+      <div class="os-line"><span class="os-k">受賞歴</span>1回
+        <span class="aw-chips"><span class="aw-y aw-now">2024</span></span></div>
+      <div class="os-line"><span class="os-k">最寄り</span>伊丹（阪急）</div>
+      <div class="os-line"><span class="os-k">住所</span>兵庫県伊丹市中央5-2-18</div>
+      <div class="os-brow"><a class="btn btn-gmap">GoogleMap</a><a class="btn btn-tabelog">食べログ</a></div>
+    </div>
+  </div>
+</div>
+<p class="note">
+C1 は評点を店名の右に逃がすので行数が増えません（予算だけ1行増）。
+C2 は評点と予算を1行にまとめられますが、店名が2行になる店（実データで67%が20字超）だと
+タイトル直下に数字が2つ並んで、店名より数字が目立ちます。<b>C1 推し</b>です。<br>
+評点と予算は時間で変わる値なので、data.js に取得年月（例 <code>"rated": "2026-08"</code>）を持たせ、
+古いまま出さないようにする想定です。
+</p>
+
+<h2>4. 一覧・検索結果での見え方（受賞歴を足した場合）</h2>
+<p class="note">一覧は1行しかないので、受賞歴は入れず「◯回」だけを添える案です。</p>
+<div class="cases">
+  <div class="case">
+    <p class="case-cap">D1. 回数を出さない（現行）</p>
+    <div class="search-result"><div class="search-result-icon"></div><div class="search-result-text">
+      <div class="search-result-name">仙台牛焼肉 花牛（はなぎゅう）</div>
+      <div class="search-result-sub"><span class="sr-genre shop-genre g-niku">焼肉</span>宮城県仙台市青葉区一番町一丁目</div>
+    </div></div>
+    <div class="search-result"><div class="search-result-icon"></div><div class="search-result-text">
+      <div class="search-result-name">中華そば うお静</div>
+      <div class="search-result-sub"><span class="sr-genre shop-genre g-men">ラーメン</span>静岡県熱海市下多賀</div>
+    </div></div>
+  </div>
+  <div class="case">
+    <p class="case-cap">D2. 部門バッジの後ろに受賞回数 <span class="verdict v-rec">推し</span></p>
+    <div class="search-result"><div class="search-result-icon"></div><div class="search-result-text">
+      <div class="search-result-name">仙台牛焼肉 花牛（はなぎゅう）</div>
+      <div class="search-result-sub"><span class="sr-genre shop-genre g-niku">焼肉</span><span class="sr-genre past">6回</span>宮城県仙台市青葉区一番町一丁目</div>
+    </div></div>
+    <div class="search-result"><div class="search-result-icon"></div><div class="search-result-text">
+      <div class="search-result-name">中華そば うお静</div>
+      <div class="search-result-sub"><span class="sr-genre shop-genre g-men">ラーメン</span>静岡県熱海市下多賀</div>
+    </div></div>
+    <p class="note" style="font-size:11px">1回の店には出さない（大半が1〜2回なので、出すと全行に付いて意味が薄れる）。</p>
+  </div>
+</div>
+
+<h2>5. まとめ（2026-08-12 に確定・実装済み）</h2>
+<table class="cmp">
+  <tr><th>決めごと</th><th>採用したもの</th></tr>
+  <tr><td>蓄積</td><td><code>url</code> をキーに既存 data.js へ重ねる。既存にしかない店は残す（削除しない）</td></tr>
+  <tr><td>受賞歴</td><td>店舗ページの受賞バッジから <code>{年, 部門タグ, 部門名}</code> を取り、<code>awards</code> に年降順で持つ</td></tr>
+  <tr><td>部門</td><td><code>category</code> は直近受賞の部門を入れて単一のまま（表示側は無改修で動く）</td></tr>
+  <tr><td>受賞歴の表示</td><td><b>A1、ただし「◯回」は出さずチップだけを並べる</b>（店舗ページと同じ見せ方）。別部門の年は白チップに部門名</td></tr>
+  <tr><td>複数ジャンル</td><td>B1（バッジは直近のみ。過去部門は受賞歴の白チップで読ませる）</td></tr>
+  <tr><td>追加項目</td><td>評点＋口コミ数（C1 の位置）、予算、詳細住所、店ジャンル。写真と営業時間は入れない</td></tr>
+  <tr><td>一覧・検索</td><td><b>D1（現行のまま。受賞回数は出さない）</b></td></tr>
+</table>
+<p class="note">
+実装後、375px で実データを描画して確認しました。評点は常に店名と同じ行に収まり右へはみ出さず（5店で確認）、
+受賞歴は最多の7回（BURGER&amp;MILKSHAKE CRANE = 2017/2018/2019/2021/2022/2024/2026）でも1行18pxに収まり、
+横スクロールも発生しませんでした。
+</p>
+<p class="note">
+<b>取得コストの注意：</b>受賞歴と評点は店舗ページを開かないと取れないので、初回は全7,077店＋新規の取得が必要です
+（サンプルの実測で1店あたり1〜2秒＝おおむね2〜4時間）。2回目以降は、
+既存 data.js に <code>awards</code> がある店をスキップすれば差分だけで済みます。
+</p>
+<p class="src">
+根拠：店舗ページ 12 店（data.js から等間隔に抽出）を実際に取得して確認。受賞歴・評点・予算・住所・店ジャンルは全店で取得可、予算のみ 2/12 が空。<br>
+一覧ページ <code>/hyakumeiten/&lt;タグ&gt;</code> は部門ごとの最新発表年（スイーツWESTは2023年）を出す。過去年ページは
+<code>/hyakumeiten/&lt;当時のタグ&gt;/&lt;年&gt;/</code> に存在するが、2019年以前はHTML構造が違い現在のパーサでは0件（ramen_tokyo/2019 で確認）。
+そのため過去受賞店は一覧の遡りではなく、店舗ページの受賞バッジから拾う。
+</p>
+
+</body>
+</html>

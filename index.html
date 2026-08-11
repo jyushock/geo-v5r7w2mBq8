@@ -509,6 +509,25 @@
         .os-clamp.clampable::after { content: ' ▼'; font-size: 10px; color: #999; }
         .os-clamp.expanded { display: block; -webkit-line-clamp: unset; overflow: visible; }
         .os-clamp.clampable.expanded::after { content: ' ▲'; }
+        /* ══ 食べログの受賞歴（百名店は年ごとの選出で、同じ店が何年も選ばれる） ══
+           年のチップを新しい順に並べる。実データの受賞回数は1〜7回で、
+           7回でも375px幅の1行に折り返し1回で収まる。
+           最新年＝オレンジ（種別色）、それ以外の同部門＝グレー、
+           部門が変わった年だけ白地＋部門名を添える（部門替えは実データで少数）。
+           チップは inline-block で並べる。inline-flex にすると受賞歴の行全体が
+           1つの箱になり、os-clamp（2行で省略）が効かずシートが伸び続けるため。 */
+        .aw-chips { display: inline; }
+        .aw-y { display: inline-block; margin-right: 3px; vertical-align: -1px;
+                font-size: 10px; font-weight: 700; line-height: 1.6; padding: 1px 6px; border-radius: 9px;
+                background: #E6E2D8; color: #5a5344; font-variant-numeric: tabular-nums; white-space: nowrap; }
+        .aw-y.aw-now { background: #ff6600; color: #fff; }
+        .aw-y.aw-other { background: #fff; color: #7a7365; border: 1px solid #d8d3c7; }
+        /* 評点はタイトル行の右端に置く。項目行に足すと1行増えるうえ、
+           店名（実データの67%が20字超で2行になる）の直下に数字が並んで店名より目立つため。 */
+        .os-rating { margin-left: auto; flex-shrink: 0; display: inline-flex; align-items: baseline; gap: 3px; }
+        .os-rating .rt-star { font-size: 10px; color: #f0a020; }
+        .os-rating .rt-v { font-size: 13px; font-weight: 700; color: #c1560c; font-variant-numeric: tabular-nums; }
+        .os-rating .rt-n { font-size: 10px; color: #999; font-variant-numeric: tabular-nums; }
         /* ボタン行: flex:1 で等分するので個数が何個でも行がぴったり埋まる */
         .os-brow { display: flex; gap: 4px; margin-top: 4px; }
         /* 情報源が1つも無い城では、非同期挿入用に残しているセット行が空になるので消す */
@@ -2866,6 +2885,39 @@ function shopGenreBadgeHtml(p, sizeClass) {
     if (!g) return '';
     return `<span class="${sizeClass} shop-genre ${SHOP_GENRE_CLASS[g] || 'g-sonota'}">${attrEscape(g)}</span>`;
 }
+/* ══ 食べログの受賞歴 ═══════════════════════════════════════════
+   awards は data.js が持つ受賞歴（年の降順）。1件が { y:年, t:部門タグ, g:部門名 }。
+   百名店は部門ごとに発表年が違い、選から外れる年もあるので年は飛ぶ。
+   部門が変わる店（例: カレー TOKYO → アジア・エスニック TOKYO）もあるため、
+   現在の部門（category）と違う年だけ部門名を添えて見分けられるようにする。
+   別名と同じく、MapLibre の feature.properties 経由ではJSON文字列で届く。 */
+function osParseAwards(awards) {
+    if (typeof awards === 'string') {
+        try { awards = JSON.parse(awards); } catch { awards = null; }
+    }
+    return Array.isArray(awards) ? awards : [];
+}
+function shopAwardsHtml(p) {
+    const list = osParseAwards(p && p.awards);
+    if (!list.length) return '';
+    const now = shopGenreBase(p && p.category);
+    const chips = list.map((a, i) => {
+        const g = shopGenreBase(a && a.g);
+        const other = g && g !== now;
+        const cls = other ? 'aw-y aw-other' : (i === 0 ? 'aw-y aw-now' : 'aw-y');
+        return `<span class="${cls}">${attrEscape(a.y)}${other ? ' ' + attrEscape(g) : ''}</span>`;
+    }).join('');
+    return `<span class="aw-chips">${chips}</span>`;
+}
+/* 評点。タイトル行の右端に置く（項目行にすると1行増えるため）。
+   口コミ数は3桁区切りにする。評点が無い店（取得できなかった店）は出さない。 */
+function shopRatingHtml(p) {
+    if (!p || !p.rating) return '';
+    const n = Number(p.ratingCount);
+    const cnt = Number.isFinite(n) && n > 0 ? `<span class="rt-n">(${n.toLocaleString('ja-JP')})</span>` : '';
+    return `<span class="os-rating"><span class="rt-star">★</span>`
+         + `<span class="rt-v">${attrEscape(p.rating)}</span>${cnt}</span>`;
+}
 
 // 標高／比高（バッジとは別行、住所の上に表示）。
 // 他の行と同じラベルチップを使い、1行に2項目を並べる（比高が無い城は標高だけになる）。
@@ -3254,7 +3306,8 @@ function buildSheetHtml(type, label, p, lng, lat) {
     // pick は配布場所が複数のカードで行Bの下に出す候補リスト（他の種別では空）
     // badgeAbove はタイトルの上に独立した行で出すバッジ（食べログの部門）。
     // 城やカードのように名前の左に置くと、店名が長い食べログでは名前が押し出されるため
-    let badges = '', badgeAbove = '', title = '', photo = '', lines = '', rowA = '', rowB = '', pick = '';
+    // titleTail はタイトル行の右端に寄せる要素（食べログの評点）。名前の折り返しに影響しない
+    let badges = '', badgeAbove = '', title = '', titleTail = '', photo = '', lines = '', rowA = '', rowB = '', pick = '';
 
     if (isPokefuta) {
         title = p.pokemon || label;
@@ -3377,10 +3430,15 @@ function buildSheetHtml(type, label, p, lng, lat) {
         // ジャンル=店自身のジャンル（つけ麺）、100名店=賞の部門（ラーメン（東京））で別物。
         const sp = shopParts(p);
         title = sp.shop || label;
+        titleTail = shopRatingHtml(p);
         const genreBadge = shopGenreBadgeHtml(p, 'os-genrebadge');
         badgeAbove = genreBadge ? `<div class="os-badge-row">${genreBadge}</div>` : '';
-        lines = osKv('ジャンル', sp.genre)
+        // ジャンルは店舗ページの ld+json（servesCuisine。「ラーメン、餃子、にんにく料理」の
+        // ように複数）を優先する。取れていない店は従来どおり name から切り出した1つを出す。
+        lines = osKv('ジャンル', p.cuisine || sp.genre)
               + osKv('100名店', p.category)
+              + osKv('受賞歴', shopAwardsHtml(p))
+              + osKv('予算', p.priceRange)
               + osKv('最寄り', sp.station)
               + osKv('住所', p.address);
         // GoogleMap検索は従来どおり name 全体（店名＋駅＋ジャンル）で引く。
@@ -3393,7 +3451,7 @@ function buildSheetHtml(type, label, p, lng, lat) {
     }
 
     const media = photo ? `<div class="os-row">${photo}<div class="os-meta">${lines}</div></div>` : lines;
-    return `${badgeAbove}<div class="os-title">${badges}<span class="os-name">${title}</span></div>${media}${rowA}${rowB}${pick}${rowC}`;
+    return `${badgeAbove}<div class="os-title">${badges}<span class="os-name">${title}</span>${titleTail}</div>${media}${rowA}${rowB}${pick}${rowC}`;
 }
 
 // 城シートに写真を非同期で挿入する
