@@ -4339,8 +4339,9 @@ map.on('zoomend', () => { isZooming = false; });
                     : { type: 'geojson', data: EMPTY_FC, cluster: true, clusterMaxZoom: 13, clusterRadius: 50 }
                 );
                 if (conf.type === 'mhcard') {
-                    // カードのクラスタも白フチ＋銅色の面の2枚重ね。色は icon-color から与える
-                    map.addLayer({ id: `${conf.id}-cluster`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'mhcard-cluster-icon', 'icon-size': 1.5, 'icon-allow-overlap': true, 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
+                    /* カードのクラスタも白フチ＋銅色の面の2枚重ね。色は icon-color から与える。
+                       上に乗る件数テキストが衝突判定で消えないよう、板は判定から外す */
+                    map.addLayer({ id: `${conf.id}-cluster`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'mhcard-cluster-icon', 'icon-size': 1.5, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
                     map.addLayer({ id: `${conf.id}-cluster-face`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'mhcard-cluster-face-icon', 'icon-size': 1.5, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': MHCARD_FACE_COLOR } });
                 } else if (conf.type === 'michi') {
                     /* 道の駅のクラスタもピンと同じ角丸四角。ピンと同様に、正方形は丸と同じ寸法だと
