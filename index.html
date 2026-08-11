@@ -882,6 +882,10 @@
         .pref-sum-item { display: flex; flex-direction: column; align-items: center;
                          justify-content: flex-end; text-align: center; }
         .pref-sum-v { font-size: 13px; font-weight: bold; color: #546E7A; margin-top: 3px; }
+        /* 0件の種別。周辺検索の結果は圏内に何があるか次第で0件の種別が出るので、
+           アイコンは出したまま数字だけ淡くする（都道府県一覧の .pref-cnt-n.zero と同じ色）。
+           県ページの集計帯は0件の種別を並べないので、この状態にはならない。 */
+        .pref-sum-v.zero { color: #cfd8dc; }
         /* 一覧の行に出すバッジ。情報シートの os-genrebadge / popup-form-badge / os-cdbadge と同じ見た目を小さくしたもの */
         .pref-badges { display: flex; flex-direction: column; gap: 2px; align-items: flex-end; flex-shrink: 0; }
         /* 寸法だけ一覧用に小さくし、色はシート側の定義（popup-form-badge の f-* / os-cdbadge）に任せる。
@@ -1243,43 +1247,6 @@
             overflow-y: auto;
             overscroll-behavior-y: contain;
             touch-action: pan-y;
-        }
-        #nearby-type-filter {
-            display: none;
-            padding: 6px 10px;
-            border-bottom: 1px solid #f0f0f0;
-            flex-shrink: 0;
-            overflow-x: auto;
-            overscroll-behavior-x: contain;
-            touch-action: pan-x;   /* 横スクロール帯。縦方向は下スワイプ判定に渡す */
-            white-space: nowrap;
-            gap: 6px;
-        }
-        .nearby-type-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            padding: 4px 10px;
-            border-radius: 16px;
-            border: 1.5px solid #e0e0e0;
-            background: #f5f5f5;
-            color: #999;
-            font-size: 11px;
-            font-family: sans-serif;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: background 0.15s, color 0.15s, border-color 0.15s;
-        }
-        .nearby-type-chip.active {
-            border-color: currentColor;
-            background: white;
-        }
-        .nearby-type-chip .chip-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            flex-shrink: 0;
-            background: currentColor;
         }
         .nearby-item {
             display: flex;
@@ -1741,13 +1708,25 @@
         <div style="width:36px;height:4px;background:#ccc;border-radius:2px;margin-bottom:8px;"></div>
         <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
             <div style="display:flex;align-items:center;gap:10px;min-width:0;">
+                <!-- 距離の条件だけを出す。どこからの距離なのかは下の起点帯（#nearby-origin）が受け持つ -->
                 <span id="nearby-result-title" style="font-weight:bold;font-size:14px;color:#333;white-space:nowrap;"></span>
-                <button id="nearby-filter-all-btn" onclick="event.stopPropagation();toggleAllNearbyTypeFilter()" style="display:none;background:#f5f5f5;border:1px solid #ddd;border-radius:14px;font-size:11px;color:#555;padding:3px 10px;cursor:pointer;white-space:nowrap;flex-shrink:0;">全解除</button>
+                <button id="nearby-filter-all-btn" onclick="event.stopPropagation();toggleAllNearbyTypeFilter()" style="background:#f5f5f5;border:1px solid #ddd;border-radius:14px;font-size:11px;color:#555;padding:3px 10px;cursor:pointer;white-space:nowrap;flex-shrink:0;">全解除</button>
             </div>
             <button onclick="closeNearbyResult()" style="background:none;border:none;font-size:22px;color:#bbb;cursor:pointer;padding:0 0 0 16px;line-height:1;flex-shrink:0;">×</button>
         </div>
     </div>
-    <div id="nearby-type-filter"></div>
+    <!-- 以下の並び（絞り込み欄→集計帯→起点帯→一覧）は県ページの詳細ビューに合わせてある -->
+    <div class="lords-filter" style="border-bottom:0; padding-bottom:6px;">
+        <div class="lords-search-wrap">
+            <input id="nearby-item-search" type="search" autocomplete="off"
+                   placeholder="名前・住所で絞り込み" oninput="onNearbySearchInput(this.value)">
+            <button class="lords-search-clear" onclick="clearNearbySearch()" title="クリア">×</button>
+        </div>
+    </div>
+    <!-- 集計帯は押して種別を絞る帯。県ページと違い、タップがそのまま表示・非表示になる -->
+    <div class="pref-sum" id="nearby-sum"></div>
+    <!-- 近い順の起点。一覧の直前に置く（スクロール領域の外なので送っても残る） -->
+    <div class="dorg" id="nearby-origin"></div>
     <div id="nearby-list" style="overflow-y:auto;flex:1;"></div>
 </div>
 
@@ -2321,12 +2300,24 @@
         + '<path d="M14 0C7.4 0 2 5.4 2 12c0 8.4 12 24 12 24s12-15.6 12-24C26 5.4 20.6 0 14 0z" fill="#F44336"/>'
         + '<circle cx="14" cy="12" r="5" fill="white" opacity="0.9"/></svg>';
     const originNames = new Map();
-    /* 起点を出す2つの画面。state は prefState / lordsState の宣言より前に
-       この定義を書けるよう、関数越しに引く。redraw は起点を取り直したときの並べ直し。 */
+    /* 逆ジオコーディングの取得そのものの重複よけ。周辺検索の「検索地点」と近い順の起点は
+       同じ地点を指すことが多く、そのままだと同じ座標へ2回問い合わせることになる
+       （originNames は表示の状態を持つ入れ物で、届く前の相乗りには使えない）。 */
+    const originFetches = new Map();
+    function fetchPlaceNameCached(lat, lng) {
+        const key = `${lat.toFixed(4)},${lng.toFixed(4)}`;
+        if (!originFetches.has(key)) originFetches.set(key, fetchPlaceName(lat, lng));
+        return originFetches.get(key);
+    }
+    /* 起点を出す画面。state は prefState / lordsState の宣言より前に
+       この定義を書けるよう、関数越しに引く。redraw は起点を取り直したときの並べ直し。
+       noReset を立てた画面には取り直しの導線を出さない。周辺検索の起点は100km圏を切り出した
+       中心そのもので、動かすことは並べ直しではなく検索のやり直しになるため（execNearbySearch）。 */
     const DORG_VIEWS = {
         pref: { el: 'pref-origin', state: () => prefState,  redraw: () => renderPrefItems() },
         lord: { el: 'lord-origin', state: () => lordsState, redraw: () => renderLordCastles() },
         remains: { el: 'remains-origin', state: () => remainsState, redraw: () => renderRemainsCastles() },
+        nearby: { el: 'nearby-origin', state: () => nearbyState, noReset: true },
     };
 
     function renderDistOrigin(kind) {
@@ -2341,7 +2332,7 @@
             originNames.set(key, null);
             // 届いたら描き直す。そのとき state.center から引き直すので、
             // 待っている間に別の県や城主へ移っていても取り違えない
-            fetchPlaceName(c.lat, c.lng).then(n => {
+            fetchPlaceNameCached(c.lat, c.lng).then(n => {
                 originNames.set(key, n || '');
                 renderDistOrigin(kind);
             });
@@ -2352,7 +2343,8 @@
         /* 取り直しの導線は、今 getSearchCenter() が指す先と起点がずれているときだけ出す。
            普段は開くたびに取り直していて一致するので、押しても何も起きないボタンは置かない。 */
         const now = getSearchCenter();
-        const stale = Math.abs(now.lat - c.lat) > 1e-6 || Math.abs(now.lng - c.lng) > 1e-6;
+        const stale = !v.noReset
+            && (Math.abs(now.lat - c.lat) > 1e-6 || Math.abs(now.lng - c.lng) > 1e-6);
         el.innerHTML = (state.centerPinned ? ICON_ORIGIN_PIN : ICON_ORIGIN_CROSS)
             + `<b>${attrEscape(name)}</b>`
             + (stale ? `<button onclick="resetDistOrigin('${kind}')">${
@@ -4957,11 +4949,15 @@ map.on('zoomend', () => { isZooming = false; });
     }
 
     const gmapKeywords = { supermarket: 'スーパー', transit: '駅 OR バス停', restaurant: 'レストラン', coffee: 'カフェ', statue: '像', takeout: 'テイクアウト', museum: 'ミュージアム OR 歴史館 OR 資料館', ramen: 'ラーメン', udon: 'うどん', soba: 'そば', sightseeing: '観光スポット', sushi: '寿司 OR 回転寿司', drugstore: '薬局 OR ドラッグストア', hundredyen: '100円ショップ' };
-    let nearbyState = { cats: [] };
+    /* 周辺検索の状態。center は近い順の起点で、検索した時点で固定する（execNearbySearch）。
+       q は結果一覧の絞り込み語、shown は一覧に描いてある件数（PREF_ITEM_CHUNK ずつ継ぎ足す）。 */
+    let nearbyState = { cats: [], center: null, centerPinned: false, q: '', shown: 0, rows: [] };
     setSearchOriginText('地図中心', false);
     let nearbyAllResults = [];
     let nearbyTypeFilter = new Set();
-    let nearbyResultTypes = []; // 現在の検索結果に含まれるタイプ一覧
+    // 集計帯に出す種別。圏内に1件も無い種別も0件で並べる（何が無いのかも見えるようにする）ので、
+    // 中身はいつも PREF_TYPES と同じ6種になる。設定で表示を外している種別もそのまま並べる
+    let nearbyResultTypes = [];
     let nearbyResultScrollTop = 0; // 結果からオブジェクトを開く直前の一覧のスクロール位置
 
     // タイプフィルターのOFF状態をlocalStorageへ永続化
@@ -4969,7 +4965,7 @@ map.on('zoomend', () => { isZooming = false; });
         try { return new Set(JSON.parse(localStorage.getItem('nearbyTypeFilterOff')) || []); } catch { return new Set(); }
     }
     function saveNearbyFilterOff() {
-        // 今回の結果に含まれないタイプの保存済みOFF状態は維持する
+        // 集計帯に出していない種別の保存済みOFF状態は維持する
         const off = loadNearbyFilterOff();
         nearbyResultTypes.forEach(t => { if (nearbyTypeFilter.has(t)) off.delete(t); else off.add(t); });
         localStorage.setItem('nearbyTypeFilterOff', JSON.stringify([...off]));
@@ -5221,7 +5217,8 @@ map.on('zoomend', () => { isZooming = false; });
             if (labelEl) labelEl.textContent = '検索地点';
             setSearchOriginText('取得中...', false);
             const center = map.getCenter();
-            fetchPlaceName(center.lat, center.lng).then(name => {
+            // 近い順の起点帯と同じ地点を指すことが多いので、問い合わせは共用する
+            fetchPlaceNameCached(center.lat, center.lng).then(name => {
                 if (!searchPinLngLat) setSearchOriginText(name || '地図中心', false);
             });
         }
@@ -6840,45 +6837,53 @@ map.on('zoomend', () => { isZooming = false; });
             .filter(item => item.dist <= RADIUS)
             .sort((a, b) => a.dist - b.dist);
 
-        // タイプフィルターを保存済み状態で初期化（フィルターUIが出ない1種類以下の時は全ON）
-        const typesInResults = [...new Set(nearbyAllResults.map(i => i.type))];
-        nearbyResultTypes = typesInResults;
-        if (typesInResults.length <= 1) {
-            nearbyTypeFilter = new Set(typesInResults);
-        } else {
-            const savedOff = loadNearbyFilterOff();
-            nearbyTypeFilter = new Set(typesInResults.filter(t => !savedOff.has(t)));
-        }
+        /* 近い順の起点は検索した時点で固定する。地図を動かしても取り直さない
+           （取り直すと100km圏の切り出しごと変わり、並べ直しでは済まなくなるため）。
+           検索ピンだったのか地図の中心だったのかも、控えた時点でしか分からないのでここで持つ。 */
+        nearbyState.center = { lat: searchLat, lng: searchLng };
+        nearbyState.centerPinned = !!searchPinLngLat;
+
+        /* 集計帯に出す種別。圏内に1件も無い種別も0件で並べるので、いつも PREF_TYPES と同じ6種。
+           保存済みのOFFはそのまま効かせる（全部OFFのまま保存されていれば一覧は空になる）。 */
+        nearbyResultTypes = PREF_TYPES.map(t => t.type);
+        const savedOff = loadNearbyFilterOff();
+        nearbyTypeFilter = new Set(nearbyResultTypes.filter(t => !savedOff.has(t)));
+
+        // 絞り込みの語は検索のたびに空へ戻す（県ページが別の県を開いたときと同じ扱い）
+        nearbyState.q = '';
+        document.getElementById('nearby-item-search').value = '';
+        setSearchClearVisible('nearby-item-search', '');
 
         closeNearby();
-        document.getElementById('nearby-result-title').textContent = `マップ中心から${RADIUS}km以内`;
-        buildNearbyTypeFilterChips(typesInResults);
+        // どこからの距離なのかは起点帯（renderDistOrigin）が出すので、ここは距離の条件だけ
+        document.getElementById('nearby-result-title').textContent = `${RADIUS}km以内`;
+        renderNearbySum();
+        renderDistOrigin('nearby');
+        nearbyResultScrollTop = 0;
         renderNearbyList();
         document.getElementById('nearby-result-panel').style.bottom = '52px';   /* 下部バーの上（--sheet-base と同値） */
         document.getElementById('nearby-result-overlay').style.display = 'block';
     }
-    function buildNearbyTypeFilterChips(types) {
-        const strip = document.getElementById('nearby-type-filter');
-        const allBtn = document.getElementById('nearby-filter-all-btn');
-        if (types.length <= 1) { strip.style.display = 'none'; allBtn.style.display = 'none'; return; }
-        strip.style.display = 'flex';
-        allBtn.style.display = 'inline-block';
-        strip.innerHTML = '';
-        const typeOrder = ['shop', 'castle', 'michi', 'manhole', 'pokefuta', 'mhcard'];
-        const sorted = [...types].sort((a, b) => typeOrder.indexOf(a) - typeOrder.indexOf(b));
-        sorted.forEach(type => {
-            const cfg = typeConfig[type];
-            if (!cfg) return;
-            const count = nearbyAllResults.filter(i => i.type === type).length;
-            const color = type === 'castle' ? '#546E7A' : cfg.color;
-            const chip = document.createElement('button');
-            chip.className = 'nearby-type-chip' + (nearbyTypeFilter.has(type) ? ' active' : '');
-            chip.dataset.type = type;
-            chip.style.color = color;
-            chip.innerHTML = `<span class="chip-dot"></span>${cfg.label} <span style="opacity:0.7">${count}</span>`;
-            chip.addEventListener('click', (e) => { e.stopPropagation(); toggleNearbyTypeFilter(type); });
-            strip.appendChild(chip);
-        });
+
+    /* 集計帯。県ページ（renderPrefSum）と同じ作りにするが、3点だけ扱いが違う。
+       ・圏内に1件も無い種別も0件で並べる（数字だけ淡くする＝.pref-sum-v.zero）。
+         何が無いのかも見えるようにするためで、種別が1〜2種の県ばかりだと帯が
+         間延びするのも防げる（.pref-sum-line は space-between）
+       ・タップがそのまま表示・非表示。県ページはタップで種別の先頭へ飛ぶが、それは
+         東京都2,496件のような長い一覧のための操作で、常に近い順のここでは飛び先に意味が無い
+       ・食べログの長押し（ジャンル行）は割り当てない。部門の絞り込みは設定側だけ */
+    function renderNearbySum() {
+        const cnt = {};
+        for (const it of nearbyAllResults) cnt[it.type] = (cnt[it.type] || 0) + 1;
+        const el = document.getElementById('nearby-sum');
+        el.innerHTML = `<div class="pref-sum-line">` + nearbyResultTypes.map(t => {
+            const n = cnt[t] || 0;
+            return `<div class="pref-sum-item${nearbyTypeFilter.has(t) ? '' : ' off'}" data-t="${t}">`
+                 + `${prefTypeIconHtml(t)}<div class="pref-sum-v${n ? '' : ' zero'}">${n.toLocaleString()}</div></div>`;
+        }).join('') + `</div>`;
+        // 長押しは渡さない（bindTypeToggle はタッチとマウスの二重反応よけのために通す）
+        el.querySelectorAll('.pref-sum-item').forEach(item =>
+            bindTypeToggle(item, () => toggleNearbyTypeFilter(item.dataset.t)));
         updateNearbyAllBtn();
     }
 
@@ -6888,11 +6893,8 @@ map.on('zoomend', () => { isZooming = false; });
         } else {
             nearbyTypeFilter.add(type);
         }
-        document.querySelectorAll('#nearby-type-filter .nearby-type-chip').forEach(chip => {
-            chip.classList.toggle('active', nearbyTypeFilter.has(chip.dataset.type));
-        });
         saveNearbyFilterOff();
-        updateNearbyAllBtn();
+        renderNearbySum();
         renderNearbyList();
     }
 
@@ -6905,46 +6907,88 @@ map.on('zoomend', () => { isZooming = false; });
     function toggleAllNearbyTypeFilter() {
         const allOn = nearbyResultTypes.every(t => nearbyTypeFilter.has(t));
         nearbyTypeFilter = allOn ? new Set() : new Set(nearbyResultTypes);
-        document.querySelectorAll('#nearby-type-filter .nearby-type-chip').forEach(chip => {
-            chip.classList.toggle('active', nearbyTypeFilter.has(chip.dataset.type));
-        });
         saveNearbyFilterOff();
-        updateNearbyAllBtn();
+        renderNearbySum();
         renderNearbyList();
     }
 
-    function renderNearbyList() {
+    // 一覧の絞り込み。照合は searchIndex が持つ正規化済みの名前・住所を使う（県ページと同じ）
+    function onNearbySearchInput(v) {
+        nearbyState.q = v;
+        setSearchClearVisible('nearby-item-search', v);
+        renderNearbyList();
+    }
+    function clearNearbySearch() {
+        const el = document.getElementById('nearby-item-search');
+        el.value = '';
+        onNearbySearchInput('');
+        el.focus();
+    }
+
+    /* 一覧。行の作りも上限も県ページ（renderPrefItems）に合わせる。並べ替えは近い順だけなので、
+       距離は検索した時点で確定済みの item.dist をそのまま使い、測り直さない。
+       keepShown を立てて呼ぶと継ぎ足した分（nearbyState.shown）を保つ。「さらに表示」と、
+       オブジェクトから戻ったときの描き直しがこれに当たる。 */
+    function renderNearbyList(keepShown) {
         const list = document.getElementById('nearby-list');
-        const filtered = nearbyAllResults
-            .filter(item => nearbyTypeFilter.has(item.type))
-            .slice(0, 100);
-        if (filtered.length === 0) {
-            list.innerHTML = `<div style="padding:16px;text-align:center;color:#999;font-size:13px;">条件に一致するスポットがありません</div>`;
+        if (!keepShown) nearbyState.shown = PREF_ITEM_CHUNK;
+        const q = normalizeForSearch((nearbyState.q || '').trim());
+        const rows = [];
+        for (const item of nearbyAllResults) {
+            if (!nearbyTypeFilter.has(item.type)) continue;
+            if (q && !(item._normLabel || '').includes(q)
+                  && !(item._normSub || '').includes(q)) continue;
+            // 絞り込み中は、検索結果と同じく「店名以外のどこで当たったか」を添える
+            rows.push({ item, part: (q && item.type === 'shop') ? shopMatchedPart(item.properties, q) : null });
+        }
+        nearbyState.rows = rows;
+        if (rows.length === 0) {
+            list.innerHTML = `<div class="lords-note">${
+                q ? '該当する項目がありません' : '表示する種別が選ばれていません'}</div>`;
             return;
         }
-        list.innerHTML = '';
-        filtered.forEach(item => {
-            const cfg = typeConfig[item.type];
-            const isMhcard = item.type === 'mhcard';
+        const shown = Math.min(rows.length, nearbyState.shown || PREF_ITEM_CHUNK);
+        nearbyState.shown = shown;
+        list.innerHTML = rows.slice(0, shown).map((r, i) => {
+            const item = r.item;
             const distStr = item.dist < 1 ? `${Math.round(item.dist * 1000)}m` : `${item.dist.toFixed(1)}km`;
-            const div = document.createElement('div');
-            div.className = 'nearby-item';
-            const iconPart = isMhcard
-                ? `<div style="position:relative;width:var(--mhcard-w);height:var(--mhcard-h);flex-shrink:0;background:#e2ddd4;border-radius:6px;"><img src="mhcard.png" style="width:100%;height:100%;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:var(--mhcard-badge);height:var(--mhcard-badge);filter:brightness(0) invert(1);pointer-events:none;"></div>`
-                : `<div class="nearby-item-icon" style="background:${getItemColor(item)}">${cfg.img ? `<img src="${cfg.img}"${cfg.img === 'manhole.png' ? '' : ' class="icon-full"'}>` : cfg.icon}</div>`;
-            // バッジは県ページの一覧と同じ内容（城の名城・形態、カードのID・弾、食べログの部門）
-            div.innerHTML = `${iconPart}<div class="nearby-item-text"><div class="nearby-item-name">${itemDisplayName(item)}</div><div class="nearby-item-sub">${item.sub}</div></div>${prefBadgesHtml(item)}<div class="nearby-item-dist">${distStr}</div>`;
-            div.addEventListener('click', () => nearbyJumpToItem(item));
-            list.appendChild(div);
-        });
+            return `<div class="nearby-item" onclick="nearbyJumpToItem(${i})">
+                ${prefTypeIconHtml(item.type, item.properties || {})}
+                <div class="nearby-item-text">
+                    <div class="nearby-item-name">${attrEscape(itemDisplayName(item))}</div>
+                    <div class="nearby-item-sub">${matchNoteHtml(null, r.part)}${attrEscape(item.sub || '')}</div>
+                </div>
+                ${prefBadgesHtml(item)}
+                <div class="nearby-item-dist">${distStr}</div>
+            </div>`;
+        }).join('');
+        // 末尾。打ち切っているときは、いま出ている件数と全件数を並べて「さらに表示」を添える
+        list.insertAdjacentHTML('beforeend', shown < rows.length
+            ? `<div class="lords-note">${shown.toLocaleString()}件を表示中（全${
+                rows.length.toLocaleString()}件）<button class="pref-more" onclick="showMoreNearbyItems()"
+                >さらに${Math.min(PREF_ITEM_CHUNK, rows.length - shown).toLocaleString()}件</button></div>`
+            : `<div class="lords-note">全${rows.length.toLocaleString()}件</div>`);
+        // 通常は先頭から。オブジェクトを開いて戻ったときと「さらに表示」のときだけ、控えた位置へ
+        // （全件を入れ終えてから指定しないと、スクロールできる高さが足りずに切り詰められる）
+        list.scrollTop = nearbyResultScrollTop || 0;
+        nearbyResultScrollTop = 0;
+    }
+
+    /* 「さらに表示」。いま出ている続きから見えるよう、スクロール位置は動かさない。 */
+    function showMoreNearbyItems() {
+        nearbyResultScrollTop = document.getElementById('nearby-list').scrollTop;
+        nearbyState.shown = (nearbyState.shown || PREF_ITEM_CHUNK) + PREF_ITEM_CHUNK;
+        renderNearbyList(true);
     }
 
     /* 結果一覧からオブジェクトへ飛ぶ。県ページ（prefJumpToItem）と同じ扱いにして、
        離れる前に一覧の位置を控え、情報シートに戻り導線を挿す。 */
-    function nearbyJumpToItem(item) {
+    function nearbyJumpToItem(i) {
+        const r = (nearbyState.rows || [])[i];
+        if (!r) return;
         nearbyResultScrollTop = document.getElementById('nearby-list').scrollTop;
         closeNearbyResult();
-        onResultClick(item);
+        onResultClick(r.item);
         // onResultClick は 300ms 後に情報シートを開くので、その後に戻り導線を挿す
         setTimeout(injectNearbyBackLink, 400);
     }
@@ -6961,13 +7005,14 @@ map.on('zoomend', () => { isZooming = false; });
         body.insertBefore(div, body.firstChild);
     }
 
-    /* 開く前の一覧の状態のまま戻す。距離は検索した時点の起点で確定済みなので取り直さない
-       （取り直すと、オブジェクトへ寄った先の地図中心が起点になって並びが変わる）。
-       一覧のDOMは openNearbyPanel が空にすることがあるため、描き直してから位置を戻す。 */
+    /* 開く前の一覧の状態（継ぎ足した分・スクロール位置）のまま戻す。距離は検索した時点の
+       起点で確定済みなので取り直さない（取り直すと、オブジェクトへ寄った先の地図中心が
+       起点になって並びが変わる）。起点帯も同じ理由でそのまま。
+       一覧のDOMは openNearbyPanel が空にすることがあるため、描き直してから位置を戻す
+       （位置を戻すのは renderNearbyList の末尾）。 */
     function reopenNearbyResult() {
         if (!nearbyAllResults.length) return;
-        renderNearbyList();
-        document.getElementById('nearby-list').scrollTop = nearbyResultScrollTop || 0;
+        renderNearbyList(true);
         document.getElementById('nearby-result-panel').style.bottom = '52px';
         document.getElementById('nearby-result-overlay').style.display = 'block';
     }

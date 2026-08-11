@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<!-- index.html と同じ viewport 指定 -->
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<base href="../">
+<title>周辺検索スポット結果を県ページの見た目へ寄せる — 懸念の実寸モック</title>
+<style>
+/* ══════════════════════════════════════════════════════════════
+   .mock-* 以外の CSS は index.html を実際にブラウザで開いて
+   document.styleSheets から取り出した写しで、値は一切変えていない
+   （rgb() 表記になっているのはブラウザの正規化によるもの）。
+
+   一覧の行（.nearby-item …）も、実際に動かした周辺検索の結果
+   （東京駅付近・スポット・100km圏）から outerHTML をそのまま取っている。
+   帯の件数・全件数も同じ実行時の実測値。
+     全5,334件 ＝ 食べログ2,891 ／ お城1,996 ／ マンホール327 ／ 道の駅93 ／ ポケふた27
+   ══════════════════════════════════════════════════════════════ */
+:root { --obj-icon-circle: 28px; --obj-icon-inner: 25px; --obj-icon-inner-full: 28px; --mhcard-w: 28px; --mhcard-h: 36px; --mhcard-badge: 22.4px; }
+.popup-form-badge { font-size: 10.5px; font-weight: 700; color: rgb(255, 255, 255); padding: 2px 8px; border-radius: 10px; line-height: 1.6; white-space: nowrap; }
+.popup-form-badge.f-hirajiro { background: rgb(51, 113, 56); }
+.shop-genre.g-men { background: rgb(134, 81, 55); }
+.shop-genre.g-niku { background: rgb(134, 55, 55); }
+.shop-genre.g-gyokai { background: rgb(57, 101, 132); }
+.shop-genre.g-chuka { background: rgb(125, 64, 84); }
+.shop-genre.g-yoshoku { background: rgb(66, 75, 123); }
+.shop-genre.g-keishoku { background: rgb(134, 114, 55); }
+.shop-genre.g-kanmi { background: rgb(121, 68, 103); }
+.shop-genre.g-sake { background: rgb(111, 61, 127); }
+.shop-genre.g-kissa { background: rgb(70, 119, 103); }
+.shop-genre.g-sonota { background: rgb(115, 115, 115); }
+.pref-sum { padding: 9px 13px; background: rgb(247, 249, 250); border-bottom: 1px solid rgb(240, 240, 240); flex-shrink: 0; touch-action: none; }
+.pref-sum-line { display: flex; gap: 12px; justify-content: space-between; align-items: flex-end; min-height: calc(var(--mhcard-h) + 20px); }
+.pref-sum-item { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; text-align: center; cursor: pointer; padding: 3px 5px 4px; border-radius: 9px; -webkit-tap-highlight-color: transparent; }
+.pref-sum-item.off { filter: grayscale(1); opacity: 0.34; }
+.pref-sum-v { font-size: 13px; font-weight: bold; color: rgb(84, 110, 122); margin-top: 3px; }
+.pref-badges { display: flex; flex-direction: column; gap: 2px; align-items: flex-end; flex-shrink: 0; }
+.pref-badge { font-size: 9.5px; font-weight: 700; color: rgb(255, 255, 255); padding: 1px 7px; border-radius: 9px; white-space: nowrap; line-height: 1.5; }
+.pref-rstbar { display: flex; align-items: center; gap: 8px; padding: 6px 13px; background: rgb(255, 248, 225); border-bottom: 1px solid rgb(240, 226, 184); font-size: 11.5px; color: rgb(138, 109, 26); }
+.pref-rstbar button { margin-left: auto; border: 0px; background: rgb(255, 255, 255); border-radius: 12px; padding: 3px 10px; font-size: 11px; color: rgb(42, 91, 215); font-weight: bold; cursor: pointer; font-family: inherit; flex-shrink: 0; }
+.lords-filter { padding: 0px 12px 8px; flex-shrink: 0; border-bottom: 1px solid rgb(240, 240, 240); touch-action: none; }
+.lords-filter input { width: 100%; height: 34px; border: 1px solid rgb(227, 227, 227); border-radius: 17px; padding: 0px 12px; font-size: 13px; font-family: inherit; background: rgb(250, 250, 250); color: rgb(51, 51, 51); }
+.lords-search-wrap { position: relative; }
+.lords-search-wrap input { padding-right: 34px; }
+.lords-chips { display: flex; gap: 6px; margin-top: 7px; flex-wrap: wrap; }
+.lords-chip { font-size: 11px; padding: 4px 10px; border-radius: 14px; background: rgb(242, 242, 242); color: rgb(102, 102, 102); border: 0px; cursor: pointer; font-family: inherit; }
+.lords-chip[aria-pressed="true"] { background: rgb(227, 236, 255); color: rgb(42, 91, 215); font-weight: bold; }
+.dorg { display: flex; align-items: center; gap: 6px; padding: 6px 13px; background: rgb(247, 249, 250); border-bottom: 1px solid rgb(240, 240, 240); font-size: 11px; flex-shrink: 0; touch-action: none; }
+.dorg b { color: rgb(69, 90, 100); font-weight: 600; flex: 1 1 0%; min-width: 0px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dorg button { border: 0px; background: rgb(255, 255, 255); border-radius: 12px; padding: 3px 10px; font-size: 10.5px; color: rgb(42, 91, 215); font-weight: bold; cursor: pointer; font-family: inherit; flex-shrink: 0; }
+.lords-note { padding: 16px; text-align: center; color: rgb(153, 153, 153); font-size: 13px; }
+.nearby-list { overflow-y: auto; overscroll-behavior-y: contain; touch-action: pan-y; flex: 1 1 0%; min-height: 0; }
+.nearby-list::-webkit-scrollbar { width: 13px; }
+.nearby-list::-webkit-scrollbar-track { background: transparent; }
+.nearby-list::-webkit-scrollbar-thumb { background: padding-box rgb(183, 195, 207); border-radius: 7px; min-height: 44px; border: 3px solid transparent; }
+.nearby-type-filter { display: flex; padding: 6px 10px; border-bottom: 1px solid rgb(240, 240, 240); flex-shrink: 0; overflow-x: auto; overscroll-behavior-x: contain; touch-action: pan-x; white-space: nowrap; gap: 6px; }
+.nearby-type-chip { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 16px; border: 1.5px solid rgb(224, 224, 224); background: rgb(245, 245, 245); color: rgb(153, 153, 153); font-size: 11px; font-family: sans-serif; cursor: pointer; white-space: nowrap; transition: background 0.15s, color 0.15s, border-color 0.15s; }
+.nearby-type-chip.active { border-color: currentcolor; background: white; }
+.nearby-type-chip .chip-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; background: currentcolor; }
+.nearby-item { display: flex; align-items: center; padding: 10px 14px; border-bottom: 1px solid rgb(240, 240, 240); cursor: pointer; gap: 10px; }
+.nearby-item-icon { width: var(--obj-icon-circle); height: var(--obj-icon-circle); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; background: rgb(238, 238, 238); }
+.nearby-item-icon img { width: var(--obj-icon-inner); height: var(--obj-icon-inner); object-fit: contain; filter: brightness(0) invert(1); }
+.nearby-item-icon img.icon-full { width: var(--obj-icon-inner-full); height: var(--obj-icon-inner-full); }
+.nearby-item-text { flex: 1 1 0%; min-width: 0px; }
+.nearby-item-name { font-size: 13px; font-weight: bold; color: rgb(51, 51, 51); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nearby-item-sub { font-size: 11px; color: rgb(153, 153, 153); margin-top: 1px; }
+.nearby-item-dist { font-size: 12px; color: rgb(66, 133, 244); font-weight: bold; flex-shrink: 0; }
+
+/* ══ ここから下だけがモックのための追加分 ══════════════════════ */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 0 0 60px; background: #eceff1; font-family: sans-serif; color: #263238; }
+.mock-wrap { max-width: 1180px; margin: 0 auto; padding: 18px 16px; }
+h1 { font-size: 19px; margin: 8px 0 6px; }
+h2 { font-size: 15px; margin: 30px 0 4px; padding: 7px 11px; background: #37474f; color: #fff; border-radius: 7px; }
+h2 .h2n { opacity: .65; font-weight: normal; font-size: 12px; margin-left: 8px; }
+p.lead { font-size: 13px; line-height: 1.75; margin: 8px 0 14px; color: #37474f; }
+p.lead b { color: #b71c1c; }
+.mock-note { font-size: 12px; line-height: 1.7; background: #fff8e1; border: 1px solid #ffe082;
+             border-radius: 7px; padding: 9px 12px; margin: 10px 0 14px; color: #6d4c41; }
+.mock-ok { background: #e8f5e9; border-color: #a5d6a7; color: #2e5b33; }
+.mock-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; }
+.mock-col { }
+.mock-cap { font-size: 12px; font-weight: bold; margin: 0 0 5px; color: #263238; }
+.mock-cap span { font-weight: normal; color: #607d8b; }
+.mock-cap em { font-style: normal; color: #b71c1c; font-weight: bold; }
+/* 端末の枠。中の #panel は実際の 60vh 相当（既定は 812px 端末＝487px） */
+.phone { width: 375px; background: #cfd8dc; border-radius: 12px; padding: 0; overflow: hidden;
+         box-shadow: 0 2px 10px rgba(0,0,0,.18); position: relative; }
+.panel { background: #fff; border-radius: 16px 16px 0 0; display: flex; flex-direction: column;
+         font-family: sans-serif; overflow: hidden; }
+.panel-head { display: flex; flex-direction: column; align-items: center; padding: 8px 16px 6px;
+              flex-shrink: 0; border-bottom: 1px solid #f0f0f0; }
+.panel-head .grip { width: 36px; height: 4px; background: #ccc; border-radius: 2px; margin-bottom: 8px; }
+.panel-head .row { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+.panel-head .ttl { font-weight: bold; font-size: 14px; color: #333; white-space: nowrap; }
+.panel-head .allbtn { background: #f5f5f5; border: 1px solid #ddd; border-radius: 14px; font-size: 11px;
+                      color: #555; padding: 3px 10px; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
+.panel-head .x { background: none; border: none; font-size: 22px; color: #bbb; padding: 0 0 0 16px; line-height: 1; }
+.mock-meas { font-size: 11.5px; color: #37474f; background: #fff; border: 1px solid #cfd8dc;
+             border-radius: 6px; padding: 6px 9px; margin-top: 6px; width: 375px; line-height: 1.6; }
+.mock-meas b { color: #b71c1c; }
+.mock-meas.ok b { color: #2e7d32; }
+.mock-btns { display: flex; gap: 8px; margin: 10px 0 4px; flex-wrap: wrap; }
+.mock-btns button { border: 1px solid #b0bec5; background: #fff; border-radius: 15px; padding: 5px 13px;
+                    font-size: 12px; cursor: pointer; font-family: inherit; color: #37474f; }
+.mock-btns button[aria-pressed="true"] { background: #37474f; color: #fff; border-color: #37474f; }
+.mock-hl { outline: 2px dashed #d32f2f; outline-offset: -2px; }
+table.mock-t { border-collapse: collapse; font-size: 12.5px; background: #fff; margin: 6px 0 4px; }
+table.mock-t th, table.mock-t td { border: 1px solid #cfd8dc; padding: 5px 10px; text-align: left; }
+table.mock-t th { background: #eceff1; }
+table.mock-t td.num { text-align: right; font-variant-numeric: tabular-nums; }
+table.mock-t td.bad { color: #b71c1c; font-weight: bold; }
+.mock-tap-log { font-size: 12px; background: #263238; color: #b2ff59; border-radius: 6px;
+                padding: 7px 10px; margin-top: 6px; width: 375px; min-height: 54px; line-height: 1.6;
+                font-family: ui-monospace, monospace; }
+</style>
+</head>
+<body>
+<div class="mock-wrap">
+
+<h1>周辺検索（スポット）の結果UIを、県ページの見た目へ寄せた場合</h1>
+<p class="lead">
+仕様は周辺検索のまま（<b>100km固定・上位100件で打ち切り・距離順のみ・食べログの部門は設定側だけ</b>）で、
+見た目だけを県ページ（都道府県から探す→県→近い順）へ寄せた前提のモックです。
+並べ替えチップ（種別順／名前順／近い順）と「さらに表示」は仕様変更になるので入れていません。
+</p>
+<div class="mock-note">
+一覧の行・件数はすべて実データです。<code>index.html</code> をローカルで動かし、東京駅付近で
+周辺検索→スポットを実行した結果（全 <b>5,334</b> 件＝食べログ2,891／お城1,996／マンホール327／道の駅93／ポケふた27）から
+そのまま取り出しています。CSS も <code>index.html</code> からの写しで値は変えていません。
+</div>
+
+<!-- ══════════ 懸念1 ══════════ -->
+<h2>懸念1　一覧の見える行数が減る<span class="h2n">シートの高さは 60vh 固定のまま、上に載せる帯だけが増えるため</span></h2>
+<p class="lead">
+下の4枚は同じ高さ（画面812pxの端末での 60vh＝487px）です。数字はこのページで実測した値が入ります。
+端末を切り替えると、狭い画面での差が見られます。
+</p>
+<div class="mock-btns" id="h-btns">
+  <button data-vh="812" aria-pressed="true">画面812px（iPhone 13 mini 等）／パネル487px</button>
+  <button data-vh="667" aria-pressed="false">画面667px（iPhone SE3）／パネル400px</button>
+  <button data-vh="932" aria-pressed="false">画面932px（iPhone 15 Pro Max）／パネル559px</button>
+</div>
+<div class="mock-row" id="h-row"></div>
+
+<!-- ══════════ 懸念2 ══════════ -->
+<h2>懸念2　種別の名前が画面から消える<span class="h2n">集計帯はアイコンと数字だけで、種別名を持たない</span></h2>
+<p class="lead">
+県ページは「その県に何がいくつあるか」を見る帯なので名前が無くても通じますが、
+周辺検索の結果は<b>種別が混ざるのが前提</b>で、名前が消えると「この丸は何か」をアイコンだけで当てることになります。
+</p>
+<div class="mock-row" id="c2-row"></div>
+
+<!-- ══════════ 懸念3 ══════════ -->
+<h2>懸念3　種別が1〜2種のとき、集計帯が左右に間延びする<span class="h2n">.pref-sum-line は justify-content: space-between</span></h2>
+<p class="lead">
+県ページは常に5〜6種が並ぶ前提の指定です。周辺検索は圏内に何があるか次第で、
+<b>山間部や離島では1〜2種しか入りません</b>。現状のチップ帯は左詰めなのでこの問題はありません。
+</p>
+<div class="mock-row" id="c3-row"></div>
+
+<!-- ══════════ 懸念4 ══════════ -->
+<h2>懸念4　帯の数字（全件）と一覧の100件打ち切りが食い違う<span class="h2n">この食い違いは現状もあるが、数字が大きくなるぶん目につく</span></h2>
+<p class="lead">
+帯に出るのは圏内の全件（食べログ2,891）で、一覧は上位100件で終わります。県ページと違って
+「さらに表示」も全件数の行も無いので、<b>なぜ100件で終わるのかが画面のどこにも書かれていません</b>。
+下の3枚目は、表示だけの追加で済ませる案（末尾に一行足す）です。
+</p>
+<div class="mock-row" id="c4-row"></div>
+
+<!-- ══════════ 懸念5 ══════════ -->
+<h2>懸念5　種別の出し入れの操作が変わる<span class="h2n">実際に触って比べられます</span></h2>
+<p class="lead">
+現状のチップは<b>タップでON/OFF</b>。県ページの集計帯は<b>タップ＝その種別の先頭へジャンプ／長押し500msでON/OFF</b>です。
+県ページがそうなっている理由はコードに明記されていて（東京都は2,496件・食べログだけで2,084行あるため）、
+<b>100件しかない周辺検索には当てはまりません</b>。
+3枚目は「見た目は集計帯・タップはON/OFFのまま」にした案です。
+</p>
+<div class="mock-row" id="c5-row"></div>
+
+<!-- ══════════ 懸念6 ══════════ -->
+<h2>懸念6　起点帯を足すと、タイトルと同じことを二度言う<span class="h2n">＋ 取り直しボタンは押せてはいけない</span></h2>
+<p class="lead">
+県ページの起点帯は、起点が今の地図中心とずれると「今の地図中心にする」ボタンを出します。
+周辺検索で押せてしまうと<b>100km圏の取り直し＝再検索</b>の意味になるため、抑止する分岐が要ります。
+タイトル「マップ中心から100km以内」と起点の地名も重なります。
+</p>
+<div class="mock-row" id="c6-row"></div>
+
+<!-- ══════════ 懸念7 ══════════ -->
+<h2>懸念7　種別の並び順が2か所で違う<span class="h2n">どちらに合わせるか決める必要がある</span></h2>
+<div class="mock-row" id="c7-row"></div>
+
+<h2>まとめ</h2>
+<table class="mock-t" id="sum-t"></table>
+
+</div>
+
+<script>
+/* ══ 実データ（東京駅付近・スポット・100km圏の実行結果から取得） ══════════ */
+const TYPES = {
+    shop:     { label: '食べログ',   color: '#FF9800', img: 'tabe.png',    full: true,  n: 2891 },
+    castle:   { label: 'お城',       color: '#546E7A', img: 'castle.png',  full: true,  n: 1996 },
+    michi:    { label: '道の駅',     color: '#34A853', img: 'michi.png',   full: true,  n: 93   },
+    manhole:  { label: 'マンホール', color: '#B87333', img: 'manhole.png', full: false, n: 327  },
+    pokefuta: { label: 'ポケふた',   color: '#FBBC04', img: 'manhole.png', full: false, n: 27   },
+};
+const TOTAL = 5334;
+// index.html の buildNearbyTypeFilterChips が使う並び
+const CHIP_ORDER = ['shop', 'castle', 'michi', 'manhole', 'pokefuta'];
+// index.html の PREF_TYPES が使う並び
+const SUM_ORDER  = ['shop', 'pokefuta', 'manhole', 'michi', 'castle'];
+
+// 実行結果の先頭16行をそのまま写したもの
+const ROWS = [
+'<div class="nearby-item"><div class="nearby-item-icon" style="background:#FF9800"><img src="tabe.png" class="icon-full"></div><div class="nearby-item-text"><div class="nearby-item-name">ウルフギャング・ステーキハウス 丸の内店</div><div class="nearby-item-sub">東京都千代田区丸の内二丁目</div></div><div class="pref-badges"><span class="pref-badge shop-genre g-niku">ステーキ・鉄板焼き</span></div><div class="nearby-item-dist">177m</div></div>',
+'<div class="nearby-item"><div class="nearby-item-icon" style="background:#546E7A"><img src="castle.png" class="icon-full"></div><div class="nearby-item-text"><div class="nearby-item-name">江戸城25馬場先門</div><div class="nearby-item-sub">東京都千代田区皇居外苑</div></div><div class="pref-badges"><span class="pref-badge popup-form-badge f-hirajiro">平城</span></div><div class="nearby-item-dist">185m</div></div>',
+'<div class="nearby-item"><div class="nearby-item-icon" style="background:#FF9800"><img src="tabe.png" class="icon-full"></div><div class="nearby-item-text"><div class="nearby-item-name">ローズベーカリー 丸の内（Rose Bakery）</div><div class="nearby-item-sub">東京都千代田区丸の内二丁目</div></div><div class="pref-badges"><span class="pref-badge shop-genre g-kissa">カフェ</span></div><div class="nearby-item-dist">235m</div></div>',
+'<div class="nearby-item"><div class="nearby-item-icon" style="background:#FF9800"><img src="tabe.png" class="icon-full"></div><div class="nearby-item-text"><div class="nearby-item-name">カカオサンパカ 丸の内本店（CACAO SAMPAKA）</div><div class="nearby-item-sub">東京都千代田区丸の内二丁目</div></div><div class="pref-badges"><span class="pref-badge shop-genre g-kanmi">スイーツ</span></div><div class="nearby-item-dist">274m</div></div>',
+'<div class="nearby-item"><div class="nearby-item-icon" style="background:#FF9800"><img src="tabe.png" class="icon-full"></div><div class="nearby-item-text"><div class="nearby-item-name">エシレ・メゾン デュ ブール（ÉCHIRÉ MAISON DU BEURRE）</div><div class="nearby-item-sub">東京都千代田区丸の内二丁目</div></div><div class="pref-badges"><span class="pref-badge shop-genre g-kanmi">スイーツ</span></div><div class="nearby-item-dist">279m</div></div>',
+'<div class="nearby-item"><div class="nearby-item-icon" style="background:#FF9800"><img src="tabe.png" class="icon-full"></div><div class="nearby-item-text"><div class="nearby-item-name">Morton\'s The Steakhouse 丸の内（モートンズ　ザ　ステーキハウス）</div><div class="nearby-item-sub">東京都千代田区丸の内三丁目</div></div><div class="pref-badges"><span class="pref-badge shop-genre g-niku">ステーキ・鉄板焼き</span></div><div class="nearby-item-dist">283m</div></div>',
+'<div class="nearby-item"><div class="nearby-item-icon" style="background:#FF9800"><img src="tabe.png" class="icon-full"></div><div class="nearby-item-text"><div class="nearby-item-name">ラ ブティック ドゥ ジョエル・ロブション 丸の内ブリックスクエア店</div><div class="nearby-item-sub">東京都千代田区丸の内二丁目</div></div><div class="pref-badges"><span class="pref-badge shop-genre g-kanmi">パン</span></div><div class="nearby-item-dist">295m</div></div>',
+'<div class="nearby-item"><div class="nearby-item-icon" style="background:#FF9800"><img src="tabe.png" class="icon-full"></div><div class="nearby-item-text"><div class="nearby-item-name">ヤウメイ（YAUMAY）</div><div class="nearby-item-sub">東京都千代田区丸の内三丁目</div></div><div class="pref-badges"><span class="pref-badge shop-genre g-chuka">中国料理</span></div><div class="nearby-item-dist">300m</div></div>',
+'<div class="nearby-item"><div class="nearby-item-icon" style="background:#FF9800"><img src="tabe.png" class="icon-full"></div><div class="nearby-item-text"><div class="nearby-item-name">Cafe 1894</div><div class="nearby-item-sub">東京都千代田区丸の内二丁目</div></div><div class="pref-badges"><span class="pref-badge shop-genre g-kissa">カフェ</span></div><div class="nearby-item-dist">345m</div></div>',
+'<div class="nearby-item"><div class="nearby-item-icon" style="background:#FF9800"><img src="tabe.png" class="icon-full"></div><div class="nearby-item-text"><div class="nearby-item-name">筑紫樓 丸の内店（筑紫楼 ツクシロウ）</div><div class="nearby-item-sub">東京都千代田区丸の内二丁目</div></div><div class="pref-badges"><span class="pref-badge shop-genre g-chuka">中国料理</span></div><div class="nearby-item-dist">351m</div></div>',
+'<div class="nearby-item"><div class="nearby-item-icon" style="background:#FF9800"><img src="tabe.png" class="icon-full"></div><div class="nearby-item-text"><div class="nearby-item-name">モリタ屋 東京丸の内店（もりたや）</div><div class="nearby-item-sub">東京都千代田区丸の内二丁目</div></div><div class="pref-badges"><span class="pref-badge shop-genre g-niku">すき焼き・しゃぶしゃぶ</span></div><div class="nearby-item-dist">362m</div></div>',
+'<div class="nearby-item"><div class="nearby-item-icon" style="background:#FF9800"><img src="tabe.png" class="icon-full"></div><div class="nearby-item-text"><div class="nearby-item-name">マンゴツリー東京</div><div class="nearby-item-sub">東京都千代田区丸の内二丁目</div></div><div class="pref-badges"><span class="pref-badge shop-genre g-chuka">アジア・エスニック</span></div><div class="nearby-item-dist">376m</div></div>',
+'<div class="nearby-item"><div class="nearby-item-icon" style="background:#FF9800"><img src="tabe.png" class="icon-full"></div><div class="nearby-item-text"><div class="nearby-item-name">アンティカ オステリア デル ポンテ</div><div class="nearby-item-sub">東京都千代田区丸の内二丁目</div></div><div class="pref-badges"><span class="pref-badge shop-genre g-yoshoku">イタリアン</span></div><div class="nearby-item-dist">392m</div></div>',
+'<div class="nearby-item"><div class="nearby-item-icon" style="background:#546E7A"><img src="castle.png" class="icon-full"></div><div class="nearby-item-text"><div class="nearby-item-name">江戸城26和田倉門</div><div class="nearby-item-sub">東京都千代田区皇居外苑</div></div><div class="pref-badges"><span class="pref-badge popup-form-badge f-hirajiro">平城</span></div><div class="nearby-item-dist">421m</div></div>',
+'<div class="nearby-item"><div class="nearby-item-icon" style="background:#FF9800"><img src="tabe.png" class="icon-full"></div><div class="nearby-item-text"><div class="nearby-item-name">ポワンエリーニュ（POINT ET LIGNE）</div><div class="nearby-item-sub">東京都千代田区丸の内一丁目</div></div><div class="pref-badges"><span class="pref-badge shop-genre g-kanmi">パン</span></div><div class="nearby-item-dist">436m</div></div>',
+'<div class="nearby-item"><div class="nearby-item-icon" style="background:#546E7A"><img src="castle.png" class="icon-full"></div><div class="nearby-item-text"><div class="nearby-item-name">江戸城33桔梗門</div><div class="nearby-item-sub">東京都千代田区千代田</div></div><div class="pref-badges"><span class="pref-badge popup-form-badge f-hirajiro">平城</span></div><div class="nearby-item-dist">458m</div></div>',
+];
+
+/* ══ 部品（index.html の生成コードと同じ組み立て） ══════════════════ */
+function iconHtml(t) {
+    const c = TYPES[t];
+    return `<div class="nearby-item-icon" style="background:${c.color}"><img src="${c.img}"${c.full ? ' class="icon-full"' : ''}></div>`;
+}
+// buildNearbyTypeFilterChips と同じ中身
+function chipStripHtml(order, off) {
+    off = off || [];
+    return `<div class="nearby-type-filter">` + order.map(t => {
+        const c = TYPES[t];
+        return `<button class="nearby-type-chip${off.includes(t) ? '' : ' active'}" data-type="${t}" style="color:${c.color}">`
+             + `<span class="chip-dot"></span>${c.label} <span style="opacity:0.7">${c.n}</span></button>`;
+    }).join('') + `</div>`;
+}
+// renderPrefSum と同じ中身
+function sumBandHtml(order, off) {
+    off = off || [];
+    return `<div class="pref-sum"><div class="pref-sum-line">` + order.map(t =>
+        `<div class="pref-sum-item${off.includes(t) ? ' off' : ''}" data-t="${t}">${iconHtml(t)}`
+      + `<div class="pref-sum-v">${TYPES[t].n.toLocaleString()}</div></div>`).join('') + `</div></div>`;
+}
+// renderDistOrigin と同じ中身（起点＝地図中心のとき）
+const ICON_ORIGIN_CROSS = '<svg width="13" height="13" viewBox="0 0 44 44" style="display:block;flex-shrink:0">'
+    + '<circle cx="22" cy="22" r="9" fill="none" stroke="#4285F4" stroke-width="4"/>'
+    + '<circle cx="22" cy="22" r="3" fill="#4285F4"/>'
+    + '<line x1="22" y1="1" x2="22" y2="10" stroke="#4285F4" stroke-width="4" stroke-linecap="round"/>'
+    + '<line x1="22" y1="34" x2="22" y2="43" stroke="#4285F4" stroke-width="4" stroke-linecap="round"/>'
+    + '<line x1="1" y1="22" x2="10" y2="22" stroke="#4285F4" stroke-width="4" stroke-linecap="round"/>'
+    + '<line x1="34" y1="22" x2="43" y2="22" stroke="#4285F4" stroke-width="4" stroke-linecap="round"/></svg>';
+function dorgHtml(withBtn) {
+    return `<div class="dorg">${ICON_ORIGIN_CROSS}<b>東京都千代田区丸の内一丁目</b>`
+         + (withBtn ? `<button>今の地図中心にする</button>` : '') + `</div>`;
+}
+const SEARCH_HTML = `<div class="lords-filter" style="border-bottom:0;padding-bottom:6px;">
+    <div class="lords-search-wrap"><input type="search" placeholder="名前・住所で絞り込み"></div></div>`;
+
+function listHtml(tailNote) {
+    // 100件ぶんを埋める（先頭16件を繰り返す。距離の数字は見た目のためのもの）
+    let out = '';
+    for (let i = 0; i < 100; i++) out += ROWS[i % ROWS.length];
+    return `<div class="nearby-list">${out}${tailNote || ''}</div>`;
+}
+
+let VH = 812;
+function panelHtml(parts, opt) {
+    opt = opt || {};
+    const h = Math.round(VH * 0.6);
+    return `<div class="phone"><div class="panel" style="height:${h}px">
+        <div class="panel-head">
+            <div class="grip"></div>
+            <div class="row"><div style="display:flex;align-items:center;gap:10px;min-width:0;">
+                <span class="ttl">${opt.title || 'マップ中心から100km以内'}</span>
+                <button class="allbtn">全解除</button></div>
+                <button class="x">×</button></div>
+        </div>${parts}</div></div>`;
+}
+
+/* ══ 懸念1：高さの比較 ══════════════════════════════════════ */
+const H_CASES = [
+    { cap: 'A. 現状（チップ帯）',                 body: () => chipStripHtml(CHIP_ORDER) + listHtml() },
+    { cap: 'B. 集計帯に置き換え',                 body: () => sumBandHtml(SUM_ORDER) + listHtml() },
+    { cap: 'C. B ＋ 起点帯',                      body: () => sumBandHtml(SUM_ORDER) + dorgHtml(false) + listHtml() },
+    { cap: 'D. C ＋ 絞り込み入力欄',              body: () => SEARCH_HTML + sumBandHtml(SUM_ORDER) + dorgHtml(false) + listHtml() },
+];
+function renderHeights() {
+    const row = document.getElementById('h-row');
+    row.innerHTML = H_CASES.map((c, i) =>
+        `<div class="mock-col"><div class="mock-cap">${c.cap}</div>${panelHtml(c.body())}
+         <div class="mock-meas" id="hm${i}"></div></div>`).join('');
+    // 描いたあとに実測する（getBoundingClientRect がレイアウトを確定させるので同期で足りる）
+    {
+        const cols = [...row.querySelectorAll('.mock-col')];
+        let base = 0;
+        cols.forEach((col, i) => {
+            const list = col.querySelector('.nearby-list');
+            const items = [...list.querySelectorAll('.nearby-item')].slice(0, 20);
+            const avg = items.reduce((s, e) => s + e.getBoundingClientRect().height, 0) / items.length;
+            const listH = list.getBoundingClientRect().height;
+            const rows = listH / avg;
+            if (i === 0) base = rows;
+            const el = document.getElementById('hm' + i);
+            const diff = i === 0 ? '' : `（Aより <b>−${(base - rows).toFixed(1)}行</b>）`;
+            el.className = 'mock-meas' + (i === 0 ? ' ok' : '');
+            el.innerHTML = `一覧の高さ <b>${Math.round(listH)}px</b>／行の高さ平均 ${avg.toFixed(0)}px<br>`
+                         + `見える行数 <b>${rows.toFixed(1)}行</b> ${diff}`;
+        });
+        renderSummary(cols);
+    }
+}
+document.getElementById('h-btns').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    VH = +b.dataset.vh;
+    [...e.currentTarget.children].forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    renderHeights();
+});
+
+/* ══ 懸念2：種別名が消える ══════════════════════════════════ */
+document.getElementById('c2-row').innerHTML =
+    `<div class="mock-col"><div class="mock-cap">現状のチップ帯 <span>／ 名前と件数が出る</span></div>
+        <div class="phone" style="border-radius:12px"><div class="panel" style="height:auto">${chipStripHtml(CHIP_ORDER)}</div></div>
+        <div class="mock-meas ok">「食べログ 2891」「お城 1996」…と読める。<br>
+        ただし全体幅は 534px あり、<b>マンホール・ポケふたは右へスクロールしないと見えない</b>（実測）。</div></div>
+     <div class="mock-col"><div class="mock-cap">集計帯に寄せた場合 <span>／ アイコンと数字だけ</span></div>
+        <div class="phone" style="border-radius:12px"><div class="panel" style="height:auto">${sumBandHtml(SUM_ORDER)}</div></div>
+        <div class="mock-meas">全部が1画面に収まりスクロールは要らない。<br>
+        代わりに<b>「2891」が何の件数なのかは、丸の中の絵だけが手がかり</b>になる。</div></div>`;
+
+/* ══ 懸念3：1〜2種のときの間延び ══════════════════════════════ */
+const FEW = ['castle', 'michi'];
+document.getElementById('c3-row').innerHTML =
+    `<div class="mock-col"><div class="mock-cap">チップ帯（2種のとき）</div>
+        <div class="phone" style="border-radius:12px"><div class="panel" style="height:auto">${chipStripHtml(FEW)}</div></div>
+        <div class="mock-meas ok">左詰めのまま。空いた右側は何も起きない。</div></div>
+     <div class="mock-col"><div class="mock-cap">集計帯（2種のとき）<em>← 左右の端へ離れる</em></div>
+        <div class="phone" style="border-radius:12px"><div class="panel" style="height:auto">${sumBandHtml(FEW)}</div></div>
+        <div class="mock-meas"><b>space-between</b> なので2つが画面の両端へ寄る。<br>
+        高さ76pxはカード配布の画像寸法（--mhcard-h）で決まっており、<b>カード配布が圏内に無くても縮まない</b>。</div></div>
+     <div class="mock-col"><div class="mock-cap">集計帯（1種のとき）</div>
+        <div class="phone" style="border-radius:12px"><div class="panel" style="height:auto">${sumBandHtml(['castle'])}</div></div>
+        <div class="mock-meas">現状は「1種類以下なら帯ごと隠す」ので、<b>集計帯でも隠すかどうかを決める</b>必要がある。</div></div>`;
+
+/* ══ 懸念4：帯の数字と100件打ち切り ══════════════════════════ */
+const TAIL_NOTE = `<div class="lords-note">100件を表示中（全${TOTAL.toLocaleString()}件）</div>`;
+function scrollToBottom(sel) {
+    document.querySelectorAll(sel).forEach(e => { e.scrollTop = e.scrollHeight; });
+}
+document.getElementById('c4-row').innerHTML =
+    `<div class="mock-col"><div class="mock-cap">現状の末尾 <span>／ 100件目のあとは何も無い</span></div>
+        ${panelHtml(chipStripHtml(CHIP_ORDER) + listHtml())}
+        <div class="mock-meas">チップは 2891 と書いているが、<b>ここで終わる理由は画面に無い</b>。</div></div>
+     <div class="mock-col"><div class="mock-cap">集計帯に寄せた末尾 <em>← 数字が大きく強くなる</em></div>
+        ${panelHtml(sumBandHtml(SUM_ORDER) + listHtml())}
+        <div class="mock-meas">数字が13px太字になるぶん、<b>「2,891件あるのに100件で終わる」が目につく</b>。</div></div>
+     <div class="mock-col"><div class="mock-cap">末尾に一行だけ足す案 <span>／ 仕様は変えない</span></div>
+        ${panelHtml(sumBandHtml(SUM_ORDER) + listHtml(TAIL_NOTE))}
+        <div class="mock-meas ok">打ち切りも件数も変えず、<b>表示を一行足すだけ</b>。県ページの「全◯件」と同じ <code>.lords-note</code>。</div></div>`;
+scrollToBottom('#c4-row .nearby-list');
+
+/* ══ 懸念5：タップと長押し ══════════════════════════════════ */
+function log(id, msg) {
+    const el = document.getElementById(id);
+    el.textContent = msg + '\n' + el.textContent.split('\n').slice(0, 2).join('\n');
+}
+document.getElementById('c5-row').innerHTML =
+    `<div class="mock-col"><div class="mock-cap">現状のチップ <span>／ タップでON/OFF</span></div>
+        <div class="phone" style="border-radius:12px"><div class="panel" style="height:auto" id="d1">${chipStripHtml(CHIP_ORDER)}</div></div>
+        <div class="mock-tap-log" id="log1">触ってみてください</div></div>
+     <div class="mock-col"><div class="mock-cap">県ページと同じ集計帯 <em>／ タップ＝ジャンプ・長押し500msでON/OFF</em></div>
+        <div class="phone" style="border-radius:12px"><div class="panel" style="height:auto" id="d2">${sumBandHtml(SUM_ORDER)}</div></div>
+        <div class="mock-tap-log" id="log2">触ってみてください</div></div>
+     <div class="mock-col"><div class="mock-cap">見た目は集計帯・タップはON/OFFのまま <span>／ 折衷案</span></div>
+        <div class="phone" style="border-radius:12px"><div class="panel" style="height:auto" id="d3">${sumBandHtml(SUM_ORDER)}</div></div>
+        <div class="mock-tap-log" id="log3">触ってみてください</div></div>`;
+
+// チップ：タップでON/OFF
+document.getElementById('d1').addEventListener('click', e => {
+    const c = e.target.closest('.nearby-type-chip'); if (!c) return;
+    c.classList.toggle('active');
+    log('log1', `${TYPES[c.dataset.type].label} を ${c.classList.contains('active') ? 'ON' : 'OFF'}`);
+});
+// 集計帯：index.html の bindTypeToggle をそのまま写したもの（長押し500ms）
+function bindTypeToggle(el, onTap, onLongPress) {
+    let t = null, fired = false, touched = false;
+    const start = () => { fired = false; if (!onLongPress) return; t = setTimeout(() => { t = null; fired = true; onLongPress(); }, 500); };
+    const cancel = () => { if (t) { clearTimeout(t); t = null; } };
+    const end = () => { cancel(); if (fired) { fired = false; return; } onTap(); };
+    el.addEventListener('touchstart', start, { passive: true });
+    el.addEventListener('touchmove', cancel, { passive: true });
+    el.addEventListener('touchend', () => { touched = true; setTimeout(() => { touched = false; }, 600); end(); });
+    el.addEventListener('mousedown', e => { if (e.button === 0 && !touched) start(); });
+    el.addEventListener('mouseup', e => { if (e.button === 0 && !touched) end(); });
+    el.addEventListener('mouseleave', cancel);
+    el.addEventListener('contextmenu', e => e.preventDefault());
+}
+document.querySelectorAll('#d2 .pref-sum-item').forEach(el => {
+    const t = el.dataset.t;
+    bindTypeToggle(el,
+        () => log('log2', `タップ → ${TYPES[t].label} の先頭へジャンプ（100件では出番が少ない）`),
+        () => { el.classList.toggle('off'); log('log2', `長押し → ${TYPES[t].label} を ${el.classList.contains('off') ? 'OFF' : 'ON'}`); });
+});
+document.querySelectorAll('#d3 .pref-sum-item').forEach(el => {
+    const t = el.dataset.t;
+    el.addEventListener('click', () => {
+        el.classList.toggle('off');
+        log('log3', `タップ → ${TYPES[t].label} を ${el.classList.contains('off') ? 'OFF' : 'ON'}`);
+    });
+});
+
+/* ══ 懸念6：起点帯 ══════════════════════════════════════════ */
+document.getElementById('c6-row').innerHTML =
+    `<div class="mock-col"><div class="mock-cap">県ページの起点帯をそのまま置いた場合 <em>← 押せてはいけないボタンが出る</em></div>
+        <div class="phone" style="border-radius:12px"><div class="panel" style="height:auto">
+            <div class="panel-head"><div class="grip"></div><div class="row">
+                <div style="display:flex;align-items:center;gap:10px;min-width:0;">
+                    <span class="ttl mock-hl">マップ中心から100km以内</span>
+                    <button class="allbtn">全解除</button></div><button class="x">×</button></div></div>
+            ${sumBandHtml(SUM_ORDER)}<div class="mock-hl">${dorgHtml(true)}</div>
+            ${ROWS[0]}${ROWS[1]}</div></div>
+        <div class="mock-meas">タイトルと起点帯が<b>同じことを二度言っている</b>。<br>
+        「今の地図中心にする」は県ページでは並べ替えだけだが、<b>周辺検索では100km圏の取り直し＝再検索</b>になる。</div></div>
+     <div class="mock-col"><div class="mock-cap">ボタンを抑止し、タイトルを起点帯へ譲った場合</div>
+        <div class="phone" style="border-radius:12px"><div class="panel" style="height:auto">
+            <div class="panel-head"><div class="grip"></div><div class="row">
+                <div style="display:flex;align-items:center;gap:10px;min-width:0;">
+                    <span class="ttl">100km以内・近い順</span>
+                    <button class="allbtn">全解除</button></div><button class="x">×</button></div></div>
+            ${sumBandHtml(SUM_ORDER)}${dorgHtml(false)}
+            ${ROWS[0]}${ROWS[1]}</div></div>
+        <div class="mock-meas ok">起点の地名は帯が、距離の条件はタイトルが受け持つ。<br>
+        実装は <code>nearbyState</code> に <code>center</code> を持たせ、<code>renderDistOrigin</code> に<b>ボタンを出さない分岐</b>を足す。</div></div>
+     <div class="mock-col"><div class="mock-cap">起点帯を置かない場合 <span>／ 現状どおり</span></div>
+        <div class="phone" style="border-radius:12px"><div class="panel" style="height:auto">
+            <div class="panel-head"><div class="grip"></div><div class="row">
+                <div style="display:flex;align-items:center;gap:10px;min-width:0;">
+                    <span class="ttl">マップ中心から100km以内</span>
+                    <button class="allbtn">全解除</button></div><button class="x">×</button></div></div>
+            ${sumBandHtml(SUM_ORDER)}${ROWS[0]}${ROWS[1]}</div></div>
+        <div class="mock-meas ok">懸念6がまるごと消え、<b>行も29px戻る</b>。<br>
+        代わりに、検索ピンを立てた状態での「どこからの距離か」は現状どおり分からないまま。</div></div>`;
+
+/* ══ 懸念7：並び順 ══════════════════════════════════════════ */
+document.getElementById('c7-row').innerHTML =
+    `<div class="mock-col"><div class="mock-cap">現状のチップの並び <span>／ buildNearbyTypeFilterChips の typeOrder</span></div>
+        <div class="phone" style="border-radius:12px"><div class="panel" style="height:auto">${chipStripHtml(CHIP_ORDER)}</div></div>
+        <div class="mock-meas">食べログ → お城 → 道の駅 → マンホール → ポケふた</div></div>
+     <div class="mock-col"><div class="mock-cap">県ページの集計帯の並び <span>／ PREF_TYPES</span></div>
+        <div class="phone" style="border-radius:12px"><div class="panel" style="height:auto">${sumBandHtml(SUM_ORDER)}</div></div>
+        <div class="mock-meas">食べログ → ポケふた → マンホール → 道の駅 → お城<br>
+        （設定画面のオブジェクト表示・都道府県一覧の内訳も<b>この並び</b>）</div></div>`;
+
+/* ══ まとめ表（懸念1の実測から作る） ══════════════════════════ */
+function renderSummary(cols) {
+    const rows = cols.map((col, i) => {
+        const list = col.querySelector('.nearby-list');
+        const items = [...list.querySelectorAll('.nearby-item')].slice(0, 20);
+        const avg = items.reduce((s, e) => s + e.getBoundingClientRect().height, 0) / items.length;
+        return (list.getBoundingClientRect().height / avg);
+    });
+    document.getElementById('sum-t').innerHTML =
+        `<tr><th>構成</th><th>見える行数<br>（画面${VH}px）</th><th>懸念2<br>種別名</th><th>懸念3<br>間延び</th>
+             <th>懸念4<br>数字の食い違い</th><th>懸念5<br>操作の変更</th><th>懸念6<br>起点帯</th><th>懸念7<br>並び順</th></tr>`
+      + H_CASES.map((c, i) => {
+            const bad = s => `<td class="bad">${s}</td>`, ok = s => `<td>${s}</td>`;
+            const cells = i === 0
+                ? [ok('出る'), ok('無し'), ok('現状のまま'), ok('無し'), ok('無し'), ok('現状のまま')]
+                : [bad('消える'), bad('あり'), bad('目立つ'), bad('要判断'),
+                   i >= 2 ? bad('要抑止') : ok('無し'), bad('要統一')];
+            return `<tr><td>${c.cap}</td><td class="num">${rows[i].toFixed(1)}行</td>${cells.join('')}</tr>`;
+        }).join('');
+}
+
+renderHeights();
+</script>
+</body></html>
