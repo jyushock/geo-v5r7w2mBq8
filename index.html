@@ -1269,6 +1269,9 @@
         .nearby-item-icon img { width: var(--obj-icon-inner); height: var(--obj-icon-inner); object-fit: contain; filter: brightness(0) invert(1); }
         .search-result-icon img { width: var(--obj-icon-inner); height: var(--obj-icon-inner); object-fit: contain; filter: brightness(0) invert(1); }
         .nearby-item-icon img.icon-full, .search-result-icon img.icon-full { width: var(--obj-icon-inner-full); height: var(--obj-icon-inner-full); }
+        /* 道の駅は地図のピンが紋章そのままの角丸四角なので、一覧側の背景も丸ではなく角丸四角にする。
+           半径は紋章の角丸（100px原画で約5.5px）を28pxに縮めた値 */
+        .nearby-item-icon.obj-ic-sq, .search-result-icon.obj-ic-sq, #hist-list-popup .hist-ico-type.obj-ic-sq { border-radius: 2px; }
         .nearby-item-text { flex: 1; min-width: 0; }
         .nearby-item-name { font-size: 13px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .nearby-item-sub  { font-size: 11px; color: #999; margin-top: 1px; }
@@ -2096,7 +2099,7 @@
             return `<div class="hist-ico-mhcard"><img class="hist-ico-mhcard-main" src="mhcard.png"><img class="hist-ico-mhcard-overlay" src="manhole.png"></div>`;
         }
         const color = getItemColor({ type: e.objType, properties: e.objProps || {} });
-        return `<div class="hist-ico-type" style="background:${color}">${cfg.img ? `<img src="${cfg.img}"${cfg.img === 'manhole.png' ? '' : ' class="icon-full"'}>` : cfg.icon}</div>`;
+        return `<div class="hist-ico-type${objIconSquareClass(e.objType)}" style="background:${color}">${cfg.img ? `<img src="${cfg.img}"${cfg.img === 'manhole.png' ? '' : ' class="icon-full"'}>` : cfg.icon}</div>`;
     }
 
     function histTimeAgo(t) {
@@ -3796,7 +3799,7 @@ const objClickLayers = [];
 // 地図上のピン（mhcard.png のカード画像。主要色を実測すると #b07030 の茶系）と
 // 食い違うため、ピンの見た目に合わせてマンホール系の #B87333 を使う。
 const OBJ_TYPE_COLOR = {
-    castle: '#546E7A', michi: '#34A853', shop: '#FF9800',
+    castle: '#546E7A', michi: '#0B499D', shop: '#FF9800',
     manhole: '#B87333', mhcard: '#B87333', pokefuta: '#FBBC04',
 };
 function objRingColor(type, p) {
@@ -4267,6 +4270,7 @@ map.on('zoomend', () => { isZooming = false; });
             loadSDF('tabe.png',    'tabe-icon'),
             loadSDF('castle.png',  'castle-icon'),
             loadSDF('michi.png',   'michi-icon'),
+            loadSDF('michi-plate.png', 'michi-plate-icon'),
             loadSDF('manhole.png', 'manhole-icon'),
             new Promise(res => map.loadImage('mhcard.png', (err, img) => { if (!err && img) map.addImage('mhcard-icon', img, { pixelRatio: 2 }); res(); })),
             new Promise(res => map.loadImage('mhcard-cluster.png', (err, img) => { if (!err && img) map.addImage('mhcard-cluster-icon', img, { pixelRatio: 2 }); res(); }))
@@ -4280,7 +4284,7 @@ map.on('zoomend', () => { isZooming = false; });
             const MHCARD_BADGE_PX = MHCARD_W_PX * 0.8;
             // データは後から非同期に届くため、ソースは空で生成し setData で埋める
             const configs = [
-                { id: 'michi',           color: '#34A853', icon: 'michi-icon',    type: 'michi',   clusterColor: '#34A853' },
+                { id: 'michi',           color: '#0B499D', icon: 'michi-icon',    type: 'michi',   clusterColor: '#0B499D' },
                 { id: 'shops',           color: '#FF9800', icon: 'tabe-icon',     type: 'shop',    clusterColor: '#FF9800' },
                 { id: 'manholes',        color: '#B87333', icon: 'manhole-icon',  type: 'manhole', clusterColor: '#B87333' },
                 { id: 'mhcards',         color: '#1565C0', icon: 'mhcard-icon',   type: 'mhcard',  clusterColor: '#1565C0' },
@@ -4313,7 +4317,17 @@ map.on('zoomend', () => { isZooming = false; });
                     map.addLayer({ id: `${conf.id}-cluster`, type: 'circle', source: conf.id, filter: ['has', 'point_count'], paint: { 'circle-color': conf.clusterColor, 'circle-radius': 20, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' }, layout: { 'visibility': initVis } });
                 }
                 map.addLayer({ id: `${conf.id}-cluster-count`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'text-field': '{point_count_abbreviated}', 'text-size': 12, 'text-font': ['Noto Sans Bold'], 'visibility': initVis }, paint: { 'text-color': '#FFFFFF' } });
-                if (conf.type !== 'mhcard') {
+                if (conf.type === 'michi') {
+                    /* 道の駅だけは丸ではなく道の駅紋章そのままの角丸四角。板(michi-plate-icon)も
+                       図柄(michi-icon)もSDFで、色は icon-color から与える点は他の種別と同じ。
+                       他の種別が circle-stroke で描いている白フチは、一回り大きい白い板を
+                       下に敷いて作る（外径は丸ピンと同じ 28+3*2=34px）。 */
+                    /* 板の2枚は icon-ignore-placement で衝突判定から外す。他の種別では板にあたる
+                       部分が circle レイヤー（衝突判定を持たない）なので、外さないと道の駅だけ
+                       ラベルが板に押されて消える。判定に載るのは従来どおり -icon の1枚だけ。 */
+                    map.addLayer({ id: `${conf.id}-bg-outline`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': 'michi-plate-icon', 'icon-size': (OBJ_ICON_CIRCLE_PX + 6) / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
+                    map.addLayer({ id: `${conf.id}-bg`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': 'michi-plate-icon', 'icon-size': OBJ_ICON_CIRCLE_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': conf.color } });
+                } else if (conf.type !== 'mhcard') {
                     map.addLayer({ id: `${conf.id}-bg`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: { 'circle-color': conf.type === 'castle' ? ['match', ['get', 'genre'], '日本100名城', '#4285F4', '続日本100名城', '#EA4335', '#546E7A'] : conf.type === 'manhole' ? ['match', ['get', 'source'], 'pokefuta', '#FBBC04', '#B87333'] : conf.color, 'circle-radius': OBJ_ICON_CIRCLE_PX / 2, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' }, layout: { ...(conf.type === 'castle' ? { 'circle-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis } });
                 }
                 map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': conf.type === 'mhcard' ? 1.0 : conf.type === 'manhole' ? OBJ_ICON_INNER_PX / OBJ_ICON_NATIVE_PX : OBJ_ICON_CIRCLE_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, ...(conf.type === 'castle' ? { 'symbol-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis }, paint: conf.type === 'mhcard' ? {} : { 'icon-color': '#FFFFFF' } });
@@ -4646,10 +4660,14 @@ map.on('zoomend', () => { isZooming = false; });
         manhole:  { color: '#B87333', img: 'manhole.png', label: 'マンホール' },
         mhcard:   { color: '#1565C0', img: 'manhole.png', label: 'マンホールカード配布' },
         castle:   { color: '#546E7A', img: 'castle.png',  label: 'お城' },
-        michi:    { color: '#34A853', img: 'michi.png',   label: '道の駅' },
+        michi:    { color: '#0B499D', img: 'michi.png',   label: '道の駅' },   /* 色は道の駅紋章の地色 */
         shop:     { color: '#FF9800', img: 'tabe.png',    label: '食べログ' },
         place:    { color: '#4285F4', icon: '📍',        label: '地名' },
     };
+    /* 道の駅のアイコン背景だけは丸ではなく角丸四角にする（地図のピンと形を合わせる） */
+    function objIconSquareClass(type) {
+        return type === 'michi' ? ' obj-ic-sq' : '';
+    }
     function getItemColor(item) {
         if (item.type === 'castle') {
             const genre = item.properties && item.properties.genre;
@@ -4762,7 +4780,7 @@ map.on('zoomend', () => { isZooming = false; });
                 div.className = 'search-result-item';
                 const iconPart = isMhcard
                     ? `<div style="position:relative;width:var(--mhcard-w);height:var(--mhcard-h);flex-shrink:0;background:#e2ddd4;border-radius:6px;"><img src="mhcard.png" style="width:100%;height:100%;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:var(--mhcard-badge);height:var(--mhcard-badge);filter:brightness(0) invert(1);pointer-events:none;"></div>`
-                    : `<div class="search-result-icon" style="background:${getItemColor(item)}">${cfg.img ? `<img src="${cfg.img}"${cfg.img === 'manhole.png' ? '' : ' class="icon-full"'}>` : cfg.icon}</div>`;
+                    : `<div class="search-result-icon${objIconSquareClass(item.type)}" style="background:${getItemColor(item)}">${cfg.img ? `<img src="${cfg.img}"${cfg.img === 'manhole.png' ? '' : ' class="icon-full"'}>` : cfg.icon}</div>`;
                 const subText = `${matchNoteHtml(item._matchedAlias, item._matchedPart)}${item.sub}`;
                 // 食べログの部門バッジ。結果は2列で幅が狭いため、店名の行ではなく
                 // 住所の行の先頭に小さく置く（店名を押し出さないため）
@@ -5068,7 +5086,7 @@ map.on('zoomend', () => { isZooming = false; });
             : (id === 'mhcard' ? null : id);
         const labelVis = (vis === 'visible' && labelId && labelState[labelId] !== false) ? 'visible' : 'none';
         (OBJ_FILTER_SOURCES[id] || []).forEach(sourceId => {
-            [`${sourceId}-cluster`, `${sourceId}-cluster-count`, `${sourceId}-bg`,
+            [`${sourceId}-cluster`, `${sourceId}-cluster-count`, `${sourceId}-bg-outline`, `${sourceId}-bg`,
              `${sourceId}-icon`, `${sourceId}-icon-overlay`].forEach(l => {
                 if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', vis);
             });
@@ -6051,7 +6069,7 @@ map.on('zoomend', () => { isZooming = false; });
         }
         const cfg = typeConfig[type] || {};
         const color = props ? objRingColor(type, props) : (OBJ_TYPE_COLOR[type] || cfg.color || '#546E7A');
-        return `<div class="nearby-item-icon" style="background:${color}">${cfg.img
+        return `<div class="nearby-item-icon${objIconSquareClass(type)}" style="background:${color}">${cfg.img
             ? `<img src="${cfg.img}"${cfg.img === 'manhole.png' ? '' : ' class="icon-full"'}>` : (cfg.icon || '')}</div>`;
     }
 
@@ -7072,6 +7090,7 @@ map.on('zoomend', () => { isZooming = false; });
     const targetLayerIds = layerIdPrefixes.flatMap(prefix => [
         `${prefix}-cluster`,
         `${prefix}-cluster-count`,
+        `${prefix}-bg-outline`,
         `${prefix}-bg`,
         `${prefix}-icon`,
         `${prefix}-icon-overlay`,
