@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>城（100名城以外）の色 候補</title>
+<style>
+    body { margin: 0; padding: 20px 16px 60px; font-family: system-ui, sans-serif; background: #fff; color: #222; }
+    h1 { font-size: 17px; margin: 0 0 4px; }
+    .lead { font-size: 13px; color: #555; margin: 0 0 20px; line-height: 1.7; }
+    .note { font-size: 12px; color: #666; background: #f6f7f9; border-left: 3px solid #B0BEC5; padding: 8px 10px; margin: 0 0 22px; line-height: 1.7; }
+
+    /* ── 地図と同じピン。丸28px＋白フチ3px＝外径34px、グリフは28px ── */
+    .pin { width: 28px; height: 28px; border-radius: 50%; box-shadow: 0 0 0 3px #fff; display: inline-flex;
+           align-items: center; justify-content: center; flex-shrink: 0; }
+    .pin img { width: 28px; height: 28px; object-fit: contain; filter: brightness(0) invert(1); }
+    .pin.mh img { width: 25px; height: 25px; }
+    /* 道の駅は角丸四角24px＋白フチ3px＝外径30px */
+    .pin.sq { width: 24px; height: 24px; border-radius: 2px; box-shadow: 0 0 0 3px #fff; }
+    .pin.sq img { width: 24px; height: 24px; }
+    /* マンホールカードは28x36のカード */
+    .pin.card { width: 28px; height: 36px; border-radius: 3px; background: #B87333; box-shadow: 0 0 0 2px #fff; position: relative; }
+    .pin.card img { width: 22.4px; height: 22.4px; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+
+    .row { display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-radius: 10px;
+           background: #e8eef3; margin-bottom: 10px; }
+    .row .name { width: 190px; font-size: 12.5px; line-height: 1.5; flex-shrink: 0; }
+    .row .hex { font-family: ui-monospace, monospace; font-size: 11px; color: #555; display: block; }
+    .row .pins { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .sep { width: 1px; height: 30px; background: #b9c6d1; margin: 0 4px; }
+    .zoom { transform: scale(2.2); transform-origin: left center; margin-right: 40px; }
+    .zoomwrap { display: flex; align-items: center; gap: 46px; padding-left: 6px; }
+    h2 { font-size: 14px; margin: 30px 0 10px; padding-bottom: 5px; border-bottom: 1px solid #ddd; }
+    .legend { font-size: 12px; color: #444; line-height: 1.9; margin: 0 0 18px; }
+    .sw { display: inline-block; width: 11px; height: 11px; border-radius: 2px; vertical-align: -1px; margin-right: 4px; }
+</style>
+</head>
+<body>
+
+<h1>城（100名城でも続100名城でもないもの）の色 候補</h1>
+<p class="lead">
+道の駅を紋章の青 <code>#0B499D</code> にしたことで、城の <code>#546E7A</code>（青灰）と見分けにくくなった件の案です。<br>
+各行は「候補色の城ピン」を、既存の全オブジェクトと並べたものです。地の色は地図の下地に近い灰青にしてあります。
+</p>
+
+<div class="note">
+既に使っている色：
+<span class="sw" style="background:#0B499D"></span>道の駅 #0B499D ／
+<span class="sw" style="background:#4285F4"></span>100名城 #4285F4 ／
+<span class="sw" style="background:#EA4335"></span>続100名城 #EA4335 ／
+<span class="sw" style="background:#FF9800"></span>食べログ #FF9800 ／
+<span class="sw" style="background:#B87333"></span>マンホール・カード #B87333 ／
+<span class="sw" style="background:#FBBC04"></span>ポケふた #FBBC04<br>
+候補はこの6色と、青系どうしで重ならないことを条件に選んでいます。
+</div>
+
+<h2>候補一覧（実寸）</h2>
+<div id="rows"></div>
+
+<h2>拡大（2.2倍）— 道の駅・100名城との並び</h2>
+<div id="zoomrows"></div>
+
+<script>
+const CANDIDATES = [
+    ['現状（青灰）',            '#546E7A', '変更なし。道の駅の紺と同系で紛らわしい'],
+    ['墨黒（青灰を暗く）',      '#37474F', '同じ色相のまま明度だけ下げる。最小の変更'],
+    ['ほぼ黒',                  '#263238', 'さらに暗い。無彩色寄りで他とぶつからない'],
+    ['明るい灰',                '#90A4AE', '逆に明るくして明度差をつける。紺と離れる'],
+    ['深緑',                    '#2E7D32', '道の駅が緑をやめたので空いた色'],
+    ['ティール（青緑）',        '#00796B', '青と緑の中間。城の落ち着きを残す'],
+    ['紫',                      '#6A1B9A', '既存6色のどれとも色相が離れている'],
+    ['濃い赤紫',                '#880E4F', '続100名城の赤とは明度と彩度で差がある'],
+    ['オリーブ',                '#827717', '和の色。ポケふたの黄とは明度差が大きい'],
+    ['焦茶',                    '#4E342E', 'マンホールの銅色と同系。要注意'],
+];
+
+const OTHERS = [
+    ['sq',   '#0B499D', '../michi.png',   '道の駅'],
+    ['',     '#4285F4', '../castle.png',  '100名城'],
+    ['',     '#EA4335', '../castle.png',  '続100名城'],
+    ['',     '#FF9800', '../tabe.png',    '食べログ'],
+    ['mh',   '#B87333', '../manhole.png', 'マンホール'],
+    ['mh',   '#FBBC04', '../manhole.png', 'ポケふた'],
+    ['card', '',        '../manhole.png', 'カード'],
+];
+
+function pinHtml(cls, color, img) {
+    if (cls === 'card') return `<div class="pin card"><img src="${img}"></div>`;
+    return `<div class="pin ${cls}" style="background:${color}"><img src="${img}"></div>`;
+}
+
+document.getElementById('rows').innerHTML = CANDIDATES.map(([name, hex, memo]) => `
+    <div class="row">
+        <div class="name">${name}<span class="hex">${hex}</span><span class="hex" style="color:#777">${memo}</span></div>
+        <div class="pins">
+            ${pinHtml('', hex, '../castle.png')}
+            <div class="sep"></div>
+            ${OTHERS.map(([c, col, img]) => pinHtml(c, col, img)).join('')}
+        </div>
+    </div>`).join('');
+
+document.getElementById('zoomrows').innerHTML = CANDIDATES.map(([name, hex]) => `
+    <div class="row">
+        <div class="name">${name}<span class="hex">${hex}</span></div>
+        <div class="zoomwrap">
+            <div class="zoom"><div class="pins">
+                ${pinHtml('', hex, '../castle.png')}
+                ${pinHtml('sq', '#0B499D', '../michi.png')}
+                ${pinHtml('', '#4285F4', '../castle.png')}
+            </div></div>
+        </div>
+    </div>`).join('');
+</script>
+
+</body>
+</html>
