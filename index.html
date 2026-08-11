@@ -45,8 +45,11 @@
             /* オブジェクト種別アイコン（地図・検索結果・周辺検索・移動履歴で共通） */
             --obj-icon-circle: 28px;
             --obj-icon-inner: 25px;
-            /* マンホール以外の丸形オブジェクト（お城・道の駅・食べログ）は比率100% */
+            /* マンホール以外の丸形オブジェクト（お城・食べログ）は比率100% */
             --obj-icon-inner-full: 28px;
+            /* 道の駅の角丸四角。正方形は同じ寸法だと丸より大きく見えるので丸の28pxより小さくする
+               （地図の MICHI_PLATE_PX と同じ値） */
+            --obj-icon-square: 24px;
             /* マンホールカードのカード枠（地図のmhcard-icon: 56x72px画像をpixelRatio2で読込んだ実寸と同じ） */
             --mhcard-w: 28px;
             --mhcard-h: 36px;
@@ -864,7 +867,7 @@
         .pref-cnt-line {
             display: flex; align-items: center; gap: 5px; flex-shrink: 0; font-size: 11px;
             margin-right: auto;
-            --obj-icon-circle: 15px; --obj-icon-inner: 13.4px; --obj-icon-inner-full: 15px;
+            --obj-icon-circle: 15px; --obj-icon-inner: 13.4px; --obj-icon-inner-full: 15px; --obj-icon-square: 12.9px;
             --mhcard-w: 14px; --mhcard-h: 18px; --mhcard-badge: 11.2px; --mhcard-radius: 3px;
         }
         .pref-cnt-cell { display: flex; align-items: center; gap: 1px; }
@@ -1270,8 +1273,12 @@
         .search-result-icon img { width: var(--obj-icon-inner); height: var(--obj-icon-inner); object-fit: contain; filter: brightness(0) invert(1); }
         .nearby-item-icon img.icon-full, .search-result-icon img.icon-full { width: var(--obj-icon-inner-full); height: var(--obj-icon-inner-full); }
         /* 道の駅は地図のピンが紋章そのままの角丸四角なので、一覧側の背景も丸ではなく角丸四角にする。
-           半径は紋章の角丸（100px原画で約5.5px）を28pxに縮めた値 */
-        .nearby-item-icon.obj-ic-sq, .search-result-icon.obj-ic-sq, #hist-list-popup .hist-ico-type.obj-ic-sq { border-radius: 2px; }
+           寸法は地図と同じく丸より小さい --obj-icon-square、半径は紋章の角丸（100px原画で約5.5px）を縮めた値。
+           図柄は画像側に余白を持たせてあるので枠いっぱいに置く */
+        .nearby-item-icon.obj-ic-sq, .search-result-icon.obj-ic-sq, #hist-list-popup .hist-ico-type.obj-ic-sq {
+            width: var(--obj-icon-square); height: var(--obj-icon-square); border-radius: 2px; }
+        .nearby-item-icon.obj-ic-sq img, .search-result-icon.obj-ic-sq img, #hist-list-popup .hist-ico-type.obj-ic-sq img {
+            width: 100%; height: 100%; }
         .nearby-item-text { flex: 1; min-width: 0; }
         .nearby-item-name { font-size: 13px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .nearby-item-sub  { font-size: 11px; color: #999; margin-top: 1px; }
@@ -4279,6 +4286,9 @@ map.on('zoomend', () => { isZooming = false; });
             const OBJ_ICON_CIRCLE_PX = 28;
             const OBJ_ICON_INNER_PX = 25;
             const OBJ_ICON_NATIVE_PX = 64;
+            // 道の駅の板。正方形は同じ寸法だと丸より大きく見えるので、本体を丸の28pxより小さくする。
+            // CSS変数 --obj-icon-square と同じ値。白フチ3pxを足した外径は30px。
+            const MICHI_PLATE_PX = 24;
             // マンホールカードに重ねるバッジ。CSS変数 --mhcard-badge と同じ値（カード幅28pxの80%）
             const MHCARD_W_PX = 28;
             const MHCARD_BADGE_PX = MHCARD_W_PX * 0.8;
@@ -4325,12 +4335,12 @@ map.on('zoomend', () => { isZooming = false; });
                     /* 板の2枚は icon-ignore-placement で衝突判定から外す。他の種別では板にあたる
                        部分が circle レイヤー（衝突判定を持たない）なので、外さないと道の駅だけ
                        ラベルが板に押されて消える。判定に載るのは従来どおり -icon の1枚だけ。 */
-                    map.addLayer({ id: `${conf.id}-bg-outline`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': 'michi-plate-icon', 'icon-size': (OBJ_ICON_CIRCLE_PX + 6) / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
-                    map.addLayer({ id: `${conf.id}-bg`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': 'michi-plate-icon', 'icon-size': OBJ_ICON_CIRCLE_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': conf.color } });
+                    map.addLayer({ id: `${conf.id}-bg-outline`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': 'michi-plate-icon', 'icon-size': (MICHI_PLATE_PX + 6) / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
+                    map.addLayer({ id: `${conf.id}-bg`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': 'michi-plate-icon', 'icon-size': MICHI_PLATE_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': conf.color } });
                 } else if (conf.type !== 'mhcard') {
                     map.addLayer({ id: `${conf.id}-bg`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: { 'circle-color': conf.type === 'castle' ? ['match', ['get', 'genre'], '日本100名城', '#4285F4', '続日本100名城', '#EA4335', '#546E7A'] : conf.type === 'manhole' ? ['match', ['get', 'source'], 'pokefuta', '#FBBC04', '#B87333'] : conf.color, 'circle-radius': OBJ_ICON_CIRCLE_PX / 2, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' }, layout: { ...(conf.type === 'castle' ? { 'circle-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis } });
                 }
-                map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': conf.type === 'mhcard' ? 1.0 : conf.type === 'manhole' ? OBJ_ICON_INNER_PX / OBJ_ICON_NATIVE_PX : OBJ_ICON_CIRCLE_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, ...(conf.type === 'castle' ? { 'symbol-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis }, paint: conf.type === 'mhcard' ? {} : { 'icon-color': '#FFFFFF' } });
+                map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': conf.type === 'mhcard' ? 1.0 : conf.type === 'manhole' ? OBJ_ICON_INNER_PX / OBJ_ICON_NATIVE_PX : conf.type === 'michi' ? MICHI_PLATE_PX / OBJ_ICON_NATIVE_PX : OBJ_ICON_CIRCLE_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, ...(conf.type === 'castle' ? { 'symbol-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis }, paint: conf.type === 'mhcard' ? {} : { 'icon-color': '#FFFFFF' } });
                 if (conf.type === 'mhcard') {
                     map.addLayer({ id: `${conf.id}-icon-overlay`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': 'manhole-icon', 'icon-size': MHCARD_BADGE_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
                 }
