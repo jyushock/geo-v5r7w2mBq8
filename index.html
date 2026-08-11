@@ -4950,7 +4950,7 @@ map.on('zoomend', () => { isZooming = false; });
 
     const gmapKeywords = { supermarket: 'スーパー', transit: '駅 OR バス停', restaurant: 'レストラン', coffee: 'カフェ', statue: '像', takeout: 'テイクアウト', museum: 'ミュージアム OR 歴史館 OR 資料館', ramen: 'ラーメン', udon: 'うどん', soba: 'そば', sightseeing: '観光スポット', sushi: '寿司 OR 回転寿司', drugstore: '薬局 OR ドラッグストア', hundredyen: '100円ショップ' };
     /* 周辺検索の状態。center は近い順の起点で、検索した時点で固定する（execNearbySearch）。
-       q は結果一覧の絞り込み語、shown は一覧に描いてある件数（PREF_ITEM_CHUNK ずつ継ぎ足す）。 */
+       q は結果一覧の絞り込み語、shown は一覧に描いてある件数（NEARBY_ITEM_CHUNK ずつ継ぎ足す）。 */
     let nearbyState = { cats: [], center: null, centerPinned: false, q: '', shown: 0, rows: [] };
     setSearchOriginText('地図中心', false);
     let nearbyAllResults = [];
@@ -6925,13 +6925,24 @@ map.on('zoomend', () => { isZooming = false; });
         el.focus();
     }
 
-    /* 一覧。行の作りも上限も県ページ（renderPrefItems）に合わせる。並べ替えは近い順だけなので、
+    /* 一度に描く件数の上限。県ページ（PREF_ITEM_CHUNK＝1,000件）より小さく取る。
+       県ページは県を選んでから開く画面で、一覧が出るまでの間が1つ挟まっているのに対し、
+       周辺検索はカテゴリを押した指の先で結果が開くため、待ちがそのまま重さとして出る。
+
+       東京駅起点・100km圏の実データ5,334件で、同じ端末・同じページで3回ずつ測ると、
+       一覧を描く時間は 300件で約32ms（31/30/36）、1,000件で約107ms（127/91/104）。
+       押してから一覧が出るまでは 300件で40〜70ms（53/72/51/39）で、そのうち
+       絞り込みと並べ替えは13ms。残りはほぼ一覧を描く時間なので、ここを削るのが効く。
+       続きは末尾の「さらに表示」で継ぎ足すので、打ち切っても辿れなくなるものは無い。 */
+    const NEARBY_ITEM_CHUNK = 300;
+
+    /* 一覧。行の作りは県ページ（renderPrefItems）に合わせる。並べ替えは近い順だけなので、
        距離は検索した時点で確定済みの item.dist をそのまま使い、測り直さない。
        keepShown を立てて呼ぶと継ぎ足した分（nearbyState.shown）を保つ。「さらに表示」と、
        オブジェクトから戻ったときの描き直しがこれに当たる。 */
     function renderNearbyList(keepShown) {
         const list = document.getElementById('nearby-list');
-        if (!keepShown) nearbyState.shown = PREF_ITEM_CHUNK;
+        if (!keepShown) nearbyState.shown = NEARBY_ITEM_CHUNK;
         const q = normalizeForSearch((nearbyState.q || '').trim());
         const rows = [];
         for (const item of nearbyAllResults) {
@@ -6947,7 +6958,7 @@ map.on('zoomend', () => { isZooming = false; });
                 q ? '該当する項目がありません' : '表示する種別が選ばれていません'}</div>`;
             return;
         }
-        const shown = Math.min(rows.length, nearbyState.shown || PREF_ITEM_CHUNK);
+        const shown = Math.min(rows.length, nearbyState.shown || NEARBY_ITEM_CHUNK);
         nearbyState.shown = shown;
         list.innerHTML = rows.slice(0, shown).map((r, i) => {
             const item = r.item;
@@ -6966,7 +6977,7 @@ map.on('zoomend', () => { isZooming = false; });
         list.insertAdjacentHTML('beforeend', shown < rows.length
             ? `<div class="lords-note">${shown.toLocaleString()}件を表示中（全${
                 rows.length.toLocaleString()}件）<button class="pref-more" onclick="showMoreNearbyItems()"
-                >さらに${Math.min(PREF_ITEM_CHUNK, rows.length - shown).toLocaleString()}件</button></div>`
+                >さらに${Math.min(NEARBY_ITEM_CHUNK, rows.length - shown).toLocaleString()}件</button></div>`
             : `<div class="lords-note">全${rows.length.toLocaleString()}件</div>`);
         // 通常は先頭から。オブジェクトを開いて戻ったときと「さらに表示」のときだけ、控えた位置へ
         // （全件を入れ終えてから指定しないと、スクロールできる高さが足りずに切り詰められる）
@@ -6977,7 +6988,7 @@ map.on('zoomend', () => { isZooming = false; });
     /* 「さらに表示」。いま出ている続きから見えるよう、スクロール位置は動かさない。 */
     function showMoreNearbyItems() {
         nearbyResultScrollTop = document.getElementById('nearby-list').scrollTop;
-        nearbyState.shown = (nearbyState.shown || PREF_ITEM_CHUNK) + PREF_ITEM_CHUNK;
+        nearbyState.shown = (nearbyState.shown || NEARBY_ITEM_CHUNK) + NEARBY_ITEM_CHUNK;
         renderNearbyList(true);
     }
 
