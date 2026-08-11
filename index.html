@@ -49,7 +49,7 @@
             --obj-icon-inner-full: 28px;
             /* 道の駅の角丸四角。正方形は同じ寸法だと丸より大きく見えるので丸の28pxより小さくする
                （地図の MICHI_PLATE_PX と同じ値） */
-            --obj-icon-square: 24px;
+            --obj-icon-square: 26px;
             /* マンホールカードのカード枠（地図のmhcard-icon: 56x72px画像をpixelRatio2で読込んだ実寸と同じ） */
             --mhcard-w: 28px;
             --mhcard-h: 36px;
@@ -867,7 +867,7 @@
         .pref-cnt-line {
             display: flex; align-items: center; gap: 5px; flex-shrink: 0; font-size: 11px;
             margin-right: auto;
-            --obj-icon-circle: 15px; --obj-icon-inner: 13.4px; --obj-icon-inner-full: 15px; --obj-icon-square: 12.9px;
+            --obj-icon-circle: 15px; --obj-icon-inner: 13.4px; --obj-icon-inner-full: 15px; --obj-icon-square: 13.9px;
             --mhcard-w: 14px; --mhcard-h: 18px; --mhcard-badge: 11.2px; --mhcard-radius: 3px;
         }
         .pref-cnt-cell { display: flex; align-items: center; gap: 1px; }
@@ -4300,10 +4300,10 @@ map.on('zoomend', () => { isZooming = false; });
             const OBJ_ICON_INNER_PX = 25;
             const OBJ_ICON_NATIVE_PX = 64;
             // 道の駅の板。正方形は同じ寸法だと丸より大きく見えるので、本体を丸の28pxより小さくする。
-            // CSS変数 --obj-icon-square と同じ値。白フチ3pxを足した外径は30px。
-            const MICHI_PLATE_PX = 24;
-            // 道の駅のクラスタ。丸のクラスタ（φ40）に対し、ピンと同じ比率（24/28）で縮めた値
-            const MICHI_CLUSTER_PX = 34;
+            // CSS変数 --obj-icon-square と同じ値。白フチ3pxを足した外径は32px。
+            const MICHI_PLATE_PX = 26;
+            // 道の駅のクラスタ。丸のクラスタ（φ40）に対し、ピンと同じ比率（26/28）で縮めた値
+            const MICHI_CLUSTER_PX = 37;
             // カードの面の色。mhcard.png / mhcard-cluster.png の銅色部分の実測値と同じ
             const MHCARD_FACE_COLOR = '#B87333';
             // マンホールカードに重ねるバッジ。CSS変数 --mhcard-badge と同じ値（カード幅28pxの80%）
@@ -4345,7 +4345,7 @@ map.on('zoomend', () => { isZooming = false; });
                     map.addLayer({ id: `${conf.id}-cluster-face`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'mhcard-cluster-face-icon', 'icon-size': 1.5, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': MHCARD_FACE_COLOR } });
                 } else if (conf.type === 'michi') {
                     /* 道の駅のクラスタもピンと同じ角丸四角。ピンと同様に、正方形は丸と同じ寸法だと
-                       大きく見えるので、丸のクラスタ（φ40＋白フチ3px）より小さい34pxにする。
+                       大きく見えるので、丸のクラスタ（φ40＋白フチ3px）より小さい37pxにする。
                        上に重なる件数テキストが押し出されないよう衝突判定からは外す。 */
                     map.addLayer({ id: `${conf.id}-cluster-outline`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'michi-plate-icon', 'icon-size': (MICHI_CLUSTER_PX + 6) / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
                     map.addLayer({ id: `${conf.id}-cluster`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'michi-plate-icon', 'icon-size': MICHI_CLUSTER_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': conf.clusterColor } });
@@ -4357,7 +4357,7 @@ map.on('zoomend', () => { isZooming = false; });
                     /* 道の駅だけは丸ではなく道の駅紋章そのままの角丸四角。板(michi-plate-icon)も
                        図柄(michi-icon)もSDFで、色は icon-color から与える点は他の種別と同じ。
                        他の種別が circle-stroke で描いている白フチは、一回り大きい白い板を
-                       下に敷いて作る（外径は丸ピンと同じ 28+3*2=34px）。 */
+                       下に敷いて作る（外径は 26+3*2=32px で、丸ピンの34pxより一回り小さい）。 */
                     /* 板の2枚は icon-ignore-placement で衝突判定から外す。他の種別では板にあたる
                        部分が circle レイヤー（衝突判定を持たない）なので、外さないと道の駅だけ
                        ラベルが板に押されて消える。判定に載るのは従来どおり -icon の1枚だけ。 */
