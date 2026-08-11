@@ -4302,6 +4302,8 @@ map.on('zoomend', () => { isZooming = false; });
             // 道の駅の板。正方形は同じ寸法だと丸より大きく見えるので、本体を丸の28pxより小さくする。
             // CSS変数 --obj-icon-square と同じ値。白フチ3pxを足した外径は30px。
             const MICHI_PLATE_PX = 24;
+            // 道の駅のクラスタ。丸のクラスタ（φ40）に対し、ピンと同じ比率（24/28）で縮めた値
+            const MICHI_CLUSTER_PX = 34;
             // カードの面の色。mhcard.png / mhcard-cluster.png の銅色部分の実測値と同じ
             const MHCARD_FACE_COLOR = '#B87333';
             // マンホールカードに重ねるバッジ。CSS変数 --mhcard-badge と同じ値（カード幅28pxの80%）
@@ -4340,6 +4342,12 @@ map.on('zoomend', () => { isZooming = false; });
                     // カードのクラスタも白フチ＋銅色の面の2枚重ね。色は icon-color から与える
                     map.addLayer({ id: `${conf.id}-cluster`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'mhcard-cluster-icon', 'icon-size': 1.5, 'icon-allow-overlap': true, 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
                     map.addLayer({ id: `${conf.id}-cluster-face`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'mhcard-cluster-face-icon', 'icon-size': 1.5, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': MHCARD_FACE_COLOR } });
+                } else if (conf.type === 'michi') {
+                    /* 道の駅のクラスタもピンと同じ角丸四角。ピンと同様に、正方形は丸と同じ寸法だと
+                       大きく見えるので、丸のクラスタ（φ40＋白フチ3px）より小さい34pxにする。
+                       上に重なる件数テキストが押し出されないよう衝突判定からは外す。 */
+                    map.addLayer({ id: `${conf.id}-cluster-outline`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'michi-plate-icon', 'icon-size': (MICHI_CLUSTER_PX + 6) / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
+                    map.addLayer({ id: `${conf.id}-cluster`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'michi-plate-icon', 'icon-size': MICHI_CLUSTER_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': conf.clusterColor } });
                 } else {
                     map.addLayer({ id: `${conf.id}-cluster`, type: 'circle', source: conf.id, filter: ['has', 'point_count'], paint: { 'circle-color': conf.clusterColor, 'circle-radius': 20, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' }, layout: { 'visibility': initVis } });
                 }
@@ -5115,7 +5123,7 @@ map.on('zoomend', () => { isZooming = false; });
             : (id === 'mhcard' ? null : id);
         const labelVis = (vis === 'visible' && labelId && labelState[labelId] !== false) ? 'visible' : 'none';
         (OBJ_FILTER_SOURCES[id] || []).forEach(sourceId => {
-            [`${sourceId}-cluster`, `${sourceId}-cluster-face`, `${sourceId}-cluster-count`,
+            [`${sourceId}-cluster-outline`, `${sourceId}-cluster`, `${sourceId}-cluster-face`, `${sourceId}-cluster-count`,
              `${sourceId}-bg-outline`, `${sourceId}-bg`,
              `${sourceId}-icon`, `${sourceId}-icon-face`, `${sourceId}-icon-overlay`].forEach(l => {
                 if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', vis);
@@ -7118,6 +7126,7 @@ map.on('zoomend', () => { isZooming = false; });
     const toggleLayersBtn = document.getElementById('toggle-layers-btn');
     const layerIdPrefixes = ['michi', 'shops', 'manholes', 'mhcards', 'castles', 'castles-famous'];
     const targetLayerIds = layerIdPrefixes.flatMap(prefix => [
+        `${prefix}-cluster-outline`,
         `${prefix}-cluster`,
         `${prefix}-cluster-face`,
         `${prefix}-cluster-count`,
