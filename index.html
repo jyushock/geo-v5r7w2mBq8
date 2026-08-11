@@ -1700,7 +1700,9 @@
     background:white; border-radius:16px 16px 0 0;
     box-shadow:0 -4px 16px rgba(0,0,0,0.15);
     z-index:300; transition:bottom 0.3s ease;
-    height:60vh; max-height:calc(100svh - var(--sheet-base) - 52px);
+    /* 一覧から探す（#nearby-pref-detail-view など calc(100svh - 104px) の各ビュー）と同じ高さ。
+       下部バー52px＋上に残す地図52px を引いた残り全部を使う */
+    height:calc(100svh - var(--sheet-base) - 52px);
     display:flex; flex-direction:column;
     font-family: sans-serif;
 ">
