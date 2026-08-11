@@ -966,7 +966,7 @@ const castleData = {
         "aliases": [
           "新城城"
         ],
-        "remains": "曲輪、土塁、横堀",
+        "remains": "曲輪、土塁、横堀（空堀）",
         "lords": "橘次氏、安東氏、新城氏"
       }
     },
@@ -1228,7 +1228,7 @@ const castleData = {
         "aliases": [
           "御屋敷"
         ],
-        "remains": "門、旧御殿表門、土塁、堀跡",
+        "remains": "門、旧御殿表門（移築）、土塁、堀跡",
         "lords": "南部直房、南部直政、南部通信、南部広信、南部信興、南部信依、南部信房、南部信真、南部信順、南部氏（八戸南部氏）"
       }
     },
@@ -2949,7 +2949,7 @@ const castleData = {
           "臥牛城",
           "大休城"
         ],
-        "remains": "移築冠木門、土塁",
+        "remains": "移築冠木門（黒門）、土塁",
         "lords": "佐々木氏、白石氏、桑折氏、留守氏、松田源太郎左衛門、白石宗実、白石宗直、柴田宗朝、石母田宗頼、留守宗利"
       }
     },
@@ -3511,7 +3511,7 @@ const castleData = {
         "shiroHbElevationM": 76,
         "shiroHbRelativeHeightM": 20,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/mutsu/shiroishi-jyo/",
-        "remains": "木造復元天守、門、移築門、蔵、移築蔵、石垣、曲輪、土塁、井戸",
+        "remains": "木造復元天守、門（移築）、移築門、蔵（移築）、移築蔵、石垣、曲輪、土塁、井戸",
         "lords": "蒲生氏、上杉氏、片倉氏、白石氏、甘糟景継、登坂勝乃（上杉氏）"
       }
     },
@@ -3832,7 +3832,7 @@ const castleData = {
         "aliases": [
           "小泉城"
         ],
-        "remains": "門、土塁、堀",
+        "remains": "門（移築）、土塁、堀",
         "lords": "伊達政宗"
       }
     },
@@ -3859,7 +3859,7 @@ const castleData = {
         "shiroHbElevationM": 30,
         "shiroHbRelativeHeightM": 15,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/mutsu/wakuya-jyo/",
-        "remains": "模擬天守、櫓、隅櫓、石垣、曲輪、空堀",
+        "remains": "模擬天守、櫓、隅櫓（太鼓堂）、石垣、曲輪、空堀",
         "lords": "涌谷氏、亘理重宗、涌谷伊達氏、亘理氏（涌谷伊達氏）"
       }
     },
@@ -4835,7 +4835,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/dewa/sagae-jyo/",
         "shiroHbElevationM": 99.362,
-        "remains": "辰巳門、門、石垣、堀",
+        "remains": "辰巳門（移築）、門、石垣、堀",
         "lords": "大江氏、最上氏、寒河江氏"
       }
     },
@@ -6239,7 +6239,7 @@ const castleData = {
           "北条館"
         ],
         "shiroHbForm": "丘城",
-        "remains": "曲輪、坂土橋",
+        "remains": "曲輪、坂土橋（虎口?）",
         "lords": "田口氏"
       }
     },
@@ -6316,7 +6316,7 @@ const castleData = {
         "shiroHbElevationM": 484,
         "shiroHbRelativeHeightM": 130,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/mutsu/tamanawa-jyo/",
-        "remains": "曲輪、本曲輪、二の曲輪、帯曲輪、腰曲輪、大手道、土塁、空堀、堀切",
+        "remains": "曲輪、本曲輪（本丸）、二の曲輪（二の丸）、帯曲輪、腰曲輪、大手道、土塁、空堀、堀切",
         "lords": "川口氏(山ノ内氏)、山ノ内氏（川口氏）"
       }
     },
@@ -6394,7 +6394,7 @@ const castleData = {
           "雀の館"
         ],
         "shiroHbForm": "山城",
-        "remains": "本曲輪、二の曲輪、帯曲輪、腰曲輪、大手道、土塁、段差、空堀、堀切",
+        "remains": "本曲輪（本丸）、二の曲輪（二の丸）、帯曲輪、腰曲輪、大手道、土塁、段差、空堀、堀切",
         "lords": "山ノ内氏（川口氏）"
       }
     },
@@ -6836,7 +6836,7 @@ const castleData = {
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/shimousa/iman-jyo/",
         "shiroHbElevationM": 21.3,
         "shiroHbRelativeHeightM": 14.7,
-        "remains": "曲輪、主郭の土塁、土塁",
+        "remains": "主郭の土塁、曲輪（一部）、土塁",
         "lords": "相馬氏、興世王、北畠顕国"
       }
     },
@@ -7058,7 +7058,7 @@ const castleData = {
         "shiroHbElevationM": 37,
         "shiroHbRelativeHeightM": 30,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/hitachi/kashima-jyo/",
-        "remains": "曲輪、土塁、空堀、井戸",
+        "remains": "曲輪、土塁（わずか）、空堀、井戸",
         "lords": "鹿島氏、鹿島政幹、鹿島幹重、鹿島義幹\u3000鹿島氏"
       }
     },
@@ -7751,7 +7751,7 @@ const castleData = {
         "shiroHbElevationM": 50,
         "shiroHbRelativeHeightM": 25,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/hitachi/hetare-jyo/",
-        "remains": "曲輪、郭4箇所、土塁、空堀",
+        "remains": "曲輪、曲輪4箇所、土塁、空堀",
         "lords": "河崎氏、小貫氏、部垂義元、大掾氏（河崎氏）?→人見氏→小貫氏→宇留野義元"
       }
     },
@@ -8269,7 +8269,7 @@ const castleData = {
         "url": "",
         "address": "栃木県塩谷町大字風見",
         "shiroHbForm": "山城",
-        "remains": "曲輪、土塁、堀切、横堀",
+        "remains": "曲輪、土塁、横堀（又は犬走）、堀切",
         "lords": "風見氏"
       }
     },
@@ -9032,7 +9032,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/shimotsuke/nakamura-jyo/",
         "shiroHbElevationM": 65,
-        "remains": "曲輪、土塁、堀",
+        "remains": "曲輪、土塁、堀（内堀）",
         "lords": "中村氏、藤原氏"
       }
     },
@@ -9665,7 +9665,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/kouzuke/takasaki-jyo/",
         "shiroHbElevationM": 96,
-        "remains": "櫓、乾櫓、門、東門、曲輪、土塁、土塁 水堀、水堀",
+        "remains": "櫓、乾櫓、門、東門（移築）、曲輪、土塁、土塁 水堀、水堀",
         "lords": "和田氏、井伊直政、酒井家次、酒井忠勝、(戸田)松平康長、松平信吉、安藤重信、安藤重治、(大河内)松平輝貞、間部詮房、間部詮言、井伊氏、諏訪氏、松平氏、安藤氏"
       }
     },
@@ -9935,7 +9935,7 @@ const castleData = {
         "shiroHbElevationM": 410,
         "shiroHbRelativeHeightM": 80,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/kouzuke/numata-jyo/",
-        "remains": "門、石垣、曲輪、土塁、堀",
+        "remains": "門（移築）、石垣、曲輪、土塁、堀",
         "lords": "沼田氏、北条氏、上杉氏、真田氏、本多氏、黒田氏、土岐氏、本庄秀綱、猪俣邦憲"
       }
     },
@@ -10650,7 +10650,7 @@ const castleData = {
           "瀧之城"
         ],
         "shiroHbElevationM": 21.5,
-        "remains": "曲輪、土塁、空堀の一部、空堀",
+        "remains": "曲輪、土塁、空堀の一部（畝堀）、空堀",
         "lords": "大石氏、北条氏、北条氏照の家臣か"
       }
     },
@@ -12386,7 +12386,7 @@ const castleData = {
         "shiroHbForm": "平山城",
         "shiroHbElevationM": 22,
         "shiroHbRelativeHeightM": 3,
-        "remains": "土塁、堀切、横堀、空堀、切通し",
+        "remains": "土塁、堀切、横堀（空堀）、空堀、切通し",
         "lords": "馬加千葉氏、安藤氏"
       }
     },
@@ -12586,7 +12586,7 @@ const castleData = {
         "shiroHbForm": "平山城",
         "shiroHbElevationM": 24.7,
         "shiroHbRelativeHeightM": 8,
-        "remains": "曲輪、土塁、横堀、空堀",
+        "remains": "曲輪、土塁、横堀（空堀）、空堀",
         "lords": "多部田氏、原氏、千葉胤忠、白井入道"
       }
     },
@@ -12904,7 +12904,7 @@ const castleData = {
         "shiroHbElevationM": 27,
         "shiroHbRelativeHeightM": 22,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/shimousa/naganuma-jyo/",
-        "remains": "曲輪、土塁、横堀、空堀",
+        "remains": "曲輪、土塁、横堀（空堀）、空堀",
         "lords": "長沼氏"
       }
     },
@@ -13520,7 +13520,7 @@ const castleData = {
           "山の城",
           "山ノ城城"
         ],
-        "remains": "櫓台、曲輪、腰曲輪、虎口、土塁、堀切、横堀",
+        "remains": "櫓台、曲輪、腰曲輪、虎口、土塁、堀切、横堀（空堀）",
         "lords": "正木氏、正木通綱"
       }
     },
@@ -13691,7 +13691,7 @@ const castleData = {
         "shiroHbForm": "平山城",
         "shiroHbElevationM": 4.626,
         "lords": "石浜氏、千葉氏",
-        "remains": "不明"
+        "remains": "不明（埋没?）"
       }
     },
     {
@@ -13813,7 +13813,7 @@ const castleData = {
         "shiroHbElevationM": 237,
         "shiroHbRelativeHeightM": 30,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/musashi/katsunuma-jyo/",
-        "remains": "曲輪、虎口、馬出、土塁、土橋、横堀、竪堀、空堀",
+        "remains": "曲輪、虎口、馬出し？、馬出、土塁、土橋、横堀、竪堀、空堀",
         "lords": "三田氏、師岡氏"
       }
     },
@@ -14565,7 +14565,7 @@ const castleData = {
         "prefecture": "神奈川県",
         "url": "",
         "address": "神奈川県川崎市多摩区菅馬場二丁目",
-        "remains": "土塁",
+        "remains": "土塁?（蟹ヶ谷古墳群を土塁と誤認か）、土塁",
         "lords": "中田加賀守"
       }
     },
@@ -14686,7 +14686,7 @@ const castleData = {
         "shiroHbElevationM": 30,
         "shiroHbRelativeHeightM": 10,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/musashi/enoshita-jyo/",
-        "remains": "曲輪、虎口跡、土塁、横堀、空堀跡",
+        "remains": "曲輪、虎口跡、土塁、横堀、空堀、空堀跡（横堀が主体）",
         "lords": "上杉憲清、上杉憲直、北条氏、後北条氏（山田右京之進?）"
       }
     },
@@ -15010,7 +15010,7 @@ const castleData = {
         "aliases": [
           "小泉陣屋"
         ],
-        "remains": "なし",
+        "remains": "なし（埋没?）",
         "lords": "小泉氏"
       }
     },
@@ -16652,7 +16652,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/sado/niibo-jyo/",
         "shiroHbElevationM": 14,
-        "remains": "曲輪、土塁、横堀、水堀",
+        "remains": "曲輪、土塁、水堀（横堀）、横堀（水堀）",
         "lords": "新穂氏、本間貞有、本間正明、賀茂本間氏、賀茂本間氏（府内長尾氏、上杉氏）"
       }
     },
@@ -17012,7 +17012,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/echigo/kanbara-yasuda-jyo/",
         "shiroHbElevationM": 19.49,
-        "remains": "曲輪、土塁、堀、横堀",
+        "remains": "曲輪、土塁、堀、横堀（水堀）",
         "lords": "大見安田氏、吉竹右近、安田氏、堀氏"
       }
     },
@@ -17068,7 +17068,7 @@ const castleData = {
         "shiroHbForm": "陣屋",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/echigo/yoita-jinya/",
         "shiroHbElevationM": 18.644,
-        "remains": "門、大手門、切手門",
+        "remains": "門、大手門（移築）、切手門（移築）",
         "lords": "牧野氏、井伊氏"
       }
     },
@@ -17588,7 +17588,7 @@ const castleData = {
         "address": "富山県砺波市鷹栖",
         "shiroHbForm": "居館",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/ecchu/ogurano-doi/",
-        "remains": "土塁、堀",
+        "remains": "土塁、堀（埋没）",
         "lords": "小倉孫左衛門"
       }
     },
@@ -17663,7 +17663,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/ecchu/gankaiji-jyo/",
         "shiroHbElevationM": 1.7,
-        "remains": "曲輪",
+        "remains": "曲輪（埋没）",
         "lords": "寺崎氏、寺崎民部左衛門"
       }
     },
@@ -18090,7 +18090,7 @@ const castleData = {
         "shiroHbElevationM": 290,
         "shiroHbRelativeHeightM": 40,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/ecchu/sunakoda-dojyo/",
-        "remains": "曲輪、平坦面、虎口、土塁、切岸、空堀",
+        "remains": "平坦面（堂宇等）、曲輪、虎口、土塁、切岸、空堀",
         "lords": "光徳寺、善徳寺、高坂氏"
       }
     },
@@ -18568,7 +18568,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/ecchu/hojyozu-jyo/",
         "shiroHbElevationM": 0.136,
-        "remains": "曲輪",
+        "remains": "曲輪（埋没）",
         "lords": "名越氏、神保氏、名越時有、桃井氏、前田氏、畠山氏"
       }
     },
@@ -19106,7 +19106,7 @@ const castleData = {
         ],
         "shiroHbForm": "陣屋",
         "shiroHbElevationM": 4.2,
-        "remains": "茶室、石垣、曲輪、土塁",
+        "remains": "茶室（長流亭）、石垣、曲輪、土塁",
         "lords": "前田氏、狩野氏、一向一揆、朝倉氏、堀江景実、簗田氏（戸次氏）、佐久間盛政、藤丸氏（上杉氏）、拝郷家嘉、溝口秀勝、山口宗永"
       }
     },
@@ -19328,7 +19328,7 @@ const castleData = {
         "aliases": [
           "なし"
         ],
-        "remains": "搦手門、曲輪、土塁、堀切、空堀、庭園",
+        "remains": "搦手門（移築）、曲輪、土塁、堀切、空堀、庭園",
         "lords": "松波畠山氏、松波畠山氏（松波氏）"
       }
     },
@@ -19948,7 +19948,7 @@ const castleData = {
         ],
         "shiroHbForm": "平城",
         "shiroHbElevationM": 20,
-        "remains": "無し",
+        "remains": "無し（埋没?）",
         "lords": "畑時能、桜井新左衛門"
       }
     },
@@ -19972,7 +19972,7 @@ const castleData = {
         "shiroHbElevationM": 301,
         "shiroHbRelativeHeightM": 150,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/echizen/murokoyama-jyo/",
-        "remains": "櫓台、曲輪、檜台、虎口、土塁、土橋、堀切、畝状竪堀群、竪堀、空堀、碑",
+        "remains": "櫓台、曲輪、檜台、虎口、土塁、土橋、畝状竪堀群、竪堀、空堀、堀切（空堀）、碑",
         "lords": "七山家一向一揆、柴田氏、柴田義宣、柴田勝安"
       }
     },
@@ -20205,7 +20205,7 @@ const castleData = {
           "[[藤巻市右衛門]]？（[[藤巻正休]]？）",
           "藤巻氏屋敷"
         ],
-        "remains": "なし",
+        "remains": "なし（石碑あり）",
         "lords": "藤巻家（甲州結城家）当主、藤巻伊予守、藤巻市右衛門？（藤巻正休？）、藤巻正成か"
       }
     },
@@ -20572,7 +20572,7 @@ const castleData = {
         "shiroHbElevationM": 490,
         "shiroHbRelativeHeightM": 50,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/shinano/iida-jyo/",
-        "remains": "門、桜丸御門、石垣、石塁、土塁、空堀",
+        "remains": "門、桜丸御門（赤門）、石垣、石塁、土塁、空堀",
         "lords": "坂西氏、武田氏、毛利秀頼、菅沼定利、京極高知、小笠原秀政、脇坂安元、脇坂安政、堀親昌、堀親貞、堀親常、堀親賢、堀親庸、堀親蔵、堀親長、堀親忠、堀親民、堀親しげ、堀親義、堀親広、秋山信友、小笠原氏、脇坂氏、秋山虎繁"
       }
     },
@@ -23049,7 +23049,7 @@ const castleData = {
           "特になし"
         ],
         "shiroHbElevationM": 4.712,
-        "remains": "門",
+        "remains": "門（移築）",
         "lords": "中島氏、高木氏、市橋氏、竹腰氏、森寺氏、戸倉氏、市橋長勝"
       }
     },
@@ -23492,7 +23492,7 @@ const castleData = {
         "shiroHbElevationM": 271,
         "shiroHbRelativeHeightM": 170,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/mino/kajita-jyo/",
-        "remains": "石垣、石塁、石積、天然チャート自然石垣、曲輪、曲輪群、帯曲輪、腰曲輪、虎口、土塁、切岸、堀、横堀、竪堀、堀切、畝状竪堀群、井戸、岩場跡（旗立穴、米置場、狼煙台、見張台、櫓台）、総構え（川浦川、津保川内）",
+        "remains": "石垣、石塁、石積（石垣）、天然チャート自然石垣、曲輪、曲輪群、帯曲輪、腰曲輪、虎口、土塁、切岸、堀、横堀、竪堀、堀切、畝状竪堀群、井戸（湧水）、岩場跡（旗立穴、米置場、狼煙台、見張台、櫓台）、総構え（川浦川、津保川内）",
         "lords": "佐藤紀伊守、斎藤新五、斎藤利堯、佐藤氏、斎藤氏、森氏"
       }
     },
@@ -23819,7 +23819,7 @@ const castleData = {
         "aliases": [
           "飛騨小島城"
         ],
-        "remains": "櫓台、石垣、曲輪、虎口、土塁、堀",
+        "remains": "櫓台（天守台）、石垣、曲輪、虎口、土塁、堀",
         "lords": "姉小路氏(小島氏)、小島氏、姉小路小島氏、金森氏"
       }
     },
@@ -24149,7 +24149,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/mino/sone-jyo/",
         "shiroHbElevationM": 10.8,
-        "remains": "石垣、土塁",
+        "remains": "土塁（発掘後保存埋蔵）、石垣",
         "lords": "稲葉氏、西尾氏、稲葉一鉄、西尾光教、稲葉貞通"
       }
     },
@@ -25163,7 +25163,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/mino/yagami-jyo/",
         "shiroHbElevationM": 7.091,
-        "remains": "移築門、土塁、碑、説明板",
+        "remains": "移築門（真福寺）、土塁、碑、説明板",
         "lords": "毛利氏"
       }
     },
@@ -25213,7 +25213,7 @@ const castleData = {
           "亘利城屋敷"
         ],
         "lords": "松原源吾、松原内匠、松原氏",
-        "remains": "なし"
+        "remains": "なし（住宅地）"
       }
     },
     {
@@ -25543,7 +25543,7 @@ const castleData = {
         "shiroHbForm": "平山城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/suruga/ohmiya-jyo/",
         "shiroHbElevationM": 123.351,
-        "remains": "曲輪、土塁、堀、井戸",
+        "remains": "曲輪、土塁、堀、井戸、井戸等（埋没）",
         "lords": "富士氏、富士信忠、原昌胤"
       }
     },
@@ -25601,7 +25601,7 @@ const castleData = {
         "shiroHbElevationM": 56,
         "shiroHbRelativeHeightM": 30,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/tohtoumi/kakegawa-jyo/",
-        "remains": "木造復元天守、櫓、太鼓櫓、門、大手門番所、蕗の門、大手ニの門、御殿、二の丸御殿、石垣、曲輪、土塁、堀",
+        "remains": "木造復元天守、櫓、太鼓櫓（移築）、門、大手門番所（移築）、蕗の門、大手ニの門(移築)、御殿、二の丸御殿、石垣、曲輪、土塁、堀（いずれも一部）",
         "lords": "朝比奈氏、石川氏、山内一豊、(久松)松平定勝、(久松)松平定行、安藤直次、(久松)松平定綱、朝倉宣正、青山幸成、(桜井)松平忠重、(桜井)松平忠倶、本多忠義、(藤井)松平忠晴、北条氏重、井伊直好、井伊直武、井伊直朝、井伊直矩、(桜井)松平忠喬、小笠原長煕、小笠原長庸、小笠原長恭、太田資俊、太田資愛、太田資順、太田資言、太田資始、太田資功、太田資美、山内氏（5万石）、松平氏（3万石）、北条氏（3万石）、井伊氏（3万5千石）、小笠原氏（6万石）、太田氏（5万石）、山内氏、太田氏"
       }
     },
@@ -25676,7 +25676,7 @@ const castleData = {
         "shiroHbElevationM": 270,
         "shiroHbRelativeHeightM": 80,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/suruga/katsurayama-jyo/",
-        "remains": "曲輪、虎口、土塁、堀切、畝状竪堀群、横堀、竪堀、堀",
+        "remains": "曲輪、虎口（含桝形虎口）、土塁、堀切、畝状竪堀群、横堀、竪堀（含放射状竪堀）、堀",
         "lords": "葛山氏"
       }
     },
@@ -26351,7 +26351,7 @@ const castleData = {
         "shiroHbElevationM": 90,
         "shiroHbRelativeHeightM": 20,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/suruga/nagakubo-jyo/",
-        "remains": "曲輪、土塁、空堀",
+        "remains": "曲輪（一部）、土塁、空堀",
         "lords": "今川氏、北条氏、武田氏、徳川氏、松平家忠、牧野康成、中村氏、長久保氏、清水政勝、中村一氏"
       }
     },
@@ -27510,7 +27510,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbElevationM": -0.903,
         "lords": "佐久間信栄、山口重政",
-        "remains": "なし"
+        "remains": "なし（埋没?）"
       }
     },
     {
@@ -27562,7 +27562,7 @@ const castleData = {
           "大野氏宅"
         ],
         "lords": "大野氏、大野治定",
-        "remains": "なし"
+        "remains": "なし（埋没?）"
       }
     },
     {
@@ -27947,7 +27947,7 @@ const castleData = {
         "shiroHbForm": "平山城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/mikawa/kariya-jyo/",
         "shiroHbElevationM": 2.8,
-        "remains": "辰巳櫓、石碑、曲輪、土塁、横堀、水堀",
+        "remains": "辰巳櫓（移築）、石碑、曲輪、土塁、横堀、水堀",
         "lords": "水野氏、(深溝)松平氏、(久松)松平氏、稲垣氏、阿部氏、三浦氏、土井氏"
       }
     },
@@ -28091,7 +28091,7 @@ const castleData = {
         "address": "愛知県犬山市大字犬山",
         "shiroHbForm": "平城",
         "shiroHbElevationM": 55.4,
-        "remains": "曲輪、空堀、井戸、伝",
+        "remains": "曲輪（神社境内）、空堀、井戸、伝",
         "lords": "織田広近、織田敏広、織田信康"
       }
     },
@@ -28117,7 +28117,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/owari/kiyosu-jyo/",
         "shiroHbElevationM": 6.6,
-        "remains": "模擬天守、移築櫓、移築現存櫓、石垣、土塁",
+        "remains": "模擬天守、移築櫓（名古屋城）、移築現存櫓（名古屋城）、石垣、土塁",
         "lords": "斯波氏、織田氏、豊臣秀次、福島正則、松平忠吉、徳川義直、福島氏、徳川氏、豊臣氏、尾張徳川家"
       }
     },
@@ -28244,7 +28244,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/owari/ikoma-yashiki/",
         "shiroHbElevationM": 16.699,
-        "remains": "門、中門、石碑、説明板",
+        "remains": "門、中門（移築）、石碑、説明板",
         "lords": "生駒氏、生駒家長"
       }
     },
@@ -28640,7 +28640,7 @@ const castleData = {
         "shiroHbElevationM": 60,
         "shiroHbRelativeHeightM": 30,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/mikawa/nagashino-jyo/",
-        "remains": "移築門、石垣、曲輪、虎口、土塁、空堀、井戸、曲輪（本丸跡、帯曲輪、野牛曲輪）",
+        "remains": "移築門（桃牛寺山門）、石垣、曲輪、虎口、土塁、空堀、井戸、曲輪（本丸跡、帯曲輪、野牛曲輪）",
         "lords": "長篠菅沼氏、奥平信昌、菅沼氏、奥平氏"
       }
     },
@@ -29865,7 +29865,7 @@ const castleData = {
         "shiroHbElevationM": 226,
         "shiroHbRelativeHeightM": 17,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/iga/kashiwara-jyo/",
-        "remains": "石垣、主郭虎口石垣痕跡、曲輪、土塁、空堀、堀切、東側に二重の空堀、井戸、御滝女郎化粧井戸",
+        "remains": "石垣、主郭虎口石垣痕跡、曲輪、土塁、空堀、堀切、東側に二重の空堀、井戸、御滝女郎化粧井戸（大井戸）",
         "lords": "滝野氏、百地氏、滝野貞清、滝野吉政"
       }
     },
@@ -30208,7 +30208,7 @@ const castleData = {
         "url": "",
         "address": "三重県四日市市富田一丁目",
         "shiroHbForm": "平城",
-        "remains": "なし",
+        "remains": "なし（埋没）",
         "lords": "南部兼綱"
       }
     },
@@ -30579,7 +30579,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/ise/mochibuku-jyo/",
         "shiroHbElevationM": 4.478,
-        "remains": "土塁",
+        "remains": "土塁（他は埋没）",
         "lords": "茂福氏(朝倉氏)、茂福氏、山口氏、茂福盈豊"
       }
     },
@@ -30733,7 +30733,7 @@ const castleData = {
         "shiroHbForm": "水城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/oumi/ohtsu-jyo/",
         "shiroHbElevationM": 88,
-        "remains": "石垣、埋没",
+        "remains": "石垣、埋没（堀等）",
         "lords": "浅野長吉、増田長盛、新庄直頼、京極高次、浅野長政、戸田一西"
       }
     },
@@ -31478,7 +31478,7 @@ const castleData = {
           "草内城"
         ],
         "shiroHbElevationM": 24,
-        "remains": "曲輪、土塁、水堀",
+        "remains": "曲輪、土塁、水堀、堀（水堀）",
         "lords": "草路氏か、遊佐長直"
       }
     },
@@ -31786,7 +31786,7 @@ const castleData = {
           "二条御殿"
         ],
         "shiroHbElevationM": 38.1,
-        "remains": "天守台、櫓、櫓門、門、唐門、御殿、二の丸御殿障壁画、本丸御殿群、本丸御殿障壁画、番所、土蔵、筋塀、土塀、石垣、曲輪、二の丸庭園、本丸庭園、堀、外堀護岸、庭園、井戸、二の丸御殿 （国宝、重文）",
+        "remains": "天守台、櫓、櫓門、門、唐門、御殿、二の丸御殿障壁画（重文）、本丸御殿群（旧桂宮邸）、本丸御殿障壁画（重文）、番所、土蔵、筋塀（築地塀）、土塀、石垣、曲輪、二の丸庭園（特別名勝）、本丸庭園、堀、外堀護岸、庭園、井戸、二の丸御殿 （国宝、重文）",
         "lords": "徳川氏、徳川将軍家（江戸期）、皇室（明治17年ｰ昭和14年）"
       }
     },
@@ -31846,7 +31846,7 @@ const castleData = {
         "shiroHbElevationM": 30,
         "shiroHbRelativeHeightM": 20,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/tanba/fukuchiyama-jyo/",
-        "remains": "外観復元天守、門、銅門番所、移築番所、石垣、曲輪、堀、井戸",
+        "remains": "外観復元天守、門、銅門番所（移築）、移築番所、石垣、曲輪、堀、井戸",
         "lords": "明智光秀、明智秀満、羽柴秀勝、杉原家次、小野木重勝、有馬豊氏、岡部長盛、稲葉紀通、松平忠房、朽木稙昌、朽木稙元、朽木稙綱、朽木稙治、朽木玄綱、朽木綱貞、朽木舗綱、朽木昌綱、朽木倫綱、朽木綱條、朽木綱張、朽木為綱、有馬豊氏（6万石）、岡部長盛（5万石）、稲葉紀通（4万5千石）、松平忠房（4万5900石）、朽木氏（3万2千石）、明智氏、朽木氏"
       }
     },
@@ -32366,7 +32366,7 @@ const castleData = {
           "槌丸城",
           "雨山城三の丸"
         ],
-        "remains": "櫓、曲輪、土塁、堀、堀切、井戸跡、曲輪（本丸、二の丸）",
+        "remains": "櫓（月見櫓）、曲輪、土塁、堀、堀切、井戸跡、曲輪（本丸、二の丸）",
         "lords": "日根野氏、橋本正高、橋本正督、根来寺衆"
       }
     },
@@ -33462,7 +33462,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/kawachi/wakae-jyo/",
         "shiroHbElevationM": 4.5,
-        "remains": "塼列建物、礎石建物、石垣、逆茂木、土橋、堀",
+        "remains": "塼列建物、礎石建物、石垣、逆茂木、土橋（発掘調査による。地表に遺構はない）、堀",
         "lords": "遊佐氏、三好義継、織田氏、畠山氏、若江三人衆"
       }
     },
@@ -33550,7 +33550,7 @@ const castleData = {
         "shiroHbElevationM": 20,
         "shiroHbRelativeHeightM": 20,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/harima/akashi-jyo/",
-        "remains": "櫓、移築門、石垣、曲輪、土塁、堀",
+        "remains": "櫓（2基）、移築門、石垣、曲輪、土塁、堀",
         "lords": "戸田庸直、戸田光重、大久保忠職、(藤井)松平忠国、松平信之、本多政利、(越前家)松平直明、松平直常、松平直純、松平直泰、松平直之、松平直周、松平斉韶、松平斉宣、松平慶憲、松平直致、小笠原忠政、戸田松平氏、大久保氏、藤井松平氏、本多氏、越前松平氏、松平氏（越前系）"
       }
     },
@@ -35019,7 +35019,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/harima/funage-jyo/",
         "shiroHbElevationM": 3.291,
-        "remains": "長屋門、曲輪、本丸跡、土塁、水堀",
+        "remains": "長屋門（移築）、曲輪、本丸跡、土塁、水堀",
         "lords": "高山右近、池田氏、小笠原忠政、池田利政、蜂須賀正勝"
       }
     },
@@ -35248,7 +35248,7 @@ const castleData = {
         "shiroHbElevationM": 98,
         "shiroHbRelativeHeightM": 9,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/harima/yamasaki-jyo/",
-        "remains": "門、土塀、石垣、曲輪、堀",
+        "remains": "門（紙屋門等）、土塀、石垣、曲輪、堀",
         "lords": "池田氏、(松井)松平氏、本多氏、池田輝澄、池田恒元"
       }
     },
@@ -35332,7 +35332,7 @@ const castleData = {
         "shiroHbElevationM": 450,
         "shiroHbRelativeHeightM": 200,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/harima/haga-jyo/",
-        "remains": "復興木造二層櫓、冠木門、石垣、曲輪、土塁、堀切、碑",
+        "remains": "復興木造二層櫓（檜皮葺）、冠木門、石垣（布積くずし積）、曲輪、土塁、堀切（空堀）、碑",
         "lords": "芳賀氏、中村氏"
       }
     },
@@ -38055,7 +38055,7 @@ const castleData = {
         "shiroHbElevationM": 60,
         "shiroHbRelativeHeightM": 60,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/iwami/hamada-jyo/",
-        "remains": "門、移築門、石垣、曲輪、土塁、堀",
+        "remains": "門（他所より移築）、移築門（他所より移築）、石垣、曲輪、土塁、堀",
         "lords": "吉田重治、古田重恒、(松井)松平康映、松平康宦、松平康員、松平康豊、松平康福、松平本多、本多忠敞、本多忠盈、本多忠粛、(松井)松平康福、松平康定、松平康任、松平康爵、(越智)松平武厚、松平武揚、松平武成、松平武聰、古田氏（5万5千石）、本多氏、松平氏、古田氏、越智松平家"
       }
     },
@@ -38321,7 +38321,7 @@ const castleData = {
         "aliases": [
           "要害山城"
         ],
-        "remains": "門、移築門、石垣、曲輪、土塁、空堀、井戸",
+        "remains": "移築門、門（移築現存）、石垣、曲輪、土塁、空堀、井戸",
         "lords": "大内氏、尼子氏、毛利氏、刺賀長信、本城常光"
       }
     },
@@ -38757,7 +38757,7 @@ const castleData = {
         "shiroHbForm": "山城",
         "shiroHbElevationM": 89,
         "shiroHbRelativeHeightM": 89,
-        "remains": "門、移築門、石垣、曲輪、土塁、堀、井戸",
+        "remains": "門、（伝）移築門、移築門、石垣、曲輪、土塁、堀、井戸",
         "lords": "宇喜多氏、平岡頼勝、池田長政、池田由之、荒尾成利、池田由成、浮田家久、池田氏（3万2千石）、池田氏"
       }
     },
@@ -39766,7 +39766,7 @@ const castleData = {
         "shiroHbElevationM": 170,
         "shiroHbRelativeHeightM": 5,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/bingo/takasugi-jyo/",
-        "remains": "石垣、曲輪、土塁、堀、横堀",
+        "remains": "石垣、曲輪、土塁、堀、横堀（空堀）",
         "lords": "祝氏"
       }
     },
@@ -41796,7 +41796,7 @@ const castleData = {
         "shiroHbElevationM": 382,
         "shiroHbRelativeHeightM": 350,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/sanuki/amagiri-jyo/",
-        "remains": "石垣、石塁、曲輪、本丸跡、二の丸跡、三の丸跡、隠し砦跡、外曲輪、土塁、堀、堀切、井戸",
+        "remains": "石垣、石塁、曲輪、本丸（物見台）跡、二の丸跡、三の丸跡、隠し砦跡、外曲輪、本丸跡、土塁、堀、堀切、井戸",
         "lords": "香川氏"
       }
     },
@@ -43414,7 +43414,7 @@ const castleData = {
         ],
         "shiroHbForm": "陣屋",
         "shiroHbElevationM": 118.4,
-        "remains": "門、長屋門、大手門、本門、石垣、堀",
+        "remains": "門、長屋門、大手門、本門（黒門）、石垣、堀",
         "lords": "黒田長興、黒田長重、黒田長軌、黒田長貞、黒田長邦、黒田長恵、黒田長堅、黒田長舒、黒田長韶、黒田長元、黒田長義、黒田長徳、黒田氏"
       }
     },
@@ -43695,7 +43695,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/buzen/kokura-jyo/",
         "shiroHbElevationM": 13.6,
-        "remains": "復興天守、石垣、曲輪、総構、堀",
+        "remains": "復興天守、石垣、曲輪、総構（含障子堀）、堀",
         "lords": "緒方大膳惟重、緒方八郎惟為、緒方石見守惟尚、黒崎土佐守景経、長野七郎貞家、長野但馬守教家、菊地荒太郎武陸、臼杵掃部守助高、小野田兵部種尚、長野壱岐守克盛、冷泉五郎高祐、高橋三河守鑑種、高橋三河守秋種、毛利壱岐守勝信、細川忠興、細川忠利、小笠原忠真、小笠原忠雄、小笠原忠基、小笠原忠総、小笠原忠苗、小笠原忠固、小笠原忠微、小笠原忠嘉、小笠原忠幹、小笠原忠忱、大内氏、菊池氏、高橋鑑種、毛利勝信、細川氏（40万石）、小笠原氏（15万石）、細川氏、小笠原氏"
       }
     },
@@ -43749,7 +43749,7 @@ const castleData = {
           "筑後城島城"
         ],
         "shiroHbElevationM": 5.572,
-        "remains": "石垣、堀",
+        "remains": "堀、石垣（埋没）",
         "lords": "西牟田氏、薦野増時、宮川讃岐、西牟田家周、宮川氏、西牟田家親、宮川十丸"
       }
     },
@@ -45878,7 +45878,7 @@ const castleData = {
         "shiroHbForm": "陣屋",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/hizen/tomie-jinya/",
         "shiroHbElevationM": 9.071,
-        "remains": "陣屋門、大手門、石蔵、石垣、堀",
+        "remains": "陣屋門（移築）、大手門、石蔵、石垣、堀",
         "lords": "五島盛清、五島盛朗、五島盛尚、五島盛峯、五島盛恭、五島運龍、五島盛貫、五島盛明、五島氏"
       }
     },
@@ -46002,7 +46002,7 @@ const castleData = {
         "aliases": [
           "内牧御茶屋"
         ],
-        "remains": "移築城門、石垣、水堀",
+        "remains": "移築城門（明行寺）、移築城門（浄信寺）、石垣、水堀",
         "lords": "辺春盛道、加藤可重、加藤正方、阿蘇氏、辺春氏、加藤氏"
       }
     },
@@ -46740,7 +46740,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/higo/yatsushiro-jyo/",
         "shiroHbElevationM": 4.8,
-        "remains": "天守台、本丸大書院、石垣、城壁、曲輪、北の丸跡、堀、城壕、庭園、本丸跡（天守台、堀）",
+        "remains": "天守台、庭園（松浜軒およびその正門）、本丸大書院、石垣、城壁、曲輪、北の丸跡、堀、城壕、本丸跡（天守台、堀）",
         "lords": "加藤正方、細川立孝、松井氏、加藤氏、細川氏、松井興長"
       }
     },
@@ -46913,7 +46913,7 @@ const castleData = {
         "shiroHbElevationM": 11,
         "shiroHbRelativeHeightM": 10,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/bungo/kitsuki-jyo/",
-        "remains": "模擬天守、石垣、曲輪、土塁、堀、堀切、庭園",
+        "remains": "模擬天守、庭園（藩主御殿地区）、石垣、曲輪、土塁、堀、堀切（台山地区）",
         "lords": "小笠原忠知、(能見)松平英親、松平重栄、松平重休、松平親純、松平親盈、松平親貞、松平親賢、松平親明、松平親良、松平親貴、木付氏、前田氏、杉原氏、細川氏、小笠原氏、松平氏、宮部氏"
       }
     },
@@ -47165,7 +47165,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/bungo/funai-jyo/",
         "shiroHbElevationM": 5.1,
-        "remains": "櫓2棟、櫓跡、土塀、石垣、石塁、曲輪、虎口、横堀、堀、櫓2棟（宗門櫓、人質櫓）",
+        "remains": "櫓跡（天守台）、櫓、櫓2棟、土塀、石垣、石塁、曲輪、虎口、横堀、堀、櫓2棟（宗門櫓、人質櫓）",
         "lords": "福原直高、早川長敏、竹中重利、竹中重義、日根野吉明、(大給)松平忠昭、松平近陳、松平近禎、松平近貞、松平近形、松平近儔、松平近義、松平近訓、松平近信、松平近説、竹中氏、大給松平氏、日根野氏、大給松平家"
       }
     },
@@ -47448,7 +47448,7 @@ const castleData = {
           "桶平塁",
           "田原陣"
         ],
-        "remains": "曲輪",
+        "remains": "曲輪（一部）",
         "lords": "佐土原遠江守"
       }
     },
@@ -49990,7 +49990,7 @@ const castleData = {
         "aliases": [
           "村田所"
         ],
-        "remains": "大手門、曲輪、土塁、切岸、空堀",
+        "remains": "大手門（移築）、曲輪、土塁、切岸、空堀",
         "lords": "村田氏、伊達氏"
       }
     },
@@ -56122,7 +56122,7 @@ const castleData = {
         "shiroHbElevationM": 182,
         "shiroHbRelativeHeightM": 160,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/mutsu/shirihachi-date/",
-        "remains": "曲輪、腰曲輪、本丸、二の丸、土塁、空堀、堀切",
+        "remains": "曲輪、腰曲輪、本丸（西郭）、二の丸（東郭）、土塁、空堀、堀切",
         "lords": "安東氏、安倍成季、潮潟氏"
       }
     },
@@ -57144,7 +57144,7 @@ const castleData = {
           "不動堂要害",
           "鶴館"
         ],
-        "remains": "移築門、曲輪、土塁、水堀",
+        "remains": "移築門（西館内門）、曲輪、土塁、水堀",
         "lords": "大崎氏、後藤氏、伊藤氏"
       }
     },
@@ -58432,7 +58432,7 @@ const castleData = {
         "shiroHbElevationM": 126,
         "shiroHbRelativeHeightM": 20,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/dewa/kourushigawa-jyo/",
-        "remains": "門、大手門",
+        "remains": "門、大手門（移築）",
         "lords": "酒井直次"
       }
     },
@@ -58459,7 +58459,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/dewa/kamegasaki-jyo/",
         "shiroHbElevationM": 4.087,
-        "remains": "門、搦手門、土塁",
+        "remains": "門、搦手門（移築）、土塁",
         "lords": "東禅寺氏、上杉氏、志村光安、酒井氏、大宝寺氏（武藤氏）"
       }
     },
@@ -60243,7 +60243,7 @@ const castleData = {
         "aliases": [
           "泉藩陣屋"
         ],
-        "remains": "裏門、土塁",
+        "remains": "裏門（移築）、土塁",
         "lords": "内藤政親、内藤政森、板倉重同、板倉勝清、本多忠如、本多忠籌、本多忠誠、本多忠知、本多忠徳、本多忠紀、本多忠伸、内藤氏、板倉氏、本多氏"
       }
     },
@@ -61015,7 +61015,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/hitachi/shishido-jyo/",
         "shiroHbElevationM": 29.697,
-        "remains": "門、移築門、土塁",
+        "remains": "門、移築門（陣屋）、土塁",
         "lords": "宍戸氏、秋田実季、秋田俊季、(水戸)松平頼雄、松平頼道、松平頼慶、松平頼多、松平頼救、松平頼敬、松平頼筠、松平頼位、松平頼徳、秋田氏、松平氏（陣屋）"
       }
     },
@@ -61212,7 +61212,7 @@ const castleData = {
         "shiroHbForm": "陣屋",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/hitachi/yatabe-jinya/",
         "shiroHbElevationM": 13.92,
-        "remains": "門、御殿玄関",
+        "remains": "門（個人宅に移築）、御殿玄関（公民館に移築）",
         "lords": "細川興元、細川興昌、細川興隆、細川興栄、細川興虎、細川興晴、細川興徳、細川興建、細川興貫、細川氏"
       }
     },
@@ -64849,7 +64849,7 @@ const castleData = {
         "shiroHbForm": "陣屋",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/kouzuke/obata-jinya/",
         "shiroHbElevationM": 192.2,
-        "remains": "石垣、土塁、堀、井戸、庭園",
+        "remains": "石垣、土塁、堀、井戸、庭園（楽山園）",
         "lords": "織田信昌、織田信久、織田信就、織田信右、織田信富、織田信邦、松平忠恒、松平忠福、松平忠恵、松平忠恕、織田氏、松平氏"
       }
     },
@@ -65201,7 +65201,7 @@ const castleData = {
         "aliases": [
           "矢田陣屋"
         ],
-        "remains": "表門、土塁",
+        "remains": "表門（移築）、土塁",
         "lords": "(鷹司)松平信友、松平信有、松平信明、松平信成、松平信允、松平信敬、松平信任、松平信発、松平信謹、松平氏（鷹司氏）"
       }
     },
@@ -65224,7 +65224,7 @@ const castleData = {
         "shiroHbForm": "陣屋",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/kouzuke/nanokaichi-jinya/",
         "shiroHbElevationM": 176.247,
-        "remains": "門、中門、御殿の玄関、御殿の一部、土塁、堀",
+        "remains": "門、中門（再移築）、御殿の玄関、御殿の一部、土塁、堀",
         "lords": "前田利孝、前田利意、前田利広、前田利慶、前田利英、前田利理、前田利尚、前田利見、前田利以、前田利和、前田利豁、前田利昭、前田氏"
       }
     },
@@ -65394,7 +65394,7 @@ const castleData = {
         "address": "群馬県安中市板鼻",
         "shiroHbForm": "陣屋",
         "shiroHbElevationM": 122.978,
-        "remains": "門",
+        "remains": "門（移築）",
         "lords": "里見氏、酒井忠行"
       }
     },
@@ -66243,7 +66243,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/kouzuke/maniwa-jyo/",
         "shiroHbElevationM": 101,
-        "remains": "櫓台跡、土塁",
+        "remains": "櫓台跡（土塁）、土塁",
         "lords": "馬庭氏"
       }
     },
@@ -69416,7 +69416,7 @@ const castleData = {
         "aliases": [
           "藤心代官所"
         ],
-        "remains": "表門、中門",
+        "remains": "表門（移築）、中門（移築）",
         "lords": "本多氏"
       }
     },
@@ -69744,7 +69744,7 @@ const castleData = {
         "aliases": [
           "物井古屋城"
         ],
-        "remains": "櫓台、曲輪、腰曲輪、土塁、横堀、障子堀、井戸",
+        "remains": "櫓台、曲輪、腰曲輪、土塁、横堀（空堀）、障子堀、井戸",
         "lords": "臼井氏、物井氏"
       }
     },
@@ -69768,7 +69768,7 @@ const castleData = {
         "shiroHbElevationM": 50,
         "shiroHbRelativeHeightM": 35,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/kazusa/sasago-jyo/",
-        "remains": "曲輪、虎口、土塁、堀、堀切、横堀",
+        "remains": "曲輪、虎口、土塁、堀、堀切、横堀（空堀）",
         "lords": "真里谷武田氏"
       }
     },
@@ -69814,7 +69814,7 @@ const castleData = {
         "shiroHbForm": "平山城",
         "shiroHbElevationM": 21,
         "shiroHbRelativeHeightM": 15,
-        "remains": "曲輪、腰曲輪、土塁、土橋、堀、横堀",
+        "remains": "曲輪、腰曲輪、土塁、土橋、堀、横堀（空堀）",
         "lords": "原氏か"
       }
     },
@@ -69838,7 +69838,7 @@ const castleData = {
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/shimousa/onoda-jyo/",
         "shiroHbElevationM": 20,
         "shiroHbRelativeHeightM": 8,
-        "remains": "土塁、堀、横堀",
+        "remains": "土塁、堀、横堀（空堀）",
         "lords": "不明"
       }
     },
@@ -69864,7 +69864,7 @@ const castleData = {
         "aliases": [
           "根古谷城"
         ],
-        "remains": "曲輪、土塁、堀、横堀",
+        "remains": "曲輪、土塁、堀、横堀（空堀）",
         "lords": "円城寺氏か、粟飯原氏"
       }
     },
@@ -71842,7 +71842,7 @@ const castleData = {
         "aliases": [
           "大磯城"
         ],
-        "remains": "大磯城山公園",
+        "remains": "大磯城山公園（推定）",
         "lords": "越後五郎四郎"
       }
     },
@@ -74230,7 +74230,7 @@ const castleData = {
         "aliases": [
           "城ノ腰城"
         ],
-        "remains": "曲輪、堀切、竪堀、横堀",
+        "remains": "曲輪、堀切、竪堀、横堀（空堀）",
         "lords": "柿崎氏"
       }
     },
@@ -76651,7 +76651,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/echizen/kitanosho-jyo/",
         "shiroHbElevationM": 9.6,
-        "remains": "石垣、土塁、堀",
+        "remains": "石垣（根石）、土塁、堀",
         "lords": "柴田勝家、丹羽氏、堀氏、青木一矩、越前松平家"
       }
     },
@@ -78345,7 +78345,7 @@ const castleData = {
         "shiroHbForm": "陣屋",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/echizen/yoshie-jinya/",
         "shiroHbElevationM": 15.1,
-        "remains": "門、移築門",
+        "remains": "門、移築門（大手門）",
         "lords": "松平昌親"
       }
     },
@@ -80328,7 +80328,7 @@ const castleData = {
         "shiroHbElevationM": 1000,
         "shiroHbRelativeHeightM": 250,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/shinano/inagura-jyo/",
-        "remains": "曲輪、帯曲輪、土塁、堀、横堀、物見台跡",
+        "remains": "曲輪、帯曲輪、土塁、堀、横堀（空堀）、物見台跡",
         "lords": "赤沢氏"
       }
     },
@@ -82824,7 +82824,7 @@ const castleData = {
           "大城",
           "小城"
         ],
-        "remains": "石垣、曲輪、土塁、堀、横堀",
+        "remains": "石垣、曲輪、土塁、堀、横堀（空堀）",
         "lords": "上杉氏、武田氏"
       }
     },
@@ -83044,7 +83044,7 @@ const castleData = {
         "shiroHbElevationM": 128,
         "shiroHbRelativeHeightM": 30,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/mino/nishitakagi-jinya/",
-        "remains": "門、長屋門、土蔵、石垣、曲輪、土塁、井戸",
+        "remains": "門、長屋門、土蔵（東高木家陣屋）、石垣、曲輪、土塁、井戸",
         "lords": "関一政、高木貞利、高木貞盛、高木貞勝、高木貞則、高木衛貞、高木貞輝、高木篤貞、高木貞臧、高木経貞、高木貞広、高木貞正、高木氏"
       }
     },
@@ -83067,7 +83067,7 @@ const castleData = {
         "shiroHbForm": "代官所",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/hida/takayama-jinya/",
         "shiroHbElevationM": 575.8,
-        "remains": "門、正門、番人部屋、玄関式台、御蔵、収納米蔵、御役所、庭園",
+        "remains": "門、正門、番人部屋、玄関式台、御蔵、収納米蔵（郷蔵）、御役所、庭園",
         "lords": "江戸幕府、徳川氏（郡代支配）"
       }
     },
@@ -83608,7 +83608,7 @@ const castleData = {
         "aliases": [
           "戸田氏陣屋"
         ],
-        "remains": "移築門、石垣",
+        "remains": "移築門（井深氏邸）、石垣",
         "lords": "牛洞戸田氏"
       }
     },
@@ -83634,7 +83634,7 @@ const castleData = {
         "aliases": [
           "戸田氏陣屋"
         ],
-        "remains": "移築陣屋門、石垣",
+        "remains": "移築陣屋門（円立寺）、石垣",
         "lords": "深坂戸田氏道、戸田氏紀、戸田氏喜、戸田氏孟、戸田氏友、戸田氏栄、戸田氏"
       }
     },
@@ -86449,7 +86449,7 @@ const castleData = {
           "小島御役所",
           "松平丹後守候在所"
         ],
-        "remains": "移築御殿書院、石垣、曲輪、枡形、井戸",
+        "remains": "移築御殿書院（小島町文化財資料館）、石垣、曲輪、枡形、井戸",
         "lords": "松平信治、松平信嵩、松平昌信、松平信義、松平信圭、松平信友、松平信賢、松平信進、松平信書、松平信敏、松平氏"
       }
     },
@@ -87884,7 +87884,7 @@ const castleData = {
         "shiroHbForm": "陣屋",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/suruga/kawanarishima-jinya/",
         "shiroHbElevationM": 6,
-        "remains": "長屋門、石垣、堀",
+        "remains": "長屋門（移築）、石垣、堀",
         "lords": "本郷泰固"
       }
     },
@@ -88702,7 +88702,7 @@ const castleData = {
         "shiroHbForm": "平山城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/mikawa/fukouzu-jyo/",
         "shiroHbElevationM": 41.264,
-        "remains": "移築門、土塁",
+        "remains": "移築門（陣屋）、土塁",
         "lords": "大庭氏、深溝松平氏、日置忠俊、旗本板倉氏、板倉氏、深溝松平家"
       }
     },
@@ -89159,7 +89159,7 @@ const castleData = {
         "shiroHbForm": "陣屋",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/mikawa/ohhama-jinya/",
         "shiroHbElevationM": 7.5,
-        "remains": "陣屋門",
+        "remains": "陣屋門（移築）",
         "lords": "水野忠友、長田氏、水野氏"
       }
     },
@@ -90111,7 +90111,7 @@ const castleData = {
         "address": "愛知県瀬戸市上品野町",
         "shiroHbForm": "丘城",
         "shiroHbElevationM": 190,
-        "remains": "曲輪、土塁、堀、庭園状遺構、竪穴状遺構",
+        "remains": "竪穴状遺構（番小屋か）、曲輪、土塁、堀、庭園状遺構",
         "lords": "永井民部（長江利景、長江民部）"
       }
     },
@@ -93502,7 +93502,7 @@ const castleData = {
         "shiroHbForm": "陣屋",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/iga/nabari-jinya/",
         "shiroHbElevationM": 206.155,
-        "remains": "門、移築城門、藤堂屋敷",
+        "remains": "門、移築城門（寿栄神社）、藤堂屋敷",
         "lords": "名張藤堂氏、松倉氏"
       }
     },
@@ -97355,7 +97355,7 @@ const castleData = {
         "shiroHbForm": "陣屋",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/oumi/ohmori-jinya/",
         "shiroHbElevationM": 150.977,
-        "remains": "門、玄関",
+        "remains": "門（石塔寺に移築）、玄関（長福寺に移築）",
         "lords": "最上氏"
       }
     },
@@ -97713,7 +97713,7 @@ const castleData = {
         "aliases": [
           "三上藩陣屋"
         ],
-        "remains": "表門、裏門、堀",
+        "remains": "表門（移築門）、裏門（移築門）、堀",
         "lords": "遠藤胤親、遠藤胤将、遠藤胤忠、遠藤胤富、遠藤胤緒、遠藤胤城、遠藤氏"
       }
     },
@@ -98288,7 +98288,7 @@ const castleData = {
           "笠置山城",
           "笠置寺"
         ],
-        "remains": "曲輪、土塁、堀、横堀、竪堀",
+        "remains": "曲輪、土塁、堀、横堀（空堀）、竪堀",
         "lords": "後醍醐天皇、木沢長政"
       }
     },
@@ -99049,7 +99049,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/yamashiro/imazato-jyo/",
         "shiroHbElevationM": 34.553,
-        "remains": "堀跡",
+        "remains": "堀跡（埋め戻し保存）",
         "lords": "能勢氏"
       }
     },
@@ -99993,7 +99993,7 @@ const castleData = {
         "aliases": [
           "麻田藩陣屋"
         ],
-        "remains": "門、玄関",
+        "remains": "門（移築）、玄関（移築）",
         "lords": "青木氏"
       }
     },
@@ -100045,7 +100045,7 @@ const castleData = {
         "shiroHbForm": "平城",
         "shiroHbElevationM": 24,
         "shiroHbRelativeHeightM": 5,
-        "remains": "曲輪、堀",
+        "remains": "曲輪、堀（周壕）",
         "lords": "和田氏、三好氏"
       }
     },
@@ -100247,7 +100247,7 @@ const castleData = {
         "aliases": [
           "平野陣屋"
         ],
-        "remains": "門、移築門",
+        "remains": "門、移築門（大念佛寺）",
         "lords": "土井氏"
       }
     },
@@ -100315,7 +100315,7 @@ const castleData = {
         "shiroHbForm": "代官所",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/kawachi/shiraki-jinya/",
         "shiroHbElevationM": 86.426,
-        "remains": "表門、石垣",
+        "remains": "表門（移築）、石垣",
         "lords": "石川氏"
       }
     },
@@ -101160,7 +101160,7 @@ const castleData = {
         "shiroHbForm": "陣屋",
         "shiroHbElevationM": 250,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/harima/mikazuki-jinya/",
-        "remains": "櫓、物見櫓、移築物見櫓、門、復元長屋、石垣、曲輪跡、土塁、水堀",
+        "remains": "櫓、物見櫓、移築物見櫓、門（移築）、復元長屋、石垣、曲輪跡、土塁、水堀",
         "lords": "森氏、森氏（1万5千石）"
       }
     },
@@ -102377,7 +102377,7 @@ const castleData = {
         "shiroHbForm": "陣屋",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/harima/wakasano-jinya/",
         "shiroHbElevationM": 37.15,
-        "remains": "門、移築門、土塀、石垣",
+        "remains": "門、移築門（西法寺）、土塀、石垣",
         "lords": "浅野氏"
       }
     },
@@ -106786,7 +106786,7 @@ const castleData = {
         "shiroHbForm": "陣屋",
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/bizen/amagi-jinya/",
         "shiroHbElevationM": 16.172,
-        "remains": "門、移築門",
+        "remains": "門、移築門（静光寺）",
         "lords": "池田由成、池田由孝、池田由勝、池田保教、池田政純、池田政喬、池田政孝、池田政徳、池田政昭、池田政和、池田氏"
       }
     },
@@ -110315,7 +110315,7 @@ const castleData = {
           "御本館",
           "御住館"
         ],
-        "remains": "物見櫓、表御門、裏御門、曲輪、土塁、堀",
+        "remains": "物（馬）見櫓（法圓寺へ移築）、物見櫓、表御門（教徳寺へ移築）、裏御門（日野家住宅へ移築）、曲輪、土塁、堀",
         "lords": "毛利氏、浅野長厚"
       }
     },
@@ -110825,7 +110825,7 @@ const castleData = {
           "勝山ノ営"
         ],
         "shiroHbElevationM": 89.404,
-        "remains": "移築表門、移築玄関、石垣、曲輪、池",
+        "remains": "移築表門（了圓寺）、移築玄関（覚苑寺）、石垣、曲輪、池",
         "lords": "長府毛利氏、毛利氏"
       }
     },
@@ -115702,7 +115702,7 @@ const castleData = {
         "aliases": [
           "一柳公館"
         ],
-        "remains": "櫓、太鼓櫓、門、石垣",
+        "remains": "櫓、太鼓櫓（移築）、門（移築）、石垣",
         "lords": "一柳氏"
       }
     },
@@ -115805,7 +115805,7 @@ const castleData = {
           "一柳直家公陣屋",
           "一柳陣屋"
         ],
-        "remains": "門",
+        "remains": "門（移築）",
         "lords": "一柳直家、一柳氏"
       }
     },
@@ -117023,7 +117023,7 @@ const castleData = {
         "aliases": [
           "新谷陣屋"
         ],
-        "remains": "麟鳳閣、謁見所",
+        "remains": "麟鳳閣、謁見所（県重文）",
         "lords": "加藤直泰、加藤泰觚、加藤泰貫、加藤泰広、加藤泰宦、加藤泰賢、加藤泰儔、加藤泰理、加藤泰令、加藤氏"
       }
     },
@@ -122847,7 +122847,7 @@ const castleData = {
         "shiroHbElevationM": 188,
         "shiroHbRelativeHeightM": 150,
         "shiroHbUrl": "https://www.hb.pei.jp/shiro/chikuzen/masutomi-jyo/",
-        "remains": "搦手門、石垣、曲輪、虎口、土塁、堀切、畝状竪堀群、横堀、堀",
+        "remains": "搦手門（移築）、石垣、曲輪、虎口、土塁、堀切、畝状竪堀群、横堀、堀",
         "lords": "大内氏、杉忠重、秋月氏、後藤基次、母里友信、早川長政"
       }
     },
@@ -123738,7 +123738,7 @@ const castleData = {
         "aliases": [
           "三池藩陣屋"
         ],
-        "remains": "門、御殿玄関の一部、石段、大手眼鏡橋、眼鏡橋、井戸",
+        "remains": "門（移築）、御殿玄関の一部（移築）、石段、大手眼鏡橋、眼鏡橋、井戸",
         "lords": "立花種次、立花種長、立花種明、立花貫長、立花長煕、立花種周、立花種善、立花種恭、高橋統増、立花氏"
       }
     },
@@ -123845,7 +123845,7 @@ const castleData = {
         "aliases": [
           "東蓮寺陣屋"
         ],
-        "remains": "門、移築門",
+        "remains": "門、移築門（西徳寺山門）",
         "lords": "黒田長清、黒田高政、黒田之勝、黒田長寛"
       }
     },
@@ -266492,7 +266492,7 @@ const castleData = {
         "prefecture": "愛知県",
         "url": "",
         "address": "愛知県岡崎市西阿知和町中根１２４−２",
-        "remains": "不明",
+        "remains": "不明（埋没?）",
         "lords": "松平（阿知和）信季"
       }
     },
@@ -362316,7 +362316,7 @@ const castleData = {
           "鹿沢城"
         ],
         "shiroHbForm": "陣屋",
-        "remains": "門、曲輪、堀",
+        "remains": "門（紙屋門等）、曲輪、堀",
         "lords": "池田輝澄、池田恒元、本多氏"
       }
     },
@@ -527844,7 +527844,7 @@ const castleData = {
         "shiroHbForm": "山城",
         "shiroHbElevationM": 80,
         "shiroHbRelativeHeightM": 20,
-        "remains": "曲輪、土塁、堀切",
+        "remains": "曲輪、堀切、土塁（北側はほぼ消滅）",
         "lords": "小沢太郎某、小沢氏",
         "aliases": [
           "小沢要害"
