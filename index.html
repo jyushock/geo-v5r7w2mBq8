@@ -406,9 +406,14 @@
         .os-title { display: flex; align-items: center; gap: 5px; margin-bottom: 3px; min-width: 0; }
         /* タイトルの上に独立して置くバッジ（食べログの部門）。名前の左に置くと店名が押されるため */
         .os-badge-row { display: flex; gap: 5px; margin-bottom: 3px; }
-        /* 長い名前（食べログの店名など）は2行で省略する */
+        /* 長い名前（食べログの店名など）は2行で省略する。
+           長押しでコピーする操作を割り当てているので、iOSの文字選択メニューが
+           割り込まないよう callout と選択を止める */
         .os-name { font-size: 15px; font-weight: bold; min-width: 0; overflow: hidden;
-                   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+                   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
+                   -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
+        /* 長押しが成立した合図。指を離した時点でコピーするので、離すまでの目印になる */
+        .os-name.os-name-copying { background: #fff3c4; border-radius: 3px; }
         .os-row { display: flex; gap: 10px; margin-top: 5px; align-items: flex-start; }
         .os-meta { flex: 1; min-width: 0; }
         /* 写真: 幅128pxの枠。既定は128×128にcover（旧 .castle-img と同じトリミング方式） */
@@ -3025,6 +3030,27 @@ function showToast(message) {
     showToast._timer = setTimeout(() => toast.classList.remove('show'), 4000);
 }
 
+/* 文字列をクリップボードへ入れる。
+   navigator.clipboard は生えていても書き込みが拒まれること（安全なコンテキストでない、
+   ユーザー操作の文脈から外れている）があるので、失敗したら旧APIの execCommand へ落とす。
+   どちらの経路もユーザー操作（タップ・クリック）の中から呼ばれることが前提。 */
+async function copyToClipboard(text) {
+    if (!text) return false;
+    if (navigator.clipboard) {
+        try { await navigator.clipboard.writeText(text); return true; } catch {}
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.setSelectionRange(0, ta.value.length);   // iOSは select() だけでは選択範囲が入らないことがある
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch {}
+    ta.remove();
+    return ok;
+}
+
 document.addEventListener('click', (e) => {
     const a = e.target.closest && e.target.closest('a.btn-kojodan');
     if (!a || !isIosStandalonePwa()) return; // 通常ブラウザ/Android/PCは従来のtarget=_blankのまま
@@ -3358,7 +3384,9 @@ function buildSheetHtml(type, label, p, lng, lat) {
     // badgeAbove はタイトルの上に独立した行で出すバッジ（食べログの部門）。
     // 城やカードのように名前の左に置くと、店名が長い食べログでは名前が押し出されるため
     // titleTail はタイトル行の右端に寄せる要素（食べログの評点）。名前の折り返しに影響しない
-    let badges = '', badgeAbove = '', title = '', titleTail = '', photo = '', lines = '', rowA = '', rowB = '', pick = '';
+    // copyName はタイトル長押しでコピーする素の名前。title に付く [近接あり]・[配布] のような
+    // 表示上の注記まで貼り付けたくないので、それらが付く種別だけ別に持つ（既定は title と同じ）
+    let badges = '', badgeAbove = '', title = '', titleTail = '', photo = '', lines = '', rowA = '', rowB = '', pick = '', copyName = '';
 
     if (isPokefuta) {
         title = p.pokemon || label;
@@ -3389,6 +3417,7 @@ function buildSheetHtml(type, label, p, lng, lat) {
             // 配布終了レコードは locationName が「配布終了」なので、見出しに二度出さない
             const who = [info && info.muni, ended ? '' : p.locationName].filter(Boolean).join(' ');
             title = `${p.coordOffset ? '[複]' : ''}${head} ${who || p.name || label}`;
+            copyName = who || p.name || label;
             photo = osPhotoHtml(p.cardImgUrl, 'full');   // カードは縦長なので切らずに全体を見せる
             lines = ended
                 ? osKv('問合せ', p.contactInfo) + osKv('発行', p.issueDate)
@@ -3458,6 +3487,7 @@ function buildSheetHtml(type, label, p, lng, lat) {
         // 近接する別の城と座標が重なるため表示位置をずらしたエントリには目印を付ける
         // （マンホールカード配布場所のcoordOffsetと同じ仕組み。実際の座標は元の位置から数m~十数mずれている）
         title = p.coordOffset ? `[近接あり] ${name}` : name;
+        copyName = name;
         badges = popupFormBadgeHtml(p.shiroHbForm) + castleGenreBadgeHtml(p);
         const aliases = osParseAliases(p.aliases);
         lines = osKv('別名', aliases.length ? aliases.join('、') : '')
@@ -3502,7 +3532,7 @@ function buildSheetHtml(type, label, p, lng, lat) {
     }
 
     const media = photo ? `<div class="os-row">${photo}<div class="os-meta">${lines}</div></div>` : lines;
-    return `${badgeAbove}<div class="os-title">${badges}<span class="os-name">${title}</span>${titleTail}</div>${media}${rowA}${rowB}${pick}${rowC}`;
+    return `${badgeAbove}<div class="os-title">${badges}<span class="os-name" data-copy="${attrEscape(copyName || title)}">${title}</span>${titleTail}</div>${media}${rowA}${rowB}${pick}${rowC}`;
 }
 
 // 城シートに写真を非同期で挿入する
@@ -4600,6 +4630,56 @@ map.on('zoomend', () => { isZooming = false; });
         el.classList.toggle('expanded');
         adjustMapForSheet();
     });
+
+    /* 情報シートのタイトルを長押しでコピーする（GoogleMapで地名を長押しするのと同じ操作）。
+       コピーするのは data-copy に入れた素の名前だけで、左のバッジ（城の形態・ジャンル・
+       カード番号）も、右の評点も、[近接あり]・[配布] のような表示上の注記も入れない。
+       書き込みを「指を離した時」にしているのは、長押し判定の setTimeout の中はユーザー操作の
+       文脈から外れていて、ブラウザによってはクリップボードへの書き込みが拒まれるため。
+       500ms 経った時点では色を変えて合図するだけにして、離した瞬間にコピーする。 */
+    (() => {
+        const body = document.getElementById('obj-sheet-body');
+        let timer = null, ready = null, touched = false;
+        const disarm = () => {
+            if (timer) { clearTimeout(timer); timer = null; }
+            if (ready) { ready.classList.remove('os-name-copying'); ready = null; }
+        };
+        const arm = (el) => {
+            disarm();
+            timer = setTimeout(() => {
+                timer = null;
+                ready = el;
+                el.classList.add('os-name-copying');
+                if (navigator.vibrate) navigator.vibrate(10);
+            }, 500);
+        };
+        const fire = async () => {
+            const el = ready;
+            disarm();
+            if (!el) return;
+            const text = el.dataset.copy || el.textContent.trim();
+            const ok = await copyToClipboard(text);
+            showToast(ok ? `「${text}」をコピーしました` : 'コピーできませんでした');
+        };
+        body.addEventListener('touchstart', e => {
+            const el = e.target.closest('.os-name');
+            if (el) arm(el);
+        }, { passive: true });
+        body.addEventListener('touchmove', disarm, { passive: true });   // スクロールに転じたら取り消す
+        body.addEventListener('touchcancel', disarm);
+        body.addEventListener('touchend', () => {
+            touched = true;                                   // 直後に合成される mouse で二度動かさない
+            setTimeout(() => { touched = false; }, 600);
+            fire();
+        });
+        body.addEventListener('mousedown', e => {
+            const el = e.target.closest('.os-name');
+            if (el && e.button === 0 && !touched) arm(el);
+        });
+        body.addEventListener('mouseup', e => { if (e.button === 0 && !touched) fire(); });
+        body.addEventListener('mouseleave', disarm);
+        body.addEventListener('contextmenu', e => { if (e.target.closest('.os-name')) e.preventDefault(); });
+    })();
 
     // 情報シートを下スワイプで閉じる（3ドロワー共通の実装）
     enableSheetSwipeClose(
