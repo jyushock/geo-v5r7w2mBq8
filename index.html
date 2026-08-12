@@ -510,17 +510,19 @@
         .os-clamp.expanded { display: block; -webkit-line-clamp: unset; overflow: visible; }
         .os-clamp.clampable.expanded::after { content: ' ▲'; }
         /* ══ 食べログの受賞歴（百名店は年ごとの選出で、同じ店が何年も選ばれる） ══
-           年のチップを新しい順に並べる。実データの受賞回数は1〜7回で、
-           7回でも375px幅の1行に折り返し1回で収まる。
-           最新年＝オレンジ（種別色）、それ以外の同部門＝グレー、
-           部門が変わった年だけ白地＋部門名を添える。部門替えは実データで267店あり
+           年のチップを新しい順に並べる。実データの受賞回数は1〜8回。
+           最新年＝オレンジ（#ff6600。食べログボタン btn-tabelog と同じ色。
+           地図のピンや検索結果の種別色 #FF9800 とは別）、それ以外の同部門＝グレー、
+           部門が変わった年だけ白地＋部門名を添える。部門替えは実データで274店あり
            （スイーツ→和菓子・甘味処 / カレー→アジア・エスニック など、
            いまも併存している別の賞をまたいだ受賞）。
+           category は awards[0].g から作るので、オレンジは必ず1店に1つだけ付く
+           （実データ7,442店で確認）。
 
            チップは inline-block で並べる。inline-flex にするとチップの塊が1つの
            インライン箱になり、ラベルと同じ行に流せなくなって行数が増えるため
-           （実測 7,013店: inline は 1行6,810/2行65/3行138、
-             inline-flex は 1行6,820/2行77/4行116）。
+           （実測: inline は 1行7,131/2行195/3行116、
+             inline-flex は 4行になる店が116件出る）。
            なお os-clamp（2行で省略）はこの行には効かない。-webkit-line-clamp は
            inline-block の子を含む行には掛からないため（同じ枠に長文を入れると
            32pxで切れることは確認済み。この行だけ切れない）。
@@ -533,6 +535,11 @@
                 background: #E6E2D8; color: #5a5344; font-variant-numeric: tabular-nums; white-space: nowrap; }
         .aw-y.aw-now { background: #ff6600; color: #fff; }
         .aw-y.aw-other { background: #fff; color: #7a7365; border: 1px solid #d8d3c7; }
+        /* 受賞歴の行は、項目名チップ(14.25px)と年チップ(18px)で背が違う。
+           既定のベースライン揃えだと上端が揃ってしまい、背の低い項目名が
+           1.88px 上にずれて見える（実測）。この行だけ互いの中心で揃える。
+           他の行の値は文字なので、既定の vertical-align: 1px のままでよい。 */
+        .os-line-aw .os-k, .os-line-aw .aw-y { vertical-align: middle; }
         /* 評点はタイトル行の右端に置く。項目行に足すと1行増えるうえ、
            店名（実データの67%が20字超で2行になる）の直下に数字が並んで店名より目立つため。 */
         .os-rating { margin-left: auto; flex-shrink: 0; display: inline-flex; align-items: baseline; gap: 3px; }
@@ -3217,16 +3224,17 @@ function mhCardJumpHtml(cardFeatures, key, lng, lat, label) {
 // ══════════════════════════════════════════════════════════════
 
 // テキスト1行（2行を超える分は省略。タップで全文表示）
-function osLine(html) {
-    return html ? `<div class="os-line os-clamp">${html}</div>` : '';
+// cls: 行ごとの追加クラス（受賞歴の行だけ中央揃えにするなど）
+function osLine(html, cls) {
+    return html ? `<div class="os-line os-clamp${cls ? ' ' + cls : ''}">${html}</div>` : '';
 }
 // ラベルチップ＋値。値が空なら行ごと出さない。
 // 全種別のメタ行をこの形に統一しているので、新しい項目もこれで足すこと。
 function osKvHtml(label, value) {
     return `<span class="os-k">${label}</span>${value}`;
 }
-function osKv(label, value) {
-    return value ? osLine(osKvHtml(label, value)) : '';
+function osKv(label, value, cls) {
+    return value ? osLine(osKvHtml(label, value), cls) : '';
 }
 // 写真枠。urlが空なら枠ごと出さない。variant で枠の形を切り替える:
 //   ''(既定) 128×128にcover      … ポケふた(750×750)のような正方形向け
@@ -3448,7 +3456,7 @@ function buildSheetHtml(type, label, p, lng, lat) {
         // ように複数）を優先する。取れていない店は従来どおり name から切り出した1つを出す。
         lines = osKv('ジャンル', p.cuisine || sp.genre)
               + osKv('100名店', p.category)
-              + osKv('受賞歴', shopAwardsHtml(p))
+              + osKv('受賞歴', shopAwardsHtml(p), 'os-line-aw')
               + osKv('予算', p.priceRange)
               + osKv('最寄り', sp.station)
               + osKv('住所', p.address);
