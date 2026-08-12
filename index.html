@@ -823,7 +823,7 @@
         }
         .nearby-list-btn:disabled { opacity: 0.5; cursor: default; }
         .nlb-ic {
-            width: 34px; height: 34px; border-radius: 9px; background: #786383;   /* 城主の入口。城アイコンなので城の種別色に合わせる */
+            width: 34px; height: 34px; border-radius: 9px; background: #8A8A8A;   /* 城主の入口。城アイコンなので城の種別色に合わせる */
             display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
         /* お城アイコンは枠いっぱいに描く。他の場所（地図・検索結果・周辺検索・履歴）でも
@@ -3948,7 +3948,7 @@ const objClickLayers = [];
 // 地図上のピン（カードの面は MHCARD_FACE_COLOR の #B87333）と食い違うため、
 // ピンの見た目に合わせてマンホール系の #B87333 を使う。
 const OBJ_TYPE_COLOR = {
-    castle: '#786383', michi: '#0B499D', shop: '#FFAA00',   /* 色は食べログのアイコンの地色 */
+    castle: '#8A8A8A', michi: '#0B499D', shop: '#FFAA00',   /* 色は食べログのアイコンの地色 */
     manhole: '#B87333', mhcard: '#B87333', pokefuta: '#FBBC04',
 };
 function objRingColor(type, p) {
@@ -4460,8 +4460,8 @@ map.on('zoomend', () => { isZooming = false; });
                    丸を塗る color / clusterColor は使わない。持たせると「変えても反映されない」
                    設定になるため置かない。検索結果や履歴のアイコン色は typeConfig 側で持つ。 */
                 { id: 'mhcards',                           icon: 'mhcard-icon',   type: 'mhcard' },
-                { id: 'castles',         color: '#786383', icon: 'castle-icon',   type: 'castle',  clusterColor: '#786383' },
-                { id: 'castles-famous',  color: '#786383', icon: 'castle-icon',   type: 'castle',  clusterColor: '#786383', noCluster: true },
+                { id: 'castles',         color: '#8A8A8A', icon: 'castle-icon',   type: 'castle',  clusterColor: '#8A8A8A' },
+                { id: 'castles-famous',  color: '#8A8A8A', icon: 'castle-icon',   type: 'castle',  clusterColor: '#8A8A8A', noCluster: true },
             ];
 
             // 地図の空きタップで情報シートを閉じる判定に使う、オブジェクトのクリック対象レイヤー一覧
@@ -4892,7 +4892,7 @@ map.on('zoomend', () => { isZooming = false; });
         pokefuta: { color: '#FBBC04', img: 'manhole.png', label: 'ポケふた' },
         manhole:  { color: '#B87333', img: 'manhole.png', label: 'マンホール' },
         mhcard:   { color: '#1565C0', img: 'manhole.png', label: 'マンホールカード配布' },
-        castle:   { color: '#786383', img: 'castle.png',  label: 'お城' },
+        castle:   { color: '#8A8A8A', img: 'castle.png',  label: 'お城' },
         michi:    { color: '#0B499D', img: 'michi.png',   label: '道の駅' },   /* 色は道の駅紋章の地色 */
         shop:     { color: '#FFAA00', img: 'tabe.png',    label: '食べログ' },   /* 色は食べログのアイコンの地色 */
         place:    { color: '#4285F4', icon: '📍',        label: '地名' },
