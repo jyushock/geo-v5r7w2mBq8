@@ -107355,33 +107355,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.53233997608993,
-          34.681252437197344
-        ]
-      },
-      "properties": {
-        "name": "ばん珈琲店 - 森ノ宮（喫茶店）",
-        "url": "https://tabelog.com/osaka/A2701/A270107/27037023/",
-        "category": "喫茶",
-        "address": "大阪府大阪市中央区森之宮中央1-16-21",
-        "rating": "3.68",
-        "ratingCount": "209",
-        "priceRange": "～￥999",
-        "cuisine": "喫茶店、カフェ",
-        "awards": [
-          {
-            "y": 2022,
-            "t": "kissaten",
-            "g": "喫茶"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           135.5017623872023,
           34.67423933799743
         ]
@@ -108514,37 +108487,6 @@ const shopData = {
         "rating": "3.70",
         "ratingCount": "764",
         "priceRange": "～￥999",
-        "cuisine": "喫茶店、カフェ、パン",
-        "awards": [
-          {
-            "y": 2022,
-            "t": "kissaten",
-            "g": "喫茶"
-          },
-          {
-            "y": 2021,
-            "t": "kissaten",
-            "g": "喫茶"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.76924288332435,
-          35.691493437905024
-        ]
-      },
-      "properties": {
-        "name": "珈琲専門店 エース（コーヒーセンモンテン・エース） - 神田（喫茶店）",
-        "url": "https://tabelog.com/tokyo/A1310/A131002/13020976/",
-        "category": "喫茶",
-        "address": "東京都千代田区内神田3-10-6",
-        "rating": "3.65",
-        "ratingCount": "761",
         "cuisine": "喫茶店、カフェ、パン",
         "awards": [
           {
@@ -151641,38 +151583,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.14945057920517,
-          35.24068303799396
-        ]
-      },
-      "properties": {
-        "name": "お食事処 大原 - 早川（食堂）",
-        "url": "https://tabelog.com/kanagawa/A1409/A140901/14023879/",
-        "category": "食堂",
-        "address": "神奈川県小田原市早川1-6-10",
-        "rating": "3.71",
-        "ratingCount": "678",
-        "priceRange": "￥1,000～￥1,999",
-        "cuisine": "食堂、海鮮",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "shokudo",
-            "g": "食堂"
-          },
-          {
-            "y": 2021,
-            "t": "teishoku",
-            "g": "食堂"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           133.45666212625306,
           33.44833197812473
         ]
@@ -151757,33 +151667,6 @@ const shopData = {
             "t": "shokudo",
             "g": "食堂"
           },
-          {
-            "y": 2024,
-            "t": "shokudo",
-            "g": "食堂"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.75835127896914,
-          34.9819820370783
-        ]
-      },
-      "properties": {
-        "name": "殿田 - 九条（食堂）",
-        "url": "https://tabelog.com/kyoto/A2601/A260604/26011323/",
-        "category": "食堂",
-        "address": "京都府京都市南区東九条上殿田町15",
-        "rating": "3.66",
-        "ratingCount": "617",
-        "priceRange": "～￥999",
-        "cuisine": "食堂、うどん",
-        "awards": [
           {
             "y": 2024,
             "t": "shokudo",
@@ -153151,38 +153034,6 @@ const shopData = {
           {
             "y": 2024,
             "t": "shokudo",
-            "g": "食堂"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.7716931831008,
-          35.66953483791976
-        ]
-      },
-      "properties": {
-        "name": "季節料理 魚竹（うおたけ） - 築地（食堂）",
-        "url": "https://tabelog.com/tokyo/A1313/A131301/13002300/",
-        "category": "食堂",
-        "address": "東京都中央区築地1-9-1",
-        "rating": "3.69",
-        "ratingCount": "710",
-        "priceRange": "￥6,000～￥7,999",
-        "cuisine": "食堂、居酒屋、海鮮",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "shokudo",
-            "g": "食堂"
-          },
-          {
-            "y": 2021,
-            "t": "teishoku",
             "g": "食堂"
           }
         ]
@@ -157243,33 +157094,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.18861369610792,
-          34.69100893816096
-        ]
-      },
-      "properties": {
-        "name": "シリミリ（Sirimiri） - 元町（ＪＲ）（スペイン料理）",
-        "url": "https://tabelog.com/hyogo/A2801/A280102/28046613/",
-        "category": "スペイン料理",
-        "address": "兵庫県神戸市中央区北長狭通3-4-3 アネックス大同 1F東",
-        "rating": "3.57",
-        "ratingCount": "86",
-        "priceRange": "￥6,000～￥7,999",
-        "cuisine": "スペイン料理、バル",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "spanish",
-            "g": "スペイン料理"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           135.24071865777915,
           34.71323310788953
         ]
@@ -158956,7 +158780,7 @@ const shopData = {
         "category": "スペイン料理",
         "address": "東京都渋谷区渋谷2-24-12 渋谷スクランブルスクエア 13F",
         "rating": "3.52",
-        "ratingCount": "1579",
+        "ratingCount": "1580",
         "priceRange": "￥5,000～￥5,999",
         "cuisine": "スペイン料理、イノベーティブ",
         "tel": "03-6452-6227",
@@ -160119,33 +159943,6 @@ const shopData = {
             "y": 2017,
             "t": "curry",
             "g": "カレー"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.76800128320417,
-          35.67951033791223
-        ]
-      },
-      "properties": {
-        "name": "コロンビア8 八重洲地下街店（Columbia8） - 東京（カレー）",
-        "url": "https://tabelog.com/tokyo/A1302/A130202/13268002/",
-        "category": "カレー（東京）",
-        "address": "東京都中央区八重洲2-1 八重洲地下街南1 B1F",
-        "rating": "3.70",
-        "ratingCount": "1290",
-        "priceRange": "￥1,000～￥1,999",
-        "cuisine": "カレー",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "curry_tokyo",
-            "g": "カレー（東京）"
           }
         ]
       }
@@ -167046,48 +166843,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.43495398813874,
-          43.019307522646066
-        ]
-      },
-      "properties": {
-        "name": "カレー気分（カレーキブン） - 南郷１８丁目（スープカレー）",
-        "url": "https://tabelog.com/hokkaido/A0101/A010304/1000874/",
-        "category": "カレー（東日本）",
-        "address": "北海道札幌市清田区北野6条2-11-4 尾崎ビル 1F",
-        "rating": "3.61",
-        "ratingCount": "172",
-        "priceRange": "￥1,000～￥1,999",
-        "cuisine": "スープカレー、カレー",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "curry_east",
-            "g": "カレー（東日本）"
-          },
-          {
-            "y": 2023,
-            "t": "curry_east",
-            "g": "カレー（東日本）"
-          },
-          {
-            "y": 2020,
-            "t": "curry_east",
-            "g": "カレー（東日本）"
-          },
-          {
-            "y": 2019,
-            "t": "curry_east",
-            "g": "カレー（東日本）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           141.43146856713102,
           42.99875248459877
         ]
@@ -170706,48 +170461,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.50559937626937,
-          34.69715953717872
-        ]
-      },
-      "properties": {
-        "name": "モリ商店 - なにわ橋（カレー）",
-        "url": "https://tabelog.com/osaka/A2701/A270103/27046303/",
-        "category": "カレー（西日本）",
-        "address": "大阪府大阪市北区西天満4-3-9 和光ビル1F",
-        "rating": "3.66",
-        "ratingCount": "320",
-        "priceRange": "￥1,000～￥1,999",
-        "cuisine": "カレー、カフェ",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "curry_west",
-            "g": "カレー（西日本）"
-          },
-          {
-            "y": 2023,
-            "t": "curry_west",
-            "g": "カレー（西日本）"
-          },
-          {
-            "y": 2020,
-            "t": "curry_west",
-            "g": "カレー（西日本）"
-          },
-          {
-            "y": 2019,
-            "t": "curry_west",
-            "g": "カレー（西日本）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           135.51255740739512,
           34.69407866798826
         ]
@@ -171335,33 +171048,6 @@ const shopData = {
           },
           {
             "y": 2023,
-            "t": "curry_west",
-            "g": "カレー（西日本）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.51150547618744,
-          34.68946043718549
-        ]
-      },
-      "properties": {
-        "name": "Numb（ナム） - 北浜（カレー）",
-        "url": "https://tabelog.com/osaka/A2701/A270104/27117930/",
-        "category": "カレー（西日本）",
-        "address": "大阪府大阪市中央区東高麗橋1-32 天神橋ビル 2F",
-        "rating": "3.63",
-        "ratingCount": "236",
-        "priceRange": "￥2,000～￥2,999",
-        "cuisine": "カレー、アジア・エスニック",
-        "awards": [
-          {
-            "y": 2024,
             "t": "curry_west",
             "g": "カレー（西日本）"
           }
@@ -172551,47 +172237,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.5086747759022,
-          34.66102373720265
-        ]
-      },
-      "properties": {
-        "name": "ノムソン カリー（NOMSON CURRY） - 四天王寺前夕陽ケ丘（カレー）",
-        "url": "https://tabelog.com/osaka/A2701/A270202/27086130/",
-        "category": "カレー（西日本）",
-        "address": "大阪府大阪市浪速区日本橋東1-11-2",
-        "rating": "3.66",
-        "ratingCount": "490",
-        "cuisine": "カレー、カフェ、喫茶店",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "curry_west",
-            "g": "カレー（西日本）"
-          },
-          {
-            "y": 2023,
-            "t": "curry_west",
-            "g": "カレー（西日本）"
-          },
-          {
-            "y": 2020,
-            "t": "curry_west",
-            "g": "カレー（西日本）"
-          },
-          {
-            "y": 2019,
-            "t": "curry_west",
-            "g": "カレー（西日本）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           135.5141521758501,
           34.65624913720743
         ]
@@ -172862,37 +172507,6 @@ const shopData = {
             "t": "curry_west",
             "g": "カレー（西日本）"
           },
-          {
-            "y": 2024,
-            "t": "curry_west",
-            "g": "カレー（西日本）"
-          },
-          {
-            "y": 2023,
-            "t": "curry_west",
-            "g": "カレー（西日本）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.49687687657863,
-          34.727173637156895
-        ]
-      },
-      "properties": {
-        "name": "スパイスカレー旬香唐（しゅんかとう） - 西中島南方（カレー）",
-        "url": "https://tabelog.com/osaka/A2701/A270301/27098909/",
-        "category": "カレー（西日本）",
-        "address": "大阪府大阪市淀川区西中島4-5-4 ワイズコート新大阪 1F",
-        "rating": "3.65",
-        "ratingCount": "315",
-        "cuisine": "カレー",
-        "awards": [
           {
             "y": 2024,
             "t": "curry_west",
@@ -174463,7 +174077,7 @@ const shopData = {
         "category": "アジア・エスニック（東京）",
         "address": "東京都港区赤坂9-7-4 東京ミッドタウン ガレリア ガーデンテラス 1F",
         "rating": "3.50",
-        "ratingCount": "1399",
+        "ratingCount": "1400",
         "priceRange": "￥5,000～￥5,999",
         "cuisine": "インド料理、ワインバー、ダイニングバー",
         "tel": "03-5647-8305",
@@ -175011,43 +174625,6 @@ const shopData = {
             "y": 2017,
             "t": "curry",
             "g": "カレー"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.74505388342226,
-          35.69950763789224
-        ]
-      },
-      "properties": {
-        "name": "オールドタイランド 飯田橋店 - 飯田橋（タイ料理）",
-        "url": "https://tabelog.com/tokyo/A1309/A130905/13039587/",
-        "category": "アジア・エスニック（東京）",
-        "address": "東京都千代田区富士見2-3-8 横江ビル２階",
-        "rating": "3.65",
-        "ratingCount": "1025",
-        "priceRange": "￥3,000～￥3,999",
-        "cuisine": "タイ料理、カレー、居酒屋",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "asia_ethnic_tokyo",
-            "g": "アジア・エスニック（東京）"
-          },
-          {
-            "y": 2023,
-            "t": "asia_ethnic_tokyo",
-            "g": "アジア・エスニック（東京）"
-          },
-          {
-            "y": 2022,
-            "t": "asia_ethnic_tokyo",
-            "g": "アジア・エスニック（東京）"
           }
         ]
       }
@@ -177359,43 +176936,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.60171388356483,
-          35.70367823784393
-        ]
-      },
-      "properties": {
-        "name": "對馬流 南インド系辛口料理店 タリカロ - 西荻窪（インド料理）",
-        "url": "https://tabelog.com/tokyo/A1319/A131907/13255518/",
-        "category": "アジア・エスニック（東京）",
-        "address": "東京都杉並区西荻南3-15-13 高梨ビル 1F",
-        "rating": "3.67",
-        "ratingCount": "296",
-        "priceRange": "￥3,000～￥3,999",
-        "cuisine": "インド料理、インドカレー",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "asia_ethnic_tokyo",
-            "g": "アジア・エスニック（東京）"
-          },
-          {
-            "y": 2023,
-            "t": "asia_ethnic_tokyo",
-            "g": "アジア・エスニック（東京）"
-          },
-          {
-            "y": 2022,
-            "t": "asia_ethnic_tokyo",
-            "g": "アジア・エスニック（東京）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.66806724477465,
           35.713035928664496
         ]
@@ -177853,33 +177393,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.88320058004572,
-          35.16662723731927
-        ]
-      },
-      "properties": {
-        "name": "YAAB THAI en CASA - 近鉄名古屋（アジア・エスニック）",
-        "url": "https://tabelog.com/aichi/A2301/A230101/23085715/",
-        "category": "アジア・エスニック（東日本）",
-        "address": "愛知県名古屋市中村区太閤1-6-5 角屋ビル",
-        "rating": "3.58",
-        "ratingCount": "236",
-        "priceRange": "￥4,000～￥4,999",
-        "cuisine": "アジア・エスニック、ダイニングバー、中華料理",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "asia_ethnic_east",
-            "g": "アジア・エスニック（東日本）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           136.8866347806357,
           35.17702923806251
         ]
@@ -177955,7 +177468,7 @@ const shopData = {
         "category": "アジア・エスニック（東日本）",
         "address": "愛知県名古屋市中区錦3-18-13 アミューズ錦 1F",
         "rating": "3.45",
-        "ratingCount": "424",
+        "ratingCount": "426",
         "priceRange": "￥2,000～￥2,999",
         "cuisine": "タイ料理、カレー、弁当",
         "tel": "052-957-7889",
@@ -180409,38 +179922,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.42978670102565,
-          35.32534931883484
-        ]
-      },
-      "properties": {
-        "name": "ボージャン（bhojan） - 辻堂（インド料理）",
-        "url": "https://tabelog.com/kanagawa/A1404/A140406/14002527/",
-        "category": "アジア・エスニック（東日本）",
-        "address": "神奈川県茅ヶ崎市浜須賀1-44",
-        "rating": "3.60",
-        "ratingCount": "229",
-        "priceRange": "￥4,000～￥4,999",
-        "cuisine": "インド料理、インドカレー",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "asia_ethnic_east",
-            "g": "アジア・エスニック（東日本）"
-          },
-          {
-            "y": 2023,
-            "t": "asia_ethnic_east",
-            "g": "アジア・エスニック（東日本）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.31628557979388,
           35.310538038002726
         ]
@@ -181632,43 +181113,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.34055284994332,
-          38.25142600726648
-        ]
-      },
-      "properties": {
-        "name": "ジャイ（JAY） - 山形（インド料理）",
-        "url": "https://tabelog.com/yamagata/A0601/A060101/6002608/",
-        "category": "アジア・エスニック（東日本）",
-        "address": "山形県山形市七日町2-3-30",
-        "rating": "3.39",
-        "ratingCount": "89",
-        "priceRange": "￥2,000～￥2,999",
-        "cuisine": "インド料理、インドカレー",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "asia_ethnic_east",
-            "g": "アジア・エスニック（東日本）"
-          },
-          {
-            "y": 2022,
-            "t": "asia_ethnic_east",
-            "g": "アジア・エスニック（東日本）"
-          },
-          {
-            "y": 2019,
-            "t": "curry_east",
-            "g": "カレー（東日本）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           138.32767679733465,
           35.87345917813573
         ]
@@ -181688,53 +181132,6 @@ const shopData = {
             "y": 2024,
             "t": "asia_ethnic_east",
             "g": "アジア・エスニック（東日本）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          130.39627050541927,
-          33.58874701630043
-        ]
-      },
-      "properties": {
-        "name": "不思議香菜 ツナパハ（TUNAPAHA） - 西鉄福岡（天神）（スリランカ料理）",
-        "url": "https://tabelog.com/fukuoka/A4001/A400103/40000116/",
-        "category": "アジア・エスニック（西日本）",
-        "address": "福岡県福岡市中央区大名2-1-50 大産西通ビル 5Ｆ",
-        "rating": "3.50",
-        "ratingCount": "720",
-        "priceRange": "￥1,000～￥1,999",
-        "cuisine": "スリランカ料理、カレー",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "asia_ethnic_west",
-            "g": "アジア・エスニック（西日本）"
-          },
-          {
-            "y": 2023,
-            "t": "asia_ethnic_west",
-            "g": "アジア・エスニック（西日本）"
-          },
-          {
-            "y": 2022,
-            "t": "asia_ethnic_west",
-            "g": "アジア・エスニック（西日本）"
-          },
-          {
-            "y": 2020,
-            "t": "curry_west",
-            "g": "カレー（西日本）"
-          },
-          {
-            "y": 2019,
-            "t": "curry_west",
-            "g": "カレー（西日本）"
           }
         ]
       }
@@ -184294,53 +183691,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.50955887637406,
-          34.70779753717323
-        ]
-      },
-      "properties": {
-        "name": "カンティプール 天五店 - 天神橋筋六丁目（ネパール料理）",
-        "url": "https://tabelog.com/osaka/A2701/A270103/27000526/",
-        "category": "アジア・エスニック（西日本）",
-        "address": "大阪府大阪市北区黒崎町7-13",
-        "rating": "3.55",
-        "ratingCount": "550",
-        "priceRange": "￥1,000～￥1,999",
-        "cuisine": "ネパール料理、カレー",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "asia_ethnic_west",
-            "g": "アジア・エスニック（西日本）"
-          },
-          {
-            "y": 2023,
-            "t": "asia_ethnic_west",
-            "g": "アジア・エスニック（西日本）"
-          },
-          {
-            "y": 2022,
-            "t": "asia_ethnic_west",
-            "g": "アジア・エスニック（西日本）"
-          },
-          {
-            "y": 2020,
-            "t": "curry_west",
-            "g": "カレー（西日本）"
-          },
-          {
-            "y": 2019,
-            "t": "curry_west",
-            "g": "カレー（西日本）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           135.51244352107935,
           34.70797166914407
         ]
@@ -185117,7 +184467,7 @@ const shopData = {
         "category": "アジア・エスニック（西日本）",
         "address": "大阪府大阪市西区北堀江1-2-17",
         "rating": "3.52",
-        "ratingCount": "887",
+        "ratingCount": "888",
         "priceRange": "￥2,000～￥2,999",
         "cuisine": "アジア・エスニック、カレー、ダイニングバー",
         "tel": "06-6534-2600",
@@ -187843,48 +187193,6 @@ const shopData = {
         "awards": [
           {
             "y": 2024,
-            "t": "unagi",
-            "g": "うなぎ"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.65161658511983,
-          35.861081937759856
-        ]
-      },
-      "properties": {
-        "name": "うなぎ 浜名（うなぎ はまな） - 浦和（うなぎ）",
-        "url": "https://tabelog.com/saitama/A1101/A110102/11003229/",
-        "category": "うなぎ",
-        "address": "埼玉県さいたま市浦和区仲町2-9-2 インフィニティうらわ\u3000１Ｆ",
-        "rating": "3.73",
-        "ratingCount": "337",
-        "priceRange": "￥8,000～￥9,999",
-        "cuisine": "うなぎ",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "unagi",
-            "g": "うなぎ"
-          },
-          {
-            "y": 2022,
-            "t": "unagi",
-            "g": "うなぎ"
-          },
-          {
-            "y": 2019,
-            "t": "unagi",
-            "g": "うなぎ"
-          },
-          {
-            "y": 2018,
             "t": "unagi",
             "g": "うなぎ"
           }
@@ -193399,7 +192707,7 @@ const shopData = {
         "category": "中国料理（東京）",
         "address": "東京都中央区銀座7-8-15 第2新橋会館 8F",
         "rating": "3.54",
-        "ratingCount": "1076",
+        "ratingCount": "1077",
         "priceRange": "￥6,000～￥7,999",
         "cuisine": "中華料理、四川料理",
         "tel": "03-6280-6464",
@@ -195221,38 +194529,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.72333588295066,
-          35.65131263791592
-        ]
-      },
-      "properties": {
-        "name": "広尾はしづめ - 広尾（中華料理）",
-        "url": "https://tabelog.com/tokyo/A1307/A130703/13141454/",
-        "category": "中国料理（東京）",
-        "address": "東京都港区南麻布5-16-10 カルチェブラン広尾 2F",
-        "rating": "3.65",
-        "ratingCount": "542",
-        "priceRange": "￥10,000～￥14,999",
-        "cuisine": "中華料理、担々麺",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "chinese_tokyo",
-            "g": "中国料理（東京）"
-          },
-          {
-            "y": 2021,
-            "t": "chinese_tokyo",
-            "g": "中国料理（東京）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.72837133409143,
           35.649582908724
         ]
@@ -196303,43 +195579,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.78776768338994,
-          35.69927613790598
-        ]
-      },
-      "properties": {
-        "name": "馥香 浅草橋本店（フーシャン アサクサバシホンテン） - 浅草橋（中華料理）",
-        "url": "https://tabelog.com/tokyo/A1311/A131103/13010780/",
-        "category": "中国料理（東京）",
-        "address": "東京都台東区柳橋2-14-2 アリス・マナーガーデン浅草橋\u3000１Ｆ",
-        "rating": "3.68",
-        "ratingCount": "535",
-        "priceRange": "￥6,000～￥7,999",
-        "cuisine": "中華料理、飲茶・点心、担々麺",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "chinese_tokyo",
-            "g": "中国料理（東京）"
-          },
-          {
-            "y": 2023,
-            "t": "chinese_tokyo",
-            "g": "中国料理（東京）"
-          },
-          {
-            "y": 2021,
-            "t": "chinese_tokyo",
-            "g": "中国料理（東京）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.77154668310422,
           35.669865837919495
         ]
@@ -196527,43 +195766,6 @@ const shopData = {
             "t": "chinese_tokyo",
             "g": "中国料理（東京）"
           },
-          {
-            "y": 2024,
-            "t": "chinese_tokyo",
-            "g": "中国料理（東京）"
-          },
-          {
-            "y": 2023,
-            "t": "chinese_tokyo",
-            "g": "中国料理（東京）"
-          },
-          {
-            "y": 2021,
-            "t": "chinese_tokyo",
-            "g": "中国料理（東京）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.712415082835,
-          35.6391038379202
-        ]
-      },
-      "properties": {
-        "name": "サエキ飯店 - 目黒（中華料理）",
-        "url": "https://tabelog.com/tokyo/A1316/A131601/13233311/",
-        "category": "中国料理（東京）",
-        "address": "東京都目黒区三田2-10-30 荒井ビル 1F",
-        "rating": "4.20",
-        "ratingCount": "155",
-        "priceRange": "￥15,000～￥19,999",
-        "cuisine": "中華料理",
-        "awards": [
           {
             "y": 2024,
             "t": "chinese_tokyo",
@@ -196847,33 +196049,6 @@ const shopData = {
           },
           {
             "y": 2021,
-            "t": "chinese_tokyo",
-            "g": "中国料理（東京）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.68249932698998,
-          35.66927752028576
-        ]
-      },
-      "properties": {
-        "name": "竹韻飄香（ジュユィンピャオシャン） - 代々木上原（四川料理）",
-        "url": "https://tabelog.com/tokyo/A1318/A131811/13264806/",
-        "category": "中国料理（東京）",
-        "address": "東京都渋谷区上原1-17-14 LAビル 1F",
-        "rating": "3.66",
-        "ratingCount": "97",
-        "priceRange": "￥8,000～￥9,999",
-        "cuisine": "四川料理、中華料理、汁なし担々麺",
-        "awards": [
-          {
-            "y": 2024,
             "t": "chinese_tokyo",
             "g": "中国料理（東京）"
           }
@@ -198019,38 +197194,6 @@ const shopData = {
           },
           {
             "y": 2021,
-            "t": "chinese_east",
-            "g": "中国料理（東日本）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          140.09617672384925,
-          39.726180035446625
-        ]
-      },
-      "properties": {
-        "name": "盛（サカリ） - 泉外旭川（四川料理）",
-        "url": "https://tabelog.com/akita/A0501/A050101/5000025/",
-        "category": "中国料理（東日本）",
-        "address": "秋田県秋田市八橋本町5-6-1",
-        "rating": "3.71",
-        "ratingCount": "291",
-        "priceRange": "￥1,000～￥1,999",
-        "cuisine": "四川料理",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "chinese_east",
-            "g": "中国料理（東日本）"
-          },
-          {
-            "y": 2023,
             "t": "chinese_east",
             "g": "中国料理（東日本）"
           }
@@ -199452,7 +198595,7 @@ const shopData = {
         "category": "中国料理（東日本）",
         "address": "神奈川県横浜市中区山下町138",
         "rating": "3.57",
-        "ratingCount": "1946",
+        "ratingCount": "1947",
         "priceRange": "￥2,000～￥2,999",
         "cuisine": "四川料理、刀削麺、火鍋",
         "tel": "045-211-2866",
@@ -200291,7 +199434,7 @@ const shopData = {
         "category": "中国料理（東日本）",
         "address": "長野県北佐久郡軽井沢町軽井沢1151-3",
         "rating": "3.55",
-        "ratingCount": "305",
+        "ratingCount": "306",
         "priceRange": "￥10,000～￥14,999",
         "cuisine": "中華料理、飲茶・点心、ラーメン",
         "tel": "0267-42-0196",
@@ -202972,38 +202115,6 @@ const shopData = {
           },
           {
             "y": 2021,
-            "t": "chinese_west",
-            "g": "中国料理（西日本）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.49632217630844,
-          34.70038623717372
-        ]
-      },
-      "properties": {
-        "name": "大阪 聘珍樓（オオサカヘイチンロウ） - 西梅田（中華料理）",
-        "url": "https://tabelog.com/osaka/A2701/A270101/27005231/",
-        "category": "中国料理（西日本）",
-        "address": "大阪府大阪市北区梅田1-8-16 ヒルトンプラザイースト ７Ｆ",
-        "rating": "3.65",
-        "ratingCount": "464",
-        "priceRange": "￥10,000～￥14,999",
-        "cuisine": "中華料理、飲茶・点心、小籠包",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "chinese_west",
-            "g": "中国料理（西日本）"
-          },
-          {
-            "y": 2023,
             "t": "chinese_west",
             "g": "中国料理（西日本）"
           }
@@ -205809,57 +204920,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.87765290842873,
-          38.25376663663066
-        ]
-      },
-      "properties": {
-        "name": "とんかつ かつせい - 五橋（とんかつ）",
-        "url": "https://tabelog.com/miyagi/A0401/A040101/4000211/",
-        "category": "とんかつ",
-        "address": "宮城県仙台市青葉区北目町7-25",
-        "rating": "3.71",
-        "ratingCount": "997",
-        "cuisine": "とんかつ、かつ丼",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "tonkatsu",
-            "g": "とんかつ"
-          },
-          {
-            "y": 2022,
-            "t": "tonkatsu",
-            "g": "とんかつ"
-          },
-          {
-            "y": 2021,
-            "t": "tonkatsu",
-            "g": "とんかつ"
-          },
-          {
-            "y": 2019,
-            "t": "tonkatsu",
-            "g": "とんかつ"
-          },
-          {
-            "y": 2018,
-            "t": "tonkatsu",
-            "g": "とんかつ"
-          },
-          {
-            "y": 2017,
-            "t": "tonkatsu",
-            "g": "とんかつ"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           138.2491003326835,
           36.39754571777785
         ]
@@ -206261,7 +205321,7 @@ const shopData = {
         "category": "とんかつ",
         "address": "大阪府大阪市城東区今福東3-3-23",
         "rating": "3.60",
-        "ratingCount": "658",
+        "ratingCount": "659",
         "priceRange": "￥8,000～￥9,999",
         "cuisine": "とんかつ、洋食、ステーキ",
         "tel": "06-6934-8425",
@@ -206450,58 +205510,6 @@ const shopData = {
           },
           {
             "y": 2022,
-            "t": "tonkatsu",
-            "g": "とんかつ"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          137.72925392663953,
-          34.70651665761756
-        ]
-      },
-      "properties": {
-        "name": "幸楽（こうらく） - 第一通り（とんかつ）",
-        "url": "https://tabelog.com/shizuoka/A2202/A220201/22000181/",
-        "category": "とんかつ",
-        "address": "静岡県浜松市中央区肴町317-13",
-        "rating": "3.71",
-        "ratingCount": "714",
-        "priceRange": "￥2,000～￥2,999",
-        "cuisine": "とんかつ、コロッケ",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "tonkatsu",
-            "g": "とんかつ"
-          },
-          {
-            "y": 2022,
-            "t": "tonkatsu",
-            "g": "とんかつ"
-          },
-          {
-            "y": 2021,
-            "t": "tonkatsu",
-            "g": "とんかつ"
-          },
-          {
-            "y": 2019,
-            "t": "tonkatsu",
-            "g": "とんかつ"
-          },
-          {
-            "y": 2018,
-            "t": "tonkatsu",
-            "g": "とんかつ"
-          },
-          {
-            "y": 2017,
             "t": "tonkatsu",
             "g": "とんかつ"
           }
@@ -206914,37 +205922,6 @@ const shopData = {
           },
           {
             "y": 2024,
-            "t": "tonkatsu",
-            "g": "とんかつ"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.77629768326014,
-          35.685624737911
-        ]
-      },
-      "properties": {
-        "name": "かつ平（かつへい） - 三越前（とんかつ）",
-        "url": "https://tabelog.com/tokyo/A1302/A130202/13006321/",
-        "category": "とんかつ",
-        "address": "東京都中央区日本橋本町1-2-3",
-        "rating": "3.50",
-        "ratingCount": "426",
-        "cuisine": "とんかつ",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "tonkatsu",
-            "g": "とんかつ"
-          },
-          {
-            "y": 2021,
             "t": "tonkatsu",
             "g": "とんかつ"
           }
@@ -208399,7 +207376,7 @@ const shopData = {
         "category": "とんかつ",
         "address": "東京都目黒区目黒1-6-15 1F",
         "rating": "3.65",
-        "ratingCount": "1663",
+        "ratingCount": "1664",
         "priceRange": "￥2,000～￥2,999",
         "cuisine": "とんかつ、かつ丼",
         "tel": "03-3491-9470",
@@ -209822,33 +208799,6 @@ const shopData = {
           },
           {
             "y": 2017,
-            "t": "hamburger",
-            "g": "ハンバーガー"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          140.7320899440603,
-          41.7712196343503
-        ]
-      },
-      "properties": {
-        "name": "バーガーショップホットボックス（BurgerShop HOTBOX） - 松風町（ハンバーガー）",
-        "url": "https://tabelog.com/hokkaido/A0105/A010501/1044607/",
-        "category": "ハンバーガー",
-        "address": "北海道函館市松風町3-11",
-        "rating": "3.65",
-        "ratingCount": "156",
-        "priceRange": "￥1,000～￥1,999",
-        "cuisine": "ハンバーガー、ダイニングバー、カフェ",
-        "awards": [
-          {
-            "y": 2024,
             "t": "hamburger",
             "g": "ハンバーガー"
           }
@@ -252655,38 +251605,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.76906876793402,
-          35.6821287689551
-        ]
-      },
-      "properties": {
-        "name": "カーラ・アウレリア 大丸東京店（CARA AURELIA） - 東京（パン）",
-        "url": "https://tabelog.com/tokyo/A1302/A130201/13044993/",
-        "category": "パン（東京）",
-        "address": "東京都千代田区丸の内1-9-1 大丸東京店 B1F",
-        "rating": "3.75",
-        "ratingCount": "650",
-        "priceRange": "～￥999",
-        "cuisine": "パン、サンドイッチ",
-        "awards": [
-          {
-            "y": 2022,
-            "t": "bread_tokyo",
-            "g": "パン（東京）"
-          },
-          {
-            "y": 2020,
-            "t": "bread_tokyo",
-            "g": "パン（東京）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.76258431435838,
           35.67838385871661
         ]
@@ -253707,38 +252625,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.7407258831041,
-          35.667709637911045
-        ]
-      },
-      "properties": {
-        "name": "ピエール・ガニェール パン・エ・ガトー - 六本木一丁目（パン）",
-        "url": "https://tabelog.com/tokyo/A1308/A130802/13114277/",
-        "category": "パン（東京）",
-        "address": "東京都港区赤坂1-12-33 ANAインターコンチネンタルホテル東京 2F",
-        "rating": "3.75",
-        "ratingCount": "679",
-        "priceRange": "￥1,000～￥1,999",
-        "cuisine": "パン、ケーキ、惣菜・デリ",
-        "awards": [
-          {
-            "y": 2022,
-            "t": "bread_tokyo",
-            "g": "パン（東京）"
-          },
-          {
-            "y": 2020,
-            "t": "bread_tokyo",
-            "g": "パン（東京）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.74174983444635,
           35.68564666870535
         ]
@@ -254217,37 +253103,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.739234542353,
-          35.628626192723004
-        ]
-      },
-      "properties": {
-        "name": "breadworks エキュート品川 - 品川（パン）",
-        "url": "https://tabelog.com/tokyo/A1314/A131403/13155677/",
-        "category": "パン（東京）",
-        "address": "東京都港区高輪3-26-27 エキュート品川 1F",
-        "rating": "3.74",
-        "ratingCount": "831",
-        "cuisine": "パン、サンドイッチ、ビアバー",
-        "awards": [
-          {
-            "y": 2022,
-            "t": "bread_tokyo",
-            "g": "パン（東京）"
-          },
-          {
-            "y": 2020,
-            "t": "bread_tokyo",
-            "g": "パン（東京）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.7060246539693,
           35.635941108725554
         ]
@@ -254268,37 +253123,6 @@ const shopData = {
             "t": "bread_tokyo",
             "g": "パン（東京）"
           },
-          {
-            "y": 2022,
-            "t": "bread_tokyo",
-            "g": "パン（東京）"
-          },
-          {
-            "y": 2020,
-            "t": "bread_tokyo",
-            "g": "パン（東京）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.7196722493201,
-          35.64131782685028
-        ]
-      },
-      "properties": {
-        "name": "金麦（キンムギ） - 白金台（パン）",
-        "url": "https://tabelog.com/tokyo/A1316/A131602/13005477/",
-        "category": "パン（東京）",
-        "address": "東京都港区白金台5-11-4",
-        "rating": "3.71",
-        "ratingCount": "322",
-        "cuisine": "パン、サンドイッチ",
-        "awards": [
           {
             "y": 2022,
             "t": "bread_tokyo",
@@ -254347,48 +253171,6 @@ const shopData = {
           },
           {
             "y": 2017,
-            "t": "pan",
-            "g": "パン"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.72795518268617,
-          35.625447137933826
-        ]
-      },
-      "properties": {
-        "name": "パネッテリア・アリエッタ 五反田本店（Panetteria ARIETTA） - 五反田（パン）",
-        "url": "https://tabelog.com/tokyo/A1316/A131603/13019888/",
-        "category": "パン（東京）",
-        "address": "東京都品川区東五反田2-5-1 ルネッサンスビル\u3000１Ｆ",
-        "rating": "3.78",
-        "ratingCount": "953",
-        "priceRange": "～￥999",
-        "cuisine": "パン、サンドイッチ",
-        "awards": [
-          {
-            "y": 2022,
-            "t": "bread_tokyo",
-            "g": "パン（東京）"
-          },
-          {
-            "y": 2020,
-            "t": "bread_tokyo",
-            "g": "パン（東京）"
-          },
-          {
-            "y": 2019,
-            "t": "bread",
-            "g": "パン"
-          },
-          {
-            "y": 2018,
             "t": "pan",
             "g": "パン"
           }
@@ -254964,38 +253746,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.70529025380006,
-          35.61913374873599
-        ]
-      },
-      "properties": {
-        "name": "セル・オ・ブレ（Sel eau ble） - 武蔵小山（パン）",
-        "url": "https://tabelog.com/tokyo/A1317/A131710/13044661/",
-        "category": "パン（東京）",
-        "address": "東京都品川区小山3-22-21",
-        "rating": "3.71",
-        "ratingCount": "583",
-        "priceRange": "～￥999",
-        "cuisine": "パン、サンドイッチ、ケーキ",
-        "awards": [
-          {
-            "y": 2022,
-            "t": "bread_tokyo",
-            "g": "パン（東京）"
-          },
-          {
-            "y": 2020,
-            "t": "bread_tokyo",
-            "g": "パン（東京）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.70286637380303,
           35.61925989873514
         ]
@@ -255198,38 +253948,6 @@ const shopData = {
             "t": "bread_tokyo",
             "g": "パン（東京）"
           },
-          {
-            "y": 2022,
-            "t": "bread_tokyo",
-            "g": "パン（東京）"
-          },
-          {
-            "y": 2020,
-            "t": "bread_tokyo",
-            "g": "パン（東京）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.65302888255033,
-          35.606800737921816
-        ]
-      },
-      "properties": {
-        "name": "ヴァン ドゥ リュド 尾山台店（VENT DE LUDO） - 尾山台（パン）",
-        "url": "https://tabelog.com/tokyo/A1317/A131715/13140110/",
-        "category": "パン（東京）",
-        "address": "東京都世田谷区等々力2-19-15 プレジール 1F",
-        "rating": "3.74",
-        "ratingCount": "798",
-        "priceRange": "～￥999",
-        "cuisine": "パン、洋菓子、カフェ",
-        "awards": [
           {
             "y": 2022,
             "t": "bread_tokyo",
@@ -255712,52 +254430,6 @@ const shopData = {
             "y": 2022,
             "t": "bread_tokyo",
             "g": "パン（東京）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.63637438342272,
-          35.69201243786239
-        ]
-      },
-      "properties": {
-        "name": "SONKA - 南阿佐ケ谷（パン）",
-        "url": "https://tabelog.com/tokyo/A1319/A131905/13174215/",
-        "category": "パン（東京）",
-        "address": "東京都杉並区成田東2-33-9",
-        "rating": "3.74",
-        "ratingCount": "429",
-        "cuisine": "パン、カフェ、サンドイッチ",
-        "awards": [
-          {
-            "y": 2022,
-            "t": "bread_tokyo",
-            "g": "パン（東京）"
-          },
-          {
-            "y": 2020,
-            "t": "bread_tokyo",
-            "g": "パン（東京）"
-          },
-          {
-            "y": 2019,
-            "t": "bread",
-            "g": "パン"
-          },
-          {
-            "y": 2018,
-            "t": "pan",
-            "g": "パン"
-          },
-          {
-            "y": 2017,
-            "t": "pan",
-            "g": "パン"
           }
         ]
       }
@@ -257348,37 +256020,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.3485623899966,
-          43.07108797514641
-        ]
-      },
-      "properties": {
-        "name": "ぱん吉（パンキチ） - 札幌（ＪＲ）（パン）",
-        "url": "https://tabelog.com/hokkaido/A0101/A010101/1001468/",
-        "category": "パン（東日本）",
-        "address": "北海道札幌市北区北八条西4-18",
-        "rating": "3.66",
-        "ratingCount": "296",
-        "cuisine": "パン、サンドイッチ",
-        "awards": [
-          {
-            "y": 2022,
-            "t": "bread_east",
-            "g": "パン（東日本）"
-          },
-          {
-            "y": 2020,
-            "t": "bread_east",
-            "g": "パン（東日本）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           141.32668605672512,
           43.06631103371712
         ]
@@ -258002,42 +256643,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.65095198088224,
-          35.44151403802612
-        ]
-      },
-      "properties": {
-        "name": "エコモ ベーカリー ヨコハマ モトマチ（ecomo Bakery YOKOHAMA MOTOMACHI） - 元町・中華街（パン）",
-        "url": "https://tabelog.com/kanagawa/A1401/A140105/14059688/",
-        "category": "パン（東日本）",
-        "address": "神奈川県横浜市中区元町1-13 元町プラザ 2F",
-        "rating": "3.71",
-        "ratingCount": "444",
-        "cuisine": "パン、カフェ、洋菓子",
-        "awards": [
-          {
-            "y": 2022,
-            "t": "bread_east",
-            "g": "パン（東日本）"
-          },
-          {
-            "y": 2020,
-            "t": "bread_east",
-            "g": "パン（東日本）"
-          },
-          {
-            "y": 2019,
-            "t": "bread",
-            "g": "パン"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           139.65439526195098,
           35.43254449883829
         ]
@@ -258057,37 +256662,6 @@ const shopData = {
             "t": "bread_east",
             "g": "パン（東日本）"
           },
-          {
-            "y": 2022,
-            "t": "bread_east",
-            "g": "パン（東日本）"
-          },
-          {
-            "y": 2020,
-            "t": "bread_east",
-            "g": "パン（東日本）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.55683178233625,
-          35.57892983790888
-        ]
-      },
-      "properties": {
-        "name": "ラ ベルコリーヌ（La Belle Colline） - たまプラーザ（パン）",
-        "url": "https://tabelog.com/kanagawa/A1401/A140201/14000431/",
-        "category": "パン（東日本）",
-        "address": "神奈川県横浜市青葉区美しが丘1-9-1",
-        "rating": "3.64",
-        "ratingCount": "197",
-        "cuisine": "パン、カフェ、スイーツ",
-        "awards": [
           {
             "y": 2022,
             "t": "bread_east",
@@ -259115,37 +257689,6 @@ const shopData = {
             "t": "bread_east",
             "g": "パン（東日本）"
           },
-          {
-            "y": 2022,
-            "t": "bread_east",
-            "g": "パン（東日本）"
-          },
-          {
-            "y": 2020,
-            "t": "bread_east",
-            "g": "パン（東日本）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.56658517951576,
-          35.3003778380889
-        ]
-      },
-      "properties": {
-        "name": "パンヤコット（Panya Cotto） - 逗子（パン）",
-        "url": "https://tabelog.com/kanagawa/A1406/A140602/14009181/",
-        "category": "パン（東日本）",
-        "address": "神奈川県逗子市新宿4-13-7",
-        "rating": "3.64",
-        "ratingCount": "123",
-        "cuisine": "パン",
-        "awards": [
           {
             "y": 2022,
             "t": "bread_east",
@@ -260727,32 +259270,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.18826017649653,
-          34.69762663707734
-        ]
-      },
-      "properties": {
-        "name": "ル・パン神戸北野 本店 - 三宮（神戸市営）（パン）",
-        "url": "https://tabelog.com/hyogo/A2801/A280101/28033979/",
-        "category": "パン（西日本）",
-        "address": "兵庫県神戸市中央区山本通2-7-4",
-        "rating": "3.55",
-        "ratingCount": "453",
-        "cuisine": "パン、ケーキ、スイーツ",
-        "awards": [
-          {
-            "y": 2022,
-            "t": "bread_west",
-            "g": "パン（西日本）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           135.17502977749865,
           34.68090255788914
         ]
@@ -261659,37 +260176,6 @@ const shopData = {
             "t": "bread_west",
             "g": "パン（西日本）"
           },
-          {
-            "y": 2022,
-            "t": "bread_west",
-            "g": "パン（西日本）"
-          },
-          {
-            "y": 2020,
-            "t": "bread_west",
-            "g": "パン（西日本）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.76736133229488,
-          35.01363814981592
-        ]
-      },
-      "properties": {
-        "name": "ブーランジュリー・リベルテ（Boulangerie Liberte'） - 京都市役所前（パン）",
-        "url": "https://tabelog.com/kyoto/A2601/A260201/26014258/",
-        "category": "パン（西日本）",
-        "address": "京都府京都市中京区寺町二条上る常盤木町65-2 1F",
-        "rating": "3.69",
-        "ratingCount": "541",
-        "cuisine": "パン、サンドイッチ",
-        "awards": [
           {
             "y": 2022,
             "t": "bread_west",
@@ -262961,42 +261447,6 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.5067892740986,
-          34.70784880574331
-        ]
-      },
-      "properties": {
-        "name": "ブーランジェ エス・カガワ（Boulanger S.KAGAWA） - 中崎町（パン）",
-        "url": "https://tabelog.com/osaka/A2701/A270101/27059555/",
-        "category": "パン（西日本）",
-        "address": "大阪府大阪市北区中崎1-10-10 ソレイユ中崎 1F",
-        "rating": "3.74",
-        "ratingCount": "458",
-        "cuisine": "パン、サンドイッチ、スイーツ",
-        "awards": [
-          {
-            "y": 2022,
-            "t": "bread_west",
-            "g": "パン（西日本）"
-          },
-          {
-            "y": 2020,
-            "t": "bread_west",
-            "g": "パン（西日本）"
-          },
-          {
-            "y": 2018,
-            "t": "pan",
-            "g": "パン"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           135.49855957633284,
           34.70295723717279
         ]
@@ -263026,125 +261476,6 @@ const shopData = {
             "y": 2020,
             "t": "bread_west",
             "g": "パン（西日本）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.4954298763233,
-          34.70179553717254
-        ]
-      },
-      "properties": {
-        "name": "デ・トゥット・パンデュース エキマルシェ大阪店（de tout Painduce） - 大阪（パン）",
-        "url": "https://tabelog.com/osaka/A2701/A270101/27068845/",
-        "category": "パン（西日本）",
-        "address": "大阪府大阪市北区梅田3-1-1 エキマルシェ大阪 1F",
-        "rating": "3.73",
-        "ratingCount": "1132",
-        "priceRange": "～￥999",
-        "cuisine": "パン、サンドイッチ、ベーグル",
-        "awards": [
-          {
-            "y": 2022,
-            "t": "bread_west",
-            "g": "パン（西日本）"
-          },
-          {
-            "y": 2020,
-            "t": "bread_west",
-            "g": "パン（西日本）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.49565397635757,
-          34.70520113717045
-        ]
-      },
-      "properties": {
-        "name": "ROUTE271 梅田本店 - 大阪梅田（阪急）（パン）",
-        "url": "https://tabelog.com/osaka/A2701/A270101/27087157/",
-        "category": "パン（西日本）",
-        "address": "大阪府大阪市北区芝田2-3-2 1F",
-        "rating": "3.75",
-        "ratingCount": "689",
-        "cuisine": "パン、サンドイッチ",
-        "awards": [
-          {
-            "y": 2022,
-            "t": "bread_west",
-            "g": "パン（西日本）"
-          },
-          {
-            "y": 2020,
-            "t": "bread_west",
-            "g": "パン（西日本）"
-          },
-          {
-            "y": 2019,
-            "t": "bread",
-            "g": "パン"
-          },
-          {
-            "y": 2018,
-            "t": "pan",
-            "g": "パン"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.49928172742074,
-          34.69569322798301
-        ]
-      },
-      "properties": {
-        "name": "ル・シュクレクール 北新地（LE SUCRE-COEUR） - 大江橋（パン）",
-        "url": "https://tabelog.com/osaka/A2701/A270101/27092018/",
-        "category": "パン（西日本）",
-        "address": "大阪府大阪市北区堂島浜1-2-1 新ダイビル 1F",
-        "rating": "3.75",
-        "ratingCount": "1284",
-        "cuisine": "パン、ケーキ",
-        "awards": [
-          {
-            "y": 2022,
-            "t": "bread_west",
-            "g": "パン（西日本）"
-          },
-          {
-            "y": 2020,
-            "t": "bread_west",
-            "g": "パン（西日本）"
-          },
-          {
-            "y": 2019,
-            "t": "bread",
-            "g": "パン"
-          },
-          {
-            "y": 2018,
-            "t": "pan",
-            "g": "パン"
-          },
-          {
-            "y": 2017,
-            "t": "pan",
-            "g": "パン"
           }
         ]
       }
@@ -263937,33 +262268,6 @@ const shopData = {
           },
           {
             "y": 2020,
-            "t": "bread_west",
-            "g": "パン（西日本）"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          135.50175200780788,
-          34.734189277959345
-        ]
-      },
-      "properties": {
-        "name": "デ トゥット パンデュース エキマルシェ新大阪店（de tout PAINDUCE） - 新大阪（パン）",
-        "url": "https://tabelog.com/osaka/A2701/A270301/27089438/",
-        "category": "パン（西日本）",
-        "address": "大阪府大阪市淀川区西中島5-16-1 JR新大阪駅  エキマルシェ新大阪",
-        "rating": "3.69",
-        "ratingCount": "661",
-        "priceRange": "￥1,000～￥1,999",
-        "cuisine": "パン、サンドイッチ",
-        "awards": [
-          {
-            "y": 2022,
             "t": "bread_west",
             "g": "パン（西日本）"
           }
