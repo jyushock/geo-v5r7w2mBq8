@@ -511,8 +511,7 @@
         .os-clamp.clampable.expanded::after { content: ' ▲'; }
         /* ══ 食べログの受賞歴（百名店は年ごとの選出で、同じ店が何年も選ばれる） ══
            年のチップを新しい順に並べる。実データの受賞回数は1〜8回。
-           最新年＝オレンジ（#ff6600。食べログボタン btn-tabelog と同じ色。
-           地図のピンや検索結果の種別色 #FF9800 とは別）、それ以外の同部門＝グレー、
+           最新年＝食べログのアイコン色 #FFAA00（下記）、それ以外の同部門＝グレー、
            部門が変わった年だけ白地＋部門名を添える。部門替えは実データで274店あり
            （スイーツ→和菓子・甘味処 / カレー→アジア・エスニック など、
            いまも併存している別の賞をまたいだ受賞）。
@@ -533,7 +532,14 @@
         .aw-y { display: inline-block; margin-right: 3px; vertical-align: -1px;
                 font-size: 10px; font-weight: 700; line-height: 1.6; padding: 1px 6px; border-radius: 9px;
                 background: #E6E2D8; color: #5a5344; font-variant-numeric: tabular-nums; white-space: nowrap; }
-        .aw-y.aw-now { background: #ff6600; color: #fff; }
+        /* 食べログのアイコン色。tabelog.com の favicon(180×180)の地色を実測した値
+           （28,121px が #FFAA00、残りは白いロゴ。PC版・スマホ版とも同じ）。
+           食べログに関する色はピン・クラスタ・検索結果・周辺検索・ボタン・
+           このチップまで、すべてこの1色に揃えている。
+           明るい色なので白文字はコントラスト1.91で読めない。同じ理由で
+           濃い文字を載せている btn-pokefuta(#FBBC04 に #333)に倣い、
+           面に文字を載せるところは #333 にする（#FFAA00 に #333 で 6.62）。 */
+        .aw-y.aw-now { background: #FFAA00; color: #333; }
         .aw-y.aw-other { background: #fff; color: #7a7365; border: 1px solid #d8d3c7; }
         /* 受賞歴の行は、項目名チップ(14.25px)と年チップ(18px)で背が違う。
            既定のベースライン揃えだと上端が揃ってしまい、背の低い項目名が
@@ -543,8 +549,12 @@
         /* 評点はタイトル行の右端に置く。項目行に足すと1行増えるうえ、
            店名（実データの67%が20字超で2行になる）の直下に数字が並んで店名より目立つため。 */
         .os-rating { margin-left: auto; flex-shrink: 0; display: inline-flex; align-items: baseline; gap: 3px; }
-        .os-rating .rt-star { font-size: 10px; color: #f0a020; }
-        .os-rating .rt-v { font-size: 13px; font-weight: 700; color: #c1560c; font-variant-numeric: tabular-nums; }
+        .os-rating .rt-star { font-size: 10px; color: #FFAA00; }
+        /* 評点の数字だけは #FFAA00 をそのまま使えない。白地に載る文字で、
+           コントラストが1.91しかなく読めないため（本文 #333 は12.63）。
+           同じ色相・彩度(H40 S100%)のまま明度だけ下げた #996600 にする
+           （白地とのコントラスト4.94。9.5pxラベルに求めている4.5を満たす）。 */
+        .os-rating .rt-v { font-size: 13px; font-weight: 700; color: #996600; font-variant-numeric: tabular-nums; }
         .os-rating .rt-n { font-size: 10px; color: #999; font-variant-numeric: tabular-nums; }
         /* ボタン行: flex:1 で等分するので個数が何個でも行がぴったり埋まる */
         .os-brow { display: flex; gap: 4px; margin-top: 4px; }
@@ -552,7 +562,8 @@
         .os-brow:empty { display: none; }
         .btn { display: flex; align-items: center; justify-content: center; text-align: center; height: 40px; padding: 0 4px; border-radius: 7px; text-decoration: none; font-family: inherit; font-weight: bold; color: white; font-size: 12px; line-height: normal; border: none; box-sizing: border-box; cursor: pointer; }
         .os-brow .btn { flex: 1 1 0; min-width: 0; white-space: nowrap; overflow: hidden; }
-        .btn-tabelog { background: #ff6600; }
+        /* 食べログのアイコン色。明るいので btn-pokefuta と同じく濃い文字を載せる */
+        .btn-tabelog { background: #FFAA00; color: #333; }
         .btn-wiki { background: #333333; }
         .btn-gmap { background: white; color: #4285f4; border: 1px solid #4285f4; }
         .btn-nav { background: #4285F4; }
@@ -3883,7 +3894,7 @@ const objClickLayers = [];
 // 地図上のピン（カードの面は MHCARD_FACE_COLOR の #B87333）と食い違うため、
 // ピンの見た目に合わせてマンホール系の #B87333 を使う。
 const OBJ_TYPE_COLOR = {
-    castle: '#786383', michi: '#0B499D', shop: '#FF9800',
+    castle: '#786383', michi: '#0B499D', shop: '#FFAA00',   /* 色は食べログのアイコンの地色 */
     manhole: '#B87333', mhcard: '#B87333', pokefuta: '#FBBC04',
 };
 function objRingColor(type, p) {
@@ -4389,7 +4400,7 @@ map.on('zoomend', () => { isZooming = false; });
             // データは後から非同期に届くため、ソースは空で生成し setData で埋める
             const configs = [
                 { id: 'michi',           color: '#0B499D', icon: 'michi-icon',    type: 'michi',   clusterColor: '#0B499D' },
-                { id: 'shops',           color: '#FF9800', icon: 'tabe-icon',     type: 'shop',    clusterColor: '#FF9800' },
+                { id: 'shops',           color: '#FFAA00', icon: 'tabe-icon',     type: 'shop',    clusterColor: '#FFAA00' },
                 { id: 'manholes',        color: '#B87333', icon: 'manhole-icon',  type: 'manhole', clusterColor: '#B87333' },
                 { id: 'mhcards',         color: '#1565C0', icon: 'mhcard-icon',   type: 'mhcard',  clusterColor: '#1565C0' },
                 { id: 'castles',         color: '#786383', icon: 'castle-icon',   type: 'castle',  clusterColor: '#786383' },
@@ -4776,7 +4787,7 @@ map.on('zoomend', () => { isZooming = false; });
         mhcard:   { color: '#1565C0', img: 'manhole.png', label: 'マンホールカード配布' },
         castle:   { color: '#786383', img: 'castle.png',  label: 'お城' },
         michi:    { color: '#0B499D', img: 'michi.png',   label: '道の駅' },   /* 色は道の駅紋章の地色 */
-        shop:     { color: '#FF9800', img: 'tabe.png',    label: '食べログ' },
+        shop:     { color: '#FFAA00', img: 'tabe.png',    label: '食べログ' },   /* 色は食べログのアイコンの地色 */
         place:    { color: '#4285F4', icon: '📍',        label: '地名' },
     };
     /* 道の駅のアイコン背景だけは丸ではなく角丸四角にする（地図のピンと形を合わせる） */
