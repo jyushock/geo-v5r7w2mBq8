@@ -7,69 +7,73 @@
 <style>
     body { margin: 0; padding: 20px 16px 80px; font-family: system-ui, sans-serif; background: #fff; color: #222; }
     h1 { font-size: 17px; margin: 0 0 4px; }
-    .lead { font-size: 13px; color: #555; margin: 0 0 6px; line-height: 1.75; }
+    .lead { font-size: 13px; color: #555; margin: 0 0 16px; line-height: 1.7; }
     .lead code { background: #f2f2f2; padding: 1px 4px; border-radius: 3px; }
-    h2 { font-size: 14px; margin: 30px 0 4px; padding-bottom: 5px; border-bottom: 1px solid #ddd; }
-    .note { font-size: 11.5px; color: #777; line-height: 1.7; margin: 0 0 12px; }
+    .note { font-size: 12px; color: #666; background: #f6f7f9; border-left: 3px solid #B0BEC5; padding: 8px 10px; margin: 0 0 20px; line-height: 1.7; }
+    h2 { font-size: 14px; margin: 30px 0 8px; padding-bottom: 5px; border-bottom: 1px solid #ddd; }
+    .cap { font-size: 12px; color: #666; line-height: 1.7; margin: 0 0 10px; }
 
-    /* 実物と同じ寸法: 円φ28 + 白フチ3px（外径34）、中の城アイコンは白 */
+    /* ── 地図と同じピン。丸28px＋白フチ3px＝外径34px、グリフは28px ── */
     .pin { width: 28px; height: 28px; border-radius: 50%; box-shadow: 0 0 0 3px #fff; display: inline-flex;
            align-items: center; justify-content: center; flex-shrink: 0; }
     .pin img { width: 28px; height: 28px; object-fit: contain; filter: brightness(0) invert(1); }
-    .pin.dark img { filter: brightness(0) saturate(0); }          /* アイコンを黒にした場合 */
+    .pin.dark img { filter: brightness(0); }               /* アイコンを濃色にした場合 */
     .pin.mh img { width: 25px; height: 25px; }
     .pin.sq { width: 24px; height: 24px; border-radius: 2px; }
     .pin.sq img { width: 24px; height: 24px; }
-    .pin.dkedge { box-shadow: 0 0 0 3px #4A4A4A; }                /* 白フチを濃色にした場合 */
+    .pin.dkedge { box-shadow: 0 0 0 3px #45484C; }         /* 白フチを濃色にした場合 */
 
-    .row { display: flex; align-items: center; gap: 14px; padding: 9px 12px; border-radius: 10px;
-           background: var(--bg); margin-bottom: 8px; }
-    .name { width: 132px; font-size: 12.5px; line-height: 1.5; flex-shrink: 0; }
-    .hex { font-family: ui-monospace, monospace; font-size: 11px; color: #555; display: block; }
-    .memo { font-size: 10.5px; color: #777; display: block; }
-    .cr { width: 96px; flex-shrink: 0; font-size: 11px; line-height: 1.6; font-family: ui-monospace, monospace; }
-    .cr b { font-size: 12px; }
+    .row { display: flex; align-items: center; gap: 14px; padding: 10px 14px; border-radius: 10px;
+           background: var(--bg, #e8eef3); margin-bottom: 9px; }
+    .row .name { width: 128px; font-size: 12.5px; line-height: 1.5; flex-shrink: 0; }
+    .row .hex { font-family: ui-monospace, monospace; font-size: 11px; color: #555; display: block; }
+    .row .memo { font-size: 10.5px; color: #777; display: block; }
+    .row .pins { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .lbl { font-size: 11px; color: #777; }
+    .sep { width: 1px; height: 30px; background: rgba(0,0,0,.18); margin: 0 4px; }
+    .cr { width: 104px; flex-shrink: 0; font-size: 11px; line-height: 1.65; font-family: ui-monospace, monospace; }
+    .cr b { font-size: 12.5px; }
     .ok { color: #1B7A3E; }
     .ng { color: #C62828; }
-    .pins { display: flex; align-items: center; gap: 9px; }
-    .sep { width: 1px; height: 30px; background: rgba(0,0,0,.18); }
-    .field { position: relative; width: 300px; height: 104px; background: rgba(0,0,0,.045); border-radius: 8px; flex-shrink: 0; }
+    .field { position: relative; width: 330px; height: 104px; background: rgba(0,0,0,.05); border-radius: 8px; flex-shrink: 0; }
     .field .pin { position: absolute; }
-    .zoom { transform: scale(2.6); transform-origin: left center; }
-    .zwrap { height: 88px; display: flex; align-items: center; padding-left: 10px; }
+    .zoom { transform: scale(2.4); transform-origin: left center; }
+    .zoomwrap { height: 86px; display: flex; align-items: center; padding-left: 8px; }
 
-    /* 背景切替 */
-    .bgbar { position: sticky; top: 0; z-index: 5; background: #fff; padding: 8px 0 10px; margin-bottom: 4px;
+    /* 背景切替（地図の地色の明るさを想定して切り替える） */
+    .bgbar { position: sticky; top: 0; z-index: 5; background: #fff; padding: 8px 0 10px; margin: 0 0 6px;
              border-bottom: 1px solid #eee; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
     .bgbar span { font-size: 11.5px; color: #666; }
     .bgbar button { font-size: 12px; padding: 5px 11px; border: 1px solid #ccc; background: #fff; border-radius: 6px; cursor: pointer; }
     .bgbar button.on { background: #333; color: #fff; border-color: #333; }
 
-    /* リスト行・バッジのプレビュー */
-    .lst { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-bottom: 1px solid #eee; font-size: 13px; }
+    /* 地図以外の場所のプレビュー */
+    .prevwrap { display: flex; gap: 24px; flex-wrap: wrap; }
+    .prevcol { width: 296px; border: 1px solid #eee; border-radius: 10px; padding: 10px 12px; }
+    .prevcol h3 { font-size: 12px; margin: 0 0 8px; color: #555; font-weight: 600; }
+    .lst { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid #f0f0f0; font-size: 13px; }
     .lst .ic { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .lst .ic img { width: 24px; height: 24px; filter: brightness(0) invert(1); }
-    .lst .ic.dark img { filter: brightness(0) saturate(0); }
+    .lst .ic.dark img { filter: brightness(0); }
+    .sub { font-size: 11px; color: #777; }
     .badge { display: inline-block; font-size: 11px; color: #fff; padding: 2px 8px; border-radius: 10px; }
     .badge.dark { color: #222; }
-    .prevwrap { display: flex; gap: 26px; flex-wrap: wrap; }
-    .prevcol { width: 300px; }
-    .prevcol h3 { font-size: 12px; margin: 0 0 6px; color: #555; font-weight: 600; }
 </style>
 </head>
 <body>
 
 <h1>城の色 — シルバー系の明るさバリエーション</h1>
 <p class="lead">
-現行の通常の城は <code>#786383</code>（灰紫）。日本100名城 <code>#4285F4</code>、続日本100名城 <code>#EA4335</code> は別色で、今回はそのまま置きます。<br>
+通常の城の現行色は <code>#786383</code>（灰紫）。日本100名城 <code>#4285F4</code>、続日本100名城 <code>#EA4335</code> は今回そのまま置きます。<br>
 地図のピンは<strong>「色つきの円（白フチ3px）＋ 白い城アイコン」</strong>で、アイコン色は全種別共通レイヤーの <code>icon-color: '#FFFFFF'</code> 固定です。
-したがってシルバー化の可否は<strong>白アイコンが円の上で見えるか</strong>で決まります。各行の「白アイコン」欄はその<strong>コントラスト比</strong>で、
-アイコンのような図形は 3.0 以上が目安（WCAG 1.4.11）。3.0 未満は赤で出しています。
+そのためシルバーをどこまで明るくできるかは、<strong>白アイコンが円の上で見えるか</strong>で決まります。
 </p>
-<p class="note">
-参考の実測値 — 現行の灰紫 5.37 / 100名城の青 3.56 / 続100名城の赤 3.92 / 食べログの橙 1.91（橙は既に基準未満で運用中）。<br>
-背景ボタンで、地図の地色に近い明度に切り替えて埋もれ具合を見られます（OpenFreeMap liberty の実際の地色は未確認のため、明るさの当たりを付けるための近似です）。
-</p>
+
+<div class="note">
+各行の「白アイコン」は色と白のコントラスト比です。アイコンのような図形は <strong>3.0 以上</strong>が目安（WCAG 1.4.11）で、3.0 未満は赤で出しています。<br>
+実測した既存色 — 現行の灰紫 5.37 ／ 100名城の青 3.56 ／ 続100名城の赤 3.92 ／ 食べログの橙 1.91（橙は既に基準未満のまま運用中）。<br>
+背景ボタンで地の明るさを変えられます。OpenFreeMap liberty の実際の地色は未確認のため、当たりを付けるための近似値です。
+</div>
 
 <div class="bgbar">
     <span>背景：</span>
@@ -81,45 +85,44 @@
 </div>
 
 <h2>1. クールシルバー（青みのある灰・H212 S12%）</h2>
-<p class="note">左：単体 ／ 中：コントラスト比 ／ 右：密集（20個。城を多数派にして他種別を混ぜています）</p>
+<p class="cap">左：単体 ／ 中：コントラスト比 ／ 右：密集20個（城を多数派にして他種別を混ぜています）</p>
 <div id="cool"></div>
 
 <h2>2. ニュートラルシルバー（無彩色・S0%）</h2>
-<p class="note">完全な灰色。地図の道路や建物の灰と同化しやすい系統です。</p>
+<p class="cap">完全な灰色。地図の道路や建物の灰と同化しやすい系統です。</p>
 <div id="neutral"></div>
 
 <h2>3. ブルーシルバー（青寄り・H215 S20%）</h2>
-<p class="note">彩度をやや残した系統。100名城の青（#4285F4）と近づくため、下の「城3種の並び」で要確認。</p>
+<p class="cap">彩度をやや残した系統。100名城の青と近づくため、下の「城3種の並び」で確認してください。</p>
 <div id="blue"></div>
 
 <h2>4. ウォームシルバー（温かみのある灰・H35 S8%）</h2>
-<p class="note">わずかに黄みを含む灰。地図のクリーム色の地色に馴染む一方、埋もれやすい系統です。</p>
+<p class="cap">わずかに黄みを含む灰。地図のクリーム色の地色に馴染む反面、埋もれやすい系統です。</p>
 <div id="warm"></div>
 
-<h2>5. 拡大（2.6倍）— 明度の違いだけを見る</h2>
-<p class="note">クールシルバーの各明度を並べています。</p>
+<h2>5. 拡大（2.4倍）— 100名城・続100名城との差を見る</h2>
+<p class="cap">クールシルバーの各明度。左から 通常の城／100名城／続100名城。</p>
 <div id="zoomrows"></div>
 
-<h2>6. 明るいシルバーを使う場合の対処（白アイコンが破綻する L62 以上向け）</h2>
-<p class="note">
-白アイコンのままでは見えない明るさでも、次の2つなら実装可能です。どちらも城レイヤーだけに適用できます。<br>
-（A）アイコンを濃色にする … <code>icon-color</code> は現在 <strong>全種別共通レイヤーで白固定</strong>のため、城だけ変えるには match 式への書き換えが必要（1箇所）。<br>
+<h2>6. 明るいシルバーを使う場合の対処（白アイコンが破綻する明度向け）</h2>
+<p class="cap">
+（A）アイコンを濃色にする … <code>icon-color</code> は現在<strong>全種別共通レイヤーで白固定</strong>のため、城だけ変えるには match 式への書き換えが必要です。<br>
 （B）白フチを濃色フチにする … <code>circle-stroke-color</code> は城レイヤー個別に指定できるため、変更は1箇所で済みます。
 </p>
 <div id="bright"></div>
 
 <h2>7. 城3種の並び（通常＋日本100名城＋続日本100名城）</h2>
-<p class="note">通常の城がシルバーになったとき、100名城の青・続100名城の赤との序列が保てるかを見ます。3つとも同じ場所に出るため、ここが実際の見え方に一番近い部分です。</p>
+<p class="cap">3種は同じ画面に同時に出ます。通常の城をシルバーにしたとき、青・赤との序列が保てるかを見る部分です。白アイコンが 3.0 未満になる明度では、アイコンを濃色にした状態で描いています。</p>
 <div id="trio"></div>
 
 <h2>8. 他種別との並び</h2>
-<p class="note">左から 城 ／ 道の駅 #0B499D ／ 100名城 #4285F4 ／ 続100名城 #EA4335 ／ 食べログ #FFAA00 ／ マンホール #B87333 ／ ポケふた #FBBC04</p>
+<p class="cap">左から 城 ／ 道の駅 #0B499D ／ 100名城 #4285F4 ／ 続100名城 #EA4335 ／ 食べログ #FFAA00 ／ マンホール #B87333 ／ ポケふた #FBBC04</p>
 <div id="others"></div>
 
-<h2>9. 地図以外の場所（検索結果リスト・ジャンルバッジ・城主ボタン）</h2>
-<p class="note">
-同じ色は地図ピンのほかに、検索結果と履歴のアイコン（<code>typeConfig.castle</code>）、シートのジャンルバッジ（白文字）、
-「近くの城主」ボタンのアイコン背景（<code>.nlb-ic</code>）でも使われます。バッジは<strong>白文字</strong>なので、文字の目安は 4.5 以上です。
+<h2>9. 地図以外の場所（検索結果リスト・ジャンルバッジ）</h2>
+<p class="cap">
+同じ色は、検索結果と履歴のアイコン（<code>typeConfig.castle</code>）、シートのジャンルバッジ、「近くの城主」ボタンのアイコン背景（<code>.nlb-ic</code>）でも使われます。
+バッジは<strong>白文字</strong>なので、文字としての目安は 4.5 以上です。
 </p>
 <div class="prevwrap" id="uiprev"></div>
 
@@ -154,19 +157,24 @@ const FAMILIES = {
 
 const pin = (cls, color, img) => `<div class="pin ${cls}" style="background:${color}"><img src="${img}"></div>`;
 
-// 密集配置。城が多数派になるよう配分する（既存モックと同じ乱数）
-let seed = 7;
-const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
-const SPOTS = [];
-while (SPOTS.length < 20) {
-    const x = Math.round(rnd() * 264), y = Math.round(rnd() * 68), r = rnd();
-    if (SPOTS.every(s => Math.abs(s.x - x) > 26 || Math.abs(s.y - y) > 26)) SPOTS.push({ x, y, r });
-}
-function field(hex, dark) {
+// 密集の配置座標。既存モック（castle-color-softer.html）と同じ乱数・同じ散布範囲(294x68)で
+// 生成した20点を、そのまま定数として持つ。実行時に生成すると散布範囲を変えたときに
+// 収束しなくなる（20点が置けず while が終わらない）ため、値で固定してある。
+const SPOTS = [
+    { x: 176, y: 20, r: 0.3317 }, { x: 203, y: 68, r: 0.1027 }, { x: 287, y: 66, r: 0.2437 },
+    { x: 98,  y: 23, r: 0.7740 }, { x: 3,   y: 29, r: 0.7219 }, { x: 164, y: 55, r: 0.4611 },
+    { x: 125, y: 27, r: 0.8184 }, { x: 40,  y: 57, r: 0.7345 }, { x: 7,   y: 60, r: 0.1479 },
+    { x: 49,  y: 7,  r: 0.2740 }, { x: 240, y: 16, r: 0.5877 }, { x: 80,  y: 66, r: 0.4914 },
+    { x: 293, y: 26, r: 0.5449 }, { x: 123, y: 66, r: 0.1764 }, { x: 234, y: 45, r: 0.1365 },
+    { x: 17,  y: 1,  r: 0.8085 }, { x: 135, y: 0,  r: 0.9064 }, { x: 203, y: 28, r: 0.3072 },
+    { x: 69,  y: 37, r: 0.4344 }, { x: 206, y: 1,  r: 0.9360 },
+];
+
+function field(hex, darkIcon) {
     return `<div class="field">` + SPOTS.map(({ x, y, r }) => {
-        let cls = dark ? 'dark' : '', col = hex, img = '../castle.png';
+        let cls = darkIcon ? 'dark' : '', col = hex, img = '../castle.png';
         if (r > 0.93)      { cls = 'mh'; col = '#B87333'; img = '../manhole.png'; }
-        else if (r > 0.85) { cls = '';   col = '#FF9800'; img = '../tabe.png'; }
+        else if (r > 0.85) { cls = '';   col = '#FFAA00'; img = '../tabe.png'; }
         else if (r > 0.76) { cls = 'sq'; col = '#0B499D'; img = '../michi.png'; }
         else if (r > 0.70) { cls = '';   col = '#EA4335'; }
         else if (r > 0.62) { cls = '';   col = '#4285F4'; }
@@ -176,12 +184,12 @@ function field(hex, dark) {
 
 function crCell(hex) {
     const w = cr(hex, '#FFFFFF'), d = cr(hex, '#222222');
-    const wc = w >= 3 ? 'ok' : 'ng';
-    return `<div class="cr">白アイコン <b class="${wc}">${w.toFixed(2)}</b><br>
-            <span style="color:#999">黒アイコン ${d.toFixed(2)}</span></div>`;
+    return `<div class="cr">白アイコン <b class="${w >= 3 ? 'ok' : 'ng'}">${w.toFixed(2)}</b><br>
+            <span style="color:#999">濃色アイコン ${d.toFixed(2)}</span></div>`;
 }
 
-function renderFamily(id) {
+// 1〜4. 系統ごとの明るさ階段
+Object.keys(FAMILIES).forEach(id => {
     const { h, s, label } = FAMILIES[id];
     document.getElementById(id).innerHTML = LEVELS.map(l => {
         const hex = hsl2hex(h, s, l);
@@ -192,15 +200,14 @@ function renderFamily(id) {
             ${field(hex)}
         </div>`;
     }).join('');
-}
-Object.keys(FAMILIES).forEach(renderFamily);
+});
 
-// 拡大
+// 5. 拡大
 document.getElementById('zoomrows').innerHTML = LEVELS.map(l => {
     const hex = hsl2hex(212, 12, l);
     return `<div class="row">
         <div class="name">クール L${l}<span class="hex">${hex}</span></div>
-        <div class="zwrap"><div class="zoom"><div class="pins">
+        <div class="zoomwrap"><div class="zoom"><div class="pins">
             ${pin('', hex, '../castle.png')}
             ${pin('', '#4285F4', '../castle.png')}
             ${pin('', '#EA4335', '../castle.png')}
@@ -208,40 +215,40 @@ document.getElementById('zoomrows').innerHTML = LEVELS.map(l => {
     </div>`;
 }).join('');
 
-// 明るいシルバーの対処案
+// 6. 明るいシルバーの対処案
 document.getElementById('bright').innerHTML = [62, 70, 78, 86].map(l => {
     const hex = hsl2hex(212, 12, l);
     return `<div class="row">
         <div class="name">クール L${l}<span class="hex">${hex}</span></div>
         <div class="pins">
-            ${pin('', hex, '../castle.png')}<span style="font-size:11px;color:#777">現行(白)</span>
+            ${pin('', hex, '../castle.png')}<span class="lbl">現行（白）</span>
             <div class="sep"></div>
-            ${pin('dark', hex, '../castle.png')}<span style="font-size:11px;color:#777">A:黒アイコン</span>
+            ${pin('dark', hex, '../castle.png')}<span class="lbl">A：濃色アイコン</span>
             <div class="sep"></div>
-            ${pin('dkedge', hex, '../castle.png')}<span style="font-size:11px;color:#777">B:濃色フチ</span>
+            ${pin('dkedge', hex, '../castle.png')}<span class="lbl">B：濃色フチ</span>
             <div class="sep"></div>
-            ${pin('dark dkedge', hex, '../castle.png')}<span style="font-size:11px;color:#777">A+B</span>
+            ${pin('dark dkedge', hex, '../castle.png')}<span class="lbl">A＋B</span>
         </div>
         ${crCell(hex)}
     </div>`;
 }).join('');
 
-// 城3種の並び
+// 7. 城3種の並び
 document.getElementById('trio').innerHTML = LEVELS.map(l => {
     const hex = hsl2hex(212, 12, l);
-    const dark = cr(hex, '#FFFFFF') < 3;
+    const darkIcon = cr(hex, '#FFFFFF') < 3;
     return `<div class="row">
-        <div class="name">クール L${l}<span class="hex">${hex}</span><span class="memo">${dark ? '白アイコン不足→黒で表示' : '白アイコン'}</span></div>
+        <div class="name">クール L${l}<span class="hex">${hex}</span><span class="memo">${darkIcon ? 'アイコン濃色' : 'アイコン白'}</span></div>
         <div class="pins">
-            ${pin(dark ? 'dark' : '', hex, '../castle.png')}<span style="font-size:11px;color:#777">通常</span>
-            ${pin('', '#4285F4', '../castle.png')}<span style="font-size:11px;color:#777">100名城</span>
-            ${pin('', '#EA4335', '../castle.png')}<span style="font-size:11px;color:#777">続100名城</span>
+            ${pin(darkIcon ? 'dark' : '', hex, '../castle.png')}<span class="lbl">通常</span>
+            ${pin('', '#4285F4', '../castle.png')}<span class="lbl">100名城</span>
+            ${pin('', '#EA4335', '../castle.png')}<span class="lbl">続100名城</span>
         </div>
-        ${field(hex, dark)}
+        ${field(hex, darkIcon)}
     </div>`;
 }).join('');
 
-// 他種別との並び
+// 8. 他種別との並び
 const OTHERS = [
     ['sq', '#0B499D', '../michi.png'],
     ['',   '#4285F4', '../castle.png'],
@@ -252,32 +259,34 @@ const OTHERS = [
 ];
 document.getElementById('others').innerHTML = LEVELS.map(l => {
     const hex = hsl2hex(212, 12, l);
-    const dark = cr(hex, '#FFFFFF') < 3;
+    const darkIcon = cr(hex, '#FFFFFF') < 3;
     return `<div class="row">
         <div class="name">クール L${l}<span class="hex">${hex}</span></div>
-        <div class="pins">${pin(dark ? 'dark' : '', hex, '../castle.png')}<div class="sep"></div>
+        <div class="pins">${pin(darkIcon ? 'dark' : '', hex, '../castle.png')}
+            <div class="sep"></div>
             ${OTHERS.map(([c, col, img]) => pin(c, col, img)).join('')}</div>
     </div>`;
 }).join('');
 
-// 地図以外の場所
+// 9. 地図以外の場所
 document.getElementById('uiprev').innerHTML = [38, 54, 70, 86].map(l => {
     const hex = hsl2hex(212, 12, l);
-    const dark = cr(hex, '#FFFFFF') < 4.5;      // バッジは文字なので 4.5 を目安にする
-    const icDark = cr(hex, '#FFFFFF') < 3;
+    const w = cr(hex, '#FFFFFF');
+    const icDark = w < 3;        // 図形の目安
+    const txDark = w < 4.5;      // 文字の目安
     return `<div class="prevcol">
-        <h3>クール L${l} — ${hex}（白文字 ${cr(hex, '#FFFFFF').toFixed(2)}）</h3>
+        <h3>クール L${l} — ${hex}（白文字 ${w.toFixed(2)}）</h3>
         <div class="lst">
             <div class="ic ${icDark ? 'dark' : ''}" style="background:${hex}"><img src="../castle.png"></div>
-            <div>松本城<div style="font-size:11px;color:#777">長野県松本市丸の内4-1</div></div>
+            <div>松本城<div class="sub">長野県松本市丸の内4-1</div></div>
         </div>
         <div class="lst">
             <div class="ic ${icDark ? 'dark' : ''}" style="background:${hex}"><img src="../castle.png"></div>
-            <div>躑躅ヶ崎館<div style="font-size:11px;color:#777">山梨県甲府市古府中町2611</div></div>
+            <div>躑躅ヶ崎館<div class="sub">山梨県甲府市古府中町2611</div></div>
         </div>
-        <div style="padding:10px 2px; display:flex; gap:6px; align-items:center; flex-wrap:wrap">
-            <span class="badge ${dark ? 'dark' : ''}" style="background:${hex}">城郭</span>
-            <span class="badge ${dark ? 'dark' : ''}" style="background:${hex}">陣屋</span>
+        <div style="padding:10px 0 2px; display:flex; gap:6px; align-items:center; flex-wrap:wrap">
+            <span class="badge ${txDark ? 'dark' : ''}" style="background:${hex}">城郭</span>
+            <span class="badge ${txDark ? 'dark' : ''}" style="background:${hex}">陣屋</span>
             <span class="badge" style="background:#4285F4">日本100名城</span>
         </div>
     </div>`;
@@ -285,12 +294,11 @@ document.getElementById('uiprev').innerHTML = [38, 54, 70, 86].map(l => {
 
 // 背景切替
 const bar = document.querySelector('.bgbar');
-function setBg(hex, btn) {
-    document.body.style.setProperty('--bg', hex);
-    bar.querySelectorAll('button').forEach(b => b.classList.toggle('on', b === btn));
-}
-bar.querySelectorAll('button').forEach(b => b.addEventListener('click', () => setBg(b.dataset.bg, b)));
-setBg('#F2EFE9', bar.querySelector('button.on'));
+bar.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+    document.body.style.setProperty('--bg', b.dataset.bg);
+    bar.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+}));
+document.body.style.setProperty('--bg', '#F2EFE9');
 </script>
 
 </body>
