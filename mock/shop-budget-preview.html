@@ -9,8 +9,8 @@
          background: #f4f2ee; color: #333; margin: 0; padding: 20px; }
   h1 { font-size: 17px; margin: 0 0 4px; }
   h2 { font-size: 13px; margin: 26px 0 8px; color: #555; border-bottom: 1px solid #ddd; padding-bottom: 4px; }
-  .lead { font-size: 12px; color: #666; line-height: 1.7; margin: 0 0 8px; max-width: 720px; }
-  .note { font-size: 11px; color: #777; line-height: 1.7; margin: 4px 0 0; max-width: 720px; }
+  .lead { font-size: 12px; color: #666; line-height: 1.7; margin: 0 0 8px; max-width: 760px; }
+  .note { font-size: 11px; color: #777; line-height: 1.7; margin: 4px 0 0; max-width: 760px; }
   .grid { display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-start; }
 
   /* 実機のシート幅は「画面幅 - 28px」。iPhone 13/14（390px）を想定して362pxで見せる */
@@ -26,7 +26,6 @@
   .os-badge-row { display: flex; gap: 5px; margin-bottom: 3px; }
   .os-name { font-size: 15px; font-weight: bold; min-width: 0; overflow: hidden;
              display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
-  .os-row { display: flex; gap: 10px; margin-top: 5px; align-items: flex-start; }
   .os-line { font-size: 11px; color: #333; line-height: 1.45; font-variant-numeric: tabular-nums; }
   .os-line + .os-line { margin-top: 1px; }
   .os-line .os-k { display: inline-block; background: #E6E2D8; color: #3d3d3d; border-radius: 3px;
@@ -49,7 +48,6 @@
           font-size: 10px; font-weight: 700; line-height: 1.6; padding: 1px 6px; border-radius: 9px;
           background: #E6E2D8; color: #5a5344; font-variant-numeric: tabular-nums; white-space: nowrap; }
   .aw-y.aw-now { background: #FFAA00; color: #333; }
-  .aw-y.aw-other { background: #fff; color: #7a7365; border: 1px solid #d8d3c7; }
   .os-brow { display: flex; gap: 4px; margin-top: 4px; }
   .btn { display: flex; align-items: center; justify-content: center; text-align: center; height: 40px;
          padding: 0 4px; border-radius: 7px; text-decoration: none; font-weight: bold; color: white;
@@ -57,24 +55,36 @@
   .os-brow .btn { flex: 1 1 0; min-width: 0; white-space: nowrap; overflow: hidden; }
   .btn-tabelog { background: #FFAA00; color: #333; }
   .btn-gmap { background: #4285F4; }
-  /* ── ここまで実機のCSS ── */
 
-  /* 比較案でだけ使う装飾 */
-  .b-sep  { color: #bbb; margin: 0 3px; }
-  .b-tag  { display: inline-block; font-size: 9px; font-weight: 700; line-height: 1.5;
-            padding: 0 3px; border-radius: 2px; background: #EFECE4; color: #6b6b6b; margin-right: 3px; }
-  .b-dim  { color: #999; }
+  /* 昼夜のチップ。項目名チップ(os-k)と同じ寸法・同じ角丸で、色だけ変える。
+     letter-spacing は付けない（1文字なので右に余白だけが残るため）。 */
+  .os-line .os-bseg + .os-bseg { margin-left: 8px; }
+  .os-line .os-bt { display: inline-block; border-radius: 3px;
+                    font-size: 9.5px; font-weight: 700; line-height: 1.5; padding: 0 4px;
+                    margin-right: 4px; vertical-align: 1px; }
+  /* C-3 昼=暖色／夜=寒色。下地は os-k と同じ明るさ(輝度0.76)に揃えてあるので、
+     並んだときに片方だけ浮かない。数値は下の表を参照。 */
+  .os-bt-l { background: #EDE2C6; color: #6B5518; }
+  .os-bt-d { background: #DBE1EB; color: #3A4C66; }
+  /* C-1 昼夜とも os-k と同じ色 */
+  .c1 .os-bt { background: #E6E2D8; color: #3d3d3d; }
+  /* C-2 白地＋枠線（既存の aw-other と同じ配色） */
+  .c2 .os-bt { background: #fff; color: #7a7365; border: 1px solid #d8d3c7; padding: 0 3px; }
+
+  table.cmp { border-collapse: collapse; font-size: 11px; margin-top: 8px; }
+  table.cmp th, table.cmp td { border: 1px solid #ddd; padding: 4px 8px; text-align: left; }
+  table.cmp th { background: #ece9e2; font-weight: 700; }
 </style>
 </head>
 <body>
 
-<h1>食べログ 予算の昼夜表示</h1>
+<h1>食べログ 予算の昼夜表示（昼→夜、昼夜もチップ）</h1>
 <p class="lead">
-  実データは 2026-08-12 に実際に取得した5店です。ポップアップのCSSは index.html からそのまま持ってきています。<br>
-  値の選び方は「夜と昼のそれぞれについて、口コミ集計があればそれ、無ければ店側申告」。有る枠だけを並べます。
+  実データは 2026-08-12 に実際に取得した4店です。ポップアップのCSSは index.html からそのまま持ってきています。<br>
+  値の選び方は「昼と夜のそれぞれについて、口コミ集計があればそれ、無ければ店側申告」。有る枠だけを並べます。
 </p>
 
-<h2>A. 現在の実装（コミット済み）</h2>
+<h2>A. 昼→夜の順・昼夜もチップ（C-3の配色で表示）</h2>
 <div class="grid">
 
   <div class="sheet">
@@ -87,11 +97,11 @@
     <div class="os-line"><span class="os-k">ジャンル</span>ラーメン、つけ麺</div>
     <div class="os-line"><span class="os-k">100名店</span>ラーメン（東日本）</div>
     <div class="os-line os-clamp os-line-aw"><span class="os-k">受賞歴</span><span class="aw-y aw-now">2025</span><span class="aw-y">2024</span></div>
-    <div class="os-line"><span class="os-k">予算</span>夜 ￥1,000～￥1,999 ／ 昼 ￥1,000～￥1,999</div>
+    <div class="os-line"><span class="os-k">予算</span><span class="os-bseg"><span class="os-bt os-bt-l">昼</span>￥1,000～￥1,999</span><span class="os-bseg"><span class="os-bt os-bt-d">夜</span>￥1,000～￥1,999</span></div>
     <div class="os-line"><span class="os-k">最寄り</span>牛久</div>
     <div class="os-line os-clamp"><span class="os-k">住所</span>茨城県牛久市結束町504-1</div>
     <div class="os-brow"><a class="btn btn-gmap">GoogleMap</a><a class="btn btn-tabelog">食べログ</a></div>
-    <p class="src"><b>元データ</b> 口コミ集計 夜 ￥1,000～￥1,999／昼 ￥1,000～￥1,999、店側申告 昼 ～￥999 のみ（夜は未申告）<br>
+    <p class="src"><b>元データ</b> 口コミ集計 昼 ￥1,000～￥1,999／夜 ￥1,000～￥1,999、店側申告 昼 ～￥999 のみ（夜は未申告）<br>
       改修前はこの店の予算が<b>行ごと出ませんでした</b>。</p>
   </div>
 
@@ -105,16 +115,16 @@
     <div class="os-line"><span class="os-k">ジャンル</span>焼肉、ホルモン、ステーキ</div>
     <div class="os-line"><span class="os-k">100名店</span>焼肉（東京）</div>
     <div class="os-line os-clamp os-line-aw"><span class="os-k">受賞歴</span><span class="aw-y aw-now">2025</span><span class="aw-y">2024</span><span class="aw-y">2023</span><span class="aw-y">2022</span></div>
-    <div class="os-line"><span class="os-k">予算</span>夜 ￥8,000～￥9,999 ／ 昼 ￥2,000～￥2,999</div>
+    <div class="os-line"><span class="os-k">予算</span><span class="os-bseg"><span class="os-bt os-bt-l">昼</span>￥2,000～￥2,999</span><span class="os-bseg"><span class="os-bt os-bt-d">夜</span>￥8,000～￥9,999</span></div>
     <div class="os-line"><span class="os-k">最寄り</span>神泉</div>
     <div class="os-line os-clamp"><span class="os-k">住所</span>東京都渋谷区道玄坂2-19-13</div>
     <div class="os-brow"><a class="btn btn-gmap">GoogleMap</a><a class="btn btn-tabelog">食べログ</a></div>
     <p class="src"><b>元データ</b> 口コミ集計 夜 ￥8,000～￥9,999 のみ、店側申告 夜 ￥6,000～￥7,999／昼 ￥2,000～￥2,999<br>
-      夜は口コミ、昼は申告から取っています。口コミをひとまとまりで優先すると<b>昼が消えます</b>。</p>
+      昼は申告、夜は口コミから取っています。口コミをひとまとまりで優先すると<b>昼が消えます</b>。</p>
   </div>
 
   <div class="sheet">
-    <p class="caseName">③ 夜だけの店</p>
+    <p class="caseName">③ 夜だけの店（昼のチップは出ない）</p>
     <div class="os-badge-row"><span class="os-genrebadge shop-genre g-sake">酒</span></div>
     <div class="os-title">
       <span class="os-name">かこも 北浜店</span>
@@ -123,11 +133,11 @@
     <div class="os-line"><span class="os-k">ジャンル</span>立ち飲み</div>
     <div class="os-line"><span class="os-k">100名店</span>立ち飲み</div>
     <div class="os-line os-clamp os-line-aw"><span class="os-k">受賞歴</span><span class="aw-y aw-now">2025</span></div>
-    <div class="os-line"><span class="os-k">予算</span>夜 ￥1,000～￥1,999</div>
+    <div class="os-line"><span class="os-k">予算</span><span class="os-bseg"><span class="os-bt os-bt-d">夜</span>￥1,000～￥1,999</span></div>
     <div class="os-line"><span class="os-k">最寄り</span>北浜</div>
     <div class="os-line os-clamp"><span class="os-k">住所</span>大阪府大阪市中央区高麗橋2-2-2 日宝北浜ビル 1F</div>
     <div class="os-brow"><a class="btn btn-gmap">GoogleMap</a><a class="btn btn-tabelog">食べログ</a></div>
-    <p class="src"><b>元データ</b> 口コミ集計 夜のみ、店側申告なし。夜だけの1枠でも「夜」のラベルは出します。</p>
+    <p class="src"><b>元データ</b> 口コミ集計 夜のみ、店側申告なし。</p>
   </div>
 
   <div class="sheet">
@@ -148,55 +158,70 @@
 
 </div>
 
-<h2>B. 昼夜の並べ方の比較（① の予算行だけを差し替えたもの）</h2>
+<h2>B. チップの配色 3案</h2>
 <p class="lead">
-  A で使っているのは <b>B-1</b> です。区切りと語の付け方だけ変えた案を並べます。行の高さはどれも同じ1行です。
+  ①②③の予算行だけを並べたものです。寸法・角丸は3案とも項目名チップ（<span class="os-k" style="letter-spacing:.8px">予算</span>）と同じで、色だけが違います。
 </p>
 <div class="grid">
 
-  <div class="sheet">
-    <p class="caseName">B-1 全角スラッシュ区切り（現在の実装）</p>
-    <div class="os-line"><span class="os-k">予算</span>夜 ￥1,000～￥1,999 ／ 昼 ￥1,000～￥1,999</div>
-    <div class="os-line"><span class="os-k">予算</span>夜 ￥8,000～￥9,999 ／ 昼 ￥2,000～￥2,999</div>
-    <div class="os-line"><span class="os-k">予算</span>夜 ￥1,000～￥1,999</div>
+  <div class="sheet c1">
+    <p class="caseName">C-1 昼夜とも項目名と同じ色</p>
+    <div class="os-line"><span class="os-k">予算</span><span class="os-bseg"><span class="os-bt">昼</span>￥1,000～￥1,999</span><span class="os-bseg"><span class="os-bt">夜</span>￥1,000～￥1,999</span></div>
+    <div class="os-line"><span class="os-k">予算</span><span class="os-bseg"><span class="os-bt">昼</span>￥2,000～￥2,999</span><span class="os-bseg"><span class="os-bt">夜</span>￥8,000～￥9,999</span></div>
+    <div class="os-line"><span class="os-k">予算</span><span class="os-bseg"><span class="os-bt">夜</span>￥1,000～￥1,999</span></div>
+    <p class="note">新しい色を持ち込まない。ただし項目名と同色なので、チップが3つ並んで見え、どれが項目名か分かりにくい。</p>
+  </div>
+
+  <div class="sheet c2">
+    <p class="caseName">C-2 白地＋枠線（既存 aw-other と同じ配色）</p>
+    <div class="os-line"><span class="os-k">予算</span><span class="os-bseg"><span class="os-bt">昼</span>￥1,000～￥1,999</span><span class="os-bseg"><span class="os-bt">夜</span>￥1,000～￥1,999</span></div>
+    <div class="os-line"><span class="os-k">予算</span><span class="os-bseg"><span class="os-bt">昼</span>￥2,000～￥2,999</span><span class="os-bseg"><span class="os-bt">夜</span>￥8,000～￥9,999</span></div>
+    <div class="os-line"><span class="os-k">予算</span><span class="os-bseg"><span class="os-bt">夜</span>￥1,000～￥1,999</span></div>
+    <p class="note">項目名は面、昼夜は枠線で階層が付く。新しい色は増えない（受賞歴の他部門チップと同じ配色）。</p>
   </div>
 
   <div class="sheet">
-    <p class="caseName">B-2 区切りを細い縦棒にする</p>
-    <div class="os-line"><span class="os-k">予算</span>夜 ￥1,000～￥1,999<span class="b-sep">|</span>昼 ￥1,000～￥1,999</div>
-    <div class="os-line"><span class="os-k">予算</span>夜 ￥8,000～￥9,999<span class="b-sep">|</span>昼 ￥2,000～￥2,999</div>
-    <div class="os-line"><span class="os-k">予算</span>夜 ￥1,000～￥1,999</div>
-  </div>
-
-  <div class="sheet">
-    <p class="caseName">B-3 昼夜も小さなチップにする</p>
-    <div class="os-line"><span class="os-k">予算</span><span class="b-tag">夜</span>￥1,000～￥1,999 <span class="b-tag">昼</span>￥1,000～￥1,999</div>
-    <div class="os-line"><span class="os-k">予算</span><span class="b-tag">夜</span>￥8,000～￥9,999 <span class="b-tag">昼</span>￥2,000～￥2,999</div>
-    <div class="os-line"><span class="os-k">予算</span><span class="b-tag">夜</span>￥1,000～￥1,999</div>
-  </div>
-
-  <div class="sheet">
-    <p class="caseName">B-4 昼夜を2行に分ける</p>
-    <div class="os-line"><span class="os-k">予算夜</span>￥1,000～￥1,999</div>
-    <div class="os-line"><span class="os-k">予算昼</span>￥1,000～￥1,999</div>
-    <div class="os-line" style="margin-top:8px"><span class="os-k">予算夜</span>￥8,000～￥9,999</div>
-    <div class="os-line"><span class="os-k">予算昼</span>￥2,000～￥2,999</div>
-    <div class="os-line" style="margin-top:8px"><span class="os-k">予算夜</span>￥1,000～￥1,999</div>
-    <p class="note">昼夜そろう店で<b>シートが1行高くなります</b>。</p>
+    <p class="caseName">C-3 昼＝暖色／夜＝寒色（Aで使っているもの）</p>
+    <div class="os-line"><span class="os-k">予算</span><span class="os-bseg"><span class="os-bt os-bt-l">昼</span>￥1,000～￥1,999</span><span class="os-bseg"><span class="os-bt os-bt-d">夜</span>￥1,000～￥1,999</span></div>
+    <div class="os-line"><span class="os-k">予算</span><span class="os-bseg"><span class="os-bt os-bt-l">昼</span>￥2,000～￥2,999</span><span class="os-bseg"><span class="os-bt os-bt-d">夜</span>￥8,000～￥9,999</span></div>
+    <div class="os-line"><span class="os-k">予算</span><span class="os-bseg"><span class="os-bt os-bt-d">夜</span>￥1,000～￥1,999</span></div>
+    <p class="note">昼夜が色でも分かるので、金額だけを目で追える。色を2つ増やす。</p>
   </div>
 
 </div>
 
+<h2>コントラストの確認</h2>
+<p class="lead">
+  index.html のCSSコメントが定めている基準に合わせています。<b>文字と下地は4.5:1以上</b>（9.5pxはWCAGの「大きい文字」に当たらないため）、
+  <b>下地と白地は1.29:1以上</b>（これより明るいとチップの輪郭が地の白に溶けてタグに見えなくなる）。
+</p>
+<table class="cmp">
+  <tr><th>用途</th><th>下地</th><th>文字</th><th>文字と下地</th><th>下地と白地</th></tr>
+  <tr><td>項目名 <code>os-k</code>（既存）</td><td>#E6E2D8</td><td>#3d3d3d</td><td>8.40</td><td>1.29</td></tr>
+  <tr><td>C-2 昼夜（既存 aw-other と同色）</td><td>#ffffff</td><td>#7a7365</td><td>4.70</td><td>枠線 #d8d3c7 で表現</td></tr>
+  <tr><td>C-3 昼</td><td>#EDE2C6</td><td>#6B5518</td><td>5.59</td><td>1.29</td></tr>
+  <tr><td>C-3 夜</td><td>#DBE1EB</td><td>#3A4C66</td><td>6.71</td><td>1.31</td></tr>
+</table>
+<p class="note">
+  C-3 の下地は、項目名チップ #E6E2D8 と<b>同じ明るさ（相対輝度0.76）</b>になるよう色相と彩度だけを振ってあります。
+  並んだときに片方だけ浮いたり沈んだりしないためです。数値はすべて計算で確認しました。
+</p>
+
 <h2>C. いちばん長くなる場合の折り返し確認</h2>
 <p class="lead">
-  金額の桁が最大（￥60,000～￥79,999）で昼夜そろう店を、実機と同じ362px幅に入れたものです。
+  実機と同じ362px幅（iPhone 13/14 の画面幅 390px − 28px）に入れたものです。
 </p>
 <div class="grid">
   <div class="sheet">
-    <p class="caseName">B-1 の書き方で最長ケース</p>
-    <div class="os-line"><span class="os-k">予算</span>夜 ￥80,000～￥99,999 ／ 昼 ￥80,000～￥99,999</div>
+    <p class="caseName">文字数が最大になる帯で昼夜そろった場合</p>
+    <div class="os-line"><span class="os-k">予算</span><span class="os-bseg"><span class="os-bt os-bt-l">昼</span>￥80,000～￥99,999</span><span class="os-bseg"><span class="os-bt os-bt-d">夜</span>￥80,000～￥99,999</span></div>
     <p class="note">文字数が最大になる帯は「￥80,000～￥99,999」（17字）。キャッシュ7,442店の予算帯を全部数えて確認しました
       （￥100,000～ の店が8件ありますが、上限が無いぶん文字数は短くなります）。1行に収まります。</p>
+  </div>
+  <div class="sheet" style="width: 347px">
+    <p class="caseName">同じものを iPhone SE 幅（375px − 28px = 347px）で</p>
+    <div class="os-line"><span class="os-k">予算</span><span class="os-bseg"><span class="os-bt os-bt-l">昼</span>￥80,000～￥99,999</span><span class="os-bseg"><span class="os-bt os-bt-d">夜</span>￥80,000～￥99,999</span></div>
+    <p class="note">折り返すかどうかはこの枠で確認してください。折り返しても行が増えるだけで、値は欠けません。</p>
   </div>
 </div>
 
