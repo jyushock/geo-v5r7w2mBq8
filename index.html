@@ -663,13 +663,16 @@
         .os-pick-d { font-size: 11px; font-weight: bold; color: #1565C0; flex-shrink: 0;
                      font-variant-numeric: tabular-nums; }
 
-        /* 簡易トースト(攻城団Chrome未導入通知などに使用) */
+        /* 簡易トースト(攻城団Chrome未導入通知などに使用)。
+           情報シートと同じ白地・濃いグレー文字にそろえる。地図の上に浮くので、
+           枠と影で地図から浮かせる（#333 on #fff のコントラストは12.6）。 */
         #app-toast {
             position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px));
             transform: translateX(-50%) translateY(12px);
             max-width: min(88vw, 420px); box-sizing: border-box;
-            background: rgba(33,33,33,0.94); color: #fff; font-size: 13px; line-height: 1.5;
-            padding: 11px 16px; border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            background: #fff; color: #333; font-size: 13px; line-height: 1.5;
+            padding: 11px 16px; border-radius: 10px;
+            border: 1px solid #e0e0e0; box-shadow: 0 4px 16px rgba(0,0,0,0.18);
             z-index: 10000; opacity: 0; pointer-events: none; text-align: center;
             transition: opacity .2s ease, transform .2s ease;
         }
@@ -4651,7 +4654,6 @@ map.on('zoomend', () => { isZooming = false; });
                 timer = null;
                 ready = el;
                 el.classList.add('os-name-copying');
-                if (navigator.vibrate) navigator.vibrate(10);
             }, 500);
         };
         const fire = async () => {
