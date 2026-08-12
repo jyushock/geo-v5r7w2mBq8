@@ -1,0 +1,60 @@
+{
+ "計測日時": "2026-07-31T21:39:02",
+ "インストール済みChromeのバージョン": "150.0.7871.186",
+ "計測結果": {
+  "chrome-1440": {
+   "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/150.0.0.0 Safari/537.36",
+   "viewport": [
+    1440,
+    900
+   ],
+   "rowWidth": 1440,
+   "lordMainWidth": 56,
+   "行の件数の左端": [
+    78
+   ],
+   "見出しの件数の左端": [
+    78
+   ],
+   "スクロールバー幅": 0,
+   "文字が切れた行": [],
+   "行の高さ": 46
+  },
+  "chrome-375": {
+   "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/150.0.0.0 Safari/537.36",
+   "viewport": [
+    375,
+    667
+   ],
+   "rowWidth": 375,
+   "lordMainWidth": 56,
+   "行の件数の左端": [
+    78
+   ],
+   "見出しの件数の左端": [
+    78
+   ],
+   "スクロールバー幅": 0,
+   "文字が切れた行": [],
+   "行の高さ": 46
+  },
+  "webkit-1440": {
+   "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.4 Safari/605.1.15",
+   "viewport": [
+    1440,
+    900
+   ],
+   "rowWidth": 1427,
+   "lordMainWidth": 56,
+   "行の件数の左端": [
+    78
+   ],
+   "見出しの件数の左端": [
+    78
+   ],
+   "スクロールバー幅": 13,
+   "文字が切れた行": [],
+   "行の高さ": 41
+  }
+ }
+}

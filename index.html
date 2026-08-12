@@ -513,6 +513,8 @@
         .os-line .os-k { display: inline-block; background: #E6E2D8; color: #3d3d3d; border-radius: 3px;
                          font-size: 9.5px; font-weight: 700; line-height: 1.5; padding: 0 4px;
                          margin-right: 4px; vertical-align: 1px; letter-spacing: 0.8px; }
+        /* 予算が店側申告ではなく口コミ集計であることの断り。値より弱く見せる */
+        .os-line .os-note { font-size: 10px; color: #999; margin-left: 2px; }
         .os-clamp { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
         .os-clamp.clampable { cursor: pointer; }
         .os-clamp.clampable::after { content: ' ▼'; font-size: 10px; color: #999; }
@@ -2977,6 +2979,31 @@ function shopRatingHtml(p) {
          + `<span class="rt-v">${attrEscape(p.rating)}</span>${cnt}</span>`;
 }
 
+// 予算。食べログは「店側申告」と「口コミ集計」を昼夜それぞれ持っており、
+// data.js にも4通りそのまま入っている（budgetDinner / budgetLunch / …Rvw）。
+// 表示は店側申告を優先し、昼夜のうち有るほうだけを「夜 …／昼 …」で並べる。
+// 店側申告が昼夜とも無い店だけ口コミ集計に落として「（口コミ）」と断る。
+//
+// 【priceRange への逃げ道】
+// 2026-08-12 より前の data.js は、ld+json の priceRange（夜の値しか持たない）を
+// 単一の予算として持っていた。取得に失敗して据え置きになった店には今も残るので、
+// 4通りが1つも無いときだけこれを出す。
+function shopBudgetHtml(p) {
+    if (!p) return '';
+    const fmt = (dinner, lunch) => [
+        dinner ? `夜 ${attrEscape(dinner)}` : null,
+        lunch ? `昼 ${attrEscape(lunch)}` : null,
+    ].filter(Boolean).join(' ／ ');
+
+    const own = fmt(p.budgetDinner, p.budgetLunch);
+    if (own) return own;
+
+    const rvw = fmt(p.budgetDinnerRvw, p.budgetLunchRvw);
+    if (rvw) return `${rvw}<span class="os-note">（口コミ）</span>`;
+
+    return p.priceRange ? attrEscape(p.priceRange) : '';
+}
+
 // 標高／比高（バッジとは別行、住所の上に表示）。
 // 他の行と同じラベルチップを使い、1行に2項目を並べる（比高が無い城は標高だけになる）。
 function popupFormMetaHtml(elevationM, relativeHeightM) {
@@ -3522,7 +3549,10 @@ function buildSheetHtml(type, label, p, lng, lat) {
         lines = osKv('ジャンル', p.cuisine || sp.genre)
               + osKv('100名店', p.category)
               + osKv('受賞歴', shopAwardsHtml(p), 'os-line-aw')
-              + osKv('予算', p.priceRange)
+              + osKv('予算', shopBudgetHtml(p))
+              + osKv('営業', p.hours)
+              + osKv('予約', p.reservable)
+              + osKv('駐車場', p.parking)
               + osKv('最寄り', sp.station)
               + osKv('住所', p.address);
         // GoogleMap検索は従来どおり name 全体（店名＋駅＋ジャンル）で引く。

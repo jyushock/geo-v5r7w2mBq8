@@ -1,0 +1,343 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">
+<title>都道府県一覧の左寄せ — 確認のエビデンス</title><style>
+*{box-sizing:border-box} body{margin:0;padding:24px;background:#eceff1;font-family:sans-serif;color:#222}
+h1{font-size:18px;margin:0 0 10px} h2{font-size:14px;margin:22px 0 8px}
+table{border-collapse:collapse;background:#fff;font-size:12px;margin:0 0 8px}
+td,th{border:1px solid #dde3e7;padding:6px 10px;text-align:left} th{background:#f7f9fa;white-space:nowrap}
+.pair{display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start}
+figure{margin:0;background:#fff;border:1px solid #dde3e7;border-radius:8px;padding:10px}
+figcaption{font-size:11.5px;line-height:1.7;color:#455a64;margin-bottom:8px}
+img{display:block;max-width:720px;border:1px solid #eceff1;border-radius:6px}
+figure.se3 img{width:375px}
+.ok{color:#2e7d32} .no{color:#c62828}
+pre{background:#fff;border:1px solid #dde3e7;border-radius:8px;padding:12px;font-size:11px;
+     overflow:auto;max-height:420px;line-height:1.5}
+.note{font-size:12px;color:#546e7a;line-height:1.8;background:#fff;border-left:4px solid #90a4ae;
+      padding:10px 14px;border-radius:0 8px 8px 0;max-width:1100px}
+</style></head><body>
+<h1>「都道府県から探す」の件数を左へ寄せた件 — 確認のエビデンス</h1>
+
+<table>
+<tr><th>計測日時</th><td>2026-07-31T21:34:04</td></tr>
+<tr><th>エンジン</th><td>Playwright WebKit（iOS Safari と同系統）</td></tr>
+<tr><th>before</th><td>コミット eca1481 の index.html（左寄せ前）</td></tr>
+<tr><th>after</th><td>作業ツリーの index.html</td></tr>
+<tr><th>ローカル HEAD</th><td><code>1f377e649b28cb55b0f08f19e9ac389a1adb7ebf</code></td></tr>
+<tr><th>origin/master</th><td><code>1f377e649b28cb55b0f08f19e9ac389a1adb7ebf</code></td></tr>
+<tr><th>HEAD と origin/master が一致</th><td class="ok"><b>True</b>（＝プッシュ済み）</td></tr>
+<tr><th>index.html が HEAD と同一</th><td class="ok"><b>True</b>（＝撮ったものがコミット内容）</td></tr>
+</table>
+
+<p class="note">
+測っているのは複製ではなく、実際に描画された要素の <code>getBoundingClientRect().left</code>。
+「値の種類」は47行／8地方すべての値を重複除去したもので、要素が1つなら全行が同じ位置に揃っている。
+before は <code>git show eca1481:index.html</code> で取り出した修正前のファイルを、after と同じサーバ・同じエンジンで描いたもの。
+</p>
+
+<h2>PC幅 1440×900</h2>
+<div class="pair">
+  <figure>
+    <figcaption><b>修正前</b><br>
+      行の件数の左端 <b class="no">[1157.7]</b> px（47行の値の種類）<br>
+      見出しの件数の左端 <b class="no">[1349.2, 1358.4]</b> px（8地方の値の種類）<br>
+      .lord-main の幅 <b>1135.7</b> px ／ 行の幅 1427 px ／ 文字が切れた行 <b>0</b>
+    </figcaption>
+    <img src="before-pc1440.png" alt="">
+  </figure>
+  <figure>
+    <figcaption><b>修正後</b><br>
+      行の件数の左端 <b class="ok">[78]</b> px（47行の値の種類）<br>
+      見出しの件数の左端 <b class="ok">[78]</b> px（8地方の値の種類）<br>
+      .lord-main の幅 <b>56</b> px ／ 行の幅 1427 px ／ 文字が切れた行 <b>0</b>
+    </figcaption>
+    <img src="after-pc1440.png" alt="">
+  </figure></div>
+
+<h2>iPhone SE3 375×667 / DPR2</h2>
+<div class="pair">
+  <figure class="se3"><figcaption><b>修正前</b><br>
+      行の件数の左端 <b class="ok">[92.7]</b> px（47行の値の種類）<br>
+      見出しの件数の左端 <b class="no">[284.2, 293.4]</b> px（8地方の値の種類）<br>
+      .lord-main の幅 <b>70.7</b> px ／ 行の幅 362 px ／ 文字が切れた行 <b>0</b>
+    </figcaption>
+    <img src="before-se3.png" alt="">
+  </figure></figure>
+  <figure class="se3"><figcaption><b>修正後</b><br>
+      行の件数の左端 <b class="ok">[78]</b> px（47行の値の種類）<br>
+      見出しの件数の左端 <b class="ok">[78]</b> px（8地方の値の種類）<br>
+      .lord-main の幅 <b>56</b> px ／ 行の幅 362 px ／ 文字が切れた行 <b>0</b>
+    </figcaption>
+    <img src="after-se3.png" alt="">
+  </figure></figure>
+</div>
+
+<h2>生の計測結果（measurements.json）</h2>
+<pre>{
+ "メタ情報": {
+  "計測日時": "2026-07-31T21:34:04",
+  "エンジン": "Playwright WebKit（iOS Safari と同系統）",
+  "before": "コミット eca1481 の index.html（左寄せ前）",
+  "after": "作業ツリーの index.html",
+  "ローカルHEAD": "1f377e649b28cb55b0f08f19e9ac389a1adb7ebf",
+  "origin/master": "1f377e649b28cb55b0f08f19e9ac389a1adb7ebf",
+  "HEADとorigin/masterが一致": true,
+  "index.htmlがHEADと同一（差分なし）": true
+ },
+ "計測結果": {
+  "before/pc1440": {
+   "viewport": [
+    1440,
+    900
+   ],
+   "rowWidth": 1427,
+   "lordMainWidth": 1135.7,
+   "行の件数の左端_全種類": [
+    1157.7
+   ],
+   "行の件数の左端_例": [
+    [
+     "北海道",
+     1157.7
+    ],
+    [
+     "青森県",
+     1157.7
+    ],
+    [
+     "岩手県",
+     1157.7
+    ]
+   ],
+   "見出しの件数の左端_全種類": [
+    1349.2,
+    1358.4
+   ],
+   "見出しの件数の左端_全8地方": [
+    [
+     "北海道",
+     1358.4
+    ],
+    [
+     "東北",
+     1349.2
+    ],
+    [
+     "関東",
+     1349.2
+    ],
+    [
+     "中部",
+     1349.2
+    ],
+    [
+     "近畿",
+     1349.2
+    ],
+    [
+     "中国",
+     1349.2
+    ],
+    [
+     "四国",
+     1349.2
+    ],
+    [
+     "九州・沖縄",
+     1349.2
+    ]
+   ],
+   "文字が切れた行": []
+  },
+  "before/se3": {
+   "viewport": [
+    375,
+    667
+   ],
+   "rowWidth": 362,
+   "lordMainWidth": 70.7,
+   "行の件数の左端_全種類": [
+    92.7
+   ],
+   "行の件数の左端_例": [
+    [
+     "北海道",
+     92.7
+    ],
+    [
+     "青森県",
+     92.7
+    ],
+    [
+     "岩手県",
+     92.7
+    ]
+   ],
+   "見出しの件数の左端_全種類": [
+    284.2,
+    293.4
+   ],
+   "見出しの件数の左端_全8地方": [
+    [
+     "北海道",
+     293.4
+    ],
+    [
+     "東北",
+     284.2
+    ],
+    [
+     "関東",
+     284.2
+    ],
+    [
+     "中部",
+     284.2
+    ],
+    [
+     "近畿",
+     284.2
+    ],
+    [
+     "中国",
+     284.2
+    ],
+    [
+     "四国",
+     284.2
+    ],
+    [
+     "九州・沖縄",
+     284.2
+    ]
+   ],
+   "文字が切れた行": []
+  },
+  "after/pc1440": {
+   "viewport": [
+    1440,
+    900
+   ],
+   "rowWidth": 1427,
+   "lordMainWidth": 56,
+   "行の件数の左端_全種類": [
+    78
+   ],
+   "行の件数の左端_例": [
+    [
+     "北海道",
+     78
+    ],
+    [
+     "青森県",
+     78
+    ],
+    [
+     "岩手県",
+     78
+    ]
+   ],
+   "見出しの件数の左端_全種類": [
+    78
+   ],
+   "見出しの件数の左端_全8地方": [
+    [
+     "北海道",
+     78
+    ],
+    [
+     "東北",
+     78
+    ],
+    [
+     "関東",
+     78
+    ],
+    [
+     "中部",
+     78
+    ],
+    [
+     "近畿",
+     78
+    ],
+    [
+     "中国",
+     78
+    ],
+    [
+     "四国",
+     78
+    ],
+    [
+     "九州・沖縄",
+     78
+    ]
+   ],
+   "文字が切れた行": []
+  },
+  "after/se3": {
+   "viewport": [
+    375,
+    667
+   ],
+   "rowWidth": 362,
+   "lordMainWidth": 56,
+   "行の件数の左端_全種類": [
+    78
+   ],
+   "行の件数の左端_例": [
+    [
+     "北海道",
+     78
+    ],
+    [
+     "青森県",
+     78
+    ],
+    [
+     "岩手県",
+     78
+    ]
+   ],
+   "見出しの件数の左端_全種類": [
+    78
+   ],
+   "見出しの件数の左端_全8地方": [
+    [
+     "北海道",
+     78
+    ],
+    [
+     "東北",
+     78
+    ],
+    [
+     "関東",
+     78
+    ],
+    [
+     "中部",
+     78
+    ],
+    [
+     "近畿",
+     78
+    ],
+    [
+     "中国",
+     78
+    ],
+    [
+     "四国",
+     78
+    ],
+    [
+     "九州・沖縄",
+     78
+    ]
+   ],
+   "文字が切れた行": []
+  }
+ }
+}</pre>
+</body></html>

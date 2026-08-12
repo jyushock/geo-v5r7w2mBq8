@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8"><title>遺構の丸め処理 — 調査結果と再設定案</title>
+<style>
+* { box-sizing: border-box; }
+body { margin:0; background:#eceff1; font-family: sans-serif; padding:24px 28px 60px; color:#333; }
+h1 { font-size:19px; margin:0 0 8px; }
+.lead { font-size:13px; color:#555; margin:0 0 6px; line-height:1.9; max-width:1180px; }
+.lead b { color:#222; }
+.num { color:#c62828; font-weight:bold; }
+.ok { color:#2e7d32; font-weight:bold; }
+h2.sec { font-size:15px; margin:34px 0 12px; padding-bottom:6px; border-bottom:2px solid #90a4ae; max-width:1180px; }
+h3.sub { font-size:13px; margin:20px 0 8px; color:#37474f; }
+.note { font-size:12.5px; color:#555; line-height:1.95; max-width:1180px; background:#fff;
+        border-left:4px solid #90a4ae; padding:12px 16px; border-radius:0 6px 6px 0; margin:10px 0; }
+.note.warn { border-left-color:#c62828; }
+.note.good { border-left-color:#2e7d32; }
+.note b { color:#222; }
+.note ul { margin:6px 0 0; padding-left:20px; }
+.note li { margin-bottom:4px; }
+code { background:#f0f3f5; padding:1px 5px; border-radius:4px; font-size:12px; }
+table.dt { border-collapse:collapse; background:#fff; font-size:12px; max-width:1180px; width:100%;
+           box-shadow:0 1px 3px rgba(0,0,0,.08); }
+table.dt th, table.dt td { border:1px solid #dde3e6; padding:6px 10px; text-align:left; vertical-align:top; }
+table.dt th { background:#f4f6f7; font-weight:bold; text-align:center; white-space:nowrap; }
+table.dt td.r { text-align:right; white-space:nowrap; }
+table.dt td.c { text-align:center; white-space:nowrap; }
+table.dt td.ex { color:#666; font-size:11.5px; }
+tr.bad td { background:#fff4f4; }
+tr.keep td { background:#f4fbf4; }
+.tag { display:inline-block; font-size:10.5px; color:#fff; border-radius:9px; padding:2px 8px; white-space:nowrap; }
+.tag.x { background:#c62828; }
+.tag.o { background:#2e7d32; }
+.tag.q { background:#ef6c00; }
+.flow { font-family:monospace; font-size:12.5px; background:#fff; padding:12px 16px; border-radius:6px;
+        max-width:1180px; line-height:1.9; box-shadow:0 1px 3px rgba(0,0,0,.08); white-space:pre; overflow-x:auto; }
+.cards { display:flex; gap:16px; flex-wrap:wrap; align-items:stretch; max-width:1180px; }
+.card { width:373px; background:#fff; border-radius:8px; padding:14px 16px; box-shadow:0 2px 8px rgba(0,0,0,.1);
+        display:flex; flex-direction:column; }
+.card.reco { outline:3px solid #2a5bd7; outline-offset:6px; }
+.card h4 { font-size:13.5px; margin:0 0 6px; }
+.card.reco h4::after { content:'推奨'; font-size:10.5px; color:#fff; background:#2a5bd7; border-radius:9px;
+        padding:2px 8px; margin-left:6px; font-weight:normal; }
+.card .d { font-size:11.5px; color:#555; line-height:1.8; margin-bottom:8px; }
+.card .pros { font-size:11.5px; color:#2e7d32; line-height:1.7; }
+.card .cons { font-size:11.5px; color:#c62828; line-height:1.7; }
+.card .cost { font-size:11.5px; color:#555; line-height:1.7; margin-top:auto; padding-top:8px; border-top:1px dashed #cfd8dc; }
+.ba { background:#fff; border-radius:6px; padding:10px 14px; margin:8px 0; box-shadow:0 1px 3px rgba(0,0,0,.08);
+      max-width:1180px; font-size:12.5px; line-height:1.9; }
+.ba .n { font-weight:bold; font-size:12.5px; }
+.ba .row { display:flex; gap:8px; }
+.ba .lb { width:52px; flex-shrink:0; color:#888; font-size:11.5px; }
+.ba .aft b { color:#c62828; }
+.chip { display:inline-block; border-radius:4px; padding:1px 6px; margin:1px 2px 1px 0; font-size:11.5px; color:#fff; }
+.g-tenshu{background:#AD1457} .g-bldg{background:#D81B60} .g-ishi{background:#546E7A}
+.g-kuruwa{background:#6D4C41} .g-dorui{background:#8D6E63} .g-hori{background:#1565C0}
+.g-koguchi{background:#EF6C00} .g-mizu{background:#00838F} .g-gunji{background:#4527A0}
+.g-hak{background:#2E7D32} .g-haka{background:#5D4037} .g-sign{background:#9E9D24} .g-none{background:#B0BEC5}
+.g-other{background:#78909C}
+.legend { font-size:11.5px; line-height:2.2; max-width:1180px; margin:6px 0 12px; }
+</style></head><body>
+
+<h1>遺構（<code>remains</code>）の丸め処理 — 調査結果と再設定案</h1>
+<p class="lead">
+中城（埼玉県小川町）の遺構が「櫓」になっている件の原因調査と、同型の丸めを全遺構へ横展開して洗い出した結果。
+検証対象は <b>D:\work\geo-v5r7w2mBq8-main\castle.js（23,516件・うち remains あり 18,143件）</b> と、
+GetTabelog の入力キャッシュ <code>castle_shirohb.js</code>（20,523件）/ <code>castle_kojodan_detail.js</code>（4,534件）/
+<code>castle_wiki_aliases.js</code>（remains あり 1,886件）。件数はすべて実データを突き合わせて数えた実測値。外部APIは発行していない。
+</p>
+
+<!-- ══════════════════════════════════════════ -->
+<h2 class="sec">1. 中城の「櫓」の出所 — 攻城団の「櫓跡」で確定</h2>
+
+<div class="flow">攻城団 castle/1292            城郭放浪記 ogawa-naka-jyo        castle.js（現在）
+  remains: 土塁、空堀、櫓跡   remains: 土塁,堀            →  remains: 土塁、空堀、<b style="color:#c62828">櫓</b>
+                                                            ※「堀」は「空堀」があるため落ちている</div>
+
+<div class="note warn">
+<b>原因箇所</b>: <code>Mergers/CastleAttrMerge.cs</code> の <code>SuffixStrippableStems</code>（L123-134）。
+末尾の「跡」「址」を落としてよい語のホワイトリストに <b>「櫓」「櫓台」「隅櫓」「櫓門」「天守」「天守台」「門」「大手門」…</b> が入っており、
+<code>NormalizeRemainToken</code>（L247-262）が <b>櫓跡 → 櫓</b> に丸めている。
+選定理由はコメントに「除去後の語が両サイトの語彙に実在するものだけ」と書かれており、
+<b>語彙として存在するか</b>だけを基準にしていて、<b>意味が変わるか</b>は見ていない。
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<h2 class="sec">2. 入っている丸め処理は6種類（全数）</h2>
+<p class="lead">遺構に掛かる丸めは <code>CastleAttrMerge.MergeRemains</code> の中に6種類ある。
+③城郭放浪記マージ・⑤攻城団マージ・④Wikipediaマージ・⑥重複統合・⑥先頭の <code>CastleRemainsNormalizer</code> が同じ規則を共有している。
+件数は「ソースに元表記があり、castle.js には丸めた後しか残っていない」ものを数えた実測。
+<b style="color:#c62828">2026-08-11 訂正</b>: 初版は <code>shiroHbUrl</code> / <code>url</code> の一致だけでソースを引いていたため、
+城郭放浪記の「写真なし城」由来の 6,070件が集計から丸ごと抜けていた（§3参照）。
+下表は正規化名＋座標で再リンクしたうえで数え直した値。</p>
+
+<table class="dt">
+<tr><th>#</th><th>丸め</th><th>実測</th><th>代表例</th><th>意味は<br>変わるか</th><th>判定</th></tr>
+
+<tr class="bad"><td class="c">R1a</td><td><b>末尾「跡」「址」の除去<br>（建造物系）</b></td>
+<td class="r">62城<br>延べ66件</td>
+<td class="ex">門跡→門 10 ／ 櫓台跡→櫓台 10 ／ 庭園跡→庭園 7 ／ <b>櫓跡→櫓 6</b> ／ 居館跡→居館 6 ／
+天守台跡→天守台 6 ／ 大手門跡→大手門 5 ／ 天守跡→天守 2 ／ 隅櫓跡・水門跡・物見台跡 各2 ／
+櫓門跡・狼煙台跡・馬屋跡・物見櫓跡・見張台跡・枡形門跡・番所跡・搦手門跡・望楼跡 各1</td>
+<td class="c"><span class="tag x">変わる</span></td><td class="c">廃止</td></tr>
+
+<tr class="bad"><td class="c">R3a</td><td><b>括弧注記の除去<br>（「（移築）」を含むもの）</b></td>
+<td class="r">35城<br>延べ47件</td>
+<td class="ex">門（移築）→門 7 ／ 搦手門（移築）→搦手門 3 ／ 大手門（移築）→大手門 3 ／ 表門（移築）→表門 3 ／
+太鼓櫓・中門・長屋門・陣屋門（移築）各2 ／ 御殿玄関（公民館に移築）→御殿玄関 1 ほか</td>
+<td class="c"><span class="tag x">変わる</span></td><td class="c">廃止</td></tr>
+
+<tr><td class="c">R1b</td><td>末尾「跡」「址」の除去<br>（地形・土木系）</td>
+<td class="r">168城<br>延べ191件</td>
+<td class="ex">井戸跡→井戸 65 ／ 堀跡→堀 42 ／ 曲輪跡→曲輪 32 ／ 本丸跡→本丸 14 ／ 土塁跡→土塁 10 ／
+二の丸跡→二の丸 6 ／ 堀切跡・虎口跡 各3</td>
+<td class="c"><span class="tag q">語による</span></td><td class="c">要判断</td></tr>
+
+<tr class="keep"><td class="c">R2</td><td>同義語辞書</td>
+<td class="r">9,917城<br>延べ10,035件</td>
+<td class="ex"><b>郭→曲輪 9,820</b>（城郭放浪記が「郭」、攻城団・Wikipedia が「曲輪」）／ 畝状竪堀→畝状竪堀群 60 ／
+堅堀→竪堀 18（誤字）／ 城門→門 17 ／ 畝状空堀群→畝状竪堀群 16 ／ 石積み→石積 14 ／ 馬出し→馬出 11 ほか</td>
+<td class="c"><span class="tag o">変わらない</span></td><td class="c">維持</td></tr>
+
+<tr class="keep"><td class="c">R4</td><td>「なし」「不明」の除去<br>（実体のある語が他にある時だけ）</td>
+<td class="r">293城<br>延べ295件</td>
+<td class="ex">なし 283 ／ 不明 7 ／ 無し 3 ／ 消滅 2<br>
+例: 浅水城＝城郭放浪記「なし」＋攻城団「曲輪」→「曲輪」</td>
+<td class="c"><span class="tag o">変わらない</span></td><td class="c">維持</td></tr>
+
+<tr><td class="c">R5</td><td>末尾の「?」「など」「等」の除去</td>
+<td class="r">83城<br>延べ94件</td>
+<td class="ex">土塁など→土塁 12 ／ 土塁?→土塁 5 ／ 曲輪?→曲輪 4 ／ 石垣等→石垣 4 ／ 土塁等→土塁 4 ／
+政庁跡など→政庁跡 3 ／ 堀?・堀切? 各3</td>
+<td class="c"><span class="tag q">「?」だけ変わる</span></td><td class="c">要判断</td></tr>
+
+<tr class="keep"><td class="c">R6</td><td>上位語の除去<br>（下位語がある時だけ）</td>
+<td class="r">792城<br>延べ792件</td>
+<td class="ex">堀（空堀・水堀があるため）783 ／ 虎口（枡形虎口があるため）9</td>
+<td class="c"><span class="tag o">変わらない</span></td><td class="c">維持</td></tr>
+
+<tr><td class="c">R3b</td><td>括弧注記の除去（移築以外）</td>
+<td class="r">86城<br>延べ96件</td>
+<td class="ex">横堀（空堀）→横堀 15 ／ なし（埋没?）→なし 9 ／ なし（埋没）→なし 6 ／ 不明（埋没?）→不明 3 ／
+本曲輪（本丸）・横堀（水堀）・曲輪（埋没）・堀切（空堀）各2</td>
+<td class="c"><span class="tag q">語による</span></td><td class="c">要判断</td></tr>
+</table>
+
+<div class="note">
+<b>「櫓と櫓跡は違う」を機械的に横展開した結果</b>:
+建造物系の跡落とし <span class="num">62城</span> ＋ 移築注記の消失 <span class="num">35城</span> ＝ <span class="num">重複なしで97城</span>。
+「跡」の除去を語を問わず全廃した場合は <span class="num">260城</span>。<br>
+再リンクで新たに拾えた 6,070件は <b>13種の語（郭・堀・土塁・なし・石垣・井戸ほか）しか持たず、「跡」付きの語は0件</b>のため、
+R1a・R1b・R3a の件数は再集計しても変わらなかった。増えたのは R2（郭→曲輪）だけ。
+</div>
+
+<h3 class="sub">R1a に該当する62城（全件）</h3>
+<div class="note" style="max-width:1180px">
+福島城 (陸奥国鼻和郡)・赤穂城・信貴山城・鵯尾城・おつぼ山城・帯隈山城・竹俣城・小浜城・生野城〔山城〕（門跡）／
+秩父氏館・一乗寺城・洞城 (飛騨市)・川井城跡・夏戸城・千石山城・箱ヶ岳城・石徹白城・北之庄城（櫓台跡）／
+<b>榎本城・児山城・茂木城・桜城(愛知)・中城(埼玉)・犬地城（櫓跡）</b>／
+高梨氏館・白旗城・隈部館・浜の館・田手岡館・殿様屋敷・一乗谷諏訪館（庭園跡）／
+大溝城・豊岡城・打吹城・浦戸城・名島城・倉吉陣屋（天守台跡）／
+白金長者屋敷・嶽山城・大友氏遺跡・楯岩城・大友館（居館跡）／
+小里城・金山城 (美濃国)・地黄城・栗栖野城・小里城山城跡（大手門跡）／
+<b>千徳城・金山城 (美濃国)（天守跡）</b>／小丸城（隅櫓跡）／屋嶋城（水門跡）／津幡城・稲倉城（物見台跡）／
+延沢城（櫓門跡）／高崎山城（狼煙台跡）／中地山城（馬屋跡）／燧ヶ城（物見櫓跡）／長嶺城（見張台跡）／
+鳥羽山城（枡形門跡）／不言城（番所跡）／隼人城（搦手門跡）／怡土城跡（望楼跡）
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<h2 class="sec">3. ソースの再突合 — 「出所不明」は誤りだった（2026-08-11 訂正）</h2>
+
+<div class="note warn">
+<b>初版の記述は誤りだった。</b>「<code>shiroHbUrl</code> も <code>url</code> も持たない 6,070件は ①Wikipedia 由来と推定され、元表記を引けない」と書いたが、
+これは<b>URLキーで引けなかったという事実だけを根拠にした推測</b>で、出所を調べた結果ではない。実際に追跡した結果は次のとおり。
+</div>
+
+<h3 class="sub">追跡（4段階）</h3>
+<table class="dt">
+<tr><th>#</th><th>調べたこと</th><th>結果</th></tr>
+<tr><td class="c">1</td><td>コード上で <code>properties["remains"]</code> に書く経路を全数列挙<br>（<code>grep '"remains"' --include=*.cs</code>）</td>
+<td>③<code>ShiroHbMerger</code>／④<code>WikipediaAliasMerger</code>／⑤<code>CastleKojodanDetailMerger</code>／⑥<code>CastleDuplicateMerger</code>／F<code>CastleTenshuMerger</code> の<b>5つだけ</b>。
+<b>①（<code>KojoMarge</code>・<code>CastleScraperV2/V3</code>）には <code>remains</code> の文字列が1箇所も無い</b> ＝ ①由来という初版の推測はコードと矛盾する</td></tr>
+
+<tr><td class="c">2</td><td>孤児サンプル8件が<b>どのコミットで</b> remains を得たかを geo の全履歴から追跡</td>
+<td>8件すべてが <code>ad9f5e9</code>（2026-07-27「城データに遺構・城主を追加する」）。
+コミット本文に「<b>GetTabelog の③城郭放浪記マージ・⑤攻城団詳細マージを実行し</b>、両サイトの遺構・城主を統合した結果を反映する」と明記されている</td></tr>
+
+<tr><td class="c">3</td><td>③がURLを書かずに遺構だけ書く条件を仕様から確認</td>
+<td><code>ShiroHbMerger.cs</code> L27-31 のコメント:「<b>写真なし城</b>（castle_shirohb.js側で aliases/shiroHbUrl が無いエントリ）は該当項目のみ追加されない…
+<b>形態・遺構・住所は一覧ページの sl-data から取得済みのため写真なし城でも追加される（城主は一覧に無いため写真あり城のみ）</b>」</td></tr>
+
+<tr><td class="c">4</td><td>入力キャッシュの実データで裏を取る</td>
+<td><code>castle_shirohb.js</code> 20,523件のうち <b>9,250件が <code>shiroHbUrl: null</code>（<code>hasDetailPage: false</code>）</b>。
+そのうち <b>remains あり 6,784件・lords あり 0件</b></td></tr>
+</table>
+
+<div class="note good">
+<b>結論: 6,070件の出所は「城郭放浪記の写真なし城（詳細ページを持たない城）」で確定。出所不明ではない。</b>
+<ul>
+<li><b>裏づけ①</b>: 孤児6,070件のうち <b>6,061件（99.9%）が <code>lords</code> を持たない</b>。「城主は写真あり城のみ」という仕様と一致する。</li>
+<li><b>裏づけ②</b>: 写真なし城の remains のトークンは<b>全13種</b>（郭5,481・堀4,738・土塁2,564・なし465・石垣224・井戸137・ほか7語各1-2件）。
+孤児6,070件が castle.js で使っている語も<b>同じ13種</b>で、「郭」が「曲輪」に置き換わっている点だけが違う。</li>
+<li><b>裏づけ③</b>: ③と同じ正規化名（<code>ShiroHbMerger.NormalizeName</code> を移植）＋座標600m以内で照合すると、
+<b>5,885件が完全一致で当たり、うち5,879件は遺構がソースと整合</b>。部分一致500mを足すと <b>6,060件（99.8%）</b>。</li>
+</ul>
+</div>
+
+<h3 class="sub">再リンク後の突合率</h3>
+<table class="dt">
+<tr><th>経路</th><th>件数</th></tr>
+<tr><td>放浪記（URL一致）</td><td class="r">7,073</td></tr>
+<tr><td><b>放浪記（正規化名＋座標600m）＝写真なし城</b></td><td class="r"><b>5,885</b></td></tr>
+<tr><td>放浪記（URL）＋攻城団（URL）</td><td class="r">2,135</td></tr>
+<tr><td>放浪記（URL）＋攻城団（URL）＋Wikipedia（名前）</td><td class="r">1,406</td></tr>
+<tr><td>放浪記（URL）＋Wikipedia</td><td class="r">356</td></tr>
+<tr><td>放浪記（名前＋座標）＋攻城団</td><td class="r">323</td></tr>
+<tr><td>放浪記（名前＋座標）＋Wikipedia</td><td class="r">289</td></tr>
+<tr><td>攻城団のみ</td><td class="r">214</td></tr>
+<tr><td>放浪記（名前＋座標）＋攻城団＋Wikipedia</td><td class="r">110</td></tr>
+<tr><td>Wikipedia のみ</td><td class="r">95</td></tr>
+<tr><td>攻城団＋Wikipedia</td><td class="r">72</td></tr>
+<tr style="background:#fff4f4"><td><b>どのソースにも当たらない</b></td><td class="r"><b>199</b></td></tr>
+</table>
+<div class="note">
+<b>再構築不能は 6,070件（33.5%）ではなく 199件（1.1%）だった。</b>
+199件は上表で③の「部分一致500m」を使っていないためで、その規則も入れると約10件まで下がる。
+例: 高館山（山形県）・雷丘（奈良県）・城山城跡（兵庫県）・舘宿城（茨城県）など。
+</div>
+
+<div class="note">
+<b>「ソースから全部作り直す」方式で消える語も 855城 → 520城に下がった。</b>
+現在 castle.js にあってソースのどこにも無い語は123種（堀77・土塁43・門35・畝状竪堀群35・竪堀33 …）。
+⑥重複統合で別エントリから和集合で入った語が主。
+なお <b>模擬天守52・復興天守14・外観復元天守9・木造復元天守5</b> は工程F（<code>CastleTenshuMerger</code>）が後段で付け直すので実害はない。<br>
+ただし<b>差分修復型（既存値を入力にして、ソースがある語だけ元表記へ差し替える）なら 520城でも語は消えない。</b>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<h2 class="sec">4. 案 — 丸めをどこまで廃止するか</h2>
+
+<div class="cards">
+<div class="card reco">
+<h4>案1 差分修復（R1a＋R3a だけ廃止）</h4>
+<div class="d">ホワイトリストから建造物系の語（天守・天守台・櫓・櫓台・隅櫓・物見櫓・櫓門・門・大手門・搦手門・枡形門・番所・馬屋・望楼・居館・庭園・見張台・狼煙台・物見台・水門）を外す。
+括弧注記は「移築」を含むとき除去しない。
+既存 castle.js には、<b>ソースに元表記があり丸め後しか無い語だけ</b>を差し替える差分適用を1回流す。</div>
+<div class="pros">＋ 変更は97城のみ。他の18,046件は1バイトも動かない<br>
+＋ 97城はすべてURL一致で引ける。写真なし城の再リンクすら不要<br>
+＋ 「郭と曲輪が並ぶ」等の副作用ゼロ<br>
+＋ 冪等（2回目は0件）</div>
+<div class="cons">− 井戸跡→井戸（75件）等の地形語はそのまま</div>
+<div class="cost">実装: <code>CastleAttrMerge</code> の2定数＋<code>NormalizeRemainToken</code>、新工程1本。実行時間は数秒。API発行0</div>
+</div>
+
+<div class="card">
+<h4>案2 「跡」「址」の除去を全廃</h4>
+<div class="d">R1 をホワイトリストごと削除し、「跡」が付いた語はすべてそのまま持つ。R3a（移築）も廃止。
+R2（同義語）・R4（なし除去）・R6（上位語）は残す。</div>
+<div class="pros">＋ 「井戸／井戸跡」「曲輪／曲輪跡」も原典どおりになる<br>
+＋ 規則が単純になり、語を追加するたびの判断が要らなくなる</div>
+<div class="cons">− 変更260城<br>
+− 同じ城に<b>「堀」と「堀跡」が並ぶ</b>ケースが出る（城郭放浪記が「堀」、攻城団が「堀跡」）。実測で重複が発生するのは志苔館・浪岡城など<br>
+− 地図UIの「遺構から探す」のトークン種数が増える（「跡」付きの語が44種増えて 659種 → 約700種）</div>
+<div class="cost">実装量は案1と同じ。差分が広い分だけ目視確認のコストが上がる</div>
+</div>
+
+<div class="card">
+<h4>案3 丸めを完全全廃</h4>
+<div class="d">R1〜R6 をすべて外し、分割・trim・完全一致の重複除去だけにする。</div>
+<div class="pros">＋ 原典に対して無加工。判断が一切入らない</div>
+<div class="cons">− <b>9,917城で「郭」と「曲輪」が並ぶ</b>（城郭放浪記と攻城団の語彙差がそのまま出る）<br>
+− <b>293城で「なし」と実体のある遺構が同時に並ぶ</b>（例: 浅水城「なし、曲輪」）<br>
+− 792城で「堀」と「空堀」が重複<br>
+− トークン種数 659種 → <b>920種</b>。「遺構から探す」の一覧が誤字と表記ゆれで埋まる（堅堀・空掘・ピッ卜 等）<br>
+− 変更 5,419城</div>
+<div class="cost">実装は最小だが、地図UIの分類定義の見直しが付随する</div>
+</div>
+
+<div class="card">
+<h4>案4 二重持ち（remains ＋ remainsNorm）</h4>
+<div class="d"><code>remains</code> は原典そのまま（案3相当）、<code>remainsRaw</code> ではなく検索用の正規化列 <code>remainsNorm</code> を別プロパティで持つ。
+情報シートの表示は原典、「遺構から探す」の索引は正規化列を使う。</div>
+<div class="pros">＋ 表示の正確さと検索のまとまりを両立できる<br>
+＋ 将来 丸め規則を変えても表示側は無傷</div>
+<div class="cons">− castle.js が肥大する（remains あり18,143件×平均2.5語ぶんの重複保持）<br>
+− ⑥の重複統合・工程Fが2列を同時に面倒みる必要が出る<br>
+− 地図UI側の改修が必須（現状は <code>p.remains</code> 一本）</div>
+<div class="cost">GetTabelog と geo の両方に改修が要る。今回の97城の問題だけなら過剰</div>
+</div>
+</div>
+
+<div class="note good">
+<b>推奨は案1。</b>理由は、今回の指摘（櫓と櫓跡は別物）に対して<b>意味が変わる丸めだけ</b>を外せて、
+副作用の大きい R2・R4・R6 に触れずに済み、変更が97城に限定されて全件目視で確認できるため。
+R1b（井戸跡→井戸など168城）を含めるかは別途の判断で、含めるなら案2に寄せる。<br>
+なお §3 の訂正により「6,070件は再構築不能」という案1の当初の根拠は消えたが、<b>推奨は変わらない</b>。
+差分が97城に収まり全件確認できるという理由は独立に成り立つ。
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<h2 class="sec">5. 遺構の並び順</h2>
+<p class="lead">現在の並びは<b>マージの実行順そのまま</b>（③城郭放浪記 → ⑤攻城団 → ④Wikipedia → ⑥統合 → F天守）で、意味を持っていない。
+先頭が「土塁」の城が6,941件、「曲輪」が5,573件で、天守を持つ城でも天守が末尾に来る
+（例: 弘前城「天守、櫓、門、石垣、土塁、曲輪、堀、<b>現存天守</b>」）。</p>
+
+<h3 class="sub">案A: 分類順に固定（推奨）</h3>
+<p class="lead">地図UIの「遺構から探す」が既に持っている13分類（<code>REMAIN_GROUP_DEFS</code>）を並び順にも使い、天守を独立させて先頭に置く。
+同じ分類の中は現在の順（ソース到着順）を保つ。</p>
+<div class="legend">
+<span class="chip g-tenshu">1 天守</span><span class="chip g-bldg">2 櫓</span><span class="chip g-bldg">3 門</span>
+<span class="chip g-bldg">4 御殿・書院</span><span class="chip g-bldg">5 蔵・長屋・番所</span><span class="chip g-bldg">6 塀・築地</span>
+<span class="chip g-bldg">7 屋敷・居館</span><span class="chip g-bldg">8 寺社・祠</span>
+<span class="chip g-ishi">9 石垣・石造物</span><span class="chip g-kuruwa">10 曲輪・区画</span>
+<span class="chip g-koguchi">11 虎口・出入口</span><span class="chip g-dorui">12 土塁・切岸</span><span class="chip g-hori">13 堀</span>
+<span class="chip g-mizu">14 井戸・水利</span><span class="chip g-gunji">15 砲台・物見</span><span class="chip g-hak">16 発掘遺構</span>
+<span class="chip g-haka">17 墓・供養塔</span><span class="chip g-sign">18 碑・案内板</span><span class="chip g-other">19 その他</span>
+<span class="chip g-none">20 なし・状態</span>
+</div>
+<p class="lead">天守の中は <b>現存天守 → 木造復元天守 → 外観復元天守 → 復興天守 → 模擬天守 → 天守 → 天守台</b>（工程Fが付ける5種の序列に合わせる）。</p>
+
+<div class="ba"><div class="n">[青森県] 弘前城</div>
+<div class="row"><span class="lb">現行</span><span>天守、櫓、門、石垣、土塁、曲輪、堀、現存天守</span></div>
+<div class="row aft"><span class="lb">案A</span><span><b>現存天守</b>、天守、櫓、門、石垣、曲輪、土塁、堀</span></div></div>
+
+<div class="ba"><div class="n">[兵庫県] 姫路城</div>
+<div class="row"><span class="lb">現行</span><span>天守、櫓、門、土塀、石垣、土塁、曲輪、横堀、竪堀、井戸、虎口、塀、堀、庭園、現存天守</span></div>
+<div class="row aft"><span class="lb">案A</span><span><b>現存天守</b>、天守、櫓、門、土塀、塀、石垣、曲輪、虎口、土塁、横堀、竪堀、堀、井戸、庭園</span></div></div>
+
+<div class="ba"><div class="n">[静岡県] 掛川城</div>
+<div class="row"><span class="lb">現行</span><span>櫓、門、石垣、曲輪、御殿、土塁、堀、二の丸御殿、太鼓櫓、大手門番所、蕗の門、大手ニの門、木造復元天守</span></div>
+<div class="row aft"><span class="lb">案A</span><span><b>木造復元天守</b>、櫓、太鼓櫓、門、大手門番所、蕗の門、大手ニの門、御殿、二の丸御殿、石垣、曲輪、土塁、堀</span></div></div>
+
+<div class="ba"><div class="n">[岐阜県] 金山城 (美濃国)</div>
+<div class="row"><span class="lb">現行</span><span>石垣、土塁、曲輪、堀、井戸、天守、本丸、二の丸、三の丸、出丸、櫓、腰曲輪、石塁、大手門、堀切、米蔵、移築門、石碑</span></div>
+<div class="row aft"><span class="lb">案A</span><span><b>天守跡</b>、櫓、<b>大手門跡</b>、移築門、米蔵、石垣、石塁、石碑、曲輪、本丸、二の丸、三の丸、出丸、腰曲輪、土塁、堀、堀切、井戸<br>
+<span style="color:#888;font-size:11.5px">※案1を併せて適用した場合。天守跡・大手門跡が復活する。金山城に現存・復元の天守は無いので、天守分類の先頭は「天守跡」になる</span></span></div></div>
+
+<div class="ba"><div class="n">[埼玉県] 中城 — 今回の指摘元</div>
+<div class="row"><span class="lb">現行</span><span>土塁、空堀、櫓</span></div>
+<div class="row aft"><span class="lb">案1+A</span><span><b>櫓跡</b>、土塁、空堀</span></div></div>
+
+<div class="note">
+案Aで並びが変わるのは <b>7,178城 / 18,143城</b>。座標・件数・語の集合は変わらず、<b>列挙順だけ</b>が変わる。
+情報シートは <code>castleAttrLine('遺構', p.remains)</code> で文字列をそのまま出しているので、地図UI側の改修は不要。
+</div>
+
+<h3 class="sub">案B: 天守だけ先頭に出し、残りは現状維持</h3>
+<div class="note">
+最小変更。天守系トークン（現存天守12・模擬天守55・復興天守14・外観復元天守9・木造復元天守5・天守15・天守台45）を持つ城だけが変わる。
+分類順にはならないので「土塁、曲輪、櫓、堀、石垣」のような読みにくい並びは残る。
+</div>
+
+<h3 class="sub">案C: 並べ替えない</h3>
+<div class="note">
+ソース到着順のまま。城郭放浪記の記載順（＝現地の見学順に近い）を保てるという理屈は立つが、
+③④⑤⑥Fの実行順で決まっているだけなので、実際には保たれていない。
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<h2 class="sec">6. 実装の置き場所</h2>
+<div class="flow">⑥ 重複統合
+   ├ 先頭  CastleRemainsNormalizer（表記正規化）      ← R1a・R3a を外した規則に差し替え
+   ├ 自動統合 → MergePairs → 座標ずらし
+   ├ E     CastleMeijoBadgeMerger（名城バッジ）
+   ├ F     CastleTenshuMerger（天守の種類）           ← remains を書き換える
+   └ G     CastleRemainsRebuilder（新規）             ← ★ここに追加
+             1/2 ソースから元表記を復元（97城）
+             2/2 分類順に並べ替え（7,178城）</div>
+<div class="note">
+<b>Fより後に置く理由</b>: Fが <code>remains</code> に「現存天守」等を追記するため、Fより前で並べ替えると天守が末尾に付き直る。
+現に castle.js の弘前城は「…堀、現存天守」で、Fが末尾に足した形のまま残っている。<br>
+<b>冪等性</b>: 1/2はソース照合で差し替えるだけ、2/2は安定ソートなので、2回目以降は0件。
+<code>CastleRemainsNormalizer</code> と同じく <code>IsSameSet</code> ではなく<b>並びも比較</b>して変更判定する必要がある（順序が変わる工程のため）。
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<h2 class="sec">7. 付随して見つかった別の問題（今回の対象外）</h2>
+<div class="note">
+<ul>
+<li><b>括弧内の読点でトークンが分断されている</b>。例: 名島城の「移築門3棟（福岡城、崇福寺、宗生寺）」が
+「移築門3棟（福岡城」「崇福寺」「宗生寺）」の3語に割れている。地図UI側は括弧の対応が取れない語を「その他」に落として凌いでいる（49種52件）。
+<b>並べ替えを入れると断片が離れ離れになるため、案Aを実装するなら「括弧の対応が取れない語は直前の語に固定して動かさない」規則が要る。</b></li>
+<li><b>半角スペース区切りが分割されていない</b>。高崎城「土塁 水堀」、高知城「門 石垣」など。区切り文字に半角スペースが入っていないため。</li>
+<li><b>上位語辞書に到達しないエントリがある</b>。<code>Hypernyms["虎口"]</code> に「桝形虎口」が入っているが、
+その時点で同義語辞書が「桝形虎口→枡形虎口」を済ませているため、この分岐には入らない。実害は無い（同じ列に「枡形虎口」がある）。</li>
+<li>城主（<code>lords</code>）側にも R4・R5 が掛かっているが、こちらは同義語辞書を持たないので今回の問題は起きていない。</li>
+</ul>
+</div>
+
+<p class="lead" style="margin-top:26px;color:#888;font-size:11.5px">
+調査日 2026-08-11 ／ 実測はすべて castle.js とキャッシュの読み取りのみ。castle.js は変更していない。
+</p>
+</body></html>
