@@ -513,6 +513,21 @@
         .os-line .os-k { display: inline-block; background: #E6E2D8; color: #3d3d3d; border-radius: 3px;
                          font-size: 9.5px; font-weight: 700; line-height: 1.5; padding: 0 4px;
                          margin-right: 4px; vertical-align: 1px; letter-spacing: 0.8px; }
+        /* 予算の昼夜チップ。寸法・角丸は項目名チップ(os-k)と揃え、色だけ変える。
+           letter-spacing は付けない（1文字なので右に余白だけが残るため）。
+           下地は os-k の #E6E2D8 と同じ相対輝度(0.76)になるよう色相と彩度だけを振っており、
+           並んだときに片方だけ浮いたり沈んだりしない。
+           コントラストは os-k と同じ基準で確認済み（いずれも計算）:
+             昼 #6B5518 on #EDE2C6 = 5.59 / 下地と白地 = 1.29
+             夜 #3A4C66 on #DBE1EB = 6.71 / 下地と白地 = 1.31
+           9.5px は WCAG の「大きい文字」に当たらないので文字は4.5以上、
+           下地は1.29を下回るとチップの輪郭が地の白に溶けてタグに見えなくなる。 */
+        .os-line .os-bseg + .os-bseg { margin-left: 8px; }
+        .os-line .os-bt { display: inline-block; border-radius: 3px;
+                          font-size: 9.5px; font-weight: 700; line-height: 1.5; padding: 0 4px;
+                          margin-right: 4px; vertical-align: 1px; }
+        .os-line .os-bt-l { background: #EDE2C6; color: #6B5518; }
+        .os-line .os-bt-d { background: #DBE1EB; color: #3A4C66; }
         .os-clamp { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
         .os-clamp.clampable { cursor: pointer; }
         .os-clamp.clampable::after { content: ' ▼'; font-size: 10px; color: #999; }
@@ -2988,7 +3003,7 @@ function shopRatingHtml(p) {
 // 口コミ集計に夜しか無く店側申告には昼夜ある店で、昼が消える
 // （実測: 焼肉ホルモン 新井屋 渋谷。口コミは夜のみ、申告は夜￥6,000～￥7,999・
 //   昼￥2,000～￥2,999）。昼夜は別の情報なので、枠ごとに口コミ→申告の順で選ぶ。
-// 有る枠だけを「夜 …／昼 …」で並べる（片方しか無い店が多い）。
+// 有る枠だけを昼→夜の順に並べる（片方しか無い店が多い）。
 // 枠ごとに出どころが混ざりうるため、出どころの注記は付けない。
 //
 // 【priceRange への逃げ道】
@@ -2997,13 +3012,12 @@ function shopRatingHtml(p) {
 // 4通りが1つも無いときだけこれを出す。
 function shopBudgetHtml(p) {
     if (!p) return '';
-    const dinner = p.budgetDinnerRvw || p.budgetDinner;
-    const lunch  = p.budgetLunchRvw  || p.budgetLunch;
+    const seg = (cls, label, v) => v
+        ? `<span class="os-bseg"><span class="os-bt ${cls}">${label}</span>${attrEscape(v)}</span>`
+        : '';
 
-    const shown = [
-        dinner ? `夜 ${attrEscape(dinner)}` : null,
-        lunch ? `昼 ${attrEscape(lunch)}` : null,
-    ].filter(Boolean).join(' ／ ');
+    const shown = seg('os-bt-l', '昼', p.budgetLunchRvw  || p.budgetLunch)
+                + seg('os-bt-d', '夜', p.budgetDinnerRvw || p.budgetDinner);
 
     return shown || (p.priceRange ? attrEscape(p.priceRange) : '');
 }
