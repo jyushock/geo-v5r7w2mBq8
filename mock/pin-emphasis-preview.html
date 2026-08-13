@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ピンの強調方法 — 白フチの代替案</title>
+<script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
+<link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
+<style>
+    body { margin: 0; font-family: system-ui, sans-serif; color: #222; background: #fff; }
+    header { padding: 12px 14px 8px; }
+    h1 { font-size: 16px; margin: 0 0 4px; }
+    .lead { font-size: 12px; color: #555; line-height: 1.7; margin: 0 0 10px; }
+    .lead code { background: #f2f2f2; padding: 1px 4px; border-radius: 3px; font-size: 11px; }
+
+    /* 案の切り替えチップ */
+    .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+    .chip { font-size: 12px; padding: 5px 10px; border: 1px solid #ccc; background: #fff;
+            border-radius: 999px; cursor: pointer; white-space: nowrap; }
+    .chip.on { background: #263238; color: #fff; border-color: #263238; }
+    .chip.base { border-style: dashed; }
+
+    /* 地図まわりのコントロール */
+    .bar { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; font-size: 11.5px; color: #666;
+           padding: 0 14px 8px; }
+    .bar .grp { display: flex; gap: 5px; align-items: center; }
+    .bar button { font-size: 11.5px; padding: 4px 9px; border: 1px solid #ccc; background: #fff;
+                  border-radius: 6px; cursor: pointer; }
+    .bar button.on { background: #455A64; color: #fff; border-color: #455A64; }
+
+    #map { width: 100%; height: 56vh; min-height: 340px; }
+
+    /* 選択中の案の解説 */
+    .desc { padding: 10px 14px 4px; }
+    .desc h2 { font-size: 14px; margin: 0 0 6px; }
+    .desc p { font-size: 12.5px; line-height: 1.75; margin: 0 0 8px; color: #333; }
+    .desc .pros { color: #1B5E20; }
+    .desc .cons { color: #B71C1C; }
+    .desc pre { background: #f6f7f9; border-left: 3px solid #90A4AE; padding: 8px 10px; margin: 0 0 8px;
+                font-size: 11px; line-height: 1.6; overflow-x: auto; font-family: ui-monospace, monospace; }
+    .kv { font-size: 11.5px; color: #555; line-height: 1.7; }
+    .kv b { color: #333; }
+
+    table { border-collapse: collapse; width: calc(100% - 28px); margin: 10px 14px 40px; font-size: 12px; }
+    th, td { border: 1px solid #e0e0e0; padding: 6px 8px; text-align: left; vertical-align: top; line-height: 1.6; }
+    th { background: #f6f7f9; font-weight: 600; white-space: nowrap; }
+    td.cost { white-space: nowrap; }
+    h2.sec { font-size: 14px; margin: 24px 14px 6px; padding-bottom: 5px; border-bottom: 1px solid #ddd; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>ピンの強調方法 — 白フチの代替案</h1>
+    <p class="lead">
+        現状は全ピンが <code>circle-stroke-width: 3 / circle-stroke-color: '#FFFFFF'</code> の白フチで地図から浮かせている
+        （道の駅は一回り大きい白い板、マンホールカードは白フチ込みの画像）。
+        白フチは白い建物・白い道路・白い注記の上で境界が消える、密集すると白が面になって地図が読めなくなる、という弱点がある。
+        下のチップで案を切り替えると、同じ地点・同じピン配置で見た目が入れ替わる。
+    </p>
+    <div class="chips" id="chips"></div>
+</header>
+
+<div class="bar">
+    <div class="grp"><span>地点:</span><span id="places"></span></div>
+    <div class="grp"><span>タイル:</span><span id="tiles"></span></div>
+    <div class="grp"><span>傾き:</span><span id="pitches"></span></div>
+</div>
+
+<div id="map"></div>
+
+<div class="desc">
+    <h2 id="d-title"></h2>
+    <p id="d-aim"></p>
+    <p class="pros" id="d-pro"></p>
+    <p class="cons" id="d-con"></p>
+    <pre id="d-code"></pre>
+    <div class="kv" id="d-scope"></div>
+</div>
+
+<h2 class="sec">案の一覧</h2>
+<table id="tbl">
+    <thead><tr><th>案</th><th>ねらい</th><th>実装コスト</th><th>素材の作り直し</th></tr></thead>
+    <tbody></tbody>
+</table>
+
+<script>
+/* ───────── アイコン素材（index.html と同じPNG。file:// で読めるよう data URI で埋め込む） ───────── */
+const ICONS = {
+  'tabe-icon': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAANdAAADXQAaGYYhoAAAGHaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8P3hwYWNrZXQgYmVnaW49J++7vycgaWQ9J1c1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCc/Pg0KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyI+PHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj48cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0idXVpZDpmYWY1YmRkNS1iYTNkLTExZGEtYWQzMS1kMzNkNzUxODJmMWIiIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIj48dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPjwvcmRmOkRlc2NyaXB0aW9uPjwvcmRmOlJERj48L3g6eG1wbWV0YT4NCjw/eHBhY2tldCBlbmQ9J3cnPz4slJgLAAAElUlEQVR4Xu2aa4hVVRTHfzOjjllqpaFo9EB7YC+tbKr5YGIF8yWzIqjs+aEHERUJZWUaFlH0lL4YISlYikRJWkZkVFj0tDLD/OAghWll00utmfD0ZR1Y/Fn33nMfc+fOzPnBgtl7rb322vuc2WftvS/k5OTk5OTk5OQMTlq0ogqOAh4GpgCfqHIw8DKQmDypysHABjcBCbBIDQY6pwK/yiTco0ZVMh1YDLwFfAl8BqwCrgda1bgetAHjXXk68KdMws1OXyln26C9X5VvgXO1YW/yhHW8CzjN1c8ADkhw1zh9ucwD/gsGHMk+4Ex10FvscB3vAiY7XUcQ9Gynz8rTwSBLyVZgqDrqDe6WjncARzv9FaLvBi50+lI8GAwuq1yuzmpFs5Qfl463Wj6QcoPo/wbOc/pCzAgGVY6sVIe14CZgO7BU6p+Xzr8ARjn97aLvAs5wemUI8F0wqHJkszqtllbgd9fBi6JfLgF8AAx3+kWi3w1McnrPVcGAypXt6rRaWoCPpZNnxeZV0W9wqfZxQZBvSvuU9wLbcmWLOq0FxwM7paNHnH5IkA2uBWZasqJBdgEjXXuAccEntBJ5Q/zWjJOAPdLZvU4/HPgwCCiSbuAY1xZgVmBXidwnfmvKNFkPElvoUkYDnwdBRaKL4dzAphI5WfzWnHZgv3R6ndNn/YzNcm0AbgxsypX14rMo+l3PyibgUsv2UpYDV1oWNtPVF+NIKY+VciXcrxW9yZzgCfgUuZTcKv5eCWzKkYXiry5U83/r84nDgJ8Dm6yyxvmqO7cFAWWR3cAI83FnoM8qq+0z3KfMCwLLIoutfRuwN9AXk3+ABySOPmVhEGQpOQhcYu3PAf4KbFT2AsuAU6T/smnSihrQYTLRTovGAofbil/oNe22NhuBC4C3gWHAv5aCf225xx/A93YU9os6aVSaLOWdZDvKzcETTWyrnB5pXQYskUOWAUML8EwwAQnwG3C6NhioPBVMQAL8BJygxgOJa90ucGkwAQnQKcdrA4IWYIEN0OfrK4MJSIBtwInOrt9ziJ0ZpgNc5XRrgwlI7G3p1zQDrwO3WHm8Pdl0gCusfijwjgw+3dS02htztZX7FavdgOZY3bHAj1Y33+UiI+xWOQEes7pmOzpLLFe4yOr7BcvkifYAF5vuLOAusQeYYCl1yhrxsR843+kbliUSuB9AuxoX4KWgfWIZ4TQ1biQeDYL2csAuO4tR6POYyh47n2w45gfBqpS6GCHjneBOW08ahjuCIFW6gKnasADPBe1VttlRep+T5TBzXwULmC6kkXxlu80+Y7YLZoU9uR4JsqfMm2GP/5SmssXWmk4rb3InS3VltPtZzPuu/gUJOM0BKqHZEiE/mek2ud3VL5B2maj0WDxlKjDG/vY/SvAXo3OB11y5XA7a+UA6wU3uaR/q7Drc33WjTZ70etnc6LF3NYwEPjW/nfaW+Wu6jdqgHgwDvpFJSMVndLVijP0YSvtK5GaqrkwBfpBgHlKjGjJRdpWJ/UijImp1KDrOtq5HAO/W4XUcZU98AvARsE4NcnJycnJycnJycorzP4ID4BHrd4u2AAAAAElFTkSuQmCC',
+  'castle-icon': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAGHaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8P3hwYWNrZXQgYmVnaW49J++7vycgaWQ9J1c1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCc/Pg0KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyI+PHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj48cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0idXVpZDpmYWY1YmRkNS1iYTNkLTExZGEtYWQzMS1kMzNkNzUxODJmMWIiIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIj48dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPjwvcmRmOkRlc2NyaXB0aW9uPjwvcmRmOlJERj48L3g6eG1wbWV0YT4NCjw/eHBhY2tldCBlbmQ9J3cnPz4slJgLAAADOElEQVR4Xu2ZsW4TQRCG/1mHigCvEASKKICG0ECRSJGV3E46SAVFJB6AhhKUUFPR8hYUG+MuPaFKmQKqFOlAdNg3FMbBNznf7e3dGiHtJzny/jO73vt3ds/nAIlEIpFIJBKJRFSstftaq6Jpfiikha5hZoEAueRHxpi3zrkjnaOx1u4R0TqADQArzrno84wGMwszi9Z9YBve1xejhVgws1hr97RehrV2j5klfn1G3ALM/F5EruR5fscYs0ZE10TkM4BjnVvCGhE9/PP+o4icEdEv59xLldeamAb8LV1Rn6TbnsQ4C6Jsge3t7VsFQU9btz25NG4HRDHAGPNMa9X4nXPNx60ncC3mw8xbAD5pvR2FPbPtnBsW4+HEqICBFvyoqoLCOgWOX07nFTALM38H5LqAcBhwgM0cpD+cczdUuBNiVICCSl3u9/tXrbWvpq/d3d1lnbMIFmBAOb1eb0RE76av8/Pzkc5ZBP/MAADI8/zD9KVji6KsOoPY2tpa0Vqv1zsh0DIIGI1GN3W8jqWlpa8AICI/x+PxPR0fDofftNaUzgyI/dBSRhffDLvaAnMmojxpYJFnauv5tx4AALIsm3NvVr7MsamM+lRBlmWHWm1KTwtNYeYDInpRVGe/uQU++RQoG4NARLdXV1fN6elp7Y8s8+iiAp5roThZPfEQyseQyZ9WzwftDRAUntA8924nEACQtHpCLLe2BTN3gy/OuTUVDoaZjwE8QEen/5T2FbBAYlRXNAPGWpis4lnVj6TTGDOf6RhilGtMA4JvL6XWxKNzU9MZ8J8R7CQz3xXgJHiAjsnz/P5gMDjReh3BFSAi+8WLb7N5dV/drscYE/S/xGADiOipUorNRui+uu3FEy34EGzABc0XqxHVw1dHfWhvgM9iVcyzIgTUDl8d9SHIgJ2dnddaQ9XFlMxzmlsS8mDSW38eM79RUi1BBuR5vqE1NLyYJrmXmfTWY4jIupJqaWxAlmV9ItrUejjFdbxo6eX1gIg2syzra72KxgZcut34TnRuXnEd9ao2xRhzoLUqGhsA4HGhRVUXBwAyCZdcWWU3qonP55EWEolEIpFIJBKJRCKRSCQSM/wGwFvi5x3fShMAAAAASUVORK5CYII=',
+  'manhole-icon': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFA0lEQVR4nO2aXYiWRRTHfy6pa2BRpjdpF5FuXmSZhG4FXgRtkhZEH5bXpn1cp26Jd5XFGouuUtdFopV1oVZmXmiJLEYU3eRH6taVuwaZ0GruxoHzwOEw8769z9f7LPv84cDDnJkzc+aZOXPmnIEaNWrUqFGjaHQB64FdwGHgDHAJuKok36eVtxNYp20mNO4DtgFDwHhKkrZ9wL1MEEwBVgHHMygdo++Bx7WPSuIBYLAAxT2dAJZQIXQC24HrDQZ9GdgPbABW6v6+BZiqJN936+rZCBzQNjF5/wL92ndbsQD4MTLIMVXkGWB6Ctmi3LPAQZUV6uMH4C7ahAfVeocGtge4x9Tt0Pq9wD7gZ2C54S/Xss+ATUC3tkkgRvDTSF8jWr9UPAZcCQzmFPCIqTcPeAf4I1D3iKl3JMD/HdgKzDX1HtXj0teVsfSUpfxDEeU/AmZqndl6nl/NweiJjAHgNpV9E7A7MgnLytjzlwJ7XZZ2gucbbI0sNKI2IcHmQJ3hIm1CZ8DgifIvKV+s+fslHIOysm7QPl8J8E+mNLpNsT3QWfLnZwBflaB8QgfNERhaCe9RgJNz3XXyofnzX5aovJ0E6ZuATRA/4f68lJ8S8PB+NQavjGXfaDskhvFMwHXOBasCHSdH3Zo2Kp/Qc+aI9LwVeUzAcSd0r5bPaWLtmyFrfWv5kyNyn+MdIyMWB6z+IuV90OTPtKpQq/Ut7TAeo3ebk/GmwjYnTHx7wR3AtQosf+ssJR6jN8jvZpmAISdMLjaoezteMXpbx7balZ9Pq3yXE/SXnr0dEd++3TSkY5sRcNXnp5mA9ZHl/3CDQbSCPNsmlNwFvFP2Iimw0wmRYIbg9QpPgART0Ct1yEi2hG+dEInkCD6vwHKPkcQTBE+48m/STMBvTojcBAW/VEDRGElQBQ2v2XLxElvGsBMyS8v/rICija7MqGNkyy+mmYBRJ2SaloeCHGlQhAwZG3odtuX/pBE+OtknYHiyb4GzTkjXBDKCC/MwgoedELkWh25cVSIJnQuedOWH8nCENmp5b4MBtII823pnrTcPR2hdIASVhMWrOgFLlf+1K19LCixwQi5X/DJ0Qcd2Y+AylDpUfsEJSuLyWyugsKe3TF7Clp8jA/oi22BeTlmfvEh8ltsjN0GJXWR65TFuaMyEm72R9NQMWetb6jfj9SExm6RNhe8iR81sdTzaPQEXjZP2heMdJQesbBBufqoCyz8J0/UEeD15JUZOBNLgM//nViiSJF0nuDnguWYOiVss0XST7eBj5U1V41i28gdMknSP411Te5Ar+gODeEN5nSVPwn6THN0S4MvplTs69U2O7Ugs7stmJewqQfkd5s+/GuAPFpUeRz2q4QYrAc3VNTod0pJY+6dNP1side6kYHRHnsjs1ixtch8fyMlZGlVjN8sYvL2Ben+bu0Dh6IlMwml39MzVjM1QikdS4oa/aTw89Pg9G1FessOlojuyHcY1ZmCtcIcmLTaoI/VT4JmclH0CvKZ/ssMlab2TY5d9aX8+ZBNORgY2ponK1ZquahXS5gX17WMPJQfL2PPNMF3f5Hg/wdIVVWSTRmskZHWrBlqn6fdC5fXqfT60xew531ektU+Dxfospehj8FgRTk6eWKGDzFvxo/pCdcJgkT5OOJ9B6XN6n898pW035mtcbkAjtKfUWRpVGtGXZ4e0ztp2vgKvUaNGjRpMEvwHuwpj9zaIIlUAAAAASUVORK5CYII=',
+  'michi-icon': 'data:image/png;base64,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',
+  'michi-plate-icon': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABBElEQVR4nO3bMUoEQRRF0dt3ViS4Gt2EuWAgGA64iYFZjI4r0paCajExMO07J6yO/utflb1lXVeme+ABuAXG4cK+bDO9Aa/AaRwu67oKPAOPtLwATyOAu5nG50xoBLJnX3MbDmPrRwDvwM083Pvwv0MYP/tjBPDzCBQ5/3zV6g5f+/9YKnf+TxIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncV5LU1xLU5e5BaNMWLG1Ry/jChznFlRC2IYfMx9HAOdZJD5EHkXnrGPm86jObh+S9flvoj84obYp6mkAAAAASUVORK5CYII=',
+  'mhcard-icon': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAABICAYAAACjpDbfAAAAq0lEQVR4nO3bOw6DQBAEUe7E0bgct8PRJhaftYTkmp5qqTKCfTmzLJM7gJt9exnQ02Jh34vGjUXjxvoAZz7etxXXNLIa7BfoLfDfD38DmQ9MwAkUWCCBAuEJFAhPoEB4AgXCEygQnkCB8AQKhCdQIDyBAuEJFAhPoEB4AgXCEygQnkCB8AQKhCdQILy+wPi/7lsDqyDvFnuYNdbj+qwFMA0ZfeZ6iasOPXN8AJoV1Miz32rWAAAAAElFTkSuQmCC',
+  'mhcard-face-icon': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAABICAYAAACjpDbfAAAAt0lEQVR4nOXbOw5CMQwF0cmI/W85tAghEJ8n8ianTQpf2U6XMeekTOIkTuIkTuIub9xd8bkdvwi4YrD72sanI7pyuFtz2x000L2ntu5ggsRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMTJxgEHARLni/OzdHF887XnLCEf2n5ET0/iJM5/F3C0K5cqCZP6F7fYAAAAAElFTkSuQmCC',
+};
+
+/* ───────── index.html と同じ寸法・色 ───────── */
+const OBJ_ICON_CIRCLE_PX = 28, OBJ_ICON_INNER_PX = 25, OBJ_ICON_NATIVE_PX = 64;
+const MICHI_PLATE_PX = 26, MHCARD_FACE_COLOR = '#B87333', MHCARD_BADGE_PX = 28 * 0.8;
+const R = OBJ_ICON_CIRCLE_PX / 2;   // 円の半径 14
+
+/* 種別ごとの地色。index.html の OBJ_TYPE_COLOR / CASTLE_*_COLOR と同じ値 */
+const TYPES = {
+    shop:    { color: '#FFAA00', icon: 'tabe-icon',    shape: 'circle' },
+    castle:  { color: '#8A8A8A', icon: 'castle-icon',  shape: 'circle' },
+    meijo:   { color: '#4285F4', icon: 'castle-icon',  shape: 'circle' },
+    zoku:    { color: '#EA4335', icon: 'castle-icon',  shape: 'circle' },
+    manhole: { color: '#B87333', icon: 'manhole-icon', shape: 'circle' },
+    pokefuta:{ color: '#FBBC04', icon: 'manhole-icon', shape: 'circle' },
+    michi:   { color: '#0B499D', icon: 'michi-icon',   shape: 'plate'  },
+    mhcard:  { color: MHCARD_FACE_COLOR, icon: null,   shape: 'card'   },
+};
+
+/* 地色を暗くした「濃色フチ」用の色。HSLの明度を55%に落として彩度は保つ */
+function darken(hex, k) {
+    const n = parseInt(hex.slice(1), 16);
+    let r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+    r = Math.round(r * k); g = Math.round(g * k); b = Math.round(b * k);
+    return '#' + [r, g, b].map(v => Math.min(255, v).toString(16).padStart(2, '0')).join('');
+}
+const DARK_EDGE = {};
+Object.keys(TYPES).forEach(t => DARK_EDGE[t] = darken(TYPES[t].color, 0.52));
+
+/* ───────── 案の定義 ─────────
+   spec が地図に流す値のすべて。ここに無い項目は現状のまま。
+     stroke      : {color, width} … 円の circle-stroke-*。color:'dark' は種別ごとの暗色
+     shadow      : {r, blur, opacity, dy, ground} … 下に敷く黒円。ground=true で地面に貼る
+     glow        : {r, blur, opacity} … 下に敷く白いぼかし円
+     outerRing   : {gap, color, width} … 白フチのさらに外側の細い輪
+     teardrop    : true … 円をやめて先端が座標を指す涙型（canvasで描いた画像に差し替え）
+     plateEdge   : 道の駅／カードの白フチ相当の色
+     selectOnly  : true … 通常は控えめにし、選択したピンだけ強く出す
+*/
+const VARIANTS = [
+{
+    key: 'now', name: '現状（白フチ3px）', base: true,
+    spec: { stroke: { color: '#FFFFFF', width: 3 }, plateEdge: '#FFFFFF' },
+    aim: '色面のまわりを白で3px囲み、地図の地色から切り離している。全種別で同じ扱い。',
+    pro: '色数が増えない。どの地色の上でも一応は輪郭が出る。',
+    con: '白い建物・白い高速道路・白い注記の上では輪郭が消える。密集すると白が面になり、下の地図が読めなくなる。影が無いので「地図に貼ってある」印象で、面としての重なり順が分かりにくい。',
+    code: `// 現状（index.html:4589）\n'circle-stroke-width': 3,\n'circle-stroke-color': '#FFFFFF'`,
+    cost: '—', asset: '—',
+},
+{
+    key: 'shadow2', name: '① 白フチ2px＋影',
+    spec: { stroke: { color: '#FFFFFF', width: 2 }, shadow: { r: R + 2, blur: 0.55, opacity: 0.30, dy: 2 }, plateEdge: '#FFFFFF' },
+    aim: '白フチを1px細くし、代わりに下へずらした黒のぼかし円を敷いて浮かせる。GoogleマップやAppleマップと同じ考え方。',
+    pro: '白フチが白背景に溶けても、影が輪郭を作るので消えない。奥行きが出て「地図の上に載っている物」に見える。細くした分、密集しても地図が残る。',
+    con: '円レイヤーが1枚増える（描画コスト）。道の駅とマンホールカードは板が画像なので、ぼかした影は画像側で用意しないと同じ質感にならない。',
+    code: `map.addLayer({ id: 'shops-shadow', type: 'circle', source: 'shops',\n  filter: ['!', ['has', 'point_count']],\n  paint: { 'circle-radius': 16, 'circle-color': '#000',\n           'circle-blur': 0.55, 'circle-opacity': 0.30,\n           'circle-translate': [0, 2] } }, 'shops-bg');`,
+    cost: '小（円レイヤー1枚追加）', asset: '道の駅・カードは影入りPNGが要る',
+},
+{
+    key: 'shadowonly', name: '② 影だけ（フチ無し）',
+    spec: { stroke: null, shadow: { r: R + 3, blur: 0.5, opacity: 0.38, dy: 2 }, plateEdge: null },
+    aim: '白フチを完全にやめ、影だけで地図から分離する。',
+    pro: '同じ外径でも色面が大きく取れ、アイコンの図柄が見やすい。白の面積がゼロなので密集しても地図が潰れない。',
+    con: '暗い地色（航空写真、夜間スタイル、濃い緑）だと影が効かず輪郭が消える。地色が濃い城（#8A8A8A）は背景の建物と紛れやすい。',
+    code: `'circle-stroke-width': 0,   // 白フチをやめる\n// + 影レイヤー（①と同じ）`,
+    cost: '小', asset: '同上',
+},
+{
+    key: 'darkedge', name: '③ 濃色フチ（種別色の暗色）',
+    spec: { stroke: { color: 'dark', width: 2.5 }, plateEdge: 'dark' },
+    aim: '白フチを、その種別の地色を暗くした色（例: 食べログ #FFAA00 → #845800）に置き換える。',
+    pro: 'どんな地色の上でも輪郭が残る（白でも暗色でも背景と同化しない）。色相が同じなので種別の識別が強まり、遠目にも種別が読める。白の面積がゼロで地図が潰れない。',
+    con: '色定義が種別×2色に増える。全体が締まって重く見えるので、ピンが多い画面では騒がしい。',
+    code: `'circle-stroke-width': 2.5,\n'circle-stroke-color': ['match', ['get','genre'],\n   '日本100名城', '#22457F', '続日本100名城', '#79221C', '#484848']`,
+    cost: '極小（色を差し替えるだけ）', asset: '不要（カードの白フチ画像は色替えのみ）',
+},
+{
+    key: 'dual', name: '④ 白フチ＋外周に細い暗線',
+    spec: { stroke: { color: '#FFFFFF', width: 3 }, outerRing: { gap: 0.5, color: 'rgba(0,0,0,0.22)', width: 1 }, plateEdge: '#FFFFFF' },
+    aim: '白フチはそのまま残し、そのさらに外側に1pxの薄い暗線を足す。現状からの差分が最も小さい案。',
+    pro: '白背景でも暗線が輪郭を作る。今の見た目をほぼ変えないので、既存の印象を壊さない。影より軽い。',
+    con: '外径が34px→36pxに増え、密集時の重なりが増える。1pxの線は端末の描画倍率によっては潰れる。',
+    code: `map.addLayer({ id: 'shops-outer', type: 'circle', source: 'shops',\n  paint: { 'circle-radius': 17.5, 'circle-opacity': 0,\n           'circle-stroke-width': 1,\n           'circle-stroke-color': 'rgba(0,0,0,0.22)' } }, 'shops-bg');`,
+    cost: '小（円レイヤー1枚追加）', asset: '道の駅・カードは外周付きPNGが要る',
+},
+{
+    key: 'glow', name: '⑤ 白のソフトグロー（ぼかしフチ）',
+    spec: { stroke: null, glow: { r: R + 5, blur: 0.9, opacity: 0.9 }, plateEdge: null },
+    aim: '硬い白リングをやめ、外へ向かって薄れる白のにじみで背景を弱める。',
+    pro: '地図の細部（道路・注記）を完全には隠さず、コントラストだけ落として色面を目立たせる。密集しても白い塊にならない。',
+    con: '輪郭がぼやけるので、白い地色では分離が①③④より弱い。半透明の重ね描きが増えるため、ピンが多い画面では塗り面積が増える。',
+    code: `paint: { 'circle-radius': 19, 'circle-color': '#FFFFFF',\n         'circle-blur': 0.9, 'circle-opacity': 0.9 }`,
+    cost: '小', asset: '道の駅・カードはにじみ入りPNGが要る',
+},
+{
+    key: 'zoomedge', name: '⑥ フチ幅をズーム連動にする',
+    spec: { stroke: { color: '#FFFFFF', width: ['interpolate', ['linear'], ['zoom'], 10, 1.2, 13, 2, 16, 3.5] }, plateEdge: '#FFFFFF' },
+    aim: '広域（z10前後）では細く、拡大（z16以上）では太くする。ピンが密集するのは広域側なので、そこだけ白を減らす。',
+    pro: '広域で白が繋がって面になる問題が消え、拡大時は今と同じ強さを保てる。1行の式で済み、レイヤーは増えない。',
+    con: '分離の弱さ自体（白背景で消える）は解決しない。他案との併用が前提。',
+    code: `'circle-stroke-width': ['interpolate', ['linear'], ['zoom'],\n   10, 1.2, 13, 2, 16, 3.5]`,
+    cost: '極小（式に差し替えるだけ）', asset: '不要',
+},
+{
+    key: 'ground', name: '⑦ 接地影（地面に貼る影）',
+    spec: { stroke: { color: '#FFFFFF', width: 2.5 }, shadow: { r: R + 4, blur: 0.6, opacity: 0.3, dy: 0, ground: true }, plateEdge: '#FFFFFF' },
+    aim: '影を画面ではなく地面に貼り付ける（circle-pitch-alignment を map にする）。傾けると影が地面に沿って潰れ、ピンだけが立つ。',
+    pro: '3D傾斜（このアプリは pitch を持つ）で、ピンが地面から生えているように見え、どの地点を指しているかが分かりやすい。',
+    con: '傾けていない（pitch 0）ときは①とほぼ同じで、追加分の効果が無い。上のバーで傾きを60°にすると差が出る。',
+    code: `paint: { 'circle-radius': 18, 'circle-color': '#000',\n         'circle-blur': 0.6, 'circle-opacity': 0.3,\n         'circle-pitch-alignment': 'map' }`,
+    cost: '小', asset: '同上',
+},
+{
+    key: 'teardrop', name: '⑧ 涙型ピン（先端が座標）',
+    spec: { teardrop: true, plateEdge: '#FFFFFF' },
+    aim: '丸をやめ、下が尖った雫形にして先端を実座標に合わせる。フチは白のまま、影を添える。',
+    pro: '「どの点を指しているか」が丸より正確に伝わる。縦に伸びるので横方向の密集に強く、重なっても先端が見える。',
+    con: '全種別のピン画像を作り直す必要がある（丸・角丸四角・カードの3系統を1系統に統一するか、涙型に載せ替えるか）。縦に34→44pxと背が高くなり、ラベルの置き場が変わる。クラスタの丸との差が大きくなる。',
+    code: `// 円レイヤーをやめ、涙型を描いたPNG（種別色ごと）を\n// icon-anchor: 'bottom' の symbol レイヤーで置く`,
+    cost: '大（レイヤー構成の変更）', asset: '種別ごとに涙型PNGが要る',
+},
+{
+    key: 'selective', name: '⑨ 通常は控えめ・選択時だけ強く',
+    spec: { stroke: { color: '#FFFFFF', width: 1.5 }, shadow: { r: R + 1, blur: 0.5, opacity: 0.26, dy: 1.5 }, plateEdge: '#FFFFFF', selectOnly: true },
+    aim: '強調の総量を減らす方向。通常のピンは白フチ1.5px＋弱い影まで落とし、タップした1件だけ二重リングと脈動で強く出す（中央の100名城が選択中）。',
+    pro: '画面全体が静かになり、地図が読める。選択したものが本当に目立つ（今は全部が強調されているので、選択リングの効きが相対的に弱い）。',
+    con: 'ピンを探している段階（選択前）の視認性は下がる。密集地でどれが何か分かりにくくなる可能性がある。',
+    code: `// 通常\n'circle-stroke-width': 1.5\n// 選択時は既存の selected-ring-inner / -outer に加え\n// circle-radius を rAF で 23→30 に脈動させる`,
+    cost: '中（選択リングの演出を足す）', asset: '不要',
+},
+];
+
+/* ───────── 地点とタイル ───────── */
+const PLACES = [
+    { name: '渋谷（白い建物・道路が多い）', c: [139.7006, 35.6595], z: 16.4 },
+    { name: '皇居まわり（緑地）',           c: [139.7540, 35.6870], z: 16.0 },
+    { name: 'みなとみらい（水際）',         c: [139.6355, 35.4560], z: 15.6 },
+    { name: '郊外（田畑・淡色）',           c: [139.3400, 35.6600], z: 15.4 },
+];
+const LIBERTY = 'https://tiles.openfreemap.org/styles/liberty';
+const OSM_RASTER = { version: 8, glyphs: 'https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf',
+    sources: { osm: { type: 'raster', tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'], tileSize: 256 } },
+    layers: [{ id: 'osm-tiles', type: 'raster', source: 'osm' }] };
+
+/* ピンの配置（中心からのメートル）。密集の見え方を見るため、右下に4件を12m間隔で置く */
+const LAYOUT = [
+    ['meijo',    0,    0], ['shop',   -70,  45], ['shop',     35,  60],
+    ['castle', -105,  -30], ['zoku',    85, -35], ['manhole',  60,  15],
+    ['pokefuta', 118, -12], ['michi',  -45, -55], ['mhcard',  100,  55],
+    ['shop',     10,  -40], ['shop',    22, -46], ['shop',      4, -52], ['shop', 18, -58],
+];
+function buildFeatures(center) {
+    const [lng, lat] = center;
+    return LAYOUT.map(([t, dx, dy]) => ({
+        type: 'Feature',
+        geometry: { type: 'Point', coordinates: [
+            lng + dx / (111320 * Math.cos(lat * Math.PI / 180)), lat + dy / 110574 ] },
+        properties: { t, color: TYPES[t].color, dark: DARK_EDGE[t], icon: TYPES[t].icon || '' },
+    }));
+}
+
+/* ───────── 涙型ピンの画像を canvas で作る（⑧用） ───────── */
+function teardropImage(color, iconImg) {
+    const s = 2, W = 34 * s, H = 46 * s;          // 実寸34x46を2倍で描く
+    const cv = document.createElement('canvas'); cv.width = W; cv.height = H;
+    const g = cv.getContext('2d');
+    g.translate(W / 2, 0);
+    // 影
+    g.shadowColor = 'rgba(0,0,0,0.35)'; g.shadowBlur = 5 * s; g.shadowOffsetY = 2 * s;
+    // 雫形: 上は半径15の円、下は先端へ絞る
+    const r = 15 * s, cy = 17 * s, tip = 44 * s;
+    g.beginPath();
+    g.arc(0, cy, r, Math.PI * 0.82, Math.PI * 0.18, false);
+    g.quadraticCurveTo(r * 0.55, tip - 10 * s, 0, tip);
+    g.quadraticCurveTo(-r * 0.55, tip - 10 * s, -r * Math.cos(Math.PI * 0.18), cy + r * Math.sin(Math.PI * 0.18));
+    g.closePath();
+    g.fillStyle = '#FFFFFF'; g.fill();            // 白フチ
+    g.shadowColor = 'transparent';
+    g.save(); g.translate(0, 1.2 * s); g.scale(0.86, 0.86);
+    g.fillStyle = color; g.fill(); g.restore();   // 中の色面
+    // 図柄（アルファだけ使って白で塗る）
+    if (iconImg) {
+        const off = document.createElement('canvas'); off.width = off.height = 26 * s;
+        const og = off.getContext('2d');
+        og.drawImage(iconImg, 0, 0, 26 * s, 26 * s);
+        og.globalCompositeOperation = 'source-in';
+        og.fillStyle = '#FFFFFF'; og.fillRect(0, 0, 26 * s, 26 * s);
+        g.drawImage(off, -13 * s, cy - 13 * s);
+    }
+    return g.getImageData(0, 0, W, H);
+}
+
+/* ───────── 地図 ───────── */
+let state = { variant: 'now', place: 0, tile: 'liberty', pitch: 0 };
+const map = new maplibregl.Map({
+    container: 'map', style: LIBERTY,
+    center: PLACES[0].c, zoom: PLACES[0].z, pitch: 0, attributionControl: false,
+});
+map.addControl(new maplibregl.AttributionControl({ compact: true }), 'bottom-right');
+map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), 'top-right');
+
+const loadedImgs = {};
+function loadAll() {
+    return Promise.all(Object.entries(ICONS).map(([id, src]) => new Promise(res => {
+        const im = new Image();
+        im.onload = () => { loadedImgs[id] = im; res(); };
+        im.onerror = () => res();
+        im.src = src;
+    })));
+}
+
+function addImages() {
+    Object.entries(loadedImgs).forEach(([id, im]) => {
+        if (map.hasImage(id)) return;
+        map.addImage(id, im, { sdf: true, pixelRatio: id.startsWith('mhcard') ? 2 : 1 });
+    });
+    // 涙型（種別ごとに1枚）。非SDFなので色は焼き込む
+    Object.entries(TYPES).forEach(([t, cfg]) => {
+        const id = `drop-${t}`;
+        if (map.hasImage(id)) return;
+        const icon = cfg.icon ? loadedImgs[cfg.icon] : loadedImgs['manhole-icon'];
+        map.addImage(id, teardropImage(cfg.color, icon), { pixelRatio: 2 });
+    });
+}
+
+function addLayers() {
+    map.addSource('objs', { type: 'geojson', data: { type: 'FeatureCollection', features: buildFeatures(PLACES[state.place].c) } });
+    map.addSource('sel',  { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
+
+    const circleOnly = ['match', ['get', 't'], ['michi', 'mhcard'], false, true];
+    const isMichi    = ['==', ['get', 't'], 'michi'];
+    const isCard     = ['==', ['get', 't'], 'mhcard'];
+
+    // 影・グロー・外周（案ごとに出し入れする。既定は非表示）
+    map.addLayer({ id: 'o-shadow', type: 'circle', source: 'objs',
+        paint: { 'circle-radius': R + 2, 'circle-color': '#000000', 'circle-blur': 0.55, 'circle-opacity': 0 } });
+    map.addLayer({ id: 'o-glow', type: 'circle', source: 'objs',
+        paint: { 'circle-radius': R + 5, 'circle-color': '#FFFFFF', 'circle-blur': 0.9, 'circle-opacity': 0 } });
+    map.addLayer({ id: 'o-outer', type: 'circle', source: 'objs', filter: circleOnly,
+        paint: { 'circle-radius': R + 3.5, 'circle-opacity': 0, 'circle-stroke-width': 0, 'circle-stroke-color': 'rgba(0,0,0,0.22)' } });
+
+    // 選択リング（⑨用。index.html の selected-ring-* と同じ寸法）
+    map.addLayer({ id: 'sel-outer', type: 'circle', source: 'sel',
+        paint: { 'circle-radius': 31, 'circle-opacity': 0, 'circle-stroke-width': 2, 'circle-stroke-color': '#4285F4', 'circle-stroke-opacity': 0.45 } });
+    map.addLayer({ id: 'sel-inner', type: 'circle', source: 'sel',
+        paint: { 'circle-radius': 23, 'circle-opacity': 0, 'circle-stroke-width': 3, 'circle-stroke-color': '#4285F4' } });
+
+    // 丸のピン
+    map.addLayer({ id: 'o-bg', type: 'circle', source: 'objs', filter: circleOnly,
+        paint: { 'circle-color': ['get', 'color'], 'circle-radius': R, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' } });
+
+    // 道の駅（白い板＋色の板）
+    map.addLayer({ id: 'o-michi-edge', type: 'symbol', source: 'objs', filter: isMichi,
+        layout: { 'icon-image': 'michi-plate-icon', 'icon-size': (MICHI_PLATE_PX + 6) / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'icon-ignore-placement': true },
+        paint: { 'icon-color': '#FFFFFF' } });
+    map.addLayer({ id: 'o-michi-bg', type: 'symbol', source: 'objs', filter: isMichi,
+        layout: { 'icon-image': 'michi-plate-icon', 'icon-size': MICHI_PLATE_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'icon-ignore-placement': true },
+        paint: { 'icon-color': TYPES.michi.color } });
+
+    // マンホールカード（白フチ画像＋銅色の面＋バッジ）
+    map.addLayer({ id: 'o-card-edge', type: 'symbol', source: 'objs', filter: isCard,
+        layout: { 'icon-image': 'mhcard-icon', 'icon-size': 1.0, 'icon-allow-overlap': true, 'icon-ignore-placement': true },
+        paint: { 'icon-color': '#FFFFFF' } });
+    map.addLayer({ id: 'o-card-face', type: 'symbol', source: 'objs', filter: isCard,
+        layout: { 'icon-image': 'mhcard-face-icon', 'icon-size': 1.0, 'icon-allow-overlap': true, 'icon-ignore-placement': true },
+        paint: { 'icon-color': MHCARD_FACE_COLOR } });
+    map.addLayer({ id: 'o-card-badge', type: 'symbol', source: 'objs', filter: isCard,
+        layout: { 'icon-image': 'manhole-icon', 'icon-size': MHCARD_BADGE_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'icon-ignore-placement': true },
+        paint: { 'icon-color': '#FFFFFF' } });
+
+    // 図柄（丸と道の駅）
+    map.addLayer({ id: 'o-icon', type: 'symbol', source: 'objs', filter: ['!=', ['get', 't'], 'mhcard'],
+        layout: { 'icon-image': ['get', 'icon'],
+                  'icon-size': ['match', ['get', 't'], 'manhole', OBJ_ICON_INNER_PX / OBJ_ICON_NATIVE_PX,
+                                                        'pokefuta', OBJ_ICON_INNER_PX / OBJ_ICON_NATIVE_PX,
+                                                        'michi', MICHI_PLATE_PX / OBJ_ICON_NATIVE_PX,
+                                                        OBJ_ICON_CIRCLE_PX / OBJ_ICON_NATIVE_PX],
+                  'icon-allow-overlap': true, 'icon-ignore-placement': true },
+        paint: { 'icon-color': '#FFFFFF' } });
+
+    // 涙型（⑧用。既定は非表示）
+    map.addLayer({ id: 'o-drop', type: 'symbol', source: 'objs',
+        layout: { 'icon-image': ['concat', 'drop-', ['get', 't']], 'icon-size': 1.0,
+                  'icon-anchor': 'bottom', 'icon-allow-overlap': true, 'icon-ignore-placement': true,
+                  'visibility': 'none' } });
+}
+
+/* 案を地図に流し込む */
+let pulseRaf = null;
+function applyVariant() {
+    const v = VARIANTS.find(x => x.key === state.variant);
+    const s = v.spec;
+
+    // 涙型のときは丸・板・図柄をまとめて隠す
+    const dropOn = !!s.teardrop;
+    ['o-bg', 'o-icon', 'o-michi-edge', 'o-michi-bg', 'o-card-edge', 'o-card-face', 'o-card-badge']
+        .forEach(id => map.setLayoutProperty(id, 'visibility', dropOn ? 'none' : 'visible'));
+    map.setLayoutProperty('o-drop', 'visibility', dropOn ? 'visible' : 'none');
+
+    // 丸のフチ
+    if (!dropOn) {
+        map.setPaintProperty('o-bg', 'circle-stroke-width', s.stroke ? s.stroke.width : 0);
+        map.setPaintProperty('o-bg', 'circle-stroke-color',
+            !s.stroke ? '#FFFFFF' : s.stroke.color === 'dark' ? ['get', 'dark'] : s.stroke.color);
+        // 道の駅・カードの白フチ相当
+        const pe = s.plateEdge;
+        map.setPaintProperty('o-michi-edge', 'icon-color', pe === 'dark' ? ['get', 'dark'] : (pe || 'rgba(0,0,0,0)'));
+        map.setPaintProperty('o-card-edge', 'icon-color', pe === 'dark' ? ['get', 'dark'] : (pe || 'rgba(0,0,0,0)'));
+    }
+
+    // 影
+    const sh = s.shadow;
+    map.setPaintProperty('o-shadow', 'circle-opacity', sh ? sh.opacity : 0);
+    if (sh) {
+        map.setPaintProperty('o-shadow', 'circle-radius', sh.r);
+        map.setPaintProperty('o-shadow', 'circle-blur', sh.blur);
+        map.setPaintProperty('o-shadow', 'circle-translate', [0, sh.dy || 0]);
+        map.setPaintProperty('o-shadow', 'circle-pitch-alignment', sh.ground ? 'map' : 'viewport');
+    }
+
+    // ぼかしの白
+    map.setPaintProperty('o-glow', 'circle-opacity', s.glow ? s.glow.opacity : 0);
+    if (s.glow) { map.setPaintProperty('o-glow', 'circle-radius', s.glow.r); map.setPaintProperty('o-glow', 'circle-blur', s.glow.blur); }
+
+    // 外周の細い暗線
+    map.setPaintProperty('o-outer', 'circle-stroke-width', s.outerRing ? s.outerRing.width : 0);
+    if (s.outerRing) map.setPaintProperty('o-outer', 'circle-stroke-color', s.outerRing.color);
+
+    // 選択リング（⑨のときだけ中央の1件に出し、半径を脈動させる）
+    const sel = map.getSource('sel');
+    if (s.selectOnly) {
+        sel.setData({ type: 'FeatureCollection', features: [buildFeatures(PLACES[state.place].c)[0]] });
+        if (!pulseRaf) {
+            const t0 = performance.now();
+            const tick = (t) => {
+                const k = (Math.sin((t - t0) / 620) + 1) / 2;      // 0..1
+                map.setPaintProperty('sel-outer', 'circle-radius', 29 + k * 6);
+                map.setPaintProperty('sel-outer', 'circle-stroke-opacity', 0.5 - k * 0.3);
+                pulseRaf = requestAnimationFrame(tick);
+            };
+            pulseRaf = requestAnimationFrame(tick);
+        }
+    } else {
+        sel.setData({ type: 'FeatureCollection', features: [] });
+        if (pulseRaf) { cancelAnimationFrame(pulseRaf); pulseRaf = null; }
+    }
+
+    // 解説
+    document.getElementById('d-title').textContent = v.name;
+    document.getElementById('d-aim').textContent = v.aim;
+    document.getElementById('d-pro').textContent = '良い点: ' + v.pro;
+    document.getElementById('d-con').textContent = '弱点: ' + v.con;
+    document.getElementById('d-code').textContent = v.code;
+    document.getElementById('d-scope').innerHTML =
+        '<b>影響レイヤー</b>: shops-bg / castles-bg / castles-famous-bg / manholes-bg / *-cluster'
+        + (v.spec.plateEdge !== undefined ? ' / michi-bg-outline / mhcards-icon' : '')
+        + '　<b>実装コスト</b>: ' + v.cost + '　<b>素材</b>: ' + v.asset;
+
+    document.querySelectorAll('#chips .chip').forEach(c => c.classList.toggle('on', c.dataset.k === state.variant));
+}
+
+/* ───────── UI ───────── */
+function buildUI() {
+    const chips = document.getElementById('chips');
+    VARIANTS.forEach(v => {
+        const b = document.createElement('button');
+        b.className = 'chip' + (v.base ? ' base' : ''); b.dataset.k = v.key; b.textContent = v.name;
+        b.onclick = () => { state.variant = v.key; applyVariant(); };
+        chips.appendChild(b);
+    });
+    const ps = document.getElementById('places');
+    PLACES.forEach((p, i) => {
+        const b = document.createElement('button');
+        b.textContent = p.name; b.className = i === 0 ? 'on' : '';
+        b.onclick = () => {
+            state.place = i;
+            [...ps.children].forEach((c, j) => c.classList.toggle('on', j === i));
+            map.jumpTo({ center: p.c, zoom: p.z });
+            map.getSource('objs').setData({ type: 'FeatureCollection', features: buildFeatures(p.c) });
+            applyVariant();
+        };
+        ps.appendChild(b);
+    });
+    const ts = document.getElementById('tiles');
+    [['liberty', 'OpenFreeMap Liberty'], ['osm', 'OSMラスタ']].forEach(([k, label], i) => {
+        const b = document.createElement('button');
+        b.textContent = label; b.className = i === 0 ? 'on' : '';
+        b.onclick = () => {
+            state.tile = k;
+            [...ts.children].forEach(c => c.classList.toggle('on', c === b));
+            map.setStyle(k === 'osm' ? OSM_RASTER : LIBERTY);
+        };
+        ts.appendChild(b);
+    });
+    const qs = document.getElementById('pitches');
+    [0, 45, 60].forEach((p, i) => {
+        const b = document.createElement('button');
+        b.textContent = p + '°'; b.className = i === 0 ? 'on' : '';
+        b.onclick = () => {
+            state.pitch = p;
+            [...qs.children].forEach(c => c.classList.toggle('on', c === b));
+            map.easeTo({ pitch: p, duration: 400 });
+        };
+        qs.appendChild(b);
+    });
+    const tb = document.querySelector('#tbl tbody');
+    VARIANTS.forEach(v => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td><b>${v.name}</b></td><td>${v.aim}</td><td class="cost">${v.cost}</td><td>${v.asset}</td>`;
+        tb.appendChild(tr);
+    });
+}
+
+loadAll().then(() => {
+    buildUI();
+    /* 'load' はタイルが1枚も届かないと発火しないため、待たずに styledata で入れる。
+       タイルを切り替えるとカスタムのソース・レイヤー・画像が消えるので、都度入れ直す。 */
+    const ensureSetup = () => {
+        if (!map.style || !map.getStyle() || map.getSource('objs')) return;
+        addImages(); addLayers(); applyVariant();
+    };
+    map.on('styledata', ensureSetup);
+    map.on('load', ensureSetup);
+    ensureSetup();
+});
+</script>
+</body>
+</html>
