@@ -4551,7 +4551,7 @@ map.on('zoomend', () => { isZooming = false; });
                道の駅とカードは symbol でぼかせないため、同じ落ち方を焼いた影PNGを敷く。
                影PNGを作り直すときも同じ条件（内2px→外6px）で焼くこと。ずれると
                四角だけ影が強い/弱い状態に戻る。 */
-            const PIN_SHADOW_OPACITY  = 0.38;
+            const PIN_SHADOW_OPACITY  = 0.20;   // circle-opacity / icon-opacity は仕様上 0〜1
             const PIN_SHADOW_OFFSET   = [0, 2];   // 下へ2px
             const SHADOW_PEAK_IN_PX   = 2;
             const SHADOW_ZERO_OUT_PX  = 6;
