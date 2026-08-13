@@ -5073,6 +5073,10 @@ map.on('zoomend', () => { isZooming = false; });
             if(placeItems.length>0) { rightCol.innerHTML='<div class="search-section-header">地名・場所</div>'; placeItems.forEach(item => makeItem(item, rightCol)); }
             inner.append(leftCol, rightCol);
         }
+        // 新しい結果は必ず先頭から見せる。innerHTML を空にしてから作り直しても
+        // スクロール位置は保持される（Chromium実測: 500px スクロール後に再構築しても 500px のまま）ため、
+        // 明示的に戻さないと「別のワードで検索したのに途中から表示される」状態になる。
+        inner.scrollTop = 0;
         document.getElementById('search-results').style.display = 'block';
     }
 
@@ -5179,6 +5183,10 @@ map.on('zoomend', () => { isZooming = false; });
         const q = inputEl.value.trim();
         document.getElementById('search-clear').style.display = q ? 'block' : 'none';
         document.getElementById('search-results').style.display = q ? 'block' : 'none';
+        // 新しい結果が出るまでの300ms（ジオコーディングのデバウンス）は前のワードの結果が
+        // 残ったまま見えるので、ここでも先頭に戻す。親を display:none にしても
+        // スクロール位置は保持される（Chromium実測）ため、非表示側でも戻しておく。
+        document.getElementById('search-results-inner').scrollTop = 0;
         document.getElementById('search-spinner').style.display = 'none';
         if (!q) return;
 
