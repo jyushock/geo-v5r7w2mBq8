@@ -4522,9 +4522,10 @@ map.on('zoomend', () => { isZooming = false; });
             loadSDF2x('mhcard-cluster.png',      'mhcard-cluster-icon'),
             /* 角丸四角・カードの影。丸ピンは circle-blur でぼかせるが、道の駅とカードは
                symbol（画像）なのでぼかせない。ぼかし済みの黒い形を別画像で持ち、下に敷く。 */
-            loadPlain2x('michi-plate-shadow.png',   'michi-plate-shadow-icon'),
-            loadPlain2x('mhcard-shadow.png',        'mhcard-shadow-icon'),
-            loadPlain2x('mhcard-cluster-shadow.png','mhcard-cluster-shadow-icon')
+            loadPlain2x('michi-plate-shadow.png',    'michi-plate-shadow-icon'),
+            loadPlain2x('michi-cluster-shadow.png',  'michi-cluster-shadow-icon'),
+            loadPlain2x('mhcard-shadow.png',         'mhcard-shadow-icon'),
+            loadPlain2x('mhcard-cluster-shadow.png', 'mhcard-cluster-shadow-icon')
         ]).then(() => {
             // オブジェクト種別アイコンの円直径/表示サイズ。CSS変数 --obj-icon-circle / --obj-icon-inner と同じ値（画像ネイティブ幅64pxに対する比率をicon-sizeに使用）
             const OBJ_ICON_CIRCLE_PX = 28;
@@ -4541,17 +4542,25 @@ map.on('zoomend', () => { isZooming = false; });
             const MHCARD_W_PX = 28;
             const MHCARD_BADGE_PX = MHCARD_W_PX * 0.8;
             /* ピンの影。白フチをやめた代わりに、ぼかした黒をピンの下に敷いて地図から浮かせる。
-               丸は circle-blur、道の駅とカードはぼかし済み画像。濃さと下へのずらし量は共通。 */
-            const PIN_SHADOW_OPACITY = 0.38;
-            const PIN_SHADOW_BLUR    = 0.5;                          // circle-blur（丸のみ）
-            const PIN_SHADOW_OFFSET  = [0, 2];                       // 下へ2px
-            const PIN_SHADOW_R       = OBJ_ICON_CIRCLE_PX / 2 + 3;   // 丸ピン φ28 → 影 半径17
-            const CLUSTER_SHADOW_R   = 23;                           // 丸クラスタ 半径20 → 影 半径23
-            /* 影画像に焼いてある「芯」の大きさ（実寸px）。icon-size は
-               出したい芯の大きさ ÷ この値 で決める。michi-plate-shadow.png は30px角、
-               mhcard-shadow.png は32x40、mhcard-cluster-shadow.png は46px角。
-               いずれも板・カードより4px大きい（＝影が形の外へ2pxずつはみ出す）。 */
-            const MICHI_SHADOW_CORE_PX = 30;
+               丸・角丸四角・カードで濃さと広がりを揃えるため、落ち方を1つに決めてある。
+                 形の SHADOW_PEAK_IN_PX 内側 … 最大の濃さ
+                 形の SHADOW_ZERO_OUT_PX 外側 … 0（間は smoothstep）
+               丸は circle-blur で作る。circle シェーダは
+                 smoothstep(0.0, -blur, r/半径 - 1)
+               なので「半径*(1-blur) で最大、半径で0」。ここから半径と blur を逆算する。
+               道の駅とカードは symbol でぼかせないため、同じ落ち方を焼いた影PNGを敷く。
+               影PNGを作り直すときも同じ条件（内2px→外6px）で焼くこと。ずれると
+               四角だけ影が強い/弱い状態に戻る。 */
+            const PIN_SHADOW_OPACITY  = 0.38;
+            const PIN_SHADOW_OFFSET   = [0, 2];   // 下へ2px
+            const SHADOW_PEAK_IN_PX   = 2;
+            const SHADOW_ZERO_OUT_PX  = 6;
+            const shadowCircleOf = (shapeR) => {
+                const r = shapeR + SHADOW_ZERO_OUT_PX;
+                return { r, blur: (SHADOW_PEAK_IN_PX + SHADOW_ZERO_OUT_PX) / r };
+            };
+            const PIN_SHAPE_R     = OBJ_ICON_CIRCLE_PX / 2;   // 丸ピン φ28 → 半径14
+            const CLUSTER_SHAPE_R = 20;                       // 丸クラスタの半径
             // データは後から非同期に届くため、ソースは空で生成し setData で埋める
             const configs = [
                 { id: 'michi',           color: '#0B499D', icon: 'michi-icon',    type: 'michi',   clusterColor: '#0B499D' },
@@ -4592,11 +4601,14 @@ map.on('zoomend', () => { isZooming = false; });
                     'icon-opacity': PIN_SHADOW_OPACITY,
                     'icon-translate': PIN_SHADOW_OFFSET, 'icon-translate-anchor': 'viewport',
                 };
-                const shadowPaintCircle = (r) => ({
-                    'circle-radius': r, 'circle-color': '#000000', 'circle-blur': PIN_SHADOW_BLUR,
-                    'circle-opacity': PIN_SHADOW_OPACITY,
-                    'circle-translate': PIN_SHADOW_OFFSET, 'circle-translate-anchor': 'viewport',
-                });
+                const shadowPaintCircle = (shapeR) => {
+                    const s = shadowCircleOf(shapeR);
+                    return {
+                        'circle-radius': s.r, 'circle-color': '#000000', 'circle-blur': s.blur,
+                        'circle-opacity': PIN_SHADOW_OPACITY,
+                        'circle-translate': PIN_SHADOW_OFFSET, 'circle-translate-anchor': 'viewport',
+                    };
+                };
                 const shadowLayout = (image, size) => ({
                     'icon-image': image, 'icon-size': size,
                     'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis,
@@ -4611,17 +4623,17 @@ map.on('zoomend', () => { isZooming = false; });
                 if (conf.type === 'mhcard') {
                     map.addLayer({ id: `${conf.id}-cluster-shadow`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: shadowLayout('mhcard-cluster-shadow-icon', 1.0), paint: shadowPaintSymbol });
                 } else if (conf.type === 'michi') {
-                    map.addLayer({ id: `${conf.id}-cluster-shadow`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: shadowLayout('michi-plate-shadow-icon', (MICHI_CLUSTER_PX + 4) / MICHI_SHADOW_CORE_PX), paint: shadowPaintSymbol });
+                    map.addLayer({ id: `${conf.id}-cluster-shadow`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: shadowLayout('michi-cluster-shadow-icon', 1.0), paint: shadowPaintSymbol });
                 } else {
-                    map.addLayer({ id: `${conf.id}-cluster-shadow`, type: 'circle', source: conf.id, filter: ['has', 'point_count'], paint: shadowPaintCircle(CLUSTER_SHADOW_R), layout: { 'visibility': initVis } });
+                    map.addLayer({ id: `${conf.id}-cluster-shadow`, type: 'circle', source: conf.id, filter: ['has', 'point_count'], paint: shadowPaintCircle(CLUSTER_SHAPE_R), layout: { 'visibility': initVis } });
                 }
                 // ピンの影
                 if (conf.type === 'mhcard') {
                     map.addLayer({ id: `${conf.id}-shadow`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: shadowLayout('mhcard-shadow-icon', 1.0), paint: shadowPaintSymbol });
                 } else if (conf.type === 'michi') {
-                    map.addLayer({ id: `${conf.id}-shadow`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: shadowLayout('michi-plate-shadow-icon', (MICHI_PLATE_PX + 4) / MICHI_SHADOW_CORE_PX), paint: shadowPaintSymbol });
+                    map.addLayer({ id: `${conf.id}-shadow`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: shadowLayout('michi-plate-shadow-icon', 1.0), paint: shadowPaintSymbol });
                 } else {
-                    map.addLayer({ id: `${conf.id}-shadow`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: shadowPaintCircle(PIN_SHADOW_R), layout: { 'visibility': initVis } });
+                    map.addLayer({ id: `${conf.id}-shadow`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: shadowPaintCircle(PIN_SHAPE_R), layout: { 'visibility': initVis } });
                 }
             });
 
