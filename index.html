@@ -4019,7 +4019,7 @@ function watchScrollerTouchAction(selector) {
 const objClickLayers = [];
 
 // ── 選択リング（②二重リング）。ピンと同じ種別色で、ピンの外側に2重の輪を出す ──
-// ピンは直径28px＋白枠3px（外径34px）なので、内リングφ46/外リングφ62なら重ならない。
+// ピンは直径28px（フチ無し）なので、内リングφ46/外リングφ62なら重ならない。
 // 色は「地図上のピンと同じ色」に合わせる。
 // mhcard だけは typeConfig の #1565C0（検索結果や履歴のアイコン背景用）を使うと
 // 地図上のピン（カードの面は MHCARD_FACE_COLOR の #B87333）と食い違うため、
@@ -4317,7 +4317,8 @@ map.on('zoomend', () => { isZooming = false; });
         map.addLayer({ id: 'search-pin-layer',   type: 'symbol', source: 'search-pin-source',   layout: { 'icon-image': 'search-pin-icon', 'icon-size': 1, 'icon-anchor': 'bottom', 'icon-allow-overlap': true, 'icon-ignore-placement': true } });
         // 選択中オブジェクトの二重リング。オブジェクトのピンレイヤーはこの後に追加されるため、
         // ここで先に足しておけば常にピンの下に描かれ、リングがピンを隠さない。
-        // 寸法: ピン直径28＋白枠3（外径34）に対し 内リングφ46(線3)／外リングφ62(線2)。
+        // 寸法: ピン直径28（フチ無し。外側にぼかし影が半径21まで薄く伸びる）に対し
+        //       内リングφ46(線3)／外リングφ62(線2)。影の裾とリングは接するが重ならない。
         // 蓋⇄配布場所を行き来したときに2つのリングを結ぶ線。リングより先に足してその下に敷く。
         map.addSource('selected-link-source', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
         map.addLayer({ id: 'selected-link', type: 'line', source: 'selected-link-source',
@@ -4498,6 +4499,14 @@ map.on('zoomend', () => { isZooming = false; });
                 res();
             })
         );
+        /* 影の素材だけは SDF ではない。ぼかしを画像に焼いてあり、色も黒で固定なので
+           icon-color は効かず、濃さは icon-opacity で決める。これも実寸の2倍で描いてある。 */
+        const loadPlain2x = (url, id) => new Promise(res =>
+            map.loadImage(url, (err, img) => {
+                if (!err && img) map.addImage(id, img, { pixelRatio: 2 });
+                res();
+            })
+        );
 
         Promise.all([
             loadSDF('tabe.png',    'tabe-icon'),
@@ -4505,21 +4514,24 @@ map.on('zoomend', () => { isZooming = false; });
             loadSDF('michi.png',   'michi-icon'),
             loadSDF('michi-plate.png', 'michi-plate-icon'),
             loadSDF('manhole.png', 'manhole-icon'),
-            /* マンホールカードも他と同じSDF。カード画像は白フチ＋銅色の面の2色なので、
-               外形（mhcard.png のアルファ）を白、面（mhcard-face.png）を銅色で2枚重ねる。
-               画像が56x72/56x56なので pixelRatio 2 は従来どおり（表示は28x36 / 28x28）。
-               HTML側の一覧は img として mhcard.png をそのまま使うため、原画は残す。 */
+            /* マンホールカードも他と同じSDF。白フチをやめたので外形（mhcard.png のアルファ）を
+               そのまま銅色で塗る1枚だけになり、面を重ねる mhcard-face.png は使わない
+               （原画は残してある）。画像が56x72/56x56なので pixelRatio 2 は従来どおり
+               （表示は28x36 / 28x28）。HTML側の一覧は img として mhcard.png をそのまま使う。 */
             loadSDF2x('mhcard.png',              'mhcard-icon'),
-            loadSDF2x('mhcard-face.png',         'mhcard-face-icon'),
             loadSDF2x('mhcard-cluster.png',      'mhcard-cluster-icon'),
-            loadSDF2x('mhcard-cluster-face.png', 'mhcard-cluster-face-icon')
+            /* 角丸四角・カードの影。丸ピンは circle-blur でぼかせるが、道の駅とカードは
+               symbol（画像）なのでぼかせない。ぼかし済みの黒い形を別画像で持ち、下に敷く。 */
+            loadPlain2x('michi-plate-shadow.png',   'michi-plate-shadow-icon'),
+            loadPlain2x('mhcard-shadow.png',        'mhcard-shadow-icon'),
+            loadPlain2x('mhcard-cluster-shadow.png','mhcard-cluster-shadow-icon')
         ]).then(() => {
             // オブジェクト種別アイコンの円直径/表示サイズ。CSS変数 --obj-icon-circle / --obj-icon-inner と同じ値（画像ネイティブ幅64pxに対する比率をicon-sizeに使用）
             const OBJ_ICON_CIRCLE_PX = 28;
             const OBJ_ICON_INNER_PX = 25;
             const OBJ_ICON_NATIVE_PX = 64;
             // 道の駅の板。正方形は同じ寸法だと丸より大きく見えるので、本体を丸の28pxより小さくする。
-            // CSS変数 --obj-icon-square と同じ値。白フチ3pxを足した外径は32px。
+            // CSS変数 --obj-icon-square と同じ値。フチが無いのでこれがそのまま外径。
             const MICHI_PLATE_PX = 26;
             // 道の駅のクラスタ。丸のクラスタ（φ40）に対し、ピンと同じ比率（26/28）で縮めた値
             const MICHI_CLUSTER_PX = 37;
@@ -4528,12 +4540,24 @@ map.on('zoomend', () => { isZooming = false; });
             // マンホールカードに重ねるバッジ。CSS変数 --mhcard-badge と同じ値（カード幅28pxの80%）
             const MHCARD_W_PX = 28;
             const MHCARD_BADGE_PX = MHCARD_W_PX * 0.8;
+            /* ピンの影。白フチをやめた代わりに、ぼかした黒をピンの下に敷いて地図から浮かせる。
+               丸は circle-blur、道の駅とカードはぼかし済み画像。濃さと下へのずらし量は共通。 */
+            const PIN_SHADOW_OPACITY = 0.38;
+            const PIN_SHADOW_BLUR    = 0.5;                          // circle-blur（丸のみ）
+            const PIN_SHADOW_OFFSET  = [0, 2];                       // 下へ2px
+            const PIN_SHADOW_R       = OBJ_ICON_CIRCLE_PX / 2 + 3;   // 丸ピン φ28 → 影 半径17
+            const CLUSTER_SHADOW_R   = 23;                           // 丸クラスタ 半径20 → 影 半径23
+            /* 影画像に焼いてある「芯」の大きさ（実寸px）。icon-size は
+               出したい芯の大きさ ÷ この値 で決める。michi-plate-shadow.png は30px角、
+               mhcard-shadow.png は32x40、mhcard-cluster-shadow.png は46px角。
+               いずれも板・カードより4px大きい（＝影が形の外へ2pxずつはみ出す）。 */
+            const MICHI_SHADOW_CORE_PX = 30;
             // データは後から非同期に届くため、ソースは空で生成し setData で埋める
             const configs = [
                 { id: 'michi',           color: '#0B499D', icon: 'michi-icon',    type: 'michi',   clusterColor: '#0B499D' },
                 { id: 'shops',           color: '#FFAA00', icon: 'tabe-icon',     type: 'shop',    clusterColor: '#FFAA00' },
                 { id: 'manholes',        color: '#B87333', icon: 'manhole-icon',  type: 'manhole', clusterColor: '#B87333' },
-                /* mhcard はピンもクラスタもカードの絵（-icon / -icon-face / -cluster-face）で描くので、
+                /* mhcard はピンもクラスタもカードの絵（-icon / -cluster）で描くので、
                    丸を塗る color / clusterColor は使わない。持たせると「変えても反映されない」
                    設定になるため置かない。検索結果や履歴のアイコン色は typeConfig 側で持つ。 */
                 { id: 'mhcards',                           icon: 'mhcard-icon',   type: 'mhcard' },
@@ -4544,54 +4568,95 @@ map.on('zoomend', () => { isZooming = false; });
             // 地図の空きタップで情報シートを閉じる判定に使う、オブジェクトのクリック対象レイヤー一覧
             objClickLayers.length = 0;
 
-            configs.forEach(conf => {
-                /* filterState から初期visibility を決定（保存済み設定を反映）。
-                   manholes は蓋とポケふたが同居するソースなので、どちらかが表示中なら
-                   レイヤーは出す（中身の出し入れは manholeFeaturesForMap 側）。 */
+            /* filterState から初期visibility を決定（保存済み設定を反映）。
+               manholes は蓋とポケふたが同居するソースなので、どちらかが表示中なら
+               レイヤーは出す（中身の出し入れは manholeFeaturesForMap 側）。 */
+            const initVisOf = (conf) => {
                 const filterKey = conf.type === 'castle' ? 'castle'
                     : conf.type === 'manhole' ? 'manhole'
                     : conf.type === 'mhcard'  ? 'mhcard'
                     : conf.type === 'michi'   ? 'michi'
                     : conf.type === 'shop'    ? 'shop'
                     : null;
-                const initVis = (filterKey === null || objLayerVisible(filterKey)) ? 'visible' : 'none';
+                return (filterKey === null || objLayerVisible(filterKey)) ? 'visible' : 'none';
+            };
+
+            /* ソースと影だけを先に一周して作る。影は必ず全種別のピンより下に居なければならず、
+               種別ごとに「影→ピン」の順で足すと、後の種別の影が前の種別のピンに乗って黒く曇る。
+               影は衝突判定に載せない（ラベルを押し出さないため）。 */
+            configs.forEach(conf => {
+                const initVis = initVisOf(conf);
+                /* ずらす向きは画面基準（-translate-anchor: viewport）。既定の map のままだと
+                   コンパスで地図を回したときに影だけ一緒に回り、光源が動いて見える。 */
+                const shadowPaintSymbol = {
+                    'icon-opacity': PIN_SHADOW_OPACITY,
+                    'icon-translate': PIN_SHADOW_OFFSET, 'icon-translate-anchor': 'viewport',
+                };
+                const shadowPaintCircle = (r) => ({
+                    'circle-radius': r, 'circle-color': '#000000', 'circle-blur': PIN_SHADOW_BLUR,
+                    'circle-opacity': PIN_SHADOW_OPACITY,
+                    'circle-translate': PIN_SHADOW_OFFSET, 'circle-translate-anchor': 'viewport',
+                });
+                const shadowLayout = (image, size) => ({
+                    'icon-image': image, 'icon-size': size,
+                    'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis,
+                });
 
                 map.addSource(conf.id, conf.noCluster
                     ? { type: 'geojson', data: EMPTY_FC }
                     : { type: 'geojson', data: EMPTY_FC, cluster: true, clusterMaxZoom: 13, clusterRadius: 50 }
                 );
+
+                // クラスタの影
                 if (conf.type === 'mhcard') {
-                    /* カードのクラスタも白フチ＋銅色の面の2枚重ね。色は icon-color から与える。
+                    map.addLayer({ id: `${conf.id}-cluster-shadow`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: shadowLayout('mhcard-cluster-shadow-icon', 1.0), paint: shadowPaintSymbol });
+                } else if (conf.type === 'michi') {
+                    map.addLayer({ id: `${conf.id}-cluster-shadow`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: shadowLayout('michi-plate-shadow-icon', (MICHI_CLUSTER_PX + 4) / MICHI_SHADOW_CORE_PX), paint: shadowPaintSymbol });
+                } else {
+                    map.addLayer({ id: `${conf.id}-cluster-shadow`, type: 'circle', source: conf.id, filter: ['has', 'point_count'], paint: shadowPaintCircle(CLUSTER_SHADOW_R), layout: { 'visibility': initVis } });
+                }
+                // ピンの影
+                if (conf.type === 'mhcard') {
+                    map.addLayer({ id: `${conf.id}-shadow`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: shadowLayout('mhcard-shadow-icon', 1.0), paint: shadowPaintSymbol });
+                } else if (conf.type === 'michi') {
+                    map.addLayer({ id: `${conf.id}-shadow`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: shadowLayout('michi-plate-shadow-icon', (MICHI_PLATE_PX + 4) / MICHI_SHADOW_CORE_PX), paint: shadowPaintSymbol });
+                } else {
+                    map.addLayer({ id: `${conf.id}-shadow`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: shadowPaintCircle(PIN_SHADOW_R), layout: { 'visibility': initVis } });
+                }
+            });
+
+            configs.forEach(conf => {
+                const initVis = initVisOf(conf);
+                if (conf.type === 'mhcard') {
+                    /* カードのクラスタはカードの外形1枚を銅色で塗るだけ。白フチをやめたので、
+                       面を重ねる -cluster-face は無い。
                        上に乗る件数テキストが衝突判定で消えないよう、板は判定から外す */
-                    map.addLayer({ id: `${conf.id}-cluster`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'mhcard-cluster-icon', 'icon-size': 1.5, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
-                    map.addLayer({ id: `${conf.id}-cluster-face`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'mhcard-cluster-face-icon', 'icon-size': 1.5, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': MHCARD_FACE_COLOR } });
+                    map.addLayer({ id: `${conf.id}-cluster`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'mhcard-cluster-icon', 'icon-size': 1.5, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': MHCARD_FACE_COLOR } });
                 } else if (conf.type === 'michi') {
                     /* 道の駅のクラスタもピンと同じ角丸四角。ピンと同様に、正方形は丸と同じ寸法だと
-                       大きく見えるので、丸のクラスタ（φ40＋白フチ3px）より小さい37pxにする。
+                       大きく見えるので、丸のクラスタ（φ40）より小さい37pxにする。
                        上に重なる件数テキストが押し出されないよう衝突判定からは外す。 */
-                    map.addLayer({ id: `${conf.id}-cluster-outline`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'michi-plate-icon', 'icon-size': (MICHI_CLUSTER_PX + 6) / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
                     map.addLayer({ id: `${conf.id}-cluster`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'icon-image': 'michi-plate-icon', 'icon-size': MICHI_CLUSTER_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': conf.clusterColor } });
                 } else {
-                    map.addLayer({ id: `${conf.id}-cluster`, type: 'circle', source: conf.id, filter: ['has', 'point_count'], paint: { 'circle-color': conf.clusterColor, 'circle-radius': 20, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' }, layout: { 'visibility': initVis } });
+                    map.addLayer({ id: `${conf.id}-cluster`, type: 'circle', source: conf.id, filter: ['has', 'point_count'], paint: { 'circle-color': conf.clusterColor, 'circle-radius': 20 }, layout: { 'visibility': initVis } });
                 }
                 map.addLayer({ id: `${conf.id}-cluster-count`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'text-field': '{point_count_abbreviated}', 'text-size': 12, 'text-font': ['Noto Sans Bold'], 'visibility': initVis }, paint: { 'text-color': '#FFFFFF' } });
                 if (conf.type === 'michi') {
                     /* 道の駅だけは丸ではなく道の駅紋章そのままの角丸四角。板(michi-plate-icon)も
                        図柄(michi-icon)もSDFで、色は icon-color から与える点は他の種別と同じ。
-                       他の種別が circle-stroke で描いている白フチは、一回り大きい白い板を
-                       下に敷いて作る（外径は 26+3*2=32px で、丸ピンの34pxより一回り小さい）。 */
-                    /* 板の2枚は icon-ignore-placement で衝突判定から外す。他の種別では板にあたる
+                       白フチはやめたので板は1枚だけ。地図からの分離は下に敷いた影が受け持つ。 */
+                    /* 板は icon-ignore-placement で衝突判定から外す。他の種別では板にあたる
                        部分が circle レイヤー（衝突判定を持たない）なので、外さないと道の駅だけ
                        ラベルが板に押されて消える。判定に載るのは従来どおり -icon の1枚だけ。 */
-                    map.addLayer({ id: `${conf.id}-bg-outline`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': 'michi-plate-icon', 'icon-size': (MICHI_PLATE_PX + 6) / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
                     map.addLayer({ id: `${conf.id}-bg`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': 'michi-plate-icon', 'icon-size': MICHI_PLATE_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': conf.color } });
                 } else if (conf.type !== 'mhcard') {
-                    map.addLayer({ id: `${conf.id}-bg`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: { 'circle-color': conf.type === 'castle' ? ['match', ['get', 'genre'], '日本100名城', CASTLE_MEIJO_COLOR, '続日本100名城', CASTLE_ZOKU_MEIJO_COLOR, OBJ_TYPE_COLOR.castle] : conf.type === 'manhole' ? ['match', ['get', 'source'], 'pokefuta', '#FBBC04', '#B87333'] : conf.color, 'circle-radius': OBJ_ICON_CIRCLE_PX / 2, 'circle-stroke-width': 3, 'circle-stroke-color': '#FFFFFF' }, layout: { ...(conf.type === 'castle' ? { 'circle-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis } });
+                    map.addLayer({ id: `${conf.id}-bg`, type: 'circle', source: conf.id, filter: ['!', ['has', 'point_count']], paint: { 'circle-color': conf.type === 'castle' ? ['match', ['get', 'genre'], '日本100名城', CASTLE_MEIJO_COLOR, '続日本100名城', CASTLE_ZOKU_MEIJO_COLOR, OBJ_TYPE_COLOR.castle] : conf.type === 'manhole' ? ['match', ['get', 'source'], 'pokefuta', '#FBBC04', '#B87333'] : conf.color, 'circle-radius': OBJ_ICON_CIRCLE_PX / 2 }, layout: { ...(conf.type === 'castle' ? { 'circle-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis } });
                 }
-                map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': conf.type === 'mhcard' ? 1.0 : conf.type === 'manhole' ? OBJ_ICON_INNER_PX / OBJ_ICON_NATIVE_PX : conf.type === 'michi' ? MICHI_PLATE_PX / OBJ_ICON_NATIVE_PX : OBJ_ICON_CIRCLE_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, ...(conf.type === 'castle' ? { 'symbol-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
+                /* 図柄。mhcard だけは「図柄」ではなくカードの外形そのもので、白フチをやめたため
+                   銅色で塗る（他の種別の -bg にあたる役目）。タップ判定もこのレイヤーが持つ。 */
+                map.addLayer({ id: `${conf.id}-icon`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': conf.icon, 'icon-size': conf.type === 'mhcard' ? 1.0 : conf.type === 'manhole' ? OBJ_ICON_INNER_PX / OBJ_ICON_NATIVE_PX : conf.type === 'michi' ? MICHI_PLATE_PX / OBJ_ICON_NATIVE_PX : OBJ_ICON_CIRCLE_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, ...(conf.type === 'castle' ? { 'symbol-sort-key': ['match', ['get', 'genre'], '日本100名城', 3, '続日本100名城', 2, 1] } : {}), 'visibility': initVis }, paint: { 'icon-color': conf.type === 'mhcard' ? MHCARD_FACE_COLOR : '#FFFFFF' } });
                 if (conf.type === 'mhcard') {
-                    // -icon がカードの白フチ、その上に銅色の面、さらにマンホールのバッジを重ねる
-                    map.addLayer({ id: `${conf.id}-icon-face`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': 'mhcard-face-icon', 'icon-size': 1.0, 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'visibility': initVis }, paint: { 'icon-color': MHCARD_FACE_COLOR } });
+                    // 銅色のカードの上にマンホールのバッジを重ねる
                     map.addLayer({ id: `${conf.id}-icon-overlay`, type: 'symbol', source: conf.id, filter: ['!', ['has', 'point_count']], layout: { 'icon-image': 'manhole-icon', 'icon-size': MHCARD_BADGE_PX / OBJ_ICON_NATIVE_PX, 'icon-allow-overlap': true, 'visibility': initVis }, paint: { 'icon-color': '#FFFFFF' } });
                 }
 
@@ -5404,9 +5469,9 @@ map.on('zoomend', () => { isZooming = false; });
             : (id === 'mhcard' ? null : id);
         const labelVis = (vis === 'visible' && labelId && labelState[labelId] !== false) ? 'visible' : 'none';
         (OBJ_FILTER_SOURCES[id] || []).forEach(sourceId => {
-            [`${sourceId}-cluster-outline`, `${sourceId}-cluster`, `${sourceId}-cluster-face`, `${sourceId}-cluster-count`,
-             `${sourceId}-bg-outline`, `${sourceId}-bg`,
-             `${sourceId}-icon`, `${sourceId}-icon-face`, `${sourceId}-icon-overlay`].forEach(l => {
+            [`${sourceId}-cluster-shadow`, `${sourceId}-cluster`, `${sourceId}-cluster-count`,
+             `${sourceId}-shadow`, `${sourceId}-bg`,
+             `${sourceId}-icon`, `${sourceId}-icon-overlay`].forEach(l => {
                 if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', vis);
             });
             const l = `${sourceId}-label`;
@@ -7407,14 +7472,12 @@ map.on('zoomend', () => { isZooming = false; });
     const toggleLayersBtn = document.getElementById('toggle-layers-btn');
     const layerIdPrefixes = ['michi', 'shops', 'manholes', 'mhcards', 'castles', 'castles-famous'];
     const targetLayerIds = layerIdPrefixes.flatMap(prefix => [
-        `${prefix}-cluster-outline`,
+        `${prefix}-cluster-shadow`,
         `${prefix}-cluster`,
-        `${prefix}-cluster-face`,
         `${prefix}-cluster-count`,
-        `${prefix}-bg-outline`,
+        `${prefix}-shadow`,
         `${prefix}-bg`,
         `${prefix}-icon`,
-        `${prefix}-icon-face`,
         `${prefix}-icon-overlay`,
         `${prefix}-label`
     ]);
