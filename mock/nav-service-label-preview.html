@@ -3,34 +3,38 @@
 <head>
 <base href="../">
 <meta charset="UTF-8">
-<title>「ここへ行く」にサービス名(Google / Yahoo!)を入れる案</title>
+<title>C案（公式ロゴ＋ここへ行く）— ロゴとボタン地色の被りをどう解くか</title>
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <style>
   html, body { margin: 0; padding: 0; font-family: sans-serif; background: #f4f2ee; color: #222; }
   :root { --ui-blue: #4285F4; }
-  .wrap { max-width: 1240px; margin: 0 auto; padding: 16px 16px 60px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 16px 16px 60px; }
   h1 { font-size: 18px; margin: 0 0 6px; }
   h2 { font-size: 15px; margin: 26px 0 6px; border-left: 5px solid var(--ui-blue); padding-left: 8px; }
   p, li { font-size: 13px; line-height: 1.7; }
   .note { background: #fff; border: 1px solid #e2ded4; border-radius: 8px; padding: 10px 14px; }
-  .note.se3 { border: 2px solid var(--ui-blue); }
   table.m { border-collapse: collapse; font-size: 12px; background: #fff; margin-top: 8px; }
   table.m th, table.m td { border: 1px solid #ddd; padding: 4px 8px; text-align: center; white-space: nowrap; }
   table.m th { background: #eceae4; }
   table.m td.l, table.m th.l { text-align: left; white-space: normal; }
-  table.m tr.hi td { background: #eef5ff; }
-  .ok  { color: #1a7f37; font-weight: 700; }
-  .ng  { color: #c62828; font-weight: 700; }
-  .warn{ color: #b26a00; font-weight: 700; }
+  .ok { color: #1a7f37; font-weight: 700; }
+  .ng { color: #c62828; font-weight: 700; }
+  .warn { color: #b26a00; font-weight: 700; }
+  .sw { display: inline-block; width: 11px; height: 11px; border-radius: 2px; vertical-align: -1px;
+        border: 1px solid rgba(0,0,0,.2); margin-right: 3px; }
 
-  .widths { display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-start; }
-  .phone { background: #fff; border: 1px solid #d8d4ca; border-radius: 10px; padding: 8px; }
-  .phone.se3 { border: 2px solid var(--ui-blue); }
-  .phone .cap { font-size: 11px; color: #666; margin-bottom: 6px; text-align: center; }
-  .phone.se3 .cap { color: var(--ui-blue); font-weight: 700; }
-  .sheet { box-sizing: content-box; }
+  /* 案カード。中身は iPhone SE3(375px) のシート内容幅 347px でだけ出す */
+  .cards { display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-start; }
+  .card { background: #fff; border: 1px solid #d8d4ca; border-radius: 10px; padding: 10px 12px 12px; width: 371px; box-sizing: border-box; }
+  .card.bad { border-color: #e0a2a2; background: #fff7f7; }
+  .card.pick { border: 2px solid var(--ui-blue); }
+  .card h3 { font-size: 13px; margin: 0 0 2px; }
+  .card .desc { font-size: 11.5px; color: #555; line-height: 1.55; margin: 0 0 8px; }
+  .card .spec { font-size: 11px; color: #666; margin-top: 8px; line-height: 1.6; }
+  .card .spec b { color: #222; }
+  .sheet { width: 347px; }
 
-  /* ══ 以下は index.html の .os-brow / .btn をそのまま写したもの ══ */
+  /* ══ index.html の .os-brow / .btn をそのまま写したもの ══ */
   .os-brow { display: flex; gap: 4px; margin-top: 4px; }
   .btn { display: flex; align-items: center; justify-content: center; text-align: center; height: 40px;
          padding: 0 4px; border-radius: 7px; text-decoration: none; font-family: inherit; font-weight: bold;
@@ -41,231 +45,185 @@
   .btn-nearby-search { background: #34A853; color: #fff; }
   .btn-nearby-search svg { width: 14px; height: 14px; margin-right: 3px; flex-shrink: 0; }
 
-  /* ══ 各案でだけ足すもの ══ */
   .lbl { white-space: nowrap; display: inline-flex; align-items: center; }
-  /* 2段組 */
-  .b2 { flex-direction: column; justify-content: center; line-height: 1.15; }
-  .b2 .svc { font-size: 9.5px; font-weight: 700; letter-spacing: 0.3px; opacity: 0.92; }
-  .b2 .act { font-size: 12px; font-weight: bold; }
-  /* 公式ロゴのチップ。ロゴはどちらも背景透過なので、
-     青(#4285F4)・赤(#FF0033)のボタン地に直接置くと色が沈む。白い座布団に載せる。 */
-  .logo { flex-shrink: 0; width: 18px; height: 18px; border-radius: 4px; background: #fff;
-          margin-right: 4px; display: inline-flex; align-items: center; justify-content: center; }
-  .logo img { display: block; }
-  .logo.gm img { width: 14px; height: 14px; }
-  .logo.yj img { width: 15px; height: 15px; }
-  /* ロゴだけ（文言なし）の案 */
-  .logo-only { width: 20px; height: 20px; margin-right: 0; }
-  .logo-only.gm img { width: 16px; height: 16px; }
-  .logo-only.yj img { width: 17px; height: 17px; }
-  /* Yahoo! JAPAN の横長ロゴ */
-  .logo-wide { flex-shrink: 0; height: 15px; background: #fff; border-radius: 3px; padding: 2px 3px;
-               margin-right: 4px; display: inline-flex; align-items: center; }
-  .logo-wide img { display: block; height: 11px; width: auto; }
-  /* ボタンの下に置く小さな見出し */
-  .svc-cap { display: flex; gap: 4px; margin-top: 3px; }
-  .svc-cap span { flex: 1 1 0; min-width: 0; font-size: 9.5px; font-weight: 700; color: #666; text-align: center; }
+  .lg { flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; margin-right: 4px; }
+  .lg img { display: block; width: 16px; height: 16px; }
+
+  /* V1 白い座布団 */
+  .v1 .lg { width: 18px; height: 18px; border-radius: 4px; background: #fff; }
+  .v1 .lg img { width: 14px; height: 14px; }
+  /* V2 白フチ（座布団なし）。ロゴの輪郭に白い縁を回す */
+  .v2 .lg img { filter: drop-shadow(0 0 0.7px #fff) drop-shadow(0 0 0.7px #fff)
+                        drop-shadow(0 0 0.7px #fff) drop-shadow(0 0 0.7px #fff); }
+  /* V3 白の単色シルエット（画像そのものを差し替え） */
+  /* V4 ボタンを白地にする。既存の .btn-gmap と同じ手法 */
+  .v4 .btn-nav       { background: #fff; color: #1A73E8; border: 1px solid #1A73E8; }
+  .v4 .btn-nav-yahoo { background: #fff; color: #D6002B; border: 1px solid #D6002B; }
+  /* V5 淡いブランド色の地に濃い文字 */
+  .v5 .btn-nav       { background: #E8F0FE; color: #1A56C4; }
+  .v5 .btn-nav-yahoo { background: #FFE8EC; color: #C1002B; }
+  /* V6 左端に白い帯を作り、その中にロゴを置く。
+     帯だけ白くするとシートの地色（白）と溶けてボタンが欠けて見えるので、
+     ボタン全体に地色と同じ色の1px枠を回して帯を囲う。 */
+  .v6 .btn { padding: 0; }
+  .v6 .btn-nav       { border: 1px solid #4285F4; }
+  .v6 .btn-nav-yahoo { border: 1px solid #FF0033; }
+  .v6 .lbl { width: 100%; justify-content: flex-start; }
+  .v6 .lg { width: 26px; height: 38px; background: #fff; margin-right: 0; border-radius: 6px 0 0 6px; }
+  .v6 .cap { flex: 1 1 auto; text-align: center; padding: 0 4px; overflow: hidden; }
+  /* V7 地色を暗くしてロゴを浮かせる */
+  .v7 .btn-nav       { background: #174EA6; }
+  .v7 .btn-nav-yahoo { background: #B3001F; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<h1>オブジェクトをタップしたときの「ここへ行く」×2 に Google / Yahoo! を入れられるか</h1>
+<h1>C案（公式ロゴ＋「ここへ行く」）— ロゴを透過で置くと色が被る問題の解き方</h1>
 
 <div class="note">
-  <p style="margin:0 0 6px">
-  現状（<code>index.html:3425-3429</code> の行C）は <b>常に3個・flex で等分</b>です。
-  文言は<b>両方とも「ここへ行く」で、青(#4285F4)＝Google経路／赤(#FF0033)＝Yahoo!経路の色だけが手掛かり</b>になっています。
-  どちらも現在地からの経路を開く点は同じで、違いは使うサービスだけです。
-  </p>
-  <p style="margin:0 0 6px">
-  1個あたりの幅は <b>(画面幅 − 28px − gap 8px) ÷ 3</b>、文字が置けるのは左右 padding 4px を引いた残りです。
-  <b>iPhone SE3(375px)なら 1個 113px・文字領域 105px</b> しかありません。
-  はみ出した分は <code>overflow:hidden</code> で<b>切れて消えます</b>（…も付きません）。
-  </p>
+  <p style="margin:0 0 6px"><b>被りの正体（画像の実測）</b></p>
+  <ul style="margin:0 0 6px">
+    <li>Yahoo! の Y! ロゴの色は <b><span class="sw" style="background:#FF0033"></span>#FF0033</b>。
+        <code>.btn-nav-yahoo</code> の背景色も <b>#FF0033</b> で<b>完全に同一</b>（コントラスト比 1.00）。透過で置くと文字どおり消えます。</li>
+    <li>Google Maps ピンは5色（<span class="sw" style="background:#34A853"></span>#34A853
+        <span class="sw" style="background:#FBBC04"></span>#FBBC04
+        <span class="sw" style="background:#4285F4"></span>#4285F4
+        <span class="sw" style="background:#EA4335"></span>#EA4335
+        <span class="sw" style="background:#1A73E8"></span>#1A73E8）。
+        このうち <b>#4285F4 が <code>.btn-nav</code> の背景（<code>--ui-blue</code>）と完全に同一</b>で、ピンの青い面だけが抜け落ちます。</li>
+  </ul>
   <p style="margin:0">
-  <b>ロゴは公式配布物をそのまま使っています。</b>
-  Google Maps＝<code>google.com/images/branding/product/2x/maps_96dp.png</code>、
-  Google＝<code>google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png</code>、
-  Yahoo!＝<code>s.yimg.jp/c/icon/s/bsc/2.0/favicon.ico</code>（map.yahoo.co.jp が参照している共通アイコン）、
-  Yahoo! JAPAN 横長＝<code>s.yimg.jp/images/top/sp2/cmn/logo-170307.png</code>。
-  data URI にして 1ファイルで完結させてあります。本アプリは作者の個人使用のため配布・公開はしません。
+  つまり「白い座布団」は、<b>被る2色を物理的に引き離すために挟んでいた</b>ものです。以下は座布団を使わずに引き離す案を並べたものです。
+  幅は <b>iPhone SE3（375px）＝シート内容幅 347px・ボタン1個 113px・文字領域 105px</b> だけで出しています。
   </p>
 </div>
 
-<h2>iPhone SE3（375px）の実測</h2>
-<div class="note se3">
-  <div id="se3"></div>
-</div>
-
-<h2>この端末で開いたときの実測</h2>
-<div class="note">
-  <div id="live"></div>
-</div>
-
-<h2>全幅の実測</h2>
+<h2>実測（iPhone SE3 / 375px）</h2>
 <div id="measure"></div>
 
-<h2>案の一覧（同じ画面幅で見比べる）</h2>
-<div class="widths" id="widths"></div>
+<h2>案</h2>
+<div class="cards" id="cards"></div>
 
-<h2>各案の説明</h2>
-<table class="m">
-  <tr><th>案</th><th class="l">中身</th><th class="l">利点</th><th class="l">欠点</th></tr>
-  <tr><td>現状</td><td class="l">ここへ行く／ここへ行く</td><td class="l">最短。行の高さも今のまま</td><td class="l">どちらがどのサービスか色でしか分からない</td></tr>
-  <tr><td>A</td><td class="l">ここへ行く Google／ここへ行く Yahoo!（文字だけ）</td><td class="l">1行のまま名前が入る</td><td class="l">幅が最も苦しい</td></tr>
-  <tr><td>B</td><td class="l">上段に小さく Google / Yahoo!、下段に ここへ行く（2段組）</td><td class="l">横幅を使わない</td><td class="l">サービス名が9.5pxと小さい</td></tr>
-  <tr class="hi"><td>C</td><td class="l"><b>公式ロゴ（Google Maps ピン／Yahoo! の Y!）＋ ここへ行く</b></td><td class="l">ロゴ18px＋余白4pxで済み、文言は現状のまま。色と絵の二重の手掛かりになる</td><td class="l">ロゴが18px角と小さい</td></tr>
-  <tr><td>D</td><td class="l">Googleで行く／Yahoo!で行く（文字だけ）</td><td class="l">Aより短い1行</td><td class="l">「ここへ行く」という現行の言い回しが消える</td></tr>
-  <tr><td>E</td><td class="l">行Cを2行に割る（上＝ここへ行く×2で2等分、下＝この周辺を検索が全幅）＋公式ロゴ＋名前</td><td class="l">文字領域が171pxに倍増し、ロゴも名前も余裕で入る</td><td class="l">シートが44px高くなる</td></tr>
-  <tr><td>F</td><td class="l">ボタンは現状のまま、真下に小さく Google / Yahoo! の見出し</td><td class="l">ボタンの中身を一切変えない</td><td class="l">シートが約17px高くなる</td></tr>
-  <tr><td>G</td><td class="l">公式ロゴだけ（文言なし）＋ ここへ行く は周辺検索と同じ行に置かない</td><td class="l">最も幅を食わない</td><td class="l">「ここへ行く」が消え、何のボタンか分からなくなる</td></tr>
-</table>
+<div class="note" style="margin-top:18px">
+<p style="margin:0 0 4px"><b>ロゴの改変について</b></p>
+<p style="margin:0">
+V3 の白単色シルエットは、公式配布物のアルファ形状だけを使って色を白に置き換えたものです（＝ロゴの改変）。
+公式に白抜き版が配布されているかは<b>未確認</b>で、このモックのものは自作です。
+他の案（V1・V2・V4・V5・V6・V7）は公式配布物を<b>色も形も変えずに</b>置いています。
+本アプリは作者の個人使用（README「位置づけ（個人使用）」）のため公開・再配布はしません。
+</p>
+</div>
 
 </div>
 
 <script>
-const LOGO_GMAPS = 'data:image/png;base64,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';
-const LOGO_GOOGLEG = 'data:image/png;base64,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';
-const LOGO_YJ = 'data:image/png;base64,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';
-const LOGO_YJWIDE = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAwCAYAAACmJWBPAAAe30lEQVR42u2deXxlVZXvv2ufc5OqSjFUCQUCUlgk96ZSUoCFMogEuxnEARWoJ4M4YNOoqCgqOAHS0k/R1gYfDijPVqRFjQ8QBRWbIV0IKoShgJCJgmIsoBiKGjLce/Z6f6x9cs+9uUluKsEWrPP5nM9N7nCGvdde67fW+q11RMmfAW438AKk+1Q3DTsgmvlfgBGQ84SeZxRERr+3ZXs5bjoqQ+3O3unMyMaYTaA9yFunB7Re+VBwAl7JLwV3N6jWkN0gcv5xUQoKOcBnZHaqm0zwOjIMc+cLXZv+XgXdJr89mvovNwh0eYHkJSDcLsx4Ms1jpePkJ5KVOgU9AReB/jIGLoeRVwMLQeYDjeGag9D7Econr7FaFJD1wHPAWmAd6Hp7ZR1wq9C1KQyCzowATLbsOkt/S4Jg9/23dU0zJ+DLndCREARcaY/hsTxEbaC7A7sBC0C2BZ1jsqiDIM+DPgk8CPIA6H3Q15ddKMryCDr8NJRj+tMbJV0dsHBraNoO/KszF3gYuL3BJ+MIuwdxoB+CjZfC1onQPbLFgFdqAqV5a4hPBT8MbgS8B0lqw0SNbExxoNuA/Fno/X291lAr4adUwUumAg/qgQ7298JZMPsQ4O2gbwJ2BdcYhHocpJC9RAX8kAk9N4D8Cna4MVVY2XNNUaMDWgT2EYVoPHOjLG2Cocshejv4EhDXEHQBHYCGfeGe58snK2O06uOXL7KtGZKzM3hepjH2YSB0CIbPFFY/PxNQSad4TdnzpWOrFA6A3B8rL3UC2Dp6yhgY/IbQ92mlPa5lqUxJtbuAhf0UFoMzfNzpq4WoHnhh97XLbJj7QVN0bokd1mNCpyWQXBkdTDRtWgSJbbpc+t4doN+Bvh8LlKrltA5B9+Ac+G7YuI9UTaaUHYQNInQVlbYGSK4BdwgkCUg0FgdFEZQuF/qON9PVmdSHr5bsbotkvJUvk/i/1d+LgOELoe+T2DmS/2HcStDo20PuzeBfA9oG0mxQkYaqnxWBR0EfBR4Gtwr8z4W+nkoNOoqJ/Vg4uLQJhhaA3xbcHPAxuATcJkieh9lPCis3jl0sJqWTLZSykOcPBPkWRHtXCjfO5AEgeRakC7Qb5EFgfZi4rUB2tbHQZRAtCLKZgCZhgYRJ9SsgOU0YuDMr7JMLuiYQR1D6qdB3gtTn2e46D2ZfbzCmlrBrKuzvE/ovVYgFSpMLw7IcrP8puANA59oApDeoBCtSSwVE5mSkl+/VfAT5I+xwlNBZmqo2L99rax70ChM6HQIphQkU+3vML4OQiAPNmfDKVsAxQu89tc3u0iYY/hdwp4fxxO7H3wy8RehdXw9ksP9bFoFrB309yGuBnYG5oLNBGipNuAwGYXsM6AL+Atwk9D403vFrC3nhA8DFJpC+FKCWmlwI4DvB/xBy1wndayYe9+btwb0J3EnA4WV5QkA9RDH4DaAfFPp+Ub6GSTV6cESTjwh935X6zVRhN+BmkJ3tAipsUhpCWg/udcL9/RMN2Nhz7NAE2ywA2Q10EUgL6L7gDs7cgAZzFBnGpRe4C/gzsBKSe4WBp6fj7Yf7PBJyvxq7RsaLktUyzaUhSHYVBp4uW8vlDp7KWMrWs0D+pUrQrxd6DynDEchax8wkCxSOBk4C3gRuVn3WsNbnfhNwI8gPoedKs0Bj4Wz53K3HgfzUlIv6oPRSmPAouE8L9/98LLRaoNAR3l2OjUUlbFJa3gLRN0EKGb8wVaxqyqPnihCZ0QkEPRPq1n2F3ttlakLQur85C9pQY5bTFXQLvLI93Nhme8xK4XxwZ4QbDqbaAfp78GdBX1ctB6WOGGl2MCQLB2yS23YEvwyS7cBtD7rAolG6N8ieNqCSWh0P3BIiBw/bq38U5FGhr6f2fVkkAQpfAnd2laDfAL2HZK+rxkLcB/g30+KjGHfEtLdL9cEzwGrghZDHiM1a6qvA7ZjB0pnfAehNkJwp9P+lGibYSyEP3A40hRO5spBrFwwdLTy0OuM3JHVAITEl0JEK7nYgPwf3D0GhuSDszqJ5xX1g1QAsi01h1BT0ECTxj0DcJnRviOt0sJLgDN2q5E+G6CeQlMKEZwByUoL4AHjiK0LnZwJeL9Xp7AksbBBWDymFk0DOCDeqQQhKkJwFfednNFyF1ajTgmitv9NjBlN7TY2F936I/gNKAYemUGb4fcJDq6fqsOo4AhA+G0fRtLwX5GKQWQHPqk1o1ADJM5D8P+BK0Hug/4mxi2XRAogKIG8H+V8QLzRZToqmNd3B4FYohdOE3u8FzenhHIRzVdHzIJqbga8hGOEfBv8O4aHHyk5zp6/fee8YDU0KnWuVRUdBwwqQPYIyCfMfbQ3R1wTepczVOsTqTqF7g4KLpxKbDhdymZJvg/hzJtjZSIxENgju00phhdB5tbI8CnHWiSZdzHlcPaQUTgD5vt2gJhDlQB8A+aDQ26lmj5yY4+SV1leAa7JricLgDmr57+zWkPEtBhVmC4w8JwwMj9Uw6XZnDAMlxg0fyDYmEMscLPLBPOtUIxmTYPJEyb8boh8HTZwEC5c6bN+G5HzhgUfGcTLVxmvVU8BTwApl16/A7FOBL1ooUH2wng3gvqu0xkLPRTbn55bMd/FHGmTJ+mgikHxS6H9MWZYTOovTyX+Yf7dqndJyKrgby7BVYlN87m1Ky15C510TjFoaZV2RRgDjqV1KZ2KT2vcFyL8G4rdDKeucSgZPX6IUXi90PDSJgyNwjthgFj4E8u2g7DzEOUh+C9FJQvcatUWVSBht0wZ6BegbQTfYtRBBQ1gkY7Bzrnx9DTEkDtxeQE9m8YxqmKBlRBhIFIZrj4lLTBC7VOiaEeGuElS16FTp+0HZB8ggAMOgJwq9HVVZRa1ebBnL6aBdhM7ngPOU/E1AB8iO4fg+DO+FSv4uofPmsJjeAnGDKTIyuDy5B/qvsmvtKs1Acq1kc9G/QsmvgOjgMl5PnVM9Mvhn44lUFO7htjTEHW+GyQ2D5z4ApT+aKfRZ59SZkLntIfmR0n4IdGqtKEh5AZyrapj1nBBpiczaJN+E3s8EwY7SSE7VsZ4M/tNWGew5Qc5kFKI/D3ozzF9dH/dBx9FULjaI9rRTtq9D0NdHSrvAGlfPkNu9l84Gt3WAi3G4SQf+n4S+DotedSUThVMz45VAZyr4sdB3s5pje71lxbOYWL6ptB1oSUB9baW21ICD3XV2jbXj/Ju3tTulU0GuBTk4o6HD5Ml+kw+bPg3FdDH4eHNyqiZ0Pc8ozceZeZDZVc5Aitfb4Yn/LXBGNV4v487mRnDftYXjixayYhiSjwp9l2SgSlIrKQPRe2DoCxDtD24/4ARzvNJrSSGvpryHa0E/bQ7bwNoyNt8sp1lhcO0UJzgs1sUb6oMsLTsD7yxDhjSUm/xa6LssCFhxM3PjRYMbXbcoLd+B3OllC+09yOugdGDIVu5Y9t9HhQnwD8x8FmKBmpxpf5WySv94ZVlJalVARdPI3B0GgexC4800L4lhqYE7DUvFPwqx5lp4/TNKy61C55UpXk/j7EphJ5DLLI6aDBtW9GtATxD6bkidoYnwbqAc9AP9SvMNEL03BANuAx4Hd2SIyAW8qs1wXJ9wrp+ehQUgB3MuUArPUZH1Usa3EiG4Q7IsQGhHzftrd8Ghe71p89FwW8ovusTUXOc00/ldicEO/b+QfLwcylNvukjfGgR9HE6SvghJuafSxZSU9dCkMd3qxO+tYRwj6CzF08RSsdD/Y6Xweog+YhEJicfidfcDpXml0PGA0tYgdI8orctAf2ZZwmTIYsH+XtDllgmszxSmxDD7rvuqOaYAXBi4E+8I1GEXJq8Alx+j8MuQPZ2OuY0gOmby9TBu6ps6aA9tlWljcaDDkNwxUfRmKlYpHOcBy8bKohDpkPDRkvC9tWE6tfJVFur0qBsTzKssrDzXqCJ5tqz8pOr+JQof3ZqhCeOmeT3BOR36FCR/Do6Cr1x53oN7BUT/YWaye0TJv9MwoTQbmcfNguQmKP5jSHdHU4ADYt56WxvI0UFbPg5cDdHt4B8sa81RZ+69YaD8jEzJuO+np0jJfYk3K1caqV8TyraVyEoABmH2xmnwqmtsA8WyMFesv63D6901LBPAwYGdOYOOeGcgnvlDK+HS6PzdPcGgC+g6KN2Z5UDFTM9+q4KGsOD7wP/JzGwWr0uK198I6z+r5HvB/SyEvUcgngWlq2Hd8cKTGycimdXezgHOBZIzyxlCuSRNoyuFn4N8tpzF8wIcqixumWoGt/bA+i6gD+TZQFVeD7oJZBP4QZAh8zkYgahogh5tAj0F5BQT/gk5PaUpmorpLNpa8CTF/9dBcl4mSxlwvNtPyR9oTu30HdJMzmAxyKFBllxG5AT43Ti/9sF/uQsG1maDFjHTDwf5gL17lfzHwP0kaKuoCq8ryLnlSfLFkOjogPg9wpMjOkUilmHLc1VZvAT03WHdvQClSzLhx8vBf6p8r1oKYbITgbMzWHiqajxUTxVPEB7s24zM7yOV5njcEX54bEJX50BpO4XnK32D6Wxtc6C0U8Y3T7Xn4/b50jvh7v+GqL2Ktu3AXaA0v0HoHK6X5zRB0UWavv8WuNmVVIDIQXIfxDdUKSjNmFABbrMbKAdAHDNSWNARMqd9l0FyaWCvJTW4p5IhgeUguRp6jzU4s1maNQhzcgZIY/j3CnjgUWhusLDbVveD3haSK2lqGOAEZZfZKQFsGnffoOAUckp7PHZfHilk9mW5EB9vmMx8B3T450z4VsKE5yA5yO69fbpz6Oz+i3uDe2XZGqfkS7klnWPgCxlomvF7ZBlElyvNjanvplOQLRu/9lhGcyStF0N0SCZmr5nr+rwFIJZFZRdDAqnO5UJYdEXlGM6QoKc1fzZgjZ+A5MFyirhmsUYE/k6ITwjAy20OJ9poi4U9QI4NeHgjROeafRsYFrqKQlcR5N8zWi/1GxbB3DfXPw46TtRB0sRMInSWxu4dSZjAEOdelEaRJtPC3oRll5UGjyTEwEch4UctgdbpdTPnMTjyQVm4T4VDZxIRfhPw63J6vu+PoGdnFFkQdp+AexdE/6XklwqU0qSeLfTRxe7CHmXeD4m6zpLS1qwUrgH5ZzvmKEwqQRxD8i2h92qb+66knN/wa8A/DroGklUQ31ntv8TMXLlYmjR4Tsl/D6LzDX+OmYTUa/+3wEPYbFMXYq2fMwjkA3syeb9SqGJW6vzA52io9NT1g8CV9Zn+qAH+uuV3JgSdJaVwnlXdaBYb7wWFrwm9p4dcQ5o11voVxTlqGen8h0HeESxHZMIT5yD5odD7kH23MwkQ9V+V/DYQfaZMpZYoCPuB4G9RCj8Ad4lw/32MS//oyFJ1dwf3fkg+Am5+gCsh8SiRWbDSD6Hv9LHldQP3Q/Nu0KAwIrBzkvoJVTyomQwJWdEF5D8E0XfGKcFL4cNboO93m1MgUSYbtewJ7rYMyUpqV/ylisprFaYdAd2rRmFDON5y4KmcaZQnTob4OyGEGuLZDBsP/JXdaSFzJv2utUvc2mLY3sOas8GdVcleTG6EVx4GnZmKqeVi0DD/fYhPhlKxnB11ESQXwvBnhdVDmTnQqkoWyVbdS0XiLn86uK+XnT4tmWD5Hmg4AO5ZlwlBSjlb23oy6PkQzQvKvRRuM1QVJUUL8emN4O4A/6QVfzgPyRxwC0D3BN4EegDEc8IcFcNcxiEfsgn4ktD79WwxSz38+ewWvziaSKPJky0uqcXUm1rsV84KVIEQv9enofSMRT0YsoiHFk0gZVvgoMw1lCBqhOL7gM/Bckm1THngOigX/RZy4yygZ+uJNMiow2Q1tUq+VmZ0ZOyxOsLCiz9q1OH4XWYpFdPA0Wkw+wCl8GXo/e0415IZ5s7wRms76GfBvTkogIzv5B8Bf5Rwz3NBkKo9VCf0/EBZdBPwRdBjzcFP17kfNoGXg2wf3YYDogn+VLZwJhkOhLJ0oXhIrgL9stB/Vy0hnwJjdeY1upna/KkQXTSORk/53IcLPddNNZyY4cbvB6wIBUcx+J9Y0uqFBB4dGVs40NwIrsd62KQOVSVnueyULm6DZIeQ9t4lvB5idZHVvGd+Cdxnx3EPgz4B/pnqIhBlj3kwsiAUlRSAY0BeHyaeMt1VLgJW29/uKStHG1gfhCyGwvkgpwdejw8auCEI2D2BH3IzSG8gupWMtVmaDSwCDgA5AmT/4NsWQ+QkCgL23+A/IPSvqqfaKNAZlkBynNF/WRwYp3WG+SvKPL2FavU34H4m9HRVn2tshdq6XY1X31iEYmRYXp6oLtJ/yQh6WQhHCfe/g+jwcA4PyV7CQHft36W/Kfw7RJ/IZHBTBt6JFjECo/3qoxDNqhwmP0GFkVRVIPnfCb1HlMu9mneB6E9WnSU1vk8N8mcaF9arhN6jM3QIVVoPBT0H3BsyOZEACUePnViolWGjKrB1iEpkPk+pvgIkj4BcAE3/x8Zq8nnRci+XDEsyvxR0r1DW1wqyANgWmIORxlLIuAlknVlh6bPSPrkbeu7OkPdcLa2dKa7fC5I7QsnjRvPBdBiGX5cWgMhMJIymt3lXf6w8W63SVVTybwZ3uGmjKAfJL2Cgx7T2QJGqggqlK6hN+QX4j2d4G6nJPkXhp4EktJNNRLI+9B8phop2X1tBlNJ60YZQM7kd6LNhUUaG2+XVwE6WsdPhUI+ahAVfynQwSNmfkc2Ne0Wo8azSpD1/ULgeWo8AfwLIP5pASVUq3M2rncF1gI/s/vTWQNPtEHqeyRLK6glAlOfIfAmhbyWwEri0rGiat4JZs8uVaVqEoUFYtb6WxQgO50Sc/nCjxZ1sPTLbiIUC+IdgzjMvWtRl6skWydUbzUkTOqFCZmkIF6Yfl0C+b98bGJ6AhCbQdDtsuBdkaaZyxUN0ABT2U3pvhXkD8FQLNBVhMDFu+2wPaz3kFIpVVnA7Z+8NOyg60FnQsMk+S/nZI7dBtCM0JJDz8ILCrCBIjeG4UD6OAEORQZK5G6s6YCVlbdtzDXCN0jYf/D5Q2gdcAdgNdAeQuVa8Ld5oA7oW5BGQfvArYeRP2eqoekh0489RB1mhz/g7CQy8gJX1TdCZaznQERz5jkkWWbuYr+F2CIoiJX9FIE+lMFReTEGvP/mirr6q/JaDwC03cpPuGbQc5ZS+euB7Sv5OS25EvxW6B7I3atfUlrPYa+FKcEstryFZov6pArcojcVQiVPnNqaKbt3Y8rzVQ+Ycz5w5NK13X2TH737WUvRcVxkBeyyCjRE0JTBQrK09R2s2Z6T1XVboa8iD1ChhTKrDjVMYhjw0xlCKGe0AUnohY7aSaWN0HdtwSKA9J3QOKYWPg7tw/KZHzoFfDr1X2OftPstFDitbQjHwtdBwRDk/oRM4NDEwcoHQ+8nx4vNW/FzqB2mqOsYgsLfQ0zfdJkbjt9+bXl+1mataGq3Kn7GSv78yJAhKsHAksJ/VFkgCMgf83UL/NdWOdDzNwdexpXaLFljxgwatLZNhvJE05MW4RdMja4CNgT8vNUKkgXdCk3VmAmhH6Uxbwu0CbiHoruB3C5XxczMRFG/Okr9CKfzazLq7AxofhZWDMyEMM9kGTsmfCPHboPS8QRJJG/+E5j86x3yF5EfQ/9tUY5e93dHUuAQ8TO2oRnX9bM2kj05cJlkra7ucWh0iqmHPeN9jtPin92rg6on8hxnQ6G1zIdk6dEPaFsiDPwDc0cYjrujHUoN4pN1Ar3nL+jzIc6DPmScuq4SezhBCmmPYdd04ZjUR2EEM574QwfZD2QZGNpErbwfZq2yEklpxr8D1dtnmqk+CO0K4/75pshxnWJO1vBXiz0CyJ8Tb1hiTEeAm8GeGGPSLeu3ZiNCL2cOyXlJYrXuVzQ8hFr4C7p+swFjmV4XNkkzcbQLH2Y3zfumPQu+B0+mdmGnwub3Fz6P5lW3bJyMmjv7/6pAGd39rZt6iTLIXuF8B80MsfgW45WkEpVJbtrZB0mQsQBpsl3kWbu2/amyPm5Z9rRxSRzIliWnP+0HLGeg9Qv9jtcd+yavA7xQQZIOF/6QpJO/+IPQ8Udm6r1CwPENi7G8igcGbhYefq/xea94cbr8xKO85Fg6e+1vjNs1IZnTU7O0D0Xa1O1ml4TudoLzGJ8GR9BlGXCnUdT5A7fKRuiFCeYE0rIORN4YmO1JfEkPDqZME+h+eSgbur6XZzYcZGAb+rBQ2gewQlM1j4aELuZR4ZWPRPBf8j8DtEYQuPdoLIL8GrqqCG4l1TvNfrmpyREWBFX690nIp5D4L3RsrHcHiB8B9DlxDOcbvAX3MimJ4IlAtxDgxeizkvlRZ/DHnJmXhEbA6MBa7iqBHgLugfE0R1o1g8HfjWYBpQJeWtxhEcZtCxKsY0u0jpgEo2mtUCmNdNJ4Dan8nSSjIKNlrrmRxcacQDwndG9iy1dkVN98NLh9g2aXQ9/5M3/JMFGbNbEs0RZ8KgQIF/06h/9pa/XdCtKrJOgD431vCKfkONJ4DI9tYUki/DbkdYfgX0H9spWw15yBeAnoDsI2FOfVq6D26uhVHsCA7g2uxopRoucHS2EHpP4W+95S7nC2LYf02IJ8DPgF6EMS3QXfx7/qJKhl66JT3l8b9Fe5TWlVpU2OOpoJdFqQyZbZ1lVL4i5L/pbLEK4UfVbXzG5P5VJbsrhQGw/EvqFJ4RymtJTv/4oNSrBzYlCiFjymLVcl/XSkMK4UNyuKFaXeHWgEIpfBFO1fhVqWg9vvCV9P7MoEHpXCKUghNrGrfw7T56HYzkxUZVOyTCZVkd2aWaOY3d3+JrOUsr2Oo/FiY0QRLZJrunuUQvxr4OuiFAcq9U9n9VTLKf69lNVQytQWzbI6aG03gok7wLwRW4gH2lWXOElsLZwFnGhNyq89bq7y4CfT42kUjy+IyM9VhJZBcFiDZmUr+VCOt/SVXGZXTrSaTGTcN4UkmKzKo2icTKs3uW4DJZj0EgVCjChW9CdOiGH8GlNbD0B/gFbdDaTXE20D87vHkweZiKOOMkrP3dhbLdzwzXA4+pKzVtWFhzTkScjtb97UuD3JluM4TzZHuTCoFdG54aIQOhtuKYO4pUOoOwn6hUjgypSSHp2QA3k0mM26LjLwswFmuKvFVzTL0UDgYcnuDfk1Y/bzwp0ETQBT0vSZ4VAneqEOf4Q9Z8YrQOWTHnfc+yG0XQpq/se+sLoaF9XkoPir0XGQCXLwISk+DWwzxoeV22mO24XC6re35V3pM4LNHIJcpu+9fmceJJg2qbBH0l8eWmWg/OA4X/dNBNjYqhSNDVlFDq8M9jBg2nkyMJJnj5AyiFo43Bml8EejjwPFC/93W0oQE8v8A0Z6g3Urr26zFScMbQVcbOvUnhz6XOj4UcyEf0n8/lI41QpxsBbmOkJh8Jvjj8V+98GLL9j8ReZHGjEYfqsHdXwYcFlprfCPTJ4XAZxfQkwWurd0QqSHJQBeBO5sgOhfkIfAfDY+fWRsajYbIjYSFJW8MD31Lf14ypOoOV5YsFu67f2yOwgVBTxpCLqRRGLhJafln6ygsO0P8C8PvqlDMbdHoL+/QIrCw0RiT6dtJjbCs/7gVJHAqFOdBbr7txW3BfS04m4eHRIzWjl6M9jicCwProXex0Huo0PPtspCntcOtrwV3GPi7jHYxsi0MzoPSNuCXGovSNULxpMow94K080FI+rhwHXuHluX9l4KeFT5rB84PjmtusnD5FkF/yW/R1owWNKhA9KD9/VgIwS1usS4JxTXAfwqr1gn3PGf7qnVWmeWHIZoNepLBiYUNKWnPwpQ+m2hLO+5qOdqWpsTbAkLwnwrZ14uFvrV2ztXPCwMvGAzxN4SLP94oxu2huPupEHKMhisFtyNTnN17HiQXh8ubF5in0RaN/vLdQhi2cXsjqOFBn4KGu0xCBoYNK/tPQi4HfFXoXR/6ykg5pd7XA/6qkEU9Tlk2R1g9JKMPD+gswaaNgdPuQXPlSFoabUujZd0jVlbnjoHiKqH3e5k8hmRi+98Ii2snKB0XjpEey4NvCpGk+SmrL+D5EALt+zD4X2V69WzB6C/fbVlkJW+aD5X3Dko/TguaIb8/yMdA3h3g7xuU1vuh67/Klfxtu0JySKiqisDtChuuV/LX24MHmtbDyBmg+4HbJqyvNyitlwWG57VCz70hebMVcBr4U6xQutSotH4U/M+EvrX2nU6U1sPAt5tlEICvKa1LQa+DwRtg9sXAUaEC7btK4TTQP8DwOemzY+06Gk+A4WshPqhscbYI+svwidQpeUk/AjkHI3dA6V/LrbnlreD2BX9r6Hu0TxCeP5QteekoiD9sPdFLd4WnuM0H915o+I2Vu0UnAEOGt0cf9LA/RG+AUhNwb4Aru4CcCLIWio8Yv4VPgtwL3GTfKSwA/9XwuPS7Q/GLAG82WNS00h6UpvcHikKo2JLDoPECrAVf6NC2cqPSehQkK7B++Fu2l5uQ277HPKVwubJElcJvlNfsMN0Cj5carSMUY29nOP/v597/biIthrMLP1Na1ygtJ2dqAl3VghhDsxhn4bjxvjsZZWOSY8n4C3VK55PpPr7+/wMhr1Y2e/D9pgAAAABJRU5ErkJggg==';
+const L = {
+  gm:  'data:image/png;base64,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',
+  yj:  'data:image/png;base64,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',
+  gmw: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAETElEQVR42tWZz2sdVRTHv2cmTY2gdmFaiEXrD1CxikYEV124sIr6V+hKFMWt4MaFCyuW7ErBhSuhCIpiF4IoGGptLSGopXblRrDQ+oPSpEnefNycA5fhvZmb92Ze4oHHG+bOPb/u+X1NHQFgkgpJJqkys6q2Xvi6JA3MjC7oWleMm9mg9n5G0pzTWDezjdp6KYm6oFMVACiDceB2Sc9IOirpsKQDkva51v+R9IekC5KWJX1rZlfqOKYGgLnmBdwFvAf8Tj5cAZaAe8K8At80mC+S5zeAqwljA2AT2PLnyn8DfxdrAdeA14bh7pV5YA44lTCy6YzmQuV7Ak4Bt/UqhJtNAdwKfDMm402CnAH2pebZtQCl/3/mBDfoDgLX10DpP+uD+Xd6YL4uxLspzYnDqCOqJD0h6Ud/XbTsRVI9NJYZeyr/f9LMVjsJsYnjnk7svgm2xlxL17/MdWjLSVTAoqRzifZHQeXrf0o6LemypA1Jj0l61pNblYHDJC2a2QpQjJ2tvRwQ8EGG9kN7J4H5IbjmfS3yxSgIGu+nPEwaOldaCMf7pVT49Je8X8rEtTJRhk5s/25gLYnbowj+CuzxEFgMw+drM8DFBiGCxg3gYJsvFBn+cUjSLR4dbITNStIJM9uUZMNs1t+ZmW1J+qi2t04Xr2QPtflqTtq+s4FYhEdJWvbjrpoPFpN0toV+4JhvYy7nBPa2xO7Q2I2MJgX/5nqmAmcnOYFgZr1FyAh7+127TU4Xdc5CdGYtAqzVeBnLhK61aCGO+yXXbhPOwr95sYWxokZ7oih0H3CzIQpFzf930qDsqTU9Bsz680PA9WTfqCi0njY84/a6wczlzNj9E7DQgHMBWM3EdTGnoBspmZnhpcSm97E0RJjC1xYlnQFe9VYzTvEA8LKk7yU92lJOREG37GXMTBdl9PMZJUB9/V/X9rkhbWcOjqM5ZbXlmJGHs58l3e/aaSvGSPKDkohjmYXcb35SW22hudE5fHNpZjclHU/CZhvOMjG5QSJQmzNGXjnmplt20dBEbJ+VdF7SI85UqW4hcK5KekrSVpL4Omspj3TUzDeV0Ue201KOI8TxzM5sHOY/7IX5JBmVwF7gfGaLmAOB4yww2/lEYkR2fsCnatWEphTTu6vAvdOazoUpPZdocBwh0qHWCxO3j2P2ym9N4A+x5+2pMj9EiI/HECK+/TTpn007MGIvfdB7YRtOHaXCJeCOqY7WG/zhYS+R2/yh8m/WgMd7C5ljmtIr25gdvb4jdp8hxOcNphTvvtsxu2/KD+4TCx7TBzVTiluadeDwrjCdhlN4c8gpxPOxXcl8bQw5l1z4pfdkfwH747uu6HaGKCYSZrZWm7xFI/OJX60Wk94NT+MS8EG/camSU3g6cod2MyTTjB+c+QHwS19VZh+VX2j4K8dfSPrCr4p2t/ZrIfWglwuXfERvvZfKPQgzGxO5/x2k9t5nxv0PtEJKgB4q/V8AAAAASUVORK5CYII=',
+  yjw: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAEUElEQVR42u2ZXYhVVRTHf+djxnIeCslmSgsjij4kgj7EsHxICoogjIgSo5egnqSXXqweJALrrU8oCiwqeiuE8kEcKKOsqIHKFCQlSYPCQctsZu69/x5aW5abc+4958wYM3A2LPa9d3+t/3+ttfde+yaSWMglZYGXFkALoAXQAmgBzKrkJnNReib/a0kW+kmcAx8BS4EZoOtcKysDbZJGssXmSs+CJXJATr8zGlYBow0m7QL/AFPASeBYSYwlDZWWI6JjdebcVcGFrgAuBpZbPQbcBtxoAxM3KAX2ApuAv4ATwJ/AJHDqLHnJMHA3cBCYqBoDS4E3gXuM6cwQC/gbeAjYPmB36wEbgZsNXNcIya1dRo7cBpBY+4gR9SpwA7DLLP0DMA58CPwEdJCUSsok5ZKGTJC0RNK4/ivdqD4q6Wobm0tKbEyQzOrNkiYldVSv/CbpXpvjCUm9qH1G0oSkp8sskBtblwKfANc4S4R6J3CX9SvbyhYDK4BlwCUWaw8CK23ckPWbAL4G9gH7gR+BQ9b+HnCfbTJZtLm8SMScl9Tqa41xOSaCJbZan7zPPF6WSTpsDErSKUlPShot6X+5WcOv3bHP30g6b9CCQbHbJZ20gUE6psj9kdt4SSQN2+frJf3s3OB7SbdGhA3ZmmHd9c5lAoiurb1eElVYC4o95gb3XH1Y0pWR1YLy4fsaSQed8u871lPrmxSs/ZZj3Vt+e5i/CoDEBerLJRN+IWmkQHEkbZB0zI17xpGS9ll3pMB9uuYJK8N4KvpuUGyRpJ2R8gHM625Xwtxhi2P9d0kPlICM10HSndHOE9Z7zverAyAsuFzSgSigOiaPWp8LJH3gFt8r6abIZQbF3WuO/UDSAZv7NAF1APh4uMNM2XGBJUnHLbh2OeX3SFrRJ9Bj9hNJ59g+H0gK8z8Sz1MXgGdoc+SfvYID6TNJYzW22tBnraQTkYuOm+JnWLAJgMBUJunjyD+DNbrG4FhF5mMAT7ntsydpWtLqosBvCiAotNoB8GeEJG2secgFVhdL2mFzTFn9StTntMwmpUzcDTSJfu/ZLTWtOR92fVllV5Zh4Fdgq8tD5iwn1oDxTRObdcD5TtkXgF/K5pttUq+Gbf2s8B3wjln3S+CNfmTMNqFP5hBAUPBzk03AuZZ/JGXz1fXR1F1pE5fqFfUdLsmfy0gYtUQmlEngSD/l6wIImVMXmLbvlzn2EtcvcVncjMu4eiXK58DzwB7gWeAWyyWSQZas86wyaqlmBiwB1gKPAxc6pT2AHcBuS/z/AI5bMH7rFAu+fR3wFbDIrfewxUJ/EBX25nBwvGT78oyal93R2RCuDm9HB+IhSRdVuLEODGLP7JSxNe3as4rPIoHBTwsCXMC79iyzDrgK2AYcdantnLhQ5nLYpm8900WPU64M2SvEkX57/3x8Wmz8mjdfXqd7BU+Xld8c51tR+wdHC6AF0AJoAbQAqpZ/AfWBL61HTPetAAAAAElFTkSuQmCC',
+};
 const ICON_SEARCH_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9.5" cy="9.5" r="7.5"/><line x1="14.8" y1="14.8" x2="22" y2="22"/></svg>';
 
-const gm = (cls) => '<span class="logo gm ' + (cls||'') + '"><img src="' + LOGO_GMAPS + '" alt="Google Maps"></span>';
-const yj = (cls) => '<span class="logo yj ' + (cls||'') + '"><img src="' + LOGO_YJ + '" alt="Yahoo!"></span>';
-const yjw = () => '<span class="logo-wide"><img src="' + LOGO_YJWIDE + '" alt="Yahoo! JAPAN"></span>';
+const img = (src, alt) => '<span class="lg"><img src="' + src + '" alt="' + alt + '"></span>';
+// 通常の並び（ロゴ→文言）
+function pair(gsrc, ysrc) {
+  return [ '<span class="lbl">' + img(gsrc,'Google Maps') + 'ここへ行く</span>',
+           '<span class="lbl">' + img(ysrc,'Yahoo!')      + 'ここへ行く</span>' ];
+}
+// V6 だけは白帯＋文言の2枠構成
+function pairBand() {
+  const mk = (src, alt) => '<span class="lbl">' + img(src, alt) + '<span class="cap"><span class="t">ここへ行く</span></span></span>';
+  return [ mk(L.gm,'Google Maps'), mk(L.yj,'Yahoo!') ];
+}
 
-// 各案の行C。1個目=Google側 / 2個目=Yahoo側 / null=この周辺を検索
-const PLANS = [
-  { id:'現状', name:'現状（色だけで区別）',
-    rows:[[ '<span class="lbl">ここへ行く</span>', '<span class="lbl">ここへ行く</span>', null ]] },
-  { id:'A', name:'A：1行に併記（文字だけ）',
-    rows:[[ '<span class="lbl">ここへ行く Google</span>', '<span class="lbl">ここへ行く Yahoo!</span>', null ]] },
-  { id:'B', name:'B：2段組（上にサービス名）',
-    rows:[[ '<span class="lbl b2"><span class="svc">Google</span><span class="act">ここへ行く</span></span>',
-            '<span class="lbl b2"><span class="svc">Yahoo!</span><span class="act">ここへ行く</span></span>', null ]] },
-  { id:'C', name:'C：公式ロゴ＋ここへ行く',
-    rows:[[ '<span class="lbl">' + gm() + 'ここへ行く</span>',
-            '<span class="lbl">' + yj() + 'ここへ行く</span>', null ]] },
-  { id:'D', name:'D：Googleで行く／Yahoo!で行く',
-    rows:[[ '<span class="lbl">Googleで行く</span>', '<span class="lbl">Yahoo!で行く</span>', null ]] },
-  { id:'E', name:'E：行Cを2行に割る（上2個／下1個）＋ロゴ＋名前', split:true,
-    rows:[[ '<span class="lbl">' + gm() + 'Google でここへ行く</span>',
-            '<span class="lbl">' + yjw() + 'でここへ行く</span>' ],
-          [ null ]] },
-  { id:'F', name:'F：ボタンの下に小さく見出し', caption:true,
-    rows:[[ '<span class="lbl">ここへ行く</span>', '<span class="lbl">ここへ行く</span>', null ]] },
-  { id:'G', name:'G：公式ロゴだけ（文言なし）',
-    rows:[[ '<span class="lbl">' + gm('logo-only') + '</span>',
-            '<span class="lbl">' + yj('logo-only') + '</span>', null ]] },
+const VARIANTS = [
+  { id:'V0', cls:'', bad:true, short:'ロゴを透過のまま載せる（対照）', title:'V0（対照）ロゴを透過のままボタンに載せる',
+    desc:'いま起きること。Y! は地色と同色で完全に消え、Google Maps ピンは青い面だけが抜けて欠けた形に見えます。',
+    cells: pair(L.gm, L.yj),
+    spec:'白の使用：なし ／ ロゴ改変：なし ／ <b class="ng">ロゴと地色のコントラスト 1.00（同一色）</b>' },
+
+  { id:'V1', cls:'v1', short:'白い座布団に載せる', title:'V1（現行C案）白い座布団に載せる',
+    desc:'18px角の白タイルを敷いてロゴを載せる。被りは完全に消えますが、色地の中に白い四角が浮きます。',
+    cells: pair(L.gm, L.yj),
+    spec:'白の使用：18×18の面 ／ ロゴ改変：なし ／ ロゴと座布団のコントラスト：Y! 3.96・Maps青 3.56' },
+
+  { id:'V2', cls:'v2', short:'ロゴの輪郭に白いフチ', title:'V2 ロゴの輪郭に白いフチを回す',
+    desc:'座布団をやめ、ロゴの形に沿って0.7pxの白フチを4方向に付ける（CSSの drop-shadow だけで、画像は無改変）。白い面が出ないぶん座布団より軽く見えます。',
+    cells: pair(L.gm, L.yj),
+    spec:'白の使用：輪郭のみ ／ ロゴ改変：なし（CSS効果） ／ <b class="ng">16px では Y! の線が細く、フチが字を埋めて白い塊になる</b>' },
+
+  { id:'V3', cls:'v3', short:'白の単色シルエット', title:'V3 ロゴを白の単色シルエットにする',
+    desc:'公式ロゴの形だけを使い、色を白1色に置き換える。地色との被りは原理的に起きず、行の中で最もすっきりします。ただしロゴの改変にあたります。',
+    cells: pair(L.gmw, L.yjw),
+    spec:'白の使用：ロゴ自体 ／ <b class="warn">ロゴ改変：あり</b> ／ 白 vs 地色のコントラスト：青地 3.56・赤地 3.96' },
+
+  { id:'V4', cls:'v4', short:'ボタンを白地にする', title:'V4 ボタンを白地にして、色は枠と文字で出す',
+    desc:'シート内に既にある <code>.btn-gmap</code>（白地＋青枠＋青文字）と同じ手法。地が白なので公式ロゴをそのまま置けます。行Cの3個のうち2個が白くなり、緑の「この周辺を検索」だけが色面として残ります。',
+    cells: pair(L.gm, L.yj),
+    spec:'白の使用：ボタン全体 ／ ロゴ改変：なし ／ 文字コントラスト：青 4.51（#1A73E8）・赤 5.39（#D6002B）' },
+
+  { id:'V5', cls:'v5', short:'淡いブランド色の地', title:'V5 淡いブランド色の地に濃い文字',
+    desc:'地を #E8F0FE / #FFE8EC まで薄くして、文字を #1A56C4 / #C1002B に。ロゴは無改変のまま沈みません。白地(V4)より色の区別は残ります。',
+    cells: pair(L.gm, L.yj),
+    spec:'白の使用：なし ／ ロゴ改変：なし ／ 文字コントラスト：青 5.78・赤 5.45' },
+
+  { id:'V6', cls:'v6', short:'左端に帯を作る', title:'V6 左端に帯を作り、その中にロゴを置く',
+    desc:'座布団を「浮いた四角」ではなくボタンの構造にする。左26pxを白い帯にしてロゴを収め、残りを色地＋白文字に。帯だけ白くするとシートの地色と溶けてボタンが欠けて見えるので、ボタン全体に地色と同じ1px枠を回して帯を囲っています。',
+    cells: pairBand(),
+    spec:'白の使用：左26pxの帯（枠で囲う） ／ ロゴ改変：なし ／ 文字領域が26px減る' },
+
+  { id:'V7', cls:'v7', short:'地色を暗くする', title:'V7 地色を暗くしてロゴを浮かせる',
+    desc:'ボタンを #174EA6 / #B3001F に落として、ロゴの色と離す案。数字で見ると分離しきれません（下の実測欄）。',
+    cells: pair(L.gm, L.yj),
+    spec:'白の使用：なし ／ ロゴ改変：なし ／ <b class="ng">ロゴと地色のコントラスト：Maps青 2.20・Y!赤 1.80</b>（V1の3.56/3.96に届かない）' },
 ];
 
-function btnHtml(kind, inner) {
-  if (inner === null) return '<button class="btn btn-nearby-search">' + ICON_SEARCH_SVG + '<span class="lbl">この周辺を検索</span></button>';
-  const cls = kind === 'g' ? 'btn-nav' : 'btn-nav-yahoo';
-  return '<button class="btn ' + cls + '">' + inner + '</button>';
-}
-function planHtml(plan) {
-  let h = '';
-  plan.rows.forEach(cells => {
-    h += '<div class="os-brow">';
-    cells.forEach((c, i) => { h += btnHtml(i === 0 ? 'g' : (i === 1 ? 'y' : 'n'), c); });
-    h += '</div>';
-  });
-  if (plan.caption) h += '<div class="svc-cap"><span>Google</span><span>Yahoo!</span><span></span></div>';
-  return h;
-}
-
-const WIDTHS = [320, 360, 375, 390, 412, 430];
-const WNAME = { 320:'iPhone SE1 / 旧Android', 360:'Android標準', 375:'iPhone SE3 / 13 mini',
-                390:'iPhone 13〜16', 412:'Pixel', 430:'iPhone Pro Max' };
-
-document.getElementById('widths').innerHTML = WIDTHS.map(w => {
-  const inner = w - 28;   // #obj-sheet-body の padding 0 14px を引いた内容幅
-  return '<div class="phone' + (w === 375 ? ' se3' : '') + '"><div class="cap">' + w + 'px<br>' + WNAME[w] + '</div>'
-       + '<div class="sheet" style="width:' + inner + 'px" data-w="' + w + '">'
-       + PLANS.map(p => '<div class="plan" data-plan="' + p.id + '">'
-            + '<div style="font-size:10px;color:#888;margin-top:10px">' + p.name + '</div>'
-            + planHtml(p) + '</div>').join('')
-       + '</div></div>';
-}).join('');
+document.getElementById('cards').innerHTML = VARIANTS.map(v =>
+    '<div class="card' + (v.bad ? ' bad' : '') + '" data-v="' + v.id + '">'
+  + '<h3>' + v.title + '</h3>'
+  + '<p class="desc">' + v.desc + '</p>'
+  + '<div class="sheet ' + v.cls + '">'
+  +   '<div class="os-brow">'
+  +     '<button class="btn btn-nav">' + v.cells[0] + '</button>'
+  +     '<button class="btn btn-nav-yahoo">' + v.cells[1] + '</button>'
+  +     '<button class="btn btn-nearby-search">' + ICON_SEARCH_SVG + '<span class="lbl">この周辺を検索</span></button>'
+  +   '</div>'
+  + '</div>'
+  + '<div class="spec">' + v.spec + '</div>'
+  + '</div>').join('');
 
 // ── 実測 ──
-// .btn は overflow:hidden・white-space:nowrap。中の .lbl も nowrap なので
-// min-content = 中身の自然幅になり、親に収まらなくても自然幅を報告する。
-// これと「文字を置ける幅（clientWidth − padding 8px）」を比べる。
-function measureOne(scope) {
-  let worst = null;
-  scope.querySelectorAll('.btn').forEach(btn => {
-    if (btn.classList.contains('btn-nearby-search')) return;   // 周辺検索は全案共通なので比較から外す
-    const lbl = btn.querySelector('.lbl');
-    const avail = btn.clientWidth - 8;                          // padding 0 4px
-    const need  = lbl.getBoundingClientRect().width;
-    const rec = { avail, need, slack: avail - need, side: btn.classList.contains('btn-nav') ? 'Google' : 'Yahoo' };
-    if (worst === null || rec.slack < worst.slack) worst = rec;
-  });
-  return worst;
-}
-function verdictCell(m) {
-  const need = m.need.toFixed(1);
-  if (m.slack >= 6)      return '<td><span class="ok">収まる</span><br>必要' + need + 'px / 余り' + m.slack.toFixed(1) + 'px</td>';
-  if (m.slack >= 0)      return '<td><span class="warn">ぎりぎり</span><br>必要' + need + 'px / 余り' + m.slack.toFixed(1) + 'px</td>';
-  return '<td><span class="ng">切れる</span><br>必要' + need + 'px / <b>' + (-m.slack).toFixed(1) + 'px超過</b></td>';
-}
-function scopeOf(w, id) { return document.querySelector('.sheet[data-w="' + w + '"] .plan[data-plan="' + id + '"]'); }
-
+// .btn は overflow:hidden・white-space:nowrap。中の .lbl も nowrap なので、
+// 収まらなくても中身の自然幅（min-content）を報告する。
+// それと「文字を置ける幅（clientWidth − 左右padding）」を比べる。
 function measure() {
-  // ---- SE3(375px) を単独で ----
-  const availSE3 = scopeOf(375, '現状').querySelector('.btn').clientWidth - 8;
-  let s = '<p style="margin:0 0 6px">画面幅 <b>375px</b>＝シート内容幅 347px、ボタン1個 '
-        + (availSE3 + 8).toFixed(1) + 'px、文字を置ける幅 <b>' + availSE3.toFixed(1) + 'px</b>（左右padding 4px を除いた値）。</p>'
-        + '<table class="m"><tr><th class="l">案</th><th>厳しいほう</th><th>必要幅</th><th>余り</th><th>判定</th></tr>';
-  PLANS.forEach(p => {
-    const m = measureOne(scopeOf(375, p.id));
-    const cls = m.slack >= 6 ? 'ok' : (m.slack >= 0 ? 'warn' : 'ng');
-    const word = m.slack >= 6 ? '収まる' : (m.slack >= 0 ? 'ぎりぎり' : '切れる');
-    s += '<tr' + (p.id === 'C' ? ' class="hi"' : '') + '><td class="l">' + p.name + '</td><td>' + m.side + '側</td><td>'
-       + m.need.toFixed(1) + 'px</td><td>' + m.slack.toFixed(1) + 'px</td><td><span class="' + cls + '">' + word + '</span></td></tr>';
-  });
-  s += '</table>';
-  s += '<p style="font-size:12px;color:#666;margin:8px 0 0">「厳しいほう」＝Google側とYahoo側のうち余りが少ない側。'
-     + '案Eは上段が2等分のため文字領域が広くなります（同じ375pxでも ' + (scopeOf(375,'E').querySelector('.btn').clientWidth - 8).toFixed(1) + 'px）。<br>'
-     + '<b>この数字はいま開いているブラウザのフォントでの実測です。</b>「ここへ行く」のような全角文字は'
-     + 'どの和文フォントでも1文字=フォントサイズ（12px）なので端末が変わってもズレませんが、'
-     + '“Google”などの欧文部分は iOS Safari の既定フォントでは幅が変わります。'
-     + '実機のSE3で開けば、上の「この端末で開いたときの実測」に実機の値が出ます。</p>';
-  document.getElementById('se3').innerHTML = s;
-
-  // ---- いま開いている端末の実幅 ----
-  const lw = window.innerWidth;
-  let l = '<p style="margin:0 0 6px">この端末の画面幅（<code>window.innerWidth</code>）＝<b>' + lw + 'px</b>'
-        + (lw === 375 ? '（＝iPhone SE3 と同じ。下の値が実機の実測です）' : '') + '</p>'
-        + '<table class="m"><tr><th class="l">案</th><th>必要幅</th><th>' + Math.round(lw - 28) + 'px 幅での余り</th><th>判定</th></tr>';
-  const availLive = (lw - 28 - 8) / 3 - 8;
-  PLANS.forEach(p => {
-    const m = measureOne(scopeOf(375, p.id));         // 中身の自然幅は幅に依らない
-    const avail = p.id === 'E' ? (lw - 28 - 4) / 2 - 8 : availLive;
-    const slack = avail - m.need;
+  let h = '<table class="m"><tr><th class="l">案</th><th>必要幅<br>(Google側)</th><th>必要幅<br>(Yahoo側)</th>'
+        + '<th>文字を置ける幅</th><th>余り</th><th>判定</th></tr>';
+  VARIANTS.forEach(v => {
+    const scope = document.querySelector('.card[data-v="' + v.id + '"]');
+    const btns = [scope.querySelector('.btn-nav'), scope.querySelector('.btn-nav-yahoo')];
+    // V6 は .lbl を幅100%にしているので自然幅が測れない。帯＋文言の実寸を足す
+    const need = btns.map(b => {
+        if (v.id !== 'V6') return b.querySelector('.lbl').getBoundingClientRect().width;
+        // .cap は flex で伸びるので、中の .t（インライン）の自然幅＋左右padding 8px を使う
+        return b.querySelector('.lg').getBoundingClientRect().width
+             + b.querySelector('.cap .t').getBoundingClientRect().width + 8;
+    });
+    const avail = btns[0].clientWidth - (v.id === 'V6' ? 0 : 8);
+    const slack = avail - Math.max(need[0], need[1]);
     const cls = slack >= 6 ? 'ok' : (slack >= 0 ? 'warn' : 'ng');
     const word = slack >= 6 ? '収まる' : (slack >= 0 ? 'ぎりぎり' : '切れる');
-    l += '<tr' + (p.id === 'C' ? ' class="hi"' : '') + '><td class="l">' + p.name + '</td><td>' + m.need.toFixed(1)
-       + 'px</td><td>' + slack.toFixed(1) + 'px</td><td><span class="' + cls + '">' + word + '</span></td></tr>';
+    h += '<tr><td class="l">' + v.id + '：' + v.short + '</td>'
+       + '<td>' + need[0].toFixed(1) + 'px</td><td>' + need[1].toFixed(1) + 'px</td>'
+       + '<td>' + avail.toFixed(1) + 'px</td><td>' + slack.toFixed(1) + 'px</td>'
+       + '<td><span class="' + cls + '">' + word + '</span></td></tr>';
   });
-  l += '</table>';
-  document.getElementById('live').innerHTML = l;
-
-  // ---- 全幅 ----
-  let h = '<table class="m"><tr><th rowspan="2" class="l">案</th>'
-        + WIDTHS.map(w => '<th>' + w + 'px</th>').join('') + '</tr><tr>'
-        + WIDTHS.map(w => '<th style="font-weight:400;font-size:11px">文字領域 '
-            + (scopeOf(w, '現状').querySelector('.btn').clientWidth - 8).toFixed(0) + 'px</th>').join('')
-        + '</tr>';
-  PLANS.forEach(p => {
-    h += '<tr' + (p.id === 'C' ? ' class="hi"' : '') + '><td class="l">' + p.name + '</td>';
-    WIDTHS.forEach(w => { h += verdictCell(measureOne(scopeOf(w, p.id))); });
-    h += '</tr>';
-  });
-  h += '</table>';
+  h += '</table><p style="font-size:12px;color:#666">'
+     + '文言はどの案も「ここへ行く」（全角5文字＝60.0px）で共通なので、差はロゴの占有幅だけです。'
+     + 'V6 は帯26pxを含めた値で、文言に使える幅はそのぶん狭くなります。'
+     + 'なお全角文字はどの和文フォントでも1文字＝フォントサイズ（12px）なので、この幅は端末が変わってもズレません。</p>';
   document.getElementById('measure').innerHTML = h;
 }
 if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => setTimeout(measure, 50));
