@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<base href="../">
+<meta charset="UTF-8">
+<title>情報シートを出したままズームする案（A〜F）</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
+<link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: sans-serif; }
+  :root { --ui-blue: #4285F4; }
+  #map { position: fixed; inset: 0; }
+
+  /* ══ 本番の #bottom-bar（高さ52px）と同じ場所を塞ぐダミー ══ */
+  #bottom-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; height: 52px; z-index: 200;
+      display: flex; align-items: center; padding: 0 10px; gap: 8px;
+      background: #fff; box-shadow: 0 -2px 8px rgba(0,0,0,0.15); box-sizing: border-box;
+  }
+  #bottom-bar .fake-search { flex: 1; height: 34px; border: 1px solid #ddd; border-radius: 17px;
+      display: flex; align-items: center; padding: 0 12px; color: #aaa; font-size: 13px; }
+  #bottom-bar .fake-menu { width: 34px; height: 34px; border: 1px solid #ddd; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center; color: #888; }
+
+  /* ══ 以下は index.html の #obj-sheet / .os-* / .btn をそのまま写したもの ══ */
+  #obj-sheet {
+      --sheet-base: 52px;
+      position: fixed; bottom: -100%; left: 0; right: 0;
+      background: #fff; border-radius: 16px 16px 0 0;
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
+      z-index: 310; transition: bottom 0.28s ease;
+      max-height: calc(100svh - var(--sheet-base) - 160px); display: flex; flex-direction: column;
+      font-family: sans-serif;
+  }
+  #obj-sheet-header { position: relative; padding: 8px 14px 4px; min-height: 24px;
+                      box-sizing: border-box; flex-shrink: 0; cursor: grab; touch-action: none; }
+  #obj-sheet-header .os-handle { width: 36px; height: 4px; background: #ccc; border-radius: 2px; margin: 0 auto; }
+  #obj-sheet-close { position: absolute; top: 1px; right: 8px; background: none; border: none;
+      font-size: 20px; color: #bbb; cursor: pointer; padding: 0 6px; line-height: 1; }
+  #obj-sheet-body { overflow-y: auto; overscroll-behavior-y: contain; touch-action: pan-y; padding: 0 14px 14px; }
+  .os-title { display: flex; align-items: center; gap: 5px; margin-bottom: 3px; min-width: 0; }
+  .os-badge-row { display: flex; gap: 5px; margin-bottom: 3px; }
+  .os-name { font-size: 15px; font-weight: bold; min-width: 0; overflow: hidden;
+             display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
+             -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
+  .os-row { display: flex; gap: 10px; margin-top: 5px; align-items: flex-start; }
+  .os-meta { flex: 1; min-width: 0; }
+  .os-photo { width: 128px; height: 128px; flex-shrink: 0; border-radius: 7px; border: 1px solid #eee;
+              overflow: hidden; background: #f2f0ec; position: relative; cursor: zoom-in; }
+  .os-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .os-photo.os-photo-wide { width: 171px; }
+  .os-photo::after { content: '⤢'; position: absolute; right: 3px; bottom: 3px;
+      width: 18px; height: 18px; border-radius: 4px; background: rgba(0,0,0,0.5);
+      color: #fff; font-size: 11px; line-height: 18px; text-align: center; pointer-events: none; }
+  .os-line { font-size: 11px; color: #333; line-height: 1.45; font-variant-numeric: tabular-nums; }
+  .os-line + .os-line { margin-top: 1px; }
+  .os-line .os-k { display: inline-block; background: #E6E2D8; color: #3d3d3d; border-radius: 3px;
+                   font-size: 9.5px; font-weight: 700; line-height: 1.5; padding: 0 4px;
+                   margin-right: 4px; vertical-align: 1px; letter-spacing: 0.8px; }
+  .os-line .os-bseg + .os-bseg { margin-left: 8px; }
+  .os-line .os-bt { display: inline-block; border-radius: 3px; font-size: 9.5px; font-weight: 700;
+                    line-height: 1.5; padding: 0 4px; margin-right: 4px; vertical-align: 1px; }
+  .os-line .os-bt-l { background: #EDE2C6; color: #6B5518; }
+  .os-line .os-bt-d { background: #DBE1EB; color: #3A4C66; }
+  .os-clamp { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .aw-chips { display: inline; }
+  .aw-y { display: inline-block; margin-right: 3px; vertical-align: -1px; font-size: 10px; font-weight: 700;
+          line-height: 1.6; padding: 1px 6px; border-radius: 9px; background: #E6E2D8; color: #5a5344;
+          font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .aw-y.aw-now { background: #FFAA00; color: #333; }
+  .aw-y.aw-other { background: #fff; color: #7a7365; border: 1px solid #d8d3c7; }
+  .os-line-aw .os-k, .os-line-aw .aw-y { vertical-align: middle; }
+  .os-rating { margin-left: auto; flex-shrink: 0; display: inline-flex; align-items: baseline; gap: 3px; }
+  .os-rating .rt-star { font-size: 10px; color: #FFAA00; }
+  .os-rating .rt-v { font-size: 13px; font-weight: 700; color: #996600; font-variant-numeric: tabular-nums; }
+  .os-rating .rt-n { font-size: 10px; color: #999; font-variant-numeric: tabular-nums; }
+  .os-brow { display: flex; gap: 4px; margin-top: 4px; }
+  .btn { display: flex; align-items: center; justify-content: center; text-align: center; height: 40px;
+         padding: 0 4px; border-radius: 7px; text-decoration: none; font-family: inherit; font-weight: bold;
+         color: white; font-size: 12px; line-height: normal; border: none; box-sizing: border-box; cursor: pointer; }
+  .os-brow .btn { flex: 1 1 0; min-width: 0; white-space: nowrap; overflow: hidden; }
+  .btn-tabelog { background: #FFAA00; color: #333; }
+  .btn-wiki { background: #333333; }
+  .btn-gmap { background: white; color: var(--ui-blue); border: 1px solid var(--ui-blue); }
+  .btn-nav { background: var(--ui-blue); }
+  .btn-nav-yahoo { background: #FF0033; color: white; }
+  .btn-nearby-search { background: #34A853; color: #fff; }
+  .btn-kojodan { background: #8B4513; color: #fff; }
+  .btn-shirohb { background: #6A4C93; color: #fff; }
+  .os-genrebadge { font-size: 12px; font-weight: 700; color: #fff; background: #FFAA00;
+                   padding: 2px 8px; border-radius: 10px; line-height: 1.6; white-space: nowrap; }
+  .os-genrebadge { color: #333; }
+  .popup-form-badge { font-size: 12px; font-weight: 700; color: #fff; background: hsl(0,42%,38%);
+                      padding: 2px 8px; border-radius: 10px; line-height: 1.6; white-space: nowrap; flex-shrink: 0; }
+
+  /* ══ 案F: 高さを詰めたレイアウト（項目は1つも減らさない） ══
+     ・写真 128→96px（幅はそのまま。城の横長枠 171→128px）
+     ・ボタン 40→34px、行を詰めて1行減らす（ボタンの数は同じ）
+     ・ボタンの文言だけ短縮（「この周辺を検索」→「周辺検索」） */
+  #obj-sheet.compact .os-photo { height: 96px; }
+  #obj-sheet.compact .os-photo.os-photo-wide { width: 128px; }
+  #obj-sheet.compact .btn { height: 34px; font-size: 11px; }
+  #obj-sheet.compact .os-brow.norm { display: none; }
+  #obj-sheet.compact .os-brow.cmp { display: flex; }
+  .os-brow.cmp { display: none; }
+
+  /* ══ 案B: 地図帯に浮かせる ＋／− ボタン ══ */
+  #zoom-btns {
+      position: fixed; right: 10px; z-index: 305; display: none;
+      bottom: calc(var(--sheet-h, 0px) + 52px + 8px);
+      flex-direction: column; gap: 1px; border-radius: 9px; overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.28); background: #ddd;
+      transition: bottom 0.28s ease;
+  }
+  #zoom-btns button { width: 40px; height: 40px; border: none; background: #fff; color: #333;
+      font-size: 22px; line-height: 1; cursor: pointer; font-family: sans-serif; }
+  #zoom-btns button:active { background: #eaeaea; }
+  body.opt-b.sheet-open #zoom-btns { display: flex; }
+
+  /* ══ 案E: 地図帯の右端に出す縦スライダー ══ */
+  #zoom-slider {
+      position: fixed; right: 6px; z-index: 305; display: none;
+      bottom: calc(var(--sheet-h, 0px) + 52px + 10px);
+      width: 44px; height: 176px; align-items: center; justify-content: center;
+      transition: bottom 0.28s ease;
+  }
+  #zoom-slider .track { position: absolute; inset: 0; background: rgba(255,255,255,0.92);
+      border-radius: 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.25); }
+  #zoom-slider input { position: relative; width: 124px; margin: 0; transform: rotate(-90deg); accent-color: var(--ui-blue); }
+  #zoom-slider .lb { position: absolute; left: 0; right: 0; text-align: center; font-size: 13px; color: #666; line-height: 1; }
+  #zoom-slider .lb.t { top: 6px; } #zoom-slider .lb.b { bottom: 6px; }
+  body.opt-e.sheet-open #zoom-slider { display: flex; }
+
+  /* ══ 案D: ハンドル帯を「横ドラッグでズーム」にしたときの見た目 ══ */
+  body.opt-d #obj-sheet-header .os-handle { width: 120px; height: 6px; background: #d8d8d8; position: relative; }
+  body.opt-d #obj-sheet-header .os-handle::before,
+  body.opt-d #obj-sheet-header .os-handle::after {
+      position: absolute; top: -5px; font-size: 12px; color: #aaa; line-height: 1; }
+  body.opt-d #obj-sheet-header .os-handle::before { content: '−'; left: -14px; }
+  body.opt-d #obj-sheet-header .os-handle::after  { content: '＋'; right: -14px; }
+  #obj-sheet-header.zooming .os-handle { background: var(--ui-blue); }
+
+  /* ══ 案C: シート上ピンチ中の目印 ══ */
+  #obj-sheet.pinching { box-shadow: 0 -4px 16px rgba(66,133,244,0.55); }
+  #pinch-hint { position: absolute; top: 6px; left: 12px; font-size: 10px; color: var(--ui-blue);
+                font-weight: bold; display: none; }
+  body.opt-c.sheet-open #pinch-hint { display: block; }
+
+  /* ══ 操作パネル（モック専用。本番には出ない） ══ */
+  #panel { position: fixed; top: 0; left: 0; right: 0; z-index: 900; background: rgba(255,255,255,0.97);
+           box-shadow: 0 2px 10px rgba(0,0,0,0.22); font-size: 11.5px; }
+  #panel .hd { display: flex; align-items: center; gap: 8px; padding: 4px 9px; }
+  #panel .hd b { font-size: 12px; }
+  #panel .hd .sp { flex: 1; }
+  #panel.closed .hd b.ttl { display: none; }
+  #panel .hd button { font-size: 11px; padding: 3px 8px; border-radius: 6px; border: 1px solid #bbb;
+                      background: #fff; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
+  #panel .bd { padding: 0 9px 8px; display: block; }
+  #panel.closed .bd { display: none; }
+  #panel label.opt { display: flex; gap: 6px; align-items: flex-start; padding: 4px 0;
+                     border-top: 1px solid #eee; line-height: 1.45; }
+  #panel label.opt input { margin: 2px 0 0; flex-shrink: 0; }
+  #panel label.opt .t { flex: 1; }
+  #panel label.opt .t b { display: block; }
+  #panel label.opt .t span { color: #666; font-size: 10.5px; }
+  #hud { font-size: 10px; color: #333; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  #hud b { color: #b00; }
+  .warn { color: #b00; }
+</style>
+</head>
+<body class="opt-a">
+
+<div id="map"></div>
+
+<div id="bottom-bar">
+    <div class="fake-search">店名・地名で検索</div>
+    <div class="fake-menu">≡</div>
+</div>
+
+<!-- 案B -->
+<div id="zoom-btns">
+    <button id="zb-in" aria-label="拡大">＋</button>
+    <button id="zb-out" aria-label="縮小">−</button>
+</div>
+
+<!-- 案E -->
+<div id="zoom-slider">
+    <div class="track"></div>
+    <div class="lb t">＋</div>
+    <input type="range" id="zs" min="6" max="18" step="0.1" value="15">
+    <div class="lb b">−</div>
+</div>
+
+<!-- 本番と同じ構造の情報シート -->
+<div id="obj-sheet">
+    <div id="obj-sheet-header">
+        <div id="pinch-hint">シート上で2本指ピンチ→地図ズーム</div>
+        <div class="os-handle"></div>
+        <button id="obj-sheet-close">×</button>
+    </div>
+    <div id="obj-sheet-body"></div>
+</div>
+
+<!-- 操作パネル -->
+<div id="panel" class="closed">
+    <div class="hd">
+        <b class="ttl">ズーム案の比較</b>
+        <div id="hud"></div>
+        <span class="sp"></span>
+        <button id="btn-reopen">開く</button>
+        <button id="btn-toggle">案</button>
+    </div>
+    <div class="bd">
+        <label class="opt"><input type="checkbox" id="o-content" checked><span class="t"><b>内容: 食べログ（受賞歴あり）</b><span>外すと城（ボタン4種）に切り替え</span></span></label>
+        <label class="opt"><input type="checkbox" id="o-a" checked><span class="t"><b>案A ダブルタップ誤爆を止める</b><span>1タップ目のcloseを320ms遅らせ、2タップ目が来たら取り消す。拡大のみ可</span></span></label>
+        <label class="opt"><input type="checkbox" id="o-b"><span class="t"><b>案B 地図帯に＋／−ボタン</b><span>シート上端の右に浮かせる。片手で拡大縮小とも可</span></span></label>
+        <label class="opt"><input type="checkbox" id="o-c"><span class="t"><b>案C シート上の2本指ピンチを地図へ転送</b><span>UIを増やさない。ピンを軸に倍率だけ変える</span></span></label>
+        <label class="opt"><input type="checkbox" id="o-d"><span class="t"><b>案D ハンドル帯の横ドラッグでズーム</b><span>縦＝閉じる、横＝ズーム。UIを増やさない</span></span></label>
+        <label class="opt"><input type="checkbox" id="o-e"><span class="t"><b>案E 地図帯の右端に縦スライダー</b><span>倍率を連続で変えられる。B より場所を取る</span></span></label>
+        <label class="opt"><input type="checkbox" id="o-f"><span class="t"><b>案F シートを詰めて地図帯を広げる</b><span>情報は同じまま写真96px・ボタン2行。ピンチできる面積を増やす</span></span></label>
+    </div>
+</div>
+
+<script>
+/* ══════════════════════════════════════════════════════════════
+   情報シートを出したまま地図をズームする案の比較モック。
+
+   現状（本番 index.html）で起きていること — コードで確認した2点:
+     1) map.on('click') が「オブジェクト以外のタップ」で closeObjSheet() を呼ぶ
+        （index.html:4630-4635）。ダブルタップズーム（同2007-2027）の
+        1タップ目もこの click を出すため、拡大する前にシートが閉じる。
+     2) シートは position:fixed / z-index:310 で下半分を覆い、ヘッダーは
+        touch-action:none、本文は pan-y。指がシートに乗ると地図には届かない。
+        ピンチできるのはシートより上の帯だけで、iPhone SE3(667px)では
+        667 − 52(下部バー) − シート高。通常のシート高402pxなら213pxしかない。
+
+   このモックは本番と同じ maplibre 3.6.2 ＋ openfreemap liberty、同じ
+   シートCSS・同じダブルタップ実装・同じ「空きタップで閉じる」を積んだうえで、
+   案A〜Fを個別にオン・オフできるようにしたもの。
+   ══════════════════════════════════════════════════════════════ */
+
+const PIN = [139.7005, 35.6595];   // 渋谷付近
+
+const map = new maplibregl.Map({
+    container: 'map',
+    style: 'https://tiles.openfreemap.org/styles/liberty',
+    center: PIN, zoom: 15, attributionControl: false
+});
+map.addControl(new maplibregl.AttributionControl({ compact: true }), 'bottom-right');
+map.doubleClickZoom.disable();   // 本番と同じ。自前のダブルタップに寄せる
+
+// 選択中オブジェクトのリング（本番の setSelectedObjects 相当の見た目だけ）
+const ringEl = document.createElement('div');
+ringEl.style.cssText = 'width:26px;height:26px;border-radius:50%;border:3px solid #FFAA00;'
+    + 'box-shadow:0 0 0 3px rgba(255,255,255,.9);box-sizing:border-box;';
+const ring = new maplibregl.Marker({ element: ringEl }).setLngLat(PIN).addTo(map);
+
+/* ── シートの中身（本番 buildSheetHtml が出すものと同じ組み立て） ───── */
+const BODY_SHOP = `
+<div class="os-badge-row"><span class="os-genrebadge">ラーメン</span></div>
+<div class="os-title">
+  <div class="os-name">中華そば　しながわ　渋谷道玄坂上店（旧・道玄坂 中華そば しながわ）</div>
+  <div class="os-rating"><span class="rt-star">★</span><span class="rt-v">3.78</span><span class="rt-n">(412)</span></div>
+</div>
+<div class="os-row">
+  <div class="os-photo"><img src="sample/2998999i.jpg" alt=""></div>
+  <div class="os-meta">
+    <div class="os-line os-clamp"><span class="os-k">住所</span>東京都渋谷区道玄坂2-25-12 道玄坂通 B1F</div>
+    <div class="os-line"><span class="os-bseg"><span class="os-bt os-bt-l">昼</span>￥1,000〜￥1,999</span><span class="os-bseg"><span class="os-bt os-bt-d">夜</span>￥3,000〜￥3,999</span></div>
+    <div class="os-line os-line-aw"><span class="os-k">受賞歴</span><span class="aw-chips"><span class="aw-y aw-now">2025</span><span class="aw-y">2024</span><span class="aw-y">2023</span><span class="aw-y aw-other">2021 SWEETS</span></span></div>
+    <div class="os-line os-clamp"><span class="os-k">最寄</span>渋谷駅 徒歩6分 / 神泉駅 徒歩4分</div>
+  </div>
+</div>
+<div class="os-brow norm"><a class="btn btn-tabelog">食べログ</a><a class="btn btn-gmap">GoogleMap</a></div>
+<div class="os-brow norm"><a class="btn btn-nav">ここへ行く</a><button class="btn btn-nav-yahoo">ここへ行く</button></div>
+<div class="os-brow norm"><button class="btn btn-nearby-search">この周辺を検索</button></div>
+<div class="os-brow cmp"><a class="btn btn-tabelog">食べログ</a><a class="btn btn-gmap">GoogleMap</a></div>
+<div class="os-brow cmp"><a class="btn btn-nav">ここへ行く</a><button class="btn btn-nav-yahoo">ここへ行く</button><button class="btn btn-nearby-search">周辺検索</button></div>
+`;
+
+const BODY_CASTLE = `
+<div class="os-title">
+  <span class="popup-form-badge popup-form-badge-title">山城</span>
+  <div class="os-name">八王子城（横山城・深沢山城）</div>
+</div>
+<div class="os-row">
+  <div class="os-photo os-photo-wide"><img src="sample/2998999i.jpg" alt=""></div>
+  <div class="os-meta">
+    <div class="os-line os-clamp"><span class="os-k">住所</span>東京都八王子市元八王子町3丁目</div>
+    <div class="os-line os-clamp"><span class="os-k">遺構</span>石垣・曲輪・堀切・土塁・虎口・井戸</div>
+    <div class="os-line os-clamp"><span class="os-k">城主</span>北条氏照</div>
+    <div class="os-line"><span class="os-k">標高</span>445m（比高240m）</div>
+  </div>
+</div>
+<div class="os-brow norm"><a class="btn btn-wiki">Wikipedia</a><a class="btn btn-kojodan">攻城団</a><a class="btn btn-shirohb">城郭放浪記</a></div>
+<div class="os-brow norm"><a class="btn btn-gmap">GoogleMap</a><a class="btn btn-nav">ここへ行く</a></div>
+<div class="os-brow norm"><button class="btn btn-nav-yahoo">ここへ行く</button><button class="btn btn-nearby-search">この周辺を検索</button></div>
+<div class="os-brow cmp"><a class="btn btn-wiki">Wikipedia</a><a class="btn btn-kojodan">攻城団</a><a class="btn btn-shirohb">城郭放浪記</a></div>
+<div class="os-brow cmp"><a class="btn btn-gmap">GMap</a><a class="btn btn-nav">ここへ行く</a><button class="btn btn-nav-yahoo">ここへ行く</button><button class="btn btn-nearby-search">周辺</button></div>
+`;
+
+const sheet = document.getElementById('obj-sheet');
+const sheetBody = document.getElementById('obj-sheet-body');
+const header = document.getElementById('obj-sheet-header');
+let sheetOpen = false;
+
+function sheetBaseBottom(el) {
+    const v = getComputedStyle(el).getPropertyValue('--sheet-base').trim();
+    return parseFloat(v) || 0;
+}
+
+function openSheet() {
+    sheetBody.innerHTML = document.getElementById('o-content').checked ? BODY_SHOP : BODY_CASTLE;
+    sheetBody.scrollTop = 0;
+    sheet.style.transition = '';
+    sheet.style.bottom = sheetBaseBottom(sheet) + 'px';
+    sheetOpen = true;
+    document.body.classList.add('sheet-open');
+    ring.getElement().style.display = '';
+    requestAnimationFrame(() => { adjustMapForSheet(); syncSheetVars(); });
+}
+
+function closeSheet() {
+    sheet.style.transition = '';
+    sheet.style.bottom = '-100%';
+    sheetOpen = false;
+    document.body.classList.remove('sheet-open');
+    ring.getElement().style.display = 'none';
+    syncSheetVars();
+}
+
+// 本番 adjustMapForSheet と同じ考え方（シート高の半分だけ上へずらす）
+function adjustMapForSheet() {
+    const h = sheet.getBoundingClientRect().height;
+    if (!h) return;
+    const mapH = map.getContainer().getBoundingClientRect().height;
+    const covered = h + sheetBaseBottom(sheet);
+    const dy = Math.min(covered / 2, Math.max(0, (mapH - 80) / 2));
+    map.easeTo({ center: PIN, offset: [0, -dy], duration: 400, essential: true });
+}
+
+/* ── 案B・案Eのボタン位置と、HUDの数値をシート高に追従させる ───── */
+function syncSheetVars() {
+    const h = sheetOpen ? sheet.getBoundingClientRect().height : 0;
+    document.documentElement.style.setProperty('--sheet-h', h + 'px');
+    const band = Math.round(window.innerHeight - 52 - h);
+    const hud = document.getElementById('hud');
+    const bandTxt = sheetOpen
+        ? (band < 200 ? '<b>' + band + 'px</b>' : band + 'px')
+        : (window.innerHeight - 52) + 'px';
+    hud.innerHTML = '画面 ' + window.innerWidth + '×' + window.innerHeight + 'px'
+        + ' ／ シート高 ' + Math.round(h) + 'px'
+        + ' ／ 地図帯 ' + bandTxt
+        + ' ／ 倍率 ' + map.getZoom().toFixed(2);
+}
+new ResizeObserver(syncSheetVars).observe(sheet);
+map.on('zoom', syncSheetVars);
+map.on('move', syncSheetVars);
+window.addEventListener('resize', syncSheetVars);
+
+/* ══ 現状の再現 ─ 空きタップで閉じる（index.html:4630-4635 相当） ══
+   案Aがオンのときだけ、閉じる判断を320ms遅らせて2タップ目で取り消す。 */
+let closeTimer = null;
+let suppressCloseUntil = 0;
+function optOn(k) { return document.getElementById('o-' + k).checked; }
+
+function requestClose() {
+    if (!optOn('a')) { closeSheet(); return; }
+    if (Date.now() < suppressCloseUntil) return;
+    clearTimeout(closeTimer);
+    closeTimer = setTimeout(() => {
+        if (Date.now() < suppressCloseUntil) return;   // 2タップ目が来ていたら閉じない
+        closeSheet();
+    }, 320);
+}
+function cancelClose() {
+    clearTimeout(closeTimer);
+    suppressCloseUntil = Date.now() + 500;
+}
+
+map.on('click', (e) => {
+    // ピンを踏んだタップは開き直し（本番の objClickLayers 相当）
+    const p = map.project(PIN);
+    if (Math.hypot(p.x - e.point.x, p.y - e.point.y) < 26) { openSheet(); return; }
+    if (!sheetOpen) return;
+    requestClose();
+});
+
+/* ── 本番と同じ自前ダブルタップズーム（index.html:2007-2037） ── */
+let lastTapTime = 0, lastTapLngLat = null;
+map.getCanvas().addEventListener('touchend', (e) => {
+    if (e.touches.length !== 0) return;
+    if (e.changedTouches.length !== 1) return;
+    const now = Date.now();
+    const dt = now - lastTapTime;
+    if (dt < 300 && dt > 30 && lastTapLngLat) {
+        e.preventDefault();
+        cancelClose();                                   // ← 案A の要
+        map.easeTo({ zoom: map.getZoom() + 1, center: lastTapLngLat, duration: 300, essential: true });
+        lastTapTime = 0; lastTapLngLat = null;
+    } else {
+        lastTapTime = now;
+        const t = e.changedTouches[0];
+        lastTapLngLat = map.unproject([t.clientX, t.clientY]);
+    }
+}, { passive: false });
+map.on('dblclick', (e) => { cancelClose(); map.easeTo({ zoom: map.getZoom() + 1, center: e.lngLat, duration: 300, essential: true }); });
+
+/* ══ 案B: ＋／− ボタン ══ */
+document.getElementById('zb-in').onclick  = () => map.easeTo({ zoom: map.getZoom() + 1, duration: 250, around: PIN });
+document.getElementById('zb-out').onclick = () => map.easeTo({ zoom: map.getZoom() - 1, duration: 250, around: PIN });
+
+/* ══ 案E: 縦スライダー ══ */
+const zs = document.getElementById('zs');
+zs.addEventListener('input', () => map.jumpTo({ zoom: parseFloat(zs.value), around: PIN }));
+map.on('zoom', () => { if (document.activeElement !== zs) zs.value = map.getZoom().toFixed(1); });
+
+/* ══ 案C: シートの上の2本指ピンチを地図へ転送 ══
+   2本指のときだけ拾い、1本指はスクロールと下スワイプ閉じのまま残す。
+   軸はピンにするので、ピンが画面から逃げない。 */
+let pinchD0 = 0, pinchZ0 = 0, pinching = false;
+function dist(t) { return Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY); }
+sheet.addEventListener('touchstart', (e) => {
+    if (!optOn('c') || e.touches.length !== 2) return;
+    pinching = true;
+    pinchD0 = dist(e.touches);
+    pinchZ0 = map.getZoom();
+    sheet.classList.add('pinching');
+    e.preventDefault();
+}, { passive: false });
+sheet.addEventListener('touchmove', (e) => {
+    if (!pinching || e.touches.length !== 2) return;
+    const d = dist(e.touches);
+    if (d > 0 && pinchD0 > 0) {
+        map.jumpTo({ zoom: pinchZ0 + Math.log2(d / pinchD0), around: PIN });
+    }
+    e.preventDefault();
+}, { passive: false });
+['touchend', 'touchcancel'].forEach(ev => sheet.addEventListener(ev, (e) => {
+    if (pinching && e.touches.length < 2) { pinching = false; sheet.classList.remove('pinching'); }
+}));
+
+/* ══ 案D: ハンドル帯の横ドラッグでズーム ══
+   縦に振れたら既存の下スワイプ閉じに譲る（このモックでは閉じるだけ実装）。
+   画面幅375pxを端から端まで引いて約4段（1px = 0.0107段）。 */
+const ZOOM_PER_PX = 4 / 375;
+let dragX0 = 0, dragY0 = 0, dragZ0 = 0, dragMode = null;
+header.addEventListener('touchstart', (e) => {
+    if (e.touches.length !== 1) return;
+    dragX0 = e.touches[0].clientX; dragY0 = e.touches[0].clientY;
+    dragZ0 = map.getZoom(); dragMode = null;
+}, { passive: true });
+header.addEventListener('touchmove', (e) => {
+    if (e.touches.length !== 1) return;
+    const dx = e.touches[0].clientX - dragX0;
+    const dy = e.touches[0].clientY - dragY0;
+    if (!dragMode) {
+        if (Math.abs(dx) < 10 && Math.abs(dy) < 10) return;
+        dragMode = (optOn('d') && Math.abs(dx) > Math.abs(dy)) ? 'zoom' : 'close';
+        if (dragMode === 'zoom') header.classList.add('zooming');
+    }
+    if (dragMode === 'zoom') {
+        map.jumpTo({ zoom: Math.min(19, Math.max(4, dragZ0 + dx * ZOOM_PER_PX)), around: PIN });
+        e.preventDefault();
+    } else if (dragMode === 'close' && dy > 0) {
+        sheet.style.transition = 'none';
+        sheet.style.bottom = (sheetBaseBottom(sheet) - dy) + 'px';
+    }
+}, { passive: false });
+['touchend', 'touchcancel'].forEach(ev => header.addEventListener(ev, (e) => {
+    header.classList.remove('zooming');
+    if (dragMode === 'close') {
+        const moved = sheetBaseBottom(sheet) - parseFloat(sheet.style.bottom || 0);
+        if (moved > 80) closeSheet();
+        else { sheet.style.transition = ''; sheet.style.bottom = sheetBaseBottom(sheet) + 'px'; }
+    }
+    dragMode = null;
+}));
+
+/* ══ 操作パネル ══ */
+const panel = document.getElementById('panel');
+document.getElementById('btn-toggle').onclick = () => panel.classList.toggle('closed');
+document.getElementById('btn-reopen').onclick = () => openSheet();
+document.getElementById('obj-sheet-close').onclick = () => closeSheet();
+
+function applyOpts() {
+    document.body.classList.toggle('opt-a', optOn('a'));
+    document.body.classList.toggle('opt-b', optOn('b'));
+    document.body.classList.toggle('opt-c', optOn('c'));
+    document.body.classList.toggle('opt-d', optOn('d'));
+    document.body.classList.toggle('opt-e', optOn('e'));
+    sheet.classList.toggle('compact', optOn('f'));
+    requestAnimationFrame(() => { syncSheetVars(); if (sheetOpen) adjustMapForSheet(); });
+}
+['a','b','c','d','e','f'].forEach(k => document.getElementById('o-' + k).addEventListener('change', applyOpts));
+document.getElementById('o-content').addEventListener('change', () => { if (sheetOpen) openSheet(); });
+
+// タイル読込を待たずに開く（地図のstyle取得が遅い・失敗した回でも案の比較はできるように）
+openSheet();
+applyOpts();
+map.on('load', () => { adjustMapForSheet(); syncSheetVars(); });
+</script>
+</body>
+</html>
