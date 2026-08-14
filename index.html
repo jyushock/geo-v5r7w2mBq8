@@ -2405,13 +2405,37 @@
 
     function getSearchCenter() { return searchPinLngLat || map.getCenter(); }
 
+    /* ══ 一覧へ戻るときの地図の戻し ═══════════════════════════════════
+       一覧からオブジェクトへ飛ぶと地図はその位置へ寄る。検索ピンが無いときの起点は
+       地図の中心（getSearchCenter）なので、寄ったままにすると戻り導線で一覧へ帰った後に
+       開いた一覧が、寄った先を起点にして別の並びで出る（戻る前に見ていた一覧と中身が
+       食い違う）。飛ぶ直前の地図を控えておき、戻り導線から帰るときだけ元へ戻す。
+       戻す移動は利用者の移動操作ではないので、移動履歴には記録しない（histIgnore）。
+       動かすのは easeTo ではなく jumpTo。戻した直後に一覧を描き直すが、起点帯
+       （renderDistOrigin）の「今の地図中心にする」は今の地図中心と起点のずれで出し分けて
+       いるため、動いている途中の中心で描くと押しても何も起きないボタンが残る。
+       このとき地図は開いていく一覧のパネルでほぼ隠れているので、瞬時に戻して支障が無い。 */
+    let listReturnCamera = null;
+    function saveListReturnCamera() {
+        const c = map.getCenter();
+        listReturnCamera = { center: [c.lng, c.lat], zoom: map.getZoom(),
+                             bearing: map.getBearing(), pitch: map.getPitch() };
+    }
+    function restoreListReturnCamera() {
+        if (!listReturnCamera) return;
+        const cam = listReturnCamera;
+        listReturnCamera = null;
+        map.jumpTo(cam, { histIgnore: true });
+    }
+
     /* ══ 近い順の起点の表示 ═══════════════════════════════════════════
        県ページと城主詳細の距離は getSearchCenter() を起点に測っている。
        起点は開くたびに取り直すので普段は地図の中心と同じだが、次の2つの場面では
        ずれるので、どこからの距離なのかを画面に出す。
         ・検索ピンが立っている間は、起点は地図の中心ではなくピンの位置になる
-        ・一覧からオブジェクトを開いて戻ったとき（restoreView）は起点を据え置くので、
-          地図はオブジェクトの位置に寄ったまま起点だけが前のところに残る
+        ・一覧からオブジェクトを開いて戻ったとき（restoreView）は起点を据え置く。
+          戻り導線から帰るときは地図も飛ぶ前へ戻す（restoreListReturnCamera）ので
+          普段は一致するが、そこから地図を動かせば起点だけが前のところに残る
        控えているのは緯度経度だけなので、地名は逆ジオコーディングで取る。
        同じ地点を何度も問い合わせないよう originNames に控える
        （undefined=未着手 / null=問い合わせ中 / 文字列=結果。'' は取得できなかった）。 */
@@ -5997,8 +6021,9 @@ map.on('zoomend', () => { isZooming = false; });
         const p = f.properties;
         const label = p.name || '城';
         const lordId = lordsState.lord ? lordsState.lord.id : null;
-        // 戻り導線で開く前の位置へ戻せるよう、離れる前に控える
+        // 戻り導線で開く前の位置へ戻せるよう、離れる前に控える（一覧の位置と地図）
         lordsState.castleScrollTop = document.getElementById('lord-castle-list').scrollTop;
+        saveListReturnCamera();
         closeNearby();
         if (trackingMode > 0) {
             trackingMode = 0;
@@ -6026,8 +6051,8 @@ map.on('zoomend', () => { isZooming = false; });
         const div = document.createElement('div');
         div.className = 'os-lords-back';
         div.textContent = `↩ 「${lordIndex[lordId].n}」の城一覧に戻る`;
-        // 開く前の一覧の状態（近い順の起点・スクロール位置）のまま戻す
-        div.onclick = () => { closeObjSheet(); openNearbyPanel(); openLordsView(lordId, true); };
+        // 開く前の一覧の状態（近い順の起点・スクロール位置）と地図のまま戻す
+        div.onclick = () => { closeObjSheet(); restoreListReturnCamera(); openNearbyPanel(); openLordsView(lordId, true); };
         body.insertBefore(div, body.firstChild);
     }
 
@@ -6633,8 +6658,9 @@ map.on('zoomend', () => { isZooming = false; });
         const r = (prefState.rows || [])[i];
         if (!r) return;
         const back = prefState.pref;
-        // 戻り導線で開く前の位置へ戻せるよう、離れる前にスクロール位置を控える
+        // 戻り導線で開く前の位置へ戻せるよう、離れる前に控える（一覧の位置と地図）
         prefState.scrollTop = document.getElementById('pref-item-list').scrollTop;
+        saveListReturnCamera();
         closeNearby();
         onResultClick(r.item);
         // onResultClick は 300ms 後に情報シートを開くので、その後に戻り導線を挿す
@@ -6650,8 +6676,8 @@ map.on('zoomend', () => { isZooming = false; });
         const div = document.createElement('div');
         div.className = 'os-lords-back';
         div.textContent = `↩ 「${prefName}」の一覧に戻る`;
-        // 開く前の一覧の状態（近い順の起点・スクロール位置）のまま戻す
-        div.onclick = () => { closeObjSheet(); openNearbyPanel(); openPrefView(prefName, true); };
+        // 開く前の一覧の状態（近い順の起点・スクロール位置）と地図のまま戻す
+        div.onclick = () => { closeObjSheet(); restoreListReturnCamera(); openNearbyPanel(); openPrefView(prefName, true); };
         body.insertBefore(div, body.firstChild);
     }
 
@@ -7133,8 +7159,9 @@ map.on('zoomend', () => { isZooming = false; });
         const p = f.properties;
         const label = p.name || '城';
         const back = remainsState.target;
-        // 戻り導線で開く前の位置へ戻せるよう、離れる前に控える
+        // 戻り導線で開く前の位置へ戻せるよう、離れる前に控える（一覧の位置と地図）
         remainsState.castleScrollTop = document.getElementById('remains-castle-list').scrollTop;
+        saveListReturnCamera();
         closeNearby();
         if (trackingMode > 0) {
             trackingMode = 0;
@@ -7166,8 +7193,8 @@ map.on('zoomend', () => { isZooming = false; });
         const div = document.createElement('div');
         div.className = 'os-lords-back';
         div.textContent = `↩ 「${name}」の城一覧に戻る`;
-        // 開く前の一覧の状態（近い順の起点・スクロール位置）のまま戻す
-        div.onclick = () => { closeObjSheet(); openNearbyPanel(); openRemainsView(target, true); };
+        // 開く前の一覧の状態（近い順の起点・スクロール位置）と地図のまま戻す
+        div.onclick = () => { closeObjSheet(); restoreListReturnCamera(); openNearbyPanel(); openRemainsView(target, true); };
         body.insertBefore(div, body.firstChild);
     }
 
@@ -7414,6 +7441,7 @@ map.on('zoomend', () => { isZooming = false; });
         const r = (nearbyState.rows || [])[i];
         if (!r) return;
         nearbyResultScrollTop = document.getElementById('nearby-list').scrollTop;
+        saveListReturnCamera();
         closeNearbyResult();
         onResultClick(r.item);
         // onResultClick は 300ms 後に情報シートを開くので、その後に戻り導線を挿す
@@ -7428,7 +7456,7 @@ map.on('zoomend', () => { isZooming = false; });
         const div = document.createElement('div');
         div.className = 'os-lords-back';
         div.textContent = '↩ 周辺検索結果へ戻る';
-        div.onclick = () => { closeObjSheet(); reopenNearbyResult(); };
+        div.onclick = () => { closeObjSheet(); restoreListReturnCamera(); reopenNearbyResult(); };
         body.insertBefore(div, body.firstChild);
     }
 
