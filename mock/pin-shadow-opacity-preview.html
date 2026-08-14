@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ピンの影 — 今より薄くする案</title>
+<script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
+<link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
+<style>
+    body { margin: 0; font-family: system-ui, sans-serif; color: #222; background: #fff; }
+    header { padding: 12px 14px 8px; }
+    h1 { font-size: 16px; margin: 0 0 4px; }
+    .lead { font-size: 12px; color: #555; line-height: 1.7; margin: 0 0 10px; }
+    .lead code { background: #f2f2f2; padding: 1px 4px; border-radius: 3px; font-size: 11px; }
+
+    .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+    .chip { font-size: 12px; padding: 5px 10px; border: 1px solid #ccc; background: #fff;
+            border-radius: 999px; cursor: pointer; white-space: nowrap; }
+    .chip.on { background: #263238; color: #fff; border-color: #263238; }
+
+    .bar { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; font-size: 11.5px; color: #666;
+           padding: 0 14px 8px; }
+    .bar .grp { display: flex; gap: 5px; align-items: center; }
+    .bar button { font-size: 11.5px; padding: 4px 9px; border: 1px solid #ccc; background: #fff;
+                  border-radius: 6px; cursor: pointer; }
+    .bar button.on { background: #455A64; color: #fff; border-color: #455A64; }
+    .bar input[type=range] { width: 160px; vertical-align: middle; }
+    .bar .val { font-variant-numeric: tabular-nums; font-weight: 600; color: #263238; }
+    #slider-grp { display: none; }
+
+    .wrap { position: relative; }
+    #map { width: 100%; height: 58vh; min-height: 360px; }
+    /* 行の見出し。地図の左端に貼り付けて、行の高さに合わせて上下する */
+    .rowlab { position: absolute; left: 6px; transform: translateY(-50%); pointer-events: none;
+              font-size: 11px; line-height: 1; padding: 4px 7px; border-radius: 999px;
+              background: rgba(255,255,255,0.92); border: 1px solid #cfd8dc; color: #263238;
+              font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .rowlab.now { background: #263238; color: #fff; border-color: #263238; }
+
+    .desc { padding: 10px 14px 0; }
+    .desc p { font-size: 12.5px; line-height: 1.75; margin: 0 0 8px; color: #333; }
+    .desc pre { background: #f6f7f9; border-left: 3px solid #90A4AE; padding: 8px 10px; margin: 0 0 8px;
+                font-size: 11px; line-height: 1.6; overflow-x: auto; font-family: ui-monospace, monospace; }
+
+    h2.sec { font-size: 14px; margin: 24px 14px 6px; padding-bottom: 5px; border-bottom: 1px solid #ddd; }
+    .tblwrap { overflow-x: auto; margin: 10px 14px 40px; }
+    table { border-collapse: collapse; width: 100%; font-size: 12px; }
+    th, td { border: 1px solid #e0e0e0; padding: 6px 8px; text-align: left; vertical-align: top; line-height: 1.6; }
+    th { background: #f6f7f9; font-weight: 600; white-space: nowrap; }
+    td.ok { color: #1B5E20; white-space: nowrap; }
+    td.na { color: #B71C1C; white-space: nowrap; }
+    td.mono { font-family: ui-monospace, monospace; font-size: 11px; white-space: nowrap; }
+    .note { font-size: 11.5px; color: #666; line-height: 1.7; margin: 0 14px 24px; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>ピンの影 — 今より薄くする案</h1>
+    <p class="lead">
+        影の濃さは <code>PIN_SHADOW_OPACITY</code> の1か所だけで決まる（丸は <code>circle-opacity</code>、
+        道の駅とカードは影PNGの <code>icon-opacity</code>）。落ち方（形の2px内側で最大・6px外側で0）と
+        下へ2pxのずらしは変えずに、濃さだけを4段階並べてある。上の行ほど濃く、いちばん上が現状の 0.20。
+        素材・寸法・レイヤー構成は index.html と同じものを読み込んでいる。
+    </p>
+    <div class="chips" id="chips"></div>
+</header>
+
+<div class="bar">
+    <div class="grp"><span>地点:</span><span id="places"></span></div>
+    <div class="grp"><span>タイル:</span><span id="tiles"></span></div>
+    <div class="grp"><span>傾き:</span><span id="pitches"></span></div>
+    <div class="grp" id="slider-grp">
+        <span>濃さ:</span>
+        <input type="range" id="op" min="0.04" max="0.30" step="0.01" value="0.13">
+        <span class="val" id="opv">0.13</span>
+    </div>
+</div>
+
+<div class="wrap">
+    <div id="map"></div>
+    <div id="labs"></div>
+</div>
+
+<div class="desc">
+    <p id="d-text"></p>
+    <pre id="d-code"></pre>
+</div>
+
+<h2 class="sec">今かかっている影の設定と、端末ごとに効いているか</h2>
+<div class="tblwrap">
+<table>
+<thead><tr>
+    <th>設定項目</th><th>値</th><th>効く対象</th>
+    <th>PC<br>Chrome/Edge</th><th>iPhone<br>Safari</th><th>Android<br>Chrome</th><th>備考</th>
+</tr></thead>
+<tbody id="support"></tbody>
+</table>
+</div>
+<p class="note">
+    この地図アプリは3端末とも同じ maplibre-gl-js 3.6.2 が WebGL で描いている。index.html には
+    端末やUAで影の設定を出し分ける分岐が無いので、上の「効く／効かない」は端末ではなく
+    <b>レイヤーの種類（circle か symbol か）</b>だけで決まる。
+    端末で唯一変わるのは画面の倍率（devicePixelRatio）で、その影響は備考に書いた。
+</p>
+
+<script>
+/* ───────── 素材（index.html と同じPNG。file:// で読めるよう data URI で埋め込む） ───────── */
+const IMG = {};
+IMG['tabe-icon'] = 'data:image/png;base64,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';
+IMG['castle-icon'] = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAGHaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8P3hwYWNrZXQgYmVnaW49J++7vycgaWQ9J1c1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCc/Pg0KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyI+PHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj48cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0idXVpZDpmYWY1YmRkNS1iYTNkLTExZGEtYWQzMS1kMzNkNzUxODJmMWIiIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIj48dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPjwvcmRmOkRlc2NyaXB0aW9uPjwvcmRmOlJERj48L3g6eG1wbWV0YT4NCjw/eHBhY2tldCBlbmQ9J3cnPz4slJgLAAADOElEQVR4Xu2ZsW4TQRCG/1mHigCvEASKKICG0ECRSJGV3E46SAVFJB6AhhKUUFPR8hYUG+MuPaFKmQKqFOlAdNg3FMbBNznf7e3dGiHtJzny/jO73vt3ds/nAIlEIpFIJBKJRFSstftaq6Jpfiikha5hZoEAueRHxpi3zrkjnaOx1u4R0TqADQArzrno84wGMwszi9Z9YBve1xejhVgws1hr97RehrV2j5klfn1G3ALM/F5EruR5fscYs0ZE10TkM4BjnVvCGhE9/PP+o4icEdEv59xLldeamAb8LV1Rn6TbnsQ4C6Jsge3t7VsFQU9btz25NG4HRDHAGPNMa9X4nXPNx60ncC3mw8xbAD5pvR2FPbPtnBsW4+HEqICBFvyoqoLCOgWOX07nFTALM38H5LqAcBhwgM0cpD+cczdUuBNiVICCSl3u9/tXrbWvpq/d3d1lnbMIFmBAOb1eb0RE76av8/Pzkc5ZBP/MAADI8/zD9KVji6KsOoPY2tpa0Vqv1zsh0DIIGI1GN3W8jqWlpa8AICI/x+PxPR0fDofftNaUzgyI/dBSRhffDLvaAnMmojxpYJFnauv5tx4AALIsm3NvVr7MsamM+lRBlmWHWm1KTwtNYeYDInpRVGe/uQU++RQoG4NARLdXV1fN6elp7Y8s8+iiAp5roThZPfEQyseQyZ9WzwftDRAUntA8924nEACQtHpCLLe2BTN3gy/OuTUVDoaZjwE8QEen/5T2FbBAYlRXNAPGWpis4lnVj6TTGDOf6RhilGtMA4JvL6XWxKNzU9MZ8J8R7CQz3xXgJHiAjsnz/P5gMDjReh3BFSAi+8WLb7N5dV/drscYE/S/xGADiOipUorNRui+uu3FEy34EGzABc0XqxHVw1dHfWhvgM9iVcyzIgTUDl8d9SHIgJ2dnddaQ9XFlMxzmlsS8mDSW38eM79RUi1BBuR5vqE1NLyYJrmXmfTWY4jIupJqaWxAlmV9ItrUejjFdbxo6eX1gIg2syzra72KxgZcut34TnRuXnEd9ao2xRhzoLUqGhsA4HGhRVUXBwAyCZdcWWU3qonP55EWEolEIpFIJBKJRCKRSCQSM/wGwFvi5x3fShMAAAAASUVORK5CYII=';
+IMG['manhole-icon'] = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFA0lEQVR4nO2aXYiWRRTHfy6pa2BRpjdpF5FuXmSZhG4FXgRtkhZEH5bXpn1cp26Jd5XFGouuUtdFopV1oVZmXmiJLEYU3eRH6taVuwaZ0GruxoHzwOEw8769z9f7LPv84cDDnJkzc+aZOXPmnIEaNWrUqFGjaHQB64FdwGHgDHAJuKok36eVtxNYp20mNO4DtgFDwHhKkrZ9wL1MEEwBVgHHMygdo++Bx7WPSuIBYLAAxT2dAJZQIXQC24HrDQZ9GdgPbABW6v6+BZiqJN936+rZCBzQNjF5/wL92ndbsQD4MTLIMVXkGWB6Ctmi3LPAQZUV6uMH4C7ahAfVeocGtge4x9Tt0Pq9wD7gZ2C54S/Xss+ATUC3tkkgRvDTSF8jWr9UPAZcCQzmFPCIqTcPeAf4I1D3iKl3JMD/HdgKzDX1HtXj0teVsfSUpfxDEeU/AmZqndl6nl/NweiJjAHgNpV9E7A7MgnLytjzlwJ7XZZ2gucbbI0sNKI2IcHmQJ3hIm1CZ8DgifIvKV+s+fslHIOysm7QPl8J8E+mNLpNsT3QWfLnZwBflaB8QgfNERhaCe9RgJNz3XXyofnzX5aovJ0E6ZuATRA/4f68lJ8S8PB+NQavjGXfaDskhvFMwHXOBasCHSdH3Zo2Kp/Qc+aI9LwVeUzAcSd0r5bPaWLtmyFrfWv5kyNyn+MdIyMWB6z+IuV90OTPtKpQq/Ut7TAeo3ebk/GmwjYnTHx7wR3AtQosf+ssJR6jN8jvZpmAISdMLjaoezteMXpbx7balZ9Pq3yXE/SXnr0dEd++3TSkY5sRcNXnp5mA9ZHl/3CDQbSCPNsmlNwFvFP2Iimw0wmRYIbg9QpPgART0Ct1yEi2hG+dEInkCD6vwHKPkcQTBE+48m/STMBvTojcBAW/VEDRGElQBQ2v2XLxElvGsBMyS8v/rICija7MqGNkyy+mmYBRJ2SaloeCHGlQhAwZG3odtuX/pBE+OtknYHiyb4GzTkjXBDKCC/MwgoedELkWh25cVSIJnQuedOWH8nCENmp5b4MBtII823pnrTcPR2hdIASVhMWrOgFLlf+1K19LCixwQi5X/DJ0Qcd2Y+AylDpUfsEJSuLyWyugsKe3TF7Clp8jA/oi22BeTlmfvEh8ltsjN0GJXWR65TFuaMyEm72R9NQMWetb6jfj9SExm6RNhe8iR81sdTzaPQEXjZP2heMdJQesbBBufqoCyz8J0/UEeD15JUZOBNLgM//nViiSJF0nuDnguWYOiVss0XST7eBj5U1V41i28gdMknSP411Te5Ar+gODeEN5nSVPwn6THN0S4MvplTs69U2O7Ugs7stmJewqQfkd5s+/GuAPFpUeRz2q4QYrAc3VNTod0pJY+6dNP1side6kYHRHnsjs1ixtch8fyMlZGlVjN8sYvL2Ben+bu0Dh6IlMwml39MzVjM1QikdS4oa/aTw89Pg9G1FessOlojuyHcY1ZmCtcIcmLTaoI/VT4JmclH0CvKZ/ssMlab2TY5d9aX8+ZBNORgY2ponK1ZquahXS5gX17WMPJQfL2PPNMF3f5Hg/wdIVVWSTRmskZHWrBlqn6fdC5fXqfT60xew531ektU+Dxfospehj8FgRTk6eWKGDzFvxo/pCdcJgkT5OOJ9B6XN6n898pW035mtcbkAjtKfUWRpVGtGXZ4e0ztp2vgKvUaNGjRpMEvwHuwpj9zaIIlUAAAAASUVORK5CYII=';
+IMG['michi-icon'] = 'data:image/png;base64,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';
+IMG['michi-plate-icon'] = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABBElEQVR4nO3bMUoEQRRF0dt3ViS4Gt2EuWAgGA64iYFZjI4r0paCajExMO07J6yO/utflb1lXVeme+ABuAXG4cK+bDO9Aa/AaRwu67oKPAOPtLwATyOAu5nG50xoBLJnX3MbDmPrRwDvwM083Pvwv0MYP/tjBPDzCBQ5/3zV6g5f+/9YKnf+TxIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncRIncV5LU1xLU5e5BaNMWLG1Ry/jChznFlRC2IYfMx9HAOdZJD5EHkXnrGPm86jObh+S9flvoj84obYp6mkAAAAASUVORK5CYII=';
+IMG['mhcard-icon'] = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAABICAYAAACjpDbfAAAAq0lEQVR4nO3bOw6DQBAEUe7E0bgct8PRJhaftYTkmp5qqTKCfTmzLJM7gJt9exnQ02Jh34vGjUXjxvoAZz7etxXXNLIa7BfoLfDfD38DmQ9MwAkUWCCBAuEJFAhPoEB4AgXCEygQnkCB8AQKhCdQIDyBAuEJFAhPoEB4AgXCEygQnkCB8AQKhCdQILy+wPi/7lsDqyDvFnuYNdbj+qwFMA0ZfeZ6iasOPXN8AJoV1Miz32rWAAAAAElFTkSuQmCC';
+IMG['mhcard-cluster-icon'] = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAAAyUlEQVR4nO3awQnDMAxGYUl0pO7QhTpGF+oO3ck9GYyCZSilzTP/d0rsHPQwudktaa21vEbi7j6+x/hCjzM7NsRsg2xsibywi97kO8aNYv0J22X1wfN+/cUcH7s9XuV+eYJnjzNbzzgNJMR11azb/4MKpFMgnQLpFEinQDoF0imQToF0CqRTIJ0C6RRIp0A6BdIpkE6BdAqkUyCdAummgasbRGdSzVqeICFyNaNuG9JFvuO8E3f36A//HubbelPkhR2MLTHboMoNb4McM3Ar63oIAAAAAElFTkSuQmCC';
+IMG['michi-plate-shadow-icon'] = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAC50lEQVR42u3d627aQBQE4HFYAimKWvL+z9g0ouAbtvODs9Jotb5Rt8HbGclCIlLEfhxsbMkDoCiKotyb7EH+xyOl+wqMDMATbVlCmC1t3d8G9ZCOto09l0JaAA2AK22zYLOZmA7AFsAzbR41S2A6PWZFW23PTUJ1MzA95B7Aiz3u7LkUptRPZwWgBFAAyO0xM9huCVDG/GbbwR49rEsE9EqQl8igjKK6OzBfaTsY6nMioJVhnm3dsTUNoroJ+8wY5g8A3wl1lwhoaZg7m86+fW3vPnUI9MnepX0P5huh7gdewFrS2Mf9ZOvuQ29pfzsZlKfzxaYwhukfD4mAnkcw/beApu/rlBuYTkdHdT+hMcw3+9t25aC1fdT7sGv6BlAT7GzQXTClMcyjwa85xQB0aQer3ExKM5oE6s+GNsGUxlAZ87hy0PfIGmo66u+DExl/yt1N3Yd61E0wrXuCZczXBE49GbUE8JtOXhx59F6/cDMvgjDyNsDczjjzerRcaSDebS2MN/lC0JIAbsWg/uO9CAIe8Brraq5/xo7mikAFKlBFoAIVqCJQgQpUEahABSpQRaACFagiUIEKVBGoQAWqCFSgAhWoIlCBClQRqEAFqghUoAJVBCpQgQpUEahABarg6+717ASKxW6Rxopv7/4noGG5ni8y8R0cBW73lwO3+83rFaOebC2FraOhspbJBYNuBLIJ+uB8hdmZCk+OhIqVtzn4ATnZGgtbc0WlLc0QrBvB9JAFdW/Eeo1SQGXMnwA+CNZ34FX31gy1wVTmNJV9dUIp1AwxZgyVp7Wd85Fvg+m8UA9HLGVCRVgfPaiXYErbufvQK5XrDdVZ1ri1x6RU1caYv4Ipre7tvmvpSD6EmSdYJngKMHlC677pHAP1U5oNvKP+BaRYd3kKMC9j0zn1e2g9ML050i5kPQeYf1zIGkPlat38P6kMrpasDGbUjt7JUqXWUO36I9Wu64cB9NMVuvyoKIqypnwCPA06smqTGn4AAAAASUVORK5CYII=';
+IMG['michi-cluster-shadow-icon'] = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGoAAABqCAYAAABUIcSXAAADh0lEQVR42u3dW28aMRCG4VliDimK2uT//8bSquGwB3ZzkXEZjHfX3iCakveTLASJUOTHA7ZzMSKEEELI50zxyd7nXtP9ywkuRGRmBlj9SK0Z3a2gPJAz40FfI5dpReQoIo0Z2WDFBCQnInMRWZjhsaiqy2rySJUZtb6WjOUykTzQSkQe9XGpr1FV/dVUiUgpIgcR2etjoWDdNaEs0jcda330YA6oKFRjgHaRBZ2E5SYiPZmxVqwFUFGoSpG2Oo+xORrFch9A+iEi3w3WEqgoVKlIS62mvgxiuYSNwxDSi8FajfwhXzFH/dj7owt+bOPRu8EYgprpm69GkPzjGqgo1DYByZ6zjjlQtpoeFWEI6UV/Psfm4uNsmXHOOvadsdxANTmzFfcVNYT0rL9LTjkkVFxttu+1AcuGWgZVNYT0jM1ZNgNzUivOXsdCn89SofwV0UNQVTGsEOkJmySs2mzZV8Htjr837VK/ozzWQ1BdKwMWIs0zbzvuOY1ZuBarFJFXc6PjzDz3Xm67zBtyizePIHHoPf/6kABrHqAk//fhmqvf8e+O6Pd8fU118p+UJwGKAAUUAYoABRQBigAFFAGKAAUUAYoABRQBCigCFAEKKAIUAQooAhQBCigCFAEKKAIUAQooAhRQBCgCFFAEKAIUUAQoAhRQBCgCFFAEKAIUUAQooAhQBCigCFAEKKAIUAQooAhQBCigyG3irtzTbwa+2P66za2guqDrsm/u6/vHHuS9d5/IqZcfzShPC7eW9/bjG52r2sxfOK/dFKguQGnk1NT3IKcm9SLvzSgtVo3R31ikjT7f6vNS57QJ8JJ7xXdBW+xK39j3jY01qLdYRM568FqknyLy24Dt9efV1BbkbVBFe1NFff3gwZJoC/IQKYZlq6vN+ehrg2ramR6yQ5ljI2EH6xiSxdoFVdXmfkd5qL1p8DuUMgHyq+WoVRND+hVUlYfqcnd9rdnZzRJWzitQUaiDgsSQbEXVfdU0BuWrqkhA2uv3F2eoy8Vemk1YDGk3Vk2p56h6ZMX4P4Q+8XGoKtgxx5DqqeeoFKzWVNPK9Ionl5syf7zZKVgWUs4tQojlz1l+tSwSNxxfEeoYXBbYs1MSUu51T2fe2K+UUpGcQhXYXMyZvTioDFCTiiQTJ7bQynFmUE3jVdWY0eYgyQcroDC35TOqKfliu5s62dcISONYhBBCyF3mDZr/VP7btpzMAAAAAElFTkSuQmCC';
+IMG['mhcard-shadow-icon'] = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABoCAYAAAB17zeZAAAEuUlEQVR42u3dYW/aQAwGYCc5Ghigrf3/v3GsoimEBLIPtSXPuguXNKx31WspYqQSCw/Gda7SmQiBQCAQXxXFN/k/PhtDTm9eXrNUR5E47k0di4IXC76OBa2IyPFjmTDwjYiuRNTzowUfvhJYYJ06KgX9pM4ViWav4F4UqpyTYzZ0sRDsijGfDHLN51LNYsG8EFFrcC98dJ+BLmbiWtSaiNYeUDnvEgbuiehsgAVczlvsaGQ3A1dg10S0UbAb9dypErHhx1SBL0R0UiVCwE98tOr5mQ26WGQ3E/cHH1t+FNytAa34XJ0wcEtEDWeuBm8U8runzEUhu0/g7tWxVcAWdM9ZXSUIfOWsPHrANwp6FUiQu8huQs314f4iop8G2YIKfKrADV+fBd/yz+qRax/u1eQY4JI/wXUA90Uhr4loZ0Ad/2yVIHDHgL0BXyvo1Uh50W3dLGCdvZKJPlx5lPJgQXd80anF2VyngG9VaYi5OQm2by4ie53qGiSDfbgvCtYH+pwg8MFcp4ALdKisdKqV6xT0JGDd79aqFdsGkPeMuA6A7jNY9Dmo8hAqKa3qLmqGDt6EuAnZuzHt2D6A+xwAXc3oux8Z/ciHfvAkSKe6CnFo72VxLHBt2jC5odh6cPcB0DKxXrg012fBNXJLRG/K4KSOJ/55OQW4UDcKNosFdcfwK4O7UndyZcJrw/b6BFxDH1SJ3Kk7Ouk07NpLYcuEi1jQqQx0bbJ35/nQXAaL7cUIeGc6oE5lcW1gq7E1bzfy6VZmjVcf8sK+7C0z+kuGBR9U32+zuAqYFPe+JjH1V6+S3bszLDPE9S3DLlaH5tTfTWIdQbJRLlx/EZHAob+1xdZfRCTwlMi9/iYPjAAwgAGMADCAAYwAMIARAAYwgBEABjCAEQAGMIARAAYwAsAABjACwAAGMALAAEYAGMAARgAYwABGABjAAEYAGMAIAAMYwAgAAxjACAADGAFgAAMY8f+A+yXmTny3cBOnpMi+ubLF65k+Nm4j+tgYyeFbEQc8GMzejD5ozL6ViAklYvAM7NCbYh753z345tfgm8laGdZx/eZ1eFDv/eHAV0/9HavDR35+e/QIsQePPLvx+zjy+zrz82vAZPaYh7l1uE90Q2aKGFriy943xm7M6J3eoA9zf8mF6rDsYenrJroEtxSPaTNl32Cbva2BlrE7l3uTCFzEIKWL2hi+Ubuw6iwm+tjD8kD/borfZVYmjmrPYF36GpNgjZpzpDfJp7nAZ7NveRMY4mGRc4uDGvcguL+J6NVk78mTxbc5NbhXXxGdxfXIEA+Zo5Ej9JlLQWdwfch2AsGsQSU2i9/Vdtu+aBm/S3S0DkWM3jmqgVGvAeT3mOyNvVXu1QiwscmGHX/6O77AKkNgmWX0pmYZadw/JosvSwyLuqlOYQz3xL8A5WuWK/BZ3a02CllwdQZ3Y9kbCyxZXIxcVKvGhp0SHtA3ZYBfY5A17ntM9k4Z2DcEWq6byV65oKeMgUMTERuDu+hERB+yHjCqgdcZL1vGzPS8PGqmp0bWiyLSObRqtk+VMfCiU2kfOVe5yHQ17cvnKsdOBs81kpgMHjPbnjJfE05itv3/es2vWhtGIBAIRMbxFw5LH82/3TdDAAAAAElFTkSuQmCC';
+IMG['mhcard-cluster-shadow-icon'] = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHQAAAB0CAYAAABUmhYnAAAD6klEQVR42u3ae2/aMBTG4RdwgK6qtvb7f8Z1W0u55LY/diwdRSSxk3Td6O+VrIg78sOJYxuJEEIIIVOy+k/e85bT/oudv5K0dg3UdMzGtfajQSNkcG1j95HxNJJqSZVrs2BXMzGDpELS1rWISpWOV2fEvLhW2n2TUMMMzAi5l3Rnx53dR5WmV+dF0lnSSdLRjiuDbf8GqMf8Yu3ejhE2AJoEWjnItyuFkI0aFsB8cO3eULeAJoFeDPNg/Xqtz7JQw0KY3yR9dag7QJNAz4a5s+rsSzJqWBDzyaHuR74g+TN+niS9WN+OJQk1LIwZj/eAJoEeEjGTUcM7YD7Z4wVmozi7ia9rp4DGeeYUzEc77ZL+nGbMX3vnqUOga6uy/UTMR8wG8zyhj/wyYZ0D6qvzzsbEXMwHzBZF9cuEdd8SYRiozuBWgmKF5mAWM1aibj2V+8GnoNY2dsZVpdLBZoPuOlWaisniwvBwpkTU0hCP1rZ2e50KGndQNp0qvYY6hskCfT/oNgG1dCtJ+87mR+zfNnUMjaibTrXuHSyYmrXtOIR6lvTqNjyC8+jt35C5ce2RCzDfDbXo4CX/eWDJMS6AOesPAosOzuTGrrYIoARQAigBFFACKAGUAEoABZQASgAlgBJACaCAEkAJoARQAiigBFACKAGUAAooAZQASgAlgAJKACWAEkAJoIASQAmgBFACKKAEUAIoAZQACigBlABKACWAAkoAJYASQAmggBJACaAEUAIooARQAigBlAAKKAGU3CJoJamR1NKtyWmtz6ql3jAkfqBvtbVS0knSsz33wY5b+6Gs8Erq24v15Yv15clux37u9n87BbTt4FX2wWf7wIOknT33EdRFMZ/t9sFun+15VQf5Kuxm4FQcJBWube0Y7PHWXt/Y/ZV7nQAdzBjmd0k/Xftl7VXSmz33YrhJFdp0qvLoqrLoec21Sg3Y9V5vjGHGY6zWY6dam5xTrgc92a+iGKjoPtQSu96kYHpUX5nZoK0DPRpk6hWxRyX9ScX80anSCNrmXuU27ko2d3oD6nhyMH2Fln3VOQYaq3TqhU2B2WDKTMy3sepMnYdOGQfPCePtZ09tp9EczHLqPHQOammX14COg54MbRHMnGlFKmppA/eOdeKkuejZqvRlCczceeIYau2+4BbQ5MWFo0OdhTll4t+H2rjq3LvVJDIMWtlp92iAhzmYU1dyuqhxzTf+2raZ89bPDFp31siPbvGgnLJzFWYsLped7Z+zYQYDZR13vA/9xsfFQVZTtyHndvrKLcgHh0l15lVp5dqsPeWlqijCrtllmbSN1iz154D36Hgw81EJIYQQ8sH5DXK3pp1Df4jqAAAAAElFTkSuQmCC';
+
+/* ───────── index.html と同じ定数（4554行〜4587行） ───────── */
+const OBJ_ICON_CIRCLE_PX = 28, OBJ_ICON_INNER_PX = 25, OBJ_ICON_NATIVE_PX = 64;
+const MICHI_PLATE_PX = 26, MICHI_CLUSTER_PX = 37;
+const MHCARD_FACE_COLOR = '#B87333', MHCARD_W_PX = 28, MHCARD_BADGE_PX = MHCARD_W_PX * 0.8;
+const PIN_SHADOW_OFFSET  = [0, 2];
+const SHADOW_PEAK_IN_PX  = 2;
+const SHADOW_ZERO_OUT_PX = 6;
+const PIN_SHAPE_R     = OBJ_ICON_CIRCLE_PX / 2;   // 14
+const CLUSTER_SHAPE_R = 20;
+const shadowCircleOf = (shapeR) => {
+    const r = shapeR + SHADOW_ZERO_OUT_PX;
+    return { r, blur: (SHADOW_PEAK_IN_PX + SHADOW_ZERO_OUT_PX) / r };
+};
+const COLOR = { shop: '#FFAA00', castle: '#8A8A8A', manhole: '#B87333', michi: '#0B499D', mhcard: MHCARD_FACE_COLOR };
+
+/* 現状の値と、並べる4段階 */
+const NOW_OPACITY = 0.20;
+const ROWS = [
+    { v: 0.20, lab: '現状 0.20', now: true },
+    { v: 0.16, lab: '0.16' },
+    { v: 0.13, lab: '0.13' },
+    { v: 0.10, lab: '0.10' },
+];
+
+/* ───────── 並べ方 ─────────
+   1行に6種類。丸ピン／道の駅の板／マンホールカード／丸クラスタ／道の駅クラスタ／カードのクラスタ */
+const COLS = [
+    { t: 'shop',     c: COLOR.shop },
+    { t: 'michi',    c: COLOR.michi },
+    { t: 'mhcard',   c: COLOR.mhcard },
+    { t: 'cluster',  c: COLOR.shop,    n: '24' },
+    { t: 'michicl',  c: COLOR.michi,   n: '12' },
+    { t: 'mhcardcl', c: COLOR.mhcard,  n: '31' },
+];
+/* 図柄の画像と大きさ。index.html:4693 の icon-size と同じ（マンホールだけ25px、道の駅は板と同じ26px） */
+const TYPE_ICON = {
+    shop:    { ic: 'tabe-icon',    sz: OBJ_ICON_CIRCLE_PX / OBJ_ICON_NATIVE_PX },
+    castle:  { ic: 'castle-icon',  sz: OBJ_ICON_CIRCLE_PX / OBJ_ICON_NATIVE_PX },
+    manhole: { ic: 'manhole-icon', sz: OBJ_ICON_INNER_PX  / OBJ_ICON_NATIVE_PX },
+    michi:   { ic: 'michi-icon',   sz: MICHI_PLATE_PX     / OBJ_ICON_NATIVE_PX },
+};
+const COL_GAP = 58, ROW_GAP = 92, GRID_DX = 22;
+
+/* 実際の使われ方を見るための密集配置（中心からのメートル） */
+const SCENE = [
+    ['shop',   0,    0], ['shop',    -68,  40], ['shop',    30,  58],
+    ['castle', -100, -28], ['castle',   82, -34], ['manhole', 58,  14],
+    ['manhole', 116, -10], ['michi',   -42, -52], ['mhcard',  98,  52],
+    ['shop',    8,  -38], ['shop',     20, -44], ['shop',     2, -50], ['shop', 16, -56],
+    ['cluster', -120, 60], ['michicl', 130, 62], ['mhcardcl', -30, 96],
+];
+
+const PLACES = [
+    { name: '渋谷（白い建物が多い）', c: [139.7006, 35.6595], z: 16.4 },
+    { name: '皇居まわり（緑地）',     c: [139.7540, 35.6870], z: 16.0 },
+    { name: 'みなとみらい（水際）',   c: [139.6355, 35.4560], z: 15.6 },
+    { name: '郊外（淡色）',           c: [139.3400, 35.6600], z: 15.4 },
+];
+const LIBERTY = 'https://tiles.openfreemap.org/styles/liberty';
+const OSM_RASTER = { version: 8, glyphs: 'https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf',
+    sources: { osm: { type: 'raster', tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'], tileSize: 256 } },
+    layers: [{ id: 'osm-tiles', type: 'raster', source: 'osm' }] };
+
+/* ───────── 地図 ───────── */
+let state = { mode: 'grid', place: 0, tile: 'liberty', pitch: 0, op: 0.13 };
+const SRC_ROWS = ROWS.map((_, i) => `row${i}`);
+const SRC_SCENE = 'scene';
+const ALL_SRC = [...SRC_ROWS, SRC_SCENE];
+
+const map = new maplibregl.Map({
+    container: 'map', style: LIBERTY,
+    center: PLACES[0].c, zoom: PLACES[0].z, pitch: 0, attributionControl: false,
+});
+map.addControl(new maplibregl.AttributionControl({ compact: true }), 'bottom-right');
+map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), 'top-right');
+
+const EMPTY_FC = { type: 'FeatureCollection', features: [] };
+
+function loadImages() {
+    return Promise.all(Object.entries(IMG).map(([id, src]) => new Promise(res => {
+        const im = new Image();
+        im.onload = () => {
+            if (!map.hasImage(id)) {
+                // 影PNGだけは非SDF。index.html と同じく実寸の2倍で描いてあるので pixelRatio 2
+                const isShadow = id.endsWith('-shadow-icon');
+                const px2 = isShadow || id.startsWith('mhcard');
+                map.addImage(id, im, { sdf: !isShadow, pixelRatio: px2 ? 2 : 1 });
+            }
+            res();
+        };
+        im.onerror = () => res();
+        im.src = src;
+    })));
+}
+
+/* 影のレイヤー一式。index.html の shadowPaintSymbol / shadowPaintCircle / shadowLayout と同じ */
+function addShadowLayers(src, opacity) {
+    const paintSymbol = {
+        'icon-opacity': opacity,
+        'icon-translate': PIN_SHADOW_OFFSET, 'icon-translate-anchor': 'viewport',
+    };
+    const paintCircle = (shapeR) => {
+        const s = shadowCircleOf(shapeR);
+        return {
+            'circle-radius': s.r, 'circle-color': '#000000', 'circle-blur': s.blur,
+            'circle-opacity': opacity,
+            'circle-translate': PIN_SHADOW_OFFSET, 'circle-translate-anchor': 'viewport',
+        };
+    };
+    const layout = (image) => ({
+        'icon-image': image, 'icon-size': 1.0,
+        'icon-allow-overlap': true, 'icon-ignore-placement': true,
+    });
+    const isT = (...ts) => ['match', ['get', 't'], ts, true, false];
+
+    map.addLayer({ id: `${src}-sh-pin`, type: 'circle', source: src,
+        filter: isT('shop', 'castle', 'manhole'), paint: paintCircle(PIN_SHAPE_R) });
+    map.addLayer({ id: `${src}-sh-cl`, type: 'circle', source: src,
+        filter: isT('cluster'), paint: paintCircle(CLUSTER_SHAPE_R) });
+    map.addLayer({ id: `${src}-sh-michi`, type: 'symbol', source: src,
+        filter: isT('michi'), layout: layout('michi-plate-shadow-icon'), paint: paintSymbol });
+    map.addLayer({ id: `${src}-sh-michicl`, type: 'symbol', source: src,
+        filter: isT('michicl'), layout: layout('michi-cluster-shadow-icon'), paint: paintSymbol });
+    map.addLayer({ id: `${src}-sh-card`, type: 'symbol', source: src,
+        filter: isT('mhcard'), layout: layout('mhcard-shadow-icon'), paint: paintSymbol });
+    map.addLayer({ id: `${src}-sh-cardcl`, type: 'symbol', source: src,
+        filter: isT('mhcardcl'), layout: layout('mhcard-cluster-shadow-icon'), paint: paintSymbol });
+}
+const shadowLayerIds = (src) =>
+    ['sh-pin', 'sh-cl', 'sh-michi', 'sh-michicl', 'sh-card', 'sh-cardcl'].map(s => `${src}-${s}`);
+
+/* ピン本体。index.html と同じ寸法・色 */
+function addBodyLayers(src) {
+    const isT = (...ts) => ['match', ['get', 't'], ts, true, false];
+    map.addLayer({ id: `${src}-bg`, type: 'circle', source: src, filter: isT('shop', 'castle', 'manhole'),
+        paint: { 'circle-color': ['get', 'c'], 'circle-radius': PIN_SHAPE_R } });
+    map.addLayer({ id: `${src}-cl`, type: 'circle', source: src, filter: isT('cluster'),
+        paint: { 'circle-color': ['get', 'c'], 'circle-radius': CLUSTER_SHAPE_R } });
+    map.addLayer({ id: `${src}-michi-plate`, type: 'symbol', source: src, filter: isT('michi'),
+        layout: { 'icon-image': 'michi-plate-icon', 'icon-size': MICHI_PLATE_PX / OBJ_ICON_NATIVE_PX,
+                  'icon-allow-overlap': true, 'icon-ignore-placement': true },
+        paint: { 'icon-color': COLOR.michi } });
+    map.addLayer({ id: `${src}-michi-cl`, type: 'symbol', source: src, filter: isT('michicl'),
+        layout: { 'icon-image': 'michi-plate-icon', 'icon-size': MICHI_CLUSTER_PX / OBJ_ICON_NATIVE_PX,
+                  'icon-allow-overlap': true, 'icon-ignore-placement': true },
+        paint: { 'icon-color': COLOR.michi } });
+    map.addLayer({ id: `${src}-card`, type: 'symbol', source: src, filter: isT('mhcard'),
+        layout: { 'icon-image': 'mhcard-icon', 'icon-size': 1.0,
+                  'icon-allow-overlap': true, 'icon-ignore-placement': true },
+        paint: { 'icon-color': MHCARD_FACE_COLOR } });
+    map.addLayer({ id: `${src}-cardcl`, type: 'symbol', source: src, filter: isT('mhcardcl'),
+        layout: { 'icon-image': 'mhcard-cluster-icon', 'icon-size': 1.5,
+                  'icon-allow-overlap': true, 'icon-ignore-placement': true },
+        paint: { 'icon-color': MHCARD_FACE_COLOR } });
+    map.addLayer({ id: `${src}-icon`, type: 'symbol', source: src, filter: isT('shop', 'castle', 'manhole', 'michi'),
+        layout: { 'icon-image': ['get', 'ic'], 'icon-size': ['get', 'sz'],
+                  'icon-allow-overlap': true, 'icon-ignore-placement': true },
+        paint: { 'icon-color': '#FFFFFF' } });
+    map.addLayer({ id: `${src}-badge`, type: 'symbol', source: src, filter: isT('mhcard'),
+        layout: { 'icon-image': 'manhole-icon', 'icon-size': MHCARD_BADGE_PX / OBJ_ICON_NATIVE_PX,
+                  'icon-allow-overlap': true, 'icon-ignore-placement': true },
+        paint: { 'icon-color': '#FFFFFF' } });
+    map.addLayer({ id: `${src}-count`, type: 'symbol', source: src, filter: isT('cluster', 'michicl', 'mhcardcl'),
+        layout: { 'text-field': ['get', 'n'], 'text-size': 12, 'text-font': ['Noto Sans Bold'],
+                  'text-allow-overlap': true, 'text-ignore-placement': true },
+        paint: { 'text-color': '#FFFFFF' } });
+}
+const bodyLayerIds = (src) =>
+    ['bg', 'cl', 'michi-plate', 'michi-cl', 'card', 'cardcl', 'icon', 'badge', 'count'].map(s => `${src}-${s}`);
+
+function propsOf(t, extra) {
+    const col = COLS.find(c => c.t === t) || {};
+    const ico = TYPE_ICON[t] || {};
+    return Object.assign({ t, c: col.c || COLOR[t] || '#888', ic: ico.ic || '', sz: ico.sz || 0 }, extra || {});
+}
+
+/* 4段階を格子に並べる。画面の座標で置きたいので unproject で緯度経度に直す */
+const rowAnchors = [];
+function buildGrid() {
+    if (!map.getSource(SRC_ROWS[0])) return;   // まだ組み立て前
+    const el = map.getContainer();
+    const cx = el.clientWidth / 2 + GRID_DX, cy = el.clientHeight / 2;
+    ROWS.forEach((row, j) => {
+        const y = cy + (j - (ROWS.length - 1) / 2) * ROW_GAP;
+        const feats = COLS.map((col, i) => {
+            const x = cx + (i - (COLS.length - 1) / 2) * COL_GAP;
+            const ll = map.unproject([x, y]);
+            return { type: 'Feature', geometry: { type: 'Point', coordinates: [ll.lng, ll.lat] },
+                     properties: propsOf(col.t, { n: col.n || '', row: j }) };
+        });
+        rowAnchors[j] = feats[0].geometry.coordinates;
+        map.getSource(SRC_ROWS[j]).setData({ type: 'FeatureCollection', features: feats });
+    });
+    placeLabels();
+}
+
+function buildScene() {
+    if (!map.getSource(SRC_SCENE)) return;
+    const [lng, lat] = PLACES[state.place].c;
+    const feats = SCENE.map(([t, dx, dy]) => ({
+        type: 'Feature',
+        geometry: { type: 'Point', coordinates: [
+            lng + dx / (111320 * Math.cos(lat * Math.PI / 180)), lat + dy / 110574 ] },
+        properties: propsOf(t, { n: t === 'cluster' ? '24' : t === 'michicl' ? '12' : t === 'mhcardcl' ? '31' : '' }),
+    }));
+    map.getSource(SRC_SCENE).setData({ type: 'FeatureCollection', features: feats });
+}
+
+/* 行の見出し（HTMLで地図に重ねる） */
+const labsEl = document.getElementById('labs');
+ROWS.forEach((r, j) => {
+    const d = document.createElement('div');
+    d.className = 'rowlab' + (r.now ? ' now' : '');
+    d.textContent = r.lab;
+    d.id = `lab${j}`;
+    labsEl.appendChild(d);
+});
+function placeLabels() {
+    const show = state.mode === 'grid';
+    ROWS.forEach((r, j) => {
+        const el = document.getElementById(`lab${j}`);
+        if (!show || !rowAnchors[j]) { el.style.display = 'none'; return; }
+        const p = map.project(rowAnchors[j]);
+        el.style.display = '';
+        el.style.top = `${p.y}px`;
+    });
+}
+map.on('render', placeLabels);
+
+/* ───────── 表示の切り替え ───────── */
+function applyMode() {
+    const gridOn = state.mode === 'grid';
+    SRC_ROWS.forEach(src => [...shadowLayerIds(src), ...bodyLayerIds(src)].forEach(id => {
+        if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', gridOn ? 'visible' : 'none');
+    }));
+    [...shadowLayerIds(SRC_SCENE), ...bodyLayerIds(SRC_SCENE)].forEach(id => {
+        if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', gridOn ? 'none' : 'visible');
+    });
+    document.getElementById('slider-grp').style.display = gridOn ? 'none' : '';
+    placeLabels();
+    describe();
+}
+function applySliderOpacity() {
+    shadowLayerIds(SRC_SCENE).forEach(id => {
+        if (!map.getLayer(id)) return;
+        const prop = map.getLayer(id).type === 'circle' ? 'circle-opacity' : 'icon-opacity';
+        map.setPaintProperty(id, prop, state.op);
+    });
+}
+function describe() {
+    const t = document.getElementById('d-text'), c = document.getElementById('d-code');
+    if (state.mode === 'grid') {
+        t.textContent = '同じ地図の上に、影の濃さだけを変えた4行を同時に置いてある。'
+            + '左の札がその行の濃さ。丸（circle-opacity）と、道の駅・カードの影PNG（icon-opacity）は'
+            + '同じ値を入れているので、行の中では6種類とも同じ濃さになる。';
+        c.textContent = `// index.html:4578 — ここ1行だけの変更で全種別に効く\nconst PIN_SHADOW_OPACITY = ${NOW_OPACITY};   // → 0.16 / 0.13 / 0.10`;
+    } else {
+        t.textContent = 'ピンが密集した実際の使われ方で確かめる。スライダーで濃さを動かすと、'
+            + '丸・道の駅・カード・クラスタの影がまとめて変わる。';
+        c.textContent = `const PIN_SHADOW_OPACITY = ${state.op.toFixed(2)};`;
+    }
+}
+
+/* ───────── 上のボタン ───────── */
+function mkChips() {
+    const wrap = document.getElementById('chips');
+    [['grid', '4段階を並べて比べる'], ['scene', '密集した場面で見る（スライダー）']].forEach(([k, name]) => {
+        const b = document.createElement('button');
+        b.className = 'chip' + (state.mode === k ? ' on' : '');
+        b.textContent = name;
+        b.onclick = () => {
+            state.mode = k;
+            [...wrap.children].forEach(x => x.classList.toggle('on', x === b));
+            if (k === 'scene') buildScene(); else buildGrid();
+            applyMode();
+        };
+        wrap.appendChild(b);
+    });
+}
+function mkBar() {
+    const ps = document.getElementById('places');
+    PLACES.forEach((p, i) => {
+        const b = document.createElement('button');
+        b.textContent = p.name; b.className = i === 0 ? 'on' : '';
+        b.onclick = () => {
+            state.place = i;
+            [...ps.children].forEach(x => x.classList.toggle('on', x === b));
+            map.jumpTo({ center: p.c, zoom: p.z });
+            if (state.mode === 'grid') buildGrid(); else buildScene();
+        };
+        ps.appendChild(b);
+    });
+    const ts = document.getElementById('tiles');
+    [['liberty', 'ベクタ'], ['osm', 'OSMラスタ']].forEach(([k, name]) => {
+        const b = document.createElement('button');
+        b.textContent = name; b.className = k === 'liberty' ? 'on' : '';
+        b.onclick = () => {
+            if (state.tile === k) return;
+            state.tile = k;
+            [...ts.children].forEach(x => x.classList.toggle('on', x === b));
+            map.setStyle(k === 'osm' ? OSM_RASTER : LIBERTY);
+        };
+        ts.appendChild(b);
+    });
+    const pit = document.getElementById('pitches');
+    [0, 45, 60].forEach(v => {
+        const b = document.createElement('button');
+        b.textContent = `${v}°`; b.className = v === 0 ? 'on' : '';
+        b.onclick = () => {
+            state.pitch = v;
+            [...pit.children].forEach(x => x.classList.toggle('on', x === b));
+            map.easeTo({ pitch: v, duration: 300 });
+        };
+        pit.appendChild(b);
+    });
+    const op = document.getElementById('op'), opv = document.getElementById('opv');
+    op.oninput = () => { state.op = parseFloat(op.value); opv.textContent = state.op.toFixed(2); applySliderOpacity(); describe(); };
+}
+
+/* ───────── 端末ごとの効き方の表 ───────── */
+const OK = '効く', NA = '効かない';
+const SUPPORT = [
+    ['PIN_SHADOW_OPACITY<br>→ circle-opacity', '0.20', '丸ピン・丸クラスタの影', OK, OK, OK,
+     '塗りのアルファに掛けるだけなので端末差なし'],
+    ['PIN_SHADOW_OPACITY<br>→ icon-opacity', '0.20', '道の駅・カードの影PNG', OK, OK, OK,
+     '影PNGは黒一色で焼いてあるため、濃さはこれだけで決まる（icon-color は非SDFなので無効）'],
+    ['PIN_SHADOW_OFFSET<br>→ circle/icon-translate', '[0, 2]', '影すべて', OK, OK, OK,
+     '画面ピクセル指定。倍率が違ってもCSSピクセルで2px下'],
+    ['circle/icon-translate-anchor', 'viewport', '影すべて', OK, OK, OK,
+     '地図を回しても影の向きが変わらない。これが map だと影が地図と一緒に回る'],
+    ['circle-blur', '0.4 / 0.308', '丸ピン・丸クラスタの影のみ', OK, OK, OK,
+     'シェーダは max(blur, 1/DPR/半径) を使う。1/DPR/20 は 0.05〜0.017 で 0.4 より小さいため、'
+     + 'どの倍率でも指定した 0.4 が採用される'],
+    ['SHADOW_PEAK_IN_PX / SHADOW_ZERO_OUT_PX', '2 / 6', '丸の影（blurと半径の計算元）', OK, OK, OK,
+     'circle 側は毎回この式から計算している'],
+    ['SHADOW_PEAK_IN_PX / SHADOW_ZERO_OUT_PX', '2 / 6', '道の駅・カードの影', NA, NA, NA,
+     '<b>3端末とも効かない。</b>影PNGに焼き込んであるので、値を変えてもPNGを焼き直すまで見た目は変わらない'],
+    ['icon-size（影PNG）', '1.0', '道の駅・カードの影', OK, OK, OK,
+     'pixelRatio 2 で読むので実寸の半分で出る。DPR2の端末では画像1ドット＝画面1ドットで等倍、'
+     + 'PC（DPR1）は0.5倍縮小、DPR3の端末は1.5倍拡大になる'],
+    ['icon-allow-overlap / icon-ignore-placement', 'true', '道の駅・カードの影', OK, OK, OK,
+     '影を衝突判定から外し、ラベルを押し出さないための指定'],
+    ['visibility', '種別の表示設定に連動', '影すべて', OK, OK, OK,
+     '種別をOFFにすると影も一緒に消える（applyObjLayerVis が -shadow を含む）'],
+];
+const tb = document.getElementById('support');
+SUPPORT.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td class="mono">${r[0]}</td><td class="mono">${r[1]}</td><td>${r[2]}</td>`
+        + [3, 4, 5].map(i => `<td class="${r[i] === OK ? 'ok' : 'na'}">${r[i]}</td>`).join('')
+        + `<td>${r[6]}</td>`;
+    tb.appendChild(tr);
+});
+
+/* ───────── 組み立て ───────── */
+function build() {
+    ALL_SRC.forEach(src => { if (!map.getSource(src)) map.addSource(src, { type: 'geojson', data: EMPTY_FC }); });
+    // 影は必ず全部のピンより下。index.html と同じく、影だけを先に一周して足す
+    ROWS.forEach((row, j) => addShadowLayers(SRC_ROWS[j], row.v));
+    addShadowLayers(SRC_SCENE, state.op);
+    ALL_SRC.forEach(src => addBodyLayers(src));
+    buildGrid();
+    buildScene();
+    applyMode();
+}
+// タイルを切り替えるとスタイルごとレイヤーも画像も消えるので、そのたびに組み立て直す
+map.on('style.load', () => {
+    loadImages().then(() => { if (!map.getSource(SRC_ROWS[0])) build(); });
+});
+mkChips(); mkBar(); describe();
+</script>
+</body>
+</html>
