@@ -2068,8 +2068,13 @@
 
     // moveend不発（同一地点への移動等）で残った古いpendingを次のmoveendに誤適用しないよう時刻を持つ
     // extra: 記録時に一緒に残す情報（ピン選択の objType / objProps）。省略時は従来どおり
-    function histSetPending(label, cause, extra) {
-        histPending = { label, cause, extra: extra || null, t: Date.now() };
+    // dest: 移動先 { coords:[lng,lat], zoom }。記録する座標は地図の中心ではなくこれを使う。
+    //   easeTo の途中で別の easeTo（情報シートの寄せ直し等）が始まると、maplibre は
+    //   中断した側の moveend を「その瞬間の中心」で発火する（3.6.2 の _stop → _afterEase で確認）。
+    //   中心から拾うと、そこで積まれたエントリが移動の途中の座標になり、履歴から戻ったとき
+    //   何も無い場所に選択リングが出る。移動先は呼び出し側が分かっているので渡してもらう。
+    function histSetPending(label, cause, extra, dest) {
+        histPending = { label, cause, extra: extra || null, dest: dest || null, t: Date.now() };
     }
 
     function histPush(info) {
@@ -2143,7 +2148,13 @@
             const p = histPending;
             histPending = null;
             if (Date.now() - p.t < 3000) {
-                histPush(Object.assign({ label: p.label, cause: p.cause }, p.extra || {}));
+                const info = Object.assign({ label: p.label, cause: p.cause }, p.extra || {});
+                if (p.dest) {
+                    info.lng = p.dest.coords[0];
+                    info.lat = p.dest.coords[1];
+                    if (p.dest.zoom != null) info.zoom = p.dest.zoom;
+                }
+                histPush(info);
                 return;
             }
         }
@@ -4389,7 +4400,8 @@ map.on('zoomend', () => { isZooming = false; });
                 trackingMode = mode;
                 if (mode === 2) requestDeviceOrientation();
                 if (currentLocation) {
-                    histSetPending('現在地', 'geo');
+                    histSetPending('現在地', 'geo', null,
+                                   { coords: [currentLocation.lng, currentLocation.lat], zoom: map.getZoom() });
                     map.easeTo({
                         center: [currentLocation.lng, currentLocation.lat],
                         zoom: map.getZoom(),
@@ -4411,7 +4423,8 @@ map.on('zoomend', () => { isZooming = false; });
             }
 
             if (trackingMode > 0 && currentLocation) {
-                histSetPending('現在地', 'geo');
+                histSetPending('現在地', 'geo', null,
+                               { coords: [currentLocation.lng, currentLocation.lat], zoom: map.getZoom() });
                 map.easeTo({
                     center: [currentLocation.lng, currentLocation.lat],
                     zoom: map.getZoom(),
@@ -4489,7 +4502,8 @@ map.on('zoomend', () => { isZooming = false; });
 
                 // 追従モードONかつ初回位置取得時→アニメーションで現在地へ移動
                 if (isFirst && trackingMode > 0) {
-                    histSetPending('現在地', 'geo');
+                    histSetPending('現在地', 'geo', null,
+                                   { coords: [lng, lat], zoom: Math.max(map.getZoom(), 15) });
                     map.easeTo({
                         center: [lng, lat],
                         zoom: Math.max(map.getZoom(), 15),
@@ -5223,7 +5237,6 @@ map.on('zoomend', () => { isZooming = false; });
             updateGeolocateButton();
         }
         clearSearch();
-        histSetPending(itemDisplayName(item), 'search');
         // オブジェクトを選んだときは、対象を判別できるところまで寄る。
         // ズームアウトしたまま移動すると clusterMaxZoom:13 によりクラスタに畳まれ、
         // 選択リングを出しても対象が見えない。
@@ -5235,6 +5248,7 @@ map.on('zoomend', () => { isZooming = false; });
         const zoom = item.type !== 'place'
             ? Math.max(map.getZoom(), SEARCH_RESULT_MIN_ZOOM)
             : map.getZoom();
+        histSetPending(itemDisplayName(item), 'search', null, { coords: item.coords, zoom });
         map.easeTo({ center: item.coords, zoom, bearing: 0, pitch: 0, duration: 550, essential: true });
         if (item.type !== 'place') {
             setTimeout(() => showSheetForItem(item), 300);
@@ -5326,8 +5340,10 @@ map.on('zoomend', () => { isZooming = false; });
         const coords = tryParseCoords(q) || tryParsePlusCode(q) || tryParseDMS(q);
         if (coords) {
             if (trackingMode > 0) { trackingMode = 0; stopRafLoop(); updateGeolocateButton(); }
-            histSetPending(`${coords.lat.toFixed(4)}, ${coords.lng.toFixed(4)}`, 'search');
-            map.easeTo({ center: [coords.lng, coords.lat], zoom: Math.max(map.getZoom(), 15), duration: 500 });
+            const zoom = Math.max(map.getZoom(), 15);
+            histSetPending(`${coords.lat.toFixed(4)}, ${coords.lng.toFixed(4)}`, 'search', null,
+                           { coords: [coords.lng, coords.lat], zoom });
+            map.easeTo({ center: [coords.lng, coords.lat], zoom, duration: 500 });
             clearSearch();
             return;
         }
@@ -6030,12 +6046,9 @@ map.on('zoomend', () => { isZooming = false; });
             stopRafLoop();
             updateGeolocateButton();
         }
-        histSetPending(label, 'pin', { objType: 'castle', objProps: p });
-        map.easeTo({
-            center: c,
-            zoom: Math.max(map.getZoom(), SEARCH_RESULT_MIN_ZOOM),
-            bearing: 0, pitch: 0, duration: 550, essential: true
-        });
+        const zoom = Math.max(map.getZoom(), SEARCH_RESULT_MIN_ZOOM);
+        histSetPending(label, 'pin', { objType: 'castle', objProps: p }, { coords: c, zoom });
+        map.easeTo({ center: c, zoom, bearing: 0, pitch: 0, duration: 550, essential: true });
         setTimeout(() => {
             openObjSheet('castle', label, p, c[0], c[1]);
             injectLordsBackLink(lordId);
@@ -7168,12 +7181,9 @@ map.on('zoomend', () => { isZooming = false; });
             stopRafLoop();
             updateGeolocateButton();
         }
-        histSetPending(label, 'pin', { objType: 'castle', objProps: p });
-        map.easeTo({
-            center: c,
-            zoom: Math.max(map.getZoom(), SEARCH_RESULT_MIN_ZOOM),
-            bearing: 0, pitch: 0, duration: 550, essential: true
-        });
+        const zoom = Math.max(map.getZoom(), SEARCH_RESULT_MIN_ZOOM);
+        histSetPending(label, 'pin', { objType: 'castle', objProps: p }, { coords: c, zoom });
+        map.easeTo({ center: c, zoom, bearing: 0, pitch: 0, duration: 550, essential: true });
         setTimeout(() => {
             openObjSheet('castle', label, p, c[0], c[1]);
             injectRemainsBackLink(back);
