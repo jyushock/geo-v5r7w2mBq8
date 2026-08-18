@@ -1616,6 +1616,16 @@
         </div>
         <div style="display:flex;gap:12px;padding:0 16px 10px;align-items:flex-end;">
             <div style="display:flex;flex-direction:column;gap:4px;flex:1;">
+                <span style="font-size:11px;color:#888;">ホテル並び順</span>
+                <!-- tour.ne.jp の dsp_sort。2=安い順 / 9=目的地から近い順（目的地は landmark に渡す最寄り駅） -->
+                <select id="hotel-sort-select" onchange="onHotelSortChange(this.value)" style="font-size:13px;padding:4px 6px;border:1px solid #ddd;border-radius:6px;background:white;">
+                    <option value="2">安い順</option>
+                    <option value="9">目的地から近い順</option>
+                </select>
+            </div>
+        </div>
+        <div style="display:flex;gap:12px;padding:0 16px 10px;align-items:flex-end;">
+            <div style="display:flex;flex-direction:column;gap:4px;flex:1;">
                 <span style="font-size:11px;color:#888;">「ここへ行く」の移動手段</span>
                 <select id="travel-mode-select" onchange="onTravelModeChange(this.value)" style="font-size:13px;padding:4px 6px;border:1px solid #ddd;border-radius:6px;background:white;">
                     <option value="walk">徒歩</option>
@@ -5478,10 +5488,15 @@ map.on('zoomend', () => { isZooming = false; });
 
     document.getElementById('tile-source-select').value = localStorage.getItem('mapTileSource') || 'openfreemap';
     document.getElementById('hotel-radius-select').value = localStorage.getItem('hotelRadius') || '10000';
+    document.getElementById('hotel-sort-select').value = localStorage.getItem('hotelSort') || '2';
     document.getElementById('travel-mode-select').value = travelMode();
 
     function onHotelRadiusChange(value) {
         localStorage.setItem('hotelRadius', value);
+    }
+
+    function onHotelSortChange(value) {
+        localStorage.setItem('hotelSort', value);
     }
 
     function onTravelModeChange(value) {
@@ -7257,7 +7272,8 @@ map.on('zoomend', () => { isZooming = false; });
         if (!stationName) { newTab.close(); return alert('駅名が取得できませんでした'); }
         const dp_ymd = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Tokyo' }).replace(/-/g, '');
         const hotelRadius = localStorage.getItem('hotelRadius') || '10000';
-        const url = `https://www.tour.ne.jp/j_hotel/list/?landmark=${encodeURIComponent(stationName)}&refpage=form#adult=1&dp_ymd=${dp_ymd}&dsp_sort=2&hotel_type=3,6,7,8,11,12,13,15&radius=${hotelRadius}&roomtype=1,2,3,5,7,8,10,11`;
+        const hotelSort = localStorage.getItem('hotelSort') || '2';
+        const url = `https://www.tour.ne.jp/j_hotel/list/?landmark=${encodeURIComponent(stationName)}&refpage=form#adult=1&dp_ymd=${dp_ymd}&dsp_sort=${hotelSort}&hotel_type=3,6,7,8,11,12,13,15&radius=${hotelRadius}&roomtype=1,2,3,5,7,8,10,11`;
         newTab.location.href = url;
     }
     function execNearbySearch() {
