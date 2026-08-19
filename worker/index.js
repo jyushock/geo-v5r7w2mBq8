@@ -135,13 +135,21 @@ async function apiEnroll(env, request) {
     return json({ ok: true, device: dev.id }, 200, { 'set-cookie': sessionCookie(dev.token) });
 }
 
-async function apiGetState(env, device) {
+async function stateKeysFor(env, userId, deviceId) {
     const rs = await env.DB.prepare(
         'SELECT device_id, key, value, rev FROM states WHERE user_id = ? AND (device_id = ? OR device_id = ?)'
-    ).bind(device.user_id, SHARED, device.id).all();
+    ).bind(userId, SHARED, deviceId).all();
     const keys = {};
     for (const r of rs.results || []) keys[r.key] = { value: r.value, rev: Number(r.rev), device: r.device_id !== SHARED };
-    return json({ ok: true, keys, device: { id: device.id, name: device.name } });
+    return keys;
+}
+
+async function apiGetState(env, device) {
+    return json({
+        ok: true,
+        keys: await stateKeysFor(env, device.user_id, device.id),
+        device: { id: device.id, name: device.name },
+    });
 }
 
 /* 送られたキーだけを保存する。baseRev がサーバーの rev と食い違えば 409 相当を返し、
@@ -218,7 +226,11 @@ async function apiJoin(env, request) {
     ).bind(...hashes).first();
     if (!row || Number(row.expires_at) < now()) return json({ error: 'invalid_code' }, 404);
     const dev = await createDevice(env, row.user_id, request.headers.get('user-agent'), body.name);
-    return json({ ok: true, device: dev.id }, 200, { 'set-cookie': sessionCookie(dev.token) });
+    /* 共有分をこの応答に載せて返す。参加した直後に GET を投げると、新しい Cookie が
+       行き渡る前の古いセッションで飛ぶことがあり（実機で確認）、前の持ち主の内容を
+       取り込んでしまう。往復を無くせばその隙が無くなる。 */
+    return json({ ok: true, device: dev.id, keys: await stateKeysFor(env, row.user_id, dev.id) },
+        200, { 'set-cookie': sessionCookie(dev.token) });
 }
 
 async function apiDevices(env, device) {

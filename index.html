@@ -2372,25 +2372,32 @@
             if (res.status === 401) { syncMetaSet({ on: false, rev: {} }); syncUpdateUi(); return; }
             if (!res.ok) return;
             const data = await res.json();
-            let reload = false;
-            for (const [sk, r] of Object.entries(data.keys || {})) {
-                const rev = Number(r.rev) || 0;
-                if (rev <= syncRev(sk)) continue;
-                if (sk === 'favorites') { favMergeFromServer(r.value); syncSetRev(sk, rev); }
-                else if (syncApplyValue(sk, r.value)) {
-                    syncSetRev(sk, rev);
-                    // 地図位置は起動後に動かすと操作の邪魔になるので、効くのは次回起動から
-                    if (sk === 'settingsState' || sk === 'prefs') reload = true;
-                }
-            }
-            syncUpdateUi();
-            /* 表示設定は画面の広い範囲に効く。その場で作り直さず一度だけ読み直す。
-               繰り返さないよう、このタブでは1回だけに制限する。 */
-            if (reload && allowReload && !sessionStorage.getItem('syncReloaded')) {
-                sessionStorage.setItem('syncReloaded', '1');
-                location.reload();
-            }
+            syncApplyKeys(data.keys, allowReload);
         } catch (e) { console.warn('[sync]', e); }
+    }
+
+    /* サーバーから受け取った分をローカルへ反映する。GET の応答と、参加（join）の応答の
+       どちらもこの形で返るので、取り込みは1か所にまとめてある。 */
+    function syncApplyKeys(keys, allowReload) {
+        let reload = false;
+        for (const [sk, r] of Object.entries(keys || {})) {
+            const rev = Number(r.rev) || 0;
+            if (rev <= syncRev(sk)) continue;
+            if (sk === 'favorites') { favMergeFromServer(r.value); syncSetRev(sk, rev); }
+            else if (syncApplyValue(sk, r.value)) {
+                syncSetRev(sk, rev);
+                // 地図位置は起動後に動かすと操作の邪魔になるので、効くのは次回起動から
+                if (sk === 'settingsState' || sk === 'prefs') reload = true;
+            }
+        }
+        syncUpdateUi();
+        /* 表示設定は画面の広い範囲に効く。その場で作り直さず一度だけ読み直す。
+           繰り返さないよう、このタブでは1回だけに制限する。 */
+        if (reload && allowReload && !sessionStorage.getItem('syncReloaded')) {
+            sessionStorage.setItem('syncReloaded', '1');
+            location.reload();
+        }
+        return reload;
     }
 
     /* サーバーのお気に入りを項目ごとに混ぜる。at が新しいほうを採る。
@@ -2556,8 +2563,11 @@
             const res = await syncFetch('join', { method: 'POST', body: JSON.stringify({ code }) });
             if (res.status === 404) { showToast('このコードは使えません。追加する側の画面を開き直してください'); return; }
             if (!res.ok) { showToast('参加できませんでした'); return; }
+            const data = await res.json().catch(() => ({}));
             syncMetaSet({ on: true, rev: {} });
-            await syncPull({ reload: false });     // 共有側を取り込む（お気に入りは混ざる）
+            /* 共有分は参加の応答に載って返る。ここで GET を投げると、新しい Cookie が
+               行き渡る前の古いセッションで飛ぶことがある（実機で確認した）。 */
+            syncApplyKeys(data.keys, false);       // お気に入りはここで混ざる
             syncDirty.add('favorites');            // 混ざった結果を送り返す
             await syncFlush();
             showToast('この端末を追加しました。画面を読み直します');
