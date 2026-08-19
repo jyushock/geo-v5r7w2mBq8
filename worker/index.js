@@ -206,11 +206,16 @@ async function apiJoin(env, request) {
         return json({ error: 'too_many' }, 429);
     }
     const body = await request.json().catch(() => ({}));
-    const raw = String(body.code || '');
-    const hash = await sha256hex(raw.includes('-') || raw.length <= 9 ? normalizeShort(raw) : raw);
+    const raw = String(body.code || '').trim();
+    if (!raw || raw.length > 64) return json({ error: 'invalid_code' }, 404);
+    /* QR用の長いコードは base64url なので `-` や `_` が入る。区切りの有無では短いコードと
+       見分けられないため、そのままの形と手入力用に整えた形の両方を引き当てる。 */
+    const hashes = [await sha256hex(raw)];
+    const short = normalizeShort(raw);
+    if (short && short !== raw) hashes.push(await sha256hex(short));
     const row = await env.DB.prepare(
-        'SELECT user_id, expires_at FROM handovers WHERE code_hash = ?'
-    ).bind(hash).first();
+        `SELECT user_id, expires_at FROM handovers WHERE code_hash IN (${hashes.map(() => '?').join(',')})`
+    ).bind(...hashes).first();
     if (!row || Number(row.expires_at) < now()) return json({ error: 'invalid_code' }, 404);
     const dev = await createDevice(env, row.user_id, request.headers.get('user-agent'), body.name);
     return json({ ok: true, device: dev.id }, 200, { 'set-cookie': sessionCookie(dev.token) });
