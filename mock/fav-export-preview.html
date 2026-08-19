@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>お気に入りの書き出し — 実装可否と出力UIのモック</title>
+<title>お気に入りの書き出し — 実装可否と出力UIのモック（仕様1.1対応）</title>
 <style>
     /* index.html から写した実寸・実色。枠は iPhone SE3（375×667）を拡大縮小なしで置いている。
        fav-list-preview.html と同じ土台にしてある（並べて見比べられるように） */
@@ -26,14 +26,21 @@
             padding: 7px 10px; line-height: 1.75; margin: 0 14px 10px; }
     .warn { border-left-color: #E65100; background: #fff8f0; color: #4E342E; }
     .good { border-left-color: #2E7D32; background: #f3f8f3; color: #1B5E20; }
+    .diff { border-left-color: #1565C0; background: #f2f7fd; color: #17406b; }
     table { border-collapse: collapse; width: calc(100% - 28px); margin: 8px 14px 20px; font-size: 12px; }
     th, td { border: 1px solid #e0e0e0; padding: 6px 8px; text-align: left; vertical-align: top; line-height: 1.65; }
     th { background: #f6f7f9; font-weight: 600; }
     td.ok { color: #1B5E20; } td.ng { color: #B71C1C; }
     td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    td.del { color: #999; text-decoration: line-through; }
     .verdict { margin: 8px 14px 14px; padding: 10px 12px; border-radius: 8px; font-size: 12.5px;
                line-height: 1.8; background: #eef6ee; border: 1px solid #c8e0c8; color: #1B5E20; }
     .verdict b { font-size: 13.5px; }
+    .rev { margin: 8px 14px 14px; padding: 10px 12px; border-radius: 8px; font-size: 12px;
+           line-height: 1.85; background: #f2f7fd; border: 1px solid #cfe0f5; color: #17406b; }
+    .rev b { color: #0d2f52; }
+    .rev ul { margin: 6px 0 0; padding-left: 18px; }
+    .rev li { margin: 3px 0; }
 
     /* ══ 端末枠 375×667（SE3 実寸） ══ */
     .screens { display: flex; flex-wrap: wrap; gap: 14px; padding: 0 14px 10px; }
@@ -79,7 +86,6 @@
     .fav-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
     .lords-scroll { overflow: hidden; flex: 1; min-height: 0; }
 
-    /* 一覧の行（.obj-row 相当）。左端の色帯が fav-stripe */
     .row { display: flex; align-items: center; gap: 10px; padding: 9px 12px 9px 0;
            border-bottom: 1px solid #f4f4f4; position: relative; }
     .fav-stripe { position: absolute; left: 0; top: 0; bottom: 0; width: 5px;
@@ -99,7 +105,6 @@
     .row .ck.on::after { content: ''; position: absolute; left: 6px; top: 2.5px; width: 4px; height: 9px;
                          border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }
 
-    /* 設定の行 */
     .set-label { font-size: 11px; color: #999; padding: 10px 16px 4px; }
     .set-row { display: flex; align-items: center; gap: 10px; padding: 11px 16px;
                border-bottom: 1px solid #f4f4f4; font-size: 13px; color: #333; }
@@ -115,9 +120,11 @@
 
     /* 書き出しシート */
     .exp-sec { font-size: 11px; color: #999; padding: 12px 16px 5px; }
-    .exp-row { display: flex; align-items: center; gap: 10px; padding: 9px 16px;
+    .exp-row { display: flex; align-items: center; gap: 10px; padding: 10px 16px;
                border-bottom: 1px solid #f4f4f4; font-size: 13px; color: #333; }
     .exp-row .rt { margin-left: auto; color: #888; font-size: 12px; }
+    .exp-sub { font-size: 11px; color: #999; padding: 0 16px 10px; line-height: 1.7;
+               border-bottom: 1px solid #f4f4f4; margin-bottom: 0; }
     .seg { display: flex; gap: 6px; padding: 6px 16px 10px; }
     .seg span { flex: 1; text-align: center; font-size: 12px; padding: 7px 0; border-radius: 8px;
                 border: 1px solid #e0e0e0; color: #666; background: #fff; }
@@ -133,16 +140,14 @@
                display: flex; align-items: center; justify-content: center; gap: 7px; }
     .exp-btn.primary { background: var(--ui-blue); color: #fff; font-weight: 600; }
     .exp-btn.sub { background: #f2f4f7; color: #444; }
-    .exp-cnt { font-size: 11.5px; color: #888; text-align: center; padding: 0 16px 4px; }
+    .exp-cnt { font-size: 11.5px; color: #888; text-align: center; padding: 4px 16px 4px; }
 
-    /* 出力プレビュー */
     pre.out { margin: 8px 14px 16px; padding: 10px 12px; background: #1e2229; color: #e6e6e6;
               border-radius: 8px; font-size: 11px; line-height: 1.85; overflow-x: auto;
               font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
     pre.out .tab { color: #FFAA00; }
     pre.out .hd { color: #7FD1F7; }
 
-    /* 実機テスト */
     .try { margin: 8px 14px 16px; padding: 12px; border: 1px solid #e0e0e0; border-radius: 10px; }
     .try h4 { margin: 0 0 4px; font-size: 12.5px; }
     .try p { margin: 0 0 10px; font-size: 11.5px; color: #666; line-height: 1.75; }
@@ -161,25 +166,48 @@
 <header>
     <h1>お気に入りの書き出し — 実装可否と出力UIのモック</h1>
     <p class="lead">
-        地図UIのお気に入りを、TravelPlan の入力ファイル（<code>sample/input-format.md</code> 版1.0）として
-        書き出せるかを確かめ、出しかたのUIを3案並べたもの。<br>
-        件数はすべて手元のデータファイル全件を数えた実測（2026-08-20）。座標の桁数と重複の判定は
+        対象の仕様は <code>sample/input-format.md</code> <b>版 1.1</b>（2026-08-20 改訂）。<br>
+        件数はすべて手元のデータファイル全件を数えた実測。キーの組み立ては
         <code>index.html</code> の <code>favKeyOf</code>・<code>favCoordKey</code> と同じ式で組んである。
     </p>
 </header>
 
+<div class="rev">
+    <b>版 1.0 → 1.1 で何が変わり、モックのどこを直したか</b>
+    <ul>
+        <li><b>§1.1 設計原則が新設された。</b>ファイルは「その場所の属性」だけを持ち、「その旅程の都合」は
+            アプリ上で操作する。結果として1つの地点リストを複数の旅程で使い回せる
+            → <b>書き出すものの位置づけが「旅程」から「行きたい場所リスト」に変わった。</b>
+            枠＝リストとして、そのまま素直に対応する（§3・§5）</li>
+        <li><b><code>role</code> / <code>stay</code> / <code>day</code> / <code>priority</code> の4列が削除された</b>
+            → 前回のモックに置いていた<b>「出発地の指定」「往復トグル」「滞在時間の目安」を全部外した。</b>
+            根拠のない滞在時間の既定値（城90分など）を悩む必要も消えた。
+            書き出しシートは大幅に簡単になっている（§4）</li>
+        <li>§3.3「意図的に含めない列」が新設。出力に混ぜても無視されるだけなので、
+            <b>お気に入り側に無い情報を無理に作らない</b>方針で確定した</li>
+        <li><b>§5.3「検出できないもの」が新設。</b>測地系の取り違えは値から判別できず、
+            <b>出力側で担保してくださいと明記された</b> → 新たに測地系の実測を足した（§2.3）</li>
+        <li>検証ルール・チェックリスト・別名表・サンプルから該当項目が削除された
+            → 出力プレビューを <code>name</code> / <code>lat</code> / <code>lng</code> /
+            <code>note</code> / <code>id</code> の5列に作り直した（§3）</li>
+    </ul>
+</div>
+
 <h2 class="sec">1. 実装できるか</h2>
 
 <div class="verdict">
-    <b>実装できる。</b>お気に入りを出すのに必要な <code>name</code> / <code>lat</code> / <code>lng</code> は
-    35,323件すべてに揃っていて、欠落は0件。TSVを壊すタブ・改行の混入も0件なので、
-    エスケープ処理そのものが要らない。<br>
-    出力に使う材料は既に <code>favCollect()</code> が返している
-    （<code>item.coords</code>・<code>item.properties</code>・お気に入りキー・枠番号・登録時刻）ので、
-    新しく作るのは<b>並べ替えて文字列にする関数と、それを出すUIだけ</b>。データファイル側の変更は不要。
+    <b>実装できる。版 1.1 でむしろ簡単になった。</b>
+    必須列 <code>name</code> / <code>lat</code> / <code>lng</code> は35,323件すべてに揃っていて欠落0件。
+    TSVを壊すタブ・改行の混入も0件なので、エスケープ処理そのものが要らない。<br>
+    残る任意列は <code>note</code> と <code>id</code> の2つだけで、どちらもお気に入りが既に持っている情報から作れる。
+    <b>お気に入りに存在しない情報（出発地・滞在時間・優先度）は、仕様側から要求が消えた。</b><br>
+    出力に使う材料は既に <code>favCollect()</code> が返しているので、新しく作るのは
+    並べ替えて文字列にする関数と、それを出すUIだけ。データファイル側の変更は不要。
 </div>
 
-<h3 class="sub">1.1 データが仕様を満たしているか（全件実測）</h3>
+<h2 class="sec">2. 実測</h2>
+
+<h3 class="sub">2.1 データが仕様を満たしているか（全件）</h3>
 
 <table>
 <tr><th>種別</th><th class="num">件数</th><th class="num">name 欠落</th><th class="num">座標欠落</th>
@@ -194,17 +222,15 @@
 </table>
 
 <p class="note">
-    キー重複が0というのは、仕様の任意列 <code>id</code>（再読み込み時に同じ地点として扱うキー）に
-    お気に入りキーをそのまま書けるということ。仕様は「ファイル内で一意」しか求めていないので、
-    <code>castle:二条城@135.7475,35.0142</code> のような文字列で条件を満たす。
+    キー重複が0というのは、仕様 §3.2 の <code>id</code>（一意キー）にお気に入りキーをそのまま書けるということ。
+    仕様が求めるのは「ファイル内で一意」だけなので、<code>castle:二条城@135.7475,35.0142</code> のような
+    文字列で条件を満たす。<b>§1.1 の「リストを使い回す」運用では、この <code>id</code> が効く。</b>
+    同じリストを何度書き出しても、TravelPlan 側で同じ地点だと分かる。<br>
+    マンホールのキーは <code>index.html:3347</code> の <code>cardCodeKey</code> をそのまま写して数えた
+    （1,267件すべて正規化でき、名前＠座標へのフォールバックは0件）。
 </p>
 
-<h3 class="sub">1.2 座標の精度（仕様 §4.3・§5.2）</h3>
-
-<p class="note">
-    仕様は小数点以下4桁を最低ライン、5桁を推奨とし、3桁以下だと<b>警告を出すが読み込みは続ける</b>と決めている。
-    どこまで当たるかを全件数えた。判定は緯度と経度の桁数の少ない方で行っている。
-</p>
+<h3 class="sub">2.2 座標の精度（仕様 §4.3・§5.2）</h3>
 
 <table>
 <tr><th>種別</th><th class="num">3桁以下</th><th class="num">割合</th><th>内訳</th></tr>
@@ -213,98 +239,189 @@
 <tr><td>ポケふた</td><td class="num">3</td><td class="num">0.6%</td><td>3桁ちょうどが3件</td></tr>
 <tr><td>カード配布</td><td class="num">4</td><td class="num">0.3%</td><td>3桁ちょうどが3件、2桁が1件</td></tr>
 <tr><td>マンホール</td><td class="num">65</td><td class="num">5.1%</td><td>3桁ちょうどが60件</td></tr>
-<tr><td>お城</td><td class="num">801</td><td class="num">3.4%</td><td><b>うち675件は度分秒がちょうど割り切れた値</b>（下記）</td></tr>
+<tr><td>お城</td><td class="num">801</td><td class="num">3.4%</td><td><b>うち675件は度分秒がちょうど割り切れた値</b></td></tr>
 <tr><th>合計</th><th class="num">873</th><th class="num">2.5%</th><th>実質的に粗いのは最大198件（0.56%）</th></tr>
 </table>
 
 <div class="impl">
     <b>桁数が少ない＝精度が低い、ではない。</b>城の座標は度分秒から変換されていて、
     たとえば「丸山城 33.932777777778, <b>131.0</b>」は経度が 131°0′0″ ちょうどというだけで、
-    値そのものは秒（約31m）の精度を持っている。<br>
-    実際に <code>値×3600</code> が整数になるか（＝秒の整数倍か）で分けると、
-    お城の801件のうち675件はこれに当たる。残り198件が3桁ちょうど（約111m）の丸めで、
-    全体の 0.56% にとどまる。<br>
-    さらに仕様 §4.3 は「訪問順序の決定という目的だけを見れば3桁でも結論は変わらない」と明記しているので、
+    値そのものは秒（約31m）の精度を持っている。
+    <code>値×3600</code> が整数になるか（＝秒の整数倍か）で分けると、801件のうち675件がこれに当たる。<br>
+    残り198件が3桁ちょうど（約111m）の丸めで、全体の 0.56%。
+    仕様 §4.3 が「訪問順序の決定という目的だけを見れば3桁でも結論は変わらない」と明記しているので、
     <b>この198件も順序を狂わせない。</b>地図にピンを打ったときのズレだけの話。
 </div>
 
-<h3 class="sub">1.3 仕様の列と、お気に入りの対応</h3>
+<h3 class="sub">2.3 測地系（仕様 §5.3・今回追加）</h3>
+
+<p class="note">
+    版 1.1 で「測地系の取り違えは値から判別がつかないので<b>出力側で担保してください</b>」と
+    明記された。旧日本測地系なら約400m（東京付近450m）ずれる。<br>
+    取得元が独立したデータセット同士で「同じ住所」に置かれた地点の距離を測った。
+    片方が旧日本測地系なら、距離が400m前後の帯に固まるはず。
+</p>
 
 <table>
-<tr><th>仕様の列</th><th>区分</th><th>どこから取るか</th><th>備考</th></tr>
-<tr><td><code>name</code></td><td>必須</td><td><code>itemDisplayName(item)</code></td>
-    <td class="ok">そのまま使える。食べログだけは <code>name</code> 全体（平均26.6字）ではなく店名だけになる</td></tr>
-<tr><td><code>lat</code> / <code>lng</code></td><td>必須</td><td><code>item.coords[1]</code> / <code>[0]</code></td>
-    <td class="ok"><code>toFixed(5)</code> を通して推奨桁に揃える</td></tr>
-<tr><td><code>id</code></td><td>任意</td><td>お気に入りキー</td>
-    <td class="ok">重複0を実測済み。次に書き出したとき同じ地点だと分かる</td></tr>
-<tr><td><code>note</code></td><td>任意</td><td>種別ラベル＋住所</td>
-    <td class="ok">処理には使われない。TravelPlan の画面で見分けが付く</td></tr>
-<tr><td><code>priority</code></td><td>任意</td><td>—</td>
-    <td>お気に入りに「必ず行く／行けたら行く」の区別が無い。<b>枠に割り当てるか、既定の <code>want</code> のままにするか要判断</b></td></tr>
-<tr><td><code>stay</code></td><td>任意</td><td>—</td>
-    <td>滞在時間を持っていない。既定 <code>0</code> になる。種別ごとの目安を入れる案は §4</td></tr>
-<tr><td><code>role</code></td><td>任意</td><td>—</td>
-    <td>出発地・帰着地の情報が無い。<b>書き出す画面で指定させる</b>（§4）</td></tr>
-<tr><td><code>day</code></td><td>任意</td><td>—</td><td>使わない。TravelPlan 側の自動割り当てに任せる</td></tr>
+<tr><th>組み合わせ</th><th class="num">組数</th><th class="num">距離の中央値</th>
+    <th class="num">100m以内</th><th class="num">300〜500m</th><th>判定</th></tr>
+<tr><td>ポケふた × 道の駅<br><span style="color:#888;font-size:11px">どちらも番地まで入った住所</span></td>
+    <td class="num">21</td><td class="num">48 m</td><td class="num">20</td><td class="num ok">0</td>
+    <td class="ok">同じ測地系。400mの帯に1組も無い</td></tr>
+<tr><td>お城 × マンホール<br><span style="color:#888;font-size:11px">マンホール側の住所が市区町村止まり</span></td>
+    <td class="num">107</td><td class="num">614 m</td><td class="num">7</td><td class="num">20</td>
+    <td>判定に使えない（下記）</td></tr>
 </table>
 
-<h3 class="sub">1.4 実装するときに引っかかる点</h3>
-
 <div class="impl warn">
-    <b>① データの遅延ロード。</b><code>startDataLoading()</code> は6つのデータファイルを直列で読む作りで、
-    <code>favCollect()</code> は届いた分（<code>searchIndex</code>）しか拾えない。
-    城が届く前に書き出すと、城のお気に入りが黙って落ちる。<br>
-    → 保存しているキーの数（<code>Object.keys(favStore.items).length</code>）と、
-    拾えた行数を突き合わせ、足りない間はボタンを押せなくするか「読み込み中」を出す。
+    <b>測地系は「2種別で確認済み、残り4種別は取得元から推定」までしか言えない。</b><br>
+    ポケふた×道の駅は、両方とも番地まで入った住所で突き合わせられたので判定できた。中央値48m、
+    21組中20組が100m以内、400mの帯は0組。<b>この2つは同じ測地系。</b><br>
+    お城×マンホールは、マンホール側の住所が市区町村止まり（<code>name</code> が「高知県 香南市」の形）なので、
+    距離のばらつきは住所の粒度そのもの。中央値614mで100m以内も7組あり、
+    <b>400m前後に固まってはいないので取り違えの兆候は無いが、確認にもならない。</b><br>
+    食べログ・カード配布は、他の種別と同じ住所に立つ地点が無く、この方法では組が作れなかった。<br>
+    取得元からの推定は次のとおり。いずれも2001年以降の現行ソースで、旧日本測地系を使う理由が無い。
+    <ul style="margin:6px 0 0;padding-left:18px">
+        <li>食べログ … 店舗ページの <code>[data-print-url]</code> の lat/lng</li>
+        <li>カード配布 … 国土地理院 住所検索API（世界測地系）</li>
+        <li>お城 … Wikipedia API の座標</li>
+        <li>マンホール・ポケふた・道の駅 … 各公式サイト</li>
+    </ul>
+    加えて GeoJSON（RFC 7946）は座標系を WGS84 と定めており、6つとも GeoJSON として作られている。<br>
+    <b>断定はしない。</b>気になるなら、書き出したファイルを TravelPlan で開いて、
+    知っている場所が地図上で400mずれていないかを1度見るのが確実。
 </div>
 
-<div class="impl warn">
-    <b>② <code>favCollect()</code> は表示設定で絞られる。</b>
-    設定で消した種別と、食べログの部門の絞り込みが効く（「設定が土台」という既存の決まり）。
-    このまま書き出すと、設定で消しているだけの地点がファイルから消える。<br>
-    → 書き出しは<b>設定を無視して全件出す</b>のが素直だと考えている。ただし既存の決まりを崩すので、
-    §4 の画面では件数を出して「いま何件出るか」を必ず見せる形にした。
-</div>
-
-<div class="impl warn">
-    <b>③ ファイルの受け渡しかたは実機でしか決められない。</b>
-    <code>manifest.json</code> は <code>"display": "standalone"</code>。
-    ホーム画面から起動した状態の iOS では、<code>&lt;a download&gt;</code> が動かないという報告が
-    Apple 開発者フォーラムに複数ある。Web Share API でファイルを渡す方法も、
-    <code>navigator.canShare({files})</code> が false になる報告と、iOS 15 で通るという報告が両方あって定まらない。<br>
-    → <b>私の側では確かめようがないので、§6 に実際に動くボタンを置いた。</b>
-    このページを iPhone で開いて3つ押し、どれが通るかだけ教えてほしい。
-</div>
-
-<h2 class="sec">2. 出力の中身（実データ）</h2>
+<h3 class="sub">2.4 同一座標の警告（仕様 §5.2）</h3>
 
 <p class="note">
-    下は実際のデータファイルから取った6件を、仕様どおりに組み立てたもの。
-    <span style="color:#c77700">→</span> がタブ。座標は <code>toFixed(5)</code> を通した値そのまま。
+    仕様は「同一座標の地点が複数」を重複出力の検出として警告する。出力する5桁で数えた。
 </p>
 
-<pre class="out"><span class="hd">name<span class="tab">→</span>lat<span class="tab">→</span>lng<span class="tab">→</span>role<span class="tab">→</span>stay<span class="tab">→</span>priority<span class="tab">→</span>note<span class="tab">→</span>id</span>
-二条城<span class="tab">→</span>35.01416<span class="tab">→</span>135.74750<span class="tab">→</span>via<span class="tab">→</span>90<span class="tab">→</span>want<span class="tab">→</span>お城 / 京都府京都市中京区二条城町<span class="tab">→</span>castle:二条城@135.7475,35.0142
-芥川山城<span class="tab">→</span>34.88083<span class="tab">→</span>135.58806<span class="tab">→</span>via<span class="tab">→</span>90<span class="tab">→</span>want<span class="tab">→</span>お城 / 大阪府高槻市大字原<span class="tab">→</span>castle:芥川山城@135.5881,34.8808
-飯盛山城<span class="tab">→</span>34.72641<span class="tab">→</span>135.65367<span class="tab">→</span>via<span class="tab">→</span>90<span class="tab">→</span>want<span class="tab">→</span>お城 / 大阪府大東市大字北条<span class="tab">→</span>castle:飯盛山城@135.6537,34.7264
-道の駅びわ湖大橋米プラザ<span class="tab">→</span>35.12463<span class="tab">→</span>135.92818<span class="tab">→</span>via<span class="tab">→</span>30<span class="tab">→</span>want<span class="tab">→</span>道の駅 / 滋賀県大津市今堅田3-1-1<span class="tab">→</span>michi:19410
-ギャラドス<span class="tab">→</span>34.99810<span class="tab">→</span>135.89460<span class="tab">→</span>via<span class="tab">→</span>10<span class="tab">→</span>want<span class="tab">→</span>ポケふた / 滋賀県大津市由美浜<span class="tab">→</span>pokefuta:105
-らーめん弥七（らーめん やしち）<span class="tab">→</span>34.71130<span class="tab">→</span>135.49974<span class="tab">→</span>via<span class="tab">→</span>60<span class="tab">→</span>want<span class="tab">→</span>食べログ / 大阪府大阪市北区豊崎3-4-8<span class="tab">→</span>castle:—</pre>
+<table>
+<tr><th>種別</th><th class="num">同一座標に乗る地点</th><th>中身</th></tr>
+<tr><td>食べログ</td><td class="num">49</td><td>同じ建物に入っている店。データとしては正しい</td></tr>
+<tr><td>その他5種別</td><td class="num ok">0</td><td>—</td></tr>
+<tr><th>全種別まとめて</th><th class="num">53</th><th>35,323件の 0.15%（種別をまたぐ一致が4件）</th></tr>
+</table>
 
 <p class="note">
-    最終行の <code>id</code> は紙面に収めるため省略した。実際は
-    <code>shop:https://tabelog.com/osaka/A2701/A270101/27003232</code> が入る。
+    同じビルの店を2つお気に入りに入れると TravelPlan 側で警告が出る、というだけ。
+    読み込みは続くので実害は無いが、<b>知らずに見ると驚くので先に書いておく。</b>
 </p>
 
-<h2 class="sec">3. 入口をどこに置くか（3案）</h2>
+<h2 class="sec">3. 出力の中身（版 1.1 の5列）</h2>
+
+<table>
+<tr><th>列</th><th>区分</th><th>どこから取るか</th></tr>
+<tr><td><code>name</code></td><td>必須</td><td><code>itemDisplayName(item)</code>。食べログだけ <code>name</code> 全体ではなく店名だけになる</td></tr>
+<tr><td><code>lat</code> / <code>lng</code></td><td>必須</td><td><code>item.coords[1]</code> / <code>[0]</code> を <code>toFixed(5)</code>（仕様の推奨桁）</td></tr>
+<tr><td><code>note</code></td><td>任意</td><td>種別ラベル＋住所。順序計算には使われず画面表示だけ（§3.2）</td></tr>
+<tr><td><code>id</code></td><td>任意</td><td>お気に入りキー。重複0を実測済み</td></tr>
+<tr><td class="del">role / stay / day / priority</td><td>—</td><td><b>版 1.1 で削除された。</b>お気に入りが持っていなかった情報なので、出す必要が無くなった</td></tr>
+</table>
+
+<p class="note">
+    実際のデータファイルから取った6件を、版 1.1 どおりに組み立てたもの。
+    <span style="color:#c77700">→</span> がタブ。
+</p>
+
+<pre class="out"><span class="hd">name<span class="tab">→</span>lat<span class="tab">→</span>lng<span class="tab">→</span>note<span class="tab">→</span>id</span>
+二条城<span class="tab">→</span>35.01416<span class="tab">→</span>135.74750<span class="tab">→</span>お城 / 京都府京都市中京区二条城町<span class="tab">→</span>castle:二条城@135.7475,35.0142
+芥川山城<span class="tab">→</span>34.88083<span class="tab">→</span>135.58806<span class="tab">→</span>お城 / 大阪府高槻市大字原<span class="tab">→</span>castle:芥川山城@135.5881,34.8808
+飯盛山城<span class="tab">→</span>34.72641<span class="tab">→</span>135.65367<span class="tab">→</span>お城 / 大阪府大東市大字北条<span class="tab">→</span>castle:飯盛山城@135.6537,34.7264
+道の駅びわ湖大橋米プラザ<span class="tab">→</span>35.12463<span class="tab">→</span>135.92818<span class="tab">→</span>道の駅 / 滋賀県大津市今堅田3-1-1<span class="tab">→</span>michi:19410
+ギャラドス<span class="tab">→</span>34.99810<span class="tab">→</span>135.89460<span class="tab">→</span>ポケふた / 滋賀県大津市由美浜<span class="tab">→</span>pokefuta:105
+らーめん弥七（らーめん やしち）<span class="tab">→</span>34.71130<span class="tab">→</span>135.49974<span class="tab">→</span>食べログ / 大阪府大阪市北区豊崎3-4-8<span class="tab">→</span>shop:https://tabelog.com/…/27003232</pre>
+
+<p class="note">
+    最終行の <code>id</code> は紙面に収めるため中略した。実際は
+    <code>shop:https://tabelog.com/osaka/A2701/A270101/27003232</code> が入る。<br>
+    仕様 §7 は「必須列のみの最小構成が基本形」としているので、
+    <code>note</code> と <code>id</code> を落とした3列だけの出力も選べるようにする（§4）。
+</p>
+
+<h2 class="sec">4. 書き出しシート（版 1.1 で大幅に簡単になった）</h2>
+
+<div class="impl diff">
+    <b>前回のモックから消したもの：</b>「出発地」の3択（現在地／検索ピン／指定しない）、
+    出発地の座標表示、「出発地に戻る（往復）」トグル、「滞在時間の目安」の2択と既定値の説明。
+    <b>いずれも版 1.1 で列ごと削除されたため、書き出す画面で聞く理由が無くなった。</b>
+    残ったのは「何を出すか」と「どう出すか」だけ。
+</div>
+
+<div class="screens">
+<div class="screen-wrap">
+    <p class="screen-cap"><b>書き出しシート</b>　聞くのは4つだけになった。
+    出発地も日程もアプリ側で決めるので、ここでは地点の集合だけを確定させる。</p>
+    <div class="screen">
+        <div class="fakebar"><div class="fb-btn"></div><div class="fb-search">スポットを検索</div><div class="fb-btn"></div></div>
+        <div class="panel">
+            <div class="panel-head"><div class="panel-handle"></div></div>
+            <div class="lords-head">
+                <button class="lords-iconbtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <div class="lords-head-title">書き出し</div>
+                <button class="lords-iconbtn" style="font-size:17px;">×</button>
+            </div>
+            <div class="lords-scroll">
+                <div class="exp-sec">出す範囲</div>
+                <div class="exp-row"><span class="fav-dot" style="background:var(--mk1);width:10px;height:10px"></span>
+                    関西<span class="rt">6件</span></div>
+                <div class="exp-row">表示設定で消している種別も出す<span class="sw on"></span></div>
+                <p class="exp-sub">オフにすると、いま地図に出していない種別が抜けます</p>
+
+                <div class="exp-sec">列</div>
+                <div class="seg"><span class="on">note と id を付ける</span><span>3列だけ</span></div>
+                <p class="exp-sub">
+                    note … 種別と住所（TravelPlan の画面に出るだけ）<br>
+                    id … 同じリストを次に書き出したとき、同じ地点だと分かるキー
+                </p>
+
+                <div class="exp-sec">形式</div>
+                <div class="seg"><span class="on">TSV</span><span>CSV</span><span>JSON</span></div>
+
+                <div class="exp-sec">ファイル名</div>
+                <div class="exp-row" style="font-size:12px;color:#666">関西.tsv<span class="rt">日付を付ける</span></div>
+
+                <div class="exp-cnt">6行（ヘッダ行を除く）／ 0.9 KB</div>
+                <div class="exp-btns">
+                    <button class="exp-btn primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                        共有 / 保存
+                    </button>
+                    <button class="exp-btn sub">本文をコピー</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="impl">
+    <b>ファイル名に日付を付けるかは §1.1 の読み方しだい。</b>
+    版 1.1 はリストを「資産として蓄積し、旅程はその都度アプリ上で組む」ものと位置づけた。
+    その読みに従うなら、同じリストは<b>同じ名前で上書きしていく</b>（<code>関西.tsv</code>）ほうが素直で、
+    日付入り（<code>関西_20260820.tsv</code>）はスナップショットを溜める運用になる。
+    既定は日付なし、トグルで付けられる形にしてある。
+</div>
+
+<h2 class="sec">5. 入口をどこに置くか（3案）</h2>
+
+<p class="note">
+    ここは版 1.1 でも変わらない。ただし<b>推す理由は強くなった</b> —
+    §1.1 が「1ファイル＝1つの地点リスト、複数の旅程で使い回す」と定めたことで、
+    <b>枠＝地点リスト</b>という対応がそのまま仕様の単位になったため。
+</p>
 
 <div class="screens">
 
 <div class="screen-wrap">
-    <p class="screen-cap"><b>案A：お気に入り一覧のヘッダーに置く</b><br>
-    いま絞り込んでいる状態（枠のチップ・検索語）がそのまま書き出す対象になる。
-    枠＝旅程として使えるので、仕様の「1ファイル＝1旅程」と噛み合う。</p>
+    <p class="screen-cap"><b>案A：お気に入り一覧のヘッダーに置く（推し）</b><br>
+    いま絞り込んでいる枠がそのまま書き出す対象になる。
+    枠に名前を付けて使い分ける仕組みが既にあり、仕様の「1ファイル＝1つの地点リスト」と1対1で対応する。</p>
     <div class="screen">
         <div class="fakebar"><div class="fb-btn"></div><div class="fb-search">スポットを検索</div><div class="fb-btn"></div></div>
         <div class="panel">
@@ -402,8 +519,8 @@
 
 <div class="screen-wrap">
     <p class="screen-cap"><b>案C：一覧に選択モードを足す</b><br>
-    書き出しボタンを押すと行にチェックが出て、任意の地点だけ選べる。
-    いちばん自由だが、タップが増える。枠で足りるなら要らない。</p>
+    行にチェックを出して任意の地点だけ選ぶ。いちばん自由だがタップが増える。
+    §1.1 が「リストを丸ごと使い回す」方針を示したので、<b>優先度はさらに下がった。</b></p>
     <div class="screen">
         <div class="fakebar"><div class="fb-btn"></div><div class="fb-search">スポットを検索</div><div class="fb-btn"></div></div>
         <div class="panel">
@@ -450,97 +567,43 @@
 
 </div>
 
-<div class="impl good">
-    <b>案Aを推す。</b>枠に名前を付けて使い分ける仕組みが既にあり、
-    仕様の「1ファイル＝1旅程」と1対1で対応する。絞り込みチップを選んでから書き出しを押すだけで
-    対象が決まるので、選択モード（案C）を作らなくても目的を果たせる。
-    案Cは、同じ枠の中から一部だけ出したくなったときに後から足せばいい。
-</div>
-
-<h2 class="sec">4. 書き出しシート</h2>
-
-<p class="note">
-    案Aの書き出しボタンを押したあとに出す画面。仕様のうち、お気に入りが持っていない
-    <code>role</code>（出発地・帰着地）と <code>stay</code>（滞在時間）をここで補う。
-</p>
-
-<div class="screens">
-<div class="screen-wrap">
-    <p class="screen-cap"><b>書き出しシート</b>　出発地の指定と往復トグルで <code>role=start</code> / <code>end</code> の行を作る。
-    往復をオンにすると、同じ座標の行が先頭と末尾の2行として出る（仕様 §3.2 の指定どおり）。</p>
-    <div class="screen">
-        <div class="fakebar"><div class="fb-btn"></div><div class="fb-search">スポットを検索</div><div class="fb-btn"></div></div>
-        <div class="panel">
-            <div class="panel-head"><div class="panel-handle"></div></div>
-            <div class="lords-head">
-                <button class="lords-iconbtn">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-                </button>
-                <div class="lords-head-title">書き出し</div>
-                <button class="lords-iconbtn" style="font-size:17px;">×</button>
-            </div>
-            <div class="lords-scroll">
-                <div class="exp-sec">出す範囲</div>
-                <div class="exp-row"><span class="fav-dot" style="background:var(--mk1);width:10px;height:10px"></span>
-                    関西<span class="rt">6件</span></div>
-                <div class="exp-row" style="color:#888">表示設定で消している種別も出す<span class="sw on"></span></div>
-
-                <div class="exp-sec">出発地</div>
-                <div class="seg"><span class="on">現在地</span><span>検索ピン</span><span>指定しない</span></div>
-                <div class="exp-row" style="font-size:12px;color:#666">
-                    大阪府大阪市北区梅田<span class="rt">34.70251, 135.49596</span></div>
-                <div class="exp-row">出発地に戻る（往復）<span class="sw on"></span></div>
-
-                <div class="exp-sec">滞在時間の目安</div>
-                <div class="seg"><span class="on">種別ごとの既定</span><span>入れない</span></div>
-                <div class="exp-row" style="font-size:12px;color:#666">
-                    城90分 / 道の駅30分 / 食べログ60分 / ふた・カード10分</div>
-
-                <div class="exp-sec">形式</div>
-                <div class="seg"><span class="on">TSV</span><span>CSV</span><span>JSON</span></div>
-
-                <div class="exp-cnt">8行（地点6件＋出発地・帰着地）／ 1.1 KB</div>
-                <div class="exp-btns">
-                    <button class="exp-btn primary">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
-                        共有 / 保存
-                    </button>
-                    <button class="exp-btn sub">本文をコピー</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-
-<div class="impl">
-    <b>滞在時間の既定値には根拠が無い。</b>上の「城90分／道の駅30分／食べログ60分／ふた・カード10分」は
-    私が置いただけの数字で、実測でも仕様でもない。仕様上 <code>stay</code> は訪問順序に影響せず
-    日ごとの区切りにだけ使われるので、<b>「入れない」（既定の0）を初期値にするほうが正直</b>だとも考えている。
-    どちらを初期値にするか決めてほしい。
-</div>
-
-<h2 class="sec">5. 書き出したファイルの名前</h2>
-
-<p class="note">
-    枠の名前と日付から作る案。仕様は拡張子 <code>.tsv</code> を推奨としている。
-</p>
-<pre class="out">関西_20260820.tsv
-東北_20260820.tsv
-お気に入り_20260820.tsv     ← 枠1の初期名のまま使っている場合</pre>
-
-<h2 class="sec">6. 出しかたの実機テスト</h2>
+<h2 class="sec">6. 実装するときに引っかかる点</h2>
 
 <div class="impl warn">
-    ここだけは私の側で確かめようがない。<b>このページを iPhone のホーム画面から起動した状態と、
-    Safari で普通に開いた状態の両方で</b>下の3つを押して、どれが通るか教えてほしい。
-    通ったものを §4 の「共有 / 保存」ボタンの中身にする。
+    <b>① データの遅延ロード。</b><code>startDataLoading()</code> は6つのデータファイルを直列で読む作りで、
+    <code>favCollect()</code> は届いた分（<code>searchIndex</code>）しか拾えない。
+    城が届く前に書き出すと、城のお気に入りが黙って落ちる。<br>
+    → 保存しているキーの数（<code>Object.keys(favStore.items).length</code>）と
+    拾えた行数を突き合わせ、足りない間はボタンを押せなくするか「読み込み中」を出す。
+</div>
+
+<div class="impl warn">
+    <b>② <code>favCollect()</code> は表示設定で絞られる。</b>
+    設定で消した種別と、食べログの部門の絞り込みが効く（「設定が土台」という既存の決まり）。
+    このまま書き出すと、設定で消しているだけの地点がファイルから消える。<br>
+    → §4 のシートでトグルにした。既定はオン（設定を無視して全件出す）。
+</div>
+
+<div class="impl warn">
+    <b>③ ファイルの受け渡しかたは実機でしか決められない。</b>
+    <code>manifest.json</code> は <code>"display": "standalone"</code>。
+    ホーム画面から起動した状態の iOS では <code>&lt;a download&gt;</code> が動かないという報告があり、
+    Web Share API も <code>navigator.canShare({files})</code> が false になる報告と
+    iOS 15 で通るという報告が両方あって定まらない。<br>
+    → 私の側では確かめようがないので、§7 に実際に動くボタンを置いた。
+</div>
+
+<h2 class="sec">7. 出しかたの実機テスト</h2>
+
+<div class="impl warn">
+    <b>このページを iPhone のホーム画面から起動した状態と、Safari で普通に開いた状態の両方で</b>
+    下の3つを押して、どれが通るか教えてほしい。通ったものを §4 の「共有 / 保存」の中身にする。
 </div>
 
 <div class="try">
-    <h4>上の §2 と同じ6件を、実際に書き出してみる</h4>
-    <p>押した結果（成功・失敗・エラーの中身）がボタンの下に出る。ファイルが保存できたか、
-       共有シートが開いたか、何も起きなかったかを見てほしい。</p>
+    <h4>§3 と同じ6件を、版 1.1 の5列で実際に書き出してみる</h4>
+    <p>押した結果がボタンの下に出る。ファイルが保存できたか、共有シートが開いたか、
+       何も起きなかったかを見てほしい。</p>
     <div class="try-btns">
         <button id="b-dl">① ダウンロード</button>
         <button id="b-share">② 共有シート</button>
@@ -549,27 +612,36 @@
     <div class="try-out" id="try-out"></div>
 </div>
 
-<h2 class="sec">7. 決めてほしいこと</h2>
+<h2 class="sec">8. 決めてほしいこと</h2>
+
+<p class="note">
+    版 1.0 のときに挙げた「<code>stay</code> の初期値」「<code>priority</code> の決めかた」は、
+    列ごと削除されたので<b>論点そのものが消えた。</b>残るのは次の5つ。
+</p>
 
 <table>
 <tr><th>#</th><th>論点</th><th>私の案</th></tr>
-<tr><td>1</td><td>入口をどこに置くか（案A / B / C）</td><td>案A（お気に入り一覧のヘッダー）</td></tr>
-<tr><td>2</td><td>表示設定で消した種別も書き出すか</td><td>出す。ただし件数を画面に出して分かるようにする</td></tr>
-<tr><td>3</td><td><code>stay</code> の初期値</td><td>迷っている。根拠のある数字が無いので「入れない」寄り</td></tr>
-<tr><td>4</td><td><code>priority</code> をどう決めるか</td><td>全部 <code>want</code>。枠に意味を持たせない既存方針を崩さない</td></tr>
-<tr><td>5</td><td>出しかた（§6 の結果しだい）</td><td>実機で通ったものを採る</td></tr>
+<tr><td>1</td><td>入口をどこに置くか（案A / B / C）</td><td>案A。§1.1 の「1ファイル＝1つの地点リスト」と枠が1対1で対応するため</td></tr>
+<tr><td>2</td><td>表示設定で消した種別も書き出すか</td><td>出す（既定オン）。トグルで切り替えられる</td></tr>
+<tr><td>3</td><td><code>note</code> と <code>id</code> を付けるか</td><td>付ける。<code>id</code> は使い回し運用で効く。3列だけも選べる</td></tr>
+<tr><td>4</td><td>ファイル名に日付を付けるか</td><td>既定は日付なし（<code>関西.tsv</code>）。§1.1 の資産的な運用に合わせる</td></tr>
+<tr><td>5</td><td>出しかた</td><td>§7 の実機結果しだい</td></tr>
 </table>
 
 <footer>
-    件数・欠落・重複・座標の桁数は、<code>data.js</code> / <code>pokemon.js</code> / <code>manhole.js</code> /
-    <code>mhcard.js</code> / <code>michi.js</code> / <code>castle.js</code> の全35,323件を数えた実測（2026-08-20）。
-    キーの組み立ては <code>index.html</code> の <code>favKeyOf</code> と同じ式を使っている。<br>
-    iOS の挙動については、Apple 開発者フォーラムに standalone の PWA でダウンロードが動かないという
-    報告があることまでを確認した。実機での可否は §6 で確かめる。
+    対象仕様は <code>sample/input-format.md</code> 版 1.1（2026-08-20）。<br>
+    件数・欠落・重複・座標の桁数・同一座標・測地系の距離は、<code>data.js</code> / <code>pokemon.js</code> /
+    <code>manhole.js</code> / <code>mhcard.js</code> / <code>michi.js</code> / <code>castle.js</code> の
+    全35,323件を数えた実測（2026-08-20）。
+    キーの組み立ては <code>index.html</code> の <code>favKeyOf</code>（L8233）と
+    <code>cardCodeKey</code>（L3347）をそのまま写している。<br>
+    測地系は6種別のうち2種別を実測で確認した段階で、残り4種別は取得元からの推定にとどまる（§2.3）。
+    iOS の挙動は Apple 開発者フォーラムに standalone の PWA でダウンロードが動かない報告があることまでを
+    確認した。実機での可否は §7 で確かめる。
 </footer>
 
 <script>
-/* §6 のテスト。§2 に載せた6件を実際に組み立てて出す。
+/* §7 のテスト。§3 に載せた6件を版 1.1 の5列で組み立てて出す。
    仕様どおり タブ区切り・UTF-8・1行目ヘッダ。 */
 const ROWS = [
     ['二条城', 35.01415556, 135.7475, 'castle:二条城@135.7475,35.0142', 'お城 / 京都府京都市中京区二条城町'],
@@ -581,12 +653,11 @@ const ROWS = [
      'shop:https://tabelog.com/osaka/A2701/A270101/27003232', '食べログ / 大阪府大阪市北区豊崎3-4-8'],
 ];
 function buildTsv() {
-    const head = ['name', 'lat', 'lng', 'role', 'stay', 'priority', 'note', 'id'].join('\t');
-    const body = ROWS.map(r =>
-        [r[0], r[1].toFixed(5), r[2].toFixed(5), 'via', '0', 'want', r[4], r[3]].join('\t'));
+    const head = ['name', 'lat', 'lng', 'note', 'id'].join('\t');
+    const body = ROWS.map(r => [r[0], r[1].toFixed(5), r[2].toFixed(5), r[4], r[3]].join('\t'));
     return [head, ...body].join('\n') + '\n';
 }
-const FILENAME = '関西_20260820.tsv';
+const FILENAME = '関西.tsv';
 const out = document.getElementById('try-out');
 function say(s) { out.textContent = s; }
 function mode() {
