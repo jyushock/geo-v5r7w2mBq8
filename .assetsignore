@@ -1,0 +1,4 @@
+# 配信対象から外すもの（書式は .gitignore と同じ）。
+# Worker のソースはアセットとして配る必要がなく、/worker/index.js で読めてしまうため外す。
+worker
+.assetsignore

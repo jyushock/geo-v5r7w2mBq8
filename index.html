@@ -1120,6 +1120,34 @@
         .favname-cnt { font-size: 11px; color: #999; width: 52px; text-align: right; flex-shrink: 0;
                        font-variant-numeric: tabular-nums; }
         .favname-note { font-size: 11px; color: #999; line-height: 1.7; padding: 2px 16px 10px; }
+        /* 設定の「同期」区画と、端末を追加／端末の管理のビュー（SYNC_MANUAL.md §5.6）。
+           作りは書き出しビュー（.fxp-*）に合わせ、常設のボタンは増やさず設定の中だけに入口を置く */
+        .sync-state { display: flex; align-items: center; gap: 9px; padding: 4px 16px 8px; }
+        .sync-dot { width: 9px; height: 9px; border-radius: 50%; background: #2E7D32; flex-shrink: 0; }
+        .sync-dot.off { background: #bbb; }
+        .sync-txt { font-size: 13px; color: #333; line-height: 1.5; }
+        .sync-txt small { display: block; font-size: 11px; color: #999; margin-top: 2px; }
+        #nearby-sync-add-view, #nearby-sync-devices-view { display: none; flex-direction: column;
+            min-height: 0; height: calc(100svh - 104px); max-height: 100%; }
+        #nearby-sync-add-view.open, #nearby-sync-devices-view.open { display: flex; }
+        .qr-wrap { display: flex; flex-direction: column; align-items: center; padding: 10px 16px 2px; }
+        .qr-box { width: 200px; height: 200px; background: #fff; border: 1px solid #eee; border-radius: 10px;
+                  padding: 8px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; }
+        .qr-box svg { width: 100%; height: 100%; display: block; }
+        .qr-code { font-family: ui-monospace, monospace; font-size: 19px; letter-spacing: 3px;
+                   color: #222; margin-top: 12px; }
+        .qr-cap { font-size: 11px; color: #999; margin-top: 3px; text-align: center; line-height: 1.6; }
+        .qr-timer { font-size: 11px; color: #E65100; margin-top: 8px; }
+        .dev-row { display: flex; align-items: center; gap: 10px; padding: 11px 16px;
+                   border-bottom: 1px solid #f4f4f4; }
+        .dev-n { font-size: 13px; color: #333; min-width: 0; }
+        .dev-n small { display: block; font-size: 11px; color: #999; margin-top: 2px; }
+        .dev-self { font-size: 10px; color: var(--ui-blue); background: #e8f0fe; border-radius: 4px;
+                    padding: 1px 5px; margin-left: 6px; }
+        .dev-x { margin-left: auto; border: 0; background: #f5f5f5; color: #666; font-size: 12px;
+                 border-radius: 8px; padding: 6px 10px; font-family: inherit; flex-shrink: 0; }
+        /* 取り消せない操作だけ赤。この赤が出るのはパネルの中だけで、地図には出ない */
+        .fxp-btn.danger { background: #fdeceb; color: #C62828; font-weight: 600; }
         /* お気に入り一覧ビュー（メニューパネル内の第10ビュー）。城主・都道府県・遺構と同じ枠組み */
         #nearby-fav-view { display: none; flex-direction: column; min-height: 0;
                            height: calc(100svh - 104px); max-height: 100%; }
@@ -1764,6 +1792,16 @@
             <label class="filter-chip"><input type="checkbox" id="check-show-origin" onchange="onShowOriginChange(this)">検索地点</label>
         </div>
         <div style="border-top:1px solid #f0f0f0;"></div>
+        <!-- 同期。入口は設定の中だけに置き、常設のボタンは増やさない（SYNC_MANUAL.md §5.6） -->
+        <div class="nearby-section-label">同期</div>
+        <div class="sync-state" id="sync-state"></div>
+        <div style="display:flex;gap:8px;padding:2px 16px 8px;">
+            <button class="fxp-btn primary" style="flex:1;height:38px;font-size:13px;"
+                    onclick="openSyncAddView()">端末を追加</button>
+            <button class="fxp-btn sub" style="flex:1;height:38px;font-size:13px;"
+                    onclick="openSyncDevicesView()">端末の管理</button>
+        </div>
+        <div style="border-top:1px solid #f0f0f0;"></div>
         <!-- バックアップ。お気に入りと表示設定をまとめて1ファイルにする（サーバーは通らない）。
              入力欄ではないので「お気に入りの名前」より上に置く（下は入力でキーボードが出る枠） -->
         <div class="nearby-section-label">バックアップ</div>
@@ -1981,6 +2019,66 @@
 
     <!-- お気に入りの書き出しビュー（第11ビュー）。
          対象は一覧で絞り込んだ結果そのままで、ここでは出しかただけを決める。 -->
+    <!-- 端末を追加（第12ビュー）。この画面を開いている間だけ引き継ぎ券が有効 -->
+    <div id="nearby-sync-add-view">
+        <div class="lords-head">
+            <button class="lords-iconbtn" onclick="closeSyncAddView()" title="設定へ戻る">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="lords-head-title">端末を追加</div>
+            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+        </div>
+        <div class="fxp-scroll">
+            <div class="qr-wrap">
+                <div class="qr-box" id="sync-qr"></div>
+                <div class="qr-code" id="sync-code">····</div>
+                <div class="qr-cap">追加する端末のカメラでQRを読みます。<br>
+                    読めないときは、その端末の「端末を追加」でこの8文字を入れます</div>
+                <div class="qr-timer" id="sync-timer"></div>
+            </div>
+            <div class="fxp-sec">参加した端末</div>
+            <div id="sync-joined"></div>
+            <p class="fxp-note">追加した端末とは、お気に入りと表示設定がこれ以降ずっと共有されます。
+                やめるときは「端末の管理」から外します。地図の表示位置だけは端末ごとに別々のままです。</p>
+            <div class="fxp-sec">コードを受け取る側</div>
+            <div style="padding:2px 16px 10px;display:flex;gap:8px;">
+                <input id="sync-join-input" type="text" inputmode="latin" autocomplete="off"
+                       placeholder="XXXX-XXXX" maxlength="9"
+                       style="flex:1;min-width:0;height:38px;border:1px solid #e3e3e3;border-radius:8px;
+                              background:#fafafa;font-size:14px;font-family:ui-monospace,monospace;
+                              padding:0 10px;box-sizing:border-box;">
+                <button class="fxp-btn sub" style="width:110px;height:38px;font-size:13px;"
+                        onclick="syncJoinByCode()">参加する</button>
+            </div>
+            <p class="fxp-note">この端末を、もう一方の端末に出ているコードで参加させます。</p>
+            <div style="padding:12px 16px 18px;">
+                <button class="fxp-btn sub" onclick="closeSyncAddView()">閉じる（QRを無効にする）</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 端末の管理（第13ビュー） -->
+    <div id="nearby-sync-devices-view">
+        <div class="lords-head">
+            <button class="lords-iconbtn" onclick="closeSyncDevicesView()" title="設定へ戻る">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="lords-head-title">端末の管理</div>
+            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+        </div>
+        <div class="fxp-scroll">
+            <div class="fxp-sec" id="sync-dev-sec">共有している端末</div>
+            <div id="sync-dev-list"></div>
+            <div class="fxp-sec">同期をやめる</div>
+            <div style="padding:2px 16px 14px;display:flex;flex-direction:column;gap:8px;">
+                <button class="fxp-btn sub" onclick="syncLeaveThisDevice()">この端末の同期をやめる</button>
+                <button class="fxp-btn danger" onclick="syncDeleteAccount()">保存領域を削除する</button>
+            </div>
+            <p class="fxp-note">「削除する」を押すと、サーバー上の共有内容と全端末の結び付きが消えます。
+                各端末に残っているお気に入りは消えません。</p>
+        </div>
+    </div>
+
     <div id="nearby-fav-export-view">
         <div class="lords-head">
             <button class="lords-iconbtn" onclick="closeFavExportView()" title="お気に入りの一覧へ戻る">
@@ -2128,8 +2226,436 @@
         syncPush(key);
     }
     function storeSetJson(key, obj) { storeSet(key, JSON.stringify(obj)); }
-    /* サーバーへ送る口。同期を入れるまでは何もしない（SYNC_MANUAL.md の Phase 2 で中身を書く）。 */
-    function syncPush(key) { /* 未実装 */ }
+    /* ══ サーバー同期 ══════════════════════════════════════════════
+       設計は SYNC_MANUAL.md。要点だけ再掲する。
+         ・ログイン画面は無い。最初にお気に入りか表示設定を保存した時点で、サーバーが
+           無記名のキーを発行して HttpOnly Cookie に入れる（/api/enroll）
+         ・localStorage が正。画面は今までどおり即座に立ち上がり、送受信は裏で回す
+         ・サーバー上のキーは4つ。favorites / settingsState / prefs は全端末で共有し、
+           mapState だけ端末ごと（端末によって意味が違うため）
+         ・送信には rev（サーバー側の更新回数）を添える。食い違えば取り込んでから送り直す
+
+       競合したときにどちらを採るか:
+         favorites … 項目ごとの at で新しいほうを採って混ぜる（墓標があるので削除も伝わる）
+         それ以外  … この端末の値を採る。ユーザーがいま操作した端末だから */
+    const SYNC_PREFS_KEYS = ['mapTileSource', 'hotelRadius', 'hotelSort', 'travelMode', 'nearbyTypeFilterOff'];
+    const SYNC_META_KEY = 'syncMeta';        // 同期の覚え書き。バックアップの対象には入れない
+    const SYNC_KEEPALIVE_MAX = 60000;        // pagehide で送るときの本文の上限（ブラウザ側の制限）
+
+    function syncMeta() {
+        try { return JSON.parse(localStorage.getItem(SYNC_META_KEY)) || {}; } catch { return {}; }
+    }
+    function syncMetaSet(patch) {
+        const m = Object.assign(syncMeta(), patch);
+        try { localStorage.setItem(SYNC_META_KEY, JSON.stringify(m)); } catch {}
+        return m;
+    }
+    function syncOn() { return syncMeta().on === true; }
+    function syncRev(k) { return Number((syncMeta().rev || {})[k]) || 0; }
+    function syncSetRev(k, v) { const rev = syncMeta().rev || {}; rev[k] = Number(v) || 0; syncMetaSet({ rev }); }
+
+    function syncServerKey(key) {
+        if (key === 'favorites' || key === 'settingsState' || key === 'mapState') return key;
+        return SYNC_PREFS_KEYS.includes(key) ? 'prefs' : null;
+    }
+    function syncValueOf(sk) {
+        if (sk !== 'prefs') return storeGet(sk);
+        const o = {};
+        SYNC_PREFS_KEYS.forEach(k => { const v = storeGet(k); if (v != null) o[k] = v; });
+        return JSON.stringify(o);
+    }
+    // サーバー→ローカル。ここでは localStorage に直接書く（書いた分を送り返さないため）
+    function syncApplyValue(sk, value) {
+        if (typeof value !== 'string') return false;
+        try {
+            if (sk === 'prefs') {
+                const o = JSON.parse(value);
+                if (!o || typeof o !== 'object') return false;
+                SYNC_PREFS_KEYS.forEach(k => { if (typeof o[k] === 'string') localStorage.setItem(k, o[k]); });
+                return true;
+            }
+            localStorage.setItem(sk, value);
+            return true;
+        } catch (e) { console.warn('[sync]', sk, e); return false; }
+    }
+
+    function syncFetch(path, options) {
+        const opt = Object.assign({ credentials: 'same-origin' }, options || {});
+        // CSRF よけの独自ヘッダ。他サイトから付けるには事前確認が要り、こちらは許可していない
+        opt.headers = Object.assign({ 'x-sync': '1' }, opt.headers || {});
+        if (opt.body) opt.headers['content-type'] = 'application/json';
+        return fetch('./api/' + path, opt);
+    }
+
+    let syncDirty = new Set(), syncTimer = null, syncTimerAt = 0, syncBusy = false;
+
+    function syncPush(key) {
+        const sk = syncServerKey(key);
+        if (!sk) return;
+        /* まだ保存領域が無いときは、お気に入りか表示設定を触った場合だけ作る。
+           地図を動かしただけの訪問者にまで行を作らないため（SYNC_MANUAL.md §6）。 */
+        if (!syncOn() && sk !== 'favorites' && sk !== 'settingsState') return;
+        syncDirty.add(sk);
+        // 地図位置は動かすたびに保存されるので、送るのは30秒に1回と画面を離れるとき
+        syncSchedule(sk === 'mapState' ? 30000 : 2000);
+    }
+    function syncSchedule(delay) {
+        const at = Date.now() + delay;
+        if (syncTimer && syncTimerAt <= at) return;
+        clearTimeout(syncTimer);
+        syncTimerAt = at;
+        syncTimer = setTimeout(() => { syncTimer = null; syncFlush(); }, delay);
+    }
+    function syncFlushNow(keepalive) {
+        if (syncTimer) { clearTimeout(syncTimer); syncTimer = null; }
+        syncFlush(keepalive);
+    }
+
+    async function syncEnroll() {
+        const res = await syncFetch('enroll', { method: 'POST', body: '{}' });
+        if (!res.ok) return false;
+        syncMetaSet({ on: true, rev: {} });
+        syncUpdateUi();
+        return true;
+    }
+
+    async function syncFlush(keepalive) {
+        if (syncBusy || !syncDirty.size) return;
+        if (navigator.onLine === false) return;         // 溜めたまま online を待つ
+        syncBusy = true;
+        const keys = [...syncDirty];
+        try {
+            if (!syncOn() && !(await syncEnroll())) { syncBusy = false; return; }
+            syncDirty.clear();
+            const items = keys.map(sk => ({
+                key: sk, value: syncValueOf(sk), baseRev: syncRev(sk),
+                scope: sk === 'mapState' ? 'device' : 'shared',
+            })).filter(it => typeof it.value === 'string');
+            if (!items.length) { syncBusy = false; return; }
+            const body = JSON.stringify({ items });
+            const opt = { method: 'PUT', body };
+            if (keepalive && body.length < SYNC_KEEPALIVE_MAX) opt.keepalive = true;
+            const res = await syncFetch('state', opt);
+            if (res.status === 401) {                    // 端末が外された
+                syncMetaSet({ on: false, rev: {} });
+                syncUpdateUi();
+                return;
+            }
+            if (!res.ok) { keys.forEach(k => syncDirty.add(k)); return; }
+            const data = await res.json();
+            for (const [sk, r] of Object.entries(data.results || {})) {
+                if (!r) continue;
+                if (r.conflict) {
+                    if (sk === 'favorites' && typeof r.value === 'string') favMergeFromServer(r.value);
+                    syncSetRev(sk, r.rev);
+                    syncDirty.add(sk);                   // 取り込んだ内容で送り直す
+                } else if (r.rev) {
+                    syncSetRev(sk, r.rev);
+                }
+            }
+            syncUpdateUi();
+            if (syncDirty.size) syncSchedule(1500);
+        } catch (e) {
+            keys.forEach(k => syncDirty.add(k));         // 通信できなかった分は次に回す
+            console.warn('[sync]', e);
+        } finally { syncBusy = false; }
+    }
+
+    /* 起動時の取り込み。保存領域が無い端末では通信そのものを行わない。 */
+    function syncBoot() { return syncPull({ reload: true }); }
+
+    async function syncPull(opts) {
+        const allowReload = !opts || opts.reload !== false;
+        if (!syncOn()) { syncUpdateUi(); return; }
+        try {
+            const res = await syncFetch('state', { method: 'GET' });
+            if (res.status === 401) { syncMetaSet({ on: false, rev: {} }); syncUpdateUi(); return; }
+            if (!res.ok) return;
+            const data = await res.json();
+            let reload = false;
+            for (const [sk, r] of Object.entries(data.keys || {})) {
+                const rev = Number(r.rev) || 0;
+                if (rev <= syncRev(sk)) continue;
+                if (sk === 'favorites') { favMergeFromServer(r.value); syncSetRev(sk, rev); }
+                else if (syncApplyValue(sk, r.value)) {
+                    syncSetRev(sk, rev);
+                    // 地図位置は起動後に動かすと操作の邪魔になるので、効くのは次回起動から
+                    if (sk === 'settingsState' || sk === 'prefs') reload = true;
+                }
+            }
+            syncUpdateUi();
+            /* 表示設定は画面の広い範囲に効く。その場で作り直さず一度だけ読み直す。
+               繰り返さないよう、このタブでは1回だけに制限する。 */
+            if (reload && allowReload && !sessionStorage.getItem('syncReloaded')) {
+                sessionStorage.setItem('syncReloaded', '1');
+                location.reload();
+            }
+        } catch (e) { console.warn('[sync]', e); }
+    }
+
+    /* サーバーのお気に入りを項目ごとに混ぜる。at が新しいほうを採る。
+       mk が空の項目（墓標）も同じ扱いなので、他の端末で外した印は復活しない。
+       枠の名前は時刻を持たないため、食い違ったらサーバー側（＝後から書かれたほう）を採る。 */
+    function favMergeFromServer(text) {
+        let remote = null;
+        try { remote = JSON.parse(text); } catch { return false; }
+        if (!remote || typeof remote !== 'object') return false;
+        const rItems = (remote.items && typeof remote.items === 'object') ? remote.items : {};
+        for (const [k, v] of Object.entries(rItems)) {
+            const at = Number(v && v.at) || 0;
+            const cur = favStore.items[k];
+            if (cur && (Number(cur.at) || 0) >= at) continue;
+            const mk = [...new Set((v && Array.isArray(v.mk) ? v.mk : [])
+                .map(Number).filter(n => FAV_SLOTS.includes(n)))].sort((a, b) => a - b);
+            favStore.items[k] = { mk, at };
+        }
+        if (remote.names && typeof remote.names === 'object') {
+            FAV_SLOTS.forEach(n => {
+                if (typeof remote.names[n] === 'string') favStore.names[n] = remote.names[n];
+            });
+        }
+        try { localStorage.setItem(FAV_STORE_KEY, JSON.stringify(favStore)); } catch {}
+        favRefreshAll();
+        return true;
+    }
+    function favRefreshAll() {
+        try {
+            refreshFavOverlay();
+            updateFavNameCounts();
+            updateFavEntry();
+            renderFavNameList();
+        } catch (e) { console.warn('[fav]', e); }
+    }
+
+    /* ══ 同期の画面（設定の区画・端末を追加・端末の管理） ══════════════ */
+    const SYNC_QR_LIB = 'https://unpkg.com/qrcode-generator@1.4.4/qrcode.js';
+    let syncQrLoaded = false;
+    const syncAdd = { short: '', expiresAt: 0, tick: 0, poll: 0, seen: 0 };
+    let syncSelfId = '';
+
+    function syncUpdateUi() {
+        const el = document.getElementById('sync-state');
+        if (!el) return;
+        const on = syncOn();
+        el.innerHTML = `<span class="sync-dot${on ? '' : ' off'}"></span>`
+            + `<span class="sync-txt">${on ? 'この端末は同期しています' : 'この端末だけで保存しています'}`
+            + `<small>${on ? '「端末を追加」で、他の端末も同じ内容にできます'
+                           : 'お気に入りか表示設定を変えた時点で、自動で同期を始めます'}</small></span>`;
+    }
+
+    // 「2分前」「3時間前」「8月20日」。端末一覧と参加の通知で使う
+    function syncWhen(ms) {
+        const d = Date.now() - Number(ms || 0);
+        if (d < 60000) return 'たった今';
+        if (d < 3600000) return `${Math.floor(d / 60000)}分前`;
+        if (d < 86400000) return `${Math.floor(d / 3600000)}時間前`;
+        const t = new Date(Number(ms));
+        return `${t.getMonth() + 1}月${t.getDate()}日`;
+    }
+
+    function showSyncView(id) {
+        setPanelLifted(true);
+        document.getElementById('nearby-main-view').style.display = 'none';
+        document.getElementById('nearby-settings-view').classList.remove('open');
+        document.getElementById(id).classList.add('open');
+    }
+
+    /* 端末を追加。引き継ぎ券が有効なのはこの画面を開いている間だけで、
+       閉じたときに DELETE で消す（押し忘れてもサーバー側で最大10分）。 */
+    async function openSyncAddView() {
+        showSyncView('nearby-sync-add-view');
+        document.getElementById('sync-qr').innerHTML = '';
+        document.getElementById('sync-code').textContent = '····';
+        document.getElementById('sync-joined').innerHTML = '';
+        document.getElementById('sync-timer').textContent = '';
+        syncAdd.seen = 0;
+        try {
+            if (!syncOn() && !(await syncEnroll())) { showToast('同期を始められませんでした'); return; }
+            const res = await syncFetch('handover', { method: 'POST' });
+            if (!res.ok) { showToast('コードを作れませんでした'); return; }
+            const data = await res.json();
+            syncAdd.short = data.short;
+            syncAdd.expiresAt = Number(data.expiresAt) || 0;
+            document.getElementById('sync-code').textContent = data.short;
+            const base = location.origin + location.pathname.replace(/[^/]*$/, '');
+            await syncRenderQr(base + '#join=' + data.code);
+            syncAddTick();
+            syncAdd.tick = setInterval(syncAddTick, 1000);
+            syncPollJoined();
+            syncAdd.poll = setInterval(syncPollJoined, 4000);
+        } catch (e) {
+            console.warn('[sync]', e);
+            showToast('コードを作れませんでした');
+        }
+    }
+    async function syncRenderQr(url) {
+        if (!syncQrLoaded) { await loadScriptOnce(SYNC_QR_LIB); syncQrLoaded = true; }
+        const qr = qrcode(0, 'M');
+        qr.addData(url);
+        qr.make();
+        document.getElementById('sync-qr').innerHTML =
+            qr.createSvgTag({ cellSize: 2, margin: 0, scalable: true, alt: 'QRコード' });
+    }
+    function syncAddTick() {
+        const el = document.getElementById('sync-timer');
+        if (!el) return;
+        const left = Math.max(0, syncAdd.expiresAt - Date.now());
+        const m = Math.floor(left / 60000), s = Math.floor((left % 60000) / 1000);
+        el.textContent = left > 0
+            ? `● この画面を閉じると無効になります（残り ${m}:${String(s).padStart(2, '0')}）`
+            : '● 期限が切れました。開き直してください';
+    }
+    async function syncPollJoined() {
+        try {
+            const res = await syncFetch('devices', { method: 'GET' });
+            if (!res.ok) return;
+            const data = await res.json();
+            syncSelfId = data.self || '';
+            const others = (data.devices || []).filter(d => d.id !== data.self);
+            const el = document.getElementById('sync-joined');
+            if (!el) return;
+            el.innerHTML = others.length
+                ? others.map(d => `<div class="dev-row"><span style="color:#2E7D32;font-weight:700;">✓</span>`
+                    + `<span class="dev-n">${attrEscape(d.name)}</span>`
+                    + `<span class="fxp-rt">${syncWhen(d.createdAt)}</span></div>`).join('')
+                : '<p class="fxp-note">まだありません。追加する端末でQRを読んでください</p>';
+            if (others.length > syncAdd.seen && syncAdd.seen > 0) showToast('端末が参加しました');
+            syncAdd.seen = others.length;
+        } catch (e) { /* 一時的な失敗は次の周期で拾う */ }
+    }
+    async function closeSyncAddView() {
+        clearInterval(syncAdd.tick); clearInterval(syncAdd.poll);
+        syncAdd.tick = syncAdd.poll = 0;
+        try { await syncFetch('handover', { method: 'DELETE' }); } catch (e) { /* 期限切れに任せる */ }
+        document.getElementById('nearby-sync-add-view').classList.remove('open');
+        openSettingsView();
+    }
+
+    // 受け取る側。手入力のコードで参加する
+    function syncJoinByCode() {
+        const el = document.getElementById('sync-join-input');
+        const code = (el.value || '').trim();
+        if (code.length < 8) { showToast('コードを入れてください'); return; }
+        el.value = '';
+        syncJoin(code);
+    }
+    // QRから開いたとき。コードはフラグメントなのでサーバーには送られない。履歴からも消す
+    function syncJoinFromUrl() {
+        const m = /[#&]join=([A-Za-z0-9_-]+)/.exec(location.hash || '');
+        if (!m) return;
+        const code = m[1];
+        history.replaceState(null, '', location.pathname + location.search);
+        syncJoin(code);
+    }
+    async function syncJoin(code) {
+        const hasLocal = !!storeGet('favorites');
+        if (!confirm('この端末を追加します。\n\nお気に入りと表示設定が、もう一方の端末と共有されます。\n'
+            + (hasLocal ? 'この端末に今あるお気に入りは、共有側と混ぜて残します。\n' : '')
+            + '地図の表示位置だけは端末ごとに別々のままです。\n\n進めますか？')) return;
+        try {
+            const res = await syncFetch('join', { method: 'POST', body: JSON.stringify({ code }) });
+            if (res.status === 404) { showToast('このコードは使えません。追加する側の画面を開き直してください'); return; }
+            if (!res.ok) { showToast('参加できませんでした'); return; }
+            syncMetaSet({ on: true, rev: {} });
+            await syncPull({ reload: false });     // 共有側を取り込む（お気に入りは混ざる）
+            syncDirty.add('favorites');            // 混ざった結果を送り返す
+            await syncFlush();
+            showToast('この端末を追加しました。画面を読み直します');
+            setTimeout(() => location.reload(), 900);
+        } catch (e) {
+            console.warn('[sync]', e);
+            showToast('参加できませんでした');
+        }
+    }
+
+    /* 端末の管理 */
+    async function openSyncDevicesView() {
+        showSyncView('nearby-sync-devices-view');
+        const list = document.getElementById('sync-dev-list');
+        if (!syncOn()) {
+            document.getElementById('sync-dev-sec').textContent = '共有している端末';
+            list.innerHTML = '<p class="fxp-note">この端末はまだ同期していません。'
+                + '「端末を追加」を押すか、お気に入りを付けると始まります</p>';
+            return;
+        }
+        list.innerHTML = '<p class="fxp-note">読み込み中です…</p>';
+        try {
+            const res = await syncFetch('devices', { method: 'GET' });
+            if (res.status === 401) { syncMetaSet({ on: false, rev: {} }); syncUpdateUi(); openSyncDevicesView(); return; }
+            if (!res.ok) { list.innerHTML = '<p class="fxp-note">読み込めませんでした</p>'; return; }
+            const data = await res.json();
+            syncSelfId = data.self || '';
+            renderSyncDevices(data.devices || []);
+        } catch (e) {
+            list.innerHTML = '<p class="fxp-note">読み込めませんでした（通信できていません）</p>';
+        }
+    }
+    /* onclick に渡すのは id だけにする。id は乱数（A-Za-z0-9_-）なので引用符が入らない。
+       名前は attrEscape が ' を素通しするため、属性の中に埋めない。 */
+    let syncDevicesCache = [];
+    function renderSyncDevices(devices) {
+        syncDevicesCache = devices;
+        document.getElementById('sync-dev-sec').textContent = `共有している端末（${devices.length}台）`;
+        document.getElementById('sync-dev-list').innerHTML = devices.map(d => {
+            const self = d.id === syncSelfId;
+            return `<div class="dev-row"><span class="dev-n">${attrEscape(d.name)}`
+                + (self ? '<span class="dev-self">この端末</span>' : '')
+                + `<small>${syncWhen(d.createdAt)}から ・ 最終 ${syncWhen(d.lastSeenAt)}</small></span>`
+                + (self ? '' : `<button class="dev-x" onclick="syncRemoveDevice(&quot;${attrEscape(d.id)}&quot;)">外す</button>`)
+                + '</div>';
+        }).join('');
+    }
+    async function syncRemoveDevice(id) {
+        const found = syncDevicesCache.find(d => d.id === id);
+        const name = found ? found.name : 'この端末';
+        if (!confirm(`「${name}」を外しますか？\n\nこの端末との同期が止まります。\n`
+            + 'その端末に今あるお気に入りは消えません。手元に残ったまま、これ以降は別々に育ちます。')) return;
+        try {
+            const res = await syncFetch('devices/' + encodeURIComponent(id), { method: 'DELETE' });
+            if (!res.ok) { showToast('外せませんでした'); return; }
+            showToast(`${name} を外しました`);
+            openSyncDevicesView();
+        } catch (e) { showToast('外せませんでした'); }
+    }
+    async function syncLeaveThisDevice() {
+        if (!syncOn()) { showToast('この端末は同期していません'); return; }
+        if (!confirm('この端末の同期をやめます。\n\n他の端末はそのまま共有を続けます。\n'
+            + 'この端末のお気に入りと設定は、手元に残ったままです。\n\nよろしいですか？')) return;
+        try {
+            const res = await syncFetch('devices/' + encodeURIComponent(syncSelfId || 'self'), { method: 'DELETE' });
+            if (!res.ok) { showToast('やめられませんでした'); return; }
+        } catch (e) { showToast('やめられませんでした'); return; }
+        syncMetaSet({ on: false, rev: {} });
+        syncDirty.clear();
+        syncUpdateUi();
+        showToast('この端末の同期をやめました');
+        openSyncDevicesView();
+    }
+    async function syncDeleteAccount() {
+        if (!syncOn()) { showToast('この端末は同期していません'); return; }
+        if (!confirm('サーバー上の共有内容と、全端末の結び付きを削除します。\n\n'
+            + '各端末に残っているお気に入りは消えません。\nこの操作は取り消せません。\n\n削除しますか？')) return;
+        try {
+            const res = await syncFetch('account', { method: 'DELETE' });
+            if (!res.ok) { showToast('削除できませんでした'); return; }
+        } catch (e) { showToast('削除できませんでした'); return; }
+        syncMetaSet({ on: false, rev: {} });
+        syncDirty.clear();
+        syncUpdateUi();
+        showToast('保存領域を削除しました');
+        openSyncDevicesView();
+    }
+    function closeSyncDevicesView() {
+        document.getElementById('nearby-sync-devices-view').classList.remove('open');
+        openSettingsView();
+    }
+
+    window.addEventListener('pagehide', () => syncFlushNow(true));
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden') syncFlushNow(true);
+    });
+    window.addEventListener('online', () => { if (syncDirty.size) syncSchedule(500); });
+    window.addEventListener('load', () => { syncJoinFromUrl(); syncBoot(); });
 
     /* ══ バックアップ（書き出し／読み込み） ══════════════════════════
        STORE_KEYS をまとめて1つのJSONにする。サーバーもログインも通らない経路で、
@@ -6038,6 +6564,7 @@ map.on('zoomend', () => { isZooming = false; });
         Object.keys(labelState).forEach(id => { const el=document.getElementById(`check-label-${id}`); if(el) el.checked=labelState[id]; });
         const originChk = document.getElementById('check-show-origin');
         if (originChk) originChk.checked = showOriginState;
+        syncUpdateUi();
         document.getElementById('nearby-main-view').style.display = 'none';
         document.getElementById('nearby-settings-view').classList.add('open');
     }

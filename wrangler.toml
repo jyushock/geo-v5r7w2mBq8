@@ -1,5 +1,16 @@
 name = "geopenguin"
 compatibility_date = "2024-09-23"
+main = "worker/index.js"
 
+# ファイルに当たるURLは Worker を通さずそのまま配信される。当たらないURL（/api/*）だけが
+# worker/index.js へ渡り、そこから ASSETS に返すこともできる（404ページはあちらの担当）。
 [assets]
 directory = "./"
+binding = "ASSETS"
+
+# お気に入り・表示設定・地図位置の保存先（SYNC_MANUAL.md）。
+# database_id は秘密ではない。これ単体では誰も触れず、アクセスにはアカウントの権限が要る。
+[[d1_databases]]
+binding = "DB"
+database_name = "geopenguin-sync"
+database_id = "6bfe4182-e0bb-4ae1-a52e-dabd3e3e268d"
