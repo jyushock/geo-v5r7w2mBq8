@@ -414,10 +414,13 @@ CREATE TABLE states (
   updated_at INTEGER NOT NULL,
   PRIMARY KEY (user_id, device_id, key)
 );
+
+CREATE INDEX idx_devices_user   ON devices  (user_id);
+CREATE INDEX idx_handovers_exp  ON handovers(expires_at);
 ```
 
 `device_id` を NULL ではなく空文字にするのは、SQLite が主キー中の NULL を互いに別物として扱い、
-一意性が担保されないためです。
+一意性が担保されないためです。`states` は主キーの先頭が `user_id` なので、別の索引は要りません。
 
 ### 7.3 API
 
@@ -453,11 +456,14 @@ D1 は**1回のWorker呼び出しあたり50クエリ**まで（無料）なの�
 ## 9. 導入手順
 
 ローカルに Node / wrangler を入れる必要はありません。ダッシュボードとプッシュだけで完結します。
+**シークレット（暗号化変数）の登録は不要です。**無記名キー方式では、アプリ側が持つ秘密値が無いためです。
 
 1. **D1 を作る**
-   Cloudflare ダッシュボード → D1 → Create Database → 名前を付けて作成
+   Cloudflare ダッシュボード → D1 → Create Database → 名前を付けて作成。
+   名前は Worker と対応が付く `geopenguin-sync` を推奨。Location hint は Asia-Pacific を選ぶ
 2. **テーブルを流す**
-   作成したデータベースを開き **Console** タブに [§7.2](#72-テーブル) の SQL を貼って Execute
+   作成したデータベースを開き **Console** タブに [§7.2](#72-テーブル) の SQL を貼って Execute。
+   実行後、**Tables** に `users` / `devices` / `handovers` / `states` の4つが並ぶ
 3. **バインディングを書く**
    `wrangler.toml` に追記する（`database_id` は手順1の画面からコピー）
    ```toml
@@ -474,6 +480,10 @@ D1 は**1回のWorker呼び出しあたり50クエリ**まで（無料）なの�
    いつもどおり push すれば自動デプロイされる
 6. **確認する**
    お気に入りを1つ付け、ダッシュボードの Console で `SELECT * FROM states;` に行が入ることを見る
+
+`database_id` は秘密ではありません。`wrangler.toml` に書いて公開リポジトリへコミットする前提の値で、
+これ単体では誰もデータベースへ触れません（アクセスには Cloudflare アカウントの権限が要ります）。
+Cloudflare の公式手順でも設定ファイルに書く形で案内されています。
 
 ---
 
