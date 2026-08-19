@@ -28135,8 +28135,8 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.1895098,
-          39.8437273
+          141.1733114,
+          39.8462335
         ]
       },
       "properties": {
@@ -28296,7 +28296,7 @@ const michiNoEkiGeoJSON = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          35.9624088,
+          135.9624088,
           34.0480725
         ]
       },
