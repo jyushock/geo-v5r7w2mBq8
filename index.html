@@ -1764,6 +1764,20 @@
             <label class="filter-chip"><input type="checkbox" id="check-show-origin" onchange="onShowOriginChange(this)">検索地点</label>
         </div>
         <div style="border-top:1px solid #f0f0f0;"></div>
+        <!-- バックアップ。お気に入りと表示設定をまとめて1ファイルにする（サーバーは通らない）。
+             入力欄ではないので「お気に入りの名前」より上に置く（下は入力でキーボードが出る枠） -->
+        <div class="nearby-section-label">バックアップ</div>
+        <div style="display:flex;gap:8px;padding:2px 16px 6px;">
+            <button class="fxp-btn primary" style="flex:1;height:38px;font-size:13px;"
+                    onclick="backupExport()">書き出し</button>
+            <button class="fxp-btn sub" style="flex:1;height:38px;font-size:13px;"
+                    onclick="document.getElementById('backup-file').click()">読み込み</button>
+        </div>
+        <input id="backup-file" type="file" accept="application/json,.json" style="display:none"
+               onchange="backupImport(this)">
+        <div class="favname-note">お気に入りと表示設定を1つのファイルにまとめます。
+            読み込むと、いまの内容はファイルの内容に置き換わります。</div>
+        <div style="border-top:1px solid #f0f0f0;"></div>
         <!-- お気に入りの4枠の名前。枠に固定の意味は持たせず、ここで名前を入れたものだけが使える。
              文字を打つ欄なので設定の最下段に置く（上に置くと、入力でキーボードが出たときに
              下の行が押し上げられて隠れる） -->
@@ -2090,6 +2104,86 @@
     const CASTLE_MEIJO_COLOR = '#4285F4';        // 日本100名城
     const CASTLE_ZOKU_MEIJO_COLOR = '#EA4335';   // 続日本100名城
 
+    /* ══ 保存の入口 ══════════════════════════════════════════════
+       お気に入り・表示設定・地図位置の保存を1か所に通す。書く側は必ずここを通し、
+       localStorage を直に触らないこと。サーバー同期を足すときに直すのがここだけで済む。
+
+       読みは localStorage を直接見る。起動時（下の savedState / savedSettings）は
+       同期的に値が要るので、サーバーの応答を待つ形にはできない。
+       サーバー側は「控え」で、起動後に届いた分を後から反映する（SYNC_MANUAL.md §4.1）。
+
+       STORE_KEYS はバックアップの書き出し・読み込みが回す一覧でもある。
+       保存キーを増やしたらここに足すこと。 */
+    const STORE_KEYS = ['favorites', 'settingsState', 'mapState', 'mapTileSource',
+                        'hotelRadius', 'hotelSort', 'travelMode', 'nearbyTypeFilterOff'];
+    function storeGet(key) {
+        try { return localStorage.getItem(key); } catch { return null; }
+    }
+    function storeGetJson(key) {
+        try { return JSON.parse(localStorage.getItem(key)); } catch { return null; }
+    }
+    function storeSet(key, value) {
+        try { localStorage.setItem(key, value); }
+        catch (e) { console.warn('[store]', key, e); return; }
+        syncPush(key);
+    }
+    function storeSetJson(key, obj) { storeSet(key, JSON.stringify(obj)); }
+    /* サーバーへ送る口。同期を入れるまでは何もしない（SYNC_MANUAL.md の Phase 2 で中身を書く）。 */
+    function syncPush(key) { /* 未実装 */ }
+
+    /* ══ バックアップ（書き出し／読み込み） ══════════════════════════
+       STORE_KEYS をまとめて1つのJSONにする。サーバーもログインも通らない経路で、
+       端末が変わったときの持ち運びと、消えたときの備えを兼ねる（SYNC_MANUAL.md §5.10）。
+       読み込みは「置き換え」で、統合はしない。混ぜると、どちらの削除が生きるのかを
+       決める材料が無いため（時刻を持っているのはお気に入りだけ）。 */
+    const BACKUP_FORMAT = 'geopenguin-backup';
+    function backupFilename() {
+        const d = new Date(), p = n => String(n).padStart(2, '0');
+        return `カスタムマップ設定-${d.getFullYear()}${p(d.getMonth() + 1)}${p(d.getDate())}.json`;
+    }
+    function backupExport() {
+        const data = {};
+        STORE_KEYS.forEach(k => { const v = storeGet(k); if (v != null) data[k] = v; });
+        const text = JSON.stringify({ format: BACKUP_FORMAT, v: 1, at: new Date().toISOString(), data }, null, 1);
+        const name = backupFilename();
+        const url = URL.createObjectURL(new Blob([text], { type: 'application/json;charset=utf-8' }));
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = name;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 10000);
+        // iOS のホーム画面起動では保存が黙って何も起きないことがある（書き出しビューと同じ事情）
+        showToast(isIosStandalonePwa()
+            ? `${name} を保存しました。何も起きないときは通常のブラウザで開いて試してください`
+            : `${name} を保存しました`);
+    }
+    function backupImport(input) {
+        const file = input.files && input.files[0];
+        input.value = '';                     // 同じファイルを続けて選べるようにする
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onerror = () => showToast('ファイルを読めませんでした');
+        reader.onload = () => {
+            let obj = null;
+            try { obj = JSON.parse(String(reader.result)); } catch { obj = null; }
+            if (!obj || obj.format !== BACKUP_FORMAT || !obj.data || typeof obj.data !== 'object') {
+                showToast('このファイルは読み込めません');
+                return;
+            }
+            const keys = STORE_KEYS.filter(k => typeof obj.data[k] === 'string');
+            if (!keys.length) { showToast('中身が空でした'); return; }
+            const when = String(obj.at || '').slice(0, 10);
+            if (!confirm(`いまのお気に入りと表示設定を、このファイルの内容に置き換えます。\n`
+                + `${when ? when + ' に書き出したもの・' : ''}${keys.length}項目\n\nよろしいですか？`)) return;
+            keys.forEach(k => storeSet(k, obj.data[k]));
+            showToast('読み込みました。画面を読み直します');
+            setTimeout(() => location.reload(), 900);
+        };
+        reader.readAsText(file);
+    }
+
     // ── 天気ウィジェット（スクリプト先頭で初期化）──────────────────
     // WMOコード → スタンプアイコンのファイル名（weather-icons/stamp/＜名前＞.png）
     var WMO_ICON = {
@@ -2210,15 +2304,11 @@
         });
     }
 
-    const savedState = (() => {
-        try { return JSON.parse(localStorage.getItem('mapState')); } catch { return null; }
-    })();
+    const savedState = storeGetJson('mapState');
 
-    const savedSettings = (() => {
-        try { return JSON.parse(localStorage.getItem('settingsState')); } catch { return null; }
-    })();
+    const savedSettings = storeGetJson('settingsState');
 
-    const mapTileSource = localStorage.getItem('mapTileSource') || 'openfreemap';
+    const mapTileSource = storeGet('mapTileSource') || 'openfreemap';
     const mapStyle = mapTileSource === 'osm'
         ? { version: 8, glyphs: 'https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf', sources: { osm: { type: 'raster', tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'], tileSize: 256, attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' } }, layers: [{ id: 'osm-tiles', type: 'raster', source: 'osm' }] }
         : 'https://tiles.openfreemap.org/styles/liberty';
@@ -3649,7 +3739,7 @@ const TRAVEL_MODES = {
 };
 const TRAVEL_MODE_DEFAULT = 'transit';
 function travelMode() {
-    const v = localStorage.getItem('travelMode');
+    const v = storeGet('travelMode');
     return TRAVEL_MODES[v] ? v : TRAVEL_MODE_DEFAULT;
 }
 
@@ -4586,13 +4676,13 @@ map.on('zoomend', () => { isZooming = false; });
         // 地図状態の保存（PWA再起動時の復元用）
         function saveMapState() {
             const c = map.getCenter();
-            localStorage.setItem('mapState', JSON.stringify({
+            storeSetJson('mapState', {
                 lng:     c.lng,
                 lat:     c.lat,
                 zoom:    map.getZoom(),
                 bearing: map.getBearing(),
                 pitch:   map.getPitch()
-            }));
+            });
         }
         map.on('moveend', saveMapState);
         map.on('zoomend', saveMapState);
@@ -5649,13 +5739,13 @@ map.on('zoomend', () => { isZooming = false; });
 
     // タイプフィルターのOFF状態をlocalStorageへ永続化
     function loadNearbyFilterOff() {
-        try { return new Set(JSON.parse(localStorage.getItem('nearbyTypeFilterOff')) || []); } catch { return new Set(); }
+        try { return new Set(storeGetJson('nearbyTypeFilterOff') || []); } catch { return new Set(); }
     }
     function saveNearbyFilterOff() {
         // 集計帯に出していない種別の保存済みOFF状態は維持する
         const off = loadNearbyFilterOff();
         nearbyResultTypes.forEach(t => { if (nearbyTypeFilter.has(t)) off.delete(t); else off.add(t); });
-        localStorage.setItem('nearbyTypeFilterOff', JSON.stringify([...off]));
+        storeSetJson('nearbyTypeFilterOff', [...off]);
     }
     /* オブジェクトの表示設定。キーの並びは種別の共通順
        （食べログ→ポケふた→マンホール→カード配布→道の駅→城）に合わせてある。
@@ -5682,12 +5772,12 @@ map.on('zoomend', () => { isZooming = false; });
     let showOriginState = savedSettings ? (savedSettings.showOrigin === true) : false;
 
     function saveSettings() {
-        localStorage.setItem('settingsState', JSON.stringify({
+        storeSetJson('settingsState', {
             filter: filterState,
             label:  labelState,
             genreOff: [...genreOff],
             showOrigin: showOriginState
-        }));
+        });
     }
 
     function applyShowOrigin() {
@@ -5704,25 +5794,25 @@ map.on('zoomend', () => { isZooming = false; });
     }
 
     function onTileSourceChange(value) {
-        localStorage.setItem('mapTileSource', value);
+        storeSet('mapTileSource', value);
         location.reload();
     }
 
-    document.getElementById('tile-source-select').value = localStorage.getItem('mapTileSource') || 'openfreemap';
-    document.getElementById('hotel-radius-select').value = localStorage.getItem('hotelRadius') || '10000';
-    document.getElementById('hotel-sort-select').value = localStorage.getItem('hotelSort') || '2';
+    document.getElementById('tile-source-select').value = storeGet('mapTileSource') || 'openfreemap';
+    document.getElementById('hotel-radius-select').value = storeGet('hotelRadius') || '10000';
+    document.getElementById('hotel-sort-select').value = storeGet('hotelSort') || '2';
     document.getElementById('travel-mode-select').value = travelMode();
 
     function onHotelRadiusChange(value) {
-        localStorage.setItem('hotelRadius', value);
+        storeSet('hotelRadius', value);
     }
 
     function onHotelSortChange(value) {
-        localStorage.setItem('hotelSort', value);
+        storeSet('hotelSort', value);
     }
 
     function onTravelModeChange(value) {
-        localStorage.setItem('travelMode', value);
+        storeSet('travelMode', value);
         // 情報シートを開いたまま設定を変えた場合に備える。Yahooはボタン押下時にURLを組むので
         // 影響を受けないが、Google側はhrefを埋め込んでいるため開いているシートだけ貼り替える。
         const a = document.querySelector('#obj-sheet-body .btn-nav');
@@ -7506,8 +7596,8 @@ map.on('zoomend', () => { isZooming = false; });
         restore();
         if (!stationName) { newTab.close(); return alert('駅名が取得できませんでした'); }
         const dp_ymd = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Tokyo' }).replace(/-/g, '');
-        const hotelRadius = localStorage.getItem('hotelRadius') || '10000';
-        const hotelSort = localStorage.getItem('hotelSort') || '2';
+        const hotelRadius = storeGet('hotelRadius') || '10000';
+        const hotelSort = storeGet('hotelSort') || '2';
         const url = `https://www.tour.ne.jp/j_hotel/list/?landmark=${encodeURIComponent(stationName)}&refpage=form#adult=1&dp_ymd=${dp_ymd}&dsp_sort=${hotelSort}&hotel_type=3,6,7,8,11,12,13,15&radius=${hotelRadius}&roomtype=1,2,3,5,7,8,10,11`;
         newTab.location.href = url;
     }
@@ -8321,9 +8411,14 @@ map.on('zoomend', () => { isZooming = false; });
         return null;   // 地名（place）など、データを持たないものは対象外
     }
 
+    /* 外した項目は消さずに mk が空の記録（墓標）として残す。
+       消してしまうと、しばらくオフラインだった端末が古い一覧を送ってきたときに、
+       他の端末で外したはずの印が復活する（SYNC_MANUAL.md §4.4）。
+       見るほうは全て mk の中身で判断しているので、空の項目が混ざっても表示は変わらない。
+       ずっと残すと際限なく増えるため、外してから半年たった墓標は読み込み時に捨てる。 */
+    const FAV_TOMB_KEEP_MS = 180 * 24 * 60 * 60 * 1000;
     function loadFavStore() {
-        let raw = null;
-        try { raw = JSON.parse(localStorage.getItem(FAV_STORE_KEY)); } catch { raw = null; }
+        let raw = storeGetJson(FAV_STORE_KEY);
         // 初期値は枠1だけ名前を入れておく（残り3枠は空＝使わない）
         const names = { 1: 'お気に入り', 2: '', 3: '', 4: '' };
         const items = {};
@@ -8332,10 +8427,13 @@ map.on('zoomend', () => { isZooming = false; });
                 FAV_SLOTS.forEach(n => { if (typeof raw.names[n] === 'string') names[n] = raw.names[n]; });
             }
             if (raw.items && typeof raw.items === 'object') {
+                const tombLimit = Date.now() - FAV_TOMB_KEEP_MS;
                 for (const [k, v] of Object.entries(raw.items)) {
                     const mk = [...new Set((v && Array.isArray(v.mk) ? v.mk : [])
                         .map(Number).filter(n => FAV_SLOTS.includes(n)))].sort((a, b) => a - b);
-                    if (mk.length) items[k] = { mk, at: Number(v.at) || 0 };
+                    const at = Number(v && v.at) || 0;
+                    if (mk.length) items[k] = { mk, at };
+                    else if (at > tombLimit) items[k] = { mk: [], at };   // 墓標
                 }
             }
         }
@@ -8343,8 +8441,7 @@ map.on('zoomend', () => { isZooming = false; });
     }
     let favStore = loadFavStore();
     function saveFavStore() {
-        try { localStorage.setItem(FAV_STORE_KEY, JSON.stringify(favStore)); }
-        catch (e) { console.warn('[fav]', e); }
+        storeSetJson(FAV_STORE_KEY, favStore);
     }
     function favNameOf(n) { return (favStore.names[n] || '').trim(); }
     // 名前が入っている枠だけが使える。空にした枠は出さないが、登録した分は消さない
@@ -8365,8 +8462,8 @@ map.on('zoomend', () => { isZooming = false; });
         if (!key || !FAV_SLOTS.includes(n)) return;
         const cur = new Set(favMarksOf(key));
         if (cur.has(n)) cur.delete(n); else cur.add(n);
-        if (cur.size) favStore.items[key] = { mk: [...cur].sort((a, b) => a - b), at: Date.now() };
-        else delete favStore.items[key];
+        // 外したときも記録を残す（mk が空＝墓標。理由は loadFavStore のコメント）
+        favStore.items[key] = { mk: [...cur].sort((a, b) => a - b), at: Date.now() };
         saveFavStore();
         refreshFavOverlay();
         updateSheetFav();
