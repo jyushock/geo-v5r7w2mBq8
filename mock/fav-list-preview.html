@@ -254,30 +254,46 @@ localStorage キー: <code>favorites</code><br><br>
 }
 </div>
 </div>
+<p class="note">
+    キーの候補は全データを実際に数えて選んである（2026-08-19 時点のデータファイル）。
+    「欠落」はその項目が空の件数、「重複」は空でないもの同士でぶつかった件数。
+</p>
 <table>
-    <tr><th style="width:20%">種別</th><th style="width:36%">キーの作り方</th><th>根拠</th></tr>
-    <tr><td>食べログ</td><td class="ok"><code>shop:{properties.url}</code></td>
-        <td>店舗ページのURLが1店1つ。<code>data.js</code> の全件が持つ</td></tr>
-    <tr><td>道の駅</td><td class="ok"><code>michi:{properties.id}</code></td>
-        <td>公式の駅ID（<code>michi.js</code> の <code>"id": "18786"</code>）</td></tr>
-    <tr><td>ポケふた</td><td class="ok"><code>pokefuta:{properties.id}</code></td>
-        <td>公式の連番（<code>pokemon.js</code> の <code>"id": 445</code>）</td></tr>
-    <tr><td>マンホール（蓋）</td><td><code>manhole:{cardCodeKey(cardId)}</code>、無ければ座標</td>
-        <td>カードIDは既に <code>cardCodeKey()</code> で正規化している。
-            IDを持たない蓋があるので座標へ落とす経路が要る</td></tr>
-    <tr><td>カード配布</td><td><code>mhcard:{cardKeyOfCardRecord(p)}</code></td>
-        <td>既存の関数がそのまま使える。同じカードを複数箇所で配る147キーは配布場所ごとに別扱い</td></tr>
-    <tr><td>お城</td><td class="ng"><code>castle:{name}@{lng},{lat}</code>（座標は小数4桁）</td>
-        <td class="ng"><code>castle.js</code> に一意なIDが無く、<code>url</code> も空の城が多い。
-            同名の城が全国にあるため名前だけでは足りず、名前＋座標で作る。
-            データを差し替えて座標が動くと別物になるので、
-            <b>castle.js に安定IDを振るのがいちばん確実</b></td></tr>
+    <tr><th style="width:16%">種別</th><th style="width:30%">キー</th>
+        <th style="width:26%">実測</th><th>備考</th></tr>
+    <tr><td>食べログ<br>7,369件</td><td class="ok"><code>shop:{url}</code></td>
+        <td class="ok">欠落 0 / 重複 0</td>
+        <td>店舗ページのURLが1店1つ。全件が持つ</td></tr>
+    <tr><td>道の駅<br>1,234件</td><td class="ok"><code>michi:{id}</code></td>
+        <td class="ok">欠落 0 / 重複 0</td>
+        <td>公式の駅ID（<code>"id": "18786"</code>）</td></tr>
+    <tr><td>ポケふた<br>482件</td><td class="ok"><code>pokefuta:{id}</code></td>
+        <td class="ok">欠落 0 / 重複 0</td>
+        <td>公式の連番（<code>"id": 445</code>）</td></tr>
+    <tr><td>マンホール<br>1,267件</td><td class="ok"><code>manhole:{cardCodeKey(cardId)}</code></td>
+        <td class="ok">欠落 0 / 重複 0</td>
+        <td><code>cardCodeKey()</code> が既にある。全件が <code>cardId</code> を持っている</td></tr>
+    <tr><td>カード配布<br>1,455件</td><td><code>mhcard:{name}@{lng},{lat}</code></td>
+        <td class="ng"><code>cardId</code> は欠落 562 / 相異 44 種だけ<br>
+            <span class="ok">名前＠座標4桁なら衝突 0</span></td>
+        <td class="ng"><code>cardId</code> は公式ページの括弧内ID（A001・B001…）で、
+            <code>A001</code> だけで324件ある。単独ではキーにできない。
+            <code>cardImgUrl</code> も1,455件中1,312種（同じカードを複数箇所で配る分がぶつかる）。
+            名前＋座標で作るのが確実</td></tr>
+    <tr><td>お城<br>23,516件</td><td><code>castle:{name}@{lng},{lat}</code></td>
+        <td class="ng"><code>url</code> は欠落 19,037（81%）<br>
+            <span class="ok">名前＠座標4桁なら衝突 0</span></td>
+        <td class="ng">一意なIDが無く、<code>url</code> も8割が空。名前＋座標なら全23,516件で衝突しないが、
+            <b>castle.js を作り直して座標が動くと別物になる</b>。
+            長く使うなら castle.js 側に安定IDを振るのが確実</td></tr>
 </table>
 <p class="note">
-    サーバーへ移すときは <code>wrangler.toml</code> の Cloudflare 構成に
-    KV か D1 を足して <code>/api/favorites</code> を作り、上の JSON をそのまま置く形が最短。
-    その場合はローカルを一次キャッシュ、サーバーを正として、
-    <code>at</code>（更新時刻）が新しい方を採る形にすれば端末をまたいでも壊れない。
+    座標は小数4桁（約11m）に丸めてから使う。生の値のまま使うと、データ更新で末尾が1桁動いただけで
+    別のオブジェクトとして扱われるため。<br>
+    サーバーへ移すときは、<code>wrangler.toml</code> の Cloudflare 構成に KV か D1 を足して
+    <code>/api/favorites</code> を作り、上の JSON をそのまま置く形が最短。
+    ローカルを一次キャッシュ、サーバーを正とし、<code>at</code>（更新時刻）が新しい方を採れば
+    端末をまたいでも壊れない。
 </p>
 
 <script>
