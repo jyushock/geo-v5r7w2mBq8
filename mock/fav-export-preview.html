@@ -371,8 +371,11 @@
                 <div class="exp-sec">出す範囲</div>
                 <div class="exp-row"><span class="fav-dot" style="background:var(--mk1);width:10px;height:10px"></span>
                     関西<span class="rt">6件</span></div>
-                <div class="exp-row">表示設定で消している種別も出す<span class="sw on"></span></div>
-                <p class="exp-sub">オフにすると、いま地図に出していない種別が抜けます</p>
+                <div class="exp-row">設定で消している種別も出す<span class="sw on"></span></div>
+                <p class="exp-sub">
+                    設定の「オブジェクト表示」で外した種別のことです。<br>
+                    オフにすると、その分がファイルから抜けます
+                </p>
 
                 <div class="exp-sec">列</div>
                 <div class="seg"><span class="on">note と id を付ける</span><span>3列だけ</span></div>
@@ -579,10 +582,30 @@
 </div>
 
 <div class="impl warn">
-    <b>② <code>favCollect()</code> は表示設定で絞られる。</b>
-    設定で消した種別と、食べログの部門の絞り込みが効く（「設定が土台」という既存の決まり）。
-    このまま書き出すと、設定で消しているだけの地点がファイルから消える。<br>
+    <b>② <code>favCollect()</code> は設定の「オブジェクト表示」で絞られる。</b>
+    ここでいう表示設定とは、<b>メニュー →「設定」の最上部にある「オブジェクト表示」</b>のこと
+    （<code>index.html:1676</code>）。6種別のアイコンが横一列に並び、タップで出し入れする。
+    食べログだけは長押しでジャンル行が開き、35種の部門ごとにも出し入れできる。<br>
+    これは地図だけの設定ではなく、<b>検索・周辺検索・都道府県から探す・城主から探すが見る土台</b>で、
+    外した種別はどこにも出さない（<code>index.html:5589</code> のコメント）。
+    お気に入り一覧を組む <code>favCollect()</code> もここを通る。<br>
+    <b>既定値は <code>mhcard</code> だけ false。</b>
+    <code>{ shop:true, pokefuta:true, manhole:true, mhcard:false, michi:true, castle:true }</code>
+    （<code>index.html:5592</code>）。つまりカード配布1,455件は、設定を触っていなければ最初から非表示。<br>
+    さらに、お気に入りの登録内容（<code>favStore.items</code>）は種別を消しても消えない。
+    表示オンで登録したあとオフに戻すと、<b>印は localStorage に残ったまま画面から見えなくなる。</b>
+    このまま設定に従って書き出すと、その分が静かに落ちる。<br>
     → §4 のシートでトグルにした。既定はオン（設定を無視して全件出す）。
+</div>
+
+<div class="impl">
+    <b>ついでに見つけた既存のズレ（今回の書き出しとは別件）。</b>
+    設定の「お気に入りの名前」に出る件数は <code>favCountOf()</code> が
+    <code>favStore.items</code> を直接数えるので<b>絞り込みを通らない</b>（<code>index.html:8283</code>）。
+    一方、お気に入り一覧の絞り込みチップは <code>favCollect()</code> を使うので<b>通る</b>
+    （<code>index.html:8499</code>）。
+    種別を消している状態だと、設定画面が「6件」・一覧のチップが「4」とズレて出る。
+    書き出しの実装とは独立した話なので、直すかどうかは別に決めてほしい。
 </div>
 
 <div class="impl warn">
@@ -623,7 +646,10 @@
 <table>
 <tr><th>#</th><th>論点</th><th>私の案</th></tr>
 <tr><td>1</td><td>入口をどこに置くか（案A / B / C）</td><td>案A。§1.1 の「1ファイル＝1つの地点リスト」と枠が1対1で対応するため</td></tr>
-<tr><td>2</td><td>表示設定で消した種別も書き出すか</td><td>出す（既定オン）。トグルで切り替えられる</td></tr>
+<tr><td>2</td><td>設定の「オブジェクト表示」で消した種別も書き出すか<br>
+    <span style="color:#888;font-size:11px">既定で <code>mhcard</code>（カード配布1,455件）がオフ。
+    表示オンで登録したあとオフに戻した分も、印は残ったまま見えなくなっている</span></td>
+    <td>出す（既定オン）。トグルで切り替えられる</td></tr>
 <tr><td>3</td><td><code>note</code> と <code>id</code> を付けるか</td><td>付ける。<code>id</code> は使い回し運用で効く。3列だけも選べる</td></tr>
 <tr><td>4</td><td>ファイル名に日付を付けるか</td><td>既定は日付なし（<code>関西.tsv</code>）。§1.1 の資産的な運用に合わせる</td></tr>
 <tr><td>5</td><td>出しかた</td><td>§7 の実機結果しだい</td></tr>
