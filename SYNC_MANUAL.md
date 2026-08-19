@@ -3,7 +3,7 @@
 お気に入り・表示設定・地図の位置をサーバーに預け、複数の端末で同じ状態を再現するための設計です。
 **ログイン画面は作りません。**
 
-- 版: 0.4
+- 版: 0.5
 - 作成: 2026-08-20
 - 操作手順（登録・解除）と画面の案: [§5.6〜5.11](#56-追加する画面とボタン)。画面のモックは `mock/sync-ui-preview.html`
 - 状態: **未実装**（方針をまとめた段階。実装着手前）
@@ -324,6 +324,13 @@ JSON 1ファイルに落とし、別の端末で読み込みます。**読み込
 
 現在の `wrangler.toml` は `name` と `[assets] directory = "./"` だけで `main` がありません。
 `[assets]` と `main` は Workers 専用のキーで、Pages は `pages_build_output_dir` が必須です。
+
+**このリポジトリが Workers Builds でデプロイされていることは確認済みです。**
+GitHub の最新コミットに付くチェックが `Workers Builds: geopenguin`（提供元 *Cloudflare Workers and Pages*）で、
+その参照先が `.../workers/services/view/geopenguin/production/builds/...` だからです（2026-08-20 に確認）。
+なお、同リポジトリには 2026-05-13 までの GitHub Pages へのデプロイ記録も残っていますが、
+`https://jyushock.github.io/geo-v5r7w2mBq8/` は現在 404 で、配信していません。
+
 つまり現状は**Workerスクリプトの無い静的アセットのみの Worker** で、
 `main` を足せば**同じリポジトリ・同じプッシュ契機のまま** API を生やせます。
 アセットに一致しないURL（`/api/*`）は既定で Worker に渡るため、追加のルーティング設定も要りません。
@@ -517,8 +524,7 @@ Identity Platform（MAU課金）や Cloud Identity（$7.2/月・1ユーザー）
 
 | 事項 | 状態 |
 |---|---|
-| Cloudflare 側の登録が Workers か Pages か | **未確認**（ダッシュボードは参照できない）。`wrangler.toml` の内容からは Workers 構成。Pages だった場合は `main` ではなく `functions/api/[[path]].js` に置き換えるだけで、他の設計は変わらない |
-| 独自ドメインを当てているか | **未確認**。Cookie のドメイン指定に影響する |
+| 独自ドメインを当てているか | **未確認**。Cookie のドメイン指定と、Google ID を採る場合の承認済みオリジン登録に影響する |
 | SHA-256 1回が CPU 10ms に収まるか | **未実測**（収まる見込み。実装後に計測する） |
 | Cloudflare の Rate Limiting Rules を無料枠で使えるか | **未確認**。使えない前提で、回数制限は D1 のカウンタで実装する |
 | 「Sign in with Google」自体が無料か | **未確認**。無料と明記した公式ページを確認できていない。料金体系が案内されているのは Identity Platform / Cloud Identity という別製品 |
@@ -531,6 +537,7 @@ Identity Platform（MAU課金）や Cloud Identity（$7.2/月・1ユーザー）
 
 | 版 | 日付 | 内容 |
 |---|---|---|
+| 0.5 | 2026-08-20 | デプロイが Workers Builds であることを GitHub のチェック実行から確認し、§7.1 に根拠を記載。§12 の該当する未確認事項を削除 |
 | 0.4 | 2026-08-20 | §5.6〜5.11 を追加。追加する画面とボタン、登録・解除・書き出しの手順、困ったときの対処。画面のモック `mock/sync-ui-preview.html` を作成 |
 | 0.3 | 2026-08-20 | 引き継ぎ券を「5分・1回きり＋任意のPIN」から「QRを表示している間だけ・台数無制限・PIN無し」に変更。4台を発行1回で追加できるようにするため |
 | 0.2 | 2026-08-20 | §11.1 を追加。Google ID でのログインを「実装が重いので却下」から「後から足せる選択肢」に改めた（公式資料で手間と費用を確認し直したため） |
