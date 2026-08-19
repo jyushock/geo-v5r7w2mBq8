@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>設定の同期 — 追加する画面とボタンのモック（SYNC_MANUAL.md 版0.4）</title>
+<style>
+    /* index.html から写した実寸・実色。枠は iPhone SE3（375×667）を拡大縮小なしで置いている。
+       fav-export-preview.html と同じ土台（並べて見比べられるように）。
+       使っているクラスは index.html の実物と同名にしてあるので、そのまま移植できる。 */
+    :root { --ui-blue: #4285F4; --danger: #C62828; }
+    body { margin: 0; font-family: system-ui, sans-serif; color: #222; background: #fff;
+           -webkit-text-size-adjust: 100%; }
+    header { padding: 12px 14px 4px; }
+    h1 { font-size: 16px; margin: 0 0 4px; }
+    .lead { font-size: 12px; color: #555; line-height: 1.75; margin: 0 0 10px; }
+    code { background: #f2f2f2; padding: 1px 4px; border-radius: 3px; font-size: 11px;
+           font-family: ui-monospace, monospace; }
+    h2.sec { font-size: 14px; margin: 26px 14px 8px; padding-bottom: 5px; border-bottom: 1px solid #ddd; }
+    h3.sub { font-size: 12.5px; margin: 16px 14px 6px; color: #37474F; }
+    .note { font-size: 11.5px; color: #666; line-height: 1.75; padding: 0 14px; margin: 0 0 10px; }
+    .impl { font-size: 11.5px; color: #37474F; background: #f6f7f9; border-left: 3px solid #90A4AE;
+            padding: 7px 10px; line-height: 1.75; margin: 0 14px 10px; }
+    .warn { border-left-color: #E65100; background: #fff8f0; color: #4E342E; }
+    .good { border-left-color: #2E7D32; background: #f3f8f3; color: #1B5E20; }
+    table { border-collapse: collapse; width: calc(100% - 28px); margin: 8px 14px 20px; font-size: 12px; }
+    th, td { border: 1px solid #e0e0e0; padding: 6px 8px; text-align: left; vertical-align: top; line-height: 1.65; }
+    th { background: #f6f7f9; font-weight: 600; }
+    td.ok { color: #1B5E20; } td.ng { color: #B71C1C; }
+
+    /* ══ 端末枠 375×667（SE3 実寸） ══ */
+    .screens { display: flex; flex-wrap: wrap; gap: 14px; padding: 0 14px 10px; align-items: flex-start; }
+    .screen-wrap { width: 375px; }
+    .screen-cap { font-size: 11.5px; color: #555; line-height: 1.7; margin: 0 0 6px; }
+    .screen-cap b { color: #222; }
+    .screen { position: relative; width: 375px; height: 667px;
+              border: 1px solid #d8d8d8; border-radius: 12px; overflow: hidden; background: #eee8dc;
+              box-sizing: border-box; }
+    .screen::before { content: ''; position: absolute; inset: 0;
+        background: repeating-linear-gradient(90deg, transparent 0 78px, #f7f4ec 78px 92px),
+                    repeating-linear-gradient(0deg,  transparent 0 62px, #f7f4ec 62px 74px); }
+    .fakebar { position: absolute; left: 0; right: 0; bottom: 0; height: 52px; background: #fff;
+               border-top: 1px solid #eee; display: flex; align-items: center; padding: 0 12px;
+               gap: 8px; box-sizing: border-box; z-index: 2; }
+    .fakebar .fb-search { flex: 1; height: 34px; border-radius: 17px; background: #f2f2f2;
+                          display: flex; align-items: center; padding: 0 12px; color: #aaa; font-size: 12px; }
+    .fakebar .fb-btn { width: 36px; height: 36px; border-radius: 50%; background: #f5f5f5;
+                       border: .5px solid #e0e0e0; }
+    .panel { position: absolute; left: 0; right: 0; bottom: 52px; background: #fff;
+             border-radius: 16px 16px 0 0; box-shadow: 0 -4px 16px rgba(0,0,0,.15);
+             max-height: calc(667px - 52px); display: flex; flex-direction: column; z-index: 3;
+             overflow: hidden; }
+    .panel-head { padding: 8px 16px 4px; flex-shrink: 0; }
+    .panel-handle { width: 36px; height: 4px; background: #ccc; border-radius: 2px; margin: 0 auto; }
+    .view-head { display: flex; align-items: center; padding: 12px 16px 8px; gap: 8px; flex-shrink: 0; }
+    .view-head span.t { font-size: 14px; font-weight: bold; color: #333; }
+    .backbtn { width: 30px; height: 30px; border: 0; background: #f5f5f5; border-radius: 8px; color: #555;
+               display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 0; }
+    .vscroll { overflow-y: auto; flex: 1; min-height: 0; }
+
+    /* ══ index.html の実クラス（写し） ══ */
+    .nearby-section-label { font-size: 11px; color: #999; padding: 6px 16px 4px; }
+    .fxp-sec { font-size: 11px; color: #999; padding: 12px 16px 5px; }
+    .fxp-row { display: flex; align-items: center; gap: 10px; padding: 10px 16px;
+               font-size: 13px; color: #333; border-bottom: 1px solid #f4f4f4; }
+    .fxp-rt { margin-left: auto; color: #888; font-size: 12px; font-variant-numeric: tabular-nums; }
+    .fxp-note { font-size: 11px; color: #999; line-height: 1.7; padding: 6px 16px 10px;
+                border-bottom: 1px solid #f4f4f4; margin: 0; }
+    .fxp-btn { height: 44px; border-radius: 10px; border: 0; font-size: 14px; font-family: inherit;
+               display: flex; align-items: center; justify-content: center; gap: 7px; width: 100%;
+               box-sizing: border-box; }
+    .fxp-btn.primary { background: var(--ui-blue); color: #fff; font-weight: 600; }
+    .fxp-btn.sub { background: #f2f4f7; color: #444; }
+    .fxp-btn.danger { background: #fdeceb; color: var(--danger); font-weight: 600; }
+    .btnpad { padding: 12px 16px 14px; display: flex; flex-direction: column; gap: 8px; }
+    .btnrow { padding: 10px 16px 12px; display: flex; gap: 8px; }
+    .filter-chip { display: flex; align-items: center; justify-content: center; gap: 3px;
+                   font-size: 11px; color: #333; background: #f5f5f5; border-radius: 20px;
+                   padding: 8px 4px; border: .5px solid #e0e0e0; }
+
+    /* ══ 同期まわりの新クラス（提案） ══ */
+    .sync-state { display: flex; align-items: center; gap: 9px; padding: 8px 16px 10px; }
+    .sync-dot { width: 9px; height: 9px; border-radius: 50%; background: #2E7D32; flex-shrink: 0; }
+    .sync-dot.off { background: #bbb; }
+    .sync-txt { font-size: 13px; color: #333; line-height: 1.5; }
+    .sync-txt small { display: block; font-size: 11px; color: #999; margin-top: 2px; }
+    .qr-wrap { display: flex; flex-direction: column; align-items: center; padding: 6px 16px 2px; }
+    .qr { width: 190px; height: 190px; background: #fff; border: 1px solid #eee; border-radius: 10px;
+          display: grid; grid-template-columns: repeat(21, 1fr); padding: 8px; box-sizing: border-box; }
+    .qr i { background: #fff; }
+    .qr i.on { background: #111; }
+    .code-line { font-family: ui-monospace, monospace; font-size: 19px; letter-spacing: 3px;
+                 color: #222; margin-top: 12px; }
+    .code-cap { font-size: 11px; color: #999; margin-top: 3px; }
+    .timer { font-size: 11px; color: #E65100; margin-top: 8px; }
+    .joined { display: flex; align-items: center; gap: 8px; padding: 9px 16px; font-size: 13px;
+              color: #333; border-bottom: 1px solid #f4f4f4; }
+    .joined .ck { color: #2E7D32; font-weight: 700; }
+    .joined small { color: #999; font-size: 11px; margin-left: auto; }
+    .dev-row { display: flex; align-items: center; gap: 10px; padding: 11px 16px;
+               border-bottom: 1px solid #f4f4f4; }
+    .dev-ic { width: 30px; height: 30px; border-radius: 8px; background: #eef2f7; color: #5b6b7c;
+              display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+    .dev-n { font-size: 13px; color: #333; }
+    .dev-n small { display: block; font-size: 11px; color: #999; margin-top: 2px; }
+    .dev-n b.self { font-size: 10px; color: var(--ui-blue); background: #e8f0fe; border-radius: 4px;
+                    padding: 1px 5px; margin-left: 6px; font-weight: 600; }
+    .dev-x { margin-left: auto; border: 0; background: #f5f5f5; color: #666; font-size: 12px;
+             border-radius: 8px; padding: 6px 10px; font-family: inherit; flex-shrink: 0; }
+    .sheet { position: absolute; left: 0; right: 0; bottom: 0; z-index: 5; background: #fff;
+             border-radius: 16px 16px 0 0; box-shadow: 0 -4px 20px rgba(0,0,0,.22); padding: 16px 16px 18px; }
+    .sheet h4 { margin: 0 0 8px; font-size: 14px; color: #222; }
+    .sheet p { margin: 0 0 14px; font-size: 12px; color: #666; line-height: 1.8; }
+    .scrim { position: absolute; inset: 0; background: rgba(0,0,0,.35); z-index: 4; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>設定の同期 — 追加する画面とボタン</h1>
+    <p class="lead">
+        <code>SYNC_MANUAL.md</code> の方針（ログイン画面を作らず、QRを表示している間だけ端末を追加できる）を
+        画面に落としたものです。枠は iPhone SE3（375×667）の実寸で、クラス名と色は
+        <code>index.html</code> の実物から写しています。QRはダミーの模様で、読み取れません。
+    </p>
+</header>
+
+<h2 class="sec">1. 増えるものは「設定の1区画」と「ビュー2つ」だけ</h2>
+<p class="note">
+    メニューパネルは既にビューを切り替える作りです（周辺検索・城主・城主詳細・都道府県・遺構・
+    お気に入り一覧・書き出しなど）。同期もその枠組みに載せ、<b>新しい常設ボタンは1つも増やしません。</b>
+    入口は設定の中だけです。
+</p>
+<table>
+    <tr><th>追加するもの</th><th>置き場所</th><th>中身</th></tr>
+    <tr><td>設定の「同期」区画</td><td><code>#nearby-settings-view</code> の「メニュー表示」と「お気に入りの名前」の間</td>
+        <td>状態1行＋ボタン2つ（端末を追加／端末の管理）＋書き出し1行</td></tr>
+    <tr><td>ビュー：端末を追加</td><td>メニューパネル内の第12ビュー</td><td>QR＋手入力コード＋参加した端末の並び</td></tr>
+    <tr><td>ビュー：端末の管理</td><td>メニューパネル内の第13ビュー</td><td>端末の一覧＋外す＋保存領域の削除</td></tr>
+</table>
+<div class="impl">
+    <b>「お気に入りの名前」より上に置く理由:</b> 名前の欄は文字入力なので最下段に固定されています
+    （<code>index.html</code> 1767行のコメント：上に置くと入力でキーボードが出たとき下の行が隠れる）。
+    同期区画はボタンだけなのでその上に入れます。
+</div>
+
+<h2 class="sec">2. 画面</h2>
+<div class="screens">
+
+    <!-- ① 設定 -->
+    <div class="screen-wrap">
+        <p class="screen-cap"><b>① 設定 — 同期の区画</b><br>
+            既定はこの状態です。何もしていなくても、最初の保存の時点で自動的に同期は始まっています。</p>
+        <div class="screen">
+            <div class="fakebar"><div class="fb-btn"></div><div class="fb-search">地図を検索</div><div class="fb-btn"></div></div>
+            <div class="panel" style="height: 560px;">
+                <div class="panel-head"><div class="panel-handle"></div></div>
+                <div class="view-head">
+                    <button class="backbtn">‹</button><span class="t">設定</span>
+                </div>
+                <div class="vscroll">
+                    <div class="nearby-section-label">メニュー表示</div>
+                    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0 16px 8px;">
+                        <label class="filter-chip"><input type="checkbox">検索地点</label>
+                    </div>
+                    <div style="border-top:1px solid #f0f0f0;"></div>
+
+                    <div class="nearby-section-label">同期</div>
+                    <div class="sync-state">
+                        <span class="sync-dot"></span>
+                        <span class="sync-txt">この端末は同期しています
+                            <small>3台で共有中 ・ 最終送信 2分前</small></span>
+                    </div>
+                    <div class="btnrow">
+                        <button class="fxp-btn primary">端末を追加</button>
+                        <button class="fxp-btn sub">端末の管理</button>
+                    </div>
+                    <div class="fxp-row">書き出し／読み込み<span class="fxp-rt">JSON</span></div>
+                    <p class="fxp-note">お気に入りと設定をファイルに保存します。渡した相手とは同期しません。</p>
+                    <div style="border-top:1px solid #f0f0f0;"></div>
+
+                    <div class="nearby-section-label">お気に入りの名前</div>
+                    <div style="display:flex;align-items:center;gap:9px;padding:5px 16px;">
+                        <span style="width:20px;height:20px;border-radius:6px;background:#E91E63;"></span>
+                        <span style="flex:1;height:30px;border:1px solid #e3e3e3;border-radius:8px;background:#fafafa;
+                                     font-size:13px;color:#333;display:flex;align-items:center;padding:0 10px;">お気に入り</span>
+                        <span style="font-size:11px;color:#999;">128件</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ② 端末を追加 -->
+    <div class="screen-wrap">
+        <p class="screen-cap"><b>② 端末を追加（第12ビュー）</b><br>
+            <b>この画面を開いている間だけ</b>QRが有効です。読ませるたびに下へ積み上がります。</p>
+        <div class="screen">
+            <div class="fakebar"><div class="fb-btn"></div><div class="fb-search">地図を検索</div><div class="fb-btn"></div></div>
+            <div class="panel" style="height: 560px;">
+                <div class="panel-head"><div class="panel-handle"></div></div>
+                <div class="view-head">
+                    <button class="backbtn">‹</button><span class="t">端末を追加</span>
+                </div>
+                <div class="vscroll">
+                    <div class="qr-wrap">
+                        <div class="qr" id="qr1"></div>
+                        <div class="code-line">K7QP-3M9X</div>
+                        <div class="code-cap">カメラが使えないときは、追加する端末でこの8文字を入れます</div>
+                        <div class="timer">● この画面を閉じると無効になります（残り 9:41）</div>
+                    </div>
+                    <div class="fxp-sec">参加した端末</div>
+                    <div class="joined"><span class="ck">✓</span>iPad / Safari<small>たった今</small></div>
+                    <div class="joined"><span class="ck">✓</span>Windows / Chrome<small>1分前</small></div>
+                    <p class="fxp-note">追加した端末とは、お気に入りと設定がこれ以降ずっと共有されます。
+                        やめるときは「端末の管理」から外します。</p>
+                    <div class="btnpad">
+                        <button class="fxp-btn sub">閉じる（QRを無効にする）</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ③ 追加される側 -->
+    <div class="screen-wrap">
+        <p class="screen-cap"><b>③ 追加される側 — QRを読んで開いた直後</b><br>
+            標準のカメラでURLが開くので、<b>アプリ内にカメラ機能は作りません。</b></p>
+        <div class="screen">
+            <div class="fakebar"><div class="fb-btn"></div><div class="fb-search">地図を検索</div><div class="fb-btn"></div></div>
+            <div class="scrim"></div>
+            <div class="sheet">
+                <h4>この端末を追加しますか？</h4>
+                <p>追加すると、お気に入りと表示設定がもう一方の端末と共有されます。<br>
+                   地図の表示位置だけは端末ごとに別々のままです。</p>
+                <div class="fxp-sec" style="padding:0 0 5px;">この端末の名前</div>
+                <div style="height:34px;border:1px solid #e3e3e3;border-radius:8px;background:#fafafa;
+                            display:flex;align-items:center;padding:0 10px;font-size:13px;color:#333;">iPad / Safari</div>
+                <div class="fxp-sec" style="padding:12px 0 5px;">この端末に今あるお気に入り（12件）</div>
+                <div style="display:flex;gap:8px;">
+                    <label class="filter-chip" style="flex:1;padding:9px 6px;"><input type="radio" checked>持ち込んで統合</label>
+                    <label class="filter-chip" style="flex:1;padding:9px 6px;"><input type="radio">捨てて合わせる</label>
+                </div>
+                <div class="btnpad" style="padding:14px 0 0;">
+                    <button class="fxp-btn primary">追加する</button>
+                    <button class="fxp-btn sub">やめる</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ④ 端末の管理 -->
+    <div class="screen-wrap">
+        <p class="screen-cap"><b>④ 端末の管理（第13ビュー）</b><br>
+            見覚えのない端末はここで外します。外した端末は次の通信から同期が止まります。</p>
+        <div class="screen">
+            <div class="fakebar"><div class="fb-btn"></div><div class="fb-search">地図を検索</div><div class="fb-btn"></div></div>
+            <div class="panel" style="height: 560px;">
+                <div class="panel-head"><div class="panel-handle"></div></div>
+                <div class="view-head">
+                    <button class="backbtn">‹</button><span class="t">端末の管理</span>
+                </div>
+                <div class="vscroll">
+                    <div class="fxp-sec">共有している端末（3台）</div>
+                    <div class="dev-row">
+                        <span class="dev-ic">▣</span>
+                        <span class="dev-n">iPhone / Safari<b class="self">この端末</b><small>2026-08-12 から ・ 最終 たった今</small></span>
+                    </div>
+                    <div class="dev-row">
+                        <span class="dev-ic">▤</span>
+                        <span class="dev-n">iPad / Safari<small>2026-08-20 から ・ 最終 3分前</small></span>
+                        <button class="dev-x">外す</button>
+                    </div>
+                    <div class="dev-row">
+                        <span class="dev-ic">▥</span>
+                        <span class="dev-n">Windows / Chrome<small>2026-08-20 から ・ 最終 1分前</small></span>
+                        <button class="dev-x">外す</button>
+                    </div>
+                    <div class="btnpad">
+                        <button class="fxp-btn sub">この端末以外をすべて外す</button>
+                    </div>
+                    <div style="border-top:1px solid #f0f0f0;"></div>
+                    <div class="fxp-sec">同期をやめる</div>
+                    <div class="btnpad" style="padding-top:2px;">
+                        <button class="fxp-btn sub">この端末の同期をやめる</button>
+                        <button class="fxp-btn danger">保存領域を削除する</button>
+                    </div>
+                    <p class="fxp-note">「削除する」を押すと、サーバー上の共有内容と全端末の結び付きが消えます。
+                        各端末に残っているお気に入りは消えません。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ⑤ 外す確認 -->
+    <div class="screen-wrap">
+        <p class="screen-cap"><b>⑤ 外すときの確認</b><br>
+            取り消せない操作なので、何が起きるかを書いてから押させます。</p>
+        <div class="screen">
+            <div class="fakebar"><div class="fb-btn"></div><div class="fb-search">地図を検索</div><div class="fb-btn"></div></div>
+            <div class="scrim"></div>
+            <div class="sheet">
+                <h4>「iPad / Safari」を外しますか？</h4>
+                <p>この端末との同期が止まります。<br>
+                   <b>その端末に今あるお気に入りは消えません。</b>手元に残ったまま、これ以降は別々に育ちます。<br>
+                   もう一度共有したいときは、QRを出して読ませ直します。</p>
+                <div class="btnpad" style="padding:0;">
+                    <button class="fxp-btn danger">外す</button>
+                    <button class="fxp-btn sub">やめる</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<h2 class="sec">3. ボタンの文言と色</h2>
+<table>
+    <tr><th>ボタン</th><th>見た目</th><th>そう決めた理由</th></tr>
+    <tr><td>端末を追加</td><td><code>.fxp-btn.primary</code>（<code>--ui-blue #4285F4</code>）</td>
+        <td>この区画で最も使う操作。書き出しビューの主ボタンと同じ扱い</td></tr>
+    <tr><td>端末の管理</td><td><code>.fxp-btn.sub</code>（<code>#f2f4f7</code>）</td>
+        <td>参照が主で、押す回数が少ない</td></tr>
+    <tr><td>外す／保存領域を削除する</td><td><code>.fxp-btn.danger</code>（地 <code>#fdeceb</code>／字 <code>#C62828</code>）</td>
+        <td>取り消せない操作だけ赤。<b>この赤が出るのはパネルの中だけ</b>で、地図には出ないため、
+            種別色（食べログ・ポケふた・城など）との判別は問題にならない
+            （お気に入り入口の <code>#FFC107</code> を「パネルの中だけ」と決めた 1662行の扱いと同じ）</td></tr>
+    <tr><td>閉じる（QRを無効にする）</td><td><code>.fxp-btn.sub</code></td>
+        <td>「閉じる＝券が切れる」ことを文言に入れる。押し忘れても最大10分で切れる</td></tr>
+</table>
+
+<h2 class="sec">4. 手順（この画面での操作）</h2>
+<h3 class="sub">登録する</h3>
+<table>
+    <tr><th>#</th><th>どの端末で</th><th>操作</th><th>画面に出ること</th></tr>
+    <tr><td>1</td><td>1台目</td><td>設定 →「端末を追加」</td><td>②の画面。QRとコードが出る</td></tr>
+    <tr><td>2</td><td>2台目</td><td>標準のカメラでQRを読み、開いたURLを開く</td><td>③の確認シート</td></tr>
+    <tr><td>3</td><td>2台目</td><td>持ち込むか捨てるかを選び「追加する」</td><td>地図に戻り、同期済みになる</td></tr>
+    <tr><td>4</td><td>1台目</td><td>②の画面のまま3台目・4台目も読ませる</td><td>「参加した端末」に積み上がる</td></tr>
+    <tr><td>5</td><td>1台目</td><td>「閉じる」</td><td>QRが無効になる。<b>発行はここまでで1回だけ</b></td></tr>
+</table>
+<h3 class="sub">解除する</h3>
+<table>
+    <tr><th>やりたいこと</th><th>操作</th><th>結果</th></tr>
+    <tr><td>他の端末を切り離す</td><td>設定 →「端末の管理」→ その行の「外す」→ ⑤で「外す」</td>
+        <td>その端末は次の通信から同期停止。手元のお気に入りは残る</td></tr>
+    <tr><td>この端末だけ抜ける</td><td>「この端末の同期をやめる」</td>
+        <td>この端末が同期をやめる。他の端末はそのまま共有を続ける</td></tr>
+    <tr><td>共有そのものをやめる</td><td>「保存領域を削除する」</td>
+        <td>サーバー上の内容と全端末の結び付きが消える。各端末のお気に入りは残る</td></tr>
+</table>
+<div class="impl warn">
+    <b>取り消せないこと:</b> 外してもその端末に残ったコピーは消えません。同期が止まるだけです
+    （<code>SYNC_MANUAL.md</code> §5.5）。「渡したものを後から取り消す」ことは、どの方式でもできません。
+</div>
+
+<h2 class="sec">5. 実装の見込み</h2>
+<table>
+    <tr><th>作るもの</th><th>目安</th><th>備考</th></tr>
+    <tr><td>設定の同期区画</td><td>HTML 20行＋関数3つ</td><td>既存の <code>.fxp-*</code> をそのまま使う</td></tr>
+    <tr><td>第12ビュー（端末を追加）</td><td>HTML 25行＋JS 60行</td><td>QR生成だけライブラリが要る（後述）</td></tr>
+    <tr><td>第13ビュー（端末の管理）</td><td>HTML 15行＋JS 50行</td><td><code>GET /api/devices</code> の描画と <code>DELETE</code></td></tr>
+    <tr><td>参加の確認シート</td><td>HTML 20行＋JS 40行</td><td>URL の <code>#join=</code> を見て開く。読んだら <code>history.replaceState</code> で消す</td></tr>
+</table>
+<div class="impl">
+    <b>QRの生成:</b> 表示側で必要になる唯一の外部部品です。<code>index.html</code> は現在
+    unpkg の CDN を <code>sw.js</code> のキャッシュ対象に入れており（<code>CACHEABLE_CDN</code>）、
+    同じ入れ方で足せます。<b>読み取り側は標準のカメラに任せるので、部品は要りません。</b>
+</div>
+<div class="impl good">
+    <b>コードをURLにする利点:</b> QRの中身を <code>https://（サイト）/#join=（コード）</code> にすると、
+    スマホの標準カメラで読むだけで参加画面まで進みます。フラグメント（<code>#</code>）はサーバーへ送られないため、
+    アクセスログにコードが残りません。手入力用の8文字は、QRが読めない端末（PC）向けの控えです。
+</div>
+
+<script>
+    /* ダミーのQR模様。読み取れないことが分かるよう、実物と同じ21×21に位置検出パターンだけ置いてある */
+    (function () {
+        const N = 21, el = document.getElementById('qr1');
+        const finder = (r, c) => {
+            const inBox = (r0, c0) => r >= r0 && r < r0 + 7 && c >= c0 && c < c0 + 7;
+            for (const [r0, c0] of [[0, 0], [0, N - 7], [N - 7, 0]]) {
+                if (!inBox(r0, c0)) continue;
+                const dr = r - r0, dc = c - c0;
+                const edge = dr === 0 || dr === 6 || dc === 0 || dc === 6;
+                const core = dr >= 2 && dr <= 4 && dc >= 2 && dc <= 4;
+                return edge || core ? 1 : 0;
+            }
+            return -1;
+        };
+        let seed = 20260820;
+        const rnd = () => (seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648;
+        for (let r = 0; r < N; r++) for (let c = 0; c < N; c++) {
+            const f = finder(r, c);
+            const on = f >= 0 ? f : (rnd() > 0.52 ? 1 : 0);
+            const i = document.createElement('i');
+            if (on) i.className = 'on';
+            el.appendChild(i);
+        }
+    })();
+</script>
+</body>
+</html>
