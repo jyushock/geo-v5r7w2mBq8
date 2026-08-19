@@ -59,6 +59,18 @@
                100名城のピン（CASTLE_MEIJO_COLOR）と同じ値だが意味が違うので分けてある。
                片方の色を変えるときにもう片方を巻き込まないため、値が同じでも統合しないこと。 */
             --ui-blue: #4285F4;
+            /* お気に入りの4枠の色。枠に意味は持たせず（名前は設定でユーザーが付ける）、
+               色は枠の番号の代わりなので名前を変えても動かさない。
+               既存の地図の色（食べログ #FFAA00 / ポケふた #FBBC04 / マンホール系 #B87333 /
+               道の駅 #0B499D / 城 #8A8A8A・#4285F4・#EA4335 / 選択リング #546E7A）と
+               いちばん近い組でも CIEDE2000 で 16.3 離れている。4色どうしの最小は 27.9。
+               物差しとして、いま並んでいる食べログとポケふたの色差は 7.1。
+               計算値は mock/fav-badge-preview.html の「7. 色の裏付け」に残してある。
+               #7CB342 だけ白文字のコントラストが 2.50 しか出ないので、その上の文字は黒にする。 */
+            --fav1: #E91E63;
+            --fav2: #7B1FA2;
+            --fav3: #00897B;
+            --fav4: #7CB342;
         }
         body { margin: 0; padding: 0; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
         /* ドロワーの下スワイプがドキュメントのオーバースクロール（iOSのバウンス）に化けるのを防ぐ保険。
@@ -850,8 +862,10 @@
         /* 一覧から（メニュー内の入口ボタン）。
            アイコンの下にラベルを置く縦積み。周辺検索のカテゴリボタンと同じ形にして、
            2列に並べても文字が折り返さないようにする。 */
-        /* 入口は3つ（都道府県・城主・遺構）。375px幅で1列109pxとなり、9pxの名前は折り返さない */
-        .nearby-list-btns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 0 16px 12px; }
+        /* 一覧から検索の入口。都道府県・城主・遺構・お気に入りの4本を1段に並べる。
+           SE3(375px)で1本 79.75px（(375 - 16×2 - 8×3) / 4）。アイコンは34pxなので余裕があり、
+           名前も「お気に入り」5文字×9px＝45pxで収まる。5本目を足す余地は無い。 */
+        .nearby-list-btns { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 0 16px 12px; }
         .nearby-list-btns .nearby-list-btn { margin-bottom: 0; }
         .nearby-list-btn {
             display: flex; flex-direction: column; align-items: center; gap: 4px; width: 100%;
@@ -1052,6 +1066,67 @@
             color: #666; border: 0; cursor: pointer; font-family: inherit;
         }
         .lords-chip[aria-pressed="true"] { background: #e3ecff; color: #2a5bd7; font-weight: bold; }
+        /* お気に入りの絞り込みチップに付ける枠の色。名前が長くても行が崩れないよう幅を止める */
+        .lords-chip .fav-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+                               margin-right: 5px; vertical-align: -1px; }
+        .lords-chip.fav-kind { max-width: 160px; overflow: hidden; text-overflow: ellipsis;
+                               white-space: nowrap; }
+
+        /* ══ お気に入り ══════════════════════════════════════════════════
+           一覧の行の左端に立てる色帯。付いている枠の数だけ縦に等分する。
+           行の左padding（14px）の中に収まる幅（帯5px＋空き9px＝アイコンの左端14px）なので、
+           マークの有無で行の中身の位置は動かない。 */
+        .fav-stripe { position: absolute; left: 0; top: 0; bottom: 0; width: 5px;
+                      display: flex; flex-direction: column; pointer-events: none; }
+        .fav-stripe span { flex: 1 1 0; }
+
+        /* 情報シートの上端の縁ライン。角丸16pxの内側に沿わせるので本文の高さを食わない。
+           ドラッグハンドルと5px以内で並ぶとハンドルの一部に見えるため、
+           線が出ているときだけヘッダーの上padding を 8px→13px にして逃がす。 */
+        #obj-sheet-favline { position: absolute; left: 0; right: 0; top: 0; height: 5px;
+                             display: none; overflow: hidden;
+                             border-radius: 16px 16px 0 0; z-index: 2; pointer-events: none; }
+        #obj-sheet-favline span { flex: 1 1 0; }
+        #obj-sheet.has-fav #obj-sheet-favline { display: flex; }
+        #obj-sheet.has-fav #obj-sheet-header { padding-top: 13px; }
+        /* 登録操作。ヘッダー右の★を押すと4枠のパレットが開く（1タップで開き、1タップで付け外し）。
+           位置は閉じる×（right:8px）の左。 */
+        #obj-fav-btn { position: absolute; top: 0; right: 36px; background: none; border: none;
+                       font-size: 19px; line-height: 1; cursor: pointer; padding: 2px 6px;
+                       color: #cfcfcf; font-family: inherit; }
+        .fav-pop { position: fixed; z-index: 320; background: #fff; border-radius: 10px;
+                   box-shadow: 0 4px 16px rgba(0,0,0,.22); padding: 6px; display: flex;
+                   flex-direction: column; gap: 2px; min-width: 132px; }
+        .fav-pop button { display: flex; align-items: center; gap: 8px; border: 0; background: none;
+                          font-family: inherit; font-size: 12px; color: #333; padding: 7px 8px;
+                          border-radius: 7px; cursor: pointer; text-align: left; white-space: nowrap; }
+        .fav-pop button i { width: 14px; height: 14px; border-radius: 4px; flex-shrink: 0; }
+        .fav-pop button .fav-ck { margin-left: auto; color: #2E7D32; font-weight: 700; padding-left: 6px; }
+        .fav-pop .fav-pop-note { font-size: 11px; color: #888; padding: 6px 8px; line-height: 1.6;
+                                 max-width: 180px; }
+
+        /* 設定の「お気に入りの名前」。名前を入れた枠だけが使える（空欄の枠は出さない）。
+           入力は6文字まで。お気に入り一覧の絞り込みチップ（すべて＋4枠）が SE3(375px) で
+           2段に収まる上限がここだから。チップは 左右padding20px＋色の点13px＋件数16px＋
+           名前（11pxの全角1文字＝11px）で、6文字なら115px、「すべて」は69px。
+           内側幅351pxに 69+115+115＝299px（隙間12px込み311px）で1段目に3つ、残り2つが2段目。
+           8文字だと1つ137pxになり3段に落ちる。 */
+        .favname-row { display: flex; align-items: center; gap: 9px; padding: 5px 16px; }
+        .favname-sw { width: 20px; height: 20px; border-radius: 6px; flex-shrink: 0; display: flex;
+                      align-items: center; justify-content: center; font-size: 10px; font-weight: 700; }
+        .favname-in { flex: 1; min-width: 0; height: 30px; border: 1px solid #e3e3e3; border-radius: 8px;
+                      background: #fafafa; color: #333; font-size: 13px; font-family: inherit;
+                      padding: 0 10px; box-sizing: border-box; }
+        .favname-cnt { font-size: 11px; color: #999; width: 52px; text-align: right; flex-shrink: 0;
+                       font-variant-numeric: tabular-nums; }
+        .favname-note { font-size: 11px; color: #999; line-height: 1.7; padding: 2px 16px 10px; }
+        /* お気に入り一覧ビュー（メニューパネル内の第10ビュー）。城主・都道府県・遺構と同じ枠組み */
+        #nearby-fav-view { display: none; flex-direction: column; min-height: 0;
+                           height: calc(100svh - 104px); max-height: 100%; }
+        #nearby-fav-view.open { display: flex; }
+        .fav-empty { padding: 40px 20px; text-align: center; color: #aaa; font-size: 12px; line-height: 1.9; }
+        .fav-empty b { font-size: 34px; color: #e0e0e0; display: block; margin-bottom: 8px; font-weight: normal; }
+        .fav-added { font-size: 10px; color: #bbb; flex-shrink: 0; font-variant-numeric: tabular-nums; }
         /* 近い順の起点。「どこからの距離なのか」を一覧の直前に帯で出す。
            帯は一覧のスクロール領域（.lords-scroll）の外にあるので、一覧をどれだけ
            送っても出たまま残る（貼り付ける指定は要らない）。
@@ -1355,6 +1430,7 @@
             border-bottom: 1px solid #f0f0f0;
             cursor: pointer;
             gap: 10px;
+            position: relative;   /* 左端に立てるお気に入りの色帯（.fav-stripe）の基準 */
         }
         .nearby-item:last-child { border-bottom: none; }
         .nearby-item:hover { background: #f9f9f9; }
@@ -1553,6 +1629,16 @@
                 </span>
                 <span class="nlb-n">遺構</span>
             </button>
+            <!-- 地色 #FFC107 は4枠のどの色でもない。4枠の総称としての入口なので、
+                 特定の枠の色を使うと「お気に入り1だけの入口」に見えるため。
+                 この色が出るのはパネルの中だけで、地図のポケふた #FBBC04 と並ぶことはない -->
+            <button class="nearby-list-btn" id="fav-entry-btn" onclick="openFavView()">
+                <span class="nlb-ic" style="background:#FFC107;">
+                    <svg viewBox="0 0 100 100" aria-hidden="true"><path fill="#fff"
+                        d="M50 14 L61 39 L88 42 L68 60 L74 87 L50 73 L26 87 L32 60 L12 42 L39 39 Z"/></svg>
+                </span>
+                <span class="nlb-n">お気に入り</span>
+            </button>
         </div>
     </div>
 
@@ -1590,6 +1676,12 @@
         <div class="nearby-section-label">オブジェクト表示</div>
         <div id="obj-filter-list"></div>
         <div id="obj-genre-line"></div>
+        <div style="border-top:1px solid #f0f0f0;"></div>
+        <!-- お気に入りの4枠の名前。枠に固定の意味は持たせず、ここで名前を入れたものだけが使える -->
+        <div class="nearby-section-label">お気に入りの名前</div>
+        <div id="fav-name-list"></div>
+        <div class="favname-note">名前を入れた枠だけを使います。空にした枠は地図にも一覧にも出ませんが、
+            登録した分は消えずに残ります（名前を戻せばそのまま出ます）。</div>
         <div style="border-top:1px solid #f0f0f0;"></div>
         <div style="display:flex;gap:12px;padding:8px 16px 10px;align-items:flex-end;">
             <div style="display:flex;flex-direction:column;gap:4px;flex:1;">
@@ -1805,6 +1897,37 @@
         <div class="dorg" id="remains-origin"></div>
         <div class="lords-scroll" id="remains-castle-list"></div>
     </div>
+
+    <!-- お気に入り一覧ビュー（第10ビュー）。城主・都道府県・遺構と同じ枠組み。
+         種別（食べログ・お城…）の絞り込みは置かない。設定の「オブジェクト表示」で
+         消した種別は地図・検索・周辺検索・都道府県・城主のすべてから消える決まりで、
+         ここだけ別の種別セットを持たせると規則が二重になるため。 -->
+    <div id="nearby-fav-view">
+        <div class="lords-head">
+            <button class="lords-iconbtn" onclick="closeFavView()" title="メニューへ戻る">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="lords-head-title">お気に入り</div>
+            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+        </div>
+        <div class="lords-filter">
+            <div class="lords-search-wrap">
+                <input id="fav-item-search" type="search" autocomplete="off"
+                       placeholder="名前・住所で絞り込み" oninput="onFavSearchInput(this.value)">
+                <button class="lords-search-clear" onclick="clearFavSearch()" title="クリア">×</button>
+            </div>
+            <div class="lords-chips" id="fav-kind-chips"></div>
+            <div class="lords-chips">
+                <button class="lords-chip" data-fs="at"   aria-pressed="true"  onclick="setFavSort('at')">追加順</button>
+                <button class="lords-chip" data-fs="dist" aria-pressed="false" onclick="setFavSort('dist')">近い順</button>
+                <button class="lords-chip" data-fs="type" aria-pressed="false" onclick="setFavSort('type')">種別順</button>
+                <button class="lords-chip" data-fs="name" aria-pressed="false" onclick="setFavSort('name')">名前順</button>
+            </div>
+        </div>
+        <!-- 近い順の起点。一覧の直前に置く（スクロール領域の外なので送っても残る） -->
+        <div class="dorg" id="fav-origin"></div>
+        <div class="lords-scroll" id="fav-item-list"></div>
+    </div>
 </div>
 
 <!-- スポット検索結果パネル（別ウィンドウ） -->
@@ -1853,8 +1976,11 @@
 <!-- オブジェクトタップで下から出る情報シート（旧ポップアップの置き換え）。
      地図操作を妨げないようオーバーレイは持たせず、地図の空きをタップすると閉じる。 -->
 <div id="obj-sheet">
+    <!-- お気に入りの色ライン。付いている枠の数だけ横に等分する（中身は updateSheetFav） -->
+    <div id="obj-sheet-favline"></div>
     <div id="obj-sheet-header">
         <div class="os-handle"></div>
+        <button id="obj-fav-btn" onclick="onSheetFavBtn(event)" title="お気に入り">★</button>
         <button id="obj-sheet-close" onclick="closeObjSheet()">×</button>
     </div>
     <div id="obj-sheet-body"></div>
@@ -1979,6 +2105,7 @@
         }
         if (key === 'manhole' || key === 'pokefuta') refreshManholeSource();
         buildSearchIndex(); // 到着済みデータで全件検索を再構築
+        refreshFavOverlay();     // お気に入りの重ね描きは searchIndex から作るので、揃えて作り直す
         prefIndex = null;   // 都道府県索引は searchIndex から組むので作り直させる
         objGenreCounts = null;   // 部門の件数も searchIndex から数えるので数え直させる
         updatePrefEntry();
@@ -2489,6 +2616,7 @@
         lord: { el: 'lord-origin', state: () => lordsState, redraw: () => renderLordCastles() },
         remains: { el: 'remains-origin', state: () => remainsState, redraw: () => renderRemainsCastles() },
         nearby: { el: 'nearby-origin', state: () => nearbyState, noReset: true },
+        fav: { el: 'fav-origin', state: () => favState, redraw: () => renderFavItems() },
     };
 
     function renderDistOrigin(kind) {
@@ -3750,6 +3878,9 @@ function openObjSheet(type, label, p, lng, lat, pairFrom) {
     objSheetPair = pairFrom ? [pairFrom.slice(), [lng, lat]] : null;
     setSelectedObjects(objSheetPair || [[lng, lat]], objRingColor(type, p));
     applyClampMarkers();
+    // お気に入りの色ラインと★は、開いた対象ごとに引き直す
+    closeFavPalette();
+    updateSheetFav();
     // 写真は読み込み完了で高さが確定する（カード系は比率なりに伸びる）ため、その時点で寄せ直す
     body.querySelectorAll('img').forEach(img => {
         if (!img.complete) img.addEventListener('load', adjustMapForSheet, { once: true });
@@ -3770,6 +3901,8 @@ function closeObjSheet() {
     objSheetCtx = null;
     objSheetPair = null;
     closePhotoViewer();   // シートが閉じたら写真ビューアも残さない
+    closeFavPalette();    // お気に入りのパレットも残さない
+    updateSheetFav();     // 色ラインを消し、★を隠す
     clearSelectedObject();
 }
 
@@ -4761,6 +4894,8 @@ map.on('zoomend', () => { isZooming = false; });
                 // クラスタは対象外。クラスタをタップしたときはズームインしつつシートを閉じる
                 objClickLayers.push(clickLayer);
                 map.on('click', clickLayer, (e) => {
+                    // お気に入りを重ね描きしている位置は、前面のハンドラに任せる（二重に開かない）
+                    if (favOverlayHit(e.point)) return;
                     if (trackingMode > 0) {
                         trackingMode = 0;
                         stopRafLoop();
@@ -4779,6 +4914,18 @@ map.on('zoomend', () => { isZooming = false; });
                 const hover = (l, cur) => { map.on('mouseenter', l, () => map.getCanvas().style.cursor = cur); map.on('mouseleave', l, () => map.getCanvas().style.cursor = ''); };
                 hover(clickLayer, 'pointer');
                 hover(`${conf.id}-cluster`, 'pointer');
+            });
+
+            /* お気に入りの重ね描き。全種別のピンより上に置くので、configs を回し終えた
+               ここで足す。寸法と影の値は上のピンと同じものを渡し、二重に持たない。 */
+            addFavOverlayLayers({
+                circleR: PIN_SHAPE_R,
+                shadowCircle: shadowCircleOf(PIN_SHAPE_R),
+                shadowOpacity: PIN_SHADOW_OPACITY,
+                shadowOffset: PIN_SHADOW_OFFSET,
+                michiSize: MICHI_PLATE_PX / OBJ_ICON_NATIVE_PX,
+                cardBadgeSize: MHCARD_BADGE_PX / OBJ_ICON_NATIVE_PX,
+                cardFaceColor: MHCARD_FACE_COLOR,
             });
 
             // オブジェクト以外（地図の空き）をタップしたら情報シートを閉じる。
@@ -5562,6 +5709,7 @@ map.on('zoomend', () => { isZooming = false; });
         });
         prefIndex = null;
         renderObjFilterUI();
+        refreshFavOverlay();   // 消した種別はお気に入りの重ね描きからも外す
         saveSettings();
     }
 
@@ -5575,6 +5723,7 @@ map.on('zoomend', () => { isZooming = false; });
         }
         prefIndex = null;
         renderObjGenreLine();
+        refreshFavOverlay();   // 消した部門はお気に入りの重ね描きからも外す
         saveSettings();
     }
 
@@ -5704,10 +5853,12 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('nearby-remains-view').classList.remove('open');
         document.getElementById('nearby-remains-group-view').classList.remove('open');
         document.getElementById('nearby-remains-detail-view').classList.remove('open');
+        document.getElementById('nearby-fav-view').classList.remove('open');
         prefState.pref = null;
         updateLordsEntry();
         updatePrefEntry();
         updateRemainsEntry();
+        updateFavEntry();
         document.getElementById('nearby-panel').classList.add('open');
         document.getElementById('nearby-overlay').classList.add('open');
         document.getElementById('bottom-bar').classList.add('panel-open');
@@ -5717,6 +5868,7 @@ map.on('zoomend', () => { isZooming = false; });
     function openSettingsView() {
         setPanelLifted(true);
         renderObjFilterUI();
+        renderFavNameList();
         Object.keys(labelState).forEach(id => { const el=document.getElementById(`check-label-${id}`); if(el) el.checked=labelState[id]; });
         const originChk = document.getElementById('check-show-origin');
         if (originChk) originChk.checked = showOriginState;
@@ -5811,13 +5963,17 @@ map.on('zoomend', () => { isZooming = false; });
         lordIndex.forEach((e, i) => { e.id = i; });
     }
 
-    // メニューの入口ボタンの状態。城レイヤーを表示していないときは出さない
-    // （検索・周辺検索が非表示の種別を候補から外すのと同じ扱い）
+    /* メニューの入口ボタンの状態。城レイヤーを表示していないときは出さない
+       （検索・周辺検索が非表示の種別を候補から外すのと同じ扱い）。
+       消すのは城のデータしか辿らない2本（城主・遺構）だけで、「一覧から検索」の枠ごとは消さない。
+       枠ごと消すと、城と関係のない都道府県とお気に入りまで一緒に消えるため。 */
     function updateLordsEntry() {
-        const sect = document.getElementById('lords-entry-section');
         const btn = document.getElementById('lords-entry-btn');
-        if (!sect || !btn) return;
-        sect.style.display = filterState.castle === false ? 'none' : '';
+        const rbtn = document.getElementById('remains-entry-btn');
+        if (!btn) return;
+        const hide = filterState.castle === false;
+        btn.style.display = hide ? 'none' : '';
+        if (rbtn) rbtn.style.display = hide ? 'none' : '';
         // 読み込みが済むまでは押せない。件数などの補足は出さない（2列に並べると折り返すため）
         btn.disabled = !loadedData.castle;
     }
@@ -6021,6 +6177,7 @@ map.on('zoomend', () => { isZooming = false; });
             // 100名城の印はバッジ側に出るので、副見出しは都道府県だけにする（同じ語が2つ並ばないように）
             const sub = r.pref;
             return `<div class="nearby-item" onclick="lordsJumpToCastle(${r.i})">
+                ${favStripeHtml('castle', p, r.f.geometry.coordinates)}
                 <div class="nearby-item-icon" style="background:${color}"><img src="castle.png" class="icon-full"></div>
                 <div class="nearby-item-text">
                     <div class="nearby-item-name">${attrEscape(p.coordOffset ? '[近接あり] ' + p.name : p.name)}</div>
@@ -6651,6 +6808,7 @@ map.on('zoomend', () => { isZooming = false; });
             const item = r.item;
             const distStr = r.dist < 1 ? `${Math.round(r.dist * 1000)}m` : `${r.dist.toFixed(1)}km`;
             return `<div class="nearby-item" onclick="prefJumpToItem(${i})">
+                ${favStripeHtml(item.type, item.properties, item.coords)}
                 ${prefTypeIconHtml(item.type, item.properties || {})}
                 <div class="nearby-item-text">
                     <div class="nearby-item-name">${attrEscape(itemDisplayName(item))}</div>
@@ -6847,8 +7005,8 @@ map.on('zoomend', () => { isZooming = false; });
                                                             || a.name.localeCompare(b.name, 'ja'));
     }
 
-    // 入口ボタンの状態。城レイヤーを非表示にしたときに枠ごと隠すのは updateLordsEntry
-    // （同じ #lords-entry-section の中にあるため）なので、ここは押せるかどうかだけ決める
+    // 入口ボタンの状態。城レイヤーを非表示にしたときにこのボタンを隠すのは
+    // updateLordsEntry（城主と一緒に扱う）なので、ここは押せるかどうかだけ決める
     function updateRemainsEntry() {
         const btn = document.getElementById('remains-entry-btn');
         if (btn) btn.disabled = !loadedData.castle;
@@ -7165,6 +7323,7 @@ map.on('zoomend', () => { isZooming = false; });
             const color = getItemColor({ type: 'castle', properties: p });
             const distStr = r.dist < 1 ? `${Math.round(r.dist * 1000)}m` : `${r.dist.toFixed(1)}km`;
             return `<div class="nearby-item" onclick="remainsJumpToCastle(${r.i})">
+                ${favStripeHtml('castle', p, r.f.geometry.coordinates)}
                 <div class="nearby-item-icon" style="background:${color}"><img src="castle.png" class="icon-full"></div>
                 <div class="nearby-item-text">
                     <div class="nearby-item-name">${attrEscape(p.coordOffset ? '[近接あり] ' + p.name : p.name)}</div>
@@ -7433,6 +7592,7 @@ map.on('zoomend', () => { isZooming = false; });
             const item = r.item;
             const distStr = item.dist < 1 ? `${Math.round(item.dist * 1000)}m` : `${item.dist.toFixed(1)}km`;
             return `<div class="nearby-item" onclick="nearbyJumpToItem(${i})">
+                ${favStripeHtml(item.type, item.properties, item.coords)}
                 ${prefTypeIconHtml(item.type, item.properties || {})}
                 <div class="nearby-item-text">
                     <div class="nearby-item-name">${attrEscape(itemDisplayName(item))}</div>
@@ -7552,7 +7712,9 @@ map.on('zoomend', () => { isZooming = false; });
 
     const hideOwnLayers = () => {
         originalVisibilities.clear();
-        for (const layerId of targetLayerIds) {
+        /* お気に入りの重ね描きも一緒に消す（残ると「スポットを消したのに何か出ている」状態になる）。
+           そのレイヤーIDは地図の読み込み後に決まるので、押された時点で足す。 */
+        for (const layerId of targetLayerIds.concat(FAV_MAP_LAYERS)) {
             if (map.getLayer(layerId)) {
                 const currentVisibility = map.getLayoutProperty(layerId, 'visibility') || 'visible';
                 originalVisibilities.set(layerId, currentVisibility);
@@ -8019,6 +8181,597 @@ map.on('zoomend', () => { isZooming = false; });
         if (!days) return;
         weatherCache = days; weatherCacheTime = now; weatherCacheLat = lat; weatherCacheLng = lng;
         renderWeatherDays(days);
+    }
+
+    /* ══ お気に入り ═══════════════════════════════════════════════════════
+       枠は4つ。枠に固定の意味は持たせず、名前は設定でユーザーが付ける
+       （初期値は枠1の「お気に入り」だけで、残り3枠は空。名前を入れた枠だけを使う）。
+       1つのオブジェクトを複数の枠に入れられる。
+       見せかたは3か所で、案は mock/fav-badge-preview.html で比べて決めてある。
+         地図   … ピンの右上に15pxのバッジ（案1・4色）。マークしたものは全種別のピンより
+                  前面に出し、枠どうしは番号の小さい方を前にする
+         一覧   … 行の左端に5pxの色帯（案1）。複数の枠に入っていれば縦に等分する
+         シート … 上端の縁の色ライン（案ii）
+       登録は情報シートの★→パレット（案B）と、お気に入り一覧の行の長押し。
+       保存は localStorage の 'favorites' 1本で、キーの選びかたは
+       mock/fav-list-preview.html の「5. 保存の形」に全データの実測値が残っている。
+       サーバーへ移すときは loadFavStore / saveFavStore の中身だけを差し替える。 */
+    const FAV_SLOTS = [1, 2, 3, 4];
+    // 色は CSS の :root（--fav1〜4）が持ち主。地図のピンはCSSを通らないのでここで読んでおく
+    // （--ui-blue を UI_BLUE に写しているのと同じ扱い）
+    const FAV_COLORS = (() => {
+        const cs = getComputedStyle(document.documentElement);
+        const fallback = { 1: '#E91E63', 2: '#7B1FA2', 3: '#00897B', 4: '#7CB342' };
+        const o = {};
+        FAV_SLOTS.forEach(n => { o[n] = cs.getPropertyValue(`--fav${n}`).trim() || fallback[n]; });
+        return o;
+    })();
+    // #7CB342 だけ白文字のコントラストが 2.50 しか出ないので、その上に載せる文字は黒にする
+    const FAV_FG = { 1: '#fff', 2: '#fff', 3: '#fff', 4: '#212121' };
+    const FAV_NAME_MAX = 6;        // 理由は .favname-row のコメント（一覧のチップが2段に収まる上限）
+    const FAV_STORE_KEY = 'favorites';
+    const FAV_TYPE_FILTER = { shop: 'shop', pokefuta: 'pokefuta', manhole: 'manhole',
+                              mhcard: 'mhcard', michi: 'michi', castle: 'castle' };
+
+    /* オブジェクトを1つに定めるキー。実データを数えて種別ごとに選んである（2026-08-19）。
+         食べログ 7,369件 … url が欠落0・重複0
+         道の駅   1,234件 … 公式の駅ID が欠落0・重複0
+         ポケふた   482件 … 公式の連番 が欠落0・重複0
+         マンホール 1,267件 … cardCodeKey(cardId) が欠落0・重複0
+         カード配布 1,455件 … cardId は欠落562・残りも44種（A001だけで324件）なので使えない。
+                              名前＠座標4桁なら衝突0
+         お城   23,516件 … url は欠落19,037（81%）。「松本城」だけで5件あり名前単独も不可。
+                            名前＠座標4桁なら衝突0
+       座標を4桁（約11m）に丸めるのは、データ更新で末尾が1桁動いただけで
+       別のオブジェクトになってしまうのを避けるため。
+       castle.js を作り直して座標が11m以上動いた城は、マークが外れる（残る弱点）。 */
+    function favCoordKey(lng, lat) {
+        return `${Number(lng).toFixed(4)},${Number(lat).toFixed(4)}`;
+    }
+    function favKeyOf(type, p, lng, lat) {
+        p = p || {};
+        if (lng == null || lat == null || !isFinite(lng) || !isFinite(lat)) return null;
+        const nameKey = `${p.name || ''}@${favCoordKey(lng, lat)}`;
+        // ポケふたは地図から開くと type='manhole'＋source='pokefuta'、一覧から開くと
+        // type='pokefuta' で来る。どちらでも同じキーになるようにする
+        if (type === 'pokefuta' || (type === 'manhole' && p.source === 'pokefuta')) {
+            return p.id != null && p.id !== '' ? `pokefuta:${p.id}` : `pokefuta:${nameKey}`;
+        }
+        if (type === 'shop')   return p.url ? `shop:${p.url}` : `shop:${nameKey}`;
+        if (type === 'michi')  return p.id != null && p.id !== '' ? `michi:${p.id}` : `michi:${nameKey}`;
+        if (type === 'manhole') { const k = cardCodeKey(p.cardId); return k ? `manhole:${k}` : `manhole:${nameKey}`; }
+        if (type === 'mhcard') return `mhcard:${nameKey}`;
+        if (type === 'castle') return `castle:${nameKey}`;
+        return null;   // 地名（place）など、データを持たないものは対象外
+    }
+
+    function loadFavStore() {
+        let raw = null;
+        try { raw = JSON.parse(localStorage.getItem(FAV_STORE_KEY)); } catch { raw = null; }
+        // 初期値は枠1だけ名前を入れておく（残り3枠は空＝使わない）
+        const names = { 1: 'お気に入り', 2: '', 3: '', 4: '' };
+        const items = {};
+        if (raw && typeof raw === 'object') {
+            if (raw.names && typeof raw.names === 'object') {
+                FAV_SLOTS.forEach(n => { if (typeof raw.names[n] === 'string') names[n] = raw.names[n]; });
+            }
+            if (raw.items && typeof raw.items === 'object') {
+                for (const [k, v] of Object.entries(raw.items)) {
+                    const mk = [...new Set((v && Array.isArray(v.mk) ? v.mk : [])
+                        .map(Number).filter(n => FAV_SLOTS.includes(n)))].sort((a, b) => a - b);
+                    if (mk.length) items[k] = { mk, at: Number(v.at) || 0 };
+                }
+            }
+        }
+        return { v: 1, names, items };
+    }
+    let favStore = loadFavStore();
+    function saveFavStore() {
+        try { localStorage.setItem(FAV_STORE_KEY, JSON.stringify(favStore)); }
+        catch (e) { console.warn('[fav]', e); }
+    }
+    function favNameOf(n) { return (favStore.names[n] || '').trim(); }
+    // 名前が入っている枠だけが使える。空にした枠は出さないが、登録した分は消さない
+    function favActiveSlots() { return FAV_SLOTS.filter(n => favNameOf(n) !== ''); }
+    function favMarksOf(key) { const it = key ? favStore.items[key] : null; return it ? it.mk : []; }
+    function favActiveMarksOf(key) {
+        const a = favActiveSlots();
+        return favMarksOf(key).filter(n => a.includes(n));
+    }
+    function favCountOf(n) {
+        let c = 0;
+        for (const k in favStore.items) if (favStore.items[k].mk.includes(n)) c++;
+        return c;
+    }
+
+    /* 付け外し。at は最後に触った時刻で、お気に入り一覧の「追加順」がこれを見る。 */
+    function favToggleMark(key, n) {
+        if (!key || !FAV_SLOTS.includes(n)) return;
+        const cur = new Set(favMarksOf(key));
+        if (cur.has(n)) cur.delete(n); else cur.add(n);
+        if (cur.size) favStore.items[key] = { mk: [...cur].sort((a, b) => a - b), at: Date.now() };
+        else delete favStore.items[key];
+        saveFavStore();
+        refreshFavOverlay();
+        updateSheetFav();
+        updateFavNameCounts();
+        updateFavEntry();
+        const view = document.getElementById('nearby-fav-view');
+        if (view && view.classList.contains('open')) {
+            // 開いたまま外したときは、その行が消えて詰まる。スクロール位置は保つ
+            favState.restoreScroll = document.getElementById('fav-item-list').scrollTop;
+            renderFavKindChips();
+            renderFavItems(true);
+        }
+    }
+
+    // 一覧の行の左端に立てる色帯。付いている枠の数だけ縦に等分する
+    function favStripeHtml(type, p, coords) {
+        const c = coords || [];
+        const marks = favActiveMarksOf(favKeyOf(type, p, c[0], c[1]));
+        if (!marks.length) return '';
+        return `<span class="fav-stripe">${marks.map(n =>
+            `<span style="background:${FAV_COLORS[n]}"></span>`).join('')}</span>`;
+    }
+
+    /* ══ 設定の「お気に入りの名前」 ══════════════════════════════════════ */
+    function renderFavNameList() {
+        const el = document.getElementById('fav-name-list');
+        if (!el) return;
+        el.innerHTML = FAV_SLOTS.map(n => `
+            <div class="favname-row">
+                <span class="favname-sw" style="background:${FAV_COLORS[n]};color:${FAV_FG[n]}">${n}</span>
+                <input class="favname-in" type="text" maxlength="${FAV_NAME_MAX}"
+                       value="${attrEscape(favNameOf(n))}" placeholder="お気に入り${n}（空欄なら使わない）"
+                       oninput="onFavNameInput(${n}, this)">
+                <span class="favname-cnt" data-fav-cnt="${n}">${favCountOf(n)}件</span>
+            </div>`).join('');
+    }
+    function updateFavNameCounts() {
+        document.querySelectorAll('[data-fav-cnt]').forEach(el => {
+            el.textContent = `${favCountOf(Number(el.dataset.favCnt))}件`;
+        });
+    }
+    function onFavNameInput(n, el) {
+        // maxlength はUTF-16の長さなので、絵文字を1文字として数え直す
+        const v = [...el.value].slice(0, FAV_NAME_MAX).join('');
+        if (el.value !== v) el.value = v;
+        favStore.names[n] = v.trim();
+        saveFavStore();
+        refreshFavOverlay();
+        updateSheetFav();
+        updateFavEntry();
+        closeFavPalette();
+    }
+
+    /* ══ 情報シートのライン と ★→パレット ═══════════════════════════════ */
+    function objSheetFavKey() {
+        if (!objSheetCtx || !objSheetLngLat) return null;
+        return favKeyOf(objSheetCtx.type, objSheetCtx.p, objSheetLngLat[0], objSheetLngLat[1]);
+    }
+    function updateSheetFav() {
+        const sheet = document.getElementById('obj-sheet');
+        const line = document.getElementById('obj-sheet-favline');
+        const btn = document.getElementById('obj-fav-btn');
+        if (!sheet || !line || !btn) return;
+        const key = objSheetFavKey();
+        const marks = favActiveMarksOf(key);
+        sheet.classList.toggle('has-fav', marks.length > 0);
+        line.innerHTML = marks.map(n => `<span style="background:${FAV_COLORS[n]}"></span>`).join('');
+        // 使える枠が1つも無いとき（名前が全部空）と、キーを作れない対象では★を出さない
+        btn.style.display = (key && favActiveSlots().length) ? '' : 'none';
+        btn.style.color = marks.length ? FAV_COLORS[marks[0]] : '';
+    }
+
+    let favPopEl = null;
+    let favPopClosedAt = 0;
+    function onFavPaletteOutside(e) {
+        if (favPopEl && !favPopEl.contains(e.target)) closeFavPalette();
+    }
+    function closeFavPalette() {
+        if (!favPopEl) return;
+        favPopEl.remove();
+        favPopEl = null;
+        favPopClosedAt = Date.now();
+        document.removeEventListener('pointerdown', onFavPaletteOutside, true);
+    }
+    function renderFavPalette() {
+        if (!favPopEl) return;
+        const key = favPopEl.dataset.key;
+        const marks = favActiveMarksOf(key);
+        const slots = favActiveSlots();
+        favPopEl.innerHTML = slots.length
+            ? slots.map(n => `<button data-fav-n="${n}"><i style="background:${FAV_COLORS[n]}"></i>${
+                attrEscape(favNameOf(n))}${marks.includes(n) ? '<span class="fav-ck">✓</span>' : ''}</button>`).join('')
+            : `<div class="fav-pop-note">設定の「お気に入りの名前」に名前を入れると使えます</div>`;
+    }
+    /* パレットはアンカー（★の位置、または一覧の行）の下に出す。
+       下に入り切らないときは上へ返す（シートは画面の下半分に出るため、通常は上に返る）。 */
+    function openFavPalette(anchor, key) {
+        closeFavPalette();
+        if (!key || !anchor) return;
+        const pop = document.createElement('div');
+        pop.className = 'fav-pop';
+        pop.dataset.key = key;
+        favPopEl = pop;
+        renderFavPalette();
+        document.body.appendChild(pop);
+        const r = anchor.getBoundingClientRect();
+        const w = pop.offsetWidth, h = pop.offsetHeight;
+        const left = Math.min(Math.max(6, r.right - w), window.innerWidth - w - 6);
+        const below = r.bottom + 4;
+        const top = (below + h > window.innerHeight - 6) ? Math.max(6, r.top - h - 4) : below;
+        pop.style.left = `${Math.round(left)}px`;
+        pop.style.top = `${Math.round(top)}px`;
+        pop.addEventListener('click', e => {
+            const b = e.target.closest('button[data-fav-n]');
+            if (!b) return;
+            favToggleMark(pop.dataset.key, Number(b.dataset.favN));
+            renderFavPalette();   // 続けて別の枠も触れるよう、開いたままにする
+        });
+        // 開いた指の pointerdown で即閉じないよう、次のタスクから外側判定を始める
+        setTimeout(() => document.addEventListener('pointerdown', onFavPaletteOutside, true), 0);
+    }
+    function onSheetFavBtn(e) {
+        e.stopPropagation();
+        if (favPopEl) { closeFavPalette(); return; }
+        /* 開いているときに★を押すと、外側判定（pointerdown）が先に閉じてから
+           この click が来る。そのまま開くと閉じられなくなるので、閉じた直後は開かない。 */
+        if (Date.now() - favPopClosedAt < 300) return;
+        openFavPalette(e.currentTarget, objSheetFavKey());
+    }
+
+    /* ══ お気に入り一覧ビュー ════════════════════════════════════════════ */
+    let favState = { q: '', kind: 'all', sort: 'at', rows: [], center: null, centerPinned: false,
+                     scrollTop: 0, restoreScroll: 0 };
+
+    function updateFavEntry() {
+        const btn = document.getElementById('fav-entry-btn');
+        if (!btn) return;
+        btn.disabled = favActiveSlots().length === 0;   // 登録先が1つも無ければ押せない
+    }
+    function showFavView() {
+        setPanelLifted(true);
+        document.getElementById('nearby-main-view').style.display = 'none';
+        document.getElementById('nearby-settings-view').classList.remove('open');
+        document.getElementById('nearby-fav-view').classList.add('open');
+    }
+    function closeFavView() {
+        setPanelLifted(false);
+        document.getElementById('nearby-fav-view').classList.remove('open');
+        document.getElementById('nearby-main-view').style.display = '';
+    }
+    function openFavView(restoreView) {
+        if (!favActiveSlots().length) return;
+        // 近い順の起点は開いた時点で固定する（県ページ・城主一覧と同じ扱い）
+        if (!restoreView || !favState.center) {
+            const c = getSearchCenter();
+            favState.center = { lat: c.lat, lng: c.lng };
+            favState.centerPinned = !!searchPinLngLat;
+        }
+        if (!restoreView) {
+            favState.q = '';
+            const input = document.getElementById('fav-item-search');
+            if (input) input.value = '';
+            setSearchClearVisible('fav-item-search', '');
+        }
+        // 名前を消した枠が選ばれたままにならないようにする
+        if (favState.kind !== 'all' && !favActiveSlots().includes(Number(favState.kind))) favState.kind = 'all';
+        favState.restoreScroll = restoreView ? (favState.scrollTop || 0) : 0;
+        showFavView();
+        renderFavKindChips();
+        renderDistOrigin('fav');
+        renderFavItems(restoreView);
+    }
+
+    /* 一覧に出す行。searchIndex（到着済みデータ）から、マークが付いていて表示中のものを拾う。
+       設定で消した種別・食べログの部門はここでも出さない（設定が土台という決まりに揃える）。 */
+    function favCollect() {
+        const rows = [];
+        const active = favActiveSlots();
+        if (!active.length || !Object.keys(favStore.items).length) return rows;
+        const center = favState.center || getSearchCenter();
+        for (const item of searchIndex) {
+            const fk = FAV_TYPE_FILTER[item.type];
+            if (fk && filterState[fk] === false) continue;
+            if (item.type === 'shop' && !genreVisible(shopGenreBase((item.properties || {}).category))) continue;
+            const c = item.coords || [];
+            const key = favKeyOf(item.type, item.properties, c[0], c[1]);
+            const rec = key ? favStore.items[key] : null;
+            if (!rec) continue;
+            const mk = rec.mk.filter(n => active.includes(n));
+            if (!mk.length) continue;
+            rows.push({ item, key, mk, at: rec.at || 0,
+                        dist: calcDist(center.lat, center.lng, c[1], c[0]) });
+        }
+        return rows;
+    }
+    function favDateText(at) {
+        if (!at) return '';
+        const d = new Date(at);
+        return `${d.getMonth() + 1}/${d.getDate()}`;
+    }
+    function renderFavKindChips() {
+        const el = document.getElementById('fav-kind-chips');
+        if (!el) return;
+        const rows = favCollect();
+        el.innerHTML = `<button class="lords-chip" data-fk="all" aria-pressed="${
+                favState.kind === 'all'}" onclick="setFavKind('all')">すべて ${rows.length}</button>`
+            + favActiveSlots().map(n => `<button class="lords-chip fav-kind" data-fk="${n}"
+                aria-pressed="${String(favState.kind) === String(n)}" onclick="setFavKind(${n})"
+                ><span class="fav-dot" style="background:${FAV_COLORS[n]}"></span>${
+                attrEscape(favNameOf(n))} ${rows.filter(r => r.mk.includes(n)).length}</button>`).join('');
+    }
+    function setFavKind(k) { favState.kind = k; renderFavKindChips(); renderFavItems(); }
+    function setFavSort(s) {
+        favState.sort = s;
+        document.querySelectorAll('#nearby-fav-view .lords-chip[data-fs]').forEach(b => {
+            b.setAttribute('aria-pressed', String(b.dataset.fs === s));
+        });
+        renderFavItems();
+    }
+    function onFavSearchInput(v) {
+        favState.q = v;
+        setSearchClearVisible('fav-item-search', v);
+        renderFavItems();
+    }
+    function clearFavSearch() {
+        const el = document.getElementById('fav-item-search');
+        el.value = '';
+        onFavSearchInput('');
+        el.focus();
+    }
+    /* 一覧の行のタップと長押し。指が動いたらタップとして扱わない。
+       設定の種別や県ページの集計帯で使っている bindTypeToggle は、送らない帯の上に置く前提で
+       移動を見ていないため、縦に送る一覧でそのまま使うと、送っただけで飛んでしまう。 */
+    function bindFavRow(el, onTap, onLongPress) {
+        let timer = null, fired = false, moved = false, touched = false, sx = 0, sy = 0;
+        const cancel = () => { if (timer) { clearTimeout(timer); timer = null; } };
+        const start = (x, y) => {
+            fired = false; moved = false; sx = x; sy = y;
+            timer = setTimeout(() => { timer = null; fired = true; onLongPress(); }, 500);
+        };
+        const move = (x, y) => {
+            if (Math.abs(x - sx) > 8 || Math.abs(y - sy) > 8) { moved = true; cancel(); }
+        };
+        const end = () => { cancel(); if (fired || moved) { fired = false; return; } onTap(); };
+        el.addEventListener('touchstart', e => { const t = e.touches[0]; start(t.clientX, t.clientY); }, { passive: true });
+        el.addEventListener('touchmove', e => { const t = e.touches[0]; move(t.clientX, t.clientY); }, { passive: true });
+        el.addEventListener('touchcancel', () => { cancel(); moved = true; });
+        // タッチのあとに合成されるマウスイベントで二重に反応しないよう、直後の mouse は捨てる
+        el.addEventListener('touchend', () => { touched = true; setTimeout(() => { touched = false; }, 600); end(); });
+        el.addEventListener('mousedown', e => { if (e.button === 0 && !touched) start(e.clientX, e.clientY); });
+        el.addEventListener('mousemove', e => { if (timer) move(e.clientX, e.clientY); });
+        el.addEventListener('mouseup', e => { if (e.button === 0 && !touched) end(); });
+        el.addEventListener('mouseleave', cancel);
+        el.addEventListener('contextmenu', e => e.preventDefault());   // 長押しのメニューを出さない
+    }
+    function renderFavItems(keepScroll) {
+        const list = document.getElementById('fav-item-list');
+        if (!list) return;
+        const q = normalizeForSearch((favState.q || '').trim());
+        let rows = favCollect();
+        if (favState.kind !== 'all') rows = rows.filter(r => r.mk.includes(Number(favState.kind)));
+        if (q) rows = rows.filter(r => (r.item._normLabel || '').includes(q)
+                                    || (r.item._normSub || '').includes(q));
+        const byName = (a, b) => itemDisplayName(a.item).localeCompare(itemDisplayName(b.item), 'ja');
+        if (favState.sort === 'dist') rows.sort((a, b) => a.dist - b.dist);
+        else if (favState.sort === 'name') rows.sort(byName);
+        else if (favState.sort === 'type') {
+            const order = PREF_TYPES.map(t => t.type);
+            rows.sort((a, b) => order.indexOf(a.item.type) - order.indexOf(b.item.type)
+                || castleGenreRank(a.item.properties || {}) - castleGenreRank(b.item.properties || {})
+                || byName(a, b));
+        } else rows.sort((a, b) => b.at - a.at || byName(a, b));   // 追加順は新しいものが上
+        favState.rows = rows;
+        if (!rows.length) {
+            list.innerHTML = (q || favState.kind !== 'all')
+                ? '<div class="lords-note">該当する項目がありません</div>'
+                : `<div class="fav-empty"><b>★</b>まだ登録がありません。<br>
+                    ピンや一覧から開いた情報シートの★を押すと、ここに集まります。</div>`;
+            return;
+        }
+        list.innerHTML = rows.map((r, i) => {
+            const item = r.item;
+            const distStr = r.dist < 1 ? `${Math.round(r.dist * 1000)}m` : `${r.dist.toFixed(1)}km`;
+            return `<div class="nearby-item" data-fav-i="${i}">
+                ${favStripeHtml(item.type, item.properties, item.coords)}
+                ${prefTypeIconHtml(item.type, item.properties || {})}
+                <div class="nearby-item-text">
+                    <div class="nearby-item-name">${attrEscape(itemDisplayName(item))}</div>
+                    <div class="nearby-item-sub">${attrEscape(item.sub || '')}</div>
+                </div>
+                ${prefBadgesHtml(item)}
+                ${favState.sort === 'at' ? `<div class="fav-added">${favDateText(r.at)}</div>`
+                                         : `<div class="nearby-item-dist">${distStr}</div>`}
+            </div>`;
+        }).join('') + `<div class="lords-note">全${rows.length.toLocaleString()}件<br>
+            行を長押しすると、この場で付け替え・取り消しができます</div>`;
+        list.querySelectorAll('.nearby-item[data-fav-i]').forEach(el => {
+            const i = Number(el.dataset.favI);
+            bindFavRow(el, () => favJumpToItem(i), () => {
+                const r = favState.rows[i];
+                if (r) openFavPalette(el, r.key);
+            });
+        });
+        // 全件を入れ終えてから位置を指定する（先に指定すると高さが足りずに切り詰められる）
+        list.scrollTop = keepScroll ? (favState.restoreScroll || 0) : 0;
+        favState.restoreScroll = 0;
+    }
+    /* 一覧からオブジェクトへ飛ぶ。県ページ（prefJumpToItem）と同じ順序に揃える。 */
+    function favJumpToItem(i) {
+        const r = (favState.rows || [])[i];
+        if (!r) return;
+        favState.scrollTop = document.getElementById('fav-item-list').scrollTop;
+        saveListReturnCamera();
+        closeNearby();
+        onResultClick(r.item);
+        setTimeout(injectFavBackLink, 400);   // onResultClick は300ms後にシートを開く
+    }
+    function injectFavBackLink() {
+        const body = document.getElementById('obj-sheet-body');
+        if (!body || body.querySelector('.os-lords-back')) return;
+        const div = document.createElement('div');
+        div.className = 'os-lords-back';
+        div.textContent = '↩ 「お気に入り」の一覧に戻る';
+        div.onclick = () => { closeObjSheet(); restoreListReturnCamera(); openNearbyPanel(); openFavView(true); };
+        body.insertBefore(div, body.firstChild);
+    }
+
+    /* ══ 地図の重ね描き ═══════════════════════════════════════════════════
+       マークしたオブジェクトを専用ソースへ写し、全種別のピンより上のレイヤーで描き直す。
+       「最前面」も「枠1がいちばん上」もレイヤーの前後でしか決められない
+       （1つのレイヤーの中の sort-key では種別をまたいだ前後が決まらない）ので、
+       枠ごとにレイヤーの組を分け、番号の大きい枠から順に足してある。
+       重ね描きなので元のピンはそのまま下に残る。クラスタに畳まれる倍率でも
+       マークしたものだけは individual に出る（下のピンはクラスタの中にいる）。 */
+    const FAV_PIN = {
+        /* 寸法は地図のピン（OBJ_ICON_CIRCLE_PX 等）と同じ値。あちらは map.on('load') の
+           中にあって外から読めないため、同じ値をここにも置く。変えるときは両方直すこと。 */
+        shop:     { shape: 'circle', icon: 'tabe-icon',    size: 28 / 64 },
+        castle:   { shape: 'circle', icon: 'castle-icon',  size: 28 / 64 },
+        manhole:  { shape: 'circle', icon: 'manhole-icon', size: 25 / 64 },
+        pokefuta: { shape: 'circle', icon: 'manhole-icon', size: 25 / 64 },
+        michi:    { shape: 'michi',  icon: 'michi-icon',   size: 26 / 64 },
+        mhcard:   { shape: 'card',   icon: 'mhcard-icon',  size: 1.0 },
+    };
+    let favOverlayItems = [];      // 重ね描きに出している要素（タップされたら添字で引く）
+    const FAV_MAP_LAYERS = [];     // 作ったレイヤーID（スポット一時非表示が読む）
+    const FAV_CLICK_LAYERS = [];   // そのうちタップ対象になるもの
+
+    function buildFavOverlayData() {
+        favOverlayItems = [];
+        const feats = [];
+        const active = favActiveSlots();
+        if (active.length && Object.keys(favStore.items).length && searchIndex.length) {
+            for (const item of searchIndex) {
+                const pin = FAV_PIN[item.type];
+                if (!pin) continue;
+                const fk = FAV_TYPE_FILTER[item.type];
+                if (fk && filterState[fk] === false) continue;
+                if (item.type === 'shop' && !genreVisible(shopGenreBase((item.properties || {}).category))) continue;
+                const c = item.coords || [];
+                const key = favKeyOf(item.type, item.properties, c[0], c[1]);
+                const rec = key ? favStore.items[key] : null;
+                if (!rec) continue;
+                const mk = rec.mk.filter(n => active.includes(n));
+                if (!mk.length) continue;
+                /* 属性に入れられるのは数値と文字列だけ（配列や入れ子は setData で
+                   文字列になり、城の aliases のような値が壊れる）。シートに渡す properties は
+                   favOverlayItems 側の元の要素から取る。 */
+                feats.push({
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [c[0], c[1]] },
+                    properties: {
+                        _i: favOverlayItems.push(item) - 1,
+                        _shape: pin.shape, _icon: pin.icon, _iconSize: pin.size,
+                        _color: objRingColor(item.type, item.properties || {}),
+                        _mk: mk[0],                       // 前後と印の色は番号の小さい枠に合わせる
+                        _mkColor: FAV_COLORS[mk[0]],
+                    },
+                });
+            }
+        }
+        return { type: 'FeatureCollection', features: feats };
+    }
+    function refreshFavOverlay() {
+        if (typeof map === 'undefined' || !map || !map.getSource) return;
+        const src = map.getSource('fav-objects');
+        if (!src) return;
+        src.setData(buildFavOverlayData());
+    }
+    /* お気に入りは全種別のピンより前面に描いているので、そこを踏んだタップは前面側に任せる。
+       これが無いと後ろに隠れているピンのハンドラも動き、シートと履歴が二重になる。 */
+    function favOverlayHit(point) {
+        const layers = FAV_CLICK_LAYERS.filter(id => map.getLayer(id));
+        return layers.length > 0 && map.queryRenderedFeatures(point, { layers }).length > 0;
+    }
+
+    function addFavOverlayLayers(o) {
+        map.addSource('fav-objects', { type: 'geojson', data: EMPTY_FC });
+        const add = (layer, clickable) => {
+            map.addLayer(layer);
+            FAV_MAP_LAYERS.push(layer.id);
+            if (clickable) { FAV_CLICK_LAYERS.push(layer.id); objClickLayers.push(layer.id); }
+        };
+        const isShape = s => ['==', ['get', '_shape'], s];
+        const overlap = { 'icon-allow-overlap': true, 'icon-ignore-placement': true };
+        const shadowPaintSymbol = { 'icon-opacity': o.shadowOpacity,
+            'icon-translate': o.shadowOffset, 'icon-translate-anchor': 'viewport' };
+        /* 影は枠に関係なくまとめて最下段に置く。枠ごとに分けると、上の枠の影が
+           下の枠のピンに乗って曇る（元のピンの影が2段構えで足されるのと同じ理由）。 */
+        add({ id: 'fav-shadow-circle', type: 'circle', source: 'fav-objects', filter: isShape('circle'),
+              paint: { 'circle-radius': o.shadowCircle.r, 'circle-color': '#000000',
+                       'circle-blur': o.shadowCircle.blur, 'circle-opacity': o.shadowOpacity,
+                       'circle-translate': o.shadowOffset, 'circle-translate-anchor': 'viewport' } });
+        add({ id: 'fav-shadow-michi', type: 'symbol', source: 'fav-objects', filter: isShape('michi'),
+              layout: { 'icon-image': 'michi-plate-shadow-icon', 'icon-size': 1.0, ...overlap },
+              paint: shadowPaintSymbol });
+        add({ id: 'fav-shadow-card', type: 'symbol', source: 'fav-objects', filter: isShape('card'),
+              layout: { 'icon-image': 'mhcard-shadow-icon', 'icon-size': 1.0, ...overlap },
+              paint: shadowPaintSymbol });
+        // ピン本体。枠4→1の順に足して、番号の小さい枠を上にする
+        [4, 3, 2, 1].forEach(n => {
+            const mine = ['==', ['get', '_mk'], n];
+            add({ id: `fav-bg-${n}`, type: 'circle', source: 'fav-objects',
+                  filter: ['all', mine, isShape('circle')],
+                  paint: { 'circle-color': ['get', '_color'], 'circle-radius': o.circleR } }, true);
+            add({ id: `fav-plate-${n}`, type: 'symbol', source: 'fav-objects',
+                  filter: ['all', mine, isShape('michi')],
+                  layout: { 'icon-image': 'michi-plate-icon', 'icon-size': o.michiSize, ...overlap },
+                  paint: { 'icon-color': ['get', '_color'] } }, true);
+            add({ id: `fav-card-${n}`, type: 'symbol', source: 'fav-objects',
+                  filter: ['all', mine, isShape('card')],
+                  layout: { 'icon-image': 'mhcard-icon', 'icon-size': 1.0, ...overlap },
+                  paint: { 'icon-color': o.cardFaceColor } }, true);
+            // 図柄（白）。カードだけは図柄ではなくカードの外形そのものなので、蓋のバッジを重ねる
+            add({ id: `fav-icon-${n}`, type: 'symbol', source: 'fav-objects',
+                  filter: ['all', mine, ['!=', ['get', '_shape'], 'card']],
+                  layout: { 'icon-image': ['get', '_icon'], 'icon-size': ['get', '_iconSize'], ...overlap },
+                  paint: { 'icon-color': '#FFFFFF' } });
+            add({ id: `fav-cardbadge-${n}`, type: 'symbol', source: 'fav-objects',
+                  filter: ['all', mine, isShape('card')],
+                  layout: { 'icon-image': 'manhole-icon', 'icon-size': o.cardBadgeSize, ...overlap },
+                  paint: { 'icon-color': '#FFFFFF' } });
+        });
+        /* 印（15pxのバッジ）は全部の枠より上にまとめて置く。小さいので、
+           隣のピンに少しでも隠れると読めなくなるため。ずらす向きは画面基準にして、
+           コンパスで地図を回しても右上のままにする（影と同じ扱い）。
+           外形が種別で違うので、右上の位置だけ形ごとに分ける。 */
+        const badge = (id, shape, translate) => add({ id, type: 'circle', source: 'fav-objects',
+            filter: isShape(shape),
+            layout: { 'circle-sort-key': ['-', 5, ['get', '_mk']] },
+            // 外径15px（色の面12px＋白フチ1.5px）。モックで比べたときと同じ寸法
+            paint: { 'circle-radius': 6, 'circle-color': ['get', '_mkColor'],
+                     'circle-stroke-width': 1.5, 'circle-stroke-color': '#FFFFFF',
+                     'circle-translate': translate, 'circle-translate-anchor': 'viewport' } });
+        /* ずらす量は、モックの「外形の右上角に、外へ5pxはみ出して置く」と同じ位置。
+           外形の半分＋5px−バッジの半径7.5px で出している。 */
+        badge('fav-badge-circle', 'circle', [11.5, -11.5]);   // φ28 の丸（14+5-7.5）
+        badge('fav-badge-michi', 'michi', [10.5, -10.5]);     // 26px 角丸四角（13+5-7.5）
+        badge('fav-badge-card', 'card', [11.5, -15.5]);       // 28×36 のカード（横14 / 縦18）
+        /* タップの受け口。マークしたピンどうしが重なると複数のレイヤーが同じタップを拾うので、
+           最初に拾ったものが元のイベントに印を付け、残りは降りる。
+           登録の順を逆（枠1→枠4）にしてあるのは、前面に居る枠から先に拾わせるため。 */
+        [...FAV_CLICK_LAYERS].reverse().forEach(id => {
+            map.on('click', id, e => {
+                if (!e.features || !e.features.length) return;
+                if (e.originalEvent) {
+                    if (e.originalEvent._favHandled) return;
+                    e.originalEvent._favHandled = true;
+                }
+                const item = favOverlayItems[e.features[0].properties._i];
+                if (!item) return;
+                if (trackingMode > 0) { trackingMode = 0; stopRafLoop(); updateGeolocateButton(); }
+                const c = item.coords.slice();
+                while (Math.abs(e.lngLat.lng - c[0]) > 180) { c[0] += e.lngLat.lng > c[0] ? 360 : -360; }
+                openObjSheet(item.type, item.label, item.properties, c[0], c[1]);
+                histRecordPin(itemDisplayName(item) || '地点', c, item.type, item.properties);
+            });
+            map.on('mouseenter', id, () => map.getCanvas().style.cursor = 'pointer');
+            map.on('mouseleave', id, () => map.getCanvas().style.cursor = '');
+        });
+        refreshFavOverlay();
     }
 
 </script>
