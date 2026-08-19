@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>お気に入りの見せ方 — バッジ表現の比較</title>
+<style>
+    /* index.html から写した実寸・実色。ここを変えると本体とずれるので、直すときは両方直すこと */
+    :root {
+        --obj-icon-circle: 28px;
+        --obj-icon-inner: 25px;
+        --obj-icon-inner-full: 28px;
+        --obj-icon-square: 26px;
+        --mhcard-w: 28px;
+        --mhcard-h: 36px;
+        --mhcard-badge: 22.4px;
+        --ui-blue: #4285F4;
+
+        /* マークの色。種別色（食べログ #FFAA00 / ポケふた #FBBC04 / 蓋 #B87333 /
+           道の駅 #0B499D / 城 #8A8A8A・#4285F4・#EA4335）と当たらない色域から選ぶ。
+           ★の金だけはポケふたに近いので、白フチで分離する前提 */
+        --mk-fav:  #FFC107;   /* ★ お気に入り */
+        --mk-want: #29B6F6;   /* ⚑ 行きたい（未使用の水色） */
+        --mk-done: #43A047;   /* ✓ 行った（未使用の緑） */
+        --mk-mono: #263238;   /* 形だけで分ける案の共通地色 */
+    }
+    body { margin: 0; font-family: system-ui, sans-serif; color: #222; background: #fff; }
+    header { padding: 12px 14px 4px; }
+    h1 { font-size: 16px; margin: 0 0 4px; }
+    .lead { font-size: 12px; color: #555; line-height: 1.75; margin: 0 0 10px; }
+    .lead code, code { background: #f2f2f2; padding: 1px 4px; border-radius: 3px; font-size: 11px;
+                       font-family: ui-monospace, monospace; }
+    h2.sec { font-size: 14px; margin: 26px 14px 8px; padding-bottom: 5px; border-bottom: 1px solid #ddd; }
+    .note { font-size: 11.5px; color: #666; line-height: 1.75; padding: 0 14px; margin: 0 0 10px; }
+
+    .chips { display: flex; gap: 6px; flex-wrap: wrap; padding: 0 14px 10px; }
+    .chip { font-size: 12px; padding: 5px 10px; border: 1px solid #ccc; background: #fff;
+            border-radius: 999px; cursor: pointer; white-space: nowrap; font-family: inherit; }
+    .chip.on { background: #263238; color: #fff; border-color: #263238; }
+    .chip.base { border-style: dashed; }
+
+    .desc { padding: 0 14px; }
+    .desc h3 { font-size: 13px; margin: 10px 0 5px; }
+    .desc p { font-size: 12.5px; line-height: 1.8; margin: 0 0 6px; color: #333; }
+    .pros { color: #1B5E20; }
+    .cons { color: #B71C1C; }
+    .impl { font-size: 11.5px; color: #37474F; background: #f6f7f9; border-left: 3px solid #90A4AE;
+            padding: 7px 10px; line-height: 1.75; margin: 0 0 8px; }
+
+    table { border-collapse: collapse; width: calc(100% - 28px); margin: 8px 14px 30px; font-size: 12px; }
+    th, td { border: 1px solid #e0e0e0; padding: 6px 8px; text-align: left; vertical-align: top; line-height: 1.65; }
+    th { background: #f6f7f9; font-weight: 600; }
+    td.ok { color: #1B5E20; } td.ng { color: #B71C1C; }
+
+    /* ══ マークの見本 ══ */
+    .mk-legend { display: flex; gap: 22px; flex-wrap: wrap; padding: 0 14px 12px; }
+    .mk-one { display: flex; align-items: center; gap: 9px; font-size: 12px; color: #444; }
+
+    /* ══ 疑似地図 ══════════════════════════════════════════════
+       MapLibre を読み込まずに、ピンの寸法・色・影だけを実物と同じ値で置いたもの。
+       見たいのは「密集したときにマークが読めるか」なので、地図そのものは
+       道と区画のパターンで代用している。 */
+    .maparea { position: relative; height: 300px; margin: 0 14px 10px; border: 1px solid #e0e0e0;
+               border-radius: 8px; overflow: hidden; background: #eee8dc; }
+    .maparea::before { content: ''; position: absolute; inset: -20px;
+        background:
+            repeating-linear-gradient(90deg, transparent 0 78px, #f7f4ec 78px 92px),
+            repeating-linear-gradient(0deg,  transparent 0 62px, #f7f4ec 62px 74px),
+            repeating-linear-gradient(48deg, transparent 0 150px, #ffffff 150px 162px); }
+    .maparea .lbl { position: absolute; font-size: 10px; color: #8d8578; }
+
+    .pin { position: absolute; left: var(--x); top: var(--y); transform: translate(-50%, -50%);
+           width: var(--obj-icon-circle); height: var(--obj-icon-circle); }
+    .pin .shape { position: absolute; inset: 0; border-radius: 50%;
+                  display: flex; align-items: center; justify-content: center;
+                  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.13); }
+    .pin .shape img { width: var(--obj-icon-inner-full); height: var(--obj-icon-inner-full);
+                      object-fit: contain; filter: brightness(0) invert(1); }
+    .pin[data-t="manhole"] .shape img, .pin[data-t="pokefuta"] .shape img {
+        width: var(--obj-icon-inner); height: var(--obj-icon-inner); }
+    .pin[data-t="shop"]      .shape { background: #FFAA00; }
+    .pin[data-t="pokefuta"]  .shape { background: #FBBC04; }
+    .pin[data-t="manhole"]   .shape { background: #B87333; }
+    .pin[data-t="castle"]    .shape { background: #8A8A8A; }
+    .pin[data-t="castle100"] .shape { background: #4285F4; }
+    /* 道の駅は丸ではなく角丸四角（地図の michi-plate と同じ 26px / 半径2px） */
+    .pin[data-t="michi"] { width: var(--obj-icon-square); height: var(--obj-icon-square); }
+    .pin[data-t="michi"] .shape { border-radius: 2px; background: #0B499D; }
+    .pin[data-t="michi"] .shape img { width: 100%; height: 100%; }
+    /* マンホールカード配布は銅色のカード（28×36）に白いマンホールを重ねる */
+    .pin[data-t="mhcard"] { width: var(--mhcard-w); height: var(--mhcard-h); }
+    .pin[data-t="mhcard"] .shape { border-radius: 3px; background: #B87333; }
+    .pin[data-t="mhcard"] .shape img { width: var(--mhcard-badge); height: var(--mhcard-badge); }
+    .pin .cap { position: absolute; top: 30px; left: 50%; transform: translateX(-50%);
+                font-size: 10px; color: #3a3a3a; white-space: nowrap;
+                text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 2px #fff; }
+
+    /* 印の共通パーツ。既定は全部隠し、案ごとに出す */
+    .pin .badge, .pin .ring, .pin .under { display: none; }
+    .pin .badge { position: absolute; top: -5px; right: -5px; width: 15px; height: 15px;
+                  border-radius: 50%; background: var(--mk); border: 1.5px solid #fff;
+                  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+                  align-items: center; justify-content: center;
+                  font-size: 9px; line-height: 1; color: #fff; font-weight: 700; }
+    .pin[data-mk="fav"] .badge { color: #4a3800; }
+    .pin .ring  { position: absolute; inset: -4px; border-radius: 50%; border: 3px solid var(--mk); }
+    .pin[data-t="michi"] .ring, .pin[data-t="mhcard"] .ring { border-radius: 6px; }
+    .pin .under { position: absolute; left: 50%; bottom: -7px; transform: translateX(-50%);
+                  width: 16px; height: 4px; border-radius: 2px; background: var(--mk);
+                  box-shadow: 0 0 0 1.5px #fff; }
+    .pin[data-mk="fav"]  { --mk: var(--mk-fav); }
+    .pin[data-mk="want"] { --mk: var(--mk-want); }
+    .pin[data-mk="done"] { --mk: var(--mk-done); }
+
+    /* 案の切り替え */
+    .vA .pin[data-mk] .badge { display: flex; }
+    .vB .pin[data-mk] .ring  { display: block; }
+    .vC .pin[data-mk] .under { display: block; }
+    .vD .pin[data-mk] .badge { display: flex; }
+    .vD .pin[data-mk] .shape { transform: scale(1.22); }
+    .vE .pin[data-mk="fav"]  .shape { background: var(--mk-fav); }
+    .vE .pin[data-mk="want"] .shape { background: var(--mk-want); }
+    .vE .pin[data-mk="done"] .shape { background: var(--mk-done); }
+
+    /* ══ 一覧の行（index.html の .nearby-item をそのまま写したもの） ══ */
+    .phone { width: 375px; max-width: calc(100% - 28px); margin: 0 14px 12px;
+             border: 1px solid #e0e0e0; border-radius: 10px; overflow: hidden; background: #fff; }
+    .nearby-item { display: flex; align-items: center; padding: 10px 14px;
+                   border-bottom: 1px solid #f0f0f0; cursor: pointer; gap: 10px; position: relative; }
+    .nearby-item:last-child { border-bottom: none; }
+    .nearby-item-icon { width: var(--obj-icon-circle); height: var(--obj-icon-circle); border-radius: 50%;
+                        display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+                        overflow: hidden; background: #eee; }
+    .nearby-item-icon img { width: var(--obj-icon-inner); height: var(--obj-icon-inner);
+                            object-fit: contain; filter: brightness(0) invert(1); }
+    .nearby-item-icon img.icon-full { width: var(--obj-icon-inner-full); height: var(--obj-icon-inner-full); }
+    .nearby-item-icon.obj-ic-sq { width: var(--obj-icon-square); height: var(--obj-icon-square); border-radius: 2px; }
+    .nearby-item-icon.obj-ic-sq img { width: 100%; height: 100%; }
+    .nearby-item-text { flex: 1; min-width: 0; }
+    .nearby-item-name { font-size: 13px; font-weight: bold; color: #333;
+                        white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .nearby-item-sub { font-size: 11px; color: #999; margin-top: 1px; }
+    .nearby-item-dist { font-size: 12px; color: var(--ui-blue); font-weight: bold; flex-shrink: 0; }
+    .pref-badges { display: flex; flex-direction: column; gap: 2px; align-items: flex-end; flex-shrink: 0; }
+    .pref-badge { font-size: 9.5px; font-weight: 700; color: #fff; padding: 1px 7px;
+                  border-radius: 9px; white-space: nowrap; line-height: 1.5; }
+    .pref-badge.card { background: #8d6e63; }
+
+    /* 行のマーク表現。既定は全部隠し、案ごとに出す */
+    .row-badge, .row-chip, .row-stripe, .row-glyph { display: none; }
+    .row-badge { position: absolute; left: 31px; top: 6px; width: 14px; height: 14px; border-radius: 50%;
+                 background: var(--mk); border: 1.5px solid #fff; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+                 align-items: center; justify-content: center;
+                 font-size: 8.5px; color: #fff; font-weight: 700; line-height: 1; }
+    .nearby-item[data-mk="fav"] .row-badge { color: #4a3800; }
+    .row-chip { background: var(--mk); }
+    .nearby-item[data-mk="fav"] .row-chip { color: #4a3800; }
+    .row-stripe { position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--mk); }
+    .row-glyph { color: var(--mk); margin-right: 3px; }
+    .nearby-item[data-mk="fav"]  { --mk: var(--mk-fav); }
+    .nearby-item[data-mk="want"] { --mk: var(--mk-want); }
+    .nearby-item[data-mk="done"] { --mk: var(--mk-done); }
+    .l1 .nearby-item[data-mk] .row-badge  { display: flex; }
+    .l2 .nearby-item[data-mk] .row-chip   { display: block; }
+    .l3 .nearby-item[data-mk] .row-stripe { display: block; }
+    .l3 .nearby-item[data-mk] { background: color-mix(in srgb, var(--mk) 9%, #fff); }
+    .l4 .nearby-item[data-mk] .row-glyph  { display: inline; }
+
+    /* ══ 情報シート（index.html の #obj-sheet をそのまま写したもの） ══ */
+    .sheet { width: 375px; max-width: calc(100% - 28px); margin: 0 14px 12px; background: #fff;
+             border-radius: 16px 16px 0 0; box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.18);
+             font-family: sans-serif; overflow: hidden; border: 1px solid #eee; }
+    .os-header { position: relative; padding: 8px 14px 4px; min-height: 24px; }
+    .os-handle { width: 36px; height: 4px; background: #ccc; border-radius: 2px; margin: 0 auto; }
+    .os-close { position: absolute; top: 1px; right: 8px; background: none; border: none;
+                font-size: 20px; color: #bbb; cursor: pointer; padding: 0 6px; line-height: 1; }
+    .os-body { padding: 0 14px 14px; }
+    .os-title { display: flex; align-items: center; gap: 5px; margin-bottom: 3px; min-width: 0; }
+    .os-badge-row { display: flex; gap: 5px; margin-bottom: 3px; align-items: center; }
+    .os-name { font-size: 15px; font-weight: bold; min-width: 0; overflow: hidden; }
+    .os-row { display: flex; gap: 10px; margin-top: 5px; align-items: flex-start; }
+    .os-meta { flex: 1; min-width: 0; }
+    .os-line { font-size: 11px; color: #333; line-height: 1.45; }
+    .os-line + .os-line { margin-top: 1px; }
+    .os-k { display: inline-block; background: #E6E2D8; color: #3d3d3d; border-radius: 3px;
+            padding: 0 4px; margin-right: 4px; font-size: 10px; }
+    .os-photo { width: 128px; height: 128px; flex-shrink: 0; border-radius: 7px; border: 1px solid #eee;
+                background: #f2f0ec; display: flex; align-items: center; justify-content: center;
+                color: #b3ac9d; font-size: 11px; }
+    .os-brow { display: flex; gap: 4px; margin-top: 4px; }
+    .btn { display: flex; align-items: center; justify-content: center; height: 40px; padding: 0 4px;
+           border-radius: 7px; text-decoration: none; font-weight: bold; color: #fff; font-size: 12px;
+           border: none; box-sizing: border-box; cursor: pointer; flex: 1 1 0; min-width: 0;
+           white-space: nowrap; overflow: hidden; font-family: inherit; }
+    .btn-gmap { background: #fff; color: var(--ui-blue); border: 1px solid var(--ui-blue); }
+    .btn-access { background: #5F6368; }
+    .btn-nav { background: var(--ui-blue); }
+    .btn-yahoo { background: #FF0033; }
+    .btn-nearby-search { background: #00897B; }
+    .btn-fav { background: #fff; color: #6b5518; border: 1px solid #E0C168; }
+
+    /* マークUIの各案。既定は全部隠し、案ごとに出す */
+    .os-star, .os-title-star, .os-seg-wrap, .os-fav-row { display: none; }
+    .os-star { position: absolute; top: 0; right: 36px; background: none; border: none;
+               font-size: 19px; line-height: 1; cursor: pointer; padding: 2px 6px; color: #cfcfcf; }
+    .os-star.on { color: var(--mk-fav); }
+    .os-title-star { font-size: 18px; line-height: 1; color: #cfcfcf; cursor: pointer; flex-shrink: 0; }
+    .os-title-star.on { color: var(--mk-fav); }
+    .os-seg { display: inline-flex; gap: 4px; }
+    .os-seg button { font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 12px;
+                     border: 1px solid #ddd; background: #fafafa; color: #888; cursor: pointer;
+                     font-family: inherit; }
+    .os-seg button.on { border-color: transparent; color: #fff; }
+    .os-seg button.on[data-mk="fav"]  { background: var(--mk-fav); color: #4a3800; }
+    .os-seg button.on[data-mk="want"] { background: var(--mk-want); }
+    .os-seg button.on[data-mk="done"] { background: var(--mk-done); }
+    .s-i   .os-star       { display: block; }
+    .s-ii  .os-title-star { display: block; }
+    .s-iii .os-seg-wrap   { display: block; }
+    .s-iv  .os-fav-row    { display: block; }
+
+    /* 形だけで分ける案。マークの地色を全部同じにする */
+    body.mono .pin[data-mk], body.mono .nearby-item[data-mk] { --mk: var(--mk-mono); }
+    body.mono .pin[data-mk="fav"] .badge, body.mono .nearby-item[data-mk="fav"] .row-badge,
+    body.mono .nearby-item[data-mk="fav"] .row-chip { color: #fff; }
+    body.mono .os-seg button.on { background: var(--mk-mono); color: #fff; }
+    body.mono .os-star.on, body.mono .os-title-star.on { color: var(--mk-mono); }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>お気に入りの見せ方 — バッジ表現の比較</h1>
+    <p class="lead">
+        オブジェクト（食べログ・ポケふた・マンホール・マンホールカード配布・道の駅・お城）に「マーク」を付け、
+        地図・一覧・情報シートの3か所で見分けられるようにする案の比較。
+        ピンの寸法と色、行の作り、シートの作りは <code>index.html</code> の実物から写している
+        （丸ピン φ28 / 道の駅 26px 角丸2px / カード 28×36 / 影は下へ2px・不透明度0.13）。
+        地図は MapLibre ではなく、同じ寸法のピンを道と区画のパターンの上に置いた再現。
+    </p>
+</header>
+
+<h2 class="sec">1. マークの種類</h2>
+<p class="note">
+    お気に入りを1種類にせず、この地図の使われ方（これから行く先を決める／集めた記録を残す）に合わせて3種類に分ける。
+    1つのオブジェクトに複数付けられる（「行きたい」と「お気に入り」が同時に立つ、
+    行った後に「行った」を足して「行きたい」を外す、など）。
+</p>
+<div class="mk-legend" id="legend"></div>
+<div class="chips" id="chips-tone">
+    <button class="chip on" data-v="color">色で分ける（★金・⚑水色・✓緑）</button>
+    <button class="chip" data-v="mono">形だけで分ける（地色は濃紺で共通）</button>
+</div>
+<p class="note">
+    色で分ける案は一目で種類が分かる代わりに、種別色（ポケふた <code>#FBBC04</code>）と
+    ★の金 <code>#FFC107</code> が近づく。形だけで分ける案は種類の判別が一段遅くなる代わりに、
+    どの地色の上でも同じ強さで見える。このチップは下の全モックに効く。
+</p>
+
+<h2 class="sec">2. 地図のピン</h2>
+<div class="chips" id="chips-map">
+    <button class="chip base on" data-v="v0">現状（マーク無し）</button>
+    <button class="chip" data-v="vA">案A 右上に小バッジ</button>
+    <button class="chip" data-v="vB">案B 外周リング</button>
+    <button class="chip" data-v="vC">案C 下に帯</button>
+    <button class="chip" data-v="vD">案D 拡大＋バッジ</button>
+    <button class="chip" data-v="vE">案E 地色をマーク色に置換</button>
+</div>
+<div class="maparea" id="maparea"></div>
+<div class="desc" id="desc-map"></div>
+
+<h2 class="sec">3. 一覧の行</h2>
+<p class="note">
+    県ページ・周辺検索・検索結果・城主一覧で共通に使う <code>.nearby-item</code> の行。
+    右端には既に種別ごとのバッジ（<code>prefBadgesHtml()</code>：城の100名城と形態、カードIDと弾、食べログの部門）と
+    距離が入っているので、そこへ足すか別の場所に置くかで見え方が変わる。
+</p>
+<div class="chips" id="chips-list">
+    <button class="chip base on" data-v="l0">現状</button>
+    <button class="chip" data-v="l1">案1 アイコンの右上にバッジ</button>
+    <button class="chip" data-v="l2">案2 既存バッジ列に足す</button>
+    <button class="chip" data-v="l3">案3 左端の色帯＋淡い背景</button>
+    <button class="chip" data-v="l4">案4 名前の前に記号</button>
+</div>
+<div class="phone" id="listbox"></div>
+<div class="desc" id="desc-list"></div>
+
+<h2 class="sec">4. 情報シート（登録操作をどこに置くか）</h2>
+<div class="chips" id="chips-sheet">
+    <button class="chip on" data-v="s-i">案i ヘッダー右の星</button>
+    <button class="chip" data-v="s-ii">案ii タイトル行の右端</button>
+    <button class="chip" data-v="s-iii">案iii バッジ行にセグメント</button>
+    <button class="chip" data-v="s-iv">案iv ボタン行を1段足す</button>
+</div>
+<div class="sheet" id="sheetbox"></div>
+<div class="desc" id="desc-sheet"></div>
+
+<h2 class="sec">5. 登録操作の入口</h2>
+<table>
+    <tr><th style="width:22%">入口</th><th style="width:34%">操作</th><th>備考</th></tr>
+    <tr><td>情報シート</td><td>上の案i〜ivのいずれか</td>
+        <td>主たる入口。ピンからでも一覧からでも、開けば必ずここへ来る</td></tr>
+    <tr><td>一覧の行</td><td>長押し（500ms）でマーク選択</td>
+        <td class="ok">既存の <code>bindTypeToggle(el, onTap, onLongPress)</code> がそのまま使える。
+            県ページの集計帯と設定のオブジェクト表示で既に同じ操作を使っているので、覚え直しが要らない</td></tr>
+    <tr><td>地図のピン</td><td>長押し</td>
+        <td class="ng"><code>bindTypeToggle</code> は DOM 要素向けでピンには効かない。
+            <code>map.on('touchstart'/'mousedown', レイヤー)</code> から自前で組む必要がある。
+            地図の長押しは他に割り当てが無いので操作の衝突は無いが、実装量は一覧の行より多い</td></tr>
+    <tr><td>お気に入り一覧</td><td>行の長押しで外す</td>
+        <td>取り消し専用。一覧そのものは <code>mock/fav-list-preview.html</code> 側</td></tr>
+</table>
+
+<h2 class="sec">6. まとめ</h2>
+<table>
+    <tr><th>案</th><th>密集時の可読性</th><th>種別色</th><th>実装</th><th>評価</th></tr>
+    <tr><td>案A 右上バッジ</td><td class="ok">良い（外形が増えない）</td><td class="ok">保つ</td>
+        <td class="ok">mhcard の <code>-icon-overlay</code> と同じ作り。種別ごとに1レイヤー追加</td>
+        <td class="ok">推奨</td></tr>
+    <tr><td>案B 外周リング</td><td class="ng">悪い（φ28→φ36で密集が潰れる）</td><td class="ok">保つ</td>
+        <td class="ng">タップ中に出る選択リング（<code>selected-ring-inner</code>）と見分けが付かない</td>
+        <td class="ng">見送り</td></tr>
+    <tr><td>案C 下に帯</td><td class="ok">良い</td><td class="ok">保つ</td>
+        <td>ラベル（<code>text-anchor: 'top'</code>）と縦に重なるので <code>text-offset</code> の調整が要る</td>
+        <td>次点</td></tr>
+    <tr><td>案D 拡大＋バッジ</td><td class="ng">悪い（マークした物が周りを隠す）</td><td class="ok">保つ</td>
+        <td>案A に <code>icon-size</code> の分岐が増えるだけ</td><td class="ng">見送り</td></tr>
+    <tr><td>案E 地色を置換</td><td class="ok">良い</td><td class="ng">失う</td>
+        <td class="ok">既存の <code>circle-color</code> の match に1段足すだけ</td><td class="ng">見送り</td></tr>
+</table>
+
+<script>
+/* ══ マークの定義。本体へ入れるときもこの3つをそのまま使う想定 ══ */
+const MARKS = [
+    { id: 'fav',  glyph: '★', label: 'お気に入り', desc: '種類を決めずに残す。既定のマーク' },
+    { id: 'want', glyph: '⚑', label: '行きたい',   desc: 'これから行く先。旅程を組むときに使う' },
+    { id: 'done', glyph: '✓', label: '行った',     desc: '訪問済みの記録。集める使い方の受け皿' },
+];
+function glyphOf(id) { return (MARKS.find(m => m.id === id) || {}).glyph || ''; }
+function labelOf(id) { return (MARKS.find(m => m.id === id) || {}).label || ''; }
+
+const IMG = { shop: '../tabe.png', castle: '../castle.png', castle100: '../castle.png',
+              manhole: '../manhole.png', pokefuta: '../manhole.png',
+              michi: '../michi.png', mhcard: '../manhole.png' };
+const BG = { shop: '#FFAA00', castle: '#8A8A8A', castle100: '#4285F4',
+             manhole: '#B87333', pokefuta: '#FBBC04', michi: '#0B499D', mhcard: '#B87333' };
+
+document.getElementById('legend').innerHTML = MARKS.map(m => `
+    <div class="mk-one">
+        <span class="pin" data-t="shop" data-mk="${m.id}"
+              style="position:relative;left:auto;top:auto;transform:none;flex-shrink:0;">
+            <span class="shape"><img src="${IMG.shop}" alt=""></span>
+            <span class="badge" style="display:flex">${m.glyph}</span>
+        </span>
+        <span><b>${m.label}</b><br><span style="color:#777;font-size:11px">${m.desc}</span></span>
+    </div>`).join('');
+
+/* ══ 疑似地図のピン配置。繁華街を想定し、6種別14本のうち5本にマークを付ける ══ */
+const PINS = [
+    { t: 'shop',      x: 58,  y: 52,  n: '一粒庵',     mk: 'fav'  },
+    { t: 'shop',      x: 104, y: 96,  n: '',           mk: null   },
+    { t: 'shop',      x: 150, y: 60,  n: '',           mk: 'done' },
+    { t: 'castle100', x: 232, y: 74,  n: '松本城',     mk: 'want' },
+    { t: 'castle',    x: 288, y: 122, n: '',           mk: null   },
+    { t: 'manhole',   x: 82,  y: 168, n: '',           mk: null   },
+    { t: 'manhole',   x: 120, y: 200, n: '',           mk: 'fav'  },
+    { t: 'pokefuta',  x: 168, y: 176, n: '',           mk: null   },
+    { t: 'pokefuta',  x: 200, y: 218, n: '',           mk: null   },
+    { t: 'mhcard',    x: 258, y: 194, n: '',           mk: 'done' },
+    { t: 'michi',     x: 322, y: 232, n: '道の駅三笠', mk: null   },
+    { t: 'shop',      x: 352, y: 96,  n: '',           mk: null   },
+    { t: 'castle',    x: 46,  y: 252, n: '',           mk: null   },
+    { t: 'shop',      x: 196, y: 132, n: '',           mk: null   },
+];
+document.getElementById('maparea').innerHTML =
+    '<span class="lbl" style="left:14px;top:10px">中央通り</span>' +
+    '<span class="lbl" style="left:246px;top:266px">城下町</span>' +
+    PINS.map(p => `
+    <div class="pin" data-t="${p.t}"${p.mk ? ` data-mk="${p.mk}"` : ''} style="--x:${p.x}px;--y:${p.y}px">
+        <span class="shape"><img src="${IMG[p.t]}" alt=""></span>
+        <span class="ring"></span><span class="under"></span>
+        <span class="badge">${glyphOf(p.mk)}</span>
+        ${p.n ? `<span class="cap">${p.n}</span>` : ''}
+    </div>`).join('');
+
+/* ══ 一覧の行 ══ */
+const ROWS = [
+    { t: 'shop', name: 'ラーメン札幌一粒庵', sub: '北海道札幌市中央区北四条西1-1', dist: '120m',
+      badge: null, mk: 'fav' },
+    { t: 'castle100', name: '松本城', sub: '長野県松本市丸の内4-1', dist: '1.4km',
+      badge: { cls: '', style: 'background:#4285F4', text: '100名城' }, mk: 'want' },
+    { t: 'manhole', name: '東京都 東京23区', sub: '東京都足立区西伊興一丁目', dist: '2.0km',
+      badge: { cls: 'card', style: '', text: '13-100-P001' }, mk: null },
+    { t: 'michi', name: '道の駅三笠', sub: '北海道三笠市岡山1056-1', dist: '3.8km',
+      badge: null, mk: 'done' },
+    { t: 'pokefuta', name: 'アローラロコン / トドグラー', sub: '北海道別海町尾岱沼5-27', dist: '5.1km',
+      badge: null, mk: null },
+];
+document.getElementById('listbox').innerHTML = ROWS.map(r => {
+    const sq = r.t === 'michi' ? ' obj-ic-sq' : '';
+    const full = (r.t === 'manhole' || r.t === 'pokefuta') ? '' : ' class="icon-full"';
+    const badges = [];
+    if (r.badge) badges.push(`<span class="pref-badge ${r.badge.cls}" style="${r.badge.style}">${r.badge.text}</span>`);
+    if (r.mk) badges.push(`<span class="pref-badge row-chip">${glyphOf(r.mk)}${labelOf(r.mk)}</span>`);
+    return `<div class="nearby-item"${r.mk ? ` data-mk="${r.mk}"` : ''}>
+        <span class="row-stripe"></span>
+        <div class="nearby-item-icon${sq}" style="background:${BG[r.t]}"><img src="${IMG[r.t]}"${full} alt=""></div>
+        <span class="row-badge">${glyphOf(r.mk)}</span>
+        <div class="nearby-item-text">
+            <div class="nearby-item-name"><span class="row-glyph">${glyphOf(r.mk)}</span>${r.name}</div>
+            <div class="nearby-item-sub">${r.sub}</div>
+        </div>
+        <div class="pref-badges">${badges.join('')}</div>
+        <div class="nearby-item-dist">${r.dist}</div>
+    </div>`;
+}).join('');
+
+/* ══ 情報シート（松本城の例） ══ */
+document.getElementById('sheetbox').innerHTML = `
+    <div class="os-header">
+        <div class="os-handle"></div>
+        <button class="os-star on" title="お気に入り">★</button>
+        <button class="os-close">×</button>
+    </div>
+    <div class="os-body">
+        <div class="os-badge-row">
+            <span class="pref-badge" style="background:#4285F4;font-size:12px;padding:2px 8px;">100名城</span>
+            <span class="os-seg-wrap"><span class="os-seg">
+                ${MARKS.map((m, i) => `<button data-mk="${m.id}" class="${i === 0 ? 'on' : ''}">${m.glyph}${m.label}</button>`).join('')}
+            </span></span>
+        </div>
+        <div class="os-title">
+            <span class="os-name">松本城</span>
+            <span class="os-title-star on">★</span>
+        </div>
+        <div class="os-row">
+            <div class="os-photo">写真</div>
+            <div class="os-meta">
+                <div class="os-line"><span class="os-k">遺構</span>現存天守・石垣・堀</div>
+                <div class="os-line"><span class="os-k">城主</span>小笠原氏・石川氏・戸田氏</div>
+                <div class="os-line"><span class="os-k">住所</span>長野県松本市丸の内4-1</div>
+            </div>
+        </div>
+        <div class="os-brow"><a class="btn btn-gmap">GoogleMap</a><a class="btn btn-access">アクセス</a></div>
+        <div class="os-fav-row"><div class="os-brow">
+            ${MARKS.map(m => `<button class="btn btn-fav">${m.glyph} ${m.label}</button>`).join('')}
+        </div></div>
+        <div class="os-brow">
+            <a class="btn btn-nav">ここへ行く</a>
+            <a class="btn btn-yahoo">ここへ行く</a>
+            <button class="btn btn-nearby-search">この周辺を検索</button>
+        </div>
+    </div>`;
+
+/* ══ 解説文 ══ */
+const DESC_MAP = {
+    v0: `<h3>現状</h3><p>マークの表現は無い。ピンは種別ごとの色の丸（道の駅は角丸四角、カード配布はカードの絵）で、
+         白フチは既に廃止され、下に落とした薄い影で地図から分離している。</p>`,
+    vA: `<h3>案A 右上に小バッジ</h3>
+         <p class="pros">ピンの外形が変わらないので、密集した場所でも隣のピンを隠さない。
+            白い1.5pxのフチを回してあるので、地図の地色にもピンの地色にも溶けない。</p>
+         <p class="cons">15px と小さく、引いて見ているときは「何か付いている」以上は読めない
+            （種類まで読むには寄る必要がある）。</p>
+         <div class="impl">実装：マンホールカードが既に同じ作りを持っている
+            （<code>mhcards-icon-overlay</code> が銅色のカードの上に白いマンホールを重ねている）。
+            種別ごとに <code>-mark</code> レイヤーを1枚足し、<code>icon-offset</code> で右上へずらす。
+            マークの有無はソースの properties に持たせ、<code>filter</code> と
+            <code>icon-image</code> の <code>match</code> で3種類を振り分ける。</div>`,
+    vB: `<h3>案B 外周リング</h3>
+         <p class="pros">面で見えるので、引いて見たときにいちばん気付きやすい。</p>
+         <p class="cons">タップ中のオブジェクトに出る選択リング（<code>selected-ring-inner</code>）と
+            同じ表現になり、「選んでいる」のか「マークしてある」のか区別できない。
+            φ28 が実質 φ36 になるので、密集した場所ではリング同士が重なって地図が読めなくなる。</p>
+         <div class="impl">実装：<code>circle-stroke-width</code> と <code>circle-stroke-color</code> を
+            復活させるだけなので、実装量はいちばん小さい。</div>`,
+    vC: `<h3>案C 下に帯</h3>
+         <p class="pros">ピンの外形も面積も変わらない。マークの色を横長の面で出せるので、
+            バッジ（案A）より色が読みやすい。</p>
+         <p class="cons">ラベル（<code>text-anchor: 'top'</code> でピンの下に出る）と縦に重なる。
+            食べログ・道の駅・お城はラベルが既定でONなので、帯のぶん
+            <code>text-offset</code> を下げる調整が要る。</p>
+         <div class="impl">実装：案Aと同じレイヤー追加で、ずらす向きが右上ではなく下になるだけ。</div>`,
+    vD: `<h3>案D 拡大＋バッジ</h3>
+         <p class="pros">マークしたものが最初に目に入る。</p>
+         <p class="cons">マークが増えるほど地図上の大きいピンが増え、マークしていない周りのピンを隠す。
+            「集めた記録」として数百件付ける使い方と相性が悪い。</p>`,
+    vE: `<h3>案E 地色をマーク色に置換</h3>
+         <p class="pros">いちばん強く目立ち、引いて見ても読める。</p>
+         <p class="cons">ピンの地色は種別（と城の格付け）を表す唯一の手掛かりなので、
+            置き換えるとマークした瞬間に何のオブジェクトか分からなくなる。
+            マークの3色も種別色として読み間違える。</p>`,
+};
+const DESC_LIST = {
+    l0: `<h3>現状</h3><p>左に種別アイコン、右端にバッジ列と距離。マークの表現は無い。</p>`,
+    l1: `<h3>案1 アイコンの右上にバッジ</h3>
+         <p class="pros">地図のピン（案A）と同じ絵になるので、地図と一覧で覚え直しが要らない。
+            行の高さも既存のバッジ列も動かさない。</p>
+         <p class="cons">14px と小さい。</p>
+         <div class="impl">実装：<code>prefTypeIconHtml()</code> の戻り値にバッジ用の span を足す。
+            この関数は県ページ・周辺検索・検索結果・履歴で共用しているので、1か所直せば全部に乗る。</div>`,
+    l2: `<h3>案2 既存バッジ列に足す</h3>
+         <p class="pros">文字で書けるので種類が確実に読める。バッジの作法（<code>.pref-badge</code>）が既にある。</p>
+         <p class="cons">右端は既に城の「100名城」＋形態、カードの「ID」＋「弾」で2段使うことがあり、
+            3段目になると行が縦に伸びる。</p>
+         <div class="impl">実装：<code>prefBadgesHtml()</code> の先頭に1つ push するだけ。</div>`,
+    l3: `<h3>案3 左端の色帯＋淡い背景</h3>
+         <p class="pros">一覧をざっと送ったときに、マークした行の塊がいちばん速く見つかる。</p>
+         <p class="cons">行全体に色が乗るので、お気に入り一覧のように全行がマーク済みの画面では
+            全部が塗られて意味を失う。種類の判別も色頼りになる。</p>`,
+    l4: `<h3>案4 名前の前に記号</h3>
+         <p class="pros">実装がいちばん軽い。文字なので拡大表示でも崩れない。</p>
+         <p class="cons">名前の表示幅を食う。食べログの店名は既に
+            <code>text-overflow: ellipsis</code> で切れていることが多く、記号のぶん更に切れる。</p>`,
+};
+const DESC_SHEET = {
+    's-i': `<h3>案i ヘッダー右の星</h3>
+        <p class="pros">オブジェクトの種類によらず必ず同じ位置にある（シート本体は種別ごとに中身が違う）。
+           ヘッダーは <code>buildSheetHtml()</code> の外側にあるので、6種別ぶんの分岐に触らずに足せる。</p>
+        <p class="cons">1タップで付くのは1種類だけ。3種類を出すには長押しかもう1タップが要る。</p>
+        <div class="impl">実装：<code>#obj-sheet-header</code> に固定のボタンを1つ置き、
+           <code>openObjSheet()</code> で <code>objSheetCtx</code> から今の状態を反映する。</div>`,
+    's-ii': `<h3>案ii タイトル行の右端</h3>
+        <p class="pros">名前のすぐ横なので「何に対するマークか」が迷いなく伝わる。</p>
+        <p class="cons">タイトル行は既に <code>titleTail</code>（食べログの評点）が右端を使っている。
+           食べログだけ星と評点が並び、評点の★と紛らわしい。</p>`,
+    's-iii': `<h3>案iii バッジ行にセグメント</h3>
+        <p class="pros">3種類を1タップずつで付け外しでき、いま何が付いているかも同時に読める。</p>
+        <p class="cons">常に1行（高さ約22px）を使う。この行は食べログの部門バッジ、
+           マンホールカードのIDと弾のバッジが既に使っており、並べると横が詰まる。</p>`,
+    's-iv': `<h3>案iv ボタン行を1段足す</h3>
+        <p class="pros">押しやすさがいちばん高い（高さ40pxの既存ボタンと同じ寸法）。</p>
+        <p class="cons">シートが40px高くなる。シートは
+           <code>max-height: calc(100svh - 52px - 160px)</code> で頭打ちになり、
+           <code>adjustMapForSheet()</code> が地図を寄せる量も増えるので、地図の見える面積が減る。</p>`,
+};
+
+/* ══ チップの切り替え ══ */
+function bindChips(id, apply) {
+    const box = document.getElementById(id);
+    box.addEventListener('click', e => {
+        const b = e.target.closest('.chip');
+        if (!b) return;
+        box.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c === b));
+        apply(b.dataset.v);
+    });
+}
+function setClass(el, all, v) { all.forEach(c => el.classList.toggle(c, c === v)); }
+
+const mapEl = document.getElementById('maparea');
+const listEl = document.getElementById('listbox');
+const sheetEl = document.getElementById('sheetbox');
+bindChips('chips-map', v => {
+    setClass(mapEl, ['v0', 'vA', 'vB', 'vC', 'vD', 'vE'], v);
+    document.getElementById('desc-map').innerHTML = DESC_MAP[v];
+});
+bindChips('chips-list', v => {
+    setClass(listEl, ['l0', 'l1', 'l2', 'l3', 'l4'], v);
+    document.getElementById('desc-list').innerHTML = DESC_LIST[v];
+});
+bindChips('chips-sheet', v => {
+    setClass(sheetEl, ['s-i', 's-ii', 's-iii', 's-iv'], v);
+    document.getElementById('desc-sheet').innerHTML = DESC_SHEET[v];
+});
+bindChips('chips-tone', v => document.body.classList.toggle('mono', v === 'mono'));
+
+/* 初期表示 */
+mapEl.classList.add('v0');    document.getElementById('desc-map').innerHTML = DESC_MAP.v0;
+listEl.classList.add('l0');   document.getElementById('desc-list').innerHTML = DESC_LIST.l0;
+sheetEl.classList.add('s-i'); document.getElementById('desc-sheet').innerHTML = DESC_SHEET['s-i'];
+</script>
+</body>
+</html>

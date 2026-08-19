@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>お気に入りから検索 — 入口と一覧のモック</title>
+<style>
+    /* index.html から写した実寸・実色 */
+    :root {
+        --obj-icon-circle: 28px;
+        --obj-icon-inner: 25px;
+        --obj-icon-inner-full: 28px;
+        --obj-icon-square: 26px;
+        --ui-blue: #4285F4;
+        --mk-fav:  #FFC107;
+        --mk-want: #29B6F6;
+        --mk-done: #43A047;
+    }
+    body { margin: 0; font-family: system-ui, sans-serif; color: #222; background: #fff; }
+    header { padding: 12px 14px 4px; }
+    h1 { font-size: 16px; margin: 0 0 4px; }
+    .lead { font-size: 12px; color: #555; line-height: 1.75; margin: 0 0 10px; }
+    code { background: #f2f2f2; padding: 1px 4px; border-radius: 3px; font-size: 11px;
+           font-family: ui-monospace, monospace; }
+    h2.sec { font-size: 14px; margin: 26px 14px 8px; padding-bottom: 5px; border-bottom: 1px solid #ddd; }
+    .note { font-size: 11.5px; color: #666; line-height: 1.75; padding: 0 14px; margin: 0 0 10px; }
+    .desc { padding: 0 14px; }
+    .desc h3 { font-size: 13px; margin: 10px 0 5px; }
+    .desc p { font-size: 12.5px; line-height: 1.8; margin: 0 0 6px; color: #333; }
+    .pros { color: #1B5E20; }
+    .cons { color: #B71C1C; }
+    .impl { font-size: 11.5px; color: #37474F; background: #f6f7f9; border-left: 3px solid #90A4AE;
+            padding: 7px 10px; line-height: 1.75; margin: 0 0 8px; }
+    table { border-collapse: collapse; width: calc(100% - 28px); margin: 8px 14px 30px; font-size: 12px; }
+    th, td { border: 1px solid #e0e0e0; padding: 6px 8px; text-align: left; vertical-align: top; line-height: 1.65; }
+    th { background: #f6f7f9; font-weight: 600; }
+    td.ok { color: #1B5E20; } td.ng { color: #B71C1C; }
+
+    .chips-sw { display: flex; gap: 6px; flex-wrap: wrap; padding: 0 14px 10px; }
+    .chip-sw { font-size: 12px; padding: 5px 10px; border: 1px solid #ccc; background: #fff;
+               border-radius: 999px; cursor: pointer; white-space: nowrap; font-family: inherit; }
+    .chip-sw.on { background: #263238; color: #fff; border-color: #263238; }
+    .chip-sw.base { border-style: dashed; }
+
+    /* ══ 端末枠（iPhone SE3 の 375px 幅） ══ */
+    .phone { width: 375px; max-width: calc(100% - 28px); margin: 0 14px 12px; background: #fff;
+             border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; }
+    .phone + .phone { margin-top: 0; }
+
+    /* ══ メニューパネル（#nearby-panel の中身） ══ */
+    .nearby-section-label { font-size: 11px; color: #999; padding: 6px 16px 4px; }
+    .hr { border-top: 1px solid #f0f0f0; }
+    .nearby-list-btns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 0 16px 12px; }
+    .nearby-list-btns.c4 { grid-template-columns: repeat(4, 1fr); }
+    .nearby-list-btn { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 100%;
+                       background: #f8f8f8; border: 0; border-radius: 10px; padding: 8px 6px;
+                       cursor: pointer; font-family: inherit; }
+    .nlb-ic { width: 34px; height: 34px; border-radius: 9px; background: #8A8A8A;
+              display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .nlb-ic img { width: 100%; height: 100%; object-fit: contain; filter: brightness(0) invert(1); }
+    .nlb-ic svg { width: 100%; height: 100%; display: block; }
+    .nlb-n { display: block; font-size: 9px; color: #555; text-align: center;
+             white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+    /* 案C の全幅ボタン */
+    .fav-wide { display: flex; align-items: center; gap: 10px; width: calc(100% - 32px); margin: 0 16px 12px;
+                background: #f8f8f8; border: 0; border-radius: 10px; padding: 9px 12px;
+                cursor: pointer; font-family: inherit; text-align: left; }
+    .fav-wide .nlb-ic { border-radius: 9px; }
+    .fav-wide .fw-n { font-size: 12px; color: #333; font-weight: bold; flex: 1; }
+    .fav-wide .fw-c { font-size: 11px; color: #888; }
+
+    /* ══ 一覧ビュー（.lords-head / .lords-filter / .lords-scroll と同じ作り） ══ */
+    .lords-head { display: flex; align-items: center; gap: 8px; padding: 12px 12px 8px; }
+    .lords-head-title { font-size: 14px; font-weight: bold; color: #333; flex: 1; min-width: 0;
+                        overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .lords-iconbtn { width: 32px; height: 32px; border: 0; background: #f5f5f5; border-radius: 8px;
+                     color: #555; cursor: pointer; display: flex; align-items: center;
+                     justify-content: center; flex-shrink: 0; font-family: inherit; }
+    .lords-filter { padding: 0 12px 8px; border-bottom: 1px solid #f0f0f0; }
+    .lords-filter input { width: 100%; height: 34px; border: 1px solid #e3e3e3; border-radius: 17px;
+                          padding: 0 12px; font-size: 13px; font-family: inherit;
+                          background: #fafafa; color: #333; box-sizing: border-box; }
+    .lords-chips { display: flex; gap: 6px; margin-top: 7px; flex-wrap: wrap; }
+    .lords-chip { font-size: 11px; padding: 4px 10px; border-radius: 14px; background: #f2f2f2;
+                  color: #666; border: 0; cursor: pointer; font-family: inherit; }
+    .lords-chip[aria-pressed="true"] { background: #e3ecff; color: #2a5bd7; font-weight: bold; }
+    .lords-scroll { max-height: 330px; overflow-y: auto; }
+    .lords-note { font-size: 11px; color: #999; text-align: center; padding: 12px 14px 16px; line-height: 1.8; }
+
+    /* ══ 行（.nearby-item） ══ */
+    .nearby-item { display: flex; align-items: center; padding: 10px 14px;
+                   border-bottom: 1px solid #f0f0f0; cursor: pointer; gap: 10px; }
+    .nearby-item:last-child { border-bottom: none; }
+    .nearby-item-icon { width: var(--obj-icon-circle); height: var(--obj-icon-circle); border-radius: 50%;
+                        display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+                        overflow: hidden; background: #eee; position: relative; }
+    .nearby-item-icon img { width: var(--obj-icon-inner); height: var(--obj-icon-inner);
+                            object-fit: contain; filter: brightness(0) invert(1); }
+    .nearby-item-icon img.icon-full { width: var(--obj-icon-inner-full); height: var(--obj-icon-inner-full); }
+    .nearby-item-icon.obj-ic-sq { width: var(--obj-icon-square); height: var(--obj-icon-square); border-radius: 2px; }
+    .nearby-item-icon.obj-ic-sq img { width: 100%; height: 100%; }
+    .icon-wrap { position: relative; flex-shrink: 0; display: flex; align-items: center; }
+    /* 採用案（fav-badge-preview.html の一覧・案1）と同じ、アイコン右上の小バッジ */
+    .mk-badge { position: absolute; top: -4px; right: -4px; width: 14px; height: 14px; border-radius: 50%;
+                border: 1.5px solid #fff; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+                display: flex; align-items: center; justify-content: center;
+                font-size: 8.5px; font-weight: 700; line-height: 1; color: #fff; }
+    .mk-badge[data-mk="fav"]  { background: var(--mk-fav); color: #4a3800; }
+    .mk-badge[data-mk="want"] { background: var(--mk-want); }
+    .mk-badge[data-mk="done"] { background: var(--mk-done); }
+    .nearby-item-text { flex: 1; min-width: 0; }
+    .nearby-item-name { font-size: 13px; font-weight: bold; color: #333;
+                        white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .nearby-item-sub { font-size: 11px; color: #999; margin-top: 1px; }
+    .nearby-item-dist { font-size: 12px; color: var(--ui-blue); font-weight: bold; flex-shrink: 0; }
+    .pref-badges { display: flex; flex-direction: column; gap: 2px; align-items: flex-end; flex-shrink: 0; }
+    .pref-badge { font-size: 9.5px; font-weight: 700; color: #fff; padding: 1px 7px;
+                  border-radius: 9px; white-space: nowrap; line-height: 1.5; }
+    .pref-badge.card { background: #8d6e63; }
+    .fav-added { font-size: 10px; color: #bbb; flex-shrink: 0; }
+
+    /* ══ 戻り導線（injectPrefBackLink と同じ見た目の帯） ══ */
+    .backlink { display: flex; align-items: center; gap: 6px; font-size: 11.5px; color: #2a5bd7;
+                background: #f3f6ff; border-radius: 8px; padding: 7px 10px; margin: 0 0 6px; cursor: pointer; }
+
+    .sheetbox { width: 375px; max-width: calc(100% - 28px); margin: 0 14px 12px; background: #fff;
+                border-radius: 16px 16px 0 0; box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.18);
+                border: 1px solid #eee; overflow: hidden; font-family: sans-serif; }
+    .os-header { position: relative; padding: 8px 14px 4px; min-height: 24px; }
+    .os-handle { width: 36px; height: 4px; background: #ccc; border-radius: 2px; margin: 0 auto; }
+    .os-star { position: absolute; top: 0; right: 36px; background: none; border: none; font-size: 19px;
+               line-height: 1; cursor: pointer; padding: 2px 6px; color: var(--mk-fav); }
+    .os-close { position: absolute; top: 1px; right: 8px; background: none; border: none;
+                font-size: 20px; color: #bbb; cursor: pointer; padding: 0 6px; line-height: 1; }
+    .os-body { padding: 0 14px 14px; }
+    .os-name { font-size: 15px; font-weight: bold; }
+    .os-line { font-size: 11px; color: #333; line-height: 1.45; margin-top: 2px; }
+    .os-k { display: inline-block; background: #E6E2D8; color: #3d3d3d; border-radius: 3px;
+            padding: 0 4px; margin-right: 4px; font-size: 10px; }
+
+    .empty { padding: 34px 20px; text-align: center; color: #aaa; font-size: 12px; line-height: 1.9; }
+    .empty .big { font-size: 30px; color: #e0e0e0; display: block; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>お気に入りから検索 — 入口と一覧のモック</h1>
+    <p class="lead">
+        メニューパネルの「一覧から検索」（現在は 都道府県 / 城主 / 遺構 の3本、
+        <code>.nearby-list-btns</code> は <code>repeat(3, 1fr)</code>）に、
+        星のボタンを足して「お気に入り一覧」へ入れるようにする案。
+        枠は iPhone SE3 の 375px 幅で、寸法と色は <code>index.html</code> の実物から写している。
+        マークの3種類と行のバッジは <code>mock/fav-badge-preview.html</code> の
+        「一覧・案1（アイコンの右上にバッジ）」を採った前提。
+    </p>
+</header>
+
+<h2 class="sec">1. 入口の置き方</h2>
+<div class="chips-sw" id="chips-entry">
+    <button class="chip-sw base on" data-v="e0">現状（3本）</button>
+    <button class="chip-sw" data-v="eA">案A 3列のまま4つ目</button>
+    <button class="chip-sw" data-v="eB">案B 4列にする</button>
+    <button class="chip-sw" data-v="eC">案C 独立した全幅ボタン</button>
+</div>
+<div class="phone" id="entrybox"></div>
+<div class="desc" id="desc-entry"></div>
+
+<h2 class="sec">2. お気に入り一覧ビュー</h2>
+<p class="note">
+    城主一覧・都道府県一覧・遺構一覧と同じ枠組み（<code>.lords-head</code> ＋
+    <code>.lords-filter</code> ＋ <code>.lords-scroll</code>）の、メニューパネル内の新しいビュー。
+    下のチップは実際に動くので、絞り込みと並べ替えの効き方を確かめられる。
+</p>
+<div class="phone">
+    <div class="lords-head">
+        <button class="lords-iconbtn" title="戻る">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="lords-head-title">お気に入り</div>
+        <button class="lords-iconbtn" title="閉じる" style="font-size:17px;">×</button>
+    </div>
+    <div class="lords-filter">
+        <input type="search" placeholder="名前・住所で絞り込み" id="fav-q" autocomplete="off">
+        <div class="lords-chips" id="chips-kind"></div>
+        <div class="lords-chips" id="chips-sort"></div>
+    </div>
+    <div class="lords-scroll" id="fav-list"></div>
+</div>
+<p class="note">
+    種別（食べログ・お城…）の絞り込みチップは置いていない。設定の「オブジェクト表示」で消した種別は
+    地図・検索・周辺検索・都道府県から探す・城主から探すの全部から消える決まりなので、
+    お気に入り一覧もそれに従わせる（この画面だけ別の種別セットを持たせると規則が二重になる）。
+</p>
+
+<h2 class="sec">3. 一覧からオブジェクトへ飛ぶ／戻る</h2>
+<p class="note">
+    行をタップしたときの動きは、県ページの <code>prefJumpToItem()</code> と揃える。
+    <code>saveListReturnCamera()</code> で今の地図を控える → <code>closeNearby()</code> →
+    <code>onResultClick(item)</code> で寄せて情報シートを開く → 400ms 後に戻り導線を挿す、の順。
+    戻ると地図も一覧のスクロール位置も飛ぶ前へ戻る。
+</p>
+<div class="sheetbox">
+    <div class="os-header">
+        <div class="os-handle"></div>
+        <button class="os-star" title="お気に入り">★</button>
+        <button class="os-close">×</button>
+    </div>
+    <div class="os-body">
+        <div class="backlink">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            お気に入りに戻る
+        </div>
+        <div class="os-name">ラーメン札幌一粒庵</div>
+        <div class="os-line"><span class="os-k">住所</span>北海道札幌市中央区北四条西1-1 ホクレンビル B1F</div>
+    </div>
+</div>
+
+<h2 class="sec">4. 何も登録していないとき</h2>
+<div class="phone">
+    <div class="lords-head">
+        <button class="lords-iconbtn" title="戻る">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="lords-head-title">お気に入り</div>
+        <button class="lords-iconbtn" title="閉じる" style="font-size:17px;">×</button>
+    </div>
+    <div class="empty">
+        <span class="big">★</span>
+        まだ登録がありません。<br>
+        ピンや一覧から開いた情報シートの★を押すと、ここに集まります。
+    </div>
+</div>
+
+<h2 class="sec">5. 保存の形（いまはローカル、後でサーバー）</h2>
+<p class="note">
+    保存先だけ差し替えられるように、読み書きを2つの関数に閉じ込めておく。
+    いまは <code>localStorage</code>（既存の <code>settingsState</code> ・
+    <code>nearbyTypeFilterOff</code> と同じ置き場）で、後からサーバーに移すときは
+    この2つの中身だけを差し替える。
+</p>
+<div class="desc">
+<div class="impl">
+localStorage キー: <code>favorites</code><br><br>
+{ "v": 1,<br>
+&nbsp;&nbsp;"items": {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"shop:https://tabelog.com/hokkaido/A0101/A010101/1001190/": { "mk": ["fav"], "at": 1755500000000 },<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"michi:18786": { "mk": ["want", "done"], "at": 1755500100000 },<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"castle:松本城@136.8626,36.2384": { "mk": ["fav", "done"], "at": 1755500200000 }<br>
+&nbsp;&nbsp;}<br>
+}
+</div>
+</div>
+<table>
+    <tr><th style="width:20%">種別</th><th style="width:36%">キーの作り方</th><th>根拠</th></tr>
+    <tr><td>食べログ</td><td class="ok"><code>shop:{properties.url}</code></td>
+        <td>店舗ページのURLが1店1つ。<code>data.js</code> の全件が持つ</td></tr>
+    <tr><td>道の駅</td><td class="ok"><code>michi:{properties.id}</code></td>
+        <td>公式の駅ID（<code>michi.js</code> の <code>"id": "18786"</code>）</td></tr>
+    <tr><td>ポケふた</td><td class="ok"><code>pokefuta:{properties.id}</code></td>
+        <td>公式の連番（<code>pokemon.js</code> の <code>"id": 445</code>）</td></tr>
+    <tr><td>マンホール（蓋）</td><td><code>manhole:{cardCodeKey(cardId)}</code>、無ければ座標</td>
+        <td>カードIDは既に <code>cardCodeKey()</code> で正規化している。
+            IDを持たない蓋があるので座標へ落とす経路が要る</td></tr>
+    <tr><td>カード配布</td><td><code>mhcard:{cardKeyOfCardRecord(p)}</code></td>
+        <td>既存の関数がそのまま使える。同じカードを複数箇所で配る147キーは配布場所ごとに別扱い</td></tr>
+    <tr><td>お城</td><td class="ng"><code>castle:{name}@{lng},{lat}</code>（座標は小数4桁）</td>
+        <td class="ng"><code>castle.js</code> に一意なIDが無く、<code>url</code> も空の城が多い。
+            同名の城が全国にあるため名前だけでは足りず、名前＋座標で作る。
+            データを差し替えて座標が動くと別物になるので、
+            <b>castle.js に安定IDを振るのがいちばん確実</b></td></tr>
+</table>
+<p class="note">
+    サーバーへ移すときは <code>wrangler.toml</code> の Cloudflare 構成に
+    KV か D1 を足して <code>/api/favorites</code> を作り、上の JSON をそのまま置く形が最短。
+    その場合はローカルを一次キャッシュ、サーバーを正として、
+    <code>at</code>（更新時刻）が新しい方を採る形にすれば端末をまたいでも壊れない。
+</p>
+
+<script>
+const MARKS = [
+    { id: 'fav',  glyph: '★', label: 'お気に入り' },
+    { id: 'want', glyph: '⚑', label: '行きたい' },
+    { id: 'done', glyph: '✓', label: '行った' },
+];
+const IMG = { shop: '../tabe.png', castle: '../castle.png', castle100: '../castle.png',
+              manhole: '../manhole.png', pokefuta: '../manhole.png', michi: '../michi.png' };
+const BG = { shop: '#FFAA00', castle: '#8A8A8A', castle100: '#4285F4',
+             manhole: '#B87333', pokefuta: '#FBBC04', michi: '#0B499D' };
+
+/* ══ 1. 入口の置き方 ══ */
+const ICON_PREF = `<svg viewBox="0 0 100 100" aria-hidden="true"><g fill="#fff">
+    <rect x="12" y="12" width="34" height="30" rx="4"/><rect x="52" y="12" width="36" height="18" rx="4"/>
+    <rect x="52" y="36" width="36" height="52" rx="4"/><rect x="12" y="48" width="34" height="40" rx="4"/>
+</g></svg>`;
+const ICON_REMAINS = `<svg viewBox="0 0 100 100" aria-hidden="true"><g fill="#fff">
+    <rect x="24" y="12" width="52" height="12" rx="3"/><rect x="14" y="30" width="30" height="18" rx="3"/>
+    <rect x="50" y="30" width="36" height="18" rx="3"/><rect x="14" y="54" width="36" height="18" rx="3"/>
+    <rect x="56" y="54" width="30" height="18" rx="3"/></g></svg>`;
+const ICON_STAR = `<svg viewBox="0 0 100 100" aria-hidden="true"><path fill="#fff"
+    d="M50 14 L61 39 L88 42 L68 60 L74 87 L50 73 L26 87 L32 60 L12 42 L39 39 Z"/></svg>`;
+
+const BTN_PREF    = `<button class="nearby-list-btn"><span class="nlb-ic" style="background:#2a7d5f;">${ICON_PREF}</span><span class="nlb-n">都道府県</span></button>`;
+const BTN_LORDS   = `<button class="nearby-list-btn"><span class="nlb-ic"><img src="../castle.png" alt=""></span><span class="nlb-n">城主</span></button>`;
+const BTN_REMAINS = `<button class="nearby-list-btn"><span class="nlb-ic" style="background:#8d6e63;">${ICON_REMAINS}</span><span class="nlb-n">遺構</span></button>`;
+const BTN_FAV     = `<button class="nearby-list-btn"><span class="nlb-ic" style="background:#FFC107;">${ICON_STAR}</span><span class="nlb-n">お気に入り</span></button>`;
+
+const ENTRY = {
+    e0: `<div class="hr"></div><div class="nearby-section-label">一覧から検索</div>
+         <div class="nearby-list-btns">${BTN_PREF}${BTN_LORDS}${BTN_REMAINS}</div>`,
+    eA: `<div class="hr"></div><div class="nearby-section-label">一覧から検索</div>
+         <div class="nearby-list-btns">${BTN_PREF}${BTN_LORDS}${BTN_REMAINS}${BTN_FAV}</div>`,
+    eB: `<div class="hr"></div><div class="nearby-section-label">一覧から検索</div>
+         <div class="nearby-list-btns c4">${BTN_FAV}${BTN_PREF}${BTN_LORDS}${BTN_REMAINS}</div>`,
+    eC: `<div class="hr"></div><div class="nearby-section-label">お気に入りから検索</div>
+         <button class="fav-wide"><span class="nlb-ic" style="background:#FFC107;">${ICON_STAR}</span>
+            <span class="fw-n">お気に入り</span><span class="fw-c">★12 ⚑7 ✓34</span></button>
+         <div class="hr"></div><div class="nearby-section-label">一覧から検索</div>
+         <div class="nearby-list-btns">${BTN_PREF}${BTN_LORDS}${BTN_REMAINS}</div>`,
+};
+const DESC_ENTRY = {
+    e0: `<h3>現状</h3><p>都道府県 / 城主 / 遺構 の3本がちょうど1段に収まっている。
+         幅375pxの端末で、左右の余白16px×2 と隙間8px×2 を引いて1本あたり109px。</p>`,
+    eA: `<h3>案A 3列のまま4つ目を足す</h3>
+         <p class="pros">CSSを1行も触らずに済む。ボタン1本ぶんの幅も現状のまま。</p>
+         <p class="cons">3列グリッドなので4本目だけが2段目の左端に落ち、右側が2本ぶん空く。
+            「一覧から検索」の枠が縦に約70px伸びる。</p>`,
+    eB: `<h3>案B 4列にする</h3>
+         <p class="pros">1段に収まるので枠の高さが変わらない。星を先頭に置けば、
+            使う頻度がいちばん高いものが左端に来る。</p>
+         <p class="cons">1本あたり109px→79.75px（375px端末：<code>(375-32-24)/4</code>）に狭まる。
+            アイコンは34pxなので余裕があり、ラベルも「お気に入り」5文字×9px＝45pxで収まるが、
+            後から5本目を足す余地は無くなる。</p>
+         <div class="impl">実装：<code>.nearby-list-btns</code> の
+            <code>grid-template-columns</code> を <code>repeat(4, 1fr)</code> にする。
+            このクラスを使っているのはこの1か所だけなので、他への波及は無い。</div>`,
+    eC: `<h3>案C 独立した全幅ボタン</h3>
+         <p class="pros">「一覧から検索」は全国のデータを辿る入口、「お気に入り」は自分が付けた印を辿る入口で、
+            出自が違うものを混ぜずに済む（周辺検索と一覧から検索を分けてあるのと同じ考え方）。
+            幅があるので、種類ごとの件数をその場に出せる。</p>
+         <p class="cons">セクションが1つ増えて、パネルが縦に約60px伸びる。
+            ユーザーの言う「一覧から検索の並びに星を足す」からは外れる。</p>`,
+};
+function bindSw(id, apply) {
+    const box = document.getElementById(id);
+    box.addEventListener('click', e => {
+        const b = e.target.closest('.chip-sw');
+        if (!b) return;
+        box.querySelectorAll('.chip-sw').forEach(c => c.classList.toggle('on', c === b));
+        apply(b.dataset.v);
+    });
+}
+bindSw('chips-entry', v => {
+    document.getElementById('entrybox').innerHTML = ENTRY[v];
+    document.getElementById('desc-entry').innerHTML = DESC_ENTRY[v];
+});
+document.getElementById('entrybox').innerHTML = ENTRY.e0;
+document.getElementById('desc-entry').innerHTML = DESC_ENTRY.e0;
+
+/* ══ 2. お気に入り一覧 ══ */
+const FAVS = [
+    { t: 'shop', name: 'ラーメン札幌一粒庵', sub: '北海道札幌市中央区北四条西1-1', dist: 0.12,
+      at: '8/18', mk: ['fav'], badge: null },
+    { t: 'castle100', name: '松本城', sub: '長野県松本市丸の内4-1', dist: 1.4,
+      at: '8/17', mk: ['fav', 'done'], badge: { cls: '', style: 'background:#4285F4', text: '100名城' } },
+    { t: 'michi', name: '道の駅三笠', sub: '北海道三笠市岡山1056-1', dist: 3.8,
+      at: '8/15', mk: ['want'], badge: null },
+    { t: 'manhole', name: '東京都 東京23区', sub: '東京都足立区西伊興一丁目', dist: 5.2,
+      at: '8/14', mk: ['done'], badge: { cls: 'card', style: '', text: '13-100-P001' } },
+    { t: 'pokefuta', name: 'アローラロコン / トドグラー', sub: '北海道別海町尾岱沼5-27', dist: 8.6,
+      at: '8/12', mk: ['want', 'fav'], badge: null },
+    { t: 'castle', name: '勝山館', sub: '北海道上ノ国町字原歌', dist: 12.4,
+      at: '8/10', mk: ['done'], badge: null },
+];
+const TYPE_ORDER = ['shop', 'pokefuta', 'manhole', 'mhcard', 'michi', 'castle', 'castle100'];
+let favKind = 'all', favSort = 'at', favQ = '';
+
+function renderKindChips() {
+    const counts = { all: FAVS.length };
+    MARKS.forEach(m => counts[m.id] = FAVS.filter(f => f.mk.includes(m.id)).length);
+    document.getElementById('chips-kind').innerHTML =
+        `<button class="lords-chip" data-k="all" aria-pressed="${favKind === 'all'}">すべて ${counts.all}</button>` +
+        MARKS.map(m => `<button class="lords-chip" data-k="${m.id}" aria-pressed="${favKind === m.id}"
+            >${m.glyph}${m.label} ${counts[m.id]}</button>`).join('');
+    document.getElementById('chips-sort').innerHTML =
+        [['at', '追加順'], ['dist', '近い順'], ['type', '種別順'], ['name', '名前順']]
+        .map(([k, l]) => `<button class="lords-chip" data-s="${k}" aria-pressed="${favSort === k}">${l}</button>`).join('');
+}
+function renderFavList() {
+    let rows = FAVS.filter(f => favKind === 'all' || f.mk.includes(favKind));
+    if (favQ) rows = rows.filter(f => (f.name + f.sub).toLowerCase().includes(favQ.toLowerCase()));
+    if (favSort === 'dist') rows = rows.slice().sort((a, b) => a.dist - b.dist);
+    else if (favSort === 'name') rows = rows.slice().sort((a, b) => a.name.localeCompare(b.name, 'ja'));
+    else if (favSort === 'type') rows = rows.slice().sort((a, b) =>
+        TYPE_ORDER.indexOf(a.t) - TYPE_ORDER.indexOf(b.t) || a.name.localeCompare(b.name, 'ja'));
+    const el = document.getElementById('fav-list');
+    if (!rows.length) {
+        el.innerHTML = `<div class="lords-note">該当する項目がありません</div>`;
+        return;
+    }
+    el.innerHTML = rows.map(f => {
+        const sq = f.t === 'michi' ? ' obj-ic-sq' : '';
+        const full = (f.t === 'manhole' || f.t === 'pokefuta') ? '' : ' class="icon-full"';
+        // 複数付いているときは、種類の順（★→⚑→✓）で先頭のものをバッジに出す
+        const top = MARKS.find(m => f.mk.includes(m.id));
+        const extra = f.mk.length > 1 ? `<span class="pref-badge" style="background:#b0bec5">+${f.mk.length - 1}</span>` : '';
+        const badges = [];
+        if (f.badge) badges.push(`<span class="pref-badge ${f.badge.cls}" style="${f.badge.style}">${f.badge.text}</span>`);
+        if (extra) badges.push(extra);
+        const distStr = f.dist < 1 ? `${Math.round(f.dist * 1000)}m` : `${f.dist.toFixed(1)}km`;
+        return `<div class="nearby-item">
+            <span class="icon-wrap">
+                <span class="nearby-item-icon${sq}" style="background:${BG[f.t]}"><img src="${IMG[f.t]}"${full} alt=""></span>
+                <span class="mk-badge" data-mk="${top.id}">${top.glyph}</span>
+            </span>
+            <div class="nearby-item-text">
+                <div class="nearby-item-name">${f.name}</div>
+                <div class="nearby-item-sub">${f.sub}</div>
+            </div>
+            <div class="pref-badges">${badges.join('')}</div>
+            ${favSort === 'at' ? `<div class="fav-added">${f.at}</div>`
+                               : `<div class="nearby-item-dist">${distStr}</div>`}
+        </div>`;
+    }).join('') + `<div class="lords-note">全${rows.length}件<br>
+        行を長押しするとマークを付け替え・取り消しできる</div>`;
+}
+document.getElementById('chips-kind').addEventListener('click', e => {
+    const b = e.target.closest('.lords-chip'); if (!b) return;
+    favKind = b.dataset.k; renderKindChips(); renderFavList();
+});
+document.getElementById('chips-sort').addEventListener('click', e => {
+    const b = e.target.closest('.lords-chip'); if (!b) return;
+    favSort = b.dataset.s; renderKindChips(); renderFavList();
+});
+document.getElementById('fav-q').addEventListener('input', e => {
+    favQ = e.target.value.trim(); renderFavList();
+});
+renderKindChips();
+renderFavList();
+</script>
+</body>
+</html>
