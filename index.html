@@ -1127,6 +1127,36 @@
         .fav-empty { padding: 40px 20px; text-align: center; color: #aaa; font-size: 12px; line-height: 1.9; }
         .fav-empty b { font-size: 34px; color: #e0e0e0; display: block; margin-bottom: 8px; font-weight: normal; }
         .fav-added { font-size: 10px; color: #bbb; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+        /* お気に入りの書き出しビュー（メニューパネル内の第11ビュー）。
+           TravelPlan の入力ファイル仕様（sample/input-format.md 版1.1）の TSV を作る。
+           形式は TSV だけにしてある（CSV・JSON も仕様は受けるが、選ばせる意味が無い）。
+           版1.1 で role/stay/day/priority が削除されたので、出発地・滞在時間・優先度は聞かない。 */
+        #nearby-fav-export-view { display: none; flex-direction: column; min-height: 0;
+                                  height: calc(100svh - 104px); max-height: 100%; }
+        #nearby-fav-export-view.open { display: flex; }
+        .fxp-scroll { overflow-y: auto; flex: 1; min-height: 0; -webkit-overflow-scrolling: touch; }
+        .fxp-sec { font-size: 11px; color: #999; padding: 12px 16px 5px; }
+        .fxp-row { display: flex; align-items: center; gap: 10px; padding: 10px 16px;
+                   font-size: 13px; color: #333; border-bottom: 1px solid #f4f4f4; }
+        .fxp-rt { margin-left: auto; color: #888; font-size: 12px; font-variant-numeric: tabular-nums; }
+        .fxp-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+        .fxp-note { font-size: 11px; color: #999; line-height: 1.7; padding: 6px 16px 10px;
+                    border-bottom: 1px solid #f4f4f4; margin: 0; }
+        /* 設定のトグルと同じ見た目。丸は 42-20-2.5*2 = 17px 動く */
+        .fxp-sw { width: 42px; height: 25px; border-radius: 13px; background: #ddd; position: relative;
+                  flex-shrink: 0; margin-left: auto; border: 0; padding: 0; }
+        .fxp-sw.on { background: var(--ui-blue); }
+        .fxp-sw::after { content: ''; position: absolute; top: 2.5px; left: 2.5px; width: 20px; height: 20px;
+                         border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.25);
+                         transition: left .15s; }
+        .fxp-sw.on::after { left: 19.5px; }
+        .fxp-cnt { font-size: 11.5px; color: #888; text-align: center; padding: 14px 16px 2px; line-height: 1.7; }
+        .fxp-btns { padding: 8px 16px 20px; display: flex; flex-direction: column; gap: 8px; }
+        .fxp-btn { height: 44px; border-radius: 10px; border: 0; font-size: 14px; font-family: inherit;
+                   display: flex; align-items: center; justify-content: center; gap: 7px; }
+        .fxp-btn[disabled] { opacity: .45; }
+        .fxp-btn.primary { background: var(--ui-blue); color: #fff; font-weight: 600; }
+        .fxp-btn.sub { background: #f2f4f7; color: #444; }
         /* 近い順の起点。「どこからの距離なのか」を一覧の直前に帯で出す。
            帯は一覧のスクロール領域（.lords-scroll）の外にあるので、一覧をどれだけ
            送っても出たまま残る（貼り付ける指定は要らない）。
@@ -1910,6 +1940,10 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
             <div class="lords-head-title">お気に入り</div>
+            <!-- 書き出し。いま絞り込んでいる枠と検索語が、そのまま出す対象になる -->
+            <button class="lords-iconbtn" id="fav-export-btn" onclick="openFavExportView()" title="書き出し">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </button>
             <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
         </div>
         <div class="lords-filter">
@@ -1929,6 +1963,43 @@
         <!-- 近い順の起点。一覧の直前に置く（スクロール領域の外なので送っても残る） -->
         <div class="dorg" id="fav-origin"></div>
         <div class="lords-scroll" id="fav-item-list"></div>
+    </div>
+
+    <!-- お気に入りの書き出しビュー（第11ビュー）。
+         対象は一覧で絞り込んだ結果そのままで、ここでは出しかただけを決める。 -->
+    <div id="nearby-fav-export-view">
+        <div class="lords-head">
+            <button class="lords-iconbtn" onclick="closeFavExportView()" title="お気に入りの一覧へ戻る">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="lords-head-title">書き出し</div>
+            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+        </div>
+        <div class="fxp-scroll">
+            <div class="fxp-sec">出す範囲</div>
+            <div class="fxp-row" id="fxp-scope"></div>
+            <div class="fxp-row">設定で消している種別も出す
+                <button class="fxp-sw" id="fxp-sw-alltypes" onclick="toggleFavExportAllTypes()"
+                        role="switch" aria-checked="true" aria-label="設定で消している種別も出す"></button></div>
+            <p class="fxp-note">設定の「オブジェクト表示」で外した種別のことです。
+                オフにすると、その分がファイルから抜けます</p>
+            <div class="fxp-row">note と id を付ける
+                <button class="fxp-sw" id="fxp-sw-extra" onclick="toggleFavExportExtra()"
+                        role="switch" aria-checked="true" aria-label="note と id を付ける"></button></div>
+            <p class="fxp-note">note … 種別と住所（TravelPlan では表示されるだけ）<br>
+                id … 次に書き出したとき同じ地点だと分かるキー<br>
+                オフにすると name・lat・lng の3列だけになります</p>
+            <div class="fxp-sec">ファイル名</div>
+            <div class="fxp-row" id="fxp-filename"></div>
+            <div class="fxp-cnt" id="fxp-count"></div>
+            <div class="fxp-btns">
+                <button class="fxp-btn primary" id="fxp-save" onclick="favExportSave()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    保存
+                </button>
+                <button class="fxp-btn sub" id="fxp-copy" onclick="favExportCopy()">本文をコピー</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -2113,6 +2184,8 @@
         updatePrefEntry();
         // 設定を開いたまま食べログが届いたときのために、開いていれば描き直す
         if (document.getElementById('nearby-settings-view').classList.contains('open')) renderObjFilterUI();
+        // 書き出しを開いたまま残りのデータが届くことがある。件数と可否を出し直す
+        renderFavExport();
     }
 
     // 表示中レイヤーを優先して逐次ロード（パースのジャンクを抑えるため直列）
@@ -5856,6 +5929,7 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('nearby-remains-group-view').classList.remove('open');
         document.getElementById('nearby-remains-detail-view').classList.remove('open');
         document.getElementById('nearby-fav-view').classList.remove('open');
+        document.getElementById('nearby-fav-export-view').classList.remove('open');
         prefState.pref = null;
         updateLordsEntry();
         updatePrefEntry();
@@ -8468,15 +8542,18 @@ map.on('zoomend', () => { isZooming = false; });
 
     /* 一覧に出す行。searchIndex（到着済みデータ）から、マークが付いていて表示中のものを拾う。
        設定で消した種別・食べログの部門はここでも出さない（設定が土台という決まりに揃える）。 */
-    function favCollect() {
+    function favCollect(ignoreObjFilter) {
         const rows = [];
         const active = favActiveSlots();
         if (!active.length || !Object.keys(favStore.items).length) return rows;
         const center = favState.center || getSearchCenter();
         for (const item of searchIndex) {
-            const fk = FAV_TYPE_FILTER[item.type];
-            if (fk && filterState[fk] === false) continue;
-            if (item.type === 'shop' && !genreVisible(shopGenreBase((item.properties || {}).category))) continue;
+            // 書き出しだけは設定を素通りできる。登録した地点が黙って落ちるのを避けるため
+            if (!ignoreObjFilter) {
+                const fk = FAV_TYPE_FILTER[item.type];
+                if (fk && filterState[fk] === false) continue;
+                if (item.type === 'shop' && !genreVisible(shopGenreBase((item.properties || {}).category))) continue;
+            }
             const c = item.coords || [];
             const key = favKeyOf(item.type, item.properties, c[0], c[1]);
             const rec = key ? favStore.items[key] : null;
@@ -8548,14 +8625,20 @@ map.on('zoomend', () => { isZooming = false; });
         el.addEventListener('mouseleave', cancel);
         el.addEventListener('contextmenu', e => e.preventDefault());   // 長押しのメニューを出さない
     }
+    /* 枠のチップと検索語の絞り込み。一覧と書き出しが同じ結果になるよう1か所に置く
+       （書き出しは「いま見えている一覧をそのまま出す」という約束で作ってある）。 */
+    function favApplyChipFilter(rows) {
+        const q = normalizeForSearch((favState.q || '').trim());
+        if (favState.kind !== 'all') rows = rows.filter(r => r.mk.includes(Number(favState.kind)));
+        if (q) rows = rows.filter(r => (r.item._normLabel || '').includes(q)
+                                    || (r.item._normSub || '').includes(q));
+        return rows;
+    }
     function renderFavItems(keepScroll) {
         const list = document.getElementById('fav-item-list');
         if (!list) return;
         const q = normalizeForSearch((favState.q || '').trim());
-        let rows = favCollect();
-        if (favState.kind !== 'all') rows = rows.filter(r => r.mk.includes(Number(favState.kind)));
-        if (q) rows = rows.filter(r => (r.item._normLabel || '').includes(q)
-                                    || (r.item._normSub || '').includes(q));
+        let rows = favApplyChipFilter(favCollect());
         const byName = (a, b) => itemDisplayName(a.item).localeCompare(itemDisplayName(b.item), 'ja');
         if (favState.sort === 'dist') rows.sort((a, b) => a.dist - b.dist);
         else if (favState.sort === 'name') rows.sort(byName);
@@ -8618,6 +8701,165 @@ map.on('zoomend', () => { isZooming = false; });
         div.textContent = '↩ 「お気に入り」の一覧に戻る';
         div.onclick = () => { closeObjSheet(); restoreListReturnCamera(); openNearbyPanel(); openFavView(true); };
         body.insertBefore(div, body.firstChild);
+    }
+
+    /* ══ お気に入りの書き出し ═════════════════════════════════════════════
+       TravelPlan の入力ファイル仕様（sample/input-format.md 版1.1）の TSV を作る。
+       仕様が必須とするのは name / lat / lng の3列だけで、任意列は note と id。
+       版1.1 で role / stay / day / priority が削除された（「ファイルはその場所の属性だけを
+       持ち、旅程の都合はアプリ上で操作する」という設計原則が入ったため）ので、
+       出発地・滞在時間・優先度はここでは一切作らない。
+       形式は TSV だけにしてある。仕様は CSV と JSON も受けるが、選ばせる意味が無い。 */
+    let favExportState = { allTypes: true, extraCols: true };
+
+    // 6つのデータファイルは直列で届く。全部揃う前に出すと、その種別の登録が黙って落ちる
+    const FAV_EXPORT_DATA_KEYS = ['shops', 'pokefuta', 'manhole', 'mhcard', 'michi', 'castle'];
+    function favExportDataReady() {
+        return FAV_EXPORT_DATA_KEYS.every(k => loadedData[k]);
+    }
+
+    /* 出す行。一覧の絞り込み（枠・検索語）はそのまま効かせ、
+       設定の「オブジェクト表示」だけトグルで素通りできる。 */
+    function favExportRows() {
+        const seen = new Set();
+        const rows = [];
+        for (const r of favApplyChipFilter(favCollect(favExportState.allTypes))) {
+            // id は仕様上ファイル内で一意（重複は読み込みエラーになる）。実データでは
+            // 全35,323件で重複0を確認しているが、データ更新で崩れても壊さないよう畳んでおく
+            if (seen.has(r.key)) continue;
+            seen.add(r.key);
+            rows.push(r);
+        }
+        // 名前順にする。同じリストを出し直したとき差分が見やすい（順序は TravelPlan が決め直す）
+        rows.sort((a, b) => itemDisplayName(a.item).localeCompare(itemDisplayName(b.item), 'ja'));
+        return rows;
+    }
+
+    /* TSV は1セルにタブと改行を置けない（仕様 §2 の制約）。
+       実データでは全35,323件で混入0を確認済みだが、データ更新で入ってきても
+       行がずれないよう空白へ潰しておく。 */
+    function favTsvCell(s) {
+        return String(s == null ? '' : s).replace(/[\t\r\n]+/g, ' ').trim();
+    }
+    function favExportNote(item) {
+        const label = (typeConfig[item.type] || {}).label || '';
+        const addr = (item.properties || {}).address || '';
+        return addr ? `${label} / ${addr}` : label;
+    }
+    function favExportTsv(rows) {
+        const extra = favExportState.extraCols;
+        const head = extra ? ['name', 'lat', 'lng', 'note', 'id'] : ['name', 'lat', 'lng'];
+        const lines = [head.join('\t')];
+        for (const r of rows) {
+            const c = r.item.coords || [];
+            // 座標は仕様 §4.3 の推奨（小数5桁＝約1.1m）に揃える。生の桁数はまちまちで、
+            // 食べログのように14桁あるものは仕様が「不要」としている
+            const cells = [favTsvCell(itemDisplayName(r.item)),
+                           Number(c[1]).toFixed(5), Number(c[0]).toFixed(5)];
+            if (extra) cells.push(favTsvCell(favExportNote(r.item)), favTsvCell(r.key));
+            lines.push(cells.join('\t'));
+        }
+        return lines.join('\n') + '\n';
+    }
+
+    /* ファイル名は枠の名前だけにする（日付は付けない）。仕様 §1.1 が
+       「リストを資産として蓄積し、旅程はその都度アプリ上で組む」と定めたので、
+       同じリストは同じ名前で上書きしていくほうが噛み合う。 */
+    function favExportFilename() {
+        const base = favState.kind === 'all'
+            ? 'お気に入り' : (favNameOf(Number(favState.kind)) || 'お気に入り');
+        return (base.replace(/[\\/:*?"<>|]/g, '').trim() || 'お気に入り') + '.tsv';
+    }
+
+    function showFavExportView() {
+        setPanelLifted(true);
+        document.getElementById('nearby-main-view').style.display = 'none';
+        document.getElementById('nearby-fav-view').classList.remove('open');
+        document.getElementById('nearby-fav-export-view').classList.add('open');
+    }
+    function openFavExportView() {
+        // 戻ったときに同じ位置へ返す（一覧の行から飛ぶときと同じ扱い）
+        const list = document.getElementById('fav-item-list');
+        if (list) favState.scrollTop = list.scrollTop;
+        showFavExportView();
+        renderFavExport();
+    }
+    function closeFavExportView() {
+        document.getElementById('nearby-fav-export-view').classList.remove('open');
+        // 書き出しを開いている間に枠の名前を全部消すと、戻る先が無くなる
+        if (!favActiveSlots().length) {
+            setPanelLifted(false);
+            document.getElementById('nearby-main-view').style.display = '';
+            return;
+        }
+        openFavView(true);
+    }
+    function toggleFavExportAllTypes() {
+        favExportState.allTypes = !favExportState.allTypes;
+        renderFavExport();
+    }
+    function toggleFavExportExtra() {
+        favExportState.extraCols = !favExportState.extraCols;
+        renderFavExport();
+    }
+
+    function renderFavExport() {
+        const view = document.getElementById('nearby-fav-export-view');
+        if (!view || !view.classList.contains('open')) return;
+        const scope = document.getElementById('fxp-scope');
+        const n = favState.kind === 'all' ? null : Number(favState.kind);
+        const rows = favExportRows();
+        const ready = favExportDataReady();
+        scope.innerHTML = n
+            ? `<span class="fxp-dot" style="background:${FAV_COLORS[n]}"></span>${attrEscape(favNameOf(n))}`
+            : 'すべての枠';
+        scope.innerHTML += `<span class="fxp-rt">${rows.length.toLocaleString()}件</span>`;
+        for (const [id, on] of [['fxp-sw-alltypes', favExportState.allTypes],
+                                ['fxp-sw-extra', favExportState.extraCols]]) {
+            const sw = document.getElementById(id);
+            sw.classList.toggle('on', on);
+            sw.setAttribute('aria-checked', String(on));
+        }
+        document.getElementById('fxp-filename').innerHTML =
+            `${attrEscape(favExportFilename())}<span class="fxp-rt">TSV</span>`;
+        const q = (favState.q || '').trim();
+        document.getElementById('fxp-count').innerHTML = !ready
+            ? 'データを読み込み中です。<br>全部そろってから書き出してください'
+            : `${rows.length.toLocaleString()}行（ヘッダ行を除く）・${
+                favExportState.extraCols ? 5 : 3}列${
+                q ? `<br>「${attrEscape(q)}」で絞り込んだ結果です` : ''}`;
+        const off = !ready || !rows.length;
+        document.getElementById('fxp-save').disabled = off;
+        document.getElementById('fxp-copy').disabled = off;
+    }
+
+    function favExportSave() {
+        const rows = favExportRows();
+        if (!rows.length || !favExportDataReady()) return;
+        const name = favExportFilename();
+        const blob = new Blob([favExportTsv(rows)],
+            { type: 'text/tab-separated-values;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = name;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 10000);
+        /* iOS はホーム画面から起動した状態（standalone）だと、この保存が黙って
+           何も起こさないことがある。そのときのために、すぐ下のコピーを案内しておく。 */
+        showToast(isIosStandalonePwa()
+            ? `${name} を保存しました。何も起きないときは「本文をコピー」を使ってください`
+            : `${name} を保存しました`);
+    }
+
+    async function favExportCopy() {
+        const rows = favExportRows();
+        if (!rows.length || !favExportDataReady()) return;
+        const ok = await copyToClipboard(favExportTsv(rows));
+        showToast(ok ? `${rows.length.toLocaleString()}件をコピーしました`
+                     : 'コピーできませんでした');
     }
 
     /* ══ 地図の重ね描き ═══════════════════════════════════════════════════

@@ -636,24 +636,40 @@
     <div class="try-out" id="try-out"></div>
 </div>
 
-<h2 class="sec">8. 決めてほしいこと</h2>
+<h2 class="sec">8. 決まったこと（2026-08-20・実装済み）</h2>
 
-<p class="note">
+<div class="verdict">
+    <b>下表のとおり決まり、<code>index.html</code> に実装した。</b>
     版 1.0 のときに挙げた「<code>stay</code> の初期値」「<code>priority</code> の決めかた」は、
-    列ごと削除されたので<b>論点そのものが消えた。</b>残るのは次の5つ。
-</p>
+    列ごと削除されたので論点そのものが消えている。
+</div>
 
 <table>
-<tr><th>#</th><th>論点</th><th>私の案</th></tr>
-<tr><td>1</td><td>入口をどこに置くか（案A / B / C）</td><td>案A。§1.1 の「1ファイル＝1つの地点リスト」と枠が1対1で対応するため</td></tr>
+<tr><th>#</th><th>論点</th><th>決定</th></tr>
+<tr><td>1</td><td>入口をどこに置くか（案A / B / C）</td>
+    <td class="ok"><b>案A</b>。お気に入り一覧のヘッダーに書き出しボタンを置いた</td></tr>
 <tr><td>2</td><td>設定の「オブジェクト表示」で消した種別も書き出すか<br>
     <span style="color:#888;font-size:11px">既定で <code>mhcard</code>（カード配布1,455件）がオフ。
     表示オンで登録したあとオフに戻した分も、印は残ったまま見えなくなっている</span></td>
-    <td>出す（既定オン）。トグルで切り替えられる</td></tr>
-<tr><td>3</td><td><code>note</code> と <code>id</code> を付けるか</td><td>付ける。<code>id</code> は使い回し運用で効く。3列だけも選べる</td></tr>
-<tr><td>4</td><td>ファイル名に日付を付けるか</td><td>既定は日付なし（<code>関西.tsv</code>）。§1.1 の資産的な運用に合わせる</td></tr>
-<tr><td>5</td><td>出しかた</td><td>§7 の実機結果しだい</td></tr>
+    <td class="ok"><b>出す</b>（既定オン）。トグルで切り替えられる</td></tr>
+<tr><td>3</td><td><code>note</code> と <code>id</code> を付けるか</td>
+    <td class="ok"><b>付ける</b>（既定オン）。オフで3列だけになる</td></tr>
+<tr><td>4</td><td>ファイル名に日付を付けるか</td>
+    <td class="ok"><b>付けない</b>。枠の名前だけ（<code>関西.tsv</code>）</td></tr>
+<tr><td>5</td><td>出しかた</td>
+    <td class="ok"><b>保存（ダウンロード）と本文のコピーの2つ</b>。共有シートは入れない</td></tr>
+<tr><td>6</td><td>出力形式</td>
+    <td class="ok"><b>TSV のみ</b>。CSV・JSON の選択肢は作らない</td></tr>
 </table>
+
+<div class="impl warn">
+    <b>§7 の実機テストの結果（PC で確認）：① ダウンロード成功／② 共有シート失敗／③ コピー成功。</b>
+    これを受けて、保存はダウンロード、控えにコピーという構成にした。<br>
+    <b>iPhone のホーム画面から起動した状態（standalone）では未確認のまま。</b>
+    そこでダウンロードが動かないという報告が Apple 開発者フォーラムにあるため、
+    <code>isIosStandalonePwa()</code> が真のときだけ、保存後のトーストに
+    「何も起きないときは本文をコピーを使ってください」と添える形にしてある。
+</div>
 
 <footer>
     対象仕様は <code>sample/input-format.md</code> 版 1.1（2026-08-20）。<br>
