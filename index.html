@@ -2361,12 +2361,30 @@
         } finally { syncBusy = false; }
     }
 
-    /* 起動時の取り込み。保存領域が無い端末では通信そのものを行わない。 */
-    function syncBoot() { return syncPull({ reload: true }); }
+    /* 取り込みのきっかけ。保存領域が無い端末では通信そのものを行わない。
+
+       `load` だけを見ていると、他の端末の変更が「更新ボタンを押したとき」しか届かない。
+       スマホのPWAはアイコンを叩いても既存の画面が復帰するだけで `load` は発火せず、
+       bfcache から戻った場合も同じ（MDN に明記）。そこで次の2つを入口にする。
+         pageshow           … 通常の読み込みに加え、bfcache と凍結からの復帰も拾う
+         visibilitychange   … アプリ切り替え・画面ロック解除からの復帰を拾う
+       復帰のたびに投げないよう、前回の取り込みから30秒は間を空ける。 */
+    const SYNC_RESUME_MIN_MS = 30000;
+    let syncLastPull = 0;
+
+    function syncPullIfDue(fresh) {
+        if (!syncOn()) { syncUpdateUi(); return; }
+        if (!fresh && Date.now() - syncLastPull < SYNC_RESUME_MIN_MS) return;
+        return syncPull({ reload: !!fresh });
+    }
 
     async function syncPull(opts) {
+        /* 読み直しをかけるのは、ページを読み込んだ直後の1回だけ。復帰のときに走らせると、
+           操作している最中に画面が作り直される。復帰時は値だけ受け取り、
+           表示設定と prefs が効くのは次に起動したときからにする（お気に入りは即時反映）。 */
         const allowReload = !opts || opts.reload !== false;
         if (!syncOn()) { syncUpdateUi(); return; }
+        syncLastPull = Date.now();
         try {
             const res = await syncFetch('state', { method: 'GET' });
             if (res.status === 401) { syncMetaSet({ on: false, rev: {} }); syncUpdateUi(); return; }
@@ -2391,11 +2409,14 @@
             }
         }
         syncUpdateUi();
-        /* 表示設定は画面の広い範囲に効く。その場で作り直さず一度だけ読み直す。
-           繰り返さないよう、このタブでは1回だけに制限する。 */
+        /* 表示設定は画面の広い範囲に効くので、読み込み直後の1回だけ読み直して揃える
+           （繰り返さないよう、このタブでは1回に制限する）。
+           復帰したときは画面を作り直さず、受け取ったことだけ知らせて次の起動に委ねる。 */
         if (reload && allowReload && !sessionStorage.getItem('syncReloaded')) {
             sessionStorage.setItem('syncReloaded', '1');
             location.reload();
+        } else if (reload && !allowReload) {
+            showToast('他の端末で表示設定が変わりました。次に開き直したときに反映されます');
         }
         return reload;
     }
@@ -2662,9 +2683,14 @@
     window.addEventListener('pagehide', () => syncFlushNow(true));
     document.addEventListener('visibilitychange', () => {
         if (document.visibilityState === 'hidden') syncFlushNow(true);
+        else syncPullIfDue(false);          // 背面から戻ったとき
     });
     window.addEventListener('online', () => { if (syncDirty.size) syncSchedule(500); });
-    window.addEventListener('load', () => { syncJoinFromUrl(); syncBoot(); });
+    window.addEventListener('pageshow', (e) => {
+        if (e.persisted) { syncPullIfDue(false); return; }   // bfcache・凍結からの復帰
+        syncJoinFromUrl();                                    // 通常の読み込み
+        syncPullIfDue(true);
+    });
 
     /* ══ バックアップ（書き出し／読み込み） ══════════════════════════
        STORE_KEYS をまとめて1つのJSONにする。サーバーもログインも通らない経路で、
