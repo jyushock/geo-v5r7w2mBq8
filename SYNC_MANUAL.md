@@ -462,8 +462,11 @@ D1 は**1回のWorker呼び出しあたり50クエリ**まで（無料）なの�
    Cloudflare ダッシュボード → D1 → Create Database → 名前を付けて作成。
    名前は Worker と対応が付く `geopenguin-sync` を推奨。Location hint は Asia-Pacific を選ぶ
 2. **テーブルを流す**
-   作成したデータベースを開き **Console** タブに [§7.2](#72-テーブル) の SQL を貼って Execute。
-   実行後、**Tables** に `users` / `devices` / `handovers` / `states` の4つが並ぶ
+   作成したデータベースを開き、SQL を実行できる欄（Console）に [§7.2](#72-テーブル) の SQL を貼って実行。
+   確認は画面の表示に頼らず、続けて `PRAGMA table_list;` を実行して
+   `users` / `devices` / `handovers` / `states` が含まれることを見る
+   （D1 は `PRAGMA table_list` と `SELECT name, sql FROM sqlite_master` の実行に対応していると公式に明記。
+   D1 内部のテーブルが一緒に出ることがあるが、作成した4つが含まれていればよい）
 3. **バインディングを書く**
    `wrangler.toml` に追記する（`database_id` は手順1の画面からコピー）
    ```toml
