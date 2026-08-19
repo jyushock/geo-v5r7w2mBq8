@@ -1677,12 +1677,6 @@
         <div id="obj-filter-list"></div>
         <div id="obj-genre-line"></div>
         <div style="border-top:1px solid #f0f0f0;"></div>
-        <!-- お気に入りの4枠の名前。枠に固定の意味は持たせず、ここで名前を入れたものだけが使える -->
-        <div class="nearby-section-label">お気に入りの名前</div>
-        <div id="fav-name-list"></div>
-        <div class="favname-note">名前を入れた枠だけを使います。空にした枠は地図にも一覧にも出ませんが、
-            登録した分は消えずに残ります（名前を戻せばそのまま出ます）。</div>
-        <div style="border-top:1px solid #f0f0f0;"></div>
         <div style="display:flex;gap:12px;padding:8px 16px 10px;align-items:flex-end;">
             <div style="display:flex;flex-direction:column;gap:4px;flex:1;">
                 <span style="font-size:11px;color:#888;">地図タイル</span>
@@ -1739,6 +1733,14 @@
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0 16px 8px;">
             <label class="filter-chip"><input type="checkbox" id="check-show-origin" onchange="onShowOriginChange(this)">検索地点</label>
         </div>
+        <div style="border-top:1px solid #f0f0f0;"></div>
+        <!-- お気に入りの4枠の名前。枠に固定の意味は持たせず、ここで名前を入れたものだけが使える。
+             文字を打つ欄なので設定の最下段に置く（上に置くと、入力でキーボードが出たときに
+             下の行が押し上げられて隠れる） -->
+        <div class="nearby-section-label">お気に入りの名前</div>
+        <div id="fav-name-list"></div>
+        <div class="favname-note">名前を入れた枠だけを使います。空にした枠は地図にも一覧にも出ませんが、
+            登録した分は消えずに残ります（名前を戻せばそのまま出ます）。</div>
         </div><!-- /settings-scroll -->
     </div>
 
