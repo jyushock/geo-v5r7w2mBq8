@@ -8,7 +8,7 @@
  *
  * 更新方法: デプロイ時に下の VERSION を上げると旧キャッシュを破棄して入れ替わる。
  */
-const VERSION = 'v4';
+const VERSION = 'v5';   // v5: /api/* をキャッシュ対象から外した（古い応答を掴む不具合）
 const STATIC_CACHE  = `static-${VERSION}`;
 const RUNTIME_CACHE = `runtime-${VERSION}`;
 
@@ -38,6 +38,9 @@ self.addEventListener('activate', (event) => {
 
 function isCacheable(request, url) {
     if (request.method !== 'GET') return false;
+    /* 同期API は素通し。ここを stale-while-revalidate に入れると、GET /api/state が
+       1回前の応答（別の端末・別のセッションのこともある）を返し、古い内容を取り込む。 */
+    if (url.origin === self.location.origin && url.pathname.startsWith('/api/')) return false;
     if (url.origin === self.location.origin) return true;            // 自オリジン資産
     return CACHEABLE_CDN.some((prefix) => url.href.startsWith(prefix)); // 許可CDNのみ
 }

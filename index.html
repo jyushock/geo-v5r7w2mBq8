@@ -2565,8 +2565,7 @@
             if (!res.ok) { showToast('参加できませんでした'); return; }
             const data = await res.json().catch(() => ({}));
             syncMetaSet({ on: true, rev: {} });
-            /* 共有分は参加の応答に載って返る。ここで GET を投げると、新しい Cookie が
-               行き渡る前の古いセッションで飛ぶことがある（実機で確認した）。 */
+            /* 共有分は参加の応答に載って返るので、ここで GET を投げ直さない */
             syncApplyKeys(data.keys, false);       // お気に入りはここで混ざる
             syncDirty.add('favorites');            // 混ざった結果を送り返す
             await syncFlush();

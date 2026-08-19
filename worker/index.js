@@ -226,9 +226,9 @@ async function apiJoin(env, request) {
     ).bind(...hashes).first();
     if (!row || Number(row.expires_at) < now()) return json({ error: 'invalid_code' }, 404);
     const dev = await createDevice(env, row.user_id, request.headers.get('user-agent'), body.name);
-    /* 共有分をこの応答に載せて返す。参加した直後に GET を投げると、新しい Cookie が
-       行き渡る前の古いセッションで飛ぶことがあり（実機で確認）、前の持ち主の内容を
-       取り込んでしまう。往復を無くせばその隙が無くなる。 */
+    /* 共有分をこの応答に載せて返す。往復を1回減らすためで、参加した直後に
+       前の持ち主の内容を取り込む余地も無くなる（その症状の原因は sw.js が /api/* を
+       キャッシュしていたことで、そちらは sw.js 側で直した）。 */
     return json({ ok: true, device: dev.id, keys: await stateKeysFor(env, row.user_id, dev.id) },
         200, { 'set-cookie': sessionCookie(dev.token) });
 }
