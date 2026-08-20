@@ -7804,6 +7804,13 @@ map.on('zoomend', () => { isZooming = false; });
     ];
     const REMAIN_GROUP = {};
     REMAIN_GROUP_DEFS.forEach(([id, name, color]) => { REMAIN_GROUP[id] = { id, name, color }; });
+    /* 分類一覧の先頭に固定する並び。城数順ではなく、情報シートの「遺構」行に出る順に揃える。
+       原典の remains は「曲輪、土塁、堀」の順で書かれていて、同じ城に両方を持つケースでは
+       曲輪→堀が9,985対0、曲輪→土塁が6,783対1、土塁→堀が7,070対2（2026-08-21 に castle.js
+       の実データで確認）。シートで覚えた並びのまま一覧を辿れるようにする。
+       この3分類は8,446〜12,493城で、4位の石垣・石造物2,056城とは桁が違うので、
+       ここだけ固定しても城数順が崩れて見えることはない。4位以下は従来どおり城数順。 */
+    const REMAIN_GROUP_ORDER = ['kuruwa', 'dorui', 'hori'];
     // グループの記号。種別アイコンと同じ28pxの丸に白抜きで置く
     const REMAIN_GROUP_ICON = {
         kuruwa: '<rect x="2" y="5" width="20" height="14" rx="2" fill="none" stroke="#fff" stroke-width="2.4"/><path d="M8 5v14" stroke="#fff" stroke-width="2.4"/>',
@@ -7909,9 +7916,14 @@ map.on('zoomend', () => { isZooming = false; });
             g.subs = [...bySub.values()].sort((a, b) => b.castles.size - a.castles.size
                                                         || a.name.localeCompare(b.name, 'ja'));
         });
-        // 城主一覧と同じく件数の多い順。上位4グループで遺構ありの城のほとんどを占める
-        remainsGroups = [...byGroup.values()].sort((a, b) => b.castles.size - a.castles.size
-                                                            || a.name.localeCompare(b.name, 'ja'));
+        // REMAIN_GROUP_ORDER の3分類が先頭。残りは城主一覧と同じく件数の多い順で、
+        // ここまでの上位4グループで遺構ありの城のほとんどを占める
+        remainsGroups = [...byGroup.values()].sort((a, b) => {
+            const ra = REMAIN_GROUP_ORDER.indexOf(a.id), rb = REMAIN_GROUP_ORDER.indexOf(b.id);
+            if (ra >= 0 || rb >= 0) return (ra < 0 ? REMAIN_GROUP_ORDER.length : ra)
+                                         - (rb < 0 ? REMAIN_GROUP_ORDER.length : rb);
+            return b.castles.size - a.castles.size || a.name.localeCompare(b.name, 'ja');
+        });
     }
 
     // 入口ボタンの状態。城レイヤーを非表示にしたときにこのボタンを隠すのは
