@@ -6119,21 +6119,27 @@ map.on('zoomend', () => { isZooming = false; });
         return (typeConfig[item.type] || {}).color || '#1a1a1a';
     }
 
+    /* いま地図に出ているものか。種別のOFF（設定のオブジェクト表示）と、食べログだけにある
+       部門のOFF（同じ設定を長押しして選ぶ）の両方を見る。検索・周辺検索・着地ズームの
+       近傍探索が同じものを対象にするよう、判定はここ1か所に置く。 */
+    const OBJ_FILTER_KEY = {
+        shop: 'shop', castle: 'castle', michi: 'michi',
+        manhole: 'manhole', pokefuta: 'pokefuta', mhcard: 'mhcard'
+    };
+    function objShownOnMap(item) {
+        const filterKey = OBJ_FILTER_KEY[item.type];
+        if (filterKey && filterState[filterKey] === false) return false;
+        return item.type !== 'shop' || genreVisible(shopGenreBase((item.properties || {}).category));
+    }
+
     function searchLocal(query) {
         const q = normalizeForSearch(query);
-        const typeToFilter = {
-            shop: 'shop', castle: 'castle', michi: 'michi',
-            manhole: 'manhole', pokefuta: 'pokefuta', mhcard: 'mhcard'
-        };
         // 一致度（完全一致>前方一致>部分一致、alias一致は減点）を優先し、同スコア内は
         // 周辺検索・天気と同じ基準点からの距離が近い順に並べて上位100件を返す
         const center = getSearchCenter();
         const matched = [];
         for (const item of searchIndex) {
-            const filterKey = typeToFilter[item.type];
-            if (filterKey && filterState[filterKey] === false) continue;
-            // 食べログは部門でも消せる（設定のオブジェクト表示を長押しして選ぶ）
-            if (item.type === 'shop' && !genreVisible(shopGenreBase((item.properties || {}).category))) continue;
+            if (!objShownOnMap(item)) continue;
             const labelScore = matchScore(item._normLabel, q);
             const subScore = matchScore(item._normSub, q);
             if (labelScore > 0 || subScore > 0) {
@@ -6246,8 +6252,50 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('search-results').style.display = 'block';
     }
 
-    // 検索結果・周辺検索結果からオブジェクトへ飛ぶときの最低ズーム
-    const SEARCH_RESULT_MIN_ZOOM = 16;
+    /* ══ 一覧・検索結果からオブジェクトへ飛ぶときの着地ズーム ══════════════
+       飛び先ごとに「対象を判別できる中でいちばん引いた倍率」を出す。以前は
+       Math.max(いまの倍率, 16) だったが、これは16以上のときは今の倍率を保つ式なので、
+       上限（maplibre-gl 3.6.2 の既定 maxZoom=22）まで寄せた状態から飛ぶと z22 のまま
+       着地し、周りに何も無い画面になっていた。今の倍率は見ずに、飛び先の混み具合だけで決める。
+
+       物差しは「最近傍のオブジェクトとの間がアイコン径 LAND_SEP_PX 開くこと」で、
+       これは16を決めたときと同じ基準。地図に出ていない種別・部門（objShownOnMap）は
+       数えない。周辺検索や県一覧がOFFのものを候補から外すのと同じ扱いで、
+       消している種別のせいで必要以上に寄らないようにする。
+
+       下限14は clusterMaxZoom:13 の外側。これより引くとピンがクラスタに畳まれ、
+       選択リングを出しても対象が見えない。
+       上限16は「z17以上まで寄せると周囲の街並みが読み取れなくなる」ため据え置き。
+
+       実データ35,323件（2026-08-20 実測）では、必要な倍率の中央値は12.46で、
+       89.2%が16より引ける（クランプ後の中央値は下限のz14＝従来より2段引ける）。
+       残り10.8%は16でも28px開かないが、そこは上限で止めて重なりを許す。
+       走査は全件を素直に舐めて1回0.372ms（35,323件・Chrome 148で実測）。
+       easeTo の550msに対して無視できるので、索引は持たない。 */
+    const LAND_ZOOM_MIN = 14;
+    const LAND_ZOOM_MAX = 16;
+    const LAND_SEP_PX   = 28;          // オブジェクト種別アイコンの円直径（--obj-icon-circle と同じ）
+    const M_PER_PX_Z0   = 156543.03392; // z0 の1px当たりのメートル（赤道。40075016.686/256）
+
+    function landingZoom(lng, lat) {
+        const DEG = Math.PI / 180, R = 6378137;
+        const k = Math.cos(lat * DEG);
+        let best = Infinity;
+        for (const item of searchIndex) {
+            const c = item.coords;
+            if (!c || c.length < 2) continue;
+            // 同じ座標のものは自分自身か、寄っても離れない重なりなので数えない
+            if (c[0] === lng && c[1] === lat) continue;
+            // 平面近似の距離の2乗。比較にしか使わないので平方根は最後に1回だけ取る。
+            // 表示の判定（正規表現を通る）は最近傍を更新する候補にだけ掛けて、全件には掛けない
+            const dx = (c[0] - lng) * DEG * k * R, dy = (c[1] - lat) * DEG * R;
+            const d2 = dx * dx + dy * dy;
+            if (d2 < best && objShownOnMap(item)) best = d2;
+        }
+        if (!isFinite(best)) return LAND_ZOOM_MIN;   // 周りに1件も無ければいちばん引く
+        const z = Math.log2(LAND_SEP_PX * M_PER_PX_Z0 * k / Math.sqrt(best));
+        return Math.min(LAND_ZOOM_MAX, Math.max(LAND_ZOOM_MIN, z));
+    }
 
     function onResultClick(item) {
         if (trackingMode > 0) {
@@ -6256,16 +6304,10 @@ map.on('zoomend', () => { isZooming = false; });
             updateGeolocateButton();
         }
         clearSearch();
-        // オブジェクトを選んだときは、対象を判別できるところまで寄る。
-        // ズームアウトしたまま移動すると clusterMaxZoom:13 によりクラスタに畳まれ、
-        // 選択リングを出しても対象が見えない。
-        // 16 の根拠(実データ実測): z14でクラスタは解けるが、最も密集する上位5%の
-        // マンホールは最近傍が z14=6px / z16=24px。アイコン径28pxに対しz16でほぼ分離でき、
-        // 中央値では2,000px以上離れる。z17以上まで寄せると周囲の街並みが読み取れなくなる。
-        // 既にそれより拡大して見ている場合は、その倍率を保つ。
-        // 地名(place)は市区町村・町名の指し示しなので寄せすぎないよう対象外にする。
+        // オブジェクトを選んだときは、対象を判別できる中でいちばん引いた倍率へ着地する（landingZoom）。
+        // 地名(place)は市区町村・町名の指し示しで、寄せる相手になる1点が無いので対象外にする。
         const zoom = item.type !== 'place'
-            ? Math.max(map.getZoom(), SEARCH_RESULT_MIN_ZOOM)
+            ? landingZoom(item.coords[0], item.coords[1])
             : map.getZoom();
         histSetPending(itemDisplayName(item), 'search', null, { coords: item.coords, zoom });
         map.easeTo({ center: item.coords, zoom, bearing: 0, pitch: 0, duration: 550, essential: true });
@@ -6359,7 +6401,9 @@ map.on('zoomend', () => { isZooming = false; });
         const coords = tryParseCoords(q) || tryParsePlusCode(q) || tryParseDMS(q);
         if (coords) {
             if (trackingMode > 0) { trackingMode = 0; stopRafLoop(); updateGeolocateButton(); }
-            const zoom = Math.max(map.getZoom(), 15);
+            // 飛び先にオブジェクトは無いが、その座標の周りに何があるかが見える倍率にしたいので
+            // 一覧・検索結果と同じ物差しを当てる（入力座標を起点に最近傍を引く）
+            const zoom = landingZoom(coords.lng, coords.lat);
             histSetPending(`${coords.lat.toFixed(4)}, ${coords.lng.toFixed(4)}`, 'search', null,
                            { coords: [coords.lng, coords.lat], zoom });
             map.easeTo({ center: [coords.lng, coords.lat], zoom, duration: 500 });
@@ -7083,7 +7127,7 @@ map.on('zoomend', () => { isZooming = false; });
             stopRafLoop();
             updateGeolocateButton();
         }
-        const zoom = Math.max(map.getZoom(), SEARCH_RESULT_MIN_ZOOM);
+        const zoom = landingZoom(c[0], c[1]);
         histSetPending(label, 'pin', { objType: 'castle', objProps: p }, { coords: c, zoom });
         map.easeTo({ center: c, zoom, bearing: 0, pitch: 0, duration: 550, essential: true });
         setTimeout(() => {
@@ -8220,7 +8264,7 @@ map.on('zoomend', () => { isZooming = false; });
             stopRafLoop();
             updateGeolocateButton();
         }
-        const zoom = Math.max(map.getZoom(), SEARCH_RESULT_MIN_ZOOM);
+        const zoom = landingZoom(c[0], c[1]);
         histSetPending(label, 'pin', { objType: 'castle', objProps: p }, { coords: c, zoom });
         map.easeTo({ center: c, zoom, bearing: 0, pitch: 0, duration: 550, essential: true });
         setTimeout(() => {
@@ -8315,17 +8359,8 @@ map.on('zoomend', () => { isZooming = false; });
         }
 
         const RADIUS = 100;
-        const typeToFilter = {
-            shop: 'shop', castle: 'castle', michi: 'michi',
-            manhole: 'manhole', pokefuta: 'pokefuta', mhcard: 'mhcard'
-        };
         nearbyAllResults = searchIndex
-            .filter(item => {
-                const filterKey = typeToFilter[item.type];
-                if (filterKey && filterState[filterKey] === false) return false;
-                // 食べログは部門でも消せる（検索と同じ扱い）
-                return item.type !== 'shop' || genreVisible(shopGenreBase((item.properties || {}).category));
-            })
+            .filter(objShownOnMap)     // 種別・部門のOFFは検索と同じ扱い
             .map(item => ({...item, dist: calcDist(searchLat, searchLng, item.coords[1], item.coords[0])}))
             .filter(item => item.dist <= RADIUS)
             .sort((a, b) => a.dist - b.dist);
