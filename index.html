@@ -2251,6 +2251,15 @@
         return m;
     }
     function syncOn() { return syncMeta().on === true; }
+    /* 「一度は同期していたが、今は止まっている」印。次の3つで立つ。
+         ・他の端末から外された／保存領域ごと消された（APIが401を返した）
+         ・この端末の同期をやめた
+         ・保存領域を削除した
+       これが無いと、止まった直後にお気に入りを1つ付けただけで syncEnroll が走り、
+       別の保存領域が黙って作り直される。利用者からは同期が止まったように見えるのに、
+       裏では新しい無記名の領域に溜まり続けることになる（SYNC_MANUAL.md §5.9）。
+       もう一度共有するには「端末を追加」か、他の端末のQRから参加する。 */
+    function syncStopped() { return syncMeta().stopped === true; }
     function syncRev(k) { return Number((syncMeta().rev || {})[k]) || 0; }
     function syncSetRev(k, v) { const rev = syncMeta().rev || {}; rev[k] = Number(v) || 0; syncMetaSet({ rev }); }
 
@@ -2292,9 +2301,13 @@
     function syncPush(key) {
         const sk = syncServerKey(key);
         if (!sk) return;
-        /* まだ保存領域が無いときは、お気に入りか表示設定を触った場合だけ作る。
-           地図を動かしただけの訪問者にまで行を作らないため（SYNC_MANUAL.md §6）。 */
-        if (!syncOn() && sk !== 'favorites' && sk !== 'settingsState') return;
+        if (!syncOn()) {
+            // 一度止めた（外された）端末では、勝手に別の保存領域を作り直さない
+            if (syncStopped()) return;
+            /* まだ保存領域が無いときは、お気に入りか表示設定を触った場合だけ作る。
+               地図を動かしただけの訪問者にまで行を作らないため（SYNC_MANUAL.md §6）。 */
+            if (sk !== 'favorites' && sk !== 'settingsState') return;
+        }
         syncDirty.add(sk);
         // 地図位置は動かすたびに保存されるので、送るのは30秒に1回と画面を離れるとき
         syncSchedule(sk === 'mapState' ? 30000 : 2000);
@@ -2314,9 +2327,22 @@
     async function syncEnroll() {
         const res = await syncFetch('enroll', { method: 'POST', body: '{}' });
         if (!res.ok) return false;
-        syncMetaSet({ on: true, rev: {} });
+        syncMetaSet({ on: true, stopped: false, rev: {} });
         syncUpdateUi();
         return true;
+    }
+
+    /* 同期が止まったときの後始末。手元のお気に入りと設定は消さない
+       （消せるのはサーバー側だけで、渡したものは取り消せない・SYNC_MANUAL.md §5.5）。
+       notify を付けるのは401で気付いたときだけ。自分で止めた場合は操作側が知らせる。 */
+    function syncMarkStopped(notify) {
+        const already = !syncOn() && syncStopped();
+        syncMetaSet({ on: false, stopped: true, rev: {} });
+        syncDirty.clear();                     // 送れないものを抱え続けない
+        syncUpdateUi();
+        if (notify && !already) {
+            showToast('この端末は同期から外れました。ここでの保存は、この端末だけに残ります');
+        }
     }
 
     async function syncFlush(keepalive) {
@@ -2330,6 +2356,8 @@
            登録（/api/enroll）に失敗したときだけは繰り返さない（1時間5回までのため）。 */
         let retryDelay = 0;
         try {
+            // 止めた端末では作り直さない（syncPush でも止めているが、溜まっていた分の保険）
+            if (!syncOn() && syncStopped()) { syncDirty.clear(); return; }
             if (!syncOn() && !(await syncEnroll())) return;
             syncDirty.clear();
             const items = keys.map(sk => ({
@@ -2341,11 +2369,7 @@
             const opt = { method: 'PUT', body };
             if (keepalive && body.length < SYNC_KEEPALIVE_MAX) opt.keepalive = true;
             const res = await syncFetch('state', opt);
-            if (res.status === 401) {                    // 端末が外された
-                syncMetaSet({ on: false, rev: {} });
-                syncUpdateUi();
-                return;
-            }
+            if (res.status === 401) { syncMarkStopped(true); return; }   // 端末が外された
             if (!res.ok) { keys.forEach(k => syncDirty.add(k)); retryDelay = 15000; return; }
             const data = await res.json();
             for (const [sk, r] of Object.entries(data.results || {})) {
@@ -2396,7 +2420,7 @@
         syncLastPull = Date.now();
         try {
             const res = await syncFetch('state', { method: 'GET' });
-            if (res.status === 401) { syncMetaSet({ on: false, rev: {} }); syncUpdateUi(); return; }
+            if (res.status === 401) { syncMarkStopped(true); return; }   // 端末が外された
             if (!res.ok) return;
             const data = await res.json();
             syncApplyKeys(data.keys, allowReload);
@@ -2477,14 +2501,21 @@
     const syncAdd = { short: '', expiresAt: 0, tick: 0, poll: 0, seen: 0 };
     let syncSelfId = '';
 
+    /* 状態は3つある。「まだ一度も同期していない」と「一度は同期していたが止まっている」を
+       同じ文言にすると、後者で「お気に入りを付ければ自動で始まります」と案内することになり、
+       実際には始まらない（syncStopped のコメント）ので、分けて出す。 */
     function syncUpdateUi() {
         const el = document.getElementById('sync-state');
         if (!el) return;
         const on = syncOn();
+        const stopped = !on && syncStopped();
+        const head = on ? 'この端末は同期しています'
+                        : stopped ? '同期は止まっています' : 'この端末だけで保存しています';
+        const note = on ? '「端末を追加」で、他の端末も同じ内容にできます'
+                        : stopped ? '保存はこの端末だけに残ります。もう一度共有するには「端末を追加」か、他の端末のQRから参加してください'
+                                  : 'お気に入りか表示設定を変えた時点で、自動で同期を始めます';
         el.innerHTML = `<span class="sync-dot${on ? '' : ' off'}"></span>`
-            + `<span class="sync-txt">${on ? 'この端末は同期しています' : 'この端末だけで保存しています'}`
-            + `<small>${on ? '「端末を追加」で、他の端末も同じ内容にできます'
-                           : 'お気に入りか表示設定を変えた時点で、自動で同期を始めます'}</small></span>`;
+            + `<span class="sync-txt">${head}<small>${note}</small></span>`;
     }
 
     // 「2分前」「3時間前」「8月20日」。端末一覧と参加の通知で使う
@@ -2507,6 +2538,14 @@
     /* 端末を追加。引き継ぎ券が有効なのはこの画面を開いている間だけで、
        閉じたときに DELETE で消す（押し忘れてもサーバー側で最大10分）。 */
     async function openSyncAddView() {
+        /* 外れた端末からここを押すと、元の共有に戻るのではなく新しい保存領域が作られる
+           （サーバーは無記名で、外れた端末から元の領域を指す手がかりが無い）。
+           押した人にはそう見えないので、始める前に断っておく。 */
+        if (!syncOn() && syncStopped()
+            && !confirm('この端末は同期から外れています。\n\nここから始めるのは新しい共有で、'
+                + '外れる前の内容には戻りません。\nこの端末に今あるお気に入りと設定を持ち込んで、'
+                + '新しく共有を始めます。\n\n元の共有に戻すには、そちらの端末でQRを出して'
+                + 'この端末に読ませてください。\n\n進めますか？')) return;
         showSyncView('nearby-sync-add-view');
         document.getElementById('sync-qr').innerHTML = '';
         document.getElementById('sync-code').textContent = '····';
@@ -2616,7 +2655,7 @@
             if (res.status === 404) { showToast('このコードは使えません。追加する側の画面を開き直してください'); return; }
             if (!res.ok) { showToast('参加できませんでした'); return; }
             const data = await res.json().catch(() => ({}));
-            syncMetaSet({ on: true, rev: {} });
+            syncMetaSet({ on: true, stopped: false, rev: {} });
             /* 共有分は参加の応答に載って返るので、ここで GET を投げ直さない */
             syncApplyKeys(data.keys, false);       // お気に入りはここで混ざる
             syncDirty.add('favorites');            // 混ざった結果を送り返す
@@ -2635,14 +2674,18 @@
         const list = document.getElementById('sync-dev-list');
         if (!syncOn()) {
             document.getElementById('sync-dev-sec').textContent = '共有している端末';
-            list.innerHTML = '<p class="fxp-note">この端末はまだ同期していません。'
-                + '「端末を追加」を押すか、お気に入りを付けると始まります</p>';
+            list.innerHTML = syncStopped()
+                ? '<p class="fxp-note">この端末は同期から外れています。'
+                    + 'お気に入りと設定はこの端末に残ったままで、これ以降は別々に育ちます。<br>'
+                    + 'もう一度共有するには「端末を追加」を押すか、他の端末のQRから参加してください</p>'
+                : '<p class="fxp-note">この端末はまだ同期していません。'
+                    + '「端末を追加」を押すか、お気に入りを付けると始まります</p>';
             return;
         }
         list.innerHTML = '<p class="fxp-note">読み込み中です…</p>';
         try {
             const res = await syncFetch('devices', { method: 'GET' });
-            if (res.status === 401) { syncMetaSet({ on: false, rev: {} }); syncUpdateUi(); openSyncDevicesView(); return; }
+            if (res.status === 401) { syncMarkStopped(true); openSyncDevicesView(); return; }
             if (!res.ok) { list.innerHTML = '<p class="fxp-note">読み込めませんでした</p>'; return; }
             const data = await res.json();
             syncSelfId = data.self || '';
@@ -2686,9 +2729,7 @@
             const res = await syncFetch('devices/' + encodeURIComponent(syncSelfId || 'self'), { method: 'DELETE' });
             if (!res.ok) { showToast('やめられませんでした'); return; }
         } catch (e) { showToast('やめられませんでした'); return; }
-        syncMetaSet({ on: false, rev: {} });
-        syncDirty.clear();
-        syncUpdateUi();
+        syncMarkStopped(false);        // 知らせるのはこの下の1行に任せる
         showToast('この端末の同期をやめました');
         openSyncDevicesView();
     }
@@ -2700,9 +2741,7 @@
             const res = await syncFetch('account', { method: 'DELETE' });
             if (!res.ok) { showToast('削除できませんでした'); return; }
         } catch (e) { showToast('削除できませんでした'); return; }
-        syncMetaSet({ on: false, rev: {} });
-        syncDirty.clear();
-        syncUpdateUi();
+        syncMarkStopped(false);        // 知らせるのはこの下の1行に任せる
         showToast('保存領域を削除しました');
         openSyncDevicesView();
     }
