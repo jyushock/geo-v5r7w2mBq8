@@ -9532,11 +9532,12 @@ map.on('zoomend', () => { isZooming = false; });
                                     || (r.item._normSub || '').includes(q));
         return rows;
     }
-    function renderFavItems(keepScroll) {
-        const list = document.getElementById('fav-item-list');
-        if (!list) return;
-        const q = normalizeForSearch((favState.q || '').trim());
-        let rows = favApplyChipFilter(favCollect());
+    /* 並べ替えチップの選択で並べる。一覧と書き出しが同じ順序になるよう1か所に置く
+       （書き出しは「いま見えている一覧をそのまま出す」という約束で作ってある）。
+       「オブジェクト表示」を素通りさせた行も dist / at を持っているので、
+       書き出し専用に増えた行だけ順序から外れることはない。 */
+    const FAV_SORT_LABEL = { at: '追加順', dist: '近い順', type: '種別順', name: '名前順' };
+    function favSortRows(rows) {
         const byName = (a, b) => itemDisplayName(a.item).localeCompare(itemDisplayName(b.item), 'ja');
         if (favState.sort === 'dist') rows.sort((a, b) => a.dist - b.dist);
         else if (favState.sort === 'name') rows.sort(byName);
@@ -9546,6 +9547,13 @@ map.on('zoomend', () => { isZooming = false; });
                 || castleGenreRank(a.item.properties || {}) - castleGenreRank(b.item.properties || {})
                 || byName(a, b));
         } else rows.sort((a, b) => b.at - a.at || byName(a, b));   // 追加順は新しいものが上
+        return rows;
+    }
+    function renderFavItems(keepScroll) {
+        const list = document.getElementById('fav-item-list');
+        if (!list) return;
+        const q = normalizeForSearch((favState.q || '').trim());
+        const rows = favSortRows(favApplyChipFilter(favCollect()));
         favState.rows = rows;
         if (!rows.length) {
             list.innerHTML = (q || favState.kind !== 'all')
@@ -9628,9 +9636,8 @@ map.on('zoomend', () => { isZooming = false; });
             seen.add(r.key);
             rows.push(r);
         }
-        // 名前順にする。同じリストを出し直したとき差分が見やすい（順序は TravelPlan が決め直す）
-        rows.sort((a, b) => itemDisplayName(a.item).localeCompare(itemDisplayName(b.item), 'ja'));
-        return rows;
+        // 一覧の並べ替えチップと同じ順序で出す（近い順で見ていたら近い順のまま出る）
+        return favSortRows(rows);
     }
 
     /* TSV は1セルにタブと改行を置けない（仕様 §2 の制約）。
@@ -9724,7 +9731,8 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('fxp-count').innerHTML = !ready
             ? 'データを読み込み中です。<br>全部そろってから書き出してください'
             : `${rows.length.toLocaleString()}行（ヘッダ行を除く）・${
-                favExportState.extraCols ? 5 : 3}列${
+                favExportState.extraCols ? 5 : 3}列・${
+                FAV_SORT_LABEL[favState.sort] || '追加順'}${
                 q ? `<br>「${attrEscape(q)}」で絞り込んだ結果です` : ''}`;
         const off = !ready || !rows.length;
         document.getElementById('fxp-save').disabled = off;
