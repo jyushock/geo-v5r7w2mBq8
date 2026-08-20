@@ -5660,7 +5660,8 @@ map.on('zoomend', () => { isZooming = false; });
                     }
                     if (!e.features || !e.features.length) return;
                     const p = e.features[0].properties;
-                    const c = e.features[0].geometry.coordinates.slice();
+                    // タイルに載せ直された座標が返るので、元のデータの座標へ寄せる
+                    const c = favSnapCoords(conf.type, p, e.features[0].geometry.coordinates.slice());
                     while (Math.abs(e.lngLat.lng - c[0]) > 180) { c[0] += e.lngLat.lng > c[0] ? 360 : -360; }
                     openObjSheet(conf.type, p.name || '', p, c[0], c[1]);
                     const histType = (conf.type === 'manhole' && p.source === 'pokefuta') ? 'pokefuta' : conf.type;
@@ -5971,8 +5972,10 @@ map.on('zoomend', () => { isZooming = false; });
     }
 
     let searchIndex = [];
+    let favSnapIndex = null;      // 元の座標へ寄せるための索引（下の favSnapCoords が作る）
     function buildSearchIndex() {
         searchIndex = [];
+        favSnapIndex = null;      // 元の座標へ寄せるための索引も作り直させる
         // loadedData に到着済みのデータのみ対象（未読込分は届き次第この関数が再実行される）
         const sources = [
             { type: 'pokefuta', data: loadedData.pokefuta, labelKey: 'pokemon', subKey: 'address' },
@@ -5992,6 +5995,51 @@ map.on('zoomend', () => { isZooming = false; });
                 });
             });
         });
+    }
+
+    /* 地図のピンをタップして返る座標を、元のデータの座標へ寄せる。
+
+       MapLibre は GeoJSON ソースも内部でタイル（1タイル4096分割）に載せ直すため、
+       クリックの `e.features[0].geometry.coordinates` は元の値と一致しない。
+       実測（2026-08-20、maplibre-gl 3.6.2）では 139.76543,35.68123 の1点が
+         z=14 … 139.765430 / z=11 … 139.765427 / z=8 … 139.765491
+       で返り、z=8 では4桁に丸めた値が 139.7654 から 139.7655 へ動いた。
+
+       お気に入りのキーは座標を4桁（約11m）に丸めて作るので、丸めが1つ動くと
+       別のキーになる。すると印は付いたのに、地図のバッジにも一覧にも出ない
+       （どちらも searchIndex の正しい座標から引くため）。シートだけは同じずれた
+       座標から同じキーを作り直すので、そこにだけ付いて見える。
+       再起動しても出てこないため、外れたようにしか見えない。
+
+       そこで、タップした地物に対応する searchIndex の要素を名前で引き当て、
+       いちばん近いものの座標に差し替える。名前が重なる城（「松本城」は5件ある）でも、
+       離れた同名は距離で落ちる。引き当てられなければ触らない。 */
+    function favSnapNameKey(type, p) {
+        p = p || {};
+        // ポケふたは地図では type='manhole'＋source='pokefuta' で来る（favKeyOf と同じ扱い）
+        const t = (type === 'manhole' && p.source === 'pokefuta') ? 'pokefuta' : type;
+        return `${t} ${p.name || p.pokemon || ''}`;
+    }
+    function favSnapCoords(type, p, c) {
+        if (!Array.isArray(c) || !searchIndex.length) return c;
+        if (!favSnapIndex) {
+            favSnapIndex = new Map();
+            for (const item of searchIndex) {
+                const k = favSnapNameKey(item.type, item.properties);
+                const a = favSnapIndex.get(k);
+                if (a) a.push(item); else favSnapIndex.set(k, [item]);
+            }
+        }
+        const list = favSnapIndex.get(favSnapNameKey(type, p));
+        if (!list) return c;
+        let best = null, bestD = Infinity;
+        for (const it of list) {
+            const ic = it.coords || [];
+            const d = Math.abs(ic[0] - c[0]) + Math.abs(ic[1] - c[1]);
+            if (d < bestD) { bestD = d; best = ic; }
+        }
+        // 0.005度（約500m）より遠いものは別物とみなす。タイルのずれはこれより十分小さい
+        return (best && bestD < 0.005) ? [best[0], best[1]] : c;
     }
 
     const typeConfig = {
