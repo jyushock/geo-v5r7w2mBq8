@@ -7804,13 +7804,21 @@ map.on('zoomend', () => { isZooming = false; });
     ];
     const REMAIN_GROUP = {};
     REMAIN_GROUP_DEFS.forEach(([id, name, color]) => { REMAIN_GROUP[id] = { id, name, color }; });
-    /* 分類一覧の先頭に固定する並び。城数順ではなく、情報シートの「遺構」行に出る順に揃える。
-       原典の remains は「曲輪、土塁、堀」の順で書かれていて、同じ城に両方を持つケースでは
-       曲輪→堀が9,985対0、曲輪→土塁が6,783対1、土塁→堀が7,070対2（2026-08-21 に castle.js
-       の実データで確認）。シートで覚えた並びのまま一覧を辿れるようにする。
-       この3分類は8,446〜12,493城で、4位の石垣・石造物2,056城とは桁が違うので、
-       ここだけ固定しても城数順が崩れて見えることはない。4位以下は従来どおり城数順。 */
-    const REMAIN_GROUP_ORDER = ['kuruwa', 'dorui', 'hori'];
+    /* 分類一覧の並び。城数順ではなく、情報シートの「遺構」行に出る順に揃える。
+       シートは原典の remains をそのまま出しており（castleAttrLine）、その並びは
+       「天守、櫓、石垣、曲輪、虎口、土塁、堀、井戸」のような建物から地形へ降りる順で
+       ほぼ一貫している。同じ城に両方を持つ城で先に書かれた方を全ペア数えて決めた
+       （2026-08-21 に castle.js の全18,000件超で集計）。分類同士の勝敗は
+       建造物11勝・石垣10勝・曲輪8勝…と綺麗に並び、城内での相対位置の中央値で
+       並べても碑・案内板を除いて同じ順になる。
+       ・碑・案内板だけは2つの方法で位置が割れる（勝敗では土塁の次、相対位置では曲輪の次）。
+         71城しかなく、虎口には必ず負ける一方で曲輪に59%勝つという不整合な出方をするため、
+         勝敗の方を採った
+       ・砲台・物見／発掘遺構／墓・供養塔は互いに併記される城が1つも無く、
+         この3つの間の順は決められない。城数順で置いている
+       未知のIDが増えたときは末尾に回し、そこだけ従来どおり城数順で並べる。 */
+    const REMAIN_GROUP_ORDER = ['bldg', 'ishi', 'kuruwa', 'koguchi', 'dorui', 'sign',
+                                'hori', 'mizu', 'gunji', 'hakkutsu', 'haka', 'other'];
     // グループの記号。種別アイコンと同じ28pxの丸に白抜きで置く
     const REMAIN_GROUP_ICON = {
         kuruwa: '<rect x="2" y="5" width="20" height="14" rx="2" fill="none" stroke="#fff" stroke-width="2.4"/><path d="M8 5v14" stroke="#fff" stroke-width="2.4"/>',
@@ -7916,14 +7924,12 @@ map.on('zoomend', () => { isZooming = false; });
             g.subs = [...bySub.values()].sort((a, b) => b.castles.size - a.castles.size
                                                         || a.name.localeCompare(b.name, 'ja'));
         });
-        // REMAIN_GROUP_ORDER の3分類が先頭。残りは城主一覧と同じく件数の多い順で、
-        // ここまでの上位4グループで遺構ありの城のほとんどを占める
-        remainsGroups = [...byGroup.values()].sort((a, b) => {
-            const ra = REMAIN_GROUP_ORDER.indexOf(a.id), rb = REMAIN_GROUP_ORDER.indexOf(b.id);
-            if (ra >= 0 || rb >= 0) return (ra < 0 ? REMAIN_GROUP_ORDER.length : ra)
-                                         - (rb < 0 ? REMAIN_GROUP_ORDER.length : rb);
-            return b.castles.size - a.castles.size || a.name.localeCompare(b.name, 'ja');
-        });
+        // 情報シートに出る順（REMAIN_GROUP_ORDER）。載っていないIDは末尾に回して城数順
+        const gRank = g => { const i = REMAIN_GROUP_ORDER.indexOf(g.id);
+                             return i < 0 ? REMAIN_GROUP_ORDER.length : i; };
+        remainsGroups = [...byGroup.values()].sort((a, b) => gRank(a) - gRank(b)
+                                                    || b.castles.size - a.castles.size
+                                                    || a.name.localeCompare(b.name, 'ja'));
     }
 
     // 入口ボタンの状態。城レイヤーを非表示にしたときにこのボタンを隠すのは
