@@ -2,20 +2,21 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<title>お気に入りの色ラインと★の間隔</title>
+<title>情報シートのヘッダー：色ラインと★・×</title>
 <style>
     body { font-family: sans-serif; background: #eceff1; margin: 0; padding: 18px; color: #333; }
     h1 { font-size: 15px; margin: 0 0 4px; }
-    .lead { font-size: 12px; color: #555; margin: 0 0 14px; line-height: 1.7; }
+    .lead { font-size: 12px; color: #555; margin: 0 0 14px; line-height: 1.8; }
     .cols { display: flex; gap: 18px; flex-wrap: wrap; }
     .col { width: 340px; }
     .col h2 { font-size: 13px; margin: 0 0 6px; }
     .stage { background: #9e9e9e; padding: 34px 0 0; border-radius: 6px; }
-    .zoomwrap { height: 132px; overflow: hidden; margin-top: 10px; background: #9e9e9e; border-radius: 6px; }
-    .zoom { transform: scale(4); transform-origin: top left; width: 85px; height: 33px; overflow: hidden; }
+    /* ヘッダーだけを3倍に拡大して切り出す。中身は実寸のまま（値の作り直しはしない） */
+    .zoomwrap { height: 120px; overflow: hidden; margin-top: 10px; background: #9e9e9e; border-radius: 6px; }
+    .zoom { transform: scale(3); transform-origin: top left; width: 340px; }
     pre { font-size: 12px; background: #fff; padding: 10px; border-radius: 6px; line-height: 1.6; }
 
-    /* ── index.html から複製（現行値。position だけ fixed→relative） ───────── */
+    /* ── index.html から複製（position だけ fixed→relative） ─────────────── */
     .obj-sheet {
         position: relative; background: #fff; border-radius: 16px 16px 0 0;
         box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
@@ -24,40 +25,44 @@
     .obj-sheet-header { position: relative; padding: 8px 14px 4px; min-height: 24px;
                         box-sizing: border-box; flex-shrink: 0; cursor: grab; touch-action: none; }
     .obj-sheet-header .os-handle { width: 36px; height: 4px; background: #ccc; border-radius: 2px; margin: 0 auto; }
-    .obj-sheet-close {
-        position: absolute; top: 1px; right: 8px;
-        background: none; border: none; font-size: 20px; color: #bbb;
-        cursor: pointer; padding: 0 6px; line-height: 1;
-    }
     .obj-sheet-body { padding: 0 14px 14px; }
     .obj-sheet-favline { position: absolute; left: 0; right: 0; top: 0; height: 5px;
                          display: none; overflow: hidden;
                          border-radius: 16px 16px 0 0; z-index: 2; pointer-events: none; }
     .obj-sheet-favline span { flex: 1 1 0; }
     .obj-sheet.has-fav .obj-sheet-favline { display: flex; }
-    .obj-sheet.has-fav .obj-sheet-header { padding-top: 13px; }
-    .obj-fav-btn { position: absolute; top: 0; right: 36px; background: none; border: none;
+    .obj-fav-btn { position: absolute; background: none; border: none;
                    font-size: 19px; line-height: 1; cursor: pointer; padding: 2px 6px;
                    color: #cfcfcf; font-family: inherit; }
+    .obj-sheet-close { position: absolute; background: none; border: none; color: #bbb;
+                       cursor: pointer; padding: 0 6px; line-height: 1; }
     .os-name { font-size: 15px; font-weight: bold; }
     .os-sub { font-size: 12px; color: #777; margin-top: 3px; }
 
+    /* ── 変更前 ───────────────────────────────────────────────────────── */
+    .before .obj-sheet.has-fav .obj-sheet-header { padding-top: 13px; }
+    .before .obj-fav-btn { top: 0; right: 36px; }
+    .before .obj-sheet-close { top: 1px; font-size: 20px; }
+
     /* ── 変更後（index.html に入れた値） ───────────────────────────────── */
     .after .obj-sheet.has-fav .obj-sheet-header { padding-top: 18px; min-height: 30px; }
+    .after .obj-fav-btn { top: 0; right: 38px; }
+    .after .obj-sheet-close { top: 0; font-size: 24px; }
     .after .obj-sheet.has-fav .obj-fav-btn { top: 6px; }
-    .after .obj-sheet.has-fav .obj-sheet-close { top: 7px; }
+    .after .obj-sheet.has-fav .obj-sheet-close { top: 6px; }
 </style>
 </head>
 <body>
-<h1>お気に入りの色ライン(5px)と★の間隔</h1>
+<h1>情報シートのヘッダー：色ラインと★・×</h1>
 <p class="lead">
-    ★は付いている枠の色で塗られるため（updateSheetFav）、top:0 のままだと★のボックスが
-    上端5pxの色ラインの真下に重なり、線から生えて見える。<br>
-    下段は4倍拡大。数値はブラウザでの実測（シート上端を0とした座標）。
+    ① ★は入れた枠の色で塗るため（updateSheetFav）、top:0 のままだと★のボックスが上端5pxの色ラインの
+    真下に重なり、線から生えて見える。<br>
+    ② ×(U+00D7)は同じ文字サイズだと★(U+2605)より字面が小さい。★19pxに合わせて×を24pxにする。<br>
+    下段はヘッダーを3倍に拡大したもの。数値はこのブラウザでの実測。
 </p>
 <div class="cols">
     <div class="col before">
-        <h2>現行（ヘッダー24px / ★ top:0）</h2>
+        <h2>変更前（ヘッダー24px / ★19px top:0 / ×20px top:1）</h2>
         <div class="stage">
             <div class="obj-sheet has-fav" id="sheet-before">
                 <div class="obj-sheet-favline"><span style="background:#E53935"></span></div>
@@ -72,17 +77,17 @@
                 </div>
             </div>
         </div>
-        <div class="zoomwrap"><div class="zoom"><div class="obj-sheet has-fav" style="width:85px">
+        <div class="zoomwrap"><div class="zoom"><div class="obj-sheet has-fav">
             <div class="obj-sheet-favline"><span style="background:#E53935"></span></div>
-            <div class="obj-sheet-header" style="padding-left:3px;padding-right:3px">
-                <div class="os-handle" style="width:14px"></div>
-                <button class="obj-fav-btn" style="color:#E53935;right:11px;font-size:8px;padding:1px 2px">★</button>
-                <button class="obj-sheet-close" style="right:1px;font-size:8px;padding:0 2px">×</button>
+            <div class="obj-sheet-header">
+                <div class="os-handle"></div>
+                <button class="obj-fav-btn" style="color:#E53935">★</button>
+                <button class="obj-sheet-close">×</button>
             </div>
         </div></div></div>
     </div>
     <div class="col after">
-        <h2>変更後（ヘッダー30px / ★ top:6px）</h2>
+        <h2>変更後（ヘッダー30px / ★19px top:6 / ×24px top:6）</h2>
         <div class="stage">
             <div class="obj-sheet has-fav" id="sheet-after">
                 <div class="obj-sheet-favline"><span style="background:#E53935"></span></div>
@@ -97,37 +102,51 @@
                 </div>
             </div>
         </div>
-        <div class="zoomwrap"><div class="zoom"><div class="obj-sheet has-fav" style="width:85px">
+        <div class="zoomwrap"><div class="zoom"><div class="obj-sheet has-fav">
             <div class="obj-sheet-favline"><span style="background:#E53935"></span></div>
-            <div class="obj-sheet-header" style="padding-left:3px;padding-right:3px;padding-top:13px;min-height:22px">
-                <div class="os-handle" style="width:14px"></div>
-                <button class="obj-fav-btn" style="color:#E53935;right:11px;font-size:8px;padding:1px 2px;top:4px">★</button>
-                <button class="obj-sheet-close" style="right:1px;font-size:8px;padding:0 2px;top:5px">×</button>
+            <div class="obj-sheet-header">
+                <div class="os-handle"></div>
+                <button class="obj-fav-btn" style="color:#E53935">★</button>
+                <button class="obj-sheet-close">×</button>
             </div>
         </div></div></div>
     </div>
 </div>
 <pre id="out">計測中…</pre>
 <script>
-// シート上端を0としたときの各要素の位置。実寸側（拡大していない方）を測る
+// シート上端を0としたときの位置と、★・×の字面（インク）の大きさ
+function ink(el) {
+    const cs = getComputedStyle(el);
+    const cx = document.createElement('canvas').getContext('2d');
+    cx.font = cs.fontSize + ' ' + cs.fontFamily;
+    const m = cx.measureText(el.textContent.trim());
+    return {
+        w: m.actualBoundingBoxLeft + m.actualBoundingBoxRight,
+        h: m.actualBoundingBoxAscent + m.actualBoundingBoxDescent
+    };
+}
 function measure(id) {
     const sheet = document.getElementById(id);
     const top = sheet.getBoundingClientRect().top;
     const r = sel => sheet.querySelector(sel).getBoundingClientRect();
     const header = r('.obj-sheet-header'), line = r('.obj-sheet-favline');
     const star = r('.obj-fav-btn'), close = r('.obj-sheet-close'), handle = r('.os-handle');
+    const si = ink(sheet.querySelector('.obj-fav-btn')), ci = ink(sheet.querySelector('.obj-sheet-close'));
     const f = v => Math.round(v * 10) / 10;
     return [
-        'ヘッダー高               ' + f(header.height) + 'px',
-        '色ライン下端             ' + f(line.bottom - top) + 'px',
-        'ハンドル上端             ' + f(handle.top - top) + 'px（線から ' + f(handle.top - line.bottom) + 'px）',
-        '★ボックス上端           ' + f(star.top - top) + 'px（線から ' + f(star.top - line.bottom) + 'px）',
-        '×ボックス上端           ' + f(close.top - top) + 'px',
-        '★ボックス下端の余り     ' + f(header.bottom - star.bottom) + 'px（マイナスなら本文に食い込む）'
+        'ヘッダー高（掴める範囲）  ' + f(header.height) + 'px',
+        '色ライン下端              ' + f(line.bottom - top) + 'px',
+        'ハンドル上端              ' + f(handle.top - top) + 'px（線から ' + f(handle.top - line.bottom) + 'px）',
+        '★ボックス上端            ' + f(star.top - top) + 'px（線から ' + f(star.top - line.bottom) + 'px）',
+        '★の字面                  ' + f(si.w) + ' × ' + f(si.h) + 'px',
+        '×の字面                  ' + f(ci.w) + ' × ' + f(ci.h) + 'px',
+        '★と×の間隔              ' + f(close.left - star.right) + 'px',
+        '★ボックス下端の余り      ' + f(header.bottom - star.bottom) + 'px（マイナスなら本文に食い込む）',
+        '×ボックス下端の余り      ' + f(header.bottom - close.bottom) + 'px'
     ].join('\n');
 }
 document.getElementById('out').textContent =
-    '【現行】\n' + measure('sheet-before') + '\n\n【変更後】\n' + measure('sheet-after');
+    '【変更前】\n' + measure('sheet-before') + '\n\n【変更後】\n' + measure('sheet-after');
 </script>
 </body>
 </html>

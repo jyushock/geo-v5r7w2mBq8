@@ -403,13 +403,18 @@
             max-height: calc(100svh - var(--sheet-base) - 160px); display: flex; flex-direction: column;
             font-family: sans-serif;
         }
-        /* 閉じるボタン(20px)がヘッダー内に収まる高さを確保し、本文と重ならないようにする */
+        /* 閉じるボタン(24px)がヘッダー内に収まる高さを確保し、本文と重ならないようにする */
         #obj-sheet-header { position: relative; padding: 8px 14px 4px; min-height: 24px;
                             box-sizing: border-box; flex-shrink: 0; cursor: grab; touch-action: none; }
         #obj-sheet-header .os-handle { width: 36px; height: 4px; background: #ccc; border-radius: 2px; margin: 0 auto; }
+        /* font-size は隣の★（19px）と字面の大きさを揃えた値。×(U+00D7)は同じ文字サイズだと
+           ★(U+2605)より小さく見える（Windows実測: ★19px の字面 16×13px に対し ×20px は 12×11px）。
+           ×24px で字面 14×14px となり、★とほぼ同じ大きさになる。
+           top は★と同じ値にする。字面の中心は行ボックス上端から★が 2(padding)+11.0、
+           ×24px が 13.0 で一致するため、同じ top で字面の中心が揃う。 */
         #obj-sheet-close {
-            position: absolute; top: 1px; right: 8px;
-            background: none; border: none; font-size: 20px; color: #bbb;
+            position: absolute; top: 0; right: 8px;
+            background: none; border: none; font-size: 24px; color: #bbb;
             cursor: pointer; padding: 0 6px; line-height: 1;
         }
         /* overscroll-behavior-y: 最上部からさらに下へ引いたとき、スクロールを外側へ波及させない。
@@ -1093,14 +1098,15 @@
            同じ色どうしが地続き＝線から生えているように見える。
            ヘッダーを 24px→30px に広げ、ハンドル（上padding）と★・×を6px下げて線から離す。
            広げた分はそのままドラッグで掴める面積になる（掴む範囲は #obj-sheet-header 全体）。
-           30px は★のボックス(2+19+2=23px)を top:6px から収める高さで、本文とは重ならない。
-           お気に入りが付いていないときの高さ(24px)は変えない。 */
+           30px は★のボックス(2+19+2=23px)と×のボックス(24px)を top:6px から収める高さで、
+           本文とは重ならない。お気に入りが付いていないときの高さ(24px)は変えない。 */
         #obj-sheet.has-fav #obj-sheet-header { padding-top: 18px; min-height: 30px; }
         #obj-sheet.has-fav #obj-fav-btn { top: 6px; }
-        #obj-sheet.has-fav #obj-sheet-close { top: 7px; }
+        #obj-sheet.has-fav #obj-sheet-close { top: 6px; }
         /* 登録操作。ヘッダー右の★を押すと4枠のパレットが開く（1タップで開き、1タップで付け外し）。
-           位置は閉じる×（right:8px）の左。 */
-        #obj-fav-btn { position: absolute; top: 0; right: 36px; background: none; border: none;
+           位置は閉じる×（right:8px）の左。×を24pxにしてボックスが 24px→26px 幅に広がったので、
+           右からの距離を 36px→38px にして★との間隔（Windows実測で4px）を元のまま保つ。 */
+        #obj-fav-btn { position: absolute; top: 0; right: 38px; background: none; border: none;
                        font-size: 19px; line-height: 1; cursor: pointer; padding: 2px 6px;
                        color: #cfcfcf; font-family: inherit; }
         .fav-pop { position: fixed; z-index: 320; background: #fff; border-radius: 10px;
