@@ -815,6 +815,7 @@
             cursor: pointer;
             border-bottom: 1px solid #f0f0f0;
             gap: 8px;
+            position: relative;   /* 左端に立てるお気に入りの色帯（.fav-stripe）の基準 */
         }
         .search-result-item:last-child { border-bottom: none; }
         .search-result-item:hover { background: #f9f9f9; }
@@ -6226,7 +6227,9 @@ map.on('zoomend', () => { isZooming = false; });
                 // 食べログの部門バッジ。結果は2列で幅が狭いため、店名の行ではなく
                 // 住所の行の先頭に小さく置く（店名を押し出さないため）
                 const badge = item.type === 'shop' ? shopGenreBadgeHtml(item.properties, 'sr-genre') : '';
-                div.innerHTML = `${iconPart}<div class="search-result-text"><div class="search-result-name">${itemDisplayName(item)}</div><div class="search-result-sub">${badge}${subText}</div></div>`;
+                // お気に入りの色帯。周辺検索・都道府県・城主・遺構・お気に入り一覧と同じ出しかた
+                // （左padding 10px の中に帯5px＋空き5pxで収まるので、印の有無で中身の位置は動かない）
+                div.innerHTML = `${favStripeHtml(item.type, item.properties, item.coords)}${iconPart}<div class="search-result-text"><div class="search-result-name">${itemDisplayName(item)}</div><div class="search-result-sub">${badge}${subText}</div></div>`;
                 div.addEventListener('click', () => onResultClick(item));
                 col.appendChild(div);
             };
