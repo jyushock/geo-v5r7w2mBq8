@@ -1082,13 +1082,22 @@
 
         /* 情報シートの上端の縁ライン。角丸16pxの内側に沿わせるので本文の高さを食わない。
            ドラッグハンドルと5px以内で並ぶとハンドルの一部に見えるため、
-           線が出ているときだけヘッダーの上padding を 8px→13px にして逃がす。 */
+           線が出ているときだけヘッダーの上padding を 8px→18px にして逃がす。 */
         #obj-sheet-favline { position: absolute; left: 0; right: 0; top: 0; height: 5px;
                              display: none; overflow: hidden;
                              border-radius: 16px 16px 0 0; z-index: 2; pointer-events: none; }
         #obj-sheet-favline span { flex: 1 1 0; }
         #obj-sheet.has-fav #obj-sheet-favline { display: flex; }
-        #obj-sheet.has-fav #obj-sheet-header { padding-top: 13px; }
+        /* 線が出ているときのヘッダー。★は付いている枠の色そのもので塗る（updateSheetFav）ため、
+           top:0 のままだと★のボックス上端(y=0〜)が5pxの色ラインの真下に重なり、
+           同じ色どうしが地続き＝線から生えているように見える。
+           ヘッダーを 24px→30px に広げ、ハンドル（上padding）と★・×を6px下げて線から離す。
+           広げた分はそのままドラッグで掴める面積になる（掴む範囲は #obj-sheet-header 全体）。
+           30px は★のボックス(2+19+2=23px)を top:6px から収める高さで、本文とは重ならない。
+           お気に入りが付いていないときの高さ(24px)は変えない。 */
+        #obj-sheet.has-fav #obj-sheet-header { padding-top: 18px; min-height: 30px; }
+        #obj-sheet.has-fav #obj-fav-btn { top: 6px; }
+        #obj-sheet.has-fav #obj-sheet-close { top: 7px; }
         /* 登録操作。ヘッダー右の★を押すと4枠のパレットが開く（1タップで開き、1タップで付け外し）。
            位置は閉じる×（right:8px）の左。 */
         #obj-fav-btn { position: absolute; top: 0; right: 36px; background: none; border: none;
