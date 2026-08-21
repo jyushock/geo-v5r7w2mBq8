@@ -1808,7 +1808,16 @@
             <label class="filter-chip"><input type="checkbox" id="check-show-origin" onchange="onShowOriginChange(this)">検索地点</label>
         </div>
         <div style="border-top:1px solid #f0f0f0;"></div>
-        <!-- 同期。入口は設定の中だけに置き、常設のボタンは増やさない（SYNC_MANUAL.md §5.6） -->
+        <!-- お気に入りの4枠の名前。枠に固定の意味は持たせず、ここで名前を入れたものだけが使える。
+             文字を打つ欄なので、下に続く「同期」「バックアップ」は入力でキーボードが出ると
+             押し上げられて隠れることがある（スクロールで出せる） -->
+        <div class="nearby-section-label">お気に入りの名前</div>
+        <div id="fav-name-list"></div>
+        <div class="favname-note">名前を入れた枠だけを使います。空にした枠は地図にも一覧にも出ませんが、
+            登録した分は消えずに残ります（名前を戻せばそのまま出ます）。</div>
+        <div style="border-top:1px solid #f0f0f0;"></div>
+        <!-- 同期。入口は設定の中だけに置き、常設のボタンは増やさない（SYNC_MANUAL.md §5.6）。
+             ふだん触らない区画なので、バックアップと並べて設定の最下段に置く -->
         <div class="nearby-section-label">同期</div>
         <div class="sync-state" id="sync-state"></div>
         <div style="display:flex;gap:8px;padding:2px 16px 8px;">
@@ -1818,8 +1827,7 @@
                     onclick="openSyncDevicesView()">端末の管理</button>
         </div>
         <div style="border-top:1px solid #f0f0f0;"></div>
-        <!-- バックアップ。お気に入りと表示設定をまとめて1ファイルにする（サーバーは通らない）。
-             入力欄ではないので「お気に入りの名前」より上に置く（下は入力でキーボードが出る枠） -->
+        <!-- バックアップ。お気に入りと表示設定をまとめて1ファイルにする（サーバーは通らない） -->
         <div class="nearby-section-label">バックアップ</div>
         <div style="display:flex;gap:8px;padding:2px 16px 6px;">
             <button class="fxp-btn primary" style="flex:1;height:38px;font-size:13px;"
@@ -1831,14 +1839,6 @@
                onchange="backupImport(this)">
         <div class="favname-note">お気に入りと表示設定を1つのファイルにまとめます。
             読み込むと、いまの内容はファイルの内容に置き換わります。</div>
-        <div style="border-top:1px solid #f0f0f0;"></div>
-        <!-- お気に入りの4枠の名前。枠に固定の意味は持たせず、ここで名前を入れたものだけが使える。
-             文字を打つ欄なので設定の最下段に置く（上に置くと、入力でキーボードが出たときに
-             下の行が押し上げられて隠れる） -->
-        <div class="nearby-section-label">お気に入りの名前</div>
-        <div id="fav-name-list"></div>
-        <div class="favname-note">名前を入れた枠だけを使います。空にした枠は地図にも一覧にも出ませんが、
-            登録した分は消えずに残ります（名前を戻せばそのまま出ます）。</div>
         </div><!-- /settings-scroll -->
     </div>
 
