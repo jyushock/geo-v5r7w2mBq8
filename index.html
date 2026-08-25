@@ -1177,6 +1177,24 @@
         .fav-empty { padding: 40px 20px; text-align: center; color: #aaa; font-size: 12px; line-height: 1.9; }
         .fav-empty b { font-size: 34px; color: #e0e0e0; display: block; margin-bottom: 8px; font-weight: normal; }
         .fav-added { font-size: 10px; color: #bbb; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+        /* ══ お気に入り一覧の選択モード ═══════════════════════════════════
+           行を選んでまとめて外すための面。入っている間はタップが「飛ぶ」から
+           「選ぶ」に変わるので、ヘッダーのボタンを押した色にして見分けられるようにする。
+           チェックは行の右端に20pxの丸で出す。付いていないときも同じ丸を置く
+           （出したり消したりすると、選ぶたびに右端の並びが動く）。 */
+        .lords-iconbtn.on { background: #e3ecff; color: #2a5bd7; }
+        .fav-selck { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid #d9d9d9;
+                     flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+                     font-size: 12px; line-height: 1; color: transparent; }
+        .nearby-item.fav-on { background: #f3f6ff; }
+        .nearby-item.fav-on .fav-selck { background: var(--ui-blue); border-color: var(--ui-blue); color: #fff; }
+        /* 操作バー。一覧（.lords-scroll）の外に置くので、どれだけ送っても残る。
+           ボタンは書き出しビューのもの（.fxp-btn）をそのまま使う */
+        .fav-selbar { display: none; flex-shrink: 0; gap: 8px; padding: 8px 12px 10px;
+                      border-top: 1px solid #f0f0f0; }
+        #nearby-fav-view.selecting .fav-selbar { display: flex; }
+        .fav-selbar .fxp-btn.sub { flex-shrink: 0; padding: 0 14px; font-size: 12.5px; }
+        .fav-selbar .fxp-btn.danger { flex: 1; min-width: 0; font-size: 13px; }
         /* お気に入りの書き出しビュー（メニューパネル内の第11ビュー）。
            TravelPlan の入力ファイル仕様（sample/input-format.md 版1.1）の TSV を作る。
            形式は TSV だけにしてある（CSV・JSON も仕様は受けるが、選ばせる意味が無い）。
@@ -2013,7 +2031,12 @@
             <button class="lords-iconbtn" onclick="closeFavView()" title="メニューへ戻る">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
-            <div class="lords-head-title">お気に入り</div>
+            <div class="lords-head-title" id="fav-head-title">お気に入り</div>
+            <!-- 選択モード。入ると行のタップが「飛ぶ」から「選ぶ」に変わり、
+                 下の操作バーで選んだ分をまとめて外せる（書き出しの入口は隠す） -->
+            <button class="lords-iconbtn" id="fav-select-btn" onclick="toggleFavSelectMode()" title="選ぶ">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </button>
             <!-- 書き出し。いま絞り込んでいる枠と検索語が、そのまま出す対象になる -->
             <button class="lords-iconbtn" id="fav-export-btn" onclick="openFavExportView()" title="書き出し">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -2037,6 +2060,11 @@
         <!-- 近い順の起点。一覧の直前に置く（スクロール領域の外なので送っても残る） -->
         <div class="dorg" id="fav-origin"></div>
         <div class="lords-scroll" id="fav-item-list"></div>
+        <!-- 選択モードのときだけ出る操作バー。「すべて選択」→「解除」が一括解除になる -->
+        <div class="fav-selbar" id="fav-selbar">
+            <button class="fxp-btn sub" id="fav-selall-btn" onclick="favSelectAllToggle()">すべて選択</button>
+            <button class="fxp-btn danger" id="fav-seldel-btn" onclick="favUnmarkSelected()" disabled>解除</button>
+        </div>
     </div>
 
     <!-- お気に入りの書き出しビュー（第11ビュー）。
@@ -9346,6 +9374,31 @@ map.on('zoomend', () => { isZooming = false; });
         }
     }
 
+    /* まとめて外す。1件ずつ favToggleMark を呼ぶと、そのたびに localStorage への
+       書き込みと一覧の作り直しが走る（1,000件選ぶと1,000回）ので、
+       記録を全部書き換えてから保存と描き直しを1回だけ行う。
+       外すのは渡した枠だけで、名前を空にした枠に入っている分は触らない
+       （「空にした枠は出さないが、登録した分は消さない」という決まりに揃える）。
+       外した項目を消さずに mk が空の記録（墓標）として残すのは favToggleMark と同じ。 */
+    function favUnmarkKeys(keys, slots) {
+        const at = Date.now();
+        let n = 0;
+        for (const key of new Set(keys)) {
+            const cur = favMarksOf(key);
+            const next = cur.filter(x => !slots.includes(x));
+            if (next.length === cur.length) continue;
+            favStore.items[key] = { mk: next, at };
+            n++;
+        }
+        if (!n) return 0;
+        saveFavStore();
+        refreshFavOverlay();
+        updateSheetFav();
+        updateFavNameCounts();
+        updateFavEntry();
+        return n;
+    }
+
     // 一覧の行の左端に立てる色帯。付いている枠の数だけ縦に等分する
     function favStripeHtml(type, p, coords) {
         const c = coords || [];
@@ -9464,7 +9517,8 @@ map.on('zoomend', () => { isZooming = false; });
 
     /* ══ お気に入り一覧ビュー ════════════════════════════════════════════ */
     let favState = { q: '', kind: 'all', sort: 'at', rows: [], center: null, centerPinned: false,
-                     scrollTop: 0, restoreScroll: 0 };
+                     scrollTop: 0, restoreScroll: 0,
+                     selecting: false, sel: new Set() };   // 選択モードと、選んだ行のキー
 
     function updateFavEntry() {
         const btn = document.getElementById('fav-entry-btn');
@@ -9479,11 +9533,16 @@ map.on('zoomend', () => { isZooming = false; });
     }
     function closeFavView() {
         setPanelLifted(false);
+        favState.selecting = false;      // 開き直したときに選んだ状態を持ち越さない
+        favState.sel.clear();
+        renderFavSelBar();
         document.getElementById('nearby-fav-view').classList.remove('open');
         document.getElementById('nearby-main-view').style.display = '';
     }
     function openFavView(restoreView) {
         if (!favActiveSlots().length) return;
+        favState.selecting = false;
+        favState.sel.clear();
         // 近い順の起点は開いた時点で固定する（県ページ・城主一覧と同じ扱い）
         if (!restoreView || !favState.center) {
             const c = getSearchCenter();
@@ -9616,23 +9675,109 @@ map.on('zoomend', () => { isZooming = false; });
         } else rows.sort((a, b) => b.at - a.at || byName(a, b));   // 追加順は新しいものが上
         return rows;
     }
+    /* ══ 選択モード（まとめて外す） ══════════════════════════════════════
+       1件ずつなら情報シートの★と行の長押しで足りるが、旅程を1つ終えたあとの
+       後始末のように、まとまった件数を外す手立てが無かったので足した。
+       外す相手は「いま見えている一覧」に揃える（書き出しと同じ約束）。
+         ・枠のチップが「すべて」なら、選んだ項目を名前の入っている枠すべてから外す
+         ・枠のチップで1つ選んでいるなら、その枠からだけ外す（他の枠の分は残る）
+         ・設定の「オブジェクト表示」で消している種別は一覧に出ないので、対象にもならない
+       一括解除は専用のボタンを増やさず、「すべて選択」→「解除」の2手で行う。
+       取り消せない操作の確認は、同期の端末外しと同じ confirm。 */
+    function toggleFavSelectMode() { setFavSelectMode(!favState.selecting); }
+    function setFavSelectMode(on) {
+        favState.selecting = !!on;
+        favState.sel.clear();
+        closeFavPalette();
+        const list = document.getElementById('fav-item-list');
+        favState.restoreScroll = list ? list.scrollTop : 0;   // 入る・出るで一覧は動かさない
+        renderFavItems(true);
+    }
+    // 外す枠。チップが「すべて」なら名前の入っている枠すべて
+    function favUnmarkSlots() {
+        return favState.kind === 'all' ? favActiveSlots() : [Number(favState.kind)];
+    }
+    function favUnmarkWhere() {
+        const slots = favUnmarkSlots();
+        return slots.length === 1 ? `「${favNameOf(slots[0])}」` : 'すべての枠';
+    }
+    function renderFavSelBar() {
+        const view = document.getElementById('nearby-fav-view');
+        if (!view) return;
+        view.classList.toggle('selecting', favState.selecting);
+        const btn = document.getElementById('fav-select-btn');
+        if (btn) btn.classList.toggle('on', favState.selecting);
+        // 書き出しは一覧の絞り込みが対象で、選んだ分ではない。取り違えないよう選択中は隠す
+        const exp = document.getElementById('fav-export-btn');
+        if (exp) exp.style.display = favState.selecting ? 'none' : '';
+        const title = document.getElementById('fav-head-title');
+        if (title) title.textContent = favState.selecting ? `${favState.sel.size}件を選択` : 'お気に入り';
+        const rows = favState.rows || [];
+        const allOn = rows.length > 0 && rows.every(r => favState.sel.has(r.key));
+        const all = document.getElementById('fav-selall-btn');
+        if (all) { all.textContent = allOn ? '選択を解除' : 'すべて選択'; all.disabled = rows.length === 0; }
+        const del = document.getElementById('fav-seldel-btn');
+        if (del) {
+            del.disabled = favState.sel.size === 0;
+            del.textContent = favState.sel.size
+                ? `${favState.sel.size}件を${favUnmarkWhere()}から外す` : '解除';
+        }
+    }
+    function favToggleSel(i) {
+        const r = (favState.rows || [])[i];
+        if (!r) return;
+        const on = !favState.sel.has(r.key);
+        if (on) favState.sel.add(r.key); else favState.sel.delete(r.key);
+        /* 同じキーの行が2つ出ることは無い想定だが（キーの衝突は実測0）、
+           出たときに片方だけ塗り残さないよう、キーで引いて塗り直す */
+        document.querySelectorAll('#fav-item-list .nearby-item[data-fav-i]').forEach(el => {
+            const r2 = favState.rows[Number(el.dataset.favI)];
+            if (r2 && r2.key === r.key) el.classList.toggle('fav-on', on);
+        });
+        renderFavSelBar();
+    }
+    function favSelectAllToggle() {
+        const rows = favState.rows || [];
+        const allOn = rows.length > 0 && rows.every(r => favState.sel.has(r.key));
+        favState.sel = new Set(allOn ? [] : rows.map(r => r.key));
+        favState.restoreScroll = document.getElementById('fav-item-list').scrollTop;
+        renderFavItems(true);
+    }
+    function favUnmarkSelected() {
+        const keys = [...favState.sel];
+        if (!keys.length) return;
+        if (!confirm(`選んだ${keys.length}件を${favUnmarkWhere()}から外します。\n\n`
+            + '地図・一覧・情報シートの印が消えます。戻すには1件ずつ付け直すことになります。')) return;
+        const n = favUnmarkKeys(keys, favUnmarkSlots());
+        renderFavKindChips();                 // 件数が減った分をチップに出す（一覧は触らない）
+        setFavSelectMode(false);              // 選択モードを出るところで一覧を描き直す
+        showToast(`${n.toLocaleString()}件のお気に入りを外しました`);
+    }
+
     function renderFavItems(keepScroll) {
         const list = document.getElementById('fav-item-list');
         if (!list) return;
         const q = normalizeForSearch((favState.q || '').trim());
         const rows = favSortRows(favApplyChipFilter(favCollect()));
         favState.rows = rows;
+        // 選ぶのは「いま見えている行」だけ。絞り込みや解除で消えた行の選択は残さない
+        if (favState.sel.size) {
+            const visible = new Set(rows.map(r => r.key));
+            favState.sel.forEach(k => { if (!visible.has(k)) favState.sel.delete(k); });
+        }
         if (!rows.length) {
             list.innerHTML = (q || favState.kind !== 'all')
                 ? '<div class="lords-note">該当する項目がありません</div>'
                 : `<div class="fav-empty"><b>★</b>まだ登録がありません。<br>
                     ピンや一覧から開いた情報シートの★を押すと、ここに集まります。</div>`;
+            renderFavSelBar();
             return;
         }
         list.innerHTML = rows.map((r, i) => {
             const item = r.item;
             const distStr = r.dist < 1 ? `${Math.round(r.dist * 1000)}m` : `${r.dist.toFixed(1)}km`;
-            return `<div class="nearby-item" data-fav-i="${i}">
+            const on = favState.selecting && favState.sel.has(r.key);
+            return `<div class="nearby-item${on ? ' fav-on' : ''}" data-fav-i="${i}">
                 ${favStripeHtml(item.type, item.properties, item.coords)}
                 ${prefTypeIconHtml(item.type, item.properties || {})}
                 <div class="nearby-item-text">
@@ -9642,16 +9787,24 @@ map.on('zoomend', () => { isZooming = false; });
                 ${prefBadgesHtml(item)}
                 ${favState.sort === 'at' ? `<div class="fav-added">${favDateText(r.at)}</div>`
                                          : `<div class="nearby-item-dist">${distStr}</div>`}
+                ${favState.selecting ? '<span class="fav-selck">✓</span>' : ''}
             </div>`;
         }).join('') + `<div class="lords-note">全${rows.length.toLocaleString()}件<br>
-            行を長押しすると、この場で付け替え・取り消しができます</div>`;
+            ${favState.selecting ? '行をタップで選び、下のボタンでまとめて外します'
+                                 : '行を長押しすると、この場で付け替え・取り消しができます'}</div>`;
         list.querySelectorAll('.nearby-item[data-fav-i]').forEach(el => {
             const i = Number(el.dataset.favI);
-            bindFavRow(el, () => favJumpToItem(i), () => {
-                const r = favState.rows[i];
-                if (r) openFavPalette(el, r.key);
-            });
+            if (favState.selecting) {
+                // 選択中はタップで選ぶ。長押しも同じ扱いにして、押し続けても何も起きない状態にしない
+                bindFavRow(el, () => favToggleSel(i), () => favToggleSel(i));
+            } else {
+                bindFavRow(el, () => favJumpToItem(i), () => {
+                    const r = favState.rows[i];
+                    if (r) openFavPalette(el, r.key);
+                });
+            }
         });
+        renderFavSelBar();
         // 全件を入れ終えてから位置を指定する（先に指定すると高さが足りずに切り詰められる）
         list.scrollTop = keepScroll ? (favState.restoreScroll || 0) : 0;
         favState.restoreScroll = 0;
