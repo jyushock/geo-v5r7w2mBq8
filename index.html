@@ -406,7 +406,11 @@
         /* 閉じるボタン(24px)がヘッダー内に収まる高さを確保し、本文と重ならないようにする */
         #obj-sheet-header { position: relative; padding: 8px 14px 4px; min-height: 24px;
                             box-sizing: border-box; flex-shrink: 0; cursor: grab; touch-action: none; }
-        #obj-sheet-header .os-handle { width: 36px; height: 4px; background: #ccc; border-radius: 2px; margin: 0 auto; }
+        /* 高さ6pxは、上端の色ライン（#obj-sheet-favline の 8px）に対して細く見えない値。
+           ラインを 5px→8px にしたのに合わせて 4px→6px にしてある（どちらも1.5倍）。
+           ヘッダーの高さ（お気に入り無し24px / 有り30px）は min-height が決めるので、
+           太くしても本文の位置は動かない（無し: 8+6+4=18px、有り: 18+6+4=28px でどちらも min 以下）。 */
+        #obj-sheet-header .os-handle { width: 36px; height: 6px; background: #ccc; border-radius: 3px; margin: 0 auto; }
         /* font-size は隣の★（19px）と字面の大きさを揃えた値。×(U+00D7)は同じ文字サイズだと
            ★(U+2605)より小さく見える（Windows実測: ★19px の字面 16×13px に対し ×20px は 12×11px）。
            ×24px で字面 14×14px となり、★とほぼ同じ大きさになる。
@@ -1088,8 +1092,10 @@
 
         /* 情報シートの上端の縁ライン。角丸16pxの内側に沿わせるので本文の高さを食わない。
            ドラッグハンドルと5px以内で並ぶとハンドルの一部に見えるため、
-           線が出ているときだけヘッダーの上padding を 8px→18px にして逃がす。 */
-        #obj-sheet-favline { position: absolute; left: 0; right: 0; top: 0; height: 5px;
+           線が出ているときだけヘッダーの上padding を 8px→18px にして逃がす。
+           高さ8pxは一覧の色帯(5px)の1.5倍。ハンドル(y=18〜24)との間隔は10px残るので、
+           上の「5px以内で並べない」条件は太くしたあとも満たしている。 */
+        #obj-sheet-favline { position: absolute; left: 0; right: 0; top: 0; height: 8px;
                              display: none; overflow: hidden;
                              border-radius: 16px 16px 0 0; z-index: 2; pointer-events: none; }
         #obj-sheet-favline span { flex: 1 1 0; }
