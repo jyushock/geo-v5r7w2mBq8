@@ -2111,10 +2111,11 @@
                         role="switch" aria-checked="true" aria-label="設定で消している種別も出す"></button></div>
             <p class="fxp-note">設定の「オブジェクト表示」で外した種別のことです。
                 オフにすると、その分がファイルから抜けます</p>
-            <div class="fxp-row">note と id を付ける
+            <div class="fxp-row">address・note・id を付ける
                 <button class="fxp-sw" id="fxp-sw-extra" onclick="toggleFavExportExtra()"
-                        role="switch" aria-checked="true" aria-label="note と id を付ける"></button></div>
-            <p class="fxp-note">note … 種別と住所（TravelPlan では表示されるだけ）<br>
+                        role="switch" aria-checked="true" aria-label="address・note・id を付ける"></button></div>
+            <p class="fxp-note">address … 情報シートの「住所」に出るものと同じ<br>
+                note … 種別と住所（TravelPlan では表示されるだけ）<br>
                 id … 次に書き出したとき同じ地点だと分かるキー<br>
                 オフにすると name・lat・lng の3列だけになります</p>
             <div class="fxp-sec">ファイル名</div>
@@ -9612,6 +9613,8 @@ map.on('zoomend', () => { isZooming = false; });
     /* ══ お気に入りの書き出し ═════════════════════════════════════════════
        TravelPlan の入力ファイル仕様（sample/input-format.md 版1.1）の TSV を作る。
        仕様が必須とするのは name / lat / lng の3列だけで、任意列は note と id。
+       これに address を足してある（版1.3 の仕様に無い列だが、§3 が「仕様に無い列は
+       無視するだけでエラーにしない」と定めているので、受け側が対応するまでは素通りする）。
        版1.1 で role / stay / day / priority が削除された（「ファイルはその場所の属性だけを
        持ち、旅程の都合はアプリ上で操作する」という設計原則が入ったため）ので、
        出発地・滞在時間・優先度はここでは一切作らない。
@@ -9648,12 +9651,27 @@ map.on('zoomend', () => { isZooming = false; });
     }
     function favExportNote(item) {
         const label = (typeConfig[item.type] || {}).label || '';
-        const addr = (item.properties || {}).address || '';
+        const addr = favExportAddress(item);
         return addr ? `${label} / ${addr}` : label;
+    }
+    /* address 列。情報シートの住所の行（buildSheetHtml の osKv('住所', …)）に出るものと
+       同じ文字列を入れる。properties.address をそのまま出せば揃うが、2種別だけ違う。
+         マンホール蓋 … シートで「住所」と呼んでいるのは紐付いたカード配布場所の住所で、
+                        蓋自身の住所は「設置」の行にある（同じチップが2つ並ぶのを避けた呼び分け）。
+                        入れるのは蓋自身の address。実測1,257件すべてで配布場所とは別の場所を
+                        指しており（距離の中央値586m・最大22.4km）、カード側を入れると
+                        同じ行の lat/lng と食い違う。
+         配布終了のカード … シートに住所の行が出ない（配布場所が無いため問合せ先と発行日だけ）。
+                        address には「恵庭市 (B001)」のように市町村＋カードIDが入っていて
+                        住所ではないので、6件とも空にする。 */
+    function favExportAddress(item) {
+        const p = item.properties || {};
+        if (item.type === 'mhcard' && p.discontinued) return '';
+        return p.address || '';
     }
     function favExportTsv(rows) {
         const extra = favExportState.extraCols;
-        const head = extra ? ['name', 'lat', 'lng', 'note', 'id'] : ['name', 'lat', 'lng'];
+        const head = extra ? ['name', 'lat', 'lng', 'address', 'note', 'id'] : ['name', 'lat', 'lng'];
         const lines = [head.join('\t')];
         for (const r of rows) {
             const c = r.item.coords || [];
@@ -9661,7 +9679,8 @@ map.on('zoomend', () => { isZooming = false; });
             // 食べログのように14桁あるものは仕様が「不要」としている
             const cells = [favTsvCell(itemDisplayName(r.item)),
                            Number(c[1]).toFixed(5), Number(c[0]).toFixed(5)];
-            if (extra) cells.push(favTsvCell(favExportNote(r.item)), favTsvCell(r.key));
+            if (extra) cells.push(favTsvCell(favExportAddress(r.item)),
+                                  favTsvCell(favExportNote(r.item)), favTsvCell(r.key));
             lines.push(cells.join('\t'));
         }
         return lines.join('\n') + '\n';
@@ -9731,7 +9750,7 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('fxp-count').innerHTML = !ready
             ? 'データを読み込み中です。<br>全部そろってから書き出してください'
             : `${rows.length.toLocaleString()}行（ヘッダ行を除く）・${
-                favExportState.extraCols ? 5 : 3}列・${
+                favExportState.extraCols ? 6 : 3}列・${
                 FAV_SORT_LABEL[favState.sort] || '追加順'}${
                 q ? `<br>「${attrEscape(q)}」で絞り込んだ結果です` : ''}`;
         const off = !ready || !rows.length;
