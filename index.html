@@ -6905,9 +6905,11 @@ map.on('zoomend', () => { isZooming = false; });
     const LORDS_CHUNK = 60;              // 一覧の追加描画単位（11,000名超を一度に積まない）
     let lordIndex = null;                // [{ n, kind, idx:[城のfeature番号], v:[原表記], _n }]
     // center は城一覧の近い順の起点で、城主を開いた時点で固定する（openLordDetail を参照）。
-    // listScrollTop / listShown は城主一覧、castleScrollTop は城一覧の、離れる前の位置
+    // listScrollTop / listShown は城主一覧、castleScrollTop は城一覧の、離れる前の位置。
+    // castleRows / castleShown は城一覧の中身と描いてある件数（「さらに表示」で継ぎ足す）
     let lordsState = { q: '', type: 'all', sort: 'dist', filtered: [], shown: 0, lord: null,
-                       center: null, listScrollTop: 0, listShown: 0, castleScrollTop: 0 };
+                       center: null, listScrollTop: 0, listShown: 0, castleScrollTop: 0,
+                       castleRows: [], castleShown: 0 };
 
     // 集計キーを作る。末尾の括弧注記（石高・別称）と推量記号を落とす。
     // 先頭の括弧注記は個人名のときだけ落とす（氏族名から落とすと「（大給）松平氏」が
@@ -7011,7 +7013,8 @@ map.on('zoomend', () => { isZooming = false; });
         applyLordsFilter();
     }
 
-    function onLordsSearchInput(v) { lordsState.q = v; applyLordsFilter(); }
+    // 絞り込みは打ち終わりから描く（debounceListFilter。他の一覧の絞り込み欄と同じ扱い）
+    function onLordsSearchInput(v) { lordsState.q = v; debounceListFilter('lords', applyLordsFilter); }
     function setLordsType(t) {
         lordsState.type = t;
         document.querySelectorAll('#nearby-lords-view .lords-chip[data-lt]').forEach(b => {
@@ -7109,7 +7112,8 @@ map.on('zoomend', () => { isZooming = false; });
         vEl.style.display = l.v.length ? '' : 'none';
         renderDistOrigin('lord');
         showLordsView('detail');
-        renderLordCastles();
+        // 戻ってきたときは継ぎ足した分もそのまま（スクロール位置を戻す先が変わらないように）
+        renderLordCastles(restoreView);
     }
 
     function setLordCastleSort(sort) {
@@ -7126,11 +7130,48 @@ map.on('zoomend', () => { isZooming = false; });
         if (el && el.parentElement) el.parentElement.classList.toggle('has-text', !!v);
     }
 
+    /* ══ 一覧を描くときの共通の小物（都道府県・城主・遺構で使う） ═══════════════
+
+       並べ替えの文字列比較。localeCompare は呼ぶたびに照合器を作るため、数万件を
+       並べると比較のたびにその費用がかかる。1つ作って使い回すと同じ結果で速い
+       （2026-08-26 実測: 全国33,868件の種別順で 303ms → 並べ替えキーの事前計算と
+        合わせて 73ms）。 */
+    const LIST_COLLATOR = new Intl.Collator('ja');
+
+    /* 一覧の絞り込み欄。1打鍵ごとに一覧を作り直すと、行数が多い画面では入力が詰まる
+       （2026-08-26 実測: 遺構「曲輪」12,418城の一覧で1打鍵あたり2.3秒）。
+       打ち終わりから 150ms 待ってから描く。クリアボタンの出し入れは待たせない。 */
+    const listFilterTimers = {};
+    function debounceListFilter(key, fn) {
+        clearTimeout(listFilterTimers[key]);
+        listFilterTimers[key] = setTimeout(fn, 150);
+    }
+
+    /* 一覧の末尾に出す件数の行。打ち切っているときは「さらに表示」を添える。
+       都道府県・城主・遺構の3か所で同じものを使う（onMore は継ぎ足す関数の呼び出し文）。 */
+    function listFootHtml(shown, total, onMore, chunk) {
+        if (shown >= total) return `<div class="lords-note">全${total.toLocaleString()}件</div>`;
+        return `<div class="lords-note">${shown.toLocaleString()}件を表示中（全${
+            total.toLocaleString()}件）<button class="pref-more" onclick="${onMore}"
+            >さらに${Math.min(chunk, total - shown).toLocaleString()}件</button></div>`;
+    }
+
+    /* 一覧に続きを継ぎ足す。末尾の件数の行を外し、増えたぶんの行だけを足して、
+       件数の行を付け直す。作り直しではないので、いま出ている行と指の位置は動かない
+       （2026-08-26 実測: 全国の一覧を3,000件まで継ぎ足すと、作り直しでは1回あたり
+        472→827→876ms と伸びるのに対し、継ぎ足しは行数によらず一定）。 */
+    function appendListRows(listId, html, shown, total, onMore, chunk) {
+        const list = document.getElementById(listId);
+        const foot = list.querySelector(':scope > .lords-note');
+        if (foot) foot.remove();
+        list.insertAdjacentHTML('beforeend', html + listFootHtml(shown, total, onMore, chunk));
+    }
+
     // 城一覧の絞り込み。城主一覧の検索と同じく normalizeForSearch で照合する
     function onLordCastleSearchInput(v) {
         lordsState.castleQ = v;
         setSearchClearVisible('lord-castle-search', v);
-        renderLordCastles();
+        debounceListFilter('lordCastle', renderLordCastles);
     }
     function clearLordCastleSearch() {
         const el = document.getElementById('lord-castle-search');
@@ -7139,9 +7180,45 @@ map.on('zoomend', () => { isZooming = false; });
         el.focus();
     }
 
-    function renderLordCastles() {
+    /* 城一覧（城主・遺構）を一度に描く件数の上限。県ページ（PREF_ITEM_CHUNK）と同じ 1,000件。
+       打ち切りが無かったころは、遺構「曲輪」の12,418城を一度に積んでいて、開くまでに
+       2.3秒かかっていた（2026-08-26 実測。うち DOM の組み立て0.7秒・配置1.2秒）。
+       1,000件なら約170msで、続きは末尾の「さらに表示」で継ぎ足せる。 */
+    const CASTLE_LIST_CHUNK = 1000;
+
+    /* 城一覧の行。城主（renderLordCastles）と遺構（renderRemainsCastles）で同じ作りなので、
+       行を作るところだけ切り出して継ぎ足しからも呼べるようにする。
+       jump は行をタップしたときに呼ぶ関数名で、呼ぶ側が渡す（飛んだ後の戻り導線が違うため）。 */
+    function castleRowsHtml(rows, from, to, jump) {
+        let out = '';
+        for (let i = from; i < to; i++) {
+            const r = rows[i];
+            const p = r.f.properties;
+            const color = getItemColor({ type: 'castle', properties: p });
+            const distStr = r.dist < 1 ? `${Math.round(r.dist * 1000)}m` : `${r.dist.toFixed(1)}km`;
+            /* 副見出しは他の一覧（周辺検索・都道府県から探す・お気に入り・検索結果）と揃えて住所そのもの。
+               住所を持たない城（実測12件）だけ都道府県に落とす。
+               100名城の印はバッジ側に出るので、ここには入れない（同じ語が2つ並ばないように） */
+            out += `<div class="nearby-item" onclick="${jump}(${r.i})">
+                ${favStripeHtml('castle', p, r.f.geometry.coordinates)}
+                <div class="nearby-item-icon" style="background:${color}"><img src="castle.png" class="icon-full"></div>
+                <div class="nearby-item-text">
+                    <div class="nearby-item-name">${attrEscape(p.coordOffset ? '[近接あり] ' + p.name : p.name)}</div>
+                    <div class="nearby-item-sub">${attrEscape(p.address || r.pref)}</div>
+                </div>
+                ${prefBadgesHtml({ type: 'castle', properties: p })}
+                <div class="nearby-item-dist">${distStr}</div>
+            </div>`;
+        }
+        return out;
+    }
+
+    /* keepShown を立てて呼ぶと、継ぎ足した分（lordsState.castleShown）を保つ。
+       城を開いて戻ってきたときがこれに当たる（絞り込みや並べ替えでは先頭から見せ直す）。 */
+    function renderLordCastles(keepShown) {
         const l = lordsState.lord;
         if (!l) return;
+        if (!keepShown) lordsState.castleShown = CASTLE_LIST_CHUNK;
         const feats = loadedData.castle.features;
         // 起点は城主を開いた時点で固定（城を開くと地図が動くので、戻ったときに並びが変わらないように）
         const center = lordsState.center || getSearchCenter();
@@ -7165,34 +7242,31 @@ map.on('zoomend', () => { isZooming = false; });
         if (lordsState.sort === 'dist') rows.sort((a, b) => a.dist - b.dist);
         else rows.sort((a, b) => (PREF_ORDER[a.pref] ?? 99) - (PREF_ORDER[b.pref] ?? 99)
                                  || rank(a) - rank(b)
-                                 || a.f.properties.name.localeCompare(b.f.properties.name, 'ja'));
+                                 || LIST_COLLATOR.compare(a.f.properties.name, b.f.properties.name));
+        lordsState.castleRows = rows;          // 継ぎ足し（showMoreLordCastles）で使い回す
+        const list = document.getElementById('lord-castle-list');
         if (rows.length === 0) {
-            document.getElementById('lord-castle-list').innerHTML =
-                '<div class="lords-note">該当する城がありません</div>';
+            list.innerHTML = '<div class="lords-note">該当する城がありません</div>';
             return;
         }
-        document.getElementById('lord-castle-list').innerHTML = rows.map(r => {
-            const p = r.f.properties;
-            const color = getItemColor({ type: 'castle', properties: p });
-            const distStr = r.dist < 1 ? `${Math.round(r.dist * 1000)}m` : `${r.dist.toFixed(1)}km`;
-            /* 副見出しは他の一覧（周辺検索・都道府県から探す・お気に入り・検索結果）と揃えて住所そのもの。
-               住所を持たない城（実測12件）だけ都道府県に落とす。
-               100名城の印はバッジ側に出るので、ここには入れない（同じ語が2つ並ばないように） */
-            const sub = p.address || r.pref;
-            return `<div class="nearby-item" onclick="lordsJumpToCastle(${r.i})">
-                ${favStripeHtml('castle', p, r.f.geometry.coordinates)}
-                <div class="nearby-item-icon" style="background:${color}"><img src="castle.png" class="icon-full"></div>
-                <div class="nearby-item-text">
-                    <div class="nearby-item-name">${attrEscape(p.coordOffset ? '[近接あり] ' + p.name : p.name)}</div>
-                    <div class="nearby-item-sub">${attrEscape(sub)}</div>
-                </div>
-                ${prefBadgesHtml({ type: 'castle', properties: p })}
-                <div class="nearby-item-dist">${distStr}</div>
-            </div>`;
-        }).join('');
+        const shown = Math.min(rows.length, lordsState.castleShown || CASTLE_LIST_CHUNK);
+        lordsState.castleShown = shown;
+        list.innerHTML = castleRowsHtml(rows, 0, shown, 'lordsJumpToCastle')
+            + listFootHtml(shown, rows.length, 'showMoreLordCastles()', CASTLE_LIST_CHUNK);
         // 通常は先頭から。城を開いて戻ってきたときだけ、開く前の位置へ戻す
-        document.getElementById('lord-castle-list').scrollTop = lordsState.restoreCastleScroll || 0;
+        list.scrollTop = lordsState.restoreCastleScroll || 0;
         lordsState.restoreCastleScroll = 0;
+    }
+
+    /* 「さらに表示」。いま出ている続きから見えるよう、スクロール位置は動かさない。 */
+    function showMoreLordCastles() {
+        const rows = lordsState.castleRows || [];
+        const from = lordsState.castleShown || CASTLE_LIST_CHUNK;
+        const to = Math.min(rows.length, from + CASTLE_LIST_CHUNK);
+        if (to <= from) return;
+        lordsState.castleShown = to;
+        appendListRows('lord-castle-list', castleRowsHtml(rows, from, to, 'lordsJumpToCastle'),
+                       to, rows.length, 'showMoreLordCastles()', CASTLE_LIST_CHUNK);
     }
 
     // 都道府県順の並び（pref_codes.js の JP-01…JP-47 の順をそのまま使う）
@@ -7467,10 +7541,7 @@ map.on('zoomend', () => { isZooming = false; });
         const i = (prefState.typeHead || {})[t];
         if (!list || i === undefined) return;   // 絞り込みで1件も残っていない種別
         // 上限で打ち切った先にある種別は、その行が入るところまで継ぎ足してから飛ぶ
-        if (i >= (prefState.shown || 0)) {
-            prefState.shown = Math.ceil((i + 1) / PREF_ITEM_CHUNK) * PREF_ITEM_CHUNK;
-            renderPrefItems(true);
-        }
+        if (i >= (prefState.shown || 0)) appendPrefItems(Math.ceil((i + 1) / PREF_ITEM_CHUNK) * PREF_ITEM_CHUNK);
         const el = list.children[i];
         if (!el) return;
         list.scrollTop += el.getBoundingClientRect().top - list.getBoundingClientRect().top;
@@ -7735,7 +7806,7 @@ map.on('zoomend', () => { isZooming = false; });
     function onPrefSearchInput(v) {
         prefState.q = v;
         setSearchClearVisible('pref-item-search', v);
-        renderPrefItems();
+        debounceListFilter('prefItem', renderPrefItems);
     }
     function clearPrefSearch() {
         const el = document.getElementById('pref-item-search');
@@ -7751,8 +7822,31 @@ map.on('zoomend', () => { isZooming = false; });
        ので、打ち切っても辿れなくなるものは無い。 */
     const PREF_ITEM_CHUNK = 1000;
 
+    /* 一覧の行。継ぎ足し（showMorePrefItems）からも呼べるよう、範囲を指定して作る。
+       onclick に渡すのは rows の通し番号なので、継ぎ足した行でも先頭から数えた番号になる。 */
+    function prefRowsHtml(rows, from, to) {
+        let out = '';
+        for (let i = from; i < to; i++) {
+            const r = rows[i];
+            const item = r.item;
+            const distStr = r.dist < 1 ? `${Math.round(r.dist * 1000)}m` : `${r.dist.toFixed(1)}km`;
+            out += `<div class="nearby-item" onclick="prefJumpToItem(${i})">
+                ${favStripeHtml(item.type, item.properties, item.coords)}
+                ${prefTypeIconHtml(item.type, item.properties || {})}
+                <div class="nearby-item-text">
+                    <div class="nearby-item-name">${attrEscape(itemDisplayName(item))}</div>
+                    <div class="nearby-item-sub">${matchNoteHtml(null, r.part)}${attrEscape(item.sub || '')}</div>
+                </div>
+                ${prefBadgesHtml(item)}
+                <div class="nearby-item-dist">${distStr}</div>
+            </div>`;
+        }
+        return out;
+    }
+
     /* keepShown を立てて呼ぶと、継ぎ足した分（prefState.shown）を保つ。
-       「さらに表示」と、オブジェクトから戻ったときの描き直しがこれに当たる。
+       オブジェクトから戻ったときの描き直しがこれに当たる（「さらに表示」は
+       作り直さずに続きを足す＝showMorePrefItems）。
        絞り込みや並べ替えで一覧の中身が変わるときは、先頭1,000件から見せ直す。 */
     function renderPrefItems(keepShown) {
         const name = prefState.pref;
@@ -7773,22 +7867,31 @@ map.on('zoomend', () => { isZooming = false; });
                             part: (q && item.type === 'shop') ? shopMatchedPart(item.properties, q) : null });
             }
         }
-        // 並べる基準は行に出している名前と同じにする（食べログは店名）。
-        // name 全体で並べると、画面では見えない駅名やジャンルで順番が決まってしまうため
-        const byName = (a, b) => itemDisplayName(a.item).localeCompare(itemDisplayName(b.item), 'ja');
+        /* 並べる基準は行に出している名前と同じにする（食べログは店名）。
+           name 全体で並べると、画面では見えない駅名やジャンルで順番が決まってしまうため。
+           比較のたびに名前を組み立て直すと数万件では効いてくるので、並べ替えに使う値は
+           先に1度だけ求めて行に持たせる（2026-08-26 実測: 全国33,868件の種別順で
+           303ms → 73ms。文字列の比較を LIST_COLLATOR にした分も含む）。 */
         if (prefState.sort === 'dist') {
             // 近い順は種別も城の格付けも見ず、距離だけで並べる
             rows.sort((a, b) => a.dist - b.dist);
         } else if (prefState.sort === 'type') {
             // 種別でまとめたうえで、城は 100名城 → 続100名城 → その他、食べログは部門の順に寄せる
-            const order = PREF_TYPES.map(t => t.type);
-            rows.sort((a, b) => order.indexOf(a.item.type) - order.indexOf(b.item.type)
-                                || castleGenreRank(a.item.properties || {}) - castleGenreRank(b.item.properties || {})
-                                || shopGenreRank(a.item.properties || {}) - shopGenreRank(b.item.properties || {})
-                                || byName(a, b));
+            const order = {};
+            PREF_TYPES.forEach((t, i) => { order[t.type] = i; });
+            for (const r of rows) {
+                const p = r.item.properties || {};
+                r.kType = order[r.item.type];
+                r.kCastle = castleGenreRank(p);
+                r.kGenre = shopGenreRank(p);
+                r.kName = itemDisplayName(r.item);
+            }
+            rows.sort((a, b) => a.kType - b.kType || a.kCastle - b.kCastle || a.kGenre - b.kGenre
+                                || LIST_COLLATOR.compare(a.kName, b.kName));
         } else {
             // 名前順は種別も城の格付けも見ず、名前だけで並べる
-            rows.sort(byName);
+            for (const r of rows) r.kName = itemDisplayName(r.item);
+            rows.sort((a, b) => LIST_COLLATOR.compare(a.kName, b.kName));
         }
         // 種別ごとの最初の行。集計帯のタップ（prefJumpToType）で飛ぶ先に使う。
         // 並べ替えと絞り込みの結果から取るので、一覧を作り直すたびに取り直す
@@ -7807,38 +7910,31 @@ map.on('zoomend', () => { isZooming = false; });
            上限の先にある種別へ飛ぶときは、そこまで継ぎ足してから飛ぶ（prefJumpToType）。 */
         const shown = Math.min(rows.length, prefState.shown || PREF_ITEM_CHUNK);
         prefState.shown = shown;
-        list.innerHTML = rows.slice(0, shown).map((r, i) => {
-            const item = r.item;
-            const distStr = r.dist < 1 ? `${Math.round(r.dist * 1000)}m` : `${r.dist.toFixed(1)}km`;
-            return `<div class="nearby-item" onclick="prefJumpToItem(${i})">
-                ${favStripeHtml(item.type, item.properties, item.coords)}
-                ${prefTypeIconHtml(item.type, item.properties || {})}
-                <div class="nearby-item-text">
-                    <div class="nearby-item-name">${attrEscape(itemDisplayName(item))}</div>
-                    <div class="nearby-item-sub">${matchNoteHtml(null, r.part)}${attrEscape(item.sub || '')}</div>
-                </div>
-                ${prefBadgesHtml(item)}
-                <div class="nearby-item-dist">${distStr}</div>
-            </div>`;
-        }).join('');
         prefState.rows = rows;
-        // 末尾。打ち切っているときは、いま出ている件数と全件数を並べて「さらに表示」を添える
-        list.insertAdjacentHTML('beforeend', shown < rows.length
-            ? `<div class="lords-note">${shown.toLocaleString()}件を表示中（全${
-                rows.length.toLocaleString()}件）<button class="pref-more" onclick="showMorePrefItems()"
-                >さらに${Math.min(PREF_ITEM_CHUNK, rows.length - shown).toLocaleString()}件</button></div>`
-            : `<div class="lords-note">全${rows.length.toLocaleString()}件</div>`);
+        // 末尾は、打ち切っているときだけ「さらに表示」を添えた件数の行になる
+        list.innerHTML = prefRowsHtml(rows, 0, shown)
+            + listFootHtml(shown, rows.length, 'showMorePrefItems()', PREF_ITEM_CHUNK);
         // 通常は先頭から。オブジェクトを開いて戻ってきたときだけ、開く前の位置へ戻す
         // （全件を入れ終えてから指定しないと、スクロールできる高さが足りずに切り詰められる）
         list.scrollTop = prefState.restoreScroll || 0;
         prefState.restoreScroll = 0;
     }
 
-    /* 「さらに表示」。いま出ている続きから見えるよう、スクロール位置は動かさない。 */
+    /* 「さらに表示」。一覧を作り直さず、増えたぶんの行だけを足す（appendListRows）。
+       いま出ている行はそのまま残るので、指の位置も動かない。 */
     function showMorePrefItems() {
-        prefState.restoreScroll = document.getElementById('pref-item-list').scrollTop;
-        prefState.shown = (prefState.shown || PREF_ITEM_CHUNK) + PREF_ITEM_CHUNK;
-        renderPrefItems(true);
+        appendPrefItems((prefState.shown || PREF_ITEM_CHUNK) + PREF_ITEM_CHUNK);
+    }
+
+    // 指定の件数まで一覧を継ぎ足す。「さらに表示」と、集計帯から上限の先へ飛ぶときに使う
+    function appendPrefItems(target) {
+        const rows = prefState.rows || [];
+        const from = prefState.shown || PREF_ITEM_CHUNK;
+        const to = Math.min(rows.length, target);
+        if (to <= from) return;
+        prefState.shown = to;
+        appendListRows('pref-item-list', prefRowsHtml(rows, from, to),
+                       to, rows.length, 'showMorePrefItems()', PREF_ITEM_CHUNK);
     }
 
     /* 一覧からオブジェクトへ飛ぶ。検索結果タップ（onResultClick）と同じ扱いにして、
@@ -7964,10 +8060,12 @@ map.on('zoomend', () => { isZooming = false; });
     let remainsIndex = null;    // [{ n, g, id, idx:[城のfeature番号], _n }]（「なし」系は除く）
     let remainsGroups = null;   // [{ id, name, color, toks:[remainsIndex の要素], castles:Set }]
     // center は城一覧の近い順の起点で、遺構を開いた時点で固定する（openLordDetail と同じ扱い）
+    // castleRows / castleShown は城一覧の中身と描いてある件数（城主と同じく「さらに表示」で継ぎ足す）
     let remainsState = { q: '', tokQ: '', castleQ: '', mode: 'group', sort: 'dist',
                          group: null, sub: null, target: null, center: null, centerPinned: false,
                          listScrollTop: 0, tokScrollTop: 0, subScrollTop: 0, castleScrollTop: 0,
-                         restoreListScroll: 0, restoreTokScroll: 0, restoreCastleScroll: 0 };
+                         restoreListScroll: 0, restoreTokScroll: 0, restoreCastleScroll: 0,
+                         castleRows: [], castleShown: 0 };
 
     function remainGroupOf(tok) {
         // 「なし」「埋没」等の状態語は括弧の対応より先に見る。「埋没（堀」のように
@@ -8085,7 +8183,7 @@ map.on('zoomend', () => { isZooming = false; });
     function onRemainsSearchInput(v) {
         remainsState.q = v;
         setSearchClearVisible('remains-search', v);
-        renderRemainsList();
+        debounceListFilter('remains', renderRemainsList);
     }
     function clearRemainsSearch() {
         const el = document.getElementById('remains-search');
@@ -8303,7 +8401,8 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('remains-detail-title').textContent = `${name}（${idx.length.toLocaleString()}城）`;
         renderDistOrigin('remains');
         showRemainsView('detail');
-        renderRemainsCastles();
+        // 戻ってきたときは継ぎ足した分もそのまま（スクロール位置を戻す先が変わらないように）
+        renderRemainsCastles(restoreView);
     }
     // 城一覧の戻る。開く前に見ていた一覧（分類一覧／中分類の一覧／小分類の一覧）へ帰す
     function backToRemainsGroup() {
@@ -8322,14 +8421,17 @@ map.on('zoomend', () => { isZooming = false; });
     function onRemainsCastleSearchInput(v) {
         remainsState.castleQ = v;
         setSearchClearVisible('remains-castle-search', v);
-        renderRemainsCastles();
+        debounceListFilter('remainsCastle', renderRemainsCastles);
     }
     function clearRemainsCastleSearch() {
         const el = document.getElementById('remains-castle-search');
         el.value = ''; onRemainsCastleSearchInput(''); el.focus();
     }
 
-    function renderRemainsCastles() {
+    /* keepShown を立てて呼ぶと、継ぎ足した分（remainsState.castleShown）を保つ。
+       城主の城一覧（renderLordCastles）と同じ扱い。 */
+    function renderRemainsCastles(keepShown) {
+        if (!keepShown) remainsState.castleShown = CASTLE_LIST_CHUNK;
         const feats = (loadedData.castle && loadedData.castle.features) || [];
         const center = remainsState.center || getSearchCenter();
         const q = normalizeForSearch(remainsState.castleQ.trim());
@@ -8349,31 +8451,32 @@ map.on('zoomend', () => { isZooming = false; });
         if (remainsState.sort === 'dist') rows.sort((a, b) => a.dist - b.dist);
         else rows.sort((a, b) => (PREF_ORDER[a.pref] ?? 99) - (PREF_ORDER[b.pref] ?? 99)
                                  || rank(a) - rank(b)
-                                 || a.f.properties.name.localeCompare(b.f.properties.name, 'ja'));
+                                 || LIST_COLLATOR.compare(a.f.properties.name, b.f.properties.name));
+        remainsState.castleRows = rows;        // 継ぎ足し（showMoreRemainsCastles）で使い回す
         const list = document.getElementById('remains-castle-list');
         if (rows.length === 0) {
             list.innerHTML = '<div class="lords-note">該当する城がありません</div>';
             return;
         }
-        // 副見出しも城主詳細と同じ。住所そのもので、持たない城だけ都道府県に落とす
-        list.innerHTML = rows.map(r => {
-            const p = r.f.properties;
-            const color = getItemColor({ type: 'castle', properties: p });
-            const distStr = r.dist < 1 ? `${Math.round(r.dist * 1000)}m` : `${r.dist.toFixed(1)}km`;
-            return `<div class="nearby-item" onclick="remainsJumpToCastle(${r.i})">
-                ${favStripeHtml('castle', p, r.f.geometry.coordinates)}
-                <div class="nearby-item-icon" style="background:${color}"><img src="castle.png" class="icon-full"></div>
-                <div class="nearby-item-text">
-                    <div class="nearby-item-name">${attrEscape(p.coordOffset ? '[近接あり] ' + p.name : p.name)}</div>
-                    <div class="nearby-item-sub">${attrEscape(p.address || r.pref)}</div>
-                </div>
-                ${prefBadgesHtml({ type: 'castle', properties: p })}
-                <div class="nearby-item-dist">${distStr}</div>
-            </div>`;
-        }).join('');
+        // 行の作りは城主の城一覧と同じ（castleRowsHtml）。副見出しは住所そのもの
+        const shown = Math.min(rows.length, remainsState.castleShown || CASTLE_LIST_CHUNK);
+        remainsState.castleShown = shown;
+        list.innerHTML = castleRowsHtml(rows, 0, shown, 'remainsJumpToCastle')
+            + listFootHtml(shown, rows.length, 'showMoreRemainsCastles()', CASTLE_LIST_CHUNK);
         // 通常は先頭から。城を開いて戻ってきたときだけ、開く前の位置へ戻す
         list.scrollTop = remainsState.restoreCastleScroll || 0;
         remainsState.restoreCastleScroll = 0;
+    }
+
+    /* 「さらに表示」。いま出ている続きから見えるよう、スクロール位置は動かさない。 */
+    function showMoreRemainsCastles() {
+        const rows = remainsState.castleRows || [];
+        const from = remainsState.castleShown || CASTLE_LIST_CHUNK;
+        const to = Math.min(rows.length, from + CASTLE_LIST_CHUNK);
+        if (to <= from) return;
+        remainsState.castleShown = to;
+        appendListRows('remains-castle-list', castleRowsHtml(rows, from, to, 'remainsJumpToCastle'),
+                       to, rows.length, 'showMoreRemainsCastles()', CASTLE_LIST_CHUNK);
     }
 
     // 一覧から城へ飛ぶ。城主一覧（lordsJumpToCastle）と同じ扱いにする
