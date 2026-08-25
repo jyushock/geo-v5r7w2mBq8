@@ -6243,7 +6243,8 @@ map.on('zoomend', () => { isZooming = false; });
                 // お気に入りの色帯。周辺検索・都道府県・城主・遺構・お気に入り一覧と同じ出しかた
                 // （左padding 10px の中に帯5px＋空き5pxで収まるので、印の有無で中身の位置は動かない）
                 div.innerHTML = `${favStripeHtml(item.type, item.properties, item.coords)}${iconPart}<div class="search-result-text"><div class="search-result-name">${itemDisplayName(item)}</div><div class="search-result-sub">${badge}${subText}</div></div>`;
-                div.addEventListener('click', () => onResultClick(item));
+                // 飛んだ先から戻れるよう、この結果一覧そのもの（両列とワード）を持たせて渡す
+                div.addEventListener('click', () => searchJumpToItem(item, localItems, placeItems));
                 col.appendChild(div);
             };
             const leftCol = document.createElement('div'); leftCol.className = 'search-col';
@@ -6327,6 +6328,62 @@ map.on('zoomend', () => { isZooming = false; });
         const c = item.coords.slice();
         // openObjSheet 内の adjustMapForSheet が、シート高さぶん上に寄せ直す
         openObjSheet(item.type, item.label, item.properties, c[0], c[1]);
+    }
+
+    /* ══ 検索結果からオブジェクトへ飛ぶ ═════════════════════════════════
+       周辺検索（nearbyJumpToItem）・都道府県（prefJumpToItem）と同じ扱いにして、
+       離れる前に一覧の位置を控え、情報シートに戻り導線を挿す。
+
+       違うのは戻したときの一覧の作りかた。他の一覧は開き直す関数に任せられるが、
+       検索結果は onResultClick が入力欄を空にして（clearSearch）閉じてしまうため、
+       同じ並びを取り戻すには検索をやり直すことになる。それだと
+        ・地名・場所は国土地理院へ問い合わせ直しになる（戻るだけで通信が要る）
+        ・スポットの並びは getSearchCenter() からの距離で決まるので、
+          飛んだ先で測り直すと戻る前と別の並びになる
+       ので、描いた結果そのもの（両列の配列とワード）を控えておいて描き直す。
+
+       地名・場所（place）は情報シートが開かない（onResultClick）ので、
+       戻り導線を挿す先が無く、この導線は付かない。 */
+    let searchReturn = null;
+    function searchJumpToItem(item, localItems, placeItems) {
+        if (item.type !== 'place') {
+            searchReturn = {
+                q: document.getElementById('search-input').value,
+                scrollTop: document.getElementById('search-results-inner').scrollTop,
+                local: localItems, places: placeItems,
+            };
+            saveListReturnCamera();
+        }
+        onResultClick(item);
+        // onResultClick は 300ms 後に情報シートを開くので、その後に戻り導線を挿す
+        if (item.type !== 'place') setTimeout(injectSearchBackLink, 400);
+    }
+
+    // 検索結果から来たときだけ、情報シートの先頭に戻り導線を挿す（周辺検索結果と同じ扱い）。
+    // 別のピンをタップするとシート本文ごと作り直されるので、自然に消える。
+    function injectSearchBackLink() {
+        if (!searchReturn) return;
+        const body = document.getElementById('obj-sheet-body');
+        if (!body || body.querySelector('.os-lords-back')) return;
+        const div = document.createElement('div');
+        div.className = 'os-lords-back';
+        const q = searchReturn.q.trim();
+        div.textContent = q ? `↩ 「${q}」の検索結果に戻る` : '↩ 検索結果に戻る';
+        div.onclick = () => { closeObjSheet(); restoreListReturnCamera(); reopenSearchResults(); };
+        body.insertBefore(div, body.firstChild);
+    }
+
+    /* 飛ぶ前の検索結果（ワード・並び・スクロール位置）のまま戻す。
+       入力欄にワードを書き戻すのは、消えたままだと×ボタンが出ず、
+       そこから絞り直す（打ち足す）こともできなくなるため。
+       スクロール位置は renderResults が末尾で先頭に戻すので、その後に指定する。 */
+    function reopenSearchResults() {
+        const s = searchReturn;
+        if (!s) return;
+        document.getElementById('search-input').value = s.q;
+        document.getElementById('search-clear').style.display = s.q.trim() ? 'block' : 'none';
+        renderResults(s.local, s.places);
+        document.getElementById('search-results-inner').scrollTop = s.scrollTop;
     }
 
     function clearSearch() {
@@ -7090,8 +7147,10 @@ map.on('zoomend', () => { isZooming = false; });
             const p = r.f.properties;
             const color = getItemColor({ type: 'castle', properties: p });
             const distStr = r.dist < 1 ? `${Math.round(r.dist * 1000)}m` : `${r.dist.toFixed(1)}km`;
-            // 100名城の印はバッジ側に出るので、副見出しは都道府県だけにする（同じ語が2つ並ばないように）
-            const sub = r.pref;
+            /* 副見出しは他の一覧（周辺検索・都道府県から探す・お気に入り・検索結果）と揃えて住所そのもの。
+               住所を持たない城（実測12件）だけ都道府県に落とす。
+               100名城の印はバッジ側に出るので、ここには入れない（同じ語が2つ並ばないように） */
+            const sub = p.address || r.pref;
             return `<div class="nearby-item" onclick="lordsJumpToCastle(${r.i})">
                 ${favStripeHtml('castle', p, r.f.geometry.coordinates)}
                 <div class="nearby-item-icon" style="background:${color}"><img src="castle.png" class="icon-full"></div>
@@ -8268,6 +8327,7 @@ map.on('zoomend', () => { isZooming = false; });
             list.innerHTML = '<div class="lords-note">該当する城がありません</div>';
             return;
         }
+        // 副見出しも城主詳細と同じ。住所そのもので、持たない城だけ都道府県に落とす
         list.innerHTML = rows.map(r => {
             const p = r.f.properties;
             const color = getItemColor({ type: 'castle', properties: p });
@@ -8277,7 +8337,7 @@ map.on('zoomend', () => { isZooming = false; });
                 <div class="nearby-item-icon" style="background:${color}"><img src="castle.png" class="icon-full"></div>
                 <div class="nearby-item-text">
                     <div class="nearby-item-name">${attrEscape(p.coordOffset ? '[近接あり] ' + p.name : p.name)}</div>
-                    <div class="nearby-item-sub">${attrEscape(r.pref)}</div>
+                    <div class="nearby-item-sub">${attrEscape(p.address || r.pref)}</div>
                 </div>
                 ${prefBadgesHtml({ type: 'castle', properties: p })}
                 <div class="nearby-item-dist">${distStr}</div>
