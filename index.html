@@ -5264,12 +5264,18 @@ map.on('zoomend', () => { isZooming = false; });
                                'symbol-transit-lightrail', 'symbol-transit-tram',
                                'symbol-transit-airport', 'symbol-transit-airfield'];
     const sbBusLayerIds     = ['symbol-transit-bus'];
-    /* pois から落とす種別。excludedPoiClasses の12種のうち Shortbread に存在するのは
-       この4つだけで、parking・fuel・car_repair・motorcycle・charging_station・entrance は
-       そもそも配信されない（仕様書 Features の全135件と照合済み）。
-       railway・bus は pois ではなく public_transport 側なので、ここには要らない。 */
+    /* pois から落とす種別。excludedPoiClasses の12種のうち配信されているのはこの5つ。
+       parking・car_repair・motorcycle・charging_station・entrance は pois に入らない
+       （parking は sites レイヤーのポリゴンで、ラベルは持たない）。
+       railway・bus は pois ではなく public_transport 側なので、ここには要らない。
+
+       判定は仕様書ではなく実タイルで行うこと。Shortbread 1.0 の仕様書に
+       amenity=fuel の記載は無いが、配信タイルには入っている（日本の9タイルで34件）。
+       leisure=park・leisure=playground も仕様書では land レイヤー扱いだが pois にも入る。
+       2026-09-02 に実タイルを復号して確認した。 */
     const sbExcludedPois = [['shop', 'car'], ['amenity', 'car_rental'],
-                            ['amenity', 'car_wash'], ['amenity', 'telephone']];
+                            ['amenity', 'car_wash'], ['amenity', 'telephone'],
+                            ['amenity', 'fuel']];
     /* 水域・緑地の塗り替え対象。Liberty と同じく id の部分一致で拾うと、
        陸地色で描かれている water-dam-area・water-pier-area まで水色になり、
        site-parking・site-bicycleparking（駐車場）が緑になるので、名指しで指定する。 */
