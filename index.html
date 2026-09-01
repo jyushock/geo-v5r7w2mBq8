@@ -2990,10 +2990,22 @@
 
     const savedSettings = storeGetJson('settingsState');
 
+    /* 地図タイル。どちらの選択肢もベクタータイルで、違うのはスキーマだけ。
+         openfreemap : OpenFreeMap Liberty（OpenMapTiles スキーマ）
+         osm         : OSM公式ベクター（Shortbread v1 スキーマ ＋ VersaTiles Colorful）
+       2026-09-01 に osm をラスター（tile.openstreetmap.org/{z}/{x}/{y}.png）から差し替えた。
+       拡大時のボヤケを無くし、両方の選択肢をベクターで揃えるため。
+       スキーマが違うとレイヤーIDも属性名も一致しない（rank・class・name:ja は
+       Shortbread に無い）ので、style.load の調整は isOsmVector で丸ごと分岐する。 */
     const mapTileSource = storeGet('mapTileSource') || 'openfreemap';
-    const mapStyle = mapTileSource === 'osm'
-        ? { version: 8, glyphs: 'https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf', sources: { osm: { type: 'raster', tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'], tileSize: 256, attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' } }, layers: [{ id: 'osm-tiles', type: 'raster', source: 'osm' }] }
+    const isOsmVector   = mapTileSource === 'osm';
+    const mapStyle = isOsmVector
+        ? 'https://vector.openstreetmap.org/styles/shortbread/colorful.json'
         : 'https://tiles.openfreemap.org/styles/liberty';
+    /* 自前のラベルが使うフォントスタック名。配信元ごとに命名が違い、取り違えると
+       グリフが404になって文字が丸ごと消える（OSM側に 'Noto Sans Regular' は無い）。 */
+    const FONT_REGULAR = isOsmVector ? 'noto_sans_regular' : 'Noto Sans Regular';
+    const FONT_BOLD    = isOsmVector ? 'noto_sans_bold'    : 'Noto Sans Bold';
     const map = new maplibregl.Map({
         container: 'map',
         style: mapStyle,
@@ -5234,10 +5246,45 @@ map.on('zoomend', () => { isZooming = false; });
     const excludedPoiClasses = ['parking', 'fuel', 'car_dealer', 'car_rental', 'car_repair', 'car_wash', 'motorcycle', 'charging_station', 'entrance', 'telephone', 'railway', 'bus'];
     const stationSubclasses = ['station', 'halt', 'subway', 'tram_stop', 'light_rail', 'stop', 'stop_position', 'platform', 'monorail', 'funicular', 'bus_station', 'bus_stop'];
 
+    /* ===== OSM公式ベクター（Shortbread v1 ＋ VersaTiles Colorful）用 =====
+       Liberty と共通するレイヤーIDは1つも無い。対応は Shortbread 仕様書と
+       スタイルJSONの実物で突き合わせ済み。
+         poi_transit         → symbol-transit-*（駅は種別ごとに分割。バス停も独立レイヤー）
+         poi_r1/r7/r20       → source-layer 'pois' の poi-amenity ほか9レイヤー
+         transportation_name → source-layer 'street_labels'
+       Shortbread には rank も class も name:ja も無い。POI の種別は class ではなく
+       amenity / shop / leisure / tourism / man_made / historic / emergency /
+       highway / office の9属性に分かれて入る。 */
+    const sbStationLayerIds = ['symbol-transit-station', 'symbol-transit-subway',
+                               'symbol-transit-lightrail', 'symbol-transit-tram',
+                               'symbol-transit-airport', 'symbol-transit-airfield'];
+    const sbBusLayerIds     = ['symbol-transit-bus'];
+    /* pois から落とす種別。excludedPoiClasses の12種のうち Shortbread に存在するのは
+       この4つだけで、parking・fuel・car_repair・motorcycle・charging_station・entrance は
+       そもそも配信されない（仕様書 Features の全135件と照合済み）。
+       railway・bus は pois ではなく public_transport 側なので、ここには要らない。 */
+    const sbExcludedPois = [['shop', 'car'], ['amenity', 'car_rental'],
+                            ['amenity', 'car_wash'], ['amenity', 'telephone']];
+    /* 水域・緑地の塗り替え対象。Liberty と同じく id の部分一致で拾うと、
+       陸地色で描かれている water-dam-area・water-pier-area まで水色になり、
+       site-parking・site-bicycleparking（駐車場）が緑になるので、名指しで指定する。 */
+    const sbWaterFillIds = ['water-ocean', 'water-area', 'water-area-river', 'water-area-small'];
+    const sbGreenFillIds = ['land-park', 'land-garden', 'land-grass', 'land-forest',
+                            'land-vegetation', 'land-leisure'];
+    /* 鉄道。:outline（縁取り）と -service（側線）は太らせず、本線だけ強調する。 */
+    const sbRailLayerIds = ['transport-rail', 'tunnel-transport-rail', 'bridge-transport-rail',
+                            'transport-lightrail', 'tunnel-transport-lightrail', 'bridge-transport-lightrail',
+                            'transport-monorail', 'tunnel-transport-monorail', 'bridge-transport-monorail'];
+
     map.once('style.load', () => {
         const allLayers = map.getStyle().layers;
         if (!allLayers) return;
+        if (isOsmVector) tuneShortbreadStyle(allLayers);
+        else             tuneLibertyStyle(allLayers);
+    });
 
+    /* OpenFreeMap Liberty（OpenMapTiles スキーマ）用の調整。 */
+    function tuneLibertyStyle(allLayers) {
         // symbol-sort-key 優先度定義（小さいほど優先表示）
         // -100: 主要駅  0: バス停  100: 一般POI・地名  200: 国道シールド・道路名
         allLayers.forEach(layer => {
@@ -5326,7 +5373,90 @@ map.on('zoomend', () => { isZooming = false; });
                 }
             } catch (e) {}
         });
-    });
+    }
+
+    /* OSM公式ベクター（Shortbread ＋ Colorful）用の調整。
+       symbol-sort-key の意味付けは Liberty 側と揃える（0:駅 / 100:一般POI・地名 /
+       200:道路名・シールド）。Liberty では駅の序列に rank を使っていたが、
+       Shortbread に rank は無いので固定値にする。
+       text-field は書き換えない。Colorful の POI はアイコンのみでラベルを持たず、
+       住所レイヤーは {housenumber}、シールドは {ref} を出しているため、
+       name で上書きすると表示が壊れる。日本国内は name がそのまま日本語なので
+       Liberty 側のような name:ja へのフォールバックも要らない。 */
+    function tuneShortbreadStyle(allLayers) {
+        const stationColor = '#0D47A1';
+        const busColor     = '#2E7D32';
+        const busFade      = ['interpolate', ['linear'], ['zoom'], 13, 0, 14, 1];
+        const notExcludedPoi = ['!', ['any'].concat(sbExcludedPois.map(([k, v]) => ['==', ['get', k], v]))];
+        allLayers.forEach(layer => {
+            if (ownLayerPrefixes.some(p => layer.id.startsWith(p))) return;
+            try {
+                // 国道シールド・道路名は最背面（駅より必ず背面）
+                if (layer.id.includes('shield') || layer['source-layer'] === 'street_labels') {
+                    map.setLayoutProperty(layer.id, 'symbol-sort-key', 200);
+                    map.setLayoutProperty(layer.id, 'text-ignore-placement', false);
+                    map.setLayoutProperty(layer.id, 'icon-ignore-placement', false);
+                    return;
+                }
+                // 駅：常に最前面、青字。アイコンはSDFなので icon-color で色が乗る
+                if (sbStationLayerIds.includes(layer.id)) {
+                    map.setLayoutProperty(layer.id, 'symbol-sort-key', 0);
+                    map.setLayoutProperty(layer.id, 'text-allow-overlap', true);
+                    map.setLayoutProperty(layer.id, 'icon-allow-overlap', true);
+                    map.setLayoutProperty(layer.id, 'text-ignore-placement', true);
+                    map.setLayoutProperty(layer.id, 'icon-ignore-placement', true);
+                    map.setLayoutProperty(layer.id, 'text-size', 12);
+                    map.setLayerZoomRange(layer.id, 1, 24);
+                    map.setPaintProperty(layer.id, 'text-color', stationColor);
+                    map.setPaintProperty(layer.id, 'icon-color', stationColor);
+                    map.setPaintProperty(layer.id, 'text-halo-color', '#FFFFFF');
+                    map.setPaintProperty(layer.id, 'text-halo-width', 2.5);
+                    map.setPaintProperty(layer.id, 'icon-opacity', 1);
+                    return;
+                }
+                /* バス停：駅より必ず後退させ、z13→14でフェードインさせる。
+                   Shortbread の bus_stop は z14 以上にしか入らないので実質 z14 から出る。 */
+                if (sbBusLayerIds.includes(layer.id)) {
+                    map.setLayoutProperty(layer.id, 'symbol-sort-key', 1000);
+                    map.setLayoutProperty(layer.id, 'text-size', 11);
+                    map.setLayoutProperty(layer.id, 'text-anchor', 'left');
+                    map.setLayoutProperty(layer.id, 'text-offset', [0.9, 0]);
+                    map.setLayerZoomRange(layer.id, 1, 24);
+                    map.setPaintProperty(layer.id, 'text-color', busColor);
+                    map.setPaintProperty(layer.id, 'icon-color', busColor);
+                    map.setPaintProperty(layer.id, 'text-halo-color', '#FFFFFF');
+                    map.setPaintProperty(layer.id, 'text-halo-width', 1.0);
+                    map.setPaintProperty(layer.id, 'text-opacity', busFade);
+                    map.setPaintProperty(layer.id, 'icon-opacity', busFade);
+                    return;
+                }
+                // 一般POI：不要な種別を落とす（既存フィルターは残して AND で足す）
+                if (layer['source-layer'] === 'pois') {
+                    const existingFilter = map.getFilter(layer.id);
+                    map.setFilter(layer.id, existingFilter
+                        ? ['all', existingFilter, notExcludedPoi]
+                        : notExcludedPoi);
+                }
+                // 駅以外の全シンボル（一般POI・地名）は駅より背面
+                if (layer.type === 'symbol') {
+                    map.setLayoutProperty(layer.id, 'symbol-sort-key', 100);
+                    map.setLayoutProperty(layer.id, 'text-ignore-placement', false);
+                    map.setLayoutProperty(layer.id, 'icon-ignore-placement', false);
+                }
+                if (layer.type === 'fill') {
+                    if (sbWaterFillIds.includes(layer.id))      map.setPaintProperty(layer.id, 'fill-color', '#AAD3DF');
+                    else if (sbGreenFillIds.includes(layer.id)) map.setPaintProperty(layer.id, 'fill-color', '#C8FACC');
+                }
+                // 鉄道線路の強調表示
+                if (sbRailLayerIds.includes(layer.id)) {
+                    map.setPaintProperty(layer.id, 'line-color', '#1565C0');
+                    map.setPaintProperty(layer.id, 'line-width', 0.7);
+                    map.setPaintProperty(layer.id, 'line-opacity', 0.9);
+                    map.setLayerZoomRange(layer.id, 1, 24);
+                }
+            } catch (e) {}
+        });
+    }
 
     map.on('load', () => {
         // 検索ピン（GLレイヤー）
@@ -5680,7 +5810,7 @@ map.on('zoomend', () => { isZooming = false; });
                 } else {
                     map.addLayer({ id: `${conf.id}-cluster`, type: 'circle', source: conf.id, filter: ['has', 'point_count'], paint: { 'circle-color': conf.clusterColor, 'circle-radius': 20 }, layout: { 'visibility': initVis } });
                 }
-                map.addLayer({ id: `${conf.id}-cluster-count`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'text-field': '{point_count_abbreviated}', 'text-size': 12, 'text-font': ['Noto Sans Bold'], 'visibility': initVis }, paint: { 'text-color': '#FFFFFF' } });
+                map.addLayer({ id: `${conf.id}-cluster-count`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'text-field': '{point_count_abbreviated}', 'text-size': 12, 'text-font': [FONT_BOLD], 'visibility': initVis }, paint: { 'text-color': '#FFFFFF' } });
                 if (conf.type === 'michi') {
                     /* 道の駅だけは丸ではなく道の駅紋章そのままの角丸四角。板(michi-plate-icon)も
                        図柄(michi-icon)もSDFで、色は icon-color から与える点は他の種別と同じ。
@@ -5716,7 +5846,7 @@ map.on('zoomend', () => { isZooming = false; });
                         layout: {
                             'text-field': labelField,
                             'text-size': 10,
-                            'text-font': ['Noto Sans Regular'],
+                            'text-font': [FONT_REGULAR],
                             'text-anchor': 'top',
                             'text-offset': [0, 1.2],
                             'text-allow-overlap': false,
