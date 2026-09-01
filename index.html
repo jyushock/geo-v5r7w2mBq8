@@ -2995,8 +2995,8 @@
          osm         : OSM公式ベクター（Shortbread v1 スキーマ ＋ VersaTiles Colorful）
        2026-09-01 に osm をラスター（tile.openstreetmap.org/{z}/{x}/{y}.png）から差し替えた。
        拡大時のボヤケを無くし、両方の選択肢をベクターで揃えるため。
-       スキーマが違うとレイヤーIDも属性名も一致しない（rank・class・name:ja は
-       Shortbread に無い）ので、style.load の調整は isOsmVector で丸ごと分岐する。
+       スキーマが違うとレイヤーIDも属性名も一致しない（rank と class は Shortbread に
+       無い）ので、style.load の調整は isOsmVector で丸ごと分岐する。
 
        osm のスタイルJSONを配信元から直接読んではならない。
        vector.openstreetmap.org の /styles/ 配下（style.json・グリフ・スプライト）は
@@ -5257,7 +5257,7 @@ map.on('zoomend', () => { isZooming = false; });
          poi_transit         → symbol-transit-*（駅は種別ごとに分割。バス停も独立レイヤー）
          poi_r1/r7/r20       → source-layer 'pois' の poi-amenity ほか9レイヤー
          transportation_name → source-layer 'street_labels'
-       Shortbread には rank も class も name:ja も無い。POI の種別は class ではなく
+       Shortbread に rank と class は無い。POI の種別は class ではなく
        amenity / shop / leisure / tourism / man_made / historic / emergency /
        highway / office の9属性に分かれて入る。 */
     const sbStationLayerIds = ['symbol-transit-station', 'symbol-transit-subway',
@@ -5386,8 +5386,12 @@ map.on('zoomend', () => { isZooming = false; });
        Shortbread に rank は無いので固定値にする。
        text-field は書き換えない。Colorful の POI はアイコンのみでラベルを持たず、
        住所レイヤーは {housenumber}、シールドは {ref} を出しているため、
-       name で上書きすると表示が壊れる。日本国内は name がそのまま日本語なので
-       Liberty 側のような name:ja へのフォールバックも要らない。 */
+       name で上書きすると表示が壊れる。日本国内は name がそのまま日本語なので、
+       Liberty 側のような name:ja へのフォールバックも要らない。
+       なお配信されるタイルには name_ja / name_en / name_zh など多言語の名前が入っている
+       （Shortbread 仕様書は name・name_en・name_de しか挙げていないが、OSM の配信は
+       それより多い。2026-09-02 に実タイルを復号して確認。日本の9タイル12,058件のうち
+       name が67%、name_ja が21%）。多言語表示をやるならこの項目を使う。 */
     function tuneShortbreadStyle(allLayers) {
         /* スプライトは style.json に書けない。MapLibre 3.6.2 の normalizeSpriteURL が
            `scheme://host` 形式の絶対URLしか受け付けず（正規表現 /^(\w+):\/\/.../）、
