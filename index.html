@@ -5389,6 +5389,17 @@ map.on('zoomend', () => { isZooming = false; });
        name で上書きすると表示が壊れる。日本国内は name がそのまま日本語なので
        Liberty 側のような name:ja へのフォールバックも要らない。 */
     function tuneShortbreadStyle(allLayers) {
+        /* スプライトは style.json に書けない。MapLibre 3.6.2 の normalizeSpriteURL が
+           `scheme://host` 形式の絶対URLしか受け付けず（正規表現 /^(\w+):\/\/.../）、
+           相対パスやルート絶対パスだと Unable to parse URL で落ちてスタイルが完成しない。
+           配信オリジンは localhost と本番で変わるので JSON に直書きもできない。
+           そこで style.json からは sprite を外し、ここで location 基準の絶対URLにして足す。 */
+        try {
+            if (!map.getSprite().some(s => s.id === 'basics')) {
+                map.addSprite('basics', new URL('osm-shortbread/sprites/sprites', location.href).href);
+            }
+        } catch (e) { console.warn('[sprite]', e); }
+
         const stationColor = '#0D47A1';
         const busColor     = '#2E7D32';
         const busFade      = ['interpolate', ['linear'], ['zoom'], 13, 0, 14, 1];
