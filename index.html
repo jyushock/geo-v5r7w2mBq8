@@ -2996,16 +2996,21 @@
        2026-09-01 に osm をラスター（tile.openstreetmap.org/{z}/{x}/{y}.png）から差し替えた。
        拡大時のボヤケを無くし、両方の選択肢をベクターで揃えるため。
        スキーマが違うとレイヤーIDも属性名も一致しない（rank・class・name:ja は
-       Shortbread に無い）ので、style.load の調整は isOsmVector で丸ごと分岐する。 */
+       Shortbread に無い）ので、style.load の調整は isOsmVector で丸ごと分岐する。
+
+       osm のスタイルJSONを配信元から直接読んではならない。
+       vector.openstreetmap.org の /styles/ 配下（style.json・グリフ・スプライト）は
+       CORS が localhost と www.openstreetmap.org にしか開いておらず、本番オリジンには
+       Access-Control-Allow-Origin が返らずブロックされる（2026-09-02 に実測）。
+       localhost では通ってしまうため、ローカル配信での確認だけでは気付けない。
+       そこで style.json とスプライトを osm-shortbread/ に取り込み、グリフは CORS が
+       * の OpenFreeMap に振ってある（生成手順は GetTabelog の README を参照）。
+       タイル本体（*.mvt）だけは ACAO が * なので配信元から直接読む。 */
     const mapTileSource = storeGet('mapTileSource') || 'openfreemap';
     const isOsmVector   = mapTileSource === 'osm';
     const mapStyle = isOsmVector
-        ? 'https://vector.openstreetmap.org/styles/shortbread/colorful.json'
+        ? './osm-shortbread/style.json'
         : 'https://tiles.openfreemap.org/styles/liberty';
-    /* 自前のラベルが使うフォントスタック名。配信元ごとに命名が違い、取り違えると
-       グリフが404になって文字が丸ごと消える（OSM側に 'Noto Sans Regular' は無い）。 */
-    const FONT_REGULAR = isOsmVector ? 'noto_sans_regular' : 'Noto Sans Regular';
-    const FONT_BOLD    = isOsmVector ? 'noto_sans_bold'    : 'Noto Sans Bold';
     const map = new maplibregl.Map({
         container: 'map',
         style: mapStyle,
@@ -5810,7 +5815,7 @@ map.on('zoomend', () => { isZooming = false; });
                 } else {
                     map.addLayer({ id: `${conf.id}-cluster`, type: 'circle', source: conf.id, filter: ['has', 'point_count'], paint: { 'circle-color': conf.clusterColor, 'circle-radius': 20 }, layout: { 'visibility': initVis } });
                 }
-                map.addLayer({ id: `${conf.id}-cluster-count`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'text-field': '{point_count_abbreviated}', 'text-size': 12, 'text-font': [FONT_BOLD], 'visibility': initVis }, paint: { 'text-color': '#FFFFFF' } });
+                map.addLayer({ id: `${conf.id}-cluster-count`, type: 'symbol', source: conf.id, filter: ['has', 'point_count'], layout: { 'text-field': '{point_count_abbreviated}', 'text-size': 12, 'text-font': ['Noto Sans Bold'], 'visibility': initVis }, paint: { 'text-color': '#FFFFFF' } });
                 if (conf.type === 'michi') {
                     /* 道の駅だけは丸ではなく道の駅紋章そのままの角丸四角。板(michi-plate-icon)も
                        図柄(michi-icon)もSDFで、色は icon-color から与える点は他の種別と同じ。
@@ -5846,7 +5851,7 @@ map.on('zoomend', () => { isZooming = false; });
                         layout: {
                             'text-field': labelField,
                             'text-size': 10,
-                            'text-font': [FONT_REGULAR],
+                            'text-font': ['Noto Sans Regular'],
                             'text-anchor': 'top',
                             'text-offset': [0, 1.2],
                             'text-allow-overlap': false,
