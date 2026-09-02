@@ -1777,7 +1777,7 @@
         <div style="border-top:1px solid #f0f0f0;"></div>
         <div style="display:flex;gap:12px;padding:8px 16px 10px;align-items:flex-end;">
             <div style="display:flex;flex-direction:column;gap:4px;flex:1;">
-                <span style="font-size:11px;color:#888;">地図タイル</span>
+                <span style="font-size:11px;color:#888;">地図タイル（端末ごと）</span>
                 <select id="tile-source-select" onchange="onTileSourceChange(this.value)" style="font-size:13px;padding:4px 6px;border:1px solid #ddd;border-radius:6px;background:white;">
                     <option value="openfreemap">OpenFreeMap</option>
                     <option value="osm">OpenStreetMap</option>
@@ -2089,7 +2089,8 @@
             <div class="fxp-sec">参加した端末</div>
             <div id="sync-joined"></div>
             <p class="fxp-note">追加した端末とは、お気に入りと表示設定がこれ以降ずっと共有されます。
-                やめるときは「端末の管理」から外します。地図の表示位置だけは端末ごとに別々のままです。</p>
+                やめるときは「端末の管理」から外します。
+                地図の表示位置と地図タイルは、端末ごとに別々のままです。</p>
             <div class="fxp-sec">コードを受け取る側</div>
             <div style="padding:2px 16px 10px;display:flex;gap:8px;">
                 <input id="sync-join-input" type="text" inputmode="latin" autocomplete="off"
@@ -2282,14 +2283,21 @@
          ・ログイン画面は無い。最初にお気に入りか表示設定を保存した時点で、サーバーが
            無記名のキーを発行して HttpOnly Cookie に入れる（/api/enroll）
          ・localStorage が正。画面は今までどおり即座に立ち上がり、送受信は裏で回す
-         ・サーバー上のキーは4つ。favorites / settingsState / prefs は全端末で共有し、
-           mapState だけ端末ごと（端末によって意味が違うため）
+         ・サーバー上のキーは5つ。favorites / settingsState / prefs は全端末で共有し、
+           mapState と mapTileSource は端末ごと（端末によって意味が違うため）
          ・送信には rev（サーバー側の更新回数）を添える。食い違えば取り込んでから送り直す
 
        競合したときにどちらを採るか:
          favorites … 項目ごとの at で新しいほうを採って混ぜる（墓標があるので削除も伝わる）
          それ以外  … この端末の値を採る。ユーザーがいま操作した端末だから */
-    const SYNC_PREFS_KEYS = ['mapTileSource', 'hotelRadius', 'hotelSort', 'travelMode', 'nearbyTypeFilterOff'];
+    const SYNC_PREFS_KEYS = ['hotelRadius', 'hotelSort', 'travelMode', 'nearbyTypeFilterOff'];
+    /* 端末ごとに持つキー。scope:'device' で送るので、他の端末には出ない。
+         mapState      … PWA再起動時の復元用。共有すると、PCで見ていた位置に
+                         スマホの起動位置が引っ張られる
+         mapTileSource … 端末によって向き不向きが違う（回線の速さも描画の重さも端末ごとに違う）。
+                         共有していると、PCで配信元を変えた瞬間にスマホまで巻き込まれる
+       どちらもサーバーには保存する。ただし device_id 付きなので、他の端末には配られない。 */
+    const SYNC_DEVICE_KEYS = ['mapState', 'mapTileSource'];
     const SYNC_META_KEY = 'syncMeta';        // 同期の覚え書き。バックアップの対象には入れない
     const SYNC_KEEPALIVE_MAX = 60000;        // pagehide で送るときの本文の上限（ブラウザ側の制限）
 
@@ -2315,7 +2323,8 @@
     function syncSetRev(k, v) { const rev = syncMeta().rev || {}; rev[k] = Number(v) || 0; syncMetaSet({ rev }); }
 
     function syncServerKey(key) {
-        if (key === 'favorites' || key === 'settingsState' || key === 'mapState') return key;
+        if (key === 'favorites' || key === 'settingsState') return key;
+        if (SYNC_DEVICE_KEYS.includes(key)) return key;
         return SYNC_PREFS_KEYS.includes(key) ? 'prefs' : null;
     }
     function syncValueOf(sk) {
@@ -2413,7 +2422,7 @@
             syncDirty.clear();
             const items = keys.map(sk => ({
                 key: sk, value: syncValueOf(sk), baseRev: syncRev(sk),
-                scope: sk === 'mapState' ? 'device' : 'shared',
+                scope: SYNC_DEVICE_KEYS.includes(sk) ? 'device' : 'shared',
             })).filter(it => typeof it.value === 'string');
             if (!items.length) return;
             const body = JSON.stringify({ items });
@@ -2481,7 +2490,7 @@
     /* サーバーから受け取った分をローカルへ反映する。GET の応答と、参加（join）の応答の
        どちらもこの形で返るので、取り込みは1か所にまとめてある。 */
     function syncApplyKeys(keys, allowReload) {
-        let reload = false;
+        let reloadShared = false, reloadDevice = false;
         for (const [sk, r] of Object.entries(keys || {})) {
             const rev = Number(r.rev) || 0;
             if (rev <= syncRev(sk)) continue;
@@ -2496,17 +2505,23 @@
             else if (syncApplyValue(sk, r.value)) {
                 syncSetRev(sk, rev);
                 // 地図位置は起動後に動かすと操作の邪魔になるので、効くのは次回起動から
-                if (sk === 'settingsState' || sk === 'prefs') reload = true;
+                if (sk === 'settingsState' || sk === 'prefs') reloadShared = true;
+                /* 地図タイルは端末ごとなので、ここへ届くのは同じ端末の別の画面
+                   （ホーム画面のアプリとブラウザのタブ。Cookie が同じなので同じ端末になる）で
+                   変えたときだけ。起動直後なら読み直して揃えるが、知らせは出さない。
+                   変えたのは他の端末ではないため、下のトーストの文面が合わない。 */
+                else if (sk === 'mapTileSource') reloadDevice = true;
             }
         }
         syncUpdateUi();
+        const reload = reloadShared || reloadDevice;
         /* 表示設定は画面の広い範囲に効くので、読み込み直後の1回だけ読み直して揃える
            （繰り返さないよう、このタブでは1回に制限する）。
            復帰したときは画面を作り直さず、受け取ったことだけ知らせて次の起動に委ねる。 */
         if (reload && allowReload && !sessionStorage.getItem('syncReloaded')) {
             sessionStorage.setItem('syncReloaded', '1');
             location.reload();
-        } else if (reload && !allowReload) {
+        } else if (reloadShared && !allowReload) {
             showToast('他の端末で表示設定が変わりました。次に開き直したときに反映されます');
         }
         return reload;
@@ -2700,7 +2715,7 @@
         const hasLocal = !!storeGet('favorites');
         if (!confirm('この端末を追加します。\n\nお気に入りと表示設定が、もう一方の端末と共有されます。\n'
             + (hasLocal ? 'この端末に今あるお気に入りは、共有側と混ぜて残します。\n' : '')
-            + '地図の表示位置だけは端末ごとに別々のままです。\n\n進めますか？')) return;
+            + '地図の表示位置と地図タイルは、端末ごとに別々のままです。\n\n進めますか？')) return;
         try {
             const res = await syncFetch('join', { method: 'POST', body: JSON.stringify({ code }) });
             if (res.status === 404) { showToast('このコードは使えません。追加する側の画面を開き直してください'); return; }
