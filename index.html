@@ -10104,10 +10104,10 @@ map.on('zoomend', () => { isZooming = false; });
     }
 
     /* ══ お気に入りの書き出し ═════════════════════════════════════════════
-       TravelPlan の入力ファイル仕様（sample/input-format.md 版1.1）の TSV を作る。
-       仕様が必須とするのは name / lat / lng の3列だけで、任意列は note と id。
-       これに address を足してある（版1.3 の仕様に無い列だが、§3 が「仕様に無い列は
-       無視するだけでエラーにしない」と定めているので、受け側が対応するまでは素通りする）。
+       TravelPlan の入力ファイル仕様（sample/input-format.md 版1.5）の TSV を作る。
+       仕様が必須とするのは name / lat / lng の3列だけで、任意列は address / note / id。
+       address は版1.4（2026-08-25）で正式な任意列になった。住所はこの列だけに入れ、
+       note へは混ぜない（§3.2。理由は favExportNote に書いた）。
        版1.1 で role / stay / day / priority が削除された（「ファイルはその場所の属性だけを
        持ち、旅程の都合はアプリ上で操作する」という設計原則が入ったため）ので、
        出発地・滞在時間・優先度はここでは一切作らない。
@@ -10142,10 +10142,15 @@ map.on('zoomend', () => { isZooming = false; });
     function favTsvCell(s) {
         return String(s == null ? '' : s).replace(/[\t\r\n]+/g, ' ').trim();
     }
+    /* note 列。種別の呼び名（「お城」「マンホール蓋」）だけを入れる。
+       住所は address 列（favExportAddress）へ出すので、ここへは混ぜない。仕様 §3.2 が
+       「住所を note に混ぜて出力しないでください。note は自由記述で、アプリは中身を
+       住所として解釈しません」と定めている。混ぜると受け側は note をそのまま出すため、
+       TravelPlan の計画表の2列目が「お城 / 千葉県千葉市中央区亥鼻一丁目」になる。
+       address 列が入る前は住所の置き場が note しか無かったので足していた。
+       e2c441c で列を足したとき、この足し込みを外し忘れていた。 */
     function favExportNote(item) {
-        const label = (typeConfig[item.type] || {}).label || '';
-        const addr = favExportAddress(item);
-        return addr ? `${label} / ${addr}` : label;
+        return (typeConfig[item.type] || {}).label || '';
     }
     /* address 列。情報シートの住所の行（buildSheetHtml の osKv('住所', …)）に出るものと
        同じ文字列を入れる。properties.address をそのまま出せば揃うが、2種別だけ違う。
