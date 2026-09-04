@@ -3232,6 +3232,8 @@ map.on('zoomend', () => { isZooming = false; });
                     map.setLayoutProperty(layer.id, 'icon-ignore-placement', false);
                     // poi_r系から不要POIを除外（値は実タイルで確認。excludedPoiClasses の定義を参照）
                     if (['poi_r1', 'poi_r7', 'poi_r20'].includes(layer.id)) {
+                        // 一般POIも Liberty は Italic 指定。駅・バス停と同じ立体に揃える
+                        map.setLayoutProperty(layer.id, 'text-font', ['Noto Sans Regular']);
                         const existingFilter = map.getFilter(layer.id) || ['all'];
                         map.setFilter(layer.id, ['all',
                             existingFilter,
