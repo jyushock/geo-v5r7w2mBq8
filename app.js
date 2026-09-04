@@ -3140,6 +3140,10 @@ map.on('zoomend', () => { isZooming = false; });
                     ['match', ['get', 'class'], ['railway', 'airport'], true, false]]);
                 map.setLayoutProperty(id, 'text-field', ['coalesce', ['get', 'name:ja'], ['get', 'name']]);
                 map.setLayoutProperty(id, 'symbol-sort-key', ['get', 'rank']);
+                /* Liberty の poi_transit は text-font が ['Noto Sans Italic'] で、駅名も
+                   バス停名も斜体になる。Shortbread 側は42レイヤーとも Regular なので、
+                   配信元を切り替えると字体が変わっていた。立体に揃える。 */
+                map.setLayoutProperty(id, 'text-font', ['Noto Sans Regular']);
                 map.setLayoutProperty(id, 'text-allow-overlap', true);
                 map.setLayoutProperty(id, 'icon-allow-overlap', true);
                 map.setLayoutProperty(id, 'text-ignore-placement', false);
@@ -3171,6 +3175,7 @@ map.on('zoomend', () => { isZooming = false; });
                 map.setFilter(id, ['all', ['has', 'name'], ['==', ['get', 'class'], 'bus']]);
                 map.setLayoutProperty(id, 'text-field', ['coalesce', ['get', 'name:ja'], ['get', 'name']]);
                 map.setLayoutProperty(id, 'symbol-sort-key', ['+', ['get', 'rank'], 1000]);
+                map.setLayoutProperty(id, 'text-font', ['Noto Sans Regular']);
                 map.setLayoutProperty(id, 'text-anchor', 'left');
                 map.setLayoutProperty(id, 'text-offset', [0.9, 0]);
                 map.setLayoutProperty(id, 'icon-size', 0.8);
