@@ -8,12 +8,14 @@
  *
  * 更新方法: デプロイ時に下の VERSION を上げると旧キャッシュを破棄して入れ替わる。
  */
-const VERSION = 'v5';   // v5: /api/* をキャッシュ対象から外した（古い応答を掴む不具合）
+const VERSION = 'v6';   // v6: 本体を app.js に切り出し（maplibre 6系のESM化に伴う）
 const STATIC_CACHE  = `static-${VERSION}`;
 const RUNTIME_CACHE = `runtime-${VERSION}`;
 
 // オフライン時のナビゲーション用に最低限プリキャッシュ
-const PRECACHE = ['./', './index.html', './manifest.json'];
+/* app.js は本体そのもの。index.html だけあっても地図が出ないので、
+   オフライン初回でも動くようプリキャッシュに含める。 */
+const PRECACHE = ['./', './index.html', './app.js', './manifest.json'];
 
 // キャッシュ対象に含めてよいCDN（ライブラリのみ）
 const CACHEABLE_CDN = ['https://unpkg.com/'];
