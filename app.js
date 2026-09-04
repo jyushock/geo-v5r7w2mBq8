@@ -798,6 +798,32 @@
     });
     map.addControl(new maplibregl.AttributionControl({ compact: true }), 'bottom-right');
 
+    /* スプライトに無いアイコンの肩代わり。Liberty のスプライト264個に対し、
+       実際に配信される POI の class のうち26種（日本の z14 9枚で4,748件、うち名前あり
+       2,405件。最多は office の2,027件）にアイコンが無い。放っておくと文字だけが並び、
+       コンソールに Image "office" could not be loaded が種類ごとに出る。
+       maplibre 6.0.0 の setMissingStyleImageResolver で、欠けたぶんに共通の点を入れる。
+       ノイズになる種別（車止め・門・駐輪場など）はそもそも tuneLibertyStyle 側の
+       excludedPoiClasses で落としてあるので、ここへ来るのは office・atm・
+       スポーツ施設・フェリー乗り場のような、出したいが絵の無いものだけ。 */
+    function genericPoiIcon() {
+        const px = 16, canvas = document.createElement('canvas');
+        canvas.width = canvas.height = px;
+        const g = canvas.getContext('2d');
+        g.beginPath(); g.arc(px / 2, px / 2, 5, 0, Math.PI * 2);
+        g.fillStyle = '#FFFFFF'; g.fill();          // 白フチ（背景に埋もれないように）
+        g.beginPath(); g.arc(px / 2, px / 2, 3.5, 0, Math.PI * 2);
+        g.fillStyle = '#8A8A8A'; g.fill();          // 本体はラベルの文字色に寄せた灰
+        return g.getImageData(0, 0, px, px);
+    }
+    if (map.setMissingStyleImageResolver) {
+        map.setMissingStyleImageResolver((id) => {
+            if (!id || map.hasImage(id)) return;
+            // pixelRatio 2 なので画面上は 8x8。既存のPOIアイコン(15x15前後)より控えめに出る
+            map.addImage(id, genericPoiIcon(), { pixelRatio: 2 });
+        });
+    }
+
     // ダブルタップズームをアニメーション付きに統一（iOS対応）
     // デフォルトのdoubleClickZoomを無効化し、touchend自前検出＋dblclickの両方でeaseTo
     map.doubleClickZoom.disable();
@@ -3014,17 +3040,28 @@ map.on('zoomend', () => { isZooming = false; });
         }
     }
 
-    // スタイル調整：日本語化・駅強調・POI整理・水域色・3D建物
+    // スタイル調整：日本語化・駅強調・POI整理・水域色
     const ownLayerPrefixes = ['shops-', 'castles-', 'michi-', 'manholes-', 'mhcards-'];
-    // poi_transitのみが駅・交通系POIのレイヤー（公式スタイルJSON確認済み）
-    // poi_r1/r7/r20は一般POI（minzoom15-17）であり駅データは含まれない
-    const stationLayerIds  = ['poi_transit'];
-    const busLayerIds      = ['poi_transit'];
-    // poi_r系から除外するclass（実データ確認済み）
-    // 元のcarSubclasses + entrance・telephone（地図ノイズ）
-    // poi_r系から除外するclass（実データ確認済み）
-    // railway・busはpoi_transitと重複するため除外
-    const excludedPoiClasses = ['parking', 'fuel', 'car_dealer', 'car_rental', 'car_repair', 'car_wash', 'motorcycle', 'charging_station', 'entrance', 'telephone', 'railway', 'bus'];
+    /* Liberty では駅もバス停も poi_transit の1枚に同居している。駅だけ衝突回避を
+       外したいので、駅用のレイヤーを複製して元の1枚はバス停専用にする（下記 tuneLibertyStyle）。 */
+    const busLayerId     = 'poi_transit';
+    const stationLayerId = 'poi_transit_station';
+    /* poi_r系から落とす class。値は実タイル（日本の z14 9枚・POI 42,487件）を
+       復号して確認したもので、仕様書ではなく配信されている中身に合わせている。
+       以前ここにあった car_dealer / car_rental / car_wash / car_repair / motorcycle /
+       charging_station は OpenMapTiles の class に存在せず、6つとも空振りだった。
+       カーディーラーと整備工場は class='car'（subclass が car / car_repair / car_parts）。 */
+    const excludedPoiClasses = [
+        // 車まわり
+        'parking', 'fuel', 'car',
+        // 駅・バス停は poi_transit 側と重複する
+        'railway', 'bus',
+        /* 地図の道具立て。アイコンがスプライトに無いうえ、名前もほとんど付かない
+           （実タイルで bollard 1,117件は名前0件、cycle_barrier 67件も0件）。 */
+        'entrance', 'telephone', 'bollard', 'gate', 'cycle_barrier', 'lift_gate', 'stile',
+        'toll_booth', 'bicycle_parking', 'motorcycle_parking', 'recycling', 'brownfield',
+        'reservoir', 'basin',
+    ];
     const stationSubclasses = ['station', 'halt', 'subway', 'tram_stop', 'light_rail', 'stop', 'stop_position', 'platform', 'monorail', 'funicular', 'bus_station', 'bus_stop'];
 
     /* ===== OSM公式ベクター（Shortbread v1 ＋ VersaTiles Colorful）用 =====
@@ -3040,9 +3077,11 @@ map.on('zoomend', () => { isZooming = false; });
                                'symbol-transit-lightrail', 'symbol-transit-tram',
                                'symbol-transit-airport', 'symbol-transit-airfield'];
     const sbBusLayerIds     = ['symbol-transit-bus'];
-    /* pois から落とす種別。excludedPoiClasses の12種のうち配信されているのはこの5つ。
-       parking・car_repair・motorcycle・charging_station・entrance は pois に入らない
-       （parking は sites レイヤーのポリゴンで、ラベルは持たない）。
+    /* pois から落とす種別。Liberty 側の excludedPoiClasses と役割は同じだが、
+       スキーマが違うので中身は揃わない。ここに要るのは車まわりの5つだけ。
+       parking・entrance は pois に入らない（parking は sites レイヤーのポリゴンで
+       ラベルを持たない）。Liberty 側で落としている車止め・門などの道具立てが
+       Shortbread の pois に入るかは未確認で、ここでは触っていない。
        railway・bus は pois ではなく public_transport 側なので、ここには要らない。
 
        判定は仕様書ではなく実タイルで行うこと。Shortbread 1.0 の仕様書に
@@ -3072,8 +3111,90 @@ map.on('zoomend', () => { isZooming = false; });
 
     /* OpenFreeMap Liberty（OpenMapTiles スキーマ）用の調整。 */
     function tuneLibertyStyle(allLayers) {
-        // symbol-sort-key 優先度定義（小さいほど優先表示）
-        // -100: 主要駅  0: バス停  100: 一般POI・地名  200: 国道シールド・道路名
+        /* symbol-sort-key（小さいほど前に出す）
+             駅              : rank そのまま（実データで rank=1 が最上位）
+             バス停          : rank + 1000（駅より必ず後ろ）
+             一般POI・地名   : 100
+             シールド・道路名 : 200 */
+
+        /* 駅とバス停を別レイヤーに分ける。Liberty の poi_transit は駅・バス停・空港が
+           同居する1枚で、ここに text-allow-overlap を付けると駅だけでなくバス停まで
+           衝突回避から外れ、バス停の名前が束になって重なる（z17 東京駅で30件が
+           重なるのを実測）。駅は必ず出したいので、同じ定義を駅専用に複製して
+           そちらにだけ allow-overlap を付け、元の poi_transit はバス停専用にする。 */
+        const transitBase = allLayers.find(l => l.id === busLayerId);
+        if (transitBase && !map.getLayer(stationLayerId)) {
+            const clone = JSON.parse(JSON.stringify(transitBase));
+            clone.id = stationLayerId;
+            try { map.addLayer(clone); } catch (e) { console.warn('[style] 駅レイヤーの複製', e); }
+        }
+
+        /* 駅・空港。allow-overlap は true（重なっても必ず描く）だが ignore-placement は
+           false のままにして、バス停や一般POIが避ける相手としては残す。 */
+        function tuneTransitStation() {
+            const id = stationLayerId;
+            if (!map.getLayer(id)) return;
+            const isRail = ['==', ['get', 'class'], 'railway'];
+            try {
+                map.setFilter(id, ['all', ['has', 'name'],
+                    ['match', ['get', 'class'], ['railway', 'airport'], true, false]]);
+                map.setLayoutProperty(id, 'text-field', ['coalesce', ['get', 'name:ja'], ['get', 'name']]);
+                map.setLayoutProperty(id, 'symbol-sort-key', ['get', 'rank']);
+                map.setLayoutProperty(id, 'text-allow-overlap', true);
+                map.setLayoutProperty(id, 'icon-allow-overlap', true);
+                map.setLayoutProperty(id, 'text-ignore-placement', false);
+                map.setLayoutProperty(id, 'icon-ignore-placement', false);
+                map.setLayoutProperty(id, 'text-anchor', 'top');
+                map.setLayoutProperty(id, 'text-offset', [0, 0.9]);
+                map.setLayoutProperty(id, 'icon-size', 1.0);
+                map.setLayoutProperty(id, 'text-size', 12);
+                map.setLayoutProperty(id, 'visibility', 'visible');
+                map.setLayerZoomRange(id, 1, 24);
+                map.setPaintProperty(id, 'text-color', ['case', isRail, '#0D47A1', '#444444']);
+                map.setPaintProperty(id, 'text-halo-color', '#FFFFFF');
+                map.setPaintProperty(id, 'text-halo-width', 2.5);
+                map.setPaintProperty(id, 'text-opacity', 1);
+                map.setPaintProperty(id, 'icon-opacity', 1);
+            } catch (e) { console.warn('[style] 駅', e); }
+        }
+
+        // バス停。衝突回避は既定のまま（重ならない）。z13→14 でフェードインする。
+        function tuneTransitBus() {
+            const id = busLayerId;
+            if (!map.getLayer(id)) return;
+            /* 以前は ['case', バス停か, ['interpolate', ['linear'], ['zoom'], …], 1] と
+               書いていたため、「zoom 式は step / interpolate の最上位でしか使えない」で
+               MapLibre に丸ごと弾かれ、フェードは一度も効いていなかった。
+               レイヤーがバス停専用になったので素直な zoom 補間で書ける。 */
+            const fade = ['interpolate', ['linear'], ['zoom'], 13, 0, 14, 1];
+            try {
+                map.setFilter(id, ['all', ['has', 'name'], ['==', ['get', 'class'], 'bus']]);
+                map.setLayoutProperty(id, 'text-field', ['coalesce', ['get', 'name:ja'], ['get', 'name']]);
+                map.setLayoutProperty(id, 'symbol-sort-key', ['+', ['get', 'rank'], 1000]);
+                map.setLayoutProperty(id, 'text-anchor', 'left');
+                map.setLayoutProperty(id, 'text-offset', [0.9, 0]);
+                map.setLayoutProperty(id, 'icon-size', 0.8);
+                map.setLayoutProperty(id, 'text-size', 11);
+                map.setLayoutProperty(id, 'visibility', 'visible');
+                map.setLayerZoomRange(id, 1, 24);
+                map.setPaintProperty(id, 'text-color', '#2E7D32');
+                map.setPaintProperty(id, 'text-halo-color', '#FFFFFF');
+                map.setPaintProperty(id, 'text-halo-width', 1.0);
+                map.setPaintProperty(id, 'text-opacity', fade);
+                map.setPaintProperty(id, 'icon-opacity', fade);
+            } catch (e) { console.warn('[style] バス停', e); }
+        }
+
+        tuneTransitStation();
+        tuneTransitBus();
+
+        // 鉄道は本線とハッチ（枕木）で別レイヤーになっている
+        const railLayers = [
+            'tunnel_major_rail', 'road_major_rail', 'bridge_major_rail',
+            'tunnel_transit_rail', 'road_transit_rail', 'bridge_transit_rail'
+        ];
+        const railHatchLayers = railLayers.map(id => id + '_hatching');
+
         allLayers.forEach(layer => {
             const isShield = layer.id.includes('shield');
             const isTransName = layer['source-layer'] === 'transportation_name';
@@ -3083,20 +3204,28 @@ map.on('zoomend', () => { isZooming = false; });
                     map.setLayoutProperty(layer.id, 'symbol-sort-key', 200);
                     map.setLayoutProperty(layer.id, 'text-ignore-placement', false);
                     map.setLayoutProperty(layer.id, 'icon-ignore-placement', false);
+                    /* シールドの3枚は ['<=', ['get','ref_length'], 6] で数値比較していて、
+                       ref_length を持たない地物（東京駅周辺の transportation_name 854件中
+                       611件）を評価するたびに「Expected value to be of type number, but
+                       found null instead」が出る。null との比較は false になるので描画結果は
+                       変わらない。all は短絡評価なので has を前に置いて警告だけ止める。 */
+                    if (isShield) {
+                        const f = map.getFilter(layer.id);
+                        if (f) map.setFilter(layer.id, ['all', ['has', 'ref_length'], f]);
+                    }
                 } catch (e) {}
                 return;
             }
             if (ownLayerPrefixes.some(p => layer.id.startsWith(p))) return;
+            if (layer.id === busLayerId || layer.id === stationLayerId) return;   // 上で設定済み
             try {
                 if (layer.type === 'symbol' && layer.layout && layer.layout['text-field']) {
                     map.setLayoutProperty(layer.id, 'text-field', ['coalesce', ['get', 'name:ja'], ['get', 'name']]);
-                    // 駅レイヤー以外の全シンボルに sort-key=100 を設定（駅より背面）
-                    if (!stationLayerIds.includes(layer.id)) {
-                        map.setLayoutProperty(layer.id, 'symbol-sort-key', 100);
-                        map.setLayoutProperty(layer.id, 'text-ignore-placement', false);
-                        map.setLayoutProperty(layer.id, 'icon-ignore-placement', false);
-                    }
-                    // poi_r系レイヤーから不要POIを除外（実データ確認済み）
+                    // 一般POI・地名は駅より背面
+                    map.setLayoutProperty(layer.id, 'symbol-sort-key', 100);
+                    map.setLayoutProperty(layer.id, 'text-ignore-placement', false);
+                    map.setLayoutProperty(layer.id, 'icon-ignore-placement', false);
+                    // poi_r系から不要POIを除外（値は実タイルで確認。excludedPoiClasses の定義を参照）
                     if (['poi_r1', 'poi_r7', 'poi_r20'].includes(layer.id)) {
                         const existingFilter = map.getFilter(layer.id) || ['all'];
                         map.setFilter(layer.id, ['all',
@@ -3105,56 +3234,32 @@ map.on('zoomend', () => { isZooming = false; });
                         ]);
                     }
                 }
-                if (stationLayerIds.includes(layer.id)) {
-                    // 実データ確認済み: class='railway'(駅), class='bus'(バス停)
-                    // フィルターは実データのclass値に合わせる
-                    map.setFilter(layer.id, ['all',
-                        ['has', 'name'],
-                        ['match', ['get', 'class'], ['railway', 'bus', 'airport'], true, false]
-                    ]);
-                    const isMainStation = ['==', ['get', 'class'], 'railway'];
-                    const isBusStop = ['==', ['get', 'class'], 'bus'];
-                    map.setLayoutProperty(layer.id, 'text-ignore-placement', true);
-                    map.setLayoutProperty(layer.id, 'icon-ignore-placement', true);
-                    // 全駅をoverlap許可し、rankが小さいほど優先（実データでrank=1が主要駅）
-                    map.setLayoutProperty(layer.id, 'text-allow-overlap', true);
-                    map.setLayoutProperty(layer.id, 'icon-allow-overlap', true);
-                    // 駅(railway)はrank値そのまま（1〜数十程度）、バス停は+1000でオフセットして必ず駅より後退
-                    // ※実データ確認済み: busのrankは1〜10以上、railwayのrankは2以上
-                    map.setLayoutProperty(layer.id, 'symbol-sort-key', ['case', isMainStation, ['get', 'rank'], ['+', ['get', 'rank'], 1000]]);
-                    // 駅は上表示、バス停は横表示（公式スタイルJSON準拠）
-                    map.setLayoutProperty(layer.id, 'text-variable-anchor', ['literal', null]);
-                    map.setLayoutProperty(layer.id, 'text-anchor', ['case', isMainStation, 'top', 'left']);
-                    map.setLayoutProperty(layer.id, 'text-offset', ['case', isMainStation, ['literal', [0, 0.9]], ['literal', [0.9, 0]]]);
-                    map.setLayoutProperty(layer.id, 'icon-size', ['case', isMainStation, 1.0, 0.8]);
-                    map.setLayoutProperty(layer.id, 'text-size', ['case', isMainStation, 12, 11]);
-                    map.setLayoutProperty(layer.id, 'visibility', 'visible');
-                    map.setLayerZoomRange(layer.id, 1, 24); 
-                    map.setPaintProperty(layer.id, 'text-color', ['case', isMainStation, '#0D47A1', isBusStop, '#2E7D32', '#444444']);
-                    map.setPaintProperty(layer.id, 'text-halo-color', '#FFFFFF');
-                    map.setPaintProperty(layer.id, 'text-halo-width', ['case', isMainStation, 2.5, 1.0]);
-                    map.setPaintProperty(layer.id, 'text-opacity', ['case', isBusStop,
-                        ['interpolate', ['linear'], ['zoom'], 13, 0, 14, 1],
-                        1
-                    ]);
-                    map.setPaintProperty(layer.id, 'icon-opacity', ['case', isBusStop,
-                        ['interpolate', ['linear'], ['zoom'], 13, 0, 14, 1],
-                        1
-                    ]);
-                }
                 if (layer.type === 'fill') {
                     const lid = layer.id.toLowerCase();
-                    if (lid.includes('water')) map.setPaintProperty(layer.id, 'fill-color', '#AAD3DF');
-                    else if (lid.includes('park') || lid.includes('green') || lid.includes('forest') || lid.includes('wood')) map.setPaintProperty(layer.id, 'fill-color', '#C8FACC');
+                    if (lid.includes('water')) {
+                        map.setPaintProperty(layer.id, 'fill-color', '#AAD3DF');
+                    } else if (['park', 'green', 'grass', 'forest', 'wood'].some(w => lid.includes(w))) {
+                        /* 緑地。以前は grass が語のリストから漏れていて landcover_grass だけ
+                           元の色 rgba(176,213,154) のまま残り、濃さも park 0.7 / wood 0.4 /
+                           grass 0.3 と三者三様だった。色と濃さを揃える。 */
+                        map.setPaintProperty(layer.id, 'fill-color', '#C8FACC');
+                        map.setPaintProperty(layer.id, 'fill-opacity', 0.6);
+                    }
                 }
-                // 鉄道線路の強調表示
-                const railLayers = [
-                    'tunnel_major_rail', 'road_major_rail', 'bridge_major_rail',
-                    'tunnel_transit_rail', 'road_transit_rail', 'bridge_transit_rail'
-                ];
+                /* 鉄道の強調。本線だけ青くすると、枕木のハッチが灰色のまま
+                   z15で3px→z20で8px と太っていき、拡大するほど灰色が勝ってしまう。
+                   ハッチも同じ青にする。本線の幅は 0.7 固定をやめ、引いたときの
+                   見え方（0.7）を保ったまま寄ると太るようにした（固定のままだと z20 で
+                   元スタイルの 2px より細くなる）。 */
                 if (railLayers.includes(layer.id)) {
                     map.setPaintProperty(layer.id, 'line-color', '#1565C0');
-                    map.setPaintProperty(layer.id, 'line-width', 0.7);
+                    map.setPaintProperty(layer.id, 'line-width',
+                        ['interpolate', ['exponential', 1.4], ['zoom'], 11, 0.7, 14, 0.7, 15, 1, 20, 2.5]);
+                    map.setPaintProperty(layer.id, 'line-opacity', 0.9);
+                    map.setLayerZoomRange(layer.id, 1, 24);
+                }
+                if (railHatchLayers.includes(layer.id)) {
+                    map.setPaintProperty(layer.id, 'line-color', '#1565C0');
                     map.setPaintProperty(layer.id, 'line-opacity', 0.9);
                     map.setLayerZoomRange(layer.id, 1, 24);
                 }
