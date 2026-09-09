@@ -6568,6 +6568,57 @@ map.on('zoomend', () => { isZooming = false; });
         nearbyState.cats = [el.dataset.cat];
         execNearbySearch();
     }
+    /* Overpass は本家1台を皆で使うため、IPごとに同時2スロットしか無い（/api/status の
+       "Rate limit: 2"）。混んでいると HTTP 429 を返し、その本文は JSON ではなく
+       XHTML（Error: runtime error: ... rate_limited）。以前はここで res.ok を見ずに
+       res.json() へ渡していたので、近くに駅があっても例外になって
+       「駅情報の取得に失敗しました」で終わっていた。数秒おけば空きが出るので、
+       間を空けて投げ直す（ユーザーが手で2〜3回やり直すと通っていたのはこれ）。
+       クエリ側の timeout を超えたときは HTTP 200 のまま elements が空で remark だけが
+       付くので、これも「駅が無い」ではなく失敗として扱う。 */
+    const OVERPASS_URL = 'https://overpass-api.de/api/interpreter';
+    const OVERPASS_TIMEOUT_S = 20;             // クエリに書くサーバー側の実行時間の上限
+    /* こちらから切る上限。timeout は実行時間だけの制限で、混んでいるときの順番待ちは
+       含まれない（2026-09-09 に timeout:10 のクエリが 16.7 秒かかって 453 件返っている）。
+       待ち時間も込みでこれだけ待って駄目なら切る、という値なので長めに取る。 */
+    const OVERPASS_ABORT_MS = 45000;
+    const OVERPASS_WAIT_MS = [1200, 3000];     // 失敗のたびに待つ時間。要素数＋1回まで投げる
+    const OVERPASS_TRIES = OVERPASS_WAIT_MS.length + 1;
+
+    async function overpassQuery(query, onRetry) {
+        let lastErr = null;
+        for (let i = 0; i < OVERPASS_TRIES; i++) {
+            if (i > 0) {
+                if (onRetry) onRetry(i + 1);
+                await new Promise(r => setTimeout(r, OVERPASS_WAIT_MS[i - 1]));
+            }
+            const ctl = new AbortController();
+            const timer = setTimeout(() => ctl.abort(), OVERPASS_ABORT_MS);
+            try {
+                const res = await fetch(OVERPASS_URL, { method: 'POST', body: query, signal: ctl.signal });
+                if (!res.ok) { lastErr = new Error(`HTTP ${res.status}`); continue; }
+                const data = await res.json();
+                if (data.remark) { lastErr = new Error(data.remark); continue; }
+                return data;
+            } catch (e) {
+                lastErr = e;
+            } finally {
+                clearTimeout(timer);
+            }
+        }
+        throw lastErr || new Error('unknown');
+    }
+
+    /* alert に出す短い理由。次に失敗したときどこで転んだのかが分かる程度に留める。 */
+    function overpassFailText(e) {
+        const m = (e && e.message) || '';
+        if (e && e.name === 'AbortError') return `${OVERPASS_ABORT_MS / 1000}秒待っても応答なし`;
+        if (/rate_limited/.test(m)) return '同時利用の上限';
+        if (/timed out/.test(m)) return '提供元でタイムアウト';
+        if (/^HTTP /.test(m)) return m;
+        return '通信エラー';
+    }
+
     async function execHotelSearch() {
         const item = document.getElementById('hotel-cat-item');
         const iconEl = item.querySelector('.nearby-cat-icon');
@@ -6581,6 +6632,8 @@ map.on('zoomend', () => { isZooming = false; });
             iconEl.innerHTML = savedIconHtml; labelEl.textContent = 'ホテル';
             item.style.pointerEvents = '';
         };
+        // 投げ直している間は黙って待たせない（数秒×2回分の間が空くため）
+        const onRetry = n => { labelEl.textContent = `再検索中… (${n}/${OVERPASS_TRIES})`; };
 
         const newTab = window.open('about:blank', '_blank');
         const center = getSearchCenter();
@@ -6588,28 +6641,35 @@ map.on('zoomend', () => { isZooming = false; });
         const lng = center.lng;
         // 駅探しの範囲も設定の「ホテル検索範囲」に合わせる
         const hotelRadius = storeGet('hotelRadius') || '10000';
-        const stationQuery = `[out:json][timeout:10];node["railway"="station"]["station"!="cable_car"]["station"!="funicular"]["station"!="monorail"](around:${hotelRadius},${lat},${lng});out body;`;
-        let stationName;
+        const stationQuery = `[out:json][timeout:${OVERPASS_TIMEOUT_S}];node["railway"="station"]["station"!="cable_car"]["station"!="funicular"]["station"!="monorail"](around:${hotelRadius},${lat},${lng});out body;`;
+        let data;
         try {
-            const res = await fetch('https://overpass-api.de/api/interpreter', { method: 'POST', body: stationQuery });
-            const data = await res.json();
-            if (!data.elements || data.elements.length === 0) { restore(); return alert(`近くに駅が見つかりませんでした（${hotelRadius / 1000}km圏内）`); }
-            const nearest = data.elements
-                .map(el => ({ ...el, dist: (el.lat - lat) ** 2 + (el.lon - lng) ** 2 }))
-                .sort((a, b) => a.dist - b.dist)[0];
-            stationName = (nearest.tags['name:ja'] || nearest.tags.name || '').replace(/駅$/, '');
-
-            if (duplicateStationNames.has(stationName)) {
-                const prefQuery = `[out:json][timeout:10];is_in(${nearest.lat},${nearest.lon})->.a;area.a["admin_level"="4"]["name"];out tags;`;
-                const prefRes = await fetch('https://overpass-api.de/api/interpreter', { method: 'POST', body: prefQuery });
-                const prefData = await prefRes.json();
-                const prefName = prefData.elements && prefData.elements[0] ? prefData.elements[0].tags.name : null;
-                if (prefName) stationName = `${stationName} (${prefName})`;
-            }
+            data = await overpassQuery(stationQuery, onRetry);
         } catch (e) {
             newTab.close();
             restore();
-            return alert('駅情報の取得に失敗しました');
+            return alert(`駅の情報を取得できませんでした（${overpassFailText(e)}）。\n地図データの提供元が混み合っています。少し時間をおいてもう一度お試しください。`);
+        }
+        // ここまで来ていれば応答は正常。0件は本当に圏内に駅が無いとき
+        if (!data.elements || data.elements.length === 0) {
+            newTab.close();
+            restore();
+            return alert(`近くに駅が見つかりませんでした（${hotelRadius / 1000}km圏内）`);
+        }
+        const nearest = data.elements
+            .map(el => ({ ...el, dist: (el.lat - lat) ** 2 + (el.lon - lng) ** 2 }))
+            .sort((a, b) => a.dist - b.dist)[0];
+        let stationName = (nearest.tags['name:ja'] || nearest.tags.name || '').replace(/駅$/, '');
+
+        /* 他県にも同じ駅名があるときだけ県名を足す。ここは付けられれば良いだけの問い合わせなので、
+           失敗しても駅名だけで先へ進む（前は同じ catch に落として検索ごと失敗していた）。 */
+        if (stationName && duplicateStationNames.has(stationName)) {
+            try {
+                const prefQuery = `[out:json][timeout:${OVERPASS_TIMEOUT_S}];is_in(${nearest.lat},${nearest.lon})->.a;area.a["admin_level"="4"]["name"];out tags;`;
+                const prefData = await overpassQuery(prefQuery, onRetry);
+                const prefName = prefData.elements && prefData.elements[0] ? prefData.elements[0].tags.name : null;
+                if (prefName) stationName = `${stationName} (${prefName})`;
+            } catch (e) { /* 県名は付かなくても検索そのものはできる */ }
         }
         restore();
         if (!stationName) { newTab.close(); return alert('駅名が取得できませんでした'); }
