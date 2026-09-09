@@ -6586,12 +6586,14 @@ map.on('zoomend', () => { isZooming = false; });
         const center = getSearchCenter();
         const lat = center.lat;
         const lng = center.lng;
-        const stationQuery = `[out:json][timeout:10];node["railway"="station"]["station"!="cable_car"]["station"!="funicular"]["station"!="monorail"](around:10000,${lat},${lng});out body;`;
+        // 駅探しの範囲も設定の「ホテル検索範囲」に合わせる
+        const hotelRadius = storeGet('hotelRadius') || '10000';
+        const stationQuery = `[out:json][timeout:10];node["railway"="station"]["station"!="cable_car"]["station"!="funicular"]["station"!="monorail"](around:${hotelRadius},${lat},${lng});out body;`;
         let stationName;
         try {
             const res = await fetch('https://overpass-api.de/api/interpreter', { method: 'POST', body: stationQuery });
             const data = await res.json();
-            if (!data.elements || data.elements.length === 0) { restore(); return alert('近くに駅が見つかりませんでした（10km圏内）'); }
+            if (!data.elements || data.elements.length === 0) { restore(); return alert(`近くに駅が見つかりませんでした（${hotelRadius / 1000}km圏内）`); }
             const nearest = data.elements
                 .map(el => ({ ...el, dist: (el.lat - lat) ** 2 + (el.lon - lng) ** 2 }))
                 .sort((a, b) => a.dist - b.dist)[0];
@@ -6612,7 +6614,6 @@ map.on('zoomend', () => { isZooming = false; });
         restore();
         if (!stationName) { newTab.close(); return alert('駅名が取得できませんでした'); }
         const dp_ymd = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Tokyo' }).replace(/-/g, '');
-        const hotelRadius = storeGet('hotelRadius') || '10000';
         const hotelSort = storeGet('hotelSort') || '2';
         const url = `https://www.tour.ne.jp/j_hotel/list/?landmark=${encodeURIComponent(stationName)}&refpage=form#adult=1&dp_ymd=${dp_ymd}&dsp_sort=${hotelSort}&hotel_type=3,6,7,8,11,12,13,15&radius=${hotelRadius}&roomtype=1,2,3,5,7,8,10,11`;
         newTab.location.href = url;
