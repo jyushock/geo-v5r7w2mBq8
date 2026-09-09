@@ -6568,14 +6568,15 @@ map.on('zoomend', () => { isZooming = false; });
         nearbyState.cats = [el.dataset.cat];
         execNearbySearch();
     }
-    /* Overpass は本家1台を皆で使うため、IPごとに同時2スロットしか無い（/api/status の
-       "Rate limit: 2"）。混んでいると HTTP 429 を返し、その本文は JSON ではなく
-       XHTML（Error: runtime error: ... rate_limited）。以前はここで res.ok を見ずに
-       res.json() へ渡していたので、近くに駅があっても例外になって
-       「駅情報の取得に失敗しました」で終わっていた。数秒おけば空きが出るので、
-       間を空けて投げ直す（ユーザーが手で2〜3回やり直すと通っていたのはこれ）。
-       クエリ側の timeout を超えたときは HTTP 200 のまま elements が空で remark だけが
-       付くので、これも「駅が無い」ではなく失敗として扱う。 */
+    /* Overpass 本家は IP ごとに同時2スロットしか無く（/api/status の "Rate limit: 2"）、
+       空いていないと HTTP 429、実行が長すぎると HTTP 504 を返す。どちらも本文は
+       JSON ではなく XHTML（Error: runtime error: ... rate_limited ／ ... timed out）で、
+       2026-09-09 に実際に叩いて両方とも再現した。以前はここで res.ok を見ずに
+       res.json() へ渡していたため、この XHTML が SyntaxError になって catch に落ち、
+       近くに駅があっても「駅情報の取得に失敗しました」で終わっていた。
+       429 のあとに /api/status を見ると枠は戻っているので、間を空けて投げ直す
+       （手で2〜3回やり直すと通っていたのはこれ）。remark 付きの応答は今回は
+       再現していないが、返り得る形なので同じく失敗として扱う。 */
     const OVERPASS_URL = 'https://overpass-api.de/api/interpreter';
     const OVERPASS_TIMEOUT_S = 20;             // クエリに書くサーバー側の実行時間の上限
     /* こちらから切る上限。timeout は実行時間だけの制限で、混んでいるときの順番待ちは
@@ -6613,8 +6614,8 @@ map.on('zoomend', () => { isZooming = false; });
     function overpassFailText(e) {
         const m = (e && e.message) || '';
         if (e && e.name === 'AbortError') return `${OVERPASS_ABORT_MS / 1000}秒待っても応答なし`;
-        if (/rate_limited/.test(m)) return '同時利用の上限';
-        if (/timed out/.test(m)) return '提供元でタイムアウト';
+        if (m === 'HTTP 429' || /rate_limited/.test(m)) return '同時利用の上限';
+        if (m === 'HTTP 504' || /timed out/.test(m)) return '提供元が時間切れ';
         if (/^HTTP /.test(m)) return m;
         return '通信エラー';
     }
