@@ -2496,7 +2496,8 @@ function applyClampMarkers() {
 function adjustMapForSheet() {
     if (!objSheetLngLat) return;
     const sheet = document.getElementById('obj-sheet');
-    const h = sheet.getBoundingClientRect().height;
+    // 段を動かしている途中でも、行き先の段の高さで寄せる（写真の読み込みで呼ばれたときなど）
+    const h = objSheetSnap ? objSheetSnap.targetHeight() : sheet.getBoundingClientRect().height;
     if (!h) return;
     const mapH = map.getContainer().getBoundingClientRect().height;
     // シートは下部バーの上に載るので、画面下から隠れる高さはシート自身より base ぶん高い
@@ -2536,7 +2537,19 @@ function openObjSheet(type, label, p, lng, lat, pairFrom) {
     const body = document.getElementById('obj-sheet-body');
     body.innerHTML = buildSheetHtml(type, label, p, lng, lat);
     body.scrollTop = 0;
+    // 名前の行（と上に置くバッジ）は掴める部分（#obj-sheet-title）へ移し、本文だけをスクロールさせる。
+    // 本文は段のドラッグの起点にしないので、ここに残すと掴める所がハンドルの行（24px）だけになる
+    const titleBox = document.getElementById('obj-sheet-title');
+    titleBox.replaceChildren();
+    while (body.firstElementChild && body.firstElementChild.matches('.os-badge-row, .os-title')) {
+        titleBox.appendChild(body.firstElementChild);
+    }
+    // メニュー・周辺検索の結果とは下部の同じ場所を使うので重ねない。
+    // 地図を触れるようオーバーレイを外したので、それらを開いたまま地図のピンを押せる
+    if (document.getElementById('nearby-panel').classList.contains('open')) closeNearby();
+    if (nearbyResultSnap && nearbyResultSnap.isOpen()) closeNearbyResult();
     const sheet = document.getElementById('obj-sheet');
+    if (objSheetSnap) objSheetSnap.prepareOpen();   // 高さ（前回の段）を入れてから下から出す
     sheet.style.transition = '';
     sheet.style.bottom = `${sheetBaseBottom(sheet)}px`;
     objSheetLngLat = [lng, lat];
@@ -2695,10 +2708,23 @@ function isObjSheetOpen() {
     return objSheetLngLat !== null;
 }
 
-// ══ 下から出るドロワー共通：下方向スワイプで閉じる ══════════════════════
-/* GoogleMap のドロワーと同じく、ハンドル部だけでなくシート本文からも下スワイプで閉じる。
-   本文起点のときは、内側のスクロール領域が最上部(scrollTop<=0)のときだけドラッグを開始し、
-   途中までスクロール済みなら通常のスクロールを優先する。
+// ══ 下から出るシート共通：見出しのドラッグで小・中・全開の3段に止める ══════════════
+/* 対象はメニュー（#nearby-panel）・周辺検索の結果（#nearby-result-panel）・情報シート（#obj-sheet）。
+   見た目と動きは mock/sheet-snap-preview.html で決めたもの（2026-09-11）。
+
+   掴めるのはスクロール領域（SHEET_SCROLLERS）の外側だけ。一覧や本文の上で縦にスワイプしたら
+   中身がスクロールし、シートは動かない（一覧の先頭で下に引いても閉じない）。
+
+   段の高さは「100svh − 下部バー52px」に対する割合で、SE3(667px)なら全開563px（上に地図52px）・
+   中308px・小74px。小は掴める部分（見出しなど）が収まる高さより低くしない。
+   メニューのメインビューと情報シートは、中身が全開より短ければ中身の高さを全開とする。
+   中が小以下か全開以上になるときは中を省く。
+
+   指を離したときの行き先は Material Components（Android）の BottomSheetBehavior.onViewReleased の
+   分岐と定数を写したもの（decideSheetStage）。Google マップのアプリそのものの動きは確かめていない。
+
+   開くときは種類（メニュー／一覧／周辺検索の結果／情報シート）ごとに、前回ドラッグで止めた段で開く。
+   覚えるのはページを開いている間だけで、初めはメニュー・一覧・結果が全開、情報シートが中。
 
    入力経路を2本に分ける:
      タッチ … Touch Events。ドラッグ確定後の touchmove を preventDefault して、
@@ -2711,12 +2737,21 @@ function isObjSheetOpen() {
    キャプチャ段階で握りつぶす（カテゴリ項目やリンクの誤発火防止）。
    抑止フラグは次のジェスチャ開始(down)で必ず落とすため、時間で解除する必要がなく、
    無関係な後続タップを巻き込まない。 */
-/* 感度の調整はこの2定数だけで行う。
-   SWIPE_SLOP を下げるとドラッグ開始が早くなるが、本文最上部での軽い引き下げを
-   スクロールと誤認しにくくなる代わりに、意図しないドラッグ開始が増える。
-   SWIPE_CLOSE_DIST を下げると少ないスワイプ量で閉じる。 */
-const SWIPE_SLOP = 8;         // タップ／スクロールとドラッグを分ける移動量(px)
-const SWIPE_CLOSE_DIST = 30;  // 下に振り切ったと判定する移動量(px)
+const SWIPE_SLOP = 8;              // タップ／スクロールとドラッグを分ける移動量(px)
+const SHEET_BAR_H = 52;            // 下部バーの高さ。段の割合はこれを除いた高さに掛ける
+const SHEET_RATIO = { full: 0.915, half: 0.5, peek: 0.12 };
+const SHEET_FLING_VEL = 500;       // BottomSheetBehavior の DEFAULT_SIGNIFICANT_VEL_THRESHOLD(px/秒)
+const SHEET_STOP_VEL = 50;         // これ未満の速さは「止めてから離した」扱い(px/秒)。モックで決めた値
+const SHEET_HIDE_THRESHOLD = 0.5;  // BottomSheetBehavior の HIDE_THRESHOLD
+const SHEET_HIDE_FRICTION = 0.1;   // BottomSheetBehavior の HIDE_FRICTION
+const SHEET_VEL_WINDOW = 100;      // 速さを出すのに使う直近の時間(ms)
+// 縦にスクロールする領域。ここを起点にした操作はシートを動かさない。
+// 段の高さを測るときも、この要素だけを「伸び縮みする部分」として扱う
+const SHEET_SCROLLERS = '#nearby-panel-scroll, #settings-scroll, .lords-scroll, .fxp-scroll, #nearby-list, #obj-sheet-body';
+// 種類ごとの前回の段（'peek' | 'half' | 'full'）
+const sheetLastStage = { menu: 'full', list: 'full', result: 'full', obj: 'half' };
+// 各シートの段の操作口（enableSheetSnap の戻り値）。組み立て前に呼ばれても落ちないよう null で始める
+let objSheetSnap = null, nearbySnap = null, nearbyResultSnap = null;
 
 /* 開いているときの bottom。下部バーの上に載せるシートだけ 0 でない（CSS の --sheet-base）。
    引きずり位置と復帰位置をここから決めるので、ベースを変えるときは CSS だけ直せばよい。 */
@@ -2724,21 +2759,102 @@ function sheetBaseBottom(el) {
     return parseFloat(getComputedStyle(el).getPropertyValue('--sheet-base')) || 0;
 }
 
-function enableSheetSwipeClose(panel, headerEl, onClose, blockSelector) {
-    const baseBottom = sheetBaseBottom(panel);
-    let startX = 0, startY = 0;
+/* 100svh の実寸。CSS 側の寸法が 100svh 基準なので、段の割合も同じ値に掛ける
+   （innerHeight は iOS Safari でバーの出し入れに合わせて変わる） */
+let svhProbe = null;
+function smallViewportHeight() {
+    if (!svhProbe) {
+        svhProbe = document.createElement('div');
+        svhProbe.style.cssText = 'position:fixed;left:0;top:0;width:0;height:100svh;visibility:hidden;pointer-events:none;';
+        document.body.appendChild(svhProbe);
+    }
+    return svhProbe.offsetHeight || window.innerHeight;
+}
+
+/* スクロール領域の中身の高さ。scrollHeight は枠より中身が短いと枠の高さを返すので、
+   全開を中身に合わせるシートでは使えない（一度伸ばすと縮まなくなる）。子の下端から数える */
+function scrollContentHeight(sc) {
+    const cs = getComputedStyle(sc);
+    const top = sc.getBoundingClientRect().top + (parseFloat(cs.borderTopWidth) || 0) - sc.scrollTop;
+    let bottom = top + (parseFloat(cs.paddingTop) || 0);
+    for (const c of sc.children) {
+        const r = c.getBoundingClientRect();
+        if (!r.width && !r.height) continue;   // display:none
+        bottom = Math.max(bottom, r.bottom + (parseFloat(getComputedStyle(c).marginBottom) || 0));
+    }
+    return Math.ceil(bottom - top + (parseFloat(cs.paddingBottom) || 0)) + (sc.offsetHeight - sc.clientHeight);
+}
+
+/* 段の高さ（下部バーより上に出る部分）。container の直下を、スクロール領域とそれ以外
+   （掴める固定部分）に分けて測る。extra は下部バーの位置に来る分（メニューのフッター）で、
+   小の下限と中身の高さから差し引く。 */
+function sheetStages(container, extra, fit) {
+    const H = smallViewportHeight() - SHEET_BAR_H;
+    let fixed = 0, scrollNatural = 0;
+    for (const c of container.children) {
+        const cs = getComputedStyle(c);
+        if (cs.display === 'none' || cs.position === 'absolute' || cs.position === 'fixed') continue;
+        const margin = (parseFloat(cs.marginTop) || 0) + (parseFloat(cs.marginBottom) || 0);
+        if (c.matches(SHEET_SCROLLERS)) { if (fit) scrollNatural += scrollContentHeight(c) + margin; }
+        else fixed += c.offsetHeight + margin;
+    }
+    fixed = Math.max(0, fixed - extra);
+    let full = Math.round(H * SHEET_RATIO.full);
+    if (fit) full = Math.min(full, fixed + scrollNatural);
+    const peek = Math.min(full, Math.max(Math.round(H * SHEET_RATIO.peek), fixed));
+    const half = Math.round(H * SHEET_RATIO.half);
+    return { peek, half: (half > peek && half < full) ? half : null, full };
+}
+
+/* 指を離したときの行き先。BottomSheetBehavior.onViewReleased の分岐を、上端の位置(top)ではなく
+   シートの高さ(h)で書き直したもの（大小が逆になる）。v は下向きを正とした px/秒。
+   戻り値は 'peek' | 'half' | 'full' | 'close'。 */
+function decideSheetStage(st, h, vRaw) {
+    const v = Math.abs(vRaw) < SHEET_STOP_VEL ? 0 : vRaw;
+    const half = st.half;
+    // 上向きに動かしながら離した → 今の位置より上の段（小より下からでも中へ行く）
+    if (v < 0) return (half !== null && h < half) ? 'half' : 'full';
+    // 小より下で、慣性を足した位置が小から小の高さの半分以上離れている（shouldHide）
+    if (st.peek > 0 && h <= st.peek
+        && Math.abs(st.peek - (h - v * SHEET_HIDE_FRICTION)) / st.peek > SHEET_HIDE_THRESHOLD) {
+        if (v > SHEET_FLING_VEL || h < st.full / 2) return 'close';   // 速く払った／releasedLow
+        return (half !== null && Math.abs(h - half) < Math.abs(h - st.full)) ? 'half' : 'full';
+    }
+    // 止めてから離した → いちばん近い段
+    if (v === 0) {
+        const cands = [['peek', st.peek], ['half', half], ['full', st.full]].filter(c => c[1] !== null);
+        return cands.reduce((a, b) => Math.abs(b[1] - h) < Math.abs(a[1] - h) ? b : a)[0];
+    }
+    // 下向きに動かしながら離した → 中と小のうち近いほう
+    return (half !== null && Math.abs(h - half) < Math.abs(h - st.peek)) ? 'half' : 'peek';
+}
+
+/* o.kind()      … 前回の段を覚える種類（'menu' | 'list' | 'result' | 'obj'）
+   o.container() … 段の高さを測る要素（直下にスクロール領域と固定部分が並ぶ）
+   o.extra()     … 段の高さに足す分。メニューのメインビューはフッターが下部バーの位置に来るので52
+   o.fit()       … 中身が全開より短ければ中身の高さを全開とするか
+   o.isOpen()    … 開いているか
+   o.onClose     … 小より下へ下げて離したときに呼ぶ
+   o.blockSelector … ドラッグの起点にしない要素（横スクロールを優先する天気など）
+   戻り値の prepareOpen は、開く処理が bottom を動かす前に呼ぶ（閉じているときは高さを即座に入れ、
+   下から出てくる動きだけを見せる。開いたままの差し替えなら高さも動かす）。 */
+function enableSheetSnap(panel, o) {
+    let startX = 0, startY = 0, startH = 0;
     let armed = false, dragging = false, swallowClick = false;
     let capturePointerId = null;   // マウス経路のみ。ドラッグ確定時に捕捉するため保持する
+    let st = null;                 // ドラッグ開始時に測った段。小より下げている間は固定部分が潰れて測れない
+    let pts = [];                  // 直近の [時刻, y]
 
-    // 起点要素から見た、パネル内側の直近のスクロール可能な祖先
-    function scrollerAt(target) {
-        let el = (target instanceof Element) ? target : null;
-        while (el && el !== panel && panel.contains(el)) {
-            const ov = getComputedStyle(el).overflowY;
-            if ((ov === 'auto' || ov === 'scroll') && el.scrollHeight > el.clientHeight + 1) return el;
-            el = el.parentElement;
-        }
-        return null;
+    const stages = () => sheetStages(o.container(), o.extra(), o.fit());
+    const heightOf = (s, name) => (name === 'half' && s.half === null) ? s.full : s[name];
+    const targetHeight = () => heightOf(stages(), sheetLastStage[o.kind()]);
+
+    function setHeight(h, animate) {
+        const px = `${Math.round(h + o.extra())}px`;
+        if (panel.style.height === px) return;
+        if (!animate) panel.style.transition = 'none';
+        panel.style.height = px;
+        if (!animate) { void panel.offsetHeight; panel.style.transition = ''; }
     }
 
     function down(target, x, y, pointerId) {
@@ -2747,24 +2863,27 @@ function enableSheetSwipeClose(panel, headerEl, onClose, blockSelector) {
         swallowClick = false;   // 前ジェスチャの抑止を持ち越さない
         capturePointerId = (pointerId === undefined) ? null : pointerId;
         if (!(target instanceof Element)) return;
-        if (blockSelector && target.closest(blockSelector)) return;
+        // 一覧・本文はスクロールに任せる。入力欄はフォーカスを優先する
+        if (target.closest(SHEET_SCROLLERS) || target.closest('input, textarea, select')) return;
+        if (o.blockSelector && target.closest(o.blockSelector)) return;
         startX = x;
         startY = y;
-        const sc = (headerEl && headerEl.contains(target)) ? null : scrollerAt(target);
-        armed = !sc || sc.scrollTop <= 0;
+        armed = true;
     }
 
     // 戻り値: ドラッグ中なら true（呼び出し側でブラウザ既定動作を止める）
-    function move(x, y) {
+    function move(x, y, t) {
         if (!armed) return false;
-        const dy = y - startY;
+        const dx = x - startX, dy = y - startY;
         if (!dragging) {
-            if (dy <= SWIPE_SLOP) {
-                // 上・横に先に振れた操作はスクロール／横スワイプとみなし、以後拾わない
-                if (dy < -SWIPE_SLOP || Math.abs(x - startX) > SWIPE_SLOP) armed = false;
-                return false;
-            }
+            // 横に先に振れた操作は横スワイプとみなし、以後拾わない
+            if (Math.abs(dx) > SWIPE_SLOP && Math.abs(dx) >= Math.abs(dy)) { armed = false; return false; }
+            if (Math.abs(dy) <= SWIPE_SLOP) return false;
             dragging = true;
+            st = stages();
+            startY = y;
+            startH = panel.getBoundingClientRect().height - o.extra();
+            pts = [];
             // 捕捉はドラッグが確定してから行う。pointerdown 時点で捕捉すると
             // 以後の click のターゲットが panel に差し替わり、シート内のボタンや
             // リンクが一切反応しなくなる（CDPの実マウス入力で確認済み）。
@@ -2773,30 +2892,39 @@ function enableSheetSwipeClose(panel, headerEl, onClose, blockSelector) {
             }
             panel.style.transition = 'none';
         }
-        panel.style.bottom = `${baseBottom - (dy - SWIPE_SLOP)}px`;
+        pts.push([t, y]);
+        while (pts.length > 2 && t - pts[0][0] > SHEET_VEL_WINDOW) pts.shift();
+        const h = Math.max(0, Math.min(st.full, startH - (y - startY)));
+        panel.style.height = `${Math.round(h + o.extra())}px`;
         return true;
     }
 
-    function restore() {
-        panel.style.transition = '';
-        panel.style.bottom = `${baseBottom}px`;
-    }
-
-    function up(y) {
+    function up(y, t) {
         if (!armed) return;
         const wasDragging = dragging;
-        const dy = y - startY;
         armed = false;
         dragging = false;
         if (!wasDragging) return;
-        if (dy > SWIPE_CLOSE_DIST) onClose(); else restore();
         swallowClick = true;   // touchend / pointerup 直後に来る click を1回だけ捨てる
+        // 最後に動いてから SHEET_VEL_WINDOW 以上止めていたら 0（止めてから離した）
+        let v = 0;
+        if (pts.length >= 2 && t - pts[pts.length - 1][0] < SHEET_VEL_WINDOW) {
+            const [t0, y0] = pts[0], [t1, y1] = pts[pts.length - 1];
+            if (t1 > t0) v = (y1 - y0) / (t1 - t0) * 1000;
+        }
+        const h = panel.getBoundingClientRect().height - o.extra();
+        panel.style.transition = '';
+        const next = decideSheetStage(st, h, v);
+        if (next === 'close') { o.onClose(); return; }
+        sheetLastStage[o.kind()] = next;
+        setHeight(heightOf(st, next), true);
     }
 
     function cancel() {
-        if (dragging) restore();
+        const wasDragging = dragging;
         armed = false;
         dragging = false;
+        if (wasDragging) { panel.style.transition = ''; setHeight(targetHeight(), true); }
     }
 
     panel.addEventListener('click', (e) => {
@@ -2812,9 +2940,9 @@ function enableSheetSwipeClose(panel, headerEl, onClose, blockSelector) {
     }, { passive: true });
     panel.addEventListener('touchmove', (e) => {
         if (e.touches.length !== 1) { cancel(); return; }
-        if (move(e.touches[0].clientX, e.touches[0].clientY)) e.preventDefault();
+        if (move(e.touches[0].clientX, e.touches[0].clientY, e.timeStamp)) e.preventDefault();
     }, { passive: false });
-    panel.addEventListener('touchend', (e) => up(e.changedTouches[0].clientY), { passive: true });
+    panel.addEventListener('touchend', (e) => up(e.changedTouches[0].clientY, e.timeStamp), { passive: true });
     panel.addEventListener('touchcancel', cancel, { passive: true });
 
     panel.addEventListener('pointerdown', (e) => {
@@ -2822,14 +2950,39 @@ function enableSheetSwipeClose(panel, headerEl, onClose, blockSelector) {
         down(e.target, e.clientX, e.clientY, e.pointerId);
     });
     panel.addEventListener('pointermove', (e) => {
-        if (e.pointerType === 'mouse') move(e.clientX, e.clientY);
+        if (e.pointerType === 'mouse') move(e.clientX, e.clientY, e.timeStamp);
     });
     panel.addEventListener('pointerup', (e) => {
-        if (e.pointerType === 'mouse') up(e.clientY);
+        if (e.pointerType === 'mouse') up(e.clientY, e.timeStamp);
     });
     panel.addEventListener('pointercancel', (e) => {
         if (e.pointerType === 'mouse') cancel();
     });
+
+    /* 中身やビューが替わったら段を測り直して置き直す（写真の読み込み・省略行の展開・
+       一覧の差し替え・メニュー内のビューの切り替え）。1フレームに1回へ間引き、高さが同じなら
+       何もしない（自分で入れた style.height の変更でも呼ばれるが、そこで止まる）。 */
+    let queued = false;
+    const refit = () => {
+        if (queued) return;
+        queued = true;
+        requestAnimationFrame(() => {
+            queued = false;
+            if (!dragging && o.isOpen()) setHeight(targetHeight(), true);
+        });
+    };
+    new MutationObserver(refit).observe(panel, {
+        childList: true, subtree: true, characterData: true,
+        attributes: true, attributeFilter: ['class', 'style', 'hidden'],
+    });
+    panel.addEventListener('load', refit, true);   // img の load は泡立たないので捕捉段で拾う
+    window.addEventListener('resize', refit);
+
+    return {
+        prepareOpen() { setHeight(targetHeight(), o.isOpen()); },
+        targetHeight,
+        isOpen: () => o.isOpen(),
+    };
 }
 
 /* シート内の縦スクロール領域は、スクロール不能な間だけ touch-action を none にする。
@@ -3880,7 +4033,8 @@ map.on('zoomend', () => { isZooming = false; });
        setTimeout の中でも通るかは未確認（通らないブラウザがあり得る側に倒してある）。
        500ms 経った時点では色を変えて合図するだけにして、離した瞬間にコピーする。 */
     (() => {
-        const body = document.getElementById('obj-sheet-body');
+        // 名前の行は openObjSheet が #obj-sheet-title へ移すので、そこで拾う
+        const titleBox = document.getElementById('obj-sheet-title');
         let timer = null, ready = null, touched = false;
         const disarm = () => {
             if (timer) { clearTimeout(timer); timer = null; }
@@ -3902,32 +4056,35 @@ map.on('zoomend', () => { isZooming = false; });
             const ok = await copyToClipboard(text);
             showToast(ok ? `「${text}」をコピーしました` : 'コピーできませんでした');
         };
-        body.addEventListener('touchstart', e => {
+        titleBox.addEventListener('touchstart', e => {
             const el = e.target.closest('.os-name');
             if (el) arm(el);
         }, { passive: true });
-        body.addEventListener('touchmove', disarm, { passive: true });   // スクロールに転じたら取り消す
-        body.addEventListener('touchcancel', disarm);
-        body.addEventListener('touchend', () => {
+        titleBox.addEventListener('touchmove', disarm, { passive: true });   // スクロールに転じたら取り消す
+        titleBox.addEventListener('touchcancel', disarm);
+        titleBox.addEventListener('touchend', () => {
             touched = true;                                   // 直後に合成される mouse で二度動かさない
             setTimeout(() => { touched = false; }, 600);
             fire();
         });
-        body.addEventListener('mousedown', e => {
+        titleBox.addEventListener('mousedown', e => {
             const el = e.target.closest('.os-name');
             if (el && e.button === 0 && !touched) arm(el);
         });
-        body.addEventListener('mouseup', e => { if (e.button === 0 && !touched) fire(); });
-        body.addEventListener('mouseleave', disarm);
-        body.addEventListener('contextmenu', e => { if (e.target.closest('.os-name')) e.preventDefault(); });
+        titleBox.addEventListener('mouseup', e => { if (e.button === 0 && !touched) fire(); });
+        titleBox.addEventListener('mouseleave', disarm);
+        titleBox.addEventListener('contextmenu', e => { if (e.target.closest('.os-name')) e.preventDefault(); });
     })();
 
-    // 情報シートを下スワイプで閉じる（3ドロワー共通の実装）
-    enableSheetSwipeClose(
-        document.getElementById('obj-sheet'),
-        document.getElementById('obj-sheet-header'),
-        closeObjSheet
-    );
+    // 情報シートの段（小・中・全開）。小より下へ下げて離すと閉じる（3シート共通の実装）
+    objSheetSnap = enableSheetSnap(document.getElementById('obj-sheet'), {
+        kind: () => 'obj',
+        container: () => document.getElementById('obj-sheet'),
+        extra: () => 0,
+        fit: () => true,
+        isOpen: isObjSheetOpen,
+        onClose: closeObjSheet,
+    });
 
     // 情報シートの写真タップで全画面ビューアを開く。
     // 城の写真は injectCastleImage で後から差し込まれるので、委譲で拾う。
@@ -4568,6 +4725,10 @@ map.on('zoomend', () => { isZooming = false; });
     // 検索ボックスにフォーカスが戻ったとき、ワードが残っていれば結果を再表示
     document.getElementById('search-input').addEventListener('focus', async (e) => {
         closeObjSheet();   // 検索を始める時点で、タップで開いた情報シートは用済みなので閉じる
+        // メニュー・一覧・周辺検索の結果も閉じる。地図を触れるようオーバーレイを外したので、
+        // 一覧を開いたまま下部バーの検索欄を押せる（検索結果はシートの下に重なって見えなくなる）
+        if (document.getElementById('nearby-panel').classList.contains('open')) closeNearby();
+        closeNearbyResult();
         const q = e.target.value.trim();
         if (!q) return;
         document.getElementById('search-clear').style.display = 'block';
@@ -4900,8 +5061,9 @@ map.on('zoomend', () => { isZooming = false; });
         updatePrefEntry();
         updateRemainsEntry();
         updateFavEntry();
+        // 高さ（前回の段）を入れてから下から出す。地図を触れるよう、裏を覆うオーバーレイは置かない
+        if (nearbySnap) nearbySnap.prepareOpen();
         document.getElementById('nearby-panel').classList.add('open');
-        document.getElementById('nearby-overlay').classList.add('open');
         document.getElementById('bottom-bar').classList.add('panel-open');
         applyShowOrigin();
         fetchWeather();
@@ -6724,8 +6886,8 @@ map.on('zoomend', () => { isZooming = false; });
         renderDistOrigin('nearby');
         nearbyResultScrollTop = 0;
         renderNearbyList();
+        if (nearbyResultSnap) nearbyResultSnap.prepareOpen();   // 高さ（前回の段）を入れてから下から出す
         document.getElementById('nearby-result-panel').style.bottom = '52px';   /* 下部バーの上（--sheet-base と同値） */
-        document.getElementById('nearby-result-overlay').style.display = 'block';
     }
 
     /* 集計帯。県ページ（renderPrefSum）と同じ作りにするが、3点だけ扱いが違う。
@@ -6889,44 +7051,57 @@ map.on('zoomend', () => { isZooming = false; });
     function reopenNearbyResult() {
         if (!nearbyAllResults.length) return;
         renderNearbyList(true);
+        if (nearbyResultSnap) nearbyResultSnap.prepareOpen();
         document.getElementById('nearby-result-panel').style.bottom = '52px';
-        document.getElementById('nearby-result-overlay').style.display = 'block';
     }
 
     function closeNearbyResult() {
         const panel = document.getElementById('nearby-result-panel');
         panel.style.transition = '';
         panel.style.bottom = '-100%';
-        document.getElementById('nearby-result-overlay').style.display = 'none';
     }
 
-    // 周辺検索結果パネルを下スワイプで閉じる（3ドロワー共通の実装）
-    enableSheetSwipeClose(
-        document.getElementById('nearby-result-panel'),
-        document.getElementById('nearby-result-header'),
-        closeNearbyResult
-    );
+    // 周辺検索結果パネルの段（3シート共通の実装）
+    nearbyResultSnap = (() => {
+        const panel = document.getElementById('nearby-result-panel');
+        return enableSheetSnap(panel, {
+            kind: () => 'result',
+            container: () => panel,
+            extra: () => 0,
+            fit: () => false,
+            isOpen: () => !!panel.style.bottom && panel.style.bottom !== '-100%',
+            onClose: closeNearbyResult,
+        });
+    })();
     function closeNearby() {
         const panel = document.getElementById('nearby-panel');
         panel.style.transition = '';
         panel.style.bottom = '';
         panel.classList.remove('open');
-        document.getElementById('nearby-overlay').classList.remove('open');
         document.getElementById('bottom-bar').classList.remove('panel-open');
         nearbyState.cats = [];
         closeWeatherHourlyPanel();
     }
 
-    // メニュー／周辺検索パネルを下スワイプで閉じる（3ドロワー共通の実装）
-    // 天気ウィジェットと時間別パネルは横スクロール操作を優先するため、スワイプ起点から除外する
-    enableSheetSwipeClose(
-        document.getElementById('nearby-panel'),
-        document.getElementById('nearby-panel-header'),
-        closeNearby,
-        '#weather-widget, #weather-hourly-panel'
-    );
+    // メニュー／周辺検索パネルの段（3シート共通の実装）。
+    // メインビューは「メニュー」、下部バーの上に載せたビュー（一覧・設定など）は「一覧」として前回の段を覚える。
+    // メインビューだけはフッターが下部バーの位置に来るので、その52pxを段の高さに足す。
+    // 天気ウィジェットと時間別パネルは横スクロール操作を優先するため、ドラッグの起点から除外する
+    nearbySnap = (() => {
+        const panel = document.getElementById('nearby-panel');
+        const lifted = () => panel.classList.contains('lifted');
+        return enableSheetSnap(panel, {
+            kind: () => lifted() ? 'list' : 'menu',
+            container: () => [...panel.children].find(c => getComputedStyle(c).display !== 'none') || panel,
+            extra: () => lifted() ? 0 : sheetBaseBottom(panel),
+            fit: () => !lifted(),
+            isOpen: () => panel.classList.contains('open'),
+            onClose: closeNearby,
+            blockSelector: '#weather-widget, #weather-hourly-panel',
+        });
+    })();
 
-    // 3ドロワーの縦スクロール領域をまとめて監視する（内容の増減でスクロール可否が変わるため）
+    // 3シートの縦スクロール領域をまとめて監視する（内容の増減でスクロール可否が変わるため）
     watchScrollerTouchAction('#nearby-panel-scroll, #settings-scroll, .lords-scroll, #nearby-list, #obj-sheet-body');
 
     // レイヤー一時非表示ボタンの処理

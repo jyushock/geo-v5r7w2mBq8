@@ -394,21 +394,20 @@
            ボタン行は flex で等分するため、個数が変わっても空きセルが出ない。
 
            --sheet-base: 開いているときの bottom。下部バー（検索欄・メニュー）を隠さず、
-           その上に載せる（GoogleMapのタブとシートの関係と同じ）。0 でないシートはこれだけで、
-           enableSheetSwipeClose と openObjSheet はこの値を読んで引きずり位置を決める。
-           値は #bottom-bar の height と揃える。
+           その上に載せる（GoogleMapのタブとシートの関係と同じ）。
+           openObjSheet と adjustMapForSheet はこの値を読む。値は #bottom-bar の height と揃える。
 
-           max-height: 下部バー52pxに加えて地図を160px残す。160pxは adjustMapForSheet が
-           既に使っている「可視域は最低160px残す」と同じ基準。iPhone SE3(667px)で455pxとなり、
-           本文が2行clampされた通常時（実測で最大402px）は制限に掛からない。
-           clampを展開して超えた分は #obj-sheet-body 側がスクロールする。 */
+           height: enableSheetSnap が段（小・中・全開）に合わせて入れる。全開は「100svh − 下部バー」の
+           91.5%（SE3で563px）で、中身がそれより短ければ中身の高さ。開くときは前回の段（初めは中、SE3で308px）。
+           名前の行（#obj-sheet-title）までが掴める部分で、収まらない分は #obj-sheet-body がスクロールする。
+           overflow: hidden は、段を下げている間に中身を下部バーへはみ出させないため。 */
         #obj-sheet {
             --sheet-base: 52px;
             position: fixed; bottom: -100%; left: 0; right: 0;
             background: #fff; border-radius: 16px 16px 0 0;
             box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
-            z-index: 310; transition: bottom 0.28s ease;
-            max-height: calc(100svh - var(--sheet-base) - 160px); display: flex; flex-direction: column;
+            z-index: 310; transition: bottom 0.28s ease, height 0.28s ease;
+            overflow: hidden; display: flex; flex-direction: column;
             font-family: sans-serif;
         }
         /* 閉じるボタン(24px)がヘッダー内に収まる高さを確保し、本文と重ならないようにする */
@@ -429,9 +428,12 @@
             background: none; border: none; font-size: 24px; color: #bbb;
             cursor: pointer; padding: 0 6px; line-height: 1;
         }
-        /* overscroll-behavior-y: 最上部からさらに下へ引いたとき、スクロールを外側へ波及させない。
-           下スワイプで閉じる判定（enableSheetSwipeClose）をブラウザのオーバースクロールに奪われないため。 */
+        /* overscroll-behavior-y: 最上部からさらに下へ引いたとき、スクロールを外側へ波及させない
+           （iOSでドキュメントごとバウンスし、背後の地図がずれるため）。本文は段のドラッグの起点にしない。 */
         #obj-sheet-body { overflow-y: auto; overscroll-behavior-y: contain; touch-action: pan-y; padding: 0 14px 14px; }   /* 内容幅 = 画面幅 - 28px */
+        /* 名前の行（と上に置くバッジ）。openObjSheet が本文から移してくる。本文をドラッグの起点に
+           しないので、ここを掴める部分に入れて面積を確保する。左右は本文と同じ14px */
+        #obj-sheet-title { flex-shrink: 0; padding: 0 14px; touch-action: none; }
         .os-title { display: flex; align-items: center; gap: 5px; margin-bottom: 3px; min-width: 0; }
         /* タイトルの上に独立して置くバッジ（食べログの部門）。名前の左に置くと店名が押されるため */
         .os-badge-row { display: flex; gap: 5px; margin-bottom: 3px; }
@@ -579,8 +581,8 @@
            inline-block の子を含む行には掛からないため（同じ枠に長文を入れると
            32pxで切れることは確認済み。この行だけ切れない）。
            切れずに全部出るのが受賞歴では望ましいので、そのままにしている。
-           行の高さは最大40px、シート全体でも322px で、上限
-           （100svh - 52px - 160px ＝ iPhone SE3 で455px）に収まる。 */
+           行の高さは最大40px、シート全体でも322px で、全開の上限
+           （(100svh - 52px) × 91.5% ＝ iPhone SE3 で563px）に収まる。 */
         .aw-chips { display: inline; }
         .aw-y { display: inline-block; margin-right: 3px; vertical-align: -1px;
                 font-size: 10px; font-weight: 700; line-height: 1.6; padding: 1px 6px; border-radius: 9px;
@@ -908,19 +910,19 @@
         /* 城主一覧ビュー（メニューパネル内の第3・第4ビュー） */
         #nearby-lords-view, #nearby-lord-detail-view {
             display: none; flex-direction: column; min-height: 0;
-            height: calc(100svh - 104px); max-height: 100%;   /* 下部バー52px＋上に残す地図52px */
+            flex: 1;   /* 高さはパネル（enableSheetSnap の段）に合わせる */
         }
         #nearby-lords-view.open, #nearby-lord-detail-view.open { display: flex; }
         /* 都道府県ビュー（第5・第6）。城主ビューと同じ枠組みを使う */
         #nearby-pref-view, #nearby-pref-detail-view {
             display: none; flex-direction: column; min-height: 0;
-            height: calc(100svh - 104px); max-height: 100%;   /* 下部バー52px＋上に残す地図52px */
+            flex: 1;   /* 高さはパネル（enableSheetSnap の段）に合わせる */
         }
         #nearby-pref-view.open, #nearby-pref-detail-view.open { display: flex; }
         /* 遺構ビュー（第7〜9）。城主・都道府県と同じ枠組みを使う */
         #nearby-remains-view, #nearby-remains-group-view, #nearby-remains-detail-view {
             display: none; flex-direction: column; min-height: 0;
-            height: calc(100svh - 104px); max-height: 100%;   /* 下部バー52px＋上に残す地図52px */
+            flex: 1;   /* 高さはパネル（enableSheetSnap の段）に合わせる */
         }
         #nearby-remains-view.open, #nearby-remains-group-view.open,
         #nearby-remains-detail-view.open { display: flex; }
@@ -1056,7 +1058,12 @@
                   font-size: 12px; font-weight: bold; cursor: pointer; flex-shrink: 0; }
 
         /* 城主ビューの見出し・絞り込み帯もスクロールしない領域。素通しさせない */
-        .lords-head { display: flex; align-items: center; gap: 8px; padding: 12px 12px 8px; flex-shrink: 0; touch-action: none; }
+        /* メニュー内の各ビュー（一覧・設定など）の見出し。段のドラッグで掴む所なので、上端にメニューと
+           同じハンドル（36×4px、上から8px）を描く。増える高さは上padding 12px→20px の8pxだけ */
+        .lords-head { display: flex; align-items: center; gap: 8px; padding: 20px 12px 8px; flex-shrink: 0; touch-action: none;
+                      position: relative; cursor: grab; }
+        .lords-head::before { content: ''; position: absolute; top: 8px; left: 50%; width: 36px; height: 4px; margin-left: -18px;
+                              background: var(--color-border-secondary, #ccc); border-radius: 2px; }
         .lords-head-title { font-size: 14px; font-weight: bold; color: #333; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         .lords-iconbtn {
             width: 32px; height: 32px; border: 0; background: #f5f5f5; border-radius: 8px;
@@ -1158,7 +1165,7 @@
         .sync-txt { font-size: 13px; color: #333; line-height: 1.5; }
         .sync-txt small { display: block; font-size: 11px; color: #999; margin-top: 2px; }
         #nearby-sync-add-view, #nearby-sync-devices-view { display: none; flex-direction: column;
-            min-height: 0; height: calc(100svh - 104px); max-height: 100%; }
+            min-height: 0; flex: 1; }
         #nearby-sync-add-view.open, #nearby-sync-devices-view.open { display: flex; }
         .qr-wrap { display: flex; flex-direction: column; align-items: center; padding: 10px 16px 2px; }
         .qr-box { width: 200px; height: 200px; background: #fff; border: 1px solid #eee; border-radius: 10px;
@@ -1180,7 +1187,7 @@
         .fxp-btn.danger { background: #fdeceb; color: #C62828; font-weight: 600; }
         /* お気に入り一覧ビュー（メニューパネル内の第10ビュー）。城主・都道府県・遺構と同じ枠組み */
         #nearby-fav-view { display: none; flex-direction: column; min-height: 0;
-                           height: calc(100svh - 104px); max-height: 100%; }
+                           flex: 1; }
         #nearby-fav-view.open { display: flex; }
         .fav-empty { padding: 40px 20px; text-align: center; color: #aaa; font-size: 12px; line-height: 1.9; }
         .fav-empty b { font-size: 34px; color: #e0e0e0; display: block; margin-bottom: 8px; font-weight: normal; }
@@ -1208,7 +1215,7 @@
            形式は TSV だけにしてある（CSV・JSON も仕様は受けるが、選ばせる意味が無い）。
            版1.1 で role/stay/day/priority が削除されたので、出発地・滞在時間・優先度は聞かない。 */
         #nearby-fav-export-view { display: none; flex-direction: column; min-height: 0;
-                                  height: calc(100svh - 104px); max-height: 100%; }
+                                  flex: 1; }
         #nearby-fav-export-view.open { display: flex; }
         .fxp-scroll { overflow-y: auto; flex: 1; min-height: 0; -webkit-overflow-scrolling: touch; }
         .fxp-sec { font-size: 11px; color: #999; padding: 12px 16px 5px; }
@@ -1361,12 +1368,11 @@
         /* ハーフモーダル */
         /* メインビュー（周辺検索メニュー）は自前のフッターが下部バーの代わりを務めるので、
            画面下端まで下ろしてバーを覆う。フッターを持たないビュー（一覧・城主・設定）は
-           下部バーの上に載せ、バーが見えるようにする。 */
+           下部バーの上に載せ、バーが見えるようにする。
+           高さは enableSheetSnap が段（小・中・全開）に合わせて入れる。メインビューは中身が
+           全開より短ければ中身の高さで、フッター52pxを足した値になる。 */
         #nearby-panel.open { bottom: 0; }
-        #nearby-panel.open.lifted {
-            bottom: var(--sheet-base);
-            max-height: calc(100svh - var(--sheet-base) - 52px);
-        }
+        #nearby-panel.open.lifted { bottom: var(--sheet-base); }
         #bottom-bar.panel-open { box-shadow: none; }
         #nearby-panel {
             position: fixed;
@@ -1376,9 +1382,9 @@
             border-radius: 16px 16px 0 0;
             box-shadow: 0 -4px 16px rgba(0,0,0,0.15);
             z-index: 300;
-            transition: bottom 0.3s ease;
+            transition: bottom 0.3s ease, height 0.28s ease;
             --sheet-base: 52px;
-            max-height: calc(100svh - 52px);
+            overflow: hidden;   /* 段を下げている間に中身を下部バーへはみ出させない */
             display: flex;
             flex-direction: column;
             font-family: sans-serif;
@@ -1388,7 +1394,7 @@
            SE3(667px)では入り切らないので、見出しだけ固定して中身をスクロールさせる。
            枠組みは城主・都道府県ビュー（.lords-head ＋ .lords-scroll）と同じ考え方。
            見出し側はスクロールしない領域なので、下スワイプを素通しさせない。 */
-        #nearby-settings-view { display: none; flex-direction: column; min-height: 0; touch-action: none; }
+        #nearby-settings-view { display: none; flex-direction: column; flex: 1; min-height: 0; touch-action: none; }
         #nearby-settings-view.open { display: flex; }
         #settings-scroll {
             overflow-y: auto; overscroll-behavior-y: contain;
@@ -1562,16 +1568,6 @@
         .nearby-item-name { font-size: 13px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .nearby-item-sub  { font-size: 11px; color: #999; margin-top: 1px; }
         .nearby-item-dist { font-size: 12px; color: var(--ui-blue); font-weight: bold; flex-shrink: 0; }
-        /* パネルの外側（地図の上）を覆う透明レイヤー。タップで閉じるだけの層なので、
-           ここでのスワイプはブラウザに渡さない（渡すとiOSがドキュメントごとバウンスする）。 */
-        #nearby-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 299;
-            touch-action: none;
-        }
-        #nearby-overlay.open { display: block; }
     </style>
 </head>
 <body>
@@ -1611,7 +1607,6 @@
     </button>
     <button id="nearby-btn" onclick="toggleNearby()" title="メニュー"><span class="hamburger-icon"></span></button>
 </div>
-<div id="nearby-overlay" onclick="closeNearby()"></div>
 <div id="nearby-panel">
     <!-- 周辺検索ビュー -->
     <div id="nearby-main-view">
@@ -1769,7 +1764,7 @@
 
     <!-- 表示設定ビュー -->
     <div id="nearby-settings-view">
-        <div style="display:flex;align-items:center;padding:12px 16px 8px;gap:8px;flex-shrink:0;">
+        <div class="lords-head" style="padding-left:16px;padding-right:16px;">
             <button id="settings-back-btn" onclick="closeSettingsView()">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
@@ -2176,18 +2171,16 @@
 </div>
 
 <!-- スポット検索結果パネル（別ウィンドウ） -->
-<div id="nearby-result-overlay" onclick="closeNearbyResult()" style="display:none;position:fixed;inset:0;z-index:299;touch-action:none;"></div>
-<!-- 情報シート・メニューと同じく下部バーの上に載せる（--sheet-base を
-     enableSheetSwipeClose が読んで引きずりの戻り位置に使う） -->
+<!-- 情報シート・メニューと同じく下部バーの上に載せる（--sheet-base）。
+     地図を触れるよう、裏を覆うオーバーレイは置かない -->
 <div id="nearby-result-panel" style="
     --sheet-base:52px;
     position:fixed; bottom:-100%; left:0; right:0;
     background:white; border-radius:16px 16px 0 0;
     box-shadow:0 -4px 16px rgba(0,0,0,0.15);
-    z-index:300; transition:bottom 0.3s ease;
-    /* 一覧から探す（#nearby-pref-detail-view など calc(100svh - 104px) の各ビュー）と同じ高さ。
-       下部バー52px＋上に残す地図52px を引いた残り全部を使う */
-    height:calc(100svh - var(--sheet-base) - 52px);
+    z-index:300; transition:bottom 0.3s ease, height 0.28s ease;
+    /* 高さは enableSheetSnap が段（小・中・全開）に合わせて入れる。全開は一覧の各ビューと同じ（SE3で563px） */
+    overflow:hidden;
     display:flex; flex-direction:column;
     font-family: sans-serif;
 ">
@@ -2228,6 +2221,7 @@
         <button id="obj-fav-btn" onclick="onSheetFavBtn(event)" title="お気に入り">★</button>
         <button id="obj-sheet-close" onclick="closeObjSheet()">×</button>
     </div>
+    <div id="obj-sheet-title"></div>
     <div id="obj-sheet-body"></div>
 </div>
 
