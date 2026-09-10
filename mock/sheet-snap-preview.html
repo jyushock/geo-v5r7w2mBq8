@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>シートの段階（ドラッグハンドル）</title>
+<style>
+    body { font-family: sans-serif; background: #eceff1; margin: 0; padding: 16px; color: #333; }
+    h1 { font-size: 15px; margin: 0 0 4px; }
+    .lead { font-size: 12px; color: #555; margin: 0 0 12px; line-height: 1.8; max-width: 900px; }
+    .wrap { display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start; }
+    .ctrl { width: 380px; font-size: 12px; }
+    .ctrl fieldset { border: 1px solid #cfd8dc; border-radius: 8px; margin: 0 0 10px; padding: 8px 10px; background: #fff; }
+    .ctrl legend { font-weight: bold; font-size: 12px; padding: 0 4px; }
+    .ctrl label { display: inline-flex; align-items: center; gap: 4px; margin: 2px 10px 2px 0; }
+    .ctrl input[type=number] { width: 56px; }
+    .ctrl .btns { display: flex; flex-wrap: wrap; gap: 6px; }
+    .ctrl .btns button { font-size: 12px; padding: 5px 10px; border: 1px solid #b0bec5; background: #f5f7f8; border-radius: 6px; cursor: pointer; }
+    .ctrl table { border-collapse: collapse; width: 100%; }
+    .ctrl td { padding: 2px 4px; vertical-align: top; }
+    .ctrl td:nth-child(-n+2) { white-space: nowrap; }
+    .ctrl ul { margin: 0; padding-left: 16px; line-height: 1.7; }
+    #readout { line-height: 1.8; }
+    #readout b { color: #1565C0; }
+    .note { color: #777; }
+
+    /* ── 端末の枠。寸法は画面の選択で JS が入れる ─────────────────────── */
+    /* flex-shrink: 0 が無いと、横幅の足りない窓で枠が縮み、見出しの折り返しで段の高さが狂う */
+    #phone { position: relative; overflow: hidden; background: #e8e4da; border-radius: 4px; flex-shrink: 0;
+             box-shadow: 0 0 0 8px #263238; touch-action: none; user-select: none; -webkit-user-select: none; }
+
+    /* 地図の代わり。ドラッグで動かせる（シートの裏でも動く＝オーバーレイを持たない） */
+    #map { position: absolute; inset: 0; cursor: grab; }
+    #map-layer { position: absolute; left: -1500px; top: -1500px; width: 3400px; height: 3400px;
+                 background-color: #ede9df;
+                 background-image: linear-gradient(#d9d2c3 2px, transparent 2px), linear-gradient(90deg, #d9d2c3 2px, transparent 2px),
+                                   linear-gradient(#e2ddd2 1px, transparent 1px), linear-gradient(90deg, #e2ddd2 1px, transparent 1px);
+                 background-size: 200px 200px, 200px 200px, 40px 40px, 40px 40px; }
+    .pin { position: absolute; width: 28px; height: 28px; border-radius: 50%; background: #8A8A8A; color: #fff;
+           font-size: 11px; display: flex; align-items: center; justify-content: center; box-shadow: 0 1px 3px rgba(0,0,0,.4); cursor: pointer; }
+
+    /* 下部バー（検索欄・現在地・メニュー）。高さ52pxは本物の #bottom-bar と同じ */
+    #bar { position: absolute; left: 0; right: 0; bottom: 0; height: 52px; background: #fff; display: flex; z-index: 200;
+           box-shadow: 0 -2px 8px rgba(0,0,0,.15); }
+    #bar .search { flex: 1; display: flex; align-items: center; padding: 0 12px; color: #aaa; font-size: 13px; }
+    #bar button { width: 54px; border: 0; border-left: 2px solid #e0e0e0; background: #fff; font-size: 18px; color: #555; cursor: pointer; }
+
+    /* ── シート共通 ───────────────────────────────────────────────── */
+    .sheet { position: absolute; left: 0; right: 0; bottom: 0; height: 0; background: #fff;
+             border-radius: 16px 16px 0 0; box-shadow: 0 -4px 16px rgba(0,0,0,.18);
+             display: flex; flex-direction: column; overflow: hidden; z-index: 300;
+             transition: height .28s ease; }
+    .sheet.closed { visibility: hidden; }
+    /* 掴んで動かせる部分。スクロールしない部分はすべてここに入れる */
+    .fixed-top { flex-shrink: 0; touch-action: none; cursor: grab; }
+    /* 一覧・本文。ここを縦にスワイプしたら中身がスクロールする（シートは動かさない） */
+    .scroller { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior-y: contain; touch-action: pan-y; }
+    .handle-row { display: flex; justify-content: center; padding: 8px 0 4px; }
+    .handle { width: 36px; height: 4px; background: #ccc; border-radius: 2px; }
+    .xbtn { background: none; border: 0; color: #bbb; font-size: 22px; line-height: 1; cursor: pointer; padding: 0 6px; }
+
+    /* メニュー（#nearby-panel のメインビュー）。フッターが下部バーの代わりを務める */
+    .m-weather { display: flex; align-items: center; gap: 4px; padding: 0 16px 4px; }
+    .wc { flex: 1; max-width: 86px; background: #f5f8ff; border-radius: 8px; padding: 4px 2px 5px; text-align: center; font-size: 9px; color: #888; line-height: 1.3; }
+    .wc b { font-size: 11px; color: #e05000; }
+    .gear { margin-left: auto; width: 36px; height: 36px; border-radius: 50%; border: .5px solid #e0e0e0; background: #f5f5f5; color: #555; font-size: 16px; }
+    .sec { font-size: 11px; color: #888; padding: 8px 16px 6px; border-top: 1px solid #f0f0f0; }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 0 16px 8px; }
+    .gi { background: #f8f8f8; border-radius: 10px; height: 62px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 9px; color: #555; cursor: pointer; }
+    .gi i { width: 26px; height: 22px; border-radius: 5px; display: block; }
+    .m-foot { flex-shrink: 0; height: 52px; display: flex; touch-action: none; box-shadow: 0 -2px 8px rgba(0,0,0,.15); }
+    .m-foot .org { flex: 1; background: #f9f9f9; border-right: 1px solid #e0e0e0; padding: 0 10px; display: flex; flex-direction: column; justify-content: center; }
+    .m-foot .org small { font-size: 10px; color: #aaa; }
+    .m-foot .org span { font-size: 13px; }
+    .m-foot button { width: 54px; border: 0; border-left: 2px solid #e0e0e0; background: #fff; font-size: 18px; color: #555; cursor: pointer; }
+
+    /* 一覧（城主・都道府県・遺構・お気に入りの各ビュー）。ハンドルは今は無く、このモックで足している */
+    .l-head { display: flex; align-items: center; gap: 8px; padding: 4px 12px 8px; }
+    .l-head .t { flex: 1; font-size: 14px; font-weight: bold; }
+    .ibtn { width: 32px; height: 32px; border: 0; background: #f5f5f5; border-radius: 8px; color: #555; font-size: 16px; cursor: pointer; }
+    .l-filter { padding: 0 12px 8px; border-bottom: 1px solid #f0f0f0; }
+    .l-filter input { width: 100%; box-sizing: border-box; height: 34px; border: 1px solid #e3e3e3; border-radius: 17px; padding: 0 12px; font-size: 13px; background: #fafafa; }
+    .row { padding: 9px 14px; border-bottom: 1px solid #f3f3f3; font-size: 14px; cursor: pointer; }
+    .row small { display: block; font-size: 11px; color: #888; margin-top: 2px; }
+
+    /* 周辺検索の結果 */
+    .r-head { display: flex; align-items: center; gap: 10px; padding: 0 16px 6px; }
+    .r-head .t { font-size: 14px; font-weight: bold; }
+    .r-head .all { font-size: 11px; background: #f5f5f5; border: 1px solid #ddd; border-radius: 14px; padding: 3px 10px; }
+    .r-head .xbtn { margin-left: auto; }
+    .r-sum { font-size: 11px; color: #666; padding: 4px 14px 6px; border-bottom: 1px solid #f0f0f0; }
+
+    /* 情報シート。名前の行も掴める部分に入れている（本文だけスクロール） */
+    .o-head { position: relative; min-height: 24px; padding: 8px 14px 4px; box-sizing: border-box; }
+    .o-head .handle { height: 6px; border-radius: 3px; margin: 0 auto; }
+    .o-head .star { position: absolute; top: 0; right: 38px; background: none; border: 0; font-size: 19px; color: #cfcfcf; }
+    .o-head .xbtn { position: absolute; top: 0; right: 8px; font-size: 24px; }
+    .o-title { padding: 0 14px 6px; }
+    .o-title .n { font-size: 15px; font-weight: bold; }
+    .o-title .s { font-size: 12px; color: #777; margin-top: 3px; }
+    .o-body { padding: 0 14px 14px; }
+    .o-row { display: flex; gap: 10px; }
+    .o-photo { width: 128px; height: 128px; flex-shrink: 0; border-radius: 7px; background: #d7cfc0; }
+    .o-meta { font-size: 12px; line-height: 1.7; color: #555; }
+    .o-btns { display: flex; gap: 6px; margin-top: 8px; }
+    .o-btns span { flex: 1; text-align: center; font-size: 12px; padding: 9px 0; border-radius: 8px; background: #f1f5ff; color: #2a5bd7; }
+
+    /* 段の位置の目印（操作には関与しない） */
+    #guides { position: absolute; inset: 0; pointer-events: none; z-index: 450; }
+    .gl { position: absolute; left: 0; right: 0; border-top: 1px dashed rgba(229,57,53,.75); }
+    .gl span { position: absolute; right: 4px; top: -15px; font-size: 10px; color: #e53935; background: rgba(255,255,255,.85); padding: 0 3px; border-radius: 3px; }
+</style>
+</head>
+<body>
+<h1>シートの段階（ドラッグハンドル）</h1>
+<p class="lead">
+    メニュー・一覧・周辺検索の結果・情報シートを、ハンドル（見出し）のドラッグで「小・中・全開」の3段に止める案です。
+    右の枠の中で、見出しをマウスで上下にドラッグしてください。一覧や本文の上でのスワイプ（ホイール）は中身のスクロールになり、シートは動きません。
+    シートが開いていても、裏の地図はドラッグで動かせます。赤い点線が各段の位置で、指（マウス）を離したときの判定は左の「いまの状態」に出ます。
+</p>
+<div class="wrap">
+<div class="ctrl">
+    <fieldset><legend>開く</legend>
+        <div class="btns">
+            <button onclick="sheets.menu.open()">メニュー</button>
+            <button onclick="sheets.list.open()">一覧（県ページ）</button>
+            <button onclick="sheets.result.open()">周辺検索の結果</button>
+            <button onclick="sheets.obj.open()">情報シート</button>
+        </div>
+        <div class="note" style="margin-top:4px">枠の中の ≡ でもメニューが開きます。地図のピンを押すと情報シートが開きます。</div>
+    </fieldset>
+    <fieldset><legend>画面</legend>
+        <label><input type="radio" name="scr" value="375x667" checked> 375×667（SE3・既存コードの基準）</label><br>
+        <label><input type="radio" name="scr" value="375x553"> 375×553（SE3・Safariのバー表示時。既存コードのコメントの値）</label><br>
+        <label><input type="radio" name="scr" value="393x852"> 393×852（縦長の画面の例）</label>
+    </fieldset>
+    <fieldset><legend>段の高さ（下部バーより上の高さに対する割合）</legend>
+        <table>
+            <tr><td>全開</td><td><input type="number" id="r-full" step="0.5" value="91.5">%</td><td id="px-full" class="note"></td></tr>
+            <tr><td>中</td><td><input type="number" id="r-half" step="0.5" value="50">%</td><td id="px-half" class="note"></td></tr>
+            <tr><td>小</td><td><input type="number" id="r-peek" step="0.5" value="12">%</td><td id="px-peek" class="note"></td></tr>
+        </table>
+        <div class="note" style="margin-top:4px">
+            全開91.5%は、SE3で今の一覧と同じ563px（上に地図52px）になる値です。<br>
+            小は、見出し（掴める部分）が収まる高さより低くはしません。<br>
+            メニューと情報シートは、中身が全開より短ければ中身の高さで止めます。
+        </div>
+    </fieldset>
+    <fieldset><legend>開いたときの段（毎回この段。前回の段は覚えない）</legend>
+        <table>
+            <tr><td>メニュー</td><td><select id="o-menu"><option>全開</option><option>中</option><option>小</option></select></td></tr>
+            <tr><td>一覧</td><td><select id="o-list"><option>全開</option><option>中</option><option>小</option></select></td></tr>
+            <tr><td>周辺検索の結果</td><td><select id="o-result"><option>全開</option><option>中</option><option>小</option></select></td></tr>
+            <tr><td>情報シート</td><td><select id="o-obj"><option>全開</option><option selected>中</option><option>小</option></select></td></tr>
+        </table>
+    </fieldset>
+    <fieldset><legend>いまの状態</legend><div id="readout">（シートは閉じています）</div></fieldset>
+    <fieldset><legend>指を離したときの決まり</legend>
+        <ul>
+            <li>上向きに動かしながら離す → 今の位置より上の段（小の下からなら中、中より上なら全開）</li>
+            <li>小より下まで下げて離す → 小の高さの半分より下、または下向きに速く（500px/秒超）払ったら閉じる</li>
+            <li>止めてから離す（50px/秒未満） → いちばん近い段</li>
+            <li>下向きに動かしながら離す → 中と小のうち近いほう</li>
+        </ul>
+        <div class="note" style="margin-top:4px">
+            Material Components（Android）の BottomSheetBehavior.onViewReleased の分岐と定数
+            （払いの速さ500、halfExpandedRatio 0.5、HIDE_THRESHOLD 0.5、HIDE_FRICTION 0.1）をそのまま写しています。
+            「50px/秒未満は止めた扱い」だけはこのモックで決めた値です。
+        </div>
+    </fieldset>
+</div>
+
+<div id="phone">
+    <div id="map"><div id="map-layer">
+        <div class="pin" style="left:1650px;top:1620px">城</div>
+        <div class="pin" style="left:1580px;top:1760px">城</div>
+        <div class="pin" style="left:1760px;top:1700px">城</div>
+    </div></div>
+
+    <div id="bar"><div class="search">検索</div><button>◎</button><button onclick="sheets.menu.isOpen() ? sheets.menu.close('≡を押した') : sheets.menu.open()">≡</button></div>
+
+    <!-- メニュー -->
+    <div class="sheet closed" id="menu" style="z-index:300">
+        <div class="fixed-top">
+            <div class="handle-row"><div class="handle"></div></div>
+            <div class="m-weather">
+                <div class="wc">今日<br><b>21°</b></div><div class="wc">明日<br><b>26°</b></div><div class="wc">明後日<br><b>26°</b></div>
+                <button class="gear">⚙</button>
+            </div>
+        </div>
+        <div class="scroller">
+            <div class="sec">周辺検索</div>
+            <div class="grid" id="menu-grid"></div>
+            <div class="sec">一覧から検索</div>
+            <div class="grid" style="padding-bottom:12px">
+                <div class="gi" onclick="sheets.list.open()"><i style="background:#80b8a8"></i>都道府県</div>
+                <div class="gi" onclick="sheets.list.open()"><i style="background:#aaa"></i>城主</div>
+                <div class="gi" onclick="sheets.list.open()"><i style="background:#b8a8a0"></i>遺構</div>
+                <div class="gi" onclick="sheets.list.open()"><i style="background:#FFC107"></i>お気に入り</div>
+            </div>
+        </div>
+        <div class="m-foot">
+            <div class="org"><small>検索地点</small><span>東京都千代田区丸の内</span></div>
+            <button>◎</button><button onclick="sheets.menu.close('≡を押した')">≡</button>
+        </div>
+    </div>
+
+    <!-- 一覧（県ページ） -->
+    <div class="sheet closed" id="list">
+        <div class="fixed-top">
+            <div class="handle-row"><div class="handle"></div></div>
+            <div class="l-head"><button class="ibtn" onclick="sheets.menu.open()">‹</button><div class="t">東京都</div><button class="ibtn" onclick="sheets.list.close('×を押した')">×</button></div>
+            <div class="l-filter"><input placeholder="名前・住所で絞り込み"></div>
+        </div>
+        <div class="scroller" id="list-rows"></div>
+    </div>
+
+    <!-- 周辺検索の結果 -->
+    <div class="sheet closed" id="result">
+        <div class="fixed-top">
+            <div class="handle-row" style="padding-bottom:8px"><div class="handle"></div></div>
+            <div class="r-head"><span class="t">500m以内</span><span class="all">全解除</span><button class="xbtn" onclick="sheets.result.close('×を押した')">×</button></div>
+            <div class="l-filter"><input placeholder="名前・住所で絞り込み"></div>
+            <div class="r-sum">レストラン 24 ／ カフェ 11 ／ ラーメン 7</div>
+        </div>
+        <div class="scroller" id="result-rows"></div>
+    </div>
+
+    <!-- 情報シート -->
+    <div class="sheet closed" id="obj" style="z-index:310">
+        <div class="fixed-top">
+            <div class="o-head"><div class="handle"></div><button class="star">★</button><button class="xbtn" onclick="sheets.obj.close('×を押した')">×</button></div>
+            <div class="o-title"><div class="n">江戸城</div><div class="s">東京都千代田区千代田1-1</div></div>
+        </div>
+        <div class="scroller o-body">
+            <div class="o-row">
+                <div class="o-photo"></div>
+                <div class="o-meta">形態：平城<br>築城：1457年<br>築城者：太田道灌<br>遺構：石垣・堀・櫓・門<br>日本100名城</div>
+            </div>
+            <div class="o-meta" style="margin-top:8px">長禄元年に太田道灌が築いた城を起こりとし、徳川家康の入城後に天下普請で拡張された。本丸・二の丸・三の丸の跡は皇居東御苑として公開されている。</div>
+            <div class="o-btns"><span>ここへ行く</span><span>Wikipedia</span></div>
+            <div class="o-btns"><span>攻城団</span><span>城郭放浪記</span></div>
+            <div class="o-btns"><span>Googleマップ</span><span>共有</span></div>
+        </div>
+    </div>
+
+    <div id="guides"></div>
+</div>
+</div>
+
+<script>
+const phone = document.getElementById('phone');
+const BAR = 52;                 // 下部バーの高さ（本物の --sheet-base と同じ）
+const SLOP = 8;                 // タップ／スクロールとドラッグを分ける移動量(px)。本物の SWIPE_SLOP と同じ
+const MIN_VEL = 50;             // これ未満の速さは「止めて離した」扱い(px/秒)。このモックで決めた値
+const FLING_VEL = 500;          // BottomSheetBehavior の DEFAULT_SIGNIFICANT_VEL_THRESHOLD
+const HIDE_THRESHOLD = 0.5;     // BottomSheetBehavior の HIDE_THRESHOLD
+const HIDE_FRICTION = 0.1;      // BottomSheetBehavior の HIDE_FRICTION
+const ratio = { full: 0.915, half: 0.5, peek: 0.12 };
+
+/* ── 中身の水増し ─────────────────────────────────────────────── */
+(() => {
+    const cols = ['#4285F4','#34A853','#1565C0','#FF5722','#795548','#607D8B','#FF9800','#7B1FA2',
+                  '#F44336','#FFA000','#8D6E63','#00897B','#E91E63','#00897B','#D32F2F','#1976D2'];
+    const names = ['スポット','スーパー','駅/バス停','レストラン','カフェ','像','テイクアウト','ミュージアム',
+                   'ラーメン','うどん','そば','観光スポット','寿司','ドラッグストア','100円ショップ','ホテル'];
+    document.getElementById('menu-grid').innerHTML =
+        names.map((n, i) => `<div class="gi" onclick="sheets.result.open()"><i style="background:${cols[i]}"></i>${n}</div>`).join('');
+    let h = '';
+    for (let i = 1; i <= 80; i++) h += `<div class="row" onclick="sheets.obj.open()">城 ${i}<small>東京都千代田区丸の内${i}-1</small></div>`;
+    document.getElementById('list-rows').innerHTML = h;
+    h = '';
+    for (let i = 1; i <= 42; i++) h += `<div class="row" onclick="sheets.obj.open()">店 ${i}<small>${i * 12}m ・ 東京都千代田区丸の内${i}-2</small></div>`;
+    document.getElementById('result-rows').innerHTML = h;
+})();
+
+let lastJudge = '';
+
+class Sheet {
+    constructor(id, o) {
+        this.el = document.getElementById(id);
+        this.label = o.label;
+        this.base = o.base;         // シートの下端（下部バーの上に載せるなら52）
+        this.extra = o.extra || 0;  // 段の高さに足す分（メニューのフッター＝下部バーの代わり）
+        this.fit = !!o.fit;         // 中身が短ければ中身の高さで止める
+        this.openSel = o.openSel;
+        this.h = 0;
+        this.stage = null;
+        this.closeTimer = 0;
+        this.el.style.bottom = this.base + 'px';
+        this.bindDrag();
+    }
+    isOpen() { return this.stage !== null; }
+    parentH() { return phone.clientHeight - BAR; }
+    fixedH() {
+        let s = 0;
+        this.el.querySelectorAll(':scope > .fixed-top').forEach(e => { s += e.offsetHeight; });
+        return s;
+    }
+    stages() {
+        const H = this.parentH();
+        const fixed = this.fixedH();
+        let full = Math.round(H * ratio.full);
+        if (this.fit) full = Math.min(full, fixed + this.el.querySelector('.scroller').scrollHeight);
+        const peek = Math.min(full, Math.max(Math.round(H * ratio.peek), fixed));
+        const half = Math.round(H * ratio.half);
+        const list = [{ name: '小', h: peek }];
+        if (half > peek && half < full) list.push({ name: '中', h: half });
+        if (full > peek) list.push({ name: '全開', h: full });
+        return list;
+    }
+    setH(h, animate) {
+        this.el.style.transition = animate ? '' : 'none';
+        this.h = h;
+        this.el.style.height = (h + this.extra) + 'px';
+    }
+    open() {
+        Object.values(sheets).forEach(s => { if (s !== this && s.isOpen()) s.close('ほかのシートを開いた', true); });
+        clearTimeout(this.closeTimer);
+        const wasOpen = this.isOpen();
+        this.el.classList.remove('closed');
+        const st = this.stages();
+        const want = document.getElementById(this.openSel).value;
+        const target = st.find(s => s.name === want) || st[st.length - 1];
+        if (!wasOpen) { this.setH(0, false); this.el.style.height = '0px'; void this.el.offsetHeight; }
+        this.snapTo(target, `開いた → 決まった段（${want}）`);
+    }
+    close(why, quiet) {
+        this.el.style.transition = '';
+        this.el.style.height = '0px';
+        this.h = 0;
+        this.stage = null;
+        this.closeTimer = setTimeout(() => this.el.classList.add('closed'), 300);
+        if (!quiet) lastJudge = `${this.label}：${why}`;
+        render();
+    }
+    snapTo(st, why) {
+        this.setH(st.h, true);
+        this.stage = st.name;
+        lastJudge = `${this.label}：${why} → <b>${st.name}</b>（${st.h}px）`;
+        render();
+    }
+    /* 指を離したときの行き先。BottomSheetBehavior.onViewReleased の分岐を、
+       「上端の位置(top)」から「シートの高さ(h)」に置き換えて写したもの（大小が逆になる） */
+    release(vRaw) {
+        const st = this.stages();
+        const peek = st[0].h, full = st[st.length - 1].h;
+        const half = st.find(s => s.name === '中');
+        const h = this.h;
+        const v = Math.abs(vRaw) < MIN_VEL ? 0 : vRaw;   // 下向きが正
+        const vt = `${Math.round(vRaw)}px/秒`;
+        if (v < 0) {
+            const t = (half && h < half.h) ? half : st[st.length - 1];
+            return this.snapTo(t, `上向きに動かして離した（${vt}）`);
+        }
+        // shouldHide：小より下で、慣性を足した位置が小から小の高さの半分以上離れている
+        if (h <= peek && Math.abs(peek - (h - v * HIDE_FRICTION)) / peek > HIDE_THRESHOLD) {
+            if (v > FLING_VEL || h < full / 2) return this.close(`小より下で離した（${vt}、高さ${Math.round(h)}px）→ <b>閉じる</b>`);
+            const t = (half && Math.abs(h - half.h) < Math.abs(h - full)) ? half : st[st.length - 1];
+            return this.snapTo(t, `小より下で離した（${vt}）`);
+        }
+        if (v === 0) {
+            const t = st.reduce((a, b) => Math.abs(b.h - h) < Math.abs(a.h - h) ? b : a);
+            return this.snapTo(t, `止めてから離した（${vt}）→ いちばん近い段`);
+        }
+        const t = (half && Math.abs(h - half.h) < Math.abs(h - peek)) ? half : st[0];
+        this.snapTo(t, `下向きに動かして離した（${vt}）→ 中と小のうち近いほう`);
+    }
+    bindDrag() {
+        const el = this.el;
+        let g = null, swallow = false;
+        el.addEventListener('pointerdown', e => {
+            swallow = false;
+            if (e.pointerType === 'mouse' && e.button !== 0) return;
+            // 一覧・本文はスクロールに任せる。入力欄はフォーカスを優先する
+            if (e.target.closest('.scroller, input')) return;
+            g = { id: e.pointerId, x0: e.clientX, y0: e.clientY, h0: this.h, drag: false, pts: [] };
+        });
+        el.addEventListener('pointermove', e => {
+            if (!g || e.pointerId !== g.id) return;
+            const dx = e.clientX - g.x0, dy = e.clientY - g.y0;
+            if (!g.drag) {
+                if (Math.abs(dx) > SLOP && Math.abs(dx) >= Math.abs(dy)) { g = null; return; }
+                if (Math.abs(dy) <= SLOP) return;
+                g.drag = true; g.y0 = e.clientY; g.h0 = this.h;
+                // 捕捉はドラッグ確定後。押した時点で捕捉すると中のボタンの click が効かなくなる（本物と同じ理由）
+                try { el.setPointerCapture(e.pointerId); } catch (_) {}
+            }
+            g.pts.push([e.timeStamp, e.clientY]);
+            while (g.pts.length > 2 && e.timeStamp - g.pts[0][0] > 100) g.pts.shift();
+            const full = this.stages().slice(-1)[0].h;
+            this.setH(Math.max(0, Math.min(full, g.h0 - (e.clientY - g.y0))), false);
+            renderGuides();
+            e.preventDefault();
+        });
+        const end = (e, cancelled) => {
+            if (!g || e.pointerId !== g.id) return;
+            const was = g; g = null;
+            if (!was.drag) return;
+            swallow = true;
+            let v = 0;
+            const p = was.pts;
+            // 直近100msの移動から速さを出す。最後に動いてから100ms以上止めていたら0
+            if (!cancelled && p.length >= 2 && e.timeStamp - p[p.length - 1][0] < 100) {
+                const [t0, y0] = p[0], [t1, y1] = p[p.length - 1];
+                if (t1 > t0) v = (y1 - y0) / (t1 - t0) * 1000;
+            }
+            this.release(v);
+        };
+        el.addEventListener('pointerup', e => end(e, false));
+        el.addEventListener('pointercancel', e => end(e, true));
+        el.addEventListener('click', e => {
+            if (!swallow) return;
+            swallow = false; e.stopPropagation(); e.preventDefault();
+        }, true);
+    }
+}
+
+const sheets = {
+    menu:   new Sheet('menu',   { label: 'メニュー',       base: 0,   extra: BAR, fit: true, openSel: 'o-menu' }),
+    list:   new Sheet('list',   { label: '一覧',           base: BAR,             fit: false, openSel: 'o-list' }),
+    result: new Sheet('result', { label: '周辺検索の結果', base: BAR,             fit: false, openSel: 'o-result' }),
+    obj:    new Sheet('obj',    { label: '情報シート',     base: BAR,             fit: true, openSel: 'o-obj' }),
+};
+
+/* ── 地図のドラッグ（シートが開いていても動く） ─────────────────────── */
+(() => {
+    const map = document.getElementById('map'), layer = document.getElementById('map-layer');
+    let x = 0, y = 0, m = null;
+    map.addEventListener('pointerdown', e => { m = { id: e.pointerId, x0: e.clientX, y0: e.clientY, x, y, moved: false }; });
+    map.addEventListener('pointermove', e => {
+        if (!m || e.pointerId !== m.id) return;
+        const dx = e.clientX - m.x0, dy = e.clientY - m.y0;
+        if (!m.moved && Math.hypot(dx, dy) > SLOP) { m.moved = true; try { map.setPointerCapture(e.pointerId); } catch (_) {} }
+        if (m.moved) { x = m.x + dx; y = m.y + dy; layer.style.transform = `translate(${x}px,${y}px)`; }
+    });
+    map.addEventListener('pointerup', e => {
+        if (!m || e.pointerId !== m.id) return;
+        const was = m; m = null;
+        if (was.moved) return;
+        // 本物と同じく、ピンで情報シートを開き、地図の空きを押したら情報シートだけ閉じる
+        if (e.target.closest('.pin')) sheets.obj.open();
+        else if (sheets.obj.isOpen()) sheets.obj.close('地図の空きを押した');
+    });
+})();
+
+/* ── 表示の更新 ───────────────────────────────────────────────── */
+function openSheet() { return Object.values(sheets).find(s => s.isOpen()); }
+
+function renderGuides() {
+    const gEl = document.getElementById('guides');
+    const s = openSheet();
+    if (!s) { gEl.innerHTML = ''; return; }
+    const H = phone.clientHeight;
+    gEl.innerHTML = s.stages().map(st =>
+        `<div class="gl" style="top:${H - (s.base + s.extra + st.h)}px"><span>${st.name} ${st.h}px</span></div>`).join('');
+}
+
+function render() {
+    const H = phone.clientHeight - BAR;
+    document.getElementById('px-full').textContent = `${Math.round(H * ratio.full)}px（上に地図${H - Math.round(H * ratio.full)}px）`;
+    document.getElementById('px-half').textContent = `${Math.round(H * ratio.half)}px`;
+    document.getElementById('px-peek').textContent = `${Math.round(H * ratio.peek)}px（見出しが収まらなければ見出しの高さ）`;
+    const s = openSheet();
+    let html = '';
+    if (s) {
+        const st = s.stages();
+        html += `開いているシート：<b>${s.label}</b><br>`;
+        html += `いまの段：<b>${s.stage}</b>（${Math.round(s.h)}px）<br>`;
+        html += `この画面での段：${st.map(x => `${x.name} ${x.h}px`).join(' ／ ')}<br>`;
+        html += `上に見える地図：${phone.clientHeight - (s.base + s.extra + Math.round(s.h))}px<br>`;
+    } else {
+        html += '（シートは閉じています）<br>';
+    }
+    if (lastJudge) html += `<span class="note">直前の判定：</span>${lastJudge}`;
+    document.getElementById('readout').innerHTML = html;
+    renderGuides();
+}
+
+function applyScreen() {
+    const [w, h] = document.querySelector('input[name=scr]:checked').value.split('x').map(Number);
+    phone.style.width = w + 'px';
+    phone.style.height = h + 'px';
+    resnap();
+}
+/* 画面や割合を変えたら、開いているシートを同じ名前の段へ置き直す（無くなった段なら全開） */
+function resnap() {
+    const s = openSheet();
+    if (s) {
+        const st = s.stages();
+        const t = st.find(x => x.name === s.stage) || st[st.length - 1];
+        s.setH(t.h, false); s.stage = t.name;
+    }
+    render();
+}
+document.querySelectorAll('input[name=scr]').forEach(r => r.addEventListener('change', applyScreen));
+[['r-full', 'full'], ['r-half', 'half'], ['r-peek', 'peek']].forEach(([id, k]) => {
+    document.getElementById(id).addEventListener('input', e => {
+        const v = parseFloat(e.target.value);
+        if (v > 0 && v <= 100) { ratio[k] = v / 100; resnap(); }
+    });
+});
+applyScreen();
+</script>
+</body>
+</html>
