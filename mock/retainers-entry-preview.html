@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>家臣団の入口とお気に入りの移動</title>
+<style>
+    body { font-family: sans-serif; background: #eceff1; margin: 0; padding: 16px; color: #333; }
+    h1 { font-size: 15px; margin: 0 0 4px; }
+    h2 { font-size: 14px; margin: 26px 0 4px; }
+    .lead { font-size: 12px; color: #555; margin: 0 0 12px; line-height: 1.8; max-width: 1180px; }
+    .wrap { display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start; }
+    .cap { font-size: 12px; font-weight: bold; margin: 0 0 6px; }
+    .cap small { font-weight: normal; color: #666; }
+    .note { font-size: 11.5px; color: #555; line-height: 1.7; margin: 8px 0 0; width: 375px; }
+    .note b { color: #c62828; font-weight: normal; }
+    .note i { font-style: normal; color: #2e7d32; }
+
+    /* ── メニューの上部（#nearby-panel のメインビュー）。寸法は index.html の値 ── */
+    .menu { width: 375px; background: #fff; border-radius: 16px 16px 0 0; box-shadow: 0 0 0 8px #263238; padding-bottom: 8px; }
+    .hrow0 { display: flex; justify-content: center; padding: 8px 0 4px; }
+    .handle { width: 36px; height: 4px; background: #ccc; border-radius: 2px; }
+    /* #nearby-panel-header の中の行 */
+    .hrow { display: flex; align-items: center; justify-content: space-between; padding: 0 16px 4px; gap: 6px; }
+    .hbtns { display: flex; gap: 6px; flex-shrink: 0; }
+    #ww, .ww { display: flex; flex: 1 1 auto; min-width: 0; max-width: 266px; gap: 4px; }
+    .wc { flex: 1 1 0; min-width: 0; max-width: 86px; display: flex; flex-direction: column; align-items: center; background: #f5f8ff; border-radius: 8px; padding: 4px 2px 5px; }
+    .wl { font-size: 9px; color: #888; line-height: 1; margin-bottom: 2px; }
+    .wit { display: flex; align-items: center; justify-content: center; gap: 2px; }
+    .we { width: 32px; height: 32px; border-radius: 50%; background: radial-gradient(circle, #ffb300 0 42%, transparent 44%); flex-shrink: 0; }
+    .wtc { display: flex; flex-direction: column; align-items: flex-start; }
+    .hi { font-size: 11px; font-weight: bold; color: #e05000; line-height: 1.15; }
+    .lo { font-size: 10px; color: #4488cc; line-height: 1.15; }
+    .wp { font-size: 10px; line-height: 1; margin-top: 2px; color: #4488cc; }
+    /* #settings-btn と同じ丸ボタン */
+    .rbtn { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: #f5f5f5;
+            border: .5px solid #e0e0e0; border-radius: 50%; color: #555; padding: 0; flex-shrink: 0; cursor: pointer; }
+    .rbtn.star-y { color: #FFC107; }
+    .rbtn:disabled { opacity: .5; cursor: default; }
+
+    .seclabel { font-size: 11px; color: #999; padding: 6px 16px 4px; border-top: 1px solid #f0f0f0; }
+    .catgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 0 16px 12px; }
+    .cat { background: #f8f8f8; border-radius: 10px; height: 56px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 9px; color: #555; }
+    .cat i { width: 30px; height: 22px; border-radius: 5px; display: block; opacity: .75; }
+    /* .nearby-list-btns / .nearby-list-btn / .nlb-ic / .nlb-n と同じ値 */
+    .lbtns { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 0 16px 12px; }
+    .lbtn { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 100%; background: #f8f8f8; border: 0; border-radius: 10px; padding: 8px 6px; font-family: inherit; }
+    .lbtn.new { box-shadow: 0 0 0 2px #1e88e5; }
+    .ic { width: 34px; height: 34px; border-radius: 9px; background: #8A8A8A; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ic svg { width: 100%; height: 100%; display: block; }
+    .nn { display: block; font-size: 9px; color: #555; text-align: center; white-space: nowrap; }
+
+    /* ── 家臣団を開いたときの画面（SE3 375×667） ── */
+    .phone { position: relative; width: 375px; height: 667px; overflow: hidden; background: #e8e4da; box-shadow: 0 0 0 8px #263238; border-radius: 4px; }
+    .map { position: absolute; inset: 0; background-color: #ede9df;
+           background-image: linear-gradient(#d9d2c3 2px, transparent 2px), linear-gradient(90deg, #d9d2c3 2px, transparent 2px);
+           background-size: 120px 120px; }
+    .bar { position: absolute; left: 0; right: 0; bottom: 0; height: 52px; background: #fff; display: flex; z-index: 200; box-shadow: 0 -2px 8px rgba(0,0,0,.15); }
+    .bar .s { flex: 1; display: flex; align-items: center; padding: 0 12px; color: #aaa; font-size: 13px; }
+    .bar b { width: 54px; border-left: 2px solid #e0e0e0; display: flex; align-items: center; justify-content: center; font-weight: normal; color: #555; }
+    .sheet { position: absolute; left: 0; right: 0; background: #fff; display: flex; flex-direction: column; z-index: 300; }
+    .lhead { display: flex; align-items: center; gap: 8px; padding: 12px 12px 8px; flex-shrink: 0; border-bottom: 1px solid #f0f0f0; }
+    .ltitle { font-size: 14px; font-weight: bold; color: #333; flex: 1; }
+    .libtn { width: 32px; height: 32px; border: 0; background: #f5f5f5; border-radius: 8px; color: #555; display: flex; align-items: center; justify-content: center; font-size: 17px; }
+    .sheet iframe { flex: 1; width: 100%; border: 0; min-height: 0; display: block; }
+    .phone > iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+</style>
+</head>
+<body>
+
+<h1>家臣団の入口とお気に入りの移動（SE3 375px）</h1>
+<p class="lead">
+    メニュー上部の寸法は index.html の値をそのまま写しています（パネル左右の余白16px、行の間隔6px、天気カード最大86px、設定ボタン36px）。
+    周辺検索のアイコンと天気の絵は省略しています。家臣団の画面は <code>retainers/index.html</code>（取得ツールは D:\work\SamuraiRetainers）をそのまま埋め込んでいます。
+</p>
+
+<h2>1. メニュー</h2>
+<div class="wrap">
+    <div>
+        <div class="cap">変更前</div>
+        <div class="menu">
+            <div class="hrow0"><div class="handle"></div></div>
+            <div class="hrow">
+                <div class="ww" id="ww-before"></div>
+                <div class="hbtns"><button class="rbtn" title="設定">__GEAR__</button></div>
+            </div>
+            <div class="seclabel">周辺検索</div>
+            <div class="catgrid">__CATS__</div>
+            <div class="seclabel">一覧から検索</div>
+            <div class="lbtns">
+                __PREF__ __LORD__ __REMAINS__
+                <button class="lbtn"><span class="ic" style="background:#FFC107;"><svg viewBox="0 0 100 100"><path fill="#fff" d="M50 14 L61 39 L88 42 L68 60 L74 87 L50 73 L26 87 L32 60 L12 42 L39 39 Z"/></svg></span><span class="nn">お気に入り</span></button>
+            </div>
+        </div>
+        <p class="note">天気カードは1枚 86px（上限いっぱい）。設定ボタンとの間に 35px の空きがあります。</p>
+    </div>
+
+    <div>
+        <div class="cap">変更後 <small>お気に入りを設定の左へ。空いた4枠目に家臣団</small></div>
+        <div class="menu">
+            <div class="hrow0"><div class="handle"></div></div>
+            <div class="hrow">
+                <div class="ww" id="ww-after"></div>
+                <div class="hbtns">
+                    <button class="rbtn" title="お気に入り">__STAR__</button>
+                    <button class="rbtn" title="設定">__GEAR__</button>
+                </div>
+            </div>
+            <div class="seclabel">周辺検索</div>
+            <div class="catgrid">__CATS__</div>
+            <div class="seclabel">一覧から検索</div>
+            <div class="lbtns">
+                __PREF__ __LORD__ __REMAINS__
+                <button class="lbtn new"><span class="ic" style="background:#2f4f7f;">__KABUTO__</span><span class="nn">家臣団</span></button>
+            </div>
+        </div>
+        <p class="note">
+            お気に入りは設定ボタンと同じ丸ボタン（線の★）。名前を入れた枠が1つも無いときに押せないのは今と同じで、薄く出します。<br>
+            天気カードは 86px → <span id="w-after">…</span>px に縮みます（ボタン1つ分 36px＋間隔 6px）。<br>
+            家臣団のアイコンは兜（鍬形・鉢・しころ）。地色 #2f4f7f は家臣団の画面で家紋に使っている色で、隣の3色（緑・灰・茶）と被りません。
+        </p>
+    </div>
+
+    <div>
+        <div class="cap">変更後（★を黄色にする場合）</div>
+        <div class="menu">
+            <div class="hrow0"><div class="handle"></div></div>
+            <div class="hrow">
+                <div class="ww" id="ww-after2"></div>
+                <div class="hbtns">
+                    <button class="rbtn star-y" title="お気に入り">__STARFILL__</button>
+                    <button class="rbtn" title="設定">__GEAR__</button>
+                </div>
+            </div>
+            <div class="seclabel">周辺検索</div>
+            <div class="catgrid">__CATS__</div>
+        </div>
+        <p class="note">今の入口と同じ黄 #FFC107 で塗った★。地図のポケふた #FBBC04 と並ぶのはパネルの外なので、今の入口の考え方（パネルの中だけ）と同じです。</p>
+    </div>
+</div>
+
+<h2>2. 家臣団を開いたとき</h2>
+<p class="lead">3つとも中身は同じ家臣団の画面です。違うのは、どこに出すかと、地図に戻る方法です。ホーム画面に追加したアプリ（manifest の display が standalone）には、ブラウザの戻るボタンがありません。</p>
+<div class="wrap">
+    <div>
+        <div class="cap">案1 メニューの中のビュー <small>城主・遺構・お気に入りと同じ出しかた</small></div>
+        <div class="phone">
+            <div class="map"></div>
+            <div class="sheet" style="top:52px;bottom:52px;border-radius:16px 16px 0 0;box-shadow:0 -4px 16px rgba(0,0,0,.18);">
+                <div class="lhead">
+                    <button class="libtn">__BACK__</button>
+                    <div class="ltitle">家臣団</div>
+                    <button class="libtn">×</button>
+                </div>
+                <iframe src="../retainers/index.html" loading="lazy"></iframe>
+            </div>
+            <div class="bar"><div class="s">検索</div><b>◎</b><b>≡</b></div>
+        </div>
+        <p class="note">
+            <i>‹ でメニューへ、× で地図へ。地図・検索・メニューの状態はそのまま残ります。</i><br>
+            上に地図52px、下に下部バー52pxが残るので、家臣団に使える高さは 563px です。
+        </p>
+    </div>
+    <div>
+        <div class="cap">案2 全画面</div>
+        <div class="phone">
+            <div class="sheet" style="top:0;bottom:0;">
+                <div class="lhead">
+                    <button class="libtn">__BACK__</button>
+                    <div class="ltitle">家臣団</div>
+                </div>
+                <iframe src="../retainers/index.html" loading="lazy"></iframe>
+            </div>
+        </div>
+        <p class="note">
+            <i>‹ でメニューへ。地図の状態はそのまま残ります。</i><br>
+            画面全体を使えるので高さは 667px（見出しを除いて 615px）。一覧から検索の他の3つとは出しかたが揃いません。
+        </p>
+    </div>
+    <div>
+        <div class="cap">案3 別のページに移る</div>
+        <div class="phone">
+            <iframe src="../retainers/index.html" loading="lazy"></iframe>
+        </div>
+        <p class="note">
+            <b>地図のページを離れるので、戻ると地図を読み込み直します（castle.js 14MB・data.js 8.9MB）。開いていたメニューも閉じた状態に戻ります。</b><br>
+            <b>ホーム画面に追加したアプリには戻るボタンが無いため、家臣団の画面に「地図へ戻る」を足す必要があります。</b>
+        </p>
+    </div>
+</div>
+
+<script>
+const GEAR = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>';
+const STAR = '<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2.5 15.09 8.76 22 9.77 17 14.64 18.18 21.52 12 18.27 5.82 21.52 7 14.64 2 9.77 8.91 8.76 12 2.5"/></svg>';
+const STARFILL = STAR.replace('fill="none"', 'fill="currentColor"');
+const BACK = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>';
+/* 兜。反った鍬形2枚 → 鉢（半楕円）→ 裾の広がったしころ。
+   しころの中央を顔の形に抜いておかないと、V字と鉢と台形が「丼と箸」に見える（直線のV字＋2段の台形で試して確認） */
+const KABUTO = '<svg viewBox="0 0 100 100" aria-hidden="true"><g fill="#fff">' +
+    '<path d="M46 42 C38 30 28 18 16 7 C21 22 29 36 39 47 Z"/>' +
+    '<path d="M54 42 C62 30 72 18 84 7 C79 22 71 36 61 47 Z"/>' +
+    '<path d="M29 57 C29 43 38 35 50 35 C62 35 71 43 71 57 Z"/>' +
+    '<path d="M20 60 H80 L93 86 H66 L59 66 H41 L34 86 H7 Z"/></g></svg>';
+const PREF = '<button class="lbtn"><span class="ic" style="background:#2a7d5f;"><svg viewBox="0 0 100 100"><g fill="#fff"><rect x="12" y="12" width="34" height="30" rx="4"/><rect x="52" y="12" width="36" height="18" rx="4"/><rect x="52" y="36" width="36" height="52" rx="4"/><rect x="12" y="48" width="34" height="40" rx="4"/></g></svg></span><span class="nn">都道府県</span></button>';
+const LORD = '<button class="lbtn"><span class="ic"><svg viewBox="0 0 100 100"><g fill="#fff"><rect x="22" y="44" width="56" height="40"/><path d="M14 46 L50 22 L86 46Z"/><rect x="40" y="62" width="20" height="22" fill="#8A8A8A"/></g></svg></span><span class="nn">城主</span></button>';
+const REMAINS = '<button class="lbtn"><span class="ic" style="background:#8d6e63;"><svg viewBox="0 0 100 100"><g fill="#fff"><rect x="24" y="12" width="52" height="12" rx="3"/><rect x="14" y="30" width="30" height="18" rx="3"/><rect x="50" y="30" width="36" height="18" rx="3"/><rect x="14" y="54" width="36" height="18" rx="3"/><rect x="56" y="54" width="30" height="18" rx="3"/></g></svg></span><span class="nn">遺構</span></button>';
+const CATS = ['#4285F4:スポット', '#34A853:スーパー', '#1565C0:駅/バス停', '#FF5722:レストラン']
+    .map(s => { const [c, n] = s.split(':'); return '<div class="cat"><i style="background:' + c + '"></i>' + n + '</div>'; }).join('');
+const CARD = (l, h, lo, p) => '<div class="wc"><div class="wl">' + l + '</div><div class="wit"><span class="we"></span><div class="wtc"><span class="hi">' + h + '°</span><span class="lo">' + lo + '°</span></div></div><div class="wp">' + p + '</div></div>';
+const WEATHER = CARD('今日', 28, 19, '92% 2.7mm') + CARD('明日', 31, 22, '20%') + CARD('明後日', 30, 21, '40%');
+
+document.body.innerHTML = document.body.innerHTML
+    .replaceAll('__GEAR__', GEAR).replaceAll('__STARFILL__', STARFILL).replaceAll('__STAR__', STAR)
+    .replaceAll('__BACK__', BACK).replaceAll('__KABUTO__', KABUTO)
+    .replaceAll('__PREF__', PREF).replaceAll('__LORD__', LORD).replaceAll('__REMAINS__', REMAINS)
+    .replaceAll('__CATS__', CATS);
+['ww-before', 'ww-after', 'ww-after2'].forEach(id => document.getElementById(id).innerHTML = WEATHER);
+document.getElementById('w-after').textContent =
+    document.querySelector('#ww-after .wc').getBoundingClientRect().width.toFixed(1);
+</script>
+</body>
+</html>

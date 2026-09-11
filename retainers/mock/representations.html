@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>戦国大名家 表現方法モック</title>
+<style>
+:root{
+  --paper:#f6f2e8; --paper2:#efe9db; --ink:#2b2622; --ink2:#6b6055;
+  --line:#d8cfbc; --line2:#c2b69d; --accent:#7a2e2e;
+  --shadow:0 1px 3px rgba(60,45,25,.14), 0 8px 24px rgba(60,45,25,.06);
+  --fs:14px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+  font-size:var(--fs); line-height:1.7;
+}
+header.top{
+  padding:22px 28px 14px; border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,#fbf8f1,var(--paper));
+}
+header.top h1{
+  margin:0 0 4px; font-size:24px; font-weight:600; letter-spacing:.08em;
+  display:flex; align-items:center; gap:12px;
+}
+header.top h1 .crest{width:34px;height:34px;color:#2f4f7f}
+header.top .sub{color:var(--ink2); font-size:12.5px; letter-spacing:.02em}
+header.top .sub b{color:var(--ink); font-weight:600}
+
+nav.tabs{
+  display:flex; flex-wrap:wrap; gap:6px; padding:12px 28px;
+  border-bottom:1px solid var(--line); background:var(--paper2);
+  position:sticky; top:0; z-index:20;
+}
+nav.tabs button{
+  font-family:inherit; font-size:13px; color:var(--ink2);
+  background:transparent; border:1px solid transparent; border-radius:999px;
+  padding:5px 13px; cursor:pointer; letter-spacing:.04em; transition:.15s;
+}
+nav.tabs button:hover{background:#e6dfcd; color:var(--ink)}
+nav.tabs button.on{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+nav.tabs .num{opacity:.55; margin-right:5px; font-variant-numeric:tabular-nums}
+
+main{padding:22px 28px 60px; max-width:1500px}
+section.view{display:none}
+section.view.on{display:block}
+.vhead{margin:0 0 14px; display:grid; grid-template-columns:1fr auto; gap:16px; align-items:start}
+.vhead h2{margin:0 0 6px; font-size:19px; font-weight:600; letter-spacing:.06em}
+.vhead p{margin:0; color:var(--ink2); font-size:13px; max-width:78ch}
+.vhead .tags{display:flex; gap:6px; flex-wrap:wrap; justify-content:flex-end}
+.tag{font-size:11px; padding:2px 9px; border-radius:999px; border:1px solid var(--line2); color:var(--ink2); white-space:nowrap}
+.tag.good{border-color:#8aa88a; color:#3f6b45; background:#f0f5ef}
+.tag.bad{border-color:#c9a3a3; color:#8c3b3b; background:#f8f0f0}
+
+.panel{background:#fffdf8; border:1px solid var(--line); border-radius:10px; box-shadow:var(--shadow); overflow:hidden}
+.panel .bar{
+  display:flex; flex-wrap:wrap; align-items:center; gap:10px;
+  padding:9px 14px; border-bottom:1px solid var(--line); background:#faf7ee;
+  font-size:12.5px; color:var(--ink2);
+}
+.panel .bar label{display:flex; align-items:center; gap:6px}
+.panel .bar select,.panel .bar input[type=search]{
+  font-family:inherit; font-size:12.5px; padding:3px 7px;
+  border:1px solid var(--line2); border-radius:5px; background:#fff; color:var(--ink);
+}
+.panel .bar input[type=range]{width:220px}
+.panel .body{overflow:auto; max-height:76vh}
+svg.canvas{display:block}
+.hint{padding:8px 14px; font-size:11.5px; color:var(--ink2); border-top:1px solid var(--line); background:#faf7ee}
+
+/* 共通の描画要素 */
+.node-label{font-size:11px; fill:var(--ink); cursor:pointer}
+.node-label:hover{fill:var(--accent); text-decoration:underline}
+.link{fill:none; stroke:var(--line2); stroke-width:1}
+.axis text{font-size:10px; fill:var(--ink2)}
+.axis line{stroke:var(--line); stroke-width:1}
+.gridline{stroke:#e7dfcc; stroke-width:1}
+.rule{stroke:#b08a6a; stroke-width:1; stroke-dasharray:4 3}
+.rule-label{font-size:10px; fill:#8c6a4a}
+
+/* カード */
+.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(215px,1fr)); gap:10px; padding:14px}
+.card{border:1px solid var(--line); border-radius:8px; background:#fff; padding:10px 11px; position:relative; overflow:hidden}
+.card .cr{position:absolute; right:-10px; top:-10px; width:76px; height:76px; opacity:.09}
+.card .nm{font-size:15px; font-weight:600; letter-spacing:.04em}
+.card .nm a{color:inherit; text-decoration:none}
+.card .nm a:hover{color:var(--accent); text-decoration:underline}
+.card .yr{font-size:11.5px; color:var(--ink2); font-variant-numeric:tabular-nums}
+.card .ld{margin-top:6px; display:flex; gap:4px; flex-wrap:wrap}
+.chip{font-size:10.5px; padding:1px 7px; border-radius:999px; border:1px solid currentColor; opacity:.9}
+
+/* 凡例 */
+.legend{display:flex; flex-wrap:wrap; gap:10px; padding:9px 14px; border-top:1px solid var(--line); background:#faf7ee; font-size:11.5px}
+.legend .it{display:flex; align-items:center; gap:5px; color:var(--ink2)}
+.legend .sw{width:11px; height:11px; border-radius:2px}
+.legend .cr{width:15px; height:15px}
+
+/* ツールチップ */
+#tip{
+  position:fixed; pointer-events:none; z-index:99; opacity:0; transition:opacity .1s;
+  background:#2b2622; color:#f6f2e8; font-size:12px; line-height:1.55;
+  padding:7px 10px; border-radius:6px; max-width:330px; box-shadow:0 6px 20px rgba(0,0,0,.25);
+}
+#tip b{color:#fff}
+#tip .sm{opacity:.75; font-size:11px}
+
+footer{padding:18px 28px 40px; border-top:1px solid var(--line); color:var(--ink2); font-size:11.5px; margin-top:30px}
+footer a{color:var(--ink2)}
+.warn{background:#fdf6e8; border:1px solid #e0cf9f; border-radius:8px; padding:10px 13px; margin:0 0 14px; font-size:12.5px; color:#6b5a35}
+</style>
+</head>
+<body>
+
+<!-- 家紋の簡略図案。ja.wikipedia 各氏族記事 infobox「家紋」の紋名に基づく自作SVG（正確な再現ではない） -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+  <symbol id="cr-takeda" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <path d="M50 6 96 50 50 94 4 50Z" fill="none" stroke="currentColor" stroke-width="4"/>
+      <path d="M50 15 71 36 50 47 29 36Z"/><path d="M26 39 47 50 26 61 15 50Z"/>
+      <path d="M74 39 85 50 74 61 53 50Z"/><path d="M50 53 71 64 50 85 29 64Z"/>
+    </g>
+  </symbol>
+  <symbol id="cr-tokugawa" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="4"/>
+      <g id="aoi-leaf"><path d="M50 46c-9-4-16-13-16-22 0-8 7-14 16-14s16 6 16 14c0 9-7 18-16 22z"/>
+        <rect x="48" y="42" width="4" height="9" rx="2"/></g>
+      <use href="#aoi-leaf" transform="rotate(120 50 50)"/>
+      <use href="#aoi-leaf" transform="rotate(240 50 50)"/>
+      <circle cx="50" cy="50" r="6"/>
+    </g>
+  </symbol>
+  <symbol id="cr-hojo" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <path d="M50 8 71 44H29Z"/><path d="M28 52 49 88H7Z"/><path d="M72 52 93 88H51Z"/>
+    </g>
+  </symbol>
+  <symbol id="cr-uesugi" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="4"/>
+      <path d="M50 20c10 8 15 20 15 32 0 8-2 14-5 20-3-8-6-14-10-19-4 5-7 11-10 19-3-6-5-12-5-20 0-12 5-24 15-32z"/>
+      <path d="M22 44c8-3 16-2 22 2-7 3-15 3-22-2z"/><path d="M78 44c-8-3-16-2-22 2 7 3 15 3 22-2z"/>
+    </g>
+  </symbol>
+  <symbol id="cr-oda" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <g id="oda-p"><ellipse cx="50" cy="24" rx="15" ry="19" fill="none" stroke="currentColor" stroke-width="5"/></g>
+      <use href="#oda-p" transform="rotate(72 50 50)"/><use href="#oda-p" transform="rotate(144 50 50)"/>
+      <use href="#oda-p" transform="rotate(216 50 50)"/><use href="#oda-p" transform="rotate(288 50 50)"/>
+      <g><path d="M50 38c4 4 6 8 6 12s-2 8-6 12c-4-4-6-8-6-12s2-8 6-12z"/>
+         <path d="M38 50c4-4 8-6 12-6s8 2 12 6c-4 4-8 6-12 6s-8-2-12-6z"/></g>
+    </g>
+  </symbol>
+  <symbol id="cr-imagawa" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <path d="M34 14h32c3 0 5 2 5 5v62c0 3-2 5-5 5H34c-3 0-5-2-5-5V19c0-3 2-5 5-5z" fill="none" stroke="currentColor" stroke-width="5"/>
+      <rect x="38" y="30" width="24" height="5"/><rect x="38" y="47" width="24" height="5"/>
+      <rect x="38" y="64" width="24" height="5"/>
+    </g>
+  </symbol>
+  <symbol id="cr-suwa" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <path d="M50 12c5 10 6 18 5 26 6-6 12-9 19-10-3 9-8 16-15 21 7 1 13 4 18 9-9 4-17 5-25 3 3 7 4 14 3 22-7-5-12-11-15-18-3 7-8 13-15 18-1-8 0-15 3-22-8 2-16 1-25-3 5-5 11-8 18-9-7-5-12-12-15-21 7 1 13 4 19 10-1-8 0-16 5-26z"/>
+      <rect x="47" y="60" width="6" height="28" rx="3"/>
+    </g>
+  </symbol>
+  <symbol id="cr-sanada" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <g id="mon6"><circle cx="22" cy="32" r="13"/><circle cx="50" cy="32" r="13"/><circle cx="78" cy="32" r="13"/></g>
+      <use href="#mon6" y="36"/>
+    </g>
+  </symbol>
+  <symbol id="cr-anayama" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <g id="hbishi"><path d="M50 4 68 24 50 44 32 24Z" fill="none" stroke="currentColor" stroke-width="4"/>
+        <path d="M50 14c3 4 5 7 5 10s-2 6-5 10c-3-4-5-7-5-10s2-6 5-10z"/>
+        <path d="M40 24c4-3 7-5 10-5s6 2 10 5c-4 3-7 5-10 5s-6-2-10-5z"/></g>
+      <use href="#hbishi" transform="translate(-26 46)"/><use href="#hbishi" transform="translate(26 46)"/>
+    </g>
+  </symbol>
+  <symbol id="cr-kiso" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <path d="M50 8c7 9 10 19 10 29 0 7-2 13-4 18-2-6-4-11-6-15-2 4-4 9-6 15-2-5-4-11-4-18 0-10 3-20 10-29z"/>
+      <path d="M18 46c9-4 17-3 24 2-8 4-17 4-24-2z"/><path d="M82 46c-9-4-17-3-24 2 8 4 17 4 24-2z"/>
+      <circle cx="50" cy="76" r="9"/><circle cx="27" cy="68" r="7"/><circle cx="73" cy="68" r="7"/>
+    </g>
+  </symbol>
+  <symbol id="cr-generic" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="4">
+      <circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="26" stroke-dasharray="5 5"/>
+    </g>
+  </symbol>
+</defs>
+</svg>
+
+<header class="top">
+  <h1><svg class="crest"><use href="#cr-takeda"/></svg>戦国大名家　表現方法モック</h1>
+  <div class="sub" id="meta"></div>
+</header>
+
+<nav class="tabs" id="tabs"></nav>
+
+<main id="main"></main>
+
+<div id="tip"></div>
+
+<footer>
+  出典：<a href="https://ja.wikipedia.org/" target="_blank" rel="noopener">日本語版ウィキペディア</a>（本文・infobox）。
+  テキストは <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja" target="_blank" rel="noopener">CC BY-SA 4.0</a> の下で利用しています。
+  各人物名のリンク先が原典です。家紋は各氏族記事 infobox「家紋」欄の紋名に基づく自作の簡略図案で、実際の紋の正確な再現ではありません。
+  <span id="footmeta"></span>
+</footer>
+
+<!-- データは別ファイル。表示のプログラムにデータを内包しない。
+     file:// で開いても読めるよう、fetch ではなく script で読む。 -->
+<script src="data.js"></script>
+<script>
+/* ==== views_00_core.js ==== */
+/* 共通基盤：ビュー登録、スケール、家紋、ツールチップ */
+const VIEWS = [];
+const view = o => VIEWS.push(o);
+
+const P = DATA.people;
+const FAM = {};
+DATA.families.forEach(f => FAM[f.key] = f);
+const BY_T = {}; P.forEach(p => BY_T[p.t] = p);
+const CREST_DEFINED = new Set(['takeda','tokugawa','hojo','uesugi','oda','imagawa','suwa','sanada','anayama','kiso']);
+
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+// 氏名は「姓 名」で持ち、記事名は空白なし。検索は空白を落としてから照合する
+const nosp = s => String(s == null ? '' : s).replace(/\s+/g, '');
+const crestId = k => '#cr-' + (CREST_DEFINED.has(k) ? k : 'generic');
+const famName = k => (FAM[k] && FAM[k].name) || 'その他';
+const color = k => (FAM[k] && FAM[k].color) || '#8a8378';
+
+/* 武田三代のどこに仕えたか */
+const GEN = {'武田信虎':'信虎期','武田信玄':'信玄期','武田勝頼':'勝頼期'};
+const GEN_COLOR = {'武田信虎':'#7a6a9a','武田信玄':'#2f4f7f','武田勝頼':'#a8622f'};
+/* 武田以外で最後に仕えた家＝武田滅亡後の行き先の代理指標 */
+function afterFam(p){
+  for (let i = p.lords.length - 1; i >= 0; i--){
+    const f = p.lords[i].f;
+    if (f && f !== 'takeda') return f;
+  }
+  return null;
+}
+function mainFam(p){ return afterFam(p) || 'takeda'; }
+function lastGen(p){ return p.gens.length ? p.gens[p.gens.length - 1] : null; }
+function lifeSpan(p){ return (p.b && p.d) ? [p.b, p.d] : null; }
+/* 指定年に生存していたか（生没年が両方ある人のみ判定可能） */
+function aliveAt(p, y){ return p.b && p.d && p.b <= y && y <= p.d; }
+
+function tipHtml(p){
+  const yr = (p.b || '?') + '–' + (p.d || '?');
+  const lords = p.lords.map(l => l.l).join('→') || '（記載なし）';
+  return '<b>' + esc(p.n) + '</b>　<span class="sm">' + yr + '</span><br>' +
+    '<span class="sm">主君：' + esc(lords) + '</span><br>' +
+    '<span class="sm">氏族：' + esc(p.clans.join('→') || '（記載なし）') + '</span>' +
+    (p.rank ? '<br><span class="sm">官位：' + esc(p.rank) + '</span>' : '') +
+    '<br><span class="sm">クリックでWikipedia</span>';
+}
+/* 人物要素に共通で付ける属性 */
+function pAttr(p){
+  return 'class="pnode" data-id="' + p.id + '" data-url="' + esc(p.u) + '"';
+}
+
+/* ---- ツールチップ / クリック（イベント委譲） ---- */
+const tip = document.getElementById('tip');
+document.addEventListener('mouseover', e => {
+  const t = e.target.closest('[data-id]');
+  if (!t) return;
+  const p = P[+t.dataset.id];
+  if (!p) return;
+  tip.innerHTML = tipHtml(p);
+  tip.style.opacity = 1;
+});
+document.addEventListener('mousemove', e => {
+  if (tip.style.opacity != 1) return;
+  const w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = e.clientX + 14, y = e.clientY + 16;
+  if (x + w > innerWidth - 8) x = e.clientX - w - 14;
+  if (y + h > innerHeight - 8) y = e.clientY - h - 16;
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+});
+document.addEventListener('mouseout', e => {
+  if (e.target.closest('[data-id]')) tip.style.opacity = 0;
+});
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-url]');
+  if (!t) return;
+  window.open(t.dataset.url, '_blank', 'noopener');
+});
+
+/* ---- SVGヘルパ ---- */
+function svgOpen(w, h, cls){ return '<svg class="canvas ' + (cls||'') + '" width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '">'; }
+function crestSvg(k, x, y, size, opacity){
+  return '<svg x="' + x + '" y="' + y + '" width="' + size + '" height="' + size + '" viewBox="0 0 100 100" ' +
+    'style="color:' + color(k) + ';opacity:' + (opacity == null ? 1 : opacity) + '"><use href="' + crestId(k) + '"/></svg>';
+}
+function legend(keys, extra){
+  let h = '<div class="legend">';
+  keys.forEach(k => {
+    h += '<div class="it"><svg class="cr" style="color:' + color(k) + '"><use href="' + crestId(k) + '"/></svg>' +
+         '<span class="sw" style="background:' + color(k) + '"></span>' + esc(famName(k)) +
+         (FAM[k] && FAM[k].crest ? '（' + esc(FAM[k].crest) + '）' : '') + '</div>';
+  });
+  if (extra) h += '<div class="it">' + extra + '</div>';
+  return h + '</div>';
+}
+/* 家別の人数（多い順） */
+function famRanking(){
+  const c = {};
+  P.forEach(p => (p.fams || []).forEach(f => c[f] = (c[f] || 0) + 1));
+  return Object.keys(c).sort((a, b) => c[b] - c[a]).map(k => ({ key: k, n: c[k] }));
+}
+/* 氏族別グループ（人数降順） */
+function clanGroups(){
+  const g = {};
+  P.forEach(p => { const k = p.clan || '（氏族記載なし）'; (g[k] = g[k] || []).push(p); });
+  return Object.keys(g).sort((a, b) => g[b].length - g[a].length || a.localeCompare(b, 'ja'))
+    .map(k => ({ clan: k, people: g[k].slice().sort((x, y) => (x.b || 9999) - (y.b || 9999)) }));
+}
+
+/* ==== views_10_tree.js ==== */
+/* ツリー系：階層ツリー / 放射ツリー / サンバースト */
+
+/* ========== 1. 階層ツリー（縦） ========== */
+view({
+  id: 'tree', title: '階層ツリー（大名 → 氏族 → 人物）',
+  desc: '一番素直な形。ただし Wikipedia には寄親寄子（誰が誰の配下か）のデータが無いため、中間層は氏族で代用しています。「信玄の下に山県、その下に足軽大将」という本来見たい階層は、人手で入れない限り作れません。',
+  tags: ['<span class="tag good">直感的</span>', '<span class="tag good">全員を列挙できる</span>', '<span class="tag bad">中間階層が作れない</span>', '<span class="tag bad">複数主君・移籍を表せない</span>'],
+  render(el){
+    const groups = clanGroups();
+    const open = new Set(groups.slice(0, 8).map(g => g.clan));
+    const draw = () => {
+      const rowH = 17, x0 = 34, x1 = 150, x2 = 300;
+      let y = 30, rows = [], links = [];
+      groups.forEach(g => {
+        const isOpen = open.has(g.clan);
+        const yTop = y;
+        rows.push({ type: 'clan', clan: g.clan, n: g.people.length, y, open: isOpen });
+        y += rowH + 4;
+        if (isOpen) {
+          g.people.forEach(p => { rows.push({ type: 'p', p, y }); links.push([yTop, y]); y += rowH; });
+          y += 6;
+        }
+      });
+      const H = y + 20, W = 1180;
+      let s = svgOpen(W, H);
+      // 根
+      s += '<line class="link" x1="' + x0 + '" y1="30" x2="' + x0 + '" y2="' + (H - 30) + '" stroke-width="1.5"/>';
+      s += crestSvg('takeda', x0 - 15, 4, 30);
+      rows.forEach(r => {
+        if (r.type === 'clan') {
+          s += '<path class="link" d="M' + x0 + ' ' + r.y + ' C' + (x0 + 40) + ' ' + r.y + ',' + (x1 - 40) + ' ' + r.y + ',' + x1 + ' ' + r.y + '"/>';
+          s += '<g class="clanrow" data-clan="' + esc(r.clan) + '" style="cursor:pointer">' +
+            '<rect x="' + (x1 - 6) + '" y="' + (r.y - 11) + '" width="230" height="19" fill="#f2ece0" rx="4"/>' +
+            '<text x="' + x1 + '" y="' + (r.y + 3) + '" font-size="12" fill="#2b2622">' +
+            (r.open ? '▾ ' : '▸ ') + esc(r.clan) + ' <tspan fill="#6b6055" font-size="10.5">' + r.n + '名</tspan></text></g>';
+        } else {
+          const p = r.p, f = mainFam(p);
+          s += '<path class="link" d="M' + x1 + ' ' + r.y + ' C' + (x1 + 50) + ' ' + r.y + ',' + (x2 - 50) + ' ' + r.y + ',' + x2 + ' ' + r.y + '" stroke="#e0d7c2"/>';
+          s += '<g ' + pAttr(p) + ' style="cursor:pointer">' +
+            '<circle cx="' + x2 + '" cy="' + r.y + '" r="3.5" fill="' + color(f) + '"/>' +
+            '<text class="node-label" x="' + (x2 + 10) + '" y="' + (r.y + 4) + '">' + esc(p.n) + '</text>' +
+            '<text x="' + (x2 + 130) + '" y="' + (r.y + 4) + '" font-size="10.5" fill="#6b6055">' +
+            (p.b || '?') + '–' + (p.d || '?') + '</text>' +
+            '<text x="' + (x2 + 220) + '" y="' + (r.y + 4) + '" font-size="10.5" fill="#8a8378">' +
+            esc(p.lords.map(l => l.l).join('→').slice(0, 46)) + '</text></g>';
+        }
+      });
+      s += '</svg>';
+      el.querySelector('.body').innerHTML = s;
+    };
+    el.innerHTML = '<div class="panel"><div class="bar">' +
+      '<button id="tr-all" style="font-family:inherit;font-size:12px;padding:3px 10px;border:1px solid var(--line2);border-radius:5px;background:#fff;cursor:pointer">すべて展開</button>' +
+      '<button id="tr-none" style="font-family:inherit;font-size:12px;padding:3px 10px;border:1px solid var(--line2);border-radius:5px;background:#fff;cursor:pointer">すべて畳む</button>' +
+      '<span>氏族名をクリックで開閉。人名クリックで Wikipedia。</span></div>' +
+      '<div class="body"></div>' + legend(famRanking().slice(0, 6).map(f => f.key)) + '</div>';
+    draw();
+    el.addEventListener('click', e => {
+      const c = e.target.closest('.clanrow');
+      if (c) { const k = c.dataset.clan; open.has(k) ? open.delete(k) : open.add(k); draw(); }
+    });
+    el.querySelector('#tr-all').onclick = () => { groups.forEach(g => open.add(g.clan)); draw(); };
+    el.querySelector('#tr-none').onclick = () => { open.clear(); draw(); };
+  }
+});
+
+/* ========== 2. 放射ツリー ========== */
+view({
+  id: 'radial', title: '放射ツリー（円形デンドログラム）',
+  desc: '同じ階層構造を円に巻いたもの。縦に間延びしないので全体を一画面に収めやすく、氏族の規模差が扇の幅で分かります。人数が多いと外周のラベルが詰まるので、表示する氏族数を絞る前提の表現です。',
+  tags: ['<span class="tag good">一画面に収まる</span>', '<span class="tag good">規模比較しやすい</span>', '<span class="tag bad">ラベルが詰まる</span>'],
+  render(el){
+    const groups = clanGroups();
+    const draw = (topN) => {
+      const gs = groups.slice(0, topN);
+      const total = gs.reduce((a, g) => a + g.people.length, 0);
+      const S = 940, cx = S / 2, cy = S / 2, R1 = 150, R2 = 300;
+      let a = -Math.PI / 2, s = svgOpen(S, S);
+      const pad = 0.004;
+      gs.forEach((g, gi) => {
+        const span = (Math.PI * 2) * (g.people.length / total);
+        const aMid = a + span / 2;
+        const gx = cx + Math.cos(aMid) * R1, gy = cy + Math.sin(aMid) * R1;
+        s += '<path class="link" d="M' + cx + ' ' + cy + ' Q' + (cx + Math.cos(aMid) * R1 * .5) + ' ' + (cy + Math.sin(aMid) * R1 * .5) + ',' + gx + ' ' + gy + '" stroke-width="1.2"/>';
+        let pa = a + pad;
+        const pStep = (span - pad * 2) / Math.max(1, g.people.length);
+        g.people.forEach((p, i) => {
+          const ang = pa + pStep * (i + .5);
+          const px = cx + Math.cos(ang) * R2, py = cy + Math.sin(ang) * R2;
+          s += '<path class="link" d="M' + gx + ' ' + gy + ' Q' + (cx + Math.cos(ang) * (R1 + 40)) + ' ' + (cy + Math.sin(ang) * (R1 + 40)) + ',' + px + ' ' + py + '" stroke="#e0d7c2"/>';
+          const deg = ang * 180 / Math.PI, flip = (deg > 90 || deg < -90);
+          s += '<g ' + pAttr(p) + ' style="cursor:pointer">' +
+            '<circle cx="' + px + '" cy="' + py + '" r="3" fill="' + color(mainFam(p)) + '"/>' +
+            '<text class="node-label" font-size="9.5" transform="translate(' + px + ',' + py + ') rotate(' + (flip ? deg + 180 : deg) + ')" ' +
+            'x="' + (flip ? -8 : 8) + '" y="3" text-anchor="' + (flip ? 'end' : 'start') + '">' + esc(p.n) + '</text></g>';
+        });
+        const dMid = aMid * 180 / Math.PI, fl = (dMid > 90 || dMid < -90);
+        s += '<circle cx="' + gx + '" cy="' + gy + '" r="4.5" fill="#6b6055"/>' +
+          '<text font-size="11.5" fill="#2b2622" transform="translate(' + gx + ',' + gy + ') rotate(' + (fl ? dMid + 180 : dMid) + ')" ' +
+          'x="' + (fl ? -9 : 9) + '" y="4" text-anchor="' + (fl ? 'end' : 'start') + '">' + esc(g.clan) + '</text>';
+        a += span;
+      });
+      s += crestSvg('takeda', cx - 34, cy - 34, 68);
+      s += '</svg>';
+      el.querySelector('.body').innerHTML = s;
+      el.querySelector('#rd-n').textContent = topN + '氏族 / ' + total + '名';
+    };
+    el.innerHTML = '<div class="panel"><div class="bar">' +
+      '<label>表示する氏族数（人数の多い順）<input id="rd-r" type="range" min="4" max="' + Math.min(40, groups.length) + '" value="14"></label>' +
+      '<span id="rd-n"></span></div><div class="body" style="text-align:center"></div></div>';
+    const r = el.querySelector('#rd-r');
+    r.oninput = () => draw(+r.value);
+    draw(14);
+  }
+});
+
+/* ========== 3. サンバースト ========== */
+view({
+  id: 'sunburst', title: 'サンバースト（代 → 氏族 → 人物）',
+  desc: '中心が武田家、内側の環が「最後に仕えた当主の代」、外側が氏族、いちばん外が個人。角度が人数に比例するので、勝頼期に家臣団が誰に引き継がれたかの構成比が一目で出ます。個人名は入りきらないのでホバー前提です。',
+  tags: ['<span class="tag good">構成比が見える</span>', '<span class="tag good">世代の断層が見える</span>', '<span class="tag bad">個人名が読めない</span>'],
+  render(el){
+    const gens = DATA.takeda3.slice();
+    const byGen = {}; gens.forEach(g => byGen[g] = []);
+    P.forEach(p => { const g = lastGen(p); if (g) byGen[g].push(p); });
+    const S = 900, cx = S / 2, cy = S / 2;
+    const R = [70, 150, 250, 330];
+    const arc = (r0, r1, a0, a1) => {
+      const p = (r, a) => [cx + Math.cos(a) * r, cy + Math.sin(a) * r];
+      const big = (a1 - a0) > Math.PI ? 1 : 0;
+      const [x0, y0] = p(r0, a0), [x1, y1] = p(r1, a0), [x2, y2] = p(r1, a1), [x3, y3] = p(r0, a1);
+      return 'M' + x0 + ' ' + y0 + 'L' + x1 + ' ' + y1 + 'A' + r1 + ' ' + r1 + ' 0 ' + big + ' 1 ' + x2 + ' ' + y2 +
+        'L' + x3 + ' ' + y3 + 'A' + r0 + ' ' + r0 + ' 0 ' + big + ' 0 ' + x0 + ' ' + y0 + 'Z';
+    };
+    const total = P.length;
+    let a = -Math.PI / 2, s = svgOpen(S, S);
+    gens.forEach(g => {
+      const list = byGen[g]; if (!list.length) return;
+      const span = Math.PI * 2 * list.length / total, a0 = a, a1 = a + span;
+      s += '<path d="' + arc(R[0], R[1], a0, a1) + '" fill="' + GEN_COLOR[g] + '" fill-opacity=".85" stroke="#fffdf8" stroke-width="1.5"/>';
+      const am = (a0 + a1) / 2;
+      s += '<text x="' + (cx + Math.cos(am) * 110) + '" y="' + (cy + Math.sin(am) * 110 + 4) + '" text-anchor="middle" font-size="12" fill="#fff">' +
+        esc(GEN[g]) + ' ' + list.length + '</text>';
+      // 氏族
+      const cg = {}; list.forEach(p => { const k = p.clan || '記載なし'; (cg[k] = cg[k] || []).push(p); });
+      const keys = Object.keys(cg).sort((x, y) => cg[y].length - cg[x].length);
+      let ca = a0;
+      keys.forEach((k, i) => {
+        const cs = span * cg[k].length / list.length;
+        s += '<path d="' + arc(R[1], R[2], ca, ca + cs) + '" fill="' + GEN_COLOR[g] + '" fill-opacity="' + (0.5 - (i % 5) * 0.06) + '" stroke="#fffdf8" stroke-width=".8"/>';
+        if (cs > 0.09) {
+          const m = ca + cs / 2, deg = m * 180 / Math.PI, fl = (deg > 90 || deg < -90);
+          s += '<text font-size="10" fill="#2b2622" transform="translate(' + (cx + Math.cos(m) * 200) + ',' + (cy + Math.sin(m) * 200) + ') rotate(' + (fl ? deg + 180 : deg) + ')" text-anchor="middle" y="3">' + esc(k) + '</text>';
+        }
+        let pa2 = ca;
+        const st = cs / cg[k].length;
+        cg[k].forEach(p => {
+          s += '<path ' + pAttr(p) + ' style="cursor:pointer" d="' + arc(R[2], R[3], pa2, pa2 + st) + '" fill="' + color(mainFam(p)) + '" fill-opacity=".8" stroke="#fffdf8" stroke-width=".5"/>';
+          pa2 += st;
+        });
+        ca += cs;
+      });
+      a = a1;
+    });
+    s += crestSvg('takeda', cx - 46, cy - 46, 92);
+    s += '</svg>';
+    el.innerHTML = '<div class="panel"><div class="bar"><span>内側の環＝最後に仕えた当主の代／外側＝氏族／最外周＝個人（色は武田滅亡後に仕えた家）</span></div>' +
+      '<div class="body" style="text-align:center">' + s + '</div>' +
+      legend(famRanking().slice(0, 7).map(f => f.key)) + '</div>';
+  }
+});
+
+/* ==== views_20_time.js ==== */
+/* 時間軸系：年表ガント / 氏族スイムレーン / 主従マトリクス */
+
+const Y0 = 1440, Y1 = 1660;
+const TW = 1080;
+const xOf = y => (y - Y0) / (Y1 - Y0) * TW;
+function yearAxis(w, h, top){
+  let s = '<g class="axis">';
+  for (let y = 1450; y <= 1650; y += 25){
+    const x = xOf(y);
+    s += '<line class="gridline" x1="' + x + '" y1="' + top + '" x2="' + x + '" y2="' + h + '"/>' +
+         '<text x="' + x + '" y="' + (top - 6) + '" text-anchor="middle">' + y + '</text>';
+  }
+  return s + '</g>';
+}
+function rules(h, top){
+  let s = '';
+  DATA.lordSpans.forEach(l => {
+    if (l.ruleFrom) {
+      const x = xOf(l.ruleFrom);
+      s += '<line class="rule" x1="' + x + '" y1="' + top + '" x2="' + x + '" y2="' + h + '"/>' +
+        '<text class="rule-label" x="' + (x + 4) + '" y="' + (top + 11) + '">' + l.ruleFrom + ' ' + esc(l.title.replace('武田', '')) + '家督</text>';
+    }
+  });
+  const x = xOf(1582);
+  s += '<line class="rule" x1="' + x + '" y1="' + top + '" x2="' + x + '" y2="' + h + '" stroke="#8c3b3b"/>' +
+    '<text class="rule-label" x="' + (x + 4) + '" y="' + (top + 24) + '" fill="#8c3b3b">1582 武田氏滅亡</text>';
+  return s;
+}
+
+/* ========== 4. 年表（生没年ガント） ========== */
+view({
+  id: 'timeline', title: '年表（生没年ガント・主君で色分け）',
+  desc: 'いちばん情報量が落ちない形です。横帯が一人の生涯、色は武田滅亡後に仕えた家。1541年・1573年の家督交代と1582年の滅亡を縦線で入れてあります。ただし infobox に生年が無い人が多く、両方そろうのは全体の一部だけです。',
+  tags: ['<span class="tag good">年代を主軸にできる</span>', '<span class="tag good">世代交代と移籍が見える</span>', '<span class="tag bad">生没年の欠損が多い</span>'],
+  render(el){
+    const list = P.filter(p => p.b && p.d).sort((a, b) => a.b - b.b);
+    const rowH = 13, top = 74, L = 120, H = top + list.length * rowH + 30, W = L + TW + 210;
+    const draw = (year) => {
+      let s = svgOpen(W, H);
+      s += '<g transform="translate(' + L + ',0)">' + yearAxis(TW, H - 10, top) + rules(H - 10, top);
+      // 武田三代の在位帯
+      DATA.lordSpans.forEach((l, i) => {
+        const a = l.ruleFrom || 1507, b = l.ruleTo;
+        s += '<rect x="' + xOf(a) + '" y="' + (28 + i * 0) + '" width="' + (xOf(b) - xOf(a)) + '" height="16" ' +
+          'fill="' + GEN_COLOR[l.title] + '" fill-opacity=".22" stroke="' + GEN_COLOR[l.title] + '" stroke-opacity=".5"/>' +
+          '<text x="' + (xOf(a) + 6) + '" y="' + 40 + '" font-size="10.5" fill="' + GEN_COLOR[l.title] + '">' + esc(l.title) +
+          (l.ruleFrom ? '' : '（開始年未確認）') + '</text>';
+      });
+      list.forEach((p, i) => {
+        const y = top + 8 + i * rowH, x = xOf(p.b), w = Math.max(2, xOf(p.d) - xOf(p.b));
+        const on = !year || aliveAt(p, year);
+        s += '<g ' + pAttr(p) + ' style="cursor:pointer;opacity:' + (on ? 1 : .18) + '">' +
+          '<rect x="' + x + '" y="' + (y - 4.5) + '" width="' + w + '" height="9" rx="2" fill="' + color(mainFam(p)) + '" fill-opacity=".82"/>' +
+          '<text class="node-label" x="' + (x + w + 6) + '" y="' + (y + 3.5) + '" font-size="10">' + esc(p.n) + '</text>' +
+          '<text x="' + (-L + 4) + '" y="' + (y + 3.5) + '" font-size="9.5" fill="#8a8378">' + esc((p.clan || '').slice(0, 7)) + '</text>' +
+          '</g>';
+      });
+      if (year){
+        const x = xOf(year);
+        s += '<line x1="' + x + '" y1="' + (top - 16) + '" x2="' + x + '" y2="' + (H - 10) + '" stroke="#7a2e2e" stroke-width="1.5"/>' +
+          '<rect x="' + (x - 24) + '" y="' + (top - 32) + '" width="48" height="16" rx="3" fill="#7a2e2e"/>' +
+          '<text x="' + x + '" y="' + (top - 20) + '" text-anchor="middle" font-size="11" fill="#fff">' + year + '</text>';
+      }
+      s += '</g></svg>';
+      el.querySelector('.body').innerHTML = s;
+    };
+    el.innerHTML = '<div class="panel"><div class="bar">' +
+      '<label><input type="checkbox" id="tl-on"> 特定の年で絞る</label>' +
+      '<input id="tl-y" type="range" min="1500" max="1620" value="1570" disabled>' +
+      '<span id="tl-lb">全期間（生没年がそろう ' + list.length + ' 名 / 全 ' + P.length + ' 名）</span></div>' +
+      '<div class="body"></div>' + legend(famRanking().slice(0, 7).map(f => f.key)) +
+      '<div class="hint">帯の色＝武田家を離れたあとに仕えた家（離れていない人は武田の色）。生没年のどちらかが欠けている ' + (P.length - list.length) + ' 名はこの表現に載せられません。</div></div>';
+    const cb = el.querySelector('#tl-on'), rg = el.querySelector('#tl-y'), lb = el.querySelector('#tl-lb');
+    const upd = () => {
+      rg.disabled = !cb.checked;
+      const y = cb.checked ? +rg.value : 0;
+      lb.textContent = y ? (y + '年に生存：' + list.filter(p => aliveAt(p, y)).length + ' 名') :
+        ('全期間（生没年がそろう ' + list.length + ' 名 / 全 ' + P.length + ' 名）');
+      draw(y);
+    };
+    cb.onchange = upd; rg.oninput = upd;
+    draw(0);
+  }
+});
+
+/* ========== 5. 氏族スイムレーン ========== */
+view({
+  id: 'lanes', title: '氏族スイムレーン（横帯 × 年代）',
+  desc: '氏族ごとに一本の帯を割り当て、その中に所属人物の生涯を並べたもの。どの家がいつ興り、いつ記録が途切れるかという「家の寿命」が見えます。人物単位ではなく家単位で見たいときの形です。',
+  tags: ['<span class="tag good">家の盛衰が見える</span>', '<span class="tag good">密度で規模が分かる</span>', '<span class="tag bad">個人の識別は弱い</span>'],
+  render(el){
+    const groups = clanGroups().filter(g => g.people.some(p => p.b && p.d));
+    const draw = (topN) => {
+      const gs = groups.slice(0, topN);
+      const laneH = 34, top = 46, L = 108, H = top + gs.length * laneH + 24, W = L + TW + 30;
+      let s = svgOpen(W, H) + '<g transform="translate(' + L + ',0)">' + yearAxis(TW, H - 8, top) + rules(H - 8, top);
+      gs.forEach((g, i) => {
+        const y = top + i * laneH + laneH / 2;
+        s += '<rect x="0" y="' + (y - laneH / 2 + 3) + '" width="' + TW + '" height="' + (laneH - 6) + '" fill="' + (i % 2 ? '#faf7ee' : '#f4efe2') + '"/>';
+        s += '<text x="-8" y="' + (y + 4) + '" text-anchor="end" font-size="11.5" fill="#2b2622">' + esc(g.clan) + '</text>';
+        s += '<text x="-8" y="' + (y + 15) + '" text-anchor="end" font-size="9.5" fill="#8a8378">' + g.people.length + '名</text>';
+        const rows = [];
+        g.people.filter(p => p.b && p.d).forEach(p => {
+          let r = 0;
+          while (rows[r] != null && rows[r] > xOf(p.b) - 4) r++;
+          rows[r] = xOf(p.d) + 40;
+          const yy = y - 8 + (r % 3) * 8;
+          s += '<g ' + pAttr(p) + ' style="cursor:pointer">' +
+            '<rect x="' + xOf(p.b) + '" y="' + yy + '" width="' + Math.max(2, xOf(p.d) - xOf(p.b)) + '" height="6" rx="2" fill="' + color(mainFam(p)) + '" fill-opacity=".8"/>' +
+            '<text class="node-label" x="' + (xOf(p.d) + 4) + '" y="' + (yy + 6) + '" font-size="8.5">' + esc(p.n) + '</text></g>';
+        });
+      });
+      s += '</g></svg>';
+      el.querySelector('.body').innerHTML = s;
+    };
+    el.innerHTML = '<div class="panel"><div class="bar">' +
+      '<label>表示する氏族数<input id="ln-r" type="range" min="5" max="' + Math.min(45, groups.length) + '" value="18"></label>' +
+      '<span>帯の中は重ならないよう3段に折り返しています</span></div><div class="body"></div>' +
+      legend(famRanking().slice(0, 6).map(f => f.key)) + '</div>';
+    const r = el.querySelector('#ln-r'); r.oninput = () => draw(+r.value);
+    draw(18);
+  }
+});
+
+/* ========== 6. 主従マトリクス ========== */
+view({
+  id: 'matrix', title: '主従マトリクス（人物 × 主君）',
+  desc: '「誰が誰に仕えたか」を格子で全部見せる形。ツリーが表せない複数主君・移籍を、欠落なく表現できるのが強みです。行を並べ替えると、武田三代だけに仕えた層と、他家を渡り歩いた層がはっきり分かれます。',
+  tags: ['<span class="tag good">複数主君を落とさない</span>', '<span class="tag good">移籍の型が見える</span>', '<span class="tag bad">絵として地味</span>'],
+  render(el){
+    const cnt = {};
+    P.forEach(p => p.lords.forEach(l => cnt[l.t] = (cnt[l.t] || 0) + 1));
+    const cols = Object.keys(cnt).sort((a, b) => cnt[b] - cnt[a]).slice(0, 22);
+    const colIx = {}; cols.forEach((c, i) => colIx[c] = i);
+    const draw = (mode) => {
+      let list = P.slice();
+      if (mode === 'count') list.sort((a, b) => b.lords.length - a.lords.length || (a.b || 9999) - (b.b || 9999));
+      else if (mode === 'birth') list.sort((a, b) => (a.b || 9999) - (b.b || 9999));
+      else list.sort((a, b) => {
+        const k = p => cols.map(c => p.lords.some(l => l.t === c) ? '1' : '0').join('');
+        return k(b).localeCompare(k(a));
+      });
+      const cw = 26, rh = 12, L = 132, top = 128;
+      const H = top + list.length * rh + 20, W = L + cols.length * cw + 260;
+      let s = svgOpen(W, H);
+      cols.forEach((c, i) => {
+        const x = L + i * cw + cw / 2;
+        s += '<text transform="translate(' + x + ',' + (top - 8) + ') rotate(-58)" font-size="10.5" fill="#2b2622">' + esc(c) + ' <tspan fill="#8a8378">' + cnt[c] + '</tspan></text>';
+        s += '<rect x="' + (L + i * cw) + '" y="' + top + '" width="' + cw + '" height="' + (list.length * rh) + '" fill="' + (i % 2 ? '#faf7ee' : '#fffdf8') + '"/>';
+      });
+      list.forEach((p, r) => {
+        const y = top + r * rh;
+        s += '<g ' + pAttr(p) + ' style="cursor:pointer">' +
+          '<rect x="0" y="' + y + '" width="' + W + '" height="' + rh + '" fill="transparent"/>' +
+          '<text class="node-label" x="' + (L - 6) + '" y="' + (y + 9) + '" text-anchor="end" font-size="9.5">' + esc(p.n) + '</text>';
+        p.lords.forEach((l, li) => {
+          if (colIx[l.t] == null) return;
+          const x = L + colIx[l.t] * cw;
+          s += '<rect x="' + (x + 3) + '" y="' + (y + 2) + '" width="' + (cw - 6) + '" height="' + (rh - 4) + '" rx="2" fill="' + color(l.f) + '" fill-opacity=".85"/>' +
+            '<text x="' + (x + cw / 2) + '" y="' + (y + 9) + '" text-anchor="middle" font-size="7.5" fill="#fff">' + (li + 1) + '</text>';
+        });
+        const rest = p.lords.filter(l => colIx[l.t] == null).map(l => l.l).join('、');
+        if (rest) s += '<text x="' + (L + cols.length * cw + 8) + '" y="' + (y + 9) + '" font-size="9" fill="#8a8378">他：' + esc(rest.slice(0, 40)) + '</text>';
+        s += '</g>';
+      });
+      s += '</svg>';
+      el.querySelector('.body').innerHTML = s;
+    };
+    el.innerHTML = '<div class="panel"><div class="bar"><label>行の並び' +
+      '<select id="mx-s"><option value="pattern">仕えた組み合わせ順</option><option value="count">主君の数が多い順</option><option value="birth">生年順</option></select></label>' +
+      '<span>セル内の数字は「何人目の主君か」（infobox の記載順）</span></div><div class="body"></div>' +
+      '<div class="hint">列は登場回数の多い主君 22 名。それ以外の主君は各行の右端にテキストで出しています。</div></div>';
+    el.querySelector('#mx-s').onchange = e => draw(e.target.value);
+    draw('pattern');
+  }
+});
+
+/* ==== views_30_graph.js ==== */
+/* グラフ系：相関ネットワーク / 主君遷移サンキー / 同心円 */
+
+/* ========== 7. 相関ネットワーク ========== */
+view({
+  id: 'network', title: '相関ネットワーク（主君を核にした引力配置）',
+  desc: 'データの素の形に一番近い表現です。主君を核として置き、その主君に仕えた人物をぶら下げます。二人の主君に仕えた者は自然と二つの核の中間に落ちるので、武田と徳川の両方に名を連ねた層が帯状に浮かび上がります。ツリーでは切り捨てるしかない情報が、そのまま位置に出ます。',
+  tags: ['<span class="tag good">複数主君が位置に出る</span>', '<span class="tag good">勢力の重なりが見える</span>', '<span class="tag bad">正確な読み取りには不向き</span>'],
+  render(el){
+    const cnt = {};
+    P.forEach(p => p.lords.forEach(l => cnt[l.t] = (cnt[l.t] || 0) + 1));
+    const hubs = Object.keys(cnt).filter(k => cnt[k] >= 6).sort((a, b) => cnt[b] - cnt[a]);
+    const W = 1180, H = 820, cx = W / 2, cy = H / 2;
+    // 核は家ごとにまとめて円周配置
+    const byFam = {};
+    hubs.forEach(h => { const f = famOfLord(h); (byFam[f] = byFam[f] || []).push(h); });
+    const famKeys = Object.keys(byFam).sort((a, b) => byFam[b].length - byFam[a].length);
+    const pos = {};
+    let ai = 0, tot = hubs.length;
+    famKeys.forEach(f => {
+      byFam[f].forEach(h => {
+        const ang = (ai / tot) * Math.PI * 2 - Math.PI / 2;
+        const rad = f === 'takeda' ? 130 : 330;
+        pos[h] = { x: cx + Math.cos(ang) * rad, y: cy + Math.sin(ang) * rad * .82, f: f };
+        ai++;
+      });
+    });
+    // 武田三代は中央寄りに手で固定
+    if (pos['武田信玄']) { pos['武田信玄'].x = cx; pos['武田信玄'].y = cy - 30; }
+    if (pos['武田勝頼']) { pos['武田勝頼'].x = cx - 100; pos['武田勝頼'].y = cy + 90; }
+    if (pos['武田信虎']) { pos['武田信虎'].x = cx + 100; pos['武田信虎'].y = cy + 90; }
+
+    const nodes = P.map(p => {
+      const hs = p.lords.filter(l => pos[l.t]);
+      let x = cx, y = cy;
+      if (hs.length) {
+        x = hs.reduce((a, l) => a + pos[l.t].x, 0) / hs.length;
+        y = hs.reduce((a, l) => a + pos[l.t].y, 0) / hs.length;
+      }
+      const jitter = 60;
+      return { p, x: x + (Math.random() - .5) * jitter, y: y + (Math.random() - .5) * jitter, hs };
+    });
+    // 反発でほぐす
+    for (let it = 0; it < 60; it++){
+      for (let i = 0; i < nodes.length; i++){
+        for (let j = i + 1; j < nodes.length; j++){
+          const a = nodes[i], b = nodes[j];
+          let dx = b.x - a.x, dy = b.y - a.y;
+          let d2 = dx * dx + dy * dy;
+          if (d2 < 190 && d2 > 0.01){
+            const d = Math.sqrt(d2), f = (14 - d) / d * .5;
+            dx *= f; dy *= f;
+            a.x -= dx; a.y -= dy; b.x += dx; b.y += dy;
+          }
+        }
+      }
+      // 核へ引き戻す
+      nodes.forEach(n => {
+        if (!n.hs.length) return;
+        const tx = n.hs.reduce((a, l) => a + pos[l.t].x, 0) / n.hs.length;
+        const ty = n.hs.reduce((a, l) => a + pos[l.t].y, 0) / n.hs.length;
+        n.x += (tx - n.x) * .06; n.y += (ty - n.y) * .06;
+      });
+    }
+    let s = svgOpen(W, H);
+    nodes.forEach(n => n.hs.forEach(l => {
+      s += '<line x1="' + n.x.toFixed(1) + '" y1="' + n.y.toFixed(1) + '" x2="' + pos[l.t].x.toFixed(1) + '" y2="' + pos[l.t].y.toFixed(1) +
+        '" stroke="' + color(l.f) + '" stroke-opacity=".13" stroke-width="1"/>';
+    }));
+    nodes.forEach(n => {
+      s += '<circle ' + pAttr(n.p) + ' style="cursor:pointer" cx="' + n.x.toFixed(1) + '" cy="' + n.y.toFixed(1) +
+        '" r="4" fill="' + color(mainFam(n.p)) + '" fill-opacity=".9" stroke="#fffdf8" stroke-width=".8"/>';
+    });
+    hubs.forEach(h => {
+      const q = pos[h], r = 9 + Math.sqrt(cnt[h]) * 1.9;
+      s += crestSvg(q.f, q.x - r - 13, q.y - r - 30, (r + 13) * 2, .95);
+      s += '<circle cx="' + q.x + '" cy="' + q.y + '" r="' + r + '" fill="#fffdf8" stroke="' + color(q.f) + '" stroke-width="2.5"/>' +
+        '<text x="' + q.x + '" y="' + (q.y + 4) + '" text-anchor="middle" font-size="10.5" fill="' + color(q.f) + '">' + cnt[h] + '</text>' +
+        '<text x="' + q.x + '" y="' + (q.y + r + 15) + '" text-anchor="middle" font-size="11.5" fill="#2b2622">' + esc(h) + '</text>';
+    });
+    s += '</svg>';
+    el.innerHTML = '<div class="panel"><div class="bar"><span>核＝6名以上に仕えられた主君（' + hubs.length + '名）。円の数字は家臣の人数。点は個人で、仕えた主君の中間に落ちます。</span></div>' +
+      '<div class="body" style="text-align:center">' + s + '</div>' + legend(famRanking().slice(0, 8).map(f => f.key)) + '</div>';
+  }
+});
+function famOfLord(t){
+  for (const f of DATA.families) if (t.startsWith(f.name)) return f.key;
+  return null;
+}
+
+/* ========== 8. 主君遷移サンキー ========== */
+view({
+  id: 'sankey', title: '主君遷移サンキー（武田の家臣はどこへ流れたか）',
+  desc: '左が最後に仕えた武田当主、右が武田を離れたあとに仕えた家。1582年の滅亡で家臣団がどこへ吸収されたかという、家臣団の「出口」を見る表現です。人の流れを主題にすると、ツリーより遥かに語れる図になります。',
+  tags: ['<span class="tag good">滅亡後の流出が主題になる</span>', '<span class="tag good">量の比較が正確</span>', '<span class="tag bad">個人が消える</span>'],
+  render(el){
+    const links = {}, leftN = {}, rightN = {};
+    P.forEach(p => {
+      const g = lastGen(p); if (!g) return;
+      const f = afterFam(p) || '__stay__';
+      const k = g + '|' + f;
+      links[k] = (links[k] || 0) + 1;
+      leftN[g] = (leftN[g] || 0) + 1;
+      rightN[f] = (rightN[f] || 0) + 1;
+    });
+    const lefts = DATA.takeda3.filter(g => leftN[g]);
+    const rights = Object.keys(rightN).sort((a, b) => rightN[b] - rightN[a]);
+    const W = 1080, H = 640, xL = 210, xR = 780, top = 40, unit = (H - top - 60) / P.length;
+    let s = svgOpen(W, H);
+    const lY = {}, rY = {};
+    let y = top;
+    lefts.forEach(g => { lY[g] = { y0: y, cur: y }; y += leftN[g] * unit + 16; });
+    y = top;
+    rights.forEach(f => { rY[f] = { y0: y, cur: y }; y += rightN[f] * unit + 12; });
+    lefts.forEach(g => rights.forEach(f => {
+      const n = links[g + '|' + f]; if (!n) return;
+      const h = n * unit, a = lY[g], b = rY[f];
+      const col = f === '__stay__' ? GEN_COLOR[g] : color(f);
+      s += '<path d="M' + xL + ' ' + a.cur + ' C' + (xL + 190) + ' ' + a.cur + ',' + (xR - 190) + ' ' + b.cur + ',' + xR + ' ' + b.cur +
+        ' L' + xR + ' ' + (b.cur + h) + ' C' + (xR - 190) + ' ' + (b.cur + h) + ',' + (xL + 190) + ' ' + (a.cur + h) + ',' + xL + ' ' + (a.cur + h) + 'Z" ' +
+        'fill="' + col + '" fill-opacity=".3" stroke="' + col + '" stroke-opacity=".25"><title>' + esc(GEN[g]) + ' → ' +
+        (f === '__stay__' ? '武田家中のまま' : esc(famName(f))) + '：' + n + '名</title></path>';
+      a.cur += h; b.cur += h;
+    }));
+    lefts.forEach(g => {
+      const a = lY[g], h = leftN[g] * unit;
+      s += '<rect x="' + (xL - 13) + '" y="' + a.y0 + '" width="13" height="' + h + '" fill="' + GEN_COLOR[g] + '"/>' +
+        '<text x="' + (xL - 22) + '" y="' + (a.y0 + h / 2 - 3) + '" text-anchor="end" font-size="13" fill="#2b2622">' + esc(GEN[g]) + '</text>' +
+        '<text x="' + (xL - 22) + '" y="' + (a.y0 + h / 2 + 13) + '" text-anchor="end" font-size="11" fill="#6b6055">' + leftN[g] + '名</text>';
+      s += crestSvg('takeda', xL - 96, a.y0 + h / 2 - 20, 40, .5);
+    });
+    rights.forEach(f => {
+      const b = rY[f], h = rightN[f] * unit, stay = f === '__stay__';
+      s += '<rect x="' + xR + '" y="' + b.y0 + '" width="13" height="' + h + '" fill="' + (stay ? '#8a8378' : color(f)) + '"/>';
+      if (!stay) s += crestSvg(f, xR + 20, b.y0 + h / 2 - 13, 26);
+      s += '<text x="' + (xR + (stay ? 20 : 52)) + '" y="' + (b.y0 + h / 2 + 4) + '" font-size="12" fill="#2b2622">' +
+        (stay ? '武田家中のまま' : esc(famName(f)) + '家') + ' <tspan fill="#8a8378" font-size="10.5">' + rightN[f] + '</tspan></text>';
+    });
+    s += '</svg>';
+    el.innerHTML = '<div class="panel"><div class="bar"><span>左＝infobox の記載順で最後に来る武田当主／右＝そのあとに名前が挙がる家（無い場合は「武田家中のまま」）</span></div>' +
+      '<div class="body" style="text-align:center">' + s + '</div>' +
+      '<div class="hint">infobox の主君は記載順であり、必ずしも厳密な時系列とは限りません。移籍年もデータに無いため、この図は「順序」に基づく近似です。</div></div>';
+  }
+});
+
+/* ========== 9. 同心円（仕えた代の数） ========== */
+view({
+  id: 'orbit', title: '同心円（何代にわたって仕えたか）',
+  desc: '中心が武田家。内側の環ほど長く武田に仕えた人で、環は「仕えた当主が三代／二代／一代」を表します。譜代の厚みと、勝頼の代だけに現れる新参の層が、中心からの距離として出ます。家紋を中心に据える構図なので、一枚絵としての見栄えは一番です。',
+  tags: ['<span class="tag good">家紋を主役にできる</span>', '<span class="tag good">譜代／新参が分かる</span>', '<span class="tag bad">位置の意味を説明しないと伝わらない</span>'],
+  render(el){
+    const S = 900, cx = S / 2, cy = S / 2;
+    const ring = { 3: 150, 2: 250, 1: 345 };
+    const buckets = { 3: [], 2: [], 1: [] };
+    P.forEach(p => buckets[Math.min(3, Math.max(1, p.gens.length))].push(p));
+    Object.keys(buckets).forEach(k => buckets[k].sort((a, b) =>
+      (a.clan || 'んん').localeCompare(b.clan || 'んん', 'ja') || (a.b || 9999) - (b.b || 9999)));
+    let s = svgOpen(S, S);
+    [1, 2, 3].forEach(k => {
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="' + ring[k] + '" fill="none" stroke="#e0d7c2" stroke-dasharray="3 4"/>';
+    });
+    [3, 2, 1].forEach(k => {
+      const list = buckets[k], R = ring[k];
+      list.forEach((p, i) => {
+        const ang = (i / list.length) * Math.PI * 2 - Math.PI / 2;
+        const x = cx + Math.cos(ang) * R, y = cy + Math.sin(ang) * R;
+        s += '<line x1="' + cx + '" y1="' + cy + '" x2="' + x.toFixed(1) + '" y2="' + y.toFixed(1) + '" stroke="' + color(mainFam(p)) + '" stroke-opacity=".1"/>';
+        s += '<circle ' + pAttr(p) + ' style="cursor:pointer" cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + (k === 3 ? 5.5 : k === 2 ? 4.5 : 3.5) + '" fill="' + color(mainFam(p)) + '" stroke="#fffdf8"/>';
+        if (k === 3){
+          const deg = ang * 180 / Math.PI, fl = (deg > 90 || deg < -90);
+          s += '<text class="node-label" font-size="9" transform="translate(' + x.toFixed(1) + ',' + y.toFixed(1) + ') rotate(' + (fl ? deg + 180 : deg) + ')" x="' + (fl ? -8 : 8) + '" y="3" text-anchor="' + (fl ? 'end' : 'start') + '" data-id="' + p.id + '" data-url="' + esc(p.u) + '">' + esc(p.n) + '</text>';
+        }
+      });
+      s += '<text x="' + (cx + 6) + '" y="' + (cy - R + 14) + '" font-size="11" fill="#8a8378">' + k + '代に仕えた ' + list.length + '名</text>';
+    });
+    s += crestSvg('takeda', cx - 52, cy - 52, 104);
+    s += '</svg>';
+    el.innerHTML = '<div class="panel"><div class="bar"><span>環＝仕えた武田当主の代数（信虎・信玄・勝頼のうち何人）。三代に仕えた層だけ名前を出しています。</span></div>' +
+      '<div class="body" style="text-align:center">' + s + '</div>' + legend(famRanking().slice(0, 6).map(f => f.key)) + '</div>';
+  }
+});
+
+/* ==== views_40_card.js ==== */
+/* 家系図 / 家紋カード / 一覧表 */
+
+/* ========== 10. 家系図 ========== */
+view({
+  id: 'lineage', title: '家系図（父子関係のツリー）',
+  desc: 'これは本物のツリーになる唯一の関係です。infobox の「父母」「子」から親子リンクだけを取り出して森を作りました。主従のツリーは作れませんが、血統のツリーは作れます。武田家中を「家の集まり」として見る視点です。',
+  tags: ['<span class="tag good">構造が本当に木</span>', '<span class="tag good">家の継承が見える</span>', '<span class="tag bad">主従関係は写らない</span>', '<span class="tag bad">記事のある人しか繋がらない</span>'],
+  render(el){
+    const kids = {}, hasParent = {};
+    P.forEach(p => {
+      p.father.forEach(f => { (kids[f] = kids[f] || []).push(p.t); hasParent[p.t] = 1; });
+      p.children.forEach(c => { (kids[p.t] = kids[p.t] || []).push(c); hasParent[c] = 1; });
+    });
+    Object.keys(kids).forEach(k => kids[k] = [...new Set(kids[k])]);
+    const roots = P.filter(p => !hasParent[p.t] && kids[p.t]);
+    const size = t => 1 + (kids[t] || []).reduce((a, c) => a + size(c), 0);
+    const trees = roots.map(r => ({ root: r, n: size(r.t) })).filter(t => t.n >= 3).sort((a, b) => b.n - a.n);
+
+    const NW = 92, NH = 58;
+    function layout(t, depth, x0, out){
+      const cs = (kids[t] || []).filter(c => BY_T[c]);
+      let w = 0, cx;
+      if (!cs.length){ w = NW; cx = x0 + NW / 2; }
+      else {
+        let x = x0;
+        cs.forEach(c => { const r = layout(c, depth + 1, x, out); x += r.w; w += r.w; });
+        cx = (out.find(o => o.t === cs[0]).x + out.find(o => o.t === cs[cs.length - 1]).x) / 2;
+      }
+      out.push({ t, x: cx, y: 30 + depth * NH, depth });
+      return { w: Math.max(w, NW), cx };
+    }
+    let s = '', offX = 0, offY = 0, rowH = 0, W = 1220;
+    trees.slice(0, 26).forEach(tr => {
+      const out = [];
+      const r = layout(tr.root.t, 0, 0, out);
+      const w = Math.max(r.w, NW) + 26;
+      const h = (Math.max(...out.map(o => o.depth)) + 1) * NH + 40;
+      if (offX + w > W){ offX = 0; offY += rowH + 22; rowH = 0; }
+      s += '<g transform="translate(' + offX + ',' + offY + ')">';
+      s += '<rect x="0" y="0" width="' + w + '" height="' + h + '" fill="#faf7ee" stroke="#e7dfcc" rx="7"/>';
+      const pos = {}; out.forEach(o => pos[o.t] = o);
+      out.forEach(o => (kids[o.t] || []).forEach(c => {
+        if (!pos[c]) return;
+        const a = pos[o.t], b = pos[c];
+        s += '<path class="link" d="M' + (a.x + 13) + ' ' + (a.y + 8) + ' C' + (a.x + 13) + ' ' + (a.y + 34) + ',' + (b.x + 13) + ' ' + (b.y - 24) + ',' + (b.x + 13) + ' ' + (b.y - 2) + '"/>';
+      }));
+      out.forEach(o => {
+        const p = BY_T[o.t];
+        if (!p){
+          s += '<text x="' + (o.x + 13) + '" y="' + (o.y + 4) + '" text-anchor="middle" font-size="10" fill="#b8ad99">' + esc(o.t) + '</text>';
+          return;
+        }
+        s += '<g ' + pAttr(p) + ' style="cursor:pointer">' +
+          '<circle cx="' + (o.x + 13) + '" cy="' + (o.y - 8) + '" r="4" fill="' + color(mainFam(p)) + '"/>' +
+          '<text class="node-label" x="' + (o.x + 13) + '" y="' + (o.y + 8) + '" text-anchor="middle" font-size="10.5">' + esc(p.n) + '</text>' +
+          '<text x="' + (o.x + 13) + '" y="' + (o.y + 20) + '" text-anchor="middle" font-size="8.5" fill="#8a8378">' + (p.b || '?') + '–' + (p.d || '?') + '</text></g>';
+      });
+      s += '</g>';
+      offX += w + 16; rowH = Math.max(rowH, h);
+    });
+    const H = offY + rowH + 30;
+    el.innerHTML = '<div class="panel"><div class="bar"><span>3人以上つながる系統のみ表示（' +
+      trees.length + ' 系統中、上位26系統）。データ内に記事のある人物だけを辺で結んでいます。</span></div>' +
+      '<div class="body">' + svgOpen(W + 20, H) + s + '</svg></div>' +
+      '<div class="hint">親子リンクを持つ人物は ' + P.filter(p => p.father.length || p.children.length).length +
+      ' 名。残りは infobox の父母・子欄が空欄か、リンク先の記事が今回の収集対象外です。</div></div>';
+  }
+});
+
+/* ========== 11. 家紋カード ========== */
+view({
+  id: 'cards', title: '家紋カード（一覧・検索）',
+  desc: '図解をあきらめて検索性に振った形。実際にこの種のアプリを使うとき、いちばん出番が多いのはたぶんこれです。家紋を大きく置けるので一覧としての見栄えもよく、絞り込みと組み合わせれば「勝頼期に徳川へ移った者」のような問いにその場で答えられます。',
+  tags: ['<span class="tag good">検索・絞り込みが効く</span>', '<span class="tag good">家紋を大きく出せる</span>', '<span class="tag bad">関係が見えない</span>'],
+  render(el){
+    const fams = famRanking();
+    el.innerHTML = '<div class="panel"><div class="bar">' +
+      '<input type="search" id="cd-q" placeholder="名前・氏族・主君で検索" size="24">' +
+      '<label>仕えた家<select id="cd-f"><option value="">すべて</option>' +
+      fams.map(f => '<option value="' + f.key + '">' + esc(famName(f.key)) + '（' + f.n + '）</option>').join('') + '</select></label>' +
+      '<label>代<select id="cd-g"><option value="">すべて</option>' +
+      DATA.takeda3.map(g => '<option value="' + esc(g) + '">' + esc(GEN[g]) + '</option>').join('') + '</select></label>' +
+      '<span id="cd-n"></span></div><div class="body"><div class="cards" id="cd-l"></div></div></div>';
+    const q = el.querySelector('#cd-q'), fs = el.querySelector('#cd-f'), gs = el.querySelector('#cd-g');
+    const draw = () => {
+      const t = nosp(q.value), f = fs.value, g = gs.value;
+      const list = P.filter(p => {
+        if (f && !p.fams.includes(f)) return false;
+        if (g && !p.gens.includes(g)) return false;
+        if (t && !(nosp(p.n).includes(t) || nosp(p.t).includes(t) || (p.clans || []).some(c => nosp(c).includes(t)) ||
+                   p.lords.some(l => nosp(l.l).includes(t) || nosp(l.t).includes(t)) || nosp(p.alias).includes(t))) return false;
+        return true;
+      });
+      el.querySelector('#cd-n').textContent = list.length + ' 名';
+      el.querySelector('#cd-l').innerHTML = list.map(p => {
+        const mf = mainFam(p);
+        return '<div class="card">' +
+          '<svg class="cr" style="color:' + color(mf) + '"><use href="' + crestId(mf) + '"/></svg>' +
+          '<div class="nm"><a href="' + esc(p.u) + '" target="_blank" rel="noopener">' + esc(p.n) + '</a></div>' +
+          '<div class="yr">' + (p.b || '?') + '–' + (p.d || '?') + (p.bu || p.du ? ' <span style="opacity:.6">推定含む</span>' : '') + '</div>' +
+          '<div class="yr">' + esc((p.clans || []).join('→') || '氏族記載なし') + '</div>' +
+          '<div class="ld">' + p.lords.map(l => '<span class="chip" style="color:' + color(l.f) + '">' + esc(l.l) + '</span>').join('') + '</div>' +
+          '</div>';
+      }).join('');
+    };
+    q.oninput = draw; fs.onchange = draw; gs.onchange = draw;
+    draw();
+  }
+});
+
+/* ========== 12. 一覧表 ========== */
+view({
+  id: 'table', title: '一覧表（並べ替え可能）',
+  desc: '比較のために置いた基準線です。図より速く、図より正確で、コピーもできます。凝った可視化を作るときは、これに勝てているかを毎回確かめる価値があります。',
+  tags: ['<span class="tag good">正確・高速</span>', '<span class="tag good">全項目を出せる</span>', '<span class="tag bad">全体像は掴めない</span>'],
+  render(el){
+    let sortKey = 'b', asc = true;
+    el.innerHTML = '<div class="panel"><div class="bar"><span>見出しクリックで並べ替え。行クリックで Wikipedia。</span></div>' +
+      '<div class="body" id="tb-b"></div></div>';
+    const cols = [['n', '名前'], ['b', '生年'], ['d', '没年'], ['clan', '氏族'], ['lords', '主君（記載順）'], ['rank', '官位']];
+    const draw = () => {
+      const list = P.slice().sort((a, b) => {
+        const va = sortKey === 'lords' ? a.lords.length : (a[sortKey] == null ? (asc ? 9e9 : -9e9) : a[sortKey]);
+        const vb = sortKey === 'lords' ? b.lords.length : (b[sortKey] == null ? (asc ? 9e9 : -9e9) : b[sortKey]);
+        const r = typeof va === 'string' ? String(va).localeCompare(String(vb), 'ja') : va - vb;
+        return asc ? r : -r;
+      });
+      el.querySelector('#tb-b').innerHTML =
+        '<table style="width:100%;border-collapse:collapse;font-size:12.5px">' +
+        '<thead><tr>' + cols.map(c => '<th data-k="' + c[0] + '" style="position:sticky;top:0;background:#f4efe2;text-align:left;padding:6px 9px;border-bottom:1px solid var(--line2);cursor:pointer;white-space:nowrap">' +
+          esc(c[1]) + (sortKey === c[0] ? (asc ? ' ▲' : ' ▼') : '') + '</th>').join('') + '</tr></thead><tbody>' +
+        list.map(p => '<tr ' + pAttr(p) + ' style="cursor:pointer">' +
+          '<td style="padding:4px 9px;border-bottom:1px solid #efe9db"><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:' + color(mainFam(p)) + ';margin-right:6px"></span>' + esc(p.n) + '</td>' +
+          '<td style="padding:4px 9px;border-bottom:1px solid #efe9db;font-variant-numeric:tabular-nums">' + (p.b || '') + (p.bu ? '?' : '') + '</td>' +
+          '<td style="padding:4px 9px;border-bottom:1px solid #efe9db;font-variant-numeric:tabular-nums">' + (p.d || '') + (p.du ? '?' : '') + '</td>' +
+          '<td style="padding:4px 9px;border-bottom:1px solid #efe9db">' + esc((p.clans || []).join('→')) + '</td>' +
+          '<td style="padding:4px 9px;border-bottom:1px solid #efe9db">' + p.lords.map(l => '<span style="color:' + color(l.f) + '">' + esc(l.l) + '</span>').join('→') + '</td>' +
+          '<td style="padding:4px 9px;border-bottom:1px solid #efe9db;color:#6b6055">' + esc((p.rank || '').slice(0, 22)) + '</td></tr>').join('') +
+        '</tbody></table>';
+    };
+    el.addEventListener('click', e => {
+      const th = e.target.closest('th[data-k]');
+      if (!th) return;
+      const k = th.dataset.k;
+      if (k === sortKey) asc = !asc; else { sortKey = k; asc = true; }
+      draw();
+    });
+    draw();
+  }
+});
+
+/* ==== views_99_init.js ==== */
+/* タブ構築と遅延描画 */
+(function(){
+  const m = DATA.meta;
+  document.getElementById('meta').innerHTML =
+    '対象：<b>' + m.count + '名</b>（infobox「主君」に各家の当主が記載された人物）　' +
+    '出典：日本語版ウィキペディア　取得：<b>' + esc(m.generatedAt.slice(0, 10)) + '</b>　' +
+    '表現案 <b>' + VIEWS.length + '種</b>';
+  document.getElementById('footmeta').innerHTML =
+    '　収集条件：infobox「主君」に各家の当主を挙げる人物と、その家臣（主従を3段まで）。' +
+    '　各人物のリビジョンIDは data/retainers.json の revid に入っています。';
+
+  const main = document.getElementById('main'), tabs = document.getElementById('tabs');
+  const warn = document.createElement('div');
+  warn.className = 'warn';
+  warn.innerHTML = '<b>データの前提</b>　主従関係は Wikipedia の infobox「主君」欄のみを機械的に読んだものです。' +
+    '記事が無い家臣は載らず、寄親寄子の階層・仕えた年・移籍年はデータとして存在しません。' +
+    '生没年は ' + P.filter(p => p.b && p.d).length + ' 名のみ両方そろっています。人数の多寡を史実の勢力比として読まないでください。';
+  main.appendChild(warn);
+
+  const secs = [];
+  VIEWS.forEach((v, i) => {
+    const b = document.createElement('button');
+    b.innerHTML = '<span class="num">' + (i + 1) + '</span>' + esc(v.title.replace(/（.*$/, ''));
+    b.onclick = () => show(i);
+    tabs.appendChild(b);
+
+    const sec = document.createElement('section');
+    sec.className = 'view';
+    sec.innerHTML = '<div class="vhead"><div><h2>' + esc(v.title) + '</h2><p>' + v.desc + '</p></div>' +
+      '<div class="tags">' + (v.tags || []).join('') + '</div></div><div class="host"></div>';
+    main.appendChild(sec);
+    secs.push({ sec, v, done: false });
+  });
+
+  function show(i){
+    tabs.querySelectorAll('button').forEach((b, j) => b.classList.toggle('on', i === j));
+    secs.forEach((s, j) => s.sec.classList.toggle('on', i === j));
+    const s = secs[i];
+    if (!s.done){
+      s.done = true;
+      const host = s.sec.querySelector('.host');
+      try { s.v.render(host); }
+      catch (err){ host.innerHTML = '<div class="warn">描画に失敗しました：' + esc(err.message) + '</div>'; console.error(err); }
+    }
+    location.hash = s.v.id;
+  }
+  const want = VIEWS.findIndex(v => v.id === location.hash.slice(1));
+  show(want >= 0 ? want : 0);
+})();
+
+</script>
+</body>
+</html>

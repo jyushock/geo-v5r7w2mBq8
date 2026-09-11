@@ -880,9 +880,10 @@
         /* 一覧から（メニュー内の入口ボタン）。
            アイコンの下にラベルを置く縦積み。周辺検索のカテゴリボタンと同じ形にして、
            2列に並べても文字が折り返さないようにする。 */
-        /* 一覧から検索の入口。都道府県・城主・遺構・お気に入りの4本を1段に並べる。
+        /* 一覧から検索の入口。都道府県・城主・遺構・家臣団の4本を1段に並べる。
            SE3(375px)で1本 79.75px（(375 - 16×2 - 8×3) / 4）。アイコンは34pxなので余裕があり、
-           名前も「お気に入り」5文字×9px＝45pxで収まる。5本目を足す余地は無い。 */
+           名前もいちばん長い「都道府県」4文字×9px＝36pxで収まる。5本目を足す余地は無い。
+           お気に入りは 2026-09-12 にメニュー上部（設定の左）へ移した。 */
         .nearby-list-btns { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 0 16px 12px; }
         .nearby-list-btns .nearby-list-btn { margin-bottom: 0; }
         .nearby-list-btn {
@@ -1210,6 +1211,14 @@
         #nearby-fav-export-view { display: none; flex-direction: column; min-height: 0;
                                   height: calc(100svh - 104px); max-height: 100%; }
         #nearby-fav-export-view.open { display: flex; }
+        /* 家臣団ビュー（メニューパネル内の第12ビュー）。高さは城主・お気に入りと同じ。
+           中身は retainers/index.html を iframe で出す。iframe の中のスクロールは
+           iframe の文書で完結するので、パネルのスクロール監視（watchScrollerTouchAction）には入れない */
+        #nearby-retainers-view { display: none; flex-direction: column; min-height: 0;
+                                 height: calc(100svh - 104px); max-height: 100%; }
+        #nearby-retainers-view.open { display: flex; }
+        #retainers-frame-wrap { flex: 1; min-height: 0; border-top: 1px solid #f0f0f0; }
+        #retainers-frame-wrap iframe { display: block; width: 100%; height: 100%; border: 0; }
         .fxp-scroll { overflow-y: auto; flex: 1; min-height: 0; -webkit-overflow-scrolling: touch; }
         .fxp-sec { font-size: 11px; color: #999; padding: 12px 16px 5px; }
         .fxp-row { display: flex; align-items: center; gap: 10px; padding: 10px 16px;
@@ -1415,7 +1424,11 @@
             background: var(--color-border-secondary, #ccc);
             border-radius: 2px;
         }
-        #settings-btn {
+        /* メニュー上部の右端の丸ボタン（お気に入り・設定）。行は space-between なので、
+           ボタンを行に直接2つ置くと、天気ウィジェットが上限幅(266px)で止まる幅の広い画面で
+           お気に入りが天気と設定の中間に浮く。まとめて1つの子にして右端に寄せる */
+        #nearby-head-btns { display: flex; gap: 6px; flex-shrink: 0; }
+        #settings-btn, #fav-entry-btn {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1429,7 +1442,10 @@
             padding: 0;
             flex-shrink: 0;
         }
-        #settings-btn:hover { background: #ebebeb; }
+        #settings-btn:hover, #fav-entry-btn:hover:not(:disabled) { background: #ebebeb; }
+        /* 名前を入れた枠が1つも無いときは押せない（updateFavEntry）。消さずに薄くするのは、
+           消すと設定ボタンの位置が動くため */
+        #fav-entry-btn:disabled { opacity: 0.5; cursor: default; }
         /* 天気ウィジェット（白背景＋天気別カラーのスタンプアイコン／CSS maskで着色） */
         /* カードは可変幅（最大86px）。降水量表示を含む「92% 2.7mm」等が
            選択リング(inset 2px)の内側に収まるように空きスペースへ広げる */
@@ -1625,9 +1641,16 @@
                 <div class="weather-day-card"><div class="weather-day-label">明日</div><div class="weather-icon-temp"><span style="color:#ccc;font-size:16px;line-height:1">…</span></div></div>
                 <div class="weather-day-card"><div class="weather-day-label">明後日</div><div class="weather-icon-temp"><span style="color:#ccc;font-size:16px;line-height:1">…</span></div></div>
             </div>
-            <button id="settings-btn" onclick="openSettingsView()" title="表示設定">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-            </button>
+            <div id="nearby-head-btns">
+                <!-- お気に入り一覧の入口（2026-09-12 に「一覧から検索」の4本目から移した）。
+                     設定と同じ丸ボタン・線の★にする。天気カードは1枚 86px → 83.7px に縮む（SE3 実測） -->
+                <button id="fav-entry-btn" onclick="openFavView()" title="お気に入り">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2.5 15.09 8.76 22 9.77 17 14.64 18.18 21.52 12 18.27 5.82 21.52 7 14.64 2 9.77 8.91 8.76 12 2.5"/></svg>
+                </button>
+                <button id="settings-btn" onclick="openSettingsView()" title="表示設定">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                </button>
+            </div>
         </div>
         <div id="weather-hourly-panel" aria-live="polite"></div>
     </div>
@@ -1735,15 +1758,20 @@
                 </span>
                 <span class="nlb-n">遺構</span>
             </button>
-            <!-- 地色 #FFC107 は4枠のどの色でもない。4枠の総称としての入口なので、
-                 特定の枠の色を使うと「お気に入り1だけの入口」に見えるため。
-                 この色が出るのはパネルの中だけで、地図のポケふた #FBBC04 と並ぶことはない -->
-            <button class="nearby-list-btn" id="fav-entry-btn" onclick="openFavView()">
-                <span class="nlb-ic" style="background:#FFC107;">
-                    <svg viewBox="0 0 100 100" aria-hidden="true"><path fill="#fff"
-                        d="M50 14 L61 39 L88 42 L68 60 L74 87 L50 73 L26 87 L32 60 L12 42 L39 39 Z"/></svg>
+            <!-- 家臣団（retainers/ ＝ 家臣団の表示側）。兜を面で描く。
+                 しころの中央を顔の形に抜いておかないと、V字＋鉢＋台形が「丼と箸」に見える
+                 （mock/retainers-entry-preview.html で試して確認）。
+                 地色 #2f4f7f は家臣団の画面で家紋に使っている色で、並びの緑・灰・茶と被らない -->
+            <button class="nearby-list-btn" id="retainers-entry-btn" onclick="openRetainersView()">
+                <span class="nlb-ic" style="background:#2f4f7f;">
+                    <svg viewBox="0 0 100 100" aria-hidden="true"><g fill="#fff">
+                        <path d="M46 42 C38 30 28 18 16 7 C21 22 29 36 39 47 Z"/>
+                        <path d="M54 42 C62 30 72 18 84 7 C79 22 71 36 61 47 Z"/>
+                        <path d="M29 57 C29 43 38 35 50 35 C62 35 71 43 71 57 Z"/>
+                        <path d="M20 60 H80 L93 86 H66 L59 66 H41 L34 86 H7 Z"/>
+                    </g></svg>
                 </span>
-                <span class="nlb-n">お気に入り</span>
+                <span class="nlb-n">家臣団</span>
             </button>
         </div>
     </div>
@@ -2073,6 +2101,20 @@
             <button class="fxp-btn sub" id="fav-selall-btn" onclick="favSelectAllToggle()">すべて選択</button>
             <button class="fxp-btn danger" id="fav-seldel-btn" onclick="favUnmarkSelected()" disabled>解除</button>
         </div>
+    </div>
+
+    <!-- 家臣団ビュー（第12ビュー）。中身は retainers/index.html（家臣団の表示側。取得ツールは D:\work\SamuraiRetainers）。
+         地図のページを離れずにメニューの中で開くので、閉じても地図・検索・メニューの状態は残る。
+         iframe は初めて開いたときに app.js が作る（openRetainersView） -->
+    <div id="nearby-retainers-view">
+        <div class="lords-head">
+            <button class="lords-iconbtn" onclick="closeRetainersView()" title="メニューへ戻る">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="lords-head-title">家臣団</div>
+            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+        </div>
+        <div id="retainers-frame-wrap"></div>
     </div>
 
     <!-- お気に入りの書き出しビュー（第11ビュー）。

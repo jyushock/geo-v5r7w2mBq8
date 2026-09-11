@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>戦国大名家 表現方法モック</title>
+<style>
+:root{
+  --paper:#f6f2e8; --paper2:#efe9db; --ink:#2b2622; --ink2:#6b6055;
+  --line:#d8cfbc; --line2:#c2b69d; --accent:#7a2e2e;
+  --shadow:0 1px 3px rgba(60,45,25,.14), 0 8px 24px rgba(60,45,25,.06);
+  --fs:14px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+  font-size:var(--fs); line-height:1.7;
+}
+header.top{
+  padding:22px 28px 14px; border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,#fbf8f1,var(--paper));
+}
+header.top h1{
+  margin:0 0 4px; font-size:24px; font-weight:600; letter-spacing:.08em;
+  display:flex; align-items:center; gap:12px;
+}
+header.top h1 .crest{width:34px;height:34px;color:#2f4f7f}
+header.top .sub{color:var(--ink2); font-size:12.5px; letter-spacing:.02em}
+header.top .sub b{color:var(--ink); font-weight:600}
+
+nav.tabs{
+  display:flex; flex-wrap:wrap; gap:6px; padding:12px 28px;
+  border-bottom:1px solid var(--line); background:var(--paper2);
+  position:sticky; top:0; z-index:20;
+}
+nav.tabs button{
+  font-family:inherit; font-size:13px; color:var(--ink2);
+  background:transparent; border:1px solid transparent; border-radius:999px;
+  padding:5px 13px; cursor:pointer; letter-spacing:.04em; transition:.15s;
+}
+nav.tabs button:hover{background:#e6dfcd; color:var(--ink)}
+nav.tabs button.on{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+nav.tabs .num{opacity:.55; margin-right:5px; font-variant-numeric:tabular-nums}
+
+main{padding:22px 28px 60px; max-width:1500px}
+section.view{display:none}
+section.view.on{display:block}
+.vhead{margin:0 0 14px; display:grid; grid-template-columns:1fr auto; gap:16px; align-items:start}
+.vhead h2{margin:0 0 6px; font-size:19px; font-weight:600; letter-spacing:.06em}
+.vhead p{margin:0; color:var(--ink2); font-size:13px; max-width:78ch}
+.vhead .tags{display:flex; gap:6px; flex-wrap:wrap; justify-content:flex-end}
+.tag{font-size:11px; padding:2px 9px; border-radius:999px; border:1px solid var(--line2); color:var(--ink2); white-space:nowrap}
+.tag.good{border-color:#8aa88a; color:#3f6b45; background:#f0f5ef}
+.tag.bad{border-color:#c9a3a3; color:#8c3b3b; background:#f8f0f0}
+
+.panel{background:#fffdf8; border:1px solid var(--line); border-radius:10px; box-shadow:var(--shadow); overflow:hidden}
+.panel .bar{
+  display:flex; flex-wrap:wrap; align-items:center; gap:10px;
+  padding:9px 14px; border-bottom:1px solid var(--line); background:#faf7ee;
+  font-size:12.5px; color:var(--ink2);
+}
+.panel .bar label{display:flex; align-items:center; gap:6px}
+.panel .bar select,.panel .bar input[type=search]{
+  font-family:inherit; font-size:12.5px; padding:3px 7px;
+  border:1px solid var(--line2); border-radius:5px; background:#fff; color:var(--ink);
+}
+.panel .bar input[type=range]{width:220px}
+.panel .body{overflow:auto; max-height:76vh}
+svg.canvas{display:block}
+.hint{padding:8px 14px; font-size:11.5px; color:var(--ink2); border-top:1px solid var(--line); background:#faf7ee}
+
+/* 共通の描画要素 */
+.node-label{font-size:11px; fill:var(--ink); cursor:pointer}
+.node-label:hover{fill:var(--accent); text-decoration:underline}
+.link{fill:none; stroke:var(--line2); stroke-width:1}
+.axis text{font-size:10px; fill:var(--ink2)}
+.axis line{stroke:var(--line); stroke-width:1}
+.gridline{stroke:#e7dfcc; stroke-width:1}
+.rule{stroke:#b08a6a; stroke-width:1; stroke-dasharray:4 3}
+.rule-label{font-size:10px; fill:#8c6a4a}
+
+/* カード */
+.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(215px,1fr)); gap:10px; padding:14px}
+.card{border:1px solid var(--line); border-radius:8px; background:#fff; padding:10px 11px; position:relative; overflow:hidden}
+.card .cr{position:absolute; right:-10px; top:-10px; width:76px; height:76px; opacity:.09}
+.card .nm{font-size:15px; font-weight:600; letter-spacing:.04em}
+.card .nm a{color:inherit; text-decoration:none}
+.card .nm a:hover{color:var(--accent); text-decoration:underline}
+.card .yr{font-size:11.5px; color:var(--ink2); font-variant-numeric:tabular-nums}
+.card .ld{margin-top:6px; display:flex; gap:4px; flex-wrap:wrap}
+.chip{font-size:10.5px; padding:1px 7px; border-radius:999px; border:1px solid currentColor; opacity:.9}
+
+/* 凡例 */
+.legend{display:flex; flex-wrap:wrap; gap:10px; padding:9px 14px; border-top:1px solid var(--line); background:#faf7ee; font-size:11.5px}
+.legend .it{display:flex; align-items:center; gap:5px; color:var(--ink2)}
+.legend .sw{width:11px; height:11px; border-radius:2px}
+.legend .cr{width:15px; height:15px}
+
+/* ツールチップ */
+#tip{
+  position:fixed; pointer-events:none; z-index:99; opacity:0; transition:opacity .1s;
+  background:#2b2622; color:#f6f2e8; font-size:12px; line-height:1.55;
+  padding:7px 10px; border-radius:6px; max-width:330px; box-shadow:0 6px 20px rgba(0,0,0,.25);
+}
+#tip b{color:#fff}
+#tip .sm{opacity:.75; font-size:11px}
+
+footer{padding:18px 28px 40px; border-top:1px solid var(--line); color:var(--ink2); font-size:11.5px; margin-top:30px}
+footer a{color:var(--ink2)}
+.warn{background:#fdf6e8; border:1px solid #e0cf9f; border-radius:8px; padding:10px 13px; margin:0 0 14px; font-size:12.5px; color:#6b5a35}
+</style>
+</head>
+<body>
+
+<!-- 家紋の簡略図案。ja.wikipedia 各氏族記事 infobox「家紋」の紋名に基づく自作SVG（正確な再現ではない） -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+  <symbol id="cr-takeda" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <path d="M50 6 96 50 50 94 4 50Z" fill="none" stroke="currentColor" stroke-width="4"/>
+      <path d="M50 15 71 36 50 47 29 36Z"/><path d="M26 39 47 50 26 61 15 50Z"/>
+      <path d="M74 39 85 50 74 61 53 50Z"/><path d="M50 53 71 64 50 85 29 64Z"/>
+    </g>
+  </symbol>
+  <symbol id="cr-tokugawa" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="4"/>
+      <g id="aoi-leaf"><path d="M50 46c-9-4-16-13-16-22 0-8 7-14 16-14s16 6 16 14c0 9-7 18-16 22z"/>
+        <rect x="48" y="42" width="4" height="9" rx="2"/></g>
+      <use href="#aoi-leaf" transform="rotate(120 50 50)"/>
+      <use href="#aoi-leaf" transform="rotate(240 50 50)"/>
+      <circle cx="50" cy="50" r="6"/>
+    </g>
+  </symbol>
+  <symbol id="cr-hojo" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <path d="M50 8 71 44H29Z"/><path d="M28 52 49 88H7Z"/><path d="M72 52 93 88H51Z"/>
+    </g>
+  </symbol>
+  <symbol id="cr-uesugi" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="4"/>
+      <path d="M50 20c10 8 15 20 15 32 0 8-2 14-5 20-3-8-6-14-10-19-4 5-7 11-10 19-3-6-5-12-5-20 0-12 5-24 15-32z"/>
+      <path d="M22 44c8-3 16-2 22 2-7 3-15 3-22-2z"/><path d="M78 44c-8-3-16-2-22 2 7 3 15 3 22-2z"/>
+    </g>
+  </symbol>
+  <symbol id="cr-oda" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <g id="oda-p"><ellipse cx="50" cy="24" rx="15" ry="19" fill="none" stroke="currentColor" stroke-width="5"/></g>
+      <use href="#oda-p" transform="rotate(72 50 50)"/><use href="#oda-p" transform="rotate(144 50 50)"/>
+      <use href="#oda-p" transform="rotate(216 50 50)"/><use href="#oda-p" transform="rotate(288 50 50)"/>
+      <g><path d="M50 38c4 4 6 8 6 12s-2 8-6 12c-4-4-6-8-6-12s2-8 6-12z"/>
+         <path d="M38 50c4-4 8-6 12-6s8 2 12 6c-4 4-8 6-12 6s-8-2-12-6z"/></g>
+    </g>
+  </symbol>
+  <symbol id="cr-imagawa" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <path d="M34 14h32c3 0 5 2 5 5v62c0 3-2 5-5 5H34c-3 0-5-2-5-5V19c0-3 2-5 5-5z" fill="none" stroke="currentColor" stroke-width="5"/>
+      <rect x="38" y="30" width="24" height="5"/><rect x="38" y="47" width="24" height="5"/>
+      <rect x="38" y="64" width="24" height="5"/>
+    </g>
+  </symbol>
+  <symbol id="cr-suwa" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <path d="M50 12c5 10 6 18 5 26 6-6 12-9 19-10-3 9-8 16-15 21 7 1 13 4 18 9-9 4-17 5-25 3 3 7 4 14 3 22-7-5-12-11-15-18-3 7-8 13-15 18-1-8 0-15 3-22-8 2-16 1-25-3 5-5 11-8 18-9-7-5-12-12-15-21 7 1 13 4 19 10-1-8 0-16 5-26z"/>
+      <rect x="47" y="60" width="6" height="28" rx="3"/>
+    </g>
+  </symbol>
+  <symbol id="cr-sanada" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <g id="mon6"><circle cx="22" cy="32" r="13"/><circle cx="50" cy="32" r="13"/><circle cx="78" cy="32" r="13"/></g>
+      <use href="#mon6" y="36"/>
+    </g>
+  </symbol>
+  <symbol id="cr-anayama" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <g id="hbishi"><path d="M50 4 68 24 50 44 32 24Z" fill="none" stroke="currentColor" stroke-width="4"/>
+        <path d="M50 14c3 4 5 7 5 10s-2 6-5 10c-3-4-5-7-5-10s2-6 5-10z"/>
+        <path d="M40 24c4-3 7-5 10-5s6 2 10 5c-4 3-7 5-10 5s-6-2-10-5z"/></g>
+      <use href="#hbishi" transform="translate(-26 46)"/><use href="#hbishi" transform="translate(26 46)"/>
+    </g>
+  </symbol>
+  <symbol id="cr-kiso" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <path d="M50 8c7 9 10 19 10 29 0 7-2 13-4 18-2-6-4-11-6-15-2 4-4 9-6 15-2-5-4-11-4-18 0-10 3-20 10-29z"/>
+      <path d="M18 46c9-4 17-3 24 2-8 4-17 4-24-2z"/><path d="M82 46c-9-4-17-3-24 2 8 4 17 4 24-2z"/>
+      <circle cx="50" cy="76" r="9"/><circle cx="27" cy="68" r="7"/><circle cx="73" cy="68" r="7"/>
+    </g>
+  </symbol>
+  <symbol id="cr-generic" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="4">
+      <circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="26" stroke-dasharray="5 5"/>
+    </g>
+  </symbol>
+</defs>
+</svg>
+
+<header class="top">
+  <h1><svg class="crest"><use href="#cr-takeda"/></svg>戦国大名家　表現方法モック</h1>
+  <div class="sub" id="meta"></div>
+</header>
+
+<nav class="tabs" id="tabs"></nav>
+
+<main id="main"></main>
+
+<div id="tip"></div>
+
+<footer>
+  出典：<a href="https://ja.wikipedia.org/" target="_blank" rel="noopener">日本語版ウィキペディア</a>（本文・infobox）。
+  テキストは <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja" target="_blank" rel="noopener">CC BY-SA 4.0</a> の下で利用しています。
+  各人物名のリンク先が原典です。家紋は各氏族記事 infobox「家紋」欄の紋名に基づく自作の簡略図案で、実際の紋の正確な再現ではありません。
+  <span id="footmeta"></span>
+</footer>
+
+<!-- データは別ファイル。表示のプログラムにデータを内包しない。
+     file:// で開いても読めるよう、fetch ではなく script で読む。 -->
+<script src="data.js"></script>
+<script>
+/*__VIEWS__*/
+</script>
+</body>
+</html>

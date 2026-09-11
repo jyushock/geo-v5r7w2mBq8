@@ -13,7 +13,7 @@
  *   上げても、切り替わる前の1回は旧 Service Worker が古い app.js を返し得るので、
  *   HTML 側も古い app.js で壊れない形にしておく（index.html の #nearby-panel の max-height）。
  */
-const VERSION = 'v8';   // v8: シートの段を取りやめて元に戻した。v7: シートの段（index.html と app.js を同時に変更）。v6: 本体を app.js に切り出し
+const VERSION = 'v9';   // v9: お気に入りをメニュー上部へ移し家臣団ビューを足した（index.html と app.js を同時に変更）・ナビゲーションの保存先を分けた。v8: シートの段を取りやめて元に戻した。v7: シートの段（index.html と app.js を同時に変更）。v6: 本体を app.js に切り出し
 const STATIC_CACHE  = `static-${VERSION}`;
 const RUNTIME_CACHE = `runtime-${VERSION}`;
 
@@ -58,16 +58,28 @@ self.addEventListener('fetch', (event) => {
 
     // HTML（ページ遷移）: ネットワーク優先、失敗時はキャッシュからオフライン表示
     if (request.mode === 'navigate') {
+        /* './index.html' に入れてよいのは地図のページ（/ と /index.html）だけ。
+           メニューの家臣団は retainers/index.html を iframe で開き、それもナビゲーションとして
+           ここへ来る。区別しないと地図の index.html が家臣団のページで上書きされ、
+           オフラインで地図を開くと家臣団が出る。地図以外のページは自分の URL で保存し、
+           オフライン時も自分の保存分だけを返す（地図の index.html を代わりに返さない）。 */
+        const scopePath = new URL(self.registration.scope).pathname;
+        const isMapPage = url.origin === self.location.origin &&
+            (url.pathname === scopePath || url.pathname === scopePath + 'index.html');
         event.respondWith(
             fetch(request)
                 .then((response) => {
-                    const copy = response.clone();
-                    caches.open(STATIC_CACHE)
-                        .then((cache) => cache.put('./index.html', copy))
-                        .catch(() => {});
+                    if (isMapPage || (response && response.ok)) {
+                        const copy = response.clone();
+                        caches.open(STATIC_CACHE)
+                            .then((cache) => cache.put(isMapPage ? './index.html' : request, copy))
+                            .catch(() => {});
+                    }
                     return response;
                 })
-                .catch(() => caches.match('./index.html').then((r) => r || caches.match('./')))
+                .catch(() => isMapPage
+                    ? caches.match('./index.html').then((r) => r || caches.match('./'))
+                    : caches.match(request).then((r) => r || Response.error()))
         );
         return;
     }

@@ -4894,6 +4894,9 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('nearby-remains-detail-view').classList.remove('open');
         document.getElementById('nearby-fav-view').classList.remove('open');
         document.getElementById('nearby-fav-export-view').classList.remove('open');
+        // 家臣団ビューは後から足したもの。デプロイ直後に古い index.html と組み合わさっても落ちないよう、無ければ飛ばす
+        const retainersView = document.getElementById('nearby-retainers-view');
+        if (retainersView) retainersView.classList.remove('open');
         resetSyncViews();
         prefState.pref = null;
         updateLordsEntry();
@@ -7768,6 +7771,36 @@ map.on('zoomend', () => { isZooming = false; });
         renderFavKindChips();
         renderDistOrigin('fav');
         renderFavItems(restoreView);
+    }
+
+    /* ══ 家臣団ビュー ════════════════════════════════════════════════════
+       中身は retainers/index.html（家臣団の表示側。取得ツールは D:\work\SamuraiRetainers）を iframe で出す。
+       地図のページを離れずにメニューの中で開くので、閉じても地図・検索・メニューの状態は残る
+       （別ページに移ると、戻ったときに castle.js などを読み直し、ホーム画面アプリでは戻る手段も無い）。
+       iframe は初めて開いたときに作り、閉じても消さない。データ（data.js 5.8MB）を開くたびに
+       読み直さないためで、選んだ家・年・検索語も次に開いたときにそのまま残る。 */
+    const RETAINERS_URL = 'retainers/index.html';
+    function showRetainersView() {
+        setPanelLifted(true);
+        document.getElementById('nearby-main-view').style.display = 'none';
+        document.getElementById('nearby-settings-view').classList.remove('open');
+        document.getElementById('nearby-retainers-view').classList.add('open');
+    }
+    function openRetainersView() {
+        const wrap = document.getElementById('retainers-frame-wrap');
+        if (!wrap) return;
+        if (!wrap.querySelector('iframe')) {
+            const frame = document.createElement('iframe');
+            frame.src = RETAINERS_URL;
+            frame.title = '家臣団';
+            wrap.appendChild(frame);
+        }
+        showRetainersView();
+    }
+    function closeRetainersView() {
+        setPanelLifted(false);
+        document.getElementById('nearby-retainers-view').classList.remove('open');
+        document.getElementById('nearby-main-view').style.display = '';
     }
 
     /* 一覧に出す行。searchIndex（到着済みデータ）から、マークが付いていて表示中のものを拾う。
