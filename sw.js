@@ -7,8 +7,13 @@
  *  - 地図タイル / 各種API     : キャッシュしない（ToS・鮮度配慮で素通し）
  *
  * 更新方法: デプロイ時に下の VERSION を上げると旧キャッシュを破棄して入れ替わる。
+ *   index.html と app.js を一緒に変えたときは必ず上げる。HTML はネットワーク優先だが app.js は
+ *   stale-while-revalidate なので、上げないとデプロイ後の最初の1回は「新しい HTML＋古い app.js」で動く
+ *   （2026-09-11、シートの段の変更で一覧が画面より長くなり閉じられなくなった）。
+ *   上げても、切り替わる前の1回は旧 Service Worker が古い app.js を返し得るので、
+ *   HTML 側も古い app.js で壊れない形にしておく（index.html の #nearby-panel の max-height）。
  */
-const VERSION = 'v6';   // v6: 本体を app.js に切り出し（maplibre 6系のESM化に伴う）
+const VERSION = 'v7';   // v7: シートの段（index.html と app.js を同時に変更）。v6: 本体を app.js に切り出し
 const STATIC_CACHE  = `static-${VERSION}`;
 const RUNTIME_CACHE = `runtime-${VERSION}`;
 

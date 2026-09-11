@@ -408,6 +408,9 @@
             box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
             z-index: 310; transition: bottom 0.28s ease, height 0.28s ease;
             overflow: hidden; display: flex; flex-direction: column;
+            /* 上限は保険。デプロイ直後の1回は Service Worker が古い app.js（高さを入れない）を返し得るので、
+               そのときも画面を超えないようにする。新しい app.js の段（全開）はいつもこれ以下 */
+            max-height: calc(100svh - var(--sheet-base));
             font-family: sans-serif;
         }
         /* 閉じるボタン(24px)がヘッダー内に収まる高さを確保し、本文と重ならないようにする */
@@ -1372,7 +1375,7 @@
            高さは enableSheetSnap が段（小・中・全開）に合わせて入れる。メインビューは中身が
            全開より短ければ中身の高さで、フッター52pxを足した値になる。 */
         #nearby-panel.open { bottom: 0; }
-        #nearby-panel.open.lifted { bottom: var(--sheet-base); }
+        #nearby-panel.open.lifted { bottom: var(--sheet-base); max-height: calc(100svh - var(--sheet-base)); }
         #bottom-bar.panel-open { box-shadow: none; }
         #nearby-panel {
             position: fixed;
@@ -1385,6 +1388,11 @@
             transition: bottom 0.3s ease, height 0.28s ease;
             --sheet-base: 52px;
             overflow: hidden;   /* 段を下げている間に中身を下部バーへはみ出させない */
+            /* 上限は保険。デプロイ直後の1回は Service Worker が古い app.js（高さを入れない）を返し得る。
+               そのとき一覧が中身の高さまで伸びて×が画面の外に出ないよう、画面の高さで止める
+               （2026-09-11 に iPhone で起きた）。新しい app.js の段は、メインビュー（全開＋フッター52px）も
+               下部バーの上のビュー（全開）もこの上限以下なので、段の動きには効かない */
+            max-height: 100svh;
             display: flex;
             flex-direction: column;
             font-family: sans-serif;
@@ -2181,6 +2189,7 @@
     z-index:300; transition:bottom 0.3s ease, height 0.28s ease;
     /* 高さは enableSheetSnap が段（小・中・全開）に合わせて入れる。全開は一覧の各ビューと同じ（SE3で563px） */
     overflow:hidden;
+    max-height:calc(100svh - var(--sheet-base));   /* 保険：古い app.js で開かれても画面を超えない */
     display:flex; flex-direction:column;
     font-family: sans-serif;
 ">
