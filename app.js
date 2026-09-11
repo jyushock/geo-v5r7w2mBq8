@@ -2723,8 +2723,9 @@ function isObjSheetOpen() {
    指を離したときの行き先は Material Components（Android）の BottomSheetBehavior.onViewReleased の
    分岐と定数を写したもの（decideSheetStage）。Google マップのアプリそのものの動きは確かめていない。
 
-   開くときは種類（メニュー／一覧／周辺検索の結果／情報シート）ごとに、前回ドラッグで止めた段で開く。
-   覚えるのはページを開いている間だけで、初めはメニュー・一覧・結果が全開、情報シートが中。
+   開くときは種類（メニュー／一覧／周辺検索の結果／情報シート）ごとに決まった段で開き、前回の段は覚えない。
+   メニュー・一覧・結果は全開、情報シートは中（SHEET_OPEN_STAGE）。メニュー内でビューを切り替えたときも、
+   切り替え先の種類の段にする。
 
    入力経路を2本に分ける:
      タッチ … Touch Events。ドラッグ確定後の touchmove を preventDefault して、
@@ -2748,8 +2749,9 @@ const SHEET_VEL_WINDOW = 100;      // 速さを出すのに使う直近の時間
 // 縦にスクロールする領域。ここを起点にした操作はシートを動かさない。
 // 段の高さを測るときも、この要素だけを「伸び縮みする部分」として扱う
 const SHEET_SCROLLERS = '#nearby-panel-scroll, #settings-scroll, .lords-scroll, .fxp-scroll, #nearby-list, #obj-sheet-body';
-// 種類ごとの前回の段（'peek' | 'half' | 'full'）
-const sheetLastStage = { menu: 'full', list: 'full', result: 'full', obj: 'half' };
+// 開いたときの段（'peek' | 'half' | 'full'）。毎回この段で開き、前回ドラッグで止めた段は覚えない
+// （モック mock/sheet-snap-preview.html で決めた値）
+const SHEET_OPEN_STAGE = { menu: 'full', list: 'full', result: 'full', obj: 'half' };
 // 各シートの段の操作口（enableSheetSnap の戻り値）。組み立て前に呼ばれても落ちないよう null で始める
 let objSheetSnap = null, nearbySnap = null, nearbyResultSnap = null;
 
@@ -2829,7 +2831,7 @@ function decideSheetStage(st, h, vRaw) {
     return (half !== null && Math.abs(h - half) < Math.abs(h - st.peek)) ? 'half' : 'peek';
 }
 
-/* o.kind()      … 前回の段を覚える種類（'menu' | 'list' | 'result' | 'obj'）
+/* o.kind()      … 開いたときの段を決める種類（'menu' | 'list' | 'result' | 'obj'）
    o.container() … 段の高さを測る要素（直下にスクロール領域と固定部分が並ぶ）
    o.extra()     … 段の高さに足す分。メニューのメインビューはフッターが下部バーの位置に来るので52
    o.fit()       … 中身が全開より短ければ中身の高さを全開とするか
@@ -2837,17 +2839,24 @@ function decideSheetStage(st, h, vRaw) {
    o.onClose     … 小より下へ下げて離したときに呼ぶ
    o.blockSelector … ドラッグの起点にしない要素（横スクロールを優先する天気など）
    戻り値の prepareOpen は、開く処理が bottom を動かす前に呼ぶ（閉じているときは高さを即座に入れ、
-   下から出てくる動きだけを見せる。開いたままの差し替えなら高さも動かす）。 */
+   下から出てくる動きだけを見せる。開いたままの差し替えなら高さも動かす）。どちらも段は開いたときの段に戻す。 */
 function enableSheetSnap(panel, o) {
     let startX = 0, startY = 0, startH = 0;
     let armed = false, dragging = false, swallowClick = false;
     let capturePointerId = null;   // マウス経路のみ。ドラッグ確定時に捕捉するため保持する
     let st = null;                 // ドラッグ開始時に測った段。小より下げている間は固定部分が潰れて測れない
     let pts = [];                  // 直近の [時刻, y]
+    // 今の段。開くたびと、メニュー内でビューの種類が替わるたびに SHEET_OPEN_STAGE へ戻す
+    let curKind = null, curStage = null;
 
     const stages = () => sheetStages(o.container(), o.extra(), o.fit());
     const heightOf = (s, name) => (name === 'half' && s.half === null) ? s.full : s[name];
-    const targetHeight = () => heightOf(stages(), sheetLastStage[o.kind()]);
+    const stageName = () => {
+        const k = o.kind();
+        if (k !== curKind) { curKind = k; curStage = SHEET_OPEN_STAGE[k]; }
+        return curStage;
+    };
+    const targetHeight = () => heightOf(stages(), stageName());
 
     function setHeight(h, animate) {
         const px = `${Math.round(h + o.extra())}px`;
@@ -2916,7 +2925,8 @@ function enableSheetSnap(panel, o) {
         panel.style.transition = '';
         const next = decideSheetStage(st, h, v);
         if (next === 'close') { o.onClose(); return; }
-        sheetLastStage[o.kind()] = next;
+        stageName();   // 種類を今のものにそろえてから、段だけを差し替える
+        curStage = next;
         setHeight(heightOf(st, next), true);
     }
 
@@ -2979,7 +2989,11 @@ function enableSheetSnap(panel, o) {
     window.addEventListener('resize', refit);
 
     return {
-        prepareOpen() { setHeight(targetHeight(), o.isOpen()); },
+        prepareOpen() {
+            curKind = o.kind();
+            curStage = SHEET_OPEN_STAGE[curKind];
+            setHeight(targetHeight(), o.isOpen());
+        },
         targetHeight,
         isOpen: () => o.isOpen(),
     };
