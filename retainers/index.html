@@ -871,13 +871,17 @@ function setView(v) {
   document.getElementById('grp').disabled = isKin();
   render();
 }
+/* 表示・年・家を選び直したら、一覧は先頭から見せる（並びも人数も変わるので、前の位置に意味が無い）。
+   setView の中で戻さないのは、起動時の setView でも先頭へ動かしてしまうため */
 document.getElementById('view').addEventListener('click', e => {
   const b = e.target.closest('button[data-v]'); if (!b) return;
   setView(b.dataset.v);
+  scrollTo(0, 0);
 });
 document.getElementById('years').addEventListener('click', e => {
   const b = e.target.closest('button[data-y]'); if (!b) return;
   year = +b.dataset.y; render();
+  scrollTo(0, 0);
 });
 document.getElementById('tree').addEventListener('click', e => {
   const tw = e.target.closest('[data-tw]');
