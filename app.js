@@ -2724,7 +2724,7 @@ function isObjSheetOpen() {
    分岐と定数を写したもの（decideSheetStage）。Google マップのアプリそのものの動きは確かめていない。
 
    開くときは種類（メニュー／一覧／周辺検索の結果／情報シート）ごとに決まった段で開き、前回の段は覚えない。
-   メニュー・一覧・結果は全開、情報シートは中（SHEET_OPEN_STAGE）。メニュー内でビューを切り替えたときも、
+   メニュー・一覧・結果・情報シートとも全開（SHEET_OPEN_STAGE）。メニュー内でビューを切り替えたときも、
    切り替え先の種類の段にする。
 
    入力経路を2本に分ける:
@@ -2751,7 +2751,7 @@ const SHEET_VEL_WINDOW = 100;      // 速さを出すのに使う直近の時間
 const SHEET_SCROLLERS = '#nearby-panel-scroll, #settings-scroll, .lords-scroll, .fxp-scroll, #nearby-list, #obj-sheet-body';
 // 開いたときの段（'peek' | 'half' | 'full'）。毎回この段で開き、前回ドラッグで止めた段は覚えない
 // （モック mock/sheet-snap-preview.html で決めた値）
-const SHEET_OPEN_STAGE = { menu: 'full', list: 'full', result: 'full', obj: 'half' };
+const SHEET_OPEN_STAGE = { menu: 'full', list: 'full', result: 'full', obj: 'full' };
 // 各シートの段の操作口（enableSheetSnap の戻り値）。組み立て前に呼ばれても落ちないよう null で始める
 let objSheetSnap = null, nearbySnap = null, nearbyResultSnap = null;
 
