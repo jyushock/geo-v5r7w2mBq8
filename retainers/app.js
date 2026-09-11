@@ -438,6 +438,8 @@ houseSel.disabled = HOUSES.length < 2;
 houseSel.addEventListener('change', e => {
   setHouse(e.target.value);
   setView(view);
+  // 別の家の一覧になるので、前の家で読んでいた位置を引き継がず先頭から見せる
+  scrollTo(0, 0);
 });
 
 /* ツールチップはマウスのときだけ出す。スマートフォンのタップでも mouseover → mousemove → … → click が届き、
