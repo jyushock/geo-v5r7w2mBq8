@@ -471,5 +471,20 @@ document.addEventListener('mousemove', e => {
 });
 document.addEventListener('mouseout', e => { if (e.target.closest('.row')) tip.style.opacity = 0; });
 
+/* ---------- 先頭へ戻るボタン ----------
+   スクロールしている間だけ出し、止まってから2秒で消す（2026-09-12 に決定）。
+   止まってすぐに消さないのは、スマートフォンでは慣性スクロール中の最初のタップが
+   スクロールを止めるだけで押せないため、止まったあとに押す猶予を残す。
+   先頭に着いたら待たずに消す（そこで押しても動かないため）。 */
+const toTop = document.getElementById('toTop');
+let toTopTimer = 0;
+addEventListener('scroll', () => {
+  clearTimeout(toTopTimer);
+  if (scrollY <= 0) { toTop.classList.remove('show'); return; }
+  toTop.classList.add('show');
+  toTopTimer = setTimeout(() => toTop.classList.remove('show'), 2000);
+}, { passive: true });
+toTop.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
+
 setHouse(houseSel.value || HOUSES[0].key);
 setView('lords');

@@ -194,6 +194,8 @@
   <circle cx="50" cy="50" r="43"/><circle cx="50" cy="50" r="22" stroke-dasharray="6 6"/></g></symbol>
 </defs></svg>
 
+<!-- 見出しと年の行は1つの枠にまとめて上に止める（style.css の #topbar） -->
+<div id="topbar">
 <header>
   <!-- 家の紋。選ばれた家に合わせて app.js が差し替える -->
   <svg class="mon" id="houseCrest"><use href="#m-generic"/></svg>
@@ -217,12 +219,16 @@
 </header>
 
 <div class="years" id="years"></div>
+</div>
 
 <main>
   <div id="tree"></div>
 </main>
 
 <div id="tip"></div>
+
+<!-- 先頭へ戻る。スクロールしている間だけ出す（app.js） -->
+<button id="toTop" type="button" title="先頭へ" aria-label="ページの先頭へ"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 14 12 8 18 14"/></svg></button>
 
 <footer>
   出典：<a href="https://ja.wikipedia.org/" target="_blank" rel="noopener">日本語版ウィキペディア</a>／

@@ -18,10 +18,19 @@ body{
 }
 a{color:inherit}
 
+/* 見出しと年の行をまとめて上に止める（2026-09-12）。
+   以前は header と .years を別々に sticky にし、年の行を top:56px で止めていたが、
+   見出しの高さは幅で変わり（1280px で 69px、ツールが折り返す 900px で 145px）、
+   スクロールすると年の行が見出しの下端に重なった。1つの枠にまとめれば、
+   見出しの高さが変わっても年の行はその直下に付いたまま止まる。
+   狭い画面（520px 以下）も止める。地図のメニューの中（375×510）では
+   見出しと年の行で 177px を使い、一覧に残るのは 333px。 */
+#topbar{position:sticky; top:0; z-index:30}
+
 header{
   display:flex; align-items:center; gap:14px; padding:9px 16px;
   border-bottom:1px solid var(--line2); background:linear-gradient(180deg,#fcf9f2,#f3eee1);
-  position:sticky; top:0; z-index:30; flex-wrap:wrap;
+  flex-wrap:wrap;
 }
 header .mon{width:36px;height:36px;color:#2f4f7f;flex:none}
 header h1{margin:0;font-size:20px;font-weight:700;letter-spacing:.05em;white-space:nowrap}
@@ -48,7 +57,6 @@ header label.off input{cursor:not-allowed}
 .years{
   display:flex; align-items:center; gap:6px; flex-wrap:wrap;
   padding:8px 16px; border-bottom:1px solid var(--line); background:#ece4d3;
-  position:sticky; top:56px; z-index:29;
 }
 .years .lb{font-size:13px;color:var(--ink2);margin-right:3px}
 .years button{
@@ -156,10 +164,21 @@ footer{padding:14px 16px 36px;font-size:12.5px;color:var(--ink3);border-top:1px 
 #tip .s{color:var(--ink2);font-size:12px}
 #tip .w{color:var(--accent);font-size:12px}
 
+/* 先頭へ戻るボタン。スクロールしている間だけ出す（app.js）。
+   消している間も fixed で場所を取らないので、出し入れで一覧は動かない */
+#toTop{
+  position:fixed; right:14px; bottom:16px; z-index:40;
+  width:44px; height:44px; border:none; border-radius:50%; padding:0;
+  display:flex; align-items:center; justify-content:center;
+  background:#241f1a; color:#f7f3ea; box-shadow:0 3px 10px rgba(0,0,0,.28);
+  cursor:pointer; opacity:0; pointer-events:none; transition:opacity .2s;
+}
+#toTop.show{opacity:.9; pointer-events:auto}
+
 /* ===== 狭い画面（iPhone SE3 = 375px を含むスマートフォン縦） ===== */
 @media (max-width:520px){
   body{font-size:14px}
-  header{padding:7px 10px;gap:8px;position:static}
+  header{padding:7px 10px;gap:8px}
   header .mon{width:28px;height:28px}
   header h1{font-size:17px}
   header .st{font-size:12px;line-height:1.4}
@@ -170,7 +189,7 @@ footer{padding:14px 16px 36px;font-size:12.5px;color:var(--ink3);border-top:1px 
 
   /* 年ボタンは1行の横スクロールにして縦を食わせない */
   .years{
-  position:static; padding:6px 10px; gap:5px;
+  padding:6px 10px; gap:5px;
   flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch;
   }
   .years::-webkit-scrollbar{height:3px}
@@ -207,6 +226,8 @@ footer{padding:14px 16px 36px;font-size:12.5px;color:var(--ink3);border-top:1px 
   white-space:normal; overflow:visible;
   }
   .row .meta:empty{display:none}
+
+  #toTop{right:10px;bottom:12px}
 }
 
 </style>
@@ -397,6 +418,8 @@ footer{padding:14px 16px 36px;font-size:12.5px;color:var(--ink3);border-top:1px 
   <circle cx="50" cy="50" r="43"/><circle cx="50" cy="50" r="22" stroke-dasharray="6 6"/></g></symbol>
 </defs></svg>
 
+<!-- 見出しと年の行は1つの枠にまとめて上に止める（style.css の #topbar） -->
+<div id="topbar">
 <header>
   <!-- 家の紋。選ばれた家に合わせて app.js が差し替える -->
   <svg class="mon" id="houseCrest"><use href="#m-generic"/></svg>
@@ -420,12 +443,16 @@ footer{padding:14px 16px 36px;font-size:12.5px;color:var(--ink3);border-top:1px 
 </header>
 
 <div class="years" id="years"></div>
+</div>
 
 <main>
   <div id="tree"></div>
 </main>
 
 <div id="tip"></div>
+
+<!-- 先頭へ戻る。スクロールしている間だけ出す（app.js） -->
+<button id="toTop" type="button" title="先頭へ" aria-label="ページの先頭へ"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 14 12 8 18 14"/></svg></button>
 
 <footer>
   出典：<a href="https://ja.wikipedia.org/" target="_blank" rel="noopener">日本語版ウィキペディア</a>／
@@ -910,6 +937,21 @@ document.addEventListener('mousemove', e => {
   tip.style.left = x + 'px'; tip.style.top = y + 'px';
 });
 document.addEventListener('mouseout', e => { if (e.target.closest('.row')) tip.style.opacity = 0; });
+
+/* ---------- 先頭へ戻るボタン ----------
+   スクロールしている間だけ出し、止まってから2秒で消す（2026-09-12 に決定）。
+   止まってすぐに消さないのは、スマートフォンでは慣性スクロール中の最初のタップが
+   スクロールを止めるだけで押せないため、止まったあとに押す猶予を残す。
+   先頭に着いたら待たずに消す（そこで押しても動かないため）。 */
+const toTop = document.getElementById('toTop');
+let toTopTimer = 0;
+addEventListener('scroll', () => {
+  clearTimeout(toTopTimer);
+  if (scrollY <= 0) { toTop.classList.remove('show'); return; }
+  toTop.classList.add('show');
+  toTopTimer = setTimeout(() => toTop.classList.remove('show'), 2000);
+}, { passive: true });
+toTop.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
 
 setHouse(houseSel.value || HOUSES[0].key);
 setView('lords');
