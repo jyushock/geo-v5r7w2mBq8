@@ -13,7 +13,7 @@
  *   上げても、切り替わる前の1回は旧 Service Worker が古い app.js を返し得るので、
  *   HTML 側も古い app.js で壊れない形にしておく（index.html の #nearby-panel の max-height）。
  */
-const VERSION = 'v7';   // v7: シートの段（index.html と app.js を同時に変更）。v6: 本体を app.js に切り出し
+const VERSION = 'v8';   // v8: シートの段を取りやめて元に戻した。v7: シートの段（index.html と app.js を同時に変更）。v6: 本体を app.js に切り出し
 const STATIC_CACHE  = `static-${VERSION}`;
 const RUNTIME_CACHE = `runtime-${VERSION}`;
 
