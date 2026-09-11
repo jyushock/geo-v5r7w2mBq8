@@ -440,8 +440,14 @@ houseSel.addEventListener('change', e => {
   setView(view);
 });
 
+/* ツールチップはマウスのときだけ出す。スマートフォンのタップでも mouseover → mousemove → … → click が届き、
+   mouseout は別の要素をタップするまで来ない（Apple の Safari Web Content Guide「Handling Events」）。
+   そのため記事から戻っても出たまま残り、位置も画面外にはみ出していた（2026-09-12、iPhone SE3）。
+   pointer イベントなら pointerType でマウスとタップを見分けられる */
 const tip = document.getElementById('tip');
-document.addEventListener('mouseover', e => {
+const byMouse = e => e.pointerType === 'mouse';
+document.addEventListener('pointerover', e => {
+  if (!byMouse(e)) return;
   const row = e.target.closest('.row'); if (!row) return;
   const p = BYID[row.dataset.id];
   const kids = childrenOf(p);
@@ -466,14 +472,14 @@ document.addEventListener('mouseover', e => {
     '<br><span class="s">クリックで Wikipedia</span>';
   tip.style.opacity = 1;
 });
-document.addEventListener('mousemove', e => {
-  if (tip.style.opacity != 1) return;
+document.addEventListener('pointermove', e => {
+  if (!byMouse(e) || tip.style.opacity != 1) return;
   let x = e.clientX + 15, y = e.clientY + 17;
   if (x + tip.offsetWidth > innerWidth - 8) x = e.clientX - tip.offsetWidth - 15;
   if (y + tip.offsetHeight > innerHeight - 8) y = e.clientY - tip.offsetHeight - 17;
   tip.style.left = x + 'px'; tip.style.top = y + 'px';
 });
-document.addEventListener('mouseout', e => { if (e.target.closest('.row')) tip.style.opacity = 0; });
+document.addEventListener('pointerout', e => { if (byMouse(e) && e.target.closest('.row')) tip.style.opacity = 0; });
 
 /* ---------- 先頭へ戻るボタン ----------
    スクロールしている間だけ出し、止まってから2秒で消す（2026-09-12 に決定）。
