@@ -114,7 +114,7 @@ ul.kids ul.kids>li.node::before{
 }
 .row{
   display:flex; align-items:center; gap:7px; padding:3px 8px; cursor:pointer;
-  border-radius:4px; min-height:29px;
+  border-radius:4px; min-height:29px; color:inherit; text-decoration:none;
 }
 .row:hover{background:var(--hi)}
 .row .tw{
@@ -695,7 +695,11 @@ function nodeHtml(p, color) {
   const meta = [(p.clans || []).join('→'), p.rankTitle,
     (!isKin() && fa.length ? '父：' + fa.map(x => x.n).join('・') : '')].filter(Boolean).join('　');
   let h = '<li class="node">' +
-    '<div class="row' + (on ? '' : ' dim') + (on && st.est ? ' est' : '') + '" data-id="' + p.id + '">' +
+    /* 行は Wikipedia へのリンクそのもの。地図の城シートの Wikipedia ボタンと同じ
+       <a target="_blank"> で開く（window.open(url, '_blank', 'noopener') だと
+       iPhone で記事から戻るときに空のページを挟んだため、2026-09-12 に揃えた） */
+    '<a class="row' + (on ? '' : ' dim') + (on && st.est ? ' est' : '') + '" href="' + esc(p.u) +
+      '" target="_blank" data-id="' + p.id + '">' +
     '<span class="tw' + (kids.length ? ' has' : '') + '" data-tw="' + esc(p.t) + '">' +
       (kids.length ? (open ? '−' : '+') : '') + '</span>' +
     mon(p.crest ? p.crest.type : null, color, 21, monLevel(p)) +
@@ -705,7 +709,7 @@ function nodeHtml(p, color) {
     '<span class="yr">' + (p.b || '?') + '–' + (p.d || '?') + '</span>' +
     '<span class="meta">' + esc(meta) + '</span>' +
     (kids.length ? '<span class="yr">' + (isKin() ? '子' : '配下') + kids.length + '</span>' : '') +
-    '</div>';
+    '</a>';
   if (kids.length && open) {
     const inner = kids.map(c => nodeHtml(c, color)).join('');
     if (inner) h += '<ul class="kids">' + inner + '</ul>';
@@ -878,12 +882,12 @@ document.getElementById('years').addEventListener('click', e => {
 document.getElementById('tree').addEventListener('click', e => {
   const tw = e.target.closest('[data-tw]');
   if (tw) {
+    e.preventDefault();             // 開閉ボタンは行（リンク）の中にあるので、記事へ飛ばさない
     const k = tw.dataset.tw;
     closed.has(k) ? closed.delete(k) : closed.add(k);
     render(); return;
   }
-  const row = e.target.closest('.row');
-  if (row) window.open(BYID[row.dataset.id].u, '_blank', 'noopener');
+  // 行のタップは <a target="_blank"> の既定の動作で記事を開く
 });
 document.getElementById('q').addEventListener('input', e => { query = nosp(e.target.value); render(); });
 document.getElementById('grp').addEventListener('change', e => { useGrp = e.target.checked; render(); });
