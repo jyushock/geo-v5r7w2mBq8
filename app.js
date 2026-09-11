@@ -7779,7 +7779,10 @@ map.on('zoomend', () => { isZooming = false; });
        （別ページに移ると、戻ったときに castle.js などを読み直し、ホーム画面アプリでは戻る手段も無い）。
        iframe は初めて開いたときに作り、閉じても消さない。データ（data.js 5.8MB）を開くたびに
        読み直さないためで、選んだ家・年・検索語も次に開いたときにそのまま残る。 */
-    const RETAINERS_URL = 'retainers/index.html';
+    /* 'retainers/index.html' ではなくフォルダで指す。本番（Cloudflare Workers の静的配信）は
+       /retainers/index.html を /retainers/ へ 307 で転送し、sw.js は転送先の URL で保存するため、
+       index.html で指すとオフライン時に保存分が見つからない（2026-09-12 に本番で確認） */
+    const RETAINERS_URL = 'retainers/';
     function showRetainersView() {
         setPanelLifted(true);
         document.getElementById('nearby-main-view').style.display = 'none';
