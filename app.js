@@ -2540,7 +2540,7 @@ function openObjSheet(type, label, p, lng, lat, pairFrom) {
     // 名前の行（と上に置くバッジ）は掴める部分（#obj-sheet-title）へ移し、本文だけをスクロールさせる。
     // 本文は段のドラッグの起点にしないので、ここに残すと掴める所がハンドルの行（24px）だけになる
     const titleBox = document.getElementById('obj-sheet-title');
-    titleBox.replaceChildren();
+    titleBox.replaceChildren();   // 前のシートの「↩戻る」（inject*BackLink が名前の上に挿したもの）もここで消える
     while (body.firstElementChild && body.firstElementChild.matches('.os-badge-row, .os-title')) {
         titleBox.appendChild(body.firstElementChild);
     }
@@ -4603,14 +4603,14 @@ map.on('zoomend', () => { isZooming = false; });
     // 別のピンをタップするとシート本文ごと作り直されるので、自然に消える。
     function injectSearchBackLink() {
         if (!searchReturn) return;
-        const body = document.getElementById('obj-sheet-body');
-        if (!body || body.querySelector('.os-lords-back')) return;
+        const box = document.getElementById('obj-sheet-title');   // 名前の行の先頭＝名前の上に置く
+        if (!box || box.querySelector('.os-lords-back')) return;
         const div = document.createElement('div');
         div.className = 'os-lords-back';
         const q = searchReturn.q.trim();
         div.textContent = q ? `↩ 「${q}」の検索結果に戻る` : '↩ 検索結果に戻る';
         div.onclick = () => { closeObjSheet(); restoreListReturnCamera(); reopenSearchResults(); };
-        body.insertBefore(div, body.firstChild);
+        box.insertBefore(div, box.firstChild);
     }
 
     /* 飛ぶ前の検索結果（ワード・並び・スクロール位置）のまま戻す。
@@ -5525,14 +5525,14 @@ map.on('zoomend', () => { isZooming = false; });
     // 別のピンをタップするとシート本文ごと作り直されるので、自然に消える。
     function injectLordsBackLink(lordId) {
         if (lordId == null || !lordIndex || !lordIndex[lordId]) return;
-        const body = document.getElementById('obj-sheet-body');
-        if (!body) return;
+        const box = document.getElementById('obj-sheet-title');   // 名前の行の先頭＝名前の上に置く
+        if (!box) return;
         const div = document.createElement('div');
         div.className = 'os-lords-back';
         div.textContent = `↩ 「${lordIndex[lordId].n}」の城一覧に戻る`;
         // 開く前の一覧の状態（近い順の起点・スクロール位置）と地図のまま戻す
         div.onclick = () => { closeObjSheet(); restoreListReturnCamera(); openNearbyPanel(); openLordsView(lordId, true); };
-        body.insertBefore(div, body.firstChild);
+        box.insertBefore(div, box.firstChild);
     }
 
     // ══ 都道府県から探す ═══════════════════════════════════════════════
@@ -6173,14 +6173,14 @@ map.on('zoomend', () => { isZooming = false; });
     // 別のピンをタップするとシート本文ごと作り直されるので、自然に消える。
     function injectPrefBackLink(prefName) {
         if (!prefName) return;
-        const body = document.getElementById('obj-sheet-body');
-        if (!body || body.querySelector('.os-lords-back')) return;
+        const box = document.getElementById('obj-sheet-title');   // 名前の行の先頭＝名前の上に置く
+        if (!box || box.querySelector('.os-lords-back')) return;
         const div = document.createElement('div');
         div.className = 'os-lords-back';
         div.textContent = `↩ 「${prefName}」の一覧に戻る`;
         // 開く前の一覧の状態（近い順の起点・スクロール位置）と地図のまま戻す
         div.onclick = () => { closeObjSheet(); restoreListReturnCamera(); openNearbyPanel(); openPrefView(prefName, true); };
-        body.insertBefore(div, body.firstChild);
+        box.insertBefore(div, box.firstChild);
     }
 
     /* ══ 遺構から探す（第7〜9ビュー） ═══════════════════════════════
@@ -6725,8 +6725,8 @@ map.on('zoomend', () => { isZooming = false; });
     // 一覧から来たときだけ、情報シートの先頭に戻り導線を挿す（城主・都道府県と同じ扱い）
     function injectRemainsBackLink(target) {
         if (!target) return;
-        const body = document.getElementById('obj-sheet-body');
-        if (!body || body.querySelector('.os-lords-back')) return;
+        const box = document.getElementById('obj-sheet-title');   // 名前の行の先頭＝名前の上に置く
+        if (!box || box.querySelector('.os-lords-back')) return;
         // 'g:<分類ID>' は分類名、's:<分類ID>:<中分類名>' は中分類名、't:<遺構名>' はそのまま
         const g = target.startsWith('g:') ? remainsGroups.find(x => x.id === target.slice(2)) : null;
         const name = g ? g.name
@@ -6737,7 +6737,7 @@ map.on('zoomend', () => { isZooming = false; });
         div.textContent = `↩ 「${name}」の城一覧に戻る`;
         // 開く前の一覧の状態（近い順の起点・スクロール位置）と地図のまま戻す
         div.onclick = () => { closeObjSheet(); restoreListReturnCamera(); openNearbyPanel(); openRemainsView(target, true); };
-        body.insertBefore(div, body.firstChild);
+        box.insertBefore(div, box.firstChild);
     }
 
     function selectNearbyCat(el) {
@@ -7048,13 +7048,13 @@ map.on('zoomend', () => { isZooming = false; });
     // 周辺検索結果から来たときだけ、情報シートの先頭に戻り導線を挿す（都道府県から探すと同じ扱い）。
     // 別のピンをタップするとシート本文ごと作り直されるので、自然に消える。
     function injectNearbyBackLink() {
-        const body = document.getElementById('obj-sheet-body');
-        if (!body || body.querySelector('.os-lords-back')) return;
+        const box = document.getElementById('obj-sheet-title');   // 名前の行の先頭＝名前の上に置く
+        if (!box || box.querySelector('.os-lords-back')) return;
         const div = document.createElement('div');
         div.className = 'os-lords-back';
         div.textContent = '↩ 周辺検索結果へ戻る';
         div.onclick = () => { closeObjSheet(); restoreListReturnCamera(); reopenNearbyResult(); };
-        body.insertBefore(div, body.firstChild);
+        box.insertBefore(div, box.firstChild);
     }
 
     /* 開く前の一覧の状態（継ぎ足した分・スクロール位置）のまま戻す。距離は検索した時点の
@@ -8215,13 +8215,13 @@ map.on('zoomend', () => { isZooming = false; });
         setTimeout(injectFavBackLink, 400);   // onResultClick は300ms後にシートを開く
     }
     function injectFavBackLink() {
-        const body = document.getElementById('obj-sheet-body');
-        if (!body || body.querySelector('.os-lords-back')) return;
+        const box = document.getElementById('obj-sheet-title');   // 名前の行の先頭＝名前の上に置く
+        if (!box || box.querySelector('.os-lords-back')) return;
         const div = document.createElement('div');
         div.className = 'os-lords-back';
         div.textContent = '↩ 「お気に入り」の一覧に戻る';
         div.onclick = () => { closeObjSheet(); restoreListReturnCamera(); openNearbyPanel(); openFavView(true); };
-        body.insertBefore(div, body.firstChild);
+        box.insertBefore(div, box.firstChild);
     }
 
     /* ══ お気に入りの書き出し ═════════════════════════════════════════════
