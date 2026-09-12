@@ -30,7 +30,8 @@
   </div>
   <div class="spacer"></div>
   <div class="tools">
-    <label>家 <select id="house"></select></label>
+    <!-- 選択肢が家名なので「家」の見出しは付けない（2026-09-13 に外した） -->
+    <select id="house" aria-label="大名家"></select>
     <span class="seg" id="view">
       <button data-v="lords">当主別</button>
       <button data-v="whole">家全体</button>

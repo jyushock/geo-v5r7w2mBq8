@@ -226,31 +226,38 @@ function nodeHtml(p, color) {
   const kids = childrenOf(p);
   const st = inHouse(p, year);
   const on = st.on && hit(p);
-  if (!on && !visible(p) && !dimMode) return '';
+  if (!on && !dimMode) {
+    /* 対象外を薄く残さないときは本人を描かず、子孫に対象の人物がいれば本人の位置へ繰り上げる。
+       以前は子孫へたどる道として本人を薄く残していたため、チェックを外しても薄い行が残った
+       （年で絞った家系で先に亡くなった父、検索に一致しない主人など。2026-09-13）。
+       本人が畳まれていても、描かない本人は開けないので、子孫はそのまま出す */
+    return visible(p) ? kids.map(c => nodeHtml(c, color)).join('') : '';
+  }
   const open = !closed.has(p.t);
+  const inner = kids.length && open ? kids.map(c => nodeHtml(c, color)).join('') : '';
   const fa = kinPars(p.t);
   const meta = [(p.clans || []).join('→'), p.rankTitle,
     (!isKin() && fa.length ? '父：' + fa.map(x => x.n).join('・') : '')].filter(Boolean).join('　');
-  let h = '<li class="node">' +
+  /* 枝の線は style.css で描く。li の has は開閉ボックスの有無（横線をボックスの手前で止める）、
+     行の stem は下に子を描いたこと（ボックスの下端から子の縦線へつなぐ線を引く） */
+  let h = '<li class="node' + (kids.length ? ' has' : '') + '">' +
     /* 行は Wikipedia へのリンクそのもの。地図の城シートの Wikipedia ボタンと同じ
        <a target="_blank"> で開く（window.open(url, '_blank', 'noopener') だと
        iPhone で記事から戻るときに空のページを挟んだため、2026-09-12 に揃えた） */
-    '<a class="row' + (on ? '' : ' dim') + (on && st.est ? ' est' : '') + '" href="' + esc(p.u) +
+    '<a class="row' + (on ? '' : ' dim') + (on && st.est ? ' est' : '') + (inner ? ' stem' : '') + '" href="' + esc(p.u) +
       '" target="_blank" data-id="' + p.id + '">' +
-    '<span class="tw' + (kids.length ? ' has' : '') + '" data-tw="' + esc(p.t) + '">' +
-      (kids.length ? (open ? '−' : '+') : '') + '</span>' +
+    /* 開閉ボックス。＋／−は文字だと書体で上下にずれるので、style.css で線として描く。
+       子の無い行には置かない（押しても開閉するものが無く、記事も開けなかったため） */
+    (kids.length ? '<span class="tw' + (open ? '' : ' shut') + '" data-tw="' + esc(p.t) + '"></span>' : '') +
     mon(p.crest ? p.crest.img : null, color, 21, monLevel(p)) +
     '<span class="nm">' + esc(p.n) + '</span>' +
     (p.t24 && house.featuredShort ? '<span class="t24">' + esc(house.featuredShort) + '</span>' : '') +
     (p.kuni ? '<span class="kn">' + esc(p.kuni) + '</span>' : '') +
     '<span class="yr">' + (p.b || '?') + '–' + (p.d || '?') + '</span>' +
     '<span class="meta">' + esc(meta) + '</span>' +
-    (kids.length ? '<span class="yr">' + (isKin() ? '子' : '配下') + kids.length + '</span>' : '') +
+    (kids.length ? '<span class="yr kc">' + (isKin() ? '子' : '配下') + kids.length + '</span>' : '') +
     '</a>';
-  if (kids.length && open) {
-    const inner = kids.map(c => nodeHtml(c, color)).join('');
-    if (inner) h += '<ul class="kids">' + inner + '</ul>';
-  }
+  if (inner) h += '<ul class="kids">' + inner + '</ul>';
   return h + '</li>';
 }
 
@@ -364,7 +371,6 @@ function render() {
   const L = lordAt(year);
 
   document.getElementById('years').innerHTML =
-    '<span class="lb">年</span>' +
     YEARS.map(v => '<button data-y="' + v.y + '"' + (v.y === year ? ' class="on"' : '') + '>' +
       esc(v.lb) + (v.ev ? '<span class="ev">' + esc(v.ev) + '</span>' : '') + '</button>').join('') +
     '<span class="legend">' +

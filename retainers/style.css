@@ -55,7 +55,6 @@ header label.off input{cursor:not-allowed}
   display:flex; align-items:center; gap:6px; flex-wrap:wrap;
   padding:8px 16px; border-bottom:1px solid var(--line); background:#ece4d3;
 }
-.years .lb{font-size:13px;color:var(--ink2);margin-right:3px}
 .years button{
   font:inherit; font-size:14.5px; font-variant-numeric:tabular-nums;
   padding:4px 13px; border:1px solid var(--line2); border-radius:5px;
@@ -102,23 +101,57 @@ main{padding:12px 14px 50px}
 .grp>h3 .n{margin-left:auto;font-size:13px;font-weight:400;color:var(--ink2);font-variant-numeric:tabular-nums}
 .grp .body{padding:3px 0 5px}
 
-/* ===== ツリー ===== */
+/* ===== ツリー =====
+   枝の線は、引く位置を下の変数から決める（2026-09-13 に描き直した）。
+   以前は子の ul の左罫線で縦線を引いていたので、縦線が親の開閉ボックスの中心から外れ、
+   最後の子の横線より下まで伸びて終端が閉じていなかった。開閉ボックスも文字の高さなりの縦長だった。
+   --pad 行の左端からボックス / --bx ボックスの一辺 / --bt 行の上端からボックス / --gap ボックスと紋の間 /
+   --ind 1段の字下げ。ボックスの中央の画素は、行の左から --pad+6px、上から --bt+6px（一辺13px） */
+#tree{--pad:8px; --bx:13px; --bt:8px; --gap:7px; --ind:24px; --branch:#cdbf9f}
 ul.kids{list-style:none;margin:0;padding:0}
-ul.kids ul.kids{margin-left:19px;padding-left:11px;border-left:1px solid #ddd2ba;position:relative}
+ul.kids ul.kids{padding-left:var(--ind)}
 li.node{position:relative}
+/* 親のボックスの中央から下りる縦線。最後の子は自分の横線の高さで止める（└） */
 ul.kids ul.kids>li.node::before{
-  content:""; position:absolute; left:-11px; top:15px; width:9px; height:1px; background:#ddd2ba;
+  content:""; position:absolute; left:calc(var(--pad) + 6px - var(--ind)); top:0; bottom:0;
+  width:1px; background:var(--branch);
 }
+ul.kids ul.kids>li.node:last-child::before{bottom:auto; height:calc(var(--bt) + 7px)}
+/* 縦線から自分の行への横線。ボックスのある行はボックスの左端で止め、無い行はボックスがあれば右端になる位置まで引く */
+ul.kids ul.kids>li.node::after{
+  content:""; position:absolute; left:calc(var(--pad) + 6px - var(--ind)); top:calc(var(--bt) + 6px);
+  width:calc(var(--ind) - 6px + var(--bx)); height:1px; background:var(--branch);
+}
+ul.kids ul.kids>li.node.has::after{width:calc(var(--ind) - 6px)}
+/* 行の左にボックスの場所を空けておき、ボックスは位置を決めて置く。
+   行が折り返しても、2行目以降はこの余白より右から始まるので、ボックスの下の線に重ならない */
 .row{
-  display:flex; align-items:center; gap:7px; padding:3px 8px; cursor:pointer;
+  position:relative; display:flex; align-items:center; gap:var(--gap);
+  padding:3px 8px 3px calc(var(--pad) + var(--bx) + var(--gap)); cursor:pointer;
   border-radius:4px; min-height:29px; color:inherit; text-decoration:none;
 }
 .row:hover{background:var(--hi)}
-.row .tw{
-  width:15px;flex:none;text-align:center;font-size:11px;color:var(--ink3);
-  border:1px solid transparent;border-radius:3px;
+/* ボックスの下端から行の下端まで。子の縦線はそこから始まる */
+.row.stem::after{
+  content:""; position:absolute; left:calc(var(--pad) + 6px); top:calc(var(--bt) + var(--bx)); bottom:0;
+  width:1px; background:var(--branch);
 }
-.row .tw.has{border-color:#cdbf9f;background:#fff}
+/* 開閉ボックス。押せる範囲は行の左の余白と1行目の高さに広げ、見える箱は ::before で描く。
+   ＋／−は文字だと書体で上下にずれるので線で描く（一辺13pxの内側11pxの中央に7px） */
+.row .tw{
+  position:absolute; left:0; top:0;
+  width:calc(var(--pad) + var(--bx) + var(--gap) / 2); height:calc(var(--bt) * 2 + var(--bx));
+}
+.row .tw::before{
+  content:""; position:absolute; box-sizing:border-box;
+  left:var(--pad); top:var(--bt); width:var(--bx); height:var(--bx);
+  border:1px solid var(--branch); border-radius:2px;
+  background:linear-gradient(var(--ink3),var(--ink3)) center/7px 1px no-repeat, #fff;
+}
+.row .tw.shut::before{
+  background:linear-gradient(var(--ink3),var(--ink3)) center/7px 1px no-repeat,
+    linear-gradient(var(--ink3),var(--ink3)) center/1px 7px no-repeat, #fff;
+}
 .row .mon{width:21px;height:21px;flex:none}
 .row .nm{font-size:16px;font-weight:600;white-space:nowrap}
 .row:hover .nm{color:var(--accent);text-decoration:underline}
@@ -132,9 +165,10 @@ ul.kids ul.kids>li.node::before{
 /* 生没年が欠けていて、その年の在世を確認できない人物 */
 .row.est .nm{border-bottom:1px dotted #b6a179}
 .row.est .yr{color:#a08d63}
-/* その年の家中ではない／検索に一致しない人物 */
-.row.dim{opacity:.3}
-.row.dim:hover{opacity:.85}
+/* その年の家中ではない／検索に一致しない人物。行ごとではなく中身を薄くし、
+   枝の線（.row.stem::after）は他の行と同じ濃さで続ける */
+.row.dim>*{opacity:.3}
+.row.dim:hover>*{opacity:.85}
 .empty{padding:5px 12px;font-size:13px;color:var(--ink3)}
 
 /* 凡例 */
@@ -190,7 +224,6 @@ footer{padding:14px 16px 36px;font-size:12.5px;color:var(--ink3);border-top:1px 
   flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch;
   }
   .years::-webkit-scrollbar{height:3px}
-  .years .lb{display:none}
   .years button{font-size:13.5px;padding:4px 10px;flex:none}
   .years button .ev{display:none}
   .legend{display:none}
@@ -207,22 +240,23 @@ footer{padding:14px 16px 36px;font-size:12.5px;color:var(--ink3);border-top:1px 
   .grp>h3{font-size:14px;padding:5px 8px}
   .seg button{font-size:12.5px;padding:4px 9px}
 
-  /* 入れ子のインデントを詰める */
-  ul.kids ul.kids{margin-left:10px;padding-left:8px}
-  ul.kids ul.kids>li.node::before{left:-8px;width:6px}
+  /* 入れ子のインデントを詰める。ボックスの中央は1行目（名前 15.5px×1.5）の中央に合わせる */
+  #tree{--pad:6px; --bt:9px; --gap:5px; --ind:18px}
 
   /* 1行に詰め込まず、氏族は2行目へ回す */
-  .row{flex-wrap:wrap;padding:4px 6px;gap:5px;min-height:0}
-  .row .tw{width:13px}
+  .row{flex-wrap:wrap;padding:4px 6px 4px calc(var(--pad) + var(--bx) + var(--gap));gap:var(--gap);min-height:0}
   .row .mon{width:19px;height:19px}
   .row .nm{font-size:15.5px}
   .row .yr{font-size:12px}
   .row .t24, .row .kn{font-size:10.5px;padding:0 3px}
   .row .meta{
-  flex:0 0 calc(100% - 24px); margin-left:24px; font-size:11px; line-height:1.35;
-  white-space:normal; overflow:visible;
+  flex:0 0 calc(100% - 6px); margin-left:6px; font-size:11px; line-height:1.35;
+  white-space:normal; overflow:visible; order:1;
   }
   .row .meta:empty{display:none}
+  /* 子・配下の人数は PC と同じく1行目の右端に置く（DOM では氏族の後ろにあり、そのままだと
+     3行目の左端に落ちて枝の線に重なっていた）。入りきらずに折り返しても右端に寄る */
+  .row .kc{margin-left:auto}
 
   #toTop{right:10px;bottom:12px}
 }
