@@ -4,7 +4,7 @@ worker
 .assetsignore
 
 # 家臣団（retainers/ ＝ 家臣団の表示側。取得ツールは D:\work\SamuraiRetainers）。
-# 画面が読むのは index.html と data.js だけ。組み立て前の部品・組み立てスクリプト・モック・説明書きは配らない。
+# 画面が読むのは index.html と data.js と crests/（家紋の画像）だけ。組み立て前の部品・組み立てスクリプト・モック・説明書きは配らない。
 # 一覧で書くのは、否定（!）を使った書き方を .assetsignore が受け付けるか確かめていないため。
 # retainers/ に配らないファイルを足したら、ここにも足す。
 retainers/README.md

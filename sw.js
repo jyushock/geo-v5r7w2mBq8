@@ -13,7 +13,7 @@
  *   上げても、切り替わる前の1回は旧 Service Worker が古い app.js を返し得るので、
  *   HTML 側も古い app.js で壊れない形にしておく（index.html の #nearby-panel の max-height）。
  */
-const VERSION = 'v9';   // v9: お気に入りをメニュー上部へ移し家臣団ビューを足した（index.html と app.js を同時に変更）・ナビゲーションの保存先を分けた。v8: シートの段を取りやめて元に戻した。v7: シートの段（index.html と app.js を同時に変更）。v6: 本体を app.js に切り出し
+const VERSION = 'v10';  // v10: 家臣団の家紋を手描きの図案から元サイトの画像に替えた（retainers/index.html と data.js を同時に変更、retainers/crests/ を追加）。v9:お気に入りをメニュー上部へ移し家臣団ビューを足した（index.html と app.js を同時に変更）・ナビゲーションの保存先を分けた。v8: シートの段を取りやめて元に戻した。v7: シートの段（index.html と app.js を同時に変更）。v6: 本体を app.js に切り出し
 const STATIC_CACHE  = `static-${VERSION}`;
 const RUNTIME_CACHE = `runtime-${VERSION}`;
 

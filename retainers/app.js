@@ -45,7 +45,7 @@ function setHouse(key) {
     b: l.b, d: l.d, br: '', dr: '',
     lords: [], gens: [], clans: [house.lordClan], clan: house.lordClan,
     rank: house.ranks[0], rankWhy: '当主', rankSure: 1, rankTitle: '', kuni: null, t24: false,
-    crest: house.crest ? { type: house.crest, name: '', clan: house.lordClan, rep: false } : null,
+    crest: house.crestImg ? { img: house.crestImg, name: '', clan: house.lordClan, rep: false } : null,
     father: l.father ? [l.father] : [], children: [], parent: null, _lord: true,
   }));
 
@@ -56,7 +56,7 @@ function setHouse(key) {
 
   // ヘッダの紋と題も選ばれた家のものにする
   const hc = document.getElementById('houseCrest');
-  if (hc) hc.querySelector('use').setAttribute('href', '#m-' + (house.crest || 'generic'));
+  if (hc) hc.innerHTML = mon(house.crestImg);
   const ht = document.getElementById('houseTitle');
   if (ht) ht.textContent = house.name + '家臣団';
   document.title = house.name + '家臣団';
@@ -183,15 +183,19 @@ const hit = p => !query || nosp(p.n).includes(query) || nosp(p.t).includes(query
   p.lords.some(l => nosp(l.l).includes(query) || nosp(l.t).includes(query)) ||
   nosp(p.kuni).includes(query) || nosp(p.alias).includes(query) || nosp(p.rank).includes(query);
 
-/* level 0=その家の紋 / 1=紋が引けない（汎用マーク） / 2=一族の代表紋（個々の家の紋ではない）
-   紋の名前は分かっても図案を用意していない場合（crest.type が無い）は、
-   汎用マークになるので 1 として薄く出す。濃く出すと、その家の紋を
-   描けているように見えてしまうため。 */
-const monLevel = p => !p.crest || !p.crest.type ? 1 : (p.crest.rep ? 2 : 0);
-function mon(type, color, size, level) {
-  const op = level === 1 ? ';opacity:.22' : level === 2 ? ';opacity:.45' : '';
-  return '<svg class="mon" style="width:' + size + 'px;height:' + size + 'px;color:' + color + op +
-    '"><use href="#m-' + (type || 'generic') + '"/></svg>';
+/* 家紋は元サイトの画像をそのまま出す（取得ツールが crests/ に書き出す。CrestImages）。
+   以前は紋の名前から型を決めて手で描いた図案を出していたが、実物と大きく違ったため 2026-09-12 にやめた。
+   画像が無いときだけ汎用マーク（template.html の #m-generic）を出す。
+   level 0=その家の紋 / 1=紋の画像が無い（汎用マーク） / 2=一族の代表紋（個々の家の紋ではない）
+   紋の名前は分かっても画像が無い場合（crest.img が無い）は、汎用マークになるので 1 として薄く出す。
+   濃く出すと、その家の紋を出せているように見えてしまうため。
+   size・color・level を省くと、大きさと色は style.css に任せる（見出しの紋） */
+const monLevel = p => !p.crest || !p.crest.img ? 1 : (p.crest.rep ? 2 : 0);
+function mon(img, color, size, level) {
+  const box = size ? 'width:' + size + 'px;height:' + size + 'px;' : '';
+  const op = level === 1 ? 'opacity:.22;' : level === 2 ? 'opacity:.45;' : '';
+  if (img) return '<img class="mon" src="' + esc(img) + '" alt="" loading="lazy" decoding="async" style="' + box + op + '">';
+  return '<svg class="mon" style="' + box + (color ? 'color:' + color + ';' : '') + op + '"><use href="#m-generic"/></svg>';
 }
 
 /* 表示判定：自分か子孫のどれかが対象なら出す */
@@ -235,7 +239,7 @@ function nodeHtml(p, color) {
       '" target="_blank" data-id="' + p.id + '">' +
     '<span class="tw' + (kids.length ? ' has' : '') + '" data-tw="' + esc(p.t) + '">' +
       (kids.length ? (open ? '−' : '+') : '') + '</span>' +
-    mon(p.crest ? p.crest.type : null, color, 21, monLevel(p)) +
+    mon(p.crest ? p.crest.img : null, color, 21, monLevel(p)) +
     '<span class="nm">' + esc(p.n) + '</span>' +
     (p.t24 && house.featuredShort ? '<span class="t24">' + esc(house.featuredShort) + '</span>' : '') +
     (p.kuni ? '<span class="kn">' + esc(p.kuni) + '</span>' : '') +
@@ -284,7 +288,7 @@ function bodyHtml(L, direct) {
 function lordHead(L, direct) {
   const n = direct.reduce((a, c) => a + countTree(c), 0);
   return '<div class="lordhead">' +
-    '<svg class="mon"><use href="#m-' + (house.crest || 'generic') + '"/></svg>' +
+    mon(house.crestImg) +
     '<div><div class="nm">' + esc(L.n || L.t) + '</div>' +
     '<div class="sub">' + L.b + '–' + L.d + '　' + esc(L.note) + '</div></div>' +
     '<div class="cnt">家中 ' + n + '名' + (year ? '' : ' / 記載のある家臣 ' + direct.length + '家') + '</div></div>';
@@ -299,7 +303,7 @@ function flatHtml() {
   const list = P.filter(p => dimMode || on(p)).sort(cmp);
   const n = P.filter(on).length;
   let h = '<div class="lordblock"><div class="lordhead">' +
-    '<svg class="mon"><use href="#m-' + (house.crest || 'generic') + '"/></svg>' +
+    mon(house.crestImg) +
     '<div><div class="nm">' + esc(house.name) + '　全体</div>' +
     '<div class="sub">当主で分けず、家中の全員を通しで並べています</div></div>' +
     '<div class="cnt">' + (year ? 'この年の家中 ' : '') + n + '名</div></div>' +
@@ -336,7 +340,7 @@ function kinHtml() {
   const trees = [], alone = [];
   roots.forEach(p => (kinKids(p.t).length ? trees : alone).push(p));
   let h = '<div class="lordblock"><div class="lordhead">' +
-    '<svg class="mon"><use href="#m-' + (house.crest || 'generic') + '"/></svg>' +
+    mon(house.crestImg) +
     '<div><div class="nm">' + esc(house.name) + '　家系</div>' +
     '<div class="sub">infobox の父・子のうち実の親子だけを、家中で相手を特定できた分だけ結んでいます</div></div>' +
     '<div class="cnt">' + trees.length + '系統 / 単独 ' + alone.length + '名</div></div>' +
@@ -471,9 +475,9 @@ document.addEventListener('pointerover', e => {
     (p.rankTitle ? '<br><span class="s">官位：' + esc(p.rankTitle) + '</span>' : '') +
     '<br><span class="s">区分：' + esc(p.rank) + (p.rankWhy ? '（' + esc(p.rankWhy) + '）' : '') +
       (p.rankSure ? '' : ' <span class="w">推定</span>') + '</span>' +
-    (p.crest ? '<br><span class="s">家紋：' + esc(p.crest.name || p.crest.type || '名称なし') +
+    (p.crest ? '<br><span class="s">家紋：' + esc(p.crest.name || '名称なし') +
       '（' + esc(p.crest.clan) + (p.crest.rep ? ' の代表紋' : ' の紋') + '）' +
-      (p.crest.type ? '' : ' <span class="w">図案なし</span>') + '</span>' : '') +
+      (p.crest.img ? '' : ' <span class="w">画像なし</span>') + '</span>' : '') +
     (s && s.est ? '<br><span class="w">この年の在世は確認できません</span>' : '') +
     '<br><span class="s">クリックで Wikipedia</span>';
   tip.style.opacity = 1;

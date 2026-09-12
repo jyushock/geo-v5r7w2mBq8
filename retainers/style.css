@@ -26,6 +26,10 @@ header{
   flex-wrap:wrap;
 }
 header .mon{width:36px;height:36px;color:#2f4f7f;flex:none}
+/* 家の紋の入れ物。中身（画像か汎用マーク）は app.js が差し替える */
+#houseCrest{display:flex;flex:none}
+/* 家紋の画像は縦横比がまちまち（touken-world は 210×141）なので、枠に収めて歪ませない */
+img.mon{object-fit:contain}
 header h1{margin:0;font-size:20px;font-weight:700;letter-spacing:.05em;white-space:nowrap}
 header .st{font-size:13px;color:var(--ink2)}
 header .st b{color:var(--ink)}
