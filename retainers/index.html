@@ -24,7 +24,8 @@ a{color:inherit}
    スクロールすると年の行が見出しの下端に重なった。1つの枠にまとめれば、
    見出しの高さが変わっても年の行はその直下に付いたまま止まる。
    狭い画面（520px 以下）も止める。地図のメニューの中（375×510）では
-   見出しと年の行で 177px を使い、一覧に残るのは 333px。 */
+   見出しと年の行で 177px を使い、一覧に残るのは 333px（2026-09-12 の実測）。
+   2026-09-13 に検索欄を1行に分けたので、375px 幅では 26px 増える（徳川家で 180px → 206px）。 */
 #topbar{position:sticky; top:0; z-index:30}
 
 header{
@@ -222,7 +223,10 @@ footer{padding:14px 16px 36px;font-size:12.5px;color:var(--ink3);border-top:1px 
   header .st{font-size:12px;line-height:1.4}
   header .spacer{display:none}
   header .tools{width:100%;gap:7px}
-  header input[type=search]{flex:1;width:auto;min-width:0;font-size:14px;padding:4px 8px}
+  /* 検索欄は1行まるごと使う。以前は flex:1 で2つのチェックボックスと同じ行に置いていたため、
+     残りの幅しか取れず（375px で 105px、iPhone では1文字分）、2026-09-13 に分けた。
+     見出しは1行増える（見出し＋年の行 180px → 206px） */
+  header input[type=search]{flex:1 0 100%;width:auto;min-width:0;font-size:14px;padding:4px 8px}
   header label{font-size:12.5px}
 
   /* 年ボタンは1行の横スクロールにして縦を食わせない */
