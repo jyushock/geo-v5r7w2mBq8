@@ -4210,8 +4210,11 @@ map.on('zoomend', () => { isZooming = false; });
 
     function searchLocal(query) {
         const q = normalizeForSearch(query);
-        // 一致度（完全一致>前方一致>部分一致、alias一致は減点）を優先し、同スコア内は
-        // 周辺検索・天気と同じ基準点からの距離が近い順に並べて上位100件を返す
+        // 一致度（完全一致>前方一致>部分一致）を優先し、同スコア内は
+        // 周辺検索・天気と同じ基準点からの距離が近い順に並べて上位100件を返す。
+        // 別名で当たったものは名前で当たったものと同じ点にする。減点すると、すぐ近くの城でも
+        // 名前が一致した遠くの城の下に沈む（八王子市から「根小屋」で、別名「根小屋城」の
+        // 戸吹城 6km が、名前に根小屋を含む73〜505kmの10件より下の11番目になっていた）
         const center = getSearchCenter();
         const matched = [];
         for (const item of searchIndex) {
@@ -4232,7 +4235,7 @@ map.on('zoomend', () => { isZooming = false; });
                     const s = matchScore(normalizeForSearch(a), q);
                     if (s > bestScore) { bestScore = s; bestAlias = a; }
                 }
-                if (bestAlias) matched.push({ ...item, _matchedAlias: bestAlias, _score: bestScore * 0.6 });
+                if (bestAlias) matched.push({ ...item, _matchedAlias: bestAlias, _score: bestScore });
             }
         }
         return matched.map(item => ({
