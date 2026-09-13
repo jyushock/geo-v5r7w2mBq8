@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>遺構ヘルプ モック</title>
+<style>
+    :root { --bg: #F4F1EA; --ink: #263238; --sub: #607D8B; }
+    body { margin: 0; background: var(--bg); color: var(--ink);
+           font-family: "Hiragino Sans", "Yu Gothic UI", "Meiryo", sans-serif; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 20px 16px 48px; }
+    h1 { font-size: 20px; margin: 0 0 4px; }
+    .lead { color: var(--sub); font-size: 13px; line-height: 1.7; margin: 0 0 16px; }
+    .panel { background: #fff; border-radius: 12px; padding: 14px 16px; margin-bottom: 18px;
+             box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+    .panel h2 { font-size: 15px; margin: 0 0 8px; }
+    .panel p, .panel li { font-size: 13px; line-height: 1.7; }
+    .panel ul { margin: 6px 0 0; padding-left: 20px; }
+    .tbl-wrap { overflow-x: auto; }
+    table { border-collapse: collapse; font-size: 13px; width: 100%; min-width: 560px; }
+    th, td { border-bottom: 1px solid #eee; padding: 6px 8px; text-align: left; vertical-align: top; }
+    th { color: var(--sub); font-weight: 600; font-size: 12px; }
+    td.n { text-align: right; white-space: nowrap; }
+    .gname { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+    .muted { color: #9aa7ad; }
+
+    .group-h { display: flex; align-items: center; gap: 8px; margin: 24px 0 10px;
+               font-weight: 700; font-size: 15px; }
+    .group-h .dot { width: 12px; height: 12px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+
+    /* 1枚のカード＝図＋数行の説明。ヘルプではこの単位を1枚絵として並べる想定 */
+    .card { background: #fff; border-radius: 14px; overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,.10); border-top: 4px solid var(--g); }
+    .fig { background: #FBFAF6; border-bottom: 1px solid #EEE9DF; }
+    .fig svg { display: block; width: 100%; height: auto; }
+    .body { padding: 10px 14px 12px; }
+    .ttl { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+    .ttl b { font-size: 17px; }
+    .yomi { font-size: 11px; color: var(--sub); }
+    .chip { margin-left: auto; font-size: 11px; color: #fff; background: var(--g);
+            border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+    .txt { font-size: 13px; line-height: 1.75; margin: 6px 0 0; }
+    .rec { font-size: 11px; color: #90A4AE; margin: 8px 0 0; }
+
+    .kinds { width: 100%; border-collapse: collapse; min-width: 0; font-size: 12px; }
+    .kinds td { border-bottom: 1px solid #EEE9DF; padding: 6px 10px; }
+    .kinds td:first-child { font-weight: 700; white-space: nowrap; }
+    .kinds td.n { color: var(--sub); }
+
+    /* 図の部品 */
+    .sky { fill: #EEF4F8; }
+    .earth { fill: #CDB08A; stroke: #8D6E63; stroke-width: 1.5; stroke-linejoin: round; }
+    .slope { fill: #E2D3B5; stroke: #B39B79; stroke-width: 1.2; }
+    .contour { fill: none; stroke: #C8B28F; stroke-width: 1; stroke-dasharray: 4 3; }
+    .flat { fill: #D5E6BC; stroke: #6D8B4A; stroke-width: 1.5; }
+    .flat2 { fill: #E7F0D9; stroke: #8AA66A; stroke-width: 1.2; }
+    .field { fill: #D5E6BC; }
+    .outside { fill: #EFE8D8; }
+    .moat { fill: #B39B7C; }
+    .water { fill: #9ACBEA; }
+    .wall { fill: #A98B68; }
+    .stone { fill: #B8C2C8; stroke: #78909C; stroke-width: 1; }
+    .roof { fill: #56656D; }
+    .plaster { fill: #FAFAF7; stroke: #9E9E9E; stroke-width: 1; }
+    .grass { fill: none; stroke: #6D8B4A; stroke-width: 3; }
+    .trench-o { fill: none; stroke: #A1887F; stroke-width: 9; stroke-linecap: round; }
+    .trench-i { fill: none; stroke: #6D5246; stroke-width: 2.5; stroke-linecap: round; }
+    .lbl { font-size: 11px; fill: #37474F; font-weight: 700; }
+    .lbl-s { font-size: 9.5px; fill: #546E7A; }
+    .lbl-w { font-size: 11px; fill: #fff; font-weight: 700; }
+    .cap { font-size: 9.5px; fill: #90A4AE; }
+    .m { text-anchor: middle; }
+    .ld { stroke: #78909C; stroke-width: 1; fill: none; }
+    .enemy { stroke: #E53935; stroke-width: 2.4; fill: none; stroke-dasharray: 6 4; marker-end: url(#arR); }
+    .route { stroke: #455A64; stroke-width: 2.2; fill: none; stroke-dasharray: 6 4; marker-end: url(#arG); }
+    .shoot { stroke: #1E88E5; stroke-width: 2; fill: none; marker-end: url(#arB); }
+    .gate { fill: #3E2723; }
+</style>
+</head>
+<body>
+<!-- 図で共有する矢印・斜線 -->
+<svg width="0" height="0" style="position:absolute">
+    <defs>
+        <marker id="arR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#E53935"/></marker>
+        <marker id="arB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1E88E5"/></marker>
+        <marker id="arG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#455A64"/></marker>
+        <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <rect width="6" height="6" fill="#F3EBDD"/><line x1="0" y1="0" x2="0" y2="6" stroke="#D6C3A3" stroke-width="2"/>
+        </pattern>
+    </defs>
+</svg>
+
+<div class="wrap">
+    <h1>遺構ヘルプ（モック）</h1>
+    <p class="lead">メニュー「遺構」に出てくる主な遺構を、図と数行の説明の1枚カードで並べた案です。
+        図はすべてこのモック用に描いたSVGで、外部の画像は使っていません。
+        カード下の灰色の行は、castle.js で何城に記録されているか（語の完全一致、2026-09-14 時点）で、判断用に載せています。</p>
+
+    <div class="panel">
+        <h2>「主要な遺構」の選び方</h2>
+        <p>castle.js で遺構が記録されている 18,143城 を語ごとに数え、城数の多い語からカードにしました。
+            <b>城数の上位20語は、すべていずれかのカードに入っています</b>（21位以降は 石碑 47城・櫓 46城・移築門 44城・庭園 42城・天守台 39城…）。
+            建造物は城数が少ないものの、天守・櫓・門は情報シートで目に付くので入れています。</p>
+        <div class="tbl-wrap">
+        <table>
+            <tr><th>メニューの分類</th><th class="n">分類の城数</th><th>カードにした語（城数）</th></tr>
+            <tr><td><span class="gname"><span class="dot" style="background:#AD1457"></span>建造物</span></td><td class="n">624</td>
+                <td>門 156・櫓台 97・模擬天守 55・櫓 46・移築門 44・天守台 39・復興天守 14・現存天守 12・外観復元天守 9・木造復元天守 5</td></tr>
+            <tr><td><span class="gname"><span class="dot" style="background:#546E7A"></span>石垣・石造物</span></td><td class="n">2,056</td>
+                <td>石垣 1,698・石積 410・石塁 105</td></tr>
+            <tr><td><span class="gname"><span class="dot" style="background:#6D4C41"></span>曲輪・区画</span></td><td class="n">12,493</td>
+                <td>曲輪 12,418・本丸 29・腰曲輪 24・帯曲輪 17</td></tr>
+            <tr><td><span class="gname"><span class="dot" style="background:#EF6C00"></span>虎口・出入口</span></td><td class="n">889</td>
+                <td>虎口 782・枡形虎口 28・馬出 28</td></tr>
+            <tr><td><span class="gname"><span class="dot" style="background:#8D6E63"></span>土塁・切岸</span></td><td class="n">8,446</td>
+                <td>土塁 8,388・土橋 171・切岸 123</td></tr>
+            <tr><td><span class="gname"><span class="dot" style="background:#9E9D24"></span>碑・案内板</span></td><td class="n">71</td>
+                <td class="muted">作らない（図で説明する形が無い）</td></tr>
+            <tr><td><span class="gname"><span class="dot" style="background:#1565C0"></span>堀</span></td><td class="n">11,797</td>
+                <td>堀 8,951・堀切 2,614・空堀 1,018・竪堀 947・畝状竪堀群 686・横堀 597・水堀 89</td></tr>
+            <tr><td><span class="gname"><span class="dot" style="background:#00838F"></span>井戸・水利</span></td><td class="n">964</td>
+                <td>井戸 847・井戸跡 67</td></tr>
+            <tr><td class="muted">発掘遺構／その他／砲台・物見／墓・供養塔</td><td class="n muted">43／40／27／14</td>
+                <td class="muted">作らない（城数が少ない）</td></tr>
+        </table>
+        </div>
+    </div>
+
+    <!-- ══ 建造物 ══ -->
+    <div class="group-h"><span class="dot" style="background:#AD1457"></span>建造物</div>
+    <div class="grid" style="--g:#AD1457">
+
+        <div class="card">
+            <div class="fig"><svg viewBox="0 0 320 180">
+                <rect class="sky" width="320" height="180"/>
+                <rect class="field" x="0" y="150" width="320" height="30"/>
+                <path class="stone" d="M84 150 L104 104 H216 L236 150Z"/>
+                <path d="M100 115 H220 M95 127 H225 M90 139 H230" stroke="#90A4AE" stroke-width="1"/>
+                <rect class="plaster" x="120" y="80" width="80" height="24"/>
+                <rect class="plaster" x="130" y="56" width="60" height="18"/>
+                <rect class="plaster" x="140" y="34" width="40" height="16"/>
+                <path class="roof" d="M104 86 Q160 78 216 86 L200 72 H120Z"/>
+                <path class="roof" d="M116 62 Q160 55 204 62 L190 48 H130Z"/>
+                <path class="roof" d="M128 40 Q160 33 192 40 L170 18 H150Z"/>
+                <g fill="#607D8B"><rect x="132" y="90" width="8" height="6"/><rect x="156" y="90" width="8" height="6"/><rect x="180" y="90" width="8" height="6"/>
+                    <rect x="143" y="64" width="7" height="5"/><rect x="170" y="64" width="7" height="5"/></g>
+                <path class="ld" d="M248 62 L206 62"/><text class="lbl" x="252" y="66">天守</text>
+                <path class="ld" d="M246 128 L228 128"/><text class="lbl" x="250" y="132">天守台</text>
+                <text class="cap" x="8" y="16">正面から見た図</text>
+            </svg></div>
+            <div class="body">
+                <div class="ttl"><b>天守・天守台</b><span class="yomi">てんしゅ</span><span class="chip">建造物</span></div>
+                <p class="txt">戦国時代以降の城に建てられた、城の象徴となる建物が天守です。天守を載せる、土塁や石垣で築いた高台を天守台と呼びます。</p>
+                <p class="rec">天守台 39城</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="fig">
+                <table class="kinds">
+                    <tr><td>現存天守</td><td>江戸時代以前から残っている天守</td><td class="n">12城</td></tr>
+                    <tr><td>木造復元天守</td><td>記録に基づき、当時の材料・工法で忠実に建て直したもの</td><td class="n">5城</td></tr>
+                    <tr><td>外観復元天守</td><td>鉄筋コンクリートなどで外観だけを昔の姿にしたもの</td><td class="n">9城</td></tr>
+                    <tr><td>復興天守</td><td>天守は確かにあったが、推定や改変を含むもの</td><td class="n">14城</td></tr>
+                    <tr><td>模擬天守</td><td>もともと天守が無い、または有無が不明な城に建てたもの</td><td class="n">55城</td></tr>
+                </table>
+            </div>
+            <div class="body">
+                <div class="ttl"><b>天守の種類</b><span class="chip">建造物</span></div>
+                <p class="txt">遺構の欄には、天守がこの呼び名で記録されています。昔から残っているか、史料にどこまで基づいて建てたかによる区分です。</p>
+                <p class="rec">件数は上の表のとおり</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="fig"><svg viewBox="0 0 320 180">
+                <rect class="sky" width="320" height="180"/>
+                <rect class="field" x="0" y="150" width="320" height="30"/>
+                <path class="stone" d="M20 150 L32 112 H138 L150 150Z"/>
+                <rect class="plaster" x="44" y="88" width="82" height="24"/>
+                <rect class="plaster" x="60" y="66" width="50" height="16"/>
+                <path class="roof" d="M32 94 Q85 87 138 94 L124 80 H46Z"/>
+                <path class="roof" d="M50 70 Q85 64 120 70 L104 52 H66Z"/>
+                <g fill="#607D8B"><rect x="56" y="96" width="8" height="6"/><rect x="81" y="96" width="8" height="6"/><rect x="106" y="96" width="8" height="6"/></g>
+                <path class="stone" d="M170 150 L182 112 H288 L300 150Z"/>
+                <path d="M194 112 V88 H276 V112 M210 88 V66 H260 V88" fill="none" stroke="#90A4AE" stroke-width="1.2" stroke-dasharray="4 3"/>
+                <text class="lbl m" x="85" y="44">櫓</text>
+                <text class="lbl m" x="85" y="137">櫓台</text>
+                <text class="lbl m" x="235" y="137">櫓台</text>
+                <text class="lbl-s m" x="235" y="56">建物が失われ、台だけ残る</text>
+            </svg></div>
+            <div class="body">
+                <div class="ttl"><b>櫓・櫓台</b><span class="yomi">やぐら</span><span class="chip">建造物</span></div>
+                <p class="txt">櫓は、防御や物見のために石垣や土塁の上に建てた建物です。その土台の高まりが櫓台で、建物が無くなっても台だけ残っていることがあります。</p>
+                <p class="rec">櫓台 97城・櫓 46城</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="fig"><svg viewBox="0 0 320 180">
+                <rect class="sky" width="320" height="180"/>
+                <rect class="field" x="0" y="150" width="320" height="30"/>
+                <rect class="plaster" x="0" y="104" width="112" height="46"/>
+                <path class="roof" d="M0 104 H114 L108 96 H0Z"/>
+                <rect class="plaster" x="208" y="104" width="112" height="46"/>
+                <path class="roof" d="M206 104 H320 V96 H212Z"/>
+                <rect x="112" y="74" width="10" height="76" fill="#6D4C41"/>
+                <rect x="198" y="74" width="10" height="76" fill="#6D4C41"/>
+                <rect x="106" y="74" width="108" height="9" fill="#5D4037"/>
+                <rect x="122" y="88" width="38" height="62" fill="#8D6E63" stroke="#5D4037"/>
+                <rect x="160" y="88" width="38" height="62" fill="#8D6E63" stroke="#5D4037"/>
+                <path d="M141 88 V150 M179 88 V150" stroke="#6D4C41" stroke-width="1"/>
+                <path class="roof" d="M94 78 Q160 68 226 78 L208 54 H112Z"/>
+                <path class="ld" d="M252 62 L220 64"/><text class="lbl" x="256" y="66">門</text>
+                <text class="lbl-s m" x="56" y="132">塀</text>
+                <text class="cap" x="8" y="16">正面から見た図</text>
+            </svg></div>
+            <div class="body">
+                <div class="ttl"><b>門</b><span class="yomi">もん</span><span class="chip">建造物</span></div>
+                <p class="txt">曲輪の出入口に建てた門です。城が廃された後、別の場所へ移されて残っている門は「移築門」として記録されています。</p>
+                <p class="rec">門 156城・移築門 44城</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══ 石垣・石造物 ══ -->
+    <div class="group-h"><span class="dot" style="background:#546E7A"></span>石垣・石造物</div>
+    <div class="grid" style="--g:#546E7A">
+        <div class="card">
+            <div class="fig"><svg viewBox="0 0 320 180" id="ishigaki">
+                <rect class="sky" width="320" height="180"/>
+                <rect class="field" x="0" y="150" width="320" height="30"/>
+                <rect x="12" y="40" width="92" height="110" fill="#6F7C83"/>
+                <rect x="114" y="40" width="92" height="110" fill="#7F8C93"/>
+                <rect x="216" y="40" width="92" height="110" fill="#8E9AA0"/>
+                <g id="st-nozura"></g><g id="st-uchi"></g><g id="st-kiri"></g>
+                <text class="lbl m" x="58" y="168">野面積み</text>
+                <text class="lbl m" x="160" y="168">打込接</text>
+                <text class="lbl m" x="262" y="168">切込接</text>
+                <text class="cap" x="8" y="16">石垣の積み方（正面から見た図）</text>
+            </svg></div>
+            <div class="body">
+                <div class="ttl"><b>石垣</b><span class="yomi">いしがき</span><span class="chip">石垣・石造物</span></div>
+                <p class="txt">石を積み上げて造った壁で、「石積み」「石塁（せきるい）」とも呼ばれます。自然の石をそのまま積む野面積み、合わせ目を加工して隙間を減らす打込接（うちこみはぎ）、四角く整えた石をブロックのように積む切込接（きりこみはぎ）があります。</p>
+                <p class="rec">石垣 1,698城・石積 410城・石塁 105城</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══ 曲輪・区画 ══ -->
+    <div class="group-h"><span class="dot" style="background:#6D4C41"></span>曲輪・区画</div>
+    <div class="grid" style="--g:#6D4C41">
+        <div class="card">
+            <div class="fig"><svg viewBox="0 0 320 180">
+                <rect width="320" height="180" fill="#FBFAF6"/>
+                <path class="slope" d="M20 150 C10 90 60 20 160 18 C265 16 310 80 300 140 C292 172 60 178 20 150Z"/>
+                <path class="contour" d="M48 138 C40 96 78 42 160 40 C246 38 282 86 276 130 C270 156 78 162 48 138Z"/>
+                <rect class="flat2" x="92" y="50" width="126" height="72" rx="32"/>
+                <rect class="flat" x="108" y="62" width="94" height="48" rx="20"/>
+                <rect class="flat" x="228" y="74" width="60" height="38" rx="12"/>
+                <path class="flat" d="M56 128 Q96 150 146 146 L146 136 Q100 140 62 118Z"/>
+                <text class="lbl m" x="155" y="90">本丸（主郭）</text>
+                <text class="lbl m" x="258" y="97">二の丸</text>
+                <path class="ld" d="M236 44 L212 58"/><text class="lbl" x="240" y="42">帯曲輪</text>
+                <path class="ld" d="M62 156 L86 140"/><text class="lbl" x="30" y="166">腰曲輪</text>
+                <text class="cap" x="8" y="16">上から見た図（山城の例）</text>
+            </svg></div>
+            <div class="body">
+                <div class="ttl"><b>曲輪</b><span class="yomi">くるわ</span><span class="chip">曲輪・区画</span></div>
+                <p class="txt">土塁・石垣・堀などで区切った、城の中の平らな区画です。城の中枢になる曲輪が本丸、それに次ぐのが二の丸です。斜面に築いた幅の狭いものを腰曲輪、主な曲輪の外周を細長く巡るものを帯曲輪と呼びます。</p>
+                <p class="rec">曲輪 12,418城・本丸 29城・腰曲輪 24城・帯曲輪 17城</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══ 虎口・出入口 ══ -->
+    <div class="group-h"><span class="dot" style="background:#EF6C00"></span>虎口・出入口</div>
+    <div class="grid" style="--g:#EF6C00">
+
+        <div class="card">
+            <div class="fig"><svg viewBox="0 0 320 180">
+                <rect class="outside" width="320" height="180"/>
+                <rect class="field" x="0" y="0" width="158" height="76"/>
+                <rect class="wall" x="0" y="76" width="62" height="14"/>
+                <rect class="wall" x="92" y="76" width="66" height="14"/>
+                <path class="enemy" d="M77 168 L77 36"/>
+                <text class="lbl m" x="78" y="18">平虎口</text>
+                <text class="lbl" x="16" y="52">曲輪</text>
+                <text class="lbl-s" x="16" y="140">城外</text>
+
+                <rect class="field" x="162" y="0" width="158" height="70"/>
+                <rect class="wall" x="162" y="70" width="96" height="14"/>
+                <rect class="wall" x="236" y="96" width="84" height="14"/>
+                <path class="enemy" d="M212 168 L212 90 L276 90 L276 34"/>
+                <text class="lbl m" x="241" y="18">喰違虎口</text>
+                <text class="lbl-s" x="172" y="140">城外</text>
+                <line x1="160" y1="0" x2="160" y2="180" stroke="#fff" stroke-width="4"/>
+            </svg></div>
+            <div class="body">
+                <div class="ttl"><b>虎口</b><span class="yomi">こぐち</span><span class="chip">虎口・出入口</span></div>
+                <p class="txt">曲輪の出入口です。攻め手が迫る要所なので、厳重に守られました。まっすぐ入る平虎口のほか、土塁や石垣を食い違いにして、敵をS字やZ字に進ませる喰違虎口などがあります。</p>
+                <p class="rec">虎口 782城</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="fig"><svg viewBox="0 0 320 180">
+                <rect class="outside" width="320" height="180"/>
+                <rect class="field" x="0" y="0" width="320" height="62"/>
+                <rect x="122" y="74" width="76" height="74" fill="#F6F0E2"/>
+                <rect class="wall" x="0" y="62" width="160" height="12"/>
+                <rect class="wall" x="190" y="62" width="130" height="12"/>
+                <rect class="wall" x="110" y="74" width="12" height="46"/>
+                <rect class="wall" x="110" y="140" width="12" height="20"/>
+                <rect class="wall" x="110" y="148" width="100" height="12"/>
+                <rect class="wall" x="198" y="74" width="12" height="86"/>
+                <rect class="gate" x="110" y="116" width="12" height="4"/>
+                <rect class="gate" x="110" y="140" width="12" height="4"/>
+                <rect class="gate" x="157" y="62" width="4" height="12"/>
+                <rect class="gate" x="189" y="62" width="4" height="12"/>
+                <path class="shoot" d="M150 50 L150 84"/>
+                <path class="shoot" d="M204 98 L182 110"/>
+                <path class="shoot" d="M116 84 L138 96"/>
+                <path class="enemy" d="M20 130 L172 130 L172 36"/>
+                <text class="lbl-s m" x="96" y="114">門</text>
+                <text class="lbl-s" x="198" y="56">門</text>
+                <text class="lbl m" x="142" y="102">枡形</text>
+                <text class="lbl" x="40" y="40">曲輪</text>
+                <text class="lbl-s" x="20" y="166">城外</text>
+                <text class="cap" x="8" y="16">上から見た図（外枡形の例）</text>
+            </svg></div>
+            <div class="body">
+                <div class="ttl"><b>枡形虎口</b><span class="yomi">ますがたこぐち</span><span class="chip">虎口・出入口</span></div>
+                <p class="txt">虎口の先に四角く囲んだ狭い空間（枡形）を設け、門を二重に構えたものです。敵はまっすぐ進めず、枡形の中で周りから攻撃を受けます。曲輪の内側に設けるものを内枡形、外側に設けるものを外枡形と呼びます。</p>
+                <p class="rec">枡形虎口 28城・枡形 8城</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="fig"><svg viewBox="0 0 320 180">
+                <rect class="outside" width="320" height="180"/>
+                <rect class="field" x="0" y="0" width="320" height="42"/>
+                <rect class="wall" x="0" y="42" width="70" height="10"/>
+                <rect class="wall" x="90" y="42" width="140" height="10"/>
+                <rect class="wall" x="250" y="42" width="70" height="10"/>
+                <rect class="moat" x="0" y="52" width="320" height="28"/>
+                <!-- 角馬出 -->
+                <path d="M28 80 V146 H132 V80" fill="none" stroke="#B39B7C" stroke-width="14"/>
+                <rect class="flat2" x="42" y="80" width="76" height="52"/>
+                <path d="M42 96 V132 H118 V96" fill="none" stroke="#A98B68" stroke-width="9"/>
+                <rect x="70" y="52" width="20" height="28" fill="#CDB08A"/>
+                <!-- 丸馬出 -->
+                <path d="M186 80 A54 64 0 0 0 294 80" fill="none" stroke="#B39B7C" stroke-width="14"/>
+                <path class="flat2" d="M202 80 A38 50 0 0 0 278 80Z"/>
+                <path d="M204.3 97.1 A38 50 0 0 0 275.7 97.1" fill="none" stroke="#A98B68" stroke-width="9"/>
+                <rect x="230" y="52" width="20" height="28" fill="#CDB08A"/>
+                <text class="lbl m" x="160" y="28">曲輪</text>
+                <text class="lbl-w m" x="160" y="70">堀</text>
+                <text class="lbl m" x="80" y="168">角馬出</text>
+                <text class="lbl m" x="240" y="168">丸馬出</text>
+            </svg></div>
+            <div class="body">
+                <div class="ttl"><b>馬出</b><span class="yomi">うまだし</span><span class="chip">虎口・出入口</span></div>
+                <p class="txt">堀の外側、虎口の前に土塁や石垣で囲って設けた小さな曲輪で、虎口を守る役目をします。四角いものを角馬出、丸いものを丸馬出と呼び、丸馬出は武田氏、角馬出は後北条氏の勢力圏に多く見られます。</p>
+                <p class="rec">馬出 28城・丸馬出 3城</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══ 土塁・切岸 ══ -->
+    <div class="group-h"><span class="dot" style="background:#8D6E63"></span>土塁・切岸</div>
+    <div class="grid" style="--g:#8D6E63">
+
+        <div class="card">
+            <div class="fig"><svg viewBox="0 0 320 180">
+                <rect class="sky" width="320" height="180"/>
+                <path class="earth" d="M0 112 H166 C180 112 190 70 202 70 H216 C230 70 240 120 250 160 H292 L306 112 H320 V180 H0Z"/>
+                <path class="grass" d="M0 112 H166 M306 112 H320"/>
+                <text class="lbl m" x="80" y="100">曲輪（城内）</text>
+                <text class="lbl-w m" x="209" y="100">土塁</text>
+                <path class="ld" d="M209 54 V68"/><text class="lbl-s m" x="209" y="50">馬踏（上面）</text>
+                <text class="lbl m" x="271" y="150">堀</text>
+                <path class="enemy" d="M316 94 L262 94"/>
+                <text class="cap" x="8" y="16">断面図</text>
+            </svg></div>
+            <div class="body">
+                <div class="ttl"><b>土塁</b><span class="yomi">どるい</span><span class="chip">土塁・切岸</span></div>
+                <p class="txt">土を盛り上げて築いた堤防のような壁で、敵の侵入を防ぎます。上面は馬踏（まふみ）と呼ばれ、人や馬が通れる幅がありました。江戸時代以前は土居・土手とも呼ばれました。</p>
+                <p class="rec">土塁 8,388城</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="fig"><svg viewBox="0 0 320 180">
+                <rect class="sky" width="320" height="180"/>
+                <path d="M120 60 L320 140 L320 160 L150 150Z" fill="url(#hatch)"/>
+                <path class="earth" d="M0 60 H120 L150 150 L320 160 V180 H0Z"/>
+                <path class="grass" d="M0 60 H120"/>
+                <path d="M120 60 L320 140" fill="none" stroke="#A1887F" stroke-width="1.5" stroke-dasharray="5 4"/>
+                <text class="lbl m" x="55" y="50">曲輪</text>
+                <text class="lbl-w m" x="100" y="112">切岸</text>
+                <text class="lbl-s" x="214" y="92" transform="rotate(21.8 214 92)">削る前の斜面</text>
+                <path class="enemy" d="M300 150 L172 142"/>
+                <text class="cap" x="8" y="16">断面図</text>
+            </svg></div>
+            <div class="body">
+                <div class="ttl"><b>切岸</b><span class="yomi">きりぎし</span><span class="chip">土塁・切岸</span></div>
+                <p class="txt">斜面を削って人工的に急な崖にしたもので、斜面の下から攻め寄せる敵を防ぎます。鎌倉時代から戦国時代の城、特に山城で広く使われました。</p>
+                <p class="rec">切岸 123城</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="fig"><svg viewBox="0 0 320 180">
+                <rect class="outside" width="320" height="180"/>
+                <rect class="field" x="0" y="0" width="320" height="48"/>
+                <rect class="wall" x="0" y="48" width="145" height="16"/>
+                <rect class="wall" x="175" y="48" width="145" height="16"/>
+                <rect class="moat" x="0" y="64" width="320" height="56"/>
+                <rect x="145" y="64" width="30" height="56" fill="#CDB08A"/>
+                <path d="M145 64 V120 M175 64 V120" stroke="#8D6E63" stroke-width="1.2"/>
+                <path class="route" d="M160 170 L160 28"/>
+                <text class="lbl" x="20" y="32">曲輪</text>
+                <text class="lbl-w" x="20" y="60" style="font-size:10px">土塁</text>
+                <text class="lbl-w" x="60" y="97">堀</text>
+                <path d="M204 92 L180 92" stroke="#fff" stroke-width="1"/><text class="lbl-w" x="208" y="96">土橋</text>
+                <text class="lbl-s" x="20" y="150">城外</text>
+            </svg></div>
+            <div class="body">
+                <div class="ttl"><b>土橋</b><span class="yomi">どばし</span><span class="chip">土塁・切岸</span></div>
+                <p class="txt">堀を巡らせるときに、出入りの通路として細い土手の形に残した部分です。取り外せる木橋に対して土橋は取り外しが難しく、場所によって使い分けられました。</p>
+                <p class="rec">土橋 171城</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══ 堀 ══ -->
+    <div class="group-h"><span class="dot" style="background:#1565C0"></span>堀</div>
+    <div class="grid" style="--g:#1565C0">
+
+        <div class="card">
+            <div class="fig"><svg viewBox="0 0 320 180">
+                <rect class="sky" width="320" height="180"/>
+                <path class="earth" d="M0 70 H45 L65 140 H95 L115 70 H160 V180 H0Z"/>
+                <path class="earth" d="M160 70 H200 L215 140 H265 L280 70 H320 V180 H160Z"/>
+                <path class="water" d="M205.4 95 L215 140 H265 L274.6 95Z"/>
+                <path class="grass" d="M0 70 H45 M115 70 H160 M160 70 H200 M280 70 H320"/>
+                <line x1="160" y1="24" x2="160" y2="70" stroke="#CFD8DC" stroke-dasharray="3 3"/>
+                <text class="lbl m" x="80" y="40">空堀</text><text class="lbl-s m" x="80" y="56">水を張らない</text>
+                <text class="lbl m" x="240" y="40">水堀</text><text class="lbl-s m" x="240" y="56">水を張る</text>
+                <text class="cap" x="8" y="16">断面図</text>
+            </svg></div>
+            <div class="body">
+                <div class="ttl"><b>堀（空堀・水堀）</b><span class="yomi">ほり</span><span class="chip">堀</span></div>
+                <p class="txt">敵の侵入を妨げるために掘った溝です。水の無いものを空堀、水を張ったものを水堀と呼びます。掘る場所や向きによって、堀切・竪堀・横堀などの呼び名もあります。</p>
+                <p class="rec">堀 8,951城・空堀 1,018城・水堀 89城</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="fig"><svg viewBox="0 0 320 180">
+                <rect class="sky" width="320" height="180"/>
+                <path class="earth" d="M0 150 L60 104 L96 72 H136 L150 128 H170 L184 72 H232 L320 116 V180 H0Z"/>
+                <path class="grass" d="M96 72 H136 M184 72 H232"/>
+                <text class="lbl m" x="116" y="62">曲輪</text>
+                <text class="lbl-w m" x="272" y="140">尾根の続き</text>
+                <text class="lbl m" x="160" y="114">堀切</text>
+                <path class="enemy" d="M304 98 L198 64"/>
+                <text class="cap" x="8" y="16">尾根を横から見た図</text>
+            </svg></div>
+            <div class="body">
+                <div class="ttl"><b>堀切</b><span class="yomi">ほりきり</span><span class="chip">堀</span></div>
+                <p class="txt">尾根を仕切るように掘った堀です。曲輪どうしの繋ぎ目などを人工的に掘り切って、敵の侵入を防ぎ、遅らせます。主に山城で使われました。</p>
+                <p class="rec">堀切 2,614城</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="fig"><svg viewBox="0 0 320 180">
+                <rect class="sky" width="320" height="180"/>
+                <path class="slope" d="M8 172 C70 150 112 40 160 38 C208 40 250 150 312 172Z"/>
+                <ellipse class="flat" cx="160" cy="44" rx="30" ry="8"/>
+                <path class="trench-o" d="M146 54 C140 90 130 130 118 168"/>
+                <path class="trench-i" d="M146 54 C140 90 130 130 118 168"/>
+                <path class="trench-o" d="M174 54 C180 90 190 130 202 168"/>
+                <path class="trench-i" d="M174 54 C180 90 190 130 202 168"/>
+                <g fill="#E53935"><circle cx="178" cy="82" r="3"/><circle cx="182" cy="100" r="3"/><circle cx="187" cy="119" r="3"/><circle cx="193" cy="138" r="3"/></g>
+                <path class="shoot" d="M198 46 L214 96"/>
+                <text class="lbl m" x="160" y="28">曲輪</text>
+                <path class="ld" d="M104 150 L120 156"/><text class="lbl" x="76" y="150">竪堀</text>
+                <path class="ld" d="M226 138 L200 138"/><text class="lbl-s" x="230" y="141">堀に沿って並ぶ敵</text>
+                <text class="cap" x="8" y="16">斜面を正面から見た図</text>
+            </svg></div>
+            <div class="body">
+                <div class="ttl"><b>竪堀</b><span class="yomi">たてぼり</span><span class="chip">堀</span></div>
+                <p class="txt">斜面を上下方向に走るように掘った堀です。堀に沿って一列に並んだ敵を弓矢で射やすくするもので、戦国時代後期には鉄砲の導入で効果が増しました。</p>
+                <p class="rec">竪堀 947城</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="fig"><svg viewBox="0 0 320 180" id="uneji">
+                <rect class="sky" width="320" height="180"/>
+                <path class="slope" d="M8 172 C70 150 112 40 160 38 C208 40 250 150 312 172Z"/>
+                <ellipse class="flat" cx="160" cy="44" rx="30" ry="8"/>
+                <g id="une-trenches"></g>
+                <path class="enemy" d="M18 150 L70 150"/>
+                <path class="enemy" d="M175 160 L168 98"/>
+                <path class="shoot" d="M180 50 L172 86"/>
+                <text class="lbl m" x="160" y="28">曲輪</text>
+                <path class="ld" d="M52 114 L96 118"/><text class="lbl" x="20" y="114">竪堀</text>
+                <path class="ld" d="M246 126 L219 140"/><text class="lbl-s" x="248" y="126">畝（土塁）</text>
+                <text class="cap" x="8" y="16">斜面を正面から見た図</text>
+            </svg></div>
+            <div class="body">
+                <div class="ttl"><b>畝状竪堀群</b><span class="yomi">うねじょうたてぼりぐん</span><span class="chip">堀</span></div>
+                <p class="txt">竪堀を何本も並べ、堀と土塁（畝）が交互に連なるようにしたものです。敵の横移動を止めて進む道を堀の底だけに絞り、そこを狙って攻撃します。境目の城で、敵の進撃路に面する側に多く築かれたとされています。</p>
+                <p class="rec">畝状竪堀群 686城・連続竪堀 8城</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="fig"><svg viewBox="0 0 320 180">
+                <rect width="320" height="180" fill="#FBFAF6"/>
+                <path class="slope" d="M20 150 C10 90 60 20 160 18 C265 16 310 80 300 140 C292 172 60 178 20 150Z"/>
+                <path class="contour" d="M40 142 C30 96 70 34 160 32 C252 30 292 84 286 134 C280 164 70 170 40 142Z"/>
+                <rect x="76" y="38" width="168" height="96" rx="44" fill="none" stroke="#A1887F" stroke-width="13"/>
+                <rect x="76" y="38" width="168" height="96" rx="44" fill="none" stroke="#6D5246" stroke-width="2.5"/>
+                <path class="trench-o" d="M160 141 L158 170"/>
+                <path class="trench-i" d="M160 141 L158 170"/>
+                <rect class="flat" x="100" y="58" width="120" height="56" rx="24"/>
+                <text class="lbl m" x="160" y="90">曲輪</text>
+                <path class="ld" d="M268 30 L234 46"/><text class="lbl" x="272" y="30">横堀</text>
+                <text class="lbl-s" x="174" y="168">竪堀</text>
+                <text class="cap" x="8" y="16">上から見た図</text>
+            </svg></div>
+            <div class="body">
+                <div class="ttl"><b>横堀</b><span class="yomi">よこぼり</span><span class="chip">堀</span></div>
+                <p class="txt">曲輪（平らな所）の周りに沿って巡らせた堀です。斜面を上下に走る竪堀に対して、横堀は曲輪を囲むように横へ延びます。</p>
+                <p class="rec">横堀 597城</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══ 井戸・水利 ══ -->
+    <div class="group-h"><span class="dot" style="background:#00838F"></span>井戸・水利</div>
+    <div class="grid" style="--g:#00838F">
+        <div class="card">
+            <div class="fig"><svg viewBox="0 0 320 180">
+                <rect class="sky" width="320" height="180"/>
+                <rect x="0" y="70" width="320" height="110" fill="#CDB08A"/>
+                <path class="grass" d="M0 70 H320"/>
+                <rect x="146" y="70" width="28" height="96" fill="#4E3B31"/>
+                <rect class="water" x="146" y="138" width="28" height="28"/>
+                <rect class="stone" x="140" y="56" width="6" height="110"/>
+                <rect class="stone" x="174" y="56" width="6" height="110"/>
+                <rect class="stone" x="134" y="54" width="16" height="16" rx="2"/>
+                <rect class="stone" x="170" y="54" width="16" height="16" rx="2"/>
+                <text class="lbl" x="40" y="60">曲輪</text>
+                <path class="ld" d="M214 50 L188 58"/><text class="lbl" x="218" y="50">井戸</text>
+                <text class="cap" x="8" y="16">断面図</text>
+            </svg></div>
+            <div class="body">
+                <div class="ttl"><b>井戸</b><span class="yomi">いど</span><span class="chip">井戸・水利</span></div>
+                <p class="txt">城の中で水を得るために掘った井戸です。建物が残っていない城でも、井戸や井戸の跡が遺構として記録されていることがあります。</p>
+                <p class="rec">井戸 847城・井戸跡 67城</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel" style="margin-top:28px">
+        <h2>説明文の出典と、確認できていないこと</h2>
+        <ul>
+            <li>説明文は、Wikipedia の「曲輪」「堀」「堀切」「切岸」「土塁」「土橋」「虎口」「馬出し」「畝状竪堀」「石垣」「櫓 (城郭)」「天守」と、
+                山梨県埋蔵文化財センター「まいぶん用語集：枡形虎口」の記述をもとに言い換えています。</li>
+            <li><b>未確認：</b>「櫓台」の定義と読み。辞書・用語集の出典が見つかっていません（カードは「櫓の土台」として書いています）。</li>
+            <li><b>未確認：</b>原典（城郭放浪記）で「石垣」「石積」「石塁」がどう使い分けられているか。Wikipedia は3つを同じものの別名として扱っています。</li>
+            <li><b>未確認：</b>枡形虎口の2つの門の向き（直角に曲がるか）。出典は「直進できない」までで、図はそれに合わせて曲げて描いています。</li>
+            <li>読みは出典で確認できたものだけ付けています（「天守台」「櫓台」は付けていません）。</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+/* 石垣3種と畝状竪堀群の図は、手で座標を並べると量が多いので生成する（乱数は種固定） */
+(function () {
+    const NS = 'http://www.w3.org/2000/svg';
+    function rng(seed) { return () => (seed = (seed * 1664525 + 1013904223) % 4294967296) / 4294967296; }
+    function poly(g, pts, fill) {
+        const p = document.createElementNS(NS, 'polygon');
+        p.setAttribute('points', pts.map(q => q[0].toFixed(1) + ',' + q[1].toFixed(1)).join(' '));
+        p.setAttribute('fill', fill);
+        g.appendChild(p);
+    }
+    function wall(id, x0, y0, w, h, kind, seed) {
+        const g = document.getElementById(id), r = rng(seed);
+        const clampX = v => Math.min(Math.max(v, x0 + 1), x0 + w - 1);
+        const clampY = v => Math.min(Math.max(v, y0 + 1), y0 + h - 1);
+        let y = y0, row = 0;
+        while (y < y0 + h - 0.5) {
+            let rh = kind === 'kiri' ? 16 : kind === 'uchi' ? 15 + r() * 6 : 12 + r() * 14;
+            if (y + rh > y0 + h - 4) rh = y0 + h - y;
+            let x = x0 - (kind === 'kiri' ? (row % 2) * 14 : r() * 10);
+            while (x < x0 + w) {
+                const sw = kind === 'kiri' ? 28 : kind === 'uchi' ? 18 + r() * 16 : 12 + r() * 22;
+                const xa = Math.max(x, x0), xb = Math.min(x + sw, x0 + w);
+                const shade = Math.round(168 + r() * 34);
+                const fill = `rgb(${shade - 6},${shade + 2},${shade + 8})`;
+                if (xb - xa > 3) {
+                    if (kind === 'nozura') {
+                        const cx = (xa + xb) / 2, cy = y + rh / 2, rx = (xb - xa) / 2 - 1.6, ry = rh / 2 - 1.6;
+                        const pts = [];
+                        for (let k = 0; k < 8; k++) {
+                            const a = (k / 8) * Math.PI * 2 + (r() - 0.5) * 0.5, s = 0.82 + r() * 0.22;
+                            pts.push([clampX(cx + Math.cos(a) * rx * s * 1.08), clampY(cy + Math.sin(a) * ry * s * 1.08)]);
+                        }
+                        poly(g, pts, fill);
+                    } else {
+                        const gap = kind === 'kiri' ? 0.7 : 1.3, j = kind === 'kiri' ? 0 : 1.2;
+                        const J = () => (r() * 2 - 1) * j;
+                        poly(g, [[clampX(xa + gap + J()), clampY(y + gap + J())], [clampX(xb - gap + J()), clampY(y + gap + J())],
+                                 [clampX(xb - gap + J()), clampY(y + rh - gap + J())], [clampX(xa + gap + J()), clampY(y + rh - gap + J())]], fill);
+                    }
+                }
+                x += sw;
+            }
+            y += rh; row++;
+        }
+    }
+    wall('st-nozura', 12, 40, 92, 110, 'nozura', 7);
+    wall('st-uchi', 114, 40, 92, 110, 'uchi', 11);
+    wall('st-kiri', 216, 40, 92, 110, 'kiri', 3);
+
+    const ug = document.getElementById('une-trenches');
+    for (let i = 0; i < 6; i++) {
+        const d = `M${124 + i * 14.4} 78 L${72 + i * 35} 166`;
+        ['trench-o', 'trench-i'].forEach(c => {
+            const p = document.createElementNS(NS, 'path');
+            p.setAttribute('class', c); p.setAttribute('d', d);
+            ug.appendChild(p);
+        });
+    }
+})();
+</script>
+</body>
+</html>
