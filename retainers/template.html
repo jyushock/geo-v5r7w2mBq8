@@ -30,12 +30,15 @@
   </div>
   <div class="spacer"></div>
   <div class="tools">
-    <!-- 選択肢が家名なので「家」の見出しは付けない（2026-09-13 に外した） -->
-    <select id="house" aria-label="大名家"></select>
-    <span class="seg" id="view">
-      <button data-v="lords">当主別</button>
-      <button data-v="whole">家全体</button>
-      <button data-v="kin">家系</button>
+    <!-- 家の選択と表示の切り替え。狭い画面ではこの2つで1行にする（style.css の .tsel）。PC では囲みが無いのと同じ -->
+    <span class="tsel">
+      <!-- 選択肢が家名なので「家」の見出しは付けない（2026-09-13 に外した） -->
+      <select id="house" aria-label="大名家"></select>
+      <span class="seg" id="view">
+        <button data-v="lords">当主別</button>
+        <button data-v="whole">家全体</button>
+        <button data-v="kin">家系</button>
+      </span>
     </span>
     <input type="search" id="q" placeholder="名前・氏族・主君で検索">
     <label id="grpw"><input type="checkbox" id="grp" checked> 身分区分でまとめる</label>

@@ -25,7 +25,7 @@ a{color:inherit}
    見出しの高さが変わっても年の行はその直下に付いたまま止まる。
    狭い画面（520px 以下）も止める。地図のメニューの中（375×510）では
    見出しと年の行で 177px を使い、一覧に残るのは 333px（2026-09-12 の実測）。
-   2026-09-13 に検索欄を1行に分けたので、375px 幅では 26px 増える（徳川家で 180px → 206px）。 */
+   2026-09-13 に検索欄を題の右へ移し、375px 幅では 11px 減った（徳川家で 180px → 169px）。 */
 #topbar{position:sticky; top:0; z-index:30}
 
 header{
@@ -43,6 +43,8 @@ header .st{font-size:13px;color:var(--ink2)}
 header .st b{color:var(--ink)}
 header .spacer{flex:1}
 header .tools{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+/* 家の選択と表示の切り替えの囲み。PC では囲みが無いのと同じにする（狭い画面だけ1行にまとめる） */
+header .tsel{display:contents}
 header input[type=search]{font:inherit;font-size:14px;padding:5px 10px;border:1px solid var(--line2);border-radius:5px;background:#fff;width:210px}
 header select{font:inherit;font-size:13.5px;padding:4px 7px;border:1px solid var(--line2);border-radius:5px;background:#fff}
 header label{font-size:13.5px;color:var(--ink2);display:flex;align-items:center;gap:4px;white-space:nowrap}
@@ -222,11 +224,17 @@ footer{padding:14px 16px 36px;font-size:12.5px;color:var(--ink3);border-top:1px 
   header h1{font-size:17px}
   header .st{font-size:12px;line-height:1.4}
   header .spacer{display:none}
-  header .tools{width:100%;gap:7px}
-  /* 検索欄は1行まるごと使う。以前は flex:1 で2つのチェックボックスと同じ行に置いていたため、
-     残りの幅しか取れず（375px で 105px、iPhone では1文字分）、2026-09-13 に分けた。
-     見出しは1行増える（見出し＋年の行 180px → 206px） */
-  header input[type=search]{flex:1 0 100%;width:auto;min-width:0;font-size:14px;padding:4px 8px}
+  /* 1行目は紋・題・検索欄、2行目は家の選択と表示、3行目はチェックボックス（2026-09-13）。
+     .tools の囲みを外して中身を header の並びに入れ、検索欄だけ前へ出す。
+     家の選択と表示は .tsel で1行分の幅を取らせ、検索欄の後ろで必ず改行させる
+     （囲まずに並べると、幅の広い画面では家の選択が1行目に上がってくる） */
+  header .tools{display:contents}
+  header .tsel{display:flex;align-items:center;gap:7px;flex-wrap:wrap;flex:0 0 100%;order:2}
+  header .tools>label{order:2}
+  /* 検索欄は題の右の残りを使う。以前はチェックボックスと同じ行に flex:1 で置いていて、
+     残りの幅しか取れなかった（375px で 105px、iPhone では1文字分）。
+     題が長く 120px を切るときは、検索欄だけ次の行に落ちて横幅いっぱいになる */
+  header input[type=search]{order:1;flex:1 1 0;width:auto;min-width:120px;font-size:14px;padding:4px 8px}
   header label{font-size:12.5px}
 
   /* 年ボタンは1行の横スクロールにして縦を食わせない */
@@ -296,12 +304,15 @@ footer{padding:14px 16px 36px;font-size:12.5px;color:var(--ink3);border-top:1px 
   </div>
   <div class="spacer"></div>
   <div class="tools">
-    <!-- 選択肢が家名なので「家」の見出しは付けない（2026-09-13 に外した） -->
-    <select id="house" aria-label="大名家"></select>
-    <span class="seg" id="view">
-      <button data-v="lords">当主別</button>
-      <button data-v="whole">家全体</button>
-      <button data-v="kin">家系</button>
+    <!-- 家の選択と表示の切り替え。狭い画面ではこの2つで1行にする（style.css の .tsel）。PC では囲みが無いのと同じ -->
+    <span class="tsel">
+      <!-- 選択肢が家名なので「家」の見出しは付けない（2026-09-13 に外した） -->
+      <select id="house" aria-label="大名家"></select>
+      <span class="seg" id="view">
+        <button data-v="lords">当主別</button>
+        <button data-v="whole">家全体</button>
+        <button data-v="kin">家系</button>
+      </span>
     </span>
     <input type="search" id="q" placeholder="名前・氏族・主君で検索">
     <label id="grpw"><input type="checkbox" id="grp" checked> 身分区分でまとめる</label>
