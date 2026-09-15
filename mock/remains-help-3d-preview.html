@@ -53,6 +53,13 @@ table.cmp .mk { color: #C77700; font-weight: bold; }
 </p>
 <div class="pairs" id="pairs"></div>
 
+<h2 class="part">1-2. 建物・石垣・塀の図（試しに7枚）</h2>
+<p class="part-lead">
+2の表で「今の図のまま」にした図も立体にできるかを確かめるため、屋根（寄棟・切妻）、下が広い石垣の台、
+面の模様（窓・扉・狭間・石の積み方）が全部出てくる7枚を描きました。
+</p>
+<div class="pairs" id="pairs2"></div>
+
 <h2 class="part">2. どの図を立体にするか（案）</h2>
 <p class="part-lead">
 全90枚を、地形の高さが主題の図（立体にする）と、建物の形や石の積み方が主題の図（今の図のまま）に分けた案です。
@@ -66,6 +73,7 @@ table.cmp .mk { color: #C77700; font-weight: bold; }
   <li><b>立体図の見た目</b> — 角度（斜め上から、手前の切り口に断面を出す）、色、文字の置き方がこれでよいか。
       図ごとに直したいものがあれば、図の名前で教えてください。</li>
   <li><b>どの図を立体にするか</b> — 2の表の分け方でよいか。「今の図のまま」から立体にしたいもの、その逆があれば教えてください。</li>
+  <li><b>建物・石垣・塀の図も立体にするか</b> — 1-2の7枚を見て、2の表の「今の図のまま」40枚も立体にするか。</li>
   <li><b>今の図を残すか</b>
     <ul>
       <li>置き換える：カードの図は立体図だけ。カードの高さは今と同じです</li>
@@ -85,7 +93,9 @@ const lerp = (a, b, t) => a + (b - a) * t;
 const sstep = t => { t = clamp(t, 0, 1); return t * t * (3 - 2 * t); };
 const hexRgb = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
 const PAL = { grass: '#A5C47F', field: '#CBD9A9', earth: '#C7A274', hl: '#EFC27A', water: '#7DB8E0', stone: '#AEB9BF',
-              sand: '#E8D9B8', wall: '#B59670', soil: '#C2A37B', topsoil: '#8A6B4B', dark: '#4E342E' };
+              sand: '#E8D9B8', wall: '#B59670', soil: '#C2A37B', topsoil: '#8A6B4B', dark: '#4E342E',
+              plaster: '#F5F3EE', roof: '#56656D', wood: '#6D4C41', door: '#8D6E63', mortar: '#6F7C83' };
+const rng = seed => () => (seed = (seed * 1664525 + 1013904223) % 4294967296) / 4294967296;
 const RGB = Object.fromEntries(Object.entries(PAL).map(([k, v]) => [k, hexRgb(v)]));
 const LIGHT = (() => { const v = [-0.5, 0.9, -0.55], l = Math.hypot(...v); return v.map(x => x / l); })();
 const shadeCss = (rgb, n) => {
@@ -135,7 +145,7 @@ function buildSolid(f) {
         const cx = (i + .5) * sx, cz = (j + .5) * sz, gc = (G[a] + G[b] + G[c] + G[d]) / 4, sc = (S[a] + S[b] + S[c] + S[d]) / 4;
         // 色の種類（草地・土など）は角の点ごとに決めて平均する。マスの中心だけで決めると、斜めの境目がマスの段々になる
         const colOf = (n, ids) => {
-            if (sc > gc + .05) return shadeCss(RGB.water, n);
+            if (ids.every(id => S[id] > G[id] + .01)) return shadeCss(RGB.water, n);
             const rt = [0, 0, 0], rs = [0, 0, 0];
             ids.forEach(id => {
                 const x = P[id * 3], z = P[id * 3 + 2], t1 = RGB[top(x, z, G[id])], s1 = RGB[steep(x, z, G[id])];
@@ -175,6 +185,7 @@ function buildSolid(f) {
     edge(row(0), [0, 0, -1]); edge(row(nz), [0, 0, 1]); edge(col(0), [-1, 0, 0]); edge(col(nx), [1, 0, 0]);
     // 箱は4単位ごとに刻む（長い面の奥行きの基準が遠くへずれて、塗る順番が狂わないように）
     const chop = (a, b) => { const m = Math.max(1, Math.ceil((b - a) / 4)); return Array.from({ length: m + 1 }, (_, i) => a + (b - a) * i / m); };
+    const boxFrom = polys.length;
     (f.boxes || []).forEach(([x0, z0, x1, z1, y0, y1, key]) => {
         const c = RGB[key], xs = chop(x0, x1), zs = chop(z0, z1);
         for (let i = 0; i + 1 < xs.length; i++) {
@@ -188,6 +199,126 @@ function buildSolid(f) {
         }
         hi = Math.max(hi, y1);
     });
+    for (let q = boxFrom; q < polys.length; q++) polys[q].layer = 1;
+    // ── 建物・塀・石垣など（f.build）。面は外向きの向きを持ち、見えない向きの面は描かない。
+    //    窓・扉・狭間・石の模様は、その面に貼り付けて面を塗った直後に塗る（面と塗る順番がずれないように）
+    const newell = pts => {
+        let a = 0, b = 0, c = 0;
+        for (let i = 0; i < pts.length; i++) {
+            const p = pts[i], q = pts[(i + 1) % pts.length];
+            a += (p[1] - q[1]) * (p[2] + q[2]); b += (p[2] - q[2]) * (p[0] + q[0]); c += (p[0] - q[0]) * (p[1] + q[1]);
+        }
+        const l = Math.hypot(a, b, c); return l < 1e-9 ? null : [a / l, b / l, c / l];
+    };
+    // 部品（prism・屋根）ごとに番号を振る。建物は部品を作った順に塗り、部品の中の面だけを奥行きで並べる
+    // （壁のような大きな面は中心の奥行きが屋根の端より手前に出て、面ごとに並べると屋根の上に壁が出るため）
+    let curGrp = 0;
+    // twoSided: 屋根。軒を反らせた厚みのない面なので、低い角度からは裏側が見える。裏は暗い色で塗る
+    const addFace = (pts, rgb, inside, twoSided) => {
+        let n = newell(pts); if (!n) return null;
+        const c = [0, 1, 2].map(k => pts.reduce((s, p) => s + p[k], 0) / pts.length);
+        if ((c[0] - inside[0]) * n[0] + (c[1] - inside[1]) * n[1] + (c[2] - inside[2]) * n[2] < 0) n = n.map(v => -v);
+        const i0 = P.length / 3;
+        pts.forEach(p => { P.push(p[0], p[1], p[2]); if (p[1] > hi) hi = p[1]; });
+        const pl = { v: pts.map((_, m) => i0 + m), col: shadeCss(rgb, n), n, cull: !twoSided, layer: 1, grp: curGrp, ax: c[0], ay: c[1], az: c[2] };
+        if (twoSided) pl.colBack = 'rgb(52,62,68)';
+        polys.push(pl); return pl;
+    };
+    const A = {
+        ring: (cx, cz, w, d, y) => [[cx - w / 2, y, cz - d / 2], [cx + w / 2, y, cz - d / 2], [cx + w / 2, y, cz + d / 2], [cx - w / 2, y, cz + d / 2]],
+        // 底と上の輪郭（同じ点数）をつないだ立体。返り値は側面（0 が手前、1 が右、2 が奥、3 が左）
+        prism(bot, top, key, topKey) {
+            curGrp++;
+            const all = bot.concat(top), inside = [0, 1, 2].map(k => all.reduce((s, p) => s + p[k], 0) / all.length), sides = [];
+            for (let i = 0; i < bot.length; i++) {
+                const j = (i + 1) % bot.length, c = [bot[i], bot[j], top[j], top[i]], pl = addFace(c, RGB[key], inside);
+                if (pl) pl.corners = c;
+                sides.push(pl);
+            }
+            addFace(top, RGB[topKey || key], inside);
+            return sides;
+        },
+        box(x0, z0, x1, z1, y0, y1, key, topKey) {
+            const cx = (x0 + x1) / 2, cz = (z0 + z1) / 2;
+            return A.prism(A.ring(cx, cz, x1 - x0, z1 - z0, y0), A.ring(cx, cz, x1 - x0, z1 - z0, y1), key, topKey);
+        },
+        // 石垣の台（下が広く上が狭い）
+        base(cx, cz, bw, bd, tw, td, y0, h) {
+            const sides = A.prism(A.ring(cx, cz, bw, bd, y0), A.ring(cx, cz, tw, td, y0 + h), 'mortar', 'stone');
+            sides.forEach((s, k) => A.stones(s, k % 2 ? bd : bw, Math.hypot(h, (bw - tw) / 2), 31 + k + Math.round(cx)));
+            return sides;
+        },
+        // 寄棟の屋根。軒の四隅を lift だけ反り上げる。tw・td は上端の大きさ（td をほぼ0にすると棟になる）
+        hip(cx, cz, w, d, ye, h, tw, td, lift = 1.2) {
+            curGrp++;
+            const N = 6, inside = [cx, ye + h * .35, cz], e = A.ring(cx, cz, w, d, ye), t = A.ring(cx, cz, tw, td, ye + h);
+            for (let i = 0; i < 4; i++) {
+                const j = (i + 1) % 4;
+                const E = s => [lerp(e[i][0], e[j][0], s), ye + lift * (2 * s - 1) ** 2, lerp(e[i][2], e[j][2], s)];
+                const T = s => [lerp(t[i][0], t[j][0], s), ye + h, lerp(t[i][2], t[j][2], s)];
+                for (let k = 0; k < N; k++) addFace([E(k / N), E((k + 1) / N), T((k + 1) / N), T(k / N)], RGB.roof, inside, true);
+            }
+            if (tw > .5 && td > .5) addFace(t, RGB.roof, inside, true);
+        },
+        // 切妻の屋根。axis は棟の向き
+        gable(cx, cz, w, d, ye, h, axis) {
+            curGrp++;
+            const inside = [cx, ye + h * .3, cz], yr = ye + h, x0 = cx - w / 2, x1 = cx + w / 2, z0 = cz - d / 2, z1 = cz + d / 2;
+            const faces = axis === 'x'
+                ? [[[x0, ye, z0], [x1, ye, z0], [x1, yr, cz], [x0, yr, cz]], [[x1, ye, z1], [x0, ye, z1], [x0, yr, cz], [x1, yr, cz]],
+                   [[x0, ye, z0], [x0, yr, cz], [x0, ye, z1]], [[x1, ye, z0], [x1, yr, cz], [x1, ye, z1]]]
+                : [[[x0, ye, z0], [x0, ye, z1], [cx, yr, z1], [cx, yr, z0]], [[x1, ye, z1], [x1, ye, z0], [cx, yr, z0], [cx, yr, z1]],
+                   [[x0, ye, z0], [cx, yr, z0], [x1, ye, z0]], [[x0, ye, z1], [cx, yr, z1], [x1, ye, z1]]];
+            faces.forEach(fc => addFace(fc, RGB.roof, inside, true));
+        },
+        // 面に貼る模様。uv は面の左下(0,0)〜右上(1,1)
+        decal(pl, shapes) {
+            if (!pl || !pl.corners) return;
+            const [BL, BR, TR, TL] = pl.corners, n = pl.n;
+            pl.dec = pl.dec || [];
+            shapes.forEach(sh => {
+                const i0 = P.length / 3;
+                sh.uv.forEach(([u, v]) => { for (let k = 0; k < 3; k++) P.push(lerp(lerp(BL[k], BR[k], u), lerp(TL[k], TR[k], u), v) + n[k] * .06); });
+                pl.dec.push({ v: sh.uv.map((_, m) => i0 + m), col: shadeCss(sh.rgb, n), stroke: sh.stroke ? shadeCss(hexRgb(sh.stroke), n) : null });
+            });
+        },
+        windows(pl, count) {
+            const w = .12 / count;
+            A.decal(pl, Array.from({ length: count }, (_, i) => {
+                const u = (i + .5) / count; return { uv: [[u - w, .38], [u + w, .38], [u + w, .66], [u - w, .66]], rgb: hexRgb('#607D8B') };
+            }));
+        },
+        // 野面積みの石。Wu・Hu は面の幅と高さ（単位）
+        stones(pl, Wu, Hu, seed) {
+            const rn = rng(seed), shapes = [];
+            for (let y = 0; y < Hu - .3;) {
+                let rh = 2.2 + rn() * 2.6; if (y + rh > Hu - .8) rh = Hu - y;
+                for (let x = -rn() * 2; x < Wu;) {
+                    const sw = 2.2 + rn() * 4, cx = x + sw / 2, cy = y + rh / 2, rx = sw / 2 - .25, ry = rh / 2 - .25, uv = [];
+                    for (let k = 0; k < 8; k++) {
+                        const a = k / 8 * Math.PI * 2 + (rn() - .5) * .5, s = .85 + rn() * .2;
+                        uv.push([clamp((cx + Math.cos(a) * rx * s * 1.05) / Wu, 0, 1), clamp((cy + Math.sin(a) * ry * s * 1.05) / Hu, 0, 1)]);
+                    }
+                    const g = Math.round(168 + rn() * 34);
+                    shapes.push({ uv, rgb: [g - 6, g + 2, g + 8], stroke: '#5E6A70' });
+                    x += sw;
+                }
+                y += rh;
+            }
+            A.decal(pl, shapes);
+        },
+        // 重ねた建物。tiers は下から [幅, 奥行き, 高さ]
+        tower(cx, cz, y, tiers, topH = 8) {
+            tiers.forEach(([w, d, h], i) => {
+                const last = i === tiers.length - 1, sides = A.box(cx - w / 2, cz - d / 2, cx + w / 2, cz + d / 2, y, y + h, 'plaster');
+                if (h >= 6) sides.forEach((s, k) => A.windows(s, Math.max(1, Math.round((k % 2 ? d : w) / 10))));
+                const ye = y + h - 2, rh = last ? topH : 5;
+                A.hip(cx, cz, w + 8, d + 8, ye, rh, last ? w * .35 : w - 4, last ? .01 : d - 4);
+                y = ye + rh;
+            });
+        },
+    };
+    if (f.build) f.build(A);
     return { P: new Float32Array(P), polys, base, hi, nx, nz, sx, sz, S };
 }
 
@@ -216,16 +347,46 @@ function drawSolid(cv, f) {
     const proj = (x, y, z) => [ox + rx(x, z) * k, oy - ((y - Y0) * cp + rz(x, z) * sp) * k];
     const vis = g.polys.filter(p => !p.cull || p.n[1] * sp - (-p.n[0] * sy + p.n[2] * cy) * cp > 1e-4);
     vis.forEach(p => { p.d = rz(p.ax, p.az) * cp - (p.ay - Y0) * sp; });
-    vis.sort((a, b) => b.d - a.d);
+    // 地形（layer 0）を先に全部塗り、地面の上に建つ物（layer 1）を後から塗る。
+    // 大きな地面のマスは奥行きの基準が手前に出て、建物の根元を上から塗りつぶすため
+    // 建物は部品を作った順（groupsByDepth の図は部品ごとの平均の奥行きで奥から）
+    const gd = {};
+    if (f.groupsByDepth) {
+        const cnt = {};
+        vis.forEach(p => { if (p.layer) { gd[p.grp] = (gd[p.grp] || 0) + p.d; cnt[p.grp] = (cnt[p.grp] || 0) + 1; } });
+        for (const g2 in gd) gd[g2] /= cnt[g2];
+    }
+    const gkey = p => f.groupsByDepth ? -gd[p.grp || 0] : (p.grp || 0);
+    vis.sort((a, b) => (a.layer || 0) - (b.layer || 0) || (a.layer ? gkey(a) - gkey(b) : 0) || b.d - a.d);
 
     ctx.fillStyle = '#EEF4F8'; ctx.fillRect(0, 0, W, H);
     ctx.lineWidth = .6; ctx.lineJoin = 'round';
-    for (const p of vis) {
-        const v = p.v;
+    // 画面上でほぼ重なる頂点（0.05px 未満）は1点にまとめてから塗る。
+    // 屋根の棟の端のように2点が 0.007px しか離れていない経路は、Chromium の canvas で塗りが欠けた（再現で確認）
+    const tracePath = idx => {
+        let lx = NaN, ly = NaN, fx = NaN, fy = NaN, cnt = 0;
         ctx.beginPath();
-        ctx.moveTo(ox + U[v[0]] * k, oy - V[v[0]] * k);
-        for (let m = 1; m < v.length; m++) ctx.lineTo(ox + U[v[m]] * k, oy - V[v[m]] * k);
-        ctx.closePath(); ctx.fillStyle = ctx.strokeStyle = p.col; ctx.fill(); ctx.stroke();
+        for (const i of idx) {
+            const x = ox + U[i] * k, y = oy - V[i] * k;
+            if (cnt && Math.abs(x - lx) < .05 && Math.abs(y - ly) < .05) continue;
+            if (cnt > 1 && Math.abs(x - fx) < .05 && Math.abs(y - fy) < .05) continue;
+            if (cnt) ctx.lineTo(x, y); else { ctx.moveTo(x, y); fx = x; fy = y; }
+            lx = x; ly = y; cnt++;
+        }
+        return cnt;
+    };
+    for (const p of vis) {
+        if (tracePath(p.v) < 3) continue;
+        const back = p.colBack && !(p.n[1] * sp - (-p.n[0] * sy + p.n[2] * cy) * cp > 1e-4);
+        ctx.closePath(); ctx.fillStyle = ctx.strokeStyle = back ? p.colBack : p.col; ctx.fill(); ctx.stroke();
+        if (p.dec) {
+            for (const dc of p.dec) {
+                if (tracePath(dc.v) < 3) continue;
+                ctx.closePath(); ctx.fillStyle = dc.col; ctx.fill();
+                ctx.strokeStyle = dc.stroke || dc.col; ctx.lineWidth = dc.stroke ? .5 : .3; ctx.stroke();
+            }
+            ctx.lineWidth = .6;
+        }
     }
 
     const NX = g.nx + 1;
@@ -447,23 +608,107 @@ const FIGS = {
     labels: [{ x: 86, z: 62, dy: 1, s: '枡形' }, { x: 135, z: 78, s: '曲輪' }, { x: 22, z: 12, s: '城外', c: 's' },
              { x: 72.5, z: 32, y: 24, s: '第一の門', c: 's', ox: -40, oy: 18 }, { x: 107, z: 46, y: 25, s: '第二の門', c: 's', ox: 30, oy: -10 }] },
 };
+const MORTAR_H = (h, run) => Math.hypot(h, run);  // 傾いた石垣の面の縦の長さ
+const FIGS2 = {
+  '平櫓・二重櫓・三重櫓': { W: 170, D: 60, step: 4, yaw: -0.4, pitch: 0.32, h: () => 0, top: () => 'field', cap: '斜め前から見た図',
+    build: A => {
+        [[32, [[24, 16, 10]]], [85, [[26, 18, 10], [19, 13, 7]]], [138, [[28, 20, 10], [22, 15, 7], [16, 11, 6]]]].forEach(([cx, tiers]) => {
+            A.base(cx, 30, 44, 32, 34, 24, 0, 10); A.tower(cx, 30, 10, tiers);
+        });
+    },
+    labels: [{ x: 32, z: 8, y: 0, s: '平櫓' }, { x: 85, z: 8, y: 0, s: '二重櫓' }, { x: 138, z: 8, y: 0, s: '三重櫓' }] },
+
+  '櫓門': { W: 160, D: 60, step: 4, yaw: -0.45, pitch: 0.34, h: () => 0, top: () => 'field', cap: '斜め前から見た図',
+    build: A => {
+        // 奥の部品から順に作る（扉 → 石垣 → 櫓 → 屋根）
+        A.box(80, 31, 98, 32, 0, 17, 'door'); A.box(62, 31, 80, 32, 0, 17, 'door');
+        A.box(60, 30, 100, 34, 17, 22, 'wood');
+        const R = A.prism([[100, 0, 17], [160, 0, 17], [160, 0, 42], [100, 0, 42]], [[100, 22, 22], [160, 22, 22], [160, 22, 42], [100, 22, 42]], 'mortar', 'grass');
+        const L = A.prism([[0, 0, 17], [60, 0, 17], [60, 0, 42], [0, 0, 42]], [[0, 22, 22], [60, 22, 22], [60, 22, 42], [0, 22, 42]], 'mortar', 'grass');
+        A.stones(L[0], 60, MORTAR_H(22, 5), 11); A.stones(R[0], 60, MORTAR_H(22, 5), 12); A.stones(R[3], 22, 22, 14);
+        const body = A.box(38, 24, 122, 40, 22, 34, 'plaster');
+        A.windows(body[0], 7); A.windows(body[1], 2); A.windows(body[3], 2);
+        A.hip(80, 32, 94, 26, 33, 10, 30, .01);
+    },
+    labels: [{ x: 110, z: 24, y: 30, s: '櫓', ox: 34, oy: -26 }, { x: 22, z: 19, y: 10, s: '石垣' }, { x: 88, z: 31, y: 8, s: '門', ox: 40, oy: 22 }] },
+
+  '高麗門': { W: 120, D: 70, step: 4, yaw: Math.PI + 0.6, pitch: 0.5, h: () => 0, top: () => 'field', cap: '内側（控柱の側）から斜めに見た図',
+    build: A => {
+        // 内側の左奥から見るので、遠い部品（右の土塀・外側の扉）から順に作る
+        A.box(80, 28, 120, 32, 0, 11, 'plaster'); A.gable(100, 30, 42, 8, 11, 3, 'x');
+        A.box(46, 29.5, 60, 30.5, 0, 21, 'door'); A.box(60, 29.5, 74, 30.5, 0, 21, 'door');
+        A.box(74, 28, 78, 32, 0, 26, 'wood'); A.box(42, 28, 46, 32, 0, 26, 'wood');
+        A.box(40, 28.5, 80, 31.5, 22, 25, 'wood');
+        A.gable(60, 30, 48, 12, 25, 5, 'x');
+        A.box(0, 28, 40, 32, 0, 11, 'plaster'); A.gable(20, 30, 42, 8, 11, 3, 'x');
+        A.box(75, 32, 77, 44, 12, 14, 'wood'); A.box(43, 32, 45, 44, 12, 14, 'wood');
+        A.box(74.5, 44, 77.5, 47, 0, 17, 'wood'); A.box(42.5, 44, 45.5, 47, 0, 17, 'wood');
+        A.gable(76, 40, 10, 16, 17, 3.5, 'z'); A.gable(44, 40, 10, 16, 17, 3.5, 'z');
+    },
+    labels: [{ x: 60, z: 30, y: 29, s: '小さな屋根', c: 's', ox: 56, oy: -8 }, { x: 76, z: 45.5, y: 6, s: '控柱', c: 's', ox: -40, oy: 14 },
+             { x: 44, z: 40, y: 20, s: '控柱の屋根', c: 's', ox: 44, oy: -18 }, { x: 76, z: 30, y: 20, s: '鏡柱', c: 's', ox: -44, oy: -18 }] },
+
+  '層塔型': { W: 110, D: 80, step: 4, yaw: -0.45, pitch: 0.3, h: () => 0, top: () => 'field', cap: '斜め前から見た図',
+    build: A => { A.base(55, 40, 72, 56, 58, 44, 0, 12); A.tower(55, 40, 12, [[48, 36, 11], [41, 30, 9], [34, 25, 8], [27, 20, 7], [20, 15, 7]], 9); },
+    labels: [{ x: 55, z: 5, y: 0, s: '上の階ほど順に小さくなる', c: 's', oy: 16 }] },
+
+  '野面積み': { W: 140, D: 70, step: 4, yaw: -0.35, pitch: 0.3, h: () => 0, top: () => 'field', cap: '石垣を斜め前から見た図',
+    build: A => {
+        const s = A.prism([[0, 0, 16], [140, 0, 16], [140, 0, 70], [0, 0, 70]], [[0, 38, 28], [140, 38, 28], [140, 38, 70], [0, 38, 70]], 'mortar', 'grass');
+        A.stones(s[0], 140, MORTAR_H(38, 12), 7); A.stones(s[3], 54, 38, 8);
+    },
+    labels: [{ x: 70, z: 50, y: 38, s: '曲輪' }] },
+
+  '土塀と狭間': { W: 140, D: 60, step: 4, yaw: -0.35, pitch: 0.3, h: () => 0, top: () => 'field', cap: '土塀を斜め外から見た図',
+    build: A => {
+        const st = A.prism([[0, 0, 18], [140, 0, 18], [140, 0, 40], [0, 0, 40]], [[0, 14, 22], [140, 14, 22], [140, 14, 40], [0, 14, 40]], 'mortar', 'grass');
+        A.stones(st[0], 140, MORTAR_H(14, 4), 21); A.stones(st[3], 22, 14, 22);
+        const w = A.box(0, 26, 140, 31, 14, 30, 'plaster');
+        A.gable(70, 28.5, 142, 11, 30, 4, 'x');
+        const D = hexRgb('#37474F'), Wu = 140, Hu = 16;
+        const rect = (x, hw, y0, y1) => ({ uv: [[(x - hw) / Wu, y0 / Hu], [(x + hw) / Wu, y0 / Hu], [(x + hw) / Wu, y1 / Hu], [(x - hw) / Wu, y1 / Hu]], rgb: D });
+        const circ = (x, r) => ({ uv: Array.from({ length: 12 }, (_, k) => [(x + Math.cos(k / 12 * Math.PI * 2) * r) / Wu, (8 + Math.sin(k / 12 * Math.PI * 2) * r) / Hu]), rgb: D });
+        A.decal(w[0], [rect(17, .7, 4, 12), rect(70, .7, 4, 12), circ(42, 1.7),
+                       { uv: [[90.2 / Wu, 6.2 / Hu], [94.2 / Wu, 6.2 / Hu], [92.2 / Wu, 9.8 / Hu]], rgb: D }, rect(115, 1.5, 6.5, 9.5)]);
+    },
+    labels: [{ x: 17, z: 26, y: 26, s: '矢狭間（縦長）', c: 's', ox: 8, oy: -26 }, { x: 92, z: 26, y: 24, s: '鉄砲狭間（丸・三角・四角）', c: 's', oy: -30 },
+             { x: 70, z: 20, y: 7, s: '石垣', c: 's' }] },
+
+  '井戸': { W: 100, D: 60, step: 1, yaw: -0.3, pitch: 0.5, smooth: true, groupsByDepth: true,
+    h: (x, z) => { const r = Math.hypot(x - 50, z); return r < 5.5 ? -34 : r < 6.5 ? lerp(-34, 0, r - 5.5) : 0; },
+    water: (x, z) => Math.hypot(x - 50, z) < 5.5 ? -24 : null,
+    top: () => 'grass', steep: (x, z) => Math.hypot(x - 50, z) < 8 ? 'stone' : 'earth',
+    build: A => {
+        // 井戸枠。手前半分は切り口で切れているので、奥の半円だけ
+        const N = 12, at = (r, a, y) => [50 + Math.cos(a) * r, y, Math.sin(a) * r];
+        for (let k = 0; k < N; k++) {
+            const a0 = k / N * Math.PI, a1 = (k + 1) / N * Math.PI;
+            A.prism([at(6.5, a0, 0), at(8.8, a0, 0), at(8.8, a1, 0), at(6.5, a1, 0)], [at(6.5, a0, 4), at(8.8, a0, 4), at(8.8, a1, 4), at(6.5, a1, 4)], 'stone');
+        }
+    },
+    labels: [{ x: 22, z: 40, s: '曲輪' }, { x: 57, z: 6, y: 3.5, s: '井戸', ox: 34, oy: -16 }, { x: 50, z: 0, y: -29, s: '水', c: 's', ox: 34 }] },
+};
 /* ==FIGS END== */
 
 /* ══ ページを組み立てる ══ */
 const SECS = window.REMAINS_HELP.SECTIONS;
 const cardOf = name => { for (const s of SECS) for (const sb of s.subs) for (const c of sb.cards) if (c.t === name) return { c, s }; };
-const pairs = document.getElementById('pairs');
-Object.keys(FIGS).forEach(name => {
-    const { c, s } = cardOf(name);
-    const el = document.createElement('div');
-    el.className = 'pair'; el.style.setProperty('--g', s.color);
-    el.innerHTML = `<div class="figs"><figure><figcaption>今の図</figcaption><div class="fbox">${c.fig}</div></figure>`
-        + `<figure><figcaption>立体図<span class="m"></span></figcaption><div class="fbox"><canvas></canvas></div></figure></div>`
-        + `<div class="ttl"><i>${s.name}</i><b>${c.t}</b>${c.y ? `<span>${c.y}</span>` : ''}</div><p class="txt">${c.txt}</p>`;
-    pairs.appendChild(el);
-    const r = drawSolid(el.querySelector('canvas'), FIGS[name]);
-    el.querySelector('.m').textContent = `面 ${r.faces.toLocaleString()}・${r.ms.toFixed(0)} ms`;
-});
+function addPairs(boxId, figs) {
+    const box = document.getElementById(boxId);
+    Object.keys(figs).forEach(name => {
+        const { c, s } = cardOf(name);
+        const el = document.createElement('div');
+        el.className = 'pair'; el.style.setProperty('--g', s.color);
+        el.innerHTML = `<div class="figs"><figure><figcaption>今の図</figcaption><div class="fbox">${c.fig}</div></figure>`
+            + `<figure><figcaption>立体図<span class="m"></span></figcaption><div class="fbox"><canvas></canvas></div></figure></div>`
+            + `<div class="ttl"><i>${s.name}</i><b>${c.t}</b>${c.y ? `<span>${c.y}</span>` : ''}</div><p class="txt">${c.txt}</p>`;
+        box.appendChild(el);
+        const r = drawSolid(el.querySelector('canvas'), figs[name]);
+        el.querySelector('.m').textContent = `面 ${r.faces.toLocaleString()}・${r.ms.toFixed(0)} ms`;
+    });
+}
+addPairs('pairs', FIGS);
+addPairs('pairs2', FIGS2);
 
 const SOLID = new Set(['本丸', '二の丸・三の丸', '帯曲輪', '腰曲輪', '削平地', '出丸', '捨曲輪', '馬出', '輪郭式', '連郭式', '梯郭式', '階郭式', '山城・平山城・平城',
     '空堀', '水堀', '堀切', '竪堀', '畝状竪堀群', '放射状竪堀', '横堀', '内堀・中堀・外堀', '総構・総堀', '薬研堀', '片薬研堀', '箱堀', '毛抜堀', '障子堀', '畝堀', '三日月堀',
@@ -488,7 +733,7 @@ const rows = SECS.map(s => {
     const all = s.subs.flatMap(sb => sb.cards.map(c => c.t));
     const yes = all.filter(t => SOLID.has(t)), no = all.filter(t => !SOLID.has(t));
     tot[0] += yes.length; tot[1] += no.length;
-    const fmt = a => a.map(t => FIGS[t] ? `<span class="mk">●</span>${t}` : t).join('、') || '—';
+    const fmt = a => a.map(t => FIGS[t] || FIGS2[t] ? `<span class="mk">●</span>${t}` : t).join('、') || '—';
     return `<tr><td class="c">${s.name}</td><td class="c">${yes.length}</td><td>${fmt(yes)}</td><td class="c">${no.length}</td><td>${fmt(no)}</td><td>${WHY[s.id]}</td></tr>`;
 });
 document.getElementById('scope').innerHTML = '<tr><th>分野</th><th>立体</th><th>立体にする</th><th>今の図</th><th>今の図のまま</th><th>分けた理由</th></tr>'
