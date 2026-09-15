@@ -6813,6 +6813,7 @@ map.on('zoomend', () => { isZooming = false; });
        総称（§分野）は、分野の説明と種類のボタンを出し、種類を押すとその1枚に替える */
     function openRemainsHelpPop(dest, word) {
         let pop = document.getElementById('rh-pop');
+        const created = !pop;
         if (!pop) {
             const dim = document.createElement('div');
             dim.id = 'rh-pop-dim';
@@ -6831,6 +6832,14 @@ map.on('zoomend', () => { isZooming = false; });
             pop.remove();
             document.getElementById('rh-pop-dim').remove();
             return;
+        }
+        if (created) {
+            // メニュー・情報シートと同じく下スワイプで閉じる。見出しはブラウザの縦スクロールに渡さず、
+            // 本文はスクロール不要な間だけ touch-action を none にして、下スワイプが画面ごと動かないようにする
+            const head = pop.querySelector('.rh-pop-head');
+            head.style.touchAction = 'none';
+            enableSheetSwipeClose(pop, head, closeRemainsHelpPop);
+            watchScrollerTouchAction('#rh-pop-body');
         }
         document.getElementById('rh-pop-title').textContent = word;
         const body = document.getElementById('rh-pop-body');
@@ -6864,6 +6873,9 @@ map.on('zoomend', () => { isZooming = false; });
         const pop = document.getElementById('rh-pop');
         if (!pop) return;
         pop.classList.remove('open');
+        // 下スワイプで引いた位置を残さない（次に開いたとき CSS の位置 bottom:0 に出す）
+        pop.style.bottom = '';
+        pop.style.transition = '';
         document.getElementById('rh-pop-dim').classList.remove('open');
     }
 
