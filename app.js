@@ -1905,6 +1905,75 @@ function castleAttrLine(label, value) {
     return osKv(label, v);
 }
 
+/* ══ 遺構の語 → 遺構の見かた（図解）の行き先 ══════════════════════════════
+   情報シートの遺構の語を押すと、その語の図解を1枚重ねる（openRemainsHelpPop）。
+   語は原典の表記のままで種類が多い（castle.js 全件で757種）ので、語の一部で行き先を決める。
+   先に書いた規則が勝つ（「堀切」を「堀」より、「天守台」を「天守」より先に置く）。
+   行き先は図解のカード名か「§分野名」（曲輪・堀のような総称。分野の説明と種類の一覧を出す）。
+   null は行き先なし（図解に無い語。先に外しておかないと後ろの総称に拾われる）。
+   行き先はすべて remains-help.js の SECTIONS にあるカード名・分野名と一致させること。 */
+const REMAINS_HELP_RULES = [
+    ['竪土塁', null], ['水門', null],
+    // 堀
+    ['畝状竪堀', '畝状竪堀群'], ['連続竪堀', '畝状竪堀群'], ['放射状竪堀', '放射状竪堀'],
+    ['堀切', '堀切'], ['竪堀', '竪堀'], ['横堀', '横堀'], ['空堀', '空堀'], ['水堀', '水堀'],
+    ['障子堀', '障子堀'], ['畝堀', '畝堀'], ['三日月堀', '三日月堀'],
+    ['内堀', '内堀・中堀・外堀'], ['外堀', '内堀・中堀・外堀'], ['内濠', '内堀・中堀・外堀'], ['外濠', '内堀・中堀・外堀'],
+    ['総構', '総構・総堀'],
+    // 井戸・水利（「本丸井戸」を本丸へ送らないよう曲輪より先）
+    ['水の手', '水の手曲輪'], ['水ノ手', '水の手曲輪'], ['井戸', '井戸'],
+    // 曲輪
+    ['帯曲輪', '帯曲輪'], ['腰曲輪', '腰曲輪'], ['削平', '削平地'], ['平場', '削平地'], ['出丸', '出丸'], ['出曲輪', '出丸'],
+    ['本丸', '本丸'], ['本曲輪', '本丸'], ['主曲輪', '本丸'],
+    ['二の丸', '二の丸・三の丸'], ['二ノ丸', '二の丸・三の丸'], ['二之丸', '二の丸・三の丸'], ['二の曲輪', '二の丸・三の丸'],
+    ['二ノ曲輪', '二の丸・三の丸'], ['三の丸', '二の丸・三の丸'], ['三の曲輪', '二の丸・三の丸'],
+    ['北の丸', '東西南北の丸'], ['東曲輪', '東西南北の丸'], ['西の曲輪', '東西南北の丸'], ['南曲輪', '東西南北の丸'],
+    // 虎口の種類
+    ['丸馬出', '丸馬出'], ['角馬出', '角馬出'], ['外枡形', '外枡形'], ['内枡形', '内枡形'],
+    // 門（「移築門（大手門）」は移築門へ。「大手門」「搦手門」は総称の「虎口」より先）
+    ['移築門', '移築門'], ['門（移築', '移築門'],
+    ['枡形門', '枡形門'], ['冠木門', '冠木門'], ['薬医門', '薬医門'], ['高麗門', '高麗門'], ['棟門', '棟門'], ['櫓門', '櫓門'],
+    ['長屋門', '長屋門'], ['埋門', '埋門'], ['大手門', '大手門'], ['搦手門', '搦手門'],
+    ['馬出', '§虎口'], ['枡形', '§虎口'], ['桝形', '§虎口'], ['虎口', '§虎口'],
+    // 天守・櫓
+    ['天守台', '天守台'], ['天主台', '天守台'], ['現存天守', '天守の種類'], ['木造復元天守', '天守の種類'],
+    ['外観復元天守', '天守の種類'], ['復興天守', '天守の種類'], ['模擬天守', '天守の種類'], ['小天守', '連結式'],
+    ['櫓台', '櫓台'], ['多聞櫓', '多聞櫓'], ['渡櫓', '渡櫓'], ['続櫓', '渡櫓'], ['隅櫓', '隅櫓'], ['巽櫓', '隅櫓'],
+    ['辰巳櫓', '隅櫓'], ['乾櫓', '隅櫓'], ['物見櫓', '物見櫓'], ['太鼓櫓', '太鼓櫓'], ['月見櫓', '月見櫓'],
+    ['櫓', '§櫓'], ['天守', '§天守'],
+    // 石垣
+    ['登石垣', '登り石垣'], ['登り石垣', '登り石垣'], ['腰巻土塁', '土塁の各部'], ['腰巻', '腰巻石垣'], ['鉢巻', '鉢巻石垣'],
+    ['石垣', '§石垣'], ['石積', '§石垣'], ['石塁', '§石垣'],
+    // 土塁・塀・建物・狼煙
+    ['武者走', '武者走・犬走'], ['犬走', '武者走・犬走'], ['切岸', '切岸'], ['土橋', '土橋'], ['土塁', '土塁の各部'],
+    ['土塀', '土塀と狭間'], ['築地', '築地塀'], ['御殿', '御殿'],
+    ['礎石', '礎石建物・掘立柱建物'], ['掘立柱', '礎石建物・掘立柱建物'], ['柱穴', '礎石建物・掘立柱建物'],
+    ['狼煙', '狼煙台'], ['烽火', '狼煙台'], ['狼火', '狼煙台'], ['のろし', '狼煙台'], ['ノロシ', '狼煙台'],
+    // 総称
+    ['曲輪', '§曲輪'], ['堀', '§堀'], ['濠', '§堀'], ['門', '§門'],
+];
+function remainsHelpDest(tok) {
+    // 「なし」「埋没」などの状態語と、原典の括弧の中で割れた語の断片には付けない
+    // （遺構から探すの分類 remainGroupOf と同じ判定）
+    if (REMAIN_GROUP_DEFS[0][3].test(tok)) return null;
+    if ((tok.match(/[（(]/g) || []).length !== (tok.match(/[）)]/g) || []).length) return null;
+    for (const [key, dest] of REMAINS_HELP_RULES) if (tok.includes(key)) return dest;
+    return null;
+}
+// 情報シートの遺構の行。行き先のある語だけを押せる語にし、区切りの読点はそのまま残す
+function castleRemainsLine(value) {
+    if (!value) return '';
+    const v = String(value).trim();
+    if (!v || CASTLE_UNKNOWN_ATTRS.has(v)) return '';
+    const html = v.split(/([、,])/).map(part => {
+        if (part === '、' || part === ',') return part;
+        const tok = part.trim();
+        const dest = tok ? remainsHelpDest(tok) : null;
+        return dest ? `<span class="rh-w" data-rh="${attrEscape(dest)}">${attrEscape(part)}</span>` : attrEscape(part);
+    }).join('');
+    return osKv('遺構', html);
+}
+
 // 情報源ボタン（Wikipedia・攻城団・城郭放浪記）。セット行に並べ、
 // 非表示のものがあれば残ったボタンが flex:1 で自動的に幅を広げる（空欄は作らない）。
 function buildSourceButtons(wikiHref, kojodanUrl, shirohbUrl) {
@@ -2411,7 +2480,7 @@ function buildSheetHtml(type, label, p, lng, lat) {
         const aliases = osParseAliases(p.aliases);
         lines = osKv('別名', aliases.length ? aliases.join('、') : '')
               + osLine(popupFormMetaHtml(p.shiroHbElevationM, p.shiroHbRelativeHeightM))
-              + castleAttrLine('遺構', p.remains)
+              + castleRemainsLine(p.remains)
               + castleAttrLine('城主', p.lords)
               + osKv('住所', p.address);
         // 写真は非同期取得のため枠だけ先に置き、injectCastleImage で差し込む
@@ -2568,6 +2637,7 @@ function closeObjSheet() {
     objSheetPair = null;
     closePhotoViewer();   // シートが閉じたら写真ビューアも残さない
     closeFavPalette();    // お気に入りのパレットも残さない
+    closeRemainsHelpPop(); // 遺構の語から出した図解も残さない
     updateSheetFav();     // 色ラインを消し、★を隠す
     clearSelectedObject();
 }
@@ -3866,6 +3936,9 @@ map.on('zoomend', () => { isZooming = false; });
 
     // 情報シートの省略行トグル（タップで省略 ↔ 全文）。高さが変わるので地図も寄せ直す。
     document.getElementById('obj-sheet-body').addEventListener('click', e => {
+        // 遺構の語は図解を出す。省略された行の中にあっても、省略 ↔ 全文の切り替えには回さない
+        const word = e.target.closest('.rh-w');
+        if (word) { openRemainsHelpPop(word.dataset.rh, word.textContent.trim()); return; }
         const el = e.target.closest('.os-clamp.clampable');
         if (!el) return;
         el.classList.toggle('expanded');
@@ -4900,6 +4973,9 @@ map.on('zoomend', () => { isZooming = false; });
         // 家臣団ビューは後から足したもの。デプロイ直後に古い index.html と組み合わさっても落ちないよう、無ければ飛ばす
         const retainersView = document.getElementById('nearby-retainers-view');
         if (retainersView) retainersView.classList.remove('open');
+        // 遺構の見かたビューも後から足したもの。家臣団と同じく、無ければ飛ばす
+        const remainsHelpView = document.getElementById('nearby-remains-help-view');
+        if (remainsHelpView) remainsHelpView.classList.remove('open');
         resetSyncViews();
         prefState.pref = null;
         updateLordsEntry();
@@ -6201,6 +6277,8 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('nearby-remains-view').classList.toggle('open', which === 'list');
         document.getElementById('nearby-remains-group-view').classList.toggle('open', which === 'group');
         document.getElementById('nearby-remains-detail-view').classList.toggle('open', which === 'detail');
+        const helpView = document.getElementById('nearby-remains-help-view');
+        if (helpView) helpView.classList.remove('open');
     }
 
     /* target を渡すと、その遺構（または分類）の城一覧を直接開く（情報シートからの戻り導線で使う）。
@@ -6568,6 +6646,225 @@ map.on('zoomend', () => { isZooming = false; });
         // 開く前の一覧の状態（近い順の起点・スクロール位置）と地図のまま戻す
         div.onclick = () => { closeObjSheet(); restoreListReturnCamera(); openNearbyPanel(); openRemainsView(target, true); };
         body.insertBefore(div, body.firstChild);
+    }
+
+    /* ══ 遺構の見かた（図解） ═══════════════════════════════════════
+       入口は2つ（mock/remains-help-entry-preview.html の案1・案5）。
+         ①「遺構から探す」の見出しの「？」→ 遺構の見かたビュー。全90枚を分野 → 観点の順に縦に並べ、
+           上の分野チップで飛ぶ（見せ方A）
+         ② 情報シートの遺構の語 → その語の1枚をシートの上に重ねる（openRemainsHelpPop、見せ方E）
+       図とカードの中身は remains-help.js に分けてあり、どちらかを初めて開いたときに読み込む。
+       本体に入れないのは、図解を開かない利用者にまで毎回読ませないため。 */
+    const REMAINS_HELP_URL = 'remains-help.js';
+    const REMAINS_HELP_FAIL = '<div class="lords-note">図解を読み込めませんでした。通信できる状態でもう一度開いてください</div>';
+    let remainsHelpLoading = null;
+    let remainsHelpBuilt = false;
+    let remainsHelpQ = '';
+    let remainsHelpScrollRaf = 0;
+    function ensureRemainsHelp() {
+        if (window.REMAINS_HELP) return Promise.resolve(window.REMAINS_HELP);
+        if (!remainsHelpLoading) {
+            remainsHelpLoading = new Promise((resolve, reject) => {
+                const s = document.createElement('script');
+                s.src = REMAINS_HELP_URL;
+                s.onload = () => window.REMAINS_HELP ? resolve(window.REMAINS_HELP) : reject(new Error('remains-help: empty'));
+                // 失敗（オフラインで未取得など）は覚えておかず、次に押したときに読み直す
+                s.onerror = () => { remainsHelpLoading = null; s.remove(); reject(new Error('remains-help: load')); };
+                document.head.appendChild(s);
+            });
+        }
+        return remainsHelpLoading;
+    }
+    // 行き先（カード名か「§分野名」）から、カードと分野を引く
+    function remainsHelpFind(dest) {
+        const sections = window.REMAINS_HELP.SECTIONS;
+        if (dest.startsWith('§')) {
+            const sec = sections.find(s => s.name === dest.slice(1));
+            return sec ? { sec } : null;
+        }
+        for (const sec of sections) for (const sub of sec.subs) for (const card of sub.cards) {
+            if (card.t === dest) return { card, sec };
+        }
+        return null;
+    }
+    // カード1枚。城数（モックの灰色の行）は castle.js の更新で古くなるので出さない
+    function remainsHelpCardHtml(c, sec, searchable) {
+        const q = searchable ? ` data-q="${attrEscape(normalizeForSearch(`${c.t} ${c.y || ''}`))}"` : '';
+        return `<article class="rh-card" style="--g:${sec.color}"${q}><div class="rh-fig">${c.fig}</div><div class="rh-body">`
+             + `<div class="rh-ttl"><b>${c.t}</b>${c.y ? `<span class="rh-yomi">${c.y}</span>` : ''}`
+             + `${c.unv ? '<span class="rh-unv">出典未確認</span>' : ''}</div><p class="rh-txt">${c.txt}</p></div></article>`;
+    }
+
+    function openRemainsHelp() {
+        const view = document.getElementById('nearby-remains-help-view');
+        if (!view) return;
+        setPanelLifted(true);
+        document.getElementById('nearby-main-view').style.display = 'none';
+        document.getElementById('nearby-remains-view').classList.remove('open');
+        document.getElementById('nearby-remains-group-view').classList.remove('open');
+        document.getElementById('nearby-remains-detail-view').classList.remove('open');
+        view.classList.add('open');
+        const list = document.getElementById('remains-help-list');
+        // 開くたびに先頭（曲輪）から、絞り込みなしで見せる（遺構から探すの一覧と同じ扱い）
+        if (remainsHelpBuilt) {
+            const input = document.getElementById('remains-help-search');
+            if (remainsHelpQ) { input.value = ''; onRemainsHelpSearchInput(''); }
+            list.scrollTop = 0;
+            syncRemainsHelpChips();
+            return;
+        }
+        list.innerHTML = '<div class="lords-note">読み込み中…</div>';
+        ensureRemainsHelp().then(buildRemainsHelpView).catch(() => { list.innerHTML = REMAINS_HELP_FAIL; });
+    }
+    // 戻る。「遺構から探す」の一覧は描いたまま残っているので、スクロール位置もそのまま戻る
+    function closeRemainsHelp() {
+        showRemainsView('list');
+    }
+    // 中身は初めて開いたときに1回だけ描く（90枚の図を開くたびに作り直さない）。絞り込みは表示の出し入れで行う
+    function buildRemainsHelpView() {
+        const sections = window.REMAINS_HELP.SECTIONS;
+        document.getElementById('remains-help-chips').innerHTML = sections.map((s, i) =>
+            `<button class="rh-chip" data-i="${i}" style="--g:${s.color}" aria-pressed="${i === 0}" onclick="jumpRemainsHelpSection(${i})">${s.name}</button>`).join('');
+        const list = document.getElementById('remains-help-list');
+        list.innerHTML = sections.map((s, i) => {
+            const n = s.subs.reduce((a, sub) => a + sub.cards.length, 0);
+            return `<section class="rh-sec" data-i="${i}" style="--g:${s.color}">`
+                 + `<div class="rh-sec-h">${s.name}<small>${n}種類</small></div><p class="rh-lead">${s.lead}</p>`
+                 + s.subs.map(sub => `<div class="rh-sub"><div class="rh-subh">${sub.name}</div><div class="rh-cards">`
+                     + sub.cards.map(c => remainsHelpCardHtml(c, s, true)).join('') + '</div></div>').join('')
+                 + '</section>';
+        }).join('') + '<div class="lords-note" id="remains-help-empty" hidden>該当する遺構がありません</div>';
+        list.addEventListener('scroll', onRemainsHelpScroll, { passive: true });
+        remainsHelpBuilt = true;
+        applyRemainsHelpFilter();
+    }
+    function onRemainsHelpSearchInput(v) {
+        remainsHelpQ = v;
+        setSearchClearVisible('remains-help-search', v);
+        if (remainsHelpBuilt) applyRemainsHelpFilter();
+    }
+    function clearRemainsHelpSearch() {
+        const el = document.getElementById('remains-help-search');
+        el.value = ''; onRemainsHelpSearchInput(''); el.focus();
+    }
+    // 名前と読みで絞る。当たったカードの無い観点・分野は見出しごと隠し、その分野のチップは押せなくする
+    function applyRemainsHelpFilter() {
+        const q = normalizeForSearch(remainsHelpQ.trim());
+        const list = document.getElementById('remains-help-list');
+        let any = false;
+        list.querySelectorAll('.rh-sec').forEach(sec => {
+            let secHit = false;
+            sec.querySelectorAll('.rh-sub').forEach(sub => {
+                let subHit = false;
+                sub.querySelectorAll('.rh-card').forEach(card => {
+                    const hit = !q || card.dataset.q.includes(q);
+                    card.hidden = !hit;
+                    subHit = subHit || hit;
+                });
+                sub.hidden = !subHit;
+                secHit = secHit || subHit;
+            });
+            sec.hidden = !secHit;
+            any = any || secHit;
+            const chip = document.querySelector(`#remains-help-chips .rh-chip[data-i="${sec.dataset.i}"]`);
+            if (chip) chip.disabled = !secHit;
+        });
+        list.classList.toggle('filtering', !!q);
+        document.getElementById('remains-help-empty').hidden = any;
+        list.scrollTop = 0;
+        syncRemainsHelpChips();
+    }
+    function jumpRemainsHelpSection(i) {
+        const list = document.getElementById('remains-help-list');
+        const sec = list.querySelector(`.rh-sec[data-i="${i}"]`);
+        if (!sec || sec.hidden) return;
+        list.scrollTop += sec.getBoundingClientRect().top - list.getBoundingClientRect().top;
+        setRemainsHelpChip(i);
+    }
+    // 送った位置の分野にチップを合わせる（1フレームに1回だけ計る）
+    function onRemainsHelpScroll() {
+        if (remainsHelpScrollRaf) return;
+        remainsHelpScrollRaf = requestAnimationFrame(() => { remainsHelpScrollRaf = 0; syncRemainsHelpChips(); });
+    }
+    function syncRemainsHelpChips() {
+        const list = document.getElementById('remains-help-list');
+        const top = list.getBoundingClientRect().top;
+        const secs = [...list.querySelectorAll('.rh-sec')].filter(s => !s.hidden);
+        let cur = secs[0];
+        secs.forEach(s => { if (s.getBoundingClientRect().top - top <= 8) cur = s; });
+        if (cur) setRemainsHelpChip(+cur.dataset.i);
+    }
+    function setRemainsHelpChip(i) {
+        const wrap = document.getElementById('remains-help-chips');
+        let on = null;
+        wrap.querySelectorAll('.rh-chip').forEach(b => {
+            const pressed = +b.dataset.i === i;
+            b.setAttribute('aria-pressed', String(pressed));
+            if (pressed) on = b;
+        });
+        // 押されているチップが見えるよう、チップの行だけを横に送る
+        if (!on) return;
+        const wr = wrap.getBoundingClientRect(), br = on.getBoundingClientRect();
+        if (br.left < wr.left + 12) wrap.scrollLeft -= wr.left + 12 - br.left;
+        else if (br.right > wr.right - 12) wrap.scrollLeft += br.right - (wr.right - 12);
+    }
+
+    /* 情報シートの語から出す1枚。要素は初めて出すときに作る。
+       総称（§分野）は、分野の説明と種類のボタンを出し、種類を押すとその1枚に替える */
+    function openRemainsHelpPop(dest, word) {
+        let pop = document.getElementById('rh-pop');
+        if (!pop) {
+            const dim = document.createElement('div');
+            dim.id = 'rh-pop-dim';
+            dim.onclick = closeRemainsHelpPop;
+            pop = document.createElement('div');
+            pop.id = 'rh-pop';
+            pop.setAttribute('role', 'dialog');
+            pop.innerHTML = '<div class="rh-pop-head"><div class="rh-pop-title" id="rh-pop-title"></div>'
+                          + '<button class="rh-pop-x" onclick="closeRemainsHelpPop()" title="閉じる">×</button></div>'
+                          + '<div class="rh-pop-body" id="rh-pop-body"></div>';
+            document.body.append(dim, pop);
+        }
+        // 古い index.html（この CSS が無い）と組み合わさったときは出さない。CSS の無い箱は画面の上端に
+        // 「×」だけの帯として出てしまうので、作った要素ごと外す（Playwright で再現して確認）
+        if (getComputedStyle(pop).position !== 'fixed') {
+            pop.remove();
+            document.getElementById('rh-pop-dim').remove();
+            return;
+        }
+        document.getElementById('rh-pop-title').textContent = word;
+        const body = document.getElementById('rh-pop-body');
+        body.innerHTML = '<div class="lords-note">読み込み中…</div>';
+        pop.classList.add('open');
+        document.getElementById('rh-pop-dim').classList.add('open');
+        ensureRemainsHelp().then(() => renderRemainsHelpPop(dest)).catch(() => { body.innerHTML = REMAINS_HELP_FAIL; });
+    }
+    function renderRemainsHelpPop(dest, backSec) {
+        const body = document.getElementById('rh-pop-body');
+        if (!body) return;
+        const hit = remainsHelpFind(dest);
+        if (!hit) {
+            body.innerHTML = '<div class="lords-note">この語の図解はありません</div>';
+        } else if (hit.card) {
+            const back = backSec
+                ? `<button class="rh-back" data-d="§${attrEscape(backSec)}" onclick="renderRemainsHelpPop(this.dataset.d)">‹ 「${backSec}」の種類に戻る</button>`
+                : '';
+            body.innerHTML = back + remainsHelpCardHtml(hit.card, hit.sec, false);
+        } else {
+            const s = hit.sec;
+            body.innerHTML = `<div style="--g:${s.color}"><div class="rh-sec-h">${s.name}</div><p class="rh-lead">${s.lead}</p>`
+                + s.subs.map(sub => `<div class="rh-subh">${sub.name}</div><div class="rh-kinds">`
+                    + sub.cards.map(c => `<button class="rh-kind" data-t="${attrEscape(c.t)}" data-s="${attrEscape(s.name)}"`
+                        + ` onclick="renderRemainsHelpPop(this.dataset.t, this.dataset.s)">${c.t}</button>`).join('')
+                    + '</div>').join('') + '</div>';
+        }
+        body.scrollTop = 0;
+    }
+    function closeRemainsHelpPop() {
+        const pop = document.getElementById('rh-pop');
+        if (!pop) return;
+        pop.classList.remove('open');
+        document.getElementById('rh-pop-dim').classList.remove('open');
     }
 
     function selectNearbyCat(el) {

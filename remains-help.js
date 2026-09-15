@@ -1,6 +1,13 @@
-/* 遺構ヘルプのカードの中身（図・説明・件数）。
-   remains-help-preview.html（ヘルプ本体のモック）と remains-help-entry-preview.html（組み込み案のモック）の両方が読む。
-   SECTIONS は分野 → 観点 → カードの3階層。fig は SVG（天守の種類だけ表）の文字列。 */
+/* 遺構の見かた（図解）のカードの中身。分野 → 観点 → カードの3階層で、fig は SVG（天守の種類だけ表）の文字列。
+   地図（index.html）は、メニュー「遺構から探す」の見出しの「？」か、情報シートの遺構の語を押したときに
+   app.js の ensureRemainsHelp がこのファイルを読み込む（開かない利用者に毎回読ませないため本体と分けてある）。
+   モック（mock/remains-help-preview.html・mock/remains-help-entry-preview.html）も同じファイルを読む。
+
+   読み込み側のページと名前がぶつからないよう、全体を関数で包み、外に出すのは window.REMAINS_HELP だけにする
+   （app.js にも base・body・p・r・svg・t という名前がある）。図の class と id には rhf- を付けて出し、
+   図の色と線の CSS・矢印と斜線の defs もここで1回だけ入れる。
+   説明文の出典と確認できていないことは mock/remains-help-preview.html の末尾にまとめてある。 */
+(function () {
 /* ══ 図を組み立てる小物 ══════════════════════════════════════ */
 const svg = inner => `<svg viewBox="0 0 320 180">${inner}</svg>`;
 const bgSky = '<rect class="sky" width="320" height="180"/>';
@@ -846,3 +853,55 @@ const SECTIONS = [
     ]},
 ];
 
+/* ══ 読み込み側のページに合わせる ══════════════════════════════════════ */
+const RHF = s => s.replace(/class="([^"]*)"/g, (m, c) => `class="${c.split(/\s+/).filter(Boolean).map(x => 'rhf-' + x).join(' ')}"`)
+                  .replace(/url\(#(arR|arB|arG|hatch|cp\d+)\)/g, 'url(#rhf-$1)')
+                  .replace(/id="(cp\d+)"/g, 'id="rhf-$1"');
+SECTIONS.forEach(s => s.subs.forEach(sb => sb.cards.forEach(c => { c.fig = RHF(c.fig); })));
+if (!document.getElementById('rhf-style')) {
+    const st = document.createElement('style');
+    st.id = 'rhf-style';
+    st.textContent = `.rhf-sky { fill: #EEF4F8; }
+.rhf-earth { fill: #CDB08A; stroke: #8D6E63; stroke-width: 1.5; stroke-linejoin: round; }
+.rhf-slope { fill: #E2D3B5; stroke: #B39B79; stroke-width: 1.2; }
+.rhf-contour { fill: none; stroke: #C8B28F; stroke-width: 1; stroke-dasharray: 4 3; }
+.rhf-flat { fill: #D5E6BC; stroke: #6D8B4A; stroke-width: 1.5; }
+.rhf-flat2 { fill: #E7F0D9; stroke: #8AA66A; stroke-width: 1.2; }
+.rhf-hl { fill: #F6D9A8; stroke: #C77700; stroke-width: 2; }
+.rhf-field { fill: #D5E6BC; }
+.rhf-outside { fill: #EFE8D8; }
+.rhf-moat { fill: #B39B7C; }
+.rhf-water { fill: #9ACBEA; }
+.rhf-wall { fill: #A98B68; }
+.rhf-stone { fill: #B8C2C8; stroke: #78909C; stroke-width: 1; }
+.rhf-roof { fill: #56656D; }
+.rhf-plaster { fill: #FAFAF7; stroke: #9E9E9E; stroke-width: 1; }
+.rhf-wood { fill: #6D4C41; }
+.rhf-door { fill: #8D6E63; stroke: #5D4037; stroke-width: 1; }
+.rhf-grass { fill: none; stroke: #6D8B4A; stroke-width: 3; }
+.rhf-grass-hl { fill: none; stroke: #C77700; stroke-width: 4; }
+.rhf-ghost { fill: none; stroke: #90A4AE; stroke-width: 1.3; stroke-dasharray: 4 3; }
+.rhf-trench-o { fill: none; stroke: #A1887F; stroke-width: 9; stroke-linecap: round; }
+.rhf-trench-i { fill: none; stroke: #6D5246; stroke-width: 2.5; stroke-linecap: round; }
+.rhf-lbl { font-size: 11px; fill: #37474F; font-weight: 700; }
+.rhf-lbl-s { font-size: 9.5px; fill: #546E7A; }
+.rhf-lbl-w { font-size: 11px; fill: #fff; font-weight: 700; }
+.rhf-cap { font-size: 9.5px; fill: #90A4AE; }
+.rhf-m { text-anchor: middle; }
+.rhf-ld { stroke: #78909C; stroke-width: 1; fill: none; }
+.rhf-enemy { stroke: #E53935; stroke-width: 2.4; fill: none; stroke-dasharray: 6 4; marker-end: url(#rhf-arR); }
+.rhf-route { stroke: #455A64; stroke-width: 2.2; fill: none; stroke-dasharray: 6 4; marker-end: url(#rhf-arG); }
+.rhf-shoot { stroke: #1E88E5; stroke-width: 2; fill: none; marker-end: url(#rhf-arB); }
+.rhf-gate { fill: #3E2723; }
+.rhf-kinds { width: 100%; border-collapse: collapse; font-size: 12px; }
+.rhf-kinds td { border-bottom: 1px solid #EEE9DF; padding: 6px 10px; vertical-align: top; }
+.rhf-kinds td:first-child { font-weight: 700; white-space: nowrap; }
+.rhf-kinds td.rhf-n { color: #607D8B; white-space: nowrap; }`;
+    document.head.appendChild(st);
+    const defs = document.createElement('div');
+    defs.id = 'rhf-defs';
+    defs.innerHTML = '<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs> <marker id="rhf-arR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#E53935"/></marker> <marker id="rhf-arB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1E88E5"/></marker> <marker id="rhf-arG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#455A64"/></marker> <pattern id="rhf-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"> <rect width="6" height="6" fill="#F3EBDD"/><line x1="0" y1="0" x2="0" y2="6" stroke="#D6C3A3" stroke-width="2"/> </pattern> </defs></svg>';
+    document.body.appendChild(defs);
+}
+window.REMAINS_HELP = { SECTIONS };
+})();

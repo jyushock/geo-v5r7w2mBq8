@@ -44,58 +44,10 @@
     .txt { font-size: 13px; line-height: 1.75; margin: 6px 0 0; }
     .rec { font-size: 11px; color: #90A4AE; margin: 8px 0 0; }
 
-    .kinds { width: 100%; border-collapse: collapse; font-size: 12px; }
-    .kinds td { border-bottom: 1px solid #EEE9DF; padding: 6px 10px; vertical-align: top; }
-    .kinds td:first-child { font-weight: 700; white-space: nowrap; }
-    .kinds td.n { color: var(--sub); white-space: nowrap; }
 
-    /* 図の部品 */
-    .sky { fill: #EEF4F8; }
-    .earth { fill: #CDB08A; stroke: #8D6E63; stroke-width: 1.5; stroke-linejoin: round; }
-    .slope { fill: #E2D3B5; stroke: #B39B79; stroke-width: 1.2; }
-    .contour { fill: none; stroke: #C8B28F; stroke-width: 1; stroke-dasharray: 4 3; }
-    .flat { fill: #D5E6BC; stroke: #6D8B4A; stroke-width: 1.5; }
-    .flat2 { fill: #E7F0D9; stroke: #8AA66A; stroke-width: 1.2; }
-    .hl { fill: #F6D9A8; stroke: #C77700; stroke-width: 2; }
-    .field { fill: #D5E6BC; }
-    .outside { fill: #EFE8D8; }
-    .moat { fill: #B39B7C; }
-    .water { fill: #9ACBEA; }
-    .wall { fill: #A98B68; }
-    .stone { fill: #B8C2C8; stroke: #78909C; stroke-width: 1; }
-    .roof { fill: #56656D; }
-    .plaster { fill: #FAFAF7; stroke: #9E9E9E; stroke-width: 1; }
-    .wood { fill: #6D4C41; }
-    .door { fill: #8D6E63; stroke: #5D4037; stroke-width: 1; }
-    .grass { fill: none; stroke: #6D8B4A; stroke-width: 3; }
-    .grass-hl { fill: none; stroke: #C77700; stroke-width: 4; }
-    .ghost { fill: none; stroke: #90A4AE; stroke-width: 1.3; stroke-dasharray: 4 3; }
-    .trench-o { fill: none; stroke: #A1887F; stroke-width: 9; stroke-linecap: round; }
-    .trench-i { fill: none; stroke: #6D5246; stroke-width: 2.5; stroke-linecap: round; }
-    .lbl { font-size: 11px; fill: #37474F; font-weight: 700; }
-    .lbl-s { font-size: 9.5px; fill: #546E7A; }
-    .lbl-w { font-size: 11px; fill: #fff; font-weight: 700; }
-    .cap { font-size: 9.5px; fill: #90A4AE; }
-    .m { text-anchor: middle; }
-    .ld { stroke: #78909C; stroke-width: 1; fill: none; }
-    .enemy { stroke: #E53935; stroke-width: 2.4; fill: none; stroke-dasharray: 6 4; marker-end: url(#arR); }
-    .route { stroke: #455A64; stroke-width: 2.2; fill: none; stroke-dasharray: 6 4; marker-end: url(#arG); }
-    .shoot { stroke: #1E88E5; stroke-width: 2; fill: none; marker-end: url(#arB); }
-    .gate { fill: #3E2723; }
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute">
-    <defs>
-        <marker id="arR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#E53935"/></marker>
-        <marker id="arB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1E88E5"/></marker>
-        <marker id="arG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#455A64"/></marker>
-        <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-            <rect width="6" height="6" fill="#F3EBDD"/><line x1="0" y1="0" x2="0" y2="6" stroke="#D6C3A3" stroke-width="2"/>
-        </pattern>
-    </defs>
-</svg>
-
 <div class="wrap">
     <h1>遺構ヘルプ（モック・細分化版）</h1>
     <p class="lead">メニュー「遺構」に出てくる遺構を、分野ごと・見分ける観点ごとに種類へ分け、図と説明の1枚カードで並べた案です。
@@ -120,8 +72,9 @@
     </div>
 </div>
 
-<script src="remains-help-data.js"></script>
+<script src="../remains-help.js"></script>
 <script>
+const SECTIONS = REMAINS_HELP.SECTIONS;
 /* ══ 描画 ══════════════════════════════════════════════════════ */
 (function () {
     let toc = '', html = '', total = 0;
