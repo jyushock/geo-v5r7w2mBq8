@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<base href="../"><meta charset="utf-8"><title>遺構ヘルプの組み込み案 — 入口と見せ方</title>
+<style>
+:root { --ui-blue: #4285F4; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #eceff1; font-family: sans-serif; padding: 24px; color: #333; }
+h1 { font-size: 19px; margin: 0 0 6px; }
+.lead { font-size: 13px; color: #555; margin: 0 0 12px; line-height: 1.8; max-width: 1240px; }
+h2.part { font-size: 16px; margin: 34px 0 6px; padding-bottom: 6px; border-bottom: 2px solid #90a4ae; max-width: 1240px; }
+.part-lead { font-size: 12.5px; color: #555; line-height: 1.8; margin: 0 0 8px; max-width: 1240px; }
+.note { font-size: 12.5px; color: #444; line-height: 1.9; max-width: 1240px; background: #fff;
+        border-left: 4px solid #90a4ae; padding: 12px 16px; border-radius: 0 6px 6px 0; margin: 10px 0; }
+.note b { color: #222; }
+.note ul { margin: 4px 0 0; padding-left: 20px; }
+.note li { margin-bottom: 4px; }
+.note .src { color: #78909C; font-size: 11px; }
+.toc { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 0; max-width: 1240px; }
+.toc a { font-size: 12px; text-decoration: none; color: #2a5bd7; background: #fff; border: 1px solid #dbe6ff;
+         border-radius: 14px; padding: 3px 10px; }
+
+.case { background: #fff; border-radius: 12px; padding: 16px 18px 14px; margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,.08); max-width: 1240px; }
+.case h3 { font-size: 15px; margin: 0 0 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.case h3 .no { font-size: 12px; color: #fff; background: #546E7A; border-radius: 10px; padding: 1px 9px; }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; margin: 2px 0 10px; }
+.tag { font-size: 11px; border-radius: 10px; padding: 2px 9px; background: #f2f4f5; color: #455A64; }
+.tag.taps { background: #fdecea; color: #c62828; font-weight: bold; }
+.tag.view { background: #e8f0fe; color: #1a4fb0; }
+.flow { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+/* 3台並べても1段に収まるよう、端末の画面だけ80%に縮める（中の寸法の比率はそのまま） */
+.flow .phone { zoom: .8; }
+.btn.tap, .hx-tile.tap { overflow: visible; }
+.hx-index-row.tap, .set-row.tap { margin: 0 12px; border-radius: 8px; }
+.arrow { width: 74px; text-align: center; font-size: 11px; color: #546E7A; line-height: 1.5; }
+.arrow b { display: block; font-size: 28px; color: #90A4AE; line-height: 1; }
+.desc { display: grid; grid-template-columns: 90px 1fr; gap: 3px 10px; font-size: 12.5px; line-height: 1.75; margin-top: 12px; }
+.desc dt { color: #78909C; font-weight: bold; }
+.desc dd { margin: 0; }
+.desc dd.good { color: #2e7d32; }
+.desc dd.bad { color: #b71c1c; }
+table.cmp { border-collapse: collapse; background: #fff; font-size: 12px; max-width: 1240px; width: 100%; }
+table.cmp th, table.cmp td { border: 1px solid #dde3e6; padding: 6px 9px; text-align: left; vertical-align: top; line-height: 1.6; }
+table.cmp th { background: #f4f6f7; }
+table.cmp td.c { text-align: center; white-space: nowrap; }
+
+/* ── 端末の枠（地図・下部バーは模式） ── */
+.phone { width: 375px; height: 640px; background: #fff; border-radius: 14px; overflow: hidden; position: relative;
+         box-shadow: 0 4px 14px rgba(0,0,0,.18); display: flex; flex-direction: column; flex-shrink: 0; }
+.pcap { position: absolute; top: 6px; left: 8px; z-index: 30; font-size: 10.5px; color: #fff; background: rgba(38,50,56,.72);
+        border-radius: 9px; padding: 1px 8px; }
+.map { background-color: #e7eee2; position: relative; flex-shrink: 0;
+       background-image: linear-gradient(115deg, transparent 46%, #fff 46%, #fff 48.5%, transparent 48.5%),
+                         linear-gradient(20deg, transparent 62%, #f4efd9 62%, #f4efd9 65%, transparent 65%),
+                         linear-gradient(160deg, transparent 30%, #d6e6f2 30%, #d6e6f2 36%, transparent 36%); }
+.pin { position: absolute; left: 50%; top: 42%; width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 50%;
+       background: #EA4335; box-shadow: 0 0 0 3px #fff, 0 2px 6px rgba(0,0,0,.3); display: flex; align-items: center; justify-content: center; }
+.pin img { width: 24px; height: 24px; filter: brightness(0) invert(1); }
+.panel { flex: 1; min-height: 0; display: flex; flex-direction: column; background: #fff; border-radius: 16px 16px 0 0;
+         box-shadow: 0 -4px 16px rgba(0,0,0,.15); position: relative; z-index: 2; }
+.bbar { height: 52px; flex-shrink: 0; display: flex; align-items: center; gap: 8px; padding: 0 10px; background: #fff;
+        border-top: 1px solid #eee; position: relative; z-index: 4; }
+.bbar .sbox { flex: 1; height: 38px; border-radius: 19px; background: #f3f3f3; color: #9e9e9e; font-size: 14px;
+              display: flex; align-items: center; gap: 8px; padding: 0 14px; }
+.bbar .sbox.typing { background: #fff; border: 1px solid #ddd; color: #333; }
+.bbar .hamb { width: 40px; height: 40px; border-radius: 50%; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.25);
+              display: flex; align-items: center; justify-content: center; color: #555; font-size: 18px; }
+
+/* 押す所の印 */
+.tap { position: relative; outline: 2.5px solid #E53935 !important; outline-offset: 1px; }
+.tap::after { content: attr(data-n); position: absolute; top: -9px; right: -9px; min-width: 18px; height: 18px; border-radius: 9px;
+              background: #E53935; color: #fff; font: bold 11px/18px sans-serif; text-align: center; padding: 0 4px; z-index: 20; }
+
+/* ── index.html の実CSS（写し） ── */
+.lords-head { display: flex; align-items: center; gap: 8px; padding: 12px 12px 8px; flex-shrink: 0; }
+.lords-head-title { font-size: 14px; font-weight: bold; color: #333; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lords-iconbtn { width: 32px; height: 32px; border: 0; background: #f5f5f5; border-radius: 8px; color: #555; cursor: pointer;
+                 display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 17px; font-family: inherit; }
+.lords-filter { padding: 0 12px 8px; flex-shrink: 0; border-bottom: 1px solid #f0f0f0; }
+.lords-filter input { width: 100%; height: 34px; border: 1px solid #e3e3e3; border-radius: 17px; padding: 0 12px; font-size: 13px;
+                      font-family: inherit; background: #fafafa; color: #333; }
+.lords-chips { display: flex; gap: 6px; margin-top: 7px; flex-wrap: wrap; }
+.lords-chip { font-size: 11px; padding: 4px 10px; border-radius: 14px; background: #f2f2f2; color: #666; border: 0; font-family: inherit; }
+.lords-chip[aria-pressed="true"] { background: #e3ecff; color: #2a5bd7; font-weight: bold; }
+.lords-scroll { overflow: hidden; flex: 1; min-height: 0; position: relative; }
+.lords-note { padding: 16px; text-align: center; color: #999; font-size: 13px; }
+.lord-row { display: flex; align-items: center; gap: 9px; padding: 10px 13px; border-bottom: 1px solid #f0f0f0; }
+.lord-main { flex: 1; min-width: 0; }
+.lord-name { font-size: 13.5px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lord-sub { font-size: 10.5px; color: #999; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lord-num { font-size: 12px; color: #546E7A; font-weight: bold; flex-shrink: 0; }
+.lord-chev { color: #ccc; font-size: 15px; flex-shrink: 0; }
+.rg-ic { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.rg-ic svg { width: 19px; height: 19px; display: block; }
+.rt-row { display: flex; align-items: center; gap: 9px; padding: 9px 13px; border-bottom: 1px solid #f5f5f5; }
+.rt-dot { width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; }
+.rt-name { font-size: 12.5px; color: #333; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rt-num { font-size: 11.5px; color: #546E7A; font-weight: bold; flex-shrink: 0; }
+.rt-all { display: flex; align-items: center; gap: 8px; padding: 10px 13px; background: #f3f6ff; border-bottom: 1px solid #dbe6ff;
+          color: #2a5bd7; font-size: 12px; font-weight: bold; flex-shrink: 0; }
+.nearby-item { display: flex; align-items: center; padding: 10px 14px; border-bottom: 1px solid #f0f0f0; gap: 10px; }
+.nearby-item-icon { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; }
+.nearby-item-icon img { width: 28px; height: 28px; object-fit: contain; filter: brightness(0) invert(1); }
+.nearby-item-text { flex: 1; min-width: 0; }
+.nearby-item-name { font-size: 13px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nearby-item-sub { font-size: 11px; color: #999; margin-top: 1px; }
+.nearby-item-dist { font-size: 12px; color: #4285F4; font-weight: bold; flex-shrink: 0; }
+.nearby-section-label { font-size: 11px; color: #999; padding: 6px 16px 4px; }
+.nearby-list-btns { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 0 16px 12px; }
+.nearby-list-btn { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 100%; background: #f8f8f8; border: 0;
+                   border-radius: 10px; padding: 8px 6px; font-family: inherit; }
+.nlb-ic { width: 34px; height: 34px; border-radius: 9px; background: #8A8A8A; display: flex; align-items: center; justify-content: center; }
+.nlb-ic img { width: 100%; height: 100%; object-fit: contain; filter: brightness(0) invert(1); }
+.nlb-ic svg { width: 100%; height: 100%; display: block; }
+.nlb-n { display: block; font-size: 9px; color: #555; text-align: center; white-space: nowrap; }
+.nearby-cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 0 16px 12px; }
+.nearby-cat-item { height: 52px; border-radius: 10px; background: #f8f8f8; }
+/* 情報シート */
+.osheet { position: absolute; left: 0; right: 0; bottom: 52px; background: #fff; border-radius: 16px 16px 0 0;
+          box-shadow: 0 -4px 16px rgba(0,0,0,.18); z-index: 6; display: flex; flex-direction: column; font-family: sans-serif; }
+.os-header { position: relative; padding: 8px 14px 4px; min-height: 24px; }
+.os-handle { width: 36px; height: 6px; background: #ccc; border-radius: 3px; margin: 0 auto; }
+.os-close { position: absolute; top: 0; right: 8px; font-size: 24px; color: #bbb; padding: 0 6px; line-height: 1; }
+.os-fav { position: absolute; top: 0; right: 38px; font-size: 19px; color: #cfcfcf; padding: 2px 6px; line-height: 1; }
+.os-body { padding: 0 14px 14px; }
+.os-title { display: flex; align-items: center; gap: 5px; margin-bottom: 3px; min-width: 0; }
+.os-name { font-size: 15px; font-weight: bold; }
+.os-row { display: flex; gap: 10px; margin-top: 5px; align-items: flex-start; }
+.os-meta { flex: 1; min-width: 0; }
+.os-photo { width: 171px; height: 128px; flex-shrink: 0; border-radius: 7px; border: 1px solid #eee; background: #dcd6c8;
+            display: flex; align-items: center; justify-content: center; color: #8d8578; font-size: 11px; }
+.os-line { font-size: 11px; color: #333; line-height: 1.45; }
+.os-line + .os-line { margin-top: 1px; }
+.os-line .os-k { display: inline-block; background: #E6E2D8; color: #3d3d3d; border-radius: 3px; font-size: 9.5px; font-weight: 700;
+                 line-height: 1.5; padding: 0 4px; margin-right: 4px; vertical-align: 1px; letter-spacing: .8px; }
+.os-clamp { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.os-brow { display: flex; gap: 4px; margin-top: 4px; }
+.btn { display: flex; align-items: center; justify-content: center; height: 40px; padding: 0 4px; border-radius: 7px; font-weight: bold;
+       color: #fff; font-size: 12px; border: none; flex: 1 1 0; min-width: 0; white-space: nowrap; overflow: hidden; }
+.btn-gmap { background: #fff; color: var(--ui-blue); border: 1px solid var(--ui-blue); }
+.btn-access { background: #00897B; } .btn-wiki { background: #333; } .btn-kojodan { background: #8B4513; } .btn-shirohb { background: #6A4C93; }
+.btn-nav { background: var(--ui-blue); padding: 0; } .btn-nav-yahoo { background: #FF0033; padding: 0; } .btn-nearby-search { background: #34A853; }
+.nav-ico { align-self: stretch; width: 26px; background: #fff; border-radius: 6px 0 0 6px; border: 1px solid currentColor; flex-shrink: 0; }
+.btn-nav .nav-ico { border-color: var(--ui-blue); } .btn-nav-yahoo .nav-ico { border-color: #FF0033; }
+.nav-cap { flex: 1; padding: 0 4px; }
+.popup-form-badge { font-size: 12px; font-weight: 700; color: #fff; padding: 2px 8px; border-radius: 10px; line-height: 1.6; white-space: nowrap; flex-shrink: 0; }
+.f-okajiro { background: hsl(20, 42%, 38%); }
+.os-genrebadge { font-size: 12px; font-weight: 700; color: #fff; padding: 2px 8px; border-radius: 10px; line-height: 1.6; white-space: nowrap; flex-shrink: 0; }
+.os-lords-back { display: flex; align-items: center; gap: 6px; margin: 0 0 8px; padding: 7px 10px; background: #f3f6ff;
+                 border: 1px solid #dbe6ff; border-radius: 9px; font-size: 11.5px; color: #2a5bd7; }
+
+/* ── この案で足す部品 ── */
+.hx-q { width: 32px; height: 32px; border: 0; background: #f5f5f5; border-radius: 8px; color: #2a5bd7; font-weight: bold;
+        font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: inherit; }
+.hx-pill { flex-shrink: 0; border: 1px solid #dbe6ff; background: #f3f6ff; color: #2a5bd7; border-radius: 13px; padding: 3px 8px;
+           font-size: 10.5px; font-family: inherit; }
+.hx-i { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; border: 1px solid #dbe6ff; background: #f3f6ff; color: #2a5bd7;
+        font: bold 12px/20px Georgia, serif; text-align: center; padding: 0; }
+.hx-i.sec { border-style: dashed; }
+.hx-chips { display: flex; gap: 6px; overflow: hidden; padding: 7px 12px; border-bottom: 1px solid #f0f0f0; flex-shrink: 0; }
+.hx-chip { font-size: 11px; padding: 4px 10px; border-radius: 14px; background: #f2f2f2; color: #666; white-space: nowrap; flex-shrink: 0; }
+.hx-chip.on { color: #fff; font-weight: bold; }
+.hx-subh { font-size: 11.5px; color: #607D8B; padding: 10px 14px 0; font-weight: bold; }
+.hx-card { margin: 8px 12px 10px; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.14); border-top: 3px solid var(--g); background: #fff; }
+.hx-fig { background: #FBFAF6; border-bottom: 1px solid #EEE9DF; }
+.hx-fig svg { display: block; width: 100%; height: auto; }
+.hx-body { padding: 8px 12px 10px; }
+.hx-ttl { display: flex; align-items: baseline; gap: 7px; flex-wrap: wrap; }
+.hx-ttl b { font-size: 15px; }
+.hx-yomi { font-size: 10.5px; color: #607D8B; }
+.hx-txt { font-size: 12px; line-height: 1.7; margin: 4px 0 0; color: #333; }
+.hx-links { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+.hx-link { display: flex; align-items: center; gap: 6px; padding: 8px 10px; background: #f3f6ff; border: 1px solid #dbe6ff; border-radius: 9px;
+           font-size: 12px; color: #2a5bd7; font-weight: bold; }
+.hx-link span { margin-left: auto; }
+.unv { font-size: 10px; color: #B71C1C; background: #FDECEA; border-radius: 8px; padding: 1px 6px; }
+.hx-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 8px 12px; }
+.hx-tile { border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.14); border-top: 3px solid var(--g); }
+.hx-tile-n { font-size: 11.5px; font-weight: bold; padding: 4px 8px 6px; }
+.hx-gh { grid-column: 1 / -1; font-size: 11px; color: #607D8B; font-weight: bold; margin-top: 2px; }
+.hx-dim { position: absolute; inset: 0; background: rgba(0,0,0,.38); z-index: 8; }
+.hx-pop { position: absolute; left: 0; right: 0; bottom: 52px; background: #fff; border-radius: 16px 16px 0 0; z-index: 9;
+          box-shadow: 0 -4px 16px rgba(0,0,0,.25); max-height: 520px; overflow: hidden; display: flex; flex-direction: column; }
+.hx-pop-h { display: flex; align-items: center; gap: 8px; padding: 8px 12px 4px; flex-shrink: 0; }
+.hx-pop-h .os-handle { position: absolute; left: 50%; margin-left: -18px; top: 8px; }
+.hx-pop-t { font-size: 13px; font-weight: bold; color: #333; flex: 1; padding-top: 12px; }
+.hx-pop-x { font-size: 22px; color: #bbb; padding-top: 8px; }
+.hx-pop .hx-card { margin-top: 4px; }
+.hx-wchips { display: flex; flex-wrap: wrap; gap: 5px; padding: 4px 12px 8px; border-bottom: 1px solid #f0f0f0; }
+.hx-wchip { font-size: 11px; padding: 3px 9px; border-radius: 12px; background: #f3f6ff; color: #2a5bd7; border: 1px solid #dbe6ff; }
+.hx-wchip.sec { background: #f6f3ee; color: #6D4C41; border-color: #e6ddd0; }
+.hx-secrow { display: flex; align-items: center; gap: 8px; margin: 6px 12px; padding: 9px 11px; border-radius: 10px; background: #f6f3ee;
+             font-size: 12px; color: #4e342e; }
+.hx-secrow small { color: #8d6e63; }
+.hx-secrow span.chev { margin-left: auto; color: #b0a090; }
+.hx-w { color: #1a4fb0; border-bottom: 1px dotted #1a4fb0; }
+.hx-w.sec { color: #5d4037; border-bottom-color: #8d6e63; }
+.hx-kbtn { background: #e3ecff !important; color: #2a5bd7 !important; }
+.btn-hx { background: #8d6e63; }
+.hx-mini { display: flex; gap: 10px; padding: 9px 12px; background: #FBFAF6; border-bottom: 1px solid #EEE9DF; flex-shrink: 0; }
+.hx-mini-fig { width: 112px; flex-shrink: 0; border-radius: 8px; overflow: hidden; border: 1px solid #EEE9DF; background: #fff; }
+.hx-mini-fig svg { display: block; width: 100%; height: auto; }
+.hx-mini-t { font-size: 12.5px; font-weight: bold; color: #333; }
+.hx-mini-x { font-size: 11px; color: #555; line-height: 1.6; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.hx-mini-more { font-size: 11px; color: #2a5bd7; font-weight: bold; margin-top: 2px; display: inline-block; }
+.hx-mini.open { flex-direction: column; }
+.hx-mini.open .hx-mini-fig { width: 100%; }
+.hx-mini.open .hx-mini-x { display: block; }
+.hx-acc { display: flex; align-items: center; gap: 9px; padding: 11px 13px; border-bottom: 1px solid #f0f0f0; font-size: 13.5px; font-weight: bold; color: #333; }
+.hx-acc .dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+.hx-acc small { font-weight: normal; color: #999; font-size: 11px; margin-left: auto; }
+.hx-acc .tw { color: #999; font-size: 11px; width: 10px; }
+.hx-acc2 { padding: 7px 13px 7px 34px; font-size: 11px; color: #607D8B; font-weight: bold; background: #fafbfc; border-bottom: 1px solid #f3f3f3; }
+.hx-acc3 { display: flex; align-items: center; padding: 8px 13px 8px 34px; font-size: 12.5px; color: #333; border-bottom: 1px solid #f5f5f5; }
+.hx-acc3 .tw { color: #999; font-size: 10px; width: 14px; }
+.hx-acc3.open { background: #f3f6ff; color: #2a5bd7; font-weight: bold; }
+.hx-swipe { flex: 1; position: relative; overflow: hidden; }
+.hx-swipe .hx-card { position: absolute; top: 12px; width: 300px; margin: 0; }
+.hx-swipe .c0 { left: -276px; opacity: .45; } .hx-swipe .c1 { left: 37px; } .hx-swipe .c2 { left: 350px; opacity: .45; }
+.hx-dots { display: flex; justify-content: center; align-items: center; gap: 5px; padding: 8px 0 10px; flex-shrink: 0; font-size: 11px; color: #607D8B; }
+.hx-dots i { width: 6px; height: 6px; border-radius: 50%; background: #cfd8dc; display: inline-block; }
+.hx-dots i.on { background: #1565C0; }
+.hx-nav { position: absolute; top: 150px; width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,.95);
+          box-shadow: 0 1px 4px rgba(0,0,0,.25); display: flex; align-items: center; justify-content: center; color: #555; z-index: 3; font-size: 16px; }
+.hx-full { position: absolute; inset: 0; background: #000; z-index: 12; display: flex; flex-direction: column; }
+.hx-full-top { display: flex; align-items: center; padding: 12px 14px; color: #fff; font-size: 12px; }
+.hx-full-top span { margin-left: auto; font-size: 22px; opacity: .8; }
+.hx-full-fig { flex: 1; display: flex; align-items: center; }
+.hx-full-fig svg { width: 100%; height: auto; display: block; background: #FBFAF6; }
+.hx-full-info { padding: 30px 16px 18px; color: #fff; background: linear-gradient(to top, rgba(0,0,0,.9), rgba(0,0,0,0)); }
+.hx-full-info b { font-size: 16px; } .hx-full-info small { opacity: .75; margin-left: 6px; }
+.hx-full-info p { font-size: 12px; line-height: 1.7; margin: 5px 0 0; opacity: .92; }
+.hx-iframe { flex: 1; border: 0; width: 100%; min-height: 0; background: #F4F1EA; }
+.hx-index-row { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-bottom: 1px solid #f0f0f0; font-size: 13.5px; }
+.hx-index-row small { display: block; font-size: 11px; color: #999; margin-top: 2px; }
+.hx-index-row .chev { margin-left: auto; color: #ccc; }
+.hx-index-row.off { color: #bbb; }
+.hx-coach { position: absolute; z-index: 15; right: 52px; top: 50px; width: 190px; background: #263238; color: #fff; font-size: 12px;
+            line-height: 1.6; padding: 9px 11px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,.3); }
+.hx-coach::before { content: ''; position: absolute; top: -7px; right: 12px; border: 7px solid transparent; border-top: 0; border-bottom-color: #263238; }
+.hx-coach small { display: block; opacity: .7; margin-top: 3px; font-size: 10.5px; }
+.sr-box { position: absolute; left: 0; right: 0; bottom: 52px; background: #fff; box-shadow: 0 -4px 12px rgba(0,0,0,.15); z-index: 6; }
+.search-result-item { display: flex; align-items: center; padding: 8px 10px; border-bottom: 1px solid #f0f0f0; gap: 8px; }
+.sr-help-ic { width: 28px; height: 28px; border-radius: 50%; background: #1565C0; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 13px; }
+.set-row { display: flex; align-items: center; padding: 11px 16px; border-bottom: 1px solid #f4f4f4; font-size: 13px; color: #333; }
+.set-row .chev { margin-left: auto; color: #ccc; }
+.set-ph { margin: 0 16px 8px; height: 30px; border-radius: 6px; background: #f5f5f5; }
+.weather { display: flex; gap: 5px; flex: 1; }
+.weather div { flex: 1; height: 46px; border-radius: 8px; background: #f4f7fa; font-size: 9px; color: #90a4ae; padding: 4px; }
+.headbtn { width: 34px; height: 34px; border-radius: 50%; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #555; font-size: 15px; flex-shrink: 0; }
+
+/* 図の部品（remains-help-preview.html と同じ） */
+.sky { fill: #EEF4F8; } .earth { fill: #CDB08A; stroke: #8D6E63; stroke-width: 1.5; stroke-linejoin: round; }
+.slope { fill: #E2D3B5; stroke: #B39B79; stroke-width: 1.2; } .contour { fill: none; stroke: #C8B28F; stroke-width: 1; stroke-dasharray: 4 3; }
+.flat { fill: #D5E6BC; stroke: #6D8B4A; stroke-width: 1.5; } .flat2 { fill: #E7F0D9; stroke: #8AA66A; stroke-width: 1.2; }
+.hl { fill: #F6D9A8; stroke: #C77700; stroke-width: 2; } .field { fill: #D5E6BC; } .outside { fill: #EFE8D8; }
+.moat { fill: #B39B7C; } .water { fill: #9ACBEA; } .wall { fill: #A98B68; } .stone { fill: #B8C2C8; stroke: #78909C; stroke-width: 1; }
+.roof { fill: #56656D; } .plaster { fill: #FAFAF7; stroke: #9E9E9E; stroke-width: 1; } .wood { fill: #6D4C41; }
+.door { fill: #8D6E63; stroke: #5D4037; stroke-width: 1; } .grass { fill: none; stroke: #6D8B4A; stroke-width: 3; }
+.grass-hl { fill: none; stroke: #C77700; stroke-width: 4; } .ghost { fill: none; stroke: #90A4AE; stroke-width: 1.3; stroke-dasharray: 4 3; }
+.trench-o { fill: none; stroke: #A1887F; stroke-width: 9; stroke-linecap: round; } .trench-i { fill: none; stroke: #6D5246; stroke-width: 2.5; stroke-linecap: round; }
+.lbl { font-size: 11px; fill: #37474F; font-weight: 700; } .lbl-s { font-size: 9.5px; fill: #546E7A; } .lbl-w { font-size: 11px; fill: #fff; font-weight: 700; }
+.cap { font-size: 9.5px; fill: #90A4AE; } .m { text-anchor: middle; } .ld { stroke: #78909C; stroke-width: 1; fill: none; }
+.enemy { stroke: #E53935; stroke-width: 2.4; fill: none; stroke-dasharray: 6 4; marker-end: url(#arR); }
+.route { stroke: #455A64; stroke-width: 2.2; fill: none; stroke-dasharray: 6 4; marker-end: url(#arG); }
+.shoot { stroke: #1E88E5; stroke-width: 2; fill: none; marker-end: url(#arB); } .gate { fill: #3E2723; }
+.kinds { width: 100%; border-collapse: collapse; font-size: 11px; }
+.kinds td { border-bottom: 1px solid #EEE9DF; padding: 5px 8px; vertical-align: top; }
+.kinds td:first-child { font-weight: 700; white-space: nowrap; } .kinds td.n { color: #607D8B; white-space: nowrap; }
+</style>
+</head><body>
+<svg width="0" height="0" style="position:absolute">
+    <defs>
+        <marker id="arR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#E53935"/></marker>
+        <marker id="arB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1E88E5"/></marker>
+        <marker id="arG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#455A64"/></marker>
+        <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <rect width="6" height="6" fill="#F3EBDD"/><line x1="0" y1="0" x2="0" y2="6" stroke="#D6C3A3" stroke-width="2"/>
+        </pattern>
+    </defs>
+</svg>
+
+<h1>遺構ヘルプの組み込み案 — 見るまでの操作（入口）と見せ方（デザイン）</h1>
+<p class="lead">ヘルプの中身（90枚のカード）は <b>mock/remains-help-data.js</b> を読み込んで、そのまま画面に差し込んでいます。
+一覧・情報シート・メニューの見た目は index.html の実CSSを写したもので、行の件数・城名・住所・距離は castle.js の実データです
+（距離は東京駅を起点に計算）。地図と下部バーだけは模式です。<b>赤い枠と番号</b>が押す所と順番です。</p>
+<nav class="toc" id="toc"></nav>
+
+<div class="note">
+<b>組み込みに関わる今の作り（コードで確認したこと）</b>
+<ul>
+<li>メニュー「一覧から検索」は都道府県・城主・遺構・家臣団の4本で、<b>5本目を足す余地は無い</b>と決めてあります。<span class="src">index.html 883〜886行のコメント</span></li>
+<li>遺構ビューは3段（分類の一覧 → 分類の内訳 → その遺構の城一覧）で、城を開くと情報シートの先頭に「↩ ◯◯の城一覧に戻る」が入ります。<span class="src">index.html 1994〜2059行、app.js 6556〜6571行</span></li>
+<li>情報シートの「遺構」は、ラベルチップ＋読点区切りの文字です。2行を超える行は省略され、<b>行を押すと全文表示と切り替わります</b>。<span class="src">app.js 1901〜1906行・3867〜3873行</span></li>
+<li>家臣団は、メニューのパネルの中に別ページを iframe で開いています。<span class="src">app.js 7795〜7805行</span></li>
+<li>検索の索引は名前と住所だけで、遺構の語は入っていません。<span class="src">app.js 4107〜4128行</span></li>
+<li>ヘルプの図とカードは 72,752バイト（app.js は 532,714バイト）です。</li>
+</ul>
+<b>遺構の語がヘルプのどこへ行けるか（castle.js 全件で集計）</b>
+<ul>
+<li>遺構のある15,442城のうち <b>99.5%（15,363城）</b>は、少なくとも1語に行き先があります。特定のカードへ行ける語がある城は <b>63.0%（9,726城）</b>です。</li>
+<li>語の延べ42,012件のうち、カードへ行けるのは39.2%、<b>「曲輪」「堀」「石垣」「虎口」のような総称で分野の説明にしか行けないのが59.3%</b>、行き先の無いものが1.5%です。</li>
+<li>行き先の無い語の上位：石碑47城・庭園42城・竪土塁26城・説明板14城・列石11城・城壁11城。</li>
+</ul>
+</div>
+
+<h2 class="part" id="p1">1. 入口の案（どこから、何回押すと見られるか）</h2>
+<p class="part-lead">案ごとに、押す順番を端末の画面で並べています。入口の案は組み合わせて使えます。</p>
+<div id="entries"></div>
+
+<h2 class="part" id="p2">2. 見せ方の案（ヘルプそのものの画面）</h2>
+<p class="part-lead">入口から開いた先の画面です。どの入口にどの見せ方を合わせるかも組み合わせで決められます。</p>
+<div id="views"></div>
+
+<h2 class="part" id="p3">3. 比べる</h2>
+<div id="cmp"></div>
+
+<h2 class="part" id="p4">4. 組み合わせの例と、決めていただくこと</h2>
+<div class="note" id="combo"></div>
+
+<script src="mock/remains-help-data.js"></script>
+<script>
+/* ══ カードの引き当て ══ */
+const CARD = {};
+SECTIONS.forEach(s => s.subs.forEach(sb => sb.cards.forEach(c => { CARD[c.t] = { c, s, sb }; })));
+const SEC = {}; SECTIONS.forEach(s => { SEC[s.name] = s; });
+
+/* ══ 画面の部品 ══ */
+const tapAttr = n => n ? ` tap" data-n="${n}` : '';
+const bbar = (typing) => `<div class="bbar"><div class="sbox${typing ? ' typing' : ''}">🔍 ${typing || '検索'}</div><div class="hamb">≡</div></div>`;
+const phoneMenu = (inner, cap, extra = '') => `<div class="phone">${cap ? `<div class="pcap">${cap}</div>` : ''}<div class="map" style="height:52px"></div><div class="panel">${inner}</div>${bbar()}${extra}</div>`;
+const phoneMap = (inner, cap, typing) => `<div class="phone">${cap ? `<div class="pcap">${cap}</div>` : ''}<div class="map" style="flex:1"><div class="pin"><img src="castle.png"></div></div>${bbar(typing)}${inner}</div>`;
+const arrow = s => `<div class="arrow"><b>→</b>${s}</div>`;
+const chev = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>';
+
+const RG_ICON = {
+    kuruwa: '<rect x="2" y="5" width="20" height="14" rx="2" fill="none" stroke="#fff" stroke-width="2.4"/><path d="M8 5v14" stroke="#fff" stroke-width="2.4"/>',
+    hori: '<path d="M2 5v6l5 8h10l5-8V5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/>',
+    dorui: '<path d="M2 19L8 7l4 6 4-8 6 14z" fill="#fff"/>',
+    ishi: '<g fill="#fff"><rect x="2" y="5" width="9" height="6" rx="1"/><rect x="13" y="5" width="9" height="6" rx="1"/><rect x="2" y="13" width="12" height="6" rx="1"/><rect x="16" y="13" width="6" height="6" rx="1"/></g>',
+    bldg: '<path d="M12 3l9 5H3z" fill="#fff"/><rect x="5" y="9" width="14" height="11" fill="#fff"/>',
+    koguchi: '<path d="M4 20V6h7M20 20V6h-7" fill="none" stroke="#fff" stroke-width="2.6"/>',
+    mizu: '<path d="M12 3s6 7 6 11a6 6 0 01-12 0c0-4 6-11 6-11z" fill="#fff"/>',
+    gunji: '<path d="M3 17l14-8 3 4-14 8z" fill="#fff"/><circle cx="19" cy="7" r="3" fill="#fff"/>',
+    hakkutsu: '<path d="M3 20l8-8M9 6l9 9-3 3-9-9z" stroke="#fff" stroke-width="2.4" fill="none"/>',
+    haka: '<path d="M7 21V9a5 5 0 0110 0v12z" fill="#fff"/>',
+    sign: '<rect x="3" y="4" width="18" height="10" rx="2" fill="#fff"/><path d="M12 14v7" stroke="#fff" stroke-width="2.4"/>',
+    other: '<circle cx="6" cy="12" r="2.2" fill="#fff"/><circle cx="12" cy="12" r="2.2" fill="#fff"/><circle cx="18" cy="12" r="2.2" fill="#fff"/>',
+};
+// 分類一覧（遺構から探す）。並びは REMAIN_GROUP_ORDER、件数・語は castle.js の実数
+const RG = [
+    ['bldg', '建造物', '#AD1457', '門、櫓台、模擬天守、櫓', 292, 624],
+    ['ishi', '石垣・石造物', '#546E7A', '石垣、石積、石塁、礎石', 53, 2056],
+    ['kuruwa', '曲輪・区画', '#6D4C41', '曲輪、曲輪跡、本丸、腰曲輪', 77, 12493],
+    ['koguchi', '虎口・出入口', '#EF6C00', '虎口、馬出、枡形虎口、大手門', 48, 889],
+    ['dorui', '土塁・切岸', '#8D6E63', '土塁、土橋、切岸、竪土塁', 31, 8446],
+    ['sign', '碑・案内板', '#9E9D24', '石碑、説明板、碑、説明版', 14, 71],
+    ['hori', '堀', '#1565C0', '堀、堀切、空堀、竪堀', 87, 11797],
+    ['mizu', '井戸・水利', '#00838F', '井戸、井戸跡、庭園、庭園跡', 32, 964],
+    ['gunji', '砲台・物見', '#4527A0', '砲座、狼煙場、物見台跡、堡塔', 20, 27],
+];
+function remainsListView(o = {}) {
+    const head = `<div class="lords-head"><div class="lords-head-title">遺構から探す</div>`
+        + (o.q ? `<button class="hx-q${tapAttr(o.qTap)}">?</button>` : '')
+        + `<button class="lords-iconbtn">×</button></div>`;
+    const chips = `<div class="lords-chips"><button class="lords-chip" aria-pressed="${o.zukan ? 'false' : 'true'}">グループ</button><button class="lords-chip" aria-pressed="false">個別</button>`
+        + (o.zukanChip ? `<button class="lords-chip${tapAttr(o.zukanTap)}" aria-pressed="${o.zukan ? 'true' : 'false'}">図鑑</button>` : '') + `</div>`;
+    let body;
+    if (o.zukan) {
+        body = zukanGrid(o.zukanTileTap);
+    } else {
+        body = RG.map(([id, name, color, sub, kinds, n]) => `<div class="lord-row">
+            <div class="rg-ic" style="background:${color}"><svg viewBox="0 0 24 24">${RG_ICON[id]}</svg></div>
+            <div class="lord-main"><div class="lord-name">${name}</div><div class="lord-sub">${sub} ほか${kinds}種</div></div>
+            ${o.pill ? (['sign'].includes(id) ? '' : `<button class="hx-pill${tapAttr(o.pill === id ? o.pillTap : 0)}">図解</button>`) : ''}
+            <div class="lord-num">${n.toLocaleString()}城</div><div class="lord-chev">›</div></div>`).join('');
+    }
+    return head + `<div class="lords-filter"><input placeholder="${o.zukan ? '遺構名で探す' : '遺構名で絞り込み'}">${chips}</div><div class="lords-scroll">${body}</div>`;
+}
+// 堀の内訳（語は castle.js の完全一致の城数。ⓘ の行き先はヘルプのカードか分野の説明）
+const HORI_TOKS = [['堀', 8951, 'sec'], ['堀切', 2614, '堀切'], ['空堀', 1018, '空堀'], ['竪堀', 947, '竪堀'], ['畝状竪堀群', 686, '畝状竪堀群'],
+                   ['横堀', 597, '横堀'], ['水堀', 89, '水堀'], ['堀跡', 38, 'sec'], ['横堀（空堀）', 15, '横堀'], ['連続竪堀', 8, '畝状竪堀群'], ['障子堀', 7, '障子堀']];
+function horiBreakdownView(o = {}) {
+    return `<div class="lords-head"><button class="lords-iconbtn">${chev}</button><div class="lords-head-title">堀</div><button class="lords-iconbtn">×</button></div>`
+        + `<div class="lords-filter"><input placeholder="遺構名で絞り込み"></div>`
+        + `<div class="rt-all">＋ 「堀」の城をまとめて見る（11,797城）</div>`
+        + `<div class="lords-scroll">` + HORI_TOKS.map(([n, c, d]) => `<div class="rt-row"><span class="rt-dot" style="background:#1565C0"></span>
+            <div class="rt-name">${n}</div><div class="rt-num">${c.toLocaleString()}城</div>
+            ${o.info ? `<button class="hx-i${d === 'sec' ? ' sec' : ''}${tapAttr(o.infoTap === n ? o.tapN : 0)}">i</button>` : ''}
+            <div class="lord-chev">›</div></div>`).join('') + `</div>`;
+}
+// 「堀切」を持つ城の近い順（東京駅から。castle.js の実座標で計算）
+const HORIKIRI_CASTLES = [['赤塚城', '東京都板橋区赤塚五丁目', '16.0km'], ['矢上城', '神奈川県横浜市港北区日吉四丁目', '17.7km'],
+    ['枡形城', '神奈川県川崎市多摩区枡形六丁目', '20.2km'], ['獅子ヶ谷城', '神奈川県横浜市鶴見区獅子ケ谷三丁目', '21.0km'],
+    ['茅ヶ崎城', '神奈川県横浜市都筑区茅ケ崎東二丁目', '22.8km']];
+function castleListView(o = {}) {
+    const c = CARD['堀切'].c;
+    let mini = '';
+    if (o.mini) {
+        mini = `<div class="hx-mini${o.mini === 'open' ? ' open' : ''}"><div class="hx-mini-fig">${c.fig}</div><div>
+            <div class="hx-mini-t">堀切とは</div><div class="hx-mini-x">${c.txt}</div>
+            <span class="hx-mini-more${tapAttr(o.moreTap)}">${o.mini === 'open' ? '閉じる ▲' : 'くわしく ▼'}</span></div></div>`;
+    }
+    return `<div class="lords-head"><button class="lords-iconbtn">${chev}</button><div class="lords-head-title">堀切（2,614城）</div>`
+        + (o.q ? `<button class="hx-q${tapAttr(o.qTap)}">?</button>` : '') + `<button class="lords-iconbtn">×</button></div>`
+        + `<div class="lords-filter"><input placeholder="城名・都道府県で絞り込み"><div class="lords-chips"><button class="lords-chip" aria-pressed="true">近い順</button><button class="lords-chip" aria-pressed="false">都道府県順</button></div></div>`
+        + mini
+        + `<div class="lords-scroll">` + HORIKIRI_CASTLES.map(([n, a, d]) => `<div class="nearby-item"><div class="nearby-item-icon" style="background:#8A8A8A"><img src="castle.png"></div>
+            <div class="nearby-item-text"><div class="nearby-item-name">${n}</div><div class="nearby-item-sub">${a}</div></div><div class="nearby-item-dist">${d}</div></div>`).join('') + `</div>`;
+}
+// 情報シート（滝山城。castle.js の実データ。写真とボタンの有無は模式）
+const TAKI_WORDS = [['曲輪', 'sec:曲輪'], ['枡形虎口', 'sec:虎口'], ['土塁', '土塁の各部'], ['土橋', '土橋'], ['堀', 'sec:堀'], ['横堀', '横堀'],
+                    ['竪堀', '竪堀'], ['畝堀', '畝堀'], ['障子堀', '障子堀'], ['堀切', '堀切'], ['井戸', '井戸']];
+function sheet(o = {}) {
+    const kv = (k, v, cls = '') => `<div class="os-line os-clamp ${cls}"><span class="os-k">${k}</span>${v}</div>`;
+    let remains;
+    if (o.words) {
+        remains = TAKI_WORDS.map(([w, d]) => `<span class="hx-w${d.startsWith('sec') ? ' sec' : ''}${tapAttr(o.wordTap === w ? o.tapN : 0)}">${w}</span>`).join('、');
+    } else {
+        remains = TAKI_WORDS.map(w => w[0]).join('、');
+    }
+    const label = o.kbtn ? `<span class="os-k hx-kbtn${tapAttr(o.kbtn)}">遺構 ?</span>` : '<span class="os-k">遺構</span>';
+    const lines = kv('別名', '武州瀧山城、瀧山城、横山城、竹山城、武蔵滝山城')
+        + `<div class="os-line"><span class="os-k">標高</span>170m <span class="os-k">比高</span>80m</div>`
+        + `<div class="os-line os-clamp">${label}${remains}</div>`
+        + kv('城主', '大石氏、北条氏照、大石定重、大石定久') + kv('住所', '東京都八王子市高月町');
+    const rowA = `<div class="os-brow"><div class="btn btn-gmap">GoogleMap</div><div class="btn btn-access">アクセス</div>`
+        + (o.rowBtn ? `<div class="btn btn-hx${tapAttr(o.rowBtn)}">遺構の見かた</div>` : '') + `</div>`;
+    return `<div class="osheet"><div class="os-header"><div class="os-handle"></div><span class="os-fav">☆</span><span class="os-close">×</span></div>
+        <div class="os-body">
+        <div class="os-title"><span class="popup-form-badge f-okajiro">丘城</span><span class="os-genrebadge" style="background:#EA4335">続100名城</span><span class="os-name">滝山城</span></div>
+        <div class="os-row"><div class="os-photo">写真</div><div class="os-meta">${lines}</div></div>
+        ${rowA}
+        <div class="os-brow"><div class="btn btn-wiki">Wikipedia</div><div class="btn btn-kojodan">攻城団</div><div class="btn btn-shirohb">城郭放浪記</div></div>
+        <div class="os-brow"><div class="btn btn-nav"><span class="nav-ico"></span><span class="nav-cap">ここへ行く</span></div><div class="btn btn-nav-yahoo"><span class="nav-ico"></span><span class="nav-cap">ここへ行く</span></div><div class="btn btn-nearby-search">この周辺を検索</div></div>
+        </div></div>`;
+}
+
+/* ヘルプ側の部品 */
+function hxCard(title, foot = '') {
+    const { c, s } = CARD[title];
+    return `<div class="hx-card" style="--g:${s.color}"><div class="hx-fig">${c.fig}</div><div class="hx-body">
+        <div class="hx-ttl"><b>${c.t}</b>${c.y ? `<span class="hx-yomi">${c.y}</span>` : ''}${c.unv ? '<span class="unv">出典未確認</span>' : ''}</div>
+        <p class="hx-txt">${c.txt}</p>${foot}</div></div>`;
+}
+function secChips(active) {
+    return `<div class="hx-chips">` + SECTIONS.map(s => `<span class="hx-chip${s.name === active ? ' on' : ''}" style="${s.name === active ? `background:${s.color}` : ''}">${s.name}</span>`).join('') + `</div>`;
+}
+function helpView(secName, subName, titles, o = {}) {
+    const s = SEC[secName];
+    return `<div class="lords-head"><button class="lords-iconbtn">${chev}</button><div class="lords-head-title">遺構の見かた</div><button class="lords-iconbtn">×</button></div>`
+        + `<div class="lords-filter"><input placeholder="遺構名で探す"></div>` + secChips(secName)
+        + `<div class="lords-scroll">${o.lead ? `<div style="padding:9px 14px 0;font-size:11.5px;color:#607D8B;line-height:1.7">${s.lead}</div>` : ''}<div class="hx-subh">${subName}</div>${titles.map(tt => hxCard(tt)).join('')}</div>`;
+}
+function zukanGrid(tapTitle) {
+    const s = SEC['堀'];
+    let html = '<div class="hx-grid">';
+    s.subs.forEach((sb, i) => {
+        if (i > 2) return;
+        html += `<div class="hx-gh">${sb.name}</div>`;
+        sb.cards.forEach(c => { html += `<div class="hx-tile${tapAttr(c.t === tapTitle ? 3 : 0)}" style="--g:${s.color}"><div class="hx-fig">${c.fig}</div><div class="hx-tile-n">${c.t}</div></div>`; });
+    });
+    return html + '</div>';
+}
+function popCard(title, links, caption) {
+    return `<div class="hx-dim"></div><div class="hx-pop"><div class="hx-pop-h"><div class="os-handle"></div><div class="hx-pop-t">${caption || '遺構の見かた'}</div><div class="hx-pop-x">×</div></div>`
+        + hxCard(title, links ? `<div class="hx-links">${links}</div>` : '') + `</div>`;
+}
+const link = (s) => `<div class="hx-link">${s}<span>›</span></div>`;
+function castleWordsPop() {
+    const chips = TAKI_WORDS.map(([w, d]) => `<span class="hx-wchip${d.startsWith('sec') ? ' sec' : ''}">${w}</span>`).join('');
+    const cards = ['土塁の各部', '土橋', '横堀', '竪堀'].map(t => hxCard(t)).join('');
+    return `<div class="hx-dim"></div><div class="hx-pop"><div class="hx-pop-h"><div class="os-handle"></div><div class="hx-pop-t">滝山城の遺構（11語）</div><div class="hx-pop-x">×</div></div>
+        <div class="hx-wchips">${chips}</div>
+        <div style="overflow:hidden">
+        <div class="hx-secrow">曲輪 <small>分野の説明へ（総称）</small><span class="chev">›</span></div>
+        <div class="hx-secrow">枡形虎口 <small>虎口の分野へ（内枡形・外枡形）</small><span class="chev">›</span></div>
+        ${cards}</div></div>`;
+}
+function menuMain(o = {}) {
+    const btn = (label, bg, icon, tap) => `<button class="nearby-list-btn${tapAttr(tap)}"><span class="nlb-ic" style="background:${bg}">${icon}</span><span class="nlb-n">${label}</span></button>`;
+    return `<div style="display:flex;justify-content:center;padding:8px 0 4px"><div style="width:36px;height:5px;border-radius:3px;background:#ddd"></div></div>
+        <div style="display:flex;align-items:center;gap:6px;padding:0 12px 6px"><div class="weather"><div>今日</div><div>明日</div><div>明後日</div></div>
+        <div class="headbtn">☆</div>${o.q ? `<div class="headbtn${tapAttr(o.q)}" style="color:#2a5bd7;font-weight:bold">?</div>` : ''}<div class="headbtn">⚙</div></div>
+        <div style="border-top:1px solid #f0f0f0"></div><div class="nearby-section-label">周辺検索</div>
+        <div class="nearby-cat-grid">${'<div class="nearby-cat-item"></div>'.repeat(16)}</div>
+        <div style="border-top:1px solid #f0f0f0"></div><div class="nearby-section-label">一覧から検索</div>
+        <div class="nearby-list-btns">
+        ${btn('都道府県', '#2a7d5f', '<svg viewBox="0 0 100 100"><g fill="#fff"><rect x="12" y="12" width="34" height="30" rx="4"/><rect x="52" y="12" width="36" height="18" rx="4"/><rect x="52" y="36" width="36" height="52" rx="4"/><rect x="12" y="48" width="34" height="40" rx="4"/></g></svg>')}
+        ${btn('城主', '#8A8A8A', '<img src="castle.png">')}
+        ${btn('遺構', '#8d6e63', '<svg viewBox="0 0 100 100"><g fill="#fff"><rect x="24" y="12" width="52" height="12" rx="3"/><rect x="14" y="30" width="30" height="18" rx="3"/><rect x="50" y="30" width="36" height="18" rx="3"/><rect x="14" y="54" width="36" height="18" rx="3"/><rect x="56" y="54" width="30" height="18" rx="3"/></g></svg>', o.remains)}
+        ${btn('家臣団', '#2f4f7f', '<svg viewBox="0 0 100 100"><g fill="#fff"><path d="M29 57 C29 43 38 35 50 35 C62 35 71 43 71 57 Z"/><path d="M20 60 H80 L93 86 H66 L59 66 H41 L34 86 H7 Z"/></g></svg>')}
+        </div>`;
+}
+
+/* ══ 入口の案 ══ */
+const ENTRIES = [
+  { no: '案1', title: '「遺構から探す」の見出しに「？」を置く', taps: 'メニュー → 遺構 → ？（3タップ）', view: '見せ方A',
+    flow: [phoneMenu(menuMain({ remains: 1 }), 'メニュー'), arrow('遺構'), phoneMenu(remainsListView({ q: true, qTap: 2 }), '遺構から探す'), arrow('？'),
+           phoneMenu(helpView('曲輪', '位置による呼び名', ['本丸', '二の丸・三の丸'], { lead: true }), 'ヘルプ（全体）')],
+    good: '遺構を探す画面の中にあるので気付きやすい。見出しの枠（lords-head）にボタンを1つ足すだけで、一覧の行の作りは変えない。タイトル「遺構から探す」は6文字で、ボタンを足しても幅271px残り切れない（375px幅での計算）。',
+    bad: '開くとヘルプの先頭（曲輪）から始まるので、知りたい語までは分野チップや検索で探すことになる。',
+    change: 'index.html（見出しのボタン、ヘルプのビュー）、app.js（ヘルプのビューの開閉）、sw.js の VERSION' },
+  { no: '案2', title: '分類の行に「図解」ボタンを置く', taps: 'メニュー → 遺構 → 図解（3タップ）', view: '見せ方A',
+    flow: [phoneMenu(remainsListView({ pill: 'hori', pillTap: 1 }), '遺構から探す'), arrow('堀の「図解」'),
+           phoneMenu(helpView('堀', '水の有無', ['空堀', '水堀'], { lead: true }), 'ヘルプ（堀から）')],
+    good: '押した分類の説明から始まる。行を押したときの動き（内訳へ進む）は変えず、右端のボタンに分ける（中分類の「内訳」ボタン rt-drill と同じ考え方）。',
+    bad: 'メニューの分類（12）とヘルプの分野（11）は1対1ではない。建造物はヘルプの門・櫓・天守・塀と建物の4分野に分かれ、碑・案内板・発掘遺構・墓・その他はヘルプに分野が無い。行ごとにボタンの有無がばらつく。',
+    change: 'app.js の renderRemainsList（分類の行）、ヘルプのビュー' },
+  { no: '案3', title: '内訳の遺構の行に「i」を置き、その1枚だけを出す', taps: 'メニュー → 遺構 → 分類 → i（4タップ）', view: '見せ方E',
+    flow: [phoneMenu(horiBreakdownView({ info: true, infoTap: '堀切', tapN: 1 }), '堀の内訳'), arrow('堀切の i'),
+           phoneMenu(horiBreakdownView({ info: true }), '1枚だけ重ねる', popCard('堀切', link('この遺構の城を見る（2,614城）') + link('堀の種類をすべて見る')))],
+    good: '「堀切って何？」と思ったその行から、画面を離れずに1枚だけ見られる。カードから城一覧やヘルプ全体へ続けられる。',
+    bad: '内訳に出る757種のうち、行き先があるのは443種（カード285種＋分野の説明158種）で、残り314種の行には i が出ない。点線の i は分野の説明へ行く総称（堀・堀跡）。',
+    change: 'app.js の renderRemainsTokList / remainsRowHtml、下から出す1枚の部品' },
+  { no: '案4', title: '城一覧の先頭に、その遺構の小さなカードを置く', taps: 'メニュー → 遺構 → 分類 → 遺構（4タップで目に入る。全文は＋1）', view: '見せ方H',
+    flow: [phoneMenu(castleListView({ mini: 'closed', moreTap: 1 }), '城一覧（閉じた状態）'), arrow('くわしく'),
+           phoneMenu(castleListView({ mini: 'open' }), '城一覧（開いた状態）'), arrow('（変形）<br>見出しの？'),
+           phoneMenu(castleListView({ q: true, qTap: 1 }), '変形：？だけ置く', popCard('堀切', link('閉じて城一覧に戻る')))],
+    good: '追加の操作なしで、城を探しているときに目に入る。変形（見出しの？）なら一覧の高さを使わない。',
+    bad: '閉じた状態でも一覧の上に97px（このモックの描画で計測。図112px幅＋説明2行＋余白）を使う。「堀をまとめて見る」のように分類・中分類で開いた城一覧では、どのカードを出すか決める必要がある。',
+    change: 'app.js の openRemainsDetail / renderRemainsCastles、index.html の城一覧ビュー' },
+  { no: '案5', title: '情報シートの遺構の語を、押せる語にする', taps: '地図の城 → 語（2タップ）', view: '見せ方E',
+    flow: [phoneMap(sheet({ words: true, wordTap: '横堀', tapN: 1 }), '情報シート'), arrow('語（横堀）'),
+           phoneMap(sheet({ words: true }) + popCard('横堀', link('滝山城に戻る')), 'シートの上に1枚')],
+    good: '周辺検索・都道府県・お気に入りなど、どこから城を開いても使える。遺構のある城の99.5%で、少なくとも1語に行き先がある。',
+    bad: '遺構の行は2行を超えると省略され、行を押すと全文表示と切り替わる（app.js 3867〜3873行）。語を押したときにこの切り替えが起きないようにする処理が要る。読点で区切った11pxの語は隣と近く、指で狙いにくい（滝山城は11語が3行分あり、2行に省略される）。',
+    change: 'app.js の castleAttrLine（遺構だけ語に分けて出す）と、シートのクリック処理' },
+  { no: '案6', title: '情報シートの「遺構」ラベルを押せるようにし、その城の遺構だけをまとめて出す', taps: '地図の城 → 遺構 ?（2タップ）', view: '見せ方E（その城の語だけ）',
+    flow: [phoneMap(sheet({ kbtn: 1 }), '情報シート'), arrow('遺構 ?'), phoneMap(sheet({}) + castleWordsPop(), 'この城の遺構')],
+    good: '押す所が1か所で狙いやすい。その城に出てくる語だけなので読む量が決まる（滝山城は11語→カード8枚＋分野の説明3つ）。',
+    bad: 'ラベルも省略される行の中にあるので、ラベルを押したときは全文表示の切り替えに回さない処理が要る（語ごとより1か所で済む）。ラベルチップは全種別で同じ見た目に揃えてあり（index.html 531〜544行のコメント）、遺構だけ色を変えることになる。',
+    change: 'app.js の castleAttrLine とシートのクリック処理、その城の語をまとめる部品' },
+  { no: '案7', title: '情報シートのボタン行に「遺構の見かた」を足す', taps: '地図の城 → 遺構の見かた（2タップ）', view: '見せ方E（案6と同じ）',
+    flow: [phoneMap(sheet({ rowBtn: 1 }), '情報シート'), arrow('遺構の見かた'), phoneMap(sheet({ rowBtn: 0 }) + castleWordsPop(), 'この城の遺構')],
+    good: '既存のボタン行に並ぶので、押せることが一目で分かる。省略行の切り替えとは関係しない。',
+    bad: '行A（GoogleMap・アクセス）は等分なので、2本から3本になり1本が狭まる（行Cはすでに3本で、3本並びの前例はある）。遺構が無い城・行き先の語が無い城ではボタンを出さない判定が要る。',
+    change: 'app.js の buildSheetHtml（城の行A）' },
+  { no: '案8', title: 'メニュー上部に「？」の丸ボタンを置き、ヘルプの目次から入る', taps: 'メニュー → ？ → 遺構の見かた（3タップ）', view: '目次 → 見せ方A',
+    flow: [phoneMenu(menuMain({ q: 1 }), 'メニュー'), arrow('？'),
+           phoneMenu(`<div class="lords-head"><button class="lords-iconbtn">${chev}</button><div class="lords-head-title">ヘルプ</div><button class="lords-iconbtn">×</button></div>
+             <div class="hx-index-row tap" data-n="2">遺構の見かた<small>曲輪・堀・門など90種類を図で説明</small><span class="chev">›</span></div>
+             <div class="hx-index-row off">（ほかのヘルプを足す場所）</div>`, 'ヘルプの目次'), arrow('遺構の見かた'),
+           phoneMenu(helpView('曲輪', '位置による呼び名', ['本丸'], { lead: true }), 'ヘルプ（全体）')],
+    good: '遺構以外のヘルプ（使い方など）を後から足す置き場になる。',
+    bad: 'お気に入りの★を足したとき、天気カードが1枚86pxから83.7pxに縮んだ（index.html 1645〜1646行のコメント、SE3実測）。もう1つ足すとさらに縮む（幅は未計測）。遺構を見ている最中の入口ではない。',
+    change: 'index.html のメニュー上部、ヘルプの目次とビュー' },
+  { no: '案9', title: '遺構ビューのチップに「図鑑」を足す', taps: 'メニュー → 遺構 → 図鑑 → 種類（4タップ）', view: '見せ方B → カード',
+    flow: [phoneMenu(remainsListView({ zukanChip: true, zukanTap: 1 }), '遺構から探す'), arrow('図鑑'),
+           phoneMenu(remainsListView({ zukanChip: true, zukan: true, zukanTileTap: '竪堀' }), '図鑑（堀）'), arrow('竪堀'),
+           phoneMenu(remainsListView({ zukanChip: true, zukan: true }), 'カードを重ねる', popCard('竪堀', link('この遺構の城を見る（947城）')))],
+    good: '図を見ながら探せる。カードから「この遺構の城を見る」で城一覧へ行け、探す機能と行き来できる。',
+    bad: '「グループ／個別」は同じ遺構データの並べ替えだが、「図鑑」だけ中身が別物（遺構欄の語ではなくヘルプのカード）になる。',
+    change: 'index.html のチップ、app.js の setRemainsMode / renderRemainsList' },
+  { no: '案10', title: '設定の中に「ヘルプ」の区画を置く', taps: 'メニュー → ⚙ → 遺構の見かた（3タップ）', view: '見せ方A',
+    flow: [phoneMenu(`<div style="display:flex;align-items:center;padding:12px 16px 8px;gap:8px"><button class="lords-iconbtn">${chev}</button><span style="font-size:14px;font-weight:bold">設定</span></div>
+             <div class="nearby-section-label">ヘルプ（新設）</div><div class="set-row tap" data-n="2">遺構の見かた<span class="chev">›</span></div>
+             <div style="border-top:1px solid #f0f0f0"></div><div class="nearby-section-label">オブジェクト表示</div><div class="set-ph"></div><div class="set-ph"></div>
+             <div style="border-top:1px solid #f0f0f0"></div><div class="nearby-section-label">テキスト表示</div><div class="set-ph"></div>
+             <div style="border-top:1px solid #f0f0f0"></div><div class="nearby-section-label">メニュー表示</div><div class="set-ph"></div>
+             <div style="border-top:1px solid #f0f0f0"></div><div class="nearby-section-label">お気に入りの名前</div><div class="set-ph"></div><div class="set-ph"></div>`, '設定'), arrow('遺構の見かた'),
+           phoneMenu(helpView('曲輪', '位置による呼び名', ['本丸'], { lead: true }), 'ヘルプ（全体）')],
+    good: '常設のボタンを増やさない（同期の入口を設定の中だけに置いたのと同じ考え方。index.html 1879〜1880行のコメント）。',
+    bad: '設定は表示・同期などの区画で、ヘルプを探しに来る場所ではないため見つけにくい。',
+    change: 'index.html の設定ビュー' },
+  { no: '案11', title: '検索窓で遺構名を調べられるようにする', taps: '検索窓に入力 → 候補の先頭（入力＋1タップ）', view: '見せ方E',
+    flow: [phoneMap(`<div class="sr-box"><div class="search-result-item tap" data-n="1"><div class="sr-help-ic">?</div><div style="flex:1"><div style="font-size:13px;font-weight:bold">堀切 とは</div><div style="font-size:11px;color:#999">遺構の図解（堀）</div></div></div>
+             <div style="padding:10px;font-size:11px;color:#aaa;text-align:center">この下に今の検索結果が続く</div></div>`, '検索', '堀切'), arrow('候補'),
+           phoneMap(popCard('堀切', link('「堀切」のある城を見る（2,614城）')), 'カードを重ねる', '堀切')],
+    good: '名前を知っている語をすぐ引ける。',
+    bad: '今の検索の索引は名前と住所だけで、遺構の語は入っていない（app.js 4107〜4128行）。検索に「解説」という別種類の候補を足すことになる。',
+    change: 'app.js の検索（候補の組み立て）' },
+  { no: '案12', title: '初めて遺構ビューを開いたときだけ、入口を案内する（案1・2・9の補助）', taps: '操作は増えない', view: '—',
+    flow: [phoneMenu(remainsListView({ q: true }), '遺構から探す（初回だけ）', `<div class="hx-coach">遺構の意味は「？」から図で見られます<small>タップで閉じ、次からは出ません</small></div>`)],
+    good: '入口に気付いてもらえる。表示済みかは storeGet / storeSet（app.js 30〜41行）で覚えられる。',
+    bad: 'storeSet は保存のたびに syncPush を呼ぶ（app.js 39行）。案内済みの印を端末間で同期させるかを決める必要がある（syncPush がどのキーを送るかは未確認）。',
+    change: 'app.js の openRemainsView' },
+];
+
+/* ══ 見せ方の案 ══ */
+function accordionView() {
+    const secs = SECTIONS.slice(0, 4);
+    let html = `<div class="lords-head"><button class="lords-iconbtn">${chev}</button><div class="lords-head-title">遺構の見かた</div><button class="lords-iconbtn">×</button></div><div class="lords-scroll">`;
+    secs.forEach(s => {
+        const n = s.subs.reduce((a, b) => a + b.cards.length, 0);
+        const open = s.name === '堀';
+        html += `<div class="hx-acc"><span class="tw">${open ? '▾' : '▸'}</span><span class="dot" style="background:${s.color}"></span>${s.name}<small>${n}種</small></div>`;
+        if (open) {
+            const sb = s.subs[1];
+            html += `<div class="hx-acc2">▸ 水の有無（2）</div><div class="hx-acc2">▾ ${sb.name}（${sb.cards.length}）</div>`;
+            sb.cards.forEach(c => {
+                const o = c.t === '堀切';
+                html += `<div class="hx-acc3${o ? ' open' : ''}"><span class="tw">${o ? '▾' : '▸'}</span>${c.t}</div>`;
+                if (o) html += hxCard('堀切');
+            });
+        }
+    });
+    return html + '</div>';
+}
+function swipeView() {
+    return `<div class="lords-head"><button class="lords-iconbtn">${chev}</button><div class="lords-head-title">遺構の見かた　堀</div><button class="lords-iconbtn">×</button></div>`
+        + secChips('堀')
+        + `<div class="hx-swipe"><div class="c0" style="position:absolute">${hxCard('水堀')}</div>${hxCard('堀切').replace('class="hx-card"', 'class="hx-card c1"')}${hxCard('竪堀').replace('class="hx-card"', 'class="hx-card c2"')}
+           <div class="hx-nav" style="left:6px">‹</div><div class="hx-nav" style="right:6px">›</div></div>`
+        + `<div class="hx-dots"><i></i><i></i><i class="on"></i><i></i><i></i><i></i>… 3 / 16</div>`;
+}
+function fullView() {
+    const c = CARD['畝状竪堀群'].c;
+    return `<div class="hx-full"><div class="hx-full-top">堀　5 / 16<span>×</span></div><div class="hx-full-fig">${c.fig}</div>
+        <div class="hx-full-info"><b>${c.t}</b><small>${c.y}</small><p>${c.txt}</p></div></div>`;
+}
+const VIEWS = [
+  { no: '見せ方A', title: 'パネルの中のビュー（分野チップ＋カードの縦並び）', phone: phoneMenu(helpView('堀', '掘る場所と向き（山城）', ['堀切', '竪堀'], { lead: false }), 'A'),
+    good: 'ヘルプのモックの並び（分野 → 観点 → カード）をそのまま持ち込める。城主・遺構の一覧と同じ枠（見出し・絞り込み欄）に収まる。',
+    bad: '90枚を縦に並べると長いので、分野チップと絞り込み欄で飛ぶ前提になる。' },
+  { no: '見せ方B', title: '図鑑（図のサムネイルを2列）', phone: phoneMenu(remainsListView({ zukanChip: true, zukan: true }), 'B'),
+    good: '図を見比べながら探せる。',
+    bad: '375px幅では1枚が約171px幅（(375−24−8)÷2）で、図のラベルは読みにくい。説明はタップして開くまで出ない。' },
+  { no: '見せ方C', title: '目次を開いてたどる（分野 → 観点 → 種類）', phone: phoneMenu(accordionView(), 'C'),
+    good: '今の遺構ビュー（分類 → 内訳）と同じ、たどる感覚で使える。全体の構成が一目で分かる。',
+    bad: '図を見るまでに開く操作が2〜3回増える。' },
+  { no: '見せ方D', title: '横にめくる（1枚ずつ大きく）', phone: phoneMenu(swipeView(), 'D'),
+    good: '同じ観点の種類（堀切・竪堀・横堀…）を前後にめくって比べやすい。',
+    bad: 'どこに何があるかを一覧しにくい。左右のスワイプは、パネルやシートの操作と取り合いにならないか確かめる必要がある。' },
+  { no: '見せ方E', title: '下から1枚だけ重ねる', phone: phoneMenu(horiBreakdownView({ info: true }), 'E', popCard('横堀', link('この遺構の城を見る（597城）') + link('堀の種類をすべて見る'))),
+    good: '今いる画面（一覧・情報シート）を離れずに見て、閉じれば元に戻る。案3・5・6・7・9・11の入口と合う。',
+    bad: '1枚ずつなので全体は見渡せない（「堀の種類をすべて見る」で見せ方Aへつなぐ前提）。' },
+  { no: '見せ方F', title: '全画面（写真の全画面ビューアと同じ作り）', phone: `<div class="phone"><div class="pcap">F</div>${fullView()}</div>`,
+    good: '図を最大の大きさで見られる。写真の全画面ビューア（index.html 476〜525行）と同じ黒地・下の情報帯で、見慣れた操作になる。',
+    bad: '説明文を読める量が少ない。' },
+  { no: '見せ方G', title: '別ページを iframe で開く（家臣団と同じ作り）', phone: phoneMenu(`<div class="lords-head"><button class="lords-iconbtn">${chev}</button><div class="lords-head-title">遺構の見かた</div><button class="lords-iconbtn">×</button></div><iframe class="hx-iframe" src="mock/remains-help-preview.html"></iframe>`, 'G（中身は実際のヘルプのモック）'),
+    good: 'アプリ本体（app.js 532,714バイト）にヘルプ（72,752バイト）を混ぜず、開いたときだけ読み込める。ヘルプのページを単独でも直せる。',
+    bad: 'パネルの中のほかの一覧とは作りが別になる（この画面のままではPC向けの見出しや説明まで出る）。語から該当カードへ直接飛ばすには、ページ内の位置を渡す仕組みが要る。' },
+  { no: '見せ方H', title: '一覧に小さく埋め込む', phone: phoneMenu(castleListView({ mini: 'closed' }), 'H'),
+    good: '探している最中に、操作なしで目に入る。',
+    bad: '一覧の高さを使う。図が小さい（112px幅）。' },
+];
+
+/* ══ 描画 ══ */
+let toc = '<a href="#p1">1. 入口の案</a>';
+let html = '';
+ENTRIES.forEach((e, i) => {
+    toc += `<a href="#e${i}">${e.no}</a>`;
+    html += `<div class="case" id="e${i}"><h3><span class="no">${e.no}</span>${e.title}</h3>
+        <div class="tags"><span class="tag taps">${e.taps}</span><span class="tag view">${e.view}</span></div>
+        <div class="flow">${e.flow.join('')}</div>
+        <dl class="desc"><dt>良い点</dt><dd class="good">${e.good}</dd><dt>気になる点</dt><dd class="bad">${e.bad}</dd><dt>変更する所</dt><dd>${e.change}</dd></dl></div>`;
+});
+document.getElementById('entries').innerHTML = html;
+toc += '<a href="#p2">2. 見せ方の案</a>';
+html = '';
+VIEWS.forEach((v, i) => {
+    toc += `<a href="#v${i}">${v.no}</a>`;
+    html += `<div class="case" id="v${i}"><h3><span class="no" style="background:#1a4fb0">${v.no}</span>${v.title}</h3>
+        <div class="flow" style="margin-top:8px">${v.phone}</div>
+        <dl class="desc"><dt>良い点</dt><dd class="good">${v.good}</dd><dt>気になる点</dt><dd class="bad">${v.bad}</dd></dl></div>`;
+});
+document.getElementById('views').innerHTML = html;
+toc += '<a href="#p3">3. 比べる</a><a href="#p4">4. 組み合わせと決めること</a>';
+document.getElementById('toc').innerHTML = toc;
+
+document.getElementById('cmp').innerHTML = `<table class="cmp">
+<tr><th>案</th><th>入口の場所</th><th>見られるまで</th><th>合う見せ方</th><th>主な注意</th></tr>
+${ENTRIES.map(e => `<tr><td class="c">${e.no}</td><td>${e.title}</td><td>${e.taps}</td><td>${e.view}</td><td>${e.bad.split('。')[0]}。</td></tr>`).join('')}
+</table>`;
+
+document.getElementById('combo').innerHTML = `
+<b>組み合わせの例</b>
+<ul>
+<li><b>例1　城から調べる：案6（または案7）＋ 案3 ＋ 案1、見せ方E＋A</b><br>
+  城を開いたとき（案6・7）と、遺構を探しているとき（案3）に、その語の1枚をすぐ出す。全体を見たいときだけ見出しの「？」（案1）から見せ方Aへ。</li>
+<li><b>例2　本体の変更を小さく：案1 ＋ 案12、見せ方G</b><br>
+  入口は見出しの「？」だけにして、中身は別ページ（iframe）。語からカードへ直接は飛べない。</li>
+<li><b>例3　図で探す：案9 ＋ 案4、見せ方B＋H</b><br>
+  遺構ビューの中で図鑑として完結させ、城一覧にも小さく出す。</li>
+</ul>
+<b>私の第一候補は例1です。</b>理由：
+<ul>
+<li>遺構のある城の99.5%で、情報シートから少なくとも1語に行き先があり、どの入口から城を開いても2タップで見られる。</li>
+<li>5本目を足さない決まり（index.html 883〜886行）に触れず、長押しのような隠れた操作も使わない。</li>
+<li>案6・7は押す所が1か所なので、語ごとにリンクにする案5より、省略行を押したときの切り替えとぶつかる所が少ない（案7はぶつからない）。</li>
+</ul>
+<b>決めていただくこと</b>
+<ul>
+<li>入口：どの案を採るか（複数可）</li>
+<li>見せ方：一覧から開くとき、1語から開くときに、それぞれどれを使うか</li>
+<li>総称の語（曲輪・堀・石垣・虎口など、延べ59.3%）の行き先：各分野の冒頭に「分野の説明カード」を新しく作るか（今のヘルプには分野の説明文しか無い）</li>
+<li>行き先の無い語（石碑47城・庭園42城・竪土塁26城など）：カードを足すか、行き先なしのままにするか</li>
+<li>「枡形虎口」の行き先：内枡形・外枡形のどちらでもないので、虎口の分野（枡形の観点）へ送るか</li>
+<li>カードの下の城数（castle.js の件数）を、アプリでも出すか</li>
+</ul>`;
+</script>
+</body></html>
