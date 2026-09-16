@@ -431,7 +431,8 @@ function drawSolid(cv, f, opt = {}) {
         ctx.lineWidth = 3.2; ctx.strokeStyle = 'rgba(255,255,255,.95)'; ctx.strokeText(lb.s, tx, ty);
         ctx.fillStyle = lb.c === 's' ? '#455A64' : '#263238'; ctx.fillText(lb.s, tx, ty);
     });
-    ctx.textAlign = 'left'; ctx.font = '9.5px sans-serif'; ctx.fillStyle = '#90A4AE';
-    ctx.fillText(f.cap || '斜め上から見た図（手前の切り口は断面）', 8, 11);
+    // 図の見かたの説明。背景（#EEF4F8）に対して読める濃さにする（#455A64 でコントラスト比 約6.5:1）
+    ctx.textAlign = 'left'; ctx.font = '10.5px sans-serif'; ctx.fillStyle = '#455A64';
+    ctx.fillText(f.cap || '斜め上から見た図（手前の切り口は断面）', 8, 12);
     return { faces: vis.length, ms: performance.now() - t0 };
 }

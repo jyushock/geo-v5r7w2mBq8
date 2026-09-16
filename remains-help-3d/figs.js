@@ -137,7 +137,7 @@ const FIGS = {
     water: (x, z) => inR(x, z, M2) > 0 && inR(x, z, HON) < 0 ? 10 : inR(x, z, M1) > 0 && inR(x, z, NI) < 0 ? 8 : null,
     top: (x, z) => inR(x, z, SAN) < 0 ? 'field' : 'grass',
     steep: () => 'stone',
-    labels: [{ x: 80, z: 50, s: '本丸' }, { x: 80, z: 27.5, dy: 1.5, s: '二の丸', c: 's' }, { x: 80, z: 10, dy: 1.5, s: '三の丸', c: 's' },
+    labels: [{ x: 80, z: 50, s: '本丸' }, { x: 112, z: 27.5, dy: 1.5, s: '二の丸', c: 's' }, { x: 118, z: 10, dy: 1.5, s: '三の丸', c: 's' },
              { x: 134.5, z: 50, dy: .5, s: '堀', ox: 20, oy: -14 }] },
 
   koshi: { title: '腰曲輪', W: 160, D: 90, step: 1.6, yaw: -0.5, pitch: 0.55, smooth: true, cap: '山を斜め上から見た図（手前の切り口は断面）',
@@ -334,13 +334,20 @@ const FIGS = {
         if (z >= 64.5) return platH(x, z, KUMA_BACK, 4);
         const b = Math.abs(x - 80);
         if (z >= 46) return b < 7 ? 17 : b < 10 ? lerp(17, 4, (b - 7) / 3) : 4;
+        // 馬出の左右は堀を掘らずに残し、城外へ下りる出入口にする
+        if (z > 34 && x > 44 && x <= 57.5) return lerp(8, 16, clamp((x - 46) / 10, 0, 1));
+        if (z > 34 && x >= 102.5 && x < 116) return lerp(16, 8, clamp((x - 104) / 10, 0, 1));
         const d = outR(x, z, KUMA_UMA);
         if (d < 1.5) return lerp(16, 4, d / 1.5);
         return moatBot(x, z, KUMA_MOAT, 4, 8);
     },
-    top: (x, z, h) => h > 15 ? (z >= 64.5 ? 'grass' : outR(x, z, KUMA_UMA) === 0 ? 'hl' : 'sand') : h < 6 ? 'earth' : 'field',
-    labels: [{ x: 28, z: 84, s: '曲輪' }, { x: 30, z: 56, dy: 1, s: '堀' }, { x: 80, z: 34, dy: 1, s: '角馬出' },
-             { x: 80, z: 56, dy: 2, s: '土橋', c: 's', ox: 34, oy: -12 }, { x: 134, z: 8, s: '城外', c: 's' }] },
+    top: (x, z, h) => z > 34 && z < 46 && ((x > 44 && x < 58) || (x > 102 && x < 116)) ? 'sand'
+        : h > 15 ? (z >= 64.5 ? 'grass' : outR(x, z, KUMA_UMA) === 0 ? 'hl' : 'sand') : h < 6 ? 'earth' : 'field',
+    lines: [{ k: 'move', pts: [[80, 88], [80, 36]], dy: 2 }, { k: 'move', pts: [[76, 40], [52, 40], [38, 40]], dy: 2 },
+            { k: 'move', pts: [[84, 40], [108, 40], [122, 40]], dy: 2 }],
+    labels: [{ x: 28, z: 84, s: '曲輪' }, { x: 30, z: 56, dy: 1, s: '堀' }, { x: 80, z: 26, dy: 1, s: '角馬出' },
+             { x: 80, z: 56, dy: 2, s: '土橋', c: 's', ox: 34, oy: -12 }, { x: 140, z: 6, s: '城外', c: 's' },
+             { x: 51, z: 40, dy: 2, s: '出入口', c: 's', ox: -30, oy: 18 }, { x: 109, z: 40, dy: 2, s: '出入口', c: 's', ox: 34, oy: -18 }] },
 
   maruuma: { title: '丸馬出・三日月堀', W: 160, D: 100, step: 1.2, yaw: -0.4, pitch: 0.8,
     h: (x, z) => {
@@ -349,14 +356,23 @@ const FIGS = {
         if (z >= 48) return b < 7 ? 17 : b < 10 ? lerp(17, 4, (b - 7) / 3) : 4;
         const r = Math.hypot(x - 80, (z - 48) * 1.15);
         if (r < 24) return 16;
+        // 三日月堀の両端は掘らずに残し、馬出の左右から城外へ下りる出入口にする
+        if (z > 38 && r < 40.5) return lerp(16, 8, clamp((r - 24) / 16, 0, 1));
         if (r < 26.5) return lerp(16, 4, (r - 24) / 2.5);
         if (r < 38) return 4;
         if (r < 40.5) return lerp(4, 8, (r - 38) / 2.5);
         return 8;
     },
-    top: (x, z, h) => h > 15 ? (z >= 64.5 ? 'grass' : Math.hypot(x - 80, (z - 48) * 1.15) < 24 ? 'hl' : 'sand') : h < 6 ? 'earth' : 'field',
-    labels: [{ x: 26, z: 84, s: '曲輪' }, { x: 80, z: 34, dy: 1, s: '丸馬出' }, { x: 80, z: 12, dy: 1, s: '三日月堀' },
-             { x: 80, z: 56, dy: 2, s: '土橋', c: 's', ox: 36, oy: -10 }] },
+    top: (x, z, h) => {
+        const r = Math.hypot(x - 80, (z - 48) * 1.15);
+        if (z > 38 && z < 48 && r >= 24 && r < 40.5) return 'sand';
+        return h > 15 ? (z >= 64.5 ? 'grass' : r < 24 ? 'hl' : 'sand') : h < 6 ? 'earth' : 'field';
+    },
+    lines: [{ k: 'move', pts: [[80, 88], [80, 36]], dy: 2 }, { k: 'move', pts: [[76, 42], [56, 43], [42, 44]], dy: 2 },
+            { k: 'move', pts: [[84, 42], [104, 43], [118, 44]], dy: 2 }],
+    labels: [{ x: 26, z: 84, s: '曲輪' }, { x: 80, z: 30, dy: 1, s: '丸馬出' }, { x: 80, z: 12, dy: 1, s: '三日月堀' },
+             { x: 80, z: 56, dy: 2, s: '土橋', c: 's', ox: 36, oy: -10 },
+             { x: 49, z: 44, dy: 2, s: '出入口', c: 's', ox: -30, oy: 18 }, { x: 111, z: 44, dy: 2, s: '出入口', c: 's', ox: 30, oy: 18 }] },
 
   renkaku: { title: '連郭式', W: 176, D: 96, step: 1.3, yaw: -0.55, pitch: 0.6, smooth: true,
     h: (x, z) => {
@@ -854,8 +870,8 @@ const FIGS = {
         : inR(x, z, US[5]) > 0 && inR(x, z, US[4]) < 0 ? 5 : null,
     top: (x, z) => inR(x, z, US[5]) < 0 ? 'field' : 'grass',
     steep: () => 'stone',
-    labels: [{ x: 88, z: 58, dy: 1, s: '本丸' }, { x: 88, z: 41, dy: 1, s: '内堀', c: 's' },
-             { x: 88, z: 22, dy: 1, s: '中堀', c: 's' }, { x: 88, z: 6, dy: 1, s: '外堀', c: 's' }] },
+    labels: [{ x: 88, z: 58, dy: 1, s: '本丸' }, { x: 110, z: 41, dy: 1, s: '内堀', c: 's' },
+             { x: 124, z: 22, dy: 1, s: '中堀', c: 's' }, { x: 140, z: 6, dy: 1, s: '外堀', c: 's' }] },
 
   sougamae: { title: '総構・総堀', W: 190, D: 130, step: 1.4, yaw: -0.4, pitch: 0.85,
     h: (x, z) => {
@@ -1007,3 +1023,30 @@ const KAIKAKU = [[0, 6], [14, 10], [36, 10], [44, 18], [74, 18], [82, 26], [112,
 const SUMI = [[[20, 20, 156, 110], 12]];
 const OTE_PLAT = [[[36, 34, 136, 90], 18]];
 const OTE_MOAT = [[24, 22, 148, 102]];
+
+/* ── 堀に架けた土橋 ──────────────────────────────────────
+   上から見た平城の図は、区画を堀で囲むだけだと、どこからも出入りできない図になる。
+   図の高さ・水・色の式を包み、土橋の範囲だけ地面を残す。
+   r は範囲、y は両端の高さ（ax の向きに高さを変える。低い区画から高い区画へ上る） */
+const bridgeAt = (x, z, list) => {
+    for (const b of list) {
+        if (inR(x, z, b.r) < 0) continue;
+        const t = b.ax === 'x' ? (x - b.r[0]) / (b.r[2] - b.r[0]) : (z - b.r[1]) / (b.r[3] - b.r[1]);
+        return lerp(b.y[0], b.y[1], t);
+    }
+    return null;
+};
+const addBridges = (id, list) => {
+    const f = FIGS[id], h0 = f.h, w0 = f.water, t0 = f.top || (() => 'grass');
+    f.h = (x, z) => { const b = bridgeAt(x, z, list), v = h0(x, z); return b == null ? v : Math.max(v, b); };
+    if (w0) f.water = (x, z) => bridgeAt(x, z, list) != null ? null : w0(x, z);
+    f.top = (x, z, h) => { const b = bridgeAt(x, z, list); return b != null && h0(x, z) < b - .5 ? 'sand' : t0(x, z, h); };
+};
+addBridges('rinkaku', [{ r: [74, 14.5, 86, 23.5], y: [14, 18], ax: 'z' }, { r: [74, 31.5, 86, 37.5], y: [18, 22], ax: 'z' }]);
+addBridges('houi', [{ r: [74, 0, 86, 6.5], y: [9, 17], ax: 'z' }, { r: [74, 29.5, 86, 38.5], y: [17, 20], ax: 'z' },
+                    { r: [74, 61.5, 86, 70.5], y: [20, 17], ax: 'z' }, { r: [53.5, 44, 60.5, 56], y: [17, 20], ax: 'x' },
+                    { r: [99.5, 44, 106.5, 56], y: [20, 17], ax: 'x' }]);
+addBridges('uchisoto', [{ r: [82, 0, 94, 10.5], y: [10, 13], ax: 'z' }, { r: [82, 17.5, 94, 26.5], y: [13, 16], ax: 'z' },
+                        { r: [82, 35.5, 94, 46.5], y: [16, 20], ax: 'z' }]);
+addBridges('demaru', [{ r: [54, 16, 66, 25.5], y: [8, 16], ax: 'z' }, { r: [99.5, 50, 122.5, 62], y: [16, 14], ax: 'x' }]);
+addBridges('sougamae', [{ r: [77.5, 70, 88.5, 80], y: [18, 12], ax: 'x' }, { r: [120, 0, 132, 16.5], y: [9, 12], ax: 'z' }]);
