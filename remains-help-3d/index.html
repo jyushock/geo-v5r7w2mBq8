@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>遺構の見かた — 立体図の一覧</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background: #eceff1; font-family: sans-serif; padding: 20px; color: #333; }
+h1 { font-size: 18px; margin: 0 0 6px; }
+.lead { font-size: 12.5px; color: #555; line-height: 1.8; margin: 0 0 14px; max-width: 1200px; }
+#list { display: flex; flex-wrap: wrap; gap: 14px; }
+.item { background: #fff; border-radius: 10px; padding: 8px 10px 10px; width: 371px; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+.item h2 { font-size: 13px; margin: 0 0 5px; display: flex; gap: 8px; align-items: baseline; }
+.item h2 code { font-size: 11px; color: #78909C; font-weight: normal; }
+.item h2 span { margin-left: auto; font-size: 10.5px; color: #B0BEC5; font-weight: normal; }
+.item canvas { display: block; width: 351px; border: 1px solid #EEE9DF; border-radius: 6px; }
+.item .cards { font-size: 11px; color: #607D8B; margin-top: 5px; line-height: 1.6; }
+.warn { color: #B71C1C; font-weight: bold; }
+</style>
+</head><body>
+<h1>遺構の見かた — 立体図の一覧</h1>
+<p class="lead">
+<code>build.py</code> がこのページを開き、図を <code>../remains-help/&lt;名前&gt;.webp</code> に書き出します。
+地図の画面はこのフォルダを読みません（<code>.assetsignore</code> で配信からも外しています）。
+<code>?only=karabori,mizubori</code> で一部だけ描きます。各図の下は、その図を使うカード（<code>remains-help.js</code> の <code>f3</code>）です。
+</p>
+<div id="list"></div>
+<script src="render.js"></script>
+<script src="figs.js"></script>
+<script src="../remains-help.js"></script>
+<script>
+/* 書き出しの大きさ。カードの図はスマートフォンで 351×197px なので、その大きさで文字を置いて 960×540px に描く */
+const EXPORT = { W: 351, H: 351 * 9 / 16 };
+function renderFig(cv, id, px) { return drawSolid(cv, FIGS[id], { W: EXPORT.W, H: EXPORT.H, dpr: px / EXPORT.W }); }
+function exportFigs(ids, type, q, px) {
+    return (ids.length ? ids : Object.keys(FIGS)).map(id => {
+        if (!FIGS[id]) return { id, error: 'no such figure' };
+        const cv = document.createElement('canvas'), r = renderFig(cv, id, px);
+        return { id, data: cv.toDataURL(type, q), w: cv.width, h: cv.height, faces: r.faces, ms: Math.round(r.ms) };
+    });
+}
+// カードと図の対応を確かめる（図の無いカード・どのカードも使わない図）
+function cardsByFig() {
+    const map = {}, missing = [];
+    const secs = window.REMAINS_HELP ? window.REMAINS_HELP.SECTIONS : [];
+    secs.forEach(s => s.subs.forEach(sb => sb.cards.forEach(c => {
+        if (c.f3) (map[c.f3] = map[c.f3] || []).push(c.t);
+        else if (!c.table) missing.push(c.t);
+    })));
+    return { map, missing, unknown: Object.keys(map).filter(id => !FIGS[id]), unused: Object.keys(FIGS).filter(id => !map[id]) };
+}
+const params = new URLSearchParams(location.search);
+if (!params.has('none')) {
+    const only = (params.get('only') || '').split(',').filter(Boolean);
+    const { map } = cardsByFig(), list = document.getElementById('list');
+    (only.length ? only : Object.keys(FIGS)).forEach(id => {
+        const el = document.createElement('div');
+        el.className = 'item'; el.id = 'fig-' + id;
+        el.innerHTML = `<h2>${FIGS[id].title}<code>${id}</code><span></span></h2><canvas></canvas>`
+            + `<div class="cards">${map[id] ? map[id].join('、') : '<span class="warn">どのカードも使っていない</span>'}</div>`;
+        list.appendChild(el);
+        const r = drawSolid(el.querySelector('canvas'), FIGS[id]);
+        el.querySelector('h2 span').textContent = `面 ${r.faces.toLocaleString()}・${r.ms.toFixed(0)} ms`;
+    });
+}
+</script>
+</body></html>

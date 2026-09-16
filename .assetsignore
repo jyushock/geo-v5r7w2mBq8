@@ -14,3 +14,7 @@ retainers/app.js
 retainers/style.css
 retainers/build_app.py
 retainers/mock
+
+# 遺構の見かたの立体図を作る道具（描画・図の定義・書き出しスクリプト）。
+# 画面が読むのは remains-help/ に書き出した画像だけなので、道具は配らない。
+remains-help-3d
