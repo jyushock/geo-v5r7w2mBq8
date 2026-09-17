@@ -803,12 +803,14 @@
             z-index: 250;
             display: none;
         }
+        /* 結果はスポット列・地名列の2列。列ごとに独立してスクロールする
+           （片方を送っても、もう片方の先頭は見えたまま）。外枠はスクロールさせず、
+           高さの上限は各列が持つ。 */
         #search-results-inner {
             display: grid;
             grid-template-columns: 1fr 1fr;
             max-height: 270px;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
+            overflow: hidden;
             font-family: sans-serif;
             -webkit-text-size-adjust: 100%;
         }
@@ -817,6 +819,10 @@
             flex-direction: column;
             border-right: 1px solid #f0f0f0;
             min-width: 0;
+            max-height: 270px;
+            overflow-y: auto;
+            overscroll-behavior-y: contain;
+            -webkit-overflow-scrolling: touch;
             font-family: sans-serif;
         }
         .search-col:last-child { border-right: none; }
@@ -858,7 +864,9 @@
         .shop-genre.g-sake     { background: hsl(285, 35%, 37%); }  /* 酒（バー・居酒屋・立ち飲み） */
         .shop-genre.g-kissa    { background: hsl(160, 26%, 37%); }  /* 喫茶（カフェ・喫茶） */
         .shop-genre.g-sonota   { background: hsl(0,   0%,  45%); }  /* その他（創作料理・イノベーティブ） */
-        .search-section-header { padding: 5px 10px; font-size: 11px; color: #999; background: #fafafa; border-bottom: 1px solid #f0f0f0; position: sticky; top: 0; }
+        /* 列の見出しはスクロールしても上に残す。行（.search-result-item）は色帯の基準に
+           position: relative を持ち、後から描かれて見出しの上に被るので z-index で前に出す */
+        .search-section-header { padding: 5px 10px; font-size: 11px; color: #999; background: #fafafa; border-bottom: 1px solid #f0f0f0; position: sticky; top: 0; z-index: 1; }
 
         /* 周辺検索シート */
         .nearby-section-label { font-size: 11px; color: #999; padding: 6px 16px 4px; }
@@ -1335,19 +1343,19 @@
            既定（auto）のまま。 */
         .lords-scroll::-webkit-scrollbar,
         #nearby-list::-webkit-scrollbar,
-        #search-results-inner::-webkit-scrollbar { width: 13px; }
+        .search-col::-webkit-scrollbar { width: 13px; }
         .lords-scroll::-webkit-scrollbar-track,
         #nearby-list::-webkit-scrollbar-track,
-        #search-results-inner::-webkit-scrollbar-track { background: transparent; }
+        .search-col::-webkit-scrollbar-track { background: transparent; }
         .lords-scroll::-webkit-scrollbar-thumb,
         #nearby-list::-webkit-scrollbar-thumb,
-        #search-results-inner::-webkit-scrollbar-thumb {
+        .search-col::-webkit-scrollbar-thumb {
             background: #b7c3cf; border-radius: 7px; min-height: 44px;
             border: 3px solid transparent; background-clip: padding-box;
         }
         .lords-scroll::-webkit-scrollbar-thumb:active,
         #nearby-list::-webkit-scrollbar-thumb:active,
-        #search-results-inner::-webkit-scrollbar-thumb:active { background: #8fa1b3; }
+        .search-col::-webkit-scrollbar-thumb:active { background: #8fa1b3; }
         .lord-row { display: flex; align-items: center; gap: 9px; padding: 10px 13px; border-bottom: 1px solid #f0f0f0; cursor: pointer; }
         .lord-row:active { background: #f7f9ff; }
         .lord-main { flex: 1; min-width: 0; }

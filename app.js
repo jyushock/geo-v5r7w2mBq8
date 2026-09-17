@@ -4398,11 +4398,17 @@ map.on('zoomend', () => { isZooming = false; });
             if(placeItems.length>0) { rightCol.innerHTML='<div class="search-section-header">地名・場所</div>'; placeItems.forEach(item => makeItem(item, rightCol)); }
             inner.append(leftCol, rightCol);
         }
-        // 新しい結果は必ず先頭から見せる。innerHTML を空にしてから作り直しても
-        // スクロール位置は保持される（Chromium実測: 500px スクロール後に再構築しても 500px のまま）ため、
-        // 明示的に戻さないと「別のワードで検索したのに途中から表示される」状態になる。
-        inner.scrollTop = 0;
+        // 列は毎回作り直すので、新しい結果はどちらの列も先頭から出る
+        // （スクロールするのは外枠ではなく各列 .search-col）
         document.getElementById('search-results').style.display = 'block';
+    }
+
+    // 検索結果の各列のスクロール位置。列ごとに独立してスクロールするので [スポット列, 地名列] で持つ
+    function searchColScrolls() {
+        return [...document.querySelectorAll('#search-results-inner .search-col')].map(c => c.scrollTop);
+    }
+    function setSearchColScrolls(tops) {
+        document.querySelectorAll('#search-results-inner .search-col').forEach((c, i) => { c.scrollTop = tops[i] || 0; });
     }
 
     /* ══ 一覧・検索結果からオブジェクトへ飛ぶときの着地ズーム ══════════════
@@ -4494,7 +4500,7 @@ map.on('zoomend', () => { isZooming = false; });
         if (item.type !== 'place') {
             searchReturn = {
                 q: document.getElementById('search-input').value,
-                scrollTop: document.getElementById('search-results-inner').scrollTop,
+                scrollTops: searchColScrolls(),
                 local: localItems, places: placeItems,
             };
             saveListReturnCamera();
@@ -4521,14 +4527,14 @@ map.on('zoomend', () => { isZooming = false; });
     /* 飛ぶ前の検索結果（ワード・並び・スクロール位置）のまま戻す。
        入力欄にワードを書き戻すのは、消えたままだと×ボタンが出ず、
        そこから絞り直す（打ち足す）こともできなくなるため。
-       スクロール位置は renderResults が末尾で先頭に戻すので、その後に指定する。 */
+       スクロール位置は列ごとに控えてあるので、renderResults で列を作り直した後に両列へ書き戻す。 */
     function reopenSearchResults() {
         const s = searchReturn;
         if (!s) return;
         document.getElementById('search-input').value = s.q;
         document.getElementById('search-clear').style.display = s.q.trim() ? 'block' : 'none';
         renderResults(s.local, s.places);
-        document.getElementById('search-results-inner').scrollTop = s.scrollTop;
+        setSearchColScrolls(s.scrollTops);
     }
 
     function clearSearch() {
@@ -4601,9 +4607,9 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('search-clear').style.display = q ? 'block' : 'none';
         document.getElementById('search-results').style.display = q ? 'block' : 'none';
         // 新しい結果が出るまでの300ms（ジオコーディングのデバウンス）は前のワードの結果が
-        // 残ったまま見えるので、ここでも先頭に戻す。親を display:none にしても
+        // 残ったまま見えるので、ここでも両列を先頭に戻す。親を display:none にしても
         // スクロール位置は保持される（Chromium実測）ため、非表示側でも戻しておく。
-        document.getElementById('search-results-inner').scrollTop = 0;
+        setSearchColScrolls([]);
         document.getElementById('search-spinner').style.display = 'none';
         if (!q) return;
 
