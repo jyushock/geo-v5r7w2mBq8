@@ -1984,13 +1984,13 @@ function buildSourceButtons(wikiHref, kojodanUrl, shirohbUrl) {
     return items.join('');
 }
 
-// iOSのホーム画面PWA(navigator.standalone)では、攻城団ボタン(target=_blank)の外部遷移が
-// Safari相当のUA(Version/26.5.2)で開かれ、攻城団側のUAフィルターに弾かれる(実測503)。
-// 攻城団はこのバージョンをピンポイントで遮断しており(隣の26.4/26.6は通る)、こちらでは直せない。
-// 対処: iOS PWA時のみ、攻城団リンクをChromeを直接起動するURLスキーム(googlechromes://)に
-// 差し替える。ChromeはCriOSのUAを送るため攻城団に通る(実測200)。UA偽装ではなく、
-// 攻城団が許可しているChromeで開くだけ。他サイト・他ブラウザ・他OSには影響しない。
-// この制限を課しているのは攻城団のみのため、対象は攻城団リンクに限定する。
+// iOSのホーム画面起動(navigator.standalone)かどうか。書き出しの案内文の出し分けに使う。
+// 以前はここで攻城団リンクだけをChrome(googlechromes://)に差し替えていた。iOS PWAが送る
+// SafariのUA(Version/26.5.2)が攻城団で503になり、ChromeのCriOS UAなら通ったため。
+// 2026-09-22に同じUAで再測定したところ200が返り、遮断は解けていた(Cloudflare側の一時的な
+// ルールだったとみられる)。iOSのChromeは拡張が使えず広告を止める手段が無いのに対し、
+// Safariはコンテンツブロッカーが効くため、差し替えをやめて他の情報源ボタンと同じ
+// target=_blank(端末の既定ブラウザ)に戻した。
 function isIosStandalonePwa() {
     return window.navigator.standalone === true;
 }
@@ -2028,38 +2028,6 @@ async function copyToClipboard(text) {
     ta.remove();
     return ok;
 }
-
-document.addEventListener('click', (e) => {
-    const a = e.target.closest && e.target.closest('a.btn-kojodan');
-    if (!a || !isIosStandalonePwa()) return; // 通常ブラウザ/Android/PCは従来のtarget=_blankのまま
-    const href = a.getAttribute('href') || '';
-    if (!/^https?:\/\//i.test(href)) return;
-    e.preventDefault();
-
-    const chromeUrl = href.replace(/^https?:\/\//i, 'googlechromes://');
-    let launched = false;
-    const onLeave = () => { launched = true; cleanup(); };
-    const onVis = () => { if (document.hidden) onLeave(); };
-    function cleanup() {
-        document.removeEventListener('visibilitychange', onVis);
-        window.removeEventListener('pagehide', onLeave);
-        window.removeEventListener('blur', onLeave);
-    }
-    document.addEventListener('visibilitychange', onVis);
-    window.addEventListener('pagehide', onLeave);
-    window.addEventListener('blur', onLeave);
-
-    // スキームを起動。Chromeがあれば即アプリ切替でページがバックグラウンド化する。
-    window.location.href = chromeUrl;
-
-    // 一定時間たっても前面のまま=Chrome未起動=未インストールとみなして通知する。
-    setTimeout(() => {
-        cleanup();
-        if (!launched && !document.hidden) {
-            showToast('攻城団の閲覧にはChromeが必要です。App StoreでChromeを入れてください。');
-        }
-    }, 2000);
-});
 
 // 城のGoogleMap検索クエリ：同名城の誤ヒット防止に市区町村までの住所を付与
 // 丁目以下まで含めるとPOIカード直行になりにくいため市区町村で切る（実測確認済み）
