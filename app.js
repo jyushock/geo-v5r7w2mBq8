@@ -4987,6 +4987,19 @@ map.on('zoomend', () => { isZooming = false; });
         closeObjSheet();   // 周辺検索パネルと情報シートは同じ下部領域を使うため重ねない
         placeSearchPin({ lng, lat }, name || null, { showMapPin: false });
         openNearbyPanel();
+        centerAboveNearbyPanel(lng, lat);
+    }
+    /* 周辺検索を始めたオブジェクトを、周辺パネルに隠れない範囲の中央へ寄せる。
+       パネルは画面下端から立ち上がるので、考え方は adjustMapForSheet と同じ
+       （パネルの高さの半分だけ上にずらす）。パネルが画面の大半を占めても
+       上端の外へ飛ばないよう、ずらし量は同じく制限する。
+       高さは開く途中（bottom の transition 中）でも中身なりに決まっているので、すぐ測れる。
+       この移動は検索を始めた副作用なので、移動履歴には記録しない。 */
+    function centerAboveNearbyPanel(lng, lat) {
+        const h = document.getElementById('nearby-panel').getBoundingClientRect().height;
+        const mapH = map.getContainer().getBoundingClientRect().height;
+        const dy = Math.min(h / 2, Math.max(0, (mapH - 80) / 2));
+        map.easeTo({ center: [lng, lat], offset: [0, -dy], duration: 400, essential: true }, { histIgnore: true });
     }
 
     function toggleNearby() {
