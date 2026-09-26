@@ -1356,34 +1356,58 @@
     let longPressActivated = false;
     map.on('click', (e) => {
         if (longPressActivated) { longPressActivated = false; return; }
+        if (objLongPressJustFired()) return;
         if (searchPinLngLat && map.getLayer('search-pin-layer')) {
             const hit = map.queryRenderedFeatures(e.point, { layers: ['search-pin-layer'] });
             if (hit.length > 0) { removeSearchPin(); return; }
         }
     });
 
-    // 長押しでピン設置
+    /* 長押し。空いた地図なら検索ピンを置き、オブジェクトの上なら地点をコピーする
+       （別アプリの地点登録へ貼る JSON。objPointJson を参照）。
+       オブジェクトの上に検索ピンを置く操作は、情報シートの「この周辺を検索」が
+       そのオブジェクトを検索地点にするので要らない。
+       コピーは指を離した瞬間に行う。クリップボードへの書き込みはユーザー操作の中からでないと
+       拒まれるため（情報シートのタイトル長押しと同じ作り）。500ms の時点では震わせて合図するだけ。 */
     let longPressTimer = null;
     let longPressLngLat = null;
     let longPressPoint = null;
+    let longPressObj = null;       // 500ms 経ってコピーを待っているオブジェクト
     function startLongPress(lngLat, point) {
         longPressLngLat = lngLat;
         longPressPoint = point;
+        longPressObj = null;
         longPressTimer = setTimeout(() => {
             longPressTimer = null;
             if (map.queryRenderedFeatures(longPressPoint).some(f => f.properties?.cluster)) return;
+            const obj = objAtPoint ? objAtPoint(longPressPoint) : null;
+            if (obj) {
+                longPressObj = obj;
+                if (navigator.vibrate) navigator.vibrate(15);
+                return;
+            }
             longPressActivated = true;
             placeSearchPin(longPressLngLat);
         }, 500);
     }
     function cancelLongPress() {
         if (longPressTimer) { clearTimeout(longPressTimer); longPressTimer = null; }
+        longPressObj = null;       // 地図を動かしたらコピーも取り消す
+    }
+    async function endLongPress() {
+        const obj = longPressObj;
+        cancelLongPress();
+        if (!obj) return;
+        objLongPressAt = Date.now();
+        const name = objPlainName(obj.type, obj.label, obj.p);
+        const ok = await copyToClipboard(objPointJson(obj.type, obj.label, obj.p, obj.lng, obj.lat));
+        showToast(ok ? `「${name}」の地点をコピーしました` : 'コピーできませんでした');
     }
     map.on('touchstart',  (e) => { if (e.originalEvent.touches.length === 1) startLongPress(e.lngLat, e.point); });
-    map.on('touchend',    cancelLongPress);
+    map.on('touchend',    endLongPress);
     map.on('touchmove',   cancelLongPress);
     map.on('mousedown',   (e) => { if (e.originalEvent.button === 0) startLongPress(e.lngLat, e.point); });
-    map.on('mouseup',     cancelLongPress);
+    map.on('mouseup',     endLongPress);
     map.on('dragstart',   cancelLongPress);
 
     // 現在地関連の変数
@@ -2340,9 +2364,8 @@ function buildSheetHtml(type, label, p, lng, lat) {
     // badgeAbove はタイトルの上に独立した行で出すバッジ（食べログの部門）。
     // 城やカードのように名前の左に置くと、店名が長い食べログでは名前が押し出されるため
     // titleTail はタイトル行の右端に寄せる要素（食べログの評点）。名前の折り返しに影響しない
-    // copyName はタイトル長押しでコピーする素の名前。title に付く [近接あり]・[配布] のような
-    // 表示上の注記まで貼り付けたくないので、それらが付く種別だけ別に持つ（既定は title と同じ）
-    let badges = '', badgeAbove = '', title = '', titleTail = '', photo = '', lines = '', rowA = '', rowB = '', pick = '', copyName = '';
+    // タイトル長押しでコピーする素の名前は objPlainName が決める（地図のオブジェクトの長押しと共用）
+    let badges = '', badgeAbove = '', title = '', titleTail = '', photo = '', lines = '', rowA = '', rowB = '', pick = '';
 
     if (isPokefuta) {
         title = p.pokemon || label;
@@ -2373,7 +2396,6 @@ function buildSheetHtml(type, label, p, lng, lat) {
             // 配布終了レコードは locationName が「配布終了」なので、見出しに二度出さない
             const who = [info && info.muni, ended ? '' : p.locationName].filter(Boolean).join(' ');
             title = `${p.coordOffset ? '[複]' : ''}${head} ${who || p.name || label}`;
-            copyName = who || p.name || label;
             photo = osPhotoHtml(p.cardImgUrl, 'full');   // カードは縦長なので切らずに全体を見せる
             lines = ended
                 ? osKv('問合せ', p.contactInfo) + osKv('発行', p.issueDate)
@@ -2443,7 +2465,6 @@ function buildSheetHtml(type, label, p, lng, lat) {
         // 近接する別の城と座標が重なるため表示位置をずらしたエントリには目印を付ける
         // （マンホールカード配布場所のcoordOffsetと同じ仕組み。実際の座標は元の位置から数m~十数mずれている）
         title = p.coordOffset ? `[近接あり] ${name}` : name;
-        copyName = name;
         badges = popupFormBadgeHtml(p.shiroHbForm) + castleGenreBadgeHtml(p);
         const aliases = osParseAliases(p.aliases);
         lines = osKv('別名', aliases.length ? aliases.join('、') : '')
@@ -2488,7 +2509,7 @@ function buildSheetHtml(type, label, p, lng, lat) {
     }
 
     const media = photo ? `<div class="os-row">${photo}<div class="os-meta">${lines}</div></div>` : lines;
-    return `${badgeAbove}<div class="os-title">${badges}<span class="os-name" data-copy="${attrEscape(copyName || title)}">${title}</span>${titleTail}</div>${media}${rowA}${rowB}${pick}${rowC}`;
+    return `${badgeAbove}<div class="os-title">${badges}<span class="os-name" data-copy="${attrEscape(objPlainName(type, label, p) || title)}">${title}</span>${titleTail}</div>${media}${rowA}${rowB}${pick}${rowC}`;
 }
 
 // 城シートに写真を非同期で挿入する
@@ -2899,6 +2920,42 @@ function watchScrollerTouchAction(selector) {
 
 // オブジェクトのクリック対象レイヤーID（レイヤー生成時に詰める）
 const objClickLayers = [];
+/* 地図上の点にあるオブジェクトを { type, label, p, lng, lat } で返す（無ければ null）。
+   ピンの当たり判定に使う favOverlayHit・favSnapCoords はレイヤーを作る側の関数の中に
+   あり、地図の長押しの側からは見えないので、レイヤーを作る側がここへ入れる。 */
+let objAtPoint = null;
+// オブジェクトの長押しでコピーした時刻。指を離した直後に来るクリックでシートを開かないために見る
+let objLongPressAt = 0;
+const OBJ_LONG_PRESS_CLICK_MS = 500;
+function objLongPressJustFired() { return Date.now() - objLongPressAt < OBJ_LONG_PRESS_CLICK_MS; }
+
+/* 情報シートのタイトルに出す素の名前。[近接あり]・[配布] のような表示上の注記は付けない。
+   タイトルの長押しと地図のオブジェクトの長押しは、どちらもこの名前をコピーする。 */
+function objPlainName(type, label, p) {
+    p = p || {};
+    if (type === 'pokefuta' || (type === 'manhole' && p.source === 'pokefuta')) return p.pokemon || label;
+    if (type === 'mhcard') {
+        const info = mhcardInfo(p);
+        const who = [info && info.muni, p.discontinued ? '' : p.locationName].filter(Boolean).join(' ');
+        return who || p.name || label;
+    }
+    if (type === 'manhole' || type === 'michi' || type === 'castle') return p.name || label;
+    return shopParts(p).shop || label;   // buildSheetHtml と同じく、残りは食べログとして扱う
+}
+
+/* 別アプリ（TravelPlan）の地点登録へ貼るための JSON。
+   kind は TravelPlan の仕様（docs/input-format.md §3.2）が 城 / 観光 / 食事 の3つしか
+   受け付けないので、城と食べログ以外（道の駅・マンホール・カード・ポケふた）は観光にする。
+   座標はお気に入りの書き出し（favExportTsv）と同じく小数5桁（約1.1m）に揃える。 */
+const OBJ_POINT_KIND = { castle: '城', shop: '食事' };
+function objPointJson(type, label, p, lng, lat) {
+    return JSON.stringify({
+        name: objPlainName(type, label, p),
+        lat: Number(Number(lat).toFixed(5)),
+        lng: Number(Number(lng).toFixed(5)),
+        kind: OBJ_POINT_KIND[type] || '観光',
+    });
+}
 
 // ── 選択リング（②二重リング）。ピンと同じ種別色で、ピンの外側に2重の輪を出す ──
 // ピンは直径28px（フチ無し）なので、内リングφ46/外リングφ62なら重ならない。
@@ -3680,6 +3737,8 @@ map.on('zoomend', () => { isZooming = false; });
 
             // 地図の空きタップで情報シートを閉じる判定に使う、オブジェクトのクリック対象レイヤー一覧
             objClickLayers.length = 0;
+            // そのうち種別ごとのピンのレイヤー → 種別（地図の長押しで地点をコピーするときに引く）
+            const objPinLayerType = {};
 
             /* filterState から初期visibility を決定（保存済み設定を反映）。
                manholes は蓋とポケふたが同居するソースなので、どちらかが表示中なら
@@ -3819,7 +3878,9 @@ map.on('zoomend', () => { isZooming = false; });
                 const clickLayer = conf.type === 'mhcard' ? `${conf.id}-icon` : `${conf.id}-bg`;
                 // クラスタは対象外。クラスタをタップしたときはズームインしつつシートを閉じる
                 objClickLayers.push(clickLayer);
+                objPinLayerType[clickLayer] = conf.type;
                 map.on('click', clickLayer, (e) => {
+                    if (objLongPressJustFired()) return;   // 長押しでコピーした指を離したときのクリック
                     // お気に入りを重ね描きしている位置は、前面のハンドラに任せる（二重に開かない）
                     if (favOverlayHit(e.point)) return;
                     if (trackingMode > 0) {
@@ -3855,10 +3916,29 @@ map.on('zoomend', () => { isZooming = false; });
                 cardFaceColor: MHCARD_FACE_COLOR,
             });
 
+            /* 地図の長押しで地点をコピーするときの当たり判定（objAtPoint の説明を参照）。
+               タップと同じく、前面にあるお気に入りの重ね描きを先に見て、次に種別ごとのピンを見る。
+               座標もタップと同じく元データの座標へ寄せる（情報シートに出る座標と揃える）。 */
+            objAtPoint = (point) => {
+                const favLayers = FAV_CLICK_LAYERS.filter(id => map.getLayer(id));
+                const fav = favLayers.length ? map.queryRenderedFeatures(point, { layers: favLayers }) : [];
+                const item = fav.length ? favOverlayItems[fav[0].properties._i] : null;
+                if (item) return { type: item.type, label: item.label, p: item.properties,
+                                   lng: item.coords[0], lat: item.coords[1] };
+                const layers = Object.keys(objPinLayerType).filter(id => map.getLayer(id));
+                const hit = layers.length ? map.queryRenderedFeatures(point, { layers }) : [];
+                if (!hit.length) return null;
+                const type = objPinLayerType[hit[0].layer.id];
+                const p = hit[0].properties;
+                const c = favSnapCoords(type, p, hit[0].geometry.coordinates.slice());
+                return { type, label: p.name || '', p, lng: c[0], lat: c[1] };
+            };
+
             // オブジェクト以外（地図の空き）をタップしたら情報シートを閉じる。
             // レイヤー個別のclickハンドラとこのハンドラは両方発火するため、
             // queryRenderedFeaturesでオブジェクトを踏んでいないことを確認してから閉じる。
             map.on('click', (e) => {
+                if (objLongPressJustFired()) return;
                 if (!isObjSheetOpen()) return;
                 const layers = objClickLayers.filter(id => map.getLayer(id));
                 if (layers.length && map.queryRenderedFeatures(e.point, { layers }).length) return;
@@ -8676,6 +8756,7 @@ map.on('zoomend', () => { isZooming = false; });
            登録の順を逆（枠1→枠4）にしてあるのは、前面に居る枠から先に拾わせるため。 */
         [...FAV_CLICK_LAYERS].reverse().forEach(id => {
             map.on('click', id, e => {
+                if (objLongPressJustFired()) return;   // 長押しでコピーした指を離したときのクリック
                 if (!e.features || !e.features.length) return;
                 if (e.originalEvent) {
                     if (e.originalEvent._favHandled) return;
