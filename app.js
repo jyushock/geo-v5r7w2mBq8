@@ -305,7 +305,7 @@
                 if (typeof remote.names[n] === 'string') favStore.names[n] = remote.names[n];
             });
         }
-        // 「地図に出さない」も名前と同じく時刻を持たないので、サーバー側を採る
+        // 「薄く出す」（保存名は hidden）も名前と同じく時刻を持たないので、サーバー側を採る
         if (remote.hidden && typeof remote.hidden === 'object') {
             FAV_SLOTS.forEach(n => { favStore.hidden[n] = remote.hidden[n] === true; });
         }
@@ -599,7 +599,7 @@
        書き出しも読み込みも「お気に入りの枠1つ」か「表示設定」のどれか1つを選んで行う
        （2026-09-27 に、4つの枠と表示設定をまとめて置き換える作りから改めた）。
          お気に入り … 1ファイル＝枠1つ。読み込みは選んだ枠へ「追加だけ」で、
-                      すでに入っているものは外さない。他の枠・枠の名前・「地図に出さない」は触らない。
+                      すでに入っているものは外さない。他の枠・枠の名前・「薄く出す」は触らない。
                       読み込み先はファイルの枠番号に縛られず、読み込むときに選ぶ（最初は未選択）
          表示設定   … favorites 以外の STORE_KEYS。読み込みは置き換えで、画面を読み直す
        読み込めるのは次の3つ。先頭が { なら JSON、それ以外は TSV として読む。
@@ -915,7 +915,8 @@
     const EMPTY_FC = { type: 'FeatureCollection', features: [] };
     const FAMOUS_GENRES = new Set(['日本100名城', '続日本100名城']);
     const loadedData = Object.create(null); // key -> FeatureCollection
-    // お気に入りの「地図に出さない」枠に入っているキー（中身は favComputeHiddenKeys）。
+    // お気に入りの「薄く出す」枠に入っているキー（中身は favComputeHiddenKeys）。
+    // 元のソースから外し、最背面の薄いピン（fav-dim-objects）で描き直す。
     // 地図のソースを埋める関数が読むので、データの到着より前に在るようここで宣言する
     var favHiddenKeys = new Set();
 
@@ -4171,6 +4172,7 @@ map.on('zoomend', () => { isZooming = false; });
                 michiSize: MICHI_PLATE_PX / OBJ_ICON_NATIVE_PX,
                 cardBadgeSize: MHCARD_BADGE_PX / OBJ_ICON_NATIVE_PX,
                 cardFaceColor: MHCARD_FACE_COLOR,
+                dimBeforeId: `${configs[0].id}-cluster-shadow`,   // 薄いピンは全種別のピンと影より下
             });
 
             /* 地図の長押しで地点をコピーするときの当たり判定（objAtPoint の説明を参照）。
@@ -4184,7 +4186,14 @@ map.on('zoomend', () => { isZooming = false; });
                                    lng: item.coords[0], lat: item.coords[1] };
                 const layers = Object.keys(objPinLayerType).filter(id => map.getLayer(id));
                 const hit = layers.length ? map.queryRenderedFeatures(point, { layers }) : [];
-                if (!hit.length) return null;
+                if (!hit.length) {
+                    // 最後に、最背面の薄いピン（薄く出す枠）を見る
+                    const dimLayers = FAV_DIM_LAYERS.filter(id => map.getLayer(id));
+                    const dim = dimLayers.length ? map.queryRenderedFeatures(point, { layers: dimLayers }) : [];
+                    const it = dim.length ? favOverlayItems[dim[0].properties._i] : null;
+                    return it ? { type: it.type, label: it.label, p: it.properties,
+                                  lng: it.coords[0], lat: it.coords[1] } : null;
+                }
                 const type = objPinLayerType[hit[0].layer.id];
                 const p = hit[0].properties;
                 const c = favSnapCoords(type, p, hit[0].geometry.coordinates.slice());
@@ -8172,7 +8181,7 @@ map.on('zoomend', () => { isZooming = false; });
        同じ端末の別の画面と共有される。ホーム画面のアプリと、QRから開いたブラウザのタブが
        両方生きているのが普通なので、取り込まずに書くと、古いほうの画面が保存した瞬間に
        新しいほうで付けたお気に入りが丸ごと消える（再起動すると外れて見える症状になる）。
-       枠の名前と「地図に出さない」だけは時刻を持たず、いま操作している画面を正とするため取り込まない。 */
+       枠の名前と「薄く出す」だけは時刻を持たず、いま操作している画面を正とするため取り込まない。 */
     function favAbsorbStored() {
         const disk = storeGetJson(FAV_STORE_KEY);
         if (disk && typeof disk === 'object' && disk.items && typeof disk.items === 'object') {
@@ -8197,13 +8206,15 @@ map.on('zoomend', () => { isZooming = false; });
         const a = favActiveSlots();
         return favMarksOf(key).filter(n => a.includes(n));
     }
-    /* 「地図に出さない」枠。名前が入っている枠だけが効く（空にした枠は使わない扱いなので、
+    /* 「薄く出す」枠（保存名は hidden。2026-09-27 に「地図に出さない」から改めた）。
+       名前が入っている枠だけが効く（空にした枠は使わない扱いなので、
        印が残っていても地図のピンは今までどおり出す）。 */
     function favHiddenSlots() { return favActiveSlots().filter(n => favStore.hidden[n] === true); }
 
-    /* 地図に出さないオブジェクトのキー。非表示の枠に1つでも入っていれば、
-       他の枠（表示する枠）に入っていても出さない。
-       一覧・検索・シートには今までどおり出す（地図のピンだけを消す）。 */
+    /* 地図に薄く出すオブジェクトのキー。薄く出す枠に1つでも入っていれば、
+       他の枠（普通に出す枠）に入っていても薄くする。
+       元のソース（クラスタを含む）からは外し、buildFavOverlayData が薄いピンの側へ回す。
+       一覧・検索・シートには今までどおり出す。 */
     function favComputeHiddenKeys() {
         const hs = favHiddenSlots();
         const set = new Set();
@@ -8315,30 +8326,27 @@ map.on('zoomend', () => { isZooming = false; });
             </div>`).join('');
         updateFavEyes();
     }
-    /* 地図に出す／出さないの切り替え。目の絵は「いまの状態」を表す（押すと反対になる）。
+    /* 地図に普通に出す／薄く出すの切り替え。目の絵はいつも開いた目で、薄く出す枠は
+       目そのものを地図のピンと同じ濃さ（FAV_DIM_OPACITY）にする（見た目は index.html の .favname-eye）。
+       案は mock/fav-dim-setting-preview.html の案A。切り替えてもトーストは出さない。
        名前が空の枠は使わない扱いなので押せなくする（押しても何も変わらないため）。 */
-    const FAV_EYE_ON = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
-    const FAV_EYE_OFF = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
+    const FAV_EYE = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
     function updateFavEyes() {
         document.querySelectorAll('[data-fav-eye]').forEach(el => {
             const n = Number(el.dataset.favEye);
-            const hidden = favStore.hidden[n] === true;
-            el.innerHTML = hidden ? FAV_EYE_OFF : FAV_EYE_ON;
-            el.setAttribute('aria-pressed', hidden ? 'true' : 'false');
+            const dim = favStore.hidden[n] === true;
+            if (!el.innerHTML) el.innerHTML = FAV_EYE;
+            el.setAttribute('aria-pressed', dim ? 'true' : 'false');
             el.disabled = favNameOf(n) === '';
-            el.title = hidden ? '地図に出していません（押すと出す）' : '地図に出しています（押すと出さない）';
+            el.title = dim ? '地図に薄く出しています（押すと普通に出す）' : '地図に普通に出しています（押すと薄く出す）';
         });
     }
     function onFavHiddenToggle(n) {
         if (!FAV_SLOTS.includes(n) || favNameOf(n) === '') return;
         favStore.hidden[n] = favStore.hidden[n] !== true;
         saveFavStore();
-        refreshFavOverlay();      // 地図のピンの出し入れもここから（refreshFavHiddenSources）
+        refreshFavOverlay();      // 地図のピンの入れ替えもここから（refreshFavHiddenSources）
         updateFavEyes();
-        const c = favCountOf(n);
-        showToast(favStore.hidden[n]
-            ? `「${favNameOf(n)}」の${c.toLocaleString()}件を地図に出さないようにしました`
-            : `「${favNameOf(n)}」の${c.toLocaleString()}件を地図に出すようにしました`);
     }
     function updateFavNameCounts() {
         document.querySelectorAll('[data-fav-cnt]').forEach(el => {
@@ -8984,9 +8992,16 @@ map.on('zoomend', () => { isZooming = false; });
     let favOverlayItems = [];      // 重ね描きに出している要素（タップされたら添字で引く）
     const FAV_MAP_LAYERS = [];     // 作ったレイヤーID（スポット一時非表示が読む）
     const FAV_CLICK_LAYERS = [];   // そのうちタップ対象になるもの
+    /* 「薄く出す」枠のピン。元のソースからは外してあり（favHiddenKeys）、ここで全種別の
+       ピンより下に薄く描き直す。前面の重ね描きとは別のソース・別のレイヤーの組で、
+       タップの受け口も別にする（FAV_CLICK_LAYERS に入れると、上に重なった普通のピンより先に拾ってしまう）。 */
+    const FAV_DIM_OPACITY = 0.35;
+    const FAV_DIM_LAYERS = [];
+    let favDimFeatures = [];
 
     function buildFavOverlayData() {
         favOverlayItems = [];
+        favDimFeatures = [];
         const feats = [];
         const active = favActiveSlots();
         if (active.length && Object.keys(favStore.items).length && searchIndex.length) {
@@ -9000,9 +9015,22 @@ map.on('zoomend', () => { isZooming = false; });
                 const key = favKeyOf(item.type, item.properties, c[0], c[1]);
                 const rec = key ? favStore.items[key] : null;
                 if (!rec) continue;
-                if (favHiddenKeys.has(key)) continue;   // 地図に出さない枠に入っているものは重ね描きもしない
                 const mk = rec.mk.filter(n => active.includes(n));
                 if (!mk.length) continue;
+                /* 薄く出す枠に入っているものは、前面の重ね描きには出さず、薄いピンの側へ回す。
+                   色は元のピンと同じ（種別の色）で、枠のバッジは付けない。 */
+                if (favHiddenKeys.has(key)) {
+                    favDimFeatures.push({
+                        type: 'Feature',
+                        geometry: { type: 'Point', coordinates: [c[0], c[1]] },
+                        properties: {
+                            _i: favOverlayItems.push(item) - 1,
+                            _shape: pin.shape, _icon: pin.icon, _iconSize: pin.size,
+                            _color: objRingColor(item.type, item.properties || {}),
+                        },
+                    });
+                    continue;
+                }
                 /* 属性に入れられるのは数値と文字列だけ（配列や入れ子は setData で
                    文字列になり、城の aliases のような値が壊れる）。シートに渡す properties は
                    favOverlayItems 側の元の要素から取る。 */
@@ -9027,6 +9055,8 @@ map.on('zoomend', () => { isZooming = false; });
         const src = map.getSource('fav-objects');
         if (!src) return;
         src.setData(buildFavOverlayData());
+        const dim = map.getSource('fav-dim-objects');
+        if (dim) dim.setData({ type: 'FeatureCollection', features: favDimFeatures });
     }
     /* お気に入りは全種別のピンより前面に描いているので、そこを踏んだタップは前面側に任せる。
        これが無いと後ろに隠れているピンのハンドラも動き、シートと履歴が二重になる。 */
@@ -9035,7 +9065,63 @@ map.on('zoomend', () => { isZooming = false; });
         return layers.length > 0 && map.queryRenderedFeatures(point, { layers }).length > 0;
     }
 
+    /* 薄く出す枠のピン。o.dimBeforeId（種別ごとのピンの最下段のレイヤー）の前に差し込み、
+       全種別のピンと影より下に描く。影は付けない。
+       濃さはレイヤーごとにしか掛けられないので、地と図柄にそれぞれ FAV_DIM_OPACITY を掛ける
+       （図柄の白は薄い地の上に重なるため、ピン全体をまとめて薄くしたときより少し白く見える）。 */
+    function addFavDimLayers(o) {
+        map.addSource('fav-dim-objects', { type: 'geojson', data: EMPTY_FC });
+        const before = map.getLayer(o.dimBeforeId) ? o.dimBeforeId : undefined;
+        const add = (layer) => {
+            map.addLayer(layer, before);
+            FAV_MAP_LAYERS.push(layer.id);
+            FAV_DIM_LAYERS.push(layer.id);
+            objClickLayers.push(layer.id);   // 薄いピンを押したときに、地図の空きタップとしてシートを閉じない
+        };
+        const isShape = s => ['==', ['get', '_shape'], s];
+        const overlap = { 'icon-allow-overlap': true, 'icon-ignore-placement': true };
+        const op = FAV_DIM_OPACITY;
+        add({ id: 'fav-dim-bg', type: 'circle', source: 'fav-dim-objects', filter: isShape('circle'),
+              paint: { 'circle-color': ['get', '_color'], 'circle-radius': o.circleR, 'circle-opacity': op } });
+        add({ id: 'fav-dim-plate', type: 'symbol', source: 'fav-dim-objects', filter: isShape('michi'),
+              layout: { 'icon-image': 'michi-plate-icon', 'icon-size': o.michiSize, ...overlap },
+              paint: { 'icon-color': ['get', '_color'], 'icon-opacity': op } });
+        add({ id: 'fav-dim-card', type: 'symbol', source: 'fav-dim-objects', filter: isShape('card'),
+              layout: { 'icon-image': 'mhcard-icon', 'icon-size': 1.0, ...overlap },
+              paint: { 'icon-color': o.cardFaceColor, 'icon-opacity': op } });
+        add({ id: 'fav-dim-icon', type: 'symbol', source: 'fav-dim-objects', filter: ['!=', ['get', '_shape'], 'card'],
+              layout: { 'icon-image': ['get', '_icon'], 'icon-size': ['get', '_iconSize'], ...overlap },
+              paint: { 'icon-color': '#FFFFFF', 'icon-opacity': op } });
+        add({ id: 'fav-dim-cardbadge', type: 'symbol', source: 'fav-dim-objects', filter: isShape('card'),
+              layout: { 'icon-image': 'manhole-icon', 'icon-size': o.cardBadgeSize, ...overlap },
+              paint: { 'icon-color': '#FFFFFF', 'icon-opacity': op } });
+        /* タップ。薄いピンは最背面なので、上に普通のピンやお気に入りの重ね描きが重なっていれば
+           そちらのハンドラに任せる。薄いピンのレイヤーどうしの二重発火は元のイベントの印で止める。 */
+        FAV_DIM_LAYERS.forEach(id => {
+            map.on('click', id, e => {
+                if (objLongPressJustFired()) return;
+                if (!e.features || !e.features.length) return;
+                if (e.originalEvent) {
+                    if (e.originalEvent._favDimHandled) return;
+                    e.originalEvent._favDimHandled = true;
+                }
+                const upper = objClickLayers.filter(l => !FAV_DIM_LAYERS.includes(l) && map.getLayer(l));
+                if (upper.length && map.queryRenderedFeatures(e.point, { layers: upper }).length) return;
+                const item = favOverlayItems[e.features[0].properties._i];
+                if (!item) return;
+                if (trackingMode > 0) { trackingMode = 0; stopRafLoop(); updateGeolocateButton(); }
+                const c = item.coords.slice();
+                while (Math.abs(e.lngLat.lng - c[0]) > 180) { c[0] += e.lngLat.lng > c[0] ? 360 : -360; }
+                openObjSheet(item.type, item.label, item.properties, c[0], c[1]);
+                histRecordPin(itemDisplayName(item) || '地点', c, item.type, item.properties);
+            });
+            map.on('mouseenter', id, () => map.getCanvas().style.cursor = 'pointer');
+            map.on('mouseleave', id, () => map.getCanvas().style.cursor = '');
+        });
+    }
+
     function addFavOverlayLayers(o) {
+        addFavDimLayers(o);
         map.addSource('fav-objects', { type: 'geojson', data: EMPTY_FC });
         const add = (layer, clickable) => {
             map.addLayer(layer);

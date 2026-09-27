@@ -1220,16 +1220,18 @@
                       padding: 0 10px; box-sizing: border-box; }
         .favname-cnt { font-size: 11px; color: #999; width: 52px; text-align: right; flex-shrink: 0;
                        font-variant-numeric: tabular-nums; }
-        /* 行の右端の目。地図に出す／出さないの切り替え（中身は updateFavEyes）。
+        /* 行の右端の目。地図に普通に出す／薄く出すの切り替え（中身は updateFavEyes）。
            欄の幅は flex:1 の入力欄が詰めて空ける。SE3(375px) の内側343pxから
            色20＋件数52＋目30＋隙間27を引いて入力欄は214px残り、6文字（13px×6＋padding20＝98px）の
            2倍以上あるので、名前が欠けることはない。
-           出さない状態は取り消し操作（.fxp-btn.danger）と同じ薄い赤で塗り、4行並べたときに
-           どの枠が隠れているかを目で拾えるようにする */
+           薄く出す状態は、目そのものを地図の薄いピンと同じ濃さ（app.js の FAV_DIM_OPACITY）にし、
+           地を灰色にする。消す操作ではないので、取り消し操作（.fxp-btn.danger）の赤は使わない
+           （案は mock/fav-dim-setting-preview.html の案A） */
         .favname-eye { width: 30px; height: 30px; border: 0; border-radius: 8px; flex-shrink: 0;
                        background: #f2f2f2; color: #666; display: flex; align-items: center;
                        justify-content: center; padding: 0; cursor: pointer; }
-        .favname-eye[aria-pressed="true"] { background: #fdeceb; color: #C62828; }
+        .favname-eye[aria-pressed="true"] { background: #eceff1; color: #455A64; }
+        .favname-eye[aria-pressed="true"] svg { opacity: .35; }
         .favname-eye:disabled { opacity: .35; cursor: default; }
         .favname-note { font-size: 11px; color: #999; line-height: 1.7; padding: 2px 16px 10px; }
         /* 設定の「同期」区画と、端末を追加／端末の管理のビュー（SYNC_MANUAL.md §5.6）。
@@ -1956,8 +1958,8 @@
         <div id="fav-name-list"></div>
         <div class="favname-note">名前を入れた枠だけを使います。空にした枠は地図にも一覧にも出ませんが、
             登録した分は消えずに残ります（名前を戻せばそのまま出ます）。<br>
-            右端の目を押すと、その枠のものを地図に出さなくなります。ほかの枠にも入っていても出しません。
-            一覧と検索には出ます。</div>
+            右端の目を押すと、その枠のものを地図に薄く出します。ほかの枠にも入っていても薄くします。
+            一覧と検索はそのままです。</div>
         <div style="border-top:1px solid #f0f0f0;"></div>
         <!-- 同期。入口は設定の中だけに置き、常設のボタンは増やさない（SYNC_MANUAL.md §5.6）。
              ふだん触らない区画なので、バックアップと並べて設定の最下段に置く -->
