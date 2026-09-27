@@ -1970,32 +1970,47 @@
                     onclick="openSyncDevicesView()">端末の管理</button>
         </div>
         <div style="border-top:1px solid #f0f0f0;"></div>
-        <!-- バックアップ。お気に入りと表示設定をまとめて1ファイルにする（サーバーは通らない） -->
+        <!-- バックアップ。お気に入りの枠1つか表示設定を選んで1ファイルにする（サーバーは通らない） -->
         <div class="nearby-section-label">バックアップ</div>
         <div style="display:flex;gap:8px;padding:2px 16px 6px;">
             <button class="fxp-btn primary" style="flex:1;height:38px;font-size:13px;"
-                    onclick="backupExport()">書き出し</button>
+                    onclick="backupOpenExport()">書き出し</button>
             <button class="fxp-btn sub" style="flex:1;height:38px;font-size:13px;"
                     onclick="document.getElementById('backup-file').click()">読み込み</button>
         </div>
         <input id="backup-file" type="file"
                accept="application/json,.json,text/tab-separated-values,.tsv,text/plain,.txt"
                style="display:none" onchange="backupImport(this)">
-        <div class="favname-note">お気に入りと表示設定を1つのファイルにまとめます。
-            読み込むと、いまの内容はファイルの内容に置き換わります。<br>
-            お気に入りの書き出しで作った TSV（id 列付き）を選ぶと、選んだ枠1つに追加するだけで、
-            他の枠と表示設定は変わりません。</div>
-        <!-- TSV を選んだときだけ出す。読み込み先の枠は選ばせる（既定では選んでいない） -->
-        <div id="fav-import-box" style="display:none;">
-            <div class="nearby-section-label">お気に入りの読み込み</div>
-            <div class="favname-note" id="fav-import-file"></div>
-            <div class="lords-chips" id="fav-import-slots" style="padding:0 16px 6px;margin-top:0;"></div>
-            <div class="favname-note" id="fav-import-sum"></div>
+        <div class="favname-note">お気に入りの枠1つか表示設定のどちらかを選んで、書き出し・読み込みをします。
+            お気に入りは、読み込むときに選んだ枠へ追加するだけで、すでに入っているものは外しません。
+            表示設定は置き換えます。お気に入り一覧から書き出した TSV も読み込めます。</div>
+        <!-- 書き出しを押したときだけ出す。対象は最初は選んでいない -->
+        <div id="backup-export-box" style="display:none;">
+            <div class="nearby-section-label">書き出す対象</div>
+            <div class="lords-chips" id="backup-export-targets" style="padding:0 16px 6px;margin-top:0;"></div>
+            <div class="favname-note" id="backup-export-sum"></div>
             <div style="display:flex;gap:8px;padding:2px 16px 12px;">
-                <button class="fxp-btn primary" id="fav-import-go" style="flex:1;height:38px;font-size:13px;"
-                        onclick="favImportRun()" disabled>読み込む</button>
+                <button class="fxp-btn primary" id="backup-export-go" style="flex:1;height:38px;font-size:13px;"
+                        onclick="backupExportRun()" disabled>保存</button>
                 <button class="fxp-btn sub" style="flex:1;height:38px;font-size:13px;"
-                        onclick="favImportCancel()">やめる</button>
+                        onclick="backupExportCancel()">やめる</button>
+            </div>
+        </div>
+        <!-- ファイルを選んだときだけ出す。読み込み先の枠は最初は選んでいない -->
+        <div id="backup-import-box" style="display:none;">
+            <div class="nearby-section-label">読み込むもの</div>
+            <div class="favname-note" id="backup-import-file"></div>
+            <div class="lords-chips" id="backup-import-sources" style="padding:0 16px 6px;margin-top:0;"></div>
+            <div id="backup-import-target-row" style="display:none;">
+                <div class="nearby-section-label">読み込み先の枠</div>
+                <div class="lords-chips" id="backup-import-targets" style="padding:0 16px 6px;margin-top:0;"></div>
+            </div>
+            <div class="favname-note" id="backup-import-sum"></div>
+            <div style="display:flex;gap:8px;padding:2px 16px 12px;">
+                <button class="fxp-btn primary" id="backup-import-go" style="flex:1;height:38px;font-size:13px;"
+                        onclick="backupImportRun()" disabled>読み込む</button>
+                <button class="fxp-btn sub" style="flex:1;height:38px;font-size:13px;"
+                        onclick="backupImportCancel()">やめる</button>
             </div>
         </div>
         </div><!-- /settings-scroll -->
