@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>「地図に出さない」枠の見せ方</title>
+<style>
+    /* 寸法・色は mock/fav-badge-preview.html と同じく index.html / app.js から写した実寸。
+       選択リングは app.js の selected-ring-inner（半径23・線3）／outer（半径31・線2・不透明度0.45）。 */
+    :root {
+        --obj-icon-circle: 28px;
+        --obj-icon-inner: 25px;
+        --obj-icon-inner-full: 28px;
+        --obj-icon-square: 26px;
+        --mhcard-w: 28px;
+        --mhcard-h: 36px;
+        --mhcard-badge: 22.4px;
+        --fav1: #E91E63; --fav2: #7B1FA2;
+    }
+    body { margin: 0; font-family: system-ui, sans-serif; color: #222; background: #fff; }
+    header { padding: 12px 14px 4px; }
+    h1 { font-size: 16px; margin: 0 0 4px; }
+    .lead { font-size: 12.5px; color: #444; line-height: 1.8; margin: 0 0 10px; max-width: 800px; }
+    h2.sec { font-size: 14px; margin: 26px 14px 6px; padding-bottom: 5px; border-bottom: 1px solid #ddd; }
+    .desc { padding: 0 14px; max-width: 800px; }
+    .desc p { font-size: 12.5px; line-height: 1.8; margin: 0 0 6px; color: #333; }
+    .pros { color: #1B5E20; } .cons { color: #B71C1C; }
+    .impl { font-size: 11.5px; color: #37474F; background: #f6f7f9; border-left: 3px solid #90A4AE;
+            padding: 7px 10px; line-height: 1.75; margin: 0 0 8px; }
+    code { background: #f2f2f2; padding: 1px 4px; border-radius: 3px; font-size: 11px; font-family: ui-monospace, monospace; }
+    table { border-collapse: collapse; margin: 8px 14px 30px; font-size: 12px; max-width: 800px; }
+    th, td { border: 1px solid #e0e0e0; padding: 6px 8px; text-align: left; vertical-align: top; line-height: 1.65; }
+    th { background: #f6f7f9; font-weight: 600; }
+
+    .pair { display: flex; flex-wrap: wrap; gap: 12px; padding: 0 14px 6px; }
+    .cap-top { font-size: 11px; color: #777; margin: 0 0 3px; }
+
+    /* ══ 疑似地図（fav-badge-preview.html と同じ作り） ══ */
+    .maparea { position: relative; width: 375px; height: 260px;
+               border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;
+               background: #eee8dc; box-sizing: border-box; }
+    .maparea::before { content: ''; position: absolute; inset: -20px;
+        background:
+            repeating-linear-gradient(90deg, transparent 0 78px, #f7f4ec 78px 92px),
+            repeating-linear-gradient(0deg,  transparent 0 62px, #f7f4ec 62px 74px),
+            repeating-linear-gradient(48deg, transparent 0 150px, #ffffff 150px 162px); }
+
+    .pin { position: absolute; left: var(--x); top: var(--y); transform: translate(-50%, -50%);
+           width: var(--obj-icon-circle); height: var(--obj-icon-circle); z-index: 2; }
+    .pin .shape { position: absolute; inset: 0; border-radius: 50%; box-sizing: border-box;
+                  display: flex; align-items: center; justify-content: center;
+                  background: var(--bg); box-shadow: 0 2px 6px rgba(0, 0, 0, 0.13); }
+    .pin .shape img { width: var(--obj-icon-inner-full); height: var(--obj-icon-inner-full);
+                      object-fit: contain; filter: brightness(0) invert(1); }
+    .pin[data-t="manhole"] .shape img, .pin[data-t="pokefuta"] .shape img {
+        width: var(--obj-icon-inner); height: var(--obj-icon-inner); }
+    .pin[data-t="michi"] { width: var(--obj-icon-square); height: var(--obj-icon-square); }
+    .pin[data-t="michi"] .shape { border-radius: 2px; }
+    .pin[data-t="michi"] .shape img { width: 100%; height: 100%; }
+    .pin[data-t="mhcard"] { width: var(--mhcard-w); height: var(--mhcard-h); }
+    .pin[data-t="mhcard"] .shape { border-radius: 3px; }
+    .pin[data-t="mhcard"] .shape img { width: var(--mhcard-badge); height: var(--mhcard-badge); }
+    .pin .badge { position: absolute; top: -5px; right: -5px; width: 15px; height: 15px;
+                  border-radius: 50%; background: var(--mk); border: 1.5px solid #fff; box-sizing: border-box;
+                  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35); }
+    .pin .dot { display: none; }
+
+    /* 選択リング（一覧・検索からジャンプした先） */
+    .ring { position: absolute; left: var(--x); top: var(--y); transform: translate(-50%, -50%);
+            border-radius: 50%; border-style: solid; border-color: var(--rc); box-sizing: border-box; z-index: 1; }
+    .ring.in  { width: 49px; height: 49px; border-width: 3px; }
+    .ring.out { width: 64px; height: 64px; border-width: 2px; opacity: .45; }
+
+    /* ══ 非表示の枠に入っているピン（.pin.hid）の見せ方。案ごとに maparea のクラスで切り替える ══
+       非表示のピンは全案とも最背面（z-index:0）に置き、普通のピンの下へ潜らせる。 */
+    .pin.hid { z-index: 0; }
+    .pin.hid .badge { display: none; }             /* 非表示の枠のバッジは出さない（全案共通） */
+
+    /* 案0 現状：出さない */
+    .a0 .pin.hid { display: none; }
+    /* 案1 半透明 */
+    .a1 .pin.hid { opacity: .35; }
+    .a1 .pin.hid .shape { box-shadow: none; }
+    /* 案2 半透明＋縮小 */
+    .a2 .pin.hid { opacity: .5; transform: translate(-50%, -50%) scale(.64); }
+    .a2 .pin.hid .shape { box-shadow: none; }
+    /* 案3 灰色にする（形と図柄は残し、種別の色だけ抜く） */
+    .a3 .pin.hid .shape { background: #B0B0B0; box-shadow: none; }
+    .a3 .pin.hid { opacity: .7; }
+    /* 案4 白抜き（地を白、縁と図柄を種別の色に） */
+    .a4 .pin.hid .shape { background: rgba(255,255,255,.75); border: 2px solid var(--bg); box-shadow: none; }
+    .a4 .pin.hid .shape img { filter: none; opacity: 0; }
+    .a4 .pin.hid .shape::after { content: ''; position: absolute; inset: 3px; background: var(--bg);
+        -webkit-mask: var(--img) center / contain no-repeat; mask: var(--img) center / contain no-repeat; }
+    /* 案5 点に縮める（位置と種別の色だけ残す） */
+    .a5 .pin.hid .shape { display: none; }
+    .a5 .pin.hid .dot { display: block; position: absolute; left: 50%; top: 50%; width: 9px; height: 9px;
+        transform: translate(-50%, -50%); border-radius: 50%; background: var(--bg);
+        border: 1.5px solid #fff; box-shadow: 0 0 0 .5px rgba(0,0,0,.25); opacity: .85; }
+
+    /* 「ジャンプ後」の地図だけに付く .jump。選ばれた非表示ピンを普通の見た目に戻す案 */
+    .a5.jump .pin.hid.sel .shape, .a6.jump .pin.hid.sel .shape { display: flex; }
+    .a5.jump .pin.hid.sel .dot { display: none; }
+    /* 案6 普段は出さず、選んだものだけ出す */
+    .a6 .pin.hid { display: none; }
+    .a6.jump .pin.hid.sel { display: block; z-index: 3; }
+    /* 案1〜4 はジャンプしても薄いまま（リングで場所を示す）。比べるための変種は下の「7. 組み合わせ」 */
+    .a1b.jump .pin.hid.sel, .a2b.jump .pin.hid.sel { opacity: 1; transform: translate(-50%, -50%); z-index: 3; }
+    .a1b.jump .pin.hid.sel .shape, .a2b.jump .pin.hid.sel .shape { box-shadow: 0 2px 6px rgba(0,0,0,.13); }
+</style>
+</head>
+<body>
+<header>
+    <h1>「地図に出さない」枠の見せ方</h1>
+    <p class="lead">
+        いまは非表示の枠に入っているピンを地図のソースから外しているため、一覧・検索から選ぶと
+        <b>選択リングとパルスが何も無い場所に出ます</b>（下の「案0 現状」）。
+        ピンを消さずに存在感だけを落とす案を並べました。<br>
+        どの地図も同じ配置で、<b style="color:#7B1FA2">紫の枠2を「地図に出さない」</b>にした状態です。
+        非表示の枠に入っているのは、城2件（うち中央の1件をジャンプ先に選んでいます）・食べログ1件・道の駅1件・マンホールカード1件。
+        左上の食べログは、普通のピンと重なる場合を見るために隣の食べログの真下に置いています。<br>
+        左が普段、右が一覧からその城を選んでジャンプした直後です。幅は iPhone SE3 の 375px、実寸です。
+    </p>
+</header>
+
+<div id="sections"></div>
+
+<h2 class="sec">比較</h2>
+<table>
+    <tr><th>案</th><th>普段の目立たなさ</th><th>ジャンプ先の分かりやすさ</th><th>種別の見分け</th><th>作り（MapLibre）</th></tr>
+    <tr><td>0 現状</td><td>完全に無い</td><td>リングの中が空</td><td>—</td><td>いまのまま</td></tr>
+    <tr><td>1 半透明</td><td>中。地図の色が透けるが形は残る</td><td>リングの中に薄いピン</td><td>できる</td><td>別ソースに入れ、<code>circle-opacity</code>・<code>icon-opacity</code> を 0.35</td></tr>
+    <tr><td>2 半透明＋縮小</td><td>高い。18px 相当で普通のピンと大きさで区別できる</td><td>リングの中が広く空いて見える</td><td>できる（小さい）</td><td>1 に加えて <code>circle-radius</code>・<code>icon-size</code> を 0.64 倍</td></tr>
+    <tr><td>3 灰色</td><td>中。形は普通のピンと同じ</td><td>リングの色は種別の色、中は灰色</td><td>図柄だけで判断（城の灰色 #8A8A8A と紛れる）</td><td>地の色を固定の灰色に</td></tr>
+    <tr><td>4 白抜き</td><td>中。白い地が地図の上で浮く</td><td>分かる</td><td>できる（縁と図柄の色）</td><td>地を白、<code>icon-color</code> を種別の色に（図柄は SDF で色を変えられる。app.js で既に <code>icon-color</code> を使っている）</td></tr>
+    <tr><td>5 点</td><td>最も高い。位置だけ</td><td>選ぶと普通のピンに戻す</td><td>色だけ</td><td>普段は <code>circle</code> 1枚。選んだものだけ選択用ソースで普通の見た目を描く</td></tr>
+    <tr><td>6 選んだときだけ</td><td>完全に無い</td><td>普通のピンで出る</td><td>できる</td><td>普段はいまのまま。選択リングと同じ時に、選択用ソースへ1件だけ描く</td></tr>
+</table>
+
+<h2 class="sec">どの案でも決めること</h2>
+<table>
+    <tr><th>項目</th><th>このモックでの置き方</th><th>別の選択肢</th></tr>
+    <tr><td>重なり順</td><td>普通のピンより下（最背面）</td><td>—</td></tr>
+    <tr><td>タップ</td><td>未決。案1〜5 は押せるピンが残るので、押したらシートを開くかどうか</td><td>押せない（下の普通のピンや地図のタップに素通し）</td></tr>
+    <tr><td>クラスタ</td><td>いまと同じく件数に数えない。薄いピンはクラスタにまとめず、ズームが浅いと重なって散らばる</td><td>一定ズーム未満では薄いピンも描かない</td></tr>
+    <tr><td>お気に入りのバッジ</td><td>出さない（非表示の枠の色バッジも、他の表示する枠のバッジも）</td><td>表示する枠のバッジだけ出す</td></tr>
+    <tr><td>ジャンプ後</td><td>案1〜4 は薄いまま、案5・6 は普通の見た目に戻す</td><td>案1・2 も選んだときだけ普通に戻す（「7. 組み合わせ」）</td></tr>
+</table>
+
+<script>
+const IMG = { shop: '../tabe.png', castle: '../castle.png', castle100: '../castle.png',
+              manhole: '../manhole.png', michi: '../michi.png', mhcard: '../manhole.png' };
+const BG  = { shop: '#FFAA00', castle: '#8A8A8A', castle100: '#4285F4',
+              manhole: '#B87333', michi: '#0B499D', mhcard: '#B87333' };
+
+/* 配置。hid = 非表示の枠（枠2）に入っている、mk = 表示する枠のバッジ、sel = ジャンプ先 */
+const PINS = [
+    { t: 'shop',      x:  54, y:  52 },
+    { t: 'shop',      x:  66, y:  60, hid: 1 },          // 普通のピンの真下に潜る
+    { t: 'shop',      x: 118, y:  96 },
+    { t: 'manhole',   x:  40, y: 170 },
+    { t: 'castle',    x: 188, y: 128, hid: 1, sel: 1 },  // ジャンプ先
+    { t: 'castle',    x: 250, y:  70, mk: 'var(--fav1)' },
+    { t: 'castle100', x: 312, y: 186, hid: 1 },
+    { t: 'castle',    x: 150, y: 210 },
+    { t: 'michi',     x: 300, y:  56, hid: 1 },
+    { t: 'michi',     x: 96,  y: 222 },
+    { t: 'mhcard',    x: 238, y: 214, hid: 1 },
+    { t: 'shop',      x: 330, y: 120 },
+];
+
+function pinHtml(p) {
+    const cls = ['pin', p.hid ? 'hid' : '', p.sel ? 'sel' : ''].join(' ');
+    return `<div class="${cls}" data-t="${p.t}"
+        style="--x:${p.x}px;--y:${p.y}px;--bg:${BG[p.t]};--img:url(${IMG[p.t]})${p.mk ? `;--mk:${p.mk}` : ''}">
+        <div class="shape"><img src="${IMG[p.t]}" alt=""></div><div class="dot"></div>
+        ${p.mk ? '<div class="badge"></div>' : ''}</div>`;
+}
+function mapHtml(cls, jump) {
+    const sel = PINS.find(p => p.sel);
+    const ring = jump ? `<div class="ring out" style="--x:${sel.x}px;--y:${sel.y}px;--rc:${BG[sel.t]}"></div>
+                         <div class="ring in"  style="--x:${sel.x}px;--y:${sel.y}px;--rc:${BG[sel.t]}"></div>` : '';
+    return `<div><p class="cap-top">${jump ? '一覧から選んでジャンプした直後' : '普段'}</p>
+        <div class="maparea ${cls}${jump ? ' jump' : ''}">${ring}${PINS.map(pinHtml).join('')}</div></div>`;
+}
+
+const PLANS = [
+    { c: 'a0', h: '案0 現状（出さない）',
+      p: '比べるための基準です。ジャンプするとリングとパルスが空き地に出ます。',
+      pro: '地図が最もすっきりします。', con: '選んだ先に何も無く、場所が合っているのか分かりません。' },
+    { c: 'a1', h: '案1 半透明（不透明度 0.35）',
+      p: '形・大きさ・色はそのままで、薄くします。影は消します。',
+      pro: '何のピンかは分かり、普通のピンとの区別も付きます。', con: '密集地では薄いピンが数多く残り、地図のすっきり感は案0より落ちます。' },
+    { c: 'a2', h: '案2 半透明＋縮小（0.64倍・不透明度 0.5）',
+      p: '18px 相当まで縮めて薄くします。大きさの違いで「数に入っていないもの」と読めます。',
+      pro: '普段の存在感が小さく、種別の色も残ります。', con: 'リングの中でピンが小さく、ジャンプ先としては頼りなく見えます（案7で補えます）。' },
+    { c: 'a3', h: '案3 灰色（地を #B0B0B0・不透明度 0.7）',
+      p: '形と図柄は残し、種別の色だけ抜きます。',
+      pro: '「効いていない」ことが灰色で伝わります。', con: '普通の城のピン（#8A8A8A）と色が近く、城どうしでは見分けにくいです。' },
+    { c: 'a4', h: '案4 白抜き（地を白、縁と図柄を種別の色）',
+      p: '塗りを白に反転させます。',
+      pro: '種別の色が残り、塗りの有無で区別できます。', con: '白い地が地図の上で浮くため、薄くしたい目的に対して目立ちます。' },
+    { c: 'a5', h: '案5 点に縮める（φ9 の点・選ぶと普通のピン）',
+      p: '普段は位置と種別の色だけの点にし、選んだものだけ普通のピンで描きます。',
+      pro: '普段はほぼ邪魔にならず、ジャンプ先ははっきり出ます。', con: '点では何のピンかが色でしか分かりません（城の灰色は地図に紛れます）。点は小さくタップしにくいです。' },
+    { c: 'a6', h: '案6 選んだときだけ出す',
+      p: '普段は案0と同じく出さず、一覧・検索・履歴で選んだその1件だけを普通のピンで描きます。シートを閉じると消します。',
+      pro: '普段の見た目は今と同じで、ジャンプ時の不都合だけが解消します。', con: '普段は存在が全く分からないので、地図上で「ここに非表示のものがある」とは気付けません。' },
+    { c: 'a2 a2b', h: '7. 組み合わせ：案2＋選んだものだけ普通に戻す',
+      p: '普段は案2の小さく薄いピン、ジャンプ先だけ普通のピンに戻します（案5の点を案2に替えたもの）。',
+      pro: '普段は種別が分かる程度に薄く残り、ジャンプ先も案6と同じくはっきり出ます。', con: '描き分けのレイヤーが案2より1組増えます（選択用ソースに1件描くだけで、件数に比例する負荷は増えません）。' },
+];
+
+document.getElementById('sections').innerHTML = PLANS.map(pl => `
+    <h2 class="sec">${pl.h}</h2>
+    <div class="desc"><p>${pl.p}</p>
+        <p class="pros">○ ${pl.pro}</p><p class="cons">× ${pl.con}</p></div>
+    <div class="pair">${mapHtml(pl.c, false)}${mapHtml(pl.c, true)}</div>`).join('');
+</script>
+</body>
+</html>
