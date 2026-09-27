@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>「薄く出す」設定の見せ方</title>
+<style>
+    /* 設定の行・見出し・トーストは index.html の .favname-* / .nearby-section-label / #app-toast から写した実寸。
+       端末枠は iPhone SE3 の 375px。 */
+    :root { --fav1: #E91E63; --fav2: #7B1FA2; --fav3: #00897B; --fav4: #7CB342; }
+    body { margin: 0; font-family: system-ui, sans-serif; color: #222; background: #fff; }
+    header { padding: 12px 14px 4px; }
+    h1 { font-size: 16px; margin: 0 0 4px; }
+    .lead { font-size: 12.5px; color: #444; line-height: 1.8; margin: 0 0 10px; max-width: 800px; }
+    h2.sec { font-size: 14px; margin: 26px 14px 6px; padding-bottom: 5px; border-bottom: 1px solid #ddd; }
+    .desc { padding: 0 14px; max-width: 800px; }
+    .desc p { font-size: 12.5px; line-height: 1.8; margin: 0 0 6px; color: #333; }
+    .pros { color: #1B5E20; } .cons { color: #B71C1C; }
+    code { background: #f2f2f2; padding: 1px 4px; border-radius: 3px; font-size: 11px; font-family: ui-monospace, monospace; }
+    table { border-collapse: collapse; margin: 8px 14px 30px; font-size: 12px; max-width: 800px; }
+    th, td { border: 1px solid #e0e0e0; padding: 6px 8px; text-align: left; vertical-align: top; line-height: 1.65; }
+    th { background: #f6f7f9; font-weight: 600; }
+
+    .phone { width: 375px; margin: 0 14px 8px; background: #fff; border: 1px solid #e0e0e0;
+             border-radius: 12px; overflow: hidden; padding: 4px 0 2px; }
+    .nearby-section-label { font-size: 11px; color: #999; padding: 6px 16px 4px; }
+    .favname-row { display: flex; align-items: center; gap: 9px; padding: 5px 16px; }
+    .favname-sw { width: 20px; height: 20px; border-radius: 6px; flex-shrink: 0; display: flex;
+                  align-items: center; justify-content: center; font-size: 10px; font-weight: 700; }
+    .favname-in { flex: 1; min-width: 0; height: 30px; border: 1px solid #e3e3e3; border-radius: 8px;
+                  background: #fafafa; color: #333; font-size: 13px; font-family: inherit;
+                  padding: 0 10px; box-sizing: border-box; }
+    .favname-cnt { font-size: 11px; color: #999; width: 52px; text-align: right; flex-shrink: 0;
+                   font-variant-numeric: tabular-nums; }
+    .favname-note { font-size: 11px; color: #999; line-height: 1.7; padding: 2px 16px 10px; }
+    .toast { margin: 0 14px 6px; width: fit-content; max-width: 330px; background: #fff; color: #333;
+             font-size: 13px; line-height: 1.5; padding: 11px 16px; border-radius: 10px;
+             border: 1px solid #e0e0e0; box-shadow: 0 4px 16px rgba(0,0,0,0.18); text-align: center; }
+    .toast-cap { font-size: 11px; color: #777; margin: 6px 14px 4px; }
+    .wrap { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 4px 0; }
+
+    /* ── 現状：目のボタン（出さない状態は取り消し操作と同じ薄い赤） ── */
+    .eye { width: 30px; height: 30px; border: 0; border-radius: 8px; flex-shrink: 0;
+           background: #f2f2f2; color: #666; display: flex; align-items: center;
+           justify-content: center; padding: 0; cursor: pointer; }
+    .v0 .eye.on { background: #fdeceb; color: #C62828; }
+    /* 案A 目を薄くする（地は灰色のまま。赤をやめる） */
+    .vA .eye.on svg { opacity: .35; }
+    .vA .eye.on { background: #eceff1; color: #455A64; }
+    /* 案B 案A＋色見本も薄くする（地図のピンと同じ薄さ） */
+    .vB .eye.on svg { opacity: .35; }
+    .vB .eye.on { background: #eceff1; color: #455A64; }
+    .vB .row-on .favname-sw { opacity: .35; }
+    /* 案C 「通常｜薄く」の2択 */
+    .seg { display: flex; flex-shrink: 0; height: 30px; border-radius: 8px; background: #f2f2f2; padding: 2px;
+           box-sizing: border-box; }
+    .seg span { width: 36px; display: flex; align-items: center; justify-content: center;
+                font-size: 11.5px; color: #888; border-radius: 6px; }
+    .seg span.cur { background: #fff; color: #333; font-weight: 600; box-shadow: 0 1px 2px rgba(0,0,0,.15); }
+    /* 案D 文字の切り替えボタン「薄く」 */
+    .pill { flex-shrink: 0; height: 30px; width: 44px; border-radius: 8px; border: 1px solid #e0e0e0;
+            background: #fff; color: #888; font-size: 12px; font-family: inherit; padding: 0; }
+    .pill.on { background: #eceff1; border-color: #eceff1; color: #37474F; font-weight: 600; }
+    .vD .row-on .favname-sw { opacity: .35; }
+</style>
+</head>
+<body>
+<header>
+    <h1>「薄く出す」設定の見せ方</h1>
+    <p class="lead">
+        地図のピンを消さずに薄く残す形（モック <code>fav-hidden-preview.html</code> の案1・案2・案7）に変えた場合の、
+        設定の「お気に入りの名前」の行、下の説明、切り替えたときのトーストの案です。
+        どの案も<b style="color:#7B1FA2">枠2「行きたい」</b>を薄くした状態です。<br>
+        今の赤い地は、取り消し操作（<code>.fxp-btn.danger</code>）と同じ色です。消さずに薄く出すだけの設定に赤を使うと、
+        何かを消す操作に見えるため、どの案でも赤をやめています。
+    </p>
+</header>
+
+<div id="sections"></div>
+
+<h2 class="sec">比較</h2>
+<table>
+    <tr><th>案</th><th>名前の欄の幅</th><th>状態の読み取り</th><th>操作の分かりやすさ</th></tr>
+    <tr><td>0 現状</td><td>214px</td><td>斜線の目＋赤い地</td><td>目の意味は分かるが、赤は消す操作に見える</td></tr>
+    <tr><td>A 目を薄く</td><td>214px</td><td>目が薄い</td><td>押す場所は今と同じ。薄い目の意味は説明文頼み</td></tr>
+    <tr><td>B 目と色見本を薄く</td><td>214px</td><td>色見本が地図のピンと同じ薄さになる</td><td>A と同じ。4行並べたときにどれが薄いかを色で拾える</td></tr>
+    <tr><td>C 通常｜薄く</td><td>168px</td><td>文字で読める</td><td>最も明快。欄は 6文字（98px）の1.7倍残る</td></tr>
+    <tr><td>D 「薄く」ボタン＋色見本</td><td>200px</td><td>ボタンの地と色見本</td><td>押すと何が起きるかが文字で分かる</td></tr>
+</table>
+<p class="desc" style="font-size:12px;color:#555;">
+    欄の幅は、内側 343px から 色見本20・件数52・隙間27（9×3）と右端の部品の幅を引いた値です
+    （目30 → 214px、2択76 → 168px、ボタン44 → 200px）。<br>
+    保存の中身（<code>favorites.hidden</code>）は意味が「出さない」から「薄く出す」に変わるだけで、形は変わりません。今の設定はそのまま引き継げます。
+</p>
+
+<script>
+const EYE_ON  = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
+const EYE_OFF = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
+const ROWS = [
+    { n: 1, name: 'お気に入り', cnt: 48,  bg: 'var(--fav1)', fg: '#fff' },
+    { n: 2, name: '行きたい',   cnt: 126, bg: 'var(--fav2)', fg: '#fff', on: 1 },
+    { n: 3, name: '行った',     cnt: 312, bg: 'var(--fav3)', fg: '#fff' },
+    { n: 4, name: '',           cnt: 0,   bg: 'var(--fav4)', fg: '#212121' },
+];
+const CTRL = {
+    v0: r => `<button class="eye${r.on ? ' on' : ''}" ${r.name ? '' : 'disabled style="opacity:.35"'}>${r.on ? EYE_OFF : EYE_ON}</button>`,
+    vA: r => `<button class="eye${r.on ? ' on' : ''}" ${r.name ? '' : 'disabled style="opacity:.35"'}>${EYE_ON}</button>`,
+    vB: r => `<button class="eye${r.on ? ' on' : ''}" ${r.name ? '' : 'disabled style="opacity:.35"'}>${EYE_ON}</button>`,
+    vC: r => `<div class="seg" ${r.name ? '' : 'style="opacity:.35"'}><span class="${r.on ? '' : 'cur'}">通常</span><span class="${r.on ? 'cur' : ''}">薄く</span></div>`,
+    vD: r => `<button class="pill${r.on ? ' on' : ''}" ${r.name ? '' : 'disabled style="opacity:.35"'}>薄く</button>`,
+};
+const PLANS = [
+    { v: 'v0', h: '案0 現状',
+      p: '比べるための基準です。',
+      note: '右端の目を押すと、その枠のものを地図に出さなくなります。ほかの枠にも入っていても出しません。一覧と検索には出ます。',
+      t1: '「行きたい」の126件を地図に出さないようにしました', t2: '「行きたい」の126件を地図に出すようにしました',
+      pro: '—', con: '実際の動き（薄く出す）と言葉（出さない）が合わなくなります。赤い地が消す操作に見えます。' },
+    { v: 'vA', h: '案A 目のまま、押した状態は目を薄くする',
+      p: '目の絵は常に開いた目で、薄くした枠だけ目そのものを 0.35 の濃さにします。地は赤をやめて灰色にします。',
+      note: '右端の目を押すと、その枠のものを地図に薄く出します。ほかの枠にも入っていても薄くします。一覧と検索はそのままです。',
+      t1: '「行きたい」の126件を地図に薄く出します', t2: '「行きたい」の126件を地図に普通に出します',
+      pro: '部品と位置は今のままで、変えるのは絵と色だけです。', con: '薄い目が「薄く出す」の意味だとは、説明文を読まないと分かりにくいです。名前が空の枠の押せない目（0.35 の濃さ）と見た目が近く、押せない状態と紛れます（下の枠4）。' },
+    { v: 'vB', h: '案B 案A＋色見本も薄くする',
+      p: '行の左端の色見本（枠の番号）も、地図のピンと同じ 0.35 の濃さにします。',
+      note: '右端の目を押すと、その枠のものを地図に薄く出します（左の色も薄くなります）。ほかの枠にも入っていても薄くします。一覧と検索はそのままです。',
+      t1: '「行きたい」の126件を地図に薄く出します', t2: '「行きたい」の126件を地図に普通に出します',
+      pro: '地図の見た目と設定の見た目が揃い、4行並べたときにどの枠が薄いかを色で拾えます。', con: '案A と同じく、薄い目が名前が空の枠の押せない目と紛れます。色見本を薄くするのは今の画面に無い表し方なので、説明文での補足が要ります。' },
+    { v: 'vC', h: '案C 「通常｜薄く」の2択',
+      p: '目をやめ、文字の2択にします。今どちらかを白い地で示します。',
+      note: '「薄く」にした枠のものは、地図に薄く出します。ほかの枠にも入っていても薄くします。一覧と検索はそのままです。',
+      t1: '「行きたい」の126件を地図に薄く出します', t2: '「行きたい」の126件を地図に普通に出します',
+      pro: '状態と操作の両方が文字で読め、説明文を読まなくても分かります。', con: '部品が 76px になり、名前の欄が 214px → 168px に縮みます（6文字の 98px は収まります）。' },
+    { v: 'vD', h: '案D 「薄く」の切り替えボタン＋色見本も薄く',
+      p: '目の代わりに「薄く」と書いた切り替えボタンを置き、押した状態は地を灰色にします。色見本も薄くします。',
+      note: '「薄く」を押した枠のものは、地図に薄く出します（左の色も薄くなります）。ほかの枠にも入っていても薄くします。一覧と検索はそのままです。',
+      t1: '「行きたい」の126件を地図に薄く出します', t2: '「行きたい」の126件を地図に普通に出します',
+      pro: '押すと何が起きるかが文字で分かり、欄の幅は案C より広く残ります。', con: 'ボタンが押された状態か否かは地の色だけで見分けるので、案C より状態は読み取りにくいです。' },
+];
+const row = (v, r) => `<div class="favname-row${r.on ? ' row-on' : ''}">
+    <span class="favname-sw" style="background:${r.bg};color:${r.fg}">${r.n}</span>
+    <input class="favname-in" type="text" value="${r.name}" placeholder="枠${r.n}（空欄なら使わない）">
+    <span class="favname-cnt">${r.cnt}件</span>${CTRL[v](r)}</div>`;
+document.getElementById('sections').innerHTML = PLANS.map(pl => `
+    <h2 class="sec">${pl.h}</h2>
+    <div class="desc"><p>${pl.p}</p><p class="pros">○ ${pl.pro}</p><p class="cons">× ${pl.con}</p></div>
+    <div class="wrap">
+      <div class="phone ${pl.v}">
+        <div class="nearby-section-label">お気に入りの名前</div>
+        ${ROWS.map(r => row(pl.v, r)).join('')}
+        <div class="favname-note">名前を入れた枠だけを使います。空にした枠は地図にも一覧にも出ませんが、
+            登録した分は消えずに残ります（名前を戻せばそのまま出ます）。<br>${pl.note}</div>
+      </div>
+      <div><p class="toast-cap">切り替えたときのトースト</p>
+        <div class="toast">${pl.t1}</div><div class="toast">${pl.t2}</div></div>
+    </div>`).join('');
+</script>
+</body>
+</html>
