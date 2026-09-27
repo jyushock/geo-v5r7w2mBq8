@@ -1153,6 +1153,8 @@
             color: #666; border: 0; cursor: pointer; font-family: inherit;
         }
         .lords-chip[aria-pressed="true"] { background: #e3ecff; color: #2a5bd7; font-weight: bold; }
+        /* お気に入りの読み込みで、名前が空の枠（使わない枠）を選べなくする */
+        .lords-chip[disabled] { opacity: .45; cursor: default; }
         /* お気に入りの絞り込みチップに付ける枠の色。名前が長くても行が崩れないよう幅を止める */
         .lords-chip .fav-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%;
                                margin-right: 5px; vertical-align: -1px; }
@@ -1976,10 +1978,26 @@
             <button class="fxp-btn sub" style="flex:1;height:38px;font-size:13px;"
                     onclick="document.getElementById('backup-file').click()">読み込み</button>
         </div>
-        <input id="backup-file" type="file" accept="application/json,.json" style="display:none"
-               onchange="backupImport(this)">
+        <input id="backup-file" type="file"
+               accept="application/json,.json,text/tab-separated-values,.tsv,text/plain,.txt"
+               style="display:none" onchange="backupImport(this)">
         <div class="favname-note">お気に入りと表示設定を1つのファイルにまとめます。
-            読み込むと、いまの内容はファイルの内容に置き換わります。</div>
+            読み込むと、いまの内容はファイルの内容に置き換わります。<br>
+            お気に入りの書き出しで作った TSV（id 列付き）を選ぶと、選んだ枠1つに追加するだけで、
+            他の枠と表示設定は変わりません。</div>
+        <!-- TSV を選んだときだけ出す。読み込み先の枠は選ばせる（既定では選んでいない） -->
+        <div id="fav-import-box" style="display:none;">
+            <div class="nearby-section-label">お気に入りの読み込み</div>
+            <div class="favname-note" id="fav-import-file"></div>
+            <div class="lords-chips" id="fav-import-slots" style="padding:0 16px 6px;margin-top:0;"></div>
+            <div class="favname-note" id="fav-import-sum"></div>
+            <div style="display:flex;gap:8px;padding:2px 16px 12px;">
+                <button class="fxp-btn primary" id="fav-import-go" style="flex:1;height:38px;font-size:13px;"
+                        onclick="favImportRun()" disabled>読み込む</button>
+                <button class="fxp-btn sub" style="flex:1;height:38px;font-size:13px;"
+                        onclick="favImportCancel()">やめる</button>
+            </div>
+        </div>
         </div><!-- /settings-scroll -->
     </div>
 

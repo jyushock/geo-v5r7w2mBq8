@@ -628,8 +628,11 @@
         const reader = new FileReader();
         reader.onerror = () => showToast('ファイルを読めませんでした');
         reader.onload = () => {
+            const text = String(reader.result).replace(/^\uFEFF/, '');
+            // 先頭が { ならバックアップ（JSON）。それ以外はお気に入りの TSV として、選んだ枠へ足す
+            if (!text.trimStart().startsWith('{')) { favImportPrepare(text, file.name); return; }
             let obj = null;
-            try { obj = JSON.parse(String(reader.result)); } catch { obj = null; }
+            try { obj = JSON.parse(text); } catch { obj = null; }
             if (!obj || obj.format !== BACKUP_FORMAT || !obj.data || typeof obj.data !== 'object') {
                 showToast('このファイルは読み込めません');
                 return;
@@ -8051,6 +8054,113 @@ map.on('zoomend', () => { isZooming = false; });
         updateFavNameCounts();
         updateFavEntry();
         return n;
+    }
+
+    /* ══ お気に入りの TSV 読み込み（設定 → バックアップ → 読み込み） ══════
+       お気に入りの書き出し（favExportTsv）で作った TSV を、選んだ枠1つへ足す。
+         ・対象は id 列（お気に入りのキー）で決める。name・lat・lng から探すことはしない
+         ・足すだけで外さない。その枠に入っていてファイルに無いものはそのまま残る
+         ・他の枠、枠の名前、「地図に出さない」、表示設定には触れない
+         ・読み込み先はファイルに書かず、読み込むときに選ぶ。最初はどれも選んでいない
+         ・いまのデータに無いキーは足さない。地図にも一覧にも出ず、外す手段も無い記録が残るため
+       名前が空の枠は選べない（使わない枠の扱い。足しても一覧と地図に出ない）。 */
+    let favImportState = null;
+    function favImportParseTsv(text) {
+        const lines = text.split(/\r\n|\r|\n/).filter(l => l.trim() !== '');
+        if (!lines.length) return null;
+        const idCol = lines[0].split('\t').map(s => s.trim().toLowerCase()).indexOf('id');
+        if (idCol < 0) return null;
+        const keys = [], seen = new Set();
+        let noId = 0, rows = 0;
+        for (const l of lines.slice(1)) {
+            rows++;
+            const id = (l.split('\t')[idCol] || '').trim();
+            if (!id) { noId++; continue; }
+            if (seen.has(id)) continue;
+            seen.add(id);
+            keys.push(id);
+        }
+        return { keys, noId, rows };
+    }
+    function favKnownKeys() {
+        const set = new Set();
+        for (const item of searchIndex) {
+            const c = item.coords || [];
+            const k = favKeyOf(item.type, item.properties, c[0], c[1]);
+            if (k) set.add(k);
+        }
+        return set;
+    }
+    function favImportPrepare(text, fileName) {
+        const parsed = favImportParseTsv(text);
+        if (!parsed) { showToast('id 列の無いファイルは読み込めません'); return; }
+        // 6種別が揃う前に照合すると、まだ届いていない種別の行が「地図に無い」で落ちる
+        if (!favExportDataReady()) { showToast('データを読み込み中です。少し待ってからもう一度選んでください'); return; }
+        const known = favKnownKeys();
+        const keys = parsed.keys.filter(k => known.has(k));
+        if (!keys.length) { showToast('いまの地図に当てはまる行がありませんでした'); return; }
+        favImportState = { fileName, keys, rows: parsed.rows, noId: parsed.noId,
+                           missing: parsed.keys.length - keys.length, slot: 0 };
+        renderFavImport();
+        const box = document.getElementById('fav-import-box');
+        box.style.display = '';
+        box.scrollIntoView({ block: 'nearest' });
+    }
+    function renderFavImport() {
+        const st = favImportState;
+        if (!st) return;
+        document.getElementById('fav-import-file').textContent =
+            `${st.fileName}・${st.rows.toLocaleString()}行`;
+        document.getElementById('fav-import-slots').innerHTML = FAV_SLOTS.map(n => {
+            const name = favNameOf(n);
+            return `<button class="lords-chip fav-kind" aria-pressed="${st.slot === n}"${name ? '' : ' disabled'}
+                onclick="setFavImportSlot(${n})"><span class="fav-dot" style="background:${FAV_COLORS[n]}"></span>${
+                name ? attrEscape(name) : `枠${n}（名前なし）`}</button>`;
+        }).join('');
+        const lines = [];
+        if (st.slot) {
+            const have = st.keys.filter(k => favMarksOf(k).includes(st.slot)).length;
+            lines.push(`「${attrEscape(favNameOf(st.slot))}」に ${(st.keys.length - have).toLocaleString()}件を追加します`
+                + (have ? `（${have.toLocaleString()}件はすでに入っています）` : ''));
+        } else {
+            lines.push('読み込み先の枠を選んでください');
+        }
+        if (st.missing) lines.push(`いまの地図に無い ${st.missing.toLocaleString()}件は飛ばします`);
+        if (st.noId) lines.push(`id が空の ${st.noId.toLocaleString()}行は飛ばします`);
+        lines.push('他の枠と表示設定は変わりません');
+        document.getElementById('fav-import-sum').innerHTML = lines.join('<br>');
+        document.getElementById('fav-import-go').disabled = !st.slot;
+    }
+    function setFavImportSlot(n) {
+        if (!favImportState || !favNameOf(n)) return;
+        favImportState.slot = n;
+        renderFavImport();
+    }
+    function favImportCancel() {
+        favImportState = null;
+        document.getElementById('fav-import-box').style.display = 'none';
+    }
+    /* 記録の書き換えは favUnmarkKeys と同じく全部済ませてから保存と描き直しを1回だけ行う。
+       先に別の画面が書いた分を取り込んでおく（取り込む前の印に足すと、そちらで付けた印を消してしまう）。 */
+    function favImportRun() {
+        const st = favImportState;
+        if (!st || !FAV_SLOTS.includes(st.slot) || !favNameOf(st.slot)) return;
+        favAbsorbStored();
+        const at = Date.now();
+        let n = 0;
+        for (const key of st.keys) {
+            const cur = favMarksOf(key);
+            if (cur.includes(st.slot)) continue;
+            favStore.items[key] = { mk: [...cur, st.slot].sort((a, b) => a - b), at };
+            n++;
+        }
+        const name = favNameOf(st.slot);
+        favImportCancel();
+        if (!n) { showToast(`「${name}」に足すものはありませんでした`); return; }
+        saveFavStore();
+        favRefreshAll();
+        updateSheetFav();
+        showToast(`「${name}」に ${n.toLocaleString()}件を追加しました`);
     }
 
     // 一覧の行の左端に立てる色帯。付いている枠の数だけ縦に等分する
