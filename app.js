@@ -305,6 +305,10 @@
                 if (typeof remote.names[n] === 'string') favStore.names[n] = remote.names[n];
             });
         }
+        // 「地図に出さない」も名前と同じく時刻を持たないので、サーバー側を採る
+        if (remote.hidden && typeof remote.hidden === 'object') {
+            FAV_SLOTS.forEach(n => { favStore.hidden[n] = remote.hidden[n] === true; });
+        }
         favWriteStore();          // ここでは localStorage に書くだけ（送るかは呼び出し側が決める）
         favRefreshAll();
         for (const [k, v] of Object.entries(favStore.items)) {
@@ -674,6 +678,9 @@
     const EMPTY_FC = { type: 'FeatureCollection', features: [] };
     const FAMOUS_GENRES = new Set(['日本100名城', '続日本100名城']);
     const loadedData = Object.create(null); // key -> FeatureCollection
+    // お気に入りの「地図に出さない」枠に入っているキー（中身は favComputeHiddenKeys）。
+    // 地図のソースを埋める関数が読むので、データの到着より前に在るようここで宣言する
+    var favHiddenKeys = new Set();
 
     function loadScriptOnce(src) {
         return new Promise((resolve, reject) => {
@@ -699,29 +706,42 @@
     function shopFeaturesForMap() {
         const fc = loadedData.shops;
         if (!fc) return EMPTY_FC;
-        if (!genreOff.size) return fc;   // 絞っていないときは元の配列をそのまま渡す
+        if (!genreOff.size && !favHiddenKeys.size) return fc;   // 絞っていないときは元の配列をそのまま渡す
         return { type: 'FeatureCollection',
-                 features: fc.features.filter(f => genreVisible(shopGenreBase(f.properties.category))) };
+                 features: fc.features.filter(f => genreVisible(shopGenreBase(f.properties.category))
+                                                   && !favHiddenOnMap('shop', f)) };
     }
     function manholeFeaturesForMap() {
         // 蓋とポケふたは1つのソースに同居している。ポケふたは source:'pokefuta' で見分ける
-        const mh = (filterState.manhole !== false && loadedData.manhole) ? loadedData.manhole.features : [];
+        const mh = (filterState.manhole !== false && loadedData.manhole)
+            ? favVisibleFeatures('manhole', loadedData.manhole.features) : [];
         const pk = (filterState.pokefuta !== false && loadedData.pokefuta)
-            ? loadedData.pokefuta.features.map(f => ({ ...f, properties: { ...f.properties, source: 'pokefuta' } })) : [];
+            ? favVisibleFeatures('pokefuta', loadedData.pokefuta.features)
+                .map(f => ({ ...f, properties: { ...f.properties, source: 'pokefuta' } })) : [];
         return { type: 'FeatureCollection', features: [...mh, ...pk] };
     }
     function refreshShopSource()    { setSourceData('shops',    shopFeaturesForMap()); }
     function refreshManholeSource() { setSourceData('manholes', manholeFeaturesForMap()); }
+    function refreshMichiSource() {
+        if (loadedData.michi) setSourceData('michi', favVisibleFc('michi', loadedData.michi));
+    }
+    function refreshMhcardSource() {
+        if (loadedData.mhcard) setSourceData('mhcards', favVisibleFc('mhcard', loadedData.mhcard));
+    }
+    function refreshCastleSources() {
+        if (!loadedData.castle) return;
+        const feats = favVisibleFeatures('castle', loadedData.castle.features);
+        setSourceData('castles-famous', { type: 'FeatureCollection', features: feats.filter(f => FAMOUS_GENRES.has(f.properties.genre)) });
+        setSourceData('castles',        { type: 'FeatureCollection', features: feats.filter(f => !FAMOUS_GENRES.has(f.properties.genre)) });
+    }
 
     // 各データ到着時にソースへ反映（manholeは2データの合成、castleは2分割）
     function applyDataset(key) {
-        if (key === 'michi')  setSourceData('michi',   loadedData.michi);
+        if (key === 'michi')  refreshMichiSource();
         if (key === 'shops')  refreshShopSource();
-        if (key === 'mhcard') setSourceData('mhcards', loadedData.mhcard);
+        if (key === 'mhcard') refreshMhcardSource();
         if (key === 'castle' && loadedData.castle) {
-            const feats = loadedData.castle.features;
-            setSourceData('castles-famous', { type: 'FeatureCollection', features: feats.filter(f => FAMOUS_GENRES.has(f.properties.genre)) });
-            setSourceData('castles',        { type: 'FeatureCollection', features: feats.filter(f => !FAMOUS_GENRES.has(f.properties.genre)) });
+            refreshCastleSources();
             lordIndex = null;        // 城データが入れ替わったら城主索引は作り直す
             updateLordsEntry();
             remainsIndex = null;     // 遺構索引も同じ理由で作り直す
@@ -7887,10 +7907,14 @@ map.on('zoomend', () => { isZooming = false; });
         let raw = storeGetJson(FAV_STORE_KEY);
         // 初期値は枠1だけ名前を入れておく（残り3枠は空＝使わない）
         const names = { 1: 'お気に入り', 2: '', 3: '', 4: '' };
+        const hidden = { 1: false, 2: false, 3: false, 4: false };
         const items = {};
         if (raw && typeof raw === 'object') {
             if (raw.names && typeof raw.names === 'object') {
                 FAV_SLOTS.forEach(n => { if (typeof raw.names[n] === 'string') names[n] = raw.names[n]; });
+            }
+            if (raw.hidden && typeof raw.hidden === 'object') {
+                FAV_SLOTS.forEach(n => { hidden[n] = raw.hidden[n] === true; });
             }
             if (raw.items && typeof raw.items === 'object') {
                 const tombLimit = Date.now() - FAV_TOMB_KEEP_MS;
@@ -7902,15 +7926,16 @@ map.on('zoomend', () => { isZooming = false; });
                 }
             }
         }
-        return { v: 1, names, items };
+        return { v: 1, names, hidden, items };
     }
     let favStore = loadFavStore();
+    favHiddenKeys = favComputeHiddenKeys();
     /* 書く直前に、いま localStorage にある内容を取り込む。
        favStore は開いた時点の内容をメモリに持ち続けるのに対し、localStorage は
        同じ端末の別の画面と共有される。ホーム画面のアプリと、QRから開いたブラウザのタブが
        両方生きているのが普通なので、取り込まずに書くと、古いほうの画面が保存した瞬間に
        新しいほうで付けたお気に入りが丸ごと消える（再起動すると外れて見える症状になる）。
-       枠の名前だけは時刻を持たず、いま入力している画面を正とするため取り込まない。 */
+       枠の名前と「地図に出さない」だけは時刻を持たず、いま操作している画面を正とするため取り込まない。 */
     function favAbsorbStored() {
         const disk = storeGetJson(FAV_STORE_KEY);
         if (disk && typeof disk === 'object' && disk.items && typeof disk.items === 'object') {
@@ -7935,6 +7960,47 @@ map.on('zoomend', () => { isZooming = false; });
         const a = favActiveSlots();
         return favMarksOf(key).filter(n => a.includes(n));
     }
+    /* 「地図に出さない」枠。名前が入っている枠だけが効く（空にした枠は使わない扱いなので、
+       印が残っていても地図のピンは今までどおり出す）。 */
+    function favHiddenSlots() { return favActiveSlots().filter(n => favStore.hidden[n] === true); }
+
+    /* 地図に出さないオブジェクトのキー。非表示の枠に1つでも入っていれば、
+       他の枠（表示する枠）に入っていても出さない。
+       一覧・検索・シートには今までどおり出す（地図のピンだけを消す）。 */
+    function favComputeHiddenKeys() {
+        const hs = favHiddenSlots();
+        const set = new Set();
+        if (!hs.length) return set;
+        for (const [k, v] of Object.entries(favStore.items)) {
+            if (v.mk.some(n => hs.includes(n))) set.add(k);
+        }
+        return set;
+    }
+    function favHiddenOnMap(type, f) {
+        if (!favHiddenKeys.size) return false;
+        const c = f.geometry && f.geometry.coordinates || [];
+        return favHiddenKeys.has(favKeyOf(type, f.properties, c[0], c[1]));
+    }
+    function favVisibleFeatures(type, feats) {
+        return favHiddenKeys.size ? feats.filter(f => !favHiddenOnMap(type, f)) : feats;
+    }
+    function favVisibleFc(type, fc) {
+        return favHiddenKeys.size ? { type: 'FeatureCollection', features: favVisibleFeatures(type, fc.features) } : fc;
+    }
+    /* 地図のソースを入れ直すのは、隠すキーの集まりが変わったときだけにする。
+       印を付け外すたびに城23,516件を回し直すと重いため。 */
+    function refreshFavHiddenSources() {
+        const next = favComputeHiddenKeys();
+        if (next.size === favHiddenKeys.size && [...next].every(k => favHiddenKeys.has(k))) return;
+        favHiddenKeys = next;
+        if (typeof map === 'undefined' || !map || !map.getSource) return;
+        refreshShopSource();
+        refreshManholeSource();
+        refreshMichiSource();
+        refreshMhcardSource();
+        refreshCastleSources();
+    }
+
     function favCountOf(n) {
         let c = 0;
         for (const k in favStore.items) if (favStore.items[k].mk.includes(n)) c++;
@@ -8004,10 +8070,38 @@ map.on('zoomend', () => { isZooming = false; });
             <div class="favname-row">
                 <span class="favname-sw" style="background:${FAV_COLORS[n]};color:${FAV_FG[n]}">${n}</span>
                 <input class="favname-in" type="text" maxlength="${FAV_NAME_MAX}"
-                       value="${attrEscape(favNameOf(n))}" placeholder="お気に入り${n}（空欄なら使わない）"
+                       value="${attrEscape(favNameOf(n))}" placeholder="枠${n}（空欄なら使わない）"
                        oninput="onFavNameInput(${n}, this)">
                 <span class="favname-cnt" data-fav-cnt="${n}">${favCountOf(n)}件</span>
+                <button class="favname-eye" type="button" data-fav-eye="${n}"
+                        onclick="onFavHiddenToggle(${n})"></button>
             </div>`).join('');
+        updateFavEyes();
+    }
+    /* 地図に出す／出さないの切り替え。目の絵は「いまの状態」を表す（押すと反対になる）。
+       名前が空の枠は使わない扱いなので押せなくする（押しても何も変わらないため）。 */
+    const FAV_EYE_ON = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
+    const FAV_EYE_OFF = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
+    function updateFavEyes() {
+        document.querySelectorAll('[data-fav-eye]').forEach(el => {
+            const n = Number(el.dataset.favEye);
+            const hidden = favStore.hidden[n] === true;
+            el.innerHTML = hidden ? FAV_EYE_OFF : FAV_EYE_ON;
+            el.setAttribute('aria-pressed', hidden ? 'true' : 'false');
+            el.disabled = favNameOf(n) === '';
+            el.title = hidden ? '地図に出していません（押すと出す）' : '地図に出しています（押すと出さない）';
+        });
+    }
+    function onFavHiddenToggle(n) {
+        if (!FAV_SLOTS.includes(n) || favNameOf(n) === '') return;
+        favStore.hidden[n] = favStore.hidden[n] !== true;
+        saveFavStore();
+        refreshFavOverlay();      // 地図のピンの出し入れもここから（refreshFavHiddenSources）
+        updateFavEyes();
+        const c = favCountOf(n);
+        showToast(favStore.hidden[n]
+            ? `「${favNameOf(n)}」の${c.toLocaleString()}件を地図に出さないようにしました`
+            : `「${favNameOf(n)}」の${c.toLocaleString()}件を地図に出すようにしました`);
     }
     function updateFavNameCounts() {
         document.querySelectorAll('[data-fav-cnt]').forEach(el => {
@@ -8023,6 +8117,7 @@ map.on('zoomend', () => { isZooming = false; });
         refreshFavOverlay();
         updateSheetFav();
         updateFavEntry();
+        updateFavEyes();          // 名前を空にした枠は目を押せなくする
         closeFavPalette();
     }
 
@@ -8668,6 +8763,7 @@ map.on('zoomend', () => { isZooming = false; });
                 const key = favKeyOf(item.type, item.properties, c[0], c[1]);
                 const rec = key ? favStore.items[key] : null;
                 if (!rec) continue;
+                if (favHiddenKeys.has(key)) continue;   // 地図に出さない枠に入っているものは重ね描きもしない
                 const mk = rec.mk.filter(n => active.includes(n));
                 if (!mk.length) continue;
                 /* 属性に入れられるのは数値と文字列だけ（配列や入れ子は setData で
@@ -8689,6 +8785,7 @@ map.on('zoomend', () => { isZooming = false; });
         return { type: 'FeatureCollection', features: feats };
     }
     function refreshFavOverlay() {
+        refreshFavHiddenSources();
         if (typeof map === 'undefined' || !map || !map.getSource) return;
         const src = map.getSource('fav-objects');
         if (!src) return;
