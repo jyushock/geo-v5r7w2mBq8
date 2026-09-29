@@ -1955,11 +1955,8 @@
              文字を打つ欄なので、下に続く「同期」「バックアップ」は入力でキーボードが出ると
              押し上げられて隠れることがある（スクロールで出せる） -->
         <div class="nearby-section-label">お気に入りの名前</div>
-        <div id="fav-name-list"></div>
-        <div class="favname-note">名前を入れた枠だけを使います。空にした枠は地図にも一覧にも出ませんが、
-            登録した分は消えずに残ります（名前を戻せばそのまま出ます）。<br>
-            右端の目を押すと、その枠のものを地図に薄く出します。ほかの枠にも入っていても薄くします。
-            一覧と検索はそのままです。</div>
+        <!-- 説明文は置かない（設定画面には書かない方針）。下の余白は他の区画の 8px に揃える -->
+        <div id="fav-name-list" style="padding-bottom:3px;"></div>
         <div style="border-top:1px solid #f0f0f0;"></div>
         <!-- 同期。入口は設定の中だけに置き、常設のボタンは増やさない（SYNC_MANUAL.md §5.6）。
              ふだん触らない区画なので、バックアップと並べて設定の最下段に置く -->
@@ -1974,7 +1971,7 @@
         <div style="border-top:1px solid #f0f0f0;"></div>
         <!-- バックアップ。お気に入りの枠1つか表示設定を選んで1ファイルにする（サーバーは通らない） -->
         <div class="nearby-section-label">バックアップ</div>
-        <div style="display:flex;gap:8px;padding:2px 16px 6px;">
+        <div style="display:flex;gap:8px;padding:2px 16px 8px;">
             <button class="fxp-btn primary" style="flex:1;height:38px;font-size:13px;"
                     onclick="backupOpenExport()">書き出し</button>
             <button class="fxp-btn sub" style="flex:1;height:38px;font-size:13px;"
@@ -1983,9 +1980,6 @@
         <input id="backup-file" type="file"
                accept="application/json,.json,text/tab-separated-values,.tsv,text/plain,.txt"
                style="display:none" onchange="backupImport(this)">
-        <div class="favname-note">お気に入りの枠1つか表示設定のどちらかを選んで、書き出し・読み込みをします。
-            お気に入りは、読み込むときに選んだ枠へ追加するだけで、すでに入っているものは外しません。
-            表示設定は置き換えます。お気に入り一覧から書き出した TSV も読み込めます。</div>
         <!-- 書き出しを押したときだけ出す。対象は最初は選んでいない -->
         <div id="backup-export-box" style="display:none;">
             <div class="nearby-section-label">書き出す対象</div>
