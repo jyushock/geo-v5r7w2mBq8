@@ -7656,7 +7656,7 @@ map.on('zoomend', () => { isZooming = false; });
         }
         const slots = hourlyByDay[selectedWeatherDayIndex] || [];
         if (!slots.length) {
-            // 3時間毎データ無し（気象庁フォールバック等でカードは非ボタン化済み）→ 選択を解除して閉じる
+            // 1時間毎データ無し（気象庁フォールバック等でカードは非ボタン化済み）→ 選択を解除して閉じる
             selectedWeatherDayIndex = null;
             panel.classList.remove('open');
             panel.innerHTML = '';
@@ -7717,14 +7717,14 @@ map.on('zoomend', () => { isZooming = false; });
             const hasPop = (d.pop !== null && d.pop !== undefined && !isNaN(d.pop));
             const pop = hasPop ? Math.round(d.pop) : null;
             const pc = hasPop ? popColor(pop) : '#bbb';
-            // 降水量合計（3時間毎パネルと同じ書式・色ルール）
+            // 降水量合計（1時間毎パネルと同じ書式・色ルール）
             const hasPrecip = (d.precip !== null && d.precip !== undefined && !isNaN(d.precip));
             const precipNum = hasPrecip ? (d.precip >= 10 ? Math.round(d.precip) : Math.round(d.precip * 10) / 10) : null;
             const precipColor = hasPrecip && d.precip >= 1 ? popColor(100) : '';
             // 降水量が3桁(100mm以上)の時は水滴アイコンを省略して幅を確保（カード幅は最大86px固定のため）
             const showDrop = hasPop && !(hasPrecip && d.precip >= 100);
             const popRow = `<div class="weather-pop-row">${showDrop ? `<img class="weather-pop-drop" src="${dropSvg(pc)}" alt="">` : ''}<span class="weather-pop-num" style="color:${pc}">${hasPop ? `<span style="font-weight:${pop >= 50 ? '700' : '600'}">${pop}</span><span>%</span>` : '--'}</span>${hasPrecip ? `<span class="weather-precip-num" style="${precipColor ? 'color:' + precipColor : ''}"><span style="font-size:${d.precip >= 1 ? '10px' : '9px'};font-weight:${d.precip >= 1 ? '700' : '400'}">${precipNum}</span><span>mm</span></span>` : ''}</div>`;
-            // 3時間毎データがある日だけ開閉ボタンにする（気象庁フォールバック時は日毎のみ）
+            // 1時間毎データがある日だけ開閉ボタンにする（気象庁フォールバック時は日毎のみ）
             const canOpen = !!(model.hourlyByDay && model.hourlyByDay[i] && model.hourlyByDay[i].length);
             const activeClass = canOpen && selectedWeatherDayIndex === i ? ' weather-day-active' : '';
             const inner = `
@@ -7739,7 +7739,7 @@ map.on('zoomend', () => { isZooming = false; });
                 ${popRow}`;
             if (!canOpen) return `<div class="weather-day-card">${inner}</div>`;
             return `
-            <button type="button" class="weather-day-card${activeClass}" onclick="toggleWeatherHourly(${i})" aria-pressed="${selectedWeatherDayIndex === i ? 'true' : 'false'}" aria-label="${lbl}の3時間ごとの天気を表示">${inner}</button>`;
+            <button type="button" class="weather-day-card${activeClass}" onclick="toggleWeatherHourly(${i})" aria-pressed="${selectedWeatherDayIndex === i ? 'true' : 'false'}" aria-label="${lbl}の1時間ごとの天気を表示">${inner}</button>`;
         }).join('');
         renderWeatherHourly(model);
     }
@@ -7760,7 +7760,7 @@ map.on('zoomend', () => { isZooming = false; });
     }
     // 時間別配列 [{code,pop}] → 単一の代表アイコン名（案A: 1日1アイコン）
     // ルール: 雨/雪/雷は弱くても優先表示（降水確率≥30% か 降水コマ≥3 か 過半数が降水）。
-    //   過半数条件は3時間スロット（3コマ）でも降水を拾うため。それ以外は晴/曇を多数決。
+    //   過半数条件は1時間スロット（1コマ）でも降水を拾うため。それ以外は晴/曇を多数決。
     function pickWeatherIcon(hours) {
         if (!hours.length) return 'cloudy';
         const cats = hours.map(x => wmoCategory(x.code));
@@ -7784,7 +7784,7 @@ map.on('zoomend', () => { isZooming = false; });
     }
     // Open-Meteo 応答（hourly+daily, models=jma_seamless,best_match）→ 正規化3日
     // 天気アイコン: 時間別 weather_code(jma_seamless) を日ごとに集約。
-    //   集約窓は3時間毎パネルに表示するスロットと同一（今日 = 現在の3時間スロット〜23時／
+    //   集約窓は1時間毎パネルに表示するスロットと同一（今日 = 現在の時〜23時／
     //   明日・明後日 = 終日）。窓を揃えることで日毎バッジとパネルの矛盾を防ぐ。
     // 降水確率: 同じ窓で best_match の時間別 precipitation_probability の最大。
     // 気温: 日次の最高/最低（jma_seamless優先）。
@@ -7808,7 +7808,6 @@ map.on('zoomend', () => { isZooming = false; });
         const tmin = dy.temperature_2m_min_jma_seamless || dy.temperature_2m_min_best_match || dy.temperature_2m_min || [];
         const dailyDates = dy.time || [];
         const nowH = jstHourNow();
-        const current3hStart = Math.floor(nowH / 3) * 3;
         const pickFirstValue = (i, ...arrays) => {
             for (const arr of arrays) {
                 if (!arr || i >= arr.length) continue;
@@ -7825,11 +7824,11 @@ map.on('zoomend', () => { isZooming = false; });
         const hourlyByDay = [];
         dayDates.forEach((d, di) => {
             const idx = byDate[d];
-            // 日毎バッジの集約窓 = パネルに表示する3時間スロットが覆う時間帯
+            // 日毎バッジの集約窓 = パネルに表示する1時間スロットが覆う時間帯
             //（今日 = 現在スロット以降／明日・明後日 = 終日）
             let win;
             if (di === 0) {
-                win = idx.filter(i => { const hh = parseInt(times[i].slice(11, 13), 10); return hh >= current3hStart && hh <= 23; });
+                win = idx.filter(i => { const hh = parseInt(times[i].slice(11, 13), 10); return hh >= nowH && hh <= 23; });
                 if (!win.length) win = idx.slice(-1); // 夜遅く等で残りが無ければ最後の時間
             } else {
                 win = idx;
@@ -7859,14 +7858,13 @@ map.on('zoomend', () => { isZooming = false; });
             days.push({ icon: pickWeatherIcon(hours), hi: hi, lo: lo, pop: pop, precip: precip });
             const hourlyIdx = idx.filter(i => {
                 const hh = parseInt(times[i].slice(11, 13), 10);
-                if (hh % 3 !== 0) return false;
-                return di === 0 ? hh >= current3hStart : true;
+                return di === 0 ? hh >= nowH : true;
             });
             hourlyByDay.push(hourlyIdx.map(i => {
                 const slotHour = parseInt(times[i].slice(11, 13), 10);
                 const slotIdx = idx.filter(j => {
                     const hh = parseInt(times[j].slice(11, 13), 10);
-                    return hh >= slotHour && hh < slotHour + 3;
+                    return hh === slotHour;
                 });
                 const slotHours = slotIdx.map(j => {
                     const slotPop = pickFirstValue(j, ppJma, ppBest, ppBase);
@@ -7883,8 +7881,7 @@ map.on('zoomend', () => { isZooming = false; });
                     .map(j => pickFirstValue(j, precJma, precBest, precBase))
                     .filter(v => v != null && !isNaN(v));
                 const precipAtSlot = precipWindow.length ? precipWindow.reduce((s, v) => s + v, 0) : null;
-                // 気温はスロット3時間窓内の最高値
-                //（瞬間値だと日毎バッジの最高気温が全スロットより高く見えるため）
+                // 気温はその時の値（1時間スロットは1コマなので窓内の最高値＝その時の値）
                 const tempWindow = slotIdx
                     .map(j => pickFirstValue(j, thJma, thBest, thBase))
                     .filter(v => v != null && !isNaN(v));
