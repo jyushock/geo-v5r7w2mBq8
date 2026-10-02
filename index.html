@@ -1410,7 +1410,8 @@
             padding: 0 10px;
             gap: 7px;
             background: #f9f9f9;
-            border-right: 1px solid #e0e0e0;
+            /* 右の区切り線は隣の現在地ボタンの border-left(2px) だけにする。
+               ここにも線を引くと 1px+2px=3px になり、閉じた状態の下部バー(2px)と太さ・位置がずれる */
             overflow: hidden;
             cursor: pointer;
             touch-action: manipulation;
