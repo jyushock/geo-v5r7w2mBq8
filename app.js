@@ -7216,6 +7216,41 @@ map.on('zoomend', () => { isZooming = false; });
         nearbyState.cats = [el.dataset.cat];
         execNearbySearch();
     }
+    function nearbyGmapUrl(cats) {
+        const center = getSearchCenter();
+        const keyword = cats.map(c => gmapKeywords[c]).filter(Boolean).join(' OR ');
+        const zoom = Math.round(map.getZoom());
+        return `https://www.google.com/maps/search/${encodeURIComponent(keyword)}/@${center.lat},${center.lng},${zoom}z`;
+    }
+    /* iPhone・iPad では、Googleマップへ飛ぶカテゴリを window.open で開くと、Safari に新しいタブが
+       できてから中身だけが Googleマップのアプリへ渡り、アプリから戻ると空のタブが表示される
+       （2026-10-03 に実機で確認）。ポップアップの「GoogleMap」ボタン（<a target="_blank">）では
+       起きないため、iOS だけはカテゴリの上に同じ種類のリンクを重ね、指で押したリンクとして開く。
+       URL は地図の中心とズームで変わるので、押した瞬間に href を差し替える（リンクの遷移は
+       click の処理が終わってから href を読むので、差し替えた先へ飛ぶ）。
+       Android は window.open のままで問題が無いため、iOS 以外には何も足さない。 */
+    (function setupIosNearbyGmapLinks() {
+        const isIos = /iP(hone|od|ad)/.test(navigator.userAgent)
+            || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);   // iPadOS は Mac の UA を名乗る
+        if (!isIos) return;
+        document.querySelectorAll('.nearby-cat-item').forEach(item => {
+            const cat = item.dataset.cat;
+            if (!gmapKeywords[cat]) return;   // スポット・ホテルは Googleマップへ飛ばないので今のまま
+            const a = document.createElement('a');
+            a.href = 'https://www.google.com/maps';
+            a.target = '_blank';
+            a.setAttribute('aria-label', item.textContent.trim());
+            a.style.cssText = 'position:absolute; inset:0;';
+            a.addEventListener('click', () => {
+                nearbyState.cats = [cat];
+                a.href = nearbyGmapUrl(nearbyState.cats);
+            });
+            // window.open を走らせない。リンクが覆えない透明の枠線（2px）を押したときも同じ
+            item.removeAttribute('onclick');
+            item.style.position = 'relative';
+            item.appendChild(a);
+        });
+    })();
     /* Overpass 本家は IP ごとに同時2スロットしか無く（/api/status の "Rate limit: 2"）、
        空いていないと HTTP 429、実行が長すぎると HTTP 504 を返す。どちらも本文は
        JSON ではなく XHTML（Error: runtime error: ... rate_limited ／ ... timed out）で、
@@ -7336,9 +7371,7 @@ map.on('zoomend', () => { isZooming = false; });
         const searchLng = center.lng;
         
         if (!nearbyState.cats.includes('spot')) {
-            const keyword = nearbyState.cats.map(c => gmapKeywords[c]).filter(Boolean).join(' OR ');
-            const zoom = Math.round(map.getZoom());
-            return window.open(`https://www.google.com/maps/search/${encodeURIComponent(keyword)}/@${searchLat},${searchLng},${zoom}z`, '_blank');
+            return window.open(nearbyGmapUrl(nearbyState.cats), '_blank');
         }
 
         const RADIUS = 100;
