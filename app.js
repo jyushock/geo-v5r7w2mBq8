@@ -5053,9 +5053,7 @@ map.on('zoomend', () => { isZooming = false; });
 
     function applyShowOrigin() {
         const el = document.getElementById('nearby-search-origin');
-        const footer = document.getElementById('nearby-panel-footer');
         if (el) el.style.display = showOriginState ? '' : 'none';
-        if (footer) footer.style.justifyContent = showOriginState ? '' : 'flex-end';
     }
 
     function onShowOriginChange(checkbox) {
@@ -5320,7 +5318,28 @@ map.on('zoomend', () => { isZooming = false; });
         document.getElementById('nearby-overlay').classList.add('open');
         document.getElementById('bottom-bar').classList.add('panel-open');
         applyShowOrigin();
+        syncSearchProxy();
         fetchWeather();
+    }
+    /* メインビューのフッター左は下部バーの検索ボックスの代わり。入力中のワードを写しておく
+       （古い index.html と組み合わさったときは要素が無いので何もしない） */
+    function syncSearchProxy() {
+        const el = document.getElementById('nearby-search-proxy-text');
+        if (el) el.textContent = document.getElementById('search-input').value;
+    }
+    /* メニューを閉じて検索ボックスに入力できる状態にする。focus はタップの処理の中で
+       同期的に呼ぶ（iOS は利用者の操作の外で focus してもキーボードを出さないため） */
+    function focusSearchFromMenu() {
+        closeNearby();
+        document.getElementById('search-input').focus();
+    }
+    /* メニューの外側のタップ。フッターの無いビュー（一覧・城主・設定）では下部バーが見えているが
+       透明な覆いの下にあるので、検索ボックスの上で押されたときはメニューを閉じて入力へ移る */
+    function onNearbyOverlayClick(e) {
+        const r = document.getElementById('search-box').getBoundingClientRect();
+        const onSearchBox = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+        if (onSearchBox) focusSearchFromMenu();
+        else closeNearby();
     }
     function openSettingsView() {
         setPanelLifted(true);
@@ -5439,7 +5458,7 @@ map.on('zoomend', () => { isZooming = false; });
     }
 
     // メインビューへ戻すのは openNearbyPanel 側（メニューを開き直したとき）
-    /* パネルの位置。フッター（検索地点・現在地・閉じる）を持つのはメインビューだけで、
+    /* パネルの位置。フッター（検索ボックス・現在地・閉じる）を持つのはメインビューだけで、
        それが下部バーの代わりを務める。フッターの無いビューでは下部バーを見せたいので、
        パネルをバーの上に載せる（載せた状態を lifted と呼ぶ）。 */
     function setPanelLifted(on) {
