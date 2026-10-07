@@ -4460,11 +4460,13 @@ map.on('zoomend', () => { isZooming = false; });
         if (!str) return '';
         return toHiragana(str.normalize('NFKC')).toLowerCase();
     }
-    // 完全一致=100 / 前方一致=80 / 部分一致=50 / 不一致=0（text・qは正規化済み前提）
+    // 完全一致=100 / 含む=50 / 不一致=0（text・qは正規化済み前提）
+    // 前方一致を部分一致より上にしない。上にすると、すぐ近くの店でも語が名前の途中にあるだけで
+    // 前方一致した遠くの店の下に沈む（郡山駅から「パン」で、0.9kmの大友パン店が、
+    // 「パン◯◯」で始まる190km以上先の24件より下の25番目になっていた）
     function matchScore(text, q) {
         if (!text || !q) return 0;
         if (text === q) return 100;
-        if (text.startsWith(q)) return 80;
         if (text.includes(q)) return 50;
         return 0;
     }
@@ -4597,7 +4599,7 @@ map.on('zoomend', () => { isZooming = false; });
 
     function searchLocal(query) {
         const q = normalizeForSearch(query);
-        // 一致度（完全一致>前方一致>部分一致）を優先し、同スコア内は
+        // 一致度（完全一致>含む>住所で一致）を優先し、同スコア内は
         // 周辺検索・天気と同じ基準点からの距離が近い順に並べて上位100件を返す。
         // 別名で当たったものは名前で当たったものと同じ点にする。減点すると、すぐ近くの城でも
         // 名前が一致した遠くの城の下に沈む（八王子市から「根小屋」で、別名「根小屋城」の
