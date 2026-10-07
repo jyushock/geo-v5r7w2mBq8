@@ -4653,7 +4653,6 @@ map.on('zoomend', () => { isZooming = false; });
 
     async function searchGeocode(query) {
         try {
-            const scoreResult = (title, q) => { if(title===q)return 100; if(title.startsWith(q))return 80; if(title.includes('駅')&&q.includes('駅'))return 60; if(title.startsWith(q.replace(/駅$/,'')))return 40; return 10; };
             const res = await fetch(`https://msearch.gsi.go.jp/address-search/AddressSearch?q=${encodeURIComponent(query)}`);
             const data = await res.json();
             const center = getSearchCenter(); // 基準点（周辺検索・天気と同じ）
