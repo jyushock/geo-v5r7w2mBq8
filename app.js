@@ -25,7 +25,7 @@
 
        STORE_KEYS はバックアップの書き出し・読み込みが回す一覧でもある。
        保存キーを増やしたらここに足すこと。 */
-    const STORE_KEYS = ['favorites', 'settingsState', 'mapState', 'mapTileSource',
+    const STORE_KEYS = ['favorites', 'settingsState', 'mapState', 'mapTileSource', 'showOrigin',
                         'hotelRadius', 'hotelSort', 'travelMode', 'nearbyTypeFilterOff'];
     function storeGet(key) {
         try { return localStorage.getItem(key); } catch { return null; }
@@ -44,8 +44,8 @@
          ・ログイン画面は無い。最初にお気に入りか表示設定を保存した時点で、サーバーが
            無記名のキーを発行して HttpOnly Cookie に入れる（/api/enroll）
          ・localStorage が正。画面は今までどおり即座に立ち上がり、送受信は裏で回す
-         ・サーバー上のキーは5つ。favorites / settingsState / prefs は全端末で共有し、
-           mapState と mapTileSource は端末ごと（端末によって意味が違うため）
+         ・サーバー上のキーは6つ。favorites / settingsState / prefs は全端末で共有し、
+           mapState・mapTileSource・showOrigin は端末ごと（端末によって意味が違うため）
          ・送信には rev（サーバー側の更新回数）を添える。食い違えば取り込んでから送り直す
 
        競合したときにどちらを採るか:
@@ -57,8 +57,10 @@
                          スマホの起動位置が引っ張られる
          mapTileSource … 端末によって向き不向きが違う（回線の速さも描画の重さも端末ごとに違う）。
                          共有していると、PCで配信元を変えた瞬間にスマホまで巻き込まれる
-       どちらもサーバーには保存する。ただし device_id 付きなので、他の端末には配られない。 */
-    const SYNC_DEVICE_KEYS = ['mapState', 'mapTileSource'];
+         showOrigin    … メニューに検索地点の行を出すか。画面の広さで要否が変わるので、
+                         PCで出したらスマホの狭いメニューにも行が増える、ということにしない
+       どれもサーバーには保存する。ただし device_id 付きなので、他の端末には配られない。 */
+    const SYNC_DEVICE_KEYS = ['mapState', 'mapTileSource', 'showOrigin'];
     const SYNC_META_KEY = 'syncMeta';        // 同期の覚え書き。バックアップの対象には入れない
     const SYNC_KEEPALIVE_MAX = 60000;        // pagehide で送るときの本文の上限（ブラウザ側の制限）
 
@@ -271,7 +273,7 @@
                    （ホーム画面のアプリとブラウザのタブ。Cookie が同じなので同じ端末になる）で
                    変えたときだけ。起動直後なら読み直して揃えるが、知らせは出さない。
                    変えたのは他の端末ではないため、下のトーストの文面が合わない。 */
-                else if (sk === 'mapTileSource') reloadDevice = true;
+                else if (sk === 'mapTileSource' || sk === 'showOrigin') reloadDevice = true;
             }
         }
         syncUpdateUi();
@@ -480,7 +482,7 @@
         const hasLocal = !!storeGet('favorites');
         if (!confirm('この端末を追加します。\n\nお気に入りと表示設定が、もう一方の端末と共有されます。\n'
             + (hasLocal ? 'この端末に今あるお気に入りは、共有側と混ぜて残します。\n' : '')
-            + '地図の表示位置と地図タイルは、端末ごとに別々のままです。\n\n進めますか？')) return;
+            + '地図の表示位置・地図タイル・メニューの検索地点は、端末ごとに別々のままです。\n\n進めますか？')) return;
         try {
             const res = await syncFetch('join', { method: 'POST', body: JSON.stringify({ code }) });
             if (res.status === 404) { showToast('このコードは使えません。追加する側の画面を開き直してください'); return; }
@@ -5040,14 +5042,19 @@ map.on('zoomend', () => { isZooming = false; });
     // 部門が表示中か。部門を持たない食べログ（category 空）は部門で消さない
     function genreVisible(g) { return !g || !genreOff.has(g); }
 
-    let showOriginState = savedSettings ? (savedSettings.showOrigin === true) : false;
+    /* メニューに検索地点の行を出すか。端末ごとのキー（SYNC_DEVICE_KEYS）で、他の端末には配らない。
+       2026-10-08 までは settingsState.showOrigin に入れていて全端末で共有されていた。
+       この端末で独立したキーをまだ持っていなければ、そのとき手元にある古い値を1度だけ移す。 */
+    if (storeGet('showOrigin') == null && savedSettings && savedSettings.showOrigin === true) {
+        storeSet('showOrigin', '1');
+    }
+    let showOriginState = storeGet('showOrigin') === '1';
 
     function saveSettings() {
         storeSetJson('settingsState', {
             filter: filterState,
             label:  labelState,
-            genreOff: [...genreOff],
-            showOrigin: showOriginState
+            genreOff: [...genreOff]
         });
     }
 
@@ -5059,7 +5066,7 @@ map.on('zoomend', () => { isZooming = false; });
     function onShowOriginChange(checkbox) {
         showOriginState = checkbox.checked;
         applyShowOrigin();
-        saveSettings();
+        storeSet('showOrigin', showOriginState ? '1' : '0');
     }
 
     function onTileSourceChange(value) {

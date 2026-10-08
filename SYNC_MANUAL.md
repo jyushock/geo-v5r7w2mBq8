@@ -3,7 +3,7 @@
 お気に入り・表示設定・地図の位置をサーバーに預け、複数の端末で同じ状態を再現するための設計です。
 **ログイン画面は作りません。**
 
-- 版: 1.5
+- 版: 1.7
 - 作成: 2026-08-20
 - 操作手順（登録・解除）と画面の案: [§5.6〜5.11](#56-追加する画面とボタン)。画面のモックは `mock/sync-ui-preview.html`
 - 状態: **実装済み（2026-08-20）**
@@ -78,18 +78,20 @@ ID・パスワード・メールアドレスは要りません。無記名の128
 | `favorites` | お気に入り（4枠の名前 ＋ `items{key:{mk,at}}`） | 付け外しの都度 | 8288, 8324-8348 | **共有** |
 | `settingsState` | 種別フィルタ・ラベル・部門OFF・取得元表示 | 設定変更時 | 5685 | **共有** |
 | `mapTileSource` | タイル配信元 | 変更時（リロードを伴う） | 5707 | **端末ごと** |
+| `showOrigin` | メニューに検索地点の行を出すか（`'1'` / `'0'`。2026-10-08 に `settingsState` から分けた） | 変更時 | — | **端末ごと** |
 | `hotelRadius` / `hotelSort` | 宿検索の条件 | 変更時 | 5717, 5721 | **共有** |
 | `travelMode` | 移動手段 | 変更時 | 5725 | **共有** |
 | `nearbyTypeFilterOff` | 周辺検索のタイプOFF | 変更時 | 5658 | **共有** |
 | `mapState` | lng / lat / zoom / bearing / pitch | `moveend`・`zoomend` の毎回 | 4589 | **端末ごと** |
 
-端末ごとに分けるのは `mapState` と `mapTileSource` の2本です。どちらも
+端末ごとに分けるのは `mapState`・`mapTileSource`・`showOrigin` の3本です。どちらも
 「端末によって正解が違う」もので、共有すると片方の端末の都合がもう片方を巻き込みます。
 
 | キー | 共有すると起きること |
 |---|---|
 | `mapState` | PCで見ていた位置に、スマホの起動位置が引っ張られる（4586行のコメントどおり「PWA再起動時の復元用」） |
 | `mapTileSource` | 回線の速さも描画の重さも端末ごとに違うのに、PCで配信元を変えた瞬間にスマホまで変わる |
+| `showOrigin` | 画面の広さで要否が変わるのに、PCで出した瞬間にスマホの狭いメニューにも行が増える |
 
 どちらもサーバーには保存します（端末が壊れても復元できる）が、`device_id` を付けて
 領域を端末ごとに分け、他の端末には配りません。
@@ -134,7 +136,7 @@ ID・パスワード・メールアドレスは要りません。無記名の128
 | `favorites` | **その場で反映**。バッジ・一覧・件数がすぐ変わる |
 | `travelMode` / `hotelRadius` / `hotelSort` | **その場で効く**（使うたびに `localStorage` を読むため） |
 | `settingsState` / `nearbyTypeFilterOff` | 値だけ受け取り、**効くのは次に開き直したとき**（起動時に読んでメモリに持つため） |
-| `mapTileSource` | 同じく次に開き直したときから。ただし端末ごとなので、届くのは同じ端末の別の画面で変えたときだけ |
+| `mapTileSource` / `showOrigin` | 同じく次に開き直したときから。ただし端末ごとなので、届くのは同じ端末の別の画面で変えたときだけ |
 
 据え置いたことが分からないと困るので、その場合は
 「他の端末で表示設定が変わりました。次に開き直したときに反映されます」とトーストを出します。
@@ -150,7 +152,7 @@ ID・パスワード・メールアドレスは要りません。無記名の128
 | キー | サーバーへ送る頻度 |
 |---|---|
 | `favorites` | 都度（2秒デバウンス） |
-| `settingsState` / `prefs` / `mapTileSource` | 都度 |
+| `settingsState` / `prefs` / `mapTileSource` / `showOrigin` | 都度 |
 | `mapState` | **30秒に1回、＋ `pagehide` / `visibilitychange` 時**（毎 `moveend` では送らない） |
 
 オフラインや失敗時は送信待ちを `localStorage` に積み、次にオンラインになったときにまとめて流します。
@@ -494,7 +496,7 @@ CREATE TABLE handovers (
 CREATE TABLE states (
   user_id    TEXT NOT NULL,
   device_id  TEXT NOT NULL DEFAULT '',  -- '' ＝ 全端末で共有、それ以外＝その端末専用
-  key        TEXT NOT NULL,             -- favorites / settingsState / prefs / mapState / mapTileSource
+  key        TEXT NOT NULL,             -- favorites / settingsState / prefs / mapState / mapTileSource / showOrigin
   value      TEXT NOT NULL,             -- JSON
   rev        INTEGER NOT NULL,
   updated_at INTEGER NOT NULL,
@@ -754,6 +756,7 @@ Identity Platform（MAU課金）や Cloud Identity（$7.2/月・1ユーザー）
 
 | 版 | 日付 | 内容 |
 |---|---|---|
+| 1.7 | 2026-10-08 | メニューの検索地点の表示（`showOrigin`）を共有の `settingsState` から外し、端末ごとの独立したキーにした。独立したキーをまだ持たない端末は、起動時に手元の `settingsState.showOrigin` を1度だけ移す。§3・§4.2・§4.3 と、参加時の確認文・QR画面の説明・設定画面の見出しを書き直した |
 | 1.6 | 2026-09-27 | §5.10 のバックアップを、お気に入りの枠1つか表示設定を選んで書き出し・読み込みする形に改めた（お気に入りは選んだ枠へ追加だけ） |
 | 1.5 | 2026-09-02 | `mapTileSource`（地図タイルの配信元）を共有から端末ごとへ移した。`prefs` から外して独立したキーにし、`scope:'device'` で送る。§3・§4.2・§4.3 と、参加時の確認文・QR画面の説明・設定画面のラベルを書き直した |
 | 1.4 | 2026-08-21 | 設定画面の「同期」「バックアップ」を「お気に入りの名前」より下（最下段）へ移し、§5.6 の置き場所の記述を書き直した |

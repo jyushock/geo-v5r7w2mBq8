@@ -1981,7 +1981,8 @@
             <label class="filter-chip"><input type="checkbox" id="check-label-castle" checked onchange="onLabelChange(this)">お城</label>
         </div>
         <div style="border-top:1px solid #f0f0f0;"></div>
-        <div class="nearby-section-label">メニュー表示</div>
+        <!-- メニュー表示は端末ごと（showOrigin。他の端末には同期しない） -->
+        <div class="nearby-section-label">メニュー表示（端末ごと）</div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0 16px 8px;">
             <label class="filter-chip"><input type="checkbox" id="check-show-origin" onchange="onShowOriginChange(this)">検索地点</label>
         </div>
@@ -2308,7 +2309,7 @@
             <div id="sync-joined"></div>
             <p class="fxp-note">追加した端末とは、お気に入りと表示設定がこれ以降ずっと共有されます。
                 やめるときは「端末の管理」から外します。
-                地図の表示位置と地図タイルは、端末ごとに別々のままです。</p>
+                地図の表示位置・地図タイル・メニューの検索地点は、端末ごとに別々のままです。</p>
             <div class="fxp-sec">コードを受け取る側</div>
             <div style="padding:2px 16px 10px;display:flex;gap:8px;">
                 <input id="sync-join-input" type="text" inputmode="latin" autocomplete="off"
