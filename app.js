@@ -2575,13 +2575,31 @@ function travelMode() {
 //   ・ただし文字列「現在地」だけは特別扱いで、fromLat/fromLon を無視してYahoo側の位置情報を
 //     使う。位置情報が未許可だとエラーになるため、出発地のラベルは「現在位置」にする
 //   ・名前を渡さず座標文字列にした場合も同じ経路になる（表示が座標のままになるだけ）
-function yahooRouteUrl(fromLat, fromLng, toLat, toLng, toName) {
+//   ・出発地のラベルは、検索ピンから出るときは「検索地点」にする（fromName）
+function yahooRouteUrl(fromLat, fromLng, toLat, toLng, toName, fromName = '現在位置') {
     const dest = toName || `${toLat},${toLng}`;
     const q = [`to=${encodeURIComponent(dest)}`, `toLat=${toLat}`, `toLon=${toLng}`];
     if (fromLat != null) {
-        q.unshift(`from=${encodeURIComponent('現在位置')}`, `fromLat=${fromLat}`, `fromLon=${fromLng}`);
+        q.unshift(`from=${encodeURIComponent(fromName)}`, `fromLat=${fromLat}`, `fromLon=${fromLng}`);
     }
     return `https://map.yahoo.co.jp/route/${TRAVEL_MODES[travelMode()].yahoo}?${q.join('&')}`;
+}
+
+// Googleマップの経路URL。出発地(saddr)を省くとGoogle側が現在地から引く。
+// 検索ピンがあるときはピンを出発地にする（routeOrigin）。
+function googleRouteUrl(toLat, toLng) {
+    const from = routeOrigin();
+    const q = [`daddr=${toLat},${toLng}`, `dirflg=${TRAVEL_MODES[travelMode()].gmap}`];
+    if (from) q.unshift(`saddr=${from.lat},${from.lng}`);
+    return `https://www.google.com/maps?${q.join('&')}`;
+}
+
+// 「ここへ行く」の出発地。検索ピンが立っていればピン、無ければ null（＝現在地）。
+// 周辺検索の起点（getSearchCenter）と同じく searchPinLngLat を見るので、
+// 長押しのピンも、オブジェクトの「この周辺を検索」で置いた見えないピンも出発地になる。
+// ピンが無いときに地図中心へ倒さないのは周辺検索と違うところで、経路の出発地は現在地のまま。
+function routeOrigin() {
+    return searchPinLngLat;
 }
 
 // 検索ボックスの虫眼鏡(#search-icon)と同じ絵柄。stroke=currentColor なので、
@@ -2605,7 +2623,7 @@ function attrEscape(s) {
 }
 
 function buildSheetHtml(type, label, p, lng, lat) {
-    const navUrl      = `https://www.google.com/maps?daddr=${lat},${lng}&dirflg=${TRAVEL_MODES[travelMode()].gmap}`;
+    const navUrl      = googleRouteUrl(lat, lng);
     const coordGmapUrl = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
     // Yahooの経路画面に出す行き先の名前（[配布]などの装飾が付く title ではなく素の名前を使う）
     const destName = p.name || p.pokemon || p.locationName || label || '';
@@ -2615,7 +2633,7 @@ function buildSheetHtml(type, label, p, lng, lat) {
     // 行C: 全タイプ共通・常に3個
     // Yahooだけリンクでなくボタンなのは、出発地(現在地)を押された時点で読むため（委譲側に理由）
     const rowC = osRow([
-        `<a href="${navUrl}" target="_blank" class="btn btn-nav"><span class="nav-ico"><img src="${NAV_LOGO_GMAPS}" alt="Google Maps"></span><span class="nav-cap">ここへ行く</span></a>`,
+        `<a href="${navUrl}" target="_blank" class="btn btn-nav" data-lat="${lat}" data-lng="${lng}"><span class="nav-ico"><img src="${NAV_LOGO_GMAPS}" alt="Google Maps"></span><span class="nav-cap">ここへ行く</span></a>`,
         `<button class="btn btn-nav-yahoo" data-lat="${lat}" data-lng="${lng}" data-name="${attrEscape(destName)}"><span class="nav-ico"><img src="${NAV_LOGO_YAHOO}" alt="Yahoo!"></span><span class="nav-cap">ここへ行く</span></button>`,
         `<button class="btn btn-nearby-search" onclick='searchNearby(${lng},${lat},${JSON.stringify(originName)})'>${ICON_SEARCH_SVG}この周辺を検索</button>`,
     ]);
@@ -4219,16 +4237,26 @@ map.on('zoomend', () => { isZooming = false; });
         });
     });
 
-    // Yahoo「ここへ行く」＝現在地から目的地までの経路を開く。
+    // Yahoo「ここへ行く」＝現在地（検索ピンがあればピン）から目的地までの経路を開く。
     // シートのHTMLは openObjSheet が開いた瞬間に一度だけ組み立てるため、出発地をURLに
     // 焼き込むと「測位前に開いた」「開いたまま移動した」場合に古い位置のまま残る。
     // そのため押された時点で currentLocation を読む。
+    // 検索ピンが立っていれば、現在地ではなくピンを出発地にする（routeOrigin）。
+    // ピンもシートを開いたまま立て直せる（地図の長押し）・消せる（現在地ボタン）ので、
+    // Google側の href も押された時点で組み直す（リンクの遷移は click の処理の後に href を読む）。
     document.getElementById('obj-sheet-body').addEventListener('click', (e) => {
+        const gmap = e.target.closest('.btn-nav');
+        if (gmap) { gmap.href = googleRouteUrl(gmap.dataset.lat, gmap.dataset.lng); return; }
         const btn = e.target.closest('.btn-nav-yahoo');
         if (!btn) return;
         const toLat = btn.dataset.lat;
         const toLng = btn.dataset.lng;
         const toName = btn.dataset.name || '';
+        const pin = routeOrigin();
+        if (pin) {
+            window.open(yahooRouteUrl(pin.lat, pin.lng, toLat, toLng, toName, '検索地点'), '_blank');
+            return;
+        }
         if (currentLocation) {
             window.open(yahooRouteUrl(currentLocation.lat, currentLocation.lng, toLat, toLng, toName), '_blank');
             return;
@@ -5094,7 +5122,7 @@ map.on('zoomend', () => { isZooming = false; });
         const a = document.querySelector('#obj-sheet-body .btn-nav');
         if (a && objSheetLngLat) {
             const [lng, lat] = objSheetLngLat;
-            a.href = `https://www.google.com/maps?daddr=${lat},${lng}&dirflg=${TRAVEL_MODES[travelMode()].gmap}`;
+            a.href = googleRouteUrl(lat, lng);
         }
     }
 
