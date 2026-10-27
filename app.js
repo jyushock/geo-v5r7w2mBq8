@@ -4686,6 +4686,20 @@ map.on('zoomend', () => { isZooming = false; });
             const res = await fetch(`https://msearch.gsi.go.jp/address-search/AddressSearch?q=${encodeURIComponent(query)}`);
             const data = await res.json();
             const center = getSearchCenter(); // 基準点（周辺検索・天気と同じ）
+            /* 「所沢」と入れたら所沢駅を先頭に出す。地理院は語に「駅」を付けなくても駅を返すが、
+               近い順だけで24件に絞ると駅が落ちる（東京駅から「大宮」で大宮駅は43位）。
+               「入力語＋駅」ちょうど→名前に入力語を含む他の駅→その他、の順にし、各段の中は近い順。
+               問い合わせに「駅」を足すと「パン駅」が0件になるなど駅以外が消えるので、並べ方だけで行う。
+               「駅で終わる」だけで一段にすると、東京駅から「新宿」で新宿御苑前駅が新宿駅より上に来る。
+               「新宿駅」と駅まで入れたときは、それ自体をちょうどの名前にする（東新宿駅を上にしない） */
+            const qn = normalizeForSearch(query);
+            const exactStation = qn.endsWith('駅') ? qn : qn + '駅';
+            const placeRank = (label) => {
+                const ln = normalizeForSearch(label);
+                if (ln === exactStation) return 0;
+                if (ln.endsWith('駅') && ln.includes(qn)) return 1;
+                return 2;
+            };
             return data.map(f => {
                 const title = f.properties.title;
                 const code  = f.properties.addressCode || '';
@@ -4707,8 +4721,8 @@ map.on('zoomend', () => { isZooming = false; });
 
                 const c = f.geometry.coordinates;
                 const _dist = (c && c.length >= 2) ? calcDist(center.lat, center.lng, c[1], c[0]) : Infinity;
-                return { type: 'place', label, sub, coords: c, properties: {}, _dist };
-            }).sort((a, b) => a._dist - b._dist).slice(0, 24);
+                return { type: 'place', label, sub, coords: c, properties: {}, _dist, _rank: placeRank(label) };
+            }).sort((a, b) => (a._rank - b._rank) || (a._dist - b._dist)).slice(0, 24);
         } catch { return []; }
     }
 
