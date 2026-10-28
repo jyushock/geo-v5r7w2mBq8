@@ -1707,16 +1707,103 @@
         }
     }
 
-// --- スムージング用変数 ---
-let currentSmoothedHeading = null;
-const smoothingFactor = 0.03; // センサー入力の平滑化（小さいほど滑らか）。60Hz で届いたときの1回あたりの寄せ率
-let lastOrientationTs = null;
+/* HEADING_SMOOTHER_BEGIN ― tests/heading-smoother-sim.js がこの範囲を切り出して検証する。DOM・地図に依存させないこと */
+/* コンパスの向きを、地図の回転に使えるなめらかな値にする
+   センサーの向きは、止まっていても±1〜3度揺れ、60Hz 前後（端末により20〜100Hz）で不規則に届く。
+   iOS の Google マップのように「持っているだけなら地図は止まって見え、向きを変えればすぐ・行き過ぎずに
+   付いてくる」ために、2段でならす。
+   (1) 追従: 一次の遅れ（目標との差の一定割合ずつ寄る）。差が小さいほど時定数を長く（センサーの揺れを拾わない）、
+       大きいほど短く（本当に向きを変えたら素早く）する。大きな差が persistMs 続くまでは短くしない
+       （一瞬の磁気の乱れに付いていかない）。不感帯は設けない（あると「止まる→急に回る」を繰り返す）
+   (2) 仕上げ: 臨界減衰のばね（強さ一定）で (1) を追う。回転の速さが途切れず、なめらかに加速・減速する
+   どちらも応答が負にならない（行き過ぎない）ならし方なので、向きを変え終えたところで地図が戻ることはない。
+   値は 0/360 度をまたいでも連続になるよう展開して扱う。計算は 4ms 刻みの決まった時刻で進めるので、
+   60Hz と 120Hz の画面、センサーの届く頻度に左右されない。 */
+function createHeadingSmoother(options) {
+    const o = Object.assign({
+        preTauMs:  150,   // 届いた値を軽くならす時定数（届く頻度の違いと細かい揺れをならす）
+        tauRest:   15000, // 静かなとき、差が errRest 度以下での (1) の時定数（ms）。地図はほぼ止まって見える
+        tauMid:    300,   // 静かなとき、差が errSmall 度での時定数
+        tauTurn:   100,   // 向きを変えている最中の時定数（差が小さくなっても、追いつくまではこの速さで寄せる）
+        tauFast:   40,    // 差が errLarge 度以上で向きを変えている最中の時定数
+        errRest:   2,
+        errSmall:  6,
+        errLarge:  25,
+        persistMs: 500,   // 差が errSmall を超えてこれだけ続いたら「向きを変えている」とみなす（一瞬の乱れは除く）
+        settleMs:  400,   // 差が errSmall を下回ってから「静か」に戻るまでの時定数
+        turnRate:  8,     // センサーの値がこの速さ（度/s）以上で同じ向きに rateHoldMs 回り続けたら「向きを変えている」とみなす
+        rateHoldMs: 300,  // （歩くときの手の揺れは0.3秒ほどで向きが入れ替わるので、これで除ける）
+        rateTauMs: 300,   // その速さを測るときのならしの時定数
+        omega:     15,    // (2) のばねの強さ（rad/s）。大きいほど (1) に素早く付く
+        stepMs:    4,
+        idleMs:    1000   // これより長く計算していなければ、最新の値へそのまま合わせる（画面に出ていない間）
+    }, options || {});
+    const diff = (a, b) => { let d = (b - a) % 360; if (d > 180) d -= 360; if (d < -180) d += 360; return d; };
+    const ss = (a, b, x) => { const u = Math.min(Math.max((x - a) / (b - a), 0), 1); return u * u * (3 - 2 * u); };
+    const lerpLog = (a, b, u) => a * Math.pow(b / a, u);
+    let rawLast = null, rawUnw = 0;      // 届いた値（展開済み）
+    let target = 0, pre = 0, mid = 0;    // 最新の値、軽くならした値、(1) の値
+    let ang = 0, vel = 0, t0 = null;     // 表示の向き（度）と角速度（度/s）、計算済みの時刻
+    let persist = 0;                     // 大きな差が続いている度合い（0〜1）
+    let turning = 0;                     // 向きを変えている度合い（0〜1）。静かになると settleMs でゆっくり0へ
+    let rate = 0, rateHeld = 0;          // センサーの値が回る速さ（度/s、ならしたもの）と、それが同じ向きに続いた時間（ms、符号付き）
+    const queue = [];                    // まだ反映していない値 [時刻, 展開済みの値]
 
-// 60fps（60Hz）基準の寄せ率 rate を、経過時間 dt(ms) ぶんの寄せ率に換算する。
-// フレームやイベントの回数で寄せると、120Hz の端末では倍の速さで動いてしまうため
-function lerpForDt(rate, dt) {
-    return 1 - Math.pow(1 - rate, dt / (1000 / 60));
+    function step(h) {
+        const ms = h * 1000, prev = pre;
+        pre += (target - pre) * (1 - Math.exp(-ms / o.preTauMs));
+        rate += ((pre - prev) / h - rate) * (1 - Math.exp(-ms / o.rateTauMs));
+        const e = Math.abs(pre - mid);
+        persist = e > o.errSmall ? Math.min(persist + ms / o.persistMs, 1) : 0;
+        const dir = Math.abs(rate) >= o.turnRate ? Math.sign(rate) : 0;
+        rateHeld = dir === 0 ? 0 : Math.sign(rateHeld) === dir ? rateHeld + dir * ms : dir * ms;
+        turning = persist >= 1 || Math.abs(rateHeld) >= o.rateHoldMs ? 1 : turning * Math.exp(-ms / o.settleMs);
+        const quiet = e <= o.errSmall
+            ? lerpLog(o.tauRest, o.tauMid, ss(o.errRest, o.errSmall, e))
+            : o.tauMid;
+        const active = lerpLog(o.tauTurn, o.tauFast, ss(o.errSmall, o.errLarge, e));
+        const tau = lerpLog(quiet, active, turning);
+        mid += (pre - mid) * (1 - Math.exp(-ms / tau));
+        vel += (o.omega * o.omega * (mid - ang) - 2 * o.omega * vel) * h;
+        ang += vel * h;
+    }
+    function reset(v, now) { target = pre = mid = ang = v; vel = 0; persist = 0; turning = 1; rate = 0; rateHeld = 0; t0 = now; }  // 最初の値は揺れを含むので、しばらく素早く寄せてから静かにする
+    function advance(now) {
+        if (t0 === null) return;
+        if (now - t0 > o.idleMs) {       // しばらく計算していなかった → 最新の値へ合わせる
+            while (queue.length) target = queue.shift()[1];
+            reset(target, now);
+            return;
+        }
+        const h = o.stepMs;
+        while (t0 + h <= now) {
+            while (queue.length && queue[0][0] <= t0) target = queue.shift()[1];
+            step(h / 1000);
+            t0 += h;
+        }
+    }
+    return {
+        // 向き（度、真北から時計回り）を1つ取り込む。now は表示側の時計（performance.now）
+        addSample(deg, now) {
+            rawUnw = rawLast === null ? deg : rawUnw + diff(rawLast, deg);
+            rawLast = deg;
+            if (t0 === null) { reset(rawUnw, now); return; }
+            advance(now);
+            queue.push([now, rawUnw]);
+        },
+        // 時刻 now の表示の向き（0〜360度）。まだ値が無ければ null
+        sample(now) {
+            if (t0 === null) return null;
+            advance(now);
+            const a = ang + vel * Math.max(now - t0, 0) / 1000;
+            return ((a % 360) + 360) % 360;
+        }
+    };
 }
+/* HEADING_SMOOTHER_END */
+
+// 向きのならし。地図の回転（モード2）と扇（モード1）は、どちらもここから毎フレーム読む
+const headingSmoother = createHeadingSmoother();
 
 // 角度の差分を-180〜180の範囲で計算するヘルパー（最短距離で回転させるため）
 function getShortestAngleDiff(current, target) {
@@ -1757,38 +1844,21 @@ function handleOrientation(event) {
     }
 
     const targetHeading = (rawHeading + screenAngle + 360) % 360;
-    const dt = lastOrientationTs === null ? 1000 / 60 : Math.min(Math.max(event.timeStamp - lastOrientationTs, 0), 200);
-    lastOrientationTs = event.timeStamp;
-
-    if (currentSmoothedHeading === null) {
-        currentSmoothedHeading = targetHeading;
-    } else {
-        const diff = getShortestAngleDiff(currentSmoothedHeading, targetHeading);
-        // 差分が0.1度以下なら完全に収束させて微小振動を止める
-        if (Math.abs(diff) < 0.1) {
-            currentSmoothedHeading = targetHeading;
-        } else {
-            currentSmoothedHeading = (currentSmoothedHeading + diff * lerpForDt(smoothingFactor, dt) + 360) % 360;
-        }
-    }
-
-    deviceHeading = currentSmoothedHeading;
-    // 扇アイコンの更新はrAFループに一本化（ここでは行わない）
+    // ならしは createHeadingSmoother に任せる（イベントの届く頻度に左右されないよう、届いた時刻を添える）
+    const now = performance.now();
+    headingSmoother.addSample(targetHeading, now);
+    deviceHeading = headingSmoother.sample(now);
+    // 地図の回転と扇アイコンの更新はrAFループに一本化（ここでは行わない）
 }
 
 // --- 現在地の表示位置と地図カメラを rAF でなめらかに追従させる ---
 /* 位置の推定と、毎フレームの表示位置の計算は createLocationSmoother（下）にまとめてある。
    ここでは、その表示位置へマーカーを置き、追従中は地図カメラも合わせる。
    表示位置は時刻だけで決まるので、60Hz の端末と 120Hz の端末で動きが変わらない。 */
-const BEARING_THRESHOLD     = 2.0;
-const BEARING_LERP          = 0.04;  // 60fps のときの1フレームあたりの寄せ率（実際は経過時間で換算）
-const BEARING_SET_THRESHOLD = 0.3;   // 実際にsetBearingを呼ぶ閾値（センサーノイズ0.1〜0.2度を除外）
-let rafBearing   = null;
 let rafLng       = null;  // 表示中の現在地
 let rafLat       = null;
 let rafId        = null;  // ループID（nullなら停止中）
 let cameraFollow = false; // true の間だけ地図カメラを表示位置へ追従させる
-let lastFrameTs  = null;
 let prevSetBearing = null;
 let prevSetLng     = null;
 let prevSetLat     = null;
@@ -2114,7 +2184,6 @@ const locSmoother = createLocationSmoother();
 
 function ensureRafLoop() {
     if (rafId !== null) return;
-    lastFrameTs = null;
     rafId = requestAnimationFrame(locationRafLoop);
 }
 
@@ -2129,7 +2198,6 @@ function startRafLoop() {
 // 地図カメラの追従をやめる。マーカーはループ側が、表示位置が止まるまで動かし続ける
 function stopRafLoop() {
     cameraFollow = false;
-    rafBearing = null;
     prevSetBearing = null;
     prevSetLng     = null;
     prevSetLat     = null;
@@ -3619,9 +3687,6 @@ function clearSelectedObject() {
 }
 
 function locationRafLoop(ts) {
-    const dt = lastFrameTs === null ? 1000 / 60 : Math.min(ts - lastFrameTs, 100);
-    lastFrameTs = ts;
-
     // ── 表示位置（createLocationSmoother が時刻から計算する） ──
     let moved = false;
     const shown = locSmoother.sample(ts);
@@ -3630,26 +3695,19 @@ function locationRafLoop(ts) {
         moved = true;
     }
 
+    // ── 向き（createHeadingSmoother が時刻から計算する。センサーの値がまだ無ければ従来どおり deviceHeading） ──
+    const heading = headingSmoother.sample(ts) ?? deviceHeading;
     const following = cameraFollow && trackingMode > 0 && !isZooming && rafLng !== null;
     if (following && trackingMode === 2) {
-        // ── bearing補間（経過時間で寄せ率を換算） ──
-        if (rafBearing === null) { rafBearing = deviceHeading; }
-        const diff = getShortestAngleDiff(rafBearing, deviceHeading);
-        if (Math.abs(diff) < 0.1) {
-            // 収束判定：0.1度以下なら完全に一致させて止める
-            rafBearing = deviceHeading;
-        } else if (Math.abs(diff) >= BEARING_THRESHOLD) {
-            rafBearing = (rafBearing + diff * lerpForDt(BEARING_LERP, dt) + 360) % 360;
-        }
-        // カメラ更新を jumpTo で1回にまとめる。位置は少しでも変われば反映する
-        // （閾値を設けると歩行速度では数フレームに1回しか動かず段付きになる）
-        const bearingChanged = prevSetBearing === null || Math.abs(getShortestAngleDiff(prevSetBearing, rafBearing)) >= BEARING_SET_THRESHOLD;
+        // カメラ更新を jumpTo で1回にまとめる。位置も向きも少しでも変われば反映する
+        // （閾値を設けると、歩行速度やゆっくり向きを変えたときに数フレームに1回しか動かず段付きになる）
+        const bearingChanged = heading !== prevSetBearing;
         const posChanged     = rafLng !== prevSetLng || rafLat !== prevSetLat;
         const pitchChanged   = prevSetPitch !== 70;
         if (posChanged || bearingChanged || pitchChanged) {
             const cameraUpdate = {};
             if (posChanged)     { cameraUpdate.center  = [rafLng, rafLat]; prevSetLng = rafLng; prevSetLat = rafLat; }
-            if (bearingChanged) { cameraUpdate.bearing = rafBearing;        prevSetBearing = rafBearing; }
+            if (bearingChanged) { cameraUpdate.bearing = heading;           prevSetBearing = heading; }
             if (pitchChanged)   { cameraUpdate.pitch   = 70;                prevSetPitch = 70; }
             map.jumpTo(cameraUpdate);
         }
@@ -3667,8 +3725,8 @@ function locationRafLoop(ts) {
         if (trackingMode === 2) {
             // モード2は地図自体が向きを追従しているためアイコンは0固定
             currentMarker.getElement().style.setProperty('--heading', '0deg');
-        } else if (trackingMode === 1 && deviceHeading !== null) {
-            const relativeHeading = getShortestAngleDiff(map.getBearing() || 0, deviceHeading);
+        } else if (trackingMode === 1 && heading !== null) {
+            const relativeHeading = getShortestAngleDiff(map.getBearing() || 0, heading);
             currentMarker.getElement().style.setProperty('--heading', `${relativeHeading}deg`);
         }
     }
