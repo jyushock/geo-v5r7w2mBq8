@@ -3043,10 +3043,11 @@ function buildSheetHtml(type, label, p, lng, lat) {
     // 経路の行き先名（destName）と違って店名だけにする
     const originName = type === 'shop' ? (shopDisplayName(p) || label) : label;
     // 行C: 全タイプ共通・常に3個
-    // Yahooだけリンクでなくボタンなのは、出発地(現在地)を押された時点で読むため（委譲側に理由）
+    // 経路の2つはどちらも <a target="_blank">。出発地(現在地・検索ピン)は押された時点で読んで
+    // href を差し替える（委譲側に理由）
     const rowC = osRow([
         `<a href="${navUrl}" target="_blank" class="btn btn-nav" data-lat="${lat}" data-lng="${lng}"><span class="nav-ico"><img src="${NAV_LOGO_GMAPS}" alt="Google Maps"></span><span class="nav-cap">ここへ行く</span></a>`,
-        `<button class="btn btn-nav-yahoo" data-lat="${lat}" data-lng="${lng}" data-name="${attrEscape(destName)}"><span class="nav-ico"><img src="${NAV_LOGO_YAHOO}" alt="Yahoo!"></span><span class="nav-cap">ここへ行く</span></button>`,
+        `<a href="${yahooRouteUrl(null, null, lat, lng, destName)}" target="_blank" class="btn btn-nav-yahoo" data-lat="${lat}" data-lng="${lng}" data-name="${attrEscape(destName)}"><span class="nav-ico"><img src="${NAV_LOGO_YAHOO}" alt="Yahoo!"></span><span class="nav-cap">ここへ行く</span></a>`,
         `<button class="btn btn-nearby-search" onclick='searchNearby(${lng},${lat},${JSON.stringify(originName)})'>${ICON_SEARCH_SVG}この周辺を検索</button>`,
     ]);
     const isPokefuta = type === 'pokefuta' || (type === 'manhole' && p.source === 'pokefuta');
@@ -4651,6 +4652,9 @@ map.on('zoomend', () => { isZooming = false; });
     // 検索ピンが立っていれば、現在地ではなくピンを出発地にする（routeOrigin）。
     // ピンもシートを開いたまま立て直せる（地図の長押し）・消せる（現在地ボタン）ので、
     // Google側の href も押された時点で組み直す（リンクの遷移は click の処理の後に href を読む）。
+    // Yahoo側も同じくリンクにして href を差し替える。以前は <button> から window.open で開いていたが、
+    // iPhone では Safari に新しいタブができてから中身だけが Yahoo!マップのアプリへ渡り、アプリから
+    // 戻ると空のページが挟まっていた（setupIosNearbyGmapLinks と同じ現象。<a target="_blank"> では起きない）。
     document.getElementById('obj-sheet-body').addEventListener('click', (e) => {
         const gmap = e.target.closest('.btn-nav');
         if (gmap) { gmap.href = googleRouteUrl(gmap.dataset.lat, gmap.dataset.lng); return; }
@@ -4661,16 +4665,19 @@ map.on('zoomend', () => { isZooming = false; });
         const toName = btn.dataset.name || '';
         const pin = routeOrigin();
         if (pin) {
-            window.open(yahooRouteUrl(pin.lat, pin.lng, toLat, toLng, toName, '検索地点'), '_blank');
+            btn.href = yahooRouteUrl(pin.lat, pin.lng, toLat, toLng, toName, '検索地点');
             return;
         }
         if (currentLocation) {
-            window.open(yahooRouteUrl(currentLocation.lat, currentLocation.lng, toLat, toLng, toName), '_blank');
+            btn.href = yahooRouteUrl(currentLocation.lat, currentLocation.lng, toLat, toLng, toName);
             return;
         }
         // 未測位（許可ダイアログ未応答・初回測位待ち・測位失敗）の場合はここで改めて要求する。
         // 未許可ならこの getCurrentPosition で許可ダイアログが出る。
-        // 取得完了はユーザー操作の外になり window.open が抑止され得るので、先にタブを確保しておく
+        // 取得を待ってから出発地入りで開くには、リンクの遷移を止めて先にタブを確保するしかない
+        // （取得完了はユーザー操作の外になり window.open が抑止され得るため）。このときだけは
+        // iPhone で戻ったときに空のページが挟まり得るが、出発地を入れて開くことを優先する。
+        e.preventDefault();
         const tab = window.open('about:blank', '_blank');
         if (!tab) return;
         const openWithoutOrigin = () => {
