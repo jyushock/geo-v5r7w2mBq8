@@ -1438,7 +1438,10 @@
         #nearby-search-proxy-icon { color: #9E9E9E; margin-right: 8px; flex-shrink: 0; display: flex; align-items: center; }
         #nearby-search-proxy-text { font-size: 15px; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         #nearby-search-origin.expanded #nearby-search-origin-text-wrap { overflow: visible; }
-        #nearby-search-origin-icon { flex-shrink: 0; display: flex; align-items: center; }
+        /* 絵は Googleマップへのリンク。絵だけだと20px角で押しにくいので、行の左端から住所の手前まで
+           （行の左の余白10pxと間隔7pxを取り込む）、行の高さいっぱいを押せる範囲にする */
+        #nearby-search-origin-icon { flex-shrink: 0; display: flex; align-items: center; align-self: stretch; margin: 0 -7px 0 -10px; padding: 0 7px 0 10px; }
+        #nearby-search-origin.expanded #nearby-search-origin-icon { align-items: flex-start; }
         #nearby-search-origin-label { font-size: 10px; color: #aaa; line-height: 1.2; }
         #nearby-search-origin-text { font-size: 13px; color: #333; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.3; }
         #nearby-search-origin.expanded #nearby-search-origin-text { white-space: normal; overflow: visible; text-overflow: unset; }
@@ -1759,7 +1762,8 @@
         <div id="weather-hourly-panel" aria-live="polite"></div>
         <!-- 検索地点（設定でONのときだけ出す）。天気と周辺検索の間に置く -->
         <div id="nearby-search-origin">
-            <div id="nearby-search-origin-icon"></div>
+            <!-- 左のピン／地図中心の絵を押すと、検索地点の座標を Googleマップで開く。href は押した瞬間に app.js が差し替える -->
+            <a id="nearby-search-origin-icon" href="https://www.google.com/maps" target="_blank" aria-label="検索地点をGoogleマップで開く"></a>
             <div id="nearby-search-origin-text-wrap" style="overflow:hidden;">
                 <div id="nearby-search-origin-label">検索地点</div>
                 <div id="nearby-search-origin-text">地図中心</div>

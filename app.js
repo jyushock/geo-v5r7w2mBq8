@@ -1599,6 +1599,15 @@
     document.getElementById('nearby-search-origin').addEventListener('click', () => {
         document.getElementById('nearby-search-origin').classList.toggle('expanded');
     });
+    /* 検索地点の左の絵（ピン／地図中心）を押すと Googleマップで開く。住所ではなく座標で開く
+       （ピンがあればピン、無ければ地図の中心）。window.open ではなく <a target="_blank"> にするのは、
+       iPhone で Googleマップのアプリから戻ったときに空のタブを残さないため
+       （setupIosNearbyGmapLinks と同じ理由）。地点は押すたびに変わるので、押した瞬間に href を差し替える。 */
+    document.getElementById('nearby-search-origin-icon').addEventListener('click', (e) => {
+        e.stopPropagation();   // 行の住所の開閉は起こさない
+        const c = getSearchCenter();
+        e.currentTarget.href = `https://www.google.com/maps/search/?api=1&query=${c.lat.toFixed(6)},${c.lng.toFixed(6)}`;
+    });
     async function fetchPlaceName(lat, lng) {
         try {
             const res = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json&zoom=18&accept-language=ja`);
