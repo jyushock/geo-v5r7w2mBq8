@@ -112,7 +112,9 @@
             transform-origin: 50% 100%;
             transform: translate(-50%, -100%) rotate(var(--heading, 0deg));
             opacity: 0;
-            transition: transform 0.2s ease-out, opacity 0.3s;
+            /* 向きは JS が毎フレーム平滑化して渡すので transform には transition を付けない
+               （毎フレーム遷移がやり直しになって遅れ、±180度をまたぐと逆回りに一周する） */
+            transition: opacity 0.3s;
             will-change: transform;
         }
         .current-location-dot.heading-active::before { opacity: 1; }

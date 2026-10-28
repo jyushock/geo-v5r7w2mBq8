@@ -1709,7 +1709,14 @@
 
 // --- スムージング用変数 ---
 let currentSmoothedHeading = null;
-const smoothingFactor = 0.03; // センサー入力の平滑化（小さいほど滑らか）
+const smoothingFactor = 0.03; // センサー入力の平滑化（小さいほど滑らか）。60Hz で届いたときの1回あたりの寄せ率
+let lastOrientationTs = null;
+
+// 60fps（60Hz）基準の寄せ率 rate を、経過時間 dt(ms) ぶんの寄せ率に換算する。
+// フレームやイベントの回数で寄せると、120Hz の端末では倍の速さで動いてしまうため
+function lerpForDt(rate, dt) {
+    return 1 - Math.pow(1 - rate, dt / (1000 / 60));
+}
 
 // 角度の差分を-180〜180の範囲で計算するヘルパー（最短距離で回転させるため）
 function getShortestAngleDiff(current, target) {
@@ -1750,6 +1757,8 @@ function handleOrientation(event) {
     }
 
     const targetHeading = (rawHeading + screenAngle + 360) % 360;
+    const dt = lastOrientationTs === null ? 1000 / 60 : Math.min(Math.max(event.timeStamp - lastOrientationTs, 0), 200);
+    lastOrientationTs = event.timeStamp;
 
     if (currentSmoothedHeading === null) {
         currentSmoothedHeading = targetHeading;
@@ -1759,7 +1768,7 @@ function handleOrientation(event) {
         if (Math.abs(diff) < 0.1) {
             currentSmoothedHeading = targetHeading;
         } else {
-            currentSmoothedHeading = (currentSmoothedHeading + diff * smoothingFactor + 360) % 360;
+            currentSmoothedHeading = (currentSmoothedHeading + diff * lerpForDt(smoothingFactor, dt) + 360) % 360;
         }
     }
 
@@ -1767,38 +1776,106 @@ function handleOrientation(event) {
     // 扇アイコンの更新はrAFループに一本化（ここでは行わない）
 }
 
-// --- rAFループで地図bearingをなめらかに追従（震え防止） ---
+// --- 現在地の表示位置と地図カメラを rAF でなめらかに追従させる ---
+/* GPS の位置は、止まっていても数m揺れ、動いていても約1秒ごとにしか届かない。そこで2段で扱う。
+   (1) 位置フィルタ（filterFix）: 届いた位置を精度で重み付けするカルマンフィルタに通す。
+       速度が小さいほど新しい位置を信用しないので、静止時の揺れがほぼ消える。
+   (2) 表示補間（locationRafLoop）: フィルタ後の位置へ、前回の更新間隔と同じ時間をかけて
+       一定速度で動かす。「毎フレーム残りの何%を詰める」方式だと、更新のたびに
+       急発進→減速→停止を繰り返し、波打つように見えるため。
+   どちらもフレーム数ではなく経過時間で計算するので、60Hz の端末と 120Hz の端末で
+   動きの速さが変わらない。 */
 const BEARING_THRESHOLD     = 2.0;
-const BEARING_LERP          = 0.04;
-const POSITION_LERP         = 0.02;
-const BEARING_SET_THRESHOLD = 0.3;   // ④ 実際にsetBearingを呼ぶ閾値（センサーノイズ0.1〜0.2度を除外）
-const POS_CONVERGE          = 0.000005; // ③ 位置補間の収束打ち切り閾値（約0.5m）
-let rafBearing  = null;
-let rafLng      = null;
-let rafLat      = null;
-let rafId       = null; // ループID（nullなら停止中）
+const BEARING_LERP          = 0.04;  // 60fps のときの1フレームあたりの寄せ率（実際は経過時間で換算）
+const BEARING_SET_THRESHOLD = 0.3;   // 実際にsetBearingを呼ぶ閾値（センサーノイズ0.1〜0.2度を除外）
+const FIX_ANIM_MIN_MS       = 300;   // 表示補間にかける時間の下限・上限
+const FIX_ANIM_MAX_MS       = 1500;
+const FIX_JUMP_METERS       = 200;   // これより離れた位置へは補間せず一気に移す
+const M_PER_DEG_LAT         = 111320;
+let rafBearing   = null;
+let rafLng       = null;  // 表示中の現在地（補間の途中経過）
+let rafLat       = null;
+let rafId        = null;  // ループID（nullなら停止中）
+let cameraFollow = false; // true の間だけ地図カメラを表示位置へ追従させる
+let lastFrameTs  = null;
+let posAnim      = null;  // { fromLng, fromLat, toLng, toLat, start, dur }
+let lastFixAt    = null;
 let prevSetBearing = null;
 let prevSetLng     = null;
 let prevSetLat     = null;
-let prevSetPitch   = null; // ② pitch変化チェック用
+let prevSetPitch   = null;
 
-function startRafLoop() {
-    if (rafId !== null) return;
-    rafId = requestAnimationFrame(bearingRafLoop);
+// --- 位置フィルタ（緯度経度をメートルに直して扱う簡易カルマンフィルタ） ---
+let kfLng = null, kfLat = null, kfVar = -1, kfTs = 0, kfSpeed = 0;
+function filterFix(lng, lat, accuracy, ts, speed) {
+    const acc = Math.max(accuracy || 0, 3);
+    if (kfVar < 0) {
+        kfLng = lng; kfLat = lat; kfVar = acc * acc; kfTs = ts; kfSpeed = 0;
+        return { lng, lat };
+    }
+    const dt = Math.max((ts - kfTs) / 1000, 0);
+    const mPerDegLng = M_PER_DEG_LAT * Math.cos(kfLat * Math.PI / 180);
+    const dist = Math.hypot((lng - kfLng) * mPerDegLng, (lat - kfLat) * M_PER_DEG_LAT);
+    // 速度は端末が返す値を優先する。無いときは、精度の円をはみ出したぶんだけを移動とみなす
+    // （円の内側の揺れまで速度に数えると、静止時の揺れを抑えられなくなる）
+    const measured = (typeof speed === 'number' && speed >= 0)
+        ? speed
+        : (dt > 0 ? Math.max(dist - acc, 0) / dt : 0);
+    kfSpeed = kfSpeed * 0.5 + measured * 0.5;
+    // 想定する動きの大きさ。静止時は小さく（揺れを強く抑える）、移動時は速度の3倍
+    // （歩行・走行中は GPS の値をほぼそのまま採り、遅れを1m未満に抑える）
+    const q = Math.max(kfSpeed * 3, 0.3);
+    kfVar += dt * q * q;
+    const k = kfVar / (kfVar + acc * acc);
+    kfLng += (lng - kfLng) * k;
+    kfLat += (lat - kfLat) * k;
+    kfVar = (1 - k) * kfVar;
+    kfTs = ts;
+    return { lng: kfLng, lat: kfLat };
 }
 
-function stopRafLoop() {
-    if (rafId !== null) {
-        cancelAnimationFrame(rafId);
-        rafId = null;
+// 表示位置を新しい位置へ向けて動かし始める
+function setDisplayTarget(lng, lat) {
+    const now = performance.now();
+    const interval = lastFixAt === null ? 1000 : now - lastFixAt;
+    lastFixAt = now;
+    if (rafLng === null) { rafLng = lng; rafLat = lat; posAnim = null; return; }
+    const mPerDegLng = M_PER_DEG_LAT * Math.cos(rafLat * Math.PI / 180);
+    const dist = Math.hypot((lng - rafLng) * mPerDegLng, (lat - rafLat) * M_PER_DEG_LAT);
+    if (dist > FIX_JUMP_METERS) {
+        rafLng = lng; rafLat = lat; posAnim = null;
+        if (currentMarker) currentMarker.setLngLat([lng, lat]);
+        return;
     }
+    posAnim = {
+        fromLng: rafLng, fromLat: rafLat, toLng: lng, toLat: lat, start: now,
+        dur: Math.min(Math.max(interval, FIX_ANIM_MIN_MS), FIX_ANIM_MAX_MS)
+    };
+    ensureRafLoop();
+}
+
+function ensureRafLoop() {
+    if (rafId !== null) return;
+    lastFrameTs = null;
+    rafId = requestAnimationFrame(locationRafLoop);
+}
+
+// 地図カメラの追従を始める（追従モードがオフのまま呼ばれたら何もしない。
+// 現在地への easeTo 中にドラッグで追従を解除した場合、moveend から遅れて呼ばれるため）
+function startRafLoop() {
+    if (trackingMode === 0) return;
+    cameraFollow = true;
+    ensureRafLoop();
+}
+
+// 地図カメラの追従をやめる。マーカーの補間はループ側が終わるまで続ける
+function stopRafLoop() {
+    cameraFollow = false;
     rafBearing = null;
-    rafLng     = null;
-    rafLat     = null;
     prevSetBearing = null;
     prevSetLng     = null;
     prevSetLat     = null;
-    prevSetPitch   = null; // ② リセット
+    prevSetPitch   = null;
 }
 
 // --- 城写真取得（攻城団→城郭放浪記→Wikipedia フォールバック、キャッシュ付き） ---
@@ -3283,64 +3360,65 @@ function clearSelectedObject() {
     if (link) link.setData({ type: 'FeatureCollection', features: [] });
 }
 
-function bearingRafLoop() {
-    if (trackingMode > 0 && !isZooming && currentLocation) {
-        // ── 位置補間 ──
-        if (rafLng === null) { rafLng = currentLocation.lng; rafLat = currentLocation.lat; }
-        const dLng = currentLocation.lng - rafLng;
-        const dLat = currentLocation.lat - rafLat;
-        // 約3m以下の差は無視して打ち切る（GPS誤差による震え防止）
-        const posThreshold = 0.00003;
-        if (Math.abs(dLng) > posThreshold || Math.abs(dLat) > posThreshold) {
-            // ③ 補間後の値がPOS_CONVERGE以下なら完全に一致させて収束打ち切り（保険）
-            const newLng = rafLng + dLng * POSITION_LERP;
-            const newLat = rafLat + dLat * POSITION_LERP;
-            rafLng = Math.abs(currentLocation.lng - newLng) < POS_CONVERGE ? currentLocation.lng : newLng;
-            rafLat = Math.abs(currentLocation.lat - newLat) < POS_CONVERGE ? currentLocation.lat : newLat;
-        }
+function locationRafLoop(ts) {
+    const dt = lastFrameTs === null ? 1000 / 60 : Math.min(ts - lastFrameTs, 100);
+    lastFrameTs = ts;
 
-        if (trackingMode === 2) {
-            // ── bearing補間 ──
-            if (rafBearing === null) { rafBearing = deviceHeading; }
-            const diff = getShortestAngleDiff(rafBearing, deviceHeading);
-            if (Math.abs(diff) < 0.1) {
-                // 収束判定：0.1度以下なら完全に一致させて止める
-                rafBearing = deviceHeading;
-            } else if (Math.abs(diff) >= BEARING_THRESHOLD) {
-                rafBearing = (rafBearing + diff * BEARING_LERP + 360) % 360;
-            }
-            // ① ② ④ カメラ更新を jumpTo で一括化・各変化チェックを適用
-            const bearingChanged = prevSetBearing === null || Math.abs(getShortestAngleDiff(prevSetBearing, rafBearing)) >= BEARING_SET_THRESHOLD; // ④
-            const posChanged     = prevSetLng === null || Math.abs(rafLng - prevSetLng) > 0.000001 || Math.abs(rafLat - prevSetLat) > 0.000001;
-            const pitchChanged   = prevSetPitch !== 70; // ②
-            if (posChanged || bearingChanged || pitchChanged) {
-                // ① setCenter / setBearing / setPitch を jumpTo で1回にまとめる
-                const cameraUpdate = {};
-                if (posChanged)     { cameraUpdate.center  = [rafLng, rafLat]; prevSetLng = rafLng; prevSetLat = rafLat; }
-                if (bearingChanged) { cameraUpdate.bearing = rafBearing;        prevSetBearing = rafBearing; }
-                if (pitchChanged)   { cameraUpdate.pitch   = 70;                prevSetPitch = 70; } // ②
-                map.jumpTo(cameraUpdate);
-            }
-            // カメラ更新後にマーカーを更新（1フレームずれ防止）
-            // モード2は地図自体が向きを追従しているためアイコンは0固定
-            if (currentMarker) {
-                currentMarker.setLngLat([rafLng, rafLat]);
-                currentMarker.getElement().style.setProperty('--heading', '0deg');
-            }
-        } else {
-            // trackingMode === 1: 位置追従＋扇エフェクト
+    // ── 表示位置の補間（前回の更新間隔をかけて一定速度で動かす） ──
+    let moved = false;
+    if (posAnim) {
+        const t = Math.min(Math.max((ts - posAnim.start) / posAnim.dur, 0), 1);
+        rafLng = posAnim.fromLng + (posAnim.toLng - posAnim.fromLng) * t;
+        rafLat = posAnim.fromLat + (posAnim.toLat - posAnim.fromLat) * t;
+        if (t >= 1) posAnim = null;
+        moved = true;
+    }
+
+    const following = cameraFollow && trackingMode > 0 && !isZooming && rafLng !== null;
+    if (following && trackingMode === 2) {
+        // ── bearing補間（経過時間で寄せ率を換算） ──
+        if (rafBearing === null) { rafBearing = deviceHeading; }
+        const diff = getShortestAngleDiff(rafBearing, deviceHeading);
+        if (Math.abs(diff) < 0.1) {
+            // 収束判定：0.1度以下なら完全に一致させて止める
+            rafBearing = deviceHeading;
+        } else if (Math.abs(diff) >= BEARING_THRESHOLD) {
+            rafBearing = (rafBearing + diff * lerpForDt(BEARING_LERP, dt) + 360) % 360;
+        }
+        // カメラ更新を jumpTo で1回にまとめる。位置は少しでも変われば反映する
+        // （閾値を設けると歩行速度では数フレームに1回しか動かず段付きになる）
+        const bearingChanged = prevSetBearing === null || Math.abs(getShortestAngleDiff(prevSetBearing, rafBearing)) >= BEARING_SET_THRESHOLD;
+        const posChanged     = rafLng !== prevSetLng || rafLat !== prevSetLat;
+        const pitchChanged   = prevSetPitch !== 70;
+        if (posChanged || bearingChanged || pitchChanged) {
+            const cameraUpdate = {};
+            if (posChanged)     { cameraUpdate.center  = [rafLng, rafLat]; prevSetLng = rafLng; prevSetLat = rafLat; }
+            if (bearingChanged) { cameraUpdate.bearing = rafBearing;        prevSetBearing = rafBearing; }
+            if (pitchChanged)   { cameraUpdate.pitch   = 70;                prevSetPitch = 70; }
+            map.jumpTo(cameraUpdate);
+        }
+    } else if (following) {
+        // trackingMode === 1: 位置追従のみ。止まっているときは地図を触らない
+        if (rafLng !== prevSetLng || rafLat !== prevSetLat) {
             map.setCenter([rafLng, rafLat]);
-            if (currentMarker) {
-                currentMarker.setLngLat([rafLng, rafLat]);
-                if (deviceHeading !== null) {
-                    const relativeHeading = getShortestAngleDiff(map.getBearing() || 0, deviceHeading);
-                    currentMarker.getElement().style.setProperty('--heading', `${relativeHeading}deg`);
-                }
-            }
+            prevSetLng = rafLng; prevSetLat = rafLat;
         }
     }
 
-    rafId = requestAnimationFrame(bearingRafLoop);
+    // カメラ更新後にマーカーを更新（1フレームずれ防止）。追従オフでもマーカーは動かす
+    if (currentMarker && rafLng !== null) {
+        if (moved) currentMarker.setLngLat([rafLng, rafLat]);
+        if (trackingMode === 2) {
+            // モード2は地図自体が向きを追従しているためアイコンは0固定
+            currentMarker.getElement().style.setProperty('--heading', '0deg');
+        } else if (trackingMode === 1 && deviceHeading !== null) {
+            const relativeHeading = getShortestAngleDiff(map.getBearing() || 0, deviceHeading);
+            currentMarker.getElement().style.setProperty('--heading', `${relativeHeading}deg`);
+        }
+    }
+
+    // 追従中か、表示位置が動いている間だけループを続ける
+    rafId = (cameraFollow || posAnim) ? requestAnimationFrame(locationRafLoop) : null;
 }
 
 // --- 1. 地図ドラッグ（移動）開始時の処理を修正 ---
@@ -3898,21 +3976,31 @@ map.on('zoomend', () => { isZooming = false; });
                 const GPS_ACCURACY_THRESHOLD = 50; // 50m以上の誤差は無視
                 if (currentLocation && accuracy > GPS_ACCURACY_THRESHOLD) return;
 
+                // maximumAge により同じ測位が繰り返し届くことがある。それを新しい位置として補間すると
+                // 「止まる→進む」の段付きになるので、測位時刻が進んでいないものは捨てる
+                if (currentLocation && pos.timestamp <= kfTs) return;
+
                 const isFirst = !currentLocation;
-                currentLocation = { lat, lng };
+                // 静止時の揺れを抑えた位置を現在地として扱う（filterFix 参照）
+                const f = filterFix(lng, lat, accuracy, pos.timestamp, pos.coords.speed);
+                currentLocation = { lat: f.lat, lng: f.lng };
 
                 if (!currentMarker) {
                     const el = document.createElement('div');
                     el.className = 'current-location-dot';
-                    currentMarker = new maplibregl.Marker({ element: el }).setLngLat([lng, lat]).addTo(map);
+                    // 既定ではマーカーが整数ピクセルに丸められ、ゆっくり動くと1pxずつ段付きになるので外す
+                    currentMarker = new maplibregl.Marker({ element: el, subpixelPositioning: true })
+                        .setLngLat([f.lng, f.lat]).addTo(map);
                 }
+                // マーカーは rAF ループで、前回の更新間隔をかけて一定速度で動かす
+                setDisplayTarget(f.lng, f.lat);
 
                 // 追従モードONかつ初回位置取得時→アニメーションで現在地へ移動
                 if (isFirst && trackingMode > 0) {
                     histSetPending('現在地', 'geo', null,
-                                   { coords: [lng, lat], zoom: Math.max(map.getZoom(), 15) });
+                                   { coords: [f.lng, f.lat], zoom: Math.max(map.getZoom(), 15) });
                     map.easeTo({
-                        center: [lng, lat],
+                        center: [f.lng, f.lat],
                         zoom: Math.max(map.getZoom(), 15),
                         bearing: trackingMode === 2 ? (deviceHeading || 0) : 0,
                         pitch: trackingMode === 2 ? 70 : 0,
@@ -3921,8 +4009,6 @@ map.on('zoomend', () => { isZooming = false; });
                     });
                     map.once('moveend', startRafLoop);
                 }
-                // マーカー位置の更新はrAFループの補間済み座標で行うため
-                // ここではsetLngLatしない
             }, (err) => {
                 console.warn('[GPS] エラー:', err.code, err.message);
                 alert('現在地が取得できませんでした。');
