@@ -7791,6 +7791,68 @@ map.on('zoomend', () => { isZooming = false; });
         return '通信エラー';
     }
 
+    /* ══ ホテル検索の最寄り駅 ══════════════════════════════════════════
+       最寄り駅は HeartRails Express の getStations（x=経度, y=緯度）で引く。
+       以前は Overpass だけで引いていたが、2026-11-03 に実測すると駅の問い合わせが
+       33〜43秒、重複駅名の県名を引く is_in がさらに 35秒かかり、間に容量超過の 502 が
+       挟まっていた（mail.ru・private.coffee のミラーも 504 で同じく遅い）。
+       HeartRails は同じ地点で 0.4秒で返り、県名も一緒に返る。
+       2026-11-03 に確かめた HeartRails の返し方：
+       ・近い順に3駅を、路線ごとに1件ずつ返す（同じ駅が路線の数だけ並ぶ）。distance は "770m" の形
+       ・およそ10kmより先の駅は返さない（銚子沖で 9.55km は返り 11km は0件）。設定の範囲が
+         それより広く、0件だったときだけ Overpass で引き直す（山奥・離島のまれな場合）
+       ・ケーブルカーとモノレールも含む。ケーブルカーは路線名で除く（高尾登山電鉄線・
+         御岳登山鉄道は名前に出ないがケーブルカー。箱根登山鉄道線は普通の鉄道なので残す）。
+         モノレールは除かない。Overpass の問い合わせは station=monorail を除いていたが、
+         那覇で引くとゆいレールの美栄橋が返っており、実際には除けていなかった。
+         除くと那覇では近い3駅がみな外れて Overpass 頼みになり、38秒かかって同じ駅が返った
+       無料で使う条件としてアプリ内にクレジットを出す決まりなので、設定のホテルの項目に置いている。 */
+    const HEARTRAILS_URL = 'https://express.heartrails.com/api/json';
+    const HEARTRAILS_MAX_M = 10000;   // これより先は返さない（上の実測）
+    const HEARTRAILS_ABORT_MS = 10000;
+    const NON_STATION_LINE_RE = /鋼索|ケーブル|高尾登山電鉄|御岳登山鉄道/;
+
+    async function heartrailsStations(params) {
+        const ctl = new AbortController();
+        const timer = setTimeout(() => ctl.abort(), HEARTRAILS_ABORT_MS);
+        try {
+            const res = await fetch(`${HEARTRAILS_URL}?method=getStations&${params}`, { signal: ctl.signal });
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const j = await res.json();
+            if (!j.response || j.response.error) throw new Error((j.response && j.response.error) || 'no response');
+            return j.response.station || [];
+        } finally {
+            clearTimeout(timer);
+        }
+    }
+
+    /* 起点から radius(m) 以内で一番近い駅。{ name, prefecture }。圏内に無ければ null。
+       Overpass で引き直したときは prefecture が無く、駅の座標 lat/lng を付けて返す。 */
+    async function findNearestStation(lat, lng, radius, onRetry) {
+        let raw = null;
+        try {
+            raw = await heartrailsStations(`x=${lng}&y=${lat}`);
+        } catch (e) { /* 止まっているときは Overpass で引く */ }
+        const list = raw && raw.filter(s => !NON_STATION_LINE_RE.test(s.line || ''));
+        if (list && list.length > 0) {
+            const s = list[0];   // 近い順に来る
+            return parseInt(s.distance, 10) <= radius ? { name: s.name, prefecture: s.prefecture } : null;
+        }
+        /* HeartRails が0件で、範囲が HeartRails の届く距離に収まっているなら本当に圏内に駅が無い。
+           近い3駅がどれもケーブルカーで除いた結果の0件は、その先の駅が
+           HeartRails からは見えないので Overpass に回す */
+        if (raw && raw.length === 0 && radius <= HEARTRAILS_MAX_M) return null;
+
+        const stationQuery = `[out:json][timeout:${OVERPASS_TIMEOUT_S}];node["railway"="station"]["station"!="cable_car"]["station"!="funicular"]["station"!="monorail"](around:${radius},${lat},${lng});out body;`;
+        const data = await overpassQuery(stationQuery, onRetry);   // 失敗は呼び出し元で知らせる
+        if (!data.elements || data.elements.length === 0) return null;
+        const nearest = data.elements
+            .map(el => ({ ...el, dist: calcDist(lat, lng, el.lat, el.lon) }))
+            .sort((a, b) => a.dist - b.dist)[0];
+        const name = (nearest.tags['name:ja'] || nearest.tags.name || '').replace(/駅$/, '');
+        return { name, prefecture: null, lat: nearest.lat, lng: nearest.lon };
+    }
+
     async function execHotelSearch() {
         const item = document.getElementById('hotel-cat-item');
         const iconEl = item.querySelector('.nearby-cat-icon');
@@ -7813,35 +7875,37 @@ map.on('zoomend', () => { isZooming = false; });
         const lng = center.lng;
         // 駅探しの範囲も設定の「ホテル検索範囲」に合わせる
         const hotelRadius = storeGet('hotelRadius') || '10000';
-        const stationQuery = `[out:json][timeout:${OVERPASS_TIMEOUT_S}];node["railway"="station"]["station"!="cable_car"]["station"!="funicular"]["station"!="monorail"](around:${hotelRadius},${lat},${lng});out body;`;
-        let data;
+        let station;
         try {
-            data = await overpassQuery(stationQuery, onRetry);
+            station = await findNearestStation(lat, lng, Number(hotelRadius), onRetry);
         } catch (e) {
             newTab.close();
             restore();
             return alert(`駅の情報を取得できませんでした（${overpassFailText(e)}）。\n地図データの提供元が混み合っています。少し時間をおいてもう一度お試しください。`);
         }
-        // ここまで来ていれば応答は正常。0件は本当に圏内に駅が無いとき
-        if (!data.elements || data.elements.length === 0) {
+        // ここまで来ていれば応答は正常。null は本当に圏内に駅が無いとき
+        if (!station) {
             newTab.close();
             restore();
             return alert(`近くに駅が見つかりませんでした（${hotelRadius / 1000}km圏内）`);
         }
-        const nearest = data.elements
-            .map(el => ({ ...el, dist: (el.lat - lat) ** 2 + (el.lon - lng) ** 2 }))
-            .sort((a, b) => a.dist - b.dist)[0];
-        let stationName = (nearest.tags['name:ja'] || nearest.tags.name || '').replace(/駅$/, '');
+        let stationName = station.name;
 
-        /* 他県にも同じ駅名があるときだけ県名を足す。ここは付けられれば良いだけの問い合わせなので、
-           失敗しても駅名だけで先へ進む（前は同じ catch に落として検索ごと失敗していた）。 */
+        /* 他県にも同じ駅名があるときだけ県名を足す。Overpass で引き直したときは県名が無いので、
+           同名の駅を HeartRails で引いて一番近いものの県を使う。ここは付けられれば良いだけなので、
+           失敗しても駅名だけで先へ進む。 */
         if (stationName && duplicateStationNames.has(stationName)) {
-            try {
-                const prefQuery = `[out:json][timeout:${OVERPASS_TIMEOUT_S}];is_in(${nearest.lat},${nearest.lon})->.a;area.a["admin_level"="4"]["name"];out tags;`;
-                const prefData = await overpassQuery(prefQuery, onRetry);
-                const prefName = prefData.elements && prefData.elements[0] ? prefData.elements[0].tags.name : null;
-                if (prefName) stationName = `${stationName} (${prefName})`;
-            } catch (e) { /* 県名は付かなくても検索そのものはできる */ }
+            let prefName = station.prefecture;
+            if (!prefName) {
+                try {
+                    const same = await heartrailsStations(`name=${encodeURIComponent(stationName)}`);
+                    const near = same
+                        .map(s => ({ ...s, dist: calcDist(station.lat, station.lng, Number(s.y), Number(s.x)) }))
+                        .sort((a, b) => a.dist - b.dist)[0];
+                    if (near) prefName = near.prefecture;
+                } catch (e) { /* 県名は付かなくても検索そのものはできる */ }
+            }
+            if (prefName) stationName = `${stationName} (${prefName})`;
         }
         restore();
         if (!stationName) { newTab.close(); return alert('駅名が取得できませんでした'); }
