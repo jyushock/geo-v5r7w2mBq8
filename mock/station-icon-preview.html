@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>検索結果の駅アイコン — 案</title>
+<base href="../">
+<style>
+    /* 寸法はすべて実アプリの実測値（375×812・Chromium・「所沢」で検索、2026-11-04）
+         列幅 187.5px / 見出し高 28px / 行高 53px / 行 padding 8px 10px・gap 8px
+         アイコン 28px 丸・#4285F4・📍 12px / 名前 700 13px / 住所 10px / 結果枠 270px */
+    :root { --obj-icon-circle: 28px; --obj-icon-inner-full: 28px; }
+    body { margin: 0; padding: 16px; background: #e9e9e9; font-family: sans-serif; color: #333; }
+    h1 { font-size: 18px; margin: 0 0 6px; }
+    p.lead { font-size: 13px; margin: 0 0 16px; line-height: 1.6; max-width: 780px; }
+    .frames { display: flex; flex-wrap: wrap; gap: 24px; }
+    .frame { width: 375px; }
+    .frame h2 { font-size: 14px; margin: 0 0 4px; }
+    .frame .note { font-size: 12px; color: #555; margin: 0 0 8px; line-height: 1.5; min-height: 36px; }
+
+    /* ↓ index.html の検索結果の CSS をそのまま写したもの */
+    #search-results { background: white; box-shadow: 0 -4px 12px rgba(0,0,0,0.15); max-height: 270px; }
+    #search-results-inner { display: grid; grid-template-columns: 1fr 1fr; max-height: 270px; overflow: hidden;
+        font-family: sans-serif; -webkit-text-size-adjust: 100%; }
+    .search-col { display: flex; flex-direction: column; border-right: 1px solid #f0f0f0; min-width: 0;
+        max-height: 270px; overflow-y: auto; font-family: sans-serif; }
+    .search-col:last-child { border-right: none; }
+    .search-result-item { display: flex; align-items: center; padding: 8px 10px; cursor: pointer;
+        border-bottom: 1px solid #f0f0f0; gap: 8px; position: relative; }
+    .search-result-icon { width: var(--obj-icon-circle); height: var(--obj-icon-circle); border-radius: 50%;
+        display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; color: white; }
+    .search-result-icon img { object-fit: contain; filter: brightness(0) invert(1); }
+    .search-result-icon img.icon-full { width: var(--obj-icon-inner-full); height: var(--obj-icon-inner-full); }
+    .search-result-text { flex: 1; min-width: 0; }
+    .search-result-name { font-size: 13px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .search-result-sub  { font-size: 10px; color: #999; margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .sr-genre { display: inline-block; color: #fff; font-weight: 700; font-size: 9px; line-height: 1.5;
+        padding: 0 5px; border-radius: 8px; margin-right: 4px; }
+    .g-men { background: hsl(20, 42%, 37%); } .g-chuka { background: hsl(340, 32%, 37%); }
+    .g-yoshoku { background: hsl(230, 30%, 37%); } .g-kanmi { background: hsl(320, 28%, 37%); }
+    .search-section-header { padding: 5px 10px; font-size: 11px; color: #999; background: #fafafa;
+        border-bottom: 1px solid #f0f0f0; position: sticky; top: 0; z-index: 1; }
+    /* ↑ ここまで写し */
+
+    /* 駅アイコン（案）。白い線画の電車を丸の中に置く */
+    .search-result-icon svg { width: 20px; height: 20px; }
+    .st-c { border-radius: 6px !important; width: 26px !important; height: 26px !important; }
+
+    .facts { margin-top: 24px; font-size: 13px; line-height: 1.7; max-width: 780px; background: #fff; padding: 12px 16px; border-radius: 8px; }
+    .facts h3 { font-size: 14px; margin: 0 0 4px; }
+    .facts ul { margin: 0; padding-left: 20px; }
+    @media (max-width: 420px) { body { padding: 16px 0; } h1, p.lead, .frame h2, .frame .note, .facts { margin-left: 16px; margin-right: 16px; } .frame { width: 100%; } }
+</style></head>
+<body>
+<h1>検索結果の「地名・場所」で駅だけアイコンを変える案</h1>
+<p class="lead">右の列が対象です。左の列（スポット）は今のままです。寸法は実アプリで実測した値（列幅187.5px・行高53px・アイコン28px）で、1:1で描いています。「所沢」で検索した実際の結果の並びを使っています。</p>
+
+<div class="frames" id="frames"></div>
+
+<div class="facts">
+    <h3>表示にかかる時間</h3>
+    <ul>
+        <li>駅の判定は、国土地理院の検索がもともと返している値だけで行います。「dataSource が 1（地名・施設）で、名前が『駅』で終わる」ものを駅とみなします。通信は増えません。</li>
+        <li>処理は最大24件の文字列比較だけなので、表示までの時間は今と変わりません。</li>
+        <li>確認した件数：「駅」で検索すると、dataSource 1 で駅で終わるものが9,119件、dataSource 5（住所）で駅で終わるものが6件ありました（例：郡山駅）。後者は住所なので、dataSource で除外します。「所沢」「新宿」「横浜」「道の駅」では、駅以外が駅と判定されるものはありませんでした。</li>
+    </ul>
+</div>
+
+<script>
+const TRAIN = '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="3" width="13" height="14" rx="3"/><line x1="5.5" y1="10.5" x2="18.5" y2="10.5"/><line x1="9" y1="13.8" x2="9.01" y2="13.8"/><line x1="15" y1="13.8" x2="15.01" y2="13.8"/><line x1="9" y1="17" x2="7" y2="21"/><line x1="15" y1="17" x2="17" y2="21"/></svg>';
+const SPOTS = [
+    ['ベルテコ', 'g-kanmi', 'パン', '（駅: 東所沢）埼玉県所沢市東所沢和田2-3-14'],
+    ['武蔵野 伝統の味 涼太郎（りょうたろう）', 'g-men', 'うどん', '（駅: 所沢）埼玉県所沢市くすのき台3-14-4'],
+    ['らーめん カッパハウス（【旧店名】らーめん 完熟）', 'g-men', 'ラーメン', '（駅: 所沢）埼玉県所沢市旭町2-1'],
+    ['イタリアン オット（otto）', 'g-yoshoku', 'イタリアン', '（駅: 所沢）埼玉県所沢市日吉町10-18 2F'],
+    ['negombo33（ネゴンボサンジュウサン）', 'g-chuka', 'カレー', '（駅: 西所沢）埼玉県所沢市星の宮1-9-1'],
+];
+const PLACES = [
+    ['所沢駅', '埼玉県所沢市', true], ['東所沢駅', '埼玉県所沢市', true], ['西所沢駅', '埼玉県所沢市', true],
+    ['新所沢駅', '埼玉県所沢市', true], ['ヤマト運輸(所沢主管支店)', '埼玉県新座市', false],
+    ['県立所沢おおぞら特別支援学校新座柳瀬分校', '埼玉県新座市', false], ['所沢ＩＣ', '埼玉県所沢市', false],
+];
+const VARIANTS = [
+    { title: '現在', note: '駅も施設も同じ青丸＋📍です。', st: null },
+    { title: '案A：色はそのまま、絵柄だけ電車', note: '地名列の青（#4285F4）を保ち、駅は📍の代わりに電車の線画にします。', st: { bg: '#4285F4', cls: '' } },
+    { title: '案B：緑の丸＋電車', note: '色でも分けます。緑（#34A853）は他の種別で使っていない色です。', st: { bg: '#34A853', cls: '' } },
+    { title: '案C：濃い灰の角丸四角＋電車', note: '形でも分けます。駅名標を思わせる角丸四角（26px、道の駅の四角と同じ考え方）。', st: { bg: '#455A64', cls: ' st-c' } },
+];
+const frames = document.getElementById('frames');
+for (const v of VARIANTS) {
+    const spot = SPOTS.map(([n, g, gl, s]) => `<div class="search-result-item"><div class="search-result-icon" style="background:#FFAA00"><img src="tabe.png" class="icon-full"></div><div class="search-result-text"><div class="search-result-name">${n}</div><div class="search-result-sub"><span class="sr-genre shop-genre ${g}">${gl}</span>${s}</div></div></div>`).join('');
+    const place = PLACES.map(([n, s, isSt]) => {
+        const icon = (isSt && v.st)
+            ? `<div class="search-result-icon${v.st.cls}" style="background:${v.st.bg}">${TRAIN}</div>`
+            : `<div class="search-result-icon" style="background:#4285F4">📍</div>`;
+        return `<div class="search-result-item">${icon}<div class="search-result-text"><div class="search-result-name">${n}</div><div class="search-result-sub">${s}</div></div></div>`;
+    }).join('');
+    frames.insertAdjacentHTML('beforeend', `<div class="frame"><h2>${v.title}</h2><p class="note">${v.note}</p>
+        <div id="search-results"><div id="search-results-inner">
+        <div class="search-col"><div class="search-section-header">スポット</div>${spot}</div>
+        <div class="search-col"><div class="search-section-header">地名・場所</div>${place}</div>
+        </div></div></div>`);
+}
+</script>
+</body></html>
