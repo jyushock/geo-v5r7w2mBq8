@@ -847,6 +847,9 @@
             flex-shrink: 0;
             color: white;
         }
+        /* 地名列の駅。角丸四角は丸と同じ寸法だと大きく見えるので、道の駅と同じ --obj-icon-square にする */
+        .search-result-icon.sr-station { width: var(--obj-icon-square); height: var(--obj-icon-square); border-radius: 6px; }
+        .search-result-icon.sr-station svg { width: 20px; height: 20px; }
         .search-result-text { flex: 1; min-width: 0; }
         .search-result-name { font-size: 13px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .search-result-sub  { font-size: 10px; color: #999; margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

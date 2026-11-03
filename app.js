@@ -5015,6 +5015,11 @@ map.on('zoomend', () => { isZooming = false; });
         shop:     { color: '#FFAA00', img: 'tabe.png',    label: '食べログ' },   /* 色は食べログのアイコンの地色 */
         place:    { color: '#4285F4', icon: '📍',        label: '地名' },
     };
+    /* 地名(place)のうち駅だけは、📍の青丸ではなく濃い灰の角丸四角＋電車の線画にする
+       （駅名標を思わせる形。mock/station-icon-preview.html の案C）。
+       判定は searchGeocode が地理院の応答から付ける _station で、通信は増えない */
+    const STATION_ICON_COLOR = '#455A64';
+    const STATION_ICON_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="3" width="13" height="14" rx="3"/><line x1="5.5" y1="10.5" x2="18.5" y2="10.5"/><line x1="9" y1="13.8" x2="9.01" y2="13.8"/><line x1="15" y1="13.8" x2="15.01" y2="13.8"/><line x1="9" y1="17" x2="7" y2="21"/><line x1="15" y1="17" x2="17" y2="21"/></svg>';
     /* 道の駅のアイコン背景だけは丸ではなく角丸四角にする（地図のピンと形を合わせる） */
     function objIconSquareClass(type) {
         return type === 'michi' ? ' obj-ic-sq' : '';
@@ -5135,7 +5140,10 @@ map.on('zoomend', () => { isZooming = false; });
 
                 const c = f.geometry.coordinates;
                 const _dist = (c && c.length >= 2) ? calcDist(center.lat, center.lng, c[1], c[0]) : Infinity;
-                return { type: 'place', label, sub, coords: c, properties: {}, _dist, _rank: placeRank(label) };
+                /* 駅か。dataSource 1（地名・施設）で名前が「駅」で終わるもの。
+                   住所（dataSource 5）にも「郡山駅」のような駅で終わる字があるので、名前だけでは見ない */
+                const _station = f.properties.dataSource === '1' && label.endsWith('駅');
+                return { type: 'place', label, sub, coords: c, properties: {}, _dist, _rank: placeRank(label), _station };
             }).sort((a, b) => (a._rank - b._rank) || (a._dist - b._dist)).slice(0, 24);
         } catch { return []; }
     }
@@ -5153,6 +5161,8 @@ map.on('zoomend', () => { isZooming = false; });
                 div.className = 'search-result-item';
                 const iconPart = isMhcard
                     ? `<div style="position:relative;width:var(--mhcard-w);height:var(--mhcard-h);flex-shrink:0;background:#e2ddd4;border-radius:6px;"><img src="mhcard.png" style="width:100%;height:100%;display:block;"><img src="manhole.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:var(--mhcard-badge);height:var(--mhcard-badge);filter:brightness(0) invert(1);pointer-events:none;"></div>`
+                    : item._station
+                    ? `<div class="search-result-icon sr-station" style="background:${STATION_ICON_COLOR}">${STATION_ICON_SVG}</div>`
                     : `<div class="search-result-icon${objIconSquareClass(item.type)}" style="background:${getItemColor(item)}">${cfg.img ? `<img src="${cfg.img}"${cfg.img === 'manhole.png' ? '' : ' class="icon-full"'}>` : cfg.icon}</div>`;
                 const subText = `${matchNoteHtml(item._matchedAlias, item._matchedPart)}${item.sub}`;
                 // 食べログの部門バッジ。結果は2列で幅が狭いため、店名の行ではなく
