@@ -1595,6 +1595,11 @@
         #weather-hourly-panel.open { display: block; }
         .weather-hourly-strip { display: flex; gap: 6px; max-width: 100%; overflow-x: auto; overflow-y: hidden; padding-bottom: 2px; touch-action: pan-x; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
         .weather-hourly-strip::-webkit-scrollbar { display: none; }
+        .weather-hourly-strip { user-select: none; -webkit-user-select: none; }
+        @media (hover: hover) and (pointer: fine) {
+            .weather-hourly-strip { cursor: grab; }
+            .weather-hourly-strip.dragging { cursor: grabbing; }
+        }
         .weather-hourly-card {
             min-width: 60px;
             display: flex;

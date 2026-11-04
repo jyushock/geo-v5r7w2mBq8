@@ -8169,6 +8169,56 @@ map.on('zoomend', () => { isZooming = false; });
         '#weather-widget, #weather-hourly-panel'
     );
 
+    // 時間別パネルをPCのマウスでも横に送れるようにする。
+    // 帯はスクロールバーを隠しており、縦ホイールもマウスドラッグも既定では横スクロールにならないため、
+    // 縦ホイール→横送り、左ボタンドラッグ→横送りを足す。タッチ・ペンと横ホイール（トラックパッド）は既定動作に任せる。
+    (function enableHourlyMouseScroll() {
+        const panel = document.getElementById('weather-hourly-panel');
+        if (!panel) return;
+        const stripOf = (t) => (t instanceof Element) ? t.closest('.weather-hourly-strip') : null;
+        panel.addEventListener('wheel', (e) => {
+            const strip = stripOf(e.target);
+            if (!strip || e.ctrlKey) return;
+            if (Math.abs(e.deltaX) >= Math.abs(e.deltaY)) return;
+            const max = strip.scrollWidth - strip.clientWidth;
+            if (max <= 0) return;
+            const unit = e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? strip.clientWidth : 1;
+            const d = e.deltaY * unit;
+            // 端まで送り切ったら縦スクロールに譲る
+            if ((d < 0 && strip.scrollLeft <= 0) || (d > 0 && strip.scrollLeft >= max - 1)) return;
+            e.preventDefault();
+            strip.scrollLeft += d;
+        }, { passive: false });
+        let drag = null;
+        panel.addEventListener('pointerdown', (e) => {
+            if (e.pointerType !== 'mouse' || e.button !== 0) return;
+            const strip = stripOf(e.target);
+            if (!strip || strip.scrollWidth <= strip.clientWidth) return;
+            drag = { strip, id: e.pointerId, x: e.clientX, left: strip.scrollLeft, moved: false };
+        });
+        panel.addEventListener('pointermove', (e) => {
+            if (!drag || e.pointerId !== drag.id) return;
+            const dx = e.clientX - drag.x;
+            if (!drag.moved) {
+                if (Math.abs(dx) < 4) return;
+                drag.moved = true;
+                try { panel.setPointerCapture(e.pointerId); } catch (_) {}
+                drag.strip.classList.add('dragging');
+            }
+            e.preventDefault();
+            drag.strip.scrollLeft = drag.left - dx;
+        });
+        const endDrag = (e) => {
+            if (!drag || e.pointerId !== drag.id) return;
+            drag.strip.classList.remove('dragging');
+            drag = null;
+        };
+        panel.addEventListener('pointerup', endDrag);
+        panel.addEventListener('pointercancel', endDrag);
+        // 水滴画像のネイティブドラッグが始まるとポインタイベントが途切れるため止める
+        panel.addEventListener('dragstart', (e) => e.preventDefault());
+    })();
+
     // 3ドロワーの縦スクロール領域をまとめて監視する（内容の増減でスクロール可否が変わるため）
     watchScrollerTouchAction('#nearby-panel-scroll, #settings-scroll, .lords-scroll, #nearby-list, #obj-sheet-body');
 
