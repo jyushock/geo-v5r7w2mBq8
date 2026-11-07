@@ -151,6 +151,7 @@
         const res = await syncFetch('enroll', { method: 'POST', body: '{}' });
         if (!res.ok) return false;
         syncMetaSet({ on: true, stopped: false, rev: {} });
+        syncDeviceCount = 1;                   // 登録で作られるのは、この端末だけの新しい保存領域
         syncUpdateUi();
         return true;
     }
@@ -161,6 +162,7 @@
     function syncMarkStopped(notify) {
         const already = !syncOn() && syncStopped();
         syncMetaSet({ on: false, stopped: true, rev: {} });
+        syncDeviceCount = null;
         syncDirty.clear();                     // 送れないものを抱え続けない
         syncUpdateUi();
         if (notify && !already) {
@@ -337,17 +339,39 @@
     /* 状態は3つある。「まだ一度も同期していない」と「一度は同期していたが止まっている」を
        同じ文言にすると、後者で「お気に入りを付ければ自動で始まります」と案内することになり、
        実際には始まらない（syncStopped のコメント）ので、分けて出す。 */
+    /* 同期中の端末が、共有の中で何台目か。null は未取得。
+       「同期しています」だけだと、自動で始まった1台きりの保存領域（別のブラウザで
+       表示設定を触っただけで作られる）でも同じ文言になり、他の端末と中身が違うのに
+       揃っているように見える。設定を開いたときに台数を取り、1台なら言い分ける。 */
+    let syncDeviceCount = null;
+    async function syncRefreshDeviceCount() {
+        if (!syncOn()) { syncDeviceCount = null; return; }
+        try {
+            const res = await syncFetch('devices', { method: 'GET' });
+            if (res.status === 401) { syncMarkStopped(true); return; }
+            if (!res.ok) return;
+            const data = await res.json();
+            syncDeviceCount = (data.devices || []).length;
+            syncUpdateUi();
+        } catch (e) { /* 通信できなければ台数なしの文言のまま */ }
+    }
+
     function syncUpdateUi() {
         const el = document.getElementById('sync-state');
         if (!el) return;
         const on = syncOn();
         const stopped = !on && syncStopped();
-        const head = on ? 'この端末は同期しています'
+        const alone = on && syncDeviceCount === 1;
+        const head = alone ? '他の端末とはまだ共有していません'
+                   : on ? 'この端末は同期しています'
                         : stopped ? '同期は止まっています' : 'この端末だけで保存しています';
-        const note = on ? '「端末を追加」で、他の端末も同じ内容にできます'
+        const note = alone ? 'サーバーに控えはありますが、つながっている端末はこの1台だけです。'
+                             + '他の端末と同じ内容にするには、その端末で「端末を追加」を押し、出たQRかコードをこの端末で読んでください'
+                   : on ? (syncDeviceCount > 1 ? `${syncDeviceCount}台で共有しています。` : '')
+                          + '「端末を追加」で、他の端末も同じ内容にできます'
                         : stopped ? '保存はこの端末だけに残ります。もう一度共有するには「端末を追加」か、他の端末のQRから参加してください'
                                   : 'お気に入りか表示設定を変えた時点で、自動で同期を始めます';
-        el.innerHTML = `<span class="sync-dot${on ? '' : ' off'}"></span>`
+        el.innerHTML = `<span class="sync-dot${on && !alone ? '' : ' off'}"></span>`
             + `<span class="sync-txt">${head}<small>${note}</small></span>`;
     }
 
@@ -532,6 +556,7 @@
     let syncDevicesCache = [];
     function renderSyncDevices(devices) {
         syncDevicesCache = devices;
+        syncDeviceCount = devices.length;
         document.getElementById('sync-dev-sec').textContent = `共有している端末（${devices.length}台）`;
         document.getElementById('sync-dev-list').innerHTML = devices.map(d => {
             const self = d.id === syncSelfId;
@@ -5822,6 +5847,7 @@ map.on('zoomend', () => { isZooming = false; });
         const originChk = document.getElementById('check-show-origin');
         if (originChk) originChk.checked = showOriginState;
         syncUpdateUi();
+        syncRefreshDeviceCount();
         document.getElementById('nearby-main-view').style.display = 'none';
         document.getElementById('nearby-settings-view').classList.add('open');
     }
