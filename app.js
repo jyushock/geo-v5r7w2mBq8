@@ -5442,6 +5442,15 @@ map.on('zoomend', () => { isZooming = false; });
             const places = await searchGeocode(q);
             if (reqId === searchRequestId) {
                 document.getElementById('search-spinner').style.display = 'none';
+                /* 候補が両列あわせて1件きりなら、一覧を出さずにそのまま飛ぶ（押したのと同じ扱い）。
+                   打ち込んだときだけにする。入力欄へ戻ったときの再表示（focus）や
+                   「検索結果に戻る」（reopenSearchResults）で飛ぶと、戻った途端にまた飛ばされる。
+                   入力欄からフォーカスを外すのは、スマホでキーボードが情報シートを覆ったままになるため */
+                if (local.length + places.length === 1) {
+                    inputEl.blur();
+                    searchJumpToItem(local[0] || places[0], local, places);
+                    return;
+                }
                 renderResults(local, places);
             }
         }, 300);
