@@ -3912,6 +3912,111 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          138.684549,
+          36.547169
+        ]
+      },
+      "properties": {
+        "id": 500,
+        "location": "群馬県/長野原町",
+        "prefecture": "群馬県",
+        "city": "長野原町",
+        "pokemon": "パルスワン / メルタン / アズマオウ",
+        "address": "群馬県長野原町林1567-4",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/5dbab683b67538f7d0478d89f4711ab5_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/5dbab683b67538f7d0478d89f4711ab5_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/500/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.787017,
+          36.210725
+        ]
+      },
+      "properties": {
+        "id": 499,
+        "location": "群馬県/下仁田町",
+        "prefecture": "群馬県",
+        "city": "下仁田町",
+        "pokemon": "カモネギ / ネギガナイト / ガラルカモネギ",
+        "address": "群馬県下仁田町大字下仁田381-2",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/4881d33c7f04e11367f22e6b081c6e55_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/4881d33c7f04e11367f22e6b081c6e55_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/499/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.9192351,
+          36.49717728
+        ]
+      },
+      "properties": {
+        "id": 498,
+        "location": "群馬県/渋川市",
+        "prefecture": "群馬県",
+        "city": "渋川市",
+        "pokemon": "サンダー",
+        "address": "群馬県渋川市伊香保町伊香保560番地1",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/865f19a7112a16fa3b88eda62b686e5f_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/865f19a7112a16fa3b88eda62b686e5f_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/498/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.55104,
+          36.241375
+        ]
+      },
+      "properties": {
+        "id": 497,
+        "location": "群馬県/館林市",
+        "prefecture": "群馬県",
+        "city": "館林市",
+        "pokemon": "ジグザグマ / ガラルジグザグマ",
+        "address": "群馬県館林市花山町3181",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/ad43bc051cd5f1984730e863794e9cf9_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/ad43bc051cd5f1984730e863794e9cf9_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/497/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.208649,
+          36.699986
+        ]
+      },
+      "properties": {
+        "id": 496,
+        "location": "群馬県/沼田市",
+        "prefecture": "群馬県",
+        "city": "沼田市",
+        "pokemon": "ノココッチ / ダーテング",
+        "address": "群馬県沼田市利根町追貝1005-1",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/eabc71ac59552a17b9931a44866e6dcb_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/eabc71ac59552a17b9931a44866e6dcb_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/496/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           139.471991,
           35.798734
         ]
@@ -8112,6 +8217,111 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          133.317008,
+          33.503128
+        ]
+      },
+      "properties": {
+        "id": 495,
+        "location": "高知県/佐川町",
+        "prefecture": "高知県",
+        "city": "佐川町",
+        "pokemon": "ヌオー / ポポッコ / ゾウドウ",
+        "address": "高知県佐川町加茂2711-1",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/e6b77c917f9959cbe6320565b3cbd361_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/e6b77c917f9959cbe6320565b3cbd361_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/495/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.4302173,
+          33.547787
+        ]
+      },
+      "properties": {
+        "id": 494,
+        "location": "高知県/いの町",
+        "prefecture": "高知県",
+        "city": "いの町",
+        "pokemon": "ヌオー / ウパー",
+        "address": "高知県いの町新町（JR伊野駅ロータリー）",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/c2fc4a03a9ddd75d66cdb4201b3c24cc_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/c2fc4a03a9ddd75d66cdb4201b3c24cc_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/494/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.800235,
+          33.519002
+        ]
+      },
+      "properties": {
+        "id": 493,
+        "location": "高知県/芸西村",
+        "prefecture": "高知県",
+        "city": "芸西村",
+        "pokemon": "ヌオー / フラエッテ / ピッピ",
+        "address": "高知県芸西村和食甲４５１",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/77beaceac75f4b25be9d8a9b927618c0_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/77beaceac75f4b25be9d8a9b927618c0_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/493/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.944202,
+          32.984011
+        ]
+      },
+      "properties": {
+        "id": 492,
+        "location": "高知県/四万十市",
+        "prefecture": "高知県",
+        "city": "四万十市",
+        "pokemon": "ヌオー / メガヤンマ",
+        "address": "高知県四万十市駅前町8-3",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/0510daf2e1728f2b1e5931db32e1d72f_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/0510daf2e1728f2b1e5931db32e1d72f_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/492/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.425551,
+          33.495986
+        ]
+      },
+      "properties": {
+        "id": 491,
+        "location": "高知県/土佐市",
+        "prefecture": "高知県",
+        "city": "土佐市",
+        "pokemon": "ヌオー / ジジーロン",
+        "address": "高知県土佐市高岡町甲2017-1",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/a7bf75de1464cafe2e899f9a9846ebcd_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/a7bf75de1464cafe2e899f9a9846ebcd_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/491/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           133.129433,
           33.561104
         ]
@@ -9764,6 +9974,90 @@
         "image_url": "https://local.pokemon.jp/img/p/manhole/1a0d76db2fb9b2cd5857ad3ee233e054_m.png",
         "image_url_full": "https://local.pokemon.jp/img/p/manhole/1a0d76db2fb9b2cd5857ad3ee233e054_l.png",
         "detail_url": "https://local.pokemon.jp/manhole/desc/1/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.327837,
+          25.944616
+        ]
+      },
+      "properties": {
+        "id": 490,
+        "location": "沖縄県/北大東村",
+        "prefecture": "沖縄県",
+        "city": "北大東村",
+        "pokemon": "ガーディ / ソルガレオ",
+        "address": "沖縄県北大東村南",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/692b4dc5772e4a42da8117ac26f2fdda_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/692b4dc5772e4a42da8117ac26f2fdda_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/490/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.153484,
+          26.631012
+        ]
+      },
+      "properties": {
+        "id": 489,
+        "location": "沖縄県/東村",
+        "prefecture": "沖縄県",
+        "city": "東村",
+        "pokemon": "ガーディ / ニョロトノ / グレッグル",
+        "address": "沖縄県東村平良550-23",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/b6f977b3a49bcc88bf754f3729612c3d_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/b6f977b3a49bcc88bf754f3729612c3d_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/489/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.101938,
+          26.661031
+        ]
+      },
+      "properties": {
+        "id": 488,
+        "location": "沖縄県/大宜味村",
+        "prefecture": "沖縄県",
+        "city": "大宜味村",
+        "pokemon": "ガーディ / ヤヤコマ",
+        "address": "沖縄県大宜味村津波95番地",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/f745f645cf152dfe2988aa4105859155_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/f745f645cf152dfe2988aa4105859155_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/488/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.264718,
+          26.87221
+        ]
+      },
+      "properties": {
+        "id": 487,
+        "location": "沖縄県/国頭村",
+        "prefecture": "沖縄県",
+        "city": "国頭村",
+        "pokemon": "ガーディ / ルナアーラ",
+        "address": "沖縄県国頭村辺戸９３７",
+        "image_url": "https://local.pokemon.jp/img/p/manhole/f79121a17f5f589b40e2feedb2848d3b_m.png",
+        "image_url_full": "https://local.pokemon.jp/img/p/manhole/f79121a17f5f589b40e2feedb2848d3b_l.png",
+        "detail_url": "https://local.pokemon.jp/manhole/desc/487/"
       }
     },
     {
