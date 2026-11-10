@@ -28382,6 +28382,75 @@ const michiNoEkiGeoJSON = {
         "homepage2": "",
         "michiEkiUrl": "https://www.michieki.jp/eki/1238/"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.1349317,
+          35.4017068
+        ]
+      },
+      "properties": {
+        "id": "23221",
+        "name": "道の駅やどりきテラス清流の里",
+        "prefecture": "神奈川県",
+        "city": "松田町",
+        "address": "神奈川県足柄上郡松田町寄3415",
+        "road": "",
+        "url": "https://www.michi-no-eki.jp/stations/views/23221",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1240/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.1024761,
+          34.9991695
+        ]
+      },
+      "properties": {
+        "id": "23222",
+        "name": "道の駅こんだ温泉ぬくもりの郷",
+        "prefecture": "兵庫県",
+        "city": "丹波篠山市",
+        "address": "兵庫県丹波篠山市今田町今田新田21番地10",
+        "road": "",
+        "url": "https://www.michi-no-eki.jp/stations/views/23222",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1241/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3343427,
+          32.413643
+        ]
+      },
+      "properties": {
+        "id": "23223",
+        "name": "道の駅くらたけ天草戦国ミュージアム",
+        "prefecture": "熊本県",
+        "city": "天草市",
+        "address": "熊本県天草市倉岳町棚底1619番2号",
+        "road": "",
+        "url": "https://www.michi-no-eki.jp/stations/views/23223",
+        "businessHours": "",
+        "homepage": "",
+        "homepage2": "",
+        "michiEkiUrl": "https://www.michieki.jp/eki/1242/"
+      }
     }
   ]
 };
