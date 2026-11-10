@@ -32170,9 +32170,9 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230103/23077415/",
         "category": "焼き鳥（東日本）",
         "address": "愛知県名古屋市東区泉1-22-9",
-        "rating": "3.55",
-        "ratingCount": "192",
-        "savedCount": "10367",
+        "rating": "3.67",
+        "ratingCount": "203",
+        "savedCount": "10771",
         "cuisine": "焼き鳥",
         "tel": "052-971-5188",
         "budgetDinner": "￥10,000～￥14,999",
@@ -32231,8 +32231,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.9185697800762,
-          35.172098337327064
+          136.91857043123798,
+          35.17209799813243
         ]
       },
       "properties": {
@@ -32241,8 +32241,8 @@ const shopData = {
         "category": "焼き鳥（東日本）",
         "address": "愛知県名古屋市東区東桜2-17-46",
         "rating": "3.67",
-        "ratingCount": "482",
-        "savedCount": "25082",
+        "ratingCount": "497",
+        "savedCount": "25671",
         "cuisine": "焼き鳥、鳥料理",
         "tel": "052-325-2334",
         "budgetDinner": "￥8,000～￥9,999",
@@ -32508,8 +32508,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.38644023281535,
-          37.39642119097251
+          140.38645769127484,
+          37.396421437824124
         ]
       },
       "properties": {
@@ -32517,13 +32517,13 @@ const shopData = {
         "url": "https://tabelog.com/fukushima/A0702/A070201/7000795/",
         "category": "焼き鳥（東日本）",
         "address": "福島県郡山市駅前1-9-5 NATURE倶楽部 1F",
-        "rating": "3.58",
-        "ratingCount": "272",
-        "savedCount": "10729",
+        "rating": "3.69",
+        "ratingCount": "296",
+        "savedCount": "11270",
         "cuisine": "焼き鳥、鳥料理、水炊き",
         "tel": "024-924-1167",
         "budgetDinner": "￥5,000～￥5,999",
-        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
         "awards": [
           {
             "y": 2025,
@@ -32915,8 +32915,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.63858640210628,
-          35.446818738824184
+          139.63858609210627,
+          35.446818398824185
         ]
       },
       "properties": {
@@ -32924,9 +32924,9 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1401/A140104/14073371/",
         "category": "焼き鳥（東日本）",
         "address": "神奈川県横浜市中区太田町2-31-3",
-        "rating": "3.66",
-        "ratingCount": "236",
-        "savedCount": "15179",
+        "rating": "3.63",
+        "ratingCount": "249",
+        "savedCount": "15753",
         "cuisine": "焼き鳥",
         "tel": "045-641-5022",
         "budgetDinner": "￥6,000～￥7,999",
@@ -33250,9 +33250,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1301/A130101/13004097/",
         "category": "焼き鳥（東日本）",
         "address": "東京都中央区銀座4-2-15 塚本素山ビル\u3000Ｂ１Ｆ",
-        "rating": "3.60",
-        "ratingCount": "513",
-        "savedCount": "56669",
+        "rating": "3.56",
+        "ratingCount": "518",
+        "savedCount": "57430",
         "cuisine": "焼き鳥、鳥料理",
         "tel": "03-5250-1081",
         "budgetDinner": "￥10,000～￥14,999",
@@ -33769,8 +33769,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.70850778292055,
-          35.64730163791374
+          139.70850864408231,
+          35.64730195871912
         ]
       },
       "properties": {
@@ -33778,13 +33778,13 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1303/A130302/13188236/",
         "category": "焼き鳥（東日本）",
         "address": "東京都渋谷区恵比寿西1-8-10 EBISU高橋ビルB1F",
-        "rating": "3.65",
-        "ratingCount": "987",
-        "savedCount": "82426",
+        "rating": "3.66",
+        "ratingCount": "1042",
+        "savedCount": "84466",
         "cuisine": "焼き鳥、水炊き、居酒屋",
         "tel": "03-6427-8437",
         "budgetDinner": "￥8,000～￥9,999",
-        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
         "awards": [
           {
             "y": 2025,
@@ -34635,12 +34635,12 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1308/A130802/13299397/",
         "category": "焼き鳥（東日本）",
         "address": "東京都港区西新橋2-15-6 FACE虎ノ門 1F",
-        "rating": "3.60",
-        "ratingCount": "137",
-        "savedCount": "7140",
+        "rating": "3.68",
+        "ratingCount": "144",
+        "savedCount": "7818",
         "cuisine": "焼き鳥",
         "tel": "03-3506-3710",
-        "budgetDinner": "￥10,000～￥14,999",
+        "budgetDinner": "￥15,000～￥19,999",
         "budgetDinnerRvw": "￥15,000～￥19,999",
         "awards": [
           {
@@ -34706,8 +34706,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.7222033045003,
-          35.6896306586966
+          139.72220297450028,
+          35.6896314686966
         ]
       },
       "properties": {
@@ -34716,8 +34716,8 @@ const shopData = {
         "category": "焼き鳥（東日本）",
         "address": "東京都新宿区荒木町9-1 ウインド荒木町 1F",
         "rating": "3.65",
-        "ratingCount": "377",
-        "savedCount": "35194",
+        "ratingCount": "383",
+        "savedCount": "35478",
         "cuisine": "焼き鳥",
         "tel": "03-5315-4630",
         "budgetDinner": "￥15,000～￥19,999",
@@ -34817,22 +34817,22 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.73888868020325,
-          35.70227386483545
+          139.73891613461618,
+          35.70226602869389
         ]
       },
       "properties": {
-        "name": "白金 酉玉 神楽坂店（とりたま） - 牛込神楽坂（焼き鳥）",
+        "name": "酉玉 神楽坂（とりたま） - 牛込神楽坂（焼き鳥）",
         "url": "https://tabelog.com/tokyo/A1309/A130905/13059154/",
         "category": "焼き鳥（東日本）",
         "address": "東京都新宿区神楽坂5-7 山桝ハウス B1F",
-        "rating": "3.66",
-        "ratingCount": "952",
-        "savedCount": "64034",
+        "rating": "3.59",
+        "ratingCount": "995",
+        "savedCount": "65660",
         "cuisine": "焼き鳥、串焼き、居酒屋",
         "tel": "03-6457-5131",
         "budgetDinner": "￥6,000～￥7,999",
-        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -35034,7 +35034,7 @@ const shopData = {
         "address": "東京都千代田区神田神保町2-12-3",
         "rating": "3.95",
         "ratingCount": "426",
-        "savedCount": "35441",
+        "savedCount": "34697",
         "cuisine": "焼き鳥、鳥料理、親子丼",
         "budgetDinner": "￥10,000～￥14,999",
         "budgetDinnerRvw": "￥15,000～￥19,999",
@@ -35601,8 +35601,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.71015088279816,
-          35.6353006379219
+          139.71014990395992,
+          35.635300208727266
         ]
       },
       "properties": {
@@ -35611,8 +35611,8 @@ const shopData = {
         "category": "焼き鳥（東日本）",
         "address": "東京都目黒区目黒1-24-6 室井ビル 1F",
         "rating": "3.65",
-        "ratingCount": "640",
-        "savedCount": "52039",
+        "ratingCount": "666",
+        "savedCount": "53017",
         "cuisine": "焼き鳥、居酒屋",
         "tel": "03-5719-7627",
         "budgetDinner": "￥6,000～￥7,999",
@@ -35691,8 +35691,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.72190848288275,
-          35.644492437919794
+          139.72190869404454,
+          35.64449147872517
         ]
       },
       "properties": {
@@ -35700,13 +35700,13 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1316/A131602/13005504/",
         "category": "焼き鳥（東日本）",
         "address": "東京都港区白金6-22-19",
-        "rating": "3.59",
-        "ratingCount": "788",
-        "savedCount": "56025",
+        "rating": "3.58",
+        "ratingCount": "824",
+        "savedCount": "57035",
         "cuisine": "焼き鳥、鳥料理、日本料理",
         "tel": "03-5795-2950",
         "budgetDinner": "￥5,000～￥5,999",
-        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
         "awards": [
           {
             "y": 2025,
@@ -36334,8 +36334,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.85004528518402,
-          35.766194788688686
+          139.85004519518404,
+          35.766196478688684
         ]
       },
       "properties": {
@@ -36343,9 +36343,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1324/A132403/13256125/",
         "category": "焼き鳥（東日本）",
         "address": "東京都葛飾区亀有3-27-15 エルブランコ 1F",
-        "rating": "3.67",
-        "ratingCount": "182",
-        "savedCount": "13607",
+        "rating": "3.66",
+        "ratingCount": "193",
+        "savedCount": "14169",
         "cuisine": "焼き鳥",
         "tel": "03-3602-1192",
         "budgetDinner": "￥8,000～￥9,999",
@@ -36369,8 +36369,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.32947273994662,
-          38.25098155726323
+          140.32947251994662,
+          38.25098176726323
         ]
       },
       "properties": {
@@ -36378,13 +36378,13 @@ const shopData = {
         "url": "https://tabelog.com/yamagata/A0601/A060101/6004772/",
         "category": "焼き鳥（東日本）",
         "address": "山形県山形市香澄町1-18-8",
-        "rating": "3.66",
-        "ratingCount": "200",
-        "savedCount": "9681",
+        "rating": "3.70",
+        "ratingCount": "214",
+        "savedCount": "10245",
         "cuisine": "焼き鳥",
         "tel": "023-622-8453",
-        "budgetDinner": "￥2,000～￥2,999",
-        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "budgetDinner": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
         "awards": [
           {
             "y": 2025,
@@ -36538,9 +36538,9 @@ const shopData = {
         "url": "https://tabelog.com/fukuoka/A4001/A400103/40038405/",
         "category": "焼き鳥（西日本）",
         "address": "福岡県福岡市博多区住吉3-5-3",
-        "rating": "3.50",
-        "ratingCount": "316",
-        "savedCount": "20245",
+        "rating": "3.53",
+        "ratingCount": "332",
+        "savedCount": "20952",
         "cuisine": "焼き鳥、居酒屋、肉料理",
         "tel": "092-261-3966",
         "budgetDinner": "￥6,000～￥7,999",
@@ -36761,8 +36761,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.40439276855693,
-          33.57961333626393
+          130.40439176971867,
+          33.5796139870693
         ]
       },
       "properties": {
@@ -36771,12 +36771,12 @@ const shopData = {
         "category": "焼き鳥（西日本）",
         "address": "福岡県福岡市中央区白金1-15-7 ダイヤパレス 1F",
         "rating": "3.49",
-        "ratingCount": "1112",
-        "savedCount": "76260",
+        "ratingCount": "1136",
+        "savedCount": "76773",
         "cuisine": "焼き鳥、居酒屋",
         "tel": "092-522-0739",
         "budgetDinner": "￥2,000～￥2,999",
-        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥3,000～￥3,999",
         "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
@@ -37083,8 +37083,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.46515327532558,
-          34.392727636403784
+          132.46515381648734,
+          34.39272693720916
         ]
       },
       "properties": {
@@ -37092,9 +37092,9 @@ const shopData = {
         "url": "https://tabelog.com/hiroshima/A3401/A340109/34017472/",
         "category": "焼き鳥（西日本）",
         "address": "広島県広島市中区胡町3-23 1F",
-        "rating": "3.67",
-        "ratingCount": "70",
-        "savedCount": "6644",
+        "rating": "3.66",
+        "ratingCount": "77",
+        "savedCount": "7493",
         "cuisine": "焼き鳥、串焼き、肉料理",
         "tel": "082-247-7372",
         "budgetDinner": "￥5,000～￥5,999",
@@ -37779,9 +37779,9 @@ const shopData = {
         "url": "https://tabelog.com/ishikawa/A1701/A170101/17012859/",
         "category": "焼き鳥（西日本）",
         "address": "石川県金沢市木倉町6-4",
-        "rating": "3.64",
-        "ratingCount": "29",
-        "savedCount": "3619",
+        "rating": "3.63",
+        "ratingCount": "35",
+        "savedCount": "3943",
         "cuisine": "焼き鳥",
         "tel": "不明の為情報お待ちしております",
         "budgetDinner": "￥5,000～￥5,999",
@@ -38290,18 +38290,18 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.7748134767878,
-          35.00188425941071
+          135.77476039032078,
+          35.00191700787626
         ]
       },
       "properties": {
         "name": "侘家古暦堂 祇園花見小路本店（わびや これきどう） - 祇園四条（焼き鳥）",
         "url": "https://tabelog.com/kyoto/A2601/A260301/26000850/",
         "category": "焼き鳥（西日本）",
-        "address": "京都府京都市東山区四条花見小路下ル祇園町南側 歌舞練場北側",
-        "rating": "3.58",
-        "ratingCount": "1050",
-        "savedCount": "71644",
+        "address": "京都府-京都市東山区四条花見小路下ル祇園町南側 歌舞練場北側",
+        "rating": "3.59",
+        "ratingCount": "1104",
+        "savedCount": "73048",
         "cuisine": "焼き鳥、鳥料理、親子丼",
         "tel": "075-532-3355",
         "budgetDinner": "￥10,000～￥14,999",
@@ -38925,8 +38925,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.49823997631762,
-          34.701430037173665
+          135.49823055747925,
+          34.70141521797904
         ]
       },
       "properties": {
@@ -38934,14 +38934,14 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270101/27125526/",
         "category": "焼き鳥（西日本）",
         "address": "大阪府大阪市北区梅田1-13-13 阪神百貨店梅田本店 B2F",
-        "rating": "3.53",
-        "ratingCount": "673",
-        "savedCount": "24573",
+        "rating": "3.54",
+        "ratingCount": "717",
+        "savedCount": "25664",
         "cuisine": "焼き鳥",
         "tel": "080-9554-9799",
         "budgetDinner": "￥3,000～￥3,999",
         "budgetLunch": "￥3,000～￥3,999",
-        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
         "budgetLunchRvw": "￥4,000～￥4,999",
         "awards": [
           {
@@ -38992,8 +38992,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.5094419873145,
-          34.68587898799248
+          135.50944180731452,
+          34.685879807992485
         ]
       },
       "properties": {
@@ -39001,9 +39001,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270102/27018910/",
         "category": "焼き鳥（西日本）",
         "address": "大阪府大阪市中央区瓦町1-1-5 大王瓦町ビル1F",
-        "rating": "3.59",
-        "ratingCount": "176",
-        "savedCount": "16428",
+        "rating": "3.61",
+        "ratingCount": "178",
+        "savedCount": "16681",
         "cuisine": "焼き鳥、鳥料理、手羽先",
         "tel": "06-6222-1222",
         "budgetDinner": "￥8,000～￥9,999",
@@ -39335,8 +39335,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.51388878740724,
-          34.69537114798787
+          135.51388819740723,
+          34.695370997987865
         ]
       },
       "properties": {
@@ -39344,9 +39344,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270103/27116834/",
         "category": "焼き鳥（西日本）",
         "address": "大阪府大阪市北区天満4-12-15",
-        "rating": "3.62",
-        "ratingCount": "150",
-        "savedCount": "15321",
+        "rating": "3.69",
+        "ratingCount": "157",
+        "savedCount": "15788",
         "cuisine": "焼き鳥、水炊き、鳥料理",
         "tel": "06-6926-4343",
         "budgetDinner": "￥8,000～￥9,999",
@@ -39437,8 +39437,8 @@ const shopData = {
         "category": "焼き鳥（西日本）",
         "address": "大阪府大阪市北区西天満3-11-4 2F",
         "rating": "3.78",
-        "ratingCount": "188",
-        "savedCount": "17617",
+        "ratingCount": "189",
+        "savedCount": "17450",
         "cuisine": "焼き鳥、鳥料理、水炊き",
         "budgetDinner": "￥10,000～￥14,999",
         "budgetDinnerRvw": "￥10,000～￥14,999",
@@ -39471,8 +39471,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.51121687636888,
-          34.707400937174
+          135.51121031753055,
+          34.70739344797938
         ]
       },
       "properties": {
@@ -39480,9 +39480,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270103/27121119/",
         "category": "焼き鳥（西日本）",
         "address": "大阪府大阪市北区天神橋5-7-19 1F",
-        "rating": "3.63",
-        "ratingCount": "474",
-        "savedCount": "28345",
+        "rating": "3.65",
+        "ratingCount": "505",
+        "savedCount": "29475",
         "cuisine": "焼き鳥",
         "tel": "06-6355-5166",
         "budgetDinner": "￥6,000～￥7,999",
@@ -39826,7 +39826,7 @@ const shopData = {
         "address": "大阪府大阪市福島区福島7-13-7 福島ビル北館\u30001F",
         "rating": "3.72",
         "ratingCount": "454",
-        "savedCount": "42038",
+        "savedCount": "41787",
         "cuisine": "焼き鳥、居酒屋、水炊き",
         "budgetDinner": "￥6,000～￥7,999",
         "budgetDinnerRvw": "￥8,000～￥9,999",
@@ -39869,8 +39869,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.48393180745143,
-          34.69766588797687
+          135.48393072745142,
+          34.69766762797686
         ]
       },
       "properties": {
@@ -39879,12 +39879,12 @@ const shopData = {
         "category": "焼き鳥（西日本）",
         "address": "大阪府大阪市福島区福島8-17-5",
         "rating": "3.62",
-        "ratingCount": "254",
-        "savedCount": "22180",
+        "ratingCount": "275",
+        "savedCount": "23248",
         "cuisine": "焼き鳥、居酒屋",
         "tel": "06-6442-0423",
         "budgetDinner": "￥4,000～￥4,999",
-        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
         "awards": [
           {
             "y": 2025,
@@ -40189,8 +40189,8 @@ const shopData = {
         "category": "焼き鳥（西日本）",
         "address": "大阪府大阪市阿倍野区昭和町1-8-2",
         "rating": "3.62",
-        "ratingCount": "147",
-        "savedCount": "11740",
+        "ratingCount": "152",
+        "savedCount": "12127",
         "cuisine": "焼き鳥、鳥料理、肉料理",
         "tel": "06-6167-8444",
         "budgetDinnerRvw": "￥4,000～￥4,999",
@@ -40323,8 +40323,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.557534841779,
-          34.07180041807934
+          134.55753431177894,
+          34.071799588079344
         ]
       },
       "properties": {
@@ -40332,9 +40332,9 @@ const shopData = {
         "url": "https://tabelog.com/tokushima/A3601/A360101/36005691/",
         "category": "焼き鳥（西日本）",
         "address": "徳島県徳島市徳島本町1-12-1",
-        "rating": "3.65",
-        "ratingCount": "187",
-        "savedCount": "7234",
+        "rating": "3.61",
+        "ratingCount": "206",
+        "savedCount": "7791",
         "cuisine": "焼き鳥、鳥料理、日本料理",
         "tel": "088-678-9820",
         "budgetDinnerRvw": "￥4,000～￥4,999",
@@ -43870,8 +43870,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.7647302830921,
-          35.6681864379184
+          139.76473091425385,
+          35.66818570872376
         ]
       },
       "properties": {
@@ -43879,9 +43879,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1301/A130101/13247552/",
         "category": "焼肉（東京）",
         "address": "東京都中央区銀座7-13-2 ティアラグレイス銀座タワー 1F",
-        "rating": "3.58",
-        "ratingCount": "449",
-        "savedCount": "43960",
+        "rating": "3.60",
+        "ratingCount": "474",
+        "savedCount": "45052",
         "cuisine": "焼肉、ホルモン、牛料理",
         "tel": "03-6264-2294",
         "budgetDinner": "￥10,000～￥14,999",
@@ -44090,8 +44090,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.7798337537981,
-          35.68715064207007
+          139.77984410443494,
+          35.687161978716524
         ]
       },
       "properties": {
@@ -44100,8 +44100,8 @@ const shopData = {
         "category": "焼肉（東京）",
         "address": "東京都中央区日本橋堀留町1-6-7",
         "rating": "3.60",
-        "ratingCount": "865",
-        "savedCount": "62525",
+        "ratingCount": "893",
+        "savedCount": "63113",
         "cuisine": "焼肉、ホルモン、居酒屋",
         "tel": "03-3668-2910",
         "budgetDinner": "￥8,000～￥9,999",
@@ -44141,8 +44141,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.78408438326184,
-          35.68633423791304
+          139.78408482442362,
+          35.6863332687184
         ]
       },
       "properties": {
@@ -44151,12 +44151,12 @@ const shopData = {
         "category": "焼肉（東京）",
         "address": "東京都中央区日本橋人形町2-23-1 パークホームズ日本橋人形町二丁目 1F",
         "rating": "3.62",
-        "ratingCount": "574",
-        "savedCount": "17786",
+        "ratingCount": "665",
+        "savedCount": "19519",
         "cuisine": "焼肉、ホルモン",
         "tel": "050-1720-7355",
         "budgetDinner": "￥8,000～￥9,999",
-        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
         "awards": [
           {
             "y": 2025,
@@ -44281,8 +44281,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.6926421608302,
-          35.65579747262167
+          139.69272062417969,
+          35.65584724870867
         ]
       },
       "properties": {
@@ -44290,13 +44290,13 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1303/A130301/13024281/",
         "category": "焼肉（東京）",
         "address": "東京都渋谷区神泉町12-4",
-        "rating": "3.60",
-        "ratingCount": "757",
-        "savedCount": "55334",
+        "rating": "3.65",
+        "ratingCount": "776",
+        "savedCount": "56134",
         "cuisine": "ホルモン、焼肉",
         "tel": "03-3477-1129",
         "budgetDinner": "￥6,000～￥7,999",
-        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
         "awards": [
           {
             "y": 2025,
@@ -44568,15 +44568,14 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1303/A130302/13262681/",
         "category": "焼肉（東京）",
         "address": "東京都渋谷区恵比寿南1-13-3 GOLD 1F",
-        "rating": "3.59",
-        "ratingCount": "1682",
-        "savedCount": "62673",
+        "rating": "3.60",
+        "ratingCount": "1742",
+        "savedCount": "64533",
         "cuisine": "焼肉、居酒屋、ホルモン",
         "tel": "03-6452-2291",
         "budgetDinner": "￥8,000～￥9,999",
         "budgetLunch": "￥3,000～￥3,999",
         "budgetDinnerRvw": "￥8,000～￥9,999",
-        "budgetLunchRvw": "￥4,000～￥4,999",
         "awards": [
           {
             "y": 2025,
@@ -45229,15 +45228,15 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1307/A130701/13230170/",
         "category": "焼肉（東京）",
         "address": "東京都港区六本木7-17-24 eisu.bldg",
-        "rating": "3.55",
-        "ratingCount": "2058",
-        "savedCount": "104224",
+        "rating": "3.66",
+        "ratingCount": "2183",
+        "savedCount": "106951",
         "cuisine": "焼肉、冷麺、韓国料理",
         "tel": "03-6459-2969",
         "budgetDinner": "￥8,000～￥9,999",
         "budgetLunch": "￥2,000～￥2,999",
-        "budgetDinnerRvw": "￥8,000～￥9,999",
-        "budgetLunchRvw": "￥3,000～￥3,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
             "y": 2025,
@@ -45605,8 +45604,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.72084318293398,
-          35.64948623791629
+          139.72084258409575,
+          35.64948552872166
         ]
       },
       "properties": {
@@ -45615,8 +45614,8 @@ const shopData = {
         "category": "焼肉（東京）",
         "address": "東京都渋谷区広尾5-10-1",
         "rating": "3.59",
-        "ratingCount": "589",
-        "savedCount": "45250",
+        "ratingCount": "623",
+        "savedCount": "46534",
         "cuisine": "焼肉、ホルモン",
         "tel": "03-5422-7517",
         "budgetDinner": "￥8,000～￥9,999",
@@ -45973,8 +45972,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.73524035353034,
-          35.67395651276356
+          139.73526897433268,
+          35.67394613871072
         ]
       },
       "properties": {
@@ -45982,9 +45981,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1308/A130801/13287824/",
         "category": "焼肉（東京）",
         "address": "東京都港区赤坂4-3-13 堀口ビル 1F",
-        "rating": "3.61",
-        "ratingCount": "385",
-        "savedCount": "19011",
+        "rating": "3.62",
+        "ratingCount": "401",
+        "savedCount": "19931",
         "cuisine": "焼肉、ステーキ、すき焼き",
         "tel": "03-6277-7255",
         "budgetDinner": "￥10,000～￥14,999",
@@ -47446,14 +47445,14 @@ const shopData = {
         "category": "焼肉（東京）",
         "address": "東京都目黒区上目黒2-44-8 ロ・カーサ上目黒 B1F",
         "rating": "3.61",
-        "ratingCount": "1925",
-        "savedCount": "92415",
+        "ratingCount": "2019",
+        "savedCount": "93912",
         "cuisine": "焼肉、ホルモン、韓国料理",
         "tel": "03-5768-3601",
         "budgetDinner": "￥8,000～￥9,999",
         "budgetLunch": "￥2,000～￥2,999",
-        "budgetDinnerRvw": "￥8,000～￥9,999",
-        "budgetLunchRvw": "￥3,000～￥3,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
             "y": 2025,
@@ -47986,7 +47985,7 @@ const shopData = {
         "address": "東京都杉並区阿佐谷南3-57-1",
         "rating": "3.73",
         "ratingCount": "161",
-        "savedCount": "23060",
+        "savedCount": "22987",
         "cuisine": "焼肉",
         "budgetDinner": "￥20,000～￥29,999",
         "budgetDinnerRvw": "￥15,000～￥19,999",
@@ -48257,10 +48256,9 @@ const shopData = {
         "category": "焼肉（東京）",
         "address": "東京都練馬区田柄2-33-18 1F",
         "rating": "3.65",
-        "ratingCount": "126",
-        "savedCount": "22467",
+        "ratingCount": "128",
+        "savedCount": "22607",
         "cuisine": "ホルモン、居酒屋、焼肉",
-        "tel": "03-3977-1358",
         "budgetDinner": "￥3,000～￥3,999",
         "budgetDinnerRvw": "￥6,000～￥7,999",
         "awards": [
@@ -48580,8 +48578,8 @@ const shopData = {
         "category": "焼肉（東京）",
         "address": "東京都八王子市小宮町863-3",
         "rating": "3.64",
-        "ratingCount": "530",
-        "savedCount": "65273",
+        "ratingCount": "533",
+        "savedCount": "65201",
         "cuisine": "焼肉、ホルモン",
         "budgetDinner": "￥6,000～￥7,999",
         "budgetDinnerRvw": "￥8,000～￥9,999",
@@ -48629,8 +48627,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.8871777801117,
-          35.173432337316214
+          136.8871839112737,
+          35.173454628121576
         ]
       },
       "properties": {
@@ -48638,14 +48636,14 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230101/23044961/",
         "category": "焼肉（東日本）",
         "address": "愛知県名古屋市中村区名駅3-8-14",
-        "rating": "3.50",
-        "ratingCount": "449",
-        "savedCount": "21561",
+        "rating": "3.51",
+        "ratingCount": "460",
+        "savedCount": "22219",
         "cuisine": "ホルモン、焼肉",
         "tel": "052-563-1114",
         "budgetDinner": "￥5,000～￥5,999",
         "budgetLunch": "￥3,000～￥3,999",
-        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -49003,9 +49001,9 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230103/23090338/",
         "category": "焼肉（東日本）",
         "address": "愛知県名古屋市中区栄3-1-18 23ビル B1F",
-        "rating": "3.58",
-        "ratingCount": "211",
-        "savedCount": "5518",
+        "rating": "3.60",
+        "ratingCount": "228",
+        "savedCount": "6111",
         "cuisine": "焼肉、居酒屋、ラーメン",
         "tel": "052-265-7789",
         "budgetDinner": "￥5,000～￥5,999",
@@ -49196,8 +49194,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.920485551191,
-          35.16758195813591
+          136.92048624119104,
+          35.167582678135915
         ]
       },
       "properties": {
@@ -49205,9 +49203,9 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230104/23059965/",
         "category": "焼肉（東日本）",
         "address": "愛知県名古屋市中区新栄2-22-8",
-        "rating": "3.61",
-        "ratingCount": "196",
-        "savedCount": "10111",
+        "rating": "3.60",
+        "ratingCount": "205",
+        "savedCount": "10358",
         "cuisine": "ホルモン、焼肉、居酒屋",
         "tel": "052-251-4649",
         "budgetDinner": "￥4,000～￥4,999",
@@ -49318,8 +49316,8 @@ const shopData = {
         "category": "焼肉（東日本）",
         "address": "愛知県名古屋市中区千代田2-10-2",
         "rating": "3.59",
-        "ratingCount": "139",
-        "savedCount": "14586",
+        "ratingCount": "140",
+        "savedCount": "14445",
         "cuisine": "焼肉、ホルモン",
         "budgetDinnerRvw": "￥6,000～￥7,999",
         "awards": [
@@ -49426,8 +49424,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.90060287976723,
-          35.140262337341554
+          136.90060204092913,
+          35.140272568146926
         ]
       },
       "properties": {
@@ -49435,13 +49433,13 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230105/23076335/",
         "category": "焼肉（東日本）",
         "address": "愛知県名古屋市熱田区金山町1-16-16",
-        "rating": "3.61",
-        "ratingCount": "672",
-        "savedCount": "38372",
+        "rating": "3.57",
+        "ratingCount": "700",
+        "savedCount": "39101",
         "cuisine": "焼肉、ホルモン、居酒屋",
         "tel": "052-684-9729",
         "budgetDinner": "￥6,000～￥7,999",
-        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
         "awards": [
           {
             "y": 2025,
@@ -49706,9 +49704,9 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230111/23000966/",
         "category": "焼肉（東日本）",
         "address": "愛知県名古屋市名東区極楽5-1",
-        "rating": "3.56",
-        "ratingCount": "467",
-        "savedCount": "17207",
+        "rating": "3.58",
+        "ratingCount": "477",
+        "savedCount": "17449",
         "cuisine": "焼肉、ホルモン、居酒屋",
         "tel": "052-702-2900",
         "budgetDinner": "￥6,000～￥7,999",
@@ -49839,8 +49837,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.8489674108349,
-          35.12736217813868
+          136.8489662808349,
+          35.12736301813868
         ]
       },
       "properties": {
@@ -49848,9 +49846,9 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230113/23012328/",
         "category": "焼肉（東日本）",
         "address": "愛知県名古屋市中川区中島新町2-1608",
-        "rating": "3.60",
-        "ratingCount": "152",
-        "savedCount": "9724",
+        "rating": "3.61",
+        "ratingCount": "159",
+        "savedCount": "9988",
         "cuisine": "焼肉",
         "tel": "052-361-4129",
         "budgetDinner": "￥6,000～￥7,999",
@@ -50061,8 +50059,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.06368387714866,
-          34.892337637550966
+          137.06368369831043,
+          34.892338528356326
         ]
       },
       "properties": {
@@ -50070,14 +50068,14 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2305/A230504/23001597/",
         "category": "焼肉（東日本）",
         "address": "愛知県西尾市米津町野寺道20-1",
-        "rating": "3.57",
-        "ratingCount": "215",
-        "savedCount": "6761",
+        "rating": "3.58",
+        "ratingCount": "226",
+        "savedCount": "6940",
         "cuisine": "焼肉、ステーキ、弁当",
         "tel": "0563-54-4129",
         "budgetDinner": "￥5,000～￥5,999",
         "budgetLunch": "￥2,000～￥2,999",
-        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
         "budgetLunchRvw": "￥6,000～￥7,999",
         "awards": [
           {
@@ -50112,9 +50110,9 @@ const shopData = {
         "url": "https://tabelog.com/akita/A0501/A050101/5001305/",
         "category": "焼肉（東日本）",
         "address": "秋田県秋田市山王1-6-7",
-        "rating": "3.61",
-        "ratingCount": "67",
-        "savedCount": "4274",
+        "rating": "3.60",
+        "ratingCount": "69",
+        "savedCount": "4388",
         "cuisine": "ホルモン、居酒屋",
         "tel": "018-838-0646",
         "budgetDinnerRvw": "￥5,000～￥5,999",
@@ -50377,8 +50375,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.11618908488222,
-          39.71481675626559
+          140.1161899348822,
+          39.7148152162656
         ]
       },
       "properties": {
@@ -50386,9 +50384,9 @@ const shopData = {
         "url": "https://tabelog.com/akita/A0501/A050101/5009470/",
         "category": "焼肉（東日本）",
         "address": "秋田県秋田市大町5-2-7 1F",
-        "rating": "3.57",
-        "ratingCount": "54",
-        "savedCount": "3751",
+        "rating": "3.59",
+        "ratingCount": "61",
+        "savedCount": "3915",
         "cuisine": "焼肉、ホルモン",
         "tel": "018-853-5850",
         "budgetDinner": "￥4,000～￥4,999",
@@ -50552,13 +50550,13 @@ const shopData = {
         "url": "https://tabelog.com/chiba/A1201/A120101/12009936/",
         "category": "焼肉（東日本）",
         "address": "千葉県千葉市中央区院内1-11-2",
-        "rating": "3.61",
-        "ratingCount": "296",
-        "savedCount": "14024",
+        "rating": "3.65",
+        "ratingCount": "310",
+        "savedCount": "14493",
         "cuisine": "焼肉",
         "tel": "043-225-0418",
         "budgetDinner": "￥6,000～￥7,999",
-        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
         "awards": [
           {
             "y": 2025,
@@ -50617,9 +50615,9 @@ const shopData = {
         "url": "https://tabelog.com/chiba/A1201/A120101/12057934/",
         "category": "焼肉（東日本）",
         "address": "千葉県千葉市中央区富士見1-10-3 SC若松ビル 2F",
-        "rating": "3.53",
-        "ratingCount": "221",
-        "savedCount": "5678",
+        "rating": "3.62",
+        "ratingCount": "237",
+        "savedCount": "6051",
         "cuisine": "焼肉",
         "tel": "043-307-7029",
         "budgetDinner": "￥10,000～￥14,999",
@@ -50679,7 +50677,7 @@ const shopData = {
         "address": "千葉県旭市川口3435-7",
         "rating": "3.64",
         "ratingCount": "250",
-        "savedCount": "20016",
+        "savedCount": "19989",
         "cuisine": "焼肉、ホルモン、ハンバーグ",
         "budgetDinnerRvw": "￥5,000～￥5,999",
         "budgetLunchRvw": "￥2,000～￥2,999",
@@ -50737,8 +50735,8 @@ const shopData = {
         "category": "焼肉（東日本）",
         "address": "岐阜県岐阜市加納矢場町2-29",
         "rating": "3.60",
-        "ratingCount": "291",
-        "savedCount": "13710",
+        "ratingCount": "306",
+        "savedCount": "13989",
         "cuisine": "焼肉、ホルモン、韓国料理",
         "tel": "058-272-1881",
         "budgetDinner": "￥6,000～￥7,999",
@@ -50844,8 +50842,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.7619165138378,
-          35.418609967925974
+          136.76191606383782,
+          35.41860941792598
         ]
       },
       "properties": {
@@ -50853,9 +50851,9 @@ const shopData = {
         "url": "https://tabelog.com/gifu/A2101/A210101/21001923/",
         "category": "焼肉（東日本）",
         "address": "岐阜県岐阜市美殿町49-3",
-        "rating": "3.61",
+        "rating": "3.67",
         "ratingCount": "67",
-        "savedCount": "6173",
+        "savedCount": "6315",
         "cuisine": "焼肉、中華料理",
         "tel": "058-374-2515",
         "budgetDinner": "￥8,000～￥9,999",
@@ -50944,8 +50942,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.76316738303208,
-          35.453946137098555
+          136.76323692419345,
+          35.45391127790397
         ]
       },
       "properties": {
@@ -50954,8 +50952,8 @@ const shopData = {
         "category": "焼肉（東日本）",
         "address": "岐阜県岐阜市上土居2-1-1 エアーズビル 1F",
         "rating": "3.61",
-        "ratingCount": "162",
-        "savedCount": "4607",
+        "ratingCount": "165",
+        "savedCount": "4793",
         "cuisine": "焼肉、ホルモン",
         "tel": "058-297-2919",
         "budgetDinner": "￥10,000～￥14,999",
@@ -51209,8 +51207,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.00701519043804,
-          36.342857537248584
+          139.00701543159983,
+          36.34285756805395
         ]
       },
       "properties": {
@@ -51218,9 +51216,9 @@ const shopData = {
         "url": "https://tabelog.com/gunma/A1001/A100102/10022471/",
         "category": "焼肉（東日本）",
         "address": "群馬県高崎市飯塚町381-1",
-        "rating": "3.60",
-        "ratingCount": "73",
-        "savedCount": "3174",
+        "rating": "3.72",
+        "ratingCount": "77",
+        "savedCount": "3321",
         "cuisine": "焼肉、牛料理",
         "tel": "027-384-3629",
         "budgetDinner": "￥15,000～￥19,999",
@@ -51279,18 +51277,18 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.34354175777852,
-          43.056754654533925
+          141.34354108777856,
+          43.056755344533926
         ]
       },
       "properties": {
         "name": "春美可（スミカ） - 中央区役所前（焼肉）",
         "url": "https://tabelog.com/hokkaido/A0101/A010102/1056834/",
         "category": "焼肉（東日本）",
-        "address": "北海道札幌市中央区南2条西9-3-31 ケンタクビル29 1F",
-        "rating": "3.60",
-        "ratingCount": "89",
-        "savedCount": "8314",
+        "address": "北海道-札幌市中央区南2条西9-3-31 ケンタクビル29 1F",
+        "rating": "3.61",
+        "ratingCount": "93",
+        "savedCount": "8499",
         "cuisine": "焼肉、ステーキ",
         "tel": "011-208-2616",
         "budgetDinner": "￥8,000～￥9,999",
@@ -51377,8 +51375,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.35482805320174,
-          43.053828041835274
+          141.35483894774111,
+          43.053834854539375
         ]
       },
       "properties": {
@@ -51386,9 +51384,9 @@ const shopData = {
         "url": "https://tabelog.com/hokkaido/A0101/A010103/1025712/",
         "category": "焼肉（東日本）",
         "address": "北海道札幌市中央区南六条西3 有馬ビル2F",
-        "rating": "3.61",
-        "ratingCount": "269",
-        "savedCount": "22180",
+        "rating": "3.60",
+        "ratingCount": "285",
+        "savedCount": "22754",
         "cuisine": "焼肉、ジンギスカン、ホルモン",
         "tel": "011-532-1464",
         "budgetDinner": "￥5,000～￥5,999",
@@ -51762,8 +51760,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.1531249740727,
-          39.70663439660102
+          141.15312482407268,
+          39.706632466601015
         ]
       },
       "properties": {
@@ -51771,12 +51769,12 @@ const shopData = {
         "url": "https://tabelog.com/iwate/A0301/A030101/3000295/",
         "category": "焼肉（東日本）",
         "address": "岩手県盛岡市本町通1-16-33",
-        "rating": "3.62",
-        "ratingCount": "100",
-        "savedCount": "7125",
+        "rating": "3.68",
+        "ratingCount": "106",
+        "savedCount": "7414",
         "cuisine": "焼肉、ステーキ、ホルモン",
         "tel": "019-625-3337",
-        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
         "awards": [
           {
             "y": 2025,
@@ -51866,8 +51864,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.62206858118063,
-          35.46904803799943
+          139.62206906234238,
+          35.46904811880481
         ]
       },
       "properties": {
@@ -51876,8 +51874,8 @@ const shopData = {
         "category": "焼肉（東日本）",
         "address": "神奈川県横浜市神奈川区鶴屋町2-19-6 ガレリア横浜 2F",
         "rating": "3.59",
-        "ratingCount": "537",
-        "savedCount": "25026",
+        "ratingCount": "584",
+        "savedCount": "26198",
         "cuisine": "焼肉、ホルモン、韓国料理",
         "tel": "045-594-7015",
         "budgetDinner": "￥6,000～￥7,999",
@@ -52030,8 +52028,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.6946461228566,
-          35.524991628792385
+          139.6946451428566,
+          35.52499287879239
         ]
       },
       "properties": {
@@ -52040,8 +52038,8 @@ const shopData = {
         "category": "焼肉（東日本）",
         "address": "神奈川県川崎市川崎区日進町19-7",
         "rating": "3.61",
-        "ratingCount": "402",
-        "savedCount": "62686",
+        "ratingCount": "420",
+        "savedCount": "63946",
         "cuisine": "焼肉、ジンギスカン",
         "tel": "044-211-0697",
         "budgetDinner": "￥8,000～￥9,999",
@@ -52140,8 +52138,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.41259588293283,
-          35.5129682187102
+          139.41259516293283,
+          35.5129679587102
         ]
       },
       "properties": {
@@ -52149,9 +52147,9 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1407/A140701/14033424/",
         "category": "焼肉（東日本）",
         "address": "神奈川県相模原市南区相模台4-11-6",
-        "rating": "3.59",
-        "ratingCount": "134",
-        "savedCount": "18605",
+        "rating": "3.56",
+        "ratingCount": "136",
+        "savedCount": "18845",
         "cuisine": "焼肉、ホルモン",
         "tel": "042-765-5858",
         "budgetDinnerRvw": "￥4,000～￥4,999",
@@ -52454,8 +52452,8 @@ const shopData = {
         "category": "焼肉（東日本）",
         "address": "宮城県塩竈市尾島町22-5",
         "rating": "3.63",
-        "ratingCount": "182",
-        "savedCount": "11410",
+        "ratingCount": "185",
+        "savedCount": "11517",
         "cuisine": "焼肉、ホルモン",
         "tel": "080-1842-9696",
         "budgetDinner": "￥4,000～￥4,999",
@@ -52513,9 +52511,9 @@ const shopData = {
         "url": "https://tabelog.com/nagano/A2006/A200603/20003734/",
         "category": "焼肉（東日本）",
         "address": "長野県飯田市中央通り3-44",
-        "rating": "3.56",
-        "ratingCount": "177",
-        "savedCount": "7396",
+        "rating": "3.71",
+        "ratingCount": "188",
+        "savedCount": "7833",
         "cuisine": "焼肉、ホルモン",
         "tel": "0265-24-4816",
         "budgetLunch": "￥2,000～￥2,999",
@@ -52609,8 +52607,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.62754608561696,
-          35.90863443772199
+          139.62754678677877,
+          35.90863355852736
         ]
       },
       "properties": {
@@ -52618,15 +52616,15 @@ const shopData = {
         "url": "https://tabelog.com/saitama/A1101/A110101/11048196/",
         "category": "焼肉（東日本）",
         "address": "埼玉県さいたま市大宮区宮町2-17 パインズビル1F",
-        "rating": "3.60",
-        "ratingCount": "415",
-        "savedCount": "18661",
+        "rating": "3.67",
+        "ratingCount": "460",
+        "savedCount": "19687",
         "cuisine": "焼肉、ホルモン、ステーキ",
         "tel": "048-657-9901",
         "budgetDinner": "￥8,000～￥9,999",
         "budgetLunch": "￥3,000～￥3,999",
         "budgetDinnerRvw": "￥10,000～￥14,999",
-        "budgetLunchRvw": "￥5,000～￥5,999",
+        "budgetLunchRvw": "￥6,000～￥7,999",
         "awards": [
           {
             "y": 2025,
@@ -53480,8 +53478,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.46758188646453,
-          34.390638597211264
+          132.46758240646454,
+          34.39063810721126
         ]
       },
       "properties": {
@@ -53489,13 +53487,13 @@ const shopData = {
         "url": "https://tabelog.com/hiroshima/A3401/A340110/34003287/",
         "category": "焼肉（西日本）",
         "address": "広島県広島市中区銀山町15-1",
-        "rating": "3.57",
-        "ratingCount": "371",
-        "savedCount": "20509",
+        "rating": "3.55",
+        "ratingCount": "382",
+        "savedCount": "20936",
         "cuisine": "ホルモン、鉄板焼き、焼肉",
         "tel": "082-245-1924",
         "budgetDinner": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥3,000～￥3,999",
         "awards": [
           {
             "y": 2025,
@@ -54205,8 +54203,8 @@ const shopData = {
         "category": "焼肉（西日本）",
         "address": "熊本県熊本市中央区上通町4-10 トラヤビル 3F",
         "rating": "3.63",
-        "ratingCount": "192",
-        "savedCount": "14813",
+        "ratingCount": "191",
+        "savedCount": "15140",
         "cuisine": "焼肉、ステーキ、しゃぶしゃぶ",
         "tel": "096-288-5729",
         "budgetDinner": "￥8,000～￥9,999",
@@ -54589,8 +54587,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.78919764078483,
-          35.04886115785103
+          135.78919802078482,
+          35.04885991785103
         ]
       },
       "properties": {
@@ -54598,9 +54596,9 @@ const shopData = {
         "url": "https://tabelog.com/kyoto/A2601/A260303/26006045/",
         "category": "焼肉（西日本）",
         "address": "京都府京都市左京区山端柳ヶ坪町17-3",
-        "rating": "3.63",
-        "ratingCount": "221",
-        "savedCount": "19361",
+        "rating": "3.61",
+        "ratingCount": "223",
+        "savedCount": "19807",
         "cuisine": "焼肉、弁当",
         "tel": "075-722-8179",
         "budgetDinner": "￥8,000～￥9,999",
@@ -55007,8 +55005,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.83295247561892,
-          34.65548293730945
+          135.8329514067807,
+          34.65548180811482
         ]
       },
       "properties": {
@@ -55016,9 +55014,9 @@ const shopData = {
         "url": "https://tabelog.com/nara/A2901/A290101/29001942/",
         "category": "焼肉（西日本）",
         "address": "奈良県奈良市横井1-713-1",
-        "rating": "3.62",
-        "ratingCount": "200",
-        "savedCount": "8656",
+        "rating": "3.61",
+        "ratingCount": "208",
+        "savedCount": "8863",
         "cuisine": "焼肉、ホルモン、韓国料理",
         "tel": "0742-61-9902",
         "budgetDinner": "￥4,000～￥4,999",
@@ -55256,8 +55254,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          128.00088873822813,
-          26.605556546338125
+          128.00096519095888,
+          26.605548930733267
         ]
       },
       "properties": {
@@ -55265,9 +55263,9 @@ const shopData = {
         "url": "https://tabelog.com/okinawa/A4702/A470201/47000337/",
         "category": "焼肉（西日本）",
         "address": "沖縄県名護市伊差川251番地",
-        "rating": "3.60",
-        "ratingCount": "427",
-        "savedCount": "30310",
+        "rating": "3.58",
+        "ratingCount": "455",
+        "savedCount": "31906",
         "cuisine": "焼肉、ホルモン、豚しゃぶ",
         "tel": "0980-53-5383",
         "budgetDinner": "￥5,000～￥5,999",
@@ -55296,8 +55294,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          124.14975867078944,
-          24.341495110944727
+          124.14975780078944,
+          24.34149525094473
         ]
       },
       "properties": {
@@ -55306,12 +55304,12 @@ const shopData = {
         "category": "焼肉（西日本）",
         "address": "沖縄県石垣市浜崎町2-5-18",
         "rating": "3.63",
-        "ratingCount": "1054",
-        "savedCount": "66474",
+        "ratingCount": "1088",
+        "savedCount": "67728",
         "cuisine": "焼肉、ホルモン",
         "tel": "0980-83-5641",
         "budgetDinner": "￥6,000～￥7,999",
-        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
         "awards": [
           {
             "y": 2025,
@@ -55586,8 +55584,8 @@ const shopData = {
         "category": "焼肉（西日本）",
         "address": "大阪府大阪市北区太融寺町8-2",
         "rating": "3.63",
-        "ratingCount": "417",
-        "savedCount": "26659",
+        "ratingCount": "425",
+        "savedCount": "27111",
         "cuisine": "焼肉、牛料理、ステーキ",
         "tel": "非公開",
         "budgetDinner": "￥15,000～￥19,999",
@@ -55778,8 +55776,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.502275676339,
-          34.70382623717343
+          135.5022480875014,
+          34.70388570797875
         ]
       },
       "properties": {
@@ -55788,12 +55786,12 @@ const shopData = {
         "category": "焼肉（西日本）",
         "address": "大阪府大阪市北区堂山町17-3 イーグルビル 1F",
         "rating": "3.58",
-        "ratingCount": "370",
-        "savedCount": "28840",
+        "ratingCount": "414",
+        "savedCount": "30991",
         "cuisine": "焼肉、ホルモン",
         "tel": "06-4397-3002",
         "budgetDinner": "￥5,000～￥5,999",
-        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
         "awards": [
           {
             "y": 2025,
@@ -55857,13 +55855,13 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270101/27144498/",
         "category": "焼肉（西日本）",
         "address": "大阪府大阪市北区曽根崎2-8-9 八幸ビル 1F",
-        "rating": "3.61",
-        "ratingCount": "517",
-        "savedCount": "24010",
+        "rating": "3.59",
+        "ratingCount": "625",
+        "savedCount": "27627",
         "cuisine": "焼肉、ホルモン",
         "tel": "06-6131-0500",
         "budgetDinner": "￥5,000～￥5,999",
-        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
         "awards": [
           {
             "y": 2025,
@@ -55917,8 +55915,8 @@ const shopData = {
         "category": "焼肉（西日本）",
         "address": "大阪府大阪市北区堂島1-3-31 堂島ビル 5F",
         "rating": "3.72",
-        "ratingCount": "105",
-        "savedCount": "4912",
+        "ratingCount": "104",
+        "savedCount": "4871",
         "cuisine": "焼肉、ホルモン",
         "budgetDinner": "￥15,000～￥19,999",
         "budgetDinnerRvw": "￥20,000～￥29,999",
@@ -55945,9 +55943,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270101/27146988/",
         "category": "焼肉（西日本）",
         "address": "大阪府大阪市北区大深町5-1 うめきたグリーンプレイス 3F 305区画",
-        "rating": "3.61",
-        "ratingCount": "646",
-        "savedCount": "23121",
+        "rating": "3.63",
+        "ratingCount": "716",
+        "savedCount": "26658",
         "cuisine": "焼肉、ステーキ、ホルモン",
         "tel": "06-6372-1129",
         "budgetDinner": "￥10,000～￥14,999",
@@ -55968,8 +55966,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.49237787620805,
-          34.69017203717895
+          135.4923782473698,
+          34.69017132798432
         ]
       },
       "properties": {
@@ -55977,9 +55975,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270102/27088182/",
         "category": "焼肉（西日本）",
         "address": "大阪府大阪市西区土佐堀1-6-10 土佐堀トキワビル 1Ｆ",
-        "rating": "3.62",
-        "ratingCount": "742",
-        "savedCount": "38689",
+        "rating": "3.66",
+        "ratingCount": "776",
+        "savedCount": "39452",
         "cuisine": "焼肉、ホルモン、ハンバーグ",
         "tel": "06-6147-7841",
         "budgetDinner": "￥4,000～￥4,999",
@@ -56055,8 +56053,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.5097016762579,
-          34.69630813718056
+          135.50970075741967,
+          34.69630874798594
         ]
       },
       "properties": {
@@ -56065,8 +56063,8 @@ const shopData = {
         "category": "焼肉（西日本）",
         "address": "大阪府大阪市北区南森町1-2-14 ロイヤルハイツ\u3000１Ｆ",
         "rating": "3.63",
-        "ratingCount": "1567",
-        "savedCount": "112409",
+        "ratingCount": "1599",
+        "savedCount": "113973",
         "cuisine": "焼肉、ホルモン",
         "tel": "06-6361-1371",
         "budgetDinner": "￥5,000～￥5,999",
@@ -56121,8 +56119,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.50728726744302,
-          34.69845620798381
+          135.50728721744304,
+          34.69845536798381
         ]
       },
       "properties": {
@@ -56130,9 +56128,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270103/27094644/",
         "category": "焼肉（西日本）",
         "address": "大阪府大阪市北区西天満5-10-3 瀧本ビル 1F",
-        "rating": "3.61",
-        "ratingCount": "252",
-        "savedCount": "24650",
+        "rating": "3.62",
+        "ratingCount": "273",
+        "savedCount": "28586",
         "cuisine": "焼肉、ホルモン",
         "tel": "06-6361-2900",
         "budgetDinner": "￥6,000～￥7,999",
@@ -56151,8 +56149,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.50943147636073,
-          34.70647303717403
+          135.50943146752252,
+          34.706473567979394
         ]
       },
       "properties": {
@@ -56161,12 +56159,12 @@ const shopData = {
         "category": "焼肉（西日本）",
         "address": "大阪府大阪市北区黒崎町1-2 2F",
         "rating": "3.63",
-        "ratingCount": "323",
-        "savedCount": "28772",
+        "ratingCount": "365",
+        "savedCount": "30024",
         "cuisine": "ホルモン、焼肉",
         "tel": "080-5707-8531",
         "budgetDinner": "￥4,000～￥4,999",
-        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
         "awards": [
           {
             "y": 2025,
@@ -57458,8 +57456,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          129.90214076711686,
-          33.287175917095084
+          129.90213927711687,
+          33.28717708709509
         ]
       },
       "properties": {
@@ -57467,9 +57465,9 @@ const shopData = {
         "url": "https://tabelog.com/saga/A4102/A410202/41000391/",
         "category": "焼肉（西日本）",
         "address": "佐賀県伊万里市大坪町甲1384-2",
-        "rating": "3.54",
-        "ratingCount": "441",
-        "savedCount": "12695",
+        "rating": "3.52",
+        "ratingCount": "470",
+        "savedCount": "13176",
         "cuisine": "焼肉、焼き鳥、居酒屋",
         "tel": "0955-23-0667",
         "budgetDinner": "￥2,000～￥2,999",
@@ -57654,8 +57652,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.90588279113754,
-          35.16127246813527
+          136.90588263113756,
+          35.161273228135265
         ]
       },
       "properties": {
@@ -57663,9 +57661,9 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230103/23007244/",
         "category": "居酒屋（東日本）",
         "address": "愛知県名古屋市中区大須3-8-26",
-        "rating": "3.60",
-        "ratingCount": "215",
-        "savedCount": "18479",
+        "rating": "3.58",
+        "ratingCount": "219",
+        "savedCount": "18733",
         "cuisine": "居酒屋、串揚げ、創作料理",
         "tel": "052-251-1951",
         "budgetDinner": "￥5,000～￥5,999",
@@ -58144,8 +58142,8 @@ const shopData = {
         "category": "居酒屋（東日本）",
         "address": "秋田県秋田市千秋久保田町4-5 秋田駅前ビル 5F",
         "rating": "3.62",
-        "ratingCount": "618",
-        "savedCount": "21195",
+        "ratingCount": "671",
+        "savedCount": "22328",
         "cuisine": "居酒屋、郷土料理、きりたんぽ",
         "tel": "018-801-1200",
         "budgetDinner": "￥5,000～￥5,999",
@@ -58356,8 +58354,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.4922217919458,
-          40.509610346199025
+          141.4922199819458,
+          40.50961218619902
         ]
       },
       "properties": {
@@ -58365,13 +58363,13 @@ const shopData = {
         "url": "https://tabelog.com/aomori/A0203/A020301/2000410/",
         "category": "居酒屋（東日本）",
         "address": "青森県八戸市朔日町4",
-        "rating": "3.59",
-        "ratingCount": "378",
-        "savedCount": "16337",
+        "rating": "3.60",
+        "ratingCount": "400",
+        "savedCount": "16842",
         "cuisine": "居酒屋、郷土料理、海鮮",
         "tel": "0178-24-5052",
         "budgetDinner": "￥4,000～￥4,999",
-        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
         "awards": [
           {
             "y": 2025,
@@ -58399,10 +58397,10 @@ const shopData = {
         "name": "暖だん - 本八戸（居酒屋）",
         "url": "https://tabelog.com/aomori/A0203/A020301/2009073/",
         "category": "居酒屋（東日本）",
-        "address": "青森県八戸市大字鷹匠小路4",
+        "address": "青森県-八戸市大字鷹匠小路4",
         "rating": "3.64",
-        "ratingCount": "34",
-        "savedCount": "3211",
+        "ratingCount": "36",
+        "savedCount": "3209",
         "cuisine": "居酒屋",
         "budgetDinner": "￥4,000～￥4,999",
         "budgetDinnerRvw": "￥4,000～￥4,999",
@@ -58668,9 +58666,9 @@ const shopData = {
         "url": "https://tabelog.com/hokkaido/A0101/A010103/1079840/",
         "category": "居酒屋（東日本）",
         "address": "北海道札幌市中央区南五条西2-2 サイバーシティビル 2F",
-        "rating": "3.58",
-        "ratingCount": "170",
-        "savedCount": "8101",
+        "rating": "3.57",
+        "ratingCount": "181",
+        "savedCount": "8616",
         "cuisine": "居酒屋、海鮮、ビュッフェ",
         "tel": "011-206-4175",
         "budgetDinner": "￥10,000～￥14,999",
@@ -58689,22 +58687,22 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          142.3564680742547,
-          43.76819684440466
+          142.35646733425472,
+          43.76819594440466
         ]
       },
       "properties": {
         "name": "独酌 三四郎 - 旭川（居酒屋）",
         "url": "https://tabelog.com/hokkaido/A0104/A010401/1014057/",
         "category": "居酒屋（東日本）",
-        "address": "北海道旭川市2条通5丁目左7号",
-        "rating": "3.55",
-        "ratingCount": "548",
-        "savedCount": "36671",
+        "address": "北海道-旭川市2条通5丁目左7号",
+        "rating": "3.56",
+        "ratingCount": "562",
+        "savedCount": "37252",
         "cuisine": "居酒屋、海鮮、日本料理",
         "tel": "0166-22-6751",
         "budgetDinner": "￥5,000～￥5,999",
-        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
         "awards": [
           {
             "y": 2025,
@@ -58990,7 +58988,7 @@ const shopData = {
         "address": "宮城県仙台市青葉区国分町2-8-31",
         "rating": "3.55",
         "ratingCount": "56",
-        "savedCount": "5224",
+        "savedCount": "5243",
         "cuisine": "居酒屋、海鮮",
         "budgetDinner": "￥5,000～￥5,999",
         "budgetDinnerRvw": "￥8,000～￥9,999",
@@ -59297,13 +59295,13 @@ const shopData = {
         "url": "https://tabelog.com/niigata/A1501/A150101/15000064/",
         "category": "居酒屋（東日本）",
         "address": "新潟県新潟市中央区古町通8番町1446 一蔵ビル 1F",
-        "rating": "3.61",
-        "ratingCount": "355",
-        "savedCount": "15213",
+        "rating": "3.66",
+        "ratingCount": "394",
+        "savedCount": "16015",
         "cuisine": "居酒屋、海鮮、郷土料理",
         "tel": "025-229-5379",
         "budgetDinner": "￥5,000～￥5,999",
-        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
         "awards": [
           {
             "y": 2025,
@@ -59328,8 +59326,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.05865330629098,
-          37.915896036265956
+          139.05865324745275,
+          37.915896477071335
         ]
       },
       "properties": {
@@ -59338,12 +59336,12 @@ const shopData = {
         "category": "居酒屋（東日本）",
         "address": "新潟県新潟市中央区東大通2-3-15 ２Ｆ",
         "rating": "3.59",
-        "ratingCount": "710",
-        "savedCount": "31863",
+        "ratingCount": "734",
+        "savedCount": "32906",
         "cuisine": "居酒屋、海鮮、郷土料理",
         "tel": "025-241-5601",
         "budgetDinner": "￥4,000～￥4,999",
-        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
         "awards": [
           {
             "y": 2025,
@@ -59413,8 +59411,8 @@ const shopData = {
         "category": "居酒屋（東日本）",
         "address": "新潟県新潟市中央区西堀通6-889",
         "rating": "3.63",
-        "ratingCount": "128",
-        "savedCount": "11035",
+        "ratingCount": "135",
+        "savedCount": "11432",
         "cuisine": "居酒屋、日本料理、日本酒バー",
         "tel": "025-367-7154",
         "budgetDinner": "￥8,000～￥9,999",
@@ -59479,8 +59477,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.24281567989846,
-          37.11139937732247
+          138.24281618989846,
+          37.11140040732247
         ]
       },
       "properties": {
@@ -59488,9 +59486,9 @@ const shopData = {
         "url": "https://tabelog.com/niigata/A1503/A150301/15007046/",
         "category": "居酒屋（東日本）",
         "address": "新潟県上越市仲町3-4-9",
-        "rating": "3.63",
-        "ratingCount": "67",
-        "savedCount": "4582",
+        "rating": "3.62",
+        "ratingCount": "74",
+        "savedCount": "4918",
         "cuisine": "居酒屋、揚げ物、郷土料理",
         "tel": "025-525-8843",
         "budgetDinnerRvw": "￥6,000～￥7,999",
@@ -59558,8 +59556,8 @@ const shopData = {
         "category": "居酒屋（東日本）",
         "address": "埼玉県さいたま市浦和区常盤4-3-15",
         "rating": "3.63",
-        "ratingCount": "144",
-        "savedCount": "11880",
+        "ratingCount": "146",
+        "savedCount": "12233",
         "cuisine": "居酒屋、日本酒バー",
         "tel": "090-3866-8843",
         "budgetDinner": "￥6,000～￥7,999",
@@ -59654,8 +59652,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.73190153599194,
-          34.709176408685465
+          137.7319015359919,
+          34.709175168685455
         ]
       },
       "properties": {
@@ -59663,9 +59661,9 @@ const shopData = {
         "url": "https://tabelog.com/shizuoka/A2202/A220201/22000035/",
         "category": "居酒屋（東日本）",
         "address": "静岡県浜松市中央区田町231-1",
-        "rating": "3.62",
-        "ratingCount": "75",
-        "savedCount": "8640",
+        "rating": "3.61",
+        "ratingCount": "80",
+        "savedCount": "8986",
         "cuisine": "居酒屋",
         "tel": "053-455-2832",
         "budgetDinner": "￥4,000～￥4,999",
@@ -59689,8 +59687,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.73031407597585,
-          34.70747430868604
+          137.73031457597585,
+          34.70747362868604
         ]
       },
       "properties": {
@@ -59698,9 +59696,9 @@ const shopData = {
         "url": "https://tabelog.com/shizuoka/A2202/A220201/22000724/",
         "category": "居酒屋（東日本）",
         "address": "静岡県浜松市中央区田町323-4",
-        "rating": "3.61",
-        "ratingCount": "261",
-        "savedCount": "18816",
+        "rating": "3.60",
+        "ratingCount": "268",
+        "savedCount": "19033",
         "cuisine": "居酒屋、海鮮、ふぐ",
         "tel": "053-456-7025",
         "budgetDinnerRvw": "￥10,000～￥14,999",
@@ -59883,8 +59881,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.75646128309893,
-          35.668293437915686
+          139.75646171426075,
+          35.66829317872106
         ]
       },
       "properties": {
@@ -59892,9 +59890,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1301/A130103/13224766/",
         "category": "居酒屋（東日本）",
         "address": "東京都港区新橋1-18-11 一松ビル B1F",
-        "rating": "3.58",
-        "ratingCount": "899",
-        "savedCount": "81906",
+        "rating": "3.59",
+        "ratingCount": "938",
+        "savedCount": "83776",
         "cuisine": "居酒屋、日本料理、海鮮",
         "tel": "03-6205-4321",
         "budgetDinner": "￥6,000～￥7,999",
@@ -59939,12 +59937,13 @@ const shopData = {
         "category": "居酒屋（東日本）",
         "address": "東京都港区新橋2-16-1 ニュー新橋ビル B1F-61",
         "rating": "3.61",
-        "ratingCount": "299",
-        "savedCount": "24561",
+        "ratingCount": "313",
+        "savedCount": "25944",
         "cuisine": "居酒屋、オイスターバー",
         "tel": "080-3424-8236",
         "budgetDinner": "￥10,000～￥14,999",
         "budgetDinnerRvw": "￥10,000～￥14,999",
+        "budgetLunchRvw": "￥10,000～￥14,999",
         "awards": [
           {
             "y": 2025,
@@ -60297,8 +60296,8 @@ const shopData = {
         "category": "居酒屋（東日本）",
         "address": "東京都港区西麻布4-7-10 麻布笄町Aハウス",
         "rating": "3.61",
-        "ratingCount": "517",
-        "savedCount": "49125",
+        "ratingCount": "535",
+        "savedCount": "50363",
         "cuisine": "居酒屋、日本料理",
         "tel": "03-6434-1007",
         "budgetDinner": "￥8,000～￥9,999",
@@ -60377,8 +60376,8 @@ const shopData = {
         "category": "居酒屋（東日本）",
         "address": "東京都新宿区舟町5-25 TSIFUNAMACHI 1F",
         "rating": "3.63",
-        "ratingCount": "133",
-        "savedCount": "15725",
+        "ratingCount": "143",
+        "savedCount": "16197",
         "cuisine": "居酒屋",
         "tel": "03-5919-6697",
         "budgetDinnerRvw": "￥10,000～￥14,999",
@@ -60441,8 +60440,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.76916077465478,
-          35.70818549869977
+          139.7691598446548,
+          35.70818582869977
         ]
       },
       "properties": {
@@ -60451,12 +60450,12 @@ const shopData = {
         "category": "居酒屋（東日本）",
         "address": "東京都文京区湯島3-31-5 YUSHIMA3315ビル 1F・2F",
         "rating": "3.56",
-        "ratingCount": "372",
-        "savedCount": "41676",
+        "ratingCount": "383",
+        "savedCount": "42718",
         "cuisine": "居酒屋、日本酒バー",
         "tel": "03-3832-0469",
-        "budgetDinner": "￥4,000～￥4,999",
-        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetDinner": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
         "awards": [
           {
             "y": 2025,
@@ -60631,10 +60630,11 @@ const shopData = {
         "category": "居酒屋（東日本）",
         "address": "東京都中央区築地4-14-1 モンテベルデ\u3000１Ｆ",
         "rating": "3.57",
-        "ratingCount": "918",
-        "savedCount": "58642",
+        "ratingCount": "930",
+        "savedCount": "58740",
         "cuisine": "居酒屋、そば、海鮮",
-        "budgetDinner": "￥6,000～￥7,999",
+        "tel": "03-3541-8308",
+        "budgetDinner": "￥8,000～￥9,999",
         "budgetLunch": "￥2,000～￥2,999",
         "budgetDinnerRvw": "￥6,000～￥7,999",
         "budgetLunchRvw": "￥2,000～￥2,999",
@@ -61027,13 +61027,13 @@ const shopData = {
         "category": "居酒屋（東日本）",
         "address": "東京都目黒区駒場1-11-12 1F",
         "rating": "3.61",
-        "ratingCount": "239",
-        "savedCount": "22908",
+        "ratingCount": "270",
+        "savedCount": "23935",
         "cuisine": "居酒屋",
         "tel": "03-6336-8891",
         "budgetDinner": "￥4,000～￥4,999",
         "budgetLunch": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -61049,8 +61049,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.6661086147211,
-          35.707602248667314
+          139.6661085747211,
+          35.70760103866732
         ]
       },
       "properties": {
@@ -61059,10 +61059,11 @@ const shopData = {
         "category": "居酒屋（東日本）",
         "address": "東京都中野区中野5-59-3",
         "rating": "3.59",
-        "ratingCount": "1801",
-        "savedCount": "100242",
+        "ratingCount": "1885",
+        "savedCount": "102703",
         "cuisine": "居酒屋、海鮮、ろばた焼き",
         "tel": "03-3228-1230",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -61316,8 +61317,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.41436786864793,
-          33.589318936260945
+          130.4143668898097,
+          33.589318597066324
         ]
       },
       "properties": {
@@ -61325,13 +61326,13 @@ const shopData = {
         "url": "https://tabelog.com/fukuoka/A4001/A400101/40001692/",
         "category": "居酒屋（西日本）",
         "address": "福岡県福岡市博多区博多駅前3-28-14",
-        "rating": "3.61",
-        "ratingCount": "391",
-        "savedCount": "22956",
+        "rating": "3.62",
+        "ratingCount": "412",
+        "savedCount": "24172",
         "cuisine": "居酒屋、海鮮、揚げ物",
         "tel": "092-451-4870",
         "budgetDinner": "￥3,000～￥3,999",
-        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
         "awards": [
           {
             "y": 2025,
@@ -61505,13 +61506,12 @@ const shopData = {
         "url": "https://tabelog.com/fukuoka/A4001/A400102/40029379/",
         "category": "居酒屋（西日本）",
         "address": "福岡県福岡市博多区中洲2丁目4-18",
-        "rating": "3.52",
-        "ratingCount": "1014",
-        "savedCount": "43957",
+        "rating": "3.51",
+        "ratingCount": "1053",
+        "savedCount": "45023",
         "cuisine": "居酒屋、焼き鳥、ラーメン",
         "tel": "092-262-7882",
         "budgetDinner": "～￥999",
-        "budgetDinnerRvw": "￥4,000～￥4,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -61577,8 +61577,8 @@ const shopData = {
         "category": "居酒屋（西日本）",
         "address": "福岡県福岡市中央区天神1丁目15-3 1F",
         "rating": "3.61",
-        "ratingCount": "1122",
-        "savedCount": "54130",
+        "ratingCount": "1167",
+        "savedCount": "55645",
         "cuisine": "居酒屋、日本料理、海鮮",
         "tel": "092-712-0201",
         "budgetDinner": "￥2,000～￥2,999",
@@ -61655,8 +61655,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.4045729498322,
-          33.59086782706221
+          130.40457222983224,
+          33.59086822706222
         ]
       },
       "properties": {
@@ -61664,9 +61664,9 @@ const shopData = {
         "url": "https://tabelog.com/fukuoka/A4001/A400103/40011666/",
         "category": "居酒屋（西日本）",
         "address": "福岡県福岡市中央区西中洲5-15 セントラルパークタワー\u3000２Ｆ",
-        "rating": "3.64",
-        "ratingCount": "112",
-        "savedCount": "10350",
+        "rating": "3.62",
+        "ratingCount": "114",
+        "savedCount": "10621",
         "cuisine": "居酒屋",
         "tel": "092-771-9333",
         "budgetDinnerRvw": "￥10,000～￥14,999",
@@ -62103,14 +62103,14 @@ const shopData = {
         "url": "https://tabelog.com/fukuoka/A4001/A400104/40055757/",
         "category": "居酒屋（西日本）",
         "address": "福岡県福岡市中央区大名1-4-28",
-        "rating": "3.60",
-        "ratingCount": "199",
-        "savedCount": "18007",
+        "rating": "3.52",
+        "ratingCount": "208",
+        "savedCount": "18490",
         "cuisine": "居酒屋、とんかつ",
         "tel": "092-739-9105",
         "budgetDinner": "￥6,000～￥7,999",
         "budgetLunch": "￥2,000～￥2,999",
-        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
         "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
@@ -62272,8 +62272,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.41069386870862,
-          33.595072836256115
+          130.4106944698704,
+          33.5950730570615
         ]
       },
       "properties": {
@@ -62281,15 +62281,15 @@ const shopData = {
         "url": "https://tabelog.com/fukuoka/A4001/A400106/40056775/",
         "category": "居酒屋（西日本）",
         "address": "福岡県福岡市博多区冷泉町8-21 2F",
-        "rating": "3.48",
-        "ratingCount": "398",
-        "savedCount": "24327",
+        "rating": "3.49",
+        "ratingCount": "423",
+        "savedCount": "24985",
         "cuisine": "居酒屋、日本料理、郷土料理",
         "tel": "092-261-2322",
         "budgetDinner": "￥3,000～￥3,999",
         "budgetLunch": "￥1,000～￥1,999",
         "budgetDinnerRvw": "￥6,000～￥7,999",
-        "budgetLunchRvw": "￥2,000～￥2,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
             "y": 2025,
@@ -62389,8 +62389,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.93034297075053,
-          33.83328493627032
+          130.9303422719123,
+          33.83328571707569
         ]
       },
       "properties": {
@@ -62398,9 +62398,9 @@ const shopData = {
         "url": "https://tabelog.com/fukuoka/A4004/A400502/40041252/",
         "category": "居酒屋（西日本）",
         "address": "福岡県北九州市小倉南区下曽根新町5-5 菱興曽根ビル 101",
-        "rating": "3.56",
-        "ratingCount": "82",
-        "savedCount": "4531",
+        "rating": "3.53",
+        "ratingCount": "85",
+        "savedCount": "4633",
         "cuisine": "お好み焼き、居酒屋、もんじゃ焼き",
         "tel": "093-473-0301",
         "budgetDinner": "￥3,000～￥3,999",
@@ -62670,8 +62670,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.65595998545007,
-          36.56088190716675
+          136.65595957545008,
+          36.56088170716675
         ]
       },
       "properties": {
@@ -62679,9 +62679,9 @@ const shopData = {
         "url": "https://tabelog.com/ishikawa/A1701/A170101/17000009/",
         "category": "居酒屋（西日本）",
         "address": "石川県金沢市柿木畠3-8",
-        "rating": "3.63",
-        "ratingCount": "738",
-        "savedCount": "90985",
+        "rating": "3.62",
+        "ratingCount": "756",
+        "savedCount": "93461",
         "cuisine": "居酒屋、海鮮",
         "tel": "076-221-4194",
         "budgetDinner": "￥4,000～￥4,999",
@@ -62980,8 +62980,8 @@ const shopData = {
         "category": "居酒屋（西日本）",
         "address": "鹿児島県鹿児島市山之口町9-1 野添ビル\u3000１Ｆ",
         "rating": "3.62",
-        "ratingCount": "735",
-        "savedCount": "25223",
+        "ratingCount": "784",
+        "savedCount": "26373",
         "cuisine": "居酒屋、鳥料理",
         "tel": "099-224-6611",
         "budgetDinnerRvw": "￥2,000～￥2,999",
@@ -63044,8 +63044,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.53547416616993,
-          33.560590037273165
+          133.5354743573317,
+          33.56059016807853
         ]
       },
       "properties": {
@@ -63053,15 +63053,15 @@ const shopData = {
         "url": "https://tabelog.com/kochi/A3901/A390101/39000089/",
         "category": "居酒屋（西日本）",
         "address": "高知県高知市帯屋町2-3-1 ひろめ市場",
-        "rating": "3.56",
-        "ratingCount": "1541",
-        "savedCount": "29618",
+        "rating": "3.57",
+        "ratingCount": "1679",
+        "savedCount": "31587",
         "cuisine": "居酒屋、海鮮、郷土料理",
         "tel": "088-871-3434",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "～￥999",
-        "budgetDinnerRvw": "￥2,000～￥2,999",
-        "budgetLunchRvw": "￥3,000～￥3,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
             "y": 2025,
@@ -64099,21 +64099,21 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          125.28116842467237,
-          24.80442444101103
+          125.28116965467237,
+          24.804424001011032
         ]
       },
       "properties": {
         "name": "居酒家 でいりぐち - 宮古島市（居酒屋）",
         "url": "https://tabelog.com/okinawa/A4705/A470503/47004460/",
         "category": "居酒屋（西日本）",
-        "address": "沖縄県宮古島市平良字西里224",
-        "rating": "3.62",
-        "ratingCount": "320",
-        "savedCount": "33746",
+        "address": "沖縄県-宮古島市平良字西里224",
+        "rating": "3.65",
+        "ratingCount": "344",
+        "savedCount": "35523",
         "cuisine": "居酒屋、沖縄料理、海鮮",
         "tel": "0980-72-8017",
-        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
         "awards": [
           {
             "y": 2025,
@@ -64204,8 +64204,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.49998287632326,
-          34.70210803717379
+          135.49998328748507,
+          34.70210738797916
         ]
       },
       "properties": {
@@ -64214,14 +64214,14 @@ const shopData = {
         "category": "居酒屋（西日本）",
         "address": "大阪府大阪市北区小松原町2-4 大阪富国生命ビルフコクフォレストスクエア B2F",
         "rating": "3.56",
-        "ratingCount": "1605",
-        "savedCount": "78873",
+        "ratingCount": "1678",
+        "savedCount": "80402",
         "cuisine": "居酒屋、海鮮、揚げ物",
         "tel": "06-6312-3955",
         "budgetDinner": "￥3,000～￥3,999",
         "budgetLunch": "￥3,000～￥3,999",
         "budgetDinnerRvw": "￥3,000～￥3,999",
-        "budgetLunchRvw": "￥3,000～￥3,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
             "y": 2025,
@@ -64277,8 +64277,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.49925725743924,
-          34.697523517981836
+          135.49925663743923,
+          34.697523007981836
         ]
       },
       "properties": {
@@ -64287,8 +64287,8 @@ const shopData = {
         "category": "居酒屋（西日本）",
         "address": "大阪府大阪市北区曽根崎新地1-6-27 ジェイプライド北新地3rdビル 2F",
         "rating": "3.60",
-        "ratingCount": "205",
-        "savedCount": "18997",
+        "ratingCount": "211",
+        "savedCount": "19771",
         "cuisine": "居酒屋",
         "tel": "06-6341-3791",
         "budgetDinner": "￥6,000～￥7,999",
@@ -64342,8 +64342,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.50295482037512,
-          34.69686741334239
+          135.50296411743008,
+          34.69687607798344
         ]
       },
       "properties": {
@@ -64352,12 +64352,12 @@ const shopData = {
         "category": "居酒屋（西日本）",
         "address": "大阪府大阪市北区西天満4-10-7 オイコス西天満 1F-101",
         "rating": "3.62",
-        "ratingCount": "307",
-        "savedCount": "13223",
+        "ratingCount": "346",
+        "savedCount": "14784",
         "cuisine": "居酒屋、焼き鳥、鳥料理",
         "tel": "070-9158-1399",
         "budgetDinner": "￥5,000～￥5,999",
-        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
         "awards": [
           {
             "y": 2025,
@@ -64382,8 +64382,8 @@ const shopData = {
         "category": "居酒屋（西日本）",
         "address": "大阪府大阪市北区菅原町4-3 廣瀬ビル 1F",
         "rating": "3.64",
-        "ratingCount": "264",
-        "savedCount": "25459",
+        "ratingCount": "263",
+        "savedCount": "25222",
         "cuisine": "居酒屋",
         "budgetDinner": "￥3,000～￥3,999",
         "budgetLunch": "～￥999",
@@ -64440,8 +64440,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.51241166739095,
-          34.69365620798848
+          135.51241174739096,
+          34.69365565798849
         ]
       },
       "properties": {
@@ -64449,12 +64449,12 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270103/27125071/",
         "category": "居酒屋（西日本）",
         "address": "大阪府大阪市北区天神橋1-10-1",
-        "rating": "3.60",
-        "ratingCount": "272",
-        "savedCount": "22878",
+        "rating": "3.61",
+        "ratingCount": "299",
+        "savedCount": "23847",
         "cuisine": "居酒屋",
         "tel": "050-3033-0777",
-        "budgetDinner": "￥3,000～￥3,999",
+        "budgetDinner": "￥6,000～￥7,999",
         "budgetDinnerRvw": "￥6,000～￥7,999",
         "awards": [
           {
@@ -64502,8 +64502,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.5026570272923,
-          34.68320931799201
+          135.5026571472923,
+          34.68321063799201
         ]
       },
       "properties": {
@@ -64511,12 +64511,12 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270106/27057950/",
         "category": "居酒屋（西日本）",
         "address": "大阪府大阪市中央区本町3丁目2-1 2F",
-        "rating": "3.63",
-        "ratingCount": "209",
-        "savedCount": "23026",
+        "rating": "3.64",
+        "ratingCount": "211",
+        "savedCount": "23278",
         "cuisine": "居酒屋、日本酒バー",
         "tel": "06-6281-8322",
-        "budgetDinner": "￥10,000～￥14,999",
+        "budgetDinner": "￥8,000～￥9,999",
         "budgetDinnerRvw": "￥10,000～￥14,999",
         "awards": [
           {
@@ -64586,11 +64586,10 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270201/27013057/",
         "category": "居酒屋（西日本）",
         "address": "大阪府大阪市中央区心斎橋筋2-1-3",
-        "rating": "4.08",
-        "ratingCount": "401",
-        "savedCount": "57186",
+        "rating": "4.07",
+        "ratingCount": "404",
+        "savedCount": "57182",
         "cuisine": "居酒屋",
-        "tel": "非設置",
         "budgetDinner": "￥10,000～￥14,999",
         "budgetDinnerRvw": "￥10,000～￥14,999",
         "budgetLunchRvw": "￥10,000～￥14,999",
@@ -64779,8 +64778,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          134.54991051511416,
-          34.063908514245846
+          134.54991758170473,
+          34.06392060808192
         ]
       },
       "properties": {
@@ -64789,12 +64788,12 @@ const shopData = {
         "category": "居酒屋（西日本）",
         "address": "徳島県徳島市中央通1丁目25",
         "rating": "3.63",
-        "ratingCount": "181",
-        "savedCount": "10252",
+        "ratingCount": "188",
+        "savedCount": "10571",
         "cuisine": "居酒屋、海鮮、日本料理",
         "tel": "088-678-6646",
         "budgetDinner": "￥4,000～￥4,999",
-        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
         "awards": [
           {
             "y": 2025,
@@ -64887,8 +64886,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.3442328372653,
-          33.679536038579016
+          135.3442333272653,
+          33.679536118579016
         ]
       },
       "properties": {
@@ -64897,12 +64896,12 @@ const shopData = {
         "category": "居酒屋（西日本）",
         "address": "和歌山県西牟婁郡白浜町3079-6",
         "rating": "3.58",
-        "ratingCount": "423",
-        "savedCount": "20879",
+        "ratingCount": "443",
+        "savedCount": "21407",
         "cuisine": "居酒屋、日本料理、海鮮",
         "tel": "0739-42-2486",
         "budgetDinner": "￥4,000～￥4,999",
-        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥4,000～￥4,999",
         "awards": [
           {
             "y": 2025,
@@ -114379,8 +114378,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.63483532211475,
-          35.44739712882262
+          139.63483552211474,
+          35.44739738882262
         ]
       },
       "properties": {
@@ -114388,9 +114387,9 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1401/A140104/14000115/",
         "category": "喫茶",
         "address": "神奈川県横浜市中区常盤町5-67 1F",
-        "rating": "3.60",
-        "ratingCount": "1448",
-        "savedCount": "41150",
+        "rating": "3.59",
+        "ratingCount": "1508",
+        "savedCount": "42430",
         "cuisine": "喫茶店",
         "tel": "045-651-2621",
         "budgetDinner": "￥1,000～￥1,999",
@@ -114666,18 +114665,18 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.75929646037505,
-          35.0062184578686
+          135.75929556037508,
+          35.0062187378686
         ]
       },
       "properties": {
         "name": "前田珈琲 室町本店（マエダコーヒー） - 烏丸（喫茶店）",
         "url": "https://tabelog.com/kyoto/A2601/A260201/26001559/",
         "category": "喫茶",
-        "address": "京都府京都市中京区蛸薬師通烏丸西入橋弁慶町236",
-        "rating": "3.54",
-        "ratingCount": "1187",
-        "savedCount": "33045",
+        "address": "京都府-京都市中京区蛸薬師通烏丸西入橋弁慶町236",
+        "rating": "3.53",
+        "ratingCount": "1207",
+        "savedCount": "33475",
         "cuisine": "喫茶店、カフェ、かき氷",
         "tel": "075-255-2588",
         "budgetDinner": "￥1,000～￥1,999",
@@ -115189,8 +115188,8 @@ const shopData = {
         "category": "喫茶",
         "address": "大阪府大阪市北区曽根崎2-11-8 B2F",
         "rating": "3.69",
-        "ratingCount": "1418",
-        "savedCount": "50407",
+        "ratingCount": "1420",
+        "savedCount": "50121",
         "cuisine": "喫茶店、パンケーキ、カフェ",
         "budgetDinner": "～￥999",
         "budgetLunch": "～￥999",
@@ -115305,8 +115304,8 @@ const shopData = {
         "category": "喫茶",
         "address": "大阪府大阪市中央区瓦町3-6-11",
         "rating": "3.71",
-        "ratingCount": "769",
-        "savedCount": "26477",
+        "ratingCount": "771",
+        "savedCount": "26268",
         "cuisine": "喫茶店、カフェ、ドーナツ",
         "budgetDinnerRvw": "～￥999",
         "budgetLunchRvw": "～￥999",
@@ -115703,8 +115702,8 @@ const shopData = {
         "category": "喫茶",
         "address": "東京都中央区銀座4-4-5 銀座ハタビル\u3000２Ｆ",
         "rating": "3.72",
-        "ratingCount": "1469",
-        "savedCount": "40142",
+        "ratingCount": "1468",
+        "savedCount": "39588",
         "cuisine": "喫茶店、カフェ",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -115859,8 +115858,8 @@ const shopData = {
         "category": "喫茶",
         "address": "東京都千代田区有楽町1-6-8 松井ビル\u3000１Ｆ",
         "rating": "3.70",
-        "ratingCount": "1728",
-        "savedCount": "64417",
+        "ratingCount": "1729",
+        "savedCount": "63824",
         "cuisine": "喫茶店、カフェ、パン",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -115895,8 +115894,8 @@ const shopData = {
         "category": "喫茶",
         "address": "東京都千代田区有楽町1-12-1 新有楽町ビル B1F",
         "rating": "3.73",
-        "ratingCount": "1109",
-        "savedCount": "44905",
+        "ratingCount": "1107",
+        "savedCount": "44726",
         "cuisine": "喫茶店、サンドイッチ、ジェラート・アイスクリーム",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -116056,7 +116055,7 @@ const shopData = {
         "address": "東京都中央区日本橋室町1-6-7",
         "rating": "3.67",
         "ratingCount": "1504",
-        "savedCount": "31948",
+        "savedCount": "31545",
         "cuisine": "喫茶店、カフェ",
         "budgetDinner": "～￥999",
         "budgetLunch": "～￥999",
@@ -116610,8 +116609,8 @@ const shopData = {
         "category": "喫茶",
         "address": "東京都千代田区神田須田町1-19-9",
         "rating": "3.70",
-        "ratingCount": "764",
-        "savedCount": "37817",
+        "ratingCount": "763",
+        "savedCount": "37716",
         "cuisine": "喫茶店、カフェ、パン",
         "budgetDinner": "～￥999",
         "budgetLunch": "～￥999",
@@ -116687,8 +116686,8 @@ const shopData = {
         "category": "喫茶",
         "address": "東京都千代田区神田神保町1-3",
         "rating": "3.67",
-        "ratingCount": "379",
-        "savedCount": "18410",
+        "ratingCount": "380",
+        "savedCount": "18351",
         "cuisine": "喫茶店、パブ、カフェ",
         "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
@@ -116830,8 +116829,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.75855907453507,
-          35.695599258704384
+          139.75855860453507,
+          35.69559915870439
         ]
       },
       "properties": {
@@ -116840,8 +116839,8 @@ const shopData = {
         "category": "喫茶",
         "address": "東京都千代田区神田神保町1-11",
         "rating": "3.49",
-        "ratingCount": "1807",
-        "savedCount": "68860",
+        "ratingCount": "1859",
+        "savedCount": "69790",
         "cuisine": "洋食、喫茶店、バー",
         "tel": "03-3291-8405",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -161879,8 +161878,8 @@ const shopData = {
         "category": "食堂",
         "address": "青森県青森市新町1-1-17 1F",
         "rating": "3.52",
-        "ratingCount": "1589",
-        "savedCount": "39176",
+        "ratingCount": "1634",
+        "savedCount": "40219",
         "cuisine": "食堂、郷土料理、海鮮",
         "tel": "017-722-6834",
         "budgetDinner": "￥2,000～￥2,999",
@@ -161906,18 +161905,18 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.6305179894405,
-          41.19179386549133
+          140.63051846944052,
+          41.19179332549133
         ]
       },
       "properties": {
         "name": "旅路 - 外ヶ浜町その他（食堂）",
         "url": "https://tabelog.com/aomori/A0201/A020103/2007386/",
         "category": "食堂",
-        "address": "青森県東津軽郡外ヶ浜町字平舘弥蔵釜122-7",
-        "rating": "3.37",
+        "address": "青森県-東津軽郡外ヶ浜町字平舘弥蔵釜122-7",
+        "rating": "3.46",
         "ratingCount": "71",
-        "savedCount": "6923",
+        "savedCount": "6929",
         "cuisine": "食堂、ラーメン、海鮮丼",
         "tel": "0174-25-2352",
         "budgetLunchRvw": "￥1,000～￥1,999",
@@ -161971,8 +161970,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.5296187220882,
-          40.52630144620033
+          141.5296195620882,
+          40.52630230620033
         ]
       },
       "properties": {
@@ -161980,9 +161979,9 @@ const shopData = {
         "url": "https://tabelog.com/aomori/A0203/A020301/2012503/",
         "category": "食堂",
         "address": "青森県八戸市新湊2-15-17",
-        "rating": "3.55",
-        "ratingCount": "195",
-        "savedCount": "6262",
+        "rating": "3.65",
+        "ratingCount": "203",
+        "savedCount": "6658",
         "cuisine": "食堂、海鮮",
         "tel": "0178-34-3241",
         "budgetLunchRvw": "￥1,000～￥1,999",
@@ -162386,8 +162385,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.38111596868632,
-          33.590809836249406
+          130.38111344984773,
+          33.5907765570548
         ]
       },
       "properties": {
@@ -162396,8 +162395,8 @@ const shopData = {
         "category": "食堂",
         "address": "福岡県福岡市中央区大手門3-3-24 小金丸ビル 1F南側",
         "rating": "3.57",
-        "ratingCount": "264",
-        "savedCount": "21005",
+        "ratingCount": "275",
+        "savedCount": "21766",
         "cuisine": "食堂、海鮮、居酒屋",
         "tel": "092-725-3366",
         "budgetDinner": "￥6,000～￥7,999",
@@ -162616,8 +162615,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.91314289634022,
-          36.94444291827891
+          140.9131442763402,
+          36.94444321827892
         ]
       },
       "properties": {
@@ -162626,8 +162625,8 @@ const shopData = {
         "category": "食堂",
         "address": "福島県いわき市小名浜字栄町66-30",
         "rating": "3.49",
-        "ratingCount": "522",
-        "savedCount": "14853",
+        "ratingCount": "533",
+        "savedCount": "15089",
         "cuisine": "食堂、ラーメン",
         "tel": "0246-92-2940",
         "budgetDinnerRvw": "～￥999",
@@ -162816,10 +162815,10 @@ const shopData = {
         "name": "赤目のおやじ - すすきの（市営）（食堂）",
         "url": "https://tabelog.com/hokkaido/A0101/A010103/1064010/",
         "category": "食堂",
-        "address": "北海道札幌市中央区南5条西3-8 N・グランデビル B1F",
+        "address": "北海道-札幌市中央区南5条西3-8 N・グランデビル B1F",
         "rating": "3.59",
-        "ratingCount": "174",
-        "savedCount": "11995",
+        "ratingCount": "175",
+        "savedCount": "11918",
         "cuisine": "食堂",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetDinnerRvw": "￥3,000～￥3,999",
@@ -162957,8 +162956,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.04739159066494,
-          45.30197731301362
+          141.04739199066498,
+          45.301975953013624
         ]
       },
       "properties": {
@@ -162966,9 +162965,9 @@ const shopData = {
         "url": "https://tabelog.com/hokkaido/A0109/A010906/1005453/",
         "category": "食堂",
         "address": "北海道礼文郡礼文町香深トンナイ558-1",
-        "rating": "3.52",
-        "ratingCount": "182",
-        "savedCount": "5745",
+        "rating": "3.51",
+        "ratingCount": "190",
+        "savedCount": "5831",
         "cuisine": "食堂、海鮮丼、海鮮",
         "tel": "0163-86-1228",
         "budgetLunchRvw": "￥10,000～￥14,999",
@@ -162986,8 +162985,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          144.36481156498436,
-          42.989796465538625
+          144.36481291498438,
+          42.98979768553863
         ]
       },
       "properties": {
@@ -162996,8 +162995,8 @@ const shopData = {
         "category": "食堂",
         "address": "北海道釧路市浜町3-18 くしろ水産センター 1F",
         "rating": "3.49",
-        "ratingCount": "338",
-        "savedCount": "11041",
+        "ratingCount": "349",
+        "savedCount": "11340",
         "cuisine": "食堂、カレー、ラーメン",
         "tel": "0154-25-1117",
         "budgetDinnerRvw": "￥2,000～￥2,999",
@@ -163050,8 +163049,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.65324869544526,
-          36.56021781716631
+          136.65324842544524,
+          36.560217507166314
         ]
       },
       "properties": {
@@ -163060,8 +163059,8 @@ const shopData = {
         "category": "食堂",
         "address": "石川県金沢市片町1-5-29 ニュー銀座会館\u3000１F",
         "rating": "3.49",
-        "ratingCount": "932",
-        "savedCount": "29318",
+        "ratingCount": "970",
+        "savedCount": "30054",
         "cuisine": "食堂、日本料理、鉄板焼き",
         "tel": "076-261-8700",
         "budgetDinnerRvw": "～￥999",
@@ -163094,9 +163093,9 @@ const shopData = {
         "url": "https://tabelog.com/kagawa/A3701/A370101/37001134/",
         "category": "食堂",
         "address": "香川県高松市牟礼町原631-5 道の駅\u3000源平の里 むれ内",
-        "rating": "3.55",
-        "ratingCount": "298",
-        "savedCount": "9896",
+        "rating": "3.54",
+        "ratingCount": "307",
+        "savedCount": "10136",
         "cuisine": "食堂、海鮮、丼",
         "tel": "087-845-6080",
         "budgetLunchRvw": "￥1,000～￥1,999",
@@ -163155,18 +163154,18 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          128.6423841586789,
-          27.41434990042385
+          128.64238449867892,
+          27.414349600423847
         ]
       },
       "properties": {
         "name": "西郷食堂 - 和泊町その他（食堂）",
         "url": "https://tabelog.com/kagoshima/A4605/A460502/46004806/",
         "category": "食堂",
-        "address": "鹿児島県大島郡和泊町大字伊延1170",
+        "address": "鹿児島県-大島郡和泊町大字伊延1170",
         "rating": "3.55",
-        "ratingCount": "40",
-        "savedCount": "2297",
+        "ratingCount": "42",
+        "savedCount": "2346",
         "cuisine": "食堂、海鮮",
         "tel": "0997-92-1103",
         "budgetLunch": "￥1,000～￥1,999",
@@ -163185,8 +163184,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.61839228902647,
-          35.1405163090123
+          139.61839280902652,
+          35.140517659012296
         ]
       },
       "properties": {
@@ -163194,9 +163193,9 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1406/A140603/14012378/",
         "category": "食堂",
         "address": "神奈川県三浦市三崎3-5-12",
-        "rating": "3.56",
-        "ratingCount": "731",
-        "savedCount": "35803",
+        "rating": "3.55",
+        "ratingCount": "746",
+        "savedCount": "36162",
         "cuisine": "食堂、海鮮、日本料理",
         "tel": "046-881-2488",
         "budgetDinner": "￥4,000～￥4,999",
@@ -163555,9 +163554,9 @@ const shopData = {
         "url": "https://tabelog.com/niigata/A1504/A150401/15001175/",
         "category": "食堂",
         "address": "新潟県魚沼市上折立718",
-        "rating": "3.63",
-        "ratingCount": "66",
-        "savedCount": "4395",
+        "rating": "3.62",
+        "ratingCount": "67",
+        "savedCount": "4487",
         "cuisine": "食堂、郷土料理",
         "tel": "025-795-2577",
         "budgetLunch": "￥1,000～￥1,999",
@@ -163612,18 +163611,18 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          131.96182024082512,
-          32.80722700805585
+          131.96182154082516,
+          32.807225728055855
         ]
       },
       "properties": {
         "name": "うさぎ亭 - 佐伯市その他（食堂）",
         "url": "https://tabelog.com/oita/A4401/A440105/44004160/",
         "category": "食堂",
-        "address": "大分県佐伯市蒲江大字竹野浦河内2186-2",
-        "rating": "3.53",
-        "ratingCount": "71",
-        "savedCount": "3563",
+        "address": "大分県-佐伯市蒲江大字竹野浦河内2186-2",
+        "rating": "3.52",
+        "ratingCount": "72",
+        "savedCount": "3621",
         "cuisine": "食堂、日本料理",
         "tel": "0972-42-1951",
         "budgetLunchRvw": "￥1,000～￥1,999",
@@ -163742,10 +163741,10 @@ const shopData = {
         "name": "紀乃川（きのかわ） - 本部町（食堂）",
         "url": "https://tabelog.com/okinawa/A4702/A470202/47000203/",
         "category": "食堂",
-        "address": "沖縄県国頭郡本部町字健堅603",
-        "rating": "3.47",
-        "ratingCount": "275",
-        "savedCount": "17178",
+        "address": "沖縄県-国頭郡本部町字健堅603",
+        "rating": "3.49",
+        "ratingCount": "281",
+        "savedCount": "17308",
         "cuisine": "食堂、沖縄料理",
         "tel": "0980-47-5230",
         "budgetLunch": "￥1,000～￥1,999",
@@ -163807,22 +163806,22 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          124.16028635090403,
-          24.353569680940417
+          124.16028620090404,
+          24.353570370940417
         ]
       },
       "properties": {
         "name": "とうふの比嘉（とうふのひが） - 石垣市（食堂）",
         "url": "https://tabelog.com/okinawa/A4705/A470501/47001361/",
         "category": "食堂",
-        "address": "沖縄県石垣市字石垣570",
+        "address": "沖縄県-石垣市字石垣570",
         "rating": "3.49",
-        "ratingCount": "1080",
-        "savedCount": "44279",
+        "ratingCount": "1116",
+        "savedCount": "45023",
         "cuisine": "食堂、豆腐料理、沖縄そば",
         "tel": "0980-82-4806",
         "budgetLunch": "～￥999",
-        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "～￥999",
         "budgetLunchRvw": "～￥999",
         "awards": [
           {
@@ -163914,22 +163913,22 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          125.27827498291992,
-          24.745748240242005
+          125.27827567408171,
+          24.745748071047377
         ]
       },
       "properties": {
         "name": "島ごはん あったかや - 宮古島市（食堂）",
         "url": "https://tabelog.com/okinawa/A4705/A470503/47027526/",
         "category": "食堂",
-        "address": "沖縄県宮古島市下地字洲鎌473-1",
+        "address": "沖縄県-宮古島市下地字洲鎌473-1",
         "rating": "3.59",
-        "ratingCount": "215",
-        "savedCount": "15065",
+        "ratingCount": "240",
+        "savedCount": "16032",
         "cuisine": "食堂、沖縄そば、海鮮",
         "tel": "070-3800-0100",
         "budgetDinner": "￥3,000～￥3,999",
-        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥4,000～￥4,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -164065,9 +164064,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2705/A270501/27003060/",
         "category": "食堂",
         "address": "大阪府堺市堺区新在家町西1丁1-30",
-        "rating": "3.51",
-        "ratingCount": "941",
-        "savedCount": "54503",
+        "rating": "3.49",
+        "ratingCount": "952",
+        "savedCount": "54782",
         "cuisine": "食堂、日本料理",
         "tel": "072-238-0934",
         "budgetLunch": "￥1,000～￥1,999",
@@ -164367,8 +164366,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.0969687470393,
-          34.907599688994175
+          139.09696915703935,
+          34.90760127899417
         ]
       },
       "properties": {
@@ -164376,9 +164375,9 @@ const shopData = {
         "url": "https://tabelog.com/shizuoka/A2205/A220503/22025692/",
         "category": "食堂",
         "address": "静岡県伊東市富戸1317-5 大室山リフト館 1F",
-        "rating": "3.54",
-        "ratingCount": "239",
-        "savedCount": "7740",
+        "rating": "3.56",
+        "ratingCount": "247",
+        "savedCount": "7951",
         "cuisine": "食堂、カフェ、うどん",
         "tel": "0557-51-1455",
         "budgetLunch": "￥1,000～￥1,999",
@@ -164827,8 +164826,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.78414455399783,
-          35.64418867874519
+          139.78414612399783,
+          35.644189518745186
         ]
       },
       "properties": {
@@ -164837,8 +164836,8 @@ const shopData = {
         "category": "食堂",
         "address": "東京都江東区豊洲6-6-1 豊洲市場7街区 管理施設棟3F",
         "rating": "3.49",
-        "ratingCount": "646",
-        "savedCount": "34562",
+        "ratingCount": "660",
+        "savedCount": "34849",
         "cuisine": "食堂、とんかつ、豚料理",
         "tel": "03-6633-0333",
         "budgetLunch": "￥2,000～￥2,999",
@@ -165158,9 +165157,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1322/A132201/13008895/",
         "category": "食堂",
         "address": "東京都板橋区板橋1-48-1",
-        "rating": "3.65",
-        "ratingCount": "716",
-        "savedCount": "25570",
+        "rating": "3.66",
+        "ratingCount": "735",
+        "savedCount": "26288",
         "cuisine": "食堂、洋食、ハンバーグ",
         "tel": "03-3964-3414",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -165235,9 +165234,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1324/A132402/13158606/",
         "category": "食堂",
         "address": "東京都足立区千住旭町43-13",
-        "rating": "3.58",
-        "ratingCount": "1413",
-        "savedCount": "52633",
+        "rating": "3.57",
+        "ratingCount": "1465",
+        "savedCount": "53598",
         "cuisine": "食堂、からあげ、居酒屋",
         "tel": "03-5284-9281",
         "budgetDinner": "￥1,000～￥1,999",
@@ -165273,8 +165272,8 @@ const shopData = {
         "category": "食堂",
         "address": "東京都清瀬市松山1-20-3 1F",
         "rating": "3.60",
-        "ratingCount": "545",
-        "savedCount": "37872",
+        "ratingCount": "564",
+        "savedCount": "38350",
         "cuisine": "食堂、中華料理",
         "tel": "不明の為情報お待ちしております",
         "budgetLunch": "￥1,000～￥1,999",
@@ -165370,8 +165369,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          131.6068886994096,
-          34.62247228678992
+          131.60688773940961,
+          34.62247248678992
         ]
       },
       "properties": {
@@ -165379,9 +165378,9 @@ const shopData = {
         "url": "https://tabelog.com/yamaguchi/A3503/A350301/35001584/",
         "category": "食堂",
         "address": "山口県萩市須佐5010-1",
-        "rating": "3.79",
-        "ratingCount": "190",
-        "savedCount": "9532",
+        "rating": "3.77",
+        "ratingCount": "197",
+        "savedCount": "9873",
         "cuisine": "食堂、海鮮、オーガニック",
         "tel": "08387-6-2354",
         "budgetLunchRvw": "￥3,000～￥3,999",
@@ -165431,8 +165430,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.88293893125035,
-          35.17085108812187
+          136.88294008125038,
+          35.170851058121876
         ]
       },
       "properties": {
@@ -165440,14 +165439,46 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230101/23063516/",
         "category": "すき焼き・しゃぶしゃぶ",
         "address": "愛知県名古屋市中村区名駅1-1-4 JRセントラルタワーズ 13F",
-        "rating": "3.53",
-        "ratingCount": "154",
-        "savedCount": "5354",
+        "rating": "3.54",
+        "ratingCount": "176",
+        "savedCount": "5842",
         "cuisine": "しゃぶしゃぶ、すき焼き",
         "tel": "052-589-2757",
         "budgetDinner": "￥6,000～￥7,999",
         "budgetLunch": "￥3,000～￥3,999",
         "budgetDinnerRvw": "￥10,000～￥14,999",
+        "budgetLunchRvw": "￥4,000～￥4,999",
+        "awards": [
+          {
+            "y": 2024,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.88181378128328,
+          35.17403204811949
+        ]
+      },
+      "properties": {
+        "name": "最飛び飛騨牛 しゃぶすき家 馬喰一代 名古屋WEST（ばくろいちだい） - 名古屋（しゃぶしゃぶ）",
+        "url": "https://tabelog.com/aichi/A2301/A230101/23072437/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "愛知県名古屋市西区牛島町6-24 アクロスキューブ名古屋 2F",
+        "rating": "3.52",
+        "ratingCount": "370",
+        "savedCount": "17223",
+        "cuisine": "しゃぶしゃぶ、すき焼き",
+        "tel": "052-433-8960",
+        "budgetDinner": "￥6,000～￥7,999",
+        "budgetLunch": "￥2,000～￥2,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
         "budgetLunchRvw": "￥3,000～￥3,999",
         "awards": [
           {
@@ -165463,40 +165494,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.8818133801215,
-          35.174033037314125
-        ]
-      },
-      "properties": {
-        "name": "最飛び飛騨牛 しゃぶすき家 馬喰一代 名古屋WEST（ばくろいちだい） - 名古屋（しゃぶしゃぶ）",
-        "url": "https://tabelog.com/aichi/A2301/A230101/23072437/",
-        "category": "すき焼き・しゃぶしゃぶ",
-        "address": "愛知県名古屋市西区牛島町6-24 アクロスキューブ名古屋 2F",
-        "rating": "3.53",
-        "ratingCount": "353",
-        "savedCount": "16657",
-        "cuisine": "しゃぶしゃぶ、すき焼き",
-        "tel": "052-433-8960",
-        "budgetDinner": "￥6,000～￥7,999",
-        "budgetLunch": "￥2,000～￥2,999",
-        "budgetDinnerRvw": "￥10,000～￥14,999",
-        "budgetLunchRvw": "￥2,000～￥2,999",
-        "awards": [
-          {
-            "y": 2024,
-            "t": "sukiyaki_shabushabu",
-            "g": "すき焼き・しゃぶしゃぶ"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.9024098800474,
-          35.16812333732444
+          136.90263868121122,
+          35.16834130812974
         ]
       },
       "properties": {
@@ -165504,14 +165503,14 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230102/23002469/",
         "category": "すき焼き・しゃぶしゃぶ",
         "address": "愛知県名古屋市中区栄3-1-35",
-        "rating": "3.55",
-        "ratingCount": "436",
-        "savedCount": "14747",
+        "rating": "3.52",
+        "ratingCount": "464",
+        "savedCount": "15459",
         "cuisine": "すき焼き、しゃぶしゃぶ、焼肉",
         "tel": "052-261-2065",
         "budgetDinner": "￥10,000～￥14,999",
         "budgetLunch": "￥2,000～￥2,999",
-        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
         "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
@@ -165537,8 +165536,8 @@ const shopData = {
         "category": "すき焼き・しゃぶしゃぶ",
         "address": "愛知県名古屋市中区栄4-9-10 愛信プラザビル 2F",
         "rating": "3.53",
-        "ratingCount": "290",
-        "savedCount": "13247",
+        "ratingCount": "304",
+        "savedCount": "13661",
         "cuisine": "豚しゃぶ、しゃぶしゃぶ、居酒屋",
         "tel": "052-261-3900",
         "budgetDinner": "￥4,000～￥4,999",
@@ -165621,8 +165620,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.90896634197927,
-          35.24482050808319
+          136.9089655919793,
+          35.24482063808318
         ]
       },
       "properties": {
@@ -165631,8 +165630,8 @@ const shopData = {
         "category": "すき焼き・しゃぶしゃぶ",
         "address": "愛知県西春日井郡豊山町豊場高前15",
         "rating": "3.56",
-        "ratingCount": "67",
-        "savedCount": "3095",
+        "ratingCount": "68",
+        "savedCount": "3203",
         "cuisine": "しゃぶしゃぶ、すき焼き、ステーキ",
         "tel": "0568-28-4129",
         "budgetDinner": "￥10,000～￥14,999",
@@ -165786,14 +165785,19 @@ const shopData = {
         "url": "https://tabelog.com/hokkaido/A0101/A010103/1002914/",
         "category": "すき焼き・しゃぶしゃぶ",
         "address": "北海道札幌市中央区南三条西3 Ｇダイニング札幌ビル 3F",
-        "rating": "3.54",
-        "ratingCount": "128",
-        "savedCount": "7134",
+        "rating": "3.55",
+        "ratingCount": "139",
+        "savedCount": "7528",
         "cuisine": "すき焼き、しゃぶしゃぶ",
         "tel": "011-251-8721",
         "budgetDinner": "￥10,000～￥14,999",
         "budgetDinnerRvw": "￥10,000～￥14,999",
         "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          },
           {
             "y": 2024,
             "t": "sukiyaki_shabushabu",
@@ -165972,13 +165976,13 @@ const shopData = {
         "url": "https://tabelog.com/kagoshima/A4601/A460101/46000109/",
         "category": "すき焼き・しゃぶしゃぶ",
         "address": "鹿児島県鹿児島市山之口町3-12 JAフードプラザ",
-        "rating": "3.53",
-        "ratingCount": "426",
-        "savedCount": "18680",
+        "rating": "3.54",
+        "ratingCount": "438",
+        "savedCount": "19201",
         "cuisine": "しゃぶしゃぶ、ステーキ、豚料理",
         "tel": "099-223-8877",
         "budgetDinnerRvw": "￥10,000～￥14,999",
-        "budgetLunchRvw": "￥3,000～￥3,999",
+        "budgetLunchRvw": "￥4,000～￥4,999",
         "awards": [
           {
             "y": 2024,
@@ -166208,8 +166212,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.7553128790378,
-          34.98856893707316
+          135.7553133301996,
+          34.98856909787854
         ]
       },
       "properties": {
@@ -166217,15 +166221,15 @@ const shopData = {
         "url": "https://tabelog.com/kyoto/A2601/A260101/26031208/",
         "category": "すき焼き・しゃぶしゃぶ",
         "address": "京都府京都市下京区東塩小路町607-12",
-        "rating": "3.53",
-        "ratingCount": "423",
-        "savedCount": "30785",
+        "rating": "3.52",
+        "ratingCount": "453",
+        "savedCount": "32478",
         "cuisine": "しゃぶしゃぶ、日本料理",
         "tel": "075-342-2338",
         "budgetDinner": "￥8,000～￥9,999",
         "budgetLunch": "￥4,000～￥4,999",
         "budgetDinnerRvw": "￥8,000～￥9,999",
-        "budgetLunchRvw": "￥4,000～￥4,999",
+        "budgetLunchRvw": "￥6,000～￥7,999",
         "awards": [
           {
             "y": 2024,
@@ -166367,13 +166371,13 @@ const shopData = {
         ]
       },
       "properties": {
-        "name": "あごつゆしゃぶしゃぶ 山福 - 三条（しゃぶしゃぶ）",
+        "name": "あごつゆしゃぶしゃぶ 山福 本店 - 三条（しゃぶしゃぶ）",
         "url": "https://tabelog.com/kyoto/A2601/A260301/26019742/",
         "category": "すき焼き・しゃぶしゃぶ",
         "address": "京都府京都市中京区木屋町通三条下る材木町187",
-        "rating": "3.53",
-        "ratingCount": "153",
-        "savedCount": "19632",
+        "rating": "3.54",
+        "ratingCount": "171",
+        "savedCount": "21739",
         "cuisine": "しゃぶしゃぶ、豚しゃぶ、居酒屋",
         "tel": "075-255-5015",
         "budgetDinner": "￥5,000～￥5,999",
@@ -166653,9 +166657,9 @@ const shopData = {
         "url": "https://tabelog.com/miyazaki/A4501/A450101/45000944/",
         "category": "すき焼き・しゃぶしゃぶ",
         "address": "宮崎県宮崎市広島1-1-1",
-        "rating": "3.28",
+        "rating": "3.39",
         "ratingCount": "41",
-        "savedCount": "3022",
+        "savedCount": "3087",
         "cuisine": "しゃぶしゃぶ",
         "tel": "0985-29-3150",
         "budgetDinnerRvw": "￥8,000～￥9,999",
@@ -166837,9 +166841,9 @@ const shopData = {
         "url": "https://tabelog.com/okinawa/A4701/A470101/47005508/",
         "category": "すき焼き・しゃぶしゃぶ",
         "address": "沖縄県那覇市松山2-7-3 城間ビル 1F",
-        "rating": "3.43",
-        "ratingCount": "182",
-        "savedCount": "12141",
+        "rating": "3.47",
+        "ratingCount": "191",
+        "savedCount": "12665",
         "cuisine": "豚しゃぶ、焼肉、沖縄料理",
         "tel": "098-863-2991",
         "budgetDinner": "￥8,000～￥9,999",
@@ -167010,8 +167014,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          127.76127659694129,
-          26.30618454004169
+          127.76127722810304,
+          26.306184020847066
         ]
       },
       "properties": {
@@ -167019,13 +167023,13 @@ const shopData = {
         "url": "https://tabelog.com/okinawa/A4703/A470304/47028468/",
         "category": "すき焼き・しゃぶしゃぶ",
         "address": "沖縄県中頭郡北谷町北谷2-2-8",
-        "rating": "3.41",
-        "ratingCount": "193",
-        "savedCount": "8436",
+        "rating": "3.50",
+        "ratingCount": "211",
+        "savedCount": "8994",
         "cuisine": "豚しゃぶ、居酒屋",
         "tel": "098-989-1180",
         "budgetDinner": "￥4,000～￥4,999",
-        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
         "awards": [
           {
             "y": 2024,
@@ -167040,8 +167044,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.49523827629818,
-          34.69929283717407
+          135.4952371574599,
+          34.699292147979435
         ]
       },
       "properties": {
@@ -167049,15 +167053,15 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270101/27003519/",
         "category": "すき焼き・しゃぶしゃぶ",
         "address": "大阪府大阪市北区梅田2-1-15",
-        "rating": "3.53",
-        "ratingCount": "770",
-        "savedCount": "37281",
+        "rating": "3.52",
+        "ratingCount": "801",
+        "savedCount": "38487",
         "cuisine": "しゃぶしゃぶ、豚しゃぶ、日本料理",
         "tel": "06-6346-5138",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetLunch": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥2,000～￥2,999",
-        "budgetLunchRvw": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥3,000～￥3,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
             "y": 2024,
@@ -167112,13 +167116,13 @@ const shopData = {
         "category": "すき焼き・しゃぶしゃぶ",
         "address": "大阪府大阪市北区曽根崎新地1-3-23 北新地FOODEARビル 2F",
         "rating": "3.56",
-        "ratingCount": "471",
-        "savedCount": "18386",
+        "ratingCount": "501",
+        "savedCount": "19822",
         "cuisine": "豚しゃぶ、しゃぶしゃぶ、沖縄料理",
         "tel": "06-6616-8190",
         "budgetDinner": "￥8,000～￥9,999",
         "budgetLunch": "￥4,000～￥4,999",
-        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
         "budgetLunchRvw": "￥4,000～￥4,999",
         "awards": [
           {
@@ -167347,8 +167351,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.50109415689954,
-          34.64421834801628
+          135.5010948668995,
+          34.64421866801627
         ]
       },
       "properties": {
@@ -167357,8 +167361,8 @@ const shopData = {
         "category": "すき焼き・しゃぶしゃぶ",
         "address": "大阪府大阪市西成区天下茶屋北2-6-5",
         "rating": "3.53",
-        "ratingCount": "798",
-        "savedCount": "58133",
+        "ratingCount": "820",
+        "savedCount": "58949",
         "cuisine": "すき焼き、水炊き、鍋",
         "tel": "06-6632-5716",
         "budgetLunch": "￥1,000～￥1,999",
@@ -167695,8 +167699,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.78067488331916,
-          35.6917736379085
+          139.78067412448095,
+          35.69177385871386
         ]
       },
       "properties": {
@@ -167705,8 +167709,8 @@ const shopData = {
         "category": "すき焼き・しゃぶしゃぶ",
         "address": "東京都中央区日本橋小伝馬町14-9",
         "rating": "3.55",
-        "ratingCount": "403",
-        "savedCount": "33102",
+        "ratingCount": "417",
+        "savedCount": "33717",
         "cuisine": "すき焼き、しゃぶしゃぶ、ステーキ",
         "tel": "03-3663-7841",
         "budgetDinner": "￥8,000～￥9,999",
@@ -167727,8 +167731,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.69471328419175,
-          35.65717776870845
+          139.6947139841917,
+          35.65717768870846
         ]
       },
       "properties": {
@@ -167736,9 +167740,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1303/A130301/13007240/",
         "category": "すき焼き・しゃぶしゃぶ",
         "address": "東京都渋谷区円山町6-8 松木家ビル 1F",
-        "rating": "3.52",
-        "ratingCount": "255",
-        "savedCount": "20853",
+        "rating": "3.55",
+        "ratingCount": "259",
+        "savedCount": "21178",
         "cuisine": "すき焼き、ダイニングバー、日本料理",
         "tel": "03-3461-2651",
         "budgetDinner": "￥8,000～￥9,999",
@@ -167769,9 +167773,8 @@ const shopData = {
         "address": "東京都新宿区西新宿1-16-8 河野ビル別館2F",
         "rating": "3.55",
         "ratingCount": "392",
-        "savedCount": "43110",
+        "savedCount": "42471",
         "cuisine": "すき焼き、しゃぶしゃぶ、日本料理",
-        "tel": "03-5323-3552",
         "budgetDinner": "￥5,000～￥5,999",
         "budgetDinnerRvw": "￥5,000～￥5,999",
         "awards": [
@@ -167893,14 +167896,14 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1307/A130701/13175214/",
         "category": "すき焼き・しゃぶしゃぶ",
         "address": "東京都港区六本木4-11-11 六本木GMビル 4F",
-        "rating": "3.53",
-        "ratingCount": "1099",
-        "savedCount": "61223",
+        "rating": "3.55",
+        "ratingCount": "1156",
+        "savedCount": "63802",
         "cuisine": "しゃぶしゃぶ、鍋、薬膳",
         "tel": "050-1794-8119",
         "budgetDinner": "￥10,000～￥14,999",
         "budgetLunch": "￥6,000～￥7,999",
-        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
         "budgetLunchRvw": "￥10,000～￥14,999",
         "awards": [
           {
@@ -167916,8 +167919,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.73616609432435,
-          35.67318139871149
+          139.73616616432435,
+          35.67318077871149
         ]
       },
       "properties": {
@@ -167925,15 +167928,15 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1308/A130801/13002758/",
         "category": "すき焼き・しゃぶしゃぶ",
         "address": "東京都港区赤坂5-3-1 赤坂Bizタワー SHOPS＆DINING 2F",
-        "rating": "3.53",
-        "ratingCount": "482",
-        "savedCount": "20351",
+        "rating": "3.56",
+        "ratingCount": "504",
+        "savedCount": "20837",
         "cuisine": "しゃぶしゃぶ、すき焼き、ステーキ",
         "tel": "03-3582-6841",
         "budgetDinner": "￥8,000～￥9,999",
         "budgetLunch": "￥2,000～￥2,999",
         "budgetDinnerRvw": "￥20,000～￥29,999",
-        "budgetLunchRvw": "￥2,000～￥2,999",
+        "budgetLunchRvw": "￥3,000～￥3,999",
         "awards": [
           {
             "y": 2024,
@@ -167957,14 +167960,14 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1308/A130801/13038448/",
         "category": "すき焼き・しゃぶしゃぶ",
         "address": "東京都港区赤坂3-12-11 セントラル赤坂ビル\u3000Ｂ１Ｆ",
-        "rating": "3.52",
-        "ratingCount": "405",
-        "savedCount": "19134",
+        "rating": "3.54",
+        "ratingCount": "426",
+        "savedCount": "19663",
         "cuisine": "豚しゃぶ、海鮮",
         "tel": "03-3224-1129",
         "budgetDinner": "￥6,000～￥7,999",
         "budgetLunch": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -168053,9 +168056,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1309/A130905/13040653/",
         "category": "すき焼き・しゃぶしゃぶ",
         "address": "東京都新宿区神楽坂2-9",
-        "rating": "3.56",
-        "ratingCount": "243",
-        "savedCount": "18717",
+        "rating": "3.55",
+        "ratingCount": "248",
+        "savedCount": "19147",
         "cuisine": "すき焼き、しゃぶしゃぶ、弁当",
         "tel": "03-3260-1649",
         "budgetDinner": "￥6,000～￥7,999",
@@ -168393,15 +168396,15 @@ const shopData = {
         "url": "https://tabelog.com/yamagata/A0601/A060101/6007058/",
         "category": "すき焼き・しゃぶしゃぶ",
         "address": "山形県山形市七日町3-4-16",
-        "rating": "3.56",
-        "ratingCount": "150",
-        "savedCount": "13171",
+        "rating": "3.57",
+        "ratingCount": "168",
+        "savedCount": "13701",
         "cuisine": "すき焼き、しゃぶしゃぶ、ステーキ",
         "tel": "023-631-2106",
         "budgetDinner": "￥6,000～￥7,999",
         "budgetLunch": "￥1,000～￥1,999",
         "budgetDinnerRvw": "￥8,000～￥9,999",
-        "budgetLunchRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥3,000～￥3,999",
         "awards": [
           {
             "y": 2024,
@@ -168560,12 +168563,12 @@ const shopData = {
         "category": "スペイン料理",
         "address": "愛知県名古屋市東区葵1-26-10 ユニーブル新栄 102",
         "rating": "3.54",
-        "ratingCount": "158",
-        "savedCount": "8301",
+        "ratingCount": "171",
+        "savedCount": "8577",
         "cuisine": "スペイン料理、バル",
         "tel": "052-982-7272",
         "budgetDinner": "￥4,000～￥4,999",
-        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
         "awards": [
           {
             "y": 2024,
@@ -168688,8 +168691,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.92345457984544,
-          35.149589437342925
+          136.9234551010072,
+          35.14958863814829
         ]
       },
       "properties": {
@@ -168698,12 +168701,12 @@ const shopData = {
         "category": "スペイン料理",
         "address": "愛知県名古屋市昭和区御器所3-1-43 藤田ビル 1F",
         "rating": "3.50",
-        "ratingCount": "182",
-        "savedCount": "7947",
+        "ratingCount": "190",
+        "savedCount": "8174",
         "cuisine": "スペイン料理、ワインバー",
         "tel": "052-882-5977",
         "budgetDinnerRvw": "￥6,000～￥7,999",
-        "budgetLunchRvw": "￥3,000～￥3,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
             "y": 2024,
@@ -168718,8 +168721,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.8926760802543,
-          35.18793483730875
+          136.8926754114161,
+          35.187934588114125
         ]
       },
       "properties": {
@@ -168727,9 +168730,9 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230109/23075497/",
         "category": "スペイン料理",
         "address": "愛知県名古屋市西区城西3-10-5 シャトーサイド谷 1F",
-        "rating": "3.55",
-        "ratingCount": "118",
-        "savedCount": "9083",
+        "rating": "3.54",
+        "ratingCount": "119",
+        "savedCount": "9248",
         "cuisine": "スペイン料理、フレンチ",
         "tel": "052-325-5518",
         "budgetDinner": "￥8,000～￥9,999",
@@ -168824,8 +168827,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.98763208827648,
-          35.70102393692561
+          139.98766508442944,
+          35.7010396387739
         ]
       },
       "properties": {
@@ -168833,9 +168836,9 @@ const shopData = {
         "url": "https://tabelog.com/chiba/A1202/A120201/12032960/",
         "category": "スペイン料理",
         "address": "千葉県船橋市千葉県船橋市本町4-4-7 船橋ＮＴビル 1階",
-        "rating": "3.53",
-        "ratingCount": "532",
-        "savedCount": "20439",
+        "rating": "3.51",
+        "ratingCount": "564",
+        "savedCount": "21050",
         "cuisine": "スペイン料理、洋食、バル",
         "tel": "047-423-2156",
         "budgetDinner": "￥4,000～￥4,999",
@@ -169114,13 +169117,13 @@ const shopData = {
         "url": "https://tabelog.com/hokkaido/A0101/A010103/1002126/",
         "category": "スペイン料理",
         "address": "北海道札幌市中央区南六条西3 ニューオリンピアビル1F",
-        "rating": "3.51",
-        "ratingCount": "303",
-        "savedCount": "18371",
+        "rating": "3.52",
+        "ratingCount": "320",
+        "savedCount": "18595",
         "cuisine": "スペイン料理、ステーキ、バル",
         "tel": "011-532-0001",
         "budgetDinner": "￥3,000～￥3,999",
-        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
         "awards": [
           {
             "y": 2024,
@@ -169316,8 +169319,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.33350693801128,
-          34.74265413790039
+          135.3335073580113,
+          34.742654797900386
         ]
       },
       "properties": {
@@ -169325,9 +169328,9 @@ const shopData = {
         "url": "https://tabelog.com/hyogo/A2803/A280301/28007629/",
         "category": "スペイン料理",
         "address": "兵庫県西宮市若松町3-1 リビエール夙川\u3000１Ｆ",
-        "rating": "3.52",
-        "ratingCount": "64",
-        "savedCount": "4123",
+        "rating": "3.42",
+        "ratingCount": "66",
+        "savedCount": "4193",
         "cuisine": "スペイン料理",
         "tel": "0798-70-5765",
         "budgetDinnerRvw": "￥4,000～￥4,999",
@@ -169452,8 +169455,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.07905784840193,
-          36.100663918549195
+          140.07905689840192,
+          36.100663408549195
         ]
       },
       "properties": {
@@ -169461,9 +169464,9 @@ const shopData = {
         "url": "https://tabelog.com/ibaraki/A0802/A080201/8017202/",
         "category": "スペイン料理",
         "address": "茨城県つくば市学園の森2-39-4 イストワール 001",
-        "rating": "3.55",
-        "ratingCount": "85",
-        "savedCount": "3460",
+        "rating": "3.57",
+        "ratingCount": "89",
+        "savedCount": "3537",
         "cuisine": "スペイン料理",
         "tel": "029-893-6363",
         "budgetDinnerRvw": "￥4,000～￥4,999",
@@ -169845,8 +169848,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.44573592111655,
-          35.3354530688335
+          139.44573636111656,
+          35.3354532388335
         ]
       },
       "properties": {
@@ -169854,9 +169857,9 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1404/A140404/14052885/",
         "category": "スペイン料理",
         "address": "神奈川県藤沢市辻堂2-16-8",
-        "rating": "3.42",
-        "ratingCount": "95",
-        "savedCount": "6822",
+        "rating": "3.45",
+        "ratingCount": "97",
+        "savedCount": "6967",
         "cuisine": "スペイン料理、ワインバー",
         "tel": "0466-36-3118",
         "budgetDinnerRvw": "￥5,000～￥5,999",
@@ -169886,7 +169889,7 @@ const shopData = {
         "address": "京都府京都市中京区間之町通二条上ル夷町560-8 2F",
         "rating": "3.74",
         "ratingCount": "53",
-        "savedCount": "8122",
+        "savedCount": "8031",
         "cuisine": "スペイン料理、創作料理",
         "budgetDinner": "￥15,000～￥19,999",
         "budgetLunch": "￥4,000～￥4,999",
@@ -170808,8 +170811,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.76060648311815,
-          35.67048103791563
+          139.76060726427994,
+          35.67048067872099
         ]
       },
       "properties": {
@@ -170818,11 +170821,11 @@ const shopData = {
         "category": "スペイン料理",
         "address": "東京都中央区銀座7-3-16",
         "rating": "3.47",
-        "ratingCount": "433",
-        "savedCount": "53202",
-        "cuisine": "スペイン料理、ビストロ、ダイニングバー",
+        "ratingCount": "445",
+        "savedCount": "53749",
+        "cuisine": "スペイン料理、バル、ダイニングバー",
         "tel": "03-6228-5601",
-        "budgetDinner": "￥8,000～￥9,999",
+        "budgetDinner": "￥6,000～￥7,999",
         "budgetDinnerRvw": "￥8,000～￥9,999",
         "awards": [
           {
@@ -170922,14 +170925,14 @@ const shopData = {
         "category": "スペイン料理",
         "address": "東京都千代田区有楽町1-1-2 東京ミッドタウン日比谷 2F",
         "rating": "3.51",
-        "ratingCount": "1202",
-        "savedCount": "55465",
+        "ratingCount": "1257",
+        "savedCount": "57108",
         "cuisine": "スペイン料理、ビストロ、ワインバー",
         "tel": "050-3184-4667",
         "budgetDinner": "￥6,000～￥7,999",
         "budgetLunch": "￥2,000～￥2,999",
-        "budgetDinnerRvw": "￥6,000～￥7,999",
-        "budgetLunchRvw": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "budgetLunchRvw": "￥3,000～￥3,999",
         "awards": [
           {
             "y": 2024,
@@ -170955,7 +170958,7 @@ const shopData = {
         "address": "東京都港区新橋2-15-13",
         "rating": "3.65",
         "ratingCount": "177",
-        "savedCount": "20926",
+        "savedCount": "20798",
         "cuisine": "スペイン料理",
         "budgetDinner": "￥8,000～￥9,999",
         "budgetDinnerRvw": "￥6,000～￥7,999",
@@ -171128,15 +171131,15 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1303/A130301/13240101/",
         "category": "スペイン料理",
         "address": "東京都渋谷区渋谷2-24-12 渋谷スクランブルスクエア 13F",
-        "rating": "3.52",
-        "ratingCount": "1581",
-        "savedCount": "74036",
+        "rating": "3.51",
+        "ratingCount": "1667",
+        "savedCount": "76407",
         "cuisine": "スペイン料理、イノベーティブ",
         "tel": "03-6452-6227",
         "budgetDinner": "￥5,000～￥5,999",
         "budgetLunch": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥5,000～￥5,999",
-        "budgetLunchRvw": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetLunchRvw": "￥3,000～￥3,999",
         "awards": [
           {
             "y": 2024,
@@ -171376,8 +171379,8 @@ const shopData = {
         "category": "スペイン料理",
         "address": "東京都港区南麻布1-15-2 1F",
         "rating": "3.67",
-        "ratingCount": "63",
-        "savedCount": "10278",
+        "ratingCount": "64",
+        "savedCount": "10165",
         "cuisine": "スペイン料理、バル、カフェ",
         "budgetDinner": "￥6,000～￥7,999",
         "budgetLunch": "￥2,000～￥2,999",
@@ -171574,8 +171577,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.78224008305727,
-          35.66595193792539
+          139.782240584219,
+          35.66595266873076
         ]
       },
       "properties": {
@@ -171583,14 +171586,14 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1313/A131302/13002244/",
         "category": "スペイン料理",
         "address": "東京都中央区月島1-14-7 旭倉庫\u3000１Ｆ",
-        "rating": "3.54",
-        "ratingCount": "909",
-        "savedCount": "39592",
+        "rating": "3.55",
+        "ratingCount": "943",
+        "savedCount": "40670",
         "cuisine": "スペイン料理、ダイニングバー、バル",
         "tel": "03-3533-5381",
         "budgetDinner": "￥6,000～￥7,999",
         "budgetLunch": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -171724,9 +171727,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1317/A131701/13001831/",
         "category": "スペイン料理",
         "address": "東京都目黒区上目黒2-10-4",
-        "rating": "3.41",
-        "ratingCount": "179",
-        "savedCount": "29050",
+        "rating": "3.42",
+        "ratingCount": "181",
+        "savedCount": "29189",
         "cuisine": "スペイン料理、バル",
         "tel": "03-3791-3023",
         "budgetDinnerRvw": "￥8,000～￥9,999",
@@ -171923,8 +171926,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.76921976429662,
-          35.67273067872231
+          139.76922080429665,
+          35.67273120872231
         ]
       },
       "properties": {
@@ -171932,9 +171935,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1301/A130101/13002424/",
         "category": "カレー（東京）",
         "address": "東京都中央区銀座2-11-1 銀座ランドビル Ｂ1Ｆ",
-        "rating": "3.72",
-        "ratingCount": "1291",
-        "savedCount": "50830",
+        "rating": "3.71",
+        "ratingCount": "1318",
+        "savedCount": "51294",
         "cuisine": "カレー",
         "tel": "03-6264-0885",
         "budgetLunch": "￥1,000～￥1,999",
@@ -172281,8 +172284,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.76823099432409,
-          35.675380048720314
+          139.76823174432405,
+          35.6753801787203
         ]
       },
       "properties": {
@@ -172290,9 +172293,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1302/A130202/13027104/",
         "category": "カレー（東京）",
         "address": "東京都中央区京橋3-4-3 千成ビル２F",
-        "rating": "3.68",
-        "ratingCount": "579",
-        "savedCount": "43578",
+        "rating": "3.67",
+        "ratingCount": "581",
+        "savedCount": "43667",
         "cuisine": "カレー",
         "tel": "03-5203-2810",
         "budgetDinner": "￥3,000～￥3,999",
@@ -173232,7 +173235,7 @@ const shopData = {
         "address": "東京都渋谷区代々木2-30-4 ヨシダペアランドＢ\u3000１０２",
         "rating": "3.73",
         "ratingCount": "447",
-        "savedCount": "27496",
+        "savedCount": "27359",
         "cuisine": "カレー、バー",
         "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
@@ -173929,8 +173932,8 @@ const shopData = {
         "category": "カレー（東京）",
         "address": "東京都渋谷区神宮前2-28-12 １Ｆ",
         "rating": "3.73",
-        "ratingCount": "1632",
-        "savedCount": "104217",
+        "ratingCount": "1635",
+        "savedCount": "103643",
         "cuisine": "カレー、バー",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -174544,8 +174547,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.757375283374,
-          35.69558243789865
+          139.75737490453574,
+          35.69558300870402
         ]
       },
       "properties": {
@@ -174554,8 +174557,8 @@ const shopData = {
         "category": "カレー（東京）",
         "address": "東京都千代田区神田神保町2-3 神田古書センター ２Ｆ",
         "rating": "3.68",
-        "ratingCount": "6103",
-        "savedCount": "196983",
+        "ratingCount": "6312",
+        "savedCount": "201798",
         "cuisine": "カレー",
         "tel": "03-3234-2080",
         "budgetDinner": "￥1,000～￥1,999",
@@ -175120,8 +175123,8 @@ const shopData = {
         "category": "カレー（東京）",
         "address": "東京都千代田区外神田3-6-1 丸山ビル 1F",
         "rating": "3.72",
-        "ratingCount": "708",
-        "savedCount": "35308",
+        "ratingCount": "711",
+        "savedCount": "35165",
         "cuisine": "インドカレー、インド料理、カレー",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -175775,8 +175778,8 @@ const shopData = {
         "category": "カレー（東京）",
         "address": "東京都世田谷区北沢2-27-10",
         "rating": "3.71",
-        "ratingCount": "710",
-        "savedCount": "30256",
+        "ratingCount": "708",
+        "savedCount": "29998",
         "cuisine": "カレー",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -175894,8 +175897,8 @@ const shopData = {
         "category": "カレー（東京）",
         "address": "東京都渋谷区富ヶ谷1-52-2",
         "rating": "3.85",
-        "ratingCount": "1369",
-        "savedCount": "53225",
+        "ratingCount": "1374",
+        "savedCount": "52978",
         "cuisine": "カレー",
         "budgetLunch": "￥1,000～￥1,999",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -175930,7 +175933,7 @@ const shopData = {
         "address": "東京都渋谷区上原1-33-12 ちとせビル 1F",
         "rating": "3.92",
         "ratingCount": "751",
-        "savedCount": "33255",
+        "savedCount": "33034",
         "cuisine": "カレー",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -176647,8 +176650,8 @@ const shopData = {
         "category": "カレー（東京）",
         "address": "東京都町田市原町田4-5-19 町田仲見世飲食街",
         "rating": "3.76",
-        "ratingCount": "1619",
-        "savedCount": "56548",
+        "ratingCount": "1618",
+        "savedCount": "56270",
         "cuisine": "カレー",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -176792,8 +176795,8 @@ const shopData = {
         "category": "カレー（東日本）",
         "address": "愛知県名古屋市中区栄3-5-1 名古屋栄三越 B1F",
         "rating": "3.60",
-        "ratingCount": "465",
-        "savedCount": "11554",
+        "ratingCount": "476",
+        "savedCount": "11833",
         "cuisine": "カレー",
         "tel": "052-252-1216",
         "budgetDinner": "￥1,000～￥1,999",
@@ -176830,7 +176833,7 @@ const shopData = {
         "address": "愛知県名古屋市中村区向島町4-24-9",
         "rating": "3.59",
         "ratingCount": "449",
-        "savedCount": "17255",
+        "savedCount": "17153",
         "cuisine": "インドカレー、インド料理、スープカレー",
         "budgetDinner": "～￥999",
         "budgetLunch": "～￥999",
@@ -177750,10 +177753,10 @@ const shopData = {
         "name": "カンクーン（CAN CUN） - バスセンター前（スープカレー）",
         "url": "https://tabelog.com/hokkaido/A0101/A010102/1062792/",
         "category": "カレー（東日本）",
-        "address": "北海道札幌市中央区南2条東6-5 朝日プラザ一条橋 1F",
+        "address": "北海道-札幌市中央区南2条東6-5 朝日プラザ一条橋 1F",
         "rating": "3.60",
-        "ratingCount": "168",
-        "savedCount": "4904",
+        "ratingCount": "181",
+        "savedCount": "5030",
         "cuisine": "スープカレー",
         "tel": "011-261-7099",
         "budgetDinner": "￥1,000～￥1,999",
@@ -177784,8 +177787,8 @@ const shopData = {
         "category": "カレー（東日本）",
         "address": "北海道札幌市中央区南三条西1-12-19 エルムビル\u3000１Ｆ",
         "rating": "3.68",
-        "ratingCount": "1677",
-        "savedCount": "60553",
+        "ratingCount": "1676",
+        "savedCount": "60288",
         "cuisine": "スープカレー、スープ",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "～￥999",
@@ -177942,10 +177945,10 @@ const shopData = {
         "name": "スープカレーGARAKU 札幌本店（ガラク） - 狸小路（スープカレー）",
         "url": "https://tabelog.com/hokkaido/A0101/A010103/1006746/",
         "category": "カレー（東日本）",
-        "address": "北海道札幌市中央区南2条西2-6-1 おくむらビル B1F",
+        "address": "北海道-札幌市中央区南2条西2-6-1 おくむらビル B1F",
         "rating": "3.60",
-        "ratingCount": "927",
-        "savedCount": "46418",
+        "ratingCount": "931",
+        "savedCount": "46138",
         "cuisine": "スープカレー、バー、カフェ",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -177978,10 +177981,10 @@ const shopData = {
         "name": "カオスヘブン 札幌店（Chaos Heaven） - 豊水すすきの（スープカレー）",
         "url": "https://tabelog.com/hokkaido/A0101/A010103/1042039/",
         "category": "カレー（東日本）",
-        "address": "北海道札幌市中央区南5条東2-12-3 2F",
+        "address": "北海道-札幌市中央区南5条東2-12-3 2F",
         "rating": "3.66",
-        "ratingCount": "512",
-        "savedCount": "25899",
+        "ratingCount": "513",
+        "savedCount": "25785",
         "cuisine": "スープカレー",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -178723,9 +178726,9 @@ const shopData = {
         "url": "https://tabelog.com/hokkaido/A0101/A010201/1055946/",
         "category": "カレー（東日本）",
         "address": "北海道札幌市北区北二十九条西4-2-1 ファミール札幌 110",
-        "rating": "3.56",
-        "ratingCount": "184",
-        "savedCount": "7734",
+        "rating": "3.54",
+        "ratingCount": "186",
+        "savedCount": "7788",
         "cuisine": "スープカレー",
         "tel": "011-299-3242",
         "budgetDinner": "￥2,000～￥2,999",
@@ -178844,8 +178847,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.38227832813044,
-          43.094281824522426
+          141.38227719813045,
+          43.094281654522426
         ]
       },
       "properties": {
@@ -178853,9 +178856,9 @@ const shopData = {
         "url": "https://tabelog.com/hokkaido/A0101/A010202/1006509/",
         "category": "カレー（東日本）",
         "address": "北海道札幌市東区北二十三条東20-2-18",
-        "rating": "3.60",
-        "ratingCount": "327",
-        "savedCount": "13437",
+        "rating": "3.61",
+        "ratingCount": "351",
+        "savedCount": "13861",
         "cuisine": "スープカレー",
         "tel": "011-784-8910",
         "budgetDinner": "￥1,000～￥1,999",
@@ -179942,8 +179945,8 @@ const shopData = {
         "category": "カレー（東日本）",
         "address": "北海道札幌市清田区平岡1条1-7-1",
         "rating": "3.58",
-        "ratingCount": "345",
-        "savedCount": "9044",
+        "ratingCount": "343",
+        "savedCount": "8979",
         "cuisine": "スープカレー、カレー",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -180606,8 +180609,8 @@ const shopData = {
         "category": "カレー（東日本）",
         "address": "神奈川県横浜市神奈川区西神奈川3-9-2",
         "rating": "3.68",
-        "ratingCount": "815",
-        "savedCount": "36756",
+        "ratingCount": "819",
+        "savedCount": "36417",
         "cuisine": "カレー",
         "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
@@ -182494,8 +182497,8 @@ const shopData = {
         "category": "カレー（西日本）",
         "address": "大阪府大阪市北区中津3-18-2",
         "rating": "3.88",
-        "ratingCount": "902",
-        "savedCount": "58710",
+        "ratingCount": "901",
+        "savedCount": "58438",
         "cuisine": "カレー",
         "budgetLunch": "￥1,000～￥1,999",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -183307,7 +183310,7 @@ const shopData = {
         "address": "大阪府大阪市中央区道修町1-1-6 2F",
         "rating": "3.66",
         "ratingCount": "425",
-        "savedCount": "21084",
+        "savedCount": "20976",
         "cuisine": "カレー、カフェ",
         "budgetLunch": "￥1,000～￥1,999",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -184131,8 +184134,8 @@ const shopData = {
         "category": "カレー（西日本）",
         "address": "大阪府大阪市中央区常盤町2-4-9 エクセル第6ビル 2F",
         "rating": "3.82",
-        "ratingCount": "984",
-        "savedCount": "44242",
+        "ratingCount": "985",
+        "savedCount": "43831",
         "cuisine": "カレー、ダイニングバー、スリランカ料理",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -184243,7 +184246,7 @@ const shopData = {
         "address": "大阪府大阪市中央区谷町1-5-11 キャッスルリバー B1F",
         "rating": "3.64",
         "ratingCount": "384",
-        "savedCount": "14878",
+        "savedCount": "14811",
         "cuisine": "カレー",
         "budgetLunch": "～￥999",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -185599,8 +185602,8 @@ const shopData = {
         "category": "カレー（西日本）",
         "address": "大阪府大阪市中央区難波千日前7-4 スターハウスマンション 1F",
         "rating": "3.56",
-        "ratingCount": "294",
-        "savedCount": "19228",
+        "ratingCount": "300",
+        "savedCount": "19404",
         "cuisine": "カレー、オーガニック、薬膳",
         "tel": "06-6649-6626",
         "budgetDinner": "￥1,000～￥1,999",
@@ -186466,14 +186469,14 @@ const shopData = {
         "category": "アジア・エスニック（東京）",
         "address": "東京都中央区銀座西2-2 銀座インズ2 2F",
         "rating": "3.50",
-        "ratingCount": "2205",
-        "savedCount": "106236",
+        "ratingCount": "2280",
+        "savedCount": "107934",
         "cuisine": "インド料理、インドカレー、ワインバー",
         "tel": "03-3561-5516",
         "budgetDinner": "￥5,000～￥5,999",
         "budgetLunch": "￥1,000～￥1,999",
         "budgetDinnerRvw": "￥6,000～￥7,999",
-        "budgetLunchRvw": "￥2,000～￥2,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
             "y": 2024,
@@ -186517,9 +186520,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1301/A130101/13257559/",
         "category": "アジア・エスニック（東京）",
         "address": "東京都中央区銀座5-4-15 西五ビル 3F",
-        "rating": "3.55",
-        "ratingCount": "1460",
-        "savedCount": "60782",
+        "rating": "3.54",
+        "ratingCount": "1508",
+        "savedCount": "61566",
         "cuisine": "インド料理、イノベーティブ、インドカレー",
         "tel": "03-6263-9869",
         "budgetDinner": "￥6,000～￥7,999",
@@ -186815,8 +186818,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.69543455424738,
-          35.66273575870516
+          139.69543468424735,
+          35.66273532870516
         ]
       },
       "properties": {
@@ -186824,15 +186827,15 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1303/A130301/13111493/",
         "category": "アジア・エスニック（東京）",
         "address": "東京都渋谷区宇田川町41-26 パピエビル１０４",
-        "rating": "3.57",
-        "ratingCount": "418",
-        "savedCount": "30604",
+        "rating": "3.56",
+        "ratingCount": "440",
+        "savedCount": "31160",
         "cuisine": "アフリカ料理、中南米料理",
         "tel": "03-3496-7157",
         "budgetDinner": "￥3,000～￥3,999",
         "budgetLunch": "～￥999",
         "budgetDinnerRvw": "￥2,000～￥2,999",
-        "budgetLunchRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
             "y": 2024,
@@ -186923,9 +186926,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1303/A130301/13220984/",
         "category": "アジア・エスニック（東京）",
         "address": "東京都渋谷区神宮前6-19-17 GEMS神宮前 5F",
-        "rating": "3.56",
-        "ratingCount": "1066",
-        "savedCount": "53019",
+        "rating": "3.55",
+        "ratingCount": "1091",
+        "savedCount": "54033",
         "cuisine": "インド料理、インドカレー",
         "tel": "03-5962-7888",
         "budgetDinner": "￥3,000～￥3,999",
@@ -187005,9 +187008,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1304/A130401/13000085/",
         "category": "アジア・エスニック（東京）",
         "address": "東京都新宿区歌舞伎町1-23-14 第１メトロビル 3Ｆ",
-        "rating": "3.60",
-        "ratingCount": "3587",
-        "savedCount": "141125",
+        "rating": "3.59",
+        "ratingCount": "3671",
+        "savedCount": "143374",
         "cuisine": "タイ料理、カレー",
         "tel": "03-3207-0068",
         "budgetDinner": "￥3,000～￥3,999",
@@ -187038,8 +187041,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.70855075456396,
-          35.694989038688846
+          139.708549894564,
+          35.694989798688844
         ]
       },
       "properties": {
@@ -187048,8 +187051,8 @@ const shopData = {
         "category": "アジア・エスニック（東京）",
         "address": "東京都新宿区新宿6-13-8",
         "rating": "3.49",
-        "ratingCount": "751",
-        "savedCount": "26649",
+        "ratingCount": "756",
+        "savedCount": "26735",
         "cuisine": "ネパール料理、インド料理、インドカレー",
         "tel": "03-3354-8553",
         "budgetDinner": "￥1,000～￥1,999",
@@ -187312,8 +187315,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.70483088347012,
-          35.701455237878186
+          139.70483025463187,
+          35.70145520868356
         ]
       },
       "properties": {
@@ -187321,14 +187324,14 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1304/A130404/13198074/",
         "category": "アジア・エスニック（東京）",
         "address": "東京都新宿区大久保2-19-1 セントラル大久保ビル B1F",
-        "rating": "3.55",
-        "ratingCount": "795",
-        "savedCount": "44355",
+        "rating": "3.53",
+        "ratingCount": "816",
+        "savedCount": "44819",
         "cuisine": "タイ料理、カレー",
         "tel": "03-3205-5661",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetLunch": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -187597,8 +187600,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.73081288310195,
-          35.66680993790846
+          139.73081276426373,
+          35.666809038713836
         ]
       },
       "properties": {
@@ -187606,9 +187609,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1307/A130701/13037327/",
         "category": "アジア・エスニック（東京）",
         "address": "東京都港区赤坂9-7-4 東京ミッドタウン ガレリア ガーデンテラス 1F",
-        "rating": "3.50",
-        "ratingCount": "1400",
-        "savedCount": "70020",
+        "rating": "3.49",
+        "ratingCount": "1438",
+        "savedCount": "71198",
         "cuisine": "インド料理、ワインバー、ダイニングバー",
         "tel": "03-5647-8305",
         "budgetDinner": "￥5,000～￥5,999",
@@ -187776,12 +187779,12 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1308/A130801/13002759/",
         "category": "アジア・エスニック（東京）",
         "address": "東京都港区赤坂2-13-17 シントミ赤坂第２ビル １Ｆ",
-        "rating": "3.51",
-        "ratingCount": "1337",
-        "savedCount": "66729",
+        "rating": "3.49",
+        "ratingCount": "1362",
+        "savedCount": "67999",
         "cuisine": "韓国料理",
         "tel": "03-3582-7008",
-        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -187797,8 +187800,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.73716138317482,
-          35.67446483790564
+          139.73716038433662,
+          35.674464428711
         ]
       },
       "properties": {
@@ -187806,9 +187809,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1308/A130801/13015210/",
         "category": "アジア・エスニック（東京）",
         "address": "東京都港区赤坂3-15-2 ＫＹＯＷＡ\u3000ＦＯＲＭＥビル\u3000１Ｆ",
-        "rating": "3.53",
-        "ratingCount": "688",
-        "savedCount": "46766",
+        "rating": "3.52",
+        "ratingCount": "712",
+        "savedCount": "47566",
         "cuisine": "韓国料理、焼肉、冷麺",
         "tel": "03-3587-1089",
         "budgetDinner": "￥4,000～￥4,999",
@@ -187903,8 +187906,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.73750100438568,
-          35.679347188708
+          139.73750019438566,
+          35.679346818708005
         ]
       },
       "properties": {
@@ -187912,14 +187915,14 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1308/A130801/13195343/",
         "category": "アジア・エスニック（東京）",
         "address": "東京都千代田区紀尾井町1-3 東京ガーデンテラス紀尾井町 2F",
-        "rating": "3.56",
-        "ratingCount": "970",
-        "savedCount": "36077",
+        "rating": "3.55",
+        "ratingCount": "996",
+        "savedCount": "36781",
         "cuisine": "インド料理、インドカレー",
         "tel": "03-6272-5529",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetLunch": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -187960,8 +187963,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.74973448309876,
-          35.66780673791386
+          139.74993656425852,
+          35.66762132871941
         ]
       },
       "properties": {
@@ -187969,15 +187972,15 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1308/A130802/13247575/",
         "category": "アジア・エスニック（東京）",
         "address": "東京都港区虎ノ門1-17-1 虎ノ門ヒルズ ビジネスタワー B1F",
-        "rating": "3.56",
-        "ratingCount": "720",
-        "savedCount": "19099",
+        "rating": "3.55",
+        "ratingCount": "775",
+        "savedCount": "20007",
         "cuisine": "インド料理、インドカレー",
         "tel": "03-6811-2330",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetLunch": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥1,000～￥1,999",
-        "budgetLunchRvw": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
             "y": 2024,
@@ -188054,8 +188057,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.71990222443134,
-          35.6826441987003
+          139.7199024044313,
+          35.68264333870031
         ]
       },
       "properties": {
@@ -188064,8 +188067,8 @@ const shopData = {
         "category": "アジア・エスニック（東京）",
         "address": "東京都新宿区信濃町21 大門ビル\u3000Ｂ１Ｆ",
         "rating": "3.50",
-        "ratingCount": "916",
-        "savedCount": "41512",
+        "ratingCount": "932",
+        "savedCount": "43066",
         "cuisine": "タイ料理",
         "tel": "03-3355-0280",
         "budgetDinner": "￥1,000～￥1,999",
@@ -188324,8 +188327,8 @@ const shopData = {
         "category": "アジア・エスニック（東京）",
         "address": "東京都千代田区神田佐久間河岸50 大岩ビル２Ｆ",
         "rating": "3.49",
-        "ratingCount": "1120",
-        "savedCount": "34596",
+        "ratingCount": "1125",
+        "savedCount": "34873",
         "cuisine": "インド料理、インドカレー",
         "tel": "03-3864-5602",
         "budgetDinnerRvw": "￥2,000～￥2,999",
@@ -188703,8 +188706,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.77784143462208,
-          35.7055519987042
+          139.7778413446221,
+          35.7055522587042
         ]
       },
       "properties": {
@@ -188712,14 +188715,14 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1311/A131101/13168026/",
         "category": "アジア・エスニック（東京）",
         "address": "東京都台東区台東3-44-8",
-        "rating": "3.52",
-        "ratingCount": "538",
-        "savedCount": "22204",
+        "rating": "3.50",
+        "ratingCount": "540",
+        "savedCount": "22286",
         "cuisine": "インド料理、インドカレー、アジア・エスニック",
         "tel": "03-5817-8165",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -188769,14 +188772,14 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1311/A131101/13168753/",
         "category": "アジア・エスニック（東京）",
         "address": "東京都台東区東上野3-36-7 1F",
-        "rating": "3.54",
-        "ratingCount": "2224",
-        "savedCount": "81901",
+        "rating": "3.53",
+        "ratingCount": "2288",
+        "savedCount": "83465",
         "cuisine": "インド料理、インドカレー、パキスタン料理",
         "tel": "03-6803-2274",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetLunch": "～￥999",
-        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -188822,8 +188825,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.7796395834601,
-          35.70565403789934
+          139.7796390846219,
+          35.70565486870471
         ]
       },
       "properties": {
@@ -188832,8 +188835,8 @@ const shopData = {
         "category": "アジア・エスニック（東京）",
         "address": "東京都台東区台東4-3-1",
         "rating": "3.55",
-        "ratingCount": "944",
-        "savedCount": "52536",
+        "ratingCount": "978",
+        "savedCount": "53069",
         "cuisine": "タイ料理、カレー、ラーメン",
         "tel": "03-6356-3957",
         "budgetDinner": "￥4,000～￥4,999",
@@ -188964,7 +188967,7 @@ const shopData = {
         "address": "東京都荒川区西日暮里4-23-1",
         "rating": "3.65",
         "ratingCount": "373",
-        "savedCount": "12355",
+        "savedCount": "12292",
         "cuisine": "インド料理、インドカレー",
         "budgetLunch": "～￥999",
         "budgetDinnerRvw": "～￥999",
@@ -188993,8 +188996,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.81369977448588,
-          35.69455528872262
+          139.81369783448588,
+          35.69455466872261
         ]
       },
       "properties": {
@@ -189003,8 +189006,8 @@ const shopData = {
         "category": "アジア・エスニック（東京）",
         "address": "東京都墨田区江東橋3-9-24",
         "rating": "3.49",
-        "ratingCount": "815",
-        "savedCount": "40819",
+        "ratingCount": "826",
+        "savedCount": "41130",
         "cuisine": "南アジア料理、カレー",
         "tel": "03-6659-3553",
         "budgetDinner": "￥1,000～￥1,999",
@@ -189050,8 +189053,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.81221208336189,
-          35.698189337914464
+          139.81221201452362,
+          35.69818886871983
         ]
       },
       "properties": {
@@ -189060,8 +189063,8 @@ const shopData = {
         "category": "アジア・エスニック（東京）",
         "address": "東京都墨田区錦糸2-6-11",
         "rating": "3.49",
-        "ratingCount": "1186",
-        "savedCount": "45947",
+        "ratingCount": "1209",
+        "savedCount": "46396",
         "cuisine": "インド料理、インドカレー",
         "tel": "03-6284-1711",
         "budgetDinner": "￥4,000～￥4,999",
@@ -189657,8 +189660,8 @@ const shopData = {
         "category": "アジア・エスニック（東京）",
         "address": "東京都品川区西五反田2-12-15 五反田リーラハイタウン 1F",
         "rating": "3.54",
-        "ratingCount": "646",
-        "savedCount": "21652",
+        "ratingCount": "647",
+        "savedCount": "21486",
         "cuisine": "スリランカ料理、カレー、カフェ",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -190007,9 +190010,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1317/A131716/13105113/",
         "category": "アジア・エスニック（東京）",
         "address": "東京都大田区矢口1-7-9",
-        "rating": "3.56",
-        "ratingCount": "612",
-        "savedCount": "19447",
+        "rating": "3.53",
+        "ratingCount": "619",
+        "savedCount": "19563",
         "cuisine": "インド料理、インドカレー、薬膳",
         "tel": "03-6715-2888",
         "budgetDinner": "￥2,000～￥2,999",
@@ -190050,8 +190053,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.66830581424853,
-          35.66096460869764
+          139.66830608424854,
+          35.66096555869764
         ]
       },
       "properties": {
@@ -190060,8 +190063,8 @@ const shopData = {
         "category": "アジア・エスニック（東京）",
         "address": "東京都世田谷区北沢2-12-13 細沢ビル 5F",
         "rating": "3.54",
-        "ratingCount": "738",
-        "savedCount": "39691",
+        "ratingCount": "746",
+        "savedCount": "39910",
         "cuisine": "アジア・エスニック、カレー、バル",
         "tel": "03-3411-0607",
         "budgetDinner": "￥2,000～￥2,999",
@@ -190257,9 +190260,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1318/A131810/13009199/",
         "category": "アジア・エスニック（東京）",
         "address": "東京都渋谷区代々木4-2-8 ピースビル\u3000１Ｆ",
-        "rating": "3.72",
-        "ratingCount": "291",
-        "savedCount": "12719",
+        "rating": "3.70",
+        "ratingCount": "303",
+        "savedCount": "13094",
         "cuisine": "インド料理、インドカレー、カフェ",
         "tel": "03-5351-0833",
         "budgetLunch": "￥1,000～￥1,999",
@@ -190360,8 +190363,8 @@ const shopData = {
         "category": "アジア・エスニック（東京）",
         "address": "東京都世田谷区豪徳寺1-42-11",
         "rating": "3.75",
-        "ratingCount": "246",
-        "savedCount": "25646",
+        "ratingCount": "247",
+        "savedCount": "25489",
         "cuisine": "ネパール料理、カレー",
         "budgetDinner": "￥10,000～￥14,999",
         "budgetLunch": "￥2,000～￥2,999",
@@ -190468,8 +190471,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.6660001835214,
-          35.703836537864305
+          139.66599993468316,
+          35.70383581866968
         ]
       },
       "properties": {
@@ -190478,8 +190481,8 @@ const shopData = {
         "category": "アジア・エスニック（東京）",
         "address": "東京都中野区中野2-27-14 丸萬ビル 3F",
         "rating": "3.54",
-        "ratingCount": "516",
-        "savedCount": "26189",
+        "ratingCount": "523",
+        "savedCount": "26450",
         "cuisine": "スリランカ料理、カレー、ダイニングバー",
         "tel": "03-3381-3128",
         "budgetDinner": "￥3,000～￥3,999",
@@ -190568,7 +190571,7 @@ const shopData = {
         "address": "東京都杉並区天沼2-3-7 ＳＡＫＡＩビルディング\u3000Ｂ１Ｆ",
         "rating": "3.61",
         "ratingCount": "253",
-        "savedCount": "23097",
+        "savedCount": "23039",
         "cuisine": "東南アジア料理、カレー",
         "budgetDinner": "￥3,000～￥3,999",
         "budgetDinnerRvw": "￥4,000～￥4,999",
@@ -191154,8 +191157,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.88713958010047,
-          35.17231533731691
+          136.88714172126228,
+          35.17231871812228
         ]
       },
       "properties": {
@@ -191163,13 +191166,13 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230101/23071183/",
         "category": "アジア・エスニック（東日本）",
         "address": "愛知県名古屋市中村区名駅3-23-14 渡辺ビル 3F",
-        "rating": "3.44",
-        "ratingCount": "352",
-        "savedCount": "18216",
+        "rating": "3.48",
+        "ratingCount": "373",
+        "savedCount": "18835",
         "cuisine": "居酒屋、韓国料理、焼き鳥",
         "tel": "080-5119-6543",
-        "budgetDinner": "￥3,000～￥3,999",
-        "budgetLunch": "￥2,000～￥2,999",
+        "budgetDinner": "￥4,000～￥4,999",
+        "budgetLunch": "￥3,000～￥3,999",
         "budgetDinnerRvw": "￥4,000～￥4,999",
         "budgetLunchRvw": "￥4,000～￥4,999",
         "awards": [
@@ -191222,8 +191225,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.90032908011318,
-          35.17449063731973
+          136.90032831127493,
+          35.1744904181251
         ]
       },
       "properties": {
@@ -191232,8 +191235,8 @@ const shopData = {
         "category": "アジア・エスニック（東日本）",
         "address": "愛知県名古屋市中区丸の内2-14-15 河合ビル 2F",
         "rating": "3.49",
-        "ratingCount": "335",
-        "savedCount": "8564",
+        "ratingCount": "342",
+        "savedCount": "8654",
         "cuisine": "ネパール料理、カレー、居酒屋",
         "tel": "052-202-8802",
         "budgetLunch": "￥1,000～￥1,999",
@@ -191267,14 +191270,14 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230103/23003874/",
         "category": "アジア・エスニック（東日本）",
         "address": "愛知県名古屋市中区錦3-18-13 アミューズ錦 1F",
-        "rating": "3.45",
-        "ratingCount": "426",
-        "savedCount": "15165",
+        "rating": "3.48",
+        "ratingCount": "446",
+        "savedCount": "15378",
         "cuisine": "タイ料理、カレー、弁当",
         "tel": "052-957-7889",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetLunch": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥3,000～￥3,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -191640,8 +191643,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.9386907802665,
-          35.192333537320614
+          136.93869019142826,
+          35.192332938125986
         ]
       },
       "properties": {
@@ -191649,9 +191652,9 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230110/23000941/",
         "category": "アジア・エスニック（東日本）",
         "address": "愛知県名古屋市東区矢田1-5-26",
-        "rating": "3.48",
-        "ratingCount": "290",
-        "savedCount": "8541",
+        "rating": "3.49",
+        "ratingCount": "302",
+        "savedCount": "8646",
         "cuisine": "シンガポール料理、東南アジア料理、居酒屋",
         "tel": "052-711-0237",
         "budgetDinner": "￥2,000～￥2,999",
@@ -191718,8 +191721,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.98736077992518,
-          35.16192023735543
+          136.987361511087,
+          35.161921108160804
         ]
       },
       "properties": {
@@ -191727,9 +191730,9 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230111/23009012/",
         "category": "アジア・エスニック（東日本）",
         "address": "愛知県名古屋市千種区星ヶ丘元町15-27",
-        "rating": "3.51",
-        "ratingCount": "468",
-        "savedCount": "14788",
+        "rating": "3.50",
+        "ratingCount": "479",
+        "savedCount": "14875",
         "cuisine": "インド料理、インドカレー、ネパール料理",
         "tel": "052-781-3378",
         "budgetDinner": "￥1,000～￥1,999",
@@ -191760,8 +191763,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.01334309132395,
-          35.18718518815303
+          137.01334339132396,
+          35.18718581815303
         ]
       },
       "properties": {
@@ -191770,8 +191773,8 @@ const shopData = {
         "category": "アジア・エスニック（東日本）",
         "address": "愛知県名古屋市名東区豊ヶ丘1809",
         "rating": "3.50",
-        "ratingCount": "353",
-        "savedCount": "19919",
+        "ratingCount": "356",
+        "savedCount": "19980",
         "cuisine": "インド料理、インドカレー、カレー",
         "tel": "090-1863-1135",
         "budgetDinner": "￥1,000～￥1,999",
@@ -191862,8 +191865,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.77716023036194,
-          35.07555760814871
+          136.77716160036195,
+          35.07555784814871
         ]
       },
       "properties": {
@@ -191872,8 +191875,8 @@ const shopData = {
         "category": "アジア・エスニック（東日本）",
         "address": "愛知県弥富市稲荷2-72-1",
         "rating": "3.49",
-        "ratingCount": "309",
-        "savedCount": "11513",
+        "ratingCount": "316",
+        "savedCount": "11597",
         "cuisine": "パキスタン料理、カレー",
         "tel": "090-6096-7784",
         "budgetDinner": "￥2,000～￥2,999",
@@ -191904,8 +191907,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.0715696800633,
-          35.181437037369854
+          137.0715687712251,
+          35.18143692817523
         ]
       },
       "properties": {
@@ -191913,9 +191916,9 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2303/A230302/23063380/",
         "category": "アジア・エスニック（東日本）",
         "address": "愛知県長久手市北熊16",
-        "rating": "3.45",
-        "ratingCount": "141",
-        "savedCount": "7794",
+        "rating": "3.48",
+        "ratingCount": "140",
+        "savedCount": "7824",
         "cuisine": "インドネシア料理、カフェ",
         "tel": "0561-58-2253",
         "budgetDinner": "￥6,000～￥7,999",
@@ -192275,9 +192278,9 @@ const shopData = {
         "url": "https://tabelog.com/chiba/A1202/A120201/12055840/",
         "category": "アジア・エスニック（東日本）",
         "address": "千葉県船橋市本町2-11-22 友山ビル 2F",
-        "rating": "3.47",
-        "ratingCount": "145",
-        "savedCount": "4965",
+        "rating": "3.49",
+        "ratingCount": "151",
+        "savedCount": "5011",
         "cuisine": "ネパール料理、インド料理、バー",
         "tel": "047-400-3958",
         "budgetDinner": "￥1,000～￥1,999",
@@ -192432,8 +192435,8 @@ const shopData = {
         "category": "アジア・エスニック（東日本）",
         "address": "千葉県市川市行徳駅前3-7-15",
         "rating": "3.57",
-        "ratingCount": "247",
-        "savedCount": "5357",
+        "ratingCount": "266",
+        "savedCount": "5676",
         "cuisine": "インド料理、インドカレー",
         "tel": "047-317-5892",
         "budgetDinner": "￥1,000～￥1,999",
@@ -192563,8 +192566,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.98594615568126,
-          35.824851518694715
+          139.98594571568125,
+          35.82485120869471
         ]
       },
       "properties": {
@@ -192572,9 +192575,9 @@ const shopData = {
         "url": "https://tabelog.com/chiba/A1203/A120301/12049084/",
         "category": "アジア・エスニック（東日本）",
         "address": "千葉県柏市藤心3-3-8",
-        "rating": "3.52",
-        "ratingCount": "144",
-        "savedCount": "4770",
+        "rating": "3.54",
+        "ratingCount": "149",
+        "savedCount": "4829",
         "cuisine": "スリランカ料理、カレー",
         "tel": "070-1323-3453",
         "budgetDinner": "￥2,000～￥2,999",
@@ -192615,7 +192618,7 @@ const shopData = {
         "address": "千葉県松戸市日暮3-12-1 矢野マンション１０１",
         "rating": "3.45",
         "ratingCount": "70",
-        "savedCount": "2055",
+        "savedCount": "2036",
         "cuisine": "タイ料理、カレー",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "～￥999",
@@ -192919,8 +192922,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.006004890263,
-          36.32545623725931
+          139.00600420142473,
+          36.32545554806469
         ]
       },
       "properties": {
@@ -192929,12 +192932,12 @@ const shopData = {
         "category": "アジア・エスニック（東日本）",
         "address": "群馬県高崎市鞘町63-1 さやもーる通り",
         "rating": "3.53",
-        "ratingCount": "70",
-        "savedCount": "4451",
+        "ratingCount": "67",
+        "savedCount": "4551",
         "cuisine": "ブラジル料理、シュラスコ",
         "tel": "027-386-5990",
         "budgetDinner": "￥5,000～￥5,999",
-        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -193115,10 +193118,10 @@ const shopData = {
         "name": "ジャド プール（Jhad Pul ） - 円山公園（インド料理）",
         "url": "https://tabelog.com/hokkaido/A0101/A010105/1046448/",
         "category": "アジア・エスニック（東日本）",
-        "address": "北海道札幌市中央区南6西24-3-21 1F・2F",
+        "address": "北海道-札幌市中央区南6西24-3-21 1F・2F",
         "rating": "3.73",
-        "ratingCount": "252",
-        "savedCount": "12723",
+        "ratingCount": "253",
+        "savedCount": "12674",
         "cuisine": "インド料理、インドカレー",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -193225,18 +193228,18 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.34103926820342,
-          43.09864628450653
+          141.34103865820344,
+          43.09864702450652
         ]
       },
       "properties": {
         "name": "インドレストラン ラム - 北３４条（インド料理）",
         "url": "https://tabelog.com/hokkaido/A0101/A010201/1004045/",
         "category": "アジア・エスニック（東日本）",
-        "address": "北海道札幌市北区北32条西4丁目1-12 パレロワイヤル １Ｆ",
-        "rating": "3.48",
-        "ratingCount": "298",
-        "savedCount": "10163",
+        "address": "北海道札幌市北区北三十二条西4-1-12 パレロワイヤル 1F",
+        "rating": "3.49",
+        "ratingCount": "301",
+        "savedCount": "10206",
         "cuisine": "インド料理、インドカレー、ネパール料理",
         "tel": "011-756-1765",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -193307,8 +193310,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.4700184108098,
-          36.36617476850506
+          140.47001971080982,
+          36.36617564850507
         ]
       },
       "properties": {
@@ -193316,9 +193319,9 @@ const shopData = {
         "url": "https://tabelog.com/ibaraki/A0801/A080101/8000263/",
         "category": "アジア・エスニック（東日本）",
         "address": "茨城県水戸市中央2-8-10",
-        "rating": "3.48",
-        "ratingCount": "203",
-        "savedCount": "5946",
+        "rating": "3.49",
+        "ratingCount": "209",
+        "savedCount": "6006",
         "cuisine": "インド料理、インドカレー",
         "tel": "029-232-3213",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -193517,7 +193520,7 @@ const shopData = {
         "address": "茨城県常総市馬場441-8",
         "rating": "3.61",
         "ratingCount": "48",
-        "savedCount": "2318",
+        "savedCount": "2312",
         "cuisine": "パキスタン料理、カレー、インドカレー",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
@@ -193544,8 +193547,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.95006304861556,
-          36.112858758500366
+          139.95006168861556,
+          36.112859018500366
         ]
       },
       "properties": {
@@ -193553,9 +193556,9 @@ const shopData = {
         "url": "https://tabelog.com/ibaraki/A0806/A080603/8011256/",
         "category": "アジア・エスニック（東日本）",
         "address": "茨城県常総市向石下899-3",
-        "rating": "3.47",
-        "ratingCount": "146",
-        "savedCount": "6143",
+        "rating": "3.50",
+        "ratingCount": "150",
+        "savedCount": "6167",
         "cuisine": "南アジア料理、インドカレー、スリランカ料理",
         "tel": "0297-42-1222",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -193830,8 +193833,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.50237013239686,
-          35.466136338768536
+          139.50237155239688,
+          35.46613635876854
         ]
       },
       "properties": {
@@ -193839,9 +193842,9 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1401/A140303/14072954/",
         "category": "アジア・エスニック（東日本）",
         "address": "神奈川県横浜市瀬谷区三ツ境19-21",
-        "rating": "3.58",
-        "ratingCount": "179",
-        "savedCount": "4702",
+        "rating": "3.57",
+        "ratingCount": "180",
+        "savedCount": "4866",
         "cuisine": "アジア・エスニック",
         "tel": "045-360-6222",
         "budgetDinner": "￥1,000～￥1,999",
@@ -193930,7 +193933,7 @@ const shopData = {
         "address": "神奈川県中郡大磯町大磯1045-6",
         "rating": "3.62",
         "ratingCount": "181",
-        "savedCount": "7562",
+        "savedCount": "7520",
         "cuisine": "タイ料理、カレー、レストラン",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -193960,8 +193963,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.69814946891105,
-          35.52837359457187
+          139.6980130528866,
+          35.528197198791425
         ]
       },
       "properties": {
@@ -193970,8 +193973,8 @@ const shopData = {
         "category": "アジア・エスニック（東日本）",
         "address": "神奈川県川崎市川崎区小川町4-1 ラチッタデッラ マッジョーレ 1F",
         "rating": "3.49",
-        "ratingCount": "371",
-        "savedCount": "8400",
+        "ratingCount": "392",
+        "savedCount": "9148",
         "cuisine": "インド料理、インドカレー",
         "tel": "044-201-1910",
         "budgetDinner": "￥2,000～￥2,999",
@@ -194037,8 +194040,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.66488857343566,
-          35.58025577874782
+          139.66488766343568,
+          35.58025604874781
         ]
       },
       "properties": {
@@ -194046,11 +194049,11 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1405/A140504/14043719/",
         "category": "アジア・エスニック（東日本）",
         "address": "神奈川県川崎市中原区上丸子八幡町816 山本ビル1F",
-        "rating": "3.53",
-        "ratingCount": "630",
-        "savedCount": "26462",
+        "rating": "3.52",
+        "ratingCount": "639",
+        "savedCount": "26634",
         "cuisine": "インド料理、インドカレー、野菜料理",
-        "tel": "044-750-0438",
+        "tel": "044-380-8144",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetLunch": "￥1,000～￥1,999",
         "budgetDinnerRvw": "￥3,000～￥3,999",
@@ -194352,14 +194355,14 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1407/A140701/14061706/",
         "category": "アジア・エスニック（東日本）",
         "address": "神奈川県相模原市南区相模大野5-29-10-1 Shinoplaza1F",
-        "rating": "3.51",
-        "ratingCount": "257",
-        "savedCount": "6439",
+        "rating": "3.49",
+        "ratingCount": "271",
+        "savedCount": "6586",
         "cuisine": "タイ料理、ダイニングバー",
         "tel": "042-851-5598",
         "budgetDinner": "￥3,000～￥3,999",
         "budgetLunch": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥2,000～￥2,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -194422,8 +194425,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.446708432739,
-          35.496143398731746
+          139.446708612739,
+          35.496142988731755
         ]
       },
       "properties": {
@@ -194431,9 +194434,9 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1407/A140702/14007814/",
         "category": "アジア・エスニック（東日本）",
         "address": "神奈川県大和市南林間2-10-4",
-        "rating": "3.53",
-        "ratingCount": "275",
-        "savedCount": "6738",
+        "rating": "3.50",
+        "ratingCount": "289",
+        "savedCount": "6877",
         "cuisine": "タイ料理、カレー",
         "tel": "0462-777-658",
         "budgetDinner": "￥1,000～￥1,999",
@@ -194772,8 +194775,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.61661338521495,
-          35.868073537744266
+          139.61661323637674,
+          35.868073198549645
         ]
       },
       "properties": {
@@ -194781,9 +194784,9 @@ const shopData = {
         "url": "https://tabelog.com/saitama/A1101/A110101/11002026/",
         "category": "アジア・エスニック（東日本）",
         "address": "埼玉県さいたま市桜区栄和3-20-13",
-        "rating": "3.47",
-        "ratingCount": "204",
-        "savedCount": "7950",
+        "rating": "3.49",
+        "ratingCount": "203",
+        "savedCount": "8012",
         "cuisine": "アジア・エスニック、中東料理",
         "tel": "048-852-3911",
         "budgetDinner": "￥2,000～￥2,999",
@@ -194814,8 +194817,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.61739604675915,
-          35.90598862852581
+          139.61739497675916,
+          35.90598963852581
         ]
       },
       "properties": {
@@ -194823,15 +194826,15 @@ const shopData = {
         "url": "https://tabelog.com/saitama/A1101/A110101/11051760/",
         "category": "アジア・エスニック（東日本）",
         "address": "埼玉県さいたま市大宮区桜木町4-209",
-        "rating": "3.52",
-        "ratingCount": "368",
-        "savedCount": "8177",
+        "rating": "3.50",
+        "ratingCount": "376",
+        "savedCount": "8638",
         "cuisine": "インド料理、ネパール料理、インドカレー",
         "tel": "048-729-7217",
         "budgetDinner": "￥3,000～￥3,999",
         "budgetLunch": "～￥999",
         "budgetDinnerRvw": "￥1,000～￥1,999",
-        "budgetLunchRvw": "～￥999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
             "y": 2024,
@@ -194861,8 +194864,8 @@ const shopData = {
         "category": "アジア・エスニック（東日本）",
         "address": "埼玉県さいたま市中央区下落合1711 シティマークタワー21 1F",
         "rating": "3.61",
-        "ratingCount": "242",
-        "savedCount": "4966",
+        "ratingCount": "243",
+        "savedCount": "4901",
         "cuisine": "モロッコ料理、ダイニングバー、ビアホール",
         "budgetDinner": "￥4,000～￥4,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -194929,8 +194932,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.65356778511742,
-          35.86098123776054
+          139.6535685862792,
+          35.860980738565914
         ]
       },
       "properties": {
@@ -194938,9 +194941,9 @@ const shopData = {
         "url": "https://tabelog.com/saitama/A1101/A110102/11052547/",
         "category": "アジア・エスニック（東日本）",
         "address": "埼玉県さいたま市浦和区仲町1-11-4 アネックスビル 3F",
-        "rating": "3.54",
-        "ratingCount": "170",
-        "savedCount": "6366",
+        "rating": "3.52",
+        "ratingCount": "181",
+        "savedCount": "6579",
         "cuisine": "トルコ料理",
         "tel": "048-833-7925",
         "budgetDinner": "￥4,000～￥4,999",
@@ -195157,8 +195160,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.38543820819785,
-          34.97291783872608
+          138.38543741819785,
+          34.97291651872608
         ]
       },
       "properties": {
@@ -195166,9 +195169,9 @@ const shopData = {
         "url": "https://tabelog.com/shizuoka/A2201/A220101/22000848/",
         "category": "アジア・エスニック（東日本）",
         "address": "静岡県静岡市葵区紺屋町6-13 松永ビル 2F",
-        "rating": "3.50",
-        "ratingCount": "140",
-        "savedCount": "4964",
+        "rating": "3.48",
+        "ratingCount": "143",
+        "savedCount": "5021",
         "cuisine": "タイ料理",
         "tel": "054-253-5778",
         "budgetDinnerRvw": "￥3,000～￥3,999",
@@ -195187,8 +195190,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.72916811595763,
-          34.705591178686866
+          137.7291665859576,
+          34.70559062868686
         ]
       },
       "properties": {
@@ -195196,9 +195199,9 @@ const shopData = {
         "url": "https://tabelog.com/shizuoka/A2202/A220201/22030476/",
         "category": "アジア・エスニック（東日本）",
         "address": "静岡県浜松市中央区肴町312-16",
-        "rating": "3.47",
-        "ratingCount": "180",
-        "savedCount": "5745",
+        "rating": "3.50",
+        "ratingCount": "188",
+        "savedCount": "5837",
         "cuisine": "スリランカ料理、カレー",
         "tel": "053-458-6688",
         "budgetDinner": "￥1,000～￥1,999",
@@ -195219,8 +195222,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.32767679733465,
-          35.87345917813573
+          138.32767614733464,
+          35.87346025813573
         ]
       },
       "properties": {
@@ -195229,8 +195232,8 @@ const shopData = {
         "category": "アジア・エスニック（東日本）",
         "address": "山梨県北杜市小淵沢町10150-1",
         "rating": "3.50",
-        "ratingCount": "88",
-        "savedCount": "3928",
+        "ratingCount": "91",
+        "savedCount": "4051",
         "cuisine": "タイ料理、ベトナム料理",
         "tel": "0551-45-8365",
         "budgetDinner": "￥2,000～￥2,999",
@@ -195373,8 +195376,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.3909349686233,
-          33.58525003625606
+          130.390934619785,
+          33.58524890706144
         ]
       },
       "properties": {
@@ -195382,9 +195385,9 @@ const shopData = {
         "url": "https://tabelog.com/fukuoka/A4001/A400104/40000407/",
         "category": "アジア・エスニック（西日本）",
         "address": "福岡県福岡市中央区赤坂1-1-5 鶴田けやきビル\u3000２Ｆ",
-        "rating": "3.65",
-        "ratingCount": "447",
-        "savedCount": "17745",
+        "rating": "3.55",
+        "ratingCount": "454",
+        "savedCount": "18101",
         "cuisine": "スリランカ料理、カレー",
         "tel": "092-737-7788",
         "budgetDinner": "￥2,000～￥2,999",
@@ -195420,8 +195423,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.39151629981342,
-          33.58809840705982
+          130.3915158798134,
+          33.58809861705981
         ]
       },
       "properties": {
@@ -195430,13 +195433,13 @@ const shopData = {
         "category": "アジア・エスニック（西日本）",
         "address": "福岡県福岡市中央区大名2-3-2 大名リバティー 2F",
         "rating": "3.52",
-        "ratingCount": "261",
-        "savedCount": "13881",
+        "ratingCount": "268",
+        "savedCount": "14115",
         "cuisine": "メキシコ料理、タコス",
         "tel": "092-720-5252",
         "budgetDinner": "￥5,000～￥5,999",
         "budgetLunch": "￥2,000～￥2,999",
-        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
         "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
@@ -195528,11 +195531,12 @@ const shopData = {
         "url": "https://tabelog.com/fukuoka/A4001/A400105/40061099/",
         "category": "アジア・エスニック（西日本）",
         "address": "福岡県福岡市中央区大手門3-1-21",
-        "rating": "3.73",
-        "ratingCount": "50",
-        "savedCount": "4271",
+        "rating": "3.72",
+        "ratingCount": "55",
+        "savedCount": "4488",
         "cuisine": "タイ料理",
         "tel": "不明の為情報お待ちしております",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
         "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
@@ -195843,8 +195847,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.366853475618,
-          34.48425403663282
+          133.36685228677976,
+          34.484253827438195
         ]
       },
       "properties": {
@@ -195852,14 +195856,13 @@ const shopData = {
         "url": "https://tabelog.com/hiroshima/A3403/A340308/34022717/",
         "category": "アジア・エスニック（西日本）",
         "address": "広島県福山市霞町1-5-6",
-        "rating": "3.54",
-        "ratingCount": "199",
-        "savedCount": "5702",
+        "rating": "3.55",
+        "ratingCount": "206",
+        "savedCount": "5784",
         "cuisine": "ベトナム料理",
         "tel": "084-999-7737",
         "budgetDinner": "￥3,000～￥3,999",
         "budgetLunch": "～￥999",
-        "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -195894,9 +195897,9 @@ const shopData = {
         "url": "https://tabelog.com/hyogo/A2801/A280101/28047078/",
         "category": "アジア・エスニック（西日本）",
         "address": "兵庫県神戸市中央区中山手通1-20-14 大塚ビル 1F",
-        "rating": "3.65",
-        "ratingCount": "304",
-        "savedCount": "10608",
+        "rating": "3.54",
+        "ratingCount": "318",
+        "savedCount": "10843",
         "cuisine": "パキスタン料理、カレー、インド料理",
         "tel": "078-891-3322",
         "budgetDinner": "￥2,000～￥2,999",
@@ -196046,7 +196049,7 @@ const shopData = {
         "address": "兵庫県神戸市東灘区岡本1-4-5 マナ岡本ビル\u3000２Ｆ",
         "rating": "3.49",
         "ratingCount": "239",
-        "savedCount": "13539",
+        "savedCount": "13451",
         "cuisine": "アジア・エスニック、カレー、中東料理",
         "budgetDinnerRvw": "￥4,000～￥4,999",
         "budgetLunchRvw": "￥2,000～￥2,999",
@@ -196255,8 +196258,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.39284758804925,
-          34.75052760791429
+          135.39284629804922,
+          34.75052762791429
         ]
       },
       "properties": {
@@ -196264,9 +196267,9 @@ const shopData = {
         "url": "https://tabelog.com/hyogo/A2803/A280304/28029394/",
         "category": "アジア・エスニック（西日本）",
         "address": "兵庫県尼崎市南武庫之荘1-14-20 ジミーズマーケット 1F",
-        "rating": "3.53",
-        "ratingCount": "155",
-        "savedCount": "8053",
+        "rating": "3.51",
+        "ratingCount": "159",
+        "savedCount": "8130",
         "cuisine": "タイ料理、カレー",
         "tel": "06-6436-0650",
         "budgetDinner": "￥2,000～￥2,999",
@@ -196344,8 +196347,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.6502034554481,
-          36.560286377165305
+          136.6502030954481,
+          36.5602859571653
         ]
       },
       "properties": {
@@ -196353,9 +196356,9 @@ const shopData = {
         "url": "https://tabelog.com/ishikawa/A1701/A170101/17004612/",
         "category": "アジア・エスニック（西日本）",
         "address": "石川県金沢市片町2-30-8",
-        "rating": "3.51",
-        "ratingCount": "172",
-        "savedCount": "8197",
+        "rating": "3.50",
+        "ratingCount": "173",
+        "savedCount": "8267",
         "cuisine": "インド料理、インドカレー、スリランカ料理",
         "tel": "076-234-3313",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -196659,9 +196662,9 @@ const shopData = {
         "url": "https://tabelog.com/kumamoto/A4304/A430404/43003119/",
         "category": "アジア・エスニック（西日本）",
         "address": "熊本県球磨郡錦町一武2111",
-        "rating": "3.59",
-        "ratingCount": "50",
-        "savedCount": "2103",
+        "rating": "3.58",
+        "ratingCount": "52",
+        "savedCount": "2137",
         "cuisine": "韓国料理",
         "tel": "0966-38-0071",
         "budgetLunchRvw": "￥1,000～￥1,999",
@@ -196829,8 +196832,8 @@ const shopData = {
         "category": "アジア・エスニック（西日本）",
         "address": "京都府京都市中京区金吹町478",
         "rating": "3.65",
-        "ratingCount": "187",
-        "savedCount": "13675",
+        "ratingCount": "189",
+        "savedCount": "13553",
         "cuisine": "韓国料理",
         "budgetDinner": "￥6,000～￥7,999",
         "budgetDinnerRvw": "￥8,000～￥9,999",
@@ -196983,9 +196986,9 @@ const shopData = {
         "url": "https://tabelog.com/miyazaki/A4501/A450101/45002566/",
         "category": "アジア・エスニック（西日本）",
         "address": "宮崎県宮崎市橘通東3-5-33",
-        "rating": "3.51",
-        "ratingCount": "53",
-        "savedCount": "3519",
+        "rating": "3.46",
+        "ratingCount": "54",
+        "savedCount": "3574",
         "cuisine": "韓国料理、居酒屋",
         "tel": "0985-26-0780",
         "budgetDinner": "￥4,000～￥4,999",
@@ -197099,8 +197102,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.6884571770258,
-          34.66972302805975
+          135.6884581270258,
+          34.66972269805975
         ]
       },
       "properties": {
@@ -197109,8 +197112,8 @@ const shopData = {
         "category": "アジア・エスニック（西日本）",
         "address": "奈良県生駒市鬼取町168",
         "rating": "3.52",
-        "ratingCount": "614",
-        "savedCount": "21595",
+        "ratingCount": "629",
+        "savedCount": "21894",
         "cuisine": "スリランカ料理、カフェ、カレー",
         "tel": "0743-77-7936",
         "budgetDinnerRvw": "￥2,000～￥2,999",
@@ -197179,8 +197182,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          131.49929873615096,
-          33.30238716759407
+          131.49930020615093,
+          33.30238753759407
         ]
       },
       "properties": {
@@ -197189,8 +197192,8 @@ const shopData = {
         "category": "アジア・エスニック（西日本）",
         "address": "大分県別府市石垣東8-1-26",
         "rating": "3.49",
-        "ratingCount": "909",
-        "savedCount": "22328",
+        "ratingCount": "931",
+        "savedCount": "22729",
         "cuisine": "冷麺、麺類、ラーメン",
         "tel": "0977-25-2735",
         "budgetDinner": "～￥999",
@@ -197304,8 +197307,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          131.50176013594017,
-          33.281690737608
+          131.50176074594015,
+          33.281689167608
         ]
       },
       "properties": {
@@ -197314,8 +197317,8 @@ const shopData = {
         "category": "アジア・エスニック（西日本）",
         "address": "大分県別府市駅前本町10-2",
         "rating": "3.57",
-        "ratingCount": "105",
-        "savedCount": "5532",
+        "ratingCount": "109",
+        "savedCount": "5639",
         "cuisine": "インド料理、インドカレー",
         "tel": "080-3950-3457",
         "budgetLunchRvw": "￥2,000～￥2,999",
@@ -197373,18 +197376,18 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          127.72655909783703,
-          26.392457539975844
+          127.72655813899883,
+          26.392458230781212
         ]
       },
       "properties": {
         "name": "アジアン食堂 シロクマ - 読谷村（タイ料理）",
         "url": "https://tabelog.com/okinawa/A4703/A470304/47010795/",
         "category": "アジア・エスニック（西日本）",
-        "address": "沖縄県中頭郡読谷村字都屋304",
-        "rating": "3.43",
-        "ratingCount": "126",
-        "savedCount": "6054",
+        "address": "沖縄県-中頭郡読谷村字都屋304",
+        "rating": "3.47",
+        "ratingCount": "129",
+        "savedCount": "6133",
         "cuisine": "タイ料理、ダイニングバー、カフェ",
         "tel": "098-923-1980",
         "budgetDinner": "￥2,000～￥2,999",
@@ -197415,8 +197418,8 @@ const shopData = {
         "category": "アジア・エスニック（西日本）",
         "address": "沖縄県宜野湾市伊佐3-1-3 1Ｆ",
         "rating": "3.72",
-        "ratingCount": "1636",
-        "savedCount": "53388",
+        "ratingCount": "1640",
+        "savedCount": "53169",
         "cuisine": "タコス",
         "budgetDinner": "～￥999",
         "budgetLunch": "～￥999",
@@ -197680,7 +197683,7 @@ const shopData = {
         "address": "大阪府大阪市北区中津3-10-4 西田ビル 1F",
         "rating": "3.56",
         "ratingCount": "160",
-        "savedCount": "14453",
+        "savedCount": "14370",
         "cuisine": "アジア・エスニック、食堂",
         "budgetDinner": "￥3,000～￥3,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -197784,8 +197787,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.49729407628365,
-          34.69800243717555
+          135.49729383744545,
+          34.698002387980914
         ]
       },
       "properties": {
@@ -197793,9 +197796,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270101/27122020/",
         "category": "アジア・エスニック（西日本）",
         "address": "大阪府大阪市北区曽根崎新地1-5-21 松木興産ビル 8F",
-        "rating": "3.41",
-        "ratingCount": "161",
-        "savedCount": "12303",
+        "rating": "3.45",
+        "ratingCount": "166",
+        "savedCount": "13186",
         "cuisine": "韓国料理、鳥料理",
         "tel": "06-6467-8388",
         "budgetDinner": "￥15,000～￥19,999",
@@ -197833,13 +197836,15 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270102/27002839/",
         "category": "アジア・エスニック（西日本）",
         "address": "大阪府大阪市西区江戸堀1-15-9 フラッグス肥後橋 1F",
-        "rating": "3.48",
-        "ratingCount": "351",
-        "savedCount": "17042",
+        "rating": "3.49",
+        "ratingCount": "356",
+        "savedCount": "17225",
         "cuisine": "スリランカ料理、カレー、インドカレー",
         "tel": "不明の為情報お待ちしております",
+        "budgetDinner": "￥3,000～￥3,999",
+        "budgetLunch": "￥1,000～￥1,999",
         "budgetDinnerRvw": "～￥999",
-        "budgetLunchRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "～￥999",
         "awards": [
           {
             "y": 2024,
@@ -197874,8 +197879,8 @@ const shopData = {
         "category": "アジア・エスニック（西日本）",
         "address": "大阪府大阪市中央区平野町1-6-10 サンケン北浜ビル B1F",
         "rating": "3.55",
-        "ratingCount": "567",
-        "savedCount": "24396",
+        "ratingCount": "578",
+        "savedCount": "24593",
         "cuisine": "南アジア料理、インドカレー、ネパール料理",
         "tel": "06-6231-5087",
         "budgetDinner": "￥3,000～￥3,999",
@@ -197972,9 +197977,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270102/27090304/",
         "category": "アジア・エスニック（西日本）",
         "address": "大阪府大阪市中央区内平野町3-3-2 恵美須ビルB1F",
-        "rating": "3.51",
-        "ratingCount": "511",
-        "savedCount": "20940",
+        "rating": "3.49",
+        "ratingCount": "518",
+        "savedCount": "21086",
         "cuisine": "スリランカ料理、カレー、アジア・エスニック",
         "tel": "06-6948-8767",
         "budgetDinner": "￥1,000～￥1,999",
@@ -198227,8 +198232,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.48525827614233,
-          34.68317453718113
+          135.48525711730412,
+          34.68317413798649
         ]
       },
       "properties": {
@@ -198236,9 +198241,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270105/27085952/",
         "category": "アジア・エスニック（西日本）",
         "address": "大阪府大阪市西区江之子島1-6-8",
-        "rating": "3.53",
-        "ratingCount": "554",
-        "savedCount": "26397",
+        "rating": "3.52",
+        "ratingCount": "557",
+        "savedCount": "26524",
         "cuisine": "スリランカ料理、カレー、居酒屋",
         "tel": "06-6443-4636",
         "budgetDinner": "￥2,000～￥2,999",
@@ -198422,9 +198427,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270106/27093085/",
         "category": "アジア・エスニック（西日本）",
         "address": "大阪府大阪市西区立売堀1-8-6 星和シティビル本町西 101",
-        "rating": "3.51",
-        "ratingCount": "435",
-        "savedCount": "19582",
+        "rating": "3.50",
+        "ratingCount": "440",
+        "savedCount": "19883",
         "cuisine": "アジア・エスニック、カレー、インドカレー",
         "tel": "06-6575-9730",
         "budgetLunch": "￥1,000～￥1,999",
@@ -198506,8 +198511,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.486255876244,
-          34.69330763717501
+          135.48625667740578,
+          34.693307027980374
         ]
       },
       "properties": {
@@ -198515,9 +198520,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270108/27015360/",
         "category": "アジア・エスニック（西日本）",
         "address": "大阪府大阪市福島区福島2-4-17",
-        "rating": "3.48",
-        "ratingCount": "324",
-        "savedCount": "16559",
+        "rating": "3.49",
+        "ratingCount": "323",
+        "savedCount": "16669",
         "cuisine": "アジア・エスニック、タイ料理、インド料理",
         "tel": "06-6453-0020",
         "budgetDinner": "￥5,000～￥5,999",
@@ -198641,8 +198646,8 @@ const shopData = {
         "category": "アジア・エスニック（西日本）",
         "address": "大阪府大阪市北区大淀中3-1-15",
         "rating": "3.76",
-        "ratingCount": "90",
-        "savedCount": "6222",
+        "ratingCount": "91",
+        "savedCount": "6154",
         "cuisine": "韓国料理",
         "budgetDinner": "￥15,000～￥19,999",
         "budgetDinnerRvw": "￥15,000～￥19,999",
@@ -198707,8 +198712,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.50168947604655,
-          34.674831937191655
+          135.50168992720833,
+          34.67483160799703
         ]
       },
       "properties": {
@@ -198716,9 +198721,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270201/27013676/",
         "category": "アジア・エスニック（西日本）",
         "address": "大阪府大阪市中央区心斎橋筋1-1-10 キュープラザ（Q PLAZA）心斎橋 8F",
-        "rating": "3.53",
-        "ratingCount": "685",
-        "savedCount": "35297",
+        "rating": "3.52",
+        "ratingCount": "694",
+        "savedCount": "35687",
         "cuisine": "シュラスコ、ビュッフェ、焼肉",
         "tel": "050-1807-6970",
         "budgetDinner": "￥8,000～￥9,999",
@@ -198793,9 +198798,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270201/27045608/",
         "category": "アジア・エスニック（西日本）",
         "address": "大阪府大阪市中央区心斎橋筋1-10-12 トレスビル B1F",
-        "rating": "3.53",
-        "ratingCount": "745",
-        "savedCount": "29768",
+        "rating": "3.51",
+        "ratingCount": "764",
+        "savedCount": "30443",
         "cuisine": "パキスタン料理、カレー、中東料理",
         "tel": "06-4708-5745",
         "budgetDinner": "￥1,000～￥1,999",
@@ -198836,8 +198841,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.49680050719144,
-          34.67281827799675
+          135.4968007471914,
+          34.67281744799675
         ]
       },
       "properties": {
@@ -198846,8 +198851,8 @@ const shopData = {
         "category": "アジア・エスニック（西日本）",
         "address": "大阪府大阪市西区北堀江1-2-17",
         "rating": "3.52",
-        "ratingCount": "888",
-        "savedCount": "29589",
+        "ratingCount": "916",
+        "savedCount": "29814",
         "cuisine": "アジア・エスニック、カレー、ダイニングバー",
         "tel": "06-6534-2600",
         "budgetDinner": "￥2,000～￥2,999",
@@ -198990,8 +198995,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.5029943270992,
-          34.664119488004246
+          135.5029949370992,
+          34.66411933800425
         ]
       },
       "properties": {
@@ -199000,13 +199005,13 @@ const shopData = {
         "category": "アジア・エスニック（西日本）",
         "address": "大阪府大阪市中央区難波千日前13-6 千日前セントラル 第4ビル 2F",
         "rating": "3.54",
-        "ratingCount": "459",
-        "savedCount": "18673",
+        "ratingCount": "479",
+        "savedCount": "18988",
         "cuisine": "東南アジア料理",
         "tel": "06-6631-7979",
         "budgetDinner": "￥3,000～￥3,999",
         "budgetLunch": "～￥999",
-        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetDinnerRvw": "￥3,000～￥3,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -199069,8 +199074,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.48944148718772,
-          34.671939277994966
+          135.48944184718772,
+          34.67194023799497
         ]
       },
       "properties": {
@@ -199079,8 +199084,8 @@ const shopData = {
         "category": "アジア・エスニック（西日本）",
         "address": "大阪府大阪市西区南堀江3-2-12",
         "rating": "3.54",
-        "ratingCount": "285",
-        "savedCount": "12854",
+        "ratingCount": "292",
+        "savedCount": "12981",
         "cuisine": "インド料理、インドカレー、居酒屋",
         "tel": "06-6532-1103",
         "budgetDinner": "￥2,000～￥2,999",
@@ -199212,8 +199217,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.47705183053574,
-          34.67579893660649
+          135.4770342972354,
+          34.67580430798856
         ]
       },
       "properties": {
@@ -199221,9 +199226,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270401/27084842/",
         "category": "アジア・エスニック（西日本）",
         "address": "大阪府大阪市西区九条1-3-12",
-        "rating": "3.53",
-        "ratingCount": "270",
-        "savedCount": "11660",
+        "rating": "3.52",
+        "ratingCount": "277",
+        "savedCount": "11846",
         "cuisine": "アジア・エスニック、ネパール料理",
         "tel": "06-7493-2317",
         "budgetDinner": "￥2,000～￥2,999",
@@ -199311,8 +199316,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.51150647759601,
-          34.82891213709692
+          135.51150219875774,
+          34.8289037579023
         ]
       },
       "properties": {
@@ -199320,9 +199325,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2706/A270603/27121384/",
         "category": "アジア・エスニック（西日本）",
         "address": "大阪府箕面市小野原西6-5-38",
-        "rating": "3.55",
-        "ratingCount": "557",
-        "savedCount": "19576",
+        "rating": "3.56",
+        "ratingCount": "581",
+        "savedCount": "20352",
         "cuisine": "韓国料理、しゃぶしゃぶ",
         "tel": "072-726-0106",
         "budgetDinner": "￥4,000～￥4,999",
@@ -199351,9 +199356,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2706/A270604/27093976/",
         "category": "アジア・エスニック（西日本）",
         "address": "大阪府茨木市西駅前町3-21 ステーション・プラザ 1F",
-        "rating": "3.55",
-        "ratingCount": "225",
-        "savedCount": "7206",
+        "rating": "3.54",
+        "ratingCount": "230",
+        "savedCount": "7374",
         "cuisine": "タイ料理",
         "tel": "072-604-1241",
         "budgetDinnerRvw": "￥3,000～￥3,999",
@@ -199432,8 +199437,8 @@ const shopData = {
         "category": "アジア・エスニック（西日本）",
         "address": "富山県射水市沖塚原752-1",
         "rating": "3.65",
-        "ratingCount": "315",
-        "savedCount": "9141",
+        "ratingCount": "314",
+        "savedCount": "9110",
         "cuisine": "パキスタン料理、カレー、インド料理",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -200060,8 +200065,8 @@ const shopData = {
         "category": "うなぎ",
         "address": "千葉県成田市仲町359",
         "rating": "3.70",
-        "ratingCount": "2082",
-        "savedCount": "46045",
+        "ratingCount": "2089",
+        "savedCount": "45898",
         "cuisine": "うなぎ",
         "budgetLunch": "￥4,000～￥4,999",
         "budgetDinnerRvw": "￥4,000～￥4,999",
@@ -200095,8 +200100,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.4974194260047,
-          35.892367508814715
+          140.4974194060047,
+          35.89236700881472
         ]
       },
       "properties": {
@@ -200104,12 +200109,12 @@ const shopData = {
         "url": "https://tabelog.com/chiba/A1204/A120404/12000489/",
         "category": "うなぎ",
         "address": "千葉県香取市佐原イ457",
-        "rating": "3.65",
-        "ratingCount": "765",
-        "savedCount": "23174",
+        "rating": "3.69",
+        "ratingCount": "795",
+        "savedCount": "23618",
         "cuisine": "うなぎ、日本料理",
         "tel": "0478-52-4375",
-        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥4,000～￥4,999",
         "budgetLunchRvw": "￥4,000～￥4,999",
         "awards": [
           {
@@ -200427,8 +200432,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.57168828305475,
-          35.32788782792302
+          136.57168697305477,
+          35.32788760792302
         ]
       },
       "properties": {
@@ -200436,9 +200441,9 @@ const shopData = {
         "url": "https://tabelog.com/gifu/A2101/A210103/21001137/",
         "category": "うなぎ",
         "address": "岐阜県養老郡養老町飯田1350-9",
-        "rating": "3.58",
-        "ratingCount": "190",
-        "savedCount": "7721",
+        "rating": "3.56",
+        "ratingCount": "199",
+        "savedCount": "7916",
         "cuisine": "うなぎ",
         "tel": "0584-32-3417",
         "budgetDinner": "￥3,000～￥3,999",
@@ -200603,8 +200608,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.07148089085567,
-          36.38867963724001
+          139.07148136201747,
+          36.38867987804539
         ]
       },
       "properties": {
@@ -200612,9 +200617,9 @@ const shopData = {
         "url": "https://tabelog.com/gunma/A1001/A100101/10006048/",
         "category": "うなぎ",
         "address": "群馬県前橋市本町2-11-6",
-        "rating": "3.63",
-        "ratingCount": "297",
-        "savedCount": "11072",
+        "rating": "3.65",
+        "ratingCount": "312",
+        "savedCount": "11362",
         "cuisine": "うなぎ、ふぐ",
         "tel": "027-221-2977",
         "budgetDinner": "￥3,000～￥3,999",
@@ -200738,9 +200743,9 @@ const shopData = {
         "url": "https://tabelog.com/kagoshima/A4601/A460101/46000209/",
         "category": "うなぎ",
         "address": "鹿児島県鹿児島市東千石町14-10",
-        "rating": "3.65",
-        "ratingCount": "1099",
-        "savedCount": "26182",
+        "rating": "3.57",
+        "ratingCount": "1136",
+        "savedCount": "26895",
         "cuisine": "うなぎ",
         "tel": "099-222-1525",
         "budgetDinner": "￥3,000～￥3,999",
@@ -200811,8 +200816,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.31502411093285,
-          35.30819669880919
+          139.31502418093285,
+          35.30819666880918
         ]
       },
       "properties": {
@@ -200820,9 +200825,9 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1404/A140408/14000793/",
         "category": "うなぎ",
         "address": "神奈川県中郡大磯町大磯1085",
-        "rating": "3.66",
-        "ratingCount": "138",
-        "savedCount": "14711",
+        "rating": "3.60",
+        "ratingCount": "141",
+        "savedCount": "14896",
         "cuisine": "うなぎ",
         "tel": "0463-61-0423",
         "budgetDinner": "￥15,000～￥19,999",
@@ -200964,8 +200969,8 @@ const shopData = {
         "category": "うなぎ",
         "address": "熊本県人吉市紺屋町129",
         "rating": "3.75",
-        "ratingCount": "629",
-        "savedCount": "19793",
+        "ratingCount": "628",
+        "savedCount": "19790",
         "cuisine": "うなぎ",
         "budgetDinner": "￥3,000～￥3,999",
         "budgetLunch": "￥3,000～￥3,999",
@@ -201046,8 +201051,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.77052137903522,
-          34.9893677370775
+          135.77052101019697,
+          34.98936696788287
         ]
       },
       "properties": {
@@ -201056,8 +201061,8 @@ const shopData = {
         "category": "うなぎ",
         "address": "京都府京都市東山区西之門町555",
         "rating": "3.54",
-        "ratingCount": "575",
-        "savedCount": "34443",
+        "ratingCount": "587",
+        "savedCount": "34948",
         "cuisine": "うなぎ、鍋、弁当",
         "tel": "075-561-1290",
         "budgetDinner": "￥6,000～￥7,999",
@@ -201516,8 +201521,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.9313524681667,
-          34.660730897505886
+          133.93135137816668,
+          34.66073133750588
         ]
       },
       "properties": {
@@ -201526,8 +201531,8 @@ const shopData = {
         "category": "うなぎ",
         "address": "岡山県岡山市北区内山下1-8-18",
         "rating": "3.69",
-        "ratingCount": "190",
-        "savedCount": "12116",
+        "ratingCount": "192",
+        "savedCount": "12328",
         "cuisine": "うなぎ",
         "tel": "086-234-1139",
         "budgetDinnerRvw": "￥10,000～￥14,999",
@@ -201608,8 +201613,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.5071592073122,
-          34.685496947992
+          135.50715950731222,
+          34.68549751799199
         ]
       },
       "properties": {
@@ -201618,8 +201623,8 @@ const shopData = {
         "category": "うなぎ",
         "address": "大阪府大阪市中央区備後町1-6-6",
         "rating": "3.60",
-        "ratingCount": "504",
-        "savedCount": "34899",
+        "ratingCount": "512",
+        "savedCount": "35127",
         "cuisine": "うなぎ、日本料理",
         "tel": "06-6226-0220",
         "budgetDinnerRvw": "￥10,000～￥14,999",
@@ -201713,14 +201718,14 @@ const shopData = {
         "category": "うなぎ",
         "address": "大阪府大阪市旭区高殿4-8-10",
         "rating": "3.64",
-        "ratingCount": "1181",
-        "savedCount": "41531",
+        "ratingCount": "1226",
+        "savedCount": "42316",
         "cuisine": "うなぎ、海鮮",
         "tel": "06-6953-3707",
         "budgetDinner": "￥4,000～￥4,999",
         "budgetLunch": "￥3,000～￥3,999",
-        "budgetDinnerRvw": "￥5,000～￥5,999",
-        "budgetLunchRvw": "￥3,000～￥3,999",
+        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "budgetLunchRvw": "￥5,000～￥5,999",
         "awards": [
           {
             "y": 2024,
@@ -201786,15 +201791,14 @@ const shopData = {
         "url": "https://tabelog.com/saitama/A1101/A110102/11000153/",
         "category": "うなぎ",
         "address": "埼玉県さいたま市浦和区岸町7-1-3",
-        "rating": "3.60",
-        "ratingCount": "909",
-        "savedCount": "25768",
+        "rating": "3.65",
+        "ratingCount": "949",
+        "savedCount": "26391",
         "cuisine": "うなぎ、海鮮、天ぷら",
         "tel": "048-822-1101",
         "budgetDinner": "￥5,000～￥5,999",
         "budgetLunch": "￥1,000～￥1,999",
         "budgetDinnerRvw": "￥5,000～￥5,999",
-        "budgetLunchRvw": "￥6,000～￥7,999",
         "awards": [
           {
             "y": 2024,
@@ -201935,8 +201939,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.4832821970016,
-          35.92068131847376
+          139.4832808370016,
+          35.92068138847377
         ]
       },
       "properties": {
@@ -201944,9 +201948,9 @@ const shopData = {
         "url": "https://tabelog.com/saitama/A1103/A110303/11000040/",
         "category": "うなぎ",
         "address": "埼玉県川越市仲町3-22",
-        "rating": "3.64",
-        "ratingCount": "1094",
-        "savedCount": "38033",
+        "rating": "3.65",
+        "ratingCount": "1130",
+        "savedCount": "38959",
         "cuisine": "うなぎ、丼",
         "tel": "049-222-0034",
         "budgetDinner": "￥5,000～￥5,999",
@@ -202065,9 +202069,9 @@ const shopData = {
         "url": "https://tabelog.com/shiga/A2501/A250101/25000697/",
         "category": "うなぎ",
         "address": "滋賀県大津市玉野浦7-4",
-        "rating": "3.71",
-        "ratingCount": "521",
-        "savedCount": "21367",
+        "rating": "3.73",
+        "ratingCount": "542",
+        "savedCount": "21771",
         "cuisine": "うなぎ、海鮮、郷土料理",
         "tel": "077-545-5224",
         "budgetDinner": "￥3,000～￥3,999",
@@ -202571,12 +202575,12 @@ const shopData = {
         "address": "栃木県宇都宮市大通り5-1-19",
         "rating": "3.67",
         "ratingCount": "570",
-        "savedCount": "23520",
+        "savedCount": "23394",
         "cuisine": "うなぎ、日本料理、居酒屋",
         "budgetDinner": "￥3,000～￥3,999",
         "budgetLunch": "￥3,000～￥3,999",
         "budgetDinnerRvw": "￥5,000～￥5,999",
-        "budgetLunchRvw": "￥6,000～￥7,999",
+        "budgetLunchRvw": "￥5,000～￥5,999",
         "awards": [
           {
             "y": 2024,
@@ -203053,8 +203057,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.74004793434335,
-          35.67533245871136
+          139.74004747434336,
+          35.67533272871136
         ]
       },
       "properties": {
@@ -203063,11 +203067,11 @@ const shopData = {
         "category": "うなぎ",
         "address": "東京都千代田区永田町2-10-6",
         "rating": "3.63",
-        "ratingCount": "247",
-        "savedCount": "30731",
+        "ratingCount": "257",
+        "savedCount": "31175",
         "cuisine": "うなぎ",
         "tel": "03-3581-0585",
-        "budgetDinnerRvw": "￥20,000～￥29,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
         "budgetLunchRvw": "￥10,000～￥14,999",
         "awards": [
           {
@@ -203718,7 +203722,7 @@ const shopData = {
         "address": "東京都杉並区和田3-62-3 １Ｆ",
         "rating": "3.56",
         "ratingCount": "110",
-        "savedCount": "21406",
+        "savedCount": "21505",
         "cuisine": "うなぎ",
         "tel": "080-8734-1091",
         "budgetDinner": "￥10,000～￥14,999",
@@ -207741,8 +207745,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.76220198310307,
-          35.669098237917005
+          139.76220267426487,
+          35.669097628722376
         ]
       },
       "properties": {
@@ -207750,13 +207754,13 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1301/A130101/13162692/",
         "category": "中国料理（東京）",
         "address": "東京都中央区銀座7-8-15 第2新橋会館 8F",
-        "rating": "3.54",
-        "ratingCount": "1077",
-        "savedCount": "65949",
+        "rating": "3.53",
+        "ratingCount": "1107",
+        "savedCount": "67036",
         "cuisine": "中華料理、四川料理",
         "tel": "03-6280-6464",
         "budgetDinner": "￥6,000～￥7,999",
-        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
         "budgetLunchRvw": "～￥999",
         "awards": [
           {
@@ -208161,8 +208165,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.75948738423733,
-          35.66618663872336
+          139.75948661423732,
+          35.66618618872337
         ]
       },
       "properties": {
@@ -208170,14 +208174,14 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1301/A130103/13002609/",
         "category": "中国料理（東京）",
         "address": "東京都港区新橋2-20-15 新橋駅前ビル1号館 2F",
-        "rating": "3.51",
-        "ratingCount": "1716",
-        "savedCount": "68544",
+        "rating": "3.50",
+        "ratingCount": "1761",
+        "savedCount": "70409",
         "cuisine": "台湾料理",
         "tel": "03-3571-6078",
         "budgetDinner": "￥4,000～￥4,999",
         "budgetLunch": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -208203,14 +208207,14 @@ const shopData = {
         "category": "中国料理（東京）",
         "address": "東京都千代田区丸の内2-4-1 丸の内ビルディング 5F",
         "rating": "3.58",
-        "ratingCount": "656",
-        "savedCount": "25487",
+        "ratingCount": "676",
+        "savedCount": "26189",
         "cuisine": "中華料理",
         "tel": "03-6213-2946",
         "budgetDinner": "￥8,000～￥9,999",
         "budgetLunch": "￥2,000～￥2,999",
         "budgetDinnerRvw": "￥20,000～￥29,999",
-        "budgetLunchRvw": "￥2,000～￥2,999",
+        "budgetLunchRvw": "￥5,000～￥5,999",
         "awards": [
           {
             "y": 2024,
@@ -208925,8 +208929,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.70648258315336,
-          35.67021093789856
+          139.70648236431512,
+          35.670210458703934
         ]
       },
       "properties": {
@@ -208934,9 +208938,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1306/A130601/13001219/",
         "category": "中国料理（東京）",
         "address": "東京都渋谷区神宮前1-8-5 メナー神宮前 B1Ｆ",
-        "rating": "3.66",
-        "ratingCount": "1184",
-        "savedCount": "71842",
+        "rating": "3.65",
+        "ratingCount": "1223",
+        "savedCount": "72685",
         "cuisine": "四川料理、担々麺、中華料理",
         "tel": "03-3402-9419",
         "budgetDinner": "￥8,000～￥9,999",
@@ -208972,8 +208976,8 @@ const shopData = {
         "category": "中国料理（東京）",
         "address": "東京都港区南青山5-7-17 小原流会館 B1F",
         "rating": "3.59",
-        "ratingCount": "1405",
-        "savedCount": "106812",
+        "ratingCount": "1433",
+        "savedCount": "108614",
         "cuisine": "中華料理、創作料理",
         "tel": "03-3498-4466",
         "budgetDinner": "￥6,000～￥7,999",
@@ -209168,8 +209172,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.73255868303906,
-          35.66070193791289
+          139.7325585642008,
+          35.66070088871827
         ]
       },
       "properties": {
@@ -209177,9 +209181,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1307/A130701/13001852/",
         "category": "中国料理（東京）",
         "address": "東京都港区六本木6-8-15 第2五月ビル 1F",
-        "rating": "3.48",
-        "ratingCount": "771",
-        "savedCount": "47012",
+        "rating": "3.47",
+        "ratingCount": "786",
+        "savedCount": "47347",
         "cuisine": "中華料理、火鍋",
         "tel": "03-3470-2218",
         "budgetDinner": "￥10,000～￥14,999",
@@ -209252,8 +209256,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.7283296830358,
-          35.66008633791195
+          139.72833013419753,
+          35.66008579871731
         ]
       },
       "properties": {
@@ -209262,13 +209266,13 @@ const shopData = {
         "category": "中国料理（東京）",
         "address": "東京都港区六本木6-10-3 六本木ヒルズ\u3000グランド\u3000ハイアット\u3000東京\u3000６Ｆ",
         "rating": "3.52",
-        "ratingCount": "741",
-        "savedCount": "32977",
+        "ratingCount": "780",
+        "savedCount": "33819",
         "cuisine": "中華料理、飲茶・点心、火鍋",
         "tel": "03-4333-8785",
         "budgetDinner": "￥10,000～￥14,999",
         "budgetLunch": "￥6,000～￥7,999",
-        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥20,000～￥29,999",
         "budgetLunchRvw": "￥6,000～￥7,999",
         "awards": [
           {
@@ -209299,8 +209303,8 @@ const shopData = {
         "category": "中国料理（東京）",
         "address": "東京都港区六本木4-6-4 第５一越ビル 2F",
         "rating": "3.72",
-        "ratingCount": "499",
-        "savedCount": "55844",
+        "ratingCount": "498",
+        "savedCount": "55526",
         "cuisine": "中華料理、餃子",
         "budgetDinner": "￥6,000～￥7,999",
         "budgetDinnerRvw": "￥5,000～￥5,999",
@@ -209427,13 +209431,13 @@ const shopData = {
         "category": "中国料理（東京）",
         "address": "東京都港区六本木6-10-1 六本木ヒルズ森タワーウェストウォーク 5F",
         "rating": "3.65",
-        "ratingCount": "486",
-        "savedCount": "18823",
+        "ratingCount": "508",
+        "savedCount": "19352",
         "cuisine": "四川料理、担々麺、中華料理",
         "tel": "03-6804-2848",
         "budgetDinner": "￥5,000～￥5,999",
         "budgetLunch": "￥2,000～￥2,999",
-        "budgetLunchRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥3,000～￥3,999",
         "awards": [
           {
             "y": 2024,
@@ -209614,8 +209618,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.73464609415203,
-          35.65601771872191
+          139.73464695415203,
+          35.65601915872191
         ]
       },
       "properties": {
@@ -209623,15 +209627,15 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1307/A130702/13001659/",
         "category": "中国料理（東京）",
         "address": "東京都港区麻布十番2-4-5",
-        "rating": "3.67",
-        "ratingCount": "872",
-        "savedCount": "56637",
+        "rating": "3.65",
+        "ratingCount": "884",
+        "savedCount": "57496",
         "cuisine": "中華料理、四川料理",
         "tel": "03-3451-0514",
         "budgetDinner": "￥6,000～￥7,999",
         "budgetLunch": "￥2,000～￥2,999",
         "budgetDinnerRvw": "￥10,000～￥14,999",
-        "budgetLunchRvw": "￥6,000～￥7,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
             "y": 2024,
@@ -210012,8 +210016,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.7366840831965,
-          35.676579137904135
+          139.73668490435833,
+          35.6765798087095
         ]
       },
       "properties": {
@@ -210022,13 +210026,13 @@ const shopData = {
         "category": "中国料理（東京）",
         "address": "東京都港区赤坂3-9-8 篠原ビル\u3000３Ｆ",
         "rating": "3.56",
-        "ratingCount": "1193",
-        "savedCount": "53701",
+        "ratingCount": "1223",
+        "savedCount": "54509",
         "cuisine": "中華料理、四川料理",
         "tel": "03-3582-3536",
         "budgetDinner": "￥6,000～￥7,999",
         "budgetLunch": "～￥999",
-        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -210269,8 +210273,8 @@ const shopData = {
         "category": "中国料理（東京）",
         "address": "東京都新宿区舟町15 野方ビル\u3000１Ｆ",
         "rating": "3.67",
-        "ratingCount": "150",
-        "savedCount": "30738",
+        "ratingCount": "151",
+        "savedCount": "30640",
         "cuisine": "中華料理",
         "budgetDinnerRvw": "￥8,000～￥9,999",
         "awards": [
@@ -210425,8 +210429,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.73356692463972,
-          35.70422381869095
+          139.73356721463972,
+          35.70422239869095
         ]
       },
       "properties": {
@@ -210434,9 +210438,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1309/A130905/13006446/",
         "category": "中国料理（東京）",
         "address": "東京都新宿区矢来町123 第一矢来ビル Ｂ１",
-        "rating": "3.65",
-        "ratingCount": "3845",
-        "savedCount": "175665",
+        "rating": "3.58",
+        "ratingCount": "4016",
+        "savedCount": "182536",
         "cuisine": "中華料理、ラーメン",
         "tel": "03-3267-6917",
         "budgetDinner": "～￥999",
@@ -210462,8 +210466,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.73635520460726,
-          35.70120458869375
+          139.73635562460728,
+          35.70120546869376
         ]
       },
       "properties": {
@@ -210471,14 +210475,14 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1309/A130905/13059767/",
         "category": "中国料理（東京）",
         "address": "東京都新宿区横寺町37-39 中島第一ビル\u3000１Ｆ",
-        "rating": "3.56",
-        "ratingCount": "331",
-        "savedCount": "34376",
+        "rating": "3.57",
+        "ratingCount": "340",
+        "savedCount": "34743",
         "cuisine": "四川料理、火鍋",
         "tel": "03-3260-2658",
         "budgetDinner": "￥6,000～￥7,999",
         "budgetLunch": "￥3,000～￥3,999",
-        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -210509,8 +210513,8 @@ const shopData = {
         "category": "中国料理（東京）",
         "address": "東京都新宿区神楽坂1-11-8",
         "rating": "3.66",
-        "ratingCount": "941",
-        "savedCount": "48996",
+        "ratingCount": "968",
+        "savedCount": "49592",
         "cuisine": "中華料理",
         "tel": "03-3235-1260",
         "budgetDinner": "￥6,000～￥7,999",
@@ -211115,9 +211119,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1316/A131602/13000014/",
         "category": "中国料理（東京）",
         "address": "東京都港区白金台1-1-50 シェラトン都ホテル東京 1F",
-        "rating": "3.57",
-        "ratingCount": "615",
-        "savedCount": "22709",
+        "rating": "3.56",
+        "ratingCount": "632",
+        "savedCount": "22941",
         "cuisine": "四川料理、中華料理、担々麺",
         "tel": "0120-95-6662",
         "budgetDinner": "￥10,000～￥14,999",
@@ -211287,14 +211291,14 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1317/A131702/13236333/",
         "category": "中国料理（東京）",
         "address": "東京都目黒区鷹番2-20-4 学大十字街ビル 2F",
-        "rating": "3.65",
-        "ratingCount": "580",
-        "savedCount": "58137",
+        "rating": "3.59",
+        "ratingCount": "608",
+        "savedCount": "59158",
         "cuisine": "四川料理、アジア・エスニック、飲茶・点心",
         "tel": "03-6712-2368",
         "budgetDinner": "￥5,000～￥5,999",
         "budgetLunch": "￥2,000～￥2,999",
-        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
         "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
@@ -211355,8 +211359,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.67645998324153,
-          35.67685643788478
+          139.67645944440332,
+          35.67685710869014
         ]
       },
       "properties": {
@@ -211364,14 +211368,14 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1318/A131807/13004350/",
         "category": "中国料理（東京）",
         "address": "東京都-渋谷区幡ケ谷1-3-1 幡ヶ谷ゴールデンセンター\u3000Ｂ１Ｆ",
-        "rating": "3.56",
-        "ratingCount": "706",
-        "savedCount": "48181",
+        "rating": "3.55",
+        "ratingCount": "716",
+        "savedCount": "48534",
         "cuisine": "中華料理、飲茶・点心",
         "tel": "03-5388-8178",
-        "budgetDinner": "￥8,000～￥9,999",
+        "budgetDinner": "￥10,000～￥14,999",
         "budgetLunch": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -211489,8 +211493,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.69936509496708,
-          35.73426098866098
+          139.69936618496706,
+          35.73425991866098
         ]
       },
       "properties": {
@@ -211499,8 +211503,8 @@ const shopData = {
         "category": "中国料理（東京）",
         "address": "東京都豊島区要町1-14-9",
         "rating": "3.59",
-        "ratingCount": "363",
-        "savedCount": "15901",
+        "ratingCount": "365",
+        "savedCount": "16140",
         "cuisine": "中華料理",
         "tel": "03-5966-6661",
         "budgetDinner": "￥5,000～￥5,999",
@@ -211661,9 +211665,9 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230101/23000777/",
         "category": "中国料理（東日本）",
         "address": "愛知県名古屋市中村区名駅1-1-4 タワーズプラザ 12F",
-        "rating": "3.43",
-        "ratingCount": "853",
-        "savedCount": "18071",
+        "rating": "3.47",
+        "ratingCount": "885",
+        "savedCount": "18395",
         "cuisine": "飲茶・点心、台湾料理、担々麺",
         "tel": "052-533-6030",
         "budgetDinner": "￥3,000～￥3,999",
@@ -211684,8 +211688,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.88621958015452,
-          35.177604937313255
+          136.8862185213163,
+          35.177604608118635
         ]
       },
       "properties": {
@@ -211693,9 +211697,9 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230101/23010210/",
         "category": "中国料理（東日本）",
         "address": "愛知県名古屋市西区那古野2-11-15",
-        "rating": "3.45",
-        "ratingCount": "195",
-        "savedCount": "11961",
+        "rating": "3.48",
+        "ratingCount": "194",
+        "savedCount": "11999",
         "cuisine": "中華料理、創作料理、イノベーティブ",
         "tel": "052-586-8556",
         "budgetDinner": "￥15,000～￥19,999",
@@ -211726,8 +211730,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.88792788005884,
-          35.16825403731975
+          136.88796513122105,
+          35.168296358125104
         ]
       },
       "properties": {
@@ -211736,13 +211740,13 @@ const shopData = {
         "category": "中国料理（東日本）",
         "address": "愛知県名古屋市中村区名駅4-24-8 いちご名古屋ビル B1F",
         "rating": "3.52",
-        "ratingCount": "295",
-        "savedCount": "15469",
+        "ratingCount": "310",
+        "savedCount": "15746",
         "cuisine": "四川料理、中華料理、担々麺",
         "tel": "052-571-2278",
         "budgetDinner": "￥8,000～￥9,999",
         "budgetLunch": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -211921,8 +211925,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.90101598002323,
-          35.165632837325575
+          136.9010133011851,
+          35.16564403813094
         ]
       },
       "properties": {
@@ -211930,9 +211934,9 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230102/23033553/",
         "category": "中国料理（東日本）",
         "address": "愛知県名古屋市中区栄2-12-22 ウィンコート白川\u3000１Ｆ",
-        "rating": "3.65",
-        "ratingCount": "439",
-        "savedCount": "20673",
+        "rating": "3.60",
+        "ratingCount": "454",
+        "savedCount": "21083",
         "cuisine": "中華料理、居酒屋、飲茶・点心",
         "tel": "052-890-7436",
         "budgetDinner": "￥10,000～￥14,999",
@@ -212165,13 +212169,13 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230103/23077649/",
         "category": "中国料理（東日本）",
         "address": "愛知県名古屋市中区錦3-24-17 BINO栄 5F",
-        "rating": "3.65",
-        "ratingCount": "166",
-        "savedCount": "6661",
+        "rating": "3.58",
+        "ratingCount": "177",
+        "savedCount": "6955",
         "cuisine": "中華料理、飲茶・点心、中華粥",
         "tel": "052-265-8895",
         "budgetDinner": "￥15,000～￥19,999",
-        "budgetLunch": "￥4,000～￥4,999",
+        "budgetLunch": "￥6,000～￥7,999",
         "budgetDinnerRvw": "￥20,000～￥29,999",
         "budgetLunchRvw": "￥10,000～￥14,999",
         "awards": [
@@ -212234,9 +212238,9 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230104/23000289/",
         "category": "中国料理（東日本）",
         "address": "愛知県名古屋市東区東桜1-14-25 東海放送会館内",
-        "rating": "3.52",
-        "ratingCount": "260",
-        "savedCount": "8509",
+        "rating": "3.51",
+        "ratingCount": "269",
+        "savedCount": "8649",
         "cuisine": "中華料理、飲茶・点心、餃子",
         "tel": "052-228-0039",
         "budgetDinner": "￥10,000～￥14,999",
@@ -212426,8 +212430,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.93595103118307,
-          35.16786752814065
+          136.93595003118307,
+          35.16786721814065
         ]
       },
       "properties": {
@@ -212435,13 +212439,13 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230106/23000239/",
         "category": "中国料理（東日本）",
         "address": "愛知県名古屋市千種区今池1-12-10",
-        "rating": "3.50",
-        "ratingCount": "2330",
-        "savedCount": "47431",
+        "rating": "3.49",
+        "ratingCount": "2435",
+        "savedCount": "48165",
         "cuisine": "台湾料理、中華料理、ラーメン",
         "tel": "052-733-7670",
         "budgetDinner": "￥2,000～￥2,999",
-        "budgetDinnerRvw": "￥3,000～￥3,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -212513,7 +212517,7 @@ const shopData = {
         "address": "愛知県名古屋市千種区仲田2-12-25 金子ビル 1F",
         "rating": "3.64",
         "ratingCount": "40",
-        "savedCount": "3905",
+        "savedCount": "3871",
         "cuisine": "中華料理",
         "budgetDinner": "￥8,000～￥9,999",
         "budgetLunch": "￥5,000～￥5,999",
@@ -212575,8 +212579,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.89736906184223,
-          35.23044623808862
+          136.89736929184224,
+          35.23044652808862
         ]
       },
       "properties": {
@@ -212585,8 +212589,8 @@ const shopData = {
         "category": "中国料理（東日本）",
         "address": "愛知県名古屋市西区比良3-139",
         "rating": "3.53",
-        "ratingCount": "481",
-        "savedCount": "30295",
+        "ratingCount": "494",
+        "savedCount": "30718",
         "cuisine": "中華料理、ラーメン",
         "tel": "052-501-3243",
         "budgetDinner": "￥1,000～￥1,999",
@@ -212751,8 +212755,8 @@ const shopData = {
         "category": "中国料理（東日本）",
         "address": "千葉県船橋市本町2-10-29",
         "rating": "3.69",
-        "ratingCount": "596",
-        "savedCount": "20121",
+        "ratingCount": "595",
+        "savedCount": "19969",
         "cuisine": "中華料理、四川料理、担々麺",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
@@ -212784,11 +212788,11 @@ const shopData = {
         "category": "中国料理（東日本）",
         "address": "千葉県船橋市本町1-4-8",
         "rating": "3.54",
-        "ratingCount": "483",
-        "savedCount": "11740",
+        "ratingCount": "510",
+        "savedCount": "12124",
         "cuisine": "中華料理",
         "tel": "047-423-5510",
-        "budgetDinnerRvw": "￥3,000～￥3,999",
+        "budgetDinnerRvw": "￥2,000～￥2,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -212846,8 +212850,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.94510618345714,
-          35.716846637944926
+          139.94510498461895,
+          35.716847348750306
         ]
       },
       "properties": {
@@ -212855,14 +212859,14 @@ const shopData = {
         "url": "https://tabelog.com/chiba/A1202/A120201/12004326/",
         "category": "中国料理（東日本）",
         "address": "千葉県船橋市本中山1-15-23",
-        "rating": "3.46",
-        "ratingCount": "167",
-        "savedCount": "6724",
+        "rating": "3.49",
+        "ratingCount": "176",
+        "savedCount": "7189",
         "cuisine": "中華料理、ラーメン、餃子",
         "tel": "047-334-4389",
         "budgetDinner": "￥3,000～￥3,999",
         "budgetLunch": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetDinnerRvw": "￥4,000～￥4,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -212878,8 +212882,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.90601488360718,
-          35.728985837924775
+          139.90601459476895,
+          35.72898577873015
         ]
       },
       "properties": {
@@ -212888,8 +212892,8 @@ const shopData = {
         "category": "中国料理（東日本）",
         "address": "千葉県市川市市川南1-10-1 I-linkタウンいちかわ ザ タワーズウエスト 1F",
         "rating": "3.60",
-        "ratingCount": "158",
-        "savedCount": "6163",
+        "ratingCount": "163",
+        "savedCount": "6300",
         "cuisine": "中華料理、火鍋、四川料理",
         "tel": "047-324-5573",
         "budgetDinner": "￥4,000～￥4,999",
@@ -213097,7 +213101,7 @@ const shopData = {
         "address": "岐阜県岐阜市鷹見町13-7 OKAMOTOビル 1F",
         "rating": "3.86",
         "ratingCount": "84",
-        "savedCount": "7528",
+        "savedCount": "7509",
         "cuisine": "中華料理、飲茶・点心",
         "budgetDinner": "￥10,000～￥14,999",
         "budgetDinnerRvw": "￥20,000～￥29,999",
@@ -213163,8 +213167,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.00480989029325,
-          36.32836903725708
+          139.004809231455,
+          36.328368358062455
         ]
       },
       "properties": {
@@ -213172,9 +213176,9 @@ const shopData = {
         "url": "https://tabelog.com/gunma/A1001/A100102/10002409/",
         "category": "中国料理（東日本）",
         "address": "群馬県高崎市柳川町35",
-        "rating": "3.53",
-        "ratingCount": "196",
-        "savedCount": "9877",
+        "rating": "3.52",
+        "ratingCount": "204",
+        "savedCount": "10094",
         "cuisine": "台湾料理、中華料理",
         "tel": "027-326-4265",
         "budgetDinner": "￥2,000～￥2,999",
@@ -213235,18 +213239,18 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.34524384784874,
-          43.06382293452998
+          141.34524371784875,
+          43.06382307452998
         ]
       },
       "properties": {
         "name": "中国酒菜 鯉石（リセキ） - さっぽろ（札幌市営）（中華料理）",
         "url": "https://tabelog.com/hokkaido/A0101/A010101/1067311/",
         "category": "中国料理（東日本）",
-        "address": "北海道札幌市中央区北3条西7-1-1 緑苑ビル B1F",
-        "rating": "3.53",
-        "ratingCount": "31",
-        "savedCount": "3353",
+        "address": "北海道-札幌市中央区北3条西7-1-1 緑苑ビル B1F",
+        "rating": "3.51",
+        "ratingCount": "30",
+        "savedCount": "3472",
         "cuisine": "中華料理",
         "tel": "070-7773-2069",
         "budgetDinner": "￥10,000～￥14,999",
@@ -213357,10 +213361,10 @@ const shopData = {
         "name": "中国料理 月下翁（チュウゴクリョウリ ゲッカオウ） - すすきの（市営）（中華料理）",
         "url": "https://tabelog.com/hokkaido/A0101/A010103/1055614/",
         "category": "中国料理（東日本）",
-        "address": "北海道札幌市中央区南3条西3-3 B1F",
+        "address": "北海道-札幌市中央区南3条西3-3 B1F",
         "rating": "3.60",
-        "ratingCount": "140",
-        "savedCount": "10860",
+        "ratingCount": "145",
+        "savedCount": "11077",
         "cuisine": "中華料理",
         "tel": "011-215-1017",
         "budgetDinner": "￥8,000～￥9,999",
@@ -213392,10 +213396,10 @@ const shopData = {
         "name": "チャイナ キッチン（China Kitchen） - 倶知安（中華料理）",
         "url": "https://tabelog.com/hokkaido/A0106/A010603/1065415/",
         "category": "中国料理（東日本）",
-        "address": "北海道虻田郡倶知安町字岩尾別328-47 パークハイアット ニセコ HANAZONO",
-        "rating": "3.32",
-        "ratingCount": "50",
-        "savedCount": "1666",
+        "address": "北海道-虻田郡倶知安町字岩尾別328-47 パークハイアット ニセコ HANAZONO",
+        "rating": "3.38",
+        "ratingCount": "55",
+        "savedCount": "1688",
         "cuisine": "中華料理",
         "tel": "0136-27-1234",
         "budgetDinner": "￥10,000～￥14,999",
@@ -213473,14 +213477,14 @@ const shopData = {
         "category": "中国料理（東日本）",
         "address": "神奈川県横浜市西区高島2-13-12 崎陽軒本店\u3000２Ｆ",
         "rating": "3.52",
-        "ratingCount": "442",
-        "savedCount": "16406",
+        "ratingCount": "463",
+        "savedCount": "16970",
         "cuisine": "中華料理",
         "tel": "045-441-3330",
         "budgetDinner": "￥8,000～￥9,999",
         "budgetLunch": "￥5,000～￥5,999",
         "budgetDinnerRvw": "￥10,000～￥14,999",
-        "budgetLunchRvw": "￥4,000～￥4,999",
+        "budgetLunchRvw": "￥6,000～￥7,999",
         "awards": [
           {
             "y": 2024,
@@ -213547,8 +213551,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.6202813922929,
-          35.46402593880743
+          139.62028204229293,
+          35.46402736880743
         ]
       },
       "properties": {
@@ -213557,8 +213561,8 @@ const shopData = {
         "category": "中国料理（東日本）",
         "address": "神奈川県横浜市西区南幸1-5-24",
         "rating": "3.49",
-        "ratingCount": "1801",
-        "savedCount": "40471",
+        "ratingCount": "1880",
+        "savedCount": "42027",
         "cuisine": "中華料理、ラーメン",
         "tel": "045-319-2726",
         "budgetDinner": "～￥999",
@@ -213579,8 +213583,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.62807520210188,
-          35.44565272882158
+          139.62807495210185,
+          35.44565360882158
         ]
       },
       "properties": {
@@ -213588,15 +213592,15 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1401/A140102/14004194/",
         "category": "中国料理（東日本）",
         "address": "神奈川県横浜市中区日ノ出町1-20",
-        "rating": "3.56",
-        "ratingCount": "1720",
-        "savedCount": "73421",
+        "rating": "3.55",
+        "ratingCount": "1773",
+        "savedCount": "75723",
         "cuisine": "台湾料理、ホルモン、中華料理",
         "tel": "045-231-6137",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "～￥999",
         "budgetDinnerRvw": "￥3,000～￥3,999",
-        "budgetLunchRvw": "￥2,000～￥2,999",
+        "budgetLunchRvw": "￥3,000～￥3,999",
         "awards": [
           {
             "y": 2024,
@@ -213627,7 +213631,7 @@ const shopData = {
         "address": "神奈川県横浜市西区みなとみらい2-2-1-3 横浜ロイヤルパークホテル 68F",
         "rating": "3.65",
         "ratingCount": "354",
-        "savedCount": "14845",
+        "savedCount": "14795",
         "cuisine": "中華料理、飲茶・点心",
         "budgetDinner": "￥10,000～￥14,999",
         "budgetLunch": "￥5,000～￥5,999",
@@ -213694,8 +213698,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.6456100120643,
-          35.44315272882875
+          139.64560983206434,
+          35.44315289882875
         ]
       },
       "properties": {
@@ -213703,9 +213707,9 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1401/A140104/14000104/",
         "category": "中国料理（東日本）",
         "address": "神奈川県横浜市中区山下町147",
-        "rating": "3.54",
-        "ratingCount": "917",
-        "savedCount": "35484",
+        "rating": "3.55",
+        "ratingCount": "931",
+        "savedCount": "35945",
         "cuisine": "中華料理、飲茶・点心",
         "tel": "045-641-3150",
         "budgetDinner": "～￥999",
@@ -213838,8 +213842,8 @@ const shopData = {
         "category": "中国料理（東日本）",
         "address": "神奈川県横浜市中区山下町150-3",
         "rating": "3.65",
-        "ratingCount": "2962",
-        "savedCount": "121518",
+        "ratingCount": "2965",
+        "savedCount": "121146",
         "cuisine": "中華料理、餃子、飲茶・点心",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -213869,8 +213873,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.6454969809054,
-          35.44342603802317
+          139.64549597206715,
+          35.443425028828536
         ]
       },
       "properties": {
@@ -213878,13 +213882,15 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1401/A140104/14000485/",
         "category": "中国料理（東日本）",
         "address": "神奈川県横浜市中区山下町150",
-        "rating": "3.53",
-        "ratingCount": "915",
-        "savedCount": "41540",
+        "rating": "3.54",
+        "ratingCount": "948",
+        "savedCount": "42931",
         "cuisine": "中華料理、四川料理",
         "tel": "045-662-6396",
         "budgetDinner": "￥4,000～￥4,999",
         "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
             "y": 2024,
@@ -213950,8 +213956,8 @@ const shopData = {
         "category": "中国料理（東日本）",
         "address": "神奈川県横浜市中区羽衣町3-59-1",
         "rating": "3.66",
-        "ratingCount": "915",
-        "savedCount": "26799",
+        "ratingCount": "912",
+        "savedCount": "26520",
         "cuisine": "中華料理",
         "budgetDinner": "～￥999",
         "budgetLunch": "～￥999",
@@ -213980,15 +213986,15 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1401/A140105/14000152/",
         "category": "中国料理（東日本）",
         "address": "神奈川県横浜市中区山下町148",
-        "rating": "3.56",
-        "ratingCount": "1217",
-        "savedCount": "45386",
+        "rating": "3.58",
+        "ratingCount": "1263",
+        "savedCount": "47193",
         "cuisine": "中華料理",
         "tel": "045-681-7273",
         "budgetDinner": "￥6,000～￥7,999",
         "budgetLunch": "￥2,000～￥2,999",
-        "budgetDinnerRvw": "￥3,000～￥3,999",
-        "budgetLunchRvw": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
             "y": 2024,
@@ -214022,12 +214028,12 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1401/A140105/14000479/",
         "category": "中国料理（東日本）",
         "address": "神奈川県横浜市中区山下町147",
-        "rating": "3.51",
-        "ratingCount": "611",
-        "savedCount": "28787",
+        "rating": "3.49",
+        "ratingCount": "627",
+        "savedCount": "29443",
         "cuisine": "中華料理、飲茶・点心",
         "tel": "045-651-9168",
-        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥2,000～￥2,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -214095,8 +214101,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.6465231420562,
-          35.44241220882951
+          139.6465234920562,
+          35.442411418829515
         ]
       },
       "properties": {
@@ -214105,13 +214111,13 @@ const shopData = {
         "category": "中国料理（東日本）",
         "address": "神奈川県横浜市中区山下町190",
         "rating": "3.53",
-        "ratingCount": "1265",
-        "savedCount": "65332",
+        "ratingCount": "1300",
+        "savedCount": "67098",
         "cuisine": "中華料理、飲茶・点心",
         "tel": "045-681-2901",
         "budgetDinner": "～￥999",
         "budgetLunch": "～￥999",
-        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -214142,13 +214148,13 @@ const shopData = {
         "category": "中国料理（東日本）",
         "address": "神奈川県横浜市中区山下町79-5",
         "rating": "3.49",
-        "ratingCount": "963",
-        "savedCount": "54165",
+        "ratingCount": "998",
+        "savedCount": "54779",
         "cuisine": "中華料理、肉まん、飲茶・点心",
         "tel": "045-681-3535",
         "budgetDinner": "￥6,000～￥7,999",
-        "budgetLunch": "￥1,000～￥1,999",
-        "budgetLunchRvw": "￥1,000～￥1,999",
+        "budgetLunch": "￥2,000～￥2,999",
+        "budgetLunchRvw": "￥3,000～￥3,999",
         "awards": [
           {
             "y": 2024,
@@ -214168,8 +214174,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.64595538089455,
-          35.44238953802398
+          139.64595503205638,
+          35.442390218829345
         ]
       },
       "properties": {
@@ -214178,14 +214184,13 @@ const shopData = {
         "category": "中国料理（東日本）",
         "address": "神奈川県横浜市中区山下町138",
         "rating": "3.57",
-        "ratingCount": "1948",
-        "savedCount": "69059",
+        "ratingCount": "2009",
+        "savedCount": "70465",
         "cuisine": "四川料理、刀削麺、火鍋",
         "tel": "045-211-2866",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetLunch": "～￥999",
-        "budgetDinnerRvw": "￥3,000～￥3,999",
-        "budgetLunchRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
             "y": 2024,
@@ -214304,13 +214309,13 @@ const shopData = {
         "category": "中国料理（東日本）",
         "address": "神奈川県横浜市中区山下町166",
         "rating": "3.52",
-        "ratingCount": "1452",
-        "savedCount": "58556",
+        "ratingCount": "1497",
+        "savedCount": "59679",
         "cuisine": "中華料理、居酒屋、ラーメン",
         "tel": "045-681-3936",
         "budgetDinner": "￥3,000～￥3,999",
         "budgetLunch": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -214331,8 +214336,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.6451446809002,
-          35.4428897380234
+          139.645144302062,
+          35.44288925882877
         ]
       },
       "properties": {
@@ -214340,14 +214345,14 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1401/A140105/14007196/",
         "category": "中国料理（東日本）",
         "address": "神奈川県横浜市中区山下町145",
-        "rating": "3.57",
-        "ratingCount": "1287",
-        "savedCount": "64780",
+        "rating": "3.55",
+        "ratingCount": "1356",
+        "savedCount": "66202",
         "cuisine": "中華料理、飲茶・点心",
         "tel": "045-662-7675",
         "budgetDinner": "￥4,000～￥4,999",
         "budgetLunch": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥4,000～￥4,999",
         "budgetLunchRvw": "￥3,000～￥3,999",
         "awards": [
           {
@@ -214373,8 +214378,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.6469367809077,
-          35.44375803802341
+          139.64693685206947,
+          35.44375775882879
         ]
       },
       "properties": {
@@ -214382,14 +214387,14 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1401/A140105/14064517/",
         "category": "中国料理（東日本）",
         "address": "神奈川県横浜市中区山下町165-2 INビル",
-        "rating": "3.57",
-        "ratingCount": "1392",
-        "savedCount": "124814",
+        "rating": "3.60",
+        "ratingCount": "1451",
+        "savedCount": "126734",
         "cuisine": "中華料理",
         "tel": "045-681-6228",
         "budgetDinner": "￥6,000～￥7,999",
         "budgetLunch": "￥2,000～￥2,999",
-        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
         "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
@@ -214469,9 +214474,9 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1401/A140202/14007887/",
         "category": "中国料理（東日本）",
         "address": "神奈川県横浜市青葉区青葉台1-29-36 若葉ハイツ\u3000１Ｆ",
-        "rating": "3.53",
-        "ratingCount": "348",
-        "savedCount": "13148",
+        "rating": "3.55",
+        "ratingCount": "361",
+        "savedCount": "13344",
         "cuisine": "中華料理、餃子、カフェ",
         "tel": "045-982-2270",
         "budgetDinner": "￥2,000～￥2,999",
@@ -214803,8 +214808,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.57655049063433,
-          35.29678922889972
+          139.5765503006343,
+          35.29678929889972
         ]
       },
       "properties": {
@@ -214813,8 +214818,8 @@ const shopData = {
         "category": "中国料理（東日本）",
         "address": "神奈川県逗子市逗子1-10-26",
         "rating": "3.57",
-        "ratingCount": "99",
-        "savedCount": "7557",
+        "ratingCount": "101",
+        "savedCount": "7647",
         "cuisine": "中華料理",
         "tel": "046-873-3990",
         "budgetDinner": "￥3,000～￥3,999",
@@ -214848,12 +214853,12 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1410/A141001/14004554/",
         "category": "中国料理（東日本）",
         "address": "神奈川県足柄下郡箱根町仙石原1181",
-        "rating": "3.58",
-        "ratingCount": "271",
-        "savedCount": "14754",
+        "rating": "3.57",
+        "ratingCount": "281",
+        "savedCount": "15089",
         "cuisine": "四川料理",
         "tel": "0460-84-5282",
-        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥4,000～￥4,999",
         "budgetLunchRvw": "￥3,000～￥3,999",
         "awards": [
           {
@@ -215011,7 +215016,7 @@ const shopData = {
         "address": "宮城県仙台市太白区向山2-2-24",
         "rating": "4.15",
         "ratingCount": "203",
-        "savedCount": "14079",
+        "savedCount": "14014",
         "cuisine": "中華料理、飲茶・点心",
         "budgetDinner": "￥15,000～￥19,999",
         "budgetLunch": "￥10,000～￥14,999",
@@ -215083,8 +215088,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.63450773252958,
-          36.35143625055158
+          138.63447106194755,
+          36.351430287929865
         ]
       },
       "properties": {
@@ -215092,9 +215097,9 @@ const shopData = {
         "url": "https://tabelog.com/nagano/A2003/A200301/20000154/",
         "category": "中国料理（東日本）",
         "address": "長野県北佐久郡軽井沢町軽井沢1151-3",
-        "rating": "3.55",
-        "ratingCount": "306",
-        "savedCount": "18039",
+        "rating": "3.53",
+        "ratingCount": "319",
+        "savedCount": "18562",
         "cuisine": "中華料理、飲茶・点心、ラーメン",
         "tel": "0267-42-0196",
         "budgetDinner": "￥10,000～￥14,999",
@@ -215412,8 +215417,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          137.76811814671845,
-          34.78361237864972
+          137.7681180667184,
+          34.78361190864972
         ]
       },
       "properties": {
@@ -215421,13 +215426,13 @@ const shopData = {
         "url": "https://tabelog.com/shizuoka/A2202/A220201/22001112/",
         "category": "中国料理（東日本）",
         "address": "静岡県浜松市浜名区小松3110-1",
-        "rating": "3.54",
+        "rating": "3.52",
         "ratingCount": "116",
-        "savedCount": "3700",
+        "savedCount": "3736",
         "cuisine": "四川料理",
         "tel": "053-586-1448",
         "budgetDinnerRvw": "￥4,000～￥4,999",
-        "budgetLunchRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
             "y": 2024,
@@ -215481,8 +215486,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.84500719223684,
-          36.57909743736543
+          139.84500781339864,
+          36.57909743817079
         ]
       },
       "properties": {
@@ -215490,9 +215495,9 @@ const shopData = {
         "url": "https://tabelog.com/tochigi/A0901/A090101/9000118/",
         "category": "中国料理（東日本）",
         "address": "栃木県宇都宮市駒生町1296-33",
-        "rating": "3.52",
-        "ratingCount": "676",
-        "savedCount": "33274",
+        "rating": "3.50",
+        "ratingCount": "690",
+        "savedCount": "33782",
         "cuisine": "中華料理、餃子、ラーメン",
         "tel": "028-624-7886",
         "budgetDinner": "～￥999",
@@ -215662,9 +215667,9 @@ const shopData = {
         "url": "https://tabelog.com/fukuoka/A4001/A400104/40052241/",
         "category": "中国料理（西日本）",
         "address": "福岡県福岡市中央区大名1-6-13 バルビゾン95 1F",
-        "rating": "3.61",
-        "ratingCount": "393",
-        "savedCount": "25417",
+        "rating": "3.62",
+        "ratingCount": "416",
+        "savedCount": "26461",
         "cuisine": "中華料理",
         "tel": "092-726-0611",
         "budgetDinner": "￥3,000～￥3,999",
@@ -215690,8 +215695,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          130.37770645972978,
-          33.57886059706128
+          130.37770543972977,
+          33.57886120706128
         ]
       },
       "properties": {
@@ -215700,8 +215705,8 @@ const shopData = {
         "category": "中国料理（西日本）",
         "address": "福岡県福岡市中央区六本松2-7-7 河津ビル\u3000１Ｆ",
         "rating": "3.49",
-        "ratingCount": "624",
-        "savedCount": "39211",
+        "ratingCount": "650",
+        "savedCount": "39797",
         "cuisine": "中華料理、餃子、ラーメン",
         "tel": "092-731-8458",
         "budgetDinnerRvw": "￥3,000～￥3,999",
@@ -215731,7 +215736,7 @@ const shopData = {
         "address": "福岡県福岡市早良区西新3-15-9 2F",
         "rating": "3.78",
         "ratingCount": "93",
-        "savedCount": "10874",
+        "savedCount": "10801",
         "cuisine": "四川料理、中華料理、飲茶・点心",
         "budgetDinner": "￥4,000～￥4,999",
         "budgetLunch": "￥2,000～￥2,999",
@@ -215812,8 +215817,8 @@ const shopData = {
         "category": "中国料理（西日本）",
         "address": "兵庫県神戸市中央区琴ノ緒町4-1-100",
         "rating": "3.56",
-        "ratingCount": "725",
-        "savedCount": "37034",
+        "ratingCount": "780",
+        "savedCount": "38920",
         "cuisine": "中華料理、ラーメン、餃子",
         "tel": "078-241-6408",
         "budgetDinner": "￥1,000～￥1,999",
@@ -215884,8 +215889,8 @@ const shopData = {
         "category": "中国料理（西日本）",
         "address": "兵庫県神戸市中央区中山手通2-10-21 第2伸野ビル 4F",
         "rating": "3.73",
-        "ratingCount": "520",
-        "savedCount": "35098",
+        "ratingCount": "524",
+        "savedCount": "34893",
         "cuisine": "中華料理",
         "budgetDinner": "￥15,000～￥19,999",
         "budgetLunch": "￥3,000～￥3,999",
@@ -216002,8 +216007,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.18878717643318,
-          34.69139333708149
+          135.1887951275952,
+          34.69141890788684
         ]
       },
       "properties": {
@@ -216011,15 +216016,15 @@ const shopData = {
         "url": "https://tabelog.com/hyogo/A2801/A280102/28000844/",
         "category": "中国料理（西日本）",
         "address": "兵庫県神戸市中央区北長狭通3-2-10",
-        "rating": "3.54",
-        "ratingCount": "224",
-        "savedCount": "15565",
+        "rating": "3.53",
+        "ratingCount": "229",
+        "savedCount": "15754",
         "cuisine": "中華料理",
         "tel": "078-331-0924",
         "budgetDinner": "￥8,000～￥9,999",
         "budgetLunch": "￥2,000～￥2,999",
         "budgetDinnerRvw": "￥8,000～￥9,999",
-        "budgetLunchRvw": "￥2,000～￥2,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
             "y": 2024,
@@ -216048,15 +216053,15 @@ const shopData = {
         "url": "https://tabelog.com/hyogo/A2801/A280102/28000845/",
         "category": "中国料理（西日本）",
         "address": "兵庫県神戸市中央区元町通1-11-3",
-        "rating": "3.54",
-        "ratingCount": "567",
-        "savedCount": "30811",
+        "rating": "3.53",
+        "ratingCount": "580",
+        "savedCount": "31304",
         "cuisine": "中華料理、海鮮",
         "tel": "078-331-5790",
-        "budgetDinner": "￥6,000～￥7,999",
+        "budgetDinner": "￥8,000～￥9,999",
         "budgetLunch": "￥2,000～￥2,999",
         "budgetDinnerRvw": "￥4,000～￥4,999",
-        "budgetLunchRvw": "￥3,000～￥3,999",
+        "budgetLunchRvw": "￥6,000～￥7,999",
         "awards": [
           {
             "y": 2024,
@@ -216076,8 +216081,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.18392294753028,
-          34.68465399788959
+          135.18392313753026,
+          34.68465352788959
         ]
       },
       "properties": {
@@ -216085,9 +216090,9 @@ const shopData = {
         "url": "https://tabelog.com/hyogo/A2801/A280102/28007259/",
         "category": "中国料理（西日本）",
         "address": "兵庫県神戸市中央区海岸通5-1-1 ケンミン食品本社ビル １Ｆ",
-        "rating": "3.66",
-        "ratingCount": "633",
-        "savedCount": "24722",
+        "rating": "3.65",
+        "ratingCount": "662",
+        "savedCount": "25277",
         "cuisine": "中華料理",
         "tel": "078-366-3039",
         "budgetDinner": "￥2,000～￥2,999",
@@ -216325,20 +216330,19 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.37354577792183,
-          34.736576867917
+          135.37356877792112,
+          34.736507437917055
         ]
       },
       "properties": {
         "name": "味包 - 甲子園口（中華料理）",
         "url": "https://tabelog.com/hyogo/A2803/A280301/28031189/",
         "category": "中国料理（西日本）",
-        "address": "兵庫県西宮市甲子園口3丁目16-16",
-        "rating": "3.54",
-        "ratingCount": "325",
-        "savedCount": "14132",
+        "address": "兵庫県西宮市甲子園口3-16-16",
+        "rating": "3.55",
+        "ratingCount": "330",
+        "savedCount": "14258",
         "cuisine": "中華料理、餃子、四川料理",
-        "tel": "0798-67-1558",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "～￥999",
         "budgetDinnerRvw": "￥3,000～￥3,999",
@@ -216362,8 +216366,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.4506680640092,
-          36.403988907201025
+          136.4506680140092,
+          36.40398733720102
         ]
       },
       "properties": {
@@ -216372,8 +216376,8 @@ const shopData = {
         "category": "中国料理（西日本）",
         "address": "石川県小松市土居原町395",
         "rating": "3.49",
-        "ratingCount": "675",
-        "savedCount": "15109",
+        "ratingCount": "694",
+        "savedCount": "15395",
         "cuisine": "中華料理、餃子",
         "tel": "0761-22-4077",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -216494,8 +216498,8 @@ const shopData = {
         "category": "中国料理（西日本）",
         "address": "京都府京都市下京区烏丸通四条下ル水銀屋町620 COCON烏丸\u3000B1F",
         "rating": "3.52",
-        "ratingCount": "577",
-        "savedCount": "31243",
+        "ratingCount": "584",
+        "savedCount": "31641",
         "cuisine": "中華料理、飲茶・点心",
         "tel": "075-341-1800",
         "budgetDinner": "￥15,000～￥19,999",
@@ -216525,23 +216529,23 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.77104741034105,
-          35.003666827873964
+          135.7710486703411,
+          35.00366774787396
         ]
       },
       "properties": {
         "name": "東華菜館 本店（トウカサイカン） - 祇園四条（中華料理）",
         "url": "https://tabelog.com/kyoto/A2601/A260201/26000846/",
         "category": "中国料理（西日本）",
-        "address": "京都府京都市下京区西石垣通四条下ル斎藤町140-2",
-        "rating": "3.51",
-        "ratingCount": "948",
-        "savedCount": "40491",
+        "address": "京都府-京都市下京区西石垣通四条下ル斎藤町140-2",
+        "rating": "3.50",
+        "ratingCount": "991",
+        "savedCount": "42470",
         "cuisine": "中華料理、餃子",
         "tel": "075-221-1147",
         "budgetDinner": "￥5,000～￥5,999",
         "budgetLunch": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥4,000～￥4,999",
         "budgetLunchRvw": "￥3,000～￥3,999",
         "awards": [
           {
@@ -216688,23 +216692,23 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.7701208104279,
-          35.012200627868246
+          135.77012055042792,
+          35.012201807868244
         ]
       },
       "properties": {
         "name": "創作中華 一之船入（イチノフナイリ） - 京都市役所前（中華料理）",
         "url": "https://tabelog.com/kyoto/A2601/A260202/26002657/",
         "category": "中国料理（西日本）",
-        "address": "京都府京都市中京区河原町二条下ル一之船入町537-50",
-        "rating": "3.58",
-        "ratingCount": "487",
-        "savedCount": "37048",
+        "address": "京都府-京都市中京区河原町二条下ル一之船入町537-50",
+        "rating": "3.57",
+        "ratingCount": "502",
+        "savedCount": "37539",
         "cuisine": "中華料理、飲茶・点心",
         "tel": "075-256-1271",
         "budgetDinner": "￥10,000～￥14,999",
         "budgetLunch": "￥5,000～￥5,999",
-        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
         "budgetLunchRvw": "￥6,000～￥7,999",
         "awards": [
           {
@@ -216772,22 +216776,22 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.76879669044146,
-          35.01345319786702
+          135.76879756044147,
+          35.01345395786702
         ]
       },
       "properties": {
         "name": "広東料理 鳳泉 - 京都市役所前（中華料理）",
         "url": "https://tabelog.com/kyoto/A2601/A260202/26014396/",
         "category": "中国料理（西日本）",
-        "address": "京都府京都市中京区河原町二条上ル清水町359 ＡＢビル\u3000１Ｆ",
-        "rating": "3.58",
-        "ratingCount": "797",
-        "savedCount": "46317",
+        "address": "京都府-京都市中京区河原町二条上ル清水町359 ＡＢビル\u3000１Ｆ",
+        "rating": "3.57",
+        "ratingCount": "835",
+        "savedCount": "47753",
         "cuisine": "中華料理",
         "tel": "075-241-6288",
         "budgetDinnerRvw": "￥2,000～￥2,999",
-        "budgetLunchRvw": "￥2,000～￥2,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
             "y": 2024,
@@ -217229,8 +217233,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.78072121063724,
-          35.03366013785799
+          135.78072248063725,
+          35.033659797857986
         ]
       },
       "properties": {
@@ -217238,13 +217242,13 @@ const shopData = {
         "url": "https://tabelog.com/kyoto/A2601/A260302/26003713/",
         "category": "中国料理（西日本）",
         "address": "京都府京都市左京区田中里ノ内町41-1",
-        "rating": "3.56",
-        "ratingCount": "659",
-        "savedCount": "34332",
+        "rating": "3.55",
+        "ratingCount": "671",
+        "savedCount": "34542",
         "cuisine": "中華料理、ラーメン",
         "tel": "075-723-5185",
         "budgetLunch": "～￥999",
-        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -217391,8 +217395,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.7470741408979,
-          35.05713331783236
+          135.74707308089793,
+          35.05713233783237
         ]
       },
       "properties": {
@@ -217401,8 +217405,8 @@ const shopData = {
         "category": "中国料理（西日本）",
         "address": "京都府京都市北区大宮東総門口町38-3",
         "rating": "3.49",
-        "ratingCount": "711",
-        "savedCount": "34814",
+        "ratingCount": "727",
+        "savedCount": "37124",
         "cuisine": "中華料理、ラーメン",
         "tel": "075-492-4965",
         "budgetDinner": "￥1,000～￥1,999",
@@ -217437,9 +217441,9 @@ const shopData = {
         "url": "https://tabelog.com/kyoto/A2601/A260503/26001225/",
         "category": "中国料理（西日本）",
         "address": "京都府京都市北区紫野上門前町新大宮商店街北大路上ル92 新大宮商店街",
-        "rating": "3.65",
-        "ratingCount": "914",
-        "savedCount": "50627",
+        "rating": "3.58",
+        "ratingCount": "970",
+        "savedCount": "52989",
         "cuisine": "中華料理",
         "tel": "075-492-5004",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -217605,14 +217609,14 @@ const shopData = {
         "url": "https://tabelog.com/miyazaki/A4501/A450101/45000016/",
         "category": "中国料理（西日本）",
         "address": "宮崎県宮崎市山崎町浜山 フェニックス・シーガイア・オーシャン・タワー 1F",
-        "rating": "3.57",
-        "ratingCount": "155",
-        "savedCount": "4423",
+        "rating": "3.58",
+        "ratingCount": "158",
+        "savedCount": "4539",
         "cuisine": "中華料理、飲茶・点心、担々麺",
         "tel": "0985-21-1518",
         "budgetDinner": "￥6,000～￥7,999",
         "budgetLunch": "￥2,000～￥2,999",
-        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
         "budgetLunchRvw": "￥3,000～￥3,999",
         "awards": [
           {
@@ -217643,8 +217647,8 @@ const shopData = {
         "category": "中国料理（西日本）",
         "address": "宮崎県宮崎市橘通東3-4-26-1",
         "rating": "3.87",
-        "ratingCount": "56",
-        "savedCount": "4408",
+        "ratingCount": "55",
+        "savedCount": "4389",
         "cuisine": "中華料理",
         "budgetDinner": "￥10,000～￥14,999",
         "budgetDinnerRvw": "￥20,000～￥29,999",
@@ -217802,7 +217806,7 @@ const shopData = {
         "address": "奈良県奈良市紀寺町913-2",
         "rating": "4.41",
         "ratingCount": "175",
-        "savedCount": "12160",
+        "savedCount": "12064",
         "cuisine": "中華料理、四川料理",
         "budgetDinner": "￥15,000～￥19,999",
         "budgetLunch": "￥5,000～￥5,999",
@@ -217867,8 +217871,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          127.6769562772246,
-          26.213364500879162
+          127.6769561672246,
+          26.213364300879164
         ]
       },
       "properties": {
@@ -217876,9 +217880,9 @@ const shopData = {
         "url": "https://tabelog.com/okinawa/A4701/A470101/47001716/",
         "category": "中国料理（西日本）",
         "address": "沖縄県那覇市泉崎1-11-3",
-        "rating": "3.69",
-        "ratingCount": "736",
-        "savedCount": "24680",
+        "rating": "3.68",
+        "ratingCount": "761",
+        "savedCount": "25258",
         "cuisine": "中華料理、四川料理",
         "tel": "098-862-0011",
         "budgetDinner": "￥3,000～￥3,999",
@@ -217915,7 +217919,7 @@ const shopData = {
         "address": "沖縄県石垣市真栄里354-1 ANAインターコンチネンタル石垣リゾート 1F",
         "rating": "3.56",
         "ratingCount": "94",
-        "savedCount": "3143",
+        "savedCount": "3132",
         "cuisine": "中華料理、四川料理",
         "budgetDinner": "￥10,000～￥14,999",
         "budgetDinnerRvw": "￥8,000～￥9,999",
@@ -218069,8 +218073,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.49833857627303,
-          34.6970199371765
+          135.49833795743484,
+          34.69702042798187
         ]
       },
       "properties": {
@@ -218079,8 +218083,8 @@ const shopData = {
         "category": "中国料理（西日本）",
         "address": "大阪府大阪市北区曽根崎新地1-2-4 谷安セストビル\u30002F",
         "rating": "3.55",
-        "ratingCount": "470",
-        "savedCount": "28086",
+        "ratingCount": "475",
+        "savedCount": "28284",
         "cuisine": "中華料理",
         "tel": "06-6442-7788",
         "budgetDinner": "￥10,000～￥14,999",
@@ -218166,8 +218170,8 @@ const shopData = {
         "category": "中国料理（西日本）",
         "address": "大阪府大阪市北区小松原町2-4 富国生命ビル B2F",
         "rating": "3.49",
-        "ratingCount": "1225",
-        "savedCount": "53208",
+        "ratingCount": "1288",
+        "savedCount": "54242",
         "cuisine": "中華料理、餃子、担々麺",
         "tel": "06-6948-5998",
         "budgetDinner": "￥3,000～￥3,999",
@@ -218484,8 +218488,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.51388774753036,
-          34.70755840798012
+          135.51388843753034,
+          34.707558787980126
         ]
       },
       "properties": {
@@ -218494,8 +218498,8 @@ const shopData = {
         "category": "中国料理（西日本）",
         "address": "大阪府大阪市北区池田町10-11 辰巳ビル 1F",
         "rating": "3.55",
-        "ratingCount": "808",
-        "savedCount": "34938",
+        "ratingCount": "817",
+        "savedCount": "35156",
         "cuisine": "中華料理",
         "tel": "06-6358-8808",
         "budgetDinner": "￥2,000～￥2,999",
@@ -218521,8 +218525,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.51281157636703,
-          34.70733133717455
+          135.5128106275288,
+          34.707332117979924
         ]
       },
       "properties": {
@@ -218531,13 +218535,13 @@ const shopData = {
         "category": "中国料理（西日本）",
         "address": "大阪府大阪市北区池田町7-7 好きやねん天満ビル\u3000１Ｆ",
         "rating": "3.53",
-        "ratingCount": "996",
-        "savedCount": "49687",
+        "ratingCount": "1026",
+        "savedCount": "50209",
         "cuisine": "中華料理、ラーメン、バル",
         "tel": "06-7650-2153",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetLunch": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥3,000～￥3,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -218563,8 +218567,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.5117948736268,
-          34.697864683308005
+          135.51177512743422,
+          34.69789631798559
         ]
       },
       "properties": {
@@ -218573,8 +218577,8 @@ const shopData = {
         "category": "中国料理（西日本）",
         "address": "大阪府大阪市北区天神橋2北1-9",
         "rating": "3.51",
-        "ratingCount": "677",
-        "savedCount": "31215",
+        "ratingCount": "693",
+        "savedCount": "31617",
         "cuisine": "中華料理、四川料理、担々麺",
         "tel": "06-6358-1988",
         "budgetDinner": "￥4,000～￥4,999",
@@ -218609,9 +218613,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270103/27018257/",
         "category": "中国料理（西日本）",
         "address": "大阪府大阪市北区西天満3-6-15",
-        "rating": "3.48",
-        "ratingCount": "311",
-        "savedCount": "25108",
+        "rating": "3.49",
+        "ratingCount": "312",
+        "savedCount": "25202",
         "cuisine": "中華料理",
         "tel": "06-6364-2980",
         "budgetDinner": "￥8,000～￥9,999",
@@ -218721,8 +218725,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.51074733751832,
-          34.70614876798002
+          135.5107460975183,
+          34.706148657980016
         ]
       },
       "properties": {
@@ -218730,12 +218734,12 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270103/27063993/",
         "category": "中国料理（西日本）",
         "address": "大阪府大阪市北区浪花町1-24 JL天満駅前ビル 1～4F",
-        "rating": "3.54",
-        "ratingCount": "764",
-        "savedCount": "33385",
+        "rating": "3.53",
+        "ratingCount": "788",
+        "savedCount": "33818",
         "cuisine": "中華料理、飲茶・点心",
         "tel": "06-6377-8808",
-        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
         "budgetLunchRvw": "～￥999",
         "awards": [
           {
@@ -218802,8 +218806,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.50822007628446,
-          34.6988385371785
+          135.50822082744622,
+          34.69883826798386
         ]
       },
       "properties": {
@@ -218812,8 +218816,8 @@ const shopData = {
         "category": "中国料理（西日本）",
         "address": "大阪府大阪市北区西天満5-6-26",
         "rating": "3.60",
-        "ratingCount": "485",
-        "savedCount": "28259",
+        "ratingCount": "495",
+        "savedCount": "28551",
         "cuisine": "中華料理、四川料理",
         "tel": "06-6232-8118",
         "budgetDinner": "￥15,000～￥19,999",
@@ -218895,8 +218899,8 @@ const shopData = {
         "category": "中国料理（西日本）",
         "address": "大阪府大阪市北区天神橋4-12-21 伍代ビル 1F",
         "rating": "3.78",
-        "ratingCount": "179",
-        "savedCount": "33139",
+        "ratingCount": "178",
+        "savedCount": "32944",
         "cuisine": "中華料理、立ち飲み、居酒屋",
         "budgetDinner": "￥10,000～￥14,999",
         "budgetDinnerRvw": "￥10,000～￥14,999",
@@ -218914,8 +218918,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.49045186725996,
-          34.679165407990695
+          135.49045163725998,
+          34.679165937990696
         ]
       },
       "properties": {
@@ -218923,14 +218927,14 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270105/27067235/",
         "category": "中国料理（西日本）",
         "address": "大阪府大阪市西区立売堀3-4-1 メゾンアルカディア 1F",
-        "rating": "3.61",
-        "ratingCount": "841",
-        "savedCount": "42765",
+        "rating": "3.60",
+        "ratingCount": "873",
+        "savedCount": "43490",
         "cuisine": "中華料理、四川料理",
         "tel": "06-6539-1990",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetLunch": "～￥999",
-        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -218961,8 +218965,8 @@ const shopData = {
         "category": "中国料理（西日本）",
         "address": "大阪府大阪市中央区船場中央1-4 船場センタービル２号館\u3000Ｂ２Ｆ",
         "rating": "3.55",
-        "ratingCount": "1132",
-        "savedCount": "35262",
+        "ratingCount": "1172",
+        "savedCount": "35914",
         "cuisine": "中華料理、飲茶・点心",
         "tel": "06-6263-1146",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -219062,8 +219066,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.4851141762856,
-          34.69734893717207
+          135.48511419744742,
+          34.69734931797745
         ]
       },
       "properties": {
@@ -219071,9 +219075,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270108/27085437/",
         "category": "中国料理（西日本）",
         "address": "大阪府大阪市福島区福島7-4-25 1F",
-        "rating": "3.56",
-        "ratingCount": "576",
-        "savedCount": "41853",
+        "rating": "3.55",
+        "ratingCount": "593",
+        "savedCount": "42334",
         "cuisine": "中華料理、海鮮",
         "tel": "06-6455-5888",
         "budgetDinner": "￥6,000～￥7,999",
@@ -219114,7 +219118,7 @@ const shopData = {
         "address": "大阪府大阪市福島区福島2-9-10",
         "rating": "3.71",
         "ratingCount": "487",
-        "savedCount": "38488",
+        "savedCount": "38209",
         "cuisine": "中華料理、四川料理",
         "budgetDinner": "￥6,000～￥7,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -219134,8 +219138,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.50163587602646,
-          34.6728376371929
+          135.5016530471882,
+          34.67283498799828
         ]
       },
       "properties": {
@@ -219144,13 +219148,13 @@ const shopData = {
         "category": "中国料理（西日本）",
         "address": "大阪府大阪市中央区心斎橋筋1-4-14 燕京ビル B1F",
         "rating": "3.60",
-        "ratingCount": "1679",
-        "savedCount": "75322",
+        "ratingCount": "1748",
+        "savedCount": "76732",
         "cuisine": "中華料理、飲茶・点心、担々麺",
         "tel": "06-6252-6022",
         "budgetDinner": "￥6,000～￥7,999",
         "budgetLunch": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -219355,8 +219359,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.5165398259849,
-          34.66620787444425
+          135.5165473671109,
+          34.666216678007224
         ]
       },
       "properties": {
@@ -219364,9 +219368,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270205/27006366/",
         "category": "中国料理（西日本）",
         "address": "大阪府大阪市天王寺区上汐3-8-21 ワンダー２ビル\u3000１Ｆ",
-        "rating": "3.52",
-        "ratingCount": "904",
-        "savedCount": "33537",
+        "rating": "3.51",
+        "ratingCount": "938",
+        "savedCount": "34276",
         "cuisine": "中華料理、台湾料理",
         "tel": "06-6773-6131",
         "budgetDinner": "￥3,000～￥3,999",
@@ -219392,8 +219396,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.52202027592767,
-          34.664471837204715
+          135.52202026708943,
+          34.664472408010084
         ]
       },
       "properties": {
@@ -219401,9 +219405,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270205/27085867/",
         "category": "中国料理（西日本）",
         "address": "大阪府-大阪市天王寺区石ヶ辻町14-6 銭屋本舗ビル 102",
-        "rating": "3.65",
-        "ratingCount": "81",
-        "savedCount": "6948",
+        "rating": "3.58",
+        "ratingCount": "85",
+        "savedCount": "7077",
         "cuisine": "中華料理",
         "tel": "06-6779-5557",
         "budgetDinner": "￥8,000～￥9,999",
@@ -219835,8 +219839,8 @@ const shopData = {
         "category": "とんかつ",
         "address": "秋田県秋田市新屋朝日町12-14",
         "rating": "3.78",
-        "ratingCount": "433",
-        "savedCount": "20912",
+        "ratingCount": "435",
+        "savedCount": "20850",
         "cuisine": "とんかつ、かつ丼",
         "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "￥2,000～￥2,999",
@@ -220010,8 +220014,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.89749246539574,
-          35.79044422868839
+          139.8974921153957,
+          35.790444408688394
         ]
       },
       "properties": {
@@ -220019,12 +220023,12 @@ const shopData = {
         "url": "https://tabelog.com/chiba/A1203/A120302/12005186/",
         "category": "とんかつ",
         "address": "千葉県松戸市樋野口608-1",
-        "rating": "3.57",
-        "ratingCount": "431",
-        "savedCount": "15926",
+        "rating": "3.56",
+        "ratingCount": "444",
+        "savedCount": "16432",
         "cuisine": "とんかつ、コロッケ、豚料理",
         "tel": "047-361-0814",
-        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥2,000～￥2,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -220137,8 +220141,8 @@ const shopData = {
         "category": "とんかつ",
         "address": "福岡県福岡市中央区谷1-13-20",
         "rating": "3.76",
-        "ratingCount": "216",
-        "savedCount": "10411",
+        "ratingCount": "217",
+        "savedCount": "10349",
         "cuisine": "とんかつ",
         "budgetLunch": "￥1,000～￥1,999",
         "budgetDinnerRvw": "￥2,000～￥2,999",
@@ -220172,8 +220176,8 @@ const shopData = {
         "category": "とんかつ",
         "address": "福岡県福岡市東区箱崎2-32-9",
         "rating": "3.68",
-        "ratingCount": "412",
-        "savedCount": "15510",
+        "ratingCount": "415",
+        "savedCount": "15367",
         "cuisine": "とんかつ",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetLunch": "～￥999",
@@ -220198,8 +220202,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.01619363137584,
-          36.32132426807056
+          139.01619432137585,
+          36.32132423807055
         ]
       },
       "properties": {
@@ -220207,11 +220211,10 @@ const shopData = {
         "url": "https://tabelog.com/gunma/A1001/A100102/10018332/",
         "category": "とんかつ",
         "address": "群馬県高崎市栄町12-3",
-        "rating": "3.60",
-        "ratingCount": "668",
-        "savedCount": "18886",
+        "rating": "3.59",
+        "ratingCount": "683",
+        "savedCount": "19227",
         "cuisine": "とんかつ",
-        "tel": "027-395-4548",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetLunch": "￥1,000～￥1,999",
         "budgetDinnerRvw": "￥2,000～￥2,999",
@@ -220319,24 +220322,24 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.35481727777108,
-          43.0567980945375
+          141.35481605777107,
+          43.05679942453749
         ]
       },
       "properties": {
         "name": "とんかつ檍 札幌すすきの店 - 狸小路（とんかつ）",
         "url": "https://tabelog.com/hokkaido/A0101/A010103/1060980/",
         "category": "とんかつ",
-        "address": "北海道札幌市中央区南3条西2-7-1",
-        "rating": "3.56",
-        "ratingCount": "475",
-        "savedCount": "13961",
+        "address": "北海道-札幌市中央区南3条西2-7-1",
+        "rating": "3.55",
+        "ratingCount": "486",
+        "savedCount": "14099",
         "cuisine": "とんかつ",
         "tel": "011-281-2929",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
         "budgetDinnerRvw": "￥2,000～￥2,999",
-        "budgetLunchRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
             "y": 2024,
@@ -220398,8 +220401,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.18346910755136,
-          34.686707747888136
+          135.18346764755134,
+          34.686707437888145
         ]
       },
       "properties": {
@@ -220408,8 +220411,8 @@ const shopData = {
         "category": "とんかつ",
         "address": "兵庫県神戸市中央区元町通4-6-1",
         "rating": "3.52",
-        "ratingCount": "591",
-        "savedCount": "23359",
+        "ratingCount": "598",
+        "savedCount": "23670",
         "cuisine": "とんかつ、コロッケ",
         "tel": "078-351-0846",
         "budgetDinner": "￥1,000～￥1,999",
@@ -220552,8 +220555,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.63489768211218,
-          35.4471517788228
+          139.6348978321122,
+          35.44715092882281
         ]
       },
       "properties": {
@@ -220561,9 +220564,9 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1401/A140104/14000146/",
         "category": "とんかつ",
         "address": "神奈川県横浜市中区常盤町5-58-2",
-        "rating": "3.66",
-        "ratingCount": "2001",
-        "savedCount": "58726",
+        "rating": "3.65",
+        "ratingCount": "2084",
+        "savedCount": "60509",
         "cuisine": "とんかつ、串揚げ、食堂",
         "tel": "045-681-4411",
         "budgetDinner": "￥1,000～￥1,999",
@@ -220693,8 +220696,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.6459023331761,
-          35.55323967875893
+          139.64590145317607,
+          35.55323960875893
         ]
       },
       "properties": {
@@ -220702,9 +220705,9 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1401/A140204/14057269/",
         "category": "とんかつ",
         "address": "神奈川県横浜市港北区日吉本町1-20-16",
-        "rating": "3.58",
-        "ratingCount": "1153",
-        "savedCount": "26953",
+        "rating": "3.56",
+        "ratingCount": "1188",
+        "savedCount": "27427",
         "cuisine": "とんかつ、カレー",
         "tel": "045-565-9762",
         "budgetDinner": "￥1,000～￥1,999",
@@ -220735,8 +220738,8 @@ const shopData = {
         "category": "とんかつ",
         "address": "神奈川県横浜市港南区大久保1-8-1",
         "rating": "3.73",
-        "ratingCount": "315",
-        "savedCount": "11850",
+        "ratingCount": "319",
+        "savedCount": "11774",
         "cuisine": "とんかつ",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetLunch": "￥2,000～￥2,999",
@@ -221291,7 +221294,7 @@ const shopData = {
         "address": "大阪府大阪市北区中津3-14-2 平家アパート 1F",
         "rating": "4.08",
         "ratingCount": "387",
-        "savedCount": "45817",
+        "savedCount": "45802",
         "cuisine": "とんかつ、かつ丼",
         "budgetDinner": "￥6,000～￥7,999",
         "budgetLunch": "￥4,000～￥4,999",
@@ -221358,8 +221361,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.52207988694383,
-          34.65006315801925
+          135.52207867694383,
+          34.65006256801925
         ]
       },
       "properties": {
@@ -221367,9 +221370,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270203/27011174/",
         "category": "とんかつ",
         "address": "大阪府大阪市天王寺区大道4-1-2",
-        "rating": "3.56",
-        "ratingCount": "770",
-        "savedCount": "38686",
+        "rating": "3.55",
+        "ratingCount": "786",
+        "savedCount": "38971",
         "cuisine": "とんかつ、コロッケ",
         "tel": "06-6779-0565",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -221487,8 +221490,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.55554559734435,
-          34.704633665614914
+          135.55549048747153,
+          34.70462124799524
         ]
       },
       "properties": {
@@ -221496,9 +221499,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270305/27004283/",
         "category": "とんかつ",
         "address": "大阪府大阪市城東区今福東3-3-23",
-        "rating": "3.60",
-        "ratingCount": "659",
-        "savedCount": "24385",
+        "rating": "3.65",
+        "ratingCount": "671",
+        "savedCount": "24728",
         "cuisine": "とんかつ、洋食、ステーキ",
         "tel": "06-6934-8425",
         "budgetDinner": "￥8,000～￥9,999",
@@ -221638,18 +221641,18 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.69279970730614,
-          35.965373968512104
+          139.69279960730614,
+          35.96537382851211
         ]
       },
       "properties": {
         "name": "とんかつとカツカレーの店 キセキ食堂 岩槻店 - 岩槻（とんかつ）",
         "url": "https://tabelog.com/saitama/A1101/A110103/11050274/",
         "category": "とんかつ",
-        "address": "埼玉県さいたま市岩槻区大字本宿194-12",
-        "rating": "3.58",
-        "ratingCount": "474",
-        "savedCount": "19100",
+        "address": "埼玉県-さいたま市岩槻区大字本宿194-12",
+        "rating": "3.65",
+        "ratingCount": "488",
+        "savedCount": "19343",
         "cuisine": "とんかつ、カレー",
         "tel": "080-4881-1954",
         "budgetDinnerRvw": "￥2,000～￥2,999",
@@ -221909,8 +221912,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.76875358310355,
-          35.669601137918775
+          139.76875359426535,
+          35.669601968724145
         ]
       },
       "properties": {
@@ -221919,13 +221922,13 @@ const shopData = {
         "category": "とんかつ",
         "address": "東京都中央区銀座4-13-18 医療ビル 1F",
         "rating": "3.59",
-        "ratingCount": "1363",
-        "savedCount": "78215",
+        "ratingCount": "1397",
+        "savedCount": "79194",
         "cuisine": "とんかつ",
         "tel": "03-3543-1029",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetLunch": "￥1,000～￥1,999",
-        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -222079,12 +222082,12 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1301/A130103/13033663/",
         "category": "とんかつ",
         "address": "東京都港区新橋2-16-1 ニュー新橋ビル 4F",
-        "rating": "3.54",
-        "ratingCount": "1286",
-        "savedCount": "40269",
+        "rating": "3.53",
+        "ratingCount": "1313",
+        "savedCount": "40674",
         "cuisine": "とんかつ、かつ丼",
         "tel": "03-3593-0017",
-        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetDinnerRvw": "￥3,000～￥3,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -222222,8 +222225,8 @@ const shopData = {
         "category": "とんかつ",
         "address": "東京都渋谷区渋谷3-9-10 ＫＤＣビル B1F",
         "rating": "3.56",
-        "ratingCount": "1761",
-        "savedCount": "84070",
+        "ratingCount": "1763",
+        "savedCount": "83634",
         "cuisine": "とんかつ、日本料理、居酒屋",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetLunch": "￥2,000～￥2,999",
@@ -222305,8 +222308,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.70515104474586,
-          35.71276090867648
+          139.70515249474585,
+          35.71276125867647
         ]
       },
       "properties": {
@@ -222315,8 +222318,8 @@ const shopData = {
         "category": "とんかつ",
         "address": "東京都新宿区高田馬場1-26-5 Ｆ・Ｉビル B1F",
         "rating": "3.56",
-        "ratingCount": "1819",
-        "savedCount": "40001",
+        "ratingCount": "1851",
+        "savedCount": "40387",
         "cuisine": "とんかつ",
         "tel": "03-3209-3900",
         "budgetDinner": "￥2,000～￥2,999",
@@ -222682,8 +222685,8 @@ const shopData = {
         "category": "とんかつ",
         "address": "東京都新宿区荒木町10-28 十番館ビル 1F",
         "rating": "3.53",
-        "ratingCount": "875",
-        "savedCount": "50665",
+        "ratingCount": "896",
+        "savedCount": "51079",
         "cuisine": "とんかつ、かつ丼",
         "tel": "03-3341-0768",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -222717,8 +222720,8 @@ const shopData = {
         "category": "とんかつ",
         "address": "東京都新宿区荒木町3-22 島ビル 1F",
         "rating": "3.84",
-        "ratingCount": "803",
-        "savedCount": "60236",
+        "ratingCount": "810",
+        "savedCount": "59950",
         "cuisine": "とんかつ、カレー",
         "budgetDinner": "￥4,000～￥4,999",
         "budgetLunch": "￥4,000～￥4,999",
@@ -223066,13 +223069,13 @@ const shopData = {
         "category": "とんかつ",
         "address": "東京都文京区湯島3-40-3",
         "rating": "3.53",
-        "ratingCount": "1888",
-        "savedCount": "80915",
+        "ratingCount": "1931",
+        "savedCount": "83231",
         "cuisine": "とんかつ、サンドイッチ、かつ丼",
         "tel": "03-3834-2901",
         "budgetDinner": "￥3,000～￥3,999",
         "budgetLunch": "￥2,000～￥2,999",
-        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetDinnerRvw": "￥3,000～￥3,999",
         "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
@@ -223463,9 +223466,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1315/A131502/13003332/",
         "category": "とんかつ",
         "address": "東京都大田区大森北1-7-2",
-        "rating": "3.61",
-        "ratingCount": "825",
-        "savedCount": "33865",
+        "rating": "3.60",
+        "ratingCount": "841",
+        "savedCount": "34247",
         "cuisine": "とんかつ",
         "tel": "03-3762-2601",
         "budgetDinnerRvw": "￥2,000～￥2,999",
@@ -223693,8 +223696,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.71177838278842,
-          35.63444733792296
+          139.71177898395018,
+          35.63444789872833
         ]
       },
       "properties": {
@@ -223703,8 +223706,8 @@ const shopData = {
         "category": "とんかつ",
         "address": "東京都目黒区目黒1-6-15 1F",
         "rating": "3.65",
-        "ratingCount": "1664",
-        "savedCount": "51273",
+        "ratingCount": "1719",
+        "savedCount": "52072",
         "cuisine": "とんかつ、かつ丼",
         "tel": "03-3491-9470",
         "budgetDinner": "￥2,000～￥2,999",
@@ -223745,8 +223748,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.71468227394962,
-          35.634593138729166
+          139.71468295394965,
+          35.634594658729156
         ]
       },
       "properties": {
@@ -223754,9 +223757,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1316/A131601/13021829/",
         "category": "とんかつ",
         "address": "東京都品川区上大崎2-25-5 久米ビル\u3000Ｂ１Ｆ",
-        "rating": "3.65",
-        "ratingCount": "1653",
-        "savedCount": "49409",
+        "rating": "3.58",
+        "ratingCount": "1671",
+        "savedCount": "50243",
         "cuisine": "とんかつ、かつ丼、居酒屋",
         "tel": "03-3779-3388",
         "budgetDinner": "￥1,000～￥1,999",
@@ -224171,8 +224174,8 @@ const shopData = {
         "category": "とんかつ",
         "address": "東京都杉並区西荻南3-10-6 中村ビル B1F",
         "rating": "3.95",
-        "ratingCount": "973",
-        "savedCount": "46682",
+        "ratingCount": "975",
+        "savedCount": "46409",
         "cuisine": "とんかつ",
         "budgetDinner": "￥3,000～￥3,999",
         "budgetLunch": "￥3,000～￥3,999",
@@ -224211,9 +224214,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1325/A132502/13016062/",
         "category": "とんかつ",
         "address": "東京都小平市上水本町5-7-20",
-        "rating": "3.61",
-        "ratingCount": "544",
-        "savedCount": "26317",
+        "rating": "3.60",
+        "ratingCount": "552",
+        "savedCount": "26599",
         "cuisine": "とんかつ",
         "tel": "非公開",
         "budgetLunch": "￥1,000～￥1,999",
@@ -224391,9 +224394,9 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230102/23058190/",
         "category": "ハンバーガー",
         "address": "愛知県名古屋市中区錦2-13-24 伏見地下街 39-40",
-        "rating": "3.57",
-        "ratingCount": "707",
-        "savedCount": "23583",
+        "rating": "3.56",
+        "ratingCount": "717",
+        "savedCount": "23840",
         "cuisine": "ハンバーガー",
         "tel": "不明の為情報お待ちしております",
         "budgetDinner": "～￥999",
@@ -224501,8 +224504,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.92039683130082,
-          35.17844677812898
+          136.9203971813008,
+          35.178445998128986
         ]
       },
       "properties": {
@@ -224511,8 +224514,8 @@ const shopData = {
         "category": "ハンバーガー",
         "address": "愛知県名古屋市東区泉3丁目4-23 ラメゾンエスト 1階",
         "rating": "3.55",
-        "ratingCount": "311",
-        "savedCount": "17470",
+        "ratingCount": "317",
+        "savedCount": "17791",
         "cuisine": "ハンバーガー、創作料理",
         "tel": "052-325-6911",
         "budgetDinner": "￥2,000～￥2,999",
@@ -224620,8 +224623,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.9447079800208,
-          35.168426037337724
+          136.94470802118255,
+          35.16842533814309
         ]
       },
       "properties": {
@@ -224630,8 +224633,8 @@ const shopData = {
         "category": "ハンバーガー",
         "address": "愛知県名古屋市千種区池下1-4-20",
         "rating": "3.60",
-        "ratingCount": "660",
-        "savedCount": "18479",
+        "ratingCount": "691",
+        "savedCount": "18747",
         "cuisine": "ハンバーガー、カフェ",
         "tel": "052-757-4227",
         "budgetDinner": "￥1,000～￥1,999",
@@ -224698,11 +224701,10 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230111/23046143/",
         "category": "ハンバーガー",
         "address": "愛知県名古屋市天白区植田3-1701 ワイズビル 1Ｆ",
-        "rating": "3.55",
-        "ratingCount": "391",
-        "savedCount": "13595",
+        "rating": "3.54",
+        "ratingCount": "394",
+        "savedCount": "13561",
         "cuisine": "ハンバーガー、スポーツバー、ダイニングバー",
-        "tel": "052-848-9979",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -224747,7 +224749,7 @@ const shopData = {
         "address": "青森県弘前市稲田2-1-1",
         "rating": "3.70",
         "ratingCount": "225",
-        "savedCount": "7117",
+        "savedCount": "7083",
         "cuisine": "ハンバーガー、バー、アメリカ料理",
         "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
@@ -225008,8 +225010,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.84784717359372,
-          35.400406777964896
+          136.8478489835937,
+          35.4004070279649
         ]
       },
       "properties": {
@@ -225017,9 +225019,9 @@ const shopData = {
         "url": "https://tabelog.com/gifu/A2101/A210102/21016569/",
         "category": "ハンバーガー",
         "address": "岐阜県各務原市那加桜町2-329 桜ビルディング 1F",
-        "rating": "3.45",
+        "rating": "3.49",
         "ratingCount": "126",
-        "savedCount": "5367",
+        "savedCount": "5388",
         "cuisine": "ハンバーガー、アメリカ料理",
         "tel": "090-2929-2951",
         "budgetDinner": "￥1,000～￥1,999",
@@ -225054,9 +225056,9 @@ const shopData = {
         "url": "https://tabelog.com/gifu/A2102/A210203/21017158/",
         "category": "ハンバーガー",
         "address": "岐阜県可児市今渡9-9 ビクトリア今渡 1F",
-        "rating": "3.56",
-        "ratingCount": "136",
-        "savedCount": "4451",
+        "rating": "3.55",
+        "ratingCount": "143",
+        "savedCount": "4689",
         "cuisine": "ハンバーガー、サンドイッチ",
         "tel": "0574-42-9508",
         "budgetDinner": "～￥999",
@@ -225139,8 +225141,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.08839057211426,
-          36.39943684804394
+          139.08839079211427,
+          36.39943770804394
         ]
       },
       "properties": {
@@ -225148,9 +225150,9 @@ const shopData = {
         "url": "https://tabelog.com/gunma/A1001/A100101/10019951/",
         "category": "ハンバーガー",
         "address": "群馬県前橋市三俣町3-27-3 吉田コーポ 1F",
-        "rating": "3.44",
+        "rating": "3.48",
         "ratingCount": "85",
-        "savedCount": "4184",
+        "savedCount": "4225",
         "cuisine": "ハンバーガー",
         "tel": "027-888-6401",
         "budgetDinner": "￥1,000～￥1,999",
@@ -225213,8 +225215,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.71494156517895,
-          41.765763985153676
+          140.71494207517898,
+          41.76576494515368
         ]
       },
       "properties": {
@@ -225222,9 +225224,9 @@ const shopData = {
         "url": "https://tabelog.com/hokkaido/A0105/A010501/1000019/",
         "category": "ハンバーガー",
         "address": "北海道函館市末広町23-18",
-        "rating": "3.47",
-        "ratingCount": "1758",
-        "savedCount": "36047",
+        "rating": "3.49",
+        "ratingCount": "1831",
+        "savedCount": "36697",
         "cuisine": "ハンバーガー、かつ丼、カレー",
         "tel": "0138-26-2099",
         "budgetLunch": "～￥999",
@@ -225480,8 +225482,8 @@ const shopData = {
         "category": "ハンバーガー",
         "address": "兵庫県尼崎市南塚口町2-24-12 ハピネス南塚口 1F",
         "rating": "3.52",
-        "ratingCount": "494",
-        "savedCount": "16428",
+        "ratingCount": "503",
+        "savedCount": "16804",
         "cuisine": "ハンバーガー、ピザ",
         "tel": "06-6422-1185",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -225757,8 +225759,8 @@ const shopData = {
         "category": "ハンバーガー",
         "address": "神奈川県鎌倉市小町1-6-17 鎌倉マークビル 6F",
         "rating": "3.66",
-        "ratingCount": "596",
-        "savedCount": "33966",
+        "ratingCount": "594",
+        "savedCount": "33845",
         "cuisine": "ハンバーガー、ダイニングバー、カフェ",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -225854,9 +225856,9 @@ const shopData = {
         "url": "https://tabelog.com/kanagawa/A1406/A140601/14000902/",
         "category": "ハンバーガー",
         "address": "神奈川県横須賀市本町2-1",
-        "rating": "3.54",
-        "ratingCount": "1640",
-        "savedCount": "36165",
+        "rating": "3.52",
+        "ratingCount": "1698",
+        "savedCount": "36723",
         "cuisine": "ハンバーガー、アメリカ料理",
         "tel": "0468-25-9096",
         "budgetDinner": "￥1,000～￥1,999",
@@ -226088,8 +226090,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          129.71310413609817,
-          33.173207117107275
+          129.71310431609817,
+          33.173208477107266
         ]
       },
       "properties": {
@@ -226097,13 +226099,13 @@ const shopData = {
         "url": "https://tabelog.com/nagasaki/A4202/A420201/42000079/",
         "category": "ハンバーガー",
         "address": "長崎県佐世保市矢岳町1-1",
-        "rating": "3.54",
-        "ratingCount": "460",
-        "savedCount": "11764",
+        "rating": "3.51",
+        "ratingCount": "465",
+        "savedCount": "11925",
         "cuisine": "ハンバーガー",
         "tel": "0956-25-6685",
         "budgetDinnerRvw": "￥1,000～￥1,999",
-        "budgetLunchRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "～￥999",
         "awards": [
           {
             "y": 2024,
@@ -226128,8 +226130,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          129.71316107609826,
-          33.17321980710728
+          129.71316063609828,
+          33.173221227107284
         ]
       },
       "properties": {
@@ -226137,9 +226139,9 @@ const shopData = {
         "url": "https://tabelog.com/nagasaki/A4202/A420201/42000138/",
         "category": "ハンバーガー",
         "address": "長崎県佐世保市矢岳町1-1 ２Ｆ",
-        "rating": "3.51",
-        "ratingCount": "418",
-        "savedCount": "12007",
+        "rating": "3.50",
+        "ratingCount": "421",
+        "savedCount": "12105",
         "cuisine": "ハンバーガー、郷土料理",
         "tel": "0956-24-5034",
         "budgetDinner": "～￥999",
@@ -226417,8 +226419,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          133.92476048820333,
-          34.66390287750177
+          133.92476055820333,
+          34.66390312750177
         ]
       },
       "properties": {
@@ -226426,9 +226428,9 @@ const shopData = {
         "url": "https://tabelog.com/okayama/A3301/A330101/33000365/",
         "category": "ハンバーガー",
         "address": "岡山県岡山市北区磨屋町5-19",
-        "rating": "3.51",
-        "ratingCount": "301",
-        "savedCount": "8893",
+        "rating": "3.49",
+        "ratingCount": "313",
+        "savedCount": "9012",
         "cuisine": "ハンバーガー",
         "tel": "086-221-5351",
         "budgetDinner": "￥1,000～￥1,999",
@@ -226596,10 +226598,10 @@ const shopData = {
         "name": "ゴーディーズ （GORDIE’S ） - 北谷町（ハンバーガー）",
         "url": "https://tabelog.com/okinawa/A4703/A470304/47002074/",
         "category": "ハンバーガー",
-        "address": "沖縄県中頭郡北谷町字砂辺100-530",
-        "rating": "3.54",
-        "ratingCount": "1104",
-        "savedCount": "43477",
+        "address": "沖縄県-中頭郡北谷町字砂辺100-530",
+        "rating": "3.53",
+        "ratingCount": "1125",
+        "savedCount": "43911",
         "cuisine": "ハンバーガー、カフェ",
         "tel": "098-926-0234",
         "budgetDinner": "￥2,000～￥2,999",
@@ -226806,8 +226808,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.49631202720525,
-          34.67415429799574
+          135.49631269720527,
+          34.67415362799574
         ]
       },
       "properties": {
@@ -226815,9 +226817,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270201/27088635/",
         "category": "ハンバーガー",
         "address": "大阪府大阪市西区北堀江1-6-12",
-        "rating": "3.52",
-        "ratingCount": "577",
-        "savedCount": "30187",
+        "rating": "3.51",
+        "ratingCount": "587",
+        "savedCount": "30313",
         "cuisine": "ハンバーガー、ビアバー、カフェ",
         "tel": "06-6556-6682",
         "budgetDinner": "￥1,000～￥1,999",
@@ -226965,8 +226967,8 @@ const shopData = {
         "category": "ハンバーガー",
         "address": "佐賀県唐津市虹ノ松原 虹の松原",
         "rating": "3.49",
-        "ratingCount": "700",
-        "savedCount": "10427",
+        "ratingCount": "718",
+        "savedCount": "10549",
         "cuisine": "ハンバーガー",
         "tel": "0955-56-7119",
         "budgetDinnerRvw": "～￥999",
@@ -227778,7 +227780,7 @@ const shopData = {
         "address": "東京都港区北青山3-8-11",
         "rating": "3.67",
         "ratingCount": "1432",
-        "savedCount": "80666",
+        "savedCount": "80104",
         "cuisine": "ハンバーガー、アメリカ料理",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -227860,8 +227862,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.72241418411858,
-          35.65185516872066
+          139.72241480411859,
+          35.65185621872066
         ]
       },
       "properties": {
@@ -227870,14 +227872,14 @@ const shopData = {
         "category": "ハンバーガー",
         "address": "東京都港区南麻布 5-15-25 ２Ｆ",
         "rating": "3.56",
-        "ratingCount": "921",
-        "savedCount": "35754",
+        "ratingCount": "944",
+        "savedCount": "36101",
         "cuisine": "ハンバーガー、カフェ、パンケーキ",
         "tel": "03-5422-7899",
         "budgetDinner": "￥3,000～￥3,999",
         "budgetLunch": "￥3,000～￥3,999",
-        "budgetDinnerRvw": "￥2,000～￥2,999",
-        "budgetLunchRvw": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥3,000～￥3,999",
         "awards": [
           {
             "y": 2024,
@@ -227989,8 +227991,8 @@ const shopData = {
         "category": "ハンバーガー",
         "address": "東京都千代田区紀尾井町3-28 ADMIRAL紀尾井町 1F",
         "rating": "3.59",
-        "ratingCount": "616",
-        "savedCount": "21685",
+        "ratingCount": "614",
+        "savedCount": "21562",
         "cuisine": "ハンバーガー",
         "budgetDinner": "￥2,000～￥2,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -228154,8 +228156,8 @@ const shopData = {
         "category": "ハンバーガー",
         "address": "東京都千代田区神田三崎町1-4-8 愛光舎ビル 1F",
         "rating": "3.71",
-        "ratingCount": "1349",
-        "savedCount": "59608",
+        "ratingCount": "1351",
+        "savedCount": "59243",
         "cuisine": "ハンバーガー、サンドイッチ、カフェ",
         "budgetLunch": "￥1,000～￥1,999",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -228653,7 +228655,7 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.71368415394375,
+          139.71368496394373,
           35.63394220872925
         ]
       },
@@ -228662,9 +228664,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1316/A131601/13119994/",
         "category": "ハンバーガー",
         "address": "東京都目黒区下目黒1-2-22 セザール目黒 2F",
-        "rating": "3.52",
-        "ratingCount": "1318",
-        "savedCount": "55849",
+        "rating": "3.51",
+        "ratingCount": "1328",
+        "savedCount": "56193",
         "cuisine": "ハンバーガー",
         "tel": "03-6303-9555",
         "budgetLunch": "￥1,000～￥1,999",
@@ -229064,8 +229066,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.69101126435027,
-          35.67261449869748
+          139.69101112435027,
+          35.67261465869747
         ]
       },
       "properties": {
@@ -229073,9 +229075,9 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1318/A131810/13019608/",
         "category": "ハンバーガー",
         "address": "東京都渋谷区代々木5-64-7",
-        "rating": "3.56",
-        "ratingCount": "1017",
-        "savedCount": "46387",
+        "rating": "3.55",
+        "ratingCount": "1040",
+        "savedCount": "46796",
         "cuisine": "ハンバーガー、サンドイッチ、カフェ",
         "tel": "03-3466-5970",
         "budgetLunch": "￥1,000～￥1,999",
@@ -229192,11 +229194,11 @@ const shopData = {
         "category": "ハンバーガー",
         "address": "東京都板橋区常盤台4-33-3 アサカビル 2F",
         "rating": "3.55",
-        "ratingCount": "551",
-        "savedCount": "16899",
+        "ratingCount": "568",
+        "savedCount": "17368",
         "cuisine": "ハンバーガー、バー",
         "tel": "03-3937-8929",
-        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -241636,14 +241638,15 @@ const shopData = {
         ]
       },
       "properties": {
-        "name": "鳴門金時本舗 栗尾商店 芋乃実 グランスタ店（【旧店名】鳴門金時本舗 栗尾商店） - 東京（和菓子）",
+        "name": "鳴門金時本舗 栗尾商店 芋乃実（【旧店名】鳴門金時本舗 栗尾商店） - 東京（和菓子）",
         "url": "https://tabelog.com/tokyo/A1302/A130201/13143553/",
         "category": "和菓子・甘味処（東京）",
-        "address": "東京都千代田区丸の内1-9-1 東京駅 グランスタ B1F",
+        "address": "東京都千代田区丸の内1-9-1 JR東日本東京駅 B1F 地下丸の内改札内エリア",
         "rating": "3.73",
-        "ratingCount": "686",
-        "savedCount": "14235",
+        "ratingCount": "697",
+        "savedCount": "14477",
         "cuisine": "和菓子、スイーツ、洋菓子",
+        "tel": "03-6257-5880",
         "budgetLunch": "￥1,000～￥1,999",
         "budgetDinnerRvw": "～￥999",
         "budgetLunchRvw": "￥1,000～￥1,999",
@@ -241671,8 +241674,8 @@ const shopData = {
         "category": "和菓子・甘味処（東京）",
         "address": "東京都中央区日本橋1-2-19 日本橋ファーストビル\u3000１Ｆ",
         "rating": "3.79",
-        "ratingCount": "1634",
-        "savedCount": "60658",
+        "ratingCount": "1635",
+        "savedCount": "60612",
         "cuisine": "和菓子、どら焼き",
         "budgetLunch": "～￥999",
         "budgetDinnerRvw": "～￥999",
@@ -242643,7 +242646,7 @@ const shopData = {
         "address": "東京都千代田区麹町1-6-6",
         "rating": "3.71",
         "ratingCount": "297",
-        "savedCount": "8514",
+        "savedCount": "8526",
         "cuisine": "和菓子",
         "budgetDinnerRvw": "～￥999",
         "budgetLunchRvw": "～￥999",
@@ -244805,8 +244808,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.8941497812965,
-          35.17619537812205
+          136.8941504212965,
+          35.176195018122044
         ]
       },
       "properties": {
@@ -244814,9 +244817,9 @@ const shopData = {
         "url": "https://tabelog.com/aichi/A2301/A230102/23000710/",
         "category": "和菓子・甘味処（東日本）",
         "address": "愛知県名古屋市中区丸の内1-5-31",
-        "rating": "3.51",
-        "ratingCount": "312",
-        "savedCount": "10757",
+        "rating": "3.52",
+        "ratingCount": "325",
+        "savedCount": "10938",
         "cuisine": "和菓子",
         "tel": "052-231-3904",
         "budgetLunch": "￥1,000～￥1,999",
@@ -245089,8 +245092,8 @@ const shopData = {
         "category": "和菓子・甘味処（東日本）",
         "address": "愛知県名古屋市千種区日進通5-2-4",
         "rating": "3.60",
-        "ratingCount": "551",
-        "savedCount": "17876",
+        "ratingCount": "553",
+        "savedCount": "17828",
         "cuisine": "焼き芋・大学芋、和菓子",
         "budgetDinnerRvw": "～￥999",
         "budgetLunchRvw": "～￥999",
@@ -245621,7 +245624,7 @@ const shopData = {
         "address": "岐阜県岐阜市八幡町13",
         "rating": "3.71",
         "ratingCount": "529",
-        "savedCount": "19205",
+        "savedCount": "19165",
         "cuisine": "甘味処、かき氷、うどん",
         "budgetLunch": "～￥999",
         "budgetDinnerRvw": "～￥999",
@@ -246149,8 +246152,8 @@ const shopData = {
         "category": "和菓子・甘味処（東日本）",
         "address": "群馬県高崎市剣崎町1038-4",
         "rating": "3.57",
-        "ratingCount": "123",
-        "savedCount": "4398",
+        "ratingCount": "122",
+        "savedCount": "4392",
         "cuisine": "和菓子",
         "budgetLunch": "～￥999",
         "awards": [
@@ -246590,10 +246593,9 @@ const shopData = {
         "category": "和菓子・甘味処（東日本）",
         "address": "神奈川県鎌倉市長谷1-7-7",
         "rating": "3.64",
-        "ratingCount": "242",
-        "savedCount": "7749",
+        "ratingCount": "245",
+        "savedCount": "7722",
         "cuisine": "和菓子",
-        "tel": "0467-24-2922",
         "budgetLunchRvw": "～￥999",
         "awards": [
           {
@@ -246667,9 +246669,8 @@ const shopData = {
         "address": "神奈川県鎌倉市佐助2-6-1",
         "rating": "3.63",
         "ratingCount": "221",
-        "savedCount": "15363",
+        "savedCount": "15320",
         "cuisine": "甘味処、和菓子",
-        "tel": "0467-22-0341",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
@@ -246700,14 +246701,13 @@ const shopData = {
         "category": "和菓子・甘味処（東日本）",
         "address": "神奈川県鎌倉市小町2-9-20",
         "rating": "3.66",
-        "ratingCount": "643",
-        "savedCount": "28050",
+        "ratingCount": "658",
+        "savedCount": "28252",
         "cuisine": "甘味処、日本料理、和菓子",
-        "tel": "0467-24-0810",
         "budgetDinner": "～￥999",
         "budgetLunch": "～￥999",
         "budgetDinnerRvw": "～￥999",
-        "budgetLunchRvw": "～￥999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
             "y": 2023,
@@ -247237,13 +247237,13 @@ const shopData = {
         "category": "和菓子・甘味処（東日本）",
         "address": "宮城県仙台市青葉区北目町2-38",
         "rating": "3.71",
-        "ratingCount": "1782",
-        "savedCount": "54034",
+        "ratingCount": "1798",
+        "savedCount": "54469",
         "cuisine": "和菓子、甘味処、かき氷",
         "budgetDinner": "～￥999",
         "budgetLunch": "～￥999",
         "budgetDinnerRvw": "～￥999",
-        "budgetLunchRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "～￥999",
         "awards": [
           {
             "y": 2023,
@@ -248570,9 +248570,9 @@ const shopData = {
         "url": "https://tabelog.com/kyoto/A2601/A260101/26005903/",
         "category": "和菓子・甘味処（西日本）",
         "address": "京都府京都市下京区烏丸通塩小路下る東塩小路町 ジェイアール京都伊勢丹 JR西口改札前イートパラダイス 3F",
-        "rating": "3.55",
-        "ratingCount": "1447",
-        "savedCount": "43482",
+        "rating": "3.54",
+        "ratingCount": "1504",
+        "savedCount": "44178",
         "cuisine": "甘味処、カフェ、麺類",
         "tel": "075-352-1111",
         "budgetDinner": "￥1,000～￥1,999",
@@ -250748,9 +250748,9 @@ const shopData = {
         "url": "https://tabelog.com/kyoto/A2601/A260503/26022394/",
         "category": "和菓子・甘味処（西日本）",
         "address": "京都府京都市北区紫竹西野山町54-1",
-        "rating": "3.54",
-        "ratingCount": "61",
-        "savedCount": "5718",
+        "rating": "3.60",
+        "ratingCount": "60",
+        "savedCount": "5796",
         "cuisine": "和菓子",
         "tel": "非公開",
         "budgetLunchRvw": "￥2,000～￥2,999",
@@ -250803,8 +250803,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.80180854916648,
-          34.88951666795626
+          135.80180745916647,
+          34.88951570795626
         ]
       },
       "properties": {
@@ -250812,9 +250812,9 @@ const shopData = {
         "url": "https://tabelog.com/kyoto/A2607/A260701/26000722/",
         "category": "和菓子・甘味処（西日本）",
         "address": "京都府宇治市宇治壱番10",
-        "rating": "3.55",
-        "ratingCount": "1651",
-        "savedCount": "49897",
+        "rating": "3.54",
+        "ratingCount": "1683",
+        "savedCount": "50649",
         "cuisine": "甘味処、カフェ、麺類",
         "tel": "0774-22-7800",
         "budgetDinner": "￥2,000～￥2,999",
@@ -250934,8 +250934,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          136.7235750242088,
-          34.4626721585209
+          136.7235764442088,
+          34.4626709285209
         ]
       },
       "properties": {
@@ -250944,8 +250944,8 @@ const shopData = {
         "category": "和菓子・甘味処（西日本）",
         "address": "三重県伊勢市宇治中之切町26 おかげ横丁",
         "rating": "3.59",
-        "ratingCount": "5332",
-        "savedCount": "36160",
+        "ratingCount": "5569",
+        "savedCount": "37155",
         "cuisine": "甘味処、和菓子",
         "tel": "0596-22-7000",
         "budgetLunch": "～￥999",
@@ -252306,8 +252306,8 @@ const shopData = {
         "category": "スイーツ（東京）",
         "address": "東京都中央区日本橋室町1-3-10 日本橋三越本店 新館 B2F",
         "rating": "3.76",
-        "ratingCount": "994",
-        "savedCount": "16884",
+        "ratingCount": "997",
+        "savedCount": "16652",
         "cuisine": "バームクーヘン",
         "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
@@ -252446,8 +252446,8 @@ const shopData = {
         "category": "スイーツ（東京）",
         "address": "東京都渋谷区猿楽町1-3",
         "rating": "3.82",
-        "ratingCount": "661",
-        "savedCount": "41490",
+        "ratingCount": "662",
+        "savedCount": "41105",
         "cuisine": "ケーキ、スイーツ",
         "budgetDinnerRvw": "～￥999",
         "budgetLunchRvw": "～￥999",
@@ -252584,8 +252584,8 @@ const shopData = {
         "category": "スイーツ（東京）",
         "address": "東京都目黒区三田1-12-25 金子ビル 1F",
         "rating": "3.93",
-        "ratingCount": "593",
-        "savedCount": "42308",
+        "ratingCount": "592",
+        "savedCount": "42097",
         "cuisine": "ケーキ、カフェ",
         "budgetLunch": "￥2,000～￥2,999",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -252769,11 +252769,9 @@ const shopData = {
         "category": "スイーツ（東京）",
         "address": "東京都新宿区新宿1-23-3 御苑コーポビアネーズ 1F",
         "rating": "3.84",
-        "ratingCount": "1686",
-        "savedCount": "89402",
+        "ratingCount": "1682",
+        "savedCount": "89103",
         "cuisine": "チョコレート、ケーキ",
-        "budgetDinner": "￥4,000～￥4,999",
-        "budgetLunch": "￥4,000～￥4,999",
         "budgetDinnerRvw": "￥3,000～￥3,999",
         "budgetLunchRvw": "￥4,000～￥4,999",
         "awards": [
@@ -252882,8 +252880,8 @@ const shopData = {
         "category": "スイーツ（東京）",
         "address": "東京都渋谷区神宮前5-51-8 ラ・ポルト青山\u30001・2F",
         "rating": "3.62",
-        "ratingCount": "1839",
-        "savedCount": "56443",
+        "ratingCount": "1865",
+        "savedCount": "56856",
         "cuisine": "ケーキ、マカロン、カフェ",
         "tel": "03-5485-7766",
         "budgetDinner": "￥3,000～￥3,999",
@@ -252985,8 +252983,8 @@ const shopData = {
         "category": "スイーツ（東京）",
         "address": "東京都渋谷区広尾5-19-9",
         "rating": "3.80",
-        "ratingCount": "603",
-        "savedCount": "26011",
+        "ratingCount": "604",
+        "savedCount": "25957",
         "cuisine": "ケーキ、チョコレート、マカロン",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -253119,8 +253117,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.73864307432265,
-          35.673187728712286
+          139.73864379432266,
+          35.67318763871228
         ]
       },
       "properties": {
@@ -253129,12 +253127,12 @@ const shopData = {
         "category": "スイーツ（東京）",
         "address": "東京都港区赤坂2-6-24 1F",
         "rating": "3.66",
-        "ratingCount": "1463",
-        "savedCount": "72532",
+        "ratingCount": "1503",
+        "savedCount": "73295",
         "cuisine": "ケーキ、カフェ、パン",
         "tel": "03-3583-1139",
         "budgetDinnerRvw": "～￥999",
-        "budgetLunchRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
             "y": 2023,
@@ -254386,8 +254384,8 @@ const shopData = {
         "category": "スイーツ（東京）",
         "address": "東京都目黒区鷹番3-17-6",
         "rating": "3.90",
-        "ratingCount": "675",
-        "savedCount": "33518",
+        "ratingCount": "677",
+        "savedCount": "33448",
         "cuisine": "ケーキ、カフェ、パン",
         "budgetLunch": "￥1,000～￥1,999",
         "budgetDinnerRvw": "～￥999",
@@ -256565,8 +256563,8 @@ const shopData = {
         "category": "スイーツ（東日本）",
         "address": "愛知県名古屋市千種区丸山町3-83 メナージュマルヤマ",
         "rating": "3.72",
-        "ratingCount": "586",
-        "savedCount": "30472",
+        "ratingCount": "585",
+        "savedCount": "30408",
         "cuisine": "ケーキ、カフェ",
         "budgetLunch": "～￥999",
         "budgetDinnerRvw": "～￥999",
@@ -256744,7 +256742,7 @@ const shopData = {
         "address": "愛知県稲沢市駅前1-12-11 1F",
         "rating": "3.65",
         "ratingCount": "205",
-        "savedCount": "10970",
+        "savedCount": "10938",
         "cuisine": "ケーキ、カフェ、洋菓子",
         "budgetLunch": "～￥999",
         "budgetLunchRvw": "￥1,000～￥1,999",
@@ -257287,19 +257285,19 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.44832389659604,
-          42.94695856463703
+          141.44832341659605,
+          42.94695858463703
         ]
       },
       "properties": {
-        "name": "農家の茶屋 自然満喫倶楽部（シゼンマンキツクラブ） - 札幌市清田区その他（フルーツパーラー）",
+        "name": "自然満喫倶楽部（シゼンマンキツクラブ） - 札幌市清田区その他（ソフトクリーム）",
         "url": "https://tabelog.com/hokkaido/A0101/A010304/1008448/",
         "category": "スイーツ（東日本）",
         "address": "北海道札幌市清田区有明187番地",
         "rating": "3.58",
-        "ratingCount": "448",
-        "savedCount": "16297",
-        "cuisine": "フルーツパーラー、ソフトクリーム、ピザ",
+        "ratingCount": "466",
+        "savedCount": "16424",
+        "cuisine": "ソフトクリーム、フルーツパーラー、スイーツ",
         "tel": "011-883-6886",
         "budgetLunch": "～￥999",
         "budgetDinnerRvw": "～￥999",
@@ -257466,8 +257464,8 @@ const shopData = {
         "category": "スイーツ（東日本）",
         "address": "北海道千歳市美々 新千歳空港 国内線ターミナルビル 2F",
         "rating": "3.54",
-        "ratingCount": "969",
-        "savedCount": "9361",
+        "ratingCount": "1008",
+        "savedCount": "9577",
         "cuisine": "チョコレート、洋菓子",
         "tel": "0570-020-612",
         "budgetDinner": "￥2,000～￥2,999",
@@ -257488,24 +257486,24 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.90380552165234,
-          43.47914509444408
+          141.90380641165234,
+          43.47914528444408
         ]
       },
       "properties": {
         "name": "ナカヤ菓子店 - 砂川（スイーツ）",
         "url": "https://tabelog.com/hokkaido/A0107/A010707/1024174/",
         "category": "スイーツ（東日本）",
-        "address": "北海道砂川市東1条南10丁目2-13",
+        "address": "北海道-砂川市東1条南10丁目2-13",
         "rating": "3.59",
-        "ratingCount": "503",
-        "savedCount": "12780",
+        "ratingCount": "526",
+        "savedCount": "13050",
         "cuisine": "スイーツ、ケーキ、ソフトクリーム",
         "tel": "0125-52-2575",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
         "budgetDinnerRvw": "～￥999",
-        "budgetLunchRvw": "～￥999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
             "y": 2023,
@@ -257660,8 +257658,8 @@ const shopData = {
         "category": "スイーツ（東日本）",
         "address": "神奈川県横浜市西区みなとみらい2-2-1-3 横浜ロイヤルパークホテル 1F",
         "rating": "3.71",
-        "ratingCount": "576",
-        "savedCount": "29559",
+        "ratingCount": "577",
+        "savedCount": "29456",
         "cuisine": "ケーキ、パン、惣菜・デリ",
         "budgetLunch": "～￥999",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -257826,8 +257824,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.64672873206828,
-          35.443623568828805
+          139.64672903206827,
+          35.443624858828805
         ]
       },
       "properties": {
@@ -257836,8 +257834,8 @@ const shopData = {
         "category": "スイーツ（東日本）",
         "address": "神奈川県横浜市中区山下町164",
         "rating": "3.53",
-        "ratingCount": "714",
-        "savedCount": "16900",
+        "ratingCount": "729",
+        "savedCount": "17157",
         "cuisine": "中華菓子、肉まん",
         "tel": "045-641-7890",
         "budgetDinner": "～￥999",
@@ -259050,7 +259048,7 @@ const shopData = {
         "address": "宮城県仙台市青葉区一番町2-3-8 ブラザーパーキング 1F",
         "rating": "3.75",
         "ratingCount": "1053",
-        "savedCount": "29309",
+        "savedCount": "29164",
         "cuisine": "ケーキ、カフェ、マカロン",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -260101,7 +260099,7 @@ const shopData = {
         "address": "静岡県浜松市中央区東三方町128-5",
         "rating": "3.60",
         "ratingCount": "164",
-        "savedCount": "7477",
+        "savedCount": "7464",
         "cuisine": "ケーキ、カフェ",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
@@ -260455,8 +260453,8 @@ const shopData = {
         "category": "スイーツ（西日本）",
         "address": "福岡県福岡市中央区桜坂1-14-9",
         "rating": "3.65",
-        "ratingCount": "329",
-        "savedCount": "18502",
+        "ratingCount": "330",
+        "savedCount": "18482",
         "cuisine": "ケーキ、洋菓子",
         "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
@@ -261229,9 +261227,9 @@ const shopData = {
         "url": "https://tabelog.com/ishikawa/A1703/A170302/17000223/",
         "category": "スイーツ（西日本）",
         "address": "石川県七尾市和倉町ワ65-1 辻口博啓美術館",
-        "rating": "3.56",
-        "ratingCount": "577",
-        "savedCount": "10912",
+        "rating": "3.55",
+        "ratingCount": "578",
+        "savedCount": "10989",
         "cuisine": "ケーキ、カフェ",
         "tel": "0767-62-4002",
         "budgetLunch": "～￥999",
@@ -261454,9 +261452,9 @@ const shopData = {
         "url": "https://tabelog.com/kyoto/A2601/A260202/26018786/",
         "category": "スイーツ（西日本）",
         "address": "京都府京都市中京区大炊町355-1",
-        "rating": "3.83",
-        "ratingCount": "743",
-        "savedCount": "49599",
+        "rating": "3.85",
+        "ratingCount": "755",
+        "savedCount": "50143",
         "cuisine": "ドーナツ、カフェ",
         "tel": "075-221-6534",
         "budgetDinnerRvw": "～￥999",
@@ -261923,11 +261921,10 @@ const shopData = {
         "url": "https://tabelog.com/kyoto/A2601/A260303/26003706/",
         "category": "スイーツ（西日本）",
         "address": "京都府京都市左京区一乗寺花ノ木町21-3",
-        "rating": "3.92",
-        "ratingCount": "630",
-        "savedCount": "43468",
+        "rating": "3.91",
+        "ratingCount": "634",
+        "savedCount": "43389",
         "cuisine": "ケーキ、カフェ",
-        "tel": "075-706-5085",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
         "budgetDinnerRvw": "￥2,000～￥2,999",
@@ -262906,8 +262903,8 @@ const shopData = {
         "category": "スイーツ（西日本）",
         "address": "大阪府大阪市西区京町堀1-14-28 UTSUBO+2 1F",
         "rating": "3.77",
-        "ratingCount": "670",
-        "savedCount": "37391",
+        "ratingCount": "669",
+        "savedCount": "37310",
         "cuisine": "ケーキ、マカロン、チョコレート",
         "budgetDinner": "～￥999",
         "budgetLunch": "～￥999",
@@ -262963,7 +262960,7 @@ const shopData = {
         "address": "大阪府大阪市西区京町堀1-12-25",
         "rating": "3.72",
         "ratingCount": "388",
-        "savedCount": "21921",
+        "savedCount": "21848",
         "cuisine": "ケーキ",
         "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
@@ -263403,8 +263400,8 @@ const shopData = {
         "category": "スイーツ（西日本）",
         "address": "大阪府大阪市西区北堀江2-2-12 アジル北堀江 \u30001F",
         "rating": "3.69",
-        "ratingCount": "490",
-        "savedCount": "23145",
+        "ratingCount": "489",
+        "savedCount": "23047",
         "cuisine": "フルーツパーラー、サンドイッチ、カフェ",
         "budgetDinnerRvw": "￥3,000～￥3,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
@@ -263499,8 +263496,8 @@ const shopData = {
         "category": "スイーツ（西日本）",
         "address": "大阪府大阪市西区南堀江2-4-16 ファヴール南堀江 1F",
         "rating": "3.69",
-        "ratingCount": "548",
-        "savedCount": "37539",
+        "ratingCount": "549",
+        "savedCount": "37094",
         "cuisine": "ケーキ、チョコレート、カフェ",
         "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "～￥999",
@@ -263902,8 +263899,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.62317037692685,
-          34.65539590804806
+          135.62316990692685,
+          34.65539584804806
         ]
       },
       "properties": {
@@ -263911,9 +263908,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2707/A270703/27043645/",
         "category": "スイーツ（西日本）",
         "address": "大阪府東大阪市玉串町東3-1-11",
-        "rating": "3.61",
-        "ratingCount": "200",
-        "savedCount": "7764",
+        "rating": "3.60",
+        "ratingCount": "203",
+        "savedCount": "7772",
         "cuisine": "ケーキ、洋菓子、カフェ",
         "tel": "072-973-7194",
         "budgetLunchRvw": "￥1,000～￥1,999",
@@ -264101,8 +264098,8 @@ const shopData = {
         "category": "アイス・ジェラート",
         "address": "青森県青森市新町1-6-22",
         "rating": "3.62",
-        "ratingCount": "223",
-        "savedCount": "6213",
+        "ratingCount": "224",
+        "savedCount": "6178",
         "cuisine": "ジェラート・アイスクリーム",
         "budgetDinner": "～￥999",
         "budgetLunch": "～￥999",
@@ -264303,9 +264300,9 @@ const shopData = {
         "url": "https://tabelog.com/fukuoka/A4003/A400302/40020219/",
         "category": "アイス・ジェラート",
         "address": "福岡県宗像市神湊44-2",
-        "rating": "3.56",
-        "ratingCount": "188",
-        "savedCount": "4777",
+        "rating": "3.55",
+        "ratingCount": "196",
+        "savedCount": "4831",
         "cuisine": "ジェラート・アイスクリーム",
         "tel": "非公開",
         "budgetLunchRvw": "～￥999",
@@ -264561,8 +264558,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          141.27356713803502,
-          43.077292094498596
+          141.27356883803503,
+          43.0772924244986
         ]
       },
       "properties": {
@@ -264571,8 +264568,8 @@ const shopData = {
         "category": "アイス・ジェラート",
         "address": "北海道札幌市西区西野3条7丁目5-11-3",
         "rating": "3.54",
-        "ratingCount": "189",
-        "savedCount": "8289",
+        "ratingCount": "195",
+        "savedCount": "8378",
         "cuisine": "ジェラート・アイスクリーム、洋菓子、カフェ",
         "tel": "011-661-0395",
         "budgetDinnerRvw": "～￥999",
@@ -264817,8 +264814,8 @@ const shopData = {
         "category": "アイス・ジェラート",
         "address": "北海道夕張郡由仁町中三川219",
         "rating": "3.58",
-        "ratingCount": "379",
-        "savedCount": "10139",
+        "ratingCount": "378",
+        "savedCount": "10105",
         "cuisine": "ジェラート・アイスクリーム",
         "budgetDinnerRvw": "～￥999",
         "budgetLunchRvw": "～￥999",
@@ -264957,18 +264954,18 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          144.87031194093444,
-          43.6139402253032
+          144.87031369093447,
+          43.6139402553032
         ]
       },
       "properties": {
         "name": "caffe kaiyodai（カフェ カイヨウダイ） - 中標津町その他（ジェラート・アイスクリーム）",
         "url": "https://tabelog.com/hokkaido/A0112/A011204/1008194/",
         "category": "アイス・ジェラート",
-        "address": "北海道標津郡中標津町字開陽",
+        "address": "北海道-標津郡中標津町字開陽",
         "rating": "3.53",
-        "ratingCount": "184",
-        "savedCount": "4085",
+        "ratingCount": "197",
+        "savedCount": "4162",
         "cuisine": "ジェラート・アイスクリーム、カフェ",
         "tel": "0153-74-2525",
         "budgetDinnerRvw": "～￥999",
@@ -265963,7 +265960,7 @@ const shopData = {
         "address": "新潟県新潟市西蒲区橋本240-7",
         "rating": "3.58",
         "ratingCount": "320",
-        "savedCount": "6603",
+        "savedCount": "6568",
         "cuisine": "ジェラート・アイスクリーム、カフェ",
         "budgetDinnerRvw": "～￥999",
         "budgetLunchRvw": "～￥999",
@@ -266384,8 +266381,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.233343077036,
-          34.8473408487574
+          138.23334219703602,
+          34.847342028757396
         ]
       },
       "properties": {
@@ -266393,9 +266390,9 @@ const shopData = {
         "url": "https://tabelog.com/shizuoka/A2203/A220301/22018670/",
         "category": "アイス・ジェラート",
         "address": "静岡県藤枝市内瀬戸坂下141-1",
-        "rating": "3.51",
-        "ratingCount": "529",
-        "savedCount": "13753",
+        "rating": "3.52",
+        "ratingCount": "552",
+        "savedCount": "14232",
         "cuisine": "ジェラート・アイスクリーム、カフェ、甘味処",
         "tel": "054-646-7783",
         "budgetDinner": "～￥999",
@@ -266486,8 +266483,8 @@ const shopData = {
         "category": "アイス・ジェラート",
         "address": "栃木県那須郡那須町湯本579 南ヶ丘牧場内",
         "rating": "3.62",
-        "ratingCount": "446",
-        "savedCount": "11527",
+        "ratingCount": "448",
+        "savedCount": "11501",
         "cuisine": "ソフトクリーム、カフェ、パン",
         "budgetLunch": "～￥999",
         "budgetDinnerRvw": "～￥999",
@@ -266949,8 +266946,8 @@ const shopData = {
         "category": "アイス・ジェラート",
         "address": "東京都目黒区自由が丘1-14-8 1F",
         "rating": "3.60",
-        "ratingCount": "195",
-        "savedCount": "11523",
+        "ratingCount": "197",
+        "savedCount": "11485",
         "cuisine": "ジェラート・アイスクリーム、チョコレート",
         "budgetDinner": "～￥999",
         "budgetLunch": "～￥999",
@@ -270185,8 +270182,8 @@ const shopData = {
         "category": "パン（東京）",
         "address": "東京都中央区銀座3-2-1 マロニエゲート銀座2 B2F",
         "rating": "3.78",
-        "ratingCount": "1030",
-        "savedCount": "32641",
+        "ratingCount": "1029",
+        "savedCount": "32546",
         "cuisine": "パン、サンドイッチ、洋菓子",
         "budgetDinner": "￥1,000～￥1,999",
         "budgetLunch": "￥1,000～￥1,999",
@@ -270896,10 +270893,11 @@ const shopData = {
         "url": "https://tabelog.com/tokyo/A1303/A130302/13164057/",
         "category": "パン（東京）",
         "address": "東京都渋谷区恵比寿西2-10-7 YKビル 1F",
-        "rating": "3.74",
-        "ratingCount": "886",
-        "savedCount": "48990",
+        "rating": "3.73",
+        "ratingCount": "890",
+        "savedCount": "49016",
         "cuisine": "パン、カフェ",
+        "tel": "03-6427-0158",
         "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
@@ -271065,8 +271063,8 @@ const shopData = {
         "category": "パン（東京）",
         "address": "東京都新宿区新宿3-14-1 伊勢丹新宿店 B1F",
         "rating": "3.77",
-        "ratingCount": "1294",
-        "savedCount": "34584",
+        "ratingCount": "1293",
+        "savedCount": "34184",
         "cuisine": "パン、カフェ、ケーキ",
         "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "～￥999",
@@ -271224,7 +271222,7 @@ const shopData = {
         "address": "東京都渋谷区渋谷1-4-6",
         "rating": "3.74",
         "ratingCount": "563",
-        "savedCount": "32929",
+        "savedCount": "32793",
         "cuisine": "パン、ベーグル、カフェ",
         "awards": [
           {
@@ -271815,8 +271813,8 @@ const shopData = {
         "category": "パン（東京）",
         "address": "東京都千代田区内神田1-10-5 1F",
         "rating": "3.71",
-        "ratingCount": "393",
-        "savedCount": "11851",
+        "ratingCount": "394",
+        "savedCount": "11785",
         "cuisine": "パン、ベーグル",
         "budgetDinner": "～￥999",
         "budgetLunch": "～￥999",
@@ -272062,8 +272060,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.77493988422535,
-          35.66607074872836
+          139.77493954422533,
+          35.66607118872835
         ]
       },
       "properties": {
@@ -272072,8 +272070,8 @@ const shopData = {
         "category": "パン（東京）",
         "address": "東京都中央区築地7-10-11",
         "rating": "3.61",
-        "ratingCount": "845",
-        "savedCount": "28404",
+        "ratingCount": "859",
+        "savedCount": "28614",
         "cuisine": "パン、サンドイッチ、ベーグル",
         "tel": "03-6228-4555",
         "budgetDinnerRvw": "～￥999",
@@ -272187,8 +272185,8 @@ const shopData = {
         "category": "パン（東京）",
         "address": "東京都港区白金1-15-22",
         "rating": "3.79",
-        "ratingCount": "1547",
-        "savedCount": "59587",
+        "ratingCount": "1546",
+        "savedCount": "59422",
         "cuisine": "ベーグル、サンドイッチ、カフェ",
         "budgetLunch": "～￥999",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -273441,7 +273439,7 @@ const shopData = {
         "address": "東京都世田谷区代沢5-6-15",
         "rating": "3.72",
         "ratingCount": "493",
-        "savedCount": "28017",
+        "savedCount": "27906",
         "cuisine": "パン、ベーグル",
         "budgetDinner": "～￥999",
         "budgetLunch": "～￥999",
@@ -273586,7 +273584,7 @@ const shopData = {
         "address": "東京都杉並区天沼3-2-2 荻窪勧業ビル\u3000１Ｆ",
         "rating": "3.72",
         "ratingCount": "512",
-        "savedCount": "12307",
+        "savedCount": "12242",
         "cuisine": "パン",
         "budgetDinnerRvw": "～￥999",
         "budgetLunchRvw": "～￥999",
@@ -274081,8 +274079,8 @@ const shopData = {
         "category": "パン（東京）",
         "address": "東京都荒川区東日暮里1-5-6",
         "rating": "3.73",
-        "ratingCount": "601",
-        "savedCount": "16894",
+        "ratingCount": "600",
+        "savedCount": "16802",
         "cuisine": "パン、カフェ、オーガニック",
         "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
@@ -274120,8 +274118,8 @@ const shopData = {
         "category": "パン（東京）",
         "address": "東京都葛飾区東金町3-17-4",
         "rating": "3.74",
-        "ratingCount": "496",
-        "savedCount": "18889",
+        "ratingCount": "497",
+        "savedCount": "18848",
         "cuisine": "パン",
         "budgetDinner": "～￥999",
         "budgetLunch": "～￥999",
@@ -275283,10 +275281,10 @@ const shopData = {
         "name": "ココペライ（Kokopelli） - 桑園（パン）",
         "url": "https://tabelog.com/hokkaido/A0101/A010102/1008888/",
         "category": "パン（東日本）",
-        "address": "北海道札幌市中央区北7条西18丁目4-10",
-        "rating": "3.59",
-        "ratingCount": "289",
-        "savedCount": "12411",
+        "address": "北海道-札幌市中央区北7条西18丁目4-10",
+        "rating": "3.58",
+        "ratingCount": "292",
+        "savedCount": "12514",
         "cuisine": "パン",
         "tel": "011-887-8118",
         "budgetLunch": "￥1,000～￥1,999",
@@ -275468,8 +275466,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.776017285112,
-          42.753379024545865
+          140.776016915112,
+          42.75337977454586
         ]
       },
       "properties": {
@@ -275478,11 +275476,11 @@ const shopData = {
         "category": "パン（東日本）",
         "address": "北海道虻田郡真狩村桜川45-8",
         "rating": "3.58",
-        "ratingCount": "271",
-        "savedCount": "14643",
+        "ratingCount": "275",
+        "savedCount": "14757",
         "cuisine": "パン",
         "tel": "0136-45-2773",
-        "budgetLunchRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "～￥999",
         "awards": [
           {
             "y": 2022,
@@ -277462,7 +277460,7 @@ const shopData = {
         "address": "長野県北佐久郡軽井沢町中軽井沢3018-3",
         "rating": "3.70",
         "ratingCount": "396",
-        "savedCount": "27857",
+        "savedCount": "27795",
         "cuisine": "パン、カフェ",
         "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
@@ -277589,8 +277587,8 @@ const shopData = {
         "category": "パン（東日本）",
         "address": "埼玉県さいたま市南区文蔵2-1-4",
         "rating": "3.69",
-        "ratingCount": "403",
-        "savedCount": "12949",
+        "ratingCount": "402",
+        "savedCount": "12902",
         "cuisine": "パン、洋菓子",
         "budgetDinner": "～￥999",
         "budgetLunch": "～￥999",
@@ -278188,8 +278186,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          139.10375912679973,
-          34.88435340901109
+          139.10375404679988,
+          34.88436839901108
         ]
       },
       "properties": {
@@ -278197,9 +278195,9 @@ const shopData = {
         "url": "https://tabelog.com/shizuoka/A2205/A220503/22003252/",
         "category": "パン（東日本）",
         "address": "静岡県伊東市八幡野1305-75",
-        "rating": "3.67",
-        "ratingCount": "583",
-        "savedCount": "23534",
+        "rating": "3.65",
+        "ratingCount": "598",
+        "savedCount": "24002",
         "cuisine": "パン、カフェ",
         "tel": "0557-53-3953",
         "budgetDinnerRvw": "￥1,000～￥1,999",
@@ -278272,15 +278270,15 @@ const shopData = {
         "name": "レストラン ペニーレイン 那須店（Penny Lane） - 那須町その他（パン）",
         "url": "https://tabelog.com/tochigi/A0905/A090501/9000301/",
         "category": "パン（東日本）",
-        "address": "栃木県那須郡那須町大字湯本656-2",
+        "address": "栃木県-那須郡那須町大字湯本656-2",
         "rating": "3.57",
-        "ratingCount": "1752",
-        "savedCount": "58085",
+        "ratingCount": "1847",
+        "savedCount": "59415",
         "cuisine": "パン、洋食",
         "tel": "0287-76-1960",
         "budgetLunch": "￥3,000～￥3,999",
         "budgetDinnerRvw": "￥2,000～￥2,999",
-        "budgetLunchRvw": "￥3,000～￥3,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
         "awards": [
           {
             "y": 2022,
@@ -278521,8 +278519,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          132.45835677649512,
-          34.39302490720681
+          132.45835684649512,
+          34.39302536720681
         ]
       },
       "properties": {
@@ -278531,12 +278529,12 @@ const shopData = {
         "category": "パン（西日本）",
         "address": "広島県広島市中区本通7-1",
         "rating": "3.53",
-        "ratingCount": "1013",
-        "savedCount": "14218",
+        "ratingCount": "1021",
+        "savedCount": "14584",
         "cuisine": "パン、カフェ、ヨーロッパ料理",
         "tel": "082-247-2403",
         "budgetDinnerRvw": "￥6,000～￥7,999",
-        "budgetLunchRvw": "￥2,000～￥2,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
             "y": 2022,
@@ -279264,8 +279262,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.3047920979257,
-          34.73218710789789
+          135.3047917979257,
+          34.73218795789789
         ]
       },
       "properties": {
@@ -279273,9 +279271,9 @@ const shopData = {
         "url": "https://tabelog.com/hyogo/A2803/A280302/28001784/",
         "category": "パン（西日本）",
         "address": "兵庫県芦屋市業平町6-16",
-        "rating": "3.50",
-        "ratingCount": "584",
-        "savedCount": "16307",
+        "rating": "3.43",
+        "ratingCount": "588",
+        "savedCount": "16614",
         "cuisine": "パン、サンドイッチ",
         "tel": "0797-22-5137",
         "budgetDinnerRvw": "～￥999",
@@ -279771,10 +279769,10 @@ const shopData = {
         "name": "ル・プチメック 今出川店（Le Petit Mec） - 今出川（パン）",
         "url": "https://tabelog.com/kyoto/A2601/A260202/26000210/",
         "category": "パン（西日本）",
-        "address": "京都府京都市上京区今出川通大宮西入ル元北小路町159 大晋メゾネ西陣今出川 1F",
+        "address": "京都府-京都市上京区今出川通大宮西入ル元北小路町159 大晋メゾネ西陣今出川 1F",
         "rating": "3.54",
-        "ratingCount": "842",
-        "savedCount": "40488",
+        "ratingCount": "846",
+        "savedCount": "40732",
         "cuisine": "パン、洋菓子、カフェ",
         "tel": "075-432-1444",
         "budgetDinner": "～￥999",
@@ -279907,8 +279905,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.75706025042797,
-          35.01129864786465
+          135.75705983042795,
+          35.01129837786466
         ]
       },
       "properties": {
@@ -279916,15 +279914,15 @@ const shopData = {
         "url": "https://tabelog.com/kyoto/A2601/A260202/26005029/",
         "category": "パン（西日本）",
         "address": "京都府京都市中京区衣棚通御池上ル下妙覚寺186 ビスカリア光樹 1F",
-        "rating": "3.56",
-        "ratingCount": "949",
-        "savedCount": "46402",
+        "rating": "3.55",
+        "ratingCount": "959",
+        "savedCount": "46715",
         "cuisine": "パン、洋菓子、カフェ",
         "tel": "075-212-7735",
         "budgetDinner": "～￥999",
         "budgetLunch": "～￥999",
         "budgetDinnerRvw": "～￥999",
-        "budgetLunchRvw": "～￥999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
         "awards": [
           {
             "y": 2022,
@@ -280008,10 +280006,10 @@ const shopData = {
         "name": "ハナカゴ（HANAKAGO） - 烏丸（パン）",
         "url": "https://tabelog.com/kyoto/A2601/A260202/26025406/",
         "category": "パン（西日本）",
-        "address": "京都府京都市中京区室町通六角下ル鯉山町516-4",
+        "address": "京都府-京都市中京区室町通六角下ル鯉山町516-4",
         "rating": "3.66",
-        "ratingCount": "305",
-        "savedCount": "16798",
+        "ratingCount": "306",
+        "savedCount": "16726",
         "cuisine": "パン、サンドイッチ",
         "budgetLunch": "￥1,000～￥1,999",
         "budgetLunchRvw": "～￥999",
@@ -280305,8 +280303,8 @@ const shopData = {
         "category": "パン（西日本）",
         "address": "京都府京都市左京区田中下柳町5-1 柳月堂ビル 1F",
         "rating": "3.62",
-        "ratingCount": "287",
-        "savedCount": "11446",
+        "ratingCount": "288",
+        "savedCount": "11397",
         "cuisine": "パン、サンドイッチ",
         "budgetLunch": "～￥999",
         "budgetDinnerRvw": "～￥999",
@@ -280507,8 +280505,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.77059586077488,
-          35.04658306784656
+          135.77059588077486,
+          35.04658385784656
         ]
       },
       "properties": {
@@ -280516,9 +280514,9 @@ const shopData = {
         "url": "https://tabelog.com/kyoto/A2601/A260503/26002312/",
         "category": "パン（西日本）",
         "address": "京都府京都市左京区下鴨梅ノ木町44 ロジェ下鴨 1F",
-        "rating": "3.38",
-        "ratingCount": "382",
-        "savedCount": "16256",
+        "rating": "3.36",
+        "ratingCount": "383",
+        "savedCount": "16288",
         "cuisine": "パン、サンドイッチ、ベーグル",
         "tel": "075-701-3956",
         "budgetDinner": "～￥999",
@@ -280745,7 +280743,7 @@ const shopData = {
         "address": "京都府京都市伏見区深草直違橋3-400",
         "rating": "3.67",
         "ratingCount": "200",
-        "savedCount": "11701",
+        "savedCount": "11683",
         "cuisine": "パン、洋菓子",
         "budgetLunch": "～￥999",
         "awards": [
@@ -280937,10 +280935,11 @@ const shopData = {
         "url": "https://tabelog.com/nagasaki/A4201/A420101/42006584/",
         "category": "パン（西日本）",
         "address": "長崎県長崎市五島町6-3",
-        "rating": "3.67",
-        "ratingCount": "400",
-        "savedCount": "15296",
+        "rating": "3.66",
+        "ratingCount": "403",
+        "savedCount": "15632",
         "cuisine": "パン、カフェ",
+        "tel": "095-823-6078",
         "budgetLunch": "～￥999",
         "budgetDinnerRvw": "～￥999",
         "budgetLunchRvw": "￥1,000～￥1,999",
@@ -281201,7 +281200,7 @@ const shopData = {
         "address": "大阪府大阪市中央区北浜4-3-1 淀屋橋odona 2F",
         "rating": "3.67",
         "ratingCount": "522",
-        "savedCount": "24356",
+        "savedCount": "24106",
         "cuisine": "パン、サンドイッチ、カフェ",
         "budgetDinnerRvw": "￥1,000～￥1,999",
         "budgetLunchRvw": "￥1,000～￥1,999",
@@ -281315,7 +281314,7 @@ const shopData = {
         "address": "大阪府大阪市西区土佐堀1-4-2 西田ビル 1F",
         "rating": "3.71",
         "ratingCount": "307",
-        "savedCount": "17231",
+        "savedCount": "17170",
         "cuisine": "パン、ケーキ",
         "awards": [
           {
@@ -281643,8 +281642,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.4820496674364,
-          34.6960476779773
+          135.48204974743638,
+          34.6960479679773
         ]
       },
       "properties": {
@@ -281652,9 +281651,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2701/A270108/27017967/",
         "category": "パン（西日本）",
         "address": "大阪府大阪市福島区鷺洲1-5-17",
-        "rating": "3.60",
-        "ratingCount": "261",
-        "savedCount": "13881",
+        "rating": "3.58",
+        "ratingCount": "264",
+        "savedCount": "13935",
         "cuisine": "パン",
         "tel": "06-6450-1976",
         "budgetDinnerRvw": "～￥999",
@@ -281877,7 +281876,7 @@ const shopData = {
         "address": "大阪府大阪市中央区谷町6-2-27 １Ｆ",
         "rating": "3.65",
         "ratingCount": "328",
-        "savedCount": "12807",
+        "savedCount": "12738",
         "cuisine": "パン、ケーキ、カフェ",
         "budgetDinnerRvw": "～￥999",
         "budgetLunchRvw": "～￥999",
@@ -282070,8 +282069,8 @@ const shopData = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.5055970654748,
-          34.5034839281071
+          135.50559730547482,
+          34.5034827981071
         ]
       },
       "properties": {
@@ -282079,9 +282078,9 @@ const shopData = {
         "url": "https://tabelog.com/osaka/A2705/A270501/27014335/",
         "category": "パン（西日本）",
         "address": "大阪府堺市南区和田東329-2",
-        "rating": "3.52",
-        "ratingCount": "554",
-        "savedCount": "12534",
+        "rating": "3.51",
+        "ratingCount": "564",
+        "savedCount": "12593",
         "cuisine": "パン、カフェ、サンドイッチ",
         "tel": "072-230-1331",
         "budgetDinnerRvw": "～￥999",
@@ -282290,8 +282289,8 @@ const shopData = {
         "category": "パン（西日本）",
         "address": "大阪府高槻市上田辺町4-25-102",
         "rating": "3.69",
-        "ratingCount": "269",
-        "savedCount": "12506",
+        "ratingCount": "267",
+        "savedCount": "12454",
         "cuisine": "パン",
         "budgetLunch": "～￥999",
         "budgetDinnerRvw": "～￥999",
@@ -295718,6 +295717,7379 @@ const shopData = {
             "y": 2026,
             "t": "chinese_east",
             "g": "中国料理（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.8882852112127,
+          35.16749240812571
+        ]
+      },
+      "properties": {
+        "name": "どんまい 名駅南一丁目 - 近鉄名古屋（居酒屋）",
+        "url": "https://tabelog.com/aichi/A2301/A230101/23058092/",
+        "category": "居酒屋（東日本）",
+        "address": "愛知県名古屋市中村区名駅南1-14-20",
+        "rating": "3.64",
+        "ratingCount": "254",
+        "savedCount": "34558",
+        "cuisine": "居酒屋、日本酒バー、日本料理",
+        "tel": "052-561-2521",
+        "budgetDinner": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          },
+          {
+            "y": 2024,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.89013638011423,
+          35.173887437316864
+        ]
+      },
+      "properties": {
+        "name": "鳥つる - 国際センター（焼き鳥）",
+        "url": "https://tabelog.com/aichi/A2301/A230101/23059160/",
+        "category": "焼き鳥（東日本）",
+        "address": "愛知県名古屋市中村区那古野1-46-15",
+        "rating": "3.67",
+        "ratingCount": "209",
+        "savedCount": "19079",
+        "cuisine": "焼き鳥、鳥料理、居酒屋",
+        "tel": "090-3710-9200",
+        "budgetDinner": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_east",
+            "g": "焼き鳥（東日本）"
+          },
+          {
+            "y": 2024,
+            "t": "yakitori_east",
+            "g": "焼き鳥（東日本）"
+          },
+          {
+            "y": 2023,
+            "t": "yakitori_east",
+            "g": "焼き鳥（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.8825442623713,
+          35.170709995233636
+        ]
+      },
+      "properties": {
+        "name": "ぴよりんshop - 名古屋（ケーキ）",
+        "url": "https://tabelog.com/aichi/A2301/A230101/23067929/",
+        "category": "スイーツ（東日本）",
+        "address": "愛知県名古屋市中村区名駅1-1-4 JR名古屋駅 名古屋うまいもん通り 広小路口",
+        "rating": "3.59",
+        "ratingCount": "707",
+        "savedCount": "5167",
+        "cuisine": "ケーキ",
+        "tel": "070-1587-5868",
+        "budgetDinner": "～￥999",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_east",
+            "g": "スイーツ（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.88280653125074,
+          35.17087776812182
+        ]
+      },
+      "properties": {
+        "name": "ヴァンサン ゲルレ ビスキュイ フランセ（VINCENT GUERLAIS BISCUITS Francais） - 名古屋（洋菓子）",
+        "url": "https://tabelog.com/aichi/A2301/A230101/23075672/",
+        "category": "スイーツ（東日本）",
+        "address": "愛知県名古屋市中村区名駅1-1-4 ジェイアール名古屋タカシマヤ B1F",
+        "rating": "3.66",
+        "ratingCount": "425",
+        "savedCount": "11226",
+        "cuisine": "洋菓子",
+        "tel": "052-566-3284",
+        "budgetDinner": "￥1,000～￥1,999",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_east",
+            "g": "スイーツ（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.88269442128708,
+          35.1744714081195
+        ]
+      },
+      "properties": {
+        "name": "藁と瓶 赤星カツヲ - 名古屋（居酒屋）",
+        "url": "https://tabelog.com/aichi/A2301/A230101/23089327/",
+        "category": "居酒屋（東日本）",
+        "address": "愛知県名古屋市中村区名駅2-37-14 コスモス名駅2丁目ビル 1F",
+        "rating": "3.63",
+        "ratingCount": "300",
+        "savedCount": "17567",
+        "cuisine": "居酒屋、海鮮、鍋",
+        "tel": "052-433-5699",
+        "budgetDinner": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.88807788123222,
+          35.16940963812443
+        ]
+      },
+      "properties": {
+        "name": "和牛すき焼きしゃぶしゃぶSakura 名古屋店 - 近鉄名古屋（すき焼き）",
+        "url": "https://tabelog.com/aichi/A2301/A230101/23094370/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "愛知県名古屋市中村区名駅4-14-10 柳橋FoodMarket 4F",
+        "rating": "3.61",
+        "ratingCount": "107",
+        "savedCount": "1787",
+        "cuisine": "すき焼き、しゃぶしゃぶ、うなぎ",
+        "tel": "052-589-8889",
+        "budgetDinner": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.89558958004014,
+          35.16693183732302
+        ]
+      },
+      "properties": {
+        "name": "名古屋焼肉きらく - 伏見（焼肉）",
+        "url": "https://tabelog.com/aichi/A2301/A230102/23074986/",
+        "category": "焼肉（東日本）",
+        "address": "愛知県名古屋市中区栄1-7-26 EFFORT FUSHIMI 2F",
+        "rating": "3.62",
+        "ratingCount": "386",
+        "savedCount": "14928",
+        "cuisine": "焼肉、ホルモン、日本料理",
+        "tel": "052-228-2087",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2024,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.91280687999415,
+          35.16357463733063
+        ]
+      },
+      "properties": {
+        "name": "かつ巳 - 矢場町（居酒屋）",
+        "url": "https://tabelog.com/aichi/A2301/A230103/23019806/",
+        "category": "居酒屋（東日本）",
+        "address": "愛知県名古屋市中区栄5-20-4",
+        "rating": "3.68",
+        "ratingCount": "161",
+        "savedCount": "37578",
+        "cuisine": "居酒屋",
+        "tel": "不明の為情報お待ちしております",
+        "budgetDinner": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.90571649122654,
+          35.170075548129624
+        ]
+      },
+      "properties": {
+        "name": "和牛焼肉 ワンダフィレ - 栄（名古屋）（焼肉）",
+        "url": "https://tabelog.com/aichi/A2301/A230103/23072213/",
+        "category": "焼肉（東日本）",
+        "address": "愛知県名古屋市中区錦3-17-24 都ビル 2F",
+        "rating": "3.67",
+        "ratingCount": "339",
+        "savedCount": "17008",
+        "cuisine": "焼肉、牛料理、すき焼き",
+        "tel": "052-953-8829",
+        "budgetDinner": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2024,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2022,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2021,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.90335733125437,
+          35.17266522812722
+        ]
+      },
+      "properties": {
+        "name": "沖縄料理 あぐー豚 しゃぶしゃぶ AGU-（あぐー） - 久屋大通（豚しゃぶ）",
+        "url": "https://tabelog.com/aichi/A2301/A230103/23088198/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "愛知県名古屋市中区錦3-2-24 セントヒルズビル 2F",
+        "rating": "3.60",
+        "ratingCount": "227",
+        "savedCount": "5420",
+        "cuisine": "豚しゃぶ、沖縄料理、居酒屋",
+        "tel": "052-228-6056",
+        "budgetDinner": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.91120248737826,
+          35.17566774330987
+        ]
+      },
+      "properties": {
+        "name": "裏篠田 - 久屋大通（焼肉）",
+        "url": "https://tabelog.com/aichi/A2301/A230103/23088948/",
+        "category": "焼肉（東日本）",
+        "address": "愛知県名古屋市東区泉1-17-10 第一オレンジ久屋",
+        "rating": "3.69",
+        "ratingCount": "232",
+        "savedCount": "14609",
+        "cuisine": "焼肉、居酒屋、日本料理",
+        "tel": "080-2573-5455",
+        "budgetDinner": "￥15,000～￥19,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9104919212478,
+          35.1725075181296
+        ]
+      },
+      "properties": {
+        "name": "lamian - 栄町（居酒屋）",
+        "url": "https://tabelog.com/aichi/A2301/A230103/23090645/",
+        "category": "居酒屋（東日本）",
+        "address": "愛知県名古屋市東区東桜1-9-35",
+        "rating": "3.70",
+        "ratingCount": "237",
+        "savedCount": "14840",
+        "cuisine": "居酒屋、日本料理",
+        "tel": "052-684-4411",
+        "budgetDinner": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.92110629120145,
+          35.16865685813542
+        ]
+      },
+      "properties": {
+        "name": "精楽園（セイラクエン） - 新栄町（焼肉）",
+        "url": "https://tabelog.com/aichi/A2301/A230104/23006720/",
+        "category": "焼肉（東日本）",
+        "address": "愛知県名古屋市中区新栄2-1-29",
+        "rating": "3.65",
+        "ratingCount": "149",
+        "savedCount": "15012",
+        "cuisine": "焼肉",
+        "tel": "052-251-8129",
+        "budgetDinner": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.91797866121524,
+          35.169805448133694
+        ]
+      },
+      "properties": {
+        "name": "大衆焼肉 焼肉エース 新栄店 - 新栄町（焼肉）",
+        "url": "https://tabelog.com/aichi/A2301/A230104/23088179/",
+        "category": "焼肉（東日本）",
+        "address": "愛知県名古屋市中区東桜2-19-7 桜ガーデン 1F",
+        "rating": "3.61",
+        "ratingCount": "231",
+        "savedCount": "6080",
+        "cuisine": "焼肉、ホルモン、居酒屋",
+        "tel": "052-934-7317",
+        "budgetDinner": "￥3,000～￥3,999",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.91287120129698,
+          35.177541888127166
+        ]
+      },
+      "properties": {
+        "name": "創作料理と宝石鍋しゃぶしゃぶ 宝泉（Housen） - 高岳（豚しゃぶ）",
+        "url": "https://tabelog.com/aichi/A2301/A230104/23089998/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "愛知県名古屋市東区泉1-6-30 ISH泉ビル 2F",
+        "rating": "3.57",
+        "ratingCount": "100",
+        "savedCount": "2918",
+        "cuisine": "豚しゃぶ、居酒屋",
+        "tel": "052-212-8277",
+        "budgetDinner": "￥5,000～￥5,999",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.89279620096585,
+          35.14337068814247
+        ]
+      },
+      "properties": {
+        "name": "不朽園 本店（名古屋 尾頭橋） - 尾頭橋（和菓子）",
+        "url": "https://tabelog.com/aichi/A2301/A230105/23003286/",
+        "category": "和菓子・甘味処（東日本）",
+        "address": "愛知県名古屋市中川区尾頭橋3丁目4-8",
+        "rating": "3.58",
+        "ratingCount": "329",
+        "savedCount": "6418",
+        "cuisine": "和菓子",
+        "tel": "052-321-4671",
+        "budgetLunch": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_east",
+            "g": "和菓子・甘味処（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9016995609283,
+          35.14026906814727
+        ]
+      },
+      "properties": {
+        "name": "焼肉 南月 - 金山（焼肉）",
+        "url": "https://tabelog.com/aichi/A2301/A230105/23082348/",
+        "category": "焼肉（東日本）",
+        "address": "愛知県名古屋市熱田区金山町1-14-16",
+        "rating": "3.64",
+        "ratingCount": "57",
+        "savedCount": "3142",
+        "cuisine": "焼肉",
+        "tel": "052-265-7298",
+        "budgetDinner": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.90029814098483,
+          35.145766198143335
+        ]
+      },
+      "properties": {
+        "name": "こたつ ねこ - 金山（居酒屋）",
+        "url": "https://tabelog.com/aichi/A2301/A230105/23084155/",
+        "category": "居酒屋（東日本）",
+        "address": "愛知県名古屋市中区金山1-9-8 マンション金山一丁目 1F",
+        "rating": "3.64",
+        "ratingCount": "233",
+        "savedCount": "19340",
+        "cuisine": "居酒屋、海鮮",
+        "tel": "052-331-7051",
+        "budgetDinner": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.91736388024725,
+          35.18894863731598
+        ]
+      },
+      "properties": {
+        "name": "尾張菓子きた川（キタガワ） - 尼ケ坂（和菓子）",
+        "url": "https://tabelog.com/aichi/A2301/A230110/23005530/",
+        "category": "和菓子・甘味処（東日本）",
+        "address": "愛知県名古屋市北区大杉3-14-7",
+        "rating": "3.58",
+        "ratingCount": "205",
+        "savedCount": "13588",
+        "cuisine": "和菓子",
+        "tel": "052-911-3710",
+        "budgetDinner": "￥1,000～￥1,999",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_east",
+            "g": "和菓子・甘味処（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.91170222142063,
+          35.18970284811906
+        ]
+      },
+      "properties": {
+        "name": "勢太 - 清水（焼肉）",
+        "url": "https://tabelog.com/aichi/A2301/A230110/23052179/",
+        "category": "焼肉（東日本）",
+        "address": "愛知県名古屋市北区清水3-11-19",
+        "rating": "3.65",
+        "ratingCount": "304",
+        "savedCount": "18060",
+        "cuisine": "焼肉、ホルモン",
+        "tel": "052-915-7110",
+        "budgetDinner": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2023,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2022,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2021,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2020,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.91173759075969,
+          35.12427212816063
+        ]
+      },
+      "properties": {
+        "name": "きよめ餅総本家 - 神宮前（和菓子）",
+        "url": "https://tabelog.com/aichi/A2301/A230112/23027675/",
+        "category": "和菓子・甘味処（東日本）",
+        "address": "愛知県名古屋市熱田区神宮3-7-21",
+        "rating": "3.55",
+        "ratingCount": "425",
+        "savedCount": "4858",
+        "cuisine": "和菓子",
+        "tel": "052-681-6161",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_east",
+            "g": "和菓子・甘味処（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.04003477701713,
+          34.877672037552735
+        ]
+      },
+      "properties": {
+        "name": "あいや 本店 - 桜町前（甘味処）",
+        "url": "https://tabelog.com/aichi/A2305/A230504/23050657/",
+        "category": "和菓子・甘味処（東日本）",
+        "address": "愛知県西尾市上町横町屋敷15",
+        "rating": "3.57",
+        "ratingCount": "417",
+        "savedCount": "9173",
+        "cuisine": "甘味処、ソフトクリーム、スイーツ",
+        "tel": "0563-54-5186",
+        "budgetDinner": "～￥999",
+        "budgetLunch": "～￥999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_east",
+            "g": "和菓子・甘味処（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.4798722436448,
+          40.607555035814414
+        ]
+      },
+      "properties": {
+        "name": "グランメルシー（【旧店名】Angélique） - 弘前（ケーキ）",
+        "url": "https://tabelog.com/aomori/A0202/A020201/2000708/",
+        "category": "スイーツ（東日本）",
+        "address": "青森県-弘前市大字野田1-3-16",
+        "rating": "3.64",
+        "ratingCount": "451",
+        "savedCount": "12062",
+        "cuisine": "ケーキ、洋菓子、パン",
+        "tel": "0172-35-9894",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_east",
+            "g": "スイーツ（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.9879141243922,
+          35.697370938776295
+        ]
+      },
+      "properties": {
+        "name": "肉の匠 将泰庵 船橋本店（【旧店名】天下一の焼肉 将泰庵） - 京成船橋（焼肉）",
+        "url": "https://tabelog.com/chiba/A1202/A120201/12026157/",
+        "category": "焼肉（東日本）",
+        "address": "千葉県船橋市本町3-5-31 石田ビル 1F",
+        "rating": "3.62",
+        "ratingCount": "755",
+        "savedCount": "34364",
+        "cuisine": "焼肉、ハンバーグ、ホルモン",
+        "tel": "047-409-9889",
+        "budgetDinner": "￥8,000～￥9,999",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2024,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2023,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2022,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2021,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2020,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.8987433553734,
+          35.788323528690135
+        ]
+      },
+      "properties": {
+        "name": "三味園 - 松戸（焼肉）",
+        "url": "https://tabelog.com/chiba/A1203/A120302/12005547/",
+        "category": "焼肉（東日本）",
+        "address": "千葉県松戸市根本89",
+        "rating": "3.62",
+        "ratingCount": "181",
+        "savedCount": "9891",
+        "cuisine": "焼肉",
+        "tel": "047-364-9951",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2024,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2023,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.91387648547664,
+          35.7995924186878
+        ]
+      },
+      "properties": {
+        "name": "千歳 - 北松戸（居酒屋）",
+        "url": "https://tabelog.com/chiba/A1203/A120302/12017046/",
+        "category": "居酒屋（東日本）",
+        "address": "千葉県松戸市北松戸2-6-5",
+        "rating": "3.64",
+        "ratingCount": "54",
+        "savedCount": "2980",
+        "cuisine": "居酒屋、海鮮、日本料理",
+        "tel": "047-367-0722",
+        "budgetDinner": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.52513275589877,
+          35.88380255882898
+        ]
+      },
+      "properties": {
+        "name": "亀甲堂 - 香取（和菓子）",
+        "url": "https://tabelog.com/chiba/A1204/A120404/12007190/",
+        "category": "和菓子・甘味処（東日本）",
+        "address": "千葉県香取市香取1894-5",
+        "rating": "3.55",
+        "ratingCount": "425",
+        "savedCount": "4788",
+        "cuisine": "和菓子、食堂、そば",
+        "tel": "0478-57-3131",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_east",
+            "g": "和菓子・甘味処（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.45402441344254,
+          35.63569993896392
+        ]
+      },
+      "properties": {
+        "name": "お魚処 うおとも - 松尾（居酒屋）",
+        "url": "https://tabelog.com/chiba/A1205/A120502/12024393/",
+        "category": "居酒屋（東日本）",
+        "address": "千葉県山武市松尾町大堤138-1",
+        "rating": "3.63",
+        "ratingCount": "262",
+        "savedCount": "8945",
+        "cuisine": "居酒屋、海鮮",
+        "tel": "0479-86-2661",
+        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.87411613211856,
+          35.46438127888804
+        ]
+      },
+      "properties": {
+        "name": "IDEBOK Sweets Cafe 海ほたる店（イデボク） - 木更津市その他（スイーツ）",
+        "url": "https://tabelog.com/chiba/A1206/A120602/12031804/",
+        "category": "スイーツ（東日本）",
+        "address": "千葉県木更津市中島地先海ほたる 海ほたるPA 4F",
+        "rating": "3.60",
+        "ratingCount": "431",
+        "savedCount": "4385",
+        "cuisine": "スイーツ、ソフトクリーム、クレープ・ガレット",
+        "tel": "0438-40-0566",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_east",
+            "g": "スイーツ（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.76995385067195,
+          33.838150167658455
+        ]
+      },
+      "properties": {
+        "name": "noma-noma（ノマノマ） - 大街道（ジューススタンド）",
+        "url": "https://tabelog.com/ehime/A3801/A380101/38005253/",
+        "category": "スイーツ（西日本）",
+        "address": "愛媛県松山市大街道1-4-20",
+        "rating": "3.62",
+        "ratingCount": "419",
+        "savedCount": "8945",
+        "cuisine": "ジューススタンド、ソフトクリーム、カフェ",
+        "tel": "089-945-6111",
+        "budgetDinner": "～￥999",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.7704245707159,
+          33.842536297655826
+        ]
+      },
+      "properties": {
+        "name": "10ファクトリー 松山本店（FACTORY） - 大街道（ジューススタンド）",
+        "url": "https://tabelog.com/ehime/A3801/A380101/38009077/",
+        "category": "スイーツ（西日本）",
+        "address": "愛媛県松山市大街道3-2-25",
+        "rating": "3.60",
+        "ratingCount": "462",
+        "savedCount": "9382",
+        "cuisine": "ジューススタンド、ジェラート・アイスクリーム、カフェ",
+        "tel": "089-968-2031",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.2231118895494,
+          36.06168513654058
+        ]
+      },
+      "properties": {
+        "name": "はや川 くるふ福井駅店 - 福井（和菓子）",
+        "url": "https://tabelog.com/fukui/A1801/A180101/18004349/",
+        "category": "和菓子・甘味処（西日本）",
+        "address": "福井県福井市中央1-1-25 くるふ福井駅",
+        "rating": "3.62",
+        "ratingCount": "566",
+        "savedCount": "8610",
+        "cuisine": "和菓子",
+        "tel": "不明の為情報お待ちしております",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_west",
+            "g": "和菓子・甘味処（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.41536786866564,
+          33.5911386362601
+        ]
+      },
+      "properties": {
+        "name": "博多メシ 男厨（ダンチュウ） - 祇園（居酒屋）",
+        "url": "https://tabelog.com/fukuoka/A4001/A400101/40034623/",
+        "category": "居酒屋（西日本）",
+        "address": "福岡県福岡市博多区博多駅前2-12-12 第5グリーンビル 1F",
+        "rating": "3.67",
+        "ratingCount": "310",
+        "savedCount": "19404",
+        "cuisine": "居酒屋、海鮮、日本料理",
+        "tel": "092-292-0357",
+        "budgetDinner": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.4222037697375,
+          33.58271235707301
+        ]
+      },
+      "properties": {
+        "name": "赤身焼肉USHIO（アカミヤキニク ウシオ） - 博多（焼肉）",
+        "url": "https://tabelog.com/fukuoka/A4001/A400101/40042773/",
+        "category": "焼肉（西日本）",
+        "address": "福岡県福岡市博多区博多駅南2-11-13",
+        "rating": "3.65",
+        "ratingCount": "162",
+        "savedCount": "10495",
+        "cuisine": "焼肉、ステーキ、韓国料理",
+        "tel": "092-203-8929",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.41248034982848,
+          33.59104652706462
+        ]
+      },
+      "properties": {
+        "name": "すき焼き 山翔 - 櫛田神社前（すき焼き）",
+        "url": "https://tabelog.com/fukuoka/A4001/A400101/40071561/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "福岡県福岡市博多区祇園町6-24 THE VOGUE by OAK VILLA 1F",
+        "rating": "3.63",
+        "ratingCount": "76",
+        "savedCount": "3827",
+        "cuisine": "すき焼き、日本料理、鍋",
+        "tel": "092-281-1029",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetLunch": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "budgetLunchRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.405258849832,
+          33.59089298706241
+        ]
+      },
+      "properties": {
+        "name": "焼き鳥 松元 西中洲店（【旧店名】てんがらもん） - 中洲川端（焼き鳥）",
+        "url": "https://tabelog.com/fukuoka/A4001/A400102/40035389/",
+        "category": "焼き鳥（西日本）",
+        "address": "福岡県福岡市中央区西中洲3-17 1F",
+        "rating": "3.68",
+        "ratingCount": "186",
+        "savedCount": "16943",
+        "cuisine": "焼き鳥、鳥料理、水炊き",
+        "tel": "092-725-0185",
+        "budgetDinner": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_west",
+            "g": "焼き鳥（西日本）"
+          },
+          {
+            "y": 2023,
+            "t": "yakitori_west",
+            "g": "焼き鳥（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.4140144597397,
+          33.58236445707062
+        ]
+      },
+      "properties": {
+        "name": "ゴーサイン食堂 - 渡辺通（居酒屋）",
+        "url": "https://tabelog.com/fukuoka/A4001/A400103/40030387/",
+        "category": "居酒屋（西日本）",
+        "address": "福岡県福岡市博多区住吉5-20-1",
+        "rating": "3.70",
+        "ratingCount": "117",
+        "savedCount": "12972",
+        "cuisine": "居酒屋",
+        "tel": "092-482-3456",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.40833029975045,
+          33.58303107706839
+        ]
+      },
+      "properties": {
+        "name": "食堂 光 - 渡辺通（居酒屋）",
+        "url": "https://tabelog.com/fukuoka/A4001/A400103/40062132/",
+        "category": "居酒屋（西日本）",
+        "address": "福岡県福岡市中央区春吉1-6-1 柳橋連合市場",
+        "rating": "3.66",
+        "ratingCount": "221",
+        "savedCount": "13237",
+        "cuisine": "居酒屋、海鮮、寿司",
+        "tel": "092-791-6230",
+        "budgetDinner": "￥3,000～￥3,999",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.40772018979757,
+          33.587654957065254
+        ]
+      },
+      "properties": {
+        "name": "鳥ゆう - 渡辺通（焼き鳥）",
+        "url": "https://tabelog.com/fukuoka/A4001/A400103/40067658/",
+        "category": "焼き鳥（西日本）",
+        "address": "福岡県福岡市中央区春吉2-7-11",
+        "rating": "3.70",
+        "ratingCount": "51",
+        "savedCount": "3208",
+        "cuisine": "焼き鳥",
+        "tel": "090-6631-7022",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_west",
+            "g": "焼き鳥（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.4070898685445,
+          33.57857263626545
+        ]
+      },
+      "properties": {
+        "name": "博多呑場 五右エ門（ごえもん） - 西鉄平尾（居酒屋）",
+        "url": "https://tabelog.com/fukuoka/A4001/A400104/40047076/",
+        "category": "居酒屋（西日本）",
+        "address": "福岡県福岡市中央区高砂2-24-20",
+        "rating": "3.76",
+        "ratingCount": "99",
+        "savedCount": "8269",
+        "cuisine": "居酒屋、日本料理",
+        "tel": "092-406-8008",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetLunch": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.4026645296838,
+          33.57603884707102
+        ]
+      },
+      "properties": {
+        "name": "鶏と肴 フルヤ - 西鉄平尾（居酒屋）",
+        "url": "https://tabelog.com/fukuoka/A4001/A400104/40047415/",
+        "category": "居酒屋（西日本）",
+        "address": "福岡県福岡市中央区平尾1-9-6",
+        "rating": "3.65",
+        "ratingCount": "334",
+        "savedCount": "32315",
+        "cuisine": "居酒屋、焼き鳥、鳥料理",
+        "tel": "092-406-6022",
+        "budgetDinner": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          },
+          {
+            "y": 2024,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3953353497721,
+          33.58427385706345
+        ]
+      },
+      "properties": {
+        "name": "船橋洋品店 - 薬院大通（居酒屋）",
+        "url": "https://tabelog.com/fukuoka/A4001/A400104/40059018/",
+        "category": "居酒屋（西日本）",
+        "address": "福岡県福岡市中央区警固1-5-23",
+        "rating": "3.68",
+        "ratingCount": "411",
+        "savedCount": "24295",
+        "cuisine": "居酒屋、パスタ、日本料理",
+        "tel": "092-401-1990",
+        "budgetDinner": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "budgetLunchRvw": "￥5,000～￥5,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.76926469424728,
+          35.45966173790225
+        ]
+      },
+      "properties": {
+        "name": "飛騨牛一頭家 馬喰一代 長良本家（ヒダギュウイットウヤ バクロイチダイ ナガラホンケ） - 岐阜市その他（焼肉）",
+        "url": "https://tabelog.com/gifu/A2101/A210101/21000228/",
+        "category": "焼肉（東日本）",
+        "address": "岐阜県岐阜市八代2-7-10",
+        "rating": "3.62",
+        "ratingCount": "297",
+        "savedCount": "7936",
+        "cuisine": "焼肉、すき焼き、しゃぶしゃぶ",
+        "tel": "058-232-4129",
+        "budgetDinner": "￥6,000～￥7,999",
+        "budgetLunch": "￥2,000～￥2,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "budgetLunchRvw": "￥3,000～￥3,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2023,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.54153745292996,
+          35.31344114792259
+        ]
+      },
+      "properties": {
+        "name": "養老焼肉 銀角 - 美濃高田（焼肉）",
+        "url": "https://tabelog.com/gifu/A2101/A210103/21023324/",
+        "category": "焼肉（東日本）",
+        "address": "岐阜県養老郡養老町五日市1157",
+        "rating": "3.63",
+        "ratingCount": "88",
+        "savedCount": "2466",
+        "cuisine": "焼肉",
+        "tel": "0584-84-8511",
+        "budgetDinner": "￥4,000～￥4,999",
+        "budgetLunch": "￥3,000～￥3,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetLunchRvw": "￥4,000～￥4,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.4655643664804,
+          34.39206808720971
+        ]
+      },
+      "properties": {
+        "name": "鳥や み津ちゃん - 胡町（焼き鳥）",
+        "url": "https://tabelog.com/hiroshima/A3401/A340109/34030968/",
+        "category": "焼き鳥（西日本）",
+        "address": "広島県広島市中区堀川町1-3 TM28ビルディング 1F",
+        "rating": "3.70",
+        "ratingCount": "62",
+        "savedCount": "3919",
+        "cuisine": "焼き鳥",
+        "tel": "082-236-8905",
+        "budgetDinner": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_west",
+            "g": "焼き鳥（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.4628690064511,
+          34.388978937210815
+        ]
+      },
+      "properties": {
+        "name": "焼鳥 山中 - 胡町（焼き鳥）",
+        "url": "https://tabelog.com/hiroshima/A3401/A340109/34034267/",
+        "category": "焼き鳥（西日本）",
+        "address": "広島県広島市中区流川町7-15 むぎくらビル 3F",
+        "rating": "3.73",
+        "ratingCount": "25",
+        "savedCount": "995",
+        "cuisine": "焼き鳥",
+        "tel": "082-563-8625",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_west",
+            "g": "焼き鳥（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.32017642560268,
+          34.29508318722501
+        ]
+      },
+      "properties": {
+        "name": "岩村もみじ屋 - 広電宮島口（和菓子）",
+        "url": "https://tabelog.com/hiroshima/A3402/A340202/34001087/",
+        "category": "和菓子・甘味処（西日本）",
+        "address": "広島県廿日市市宮島町中江町304-1",
+        "rating": "3.64",
+        "ratingCount": "665",
+        "savedCount": "14529",
+        "cuisine": "和菓子、甘味処、郷土料理",
+        "tel": "0829-44-0207",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_west",
+            "g": "和菓子・甘味処（西日本）"
+          },
+          {
+            "y": 2022,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          },
+          {
+            "y": 2020,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          },
+          {
+            "y": 2018,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.35432135777017,
+          43.05667406453741
+        ]
+      },
+      "properties": {
+        "name": "すき焼 しゃぶしゃぶ 牛のいしざき（ぎゅうのいしざき） - 狸小路（すき焼き）",
+        "url": "https://tabelog.com/hokkaido/A0101/A010102/1002914/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "北海道札幌市中央区南三条西3 Ｇダイニング札幌ビル 3F",
+        "rating": "3.55",
+        "ratingCount": "139",
+        "savedCount": "7527",
+        "cuisine": "すき焼き、しゃぶしゃぶ",
+        "tel": "011-251-8721",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          },
+          {
+            "y": 2024,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.35669069778248,
+          43.05805763453728
+        ]
+      },
+      "properties": {
+        "name": "ひろ志 - 狸小路（居酒屋）",
+        "url": "https://tabelog.com/hokkaido/A0101/A010102/1044756/",
+        "category": "居酒屋（東日本）",
+        "address": "北海道-札幌市中央区南2西1-6-1 第3広和ビル 3F",
+        "rating": "3.64",
+        "ratingCount": "138",
+        "savedCount": "17878",
+        "cuisine": "居酒屋",
+        "tel": "011-219-5703",
+        "budgetDinner": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.33695399778804,
+          43.05723825453152
+        ]
+      },
+      "properties": {
+        "name": "焼鳥 そると - 西１５丁目（焼き鳥）",
+        "url": "https://tabelog.com/hokkaido/A0101/A010102/1063138/",
+        "category": "焼き鳥（東日本）",
+        "address": "北海道札幌市中央区南一条西13-4-62 ベストール南大通り1F",
+        "rating": "3.77",
+        "ratingCount": "68",
+        "savedCount": "8203",
+        "cuisine": "焼き鳥、鳥料理、居酒屋",
+        "tel": "011-206-1362",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_east",
+            "g": "焼き鳥（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.35472895657728,
+          43.05362063373411
+        ]
+      },
+      "properties": {
+        "name": "酒日和 縁屋（えにしや） - 豊水すすきの（居酒屋）",
+        "url": "https://tabelog.com/hokkaido/A0101/A010103/1044255/",
+        "category": "居酒屋（東日本）",
+        "address": "北海道札幌市中央区南六条西3丁目6-14 秋水ビル 2F",
+        "rating": "3.64",
+        "ratingCount": "168",
+        "savedCount": "18330",
+        "cuisine": "居酒屋、海鮮、かに",
+        "tel": "011-511-7667",
+        "budgetDinner": "￥15,000～￥19,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          },
+          {
+            "y": 2024,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.35249680773777,
+          43.053338024538945
+        ]
+      },
+      "properties": {
+        "name": "焼肉リゾートハワイ - すすきの（市電）（焼肉）",
+        "url": "https://tabelog.com/hokkaido/A0101/A010103/1052940/",
+        "category": "焼肉（東日本）",
+        "address": "北海道-札幌市中央区南6条西4-1-11 2Ｆ",
+        "rating": "3.65",
+        "ratingCount": "229",
+        "savedCount": "13862",
+        "cuisine": "焼肉、韓国料理",
+        "tel": "011-562-0508",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.35190660821868,
+          43.05363669774906
+        ]
+      },
+      "properties": {
+        "name": "炭火焼肉 にく式 すすきの店 - すすきの（市電）（焼肉）",
+        "url": "https://tabelog.com/hokkaido/A0101/A010103/1077658/",
+        "category": "焼肉（東日本）",
+        "address": "北海道-札幌市中央区南5条西5-1",
+        "rating": "3.61",
+        "ratingCount": "273",
+        "savedCount": "8654",
+        "cuisine": "焼肉、ホルモン",
+        "tel": "011-206-7819",
+        "budgetDinner": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2024,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.35382782775503,
+          43.05513938453823
+        ]
+      },
+      "properties": {
+        "name": "羊と饂飩（lamb to udon） - すすきの（市営）（しゃぶしゃぶ）",
+        "url": "https://tabelog.com/hokkaido/A0101/A010103/1079755/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "北海道札幌市中央区南四条西3-3-1 第一Gビル B1F",
+        "rating": "3.63",
+        "ratingCount": "219",
+        "savedCount": "7579",
+        "cuisine": "しゃぶしゃぶ、ジンギスカン、居酒屋",
+        "tel": "011-522-8857",
+        "budgetDinner": "￥8,000～￥9,999",
+        "budgetLunch": "￥2,000～￥2,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "budgetLunchRvw": "￥3,000～￥3,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.35468871774046,
+          43.05375953453938
+        ]
+      },
+      "properties": {
+        "name": "MAKIBI YUI - 豊水すすきの（居酒屋）",
+        "url": "https://tabelog.com/hokkaido/A0101/A010103/1080758/",
+        "category": "居酒屋（東日本）",
+        "address": "北海道札幌市中央区南六条西3-6-2 TAKARA6・3ビル 1F",
+        "rating": "3.63",
+        "ratingCount": "173",
+        "savedCount": "10454",
+        "cuisine": "居酒屋、海鮮、ろばた焼き",
+        "tel": "011-211-5696",
+        "budgetDinner": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.35330933774608,
+          43.05422147453865
+        ]
+      },
+      "properties": {
+        "name": "焼肉 神楽 すすきの本店 - すすきの（市電）（焼肉）",
+        "url": "https://tabelog.com/hokkaido/A0101/A010103/1082667/",
+        "category": "焼肉（東日本）",
+        "address": "北海道札幌市中央区南五条西4-1-14 札幌アルトビル 9F",
+        "rating": "3.64",
+        "ratingCount": "134",
+        "savedCount": "3235",
+        "cuisine": "焼肉",
+        "tel": "011-206-8300",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.3035602568322,
+          43.07530923370404
+        ]
+      },
+      "properties": {
+        "name": "炭火焼肉 焼きしゃぶ にく式 琴似店 - 琴似（札幌市営）（焼肉）",
+        "url": "https://tabelog.com/hokkaido/A0101/A010204/1067801/",
+        "category": "焼肉（東日本）",
+        "address": "北海道-札幌市西区琴似1条5-4-8 フィール琴似 1F",
+        "rating": "3.63",
+        "ratingCount": "144",
+        "savedCount": "2756",
+        "cuisine": "焼肉、ホルモン",
+        "tel": "011-613-0305",
+        "budgetDinner": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.433894592287,
+          43.02619621176713
+        ]
+      },
+      "properties": {
+        "name": "炭火焼肉 肉刺し にく式 南郷18丁目店 - 南郷１８丁目（焼肉）",
+        "url": "https://tabelog.com/hokkaido/A0101/A010301/1065366/",
+        "category": "焼肉（東日本）",
+        "address": "北海道札幌市白石区栄通18-10-16 はまなすビル 1F",
+        "rating": "3.64",
+        "ratingCount": "99",
+        "savedCount": "2065",
+        "cuisine": "焼肉、ホルモン",
+        "tel": "011-856-0300",
+        "budgetDinner": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.47034464159398,
+          43.03953290633617
+        ]
+      },
+      "properties": {
+        "name": "焼肉処 肉八クロベ - 新札幌（焼肉）",
+        "url": "https://tabelog.com/hokkaido/A0101/A010302/1083734/",
+        "category": "焼肉（東日本）",
+        "address": "北海道札幌市厚別区厚別中央二条5-3-2",
+        "rating": "3.64",
+        "ratingCount": "108",
+        "savedCount": "2075",
+        "cuisine": "焼肉、ホルモン、ジンギスカン",
+        "tel": "011-600-3029",
+        "budgetDinner": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.68124429481483,
+          42.78677952481294
+        ]
+      },
+      "properties": {
+        "name": "わかさいも 新千歳空港店 - 新千歳空港（和菓子）",
+        "url": "https://tabelog.com/hokkaido/A0107/A010701/1059562/",
+        "category": "和菓子・甘味処（東日本）",
+        "address": "北海道千歳市美々987-22 新千歳空港 国内線ターミナルビル 2F",
+        "rating": "3.57",
+        "ratingCount": "406",
+        "savedCount": "4189",
+        "cuisine": "和菓子、ソフトクリーム",
+        "tel": "0123-29-3232",
+        "budgetDinner": "～￥999",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_east",
+            "g": "和菓子・甘味処（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.68127141855084,
+          42.7869389428091
+        ]
+      },
+      "properties": {
+        "name": "ミルクスタンド 北海道興農社（Milk Stand） - 新千歳空港（ソフトクリーム）",
+        "url": "https://tabelog.com/hokkaido/A0107/A010701/1064256/",
+        "category": "アイス・ジェラート",
+        "address": "北海道千歳市美々 新千歳空港 国内線ターミナルビル 2F",
+        "rating": "3.59",
+        "ratingCount": "504",
+        "savedCount": "6392",
+        "cuisine": "ソフトクリーム",
+        "tel": "0123-25-8600",
+        "budgetDinner": "～￥999",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "ice_gelato",
+            "g": "アイス・ジェラート"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.18743486764035,
+          34.69579428788363
+        ]
+      },
+      "properties": {
+        "name": "L'AVENUE BiS（ラヴニュービス） - 三宮（神戸市営）（ジェラート・アイスクリーム）",
+        "url": "https://tabelog.com/hyogo/A2801/A280101/28065606/",
+        "category": "アイス・ジェラート",
+        "address": "兵庫県神戸市中央区中山手通2-25-5 有本ビル 1F 西",
+        "rating": "3.58",
+        "ratingCount": "244",
+        "savedCount": "7932",
+        "cuisine": "ジェラート・アイスクリーム、クレープ・ガレット、チョコレート",
+        "tel": "078-200-6768",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "ice_gelato",
+            "g": "アイス・ジェラート"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.18952781318703,
+          34.69426587853568
+        ]
+      },
+      "properties": {
+        "name": "小望月 - 三宮（神戸市営）（焼肉）",
+        "url": "https://tabelog.com/hyogo/A2801/A280101/28066799/",
+        "category": "焼肉（西日本）",
+        "address": "兵庫県神戸市中央区下山手通2-16-8 新興ビル 1F",
+        "rating": "3.67",
+        "ratingCount": "40",
+        "savedCount": "1911",
+        "cuisine": "焼肉",
+        "tel": "070-8562-9752",
+        "budgetDinnerRvw": "￥20,000～￥29,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.18410150756185,
+          34.687792477887655
+        ]
+      },
+      "properties": {
+        "name": "パティスリー アキト（patisserie AKITO） - みなと元町（ケーキ）",
+        "url": "https://tabelog.com/hyogo/A2801/A280102/28040325/",
+        "category": "スイーツ（西日本）",
+        "address": "兵庫県神戸市中央区元町通3-17-6 白山ビル 1F",
+        "rating": "3.59",
+        "ratingCount": "431",
+        "savedCount": "15946",
+        "cuisine": "ケーキ、スイーツ、カフェ",
+        "tel": "078-332-3620",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.25000602785198,
+          34.7210857178875
+        ]
+      },
+      "properties": {
+        "name": "マモン エ フィーユ（Maman et Fille） - 御影（阪急）（洋菓子）",
+        "url": "https://tabelog.com/hyogo/A2801/A280106/28049438/",
+        "category": "スイーツ（西日本）",
+        "address": "兵庫県神戸市東灘区御影2-34-20 グレイスリー御影 1F",
+        "rating": "3.60",
+        "ratingCount": "611",
+        "savedCount": "31354",
+        "cuisine": "洋菓子",
+        "tel": "078-414-7842",
+        "budgetDinner": "￥2,000～￥2,999",
+        "budgetLunch": "￥2,000～￥2,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.81808378418802,
+          34.81081308969597
+        ]
+      },
+      "properties": {
+        "name": "大浦ミートゲストハウス - 宝殿（焼肉）",
+        "url": "https://tabelog.com/hyogo/A2804/A280402/28070816/",
+        "category": "焼肉（西日本）",
+        "address": "兵庫県加古川市志方町志方町1290-1",
+        "rating": "3.87",
+        "ratingCount": "32",
+        "savedCount": "2389",
+        "cuisine": "焼肉",
+        "tel": "不明の為情報お待ちしております",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.18292972988593,
+          34.9177959677412
+        ]
+      },
+      "properties": {
+        "name": "パティシエ エス コヤマ（PATISSIER eS KOYAMA） - ウッディタウン中央（ケーキ）",
+        "url": "https://tabelog.com/hyogo/A2807/A280703/28001965/",
+        "category": "スイーツ（西日本）",
+        "address": "兵庫県三田市ゆりのき台5-32-1 三田ウッディタウン",
+        "rating": "3.75",
+        "ratingCount": "1821",
+        "savedCount": "40124",
+        "cuisine": "ケーキ、パン、スイーツ",
+        "tel": "079-564-3192",
+        "budgetLunch": "￥3,000～￥3,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          },
+          {
+            "y": 2023,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          },
+          {
+            "y": 2022,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          },
+          {
+            "y": 2020,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          },
+          {
+            "y": 2019,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          },
+          {
+            "y": 2018,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          },
+          {
+            "y": 2017,
+            "t": "sweets",
+            "g": "スイーツ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.1006459179597,
+          36.058378748582925
+        ]
+      },
+      "properties": {
+        "name": "やきにく穏和 つくば学園店（おんわ） - つくば（焼肉）",
+        "url": "https://tabelog.com/ibaraki/A0802/A080201/8019828/",
+        "category": "焼肉（東日本）",
+        "address": "茨城県つくば市手代木716-1",
+        "rating": "3.67",
+        "ratingCount": "211",
+        "savedCount": "10548",
+        "cuisine": "焼肉",
+        "tel": "029-846-4129",
+        "budgetDinner": "￥8,000～￥9,999",
+        "budgetLunch": "￥2,000～￥2,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2024,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2023,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2022,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.64997173558524,
+          36.57384906715661
+        ]
+      },
+      "properties": {
+        "name": "とっくりや - 北鉄金沢（居酒屋）",
+        "url": "https://tabelog.com/ishikawa/A1701/A170101/17000666/",
+        "category": "居酒屋（西日本）",
+        "address": "石川県金沢市本町2-3-6",
+        "rating": "3.64",
+        "ratingCount": "262",
+        "savedCount": "26448",
+        "cuisine": "居酒屋",
+        "tel": "076-221-7822",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.6652767955605,
+          36.57246031716237
+        ]
+      },
+      "properties": {
+        "name": "ちょう吉 - 北鉄金沢（焼き鳥）",
+        "url": "https://tabelog.com/ishikawa/A1701/A170101/17001683/",
+        "category": "焼き鳥（西日本）",
+        "address": "石川県金沢市観音町1-2-2",
+        "rating": "3.56",
+        "ratingCount": "276",
+        "savedCount": "14874",
+        "cuisine": "焼き鳥、親子丼",
+        "tel": "076-251-1306",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_west",
+            "g": "焼き鳥（西日本）"
+          },
+          {
+            "y": 2023,
+            "t": "yakitori_west",
+            "g": "焼き鳥（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.1444000740345,
+          39.702247056601024
+        ]
+      },
+      "properties": {
+        "name": "大同苑 盛岡総本店 - 盛岡（焼肉）",
+        "url": "https://tabelog.com/iwate/A0301/A030101/3004421/",
+        "category": "焼肉（東日本）",
+        "address": "岩手県盛岡市菜園2-6-19",
+        "rating": "3.69",
+        "ratingCount": "533",
+        "savedCount": "12117",
+        "cuisine": "焼肉、冷麺、韓国料理",
+        "tel": "019-654-5588",
+        "budgetDinner": "￥8,000～￥9,999",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "budgetLunchRvw": "￥3,000～￥3,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.55484523687537,
+          31.58951927751732
+        ]
+      },
+      "properties": {
+        "name": "地鶏と野菜巻き とりくら 天文館店 - 天文館通（焼き鳥）",
+        "url": "https://tabelog.com/kagoshima/A4601/A460101/46018191/",
+        "category": "焼き鳥（西日本）",
+        "address": "鹿児島県鹿児島市千日町3-23 宮内ビル B1F",
+        "rating": "3.64",
+        "ratingCount": "72",
+        "savedCount": "1976",
+        "cuisine": "焼き鳥、串焼き、居酒屋",
+        "tel": "099-208-2525",
+        "budgetDinner": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_west",
+            "g": "焼き鳥（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.6220619323425,
+          35.4690603688048
+        ]
+      },
+      "properties": {
+        "name": "めしや 白虎 横浜 - 横浜（居酒屋）",
+        "url": "https://tabelog.com/kanagawa/A1401/A140101/14101003/",
+        "category": "居酒屋（東日本）",
+        "address": "神奈川県横浜市神奈川区鶴屋町2-19-6 ガレリア横浜 B1F",
+        "rating": "3.61",
+        "ratingCount": "413",
+        "savedCount": "24700",
+        "cuisine": "居酒屋、海鮮、牛タン",
+        "tel": "050-5799-1849",
+        "budgetDinner": "￥6,000～￥7,999",
+        "budgetLunch": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "budgetLunchRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.628940172168,
+          35.45226145881766
+        ]
+      },
+      "properties": {
+        "name": "焼鳥 感呼鶏 - 桜木町（焼き鳥）",
+        "url": "https://tabelog.com/kanagawa/A1401/A140102/14093374/",
+        "category": "焼き鳥（東日本）",
+        "address": "神奈川県横浜市中区桜木町3-13-3 KGR桜木町 4F",
+        "rating": "3.65",
+        "ratingCount": "230",
+        "savedCount": "18484",
+        "cuisine": "焼き鳥、居酒屋、鳥料理",
+        "tel": "045-306-9929",
+        "budgetDinner": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_east",
+            "g": "焼き鳥（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.63589726215037,
+          35.45099801882068
+        ]
+      },
+      "properties": {
+        "name": "水信フルーツパーラー - 馬車道（フルーツパーラー）",
+        "url": "https://tabelog.com/kanagawa/A1401/A140104/14079039/",
+        "category": "スイーツ（東日本）",
+        "address": "神奈川県横浜市中区北仲通5-57-2 KITANAKA BRICK＆WHITE 1F",
+        "rating": "3.64",
+        "ratingCount": "537",
+        "savedCount": "23662",
+        "cuisine": "フルーツパーラー、カフェ",
+        "tel": "045-662-9295",
+        "budgetLunch": "￥3,000～￥3,999",
+        "budgetDinnerRvw": "￥3,000～￥3,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_east",
+            "g": "スイーツ（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.64519654208226,
+          35.44489993882751
+        ]
+      },
+      "properties": {
+        "name": "焼鳥うかじ - 日本大通り（焼き鳥）",
+        "url": "https://tabelog.com/kanagawa/A1401/A140104/14101117/",
+        "category": "焼き鳥（東日本）",
+        "address": "神奈川県横浜市中区山下町74-6 ロクマルビル B1",
+        "rating": "4.00",
+        "ratingCount": "114",
+        "savedCount": "4995",
+        "cuisine": "焼き鳥",
+        "tel": "045-307-3176",
+        "budgetDinner": "￥15,000～￥19,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_east",
+            "g": "焼き鳥（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.6222348125231,
+          35.48695006879349
+        ]
+      },
+      "properties": {
+        "name": "焼菓子工務店 - 白楽（ケーキ）",
+        "url": "https://tabelog.com/kanagawa/A1401/A140205/14073714/",
+        "category": "スイーツ（東日本）",
+        "address": "神奈川県横浜市神奈川区六角橋2-5-24",
+        "rating": "3.61",
+        "ratingCount": "234",
+        "savedCount": "11139",
+        "cuisine": "ケーキ、洋菓子、カフェ",
+        "tel": "080-6605-5718",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_east",
+            "g": "スイーツ（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.6268728220489,
+          35.440329838824574
+        ]
+      },
+      "properties": {
+        "name": "浜志まん（ハマジマン） - 黄金町（ケーキ）",
+        "url": "https://tabelog.com/kanagawa/A1401/A140306/14001122/",
+        "category": "スイーツ（東日本）",
+        "address": "神奈川県横浜市中区伊勢佐木町5-129",
+        "rating": "3.62",
+        "ratingCount": "371",
+        "savedCount": "13202",
+        "cuisine": "ケーキ、喫茶店",
+        "tel": "045-252-4001",
+        "budgetLunch": "～￥999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_east",
+            "g": "スイーツ（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.54981479087206,
+          35.31847237887743
+        ]
+      },
+      "properties": {
+        "name": "CHOCOLATE BANK（チョコレートバンク） - 鎌倉（チョコレート）",
+        "url": "https://tabelog.com/kanagawa/A1404/A140402/14070243/",
+        "category": "スイーツ（東日本）",
+        "address": "神奈川県鎌倉市御成町11-8",
+        "rating": "3.60",
+        "ratingCount": "599",
+        "savedCount": "22496",
+        "cuisine": "チョコレート、カフェ、サンドイッチ",
+        "tel": "0467-50-0172",
+        "budgetDinner": "￥3,000～￥3,999",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_east",
+            "g": "スイーツ（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.54871740091804,
+          35.322947938874236
+        ]
+      },
+      "properties": {
+        "name": "鎌倉 和牛すき焼きしゃぶしゃぶレストラン Sasho（サショウ） - 鎌倉（すき焼き）",
+        "url": "https://tabelog.com/kanagawa/A1404/A140402/14072688/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "神奈川県鎌倉市扇ガ谷1-11-1",
+        "rating": "3.58",
+        "ratingCount": "269",
+        "savedCount": "16855",
+        "cuisine": "すき焼き、しゃぶしゃぶ、日本料理",
+        "tel": "0467-24-3233",
+        "budgetDinner": "￥8,000～￥9,999",
+        "budgetLunch": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "budgetLunchRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.5496082008668,
+          35.3179364388777
+        ]
+      },
+      "properties": {
+        "name": "レガレヴ（Regalez Vous） - 鎌倉（洋菓子）",
+        "url": "https://tabelog.com/kanagawa/A1404/A140402/14084490/",
+        "category": "スイーツ（東日本）",
+        "address": "神奈川県鎌倉市御成町10-4",
+        "rating": "3.62",
+        "ratingCount": "371",
+        "savedCount": "21376",
+        "cuisine": "洋菓子、サンドイッチ",
+        "tel": "0467-81-3719",
+        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetLunchRvw": "￥3,000～￥3,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_east",
+            "g": "スイーツ（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.48347136082754,
+          35.30946031886203
+        ]
+      },
+      "properties": {
+        "name": "すき焼き ちかよ - 片瀬江ノ島（すき焼き）",
+        "url": "https://tabelog.com/kanagawa/A1404/A140403/14088486/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "神奈川県藤沢市片瀬海岸2-9-4 AQA ART 江の島 1F",
+        "rating": "3.62",
+        "ratingCount": "128",
+        "savedCount": "16402",
+        "cuisine": "すき焼き",
+        "tel": "050-7119-1660",
+        "budgetDinner": "￥3,000～￥3,999",
+        "budgetLunch": "￥3,000～￥3,999",
+        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "budgetLunchRvw": "￥3,000～￥3,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.69927531284483,
+          35.5241503987944
+        ]
+      },
+      "properties": {
+        "name": "堂本 本店（米菓の製造販売） - 川崎新町（せんべい）",
+        "url": "https://tabelog.com/kanagawa/A1405/A140502/14014022/",
+        "category": "和菓子・甘味処（東日本）",
+        "address": "神奈川県川崎市川崎区元木1-2-4",
+        "rating": "3.57",
+        "ratingCount": "258",
+        "savedCount": "5057",
+        "cuisine": "せんべい",
+        "tel": "044-222-2454",
+        "budgetDinner": "￥2,000～￥2,999",
+        "budgetLunch": "￥2,000～￥2,999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_east",
+            "g": "和菓子・甘味処（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.6737395819762,
+          35.55139863796359
+        ]
+      },
+      "properties": {
+        "name": "焼肉ホルモン 亀萬 - 鹿島田（焼肉）",
+        "url": "https://tabelog.com/kanagawa/A1405/A140503/14091143/",
+        "category": "焼肉（東日本）",
+        "address": "神奈川県川崎市幸区鹿島田1-8-42",
+        "rating": "3.73",
+        "ratingCount": "291",
+        "savedCount": "13852",
+        "cuisine": "焼肉、ホルモン、韓国料理",
+        "tel": "044-589-3228",
+        "budgetDinner": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.67513528587625,
+          35.559170557655264
+        ]
+      },
+      "properties": {
+        "name": "北京（ペキン） - 平間（焼肉）",
+        "url": "https://tabelog.com/kanagawa/A1405/A140504/14001578/",
+        "category": "焼肉（東日本）",
+        "address": "神奈川県川崎市中原区上平間1700-36",
+        "rating": "3.65",
+        "ratingCount": "494",
+        "savedCount": "32854",
+        "cuisine": "焼肉",
+        "tel": "044-544-1538",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2021,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2020,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.66282934343693,
+          35.58023623874717
+        ]
+      },
+      "properties": {
+        "name": "ビッグ ベイビー アイスクリーム（BIG BABY ICE CREAM） - 新丸子（ジェラート・アイスクリーム）",
+        "url": "https://tabelog.com/kanagawa/A1405/A140504/14070356/",
+        "category": "アイス・ジェラート",
+        "address": "神奈川県川崎市中原区新丸子東1-829",
+        "rating": "3.59",
+        "ratingCount": "577",
+        "savedCount": "19292",
+        "cuisine": "ジェラート・アイスクリーム、カフェ",
+        "tel": "044-750-9080",
+        "budgetDinner": "～￥999",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "ice_gelato",
+            "g": "アイス・ジェラート"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.63102176494172,
+          35.588518314722286
+        ]
+      },
+      "properties": {
+        "name": "焼肉さわいしmini - 武蔵新城（焼肉）",
+        "url": "https://tabelog.com/kanagawa/A1405/A140504/14102179/",
+        "category": "焼肉（東日本）",
+        "address": "神奈川県川崎市中原区上新城2-6-20",
+        "rating": "3.70",
+        "ratingCount": "230",
+        "savedCount": "5756",
+        "cuisine": "焼肉、ホルモン",
+        "tel": "未開通",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.36176885222807,
+          35.439666798740575
+        ]
+      },
+      "properties": {
+        "name": "酔笑苑（スイショウエン） - 本厚木（焼肉）",
+        "url": "https://tabelog.com/kanagawa/A1408/A140802/14001796/",
+        "category": "焼肉（東日本）",
+        "address": "神奈川県厚木市中町3-2-21",
+        "rating": "3.59",
+        "ratingCount": "814",
+        "savedCount": "31263",
+        "cuisine": "焼肉、ホルモン、ラーメン",
+        "tel": "046-221-6245",
+        "budgetDinner": "￥3,000～￥3,999",
+        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "budgetLunchRvw": "￥4,000～￥4,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2024,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2022,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2021,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2020,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.22823348037622,
+          35.36208113794195
+        ]
+      },
+      "properties": {
+        "name": "アリエッタ デル ジェラート（ARIETTA del gelato） - 秦野（ジェラート・アイスクリーム）",
+        "url": "https://tabelog.com/kanagawa/A1408/A140804/14071561/",
+        "category": "アイス・ジェラート",
+        "address": "神奈川県秦野市西大竹3-8",
+        "rating": "3.62",
+        "ratingCount": "210",
+        "savedCount": "6591",
+        "cuisine": "ジェラート・アイスクリーム",
+        "tel": "0463-45-4592",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "ice_gelato",
+            "g": "アイス・ジェラート"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.10247275031148,
+          35.23192683878994
+        ]
+      },
+      "properties": {
+        "name": "HAKONE DOLCE STUDIO STELLA（ハコネ ドルチェ スタジオ ステラ） - 箱根湯本（ジェラート・アイスクリーム）",
+        "url": "https://tabelog.com/kanagawa/A1410/A141001/14084076/",
+        "category": "アイス・ジェラート",
+        "address": "神奈川県足柄下郡箱根町湯本699 山勝アパート 1F",
+        "rating": "3.59",
+        "ratingCount": "862",
+        "savedCount": "20237",
+        "cuisine": "ジェラート・アイスクリーム",
+        "tel": "080-2788-0808",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "ice_gelato",
+            "g": "アイス・ジェラート"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.9317959120203,
+          32.99286551824686
+        ]
+      },
+      "properties": {
+        "name": "居酒屋 喜八 - 中村（居酒屋）",
+        "url": "https://tabelog.com/kochi/A3904/A390401/39001203/",
+        "category": "居酒屋（西日本）",
+        "address": "高知県四万十市中村天神橋10",
+        "rating": "3.64",
+        "ratingCount": "222",
+        "savedCount": "8644",
+        "cuisine": "居酒屋、海鮮、郷土料理",
+        "tel": "0880-34-0633",
+        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          },
+          {
+            "y": 2024,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          },
+          {
+            "y": 2022,
+            "t": "izakaya",
+            "g": "居酒屋"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.77182015026295,
+          34.99598719787908
+        ]
+      },
+      "properties": {
+        "name": "櫻バー（サクラバー） - 清水五条（居酒屋）",
+        "url": "https://tabelog.com/kyoto/A2601/A260201/26006086/",
+        "category": "居酒屋（西日本）",
+        "address": "京都府京都市東山区大和大路通五条上ル山崎町376",
+        "rating": "3.63",
+        "ratingCount": "142",
+        "savedCount": "11464",
+        "cuisine": "居酒屋、海鮮",
+        "tel": "075-531-1664",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.7625312791455,
+          34.99973263706838
+        ]
+      },
+      "properties": {
+        "name": "ノーウェアマン（Nowhereman） - 四条（京都市営）（ケーキ）",
+        "url": "https://tabelog.com/kyoto/A2601/A260201/26032346/",
+        "category": "スイーツ（西日本）",
+        "address": "京都府京都市下京区葛籠屋町507-2",
+        "rating": "3.62",
+        "ratingCount": "182",
+        "savedCount": "10896",
+        "cuisine": "ケーキ、洋菓子",
+        "tel": "不明の為情報お待ちしております",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.7691694303068,
+          35.0001433978756
+        ]
+      },
+      "properties": {
+        "name": "和栗専門 紗織（さをり） - 京都河原町（スイーツ）",
+        "url": "https://tabelog.com/kyoto/A2601/A260201/26033014/",
+        "category": "スイーツ（西日本）",
+        "address": "京都府京都市下京区木屋町通松原上る二丁目和泉屋町170-1",
+        "rating": "3.59",
+        "ratingCount": "882",
+        "savedCount": "59047",
+        "cuisine": "スイーツ、カフェ、洋菓子",
+        "tel": "075-365-5559",
+        "budgetLunch": "￥2,000～￥2,999",
+        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.7701956803283,
+          35.00234593787452
+        ]
+      },
+      "properties": {
+        "name": "ホルモン千葉 - 祇園四条（ホルモン）",
+        "url": "https://tabelog.com/kyoto/A2601/A260201/26034584/",
+        "category": "焼肉（西日本）",
+        "address": "京都府京都市下京区船頭町234-1",
+        "rating": "3.61",
+        "ratingCount": "353",
+        "savedCount": "33758",
+        "cuisine": "ホルモン",
+        "tel": "075-352-6162",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.77111157026079,
+          34.99572543787902
+        ]
+      },
+      "properties": {
+        "name": "沐（moku） - 清水五条（創作料理）",
+        "url": "https://tabelog.com/kyoto/A2601/A260201/26040523/",
+        "category": "居酒屋（西日本）",
+        "address": "京都府京都市東山区音羽町325",
+        "rating": "3.67",
+        "ratingCount": "125",
+        "savedCount": "16440",
+        "cuisine": "創作料理",
+        "tel": "090-6734-8956",
+        "budgetLunch": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "budgetLunchRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.7710491903466,
+          35.00421270787361
+        ]
+      },
+      "properties": {
+        "name": "先斗町しゃぶしゃぶすき焼き きらく - 祇園四条（しゃぶしゃぶ）",
+        "url": "https://tabelog.com/kyoto/A2601/A260201/26041019/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "京都府-京都市中京区先斗町通四条上る柏屋町169-2",
+        "rating": "3.64",
+        "ratingCount": "281",
+        "savedCount": "8019",
+        "cuisine": "しゃぶしゃぶ、すき焼き、日本料理",
+        "tel": "075-255-2292",
+        "budgetDinner": "￥8,000～￥9,999",
+        "budgetLunch": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥20,000～￥29,999",
+        "budgetLunchRvw": "￥5,000～￥5,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.75819705035263,
+          35.0039206578697
+        ]
+      },
+      "properties": {
+        "name": "とりの小路 やま岸 - 四条（京都市営）（焼き鳥）",
+        "url": "https://tabelog.com/kyoto/A2601/A260201/26042618/",
+        "category": "焼き鳥（西日本）",
+        "address": "京都府京都市下京区函谷鉾町77  MOKUKYOTO 4F",
+        "rating": "3.75",
+        "ratingCount": "65",
+        "savedCount": "3100",
+        "cuisine": "焼き鳥、鳥料理",
+        "tel": "080-2043-3883",
+        "budgetDinner": "￥15,000～￥19,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_west",
+            "g": "焼き鳥（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.77356382043916,
+          35.013554697868486
+        ]
+      },
+      "properties": {
+        "name": "よこちょう - 三条京阪（居酒屋）",
+        "url": "https://tabelog.com/kyoto/A2601/A260202/26006085/",
+        "category": "居酒屋（西日本）",
+        "address": "京都府-京都市左京区二条通川端東入ル難波町210",
+        "rating": "3.58",
+        "ratingCount": "234",
+        "savedCount": "17068",
+        "cuisine": "居酒屋、海鮮",
+        "tel": "075-752-1531",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.76340986039773,
+          35.0087455678683
+        ]
+      },
+      "properties": {
+        "name": "ベルアメール 京都別邸 - 烏丸御池（チョコレート）",
+        "url": "https://tabelog.com/kyoto/A2601/A260202/26026207/",
+        "category": "スイーツ（西日本）",
+        "address": "京都府京都市中京区三条通堺町東入ル北側桝屋町66",
+        "rating": "3.59",
+        "ratingCount": "643",
+        "savedCount": "25810",
+        "cuisine": "チョコレート、カフェ、ケーキ",
+        "tel": "075-221-7025",
+        "budgetDinner": "￥1,000～￥1,999",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.77095911999442,
+          35.00960163950771
+        ]
+      },
+      "properties": {
+        "name": "京都三条 箔 - 三条（すき焼き）",
+        "url": "https://tabelog.com/kyoto/A2601/A260202/26030697/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "京都府京都市中京区木屋町通り三条上ル上大阪町528-3",
+        "rating": "3.62",
+        "ratingCount": "85",
+        "savedCount": "4743",
+        "cuisine": "すき焼き、しゃぶしゃぶ、日本料理",
+        "tel": "075-254-8717",
+        "budgetDinner": "￥20,000～￥29,999",
+        "budgetLunch": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥20,000～￥29,999",
+        "budgetLunchRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.77009084049072,
+          35.01841707786429
+        ]
+      },
+      "properties": {
+        "name": "三本木商店 - 神宮丸太町（居酒屋）",
+        "url": "https://tabelog.com/kyoto/A2601/A260202/26032695/",
+        "category": "居酒屋（西日本）",
+        "address": "京都府京都市上京区真町478",
+        "rating": "3.61",
+        "ratingCount": "110",
+        "savedCount": "20475",
+        "cuisine": "居酒屋",
+        "tel": "075-255-2810",
+        "budgetDinner": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.74635952038105,
+          35.005913657864674
+        ]
+      },
+      "properties": {
+        "name": "居酒屋 ニエフ - 四条大宮（居酒屋）",
+        "url": "https://tabelog.com/kyoto/A2601/A260203/26040022/",
+        "category": "居酒屋（西日本）",
+        "address": "京都府京都市中京区壬生坊城町47 2F",
+        "rating": "3.61",
+        "ratingCount": "98",
+        "savedCount": "14956",
+        "cuisine": "居酒屋",
+        "tel": "075-432-7384",
+        "budgetDinner": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.76186090033664,
+          35.00259244787172
+        ]
+      },
+      "properties": {
+        "name": "楽庵 - 烏丸（居酒屋）",
+        "url": "https://tabelog.com/kyoto/A2601/A260301/26000829/",
+        "category": "居酒屋（西日本）",
+        "address": "京都府京都市下京区神明町241-1",
+        "rating": "3.67",
+        "ratingCount": "283",
+        "savedCount": "28054",
+        "cuisine": "居酒屋、日本料理",
+        "tel": "075-352-5252",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          },
+          {
+            "y": 2024,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          },
+          {
+            "y": 2022,
+            "t": "izakaya",
+            "g": "居酒屋"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.7752897702904,
+          34.9989499578783
+        ]
+      },
+      "properties": {
+        "name": "祇園 鹿六 - 祇園四条（焼肉）",
+        "url": "https://tabelog.com/kyoto/A2601/A260301/26002425/",
+        "category": "焼肉（西日本）",
+        "address": "京都府-京都市東山区八坂通東大路西入ル小松町566-25",
+        "rating": "3.66",
+        "ratingCount": "230",
+        "savedCount": "20735",
+        "cuisine": "焼肉、ホルモン、韓国料理",
+        "tel": "075-561-6500",
+        "budgetDinner": "￥15,000～￥19,999",
+        "budgetLunch": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥20,000～￥29,999",
+        "budgetLunchRvw": "￥8,000～￥9,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          },
+          {
+            "y": 2024,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          },
+          {
+            "y": 2021,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          },
+          {
+            "y": 2020,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.77429431032536,
+          35.002336987875836
+        ]
+      },
+      "properties": {
+        "name": "祇園きなな 本店（ぎおんきなな） - 祇園四条（甘味処）",
+        "url": "https://tabelog.com/kyoto/A2601/A260301/26002500/",
+        "category": "和菓子・甘味処（西日本）",
+        "address": "京都府京都市東山区祇園町南側570-119",
+        "rating": "3.68",
+        "ratingCount": "1183",
+        "savedCount": "51705",
+        "cuisine": "甘味処、ジェラート・アイスクリーム、カフェ",
+        "tel": "075-525-8300",
+        "budgetDinner": "￥1,000～￥1,999",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_west",
+            "g": "和菓子・甘味処（西日本）"
+          },
+          {
+            "y": 2022,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          },
+          {
+            "y": 2020,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          },
+          {
+            "y": 2019,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          },
+          {
+            "y": 2018,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.7769459403306,
+          35.003040317876234
+        ]
+      },
+      "properties": {
+        "name": "亀屋清永（かめやきよなが） - 祇園四条（和菓子）",
+        "url": "https://tabelog.com/kyoto/A2601/A260301/26005883/",
+        "category": "和菓子・甘味処（西日本）",
+        "address": "京都府京都市東山区祇園石段下南側534",
+        "rating": "3.62",
+        "ratingCount": "179",
+        "savedCount": "6466",
+        "cuisine": "和菓子",
+        "tel": "075-561-2181",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_west",
+            "g": "和菓子・甘味処（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.76987807662613,
+          35.00741163754617
+        ]
+      },
+      "properties": {
+        "name": "すき焼き ズワイガニ・タラバガニ食べ放題 和牛とカニ 三条河原町店 - 三条（すき焼き）",
+        "url": "https://tabelog.com/kyoto/A2601/A260301/26043762/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "京都府京都市中京区河原町通三条下ル2丁目山崎町258-22 SKI河原町六角ビル 3F",
+        "rating": "3.60",
+        "ratingCount": "200",
+        "savedCount": "1655",
+        "cuisine": "すき焼き、かに、しゃぶしゃぶ",
+        "tel": "075-746-3007",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.73378467905863,
+          34.98913603706595
+        ]
+      },
+      "properties": {
+        "name": "KIMURA - 梅小路京都西（ケーキ）",
+        "url": "https://tabelog.com/kyoto/A2601/A260604/26036655/",
+        "category": "スイーツ（西日本）",
+        "address": "京都府京都市下京区西七条南西野町37-1",
+        "rating": "3.60",
+        "ratingCount": "107",
+        "savedCount": "7810",
+        "cuisine": "ケーキ、洋菓子",
+        "tel": "不明の為情報お待ちしております",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.87664865964098,
+          38.25869481743259
+        ]
+      },
+      "properties": {
+        "name": "さぶら - あおば通（居酒屋）",
+        "url": "https://tabelog.com/miyagi/A0401/A040101/4015050/",
+        "category": "居酒屋（東日本）",
+        "address": "宮城県仙台市青葉区中央3-10-22 第六菊水ビル 1F・2F",
+        "rating": "3.62",
+        "ratingCount": "250",
+        "savedCount": "14394",
+        "cuisine": "居酒屋、海鮮",
+        "tel": "022-265-7147",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.86034830868513,
+          38.277955536609795
+        ]
+      },
+      "properties": {
+        "name": "炭焼 おかげさん（【旧店名】酒と炭焼 おかげさん） - 北仙台（焼き鳥）",
+        "url": "https://tabelog.com/miyagi/A0401/A040101/4016523/",
+        "category": "焼き鳥（東日本）",
+        "address": "宮城県仙台市青葉区木町11-2",
+        "rating": "4.09",
+        "ratingCount": "200",
+        "savedCount": "18375",
+        "cuisine": "焼き鳥",
+        "tel": "022-341-7039",
+        "budgetDinner": "￥15,000～￥19,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_east",
+            "g": "焼き鳥（東日本）"
+          },
+          {
+            "y": 2024,
+            "t": "yakitori_east",
+            "g": "焼き鳥（東日本）"
+          },
+          {
+            "y": 2023,
+            "t": "yakitori_east",
+            "g": "焼き鳥（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.42178682217815,
+          31.91369228845137
+        ]
+      },
+      "properties": {
+        "name": "明月館 本店 - 宮崎（焼肉）",
+        "url": "https://tabelog.com/miyazaki/A4501/A450101/45003704/",
+        "category": "焼肉（西日本）",
+        "address": "宮崎県宮崎市橘通西3-2-8",
+        "rating": "3.64",
+        "ratingCount": "127",
+        "savedCount": "10088",
+        "cuisine": "焼肉",
+        "tel": "0985-23-2927",
+        "budgetDinner": "￥8,000～￥9,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          },
+          {
+            "y": 2023,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          },
+          {
+            "y": 2022,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.4352106421245,
+          31.909313398458423
+        ]
+      },
+      "properties": {
+        "name": "みやざき地頭鶏炭火焼 Kutsurogi 三四郎（くつろぎ さんしろう） - 宮崎（居酒屋）",
+        "url": "https://tabelog.com/miyazaki/A4501/A450101/45007087/",
+        "category": "居酒屋（西日本）",
+        "address": "宮崎県宮崎市堀川町57-1",
+        "rating": "3.63",
+        "ratingCount": "293",
+        "savedCount": "17882",
+        "cuisine": "居酒屋、焼き鳥、鳥料理",
+        "tel": "0985-31-1888",
+        "budgetDinner": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          },
+          {
+            "y": 2024,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          },
+          {
+            "y": 2022,
+            "t": "izakaya",
+            "g": "居酒屋"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.30390147035612,
+          32.71513325790482
+        ]
+      },
+      "properties": {
+        "name": "肉工房 初栄 - 高千穂（焼肉）",
+        "url": "https://tabelog.com/miyazaki/A4505/A450502/45004700/",
+        "category": "焼肉（西日本）",
+        "address": "宮崎県西臼杵郡高千穂町三田井1404-4",
+        "rating": "3.68",
+        "ratingCount": "104",
+        "savedCount": "6616",
+        "cuisine": "焼肉、ホルモン、牛料理",
+        "tel": "0982-72-2468",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥4,000～￥4,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          },
+          {
+            "y": 2023,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          },
+          {
+            "y": 2022,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.18893793640723,
+          36.64393801480081
+        ]
+      },
+      "properties": {
+        "name": "甘味屋幾右衛門 桜井甘精堂 MIDORI長野店（アマミヤイクエモン） - 長野（長野電鉄）（和菓子）",
+        "url": "https://tabelog.com/nagano/A2001/A200101/20019133/",
+        "category": "和菓子・甘味処（東日本）",
+        "address": "長野県長野市南千歳1-22-6 MIDORI長野 2F",
+        "rating": "3.56",
+        "ratingCount": "216",
+        "savedCount": "3970",
+        "cuisine": "和菓子、カフェ",
+        "tel": "026-219-6141",
+        "budgetDinner": "～￥999",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_east",
+            "g": "和菓子・甘味処（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.0080650135513,
+          36.095177979717604
+        ]
+      },
+      "properties": {
+        "name": "焼肉 東山食堂 本店 - みどり湖（焼肉）",
+        "url": "https://tabelog.com/nagano/A2002/A200203/20000011/",
+        "category": "焼肉（東日本）",
+        "address": "長野県塩尻市東山1054-5",
+        "rating": "3.59",
+        "ratingCount": "231",
+        "savedCount": "9006",
+        "cuisine": "焼肉、ジンギスカン",
+        "tel": "0263-56-2733",
+        "budgetDinner": "￥3,000～￥3,999",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥3,000～￥3,999",
+        "budgetLunchRvw": "￥3,000～￥3,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.6352115318806,
+          36.344855677934284
+        ]
+      },
+      "properties": {
+        "name": "ジェラテリア ジーナ（Gelateria Gina） - 軽井沢（ジェラート・アイスクリーム）",
+        "url": "https://tabelog.com/nagano/A2003/A200301/20021034/",
+        "category": "アイス・ジェラート",
+        "address": "長野県北佐久郡軽井沢町軽井沢東11-22",
+        "rating": "3.63",
+        "ratingCount": "326",
+        "savedCount": "12124",
+        "cuisine": "ジェラート・アイスクリーム",
+        "tel": "0267-27-2114",
+        "budgetDinner": "～￥999",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "ice_gelato",
+            "g": "アイス・ジェラート"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.6150174717231,
+          36.32785830793865
+        ]
+      },
+      "properties": {
+        "name": "鳥嵩 - 軽井沢（焼き鳥）",
+        "url": "https://tabelog.com/nagano/A2003/A200301/20023715/",
+        "category": "焼き鳥（東日本）",
+        "address": "長野県-北佐久郡軽井沢町大字長倉628-5",
+        "rating": "3.83",
+        "ratingCount": "66",
+        "savedCount": "15321",
+        "cuisine": "焼き鳥",
+        "tel": "0267-42-1666",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥20,000～￥29,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_east",
+            "g": "焼き鳥（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.25420074270642,
+          36.400170417777815
+        ]
+      },
+      "properties": {
+        "name": "富士アイス - 上田（たい焼き・大判焼き）",
+        "url": "https://tabelog.com/nagano/A2004/A200401/20009498/",
+        "category": "和菓子・甘味処（東日本）",
+        "address": "長野県上田市中央2-10-14",
+        "rating": "3.58",
+        "ratingCount": "339",
+        "savedCount": "6874",
+        "cuisine": "たい焼き・大判焼き、ソフトクリーム",
+        "tel": "0268-22-1077",
+        "budgetDinner": "～￥999",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_east",
+            "g": "和菓子・甘味処（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.85873285389255,
+          35.50014621822349
+        ]
+      },
+      "properties": {
+        "name": "長屋門 桒はら（クワハラ） - 伊那八幡（焼肉）",
+        "url": "https://tabelog.com/nagano/A2006/A200603/20018745/",
+        "category": "焼肉（東日本）",
+        "address": "長野県飯田市松尾新井6814-1",
+        "rating": "3.88",
+        "ratingCount": "124",
+        "savedCount": "7630",
+        "cuisine": "焼肉、フレンチ",
+        "tel": "0265-48-0829",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2023,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          },
+          {
+            "y": 2022,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.7915988253593,
+          34.511893458192844
+        ]
+      },
+      "properties": {
+        "name": "だんご庄 八木店（ダンゴショウ） - 大和八木（和菓子）",
+        "url": "https://tabelog.com/nara/A2903/A290302/29000638/",
+        "category": "和菓子・甘味処（西日本）",
+        "address": "奈良県橿原市内膳町1-3-8",
+        "rating": "3.59",
+        "ratingCount": "356",
+        "savedCount": "10671",
+        "cuisine": "和菓子",
+        "tel": "0744-25-2922",
+        "budgetLunch": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_west",
+            "g": "和菓子・甘味処（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.0588574673831,
+          37.90901313707577
+        ]
+      },
+      "properties": {
+        "name": "かもせ屋 - 新潟（居酒屋）",
+        "url": "https://tabelog.com/niigata/A1501/A150101/15014726/",
+        "category": "居酒屋（東日本）",
+        "address": "新潟県新潟市中央区米山2-1-12 カタギリビル 1F",
+        "rating": "3.66",
+        "ratingCount": "138",
+        "savedCount": "8565",
+        "cuisine": "居酒屋",
+        "tel": "025-246-9322",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.60349485545717,
+          33.24093502766628
+        ]
+      },
+      "properties": {
+        "name": "キッチン ウィル（Kitchen WILL） - 大分（居酒屋）",
+        "url": "https://tabelog.com/oita/A4401/A440101/44003491/",
+        "category": "居酒屋（西日本）",
+        "address": "大分県大分市都町3-5-15",
+        "rating": "3.73",
+        "ratingCount": "109",
+        "savedCount": "7521",
+        "cuisine": "居酒屋、日本料理",
+        "tel": "097-532-2202",
+        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          },
+          {
+            "y": 2022,
+            "t": "izakaya",
+            "g": "居酒屋"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.50451955591234,
+          33.2791280876105
+        ]
+      },
+      "properties": {
+        "name": "冷乳果工房GENOVA - 別府（ジェラート・アイスクリーム）",
+        "url": "https://tabelog.com/oita/A4402/A440202/44000469/",
+        "category": "アイス・ジェラート",
+        "address": "大分県別府市北浜1-10-5",
+        "rating": "3.57",
+        "ratingCount": "347",
+        "savedCount": "6558",
+        "cuisine": "ジェラート・アイスクリーム",
+        "tel": "0977-22-6051",
+        "budgetDinner": "～￥999",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "ice_gelato",
+            "g": "アイス・ジェラート"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.68506566723993,
+          26.21544605088042
+        ]
+      },
+      "properties": {
+        "name": "ブルーシール 国際通り店（【旧店名】ブルーシール リックビット） - 美栄橋（ジェラート・アイスクリーム）",
+        "url": "https://tabelog.com/okinawa/A4701/A470101/47004385/",
+        "category": "アイス・ジェラート",
+        "address": "沖縄県那覇市牧志1-2-32",
+        "rating": "3.58",
+        "ratingCount": "549",
+        "savedCount": "4896",
+        "cuisine": "ジェラート・アイスクリーム、クレープ・ガレット",
+        "tel": "098-867-1450",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "ice_gelato",
+            "g": "アイス・ジェラート"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.69541279609967,
+          26.218295640076537
+        ]
+      },
+      "properties": {
+        "name": "今帰仁アグーしゃぶしゃぶ長堂屋 那覇店（ながどうや【旧店名】今帰仁アグー料理一式 長堂屋） - 安里（豚しゃぶ）",
+        "url": "https://tabelog.com/okinawa/A4701/A470101/47014333/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "沖縄県那覇市安里2-4-17 ライオンズマンション安里 1F",
+        "rating": "3.57",
+        "ratingCount": "73",
+        "savedCount": "4733",
+        "cuisine": "豚しゃぶ、沖縄料理、居酒屋",
+        "tel": "098-917-0206",
+        "budgetDinner": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.6832887960966,
+          26.217148140073405
+        ]
+      },
+      "properties": {
+        "name": "焼鳥 一葉（Yakitori Ichiha） - 美栄橋（焼き鳥）",
+        "url": "https://tabelog.com/okinawa/A4701/A470101/47028216/",
+        "category": "焼き鳥（西日本）",
+        "address": "沖縄県那覇市牧志1-11-1 3F",
+        "rating": "3.63",
+        "ratingCount": "74",
+        "savedCount": "2735",
+        "cuisine": "焼き鳥、居酒屋",
+        "tel": "098-800-2884",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_west",
+            "g": "焼き鳥（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.6837504945584,
+          26.219241481755187
+        ]
+      },
+      "properties": {
+        "name": "朝陽屋 - 美栄橋（豚しゃぶ）",
+        "url": "https://tabelog.com/okinawa/A4701/A470101/47029666/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "沖縄県那覇市久茂地2-19-17 RS-ONE 1F",
+        "rating": "3.62",
+        "ratingCount": "61",
+        "savedCount": "1997",
+        "cuisine": "豚しゃぶ、沖縄料理",
+        "tel": "098-952-2870",
+        "budgetDinner": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.68178913723465,
+          26.21469420087986
+        ]
+      },
+      "properties": {
+        "name": "しゃぶしゃぶ光久本家 - 県庁前（しゃぶしゃぶ）",
+        "url": "https://tabelog.com/okinawa/A4701/A470101/47032504/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "沖縄県那覇市久茂地3-8-1",
+        "rating": "3.67",
+        "ratingCount": "290",
+        "savedCount": "6360",
+        "cuisine": "しゃぶしゃぶ、沖縄料理",
+        "tel": "080-6622-6789",
+        "budgetDinner": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.73469011929923,
+          26.422761400764557
+        ]
+      },
+      "properties": {
+        "name": "あぐー豚しゃぶしゃぶ専門店 オーシャンBoo！ 読谷村本店 - 読谷村（豚しゃぶ）",
+        "url": "https://tabelog.com/okinawa/A4703/A470304/47024109/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "沖縄県中頭郡読谷村瀬名波821 コスタビスタアパート 201",
+        "rating": "3.59",
+        "ratingCount": "184",
+        "savedCount": "8127",
+        "cuisine": "豚しゃぶ、しゃぶしゃぶ、居酒屋",
+        "tel": "098-914-1153",
+        "budgetDinner": "￥3,000～￥3,999",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.77116699710469,
+          26.323048240034122
+        ]
+      },
+      "properties": {
+        "name": "北谷ダイニング ちゃぁぶー - 北谷町（豚しゃぶ）",
+        "url": "https://tabelog.com/okinawa/A4703/A470304/47029667/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "沖縄県中頭郡北谷町桑江614-1",
+        "rating": "3.56",
+        "ratingCount": "118",
+        "savedCount": "4615",
+        "cuisine": "豚しゃぶ、しゃぶしゃぶ、沖縄料理",
+        "tel": "098-923-2229",
+        "budgetDinner": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥4,000～￥4,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          125.27893518468183,
+          24.80520548100982
+        ]
+      },
+      "properties": {
+        "name": "沖縄やんばるアグーしゃぶしゃぶ 嘉福 - 宮古島市（しゃぶしゃぶ）",
+        "url": "https://tabelog.com/okinawa/A4705/A470503/47031838/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "沖縄県宮古島市平良西里149-1 2F",
+        "rating": "3.58",
+        "ratingCount": "354",
+        "savedCount": "13290",
+        "cuisine": "しゃぶしゃぶ、沖縄料理、居酒屋",
+        "tel": "0980-79-6575",
+        "budgetDinner": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4976537074445,
+          34.697935007981066
+        ]
+      },
+      "properties": {
+        "name": "馳走や純平（チソウヤジュンペイ） - 北新地（居酒屋）",
+        "url": "https://tabelog.com/osaka/A2701/A270101/27014760/",
+        "category": "居酒屋（西日本）",
+        "address": "大阪府大阪市北区曽根崎新地1-5-25 ジェイ・プライド梅田永楽ビル 5F",
+        "rating": "3.62",
+        "ratingCount": "368",
+        "savedCount": "23250",
+        "cuisine": "居酒屋、ふぐ、すっぽん",
+        "tel": "06-6341-5228",
+        "budgetDinner": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4987622274291,
+          34.69648553798235
+        ]
+      },
+      "properties": {
+        "name": "居酒屋 浜村（イザカヤハマムラ） - 大江橋（居酒屋）",
+        "url": "https://tabelog.com/osaka/A2701/A270101/27016897/",
+        "category": "居酒屋（西日本）",
+        "address": "大阪府大阪市北区堂島1-2-15 浜村サンプラザビル 2Ｆ",
+        "rating": "3.63",
+        "ratingCount": "123",
+        "savedCount": "12497",
+        "cuisine": "居酒屋",
+        "tel": "06-6346-5119",
+        "budgetDinner": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.49640236749997,
+          34.70333666797724
+        ]
+      },
+      "properties": {
+        "name": "ダニエル ルクア店 - 大阪（ケーキ）",
+        "url": "https://tabelog.com/osaka/A2701/A270101/27057272/",
+        "category": "スイーツ（西日本）",
+        "address": "大阪府大阪市北区梅田3-1-3 ルクア 1F",
+        "rating": "3.62",
+        "ratingCount": "803",
+        "savedCount": "20049",
+        "cuisine": "ケーキ、洋菓子",
+        "tel": "06-6151-1228",
+        "budgetDinner": "￥1,000～￥1,999",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.5077386875323,
+          34.70732627797832
+        ]
+      },
+      "properties": {
+        "name": "焼肉たまき - 中崎町（焼肉）",
+        "url": "https://tabelog.com/osaka/A2701/A270101/27092684/",
+        "category": "焼肉（西日本）",
+        "address": "大阪府大阪市北区黒崎町3-22",
+        "rating": "3.66",
+        "ratingCount": "805",
+        "savedCount": "65298",
+        "cuisine": "焼肉、しゃぶしゃぶ、ステーキ",
+        "tel": "06-6375-1752",
+        "budgetDinner": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.5002753674267,
+          34.69635238798291
+        ]
+      },
+      "properties": {
+        "name": "南さつま - 大江橋（焼肉）",
+        "url": "https://tabelog.com/osaka/A2701/A270101/27096154/",
+        "category": "焼肉（西日本）",
+        "address": "大阪府大阪市北区堂島1-1-20 堂島フードセンタービル パールプラザ 1F",
+        "rating": "3.53",
+        "ratingCount": "238",
+        "savedCount": "13048",
+        "cuisine": "焼肉",
+        "tel": "06-6442-1129",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.48390386738018,
+          34.69061137798135
+        ]
+      },
+      "properties": {
+        "name": "PHILO&CO.（フィロ&カンパニー） - 中之島（ケーキ）",
+        "url": "https://tabelog.com/osaka/A2701/A270101/27125203/",
+        "category": "スイーツ（西日本）",
+        "address": "大阪府大阪市福島区福島4-1-77",
+        "rating": "3.60",
+        "ratingCount": "315",
+        "savedCount": "16811",
+        "cuisine": "ケーキ、洋菓子、カフェ",
+        "tel": "06-6147-9435",
+        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4991440524396,
+          34.69628768656421
+        ]
+      },
+      "properties": {
+        "name": "北新地焼肉 きらく - 大江橋（焼肉）",
+        "url": "https://tabelog.com/osaka/A2701/A270101/27130269/",
+        "category": "焼肉（西日本）",
+        "address": "大阪府大阪市北区堂島1-2-7 パーマリィイン堂島 2F",
+        "rating": "3.60",
+        "ratingCount": "771",
+        "savedCount": "26445",
+        "cuisine": "焼肉、日本料理、韓国料理",
+        "tel": "06-6131-7475",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          },
+          {
+            "y": 2023,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.49221167749428,
+          34.702483337976446
+        ]
+      },
+      "properties": {
+        "name": "象 SUGATA - 大阪（焼き鳥）",
+        "url": "https://tabelog.com/osaka/A2701/A270101/27147971/",
+        "category": "焼き鳥（西日本）",
+        "address": "大阪府大阪市北区大深町5-54 グラングリーン大阪南館 1F",
+        "rating": "4.02",
+        "ratingCount": "84",
+        "savedCount": "3024",
+        "cuisine": "焼き鳥",
+        "tel": "不明の為情報お待ちしております",
+        "budgetDinnerRvw": "￥20,000～￥29,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_west",
+            "g": "焼き鳥（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.49432208733944,
+          34.68729859798677
+        ]
+      },
+      "properties": {
+        "name": "レ・プティット・パピヨット（Les Petites Papillotes） - 肥後橋（チョコレート）",
+        "url": "https://tabelog.com/osaka/A2701/A270102/27064714/",
+        "category": "スイーツ（西日本）",
+        "address": "大阪府大阪市西区京町掘1-12-24 OH MILLS京町堀 1F",
+        "rating": "3.68",
+        "ratingCount": "573",
+        "savedCount": "26520",
+        "cuisine": "チョコレート、カフェ、ケーキ",
+        "tel": "06-6443-7875",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          },
+          {
+            "y": 2022,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          },
+          {
+            "y": 2020,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.49477785705668,
+          34.68846448224249
+        ]
+      },
+      "properties": {
+        "name": "Kuku（クク） - 肥後橋（焼肉）",
+        "url": "https://tabelog.com/osaka/A2701/A270102/27149405/",
+        "category": "焼肉（西日本）",
+        "address": "大阪府大阪市西区江戸堀1-21-5 OP BLD 1F",
+        "rating": "3.97",
+        "ratingCount": "144",
+        "savedCount": "5973",
+        "cuisine": "焼肉",
+        "tel": "不明の為情報お待ちしております",
+        "budgetDinnerRvw": "￥20,000～￥29,999",
+        "budgetLunchRvw": "￥20,000～￥29,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.5140540474188,
+          34.69652499798719
+        ]
+      },
+      "properties": {
+        "name": "焼鳥 光 - 大阪天満宮（焼き鳥）",
+        "url": "https://tabelog.com/osaka/A2701/A270103/27141185/",
+        "category": "焼き鳥（西日本）",
+        "address": "大阪府大阪市北区東天満1-12-11",
+        "rating": "3.65",
+        "ratingCount": "130",
+        "savedCount": "5842",
+        "cuisine": "焼き鳥",
+        "tel": "06-6484-9205",
+        "budgetDinner": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_west",
+            "g": "焼き鳥（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.50925251830432,
+          34.711374582761344
+        ]
+      },
+      "properties": {
+        "name": "焼鳥谷口 天神橋 - 天神橋筋六丁目（焼き鳥）",
+        "url": "https://tabelog.com/osaka/A2701/A270103/27156605/",
+        "category": "焼き鳥（西日本）",
+        "address": "大阪府大阪市北区本庄東1-2-4 リュクスプラス天六 1F",
+        "rating": "4.24",
+        "ratingCount": "107",
+        "savedCount": "5188",
+        "cuisine": "焼き鳥",
+        "tel": "不明の為情報お待ちしております",
+        "budgetDinner": "￥15,000～￥19,999",
+        "budgetDinnerRvw": "￥20,000～￥29,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_west",
+            "g": "焼き鳥（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.5123731761549,
+          34.68629913718777
+        ]
+      },
+      "properties": {
+        "name": "Masahiko Ozumi Paris（マサヒコ オズミ パリ） - 天満橋（ケーキ）",
+        "url": "https://tabelog.com/osaka/A2701/A270104/27130313/",
+        "category": "スイーツ（西日本）",
+        "address": "大阪府大阪市中央区大手通2-4-8 1F",
+        "rating": "3.62",
+        "ratingCount": "667",
+        "savedCount": "37747",
+        "cuisine": "ケーキ",
+        "tel": "不明の為情報お待ちしております",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.51405059733509,
+          34.68824001799245
+        ]
+      },
+      "properties": {
+        "name": "焼鳥 燦然 - 天満橋（焼き鳥）",
+        "url": "https://tabelog.com/osaka/A2701/A270104/27152450/",
+        "category": "焼き鳥（西日本）",
+        "address": "大阪府大阪市中央区釣鐘町2-1-6 concom釣鐘front 1F",
+        "rating": "3.92",
+        "ratingCount": "107",
+        "savedCount": "3835",
+        "cuisine": "焼き鳥、鳥料理",
+        "tel": "06-6809-3747",
+        "budgetDinner": "￥15,000～￥19,999",
+        "budgetDinnerRvw": "￥20,000～￥29,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_west",
+            "g": "焼き鳥（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.49498244127415,
+          34.684489431376456
+        ]
+      },
+      "properties": {
+        "name": "しぶすき - 本町（すき焼き）",
+        "url": "https://tabelog.com/osaka/A2701/A270106/27139198/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "大阪府大阪市西区靭本町1-17-18 かねよこビル 3F",
+        "rating": "3.56",
+        "ratingCount": "73",
+        "savedCount": "3712",
+        "cuisine": "すき焼き、バル、ダイニングバー",
+        "tel": "090-7123-2446",
+        "budgetDinner": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.48665911741847,
+          34.69459136797969
+        ]
+      },
+      "properties": {
+        "name": "焼肉屋 KEIZO（ケイゾー） - 新福島（焼肉）",
+        "url": "https://tabelog.com/osaka/A2701/A270108/27138292/",
+        "category": "焼肉（西日本）",
+        "address": "大阪府大阪市福島区福島2-8-10",
+        "rating": "3.76",
+        "ratingCount": "150",
+        "savedCount": "7616",
+        "cuisine": "焼肉、ホルモン、肉料理",
+        "tel": "06-6676-8806",
+        "budgetDinner": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.48547277746871,
+          34.6994853679762
+        ]
+      },
+      "properties": {
+        "name": "焼鳥すづ恵 - 福島（ＪＲ西日本）（焼き鳥）",
+        "url": "https://tabelog.com/osaka/A2701/A270108/27147967/",
+        "category": "焼き鳥（西日本）",
+        "address": "大阪府大阪市福島区福島7-17-21",
+        "rating": "3.65",
+        "ratingCount": "117",
+        "savedCount": "9091",
+        "cuisine": "焼き鳥",
+        "tel": "06-6458-6010",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_west",
+            "g": "焼き鳥（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.49452324722674,
+          34.67615614799391
+        ]
+      },
+      "properties": {
+        "name": "ちひろ菓子店 - 西大橋（洋菓子）",
+        "url": "https://tabelog.com/osaka/A2701/A270201/27112367/",
+        "category": "スイーツ（西日本）",
+        "address": "大阪府大阪市西区新町1-25-13 1F",
+        "rating": "3.65",
+        "ratingCount": "552",
+        "savedCount": "22427",
+        "cuisine": "洋菓子、スイーツ",
+        "tel": "06-6585-9515",
+        "budgetDinner": "￥1,000～￥1,999",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_west",
+            "g": "スイーツ（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.50549717601353,
+          34.67182663719478
+        ]
+      },
+      "properties": {
+        "name": "深夜焼肉 じる - 長堀橋（焼肉）",
+        "url": "https://tabelog.com/osaka/A2701/A270201/27126023/",
+        "category": "焼肉（西日本）",
+        "address": "大阪府大阪市中央区東心斎橋2-1-25 大優ビル 1F",
+        "rating": "3.51",
+        "ratingCount": "99",
+        "savedCount": "7987",
+        "cuisine": "焼肉",
+        "tel": "080-9981-7951",
+        "budgetDinner": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.49571000722878,
+          34.6764391379941
+        ]
+      },
+      "properties": {
+        "name": "焼肉ぽむる - 西大橋（焼肉）",
+        "url": "https://tabelog.com/osaka/A2701/A270201/27150694/",
+        "category": "焼肉（西日本）",
+        "address": "大阪府大阪市西区新町1-23-6 Dビル新町 301",
+        "rating": "3.74",
+        "ratingCount": "259",
+        "savedCount": "13119",
+        "cuisine": "焼肉",
+        "tel": "070-8498-7890",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.29740584658038,
+          33.26149395723728
+        ]
+      },
+      "properties": {
+        "name": "焼鳥 鳥ふみ - 佐賀（焼き鳥）",
+        "url": "https://tabelog.com/saga/A4101/A410101/41006577/",
+        "category": "焼き鳥（西日本）",
+        "address": "佐賀県佐賀市駅南本町1-23",
+        "rating": "3.64",
+        "ratingCount": "60",
+        "savedCount": "2099",
+        "cuisine": "焼き鳥、日本料理、居酒屋",
+        "tel": "0952-97-5886",
+        "budgetDinner": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_west",
+            "g": "焼き鳥（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.6553231762598,
+          35.859184688567616
+        ]
+      },
+      "properties": {
+        "name": "魚浪人 - 浦和（居酒屋）",
+        "url": "https://tabelog.com/saitama/A1101/A110102/11034333/",
+        "category": "居酒屋（東日本）",
+        "address": "埼玉県さいたま市浦和区高砂1-13-9",
+        "rating": "3.67",
+        "ratingCount": "186",
+        "savedCount": "13948",
+        "cuisine": "居酒屋、海鮮、日本酒バー",
+        "tel": "048-826-5543",
+        "budgetDinner": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetLunchRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.0826804980495,
+          35.99662773829795
+        ]
+      },
+      "properties": {
+        "name": "秩父餅七福本舗 水戸屋本店 - 秩父（和菓子）",
+        "url": "https://tabelog.com/saitama/A1107/A110701/11023806/",
+        "category": "和菓子・甘味処（東日本）",
+        "address": "埼玉県秩父市本町1-22",
+        "rating": "3.57",
+        "ratingCount": "283",
+        "savedCount": "6330",
+        "cuisine": "和菓子、洋菓子",
+        "tel": "0494-22-1237",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_east",
+            "g": "和菓子・甘味処（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.23731758140147,
+          35.2560225370568
+        ]
+      },
+      "properties": {
+        "name": "雪月花 彦根 - 南彦根（焼肉）",
+        "url": "https://tabelog.com/shiga/A2503/A250303/25004996/",
+        "category": "焼肉（西日本）",
+        "address": "滋賀県彦根市戸賀町93-1",
+        "rating": "3.65",
+        "ratingCount": "261",
+        "savedCount": "8768",
+        "cuisine": "焼肉、しゃぶしゃぶ、牛料理",
+        "tel": "0749-26-2929",
+        "budgetDinner": "￥5,000～￥5,999",
+        "budgetLunch": "￥2,000～￥2,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_west",
+            "g": "焼肉（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.05892173688005,
+          35.46281988671862
+        ]
+      },
+      "properties": {
+        "name": "酒場 16番 - 松江（居酒屋）",
+        "url": "https://tabelog.com/shimane/A3201/A320101/32004545/",
+        "category": "居酒屋（西日本）",
+        "address": "島根県松江市寺町208",
+        "rating": "3.66",
+        "ratingCount": "181",
+        "savedCount": "9303",
+        "cuisine": "居酒屋、郷土料理",
+        "tel": "0852-61-0106",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.05698239689542,
+          35.46420626671712
+        ]
+      },
+      "properties": {
+        "name": "焼鳥 さえき - 松江（焼き鳥）",
+        "url": "https://tabelog.com/shimane/A3201/A320101/32006420/",
+        "category": "焼き鳥（西日本）",
+        "address": "島根県松江市寺町132-2",
+        "rating": "3.72",
+        "ratingCount": "36",
+        "savedCount": "1531",
+        "cuisine": "焼き鳥",
+        "tel": "0852-67-2959",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_west",
+            "g": "焼き鳥（西日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.38343990818888,
+          34.9718894887261
+        ]
+      },
+      "properties": {
+        "name": "焼肉 うしなり - 静岡（焼肉）",
+        "url": "https://tabelog.com/shizuoka/A2201/A220101/22038478/",
+        "category": "焼肉（東日本）",
+        "address": "静岡県静岡市葵区昭和町3-17 秀和ビル 2F",
+        "rating": "3.81",
+        "ratingCount": "156",
+        "savedCount": "6084",
+        "cuisine": "焼肉、居酒屋、韓国料理",
+        "tel": "054-272-2692",
+        "budgetDinner": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_east",
+            "g": "焼肉（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.07735095901708,
+          35.10203956886443
+        ]
+      },
+      "properties": {
+        "name": "熱海プリン（あたみプリン） - 熱海（プリン）",
+        "url": "https://tabelog.com/shizuoka/A2205/A220502/22031988/",
+        "category": "スイーツ（東日本）",
+        "address": "静岡県熱海市田原本町3-14",
+        "rating": "3.61",
+        "ratingCount": "1390",
+        "savedCount": "27812",
+        "cuisine": "プリン、スイーツ、カフェ",
+        "tel": "0557-81-0720",
+        "budgetDinner": "～￥999",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_east",
+            "g": "スイーツ（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.07769737902012,
+          35.10236354886434
+        ]
+      },
+      "properties": {
+        "name": "熱海ばたーあん - 熱海（和菓子）",
+        "url": "https://tabelog.com/shizuoka/A2205/A220502/22038505/",
+        "category": "和菓子・甘味処（東日本）",
+        "address": "静岡県熱海市田原本町5-11",
+        "rating": "3.59",
+        "ratingCount": "829",
+        "savedCount": "11248",
+        "cuisine": "和菓子、スイーツ",
+        "tel": "0557-81-2777",
+        "budgetDinner": "～￥999",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_east",
+            "g": "和菓子・甘味処（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.61920176526388,
+          36.74808653799155
+        ]
+      },
+      "properties": {
+        "name": "明治の館 ケーキショップ - 東武日光（ケーキ）",
+        "url": "https://tabelog.com/tochigi/A0903/A090301/9000398/",
+        "category": "スイーツ（東日本）",
+        "address": "栃木県日光市松原町4-3",
+        "rating": "3.62",
+        "ratingCount": "391",
+        "savedCount": "12739",
+        "cuisine": "ケーキ、カフェ、スイーツ",
+        "tel": "0288-54-2149",
+        "budgetDinner": "～￥999",
+        "budgetLunch": "～￥999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_east",
+            "g": "スイーツ（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.76392735428084,
+          35.67080143872185
+        ]
+      },
+      "properties": {
+        "name": "シヅカ洋菓子店 自然菓子研究所 銀座5丁目店 - 銀座（洋菓子）",
+        "url": "https://tabelog.com/tokyo/A1301/A130101/13270326/",
+        "category": "スイーツ（東京）",
+        "address": "東京都中央区銀座5-7-10 EXITMELSA 1F すずらん通り沿い",
+        "rating": "3.83",
+        "ratingCount": "786",
+        "savedCount": "26419",
+        "cuisine": "洋菓子",
+        "tel": "03-6280-6702",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7625203542833,
+          35.67094824872131
+        ]
+      },
+      "properties": {
+        "name": "焼肉 銀座コバウ 並木通り店 - 銀座（焼肉）",
+        "url": "https://tabelog.com/tokyo/A1301/A130101/13277358/",
+        "category": "焼肉（東京）",
+        "address": "東京都中央区銀座6-6-5 HULIC & newGINZA NAMIKI6 5F",
+        "rating": "3.61",
+        "ratingCount": "443",
+        "savedCount": "20673",
+        "cuisine": "焼肉、ホルモン",
+        "tel": "03-5568-5510",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetLunch": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "budgetLunchRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.76365297431718,
+          35.67438021871949
+        ]
+      },
+      "properties": {
+        "name": "Giolitti Cafe 有楽町店（ジョリッティ カフェ） - 有楽町（ジェラート・アイスクリーム）",
+        "url": "https://tabelog.com/tokyo/A1301/A130102/13262740/",
+        "category": "アイス・ジェラート",
+        "address": "東京都千代田区有楽町2-7-1 有楽町マルイ 3F",
+        "rating": "3.62",
+        "ratingCount": "641",
+        "savedCount": "26998",
+        "cuisine": "ジェラート・アイスクリーム、カフェ、イタリアン",
+        "budgetDinner": "￥3,000～￥3,999",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "ice_gelato",
+            "g": "アイス・ジェラート"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.75492378306015,
+          35.664342537917705
+        ]
+      },
+      "properties": {
+        "name": "新正堂（しんしょうどう） - 新橋（和菓子）",
+        "url": "https://tabelog.com/tokyo/A1301/A130103/13019962/",
+        "category": "和菓子・甘味処（東京）",
+        "address": "東京都港区新橋4-27-2 新正堂本店ビル 1F",
+        "rating": "3.67",
+        "ratingCount": "906",
+        "savedCount": "18050",
+        "cuisine": "和菓子、どら焼き、大福",
+        "tel": "03-3431-2512",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_tokyo",
+            "g": "和菓子・甘味処（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.75924692426872,
+          35.669275648721325
+        ]
+      },
+      "properties": {
+        "name": "シャングリラズシークレット 銀座店 - 内幸町（しゃぶしゃぶ）",
+        "url": "https://tabelog.com/tokyo/A1301/A130103/13225378/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "東京都中央区銀座8-3-1 GINZA TOKIDEN8F",
+        "rating": "3.56",
+        "ratingCount": "704",
+        "savedCount": "33493",
+        "cuisine": "しゃぶしゃぶ、中華料理、薬膳",
+        "tel": "03-6264-5595",
+        "budgetDinner": "￥8,000～￥9,999",
+        "budgetLunch": "￥3,000～￥3,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "budgetLunchRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7612289744212,
+          35.68450944871228
+        ]
+      },
+      "properties": {
+        "name": "スイーツ＆デリ（SWEETS＆DELI） - 大手町（ケーキ）",
+        "url": "https://tabelog.com/tokyo/A1302/A130201/13141136/",
+        "category": "スイーツ（東京）",
+        "address": "東京都千代田区丸の内 1-1-1 パレスホテル東京 B1F",
+        "rating": "3.71",
+        "ratingCount": "573",
+        "savedCount": "14816",
+        "cuisine": "ケーキ、パン、チョコレート",
+        "tel": "03-3211-5315",
+        "budgetDinner": "～￥999",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.77378716442536,
+          35.68579289871546
+        ]
+      },
+      "properties": {
+        "name": "ノワ・ドゥ・ブール 日本橋三越店（noix de beurre） - 三越前（洋菓子）",
+        "url": "https://tabelog.com/tokyo/A1302/A130202/13138859/",
+        "category": "スイーツ（東京）",
+        "address": "東京都中央区日本橋室町1-4-1 日本橋三越本店本館 B1F",
+        "rating": "3.70",
+        "ratingCount": "681",
+        "savedCount": "16578",
+        "cuisine": "洋菓子",
+        "tel": "03-3241-3311",
+        "budgetDinner": "～￥999",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.77776007438334,
+          35.6819075787192
+        ]
+      },
+      "properties": {
+        "name": "パティスリー イーズ（patisserie ease） - 茅場町（ケーキ）",
+        "url": "https://tabelog.com/tokyo/A1302/A130202/13246269/",
+        "category": "スイーツ（東京）",
+        "address": "東京都中央区日本橋兜町9-1",
+        "rating": "3.70",
+        "ratingCount": "1187",
+        "savedCount": "69263",
+        "cuisine": "ケーキ",
+        "tel": "03-6231-1681",
+        "budgetDinner": "～￥999",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥2,000～￥2,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.77290864435813,
+          35.67907767871945
+        ]
+      },
+      "properties": {
+        "name": "ツバメヤ 日本橋店 - 日本橋（和菓子）",
+        "url": "https://tabelog.com/tokyo/A1302/A130202/13288246/",
+        "category": "和菓子・甘味処（東京）",
+        "address": "東京都中央区日本橋3-5-12",
+        "rating": "3.65",
+        "ratingCount": "480",
+        "savedCount": "19448",
+        "cuisine": "和菓子",
+        "tel": "03-6262-6838",
+        "budgetDinner": "￥1,000～￥1,999",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_tokyo",
+            "g": "和菓子・甘味処（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.78424108324197,
+          35.68437743791432
+        ]
+      },
+      "properties": {
+        "name": "京菓子司 壽堂（ことぶきどう） - 水天宮前（和菓子）",
+        "url": "https://tabelog.com/tokyo/A1302/A130204/13000003/",
+        "category": "和菓子・甘味処（東京）",
+        "address": "東京都中央区日本橋人形町2-1-4",
+        "rating": "3.67",
+        "ratingCount": "564",
+        "savedCount": "12619",
+        "cuisine": "和菓子",
+        "tel": "03-3666-4804",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_tokyo",
+            "g": "和菓子・甘味処（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7843165844662,
+          35.690570468715784
+        ]
+      },
+      "properties": {
+        "name": "久松屋（【旧店名】登じま屋） - 東日本橋（居酒屋）",
+        "url": "https://tabelog.com/tokyo/A1302/A130204/13097387/",
+        "category": "居酒屋（東日本）",
+        "address": "東京都中央区日本橋久松町13-4 トスパビル\u3000Ｂ１",
+        "rating": "3.66",
+        "ratingCount": "332",
+        "savedCount": "26488",
+        "cuisine": "居酒屋、海鮮、日本料理",
+        "tel": "03-3249-1379",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          },
+          {
+            "y": 2024,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.78369418442577,
+          35.686520368718156
+        ]
+      },
+      "properties": {
+        "name": "黎明 - 人形町（焼き鳥）",
+        "url": "https://tabelog.com/tokyo/A1302/A130204/13319463/",
+        "category": "焼き鳥（東日本）",
+        "address": "東京都中央区日本橋人形町2-7-13 レイフォリア人形町 2F",
+        "rating": "3.66",
+        "ratingCount": "73",
+        "savedCount": "6454",
+        "cuisine": "焼き鳥、鳥料理",
+        "tel": "080-6073-6282",
+        "budgetDinner": "￥15,000～￥19,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_east",
+            "g": "焼き鳥（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.69987678305313,
+          35.65983173790304
+        ]
+      },
+      "properties": {
+        "name": "渋谷西村 フルーツパーラー 道玄坂店（シブヤニシムラフルーツパーラー） - 渋谷（フルーツパーラー）",
+        "url": "https://tabelog.com/tokyo/A1303/A130301/13001901/",
+        "category": "スイーツ（東京）",
+        "address": "東京都渋谷区宇田川町22-2 西村ビル\u3000２Ｆ",
+        "rating": "3.69",
+        "ratingCount": "1313",
+        "savedCount": "27782",
+        "cuisine": "フルーツパーラー、カフェ",
+        "tel": "03-3476-2002",
+        "budgetDinner": "￥1,000～￥1,999",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.70227099419952,
+          35.65847327871004
+        ]
+      },
+      "properties": {
+        "name": "エシレ パティスリー オ ブール 東急フードショー エッジ店（ECHIRE PATISSERIE AU BEURRE） - 渋谷（洋菓子）",
+        "url": "https://tabelog.com/tokyo/A1303/A130301/13240780/",
+        "category": "スイーツ（東京）",
+        "address": "東京都渋谷区渋谷2-24-12 渋谷スクランブルスクエア 1F",
+        "rating": "3.80",
+        "ratingCount": "778",
+        "savedCount": "11962",
+        "cuisine": "洋菓子",
+        "tel": "03-6427-3635",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.6965100993664,
+          35.66004449387673
+        ]
+      },
+      "properties": {
+        "name": "特選髙坂鶏 克つ鳥 - 神泉（焼き鳥）",
+        "url": "https://tabelog.com/tokyo/A1303/A130301/13310446/",
+        "category": "焼き鳥（東日本）",
+        "address": "東京都渋谷区道玄坂2-26-15 Shibuya D-second 1F",
+        "rating": "4.09",
+        "ratingCount": "148",
+        "savedCount": "8776",
+        "cuisine": "焼き鳥、鳥料理、串焼き",
+        "tel": "03-5990-4877",
+        "budgetDinner": "￥20,000～￥29,999",
+        "budgetDinnerRvw": "￥20,000～￥29,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_east",
+            "g": "焼き鳥（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.71456218406968,
+          35.64646974872158
+        ]
+      },
+      "properties": {
+        "name": "鳥つた - 恵比寿（焼き鳥）",
+        "url": "https://tabelog.com/tokyo/A1303/A130302/13237390/",
+        "category": "焼き鳥（東日本）",
+        "address": "東京都渋谷区恵比寿1-22-12 エビステルコ 2F",
+        "rating": "3.67",
+        "ratingCount": "748",
+        "savedCount": "58555",
+        "cuisine": "焼き鳥、居酒屋、鳥料理",
+        "tel": "03-6456-4581",
+        "budgetDinner": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_east",
+            "g": "焼き鳥（東日本）"
+          },
+          {
+            "y": 2024,
+            "t": "yakitori_east",
+            "g": "焼き鳥（東日本）"
+          },
+          {
+            "y": 2022,
+            "t": "yakitori",
+            "g": "焼き鳥"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.71189886402544,
+          35.64190764872363
+        ]
+      },
+      "properties": {
+        "name": "LESS by Gabriele Riva & Kanako Sakakura（レス【旧店名】RIVA chocolatier） - 恵比寿（ケーキ）",
+        "url": "https://tabelog.com/tokyo/A1303/A130302/13274859/",
+        "category": "スイーツ（東京）",
+        "address": "東京都目黒区三田1-12-24 MT3ビル 1F",
+        "rating": "3.84",
+        "ratingCount": "582",
+        "savedCount": "22461",
+        "cuisine": "ケーキ、チョコレート",
+        "tel": "03-6303-2688",
+        "budgetLunch": "￥2,000～￥2,999",
+        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.70982289865663,
+          35.64564045110503
+        ]
+      },
+      "properties": {
+        "name": "ひき田 - 恵比寿（焼き鳥）",
+        "url": "https://tabelog.com/tokyo/A1303/A130302/13322934/",
+        "category": "焼き鳥（東日本）",
+        "address": "東京都渋谷区恵比寿南1-14-15 ラ・レンヌ恵比寿 4F",
+        "rating": "4.24",
+        "ratingCount": "126",
+        "savedCount": "7657",
+        "cuisine": "焼き鳥",
+        "tel": "不明の為情報お待ちしております",
+        "budgetDinner": "￥20,000～￥29,999",
+        "budgetDinnerRvw": "￥20,000～￥29,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_east",
+            "g": "焼き鳥（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.701787974086,
+          35.64719799871705
+        ]
+      },
+      "properties": {
+        "name": "ごはんや一芯 代官山 - 代官山（居酒屋）",
+        "url": "https://tabelog.com/tokyo/A1303/A130303/13163239/",
+        "category": "居酒屋（東日本）",
+        "address": "東京都渋谷区猿楽町30-3 ツインビル代官山A棟 B1F",
+        "rating": "3.62",
+        "ratingCount": "1850",
+        "savedCount": "151009",
+        "cuisine": "居酒屋、海鮮、釜飯",
+        "tel": "03-6455-1614",
+        "budgetDinner": "￥5,000～￥5,999",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.706429024513,
+          35.68979444869147
+        ]
+      },
+      "properties": {
+        "name": "西尾さん（にしおさん） - 新宿三丁目（居酒屋）",
+        "url": "https://tabelog.com/tokyo/A1304/A130401/13026389/",
+        "category": "居酒屋（東日本）",
+        "address": "東京都新宿区新宿3-1-32 新宿ビル３号 Ｂ１Ｆ",
+        "rating": "3.62",
+        "ratingCount": "657",
+        "savedCount": "104650",
+        "cuisine": "居酒屋、おでん",
+        "tel": "03-3358-6625",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          },
+          {
+            "y": 2021,
+            "t": "izakaya",
+            "g": "居酒屋"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.70524289456895,
+          35.695252438687625
+        ]
+      },
+      "properties": {
+        "name": "和処 秀（ひで） - 東新宿（しゃぶしゃぶ）",
+        "url": "https://tabelog.com/tokyo/A1304/A130401/13148133/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "東京都新宿区歌舞伎町2-9-18 ライオンズプラザ 1F",
+        "rating": "3.59",
+        "ratingCount": "189",
+        "savedCount": "17686",
+        "cuisine": "しゃぶしゃぶ、海鮮、日本料理",
+        "tel": "03-6233-9123",
+        "budgetDinner": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.69852640458285,
+          35.696162088684915
+        ]
+      },
+      "properties": {
+        "name": "焼肉つじむら - 西武新宿（焼肉）",
+        "url": "https://tabelog.com/tokyo/A1304/A130401/13284380/",
+        "category": "焼肉（東京）",
+        "address": "東京都新宿区西新宿7-4-7 イマス浜田ビル 1F",
+        "rating": "3.57",
+        "ratingCount": "670",
+        "savedCount": "30343",
+        "cuisine": "焼肉",
+        "tel": "03-5937-4729",
+        "budgetDinner": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.71048806492385,
+          35.73075237866676
+        ]
+      },
+      "properties": {
+        "name": "人形町今半 池袋東武店 - 池袋（すき焼き）",
+        "url": "https://tabelog.com/tokyo/A1305/A130501/13187796/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "東京都豊島区西池袋1-1-25 東武百貨店池袋店 15F",
+        "rating": "3.60",
+        "ratingCount": "183",
+        "savedCount": "5246",
+        "cuisine": "すき焼き、しゃぶしゃぶ、ステーキ",
+        "tel": "03-5957-3565",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetLunch": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.70894200425,
+          35.663932388708695
+        ]
+      },
+      "properties": {
+        "name": "Shangri-La’s secret 表参道店 - 表参道（しゃぶしゃぶ）",
+        "url": "https://tabelog.com/tokyo/A1306/A130602/13250939/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "東京都渋谷区神宮前5-46-7 GEMS AOYAMA CROSS 3F",
+        "rating": "3.60",
+        "ratingCount": "878",
+        "savedCount": "41707",
+        "cuisine": "しゃぶしゃぶ、薬膳、火鍋",
+        "tel": "050-1794-8381",
+        "budgetDinner": "￥8,000～￥9,999",
+        "budgetLunch": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "budgetLunchRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.71242852434733,
+          35.67380956870354
+        ]
+      },
+      "properties": {
+        "name": "PARLA（パーラ） - 外苑前（クレープ・ガレット）",
+        "url": "https://tabelog.com/tokyo/A1306/A130603/13174527/",
+        "category": "スイーツ（東京）",
+        "address": "東京都渋谷区神宮前2-10-1",
+        "rating": "3.70",
+        "ratingCount": "929",
+        "savedCount": "53971",
+        "cuisine": "クレープ・ガレット",
+        "tel": "03-6804-3271",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          },
+          {
+            "y": 2019,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.73391388313414,
+          35.66343554457753
+        ]
+      },
+      "properties": {
+        "name": "士士（sisi） - 六本木（焼肉）",
+        "url": "https://tabelog.com/tokyo/A1307/A130701/13292601/",
+        "category": "焼肉（東京）",
+        "address": "東京都港区六本木3-8-15 瀬里奈ヴィレッジ 1F",
+        "rating": "3.71",
+        "ratingCount": "147",
+        "savedCount": "17559",
+        "cuisine": "焼肉",
+        "tel": "03-3405-4429",
+        "budgetDinner": "￥15,000～￥19,999",
+        "budgetDinnerRvw": "￥20,000～￥29,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7394262742456,
+          35.665613768717336
+        ]
+      },
+      "properties": {
+        "name": "六本木 大皿焼肉 老中 - 六本木一丁目（焼肉）",
+        "url": "https://tabelog.com/tokyo/A1307/A130701/13313405/",
+        "category": "焼肉（東京）",
+        "address": "東京都港区六本木1-4-5 アークヒルズサウスタワー 1F 103",
+        "rating": "3.64",
+        "ratingCount": "443",
+        "savedCount": "14291",
+        "cuisine": "焼肉",
+        "tel": "090-3373-6887",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.73590018415098,
+          35.656001408722325
+        ]
+      },
+      "properties": {
+        "name": "ハドソンマーケットベーカーズ（Hudson Market Bakers） - 麻布十番（ケーキ）",
+        "url": "https://tabelog.com/tokyo/A1307/A130702/13144811/",
+        "category": "スイーツ（東京）",
+        "address": "東京都港区麻布十番1-8-6",
+        "rating": "3.69",
+        "ratingCount": "1071",
+        "savedCount": "36770",
+        "cuisine": "ケーキ、カフェ",
+        "tel": "03-5545-5458",
+        "budgetDinner": "￥1,000～￥1,999",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.72361399418077,
+          35.65809707871708
+        ]
+      },
+      "properties": {
+        "name": "蒼菓（souka） - 広尾（スイーツ）",
+        "url": "https://tabelog.com/tokyo/A1307/A130703/13297330/",
+        "category": "スイーツ（東京）",
+        "address": "東京都港区西麻布4-2-5 アートサイロ 3F・4F",
+        "rating": "4.00",
+        "ratingCount": "139",
+        "savedCount": "4904",
+        "cuisine": "スイーツ",
+        "tel": "070-3137-2735",
+        "budgetDinner": "￥15,000～￥19,999",
+        "budgetLunch": "￥15,000～￥19,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "budgetLunchRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.71870097341323,
+          35.65871539347436
+        ]
+      },
+      "properties": {
+        "name": "焼鳥空（SORA） - 広尾（焼き鳥）",
+        "url": "https://tabelog.com/tokyo/A1307/A130703/13317981/",
+        "category": "焼き鳥（東日本）",
+        "address": "東京都港区南青山7-11-4 HT南青山ビル 2F",
+        "rating": "4.12",
+        "ratingCount": "167",
+        "savedCount": "8308",
+        "cuisine": "焼き鳥",
+        "tel": "不明の為情報お待ちしております",
+        "budgetDinnerRvw": "￥20,000～￥29,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_east",
+            "g": "焼き鳥（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7465194742099,
+          35.66257035872154
+        ]
+      },
+      "properties": {
+        "name": "ソーワ（早和 SOWA） - 神谷町（ジェラート・アイスクリーム）",
+        "url": "https://tabelog.com/tokyo/A1307/A130704/13259026/",
+        "category": "アイス・ジェラート",
+        "address": "東京都港区虎ノ門3-19‐10",
+        "rating": "3.60",
+        "ratingCount": "351",
+        "savedCount": "7753",
+        "cuisine": "ジェラート・アイスクリーム、ソフトクリーム",
+        "tel": "03-3434-5425",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "ice_gelato",
+            "g": "アイス・ジェラート"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.74706417423755,
+          35.66534347871994
+        ]
+      },
+      "properties": {
+        "name": "すき焼き あさい - 虎ノ門ヒルズ（すき焼き）",
+        "url": "https://tabelog.com/tokyo/A1307/A130704/13293553/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "東京都港区虎ノ門3-11-15 SVAX TTビル 1F",
+        "rating": "3.67",
+        "ratingCount": "136",
+        "savedCount": "18754",
+        "cuisine": "すき焼き",
+        "tel": "03-6452-9995",
+        "budgetDinner": "￥20,000～￥29,999",
+        "budgetLunch": "￥15,000～￥19,999",
+        "budgetDinnerRvw": "￥30,000～￥39,999",
+        "budgetLunchRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.73976630428027,
+          35.66906915871525
+        ]
+      },
+      "properties": {
+        "name": "赤坂 ひめの - 溜池山王（焼き鳥）",
+        "url": "https://tabelog.com/tokyo/A1308/A130802/13307004/",
+        "category": "焼き鳥（東日本）",
+        "address": "東京都港区赤坂2-18-5 FUN ART AKASAKA 1F",
+        "rating": "3.66",
+        "ratingCount": "53",
+        "savedCount": "4453",
+        "cuisine": "焼き鳥",
+        "tel": "03-6277-8977",
+        "budgetDinner": "￥15,000～￥19,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_east",
+            "g": "焼き鳥（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7409963446317,
+          35.7039434086935
+        ]
+      },
+      "properties": {
+        "name": "ホルモン焼 炭蔵（スミゾウ） - 飯田橋（焼肉）",
+        "url": "https://tabelog.com/tokyo/A1309/A130905/13170842/",
+        "category": "焼肉（東京）",
+        "address": "東京都新宿区筑土八幡町2-22",
+        "rating": "3.65",
+        "ratingCount": "344",
+        "savedCount": "23281",
+        "cuisine": "焼肉、ホルモン、居酒屋",
+        "tel": "03-6265-3279",
+        "budgetDinner": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.73475300463377,
+          35.70371704869165
+        ]
+      },
+      "properties": {
+        "name": "オー・メルベイユ・ドゥ・フレッド（Aux merveilleux de Fred） - 神楽坂（ケーキ）",
+        "url": "https://tabelog.com/tokyo/A1309/A130905/13246571/",
+        "category": "スイーツ（東京）",
+        "address": "東京都新宿区矢来町107",
+        "rating": "3.69",
+        "ratingCount": "1362",
+        "savedCount": "70072",
+        "cuisine": "ケーキ、カフェ、洋菓子",
+        "tel": "03-5579-8353",
+        "budgetDinner": "￥1,000～￥1,999",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.73962255544663,
+          35.70124648754323
+        ]
+      },
+      "properties": {
+        "name": "焼肉牛印 神楽坂店 - 牛込神楽坂（焼肉）",
+        "url": "https://tabelog.com/tokyo/A1309/A130905/13302258/",
+        "category": "焼肉（東京）",
+        "address": "東京都新宿区神楽坂3-6-3 ヒルトップビル 1F",
+        "rating": "3.68",
+        "ratingCount": "323",
+        "savedCount": "8388",
+        "cuisine": "焼肉、ステーキ",
+        "tel": "03-5946-8829",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetLunch": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "budgetLunchRvw": "￥5,000～￥5,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.76277228336352,
+          35.694923337900796
+        ]
+      },
+      "properties": {
+        "name": "ドース イスピーガ（DOCE ESPIGA） - 小川町（洋菓子）",
+        "url": "https://tabelog.com/tokyo/A1310/A131002/13211554/",
+        "category": "スイーツ（東京）",
+        "address": "東京都千代田区神田小川町3-2-5",
+        "rating": "3.73",
+        "ratingCount": "642",
+        "savedCount": "28503",
+        "cuisine": "洋菓子",
+        "tel": "不明の為情報お待ちしております",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.77258899447367,
+          35.69049364871209
+        ]
+      },
+      "properties": {
+        "name": "土佐みょうじん - 新日本橋（居酒屋）",
+        "url": "https://tabelog.com/tokyo/A1310/A131002/13306293/",
+        "category": "居酒屋（東日本）",
+        "address": "東京都千代田区鍛冶町1-9-19 GEMS新日本橋 1F",
+        "rating": "3.63",
+        "ratingCount": "820",
+        "savedCount": "37162",
+        "cuisine": "居酒屋、海鮮、郷土料理",
+        "tel": "080-2981-6855",
+        "budgetDinner": "￥5,000～￥5,999",
+        "budgetLunch": "￥1,000～￥1,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.77061788464744,
+          35.707558158700635
+        ]
+      },
+      "properties": {
+        "name": "焼鳥 にしき - 湯島（焼き鳥）",
+        "url": "https://tabelog.com/tokyo/A1311/A131101/13297763/",
+        "category": "焼き鳥（東日本）",
+        "address": "東京都文京区湯島3-36-12 TSKビル 1F",
+        "rating": "3.92",
+        "ratingCount": "190",
+        "savedCount": "11001",
+        "cuisine": "焼き鳥",
+        "tel": "050-8880-7645",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_east",
+            "g": "焼き鳥（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7967841347386,
+          35.71840218870208
+        ]
+      },
+      "properties": {
+        "name": "肉のすずき - 浅草（つくばＥＸＰ）（焼肉）",
+        "url": "https://tabelog.com/tokyo/A1311/A131102/13057827/",
+        "category": "焼肉（東京）",
+        "address": "東京都台東区浅草4-11-8",
+        "rating": "3.63",
+        "ratingCount": "394",
+        "savedCount": "57970",
+        "cuisine": "焼肉、ホルモン、冷麺",
+        "tel": "03-3875-0029",
+        "budgetDinner": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          },
+          {
+            "y": 2023,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          },
+          {
+            "y": 2022,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          },
+          {
+            "y": 2021,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          },
+          {
+            "y": 2020,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          },
+          {
+            "y": 2019,
+            "t": "yakiniku",
+            "g": "焼肉"
+          },
+          {
+            "y": 2018,
+            "t": "yakiniku",
+            "g": "焼肉"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7910691946228,
+          35.70653857870779
+        ]
+      },
+      "properties": {
+        "name": "パティスリー フォブス（Patisserie FOBS） - 蔵前（ケーキ）",
+        "url": "https://tabelog.com/tokyo/A1311/A131103/13200705/",
+        "category": "スイーツ（東京）",
+        "address": "東京都台東区寿3-8-4",
+        "rating": "3.69",
+        "ratingCount": "559",
+        "savedCount": "30335",
+        "cuisine": "ケーキ、かき氷",
+        "tel": "03-6231-7720",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7644484836764,
+          35.726015437881586
+        ]
+      },
+      "properties": {
+        "name": "谷中 福丸饅頭（ふくまるまんじゅう） - 千駄木（和菓子）",
+        "url": "https://tabelog.com/tokyo/A1311/A131106/13022554/",
+        "category": "和菓子・甘味処（東京）",
+        "address": "東京都台東区谷中3-7-8",
+        "rating": "3.63",
+        "ratingCount": "633",
+        "savedCount": "12665",
+        "cuisine": "和菓子",
+        "tel": "03-3823-0709",
+        "budgetDinner": "～￥999",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_tokyo",
+            "g": "和菓子・甘味処（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.81485670449055,
+          35.69509854872263
+        ]
+      },
+      "properties": {
+        "name": "人形焼 山田家 本店 - 錦糸町（和菓子）",
+        "url": "https://tabelog.com/tokyo/A1312/A131201/13037393/",
+        "category": "和菓子・甘味処（東京）",
+        "address": "東京都墨田区江東橋3-8-11",
+        "rating": "3.66",
+        "ratingCount": "441",
+        "savedCount": "10541",
+        "cuisine": "和菓子",
+        "tel": "03-3634-5599",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_tokyo",
+            "g": "和菓子・甘味処（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7978788832879,
+          35.68987123791517
+        ]
+      },
+      "properties": {
+        "name": "三代目まる天 森下店 - 森下（居酒屋）",
+        "url": "https://tabelog.com/tokyo/A1312/A131201/13233040/",
+        "category": "居酒屋（東日本）",
+        "address": "東京都墨田区千歳3-5-9 ファミーユ森下 1F",
+        "rating": "3.67",
+        "ratingCount": "123",
+        "savedCount": "8959",
+        "cuisine": "居酒屋",
+        "tel": "03-6240-2039",
+        "budgetDinner": "￥4,000～￥4,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.82276598360255,
+          35.722748637902214
+        ]
+      },
+      "properties": {
+        "name": "丸光苑 - 東向島（焼肉）",
+        "url": "https://tabelog.com/tokyo/A1312/A131203/13079480/",
+        "category": "焼肉（東京）",
+        "address": "東京都墨田区東向島6丁目26-14",
+        "rating": "3.68",
+        "ratingCount": "107",
+        "savedCount": "9528",
+        "cuisine": "焼肉",
+        "tel": "03-3614-2278",
+        "budgetDinnerRvw": "￥20,000～￥29,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7960835842819,
+          35.6731358487306
+        ]
+      },
+      "properties": {
+        "name": "炭火焼肉 牛和鹿 本店（スミビヤキニク ウシワカ） - 門前仲町（焼肉）",
+        "url": "https://tabelog.com/tokyo/A1313/A131303/13038809/",
+        "category": "焼肉（東京）",
+        "address": "東京都江東区門前仲町2-9-5 あずまビル\u3000２Ｆ",
+        "rating": "3.63",
+        "ratingCount": "808",
+        "savedCount": "51275",
+        "cuisine": "焼肉、ホルモン、居酒屋",
+        "tel": "03-3820-2522",
+        "budgetDinner": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          },
+          {
+            "y": 2024,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          },
+          {
+            "y": 2023,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          },
+          {
+            "y": 2022,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          },
+          {
+            "y": 2021,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          },
+          {
+            "y": 2020,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          },
+          {
+            "y": 2019,
+            "t": "yakiniku",
+            "g": "焼肉"
+          },
+          {
+            "y": 2018,
+            "t": "yakiniku",
+            "g": "焼肉"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.71414424394658,
+          35.6342519787292
+        ]
+      },
+      "properties": {
+        "name": "そま莉（ソマリ） - 目黒（しゃぶしゃぶ）",
+        "url": "https://tabelog.com/tokyo/A1316/A131601/13173230/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "東京都目黒区目黒1-4-8 東レクビル 2F",
+        "rating": "3.58",
+        "ratingCount": "357",
+        "savedCount": "28889",
+        "cuisine": "しゃぶしゃぶ、鍋、馬肉料理",
+        "tel": "03-3493-2051",
+        "budgetDinner": "￥10,000～￥14,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.72287486744005,
+          35.64385681309074
+        ]
+      },
+      "properties": {
+        "name": "Yama（山） - 白金台（スイーツ）",
+        "url": "https://tabelog.com/tokyo/A1316/A131602/13279936/",
+        "category": "スイーツ（東京）",
+        "address": "東京都港区白金6-16-41 1F",
+        "rating": "4.18",
+        "ratingCount": "256",
+        "savedCount": "17473",
+        "cuisine": "スイーツ",
+        "tel": "不明の為情報お待ちしております",
+        "budgetDinner": "￥20,000～￥29,999",
+        "budgetLunch": "￥30,000～￥39,999",
+        "budgetDinnerRvw": "￥40,000～￥49,999",
+        "budgetLunchRvw": "￥30,000～￥39,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.6970372540969,
+          35.64795112871506
+        ]
+      },
+      "properties": {
+        "name": "鳥かぜ - 中目黒（焼き鳥）",
+        "url": "https://tabelog.com/tokyo/A1317/A131701/13257808/",
+        "category": "焼き鳥（東日本）",
+        "address": "東京都目黒区青葉台1-15-3 AK-4ビルディング B1F",
+        "rating": "3.70",
+        "ratingCount": "121",
+        "savedCount": "13221",
+        "cuisine": "焼き鳥",
+        "tel": "03-6433-7930",
+        "budgetDinner": "￥15,000～￥19,999",
+        "budgetDinnerRvw": "￥15,000～￥19,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakitori_east",
+            "g": "焼き鳥（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.69526521409043,
+          35.64718518871498
+        ]
+      },
+      "properties": {
+        "name": "焼肉ホルモン金樹 中目黒 - 中目黒（ホルモン）",
+        "url": "https://tabelog.com/tokyo/A1317/A131701/13307231/",
+        "category": "焼肉（東京）",
+        "address": "東京都目黒区青葉台1-28-9 タイガーマンション 1F",
+        "rating": "3.69",
+        "ratingCount": "355",
+        "savedCount": "25190",
+        "cuisine": "ホルモン、焼肉",
+        "tel": "03-6303-1229",
+        "budgetDinner": "￥8,000～￥9,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.66627516369604,
+          35.60613018873182
+        ]
+      },
+      "properties": {
+        "name": "マジドゥショコラ（MAGIE DU CHOCOLAT） - 自由が丘（チョコレート）",
+        "url": "https://tabelog.com/tokyo/A1317/A131703/13202801/",
+        "category": "スイーツ（東京）",
+        "address": "東京都世田谷区奥沢6-33-14",
+        "rating": "3.69",
+        "ratingCount": "864",
+        "savedCount": "42456",
+        "cuisine": "チョコレート、カフェ、ソフトクリーム",
+        "tel": "03-6809-8366",
+        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.66875422406352,
+          35.642680418709396
+        ]
+      },
+      "properties": {
+        "name": "和食 ごしき - 三軒茶屋（居酒屋）",
+        "url": "https://tabelog.com/tokyo/A1317/A131706/13171989/",
+        "category": "居酒屋（東日本）",
+        "address": "東京都世田谷区三軒茶屋2-15-14 ABCビル\u30001Ｆ",
+        "rating": "3.63",
+        "ratingCount": "676",
+        "savedCount": "42857",
+        "cuisine": "居酒屋、海鮮、日本酒バー",
+        "tel": "03-3795-5300",
+        "budgetDinner": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥6,000～￥7,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.64527272336,
+          35.63214899827515
+        ]
+      },
+      "properties": {
+        "name": "家庭料理 一（HAJIME） - 桜新町（居酒屋）",
+        "url": "https://tabelog.com/tokyo/A1317/A131707/13283639/",
+        "category": "居酒屋（東日本）",
+        "address": "東京都世田谷区桜新町2-1-6",
+        "rating": "3.71",
+        "ratingCount": "191",
+        "savedCount": "8355",
+        "cuisine": "居酒屋",
+        "tel": "不明の為情報お待ちしております",
+        "budgetDinner": "￥3,000～￥3,999",
+        "budgetDinnerRvw": "￥10,000～￥14,999",
+        "budgetLunchRvw": "￥10,000～￥14,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.70787778264528,
+          35.62000703793089
+        ]
+      },
+      "properties": {
+        "name": "和田 - 武蔵小山（焼肉）",
+        "url": "https://tabelog.com/tokyo/A1317/A131710/13098751/",
+        "category": "焼肉（東京）",
+        "address": "東京都品川区小山3-9-3",
+        "rating": "3.62",
+        "ratingCount": "206",
+        "savedCount": "23402",
+        "cuisine": "焼肉、ホルモン",
+        "tel": "03-3783-4129",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.6802925832153,
+          35.67452763788747
+        ]
+      },
+      "properties": {
+        "name": "kasiki（カシキ） - 幡ケ谷（ジェラート・アイスクリーム）",
+        "url": "https://tabelog.com/tokyo/A1318/A131807/13278143/",
+        "category": "アイス・ジェラート",
+        "address": "東京都渋谷区西原1-13-2",
+        "rating": "3.60",
+        "ratingCount": "456",
+        "savedCount": "23394",
+        "cuisine": "ジェラート・アイスクリーム",
+        "tel": "不明の為情報お待ちしております",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "￥1,000～￥1,999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "ice_gelato",
+            "g": "アイス・ジェラート"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.69189888325428,
+          35.67918863788821
+        ]
+      },
+      "properties": {
+        "name": "FLOTO - 参宮橋（ジェラート・アイスクリーム）",
+        "url": "https://tabelog.com/tokyo/A1318/A131810/13207001/",
+        "category": "アイス・ジェラート",
+        "address": "東京都渋谷区代々木4-12-6 Cala参宮橋 1F-A",
+        "rating": "3.60",
+        "ratingCount": "421",
+        "savedCount": "21936",
+        "cuisine": "ジェラート・アイスクリーム、洋菓子、カフェ",
+        "tel": "03-6300-9099",
+        "budgetDinner": "￥1,000～￥1,999",
+        "budgetLunch": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "ice_gelato",
+            "g": "アイス・ジェラート"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.6945116835765,
+          35.711271537868654
+        ]
+      },
+      "properties": {
+        "name": "寒天工房 讃岐屋 新宿本店（かんてんこうぼう さぬきや） - 下落合（和菓子）",
+        "url": "https://tabelog.com/tokyo/A1321/A132104/13024925/",
+        "category": "和菓子・甘味処（東京）",
+        "address": "東京都新宿区高田馬場3-46-11",
+        "rating": "3.65",
+        "ratingCount": "362",
+        "savedCount": "19419",
+        "cuisine": "和菓子、甘味処",
+        "tel": "03-5489-5489",
+        "budgetLunch": "～￥999",
+        "budgetLunchRvw": "￥1,000～￥1,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_tokyo",
+            "g": "和菓子・甘味処（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.72370288389232,
+          35.74456353785682
+        ]
+      },
+      "properties": {
+        "name": "フィッシュ オン ディッシュ ロリー（Fish on Dish Rolly） - 板橋（居酒屋）",
+        "url": "https://tabelog.com/tokyo/A1322/A132201/13170258/",
+        "category": "居酒屋（東日本）",
+        "address": "東京都北区滝野川6-36-5 太閤コーポ 102",
+        "rating": "3.62",
+        "ratingCount": "414",
+        "savedCount": "20247",
+        "cuisine": "居酒屋、海鮮、日本酒バー",
+        "tel": "03-6903-7374",
+        "budgetDinner": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_east",
+            "g": "居酒屋（東日本）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.72850418477782,
+          35.71754789868088
+        ]
+      },
+      "properties": {
+        "name": "群林堂（ぐんりんどう） - 護国寺（和菓子）",
+        "url": "https://tabelog.com/tokyo/A1323/A132302/13003816/",
+        "category": "和菓子・甘味処（東京）",
+        "address": "東京都文京区音羽2-1-2",
+        "rating": "3.79",
+        "ratingCount": "1565",
+        "savedCount": "59815",
+        "cuisine": "和菓子、大福",
+        "tel": "03-3941-8281",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "～￥999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_tokyo",
+            "g": "和菓子・甘味処（東京）"
+          },
+          {
+            "y": 2022,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          },
+          {
+            "y": 2020,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          },
+          {
+            "y": 2019,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          },
+          {
+            "y": 2018,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          },
+          {
+            "y": 2017,
+            "t": "sweets",
+            "g": "スイーツ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.73924353475982,
+          35.716511008684954
+        ]
+      },
+      "properties": {
+        "name": "一幸庵（いっこうあん） - 茗荷谷（和菓子）",
+        "url": "https://tabelog.com/tokyo/A1323/A132302/13005076/",
+        "category": "和菓子・甘味処（東京）",
+        "address": "東京都文京区小石川5-3-15",
+        "rating": "3.86",
+        "ratingCount": "941",
+        "savedCount": "48149",
+        "cuisine": "和菓子",
+        "tel": "03-5684-6591",
+        "budgetLunch": "～￥999",
+        "budgetDinnerRvw": "￥2,000～￥2,999",
+        "budgetLunchRvw": "～￥999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "wagashi_tokyo",
+            "g": "和菓子・甘味処（東京）"
+          },
+          {
+            "y": 2022,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          },
+          {
+            "y": 2020,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          },
+          {
+            "y": 2019,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          },
+          {
+            "y": 2018,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          },
+          {
+            "y": 2017,
+            "t": "sweets",
+            "g": "スイーツ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7273244949382,
+          35.73334106867047
+        ]
+      },
+      "properties": {
+        "name": "フルーツすぎ（FRUITS SUGI） - 大塚（フルーツパーラー）",
+        "url": "https://tabelog.com/tokyo/A1323/A132302/13208305/",
+        "category": "スイーツ（東京）",
+        "address": "東京都豊島区北大塚2-11-4",
+        "rating": "3.69",
+        "ratingCount": "492",
+        "savedCount": "36420",
+        "cuisine": "フルーツパーラー、カフェ",
+        "tel": "03-3940-1805",
+        "budgetDinnerRvw": "￥3,000～￥3,999",
+        "budgetLunchRvw": "￥3,000～￥3,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "sweets_tokyo",
+            "g": "スイーツ（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.71889154543564,
+          35.782001968636884
+        ]
+      },
+      "properties": {
+        "name": "米山 - 赤羽岩淵（ホルモン）",
+        "url": "https://tabelog.com/tokyo/A1323/A132305/13046148/",
+        "category": "焼肉（東京）",
+        "address": "東京都北区赤羽1-64-7",
+        "rating": "3.63",
+        "ratingCount": "398",
+        "savedCount": "36788",
+        "cuisine": "ホルモン、もつ焼き、居酒屋",
+        "tel": "03-3901-7350",
+        "budgetDinnerRvw": "￥3,000～￥3,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          },
+          {
+            "y": 2023,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          },
+          {
+            "y": 2022,
+            "t": "yakiniku_tokyo",
+            "g": "焼肉（東京）"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.78956338366285,
+          35.726416537889314
+        ]
+      },
+      "properties": {
+        "name": "かがやき - 三ノ輪（しゃぶしゃぶ）",
+        "url": "https://tabelog.com/tokyo/A1324/A132401/13083284/",
+        "category": "すき焼き・しゃぶしゃぶ",
+        "address": "東京都台東区竜泉2-16-6",
+        "rating": "3.62",
+        "ratingCount": "425",
+        "savedCount": "37259",
+        "cuisine": "しゃぶしゃぶ、豚しゃぶ、鍋",
+        "tel": "03-6658-4242",
+        "budgetDinner": "￥6,000～￥7,999",
+        "budgetDinnerRvw": "￥8,000～￥9,999",
+        "awards": [
+          {
+            "y": 2024,
+            "t": "sukiyaki_shabushabu",
+            "g": "すき焼き・しゃぶしゃぶ"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.21175458644626,
+          36.69807362725662
+        ]
+      },
+      "properties": {
+        "name": "ぎんぎょ伍式（Goshiki） - 新富町（居酒屋）",
+        "url": "https://tabelog.com/toyama/A1601/A160101/16010653/",
+        "category": "居酒屋（西日本）",
+        "address": "富山県富山市桜町2-3-37",
+        "rating": "3.64",
+        "ratingCount": "230",
+        "savedCount": "10401",
+        "cuisine": "居酒屋、日本料理",
+        "tel": "076-471-8255",
+        "budgetDinner": "￥5,000～￥5,999",
+        "budgetDinnerRvw": "￥5,000～￥5,999",
+        "awards": [
+          {
+            "y": 2026,
+            "t": "izakaya_west",
+            "g": "居酒屋（西日本）"
           }
         ]
       }
