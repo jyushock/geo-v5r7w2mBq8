@@ -16578,7 +16578,7 @@ const castleData = {
         ]
       },
       "properties": {
-        "culturalAsset": "国指定重要文化財（表門、二の丸隅櫓）",
+        "culturalAsset": "国指定重要文化財（表門、二の丸隅櫓）、市指定史跡",
         "name": "新発田城",
         "genre": "日本100名城",
         "category": "城",
