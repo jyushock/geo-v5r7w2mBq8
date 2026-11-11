@@ -171,6 +171,14 @@ def main():
                      else 'リポジトリに無い')
             errors.append(f'[外しすぎ] {path}（{why} が読む）: {state}')
 
+    # 画面のソースに制御文字を直に書かない（ヌル文字が1つあるだけで grep などがファイルをバイナリ扱いする）。
+    # 必要なら \0 のようにエスケープで書く
+    for f in SCAN:
+        for ln, line in enumerate((ROOT / f).read_bytes().split(b'\n'), 1):
+            bad = [c for c in line if c < 0x20 and c not in (0x09, 0x0D)]
+            if bad:
+                errors.append(f'[制御文字] {f}:{ln}: {bytes(bad)!r} をエスケープで書く')
+
     git_hit = ignored_by_assetsignore(GIT_SAMPLES)
     for p in GIT_SAMPLES:
         if p not in git_hit:

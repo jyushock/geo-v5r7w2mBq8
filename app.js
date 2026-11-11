@@ -552,7 +552,7 @@
         }
     }
     /* onclick に渡すのは id だけにする。id は乱数（A-Za-z0-9_-）なので引用符が入らない。
-       名前は attrEscape が ' を素通しするため、属性の中に埋めない。 */
+       名前は onclick の JS 文字列に入れると ' で切れる（attrEscape の &#39; も JS に渡る前に ' へ戻る）ので埋めない。 */
     let syncDevicesCache = [];
     function renderSyncDevices(devices) {
         syncDevicesCache = devices;
@@ -3089,10 +3089,14 @@ const ICON_SEARCH_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentCol
 const NAV_LOGO_GMAPS = 'data:image/png;base64,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';
 const NAV_LOGO_YAHOO = 'data:image/png;base64,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';
 
-// data-*属性に地名を入れるための最小限のエスケープ（施設名に " や & が入り得る）
+/* data-*属性や本文に地名を入れるためのエスケープ（施設名に " や & や ' が入り得る）。
+   ' も変えるので、'…' で囲んだ属性にも入れられる。ただし onclick の中の JS 文字列へ入れるのは不可：
+   属性の値はブラウザが元の文字へ戻してから JS に渡すので、&#39; は ' に戻って文字列を切る。
+   JS へ渡す値は data-* に入れて this.dataset で読む。 */
 function attrEscape(s) {
     return String(s == null ? '' : s)
-        .replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        .replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;')
+        .replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
 function buildSheetHtml(type, label, p, lng, lat) {
@@ -3109,7 +3113,9 @@ function buildSheetHtml(type, label, p, lng, lat) {
     const rowC = osRow([
         `<a href="${navUrl}" target="_blank" class="btn btn-nav" data-lat="${lat}" data-lng="${lng}"><span class="nav-ico"><img src="${NAV_LOGO_GMAPS}" alt="Google Maps"></span><span class="nav-cap">ここへ行く</span></a>`,
         `<a href="${yahooRouteUrl(null, null, lat, lng, destName)}" target="_blank" class="btn btn-nav-yahoo" data-lat="${lat}" data-lng="${lng}" data-name="${attrEscape(destName)}"><span class="nav-ico"><img src="${NAV_LOGO_YAHOO}" alt="Yahoo!"></span><span class="nav-cap">ここへ行く</span></a>`,
-        `<button class="btn btn-nearby-search" onclick='searchNearby(${lng},${lat},${JSON.stringify(originName)})'>${ICON_SEARCH_SVG}この周辺を検索</button>`,
+        /* 店名は data-name で渡す。onclick='…' の中に JSON.stringify で直接入れていたときは、
+           店名の ' （data.js に 110件。Fisherman's など）で属性が切れ、押しても何も起きなかった */
+        `<button class="btn btn-nearby-search" data-lng="${lng}" data-lat="${lat}" data-name="${attrEscape(originName)}" onclick="searchNearby(+this.dataset.lng, +this.dataset.lat, this.dataset.name)">${ICON_SEARCH_SVG}この周辺を検索</button>`,
     ]);
     const isPokefuta = type === 'pokefuta' || (type === 'manhole' && p.source === 'pokefuta');
     // pick は配布場所が複数のカードで行Bの下に出す候補リスト（他の種別では空）
@@ -5044,7 +5050,7 @@ map.on('zoomend', () => { isZooming = false; });
         p = p || {};
         // ポケふたは地図では type='manhole'＋source='pokefuta' で来る（favKeyOf と同じ扱い）
         const t = (type === 'manhole' && p.source === 'pokefuta') ? 'pokefuta' : type;
-        return `${t} ${p.name || p.pokemon || ''}`;
+        return `${t}\0${p.name || p.pokemon || ''}`;
     }
     function favSnapCoords(type, p, c) {
         if (!Array.isArray(c) || !searchIndex.length) return c;

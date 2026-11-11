@@ -143,6 +143,38 @@ def scenario_retainers(page, base):
     return wait_images(frame, 'img', '家臣団の画像')
 
 
+def scenario_sheet_nearby_search(page, base):
+    """店の情報シートの「この周辺を検索」を押すと、その店を検索地点にして周辺パネルが開くか。
+    店名に ' を含む店（data.js に 110件ある。例: Fisherman's）と含まない店の両方で確かめる。
+    以前は onclick='…' の中に店名をそのまま入れていたため、' で属性が切れて押しても何も起きなかった。"""
+    problems = []
+    for want_quote in (False, True):
+        info = page.evaluate("""wantQuote => {
+            const f = shopData.features.find(f => {
+                const n = shopDisplayName(f.properties);
+                return n && n.includes("'") === wantQuote && !n.includes('"');
+            });
+            if (!f) return null;
+            const [lng, lat] = f.geometry.coordinates;
+            openObjSheet('shop', f.properties.name || '', f.properties, lng, lat);
+            return shopDisplayName(f.properties);
+        }""", want_quote)
+        label = '店名に \' を含む店' if want_quote else '店名に \' を含まない店'
+        if info is None:
+            problems.append(f'{label}が data.js に見つからない')
+            continue
+        btn = page.locator('.btn-nearby-search').first
+        btn.click(timeout=10_000)
+        try:
+            page.wait_for_function("""name => (document.getElementById('nearby-search-origin')?.textContent || '').includes(name)""",
+                                   arg=info, timeout=10_000)
+        except Exception:
+            got = page.evaluate("document.getElementById('nearby-search-origin')?.textContent")
+            problems.append(f'{label}（{info}）: 周辺検索の検索地点に店名が出ない（出ているのは {got!r}）')
+        page.evaluate("typeof closeNearbyPanel === 'function' && closeNearbyPanel()")
+    return problems
+
+
 def scenario_plus_code(page, base):
     """Plus Code の解析（vendor/openlocationcode.js）。東京駅の座標を符号化して戻せるか。"""
     r = page.evaluate("""() => {
@@ -183,6 +215,7 @@ def scenario_service_worker_precache(page, base):
 
 SCENARIOS = [
     ('地図と全データの読み込み', scenario_map),
+    ('店のシートから周辺検索', scenario_sheet_nearby_search),
     ('Plus Code の解析', scenario_plus_code),
     ('遺構の見かた', scenario_remains_help),
     ('家臣団', scenario_retainers),
