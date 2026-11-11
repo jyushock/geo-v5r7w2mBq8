@@ -128606,7 +128606,7 @@ const castleData = {
         ]
       },
       "properties": {
-        "culturalAsset": "市指定史跡",
+        "culturalAsset": "市指定史跡（2026年6月19日に国指定史跡へ答申）",
         "name": "出水城",
         "genre": "",
         "category": "城",

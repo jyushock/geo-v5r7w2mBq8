@@ -18,3 +18,7 @@ retainers/mock
 # 遺構の見かたの立体図を作る道具（描画・図の定義・書き出しスクリプト）。
 # 画面が読むのは remains-help/ に書き出した画像だけなので、道具は配らない。
 remains-help-3d
+
+# 城の指定文化財（castle.js の culturalAsset）を作るスクリプトと、その経緯の記録。画面は castle.js だけを読む。
+gen_cultural_asset.py
+CULTURAL_ASSET.md
