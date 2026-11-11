@@ -8,6 +8,7 @@ worker
 # （2026-11-12 に本番で /.git/HEAD・/.git/config・/.git/logs/HEAD が 200 を返すのを確かめた）。
 .git
 .gitignore
+.gitattributes
 
 # 設定・資料・道具・作業記録。画面はどれも読まない。
 wrangler.toml

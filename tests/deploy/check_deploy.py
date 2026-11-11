@@ -74,7 +74,7 @@ def must_not_deploy(path):
     if path.startswith('retainers/mock/'):
         return 'retainers/mock/ は画面が読まない'
     name = path.rsplit('/', 1)[-1]
-    if name in ('.gitignore', '.assetsignore', 'wrangler.toml'):
+    if name in ('.gitignore', '.gitattributes', '.assetsignore', 'wrangler.toml'):
         return '設定ファイル'
     if name.endswith(('.py', '.md')):
         return 'スクリプト・資料'

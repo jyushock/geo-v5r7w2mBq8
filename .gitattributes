@@ -1,0 +1,2 @@
+# シェルのフックは CRLF だと行末の CR が引数に付いて壊れるので LF に固定する
+.githooks/* text eol=lf
