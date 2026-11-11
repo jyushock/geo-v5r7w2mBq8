@@ -1205,12 +1205,16 @@
                        color: #cfcfcf; font-family: inherit; }
         .fav-pop { position: fixed; z-index: 320; background: #fff; border-radius: 10px;
                    box-shadow: 0 4px 16px rgba(0,0,0,.22); padding: 6px; display: flex;
-                   flex-direction: column; gap: 2px; min-width: 132px; }
+                   flex-direction: column; gap: 2px; min-width: 132px;
+                   /* body 直下に追加するため、指定しないと iOS Safari の既定（セリフ体＝明朝）になる */
+                   font-family: sans-serif; }
         .fav-pop button { display: flex; align-items: center; gap: 8px; border: 0; background: none;
                           font-family: inherit; font-size: 12px; color: #333; padding: 7px 8px;
                           border-radius: 7px; cursor: pointer; text-align: left; white-space: nowrap; }
         .fav-pop button i { width: 14px; height: 14px; border-radius: 4px; flex-shrink: 0; }
-        .fav-pop button .fav-ck { margin-left: auto; color: #2E7D32; font-weight: 700; padding-left: 6px; }
+        /* ✓(U+2713) はフォント依存で細く小さいため SVG で描く。大きさは左の色の四角（14px）に揃える */
+        .fav-pop button .fav-ck { margin-left: auto; padding-left: 6px; display: flex; }
+        .fav-pop button .fav-ck svg { width: 14px; height: 14px; display: block; }
         .fav-pop .fav-pop-note { font-size: 11px; color: #888; padding: 6px 8px; line-height: 1.6;
                                  max-width: 180px; }
 

@@ -9073,7 +9073,7 @@ map.on('zoomend', () => { isZooming = false; });
         const slots = favActiveSlots();
         favPopEl.innerHTML = slots.length
             ? slots.map(n => `<button data-fav-n="${n}"><i style="background:${FAV_COLORS[n]}"></i>${
-                attrEscape(favNameOf(n))}${marks.includes(n) ? '<span class="fav-ck">✓</span>' : ''}</button>`).join('')
+                attrEscape(favNameOf(n))}${marks.includes(n) ? '<span class="fav-ck"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7" fill="none" stroke="#2E7D32" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>' : ''}</button>`).join('')
             : `<div class="fav-pop-note">設定の「お気に入りの名前」に名前を入れると使えます</div>`;
     }
     /* パレットはアンカー（★の位置、または一覧の行）の下に出す。
