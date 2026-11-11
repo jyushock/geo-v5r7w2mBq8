@@ -2410,7 +2410,23 @@ async function resolveWikipediaTitle(castleName, aliases, lat, lng) {
                     fallback = pg.title; // 座標なし: 判定不能なのでフォールバック候補として保持
                 }
             }
-            if (result === null) result = fallback;
+            if (result === null) {
+                // 座標の合う記事が無いときだけ、「城名 (」で始まる記事も探す。
+                // 例: 北九州の若松城は「若松城」が会津の記事、別名「中島城」が座標の無い
+                // 「中島城 (尾張国)」への転送で、正しい「若松城 (筑前国)」は城名にも別名にも
+                // 一致しないため候補に入らず、尾張の記事に飛んでいた(2026-11-12)。
+                // 括弧付きの記事は座標が閾値内のときだけ採用し、座標の無いものは使わない
+                // （同名の他地方の城へ誤誘導する危険を増やさないため）。
+                // この問い合わせが失敗したときは1回目の結果を返し、キャッシュしない
+                // （次にシートを開いたときに2回目からやり直させるため）。
+                let suffixed;
+                try {
+                    suffixed = await findSuffixedWikipediaTitle(castleName, lat, lng);
+                } catch (_) {
+                    return fallback;
+                }
+                result = suffixed || fallback;
+            }
         } else {
             // 呼び出し側で座標が渡せない場合は従来通り名前一致のみで判定
             result = orderedPages.length > 0 ? orderedPages[0].title : null;
@@ -2422,6 +2438,26 @@ async function resolveWikipediaTitle(castleName, aliases, lat, lng) {
         // 判定不能時はボタンを消さない（安全側）。キャッシュもしない（次回再試行させる）
         return castleName;
     }
+}
+
+// 「城名 (」で始まる記事（例:「若松城 (筑前国)」）のうち、座標が閾値内の最も近いものの
+// タイトルを返す。見つからなければnull。通信やAPIの失敗は例外のまま呼び出し側へ返す。
+// 転送ページ(gapfilterredir=nonredirects)と曖昧さ回避ページは除く。
+async function findSuffixedWikipediaTitle(castleName, lat, lng) {
+    const apiUrl = `https://ja.wikipedia.org/w/api.php?action=query&format=json&generator=allpages&gapnamespace=0&gapfilterredir=nonredirects&gaplimit=50&gapprefix=${encodeURIComponent(castleName + ' (')}&prop=coordinates|pageprops&ppprop=disambiguation&origin=*`;
+    const res = await fetch(apiUrl);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    if (data.error) throw new Error(data.error.info || 'Wikipedia API error');
+    let best = null, bestDist = Infinity;
+    Object.values((data.query && data.query.pages) || {}).forEach(pg => {
+        if (pg.pageprops && pg.pageprops.disambiguation !== undefined) return;
+        const pc = pg.coordinates && pg.coordinates[0];
+        if (!pc) return;
+        const d = calcDist(lat, lng, pc.lat, pc.lon);
+        if (d <= WIKI_COORD_MATCH_THRESHOLD_KM && d < bestDist) { best = pg.title; bestDist = d; }
+    });
+    return best;
 }
 
 // 城シートの情報源セット行（Wikipedia・攻城団・城郭放浪記）を非同期で確定させる。
