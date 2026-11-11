@@ -176,6 +176,23 @@ def scenario_sheet_nearby_search(page, base):
     return problems
 
 
+def scenario_accessible_names(page, base):
+    """地図の画面の操作要素（ボタン・リンク・入力）に、読み上げに使う名前があるか。
+    絵だけのボタンは aria-label か title を付ける（aria-label は見た目を変えない）。"""
+    unnamed = page.evaluate("""() => [...document.querySelectorAll(
+            'button, [role=button], a[href], input:not([type=hidden]), select, textarea')]
+        .filter(e => {
+            const own = (e.getAttribute('aria-label') || e.getAttribute('title') || e.getAttribute('aria-labelledby')
+                         || e.textContent || e.getAttribute('placeholder') || '').trim();
+            const alt = [...e.querySelectorAll('img[alt], svg[aria-label]')]
+                .map(i => (i.getAttribute('alt') || i.getAttribute('aria-label') || '').trim()).join('');
+            const label = (e.id && document.querySelector(`label[for="${CSS.escape(e.id)}"]`)) || e.closest('label');
+            return !own && !alt && !label;
+        })
+        .map(e => e.id ? '#' + e.id : e.outerHTML.slice(0, 80))""")
+    return [f'名前の無い操作要素: {u}' for u in unnamed]
+
+
 def scenario_plus_code(page, base):
     """Plus Code の解析（vendor/openlocationcode.js）。東京駅の座標を符号化して戻せるか。"""
     r = page.evaluate("""() => {
@@ -216,6 +233,7 @@ def scenario_service_worker_precache(page, base):
 
 SCENARIOS = [
     ('地図と全データの読み込み', scenario_map),
+    ('操作要素の名前', scenario_accessible_names),
     ('店のシートから周辺検索', scenario_sheet_nearby_search),
     ('Plus Code の解析', scenario_plus_code),
     ('遺構の見かた', scenario_remains_help),
