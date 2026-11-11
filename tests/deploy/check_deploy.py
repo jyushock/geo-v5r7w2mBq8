@@ -179,6 +179,17 @@ def main():
             if bad:
                 errors.append(f'[制御文字] {f}:{ln}: {bytes(bad)!r} をエスケープで書く')
 
+    # iOS のホーム画面のアイコンは PNG（Apple の資料）。180×180 を指していること
+    m = re.search(r'<link rel="apple-touch-icon"[^>]*href="([^"]+)"', read('index.html'))
+    icon = m and resolve('index.html', m.group(1))
+    if not icon or not icon.endswith('.png') or not (ROOT / icon).exists():
+        errors.append(f'[アイコン] apple-touch-icon が PNG を指していない: {icon}')
+    else:
+        head = (ROOT / icon).read_bytes()[:24]
+        size = (int.from_bytes(head[16:20], 'big'), int.from_bytes(head[20:24], 'big'))
+        if head[:8] != b'\x89PNG\r\n\x1a\n' or size != (180, 180):
+            errors.append(f'[アイコン] {icon} が 180×180 の PNG でない: {size}')
+
     git_hit = ignored_by_assetsignore(GIT_SAMPLES)
     for p in GIT_SAMPLES:
         if p not in git_hit:

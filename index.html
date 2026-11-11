@@ -10,7 +10,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="マップ">
     <link rel="icon" href="icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="icon.svg">
+    <!-- ホーム画面のアイコン。Apple の資料が示す形式は PNG なので、icon.svg を 180×180 に描いたものを置く -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <script type="module">
         /* MapLibre GL JS 6系は ESM 専用（UMD の maplibre-gl.js は 6.0.0 で廃止）。
            モジュールは defer 相当なので、同じく defer の app.js はこの後に実行される。
