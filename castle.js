@@ -6077,7 +6077,7 @@ const castleData = {
         ]
       },
       "properties": {
-        "culturalAsset": "県指定史跡",
+        "culturalAsset": "国指定史跡",
         "name": "白川城",
         "genre": "",
         "category": "城",
@@ -24121,7 +24121,7 @@ const castleData = {
         ]
       },
       "properties": {
-        "culturalAsset": "市指定史跡",
+        "culturalAsset": "国指定史跡",
         "name": "岐阜城",
         "genre": "日本100名城",
         "category": "城",
@@ -26185,7 +26185,7 @@ const castleData = {
         ]
       },
       "properties": {
-        "culturalAsset": "町指定史跡",
+        "culturalAsset": "市指定史跡",
         "name": "蒲原城",
         "genre": "",
         "category": "城",
@@ -58663,7 +58663,7 @@ const castleData = {
         ]
       },
       "properties": {
-        "culturalAsset": "町指定史跡",
+        "culturalAsset": "市指定史跡",
         "name": "根城館",
         "genre": "",
         "category": "城",
@@ -84504,7 +84504,7 @@ const castleData = {
         ]
       },
       "properties": {
-        "culturalAsset": "村指定史跡",
+        "culturalAsset": "市指定史跡",
         "name": "向牧戸城",
         "genre": "",
         "category": "城",
@@ -88449,7 +88449,7 @@ const castleData = {
         ]
       },
       "properties": {
-        "culturalAsset": "町指定史跡",
+        "culturalAsset": "市指定史跡",
         "name": "勝坂城",
         "genre": "",
         "category": "城",
@@ -97247,7 +97247,7 @@ const castleData = {
         ]
       },
       "properties": {
-        "culturalAsset": "町指定史跡",
+        "culturalAsset": "市指定史跡",
         "name": "滝川城",
         "genre": "",
         "category": "城",
@@ -128606,7 +128606,7 @@ const castleData = {
         ]
       },
       "properties": {
-        "culturalAsset": "国指定史跡",
+        "culturalAsset": "市指定史跡",
         "name": "出水城",
         "genre": "",
         "category": "城",
@@ -128642,7 +128642,7 @@ const castleData = {
         ]
       },
       "properties": {
-        "culturalAsset": "町指定文化財",
+        "culturalAsset": "市指定史跡",
         "name": "松山城",
         "genre": "",
         "category": "城",
