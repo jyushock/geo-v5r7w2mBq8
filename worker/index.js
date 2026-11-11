@@ -153,7 +153,13 @@ async function apiGetState(env, device) {
 }
 
 /* 送られたキーだけを保存する。baseRev がサーバーの rev と食い違えば 409 相当を返し、
-   その場のサーバー値を添える（呼び出し側が取り込んでから送り直す）。 */
+   その場のサーバー値を添える（呼び出し側が取り込んでから送り直す）。
+
+   照合と書き込みは1つの SQL 文で行う（新規は INSERT … ON CONFLICT DO NOTHING、更新は
+   UPDATE … WHERE rev = baseRev）。SELECT で照合してから書く二段にすると、同じ baseRev の
+   保存が同時に2件届いたとき両方が照合を通り、後の書き込みが先の分を黙って消す
+   （両方に成功を返すので、消えた側の端末は気付けない）。tests/sync/worker_api_test.py の
+   「同時保存」がこれを確かめる。 */
 async function apiPutState(env, device, request) {
     const body = await request.json().catch(() => null);
     const items = body && Array.isArray(body.items) ? body.items.slice(0, 8) : null;
@@ -167,21 +173,26 @@ async function apiPutState(env, device, request) {
             continue;
         }
         const scope = it.scope === 'device' ? device.id : SHARED;
+        const baseRev = Number(it.baseRev || 0);
+        const rev = baseRev + 1;
+        const res = baseRev === 0
+            ? await env.DB.prepare(
+                `INSERT INTO states (user_id, device_id, key, value, rev, updated_at) VALUES (?, ?, ?, ?, 1, ?)
+                 ON CONFLICT(user_id, device_id, key) DO NOTHING`
+            ).bind(device.user_id, scope, key, it.value, now()).run()
+            : await env.DB.prepare(
+                `UPDATE states SET value = ?, rev = ?, updated_at = ?
+                 WHERE user_id = ? AND device_id = ? AND key = ? AND rev = ?`
+            ).bind(it.value, rev, now(), device.user_id, scope, key, baseRev).run();
+        if (res && res.meta && res.meta.changes === 1) {
+            results[key] = { rev };
+            continue;
+        }
+        // 書けなかった ＝ サーバーの rev が baseRev と違う。今の値を添えて返す
         const cur = await env.DB.prepare(
             'SELECT value, rev FROM states WHERE user_id = ? AND device_id = ? AND key = ?'
         ).bind(device.user_id, scope, key).first();
-        const curRev = cur ? Number(cur.rev) : 0;
-        if (Number(it.baseRev || 0) !== curRev) {
-            results[key] = { conflict: true, rev: curRev, value: cur ? cur.value : null };
-            continue;
-        }
-        const rev = curRev + 1;
-        await env.DB.prepare(
-            `INSERT INTO states (user_id, device_id, key, value, rev, updated_at) VALUES (?, ?, ?, ?, ?, ?)
-             ON CONFLICT(user_id, device_id, key) DO UPDATE SET value = excluded.value,
-                 rev = excluded.rev, updated_at = excluded.updated_at`
-        ).bind(device.user_id, scope, key, it.value, rev, now()).run();
-        results[key] = { rev };
+        results[key] = { conflict: true, rev: cur ? Number(cur.rev) : 0, value: cur ? cur.value : null };
     }
     return json({ ok: true, results });
 }
