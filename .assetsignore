@@ -1,7 +1,26 @@
 # 配信対象から外すもの（書式は .gitignore と同じ）。
+# 変えたら tests/deploy/check_deploy.py（外しすぎ・外し忘れ）と tests/deploy/scenario_test.py（配信物だけで画面が動くか）を走らせる。
 # Worker のソースはアセットとして配る必要がなく、/worker/index.js で読めてしまうため外す。
 worker
 .assetsignore
+
+# git の管理情報。Cloudflare のビルドは git の作業ツリーをそのまま配り、.git を既定では外さない
+# （2026-11-12 に本番で /.git/HEAD・/.git/config・/.git/logs/HEAD が 200 を返すのを確かめた）。
+.git
+.gitignore
+
+# 設定・資料・道具・作業記録。画面はどれも読まない。
+wrangler.toml
+*.md
+*.py
+*_log.txt
+*.bak_*
+/FreeSample-Vectorizer-io-*.svg
+/mock
+/tests
+/sample
+.claude
+__pycache__
 
 # 家臣団（retainers/ ＝ 家臣団の表示側。取得ツールは D:\work\SamuraiRetainers）。
 # 画面が読むのは index.html と data.js と crests/（家紋の画像）だけ。組み立て前の部品・組み立てスクリプト・モック・説明書きは配らない。
