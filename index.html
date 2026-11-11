@@ -20,7 +20,8 @@
         import * as maplibregl from 'https://unpkg.com/maplibre-gl@6.7.0/dist/maplibre-gl.mjs';
         window.maplibregl = maplibregl;
     </script>
-    <script src="https://unpkg.com/open-location-code/openlocationcode.js"></script>
+    <!-- Plus Code の解析。unpkg の最新（1.0.3）は末尾の exports で例外を投げるため、直したものを自前で配る -->
+    <script src="vendor/openlocationcode.js"></script>
     <link href="https://unpkg.com/maplibre-gl@6.7.0/dist/maplibre-gl.css" rel="stylesheet" />
     <!-- 大容量データ(data/castle/michi/manhole/pokemon/mhcard)は初回描画をブロックしないよう
          スクリプト内で非同期に動的読込する（表示中レイヤー優先＋背景取得）。小さな辞書のみ同期読込。 -->

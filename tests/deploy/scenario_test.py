@@ -65,9 +65,7 @@ class Watch:
 
     def _on_pageerror(self, e):
         """例外の発生元が外部のスクリプトなら、配信物と関係ないので参考として出すだけにする。
-        既知の例: unpkg の open-location-code（2015年の 1.0.3 が最新）は末尾の
-        `exports.OpenLocationCode = …` がブラウザで ReferenceError になる。その手前で
-        OpenLocationCode は定義済みなので、Plus Code の解析は動く。"""
+        （以前は unpkg の open-location-code が毎回 exports で例外を投げていた。vendor/ に直して取り込んだ）"""
         frames = [ln.strip() for ln in (e.stack or '').splitlines()[1:] if ln.strip().startswith('at ')]
         if frames and 'http' in frames[0] and self.origin not in frames[0]:
             self.notes.append(f'外部スクリプトの例外（数えない）: {e.message} {frames[0]}')
@@ -145,6 +143,27 @@ def scenario_retainers(page, base):
     return wait_images(frame, 'img', '家臣団の画像')
 
 
+def scenario_plus_code(page, base):
+    """Plus Code の解析（vendor/openlocationcode.js）。東京駅の座標を符号化して戻せるか。"""
+    r = page.evaluate("""() => {
+        if (typeof OpenLocationCode !== 'function') return null;
+        const olc = new OpenLocationCode();
+        const code = olc.encode(35.681236, 139.767125);
+        const a = olc.decode(code);
+        const short = olc.shorten(code, 35.68, 139.77);
+        const full = olc.recoverNearest(short, 35.68, 139.77);
+        return { code, lat: a.latitudeCenter, lng: a.longitudeCenter, full };
+    }""")
+    if r is None:
+        return ['OpenLocationCode が定義されていない']
+    problems = []
+    if abs(r['lat'] - 35.681236) > 2e-4 or abs(r['lng'] - 139.767125) > 2e-4:
+        problems.append(f'Plus Code の往復で座標がずれる: {r}')
+    if r['full'] != r['code']:
+        problems.append(f'短いコードから元に戻らない: {r}')
+    return problems
+
+
 def scenario_service_worker_precache(page, base):
     """sw.js のプリキャッシュ（install で cache.addAll）に挙げたファイルが全部取れるか。"""
     urls = page.evaluate("""async () => {
@@ -164,6 +183,7 @@ def scenario_service_worker_precache(page, base):
 
 SCENARIOS = [
     ('地図と全データの読み込み', scenario_map),
+    ('Plus Code の解析', scenario_plus_code),
     ('遺構の見かた', scenario_remains_help),
     ('家臣団', scenario_retainers),
     ('Service Worker のプリキャッシュ', scenario_service_worker_precache),

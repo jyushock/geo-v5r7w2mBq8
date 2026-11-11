@@ -163,9 +163,12 @@ def main():
     errors = []
 
     need = needed_files()
+    tracked = set(tracked_files())
     for path, why in sorted(need.items()):
         if path not in deployed:
-            state = '.assetsignore で外されている' if (ROOT / path).exists() else 'リポジトリに無い'
+            state = ('.assetsignore で外されている' if path in tracked
+                     else 'git に追加されていない（配信は git の中身から作られる）' if (ROOT / path).exists()
+                     else 'リポジトリに無い')
             errors.append(f'[外しすぎ] {path}（{why} が読む）: {state}')
 
     git_hit = ignored_by_assetsignore(GIT_SAMPLES)
