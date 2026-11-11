@@ -3185,6 +3185,7 @@ function buildSheetHtml(type, label, p, lng, lat) {
         const aliases = osParseAliases(p.aliases);
         lines = osKv('別名', aliases.length ? aliases.join('、') : '')
               + osLine(popupFormMetaHtml(p.shiroHbElevationM, p.shiroHbRelativeHeightM))
+              + castleAttrLine('指定文化財', p.culturalAsset)
               + castleRemainsLine(p.remains)
               + castleAttrLine('城主', p.lords)
               + osKv('住所', p.address);

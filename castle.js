@@ -36,6 +36,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "勝山館",
         "genre": "続日本100名城",
         "category": "城",
@@ -64,6 +65,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "五稜郭",
         "genre": "日本100名城",
         "category": "城",
@@ -93,6 +95,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "志苔館",
         "genre": "続日本100名城",
         "category": "城",
@@ -119,6 +122,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "白老仙台藩陣屋跡",
         "genre": "",
         "category": "城",
@@ -147,6 +151,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "四稜郭",
         "genre": "",
         "category": "城",
@@ -174,6 +179,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡、道指定史跡",
         "name": "館城",
         "genre": "",
         "category": "城",
@@ -227,6 +233,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "戸切地陣屋",
         "genre": "",
         "category": "城",
@@ -283,6 +290,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定重要文化財（本丸御門）、国指定史跡、北海道有形文化財（御殿玄関）",
         "name": "松前城",
         "genre": "日本100名城",
         "category": "城",
@@ -311,6 +319,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "モシリヤチャシ",
         "genre": "",
         "category": "城",
@@ -339,6 +348,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "相内館",
         "genre": "",
         "category": "城",
@@ -366,6 +376,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "赤石館",
         "genre": "",
         "category": "城",
@@ -609,6 +620,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "大向館",
         "genre": "",
         "category": "城",
@@ -872,6 +884,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "三戸城",
         "genre": "",
         "category": "城",
@@ -902,6 +915,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "七戸城",
         "genre": "",
         "category": "城",
@@ -929,6 +943,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "聖寿寺館",
         "genre": "",
         "category": "城",
@@ -1028,6 +1043,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "田子館",
         "genre": "",
         "category": "城",
@@ -1084,6 +1100,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "種里城",
         "genre": "",
         "category": "城",
@@ -1111,6 +1128,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "中市館",
         "genre": "",
         "category": "城",
@@ -1135,6 +1153,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "浪岡城",
         "genre": "続日本100名城",
         "category": "城",
@@ -1162,6 +1181,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "根城",
         "genre": "日本100名城",
         "category": "城",
@@ -1188,6 +1208,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "野辺地城",
         "genre": "",
         "category": "城",
@@ -1242,6 +1263,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "馬場館 (陸奥国糠部郡)",
         "genre": "",
         "category": "城",
@@ -1266,6 +1288,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定重要文化財（天守、辰巳櫓、丑寅櫓、未申櫓、三の丸追手門、三の丸東門、二の丸南門、二の丸東門、北の郭亀甲門）、国指定史跡",
         "name": "弘前城",
         "genre": "日本100名城",
         "category": "城",
@@ -1295,6 +1318,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "福島城 (陸奥国鼻和郡)",
         "genre": "",
         "category": "城",
@@ -1341,6 +1365,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "平良ヶ崎館",
         "genre": "",
         "category": "城",
@@ -1413,6 +1438,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "堀越城",
         "genre": "",
         "category": "城",
@@ -1436,6 +1462,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "元城 (陸奥国)",
         "genre": "",
         "category": "城",
@@ -1464,6 +1491,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "森山館",
         "genre": "",
         "category": "城",
@@ -1614,6 +1642,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "姉帯城",
         "genre": "",
         "category": "城",
@@ -1661,6 +1690,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "胆沢城",
         "genre": "",
         "category": "城",
@@ -1814,6 +1844,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "薄衣城",
         "genre": "",
         "category": "城",
@@ -1883,6 +1914,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "大槌城",
         "genre": "",
         "category": "城",
@@ -2042,6 +2074,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "久慈城",
         "genre": "",
         "category": "城",
@@ -2122,6 +2155,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "九戸城",
         "genre": "続日本100名城",
         "category": "城",
@@ -2200,6 +2234,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "郡山城 (陸奥国紫波郡)",
         "genre": "",
         "category": "城",
@@ -2387,6 +2422,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "白鳥舘遺跡",
         "genre": "",
         "category": "城",
@@ -2411,6 +2447,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "志波城",
         "genre": "",
         "category": "城",
@@ -2555,6 +2592,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "徳丹城",
         "genre": "",
         "category": "城",
@@ -2578,6 +2616,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "鳥海柵",
         "genre": "",
         "category": "城",
@@ -2651,6 +2690,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "鍋倉城 (陸奥国)",
         "genre": "",
         "category": "城",
@@ -2679,6 +2719,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "新堀城 (陸奥国)",
         "genre": "",
         "category": "城",
@@ -2734,6 +2775,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "花巻城",
         "genre": "",
         "category": "城",
@@ -2809,6 +2851,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "樋爪館",
         "genre": "",
         "category": "城",
@@ -2989,6 +3032,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "盛岡城",
         "genre": "日本100名城",
         "category": "城",
@@ -3016,6 +3060,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "柳田館",
         "genre": "",
         "category": "城",
@@ -3074,6 +3119,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡（城址碑）",
         "name": "豊田館跡",
         "genre": "",
         "category": "城",
@@ -3098,6 +3144,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "柳之御所遺跡",
         "genre": "",
         "category": "城",
@@ -3207,6 +3254,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "岩切城",
         "genre": "",
         "category": "城",
@@ -3348,6 +3396,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "金山城 (陸奥国)",
         "genre": "",
         "category": "城",
@@ -3395,6 +3444,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "坂元城",
         "genre": "",
         "category": "城",
@@ -3446,6 +3496,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "佐沼城",
         "genre": "",
         "category": "城",
@@ -3474,6 +3525,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "城生柵跡",
         "genre": "",
         "category": "城",
@@ -3496,6 +3548,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "白石城",
         "genre": "続日本100名城",
         "category": "城",
@@ -3525,6 +3578,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "仙台城",
         "genre": "日本100名城",
         "category": "城",
@@ -3580,6 +3634,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡（多賀城跡 附 寺跡）",
         "name": "多賀城",
         "genre": "日本100名城",
         "category": "城",
@@ -3738,6 +3793,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "船岡城",
         "genre": "",
         "category": "城",
@@ -3846,6 +3902,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "涌谷城",
         "genre": "",
         "category": "城",
@@ -3947,6 +4004,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "秋田城",
         "genre": "続日本100名城",
         "category": "城",
@@ -3973,6 +4031,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "稲庭城",
         "genre": "",
         "category": "城",
@@ -4030,6 +4089,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "浦城",
         "genre": "",
         "category": "城",
@@ -4109,6 +4169,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小野城 (出羽国)",
         "genre": "",
         "category": "城",
@@ -4193,6 +4254,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "秋田市文化財（御物頭御番所）",
         "name": "久保田城",
         "genre": "日本100名城",
         "category": "城",
@@ -4326,6 +4388,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "檜山安東氏城館跡",
         "genre": "",
         "category": "城",
@@ -4356,6 +4419,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "払田柵跡",
         "genre": "",
         "category": "城",
@@ -4379,6 +4443,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "本荘城",
         "genre": "",
         "category": "城",
@@ -4408,6 +4473,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "本堂城",
         "genre": "",
         "category": "城",
@@ -4513,6 +4579,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "脇本城",
         "genre": "続日本100名城",
         "category": "城",
@@ -4566,6 +4633,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "左沢楯山城",
         "genre": "",
         "category": "城",
@@ -4593,6 +4661,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "鮎貝城",
         "genre": "",
         "category": "城",
@@ -4620,6 +4689,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "荒砥城 (出羽国)",
         "genre": "",
         "category": "城",
@@ -4676,6 +4746,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "小国城 (出羽国田川郡)",
         "genre": "",
         "category": "城",
@@ -4803,6 +4874,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "城輪柵",
         "genre": "",
         "category": "城",
@@ -4849,6 +4921,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "鮭延城",
         "genre": "",
         "category": "城",
@@ -4901,6 +4974,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "新庄城",
         "genre": "",
         "category": "城",
@@ -4928,6 +5002,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "高畠城 (出羽国)",
         "genre": "",
         "category": "城",
@@ -4956,6 +5031,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "館山城 (出羽国)",
         "genre": "",
         "category": "城",
@@ -4983,6 +5059,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡（藩校）、国指定名勝（三の丸庭園）",
         "name": "鶴ヶ岡城",
         "genre": "続日本100名城",
         "category": "城",
@@ -5056,6 +5133,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "延沢城",
         "genre": "",
         "category": "城",
@@ -5111,6 +5189,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "畑谷城",
         "genre": "",
         "category": "城",
@@ -5135,6 +5214,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "松山城 (出羽国)",
         "genre": "",
         "category": "城",
@@ -5162,6 +5242,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "丸岡城 (出羽国)",
         "genre": "",
         "category": "城",
@@ -5207,6 +5288,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "山形城",
         "genre": "日本100名城",
         "category": "城",
@@ -5235,6 +5317,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "米沢城",
         "genre": "続日本100名城",
         "category": "城",
@@ -5348,6 +5431,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "阿津賀志山防塁",
         "genre": "",
         "category": "城",
@@ -5373,6 +5457,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "石母田城",
         "genre": "",
         "category": "城",
@@ -5427,6 +5512,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "猪苗代城",
         "genre": "",
         "category": "城",
@@ -5482,6 +5568,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡（宇津峰）",
         "name": "宇津峰",
         "genre": "",
         "category": "城",
@@ -5571,6 +5658,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "小高城",
         "genre": "",
         "category": "城",
@@ -5652,6 +5740,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "懸田城",
         "genre": "",
         "category": "城",
@@ -5730,6 +5819,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "北田城",
         "genre": "",
         "category": "城",
@@ -5825,6 +5915,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "桑折西山城",
         "genre": "",
         "category": "城",
@@ -5929,6 +6020,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "鴫山城",
         "genre": "",
         "category": "城",
@@ -5957,6 +6049,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "白河小峰城",
         "genre": "日本100名城",
         "category": "城",
@@ -5984,6 +6077,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "白川城",
         "genre": "",
         "category": "城",
@@ -6012,6 +6106,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "陣が峯城",
         "genre": "",
         "category": "城",
@@ -6042,6 +6137,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "新宮城 (陸奥国)",
         "genre": "",
         "category": "城",
@@ -6143,6 +6239,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "相馬中村城",
         "genre": "",
         "category": "城",
@@ -6279,6 +6376,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "田部原館",
         "genre": "",
         "category": "城",
@@ -6303,6 +6401,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "玉縄城 (陸奥国)",
         "genre": "",
         "category": "城",
@@ -6353,6 +6452,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "長沼城 (陸奥国)",
         "genre": "",
         "category": "城",
@@ -6408,6 +6508,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "二本松城",
         "genre": "日本100名城",
         "category": "城",
@@ -6466,6 +6567,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "久川城",
         "genre": "",
         "category": "城",
@@ -6538,6 +6640,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "三春城",
         "genre": "続日本100名城",
         "category": "城",
@@ -6591,6 +6694,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "向羽黒山城",
         "genre": "続日本100名城",
         "category": "城",
@@ -6645,6 +6749,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "福島県指定史跡",
         "name": "梁川城",
         "genre": "",
         "category": "城",
@@ -6672,6 +6777,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "霊山城",
         "genre": "",
         "category": "城",
@@ -6699,6 +6805,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "若松城",
         "genre": "日本100名城",
         "category": "城",
@@ -6796,6 +6903,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "伊佐城",
         "genre": "",
         "category": "城",
@@ -6870,6 +6978,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "牛久城",
         "genre": "",
         "category": "城",
@@ -6918,6 +7027,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "太田城 (常陸国)",
         "genre": "",
         "category": "城",
@@ -6971,6 +7081,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小坂城 (常陸国)",
         "genre": "",
         "category": "城",
@@ -6995,6 +7106,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "小田城",
         "genre": "",
         "category": "城",
@@ -7018,6 +7130,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "笠間城",
         "genre": "続日本100名城",
         "category": "城",
@@ -7072,6 +7185,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "片野城",
         "genre": "",
         "category": "城",
@@ -7122,6 +7236,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "久下田城",
         "genre": "",
         "category": "城",
@@ -7202,6 +7317,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "古河公方館",
         "genre": "",
         "category": "城",
@@ -7279,6 +7395,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "逆井城",
         "genre": "",
         "category": "城",
@@ -7329,6 +7446,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "下館城",
         "genre": "",
         "category": "城",
@@ -7356,6 +7474,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "下妻城",
         "genre": "",
         "category": "城",
@@ -7404,6 +7523,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "助川海防城",
         "genre": "",
         "category": "城",
@@ -7432,6 +7552,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "関城 (常陸国)",
         "genre": "",
         "category": "城",
@@ -7526,6 +7647,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "多良崎城",
         "genre": "",
         "category": "城",
@@ -7582,6 +7704,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "土浦城",
         "genre": "続日本100名城",
         "category": "城",
@@ -7659,6 +7782,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "馴馬城",
         "genre": "",
         "category": "城",
@@ -7686,6 +7810,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "野口城 (常陸国)",
         "genre": "",
         "category": "城",
@@ -7765,6 +7890,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "真壁城",
         "genre": "",
         "category": "城",
@@ -7789,6 +7915,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "松岡城 (常陸国)",
         "genre": "",
         "category": "城",
@@ -7844,6 +7971,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡、特別史跡（旧弘道館）",
         "name": "水戸城",
         "genre": "日本100名城",
         "category": "城",
@@ -7872,6 +8000,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "守谷城",
         "genre": "",
         "category": "城",
@@ -7899,6 +8028,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "結城城",
         "genre": "",
         "category": "城",
@@ -8000,6 +8130,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "足利城",
         "genre": "",
         "category": "城",
@@ -8135,6 +8266,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大田原城",
         "genre": "",
         "category": "城",
@@ -8208,6 +8340,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "岡本城 (下野国)",
         "genre": "",
         "category": "城",
@@ -8235,6 +8368,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "小山城 (下野国)",
         "genre": "",
         "category": "城",
@@ -8283,6 +8417,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "勝山城 (下野国)",
         "genre": "",
         "category": "城",
@@ -8361,6 +8496,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "唐沢山城",
         "genre": "続日本100名城",
         "category": "城",
@@ -8391,6 +8527,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "烏山城",
         "genre": "",
         "category": "城",
@@ -8419,6 +8556,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "川崎城 (下野国)",
         "genre": "",
         "category": "城",
@@ -8470,6 +8608,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "神田城",
         "genre": "",
         "category": "城",
@@ -8498,6 +8637,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "勧農城",
         "genre": "",
         "category": "城",
@@ -8555,6 +8695,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "黒羽城",
         "genre": "",
         "category": "城",
@@ -8585,6 +8726,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "御前城",
         "genre": "",
         "category": "城",
@@ -8611,6 +8753,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "御前原城",
         "genre": "",
         "category": "城",
@@ -8662,6 +8805,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "児山城",
         "genre": "",
         "category": "城",
@@ -8709,6 +8853,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "西明寺城",
         "genre": "",
         "category": "城",
@@ -8736,6 +8881,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "佐野城",
         "genre": "",
         "category": "城",
@@ -8766,6 +8912,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "白旗城 (下野国)",
         "genre": "",
         "category": "城",
@@ -8790,6 +8937,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "千本城 (下野国)",
         "genre": "",
         "category": "城",
@@ -8848,6 +8996,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "多功城",
         "genre": "",
         "category": "城",
@@ -8895,6 +9044,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "徳次郎城",
         "genre": "",
         "category": "城",
@@ -8921,6 +9071,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "栃木城",
         "genre": "",
         "category": "城",
@@ -8944,6 +9095,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "飛山城",
         "genre": "",
         "category": "城",
@@ -8968,6 +9120,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "中久喜城",
         "genre": "",
         "category": "城",
@@ -9023,6 +9176,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "中村城 (下野国)",
         "genre": "",
         "category": "城",
@@ -9094,6 +9248,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "西方城 (下野国)",
         "genre": "",
         "category": "城",
@@ -9174,6 +9329,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "皆川城",
         "genre": "",
         "category": "城",
@@ -9255,6 +9411,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "茂木城",
         "genre": "",
         "category": "城",
@@ -9330,6 +9487,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "鷲城",
         "genre": "",
         "category": "城",
@@ -9356,6 +9514,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国宝（本堂）、重要文化財（鐘楼、経堂、金銅鑁字御正体ほか）、国指定史跡（足利氏宅跡）、県文化財（御霊屋、多宝塔、木造大日如来像、木造足利歴代将軍坐像ほか）",
         "name": "鑁阿寺",
         "genre": "日本100名城",
         "category": "城",
@@ -9436,6 +9595,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "岩櫃城",
         "genre": "続日本100名城",
         "category": "城",
@@ -9484,6 +9644,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "大胡城",
         "genre": "",
         "category": "城",
@@ -9579,6 +9740,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "小泉城",
         "genre": "",
         "category": "城",
@@ -9605,6 +9767,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "白井城",
         "genre": "",
         "category": "城",
@@ -9629,6 +9792,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "膳城",
         "genre": "",
         "category": "城",
@@ -9653,6 +9817,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "群馬県重要文化財（乾櫓）",
         "name": "高崎城",
         "genre": "",
         "category": "城",
@@ -9706,6 +9871,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鷹留城",
         "genre": "",
         "category": "城",
@@ -9733,6 +9899,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "館林城",
         "genre": "",
         "category": "城",
@@ -9787,6 +9954,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "長井坂城",
         "genre": "",
         "category": "城",
@@ -9837,6 +10005,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "長野原城",
         "genre": "",
         "category": "城",
@@ -9864,6 +10033,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "名胡桃城",
         "genre": "続日本100名城",
         "category": "城",
@@ -9891,6 +10061,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "新田金山城",
         "genre": "日本100名城",
         "category": "城",
@@ -9920,6 +10091,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "沼田城",
         "genre": "続日本100名城",
         "category": "城",
@@ -9976,6 +10148,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "箱田城",
         "genre": "",
         "category": "城",
@@ -10000,6 +10173,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "羽根尾城",
         "genre": "",
         "category": "城",
@@ -10024,6 +10198,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "柄杓山城",
         "genre": "",
         "category": "城",
@@ -10052,6 +10227,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "平井城",
         "genre": "",
         "category": "城",
@@ -10104,6 +10280,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "松井田城",
         "genre": "",
         "category": "城",
@@ -10162,6 +10339,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "箕輪城",
         "genre": "日本100名城",
         "category": "城",
@@ -10186,6 +10364,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "山上城",
         "genre": "",
         "category": "城",
@@ -10210,6 +10389,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "山名城",
         "genre": "",
         "category": "城",
@@ -10239,6 +10419,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡（新田荘遺跡として）",
         "name": "反町薬師",
         "genre": "",
         "category": "城",
@@ -10267,6 +10448,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定文化財（旧跡）",
         "name": "赤山城",
         "genre": "",
         "category": "城",
@@ -10317,6 +10499,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "岩槻城",
         "genre": "",
         "category": "城",
@@ -10346,6 +10529,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "小倉城 (武蔵国)",
         "genre": "",
         "category": "城",
@@ -10370,6 +10554,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定旧跡",
         "name": "忍城",
         "genre": "続日本100名城",
         "category": "城",
@@ -10398,6 +10583,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "埼玉県有形文化財（本丸御殿）、県指定史跡",
         "name": "川越城",
         "genre": "日本100名城",
         "category": "城",
@@ -10426,6 +10612,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "河越館",
         "genre": "",
         "category": "城",
@@ -10455,6 +10642,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "雉岡城",
         "genre": "",
         "category": "城",
@@ -10481,6 +10669,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "寿能城",
         "genre": "",
         "category": "城",
@@ -10526,6 +10715,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "菅谷館",
         "genre": "続日本100名城",
         "category": "城",
@@ -10553,6 +10743,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "杉山城",
         "genre": "続日本100名城",
         "category": "城",
@@ -10580,6 +10771,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "高坂館",
         "genre": "",
         "category": "城",
@@ -10608,6 +10800,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "高見城",
         "genre": "",
         "category": "城",
@@ -10636,6 +10829,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "滝の城",
         "genre": "",
         "category": "城",
@@ -10664,6 +10858,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "秩父氏館",
         "genre": "",
         "category": "城",
@@ -10718,6 +10913,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "伝源経基館跡",
         "genre": "",
         "category": "城",
@@ -10749,6 +10945,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定旧跡",
         "name": "難波田城",
         "genre": "",
         "category": "城",
@@ -10776,6 +10973,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "根古屋城",
         "genre": "",
         "category": "城",
@@ -10805,6 +11003,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "鉢形城",
         "genre": "日本100名城",
         "category": "城",
@@ -10828,6 +11027,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "羽生城",
         "genre": "",
         "category": "城",
@@ -10851,6 +11051,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "深谷城",
         "genre": "",
         "category": "城",
@@ -10877,6 +11078,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "松山城 (武蔵国)",
         "genre": "",
         "category": "城",
@@ -10931,6 +11133,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "山口城 (武蔵国)",
         "genre": "",
         "category": "城",
@@ -10983,6 +11186,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定旧跡",
         "name": "蕨城",
         "genre": "",
         "category": "城",
@@ -11027,6 +11231,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "花崎遺跡",
         "genre": "",
         "category": "城",
@@ -11050,6 +11255,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "松山陣屋",
         "genre": "",
         "category": "城",
@@ -11115,6 +11321,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "飯野陣屋",
         "genre": "",
         "category": "城",
@@ -11165,6 +11372,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "一宮城 (上総国)",
         "genre": "",
         "category": "城",
@@ -11191,6 +11399,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "稲村城",
         "genre": "",
         "category": "城",
@@ -11215,6 +11424,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "亥鼻城",
         "genre": "",
         "category": "城",
@@ -11243,6 +11453,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "飯櫃城",
         "genre": "",
         "category": "城",
@@ -11267,6 +11478,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "岩富城",
         "genre": "",
         "category": "城",
@@ -11291,6 +11503,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "臼井城",
         "genre": "",
         "category": "城",
@@ -11363,6 +11576,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡（本丸跡）",
         "name": "大多喜城",
         "genre": "続日本100名城",
         "category": "城",
@@ -11433,6 +11647,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "大友城",
         "genre": "",
         "category": "城",
@@ -11502,6 +11717,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "岡本城 (安房国)",
         "genre": "",
         "category": "城",
@@ -11875,6 +12091,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小篠塚城",
         "genre": "",
         "category": "城",
@@ -11899,6 +12116,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "坂田城",
         "genre": "",
         "category": "城",
@@ -11979,6 +12197,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "佐倉城",
         "genre": "日本100名城",
         "category": "城",
@@ -12054,6 +12273,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "椎津城",
         "genre": "",
         "category": "城",
@@ -12304,6 +12524,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "関宿城",
         "genre": "",
         "category": "城",
@@ -12400,6 +12621,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "高藤山城",
         "genre": "",
         "category": "城",
@@ -12427,6 +12649,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "滝田城",
         "genre": "",
         "category": "城",
@@ -12553,6 +12776,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "館山城",
         "genre": "",
         "category": "城",
@@ -12626,6 +12850,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "庁南城",
         "genre": "",
         "category": "城",
@@ -13112,6 +13337,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "福星寺館",
         "genre": "",
         "category": "城",
@@ -13355,6 +13581,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "本佐倉城",
         "genre": "続日本100名城",
         "category": "城",
@@ -13704,6 +13931,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "今井城 (武蔵国)",
         "genre": "",
         "category": "城",
@@ -13728,6 +13956,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡、国指定重要文化財（桜田門、田安門、清水門）",
         "name": "江戸城",
         "genre": "日本100名城",
         "category": "城",
@@ -13777,6 +14006,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "都指定史跡",
         "name": "葛西城",
         "genre": "",
         "category": "城",
@@ -13800,6 +14030,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "都指定史跡",
         "name": "勝沼城",
         "genre": "",
         "category": "城",
@@ -13827,6 +14058,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "辛垣城",
         "genre": "",
         "category": "城",
@@ -13908,6 +14140,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "都指定史跡",
         "name": "石神井城",
         "genre": "",
         "category": "城",
@@ -13958,6 +14191,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "深大寺城",
         "genre": "",
         "category": "城",
@@ -13982,6 +14216,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "都指定史跡",
         "name": "世田谷城",
         "genre": "",
         "category": "城",
@@ -14033,6 +14268,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "都指定史跡（1993年）",
         "name": "戸倉城 (武蔵国)",
         "genre": "",
         "category": "城",
@@ -14089,6 +14325,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "都旧跡",
         "name": "練馬城",
         "genre": "",
         "category": "城",
@@ -14205,6 +14442,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "都指定史跡",
         "name": "片倉城",
         "genre": "",
         "category": "城",
@@ -14249,6 +14487,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "八王子城",
         "genre": "日本100名城",
         "category": "城",
@@ -14276,6 +14515,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "浄福寺城",
         "genre": "",
         "category": "城",
@@ -14335,6 +14575,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "滝山城",
         "genre": "続日本100名城",
         "category": "城",
@@ -14366,6 +14607,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "都指定史跡",
         "name": "初沢城",
         "genre": "",
         "category": "城",
@@ -14502,6 +14744,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "石垣山城",
         "genre": "続日本100名城",
         "category": "城",
@@ -14777,6 +15020,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "小田原城",
         "genre": "日本100名城",
         "category": "城",
@@ -14897,6 +15141,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "河村城",
         "genre": "",
         "category": "城",
@@ -14925,6 +15170,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "衣笠城",
         "genre": "",
         "category": "城",
@@ -15312,6 +15558,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "茅ヶ崎城",
         "genre": "",
         "category": "城",
@@ -15524,6 +15771,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "早川城",
         "genre": "",
         "category": "城",
@@ -15759,6 +16007,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "荻野山中陣屋",
         "genre": "",
         "category": "城",
@@ -15804,6 +16053,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "赤田城",
         "genre": "",
         "category": "城",
@@ -15851,6 +16101,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "荒戸城",
         "genre": "",
         "category": "城",
@@ -15902,6 +16153,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "今井城 (越後国)",
         "genre": "",
         "category": "城",
@@ -16027,6 +16279,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "春日山城",
         "genre": "日本100名城",
         "category": "城",
@@ -16056,6 +16309,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "勝山城 (越後国刈羽郡)",
         "genre": "",
         "category": "城",
@@ -16083,6 +16337,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "勝山城 (越後国頸城郡)",
         "genre": "",
         "category": "城",
@@ -16161,6 +16416,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "北条城",
         "genre": "",
         "category": "城",
@@ -16184,6 +16440,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "蔵王堂城",
         "genre": "",
         "category": "城",
@@ -16210,6 +16467,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "坂戸城",
         "genre": "",
         "category": "城",
@@ -16234,6 +16492,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "鮫ヶ尾城",
         "genre": "続日本100名城",
         "category": "城",
@@ -16319,6 +16578,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定重要文化財（表門、二の丸隅櫓）",
         "name": "新発田城",
         "genre": "日本100名城",
         "category": "城",
@@ -16377,6 +16637,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡（水原代官所として）",
         "name": "水原城 (越後国)",
         "genre": "",
         "category": "城",
@@ -16429,6 +16690,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "高田城",
         "genre": "続日本100名城",
         "category": "城",
@@ -16457,6 +16719,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "津川城",
         "genre": "",
         "category": "城",
@@ -16487,6 +16750,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "栃尾城",
         "genre": "",
         "category": "城",
@@ -16515,6 +16779,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "鳥坂城",
         "genre": "",
         "category": "城",
@@ -16544,6 +16809,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鳥坂城 (越後国頚城郡)",
         "genre": "",
         "category": "城",
@@ -16639,6 +16905,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "新穂城",
         "genre": "",
         "category": "城",
@@ -16666,6 +16933,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "根知城",
         "genre": "",
         "category": "城",
@@ -16695,6 +16963,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "直峰城",
         "genre": "",
         "category": "城",
@@ -16722,6 +16991,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "羽茂城",
         "genre": "",
         "category": "城",
@@ -16746,6 +17016,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "平林城",
         "genre": "",
         "category": "城",
@@ -16774,6 +17045,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "琵琶島城",
         "genre": "",
         "category": "城",
@@ -16852,6 +17124,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "松代城 (越後国)",
         "genre": "",
         "category": "城",
@@ -16920,6 +17193,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "村上城",
         "genre": "続日本100名城",
         "category": "城",
@@ -16975,6 +17249,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "本与板城",
         "genre": "",
         "category": "城",
@@ -17003,6 +17278,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "安田城 (越後国蒲原郡)",
         "genre": "",
         "category": "城",
@@ -17026,6 +17302,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "与板城 (戦国時代)",
         "genre": "",
         "category": "城",
@@ -17055,6 +17332,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "長岡市文化財（大手門、切手門）",
         "name": "与板陣屋",
         "genre": "",
         "category": "城",
@@ -17082,6 +17360,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "阿尾城",
         "genre": "",
         "category": "城",
@@ -17117,6 +17396,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "赤丸城",
         "genre": "",
         "category": "城",
@@ -17167,6 +17447,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡（安養寺御坊として登録）",
         "name": "安養寺城",
         "genre": "",
         "category": "城",
@@ -17250,6 +17531,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "井田主馬ヶ城",
         "genre": "",
         "category": "城",
@@ -17279,6 +17561,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "一乗寺城",
         "genre": "",
         "category": "城",
@@ -17311,6 +17594,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "井波城",
         "genre": "",
         "category": "城",
@@ -17343,6 +17627,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "井口城",
         "genre": "",
         "category": "城",
@@ -17392,6 +17677,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "今石動城",
         "genre": "",
         "category": "城",
@@ -17443,6 +17729,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "魚津城",
         "genre": "",
         "category": "城",
@@ -17470,6 +17757,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "上見城",
         "genre": "",
         "category": "城",
@@ -17602,6 +17890,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡（土山御坊跡と古塁）",
         "name": "御峰城",
         "genre": "",
         "category": "城",
@@ -17631,6 +17920,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鴨城",
         "genre": "",
         "category": "城",
@@ -17677,6 +17967,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "木舟城",
         "genre": "",
         "category": "城",
@@ -17860,6 +18151,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "寺家新屋敷館",
         "genre": "",
         "category": "城",
@@ -17888,6 +18180,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "柴田屋館",
         "genre": "",
         "category": "城",
@@ -17933,6 +18226,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "城生城",
         "genre": "",
         "category": "城",
@@ -17964,6 +18258,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "庄ノ城",
         "genre": "",
         "category": "城",
@@ -18104,6 +18399,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "高岡城",
         "genre": "日本100名城",
         "category": "城",
@@ -18181,6 +18477,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "天神山城 (越中国)",
         "genre": "",
         "category": "城",
@@ -18371,6 +18668,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "野尻城 (越中国)",
         "genre": "",
         "category": "城",
@@ -18445,6 +18743,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "日宮城",
         "genre": "",
         "category": "城",
@@ -18501,6 +18800,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "福光城 (越中国)",
         "genre": "",
         "category": "城",
@@ -18555,6 +18855,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "放生津城",
         "genre": "",
         "category": "城",
@@ -18582,6 +18883,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "増山城",
         "genre": "続日本100名城",
         "category": "城",
@@ -18610,6 +18912,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "松根城",
         "genre": "",
         "category": "城",
@@ -18657,6 +18960,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "宮崎城 (越中国)",
         "genre": "",
         "category": "城",
@@ -18712,6 +19016,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "森寺城",
         "genre": "",
         "category": "城",
@@ -18794,6 +19099,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "安田城 (越中国)",
         "genre": "",
         "category": "城",
@@ -18820,6 +19126,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "若栗城 (越中国)",
         "genre": "",
         "category": "城",
@@ -18876,6 +19183,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "穴水城",
         "genre": "",
         "category": "城",
@@ -18905,6 +19213,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡、国指定重要文化財（石川門、三十間長屋、鶴丸倉庫）",
         "name": "金沢城",
         "genre": "日本100名城",
         "category": "城",
@@ -18936,6 +19245,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "切山城",
         "genre": "",
         "category": "城",
@@ -18963,6 +19273,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "小松城",
         "genre": "",
         "category": "城",
@@ -19042,6 +19353,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "末森城 (能登国)",
         "genre": "",
         "category": "城",
@@ -19070,6 +19382,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "石動山城",
         "genre": "",
         "category": "城",
@@ -19094,6 +19407,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡、市指定名勝「旧大聖寺藩邸庭園」、国重要文化財「長流亭」",
         "name": "大聖寺城",
         "genre": "",
         "category": "城",
@@ -19153,6 +19467,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "天堂城",
         "genre": "",
         "category": "城",
@@ -19177,6 +19492,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "鳥越城",
         "genre": "続日本100名城",
         "category": "城",
@@ -19205,6 +19521,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "七尾城",
         "genre": "日本100名城",
         "category": "城",
@@ -19261,6 +19578,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "二曲城",
         "genre": "",
         "category": "城",
@@ -19315,6 +19633,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "松波城",
         "genre": "",
         "category": "城",
@@ -19408,6 +19727,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "大野城 (越前国)",
         "genre": "続日本100名城",
         "category": "城",
@@ -19462,6 +19782,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "小浜城 (若狭国)",
         "genre": "",
         "category": "城",
@@ -19514,6 +19835,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "金ヶ崎城",
         "genre": "",
         "category": "城",
@@ -19541,6 +19863,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "国吉城",
         "genre": "続日本100名城",
         "category": "城",
@@ -19572,6 +19895,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "玄蕃尾城",
         "genre": "続日本100名城",
         "category": "城",
@@ -19601,6 +19925,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "小丸城",
         "genre": "",
         "category": "城",
@@ -19625,6 +19950,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "新善光寺城",
         "genre": "",
         "category": "城",
@@ -19648,6 +19974,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "杣山城",
         "genre": "",
         "category": "城",
@@ -19749,6 +20076,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "後瀬山城",
         "genre": "",
         "category": "城",
@@ -19773,6 +20101,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "疋壇城",
         "genre": "",
         "category": "城",
@@ -19855,6 +20184,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "槇山城",
         "genre": "",
         "category": "城",
@@ -19883,6 +20213,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "松岡館",
         "genre": "",
         "category": "城",
@@ -19908,6 +20239,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "重要文化財（天守）",
         "name": "丸岡城",
         "genre": "日本100名城",
         "category": "城",
@@ -19986,6 +20318,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "一乗谷朝倉氏遺跡",
         "genre": "",
         "category": "城",
@@ -20011,6 +20344,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "岩殿山城",
         "genre": "",
         "category": "城",
@@ -20038,6 +20372,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "上野原城",
         "genre": "",
         "category": "城",
@@ -20065,6 +20400,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "勝沼氏館",
         "genre": "",
         "category": "城",
@@ -20112,6 +20448,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "勝山城 (甲斐国都留郡)",
         "genre": "",
         "category": "城",
@@ -20136,6 +20473,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "甲府城",
         "genre": "日本100名城",
         "category": "城",
@@ -20166,6 +20504,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小山城 (甲斐国)",
         "genre": "",
         "category": "城",
@@ -20219,6 +20558,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国の史跡",
         "name": "新府城",
         "genre": "続日本100名城",
         "category": "城",
@@ -20246,6 +20586,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "躑躅ヶ崎館",
         "genre": "日本100名城",
         "category": "城",
@@ -20319,6 +20660,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "白山城 (甲斐国)",
         "genre": "",
         "category": "城",
@@ -20347,6 +20689,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "真篠砦",
         "genre": "",
         "category": "城",
@@ -20375,6 +20718,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "御坂城",
         "genre": "",
         "category": "城",
@@ -20399,6 +20743,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "谷戸城",
         "genre": "",
         "category": "城",
@@ -20427,6 +20772,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "要害山城",
         "genre": "続日本100名城",
         "category": "城",
@@ -20457,6 +20803,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "連方屋敷",
         "genre": "",
         "category": "城",
@@ -20479,6 +20826,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "青柳城",
         "genre": "",
         "category": "城",
@@ -20503,6 +20851,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "荒砥城",
         "genre": "",
         "category": "城",
@@ -20586,6 +20935,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "飯山城",
         "genre": "",
         "category": "城",
@@ -20610,6 +20960,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "井川館",
         "genre": "",
         "category": "城",
@@ -20637,6 +20988,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "入山城",
         "genre": "",
         "category": "城",
@@ -20664,6 +21016,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "岩尾城 (信濃国)",
         "genre": "",
         "category": "城",
@@ -20693,6 +21046,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "長野県宝（南櫓、北櫓、西櫓）、国指定史跡",
         "name": "上田城",
         "genre": "日本100名城",
         "category": "城",
@@ -20722,6 +21076,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "上ノ平城",
         "genre": "",
         "category": "城",
@@ -20750,6 +21105,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "上ノ山城",
         "genre": "",
         "category": "城",
@@ -20777,6 +21133,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "上原城",
         "genre": "",
         "category": "城",
@@ -20868,6 +21225,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "大井城",
         "genre": "",
         "category": "城",
@@ -20898,6 +21256,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "大草城 (信濃国)",
         "genre": "",
         "category": "城",
@@ -20922,6 +21281,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "大島城",
         "genre": "",
         "category": "城",
@@ -20979,6 +21339,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "麻績城",
         "genre": "",
         "category": "城",
@@ -21060,6 +21421,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "葛尾城",
         "genre": "",
         "category": "城",
@@ -21084,6 +21446,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "鴨ヶ嶽城",
         "genre": "",
         "category": "城",
@@ -21139,6 +21502,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "神之峰城",
         "genre": "",
         "category": "城",
@@ -21167,6 +21531,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "桐原城",
         "genre": "",
         "category": "城",
@@ -21194,6 +21559,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "桑原城",
         "genre": "",
         "category": "城",
@@ -21223,6 +21589,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小岩嶽城",
         "genre": "",
         "category": "城",
@@ -21274,6 +21641,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "重要文化財（大手門、三之門）",
         "name": "小諸城",
         "genre": "日本100名城",
         "category": "城",
@@ -21330,6 +21698,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "真田本城",
         "genre": "",
         "category": "城",
@@ -21457,6 +21826,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "鈴岡城",
         "genre": "",
         "category": "城",
@@ -21481,6 +21851,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "仙当城",
         "genre": "",
         "category": "城",
@@ -21505,6 +21876,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高島城",
         "genre": "続日本100名城",
         "category": "城",
@@ -21534,6 +21906,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "高遠城",
         "genre": "日本100名城",
         "category": "城",
@@ -21562,6 +21935,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "高梨氏館",
         "genre": "",
         "category": "城",
@@ -21619,6 +21993,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "龍岡城",
         "genre": "続日本100名城",
         "category": "城",
@@ -21648,6 +22023,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "知久平城",
         "genre": "",
         "category": "城",
@@ -21672,6 +22048,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "妻籠城",
         "genre": "",
         "category": "城",
@@ -21695,6 +22072,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "戸石城",
         "genre": "",
         "category": "城",
@@ -21726,6 +22104,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "塔原城",
         "genre": "",
         "category": "城",
@@ -21754,6 +22133,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "長窪城",
         "genre": "",
         "category": "城",
@@ -21783,6 +22163,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "名子氏館跡",
         "genre": "",
         "category": "城",
@@ -21805,6 +22186,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "名子城",
         "genre": "",
         "category": "城",
@@ -21832,6 +22214,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "埴原城",
         "genre": "",
         "category": "城",
@@ -21856,6 +22239,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "林城",
         "genre": "",
         "category": "城",
@@ -21887,6 +22271,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "光城",
         "genre": "",
         "category": "城",
@@ -21917,6 +22302,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "福島城 (信濃国)",
         "genre": "",
         "category": "城",
@@ -21945,6 +22331,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "福与城 (松川町)",
         "genre": "",
         "category": "城",
@@ -21969,6 +22356,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "福与城",
         "genre": "",
         "category": "城",
@@ -21997,6 +22385,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "古山城 (信濃国)",
         "genre": "",
         "category": "城",
@@ -22053,6 +22442,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "松尾城 (信濃国伊那郡)",
         "genre": "",
         "category": "城",
@@ -22077,6 +22467,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国宝（天守、乾小天守、渡櫓、辰巳附櫓、月見櫓）、国指定史跡",
         "name": "松本城",
         "genre": "日本100名城",
         "category": "城",
@@ -22132,6 +22523,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "箕輪城 (信濃国)",
         "genre": "",
         "category": "城",
@@ -22213,6 +22605,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "屋代城",
         "genre": "",
         "category": "城",
@@ -22240,6 +22633,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "矢筒城",
         "genre": "",
         "category": "城",
@@ -22270,6 +22664,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "山家城 (信濃国)",
         "genre": "",
         "category": "城",
@@ -22384,6 +22779,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "葛山城 (信濃国)",
         "genre": "",
         "category": "城",
@@ -22438,6 +22834,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "横田城 (信濃国)",
         "genre": "",
         "category": "城",
@@ -22516,6 +22913,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "松代城",
         "genre": "日本100名城",
         "category": "城",
@@ -22626,6 +23024,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "牧之島城",
         "genre": "",
         "category": "城",
@@ -22673,6 +23072,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "相羽城",
         "genre": "",
         "category": "城",
@@ -22728,6 +23128,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "阿木城",
         "genre": "",
         "category": "城",
@@ -22756,6 +23157,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "明知城",
         "genre": "",
         "category": "城",
@@ -22784,6 +23186,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "明智城 (美濃国可児郡)",
         "genre": "",
         "category": "城",
@@ -23010,6 +23413,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "揖斐城",
         "genre": "",
         "category": "城",
@@ -23037,6 +23441,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "今尾城",
         "genre": "",
         "category": "城",
@@ -23090,6 +23495,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "岩村城",
         "genre": "日本100名城",
         "category": "城",
@@ -23147,6 +23553,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "江馬氏下館",
         "genre": "",
         "category": "城",
@@ -23171,6 +23578,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大井城 (美濃国)",
         "genre": "",
         "category": "城",
@@ -23195,6 +23603,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大垣城",
         "genre": "続日本100名城",
         "category": "城",
@@ -23247,6 +23656,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大富館",
         "genre": "",
         "category": "城",
@@ -23269,6 +23679,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大森城 (美濃国)",
         "genre": "",
         "category": "城",
@@ -23293,6 +23704,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "荻町城",
         "genre": "",
         "category": "城",
@@ -23317,6 +23729,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小倉山城 (美濃国)",
         "genre": "",
         "category": "城",
@@ -23427,6 +23840,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "帰雲城",
         "genre": "",
         "category": "城",
@@ -23450,6 +23864,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "加賀野井城",
         "genre": "",
         "category": "城",
@@ -23476,6 +23891,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "加治田城",
         "genre": "",
         "category": "城",
@@ -23506,6 +23922,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "金山城 (美濃国)",
         "genre": "続日本100名城",
         "category": "城",
@@ -23536,6 +23953,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "加納城",
         "genre": "",
         "category": "城",
@@ -23563,6 +23981,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "神岡城",
         "genre": "",
         "category": "城",
@@ -23591,6 +24010,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "傘松城",
         "genre": "",
         "category": "城",
@@ -23618,6 +24038,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "軽海西城",
         "genre": "",
         "category": "城",
@@ -23672,6 +24093,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "北方城",
         "genre": "",
         "category": "城",
@@ -23699,6 +24121,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "岐阜城",
         "genre": "日本100名城",
         "category": "城",
@@ -23730,6 +24153,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡、郡上市有形文化財（模擬天守）",
         "name": "郡上八幡城",
         "genre": "続日本100名城",
         "category": "城",
@@ -23760,6 +24184,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "黒野城",
         "genre": "",
         "category": "城",
@@ -23806,6 +24231,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "小島城 (飛騨国)",
         "genre": "",
         "category": "城",
@@ -23833,6 +24259,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "小鷹利城",
         "genre": "",
         "category": "城",
@@ -23862,6 +24289,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "駒野城",
         "genre": "",
         "category": "城",
@@ -23889,6 +24317,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "猿啄城",
         "genre": "",
         "category": "城",
@@ -23919,6 +24348,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "三仏寺城",
         "genre": "",
         "category": "城",
@@ -23943,6 +24373,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "篠脇城",
         "genre": "",
         "category": "城",
@@ -23970,6 +24401,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "下切館",
         "genre": "",
         "category": "城",
@@ -24061,6 +24493,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "墨俣城",
         "genre": "",
         "category": "城",
@@ -24140,6 +24573,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "曽根城 (美濃国)",
         "genre": "",
         "category": "城",
@@ -24163,6 +24597,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡（大井城跡）",
         "name": "鷹撃谷城",
         "genre": "",
         "category": "城",
@@ -24190,6 +24625,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "高堂城 (飛騨国)",
         "genre": "",
         "category": "城",
@@ -24217,6 +24653,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "高原諏訪城",
         "genre": "",
         "category": "城",
@@ -24272,6 +24709,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "高山城 (飛騨国)",
         "genre": "",
         "category": "城",
@@ -24302,6 +24740,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "竹ヶ鼻城",
         "genre": "",
         "category": "城",
@@ -24352,6 +24791,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "妻木城",
         "genre": "",
         "category": "城",
@@ -24379,6 +24819,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "鶴ヶ城 (美濃国)",
         "genre": "",
         "category": "城",
@@ -24414,6 +24855,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡（江馬氏城館跡）",
         "name": "寺林城 (飛騨市)",
         "genre": "",
         "category": "城",
@@ -24496,6 +24938,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "土城 (飛騨市)",
         "genre": "",
         "category": "城",
@@ -24523,6 +24966,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "苗木城",
         "genre": "続日本100名城",
         "category": "城",
@@ -24578,6 +25022,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鉈尾山城",
         "genre": "",
         "category": "城",
@@ -24606,6 +25051,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "鍋山城",
         "genre": "",
         "category": "城",
@@ -24630,6 +25076,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "根本城 (美濃国)",
         "genre": "",
         "category": "城",
@@ -24656,6 +25103,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "野口城 (飛騨国)",
         "genre": "",
         "category": "城",
@@ -24680,6 +25128,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "萩原諏訪城",
         "genre": "",
         "category": "城",
@@ -24781,6 +25230,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "広瀬城 (飛騨国)",
         "genre": "",
         "category": "城",
@@ -24808,6 +25258,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "福束城",
         "genre": "",
         "category": "城",
@@ -24831,6 +25282,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "古川城 (飛騨国)",
         "genre": "",
         "category": "城",
@@ -24861,6 +25313,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡（江馬氏城館跡）",
         "name": "洞城 (飛騨市)",
         "genre": "",
         "category": "城",
@@ -24888,6 +25341,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "馬籠城",
         "genre": "",
         "category": "城",
@@ -24915,6 +25369,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡（江馬氏城館跡）",
         "name": "政元城",
         "genre": "",
         "category": "城",
@@ -24943,6 +25398,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "増島城",
         "genre": "",
         "category": "城",
@@ -24969,6 +25425,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "松尾山城",
         "genre": "",
         "category": "城",
@@ -25020,6 +25477,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "松倉城 (飛騨国)",
         "genre": "",
         "category": "城",
@@ -25074,6 +25532,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "向小島城",
         "genre": "",
         "category": "城",
@@ -25154,6 +25613,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "八神城",
         "genre": "",
         "category": "城",
@@ -25266,6 +25726,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "朝比奈城",
         "genre": "",
         "category": "城",
@@ -25293,6 +25754,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "朝日山城 (駿河国)",
         "genre": "",
         "category": "城",
@@ -25376,6 +25838,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "天方城",
         "genre": "",
         "category": "城",
@@ -25404,6 +25867,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "井伊谷城",
         "genre": "",
         "category": "城",
@@ -25480,6 +25944,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "宇津山城",
         "genre": "",
         "category": "城",
@@ -25584,6 +26049,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定重要文化財（二の丸御殿）、県指定史跡",
         "name": "掛川城",
         "genre": "日本100名城",
         "category": "城",
@@ -25642,6 +26108,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "勝間田城",
         "genre": "",
         "category": "城",
@@ -25666,6 +26133,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "葛山城 (駿河国)",
         "genre": "",
         "category": "城",
@@ -25717,6 +26185,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "蒲原城",
         "genre": "",
         "category": "城",
@@ -25744,6 +26213,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "久能城",
         "genre": "",
         "category": "城",
@@ -25772,6 +26242,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "久野城 (遠江国)",
         "genre": "",
         "category": "城",
@@ -25822,6 +26293,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "興国寺城",
         "genre": "続日本100名城",
         "category": "城",
@@ -25879,6 +26351,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "小山城 (遠江国)",
         "genre": "",
         "category": "城",
@@ -26010,6 +26483,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "下田城 (伊豆国)",
         "genre": "",
         "category": "城",
@@ -26067,6 +26541,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "諏訪原城",
         "genre": "続日本100名城",
         "category": "城",
@@ -26126,6 +26601,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "高天神城",
         "genre": "続日本100名城",
         "category": "城",
@@ -26154,6 +26630,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高根城 (浜松市)",
         "genre": "",
         "category": "城",
@@ -26208,6 +26685,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "田中城",
         "genre": "",
         "category": "城",
@@ -26260,6 +26738,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "伝堀越御所跡",
         "genre": "",
         "category": "城",
@@ -26365,6 +26844,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "長浜城 (伊豆国)",
         "genre": "",
         "category": "城",
@@ -26415,6 +26895,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "韮山城",
         "genre": "",
         "category": "城",
@@ -26488,6 +26969,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "花倉城",
         "genre": "",
         "category": "城",
@@ -26540,6 +27022,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "浜松城",
         "genre": "続日本100名城",
         "category": "城",
@@ -26641,6 +27124,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "深沢城",
         "genre": "",
         "category": "城",
@@ -26664,6 +27148,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "二俣城",
         "genre": "",
         "category": "城",
@@ -26691,6 +27176,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "堀川城",
         "genre": "",
         "category": "城",
@@ -26750,6 +27236,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "三岳城",
         "genre": "",
         "category": "城",
@@ -26901,6 +27388,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "山中城",
         "genre": "日本100名城",
         "category": "城",
@@ -26925,6 +27413,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "横須賀城",
         "genre": "",
         "category": "城",
@@ -26954,6 +27443,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "横地城",
         "genre": "",
         "category": "城",
@@ -27097,6 +27587,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "安城古城",
         "genre": "",
         "category": "城",
@@ -27123,6 +27614,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "安祥城",
         "genre": "",
         "category": "城",
@@ -27227,6 +27719,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡、国宝（天守）",
         "name": "犬山城",
         "genre": "日本100名城",
         "category": "城",
@@ -27254,6 +27747,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "井上城 (尾張国)",
         "genre": "",
         "category": "城",
@@ -27302,6 +27796,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "岩倉城 (尾張国)",
         "genre": "",
         "category": "城",
@@ -27352,6 +27847,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鯏浦城",
         "genre": "",
         "category": "城",
@@ -27497,6 +27993,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大野城 (尾張国海部郡)",
         "genre": "",
         "category": "城",
@@ -27523,6 +28020,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大野城 (尾張国知多郡)",
         "genre": "",
         "category": "城",
@@ -27600,6 +28098,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "緒川城",
         "genre": "",
         "category": "城",
@@ -27630,6 +28129,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡（「松平氏遺跡」のうちのひとつ）",
         "name": "大給城",
         "genre": "",
         "category": "城",
@@ -27680,6 +28180,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "小口城",
         "genre": "",
         "category": "城",
@@ -27803,6 +28304,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "形原城",
         "genre": "",
         "category": "城",
@@ -27853,6 +28355,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "上ノ郷城",
         "genre": "",
         "category": "城",
@@ -27908,6 +28411,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "亀山城 (三河国)",
         "genre": "",
         "category": "城",
@@ -28083,6 +28587,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "木ノ下城",
         "genre": "",
         "category": "城",
@@ -28131,6 +28636,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "沓掛城",
         "genre": "",
         "category": "城",
@@ -28183,6 +28689,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "黒田城 (尾張国)",
         "genre": "",
         "category": "城",
@@ -28231,6 +28738,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "廣間家の門（市文化財）",
         "name": "小折城",
         "genre": "",
         "category": "城",
@@ -28285,6 +28793,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "坂部城",
         "genre": "",
         "category": "城",
@@ -28315,6 +28824,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "桜城",
         "genre": "",
         "category": "城",
@@ -28343,6 +28853,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "七州城",
         "genre": "",
         "category": "城",
@@ -28445,6 +28956,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "勝幡城",
         "genre": "",
         "category": "城",
@@ -28491,6 +29003,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "田原城 (三河国)",
         "genre": "",
         "category": "城",
@@ -28517,6 +29030,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "田峯城",
         "genre": "",
         "category": "城",
@@ -28546,6 +29060,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "知立城",
         "genre": "",
         "category": "城",
@@ -28626,6 +29141,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡（城跡の一部）",
         "name": "長篠城",
         "genre": "日本100名城",
         "category": "城",
@@ -28654,6 +29170,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "西尾城",
         "genre": "",
         "category": "城",
@@ -28735,6 +29252,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "野田城 (三河国)",
         "genre": "",
         "category": "城",
@@ -28763,6 +29281,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "野府城",
         "genre": "",
         "category": "城",
@@ -28911,6 +29430,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "武節城",
         "genre": "",
         "category": "城",
@@ -28938,6 +29458,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "古宮城",
         "genre": "続日本100名城",
         "category": "城",
@@ -28962,6 +29483,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "本證寺 (安城市)",
         "genre": "",
         "category": "城",
@@ -29008,6 +29530,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "牧野城 (三河国)",
         "genre": "",
         "category": "城",
@@ -29175,6 +29698,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "吉田城 (三河国)",
         "genre": "続日本100名城",
         "category": "城",
@@ -29287,6 +29811,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "小牧山",
         "genre": "続日本100名城",
         "category": "城",
@@ -29314,6 +29839,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "村木砦の戦い",
         "genre": "",
         "category": "城",
@@ -29336,6 +29862,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "大高城",
         "genre": "",
         "category": "城",
@@ -29381,6 +29908,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡、国指定重要文化財（櫓3棟、門3棟）",
         "name": "名古屋城",
         "genre": "日本100名城",
         "category": "城",
@@ -29538,6 +30066,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "重要文化財（仁王門、木造地蔵菩薩立像）",
         "name": "龍泉寺 (名古屋市守山区)",
         "genre": "",
         "category": "城",
@@ -29592,6 +30121,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "岡崎城",
         "genre": "日本100名城",
         "category": "城",
@@ -29639,6 +30169,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "山中城 (三河国)",
         "genre": "",
         "category": "城",
@@ -29669,6 +30200,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "赤木城",
         "genre": "続日本100名城",
         "category": "城",
@@ -29693,6 +30225,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "阿坂城",
         "genre": "",
         "category": "城",
@@ -29772,6 +30305,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "上野城",
         "genre": "日本100名城",
         "category": "城",
@@ -29800,6 +30334,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "曲輪、土塁、空堀、櫓台",
         "name": "上野城 (伊勢国)",
         "genre": "",
         "category": "城",
@@ -29824,6 +30359,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "大河内城",
         "genre": "",
         "category": "城",
@@ -29879,6 +30415,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡（多門櫓）",
         "name": "亀山城 (伊勢国)",
         "genre": "",
         "category": "城",
@@ -29934,6 +30471,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "神戸城",
         "genre": "",
         "category": "城",
@@ -29960,6 +30498,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "霧山城",
         "genre": "続日本100名城",
         "category": "城",
@@ -29988,6 +30527,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "桑名城",
         "genre": "",
         "category": "城",
@@ -30062,6 +30602,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "曽根城 (紀伊国)",
         "genre": "",
         "category": "城",
@@ -30093,6 +30634,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "田丸城",
         "genre": "続日本100名城",
         "category": "城",
@@ -30147,6 +30689,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "津城",
         "genre": "続日本100名城",
         "category": "城",
@@ -30173,6 +30716,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "鳥羽城",
         "genre": "",
         "category": "城",
@@ -30245,6 +30789,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "長島城 (紀伊国)",
         "genre": "",
         "category": "城",
@@ -30297,6 +30842,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "長野城 (伊勢国)",
         "genre": "",
         "category": "城",
@@ -30382,6 +30928,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "浜田城 (伊勢国)",
         "genre": "",
         "category": "城",
@@ -30405,6 +30952,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "福地城",
         "genre": "",
         "category": "城",
@@ -30459,6 +31007,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "松ヶ島城",
         "genre": "",
         "category": "城",
@@ -30487,6 +31036,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "松坂城",
         "genre": "日本100名城",
         "category": "城",
@@ -30543,6 +31093,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "三木城 (紀伊国)",
         "genre": "",
         "category": "城",
@@ -30570,6 +31121,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "茂福城",
         "genre": "",
         "category": "城",
@@ -30643,6 +31195,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "世界遺産",
         "name": "鬼ヶ城",
         "genre": "",
         "category": "城",
@@ -30671,6 +31224,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "安土城",
         "genre": "日本100名城",
         "category": "城",
@@ -30747,6 +31301,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大溝城",
         "genre": "",
         "category": "城",
@@ -30776,6 +31331,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "小谷城",
         "genre": "日本100名城",
         "category": "城",
@@ -30827,6 +31383,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "鎌刃城",
         "genre": "続日本100名城",
         "category": "城",
@@ -30855,6 +31412,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "観音寺城",
         "genre": "日本100名城",
         "category": "城",
@@ -30902,6 +31460,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "坂本城",
         "genre": "",
         "category": "城",
@@ -30949,6 +31508,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "清水山城 (近江国)",
         "genre": "",
         "category": "城",
@@ -30977,6 +31537,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定重要文化財（大手門、北大手門、南大手門※すべて他所へ移築）",
         "name": "膳所城",
         "genre": "",
         "category": "城",
@@ -31005,6 +31566,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "長浜城 (近江国)",
         "genre": "",
         "category": "城",
@@ -31082,6 +31644,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡、国宝（天守等2棟）、国指定重要文化財（櫓、門、馬屋等5棟）",
         "name": "彦根城",
         "genre": "日本100名城",
         "category": "城",
@@ -31167,6 +31730,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "水口岡山城",
         "genre": "",
         "category": "城",
@@ -31199,6 +31763,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "滋賀県史跡",
         "name": "水口城",
         "genre": "",
         "category": "城",
@@ -31516,6 +32081,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "須知城",
         "genre": "",
         "category": "城",
@@ -31605,6 +32171,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "京都府史跡",
         "name": "園部城",
         "genre": "",
         "category": "城",
@@ -31660,6 +32227,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "田辺城 (丹後国)",
         "genre": "",
         "category": "城",
@@ -31769,6 +32337,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国宝（二の丸御殿6棟）、国指定重要文化財（建造物22棟、御殿障壁画954面）、国指定史跡、特別名勝（二の丸御殿庭園） 世界遺産（古都京都の文化財）",
         "name": "二条城",
         "genre": "日本100名城",
         "category": "城",
@@ -31827,6 +32396,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "福知山城",
         "genre": "続日本100名城",
         "category": "城",
@@ -31860,6 +32430,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "伏見桃山陵が宮内庁治定",
         "name": "伏見城",
         "genre": "",
         "category": "城",
@@ -31891,6 +32462,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "船岡山城",
         "genre": "",
         "category": "城",
@@ -32059,6 +32631,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "山崎城 (山城国)",
         "genre": "",
         "category": "城",
@@ -32297,6 +32870,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "芥川山城",
         "genre": "続日本100名城",
         "category": "城",
@@ -32350,6 +32924,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡（日根荘遺跡）",
         "name": "雨山城 (和泉国)",
         "genre": "",
         "category": "城",
@@ -32380,6 +32955,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "飯盛山城",
         "genre": "続日本100名城",
         "category": "城",
@@ -32503,6 +33079,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡、市の文化財",
         "name": "烏帽子形城",
         "genre": "",
         "category": "城",
@@ -32530,6 +33107,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡、国指定重要文化財（櫓、門など）、大阪市指定有形文化財（再建天守）",
         "name": "大坂城",
         "genre": "日本100名城",
         "category": "城",
@@ -32591,6 +33169,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "府指定史跡",
         "name": "大塚城",
         "genre": "",
         "category": "城",
@@ -32716,6 +33295,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "上赤坂城",
         "genre": "",
         "category": "城",
@@ -32747,6 +33327,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "府指定史跡",
         "name": "岸和田城",
         "genre": "続日本100名城",
         "category": "城",
@@ -33029,6 +33610,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "大阪府指定史跡",
         "name": "高槻城",
         "genre": "",
         "category": "城",
@@ -33056,6 +33638,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "古市高屋丘陵が宮内庁治定",
         "name": "高屋城",
         "genre": "",
         "category": "城",
@@ -33154,6 +33737,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "千早城",
         "genre": "日本100名城",
         "category": "城",
@@ -33286,6 +33870,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "原田城",
         "genre": "",
         "category": "城",
@@ -33494,6 +34079,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "本堂（重要文化財）、庭園（名勝）",
         "name": "普門寺 (高槻市)",
         "genre": "",
         "category": "城",
@@ -33535,6 +34121,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "重要文化財（巽櫓、坤櫓）、国指定史跡",
         "name": "明石城",
         "genre": "日本100名城",
         "category": "城",
@@ -33564,6 +34151,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡、名勝（庭園）",
         "name": "赤穂城",
         "genre": "日本100名城",
         "category": "城",
@@ -33647,6 +34235,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "有子山城",
         "genre": "続日本100名城",
         "category": "城",
@@ -33677,6 +34266,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "出石城",
         "genre": "続日本100名城",
         "category": "城",
@@ -33704,6 +34294,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "伊丹城",
         "genre": "",
         "category": "城",
@@ -33884,6 +34475,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "置塩城",
         "genre": "",
         "category": "城",
@@ -33967,6 +34559,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "金鑵城",
         "genre": "",
         "category": "城",
@@ -34101,6 +34694,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "感状山城",
         "genre": "",
         "category": "城",
@@ -34157,6 +34751,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "金山城 (丹波国)",
         "genre": "",
         "category": "城",
@@ -34208,6 +34803,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "黒井城",
         "genre": "続日本100名城",
         "category": "城",
@@ -34314,6 +34910,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "此隅山城",
         "genre": "",
         "category": "城",
@@ -34366,6 +34963,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "坂本城 (播磨国)",
         "genre": "",
         "category": "城",
@@ -34425,6 +35023,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "篠山城",
         "genre": "日本100名城",
         "category": "城",
@@ -34558,6 +35157,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "白旗城",
         "genre": "",
         "category": "城",
@@ -34608,6 +35208,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "洲本城",
         "genre": "続日本100名城",
         "category": "城",
@@ -34719,6 +35320,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "竹田城",
         "genre": "日本100名城",
         "category": "城",
@@ -34834,6 +35436,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "富松城",
         "genre": "",
         "category": "城",
@@ -34948,6 +35551,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡、国宝、世界遺産",
         "name": "姫路城",
         "genre": "日本100名城",
         "category": "城",
@@ -35005,6 +35609,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "明石市指定文化財（長屋門）",
         "name": "船上城",
         "genre": "",
         "category": "城",
@@ -35059,6 +35664,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "三木城",
         "genre": "",
         "category": "城",
@@ -35115,6 +35721,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "八上城",
         "genre": "",
         "category": "城",
@@ -35142,6 +35749,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "八木城 (但馬国)",
         "genre": "",
         "category": "城",
@@ -35173,6 +35781,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "養宜館",
         "genre": "",
         "category": "城",
@@ -35294,6 +35903,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "利神城",
         "genre": "",
         "category": "城",
@@ -35322,6 +35932,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "波賀城史跡公園",
         "genre": "",
         "category": "城",
@@ -35501,6 +36112,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "郡山城 (大和国)",
         "genre": "続日本100名城",
         "category": "城",
@@ -35530,6 +36142,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "信貴山城",
         "genre": "",
         "category": "城",
@@ -35580,6 +36193,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "高取城",
         "genre": "日本100名城",
         "category": "城",
@@ -36053,6 +36667,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "岩室城 (紀伊国)",
         "genre": "",
         "category": "城",
@@ -36081,6 +36696,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "和歌山市指定文化財（大門）",
         "name": "太田城 (紀伊国)",
         "genre": "",
         "category": "城",
@@ -36161,6 +36777,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "亀山城 (紀伊国)",
         "genre": "",
         "category": "城",
@@ -36189,6 +36806,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "衣笠城 (紀伊国)",
         "genre": "",
         "category": "城",
@@ -36217,6 +36835,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "虎城山城",
         "genre": "",
         "category": "城",
@@ -36241,6 +36860,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "雑賀崎台場",
         "genre": "",
         "category": "城",
@@ -36293,6 +36913,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "新宮城",
         "genre": "続日本100名城",
         "category": "城",
@@ -36321,6 +36942,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "高田土居",
         "genre": "",
         "category": "城",
@@ -36376,6 +36998,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鶴ヶ城 (紀伊国)",
         "genre": "",
         "category": "城",
@@ -36404,6 +37027,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "鳥屋城 (紀伊国)",
         "genre": "",
         "category": "城",
@@ -36508,6 +37132,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "平須賀城",
         "genre": "",
         "category": "城",
@@ -36539,6 +37164,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "湯浅城",
         "genre": "",
         "category": "城",
@@ -36563,6 +37189,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定重要文化財（岡口門、続塀）、国指定史跡、国指定名勝（西の丸庭園）、和歌山市文化財（追廻門）",
         "name": "和歌山城",
         "genre": "日本100名城",
         "category": "城",
@@ -36619,6 +37246,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "根来寺",
         "genre": "",
         "category": "城",
@@ -36702,6 +37330,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "羽衣石城",
         "genre": "",
         "category": "城",
@@ -36753,6 +37382,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "江美城",
         "genre": "",
         "category": "城",
@@ -36809,6 +37439,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "尾高城",
         "genre": "",
         "category": "城",
@@ -36919,6 +37550,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "河口城",
         "genre": "",
         "category": "城",
@@ -37059,6 +37691,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "太閤ヶ平",
         "genre": "",
         "category": "城",
@@ -37166,6 +37799,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "鳥取城",
         "genre": "日本100名城",
         "category": "城",
@@ -37271,6 +37905,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "布勢天神山城",
         "genre": "",
         "category": "城",
@@ -37397,6 +38032,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "八橋城",
         "genre": "",
         "category": "城",
@@ -37478,6 +38114,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "米子城",
         "genre": "続日本100名城",
         "category": "城",
@@ -37508,6 +38145,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "若桜鬼ヶ城",
         "genre": "続日本100名城",
         "category": "城",
@@ -37565,6 +38203,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "赤穴城",
         "genre": "",
         "category": "城",
@@ -37652,6 +38291,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "月山富田城",
         "genre": "日本100名城",
         "category": "城",
@@ -37904,6 +38544,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "津和野城",
         "genre": "日本100名城",
         "category": "城",
@@ -37957,6 +38598,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鳶ヶ巣城",
         "genre": "",
         "category": "城",
@@ -37984,6 +38626,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "七尾城 (石見国)",
         "genre": "",
         "category": "城",
@@ -38042,6 +38685,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "浜田城",
         "genre": "続日本100名城",
         "category": "城",
@@ -38098,6 +38742,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "二ツ山城",
         "genre": "",
         "category": "城",
@@ -38149,6 +38794,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国宝（天守1棟）、国指定重要文化財（天守）、国指定史跡",
         "name": "松江城",
         "genre": "日本100名城",
         "category": "城",
@@ -38176,6 +38822,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "丸山城 (石見国)",
         "genre": "",
         "category": "城",
@@ -38224,6 +38871,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "三沢城",
         "genre": "",
         "category": "城",
@@ -38254,6 +38902,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "三刀屋城",
         "genre": "",
         "category": "城",
@@ -38283,6 +38932,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "三宅御土居跡",
         "genre": "",
         "category": "城",
@@ -38308,6 +38958,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡、世界遺産（いずれも「石見銀山遺跡」の一部として）",
         "name": "山吹城",
         "genre": "",
         "category": "城",
@@ -38360,6 +39011,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "岩屋城 (美作国)",
         "genre": "",
         "category": "城",
@@ -38384,6 +39036,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "大廻小廻山城",
         "genre": "",
         "category": "城",
@@ -38409,6 +39062,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定重要文化財（月見櫓、西の丸西手櫓）、国指定史跡",
         "name": "岡山城",
         "genre": "日本100名城",
         "category": "城",
@@ -38492,6 +39146,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "勝山城 (美作国)",
         "genre": "",
         "category": "城",
@@ -38608,6 +39263,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "鬼ノ城",
         "genre": "日本100名城",
         "category": "城",
@@ -38664,6 +39320,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "幸山城",
         "genre": "",
         "category": "城",
@@ -38719,6 +39376,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "猿掛城",
         "genre": "",
         "category": "城",
@@ -38743,6 +39401,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "下津井城",
         "genre": "",
         "category": "城",
@@ -38771,6 +39430,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高越城",
         "genre": "",
         "category": "城",
@@ -38851,6 +39511,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "高松城 (備中国)",
         "genre": "続日本100名城",
         "category": "城",
@@ -38901,6 +39562,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "茶臼山城 (備前国)",
         "genre": "",
         "category": "城",
@@ -38925,6 +39587,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "常山城",
         "genre": "",
         "category": "城",
@@ -38949,6 +39612,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "津山城",
         "genre": "日本100名城",
         "category": "城",
@@ -38976,6 +39640,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "天神山城 (備前国)",
         "genre": "",
         "category": "城",
@@ -39000,6 +39665,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "砥石城",
         "genre": "",
         "category": "城",
@@ -39058,6 +39724,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "撫川城",
         "genre": "",
         "category": "城",
@@ -39118,6 +39785,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定重要文化財（天守、二重櫓、土塀）、国指定史跡",
         "name": "備中松山城",
         "genre": "日本100名城",
         "category": "城",
@@ -39145,6 +39813,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "福山城 (備中国)",
         "genre": "",
         "category": "城",
@@ -39169,6 +39838,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "三石城",
         "genre": "",
         "category": "城",
@@ -39193,6 +39863,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "三星城",
         "genre": "",
         "category": "城",
@@ -39290,6 +39961,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "小倉山城 (安芸国)",
         "genre": "",
         "category": "城",
@@ -39346,6 +40018,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "鏡山城",
         "genre": "",
         "category": "城",
@@ -39373,6 +40046,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "頭崎城",
         "genre": "",
         "category": "城",
@@ -39397,6 +40071,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "桂城 (安芸国)",
         "genre": "",
         "category": "城",
@@ -39426,6 +40101,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "亀居城",
         "genre": "",
         "category": "城",
@@ -39515,6 +40191,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡、国指定名勝",
         "name": "吉川元春館",
         "genre": "",
         "category": "城",
@@ -39539,6 +40216,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "木村城",
         "genre": "",
         "category": "城",
@@ -39620,6 +40298,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "五龍城",
         "genre": "",
         "category": "城",
@@ -39644,6 +40323,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "桜尾城",
         "genre": "",
         "category": "城",
@@ -39671,6 +40351,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "白山城 (安芸国)",
         "genre": "",
         "category": "城",
@@ -39695,6 +40376,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "鈴尾城",
         "genre": "",
         "category": "城",
@@ -39722,6 +40404,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "駿河丸城",
         "genre": "",
         "category": "城",
@@ -39751,6 +40434,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "高杉城",
         "genre": "",
         "category": "城",
@@ -39780,6 +40464,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "高山城 (安芸国)",
         "genre": "",
         "category": "城",
@@ -39809,6 +40494,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "多治比猿掛城",
         "genre": "",
         "category": "城",
@@ -39862,6 +40548,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "槌山城",
         "genre": "",
         "category": "城",
@@ -39890,6 +40577,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鞆城",
         "genre": "",
         "category": "城",
@@ -39917,6 +40605,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "南天山城",
         "genre": "",
         "category": "城",
@@ -39945,6 +40634,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "新高山城",
         "genre": "続日本100名城",
         "category": "城",
@@ -40027,6 +40717,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "日野山城",
         "genre": "",
         "category": "城",
@@ -40056,6 +40747,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定重要文化財（伏見櫓、筋鉄御門）、国指定史跡、福山市重要文化財(鐘楼）",
         "name": "福山城 (備後国)",
         "genre": "日本100名城",
         "category": "城",
@@ -40132,6 +40824,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "御薗宇城",
         "genre": "",
         "category": "城",
@@ -40183,6 +40876,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "三原城",
         "genre": "続日本100名城",
         "category": "城",
@@ -40210,6 +40904,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国の特別史跡（厳島）、特別名勝（厳島）",
         "name": "宮尾城",
         "genre": "",
         "category": "城",
@@ -40240,6 +40935,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "吉田郡山城",
         "genre": "日本100名城",
         "category": "城",
@@ -40335,6 +41031,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "広島城",
         "genre": "日本100名城",
         "category": "城",
@@ -40401,6 +41098,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "佐東銀山城",
         "genre": "",
         "category": "城",
@@ -40429,6 +41127,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "三入高松城",
         "genre": "",
         "category": "城",
@@ -40557,6 +41256,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "荒滝山城",
         "genre": "",
         "category": "城",
@@ -40584,6 +41284,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "石城山神籠石",
         "genre": "",
         "category": "城",
@@ -40635,6 +41336,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "大内氏館",
         "genre": "続日本100名城",
         "category": "城",
@@ -40745,6 +41447,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "高嶺城",
         "genre": "続日本100名城",
         "category": "城",
@@ -40803,6 +41506,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "信田ノ丸城",
         "genre": "",
         "category": "城",
@@ -40831,6 +41535,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "霜降城",
         "genre": "",
         "category": "城",
@@ -40861,6 +41566,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定重要文化財（厚狭毛利家長屋）、国指定史跡",
         "name": "萩城",
         "genre": "日本100名城",
         "category": "城",
@@ -40916,6 +41622,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "秋月城 (阿波国)",
         "genre": "",
         "category": "城",
@@ -40939,6 +41646,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "一宮城 (阿波国)",
         "genre": "続日本100名城",
         "category": "城",
@@ -41014,6 +41722,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "上桜城",
         "genre": "",
         "category": "城",
@@ -41155,6 +41864,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "海部城",
         "genre": "",
         "category": "城",
@@ -41184,6 +41894,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "川島城",
         "genre": "",
         "category": "城",
@@ -41208,6 +41919,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "木津城",
         "genre": "",
         "category": "城",
@@ -41362,6 +42074,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "勝瑞城",
         "genre": "続日本100名城",
         "category": "城",
@@ -41391,6 +42104,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "田尾城",
         "genre": "",
         "category": "城",
@@ -41419,6 +42133,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡、国指定名勝（表御殿庭園）",
         "name": "徳島城",
         "genre": "日本100名城",
         "category": "城",
@@ -41447,6 +42162,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "土佐泊城",
         "genre": "",
         "category": "城",
@@ -41652,6 +42368,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "撫養城",
         "genre": "",
         "category": "城",
@@ -41679,6 +42396,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "八石城",
         "genre": "",
         "category": "城",
@@ -41758,6 +42476,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "麻城",
         "genre": "",
         "category": "城",
@@ -41782,6 +42501,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "天霧城",
         "genre": "",
         "category": "城",
@@ -41810,6 +42530,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "勝賀城",
         "genre": "",
         "category": "城",
@@ -41834,6 +42555,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "城山城 (讃岐国)",
         "genre": "",
         "category": "城",
@@ -41858,6 +42580,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "十河城",
         "genre": "",
         "category": "城",
@@ -41886,6 +42609,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定重要文化財（北の丸月見櫓、水手御門、渡櫓、旧東の丸艮櫓）、国指定史跡",
         "name": "高松城 (讃岐国)",
         "genre": "日本100名城",
         "category": "城",
@@ -41987,6 +42711,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "引田城",
         "genre": "続日本100名城",
         "category": "城",
@@ -42011,6 +42736,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "昼寝城",
         "genre": "",
         "category": "城",
@@ -42063,6 +42789,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "重要文化財（天守、大手一の門、大手二の門）、国指定史跡",
         "name": "丸亀城",
         "genre": "日本100名城",
         "category": "城",
@@ -42120,6 +42847,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "屋嶋城",
         "genre": "",
         "category": "城",
@@ -42147,6 +42875,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "星ヶ城山",
         "genre": "",
         "category": "城",
@@ -42174,6 +42903,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "甘崎城",
         "genre": "",
         "category": "城",
@@ -42203,6 +42933,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "犬尾城 (愛媛県)",
         "genre": "",
         "category": "城",
@@ -42230,6 +42961,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "今治城",
         "genre": "日本100名城",
         "category": "城",
@@ -42257,6 +42989,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定重要文化財（天守）、国指定史跡、宇和島市文化財（上り立ち門）",
         "name": "宇和島城",
         "genre": "日本100名城",
         "category": "城",
@@ -42288,6 +43021,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "永納山城",
         "genre": "",
         "category": "城",
@@ -42312,6 +43046,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定重要文化財（台所櫓、南隅櫓、高欄櫓、苧綿櫓）、県指定史跡",
         "name": "大洲城",
         "genre": "日本100名城",
         "category": "城",
@@ -42368,6 +43103,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "大森城 (伊予国南宇和郡)",
         "genre": "",
         "category": "城",
@@ -42416,6 +43152,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "河後森城",
         "genre": "続日本100名城",
         "category": "城",
@@ -42469,6 +43206,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "金子城",
         "genre": "",
         "category": "城",
@@ -42497,6 +43235,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "川之江城",
         "genre": "",
         "category": "城",
@@ -42653,6 +43392,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "石城 (伊予国)",
         "genre": "",
         "category": "城",
@@ -42758,6 +43498,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "常盤城",
         "genre": "",
         "category": "城",
@@ -42789,6 +43530,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "萩森城",
         "genre": "",
         "category": "城",
@@ -42813,6 +43555,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "法華津本城",
         "genre": "",
         "category": "城",
@@ -42839,6 +43582,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定重要文化財（大天守、野原櫓、乾櫓、隠門続櫓など櫓6棟、戸無門、隠門、紫竹門、一ノ門など門7棟、筋鉄門東塀など塀7棟）、国登録有形文化財（筒井門、続櫓）",
         "name": "松山城",
         "genre": "日本100名城",
         "category": "城",
@@ -42921,6 +43665,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "湯築城",
         "genre": "日本100名城",
         "category": "城",
@@ -42949,6 +43694,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "竜ヶ森城",
         "genre": "",
         "category": "城",
@@ -42976,6 +43722,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "能島城",
         "genre": "続日本100名城",
         "category": "城",
@@ -43003,6 +43750,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "安芸城",
         "genre": "",
         "category": "城",
@@ -43032,6 +43780,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "朝倉城 (土佐国)",
         "genre": "",
         "category": "城",
@@ -43059,6 +43808,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "浦戸城",
         "genre": "",
         "category": "城",
@@ -43083,6 +43833,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "岡豊城",
         "genre": "続日本100名城",
         "category": "城",
@@ -43107,6 +43858,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "吉良城",
         "genre": "",
         "category": "城",
@@ -43135,6 +43887,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "楠目城",
         "genre": "",
         "category": "城",
@@ -43189,6 +43942,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定重要文化財（天守など15棟）、国指定史跡",
         "name": "高知城",
         "genre": "日本100名城",
         "category": "城",
@@ -43246,6 +44000,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "宿毛城",
         "genre": "",
         "category": "城",
@@ -43302,6 +44057,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "蓮池城 (土佐国)",
         "genre": "",
         "category": "城",
@@ -43326,6 +44082,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "姫野々城",
         "genre": "",
         "category": "城",
@@ -43354,6 +44111,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "本山城 (土佐国)",
         "genre": "",
         "category": "城",
@@ -43401,6 +44159,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "秋月城",
         "genre": "",
         "category": "城",
@@ -43552,6 +44311,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "鹿毛馬神籠石",
         "genre": "",
         "category": "城",
@@ -43599,6 +44359,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "基肄城",
         "genre": "続日本100名城",
         "category": "城",
@@ -43627,6 +44388,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "福岡県文化財",
         "name": "久留米城",
         "genre": "続日本100名城",
         "category": "城",
@@ -43709,6 +44471,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "御所ヶ谷神籠石",
         "genre": "",
         "category": "城",
@@ -43791,6 +44554,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鷹尾城 (筑後国)",
         "genre": "",
         "category": "城",
@@ -44080,6 +44844,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "猫尾城",
         "genre": "",
         "category": "城",
@@ -44188,6 +44953,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定重要文化財（多聞櫓、二の丸南隅櫓）、国指定史跡、福岡県文化財（潮見櫓、大手門、祈念櫓、母里太兵衛邸長屋門）、福岡市文化財（名島門）",
         "name": "福岡城",
         "genre": "日本100名城",
         "category": "城",
@@ -44243,6 +45009,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "発心城",
         "genre": "",
         "category": "城",
@@ -44299,6 +45066,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "苅田町指定遺跡",
         "name": "松山城 (豊前国)",
         "genre": "",
         "category": "城",
@@ -44328,6 +45096,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "水城",
         "genre": "続日本100名城",
         "category": "城",
@@ -44432,6 +45201,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "柳川城",
         "genre": "",
         "category": "城",
@@ -44571,6 +45341,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "雷山城",
         "genre": "",
         "category": "城",
@@ -44594,6 +45365,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "大宰府",
         "genre": "",
         "category": "城",
@@ -44669,6 +45441,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "姉川城",
         "genre": "",
         "category": "城",
@@ -44766,6 +45539,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "おつぼ山城",
         "genre": "",
         "category": "城",
@@ -44789,6 +45563,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "帯隈山城",
         "genre": "",
         "category": "城",
@@ -44841,6 +45616,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "佐賀県重要文化財（大手門、赤門）",
         "name": "鹿島城 (肥前国)",
         "genre": "",
         "category": "城",
@@ -44868,6 +45644,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡（勝尾城筑紫氏遺跡の一部）",
         "name": "勝尾城",
         "genre": "",
         "category": "城",
@@ -44927,6 +45704,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "岸岳城",
         "genre": "",
         "category": "城",
@@ -44985,6 +45763,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定重要文化財（鯱の門及び続櫓）、県指定史跡、佐賀市重要文化財（御座の間）",
         "name": "佐賀城",
         "genre": "日本100名城",
         "category": "城",
@@ -45062,6 +45841,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "獅子ケ城",
         "genre": "",
         "category": "城",
@@ -45215,6 +45995,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡（名護屋城跡並陣跡）",
         "name": "名護屋城",
         "genre": "日本100名城",
         "category": "城",
@@ -45449,6 +46230,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "吉野ヶ里遺跡",
         "genre": "日本100名城",
         "category": "城",
@@ -45491,6 +46273,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡、国指定名勝（五島氏庭園）",
         "name": "石田城",
         "genre": "続日本100名城",
         "category": "城",
@@ -45517,6 +46300,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "梶谷城",
         "genre": "",
         "category": "城",
@@ -45544,6 +46328,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "勝本城",
         "genre": "",
         "category": "城",
@@ -45574,6 +46359,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡（遺構）、国指定名勝（庭園）",
         "name": "金石城",
         "genre": "",
         "category": "城",
@@ -45601,6 +46387,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "金田城",
         "genre": "続日本100名城",
         "category": "城",
@@ -45652,6 +46439,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "玖島城",
         "genre": "",
         "category": "城",
@@ -45698,6 +46486,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "島原城",
         "genre": "日本100名城",
         "category": "城",
@@ -45725,6 +46514,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "清水山城 (対馬国)",
         "genre": "",
         "category": "城",
@@ -45776,6 +46566,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "原城",
         "genre": "続日本100名城",
         "category": "城",
@@ -45807,6 +46598,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "日野江城",
         "genre": "",
         "category": "城",
@@ -45910,6 +46702,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "愛藤寺城",
         "genre": "",
         "category": "城",
@@ -45963,6 +46756,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "岩尾城 (肥後国)",
         "genre": "",
         "category": "城",
@@ -46016,6 +46810,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "宇土城",
         "genre": "",
         "category": "城",
@@ -46045,6 +46840,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "堅志田城",
         "genre": "",
         "category": "城",
@@ -46073,6 +46869,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "菊池城",
         "genre": "",
         "category": "城",
@@ -46131,6 +46928,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "鞠智城",
         "genre": "続日本100名城",
         "category": "城",
@@ -46182,6 +46980,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "隈部館",
         "genre": "",
         "category": "城",
@@ -46209,6 +47008,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡、国指定重要文化財（櫓11棟、門1棟、塀1棟）",
         "name": "熊本城",
         "genre": "日本100名城",
         "category": "城",
@@ -46244,6 +47044,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "佐敷城 (肥後国)",
         "genre": "",
         "category": "城",
@@ -46296,6 +47097,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "城村城",
         "genre": "",
         "category": "城",
@@ -46322,6 +47124,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "竹迫城",
         "genre": "",
         "category": "城",
@@ -46377,6 +47180,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "田中城 (肥後国)",
         "genre": "",
         "category": "城",
@@ -46406,6 +47210,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "富岡城",
         "genre": "",
         "category": "城",
@@ -46456,6 +47261,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "鍋城",
         "genre": "",
         "category": "城",
@@ -46538,6 +47344,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "人吉城",
         "genre": "日本100名城",
         "category": "城",
@@ -46593,6 +47400,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "古麓城",
         "genre": "",
         "category": "城",
@@ -46699,6 +47507,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "麦島城",
         "genre": "",
         "category": "城",
@@ -46726,6 +47535,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "八代城",
         "genre": "続日本100名城",
         "category": "城",
@@ -46783,6 +47593,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "上原館",
         "genre": "",
         "category": "城",
@@ -46811,6 +47622,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "臼杵城",
         "genre": "続日本100名城",
         "category": "城",
@@ -46842,6 +47654,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "大友氏遺跡",
         "genre": "",
         "category": "城",
@@ -46868,6 +47681,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "岡城 (豊後国)",
         "genre": "日本100名城",
         "category": "城",
@@ -46927,6 +47741,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡、大分県有形文化財（三の丸御殿櫓門）",
         "name": "佐伯城",
         "genre": "続日本100名城",
         "category": "城",
@@ -46986,6 +47801,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "角牟礼城",
         "genre": "続日本100名城",
         "category": "城",
@@ -47036,6 +47852,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "中津城",
         "genre": "続日本100名城",
         "category": "城",
@@ -47065,6 +47882,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "永山城",
         "genre": "",
         "category": "城",
@@ -47096,6 +47914,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "日出城",
         "genre": "",
         "category": "城",
@@ -47151,6 +47970,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "大分県文化財（人質櫓、宗門櫓）",
         "name": "府内城",
         "genre": "日本100名城",
         "category": "城",
@@ -47179,6 +47999,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "天ヶ城",
         "genre": "",
         "category": "城",
@@ -47235,6 +48056,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "飯野城",
         "genre": "",
         "category": "城",
@@ -47364,6 +48186,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "梅北城",
         "genre": "",
         "category": "城",
@@ -47482,6 +48305,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "飫肥城",
         "genre": "日本100名城",
         "category": "城",
@@ -47509,6 +48333,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "加久藤城",
         "genre": "",
         "category": "城",
@@ -47565,6 +48390,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "月山日和城",
         "genre": "",
         "category": "城",
@@ -47592,6 +48418,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "紙屋城",
         "genre": "",
         "category": "城",
@@ -47642,6 +48469,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "清武城",
         "genre": "",
         "category": "城",
@@ -47713,6 +48541,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小林城",
         "genre": "",
         "category": "城",
@@ -47743,6 +48572,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "佐土原城",
         "genre": "続日本100名城",
         "category": "城",
@@ -47875,6 +48705,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "高城 (新納院)",
         "genre": "",
         "category": "城",
@@ -47981,6 +48812,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "都於郡城",
         "genre": "",
         "category": "城",
@@ -48121,6 +48953,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡（井戸）",
         "name": "野尻城 (日向国)",
         "genre": "",
         "category": "城",
@@ -48145,6 +48978,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "延岡城",
         "genre": "続日本100名城",
         "category": "城",
@@ -48245,6 +49079,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "都之城",
         "genre": "",
         "category": "城",
@@ -48304,6 +49139,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "赤木名城",
         "genre": "",
         "category": "城",
@@ -48325,6 +49161,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "伊作城",
         "genre": "",
         "category": "城",
@@ -48353,6 +49190,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "一宇治城",
         "genre": "",
         "category": "城",
@@ -48382,6 +49220,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "岩剣城",
         "genre": "",
         "category": "城",
@@ -48463,6 +49302,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "鹿児島城",
         "genre": "日本100名城",
         "category": "城",
@@ -48491,6 +49331,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "加治木城",
         "genre": "",
         "category": "城",
@@ -48518,6 +49359,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "清色城",
         "genre": "",
         "category": "城",
@@ -48542,6 +49384,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "建昌城",
         "genre": "",
         "category": "城",
@@ -48569,6 +49412,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "高山城 (大隅国)",
         "genre": "",
         "category": "城",
@@ -48626,6 +49470,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "志布志城",
         "genre": "続日本100名城",
         "category": "城",
@@ -48714,6 +49559,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "知覧城",
         "genre": "続日本100名城",
         "category": "城",
@@ -48769,6 +49615,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "富隈城",
         "genre": "",
         "category": "城",
@@ -48818,6 +49665,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "平山城 (大隅国)",
         "genre": "",
         "category": "城",
@@ -48846,6 +49694,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "与論城",
         "genre": "",
         "category": "城",
@@ -48885,6 +49734,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "安慶名城",
         "genre": "",
         "category": "城",
@@ -48932,6 +49782,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "伊是名城",
         "genre": "",
         "category": "城",
@@ -48954,6 +49805,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "糸数城",
         "genre": "",
         "category": "城",
@@ -48978,6 +49830,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "伊波城",
         "genre": "",
         "category": "城",
@@ -49005,6 +49858,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "宇江城城",
         "genre": "",
         "category": "城",
@@ -49031,6 +49885,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "浦添城",
         "genre": "",
         "category": "城",
@@ -49055,6 +49910,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "垣花城",
         "genre": "",
         "category": "城",
@@ -49083,6 +49939,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡、世界遺産（琉球王国のグスク及び関連遺産群）",
         "name": "勝連城",
         "genre": "続日本100名城",
         "category": "城",
@@ -49157,6 +50014,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "具志川城 (糸満市)",
         "genre": "",
         "category": "城",
@@ -49212,6 +50070,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡、世界遺産（琉球王国のグスク及び関連遺産群）",
         "name": "座喜味城",
         "genre": "続日本100名城",
         "category": "城",
@@ -49239,6 +50098,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "島添大里城",
         "genre": "",
         "category": "城",
@@ -49267,6 +50127,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "下田原城",
         "genre": "",
         "category": "城",
@@ -49292,6 +50153,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "世界遺産（琉球王国のグスク及び関連遺産群）、国指定史跡",
         "name": "首里城",
         "genre": "日本100名城",
         "category": "城",
@@ -49321,6 +50183,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "玉城城",
         "genre": "",
         "category": "城",
@@ -49350,6 +50213,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "知念城",
         "genre": "",
         "category": "城",
@@ -49424,6 +50288,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡、世界遺産（琉球王国のグスク及び関連遺産群）",
         "name": "中城城",
         "genre": "日本100名城",
         "category": "城",
@@ -49451,6 +50316,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡、世界遺産（琉球王国のグスク及び関連遺産群）",
         "name": "今帰仁城",
         "genre": "日本100名城",
         "category": "城",
@@ -49507,6 +50373,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "南山城 (琉球国)",
         "genre": "",
         "category": "城",
@@ -49585,6 +50452,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "山田城 (琉球国)",
         "genre": "",
         "category": "城",
@@ -49637,6 +50505,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "設楽城跡",
         "genre": "",
         "category": "城",
@@ -49688,6 +50557,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "塞之神城址",
         "genre": "",
         "category": "城",
@@ -49716,6 +50586,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "宇利城跡",
         "genre": "",
         "category": "城",
@@ -49770,6 +50641,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "白石城址",
         "genre": "",
         "category": "城",
@@ -49897,6 +50769,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "松平城",
         "genre": "",
         "category": "城",
@@ -49926,6 +50799,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大平城",
         "genre": "",
         "category": "城",
@@ -49953,6 +50827,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "千頭峯城跡",
         "genre": "",
         "category": "城",
@@ -49977,6 +50852,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "村田城",
         "genre": "",
         "category": "城",
@@ -50004,6 +50880,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "節黒城",
         "genre": "",
         "category": "城",
@@ -50028,6 +50905,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "大井田城",
         "genre": "",
         "category": "城",
@@ -50052,6 +50930,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "小幡城",
         "genre": "",
         "category": "城",
@@ -50164,6 +51043,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "大松山城跡",
         "genre": "",
         "category": "城",
@@ -50296,6 +51176,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "中新田城跡",
         "genre": "",
         "category": "城",
@@ -50341,6 +51222,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "岩略寺城跡",
         "genre": "",
         "category": "城",
@@ -50368,6 +51250,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "柿本城",
         "genre": "",
         "category": "城",
@@ -50421,6 +51304,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "清水城址",
         "genre": "",
         "category": "城",
@@ -50496,6 +51380,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡、国名勝",
         "name": "伊祖城跡",
         "genre": "",
         "category": "城",
@@ -50627,6 +51512,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "若山城跡",
         "genre": "",
         "category": "城",
@@ -50655,6 +51541,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "矢島城址",
         "genre": "",
         "category": "城",
@@ -50681,6 +51568,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "登武那覇城跡",
         "genre": "",
         "category": "城",
@@ -50794,6 +51682,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "犬居城址",
         "genre": "",
         "category": "城",
@@ -50897,6 +51786,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "北方城址",
         "genre": "",
         "category": "城",
@@ -51047,6 +51937,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "和田山城跡",
         "genre": "",
         "category": "城",
@@ -51139,6 +52030,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "笹岡城址",
         "genre": "",
         "category": "城",
@@ -51193,6 +52085,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "羽津城",
         "genre": "",
         "category": "城",
@@ -51323,6 +52216,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "小里城山城跡",
         "genre": "",
         "category": "城",
@@ -51352,6 +52246,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "滝堺城跡",
         "genre": "",
         "category": "城",
@@ -51394,6 +52289,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "森部城跡",
         "genre": "",
         "category": "城",
@@ -51443,6 +52339,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "郷六城跡",
         "genre": "",
         "category": "城",
@@ -51491,6 +52388,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "佐敷上グスク",
         "genre": "",
         "category": "城",
@@ -51576,6 +52474,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "額田城跡",
         "genre": "",
         "category": "城",
@@ -51624,6 +52523,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "那珂西城跡",
         "genre": "",
         "category": "城",
@@ -51702,6 +52602,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "孫根城跡",
         "genre": "",
         "category": "城",
@@ -51726,6 +52627,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "大山城跡",
         "genre": "",
         "category": "城",
@@ -51852,6 +52754,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "瓜連城跡",
         "genre": "",
         "category": "城",
@@ -51963,6 +52866,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "市場城址",
         "genre": "",
         "category": "城",
@@ -52019,6 +52923,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "飯沼城跡",
         "genre": "",
         "category": "城",
@@ -52238,6 +53143,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "伊治城跡",
         "genre": "",
         "category": "城",
@@ -52413,6 +53319,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "久玉城跡",
         "genre": "",
         "category": "城",
@@ -52437,6 +53344,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "林小城跡",
         "genre": "",
         "category": "城",
@@ -52465,6 +53373,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "棚底城跡",
         "genre": "",
         "category": "城",
@@ -52489,6 +53398,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "栖本城跡",
         "genre": "",
         "category": "城",
@@ -52669,6 +53579,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "社山城跡",
         "genre": "",
         "category": "城",
@@ -52697,6 +53608,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "比丘尼城趾",
         "genre": "",
         "category": "城",
@@ -53152,6 +54064,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "狐落城跡",
         "genre": "",
         "category": "城",
@@ -53207,6 +54120,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "出浦城跡",
         "genre": "",
         "category": "城",
@@ -53260,6 +54174,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "姫城跡",
         "genre": "",
         "category": "城",
@@ -53428,6 +54343,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "葛籠城跡",
         "genre": "",
         "category": "城",
@@ -53455,6 +54371,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "鏡城跡",
         "genre": "",
         "category": "城",
@@ -53482,6 +54399,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "鬼ヶ城跡",
         "genre": "",
         "category": "城",
@@ -53701,6 +54619,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "船越グスク",
         "genre": "",
         "category": "城",
@@ -53745,6 +54664,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "千福城趾",
         "genre": "",
         "category": "城",
@@ -53844,6 +54764,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "山崎山城跡",
         "genre": "",
         "category": "城",
@@ -53900,6 +54821,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鷹取城跡",
         "genre": "",
         "category": "城",
@@ -53963,6 +54885,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "穆佐城跡",
         "genre": "",
         "category": "城",
@@ -54058,6 +54981,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定",
         "name": "高久城跡",
         "genre": "",
         "category": "城",
@@ -54532,6 +55456,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "ポンモイチャシ跡",
         "genre": "",
         "category": "城",
@@ -54914,6 +55839,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "塩貝城跡（大戸）",
         "genre": "",
         "category": "城",
@@ -55249,6 +56175,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "南部藩モロラン陣屋",
         "genre": "",
         "category": "城",
@@ -55276,6 +56203,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定名勝ピリカノカ",
         "name": "カムイチャシ",
         "genre": "",
         "category": "城",
@@ -55301,6 +56229,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡、道指定史跡",
         "name": "シベチャリチャシ",
         "genre": "",
         "category": "城",
@@ -55328,6 +56257,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "ハルトルチャランケチャシ",
         "genre": "",
         "category": "城",
@@ -55353,6 +56283,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "南部藩ヲシャマンベ陣屋",
         "genre": "",
         "category": "城",
@@ -55404,6 +56335,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "チャルコロフィナチャシ",
         "genre": "",
         "category": "城",
@@ -55455,6 +56387,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "桂ヶ岡チャシ",
         "genre": "",
         "category": "城",
@@ -55484,6 +56417,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "花沢館",
         "genre": "",
         "category": "城",
@@ -55512,6 +56446,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "茂別館",
         "genre": "",
         "category": "城",
@@ -55538,6 +56473,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "洲崎館",
         "genre": "",
         "category": "城",
@@ -55563,6 +56499,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "南部藩砂原陣屋",
         "genre": "",
         "category": "城",
@@ -55589,6 +56526,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "道指定史跡",
         "name": "徳山館",
         "genre": "",
         "category": "城",
@@ -55615,6 +56553,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡、道指定史跡",
         "name": "ユクエピラチャシ",
         "genre": "",
         "category": "城",
@@ -55643,6 +56582,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "ホイナシリチャシ",
         "genre": "",
         "category": "城",
@@ -55688,6 +56628,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "メナチャシ",
         "genre": "",
         "category": "城",
@@ -55714,6 +56655,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "道指定史跡（神居古潭竪穴住居跡として）",
         "name": "神居古潭チャシ",
         "genre": "",
         "category": "城",
@@ -55736,6 +56678,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "オチリシチャシ",
         "genre": "",
         "category": "城",
@@ -55805,6 +56748,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "荘内藩ハママシケ陣屋",
         "genre": "",
         "category": "城",
@@ -55832,6 +56776,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "オタフンベチャシ",
         "genre": "",
         "category": "城",
@@ -55854,6 +56799,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "タブ山チャシ",
         "genre": "",
         "category": "城",
@@ -55876,6 +56822,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "仙台藩トカチ陣屋",
         "genre": "",
         "category": "城",
@@ -55901,6 +56848,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "ルイオピラチャシ",
         "genre": "",
         "category": "城",
@@ -56030,6 +56978,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "田舎館城",
         "genre": "",
         "category": "城",
@@ -56165,6 +57114,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "中里城",
         "genre": "",
         "category": "城",
@@ -56353,6 +57303,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "土沢城",
         "genre": "",
         "category": "城",
@@ -56435,6 +57386,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "唐梅館",
         "genre": "",
         "category": "城",
@@ -56462,6 +57414,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "大林城",
         "genre": "",
         "category": "城",
@@ -56494,6 +57447,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "金ヶ崎城",
         "genre": "",
         "category": "城",
@@ -56523,6 +57477,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "毒沢城",
         "genre": "",
         "category": "城",
@@ -56676,6 +57631,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "山吹城",
         "genre": "",
         "category": "城",
@@ -56726,6 +57682,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "姫松館",
         "genre": "",
         "category": "城",
@@ -56806,6 +57763,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "愛宕山城",
         "genre": "",
         "category": "城",
@@ -56886,6 +57844,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "真坂館",
         "genre": "",
         "category": "城",
@@ -56970,6 +57929,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鶴丸城",
         "genre": "",
         "category": "城",
@@ -57102,6 +58062,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定文化財",
         "name": "湯原城",
         "genre": "",
         "category": "城",
@@ -57243,6 +58204,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "名生城",
         "genre": "",
         "category": "城",
@@ -57349,6 +58311,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡（金沢柵として）",
         "name": "金澤城",
         "genre": "",
         "category": "城",
@@ -57429,6 +58392,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "大館",
         "genre": "",
         "category": "城",
@@ -57453,6 +58417,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "茶臼館",
         "genre": "",
         "category": "城",
@@ -57480,6 +58445,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "白岩城",
         "genre": "",
         "category": "城",
@@ -57504,6 +58470,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "門屋城",
         "genre": "",
         "category": "城",
@@ -57528,6 +58495,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "豊島館",
         "genre": "",
         "category": "城",
@@ -57638,6 +58606,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "古堀田城",
         "genre": "",
         "category": "城",
@@ -57666,6 +58635,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "西馬音内城",
         "genre": "",
         "category": "城",
@@ -57693,6 +58663,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "根城館",
         "genre": "",
         "category": "城",
@@ -57818,6 +58789,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "湯沢城",
         "genre": "",
         "category": "城",
@@ -58295,6 +59267,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "新田目城",
         "genre": "",
         "category": "城",
@@ -58318,6 +59291,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "藤島城",
         "genre": "",
         "category": "城",
@@ -58473,6 +59447,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "原田城",
         "genre": "",
         "category": "城",
@@ -58578,6 +59553,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定文化財",
         "name": "山野辺城",
         "genre": "",
         "category": "城",
@@ -58606,6 +59582,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "次年子館",
         "genre": "",
         "category": "城",
@@ -58714,6 +59691,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高楯城〔上山市〕",
         "genre": "",
         "category": "城",
@@ -58773,6 +59751,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "常盤城",
         "genre": "",
         "category": "城",
@@ -58880,6 +59859,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "柏木城",
         "genre": "",
         "category": "城",
@@ -59073,6 +60053,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "真野古城",
         "genre": "",
         "category": "城",
@@ -59121,6 +60102,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "檜原城",
         "genre": "",
         "category": "城",
@@ -59151,6 +60133,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "中丸城",
         "genre": "",
         "category": "城",
@@ -59179,6 +60162,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "上遠野城",
         "genre": "",
         "category": "城",
@@ -59617,6 +60601,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "三坂城",
         "genre": "",
         "category": "城",
@@ -59695,6 +60680,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "村上城",
         "genre": "",
         "category": "城",
@@ -59743,6 +60729,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "駒寄城",
         "genre": "",
         "category": "城",
@@ -59873,6 +60860,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "藤田城",
         "genre": "",
         "category": "城",
@@ -60205,6 +61193,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "下手渡陣屋",
         "genre": "",
         "category": "城",
@@ -60257,6 +61246,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "馬坂城",
         "genre": "",
         "category": "城",
@@ -60286,6 +61276,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "山入城",
         "genre": "",
         "category": "城",
@@ -60314,6 +61305,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "島崎城",
         "genre": "",
         "category": "城",
@@ -60369,6 +61361,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "大宝城",
         "genre": "",
         "category": "城",
@@ -60392,6 +61385,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "山川氏館",
         "genre": "",
         "category": "城",
@@ -60448,6 +61442,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大窪城",
         "genre": "",
         "category": "城",
@@ -60556,6 +61551,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "布川城",
         "genre": "",
         "category": "城",
@@ -60635,6 +61631,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "阿波崎城",
         "genre": "",
         "category": "城",
@@ -60659,6 +61656,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "神宮寺城",
         "genre": "",
         "category": "城",
@@ -60706,6 +61704,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "戸崎城",
         "genre": "",
         "category": "城",
@@ -60735,6 +61734,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "宍倉城",
         "genre": "",
         "category": "城",
@@ -60885,6 +61885,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "柿岡城",
         "genre": "",
         "category": "城",
@@ -60908,6 +61909,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "府中城",
         "genre": "",
         "category": "城",
@@ -61003,6 +62005,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡、市指定史跡",
         "name": "宍戸城",
         "genre": "",
         "category": "城",
@@ -61052,6 +62055,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "難台山城",
         "genre": "",
         "category": "城",
@@ -61076,6 +62080,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "館岸城",
         "genre": "",
         "category": "城",
@@ -61127,6 +62132,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小原城",
         "genre": "",
         "category": "城",
@@ -61226,6 +62232,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "菅生城",
         "genre": "",
         "category": "城",
@@ -61404,6 +62411,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "八代城",
         "genre": "",
         "category": "城",
@@ -61430,6 +62438,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "木田余城",
         "genre": "",
         "category": "城",
@@ -61453,6 +62462,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "長峰城〔筑波郡〕",
         "genre": "",
         "category": "城",
@@ -61473,6 +62483,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "手子生城",
         "genre": "",
         "category": "城",
@@ -61520,6 +62531,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "竹原城",
         "genre": "",
         "category": "城",
@@ -61544,6 +62556,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鶴田城",
         "genre": "",
         "category": "城",
@@ -61568,6 +62581,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "湯崎城",
         "genre": "",
         "category": "城",
@@ -61699,6 +62713,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "中居城",
         "genre": "",
         "category": "城",
@@ -61723,6 +62738,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "山王山城",
         "genre": "",
         "category": "城",
@@ -61792,6 +62808,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "津賀城",
         "genre": "",
         "category": "城",
@@ -61816,6 +62833,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "徳宿城",
         "genre": "",
         "category": "城",
@@ -61843,6 +62861,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "木崎城",
         "genre": "",
         "category": "城",
@@ -62162,6 +63181,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "河内城",
         "genre": "",
         "category": "城",
@@ -62244,6 +63264,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "長倉城",
         "genre": "",
         "category": "城",
@@ -62318,6 +63339,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "志筑城",
         "genre": "",
         "category": "城",
@@ -62371,6 +63393,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "東條太田城",
         "genre": "",
         "category": "城",
@@ -63053,6 +64076,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "笠松城",
         "genre": "",
         "category": "城",
@@ -63227,6 +64251,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "武茂城",
         "genre": "",
         "category": "城",
@@ -63251,6 +64276,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "桜町陣屋",
         "genre": "",
         "category": "城",
@@ -63277,6 +64303,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "芦野城",
         "genre": "",
         "category": "城",
@@ -63305,6 +64332,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "粟野城",
         "genre": "",
         "category": "城",
@@ -63361,6 +64389,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "村上城",
         "genre": "",
         "category": "城",
@@ -63416,6 +64445,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "赤見城",
         "genre": "",
         "category": "城",
@@ -63465,6 +64495,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鳩ヶ森城",
         "genre": "",
         "category": "城",
@@ -63520,6 +64551,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "佐久山城",
         "genre": "",
         "category": "城",
@@ -63547,6 +64579,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "伊王野城",
         "genre": "",
         "category": "城",
@@ -63740,6 +64773,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "轟城",
         "genre": "",
         "category": "城",
@@ -63763,6 +64797,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "桑窪城",
         "genre": "",
         "category": "城",
@@ -63846,6 +64881,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "阿曽沼城",
         "genre": "",
         "category": "城",
@@ -63942,6 +64978,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "椿田城",
         "genre": "",
         "category": "城",
@@ -63965,6 +65002,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "清水城",
         "genre": "",
         "category": "城",
@@ -64089,6 +65127,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "阿久津城",
         "genre": "",
         "category": "城",
@@ -64143,6 +65182,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "高根沢城",
         "genre": "",
         "category": "城",
@@ -64221,6 +65261,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "板橋城",
         "genre": "",
         "category": "城",
@@ -64273,6 +65314,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "中里城",
         "genre": "",
         "category": "城",
@@ -64322,6 +65364,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "佐良土館",
         "genre": "",
         "category": "城",
@@ -64374,6 +65417,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鶴が淵城",
         "genre": "",
         "category": "城",
@@ -64469,6 +65513,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町有形文化財（薬師堂）",
         "name": "高根沢陣屋",
         "genre": "",
         "category": "城",
@@ -64523,6 +65568,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "平井金山城",
         "genre": "",
         "category": "城",
@@ -64550,6 +65596,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "鎌原城",
         "genre": "",
         "category": "城",
@@ -64577,6 +65624,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "後閑城",
         "genre": "",
         "category": "城",
@@ -64675,6 +65723,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "麻場城",
         "genre": "",
         "category": "城",
@@ -64736,6 +65785,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "松山城",
         "genre": "",
         "category": "城",
@@ -64764,6 +65814,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "明徳寺城",
         "genre": "",
         "category": "城",
@@ -64791,6 +65842,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "女渕城",
         "genre": "",
         "category": "城",
@@ -64840,6 +65892,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "小幡陣屋",
         "genre": "",
         "category": "城",
@@ -64863,6 +65916,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "小川城",
         "genre": "",
         "category": "城",
@@ -64911,6 +65965,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "江田館",
         "genre": "",
         "category": "城",
@@ -64961,6 +66016,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "庭谷城",
         "genre": "",
         "category": "城",
@@ -65066,6 +66122,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "磯部城",
         "genre": "",
         "category": "城",
@@ -65090,6 +66147,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "中山城",
         "genre": "",
         "category": "城",
@@ -65114,6 +66172,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "国峯城",
         "genre": "",
         "category": "城",
@@ -65162,6 +66221,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "五覧田城",
         "genre": "",
         "category": "城",
@@ -65263,6 +66323,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "奥平城",
         "genre": "",
         "category": "城",
@@ -65310,6 +66371,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "横尾八幡城",
         "genre": "",
         "category": "城",
@@ -65334,6 +66396,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "今村城",
         "genre": "",
         "category": "城",
@@ -65483,6 +66546,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "里見城",
         "genre": "",
         "category": "城",
@@ -65630,6 +66694,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "荘田城",
         "genre": "",
         "category": "城",
@@ -65654,6 +66719,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "原城",
         "genre": "",
         "category": "城",
@@ -65678,6 +66744,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小沢城",
         "genre": "",
         "category": "城",
@@ -65753,6 +66820,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "阿岨城",
         "genre": "",
         "category": "城",
@@ -66090,6 +67158,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "川田城",
         "genre": "",
         "category": "城",
@@ -66327,6 +67396,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "千馬山城",
         "genre": "",
         "category": "城",
@@ -66358,6 +67428,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "柏原城",
         "genre": "",
         "category": "城",
@@ -66417,6 +67488,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "腰越城",
         "genre": "",
         "category": "城",
@@ -66444,6 +67516,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "青山城",
         "genre": "",
         "category": "城",
@@ -66548,6 +67621,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "阿左美氏館",
         "genre": "",
         "category": "城",
@@ -66684,6 +67758,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "御嶽城",
         "genre": "",
         "category": "城",
@@ -66714,6 +67789,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "伊奈氏陣屋",
         "genre": "",
         "category": "城",
@@ -66741,6 +67817,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "青鳥城",
         "genre": "",
         "category": "城",
@@ -66879,6 +67956,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "中城",
         "genre": "",
         "category": "城",
@@ -66934,6 +68012,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "永田陣屋",
         "genre": "",
         "category": "城",
@@ -66960,6 +68039,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "横瀬根古屋城",
         "genre": "",
         "category": "城",
@@ -66988,6 +68068,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "足利政氏館",
         "genre": "",
         "category": "城",
@@ -67015,6 +68096,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "埼玉県選定重要遺跡",
         "name": "毛呂山城",
         "genre": "",
         "category": "城",
@@ -67042,6 +68124,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "大堀山城",
         "genre": "",
         "category": "城",
@@ -67066,6 +68149,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "本庄城",
         "genre": "",
         "category": "城",
@@ -67089,6 +68173,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "別府城",
         "genre": "",
         "category": "城",
@@ -67222,6 +68307,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "日尾城",
         "genre": "",
         "category": "城",
@@ -67246,6 +68332,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "奈良梨陣屋",
         "genre": "",
         "category": "城",
@@ -67269,6 +68356,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "安戸城",
         "genre": "",
         "category": "城",
@@ -67423,6 +68511,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大成館",
         "genre": "",
         "category": "城",
@@ -67444,6 +68533,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "成田氏館",
         "genre": "",
         "category": "城",
@@ -67514,6 +68604,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "宮寺氏館",
         "genre": "",
         "category": "城",
@@ -67589,6 +68680,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "野本館",
         "genre": "",
         "category": "城",
@@ -67615,6 +68707,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "平柳蔵人館",
         "genre": "",
         "category": "城",
@@ -67717,6 +68810,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "金窪城",
         "genre": "",
         "category": "城",
@@ -67744,6 +68838,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "加納城",
         "genre": "",
         "category": "城",
@@ -67769,6 +68864,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "庁鼻和城",
         "genre": "",
         "category": "城",
@@ -67795,6 +68891,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "東方城",
         "genre": "",
         "category": "城",
@@ -68071,6 +69168,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "古御嶽城",
         "genre": "",
         "category": "城",
@@ -68263,6 +69361,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "飯高城",
         "genre": "",
         "category": "城",
@@ -68437,6 +69536,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小金城",
         "genre": "",
         "category": "城",
@@ -68465,6 +69565,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "本納城",
         "genre": "",
         "category": "城",
@@ -68489,6 +69590,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "松ヶ崎城",
         "genre": "",
         "category": "城",
@@ -68560,6 +69662,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "田間城",
         "genre": "",
         "category": "城",
@@ -68582,6 +69685,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "貝淵陣屋",
         "genre": "",
         "category": "城",
@@ -68638,6 +69742,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "平松城",
         "genre": "",
         "category": "城",
@@ -68689,6 +69794,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "中沢城",
         "genre": "",
         "category": "城",
@@ -68758,6 +69864,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "中島城",
         "genre": "",
         "category": "城",
@@ -69023,6 +70130,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大関城",
         "genre": "",
         "category": "城",
@@ -69044,6 +70152,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "真武根陣屋",
         "genre": "",
         "category": "城",
@@ -69602,6 +70711,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "国府台城〔夷隅郡〕",
         "genre": "",
         "category": "城",
@@ -69649,6 +70759,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "見広城",
         "genre": "",
         "category": "城",
@@ -69732,6 +70843,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "古屋城",
         "genre": "",
         "category": "城",
@@ -70030,6 +71142,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "大多喜根古屋城",
         "genre": "",
         "category": "城",
@@ -70127,6 +71240,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "峰上城",
         "genre": "",
         "category": "城",
@@ -70235,6 +71349,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "都指定史跡",
         "name": "檜原城",
         "genre": "",
         "category": "城",
@@ -70259,6 +71374,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "小田野城",
         "genre": "",
         "category": "城",
@@ -70358,6 +71474,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "東京都指定旧跡",
         "name": "谷保城",
         "genre": "",
         "category": "城",
@@ -70433,6 +71550,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "都指定史跡",
         "name": "立川氏館",
         "genre": "",
         "category": "城",
@@ -70517,6 +71635,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "由木城",
         "genre": "",
         "category": "城",
@@ -70624,6 +71743,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "藤橋城",
         "genre": "",
         "category": "城",
@@ -70648,6 +71768,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "区史跡",
         "name": "牛込城",
         "genre": "",
         "category": "城",
@@ -70984,6 +72105,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "都指定史跡",
         "name": "井出沢城",
         "genre": "",
         "category": "城",
@@ -71426,6 +72548,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "相模岡崎城",
         "genre": "",
         "category": "城",
@@ -71505,6 +72628,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "鐙摺城",
         "genre": "",
         "category": "城",
@@ -71534,6 +72658,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡（吉井貝塚として）",
         "name": "怒田城",
         "genre": "",
         "category": "城",
@@ -71659,6 +72784,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "神武寺城",
         "genre": "",
         "category": "城",
@@ -71780,6 +72906,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "厚木陣屋",
         "genre": "",
         "category": "城",
@@ -72067,6 +73194,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "松田城",
         "genre": "",
         "category": "城",
@@ -72137,6 +73265,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "岩原城",
         "genre": "",
         "category": "城",
@@ -72538,6 +73667,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "磯部城",
         "genre": "",
         "category": "城",
@@ -72640,6 +73770,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "樺沢城",
         "genre": "",
         "category": "城",
@@ -72668,6 +73799,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "箕冠城",
         "genre": "",
         "category": "城",
@@ -72692,6 +73824,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "大葉沢城",
         "genre": "",
         "category": "城",
@@ -72720,6 +73853,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "江上館",
         "genre": "",
         "category": "城",
@@ -72791,6 +73925,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "上条城",
         "genre": "",
         "category": "城",
@@ -72815,6 +73950,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "栖吉城",
         "genre": "",
         "category": "城",
@@ -72844,6 +73980,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "黒川城",
         "genre": "",
         "category": "城",
@@ -72868,6 +74005,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "小木ノ城",
         "genre": "",
         "category": "城",
@@ -72892,6 +74030,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "犬伏城",
         "genre": "",
         "category": "城",
@@ -72916,6 +74055,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "加地城",
         "genre": "",
         "category": "城",
@@ -72943,6 +74083,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "不動山城",
         "genre": "",
         "category": "城",
@@ -72967,6 +74108,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "新津城",
         "genre": "",
         "category": "城",
@@ -73091,6 +74233,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "赤田古城",
         "genre": "",
         "category": "城",
@@ -73115,6 +74258,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "猿橋城",
         "genre": "",
         "category": "城",
@@ -73214,6 +74358,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "椎谷陣屋",
         "genre": "",
         "category": "城",
@@ -73267,6 +74412,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "二田城",
         "genre": "",
         "category": "城",
@@ -73324,6 +74470,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "護摩堂城",
         "genre": "",
         "category": "城",
@@ -73352,6 +74499,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "京ヶ岳城",
         "genre": "",
         "category": "城",
@@ -73379,6 +74527,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "顕法寺城",
         "genre": "",
         "category": "城",
@@ -73403,6 +74552,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大間城",
         "genre": "",
         "category": "城",
@@ -73451,6 +74601,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "茶臼山城",
         "genre": "",
         "category": "城",
@@ -73474,6 +74625,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "虫川城",
         "genre": "",
         "category": "城",
@@ -73635,6 +74787,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "室野城",
         "genre": "",
         "category": "城",
@@ -73658,6 +74811,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "下倉山城",
         "genre": "",
         "category": "城",
@@ -73733,6 +74887,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "東島城",
         "genre": "",
         "category": "城",
@@ -73784,6 +74939,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "松岳山城",
         "genre": "",
         "category": "城",
@@ -73861,6 +75017,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "倉田城",
         "genre": "",
         "category": "城",
@@ -73910,6 +75067,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "上城",
         "genre": "",
         "category": "城",
@@ -73933,6 +75091,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "下城",
         "genre": "",
         "category": "城",
@@ -73986,6 +75145,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "加茂城",
         "genre": "",
         "category": "城",
@@ -74043,6 +75203,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "渡部城",
         "genre": "",
         "category": "城",
@@ -74070,6 +75231,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "徳合城",
         "genre": "",
         "category": "城",
@@ -74267,6 +75429,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "桔梗城",
         "genre": "",
         "category": "城",
@@ -74295,6 +75458,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "青木城",
         "genre": "",
         "category": "城",
@@ -74321,6 +75485,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "夏戸城",
         "genre": "",
         "category": "城",
@@ -74456,6 +75621,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "坊城館",
         "genre": "",
         "category": "城",
@@ -74479,6 +75645,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "古舘館",
         "genre": "",
         "category": "城",
@@ -74707,6 +75874,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "浦佐城",
         "genre": "",
         "category": "城",
@@ -74783,6 +75951,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "見附城",
         "genre": "",
         "category": "城",
@@ -74807,6 +75976,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "薭生城",
         "genre": "",
         "category": "城",
@@ -74857,6 +76027,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "金山城",
         "genre": "",
         "category": "城",
@@ -74885,6 +76056,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "赤沢城",
         "genre": "",
         "category": "城",
@@ -74912,6 +76084,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "松倉城",
         "genre": "",
         "category": "城",
@@ -74941,6 +76114,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "升方城",
         "genre": "",
         "category": "城",
@@ -75018,6 +76192,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "隠尾城",
         "genre": "",
         "category": "城",
@@ -75094,6 +76269,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小菅沼城",
         "genre": "",
         "category": "城",
@@ -75145,6 +76321,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "北山城",
         "genre": "",
         "category": "城",
@@ -75172,6 +76349,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "水尾城",
         "genre": "",
         "category": "城",
@@ -75200,6 +76378,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "長安寺館",
         "genre": "",
         "category": "城",
@@ -75223,6 +76402,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "弓庄城",
         "genre": "",
         "category": "城",
@@ -75250,6 +76430,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "日中城",
         "genre": "",
         "category": "城",
@@ -75301,6 +76482,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "中地山城",
         "genre": "",
         "category": "城",
@@ -75420,6 +76602,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "尾畑城",
         "genre": "",
         "category": "城",
@@ -75444,6 +76627,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "池田城",
         "genre": "",
         "category": "城",
@@ -75471,6 +76655,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大道城",
         "genre": "",
         "category": "城",
@@ -75601,6 +76786,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "大聖寺城",
         "genre": "",
         "category": "城",
@@ -75628,6 +76814,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "舟岡城",
         "genre": "",
         "category": "城",
@@ -75739,6 +76926,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "木尾嶽城",
         "genre": "",
         "category": "城",
@@ -75933,6 +77121,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "堅田城",
         "genre": "",
         "category": "城",
@@ -75960,6 +77149,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "津幡城",
         "genre": "",
         "category": "城",
@@ -76008,6 +77198,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "龍ヶ峰城",
         "genre": "",
         "category": "城",
@@ -76034,6 +77225,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "虚空蔵山城",
         "genre": "",
         "category": "城",
@@ -76063,6 +77255,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "槻橋城",
         "genre": "",
         "category": "城",
@@ -76186,6 +77379,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "鳥越城〔河北郡〕",
         "genre": "",
         "category": "城",
@@ -76209,6 +77403,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "富樫館",
         "genre": "",
         "category": "城",
@@ -76307,6 +77502,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "姫ヶ城",
         "genre": "",
         "category": "城",
@@ -76609,6 +77805,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡（遺跡）、特別名勝（庭園）、重要文化財（遺跡出土品）",
         "name": "一乗谷城",
         "genre": "日本100名城",
         "category": "城",
@@ -76689,6 +77886,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "戌山城",
         "genre": "",
         "category": "城",
@@ -76838,6 +78036,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "三床山城",
         "genre": "",
         "category": "城",
@@ -76891,6 +78090,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "亥山城",
         "genre": "",
         "category": "城",
@@ -76967,6 +78167,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "波多野城",
         "genre": "",
         "category": "城",
@@ -77042,6 +78243,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "神宮寺城",
         "genre": "",
         "category": "城",
@@ -77066,6 +78268,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "金津城溝江館",
         "genre": "",
         "category": "城",
@@ -77093,6 +78296,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "堀江公番田館",
         "genre": "",
         "category": "城",
@@ -77142,6 +78346,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "三留城",
         "genre": "",
         "category": "城",
@@ -77166,6 +78371,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小山城",
         "genre": "",
         "category": "城",
@@ -77244,6 +78450,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "三峯城",
         "genre": "",
         "category": "城",
@@ -77271,6 +78478,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "観音丸城",
         "genre": "",
         "category": "城",
@@ -77302,6 +78510,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "燧ヶ城",
         "genre": "",
         "category": "城",
@@ -77330,6 +78539,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "鉢伏城",
         "genre": "",
         "category": "城",
@@ -77360,6 +78570,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡、国名勝（旧玄成院庭園）",
         "name": "平泉寺城",
         "genre": "",
         "category": "城",
@@ -77388,6 +78599,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "将監城",
         "genre": "",
         "category": "城",
@@ -77413,6 +78625,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "池田氏城館",
         "genre": "",
         "category": "城",
@@ -77545,6 +78758,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大塩城",
         "genre": "",
         "category": "城",
@@ -77656,6 +78870,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "亀山城",
         "genre": "",
         "category": "城",
@@ -78113,6 +79328,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "新保山城",
         "genre": "",
         "category": "城",
@@ -78440,6 +79656,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "獅子吼城",
         "genre": "",
         "category": "城",
@@ -78468,6 +79685,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "中牧城",
         "genre": "",
         "category": "城",
@@ -78520,6 +79738,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "若神子城",
         "genre": "",
         "category": "城",
@@ -78550,6 +79769,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "深草城",
         "genre": "",
         "category": "城",
@@ -78577,6 +79797,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "笹尾城",
         "genre": "",
         "category": "城",
@@ -78605,6 +79826,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "下山城",
         "genre": "",
         "category": "城",
@@ -78655,6 +79877,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "武田信義館",
         "genre": "",
         "category": "城",
@@ -78678,6 +79901,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "甲斐上野城〔八代郡〕",
         "genre": "",
         "category": "城",
@@ -78732,6 +79956,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "南部城山城",
         "genre": "",
         "category": "城",
@@ -78783,6 +80008,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "南部氏館",
         "genre": "",
         "category": "城",
@@ -78809,6 +80035,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "甲斐上野城〔巨摩郡〕",
         "genre": "",
         "category": "城",
@@ -78864,6 +80091,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小田野城",
         "genre": "",
         "category": "城",
@@ -78964,6 +80192,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "雨鳴城",
         "genre": "",
         "category": "城",
@@ -79015,6 +80244,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "源太ヶ城",
         "genre": "",
         "category": "城",
@@ -79063,6 +80293,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "須沢城",
         "genre": "",
         "category": "城",
@@ -79090,6 +80321,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "波木井城",
         "genre": "",
         "category": "城",
@@ -79145,6 +80377,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "日ノ出城",
         "genre": "",
         "category": "城",
@@ -79229,6 +80462,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "比志城",
         "genre": "",
         "category": "城",
@@ -79257,6 +80491,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "菅沼城",
         "genre": "",
         "category": "城",
@@ -79454,6 +80689,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "小菅城",
         "genre": "",
         "category": "城",
@@ -79508,6 +80744,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "重要文化財（旧小笠原家書院）",
         "name": "伊豆木陣屋",
         "genre": "",
         "category": "城",
@@ -79558,6 +80795,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "松尾古城",
         "genre": "",
         "category": "城",
@@ -79586,6 +80824,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "禰津城",
         "genre": "",
         "category": "城",
@@ -79641,6 +80880,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "平賀城",
         "genre": "",
         "category": "城",
@@ -79692,6 +80932,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "替佐城",
         "genre": "",
         "category": "城",
@@ -79743,6 +80984,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "岡城",
         "genre": "",
         "category": "城",
@@ -79772,6 +81014,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "尾引城",
         "genre": "",
         "category": "城",
@@ -79801,6 +81044,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "蟻塚城",
         "genre": "",
         "category": "城",
@@ -79856,6 +81100,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市特別史跡",
         "name": "平瀬城",
         "genre": "",
         "category": "城",
@@ -79938,6 +81183,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "上野城",
         "genre": "",
         "category": "城",
@@ -79971,6 +81217,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "伴野城",
         "genre": "",
         "category": "城",
@@ -79998,6 +81245,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "藤沢城",
         "genre": "",
         "category": "城",
@@ -80156,6 +81404,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "福島正則館",
         "genre": "",
         "category": "城",
@@ -80235,6 +81484,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "天白城",
         "genre": "",
         "category": "城",
@@ -80262,6 +81512,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "井上城",
         "genre": "",
         "category": "城",
@@ -80290,6 +81541,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "内小屋城",
         "genre": "",
         "category": "城",
@@ -80318,6 +81570,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市特別史跡",
         "name": "稲倉城",
         "genre": "",
         "category": "城",
@@ -80342,6 +81595,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市特別史跡",
         "name": "伊深城",
         "genre": "",
         "category": "城",
@@ -80369,6 +81623,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "須田城",
         "genre": "",
         "category": "城",
@@ -80426,6 +81681,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "武居城〔筑摩郡〕",
         "genre": "",
         "category": "城",
@@ -80484,6 +81740,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "若槻山城",
         "genre": "",
         "category": "城",
@@ -80699,6 +81956,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "芦田城",
         "genre": "",
         "category": "城",
@@ -80730,6 +81988,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "根古屋城",
         "genre": "",
         "category": "城",
@@ -80759,6 +82018,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "洗馬城",
         "genre": "",
         "category": "城",
@@ -80789,6 +82049,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "下畑城",
         "genre": "",
         "category": "城",
@@ -80812,6 +82073,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "宇留賀城",
         "genre": "",
         "category": "城",
@@ -80838,6 +82100,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "花岡城",
         "genre": "",
         "category": "城",
@@ -81022,6 +82285,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "和合城",
         "genre": "",
         "category": "城",
@@ -81049,6 +82313,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "市野瀬古城",
         "genre": "",
         "category": "城",
@@ -81234,6 +82499,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "船山城",
         "genre": "",
         "category": "城",
@@ -81284,6 +82550,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "赤須城",
         "genre": "",
         "category": "城",
@@ -81364,6 +82631,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "海尻城",
         "genre": "",
         "category": "城",
@@ -81388,6 +82656,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "前山城",
         "genre": "",
         "category": "城",
@@ -81463,6 +82732,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市特別史跡",
         "name": "波多山城",
         "genre": "",
         "category": "城",
@@ -81491,6 +82761,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "安坂城",
         "genre": "",
         "category": "城",
@@ -81517,6 +82788,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "羽場城",
         "genre": "",
         "category": "城",
@@ -81544,6 +82816,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大塩城",
         "genre": "",
         "category": "城",
@@ -81599,6 +82872,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "小布施陣屋",
         "genre": "",
         "category": "城",
@@ -81625,6 +82899,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "六川陣屋",
         "genre": "",
         "category": "城",
@@ -81651,6 +82926,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "先達城",
         "genre": "",
         "category": "城",
@@ -81735,6 +83011,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "山田城",
         "genre": "",
         "category": "城",
@@ -81759,6 +83036,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "洞頭城",
         "genre": "",
         "category": "城",
@@ -81943,6 +83221,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "山口城",
         "genre": "",
         "category": "城",
@@ -81966,6 +83245,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "千見城",
         "genre": "",
         "category": "城",
@@ -82043,6 +83323,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "岩門城",
         "genre": "",
         "category": "城",
@@ -82066,6 +83347,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "外山城",
         "genre": "",
         "category": "城",
@@ -82271,6 +83553,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "浦野城",
         "genre": "",
         "category": "城",
@@ -82366,6 +83649,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "黒川城",
         "genre": "",
         "category": "城",
@@ -82393,6 +83677,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "平倉山城",
         "genre": "",
         "category": "城",
@@ -82421,6 +83706,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "大宮城",
         "genre": "",
         "category": "城",
@@ -82476,6 +83762,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "黒丸城",
         "genre": "",
         "category": "城",
@@ -82552,6 +83839,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "松原城",
         "genre": "",
         "category": "城",
@@ -82754,6 +84042,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小出城",
         "genre": "",
         "category": "城",
@@ -82862,6 +84151,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡（御山）",
         "name": "大徳王寺城",
         "genre": "",
         "category": "城",
@@ -82916,6 +84206,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "机の城",
         "genre": "",
         "category": "城",
@@ -82999,6 +84290,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "菩提山城",
         "genre": "",
         "category": "城",
@@ -83028,6 +84320,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "多羅城",
         "genre": "",
         "category": "城",
@@ -83058,6 +84351,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "高山陣屋",
         "genre": "",
         "category": "城",
@@ -83104,6 +84398,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "大桑城",
         "genre": "",
         "category": "城",
@@ -83209,6 +84504,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "向牧戸城",
         "genre": "",
         "category": "城",
@@ -83259,6 +84555,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "竹中陣屋",
         "genre": "",
         "category": "城",
@@ -83287,6 +84584,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "和知城",
         "genre": "",
         "category": "城",
@@ -83314,6 +84612,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "本郷城〔池田郡〕",
         "genre": "",
         "category": "城",
@@ -83341,6 +84640,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "清水城",
         "genre": "",
         "category": "城",
@@ -83364,6 +84664,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "米田城",
         "genre": "",
         "category": "城",
@@ -83469,6 +84770,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "桜洞城",
         "genre": "",
         "category": "城",
@@ -83569,6 +84871,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "阿千葉城",
         "genre": "",
         "category": "城",
@@ -83596,6 +84899,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "牛洞陣屋",
         "genre": "",
         "category": "城",
@@ -83721,6 +85025,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "垂井城",
         "genre": "",
         "category": "城",
@@ -83794,6 +85099,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "宮地城",
         "genre": "",
         "category": "城",
@@ -83847,6 +85153,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "結城",
         "genre": "",
         "category": "城",
@@ -83935,6 +85242,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "多治見城",
         "genre": "",
         "category": "城",
@@ -83961,6 +85269,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "和泉城",
         "genre": "",
         "category": "城",
@@ -84085,6 +85394,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "津屋城",
         "genre": "",
         "category": "城",
@@ -84108,6 +85418,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "長松城",
         "genre": "",
         "category": "城",
@@ -84223,6 +85534,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "氷取城",
         "genre": "",
         "category": "城",
@@ -84246,6 +85558,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "西保北方城",
         "genre": "",
         "category": "城",
@@ -84272,6 +85585,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "神所城",
         "genre": "",
         "category": "城",
@@ -84378,6 +85692,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "野村陣屋",
         "genre": "",
         "category": "城",
@@ -84428,6 +85743,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "下呂森城",
         "genre": "",
         "category": "城",
@@ -84455,6 +85771,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "今井城",
         "genre": "",
         "category": "城",
@@ -84504,6 +85821,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡（江馬氏城館跡）",
         "name": "石神城",
         "genre": "",
         "category": "城",
@@ -84589,6 +85907,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "梨打城",
         "genre": "",
         "category": "城",
@@ -84613,6 +85932,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "畑佐城",
         "genre": "",
         "category": "城",
@@ -84667,6 +85987,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "伏屋城",
         "genre": "",
         "category": "城",
@@ -84773,6 +86094,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "尾崎城",
         "genre": "",
         "category": "城",
@@ -84797,6 +86119,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "森ヶ城",
         "genre": "",
         "category": "城",
@@ -84821,6 +86144,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "山下城",
         "genre": "",
         "category": "城",
@@ -84844,6 +86168,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "久々野城",
         "genre": "",
         "category": "城",
@@ -84868,6 +86193,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "牛臥山城",
         "genre": "",
         "category": "城",
@@ -84892,6 +86218,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "松尾城",
         "genre": "",
         "category": "城",
@@ -84916,6 +86243,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "境城",
         "genre": "",
         "category": "城",
@@ -84943,6 +86271,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "横井城",
         "genre": "",
         "category": "城",
@@ -84967,6 +86296,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "野尻城",
         "genre": "",
         "category": "城",
@@ -84991,6 +86321,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "船野城",
         "genre": "",
         "category": "城",
@@ -85045,6 +86376,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "久須見城〔郡上郡〕",
         "genre": "",
         "category": "城",
@@ -85121,6 +86453,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "木越城",
         "genre": "",
         "category": "城",
@@ -85145,6 +86478,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "畑佐城",
         "genre": "",
         "category": "城",
@@ -85168,6 +86502,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "寒水城",
         "genre": "",
         "category": "城",
@@ -85191,6 +86526,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "長尾城",
         "genre": "",
         "category": "城",
@@ -85239,6 +86575,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "前谷城",
         "genre": "",
         "category": "城",
@@ -85262,6 +86599,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "六ツ城",
         "genre": "",
         "category": "城",
@@ -85285,6 +86623,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "烏帽子山城",
         "genre": "",
         "category": "城",
@@ -85308,6 +86647,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "二日町城",
         "genre": "",
         "category": "城",
@@ -85384,6 +86724,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鷲見城",
         "genre": "",
         "category": "城",
@@ -85595,6 +86936,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "美江寺城",
         "genre": "",
         "category": "城",
@@ -85618,6 +86960,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "十七条城",
         "genre": "",
         "category": "城",
@@ -85918,6 +87261,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "徳野陣屋",
         "genre": "",
         "category": "城",
@@ -86054,6 +87398,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡（円長寺）",
         "name": "牧村城",
         "genre": "",
         "category": "城",
@@ -86100,6 +87445,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "本郷城〔羽栗郡〕",
         "genre": "",
         "category": "城",
@@ -86142,6 +87488,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "白樫城",
         "genre": "",
         "category": "城",
@@ -86165,6 +87512,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "上野城",
         "genre": "",
         "category": "城",
@@ -86187,6 +87535,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "鳥羽山城",
         "genre": "",
         "category": "城",
@@ -86214,6 +87563,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "佐久城",
         "genre": "",
         "category": "城",
@@ -86242,6 +87592,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "小長井城",
         "genre": "",
         "category": "城",
@@ -86270,6 +87621,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "狩野城",
         "genre": "",
         "category": "城",
@@ -86435,6 +87787,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "小島陣屋",
         "genre": "",
         "category": "城",
@@ -86659,6 +88012,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "飯田城",
         "genre": "",
         "category": "城",
@@ -86716,6 +88070,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鎌田城",
         "genre": "",
         "category": "城",
@@ -86985,6 +88340,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "馬伏塚城",
         "genre": "",
         "category": "城",
@@ -87012,6 +88368,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "石上城",
         "genre": "",
         "category": "城",
@@ -87092,6 +88449,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "勝坂城",
         "genre": "",
         "category": "城",
@@ -87122,6 +88480,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "樽山城",
         "genre": "",
         "category": "城",
@@ -87329,6 +88688,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "深根城",
         "genre": "",
         "category": "城",
@@ -87539,6 +88899,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "真田城",
         "genre": "",
         "category": "城",
@@ -87696,6 +89057,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "篠ヶ嶺城",
         "genre": "",
         "category": "城",
@@ -87726,6 +89088,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "田代城",
         "genre": "",
         "category": "城",
@@ -87952,6 +89315,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "岩津城",
         "genre": "",
         "category": "城",
@@ -87976,6 +89340,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "幡豆寺部城",
         "genre": "",
         "category": "城",
@@ -88004,6 +89369,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "武節古城",
         "genre": "",
         "category": "城",
@@ -88030,6 +89396,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "寺脇城",
         "genre": "",
         "category": "城",
@@ -88057,6 +89424,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "松平城山城〔大内町〕",
         "genre": "",
         "category": "城",
@@ -88170,6 +89538,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "飯盛山城",
         "genre": "",
         "category": "城",
@@ -88244,6 +89613,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "新城城",
         "genre": "",
         "category": "城",
@@ -88427,6 +89797,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "山崎城",
         "genre": "",
         "category": "城",
@@ -88454,6 +89825,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "雨山城",
         "genre": "",
         "category": "城",
@@ -88501,6 +89873,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "東端城",
         "genre": "",
         "category": "城",
@@ -88596,6 +89969,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "福谷城",
         "genre": "",
         "category": "城",
@@ -88647,6 +90021,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "桜井城",
         "genre": "",
         "category": "城",
@@ -89432,6 +90807,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "野場西城",
         "genre": "",
         "category": "城",
@@ -89458,6 +90834,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大谷城",
         "genre": "",
         "category": "城",
@@ -89485,6 +90862,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "端城城",
         "genre": "",
         "category": "城",
@@ -89511,6 +90889,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "新城古城",
         "genre": "",
         "category": "城",
@@ -89539,6 +90918,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "重要文化財（服部家住宅として）",
         "name": "荷之上城",
         "genre": "",
         "category": "城",
@@ -89873,6 +91253,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "吉藤城",
         "genre": "",
         "category": "城",
@@ -89920,6 +91301,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "夷城",
         "genre": "",
         "category": "城",
@@ -89947,6 +91329,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大桑城",
         "genre": "",
         "category": "城",
@@ -90022,6 +91405,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "亀ヶ城",
         "genre": "",
         "category": "城",
@@ -90049,6 +91433,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "茂松城",
         "genre": "",
         "category": "城",
@@ -90076,6 +91461,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "竹谷城",
         "genre": "",
         "category": "城",
@@ -90176,6 +91562,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "田内城",
         "genre": "",
         "category": "城",
@@ -90203,6 +91590,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "清水城",
         "genre": "",
         "category": "城",
@@ -90227,6 +91615,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "長江城",
         "genre": "",
         "category": "城",
@@ -90277,6 +91666,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "竹本城",
         "genre": "",
         "category": "城",
@@ -90352,6 +91742,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "今川城",
         "genre": "",
         "category": "城",
@@ -90501,6 +91892,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "日近城",
         "genre": "",
         "category": "城",
@@ -90531,6 +91923,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "川手城",
         "genre": "",
         "category": "城",
@@ -90894,6 +92287,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "藤井城",
         "genre": "",
         "category": "城",
@@ -90917,6 +92311,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "岩根城",
         "genre": "",
         "category": "城",
@@ -91013,6 +92408,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "医王寺城",
         "genre": "",
         "category": "城",
@@ -91067,6 +92463,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "木戸城",
         "genre": "",
         "category": "城",
@@ -91090,6 +92487,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "重原陣屋",
         "genre": "",
         "category": "城",
@@ -91408,6 +92806,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "半原陣屋",
         "genre": "",
         "category": "城",
@@ -91458,6 +92857,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "川路城",
         "genre": "",
         "category": "城",
@@ -91514,6 +92914,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "来迎松城",
         "genre": "",
         "category": "城",
@@ -92301,6 +93702,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡（古城塚・さむらい塚）",
         "name": "来迎寺城",
         "genre": "",
         "category": "城",
@@ -92405,6 +93807,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "佐脇城",
         "genre": "",
         "category": "城",
@@ -92520,6 +93923,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "道目記城",
         "genre": "",
         "category": "城",
@@ -92619,6 +94023,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "八橋古城",
         "genre": "",
         "category": "城",
@@ -92840,6 +94245,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "北畠氏館",
         "genre": "続日本100名城",
         "category": "城",
@@ -92895,6 +94301,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "峯城",
         "genre": "",
         "category": "城",
@@ -92919,6 +94326,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "長野城",
         "genre": "",
         "category": "城",
@@ -93027,6 +94435,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "宮山城",
         "genre": "",
         "category": "城",
@@ -93078,6 +94487,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "鵜殿城",
         "genre": "",
         "category": "城",
@@ -93102,6 +94512,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "伊勢田辺城",
         "genre": "",
         "category": "城",
@@ -93154,6 +94565,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "金井城",
         "genre": "",
         "category": "城",
@@ -93182,6 +94594,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "菰野城",
         "genre": "",
         "category": "城",
@@ -93232,6 +94645,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "千種城",
         "genre": "",
         "category": "城",
@@ -93361,6 +94775,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "下三瀬城",
         "genre": "",
         "category": "城",
@@ -93389,6 +94804,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "家所城",
         "genre": "",
         "category": "城",
@@ -93413,6 +94829,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "立岡城",
         "genre": "",
         "category": "城",
@@ -93437,6 +94854,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "三瀬館",
         "genre": "",
         "category": "城",
@@ -93463,6 +94881,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "五ヶ所城",
         "genre": "",
         "category": "城",
@@ -93490,6 +94909,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "名張陣屋",
         "genre": "",
         "category": "城",
@@ -93516,6 +94936,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "鹿伏兎城",
         "genre": "",
         "category": "城",
@@ -93698,6 +95119,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "柏野城",
         "genre": "",
         "category": "城",
@@ -93724,6 +95146,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "竹島氏城",
         "genre": "",
         "category": "城",
@@ -93777,6 +95200,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "五箇篠山城",
         "genre": "",
         "category": "城",
@@ -93828,6 +95252,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡（土方家墓地として）",
         "name": "力尾城",
         "genre": "",
         "category": "城",
@@ -94090,6 +95515,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "田城城",
         "genre": "",
         "category": "城",
@@ -94209,6 +95635,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "上津部田城",
         "genre": "",
         "category": "城",
@@ -94233,6 +95660,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "渋見城",
         "genre": "",
         "category": "城",
@@ -94753,6 +96181,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "治田城",
         "genre": "",
         "category": "城",
@@ -94953,6 +96382,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "木造城",
         "genre": "",
         "category": "城",
@@ -95388,6 +96818,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "後山城",
         "genre": "",
         "category": "城",
@@ -95581,6 +97012,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "一之瀬城",
         "genre": "",
         "category": "城",
@@ -95608,6 +97040,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "一之瀬城西の城",
         "genre": "",
         "category": "城",
@@ -95704,6 +97137,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "和田城",
         "genre": "",
         "category": "城",
@@ -95813,6 +97247,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "滝川城",
         "genre": "",
         "category": "城",
@@ -95888,6 +97323,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "小川城",
         "genre": "",
         "category": "城",
@@ -95917,6 +97353,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "新宮支城",
         "genre": "",
         "category": "城",
@@ -95941,6 +97378,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "竹中城",
         "genre": "",
         "category": "城",
@@ -96088,6 +97526,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "太尾山城",
         "genre": "",
         "category": "城",
@@ -96245,6 +97684,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "東野山城",
         "genre": "",
         "category": "城",
@@ -96441,6 +97881,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "目加田城",
         "genre": "",
         "category": "城",
@@ -96494,6 +97935,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "新宮城",
         "genre": "",
         "category": "城",
@@ -96518,6 +97960,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "村雨城",
         "genre": "",
         "category": "城",
@@ -96542,6 +97985,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "寺前城",
         "genre": "",
         "category": "城",
@@ -96846,6 +98290,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "朽木陣屋",
         "genre": "",
         "category": "城",
@@ -96872,6 +98317,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "三田村城",
         "genre": "",
         "category": "城",
@@ -97418,6 +98864,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "下坂氏館",
         "genre": "",
         "category": "城",
@@ -97678,6 +99125,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "垣見氏館",
         "genre": "",
         "category": "城",
@@ -97995,6 +99443,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡（永原御殿）",
         "name": "永原城",
         "genre": "",
         "category": "城",
@@ -98190,6 +99639,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "上中城",
         "genre": "",
         "category": "城",
@@ -98274,6 +99724,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "笠置城",
         "genre": "",
         "category": "城",
@@ -98328,6 +99779,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "物集女城",
         "genre": "",
         "category": "城",
@@ -98960,6 +100412,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "中畑城",
         "genre": "",
         "category": "城",
@@ -99017,6 +100470,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "開田城",
         "genre": "",
         "category": "城",
@@ -99448,6 +100902,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "石原城",
         "genre": "",
         "category": "城",
@@ -99610,6 +101065,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "下岡城",
         "genre": "",
         "category": "城",
@@ -99797,6 +101253,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡「今城塚古墳」",
         "name": "今城",
         "genre": "",
         "category": "城",
@@ -99953,6 +101410,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "小山城",
         "genre": "",
         "category": "城",
@@ -99981,6 +101439,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "麻田陣屋",
         "genre": "",
         "category": "城",
@@ -100796,6 +102255,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "府指定史跡",
         "name": "平石城",
         "genre": "",
         "category": "城",
@@ -100995,6 +102455,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "高木大塚城",
         "genre": "",
         "category": "城",
@@ -101022,6 +102483,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "柏原陣屋",
         "genre": "",
         "category": "城",
@@ -101174,6 +102636,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "朝倉城",
         "genre": "",
         "category": "城",
@@ -101198,6 +102661,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "岩尾城",
         "genre": "",
         "category": "城",
@@ -101226,6 +102690,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "駒山城",
         "genre": "",
         "category": "城",
@@ -101364,6 +102829,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "亀ヶ城",
         "genre": "",
         "category": "城",
@@ -101391,6 +102857,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高見城",
         "genre": "",
         "category": "城",
@@ -101545,6 +103012,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "塚口城",
         "genre": "",
         "category": "城",
@@ -101705,6 +103173,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鶴城",
         "genre": "",
         "category": "城",
@@ -101783,6 +103252,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小浜城",
         "genre": "",
         "category": "城",
@@ -102018,6 +103488,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "金蔵寺城",
         "genre": "",
         "category": "城",
@@ -102210,6 +103681,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "芦屋城",
         "genre": "",
         "category": "城",
@@ -102447,6 +103919,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "友政城",
         "genre": "",
         "category": "城",
@@ -102727,6 +104200,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "炬口城",
         "genre": "",
         "category": "城",
@@ -102751,6 +104225,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "白巣城",
         "genre": "",
         "category": "城",
@@ -103084,6 +104559,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "福本陣屋",
         "genre": "",
         "category": "城",
@@ -103110,6 +104586,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "野村城",
         "genre": "",
         "category": "城",
@@ -103159,6 +104636,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "恒屋城",
         "genre": "",
         "category": "城",
@@ -103358,6 +104836,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "誉田城",
         "genre": "",
         "category": "城",
@@ -103587,6 +105066,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "温泉城",
         "genre": "",
         "category": "城",
@@ -103641,6 +105121,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国名勝（香住海岸）",
         "name": "塔の尾城",
         "genre": "",
         "category": "城",
@@ -103771,6 +105252,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国登録有形文化財（光明寺本堂）",
         "name": "光明寺城",
         "genre": "",
         "category": "城",
@@ -103798,6 +105280,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "宇陀松山城",
         "genre": "続日本100名城",
         "category": "城",
@@ -104485,6 +105968,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "日置八幡山城",
         "genre": "",
         "category": "城",
@@ -104513,6 +105997,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "手取城",
         "genre": "",
         "category": "城",
@@ -104566,6 +106051,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "紀伊田辺城",
         "genre": "",
         "category": "城",
@@ -104594,6 +106080,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "安宅本城",
         "genre": "",
         "category": "城",
@@ -104640,6 +106127,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "龍松山城",
         "genre": "",
         "category": "城",
@@ -104668,6 +106156,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "藤並館",
         "genre": "",
         "category": "城",
@@ -104741,6 +106230,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大野城",
         "genre": "",
         "category": "城",
@@ -104768,6 +106258,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "土井城",
         "genre": "",
         "category": "城",
@@ -104792,6 +106283,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "高瀬要害山城",
         "genre": "",
         "category": "城",
@@ -104820,6 +106312,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "中山城",
         "genre": "",
         "category": "城",
@@ -105341,6 +106834,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "堀内新宮城",
         "genre": "",
         "category": "城",
@@ -105395,6 +106889,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "法勝寺城",
         "genre": "",
         "category": "城",
@@ -105666,6 +107161,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "箆津城",
         "genre": "",
         "category": "城",
@@ -105695,6 +107191,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "富長城",
         "genre": "",
         "category": "城",
@@ -105972,6 +107469,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "周布城",
         "genre": "",
         "category": "城",
@@ -105999,6 +107497,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "石見城",
         "genre": "",
         "category": "城",
@@ -106050,6 +107549,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "矢滝城",
         "genre": "",
         "category": "城",
@@ -106077,6 +107577,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "矢筈城",
         "genre": "",
         "category": "城",
@@ -106540,6 +108041,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "新宮党館",
         "genre": "",
         "category": "城",
@@ -106567,6 +108069,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "車山城",
         "genre": "",
         "category": "城",
@@ -106645,6 +108148,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "金山要害山城",
         "genre": "",
         "category": "城",
@@ -106749,6 +108253,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "太鼓丸城",
         "genre": "",
         "category": "城",
@@ -106800,6 +108305,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "徳倉城",
         "genre": "",
         "category": "城",
@@ -106851,6 +108357,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "有漢常山城",
         "genre": "",
         "category": "城",
@@ -106898,6 +108405,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "荒神山城",
         "genre": "",
         "category": "城",
@@ -106925,6 +108433,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "医王山城",
         "genre": "",
         "category": "城",
@@ -106982,6 +108491,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "矢筈城",
         "genre": "",
         "category": "城",
@@ -107065,6 +108575,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "淡相城",
         "genre": "",
         "category": "城",
@@ -107094,6 +108605,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "林野城",
         "genre": "",
         "category": "城",
@@ -107121,6 +108633,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "日笠青山城",
         "genre": "",
         "category": "城",
@@ -107148,6 +108661,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "竹山城",
         "genre": "",
         "category": "城",
@@ -107172,6 +108686,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "山王山城",
         "genre": "",
         "category": "城",
@@ -107255,6 +108770,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "三成陣屋",
         "genre": "",
         "category": "城",
@@ -107304,6 +108820,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "北曽根城",
         "genre": "",
         "category": "城",
@@ -107360,6 +108877,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "楪城",
         "genre": "",
         "category": "城",
@@ -107389,6 +108907,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "神楽尾城",
         "genre": "",
         "category": "城",
@@ -107440,6 +108959,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "寺山城",
         "genre": "",
         "category": "城",
@@ -107493,6 +109013,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "矢倉城",
         "genre": "",
         "category": "城",
@@ -107522,6 +109043,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "植月城",
         "genre": "",
         "category": "城",
@@ -107576,6 +109098,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "井の内城",
         "genre": "",
         "category": "城",
@@ -107746,6 +109269,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "嵯峨山城",
         "genre": "",
         "category": "城",
@@ -107855,6 +109379,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鬼ノ身城",
         "genre": "",
         "category": "城",
@@ -107909,6 +109434,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "経山城",
         "genre": "",
         "category": "城",
@@ -107965,6 +109491,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "葛下城",
         "genre": "",
         "category": "城",
@@ -108040,6 +109567,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "小田草城",
         "genre": "",
         "category": "城",
@@ -108230,6 +109758,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "加茂城",
         "genre": "",
         "category": "城",
@@ -108287,6 +109816,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡（造山古墳）",
         "name": "造山城",
         "genre": "",
         "category": "城",
@@ -108356,6 +109886,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鶴田陣屋",
         "genre": "",
         "category": "城",
@@ -108622,6 +110153,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "相方城",
         "genre": "",
         "category": "城",
@@ -108677,6 +110209,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "青陰城",
         "genre": "",
         "category": "城",
@@ -108736,6 +110269,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "矢野城",
         "genre": "",
         "category": "城",
@@ -108818,6 +110352,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "今田城",
         "genre": "",
         "category": "城",
@@ -108846,6 +110381,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "長見山城",
         "genre": "",
         "category": "城",
@@ -108870,6 +110406,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "青木城",
         "genre": "",
         "category": "城",
@@ -108894,6 +110431,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "長崎城",
         "genre": "",
         "category": "城",
@@ -109054,6 +110592,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "蔀山城",
         "genre": "",
         "category": "城",
@@ -109083,6 +110622,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "比叡尾山城",
         "genre": "",
         "category": "城",
@@ -109111,6 +110651,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "五品嶽城",
         "genre": "",
         "category": "城",
@@ -109139,6 +110680,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "甲山城",
         "genre": "",
         "category": "城",
@@ -109168,6 +110710,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "鷲尾山城",
         "genre": "",
         "category": "城",
@@ -109304,6 +110847,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "一乗山城",
         "genre": "",
         "category": "城",
@@ -109359,6 +110903,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "茶臼山城〔世羅町〕",
         "genre": "",
         "category": "城",
@@ -109413,6 +110958,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "茶臼山城〔御調郡〕",
         "genre": "",
         "category": "城",
@@ -109437,6 +110983,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "島前城",
         "genre": "",
         "category": "城",
@@ -109461,6 +111008,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "千守城",
         "genre": "",
         "category": "城",
@@ -109485,6 +111033,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "一ノ城",
         "genre": "",
         "category": "城",
@@ -109512,6 +111061,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "美可崎城",
         "genre": "",
         "category": "城",
@@ -109540,6 +111090,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "馬神城",
         "genre": "",
         "category": "城",
@@ -109594,6 +111145,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "土居城",
         "genre": "",
         "category": "城",
@@ -109617,6 +111169,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "幸崎城",
         "genre": "",
         "category": "城",
@@ -109663,6 +111216,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "塩屋城",
         "genre": "",
         "category": "城",
@@ -109687,6 +111241,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "日下津城",
         "genre": "",
         "category": "城",
@@ -109714,6 +111269,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡（青光井山尼子陣所跡）",
         "name": "光井山城",
         "genre": "",
         "category": "城",
@@ -109766,6 +111322,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "松尾城〔高田郡〕",
         "genre": "",
         "category": "城",
@@ -109796,6 +111353,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "面山城",
         "genre": "",
         "category": "城",
@@ -109850,6 +111408,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "吹屋城",
         "genre": "",
         "category": "城",
@@ -109877,6 +111436,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "仁後城",
         "genre": "",
         "category": "城",
@@ -109904,6 +111464,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "猪掛城",
         "genre": "",
         "category": "城",
@@ -109932,6 +111493,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "阿賀城",
         "genre": "",
         "category": "城",
@@ -109959,6 +111521,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "田屋城〔八千代町〕",
         "genre": "",
         "category": "城",
@@ -110034,6 +111597,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鳴滝山城",
         "genre": "",
         "category": "城",
@@ -110167,6 +111731,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "藤城",
         "genre": "",
         "category": "城",
@@ -110195,6 +111760,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "相良城",
         "genre": "",
         "category": "城",
@@ -110223,6 +111789,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "椋梨城",
         "genre": "",
         "category": "城",
@@ -110250,6 +111817,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "堀越城",
         "genre": "",
         "category": "城",
@@ -110277,6 +111845,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "田屋城〔向原町〕",
         "genre": "",
         "category": "城",
@@ -110301,6 +111870,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定文化財（裏御門）、市指定文化財（物（馬）見櫓）",
         "name": "吉田陣屋",
         "genre": "",
         "category": "城",
@@ -110377,6 +111947,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡（青光井山尼子陣所跡）",
         "name": "青山城",
         "genre": "",
         "category": "城",
@@ -110405,6 +111976,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "岩屋城",
         "genre": "",
         "category": "城",
@@ -110434,6 +112006,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "清源城",
         "genre": "",
         "category": "城",
@@ -110728,6 +112301,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "泉山城",
         "genre": "",
         "category": "城",
@@ -110757,6 +112331,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "椋山城",
         "genre": "",
         "category": "城",
@@ -111199,6 +112774,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "重清城",
         "genre": "",
         "category": "城",
@@ -111223,6 +112799,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "東山城",
         "genre": "",
         "category": "城",
@@ -111324,6 +112901,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "青木城",
         "genre": "",
         "category": "城",
@@ -111352,6 +112930,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "板西城",
         "genre": "",
         "category": "城",
@@ -111402,6 +112981,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "井上城",
         "genre": "",
         "category": "城",
@@ -111746,6 +113326,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "原田城",
         "genre": "",
         "category": "城",
@@ -111772,6 +113353,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "郡城",
         "genre": "",
         "category": "城",
@@ -111841,6 +113423,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "吉田城",
         "genre": "",
         "category": "城",
@@ -111868,6 +113451,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "吉野城",
         "genre": "",
         "category": "城",
@@ -111969,6 +113553,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "牟岐古城",
         "genre": "",
         "category": "城",
@@ -112328,6 +113913,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "瀬部城",
         "genre": "",
         "category": "城",
@@ -112351,6 +113937,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "七条城",
         "genre": "",
         "category": "城",
@@ -112374,6 +113961,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "西分城",
         "genre": "",
         "category": "城",
@@ -112538,6 +114126,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "住吉城",
         "genre": "",
         "category": "城",
@@ -113326,6 +114915,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "雨滝城",
         "genre": "",
         "category": "城",
@@ -113350,6 +114940,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "多度津陣屋",
         "genre": "",
         "category": "城",
@@ -113373,6 +114964,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "前田城",
         "genre": "",
         "category": "城",
@@ -113397,6 +114989,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "西長尾城",
         "genre": "",
         "category": "城",
@@ -113531,6 +115124,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡（富田茶臼山古墳として）",
         "name": "茶臼山城",
         "genre": "",
         "category": "城",
@@ -113555,6 +115149,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "笠島城",
         "genre": "",
         "category": "城",
@@ -113739,6 +115334,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "本篠城",
         "genre": "",
         "category": "城",
@@ -113969,6 +115565,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "仁尾城",
         "genre": "",
         "category": "城",
@@ -114047,6 +115644,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "栗隈城",
         "genre": "",
         "category": "城",
@@ -114104,6 +115702,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "垂水城",
         "genre": "",
         "category": "城",
@@ -114154,6 +115753,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高井城",
         "genre": "",
         "category": "城",
@@ -114226,6 +115826,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "岡本城",
         "genre": "",
         "category": "城",
@@ -114770,6 +116371,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "神田城",
         "genre": "",
         "category": "城",
@@ -114794,6 +116396,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大見城",
         "genre": "",
         "category": "城",
@@ -114955,6 +116558,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡（青龍古墳）",
         "name": "鷺井城",
         "genre": "",
         "category": "城",
@@ -115471,6 +117075,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "国分山城",
         "genre": "",
         "category": "城",
@@ -115527,6 +117132,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "西条陣屋",
         "genre": "",
         "category": "城",
@@ -115608,6 +117214,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "荏原城",
         "genre": "",
         "category": "城",
@@ -115637,6 +117244,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鷹ヶ森城",
         "genre": "",
         "category": "城",
@@ -115661,6 +117269,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "千里城",
         "genre": "",
         "category": "城",
@@ -115690,6 +117299,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小松陣屋",
         "genre": "",
         "category": "城",
@@ -115846,6 +117456,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "松葉城",
         "genre": "",
         "category": "城",
@@ -115897,6 +117508,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高尾城〔新居郡〕",
         "genre": "",
         "category": "城",
@@ -115921,6 +117533,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "剣山城",
         "genre": "",
         "category": "城",
@@ -115998,6 +117611,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "横山城",
         "genre": "",
         "category": "城",
@@ -116052,6 +117666,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "龍門山城",
         "genre": "",
         "category": "城",
@@ -116126,6 +117741,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "恵良城",
         "genre": "",
         "category": "城",
@@ -116154,6 +117770,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "中尾城",
         "genre": "",
         "category": "城",
@@ -116204,6 +117821,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "重茂山城",
         "genre": "",
         "category": "城",
@@ -116460,6 +118078,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "幸門城",
         "genre": "",
         "category": "城",
@@ -116488,6 +118107,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "松前城",
         "genre": "",
         "category": "城",
@@ -116707,6 +118327,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "象ヶ森城",
         "genre": "",
         "category": "城",
@@ -116734,6 +118355,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "幻城",
         "genre": "",
         "category": "城",
@@ -116809,6 +118431,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "曽根城",
         "genre": "",
         "category": "城",
@@ -116911,6 +118534,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "笠松山城",
         "genre": "",
         "category": "城",
@@ -116935,6 +118559,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高峠城",
         "genre": "",
         "category": "城",
@@ -116984,6 +118609,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "怪島城",
         "genre": "",
         "category": "城",
@@ -117011,6 +118637,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "新谷藩陣屋",
         "genre": "",
         "category": "城",
@@ -117064,6 +118691,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高仙山城",
         "genre": "",
         "category": "城",
@@ -117091,6 +118719,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "松尾城〔宇摩郡〕",
         "genre": "",
         "category": "城",
@@ -117195,6 +118824,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "黄幡城",
         "genre": "",
         "category": "城",
@@ -117222,6 +118852,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "三滝城",
         "genre": "",
         "category": "城",
@@ -117249,6 +118880,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "渋柿城",
         "genre": "",
         "category": "城",
@@ -117276,6 +118908,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高尾城〔宇和郡〕",
         "genre": "",
         "category": "城",
@@ -117298,6 +118931,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "白木城",
         "genre": "",
         "category": "城",
@@ -117379,6 +119013,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "円山城",
         "genre": "",
         "category": "城",
@@ -117407,6 +119042,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大浜城",
         "genre": "",
         "category": "城",
@@ -117489,6 +119125,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "正法寺山城",
         "genre": "",
         "category": "城",
@@ -118099,6 +119736,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "本山城",
         "genre": "",
         "category": "城",
@@ -118146,6 +119784,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "獅子ケ鼻城",
         "genre": "",
         "category": "城",
@@ -118170,6 +119809,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "八黒城",
         "genre": "",
         "category": "城",
@@ -118197,6 +119837,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "丸岡城",
         "genre": "",
         "category": "城",
@@ -118357,6 +119998,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "汗生城",
         "genre": "",
         "category": "城",
@@ -118385,6 +120027,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "橘城",
         "genre": "",
         "category": "城",
@@ -118542,6 +120185,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "長崎城",
         "genre": "",
         "category": "城",
@@ -118752,6 +120396,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "白石城",
         "genre": "",
         "category": "城",
@@ -118820,6 +120465,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "梅の子本城",
         "genre": "",
         "category": "城",
@@ -118943,6 +120589,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "猿ヶ滝城",
         "genre": "",
         "category": "城",
@@ -118969,6 +120616,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鎌田城",
         "genre": "",
         "category": "城",
@@ -118996,6 +120644,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "上城",
         "genre": "",
         "category": "城",
@@ -119325,6 +120974,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "泰ノ山城",
         "genre": "",
         "category": "城",
@@ -119970,6 +121620,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "勝山城",
         "genre": "",
         "category": "城",
@@ -120197,6 +121848,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "佐川城",
         "genre": "",
         "category": "城",
@@ -120221,6 +121873,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "久礼城",
         "genre": "",
         "category": "城",
@@ -120245,6 +121898,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "香宗城",
         "genre": "",
         "category": "城",
@@ -120272,6 +121926,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "佐川松尾城",
         "genre": "",
         "category": "城",
@@ -120322,6 +121977,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "別役城",
         "genre": "",
         "category": "城",
@@ -120373,6 +122029,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "姫倉城",
         "genre": "",
         "category": "城",
@@ -120397,6 +122054,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "久礼田城",
         "genre": "",
         "category": "城",
@@ -120421,6 +122079,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "波川城",
         "genre": "",
         "category": "城",
@@ -120647,6 +122306,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "吉田城",
         "genre": "",
         "category": "城",
@@ -120800,6 +122460,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "戸波城",
         "genre": "",
         "category": "城",
@@ -120925,6 +122586,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "岡本城",
         "genre": "",
         "category": "城",
@@ -120952,6 +122614,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "山川城",
         "genre": "",
         "category": "城",
@@ -121037,6 +122700,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "福万城",
         "genre": "",
         "category": "城",
@@ -121089,6 +122753,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "尾川城",
         "genre": "",
         "category": "城",
@@ -121268,6 +122933,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "田村城",
         "genre": "",
         "category": "城",
@@ -121667,6 +123333,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "能津城",
         "genre": "",
         "category": "城",
@@ -121772,6 +123439,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "拝原城",
         "genre": "",
         "category": "城",
@@ -121916,6 +123584,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "末延城",
         "genre": "",
         "category": "城",
@@ -122023,6 +123692,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "粟井城",
         "genre": "",
         "category": "城",
@@ -122109,6 +123779,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡（比江山史跡）",
         "name": "比江山城",
         "genre": "",
         "category": "城",
@@ -122190,6 +123861,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "深渕城",
         "genre": "",
         "category": "城",
@@ -122210,6 +123882,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "四手城",
         "genre": "",
         "category": "城",
@@ -122545,6 +124218,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "談議所古城",
         "genre": "",
         "category": "城",
@@ -122654,6 +124328,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "大野見城",
         "genre": "",
         "category": "城",
@@ -122808,6 +124483,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "大野城",
         "genre": "日本100名城",
         "category": "城",
@@ -122834,6 +124510,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "益富城",
         "genre": "",
         "category": "城",
@@ -122861,6 +124538,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "馬ヶ岳城",
         "genre": "",
         "category": "城",
@@ -122889,6 +124567,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "松尾城",
         "genre": "",
         "category": "城",
@@ -122945,6 +124624,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "高良山神籠石",
         "genre": "",
         "category": "城",
@@ -122995,6 +124675,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "障子ヶ岳城",
         "genre": "",
         "category": "城",
@@ -123053,6 +124734,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "黒崎城",
         "genre": "",
         "category": "城",
@@ -123189,6 +124871,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "岡城",
         "genre": "",
         "category": "城",
@@ -123219,6 +124902,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "女山神籠石",
         "genre": "",
         "category": "城",
@@ -123833,6 +125517,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡（移築門）",
         "name": "直方陣屋",
         "genre": "",
         "category": "城",
@@ -123859,6 +125544,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "竹崎城",
         "genre": "",
         "category": "城",
@@ -123989,6 +125675,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "住吉城",
         "genre": "",
         "category": "城",
@@ -124228,6 +125915,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "唐船城",
         "genre": "",
         "category": "城",
@@ -124378,6 +126066,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "直谷城",
         "genre": "",
         "category": "城",
@@ -124517,6 +126206,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "桟原城",
         "genre": "",
         "category": "城",
@@ -124572,6 +126262,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "亀丘城",
         "genre": "",
         "category": "城",
@@ -124600,6 +126291,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "生池城",
         "genre": "",
         "category": "城",
@@ -124832,6 +126524,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "東空閑城",
         "genre": "",
         "category": "城",
@@ -124907,6 +126600,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "勘次ヶ城",
         "genre": "",
         "category": "城",
@@ -125013,6 +126707,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "宇土市指定考古資料（慶長13年銘滴水瓦）、宇土市指定史跡（宇土城跡）",
         "name": "宇土城",
         "genre": "",
         "category": "城",
@@ -125042,6 +126737,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡（佐敷城跡）",
         "name": "佐敷城",
         "genre": "",
         "category": "城",
@@ -125069,6 +126765,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "陣ノ内城",
         "genre": "",
         "category": "城",
@@ -125121,6 +126818,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "亀尾城",
         "genre": "",
         "category": "城",
@@ -125205,6 +126903,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "豊福城",
         "genre": "",
         "category": "城",
@@ -125305,6 +127004,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "戸崎城",
         "genre": "",
         "category": "城",
@@ -125402,6 +127102,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "湯前城",
         "genre": "",
         "category": "城",
@@ -125426,6 +127127,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡、市指定史跡",
         "name": "長岩城",
         "genre": "",
         "category": "城",
@@ -125472,6 +127174,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "光岡城",
         "genre": "",
         "category": "城",
@@ -125499,6 +127202,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "森陣屋",
         "genre": "",
         "category": "城",
@@ -125525,6 +127229,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "一ツ戸城",
         "genre": "",
         "category": "城",
@@ -125580,6 +127285,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "平田城",
         "genre": "",
         "category": "城",
@@ -125637,6 +127343,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "栂牟礼城",
         "genre": "",
         "category": "城",
@@ -125661,6 +127368,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "佐田城",
         "genre": "",
         "category": "城",
@@ -125792,6 +127500,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "安岐城",
         "genre": "",
         "category": "城",
@@ -125843,6 +127552,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "富来城",
         "genre": "",
         "category": "城",
@@ -125919,6 +127629,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "南山城",
         "genre": "",
         "category": "城",
@@ -125943,6 +127654,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "山野城",
         "genre": "",
         "category": "城",
@@ -125997,6 +127709,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "日知屋城",
         "genre": "",
         "category": "城",
@@ -126154,6 +127867,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "門川城",
         "genre": "",
         "category": "城",
@@ -126340,6 +128054,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "戸崎城",
         "genre": "",
         "category": "城",
@@ -126810,6 +128525,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "赤尾木城",
         "genre": "",
         "category": "城",
@@ -126866,6 +128582,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "平松城",
         "genre": "",
         "category": "城",
@@ -126889,6 +128606,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "出水城",
         "genre": "",
         "category": "城",
@@ -126924,6 +128642,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定文化財",
         "name": "松山城",
         "genre": "",
         "category": "城",
@@ -127026,6 +128745,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "堂崎城",
         "genre": "",
         "category": "城",
@@ -127050,6 +128770,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "南郷城",
         "genre": "",
         "category": "城",
@@ -127130,6 +128851,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "楠川城",
         "genre": "",
         "category": "城",
@@ -127152,6 +128874,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "頴娃城",
         "genre": "",
         "category": "城",
@@ -127180,6 +128903,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "指宿城",
         "genre": "",
         "category": "城",
@@ -127315,6 +129039,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "横川城",
         "genre": "",
         "category": "城",
@@ -127342,6 +129067,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "木牟礼城",
         "genre": "",
         "category": "城",
@@ -127365,6 +129091,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "恒吉城",
         "genre": "",
         "category": "城",
@@ -127392,6 +129119,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡（長屋）、市指定史跡（林之城）",
         "name": "林之城",
         "genre": "",
         "category": "城",
@@ -127543,6 +129271,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "亀井山城",
         "genre": "",
         "category": "城",
@@ -127568,6 +129297,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "桜之城",
         "genre": "",
         "category": "城",
@@ -127699,6 +129429,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "松尾城",
         "genre": "",
         "category": "城",
@@ -127755,6 +129486,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "龍虎城",
         "genre": "",
         "category": "城",
@@ -127829,6 +129561,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大城グスク",
         "genre": "",
         "category": "城",
@@ -127902,6 +129635,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "高腰グスク",
         "genre": "",
         "category": "城",
@@ -127924,6 +129658,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "久場嘉グスク",
         "genre": "",
         "category": "城",
@@ -127950,6 +129685,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "伊敷索グスク",
         "genre": "",
         "category": "城",
@@ -127973,6 +129709,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "塩原グスク",
         "genre": "",
         "category": "城",
@@ -128050,6 +129787,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "田名グスク",
         "genre": "",
         "category": "城",
@@ -128119,6 +129857,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "手真嘉グスク",
         "genre": "",
         "category": "城",
@@ -128374,6 +130113,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "シイナグスク",
         "genre": "",
         "category": "城",
@@ -129348,6 +131088,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "市成城跡",
         "genre": "",
         "category": "城",
@@ -129375,6 +131116,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "黄金塚城跡",
         "genre": "",
         "category": "城",
@@ -129558,6 +131300,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "二丈岳城跡",
         "genre": "",
         "category": "城",
@@ -130004,6 +131747,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "敷山城跡",
         "genre": "",
         "category": "城",
@@ -130271,6 +132015,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鎮海山城跡",
         "genre": "",
         "category": "城",
@@ -131177,6 +132922,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "蟻城(南城)跡",
         "genre": "",
         "category": "城",
@@ -131315,6 +133061,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "塩田城上の城跡",
         "genre": "",
         "category": "城",
@@ -131382,6 +133129,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "蓬山城跡",
         "genre": "",
         "category": "城",
@@ -131427,6 +133175,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "刑部城跡",
         "genre": "",
         "category": "城",
@@ -131529,6 +133278,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "北条城",
         "genre": "",
         "category": "城",
@@ -131667,6 +133417,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "大寺城跡",
         "genre": "",
         "category": "城",
@@ -131836,6 +133587,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "時水城（夏城）",
         "genre": "",
         "category": "城",
@@ -131860,6 +133612,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "時水城（冬城）",
         "genre": "",
         "category": "城",
@@ -132030,6 +133783,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "新山城本城跡",
         "genre": "",
         "category": "城",
@@ -132201,6 +133955,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "古川城跡",
         "genre": "",
         "category": "城",
@@ -132337,6 +134092,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "明利又城跡",
         "genre": "",
         "category": "城",
@@ -132532,6 +134288,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "白山森館（長井市）",
         "genre": "",
         "category": "城",
@@ -132668,6 +134425,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "二色根館（南陽市）",
         "genre": "",
         "category": "城",
@@ -132916,6 +134674,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "大塚城（川西町）",
         "genre": "",
         "category": "城",
@@ -132941,6 +134700,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "洲島館（川西町）",
         "genre": "",
         "category": "城",
@@ -133170,6 +134930,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "萩生城（飯豊町）",
         "genre": "",
         "category": "城",
@@ -133697,6 +135458,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "平山城跡",
         "genre": "",
         "category": "城",
@@ -133893,6 +135655,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "田中城跡",
         "genre": "",
         "category": "城",
@@ -134176,6 +135939,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "山田城（大隅山田城）",
         "genre": "",
         "category": "城",
@@ -134394,6 +136158,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "野々美谷城跡",
         "genre": "",
         "category": "城",
@@ -134447,6 +136212,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "安楽城跡",
         "genre": "",
         "category": "城",
@@ -134592,6 +136358,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "蓬原城跡",
         "genre": "",
         "category": "城",
@@ -134803,6 +136570,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "太良城址",
         "genre": "",
         "category": "城",
@@ -134827,6 +136595,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "赤池城跡",
         "genre": "",
         "category": "城",
@@ -135166,6 +136935,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "永里城跡",
         "genre": "",
         "category": "城",
@@ -135302,6 +137072,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "紙屋城跡(第二の空堀跡)",
         "genre": "",
         "category": "城",
@@ -135478,6 +137249,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "才津城跡",
         "genre": "",
         "category": "城",
@@ -135767,6 +137539,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大矢野城跡",
         "genre": "",
         "category": "城",
@@ -135880,6 +137653,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "上土城跡",
         "genre": "",
         "category": "城",
@@ -135983,6 +137757,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "上村城跡",
         "genre": "",
         "category": "城",
@@ -136131,6 +137906,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "魚目城山城跡",
         "genre": "",
         "category": "城",
@@ -136758,6 +138534,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "馬渡城跡",
         "genre": "",
         "category": "城",
@@ -136871,6 +138648,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "台城跡",
         "genre": "",
         "category": "城",
@@ -137005,6 +138783,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "古池城跡",
         "genre": "",
         "category": "城",
@@ -137032,6 +138811,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "城林城跡（木庭城跡）",
         "genre": "",
         "category": "城",
@@ -137375,6 +139155,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "豊後 朝日嶽城",
         "genre": "",
         "category": "城",
@@ -137749,6 +139530,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "小峰城址",
         "genre": "",
         "category": "城",
@@ -138679,6 +140461,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鷹取城跡",
         "genre": "",
         "category": "城",
@@ -138766,6 +140549,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "五社尾城跡",
         "genre": "",
         "category": "城",
@@ -138790,6 +140574,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "元居城跡",
         "genre": "",
         "category": "城",
@@ -138817,6 +140602,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "掛幕城跡",
         "genre": "",
         "category": "城",
@@ -138958,6 +140744,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "葛原城跡",
         "genre": "",
         "category": "城",
@@ -139729,6 +141516,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "山瀬城跡",
         "genre": "",
         "category": "城",
@@ -140062,6 +141850,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "怡土城跡",
         "genre": "",
         "category": "城",
@@ -140905,6 +142694,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大畑城跡",
         "genre": "",
         "category": "城",
@@ -141006,6 +142796,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "龍王城跡",
         "genre": "",
         "category": "城",
@@ -141363,6 +143154,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "真玉城跡",
         "genre": "",
         "category": "城",
@@ -141388,6 +143180,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "今市城跡",
         "genre": "",
         "category": "城",
@@ -141410,6 +143203,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "竹の尾城跡",
         "genre": "",
         "category": "城",
@@ -141458,6 +143252,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "飯塚城跡",
         "genre": "",
         "category": "城",
@@ -141530,6 +143325,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "雄渡牟礼城跡",
         "genre": "",
         "category": "城",
@@ -142497,6 +144293,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "岩神城跡",
         "genre": "",
         "category": "城",
@@ -142521,6 +144318,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "国吉城跡",
         "genre": "",
         "category": "城",
@@ -142595,6 +144393,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "中城跡",
         "genre": "",
         "category": "城",
@@ -142637,6 +144436,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "吉田城跡",
         "genre": "",
         "category": "城",
@@ -143306,6 +145106,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "佐部城跡",
         "genre": "",
         "category": "城",
@@ -143406,6 +145207,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高津城跡",
         "genre": "",
         "category": "城",
@@ -145102,6 +146904,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "丸子山城跡",
         "genre": "",
         "category": "城",
@@ -146469,6 +148272,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "池田城跡",
         "genre": "",
         "category": "城",
@@ -147243,6 +149047,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "有馬本城跡",
         "genre": "",
         "category": "城",
@@ -147668,6 +149473,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "中荒城跡",
         "genre": "",
         "category": "城",
@@ -147695,6 +149501,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "横山城跡",
         "genre": "",
         "category": "城",
@@ -147741,6 +149548,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "下瀬山城跡",
         "genre": "",
         "category": "城",
@@ -147844,6 +149652,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "中山城跡",
         "genre": "",
         "category": "城",
@@ -147872,6 +149681,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高森城跡",
         "genre": "",
         "category": "城",
@@ -148896,6 +150706,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "匠ヶ城跡",
         "genre": "",
         "category": "城",
@@ -149056,6 +150867,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "旧:真鍋城跡",
         "genre": "",
         "category": "城",
@@ -150993,6 +152805,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "向横田頚ヶ滝城跡",
         "genre": "",
         "category": "城",
@@ -151112,6 +152925,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "四ツ山城址",
         "genre": "",
         "category": "城",
@@ -151372,6 +153186,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "丸茂城跡",
         "genre": "",
         "category": "城",
@@ -151420,6 +153235,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "本明城跡",
         "genre": "",
         "category": "城",
@@ -151492,6 +153308,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "一本松城跡",
         "genre": "",
         "category": "城",
@@ -151930,6 +153747,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "野田山城跡",
         "genre": "",
         "category": "城",
@@ -152022,6 +153840,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "余谷城址",
         "genre": "",
         "category": "城",
@@ -152209,6 +154028,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高八山城跡",
         "genre": "",
         "category": "城",
@@ -152548,6 +154368,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "翁山城跡（護国山城跡）",
         "genre": "",
         "category": "城",
@@ -152572,6 +154393,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "有福城跡",
         "genre": "",
         "category": "城",
@@ -152686,6 +154508,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小笹丸城跡",
         "genre": "",
         "category": "城",
@@ -152879,6 +154702,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "固屋城跡",
         "genre": "",
         "category": "城",
@@ -152906,6 +154730,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "九鬼城跡",
         "genre": "",
         "category": "城",
@@ -152977,6 +154802,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "国吉城跡",
         "genre": "",
         "category": "城",
@@ -153063,6 +154889,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "正霊山城址",
         "genre": "",
         "category": "城",
@@ -153874,6 +155701,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "佐治城址",
         "genre": "",
         "category": "城",
@@ -155133,6 +156961,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "藤ヶ瀬城址",
         "genre": "",
         "category": "城",
@@ -155199,6 +157028,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "日倉城跡",
         "genre": "",
         "category": "城",
@@ -155427,6 +157257,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "小松城跡",
         "genre": "",
         "category": "城",
@@ -155946,6 +157777,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "日爪城跡",
         "genre": "",
         "category": "城",
@@ -156524,6 +158356,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "谷城跡",
         "genre": "",
         "category": "城",
@@ -161131,6 +162964,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "大嶽城跡",
         "genre": "",
         "category": "城",
@@ -161641,6 +163475,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "北の城跡",
         "genre": "",
         "category": "城",
@@ -162797,6 +164632,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小屋城跡（村井城跡）",
         "genre": "",
         "category": "城",
@@ -162881,6 +164717,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "田中城跡",
         "genre": "",
         "category": "城",
@@ -163224,6 +165061,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "干沢城跡",
         "genre": "",
         "category": "城",
@@ -163441,6 +165279,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "蟻城(北城)跡",
         "genre": "",
         "category": "城",
@@ -165139,6 +166978,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "長尾城跡",
         "genre": "",
         "category": "城",
@@ -165528,6 +167368,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鑰掛城跡",
         "genre": "",
         "category": "城",
@@ -165866,6 +167707,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高松城（川島氏館）跡",
         "genre": "",
         "category": "城",
@@ -165891,6 +167733,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "鶉古城跡",
         "genre": "",
         "category": "城",
@@ -166574,6 +168417,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "稲村城跡",
         "genre": "",
         "category": "城",
@@ -166894,6 +168738,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "竹の城跡",
         "genre": "",
         "category": "城",
@@ -167256,6 +169101,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "内山城跡 (仙蔵城)",
         "genre": "",
         "category": "城",
@@ -167392,6 +169238,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "浅貝寄居城跡",
         "genre": "",
         "category": "城",
@@ -167498,6 +169345,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "尻高城跡",
         "genre": "",
         "category": "城",
@@ -167582,6 +169430,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "逆面城跡",
         "genre": "",
         "category": "城",
@@ -167635,6 +169484,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "猪倉城跡",
         "genre": "",
         "category": "城",
@@ -167819,6 +169669,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "戸田城跡",
         "genre": "",
         "category": "城",
@@ -168063,6 +169914,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "片平城跡",
         "genre": "",
         "category": "城",
@@ -169375,6 +171227,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "袖ヶ館城跡",
         "genre": "",
         "category": "城",
@@ -169770,6 +171623,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大崎城跡",
         "genre": "",
         "category": "城",
@@ -169843,6 +171697,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鳥越城跡",
         "genre": "",
         "category": "城",
@@ -169910,6 +171765,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鎌田城跡",
         "genre": "",
         "category": "城",
@@ -170051,6 +171907,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "浜崎城跡",
         "genre": "",
         "category": "城",
@@ -170698,6 +172555,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "平林加護山城跡",
         "genre": "",
         "category": "城",
@@ -170914,6 +172772,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高舘城跡",
         "genre": "",
         "category": "城",
@@ -171629,6 +173488,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "観音寺城跡",
         "genre": "",
         "category": "城",
@@ -171702,6 +173562,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "横山城跡",
         "genre": "",
         "category": "城",
@@ -172446,6 +174307,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "滝沢城跡",
         "genre": "",
         "category": "城",
@@ -172599,6 +174461,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "吉田城跡",
         "genre": "",
         "category": "城",
@@ -173209,6 +175072,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "元本堂城跡",
         "genre": "",
         "category": "城",
@@ -173376,6 +175240,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "長岡城跡",
         "genre": "",
         "category": "城",
@@ -173544,6 +175409,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "風張城跡",
         "genre": "",
         "category": "城",
@@ -173905,6 +175771,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "野沢城跡",
         "genre": "",
         "category": "城",
@@ -173976,6 +175843,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "大開城跡",
         "genre": "",
         "category": "城",
@@ -174341,6 +176209,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高尾城跡",
         "genre": "",
         "category": "城",
@@ -174498,6 +176367,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "安永城跡",
         "genre": "",
         "category": "城",
@@ -174771,6 +176641,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "志和池城跡",
         "genre": "",
         "category": "城",
@@ -176160,6 +178031,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "増永城跡",
         "genre": "",
         "category": "城",
@@ -176291,6 +178163,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "神尾城跡",
         "genre": "",
         "category": "城",
@@ -176484,6 +178357,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "打越城跡",
         "genre": "",
         "category": "城",
@@ -176508,6 +178382,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "正光寺城跡",
         "genre": "",
         "category": "城",
@@ -176680,6 +178555,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高道城跡",
         "genre": "",
         "category": "城",
@@ -176762,6 +178638,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "竹崎城跡",
         "genre": "",
         "category": "城",
@@ -177364,6 +179241,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "河原城跡",
         "genre": "",
         "category": "城",
@@ -177887,6 +179765,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "水ヶ江城跡",
         "genre": "",
         "category": "城",
@@ -178807,6 +180686,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "津留城跡",
         "genre": "",
         "category": "城",
@@ -178829,6 +180709,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "塩塚城跡",
         "genre": "",
         "category": "城",
@@ -179526,6 +181407,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "鵜木城跡",
         "genre": "",
         "category": "城",
@@ -180269,6 +182151,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "鳥屋ヶ森城跡",
         "genre": "",
         "category": "城",
@@ -180296,6 +182179,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "志摩ヶ城跡",
         "genre": "",
         "category": "城",
@@ -180604,6 +182488,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "唐船城跡",
         "genre": "",
         "category": "城",
@@ -181519,6 +183404,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "大土居水城跡",
         "genre": "",
         "category": "城",
@@ -182468,6 +184354,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "唐原山城跡",
         "genre": "",
         "category": "城",
@@ -183042,6 +184929,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "八並城跡",
         "genre": "",
         "category": "城",
@@ -183790,6 +185678,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "堀城址",
         "genre": "",
         "category": "城",
@@ -184953,6 +186842,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "蚊居田土居城跡",
         "genre": "",
         "category": "城",
@@ -185339,6 +187229,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "蛇喰城跡",
         "genre": "",
         "category": "城",
@@ -189670,6 +191561,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "藤白城跡",
         "genre": "",
         "category": "城",
@@ -190523,6 +192415,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "三之瀬城跡",
         "genre": "",
         "category": "城",
@@ -190547,6 +192440,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "広瀬城跡",
         "genre": "",
         "category": "城",
@@ -190947,6 +192841,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "西光寺山城跡",
         "genre": "",
         "category": "城",
@@ -190971,6 +192866,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小松尾城跡",
         "genre": "",
         "category": "城",
@@ -193644,6 +195540,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "鳶尾山城跡",
         "genre": "",
         "category": "城",
@@ -193710,6 +195607,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "旗立山古城跡",
         "genre": "",
         "category": "城",
@@ -193964,6 +195862,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "藤尾城跡",
         "genre": "",
         "category": "城",
@@ -195382,6 +197281,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "最初ヶ峰城跡",
         "genre": "",
         "category": "城",
@@ -196967,6 +198867,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "阪内城跡",
         "genre": "",
         "category": "城",
@@ -197089,6 +198990,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "市山城跡",
         "genre": "",
         "category": "城",
@@ -197134,6 +199036,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "道川城跡",
         "genre": "",
         "category": "城",
@@ -197294,6 +199197,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "枝の城跡",
         "genre": "",
         "category": "城",
@@ -198129,6 +200033,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "川平山城跡",
         "genre": "",
         "category": "城",
@@ -198927,6 +200832,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "石蟹山城跡",
         "genre": "",
         "category": "城",
@@ -198989,6 +200895,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "成羽陣屋跡",
         "genre": "",
         "category": "城",
@@ -199223,6 +201130,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "金黒山城跡",
         "genre": "",
         "category": "城",
@@ -199791,6 +201699,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "丸山城跡",
         "genre": "",
         "category": "城",
@@ -201750,6 +203659,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "鷹尾山城跡",
         "genre": "",
         "category": "城",
@@ -201842,6 +203752,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "明石道峯構付城跡",
         "genre": "",
         "category": "城",
@@ -203271,6 +205182,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "壬生野城跡",
         "genre": "",
         "category": "城",
@@ -203781,6 +205693,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小川西ノ城跡（西之城跡）",
         "genre": "",
         "category": "城",
@@ -203966,6 +205879,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "八田城跡",
         "genre": "",
         "category": "城",
@@ -205160,6 +207074,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "箕輪城址",
         "genre": "",
         "category": "城",
@@ -205257,6 +207172,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "丹野城跡",
         "genre": "",
         "category": "城",
@@ -205500,6 +207416,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "石田城跡",
         "genre": "",
         "category": "城",
@@ -206187,6 +208104,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "穴ヶ谷城跡",
         "genre": "",
         "category": "城",
@@ -206345,6 +208263,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "横岡城跡",
         "genre": "",
         "category": "城",
@@ -208017,6 +209936,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "宮山城跡",
         "genre": "",
         "category": "城",
@@ -208086,6 +210006,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "美和山城跡",
         "genre": "",
         "category": "城",
@@ -208173,6 +210094,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "日上山城跡",
         "genre": "",
         "category": "城",
@@ -208370,6 +210292,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "桝形城跡",
         "genre": "",
         "category": "城",
@@ -209098,6 +211021,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "有元城跡",
         "genre": "",
         "category": "城",
@@ -212012,6 +213936,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "上平寺城跡",
         "genre": "",
         "category": "城",
@@ -216917,6 +218842,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "三開山城跡",
         "genre": "",
         "category": "城",
@@ -219674,6 +221600,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大田切城跡",
         "genre": "",
         "category": "城",
@@ -219696,6 +221623,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "吉田南城跡",
         "genre": "",
         "category": "城",
@@ -219720,6 +221648,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "小田切城跡",
         "genre": "",
         "category": "城",
@@ -219742,6 +221671,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "吉田古城跡",
         "genre": "",
         "category": "城",
@@ -220589,6 +222519,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "若神子北城跡",
         "genre": "",
         "category": "城",
@@ -221975,6 +223906,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "龍門寺城跡",
         "genre": "",
         "category": "城",
@@ -222359,6 +224291,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "小見放城跡",
         "genre": "",
         "category": "城",
@@ -222423,6 +224356,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "長崎城跡",
         "genre": "",
         "category": "城",
@@ -222506,6 +224440,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "清水山城址",
         "genre": "",
         "category": "城",
@@ -223681,6 +225616,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "蟻城(西城)跡",
         "genre": "",
         "category": "城",
@@ -224325,6 +226261,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "塩沢城跡",
         "genre": "",
         "category": "城",
@@ -225110,6 +227047,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "飯塚城址",
         "genre": "",
         "category": "城",
@@ -225388,6 +227326,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "三階城跡",
         "genre": "",
         "category": "城",
@@ -226375,6 +228314,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "八幡山城跡",
         "genre": "",
         "category": "城",
@@ -227150,6 +229090,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "禰津城(上ノ城)跡登城口",
         "genre": "",
         "category": "城",
@@ -227201,6 +229142,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "砥石城 枡形城跡",
         "genre": "",
         "category": "城",
@@ -227355,6 +229297,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "下之城跡",
         "genre": "",
         "category": "城",
@@ -227746,6 +229689,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "権田城跡",
         "genre": "",
         "category": "城",
@@ -228071,6 +230015,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "小田井城跡",
         "genre": "",
         "category": "城",
@@ -228334,6 +230279,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "桑田城跡",
         "genre": "",
         "category": "城",
@@ -228447,6 +230393,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "雉郷城跡",
         "genre": "",
         "category": "城",
@@ -229307,6 +231254,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "中村城跡",
         "genre": "",
         "category": "城",
@@ -229559,6 +231507,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "駒城（駒館）跡",
         "genre": "",
         "category": "城",
@@ -230845,6 +232794,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "立開城跡",
         "genre": "",
         "category": "城",
@@ -231596,6 +233546,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大岩城跡",
         "genre": "",
         "category": "城",
@@ -232414,6 +234365,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "中山古城跡",
         "genre": "",
         "category": "城",
@@ -234096,6 +236048,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "板木城跡",
         "genre": "",
         "category": "城",
@@ -234254,6 +236207,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "関ノ森城跡",
         "genre": "",
         "category": "城",
@@ -234772,6 +236726,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "旧蕨野城跡",
         "genre": "",
         "category": "城",
@@ -235055,6 +237010,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "師山城跡",
         "genre": "",
         "category": "城",
@@ -235235,6 +237191,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小野城跡",
         "genre": "",
         "category": "城",
@@ -236110,6 +238067,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "今石城跡",
         "genre": "",
         "category": "城",
@@ -237071,6 +239029,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "佐留垣城跡",
         "genre": "",
         "category": "城",
@@ -237983,6 +239942,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "中島城跡",
         "genre": "",
         "category": "城",
@@ -238500,6 +240460,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "阿志岐山城",
         "genre": "",
         "category": "城",
@@ -240323,6 +242284,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "雀ヶ森城跡",
         "genre": "",
         "category": "城",
@@ -242347,6 +244309,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "梶原山城跡",
         "genre": "",
         "category": "城",
@@ -242818,6 +244781,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "恵下山城跡",
         "genre": "",
         "category": "城",
@@ -242895,6 +244859,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "伊勢ヶ坪城跡",
         "genre": "",
         "category": "城",
@@ -243042,6 +245007,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "生城山城跡",
         "genre": "",
         "category": "城",
@@ -243626,6 +245592,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大須和城跡",
         "genre": "",
         "category": "城",
@@ -243653,6 +245620,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "岩山城跡",
         "genre": "",
         "category": "城",
@@ -250020,6 +251988,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "寺原城跡",
         "genre": "",
         "category": "城",
@@ -250673,6 +252642,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "釜ヶ城跡",
         "genre": "",
         "category": "城",
@@ -251000,6 +252970,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "本亀城跡",
         "genre": "",
         "category": "城",
@@ -251258,6 +253229,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "六郎山城跡",
         "genre": "",
         "category": "城",
@@ -251658,6 +253630,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高原城跡",
         "genre": "",
         "category": "城",
@@ -252234,6 +254207,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "西山城跡",
         "genre": "",
         "category": "城",
@@ -253134,6 +255108,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "佐井田城跡",
         "genre": "",
         "category": "城",
@@ -253451,6 +255426,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "台ヶ鼻城跡",
         "genre": "",
         "category": "城",
@@ -253679,6 +255655,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "安盛城跡",
         "genre": "",
         "category": "城",
@@ -254462,6 +256439,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "龍王山城跡",
         "genre": "",
         "category": "城",
@@ -254528,6 +256506,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "立畑城跡",
         "genre": "",
         "category": "城",
@@ -254591,6 +256570,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "上殿城跡",
         "genre": "",
         "category": "城",
@@ -254836,6 +256816,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "両宮山城跡",
         "genre": "",
         "category": "城",
@@ -256173,6 +258154,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "高木大山付城跡",
         "genre": "",
         "category": "城",
@@ -256219,6 +258201,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "這田村法界寺山ノ上付城跡",
         "genre": "",
         "category": "城",
@@ -256671,6 +258654,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "平井山ノ上付城跡(羽柴秀吉本陣跡)",
         "genre": "",
         "category": "城",
@@ -262618,6 +264602,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "殿山城跡",
         "genre": "",
         "category": "城",
@@ -263036,6 +265021,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "石打城跡",
         "genre": "",
         "category": "城",
@@ -265305,6 +267291,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "公方屋敷支城跡",
         "genre": "",
         "category": "城",
@@ -265593,6 +267580,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "青木西城跡",
         "genre": "",
         "category": "城",
@@ -266331,6 +268319,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "赤羽根古城跡",
         "genre": "",
         "category": "城",
@@ -267122,6 +269111,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高木城跡(高木氏発祥の地)",
         "genre": "",
         "category": "城",
@@ -269706,6 +271696,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "波作利城跡",
         "genre": "",
         "category": "城",
@@ -269932,6 +271923,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "本丸城跡",
         "genre": "",
         "category": "城",
@@ -270228,6 +272220,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "河原山城跡",
         "genre": "",
         "category": "城",
@@ -285902,6 +287895,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "今井城跡",
         "genre": "",
         "category": "城",
@@ -289103,6 +291097,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "桃井城跡（建神社）",
         "genre": "",
         "category": "城",
@@ -289593,6 +291588,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "市川陣屋跡",
         "genre": "",
         "category": "城",
@@ -289615,6 +291611,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "清水陣屋跡",
         "genre": "",
         "category": "城",
@@ -294788,6 +296785,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "天狗山の古城跡",
         "genre": "",
         "category": "城",
@@ -295617,6 +297615,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "城峯城跡",
         "genre": "",
         "category": "城",
@@ -295646,6 +297645,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "三ノ倉城跡",
         "genre": "",
         "category": "城",
@@ -295691,6 +297691,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "山田城跡",
         "genre": "",
         "category": "城",
@@ -296213,6 +298214,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "津久田城跡",
         "genre": "",
         "category": "城",
@@ -298898,6 +300900,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "国神城趾",
         "genre": "",
         "category": "城",
@@ -302571,6 +304574,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "猿羽根館",
         "genre": "",
         "category": "城",
@@ -303065,6 +305069,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "河島山遺跡",
         "genre": "",
         "category": "城",
@@ -303461,6 +305466,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "源氏楯(鮭川村)",
         "genre": "",
         "category": "城",
@@ -303682,6 +305688,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "山根館",
         "genre": "",
         "category": "城",
@@ -303836,6 +305843,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "根井館",
         "genre": "",
         "category": "城",
@@ -304146,6 +306154,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "谷木沢楯",
         "genre": "",
         "category": "城",
@@ -304798,6 +306807,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "普門院館",
         "genre": "",
         "category": "城",
@@ -304971,6 +306981,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "勅使館",
         "genre": "",
         "category": "城",
@@ -305766,6 +307777,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "四十二館",
         "genre": "",
         "category": "城",
@@ -305876,6 +307888,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小桜城",
         "genre": "",
         "category": "城",
@@ -305993,6 +308006,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "大楯館",
         "genre": "",
         "category": "城",
@@ -306152,6 +308166,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "平形館",
         "genre": "",
         "category": "城",
@@ -306867,6 +308882,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "秋田藩 院内番所",
         "genre": "",
         "category": "城",
@@ -320524,6 +322540,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "綱取城",
         "genre": "",
         "category": "城",
@@ -321062,6 +323079,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "多田川城",
         "genre": "",
         "category": "城",
@@ -321110,6 +323128,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "八幡館(西和賀町)",
         "genre": "",
         "category": "城",
@@ -321567,6 +323586,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "八幡館",
         "genre": "",
         "category": "城",
@@ -321591,6 +323611,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "弘前藩 平舘台場",
         "genre": "",
         "category": "城",
@@ -321896,6 +323917,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "高屋敷館",
         "genre": "",
         "category": "城",
@@ -321948,6 +323970,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "高久の古館",
         "genre": "",
         "category": "城",
@@ -322020,6 +324043,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "渕牛館",
         "genre": "",
         "category": "城",
@@ -322171,6 +324195,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "宮崎館",
         "genre": "",
         "category": "城",
@@ -322265,6 +324290,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "赤松館",
         "genre": "",
         "category": "城",
@@ -322344,6 +324370,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "大名館",
         "genre": "",
         "category": "城",
@@ -322674,6 +324701,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "宮沢遺跡",
         "genre": "",
         "category": "城",
@@ -322724,6 +324752,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "タカナシ館",
         "genre": "",
         "category": "城",
@@ -322899,6 +324928,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "青山城",
         "genre": "",
         "category": "城",
@@ -322999,6 +325029,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "根城館(宮古市)",
         "genre": "",
         "category": "城",
@@ -323244,6 +325275,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "二桜城",
         "genre": "",
         "category": "城",
@@ -323318,6 +325350,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "西館(仙台市)",
         "genre": "",
         "category": "城",
@@ -323366,6 +325399,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "鶴峯城",
         "genre": "",
         "category": "城",
@@ -323565,6 +325599,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "玉山館",
         "genre": "",
         "category": "城",
@@ -323687,6 +325722,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "中島館",
         "genre": "",
         "category": "城",
@@ -323765,6 +325801,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "天王館",
         "genre": "",
         "category": "城",
@@ -323970,6 +326007,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "川口館",
         "genre": "",
         "category": "城",
@@ -324038,6 +326076,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定文化財",
         "name": "鏡ヶ城",
         "genre": "",
         "category": "城",
@@ -324224,6 +326263,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "五戸館",
         "genre": "",
         "category": "城",
@@ -324391,6 +326431,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "金沢城",
         "genre": "",
         "category": "城",
@@ -324419,6 +326460,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "江泉館",
         "genre": "",
         "category": "城",
@@ -324494,6 +326536,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "藤倉館",
         "genre": "",
         "category": "城",
@@ -324516,6 +326559,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "無為館",
         "genre": "",
         "category": "城",
@@ -324964,6 +327008,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "滝野館",
         "genre": "",
         "category": "城",
@@ -325366,6 +327411,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "陣ケ岡(紫波町)",
         "genre": "",
         "category": "城",
@@ -325662,6 +327708,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "石沢館",
         "genre": "",
         "category": "城",
@@ -325852,6 +327899,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "丸子館",
         "genre": "",
         "category": "城",
@@ -326191,6 +328239,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "日ノ沢館",
         "genre": "",
         "category": "城",
@@ -326906,6 +328955,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "原館",
         "genre": "",
         "category": "城",
@@ -327032,6 +329082,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "山ノ内屋敷",
         "genre": "",
         "category": "城",
@@ -327241,6 +329292,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "牛ノ沢館",
         "genre": "",
         "category": "城",
@@ -327311,6 +329363,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "茂市館",
         "genre": "",
         "category": "城",
@@ -327335,6 +329388,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "塙代官所",
         "genre": "",
         "category": "城",
@@ -327449,6 +329503,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "上姉体城",
         "genre": "",
         "category": "城",
@@ -327619,6 +329674,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "相米館",
         "genre": "",
         "category": "城",
@@ -328305,6 +330361,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "前館",
         "genre": "",
         "category": "城",
@@ -328512,6 +330569,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "石亀館",
         "genre": "",
         "category": "城",
@@ -329394,6 +331452,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "長沼南古館",
         "genre": "",
         "category": "城",
@@ -330267,6 +332326,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "弘前藩 大間越関所",
         "genre": "",
         "category": "城",
@@ -330947,6 +333007,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "古館(五戸町)",
         "genre": "",
         "category": "城",
@@ -350765,6 +352826,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "下圷館",
         "genre": "",
         "category": "城",
@@ -350787,6 +352849,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "平治館",
         "genre": "",
         "category": "城",
@@ -353403,6 +355466,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大明神山の砦",
         "genre": "",
         "category": "城",
@@ -353567,6 +355631,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "彦部屋敷",
         "genre": "",
         "category": "城",
@@ -353699,6 +355764,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "梅原館",
         "genre": "",
         "category": "城",
@@ -353724,6 +355790,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "後閑館",
         "genre": "",
         "category": "城",
@@ -353771,6 +355838,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "大笹関所",
         "genre": "",
         "category": "城",
@@ -353859,6 +355927,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "久永氏陣屋",
         "genre": "",
         "category": "城",
@@ -353971,6 +356040,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "狩宿関所",
         "genre": "",
         "category": "城",
@@ -354084,6 +356154,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "新田館",
         "genre": "",
         "category": "城",
@@ -354649,6 +356720,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "刀工権田政重屋敷",
         "genre": "",
         "category": "城",
@@ -357753,6 +359825,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "野沢城",
         "genre": "",
         "category": "城",
@@ -357826,6 +359899,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "豊代館",
         "genre": "",
         "category": "城",
@@ -357875,6 +359949,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "水口館",
         "genre": "",
         "category": "城",
@@ -357965,6 +360040,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小滝城",
         "genre": "",
         "category": "城",
@@ -357987,6 +360063,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "千本陣屋",
         "genre": "",
         "category": "城",
@@ -358100,6 +360177,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "那須官衙遺跡",
         "genre": "",
         "category": "城",
@@ -358147,6 +360225,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "稲沢館",
         "genre": "",
         "category": "城",
@@ -361075,6 +363154,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "御茶屋御殿",
         "genre": "",
         "category": "城",
@@ -362986,6 +365066,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "品川第三台場",
         "genre": "続日本100名城",
         "category": "城",
@@ -363035,6 +365116,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "大蔵館",
         "genre": "",
         "category": "城",
@@ -363057,6 +365139,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "品川第六台場",
         "genre": "",
         "category": "城",
@@ -363079,6 +365162,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "足利基氏館",
         "genre": "",
         "category": "城",
@@ -363129,6 +365213,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "都指定史跡",
         "name": "世田谷代官屋敷",
         "genre": "",
         "category": "城",
@@ -363224,6 +365309,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "中山家範館",
         "genre": "",
         "category": "城",
@@ -363452,6 +365538,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "人見館",
         "genre": "",
         "category": "城",
@@ -365970,6 +368057,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "上浜田遺跡",
         "genre": "",
         "category": "城",
@@ -366830,6 +368918,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "三穂ヶ崎台場",
         "genre": "",
         "category": "城",
@@ -367768,6 +369857,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "秋葉山城",
         "genre": "",
         "category": "城",
@@ -367795,6 +369885,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "室野城",
         "genre": "",
         "category": "城",
@@ -367819,6 +369910,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "天神山城",
         "genre": "",
         "category": "城",
@@ -368017,6 +370109,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "あら城",
         "genre": "",
         "category": "城",
@@ -368170,6 +370263,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "根知城(栗山城)",
         "genre": "",
         "category": "城",
@@ -368194,6 +370288,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "函山城",
         "genre": "",
         "category": "城",
@@ -368246,6 +370341,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定重要文化財",
         "name": "長谷川邸",
         "genre": "",
         "category": "城",
@@ -368787,6 +370883,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高梨城",
         "genre": "",
         "category": "城",
@@ -368833,6 +370930,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "出雲崎代官所",
         "genre": "",
         "category": "城",
@@ -369015,6 +371113,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "黒川館",
         "genre": "",
         "category": "城",
@@ -369285,6 +371384,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "白河藩/桑名藩 柏崎陣屋",
         "genre": "",
         "category": "城",
@@ -369310,6 +371410,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "堀越館",
         "genre": "",
         "category": "城",
@@ -375163,6 +377264,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "中山砦",
         "genre": "",
         "category": "城",
@@ -375238,6 +377340,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "白山城南砦(ムク台烽火台)",
         "genre": "",
         "category": "城",
@@ -375265,6 +377368,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "白山城北砦(北烽火台)",
         "genre": "",
         "category": "城",
@@ -375292,6 +377396,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大渡の烽火台",
         "genre": "",
         "category": "城",
@@ -375343,6 +377448,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "義清館(市川三郷町)",
         "genre": "",
         "category": "城",
@@ -375365,6 +377471,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "於曾屋敷",
         "genre": "",
         "category": "城",
@@ -375509,6 +377616,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "八田家御朱印屋敷",
         "genre": "",
         "category": "城",
@@ -375575,6 +377683,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大村氏屋敷",
         "genre": "",
         "category": "城",
@@ -375622,6 +377731,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "波木井氏館",
         "genre": "",
         "category": "城",
@@ -375668,6 +377778,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "屋代氏館",
         "genre": "",
         "category": "城",
@@ -375690,6 +377801,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "秋山光朝館",
         "genre": "",
         "category": "城",
@@ -375715,6 +377827,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "加賀美氏館",
         "genre": "",
         "category": "城",
@@ -375737,6 +377850,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "義清館(昭和町)",
         "genre": "",
         "category": "城",
@@ -375922,6 +378036,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "長閑屋敷",
         "genre": "",
         "category": "城",
@@ -375948,6 +378063,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鳥原屋敷",
         "genre": "",
         "category": "城",
@@ -376083,6 +378199,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "曲淵氏屋敷",
         "genre": "",
         "category": "城",
@@ -376149,6 +378266,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "田安陣屋",
         "genre": "",
         "category": "城",
@@ -376171,6 +378289,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "十組屋敷",
         "genre": "",
         "category": "城",
@@ -376220,6 +378339,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鎌田氏館",
         "genre": "",
         "category": "城",
@@ -376528,6 +378648,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "土橋大内蔵屋敷",
         "genre": "",
         "category": "城",
@@ -376597,6 +378718,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鶴瀬の口留番所",
         "genre": "",
         "category": "城",
@@ -376619,6 +378741,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小笠原長清館",
         "genre": "",
         "category": "城",
@@ -376689,6 +378812,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "岩崎館",
         "genre": "",
         "category": "城",
@@ -379589,6 +381713,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "若宮城",
         "genre": "",
         "category": "城",
@@ -379639,6 +381764,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "真田館",
         "genre": "",
         "category": "城",
@@ -379736,6 +381862,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "青柳氏館",
         "genre": "",
         "category": "城",
@@ -379761,6 +381888,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "松尾城遠見番所",
         "genre": "",
         "category": "城",
@@ -379785,6 +381913,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "福島関所",
         "genre": "",
         "category": "城",
@@ -379906,6 +382035,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "村上氏居館",
         "genre": "",
         "category": "城",
@@ -379928,6 +382058,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "村指定史跡",
         "name": "下の城",
         "genre": "",
         "category": "城",
@@ -379999,6 +382130,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "多田加助宅",
         "genre": "",
         "category": "城",
@@ -380234,6 +382366,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "芋川氏館",
         "genre": "",
         "category": "城",
@@ -380256,6 +382389,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "飯田砦",
         "genre": "",
         "category": "城",
@@ -380281,6 +382415,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "井上氏居館",
         "genre": "",
         "category": "城",
@@ -380429,6 +382564,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "真々部氏館",
         "genre": "",
         "category": "城",
@@ -380546,6 +382682,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "中之条陣屋",
         "genre": "",
         "category": "城",
@@ -380617,6 +382754,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定重要文化財",
         "name": "馬場家屋敷",
         "genre": "",
         "category": "城",
@@ -380639,6 +382777,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "法蔵寺館",
         "genre": "",
         "category": "城",
@@ -380801,6 +382940,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鳥羽館(安曇野市)",
         "genre": "",
         "category": "城",
@@ -380889,6 +383029,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "市田陣屋",
         "genre": "",
         "category": "城",
@@ -380938,6 +383079,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "根々井館",
         "genre": "",
         "category": "城",
@@ -381101,6 +383243,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "吉野堀屋敷",
         "genre": "",
         "category": "城",
@@ -381123,6 +383266,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "吉野町館",
         "genre": "",
         "category": "城",
@@ -381214,6 +383358,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "内堀館",
         "genre": "",
         "category": "城",
@@ -381258,6 +383403,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "釜井庵館",
         "genre": "",
         "category": "城",
@@ -381327,6 +383473,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鍋蓋砦(東御市)",
         "genre": "",
         "category": "城",
@@ -381627,6 +383774,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "百瀬陣屋",
         "genre": "",
         "category": "城",
@@ -381943,6 +384091,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "構えの墓屋敷",
         "genre": "",
         "category": "城",
@@ -382398,6 +384547,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "細萱氏館",
         "genre": "",
         "category": "城",
@@ -387308,6 +389458,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "小川台場",
         "genre": "",
         "category": "城",
@@ -387623,6 +389774,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "石の門砦",
         "genre": "",
         "category": "城",
@@ -387810,6 +389962,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "生地台場",
         "genre": "",
         "category": "城",
@@ -387900,6 +390053,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "加賀藩 境関所",
         "genre": "",
         "category": "城",
@@ -387968,6 +390122,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "郷柿沢館",
         "genre": "",
         "category": "城",
@@ -389589,6 +391744,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鞍谷御所",
         "genre": "",
         "category": "城",
@@ -389806,6 +391962,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "下番堀江館",
         "genre": "",
         "category": "城",
@@ -389832,6 +391989,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "吉崎御坊",
         "genre": "",
         "category": "城",
@@ -389901,6 +392059,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "一乗谷下木戸",
         "genre": "",
         "category": "城",
@@ -389923,6 +392082,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "梶台場",
         "genre": "",
         "category": "城",
@@ -390061,6 +392221,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "伊自良館",
         "genre": "",
         "category": "城",
@@ -390129,6 +392290,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "一乗谷上木戸",
         "genre": "",
         "category": "城",
@@ -390177,6 +392339,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "一乗谷朝倉景鏡館",
         "genre": "",
         "category": "城",
@@ -390199,6 +392362,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "舟寄館",
         "genre": "",
         "category": "城",
@@ -390221,6 +392385,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "一乗谷権殿",
         "genre": "",
         "category": "城",
@@ -390485,6 +392650,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "結城晴朝館",
         "genre": "",
         "category": "城",
@@ -390576,6 +392742,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "金津奉行所",
         "genre": "",
         "category": "城",
@@ -391920,6 +394087,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "御舘館",
         "genre": "",
         "category": "城",
@@ -392117,6 +394285,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "左近田堡",
         "genre": "",
         "category": "城",
@@ -394451,6 +396620,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "小浜藩 松ヶ瀬台場",
         "genre": "",
         "category": "城",
@@ -398729,6 +400899,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "新居関所",
         "genre": "",
         "category": "城",
@@ -398754,6 +400925,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "長者屋敷",
         "genre": "",
         "category": "城",
@@ -398844,6 +401016,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "本庄山砦",
         "genre": "",
         "category": "城",
@@ -398868,6 +401041,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "大熊館",
         "genre": "",
         "category": "城",
@@ -398917,6 +401091,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "米津台場",
         "genre": "",
         "category": "城",
@@ -401872,6 +404047,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "一宮砦",
         "genre": "",
         "category": "城",
@@ -401940,6 +404116,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "石川丈山屋敷",
         "genre": "",
         "category": "城",
@@ -402014,6 +404191,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "松平氏館",
         "genre": "",
         "category": "城",
@@ -402127,6 +404305,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "松見屋敷",
         "genre": "",
         "category": "城",
@@ -402451,6 +404630,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "浅井西城",
         "genre": "",
         "category": "城",
@@ -402885,6 +405065,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "保科正直屋敷",
         "genre": "",
         "category": "城",
@@ -403001,6 +405182,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "蒲形城",
         "genre": "",
         "category": "城",
@@ -405057,6 +407239,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "丸根砦",
         "genre": "",
         "category": "城",
@@ -405081,6 +407264,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "鷲津砦",
         "genre": "",
         "category": "城",
@@ -405884,6 +408068,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "金森宗貞邸",
         "genre": "",
         "category": "城",
@@ -406844,6 +409029,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "下洞陣屋",
         "genre": "",
         "category": "城",
@@ -406890,6 +409076,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定名勝",
         "name": "東氏館",
         "genre": "",
         "category": "城",
@@ -406912,6 +409099,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "石田三成陣(西軍)",
         "genre": "",
         "category": "城",
@@ -406980,6 +409168,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "千村陣屋",
         "genre": "",
         "category": "城",
@@ -407056,6 +409245,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "太鼓部屋砦",
         "genre": "",
         "category": "城",
@@ -407080,6 +409270,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "お茶屋屋敷",
         "genre": "",
         "category": "城",
@@ -407102,6 +409293,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "大谷吉継陣(西軍)",
         "genre": "",
         "category": "城",
@@ -407124,6 +409316,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "法師丸砦",
         "genre": "",
         "category": "城",
@@ -407148,6 +409341,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鷲見氏居館",
         "genre": "",
         "category": "城",
@@ -407170,6 +409364,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大将陣",
         "genre": "",
         "category": "城",
@@ -407262,6 +409457,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "徳川家康最初の陣(東軍)",
         "genre": "",
         "category": "城",
@@ -407286,6 +409482,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "不破関",
         "genre": "",
         "category": "城",
@@ -407308,6 +409505,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "松平忠吉・井伊直政陣(東軍)",
         "genre": "",
         "category": "城",
@@ -407330,6 +409528,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "黒田長政・竹中重門陣(東軍)",
         "genre": "",
         "category": "城",
@@ -407450,6 +409649,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "旗本大嶋氏居館",
         "genre": "",
         "category": "城",
@@ -407584,6 +409784,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "瑞龍寺山砦",
         "genre": "",
         "category": "城",
@@ -407635,6 +409836,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "小西行長陣(西軍)",
         "genre": "",
         "category": "城",
@@ -407657,6 +409859,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "太閤山砦",
         "genre": "",
         "category": "城",
@@ -407748,6 +409951,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "石河邸",
         "genre": "",
         "category": "城",
@@ -407773,6 +409977,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "徳川家康最後の陣(東軍)",
         "genre": "",
         "category": "城",
@@ -407841,6 +410046,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "旗本 青木氏陣屋",
         "genre": "",
         "category": "城",
@@ -408047,6 +410253,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "笠松陣屋",
         "genre": "",
         "category": "城",
@@ -409772,6 +411979,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "枳城",
         "genre": "",
         "category": "城",
@@ -409823,6 +412031,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "正法寺山荘",
         "genre": "",
         "category": "城",
@@ -412050,6 +414259,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "別所山砦",
         "genre": "",
         "category": "城",
@@ -412098,6 +414308,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "弥高寺",
         "genre": "",
         "category": "城",
@@ -412170,6 +414381,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "後藤館",
         "genre": "",
         "category": "城",
@@ -412192,6 +414404,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "京極氏上平館",
         "genre": "",
         "category": "城",
@@ -412268,6 +414481,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "小谷城(月所丸)",
         "genre": "",
         "category": "城",
@@ -412314,6 +414528,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "小谷城(福寿丸)",
         "genre": "",
         "category": "城",
@@ -412362,6 +414577,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "小谷城(山崎丸)",
         "genre": "",
         "category": "城",
@@ -412512,6 +414728,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "梅垣城",
         "genre": "",
         "category": "城",
@@ -412673,6 +414890,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "朽木氏岩神館",
         "genre": "",
         "category": "城",
@@ -412785,6 +415003,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "芦浦観音寺館",
         "genre": "",
         "category": "城",
@@ -414985,6 +417204,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "稗田環濠",
         "genre": "",
         "category": "城",
@@ -415103,6 +417323,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "若槻環濠",
         "genre": "",
         "category": "城",
@@ -415153,6 +417374,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定重要文化財",
         "name": "上窪田環濠",
         "genre": "",
         "category": "城",
@@ -417308,6 +419530,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "御土居",
         "genre": "",
         "category": "城",
@@ -418859,6 +421082,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "竹原八郎館",
         "genre": "",
         "category": "城",
@@ -419401,6 +421625,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "口有馬城",
         "genre": "",
         "category": "城",
@@ -419445,6 +421670,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "楯ヶ崎遠見番所",
         "genre": "",
         "category": "城",
@@ -420653,6 +422879,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "楠葉台場",
         "genre": "",
         "category": "城",
@@ -420774,6 +423001,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "水走氏館",
         "genre": "",
         "category": "城",
@@ -421595,6 +423823,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "明石藩舞子台場",
         "genre": "",
         "category": "城",
@@ -421712,6 +423941,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "西宮砲台",
         "genre": "",
         "category": "城",
@@ -423267,6 +425497,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "大渕館",
         "genre": "",
         "category": "城",
@@ -429399,6 +431630,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "八木城殿屋敷",
         "genre": "",
         "category": "城",
@@ -429565,6 +431797,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "茶すり山城",
         "genre": "",
         "category": "城",
@@ -429683,6 +431916,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "倉見陣屋",
         "genre": "",
         "category": "城",
@@ -432562,6 +434796,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "シクノ谷峯構付城",
         "genre": "",
         "category": "城",
@@ -432637,6 +434872,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "平井村中村間ノ山付城",
         "genre": "",
         "category": "城",
@@ -432919,6 +435155,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "小林八幡神社付城",
         "genre": "",
         "category": "城",
@@ -435205,6 +437442,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "松帆台場",
         "genre": "",
         "category": "城",
@@ -436034,6 +438272,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "浦富台場",
         "genre": "",
         "category": "城",
@@ -437931,6 +440170,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "目木構",
         "genre": "",
         "category": "城",
@@ -438023,6 +440263,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "院庄館",
         "genre": "",
         "category": "城",
@@ -438115,6 +440356,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "久世陣屋",
         "genre": "",
         "category": "城",
@@ -441214,6 +443456,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "船上山行宮跡",
         "genre": "",
         "category": "城",
@@ -441299,6 +443542,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "由良台場",
         "genre": "",
         "category": "城",
@@ -441321,6 +443565,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "槻下豪族館",
         "genre": "",
         "category": "城",
@@ -441489,6 +443734,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "橋津台場",
         "genre": "",
         "category": "城",
@@ -441511,6 +443757,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "境台場",
         "genre": "",
         "category": "城",
@@ -441555,6 +443802,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "淀江台場",
         "genre": "",
         "category": "城",
@@ -441623,6 +443871,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "赤崎台場",
         "genre": "",
         "category": "城",
@@ -444245,6 +446494,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "三刀屋じゃ山城",
         "genre": "",
         "category": "城",
@@ -446715,6 +448965,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "三本松城北砦",
         "genre": "",
         "category": "城",
@@ -446970,6 +449221,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "吉見氏居館",
         "genre": "",
         "category": "城",
@@ -448164,6 +450416,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "天瀬侍屋敷",
         "genre": "",
         "category": "城",
@@ -448414,6 +450667,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "大廻・小廻山城",
         "genre": "",
         "category": "城",
@@ -450716,6 +452970,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "伊達弾正館",
         "genre": "",
         "category": "城",
@@ -450963,6 +453218,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "三村氏居館",
         "genre": "",
         "category": "城",
@@ -451158,6 +453414,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "三村氏屋敷",
         "genre": "",
         "category": "城",
@@ -451180,6 +453437,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "小阪部陣屋",
         "genre": "",
         "category": "城",
@@ -451226,6 +453484,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "二条殿",
         "genre": "",
         "category": "城",
@@ -452117,6 +454376,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "秋庭氏居館",
         "genre": "",
         "category": "城",
@@ -454846,6 +457106,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "松本土居屋敷",
         "genre": "",
         "category": "城",
@@ -455098,6 +457359,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "原田備前守土居屋敷",
         "genre": "",
         "category": "城",
@@ -459870,6 +462132,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "万徳院跡",
         "genre": "",
         "category": "城",
@@ -459991,6 +462254,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "熊谷氏館",
         "genre": "",
         "category": "城",
@@ -460184,6 +462448,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "御里屋敷",
         "genre": "",
         "category": "城",
@@ -460795,6 +463060,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "三ツ城",
         "genre": "",
         "category": "城",
@@ -461123,6 +463389,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "松本屋敷",
         "genre": "",
         "category": "城",
@@ -465300,6 +467567,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "三田尻御茶屋",
         "genre": "",
         "category": "城",
@@ -465322,6 +467590,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "築山館",
         "genre": "",
         "category": "城",
@@ -465593,6 +467862,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "勝栄寺",
         "genre": "",
         "category": "城",
@@ -465713,6 +467983,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "萩藩 室積台場",
         "genre": "",
         "category": "城",
@@ -467457,6 +469728,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "奥阿武宰判勘場",
         "genre": "",
         "category": "城",
@@ -467623,6 +469895,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "萩藩 肥中台場",
         "genre": "",
         "category": "城",
@@ -467742,6 +470015,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "萩藩 泊ヶ鼻台場",
         "genre": "",
         "category": "城",
@@ -467936,6 +470210,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "どうかん屋敷",
         "genre": "",
         "category": "城",
@@ -468028,6 +470303,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "萩藩 女台場",
         "genre": "",
         "category": "城",
@@ -469280,6 +471556,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "大森城(松野町)",
         "genre": "",
         "category": "城",
@@ -469403,6 +471680,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "多武が森城",
         "genre": "",
         "category": "城",
@@ -469430,6 +471708,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "龍ヶ森城",
         "genre": "",
         "category": "城",
@@ -469507,6 +471786,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "朝児城",
         "genre": "",
         "category": "城",
@@ -469639,6 +471919,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "宇和島藩 久良天嶬鼻砲台",
         "genre": "",
         "category": "城",
@@ -469689,6 +471970,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "幻城(下城)",
         "genre": "",
         "category": "城",
@@ -469788,6 +472070,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "宇和島藩 樺崎台場",
         "genre": "",
         "category": "城",
@@ -470083,6 +472366,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "吉田陣屋",
         "genre": "",
         "category": "城",
@@ -470251,6 +472535,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "土居構",
         "genre": "",
         "category": "城",
@@ -470324,6 +472609,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "今治藩 三島台場",
         "genre": "",
         "category": "城",
@@ -470658,6 +472944,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "弓津恵島城",
         "genre": "",
         "category": "城",
@@ -470828,6 +473115,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "今治藩 三島陣屋",
         "genre": "",
         "category": "城",
@@ -470850,6 +473138,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "宇和島藩 近永代官所",
         "genre": "",
         "category": "城",
@@ -474486,6 +476775,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "七兵衛屋敷",
         "genre": "",
         "category": "城",
@@ -474616,6 +476906,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "塩飽勤番所",
         "genre": "",
         "category": "城",
@@ -474761,6 +477052,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "蕪越山狼煙場",
         "genre": "",
         "category": "城",
@@ -474921,6 +477213,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "星濡城",
         "genre": "",
         "category": "城",
@@ -475166,6 +477459,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大串山狼煙場",
         "genre": "",
         "category": "城",
@@ -476808,6 +479102,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "日和佐陣屋",
         "genre": "",
         "category": "城",
@@ -477921,6 +480216,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "烏ヶ森城(土佐山田町)",
         "genre": "",
         "category": "城",
@@ -478173,6 +480469,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "井窪城",
         "genre": "",
         "category": "城",
@@ -478522,6 +480819,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "土佐藩 須崎砲台",
         "genre": "",
         "category": "城",
@@ -479138,6 +481436,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "土佐藩 鹿島砲台",
         "genre": "",
         "category": "城",
@@ -479404,6 +481703,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "千屋城",
         "genre": "",
         "category": "城",
@@ -479473,6 +481773,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "岩村土居城",
         "genre": "",
         "category": "城",
@@ -479641,6 +481942,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "土佐藩 前浜砲台",
         "genre": "",
         "category": "城",
@@ -479828,6 +482130,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "野田土居城",
         "genre": "",
         "category": "城",
@@ -479854,6 +482157,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "土佐藩 東股番所",
         "genre": "",
         "category": "城",
@@ -479949,6 +482253,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "土佐藩 元越番所",
         "genre": "",
         "category": "城",
@@ -483586,6 +485891,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "青山城E砦",
         "genre": "",
         "category": "城",
@@ -483962,6 +486268,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "青山城F砦",
         "genre": "",
         "category": "城",
@@ -484071,6 +486378,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "青山城G砦",
         "genre": "",
         "category": "城",
@@ -484123,6 +486431,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "青山城B砦",
         "genre": "",
         "category": "城",
@@ -484467,6 +486776,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "四日市陣屋",
         "genre": "",
         "category": "城",
@@ -486179,6 +488489,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "亀城",
         "genre": "",
         "category": "城",
@@ -486435,6 +488746,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鶴ヶ城",
         "genre": "",
         "category": "城",
@@ -486483,6 +488795,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高尾城",
         "genre": "",
         "category": "城",
@@ -486507,6 +488820,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "蔵小野砦",
         "genre": "",
         "category": "城",
@@ -486579,6 +488893,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "緒方三郎惟栄館",
         "genre": "",
         "category": "城",
@@ -486794,6 +489109,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "柳井館",
         "genre": "",
         "category": "城",
@@ -487811,6 +490127,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "杷木神籠石",
         "genre": "",
         "category": "城",
@@ -488054,6 +490371,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "山家郡屋",
         "genre": "",
         "category": "城",
@@ -488076,6 +490394,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "元寇防塁(今津地区)",
         "genre": "",
         "category": "城",
@@ -488098,6 +490417,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "元寇防塁(生の松原地区)",
         "genre": "",
         "category": "城",
@@ -488171,6 +490491,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "元寇防塁(西新地区)",
         "genre": "",
         "category": "城",
@@ -488365,6 +490686,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "元寇防塁(今宿地区)",
         "genre": "",
         "category": "城",
@@ -488414,6 +490736,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定名勝",
         "name": "福岡藩 三奈木黒田家御茶屋",
         "genre": "",
         "category": "城",
@@ -488627,6 +490950,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "元寇防塁(向浜地区)",
         "genre": "",
         "category": "城",
@@ -488649,6 +490973,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "元寇防塁(地蔵松原地区)",
         "genre": "",
         "category": "城",
@@ -488717,6 +491042,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "元寇防塁(脇地区)",
         "genre": "",
         "category": "城",
@@ -490267,6 +492593,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "豊臣秀保陣",
         "genre": "",
         "category": "城",
@@ -490290,6 +492617,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "魚見岳台場",
         "genre": "",
         "category": "城",
@@ -490312,6 +492640,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "堀秀治陣",
         "genre": "",
         "category": "城",
@@ -490335,6 +492664,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "島津義弘陣",
         "genre": "",
         "category": "城",
@@ -490358,6 +492688,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "鍋島直茂陣",
         "genre": "",
         "category": "城",
@@ -490429,6 +492760,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "前田利家陣",
         "genre": "",
         "category": "城",
@@ -490477,6 +492809,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "四郎ケ島台場",
         "genre": "",
         "category": "城",
@@ -490571,6 +492904,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "黒田長政陣",
         "genre": "",
         "category": "城",
@@ -490642,6 +492976,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "長谷川秀一陣",
         "genre": "",
         "category": "城",
@@ -490688,6 +493023,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "徳川家康別陣",
         "genre": "",
         "category": "城",
@@ -490759,6 +493095,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "嘯月園",
         "genre": "",
         "category": "城",
@@ -490807,6 +493144,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "木村重隆陣",
         "genre": "",
         "category": "城",
@@ -490852,6 +493190,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "本庄館",
         "genre": "",
         "category": "城",
@@ -490947,6 +493286,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "木下利房陣",
         "genre": "",
         "category": "城",
@@ -491277,6 +493617,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "生駒親正陣",
         "genre": "",
         "category": "城",
@@ -491444,6 +493785,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "加藤嘉明陣",
         "genre": "",
         "category": "城",
@@ -491492,6 +493834,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "若山砦",
         "genre": "",
         "category": "城",
@@ -491572,6 +493915,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "古田重然陣",
         "genre": "",
         "category": "城",
@@ -491596,6 +493940,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "毛利秀頼陣",
         "genre": "",
         "category": "城",
@@ -491647,6 +493992,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "片桐且元陣",
         "genre": "",
         "category": "城",
@@ -491834,6 +494180,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "筑紫氏居館",
         "genre": "",
         "category": "城",
@@ -491886,6 +494233,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "上杉景勝陣",
         "genre": "",
         "category": "城",
@@ -491959,6 +494307,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "木下延俊陣",
         "genre": "",
         "category": "城",
@@ -491982,6 +494331,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大野代官所",
         "genre": "",
         "category": "城",
@@ -492026,6 +494376,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "福島正則陣",
         "genre": "",
         "category": "城",
@@ -492119,6 +494470,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "伊達政宗陣",
         "genre": "",
         "category": "城",
@@ -492376,6 +494728,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "伊ノ浦第１台場",
         "genre": "",
         "category": "城",
@@ -492422,6 +494775,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "坂口館",
         "genre": "",
         "category": "城",
@@ -492973,6 +495327,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "加藤清正陣",
         "genre": "",
         "category": "城",
@@ -493158,6 +495513,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鍋島館",
         "genre": "",
         "category": "城",
@@ -493180,6 +495536,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "徳川家康陣",
         "genre": "",
         "category": "城",
@@ -494049,6 +496406,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "矢上東房山台場",
         "genre": "",
         "category": "城",
@@ -494594,6 +496952,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定文化財",
         "name": "続代官所",
         "genre": "",
         "category": "城",
@@ -494708,6 +497067,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "太田和氏館",
         "genre": "",
         "category": "城",
@@ -495050,6 +497410,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "九鬼嘉隆陣",
         "genre": "",
         "category": "城",
@@ -495318,6 +497679,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "小西行長陣",
         "genre": "",
         "category": "城",
@@ -502008,6 +504370,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "田川内城",
         "genre": "",
         "category": "城",
@@ -502108,6 +504471,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "田次郎丸館",
         "genre": "",
         "category": "城",
@@ -502190,6 +504554,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "菊の池城",
         "genre": "",
         "category": "城",
@@ -502262,6 +504627,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "相良頼景館",
         "genre": "",
         "category": "城",
@@ -502456,6 +504822,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "牛深遠見中番所",
         "genre": "",
         "category": "城",
@@ -505672,6 +508039,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "宮水代官所",
         "genre": "",
         "category": "城",
@@ -505764,6 +508132,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "平八重城",
         "genre": "",
         "category": "城",
@@ -505857,6 +508226,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "祝吉御所",
         "genre": "",
         "category": "城",
@@ -505901,6 +508271,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "井ノ城",
         "genre": "",
         "category": "城",
@@ -507230,6 +509601,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "帖佐館",
         "genre": "",
         "category": "城",
@@ -507255,6 +509627,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "加治木館",
         "genre": "",
         "category": "城",
@@ -507375,6 +509748,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "原の台場",
         "genre": "",
         "category": "城",
@@ -507842,6 +510216,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "帖佐麓",
         "genre": "",
         "category": "城",
@@ -508123,6 +510498,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鶴亀城",
         "genre": "",
         "category": "城",
@@ -510373,6 +512749,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "野崎城",
         "genre": "",
         "category": "城",
@@ -510400,6 +512777,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "百次城",
         "genre": "",
         "category": "城",
@@ -510452,6 +512830,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "入来麓",
         "genre": "",
         "category": "城",
@@ -510589,6 +512968,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "薩摩藩 野間関所",
         "genre": "",
         "category": "城",
@@ -510611,6 +512991,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "上山城",
         "genre": "",
         "category": "城",
@@ -510660,6 +513041,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "鍋ヶ城",
         "genre": "",
         "category": "城",
@@ -510874,6 +513256,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "頴娃麓",
         "genre": "",
         "category": "城",
@@ -512602,6 +514985,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "甲ケ森城跡",
         "genre": "",
         "category": "城",
@@ -512688,6 +515072,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "怡土城跡",
         "genre": "",
         "category": "城",
@@ -512810,6 +515195,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "曾根城跡",
         "genre": "",
         "category": "城",
@@ -513247,6 +515633,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "田村城跡(居館跡)",
         "genre": "",
         "category": "城",
@@ -515490,6 +517877,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "万木城址",
         "genre": "",
         "category": "城",
@@ -515758,6 +518146,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "吉田本城跡",
         "genre": "",
         "category": "城",
@@ -515818,6 +518207,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "都指定史跡",
         "name": "稲付城跡",
         "genre": "",
         "category": "城",
@@ -516426,6 +518816,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "嵩山城跡",
         "genre": "",
         "category": "城",
@@ -516662,6 +519053,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "舘山城跡",
         "genre": "",
         "category": "城",
@@ -516960,6 +519352,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "大巻館",
         "genre": "",
         "category": "城",
@@ -518082,6 +520475,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "高城(三条市)",
         "genre": "",
         "category": "城",
@@ -518110,6 +520504,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "稗生城",
         "genre": "",
         "category": "城",
@@ -518738,6 +521133,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "疋檀城",
         "genre": "",
         "category": "城",
@@ -518762,6 +521158,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "一乗谷中の御殿",
         "genre": "",
         "category": "城",
@@ -518784,6 +521181,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "一乗谷諏訪館",
         "genre": "",
         "category": "城",
@@ -518806,6 +521204,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "番田堀江館",
         "genre": "",
         "category": "城",
@@ -519176,6 +521575,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "堀之内の城山",
         "genre": "",
         "category": "城",
@@ -519660,6 +522060,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "高城城",
         "genre": "",
         "category": "城",
@@ -519993,6 +522394,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "篠山城",
         "genre": "",
         "category": "城",
@@ -521041,6 +523443,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "誉田城",
         "genre": "",
         "category": "城",
@@ -521956,6 +524359,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "国司尾館",
         "genre": "",
         "category": "城",
@@ -522507,6 +524911,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "桜山城(新市町)",
         "genre": "",
         "category": "城",
@@ -523166,6 +525571,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "一ノ森城",
         "genre": "",
         "category": "城",
@@ -523193,6 +525599,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "親行城",
         "genre": "",
         "category": "城",
@@ -523489,6 +525896,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大流城",
         "genre": "",
         "category": "城",
@@ -523513,6 +525921,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "城ノ岡城",
         "genre": "",
         "category": "城",
@@ -523627,6 +526036,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "青山城C砦",
         "genre": "",
         "category": "城",
@@ -523798,6 +526208,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "烏岳城",
         "genre": "",
         "category": "城",
@@ -523916,6 +526327,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "上大利水城",
         "genre": "",
         "category": "城",
@@ -523939,6 +526351,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "天神山水城",
         "genre": "",
         "category": "城",
@@ -524070,6 +526483,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "高良山神篭石",
         "genre": "",
         "category": "城",
@@ -524136,6 +526550,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "五島邸",
         "genre": "",
         "category": "城",
@@ -524158,6 +526573,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "鷹取城",
         "genre": "",
         "category": "城",
@@ -524206,6 +526622,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定重要文化財",
         "name": "鍋島陣屋",
         "genre": "",
         "category": "城",
@@ -525739,6 +528156,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "堀尾屋敷",
         "genre": "",
         "category": "城",
@@ -526137,6 +528555,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "大可島城",
         "genre": "",
         "category": "城",
@@ -526512,6 +528931,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "月輪館",
         "genre": "",
         "category": "城",
@@ -526559,6 +528979,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "川浦代官所",
         "genre": "",
         "category": "城",
@@ -526606,6 +529027,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "馬場氏屋敷",
         "genre": "",
         "category": "城",
@@ -526628,6 +529050,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "石和陣屋",
         "genre": "",
         "category": "城",
@@ -526763,6 +529186,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "島田陣屋",
         "genre": "",
         "category": "城",
@@ -527201,6 +529625,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "(伝)賀陽氏館",
         "genre": "",
         "category": "城",
@@ -527247,6 +529672,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "上下代官所",
         "genre": "",
         "category": "城",
@@ -528026,6 +530452,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "町指定史跡",
         "name": "西光寺丸城",
         "genre": "",
         "category": "城",
@@ -528090,6 +530517,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "国指定史跡",
         "name": "原城跡",
         "genre": "",
         "category": "城",
@@ -528139,6 +530567,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "特別史跡",
         "name": "大野城跡",
         "genre": "",
         "category": "城",
@@ -529231,6 +531660,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "県指定史跡",
         "name": "麻績古城跡",
         "genre": "",
         "category": "城",
@@ -529551,6 +531981,7 @@ const castleData = {
         ]
       },
       "properties": {
+        "culturalAsset": "市指定史跡",
         "name": "青木城(東城館)",
         "genre": "",
         "category": "城",
