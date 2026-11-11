@@ -11,6 +11,7 @@ Chromium（Playwright）で主な画面を順に開く。各シナリオで
 
     python tests/deploy/scenario_test.py            # 画面なしで実行
     python tests/deploy/scenario_test.py --headed   # 画面を出して実行
+    python tests/deploy/scenario_test.py --base https://geopenguin.minimal7.workers.dev   # デプロイ後の本番を確かめる
 
 必要なもの: pip install playwright && python -m playwright install chromium
 Service Worker は止めて実行する（前回の保存分で欠けが隠れないように）。
@@ -227,17 +228,22 @@ def main():
     sys.stdout.reconfigure(encoding='utf-8')
     ap = argparse.ArgumentParser()
     ap.add_argument('--headed', action='store_true')
+    ap.add_argument('--base', help='ローカルで配信せず、この URL（本番など）に対して走らせる')
     args = ap.parse_args()
 
     with tempfile.TemporaryDirectory() as tmp:
-        site = Path(tmp)
-        n = build_site(site)
-        print(f'配信物 {n} 件を一時フォルダに書き出した')
-
-        handler = functools.partial(QuietHandler, directory=str(site))
-        server = http.server.ThreadingHTTPServer(('127.0.0.1', 0), handler)
-        threading.Thread(target=server.serve_forever, daemon=True).start()
-        base = f'http://127.0.0.1:{server.server_address[1]}'
+        server = None
+        if args.base:
+            base = args.base.rstrip('/')
+            print(f'{base} に対して実行する')
+        else:
+            site = Path(tmp)
+            n = build_site(site)
+            print(f'配信物 {n} 件を一時フォルダに書き出した')
+            handler = functools.partial(QuietHandler, directory=str(site))
+            server = http.server.ThreadingHTTPServer(('127.0.0.1', 0), handler)
+            threading.Thread(target=server.serve_forever, daemon=True).start()
+            base = f'http://127.0.0.1:{server.server_address[1]}'
 
         failed = 0
         try:
@@ -263,8 +269,9 @@ def main():
                     failed += bool(problems)
                 browser.close()
         finally:
-            server.shutdown()
-            server.server_close()
+            if server:
+                server.shutdown()
+                server.server_close()
 
     print('OK' if not failed else f'NG {failed} 件のシナリオ')
     return 1 if failed else 0
