@@ -1,0 +1,7 @@
+#!/bin/sh
+# コミットの前に配信物の静的検査を走らせる（1秒ほど）。master へのコミットはそのまま本番に出るため。
+#   有効にする: git config core.hooksPath .githooks
+# 画面を開くシナリオテスト（1〜2分）は重いので、ここでは走らせない。画面に関わる変更では手で走らせる:
+#   python tests/deploy/scenario_test.py
+#   python tests/sync/worker_api_test.py   （worker/index.js を変えたとき）
+exec python tests/deploy/check_deploy.py

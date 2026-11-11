@@ -69,7 +69,7 @@ def deployed_files():
 def must_not_deploy(path):
     """配ってはいけないなら理由を返す。"""
     top = path.split('/', 1)[0]
-    if top in ('.git', 'mock', 'tests', 'sample', 'worker', 'remains-help-3d', '.claude', '__pycache__'):
+    if top in ('.git', '.githooks', 'mock','tests', 'sample', 'worker', 'remains-help-3d', '.claude', '__pycache__'):
         return f'{top}/ は画面が読まない'
     if path.startswith('retainers/mock/'):
         return 'retainers/mock/ は画面が読まない'
@@ -178,6 +178,17 @@ def main():
             bad = [c for c in line if c < 0x20 and c not in (0x09, 0x0D)]
             if bad:
                 errors.append(f'[制御文字] {f}:{ln}: {bytes(bad)!r} をエスケープで書く')
+
+    # index.html と app.js を一緒に変えたら sw.js の VERSION も上げる（sw.js の冒頭の説明。
+    # 上げないとデプロイ後の最初の1回が「新しい HTML＋古い app.js」で動く。2026-09-11 に一覧が閉じられなくなった）。
+    # まだコミットしていない変更（作業ツリーと索引）を HEAD と比べて見る
+    changed = set(git('diff', '--name-only', 'HEAD').decode('utf-8').split())
+    if {'index.html', 'app.js'} <= changed:
+        ver_re = re.compile(rb"const VERSION = '([^']+)'")
+        old = ver_re.search(git('show', 'HEAD:sw.js'))
+        new = ver_re.search((ROOT / 'sw.js').read_bytes())
+        if old and new and old.group(1) == new.group(1):
+            errors.append(f"[SW] index.html と app.js を一緒に変えているのに sw.js の VERSION が '{new.group(1).decode()}' のまま")
 
     # iOS のホーム画面のアイコンは PNG（Apple の資料）。180×180 を指していること
     m = re.search(r'<link rel="apple-touch-icon"[^>]*href="([^"]+)"', read('index.html'))
