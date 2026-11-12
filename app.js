@@ -5005,6 +5005,11 @@ map.on('zoomend', () => { isZooming = false; });
 
     let searchIndex = [];
     let favSnapIndex = null;      // 元の座標へ寄せるための索引（下の favSnapCoords が作る）
+    /* 種別ごとの索引の控え。データは届くたびにこの関数が呼ばれるので（6回）、以前は毎回
+       全種別を作り直していた（2026-11-12 に実測、合計でこのPCで127ms・CPU 4倍遅くで612ms）。
+       届いたデータの分だけ作り、並びは下の sources の順のまま（検索結果の順を変えない）。
+       元のデータ（loadedData の各値）が別のものに替わったら、その種別だけ作り直す */
+    const searchIndexParts = new Map();   // type → { data, items }
     function buildSearchIndex() {
         searchIndex = [];
         favSnapIndex = null;      // 元の座標へ寄せるための索引も作り直させる
@@ -5018,14 +5023,22 @@ map.on('zoomend', () => { isZooming = false; });
             { type: 'shop',     data: loadedData.shops,    labelKey: 'name',    subKey: 'address' }
         ];
         sources.forEach(s => {
-            if (s.data && s.data.features) s.data.features.forEach(f => {
-                const label = f.properties[s.labelKey] || '';
-                const sub = s.sub || f.properties[s.subKey] || '';
-                searchIndex.push({
-                    type: s.type, label, sub, coords: f.geometry.coordinates, properties: f.properties,
-                    _normLabel: normalizeForSearch(label), _normSub: normalizeForSearch(sub)
+            if (!s.data || !s.data.features) return;
+            let part = searchIndexParts.get(s.type);
+            if (!part || part.data !== s.data) {
+                const items = [];
+                s.data.features.forEach(f => {
+                    const label = f.properties[s.labelKey] || '';
+                    const sub = s.sub || f.properties[s.subKey] || '';
+                    items.push({
+                        type: s.type, label, sub, coords: f.geometry.coordinates, properties: f.properties,
+                        _normLabel: normalizeForSearch(label), _normSub: normalizeForSearch(sub)
+                    });
                 });
-            });
+                part = { data: s.data, items };
+                searchIndexParts.set(s.type, part);
+            }
+            for (const item of part.items) searchIndex.push(item);
         });
     }
 

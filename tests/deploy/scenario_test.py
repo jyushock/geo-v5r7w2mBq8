@@ -231,6 +231,38 @@ def scenario_service_worker_precache(page, base):
     return problems
 
 
+def scenario_search_index(page, base):
+    """全件検索の索引（app.js の searchIndex）。データが届くたびに届いた分だけ足す形にしたので、
+    全データが揃ったあとの索引が、全種別をその場で作り直したものと中身も並びも同じかを見る。"""
+    r = page.evaluate("""() => {
+        const sources = [
+            ['pokefuta', loadedData.pokefuta, 'pokemon'], ['manhole', loadedData.manhole, 'name'],
+            ['mhcard', loadedData.mhcard, 'name'], ['castle', loadedData.castle, 'name'],
+            ['michi', loadedData.michi, 'name'], ['shop', loadedData.shops, 'name'],
+        ];
+        const fresh = [];
+        for (const [type, d, labelKey] of sources) {
+            if (!d || !d.features) return { missing: type };
+            for (const f of d.features) {
+                const label = f.properties[labelKey] || '', sub = f.properties.address || '';
+                fresh.push([type, label, sub, f.geometry.coordinates.join(','),
+                            normalizeForSearch(label), normalizeForSearch(sub), f.properties]);
+            }
+        }
+        const bad = [];
+        if (searchIndex.length !== fresh.length) bad.push(`件数 ${searchIndex.length} / 作り直すと ${fresh.length}`);
+        for (let i = 0; i < Math.min(searchIndex.length, fresh.length) && bad.length < 5; i++) {
+            const a = searchIndex[i], b = fresh[i];
+            const got = [a.type, a.label, a.sub, a.coords.join(','), a._normLabel, a._normSub, a.properties];
+            if (got.some((v, k) => v !== b[k])) bad.push(`${i} 件目: ${a.type} ${a.label} / 作り直すと ${b[0]} ${b[1]}`);
+        }
+        return { bad, n: fresh.length };
+    }""")
+    if r.get('missing'):
+        return [f'{r["missing"]} のデータが届いていない']
+    return r['bad']
+
+
 def scenario_manifest_icons(page, base):
     """manifest のアイコンが取れ、maskable 用は絵が安全領域（中心から半径 40% の円。W3C Web App Manifest）に収まるか。
     暗い画素（線と地図のピン）の中心からの最遠距離を測る。"""
@@ -270,6 +302,7 @@ def scenario_manifest_icons(page, base):
 
 SCENARIOS = [
     ('地図と全データの読み込み', scenario_map),
+    ('全件検索の索引', scenario_search_index),
     ('操作要素の名前', scenario_accessible_names),
     ('店のシートから周辺検索', scenario_sheet_nearby_search),
     ('Plus Code の解析', scenario_plus_code),
