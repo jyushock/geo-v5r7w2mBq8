@@ -16,7 +16,7 @@ wrangler.toml
 *.py
 *_log.txt
 *.bak_*
-/FreeSample-Vectorizer-io-*.svg
+/tools
 /mock
 /tests
 /sample

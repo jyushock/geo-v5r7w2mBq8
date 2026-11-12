@@ -69,7 +69,7 @@ def deployed_files():
 def must_not_deploy(path):
     """配ってはいけないなら理由を返す。"""
     top = path.split('/', 1)[0]
-    if top in ('.git', '.githooks', 'mock','tests', 'sample', 'worker', 'remains-help-3d', '.claude', '__pycache__'):
+    if top in ('.git', '.githooks', 'tools', 'mock', 'tests', 'sample', 'worker', 'remains-help-3d', '.claude', '__pycache__'):
         return f'{top}/ は画面が読まない'
     if path.startswith('retainers/mock/'):
         return 'retainers/mock/ は画面が読まない'

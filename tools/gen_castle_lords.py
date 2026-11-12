@@ -1,8 +1,8 @@
 # castle.js の城主（lords）を人物・氏族ごとにまとめ、castle-lords.html を生成する。
-# 使い方: python gen_castle_lords.py
+# 使い方: python tools/gen_castle_lords.py（リポジトリ直下の castle.js を読み、castle-lords.html を書く）
 import json, re, collections, os
 
-BASE = os.path.dirname(os.path.abspath(__file__))
+BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))   # tools/ の1つ上
 SRC = os.path.join(BASE, 'castle.js')
 OUT = os.path.join(BASE, 'castle-lords.html')
 
