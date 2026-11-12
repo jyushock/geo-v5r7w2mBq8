@@ -266,7 +266,7 @@
         list.innerHTML = rows.slice(0, shown).map((r, i) => {
             const item = r.item;
             const distStr = item.dist < 1 ? `${Math.round(item.dist * 1000)}m` : `${item.dist.toFixed(1)}km`;
-            return `<div class="nearby-item" onclick="nearbyJumpToItem(${i})">
+            return `<div class="nearby-item" ${actionAttrs('nearbyJumpToItem', Number(i))}>
                 ${favStripeHtml(item.type, item.properties, item.coords)}
                 ${prefTypeIconHtml(item.type, item.properties || {})}
                 <div class="nearby-item-text">
@@ -280,7 +280,7 @@
         // 末尾。打ち切っているときは、いま出ている件数と全件数を並べて「さらに表示」を添える
         list.insertAdjacentHTML('beforeend', shown < rows.length
             ? `<div class="lords-note">${shown.toLocaleString()}件を表示中（全${
-                rows.length.toLocaleString()}件）<button class="pref-more" onclick="showMoreNearbyItems()"
+                rows.length.toLocaleString()}件）<button class="pref-more" data-on-click="showMoreNearbyItems"
                 >さらに${Math.min(NEARBY_ITEM_CHUNK, rows.length - shown).toLocaleString()}件</button></div>`
             : `<div class="lords-note">全${rows.length.toLocaleString()}件</div>`);
         // 通常は先頭から。オブジェクトを開いて戻ったときと「さらに表示」のときだけ、控えた位置へ
@@ -581,7 +581,7 @@
                 ${popRow}`;
             if (!canOpen) return `<div class="weather-day-card">${inner}</div>`;
             return `
-            <button type="button" class="weather-day-card${activeClass}" onclick="toggleWeatherHourly(${i})" aria-pressed="${selectedWeatherDayIndex === i ? 'true' : 'false'}" aria-label="${lbl}の1時間ごとの天気を表示">${inner}</button>`;
+            <button type="button" class="weather-day-card${activeClass}" ${actionAttrs('toggleWeatherHourly', Number(i))} aria-pressed="${selectedWeatherDayIndex === i ? 'true' : 'false'}" aria-label="${lbl}の1時間ごとの天気を表示">${inner}</button>`;
         }).join('');
         renderWeatherHourly(model);
     }

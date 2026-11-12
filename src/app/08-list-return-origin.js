@@ -91,7 +91,7 @@
             && (Math.abs(now.lat - c.lat) > 1e-6 || Math.abs(now.lng - c.lng) > 1e-6);
         el.innerHTML = (state.centerPinned ? ICON_ORIGIN_PIN : ICON_ORIGIN_CROSS)
             + `<b>${attrEscape(name)}</b>`
-            + (stale ? `<button onclick="resetDistOrigin('${kind}')">${
+            + (stale ? `<button ${actionAttrs('resetDistOrigin', String(kind))}>${
                 searchPinLngLat ? '検索ピンにする' : '今の地図中心にする'}</button>` : '');
     }
 

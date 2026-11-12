@@ -39,3 +39,14 @@
         syncPush(key);
     }
     function storeSetJson(key, obj) { storeSet(key, JSON.stringify(obj)); }
+
+    /* 押したとき・入力したときに呼ぶ関数を、HTML の属性で書く（onclick="…" の代わり）。
+       呼ぶのは index.html の振り分け役（data-on-click / data-on-input / data-on-change を見る）。
+       引数は値の型で渡し方を決める：数は data-pass="num"、文字列は data-pass="arg"、無ければ引数なし。
+       onclick="fn('…')" のように JS の文字列を属性に入れると、値の ' や " で属性か文字列が切れる
+       （店名の ' で周辺検索が動かなかった）。属性の値として持たせれば attrEscape だけで済む。 */
+    function actionAttrs(name, arg) {
+        if (arg === undefined) return `data-on-click="${name}"`;
+        const pass = typeof arg === 'number' ? 'num' : 'arg';
+        return `data-on-click="${name}" data-pass="${pass}" data-arg="${attrEscape(String(arg))}"`;
+    }

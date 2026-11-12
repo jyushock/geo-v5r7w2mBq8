@@ -224,9 +224,9 @@
         el.value = ''; onRemainsSearchInput(''); el.focus();
     }
 
-    // 遺構名は属性に持たせて渡す（onclick の文字列に埋めると、名前に引用符が入ったときに壊れる）
+    // 遺構名は属性（data-t）に持たせて渡す（属性に書いた JS の文字列に埋めると、名前に引用符が入ったときに壊れる）
     function remainsRowHtml(e, withGroup) {
-        return `<div class="rt-row" data-t="t:${attrEscape(e.n)}" onclick="openRemainsDetail(this.dataset.t)">
+        return `<div class="rt-row" data-t="t:${attrEscape(e.n)}" data-on-click="openRemainsDetail">
             <span class="rt-dot" style="background:${REMAIN_GROUP[e.g].color}"></span>
             <div class="rt-name">${attrEscape(e.n)}</div>
             ${withGroup ? `<div class="rt-g">${REMAIN_GROUP[e.g].name}</div>` : ''}
@@ -242,7 +242,7 @@
             // 絞り込みの語は分類名だけでなく中身の遺構名でも当てる（「天守」で建造物が残るように）
             const rows = remainsGroups.filter(g => !q || normalizeForSearch(g.name).includes(q)
                                                    || g.toks.some(t => t._n.includes(q)));
-            html = rows.map(g => `<div class="lord-row" onclick="openRemainsGroup('${g.id}')">
+            html = rows.map(g => `<div class="lord-row" ${actionAttrs('openRemainsGroup', String(g.id))}>
                 <div class="rg-ic" style="background:${g.color}"><svg viewBox="0 0 24 24">${REMAIN_GROUP_ICON[g.id]}</svg></div>
                 <div class="lord-main">
                     <div class="lord-name">${attrEscape(g.name)}</div>
@@ -337,14 +337,14 @@
             const rows = g.subs.filter(s => !q || normalizeForSearch(s.name).includes(q)
                                             || s.toks.some(e => e._n.includes(q)));
             hit = rows.length; total = `全${g.subs.length}分類`;
-            html = rows.map(s => `<div class="lord-row" data-t="s:${attrEscape(s.name)}" onclick="openRemainsDetail(this.dataset.t)">
+            html = rows.map(s => `<div class="lord-row" data-t="s:${attrEscape(s.name)}" data-on-click="openRemainsDetail">
                 <div class="lord-main">
                     <div class="lord-name">${attrEscape(s.name)}</div>
                     <div class="lord-sub">${attrEscape(s.toks.slice(0, 3).map(e => e.n).join('、'))} ほか${s.toks.length}種</div>
                 </div>
                 <div class="lord-num">${s.castles.size.toLocaleString()}城</div>
                 <button class="rt-drill" data-s="${attrEscape(s.name)}"
-                        onclick="event.stopPropagation(); openRemainsSub(this.dataset.s)">内訳${s.toks.length}種
+                        data-on-click="openRemainsSub" data-stop>内訳${s.toks.length}種
                     <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
                 </button></div>`).join('');
         } else {
@@ -496,7 +496,7 @@
         const shown = Math.min(rows.length, remainsState.castleShown || CASTLE_LIST_CHUNK);
         remainsState.castleShown = shown;
         list.innerHTML = castleRowsHtml(rows, 0, shown, 'remainsJumpToCastle')
-            + listFootHtml(shown, rows.length, 'showMoreRemainsCastles()', CASTLE_LIST_CHUNK);
+            + listFootHtml(shown, rows.length, 'showMoreRemainsCastles', CASTLE_LIST_CHUNK);
         // 通常は先頭から。城を開いて戻ってきたときだけ、開く前の位置へ戻す
         list.scrollTop = remainsState.restoreCastleScroll || 0;
         remainsState.restoreCastleScroll = 0;
@@ -510,7 +510,7 @@
         if (to <= from) return;
         remainsState.castleShown = to;
         appendListRows('remains-castle-list', castleRowsHtml(rows, from, to, 'remainsJumpToCastle'),
-                       to, rows.length, 'showMoreRemainsCastles()', CASTLE_LIST_CHUNK);
+                       to, rows.length, 'showMoreRemainsCastles', CASTLE_LIST_CHUNK);
     }
 
     // 一覧から城へ飛ぶ。城主一覧（lordsJumpToCastle）と同じ扱いにする

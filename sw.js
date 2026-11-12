@@ -13,7 +13,7 @@
  *   上げても、切り替わる前の1回は旧 Service Worker が古い app.js を返し得るので、
  *   HTML 側も古い app.js で壊れない形にしておく（index.html の #nearby-panel の max-height）。
  */
-const VERSION = 'v25';  // 版ごとに何を変えたかは git log -p sw.js で追う（v6〜v25 の一覧はここに書いていた）
+const VERSION = 'v26';  // 版ごとに何を変えたかは git log -p sw.js で追う（v6〜v25 の一覧はここに書いていた）
 const STATIC_CACHE  = `static-${VERSION}`;
 const RUNTIME_CACHE = `runtime-${VERSION}`;
 

@@ -16,8 +16,8 @@
         /* MapLibre GL JS 6系は ESM 専用（UMD の maplibre-gl.js は 6.0.0 で廃止）。
            モジュールは defer 相当なので、同じく defer の app.js はこの後に実行される。
            本体が動き出す時点で window.maplibregl は必ず入っている（実測で確認）。
-           本体自体を module にしないのは、HTML の onclick= から呼ぶ関数が
-           モジュールスコープに閉じてグローバルから見えなくなるため。 */
+           本体自体を module にしないのは、押したときの振り分け役（data-on-click。この下の方）が
+           名前で呼ぶ関数がモジュールスコープに閉じてグローバルから見えなくなるため。 */
         import * as maplibregl from 'https://unpkg.com/maplibre-gl@6.7.0/dist/maplibre-gl.mjs';
         window.maplibregl = maplibregl;
     </script>
@@ -1746,9 +1746,9 @@
             <line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/>
         </svg>
     </button>
-    <button id="nearby-btn" onclick="toggleNearby()" title="メニュー"><span class="hamburger-icon"></span></button>
+    <button id="nearby-btn" data-on-click="toggleNearby" title="メニュー"><span class="hamburger-icon"></span></button>
 </div>
-<div id="nearby-overlay" onclick="window.onNearbyOverlayClick ? onNearbyOverlayClick(event) : closeNearby()"></div>
+<div id="nearby-overlay" data-on-click="onNearbyOverlayClick"></div>
 <div id="nearby-panel">
     <!-- 周辺検索ビュー -->
     <div id="nearby-main-view">
@@ -1765,10 +1765,10 @@
             <div id="nearby-head-btns">
                 <!-- お気に入り一覧の入口（2026-09-12 に「一覧から検索」の4本目から移した）。
                      設定と同じ丸ボタン・線の★にする。天気カードは1枚 86px → 83.7px に縮む（SE3 実測） -->
-                <button id="fav-entry-btn" onclick="openFavView()" title="お気に入り">
+                <button id="fav-entry-btn" data-on-click="openFavView" title="お気に入り">
                     <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2.5 15.09 8.76 22 9.77 17 14.64 18.18 21.52 12 18.27 5.82 21.52 7 14.64 2 9.77 8.91 8.76 12 2.5"/></svg>
                 </button>
-                <button id="settings-btn" onclick="openSettingsView()" title="表示設定">
+                <button id="settings-btn" data-on-click="openSettingsView" title="表示設定">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
                 </button>
             </div>
@@ -1788,67 +1788,67 @@
     <div style="border-top:1px solid #f0f0f0;"></div>
     <div class="nearby-section-label">周辺検索</div>
     <div class="nearby-category-grid">
-        <div class="nearby-cat-item" data-cat="spot" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="spot" data-on-click="selectNearbyCat" data-pass="el">
             <div class="nearby-cat-icon" data-vb="27 60 220 170" style="--icon-color:#4285F4"></div>
             <div class="nearby-cat-label">スポット</div>
         </div>
-        <div class="nearby-cat-item" data-cat="supermarket" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="supermarket" data-on-click="selectNearbyCat" data-pass="el">
             <div class="nearby-cat-icon" data-vb="267 60 220 170" style="--icon-color:#34A853"></div>
             <div class="nearby-cat-label">スーパー</div>
         </div>
-        <div class="nearby-cat-item" data-cat="transit" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="transit" data-on-click="selectNearbyCat" data-pass="el">
             <div class="nearby-cat-icon" data-vb="505 60 220 170" style="--icon-color:#1565C0"></div>
             <div class="nearby-cat-label">駅/バス停</div>
         </div>
-        <div class="nearby-cat-item" data-cat="restaurant" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="restaurant" data-on-click="selectNearbyCat" data-pass="el">
             <div class="nearby-cat-icon" data-vb="745 60 220 170" style="--icon-color:#FF5722"></div>
             <div class="nearby-cat-label">レストラン</div>
         </div>
-        <div class="nearby-cat-item" data-cat="coffee" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="coffee" data-on-click="selectNearbyCat" data-pass="el">
             <div class="nearby-cat-icon" data-vb="27 275 220 170" style="--icon-color:#795548"></div>
             <div class="nearby-cat-label">カフェ</div>
         </div>
-        <div class="nearby-cat-item" data-cat="statue" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="statue" data-on-click="selectNearbyCat" data-pass="el">
             <div class="nearby-cat-icon" data-vb="267 275 220 170" style="--icon-color:#607D8B"></div>
             <div class="nearby-cat-label">像</div>
         </div>
-        <div class="nearby-cat-item" data-cat="takeout" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="takeout" data-on-click="selectNearbyCat" data-pass="el">
             <div class="nearby-cat-icon" data-vb="505 275 220 170" style="--icon-color:#FF9800"></div>
             <div class="nearby-cat-label">テイクアウト</div>
         </div>
-        <div class="nearby-cat-item" data-cat="museum" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="museum" data-on-click="selectNearbyCat" data-pass="el">
             <div class="nearby-cat-icon" data-vb="745 275 220 170" style="--icon-color:#7B1FA2"></div>
             <div class="nearby-cat-label">ミュージアム</div>
         </div>
-        <div class="nearby-cat-item" data-cat="ramen" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="ramen" data-on-click="selectNearbyCat" data-pass="el">
             <div class="nearby-cat-icon" data-vb="27 502 220 170" style="--icon-color:#F44336"></div>
             <div class="nearby-cat-label">ラーメン</div>
         </div>
-        <div class="nearby-cat-item" data-cat="udon" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="udon" data-on-click="selectNearbyCat" data-pass="el">
             <div class="nearby-cat-icon" data-vb="267 502 220 170" style="--icon-color:#FFA000"></div>
             <div class="nearby-cat-label">うどん</div>
         </div>
-        <div class="nearby-cat-item" data-cat="soba" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="soba" data-on-click="selectNearbyCat" data-pass="el">
             <div class="nearby-cat-icon" data-vb="505 502 220 170" style="--icon-color:#8D6E63"></div>
             <div class="nearby-cat-label">そば</div>
         </div>
-        <div class="nearby-cat-item" data-cat="sightseeing" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="sightseeing" data-on-click="selectNearbyCat" data-pass="el">
             <div class="nearby-cat-icon" data-vb="745 502 220 170" style="--icon-color:#00897B"></div>
             <div class="nearby-cat-label">観光スポット</div>
         </div>
-        <div class="nearby-cat-item" data-cat="sushi" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="sushi" data-on-click="selectNearbyCat" data-pass="el">
             <div class="nearby-cat-icon" data-vb="27 745 220 170" style="--icon-color:#E91E63"></div>
             <div class="nearby-cat-label">寿司</div>
         </div>
-        <div class="nearby-cat-item" data-cat="drugstore" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="drugstore" data-on-click="selectNearbyCat" data-pass="el">
             <div class="nearby-cat-icon" data-vb="267 745 220 170" style="--icon-color:#00897B"></div>
             <div class="nearby-cat-label">ドラッグストア</div>
         </div>
-        <div class="nearby-cat-item" data-cat="hundredyen" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" data-cat="hundredyen" data-on-click="selectNearbyCat" data-pass="el">
             <div class="nearby-cat-icon" data-vb="505 745 220 170" style="--icon-color:#D32F2F"></div>
             <div class="nearby-cat-label">100円ショップ</div>
         </div>
-        <div class="nearby-cat-item" id="hotel-cat-item" data-cat="hotel" onclick="selectNearbyCat(this)">
+        <div class="nearby-cat-item" id="hotel-cat-item" data-cat="hotel" data-on-click="selectNearbyCat" data-pass="el">
             <div class="nearby-cat-icon" data-vb="745 745 220 170" style="--icon-color:#1976D2"></div>
             <div class="nearby-cat-label">ホテル</div>
         </div>
@@ -1859,7 +1859,7 @@
         <div style="border-top:1px solid #f0f0f0;"></div>
         <div class="nearby-section-label">一覧から検索</div>
         <div class="nearby-list-btns">
-            <button class="nearby-list-btn" id="pref-entry-btn" onclick="openPrefView()">
+            <button class="nearby-list-btn" id="pref-entry-btn" data-on-click="openPrefView">
                 <!-- 日本列島（北海道・本州・四国・九州）。34pxでも潰れないよう文字ではなく面で表す。
                      外接枠（x13〜88・y10〜90）の中心を枠の中心に合わせてある
                      （mock/list-entry-icons-preview.html の案1）。以前の4区画は地図と読み取りにくかったため替えた。
@@ -1874,11 +1874,11 @@
                 </span>
                 <span class="nlb-n">都道府県</span>
             </button>
-            <button class="nearby-list-btn" id="lords-entry-btn" onclick="openLordsView()">
+            <button class="nearby-list-btn" id="lords-entry-btn" data-on-click="openLordsView">
                 <span class="nlb-ic"><img src="castle.png" alt=""></span>
                 <span class="nlb-n">城主</span>
             </button>
-            <button class="nearby-list-btn" id="remains-entry-btn" onclick="openRemainsView()">
+            <button class="nearby-list-btn" id="remains-entry-btn" data-on-click="openRemainsView">
                 <!-- 天守台と礎石。石の継ぎ目は地色の線で抜く。外接枠（y19〜86）の中心を枠の中心に合わせてある
                      （mock/list-entry-icons-preview.html の案2）。以前の段々の図形は棚やレンガに見えたため替えた。
                      城主の castle.png の絵（幅64%・高さ58%）に縮尺を揃えるため 0.84 倍して 64×56 にしている -->
@@ -1898,7 +1898,7 @@
                  （mock/list-entry-icons-preview.html の案1）。
                  城主の castle.png の絵（幅64%・高さ58%）に縮尺を揃えるため 0.72 倍して 63×49 にしている。
                  地色 #2f4f7f は家臣団の画面で家紋に使っている色で、並びの緑・灰・茶と被らない -->
-            <button class="nearby-list-btn" id="retainers-entry-btn" onclick="openRetainersView()">
+            <button class="nearby-list-btn" id="retainers-entry-btn" data-on-click="openRetainersView">
                 <span class="nlb-ic" style="background:#2f4f7f;">
                     <svg viewBox="0 0 100 100" aria-hidden="true"><g transform="translate(50 50) scale(0.72) translate(-50 -51)">
                         <g fill="#fff">
@@ -1919,24 +1919,24 @@
     <div id="nearby-panel-footer">
         <!-- メニューが下部バーを覆っている間の検索ボックス。押すとメニューを閉じて本物の #search-input に
              フォーカスする。古い app.js と組み合わさったときは閉じるだけにする -->
-        <div id="nearby-search-proxy" onclick="window.focusSearchFromMenu ? focusSearchFromMenu() : closeNearby()">
+        <div id="nearby-search-proxy" data-on-click="focusSearchFromMenu">
             <span id="nearby-search-proxy-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9.5" cy="9.5" r="7.5"/><line x1="14.8" y1="14.8" x2="22" y2="22"/></svg></span>
             <span id="nearby-search-proxy-text"></span>
         </div>
-        <button id="nearby-geolocate-btn" aria-label="現在地" onclick="document.getElementById('geolocate-btn').click()">
+        <button id="nearby-geolocate-btn" aria-label="現在地" data-on-click="clickElement" data-pass="arg" data-arg="geolocate-btn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/>
                 <line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/>
             </svg>
         </button>
-        <button id="nearby-close-btn" aria-label="メニューを閉じる" onclick="closeNearby()"><span class="hamburger-icon"></span></button>
+        <button id="nearby-close-btn" aria-label="メニューを閉じる" data-on-click="closeNearby"><span class="hamburger-icon"></span></button>
     </div>
     </div><!-- /nearby-main-view -->
 
     <!-- 表示設定ビュー -->
     <div id="nearby-settings-view">
         <div style="display:flex;align-items:center;padding:12px 16px 8px;gap:8px;flex-shrink:0;">
-            <button id="settings-back-btn" aria-label="戻る" onclick="closeSettingsView()">
+            <button id="settings-back-btn" aria-label="戻る" data-on-click="closeSettingsView">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
             <span style="font-size:14px;font-weight:bold;color:#333;">設定</span>
@@ -1952,14 +1952,14 @@
         <div style="display:flex;gap:12px;padding:8px 16px 10px;align-items:flex-end;">
             <div style="display:flex;flex-direction:column;gap:4px;flex:1;">
                 <span style="font-size:11px;color:#888;">地図タイル（端末ごと）</span>
-                <select id="tile-source-select" onchange="onTileSourceChange(this.value)" style="font-size:13px;padding:4px 6px;border:1px solid #ddd;border-radius:6px;background:white;">
+                <select id="tile-source-select" data-on-change="onTileSourceChange" data-pass="value" style="font-size:13px;padding:4px 6px;border:1px solid #ddd;border-radius:6px;background:white;">
                     <option value="openfreemap">OpenFreeMap</option>
                     <option value="osm">OpenStreetMap</option>
                 </select>
             </div>
             <div style="display:flex;flex-direction:column;gap:4px;flex:1;">
                 <span style="font-size:11px;color:#888;">ホテル検索範囲</span>
-                <select id="hotel-radius-select" onchange="onHotelRadiusChange(this.value)" style="font-size:13px;padding:4px 6px;border:1px solid #ddd;border-radius:6px;background:white;">
+                <select id="hotel-radius-select" data-on-change="onHotelRadiusChange" data-pass="value" style="font-size:13px;padding:4px 6px;border:1px solid #ddd;border-radius:6px;background:white;">
                     <option value="500">0.5 km</option>
                     <option value="1000">1.0 km</option>
                     <option value="1500">1.5 km</option>
@@ -1976,7 +1976,7 @@
             <div style="display:flex;flex-direction:column;gap:4px;flex:1;">
                 <span style="font-size:11px;color:#888;">ホテル並び順</span>
                 <!-- tour.ne.jp の dsp_sort。2=安い順 / 9=目的地から近い順（目的地は landmark に渡す最寄り駅） -->
-                <select id="hotel-sort-select" onchange="onHotelSortChange(this.value)" style="font-size:13px;padding:4px 6px;border:1px solid #ddd;border-radius:6px;background:white;">
+                <select id="hotel-sort-select" data-on-change="onHotelSortChange" data-pass="value" style="font-size:13px;padding:4px 6px;border:1px solid #ddd;border-radius:6px;background:white;">
                     <option value="2">安い順</option>
                     <option value="9">目的地から近い順</option>
                 </select>
@@ -1987,7 +1987,7 @@
         <div style="display:flex;gap:12px;padding:0 16px 10px;align-items:flex-end;">
             <div style="display:flex;flex-direction:column;gap:4px;flex:1;">
                 <span style="font-size:11px;color:#888;">「ここへ行く」の移動手段</span>
-                <select id="travel-mode-select" onchange="onTravelModeChange(this.value)" style="font-size:13px;padding:4px 6px;border:1px solid #ddd;border-radius:6px;background:white;">
+                <select id="travel-mode-select" data-on-change="onTravelModeChange" data-pass="value" style="font-size:13px;padding:4px 6px;border:1px solid #ddd;border-radius:6px;background:white;">
                     <option value="walk">徒歩</option>
                     <option value="car">自動車</option>
                     <option value="transit">公共交通機関</option>
@@ -1998,15 +1998,15 @@
         <div style="border-top:1px solid #f0f0f0;"></div>
         <div class="nearby-section-label">テキスト表示</div>
         <div id="label-checkboxes" style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0 16px 8px;">
-            <label class="filter-chip"><input type="checkbox" id="check-label-shop" checked onchange="onLabelChange(this)">食べログ</label>
-            <label class="filter-chip"><input type="checkbox" id="check-label-michi" checked onchange="onLabelChange(this)">道の駅</label>
-            <label class="filter-chip"><input type="checkbox" id="check-label-castle" checked onchange="onLabelChange(this)">お城</label>
+            <label class="filter-chip"><input type="checkbox" id="check-label-shop" checked data-on-change="onLabelChange" data-pass="el">食べログ</label>
+            <label class="filter-chip"><input type="checkbox" id="check-label-michi" checked data-on-change="onLabelChange" data-pass="el">道の駅</label>
+            <label class="filter-chip"><input type="checkbox" id="check-label-castle" checked data-on-change="onLabelChange" data-pass="el">お城</label>
         </div>
         <div style="border-top:1px solid #f0f0f0;"></div>
         <!-- メニュー表示は端末ごと（showOrigin。他の端末には同期しない） -->
         <div class="nearby-section-label">メニュー表示（端末ごと）</div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0 16px 8px;">
-            <label class="filter-chip"><input type="checkbox" id="check-show-origin" onchange="onShowOriginChange(this)">検索地点</label>
+            <label class="filter-chip"><input type="checkbox" id="check-show-origin" data-on-change="onShowOriginChange" data-pass="el">検索地点</label>
         </div>
         <div style="border-top:1px solid #f0f0f0;"></div>
         <!-- お気に入りの4枠の名前。枠に固定の意味は持たせず、ここで名前を入れたものだけが使える。
@@ -2022,22 +2022,22 @@
         <div class="sync-state" id="sync-state"></div>
         <div style="display:flex;gap:8px;padding:2px 16px 8px;">
             <button class="fxp-btn primary" style="flex:1;height:38px;font-size:13px;"
-                    onclick="openSyncAddView()">端末を追加</button>
+                    data-on-click="openSyncAddView">端末を追加</button>
             <button class="fxp-btn sub" style="flex:1;height:38px;font-size:13px;"
-                    onclick="openSyncDevicesView()">端末の管理</button>
+                    data-on-click="openSyncDevicesView">端末の管理</button>
         </div>
         <div style="border-top:1px solid #f0f0f0;"></div>
         <!-- バックアップ。お気に入りの枠1つか表示設定を選んで1ファイルにする（サーバーは通らない） -->
         <div class="nearby-section-label">バックアップ</div>
         <div style="display:flex;gap:8px;padding:2px 16px 8px;">
             <button class="fxp-btn primary" style="flex:1;height:38px;font-size:13px;"
-                    onclick="backupOpenExport()">書き出し</button>
+                    data-on-click="backupOpenExport">書き出し</button>
             <button class="fxp-btn sub" style="flex:1;height:38px;font-size:13px;"
-                    onclick="document.getElementById('backup-file').click()">読み込み</button>
+                    data-on-click="clickElement" data-pass="arg" data-arg="backup-file">読み込み</button>
         </div>
         <input id="backup-file" aria-label="バックアップのファイルを選ぶ" type="file"
                accept="application/json,.json,text/tab-separated-values,.tsv,text/plain,.txt"
-               style="display:none" onchange="backupImport(this)">
+               style="display:none" data-on-change="backupImport" data-pass="el">
         <!-- 書き出しを押したときだけ出す。対象は最初は選んでいない -->
         <div id="backup-export-box" style="display:none;">
             <div class="nearby-section-label">書き出す対象</div>
@@ -2045,9 +2045,9 @@
             <div class="favname-note" id="backup-export-sum"></div>
             <div style="display:flex;gap:8px;padding:2px 16px 12px;">
                 <button class="fxp-btn primary" id="backup-export-go" style="flex:1;height:38px;font-size:13px;"
-                        onclick="backupExportRun()" disabled>保存</button>
+                        data-on-click="backupExportRun" disabled>保存</button>
                 <button class="fxp-btn sub" style="flex:1;height:38px;font-size:13px;"
-                        onclick="backupExportCancel()">やめる</button>
+                        data-on-click="backupExportCancel">やめる</button>
             </div>
         </div>
         <!-- ファイルを選んだときだけ出す。読み込み先の枠は最初は選んでいない -->
@@ -2062,9 +2062,9 @@
             <div class="favname-note" id="backup-import-sum"></div>
             <div style="display:flex;gap:8px;padding:2px 16px 12px;">
                 <button class="fxp-btn primary" id="backup-import-go" style="flex:1;height:38px;font-size:13px;"
-                        onclick="backupImportRun()" disabled>読み込む</button>
+                        data-on-click="backupImportRun" disabled>読み込む</button>
                 <button class="fxp-btn sub" style="flex:1;height:38px;font-size:13px;"
-                        onclick="backupImportCancel()">やめる</button>
+                        data-on-click="backupImportCancel">やめる</button>
             </div>
         </div>
         </div><!-- /settings-scroll -->
@@ -2074,14 +2074,14 @@
     <div id="nearby-lords-view">
         <div class="lords-head">
             <div class="lords-head-title" id="lords-title">城主から探す</div>
-            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+            <button class="lords-iconbtn" data-on-click="closeNearby" title="閉じる" style="font-size:17px;">×</button>
         </div>
         <div class="lords-filter">
-            <input id="lords-search" type="search" autocomplete="off" placeholder="城主名で絞り込み" oninput="onLordsSearchInput(this.value)">
+            <input id="lords-search" type="search" autocomplete="off" placeholder="城主名で絞り込み" data-on-input="onLordsSearchInput" data-pass="value">
             <div class="lords-chips">
-                <button class="lords-chip" data-lt="all"    aria-pressed="true"  onclick="setLordsType('all')">すべて</button>
-                <button class="lords-chip" data-lt="person" aria-pressed="false" onclick="setLordsType('person')">個人</button>
-                <button class="lords-chip" data-lt="org"    aria-pressed="false" onclick="setLordsType('org')">組織</button>
+                <button class="lords-chip" data-lt="all"    aria-pressed="true"  data-on-click="setLordsType" data-pass="arg" data-arg="all">すべて</button>
+                <button class="lords-chip" data-lt="person" aria-pressed="false" data-on-click="setLordsType" data-pass="arg" data-arg="person">個人</button>
+                <button class="lords-chip" data-lt="org"    aria-pressed="false" data-on-click="setLordsType" data-pass="arg" data-arg="org">組織</button>
             </div>
         </div>
         <div class="lords-scroll" id="lords-list"></div>
@@ -2090,21 +2090,21 @@
     <!-- 城主詳細（その城主の城一覧）ビュー -->
     <div id="nearby-lord-detail-view">
         <div class="lords-head">
-            <button class="lords-iconbtn" onclick="backToLordsList()" title="城主一覧へ戻る">
+            <button class="lords-iconbtn" data-on-click="backToLordsList" title="城主一覧へ戻る">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
             <div class="lords-head-title" id="lord-detail-title"></div>
-            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+            <button class="lords-iconbtn" data-on-click="closeNearby" title="閉じる" style="font-size:17px;">×</button>
         </div>
         <div class="lords-filter">
             <div class="lords-search-wrap">
                 <input id="lord-castle-search" type="search" autocomplete="off"
-                       placeholder="城名・都道府県で絞り込み" oninput="onLordCastleSearchInput(this.value)">
-                <button class="lords-search-clear" onclick="clearLordCastleSearch()" title="クリア">×</button>
+                       placeholder="城名・都道府県で絞り込み" data-on-input="onLordCastleSearchInput" data-pass="value">
+                <button class="lords-search-clear" data-on-click="clearLordCastleSearch" title="クリア">×</button>
             </div>
             <div class="lords-chips">
-                <button class="lords-chip" aria-pressed="true"  onclick="setLordCastleSort('dist')">近い順</button>
-                <button class="lords-chip" aria-pressed="false" onclick="setLordCastleSort('pref')">都道府県順</button>
+                <button class="lords-chip" aria-pressed="true"  data-on-click="setLordCastleSort" data-pass="arg" data-arg="dist">近い順</button>
+                <button class="lords-chip" aria-pressed="false" data-on-click="setLordCastleSort" data-pass="arg" data-arg="pref">都道府県順</button>
             </div>
             <div class="lord-sub" id="lord-detail-variants" style="margin-top:6px;"></div>
         </div>
@@ -2119,7 +2119,7 @@
     <div id="nearby-pref-view">
         <div class="lords-head">
             <div class="lords-head-title" id="pref-title">都道府県から探す</div>
-            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+            <button class="lords-iconbtn" data-on-click="closeNearby" title="閉じる" style="font-size:17px;">×</button>
         </div>
         <!-- 47件しかなく地方見出しで区切ってあるので、絞り込みの入力欄は置かない。
              種別の絞り込みも県ページ側（第6ビューの漏斗ボタン）に寄せてあるので、ここには置かない -->
@@ -2129,18 +2129,18 @@
     <!-- 都道府県詳細（その県のオブジェクト一覧）ビュー（第6ビュー） -->
     <div id="nearby-pref-detail-view">
         <div class="lords-head">
-            <button class="lords-iconbtn" onclick="backToPrefList()" title="都道府県一覧へ戻る">
+            <button class="lords-iconbtn" data-on-click="backToPrefList" title="都道府県一覧へ戻る">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
             <div class="lords-head-title" id="pref-detail-title"></div>
-            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+            <button class="lords-iconbtn" data-on-click="closeNearby" title="閉じる" style="font-size:17px;">×</button>
         </div>
         <!-- 絞り込みは最上段。集計帯（その県に何があるか）とソートはその下 -->
         <div class="lords-filter" style="border-bottom:0; padding-bottom:6px;">
             <div class="lords-search-wrap">
                 <input id="pref-item-search" type="search" autocomplete="off"
-                       placeholder="名前・住所で絞り込み" oninput="onPrefSearchInput(this.value)">
-                <button class="lords-search-clear" onclick="clearPrefSearch()" title="クリア">×</button>
+                       placeholder="名前・住所で絞り込み" data-on-input="onPrefSearchInput" data-pass="value">
+                <button class="lords-search-clear" data-on-click="clearPrefSearch" title="クリア">×</button>
             </div>
         </div>
         <!-- 集計帯は押して種別を絞る帯でもある。食べログだけ長押しでジャンル行が開く -->
@@ -2149,9 +2149,9 @@
         <div id="pref-reset-bar"></div>
         <div class="lords-filter">
             <div class="lords-chips" style="margin-top:0;">
-                <button class="lords-chip" data-ps="type" aria-pressed="true"  onclick="setPrefSort('type')">種別順</button>
-                <button class="lords-chip" data-ps="name" aria-pressed="false" onclick="setPrefSort('name')">名前順</button>
-                <button class="lords-chip" data-ps="dist" aria-pressed="false" onclick="setPrefSort('dist')">近い順</button>
+                <button class="lords-chip" data-ps="type" aria-pressed="true"  data-on-click="setPrefSort" data-pass="arg" data-arg="type">種別順</button>
+                <button class="lords-chip" data-ps="name" aria-pressed="false" data-on-click="setPrefSort" data-pass="arg" data-arg="name">名前順</button>
+                <button class="lords-chip" data-ps="dist" aria-pressed="false" data-on-click="setPrefSort" data-pass="arg" data-arg="dist">近い順</button>
             </div>
         </div>
         <!-- 近い順の起点。一覧の直前に置く（スクロール領域の外なので送っても残る） -->
@@ -2166,18 +2166,18 @@
         <div class="lords-head">
             <div class="lords-head-title" id="remains-title">遺構から探す</div>
             <!-- 遺構の見かた（図解）の入口。375px でもタイトル欄は 271px 残る -->
-            <button class="lords-iconbtn rh-q" onclick="openRemainsHelp()" title="遺構の見かた">?</button>
-            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+            <button class="lords-iconbtn rh-q" data-on-click="openRemainsHelp" title="遺構の見かた">?</button>
+            <button class="lords-iconbtn" data-on-click="closeNearby" title="閉じる" style="font-size:17px;">×</button>
         </div>
         <div class="lords-filter">
             <div class="lords-search-wrap">
                 <input id="remains-search" type="search" autocomplete="off"
-                       placeholder="遺構名で絞り込み" oninput="onRemainsSearchInput(this.value)">
-                <button class="lords-search-clear" onclick="clearRemainsSearch()" title="クリア">×</button>
+                       placeholder="遺構名で絞り込み" data-on-input="onRemainsSearchInput" data-pass="value">
+                <button class="lords-search-clear" data-on-click="clearRemainsSearch" title="クリア">×</button>
             </div>
             <div class="lords-chips">
-                <button class="lords-chip" data-rm="group" aria-pressed="true"  onclick="setRemainsMode('group')">グループ</button>
-                <button class="lords-chip" data-rm="tok"   aria-pressed="false" onclick="setRemainsMode('tok')">個別</button>
+                <button class="lords-chip" data-rm="group" aria-pressed="true"  data-on-click="setRemainsMode" data-pass="arg" data-arg="group">グループ</button>
+                <button class="lords-chip" data-rm="tok"   aria-pressed="false" data-on-click="setRemainsMode" data-pass="arg" data-arg="tok">個別</button>
             </div>
         </div>
         <div class="lords-scroll" id="remains-list"></div>
@@ -2186,41 +2186,41 @@
     <!-- グループの内訳（その分類に属する遺構の一覧）ビュー（第8ビュー） -->
     <div id="nearby-remains-group-view">
         <div class="lords-head">
-            <button class="lords-iconbtn" onclick="backFromRemainsBreakdown()" title="ひとつ前の一覧へ戻る">
+            <button class="lords-iconbtn" data-on-click="backFromRemainsBreakdown" title="ひとつ前の一覧へ戻る">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
             <div class="lords-head-title" id="remains-group-title"></div>
-            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+            <button class="lords-iconbtn" data-on-click="closeNearby" title="閉じる" style="font-size:17px;">×</button>
         </div>
         <div class="lords-filter">
             <div class="lords-search-wrap">
                 <input id="remains-tok-search" type="search" autocomplete="off"
-                       placeholder="遺構名で絞り込み" oninput="onRemainsTokSearchInput(this.value)">
-                <button class="lords-search-clear" onclick="clearRemainsTokSearch()" title="クリア">×</button>
+                       placeholder="遺構名で絞り込み" data-on-input="onRemainsTokSearchInput" data-pass="value">
+                <button class="lords-search-clear" data-on-click="clearRemainsTokSearch" title="クリア">×</button>
             </div>
         </div>
-        <div class="rt-all" id="remains-group-all" onclick="openRemainsDetail(this.dataset.t)"></div>
+        <div class="rt-all" id="remains-group-all" data-on-click="openRemainsDetail"></div>
         <div class="lords-scroll" id="remains-tok-list"></div>
     </div>
 
     <!-- 遺構詳細（その遺構を持つ城の一覧）ビュー（第9ビュー）。城主詳細と同じ作り -->
     <div id="nearby-remains-detail-view">
         <div class="lords-head">
-            <button class="lords-iconbtn" onclick="backToRemainsGroup()" title="遺構一覧へ戻る">
+            <button class="lords-iconbtn" data-on-click="backToRemainsGroup" title="遺構一覧へ戻る">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
             <div class="lords-head-title" id="remains-detail-title"></div>
-            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+            <button class="lords-iconbtn" data-on-click="closeNearby" title="閉じる" style="font-size:17px;">×</button>
         </div>
         <div class="lords-filter">
             <div class="lords-search-wrap">
                 <input id="remains-castle-search" type="search" autocomplete="off"
-                       placeholder="城名・都道府県で絞り込み" oninput="onRemainsCastleSearchInput(this.value)">
-                <button class="lords-search-clear" onclick="clearRemainsCastleSearch()" title="クリア">×</button>
+                       placeholder="城名・都道府県で絞り込み" data-on-input="onRemainsCastleSearchInput" data-pass="value">
+                <button class="lords-search-clear" data-on-click="clearRemainsCastleSearch" title="クリア">×</button>
             </div>
             <div class="lords-chips">
-                <button class="lords-chip" data-rs="dist" aria-pressed="true"  onclick="setRemainsSort('dist')">近い順</button>
-                <button class="lords-chip" data-rs="pref" aria-pressed="false" onclick="setRemainsSort('pref')">都道府県順</button>
+                <button class="lords-chip" data-rs="dist" aria-pressed="true"  data-on-click="setRemainsSort" data-pass="arg" data-arg="dist">近い順</button>
+                <button class="lords-chip" data-rs="pref" aria-pressed="false" data-on-click="setRemainsSort" data-pass="arg" data-arg="pref">都道府県順</button>
             </div>
         </div>
         <!-- 近い順の起点。一覧の直前に置く（スクロール領域の外なので送っても残る） -->
@@ -2232,17 +2232,17 @@
          分野へ飛ぶチップの行を足したもの。中身（remains-help.js）は初めて開いたときに読む -->
     <div id="nearby-remains-help-view">
         <div class="lords-head">
-            <button class="lords-iconbtn" onclick="closeRemainsHelp()" title="遺構から探すへ戻る">
+            <button class="lords-iconbtn" data-on-click="closeRemainsHelp" title="遺構から探すへ戻る">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
             <div class="lords-head-title">遺構の見かた</div>
-            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+            <button class="lords-iconbtn" data-on-click="closeNearby" title="閉じる" style="font-size:17px;">×</button>
         </div>
         <div class="lords-filter">
             <div class="lords-search-wrap">
                 <input id="remains-help-search" type="search" autocomplete="off"
-                       placeholder="遺構名で探す" oninput="onRemainsHelpSearchInput(this.value)">
-                <button class="lords-search-clear" onclick="clearRemainsHelpSearch()" title="クリア">×</button>
+                       placeholder="遺構名で探す" data-on-input="onRemainsHelpSearchInput" data-pass="value">
+                <button class="lords-search-clear" data-on-click="clearRemainsHelpSearch" title="クリア">×</button>
             </div>
         </div>
         <div class="rh-chips" id="remains-help-chips"></div>
@@ -2255,33 +2255,33 @@
          ここだけ別の種別セットを持たせると規則が二重になるため。 -->
     <div id="nearby-fav-view">
         <div class="lords-head">
-            <button class="lords-iconbtn" onclick="closeFavView()" title="メニューへ戻る">
+            <button class="lords-iconbtn" data-on-click="closeFavView" title="メニューへ戻る">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
             <div class="lords-head-title" id="fav-head-title">お気に入り</div>
             <!-- 選択モード。入ると行のタップが「飛ぶ」から「選ぶ」に変わり、
                  下の操作バーで選んだ分をまとめて外せる（書き出しの入口は隠す） -->
-            <button class="lords-iconbtn" id="fav-select-btn" onclick="toggleFavSelectMode()" title="選ぶ">
+            <button class="lords-iconbtn" id="fav-select-btn" data-on-click="toggleFavSelectMode" title="選ぶ">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
             </button>
             <!-- 書き出し。いま絞り込んでいる枠と検索語が、そのまま出す対象になる -->
-            <button class="lords-iconbtn" id="fav-export-btn" onclick="openFavExportView()" title="書き出し">
+            <button class="lords-iconbtn" id="fav-export-btn" data-on-click="openFavExportView" title="書き出し">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </button>
-            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+            <button class="lords-iconbtn" data-on-click="closeNearby" title="閉じる" style="font-size:17px;">×</button>
         </div>
         <div class="lords-filter">
             <div class="lords-search-wrap">
                 <input id="fav-item-search" type="search" autocomplete="off"
-                       placeholder="名前・住所で絞り込み" oninput="onFavSearchInput(this.value)">
-                <button class="lords-search-clear" onclick="clearFavSearch()" title="クリア">×</button>
+                       placeholder="名前・住所で絞り込み" data-on-input="onFavSearchInput" data-pass="value">
+                <button class="lords-search-clear" data-on-click="clearFavSearch" title="クリア">×</button>
             </div>
             <div class="lords-chips" id="fav-kind-chips"></div>
             <div class="lords-chips">
-                <button class="lords-chip" data-fs="at"   aria-pressed="true"  onclick="setFavSort('at')">追加順</button>
-                <button class="lords-chip" data-fs="dist" aria-pressed="false" onclick="setFavSort('dist')">近い順</button>
-                <button class="lords-chip" data-fs="type" aria-pressed="false" onclick="setFavSort('type')">種別順</button>
-                <button class="lords-chip" data-fs="name" aria-pressed="false" onclick="setFavSort('name')">名前順</button>
+                <button class="lords-chip" data-fs="at"   aria-pressed="true"  data-on-click="setFavSort" data-pass="arg" data-arg="at">追加順</button>
+                <button class="lords-chip" data-fs="dist" aria-pressed="false" data-on-click="setFavSort" data-pass="arg" data-arg="dist">近い順</button>
+                <button class="lords-chip" data-fs="type" aria-pressed="false" data-on-click="setFavSort" data-pass="arg" data-arg="type">種別順</button>
+                <button class="lords-chip" data-fs="name" aria-pressed="false" data-on-click="setFavSort" data-pass="arg" data-arg="name">名前順</button>
             </div>
         </div>
         <!-- 近い順の起点。一覧の直前に置く（スクロール領域の外なので送っても残る） -->
@@ -2289,8 +2289,8 @@
         <div class="lords-scroll" id="fav-item-list"></div>
         <!-- 選択モードのときだけ出る操作バー。「すべて選択」→「解除」が一括解除になる -->
         <div class="fav-selbar" id="fav-selbar">
-            <button class="fxp-btn sub" id="fav-selall-btn" onclick="favSelectAllToggle()">すべて選択</button>
-            <button class="fxp-btn danger" id="fav-seldel-btn" onclick="favUnmarkSelected()" disabled>解除</button>
+            <button class="fxp-btn sub" id="fav-selall-btn" data-on-click="favSelectAllToggle">すべて選択</button>
+            <button class="fxp-btn danger" id="fav-seldel-btn" data-on-click="favUnmarkSelected" disabled>解除</button>
         </div>
     </div>
 
@@ -2299,11 +2299,11 @@
          iframe は初めて開いたときに app.js が作る（openRetainersView） -->
     <div id="nearby-retainers-view">
         <div class="lords-head">
-            <button class="lords-iconbtn" onclick="closeRetainersView()" title="メニューへ戻る">
+            <button class="lords-iconbtn" data-on-click="closeRetainersView" title="メニューへ戻る">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
             <div class="lords-head-title">家臣団</div>
-            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+            <button class="lords-iconbtn" data-on-click="closeNearby" title="閉じる" style="font-size:17px;">×</button>
         </div>
         <div id="retainers-frame-wrap"></div>
     </div>
@@ -2313,11 +2313,11 @@
     <!-- 端末を追加（第12ビュー）。この画面を開いている間だけ引き継ぎ券が有効 -->
     <div id="nearby-sync-add-view">
         <div class="lords-head">
-            <button class="lords-iconbtn" onclick="closeSyncAddView()" title="設定へ戻る">
+            <button class="lords-iconbtn" data-on-click="closeSyncAddView" title="設定へ戻る">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
             <div class="lords-head-title">端末を追加</div>
-            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+            <button class="lords-iconbtn" data-on-click="closeNearby" title="閉じる" style="font-size:17px;">×</button>
         </div>
         <div class="fxp-scroll">
             <div class="qr-wrap">
@@ -2340,11 +2340,11 @@
                               background:#fafafa;font-size:14px;font-family:ui-monospace,monospace;
                               padding:0 10px;box-sizing:border-box;">
                 <button class="fxp-btn sub" style="width:110px;height:38px;font-size:13px;"
-                        onclick="syncJoinByCode()">参加する</button>
+                        data-on-click="syncJoinByCode">参加する</button>
             </div>
             <p class="fxp-note">この端末を、もう一方の端末に出ているコードで参加させます。</p>
             <div style="padding:12px 16px 18px;">
-                <button class="fxp-btn sub" onclick="closeSyncAddView()">閉じる（QRを無効にする）</button>
+                <button class="fxp-btn sub" data-on-click="closeSyncAddView">閉じる（QRを無効にする）</button>
             </div>
         </div>
     </div>
@@ -2352,19 +2352,19 @@
     <!-- 端末の管理（第13ビュー） -->
     <div id="nearby-sync-devices-view">
         <div class="lords-head">
-            <button class="lords-iconbtn" onclick="closeSyncDevicesView()" title="設定へ戻る">
+            <button class="lords-iconbtn" data-on-click="closeSyncDevicesView" title="設定へ戻る">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
             <div class="lords-head-title">端末の管理</div>
-            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+            <button class="lords-iconbtn" data-on-click="closeNearby" title="閉じる" style="font-size:17px;">×</button>
         </div>
         <div class="fxp-scroll">
             <div class="fxp-sec" id="sync-dev-sec">共有している端末</div>
             <div id="sync-dev-list"></div>
             <div class="fxp-sec">同期をやめる</div>
             <div style="padding:2px 16px 14px;display:flex;flex-direction:column;gap:8px;">
-                <button class="fxp-btn sub" onclick="syncLeaveThisDevice()">この端末の同期をやめる</button>
-                <button class="fxp-btn danger" onclick="syncDeleteAccount()">保存領域を削除する</button>
+                <button class="fxp-btn sub" data-on-click="syncLeaveThisDevice">この端末の同期をやめる</button>
+                <button class="fxp-btn danger" data-on-click="syncDeleteAccount">保存領域を削除する</button>
             </div>
             <p class="fxp-note">「削除する」を押すと、サーバー上の共有内容と全端末の結び付きが消えます。
                 各端末に残っているお気に入りは消えません。</p>
@@ -2373,22 +2373,22 @@
 
     <div id="nearby-fav-export-view">
         <div class="lords-head">
-            <button class="lords-iconbtn" onclick="closeFavExportView()" title="お気に入りの一覧へ戻る">
+            <button class="lords-iconbtn" data-on-click="closeFavExportView" title="お気に入りの一覧へ戻る">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
             <div class="lords-head-title">書き出し</div>
-            <button class="lords-iconbtn" onclick="closeNearby()" title="閉じる" style="font-size:17px;">×</button>
+            <button class="lords-iconbtn" data-on-click="closeNearby" title="閉じる" style="font-size:17px;">×</button>
         </div>
         <div class="fxp-scroll">
             <div class="fxp-sec">出す範囲</div>
             <div class="fxp-row" id="fxp-scope"></div>
             <div class="fxp-row">設定で消している種別も出す
-                <button class="fxp-sw" id="fxp-sw-alltypes" onclick="toggleFavExportAllTypes()"
+                <button class="fxp-sw" id="fxp-sw-alltypes" data-on-click="toggleFavExportAllTypes"
                         role="switch" aria-checked="true" aria-label="設定で消している種別も出す"></button></div>
             <p class="fxp-note">設定の「オブジェクト表示」で外した種別のことです。
                 オフにすると、その分がファイルから抜けます</p>
             <div class="fxp-row">address・note・id を付ける
-                <button class="fxp-sw" id="fxp-sw-extra" onclick="toggleFavExportExtra()"
+                <button class="fxp-sw" id="fxp-sw-extra" data-on-click="toggleFavExportExtra"
                         role="switch" aria-checked="true" aria-label="address・note・id を付ける"></button></div>
             <p class="fxp-note">address … 情報シートの「住所」に出るものと同じ<br>
                 note … 種別と住所（TravelPlan では表示されるだけ）<br>
@@ -2398,18 +2398,18 @@
             <div class="fxp-row" id="fxp-filename"></div>
             <div class="fxp-cnt" id="fxp-count"></div>
             <div class="fxp-btns">
-                <button class="fxp-btn primary" id="fxp-save" onclick="favExportSave()">
+                <button class="fxp-btn primary" id="fxp-save" data-on-click="favExportSave">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                     保存
                 </button>
-                <button class="fxp-btn sub" id="fxp-copy" onclick="favExportCopy()">本文をコピー</button>
+                <button class="fxp-btn sub" id="fxp-copy" data-on-click="favExportCopy">本文をコピー</button>
             </div>
         </div>
     </div>
 </div>
 
 <!-- スポット検索結果パネル（別ウィンドウ） -->
-<div id="nearby-result-overlay" onclick="closeNearbyResult()" style="display:none;position:fixed;inset:0;z-index:299;touch-action:none;"></div>
+<div id="nearby-result-overlay" data-on-click="closeNearbyResult" style="display:none;position:fixed;inset:0;z-index:299;touch-action:none;"></div>
 <!-- 情報シート・メニューと同じく下部バーの上に載せる（--sheet-base を
      enableSheetSwipeClose が読んで引きずりの戻り位置に使う） -->
 <div id="nearby-result-panel" style="
@@ -2430,17 +2430,17 @@
             <div style="display:flex;align-items:center;gap:10px;min-width:0;">
                 <!-- 距離の条件だけを出す。どこからの距離なのかは下の起点帯（#nearby-origin）が受け持つ -->
                 <span id="nearby-result-title" style="font-weight:bold;font-size:14px;color:#333;white-space:nowrap;"></span>
-                <button id="nearby-filter-all-btn" onclick="event.stopPropagation();toggleAllNearbyTypeFilter()" style="background:#f5f5f5;border:1px solid #ddd;border-radius:14px;font-size:11px;color:#555;padding:3px 10px;cursor:pointer;white-space:nowrap;flex-shrink:0;">全解除</button>
+                <button id="nearby-filter-all-btn" data-on-click="toggleAllNearbyTypeFilter" data-stop style="background:#f5f5f5;border:1px solid #ddd;border-radius:14px;font-size:11px;color:#555;padding:3px 10px;cursor:pointer;white-space:nowrap;flex-shrink:0;">全解除</button>
             </div>
-            <button onclick="closeNearbyResult()" style="background:none;border:none;font-size:22px;color:#bbb;cursor:pointer;padding:0 0 0 16px;line-height:1;flex-shrink:0;">×</button>
+            <button data-on-click="closeNearbyResult" style="background:none;border:none;font-size:22px;color:#bbb;cursor:pointer;padding:0 0 0 16px;line-height:1;flex-shrink:0;">×</button>
         </div>
     </div>
     <!-- 以下の並び（絞り込み欄→集計帯→起点帯→一覧）は県ページの詳細ビューに合わせてある -->
     <div class="lords-filter" style="border-bottom:0; padding-bottom:6px;">
         <div class="lords-search-wrap">
             <input id="nearby-item-search" type="search" autocomplete="off"
-                   placeholder="名前・住所で絞り込み" oninput="onNearbySearchInput(this.value)">
-            <button class="lords-search-clear" onclick="clearNearbySearch()" title="クリア">×</button>
+                   placeholder="名前・住所で絞り込み" data-on-input="onNearbySearchInput" data-pass="value">
+            <button class="lords-search-clear" data-on-click="clearNearbySearch" title="クリア">×</button>
         </div>
     </div>
     <!-- 集計帯は押して種別を絞る帯。県ページと違い、タップがそのまま表示・非表示になる -->
@@ -2458,8 +2458,8 @@
     <div id="obj-sheet-favline"></div>
     <div id="obj-sheet-header">
         <div class="os-handle"></div>
-        <button id="obj-fav-btn" onclick="onSheetFavBtn(event)" title="お気に入り">★</button>
-        <button id="obj-sheet-close" onclick="closeObjSheet()">×</button>
+        <button id="obj-fav-btn" data-on-click="onSheetFavBtn" data-pass="event" title="お気に入り">★</button>
+        <button id="obj-sheet-close" data-on-click="closeObjSheet">×</button>
     </div>
     <!-- 使っていない空の要素。2026-09-11 に取りやめたシートの段の app.js は、読み込み時にこれが無いと途中で止まる。
          デプロイ直後の1回は Service Worker のキャッシュに残ったその app.js が動き得るので、壊れないよう残している -->
@@ -2475,11 +2475,75 @@
     <div id="pv-info" class="pv-ui">
         <div id="pv-title"></div>
         <div id="pv-sub"></div>
-        <div id="pv-acts"><button id="pv-close" onclick="closePhotoViewer()">閉じる</button></div>
+        <div id="pv-acts"><button id="pv-close" data-on-click="closePhotoViewer">閉じる</button></div>
     </div>
     <div id="pv-dots" class="pv-ui"></div>
 </div>
 
+<!-- 押したとき・入力したときの振り分け（onclick="…" の代わり）。
+     要素に data-on-click / data-on-input / data-on-change で関数の名前を書く。引数は data-pass で決める：
+       なし … 引数なし　el … その要素　value … 要素の value　event … イベント
+       arg … data-arg の文字列　num … data-arg を数にしたもの
+     data-stop があれば、呼ぶ前に stopPropagation する（外側の要素のクリック処理を走らせない）。
+     引数の組み立てが上に当てはまらないものだけ、下の ACTIONS に書く。
+
+     いつ走るか：onclick と同じく「その要素にイベントが届いたとき」。document で受けて
+     まとめて呼ぶと、外側の要素に付いたクリック処理（情報シートの行の開閉など）より後になり、
+     stopPropagation も効かなくなる。そこで、イベントが来た最初（document のキャプチャ段階）に、
+     通り道の要素へ一度だけ走る処理を付けておく。要素ごとの処理の一覧は、イベントがその要素に
+     届いた時点で読まれるので（DOM 仕様の event dispatch）、ここで付けたものは onclick と同じ位置で走る。
+     途中で伝播が止まって走らなかった分は、次のタスクで外す。
+
+     ここ（index.html）に置くのは、更新の直後の1回だけ「新しい HTML ＋ 古い app.js」で動くことがあるため
+     （sw.js の冒頭の説明）。呼ぶ先の関数は古い app.js にもあるので、ここに振り分け役があれば押せる。 -->
+<script>
+(function () {
+    const ACTIONS = window.ACTIONS = {
+        // 古い app.js には無い関数。無ければメニューを閉じるだけにする（以前の onclick の書き方のまま）
+        onNearbyOverlayClick: (el, ev) => window.onNearbyOverlayClick ? onNearbyOverlayClick(ev) : closeNearby(),
+        focusSearchFromMenu: () => window.focusSearchFromMenu ? focusSearchFromMenu() : closeNearby(),
+        // 別のボタンを押したことにする（現在地ボタン・ファイル選択）
+        clickElement: (el) => document.getElementById(el.dataset.arg).click(),
+        // app.js が作る行・ボタン
+        searchNearby: (el) => searchNearby(+el.dataset.lng, +el.dataset.lat, el.dataset.name),
+        openRemainsDetail: (el) => openRemainsDetail(el.dataset.t),
+        openRemainsSub: (el) => openRemainsSub(el.dataset.s),
+        renderRemainsHelpPop: (el) => el.dataset.d !== undefined
+            ? renderRemainsHelpPop(el.dataset.d)
+            : renderRemainsHelpPop(el.dataset.t, el.dataset.s),
+        mhJumpToCard: (el) => mhJumpToCard(el.dataset.key, Number(el.dataset.i)),
+        onFavNameInput: (el) => onFavNameInput(Number(el.dataset.n), el),
+    };
+    function run(el, type, ev) {
+        const name = el.getAttribute('data-on-' + type);
+        if (el.hasAttribute('data-stop')) ev.stopPropagation();
+        if (ACTIONS[name]) return ACTIONS[name](el, ev);
+        const fn = window[name];
+        if (typeof fn !== 'function') { console.error('[actions] 関数が無い:', name); return; }
+        switch (el.getAttribute('data-pass')) {
+            case 'el':    return fn(el);
+            case 'value': return fn(el.value);
+            case 'event': return fn(ev);
+            case 'arg':   return fn(el.dataset.arg);
+            case 'num':   return fn(Number(el.dataset.arg));
+            default:      return fn();
+        }
+    }
+    ['click', 'input', 'change'].forEach(type => {
+        const attr = 'data-on-' + type;
+        document.addEventListener(type, (ev) => {
+            const added = [];
+            for (const node of ev.composedPath()) {
+                if (!(node instanceof Element) || !node.hasAttribute(attr)) continue;
+                const h = (e) => run(node, type, e);
+                node.addEventListener(type, h, { once: true });
+                added.push([node, h]);
+            }
+            if (added.length) setTimeout(() => added.forEach(([n, h]) => n.removeEventListener(type, h)), 0);
+        }, true);
+    });
+})();
+</script>
 <script src="app.js" defer></script>
 <script>
     // Service Worker 登録（再訪の高速化＋訪問済みリソースのオフライン対応）

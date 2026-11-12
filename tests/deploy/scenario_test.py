@@ -263,6 +263,70 @@ def scenario_search_index(page, base):
     return r['bad']
 
 
+def scenario_actions(page, base):
+    """押したときの振り分け（index.html の data-on-click など）。画面に出ている要素の名前がすべて呼べる関数か。
+    押した要素の上で処理が走ること（外側の処理より先・data-stop で外側を止める）も見る。"""
+    r = page.evaluate("""() => {
+        const bad = [];
+        for (const type of ['click', 'input', 'change']) {
+            for (const el of document.querySelectorAll(`[data-on-${type}]`)) {
+                const n = el.getAttribute(`data-on-${type}`);
+                if (!(window.ACTIONS && ACTIONS[n]) && typeof window[n] !== 'function') bad.push(`${type}: ${n}`);
+            }
+        }
+        // 外側にクリック処理がある要素の中で押す。内側（data-on-click）が先に走り、data-stop なら外側は走らない
+        const order = [];
+        window.__probeInner = () => order.push('inner');
+        const outer = document.createElement('div');
+        outer.addEventListener('click', () => order.push('outer'));
+        outer.innerHTML = '<button data-on-click="__probeInner"></button><button data-on-click="__probeInner" data-stop></button>';
+        document.body.appendChild(outer);
+        outer.children[0].click();
+        const first = order.join(',');
+        order.length = 0;
+        outer.children[1].click();
+        const second = order.join(',');
+        outer.remove(); delete window.__probeInner;
+        return { bad: [...new Set(bad)], first, second };
+    }""")
+    problems = [f'呼べない名前: {b}' for b in r['bad']]
+    if r['first'] != 'inner,outer':
+        problems.append(f'押した要素より外側の処理が先に走る（順番 {r["first"]}）')
+    if r['second'] != 'inner':
+        problems.append(f'data-stop で外側の処理が止まらない（順番 {r["second"]}）')
+    return problems
+
+
+def scenario_ios_nearby_categories(page, base):
+    """iPhone では、周辺検索のカテゴリ（Googleマップへ飛ぶもの）をリンクで覆い、押したときの window.open を外す
+    （24-remains-help.js の setupIosNearbyGmapLinks 相当）。外し忘れると、リンクと window.open の両方が開く。"""
+    ctx = page.context.browser.new_context(
+        viewport={'width': 390, 'height': 844}, service_workers='block',
+        user_agent='Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1')
+    try:
+        p = ctx.new_page()
+        p.goto(base + '/index.html')
+        p.wait_for_function("document.querySelector('.nearby-cat-item > a')", timeout=60_000)
+        r = p.evaluate("""() => {
+            const opened = [];
+            window.open = (u) => { opened.push(u); return null; };
+            const linked = [...document.querySelectorAll('.nearby-cat-item')].filter(i => i.querySelector(':scope > a'));
+            const left = linked.filter(i => i.hasAttribute('data-on-click') || i.hasAttribute('onclick')).map(i => i.dataset.cat);
+            linked[0].click();   // 枠線（リンクの外）を押したのと同じ
+            return { n: linked.length, left, opened: opened.length };
+        }""")
+    finally:
+        ctx.close()
+    problems = []
+    if not r['n']:
+        problems.append('リンクで覆われたカテゴリが無い')
+    if r['left']:
+        problems.append(f'押したときの処理が残っている: {r["left"]}')
+    if r['opened']:
+        problems.append(f'カテゴリの枠を押すと window.open が {r["opened"]} 回呼ばれる')
+    return problems
+
+
 def scenario_manifest_icons(page, base):
     """manifest のアイコンが取れ、maskable 用は絵が安全領域（中心から半径 40% の円。W3C Web App Manifest）に収まるか。
     暗い画素（線と地図のピン）の中心からの最遠距離を測る。"""
@@ -310,6 +374,8 @@ SCENARIOS = [
     ('家臣団', scenario_retainers),
     ('Service Worker のプリキャッシュ', scenario_service_worker_precache),
     ('ホーム画面のアイコン', scenario_manifest_icons),
+    ('押したときの振り分け', scenario_actions),
+    ('iPhone の周辺検索のカテゴリ', scenario_ios_nearby_categories),
 ]
 
 

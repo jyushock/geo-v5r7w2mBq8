@@ -126,9 +126,9 @@ const NAV_LOGO_GMAPS = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCA
 const NAV_LOGO_YAHOO = 'data:image/png;base64,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';
 
 /* data-*属性や本文に地名を入れるためのエスケープ（施設名に " や & や ' が入り得る）。
-   ' も変えるので、'…' で囲んだ属性にも入れられる。ただし onclick の中の JS 文字列へ入れるのは不可：
+   ' も変えるので、'…' で囲んだ属性にも入れられる。ただし属性の中に書いた JS の文字列へ入れるのは不可：
    属性の値はブラウザが元の文字へ戻してから JS に渡すので、&#39; は ' に戻って文字列を切る。
-   JS へ渡す値は data-* に入れて this.dataset で読む。 */
+   押したときに渡す値は data-* に入れる（actionAttrs と index.html の振り分け役）。 */
 function attrEscape(s) {
     return String(s == null ? '' : s)
         .replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;')
@@ -149,9 +149,10 @@ function buildSheetHtml(type, label, p, lng, lat) {
     const rowC = osRow([
         `<a href="${navUrl}" target="_blank" class="btn btn-nav" data-lat="${lat}" data-lng="${lng}"><span class="nav-ico"><img src="${NAV_LOGO_GMAPS}" alt="Google Maps"></span><span class="nav-cap">ここへ行く</span></a>`,
         `<a href="${yahooRouteUrl(null, null, lat, lng, destName)}" target="_blank" class="btn btn-nav-yahoo" data-lat="${lat}" data-lng="${lng}" data-name="${attrEscape(destName)}"><span class="nav-ico"><img src="${NAV_LOGO_YAHOO}" alt="Yahoo!"></span><span class="nav-cap">ここへ行く</span></a>`,
-        /* 店名は data-name で渡す。onclick='…' の中に JSON.stringify で直接入れていたときは、
-           店名の ' （data.js に 110件。Fisherman's など）で属性が切れ、押しても何も起きなかった */
-        `<button class="btn btn-nearby-search" data-lng="${lng}" data-lat="${lat}" data-name="${attrEscape(originName)}" onclick="searchNearby(+this.dataset.lng, +this.dataset.lat, this.dataset.name)">${ICON_SEARCH_SVG}この周辺を検索</button>`,
+        /* 店名は data-name で渡す（index.html の ACTIONS.searchNearby が読む）。以前 onclick='…' の中に
+           JSON.stringify で直接入れていたときは、店名の ' （data.js に 110件。Fisherman's など）で属性が切れ、
+           押しても何も起きなかった */
+        `<button class="btn btn-nearby-search" data-lng="${lng}" data-lat="${lat}" data-name="${attrEscape(originName)}" data-on-click="searchNearby">${ICON_SEARCH_SVG}この周辺を検索</button>`,
     ]);
     const isPokefuta = type === 'pokefuta' || (type === 'manhole' && p.source === 'pokefuta');
     // pick は配布場所が複数のカードで行Bの下に出す候補リスト（他の種別では空）
@@ -226,7 +227,7 @@ function buildSheetHtml(type, label, p, lng, lat) {
         let jumpBtn = '';
         if (type === 'mhcard') {
             if (filterState.manhole !== false && findLidFeatureByKey(cardKey)) {
-                jumpBtn = `<button class="btn btn-to-lid" onclick="mhJumpToLid('${cardKey}')">マンホールへ</button>`;
+                jumpBtn = `<button class="btn btn-to-lid" ${actionAttrs('mhJumpToLid', String(cardKey))}>マンホールへ</button>`;
             }
         } else if (filterState.mhcard !== false && cardFeatures.length) {
             const j = mhCardJumpHtml(cardFeatures, cardKey, lng, lat);

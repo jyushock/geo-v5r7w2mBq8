@@ -41,6 +41,17 @@
         syncPush(key);
     }
     function storeSetJson(key, obj) { storeSet(key, JSON.stringify(obj)); }
+
+    /* 押したとき・入力したときに呼ぶ関数を、HTML の属性で書く（onclick="…" の代わり）。
+       呼ぶのは index.html の振り分け役（data-on-click / data-on-input / data-on-change を見る）。
+       引数は値の型で渡し方を決める：数は data-pass="num"、文字列は data-pass="arg"、無ければ引数なし。
+       onclick="fn('…')" のように JS の文字列を属性に入れると、値の ' や " で属性か文字列が切れる
+       （店名の ' で周辺検索が動かなかった）。属性の値として持たせれば attrEscape だけで済む。 */
+    function actionAttrs(name, arg) {
+        if (arg === undefined) return `data-on-click="${name}"`;
+        const pass = typeof arg === 'number' ? 'num' : 'arg';
+        return `data-on-click="${name}" data-pass="${pass}" data-arg="${attrEscape(String(arg))}"`;
+    }
     /* ══ サーバー同期 ══════════════════════════════════════════════
        設計は SYNC_MANUAL.md。要点だけ再掲する。
          ・ログイン画面は無い。最初にお気に入りか表示設定を保存した時点で、サーバーが
@@ -553,8 +564,7 @@
             list.innerHTML = '<p class="fxp-note">読み込めませんでした（通信できていません）</p>';
         }
     }
-    /* onclick に渡すのは id だけにする。id は乱数（A-Za-z0-9_-）なので引用符が入らない。
-       名前は onclick の JS 文字列に入れると ' で切れる（attrEscape の &#39; も JS に渡る前に ' へ戻る）ので埋めない。 */
+    /* 「外す」に渡すのは id だけ（actionAttrs で data-arg に入れる）。名前は渡さない。 */
     let syncDevicesCache = [];
     function renderSyncDevices(devices) {
         syncDevicesCache = devices;
@@ -565,7 +575,7 @@
             return `<div class="dev-row"><span class="dev-n">${attrEscape(d.name)}`
                 + (self ? '<span class="dev-self">この端末</span>' : '')
                 + `<small>${syncWhen(d.createdAt)}から ・ 最終 ${syncWhen(d.lastSeenAt)}</small></span>`
-                + (self ? '' : `<button class="dev-x" onclick="syncRemoveDevice(&quot;${attrEscape(d.id)}&quot;)">外す</button>`)
+                + (self ? '' : `<button class="dev-x" ${actionAttrs('syncRemoveDevice', String(d.id))}>外す</button>`)
                 + '</div>';
         }).join('');
     }
@@ -643,9 +653,10 @@
         return `${d.getFullYear()}${p(d.getMonth() + 1)}${p(d.getDate())}`;
     }
     function backupSlotLabel(n) { return favNameOf(n) || `枠${n}（名前なし）`; }
-    function backupChip(label, pressed, disabled, onclick, color) {
+    // action は押したときに呼ぶ関数の名前、arg はその引数（actionAttrs）
+    function backupChip(label, pressed, disabled, action, arg, color) {
         return `<button class="lords-chip fav-kind" aria-pressed="${pressed}"${disabled ? ' disabled' : ''}
-            onclick="${onclick}">${color ? `<span class="fav-dot" style="background:${color}"></span>` : ''}${
+            ${actionAttrs(action, arg)}>${color ? `<span class="fav-dot" style="background:${color}"></span>` : ''}${
             attrEscape(label)}</button>`;
     }
 
@@ -672,10 +683,10 @@
             FAV_SLOTS.map(n => {
                 const c = favCountOf(n);
                 return backupChip(`${backupSlotLabel(n)} ${c.toLocaleString()}`, sel === n, !c,
-                                  `setBackupExportSel(${n})`, FAV_COLORS[n]);
+                                  'setBackupExportSel', n, FAV_COLORS[n]);
             }).join('')
             + backupChip('表示設定', sel === 'settings', !BACKUP_SETTINGS_KEYS.some(k => storeGet(k) != null),
-                         `setBackupExportSel('settings')`);
+                         'setBackupExportSel', 'settings');
         document.getElementById('backup-export-sum').innerHTML = !sel ? '書き出す対象を選んでください'
             : sel === 'settings' ? '表示設定（オブジェクト表示・地図タイルなど）を書き出します'
             : `「${attrEscape(backupSlotLabel(sel))}」の ${favCountOf(sel).toLocaleString()}件を書き出します`;
@@ -830,14 +841,14 @@
         document.getElementById('backup-import-file').textContent = st.fileName;
         document.getElementById('backup-import-sources').innerHTML = st.sources.map((s, i) =>
             backupChip(s.kind === 'fav' ? `${s.label} ${s.keys.length.toLocaleString()}` : s.label,
-                       src === s, false, `setBackupImportSrc(${i})`, s.color)).join('');
+                       src === s, false, 'setBackupImportSrc', i, s.color)).join('');
         const isFav = !!src && src.kind === 'fav';
         document.getElementById('backup-import-target-row').style.display = isFav ? '' : 'none';
         // 名前が空の枠は選べない（使わない枠の扱い。足しても一覧と地図に出ない）
         if (isFav) {
             document.getElementById('backup-import-targets').innerHTML = FAV_SLOTS.map(n =>
                 backupChip(backupSlotLabel(n), st.slot === n, !favNameOf(n),
-                           `setBackupImportSlot(${n})`, FAV_COLORS[n])).join('');
+                           'setBackupImportSlot', n, FAV_COLORS[n])).join('');
         }
         const lines = [];
         if (!src) {
@@ -1599,7 +1610,7 @@
             && (Math.abs(now.lat - c.lat) > 1e-6 || Math.abs(now.lng - c.lng) > 1e-6);
         el.innerHTML = (state.centerPinned ? ICON_ORIGIN_PIN : ICON_ORIGIN_CROSS)
             + `<b>${attrEscape(name)}</b>`
-            + (stale ? `<button onclick="resetDistOrigin('${kind}')">${
+            + (stale ? `<button ${actionAttrs('resetDistOrigin', String(kind))}>${
                 searchPinLngLat ? '検索ピンにする' : '今の地図中心にする'}</button>` : '');
     }
 
@@ -2913,7 +2924,7 @@ function mhcardInfo(p) {
    移動後はピンをタップしたときと同じ状態にする（地図を寄せる → 情報シート＋選択リング → 履歴に記録）。
    飛び先の種別を表示していない（設定でOFF）ときはボタンを出さない。検索・周辺検索が
    OFFの種別を候補から外すのと同じ扱いで、表示していない種別へは連れて行かない。
-   onclickに渡すのは正規化済みのカードコード（英数字とハイフンのみ）で、URLや施設名は埋め込まない。
+   ボタンに持たせるのは正規化済みのカードコード（data-key）と候補の番号（data-i）だけで、URLや施設名は埋め込まない。
    移動先だけを中央に置くのではなく、移動元も画面に残して線で結ぶ。どこから来たのかと
    2点の距離感が分かるようにするため。地図を引く範囲と解除の条件は openObjSheet 側にある。 */
 function mhJumpTo(type, feature) {
@@ -2947,19 +2958,19 @@ function mhCardJumpHtml(cardFeatures, key, lng, lat, label) {
         // 配布が終わったカードの行き先は配布場所ではない（問合せ先か市町村の代表点）。
         // 「配布場所」と書くと押した先と食い違うので、状態をそのまま文言にする。
         const single = label || (cardFeatures[0].properties.discontinued ? '配布終了' : '配布場所');
-        return { btn: `<button class="btn btn-to-card" onclick="mhJumpToCard('${key}',0)">${single}</button>`, pick: '' };
+        return { btn: `<button class="btn btn-to-card" data-on-click="mhJumpToCard" data-key="${attrEscape(key)}" data-i="0">${single}</button>`, pick: '' };
     }
     const items = cardFeatures.map((f, i) => {
         const q = f.properties;
         const d = calcDist(lat, lng, f.geometry.coordinates[1], f.geometry.coordinates[0]);
         const ds = d < 1 ? `${Math.round(d * 1000)}m` : `${d.toFixed(1)}km`;
-        return `<button class="os-pick-it" onclick="mhJumpToCard('${key}',${i})">`
+        return `<button class="os-pick-it" data-on-click="mhJumpToCard" data-key="${attrEscape(key)}" data-i="${i}">`
              + `<span class="os-pick-nm">${q.locationName || q.name || '配布場所'}`
              + `<span class="os-pick-sub">${q.address || ''}</span></span>`
              + `<span class="os-pick-d">${ds}</span></button>`;
     }).join('');
     return {
-        btn: `<button class="btn btn-to-card" onclick="mhTogglePicker()">配布場所（${cardFeatures.length}件）</button>`,
+        btn: `<button class="btn btn-to-card" data-on-click="mhTogglePicker">配布場所（${cardFeatures.length}件）</button>`,
         pick: `<div class="os-pick" hidden><div class="os-pick-hd">配布場所を選ぶ</div>${items}</div>`,
     };
 }
@@ -3092,9 +3103,9 @@ const NAV_LOGO_GMAPS = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCA
 const NAV_LOGO_YAHOO = 'data:image/png;base64,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';
 
 /* data-*属性や本文に地名を入れるためのエスケープ（施設名に " や & や ' が入り得る）。
-   ' も変えるので、'…' で囲んだ属性にも入れられる。ただし onclick の中の JS 文字列へ入れるのは不可：
+   ' も変えるので、'…' で囲んだ属性にも入れられる。ただし属性の中に書いた JS の文字列へ入れるのは不可：
    属性の値はブラウザが元の文字へ戻してから JS に渡すので、&#39; は ' に戻って文字列を切る。
-   JS へ渡す値は data-* に入れて this.dataset で読む。 */
+   押したときに渡す値は data-* に入れる（actionAttrs と index.html の振り分け役）。 */
 function attrEscape(s) {
     return String(s == null ? '' : s)
         .replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;')
@@ -3115,9 +3126,10 @@ function buildSheetHtml(type, label, p, lng, lat) {
     const rowC = osRow([
         `<a href="${navUrl}" target="_blank" class="btn btn-nav" data-lat="${lat}" data-lng="${lng}"><span class="nav-ico"><img src="${NAV_LOGO_GMAPS}" alt="Google Maps"></span><span class="nav-cap">ここへ行く</span></a>`,
         `<a href="${yahooRouteUrl(null, null, lat, lng, destName)}" target="_blank" class="btn btn-nav-yahoo" data-lat="${lat}" data-lng="${lng}" data-name="${attrEscape(destName)}"><span class="nav-ico"><img src="${NAV_LOGO_YAHOO}" alt="Yahoo!"></span><span class="nav-cap">ここへ行く</span></a>`,
-        /* 店名は data-name で渡す。onclick='…' の中に JSON.stringify で直接入れていたときは、
-           店名の ' （data.js に 110件。Fisherman's など）で属性が切れ、押しても何も起きなかった */
-        `<button class="btn btn-nearby-search" data-lng="${lng}" data-lat="${lat}" data-name="${attrEscape(originName)}" onclick="searchNearby(+this.dataset.lng, +this.dataset.lat, this.dataset.name)">${ICON_SEARCH_SVG}この周辺を検索</button>`,
+        /* 店名は data-name で渡す（index.html の ACTIONS.searchNearby が読む）。以前 onclick='…' の中に
+           JSON.stringify で直接入れていたときは、店名の ' （data.js に 110件。Fisherman's など）で属性が切れ、
+           押しても何も起きなかった */
+        `<button class="btn btn-nearby-search" data-lng="${lng}" data-lat="${lat}" data-name="${attrEscape(originName)}" data-on-click="searchNearby">${ICON_SEARCH_SVG}この周辺を検索</button>`,
     ]);
     const isPokefuta = type === 'pokefuta' || (type === 'manhole' && p.source === 'pokefuta');
     // pick は配布場所が複数のカードで行Bの下に出す候補リスト（他の種別では空）
@@ -3192,7 +3204,7 @@ function buildSheetHtml(type, label, p, lng, lat) {
         let jumpBtn = '';
         if (type === 'mhcard') {
             if (filterState.manhole !== false && findLidFeatureByKey(cardKey)) {
-                jumpBtn = `<button class="btn btn-to-lid" onclick="mhJumpToLid('${cardKey}')">マンホールへ</button>`;
+                jumpBtn = `<button class="btn btn-to-lid" ${actionAttrs('mhJumpToLid', String(cardKey))}>マンホールへ</button>`;
             }
         } else if (filterState.mhcard !== false && cardFeatures.length) {
             const j = mhCardJumpHtml(cardFeatures, cardKey, lng, lat);
@@ -5777,7 +5789,7 @@ map.on('zoomend', () => { isZooming = false; });
             if (!has.length) return '';
             return `<div class="pref-ggrp"><div class="pref-ggname">${gname}</div><div class="pref-gchips">${
                 has.map(c => `<button class="ptg ${genreVisible(c) ? 'on shop-genre ' + (SHOP_GENRE_CLASS[c] || 'g-sonota') : ''}"
-                    onclick="toggleObjGenre('${attrEscape(c)}')">${attrEscape(c)}<span class="ptg-n">${cnt[c]}</span></button>`).join('')
+                    ${actionAttrs('toggleObjGenre', String(c))}>${attrEscape(c)}<span class="ptg-n">${cnt[c]}</span></button>`).join('')
             }</div></div>`;
         }).join('');
         el.innerHTML = `<div class="pref-gline">
@@ -6099,7 +6111,7 @@ map.on('zoomend', () => { isZooming = false; });
                   + (l.idx.length > 3 ? ' ほか' : '');
             // 行にアイコンは置かない（人／組は「人」「組」の一文字を丸で囲んでいただけで、
             // 絵ではなく文字だったため。人／組の区別は絞り込みチップで付けられる）
-            return `<div class="lord-row" onclick="openLordDetail(${l.id})">
+            return `<div class="lord-row" ${actionAttrs('openLordDetail', Number(l.id))}>
                 <div class="lord-main">
                     <div class="lord-name">${attrEscape(l.n)}</div>
                     <div class="lord-sub">${attrEscape(sub)}</div>
@@ -6181,11 +6193,11 @@ map.on('zoomend', () => { isZooming = false; });
     }
 
     /* 一覧の末尾に出す件数の行。打ち切っているときは「さらに表示」を添える。
-       都道府県・城主・遺構の3か所で同じものを使う（onMore は継ぎ足す関数の呼び出し文）。 */
+       都道府県・城主・遺構の3か所で同じものを使う（onMore は継ぎ足す関数の名前）。 */
     function listFootHtml(shown, total, onMore, chunk) {
         if (shown >= total) return `<div class="lords-note">全${total.toLocaleString()}件</div>`;
         return `<div class="lords-note">${shown.toLocaleString()}件を表示中（全${
-            total.toLocaleString()}件）<button class="pref-more" onclick="${onMore}"
+            total.toLocaleString()}件）<button class="pref-more" ${actionAttrs(onMore)}
             >さらに${Math.min(chunk, total - shown).toLocaleString()}件</button></div>`;
     }
 
@@ -6232,7 +6244,7 @@ map.on('zoomend', () => { isZooming = false; });
             /* 副見出しは他の一覧（周辺検索・都道府県から探す・お気に入り・検索結果）と揃えて住所そのもの。
                住所を持たない城（実測12件）だけ都道府県に落とす。
                100名城の印はバッジ側に出るので、ここには入れない（同じ語が2つ並ばないように） */
-            out += `<div class="nearby-item" onclick="${jump}(${r.i})">
+            out += `<div class="nearby-item" ${actionAttrs(jump, Number(r.i))}>
                 ${favStripeHtml('castle', p, r.f.geometry.coordinates)}
                 <div class="nearby-item-icon" style="background:${color}"><img src="castle.png" class="icon-full"></div>
                 <div class="nearby-item-text">
@@ -6285,7 +6297,7 @@ map.on('zoomend', () => { isZooming = false; });
         const shown = Math.min(rows.length, lordsState.castleShown || CASTLE_LIST_CHUNK);
         lordsState.castleShown = shown;
         list.innerHTML = castleRowsHtml(rows, 0, shown, 'lordsJumpToCastle')
-            + listFootHtml(shown, rows.length, 'showMoreLordCastles()', CASTLE_LIST_CHUNK);
+            + listFootHtml(shown, rows.length, 'showMoreLordCastles', CASTLE_LIST_CHUNK);
         // 通常は先頭から。城を開いて戻ってきたときだけ、開く前の位置へ戻す
         list.scrollTop = lordsState.restoreCastleScroll || 0;
         lordsState.restoreCastleScroll = 0;
@@ -6299,7 +6311,7 @@ map.on('zoomend', () => { isZooming = false; });
         if (to <= from) return;
         lordsState.castleShown = to;
         appendListRows('lord-castle-list', castleRowsHtml(rows, from, to, 'lordsJumpToCastle'),
-                       to, rows.length, 'showMoreLordCastles()', CASTLE_LIST_CHUNK);
+                       to, rows.length, 'showMoreLordCastles', CASTLE_LIST_CHUNK);
     }
 
     // 都道府県順の並び（pref_codes.js の JP-01…JP-47 の順をそのまま使う）
@@ -6601,13 +6613,13 @@ map.on('zoomend', () => { isZooming = false; });
             if (!has.length) return '';
             return `<div class="pref-ggrp"><div class="pref-ggname">${gname}</div><div class="pref-gchips">${
                 has.map(c => `<button class="ptg ${prefState.genres.has(c) ? 'on shop-genre ' + (SHOP_GENRE_CLASS[c] || 'g-sonota') : ''}"
-                    onclick="togglePrefGenre('${attrEscape(c)}')">${attrEscape(c)}<span class="ptg-n">${cnt[c]}</span></button>`).join('')
+                    ${actionAttrs('togglePrefGenre', String(c))}>${attrEscape(c)}<span class="ptg-n">${cnt[c]}</span></button>`).join('')
             }</div></div>`;
         }).join('');
         el.innerHTML = `<div class="pref-gline">
             <div class="pref-gline-h"><span>食べログのジャンル <b>${on.length}/${list.length}</b>・${
                 on.reduce((s, e) => s + e[1], 0).toLocaleString()}件</span>
-                <button class="ptg-all" onclick="togglePrefGenreAll()">${
+                <button class="ptg-all" data-on-click="togglePrefGenreAll">${
                     on.length === list.length ? '全解除' : '全選択'}</button></div>${groups}</div>`;
     }
 
@@ -6639,7 +6651,7 @@ map.on('zoomend', () => { isZooming = false; });
         if (typeFiltered) parts.push(`${onTypes.length}/${types.length}種別`);
         if (genreFiltered) parts.push(`ジャンル${onGenres.length}/${genres.length}`);
         el.innerHTML = `<div class="pref-rstbar">${parts.join('・')}を表示中
-            <button onclick="resetPrefFilter()">すべて表示</button></div>`;
+            <button data-on-click="resetPrefFilter">すべて表示</button></div>`;
     }
 
     /* 種別と部門の選択を既定（どちらもすべて選択）に戻す。
@@ -6696,7 +6708,7 @@ map.on('zoomend', () => { isZooming = false; });
                 class="pref-cnt-n${v ? '' : ' zero'}"${w ? ` style="width:${w[t]}ch"` : ''}
                 >${v.toLocaleString()}</span></span>`;
         }).join('');
-        return `<div class="pref-row${name === PREF_ALL ? ' pref-row-all' : ''}" onclick="openPrefDetail('${name}')">
+        return `<div class="pref-row${name === PREF_ALL ? ' pref-row-all' : ''}" ${actionAttrs('openPrefDetail', String(name))}>
             <div class="lord-main"><div class="lord-name">${name}</div></div>
             <div class="pref-cnt-line">${cnt}</div>
             <div class="lord-chev">›</div>
@@ -6861,14 +6873,14 @@ map.on('zoomend', () => { isZooming = false; });
     const PREF_ITEM_CHUNK = 1000;
 
     /* 一覧の行。継ぎ足し（showMorePrefItems）からも呼べるよう、範囲を指定して作る。
-       onclick に渡すのは rows の通し番号なので、継ぎ足した行でも先頭から数えた番号になる。 */
+       行に持たせるのは rows の通し番号なので、継ぎ足した行でも先頭から数えた番号になる。 */
     function prefRowsHtml(rows, from, to) {
         let out = '';
         for (let i = from; i < to; i++) {
             const r = rows[i];
             const item = r.item;
             const distStr = r.dist < 1 ? `${Math.round(r.dist * 1000)}m` : `${r.dist.toFixed(1)}km`;
-            out += `<div class="nearby-item" onclick="prefJumpToItem(${i})">
+            out += `<div class="nearby-item" ${actionAttrs('prefJumpToItem', Number(i))}>
                 ${favStripeHtml(item.type, item.properties, item.coords)}
                 ${prefTypeIconHtml(item.type, item.properties || {})}
                 <div class="nearby-item-text">
@@ -6951,7 +6963,7 @@ map.on('zoomend', () => { isZooming = false; });
         prefState.rows = rows;
         // 末尾は、打ち切っているときだけ「さらに表示」を添えた件数の行になる
         list.innerHTML = prefRowsHtml(rows, 0, shown)
-            + listFootHtml(shown, rows.length, 'showMorePrefItems()', PREF_ITEM_CHUNK);
+            + listFootHtml(shown, rows.length, 'showMorePrefItems', PREF_ITEM_CHUNK);
         // 通常は先頭から。オブジェクトを開いて戻ってきたときだけ、開く前の位置へ戻す
         // （全件を入れ終えてから指定しないと、スクロールできる高さが足りずに切り詰められる）
         list.scrollTop = prefState.restoreScroll || 0;
@@ -6972,7 +6984,7 @@ map.on('zoomend', () => { isZooming = false; });
         if (to <= from) return;
         prefState.shown = to;
         appendListRows('pref-item-list', prefRowsHtml(rows, from, to),
-                       to, rows.length, 'showMorePrefItems()', PREF_ITEM_CHUNK);
+                       to, rows.length, 'showMorePrefItems', PREF_ITEM_CHUNK);
     }
 
     /* 一覧からオブジェクトへ飛ぶ。検索結果タップ（onResultClick）と同じ扱いにして、
@@ -7230,9 +7242,9 @@ map.on('zoomend', () => { isZooming = false; });
         el.value = ''; onRemainsSearchInput(''); el.focus();
     }
 
-    // 遺構名は属性に持たせて渡す（onclick の文字列に埋めると、名前に引用符が入ったときに壊れる）
+    // 遺構名は属性（data-t）に持たせて渡す（属性に書いた JS の文字列に埋めると、名前に引用符が入ったときに壊れる）
     function remainsRowHtml(e, withGroup) {
-        return `<div class="rt-row" data-t="t:${attrEscape(e.n)}" onclick="openRemainsDetail(this.dataset.t)">
+        return `<div class="rt-row" data-t="t:${attrEscape(e.n)}" data-on-click="openRemainsDetail">
             <span class="rt-dot" style="background:${REMAIN_GROUP[e.g].color}"></span>
             <div class="rt-name">${attrEscape(e.n)}</div>
             ${withGroup ? `<div class="rt-g">${REMAIN_GROUP[e.g].name}</div>` : ''}
@@ -7248,7 +7260,7 @@ map.on('zoomend', () => { isZooming = false; });
             // 絞り込みの語は分類名だけでなく中身の遺構名でも当てる（「天守」で建造物が残るように）
             const rows = remainsGroups.filter(g => !q || normalizeForSearch(g.name).includes(q)
                                                    || g.toks.some(t => t._n.includes(q)));
-            html = rows.map(g => `<div class="lord-row" onclick="openRemainsGroup('${g.id}')">
+            html = rows.map(g => `<div class="lord-row" ${actionAttrs('openRemainsGroup', String(g.id))}>
                 <div class="rg-ic" style="background:${g.color}"><svg viewBox="0 0 24 24">${REMAIN_GROUP_ICON[g.id]}</svg></div>
                 <div class="lord-main">
                     <div class="lord-name">${attrEscape(g.name)}</div>
@@ -7343,14 +7355,14 @@ map.on('zoomend', () => { isZooming = false; });
             const rows = g.subs.filter(s => !q || normalizeForSearch(s.name).includes(q)
                                             || s.toks.some(e => e._n.includes(q)));
             hit = rows.length; total = `全${g.subs.length}分類`;
-            html = rows.map(s => `<div class="lord-row" data-t="s:${attrEscape(s.name)}" onclick="openRemainsDetail(this.dataset.t)">
+            html = rows.map(s => `<div class="lord-row" data-t="s:${attrEscape(s.name)}" data-on-click="openRemainsDetail">
                 <div class="lord-main">
                     <div class="lord-name">${attrEscape(s.name)}</div>
                     <div class="lord-sub">${attrEscape(s.toks.slice(0, 3).map(e => e.n).join('、'))} ほか${s.toks.length}種</div>
                 </div>
                 <div class="lord-num">${s.castles.size.toLocaleString()}城</div>
                 <button class="rt-drill" data-s="${attrEscape(s.name)}"
-                        onclick="event.stopPropagation(); openRemainsSub(this.dataset.s)">内訳${s.toks.length}種
+                        data-on-click="openRemainsSub" data-stop>内訳${s.toks.length}種
                     <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
                 </button></div>`).join('');
         } else {
@@ -7502,7 +7514,7 @@ map.on('zoomend', () => { isZooming = false; });
         const shown = Math.min(rows.length, remainsState.castleShown || CASTLE_LIST_CHUNK);
         remainsState.castleShown = shown;
         list.innerHTML = castleRowsHtml(rows, 0, shown, 'remainsJumpToCastle')
-            + listFootHtml(shown, rows.length, 'showMoreRemainsCastles()', CASTLE_LIST_CHUNK);
+            + listFootHtml(shown, rows.length, 'showMoreRemainsCastles', CASTLE_LIST_CHUNK);
         // 通常は先頭から。城を開いて戻ってきたときだけ、開く前の位置へ戻す
         list.scrollTop = remainsState.restoreCastleScroll || 0;
         remainsState.restoreCastleScroll = 0;
@@ -7516,7 +7528,7 @@ map.on('zoomend', () => { isZooming = false; });
         if (to <= from) return;
         remainsState.castleShown = to;
         appendListRows('remains-castle-list', castleRowsHtml(rows, from, to, 'remainsJumpToCastle'),
-                       to, rows.length, 'showMoreRemainsCastles()', CASTLE_LIST_CHUNK);
+                       to, rows.length, 'showMoreRemainsCastles', CASTLE_LIST_CHUNK);
     }
 
     // 一覧から城へ飛ぶ。城主一覧（lordsJumpToCastle）と同じ扱いにする
@@ -7639,7 +7651,7 @@ map.on('zoomend', () => { isZooming = false; });
     function buildRemainsHelpView() {
         const sections = window.REMAINS_HELP.SECTIONS;
         document.getElementById('remains-help-chips').innerHTML = sections.map((s, i) =>
-            `<button class="rh-chip" data-i="${i}" style="--g:${s.color}" aria-pressed="${i === 0}" onclick="jumpRemainsHelpSection(${i})">${s.name}</button>`).join('');
+            `<button class="rh-chip" data-i="${i}" style="--g:${s.color}" aria-pressed="${i === 0}" ${actionAttrs('jumpRemainsHelpSection', Number(i))}>${s.name}</button>`).join('');
         const list = document.getElementById('remains-help-list');
         list.innerHTML = sections.map((s, i) => {
             const n = s.subs.reduce((a, sub) => a + sub.cards.length, 0);
@@ -7737,7 +7749,7 @@ map.on('zoomend', () => { isZooming = false; });
             pop.id = 'rh-pop';
             pop.setAttribute('role', 'dialog');
             pop.innerHTML = '<div class="rh-pop-head"><div class="rh-pop-title" id="rh-pop-title"></div>'
-                          + '<button class="rh-pop-x" onclick="closeRemainsHelpPop()" title="閉じる">×</button></div>'
+                          + '<button class="rh-pop-x" data-on-click="closeRemainsHelpPop" title="閉じる">×</button></div>'
                           + '<div class="rh-pop-body" id="rh-pop-body"></div>';
             document.body.append(dim, pop);
         }
@@ -7771,7 +7783,7 @@ map.on('zoomend', () => { isZooming = false; });
             body.innerHTML = '<div class="lords-note">この語の図解はありません</div>';
         } else if (hit.card) {
             const back = backSec
-                ? `<button class="rh-back" data-d="§${attrEscape(backSec)}" onclick="renderRemainsHelpPop(this.dataset.d)">‹ 「${backSec}」の種類に戻る</button>`
+                ? `<button class="rh-back" data-d="§${attrEscape(backSec)}" data-on-click="renderRemainsHelpPop">‹ 「${backSec}」の種類に戻る</button>`
                 : '';
             body.innerHTML = back + remainsHelpCardHtml(hit.card, hit.sec, false);
         } else {
@@ -7779,7 +7791,7 @@ map.on('zoomend', () => { isZooming = false; });
             body.innerHTML = `<div style="--g:${s.color}"><div class="rh-sec-h">${s.name}</div><p class="rh-lead">${s.lead}</p>`
                 + s.subs.map(sub => `<div class="rh-subh">${sub.name}</div><div class="rh-kinds">`
                     + sub.cards.map(c => `<button class="rh-kind" data-t="${attrEscape(c.t)}" data-s="${attrEscape(s.name)}"`
-                        + ` onclick="renderRemainsHelpPop(this.dataset.t, this.dataset.s)">${c.t}</button>`).join('')
+                        + ` data-on-click="renderRemainsHelpPop">${c.t}</button>`).join('')
                     + '</div>').join('') + '</div>';
         }
         body.scrollTop = 0;
@@ -7827,7 +7839,9 @@ map.on('zoomend', () => { isZooming = false; });
                 nearbyState.cats = [cat];
                 a.href = nearbyGmapUrl(nearbyState.cats);
             });
-            // window.open を走らせない。リンクが覆えない透明の枠線（2px）を押したときも同じ
+            // window.open を走らせない。リンクが覆えない透明の枠線（2px）を押したときも同じ。
+            // 押したときの処理は data-on-click（index.html の振り分け役）。古い index.html の onclick も外す
+            item.removeAttribute('data-on-click');
             item.removeAttribute('onclick');
             item.style.position = 'relative';
             item.appendChild(a);
@@ -8153,7 +8167,7 @@ map.on('zoomend', () => { isZooming = false; });
         list.innerHTML = rows.slice(0, shown).map((r, i) => {
             const item = r.item;
             const distStr = item.dist < 1 ? `${Math.round(item.dist * 1000)}m` : `${item.dist.toFixed(1)}km`;
-            return `<div class="nearby-item" onclick="nearbyJumpToItem(${i})">
+            return `<div class="nearby-item" ${actionAttrs('nearbyJumpToItem', Number(i))}>
                 ${favStripeHtml(item.type, item.properties, item.coords)}
                 ${prefTypeIconHtml(item.type, item.properties || {})}
                 <div class="nearby-item-text">
@@ -8167,7 +8181,7 @@ map.on('zoomend', () => { isZooming = false; });
         // 末尾。打ち切っているときは、いま出ている件数と全件数を並べて「さらに表示」を添える
         list.insertAdjacentHTML('beforeend', shown < rows.length
             ? `<div class="lords-note">${shown.toLocaleString()}件を表示中（全${
-                rows.length.toLocaleString()}件）<button class="pref-more" onclick="showMoreNearbyItems()"
+                rows.length.toLocaleString()}件）<button class="pref-more" data-on-click="showMoreNearbyItems"
                 >さらに${Math.min(NEARBY_ITEM_CHUNK, rows.length - shown).toLocaleString()}件</button></div>`
             : `<div class="lords-note">全${rows.length.toLocaleString()}件</div>`);
         // 通常は先頭から。オブジェクトを開いて戻ったときと「さらに表示」のときだけ、控えた位置へ
@@ -8468,7 +8482,7 @@ map.on('zoomend', () => { isZooming = false; });
                 ${popRow}`;
             if (!canOpen) return `<div class="weather-day-card">${inner}</div>`;
             return `
-            <button type="button" class="weather-day-card${activeClass}" onclick="toggleWeatherHourly(${i})" aria-pressed="${selectedWeatherDayIndex === i ? 'true' : 'false'}" aria-label="${lbl}の1時間ごとの天気を表示">${inner}</button>`;
+            <button type="button" class="weather-day-card${activeClass}" ${actionAttrs('toggleWeatherHourly', Number(i))} aria-pressed="${selectedWeatherDayIndex === i ? 'true' : 'false'}" aria-label="${lbl}の1時間ごとの天気を表示">${inner}</button>`;
         }).join('');
         renderWeatherHourly(model);
     }
@@ -9045,10 +9059,10 @@ map.on('zoomend', () => { isZooming = false; });
                 <span class="favname-sw" style="background:${FAV_COLORS[n]};color:${FAV_FG[n]}">${n}</span>
                 <input class="favname-in" type="text" maxlength="${FAV_NAME_MAX}"
                        value="${attrEscape(favNameOf(n))}" placeholder="枠${n}（空欄なら使わない）"
-                       oninput="onFavNameInput(${n}, this)">
+                       data-on-input="onFavNameInput" data-n="${n}">
                 <span class="favname-cnt" data-fav-cnt="${n}">${favCountOf(n)}件</span>
                 <button class="favname-eye" type="button" data-fav-eye="${n}"
-                        onclick="onFavHiddenToggle(${n})"></button>
+                        ${actionAttrs('onFavHiddenToggle', Number(n))}></button>
             </div>`).join('');
         updateFavEyes();
     }
@@ -9286,9 +9300,9 @@ map.on('zoomend', () => { isZooming = false; });
         if (!el) return;
         const rows = favCollect();
         el.innerHTML = `<button class="lords-chip" data-fk="all" aria-pressed="${
-                favState.kind === 'all'}" onclick="setFavKind('all')">すべて ${rows.length}</button>`
+                favState.kind === 'all'}" ${actionAttrs('setFavKind', 'all')}>すべて ${rows.length}</button>`
             + favActiveSlots().map(n => `<button class="lords-chip fav-kind" data-fk="${n}"
-                aria-pressed="${String(favState.kind) === String(n)}" onclick="setFavKind(${n})"
+                aria-pressed="${String(favState.kind) === String(n)}" ${actionAttrs('setFavKind', Number(n))}
                 ><span class="fav-dot" style="background:${FAV_COLORS[n]}"></span>${
                 attrEscape(favNameOf(n))} ${rows.filter(r => r.mk.includes(n)).length}</button>`).join('');
     }

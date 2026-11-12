@@ -16,11 +16,11 @@
     }
 
     /* 一覧の末尾に出す件数の行。打ち切っているときは「さらに表示」を添える。
-       都道府県・城主・遺構の3か所で同じものを使う（onMore は継ぎ足す関数の呼び出し文）。 */
+       都道府県・城主・遺構の3か所で同じものを使う（onMore は継ぎ足す関数の名前）。 */
     function listFootHtml(shown, total, onMore, chunk) {
         if (shown >= total) return `<div class="lords-note">全${total.toLocaleString()}件</div>`;
         return `<div class="lords-note">${shown.toLocaleString()}件を表示中（全${
-            total.toLocaleString()}件）<button class="pref-more" onclick="${onMore}"
+            total.toLocaleString()}件）<button class="pref-more" ${actionAttrs(onMore)}
             >さらに${Math.min(chunk, total - shown).toLocaleString()}件</button></div>`;
     }
 
@@ -67,7 +67,7 @@
             /* 副見出しは他の一覧（周辺検索・都道府県から探す・お気に入り・検索結果）と揃えて住所そのもの。
                住所を持たない城（実測12件）だけ都道府県に落とす。
                100名城の印はバッジ側に出るので、ここには入れない（同じ語が2つ並ばないように） */
-            out += `<div class="nearby-item" onclick="${jump}(${r.i})">
+            out += `<div class="nearby-item" ${actionAttrs(jump, Number(r.i))}>
                 ${favStripeHtml('castle', p, r.f.geometry.coordinates)}
                 <div class="nearby-item-icon" style="background:${color}"><img src="castle.png" class="icon-full"></div>
                 <div class="nearby-item-text">
@@ -120,7 +120,7 @@
         const shown = Math.min(rows.length, lordsState.castleShown || CASTLE_LIST_CHUNK);
         lordsState.castleShown = shown;
         list.innerHTML = castleRowsHtml(rows, 0, shown, 'lordsJumpToCastle')
-            + listFootHtml(shown, rows.length, 'showMoreLordCastles()', CASTLE_LIST_CHUNK);
+            + listFootHtml(shown, rows.length, 'showMoreLordCastles', CASTLE_LIST_CHUNK);
         // 通常は先頭から。城を開いて戻ってきたときだけ、開く前の位置へ戻す
         list.scrollTop = lordsState.restoreCastleScroll || 0;
         lordsState.restoreCastleScroll = 0;
@@ -134,7 +134,7 @@
         if (to <= from) return;
         lordsState.castleShown = to;
         appendListRows('lord-castle-list', castleRowsHtml(rows, from, to, 'lordsJumpToCastle'),
-                       to, rows.length, 'showMoreLordCastles()', CASTLE_LIST_CHUNK);
+                       to, rows.length, 'showMoreLordCastles', CASTLE_LIST_CHUNK);
     }
 
     // 都道府県順の並び（pref_codes.js の JP-01…JP-47 の順をそのまま使う）

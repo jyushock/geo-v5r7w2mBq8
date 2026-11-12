@@ -66,9 +66,9 @@
         if (!el) return;
         const rows = favCollect();
         el.innerHTML = `<button class="lords-chip" data-fk="all" aria-pressed="${
-                favState.kind === 'all'}" onclick="setFavKind('all')">すべて ${rows.length}</button>`
+                favState.kind === 'all'}" ${actionAttrs('setFavKind', 'all')}>すべて ${rows.length}</button>`
             + favActiveSlots().map(n => `<button class="lords-chip fav-kind" data-fk="${n}"
-                aria-pressed="${String(favState.kind) === String(n)}" onclick="setFavKind(${n})"
+                aria-pressed="${String(favState.kind) === String(n)}" ${actionAttrs('setFavKind', Number(n))}
                 ><span class="fav-dot" style="background:${FAV_COLORS[n]}"></span>${
                 attrEscape(favNameOf(n))} ${rows.filter(r => r.mk.includes(n)).length}</button>`).join('');
     }

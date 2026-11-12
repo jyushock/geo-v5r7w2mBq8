@@ -182,7 +182,7 @@
                   + (l.idx.length > 3 ? ' ほか' : '');
             // 行にアイコンは置かない（人／組は「人」「組」の一文字を丸で囲んでいただけで、
             // 絵ではなく文字だったため。人／組の区別は絞り込みチップで付けられる）
-            return `<div class="lord-row" onclick="openLordDetail(${l.id})">
+            return `<div class="lord-row" ${actionAttrs('openLordDetail', Number(l.id))}>
                 <div class="lord-main">
                     <div class="lord-name">${attrEscape(l.n)}</div>
                     <div class="lord-sub">${attrEscape(sub)}</div>

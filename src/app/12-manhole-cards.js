@@ -114,7 +114,7 @@ function mhcardInfo(p) {
    移動後はピンをタップしたときと同じ状態にする（地図を寄せる → 情報シート＋選択リング → 履歴に記録）。
    飛び先の種別を表示していない（設定でOFF）ときはボタンを出さない。検索・周辺検索が
    OFFの種別を候補から外すのと同じ扱いで、表示していない種別へは連れて行かない。
-   onclickに渡すのは正規化済みのカードコード（英数字とハイフンのみ）で、URLや施設名は埋め込まない。
+   ボタンに持たせるのは正規化済みのカードコード（data-key）と候補の番号（data-i）だけで、URLや施設名は埋め込まない。
    移動先だけを中央に置くのではなく、移動元も画面に残して線で結ぶ。どこから来たのかと
    2点の距離感が分かるようにするため。地図を引く範囲と解除の条件は openObjSheet 側にある。 */
 function mhJumpTo(type, feature) {
@@ -148,19 +148,19 @@ function mhCardJumpHtml(cardFeatures, key, lng, lat, label) {
         // 配布が終わったカードの行き先は配布場所ではない（問合せ先か市町村の代表点）。
         // 「配布場所」と書くと押した先と食い違うので、状態をそのまま文言にする。
         const single = label || (cardFeatures[0].properties.discontinued ? '配布終了' : '配布場所');
-        return { btn: `<button class="btn btn-to-card" onclick="mhJumpToCard('${key}',0)">${single}</button>`, pick: '' };
+        return { btn: `<button class="btn btn-to-card" data-on-click="mhJumpToCard" data-key="${attrEscape(key)}" data-i="0">${single}</button>`, pick: '' };
     }
     const items = cardFeatures.map((f, i) => {
         const q = f.properties;
         const d = calcDist(lat, lng, f.geometry.coordinates[1], f.geometry.coordinates[0]);
         const ds = d < 1 ? `${Math.round(d * 1000)}m` : `${d.toFixed(1)}km`;
-        return `<button class="os-pick-it" onclick="mhJumpToCard('${key}',${i})">`
+        return `<button class="os-pick-it" data-on-click="mhJumpToCard" data-key="${attrEscape(key)}" data-i="${i}">`
              + `<span class="os-pick-nm">${q.locationName || q.name || '配布場所'}`
              + `<span class="os-pick-sub">${q.address || ''}</span></span>`
              + `<span class="os-pick-d">${ds}</span></button>`;
     }).join('');
     return {
-        btn: `<button class="btn btn-to-card" onclick="mhTogglePicker()">配布場所（${cardFeatures.length}件）</button>`,
+        btn: `<button class="btn btn-to-card" data-on-click="mhTogglePicker">配布場所（${cardFeatures.length}件）</button>`,
         pick: `<div class="os-pick" hidden><div class="os-pick-hd">配布場所を選ぶ</div>${items}</div>`,
     };
 }

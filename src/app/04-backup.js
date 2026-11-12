@@ -19,9 +19,10 @@
         return `${d.getFullYear()}${p(d.getMonth() + 1)}${p(d.getDate())}`;
     }
     function backupSlotLabel(n) { return favNameOf(n) || `枠${n}（名前なし）`; }
-    function backupChip(label, pressed, disabled, onclick, color) {
+    // action は押したときに呼ぶ関数の名前、arg はその引数（actionAttrs）
+    function backupChip(label, pressed, disabled, action, arg, color) {
         return `<button class="lords-chip fav-kind" aria-pressed="${pressed}"${disabled ? ' disabled' : ''}
-            onclick="${onclick}">${color ? `<span class="fav-dot" style="background:${color}"></span>` : ''}${
+            ${actionAttrs(action, arg)}>${color ? `<span class="fav-dot" style="background:${color}"></span>` : ''}${
             attrEscape(label)}</button>`;
     }
 
@@ -48,10 +49,10 @@
             FAV_SLOTS.map(n => {
                 const c = favCountOf(n);
                 return backupChip(`${backupSlotLabel(n)} ${c.toLocaleString()}`, sel === n, !c,
-                                  `setBackupExportSel(${n})`, FAV_COLORS[n]);
+                                  'setBackupExportSel', n, FAV_COLORS[n]);
             }).join('')
             + backupChip('表示設定', sel === 'settings', !BACKUP_SETTINGS_KEYS.some(k => storeGet(k) != null),
-                         `setBackupExportSel('settings')`);
+                         'setBackupExportSel', 'settings');
         document.getElementById('backup-export-sum').innerHTML = !sel ? '書き出す対象を選んでください'
             : sel === 'settings' ? '表示設定（オブジェクト表示・地図タイルなど）を書き出します'
             : `「${attrEscape(backupSlotLabel(sel))}」の ${favCountOf(sel).toLocaleString()}件を書き出します`;
@@ -206,14 +207,14 @@
         document.getElementById('backup-import-file').textContent = st.fileName;
         document.getElementById('backup-import-sources').innerHTML = st.sources.map((s, i) =>
             backupChip(s.kind === 'fav' ? `${s.label} ${s.keys.length.toLocaleString()}` : s.label,
-                       src === s, false, `setBackupImportSrc(${i})`, s.color)).join('');
+                       src === s, false, 'setBackupImportSrc', i, s.color)).join('');
         const isFav = !!src && src.kind === 'fav';
         document.getElementById('backup-import-target-row').style.display = isFav ? '' : 'none';
         // 名前が空の枠は選べない（使わない枠の扱い。足しても一覧と地図に出ない）
         if (isFav) {
             document.getElementById('backup-import-targets').innerHTML = FAV_SLOTS.map(n =>
                 backupChip(backupSlotLabel(n), st.slot === n, !favNameOf(n),
-                           `setBackupImportSlot(${n})`, FAV_COLORS[n])).join('');
+                           'setBackupImportSlot', n, FAV_COLORS[n])).join('');
         }
         const lines = [];
         if (!src) {

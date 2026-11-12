@@ -74,7 +74,7 @@
     function buildRemainsHelpView() {
         const sections = window.REMAINS_HELP.SECTIONS;
         document.getElementById('remains-help-chips').innerHTML = sections.map((s, i) =>
-            `<button class="rh-chip" data-i="${i}" style="--g:${s.color}" aria-pressed="${i === 0}" onclick="jumpRemainsHelpSection(${i})">${s.name}</button>`).join('');
+            `<button class="rh-chip" data-i="${i}" style="--g:${s.color}" aria-pressed="${i === 0}" ${actionAttrs('jumpRemainsHelpSection', Number(i))}>${s.name}</button>`).join('');
         const list = document.getElementById('remains-help-list');
         list.innerHTML = sections.map((s, i) => {
             const n = s.subs.reduce((a, sub) => a + sub.cards.length, 0);
@@ -172,7 +172,7 @@
             pop.id = 'rh-pop';
             pop.setAttribute('role', 'dialog');
             pop.innerHTML = '<div class="rh-pop-head"><div class="rh-pop-title" id="rh-pop-title"></div>'
-                          + '<button class="rh-pop-x" onclick="closeRemainsHelpPop()" title="閉じる">×</button></div>'
+                          + '<button class="rh-pop-x" data-on-click="closeRemainsHelpPop" title="閉じる">×</button></div>'
                           + '<div class="rh-pop-body" id="rh-pop-body"></div>';
             document.body.append(dim, pop);
         }
@@ -206,7 +206,7 @@
             body.innerHTML = '<div class="lords-note">この語の図解はありません</div>';
         } else if (hit.card) {
             const back = backSec
-                ? `<button class="rh-back" data-d="§${attrEscape(backSec)}" onclick="renderRemainsHelpPop(this.dataset.d)">‹ 「${backSec}」の種類に戻る</button>`
+                ? `<button class="rh-back" data-d="§${attrEscape(backSec)}" data-on-click="renderRemainsHelpPop">‹ 「${backSec}」の種類に戻る</button>`
                 : '';
             body.innerHTML = back + remainsHelpCardHtml(hit.card, hit.sec, false);
         } else {
@@ -214,7 +214,7 @@
             body.innerHTML = `<div style="--g:${s.color}"><div class="rh-sec-h">${s.name}</div><p class="rh-lead">${s.lead}</p>`
                 + s.subs.map(sub => `<div class="rh-subh">${sub.name}</div><div class="rh-kinds">`
                     + sub.cards.map(c => `<button class="rh-kind" data-t="${attrEscape(c.t)}" data-s="${attrEscape(s.name)}"`
-                        + ` onclick="renderRemainsHelpPop(this.dataset.t, this.dataset.s)">${c.t}</button>`).join('')
+                        + ` data-on-click="renderRemainsHelpPop">${c.t}</button>`).join('')
                     + '</div>').join('') + '</div>';
         }
         body.scrollTop = 0;
@@ -262,7 +262,9 @@
                 nearbyState.cats = [cat];
                 a.href = nearbyGmapUrl(nearbyState.cats);
             });
-            // window.open を走らせない。リンクが覆えない透明の枠線（2px）を押したときも同じ
+            // window.open を走らせない。リンクが覆えない透明の枠線（2px）を押したときも同じ。
+            // 押したときの処理は data-on-click（index.html の振り分け役）。古い index.html の onclick も外す
+            item.removeAttribute('data-on-click');
             item.removeAttribute('onclick');
             item.style.position = 'relative';
             item.appendChild(a);

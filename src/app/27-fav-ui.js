@@ -7,10 +7,10 @@
                 <span class="favname-sw" style="background:${FAV_COLORS[n]};color:${FAV_FG[n]}">${n}</span>
                 <input class="favname-in" type="text" maxlength="${FAV_NAME_MAX}"
                        value="${attrEscape(favNameOf(n))}" placeholder="枠${n}（空欄なら使わない）"
-                       oninput="onFavNameInput(${n}, this)">
+                       data-on-input="onFavNameInput" data-n="${n}">
                 <span class="favname-cnt" data-fav-cnt="${n}">${favCountOf(n)}件</span>
                 <button class="favname-eye" type="button" data-fav-eye="${n}"
-                        onclick="onFavHiddenToggle(${n})"></button>
+                        ${actionAttrs('onFavHiddenToggle', Number(n))}></button>
             </div>`).join('');
         updateFavEyes();
     }

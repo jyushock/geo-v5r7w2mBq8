@@ -219,8 +219,7 @@
             list.innerHTML = '<p class="fxp-note">読み込めませんでした（通信できていません）</p>';
         }
     }
-    /* onclick に渡すのは id だけにする。id は乱数（A-Za-z0-9_-）なので引用符が入らない。
-       名前は onclick の JS 文字列に入れると ' で切れる（attrEscape の &#39; も JS に渡る前に ' へ戻る）ので埋めない。 */
+    /* 「外す」に渡すのは id だけ（actionAttrs で data-arg に入れる）。名前は渡さない。 */
     let syncDevicesCache = [];
     function renderSyncDevices(devices) {
         syncDevicesCache = devices;
@@ -231,7 +230,7 @@
             return `<div class="dev-row"><span class="dev-n">${attrEscape(d.name)}`
                 + (self ? '<span class="dev-self">この端末</span>' : '')
                 + `<small>${syncWhen(d.createdAt)}から ・ 最終 ${syncWhen(d.lastSeenAt)}</small></span>`
-                + (self ? '' : `<button class="dev-x" onclick="syncRemoveDevice(&quot;${attrEscape(d.id)}&quot;)">外す</button>`)
+                + (self ? '' : `<button class="dev-x" ${actionAttrs('syncRemoveDevice', String(d.id))}>外す</button>`)
                 + '</div>';
         }).join('');
     }

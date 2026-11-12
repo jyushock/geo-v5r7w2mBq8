@@ -128,7 +128,7 @@
             if (!has.length) return '';
             return `<div class="pref-ggrp"><div class="pref-ggname">${gname}</div><div class="pref-gchips">${
                 has.map(c => `<button class="ptg ${genreVisible(c) ? 'on shop-genre ' + (SHOP_GENRE_CLASS[c] || 'g-sonota') : ''}"
-                    onclick="toggleObjGenre('${attrEscape(c)}')">${attrEscape(c)}<span class="ptg-n">${cnt[c]}</span></button>`).join('')
+                    ${actionAttrs('toggleObjGenre', String(c))}>${attrEscape(c)}<span class="ptg-n">${cnt[c]}</span></button>`).join('')
             }</div></div>`;
         }).join('');
         el.innerHTML = `<div class="pref-gline">

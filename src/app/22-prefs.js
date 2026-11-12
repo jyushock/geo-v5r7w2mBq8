@@ -248,13 +248,13 @@
             if (!has.length) return '';
             return `<div class="pref-ggrp"><div class="pref-ggname">${gname}</div><div class="pref-gchips">${
                 has.map(c => `<button class="ptg ${prefState.genres.has(c) ? 'on shop-genre ' + (SHOP_GENRE_CLASS[c] || 'g-sonota') : ''}"
-                    onclick="togglePrefGenre('${attrEscape(c)}')">${attrEscape(c)}<span class="ptg-n">${cnt[c]}</span></button>`).join('')
+                    ${actionAttrs('togglePrefGenre', String(c))}>${attrEscape(c)}<span class="ptg-n">${cnt[c]}</span></button>`).join('')
             }</div></div>`;
         }).join('');
         el.innerHTML = `<div class="pref-gline">
             <div class="pref-gline-h"><span>食べログのジャンル <b>${on.length}/${list.length}</b>・${
                 on.reduce((s, e) => s + e[1], 0).toLocaleString()}件</span>
-                <button class="ptg-all" onclick="togglePrefGenreAll()">${
+                <button class="ptg-all" data-on-click="togglePrefGenreAll">${
                     on.length === list.length ? '全解除' : '全選択'}</button></div>${groups}</div>`;
     }
 
@@ -286,7 +286,7 @@
         if (typeFiltered) parts.push(`${onTypes.length}/${types.length}種別`);
         if (genreFiltered) parts.push(`ジャンル${onGenres.length}/${genres.length}`);
         el.innerHTML = `<div class="pref-rstbar">${parts.join('・')}を表示中
-            <button onclick="resetPrefFilter()">すべて表示</button></div>`;
+            <button data-on-click="resetPrefFilter">すべて表示</button></div>`;
     }
 
     /* 種別と部門の選択を既定（どちらもすべて選択）に戻す。
@@ -343,7 +343,7 @@
                 class="pref-cnt-n${v ? '' : ' zero'}"${w ? ` style="width:${w[t]}ch"` : ''}
                 >${v.toLocaleString()}</span></span>`;
         }).join('');
-        return `<div class="pref-row${name === PREF_ALL ? ' pref-row-all' : ''}" onclick="openPrefDetail('${name}')">
+        return `<div class="pref-row${name === PREF_ALL ? ' pref-row-all' : ''}" ${actionAttrs('openPrefDetail', String(name))}>
             <div class="lord-main"><div class="lord-name">${name}</div></div>
             <div class="pref-cnt-line">${cnt}</div>
             <div class="lord-chev">›</div>
@@ -508,14 +508,14 @@
     const PREF_ITEM_CHUNK = 1000;
 
     /* 一覧の行。継ぎ足し（showMorePrefItems）からも呼べるよう、範囲を指定して作る。
-       onclick に渡すのは rows の通し番号なので、継ぎ足した行でも先頭から数えた番号になる。 */
+       行に持たせるのは rows の通し番号なので、継ぎ足した行でも先頭から数えた番号になる。 */
     function prefRowsHtml(rows, from, to) {
         let out = '';
         for (let i = from; i < to; i++) {
             const r = rows[i];
             const item = r.item;
             const distStr = r.dist < 1 ? `${Math.round(r.dist * 1000)}m` : `${r.dist.toFixed(1)}km`;
-            out += `<div class="nearby-item" onclick="prefJumpToItem(${i})">
+            out += `<div class="nearby-item" ${actionAttrs('prefJumpToItem', Number(i))}>
                 ${favStripeHtml(item.type, item.properties, item.coords)}
                 ${prefTypeIconHtml(item.type, item.properties || {})}
                 <div class="nearby-item-text">
@@ -598,7 +598,7 @@
         prefState.rows = rows;
         // 末尾は、打ち切っているときだけ「さらに表示」を添えた件数の行になる
         list.innerHTML = prefRowsHtml(rows, 0, shown)
-            + listFootHtml(shown, rows.length, 'showMorePrefItems()', PREF_ITEM_CHUNK);
+            + listFootHtml(shown, rows.length, 'showMorePrefItems', PREF_ITEM_CHUNK);
         // 通常は先頭から。オブジェクトを開いて戻ってきたときだけ、開く前の位置へ戻す
         // （全件を入れ終えてから指定しないと、スクロールできる高さが足りずに切り詰められる）
         list.scrollTop = prefState.restoreScroll || 0;
@@ -619,7 +619,7 @@
         if (to <= from) return;
         prefState.shown = to;
         appendListRows('pref-item-list', prefRowsHtml(rows, from, to),
-                       to, rows.length, 'showMorePrefItems()', PREF_ITEM_CHUNK);
+                       to, rows.length, 'showMorePrefItems', PREF_ITEM_CHUNK);
     }
 
     /* 一覧からオブジェクトへ飛ぶ。検索結果タップ（onResultClick）と同じ扱いにして、

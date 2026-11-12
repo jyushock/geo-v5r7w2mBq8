@@ -187,6 +187,15 @@ def main():
         errors.append('[組み立て] app.js が src/app/ の部品と食い違う。部品を直して python tools/build_app_js.py を走らせる'
                       '（app.js を直接直したなら、その変更を部品へ移す）')
 
+    # 押したとき・入力したときの処理は data-on-click / data-on-input / data-on-change で書く（index.html の振り分け役）。
+    # タグに onclick="…" のような JS の文字列を書くと、値の ' や " で切れる不具合がまた起きる
+    inline_re = re.compile(r'<[A-Za-z][^<>]*?\son(?:click|input|change)\s*=', re.S)
+    for f in ['index.html'] + [p.relative_to(ROOT).as_posix() for p in sorted((ROOT / 'src' / 'app').glob('*.js'))]:
+        text = read(f)
+        for m in inline_re.finditer(text):
+            ln = text.count('\n', 0, m.end()) + 1
+            errors.append(f'[インラインの処理] {f}:{ln}: on…= ではなく data-on-… で書く（index.html の振り分け役の説明）')
+
     # index.html と app.js を一緒に変えたら sw.js の VERSION も上げる（sw.js の冒頭の説明。
     # 上げないとデプロイ後の最初の1回が「新しい HTML＋古い app.js」で動く。2026-09-11 に一覧が閉じられなくなった）。
     # まだコミットしていない変更（作業ツリーと索引）を HEAD と比べて見る
