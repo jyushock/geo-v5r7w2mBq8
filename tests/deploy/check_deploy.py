@@ -69,7 +69,7 @@ def deployed_files():
 def must_not_deploy(path):
     """配ってはいけないなら理由を返す。"""
     top = path.split('/', 1)[0]
-    if top in ('.git', '.githooks', 'tools', 'mock', 'tests', 'sample', 'worker', 'remains-help-3d', '.claude', '__pycache__'):
+    if top in ('.git', '.githooks', 'src', 'tools', 'mock', 'tests', 'sample', 'worker', 'remains-help-3d', '.claude', '__pycache__'):
         return f'{top}/ は画面が読まない'
     if path.startswith('retainers/mock/'):
         return 'retainers/mock/ は画面が読まない'
@@ -178,6 +178,14 @@ def main():
             bad = [c for c in line if c < 0x20 and c not in (0x09, 0x0D)]
             if bad:
                 errors.append(f'[制御文字] {f}:{ln}: {bytes(bad)!r} をエスケープで書く')
+
+    # app.js は src/app/ の部品から tools/build_app_js.py が作る。部品だけ直して組み立てていない、
+    # または app.js を直接直した、のどちらでも配る app.js と部品が食い違う
+    sys.path.insert(0, str(ROOT / 'tools'))
+    import build_app_js
+    if (ROOT / 'app.js').read_bytes() != build_app_js.build():
+        errors.append('[組み立て] app.js が src/app/ の部品と食い違う。部品を直して python tools/build_app_js.py を走らせる'
+                      '（app.js を直接直したなら、その変更を部品へ移す）')
 
     # index.html と app.js を一緒に変えたら sw.js の VERSION も上げる（sw.js の冒頭の説明。
     # 上げないとデプロイ後の最初の1回が「新しい HTML＋古い app.js」で動く。2026-09-11 に一覧が閉じられなくなった）。

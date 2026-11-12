@@ -1,2 +1,6 @@
 # シェルのフックは CRLF だと行末の CR が引数に付いて壊れるので LF に固定する
 .githooks/* text eol=lf
+# app.js の部品は改行（CRLF）をバイトのまま持つ。app.js は部品を中身を変えずにつないだものなので、
+# どの環境で取り出しても「部品をつなぐ = app.js」が成り立つよう、git に改行を変換させない
+src/app/*.js -text
+app.js -text

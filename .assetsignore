@@ -17,6 +17,8 @@ wrangler.toml
 *_log.txt
 *.bak_*
 /tools
+# app.js の部品。配るのは tools/build_app_js.py がつないだ app.js だけ
+/src
 /mock
 /tests
 /sample
