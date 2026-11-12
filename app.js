@@ -2280,11 +2280,15 @@ function checkImageLoads(url, timeoutMs = 8000) {
 // このサーバは404応答の本文にもJPEG(エラー画像)を返し、Chromeは
 // その場合loadイベントを発火するため誤って表示してしまう(実測確認済み)。
 // CORSはAccess-Control-Allow-Origin:*を確認済み。
+// 取得先は攻城団自身の城ページが参照している static.kojodan.jp にする。
+// 以前の kojodan.com/pic/... と中身は同一（5件でハッシュ一致）、CORS・7日キャッシュ・
+// 存在しない城の404も同じで、応答だけが速い（実測: 0.87〜0.96秒 → 0.09〜0.11秒、2026-11-13）。
+// 写真はダウンロードを終えてから差し込むため、この時間がそのままシートを開いてから写真が出るまでの待ちになる。
 async function castleImgFromKojodan(kojodanUrl) {
     if (!kojodanUrl) return null;
     const m = kojodanUrl.match(/kojodan\.jp\/castle\/(\d+)/);
     if (!m) return null;
-    const imgUrl = `https://kojodan.com/pic/panorama/${m[1]}.jpg`;
+    const imgUrl = `https://static.kojodan.jp/pic/panorama/${m[1]}.jpg`;
     try {
         const res = await fetch(imgUrl);
         if (res.ok) {
