@@ -231,6 +231,43 @@ def scenario_service_worker_precache(page, base):
     return problems
 
 
+def scenario_manifest_icons(page, base):
+    """manifest のアイコンが取れ、maskable 用は絵が安全領域（中心から半径 40% の円。W3C Web App Manifest）に収まるか。
+    暗い画素（線と地図のピン）の中心からの最遠距離を測る。"""
+    r = page.evaluate("""async () => {
+        const man = await (await fetch('manifest.json', {cache: 'no-store'})).json();
+        const out = [];
+        for (const ic of man.icons || []) {
+            const res = await fetch(ic.src, {cache: 'no-store'});
+            const item = { src: ic.src, purpose: ic.purpose || 'any', status: res.status, radius: null };
+            if (res.ok && (ic.purpose || '').split(' ').includes('maskable')) {
+                const img = new Image();
+                img.src = URL.createObjectURL(await res.blob());
+                await img.decode();
+                const N = 512, c = document.createElement('canvas'); c.width = c.height = N;
+                const g = c.getContext('2d'); g.drawImage(img, 0, 0, N, N);
+                const d = g.getImageData(0, 0, N, N).data; let m = 0;
+                for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
+                    const i = (y * N + x) * 4;
+                    if (d[i] < 120 && d[i + 1] < 120) m = Math.max(m, Math.hypot(x + 0.5 - N / 2, y + 0.5 - N / 2));
+                }
+                item.radius = m / N;
+            }
+            out.push(item);
+        }
+        return out;
+    }""")
+    problems = []
+    if not any(i['purpose'].split().count('maskable') for i in r):
+        problems.append('manifest に maskable のアイコンが無い')
+    for i in r:
+        if i['status'] != 200:
+            problems.append(f"アイコン {i['src']}: HTTP {i['status']}")
+        elif i['radius'] is not None and i['radius'] > 0.40:
+            problems.append(f"maskable の {i['src']} が安全領域をはみ出す（半径 {i['radius'] * 100:.1f}%）")
+    return problems
+
+
 SCENARIOS = [
     ('地図と全データの読み込み', scenario_map),
     ('操作要素の名前', scenario_accessible_names),
@@ -239,6 +276,7 @@ SCENARIOS = [
     ('遺構の見かた', scenario_remains_help),
     ('家臣団', scenario_retainers),
     ('Service Worker のプリキャッシュ', scenario_service_worker_precache),
+    ('ホーム画面のアイコン', scenario_manifest_icons),
 ]
 
 
