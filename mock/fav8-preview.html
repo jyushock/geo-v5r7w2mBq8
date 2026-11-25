@@ -39,6 +39,12 @@
     .chip.on { background: #263238; color: #fff; border-color: #263238; }
     body.cvd-protan .sim { filter: url(#f-protan); }
     body.cvd-deutan .sim { filter: url(#f-deutan); }
+    .crop { width: 375px; height: 330px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
+    .crop img { width: 375px; height: 330px; display: block; }
+    .sws { display: flex; gap: 8px; margin-top: 6px; font-size: 11px; color: #666; align-items: center; }
+    .sws i { width: 15px; height: 15px; border-radius: 50%; box-sizing: border-box; border: 1.5px solid #fff;
+             box-shadow: 0 1px 2px rgba(0,0,0,.35); display: inline-block; }
+    .sws i.ring { background: #fff; border-width: 3px; box-shadow: none; }
     ul.pts { font-size: 12px; line-height: 1.8; color: #333; margin: 0 14px 30px; padding-left: 18px; }
 </style>
 </head>
@@ -68,7 +74,7 @@
     <button class="chip on" data-cvd="">通常</button>
     <button class="chip" data-cvd="protan">1型（P型）</button>
     <button class="chip" data-cvd="deutan">2型（D型）</button>
-    <span style="color:#888;font-size:11px">画面の画像と色見本に掛かります（計算によるシミュレーション）</span>
+    <span style="color:#888;font-size:11px;line-height:1.6">色の見え方には個人差があり、赤と緑の区別がつきにくい見え方を1型（赤を感じる細胞が働かない）・2型（緑を感じる細胞が働かない）と呼びます。ボタンを押すと、画面の画像と色見本をその見え方に近づけて表示します（計算によるシミュレーション）。ふだんは「通常」のままで構いません。</span>
 </div>
 
 <h2 class="sec">1. お気に入り一覧（二段構え）</h2>
@@ -129,48 +135,66 @@
         <div class="phone"><img class="sim" src="fav8-preview/settings8-edit.png" alt=""></div></figure>
 </div>
 
-<h2 class="sec">4. 色（5〜8枠を足す）</h2>
+<h2 class="sec">4. 地図の印（5〜8枠の見分けかた）</h2>
 <p class="note">
-    いまの4色を決めたときと同じ計算（色差は CIEDE2000、文字のコントラストは WCAG の比）で、Material Design の色から選びました。
-    今回は、色覚シミュレーション（1型・2型）でも、いまの4色どうしの最小（12.6）を下回らないことを条件に足しています。
-    値はすべて計算で出したもので、目視ではありません。
+    同じ場所（名護屋城の周り、1つの陣に1枠ずつ）を、印の作りだけ変えて実アプリで撮りました。画像は実寸（375×330）です。
+    枠の位置はどの案でも同じで、名護屋城＝1、名護屋城の左下の紫＝2、木下延俊陣＝3、毛利吉成陣＝4、片桐且元陣＝5、御牧景則陣＝6、稲葉貞通陣（右下）＝7、陣所No133＝8 です。
 </p>
+<p class="note">
+    前の版の案1で7と8が似て見えたのは、色差の計算（CIEDE2000）が大きな色の面どうしを比べる前提の式で、15pxの印の見え方を表していないためです。
+    計算上は7と8の差は 31.1 あり、8色の中でも離れているほうの組でしたが、小さい印では暗い色どうしがどれも黒っぽく見えます。
+    印が小さいほど色の違いが見えにくくなることは、可視化の分野の実験（Szafir 2018）でも示されています。
+    このため、案2・案3も色の計算だけで選び直しましたが、同じ弱点（暗い緑とオリーブ、明るいティールとティール）が残りました。
+    色だけで8つを見分けさせるのは、いまの地図ではむずかしいと考え、案4・案5では色以外の手がかりを足しています。
+</p>
+
+<div class="row">
+    <figure><figcaption><span class="tag now">前の版</span>案1：ワイン・シアン・深緑・黒
+        <small>7（深緑）と8（黒）が見分けにくい。5（ワイン）も暗い</small></figcaption>
+        <div class="crop"><img class="sim" src="fav8-preview/badge-v1.png" alt=""></div>
+        <div class="sws"><i style="background:#880E4F"></i><i style="background:#00BCD4"></i><i style="background:#33691E"></i><i style="background:#212121"></i></div></figure>
+    <figure><figcaption>案2：暗い色を足さない（明るさ L*45以上）
+        <small>薄紫 #BA68C8・水色 #29B6F6・緑 #2E7D32・オリーブ #827717。7（緑）と8（オリーブ）が似る</small></figcaption>
+        <div class="crop"><img class="sim" src="fav8-preview/badge-v2.png" alt=""></div>
+        <div class="sws"><i style="background:#BA68C8"></i><i style="background:#29B6F6"></i><i style="background:#2E7D32"></i><i style="background:#827717"></i></div></figure>
+    <figure><figcaption>案3：案2＋色覚の条件を足す
+        <small>藤色 #9575CD・水色 #29B6F6・明るいティール #4DB6AC・緑 #2E7D32。7（明るいティール）が3（ティール）に似る</small></figcaption>
+        <div class="crop"><img class="sim" src="fav8-preview/badge-v3.png" alt=""></div>
+        <div class="sws"><i style="background:#9575CD"></i><i style="background:#29B6F6"></i><i style="background:#4DB6AC"></i><i style="background:#2E7D32"></i></div></figure>
+    <figure><figcaption><span class="tag plan">案4</span>塗り／白抜き（いまの4色×2）
+        <small>5〜8は1〜4と同じ色の輪（中が白）。5＝ピンクの輪、6＝紫の輪、7＝ティールの輪、8＝黄緑の輪。外径は15pxのまま</small></figcaption>
+        <div class="crop"><img class="sim" src="fav8-preview/badge-v4.png" alt=""></div>
+        <div class="sws"><i class="ring" style="border-color:#E91E63"></i><i class="ring" style="border-color:#7B1FA2"></i><i class="ring" style="border-color:#00897B"></i><i class="ring" style="border-color:#7CB342"></i></div></figure>
+    <figure><figcaption><span class="tag plan">案5</span>色＋番号
+        <small>案1の色のまま、印の中に枠の番号（9px）を入れる。1〜4にも番号が付く</small></figcaption>
+        <div class="crop"><img class="sim" src="fav8-preview/badge-v5.png" alt=""></div>
+        <div class="sws"><i style="background:#880E4F"></i><i style="background:#00BCD4"></i><i style="background:#33691E"></i><i style="background:#212121"></i></div></figure>
+</div>
+
 <table>
-    <tr><th>枠</th><th>色</th><th>地図の印</th><th>他の枠でいちばん近い色との差</th><th>地図の色でいちばん近いものとの差</th><th>白文字 / 黒文字</th></tr>
-    <tr><td>1</td><td><span class="sw sim" style="background:#E91E63;color:#fff">1</span> #E91E63</td><td><span class="badge sim" style="background:#E91E63"></span></td><td>—</td><td class="num">16.3（続100名城 #EA4335）</td><td>白</td></tr>
-    <tr><td>2</td><td><span class="sw sim" style="background:#7B1FA2;color:#fff">2</span> #7B1FA2</td><td><span class="badge sim" style="background:#7B1FA2"></span></td><td>—</td><td class="num">18.4（選択リング #546E7A）</td><td>白</td></tr>
-    <tr><td>3</td><td><span class="sw sim" style="background:#00897B;color:#fff">3</span> #00897B</td><td><span class="badge sim" style="background:#00897B"></span></td><td>—</td><td class="num">19.5（選択リング #546E7A）</td><td>白</td></tr>
-    <tr><td>4</td><td><span class="sw sim" style="background:#7CB342;color:#212121">4</span> #7CB342</td><td><span class="badge sim" style="background:#7CB342"></span></td><td>—</td><td class="num">27.4（お城 #8A8A8A）</td><td>黒</td></tr>
-    <tr class="new"><td>5</td><td><span class="sw sim" style="background:#880E4F;color:#fff">5</span> #880E4F</td><td><span class="badge sim" style="background:#880E4F"></span></td><td class="num">18.4（枠2）</td><td class="num">31.8（続100名城 #EA4335）</td><td>白 9.45</td></tr>
-    <tr class="new"><td>6</td><td><span class="sw sim" style="background:#00BCD4;color:#212121">6</span> #00BCD4</td><td><span class="badge sim" style="background:#00BCD4"></span></td><td class="num">21.7（枠3）</td><td class="num">25.2（お城 #8A8A8A）</td><td>黒 7.01（白は2.30）</td></tr>
-    <tr class="new"><td>7</td><td><span class="sw sim" style="background:#33691E;color:#fff">7</span> #33691E</td><td><span class="badge sim" style="background:#33691E"></span></td><td class="num">22.4（枠3）</td><td class="num">30.0（お城 #8A8A8A）</td><td>白 6.60</td></tr>
-    <tr class="new"><td>8</td><td><span class="sw sim" style="background:#212121;color:#fff">8</span> #212121</td><td><span class="badge sim" style="background:#212121"></span></td><td class="num">27.9（枠5）</td><td class="num">26.6（選択リング #546E7A）</td><td>白 16.10</td></tr>
+    <tr><th>案</th><th>見分ける手がかり</th><th>8つの中でいちばん近い組（計算）</th><th>色覚シミュレーションでいちばん近い組</th><th>一覧の色帯・シートの線</th></tr>
+    <tr><td>案1</td><td>色だけ</td><td class="num">18.4（2と5）※7と8は31.1でも似て見える</td><td class="num">12.6（1と4。いまの4色と同じ）</td><td>そのまま使える</td></tr>
+    <tr><td>案2</td><td>色だけ</td><td class="num">18.4（3と7）</td><td class="num">4.5（7と8）</td><td>そのまま使える</td></tr>
+    <tr><td>案3</td><td>色だけ</td><td class="num">15.2（3と7）</td><td class="num">10.1（5と6）</td><td>そのまま使える</td></tr>
+    <tr><td>案4</td><td>色4つ＋塗りか輪か</td><td>色はいまの4色のまま（27.9）</td><td class="num">12.6（いまの4色と同じ）</td><td>5px幅の帯では輪を描けないため、別の描き方が要る（未検討）</td></tr>
+    <tr><td>案5</td><td>色＋番号</td><td class="num">案1と同じ</td><td>番号で読めるので色に頼らない</td><td>帯と線には番号が入らない（二段構えなら一覧は枠ごとに分かれる）</td></tr>
 </table>
 <p class="note">
-    8色どうしの差の最小は 18.4（枠2と枠5）で、いまの4色どうしの最小 27.9 より小さくなります。
-    足す4色と地図の色との差の最小は 25.2 で、いまの4色の最小 16.3 より大きく、地図の色との区別は悪くなりません。
-    色覚シミュレーションでの8色どうしの最小は 12.6 で、いまの4色（枠1と枠4）と同じです。
+    色の数値はすべて計算で出したもので、表の値は CIEDE2000（大きいほど離れている）です。
+    情報シートの上端の線（8等分）と一覧の色帯は、「1. お気に入り一覧」と下の画面に案1の色で出ています。
 </p>
 <div class="row">
-    <figure><figcaption>地図のバッジ（名護屋城の周り。1つの陣に1枠ずつ）
-        <small>名護屋城＝1、紫の印＝2、木下延俊陣＝3、毛利吉成陣＝4、片桐且元陣＝5、御牧景則陣＝6、稲葉貞通陣＝7、陣所No133＝8。枠8は「薄く出す」の確認用ではなく普通に出しています</small></figcaption>
-        <div class="phone"><img class="sim" src="fav8-preview/map8.png" alt=""></div></figure>
-    <figure><figcaption>情報シートの上端（8枠すべてに入れた店）
+    <figure><figcaption>情報シートの上端（案1の色。8枠すべてに入れた店）
         <small>線は8等分で1色あたり約47px</small></figcaption>
         <div class="phone"><img class="sim" src="fav8-preview/sheet8.png" alt=""></div></figure>
 </div>
-<p class="note">
-    一覧の左端の色帯は、上の「1. お気に入り一覧」の画面に出ています。いちばん上の行は8枠すべてに入れた店で、行が76pxなので1色あたり約9.5pxです。
-</p>
 
 <h2 class="sec">5. まだ確かめていないこと</h2>
 <ul class="pts">
     <li>画面はWindows上のChromiumで撮りました。iOS では字形と行の高さが数px変わる可能性があります（未確認）。</li>
-    <li>枠8の黒（#212121）が、地図の暗い要素（駅の記号、道路番号の枠、文字）にまぎれないか。上の地図1枚だけでは判断できません（未確認）。</li>
-    <li>枠2の紫と枠5のワインの差（18.4）が、15pxのバッジの大きさで見分けられるか（未確認）。</li>
-    <li>上の「2型」で画面を見ると、枠5（ワイン）と枠8（黒）がどちらも黒っぽく、枠1・4・7がどれもオリーブ系に寄ります。
-        計算上の差は 5と8 が 14.5、1と4 が 12.6（いまの4色にもある組）です。「いまの最小を下回らない」という条件では、
-        似た組が増えることまでは防げていません。2型の見え方を重く見るなら、枠8を黒以外にする案を比べ直す必要があります。</li>
+    <li>案4の輪と案5の番号は、この画面の撮影のためにページの中で地図の印の描き方を書き換えたものです。アプリのコードにはまだありません。</li>
+    <li>案4を採る場合、一覧の色帯（5px幅）と情報シートの上端の線で「輪」をどう表すかは決まっていません。</li>
+    <li>案5の番号は9pxです。屋外の明るい画面で読めるかは未確認です。</li>
 </ul>
 
 <script>
