@@ -31,33 +31,32 @@
     .badge { display: inline-block; width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid #fff;
              box-shadow: 0 1px 2px rgba(0,0,0,.35); vertical-align: middle; }
     .new td:first-child { box-shadow: inset 3px 0 0 #2E7D32; }
-    /* 色覚の見え方の切り替え。画面上部に固定する */
-    .cvdbar { position: sticky; top: 0; z-index: 5; background: rgba(255,255,255,.96); border-bottom: 1px solid #e0e0e0;
-              padding: 8px 14px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; font-size: 12px; }
-    .chip { font-size: 12px; padding: 5px 10px; border: 1px solid #ccc; background: #fff; border-radius: 999px;
-            cursor: pointer; white-space: nowrap; font-family: inherit; }
-    .chip.on { background: #263238; color: #fff; border-color: #263238; }
-    body.cvd-protan .sim { filter: url(#f-protan); }
-    body.cvd-deutan .sim { filter: url(#f-deutan); }
     .crop { width: 375px; height: 330px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
     .crop img { width: 375px; height: 330px; display: block; }
     .sws { display: flex; gap: 8px; margin-top: 6px; font-size: 11px; color: #666; align-items: center; }
     .sws i { width: 15px; height: 15px; border-radius: 50%; box-sizing: border-box; border: 1.5px solid #fff;
              box-shadow: 0 1px 2px rgba(0,0,0,.35); display: inline-block; }
     .sws i.ring { background: #fff; border-width: 3px; box-shadow: none; }
+    .zoombar { padding: 0 14px 10px; font-size: 12px; display: flex; gap: 6px; align-items: center; }
+    .chip { font-size: 12px; padding: 5px 10px; border: 1px solid #ccc; background: #fff; border-radius: 999px;
+            cursor: pointer; white-space: nowrap; font-family: inherit; }
+    .chip.on { background: #263238; color: #fff; border-color: #263238; }
+    figure.lu { width: auto; }
+    .lu-wrap { width: 375px; }
+    body.z2 .lu-wrap { zoom: 2; }
+    .lu-head { position: relative; height: 44px; }
+    .lu-col { position: absolute; top: 0; width: 44px; display: flex; flex-direction: column; align-items: center; gap: 1px; }
+    .lu-col i { width: 18px; height: 18px; border-radius: 5px; display: block; }
+    .lu-col b { font-size: 10px; line-height: 1.1; }
+    .lu-col span { font-size: 8.5px; color: #666; white-space: nowrap; line-height: 1.1; }
+    .lu-img { width: 375px; height: 372px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
+    .lu-img img { width: 375px; height: 372px; display: block; }
+    .lu-line { display: flex; height: 8px; width: 375px; margin-top: 6px; border-radius: 4px; overflow: hidden; }
+    .lu-line span { flex: 1 1 0; }
     ul.pts { font-size: 12px; line-height: 1.8; color: #333; margin: 0 14px 30px; padding-left: 18px; }
 </style>
 </head>
 <body>
-<!-- 色覚シミュレーション（Machado 2009・強度1.0）。行列は線形RGBに掛けるものなので linearRGB で処理する -->
-<svg width="0" height="0" style="position:absolute">
-  <filter id="f-protan" color-interpolation-filters="linearRGB">
-    <feColorMatrix type="matrix" values="0.152286 1.052583 -0.204868 0 0  0.114503 0.786281 0.099216 0 0  -0.003882 -0.048116 1.051998 0 0  0 0 0 1 0"/>
-  </filter>
-  <filter id="f-deutan" color-interpolation-filters="linearRGB">
-    <feColorMatrix type="matrix" values="0.367322 0.860646 -0.227968 0 0  0.280085 0.672501 0.047413 0 0  -0.011820 0.042940 0.968881 0 0  0 0 0 1 0"/>
-  </filter>
-</svg>
 
 <header>
     <h1>お気に入りを8枠にする案</h1>
@@ -69,13 +68,6 @@
     </p>
 </header>
 
-<div class="cvdbar">
-    見え方:
-    <button class="chip on" data-cvd="">通常</button>
-    <button class="chip" data-cvd="protan">1型（P型）</button>
-    <button class="chip" data-cvd="deutan">2型（D型）</button>
-    <span style="color:#888;font-size:11px;line-height:1.6">色の見え方には個人差があり、赤と緑の区別がつきにくい見え方を1型（赤を感じる細胞が働かない）・2型（緑を感じる細胞が働かない）と呼びます。ボタンを押すと、画面の画像と色見本をその見え方に近づけて表示します（計算によるシミュレーション）。ふだんは「通常」のままで構いません。</span>
-</div>
 
 <h2 class="sec">1. お気に入り一覧（二段構え）</h2>
 <p class="note">
@@ -87,13 +79,13 @@
 <div class="row">
     <figure><figcaption><span class="tag now">現行のまま</span>8枠にした場合
         <small>チップが3段（87px）。この名前の長さで3段、6文字なら4段（118px）</small></figcaption>
-        <div class="phone"><img class="sim" src="fav8-preview/list8-now.png" alt=""></div></figure>
+        <div class="phone"><img src="fav8-preview/list8-now.png" alt=""></div></figure>
     <figure><figcaption><span class="tag plan">案</span>一段目：枠の一覧
         <small>1行49px（2行の行だけ58px）。「すべて」＋8枠で一画面に収まる</small></figcaption>
-        <div class="phone"><img class="sim" src="fav8-preview/list8-stage1.png" alt=""></div></figure>
+        <div class="phone"><img src="fav8-preview/list8-stage1.png" alt=""></div></figure>
     <figure><figcaption><span class="tag plan">案</span>二段目：「温泉」を開いたところ
         <small>見出しに枠の色と名前。チップの段が無くなり、一覧は y=209 から</small></figcaption>
-        <div class="phone"><img class="sim" src="fav8-preview/list8-stage2.png" alt=""></div></figure>
+        <div class="phone"><img src="fav8-preview/list8-stage2.png" alt=""></div></figure>
 </div>
 <table>
     <tr><th>状態</th><th>チップの高さ</th><th>一覧の始まり（y）</th><th>一覧の高さ</th></tr>
@@ -111,10 +103,10 @@
 <div class="row">
     <figure><figcaption><span class="tag now">現行のまま</span>1列×8段
         <small>144×282px。シートのボタンの上に重なる</small></figcaption>
-        <div class="phone"><img class="sim" src="fav8-preview/palette8-1col.png" alt=""></div></figure>
+        <div class="phone"><img src="fav8-preview/palette8-1col.png" alt=""></div></figure>
     <figure><figcaption><span class="tag plan">案</span>2列×4段
         <small>266×146px。ボタン1つは126×32px（いまと同じ高さ）</small></figcaption>
-        <div class="phone"><img class="sim" src="fav8-preview/palette8-2col.png" alt=""></div></figure>
+        <div class="phone"><img src="fav8-preview/palette8-2col.png" alt=""></div></figure>
 </div>
 
 <h2 class="sec">3. 設定の「お気に入りの名前」</h2>
@@ -126,82 +118,67 @@
 <div class="row">
     <figure><figcaption><span class="tag now">現行のまま</span>8行並べた場合
         <small>区画の高さ323px</small></figcaption>
-        <div class="phone"><img class="sim" src="fav8-preview/settings8-now.png" alt=""></div></figure>
+        <div class="phone"><img src="fav8-preview/settings8-now.png" alt=""></div></figure>
     <figure><figcaption><span class="tag plan">案</span>設定にはボタン1つ
         <small>区画の高さは見出しとボタンだけ</small></figcaption>
-        <div class="phone"><img class="sim" src="fav8-preview/settings8-button.png" alt=""></div></figure>
+        <div class="phone"><img src="fav8-preview/settings8-button.png" alt=""></div></figure>
     <figure><figcaption><span class="tag plan">案</span>押した先：枠の編集
         <small>行の作りはいまの .favname-row のまま（1行40px）</small></figcaption>
-        <div class="phone"><img class="sim" src="fav8-preview/settings8-edit.png" alt=""></div></figure>
+        <div class="phone"><img src="fav8-preview/settings8-edit.png" alt=""></div></figure>
 </div>
 
-<h2 class="sec">4. 地図の印（5〜8枠の見分けかた）</h2>
+<h2 class="sec">4. 5〜8枠の色の案</h2>
 <p class="note">
-    同じ場所（名護屋城の周り、1つの陣に1枠ずつ）を、印の作りだけ変えて実アプリで撮りました。画像は実寸（375×330）です。
-    枠の位置はどの案でも同じで、名護屋城＝1、名護屋城の左下の紫＝2、木下延俊陣＝3、毛利吉成陣＝4、片桐且元陣＝5、御牧景則陣＝6、稲葉貞通陣（右下）＝7、陣所No133＝8 です。
+    左から枠1〜8の順に並べています。1〜4はいまの色、5〜8が足す色の案です。
+    行はピンの種類（上から お城・続100名城・100名城・食べログ・ポケふた・マンホール蓋・道の駅・マンホールカード）で、
+    印は実アプリの地図に描かせたものです（並びを作るためにピンの位置だけ置き換えています。印とピンの描き方はアプリのレイヤーそのままです）。
+    各案の下の帯は、8枠すべてに入れたときの情報シート上端の線（8等分）です。
+    各案の短い説明は、私が画像を見た印象です。
 </p>
-<p class="note">
-    前の版の案1で7と8が似て見えたのは、色差の計算（CIEDE2000）が大きな色の面どうしを比べる前提の式で、15pxの印の見え方を表していないためです。
-    計算上は7と8の差は 31.1 あり、8色の中でも離れているほうの組でしたが、小さい印では暗い色どうしがどれも黒っぽく見えます。
-    印が小さいほど色の違いが見えにくくなることは、可視化の分野の実験（Szafir 2018）でも示されています。
-    このため、案2・案3も色の計算だけで選び直しましたが、同じ弱点（暗い緑とオリーブ、明るいティールとティール）が残りました。
-    色だけで8つを見分けさせるのは、いまの地図ではむずかしいと考え、案4・案5では色以外の手がかりを足しています。
-</p>
-
-<div class="row">
-    <figure><figcaption><span class="tag now">前の版</span>案1：ワイン・シアン・深緑・黒
-        <small>7（深緑）と8（黒）が見分けにくい。5（ワイン）も暗い</small></figcaption>
-        <div class="crop"><img class="sim" src="fav8-preview/badge-v1.png" alt=""></div>
-        <div class="sws"><i style="background:#880E4F"></i><i style="background:#00BCD4"></i><i style="background:#33691E"></i><i style="background:#212121"></i></div></figure>
-    <figure><figcaption>案2：暗い色を足さない（明るさ L*45以上）
-        <small>薄紫 #BA68C8・水色 #29B6F6・緑 #2E7D32・オリーブ #827717。7（緑）と8（オリーブ）が似る</small></figcaption>
-        <div class="crop"><img class="sim" src="fav8-preview/badge-v2.png" alt=""></div>
-        <div class="sws"><i style="background:#BA68C8"></i><i style="background:#29B6F6"></i><i style="background:#2E7D32"></i><i style="background:#827717"></i></div></figure>
-    <figure><figcaption>案3：案2＋色覚の条件を足す
-        <small>藤色 #9575CD・水色 #29B6F6・明るいティール #4DB6AC・緑 #2E7D32。7（明るいティール）が3（ティール）に似る</small></figcaption>
-        <div class="crop"><img class="sim" src="fav8-preview/badge-v3.png" alt=""></div>
-        <div class="sws"><i style="background:#9575CD"></i><i style="background:#29B6F6"></i><i style="background:#4DB6AC"></i><i style="background:#2E7D32"></i></div></figure>
-    <figure><figcaption><span class="tag plan">案4</span>塗り／白抜き（いまの4色×2）
-        <small>5〜8は1〜4と同じ色の輪（中が白）。5＝ピンクの輪、6＝紫の輪、7＝ティールの輪、8＝黄緑の輪。外径は15pxのまま</small></figcaption>
-        <div class="crop"><img class="sim" src="fav8-preview/badge-v4.png" alt=""></div>
-        <div class="sws"><i class="ring" style="border-color:#E91E63"></i><i class="ring" style="border-color:#7B1FA2"></i><i class="ring" style="border-color:#00897B"></i><i class="ring" style="border-color:#7CB342"></i></div></figure>
-    <figure><figcaption><span class="tag plan">案5</span>色＋番号
-        <small>案1の色のまま、印の中に枠の番号（9px）を入れる。1〜4にも番号が付く</small></figcaption>
-        <div class="crop"><img class="sim" src="fav8-preview/badge-v5.png" alt=""></div>
-        <div class="sws"><i style="background:#880E4F"></i><i style="background:#00BCD4"></i><i style="background:#33691E"></i><i style="background:#212121"></i></div></figure>
-</div>
-
-<table>
-    <tr><th>案</th><th>見分ける手がかり</th><th>8つの中でいちばん近い組（計算）</th><th>色覚シミュレーションでいちばん近い組</th><th>一覧の色帯・シートの線</th></tr>
-    <tr><td>案1</td><td>色だけ</td><td class="num">18.4（2と5）※7と8は31.1でも似て見える</td><td class="num">12.6（1と4。いまの4色と同じ）</td><td>そのまま使える</td></tr>
-    <tr><td>案2</td><td>色だけ</td><td class="num">18.4（3と7）</td><td class="num">4.5（7と8）</td><td>そのまま使える</td></tr>
-    <tr><td>案3</td><td>色だけ</td><td class="num">15.2（3と7）</td><td class="num">10.1（5と6）</td><td>そのまま使える</td></tr>
-    <tr><td>案4</td><td>色4つ＋塗りか輪か</td><td>色はいまの4色のまま（27.9）</td><td class="num">12.6（いまの4色と同じ）</td><td>5px幅の帯では輪を描けないため、別の描き方が要る（未検討）</td></tr>
-    <tr><td>案5</td><td>色＋番号</td><td class="num">案1と同じ</td><td>番号で読めるので色に頼らない</td><td>帯と線には番号が入らない（二段構えなら一覧は枠ごとに分かれる）</td></tr>
-</table>
-<p class="note">
-    色の数値はすべて計算で出したもので、表の値は CIEDE2000（大きいほど離れている）です。
-    情報シートの上端の線（8等分）と一覧の色帯は、「1. お気に入り一覧」と下の画面に案1の色で出ています。
-</p>
-<div class="row">
-    <figure><figcaption>情報シートの上端（案1の色。8枠すべてに入れた店）
-        <small>線は8等分で1色あたり約47px</small></figcaption>
-        <div class="phone"><img class="sim" src="fav8-preview/sheet8.png" alt=""></div></figure>
+<div class="zoombar">表示: <button class="chip on" data-z="1">実寸</button><button class="chip" data-z="2">2倍</button></div>
+<div class="row lu-row">
+<figure class="lu">
+        <figcaption>案A<small>5 黒 #212121・6 シアン #00BCD4・7 マゼンタ #D500F9・8 ライム #C6FF00<br>6（シアン）は3（ティール）より明るく青い。8（ライム）は4（黄緑）より黄色寄りで明るい。</small></figcaption>
+        <div class="lu-wrap"><div class="lu-head"><div class="lu-col" style="left:0px"><i style="background:#E91E63"></i><b>1</b><span>ピンク</span></div><div class="lu-col" style="left:45px"><i style="background:#7B1FA2"></i><b>2</b><span>紫</span></div><div class="lu-col" style="left:90px"><i style="background:#00897B"></i><b>3</b><span>ティール</span></div><div class="lu-col" style="left:135px"><i style="background:#7CB342"></i><b>4</b><span>黄緑</span></div><div class="lu-col" style="left:180px"><i style="background:#212121"></i><b>5</b><span>黒</span></div><div class="lu-col" style="left:225px"><i style="background:#00BCD4"></i><b>6</b><span>シアン</span></div><div class="lu-col" style="left:270px"><i style="background:#D500F9"></i><b>7</b><span>マゼンタ</span></div><div class="lu-col" style="left:315px"><i style="background:#C6FF00"></i><b>8</b><span>ライム</span></div></div>
+            <div class="lu-img"><img src="fav8-preview/lineup-s2.png" alt=""></div>
+            <div class="lu-line"><span style="background:#E91E63"></span><span style="background:#7B1FA2"></span><span style="background:#00897B"></span><span style="background:#7CB342"></span><span style="background:#212121"></span><span style="background:#00BCD4"></span><span style="background:#D500F9"></span><span style="background:#C6FF00"></span></div></div></figure>
+<figure class="lu">
+        <figcaption>案B<small>5 紺 #1A237E・6 シアン #00BCD4・7 明るい紫 #E040FB・8 ライム #C6FF00<br>5（紺）は暗く、2（紫）や黒っぽく見えやすい。</small></figcaption>
+        <div class="lu-wrap"><div class="lu-head"><div class="lu-col" style="left:0px"><i style="background:#E91E63"></i><b>1</b><span>ピンク</span></div><div class="lu-col" style="left:45px"><i style="background:#7B1FA2"></i><b>2</b><span>紫</span></div><div class="lu-col" style="left:90px"><i style="background:#00897B"></i><b>3</b><span>ティール</span></div><div class="lu-col" style="left:135px"><i style="background:#7CB342"></i><b>4</b><span>黄緑</span></div><div class="lu-col" style="left:180px"><i style="background:#1A237E"></i><b>5</b><span>紺</span></div><div class="lu-col" style="left:225px"><i style="background:#00BCD4"></i><b>6</b><span>シアン</span></div><div class="lu-col" style="left:270px"><i style="background:#E040FB"></i><b>7</b><span>明るい紫</span></div><div class="lu-col" style="left:315px"><i style="background:#C6FF00"></i><b>8</b><span>ライム</span></div></div>
+            <div class="lu-img"><img src="fav8-preview/lineup-s3.png" alt=""></div>
+            <div class="lu-line"><span style="background:#E91E63"></span><span style="background:#7B1FA2"></span><span style="background:#00897B"></span><span style="background:#7CB342"></span><span style="background:#1A237E"></span><span style="background:#00BCD4"></span><span style="background:#E040FB"></span><span style="background:#C6FF00"></span></div></div></figure>
+<figure class="lu">
+        <figcaption>案C<small>5 ワイン #880E4F・6 シアン #00BCD4・7 ライム #C6FF00・8 黒 #212121<br>前回の案の深緑をライムに替えたもの。5（ワイン）と8（黒）はどちらも暗い。</small></figcaption>
+        <div class="lu-wrap"><div class="lu-head"><div class="lu-col" style="left:0px"><i style="background:#E91E63"></i><b>1</b><span>ピンク</span></div><div class="lu-col" style="left:45px"><i style="background:#7B1FA2"></i><b>2</b><span>紫</span></div><div class="lu-col" style="left:90px"><i style="background:#00897B"></i><b>3</b><span>ティール</span></div><div class="lu-col" style="left:135px"><i style="background:#7CB342"></i><b>4</b><span>黄緑</span></div><div class="lu-col" style="left:180px"><i style="background:#880E4F"></i><b>5</b><span>ワイン</span></div><div class="lu-col" style="left:225px"><i style="background:#00BCD4"></i><b>6</b><span>シアン</span></div><div class="lu-col" style="left:270px"><i style="background:#C6FF00"></i><b>7</b><span>ライム</span></div><div class="lu-col" style="left:315px"><i style="background:#212121"></i><b>8</b><span>黒</span></div></div>
+            <div class="lu-img"><img src="fav8-preview/lineup-s4.png" alt=""></div>
+            <div class="lu-line"><span style="background:#E91E63"></span><span style="background:#7B1FA2"></span><span style="background:#00897B"></span><span style="background:#7CB342"></span><span style="background:#880E4F"></span><span style="background:#00BCD4"></span><span style="background:#C6FF00"></span><span style="background:#212121"></span></div></div></figure>
+<figure class="lu">
+        <figcaption>案D<small>5 黒 #212121・6 水色 #29B6F6・7 薄紫 #BA68C8・8 ライム #CDDC39<br>7（薄紫）は2（紫）の明るい版、8（ライム）は4（黄緑）の明るい版に近い。</small></figcaption>
+        <div class="lu-wrap"><div class="lu-head"><div class="lu-col" style="left:0px"><i style="background:#E91E63"></i><b>1</b><span>ピンク</span></div><div class="lu-col" style="left:45px"><i style="background:#7B1FA2"></i><b>2</b><span>紫</span></div><div class="lu-col" style="left:90px"><i style="background:#00897B"></i><b>3</b><span>ティール</span></div><div class="lu-col" style="left:135px"><i style="background:#7CB342"></i><b>4</b><span>黄緑</span></div><div class="lu-col" style="left:180px"><i style="background:#212121"></i><b>5</b><span>黒</span></div><div class="lu-col" style="left:225px"><i style="background:#29B6F6"></i><b>6</b><span>水色</span></div><div class="lu-col" style="left:270px"><i style="background:#BA68C8"></i><b>7</b><span>薄紫</span></div><div class="lu-col" style="left:315px"><i style="background:#CDDC39"></i><b>8</b><span>ライム</span></div></div>
+            <div class="lu-img"><img src="fav8-preview/lineup-s5.png" alt=""></div>
+            <div class="lu-line"><span style="background:#E91E63"></span><span style="background:#7B1FA2"></span><span style="background:#00897B"></span><span style="background:#7CB342"></span><span style="background:#212121"></span><span style="background:#29B6F6"></span><span style="background:#BA68C8"></span><span style="background:#CDDC39"></span></div></div></figure>
+<figure class="lu">
+        <figcaption>案E<small>5 黒 #212121・6 シアン #00BCD4・7 淡いピンク #FF80AB・8 淡い黄緑 #B2FF59<br>7は1（ピンク）の、8は4（黄緑）の淡い版で、同じ系統の色が2つずつになる。</small></figcaption>
+        <div class="lu-wrap"><div class="lu-head"><div class="lu-col" style="left:0px"><i style="background:#E91E63"></i><b>1</b><span>ピンク</span></div><div class="lu-col" style="left:45px"><i style="background:#7B1FA2"></i><b>2</b><span>紫</span></div><div class="lu-col" style="left:90px"><i style="background:#00897B"></i><b>3</b><span>ティール</span></div><div class="lu-col" style="left:135px"><i style="background:#7CB342"></i><b>4</b><span>黄緑</span></div><div class="lu-col" style="left:180px"><i style="background:#212121"></i><b>5</b><span>黒</span></div><div class="lu-col" style="left:225px"><i style="background:#00BCD4"></i><b>6</b><span>シアン</span></div><div class="lu-col" style="left:270px"><i style="background:#FF80AB"></i><b>7</b><span>淡いピンク</span></div><div class="lu-col" style="left:315px"><i style="background:#B2FF59"></i><b>8</b><span>淡い黄緑</span></div></div>
+            <div class="lu-img"><img src="fav8-preview/lineup-s6.png" alt=""></div>
+            <div class="lu-line"><span style="background:#E91E63"></span><span style="background:#7B1FA2"></span><span style="background:#00897B"></span><span style="background:#7CB342"></span><span style="background:#212121"></span><span style="background:#00BCD4"></span><span style="background:#FF80AB"></span><span style="background:#B2FF59"></span></div></div></figure>
+<figure class="lu">
+        <figcaption>前回の案<small>5 ワイン #880E4F・6 シアン #00BCD4・7 深緑 #33691E・8 黒 #212121<br>7（深緑）と8（黒）の見分けがつかない（ご指摘の組）。比べるために残しています。</small></figcaption>
+        <div class="lu-wrap"><div class="lu-head"><div class="lu-col" style="left:0px"><i style="background:#E91E63"></i><b>1</b><span>ピンク</span></div><div class="lu-col" style="left:45px"><i style="background:#7B1FA2"></i><b>2</b><span>紫</span></div><div class="lu-col" style="left:90px"><i style="background:#00897B"></i><b>3</b><span>ティール</span></div><div class="lu-col" style="left:135px"><i style="background:#7CB342"></i><b>4</b><span>黄緑</span></div><div class="lu-col" style="left:180px"><i style="background:#880E4F"></i><b>5</b><span>ワイン</span></div><div class="lu-col" style="left:225px"><i style="background:#00BCD4"></i><b>6</b><span>シアン</span></div><div class="lu-col" style="left:270px"><i style="background:#33691E"></i><b>7</b><span>深緑</span></div><div class="lu-col" style="left:315px"><i style="background:#212121"></i><b>8</b><span>黒</span></div></div>
+            <div class="lu-img"><img src="fav8-preview/lineup-s1.png" alt=""></div>
+            <div class="lu-line"><span style="background:#E91E63"></span><span style="background:#7B1FA2"></span><span style="background:#00897B"></span><span style="background:#7CB342"></span><span style="background:#880E4F"></span><span style="background:#00BCD4"></span><span style="background:#33691E"></span><span style="background:#212121"></span></div></div></figure>
 </div>
 
 <h2 class="sec">5. まだ確かめていないこと</h2>
 <ul class="pts">
-    <li>画面はWindows上のChromiumで撮りました。iOS では字形と行の高さが数px変わる可能性があります（未確認）。</li>
-    <li>案4の輪と案5の番号は、この画面の撮影のためにページの中で地図の印の描き方を書き換えたものです。アプリのコードにはまだありません。</li>
-    <li>案4を採る場合、一覧の色帯（5px幅）と情報シートの上端の線で「輪」をどう表すかは決まっていません。</li>
-    <li>案5の番号は9pxです。屋外の明るい画面で読めるかは未確認です。</li>
+    <li>画面はWindows上のChromiumで撮りました。iOS の画面での色の出かたと、字形・行の高さは未確認です。</li>
+    <li>屋外の明るい場所で見たときの見分けやすさは未確認です。</li>
 </ul>
 
 <script>
-document.querySelectorAll('.chip[data-cvd]').forEach(b => b.addEventListener('click', () => {
-    document.querySelectorAll('.chip[data-cvd]').forEach(x => x.classList.toggle('on', x === b));
-    document.body.classList.remove('cvd-protan', 'cvd-deutan');
-    if (b.dataset.cvd) document.body.classList.add('cvd-' + b.dataset.cvd);
+document.querySelectorAll('.chip[data-z]').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.chip[data-z]').forEach(x => x.classList.toggle('on', x === b));
+    document.body.classList.toggle('z2', b.dataset.z === '2');
 }));
 </script>
 </body>
