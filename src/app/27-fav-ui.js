@@ -1,4 +1,24 @@
-    /* ══ 設定の「お気に入りの名前」 ══════════════════════════════════════ */
+    /* ══ 設定の「お気に入りの名前」 ══════════════════════════════════════
+       設定には入口のボタンだけを置き、名前と「薄く出す」は押した先のビューで直す
+       （8枠を設定の中に並べると区画が323pxになるため。案は mock/fav8-preview.html の 3.）。 */
+    function renderFavNameDots() {
+        const el = document.getElementById('fav-name-dots');
+        if (el) el.innerHTML = favActiveSlots().map(n => `<i style="background:${FAV_COLORS[n]}"></i>`).join('');
+    }
+    function openFavNamesView() {
+        const view = document.getElementById('nearby-fav-names-view');
+        if (!view) return;
+        setPanelLifted(true);
+        document.getElementById('nearby-settings-view').classList.remove('open');
+        view.classList.add('open');
+        renderFavNameList();
+    }
+    // 戻る先は設定（入口の点を描き直すため、設定を開き直す）
+    function closeFavNamesView() {
+        const view = document.getElementById('nearby-fav-names-view');
+        if (view) view.classList.remove('open');
+        openSettingsView();
+    }
     function renderFavNameList() {
         const el = document.getElementById('fav-name-list');
         if (!el) return;
@@ -90,6 +110,7 @@
         const key = favPopEl.dataset.key;
         const marks = favActiveMarksOf(key);
         const slots = favActiveSlots();
+        favPopEl.classList.toggle('cols2', slots.length >= 2);
         favPopEl.innerHTML = slots.length
             ? slots.map(n => `<button data-fav-n="${n}"><i style="background:${FAV_COLORS[n]}"></i>${
                 attrEscape(favNameOf(n))}${marks.includes(n) ? '<span class="fav-ck"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7" fill="none" stroke="#2E7D32" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>' : ''}</button>`).join('')
@@ -141,26 +162,69 @@
         if (!btn) return;
         btn.disabled = favActiveSlots().length === 0;   // 登録先が1つも無ければ押せない
     }
-    function showFavView() {
+    /* 一覧は二段構え（案は mock/fav8-preview.html の 1.）。
+         一段目（#nearby-fav-groups-view） … 「すべて」と名前の入った枠を並べる
+         二段目（#nearby-fav-view）        … 押した枠の中身。選択・書き出しはここにだけある
+       枠を8つに増やしたとき、絞り込みのチップが3〜4段になって一覧が下がるのを避けるために分けた。
+       favState.kind が二段目で見ている枠（'all' か番号）。 */
+    function showFavPanelView(id) {
         setPanelLifted(true);
         document.getElementById('nearby-main-view').style.display = 'none';
         document.getElementById('nearby-settings-view').classList.remove('open');
-        document.getElementById('nearby-fav-view').classList.add('open');
+        ['nearby-fav-groups-view', 'nearby-fav-view'].forEach(v => {
+            const el = document.getElementById(v);
+            if (el) el.classList.toggle('open', v === id);
+        });
     }
-    function closeFavView() {
-        setPanelLifted(false);
-        favState.selecting = false;      // 開き直したときに選んだ状態を持ち越さない
-        favState.sel.clear();
-        renderFavSelBar();
-        document.getElementById('nearby-fav-view').classList.remove('open');
-        document.getElementById('nearby-main-view').style.display = '';
-    }
+    // メニューの入口から開く。restoreView は一覧の行から飛んだ先や書き出しから戻るときで、二段目へ戻す
     function openFavView(restoreView) {
+        if (restoreView === true) { openFavSlotView(favState.kind, true); return; }
+        openFavGroupsView();
+    }
+    function openFavGroupsView() {
         if (!favActiveSlots().length) return;
         favState.selecting = false;
         favState.sel.clear();
-        // 近い順の起点は開いた時点で固定する（県ページ・城主一覧と同じ扱い）
-        if (!restoreView || !favState.center) {
+        // 近い順の起点は一覧を開いた時点で固定する（県ページ・城主一覧と同じ扱い）。
+        // 一段目と二段目を行き来する間は同じ起点のまま
+        const c = getSearchCenter();
+        favState.center = { lat: c.lat, lng: c.lng };
+        favState.centerPinned = !!searchPinLngLat;
+        // 古い index.html には一段目が無い。そのときは「すべて」を直に開く
+        if (!document.getElementById('nearby-fav-groups-view')) { openFavSlotView('all'); return; }
+        showFavPanelView('nearby-fav-groups-view');
+        renderFavGroups();
+    }
+    function closeFavGroupsView() {
+        setPanelLifted(false);
+        const el = document.getElementById('nearby-fav-groups-view');
+        if (el) el.classList.remove('open');
+        document.getElementById('nearby-main-view').style.display = '';
+    }
+    const FAV_GROUP_STAR = '<svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6-4.9-4.6 6.6-.8z"/></svg>';
+    const FAV_GROUP_CHEV = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>';
+    function renderFavGroups() {
+        const list = document.getElementById('fav-group-list');
+        const view = document.getElementById('nearby-fav-groups-view');
+        if (!list || !view || !view.classList.contains('open')) return;
+        const rows = favCollect();
+        const row = (kind, color, name, cnt, sub) => `<div class="nearby-item" ${actionAttrs('openFavSlotView', kind)}>
+                <div class="nearby-item-icon" style="background:${color}">${FAV_GROUP_STAR}</div>
+                <div class="nearby-item-text"><div class="nearby-item-name">${attrEscape(name)}</div>${
+                    sub ? `<div class="nearby-item-sub">${sub}</div>` : ''}</div>
+                <div class="fav-grp-cnt">${cnt.toLocaleString()}件</div>${FAV_GROUP_CHEV}</div>`;
+        list.innerHTML = row('all', '#90A4AE', 'すべて', rows.length, '')
+            + favActiveSlots().map(n => row(n, FAV_COLORS[n], favNameOf(n), rows.filter(r => r.mk.includes(n)).length,
+                favStore.hidden[n] === true ? '地図に薄く出しています' : '')).join('');
+    }
+    function openFavSlotView(kind, restoreView) {
+        if (!favActiveSlots().length) return;
+        // 名前を消した枠が選ばれたままにならないようにする
+        if (kind !== 'all' && !favActiveSlots().includes(Number(kind))) kind = 'all';
+        favState.kind = kind === 'all' ? 'all' : Number(kind);
+        favState.selecting = false;
+        favState.sel.clear();
+        if (!favState.center) {
             const c = getSearchCenter();
             favState.center = { lat: c.lat, lng: c.lng };
             favState.centerPinned = !!searchPinLngLat;
@@ -171,12 +235,29 @@
             if (input) input.value = '';
             setSearchClearVisible('fav-item-search', '');
         }
-        // 名前を消した枠が選ばれたままにならないようにする
-        if (favState.kind !== 'all' && !favActiveSlots().includes(Number(favState.kind))) favState.kind = 'all';
         favState.restoreScroll = restoreView ? (favState.scrollTop || 0) : 0;
-        showFavView();
-        renderFavKindChips();
+        showFavPanelView('nearby-fav-view');
         renderDistOrigin('fav');
         renderFavItems(restoreView);
+    }
+    // 二段目の見出し。枠の色の点と名前（「すべて」のときは点なし）
+    function favViewTitleHtml() {
+        if (favState.kind === 'all') return 'すべて';
+        const n = Number(favState.kind);
+        return `<span class="fav-title-dot" style="background:${FAV_COLORS[n]}"></span>${attrEscape(favNameOf(n))}`;
+    }
+    // 二段目の戻る。一段目へ戻す（古い index.html に一段目が無いときはメニューへ）
+    function closeFavView() {
+        favState.selecting = false;      // 開き直したときに選んだ状態を持ち越さない
+        favState.sel.clear();
+        renderFavSelBar();
+        document.getElementById('nearby-fav-view').classList.remove('open');
+        if (document.getElementById('nearby-fav-groups-view') && favActiveSlots().length) {
+            showFavPanelView('nearby-fav-groups-view');
+            renderFavGroups();
+            return;
+        }
+        setPanelLifted(false);
+        document.getElementById('nearby-main-view').style.display = '';
     }
 

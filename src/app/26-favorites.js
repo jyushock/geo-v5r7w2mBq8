@@ -1,9 +1,10 @@
     /* ══ お気に入り ═══════════════════════════════════════════════════════
-       枠は4つ。枠に固定の意味は持たせず、名前は設定でユーザーが付ける
-       （初期値は枠1の「お気に入り」だけで、残り3枠は空。名前を入れた枠だけを使う）。
+       枠は8つ（2026-11-26 に4つから増やした。案は mock/fav8-preview.html）。
+       枠に固定の意味は持たせず、名前は設定でユーザーが付ける
+       （初期値は枠1の「お気に入り」だけで、残りは空。名前を入れた枠だけを使う）。
        1つのオブジェクトを複数の枠に入れられる。
        見せかたは3か所で、案は mock/fav-badge-preview.html で比べて決めてある。
-         地図   … ピンの右上に15pxのバッジ（案1・4色）。マークしたものは全種別のピンより
+         地図   … ピンの右上に15pxのバッジ（案1・枠ごとの色）。マークしたものは全種別のピンより
                   前面に出し、枠どうしは番号の小さい方を前にする
          一覧   … 行の左端に5pxの色帯（案1）。複数の枠に入っていれば縦に等分する
          シート … 上端の縁の色ライン（案ii）
@@ -11,20 +12,27 @@
        保存は localStorage の 'favorites' 1本で、キーの選びかたは
        mock/fav-list-preview.html の「5. 保存の形」に全データの実測値が残っている。
        サーバーへ移すときは loadFavStore / saveFavStore の中身だけを差し替える。 */
-    const FAV_SLOTS = [1, 2, 3, 4];
-    // 色は CSS の :root（--fav1〜4）が持ち主。地図のピンはCSSを通らないのでここで読んでおく
+    const FAV_SLOTS = [1, 2, 3, 4, 5, 6, 7, 8];
+    // 色は CSS の :root（--fav1〜8）が持ち主。地図のピンはCSSを通らないのでここで読んでおく
     // （--ui-blue を UI_BLUE に写しているのと同じ扱い）
     const FAV_COLORS = (() => {
         const cs = getComputedStyle(document.documentElement);
-        const fallback = { 1: '#E91E63', 2: '#7B1FA2', 3: '#00897B', 4: '#7CB342' };
+        const fallback = { 1: '#E91E63', 2: '#7B1FA2', 3: '#00897B', 4: '#7CB342',
+                           5: '#880E4F', 6: '#00BCD4', 7: '#FF80AB', 8: '#212121' };
         const o = {};
         FAV_SLOTS.forEach(n => { o[n] = cs.getPropertyValue(`--fav${n}`).trim() || fallback[n]; });
         return o;
     })();
-    // #7CB342 だけ白文字のコントラストが 2.50 しか出ないので、その上に載せる文字は黒にする
-    const FAV_FG = { 1: '#fff', 2: '#fff', 3: '#fff', 4: '#212121' };
-    const FAV_NAME_MAX = 6;        // 理由は .favname-row のコメント（一覧のチップが2段に収まる上限）
+    // 白文字のコントラストが足りない色（#7CB342 2.50・#00BCD4 2.30・#FF80AB 2.35）は、その上に載せる文字を黒にする
+    const FAV_FG = { 1: '#fff', 2: '#fff', 3: '#fff', 4: '#212121', 5: '#fff', 6: '#212121', 7: '#212121', 8: '#fff' };
+    const FAV_NAME_MAX = 6;        // 理由は .favname-row のコメント
     const FAV_STORE_KEY = 'favorites';
+    /* 保存の形の版。2 は「枠が8つの版が書いた」印（2026-11-26）。
+       4枠の版は 5〜8 の印を読み込み時に捨て、そのまま保存して送り返すので、
+       サーバー（worker/index.js の apiPutState）は、2 を一度受け取ったあとは 2 でない書き込みを断る。
+       手元に 2 でない記録が残っていたら（4枠の版が最後に書いた）、次の取り込みで 5〜8 をサーバーから取り戻す
+       （loadFavStore と favMergeFromServer。SYNC_MANUAL.md §4.6）。 */
+    const FAV_STORE_VERSION = 2;
     const FAV_TYPE_FILTER = { shop: 'shop', pokefuta: 'pokefuta', manhole: 'manhole',
                               mhcard: 'mhcard', michi: 'michi', castle: 'castle' };
 
@@ -83,11 +91,12 @@
     }
     function loadFavStore() {
         let raw = storeGetJson(FAV_STORE_KEY);
-        // 初期値は枠1だけ名前を入れておく（残り3枠は空＝使わない）
-        const names = { 1: 'お気に入り', 2: '', 3: '', 4: '' };
-        const hidden = { 1: false, 2: false, 3: false, 4: false };
+        // 初期値は枠1だけ名前を入れておく（残りは空＝使わない）
+        const names = {}, hidden = {};
+        FAV_SLOTS.forEach(n => { names[n] = n === 1 ? 'お気に入り' : ''; hidden[n] = false; });
         const items = {};
         if (raw && typeof raw === 'object') {
+            if (Number(raw.v) !== FAV_STORE_VERSION) favMarkLegacyLocal();
             if (raw.names && typeof raw.names === 'object') {
                 FAV_SLOTS.forEach(n => { if (typeof raw.names[n] === 'string') names[n] = raw.names[n]; });
             }
@@ -104,7 +113,16 @@
                 }
             }
         }
-        return { v: 1, names, hidden, items };
+        return { v: FAV_STORE_VERSION, names, hidden, items };
+    }
+    /* 手元の記録を最後に書いたのが4枠の版だった。4枠の版は 5〜8 の印・名前・「薄く出す」を
+       落として書くので、サーバーから取り戻す。取り込みが飛ばされないよう rev を0に戻し、
+       取り戻すのはこの時刻より前に付け外しした項目だけにする（この版で外した印を戻さないため）。
+       同期していない端末では、取り戻す元が無いので何もしない。 */
+    function favMarkLegacyLocal() {
+        if (!syncOn()) return;
+        syncSetRev('favorites', 0);
+        if (!syncMeta().favRecoverAt) syncMetaSet({ favRecoverAt: Date.now() });
     }
     let favStore = loadFavStore();
     favHiddenKeys = favComputeHiddenKeys();
@@ -203,9 +221,9 @@
         if (view && view.classList.contains('open')) {
             // 開いたまま外したときは、その行が消えて詰まる。スクロール位置は保つ
             favState.restoreScroll = document.getElementById('fav-item-list').scrollTop;
-            renderFavKindChips();
             renderFavItems(true);
         }
+        renderFavGroups();        // 一覧の一段目が開いていれば件数を描き直す
     }
 
     /* まとめて外す。1件ずつ favToggleMark を呼ぶと、そのたびに localStorage への

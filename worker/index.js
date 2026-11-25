@@ -160,6 +160,13 @@ async function apiGetState(env, device) {
    保存が同時に2件届いたとき両方が照合を通り、後の書き込みが先の分を黙って消す
    （両方に成功を返すので、消えた側の端末は気付けない）。tests/sync/worker_api_test.py の
    「同時保存」がこれを確かめる。 */
+// お気に入りの保存の形の版（app.js の FAV_STORE_VERSION と同じ値）。2 は枠が8つの版
+const FAV_STORE_VERSION = 2;
+function favStoreVersion(value) {
+    try { const o = JSON.parse(value); return o && typeof o === 'object' ? Number(o.v) || 0 : 0; }
+    catch { return 0; }
+}
+
 async function apiPutState(env, device, request) {
     const body = await request.json().catch(() => null);
     const items = body && Array.isArray(body.items) ? body.items.slice(0, 8) : null;
@@ -173,6 +180,19 @@ async function apiPutState(env, device, request) {
             continue;
         }
         const scope = it.scope === 'device' ? device.id : SHARED;
+        /* お気に入りを4枠の版が書き戻すのを断る（SYNC_MANUAL.md §4.6）。4枠の版は 5〜8 の印を捨てて
+           丸ごと送ってくるので、通すと他の端末の 5〜8 が消える。8枠の版が一度でも書いたあと
+           （保存されている値の v が 2 以上）だけ断り、まだ誰も8枠の版を使っていない保存領域には今までどおり通す。
+           4枠の版は rev も conflict も無い結果を無視するので、断っても送り直しは繰り返さない。 */
+        if (key === 'favorites' && favStoreVersion(it.value) < FAV_STORE_VERSION) {
+            const cur = await env.DB.prepare(
+                'SELECT value FROM states WHERE user_id = ? AND device_id = ? AND key = ?'
+            ).bind(device.user_id, scope, key).first();
+            if (cur && favStoreVersion(cur.value) >= FAV_STORE_VERSION) {
+                results[key] = { error: 'old_client' };
+                continue;
+            }
+        }
         const baseRev = Number(it.baseRev || 0);
         const rev = baseRev + 1;
         const res = baseRev === 0

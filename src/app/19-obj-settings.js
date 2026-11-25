@@ -209,6 +209,11 @@
         document.getElementById('nearby-remains-detail-view').classList.remove('open');
         document.getElementById('nearby-fav-view').classList.remove('open');
         document.getElementById('nearby-fav-export-view').classList.remove('open');
+        // お気に入りの一段目と名前の編集は後から足したもの。古い index.html に無くても落ちないよう、無ければ飛ばす
+        ['nearby-fav-groups-view', 'nearby-fav-names-view'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.classList.remove('open');
+        });
         // 家臣団ビューは後から足したもの。デプロイ直後に古い index.html と組み合わさっても落ちないよう、無ければ飛ばす
         const retainersView = document.getElementById('nearby-retainers-view');
         if (retainersView) retainersView.classList.remove('open');
@@ -252,6 +257,7 @@
         setPanelLifted(true);
         renderObjFilterUI();
         renderFavNameList();
+        renderFavNameDots();
         Object.keys(labelState).forEach(id => { const el=document.getElementById(`check-label-${id}`); if(el) el.checked=labelState[id]; });
         const originChk = document.getElementById('check-show-origin');
         if (originChk) originChk.checked = showOriginState;

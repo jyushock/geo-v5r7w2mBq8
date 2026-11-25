@@ -190,6 +190,24 @@ def main():
             return { p: p.data.results.mapState, k: g.data.keys.mapState };""")
         check('端末専用の保存', r['p'] == {'rev': 1} and r['k'] == {'value': '"a"', 'rev': 1, 'device': True}, r)
 
+        # ── 6b. お気に入りを4枠の版（v が 2 未満）が書き戻すのを、8枠の版が書いたあとだけ断る
+        r = run("""const cur = (await A.call('GET', '/api/state')).data.keys.favorites.rev;
+            const v1a = await A.call('PUT', '/api/state', {items: [{key: 'favorites', value: '{"v":1,"items":{}}', baseRev: cur}]});
+            const v2a = await A.call('PUT', '/api/state', {items: [{key: 'favorites', value: '{"v":2,"items":{"k":{"mk":[5],"at":1}}}', baseRev: cur + 1}]});
+            const v1b = await A.call('PUT', '/api/state', {items: [{key: 'favorites', value: '{"v":1,"items":{}}', baseRev: cur + 2}]});
+            const bad = await A.call('PUT', '/api/state', {items: [{key: 'favorites', value: 'not json', baseRev: cur + 2}]});
+            const mid = (await A.call('GET', '/api/state')).data.keys.favorites;
+            const v2b = await A.call('PUT', '/api/state', {items: [{key: 'favorites', value: '{"v":2,"items":{}}', baseRev: cur + 2}]});
+            return { cur, v1a: v1a.data.results.favorites, v2a: v2a.data.results.favorites, v1b: v1b.data.results.favorites,
+                     bad: bad.data.results.favorites, mid, v2b: v2b.data.results.favorites };""")
+        check('8枠の版が書く前は v1 も通る', r['v1a'] == {'rev': r['cur'] + 1}, r)
+        check('8枠の版（v2）の書き込みは通る', r['v2a'] == {'rev': r['cur'] + 2}, r)
+        check('8枠の版が書いたあとの v1 は old_client で断る', r['v1b'] == {'error': 'old_client'}, r)
+        check('8枠の版が書いたあとの読めない値も断る', r['bad'] == {'error': 'old_client'}, r)
+        check('断った書き込みで値も rev も変わらない',
+              r['mid']['rev'] == r['cur'] + 2 and '"mk":[5]' in r['mid']['value'], r)
+        check('v2 は続けて書ける', r['v2b'] == {'rev': r['cur'] + 3}, r)
+
         # ── 7. 不正な項目
         r = run("""const p = await A.call('PUT', '/api/state', {items: [{key: '', value: 'x'}, {key: 'k', value: 1}]});
             const q = await A.call('PUT', '/api/state', {});

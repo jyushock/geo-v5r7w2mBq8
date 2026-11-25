@@ -34,7 +34,7 @@
         const exp = document.getElementById('fav-export-btn');
         if (exp) exp.style.display = favState.selecting ? 'none' : '';
         const title = document.getElementById('fav-head-title');
-        if (title) title.textContent = favState.selecting ? `${favState.sel.size}件を選択` : 'お気に入り';
+        if (title) title.innerHTML = favState.selecting ? `${favState.sel.size}件を選択` : favViewTitleHtml();
         const rows = favState.rows || [];
         const allOn = rows.length > 0 && rows.every(r => favState.sel.has(r.key));
         const all = document.getElementById('fav-selall-btn');
@@ -72,7 +72,6 @@
         if (!confirm(`選んだ${keys.length}件を${favUnmarkWhere()}から外します。\n\n`
             + '地図・一覧・情報シートの印が消えます。戻すには1件ずつ付け直すことになります。')) return;
         const n = favUnmarkKeys(keys, favUnmarkSlots());
-        renderFavKindChips();                 // 件数が減った分をチップに出す（一覧は触らない）
         setFavSelectMode(false);              // 選択モードを出るところで一覧を描き直す
         showToast(`${n.toLocaleString()}件のお気に入りを外しました`);
     }
@@ -89,7 +88,7 @@
             favState.sel.forEach(k => { if (!visible.has(k)) favState.sel.delete(k); });
         }
         if (!rows.length) {
-            list.innerHTML = (q || favState.kind !== 'all')
+            list.innerHTML = q
                 ? '<div class="lords-note">該当する項目がありません</div>'
                 : `<div class="fav-empty"><b>★</b>まだ登録がありません。<br>
                     ピンや一覧から開いた情報シートの★を押すと、ここに集まります。</div>`;
@@ -147,7 +146,7 @@
         if (!body || body.querySelector('.os-lords-back')) return;
         const div = document.createElement('div');
         div.className = 'os-lords-back';
-        div.textContent = '↩ 「お気に入り」の一覧に戻る';
+        div.textContent = `↩ 「${favState.kind === 'all' ? 'お気に入り' : favNameOf(Number(favState.kind))}」の一覧に戻る`;
         div.onclick = () => { closeObjSheet(); restoreListReturnCamera(); openNearbyPanel(); openFavView(true); };
         body.insertBefore(div, body.firstChild);
     }

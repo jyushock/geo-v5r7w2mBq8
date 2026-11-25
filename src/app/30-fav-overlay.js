@@ -170,8 +170,8 @@
         add({ id: 'fav-shadow-card', type: 'symbol', source: 'fav-objects', filter: isShape('card'),
               layout: { 'icon-image': 'mhcard-shadow-icon', 'icon-size': 1.0, ...overlap },
               paint: shadowPaintSymbol });
-        // ピン本体。枠4→1の順に足して、番号の小さい枠を上にする
-        [4, 3, 2, 1].forEach(n => {
+        // ピン本体。番号の大きい枠から順に足して、番号の小さい枠を上にする
+        [...FAV_SLOTS].reverse().forEach(n => {
             const mine = ['==', ['get', '_mk'], n];
             add({ id: `fav-bg-${n}`, type: 'circle', source: 'fav-objects',
                   filter: ['all', mine, isShape('circle')],
@@ -200,7 +200,7 @@
            外形が種別で違うので、右上の位置だけ形ごとに分ける。 */
         const badge = (id, shape, translate) => add({ id, type: 'circle', source: 'fav-objects',
             filter: isShape(shape),
-            layout: { 'circle-sort-key': ['-', 5, ['get', '_mk']] },
+            layout: { 'circle-sort-key': ['-', FAV_SLOTS.length + 1, ['get', '_mk']] },
             // 外径15px（色の面12px＋白フチ1.5px）。モックで比べたときと同じ寸法
             paint: { 'circle-radius': 6, 'circle-color': ['get', '_mkColor'],
                      'circle-stroke-width': 1.5, 'circle-stroke-color': '#FFFFFF',
@@ -212,7 +212,7 @@
         badge('fav-badge-card', 'card', [11.5, -15.5]);       // 28×36 のカード（横14 / 縦18）
         /* タップの受け口。マークしたピンどうしが重なると複数のレイヤーが同じタップを拾うので、
            最初に拾ったものが元のイベントに印を付け、残りは降りる。
-           登録の順を逆（枠1→枠4）にしてあるのは、前面に居る枠から先に拾わせるため。 */
+           登録の順を逆（枠1→枠8）にしてあるのは、前面に居る枠から先に拾わせるため。 */
         [...FAV_CLICK_LAYERS].reverse().forEach(id => {
             map.on('click', id, e => {
                 if (objLongPressJustFired()) return;   // 長押しでコピーした指を離したときのクリック

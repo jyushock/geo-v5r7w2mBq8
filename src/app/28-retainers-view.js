@@ -61,18 +61,6 @@
         const d = new Date(at);
         return `${d.getMonth() + 1}/${d.getDate()}`;
     }
-    function renderFavKindChips() {
-        const el = document.getElementById('fav-kind-chips');
-        if (!el) return;
-        const rows = favCollect();
-        el.innerHTML = `<button class="lords-chip" data-fk="all" aria-pressed="${
-                favState.kind === 'all'}" ${actionAttrs('setFavKind', 'all')}>すべて ${rows.length}</button>`
-            + favActiveSlots().map(n => `<button class="lords-chip fav-kind" data-fk="${n}"
-                aria-pressed="${String(favState.kind) === String(n)}" ${actionAttrs('setFavKind', Number(n))}
-                ><span class="fav-dot" style="background:${FAV_COLORS[n]}"></span>${
-                attrEscape(favNameOf(n))} ${rows.filter(r => r.mk.includes(n)).length}</button>`).join('');
-    }
-    function setFavKind(k) { favState.kind = k; renderFavKindChips(); renderFavItems(); }
     function setFavSort(s) {
         favState.sort = s;
         document.querySelectorAll('#nearby-fav-view .lords-chip[data-fs]').forEach(b => {

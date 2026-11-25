@@ -69,18 +69,24 @@
                100名城のピン（CASTLE_MEIJO_COLOR）と同じ値だが意味が違うので分けてある。
                片方の色を変えるときにもう片方を巻き込まないため、値が同じでも統合しないこと。 */
             --ui-blue: #4285F4;
-            /* お気に入りの4枠の色。枠に意味は持たせず（名前は設定でユーザーが付ける）、
+            /* お気に入りの8枠の色。枠に意味は持たせず（名前は設定でユーザーが付ける）、
                色は枠の番号の代わりなので名前を変えても動かさない。
-               既存の地図の色（食べログ #FFAA00 / ポケふた #FBBC04 / マンホール系 #B87333 /
+               1〜4: 既存の地図の色（食べログ #FFAA00 / ポケふた #FBBC04 / マンホール系 #B87333 /
                道の駅 #0B499D / 城 #8A8A8A・#4285F4・#EA4335 / 選択リング #546E7A）と
                いちばん近い組でも CIEDE2000 で 16.3 離れている。4色どうしの最小は 27.9。
-               物差しとして、いま並んでいる食べログとポケふたの色差は 7.1。
                計算値は mock/fav-badge-preview.html の「7. 色の裏付け」に残してある。
-               #7CB342 だけ白文字のコントラストが 2.50 しか出ないので、その上の文字は黒にする。 */
+               5〜8: 2026-11-26 に足した色。CIEDE2000 は大きな色の面どうしの式で、15px のバッジでは
+               暗い色どうしが見分けにくい（深緑と黒は計算上 31.1 離れていても似て見えた）ので、
+               計算ではなく、地図に1〜8を横一列に並べた画面を見比べて決めた（mock/fav8-preview.html の 4.。案Cの7を淡いピンクにしたもの）。
+               白文字のコントラストが足りない #7CB342・#00BCD4・#FF80AB は、その上の文字を黒にする（app.js の FAV_FG）。 */
             --fav1: #E91E63;
             --fav2: #7B1FA2;
             --fav3: #00897B;
             --fav4: #7CB342;
+            --fav5: #880E4F;   /* ワイン */
+            --fav6: #00BCD4;   /* シアン */
+            --fav7: #FF80AB;   /* 淡いピンク */
+            --fav8: #212121;   /* 黒 */
         }
         body { margin: 0; padding: 0; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
         /* ドロワーの下スワイプがドキュメントのオーバースクロール（iOSのバウンス）に化けるのを防ぐ保険。
@@ -1165,7 +1171,7 @@
         .lords-chip[aria-pressed="true"] { background: #e3ecff; color: #2a5bd7; font-weight: bold; }
         /* お気に入りの読み込みで、名前が空の枠（使わない枠）を選べなくする */
         .lords-chip[disabled] { opacity: .45; cursor: default; }
-        /* お気に入りの絞り込みチップに付ける枠の色。名前が長くても行が崩れないよう幅を止める */
+        /* バックアップの枠のチップに付ける枠の色。名前が長くても行が崩れないよう幅を止める */
         .lords-chip .fav-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%;
                                margin-right: 5px; vertical-align: -1px; }
         .lords-chip.fav-kind { max-width: 160px; overflow: hidden; text-overflow: ellipsis;
@@ -1199,7 +1205,7 @@
         #obj-sheet.has-fav #obj-sheet-header { padding-top: 18px; min-height: 30px; }
         #obj-sheet.has-fav #obj-fav-btn { top: 6px; }
         #obj-sheet.has-fav #obj-sheet-close { top: 6px; }
-        /* 登録操作。ヘッダー右の★を押すと4枠のパレットが開く（1タップで開き、1タップで付け外し）。
+        /* 登録操作。ヘッダー右の★を押すと枠のパレットが開く（1タップで開き、1タップで付け外し）。
            位置は閉じる×（right:8px）の左。×を24pxにしてボックスが 24px→26px 幅に広がったので、
            右からの距離を 36px→38px にして★との間隔（Windows実測で4px）を元のまま保つ。 */
         #obj-fav-btn { position: absolute; top: 0; right: 38px; background: none; border: none;
@@ -1219,13 +1225,14 @@
         .fav-pop button .fav-ck svg { width: 14px; height: 14px; display: block; }
         .fav-pop .fav-pop-note { font-size: 11px; color: #888; padding: 6px 8px; line-height: 1.6;
                                  max-width: 180px; }
+        /* 使える枠が2つ以上なら2列に並べる。8枠を1列にすると高さが282pxになり、
+           情報シートのボタンに重なるため（2列×4段で266×146px。実測は mock/fav8-preview.html の 2.） */
+        .fav-pop.cols2 { display: grid; grid-template-columns: 1fr 1fr; column-gap: 2px; }
 
-        /* 設定の「お気に入りの名前」。名前を入れた枠だけが使える（空欄の枠は出さない）。
-           入力は6文字まで。お気に入り一覧の絞り込みチップ（すべて＋4枠）が SE3(375px) で
-           2段に収まる上限がここだから。チップは 左右padding20px＋色の点13px＋件数16px＋
-           名前（11pxの全角1文字＝11px）で、6文字なら115px、「すべて」は69px。
-           内側幅351pxに 69+115+115＝299px（隙間12px込み311px）で1段目に3つ、残り2つが2段目。
-           8文字だと1つ137pxになり3段に落ちる。 */
+        /* お気に入りの枠の名前の編集ビュー（#nearby-fav-names-view）の行。名前を入れた枠だけが使える（空欄の枠は出さない）。
+           入力は6文字まで。もとは一覧の絞り込みチップが SE3(375px) で2段に収まる上限として決めた値で、
+           一覧を二段構えにしてチップは無くなったが、文字数はそのまま引き継いでいる。
+           8枠すべてに6文字を入れたときの2列のパレットは幅290px（実測）で、375px の画面に収まる。 */
         .favname-row { display: flex; align-items: center; gap: 9px; padding: 5px 16px; }
         .favname-sw { width: 20px; height: 20px; border-radius: 6px; flex-shrink: 0; display: flex;
                       align-items: center; justify-content: center; font-size: 10px; font-weight: 700; }
@@ -1280,6 +1287,22 @@
         #nearby-fav-view { display: none; flex-direction: column; min-height: 0;
                            height: calc(100svh - 104px); max-height: 100%; }
         #nearby-fav-view.open { display: flex; }
+        /* 一覧の一段目（枠の一覧）。行は .nearby-item に枠の色の丸と件数と「›」を置く */
+        #nearby-fav-groups-view { display: none; flex-direction: column; min-height: 0;
+                                  height: calc(100svh - 104px); max-height: 100%; }
+        #nearby-fav-groups-view.open { display: flex; }
+        /* 枠の名前の編集ビュー。高さは一覧と同じに固定する（中身が8行だけでも、パネルが途中で切れて見えないように） */
+        #nearby-fav-names-view { display: none; flex-direction: column; min-height: 0; touch-action: none;
+                                 height: calc(100svh - 104px); max-height: 100%; }
+        #nearby-fav-names-view.open { display: flex; }
+        /* 設定の入口ボタン。左に枠の色の点、右に文言 */
+        .fav-names-entry { justify-content: space-between; padding: 0 14px; }
+        #fav-name-dots { display: flex; gap: 4px; align-items: center; }
+        #fav-name-dots i { width: 8px; height: 8px; border-radius: 50%; display: block; }
+        .fav-grp-cnt { font-size: 12px; color: #999; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+        /* 二段目の見出しに付ける枠の色の点 */
+        .fav-title-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+                         margin-right: 6px; vertical-align: 0; }
         .fav-empty { padding: 40px 20px; text-align: center; color: #aaa; font-size: 12px; line-height: 1.9; }
         .fav-empty b { font-size: 34px; color: #e0e0e0; display: block; margin-bottom: 8px; font-weight: normal; }
         .fav-added { font-size: 10px; color: #bbb; flex-shrink: 0; font-variant-numeric: tabular-nums; }
@@ -1621,7 +1644,7 @@
         .weather-hourly-card .weather-emoji { width: 26px; height: 26px; }
         .weather-hourly-temp { font-size: 12px; font-weight: 700; color: #7f8fa4; line-height: 1; }
         .weather-hourly-empty { font-size: 11px; color: #8a97a8; padding: 4px 0 2px; }
-        #settings-back-btn {
+        #settings-back-btn, #fav-names-back-btn {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1633,7 +1656,7 @@
             padding: 0;
             flex-shrink: 0;
         }
-        #settings-back-btn:hover { background: #e0e0e0; }
+        #settings-back-btn:hover, #fav-names-back-btn:hover { background: #e0e0e0; }
         /* オブジェクト表示。都道府県から探すの集計帯（.pref-sum-item）と同じ扱いにする。
            押して出し入れし、外した種別はグレーに落とす。文字のチェックボックスは使わない。
            形は周辺検索のカテゴリ（.nearby-cat-item）と同じアイコン上・名前下の縦積みで、
@@ -2009,12 +2032,14 @@
             <label class="filter-chip"><input type="checkbox" id="check-show-origin" data-on-change="onShowOriginChange" data-pass="el">検索地点</label>
         </div>
         <div style="border-top:1px solid #f0f0f0;"></div>
-        <!-- お気に入りの4枠の名前。枠に固定の意味は持たせず、ここで名前を入れたものだけが使える。
-             文字を打つ欄なので、下に続く「同期」「バックアップ」は入力でキーボードが出ると
-             押し上げられて隠れることがある（スクロールで出せる） -->
+        <!-- お気に入りの枠。設定にはボタンを1つだけ置き、名前と「薄く出す」は押した先（#nearby-fav-names-view）で直す。
+             8枠を設定の中に並べると区画が323pxになるため（案は mock/fav8-preview.html の 3.）。
+             ボタンの形は下の「同期」「バックアップ」のボタンに揃える。左の点は名前の入った枠の色（renderFavNameDots） -->
         <div class="nearby-section-label">お気に入りの名前</div>
-        <!-- 説明文は置かない（設定画面には書かない方針）。下の余白は他の区画の 8px に揃える -->
-        <div id="fav-name-list" style="padding-bottom:3px;"></div>
+        <div style="display:flex;gap:8px;padding:2px 16px 8px;">
+            <button class="fxp-btn sub fav-names-entry" style="flex:1;height:38px;font-size:13px;"
+                    data-on-click="openFavNamesView"><span id="fav-name-dots"></span><span>名前と表示を編集 ›</span></button>
+        </div>
         <div style="border-top:1px solid #f0f0f0;"></div>
         <!-- 同期。入口は設定の中だけに置き、常設のボタンは増やさない（SYNC_MANUAL.md §5.6）。
              ふだん触らない区画なので、バックアップと並べて設定の最下段に置く -->
@@ -2249,13 +2274,44 @@
         <div class="lords-scroll" id="remains-help-list"></div>
     </div>
 
-    <!-- お気に入り一覧ビュー（第10ビュー）。城主・都道府県・遺構と同じ枠組み。
+    <!-- お気に入りの枠の名前と「薄く出す」。設定の「名前と表示を編集」から開く。
+         枠に固定の意味は持たせず、ここで名前を入れたものだけが使える。説明文は置かない（設定画面と同じ方針）。
+         行は app.js の renderFavNameList が作る -->
+    <div id="nearby-fav-names-view">
+        <div style="display:flex;align-items:center;padding:12px 16px 8px;gap:8px;flex-shrink:0;">
+            <button id="fav-names-back-btn" aria-label="戻る" data-on-click="closeFavNamesView">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <span style="font-size:14px;font-weight:bold;color:#333;">お気に入りの枠</span>
+        </div>
+        <div class="lords-scroll">
+            <div class="nearby-section-label">お気に入りの名前</div>
+            <div id="fav-name-list" style="padding-bottom:3px;"></div>
+        </div>
+    </div>
+
+    <!-- お気に入り一覧の一段目。「すべて」と名前の入った枠を並べ、押すと二段目（#nearby-fav-view）で中身を出す。
+         枠のチップで絞り込む作りから改めたのは、枠を8つにするとチップが3〜4段になって一覧が下がるため
+         （案は mock/fav8-preview.html の 1.）。行は app.js の renderFavGroups が作る -->
+    <div id="nearby-fav-groups-view">
+        <div class="lords-head">
+            <button class="lords-iconbtn" data-on-click="closeFavGroupsView" title="メニューへ戻る">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="lords-head-title">お気に入り</div>
+            <button class="lords-iconbtn" data-on-click="closeNearby" title="閉じる" style="font-size:17px;">×</button>
+        </div>
+        <div class="lords-scroll" id="fav-group-list"></div>
+    </div>
+
+    <!-- お気に入り一覧の二段目（第10ビュー）。一段目で押した枠（または「すべて」）の中身。
+         城主・都道府県・遺構と同じ枠組み。
          種別（食べログ・お城…）の絞り込みは置かない。設定の「オブジェクト表示」で
          消した種別は地図・検索・周辺検索・都道府県・城主のすべてから消える決まりで、
          ここだけ別の種別セットを持たせると規則が二重になるため。 -->
     <div id="nearby-fav-view">
         <div class="lords-head">
-            <button class="lords-iconbtn" data-on-click="closeFavView" title="メニューへ戻る">
+            <button class="lords-iconbtn" data-on-click="closeFavView" title="枠の一覧へ戻る">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
             <div class="lords-head-title" id="fav-head-title">お気に入り</div>
@@ -2276,7 +2332,6 @@
                        placeholder="名前・住所で絞り込み" data-on-input="onFavSearchInput" data-pass="value">
                 <button class="lords-search-clear" data-on-click="clearFavSearch" title="クリア">×</button>
             </div>
-            <div class="lords-chips" id="fav-kind-chips"></div>
             <div class="lords-chips">
                 <button class="lords-chip" data-fs="at"   aria-pressed="true"  data-on-click="setFavSort" data-pass="arg" data-arg="at">追加順</button>
                 <button class="lords-chip" data-fs="dist" aria-pressed="false" data-on-click="setFavSort" data-pass="arg" data-arg="dist">近い順</button>

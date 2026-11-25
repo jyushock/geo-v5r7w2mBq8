@@ -263,6 +263,7 @@
         if (!remote || typeof remote !== 'object') return false;
         const rItems = (remote.items && typeof remote.items === 'object') ? remote.items : {};
         favMergeItems(rItems);
+        favRecoverLegacySlots(rItems);
         if (remote.names && typeof remote.names === 'object') {
             FAV_SLOTS.forEach(n => {
                 if (typeof remote.names[n] === 'string') favStore.names[n] = remote.names[n];
@@ -280,12 +281,33 @@
         }
         return false;
     }
+    /* 手元の記録を最後に書いたのが4枠の版だったとき（favMarkLegacyLocal が印を立てる）、
+       4枠の版が落とした 5〜8 の印をサーバーの記録から足し戻す。4枠の版には 5〜8 を外す手段が無いので、
+       サーバーに 5〜8 があって手元に無ければ、それは落とされたものと見てよい。
+       ただし印を立てたあとにこの版で触った項目（at が新しい）は、利用者の操作として手元を採る。
+       1回取り込んだら印を下ろす。 */
+    function favRecoverLegacySlots(rItems) {
+        const since = Number(syncMeta().favRecoverAt) || 0;
+        if (!since) return;
+        for (const [k, v] of Object.entries(rItems)) {
+            const hi = favNormalizeMk(v && v.mk).filter(n => n > 4);
+            if (!hi.length) continue;
+            const cur = favStore.items[k];
+            if (cur && (Number(cur.at) || 0) >= since) continue;
+            const base = cur ? cur.mk : [];
+            const mk = favNormalizeMk([...base, ...hi]);
+            if (mk.length !== base.length) favStore.items[k] = { mk, at: cur ? cur.at : (Number(v.at) || 0) };
+        }
+        syncMetaSet({ favRecoverAt: 0 });
+    }
     function favRefreshAll() {
         try {
             refreshFavOverlay();
             updateFavNameCounts();
             updateFavEntry();
             renderFavNameList();
+            renderFavNameDots();
+            renderFavGroups();
         } catch (e) { console.warn('[fav]', e); }
     }
 
