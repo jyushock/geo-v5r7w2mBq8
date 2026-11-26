@@ -1228,6 +1228,8 @@
         /* 使える枠が2つ以上なら2列に並べる。8枠を1列にすると高さが282pxになり、
            情報シートのボタンに重なるため（2列×4段で266×146px。実測は mock/fav8-preview.html の 2.） */
         .fav-pop.cols2 { display: grid; grid-template-columns: 1fr 1fr; column-gap: 2px; }
+        /* 選択モードの「移す」で出す小窓の見出し。2列のときも1段を通して使う */
+        .fav-pop.cols2 .fav-pop-note { grid-column: 1 / -1; max-width: none; padding-bottom: 2px; }
 
         /* お気に入りの枠の名前の編集ビュー（#nearby-fav-names-view）の行。名前を入れた枠だけが使える（空欄の枠は出さない）。
            入力は6文字まで。もとは一覧の絞り込みチップが SE3(375px) で2段に収まる上限として決めた値で、
@@ -2345,6 +2347,7 @@
         <!-- 選択モードのときだけ出る操作バー。「すべて選択」→「解除」が一括解除になる -->
         <div class="fav-selbar" id="fav-selbar">
             <button class="fxp-btn sub" id="fav-selall-btn" data-on-click="favSelectAllToggle">すべて選択</button>
+            <button class="fxp-btn sub" id="fav-selmove-btn" data-on-click="favOpenMoveMenu" disabled>移す</button>
             <button class="fxp-btn danger" id="fav-seldel-btn" data-on-click="favUnmarkSelected" disabled>解除</button>
         </div>
     </div>

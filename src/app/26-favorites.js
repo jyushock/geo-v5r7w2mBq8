@@ -251,6 +251,27 @@
         return n;
     }
 
+    /* まとめて別の枠へ移す（from を外して to を付ける）。保存と描き直しを1回だけにするのは favUnmarkKeys と同じ。
+       移す先にもう入っている項目は from を外すだけになる。from に入っていない項目は触らない。
+       at を今にするのは、同期で他の端末と混ぜるときに新しいほうとして採られるように（backupImportRun と同じ）。 */
+    function favMoveKeys(keys, from, to) {
+        if (!FAV_SLOTS.includes(from) || !FAV_SLOTS.includes(to) || from === to) return 0;
+        favAbsorbStored();
+        const at = Date.now();
+        let n = 0;
+        for (const key of new Set(keys)) {
+            const cur = favMarksOf(key);
+            if (!cur.includes(from)) continue;
+            favStore.items[key] = { mk: favNormalizeMk([...cur.filter(x => x !== from), to]), at };
+            n++;
+        }
+        if (!n) return 0;
+        saveFavStore();
+        favRefreshAll();
+        updateSheetFav();
+        return n;
+    }
+
     // 一覧の行の左端に立てる色帯。付いている枠の数だけ縦に等分する
     function favStripeHtml(type, p, coords) {
         const c = coords || [];

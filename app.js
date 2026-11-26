@@ -9091,6 +9091,27 @@ map.on('zoomend', () => { isZooming = false; });
         return n;
     }
 
+    /* まとめて別の枠へ移す（from を外して to を付ける）。保存と描き直しを1回だけにするのは favUnmarkKeys と同じ。
+       移す先にもう入っている項目は from を外すだけになる。from に入っていない項目は触らない。
+       at を今にするのは、同期で他の端末と混ぜるときに新しいほうとして採られるように（backupImportRun と同じ）。 */
+    function favMoveKeys(keys, from, to) {
+        if (!FAV_SLOTS.includes(from) || !FAV_SLOTS.includes(to) || from === to) return 0;
+        favAbsorbStored();
+        const at = Date.now();
+        let n = 0;
+        for (const key of new Set(keys)) {
+            const cur = favMarksOf(key);
+            if (!cur.includes(from)) continue;
+            favStore.items[key] = { mk: favNormalizeMk([...cur.filter(x => x !== from), to]), at };
+            n++;
+        }
+        if (!n) return 0;
+        saveFavStore();
+        favRefreshAll();
+        updateSheetFav();
+        return n;
+    }
+
     // 一覧の行の左端に立てる色帯。付いている枠の数だけ縦に等分する
     function favStripeHtml(type, p, coords) {
         const c = coords || [];
@@ -9536,6 +9557,13 @@ map.on('zoomend', () => { isZooming = false; });
         const allOn = rows.length > 0 && rows.every(r => favState.sel.has(r.key));
         const all = document.getElementById('fav-selall-btn');
         if (all) { all.textContent = allOn ? '選択を解除' : 'すべて選択'; all.disabled = rows.length === 0; }
+        /* 移すのは1つの枠を見ているときだけ。「すべて」では移す元が決まらないので出さない。
+           移す先（名前の入った他の枠）が無いときも押せない */
+        const mv = document.getElementById('fav-selmove-btn');
+        if (mv) {
+            mv.style.display = favState.kind === 'all' ? 'none' : '';
+            mv.disabled = favState.sel.size === 0 || favMoveTargets().length === 0;
+        }
         const del = document.getElementById('fav-seldel-btn');
         if (del) {
             del.disabled = favState.sel.size === 0;
@@ -9571,6 +9599,49 @@ map.on('zoomend', () => { isZooming = false; });
         const n = favUnmarkKeys(keys, favUnmarkSlots());
         setFavSelectMode(false);              // 選択モードを出るところで一覧を描き直す
         showToast(`${n.toLocaleString()}件のお気に入りを外しました`);
+    }
+
+    /* 「移す」。選んだ項目を、いま見ている枠から別の枠へ移す（2026-11-26）。
+       枠の中身をそっくり入れ替えたいときに、書き出し→読み込み→解除の3手を踏まずに済むよう足した。
+       移す先は★のパレットと同じ見た目の小窓で選ぶ（favPopEl を使うので、外側を押す・選択モードを出ると閉じる）。
+       移し間違えても移し戻せるので、解除と違って確認は出さない。 */
+    function favMoveTargets() {
+        const from = Number(favState.kind);
+        return favActiveSlots().filter(n => n !== from);
+    }
+    function favOpenMoveMenu() {
+        if (favPopEl) { closeFavPalette(); return; }
+        if (Date.now() - favPopClosedAt < 300) return;   // 開いているときに押した（onSheetFavBtn と同じ事情）
+        const anchor = document.getElementById('fav-selmove-btn');
+        const targets = favMoveTargets();
+        if (!anchor || !favState.sel.size || !targets.length || favState.kind === 'all') return;
+        const pop = document.createElement('div');
+        pop.className = 'fav-pop' + (targets.length >= 2 ? ' cols2' : '');
+        pop.innerHTML = `<div class="fav-pop-note">${favState.sel.size}件を移す先</div>`
+            + targets.map(n => `<button data-fav-move="${n}"><i style="background:${FAV_COLORS[n]}"></i>${
+                attrEscape(favNameOf(n))}</button>`).join('');
+        favPopEl = pop;
+        document.body.appendChild(pop);
+        const r = anchor.getBoundingClientRect();
+        const w = pop.offsetWidth, h = pop.offsetHeight;
+        const left = Math.min(Math.max(6, r.left), window.innerWidth - w - 6);
+        // 操作バーは画面の下端にあるので、上に出す
+        pop.style.left = `${Math.round(left)}px`;
+        pop.style.top = `${Math.round(Math.max(6, r.top - h - 6))}px`;
+        pop.addEventListener('click', e => {
+            const b = e.target.closest('button[data-fav-move]');
+            if (b) favMoveSelected(Number(b.dataset.favMove));
+        });
+        setTimeout(() => document.addEventListener('pointerdown', onFavPaletteOutside, true), 0);
+    }
+    function favMoveSelected(to) {
+        const from = Number(favState.kind);
+        const keys = [...favState.sel];
+        closeFavPalette();
+        if (!keys.length) return;
+        const n = favMoveKeys(keys, from, to);
+        setFavSelectMode(false);
+        showToast(`${n.toLocaleString()}件を「${favNameOf(from)}」から「${favNameOf(to)}」へ移しました`);
     }
 
     function renderFavItems(keepScroll) {
